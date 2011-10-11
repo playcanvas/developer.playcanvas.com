@@ -1,0 +1,119 @@
+html, body {
+  height: 100%; }
+
+body {
+  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+  font-size: 1.0em;
+  color: #555; }
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 5px;
+  border-bottom: 1px solid #8d96ac; }
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold; }
+
+h3 {
+  font-size: 1.17em;
+  font-weight: bold; }
+
+#main {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%; }
+
+#page-container {
+  width: 80%;
+  margin: 0px auto; }
+
+a {
+  color: #6379a8;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+#header {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  height: 40px;
+  border-bottom: 5px solid #e64e27; }
+
+#header h1 {
+  font-size: 2.5em;
+  padding-bottom: 0px; }
+
+#header h2 {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic; }
+
+.pc-small {
+  font-size: 0.6em; }
+
+.pc-clear {
+  clear: both; }
+
+.pc-left {
+  float: left;
+  padding-right: 20px; }
+
+.pc-right {
+  float: right;
+  padding-left: 20px; }
+
+.pc-text-block {
+  padding-top: 20px; }
+
+.pc-centred-container {
+  width: 800px;
+  margin: 25px auto; }
+
+footer {
+  font-size: 0.8em;
+  color: gray;
+  width: 100%;
+  border-top: thin solid gray; }
+
+footer, .pc-push {
+  height: 18px;
+  clear: both; }
+
+.footer-centred {
+  width: 60%;
+  margin: 0px auto; }
+
+footer a {
+  color: #444; }
+
+footer img {
+  position: relative;
+  top: 4px; }
+
+.pc-standard-form {
+  width: 800px;
+  margin: 0px auto; }
+
+.pc-standard-form label {
+  display: block; }
+
+.pc-standard-form .pc-form-extra {
+  font-size: 0.8em;
+  color: #CCC; }
+
+.pc-standard-form .error-message {
+  color: red; }
+
+.pc-standard-table {
+  margin-top: 20px; }
+
+.pc-standard-table th {
+  font-weight: bold;
+  border-bottom: 1px solid #8d96ac; }
+
+.pc-standard-table td {
+  padding: 10px; }

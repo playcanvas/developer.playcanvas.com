@@ -1,0 +1,39 @@
+{% macro render_excerpt(res, class=None) %}
+{% refer to res.url as post %}
+<article {{'class='~class if class }}>
+<h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
+<a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
+{{ post.excerpt|markdown|typogrify }}
+<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+</time>
+</article>
+{% endmacro %}
+
+{% macro render_header() -%}
+            <div id="header">
+                {% set logo_url = "%s%s" % (paths.static_server, "/images/playcanvas-flat-40.png") %}
+                <a href="/"><img src="{{logo_url}}" /></a>
+            </div>
+            <div class="pc-header-menus">
+            </div>
+{%- endmacro %}
+
+ 
+{% macro render_footer() -%}
+        <footer>
+            <div class="footer-centred">
+                <span>&copy; copyright 2011 <a href="http://playcanvas.com">playcanvas ltd</a></span>
+                <span>|</span>
+                <span><a href="http://playcanvas.com/terms-of-use">terms of use</a></span>
+                <span>|</span>
+                <span><a href="http://playcanvas.com/privacy-policy">privacy policy</a></span>
+                <span>|</span>
+                <span><a href="http://twitter.com/playcanvas"><img src="{{ "%s%s" % (paths.static_server, "static_server/images/icons/16x16/twitter_1.png") }}" />follow us</a></span>
+                <span>|</span>
+                <span><a href="http://platform.playcanvas.com/credits">credits</a></span>
+                <span>|</span>
+                <span>documentation: {{app.version}} </span>
+            </div>
+        </footer>
+{%- endmacro %}
