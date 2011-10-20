@@ -548,14 +548,12 @@ footer a {
   border: 1px solid #cccccc;
 }
 /* line 58, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
-.pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password],
-.pc-standard-form textarea {
+.pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password], .pc-standard-form textarea {
   background-color: #fff;
   border: 1px solid #bbbbbb;
 }
 /* line 61, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
-.pc-standard-form input.text:focus, .pc-standard-form input.title:focus, .pc-standard-form input[type=email]:focus, .pc-standard-form input[type=text]:focus, .pc-standard-form input[type=password]:focus,
-.pc-standard-form textarea:focus {
+.pc-standard-form input.text:focus, .pc-standard-form input.title:focus, .pc-standard-form input[type=email]:focus, .pc-standard-form input[type=text]:focus, .pc-standard-form input[type=password]:focus, .pc-standard-form textarea:focus {
   border-color: #666666;
 }
 /* line 65, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
@@ -724,109 +722,4 @@ footer a {
   width: 300px;
   margin: 20px auto;
   text-align: center;
-}
-
-/* line 32, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-navigation {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 150px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html navigation {
-  overflow-x: hidden;
-}
-
-/* line 35, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article {
-  line-height: 1.2;
-  font-size: 16pt;
-  overflow-x: auto;
-  padding-left: 80px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 710px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html article {
-  overflow-x: hidden;
-}
-/* line 42, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article h1 {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 630px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html article h1 {
-  overflow-x: hidden;
-}
-/* line 46, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article h2 {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 630px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html article h2 {
-  overflow-x: hidden;
-}
-/* line 52, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 710px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html article p {
-  overflow-x: hidden;
-}
-/* line 58, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 630px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html article ul {
-  overflow-x: hidden;
-}
-/* line 63, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article ul li {
-  margin-bottom: 2px;
-}
-/* line 68, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article .codebox {
-  background-color: #f7f7f7;
-  font-family: courier, monospace;
-  font-size: 12px;
-  border: 1px solid black;
-  overflow-x: auto;
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 670px;
-  padding-right: 40px;
-  padding: 20px;
-  margin-left: -2px;
-}
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html article .codebox {
-  overflow-x: hidden;
-}
-/* line 70, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-article .codebox figcaption {
-  display: none;
 }

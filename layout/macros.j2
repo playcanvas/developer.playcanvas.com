@@ -11,7 +11,7 @@
 {% endmacro %}
 
 {% macro render_header() -%}
-            <div id="header">
+            <div id="header" class="pc-header">
                 {% set logo_url = "%s%s" % (paths.static_server, "/images/playcanvas-flat-40.png") %}
                 <a href="/"><img src="{{logo_url}}" /></a>
             </div>
@@ -29,7 +29,7 @@
                 <span>|</span>
                 <span><a href="http://playcanvas.com/privacy-policy">privacy policy</a></span>
                 <span>|</span>
-                <span><a href="http://twitter.com/playcanvas"><img src="{{ "%s%s" % (paths.static_server, "static_server/images/icons/16x16/twitter_1.png") }}" />follow us</a></span>
+                <span><a href="http://twitter.com/playcanvas"><img src="{{ "%s%s" % (paths.static_server, "/images/icons/16x16/twitter_1.png") }}" />follow us</a></span>
                 <span>|</span>
                 <span><a href="http://platform.playcanvas.com/credits">credits</a></span>
                 <span>|</span>

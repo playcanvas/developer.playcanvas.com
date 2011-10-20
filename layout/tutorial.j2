@@ -1,8 +1,10 @@
 {% extends "base.j2" %}
 
 {% block main -%}
+<navigation>
+stuff</navigation>
 <article class="tutorial">
-{% filter markdown|typogrify -%}
+{% filter markdown -%}
 {% mark article -%}
 {% block article -%}{%- endblock %}
 {%- endmark %}

@@ -46,6 +46,8 @@
   {% block headjs %}
   <!-- All JavaScript at the bottom, except for Modernizr which
         enables HTML5 elements & feature detects -->
+    {% set runtime_url = "%s%s" % (paths.code_server, "/playcanvas-latest.dev.js") %}
+    <script src="{{runtime_url}}"></script>
     <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
   {% endblock headjs %}
   {% block endhead %}{% endblock endhead %}
@@ -53,10 +55,10 @@
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
   {% block content %}
   <div id="main" role="main">
-      {% block header -%}
-      {% from "macros.j2" import render_header with context %}
-      {{ render_header() }}
-      {%- endblock %}
+	  {% block header -%}
+	  {% from "macros.j2" import render_header with context %}
+	  {{ render_header() }}
+	  {%- endblock %}
       {% block container %}
       <div id="page-container">
           <section class="content">

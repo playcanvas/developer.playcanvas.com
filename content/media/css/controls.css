@@ -1,0 +1,498 @@
+/* Colours */
+/* Links */
+/* Mixins */
+/* line 2, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpicker {
+  margin: 2px 0px 0px 0px;
+}
+
+/* line 6, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpicker .goog-menu {
+  position: static;
+  padding: 0px;
+}
+
+/* line 11, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpicker .goog-menu-empty {
+  border: none;
+}
+
+/* line 15, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpicker .goog-button {
+  margin: 2px 0px 2px 0px;
+}
+
+/* State: resting. */
+/* line 20, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem {
+  color: #000;
+  font: normal 13px Arial, sans-serif;
+  list-style: none;
+  margin: 0;
+  /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
+  /* padding: 4px 7em 4px 28px; */
+  /*white-space: nowrap;*/
+  padding: 0px 0px 0px 0em;
+  height: 26px;
+}
+
+/* If a menu doesn't have checkable items or items with icons, remove padding. */
+/* line 34, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.goog-menu-nocheckbox .pc-assetpickeritem,
+.goog-menu-noicon .pc-assetpickeritem {
+  padding-left: 12px;
+}
+
+/* line 38, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem .goog-button {
+  float: right;
+  margin: 2px 2px 2px 2px;
+}
+
+/*
+ * If a menu doesn't have items with shortcuts, leave just enough room for
+ * submenu arrows, if they are rendered.
+ */
+/* line 47, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.goog-menu-noaccel .pc-assetpickeritem {
+  padding-right: 20px;
+}
+
+/* line 51, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem-content {
+  color: #222222;
+  font: normal 13px Arial, sans-serif;
+  display: inline-block;
+  margin: 5px 2em 0px 0em;
+  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* State: disabled. */
+/* line 63, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem-disabled .pc-assetpickeritem-accel,
+.pc-assetpickeritem-disabled .pc-assetpickeritem-content {
+  color: #ccc !important;
+}
+
+/* line 66, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem-disabled .pc-assetpickeritem-icon {
+  opacity: 0.3;
+  -moz-opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+/* State: hover. */
+/* line 74, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem-highlight,
+.pc-assetpickeritem-hover {
+  background-color: #d6e9f8;
+  /* Use an explicit top and bottom border so that the selection is visible
+   * in high contrast mode. */
+  /*
+  border-color: #d6e9f8;
+  border-style: dotted;
+  border-width: 1px 0;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  */
+}
+
+/* State: selected/checked. */
+/* line 89, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem-checkbox,
+.pc-assetpickeritem-icon {
+  background-repeat: no-repeat;
+  height: 16px;
+  left: 6px;
+  position: absolute;
+  right: auto;
+  vertical-align: middle;
+  width: 16px;
+}
+
+/* line 99, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.goog-option-selected .pc-assetpickeritem-checkbox,
+.goog-option-selected .pc-assetpickeritem-icon {
+  /* Client apps may override the URL at which they serve the sprite. */
+  background: url(https://ssl.gstatic.com/editor/editortoolbar.png) no-repeat -512px 0;
+}
+
+/* Keyboard shortcut ("accelerator") style. */
+/* line 105, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+.pc-assetpickeritem-accel {
+  color: #999;
+  /* Keyboard shortcuts are untranslated; always left-to-right. */
+  /* @noflip */
+  direction: ltr;
+  left: auto;
+  padding: 0 6px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+/* line 1, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes {
+  margin-top: 10px;
+  border: thin solid #aaa;
+  padding: 1px;
+}
+
+/* line 7, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes table {
+  background: none;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px 2px;
+}
+
+/* line 14, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes .pc-attr-heading {
+  background-color: #8D96AC;
+  color: #E6E8ED;
+  padding: 3px 5px;
+  font-weight: bold;
+}
+
+/* line 21, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+.pc-close-component {
+  background-image: url("http://playcanvas-static.dev/images/closure/close_box.gif");
+  height: 12px;
+  width: 12px;
+  float: right;
+}
+
+/* line 28, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes input {
+  font-family: monospace;
+}
+
+/* line 32, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes input.attributes {
+  font-size: 1em;
+  width: 100%;
+}
+
+/* line 37, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes input.attributes-number {
+  font-size: 1em;
+  min-width: 4em;
+  width: 95%;
+}
+
+/* line 43, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+#control-attributes input[type="range"] {
+  font-size: 1em;
+  width: 75%;
+}
+
+/* line 1, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview {
+  font-size: 13px;
+  border: thin solid #aaa;
+  margin-top: 10px;
+}
+
+/* line 7, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview h2 {
+  margin: 0px;
+  padding: 3px 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #8D96AC;
+}
+
+/* line 16, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-container {
+  height: 300px;
+  overflow-y: scroll;
+  border-top: thin solid #aaa;
+}
+
+/* line 22, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-changeset {
+  border-bottom: thin solid #aaa;
+  height: 50px;
+}
+
+/* line 27, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-current {
+  background-color: #E6E8ED;
+}
+
+/* line 31, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-header {
+  padding: 0px 3px;
+}
+
+/* line 35, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-body {
+  padding: 3px;
+}
+
+/* line 39, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-title {
+  float: left;
+  font-size: 13px;
+  font-family: Courier, monospace;
+  font-weight: bold;
+}
+
+/* line 46, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-buttons {
+  float: right;
+}
+
+/* line 50, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-clear {
+  clear: both;
+}
+
+/* line 54, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-date {
+  float: right;
+  font-size: 10px;
+  font-family: Courier, monospace;
+}
+
+/* line 60, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+.pc-changesetview-id {
+  float: right;
+  font-size: 10px;
+  color: #AAA;
+  font-family: Courier, monospace;
+}
+
+/* line 1, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button {
+  position: relative;
+  /*width: 20ex;*/
+  margin: 0px;
+  padding: 8px 10px;
+  font: normal 13px "Trebuchet MS", Tahoma, Arial, sans-serif;
+  color: #6379a8;
+  background-color: #e6e8ed;
+  cursor: pointer;
+  outline: none;
+  -moz-outline: none;
+}
+
+/* State: disabled. */
+/* line 15, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button-disabled {
+  border-color: #888;
+  color: #888;
+  background-color: #ccc;
+  cursor: default;
+}
+
+/* State: hover. */
+/* line 23, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button-hover {
+  border-color: #434A5C;
+  color: #E6E8ED;
+  background-color: #434A5C;
+}
+
+/* State: active, selected, checked. */
+/* line 32, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button-active,
+.goog-flat-button-selected,
+.goog-flat-button-checked {
+  border-color: #434A5C;
+  color: #E6E8ED;
+  background-color: #434A5C;
+}
+
+/* State: focused. */
+/* line 39, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button-focused {
+  border-color: #E6E8ED;
+}
+
+/* Pill (collapsed border) styles. */
+/* line 44, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button-collapse-right {
+  margin-right: 0;
+}
+
+/* line 48, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+.goog-flat-button-collapse-left {
+  margin-left: 0;
+  border-left: none;
+}
+
+/* line 1, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview {
+  /*
+    width: 100%;
+    font-size: 14px;
+    margin: 4px auto;
+    */
+  height: 580px;
+  background-color: #8d96ac;
+}
+
+/* line 12, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview h2 {
+  color: white;
+  padding: 10px;
+}
+
+/* line 17, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview h2 a {
+  color: white;
+}
+
+/* line 21, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview h2 a:hover {
+  text-decoration: underline;
+}
+
+/* line 26, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-inner {
+  overflow-y: auto;
+  width: 98%;
+  height: 525px;
+  margin: 0px auto;
+}
+
+/* line 33, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview table {
+  background-color: white;
+  width: 100%;
+}
+
+/*
+.pc-listview th {
+    color: #E6E8ED;
+    background-color: $boxout-background-color;
+    height: 0px;
+    padding: 3px;
+    vertical-align: middle;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.pc-listview button {
+}
+
+*/
+/* line 53, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview tr {
+  height: 26px;
+  border-bottom: solid;
+  border-bottom-color: #cccccc;
+  border-bottom-width: 1px;
+}
+
+/* line 60, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview tr:hover {
+  background-color: #e6e8ed;
+}
+
+/* line 64, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview td {
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+/* line 69, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-title-column {
+  width: 33%;
+}
+
+/* line 73, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-date-column {
+  width: 33%;
+}
+
+/* line 77, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-buttons-column {
+  width: 10%;
+}
+
+/*
+.pc-listview-table {
+    width: 100%;
+}
+
+.pc-listview-heading {
+    color: $light_blue;
+    background-color: #8D96AC;
+    background-image: url('http://playcanvas-static.dev/images/icons/32x32/bricks.png');
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    height: 32px;
+    padding: 3px;
+    vertical-align: middle;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+*/
+/* line 98, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-title {
+  padding-left: 36px;
+}
+
+/* line 102, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-item span {
+  display: block;
+  padding-top: 2px;
+}
+
+/* line 107, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-item a {
+  color: #000;
+}
+
+/* line 111, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+.pc-listview-item.goog-control-hover {
+  background-color: #e6e8ed;
+}
+
+/* line 1, ../../../../designer/manos/manos/public/style/src/_toolbar.scss */
+.pc-toolbar {
+  float: left;
+  width: 30%;
+  font: normal 12px Arial, sans-serif;
+}
+
+/* line 7, ../../../../designer/manos/manos/public/style/src/_toolbar.scss */
+.pc-toolbar-middle {
+  float: left;
+  width: 40%;
+  background: #fafafa url("http://playcanvas-static.dev/images/closure/toolbar-bg.png") repeat-x bottom left;
+  border-bottom: 1px solid #d5d5d5;
+  cursor: default;
+  margin: 0;
+  padding: 6px 0px;
+  outline: none;
+  text-align: center;
+  height: 18px;
+}
+
+/* line 20, ../../../../designer/manos/manos/public/style/src/_toolbar.scss */
+.pc-toolbar-middle span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 1, ../../../../designer/manos/manos/public/style/src/_tree.scss */
+#control-tree {
+  border: solid thin #aaa;
+  padding: 1px;
+}
+
+/* line 6, ../../../../designer/manos/manos/public/style/src/_tree.scss */
+#control-tree span {
+  font-size: 0.8em;
+}
+
+/* line 10, ../../../../designer/manos/manos/public/style/src/_tree.scss */
+.pc-tree .goog-tree-icon {
+  background-image: url("../images/tree.png");
+}

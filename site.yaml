@@ -14,7 +14,8 @@ context:
         app:
             version: 0.1.0
         paths:
-            static_server: "http://playcanvas-static.dev"        
+            static_server: "http://playcanvas-static.dev"
+            code_server: "http://playcanvas-static.dev"
         menu:
             -
                 name: Home

@@ -53,56 +53,10 @@ Heres something simple to get started. All this code will do is get a hold of th
 
 Put this script tag after the canvas tag in your index.html file.
 
-        <script type="text/javascript">
-            var canvas;
-            var graphicsDevice
-
-            function render() {
-            // Begin rendering the frame
-            graphicsDevice.updateBegin();
-    
-            // Clear the frame buffer
-            graphicsDevice.clear({
-                color: [1.0, 0.6, 0.0, 1],
-                flags: pc.gfx.ClearFlag.COLOR
-            });
-    
-            // Finish rendering the frame
-            graphicsDevice.updateEnd();
-    
-            // Submit a request to queue up a new animation frame immediately
-            requestAnimFrame(render, canvas);
-        }
-    
-        function main() {
-            // Retrieve the canvas element
-            canvas = document.getElementById("sample_canvas");
-    
-            // Open the log
-            Log.open();
-    
-            // Create the graphics device
-            graphicsDevice = new pc.gfx.Device(canvas);
-            graphicsDevice.setCurrent();
-    
-            // Start the render loop
-            render();
-        }
-        main();
-    </script>
-
-## 5. Load the page
-Now all you have to do is load the page in your browser. For the default settings for XAMPP this means loading up http://localhost/getting-started/ in your web browser.
-
-That's it, you've created your first PlayCanvas application.
-
-Here's the demo running below:
-
-<script src="--http://developer.playcanvas.com/releases/playcanvas-stable.min.js" type="text/javascript"></script>
-<canvas id="sample_canvas" width="600" height="480"></canvas>
+~~~html~~~
 <script type="text/javascript">
     var canvas;
-    var graphicsDevice;
+    var graphicsDevice
 
     function render() {
         // Begin rendering the frame
@@ -110,7 +64,7 @@ Here's the demo running below:
 
         // Clear the frame buffer
         graphicsDevice.clear({
-            color: [1, 0.6, 0, 1],
+            color: [1.0, 0.6, 0.0, 1],
             flags: pc.gfx.ClearFlag.COLOR
         });
 
@@ -135,6 +89,17 @@ Here's the demo running below:
         // Start the render loop
         render();
     }
-
     main();
-</script>
+</script>		
+~~~~~~~
+
+## 5. Load the page
+Now all you have to do is load the page in your browser. For the default settings for XAMPP this means loading up http://localhost/getting-started/ in your web browser.
+
+That's it, you've created your first PlayCanvas application.
+
+Here's the demo running below:
+
+<script src="--http://developer.playcanvas.com/releases/playcanvas-stable.min.js" type="text/javascript"></script>
+<canvas id="sample_canvas" width="600" height="480"></canvas>
+<script type="text/javascript" src="/media/js/tutorials/01/sample.js"></script>
