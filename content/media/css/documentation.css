@@ -205,19 +205,21 @@ a:hover {
   float: left;
   border: 3px double #cccccc;
   margin: 5px;
+  height: 96px;
+  width: 96px;
 }
 
-/* line 26, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 28, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-user-details-box a {
   font-size: 0.6em;
 }
 
-/* line 30, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 32, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-user-details-main {
   display: inline-block;
 }
 
-/* line 34, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 36, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-user-details-extras {
   margin-left: 20px;
   display: inline-block;
@@ -225,12 +227,12 @@ a:hover {
   color: #888888;
 }
 
-/* line 41, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 43, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-list {
   width: 25%;
 }
 
-/* line 45, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 47, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box {
   /* A bordered box with rounded corners top-left and bottom-right, like the PlayCanvas logo */
   border: 2px solid #cccccc;
@@ -240,26 +242,26 @@ a:hover {
   margin-top: 10px;
 }
 
-/* line 52, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 54, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box a {
   margin-bottom: 6px;
 }
-/* line 56, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 58, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box p {
   margin-top: 3px;
   margin-bottom: 3px;
 }
-/* line 61, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 63, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box img {
   margin-right: -6px;
 }
 
-/* line 67, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 69, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box-description {
   font-size: 0.9em;
 }
 
-/* line 71, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 73, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box-extra {
   color: #888888;
   font-size: 0.7em;
@@ -275,6 +277,8 @@ a:hover {
   float: left;
   margin-right: 0;
   width: 950px;
+  width: 946px;
+  /* account for borders */
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -726,7 +730,7 @@ footer a {
   text-align: center;
 }
 
-/* line 30, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 42, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 navigation {
   display: inline;
   float: left;
@@ -738,7 +742,7 @@ navigation {
   overflow-x: hidden;
 }
 
-/* line 33, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 46, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article {
   line-height: 1.2;
   font-size: 16pt;
@@ -753,7 +757,7 @@ article {
 * html article {
   overflow-x: hidden;
 }
-/* line 40, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 53, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article h1 {
   display: inline;
   float: left;
@@ -764,7 +768,7 @@ article h1 {
 * html article h1 {
   overflow-x: hidden;
 }
-/* line 44, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 57, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article h2 {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -777,7 +781,7 @@ article h2 {
 * html article h2 {
   overflow-x: hidden;
 }
-/* line 50, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 63, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article h3 {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -790,7 +794,7 @@ article h3 {
 * html article h3 {
   overflow-x: hidden;
 }
-/* line 56, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 69, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article p {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -803,7 +807,7 @@ article p {
 * html article p {
   overflow-x: hidden;
 }
-/* line 62, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 75, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -816,28 +820,41 @@ article ul {
 * html article ul {
   overflow-x: hidden;
 }
-/* line 67, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article ul li {
   margin-bottom: 2px;
 }
-/* line 72, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 85, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article .codebox {
-  background-color: #f7f7f7;
-  border: 1px solid black;
-  overflow-x: auto;
   display: inline;
   float: left;
   margin-right: 10px;
   width: 670px;
   padding-right: 40px;
+  font-family: courier, monospace;
+  background-color: #f7f7f7;
+  border: 1px solid black;
+  overflow-x: auto;
   padding: 20px;
   margin-left: -2px;
+  font-size: 12px;
 }
 /* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html article .codebox {
   overflow-x: hidden;
 }
-/* line 74, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 87, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article .codebox figcaption {
   display: none;
+}
+/* line 92, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+article code {
+  font-family: courier, monospace;
+  background-color: #f7f7f7;
+  font-size: 0.9em;
+}
+
+/* line 98, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+.pc-article-padding {
+  height: 50px;
 }

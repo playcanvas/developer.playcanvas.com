@@ -7,6 +7,7 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.tagger.TaggerPlugin
+    - hyde.ext.plugins.grouper.GrouperPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
 context:
@@ -17,14 +18,42 @@ context:
             static_server: "http://playcanvas-static.dev"
             code_server: "http://playcanvas-static.dev"
         menu:
-            -
-                name: Home
-                description: Home Page
-                css_class: home
-                type: page
-                url: index.html
-
+            - title: Home
+              url: index.html
+            - title: Documentation
+              url: documentation/index.html
+            - title: Tutorials
+              url: tutorials/index.html
+            
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
-    author: Lakshmi Vyasarajan
+    author: PlayCanvas
+
+sorter:
+  name: 
+    attr: 
+      - name
+    filters:
+      source_file.kind: html
+  index:
+    attr: 
+      - meta.index
+    filters:
+      source_file.kind: html
+
+grouper:
+  level: 
+    sorter: index
+    description: Difficulty levels for tutorials
+    groups: 
+      - name: beginner
+        description: Tutorials for Beginners
+      - name: intermediate
+        description: Tutorials for Intermediates
+      - name: advanced
+        description: Tutorials for Advanced game developers 
+
+tagger:
+  sorter: name
+    

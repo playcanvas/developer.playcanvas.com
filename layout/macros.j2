@@ -10,6 +10,18 @@
 </article>
 {% endmacro %}
 
+{% macro render_main_menu() -%}
+			<navigation>
+				<ul>
+			 	{% for item in menu -%}
+			 	<li>
+			 		<a href="{{ content_url(item.url) }}">{{ item.title }}</a>
+			 	</li>
+			 	{% endfor -%}
+			 	</ul>
+			</navigation>
+{%- endmacro %}
+
 {% macro render_header() -%}
             <div id="header" class="pc-header">
                 {% set logo_url = "%s%s" % (paths.static_server, "/images/playcanvas-flat-40.png") %}
