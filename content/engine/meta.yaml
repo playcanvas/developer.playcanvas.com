@@ -1,2 +1,2 @@
-extends: tutorial.j2
+extends: article.j2
 default_block: article

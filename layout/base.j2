@@ -61,6 +61,10 @@
 	  {%- endblock %}
       {% block container %}
       <div id="page-container">
+          <section class="left">
+          {% block left %}
+          {% endblock left %}
+          </section>
           <section class="content">
           {% block main %}
           {% endblock main %}

@@ -730,7 +730,7 @@ footer a {
   text-align: center;
 }
 
-/* line 42, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 46, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 navigation {
   display: inline;
   float: left;
@@ -741,8 +741,52 @@ navigation {
 * html navigation {
   overflow-x: hidden;
 }
+/* line 49, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation li {
+  list-style-type: none;
+  padding: 5px 5px 5px 5px;
+}
+/* line 56, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation li
+.pc-topic {
+  padding: 5px 0px 5px 5px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #e9ecee;
+  background-color: #f7f7f7;
+}
+/* line 63, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-topic:hover {
+  background-color: #dedede;
+}
+/* line 67, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-subtopic {
+  padding: 5px 0px 5px 10px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #e9ecee;
+  background-color: white;
+}
+/* line 74, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-subtopic:hover {
+  background-color: #e6e6e6;
+}
+/* line 78, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-current {
+  background-color: #dedede;
+}
+/* line 81, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-current a {
+  color: black;
+}
+/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-current a:hover {
+  text-decoration: none;
+}
+/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+navigation .pc-current:hover {
+  background-color: #c4c4c4;
+}
 
-/* line 46, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article {
   line-height: 1.2;
   font-size: 16pt;
@@ -757,7 +801,7 @@ article {
 * html article {
   overflow-x: hidden;
 }
-/* line 53, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 102, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article h1 {
   display: inline;
   float: left;
@@ -768,7 +812,7 @@ article h1 {
 * html article h1 {
   overflow-x: hidden;
 }
-/* line 57, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 106, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article h2 {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -781,7 +825,7 @@ article h2 {
 * html article h2 {
   overflow-x: hidden;
 }
-/* line 63, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 112, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article h3 {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -794,7 +838,7 @@ article h3 {
 * html article h3 {
   overflow-x: hidden;
 }
-/* line 69, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 118, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article p {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -807,7 +851,7 @@ article p {
 * html article p {
   overflow-x: hidden;
 }
-/* line 75, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 124, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -820,11 +864,11 @@ article ul {
 * html article ul {
   overflow-x: hidden;
 }
-/* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 129, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article ul li {
   margin-bottom: 2px;
 }
-/* line 85, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 134, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article .codebox {
   display: inline;
   float: left;
@@ -843,18 +887,18 @@ article .codebox {
 * html article .codebox {
   overflow-x: hidden;
 }
-/* line 87, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 136, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article .codebox figcaption {
   display: none;
 }
-/* line 92, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 141, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 article code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
   font-size: 0.9em;
 }
 
-/* line 98, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 147, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-article-padding {
   height: 50px;
 }

@@ -17,19 +17,14 @@ context:
         paths:
             static_server: "http://playcanvas-static.dev"
             code_server: "http://playcanvas-static.dev"
-        menu:
-            - title: Home
-              url: index.html
-            - title: Documentation
-              url: documentation/index.html
-            - title: Tutorials
-              url: tutorials/index.html
             
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
     author: PlayCanvas
-
+    analytics:
+      id: aaa
+        
 sorter:
   name: 
     attr: 
@@ -53,7 +48,27 @@ grouper:
         description: Tutorials for Intermediates
       - name: advanced
         description: Tutorials for Advanced game developers 
-
+  topic:
+    sorter: index
+    description: Overview topics to include in navigation menu
+    groups: 
+      - name: engine
+        description: Documentation about using the PlayCanvas Engine to write runtime code
+      - name: tools
+        description: Documentation about how to use the PlayCanvas tools to create content and build applications
+  subtopic: 
+    sorter: index
+    description: Subtopics for each topic
+    groups:
+      - name: tutorials
+        description: Step-by-step tutorials
+      - name: designer
+        description: How to get the most out of the PlayCanvas Designer application 
+      - name: code
+        description: How to get your code into PlayCanvas, version control integration and local code server.
+      - name: art
+        description: Exporting art assets into the PlayCanvas Pipeline
+      
 tagger:
   sorter: name
     
