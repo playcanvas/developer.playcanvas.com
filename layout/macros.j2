@@ -13,7 +13,7 @@
 {% macro render_main_menu() -%}
 			<navigation>
 				<ul>
-                <li class="pc-topic"><a href="/">home</a></li>
+                <li class="pc-home"><a href="/">home</a></li>
                 {% for grp, res_walker in site.content.walk_topic_groups() %}
                     {% for res in res_walker %}
                         {% if resource == res %}
@@ -25,7 +25,7 @@
                             <li class="pc-topic {{ current_class }}" ><a href="{{ res.full_url }}">{{ res.meta.title }}</a></li>
                         {% else %}
                             <li class="pc-subtopic {{ current_class }}" ><a href="{{ res.full_url }}">{{ res.meta.title }}</a></li>
-                        {% endif %}
+                        {% endif %}                        
                     {% endfor %}
                     </ul>
 			    {% endfor %}

@@ -13,11 +13,14 @@ plugins:
 context:
     data:
         app:
-            version: 0.1.0
+          version: 0.1.0
         paths:
-            static_server: "http://playcanvas-static.dev"
-            code_server: "http://playcanvas-static.dev"
-            
+          static_server: "http://playcanvas-static.dev"
+          code_server: "http://playcanvas-static.dev"
+        test:
+          downloads: downloads.yaml
+    providers:
+      downloads: downloads.yaml 
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
@@ -56,6 +59,8 @@ grouper:
         description: Documentation about using the PlayCanvas Engine to write runtime code
       - name: tools
         description: Documentation about how to use the PlayCanvas tools to create content and build applications
+      - name: downloads
+        description: Download latest and legacy builds of the PlayCanvas engine
   subtopic: 
     sorter: index
     description: Subtopics for each topic
