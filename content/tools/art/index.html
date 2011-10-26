@@ -26,7 +26,7 @@ The Asset Tools are a set of programs that can:
 * Autodesk Maya 2010 or greater.
 * FBX plugin 2010.2.1 or greater.
 * Google Chrome 12.0.xxx.xx or greater.
-* Latest video driver for your graphics card. Check by visiting amd.com or nvidia.com (or the web site of your card manufacturer). If your graphics card driver is deemed ‘too old’ by Chrome, 3D rendering will be disabled. You can check this status by visiting the URL about:gpu in Google Chrome and verifying the line: ‘WebGL: Hardware accelerated’.
+* Latest video driver for your graphics card. Check by visiting amd.com or nvidia.com (or the web site of your card manufacturer). If your graphics card driver is deemed 'too old' by Chrome, 3D rendering will be disabled. You can check this status by visiting the URL about:gpu in Google Chrome and verifying the line: 'WebGL: Hardware accelerated'.
 
 ## Known Issues
 
@@ -43,13 +43,13 @@ The PlayCanvas Asset Tools uninstaller does not delete temporary files creating 
 
 ### Install the PlayCanvas 3DS Max Script
 
-This step is only necessary if you have 3DS Max installed and you want to integrate the PlayCanvas Visualizer into Max’s menu.
+This step is only necessary if you have 3DS Max installed and you want to integrate the PlayCanvas Visualizer into Max's menu.
 
 Locate the file playcanvas.ms in <PLAYCANVAS_INSTALL_DIR>\tools\3dsmax and copy this to the stdplugins\stdscripts folder in your 3DS Max install.
 
 ### Install the PlayCanvas Maya Script
 
-This step is only necessary if you have Maya installed and you want to integrate the PlayCanvas Visualizer into Maya’s menu.
+This step is only necessary if you have Maya installed and you want to integrate the PlayCanvas Visualizer into Maya's menu.
 
 Locate the files playcanvas.py and userSetup.py in <PLAYCANVAS_INSTALL_DIR>\tools\maya and copy them to the <YOUR_USER_PROFILE>\Documents\Maya\scripts folder. If you already have a userSetup.py file (that executes Python statements every time you start Maya), you simply need to merge the contents of the PlayCanvas file into your existing file.
 
@@ -67,7 +67,7 @@ Once you have installed the PlayCanvas Asset Tools, you are almost ready to Visu
 
 ### Starting the Visualizer HTTP Server
 
-Run the ‘Start Visualizer Server’ shortcut in the PlayCanvas program group in the Start Menu. This will invoke a DOS box running a local HTTP server which serves the Visualizer web application and scenes exported from 3DS Max to the web browser. The server will continue to run until the DOS box is forcibly closed. But you must ensure it is running as long as you want 3DS Max or Maya to be sending scenes to Visualizer.
+Run the 'Start Visualizer Server' shortcut in the PlayCanvas program group in the Start Menu. This will invoke a DOS box running a local HTTP server which serves the Visualizer web application and scenes exported from 3DS Max to the web browser. The server will continue to run until the DOS box is forcibly closed. But you must ensure it is running as long as you want 3DS Max or Maya to be sending scenes to Visualizer.
 
 ### Visualizing your First Scene
 
@@ -114,7 +114,7 @@ Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas m
 
 ##### Self-Illumination
 
-Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel’s value.  Anything else will increase a pixel’s luminosity.
+Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel's value.  Anything else will increase a pixel's luminosity.
 
 ##### Opacity
 
@@ -124,7 +124,7 @@ If the material has an opacity map, it will override any alpha channel that may 
 
 ##### Bump
 
-Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the ‘Amount’ value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the realtime rendering more closely.
+Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the realtime rendering more closely.
 
 There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
 
@@ -136,7 +136,7 @@ Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the 
 
 Now, lighting in PlayCanvas will be consistent.
 
-If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as ‘higher’ than the darker areas.
+If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
 
 ##### Reflection
 
@@ -144,7 +144,7 @@ Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas mat
 
 [TODO]
 
-Sphere mapping is one of the cheapest, least ‘convincing’ forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
+Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
 
 #### Meshes
 
