@@ -6,19 +6,14 @@ In order to build the site locally you will need to install hyde.
 
 In your python environment run
 
-~~~sh~~~
-pip install hyde
-~~~~~~~~
+`pip install hyde`
 
 Then to generate the site (-r to re-generate)
 
-~~~sh~~~
-hyde gen [-r]
-~~~~~~~~
+`hyde gen [-r]`
  
 and finally server it on localhost:8080
 
-~~~sh~~~
-hyde serve
-~~~~~~~~
+`hyde serve`
+
 
