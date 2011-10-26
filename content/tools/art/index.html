@@ -32,14 +32,14 @@ The Asset Tools are a set of programs that can:
 
 All meshes created in 3DS Max must have a material assigned for them to export properly.
 Google Chrome is currently a little flaky when being launched from 3DS Max. It is recommended that you close your Visualizer tab once you have finished visualizing your scene so that only one instance is running the next time you invoke Visualizer.
-The PlayCanvas Asset Tools uninstaller does not delete temporary files creating by the tools. These can be found in C:\Users\<USERNAME>\AppData\Local\PlayCanvas on Windows Vista and Windows 7.  On Windows XP, these are found at C:\Documents and Settings\<USERNAME>\Local Settings\Application Data\PlayCanvas. All files found here can be safely deleted at any time.
+The PlayCanvas Asset Tools uninstaller does not delete temporary files creating by the tools. These can be found in `C:\Users\<USERNAME>\AppData\Local\PlayCanvas` on Windows Vista and Windows 7.  On Windows XP, these are found at `C:\Documents and Settings\<USERNAME>\Local Settings\Application Data\PlayCanvas`. All files found here can be safely deleted at any time.
 
 ## Installing the PlayCanvas Asset Tools
 
 * Download playcanvas-asset-tools-x.x.x.msi.
 * Run the installer and step through it as shown below:
 
-<video width="320" height="240" controls="controls">
+<video width="640" height="480" controls="controls">
   <source src="/media/video/artist_guide/tools_install.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
@@ -48,19 +48,22 @@ The PlayCanvas Asset Tools uninstaller does not delete temporary files creating 
 
 This step is only necessary if you have 3DS Max installed and you want to integrate the PlayCanvas Visualizer into Max's menu.
 
-Locate the file playcanvas.ms in <PLAYCANVAS_INSTALL_DIR>\tools\3dsmax and copy this to the stdplugins\stdscripts folder in your 3DS Max install.
+Locate the file playcanvas.ms in `<PLAYCANVAS_INSTALL_DIR>\tools\3dsmax` and copy this to the `stdplugins\stdscripts` folder in your 3DS Max install.
 
 ### Install the PlayCanvas Maya Script
 
 This step is only necessary if you have Maya installed and you want to integrate the PlayCanvas Visualizer into Maya's menu.
 
-Locate the files playcanvas.py and userSetup.py in <PLAYCANVAS_INSTALL_DIR>\tools\maya and copy them to the <YOUR_USER_PROFILE>\Documents\Maya\scripts folder. If you already have a userSetup.py file (that executes Python statements every time you start Maya), you simply need to merge the contents of the PlayCanvas file into your existing file.
+Locate the files playcanvas.py and userSetup.py in `<PLAYCANVAS_INSTALL_DIR>\tools\maya` and copy them to the `<YOUR_USER_PROFILE>\Documents\Maya\scripts` folder. If you already have a userSetup.py file (that executes Python statements every time you start Maya), you simply need to merge the contents of the PlayCanvas file into your existing file.
 
 ## Visualizer
 
 The PlayCanvas Visualizer is useful for previewing individual models and animations. Naturally, it runs in the browser and appears as follows:
 
-[TODO]
+<video width="640" height="480" controls="controls">
+  <source src="/media/video/artist_guide/visualizer.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 It is possible to invoke Visualizer directly from the modelling application, allowing fast iteration of PlayCanvas content generation. This guide will step you through the running and operation of Visualizer.
 
