@@ -53,13 +53,14 @@ def write(results, output):
     write_entry(f, "latest", "playcanvas-latest.js")
     write_entry(f, "latest", "playcanvas-latest.min.js")
     
-    f.write("current:\n")
-    write_entry(f, results[0]['version'], results[0]['url'])
-    write_entry(f, results[1]['version'], results[1]['url'])
+    if len(results) > 1:
+        f.write("current:\n")
+        write_entry(f, results[0]['version'], results[0]['url'])
+        write_entry(f, results[1]['version'], results[1]['url'])
     
-    f.write("versioned:\n")
-    for result in results[2:]:
-        write_entry(f, result['version'], result['url'])
+        f.write("versioned:\n")
+        for result in results[2:]:
+            write_entry(f, result['version'], result['url'])
 
     f.close()
     
