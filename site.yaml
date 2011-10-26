@@ -20,7 +20,8 @@ context:
         test:
           downloads: downloads.yaml
     providers:
-      downloads: downloads.yaml 
+      downloads: downloads.yaml
+      version: version.yaml
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00

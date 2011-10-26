@@ -36,6 +36,7 @@ def run(path, output):
     
     results.sort(key = lambda x: StrictVersion(x['version']), reverse=True)
     
+    print(results)
     write(results, output)
 
 def write_entry(f, version, url):
