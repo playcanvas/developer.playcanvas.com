@@ -59,6 +59,7 @@ def write(results, output):
         write_entry(f, results[0]['version'], results[0]['url'])
         write_entry(f, results[1]['version'], results[1]['url'])
     
+    if len(results) > 2:
         f.write("versioned:\n")
         for result in results[2:]:
             write_entry(f, result['version'], result['url'])
