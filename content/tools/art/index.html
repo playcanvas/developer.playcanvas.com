@@ -60,10 +60,7 @@ Locate the files playcanvas.py and userSetup.py in `<PLAYCANVAS_INSTALL_DIR>\too
 
 The PlayCanvas Visualizer is useful for previewing individual models and animations. Naturally, it runs in the browser and appears as follows:
 
-<video width="640" height="480" controls="controls">
-  <source src="/media/video/artist_guide/visualizer.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+![Visualizer](/media/images/artist_guide/visualizer.jpg)
 
 It is possible to invoke Visualizer directly from the modelling application, allowing fast iteration of PlayCanvas content generation. This guide will step you through the running and operation of Visualizer.
 
@@ -86,7 +83,10 @@ Now you should be ready to view your first scene in the PlayCanvas Visualizer! F
 
 These steps are executed in the video below:
 
-[TODO]
+<video width="640" height="480" controls="controls">
+  <source src="/media/video/artist_guide/visualizer.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 ### Visualizer Controls
 
@@ -134,11 +134,11 @@ Assigning a Normal Bump map to this slot enables normal mapping. Note that, by d
 
 There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
 
-[TODO]
+![Normal map](/media/images/artist_guide/wall_norm.jpg)
 
 Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
 
-[TODO]
+![Normal map with Y component flipped](/media/images/artist_guide/wall_norm_yflip.jpg)
 
 Now, lighting in PlayCanvas will be consistent.
 
@@ -148,7 +148,7 @@ If the assigned normal map has an alpha channel, it will be treated as a paralla
 
 Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
 
-[TODO]
+![Sphere map](/media/images/artist_guide/mountains_sphere.jpg)
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
 
