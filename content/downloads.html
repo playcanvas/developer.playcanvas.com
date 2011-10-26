@@ -14,26 +14,26 @@ index: 3
 This is the current stable build. 
 
 {{ site.context.downloads.current[0].version }} | 
-<a href="{{ site.context.downloads.current[0].url }}">compressed</a> | 
-<a href="{{ site.context.downloads.current[1].url }}">uncompressed</a>
+<a href="{{ site.context.downloads.current[0].compressed }}">compressed</a> | 
+<a href="{{ site.context.downloads.current[0].uncompressed }}">uncompressed</a>
 
 ## Latest
 
 This is the very latest code from our build servers, it could be broken and will generally be quite unstable
 
 latest |
-<a href="{{ site.context.downloads.latest[0].url }}">compressed</a> |
-<a href="{{ site.context.downloads.latest[1].url }}">uncompressed</a>
+<a href="{{ site.context.downloads.latest[0].compressed }}">compressed</a> |
+<a href="{{ site.context.downloads.latest[0].uncompressed }}">uncompressed</a>
 
-## Versions
+## Legacy
 
 Here are all the previous legacy versions
 <ul>
 {% for download in site.context.downloads.versioned -%}
     <li>
         {{ download.version }} | 
-        <a href="{{ download.url }}">compressed</a> |
-        <a href="{{ download.url }}">uncompressed</a>
+        <a href="{{ download.compressed }}">compressed</a> |
+        <a href="{{ download.uncompressed }}">uncompressed</a>
     </li>
 {%- endfor %}
 </ul>

@@ -18,6 +18,7 @@ def get_file_list(path):
 
 def run(path, output):
     results = []
+    d = {}
     
     files = get_file_list(path)
     
@@ -29,40 +30,52 @@ def run(path, output):
             version = m.group(1)
             if version in ['stable', 'latest']:
                 continue
-            results.append({
-                "version": version,
-                "url": file
-            })
+            if not version in d:
+                d[version] = []
+            d[version].append(file)
+            
     
     results.sort(key = lambda x: StrictVersion(x['version']), reverse=True)
     
-    print(results)
-    write(results, output)
+    write(d, output)
 
-def write_entry(f, version, url):
-    s = """  - version: %s\n    url: http://code.playcanvas.com/%s\n"""
+def write_entry(f, version, compressed, uncompressed):
+    s = """  - version: %s\n""" % (version)
+
+    s = s + "    compressed: 'http://code.playcanvas.com/%s'\n    uncompressed: 'http://code.playcanvas.com/%s'\n" % (compressed, uncompressed)
+    f.write(s)
+
+def get_compressed(urls):
+    compressed = [url for url in urls if url.find(".min.") >=0]
+    if compressed:
+        return compressed[0]
+    else:
+        return None
+
+def get_uncompressed(urls):
+    uncompressed = [url for url in urls if url.find(".min.") < 0]
+    if uncompressed:
+        return uncompressed[0]
+    else:
+        return None
     
-    f.write(s % (version, url))
-        
-def write(results, output):
+def write(d, output):
     f = open(output, "w")
     
-    s = """  - version: %s
-    url: http://code.playcanvas.com/%s"""
-    
     f.write("latest:\n")
-    write_entry(f, "latest", "playcanvas-latest.js")
-    write_entry(f, "latest", "playcanvas-latest.min.js")
+    write_entry(f, "latest", "playcanvas-latest.min.js", "playcanvas-latest.js")
     
-    if len(results) > 1:
+    versions = d.keys()
+    versions.sort(key = StrictVersion, reverse=True)
+    
+    if versions:
         f.write("current:\n")
-        write_entry(f, results[0]['version'], results[0]['url'])
-        write_entry(f, results[1]['version'], results[1]['url'])
-    
-    if len(results) > 2:
-        f.write("versioned:\n")
-        for result in results[2:]:
-            write_entry(f, result['version'], result['url'])
+        write_entry(f, versions[0], get_compressed(d[versions[0]]), get_uncompressed(d[versions[0]])) 
+
+    if len(versions) > 1:
+        f.write("versioned:\n")    
+        for version in versions[1:]:
+            write_entry(f, version, get_compressed(d[version]), get_uncompressed(d[version]))
 
     f.close()
     
