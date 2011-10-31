@@ -46,7 +46,7 @@
   {% block headjs %}
   <!-- All JavaScript at the bottom, except for Modernizr which
         enables HTML5 elements & feature detects and the playcanvas runtime -->
-    {% set runtime_url = "%s%s" % (paths.code_server, "/playcanvas-latest.dev.js") %}
+    {% set runtime_url = "%s%s" % (paths.code_server, "/playcanvas-latest.js") %}
     <script src="{{runtime_url}}"></script>
     <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
   {% endblock headjs %}
