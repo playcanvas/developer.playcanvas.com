@@ -1,4 +1,5 @@
 var application;
+
 pc.script.main(function main () {
     // Get the canvas element from the document
     var canvas = document.getElementById("sample_canvas");
@@ -13,7 +14,7 @@ pc.script.main(function main () {
 });
 
 function createCamera(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     context.systems.camera.createComponent(entity, {
         fov: 45,
         activate: true,
@@ -28,7 +29,7 @@ function createCamera(context) {
 }
 
 function createModel(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     var data = {
         file: {
             url: "/media/models/teapot/teapot.json"
@@ -44,7 +45,7 @@ function createModel(context) {
 }
 
 function createLight(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     context.systems.directionallight.createComponent(entity, {
         enable: true,
         color: 0xffffff

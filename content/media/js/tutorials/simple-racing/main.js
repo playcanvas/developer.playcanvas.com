@@ -23,7 +23,7 @@ pc.script.main( function main() {
  * - Camera - The camera component 
  */
 function createCamera(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     
     context.systems.camera.createComponent(entity, {
         fov: 60,
@@ -39,7 +39,7 @@ function createCamera(context) {
 }
 
 function createLight(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     var rotation = pc.math.mat4.makeRotate(45.0, [1,0,0]);
     
     entity.setLocalTransform(rotation);
@@ -53,7 +53,7 @@ function createLight(context) {
 }
 
 function createCar(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     var translate = pc.math.mat4.makeTranslate(0,0,12);
     var rotate = pc.math.mat4.makeRotate(Math.PI / 2, [0,1,0]);
     entity.setLocalTransform(pc.math.mat4.multiply(translate, rotate));
@@ -78,7 +78,7 @@ function createCar(context) {
 }
 
 function createRoad(context) {
-    var entity = context.manager.create(pc.fw.Entity);
+    var entity = new pc.fw.Entity();
     
     var data = {
         file: {
