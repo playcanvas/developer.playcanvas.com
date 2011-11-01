@@ -82,7 +82,9 @@ Finally, let's create the light:
 * Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
 * Change the 'Name' field of the header component to 'Light'.
 * Select the new light entity in the Pack Explorer to activate the Attribute Editor.
-* In the Attribute Editor, set 'Transform: Rotate:' to -30, 0, 30.
+* Select 'New Component' from the 'Component' menu.
+* Select 'directionallight' from the list and hit OK. This creates a directional light pointing down the negative Y axis.
+* In the Attribute Editor, set 'Transform: Rotate:' to -30, 0, 30 to reorient the light.
 
 You should now have someone similar to the following in the 3D View:
 
@@ -92,3 +94,53 @@ You should now have someone similar to the following in the 3D View:
 
 From Designer, you can quickly preview your work at any time. To do this, press the play button on Designer's toobar. This will open a new tab and fire up your embryonic web app. Based on the steps above, you should see something similar to what is shown below:
 
+<img alt="Cube in engine" width="640" src="/media/images/platform/designer_cube_preview.jpg"></img>
+
+### Scripting Entities
+
+So far, we've managed to render a cube. Now, let's animate it!
+
+The real power and versatility of PlayCanvas comes from the ability to assign scripted behaviour to individual entities. This is done by assigning a script component to an entity and then specifying the Javascript file that executes in relation to that entity. In order to get the cube to spin, we need to write some code that executes every frame, rotating the cube on its vertical axis by a small amount at a time.
+
+Open your editor of choice and add the following to a file called 'spinner.js':
+
+~~~html~~~
+pc.script.create("spinning_cube", function (context) {
+
+    var Spinner = function (entity) {
+        // Cache the entity that this script instance affects
+        this.entity = entity;
+    };
+
+    Spinner.prototype.update = function (dt) {
+        // Retrieve the transformation matrix of the entity
+        var transform = this.entity.getLocalTransform();
+
+        // Create rotation matrix of 1 degree around the y axis
+        var angle = Math.PI / 180.0; 
+        var axis = pc.math.vec3.create(0, 1, 0);
+        var rotate = pc.math.mat4.makeRotate(angle, axis);
+
+        // Pre-multiply the rotation against the entity xform
+        pc.math.mat4.multiply(transform, rotate, transform);
+    };
+
+    return Spinner;
+});
+~~~~~~~
+
+As you can no doubt see from the code and comments, once assigned, this script will cause any entity to rotate around the world space Y axis about its local origin. But how do you assign your spinner.js script to the cube entity? While developing code, it is best to serve it from a web server running local on your computer. This allows you to edit, save and reload your PlayCanvas web app quickly, speeding up development. To do this, follow these steps:
+
+* Select the entity called 'Cube' in the Pack Explorer.
+* Select 'New Component' from the 'Component' menu.
+* Select 'script' from the list and hit OK.
+* In the Attribute Editor, set the URL attribute of the script component to 'spinner.js'.
+* Select 'Save' from the 'File' menu.
+
+If you were to re-run the pack again, the browser would attempt to read the script from `http://localhost:51000/spinner.js`. Therefore, you need to start a local web server in the same folder as spinner.js. A simple way to do this is with Python. If you install Python, you should be able to invoke the following command from the command line:
+
+`python -m SimpleHTTPServer 51000`
+
+Remember, the server must be started from the same location as spinner.js.
+
+With that done, you can select the play button from the toolbar once again. This time, you should see your cube rotating on the spot.
