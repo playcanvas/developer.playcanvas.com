@@ -3,6 +3,9 @@ title: Walk Through
 description: 
 tags:
     - section
+topic: tools
+subtopic: getting started
+index: 3
 ---
 
 # Getting Started
@@ -96,6 +99,8 @@ From Designer, you can quickly preview your work at any time. To do this, press 
 
 <img alt="Cube in engine" width="640" src="/media/images/platform/designer_cube_preview.jpg"></img>
 
+Once you are done with previewing your pack, you can switch back to Designer and select the stop button (located just to the immediate right of the play button on the toolbar).
+
 ### Scripting Entities
 
 So far, we've managed to render a cube. Now, let's animate it!
@@ -105,7 +110,7 @@ The real power and versatility of PlayCanvas comes from the ability to assign sc
 Open your editor of choice and add the following to a file called 'spinner.js':
 
 ~~~javascript~~~
-pc.script.create("spinning_cube", function (context) {
+pc.script.create("spinner", function (context) {
 
     var Spinner = function (entity) {
         // Cache the entity that this script instance affects
@@ -129,7 +134,7 @@ pc.script.create("spinning_cube", function (context) {
 });
 ~~~~~~~
 
-As you can no doubt see from the code and comments, once assigned, this script will cause any entity to rotate around the world space Y axis about its local origin. But how do you assign your spinner.js script to the cube entity? While developing code, it is best to serve it from a web server running local on your computer. This allows you to edit, save and reload your PlayCanvas web app quickly, speeding up development. To do this, follow these steps:
+As you can no doubt see from the code and comments, once assigned, this script will cause any entity to rotate around the world space Y axis about its local origin. But how do you assign your spinner.js script to the cube entity? Simply follow these steps:
 
 * Select the entity called 'Cube' in the Pack Explorer.
 * Select 'New Component' from the 'Component' menu.
@@ -137,7 +142,7 @@ As you can no doubt see from the code and comments, once assigned, this script w
 * In the Attribute Editor, set the URL attribute of the script component to 'spinner.js'.
 * Select 'Save' from the 'File' menu.
 
-If you were to re-run the pack again, the browser would attempt to read the script from `http://localhost:51000/spinner.js`. Therefore, you need to start a local web server in the same folder as spinner.js. A simple way to do this is with Python. If you install Python, you should be able to invoke the following command from the command line:
+If you were to re-run the pack now, the browser would attempt to read the script from `http://localhost:51000/spinner.js`. By default, the PlayCanvas engine will try to load scripts from a web server running locally on your computer. This allows you to edit, save and reload your PlayCanvas web app quickly, speeding up development. A simple way to do run a local web server is to use Python. If you install Python, you should be able to invoke the following command from the command line:
 
 `python -m SimpleHTTPServer 51000`
 
