@@ -1,0 +1,90 @@
+---
+title: Walk Through
+description: 
+tags:
+    - section
+---
+
+# Getting Started
+
+## Setting Up your Profile
+
+Since you are reading this, you are already logged in! Currently, PlayCanvas accounts use Google OpenID for authentication, so your GMail address or Google Apps address is what we tie your PlayCanvas profile to. In future, we will expand the service to support other OpenID providers.
+
+After logging in for the first time, you will be asked to set your name, your username (that determines the URL to your public profile) and your e-mail address. Once you have set this information, you can always change it by clicking on the 'account' link in the top right navbar.
+
+PlayCanvas Platform accounts support [Gravatar](http://en.gravatar.com/). Gravatar allows you to specify an avatar image once, and this can then be reused across the many sites that support it. Obviously, this is an optional step, but it does allow you to personalize your profile a little.
+
+So your profile page displays your Gravatar image, your name, your username and the date you signed up. But it also lists all of the projects which you own or contribute to. Top level projects in PlayCanvas Platform as called 'Depots'. Initially, there will not be any listed, so to get started, let's add a new one!
+
+## Creating a New Project
+
+On your profile page, select the 'add new' link. This takes you to the 'Create new depot' page where you set the details of your new project: 
+
+* Name - The name is used to build the URL for your project. For example, if user 'joebloggs' created a depot called 'spacewar', the depot can be found at http://platform.playcanvas.com/joebloggs/spacewar
+* Description - A short description of your project that will appear on the main depot page.
+* Website - The site associated with your project. Using the example above, this could be http://www.spacewaregame.com/
+* Privacy - The depot visibility. By default, new depots are private (only visible to yourself) but deselecting this option allows others to browse the depot.
+
+On confirming the new depot details, you are taken to the depot home page.
+
+## Adding Collaborators
+
+PlayCanvas is all about collaborative development! Once you have a new depot, you can start adding additional team members and give them access rights. From the depot home page, select 'Settings'. You'll see the fields that you filled in when you created the depot, but additionally there is a section named 'Collaborators'. To add a new team member, enter the e-mail address they use to access PlayCanvas Platform. The access levels are:
+
+* Read - The collaborator can load, run and export the contents of the depot.
+* Write - In addition to read privileges, the collaborator can edit and save to the depot.
+* Administrator - In addition to write privileges, the collaborator can modify the settings of the depot.
+
+Once you have assigned a permission, select 'Add' and the depot will be added to the list of depots on the new collaborator's profile page.
+
+## A Simple Example: Spinning Cube
+
+Now we're ready to build a simple 3D web app: a spinning cube!
+
+The first thing to do is create a new pack. A pack represents the data required to bootstrap the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one pack. Therefore, on the depot home page select the 'packs' tab and then select 'New Pack' at the bottom of the pack lister. This opens a new browser tab and fires up the visual editor: PlayCanvas Designer.
+
+Before you can begin editing, you must name the pack. Let's call this pack 'cube'.
+
+### Entities and Components
+
+A PlayCanvas pack is effectively a collection of 'things' that make up your app. We call these things 'entities' and can represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. These entities are shown in the 'Pack Explorer' panel in Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
+
+Entities are built from components. A component powers an entity with a particular piece of functionality. For example, a component can add a graphical model to an entity, it can animate the model, it can add a light source to an entity, it can add an audio source, and so the list goes on.
+
+For our spinning cube experiment, we will need 3 entities:
+
+* A cube.
+* A camera (to view the cube).
+* A light (to give some definition to the cube).
+
+Here are the steps to create the cube:
+
+* Select the root node 'cube' in the Pack Explorer.
+* Select 'New Entity' from the 'Entity' menu. This creates a new child entity of 'cube' in the Pack Explorer.
+* Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
+* Change the 'Name' field of the header component to 'Cube'.
+* Set the 'Description' field of the header component to 'A spinning cube'.
+* Select 'New Component' from the 'Component' menu.
+* Select 'primitive' from the list and hit OK. This creates a 2x2x2 unit box primitive at the location of the entity (the world space origin).
+
+Now let's create the camera:
+
+* Select the root node 'cube' in the Pack Explorer.
+* Select 'New Camera Entity' from the 'Entity' menu. This creates a new child camera entity of 'cube' in the Pack Explorer.
+* Select the new camera entity in the Pack Explorer to activate the Attribute Editor.
+* In the Attribute Editor, set 'Transform: Translate:' to 0, 0, 5.
+
+Finally, let's create the light:
+
+* Select the root node 'cube' in the Pack Explorer.
+* Select 'New Entity' from the 'Entity' menu. This creates a new child entity of 'cube' in the Pack Explorer.
+* Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
+* Change the 'Name' field of the header component to 'Light'.
+* Select the new light entity in the Pack Explorer to activate the Attribute Editor.
+* In the Attribute Editor, set 'Transform: Rotate:' to -30, 0, 30.
+
+You should now have someone similar to the following in the 3D View:
+
+![Cube in 3D View](/content/media/images/platform/designer_cube.jpg)
+
