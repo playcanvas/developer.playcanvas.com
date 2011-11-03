@@ -1,0 +1,36 @@
+---
+extends: article.j2
+default_block: article
+title: glossary
+description: Explanation of terms used in the documentation
+topic: glossary
+index: 5
+---
+
+# Glossary
+
+Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
+
+
+
+
+<h3 id="entity">Entity</h3>
+An Entity is the one of the building blocks of your application in the [PlayCanvas Engine](#engine). Often an Entity will represent a single object in your game or application,
+though a single object may also be made of of multiple Entities. 
+
+All Entities are have a transform matrix to provide their position and orientation; 
+a parent Node from which they inherit a transform, and they can can optionally have child Nodes to which they supply their transform.   
+
+<h3 id="pack">Pack</h3>
+A Pack is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Pack may represent your entire game, or just a single level or part of your game.
+A Pack is defined by creating an Entity that has a Pack Component. When you create a new Pack in the [PlayCanvas Designer](#designer) the root of the tree visible in the [Pack Explorer](#explorer)
+is an Entity with a Pack Component.
+
+<h3 id="designer">PlayCanvas Designer</h3>
+The PlayCanvas Designer is a visual editing tool which can be used by members of your development team to edit [Packs](#pack). 
+
+The PlayCanvas Designer is used to manipulate [Entities](#entity) 
+
+<h3 id="engine">PlayCanvas Engine</h3>
+The PlayCanvas Engine is a javascript library which provides all the functionality you will need to create an interactive 3D application or game. 
+Programs created using the PlayCanvas Engine will run directly in a modern web browser with no need for third-party plugins.

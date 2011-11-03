@@ -1,29 +1,29 @@
 /* Colours */
 /* Links */
 /* Mixins */
-/* line 2, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 2, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpicker {
   margin: 2px 0px 0px 0px;
 }
 
-/* line 6, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 6, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpicker .goog-menu {
   position: static;
   padding: 0px;
 }
 
-/* line 11, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 11, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpicker .goog-menu-empty {
   border: none;
 }
 
-/* line 15, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 15, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpicker .goog-button {
   margin: 2px 0px 2px 0px;
 }
 
 /* State: resting. */
-/* line 20, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 20, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem {
   color: #000;
   font: normal 13px Arial, sans-serif;
@@ -37,13 +37,13 @@
 }
 
 /* If a menu doesn't have checkable items or items with icons, remove padding. */
-/* line 34, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 34, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .goog-menu-nocheckbox .pc-assetpickeritem,
 .goog-menu-noicon .pc-assetpickeritem {
   padding-left: 12px;
 }
 
-/* line 38, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 38, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem .goog-button {
   float: right;
   margin: 2px 2px 2px 2px;
@@ -53,12 +53,12 @@
  * If a menu doesn't have items with shortcuts, leave just enough room for
  * submenu arrows, if they are rendered.
  */
-/* line 47, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 47, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .goog-menu-noaccel .pc-assetpickeritem {
   padding-right: 20px;
 }
 
-/* line 51, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 51, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem-content {
   color: #222222;
   font: normal 13px Arial, sans-serif;
@@ -70,13 +70,13 @@
 }
 
 /* State: disabled. */
-/* line 63, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 63, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem-disabled .pc-assetpickeritem-accel,
 .pc-assetpickeritem-disabled .pc-assetpickeritem-content {
   color: #ccc !important;
 }
 
-/* line 66, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 66, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem-disabled .pc-assetpickeritem-icon {
   opacity: 0.3;
   -moz-opacity: 0.3;
@@ -84,7 +84,7 @@
 }
 
 /* State: hover. */
-/* line 74, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 74, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem-highlight,
 .pc-assetpickeritem-hover {
   background-color: #d6e9f8;
@@ -100,7 +100,7 @@
 }
 
 /* State: selected/checked. */
-/* line 89, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 89, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem-checkbox,
 .pc-assetpickeritem-icon {
   background-repeat: no-repeat;
@@ -112,7 +112,7 @@
   width: 16px;
 }
 
-/* line 99, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 99, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .goog-option-selected .pc-assetpickeritem-checkbox,
 .goog-option-selected .pc-assetpickeritem-icon {
   /* Client apps may override the URL at which they serve the sprite. */
@@ -120,7 +120,7 @@
 }
 
 /* Keyboard shortcut ("accelerator") style. */
-/* line 105, ../../../../designer/manos/manos/public/style/src/_assetpicker.scss */
+/* line 105, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_assetpicker.scss */
 .pc-assetpickeritem-accel {
   color: #999;
   /* Keyboard shortcuts are untranslated; always left-to-right. */
@@ -133,14 +133,14 @@
   text-align: right;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 1, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes {
   margin-top: 10px;
   border: thin solid #aaa;
   padding: 1px;
 }
 
-/* line 7, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 7, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes table {
   background: none;
   width: 100%;
@@ -148,7 +148,7 @@
   border-spacing: 2px 2px;
 }
 
-/* line 14, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 14, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes .pc-attr-heading {
   background-color: #8D96AC;
   color: #E6E8ED;
@@ -156,7 +156,7 @@
   font-weight: bold;
 }
 
-/* line 21, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 21, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 .pc-close-component {
   background-image: url("http://playcanvas-static.dev/images/closure/close_box.gif");
   height: 12px;
@@ -164,38 +164,38 @@
   float: right;
 }
 
-/* line 28, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 28, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes input {
   font-family: monospace;
 }
 
-/* line 32, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 32, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes input.attributes {
   font-size: 1em;
   width: 100%;
 }
 
-/* line 37, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 37, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes input.attributes-number {
   font-size: 1em;
   min-width: 4em;
   width: 95%;
 }
 
-/* line 43, ../../../../designer/manos/manos/public/style/src/_attributes.scss */
+/* line 43, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_attributes.scss */
 #control-attributes input[type="range"] {
   font-size: 1em;
   width: 75%;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 1, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview {
   font-size: 13px;
   border: thin solid #aaa;
   margin-top: 10px;
 }
 
-/* line 7, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 7, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview h2 {
   margin: 0px;
   padding: 3px 3px;
@@ -205,35 +205,35 @@
   background-color: #8D96AC;
 }
 
-/* line 16, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 16, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-container {
   height: 300px;
   overflow-y: scroll;
   border-top: thin solid #aaa;
 }
 
-/* line 22, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 22, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-changeset {
   border-bottom: thin solid #aaa;
   height: 50px;
 }
 
-/* line 27, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 27, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-current {
   background-color: #E6E8ED;
 }
 
-/* line 31, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 31, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-header {
   padding: 0px 3px;
 }
 
-/* line 35, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 35, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-body {
   padding: 3px;
 }
 
-/* line 39, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 39, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-title {
   float: left;
   font-size: 13px;
@@ -241,24 +241,24 @@
   font-weight: bold;
 }
 
-/* line 46, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 46, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-buttons {
   float: right;
 }
 
-/* line 50, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 50, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-clear {
   clear: both;
 }
 
-/* line 54, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 54, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-date {
   float: right;
   font-size: 10px;
   font-family: Courier, monospace;
 }
 
-/* line 60, ../../../../designer/manos/manos/public/style/src/_changesetview.scss */
+/* line 60, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_changesetview.scss */
 .pc-changesetview-id {
   float: right;
   font-size: 10px;
@@ -266,7 +266,7 @@
   font-family: Courier, monospace;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 1, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button {
   position: relative;
   /*width: 20ex;*/
@@ -281,7 +281,7 @@
 }
 
 /* State: disabled. */
-/* line 15, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 15, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button-disabled {
   border-color: #888;
   color: #888;
@@ -290,7 +290,7 @@
 }
 
 /* State: hover. */
-/* line 23, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 23, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button-hover {
   border-color: #434A5C;
   color: #E6E8ED;
@@ -298,7 +298,7 @@
 }
 
 /* State: active, selected, checked. */
-/* line 32, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 32, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button-active,
 .goog-flat-button-selected,
 .goog-flat-button-checked {
@@ -308,24 +308,24 @@
 }
 
 /* State: focused. */
-/* line 39, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 39, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button-focused {
   border-color: #E6E8ED;
 }
 
 /* Pill (collapsed border) styles. */
-/* line 44, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 44, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button-collapse-right {
   margin-right: 0;
 }
 
-/* line 48, ../../../../designer/manos/manos/public/style/src/_flatbutton.scss */
+/* line 48, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_flatbutton.scss */
 .goog-flat-button-collapse-left {
   margin-left: 0;
   border-left: none;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 1, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview {
   /*
     width: 100%;
@@ -336,23 +336,23 @@
   background-color: #8d96ac;
 }
 
-/* line 12, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 12, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview h2 {
   color: white;
   padding: 10px;
 }
 
-/* line 17, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 17, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview h2 a {
   color: white;
 }
 
-/* line 21, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 21, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview h2 a:hover {
   text-decoration: underline;
 }
 
-/* line 26, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 26, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-inner {
   overflow-y: auto;
   width: 98%;
@@ -360,7 +360,7 @@
   margin: 0px auto;
 }
 
-/* line 33, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 33, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview table {
   background-color: white;
   width: 100%;
@@ -381,7 +381,7 @@
 }
 
 */
-/* line 53, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 53, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview tr {
   height: 26px;
   border-bottom: solid;
@@ -389,28 +389,28 @@
   border-bottom-width: 1px;
 }
 
-/* line 60, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 60, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview tr:hover {
   background-color: #e6e8ed;
 }
 
-/* line 64, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 64, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview td {
   padding-left: 5px;
   vertical-align: middle;
 }
 
-/* line 69, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 69, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-title-column {
   width: 33%;
 }
 
-/* line 73, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 73, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-date-column {
   width: 33%;
 }
 
-/* line 77, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 77, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-buttons-column {
   width: 10%;
 }
@@ -433,35 +433,35 @@
     font-weight: bold;
 }
 */
-/* line 98, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 98, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-title {
   padding-left: 36px;
 }
 
-/* line 102, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 102, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-item span {
   display: block;
   padding-top: 2px;
 }
 
-/* line 107, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 107, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-item a {
   color: #000;
 }
 
-/* line 111, ../../../../designer/manos/manos/public/style/src/_listview.scss */
+/* line 111, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_listview.scss */
 .pc-listview-item.goog-control-hover {
   background-color: #e6e8ed;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_toolbar.scss */
+/* line 1, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_toolbar.scss */
 .pc-toolbar {
   float: left;
   width: 30%;
   font: normal 12px Arial, sans-serif;
 }
 
-/* line 7, ../../../../designer/manos/manos/public/style/src/_toolbar.scss */
+/* line 7, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_toolbar.scss */
 .pc-toolbar-middle {
   float: left;
   width: 40%;
@@ -475,24 +475,24 @@
   height: 18px;
 }
 
-/* line 20, ../../../../designer/manos/manos/public/style/src/_toolbar.scss */
+/* line 20, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_toolbar.scss */
 .pc-toolbar-middle span {
   font-size: 16px;
   font-weight: bold;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_tree.scss */
+/* line 1, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_tree.scss */
 #control-tree {
   border: solid thin #aaa;
   padding: 1px;
 }
 
-/* line 6, ../../../../designer/manos/manos/public/style/src/_tree.scss */
+/* line 6, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_tree.scss */
 #control-tree span {
   font-size: 0.8em;
 }
 
-/* line 10, ../../../../designer/manos/manos/public/style/src/_tree.scss */
+/* line 10, C:/Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_tree.scss */
 .pc-tree .goog-tree-icon {
   background-image: url("../images/tree.png");
 }
