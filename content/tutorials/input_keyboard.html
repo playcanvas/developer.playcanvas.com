@@ -2,17 +2,21 @@
 title: Basic Keyboard Input
 topic: tutorial
 subtopic: input
+tags:
+ - tutorial
+ - input
+ - beginner
+ - scripting 
+level: beginner
 ---
 
 # Tutorial - Basic Keyboard Input
-
-Introduce the Keyboard input handler, and demostrate the difference between `isPressed()` and `wasPressed()`.
 
 Keyboard handling in the PlayCanvas Engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
 for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with 
 handling keycodes and charcodes. 
 
-Take a look at the input_keyboard Pack in the [tutorials depot][depot]. The code for the tutorial is quite simple:
+Take a look at the input_keyboard Pack in the [tutorials depot][depot]. Here is the code for the tutorial:
 
 ~~~javascript~~~
 pc.script.create("keyboard_handler", function (context) {
@@ -57,10 +61,13 @@ pc.script.create("keyboard_handler", function (context) {
 });
 ~~~~~~~~~~~~~
 
-The two `if` statements in this code demostrate the different methods to testing for key presses
+Notice the two `if` statements in the main update loop. They demonstrate the different methods to testing for key presses.
 
 **`isPressed(key)`** checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
 
 **`wasPressed(key)`** checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
 
+Try the tutorial [here][tutorial]. Compare tapping and holding the arrow keys, and tapping and holding the spacebar. 
+
 [depot]: http://platform.playcanvas.com/dave/tutorials
+[tutorial]: http://platform.playcanvas.com/dave/tutorials/designer/bootstrap?e=2fcc4986-75d2-432f-a887-84ae37de4ff2&u=dave&p=tutorials
