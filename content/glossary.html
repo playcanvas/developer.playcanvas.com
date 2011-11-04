@@ -12,7 +12,8 @@ index: 5
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
 
 
-
+<h3 id="depot">Depot</h3>
+Depot
 
 <h3 id="entity">Entity</h3>
 An Entity is the one of the building blocks of your application in the [PlayCanvas Engine](#engine). Often an Entity will represent a single object in your game or application,
@@ -20,6 +21,14 @@ though a single object may also be made of of multiple Entities.
 
 All Entities are have a transform matrix to provide their position and orientation; 
 a parent Node from which they inherit a transform, and they can can optionally have child Nodes to which they supply their transform.   
+
+<h3 id="gizmo">Gizmo</h3>
+A Gizmo is a control that dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of 
+three color-coded parts, one for each axis in 3D space. Red is the X-axis, green is the Y-axis and blue is the Z-axis. Sometimes there will also be controls for manipulating 
+more than one axis at once, e.g. X and Y, Y and Z, Z and X.
+
+<h3 id="transform">Transform Matrix</h3>
+Transform Matrix
 
 <h3 id="pack">Pack</h3>
 A Pack is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Pack may represent your entire game, or just a single level or part of your game.
