@@ -1,0 +1,66 @@
+---
+title: Basic Keyboard Input
+topic: tutorial
+subtopic: input
+---
+
+# Tutorial - Basic Keyboard Input
+
+Introduce the Keyboard input handler, and demostrate the difference between `isPressed()` and `wasPressed()`.
+
+Keyboard handling in the PlayCanvas Engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
+for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with 
+handling keycodes and charcodes. 
+
+Take a look at the input_keyboard Pack in the [tutorials depot][depot]. The code for the tutorial is quite simple:
+
+~~~javascript~~~
+pc.script.create("keyboard_handler", function (context) {
+    var KeyboardHandler = function (entity) {
+        this.entity = entity;
+        
+        this.angle = 0;
+        this.spinRate = 0;
+        this.up = pc.math.vec3.create(0,1,0);
+    };
+    
+    KeyboardHandler.prototype.update = function (dt) {
+        /**
+         * Notice in the demo that pressing and holding the arrow keys doesn't make the block spin faster.  
+         * wasPressed() is used to detect a keypress that occurred since the last frame and will only be 
+         * called once even if the key is held down.
+         */
+        if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+            this.spinRate -= 0.5;
+        } else if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+            this.spinRate += 0.5;            
+        } 
+        
+        /**
+         * Notice that pressing and holding the space bar makes the block continuously change color.
+         * isPressed() is used to detected if a key is down right now. So it will be true every frame
+         * as long as the key is still pressed.
+         */
+        if (context.keyboard.isPressed(pc.input.KEY_SPACE)) {
+            var color = context.systems.primitive.get(this.entity, "color");
+            color -= 0xff;
+            context.systems.primitive.set(this.entity, "color", color);
+        }
+        
+        // Update the spinning cube
+        this.angle = this.angle + this.spinRate * dt;
+        var rotate = pc.math.mat4.makeRotate(this.angle, this.up);
+        this.entity.setLocalTransform(rotate);
+    };
+    
+    return KeyboardHandler;
+});
+~~~~~~~~~~~~~
+
+The two `if` statements in this code demostrate the different methods to testing for key presses
+
+**`isPressed(key)`** checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
+
+**`wasPressed(key)`** checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
+
+[depot]: http://platform.playcanvas.com/dave/tutorials
