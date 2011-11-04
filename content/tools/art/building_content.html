@@ -1,0 +1,73 @@
+---
+title: building content
+description: Overview 
+tags:
+    - section
+topic: tools
+subtopic: building content
+index: 1
+---
+
+# Building Content for PlayCanvas
+
+PlayCanvas sucks in content from FBX so, in general, anything that FBX supports, PlayCanvas also supports. As such, to target PlayCanvas, you do not have to use any special Max plugins and there are no specific workflows you must follow. However, it is worth being aware of what will and what will not translate from Max through FBX to PlayCanvas.
+
+## Meshes
+
+There are a few things to be aware of when creating meshes in the modelling application:
+
+* Each mesh object should contain no more than 65,535 vertices.
+* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+* Meshes can be skinned to an arbitrary number of bones. PlayCanvas does not impose an upper limit.
+
+## Materials
+
+You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials.
+
+### Supported Map Slots
+
+PlayCanvas interprets a subset of the 3DS Max material map types on export. Note that maps can be in any format that 3DS Max supports, but if the maps are not in a web format (namely JPEG, GIF or PNG) then they will be converted to these formats on export.
+
+#### Diffuse Color
+
+Assigning a Bitmap map to this slot enables diffuse mapping on the PlayCanvas material. This essentially overrides whatever diffuse color has been set on the material (via the color picker). If the diffuse map has an alpha channel, it will be used as the per pixel alpha value in the PlayCanvas runtime.
+
+Additionally, it is possible to assign an RGB Multiply map to the Diffuse Color slot. This has the effect of enabling lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap.
+
+#### Specular Color
+
+Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas material. This essentially overrides whatever specular color has been set on the material (via the color picker). This allows you to mask out areas of specularity on a surface, or tinge specular highlights different colors in different areas. If the specular map has an alpha channel, it will be used to set per-pixel shininess.
+
+#### Self-Illumination
+
+Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel's value.  Anything else will increase a pixel's luminosity.
+
+#### Opacity
+
+Assigning a Bitmap map to this slot enables opacity mapping on the PlayCanvas material. A black pixel in the opacity map will be fully transparent, a white pixel will be fully opaque and any grey pixel will correspond to some equivalent intermediate alpha value.
+
+If the material has an opacity map, it will override any alpha channel that may have been set in the diffuse map. It is less efficient to use the opacity map slot over the alpha channel of the diffuse map since two textures are generated in the PlayCanvas runtime instead of one and the default shader must do a little more work. However, if performance is not a concern and it is convenient to use an opacity map, the functionality is supported.
+
+#### Bump
+
+Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the realtime rendering more closely.
+
+There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
+
+![Normal map](/media/images/artist_guide/wall_norm.jpg)
+
+Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
+
+![Normal map with Y component flipped](/media/images/artist_guide/wall_norm_yflip.jpg)
+
+Now, lighting in PlayCanvas will be consistent.
+
+If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
+
+#### Reflection
+
+Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
+
+![Sphere map](/media/images/artist_guide/mountains_sphere.jpg)
+
+Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.

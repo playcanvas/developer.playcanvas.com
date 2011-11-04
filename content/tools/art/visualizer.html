@@ -1,0 +1,49 @@
+---
+title: visualizer
+description: Overview 
+tags:
+    - section
+topic: tools
+subtopic: visualizer
+index: 1
+---
+
+# PlayCanvas Visualizer
+
+The PlayCanvas Visualizer is useful for previewing individual models and animations. Naturally, it runs in the browser and appears as follows:
+
+<img alt="Visualizer" width="640" height="480" src="/media/images/artist_guide/visualizer.jpg"></img>
+
+It is possible to invoke Visualizer directly from the modelling application, allowing fast iteration of PlayCanvas content generation. This guide will step you through the running and operation of Visualizer.
+
+### Running the PlayCanvas Visualizer
+
+Once you have installed the PlayCanvas Asset Tools, you are almost ready to Visualize your first scene from 3DS Max or Maya. But first
+
+### Starting the Visualizer HTTP Server
+
+Run the 'Start Visualizer Server' shortcut in the PlayCanvas program group in the Start Menu. This will invoke a DOS box running a local HTTP server which serves the Visualizer web application and scenes exported from 3DS Max to the web browser. The server will continue to run until the DOS box is forcibly closed. But you must ensure it is running as long as you want 3DS Max or Maya to be sending scenes to Visualizer.
+
+### Visualizing your First Scene
+
+Now you should be ready to view your first scene in the PlayCanvas Visualizer! Follow the steps below to view a simple Max object in the browser:
+
+* Start 3DS Max or Maya. You will notice there should now be a menu in the main menu bar called PlayCanvas. There is a single menu item under the PlayCanvas menu: Visualizer.
+* Create a polygon mesh object near the world space origin.
+* If you are running 3DS Max, assign a material to the object. Note that this step is important, since PlayCanvas requires all meshes to have a material assigned.
+* Select the PlayCanvas Visualizer menu item.
+
+These steps are executed in the video below:
+
+<video width="640" height="480" controls="controls">
+  <source src="/media/video/artist_guide/visualizer.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+### Visualizer Controls
+
+To navigate the camera in the PlayCanvas Visualizer, use the following controls:
+
+* Mouse Wheel: Dolly the camera backwards and forwards.
+* ALT+Left Mouse Button: Orbit the camera.
+* ALT+Middle Mouse Button: Pan the camera.

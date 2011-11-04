@@ -1,0 +1,53 @@
+---
+title: asset tools
+description: Overview 
+tags:
+    - section
+topic: tools
+subtopic: asset tools
+index: 1
+---
+
+# PlayCanvas Asset Tools
+
+The PlayCanvas Asset Tools are a set of programs that can:
+
+* Convert FBX files into PlayCanvas-friendly format.
+* Send scenes directly from 3DS Max to the PlayCanvas runtime in the browser for rapid iteration.
+
+## System Requirements
+
+* Microsoft Windows XP SP2, Windows Vista or Windows 7.
+* Autodesk 3DS Max 2010 or greater.
+* Autodesk Maya 2010 or greater.
+* FBX plugin 2010.2.1 or greater.
+* Google Chrome 12.0.xxx.xx or greater.
+* Latest video driver for your graphics card. Check by visiting amd.com or nvidia.com (or the web site of your card manufacturer). If your graphics card driver is deemed 'too old' by Chrome, 3D rendering will be disabled. You can check this status by visiting the URL about:gpu in Google Chrome and verifying the line: 'WebGL: Hardware accelerated'.
+
+## Known Issues
+
+All meshes created in 3DS Max must have a material assigned for them to export properly.
+Google Chrome is currently a little flaky when being launched from 3DS Max. It is recommended that you close your Visualizer tab once you have finished visualizing your scene so that only one instance is running the next time you invoke Visualizer.
+The PlayCanvas Asset Tools uninstaller does not delete temporary files creating by the tools. These can be found in `C:\Users\<USERNAME>\AppData\Local\PlayCanvas` on Windows Vista and Windows 7.  On Windows XP, these are found at `C:\Documents and Settings\<USERNAME>\Local Settings\Application Data\PlayCanvas`. All files found here can be safely deleted at any time.
+
+## Installing the PlayCanvas Asset Tools
+
+* Download playcanvas-asset-tools-x.x.x.msi.
+* Run the installer and step through it as shown below:
+
+<video width="640" height="480" controls="controls">
+  <source src="/media/video/artist_guide/tools_install.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+### Install the PlayCanvas 3DS Max Script
+
+This step is only necessary if you have 3DS Max installed and you want to integrate the PlayCanvas Visualizer into Max's menu.
+
+Locate the file playcanvas.ms in `<PLAYCANVAS_INSTALL_DIR>\tools\3dsmax` and copy this to the `stdplugins\stdscripts` folder in your 3DS Max install.
+
+### Install the PlayCanvas Maya Script
+
+This step is only necessary if you have Maya installed and you want to integrate the PlayCanvas Visualizer into Maya's menu.
+
+Locate the files playcanvas.py and userSetup.py in `<PLAYCANVAS_INSTALL_DIR>\tools\maya` and copy them to the `<YOUR_USER_PROFILE>\Documents\Maya\scripts` folder. If you already have a userSetup.py file (that executes Python statements every time you start Maya), you simply need to merge the contents of the PlayCanvas file into your existing file.
