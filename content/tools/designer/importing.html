@@ -1,0 +1,67 @@
+---
+title: importing
+description: 
+tags:
+    - section
+topic: tools
+subtopic: importing
+index: 4
+---
+
+# Importing Assets
+
+In PlayCanvas, an asset can be:
+
+* A model. This will be a [JSON](http://json.org/) file (extension .json) plus 0 or more texture images (extension .jpg, .gif or .png).
+* An animation. This will be a JSON file.
+* An image. This will be a JPG, GIF or PNG file.
+
+## Preparing Models for Import
+
+PlayCanvas requires 3D data to be serialized in JSON format. This guide explains how to generate this format from assets that you possess in other formats. The PlayCanvas Asset Tools installer installs a command line tool called FACT, which stands for Flexible Asset Conditioning Tool.  This tool reads a number of industry standard file formats that represent 3D data and converts them to PlayCanvas JSON. The supported input formats are:
+
+* FBX
+* DAE (COLLADA)
+* 3DS
+* OBJ
+
+These formats can reference images that are used as textures. FACT will also process these images, ensuring that they are converted to web native formats where necessary. The following input image formats are supported:
+
+* JPG
+* PNG
+* GIF
+* BMP
+* TGA
+* TIF
+* DDS
+* PSD
+
+On conversion, the textures will be in JPG or PNG format where JPG is the default choice but PNG is used when an alpha channel is detected in the source image.
+
+To run FACT, you may find it convenient to add its location to your PATH environment variable. The executable is located here:
+
+`<PROGRAM_FILES_FOLDER>\PlayCanvas\PlayCanvas Asset Tools X.X.X\bin\fact.exe`
+
+The format for the command is:
+
+`fact.exe -i <INPUT_ART_FILE> -o <OUTPUT_JSON_FILE>`
+
+Note the following:
+
+* The output directory must exist for the conversion to succeed. FACT does not create the directory if it does not exist.
+* All texture images are converted and written to the same directory as the outputted JSON file. Therefore, you need to be mindful that if more than one source image shares the same filename, one or more will be overwritten on export.
+
+## Importing Assets
+
+There are a few rules for packaging assets for upload:
+
+<table>
+    <tr><th>Asset Type</th><th>Packaging Requirements</th></tr>
+    <tr><td>Animation</td><td>Zipping the JSON file is optional.</td></tr>
+    <tr><td>Image</td><td>Upload 'as is'.</td></tr>
+    <tr><td>Model</td><td>If there are no textures, zipping the JSON file is optional. Otherwise, you must add the JSON and textures to a ZIP archive (.zip extension), ensuring that the JSON file is in the root folder of the ZIP archive.</td></tr>
+</table>
+
+Now to upload the asset to PlayCanvas. Navigate to the home page of the depot to which the asset will be added. Select the 'Assets' tab and the depot's asset list will be displayed. Then select the 'New Asset' link to navigate to the upload form.
+
+Select 'Add Files' and browse to the asset file. Once the asset is chosen, select 'Upload and Create' to add the asset to your asset library. Now, when you attempt to choose an asset via the asset picker attribute control (for the Model component or the Animation component for example), your asset will be available for assignment. The name of the asset will be then name of the JSON file (for models or animations) or the image file.
