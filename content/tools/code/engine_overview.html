@@ -10,4 +10,26 @@ index: 1
 
 # Engine Overview
 
+You PlayCanvas web apps are powered by a Javascript framework: the PlayCanvas Engine. The engine is a single Javascript file that provides your web app with a wide variety of functionality, effectively simplifying the development process for you. You're free to spend more time building content and scripting functionality rather than having to worry about the finer details of rendering graphics, playing back audio or loading resources, for example.
+
+The architecture of the engine is represented in the diagram below:
+
 <img alt="Engine Architecture" width="640" src="/media/images/platform/playcanvas_engine_architecture.jpg"></img>
+
+It is split into three main layers: the core and abstraction APIs, the scene management API and the application framework. Let's look at each in more detail:
+
+## Core and Abstraction APIs
+
+These APIs are the foundations of PlayCanvas engine. They provide a suite of low-level APIs that are used by higher level, more abstract APIs.
+
+Core APIs provide functionality that makes it easier to work with GUIDs, the DOM, JSON, time, URIs, strings, and so on. There are also APIs for handling resource loading, input devices, HTTP requests, and math.
+
+In addition to the various core APIs, there are some larger sibling APIs which abstract certain browser APIs. There is a graphics API (namespaced as pc.gfx) which drives WebGL. WebGL is a very low level API and the pc.gfx namespace hides a lot of the complexity. For example, the API is supplied with a program library that can procedurally generate shader programs without you having to write them yourself. At the same time, it is possible to write your own shader code and register it with the engine for scenarios where you need something more specific or if you want to tune performance of the default shaders. In short, the pc.gfx API defines some key graphics constructs that make rendering easier: vertex and index buffers, textures, shaders, programs, frame buffers etc. It is still fairly low level however, but gives you an interface that you can call if the higher level APIs do not allow you to do what you want.
+
+## Scene Management API
+
+The scene API is built on the core and abstraction APIs. It introduces a more logical representation of a 3D scene. It defines constructs like materials, transformation hierarchies, geometries, models, cameras and lights. This allow you to more easily manage graphical objects at a high level. On other words, you can easily light and view objects as they move around an environment.
+
+The scene API also controls the order in which graphical objects are rendered.
+
+## Application Framework
