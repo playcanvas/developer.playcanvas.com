@@ -30,8 +30,9 @@ pc.script.create("keyboard_handler", function (context) {
     
     KeyboardHandler.prototype.update = function (dt) {
         /**
-         * Notice in the demo that pressing and holding the arrow keys doesn't make the block spin faster.  
-         * wasPressed() is used to detect a keypress that occurred since the last frame and will only be 
+         * Notice in the demo that pressing and holding the arrow keys doesn't 
+         * make the block spin faster. wasPressed() is used to detect a 
+         * keypress that occurred since the last frame and will only be 
          * called once even if the key is held down.
          */
         if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
@@ -41,9 +42,10 @@ pc.script.create("keyboard_handler", function (context) {
         } 
         
         /**
-         * Notice that pressing and holding the space bar makes the block continuously change color.
-         * isPressed() is used to detected if a key is down right now. So it will be true every frame
-         * as long as the key is still pressed.
+         * Notice that pressing and holding the space bar makes the block 
+         * continuously change color. isPressed() is used to detected if a
+         * key is down right now. So it will be true every frame as long as 
+         * the key is still pressed.
          */
         if (context.keyboard.isPressed(pc.input.KEY_SPACE)) {
             var color = context.systems.primitive.get(this.entity, "color");
