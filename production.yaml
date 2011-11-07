@@ -2,10 +2,17 @@ extends: site.yaml
 mode: production
 context:
     data:
+        app:
+          version: 0.1.0
         paths:
           static_server: "http://static.playcanvas.com"
           code_server: "http://code.playcanvas.com"
+    providers:
+      downloads: downloads.yaml
+      version: version.yaml
+
 meta:
     nodemeta: meta.yaml
+    author: PlayCanvas
     analytics:
       id: UA-23605814-1
