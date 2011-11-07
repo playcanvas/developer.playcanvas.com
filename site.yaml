@@ -17,14 +17,11 @@ context:
         paths:
           static_server: "http://playcanvas-static.dev"
           code_server: "http://code.playcanvas.com"
-        test:
-          downloads: downloads.yaml
     providers:
       downloads: downloads.yaml
       version: version.yaml
 meta:
     nodemeta: meta.yaml
-    created: !!timestamp 2010-01-01 00:00:00
     author: PlayCanvas
     analytics:
       id: aaa
