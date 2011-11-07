@@ -61,6 +61,8 @@ grouper:
         description: Documentation about how to use the PlayCanvas tools to create content and build applications
       - name: tutorials
         description: Tutorials to lead you through all the main concepts of the PlayCanvas engine.
+      - name: glossary
+        description: Glossary of terms used in the PlayCanvas documentation
       - name: downloads
         description: Download latest and legacy builds of the PlayCanvas engine
   subtopic: 
