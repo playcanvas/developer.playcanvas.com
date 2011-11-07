@@ -59,14 +59,14 @@ grouper:
         description: Documentation about using the PlayCanvas Engine to write runtime code
       - name: tools
         description: Documentation about how to use the PlayCanvas tools to create content and build applications
+      - name: tutorials
+        description: Tutorials to lead you through all the main concepts of the PlayCanvas engine.
       - name: downloads
         description: Download latest and legacy builds of the PlayCanvas engine
   subtopic: 
     sorter: index
     description: Subtopics for each topic
     groups:
-      - name: tutorials
-        description: Step-by-step tutorials
       - name: designer
         description: How to get the most out of the PlayCanvas Designer application 
       - name: code

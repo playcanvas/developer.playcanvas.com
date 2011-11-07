@@ -3,9 +3,8 @@ title: tutorials
 description: 
 tags:
     - section
-topic: engine
-subtopic: tutorials
-index: 1
+topic: tutorials
+index: 4
 ---
 
 # PlayCanvas Engine Tutorials
@@ -29,10 +28,3 @@ Learn from the people who made PlayCanvas. A selection of tutorials from beginne
 {% for res in resource.node.walk_resources_grouped_by_advanced() %}
   * [{{ res.meta.title }}]({{ res.full_url }})
 {% endfor %}
-
-## By Category
-
-{% for res in resource.node.walk_resources_tagged_with("tutorial") %}
-  * [{{ res.meta.title }}]({{ res.full_url }})
-{% endfor %}
-

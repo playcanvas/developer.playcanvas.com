@@ -33,14 +33,16 @@ h3 {
   font-weight: bold;
 }
 
-/*
-#main {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
+/* line 28, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul {
+  list-style: disc outside none;
 }
-*/
-/* line 34, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 30, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul li {
+  margin-left: 20px;
+}
+
+/* line 35, ../../../../designer/manos/manos/public/style/src/_common.scss */
 #page-container {
   width: 950px;
   margin: 0 auto;
@@ -48,51 +50,59 @@ h3 {
   *zoom: 1;
 }
 
-/* line 39, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 40, ../../../../designer/manos/manos/public/style/src/_common.scss */
 a {
   color: #6379a8;
   text-decoration: none;
 }
 
-/* line 44, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 45, ../../../../designer/manos/manos/public/style/src/_common.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 48, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 49, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-small {
   font-size: 0.6em;
 }
 
-/* line 52, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 53, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-clear {
   clear: both;
 }
 
-/* line 56, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 57, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-left {
   float: left;
   padding-right: 20px;
 }
 
-/* line 61, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 62, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-right {
   float: right;
   padding-left: 20px;
 }
 
-/* line 66, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 67, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-text-block {
-  padding-top: 20px;
+  margin: 20px 0px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+}
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-text-block {
+  overflow-x: hidden;
 }
 
-/* line 70, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 72, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-centred-container {
   width: 800px;
   margin: 25px auto;
 }
 
-/* line 76, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 78, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-hidden {
   display: none;
 }
@@ -119,6 +129,98 @@ a:hover {
   font-style: italic;
 }
 
+/* line 1, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-text-block {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  margin: 20px 0px;
+}
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-text-block {
+  overflow-x: hidden;
+}
+/* line 5, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-text-block ul {
+  margin: 10px 0px;
+}
+
+/* line 10, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-frontpage {
+  padding-top: 60px;
+}
+
+/* line 14, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-left-bias-left-column {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 630px;
+  margin: 20px 0px;
+}
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-left-bias-left-column {
+  overflow-x: hidden;
+}
+
+/* line 19, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-left-bias-right-column {
+  padding-left: 80px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 230px;
+  margin: 20px 0px;
+}
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-left-bias-right-column {
+  overflow-x: hidden;
+}
+
+/* line 25, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-right-bias-right-column {
+  padding-left: 80px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 630px;
+  margin: 20px 0px;
+}
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-right-bias-right-column {
+  overflow-x: hidden;
+}
+
+/* line 31, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-right-bias-left-column {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 230px;
+  margin: 20px 0px;
+}
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-right-bias-left-column {
+  overflow-x: hidden;
+}
+
+/* line 36, ../../../../designer/manos/manos/public/style/src/_text.scss */
+.pc-spacer {
+  background: #dddddd;
+  color: #dddddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: 0.1em;
+  margin: 0 0 1.45em;
+  border: none;
+  background: white;
+  color: white;
+  visibility: hidden;
+  margin: 0px;
+}
+
 /* line 1, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar {
   font-size: 0.8em;
@@ -133,41 +235,58 @@ a:hover {
   width: 400px;
   border-bottom-left-radius: 5px;
 }
+/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.account-bar ul {
+  list-style-type: none;
+}
+/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.account-bar ul li {
+  display: inline;
+  margin: 0px;
+}
+/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.account-bar a {
+  text-decoration: none;
+}
+/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.account-bar a:hover {
+  text-decoration: underline;
+}
 
-/* line 15, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 17, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar .avatar-name {
   display: inline;
 }
 
-/* line 19, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 21, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar .avatar-spacer {
   display: inline;
   width: 20px;
 }
 
-/* line 24, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 26, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar .avatar-name img {
   vertical-align: middle;
   border: 1px solid white;
 }
 
-/* line 29, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 31, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar a {
   color: #222222;
   text-decoration: none;
 }
 
-/* line 34, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 36, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar a:hover {
   text-decoration: underline;
 }
 
-/* line 38, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 40, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar ul {
   display: inline;
 }
 
-/* line 42, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 44, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar ul li {
   display: inline;
   list-style-type: none;
@@ -231,8 +350,25 @@ a:hover {
 .pc-depot-list {
   width: 25%;
 }
+/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-list ul {
+  list-style-type: none;
+}
+/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-list ul li {
+  display: inline;
+  margin: 0px;
+}
+/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-list a {
+  text-decoration: none;
+}
+/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-list a:hover {
+  text-decoration: underline;
+}
 
-/* line 47, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 48, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box {
   /* A bordered box with rounded corners top-left and bottom-right, like the PlayCanvas logo */
   border: 2px solid #cccccc;
@@ -242,32 +378,32 @@ a:hover {
   margin-top: 10px;
 }
 
-/* line 54, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 55, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box a {
   margin-bottom: 6px;
 }
-/* line 58, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 59, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box p {
   margin-top: 3px;
   margin-bottom: 3px;
 }
-/* line 63, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 64, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box img {
   margin-right: -6px;
 }
 
-/* line 69, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 70, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box-description {
   font-size: 0.9em;
 }
 
-/* line 73, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 74, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-depot-box-extra {
   color: #888888;
   font-size: 0.7em;
 }
 
-/* line 78, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 79, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-profile-edit-form {
   display: inline;
   float: left;
@@ -275,7 +411,7 @@ a:hover {
   width: 950px;
   padding-top: 20px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-profile-edit-form {
   overflow-x: hidden;
 }
@@ -295,7 +431,7 @@ a:hover {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-details-box {
   overflow-x: hidden;
 }
@@ -314,12 +450,29 @@ a:hover {
   width: 950px;
   margin-bottom: 5px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-navigation {
   overflow-x: hidden;
 }
+/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-navigation ul {
+  list-style-type: none;
+}
+/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-navigation ul li {
+  display: inline;
+  margin: 0px;
+}
+/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-navigation a {
+  text-decoration: none;
+}
+/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-depot-navigation a:hover {
+  text-decoration: underline;
+}
 
-/* line 88, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 89, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation ul li {
   display: inline;
   float: left;
@@ -329,38 +482,38 @@ a:hover {
   border: 1px #8d96ac solid;
   background-color: #e6e8ed;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-navigation ul li {
   overflow-x: hidden;
 }
 
-/* line 93, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 94, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation img {
   vertical-align: middle;
   padding: 2px;
   margin: 0px;
 }
 
-/* line 99, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 100, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation .pc-current {
   color: black;
   background-color: #f2f3f6;
   border-color: #c0c6d6;
 }
 
-/* line 105, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 106, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 #depot-control {
   display: inline;
   float: left;
   margin-right: 0;
   width: 950px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #depot-control {
   overflow-x: hidden;
 }
 
-/* line 110, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 111, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-control-outer {
   background-color: #8d96ac;
   display: inline;
@@ -369,7 +522,7 @@ a:hover {
   width: 950px;
   height: 700px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-control-outer {
   overflow-x: hidden;
 }
@@ -398,7 +551,7 @@ a:hover {
   margin-right: 0;
   width: 270px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-edit-form {
   overflow-x: hidden;
 }
@@ -410,7 +563,7 @@ a:hover {
   margin-right: 0;
   width: 270px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-collaborators {
   overflow-x: hidden;
 }
@@ -422,7 +575,7 @@ a:hover {
   margin-right: 10px;
   width: 30px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-code-provider-logo {
   overflow-x: hidden;
 }
@@ -433,7 +586,7 @@ a:hover {
   margin-right: 0;
   width: 270px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-bitbucket {
   overflow-x: hidden;
 }
@@ -444,7 +597,7 @@ a:hover {
   margin-right: 0;
   width: 150px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
   overflow-x: hidden;
 }
@@ -471,13 +624,13 @@ a:hover {
   visibility: hidden;
 }
 
-/* line 114, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 115, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 #fileupload {
   font-size: 13px;
 }
 
 /* Hide the fileupload start/delete buttons we don't want to support them, but the have to be there as the javascript calls them'*/
-/* line 118, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 119, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .fileupload-content .start {
   display: none;
 }
@@ -502,12 +655,12 @@ a:hover {
   float: right;
 }
 
-/* line 10, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 10, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body {
   height: 100%;
 }
 
-/* line 12, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 12, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #main {
   clear: both;
   min-height: 100%;
@@ -515,12 +668,12 @@ html, body {
   height: 100%;
   margin-bottom: -40px;
 }
-/* line 18, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 18, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #main #pc-push {
   height: 40px;
 }
 
-/* line 20, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+/* line 20, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #designer-footer {
   clear: both;
   position: relative;
@@ -562,7 +715,7 @@ footer a {
   width: 950px;
   height: 40px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-push {
   overflow-x: hidden;
 }
@@ -574,77 +727,77 @@ footer a {
   margin-right: 0;
   width: 630px;
 }
-/* line 18, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 18, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form label {
   font-weight: bold;
 }
-/* line 19, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 19, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form fieldset {
   padding: 1.4em;
   margin: 0 0 1.5em 0;
 }
-/* line 20, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 20, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form legend {
   font-weight: bold;
   font-size: 1.2em;
 }
-/* line 26, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 26, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password] {
   margin: 0.5em 0;
   background-color: white;
   padding: 5px;
 }
-/* line 27, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 27, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.title {
   font-size: 1.5em;
 }
-/* line 29, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 29, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form textarea {
   margin: 0.5em 0;
   padding: 5px;
 }
-/* line 30, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 30, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form select {
   margin: 0.5em 0;
 }
-/* line 55, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 55, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form fieldset {
   border: 1px solid #cccccc;
 }
-/* line 58, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 58, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password], .pc-standard-form textarea {
   background-color: #fff;
   border: 1px solid #bbbbbb;
 }
-/* line 61, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 61, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.text:focus, .pc-standard-form input.title:focus, .pc-standard-form input[type=email]:focus, .pc-standard-form input[type=text]:focus, .pc-standard-form input[type=password]:focus, .pc-standard-form textarea:focus {
   border-color: #666666;
 }
-/* line 65, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 65, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form select {
   background-color: #fff;
   border-width: 1px;
   border-style: solid;
 }
-/* line 44, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 44, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password] {
   width: 300px;
 }
-/* line 46, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 46, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form textarea {
   width: 390px;
   height: 250px;
 }
-/* line 44, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 44, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password] {
   width: 470px;
 }
-/* line 46, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+/* line 46, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form textarea {
   width: 470px;
   height: 100px;
 }
-/* line 147, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-standard-form {
   overflow-x: hidden;
 }
@@ -693,7 +846,7 @@ footer a {
   width: 454px;
   display: inline-block;
 }
-/* line 54, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 54, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 .pc-standard-form .pc-form-info a {
   color: #205791;
 }
@@ -763,16 +916,20 @@ footer a {
   margin: 0px auto;
 }
 
-/* line 90, ../../../../designer/manos/manos/public/style/src/_base.scss */
-.pc-admin-navigation li {
-  display: inline;
+/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-admin-navigation ul {
   list-style-type: none;
 }
-/* line 95, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
+.pc-admin-navigation ul li {
+  display: inline;
+  margin: 0px;
+}
+/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .pc-admin-navigation a {
   text-decoration: none;
 }
-/* line 99, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .pc-admin-navigation a:hover {
   text-decoration: underline;
 }

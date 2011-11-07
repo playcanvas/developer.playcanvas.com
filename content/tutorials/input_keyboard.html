@@ -1,16 +1,16 @@
 ---
 title: Basic Keyboard Input
-topic: tutorial
-subtopic: input
 tags:
  - tutorial
  - input
  - beginner
- - scripting 
+ - scripting
+ - keyboard
 level: beginner
+index: 2
 ---
 
-# Tutorial - Basic Keyboard Input
+# Basic Keyboard Input
 
 Keyboard handling in the PlayCanvas Engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
 for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with 
@@ -29,7 +29,7 @@ pc.script.create("keyboard_handler", function (context) {
     };
     
     KeyboardHandler.prototype.update = function (dt) {
-        /**
+        /*
          * Notice in the demo that pressing and holding the arrow keys doesn't 
          * make the block spin faster. wasPressed() is used to detect a 
          * keypress that occurred since the last frame and will only be 
@@ -41,7 +41,7 @@ pc.script.create("keyboard_handler", function (context) {
             this.spinRate += 0.5;            
         } 
         
-        /**
+        /*
          * Notice that pressing and holding the space bar makes the block 
          * continuously change color. isPressed() is used to detected if a
          * key is down right now. So it will be true every frame as long as 
@@ -63,11 +63,17 @@ pc.script.create("keyboard_handler", function (context) {
 });
 ~~~~~~~~~~~~~
 
-Notice the two `if` statements in the main update loop. They demonstrate the different methods to testing for key presses.
+The two `if` statements in the main update loop demonstrate the different methods to testing for key presses.
 
-**`isPressed(key)`** checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
+### `isPressed(key)`
 
-**`wasPressed(key)`** checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
+`isPressed(key)` checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
+
+### `wasPressed(key)`
+
+`wasPressed(key)` checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
+
+### Try it out
 
 Try the tutorial [here][tutorial]. Compare tapping and holding the arrow keys, and tapping and holding the spacebar. 
 
