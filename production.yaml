@@ -6,5 +6,6 @@ context:
           static_server: "http://static.playcanvas.com"
           code_server: "http://code.playcanvas.com"
 meta:
+    nodemeta: meta.yaml
     analytics:
       id: UA-23605814-1
