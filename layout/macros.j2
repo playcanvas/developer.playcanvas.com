@@ -13,7 +13,6 @@
 {% macro render_main_menu() -%}
 			<navigation>
 				<ul>
-                <li class="pc-home"><a href="/">home</a></li>
                 {% for grp, res_walker in site.content.walk_topic_groups() %}
                     {% for res in res_walker %}
                         {% if resource == res %}

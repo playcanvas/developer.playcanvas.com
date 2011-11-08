@@ -53,6 +53,8 @@ grouper:
     sorter: index
     description: Overview topics to include in navigation menu
     groups: 
+      - name: home
+        description: Introduction for PlayCanvas Developers
       - name: content creation
         description: Documentation covering the creation and import of assets into PlayCanvas Platform
       - name: engine

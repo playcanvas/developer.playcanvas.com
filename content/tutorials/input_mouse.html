@@ -17,48 +17,39 @@ mouse is moved or when mouse buttons are pressed. It also removes some of the cr
 
 Take a look at the input_mouse Pack in the [tutorials depot][depot]. Here is the code from mouse.js:
 
-~~~javascript~~~
+~~~js~~~
 pc.script.create("mouse", function (context) {
     var MouseHandler = function (entity) {
         this.entity = entity;
 
-        /*
-         * Disabling the context menu stops the browser disabling a menu when 
-         * you right-click the page
-         */
+        // Disabling the context menu stops the browser disabling a menu when 
+        // you right-click the page
         context.mouse.disableContextMenu();
     };
     
     MouseHandler.prototype.update = function (dt) {
-        /*
-         * Use the bind() method to attach event handlers. 
-         * The mouse object supports events on move and drag, button down and 
-         * up, and scroll wheel.
-         */
+        
+        // Use the bind() method to attach event handlers. 
+        // The mouse object supports events on move and drag, button down and 
+        // up, and scroll wheel.
         context.mouse.bind(pc.input.EVENT_MOUSE_MOVE, this.onMouseMove.bind(this));
         context.mouse.bind(pc.input.EVENT_MOUSE_DOWN, this.onMouseDown.bind(this));
     };
     
     MouseHandler.prototype.onMouseMove = function (event) {
-        /*
-         * Here we are getting the resolution of the canvas from the graphics 
-         * Device object.
-         */
+        // Here we are getting the resolution of the canvas from the graphics 
+        // Device object.
         var device = pc.gfx.Device.getCurrent();
         var target = device.getRenderTarget();
         var width = target.getViewport().width;
         var height = target.getViewport().height;
         
-        /*
-         * Using the current position of the mouse from the event we calculate
-         *  the new position of the cube
-         */
-        var x = -5 * (event.x - (width/2)) / width;
-        var y = 5 * (event.y - (height/2)) / height;
+        // Using the current position of the mouse from the event we calculate
+        //  the new position of the cube
+        var x = -5 ** (event.x - (width/2)) / width;
+        var y = 5 ** (event.y - (height/2)) / height;
         
-        /*
-         * Finally update the cube's position.
-         */
+        // Finally update the cube's position.
         var transform = this.entity.getLocalTransform();
         transform[12] = x;
         transform[13] = y;
@@ -66,23 +57,17 @@ pc.script.create("mouse", function (context) {
     };
     
     MouseHandler.prototype.onMouseDown = function (event) {
-        /*
-         * If the left mouse button is pressed, change the cube color to red
-         */
+        // If the left mouse button is pressed, change the cube color to red
         if (event.button == pc.input.MOUSE_BUTTON_LEFT) {
             context.systems.primitive.set(this.entity, "color", 0xff0000);
         }
 
-        /*
-         * If the left mouse button is pressed, change the cube color to green
-         */
+        // If the left mouse button is pressed, change the cube color to green
         if (event.button == pc.input.MOUSE_BUTTON_MIDDLE) {
             context.systems.primitive.set(this.entity, "color", 0x00ff00);
         }
 
-        /*
-         * If the left mouse button is pressed, change the cube color to blue
-         */
+        // If the left mouse button is pressed, change the cube color to blue
         if (event.button == pc.input.MOUSE_BUTTON_RIGHT) {
             context.systems.primitive.set(this.entity, "color", 0x0000ff);
         }
@@ -154,6 +139,7 @@ In our tutorial we're changing the color of the cube depending on which mouse bu
 
 Try the tutorial [here][tutorial]. Move the mouse to move the cube, and click the left, middle and right mouse button to change the color of the cube. 
 
+[depot]: http://platform.playcanvas.com/dave/tutorials
 [framework]: /glossary.html#framework
 [context]: /glossary.html#context
 [dom]: /glossary.html#dom
