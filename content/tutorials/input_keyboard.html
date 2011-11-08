@@ -9,8 +9,31 @@ tags:
 level: beginner
 index: 2
 ---
-
 # Basic Keyboard Input
+
+<div id="canvas-container" class="pc-draft-container"></div>
+<script>
+    var container = document.getElementById("canvas-container");
+    pc.config = {};
+    pc.config['api_url'] = "http://platform.playcanvas.dev/api";
+    pc.config['corazon'] = {
+        endpoint: "http://login.playcanvas.com/oauth2/auth",
+        redirect: "http://login.playcanvas.com/oauth2/end",
+        origin: "http://login.playcanvas.com",
+        client: "http://platform.playcanvas.com"
+    };
+    pc.config['bootstrap'] = {
+        entity: "2fcc4986-75d2-432f-a887-84ae37de4ff2",
+        username: "dave",
+        depot: "tutorials",
+        container: container,
+        resize: false,
+        width: 710,
+        height: 399
+    };     
+</script>
+<script src="http://platform.playcanvas.dev/script/common/corazon.js"></script>
+<script src="http://platform.playcanvas.dev/script/bootstrap/bootstrap.js"></script>
 
 Keyboard handling in the PlayCanvas Engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
 for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with 
@@ -75,7 +98,7 @@ The two `if` statements in the main update loop demonstrate the different method
 
 ### Try it out
 
-Try the tutorial [here][tutorial]. Compare tapping and holding the arrow keys, and tapping and holding the spacebar. 
+Try it out in full screen [here][tutorial] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar. 
 
 [depot]: http://platform.playcanvas.com/dave/tutorials
 [tutorial]: http://platform.playcanvas.com/dave/tutorials/designer/bootstrap?e=2fcc4986-75d2-432f-a887-84ae37de4ff2&u=dave&p=tutorials
