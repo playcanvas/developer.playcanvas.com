@@ -1,0 +1,55 @@
+---
+title: coding workflow
+description: 
+tags:
+    - section
+    - engine
+index: 2
+---
+
+topic: engine
+subtopic: coding
+
+# Scripting Workflow
+
+There are two ways for you to run your application scripts while developing PlayCanvas applications. While developing and iterating you will use a Local Server for your code and in order to share and publish you will use a Code Repository. Each have different advantages and you will often switch between the two.
+
+## Local Server
+
+Whilst developing your game you want quick iteration times. Your script files reside on your local computer and you edit them there. By running a tiny web server on your local machine any changes you make to your scripts will be instantly incorporated into the application by simply refreshing the browser.
+
+The tiny web server is simple to run, you drop the launch script in the folder where your code lives on your computer, and then start the server from the command line. Installing and setting up the local server is slightly different for each platform.
+
+### OS X and Linux
+
+* [Download the server script][server_osx_linux]
+
+* Save the file `localserver` into the folder containing your scripts
+
+* Make the server executable. At the command line type
+~~~sh~~~
+chmod a+x /path/to/scripts/localserver
+~~~~~~~~
+
+* Now you can double-click the localserver file to start your server. You should see a terminal prompt with a message something like this:
+~~~sh~~~
+Serving HTTP on 0.0.0.0 port 51000 ...
+~~~~~~~~
+
+### Windows
+
+* First you will need to install python from [here][python]
+
+* Then [Download the server script][server_windows]
+
+* Save the file `localserver.bat` into the folder containing your scripts. 
+
+* Double click the server to run it. You should see a terminal prompt wth a message something like this:
+~~~sh~~~
+Serving HTTP on 0.0.0.0 port 51000 ...
+~~~~~~~~
+
+## Code Repository
+[server_osx_linux]: /downloads/localserver
+[python]: http://www.python.org/download/
+[server_windows]: /downloads/localserver.bat
