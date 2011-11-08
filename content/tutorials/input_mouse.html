@@ -10,6 +10,34 @@ level: beginner
 index: 2
 ---
 
+<div id="canvas-container" class="pc-draft-container"></div>
+<script>
+    var container = document.getElementById("canvas-container");
+    pc.config = {};
+    pc.config['api_url'] = "http://platform.playcanvas.com/api";
+    pc.config['corazon'] = {
+        endpoint: "http://login.playcanvas.com/oauth2/auth",
+        redirect: "http://login.playcanvas.com/oauth2/end",
+        origin: "http://login.playcanvas.com",
+        client: "http://platform.playcanvas.com"
+    };
+    pc.config['bootstrap'] = {
+        entity: "60cc4049-d6ce-445d-b0d2-20f97cb0d9a3",
+        username: "dave",
+        depot: "tutorials",
+        container: container,
+        resize: false,
+        width: 710,
+        height: 399
+    };
+</script>
+<script src="http://platform.playcanvas.com/script/common/corazon.js"></script>
+<script src="http://platform.playcanvas.com/script/bootstrap/bootstrap.js"></script>
+<script>
+    var c = document.getElementById('application-canvas');
+    c.focus();
+</script>
+
 # Basic Mouse Input
 
 Mouse handling in the PlayCanvas Engine is provided by the `pc.input.Mouse` object. The Mouse object provides a simple interface for detecting when the
@@ -137,7 +165,7 @@ In our tutorial we're changing the color of the cube depending on which mouse bu
 
 ### Try it out
 
-Try the tutorial [here][tutorial]. Move the mouse to move the cube, and click the left, middle and right mouse button to change the color of the cube. 
+Try the tutorial in full screen [here][tutorial] or at the top of the page. Move the mouse to move the cube, and click the left, middle and right mouse button to change the color of the cube. 
 
 [depot]: http://platform.playcanvas.com/dave/tutorials
 [framework]: /glossary.html#framework
