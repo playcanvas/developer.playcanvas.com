@@ -1,5 +1,5 @@
 ---
-title: engine overview
+title: engine
 description: 
 tags:
     - section
@@ -27,8 +27,14 @@ In addition to the various core APIs, there are some larger sibling APIs which a
 
 ## Scene Management API
 
-The scene API is built on the core and abstraction APIs. It introduces a more logical representation of a 3D scene. It defines constructs like materials, transformation hierarchies, geometries, models, cameras and lights. This allow you to more easily manage graphical objects at a high level. On other words, you can easily light and view objects as they move around an environment.
+The scene API (namespace pc.scene) is built on the core and abstraction APIs. It introduces a more logical representation of a 3D scene. It defines constructs like materials, transformation hierarchies, geometries, models, cameras and lights. This allows you to more easily manage graphical objects at a high level. In other words, you can easily light and view objects as they move around an environment.
 
-The scene API also controls the order in which graphical objects are rendered.
+The scene API also controls the order in which graphical objects are rendered. By default, opaque meshes are rendered in front to back z-order, followed by transparent meshes which are rendered in back to front z-order.
+
+Another feature of the scene API is its ability to determine which meshes are visible from any given camera.
 
 ## Application Framework
+
+The application framework (namespace pc.fw) is the highest level interface to the PlayCanvas Engine. Most of your scripting will interact with the engine at this level. It is entity-centric: from the developer's point of view, everything that the framework instantiates and manages is an entity. Every entity that incorporates a script component can execute Javascript files. These scripts can operate on their assigned entity, or communicate with other entities.
+
+An important property of an entity component is that it has an arbitrary number of attributes. Attribute values are exposed and tracked by attribute controls in the PlayCanvas Designer interface. These controls also allow realtime tweaking of entities at runtime through a live link which operates between the Designer web app and your PlayCanvas web app as it executes.
