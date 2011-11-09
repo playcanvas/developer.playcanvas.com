@@ -23,6 +23,7 @@ context:
 meta:
     nodemeta: meta.yaml
     author: PlayCanvas
+    charset: utf-8
     analytics:
       id: aaa
         
