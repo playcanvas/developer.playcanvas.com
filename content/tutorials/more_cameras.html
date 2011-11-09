@@ -1,0 +1,93 @@
+---
+title: More Cameras
+tags:
+ - tutorial
+ - intermediate
+ - camera
+ - designer
+level: intermediate
+index: 1
+---
+
+# Scripting Cameras
+
+The [Basic Cameras][basic_cameras] tutorial walks you through creating a camera Entity and adding it to your Pack. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
+
+## Altering Attributes
+
+The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
+methods on the ComponentSystem.
+
+~~~javascript~~~
+CameraScript.prototype.update = function (dt) {
+    var fov = context.systems.camera.get(this.entity, "fov");
+
+    if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+        if (targetFov == 90) {
+            targetFov = 45;
+        } else {
+            targetFov = 90;
+        }
+    }
+
+    if(fov < targetFov) {
+        fov += (10 * dt);
+        if (fov > targetFov) {
+            fov = targetFov;
+        }
+    }
+
+    if(fov > targetFov) {
+        fov -= (10 * dt);
+        if (fov < targetFov) {
+            fov = targetFov;
+        }
+    }
+
+    context.systems.camera.set(this.entity, "fov", fov);
+    
+    // more ...
+};
+~~~~~~~~~~~~~~~~
+
+In this sample pressing the spacebar triggers a change in field of view. On the first line we `get()` the value of `fov` from the entity that this script is attached to. 
+
+In the middle we detect the keypress and update the value of the `fov`.
+
+On the last line we `set()` the `fov` attribute to the new value.
+
+## Current Camera
+
+Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your pack; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
+
+~~~javascript~~~
+CameraScript.prototype.update = function (dt) {
+    // more ...
+    
+    var cameras = {
+        pc.input.KEY_LEFT: "Camera one",
+        pc.input.KEY_RIGHT: "Camera two",
+        pc.input.KEY_UP: "Camera three",
+        pc.input.KEY_DOWN: "Camera four",
+    };
+
+    var camera;
+    
+    for(key in cameras) {
+        if (cameras.hasOwnProperty(key)) {
+            if (context.keyboard.wasPressed(key)) {
+                camera = context.root.findOne(cameras[key]);
+                context.systems.camera.setCurrent(camera);
+            }
+        }
+    }
+};
+~~~~~~~~~~~~~~~~
+
+In this sample, pressing the arrow keys sets the current camera to be one of four camera Entities that are in the currently loaded Pack.
+
+First we set up an object containing the names of the four camera Entities that correspond to the four arrow keys.
+
+Next we loop through the arrow keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCurrent()` method on the Camera ComponentSystem.
+
+[basic_cameras]: /tutorials/camera.html
