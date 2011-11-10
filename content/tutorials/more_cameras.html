@@ -11,6 +11,31 @@ index: 1
 
 # Scripting Cameras
 
+<div id="canvas-container" class="pc-draft-container"></div>
+<script>
+    var container = document.getElementById("canvas-container");
+    pc.config = {};
+    pc.config['api_url'] = "http://platform.playcanvas.com/api";
+    pc.config['corazon'] = {
+        endpoint: "http://login.playcanvas.com/oauth2/auth",
+        redirect: "http://login.playcanvas.com/oauth2/end",
+        origin: "http://login.playcanvas.com",
+        client: "http://platform.playcanvas.com"
+    };
+    pc.config['bootstrap'] = {
+        entity: "470b8e24-857a-4608-8c84-4237452e39b1",
+        username: "dave",
+        depot: "tutorials",
+        container: container,
+        resize: false,
+        width: 710,
+        height: 399
+    };
+</script>
+<script src="http://platform.playcanvas.com/script/common/corazon.js"></script>
+<script src="http://platform.playcanvas.com/script/bootstrap/bootstrap.js"></script>
+*Press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
+
 The [Basic Cameras][basic_cameras] tutorial walks you through creating a camera Entity and adding it to your Pack. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
 
 ## Altering Attributes
@@ -20,30 +45,34 @@ methods on the ComponentSystem.
 
 ~~~javascript~~~
 CameraScript.prototype.update = function (dt) {
+    // Press the space bar to change the field of view and zoom in and out on the central cube
+    var camera;
     var fov = context.systems.camera.get(this.entity, "fov");
-
     if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
-        if (targetFov == 90) {
-            targetFov = 45;
+        // Make sure the right camera is selected
+        camera = context.root.findOne("Zoom camera");
+        context.systems.camera.setCurrent(camera);
+
+        if (this.targetFov == 10) {
+            this.targetFov = 45;
         } else {
-            targetFov = 90;
+            this.targetFov = 10;
         }
     }
-
-    if(fov < targetFov) {
+ 
+    if(fov < this.targetFov) {
         fov += (10 * dt);
-        if (fov > targetFov) {
-            fov = targetFov;
+        if (fov > this.targetFov) {
+            fov = this.targetFov;
         }
     }
-
-    if(fov > targetFov) {
+ 
+    if(fov > this.targetFov) {
         fov -= (10 * dt);
-        if (fov < targetFov) {
-            fov = targetFov;
+        if (fov < this.targetFov) {
+            fov = this.targetFov;
         }
     }
-
     context.systems.camera.set(this.entity, "fov", fov);
     
     // more ...
@@ -56,6 +85,9 @@ In the middle we detect the keypress and update the value of the `fov`.
 
 On the last line we `set()` the `fov` attribute to the new value.
 
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the PlayCanvas Designer where the cubes sit next to the 
+top and bottom sides of the [frustum][frustum]
+
 ## Current Camera
 
 Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your pack; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
@@ -64,23 +96,20 @@ Another way you might want to create interactivity with cameras is by switching 
 CameraScript.prototype.update = function (dt) {
     // more ...
     
-    var cameras = {
-        pc.input.KEY_LEFT: "Camera one",
-        pc.input.KEY_RIGHT: "Camera two",
-        pc.input.KEY_UP: "Camera three",
-        pc.input.KEY_DOWN: "Camera four",
-    };
+    // Press the arrow keys to switch between the four corner cameras
+    var cameras = {};
+    cameras[pc.input.KEY_LEFT] = "Camera one";
+    cameras[pc.input.KEY_RIGHT] = "Camera two";
 
-    var camera;
-    
-    for(key in cameras) {
-        if (cameras.hasOwnProperty(key)) {
-            if (context.keyboard.wasPressed(key)) {
-                camera = context.root.findOne(cameras[key]);
-                context.systems.camera.setCurrent(camera);
-            }
-        }
+    if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+        camera = context.root.findOne(cameras[pc.input.KEY_LEFT]);
+        context.systems.camera.setCurrent(camera);
     }
+
+    if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+        camera = context.root.findOne(cameras[pc.input.KEY_RIGHT]);
+        context.systems.camera.setCurrent(camera);
+    }        
 };
 ~~~~~~~~~~~~~~~~
 
@@ -91,3 +120,4 @@ First we set up an object containing the names of the four camera Entities that 
 Next we loop through the arrow keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCurrent()` method on the Camera ComponentSystem.
 
 [basic_cameras]: /tutorials/camera.html
+[frustum]: /glossary.html#frustum
