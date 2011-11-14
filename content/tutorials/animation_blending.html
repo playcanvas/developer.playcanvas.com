@@ -1,0 +1,102 @@
+---
+title: Animation Blending
+tags:
+ - tutorial
+ - intermediate
+ - animation
+ - blending
+ - designer
+level: intermediate
+index: 1
+---
+
+# Animation Blending
+
+<div id="canvas-container" class="pc-draft-container"></div>
+<script>
+    var container = document.getElementById("canvas-container");
+    pc.config = {};
+    pc.config['api_url'] = "http://platform.playcanvas.com/api";
+    pc.config['corazon'] = {
+        endpoint: "http://login.playcanvas.com/oauth2/auth",
+        redirect: "http://login.playcanvas.com/oauth2/end",
+        origin: "http://login.playcanvas.com",
+        client: "http://platform.playcanvas.com"
+    };
+    pc.config['bootstrap'] = {
+        entity: "89093a7a-a68d-45c8-ad51-6b829ac1f358",
+        username: "dave",
+        depot: "tutorials",
+        container: container,
+        resize: false,
+        width: 710,
+        height: 399
+    };
+</script>
+<script src="http://platform.playcanvas.com/script/common/corazon.js"></script>
+<script src="http://platform.playcanvas.com/script/bootstrap/bootstrap.js"></script>
+*Press the 'down' cursor key to make the character walk*
+
+This tutorial illustrates the basics of animation blending.
+
+Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.
+
+Let's examine how this is achieved via PlayCanvas...
+
+## The Animation Component
+
+In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the SWAT character as displayed in PlayCanvas Designer.
+
+![Animated Entity](/media/images/platform/animation_blending.png)
+
+As with any entity, there is a header (with name and description). There is a model component, which references a graphical mesh representing, in this case, the SWAT operative. There is also an animation component with 2 animation assets assigned: an idle cycle and a walk cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
+
+* Play a looping idle animation.
+* Blend to a looping walk animation on a key press.
+* Blend back to idle on key release.
+
+So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the SWAT character entity in Designer and it refers to a JS file called animation_blending.js. The contents of this file is:
+
+~~~javascript~~~
+pc.script.create("animation_blending", function (context) {
+    var states = {
+        IDLE: { animation: 'swat_idle.json' },
+        WALK: { animation: 'swat_walk.json' }
+    };
+    
+    var AnimationBlender = function (entity) {
+        this.entity = entity;
+        this.state = states.IDLE;
+        this.blendTime = 0.2;
+    };
+
+    AnimationBlender.prototype.getState = function () {
+        return this.state;
+    };
+
+    AnimationBlender.prototype.setState = function (state) {
+        this.state = state;
+        // Set the current animation, taking 0.2 seconds to blend from
+        // the current animation state to the start of the target animation.
+        context.systems.animation.setAnimation(this.entity,
+                                               this.state.animation, 
+                                               this.blendTime);
+    };
+
+    AnimationBlender.prototype.update = function () {
+        // Idle state unless the down arrow key is held, in which case 
+        // enter walk state.
+        if (context.keyboard.isPressed(pc.input.KEY_DOWN)) {
+            if (this.getState() !== states.WALK)
+                this.setState(states.WALK);
+        } else {
+            if (this.getState() !== states.IDLE)
+                this.setState(states.IDLE);
+        }
+    };
+    
+    return AnimationBlender;
+});
+~~~~~~~~~~~~~~~~
+
+From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
