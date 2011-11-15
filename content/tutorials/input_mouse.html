@@ -11,29 +11,7 @@ index: 2
 ---
 # Basic Mouse Input
 
-<div id="canvas-container" class="pc-draft-container"></div>
-<script>
-    var container = document.getElementById("canvas-container");
-    pc.config = {};
-    pc.config['api_url'] = "http://platform.playcanvas.com/api";
-    pc.config['corazon'] = {
-        endpoint: "http://login.playcanvas.com/oauth2/auth",
-        redirect: "http://login.playcanvas.com/oauth2/end",
-        origin: "http://login.playcanvas.com",
-        client: "http://platform.playcanvas.com"
-    };
-    pc.config['bootstrap'] = {
-        entity: "60cc4049-d6ce-445d-b0d2-20f97cb0d9a3",
-        username: "dave",
-        depot: "tutorials",
-        container: container,
-        resize: false,
-        width: 710,
-        height: 399
-    };
-</script>
-<script src="http://platform.playcanvas.com/script/common/corazon.js"></script>
-<script src="http://platform.playcanvas.com/script/bootstrap/bootstrap.js"></script>
+<iframe src="http://developer.playcanvas.com/exports/input_mouse"></iframe>
 *Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
 
 Mouse handling in the PlayCanvas Engine is provided by the `pc.input.Mouse` object. The Mouse object provides a simple interface for detecting when the

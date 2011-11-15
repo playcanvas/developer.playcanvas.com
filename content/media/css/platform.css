@@ -843,18 +843,23 @@ footer a {
   background: #d5edf8;
   color: #205791;
   border-color: #92cae4;
-  width: 454px;
+  font-size: 12px;
+  width: 460px;
   display: inline-block;
 }
 /* line 54, ../../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 .pc-standard-form .pc-form-info a {
   color: #205791;
 }
-/* line 63, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 62, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form .pc-form-info a {
+  color: black;
+}
+/* line 67, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .error-message {
   color: red;
 }
-/* line 67, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 71, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form input.pc-inline-input {
   width: 156.667px;
   padding: 1px;

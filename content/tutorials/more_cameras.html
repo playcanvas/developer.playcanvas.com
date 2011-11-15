@@ -11,29 +11,7 @@ index: 1
 
 # Scripting Cameras
 
-<div id="canvas-container" class="pc-draft-container"></div>
-<script>
-    var container = document.getElementById("canvas-container");
-    pc.config = {};
-    pc.config['api_url'] = "http://platform.playcanvas.com/api";
-    pc.config['corazon'] = {
-        endpoint: "http://login.playcanvas.com/oauth2/auth",
-        redirect: "http://login.playcanvas.com/oauth2/end",
-        origin: "http://login.playcanvas.com",
-        client: "http://platform.playcanvas.com"
-    };
-    pc.config['bootstrap'] = {
-        entity: "470b8e24-857a-4608-8c84-4237452e39b1",
-        username: "dave",
-        depot: "tutorials",
-        container: container,
-        resize: false,
-        width: 710,
-        height: 399
-    };
-</script>
-<script src="http://platform.playcanvas.com/script/common/corazon.js"></script>
-<script src="http://platform.playcanvas.com/script/bootstrap/bootstrap.js"></script>
+<iframe src="http://developer.playcanvas.com/exports/more_cameras" ></iframe>
 *Press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
 The [Basic Cameras][basic_cameras] tutorial walks you through creating a camera Entity and adding it to your Pack. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.

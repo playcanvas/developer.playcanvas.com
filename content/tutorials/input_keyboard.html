@@ -11,29 +11,7 @@ index: 2
 ---
 # Basic Keyboard Input
 
-<div id="canvas-container" class="pc-draft-container"></div>
-<script>
-    var container = document.getElementById("canvas-container");
-    pc.config = {};
-    pc.config['api_url'] = "http://platform.playcanvas.com/api";
-    pc.config['corazon'] = {
-        endpoint: "http://login.playcanvas.com/oauth2/auth",
-        redirect: "http://login.playcanvas.com/oauth2/end",
-        origin: "http://login.playcanvas.com",
-        client: "http://platform.playcanvas.com"
-    };
-    pc.config['bootstrap'] = {
-        entity: "2fcc4986-75d2-432f-a887-84ae37de4ff2",
-        username: "dave",
-        depot: "tutorials",
-        container: container,
-        resize: false,
-        width: 710,
-        height: 399
-    };
-</script>
-<script src="http://platform.playcanvas.com/script/common/corazon.js"></script>
-<script src="http://platform.playcanvas.com/script/bootstrap/bootstrap.js"></script>
+<iframe src="http://developer.playcanvas.com/exports/input_keyboard"></iframe>
 *Press `left arrow` and `right arrow` to speed up and slow down rotation, press and hold `spacebar` to change the color*
 
 Keyboard handling in the PlayCanvas Engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
