@@ -1,0 +1,68 @@
+---
+title: Combining PlayCanvas with HTML pages
+tags:
+ - tutorial
+ - intermediate
+#level: intermediate
+#index: 3
+extends: base.j2
+default_block: main
+---
+
+<style>
+    section.content iframe.full-page {
+        position: absolute;
+        top: 45px;
+        bottom: 20px;
+        left: 0px;
+        width: 100%;
+        height: 88%;
+    }
+    
+    #content-overlay {
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        top: 65px;
+        height: 88%;
+    }
+    #content-overlay p, #content-overlay h1, #content-overlay h2, #content-overlay h3, #content-overlay h4 {
+        color: #ccc;
+    }
+</style>
+
+<iframe class="full-page" src="http://apps.playcanvas.com/dave/intro/intro"></iframe>
+<div id="content-overlay">
+{% filter markdown -%}
+## Combining PlayCanvas with HTML pages
+
+Because the PlayCanvas is entirely built on web standards such as javascript and WebGL it is trivial to composite HTML content with PlayCanvas content
+
+~~~html~~~
+<style>
+    section.content iframe.full-page {
+        position: absolute;
+        top: 45px;
+        bottom: 20px;
+        left: 0px;
+        width: 100%;
+        height: 88%;
+    }
+    
+    #content-overlay {
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        top: 65px;
+        height: 88%;
+        
+        color: #ddd;
+    }
+</style>
+<iframe class="full-page" src="http://apps.playcanvas.com/dave/intro/intro"></iframe>
+<div id="content-overlay">
+    <h2>Combining PlayCanvas with HTML pages</h2>
+</div>
+~~~~~~~~~~
+{% endfilter -%}
+</div>
