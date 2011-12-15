@@ -64,6 +64,8 @@ grouper:
         description: Documentation about using the PlayCanvas Engine to write runtime code
       - name: content creation
         description: Documentation covering the creation and import of assets into PlayCanvas Platform
+      - name: publishing
+        description: Documentation about how to publish your game to a PlayCanvas App or an external web server
       - name: tutorials
         description: Tutorials to lead you through all the main concepts of the PlayCanvas engine.
       - name: glossary
