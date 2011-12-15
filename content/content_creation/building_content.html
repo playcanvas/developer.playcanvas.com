@@ -10,15 +10,23 @@ index: 3
 
 # Building Content for PlayCanvas
 
-PlayCanvas sucks in content from FBX so, in general, anything that FBX supports, PlayCanvas also supports. As such, to target PlayCanvas, you do not have to use any special Max plugins and there are no specific workflows you must follow. However, it is worth being aware of what will and what will not translate from Max through FBX to PlayCanvas.
+PlayCanvas import content via the FBX interchange format so in general, anything that FBX supports PlayCanvas does too. As such, to target PlayCanvas, you do not have to use any special Max plugins and there are no specific workflows you must follow. To see an example of this in action, check out the following video that shows the creation of a simple object in 3DS Max:
+
+<video width="640" height="480" controls="controls">
+  <source src="/media/video/door_max.mp4" type="video/mp4" />
+  <source src="/media/video/door_max.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+
+You should now have a better feel for how PlayCanvas interprets your 3DS Max scenes. However, let's not look at what is and what isn't supported in a little more detail.
 
 ## Meshes
 
 There are a few things to be aware of when creating meshes in the modelling application:
 
-* Each mesh object should contain no more than 65,535 vertices.
+* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
 * NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
-* Meshes can be skinned to an arbitrary number of bones. PlayCanvas does not impose an upper limit.
+* Meshes can be skinned to an arbitrary number of bones. PlayCanvas does not impose an upper limit regardless of what platform you are running on.
 
 ## Materials
 
@@ -37,6 +45,10 @@ Additionally, it is possible to assign an RGB Multiply map to the Diffuse Color 
 #### Specular Color
 
 Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas material. This essentially overrides whatever specular color has been set on the material (via the color picker). This allows you to mask out areas of specularity on a surface, or tinge specular highlights different colors in different areas. If the specular map has an alpha channel, it will be used to set per-pixel shininess.
+
+#### Specular Level
+
+Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
 
 #### Self-Illumination
 
