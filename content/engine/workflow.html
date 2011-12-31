@@ -20,6 +20,19 @@ Whilst developing your game you want quick iteration times. Your script files re
 The web server is simple to run, you drop the launch script in the folder where your code lives on your computer, and then start the server. 
 Installing and setting up the local server is slightly different for each platform.
 
+### Windows
+
+* First you will need to install python from [here][python]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
+
+* [Download the server script][server_windows]
+
+* Save the file `localserver.bat` into the folder containing your scripts. 
+
+* Double click the server to run it. You should see a terminal prompt wth a message something like this:
+~~~sh~~~
+Serving HTTP on 0.0.0.0 port 51000 ...
+~~~~~~~~
+
 ### OS X and Linux
 
 * [Download the server script][server_osx_linux]
@@ -32,19 +45,6 @@ chmod a+x /path/to/scripts/localserver
 ~~~~~~~~
 
 * Now you can double-click the localserver file to start your server. You should see a terminal prompt with a message something like this:
-~~~sh~~~
-Serving HTTP on 0.0.0.0 port 51000 ...
-~~~~~~~~
-
-### Windows
-
-* First you will need to install python from [here][python]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
-
-* [Download the server script][server_windows]
-
-* Save the file `localserver.bat` into the folder containing your scripts. 
-
-* Double click the server to run it. You should see a terminal prompt wth a message something like this:
 ~~~sh~~~
 Serving HTTP on 0.0.0.0 port 51000 ...
 ~~~~~~~~

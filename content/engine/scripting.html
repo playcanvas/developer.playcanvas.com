@@ -1,0 +1,171 @@
+---
+title: scripting
+description: 
+tags:
+    - section
+    - engine
+topic: engine
+subtopic: scripting
+index: 1
+---
+
+# Scripting Introduction
+
+You can think of your application as divided into two separate code bases. The [Engine][engine_overview], which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which will often be specific to your application or re-usable chunks that provide useful behaviours.
+
+Generally you won't have to worry about the engine code, it's a single javascript file included into your application via a `<script>` tag. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+
+Scripts are individual javascript files, which are attached to Script [Components](/glossary.html#component) on [Entities](/glossary.html#entity) via the PlayCanvas Designer. Generally, a script file should define a single javascript object which is instantiated once for each Entity that it is attached to. 
+
+## Terminology
+
+First off, lets define a few pieces of terminology.
+
+* ***Script*** A script is single javascript file which includes the correct javascript to define a script object
+* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and instantiates an script object.
+* ***Script Object*** A script object is a standard javascript object which is registered with the PlayCanvas engine and can be instantiated when a new script Component is created. There will generally only be a single script object of each type per application.
+* ***Script Instance*** A script instance is script object which has been instantiated at runtime, using the `new` keyword in javascript. A script instance is created for every Entity that has the script attached.
+
+## Attaching a script to an Entity
+
+![Attribute Editor showing script component](/media/images/platform/attribute_editor.png "Add urls of scripts to the script component")
+
+Script Components are attached to Entities in the same way as all other Components using the *New Component* command in the **Component** menu. See the [component menu][component_menu] page for details.
+
+Once you have added a Script Component you can specify the URLs of the javascript files to load. The script component has a field named URLs into which you can type a comma-separated list of paths for script files. 
+
+The paths you supply for the scripts are relative your Local Server or Code Repository, e.g. `directory/script.js` see the [scripting workflow][coding_workflow] page for details on how to set these up. 
+
+If you want to load general purpose javascript libraries rather than a PlayCanvas Script, you can specify their URL here. If the javascript library is included on your Local Server or Code Repository this should be a relative URL 
+
+~~~sh~~~
+directory/javascript_library.js
+~~~~~~~
+
+If the javascript library is hosted on a remote server you can specify a fully qualified URl 
+
+~~~sh~~~
+http://example.com/javascript_library.js
+~~~~~~
+
+If you want to specify multiple scripts for a single component, separate the URLs with a comma.
+
+~~~sh~~~
+directory/first.js, other_directory/second.js
+~~~~~~
+
+## Anatomy of a script
+
+~~~js~~~
+pc.script.create("script_name", function (context) {
+    var ScriptObject = function (entity) {
+        this.entity = entity;
+    };
+    
+    ScriptObject.prototype.update = function (dt) {
+    };
+    
+    return ScriptObject;
+});
+~~~~~~~~
+*A skeleton script*
+
+Here is the skeleton of a script, it shows almost the minimum amount of code necessary to make a functioning script. Almost the minimum, because the `update` method on the prototype is optional, and you could leave this off entirely. However, most scripts will need an update method in order actually do anything.
+
+We'll break down each part of this script section by section.
+
+### Declaration and context
+
+~~~js~~~
+pc.script.create("script_name", function(context) {
+    //...
+});
+~~~~~~~~  
+Enclosing the whole script is a call to `pc.script.create`. The first argument is the script name, this is used to identify this script later if you wish to communicate between script instances. The second argument is a function which is used to define the class that provides the script's behaviour.
+
+The definition function takes a single argument `context` which is an [`ApplicationContext`][application_context] instance. 
+
+The `context` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
+
+* `systems` Container for all Component systems, e.g. `context.systems.model` is the Model Component System
+* `root` The root node of the Entity hierarchy. 
+* `keyboard` An instance of `pc.input.Keyboard`
+* `mouse` An instance of `pc.input.Mouse`
+* `scene` An instance of `pc.scene.Scene`
+* `loader` An instance of `pc.resources.ResourceLoader`
+
+### Defining the Script object
+~~~js~~~
+pc.script.create("script_name", function (context) {
+    var ScriptObject = function (entity) {
+        this.entity = entity;
+    }
+
+    ScriptObject.prototype.update = function (dt) {
+    };
+    
+    return ScriptObject;
+})
+~~~~~~~~
+
+The purpose of the function in the second argument is to define a Script object and return that definition so that the engine can instantiate a new instance for each Entity.
+
+Here you can see the basic set up. A variable `ScriptObject` is declared as a constructor function which takes the Entity it is attached to as it's only argument. It is usually useful to store this Entity in the instance for use later on, hence the line `this.entity = entity;` You will often create member variables for your object here too.
+
+Next we define the update function. This is the update loop for our script. The Script Component system will call the update function every frame with the time in seconds that passed since the last update in the variable `dt`.
+
+Finally, we return the `ScriptObject` variable.
+
+## A complete example
+
+Here is a complete script, try saving it to a file and attaching it to an Entity in a pack.
+
+~~~js~~~
+///
+// This script moves the entity backwards and forwards on the x-axis. 
+// You can pause the oscillation by pressing the space bar.
+///
+pc.script.create('oscillator', function (context) {
+
+    // define the constructor
+    var Oscillator = function (entity) {
+        this.entity = entity;
+        
+        this.paused = false; // paused state
+        this.amplitude = 10; // The amount to oscillate
+        this.time = 0; // The time value for the oscillation
+    };
+    
+    // define the update function
+    Oscillator.prototype.update = function (dt) {
+        
+        // Use the keyboard handler from the ApplicationContext 
+        // to pause/unpause
+        if (context.keyboard.wasPressed(pc.input.KEY_SPACE)) {
+            this.paused = !this.paused; // toggle paused state
+        }
+        
+        if (!this.paused) {
+            // increment the time value by the frametime
+            this.time += dt;
+
+            // Calculate the new value
+            var x = this.amplitude * Math.sin(this.time);
+
+            // Get the local transform of the Entity
+            var ltm = this.entity.getLocalTransform();
+
+            // Set the x translation.
+            ltm[12] = x;            
+        }
+    };
+    
+    // return the class definition
+    return Oscillator;
+});
+~~~~~~~~
+
+[engine_overview]: /engine/engine_overview.html
+[application_context]: /engine/api.html
+[component_menu]: /tools/designer/menu_component.html
+[coding_workflow]: /engine/workflow.html
