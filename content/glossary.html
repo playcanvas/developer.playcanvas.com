@@ -18,19 +18,22 @@ keyboard and mouse handlers. The ApplicationContext is made available to all use
 <h3 id="depot">Depot</h3>
 A Depot is a collection of Entities, Assets and Code for a single user. Whilst usually a single Depot will only contain resources for a single application, you may use multiple Depots
 as part of a single application. For example, each user on your team might have a separate depot containing your application resources and then you have a single Depot which represents
-the shipping version of the application. This is analogous to how repositories or branches work in version control software. N.B. Moving Entities and Assets between Depots is a 
-feature coming soon.
+the shipping version of the application. This is analogous to how repositories or branches work in version control software. N.B. Moving Entities and Assets between Depots is a feature coming soon.
+
+<h3 id="component">Component</h3>
+Components describe the properties and functionality of an [Entity](#entity). In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components. 
+
+Components are added to Entities via the Component menu in the PlayCanvas Designer, or they can be added at runtime via their respective `ComponentSystem` object.
 
 <h3 id="dom">DOM</h3>
 The DOM (Document Object Model) is a way of representing an HTML document. Web browsers make an interface available for querying and modifying the DOM that makes up the HTML page that 
 is displayed in the users browser.
 
 <h3 id="entity">Entity</h3>
-An Entity is the one of the building blocks of your application in the [PlayCanvas Engine](#engine). Often an Entity will represent a single object in your game or application,
-though a single object may also be made of of multiple Entities. 
+An Entity is the one of the building blocks of your application in the [PlayCanvas Engine](#engine). Often an Entity will represent a single object in your game or application, though a single object may also be made of of multiple Entities. 
 
 All Entities are have a transform matrix to provide their position and orientation; 
-a parent Node from which they inherit a transform, and they can can optionally have child Nodes to which they supply their transform.   
+a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.   
 
 <h3 id="framework">Framework</h3>
 The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Designer.
