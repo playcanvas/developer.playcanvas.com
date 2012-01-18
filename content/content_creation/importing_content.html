@@ -44,10 +44,15 @@ To run FACT, you may find it convenient to add its location to your PATH environ
 
 The format for the command is:
 
-`fact.exe -i <INPUT_ART_FILE> -o <OUTPUT_JSON_FILE>`
+`fact.exe -i <INPUT_ART_FILE> -m <OUTPUT_MODEL_FILE> -a <OUTPUT_ANIMATION_FILE>`
+
+For example:
+
+`fact.exe -i windmill.fbx -m windmill.json -a windmill_sails_anim.json`
 
 Note the following:
 
+* You must specify either the -m switch or the -a switch or both.
 * The output directory must exist for the conversion to succeed. FACT does not create the directory if it does not exist.
 * All texture images are converted and written to the same directory as the outputted JSON file. Therefore, you need to be mindful that if more than one source image shares the same filename, one or more will be overwritten on export.
 
