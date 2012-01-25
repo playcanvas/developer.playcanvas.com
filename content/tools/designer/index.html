@@ -16,7 +16,7 @@ The PlayCanvas Designer is a visual editing tool which you use to create and edi
 
 ## Interface
 
-<img alt="Designer Interface" width="640" src="/media/images/platform/designer_interface.png"></img>
+<img alt="Designer Interface" width="640" src="/media/images/platform/designer_interface.png" />
 
 This is the main interface to the PlayCanvas Designer. You can see labeled the main areas
 
@@ -28,12 +28,11 @@ This is the main interface to the PlayCanvas Designer. You can see labeled the m
 
 ### Menubar and Toolbar
 
-![Menubar](/media/images/platform/menu_bar.png "Barring any mistakes the menubar contains all the commands you need")
+![Menubar](/media/images/platform/menu_bar.png "The menu bar contains all the commands!")
 
-Just like a standard desktop application, the menubar contains a complete list of all the commands that you can perform on your pack. This is where you add new Entities and Components as 
-well as perform standard operations like Save, Undo, Redo, Cut, Copy and Paste. (N.B. Cut, Copy and Paste are features that are coming soon)
+Just like a standard desktop application, the menubar contains a complete list of all the commands that you can perform on your pack. All Designer commands should be available via a menu option. 
 
-The Toolbar features common commands for easy access, the most useful one of all is the Play Button. The Play Button launches a game instance in a separate browser tab and loads 
+The Toolbar features common commands for easy access, the most useful one of all is the Launch Button. The Launch Button starts a game instance in a separate browser tab and loads 
 your Pack. You can then start play testing immediately. See the section on the Attribute Editor for how to edit values on a live running instance of your game. 
 
 ### Pack Explorer
@@ -49,9 +48,9 @@ The Pack Explorer is great for quickly finding Entities as all the Entities in y
 The order in which Entities are listed in the tree view is important. As the Pack is a hierarchy, Entities can be *children* of another Entity -- their *parent* -- 
 and the transform matrix of a parent Entity is applied to all it's children. So if you move or rotate the 'Geometry' Entity in the image above, 
 all the Platform Entities will be moved. This is very useful for simplifying the manipulation of many Entities, but be careful, in a deep tree, 
-it's not alway obvious where an Entity gets it's position from if a ancestor has been moved. 
+it's not alway obvious where an Entity gets it's position from if an ancestor has been moved. 
 
-Re-parenting Entities to move them around in the hierarchy is a feature that is coming soon.
+You can re-parent an Entity by dragging it over another Entity.
 
 ### Attribute Editor
 
@@ -70,13 +69,16 @@ save the Pack in the Designer.
 
 ### Design View
 
-<img alt="Design View" width="640" height="480" src="/media/images/platform/design_view.png"></img>
+<img alt="Design View" width="640" height="480" src="/media/images/platform/design_view.png" />
 
 The Design View shows you the scene rendered by your Pack. You can freely move around the scene by manipulating the Designer's current camera. Initially the Designer is in single view
-mode, you will a single *Perspective* scene, filling the viewport. By clicking the 'Q' button on the toolbar you can toggle quad view mode. This will render 4 camera angles simultaneously, 
-from the *Front*, *Side*, *Top* and also the *Perspective* view.
+mode, showing you the view from the *Pespective* camera. The *Perspective* camera is one of several built in cameras that you can use to view your scene. The other cameras use an *Orthographic*
+projection which means they don't show perspective, this is useful for judging distances and lining up objects more precisely. The other camera views are: *Orthographic*, a free camera using 
+an orthographic projection; *Top/Bottom* cameras fixed above and below the scene; *Left/Right* cameras fixed either side and *Front/Back* camera ahead or behind the scene. You can switch
+between these cameras by right-clicking with the mouse on the Design View and using Camera context menu.
 
-Quad view is great for aligning objects in 3D space as you can see the object from all angles at once.
+Using the *Toggle Quad View* command in the menu, or by pressing the spacebar you can toggle between single view and quad view. In quad view mode four cameras are display simultaneously. 
+The *Front*, *Side*, *Top* and also the *Perspective* views. Quad view is great for aligning objects in 3D space as you can see the object from all angles at once.
 
 The 3-Colored Axis you can see in the screenshot above is called a [Gizmo](/glossary.html#gizmo). This is used to manipulate the transform matrix of the selected Entity. There are three 
 types of Gizmo: Translate with arrows on the ends of the axes; Scale with cubes on the ends of the axes and Rotate which is made up of three colored rings.
