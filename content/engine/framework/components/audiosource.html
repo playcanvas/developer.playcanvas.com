@@ -1,0 +1,35 @@
+---
+title: scripting workflow
+description: 
+tags:
+    - engine
+    - framework
+    - component
+topic: engine
+---
+
+# Component Reference
+
+## AudioSource Component
+
+The AudioSource Component is used to play a audio asset like a wave, MP3 or ogg vorbis file. You can imagine an AudioSource Component like a speaker in the scene. An AudioSource can be a 3D sound, i.e. it has a position and orientation in space and falls off over distance; or it can be ambient, i.e. it is uniform across space. The falloff of a 3D source is determined by a the RollOff factor and the min and max distance.
+
+## Properties
+
+**volume** - The volume ranges from 0 to 1 and determines how loud the playback is
+
+**loop** - If loop is enabled the sound will repeat indefinitely
+
+**activate** - If activate is enabled the source will begin playing as soon as the Pack is loaded
+
+**3d** - If the 3d option is enabled, the source is positioned in space using the Entity's position and orientation.
+
+**Min Distance** - The minimum distance at which attenuation begins, within the minimum distance the sound will be at full volume, outside the minimum distance it will get quieter with distance from the Entity's position. *N.B.* Min Distance is only relevant to *3d* sources.
+
+**Max Distance** - The maximum distance at which attenuation will occur. Outside the maximum distance no more attenuation will occur and the sound will play at the same volume as at the maximum distance. *N.B.* Max Distance is only relevant to *3d* sources.
+
+**Roll-off Factor** - The roll-off factor determines how quickly the sound attenuates as the listener moves further from the source. 
+
+
+ 
+
