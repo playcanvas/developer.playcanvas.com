@@ -13,21 +13,18 @@ index: 1
 
 Once you've signed in you will be greeted with your profile page. Your profile page shows you all the Depots you have access to, this includes all Depots you have created and any that you have been given permission to access.
 
+A Depot is a collection of:
+
+* Packs - An collection Entities used to build up a part of your game. A Pack could be a single level or your entire game. It depends 
+* Assets - 3D Models, textures, images, sound files and anything other assets you use in your game.
+* Code - Your source code, is provided either as a link to a source control repository, such as Git or Mercurial, or a uploaded folder of code.
+* Exports and published apps - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
+
 ![Depot List][depot_list]
 
-## Setting Up your Profile
+## Creating a New Depot
 
-Since you are reading this, you are already logged in! Currently, PlayCanvas accounts use Google OpenID for authentication, so your GMail address or Google Apps address is what we tie your PlayCanvas profile to. In future, we will expand the service to support other OpenID providers.
-
-After logging in for the first time, you will be asked to set your name, your username (that determines the URL to your public profile) and your e-mail address. Once you have set this information, you can always change it by clicking on the 'account' link in the top right navbar.
-
-PlayCanvas Platform accounts support [Gravatar](http://en.gravatar.com/). Gravatar allows you to specify an avatar image once, and this can then be reused across the many sites that support it. This is an optional step, but it does allow you to personalize your profile a little.
-
-So your profile page displays your Gravatar image, your name, your username and the date you signed up. But it also lists all of the projects which you own or contribute to. Top level projects in PlayCanvas Platform are called 'Depots'. Initially, there will not be any listed, so to get started, let's add a new one!
-
-## Creating a New Project
-
-On your profile page, select the 'add new' link. This takes you to the 'Create new depot' page where you set the details of your new project: 
+On your profile page, press the add button. This takes you to the 'Create new depot' page where you set the details of your new depot:
 
 * Name - The name is used to build the URL for your project. For example, if user 'joebloggs' created a depot called 'spacewar', the depot can be found at http://platform.playcanvas.com/joebloggs/spacewar
 * Description - A short description of your project that will appear on the main depot page.
@@ -38,7 +35,9 @@ On confirming the new depot details, you are taken to the depot home page.
 
 ## Adding Collaborators
 
-PlayCanvas is all about collaborative development! Once you have a new depot, you can start adding additional team members and give them access rights. From the depot home page, select 'Settings'. You'll see the fields that you filled in when you created the depot, but additionally there is a section named 'Collaborators'. To add a new team member, enter the e-mail address they use to access PlayCanvas Platform. The access levels are:
+![Collaborators][collaborators]
+
+PlayCanvas is all about collaborative development. Once you have a new depot, you can start adding additional team members and give them access rights. From the depot home page, select 'Settings'. Under the Collaborators section you can add new team members, enter the e-mail address they use to access PlayCanvas Platform and select the access level you wish to give them. The access levels are:
 
 * Read - The collaborator can load, run and export the contents of the depot.
 * Write - In addition to read privileges, the collaborator can edit and save to the depot.
@@ -54,13 +53,15 @@ The first thing to do is create a new pack. A pack represents the data required 
 
 Before you can begin editing, you must name the pack. Let's call this pack 'cube'.
 
-### Entities and Components
+### Packs, Entities and Components
 
-A PlayCanvas pack is effectively a collection of 'things' that make up your app. We call these things 'entities' and can represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. These entities are shown in the 'Pack Explorer' panel in Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
+A PlayCanvas Pack is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the 'Pack Explorer' panel in Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
 
-Entities are built from components. A component powers an entity with a particular piece of functionality. For example, a component can add a graphical model to an entity, it can animate the model, it can add a light source to an entity, it can add an audio source, and so the list goes on.
+![Pack Explorer][pack_explorer]
 
-For our spinning cube experiment, we will need 3 entities:
+Entities are built from Components. A Component powers an Entity with a particular piece of functionality. For example, a Component can add a graphical model to an Entity, it can animate the model, it can add a light source to an Entity, it can add an audio source, and so the list goes on.
+
+For our spinning cube experiment, we will need 3 Entities:
 
 * A cube.
 * A camera (to view the cube).
@@ -71,28 +72,25 @@ Here are the steps to create the cube:
 * Select the root node 'cube' in the Pack Explorer.
 * Select 'New Entity' from the 'Entity' menu. This creates a new child entity of 'cube' in the Pack Explorer.
 * Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
-* Change the 'Name' field of the header component to 'Cube'.
-* Set the 'Description' field of the header component to 'A spinning cube'.
-* Select 'New Component' from the 'Component' menu.
-* Select 'primitive' from the list and hit OK. This creates a 2x2x2 unit box primitive at the location of the entity (the world space origin).
+* Change the 'Name' field to 'Cube'.
+* Select 'Add Component' from the 'Entity' menu.
+* Select 'primitive' from the list and hit OK. This creates a 1x1x1 unit box primitive at the location of the entity (the world space origin).
 
 Now let's create the camera:
 
 * Select the root node 'cube' in the Pack Explorer.
-* Select 'New Camera Entity' from the 'Entity' menu. This creates a new child camera entity of 'cube' in the Pack Explorer.
+* In the 'Entity' menu, expand the 'New ...' submenu and select 'New Camera'. This creates a new child camera entity of 'cube' in the Pack Explorer.
 * Select the new camera entity in the Pack Explorer to activate the Attribute Editor.
-* In the Attribute Editor, set 'Transform: Translate:' to 0, 0, 5.
+* Change the 'Name' field to 'Camera'.
+* In the Attribute Editor, set 'Translate:' to 0, 0, 5.
 
 Finally, let's create the light:
 
 * Select the root node 'cube' in the Pack Explorer.
-* Select 'New Entity' from the 'Entity' menu. This creates a new child entity of 'cube' in the Pack Explorer.
+* In the 'Entity' menu, expand the 'New ...' submenu and select 'New Directional Light'. This creates a new child Entity of 'cube' in the Pack Explorer with a Directional Light Component added to it.
 * Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
-* Change the 'Name' field of the header component to 'Light'.
-* Select the new light entity in the Pack Explorer to activate the Attribute Editor.
-* Select 'New Component' from the 'Component' menu.
-* Select 'directionallight' from the list and hit OK. This creates a directional light pointing down the negative Y axis.
-* In the Attribute Editor, set 'Transform: Rotate:' to -30, 0, 30 to reorient the light.
+* Change the 'Name' field to 'Light'.
+* In the Attribute Editor, set 'Rotate:' to -30, 0, 30 to reorient the light.
 
 You should now have someone similar to the following in the 3D View:
 
@@ -100,19 +98,23 @@ You should now have someone similar to the following in the 3D View:
 
 ### Save your work
 
-Commit you changes to the server by selecting 'Save' from the 'Pack' menu.
+Commit you changes to the server by selecting 'Save' from the 'Pack' menu. Or clicking on the disk icon on the toolbar.
 
 ### Previewing Your Work
 
-From Designer, you can quickly preview your work at any time. To do this, press the play button on Designer's toobar. This will open a new tab and fire up your embryonic web app. Based on the steps above, you should see something similar to what is shown below:
+From Designer, you can quickly preview your work at any time. To do this, press either the 'Launch' or 'Launch Local' button (more on these later) on the toolbar. 
+
+![Launch Buttons][launch_buttons]
+
+This will open a new tab and fire up your embryonic web app. Based on the steps above, you should see something similar to what is shown below:
 
 <img alt="Cube in engine" width="640" src="/media/images/platform/designer_cube_preview.jpg"></img>
 
-Once you are done with previewing your pack, you can switch back to Designer and select the stop button (located just to the immediate right of the play button on the toolbar).
+Once you are done with previewing your pack, you can switch back to Designer and stop your application (the Launch option will display a Stop icon while the app is running).
 
 ### Scripting Entities
 
-So far, we've managed to render a cube. Now, let's animate it!
+So far, we've managed to render a cube. Now, let's animate it.
 
 The real power and versatility of PlayCanvas comes from the ability to assign scripted behaviour to individual entities. This is done by assigning a script component to an entity and then specifying the Javascript file that executes in relation to that entity. In order to get the cube to spin, we need to write some code that executes every frame, rotating the cube on its vertical axis by a small amount at a time.
 
@@ -143,20 +145,23 @@ pc.script.create("spinner", function (context) {
 });
 ~~~~~~~
 
-As you can no doubt see from the code and comments, once assigned, this script will cause any entity to rotate around the world space Y axis about its local origin. But how do you assign your spinner.js script to the cube entity? Simply follow these steps:
+Once assigned, this script will cause any Entity to rotate around the world space Y axis about its local origin. But how do you assign your spinner.js script to the cube Entity? Simply follow these steps:
 
 * Select the entity called 'Cube' in the Pack Explorer.
-* Select 'New Component' from the 'Component' menu.
+* Select 'Add Component' from the 'Component' menu.
 * Select 'script' from the list and hit OK.
 * In the Attribute Editor, set the URL attribute of the script component to 'spinner.js'.
-* Select 'Save' from the 'File' menu.
+* Save your Pack again.
 
-If you were to re-run the pack now, the browser would attempt to read the script from `http://localhost:51000/spinner.js`. By default, the PlayCanvas engine will try to load scripts from a web server running locally on your computer. This allows you to edit, save and reload your PlayCanvas web app quickly, speeding up development. A simple way to do run a local web server is to use Python. If you install Python, you should be able to invoke the following command from the command line:
-
-`python -m SimpleHTTPServer 51000`
+If you were to run the pack now using the 'Launch Local' option the browser will attempt to read the script from `http://localhost:51000/spinner.js`. Running scripts from a web server running locally allows you to edit, save and reload your PlayCanvas web app quickly, speeding up development. You can find a script for running a Local Server for your code on our [Script Workflow page](/engine/workflow.html). Alternatively, once you've set up a Code Repository, you can use the other 'Launch' command and that will load from code stored on the PlayCanvas servers.
 
 Remember, the server must be started from the same location as spinner.js.
 
-With that done, you can select the play button from the toolbar once again. This time, you should see your cube rotating on the spot.
+With that done, you can select the Launch button from the toolbar once again. This time, you should see your cube rotating on the spot, just like this:
+
+<iframe id='cube-frame' src="http://apps.playcanvas.com/dave/tutorials/cube?overlay=false"></iframe>
 
 [depot_list]:  /media/images/platform/depot_list.png "Depot List"
+[collaborators]: /media/images/platform/collaborators.png "Collaborators"
+[pack_explorer]: /media/images/platform/pack_explorer.png "Pack Explorer"
+[launch_buttons]: /media/images/platform/launch_buttons.png "Launch Buttons"
