@@ -1,5 +1,5 @@
 ---
-title: Moving Entities
+title: Manipulating Entities
 tags:
  - tutorial
  - beginner
@@ -8,17 +8,19 @@ level: beginner
 index: 1
 ---
 
-# Moving Entities
+# Manipulating Entities
+
+In this tutorial we'll show you how you can change an Entity's position, orientation and scale. 
 
 Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be point in space.
 
 Entities are a special form of graph node, they inherit a lot of their behaviour from `pc.scene.GraphNode`. All the manipulations we apply below can also be applied to graph nodes
 
-One of the most common operations you will need.to perform on entities is to manipulate its transform matrix. The local transform property of the entity determines the position, orientation and scale of the entity and affects all child entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
+One of the most common operations you will need to perform on Entities is to change its transform matrix. The local transform property of the Entity determines the position, orientation and scale of the Entity and affects all child Entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
 
 ### Local and World Co-ordinates
 
-An important part of understanding how to move and manipulate Entities is understanding Local and World co-ordinate systems. The World co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
+An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
 
 <img src="/media/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/media/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
