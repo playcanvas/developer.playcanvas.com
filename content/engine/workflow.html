@@ -56,9 +56,7 @@ You will see a directory of files. Like this:
 
 ![served directory](/media/images/platform/localserver.png "Local server directory")
 
-By default when you run PlayCanvas applications from the PlayCanvas Designer we serve scripts files from `http://localhost:51000`, which means when
-you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your depot -- see the next section -- you 
-will need to disable it on the code settings page.
+Launching packs from the PlayCanvas Designer using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your depot -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
 
 ## Code Repository
 
@@ -88,9 +86,15 @@ plus Github and other source control systems is coming soon.
 
 ## Switching 
 
-If you want to switch between running with a Local Server and running from a Code Repository, use the Enabled box in the code settings page. If there are 
-no Enabled repositories then code will be served at `http://localhost:51000`.
+You can easily switch between using local code and a code repository when using the PlayCanvas Designer by choosing which Launch button to use.
+
+![Launch Buttons][launch_buttons]
+
+**Launch** (on the left) will launch using your code repostiory, **Launch Local** (on the right) will launch against a locally running server*
+
+Exporting packs will only use the code repository for source code resources.
 
 [server_osx_linux]: /downloads/localserver
 [python]: http://www.python.org/download/
 [server_windows]: /downloads/localserver.bat
+[launch_buttons]: /media/images/platform/launch_buttons.png
