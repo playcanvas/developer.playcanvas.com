@@ -1,0 +1,111 @@
+---
+title: Moving Entities
+tags:
+ - tutorial
+ - beginner
+ - entities
+level: beginner
+index: 1
+---
+
+# Moving Entities
+
+Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be point in space.
+
+Entities are a special form of graph node, they inherit a lot of their behaviour from `pc.scene.GraphNode`. All the manipulations we apply below can also be applied to graph nodes
+
+One of the most common operations you will need.to perform on entities is to manipulate its transform matrix. The local transform property of the entity determines the position, orientation and scale of the entity and affects all child entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
+
+### Local and World Co-ordinates
+
+An important part of understanding how to move and manipulate Entities is understanding Local and World co-ordinate systems. The World co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
+
+<img src="/media/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
+<img src="/media/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
+<div style="clear:both" />
+*World and Local co-ordinate systems*
+<br />
+
+Each entity has a local transformation matrix and a world transformation matrix. The world transform is calculated by combining the local transforms of all parents of the Entity in the hierarchy (see Hierarchy section below). Usually you will be modifying the local transform.
+
+~~~js~~~
+var ltm = entity.getLocalTransform();
+var wtm = entity.getWorldTransform();
+
+var m = m4.makeTranslate(0,0,0);
+entity.setLocalTransform(m);
+~~~~~~~~
+
+Notice you cannot set the world transformation matrix directly, it is calculated from the local transforms of the hierarchy.
+
+### Hierarchy
+
+Another important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will `(1,1,0)`
+
+## Position
+
+Getting the position of the entity is straightforward
+
+~~~js~~~
+var p = entity.getLocalPosition();
+var p = entity.getWorldPosition();
+~~~~~~~
+
+These methods both return a `pc.math.Vec3`.
+
+Setting the position of an entity absolutely is just as straightforward.
+
+~~~js~~~
+var v = v3.create(0,0,0);
+entity.setLocalPosition(v)
+~~~~~~~~
+Note, that you can not modify the world position directly.
+
+### Moving the entity.
+
+To move the entity you can add to the position vector or you can use the helper method translate.
+
+~~~js~~~
+entity.translate(1,0,0);
+~~~~~~~~
+
+Or the equivalent written out fully:
+~~~js~~~
+var p = entity.getLocalPosition();
+p = v3.add(p, v3.create(1,0,0), p);
+entity.setLocalPosition(p);
+~~~~~~~~
+
+## Orientation
+
+To set an Entity's orientation you need to apply a rotation to the transformation matrix. 
+
+For example, to rotate an entity by Pi radians (180 degrees) around the world up axis:
+~~~js~~~
+var ltm = entity.getLocalTransform();
+var up = v3.create(0,1,0);
+
+// Create a rotation matrix
+var rotation = m4.makeRotate(Math.PI, up);
+
+// Apply rotation
+m4.multiply(ltm, rotation, ltm);
+~~~~~~~~
+
+## Scale
+
+To scale an Entity you need to apply a scale to the transformation matrix
+
+For example to scale the entity 2x in the up direction
+
+~~~js~~~
+var ltm = entity.getLocalTransform();
+var r = m4.create();
+var up = v3.create(0,1,0);
+
+// Create a scale matrix
+var scale = m4.makeScale(1, 2, 1);
+
+// Apply scale
+m4.multiply(ltm, scale, ltm);
+~~~~~~~~

@@ -152,11 +152,9 @@ pc.script.create('oscillator', function (context) {
             // Calculate the new value
             var x = this.amplitude * Math.sin(this.time);
 
-            // Get the local transform of the Entity
-            var ltm = this.entity.getLocalTransform();
-
-            // Set the x translation.
-            ltm[12] = x;            
+            // Update the x position of the Entity
+            var p = this.entity.getLocalPosition();
+            p[0] = x;
         }
     };
     
