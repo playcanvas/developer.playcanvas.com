@@ -153,8 +153,7 @@ pc.script.create('oscillator', function (context) {
             var x = this.amplitude * Math.sin(this.time);
 
             // Update the x position of the Entity
-            var p = this.entity.getLocalPosition();
-            p[0] = x;
+            this.entity.setLocalPosition(x, 0, 0);
         }
     };
     

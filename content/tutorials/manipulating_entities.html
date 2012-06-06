@@ -55,12 +55,19 @@ var p = entity.getWorldPosition();
 
 These methods both return a `pc.math.Vec3`.
 
-Setting the position of an entity absolutely is just as straightforward.
+Setting the position of an entity is just as straightforward.
 
 ~~~js~~~
 var v = v3.create(0,0,0);
-entity.setLocalPosition(v)
+entity.setLocalPosition(v);
 ~~~~~~~~
+
+Or this:
+
+~~~js~~~
+entity.setLocalPosition(0,0,0);
+~~~~~~~~
+
 Note, that you can not modify the world position directly.
 
 ### Moving the entity.
@@ -72,10 +79,45 @@ entity.translate(1,0,0);
 ~~~~~~~~
 
 Or the equivalent written out fully:
+
 ~~~js~~~
 var p = entity.getLocalPosition();
 p = v3.add(p, v3.create(1,0,0), p);
 entity.setLocalPosition(p);
+~~~~~~~~
+
+### Optimizations
+
+Significant performance gains can be made by making sure you use the graph node API well. The biggest performance hit you will see is when you allocate memory by using `v3.create()` or `m4.create()`. The graph node methods allow you to pass in existing vectors and matrices so that they don't have to allocate. So, for example, it is *much* faster to do this:
+
+~~~js~~~
+// store vector
+var p;
+
+// Performed once at initialization
+function init() {
+    p = v3.create();
+}
+
+// Performed every frame
+function update() {
+    // existing vector 'p' is used, no allocation
+    entity.getLocalPosition(p);
+
+    // ... do something with p
+}
+~~~~~~~~
+
+Than to do this:
+
+~~~js~~~
+// Performed every frame
+function update() {
+    // New vector is allocated and returned
+    var p = entity.getLocalPosition();
+
+    // ... do something with p
+}
 ~~~~~~~~
 
 ## Orientation
@@ -83,6 +125,7 @@ entity.setLocalPosition(p);
 To set an Entity's orientation you need to apply a rotation to the transformation matrix. 
 
 For example, to rotate an entity by Pi radians (180 degrees) around the world up axis:
+
 ~~~js~~~
 var ltm = entity.getLocalTransform();
 var up = v3.create(0,1,0);
