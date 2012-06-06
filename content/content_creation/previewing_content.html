@@ -18,22 +18,23 @@ It is possible to invoke Visualizer directly from the modelling application, all
 
 ### Running the PlayCanvas Visualizer
 
-Once you have installed the PlayCanvas Asset Tools, you are almost ready to Visualize your first scene from 3DS Max or Maya. But first
+Once you have installed the PlayCanvas Asset Tools and followed the instructions for copying the Max or Maya visualizer scripts to your Max/Maya installation, you will notice that you have a new 'PlayCanvas' menu when you restart your modelling application. For 3DS Max, the menu looks as follows:
+
+<img alt="Max Visualizer Menu" width="301" height="177" src="/media/images/artist_guide/visualizer_menu_max.jpg"></img>
+
+In Maya, it is essentially the same:
+
+<img alt="Maya Visualizer Menu" width="301" height="177" src="/media/images/artist_guide/visualizer_menu_maya.jpg"></img>
 
 ### Starting the Visualizer HTTP Server
 
-Run the 'Start Visualizer Server' shortcut in the PlayCanvas program group in the Start Menu. This will invoke a DOS box running a local HTTP server which serves the Visualizer web application and scenes exported from 3DS Max to the web browser. The server will continue to run until the DOS box is forcibly closed. But you must ensure it is running as long as you want 3DS Max or Maya to be sending scenes to Visualizer.
+Before you can visualize a scene in Max/Maya, you must select 'Start Visualizer Server' from the PlayCanvas menu,. This will invoke a DOS box running a local HTTP server which serves the Visualizer web application and scenes exported from Max/Maya to the web browser. The server will continue to run until the DOS box is forcibly closed. But you must ensure it is running as long as you want 3DS Max or Maya to be sending scenes to Visualizer.
 
 ### Visualizing your First Scene
 
-Now you should be ready to view your first scene in the PlayCanvas Visualizer! Follow the steps below to view a simple Max object in the browser:
+Now you should be ready to view your first scene in the PlayCanvas Visualizer! Build some polygonals objects (cubes/spheres/etc) in the 3D viewport, and then select 'Visualize' from the PlayCanvas menu. Alternatively, you can select specific objects in your 3D scene and select 'Visualize Selected' to only view those objects in the browser.
 
-* Start 3DS Max or Maya. You will notice there should now be a menu in the main menu bar called PlayCanvas. There is a single menu item under the PlayCanvas menu: Visualizer.
-* Create a polygon mesh object near the world space origin.
-* If you are running 3DS Max, assign a material to the object. Note that this step is important, since PlayCanvas requires all meshes to have a material assigned.
-* Select the PlayCanvas Visualizer menu item.
-
-These steps are executed in the video below:
+Use of Visualizer is demonstrated in the video below:
 
 <video width="640" height="480" controls="controls">
   <source src="/media/video/artist_guide/visualizer.mp4" type="video/mp4" />
