@@ -45,12 +45,12 @@ pc.script.create("mouse", function (context) {
             var height = target.getViewport().height;
 
             // Using the current position of the mouse from the event we calculate
-            //  the new position of the cube
-            var x = -5 * (event.x - (width/2)) / width;
-            var y = 5 * (event.y - (height/2)) / height;
+            // the new position of the cube
+            var x = -(event.x - (width/2)) / width;
+            var y = (event.y - (height/2)) / height;
 
             // Finally update the cube's position.
-            this.entity.setLocalPosition(x, y, 0);
+            this.entity.setLocalPosition(x * 5, y * 5, 0);
         },
     
         onMouseDown: function (event) {
