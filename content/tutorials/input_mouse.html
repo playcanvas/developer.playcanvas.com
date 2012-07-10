@@ -27,48 +27,47 @@ pc.script.create("mouse", function (context) {
         // Disabling the context menu stops the browser disabling a menu when 
         // you right-click the page
         context.mouse.disableContextMenu();
-    };
-    
-    MouseHandler.prototype.update = function (dt) {
-        
+
         // Use the bind() method to attach event handlers. 
         // The mouse object supports events on move, button down and 
         // up, and scroll wheel.
         context.mouse.bind(pc.input.EVENT_MOUSE_MOVE, this.onMouseMove.bind(this));
         context.mouse.bind(pc.input.EVENT_MOUSE_DOWN, this.onMouseDown.bind(this));
     };
-    
-    MouseHandler.prototype.onMouseMove = function (event) {
-        // Here we are getting the resolution of the canvas from the graphics 
-        // Device object.
-        var device = pc.gfx.Device.getCurrent();
-        var target = device.getRenderTarget();
-        var width = target.getViewport().width;
-        var height = target.getViewport().height;
-        
-        // Using the current position of the mouse from the event we calculate
-        //  the new position of the cube
-        var x = -5 ** (event.x - (width/2)) / width;
-        var y = 5 ** (event.y - (height/2)) / height;
-        
-        // Finally update the cube's position.
-        this.entity.setLocalPosition(x, y, 0);
-    };
-    
-    MouseHandler.prototype.onMouseDown = function (event) {
-        // If the left mouse button is pressed, change the cube color to red
-        if (event.button == pc.input.MOUSE_BUTTON_LEFT) {
-            context.systems.primitive.set(this.entity, "color", 0xff0000);
-        }
 
-        // If the left mouse button is pressed, change the cube color to green
-        if (event.button == pc.input.MOUSE_BUTTON_MIDDLE) {
-            context.systems.primitive.set(this.entity, "color", 0x00ff00);
-        }
+    MouseHandler.prototype = {
+        onMouseMove: function (event) {
+            // Here we are getting the resolution of the canvas from the graphics 
+            // Device object.
+            var device = pc.gfx.Device.getCurrent();
+            var target = device.getRenderTarget();
+            var width = target.getViewport().width;
+            var height = target.getViewport().height;
 
-        // If the left mouse button is pressed, change the cube color to blue
-        if (event.button == pc.input.MOUSE_BUTTON_RIGHT) {
-            context.systems.primitive.set(this.entity, "color", 0x0000ff);
+            // Using the current position of the mouse from the event we calculate
+            //  the new position of the cube
+            var x = -5 * (event.x - (width/2)) / width;
+            var y = 5 * (event.y - (height/2)) / height;
+
+            // Finally update the cube's position.
+            this.entity.setLocalPosition(x, y, 0);
+        },
+    
+        onMouseDown: function (event) {
+            // If the left mouse button is pressed, change the cube color to red
+            if (event.button === pc.input.MOUSE_BUTTON_LEFT) {
+                context.systems.primitive.set(this.entity, "color", 0xff0000);
+            }
+
+            // If the left mouse button is pressed, change the cube color to green
+            if (event.button === pc.input.MOUSE_BUTTON_MIDDLE) {
+                context.systems.primitive.set(this.entity, "color", 0x00ff00);
+            }
+
+            // If the left mouse button is pressed, change the cube color to blue
+            if (event.button === pc.input.MOUSE_BUTTON_RIGHT) {
+                context.systems.primitive.set(this.entity, "color", 0x0000ff);
+            }
         }
     };
     
