@@ -11,6 +11,7 @@ index: 2
 ---
 # Basic Mouse Input
 
+
 <iframe src="http://platform.playcanvas.com/api/apps/dave/tutorials/input_mouse/"></iframe>
 *Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
 
@@ -19,10 +20,11 @@ mouse is moved or when mouse buttons are pressed. It also removes some of the cr
 
 Take a look at the input_mouse Pack in the [tutorials depot][depot]. Here is the code from mouse.js:
 
-~~~javascript~~~
+~~~~javascript~~~
 pc.script.create("mouse", function (context) {
     var MouseHandler = function (entity) {
         this.entity = entity;
+
 
         // Disabling the context menu stops the browser disabling a menu when 
         // you right-click the page
@@ -73,7 +75,7 @@ pc.script.create("mouse", function (context) {
     
     return MouseHandler;
 });
-~~~~~~~~~~
+~~~~~~
 
 ### `pc.input.Mouse`
 
@@ -142,4 +144,4 @@ Try the tutorial in full screen [here][tutorial] or at the top of the page. Move
 [context]: /glossary.html#context
 [dom]: /glossary.html#dom
 [bind]: https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind
-[tutorial]: http://platform.playcanvas.com/dave/tutorials/designer/bootstrap?e=60cc4049-d6ce-445d-b0d2-20f97cb0d9a3&u=dave&p=tutorials
+[tutorial]: http://apps.playcanvas.com/dave/tutorials/input_mouse
