@@ -23,6 +23,8 @@ One thing to be aware of is Chrome's caching behavior. By default, Chrome will o
 
 <img alt="Disable cache in Chrome" width="640" src="/media/images/platform/browser_chrome_cache.jpg"></img>
 
+Note that the 'Disable cache' option only seems to work when the Developer Tools are open. Therefore, it makes sense to keep them open while developing, even if only a sliver at the bottom of the tab.
+
 ### Installing WebGL Inspector
 
 If you are interested in how PlayCanvas is sending data to the graphics card, then you might be interested to install [WebGL Inspector](https://chrome.google.com/webstore/detail/ogkcjmbhnfmlnielkjhedpcjomeaghda?utm_source=chrome-ntp-icon). It's a Chrome extension, and once installed, you will see the letters 'GL' appear at the right end of the address bar/omnibox whenever you run your PlayCanvas game. If you click the GL letters, the page will reload, with two tabs in the top right of the tab: 'Capture' and 'UI'. Click 'Capture' to grab the entire state required to render the current frame, and then 'UI' to inspect the data.
