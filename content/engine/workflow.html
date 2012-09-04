@@ -68,21 +68,19 @@ For these scenarios we provide support for external code repositories. That is, 
 
 ![code repository](/media/images/platform/code_repo.png "Code Repository")
 
-In order to add a repository to your depot, go to your depot's code page; enter the url where the source code for your application can be found; check the Enabled
-box and press Update.
+We provide simple integration with two popular third-part code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](http://platform.playcanvas.com/account/services) page. Just click the authorize button for the services you wish to use.
 
-Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page.
-The green light means you're ready to go.
+Once the service is authorized, you setup your depot with the particular repository you wish to use. Go to your depot's code page; enter the username and repository name for your application; then click the Update button.
 
-Now when you run your application from the PlayCanvas Designer the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Packs which have a 
-code repository set up the code will be included in your exports.
+Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status says 'ready', the code is synced.
+
+Now when you run your application from the PlayCanvas Designer the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Packs which have a code repository set up the code will be included in your exports.
 
 ### Note
 
 Code Repositories are only updated when you press the Update button on the code settings page.
 
-Currently we only support public, Mercurial repositories hosted on Bitbucket. Support for private repositories, 
-plus Github and other source control systems is coming soon.
+Currently we support public or private repositories hosted on Bitbucket (mercurial only) or Github. 
 
 ## Switching 
 
