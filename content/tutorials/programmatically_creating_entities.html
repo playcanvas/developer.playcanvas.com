@@ -87,5 +87,79 @@ entity.close(context.systems);
 
 When you are finished with an Entity you call the `close` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way. The close method take the `ComponentRegistry` as an argument. In your scripts this is available as the `context.systems` variable.
 
+## In Action 
 
+~~~js~~~
+pc.script.create('entity_creator', function (context) {
 
+    var MAX_X = 10;
+    var MIN_X = -10;
+    var MAX_Y = 10;
+    var MIN_Y = -10;
+    var MAX_Z = 10;
+    var MIN_Z = -10;
+
+    var NUM_CUBES = 10;
+
+    var MAX_DURATION = 5;
+
+    var EntityCreator = function (entity) {
+        this.entity = entity;
+        this.entities = [];
+    };
+
+    EntityCreator.prototype = {
+        initialize: function () {
+        },
+
+        update: function (dt) {
+            // Spawn new cubes if there are less than NUM_CUBES
+            while(this.entities.length < NUM_CUBES) {
+                this.spawnCube();
+            }
+
+            // Loop through Entities and delete them when their time is up
+            for (i = 0; i < this.entities.length; i++) {
+                this.entities[i].timer -= dt;
+                if (this.entities[i].timer < 0) {
+                    // entity.close() deletes all components and removes Entity from the hierarchy
+                    this.entities[i].entity.close(context.systems);
+
+                    // Remove from the local list
+                    this.entities.splice(i, 1);
+                }
+            }
+        },
+
+        spawnCube: function () {
+            var entity = new pc.fw.Entity();
+
+            // Create a new Primitive Component and add it to the Entity.
+            context.systems.primitive.createComponent(entity, {
+                type: 'Box',
+                color: '0xff0000',
+            });
+
+            // Move to a random position
+            entity.setLocalPosition(
+                pc.math.random(MIN_X, MAX_X),
+                pc.math.random(MIN_Y, MAX_Y),
+                pc.math.random(MIN_Z, MAX_Z)
+            );
+
+            // Add to the Hierarchy
+            context.root.addChild(entity);
+
+            // Store in a list for some random duration before deleting
+            this.entities.push({
+                entity: entity,
+                timer: pc.math.random(0, MAX_DURATION)
+            });
+        }
+    };
+
+    return EntityCreator;
+});
+~~~~~~~~~
+
+This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Primitive Component attached.
