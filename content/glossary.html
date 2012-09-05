@@ -15,6 +15,12 @@ Here is an overview of some of the terms we use to describe the PlayCanvas Engin
 The `pc.fw.ApplicationContext` class is where all the useful engine stuff that your application needs to run is store. It stores, the scene graph hierarchy, the Component Systems and the 
 keyboard and mouse handlers. The ApplicationContext is made available to all user scripts by being passed into the initial callback from `pc.script.create`. 
 
+<h3 id="asset">Asset</h3>
+An asset is a unit of data that is typically imported into PlayCanvas from a content creation application (such as Blender or 3D Studio Max). It can represent a 3D model, an animation, an audio sample or an image. Assets can be assigned to certain attributes of [Components](#component). For example, it is possible to assign a model asset to the 'model' attribute of a model component.
+
+<h3 id="attribute">Attribute</h3>
+An attribute is a property of a [Component](#component). Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls, and the updates are live-streamed to the connected game in real time.
+
 <h3 id="depot">Depot</h3>
 A Depot is a collection of Entities, Assets and Code for a single user. Whilst usually a single Depot will only contain resources for a single application, you may use multiple Depots
 as part of a single application. For example, each user on your team might have a separate depot containing your application resources and then you have a single Depot which represents
