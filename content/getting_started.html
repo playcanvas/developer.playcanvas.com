@@ -51,8 +51,6 @@ Now we're ready to build a simple 3D web app: a spinning cube!
 
 The first thing to do is create a new pack. A pack represents the data required to bootstrap the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one pack. Therefore, on the depot home page select the 'packs' tab and then select 'New Pack' at the bottom of the pack lister. This opens a new browser tab and fires up the visual editor: PlayCanvas Designer.
 
-Before you can begin editing, you must name the pack. Let's call this pack 'cube'.
-
 ### Packs, Entities and Components
 
 A PlayCanvas Pack is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the 'Pack Explorer' panel in Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
@@ -69,25 +67,26 @@ For our spinning cube experiment, we will need 3 Entities:
 
 Here are the steps to create the cube:
 
-* Select the root node 'cube' in the Pack Explorer.
-* Select 'New Entity' from the 'Entity' menu. This creates a new child entity of 'cube' in the Pack Explorer.
-* Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
-* Change the 'Name' field to 'Cube'.
+* Select the root node 'Untitled' in the Pack Explorer.
+* In the Attribute Editor below the Pack Explorer, rename the Untitled root node to something more meaningful such as 'Cube Test'.
+* Select 'New Entity' from the 'Entity' menu. This creates a new child entity of 'Cube Test' in the Pack Explorer.
+* Select the new entity (called 'Untitled') in the Pack Explorer.
+* In the Attribute Editor, change the 'Name' field to 'Cube'.
 * Select 'Add Component' from the 'Entity' menu.
 * Select 'primitive' from the list and hit OK. This creates a 1x1x1 unit box primitive at the location of the entity (the world space origin).
 
 Now let's create the camera:
 
-* Select the root node 'cube' in the Pack Explorer.
-* In the 'Entity' menu, expand the 'New ...' submenu and select 'New Camera'. This creates a new child camera entity of 'cube' in the Pack Explorer.
+* Select the root node 'Cube Test' in the Pack Explorer.
+* In the 'Entity' menu, expand the 'New ...' submenu and select 'New Camera'. This creates a new child camera entity of 'Cube Test' in the Pack Explorer.
 * Select the new camera entity in the Pack Explorer to activate the Attribute Editor.
 * Change the 'Name' field to 'Camera'.
 * In the Attribute Editor, set 'Translate:' to 0, 0, 5.
 
 Finally, let's create the light:
 
-* Select the root node 'cube' in the Pack Explorer.
-* In the 'Entity' menu, expand the 'New ...' submenu and select 'New Directional Light'. This creates a new child Entity of 'cube' in the Pack Explorer with a Directional Light Component added to it.
+* Select the root node 'Cube Test' in the Pack Explorer.
+* In the 'Entity' menu, expand the 'New ...' submenu and select 'New Directional Light'. This creates a new child Entity of 'Cube Test' in the Pack Explorer with a Directional Light Component added to it.
 * Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
 * Change the 'Name' field to 'Light'.
 * In the Attribute Editor, set 'Rotate:' to -30, 0, 30 to reorient the light.
@@ -98,7 +97,7 @@ You should now have someone similar to the following in the 3D View:
 
 ### Save your work
 
-Commit you changes to the server by selecting 'Save' from the 'Pack' menu. Or clicking on the disk icon on the toolbar.
+Now would seem to be a good time to save your work, right? In actual fact, PlayCanvas Designer continually updates your project on the server and therefore there is no need for a save button. You work is preserved should you decided to close the Designer tab at any point.
 
 ### Previewing Your Work
 
