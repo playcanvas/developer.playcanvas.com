@@ -14,7 +14,7 @@ In this tutorial we'll show you how you can change an Entity's position, orienta
 
 Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be point in space.
 
-Entities are a special form of graph node, they inherit a lot of their behaviour from `pc.scene.GraphNode`. All the manipulations we apply below can also be applied to graph nodes
+Entities are a special form of graph node, they inherit a lot of their behavior from `pc.scene.GraphNode`. All the manipulations we apply below can also be applied to graph nodes
 
 One of the most common operations you will need to perform on Entities is to change its transform matrix. The local transform property of the Entity determines the position, orientation and scale of the Entity and affects all child Entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
 
@@ -77,7 +77,7 @@ Setting absolute rotations can be done using either [Euler angles][eulers] or [q
 ** Euler Angles **
 
 * Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive euler angle will result in an anti-clockwise rotation around that axis.
+* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
 * Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
 ** Quaternions **
@@ -86,7 +86,7 @@ Setting absolute rotations can be done using either [Euler angles][eulers] or [q
 * They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
 * Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
 
-When scripting entities, it is more likely that you will set an Entity's rotation using Eulers. For example:
+When scripting entities, it is more likely that you will set an Entity's rotation using Euler angles. For example:
 
 ~~~js~~~
 // Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
@@ -98,7 +98,7 @@ entity.setLocalEulerAngles(30, 45, 60);
 entity.setEulerAngles(30, 45, 60);
 ~~~~~~~~
 
-However, if you do want to set an Entity's rotation in quaternion form, you can use the following funcitons:
+However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ~~~js~~~
 // Create an identity rotation
