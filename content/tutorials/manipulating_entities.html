@@ -58,7 +58,7 @@ entity.setPosition(x, y, z);
 
 ### Moving the entity
 
-To move the entity you can add to the entity's position or you can use the helper method translate.
+To move the Entity you can add to the Entity's position or you can use the helper functions translate and translateLocal.
 
 ~~~js~~~
 // Translate the entity 1 unit down the positive x axis of world space
@@ -75,11 +75,13 @@ To set an Entity's orientation you can either set an absolute rotation, or apply
 Setting absolute rotations can be done using either [Euler angles][eulers] or [quaternions][quaternions]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
 
 ** Euler Angles **
+
 * Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
 * If looking down a coordinate system axis, a positive euler angle will result in an anti-clockwise rotation around that axis.
 * Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
 ** Quaternions **
+
 * Quaternions are stored as 4 numbers and represent any orientation in 3D space.
 * They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
 * Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
