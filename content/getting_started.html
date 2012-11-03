@@ -80,16 +80,14 @@ Now let's create the camera:
 * Select the root node 'Cube Test' in the Pack Explorer.
 * In the 'Entity' menu, expand the 'New ...' submenu and select 'New Camera'. This creates a new child camera entity of 'Cube Test' in the Pack Explorer.
 * Select the new camera entity in the Pack Explorer to activate the Attribute Editor.
-* Change the 'Name' field to 'Camera'.
-* In the Attribute Editor, set 'Translate:' to 0, 0, 5.
+* In the Attribute Editor, set 'Position:' to 0, 0, 5.
 
 Finally, let's create the light:
 
 * Select the root node 'Cube Test' in the Pack Explorer.
 * In the 'Entity' menu, expand the 'New ...' submenu and select 'New Directional Light'. This creates a new child Entity of 'Cube Test' in the Pack Explorer with a Directional Light Component added to it.
-* Select the new entity called 'Untitled' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
-* Change the 'Name' field to 'Light'.
-* In the Attribute Editor, set 'Rotate:' to -30, 0, 30 to reorient the light.
+* Select the new entity called 'Directional Light' in the Pack Explorer. This activates the Attribute Editor, allowing you to edit the entity.
+* In the Attribute Editor, set 'Rotation:' to 45, -30, 0 to reorient the light.
 
 You should now have someone similar to the following in the 3D View:
 
@@ -129,7 +127,8 @@ pc.script.create("spinner", function (context) {
 
     Spinner.prototype = {
         update: function (dt) {
-            this.entity.rotate(0, 1, 0);
+            // Rotate 90 degrees around the world Y axis every second
+            this.entity.rotate(0, 90 * dt, 0);
         }
     };
 
