@@ -11,6 +11,7 @@ body {
   font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
   font-size: 1.0em;
   color: #555555;
+  line-height: 1.1;
 }
 
 /* line 11, ../../../../designer/manos/manos/public/style/src/_common.scss */
@@ -25,24 +26,38 @@ h1 {
 h2 {
   font-size: 1.5em;
   font-weight: bold;
+  margin-bottom: 3px;
 }
 
-/* line 23, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 24, ../../../../designer/manos/manos/public/style/src/_common.scss */
 h3 {
   font-size: 1.17em;
   font-weight: bold;
+  margin-bottom: 3px;
 }
 
-/* line 28, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 30, ../../../../designer/manos/manos/public/style/src/_common.scss */
+h4 {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+/* line 35, ../../../../designer/manos/manos/public/style/src/_common.scss */
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 40, ../../../../designer/manos/manos/public/style/src/_common.scss */
 ul {
   list-style: disc outside none;
 }
-/* line 30, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 42, ../../../../designer/manos/manos/public/style/src/_common.scss */
 ul li {
   margin-left: 20px;
 }
 
-/* line 35, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 47, ../../../../designer/manos/manos/public/style/src/_common.scss */
 #page-container {
   width: 950px;
   margin: 0 auto;
@@ -50,64 +65,48 @@ ul li {
   *zoom: 1;
 }
 
-/* line 40, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 52, ../../../../designer/manos/manos/public/style/src/_common.scss */
 a {
   color: #6379a8;
   text-decoration: none;
 }
 
-/* line 45, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 57, ../../../../designer/manos/manos/public/style/src/_common.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 56, ../../../../designer/manos/manos/public/style/src/_common.scss */
-input[type='button'] {
+/*
+@mixin square-button {
   height: 24px;
   margin-top: 5px;
   margin-right: 5px;
   margin-left: 0px;
 }
-
-/* line 60, ../../../../designer/manos/manos/public/style/src/_common.scss */
-input[type='submit'] {
-  height: 24px;
-  margin-top: 5px;
-  margin-right: 5px;
-  margin-left: 0px;
-}
-
-/* line 64, ../../../../designer/manos/manos/public/style/src/_common.scss */
-button {
-  height: 24px;
-  margin-top: 5px;
-  margin-right: 5px;
-  margin-left: 0px;
-}
-
-/* line 68, ../../../../designer/manos/manos/public/style/src/_common.scss */
+*/
+/* line 70, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-small {
   font-size: 0.6em;
 }
 
-/* line 72, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 74, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-clear {
   clear: both;
 }
 
-/* line 76, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 78, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-left {
   float: left;
   padding-right: 20px;
 }
 
-/* line 81, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 83, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-right {
   float: right;
   padding-left: 20px;
 }
 
-/* line 86, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 88, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-text-block {
   margin: 20px 0px;
   display: inline;
@@ -120,13 +119,13 @@ button {
   overflow-x: hidden;
 }
 
-/* line 91, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 93, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-centred-container {
   width: 800px;
   margin: 25px auto;
 }
 
-/* line 97, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 99, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-hidden {
   display: none;
 }
@@ -224,6 +223,24 @@ button {
   list-style-type: none;
   border-left: 1px solid gray;
   padding: 2px 4px 2px 4px;
+}
+
+/* line 51, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+iframe[seamless] {
+  background-color: transparent;
+  border: 0px none transparent;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* line 58, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+.account-bar iframe {
+  height: 26px;
+  width: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-top: 5px;
 }
 
 /* line 3, ../../../../designer/manos/manos/public/style/src/_profile.scss */
@@ -486,7 +503,7 @@ button {
   overflow-x: hidden;
 }
 
-/* line 140, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 139, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-control-outer {
   background-color: #8d96ac;
   display: inline;
@@ -624,13 +641,13 @@ button {
   visibility: hidden;
 }
 
-/* line 144, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 143, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 #fileupload {
   font-size: 13px;
 }
 
 /* Hide the fileupload start/delete buttons we don't want to support them, but the have to be there as the javascript calls them'*/
-/* line 148, ../../../../designer/manos/manos/public/style/src/_depot.scss */
+/* line 147, ../../../../designer/manos/manos/public/style/src/_depot.scss */
 .fileupload-content .start {
   display: none;
 }
@@ -784,12 +801,12 @@ footer a {
   overflow-x: hidden;
 }
 
-/* line 17, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 14, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 470px;
+  width: 510px;
 }
 /* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form label {
@@ -856,61 +873,67 @@ footer a {
 }
 /* line 44, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form input.text, .pc-standard-form input.title, .pc-standard-form input[type=email], .pc-standard-form input[type=text], .pc-standard-form input[type=password] {
-  width: 470px;
+  width: 310px;
 }
 /* line 46, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 .pc-standard-form textarea {
-  width: 470px;
+  width: 310px;
   height: 100px;
 }
 /* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .pc-standard-form {
   overflow-x: hidden;
 }
-/* line 22, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 19, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-row {
   width: 100%;
-}
-/* line 25, ../../../../designer/manos/manos/public/style/src/_forms.scss */
-.pc-standard-form .pc-form-row label {
   display: block;
 }
-/* line 29, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 24, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form .pc-form-row label {
+  width: 150px;
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  position: relative;
+  top: 8px;
+}
+/* line 33, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-flat-row label {
   display: inline;
 }
-/* line 34, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 38, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-icon-row label {
   display: inline;
 }
-/* line 37, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 41, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-icon-row img {
   vertical-align: middle;
 }
-/* line 42, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 46, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-boolean-row {
   border: 1px solid #bbb;
-  width: 472px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  padding: 4px;
+  margin-right: 0;
+  display: block;
+  width: 469px;
+  padding-left: 6px;
 }
-/* line 50, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 54, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form select {
-  width: 482px;
+  width: 322px;
   padding: 5px;
 }
-/* line 55, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 59, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-extra {
   font-size: 0.8em;
   color: #888888;
 }
-/* line 60, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 64, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-text {
   font-size: 12px;
   padding: 6px 0px;
 }
-/* line 66, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 70, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-info {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -919,18 +942,18 @@ footer a {
   color: #205791;
   border-color: #92cae4;
   font-size: 12px;
-  width: 460px;
+  width: 454px;
   display: inline-block;
 }
 /* line 54, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 .pc-standard-form .pc-form-info a {
   color: #205791;
 }
-/* line 71, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 75, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-info a {
   color: black;
 }
-/* line 76, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 80, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-error {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -946,27 +969,116 @@ footer a {
 .pc-standard-form .pc-form-error a {
   color: #8a1f11;
 }
-/* line 81, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 85, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-error a {
   color: black;
 }
-/* line 86, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 90, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-image-button {
   display: inline-block;
   background-repeat: no-repeat;
-}
-/* line 91, ../../../../designer/manos/manos/public/style/src/_forms.scss */
-.pc-standard-form button {
-  width: 70px;
 }
 /* line 95, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .error-message {
   color: red;
 }
 /* line 99, ../../../../designer/manos/manos/public/style/src/_forms.scss */
-.pc-standard-form input.pc-inline-input {
-  width: 156.667px;
-  padding: 1px;
+.pc-standard-form button.pc-button {
+  width: 120px;
+  float: right;
+  margin-right: 33px;
+}
+/* line 105, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form input[type='checkbox'] {
+  margin-top: 12px;
+}
+
+/* line 110, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-button {
+  height: 24px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+/* line 118, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-spacey-form .pc-form-row {
+  margin-top: 20px;
+}
+/* line 122, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-spacey-form .pc-form-boolean-row {
+  margin-top: 20px;
+}
+
+/* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form label {
+  font-weight: bold;
+}
+/* line 19, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+}
+/* line 20, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form legend {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 26, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form input.text, .pc-create-asset-form input.title, .pc-create-asset-form input[type=email], .pc-create-asset-form input[type=text], .pc-create-asset-form input[type=password] {
+  margin: 0.5em 0;
+  background-color: white;
+  padding: 5px;
+}
+/* line 27, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form input.title {
+  font-size: 1.5em;
+}
+/* line 29, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form textarea {
+  margin: 0.5em 0;
+  padding: 5px;
+}
+/* line 30, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form select {
+  margin: 0.5em 0;
+}
+/* line 55, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form fieldset {
+  border: 1px solid #cccccc;
+}
+/* line 58, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form input.text, .pc-create-asset-form input.title, .pc-create-asset-form input[type=email], .pc-create-asset-form input[type=text], .pc-create-asset-form input[type=password], .pc-create-asset-form textarea {
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+}
+/* line 61, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form input.text:focus, .pc-create-asset-form input.title:focus, .pc-create-asset-form input[type=email]:focus, .pc-create-asset-form input[type=text]:focus, .pc-create-asset-form input[type=password]:focus, .pc-create-asset-form textarea:focus {
+  border-color: #666666;
+}
+/* line 65, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form select {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+/* line 44, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form input.text, .pc-create-asset-form input.title, .pc-create-asset-form input[type=email], .pc-create-asset-form input[type=text], .pc-create-asset-form input[type=password] {
+  width: 300px;
+}
+/* line 46, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form textarea {
+  width: 390px;
+  height: 250px;
+}
+/* line 44, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form input.text, .pc-create-asset-form input.title, .pc-create-asset-form input[type=email], .pc-create-asset-form input[type=text], .pc-create-asset-form input[type=password] {
+  width: 310px;
+}
+/* line 46, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
+.pc-create-asset-form textarea {
+  width: 310px;
+  height: 100px;
 }
 
 /* line 2, ../../../../designer/manos/manos/public/style/src/_tables.scss */
@@ -1145,7 +1257,7 @@ aside navigation .pc-current:hover {
   background-color: #afafaf;
 }
 
-/* line 110, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 115, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content {
   padding-left: 80px;
   display: inline;
@@ -1200,13 +1312,18 @@ section.content ol li {
 /* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ul {
   list-style-type: disc;
+  list-style-position: inside;
   padding-left: 20px;
 }
-/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 85, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ul li {
   margin-bottom: 2px;
 }
-/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 90, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+section.content img {
+  vertical-align: top;
+}
+/* line 94, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1216,32 +1333,32 @@ section.content .codebox {
   margin-left: -2px;
   font-size: 12px;
 }
-/* line 91, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 96, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox figure > br {
   display: none;
 }
-/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 100, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox pre > p {
   display: none;
 }
-/* line 99, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 104, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox figcaption {
   display: none;
 }
-/* line 104, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 109, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
   font-size: 0.9em;
 }
-/* line 117, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 122, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table {
   font-size: 0.9em;
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
-/* line 123, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 128, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table th {
   font-weight: bold;
   border-bottom: 1px solid black;
@@ -1249,28 +1366,33 @@ section.content table th {
   background-color: #eee;
   white-space: nowrap;
 }
-/* line 131, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 136, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table td {
   padding: 10px 18px;
   border-bottom: 1px solid #aaa;
 }
-/* line 136, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 141, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table colgroup.pc-title-column {
   background-color: #eee;
   border-right: 1px solid black;
 }
-/* line 143, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 148, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .pc-headless-table td {
   border-right: 1px solid #aaa;
 }
-/* line 148, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 153, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content iframe {
   width: 100%;
   height: 480px;
   margin-top: 20px;
 }
+/* line 159, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+section.content .aside-left {
+  float: left;
+  margin-right: 10px;
+}
 
-/* line 156, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 166, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash {
   line-height: 1.2;
   font-size: 16px;
@@ -1320,13 +1442,18 @@ div .splash ol li {
 /* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ul {
   list-style-type: disc;
+  list-style-position: inside;
   padding-left: 20px;
 }
-/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 85, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ul li {
   margin-bottom: 2px;
 }
-/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 90, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+div .splash img {
+  vertical-align: top;
+}
+/* line 94, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1336,19 +1463,19 @@ div .splash .codebox {
   margin-left: -2px;
   font-size: 12px;
 }
-/* line 91, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 96, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox figure > br {
   display: none;
 }
-/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 100, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox pre > p {
   display: none;
 }
-/* line 99, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 104, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox figcaption {
   display: none;
 }
-/* line 104, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 109, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1358,11 +1485,11 @@ div .splash code {
 * html div .splash {
   overflow-x: hidden;
 }
-/* line 161, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 171, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h1 {
   margin-bottom: 10px;
 }
-/* line 166, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 176, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .choice {
   display: inline;
   float: left;
@@ -1374,7 +1501,7 @@ div .choice {
 * html div .choice {
   overflow-x: hidden;
 }
-/* line 171, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 181, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice {
   display: inline;
   float: left;
@@ -1394,26 +1521,26 @@ div .overview-choice {
 * html div .overview-choice {
   overflow-x: hidden;
 }
-/* line 181, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 191, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice img {
   margin-right: 10px;
   float: left;
 }
-/* line 185, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 195, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice p {
   font-size: 12px;
 }
-/* line 191, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 201, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice:hover {
   background-color: #c9c9c9;
 }
 
-/* line 196, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 206, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-article-padding {
   height: 50px;
 }
 
-/* line 200, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 210, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-draft-container {
   position: relative;
   margin-top: 20px;
