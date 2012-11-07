@@ -1257,7 +1257,7 @@ aside navigation .pc-current:hover {
   background-color: #afafaf;
 }
 
-/* line 115, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 114, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content {
   padding-left: 80px;
   display: inline;
@@ -1312,18 +1312,17 @@ section.content ol li {
 /* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ul {
   list-style-type: disc;
-  list-style-position: inside;
   padding-left: 20px;
 }
-/* line 85, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ul li {
   margin-bottom: 2px;
 }
-/* line 90, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content img {
   vertical-align: top;
 }
-/* line 94, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 93, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1333,32 +1332,32 @@ section.content .codebox {
   margin-left: -2px;
   font-size: 12px;
 }
-/* line 96, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox figure > br {
   display: none;
 }
-/* line 100, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 99, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox pre > p {
   display: none;
 }
-/* line 104, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 103, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox figcaption {
   display: none;
 }
-/* line 109, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 108, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
   font-size: 0.9em;
 }
-/* line 122, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 121, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table {
   font-size: 0.9em;
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
-/* line 128, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 127, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table th {
   font-weight: bold;
   border-bottom: 1px solid black;
@@ -1366,33 +1365,28 @@ section.content table th {
   background-color: #eee;
   white-space: nowrap;
 }
-/* line 136, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 135, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table td {
   padding: 10px 18px;
   border-bottom: 1px solid #aaa;
 }
-/* line 141, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 140, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table colgroup.pc-title-column {
   background-color: #eee;
   border-right: 1px solid black;
 }
-/* line 148, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 147, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .pc-headless-table td {
   border-right: 1px solid #aaa;
 }
-/* line 153, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 152, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content iframe {
   width: 100%;
   height: 480px;
   margin-top: 20px;
 }
-/* line 159, ../../../../designer/manos/manos/public/style/src/documentation.scss */
-section.content .aside-left {
-  float: left;
-  margin-right: 10px;
-}
 
-/* line 166, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 160, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash {
   line-height: 1.2;
   font-size: 16px;
@@ -1442,18 +1436,17 @@ div .splash ol li {
 /* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ul {
   list-style-type: disc;
-  list-style-position: inside;
   padding-left: 20px;
 }
-/* line 85, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ul li {
   margin-bottom: 2px;
 }
-/* line 90, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash img {
   vertical-align: top;
 }
-/* line 94, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 93, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1463,19 +1456,19 @@ div .splash .codebox {
   margin-left: -2px;
   font-size: 12px;
 }
-/* line 96, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox figure > br {
   display: none;
 }
-/* line 100, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 99, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox pre > p {
   display: none;
 }
-/* line 104, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 103, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox figcaption {
   display: none;
 }
-/* line 109, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 108, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1485,11 +1478,11 @@ div .splash code {
 * html div .splash {
   overflow-x: hidden;
 }
-/* line 171, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 165, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h1 {
   margin-bottom: 10px;
 }
-/* line 176, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 170, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .choice {
   display: inline;
   float: left;
@@ -1501,7 +1494,7 @@ div .choice {
 * html div .choice {
   overflow-x: hidden;
 }
-/* line 181, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 175, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice {
   display: inline;
   float: left;
@@ -1521,26 +1514,26 @@ div .overview-choice {
 * html div .overview-choice {
   overflow-x: hidden;
 }
-/* line 191, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 185, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice img {
   margin-right: 10px;
   float: left;
 }
-/* line 195, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 189, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice p {
   font-size: 12px;
 }
-/* line 201, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 195, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice:hover {
   background-color: #c9c9c9;
 }
 
-/* line 206, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 200, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-article-padding {
   height: 50px;
 }
 
-/* line 210, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 204, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-draft-container {
   position: relative;
   margin-top: 20px;
