@@ -32,11 +32,11 @@ First you need to create an Entity. This is straightforward, but it is important
 // Create a new Entity
 var entity = new pc.fw.Entity();
 
-// Create a new Camera Component with default values
-context.systems.camera.createComponent(entity);
+// Add a new Camera Component with default values
+context.systems.camera.addComponent(entity);
 
-// Create a new Primitive Component and add it to the Entity.
-context.systems.primitive.createComponent(entity, {
+// Add a new Primitive Component and add it to the Entity.
+context.systems.primitive.addComponent(entity, {
     type: 'Box',
     color: '0xff0000',
 });
@@ -45,9 +45,9 @@ context.systems.primitive.createComponent(entity, {
 context.root.addChild(entity);
 ~~~~~~~~
 
-An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. Each `ComponentSystem` provides  a `createComponent(entity, data)` method which takes the Entity and a data object as arguments. 
+An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. Each `ComponentSystem` provides  a `addComponent(entity, data)` method which takes the Entity and a data object as arguments. 
 
-Each Component type has different properties that can be passed in on the data object, see the Component's documentation for more detail about which properties are available *(coming soon)*. The `data` argument can be left out and default values will be used.
+Each Component type has different properties that can be passed in on the data object, see the Component's documentation for more detail about which properties are available. The `data` argument can be left out and default values will be used.
 
 ## Removing Components
 
@@ -55,13 +55,13 @@ Each Component type has different properties that can be passed in on the data o
 var entity = new pc.fw.Entity();
 
 // Attach Camera Component with default values
-context.systems.camera.createComponent(entity);
+context.systems.camera.addComponent(entity);
 
 // Delete the Camera Component
-context.systems.camera.deleteComponent(entity);
+context.systems.camera.removeComponent(entity);
 ~~~~~~~~
 
-Components can be deleted individually from an Entity by calling the `deleteComponent` method on the `ComponentSystem`.
+Components can be deleted individually from an Entity by calling the `removeComponent` method on the `ComponentSystem`.
 
 ## Deleting Entities
 
@@ -70,10 +70,10 @@ Components can be deleted individually from an Entity by calling the `deleteComp
 var entity = new pc.fw.Entity();
 
 // Create a new Camera Component with default values
-context.systems.camera.createComponent(entity);
+context.systems.camera.addComponent(entity);
 
 // Create a new Primitive Component and add it to the Entity.
-context.systems.primitive.createComponent(entity, {
+context.systems.primitive.addComponent(entity, {
     type: 'Box',
     color: '0xff0000',
 });
@@ -82,10 +82,10 @@ context.systems.primitive.createComponent(entity, {
 context.root.addChild(entity);
 
 // Delete the Entity and remove it from the hierarchy
-entity.close(context.systems);
+entity.close();
 ~~~~~~~~
 
-When you are finished with an Entity you call the `close` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way. The close method take the `ComponentRegistry` as an argument. In your scripts this is available as the `context.systems` variable.
+When you are finished with an Entity you call the `close` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
 
 ## In Action 
 
@@ -123,7 +123,7 @@ pc.script.create('entity_creator', function (context) {
                 this.entities[i].timer -= dt;
                 if (this.entities[i].timer < 0) {
                     // entity.close() deletes all components and removes Entity from the hierarchy
-                    this.entities[i].entity.close(context.systems);
+                    this.entities[i].entity.close();
 
                     // Remove from the local list
                     this.entities.splice(i, 1);
@@ -135,7 +135,7 @@ pc.script.create('entity_creator', function (context) {
             var entity = new pc.fw.Entity();
 
             // Create a new Primitive Component and add it to the Entity.
-            context.systems.primitive.createComponent(entity, {
+            context.systems.primitive.addComponent(entity, {
                 type: 'Box',
                 color: '0xff0000',
             });
