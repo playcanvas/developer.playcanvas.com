@@ -25,11 +25,11 @@ methods on the ComponentSystem.
 CameraScript.prototype.update = function (dt) {
     // Press the space bar to change the field of view and zoom in and out on the central cube
     var camera;
-    var fov = context.systems.camera.get(this.entity, "fov");
+    var fov = this.entity.camera.fov;
     if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
         // Make sure the right camera is selected
         camera = context.root.findOne("Zoom camera");
-        context.systems.camera.setCurrent(camera);
+        context.systems.camera.current = camera;
 
         if (this.targetFov == 10) {
             this.targetFov = 45;
@@ -51,7 +51,7 @@ CameraScript.prototype.update = function (dt) {
             fov = this.targetFov;
         }
     }
-    context.systems.camera.set(this.entity, "fov", fov);
+    this.entity.camera.fov = fov;
     
     // more ...
 };
@@ -81,12 +81,12 @@ CameraScript.prototype.update = function (dt) {
 
     if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
         camera = context.root.findOne(cameras[pc.input.KEY_LEFT]);
-        context.systems.camera.setCurrent(camera);
+        context.systems.camera.current = camera;
     }
 
     if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
         camera = context.root.findOne(cameras[pc.input.KEY_RIGHT]);
-        context.systems.camera.setCurrent(camera);
+        context.systems.camera.current = camera;
     }        
 };
 ~~~~~~~~~~~~~~~~

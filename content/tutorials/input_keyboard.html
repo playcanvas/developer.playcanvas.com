@@ -49,9 +49,7 @@ pc.script.create("keyboard_handler", function (context) {
              * the key is still pressed.
              */
             if (context.keyboard.isPressed(pc.input.KEY_SPACE)) {
-                var color = context.systems.primitive.get(this.entity, "color");
-                color -= 0xff;
-                context.systems.primitive.set(this.entity, "color", color);
+                this.entity.primitive.color -= 0xff;
             }
 
             // Update the spinning cube

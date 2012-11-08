@@ -58,17 +58,17 @@ pc.script.create("mouse", function (context) {
         onMouseDown: function (event) {
             // If the left mouse button is pressed, change the cube color to red
             if (event.button === pc.input.MOUSE_BUTTON_LEFT) {
-                context.systems.primitive.set(this.entity, "color", 0xff0000);
+                this.entity.primitive.color = 0xff0000;
             }
 
             // If the left mouse button is pressed, change the cube color to green
             if (event.button === pc.input.MOUSE_BUTTON_MIDDLE) {
-                context.systems.primitive.set(this.entity, "color", 0x00ff00);
+                this.entity.primitive.color = 0x00ff00;
             }
 
             // If the left mouse button is pressed, change the cube color to blue
             if (event.button === pc.input.MOUSE_BUTTON_RIGHT) {
-                context.systems.primitive.set(this.entity, "color", 0x0000ff);
+                this.entity.primitive.color = 0x0000ff;
             }
         }
     };
