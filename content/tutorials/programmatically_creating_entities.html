@@ -82,10 +82,10 @@ context.systems.primitive.addComponent(entity, {
 context.root.addChild(entity);
 
 // Delete the Entity and remove it from the hierarchy
-entity.close();
+entity.destroy();
 ~~~~~~~~
 
-When you are finished with an Entity you call the `close` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
+When you are finished with an Entity you call the `destroy` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
 
 ## In Action 
 
@@ -122,8 +122,8 @@ pc.script.create('entity_creator', function (context) {
             for (i = 0; i < this.entities.length; i++) {
                 this.entities[i].timer -= dt;
                 if (this.entities[i].timer < 0) {
-                    // entity.close() deletes all components and removes Entity from the hierarchy
-                    this.entities[i].entity.close();
+                    // entity.destroy() deletes all components and removes Entity from the hierarchy
+                    this.entities[i].entity.destroy();
 
                     // Remove from the local list
                     this.entities.splice(i, 1);
