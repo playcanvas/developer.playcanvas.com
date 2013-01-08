@@ -25,50 +25,50 @@ pc.script.create("mouse", function (context) {
     var MouseHandler = function (entity) {
         this.entity = entity;
         this.pos = pc.math.vec3.create();
- 
+
         // Disabling the context menu stops the browser displaying a menu when 
         // you right-click the page
         context.mouse.disableContextMenu();
- 
+
         // Use the bind() method to attach event handlers. 
         // The mouse object supports events on move, button down and 
         // up, and scroll wheel.
         context.mouse.bind(pc.input.EVENT_MOUSEMOVE, this.onMouseMove.bind(this));
         context.mouse.bind(pc.input.EVENT_MOUSEDOWN, this.onMouseDown.bind(this));
     };
- 
+
     MouseHandler.prototype = {
         onMouseMove: function (event) {
-            // Get the current camera Entity and then the actual Camera node.
+            // Get the current camera Entity
             var cameraEntity = context.systems.camera.current
-            var cameraNode = cameraEntity.camera.camera;
-            
-            // Use the camera to convert the position of the mouse into a position in 3D space
-            var depth = 10;
-            cameraNode.screenToWorld(event.x, event.y, depth, this.pos);
 
-            // Finally update the cube's position.
-            this.entity.setLocalPosition(this.pos);
+            // Use the camera component's screenToWorld function to convert the 
+            // position of the mouse into a position in 3D space
+            var depth = 10;
+            cameraEntity.camera.screenToWorld(event.x, event.y, depth, this.pos);
+
+            // Finally update the cube's world-space position
+            this.entity.setPosition(this.pos);
         },
-    
+
         onMouseDown: function (event) {
             // If the left mouse button is pressed, change the cube color to red
             if (event.button === pc.input.MOUSEBUTTON_LEFT) {
                 this.entity.primitive.color = 0xff0000;
             }
- 
+
             // If the left mouse button is pressed, change the cube color to green
             if (event.button === pc.input.MOUSEBUTTON_MIDDLE) {
                 this.entity.primitive.color = 0x00ff00;
             }
- 
+
             // If the left mouse button is pressed, change the cube color to blue
             if (event.button === pc.input.MOUSEBUTTON_RIGHT) {
                 this.entity.primitive.color = 0x0000ff;
             }
         }
     };
-    
+
     return MouseHandler;
 });
 ~~~~~~
