@@ -15,16 +15,12 @@ Here is the complete reference for the PlayCanvas Engine API. It is divided into
 
 ## Current 
 
-[{{site.context.downloads.current[0].version}}](/engine/api/v{{site.context.downloads.current[0].version}}/ "{{site.context.downloads.current[0].version}}")
-
-## Latest
-
-[{{site.context.downloads.latest[0].version}}](/engine/api/{{site.context.downloads.latest[0].version}}/ "site.context.downloads.latest[0].version")
+[{{site.context.downloads.current[0].version}}](/engine/api/stable/ "{{site.context.downloads.current[0].version}}")
 
 ## Legacy
 
 <ul>
-{% for version in site.context.downloads.versioned[:20] -%}
+{% for version in site.context.downloads.versioned[:10] -%}
 <li><a href="/engine/api/v{{version.version}}/" title="{{version.version}}">{{version.version}}</a></li>  
 {%- endfor %}
 </ul>
