@@ -9,7 +9,7 @@ index: 3
 
 ## Asset Tools
 
-The PlayCanvas asset tools installer includes a FBX to PlayCanvas file converter and a 3DS Max and Maya integrated Visualizer.
+The PlayCanvas Asset Tools installer includes a FBX to PlayCanvas file converter and a 3DS Max and Maya integrated Visualizer.
 
 [Installation and usage instructions](/content_creation/asset_tools.html)
 
@@ -17,7 +17,7 @@ The PlayCanvas asset tools installer includes a FBX to PlayCanvas file converter
 
 This is the current stable build for Windows:
 
-<a id="download-link" href="/downloads/playcanvas-asset-tools-0.77.1.msi">0.77.1</a> (2012-10-10)
+<a id="download-link" href="/downloads/playcanvas-asset-tools-0.89.0.msi">0.89.0</a> (2012-01-08)
 
 ------
 
@@ -30,47 +30,3 @@ Run a local web server for your scripts.
 [Windows](/downloads/localserver.bat)
 
 [OS X and Linux](/downloads/localserver)
-
-------
-
-## Engine
-
-To create PlayCanvas applications without a connection to the PlayCanvas tools and platform, download the standalone engine.
-
-### Current 
-
-This is the current stable build. 
-
-{{ site.context.downloads.current[0].version }} | 
-<a href="{{ site.context.downloads.current[0].compressed }}">compressed</a> | 
-<a href="{{ site.context.downloads.current[0].uncompressed }}">uncompressed</a>
-
-### Latest
-
-This is the very latest code from our build servers, it could be broken and will generally be quite unstable
-
-latest |
-<a href="{{ site.context.downloads.latest[0].compressed }}">compressed</a> |
-<a href="{{ site.context.downloads.latest[0].uncompressed }}">uncompressed</a>
-
-### Legacy
-
-Here are all the previous legacy versions
-<ul>
-{% for download in site.context.downloads.versioned -%}
-    <li>
-        {{ download.version }} | 
-        <a href="{{ download.compressed }}">compressed</a> |
-        <a href="{{ download.uncompressed }}">uncompressed</a>
-    </li>
-{%- endfor %}
-</ul>
-
-<script>
-    $('#download-link').click(function (e) {
-        // When the download link is clicked track an event
-        analytics.track('Asset Tools download', {
-            filename: $(e.target).attr('href')
-        });
-    });
-</script>
