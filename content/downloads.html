@@ -17,7 +17,7 @@ The PlayCanvas asset tools installer includes a FBX to PlayCanvas file converter
 
 This is the current stable build for Windows:
 
-<a href="/downloads/playcanvas-asset-tools-0.77.1.msi">0.77.1</a> (2012-10-10)
+<a id="download-link" href="/downloads/playcanvas-asset-tools-0.77.1.msi">0.77.1</a> (2012-10-10)
 
 ------
 
@@ -66,3 +66,11 @@ Here are all the previous legacy versions
 {%- endfor %}
 </ul>
 
+<script>
+    $('#download-link').click(function (e) {
+        // When the download link is clicked track an event
+        analytics.track('Asset Tools download', {
+            filename: $(e.target).attr('href')
+        });
+    });
+</script>

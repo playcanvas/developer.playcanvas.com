@@ -53,6 +53,11 @@
   {% block endhead %}{% endblock endhead %}
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
+  {% block jquery %}
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+    <script src="{{ media_url('js/libs/jquery-1.5.1.min.js') }}"></script>
+  {% endblock jquery %}
+
   {% block content %}
   <div id="main" role="main">
 	  {% block header -%}
@@ -80,15 +85,9 @@
   {%- endblock %}
   {% endblock content%}
   {% block js %}
-  <!-- Javascript at the bottom for fast page loading -->
-  {% block jquery %}
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-    <script src="{{ media_url('js/libs/jquery-1.5.1.min.js') }}"></script>
-  {% endblock jquery %}
-
+  
   {% block scripts %}
   {% endblock scripts %}
-
 
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>
