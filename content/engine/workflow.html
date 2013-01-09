@@ -13,6 +13,26 @@ index: 3
 
 There are two ways for you to run your application scripts while developing PlayCanvas applications. While developing and iterating you will use a Local Server for your code and in order to share and publish you will use a Code Repository. Each have different advantages and you will often switch between the two.
 
+## PlayCanvas Code Directory
+
+![code directory][code_directory]
+
+By far the simplest way of developing scripts for PlayCanvas applications is by using the built-in code editor and storing your scripts in PlayCanvas so that the server can access them at all times.
+
+This is how your Depot will be set up be default, when you create it. If you have linked your Depot to an external Code Repository you can delete the Code Repository at any time to revert back to using the Code Directory. 
+
+### Adding a new script
+
+![script picker][script_picker]
+
+To add a new script, open your Pack in PlayCanvas Designer and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the top most empty line and type in the name of your script, and press Enter. You will now see two icons next to the name of your script. The first removes the script from your Component, the second opens the editor.
+
+<div class="pc-notice-message pc-small">
+You will only see the Edit icon when you are using the Code Directory for storing your scripts. If you have a Code Repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
+</div>
+
+Click the Edit icon and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you have edit a script for the first time, it will be created and saved. You can then see all scripts from the Code tab in your Depot dashboard.
+
 ## Local Server
 
 Whilst developing your game you want quick iteration times. Your script files reside on your local computer and you edit them there. By running a tiny web server on your local machine any changes you make to your scripts will be instantly incorporated into the application by simply refreshing the browser.
@@ -66,7 +86,7 @@ accessible to the PlayCanvas servers so that it can be included in any exported 
 
 For these scenarios we provide support for external code repositories. That is, a connection between your source control system and our servers.
 
-![code repository](/media/images/platform/code_repo.png "Code Repository")
+![code repository][code_repository]
 
 We provide simple integration with two popular third-part code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](http://platform.playcanvas.com/account/services) page. Just click the authorize button for the services you wish to use.
 
@@ -76,11 +96,10 @@ Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it 
 
 Now when you run your application from the PlayCanvas Designer the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Packs which have a code repository set up the code will be included in your exports.
 
-### Note
-
-Code Repositories are only updated when you press the Update button on the code settings page.
-
-Currently we support public or private repositories hosted on Bitbucket (mercurial only) or Github. 
+<div class="pc-notice-message pc-small">
+<p>Code Repositories are only updated when you press the Update button on the code settings page.</p>
+<p>Currently we support public or private repositories hosted on Bitbucket (mercurial only) or Github.</p>
+</div>
 
 ## Switching 
 
@@ -88,11 +107,14 @@ You can easily switch between using local code and a code repository when using 
 
 ![Launch Buttons][launch_buttons]
 
-**Launch** (on the left) will launch using your code repostiory, **Launch Local** (on the right) will launch against a locally running server*
+**Launch** (on the left) will launch using code on the server, i.e. your code repository or code directory, **Launch Local** (on the right) will launch against a locally running server
 
-Exporting packs will only use the code repository for source code resources.
+Exporting packs will only use server-side for source code resources.
 
 [server_osx_linux]: /downloads/localserver
 [python]: http://www.python.org/download/
 [server_windows]: /downloads/localserver.bat
 [launch_buttons]: /media/images/platform/launch_buttons.png
+[script_picker]: /media/images/platform/script_picker.png
+[code_directory]: /media/images/platform/code_directory.png
+[code_repository]: /media/images/platform/code_repo.png

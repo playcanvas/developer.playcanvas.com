@@ -1532,8 +1532,16 @@ section.content span.pc-inline-title {
   font-weight: bold;
   margin: 20px 0px 10px 20px;
 }
+/* line 171, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+section.content .pc-small {
+  font-size: 0.8em;
+}
+/* line 175, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+section.content .pc-notice-message p {
+  margin: 5px 0px;
+}
 
-/* line 173, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 181, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash {
   line-height: 1.2;
   font-size: 16px;
@@ -1625,11 +1633,11 @@ div .splash code {
 * html div .splash {
   overflow-x: hidden;
 }
-/* line 178, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 186, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h1 {
   margin-bottom: 10px;
 }
-/* line 183, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 191, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .choice {
   display: inline;
   float: left;
@@ -1641,7 +1649,7 @@ div .choice {
 * html div .choice {
   overflow-x: hidden;
 }
-/* line 188, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 196, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice {
   display: inline;
   float: left;
@@ -1661,26 +1669,26 @@ div .overview-choice {
 * html div .overview-choice {
   overflow-x: hidden;
 }
-/* line 198, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 206, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice img {
   margin-right: 10px;
   float: left;
 }
-/* line 202, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 210, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice p {
   font-size: 12px;
 }
-/* line 208, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 216, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice:hover {
   background-color: #c9c9c9;
 }
 
-/* line 213, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 221, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-article-padding {
   height: 50px;
 }
 
-/* line 217, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 225, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-draft-container {
   position: relative;
   margin-top: 20px;
