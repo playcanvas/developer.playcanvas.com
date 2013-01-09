@@ -592,57 +592,269 @@ aside navigation .pc-current:hover {
   overflow-x: hidden;
 }
 
-/* line 79, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-details {
+/* line 21, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+#depot-control {
   display: inline;
   float: left;
   margin-right: 0;
   width: 950px;
-  padding: 20px 0px;
-  border-bottom: 1px solid #cccccc;
 }
 /* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-details {
+* html #depot-control {
   overflow-x: hidden;
 }
 
-/* line 87, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-extras {
+/* line 25, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer {
+  background-color: #8d96ac;
   display: inline;
   float: left;
   margin-right: 0;
   width: 950px;
-  padding: 20px 0px;
-  color: #888;
+  height: 930px;
+  /* For control inner bodies which don't have a height defined by the inner table
+     like code and settings 
+  */
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer {
+  overflow-x: hidden;
+}
+/* line 30, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer h2 a {
+  color: white;
+}
+/* line 34, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer h3 {
+  padding-bottom: 10px;
+}
+/* line 38, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-header {
+  padding-left: 12px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 926px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-header {
+  overflow-x: hidden;
+}
+/* line 45, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-header h2 {
+  color: white;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 690px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-header h2 {
+  overflow-x: hidden;
+}
+/* line 50, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-header .pc-depot-control-buttons {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 210px;
+  float: right;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-header .pc-depot-control-buttons {
+  overflow-x: hidden;
+}
+/* line 59, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-fixed-inner {
+  height: 870px;
+}
+/* line 63, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -12px 1.5em 12px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 926px;
+  background-color: #FFF;
+  height: 90%;
+  /*width: 98%;
+  margin: 0px auto;    
+  */
+  overflow-y: auto;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-inner {
+  overflow-x: hidden;
+}
+/* line 78, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section-first {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -160px 1.5em 160px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 830px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section-first {
+  overflow-x: hidden;
+}
+/* line 86, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -200px 1.5em 200px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 470px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section {
+  overflow-x: hidden;
+}
+/* line 94, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 150px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
+  overflow-x: hidden;
+}
+/* line 98, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation li {
+  display: inline-block;
+  border: 1px #8d96ac solid;
+  background-color: #e6e8ed;
+  width: 16%;
+  display: block;
+  padding: 3px;
+}
+/* line 106, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-collaborators-table {
+  width: 100%;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+/* line 111, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-collaborators-table tr {
+  border-bottom: 1px solid #ccc;
+}
+/* line 115, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner .pc-collaborators-table td {
+  width: 33%;
+  text-align: right;
+}
+/* line 121, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-control-outer .pc-depot-control-inner hr.pc-spacer {
+  background: #dddddd;
+  color: #dddddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: 0.1em;
+  margin: 0 0 1.45em;
+  border: none;
+  background: white;
+  color: white;
+  visibility: hidden;
+}
+
+/* line 127, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  padding: 20px 0px 10px 0px;
   border-bottom: 1px solid #cccccc;
 }
 /* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-extras {
+* html .pc-depot-header {
   overflow-x: hidden;
 }
-/* line 93, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-extras img {
+/* line 133, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-image-column {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 190px;
+  display: none;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-header .pc-depot-header-image-column {
+  overflow-x: hidden;
+}
+/* line 138, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-details-column {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 710px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-header .pc-depot-header-details-column {
+  overflow-x: hidden;
+}
+/* line 141, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-details-column .pc-depot-header-fork-source {
+  font-size: 0.7em;
+  color: #999;
+}
+/* line 146, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-details-column .pc-depot-header-description {
+  height: 83px;
+}
+/* line 150, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-details-column .pc-depot-header-controls {
+  position: relative;
+  bottom: 0px;
+}
+/* line 156, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-extras-column {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -20px 1.5em 20px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 150px;
+  color: #888;
+  font-size: 0.7em;
+  line-height: 16px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-depot-header .pc-depot-header-extras-column {
+  overflow-x: hidden;
+}
+/* line 164, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-extras-column img {
   vertical-align: middle;
 }
-/* line 97, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-extras .pc-depot-extras-label {
+/* line 168, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-header .pc-depot-header-extras-column .pc-depot-extras-label {
   display: inline-block;
   width: 72px;
 }
-/* line 101, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-extras .pc-depot-extras-left {
-  float: left;
-  width: 60%;
-}
-/* line 105, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-extras .pc-depot-extras-right {
-  float: right;
-  font-size: 0.7em;
-  line-height: 16px;
-  width: 30%;
-}
 
-/* line 113, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+/* line 175, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation {
   display: inline;
   float: left;
@@ -671,186 +883,92 @@ aside navigation .pc-current:hover {
 .pc-depot-navigation a:hover {
   text-decoration: underline;
 }
-
-/* line 119, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+/* line 180, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation ul li {
   display: inline-block;
   border: 1px #8d96ac solid;
   background-color: #e6e8ed;
   width: 16%;
 }
-
-/* line 123, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+/* line 184, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation img {
   vertical-align: middle;
   padding: 2px;
   margin: 0px;
 }
-
-/* line 129, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+/* line 190, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
 .pc-depot-navigation .pc-current {
   color: black;
   background-color: #f2f3f6;
   border-color: #c0c6d6;
 }
+/* line 194, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-depot-navigation .pc-current a {
+  color: black;
+}
 
-/* line 135, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-#depot-control {
+/* line 200, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-form-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 950px;
+  padding-top: 20px;
 }
 /* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #depot-control {
+* html .pc-form-page {
   overflow-x: hidden;
+}
+/* line 205, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-form-page .pc-form-page-main-column {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 470px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-form-page .pc-form-page-main-column {
+  overflow-x: hidden;
+}
+/* line 209, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-form-page .pc-form-page-aside {
+  padding-left: 160px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 190px;
+}
+/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-form-page .pc-form-page-aside {
+  overflow-x: hidden;
+}
+/* line 213, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-form-page .pc-form-page-aside p {
+  font-size: 0.9em;
+  color: #999;
 }
 
-/* line 139, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer {
-  background-color: #8d96ac;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 950px;
-  height: 930px;
+/* line 220, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+.pc-instruction-aside {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #fff6bf;
+  color: #514721;
+  border-color: #ffd324;
 }
-/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer {
-  overflow-x: hidden;
-}
-/* line 24, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer h2 {
-  color: white;
-  padding: 10px;
-}
-/* line 29, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer h2 a {
-  color: white;
-}
-/* line 33, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer h3 {
-  padding-bottom: 10px;
-}
-/* line 37, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner {
-  width: 98%;
-  height: 875px;
-  background-color: #FFF;
-  margin: 0px auto;
-  overflow-y: auto;
-}
-/* line 44, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-edit-form {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -160px 1.5em 160px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-  margin-top: 30px;
-  margin-bottom: 0px;
-  border: none;
-}
-/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-edit-form {
-  overflow-x: hidden;
-}
-/* line 49, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-code-repository {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -160px 1.5em 160px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
-/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-code-repository {
-  overflow-x: hidden;
-}
-/* line 53, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-collaborators {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -160px 1.5em 160px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
-/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-collaborators {
-  overflow-x: hidden;
-}
-/* line 57, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-delete-depot {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -160px 1.5em 160px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
-/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-delete-depot {
-  overflow-x: hidden;
-}
-/* line 62, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 150px;
-}
-/* line 147, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
-  overflow-x: hidden;
-}
-/* line 66, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation li {
-  display: inline-block;
-  border: 1px #8d96ac solid;
-  background-color: #e6e8ed;
-  width: 16%;
-  display: block;
-  padding: 3px;
-}
-/* line 73, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner hr.pc-spacer {
-  background: #dddddd;
-  color: #dddddd;
-  clear: both;
-  float: none;
-  width: 100%;
-  height: 0.1em;
-  margin: 0 0 1.45em;
-  border: none;
-  background: white;
-  color: white;
-  visibility: hidden;
+/* line 36, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.pc-instruction-aside a {
+  color: #514721;
 }
 
-/* line 143, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+/* line 224, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
 #fileupload {
   font-size: 13px;
 }
 
 /* Hide the fileupload start/delete buttons we don't want to support them, but the have to be there as the javascript calls them'*/
-/* line 147, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
+/* line 228, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_depot.scss */
 .fileupload-content .start {
   display: none;
 }
@@ -1181,20 +1299,36 @@ footer a {
 }
 /* line 95, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .error-message {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #dddddd;
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4;
+  display: block;
+  font-size: 0.8em;
+  padding: 4px;
+  margin: 0px;
+  width: 310px;
+  margin-left: 155px;
   color: red;
 }
-/* line 99, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
+/* line 27, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+.pc-standard-form .error-message a {
+  color: #8a1f11;
+}
+/* line 106, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form button.pc-button {
   width: 120px;
   float: right;
   margin-right: 33px;
 }
-/* line 105, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
+/* line 112, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form input[type='checkbox'] {
   margin-top: 12px;
 }
 
-/* line 110, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
+/* line 117, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
 .pc-button {
   height: 24px;
   margin-top: 5px;
@@ -1202,11 +1336,11 @@ footer a {
   margin-left: 0px;
 }
 
-/* line 118, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
+/* line 125, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
 .pc-spacey-form .pc-form-row {
   margin-top: 20px;
 }
-/* line 122, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
+/* line 129, /Users/dave/Projects/playcanvas/designer/manos/manos/public/style/src/_forms.scss */
 .pc-spacey-form .pc-form-boolean-row {
   margin-top: 20px;
 }
