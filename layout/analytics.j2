@@ -1,19 +1,12 @@
-<script src="/media/js/libs/analytics.min.js"></script>
 <script>
-    analytics.initialize({
-        'Google Analytics': {
-            trackingId: '{{ resource.meta.analytics.id }}',
-            domain: '{{ resource.meta.analytics.domain }}'
-        }
-    });
-    // var _gaq = [['_setAccount', '{{ resource.meta.analytics.id }}'], ['_trackPageview'], ['_setDomainName', '.playcanvas.com']];
-    // (function(d, t) {
-    // var g = d.createElement(t),
-    //     s = d.getElementsByTagName(t)[0];
-    // g.async = true;
-    // g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    // s.parentNode.insertBefore(g, s);
-    // })(document, 'script');
+    var _gaq = [['_setAccount', '{{ resource.meta.analytics.id }}'], ['_setDomainName', '.playcanvas.com'], ['_trackPageview']];
+    (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
 </script>
 {% if site.config.mode == "production" %}
 {% endif %}
