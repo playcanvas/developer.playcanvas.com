@@ -1,0 +1,181 @@
+---
+title: FPS Character Controller
+tags:
+ - tutorial
+ - advanced
+ - physics
+level: advanced
+index: 1
+---
+
+# FPS Character Controller
+
+<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/fps_character_controller?overlay=false" ></iframe>
+*Use the mouse to look around, and WASD or cursor keys to move, spacebar to jump. Click the mouse to hide the cursor (Google Chrome only)*
+
+In this tutorial, we'll walk you through how to create a controllable first-person camera which uses the built-in physics engine so that your character is solid in the world. 
+
+This tutorial expands on the [first-person camera][first_person_camera] tutorial. If you haven't completed that, you should head over there now.
+
+## The Pack setup
+
+![Pack Explorer](/media/images/tutorials/fps_controller_pack.png)
+
+You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][first_person_camera] from the previous tutorial.
+
+## The Camera Script
+
+We won't go into much detail about the camera script, as it is identical to the one from the previous tutorial. Except, we have removed the code to handle keyboard input and movement. Keyboard input and movement is now handled in a separate script `input.js` and as it interacts with the physics of the character controller.
+
+## The Character Controller
+
+### What is a Character Controller?
+
+There are many ways of controlling interactive elements in games, the character controller is a specific class of object designed to take player input and move an object around in the world realistically. 
+
+In the case of this tutorial we are using a Dynamic Character Controller. Dynamic, because it relies on a Rigid Body and physics engine to contrain it's movement to the world. Dynamic Character Controllers can work in many cases, but sometimes the 'realism' of using a physics engine to move the character gets in the way of the fun. An example would be moving upstairs, you normally don't want the character to collide with each step on the way up. 
+
+The other main sort of character controller is a Kinematic Character Controller, which uses a Kinematic physics body. A Kinematic body can collide with other rigid bodies but does not respond to the collisions meaning you can customize the collision response to make the game fun. A Kinematic Character Controller is more work to create, but can have better results in your game. 
+
+## The Character Controller Code
+
+The full source for this tutorial is found in the [tutorials code repository][tutorials_code]
+
+There are three important functions in the character controller for this tutorial, but first an important piece of setup code:
+
+~~~javascript~~~
+initialize: function () {
+    this.entity.rigidbody.body.setAngularFactor(0);
+}
+~~~~~~~~~~
+
+We are using a dynamic rigid body to represent our character. If we allowed it free movement it would roll and move all over the place, which is probably not how our character moves. So in initialize we call `setAngularFactor(0)` which prevents the rigidbody Component from rotating at all.
+
+### _checkGround()
+~~~javascript~~~
+_checkGround: function () {
+    var self = this;
+    var pos = this.entity.getPosition();
+    pc.math.vec3.add(pos, groundCheckRay, rayEnd);
+    self.onGround = false;
+
+    // Fire a ray straight down to just below the bottom of the rigid body, 
+    // if it hits something then the character is standing on something.
+    context.systems.rigidbody.raycastFirst(pos, rayEnd, function (result) {
+        self.onGround = true;
+    });
+}
+~~~~~~~~~~~~
+
+The internal method `_checkGround()` is called every frame to check if the character is touching the ground or is in the air. This is important as it determines what input can be accepted, jumping and moving are only allowed when the character is on the ground.
+
+To perform the test we fire a ray from the position of the character straight down. If the ray hits another Entity, then we can say we are on the ground. If it doesn't then we are not. Of course, this test may not be perfect, the entity the character is standing on could be anything, we don't care. However, we have the Entity that was hit in the result of the raycast, so if your game calls for you to be a little more fussy about what counts as 'ground', then you can modify the code here.
+
+`raycastFirst()` is a method provided by the [`RigidBodyComponentSystem`][rigidbody_system] it takes a start and end point in world-space, and a callback function which is given a [`RaycastResult`][raycast_result] object. `RaycastResult` contains all sorts of useful information, like the Entity that was hit, the point in space where the ray hit, and the normal vector at that point.
+
+### move()
+~~~javascript~~~
+move: function (direction) {
+    if (this.onGround) {
+        pc.math.vec3.scale(direction, this.speed, direction);
+        this.entity.rigidbody.setLinearVelocity(direction[0], direction[1], direction[2]);            
+    }
+},
+~~~~~~~~~~~~~~~
+
+The `move()` method must be called by the input code every frame and is given the direction (a unit vector) in which you want the character to move. If the character is on the ground, then we directly set the linear velocity of our rigidbody Component. There is now force, and now acceleration, just snappy movement.
+
+### jump()
+~~~javascript~~~
+jump: function () {
+    if (this.onGround) {
+        this.entity.rigidbody.applyImpulse(this.jumpImpulse, origin);
+        this.onGround = false;                
+    }
+},
+~~~~~~~~~~~~~~~~
+
+Finally, the `jump()` method is called when the player presses the spacebar, and it makes the character jump. We're handling this a little differently to the moving. A jump is intiated by applying an Impulse which is an instananeous force applied at a point. In our case we want to apply the impulse at the centre point, because we don't want the character to rotate.
+
+
+## Handling Input
+
+### `pc.input.Controller`
+
+~~~javascript~~~
+var element = document.getElementById('application-container');
+this.controller = new pc.input.Controller(element);
+
+this.controller.registerKeys('forward', [pc.input.KEY_UP, pc.input.KEY_W]);
+this.controller.registerKeys('back', [pc.input.KEY_DOWN, pc.input.KEY_S]);
+this.controller.registerKeys('left', [pc.input.KEY_LEFT, pc.input.KEY_A, pc.input.KEY_Q]);
+this.controller.registerKeys('right', [pc.input.KEY_RIGHT, pc.input.KEY_D]);
+this.controller.registerKeys('jump', [pc.input.KEY_SPACE]);
+~~~~~~~~~
+
+In order to easily handle mulitple keyboard input for the same controls we are using `pc.input.Controller`. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
+
+~~~javascript~~~
+if (this.controller.isPressed('forward')) {
+~~~~
+
+Then with code that is very similar to how we check if a key is pressed, we can check to see if the player has pressed one of the keys that means 'move forward'.
+
+### update()
+
+~~~javascript~~~
+update: function (dt) {
+    var input = false;
+
+    // Calculate the camera's heading in the XZ plane
+    var transform = this.camera.getWorldTransform();
+
+    pc.math.mat4.getZ(transform, this.z);
+    this.z[1] = 0;
+    pc.math.vec3.normalize(this.z, this.z);
+    
+    pc.math.mat4.getX(transform, this.x);
+    this.x[1] = 0;
+    pc.math.vec3.normalize(this.x, this.x);
+    
+    pc.math.vec3.set(this.heading, 0,0,0);
+
+    // Strafe left/right
+    if (this.controller.isPressed('left')) {
+        pc.math.vec3.subtract(this.heading, this.x, this.heading);
+        input = true;
+    } else if (this.controller.isPressed('right')) {
+        pc.math.vec3.add(this.heading, this.x, this.heading);
+        input = true;
+    }
+    
+    // Move forwards/backwards
+    if (this.controller.isPressed('forward')) {
+        pc.math.vec3.subtract(this.heading, this.z, this.heading);
+        input = true;
+    } else if (this.controller.isPressed('back')) {
+        pc.math.vec3.add(this.heading, this.z, this.heading);
+        input = true;
+    }
+
+    if (input) {
+        pc.math.vec3.normalize(this.heading, this.heading);
+    }
+
+    this.character.script.send(this.characterController, 'move', this.heading);
+
+    if (this.controller.wasPressed('jump')) {
+        this.character.script.send(this.characterController, 'jump');
+    }
+}
+~~~~~~~~~
+
+Getting input from the player is slightly more complicated than simply translating the entity. But all we need to do is work out which direction the camera is facing, ignore the up/down (y) component and use this heading as the direction to send a `move` message of the Dynamic Character Controller script, which calls the `move()` method on the script object.
+
+Finally we just check for the jump action and if required, we send the 'jump' message to the character controller script. 
+
+[first_person_camera]: /tutorials/intermediate/first_person_camera.html
+[designer]: http://platform.playcanvas.com/playcanvas/tutorials/designer#pack/0c72839a-2ad2-4bfe-94d1-5f4434630fc3
+[tutorials_code]: http://bitbucket.org/playcanvas/tutorials
+[rigidbody_system]: /engine/api/stable/symbols/pc.fw.RigidBodyComponentSystem.html
+[raycast_result]: /engine/api/stable/symbols/pc.fw.RaycastResult.html

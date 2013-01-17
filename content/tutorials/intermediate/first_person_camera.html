@@ -8,10 +8,10 @@ level: intermediate
 index: 1
 ---
 
+# First-Person Camera
+
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/first_person_camera?overlay=false" ></iframe>
 *Use the mouse to look around, and the cursor keys to move. Click the mouse to hide the cursor (Google Chrome only)*
-
-# First-Person Camera
 
 In this tutorial, we'll create a simple script for a first-person camera. That is, a scene where it is like the camera is your eyes and you can look around with by moving the mouse and move around using the cursor keys.
 
@@ -97,11 +97,11 @@ update: function (dt) {
 
 In the update method we update the orienation and the position of the camera. First we set the Euler Angles (see the [Entities intro][entities_intro] for more about Eulers) using the values that are updated by mouse events. Then we check for keyboard input. We're listening for the four arrow keys and if they are pressed we translate the Entity in local space. We use local space because we always want to move forward/back orleft/right relative to the direction the camera is facing.
 
-### Summary
+## Summary
 
 That's all there is to it. The next step for most games is to make the first person camera a physical object in the world. That means you can't just fly around, you have to fall under gravity and bump into walls.
 
-### Complete Listing
+## Complete Listing
 
 ~~~javascript~~~
 pc.script.create('first_person_camera', function (context) {
