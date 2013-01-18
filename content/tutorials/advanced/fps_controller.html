@@ -77,18 +77,20 @@ To perform the test we fire a ray from the position of the character straight do
 ~~~javascript~~~
 move: function (direction) {
     if (this.onGround) {
+        this.entity.rigidbody.activate();
         pc.math.vec3.scale(direction, this.speed, direction);
         this.entity.rigidbody.setLinearVelocity(direction[0], direction[1], direction[2]);            
     }
 },
 ~~~~~~~~~~~~~~~
 
-The `move()` method must be called by the input code every frame and is given the direction (a unit vector) in which you want the character to move. If the character is on the ground, then we directly set the linear velocity of our rigidbody Component. There is now force, and now acceleration, just snappy movement.
+The `move()` method must be called by the input code every frame and is given the direction (a unit vector) in which you want the character to move. If the character is on the ground, we first activate the rigidbody, then we directly set the linear velocity of our rigidbody Component. There is now force, and now acceleration, just snappy movement.
 
 ### jump()
 ~~~javascript~~~
 jump: function () {
     if (this.onGround) {
+        this.entity.rigidbody.activate();
         this.entity.rigidbody.applyImpulse(this.jumpImpulse, origin);
         this.onGround = false;                
     }
