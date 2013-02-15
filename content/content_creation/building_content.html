@@ -10,8 +10,8 @@ index: 3
 
 # Building Content for PlayCanvas
 
-You can build content for PlayCanvas in Autodesk 3D Studio Max, Autodesk Maya or SketchUp Pro. It is possible to use Blender and the regular version of SketchUp by exporting to Collada, but currently Collada support is provisional.
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so in general, anything that FBX supports PlayCanvas does too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no specific workflows you must follow.
+You can build content for PlayCanvas in Autodesk 3D Studio Max, Autodesk Maya, or SketchUp Pro. It is possible to use Blender and the regular version of SketchUp by exporting to COLLADA, but currently COLLADA support is provisional.
+PlayCanvas is designed to import content most faithfully via the FBX interchange format so in general, anything that FBX supports, PlayCanvas does too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no specific workflows you must follow.
 
 At the moment, this guide is very focussed on 3D Studio Max, but Maya will be covered shortly. That said, the concepts are almost identical across both applications.
 
@@ -28,12 +28,14 @@ You should now have a better feel for how PlayCanvas interprets your 3DS Max sce
 There are a few things to be aware of when creating meshes in the modelling application:
 
 * Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
+* Meshes can be skinned to up to 256 bones.
 * NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
-* Meshes can be skinned to an arbitrary number of bones. PlayCanvas does not impose an upper limit regardless of what platform you are running on.
 
 ### Materials
 
-You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials.
+You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
+
+![Sphere map](/media/images/artist_guide/max_material_editor.jpg)
 
 ### Supported Map Slots
 
@@ -52,6 +54,10 @@ Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas m
 ** Specular Level **
 
 Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
+
+** Glossiness **
+
+Assigning a Bitmap map to this slot activates per-pixel glossiness on the material. This essentially overrides whatever glossiness has been set on the material.
 
 ** Self-Illumination **
 
