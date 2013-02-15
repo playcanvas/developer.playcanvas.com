@@ -13,23 +13,21 @@ index: 3
 You can build content for PlayCanvas in Autodesk 3D Studio Max, Autodesk Maya, or SketchUp Pro. It is possible to use Blender and the regular version of SketchUp by exporting to COLLADA, but currently COLLADA support is provisional.
 PlayCanvas is designed to import content most faithfully via the FBX interchange format so in general, anything that FBX supports, PlayCanvas does too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no specific workflows you must follow.
 
-At the moment, this guide is very focussed on 3D Studio Max, but Maya will be covered shortly. That said, the concepts are almost identical across both applications.
+## Building Meshes
 
-## 3D Studio Max
+There are a few things to be aware of when creating meshes:
+
+* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
+* Meshes can be skinned to up to 256 bones.
+* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+
+## Autodesk 3D Studio Max
 
 To see a practical example of some PlayCanvas content being creation in Max, check out the following video:
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/5xXSFXj_GUQ?rel=0" frameborder="0" allowfullscreen></iframe>
 
 You should now have a better feel for how PlayCanvas interprets your 3DS Max scenes. However, let's now look at what is and what isn't supported in a little more detail.
-
-### Meshes
-
-There are a few things to be aware of when creating meshes in the modelling application:
-
-* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
 ### Materials
 
@@ -92,3 +90,11 @@ Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas mat
 ![Sphere map](/media/images/artist_guide/mountains_sphere.jpg)
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
+
+## Autodesk Maya
+
+### Materials
+
+You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
+
+![Sphere map](/media/images/artist_guide/maya_material_editor.jpg)
