@@ -22,9 +22,7 @@ An asset is a unit of data that is typically imported into PlayCanvas from a con
 An attribute is a property of a [Component](#component). Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls, and the updates are live-streamed to the connected game in real time.
 
 <h3 id="depot">Depot</h3>
-A Depot is a collection of Entities, Assets and Code for a single user. Whilst usually a single Depot will only contain resources for a single application, you may use multiple Depots
-as part of a single application. For example, each user on your team might have a separate depot containing your application resources and then you have a single Depot which represents
-the shipping version of the application. This is analogous to how repositories or branches work in version control software. N.B. Moving Entities and Assets between Depots is a feature coming soon.
+A Depot is the old name for a Project.
 
 <h3 id="component">Component</h3>
 Components describe the properties and functionality of an [Entity](#entity). In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components. 
@@ -66,5 +64,8 @@ The PlayCanvas Designer is a visual editing tool which can be used by members of
 <h3 id="engine">PlayCanvas Engine</h3>
 The PlayCanvas Engine is a javascript library which provides all the functionality you will need to create an interactive 3D application or game. 
 Programs created using the PlayCanvas Engine will run directly in a modern web browser with no need for third-party plugins.
+
+<h3 id="project">Project</h3>
+A Project is a collection of Entities, Assets and Code that belongs to a single user. Usually a single Project will only contain resources for a single application, though you can export multiple applications from a single Project.
 
 [engine_overview]: /engine/overview.html

@@ -79,12 +79,12 @@ move: function (direction) {
     if (this.onGround) {
         this.entity.rigidbody.activate();
         pc.math.vec3.scale(direction, this.speed, direction);
-        this.entity.rigidbody.setLinearVelocity(direction[0], direction[1], direction[2]);            
+        this.entity.rigidbody.setLinearVelocity(direction[0], direction[1], direction[2]);
     }
 },
 ~~~~~~~~~~~~~~~
 
-The `move()` method must be called by the input code every frame and is given the direction (a unit vector) in which you want the character to move. If the character is on the ground, we first activate the rigidbody, then we directly set the linear velocity of our rigidbody Component. There is now force, and now acceleration, just snappy movement.
+The `move()` method must be called by the input code every frame and is given the direction (a unit vector) in which you want the character to move. If the character is on the ground, we first activate the rigidbody, then we directly set the linear velocity of our rigidbody Component. There is no force, and no acceleration, just snappy movement.
 
 ### jump()
 ~~~javascript~~~
@@ -97,7 +97,7 @@ jump: function () {
 },
 ~~~~~~~~~~~~~~~~
 
-Finally, the `jump()` method is called when the player presses the spacebar, and it makes the character jump. We're handling this a little differently to the moving. A jump is intiated by applying an Impulse which is an instananeous force applied at a point. In our case we want to apply the impulse at the centre point, because we don't want the character to rotate.
+Finally, the `jump()` method is called when the player presses the spacebar, and it makes the character jump. We're handling this a little differently to the moving. A jump is initiated by applying an impulse, which is an instananeous force applied at a point. In our case we want to apply the impulse at the centre point, because we don't want the character to rotate.
 
 
 ## Handling Input
@@ -115,7 +115,7 @@ this.controller.registerKeys('right', [pc.input.KEY_RIGHT, pc.input.KEY_D]);
 this.controller.registerKeys('jump', [pc.input.KEY_SPACE]);
 ~~~~~~~~~
 
-In order to easily handle mulitple keyboard input for the same controls we are using `pc.input.Controller`. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
+In order to easily handle multiple keys bound to the same command we are using [`pc.input.Controller`][input_controller]. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
 
 ~~~javascript~~~
 if (this.controller.isPressed('forward')) {
@@ -181,3 +181,4 @@ Finally we just check for the jump action and if required, we send the 'jump' me
 [tutorials_code]: http://bitbucket.org/playcanvas/tutorials
 [rigidbody_system]: /engine/api/stable/symbols/pc.fw.RigidBodyComponentSystem.html
 [raycast_result]: /engine/api/stable/symbols/pc.fw.RaycastResult.html
+[input_controller]: /engine/api/stable/symbols/pc.input.Controller.html

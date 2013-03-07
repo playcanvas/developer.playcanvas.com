@@ -19,7 +19,7 @@ There are two ways for you to run your application scripts while developing Play
 
 By far the simplest way of developing scripts for PlayCanvas applications is by using the built-in code editor and storing your scripts in PlayCanvas so that the server can access them at all times.
 
-This is how your Depot will be set up be default, when you create it. If you have linked your Depot to an external Code Repository you can delete the Code Repository at any time to revert back to using the Code Directory. 
+This is how your Project will be set up be default, when you create it. If you have linked your Project to an external Code Repository you can delete the Code Repository at any time to revert back to using the Code Directory. 
 
 ### Adding a new script
 
@@ -31,7 +31,7 @@ To add a new script, open your Pack in PlayCanvas Designer and select or add a S
 You will only see the Edit icon when you are using the Code Directory for storing your scripts. If you have a Code Repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
 </div>
 
-Click the Edit icon and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you have edit a script for the first time, it will be created and saved. You can then see all scripts from the Code tab in your Depot dashboard.
+Click the Edit icon and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you have edit a script for the first time, it will be created and saved. You can then see all scripts from the Code tab in your Project dashboard.
 
 ## Local Server
 
@@ -76,7 +76,7 @@ You will see a directory of files. Like this:
 
 ![served directory](/media/images/platform/localserver.png "Local server directory")
 
-Launching packs from the PlayCanvas Designer using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your depot -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
+Launching packs from the PlayCanvas Designer using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
 
 ## Code Repository
 
@@ -90,7 +90,7 @@ For these scenarios we provide support for external code repositories. That is, 
 
 We provide simple integration with two popular third-part code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](http://platform.playcanvas.com/account/services) page. Just click the authorize button for the services you wish to use.
 
-Once the service is authorized, you setup your depot with the particular repository you wish to use. Go to your depot's code page; enter the username and repository name for your application; then click the Update button.
+Once the service is authorized, you setup your project with the particular repository you wish to use. Go to your project's code page; enter the username and repository name for your application; then click the Update button.
 
 Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status says 'ready', the code is synced.
 
