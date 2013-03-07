@@ -10,12 +10,19 @@ index: 3
 
 # Building Content for PlayCanvas
 
-You can build content for PlayCanvas in Autodesk 3D Studio Max, Autodesk Maya or SketchUp Pro. It is possible to use Blender and the regular version of SketchUp by exporting to Collada, but currently Collada support is provisional.
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so in general, anything that FBX supports PlayCanvas does too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no specific workflows you must follow.
+You can build content for PlayCanvas in Autodesk 3D Studio Max, Autodesk Maya, Blender, and SketchUp.
 
-At the moment, this guide is very focussed on 3D Studio Max, but Maya will be covered shortly. That said, the concepts are almost identical across both applications.
+PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
-## 3D Studio Max
+## General Considerations for Mesh Construction
+
+Regardless which modelling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+
+* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
+* Meshes can be skinned to up to 256 bones.
+* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+
+## Autodesk 3D Studio Max
 
 To see a practical example of some PlayCanvas content being creation in Max, check out the following video:
 
@@ -23,17 +30,11 @@ To see a practical example of some PlayCanvas content being creation in Max, che
 
 You should now have a better feel for how PlayCanvas interprets your 3DS Max scenes. However, let's now look at what is and what isn't supported in a little more detail.
 
-### Meshes
-
-There are a few things to be aware of when creating meshes in the modelling application:
-
-* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
-* Meshes can be skinned to an arbitrary number of bones. PlayCanvas does not impose an upper limit regardless of what platform you are running on.
-
 ### Materials
 
-You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials.
+You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
+
+![Sphere map](/media/images/artist_guide/max_material_editor.jpg)
 
 ### Supported Map Slots
 
@@ -52,6 +53,10 @@ Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas m
 ** Specular Level **
 
 Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
+
+** Glossiness **
+
+Assigning a Bitmap map to this slot activates per-pixel glossiness on the material. This essentially overrides whatever glossiness has been set on the material.
 
 ** Self-Illumination **
 
@@ -86,3 +91,15 @@ Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas mat
 ![Sphere map](/media/images/artist_guide/mountains_sphere.jpg)
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
+
+## Autodesk Maya
+
+### Materials
+
+You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
+
+![Sphere map](/media/images/artist_guide/maya_material_editor.jpg)
+
+## Blender
+
+You can use Blender to generate 3D assets for PlayCanvas. Blender does have a built in FBX exporter, but it does have some limitations. Only the diffuse map of your material will be exported to the FBX file. In other words, all of the other map types that the PlayCanvas engine can handle (normal map, specular map, gloss map, etc) will be lost on export.
