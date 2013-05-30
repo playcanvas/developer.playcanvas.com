@@ -92,15 +92,14 @@ context.mouse.disableContextMenu();
 
 ### Binding to events
 
-The `pc.input.Mouse` object allows you to bind different events corresponding to mouse actions, in the tutorial we are binding the method `onMouseMove` to the move event and `onMouseDown`
+The `pc.input.Mouse` object allows you to listen to different events corresponding to mouse actions, in the tutorial we are binding the method `onMouseMove` to the move event and `onMouseDown`
 to the button down event. 
 
-Notice we use `this.onMouseDown.bind(this);` rather than `this.onMouseDown` as the callback. We're using [`Function.bind`][bind] in order to make sure the value
-of `this` is correct when the event callback is fired.   
+Notice we also pass `this` into the on() method for binding to events. This third argument is the object that is used as `this` in the event callback.
 
 ~~~javascript~~~
-context.mouse.bind(pc.input.EVENT_MOUSEMOVE, this.onMouseMove.bind(this));
-context.mouse.bind(pc.input.EVENT_MOUSEDOWN, this.onMouseDown.bind(this));
+context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
+context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~~~~~~~
 
 Events available on `pc.input.Mouse` are:
