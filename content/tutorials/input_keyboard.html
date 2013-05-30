@@ -30,9 +30,13 @@ pc.script.create("keyboard_handler", function (context) {
 
     KeyboardHandler.prototype = {
         initialize: function () {
-            // Use bind() to listen for events on the keyboard device.
-            context.keyboard.bind(pc.input.EVENT_KEYDOWN, this.onKeyDown.bind(this));
-            context.keyboard.bind(pc.input.EVENT_KEYUP, this.onKeyUp.bind(this));
+            // Use on() to listen for events on the keyboard device.
+            // Arguments are:
+            // 1) The event name to listen for
+            // 2) The callback function to call when the event fires
+            // 3) (optional) The value to use for 'this' in the callback function
+            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+            context.keyboard.on(pc.input.EVENT_KEYUP, this.onKeyUp, this);
         },
 
         update: function (dt) {
@@ -61,19 +65,29 @@ pc.script.create("keyboard_handler", function (context) {
 
             // Update the spinning cube
             this.entity.rotateLocal(0, angle, 0);
-        },
+        }
 
+        /*
+        * Event handler called when key is pressed
+        */
         onKeyDown: function (event) {
             // Check event.key to detect which key has been pressed
             if (event.key === pc.input.KEY_A) {
-                this.entity.primitive.color = 0xff0000;
+                var color = this.entity.primitive.color;
+                color.set(1,0,0);
+                this.entity.primitive.color = color;
             }
         },
 
+        /*
+        * Event handler called when key is released
+        */
         onKeyUp: function (event) {
             // Check event.key to detect which key has been pressed
             if (event.key === pc.input.KEY_A) {
-                this.entity.primitive.color = 0xffffff;
+                var color = this.entity.primitive.color;
+                color.set(1,1,1);
+                this.entity.primitive.color = color;
             }
         }
     };
