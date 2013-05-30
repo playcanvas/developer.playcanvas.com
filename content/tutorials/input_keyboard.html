@@ -73,9 +73,7 @@ pc.script.create("keyboard_handler", function (context) {
         onKeyDown: function (event) {
             // Check event.key to detect which key has been pressed
             if (event.key === pc.input.KEY_A) {
-                var color = this.entity.primitive.color;
-                color.set(1,0,0);
-                this.entity.primitive.color = color;
+                this.entity.primitive.color = new pc.Color(1,0,0);
             }
         },
 
@@ -85,9 +83,7 @@ pc.script.create("keyboard_handler", function (context) {
         onKeyUp: function (event) {
             // Check event.key to detect which key has been pressed
             if (event.key === pc.input.KEY_A) {
-                var color = this.entity.primitive.color;
-                color.set(1,1,1);
-                this.entity.primitive.color = color;
+                this.entity.primitive.color = new pc.Color(1,1,1);
             }
         }
     };

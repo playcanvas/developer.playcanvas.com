@@ -30,11 +30,11 @@ pc.script.create("mouse", function (context) {
         // you right-click the page
         context.mouse.disableContextMenu();
 
-        // Use the bind() method to attach event handlers. 
+        // Use the on() method to attach event handlers. 
         // The mouse object supports events on move, button down and 
         // up, and scroll wheel.
-        context.mouse.bind(pc.input.EVENT_MOUSEMOVE, this.onMouseMove.bind(this));
-        context.mouse.bind(pc.input.EVENT_MOUSEDOWN, this.onMouseDown.bind(this));
+        context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
+        context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
     };
 
     MouseHandler.prototype = {
@@ -54,20 +54,21 @@ pc.script.create("mouse", function (context) {
         onMouseDown: function (event) {
             // If the left mouse button is pressed, change the cube color to red
             if (event.button === pc.input.MOUSEBUTTON_LEFT) {
-                this.entity.primitive.color = 0xff0000;
+                this.entity.primitive.color = new pc.Color(1,0,0);
             }
 
             // If the left mouse button is pressed, change the cube color to green
             if (event.button === pc.input.MOUSEBUTTON_MIDDLE) {
-                this.entity.primitive.color = 0x00ff00;
+                this.entity.primitive.color = new pc.Color(0,1,0);
             }
 
             // If the left mouse button is pressed, change the cube color to blue
             if (event.button === pc.input.MOUSEBUTTON_RIGHT) {
-                this.entity.primitive.color = 0x0000ff;
+                this.entity.primitive.color  = new pc.Color(0,0,1);
             }
         }
     };
+
 
     return MouseHandler;
 });
