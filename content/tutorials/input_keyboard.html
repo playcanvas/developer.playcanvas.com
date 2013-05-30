@@ -75,6 +75,11 @@ pc.script.create("keyboard_handler", function (context) {
             if (event.key === pc.input.KEY_A) {
                 this.entity.primitive.color = new pc.Color(1,0,0);
             }
+
+            // When the space bar is pressed this scrolls the window.
+            // Calling preventDefault() on the original browser event stops this.
+            event.event.preventDefault();
+
         },
 
         /*
