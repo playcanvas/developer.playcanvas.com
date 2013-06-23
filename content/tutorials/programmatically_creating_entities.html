@@ -75,7 +75,7 @@ context.systems.camera.addComponent(entity);
 // Create a new Primitive Component and add it to the Entity.
 context.systems.primitive.addComponent(entity, {
     type: 'Box',
-    color: '0xff0000',
+    color: new pc.Color(1, 0, 0)
 });
 
 // Add it to the Entity hierarchy
@@ -137,7 +137,7 @@ pc.script.create('entity_creator', function (context) {
             // Create a new Primitive Component and add it to the Entity.
             context.systems.primitive.addComponent(entity, {
                 type: 'Box',
-                color: '0xff0000',
+                color: new pc.Color(1, 0, 0)
             });
 
             // Move to a random position
