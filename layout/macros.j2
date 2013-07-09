@@ -20,8 +20,10 @@
                         {% else %}
                             {% set current_class = "" %}
                         {% endif %}
-                        {% if res.meta.title == "developer resources" %}
-                            <li class="pc-home {{ current_class }}" ><a href="{{ res.full_url }}">{{ res.meta.title }}</a></li>                            
+                        {% if res.meta.url %}
+                            <li class="pc-subtopic {{ current_class }}" ><a href="{{ res.meta.url }}">{{ res.meta.title }}</a></li>
+                        {% elif res.meta.title == "developer resources" %}
+                            <li class="pc-home {{ current_class }}" ><a href="{{ res.full_url }}">{{ res.meta.title }}</a></li>
                         {% elif not res.meta.subtopic %}
                             <li class="pc-topic {{ current_class }}" ><a href="{{ res.full_url }}">{{ res.meta.title }}</a></li>
                         {% else %}
