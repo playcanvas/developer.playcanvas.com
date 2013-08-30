@@ -1,77 +1,90 @@
 /* Colours */
-/* Links */
+/** Dimensions **/
+/** Fonts **/
 /* Mixins */
-/* line 3, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 4, ../../../../designer/manos/manos/public/style/src/_common.scss */
 html, body {
   height: 100%;
 }
 
-/* line 7, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 8, ../../../../designer/manos/manos/public/style/src/_common.scss */
 body {
-  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
-  font-size: 1.0em;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 1em;
   color: #555555;
   line-height: 1.1;
 }
 
-/* line 11, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 12, ../../../../designer/manos/manos/public/style/src/_common.scss */
 h1 {
   font-size: 2em;
   font-weight: bold;
-  padding: 5px;
+  padding: 15px 0px;
   border-bottom: 1px solid #8d96ac;
+  margin-bottom: 5px;
 }
 
-/* line 18, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 20, ../../../../designer/manos/manos/public/style/src/_common.scss */
 h2 {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 3px;
 }
 
-/* line 24, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 26, ../../../../designer/manos/manos/public/style/src/_common.scss */
 h3 {
   font-size: 1.17em;
   font-weight: bold;
   margin-bottom: 3px;
 }
 
-/* line 30, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 32, ../../../../designer/manos/manos/public/style/src/_common.scss */
 h4 {
   font-weight: bold;
   margin-bottom: 3px;
 }
 
-/* line 35, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 37, ../../../../designer/manos/manos/public/style/src/_common.scss */
 p {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-/* line 40, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 42, ../../../../designer/manos/manos/public/style/src/_common.scss */
 ul {
   list-style: disc outside none;
 }
-/* line 42, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 44, ../../../../designer/manos/manos/public/style/src/_common.scss */
 ul li {
   margin-left: 20px;
 }
 
-/* line 47, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 49, ../../../../designer/manos/manos/public/style/src/_common.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 53, ../../../../designer/manos/manos/public/style/src/_common.scss */
+em {
+  font-style: italic;
+}
+
+/* line 57, ../../../../designer/manos/manos/public/style/src/_common.scss */
 #page-container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
+  min-height: 800px;
 }
 
-/* line 52, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 63, ../../../../designer/manos/manos/public/style/src/_common.scss */
 a {
   color: #6379a8;
   text-decoration: none;
 }
 
-/* line 57, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 68, ../../../../designer/manos/manos/public/style/src/_common.scss */
 a:hover {
   text-decoration: underline;
 }
@@ -84,29 +97,39 @@ a:hover {
   margin-left: 0px;
 }
 */
-/* line 70, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 81, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-font-small {
+  font-size: 0.8em;
+}
+
+/* line 85, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-small {
   font-size: 0.6em;
 }
 
-/* line 74, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 89, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-quiet {
+  color: #888888;
+}
+
+/* line 93, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-clear {
   clear: both;
 }
 
-/* line 78, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 97, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-left {
   float: left;
   padding-right: 20px;
 }
 
-/* line 83, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 102, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-right {
   float: right;
   padding-left: 20px;
 }
 
-/* line 88, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 107, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-text-block {
   margin: 20px 0px;
   display: inline;
@@ -119,15 +142,179 @@ a:hover {
   overflow-x: hidden;
 }
 
-/* line 93, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 112, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-2col-first {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 470px;
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-2col-first {
+  overflow-x: hidden;
+}
+/* line 114, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-2col-first p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 121, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-2col-second {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 470px;
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-2col-second {
+  overflow-x: hidden;
+}
+/* line 123, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-2col-second p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 130, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-centred-container {
   width: 800px;
   margin: 25px auto;
 }
 
-/* line 99, ../../../../designer/manos/manos/public/style/src/_common.scss */
+/* line 135, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-left-full {
+  width: 950px;
+  margin: 30px 0px;
+}
+
+/* line 140, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-left-large {
+  width: 790px;
+  margin: 30px 0px;
+}
+
+/* line 145, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-left-small {
+  width: 310px;
+  margin: 30px 0px;
+}
+
+/* line 150, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-centered-full {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-centered-full {
+  overflow-x: hidden;
+}
+
+/* line 154, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-centered-large {
+  width: 790px;
+  margin: 30px auto;
+}
+
+/* line 159, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-centered-medium {
+  width: 550px;
+  margin: 30px auto;
+}
+
+/* line 164, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-centered-small {
+  width: 310px;
+  margin: 30px auto;
+}
+
+/* line 169, ../../../../designer/manos/manos/public/style/src/_common.scss */
 .pc-hidden {
   display: none;
+}
+
+/* line 173, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-text-block-medium {
+  font-size: 0.9em;
+  margin: 20px 0px;
+}
+
+/* line 179, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-display-number {
+  font-family: "Courier New", courier, monospace;
+  font-weight: bold;
+}
+
+/* line 184, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-anchor-button {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  margin: 0.7em 0.5em 0.7em 0;
+  border-width: 1px;
+  border-style: solid;
+  font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+  font-size: 100%;
+  line-height: 130%;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 10px 5px 7px;
+}
+/* line 7, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.pc-anchor-button {
+  *display: inline;
+}
+/* line 75, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_buttons.scss */
+.pc-anchor-button img {
+  margin: 0 3px -3px 0 !important;
+  padding: 0;
+  border: none;
+  width: 16px;
+  height: 16px;
+  float: none;
+}
+
+/* line 188, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul.pc-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #cccccc;
+}
+/* line 194, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul.pc-tabs li {
+  display: inline-block;
+  margin: 0 0 0 0;
+  padding: 0.25em 0 0.25em 0;
+}
+/* line 200, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul.pc-tabs li.pc-current {
+  background-color: #f2f3f6;
+}
+/* line 203, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul.pc-tabs li.pc-current a {
+  text-decoration: underline;
+}
+/* line 208, ../../../../designer/manos/manos/public/style/src/_common.scss */
+ul.pc-tabs li a {
+  padding: 0 1em;
+}
+
+/**
+* Lists
+*/
+/* line 217, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-inline-list {
+  list-style: none;
+}
+/* line 220, ../../../../designer/manos/manos/public/style/src/_common.scss */
+.pc-inline-list li {
+  display: inline-block;
 }
 
 /* line 1, ../../../../designer/manos/manos/public/style/src/_header.scss */
@@ -164,60 +351,59 @@ a:hover {
   padding: 4px 4px 4px 4px;
   height: 22px;
   width: 400px;
-  border-bottom-left-radius: 5px;
 }
-/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 84, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .account-bar ul {
   list-style-type: none;
 }
-/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 86, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .account-bar ul li {
   display: inline;
   margin: 0px;
 }
-/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 92, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .account-bar a {
   text-decoration: none;
 }
-/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 96, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .account-bar a:hover {
   text-decoration: underline;
 }
 
-/* line 17, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 16, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar .avatar-name {
   display: inline;
 }
 
-/* line 21, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 20, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar .avatar-spacer {
   display: inline;
   width: 20px;
 }
 
-/* line 26, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 25, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar .avatar-name img {
   vertical-align: middle;
   border: 1px solid white;
 }
 
-/* line 31, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 30, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar a {
   color: #222222;
   text-decoration: none;
 }
 
-/* line 36, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 35, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar a:hover {
   text-decoration: underline;
 }
 
-/* line 40, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 39, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar ul {
   display: inline;
 }
 
-/* line 44, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 43, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar ul li {
   display: inline;
   list-style-type: none;
@@ -225,7 +411,7 @@ a:hover {
   padding: 2px 4px 2px 4px;
 }
 
-/* line 51, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 50, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 iframe[seamless] {
   background-color: transparent;
   border: 0px none transparent;
@@ -233,7 +419,7 @@ iframe[seamless] {
   overflow: hidden;
 }
 
-/* line 58, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
+/* line 57, ../../../../designer/manos/manos/public/style/src/_accountbar.scss */
 .account-bar iframe {
   height: 26px;
   width: 50px;
@@ -304,7 +490,7 @@ iframe[seamless] {
 }
 
 /* line 43, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots {
+.pc-profile-column {
   display: inline;
   float: left;
   margin-right: 10px;
@@ -312,26 +498,27 @@ iframe[seamless] {
   padding: 20px 0px;
 }
 /* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depots {
+* html .pc-profile-column {
   overflow-x: hidden;
 }
-/* line 47, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots h2 {
+
+/* line 52, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects h2 {
   display: inline-block;
-  width: 95%;
+  width: 68%;
   padding-bottom: 20px;
 }
-/* line 53, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots .pc-depots-buttons {
+/* line 58, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects .pc-projects-buttons {
   display: inline;
 }
-/* line 57, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table {
+/* line 62, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table {
   border-top: 2px solid #cccccc;
   width: 100%;
 }
-/* line 61, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table th {
+/* line 66, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table th {
   text-align: left;
   font-size: 0.8em;
   font-weight: bold;
@@ -339,435 +526,46 @@ iframe[seamless] {
   padding: 2px;
   border-left: 1px solid #cccccc;
 }
-/* line 73, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table td.pc-depot-list-item {
+/* line 78, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table td.pc-project-list-item {
   padding: 5px 0px;
   font-size: 0.9em;
 }
-/* line 78, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table td.pc-depot-list-minor-item {
+/* line 83, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table td.pc-project-list-minor-item {
   font-size: 0.8em;
 }
-/* line 82, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table td.pc-depot-list-hidden {
+/* line 87, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table td.pc-project-list-hidden {
   display: none;
 }
-/* line 86, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table td.pc-depot-list-img {
+/* line 91, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table td.pc-project-list-img {
   width: 16px;
   display: inline;
   margin: 0px;
 }
-/* line 92, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table .pc-depot-list-secondary-row {
+/* line 97, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table .pc-project-list-secondary-row {
   border-bottom: 1px solid #cccccc;
 }
-/* line 94, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-depots table .pc-depot-list-secondary-row td {
+/* line 99, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-projects table .pc-project-list-secondary-row td {
   width: auto;
 }
 
-/* line 105, ../../../../designer/manos/manos/public/style/src/_profile.scss */
-.pc-activities {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -80px 1.5em 80px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 430px;
-  padding: 20px 0px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-activities {
-  overflow-x: hidden;
-}
-/* line 110, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+/* line 115, ../../../../designer/manos/manos/public/style/src/_profile.scss */
 .pc-activities table {
   border-top: 2px solid #cccccc;
   width: 100%;
 }
 
-/* line 21, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-#depot-control {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 950px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #depot-control {
-  overflow-x: hidden;
-}
-
-/* line 25, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer {
-  background-color: #8d96ac;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 950px;
-  height: 930px;
-  /* For control inner bodies which don't have a height defined by the inner table
-     like code and settings 
-  */
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer {
-  overflow-x: hidden;
-}
-/* line 30, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer h2 a {
-  color: white;
-}
-/* line 34, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer h3 {
-  padding-bottom: 10px;
-}
-/* line 38, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-header {
-  padding-left: 12px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 926px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-header {
-  overflow-x: hidden;
-}
-/* line 45, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-header h2 {
-  color: white;
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 690px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-header h2 {
-  overflow-x: hidden;
-}
-/* line 50, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-header .pc-depot-control-buttons {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 210px;
-  float: right;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-header .pc-depot-control-buttons {
-  overflow-x: hidden;
-}
-/* line 59, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-fixed-inner {
-  height: 870px;
-}
-/* line 63, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner {
+/* line 121, ../../../../designer/manos/manos/public/style/src/_profile.scss */
+.pc-walkthroughs {
   display: inline;
   float: left;
   position: relative;
-  margin: 0 -12px 1.5em 12px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 926px;
-  background-color: #FFF;
-  height: 90%;
-  /*width: 98%;
-  margin: 0px auto;    
-  */
-  overflow-y: auto;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner {
-  overflow-x: hidden;
-}
-/* line 78, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section-first {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -160px 1.5em 160px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 830px;
-  border: none;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section-first {
-  overflow-x: hidden;
-}
-/* line 86, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -200px 1.5em 200px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-  margin-top: 30px;
-  margin-bottom: 0px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-section {
-  overflow-x: hidden;
-}
-/* line 94, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 150px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation ul {
-  overflow-x: hidden;
-}
-/* line 98, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-depot-control-navigation li {
-  display: inline-block;
-  border: 1px #8d96ac solid;
-  background-color: #e6e8ed;
-  width: 16%;
-  display: block;
-  padding: 3px;
-}
-/* line 106, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-collaborators-table {
-  width: 100%;
-  font-size: 0.9em;
-  margin-bottom: 20px;
-}
-/* line 111, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-collaborators-table tr {
-  border-bottom: 1px solid #ccc;
-}
-/* line 115, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner .pc-collaborators-table td {
-  width: 33%;
-  text-align: right;
-}
-/* line 121, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-control-outer .pc-depot-control-inner hr.pc-spacer {
-  background: #dddddd;
-  color: #dddddd;
-  clear: both;
-  float: none;
-  width: 100%;
-  height: 0.1em;
-  margin: 0 0 1.45em;
-  border: none;
-  background: white;
-  color: white;
-  visibility: hidden;
-}
-
-/* line 127, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 950px;
-  padding: 20px 0px 10px 0px;
-  border-bottom: 1px solid #cccccc;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-header {
-  overflow-x: hidden;
-}
-/* line 133, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-image-column {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 190px;
-  display: none;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-header .pc-depot-header-image-column {
-  overflow-x: hidden;
-}
-/* line 138, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-details-column {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 710px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-header .pc-depot-header-details-column {
-  overflow-x: hidden;
-}
-/* line 141, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-details-column .pc-depot-header-fork-source {
-  font-size: 0.7em;
-  color: #999;
-}
-/* line 146, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-details-column .pc-depot-header-description {
-  height: 83px;
-}
-/* line 150, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-details-column .pc-depot-header-controls {
-  position: relative;
-  bottom: 0px;
-}
-/* line 156, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-extras-column {
-  display: inline;
-  float: left;
-  position: relative;
-  margin: 0 -20px 1.5em 20px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 150px;
-  color: #888;
-  font-size: 0.7em;
-  line-height: 16px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-header .pc-depot-header-extras-column {
-  overflow-x: hidden;
-}
-/* line 164, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-extras-column img {
-  vertical-align: middle;
-}
-/* line 168, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-header .pc-depot-header-extras-column .pc-depot-extras-label {
-  display: inline-block;
-  width: 72px;
-}
-
-/* line 175, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-navigation {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 950px;
-  margin: 10px 0px 5px 0px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-depot-navigation {
-  overflow-x: hidden;
-}
-/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
-.pc-depot-navigation ul {
-  list-style-type: none;
-}
-/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
-.pc-depot-navigation ul li {
-  display: inline;
-  margin: 0px;
-}
-/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
-.pc-depot-navigation a {
-  text-decoration: none;
-}
-/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
-.pc-depot-navigation a:hover {
-  text-decoration: underline;
-}
-/* line 180, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-navigation ul li {
-  display: inline-block;
-  border: 1px #8d96ac solid;
-  background-color: #e6e8ed;
-  width: 16%;
-}
-/* line 184, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-navigation img {
-  vertical-align: middle;
-  padding: 2px;
-  margin: 0px;
-}
-/* line 190, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-navigation .pc-current {
-  color: black;
-  background-color: #f2f3f6;
-  border-color: #c0c6d6;
-}
-/* line 194, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-depot-navigation .pc-current a {
-  color: black;
-}
-
-/* line 200, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-form-page {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 950px;
-  padding-top: 20px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-form-page {
-  overflow-x: hidden;
-}
-/* line 205, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-form-page .pc-form-page-main-column {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 470px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-form-page .pc-form-page-main-column {
-  overflow-x: hidden;
-}
-/* line 209, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-form-page .pc-form-page-aside {
-  padding-left: 160px;
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 190px;
-}
-/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .pc-form-page .pc-form-page-aside {
-  overflow-x: hidden;
-}
-/* line 213, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-form-page .pc-form-page-aside p {
-  font-size: 0.9em;
-  color: #999;
-}
-
-/* line 220, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.pc-instruction-aside {
-  padding: 0.8em;
-  margin-bottom: 1em;
-  border: 2px solid #dddddd;
-  background: #fff6bf;
-  color: #514721;
-  border-color: #ffd324;
-}
-/* line 36, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
-.pc-instruction-aside a {
-  color: #514721;
-}
-
-/* line 224, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-#fileupload {
-  font-size: 13px;
-}
-
-/* Hide the fileupload start/delete buttons we don't want to support them, but the have to be there as the javascript calls them'*/
-/* line 228, ../../../../designer/manos/manos/public/style/src/_depot.scss */
-.fileupload-content .start {
-  display: none;
+  margin: 0 -40px 1.5em 40px;
 }
 
 /* line 3, ../../../../designer/manos/manos/public/style/src/_notifications.scss */
@@ -919,7 +717,7 @@ footer a {
   overflow-x: hidden;
 }
 
-/* line 14, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 15, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form {
   display: inline;
   float: left;
@@ -1002,12 +800,12 @@ footer a {
 * html .pc-standard-form {
   overflow-x: hidden;
 }
-/* line 19, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 20, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-row {
   width: 100%;
   display: block;
 }
-/* line 24, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 25, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-row label {
   width: 150px;
   display: inline-block;
@@ -1016,19 +814,23 @@ footer a {
   position: relative;
   top: 8px;
 }
-/* line 33, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 34, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form .pc-form-narrow-label label {
+  width: 75px;
+}
+/* line 38, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-flat-row label {
   display: inline;
 }
-/* line 38, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 43, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-icon-row label {
   display: inline;
 }
-/* line 41, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 46, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-icon-row img {
   vertical-align: middle;
 }
-/* line 46, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 51, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-boolean-row {
   border: 1px solid #bbb;
   margin-right: 0;
@@ -1036,22 +838,22 @@ footer a {
   width: 469px;
   padding-left: 6px;
 }
-/* line 54, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 59, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form select {
   width: 322px;
   padding: 5px;
 }
-/* line 59, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 64, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-extra {
   font-size: 0.8em;
   color: #888888;
 }
-/* line 64, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 69, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-text {
   font-size: 12px;
   padding: 6px 0px;
 }
-/* line 70, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 75, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-info {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1061,17 +863,18 @@ footer a {
   border-color: #92cae4;
   font-size: 12px;
   width: 454px;
+  margin-top: 5px;
   display: inline-block;
 }
 /* line 54, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 .pc-standard-form .pc-form-info a {
   color: #205791;
 }
-/* line 75, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 81, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-info a {
   color: black;
 }
-/* line 80, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 86, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-error {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1087,16 +890,16 @@ footer a {
 .pc-standard-form .pc-form-error a {
   color: #8a1f11;
 }
-/* line 85, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 91, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-error a {
   color: black;
 }
-/* line 90, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 96, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .pc-form-image-button {
   display: inline-block;
   background-repeat: no-repeat;
 }
-/* line 95, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 102, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form .error-message {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1116,18 +919,30 @@ footer a {
 .pc-standard-form .error-message a {
   color: #8a1f11;
 }
-/* line 106, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 113, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form button.pc-button {
   width: 120px;
   float: right;
   margin-right: 33px;
 }
-/* line 112, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 119, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-standard-form input[type='checkbox'] {
   margin-top: 12px;
 }
+/* line 123, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form input.pc-cc-month {
+  width: 2em;
+}
+/* line 127, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form input.pc-cc-year {
+  width: 4em;
+}
+/* line 131, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+.pc-standard-form input.pc-cc-cvc {
+  width: 3em;
+}
 
-/* line 117, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 136, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-button {
   height: 24px;
   margin-top: 5px;
@@ -1135,11 +950,11 @@ footer a {
   margin-left: 0px;
 }
 
-/* line 125, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 144, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-spacey-form .pc-form-row {
   margin-top: 20px;
 }
-/* line 129, ../../../../designer/manos/manos/public/style/src/_forms.scss */
+/* line 148, ../../../../designer/manos/manos/public/style/src/_forms.scss */
 .pc-spacey-form .pc-form-boolean-row {
   margin-top: 20px;
 }
@@ -1215,20 +1030,26 @@ footer a {
   height: 100px;
 }
 
-/* line 2, ../../../../designer/manos/manos/public/style/src/_tables.scss */
+/* line 22, ../../../../designer/manos/manos/public/style/src/_tables.scss */
 .pc-standard-table {
+  width: 100%;
   margin-top: 20px;
 }
-
-/* line 6, ../../../../designer/manos/manos/public/style/src/_tables.scss */
+/* line 5, ../../../../designer/manos/manos/public/style/src/_tables.scss */
+.pc-standard-table tr:nth-child(odd) td {
+  background-color: #eee;
+}
+/* line 9, ../../../../designer/manos/manos/public/style/src/_tables.scss */
 .pc-standard-table th {
   font-weight: bold;
   border-bottom: 1px solid #8d96ac;
+  text-align: left;
+  padding-left: 10px;
 }
-
-/* line 11, ../../../../designer/manos/manos/public/style/src/_tables.scss */
+/* line 16, ../../../../designer/manos/manos/public/style/src/_tables.scss */
 .pc-standard-table td {
   padding: 10px;
+  max-width: 200px;
 }
 
 /* line 1, ../../../../designer/manos/manos/public/style/src/_credits.scss */
@@ -1265,28 +1086,107 @@ footer a {
   vertical-align: middle;
 }
 
-/* line 1, ../../../../designer/manos/manos/public/style/src/_frontpage.scss */
-#frontpage-content {
-  width: 700px;
-  margin: 0px auto;
+/* Colours */
+/** Dimensions **/
+/** Fonts **/
+/* Mixins */
+/* line 3, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  /*    .pc-frontpage-footer {
+          @include column(24, true);
+          text-align: center;
+      }
+  */
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-frontpage-block {
+  overflow-x: hidden;
+}
+/* line 6, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block img {
+  width: 630px;
+}
+/* line 10, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-image {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 670px;
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-frontpage-block .pc-frontpage-image {
+  overflow-x: hidden;
+}
+/* line 14, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-heading {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  padding: 10px;
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-frontpage-block .pc-frontpage-heading {
+  overflow-x: hidden;
+}
+/* line 19, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-heading h1 {
+  font-size: 3em;
+}
+/* line 23, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-heading h2 {
+  font-size: 2em;
+}
+/* line 26, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-heading h3 {
+  font-size: 1.5em;
+}
+/* line 30, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-heading h1, .pc-frontpage-block .pc-frontpage-heading h2, .pc-frontpage-block .pc-frontpage-heading h3 {
+  border: none;
+  text-align: center;
+}
+/* line 41, ../../../../designer/manos/manos/public/style/src/frontpage.scss */
+.pc-frontpage-block .pc-frontpage-aside {
+  padding-left: 40px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 230px;
+}
+/* line 147, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html .pc-frontpage-block .pc-frontpage-aside {
+  overflow-x: hidden;
 }
 
-/* line 89, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 84, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .pc-admin-navigation ul {
   list-style-type: none;
 }
-/* line 91, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 86, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .pc-admin-navigation ul li {
   display: inline;
   margin: 0px;
 }
-/* line 97, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 92, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .pc-admin-navigation a {
   text-decoration: none;
 }
-/* line 101, ../../../../designer/manos/manos/public/style/src/_base.scss */
+/* line 96, ../../../../designer/manos/manos/public/style/src/_base.scss */
 .pc-admin-navigation a:hover {
   text-decoration: underline;
+}
+/* line 4, ../../../../designer/manos/manos/public/style/src/_admin.scss */
+.pc-admin-navigation ul {
+  margin: 20px 0px;
+}
+/* line 8, ../../../../designer/manos/manos/public/style/src/_admin.scss */
+.pc-admin-navigation li {
+  padding-right: 10px;
 }
 
 /* line 1, ../../../../designer/manos/manos/public/style/src/_error.scss */
@@ -1391,7 +1291,7 @@ aside navigation .pc-current:hover {
   background-color: #afafaf;
 }
 
-/* line 114, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 113, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content {
   padding-left: 80px;
   display: inline;
@@ -1407,56 +1307,56 @@ section.content {
 * html section.content {
   overflow-x: hidden;
 }
-/* line 46, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 45, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content h1 {
   padding-top: 0px;
 }
-/* line 50, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 49, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 55, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 54, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content h2 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 60, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 59, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 65, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 64, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content strong {
   font-weight: bold;
 }
-/* line 69, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 68, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content em {
   font-style: italic;
 }
-/* line 73, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 72, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ol {
   list-style-type: decimal;
   padding-left: 20px;
 }
-/* line 76, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 75, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ol li {
   margin-bottom: 2px;
 }
-/* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 79, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ul {
   list-style-type: disc;
   padding-left: 20px;
 }
-/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 83, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content ul li {
   margin-bottom: 2px;
 }
-/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 88, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content img {
   vertical-align: top;
 }
-/* line 93, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 92, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1466,32 +1366,32 @@ section.content .codebox {
   margin-left: -2px;
   font-size: 12px;
 }
-/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 94, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox figure > br {
   display: none;
 }
-/* line 99, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 98, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox pre > p {
   display: none;
 }
-/* line 103, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 102, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .codebox figcaption {
   display: none;
 }
-/* line 108, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 107, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
   font-size: 0.9em;
 }
-/* line 121, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 120, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table {
   font-size: 0.9em;
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
-/* line 127, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 126, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table th {
   font-weight: bold;
   border-bottom: 1px solid black;
@@ -1499,49 +1399,49 @@ section.content table th {
   background-color: #eee;
   white-space: nowrap;
 }
-/* line 135, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 134, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table td {
   padding: 10px 18px;
   border-bottom: 1px solid #aaa;
 }
-/* line 140, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 139, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content table colgroup.pc-title-column {
   background-color: #eee;
   border-right: 1px solid black;
 }
-/* line 147, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 146, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .pc-headless-table td {
   border-right: 1px solid #aaa;
 }
-/* line 152, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 151, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content iframe {
   width: 100%;
   height: 480px;
   margin-top: 20px;
 }
-/* line 158, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 157, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content img.pc-inline {
   padding: 3px;
   background-color: #eef;
   border: 1px solid #ccc;
   vertical-align: middle;
 }
-/* line 165, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 164, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content span.pc-inline-title {
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0px 10px 20px;
 }
-/* line 171, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 170, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .pc-small {
   font-size: 0.8em;
 }
-/* line 175, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 174, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 section.content .pc-notice-message p {
   margin: 5px 0px;
 }
 
-/* line 181, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 180, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash {
   line-height: 1.2;
   font-size: 16px;
@@ -1552,56 +1452,56 @@ div .splash {
   width: 950px;
   height: 200px;
 }
-/* line 46, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 45, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h1 {
   padding-top: 0px;
 }
-/* line 50, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 49, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 55, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 54, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h2 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 60, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 59, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 65, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 64, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash strong {
   font-weight: bold;
 }
-/* line 69, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 68, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash em {
   font-style: italic;
 }
-/* line 73, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 72, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ol {
   list-style-type: decimal;
   padding-left: 20px;
 }
-/* line 76, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 75, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ol li {
   margin-bottom: 2px;
 }
-/* line 80, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 79, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ul {
   list-style-type: disc;
   padding-left: 20px;
 }
-/* line 84, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 83, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash ul li {
   margin-bottom: 2px;
 }
-/* line 89, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 88, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash img {
   vertical-align: top;
 }
-/* line 93, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 92, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1611,19 +1511,19 @@ div .splash .codebox {
   margin-left: -2px;
   font-size: 12px;
 }
-/* line 95, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 94, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox figure > br {
   display: none;
 }
-/* line 99, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 98, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox pre > p {
   display: none;
 }
-/* line 103, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 102, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash .codebox figcaption {
   display: none;
 }
-/* line 108, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 107, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash code {
   font-family: courier, monospace;
   background-color: #f7f7f7;
@@ -1633,11 +1533,11 @@ div .splash code {
 * html div .splash {
   overflow-x: hidden;
 }
-/* line 186, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 185, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .splash h1 {
   margin-bottom: 10px;
 }
-/* line 191, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 190, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .choice {
   display: inline;
   float: left;
@@ -1649,7 +1549,7 @@ div .choice {
 * html div .choice {
   overflow-x: hidden;
 }
-/* line 196, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 195, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice {
   display: inline;
   float: left;
@@ -1669,26 +1569,26 @@ div .overview-choice {
 * html div .overview-choice {
   overflow-x: hidden;
 }
-/* line 206, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 205, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice img {
   margin-right: 10px;
   float: left;
 }
-/* line 210, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 209, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice p {
   font-size: 12px;
 }
-/* line 216, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 215, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 div .overview-choice:hover {
   background-color: #c9c9c9;
 }
 
-/* line 221, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 220, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-article-padding {
   height: 50px;
 }
 
-/* line 225, ../../../../designer/manos/manos/public/style/src/documentation.scss */
+/* line 224, ../../../../designer/manos/manos/public/style/src/documentation.scss */
 .pc-draft-container {
   position: relative;
   margin-top: 20px;
