@@ -1,5 +1,5 @@
 ---
-title: building content
+title: building 3D models
 description: Overview 
 tags:
     - section
@@ -10,7 +10,7 @@ index: 2
 
 # Building Content for PlayCanvas
 
-You can build content for PlayCanvas in Autodesk 3D Studio Max, Autodesk Maya, Blender, and SketchUp.
+Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example, Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
 
 PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
@@ -21,6 +21,33 @@ Regardless which modelling application you are using, there a number of things t
 * Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
 * Meshes can be skinned to up to 256 bones.
 * NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+
+---
+
+## Blender
+
+![Blender Logo](/media/images/Blender-Logo.jpg)
+
+[Blender](http://blender.org) is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas. 
+
+Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations. 
+
+### Non-Diffuse maps
+
+Only the Diffuse map of your material will be exported to the FBX file. Other map types like Normal or Specular are lost on export. This means you have to set-up additional maps in the Material Editor in the Designer. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit.
+
+### Embedding Textures
+
+The Blender FBX and COLLADA exporters do not have the ability to embed textures into the exported model file. Embedded Textures make importing much easier. Use the [Autodesk FBX Converter](http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112) to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+
+### Learning Blender
+
+There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
+
+* [Blender Cookie](http://blendercookie.com/)
+* [Blender Guru](http://www.blenderguru.com/)
+
+---
 
 ## Autodesk 3D Studio Max
 
@@ -92,6 +119,8 @@ Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas mat
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
 
+---
+
 ## Autodesk Maya
 
 ### Materials
@@ -99,7 +128,3 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
 ![Sphere map](/media/images/artist_guide/maya_material_editor.jpg)
-
-## Blender
-
-You can use Blender to generate 3D assets for PlayCanvas. Blender does have a built in FBX exporter, but it does have some limitations. Only the diffuse map of your material will be exported to the FBX file. In other words, all of the other map types that the PlayCanvas engine can handle (normal map, specular map, gloss map, etc) will be lost on export.
