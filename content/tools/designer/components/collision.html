@@ -18,6 +18,8 @@ The 'collision' component assigns a collision volume to the entity. The componen
 #### Mesh
 <img alt="Component Interface" src="/media/images/platform/component_collisionmesh.png" />
 
+If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
+
 ## Properties
 
 <table>
