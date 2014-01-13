@@ -38,6 +38,12 @@ pc.script.create("mouse", function (context) {
     };
 
     MouseHandler.prototype = {
+        initialize: function () {
+            this.redMaterial = context.assets.getAssetByName('Red', pc.asset.ASSET_MATERIAL);  
+            this.greenMaterial = context.assets.getAssetByName('Green', pc.asset.ASSET_MATERIAL);
+            this.blueMaterial = context.assets.getAssetByName('Blue', pc.asset.ASSET_MATERIAL);
+        },
+        
         onMouseMove: function (event) {
             // Get the current camera Entity
             var cameraEntity = context.systems.camera.current
@@ -54,21 +60,20 @@ pc.script.create("mouse", function (context) {
         onMouseDown: function (event) {
             // If the left mouse button is pressed, change the cube color to red
             if (event.button === pc.input.MOUSEBUTTON_LEFT) {
-                this.entity.primitive.color = new pc.Color(1,0,0);
+                this.entity.model.materialAsset = this.redMaterial;
             }
 
             // If the left mouse button is pressed, change the cube color to green
             if (event.button === pc.input.MOUSEBUTTON_MIDDLE) {
-                this.entity.primitive.color = new pc.Color(0,1,0);
+                this.entity.model.materialAsset = this.greenMaterial;            
             }
 
             // If the left mouse button is pressed, change the cube color to blue
             if (event.button === pc.input.MOUSEBUTTON_RIGHT) {
-                this.entity.primitive.color  = new pc.Color(0,0,1);
+                this.entity.model.materialAsset = this.blueMaterial;                
             }
         }
     };
-
 
     return MouseHandler;
 });

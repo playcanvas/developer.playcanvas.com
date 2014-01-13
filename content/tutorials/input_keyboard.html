@@ -37,6 +37,9 @@ pc.script.create("keyboard_handler", function (context) {
             // 3) (optional) The value to use for 'this' in the callback function
             context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
             context.keyboard.on(pc.input.EVENT_KEYUP, this.onKeyUp, this);
+            
+            this.redMaterial = context.assets.find("Red", pc.asset.ASSET_MATERIAL);
+            this.whiteMaterial = context.assets.find("White", pc.asset.ASSET_MATERIAL);
         },
 
         update: function (dt) {
@@ -73,13 +76,12 @@ pc.script.create("keyboard_handler", function (context) {
         onKeyDown: function (event) {
             // Check event.key to detect which key has been pressed
             if (event.key === pc.input.KEY_A) {
-                this.entity.primitive.color = new pc.Color(1,0,0);
+                this.entity.model.materialAsset = this.redMaterial;
             }
 
             // When the space bar is pressed this scrolls the window.
             // Calling preventDefault() on the original browser event stops this.
             event.event.preventDefault();
-
         },
 
         /*
@@ -88,13 +90,14 @@ pc.script.create("keyboard_handler", function (context) {
         onKeyUp: function (event) {
             // Check event.key to detect which key has been pressed
             if (event.key === pc.input.KEY_A) {
-                this.entity.primitive.color = new pc.Color(1,1,1);
+                this.entity.model.materialAsset = this.whiteMaterial;
             }
-        }
+        },            
     };
     
     return KeyboardHandler;
 });
+
 ~~~~~~~~~~~~~
 
 There are two ways of detecting keyboard input. The first is done in the update method of your scripts. Use `isPressed()` and `wasPressed()` and check whether a key is currently pressed or has just been pressed. The second uses events to respond to a key press or release as it happens.

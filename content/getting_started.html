@@ -15,38 +15,29 @@ In order to learn the basics of PlayCanvas Platform, let's build the following s
 
 ## Your Profile
 
-Once you've signed in you will be greeted with your profile page. Your profile page shows you all the Projects you have access to, this includes all Projects you have created and any that you have been given permission to access.
+![Profile][profile]
 
-A Project is a collection of:
-
-* Packs - An collection Entities used to build up a part of your game. A Pack could be a single level or your entire game. It depends 
-* Assets - 3D Models, textures, images, sound files and anything other assets you use in your game.
-* Code - Your source code, is provided either as a link to a source control repository, such as Git or Mercurial, or a uploaded folder of code.
-* Exports and published apps - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
+Once you've signed in you will be greeted with your profile page. Your profile page shows you all the projects you have access to, this includes all projects you have created and any that you have been given permission to access.
 
 ![Project List][project_list]
 
+A Project is a collection of:
+
+* **Packs** - An collection Entities used to build up a part of your game. A Pack could be a single level or your entire game. It depends.
+* **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
+* **Code** - Your source code. You can either write code using the PlayCanvas built-in code editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
+* **Exports** and **Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
+
 ## Creating a New Project
 
-On your profile page, press the add button. This takes you to the 'Create new project' page where you set the details of your new project:
+On your profile page, press the "Create New Project" button. This takes you to a page where you set the details of your new project:
 
-* Name - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
-* Description - A short description of your project that will appear on the main project page.
-* Privacy - The project visibility. By default, new projects are private (only visible to yourself) but deselecting this option allows others to browse the project.
+* **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or an FPS, or simply display a 3D model that you've made, you can use a starter kit.
+* **Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
+* **Description** - A short description of your project that will appear on the main project page.
+* **Privacy** - The project visibility. By default, new projects are private (only visible to yourself) but deselecting this option allows others to browse the project.
 
-On confirming the new project details, you are taken to the project home page.
-
-## Adding Collaborators
-
-![Collaborators][collaborators]
-
-PlayCanvas is all about collaborative development. Once you have a new project, you can start adding additional team members and give them access rights. From the project home page, select 'Settings'. Under the Collaborators section you can add new team members, enter the e-mail address they use to access PlayCanvas Platform and select the access level you wish to give them. The access levels are:
-
-* Read - The collaborator can load, run and export the contents of the project.
-* Write - In addition to read privileges, the collaborator can edit and save to the project.
-* Administrator - In addition to write privileges, the collaborator can modify the settings of the project.
-
-Once you have assigned a permission, select 'Add' and the project will be added to the list of projects on the new collaborator's profile page.
+Choose "No Starter kit" and set a name and description for your project. Then click the "Create" button and you are taken to the project home page.
 
 ## A Simple Example: Spinning Cube
 
@@ -76,7 +67,7 @@ Here are the steps to create the cube:
 * Select the new entity (called 'Untitled') in the Pack Explorer.
 * In the Attribute Editor, change the 'Name' field to 'Cube'.
 * Select 'Add Component' from the 'Entity' menu.
-* Select 'primitive' from the list and hit OK. This creates a 1x1x1 unit box primitive at the location of the entity (the world space origin).
+* Select 'model' from the list and hit OK. In the Attribute Editor, change the 'Type' field to 'Box'. This creates a 1x1x1 unit box primitive at the location of the entity (the world space origin).
 
 Now let's create the camera:
 
@@ -94,7 +85,7 @@ Finally, let's create the light:
 
 You should now have someone similar to the following in the 3D View:
 
-<img alt="Cube in 3D View" width="640" src="/media/images/platform/designer_cube.jpg"></img>
+<img alt="Cube in 3D View" width="640" src="/media/images/platform/designer_cube.png"></img>
 
 ### Save your work
 
@@ -106,7 +97,7 @@ From Designer, you can quickly preview your work at any time. To do this, press 
 
 ![Launch Buttons][launch_buttons]
 
-This will open a new tab and fire up your embryonic web app. Based on the steps above, you should see something similar to what is shown below:
+This will open a new tab and fire up your web app. Based on the steps above, you should see something similar to what is shown below:
 
 <img alt="Cube in engine" width="640" src="/media/images/platform/designer_cube_preview.jpg"></img>
 
@@ -118,7 +109,21 @@ So far, we've managed to render a cube. Now, let's animate it.
 
 The real power and versatility of PlayCanvas comes from the ability to assign scripted behaviour to individual entities. This is done by assigning a script component to an entity and then specifying the Javascript file that executes in relation to that entity. In order to get the cube to spin, we need to write some code that executes every frame, rotating the cube on its vertical axis by a small amount at a time.
 
-Open your editor of choice and add the following to a file called 'spinner.js':
+#### Hosted or Local code?
+
+There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in code editor, which saves directly to our servers. The second is to edit code in you favourite text editor and run a local web-server. 
+
+For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow](http://developer.playcanvas.com/engine/workflow.html) page.
+
+First we need to create a script component and create a new script to edit.
+
+* Select the entity called 'Cube' in the Pack Explorer.
+* Select 'Add Component' from the 'Component' menu.
+* Select 'script' from the list and hit OK.
+* In the Script section of the Attribute Editor, click the top line of the URLs field to edit the filename. Set the URL attribute of the script component to 'spinner.js'.
+* Click on the name of the script 'spinner.js' and the PlayCanvas code editor will open in a new tab.
+
+In the code editor update the script template to match the code below.
 
 ~~~javascript~~~
 pc.script.create("spinner", function (context) {
@@ -139,19 +144,11 @@ pc.script.create("spinner", function (context) {
 });
 ~~~~~~~
 
-Once assigned, this script will cause any Entity to rotate around the world space Y axis about its local origin. But how do you assign your spinner.js script to the cube Entity? Simply follow these steps:
-
-* Select the entity called 'Cube' in the Pack Explorer.
-* Select 'Add Component' from the 'Component' menu.
-* Select 'script' from the list and hit OK.
-* In the Script section of the Attribute Editor, click the top line of the URLs field to edit the filename. Set the URL attribute of the script component to 'spinner.js'.
-
-If you were to run the pack now using the 'Launch Local' option the browser will attempt to read the script from `http://localhost:51000/spinner.js`. Running scripts from a web server running locally allows you to edit, save and reload your PlayCanvas web app quickly, speeding up development. You can find a script for running a Local Server for your code on our [Script Workflow page](/engine/workflow.html). Alternatively, once you've set up a Code Repository, you can use the other 'Launch' command and that will load from code stored on the PlayCanvas servers.
-
-Remember, the server must be started from the same location as spinner.js.
+Once you've edited the code, press the "Save" button in the code editor and switch back to the Designer tab.
 
 With that done, you can select the Launch button from the toolbar once again. This time, you should see your cube rotating on the spot. Congratulations, you have built your first PlayCanvas app!
 
+[profile]: /media/images/platform/profile.jpg "Profile"
 [project_list]:  /media/images/platform/depot_list.png "Project List"
 [collaborators]: /media/images/platform/collaborators.png "Collaborators"
 [pack_explorer]: /media/images/platform/pack_explorer.png "Pack Explorer"
