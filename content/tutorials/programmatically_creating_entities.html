@@ -35,10 +35,9 @@ var entity = new pc.fw.Entity();
 // Add a new Camera Component with default values
 context.systems.camera.addComponent(entity);
 
-// Add a new Primitive Component and add it to the Entity.
-context.systems.primitive.addComponent(entity, {
-    type: 'Box',
-    color: new pc.Color(1, 0, 0)
+// Add a new Model Component and add it to the Entity.
+context.systems.model.addComponent(entity, {
+    type: 'box',
 });
 
 // Add it to the Entity hierarchy
@@ -72,10 +71,9 @@ var entity = new pc.fw.Entity();
 // Create a new Camera Component with default values
 context.systems.camera.addComponent(entity);
 
-// Create a new Primitive Component and add it to the Entity.
-context.systems.primitive.addComponent(entity, {
-    type: 'Box',
-    color: new pc.Color(1, 0, 0)
+// Create a new Model Component and add it to the Entity.
+context.systems.model.addComponent(entity, {
+    type: 'box',
 });
 
 // Add it to the Entity hierarchy
@@ -110,11 +108,12 @@ pc.script.create('entity_creator', function (context) {
 
     EntityCreator.prototype = {
         initialize: function () {
+            this.redMaterial = context.assets.getAssetByName('Red', pc.asset.ASSET_MATERIAL);
         },
 
         update: function (dt) {
             // Spawn new cubes if there are less than NUM_CUBES
-            while(this.entities.length < NUM_CUBES) {
+            while (this.entities.length < NUM_CUBES) {
                 this.spawnCube();
             }
 
@@ -134,10 +133,10 @@ pc.script.create('entity_creator', function (context) {
         spawnCube: function () {
             var entity = new pc.fw.Entity();
 
-            // Create a new Primitive Component and add it to the Entity.
-            context.systems.primitive.addComponent(entity, {
-                type: 'Box',
-                color: new pc.Color(1, 0, 0)
+            // Add a new Model Component and add it to the Entity.
+            context.systems.model.addComponent(entity, {
+                type: 'box',
+                materialAsset: this.redMaterial
             });
 
             // Move to a random position
@@ -159,7 +158,7 @@ pc.script.create('entity_creator', function (context) {
     };
 
     return EntityCreator;
-});
+});;
 ~~~~~~~~~
 
-This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Primitive Component attached.
+This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
