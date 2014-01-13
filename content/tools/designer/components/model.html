@@ -7,7 +7,7 @@ index: 10
 
 # Component: model
 
-The 'model' component enables an entity to render a model asset.
+The 'model' component enables an entity to render a primitive shape or a model asset. 
 
 <img alt="Component Interface" src="/media/images/platform/component_model.png" />
 
@@ -15,7 +15,8 @@ The 'model' component enables an entity to render a model asset.
 
 <table>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Asset</td><td>The model asset rendered by this model component. Only a single model can be rendered per model component.</td></tr>
+    <tr><td>Type</td><td>The type of the model to be rendered. Can be one of 'asset', 'box', 'capsule', 'cone', 'cylinder', 'sphere'</td></tr>
+    <tr><td>Asset</td><td>The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component.</td></tr>
     <tr><td>Cast Shadows</td><td>If enabled, the model rendered by this component will cast shadows onto other models in the scene.</td></tr>
     <tr><td>Receive Shadows</td><td>If enabled, the model rendered by this component will receive shadows cast by other models in the scene.</td></tr>
 </table>
