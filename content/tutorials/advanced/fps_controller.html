@@ -164,17 +164,17 @@ update: function (dt) {
         this.heading.normalize();
     }
 
-    this.character.script.send(this.characterController, 'move', this.heading);
+    this.character.script.dynamic_character_controller.move(this.heading);
 
     if (this.controller.wasPressed('jump')) {
-        this.character.script.send(this.characterController, 'jump');
+        this.character.script.dynamic_character_controller.jump();
     }
 }
 ~~~~~~~~~
 
 Getting input from the player is slightly more complicated than simply translating the entity. But all we need to do is work out which direction the camera is facing, ignore the up/down (y) component and use this heading as the direction to send a `move` message of the Dynamic Character Controller script, which calls the `move()` method on the script object.
 
-Finally we just check for the jump action and if required, we send the 'jump' message to the character controller script. 
+Finally we just check for the jump action and if required, we call the `jump()` method of the character controller script.
 
 [first_person_camera]: /tutorials/intermediate/first_person_camera.html
 [designer]: http://playcanvas.com/playcanvas/tutorials/designer#pack/0c72839a-2ad2-4bfe-94d1-5f4434630fc3
