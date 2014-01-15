@@ -72,7 +72,7 @@ With this Entity we have a *collision* component but no *rigidbody* so it acts a
 ~~~javascript~~~
 pc.script.create("trigger", function (context) {
 
-    var zeroVec = pc.math.vec3.create(0, 0, 0);
+    var zeroVec = pc.Vec3.ZERO;
 
     var Trigger = function (entity) {
         this.entity = entity;
@@ -86,7 +86,7 @@ pc.script.create("trigger", function (context) {
         onTriggerEnter: function (entity) {
             // Reset back to roughly the position the entity started in.
             var position = entity.getPosition();
-            entity.setPosition(position[0], 10, 0);
+            entity.setPosition(position.x, 10, 0);
 
             entity.rigidbody.linearVelocity = zeroVec;
             entity.rigidbody.angularVelocity = zeroVec;

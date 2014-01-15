@@ -24,7 +24,7 @@ Take a look at the input_mouse Pack in the [tutorials project][project]. Here is
 pc.script.create("mouse", function (context) {
     var MouseHandler = function (entity) {
         this.entity = entity;
-        this.pos = pc.math.vec3.create();
+        this.pos = new pc.Vec3();
 
         // Disabling the context menu stops the browser displaying a menu when 
         // you right-click the page

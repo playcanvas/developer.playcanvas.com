@@ -44,7 +44,7 @@ var lp = entity.getLocalPosition();
 var wp = entity.getPosition(); 
 ~~~~~~~
 
-These methods both return a `pc.math.Vec3`.
+These methods both return a `pc.Vec3`.
 
 Setting the position of an entity is just as straightforward.
 
@@ -102,7 +102,7 @@ However, if you do want to set an Entity's rotation in quaternion form, you can 
 
 ~~~js~~~
 // Create an identity rotation
-var q = pc.math.quat.create(); 
+var q = new pc.Quat();
 // Set the entity to have the same rotation as its parent - equivalent to
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);

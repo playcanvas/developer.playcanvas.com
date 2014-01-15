@@ -56,7 +56,7 @@ We are using a dynamic rigid body to represent our character. If we allowed it f
 _checkGround: function () {
     var self = this;
     var pos = this.entity.getPosition();
-    pc.math.vec3.add(pos, groundCheckRay, rayEnd);
+    rayEnd.add2(pos, groundCheckRay);
     self.onGround = false;
 
     // Fire a ray straight down to just below the bottom of the rigid body, 
@@ -78,8 +78,8 @@ To perform the test we fire a ray from the position of the character straight do
 move: function (direction) {
     if (this.onGround) {
         this.entity.rigidbody.activate();
-        pc.math.vec3.scale(direction, this.speed, direction);
-        this.entity.rigidbody.setLinearVelocity(direction[0], direction[1], direction[2]);
+        direction.scale(this.speed);
+        this.entity.rigidbody.linearVelocity = direction;
     }
 },
 ~~~~~~~~~~~~~~~
@@ -132,36 +132,36 @@ update: function (dt) {
     // Calculate the camera's heading in the XZ plane
     var transform = this.camera.getWorldTransform();
 
-    pc.math.mat4.getZ(transform, this.z);
-    this.z[1] = 0;
-    pc.math.vec3.normalize(this.z, this.z);
+    transform.getZ(this.z);
+    this.z.y = 0;
+    this.z.normalize();
     
-    pc.math.mat4.getX(transform, this.x);
-    this.x[1] = 0;
-    pc.math.vec3.normalize(this.x, this.x);
+    transform.getX(this.x);
+    this.x.y = 0;
+    this.x.normalize();
     
-    pc.math.vec3.set(this.heading, 0,0,0);
+    this.heading.set(0, 0, 0);
 
     // Strafe left/right
     if (this.controller.isPressed('left')) {
-        pc.math.vec3.subtract(this.heading, this.x, this.heading);
+        this.heading.sub(this.x);
         input = true;
     } else if (this.controller.isPressed('right')) {
-        pc.math.vec3.add(this.heading, this.x, this.heading);
+        this.heading.add(this.x);
         input = true;
     }
     
     // Move forwards/backwards
     if (this.controller.isPressed('forward')) {
-        pc.math.vec3.subtract(this.heading, this.z, this.heading);
+        this.heading.sub(this.z);
         input = true;
     } else if (this.controller.isPressed('back')) {
-        pc.math.vec3.add(this.heading, this.z, this.heading);
+        this.heading.add(this.z);
         input = true;
     }
 
     if (input) {
-        pc.math.vec3.normalize(this.heading, this.heading);
+        this.heading.normalize();
     }
 
     this.character.script.send(this.characterController, 'move', this.heading);
