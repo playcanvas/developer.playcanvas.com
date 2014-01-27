@@ -41,7 +41,7 @@ Choose "No Starter kit" and set a name and description for your project. Then cl
 
 ## A Simple Example: Spinning Cube
 
-Now we're ready to build a simple 3D web app: a spinning cube!
+Now we're ready to build a simple 3D web app: a spinning box!
 
 The first thing to do is create a new pack. A pack represents the data required to bootstrap the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one pack. Therefore, on the project home page, select the 'New Pack' button at the top right of the 'designer' tab. This opens a new browser tab and fires up the visual editor: PlayCanvas Designer.
 
@@ -53,7 +53,12 @@ A PlayCanvas Pack is effectively a collection of 'things' that make up your app.
 
 Entities are built from Components. A Component powers an Entity with a particular piece of functionality. For example, a Component can add a graphical model to an Entity, it can animate the model, it can add a light source to an Entity, it can add an audio source, and so the list goes on.
 
-For our spinning cube experiment, we will need 3 Entities:
+Let's begin by naming our new Pack:
+
+* Select the root node 'Untitled' in the Pack Explorer.
+* In the Attribute Editor below the Pack Explorer, rename the Untitled root node to something more meaningful such as 'Box Test' and hit Enter.
+
+Now, for our spinning box experiment, we will need 3 Entities:
 
 * A box.
 * A camera (to view the box).
@@ -61,10 +66,7 @@ For our spinning cube experiment, we will need 3 Entities:
 
 Fortunately, Designer automatically creates a directional light and a camera for you when a new pack is created. So here are the steps to create the box:
 
-* Select the root node 'Untitled' in the Pack Explorer.
-* In the Attribute Editor below the Pack Explorer, rename the Untitled root node to something more meaningful such as 'Box Test'.
 * Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new child box entity of 'Box Test' in the Pack Explorer.
-* Select the new entity (called 'Untitled') in the Pack Explorer.
 
 Now let's set up the camera so that it is viewing the box properly:
 
