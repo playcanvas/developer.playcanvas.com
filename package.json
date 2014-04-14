@@ -9,6 +9,7 @@
     "metalsmith-metadata": "^0.0.1",
     "metalsmith-metallic": "0.1.1",
     "metalsmith": "^0.2.3",
-    "handlebars": "^2.0.0-alpha.2"
+    "handlebars": "^2.0.0-alpha.2",
+    "http-server": "0.6.1"
   }
 }

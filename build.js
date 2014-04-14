@@ -1,5 +1,5 @@
 var path        = require("path");
-var fs        = require("fs");
+var fs          = require("fs");
 
 var handlebars  = require("handlebars");
 
@@ -30,8 +30,7 @@ m.source("content")
     }))
     .use(navbuilder({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
-        output: path.join(__dirname, "templates/partials/navigation-generated.tmpl.html")
+        template: path.join(__dirname, "templates/partials/navigation.tmpl.html")
     }))
     .use(templates({
         engine: "handlebars",
@@ -42,7 +41,5 @@ m.source("content")
         src: "public",
         dest: "."
     }))
-    .use(metallic());
-
-m.build(function (err, files) {
-});
+    .use(metallic())
+    .build();
