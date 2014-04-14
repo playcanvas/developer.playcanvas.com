@@ -1,0 +1,26 @@
+/* Shared or library imports */
+@import "variables";
+@import "bootstrap";
+@import "base";
+@import "common";
+
+#page-container {
+    margin-top: 20px;
+}
+
+#page-content {
+    margin-top: 5px;
+}
+
+.nav {
+    ul {
+        padding-left: 20px;
+        list-style: none;
+    }
+}
+
+iframe {
+    width: 80%;
+    height: 480px;
+    border: none;
+}

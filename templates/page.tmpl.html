@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/css/styles.css"></link>
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css"></link>
+
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+    </head>
+
+    <body>
+
+        {{> header}}
+
+        {{> title-banner}}
+
+        <div id="page-container" class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="nav">
+                    {{> navigation-generated}}
+                    </ul>
+                </div>
+                <div id="page-content" class="col-md-9">
+                    <h1>{{ title }}</h1>
+                    {{{ contents }}}
+                </div>  
+            </div>
+        </div>
+    </body>
+</html>
