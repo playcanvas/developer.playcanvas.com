@@ -1,2 +1,0 @@
-extends: article.j2
-default_block: article
