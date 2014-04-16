@@ -9,6 +9,12 @@ Building the site requires `node` and `npm`
     cd developer.playcanvas.com
     make
 
+On Windows:
+
+    cd developer.playcanvas.com
+    npm install
+    node build.js
+
 ## How to serve
 
 To serve the site locally:
