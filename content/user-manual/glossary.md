@@ -3,8 +3,6 @@ title: Glossary
 template: page.tmpl.html
 ---
 
-# Glossary
-
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
 
 <h3 id="app_context">ApplicationContext</h3>

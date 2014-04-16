@@ -18,14 +18,21 @@
 
         {{> title-banner}}
 
+
+        <ul class="nav nav-tabs text-center">
+            <li><a href="/user-manual/">User Manual</a></li>
+            <li><a href="/engine/api/stable/">API Reference</a></li>
+            <li><a href="/tutorials/">Tutorials</a></li>
+        </ul>
+
         <div id="page-container" class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <ul class="nav">
                     {{> navigation-generated}}
                     </ul>
                 </div>
-                <div id="page-content" class="col-md-9">
+                <div id="page-content" class="col-md-8">
                     <h1>{{ title }}</h1>
                     {{{ contents }}}
                 </div>  

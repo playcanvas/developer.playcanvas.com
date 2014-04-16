@@ -4,23 +4,51 @@
 @import "base";
 @import "common";
 
-#page-container {
-    margin-top: 20px;
-}
+/* All Devices */
+@media (min-width: 0px) { 
+    #page-container {
+        margin-top: 20px;
+    }
 
-#page-content {
-    margin-top: 5px;
-}
+    #page-content {
+        margin-top: 5px;
+    }
 
-.nav {
-    ul {
-        padding-left: 20px;
-        list-style: none;
+    .nav {
+        ul {
+            list-style: none;
+            padding-left: 20px;            
+        }
+    }
+
+    .nav-tabs {
+        li {
+            display: inline-block;
+            float: none;
+            width: 20%;
+        }
+    }
+
+    iframe {
+        width: 80%;
+        height: 480px;
+        border: none;
     }
 }
 
-iframe {
-    width: 80%;
-    height: 480px;
-    border: none;
+/* Extra small: (phones, 480px and up) */
+@media (min-width: $screen-xs-min) {
+}
+
+/* Small devices (tablets, desktops, 768px and up) */
+@media (min-width: $screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
+
 }

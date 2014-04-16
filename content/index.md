@@ -3,7 +3,7 @@ title: PlayCanvas Developer Resources
 template: page.tmpl.html
 ---
 
-# Welcome!
+Welcome to the PlayCanvas Developer Site.
 
 Whether you are a programmer, a designer or a content creator, this is the place to come when you want to learn about PlayCanvas. Here are a quick links to get you to the right place. Alternatively, browse the full documentation using the menu on the left. Enjoy!
 
