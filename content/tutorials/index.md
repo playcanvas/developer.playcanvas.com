@@ -1,6 +1,6 @@
 ---
 title: Tutorials
-template: page.tmpl.html
+template: tutorial-page.tmpl.html
 ---
 
 Tutorials are a great way to learn to use PlayCanvas. You'll find both video tutorials and examples and articles for you here.

@@ -25,17 +25,21 @@ m.source("content")
     .use(permalinks({
         pattern: ":filename"
     }))
-    .use(metadata({
-
-    }))
-    .use(navbuilder({
+    .use(metadata())
+    .use(navbuilder("user-manual")({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html")
+        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+        partialName: "user-manual-navigation"
+    }))
+    .use(navbuilder("tutorials")({
+        engine: handlebars,
+        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+        partialName: "tutorials-navigation"
     }))
     .use(templates({
         engine: "handlebars",
         directory: "templates",
-        default: "frontpage.tmpl.html"
+        default: "page.tmpl.html"
     }))
     .use(static({
         src: "public",

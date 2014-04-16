@@ -19,15 +19,14 @@ We suggest you start reading the [User Manual](/user-manual), it's the complete 
 
 # Getting Help
 
-### Want to talk? [PlayCanvas Discussion](http://forum.playcanvas.com/)
+#### Want to talk? [PlayCanvas Discussion](http://forum.playcanvas.com/)
 
 Talk about your game, show off your latest project, seek out new team members, or offer your assistance to others. Join us in the discussion [forums](http://forum.playcanvas.com/).
 
-
-### Questions? [PlayCanavs Answers](http://answers.playcanvas.com/)
+#### Questions? [PlayCanvas Answers](http://answers.playcanvas.com/)
 
 If you've got a technical question about using PlayCanvas, the API or any part of the platform, you can use [PlayCanvas Answers](http://answers.playcanvas.com/) to get help.
 
-### IRC
+#### IRC
 
 We're often available (UK time) on the [#playcanvas](http://webchat.freenode.net/?channels=playcanvas&uio=d4) channel on [freenode](http://freenode.net). You can get a chat window on our [community page](http://playcanvas.com/community)

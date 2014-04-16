@@ -8808,6 +8808,11 @@ h1, h2, h3 {
     height: 480px;
     border: none;
   }
+
+  /* line 38, ../../sass/styles.scss */
+  pre code {
+    font-size: 12px;
+  }
 }
 /* Extra small: (phones, 480px and up) */
 /* Small devices (tablets, desktops, 768px and up) */
