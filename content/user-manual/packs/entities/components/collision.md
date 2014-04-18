@@ -1,6 +1,7 @@
 ---
 title: Collision Component
 template: page.tmpl.html
+skip: true
 ---
 
 The 'collision' component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.

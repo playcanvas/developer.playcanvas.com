@@ -1,6 +1,7 @@
 ---
 title: Skybox Component
 template: page.tmpl.html
+skip: true
 ---
 
 The 'skybox' component attaches a skybox to an entity.

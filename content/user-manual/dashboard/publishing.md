@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 3
 ---
 
-The fastest, easiest, most convenient way to publish your game is to publish it live on playcanvas.com. 
+The fastest, easiest, most convenient way to publish your game is to publish it live on playcanvas.com.
 
 To publish in this way, follow these steps:
 

@@ -1,6 +1,7 @@
 ---
 title: Scene Settings
 template: page.tmpl.html
+position: 5
 ---
 
 The Scene Settings panel allows you to set up global properties for your scene. The properties that are settable are:

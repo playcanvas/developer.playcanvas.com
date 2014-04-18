@@ -1,13 +1,14 @@
 ---
 title: Uploading and Importing
 template: page.tmpl.html
+position: 1
 ---
 
 ## Creating New Assets
 
 To upload an asset to PlayCanvas, follow these steps:
 
-* Navigate to the home page of the project to which the asset will be added. 
+* Navigate to the home page of the project to which the asset will be added.
 * Select the 'Assets' tab and the project's asset list will be displayed.
 * Select the 'New Asset' link to navigate to the upload form.
 * Select 'Choose File...' and browse to the asset file. Alternatively, you can drag and drop an asset from your local filesystem onto the upload control.

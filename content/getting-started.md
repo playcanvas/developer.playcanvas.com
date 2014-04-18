@@ -24,7 +24,7 @@ A Project is a collection of:
 
 ## Creating a New Project
 
-On your profile page, press the "Create New Project" button. This takes you to a page where you set the details of your new project:
+On your profile page, press the "+" button to create a new Project. This takes you to a page where you set the details of your new project:
 
 * **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or an FPS, or simply display a 3D model that you've made, you can use a starter kit.
 * **Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
@@ -82,7 +82,7 @@ Now would seem to be a good time to save your work, right? In actual fact, PlayC
 
 ### Previewing Your Work
 
-From Designer, you can quickly preview your work at any time. To do this, press either the 'Launch' or 'Launch Local' button (more on these later) on the toolbar. 
+From Designer, you can quickly preview your work at any time. To do this, press either the 'Launch' or 'Launch Local' button (more on these later) on the toolbar.
 
 ![Launch Buttons][launch_buttons]
 
@@ -100,7 +100,7 @@ The real power and versatility of PlayCanvas comes from the ability to assign sc
 
 #### Hosted or Local code?
 
-There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in code editor, which saves directly to our servers. The second is to edit code in you favourite text editor and run a local web-server. 
+There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in code editor, which saves directly to our servers. The second is to edit code in you favourite text editor and run a local web-server.
 
 For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow](http://developer.playcanvas.com/engine/workflow.html) page.
 
@@ -137,7 +137,7 @@ Once you've edited the code, press the "Save" button in the code editor and swit
 With that done, you can select the Launch button from the toolbar once again. This time, you should see your box rotating on the spot. Congratulations, you have built your first PlayCanvas app!
 
 [profile]: /images/platform/profile.jpg "Profile"
-[project_list]:  /images/platform/depot_list.png "Project List"
+[project_list]:  /images/platform/project_list.jpg "Project List"
 [collaborators]: /images/platform/collaborators.png "Collaborators"
 [pack_explorer]: /images/platform/pack_explorer.png "Pack Explorer"
 [launch_buttons]: /images/platform/launch_buttons.png "Launch Buttons"

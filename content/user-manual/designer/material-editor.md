@@ -1,6 +1,7 @@
 ---
 title: Material Editor
 template: page.tmpl.html
+position: 8
 ---
 
 Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as it's color, shininess, bumpiness.
@@ -9,7 +10,7 @@ In PlayCanvas, a material is an Asset type which collects all these properties t
 
 ## Importing Materials
 
-Materials are imported automatically when you upload a source model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they existing in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you. 
+Materials are imported automatically when you upload a source model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they existing in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
 
 ## Creating New Materials
 

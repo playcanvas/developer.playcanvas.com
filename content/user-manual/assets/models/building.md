@@ -1,6 +1,7 @@
 ---
 title: Building Models
 template: page.tmpl.html
+skip: true
 ---
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example, Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
@@ -21,9 +22,9 @@ Regardless which modelling application you are using, there a number of things t
 
 ![Blender Logo](/images/Blender-Logo.jpg)
 
-[Blender](http://blender.org) is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas. 
+[Blender](http://blender.org) is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
 
-Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations. 
+Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
 
 ### Non-Diffuse maps
 

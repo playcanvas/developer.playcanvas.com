@@ -1,6 +1,7 @@
 ---
 title: Animation Component
 template: page.tmpl.html
+skip: true
 ---
 
 The 'animation' component enables an entity to specify which animations can be applied to the model assigned to its model component.

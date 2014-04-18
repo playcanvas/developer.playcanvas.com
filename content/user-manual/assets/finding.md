@@ -3,11 +3,9 @@ title: Finding Assets
 template: page.tmpl.html
 ---
 
-# Find assets?
-
 ## Where can I get 3D models/Sound FX/Music for PlayCanvas?
 
-Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types. 
+Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types.
 
 If you've got other suggestions of this page. Then let us know on the [forums](http://forum.playcanvas.com/)
 

@@ -1,6 +1,7 @@
 ---
 title: First Person Camera
 template: tutorial-page.tmpl.html
+position: 4
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/first_person_camera?overlay=false" ></iframe>
@@ -24,14 +25,14 @@ The camera script is a normal PlayCanvas javascript file, for more information o
 In the constructor of the script we initialize a few variables and then we set up the mouse input, by binding some event handlers.
 
 ~~~javascript~~~
-// Disabling the context menu stops the browser displaying a menu when 
+// Disabling the context menu stops the browser displaying a menu when
 // you right-click the page
 context.mouse.disableContextMenu();
 context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
 context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~
 
-`context.mouse` is always available on desktop platforms, it is used to access mouse events, like movement and button presses. 
+`context.mouse` is always available on desktop platforms, it is used to access mouse events, like movement and button presses.
 
 `context.mouse.disableContextMenu()` prevents right-clicking on the canvas from bringing up the default browser context menu. You should do this if you want to respond to right-clicks, but be careful, browser users will expect right-clicking to bring up a menu, so use it only if you feel you have to.
 
@@ -56,8 +57,8 @@ Our first event handler handles the mouse move event. The `event` variable is a 
 onMouseDown: function (event) {
     // When the mouse button is clicked try and capture the pointer
     if (!pc.input.Mouse.isPointerLocked()) {
-        context.mouse.enablePointerLock();    
-    }            
+        context.mouse.enablePointerLock();
+    }
 },
 ~~~
 
@@ -103,19 +104,19 @@ pc.script.create('first_person_camera', function (context) {
 
     var FirstPersonCamera = function (entity) {
         this.entity = entity;
-        
+
         // Camera euler angle rotation around x and y axes
         var eulers = this.entity.getEulerAngles()
         this.ex = eulers[0];
         this.ey = eulers[1];
 
 
-        // Disabling the context menu stops the browser displaying a menu when 
+        // Disabling the context menu stops the browser displaying a menu when
         // you right-click the page
         context.mouse.disableContextMenu();
         context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
         context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
-        
+
     };
 
     FirstPersonCamera.prototype = {
@@ -143,12 +144,12 @@ pc.script.create('first_person_camera', function (context) {
             this.ex = pc.math.clamp(this.ex, -90, 90);
             this.ey -= event.dx / 5;
         },
-        
+
         onMouseDown: function (event) {
             // When the mouse button is clicked try and capture the pointer
             if (!pc.input.Mouse.isPointerLocked()) {
-                context.mouse.enablePointerLock();    
-            }            
+                context.mouse.enablePointerLock();
+            }
         },
     };
 

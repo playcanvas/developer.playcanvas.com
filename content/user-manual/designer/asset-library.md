@@ -1,6 +1,7 @@
 ---
 title: Asset Library
 template: page.tmpl.html
+position: 7
 ---
 
 When you are building your game with PlayCanvas, you will probably want to use 3D models and animations to make it look and play great! The Asset Library is a growing repository of free content that you can import into your game with a single click.

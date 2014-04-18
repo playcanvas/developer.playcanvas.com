@@ -1,6 +1,7 @@
 ---
 title: Basic Keyboard Input
 template: tutorial-page.tmpl.html
+position: 1
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard?overlay=false"></iframe>
@@ -8,8 +9,8 @@ template: tutorial-page.tmpl.html
 *Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
 
 Keyboard handling in the PlayCanvas engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
-for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with 
-handling keycodes and charcodes. 
+for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
+handling keycodes and charcodes.
 
 Take a look at the input_keyboard Pack in the [tutorials project][project]. Here is the code for the tutorial:
 
@@ -30,16 +31,16 @@ pc.script.create("keyboard_handler", function (context) {
             // 3) (optional) The value to use for 'this' in the callback function
             context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
             context.keyboard.on(pc.input.EVENT_KEYUP, this.onKeyUp, this);
-            
+
             this.redMaterial = context.assets.find("Red", pc.asset.ASSET_MATERIAL);
             this.whiteMaterial = context.assets.find("White", pc.asset.ASSET_MATERIAL);
         },
 
         update: function (dt) {
             /*
-             * Notice in the demo that pressing and holding the arrow keys doesn't 
-             * make the block spin. wasPressed() is used to detect a 
-             * keypress that occurred since the last frame and will only be 
+             * Notice in the demo that pressing and holding the arrow keys doesn't
+             * make the block spin. wasPressed() is used to detect a
+             * keypress that occurred since the last frame and will only be
              * called once even if the key is held down.
              */
             var angle = 0;
@@ -47,12 +48,12 @@ pc.script.create("keyboard_handler", function (context) {
                 angle = -5;
             } else if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
                 angle = 5;
-            } 
+            }
 
             /*
-             * Notice that pressing and holding the space bar makes the block 
+             * Notice that pressing and holding the space bar makes the block
              * continuously spin. isPressed() is used to detected if a
-             * key is down right now. So it will be true every frame as long as 
+             * key is down right now. So it will be true every frame as long as
              * the key is still pressed.
              */
             if (context.keyboard.isPressed(pc.input.KEY_SPACE)) {
@@ -85,9 +86,9 @@ pc.script.create("keyboard_handler", function (context) {
             if (event.key === pc.input.KEY_A) {
                 this.entity.model.materialAsset = this.whiteMaterial;
             }
-        },            
+        },
     };
-    
+
     return KeyboardHandler;
 });
 ~~~
@@ -96,9 +97,9 @@ There are two ways of detecting keyboard input. The first is done in the update 
 
 ## `isPressed` vs `wasPressed`
 
-In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`. 
+In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`.
 
-When you press and hold the left or right arrow keys the cube will rotate by 5°, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed. 
+When you press and hold the left or right arrow keys the cube will rotate by 5°, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed.
 
 If you press and hold the spacebar you will see that the cube rotates continuously by 1° per frame. This is because `isPressed()` returns true for every frame in which the key is pressed.
 
@@ -123,7 +124,7 @@ Notice we are also passing a third argument to on(), which is `this` or the Scri
 
 ## Key Codes
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.input.KEY_A is the `A` key, pc.input.LEFT is the left arrow key. 
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.input.KEY_A is the `A` key, pc.input.LEFT is the left arrow key.
 
 Note, you should always use the enumeration `pc.input.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
@@ -133,4 +134,4 @@ Try it out in full screen [here][tutorial] or at the top of the page. Compare ta
 
 [project]: http://playcanvas.com/playcanvas/tutorials
 [tutorial]: http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard
-[dom]: /glossary#dom
+[dom]: /user-manual/glossary#dom

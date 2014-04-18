@@ -1,6 +1,7 @@
 ---
 title: Audio Source Component
 template: page.tmpl.html
+skip: true
 ---
 
 The 'audiosource' component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.

@@ -1,9 +1,10 @@
 ---
 title: Model Component
 template: page.tmpl.html
+skip: true
 ---
 
-The 'model' component enables an entity to render a primitive shape or a model asset. 
+The 'model' component enables an entity to render a primitive shape or a model asset.
 
 ![Component Interface](/images/platform/component_model.png)
 

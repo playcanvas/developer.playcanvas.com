@@ -1,9 +1,10 @@
 ---
 title: Audio
 template: page.tmpl.html
+position: 6
 ---
 
-Audio assets are sound files which can be played back using the Audiosource component. 
+Audio assets are sound files which can be played back using the Audiosource component.
 
 Any audio format that is supported by the web-browser is supported by PlayCanvas. No processing is done to the audio file on import.
 

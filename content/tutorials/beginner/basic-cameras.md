@@ -1,6 +1,7 @@
 ---
 title: Basic Cameras
 template: tutorial-page.tmpl.html
+position: 3
 ---
 
 ## Camera Entities
@@ -11,7 +12,7 @@ In order to run your Pack from the PlayCanvas Designer, you must add at least on
 
 ## Creating a Camera Entity
 
-To create a new Camera Entity, you need to add a Camera [Component][component] to an Entity. 
+To create a new Camera Entity, you need to add a Camera [Component][component] to an Entity.
 
 * Select the root Entity of your Pack in the Entity Explorer
 * Create a new Entity by selecting *New Entity* from the *Entity* menu.
@@ -35,7 +36,7 @@ You can see in this diagram that because the `fov` value is independent of the w
 
 ### `nearClip`
 
-The near clipping distance is the distance, in metres, from the camera before which nothing will be drawn. 
+The near clipping distance is the distance, in metres, from the camera before which nothing will be drawn.
 
 ### `farClip`
 
@@ -43,7 +44,7 @@ The far clipping distance is the distance, in metres, from the camera after whic
 
 ### `projection`
 
-The projection type determines which type of matrix projection is used to convert the 3D scene in to the 2D view rendered to the page. 
+The projection type determines which type of matrix projection is used to convert the 3D scene in to the 2D view rendered to the page.
 
 The **perspective** projection is the most common type for games. Alternatively, you can use an **orthographic** projection, which renders the scene without perspective so is useful for design-type applications.
 
@@ -52,4 +53,4 @@ The **perspective** projection is the most common type for games. Alternatively,
 If the activate property is true, then the camera will be set as the current camera when the Pack loads. Note that usually only one camera can be active at a time. If more than one camera has the activate property set to true, which camera is active at start time is undefined.
 
 
-[component]: /glossary#component
+[component]: /user-manual/glossary#component

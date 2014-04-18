@@ -1,6 +1,7 @@
 ---
 title: More Cameras
 template: tutorial-page.tmpl.html
+position: 3
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/more_cameras?overlay=false" ></iframe>
@@ -30,14 +31,14 @@ CameraScript.prototype.update = function (dt) {
             this.targetFov = 10;
         }
     }
- 
+
     if(fov < this.targetFov) {
         fov += (10 * dt);
         if (fov > this.targetFov) {
             fov = this.targetFov;
         }
     }
- 
+
     if(fov > this.targetFov) {
         fov -= (10 * dt);
         if (fov < this.targetFov) {
@@ -45,18 +46,18 @@ CameraScript.prototype.update = function (dt) {
         }
     }
     this.entity.camera.fov = fov;
-    
+
     // more ...
 };
 ~~~
 
-In this sample pressing the spacebar triggers a change in field of view. On the first line we `get()` the value of `fov` from the entity that this script is attached to. 
+In this sample pressing the spacebar triggers a change in field of view. On the first line we `get()` the value of `fov` from the entity that this script is attached to.
 
 In the middle we detect the keypress and update the value of the `fov`.
 
 On the last line we `set()` the `fov` attribute to the new value.
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the PlayCanvas Designer where the cubes sit next to the 
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the PlayCanvas Designer where the cubes sit next to the
 top and bottom sides of the [frustum][frustum]
 
 ## Current Camera
@@ -66,7 +67,7 @@ Another way you might want to create interactivity with cameras is by switching 
 ~~~javascript~~~
 CameraScript.prototype.update = function (dt) {
     // more ...
-    
+
     // Press the arrow keys to switch between the four corner cameras
     var cameras = {};
     cameras[pc.input.KEY_LEFT] = "Camera one";
@@ -80,7 +81,7 @@ CameraScript.prototype.update = function (dt) {
     if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
         camera = context.root.findOne(cameras[pc.input.KEY_RIGHT]);
         context.systems.camera.current = camera;
-    }        
+    }
 };
 ~~~
 
@@ -91,4 +92,4 @@ First we set up an object containing the names of the four camera Entities that 
 Next we loop through the arrow keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCurrent()` method on the Camera ComponentSystem.
 
 [basic_cameras]: /tutorials/basic/basic-camera
-[frustum]: /glossary#frustum
+[frustum]: /user-manual/glossary#frustum

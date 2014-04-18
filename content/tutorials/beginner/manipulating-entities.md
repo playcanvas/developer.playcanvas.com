@@ -3,7 +3,7 @@ title: Manipulating Entities
 template: tutorial-page.tmpl.html
 ---
 
-In this tutorial we'll show you how you can change an Entity's position, orientation and scale. 
+In this tutorial we'll show you how you can change an Entity's position, orientation and scale.
 
 Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be point in space.
 
@@ -31,10 +31,10 @@ Getting the position of the entity is straightforward
 
 ~~~js~~~
 // Get the entity's position relative to the coordinate system of the entity's parent
-var lp = entity.getLocalPosition(); 
+var lp = entity.getLocalPosition();
 
 // Get the entity's position in world space
-var wp = entity.getPosition(); 
+var wp = entity.getPosition();
 ~~~
 
 These methods both return a `pc.Vec3`.
@@ -63,7 +63,7 @@ entity.translateLocal(0, 0, 1);
 
 ## Orientation
 
-To set an Entity's orientation you can either set an absolute rotation, or apply an incremental rotation. 
+To set an Entity's orientation you can either set an absolute rotation, or apply an incremental rotation.
 
 Setting absolute rotations can be done using either [Euler angles][eulers] or [quaternions][quaternions]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
 
