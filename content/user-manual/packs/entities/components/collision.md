@@ -19,7 +19,9 @@ If the entity also has a rigidbody component, the collision component determines
 
 ## Properties
 
-<table class="table">
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Type</td><td>The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
     <tr><td>Half Extents</td><td>Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth.</td></tr>
@@ -31,4 +33,7 @@ If the entity also has a rigidbody component, the collision component determines
 
 ## Scripting Interface
 
-You can control a collision component's properties using a [script component](/tools/designer/components/script.html). The collision component's scripting interface is [here](/engine/api/stable/symbols/pc.fw.CollisionComponent.html).
+You can control a collision component's properties using a [script component][script_component]. The collision component's scripting interface is [here][docs].
+
+[script_component]: /user-manual/packs/entities/components/script
+[docs]: /engine/api/stable/symbols/pc.fw.CollisionComponent.html

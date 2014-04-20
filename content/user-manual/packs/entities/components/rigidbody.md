@@ -12,7 +12,9 @@ Note that you must add a [collision component](/tools/designer/components/collis
 
 ## Properties
 
-<table class="table">
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Type</td><td>The type of the body:<br><ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul></td></tr>
     <tr><td>Mass</td><td>The mass of the body. If world units in your scene are meters, units for mass is kilograms.</td></tr>
@@ -26,4 +28,7 @@ Note that you must add a [collision component](/tools/designer/components/collis
 
 ## Scripting Interface
 
-You can control a rigidbody component's properties using a [script component](/tools/designer/components/script.html). The rigidbody component's scripting interface is [here](/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html).
+You can control a rigidbody component's properties using a [script component][script_component]. The rigidbody component's scripting interface is [here][docs].
+
+[script_component]: /user-manual/packs/entities/components/script
+[docs]: /engine/api/stable/symbols/pc.fw.RigidBodyComponent.html

@@ -10,11 +10,16 @@ The 'script' component enables an entity to run user-supplied scripts. In this w
 
 ## Properties
 
-<table class="table">
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>URLs</td><td>The scripts that are executed for this entity. A .js extension is enforced. Absolute URLs are used for scripts hosted on servers other than playcanvas.com, otherwise, relative URLs are used.</td></tr>
 </table>
 
 ## Scripting Interface
 
-The script component's scripting interface is [here](/engine/api/stable/symbols/pc.fw.ScriptComponent.html).
+The script component's scripting interface is [here][docs].
+
+[script_component]: /user-manual/packs/entities/components/script
+[docs]: /engine/api/stable/symbols/pc.fw.ScriptComponent.html

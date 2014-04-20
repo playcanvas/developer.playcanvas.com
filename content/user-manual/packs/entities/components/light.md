@@ -15,7 +15,9 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
 
 ## Properties
 
-<table class="table">
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Enable</td><td>If checked, the directional light will light the scene.</td></tr>
     <tr><td>Color</td><td>The color of the emitted light.</td></tr>
@@ -29,4 +31,7 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
 
 ## Scripting Interface
 
-You can control an light component's properties using a [script component](/tools/designer/components/script.html). The light component's scripting interface is [here](/engine/api/stable/symbols/pc.fw.LightComponent.html).
+You can control an light component's properties using a [script component][script_component]. The light component's scripting interface is [here][docs].
+
+[script_component]: /user-manual/packs/entities/components/script
+[docs]: /engine/api/stable/symbols/pc.fw.LightComponent.html

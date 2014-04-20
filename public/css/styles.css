@@ -8754,14 +8754,23 @@ h1, h2, h3 {
   /* line 15, ../../sass/styles.scss */
   h2 {
     font-size: 24px;
+    padding-top: 20px;
   }
 
-  /* line 19, ../../sass/styles.scss */
+  /* line 20, ../../sass/styles.scss */
   h3 {
     font-size: 18px;
   }
 
-  /* line 23, ../../sass/styles.scss */
+  /* line 24, ../../sass/styles.scss */
+  h4 {
+    font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size-adjust: 0.488;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* line 28, ../../sass/styles.scss */
   body {
     font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -8772,65 +8781,84 @@ h1, h2, h3 {
     line-height: 30px;
   }
 
-  /* line 30, ../../sass/styles.scss */
+  /* line 35, ../../sass/styles.scss */
   p {
     margin-bottom: 30px;
   }
 
-  /* line 34, ../../sass/styles.scss */
+  /* line 39, ../../sass/styles.scss */
   #page-container {
     margin-top: 20px;
   }
 
-  /* line 38, ../../sass/styles.scss */
+  /* line 43, ../../sass/styles.scss */
   #page-content {
     margin-top: 5px;
   }
 
-  /* line 43, ../../sass/styles.scss */
+  /* line 48, ../../sass/styles.scss */
   #sidebar.nav h5 {
     font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
     font-weight: 200;
     font-style: normal;
   }
-  /* line 47, ../../sass/styles.scss */
+  /* line 52, ../../sass/styles.scss */
   #sidebar.nav ul {
     list-style: none;
     padding-left: 20px;
   }
-  /* line 59, ../../sass/styles.scss */
+  /* line 64, ../../sass/styles.scss */
   #sidebar.nav a {
     color: #4A5D60;
     font-size: 18px;
   }
-  /* line 64, ../../sass/styles.scss */
+  /* line 69, ../../sass/styles.scss */
   #sidebar.nav .current {
     color: #df6b19;
   }
 
-  /* line 70, ../../sass/styles.scss */
+  /* line 75, ../../sass/styles.scss */
   .nav-tabs li {
     display: inline-block;
     float: none;
     width: 20%;
   }
 
-  /* line 77, ../../sass/styles.scss */
+  /* line 82, ../../sass/styles.scss */
   iframe {
     width: 80%;
     height: 480px;
     border: none;
   }
 
-  /* line 83, ../../sass/styles.scss */
+  /* line 88, ../../sass/styles.scss */
   pre code {
     font-size: 12px;
   }
 
-  /* line 87, ../../sass/styles.scss */
+  /* line 92, ../../sass/styles.scss */
   .table {
+    font-size: 14px;
+  }
+  /* line 95, ../../sass/styles.scss */
+  .table th {
+    font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size-adjust: 0.488;
+    font-weight: bold;
+    font-style: normal;
     font-size: 16px;
+  }
+  /* line 100, ../../sass/styles.scss */
+  .table .property-name {
+    width: 20%;
+  }
+  /* line 104, ../../sass/styles.scss */
+  .table td:first-child {
+    font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size-adjust: 0.488;
+    font-weight: bold;
+    font-style: normal;
   }
 }
 /* Extra small: (phones, 480px and up) */

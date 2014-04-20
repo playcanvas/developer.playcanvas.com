@@ -10,10 +10,14 @@ The 'audiosource' component specifies the listener's position in 3D space. All 3
 
 ## Properties
 
-<table class="table">
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Enabled</td><td>If false, no audio will be placed.</td></tr>
     <tr><td>Assets</td><td>The audio assets that can be played from this audio source. Multiple audio assets can be specified by the picker control.</td></tr>
     <tr><td>Volume</td><td>The volume of the audio assets played back by the component.</td></tr>
+    <tr><td>Pitch</td><td>The modifier to playback the audio at. A value of 1 means the audio is played back at the original pitch.</td></tr>
     <tr><td>Loop</td><td>If checked, the component will loop played audio assets continuously. Otherwise, audio assets are played once to completion.</td></tr>
     <tr><td>Activate</td><td>If checked, the first audio asset specified by the Assets property will be played on load. Otherwise, audio assets will need to be played using script.</td></tr>
     <tr><td>3d</td><td>If checked, the component will play back audio assets as if played from the location of the entity in 3D space.</td></tr>
@@ -24,4 +28,7 @@ The 'audiosource' component specifies the listener's position in 3D space. All 3
 
 ## Scripting Interface
 
-You can control an audiosource component's properties using a [script component](/tools/designer/components/script.html). The audiosource component's scripting interface is [here](/engine/api/stable/symbols/pc.fw.AudioSourceComponent.html).
+You can control an audiosource component's properties using a [script component][script_component]. The audiosource component's scripting interface is [here][docs].
+
+[script_component]: /user-manual/packs/entities/components/script
+[docs]: /engine/api/stable/symbols/pc.fw.AudioSourceComponent.html

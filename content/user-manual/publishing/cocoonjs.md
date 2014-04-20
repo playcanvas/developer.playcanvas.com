@@ -6,7 +6,7 @@ position: 3
 
 To publish your PlayCanvas game, we recommend you use [CocoonJS][cocoonjs] from [Ludei][ludei]. CocoonJS can wrap your PlayCanvas game as a native application which can then be sumitted to either Google Play or the Apple App Store.
 
-### Testing your PlayCanvas Game in CocoonJS
+## Testing your PlayCanvas Game in CocoonJS
 
 Before you generate a native build of your PlayCanvas game, you will want to test it in CocoonJS and see how it performs. Ludei have created an awesome app called the CocoonJS Launcher that can pull your PlayCanvas game directly from playcanvas.com and run it on the device. Just give the launcher your game's URL and it will happily run in the launcher.
 
@@ -22,7 +22,7 @@ Let's step through the process to illustrate how easy it is:
 Note that if the trailing forward slash on the URL is not present, CocoonJS will fail to load your game.
 </p>
 
-### Generating the Native Build of your Game
+## Generating the Native Build of your Game
 
 Now that you have tested your game on your mobile device via the CocoonJS Launcher app, you are ready to build a native version. Once again, Ludei makes this really easy for you. Just follow these simple steps:
 

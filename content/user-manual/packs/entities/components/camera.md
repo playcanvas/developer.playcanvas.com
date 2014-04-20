@@ -10,7 +10,9 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
 
 ## Properties
 
-<table class="table">
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Clear Color</td><td>The background color used to clear the screen every frame.</td></tr>
     <tr><td>Projection</td><td>The projection type of the camera. Options are:<ul><li>Perspective</li><li>Orthographic</li></ul></td></tr>
@@ -23,4 +25,7 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
 
 ## Scripting Interface
 
-You can control a camera component's properties using a [script component](/tools/designer/components/script.html). The camera component's scripting interface is [here](/engine/api/stable/symbols/pc.fw.CameraComponent.html).
+You can control a camera component's properties using a [script component][script_component]. The camera component's scripting interface is [here][docs].
+
+[script_component]: /user-manual/packs/entities/components/script
+[docs]: /engine/api/stable/symbols/pc.fw.CameraComponent.html
