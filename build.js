@@ -13,10 +13,12 @@ var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
 
 // Load partials
-handlebars.registerPartial("header", 
+handlebars.registerPartial("header",
     fs.readFileSync(path.join(__dirname, "templates/partials/header.tmpl.html"), "utf-8"));
-handlebars.registerPartial("title-banner", 
+handlebars.registerPartial("title-banner",
     fs.readFileSync(path.join(__dirname, "templates/partials/title-banner.tmpl.html"), "utf-8"));
+handlebars.registerPartial("scripts",
+    fs.readFileSync(path.join(__dirname, "templates/partials/scripts.tmpl.html"), "utf-8"));
 
 var m = new Metalsmith(__dirname);
 

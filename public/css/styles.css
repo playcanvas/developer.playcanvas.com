@@ -8763,9 +8763,9 @@ h1, h2, h3 {
 
   /* line 23, ../../sass/styles.scss */
   body {
-    font-family: "Proxima Nova Thin", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
-    font-weight: 100;
+    font-weight: 200;
     font-style: normal;
     color: #4A5D60;
     font-size: 18px;
@@ -8788,43 +8788,47 @@ h1, h2, h3 {
   }
 
   /* line 43, ../../sass/styles.scss */
-  .nav h5 {
+  #sidebar.nav h5 {
     font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
     font-weight: 200;
     font-style: normal;
   }
   /* line 47, ../../sass/styles.scss */
-  .nav ul {
+  #sidebar.nav ul {
     list-style: none;
     padding-left: 20px;
   }
-  /* line 52, ../../sass/styles.scss */
-  .nav a {
+  /* line 59, ../../sass/styles.scss */
+  #sidebar.nav a {
     color: #4A5D60;
     font-size: 18px;
   }
+  /* line 64, ../../sass/styles.scss */
+  #sidebar.nav .current {
+    color: #df6b19;
+  }
 
-  /* line 59, ../../sass/styles.scss */
+  /* line 70, ../../sass/styles.scss */
   .nav-tabs li {
     display: inline-block;
     float: none;
     width: 20%;
   }
 
-  /* line 66, ../../sass/styles.scss */
+  /* line 77, ../../sass/styles.scss */
   iframe {
     width: 80%;
     height: 480px;
     border: none;
   }
 
-  /* line 72, ../../sass/styles.scss */
+  /* line 83, ../../sass/styles.scss */
   pre code {
     font-size: 12px;
   }
 
-  /* line 76, ../../sass/styles.scss */
+  /* line 87, ../../sass/styles.scss */
   .table {
     font-size: 16px;
   }

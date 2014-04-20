@@ -21,18 +21,24 @@
 
         {{> title-banner}}
 
-
-        <ul class="nav nav-tabs text-center">
-            <li><a href="/user-manual/">User Manual</a></li>
-            <li><a href="/engine/api/stable/">API Reference</a></li>
-            <li><a href="/tutorials/">Tutorials</a></li>
-        </ul>
-
+        <div class="row-fix tab-bar">
+            <div class="container tab-container">
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10">
+                        <ul class="nav navbar-nav navbar-dashboard">
+                            <li><a href="/">INTRODUCTION</a></li>
+                            <li><a href="/user-manual/">USER MANUAL</a></li>
+                            <li><a href="/engine/api/stable/">API REFERENCE</a></li>
+                            <li><a href="/tutorials/">TUTORIALS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="page-container" class="container">
             <div class="row">
                 <div class="col-md-offset-1 col-md-3">
-                    <ul class="nav">
-                    <li><a href="/"><img src="http://static.playcanvas.com/images/logo/Playcanvas_LOGOSET_SMALL-06.png"></img></a></li>
+                    <ul id="sidebar" class="nav">
                     {{> tutorials-navigation}}
                     </ul>
                 </div>
@@ -42,5 +48,7 @@
                 </div>
             </div>
         </div>
+
+        {{> scripts}}
     </body>
 </html>

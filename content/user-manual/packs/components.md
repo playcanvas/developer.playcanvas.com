@@ -1,6 +1,7 @@
 ---
 title: Components
 template: page.tmpl.html
+position: 2
 ---
 
 Components define behaviours that are attached to Entities. An Entity is a container for Components.

@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Set current sidebar navigation class
+        var path = window.location.pathname.slice(0, -1); // get path and remove trailing slash
+        var element = $('#sidebar a[href="' + path + '"]');
+        element.addClass("current");
+
+        // Set navtabs class
+        if (path.slice(0, 12) === "/user-manual") {
+            element = $('.navbar-dashboard a[href="/user-manual/"]');
+            element.parent().addClass("current");
+        } else if (path.slice(0, 10) === "/tutorials") {
+            element = $('.navbar-dashboard a[href="/tutorials/"]');
+            element.parent().addClass("current");
+        } else if (path === "") {
+            element = $('.navbar-dashboard a[href="/"]');
+            element.parent().addClass("current");
+        }
+    });
+</script>
