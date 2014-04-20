@@ -1,6 +1,7 @@
 ---
 title: Workflow
 template: page.tmpl.html
+position: 3
 ---
 
 There are two ways for you to run your application scripts while developing PlayCanvas applications. While developing and iterating you will use a Local Server for your code and in order to share and publish you will use a Code Repository. Each have different advantages and you will often switch between the two.

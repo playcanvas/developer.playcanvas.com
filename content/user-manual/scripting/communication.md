@@ -1,6 +1,7 @@
 ---
 title: Communication
 template: page.tmpl.html
+position: 4
 ---
 
 Communication between different scripts is very straightforward. Script Instances are exposed through the script component on an Entity.

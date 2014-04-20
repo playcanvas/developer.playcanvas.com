@@ -1,9 +1,8 @@
 ---
 title: Debugging
 template: page.tmpl.html
+position: 7
 ---
-
-# Developing in the Browser
 
 In order to create scripts for PlayCanvas, it is vital that you know how to access and use the browser's development tools. Let's look at each browser in turn.
 

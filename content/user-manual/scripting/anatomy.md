@@ -1,6 +1,7 @@
 ---
 title: Anatomy of a Script
 template: page.tmpl.html
+position: 2
 ---
 
 ~~~js~~~
@@ -8,7 +9,7 @@ pc.script.create("script_name", function (context) {
     var ScriptObject = function (entity) {
         this.entity = entity;
     };
-    
+
     ScriptObject.prototype = {
         initialize: function () {
 
@@ -18,7 +19,7 @@ pc.script.create("script_name", function (context) {
 
         }
     };
-    
+
     return ScriptObject;
 });
 ~~~
@@ -28,7 +29,7 @@ Here is the skeleton of a script, it shows almost the minimum amount of code nec
 
 We'll break down each part of this script section by section.
 
-### Declaration and context
+## Declaration and context
 
 ~~~js~~~
 pc.script.create("script_name", function(context) {
@@ -38,18 +39,19 @@ pc.script.create("script_name", function(context) {
 
 Enclosing the whole script is a call to `pc.script.create`. The first argument is the script name, this is used to identify this script later if you wish to communicate between script instances. The second argument is a function which is used to define the class that provides the script's behaviour.
 
-The definition function takes a single argument `context` which is an [`ApplicationContext`][application_context] instance. 
+The definition function takes a single argument `context` which is an [`ApplicationContext`][application_context] instance.
 
 The `context` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
 
 * `systems` Container for all Component systems, e.g. `context.systems.model` is the Model Component System
-* `root` The root node of the Entity hierarchy. 
+* `root` The root node of the Entity hierarchy.
 * `keyboard` An instance of `pc.input.Keyboard`
 * `mouse` An instance of `pc.input.Mouse`
 * `scene` An instance of `pc.scene.Scene`
 * `loader` An instance of `pc.resources.ResourceLoader`
 
-### Defining the Script object
+## Defining the Script object
+
 ~~~js~~~
 pc.script.create("script_name", function (context) {
     var ScriptObject = function (entity) {
@@ -65,7 +67,7 @@ pc.script.create("script_name", function (context) {
 
         }
     };
-    
+
     return ScriptObject;
 })
 ~~~
@@ -85,7 +87,7 @@ Here is a complete script, try saving it to a file and attaching it to an Entity
 
 ~~~js~~~
 ///
-// This script moves the entity backwards and forwards on the x-axis. 
+// This script moves the entity backwards and forwards on the x-axis.
 // You can pause the oscillation by pressing the space bar.
 ///
 pc.script.create('oscillator', function (context) {
@@ -93,22 +95,22 @@ pc.script.create('oscillator', function (context) {
     // define the constructor
     var Oscillator = function (entity) {
         this.entity = entity;
-        
+
         this.paused = false; // paused state
         this.amplitude = 10; // The amount to oscillate
         this.time = 0; // The time value for the oscillation
     };
-    
+
     // define the update function
     Oscillator.prototype = {
         update: function (dt) {
-        
-            // Use the keyboard handler from the ApplicationContext 
+
+            // Use the keyboard handler from the ApplicationContext
             // to pause/unpause
             if (context.keyboard.wasPressed(pc.input.KEY_SPACE)) {
                 this.paused = !this.paused; // toggle paused state
             }
-            
+
             if (!this.paused) {
                 // increment the time value by the frametime
                 this.time += dt;
@@ -121,8 +123,10 @@ pc.script.create('oscillator', function (context) {
             }
         }
     };
-    
+
     // return the class definition
     return Oscillator;
 });
 ~~~
+
+[application_context]: /user-manual/glossary#application_context

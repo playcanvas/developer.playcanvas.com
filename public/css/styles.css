@@ -8754,23 +8754,22 @@ h1, h2, h3 {
   /* line 15, ../../sass/styles.scss */
   h2 {
     font-size: 24px;
-    padding-top: 20px;
+    margin-top: 20px;
+    color: #df6b19;
   }
 
-  /* line 20, ../../sass/styles.scss */
+  /* line 21, ../../sass/styles.scss */
   h3 {
+    margin-top: 30px;
     font-size: 18px;
   }
 
-  /* line 24, ../../sass/styles.scss */
+  /* line 26, ../../sass/styles.scss */
   h4 {
-    font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-size-adjust: 0.488;
-    font-weight: bold;
-    font-style: normal;
+    font-size: 16px;
   }
 
-  /* line 28, ../../sass/styles.scss */
+  /* line 31, ../../sass/styles.scss */
   body {
     font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -8781,67 +8780,67 @@ h1, h2, h3 {
     line-height: 30px;
   }
 
-  /* line 35, ../../sass/styles.scss */
+  /* line 38, ../../sass/styles.scss */
   p {
     margin-bottom: 30px;
   }
 
-  /* line 39, ../../sass/styles.scss */
+  /* line 42, ../../sass/styles.scss */
   #page-container {
     margin-top: 20px;
   }
 
-  /* line 43, ../../sass/styles.scss */
+  /* line 46, ../../sass/styles.scss */
   #page-content {
     margin-top: 5px;
   }
 
-  /* line 48, ../../sass/styles.scss */
+  /* line 51, ../../sass/styles.scss */
   #sidebar.nav h5 {
     font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
     font-weight: 200;
     font-style: normal;
   }
-  /* line 52, ../../sass/styles.scss */
+  /* line 55, ../../sass/styles.scss */
   #sidebar.nav ul {
     list-style: none;
     padding-left: 20px;
   }
-  /* line 64, ../../sass/styles.scss */
+  /* line 67, ../../sass/styles.scss */
   #sidebar.nav a {
     color: #4A5D60;
     font-size: 18px;
   }
-  /* line 69, ../../sass/styles.scss */
+  /* line 72, ../../sass/styles.scss */
   #sidebar.nav .current {
     color: #df6b19;
   }
 
-  /* line 75, ../../sass/styles.scss */
+  /* line 78, ../../sass/styles.scss */
   .nav-tabs li {
     display: inline-block;
     float: none;
     width: 20%;
   }
 
-  /* line 82, ../../sass/styles.scss */
+  /* line 85, ../../sass/styles.scss */
   iframe {
     width: 80%;
     height: 480px;
     border: none;
   }
 
-  /* line 88, ../../sass/styles.scss */
+  /* line 91, ../../sass/styles.scss */
   pre code {
     font-size: 12px;
   }
 
-  /* line 92, ../../sass/styles.scss */
+  /* line 95, ../../sass/styles.scss */
   .table {
     font-size: 14px;
   }
-  /* line 95, ../../sass/styles.scss */
+  /* line 98, ../../sass/styles.scss */
   .table th {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -8849,11 +8848,11 @@ h1, h2, h3 {
     font-style: normal;
     font-size: 16px;
   }
-  /* line 100, ../../sass/styles.scss */
+  /* line 103, ../../sass/styles.scss */
   .table .property-name {
     width: 20%;
   }
-  /* line 104, ../../sass/styles.scss */
+  /* line 107, ../../sass/styles.scss */
   .table td:first-child {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;

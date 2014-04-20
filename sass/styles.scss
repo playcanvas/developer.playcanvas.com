@@ -14,15 +14,18 @@
 
     h2 {
         font-size: 24px;
-        padding-top: 20px;
+        margin-top: 20px;
+        color: $playcanvas-orange;
     }
 
     h3 {
+        margin-top: 30px;
         font-size: 18px;
     }
 
     h4 {
-        @include font-bold();
+        //@include font-bold();
+        font-size: 16px;
     }
 
     body {
