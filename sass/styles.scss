@@ -39,6 +39,12 @@
         margin-bottom: 30px;
     }
 
+    code {
+        font-size: 15px;
+        // $code-color:                    $playcanvas-orange;
+        // $code-bg:                       #f9f2f4;
+    }
+
     #page-container {
         margin-top: 20px;
     }
@@ -107,6 +113,10 @@
         td:first-child {
             @include font-bold();
         }
+    }
+
+    .alert {
+        font-size: 85%;
     }
 }
 

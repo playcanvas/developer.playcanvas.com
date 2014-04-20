@@ -921,7 +921,7 @@ samp {
 code {
   padding: 2px 4px;
   font-size: 90%;
-  color: #c7254e;
+  color: #df6b19;
   background-color: #f9f2f4;
   white-space: nowrap;
   border-radius: 0px;
@@ -8786,61 +8786,66 @@ h1, h2, h3 {
   }
 
   /* line 42, ../../sass/styles.scss */
+  code {
+    font-size: 15px;
+  }
+
+  /* line 48, ../../sass/styles.scss */
   #page-container {
     margin-top: 20px;
   }
 
-  /* line 46, ../../sass/styles.scss */
+  /* line 52, ../../sass/styles.scss */
   #page-content {
     margin-top: 5px;
   }
 
-  /* line 51, ../../sass/styles.scss */
+  /* line 57, ../../sass/styles.scss */
   #sidebar.nav h5 {
     font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
     font-weight: 200;
     font-style: normal;
   }
-  /* line 55, ../../sass/styles.scss */
+  /* line 61, ../../sass/styles.scss */
   #sidebar.nav ul {
     list-style: none;
     padding-left: 20px;
   }
-  /* line 67, ../../sass/styles.scss */
+  /* line 73, ../../sass/styles.scss */
   #sidebar.nav a {
     color: #4A5D60;
     font-size: 18px;
   }
-  /* line 72, ../../sass/styles.scss */
+  /* line 78, ../../sass/styles.scss */
   #sidebar.nav .current {
     color: #df6b19;
   }
 
-  /* line 78, ../../sass/styles.scss */
+  /* line 84, ../../sass/styles.scss */
   .nav-tabs li {
     display: inline-block;
     float: none;
     width: 20%;
   }
 
-  /* line 85, ../../sass/styles.scss */
+  /* line 91, ../../sass/styles.scss */
   iframe {
     width: 80%;
     height: 480px;
     border: none;
   }
 
-  /* line 91, ../../sass/styles.scss */
+  /* line 97, ../../sass/styles.scss */
   pre code {
     font-size: 12px;
   }
 
-  /* line 95, ../../sass/styles.scss */
+  /* line 101, ../../sass/styles.scss */
   .table {
     font-size: 14px;
   }
-  /* line 98, ../../sass/styles.scss */
+  /* line 104, ../../sass/styles.scss */
   .table th {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -8848,16 +8853,21 @@ h1, h2, h3 {
     font-style: normal;
     font-size: 16px;
   }
-  /* line 103, ../../sass/styles.scss */
+  /* line 109, ../../sass/styles.scss */
   .table .property-name {
     width: 20%;
   }
-  /* line 107, ../../sass/styles.scss */
+  /* line 113, ../../sass/styles.scss */
   .table td:first-child {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
     font-weight: bold;
     font-style: normal;
+  }
+
+  /* line 118, ../../sass/styles.scss */
+  .alert {
+    font-size: 85%;
   }
 }
 /* Extra small: (phones, 480px and up) */

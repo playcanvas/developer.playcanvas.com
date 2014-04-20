@@ -66,26 +66,26 @@ developer.playcanvas.com/user-manual/scripting/communication
 developer.playcanvas.com/user-manual/scripting/localserver
 developer.playcanvas.com/user-manual/scripting/tips
 
-developer.playcanvas.com/user-manual/gameplay
-developer.playcanvas.com/user-manual/gameplay/moving-entities
-developer.playcanvas.com/user-manual/gameplay/input
-developer.playcanvas.com/user-manual/gameplay/cameras
-developer.playcanvas.com/user-manual/gameplay/lights
-developer.playcanvas.com/user-manual/gameplay/physics
-developer.playcanvas.com/user-manual/gameplay/triggers
-developer.playcanvas.com/user-manual/gameplay/audio
-developer.playcanvas.com/user-manual/gameplay/animation
-developer.playcanvas.com/user-manual/gameplay/user-interface
-developer.playcanvas.com/user-manual/gameplay/font-rendering
+X developer.playcanvas.com/user-manual/gameplay
+X developer.playcanvas.com/user-manual/gameplay/moving-entities
+X developer.playcanvas.com/user-manual/gameplay/input
+X developer.playcanvas.com/user-manual/gameplay/cameras
+X developer.playcanvas.com/user-manual/gameplay/lights
+X developer.playcanvas.com/user-manual/gameplay/physics
+X developer.playcanvas.com/user-manual/gameplay/triggers
+X developer.playcanvas.com/user-manual/gameplay/audio
+X developer.playcanvas.com/user-manual/gameplay/animation
+X developer.playcanvas.com/user-manual/gameplay/user-interface
+X developer.playcanvas.com/user-manual/gameplay/font-rendering
 
-developer.playcanvas.com/api/reference
+X developer.playcanvas.com/api/reference
 
 developer.playcanvas.com/user-manual/publishing
 developer.playcanvas.com/user-manual/publishing/playcanvas
 developer.playcanvas.com/user-manual/publishing/self-hosting
 developer.playcanvas.com/user-manual/publishing/chrome-web-store
 developer.playcanvas.com/user-manual/publishing/mobile
-developer.playcanvas.com/user-manual/publishing/mobile/cocoonjs
+developer.playcanvas.com/user-manual/publishing/mobile/comcoonjs
 developer.playcanvas.com/user-manual/publishing/firefoxos
 
 developer.playcanvas.com/tutorials/

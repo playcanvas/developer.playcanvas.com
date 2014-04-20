@@ -6,7 +6,7 @@ position: 4
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/first_person_camera?overlay=false" ></iframe>
 
-*Use the mouse to look around, and the cursor keys to move. Click the mouse to hide the cursor (Google Chrome only)*
+*Use the mouse to look around, and the cursor keys to move. Click the mouse to hide the cursor*
 
 In this tutorial, we'll create a simple script for a first-person camera. That is, a scene where it is like the camera is your eyes and you can look around with by moving the mouse and move around using the cursor keys.
 
