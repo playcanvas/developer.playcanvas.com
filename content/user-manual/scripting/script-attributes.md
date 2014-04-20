@@ -8,13 +8,18 @@ Script Attributes are a powerful feature that lets you expose values from your s
 
 ## Declaring Script Attributes
 
-Script Attributes are be declared at the top of your script file using this format: `pc.script.attribute(attributeName, attributeType, defaultValue, options);`.
+Script Attributes are be declared at the top of your script file using this format:
+
+~~~js~~~
+pc.script.attribute(attributeName, attributeType, defaultValue, options);
+~~~
+
+In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
 
 ~~~js~~~
 pc.script.attribute('speed', 'number', 80);
 ~~~
 
-In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`.
 
 ## Getting Attributes into Designer
 

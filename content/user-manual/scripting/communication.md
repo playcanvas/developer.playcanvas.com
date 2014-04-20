@@ -53,7 +53,9 @@ In the example above we have two scripts *player.js* and *input.js* are attached
 
 This is the line that communicates between script instances
 
-`this.entity.script.player.move(1,0);`
+~~~js~~~
+this.entity.script.player.move(1,0);
+~~~
 
 All scripts attached to a script component are exposed on the script component itself under the name defined in the `pc.script.create()` function.
 

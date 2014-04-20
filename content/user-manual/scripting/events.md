@@ -31,10 +31,14 @@ In the constructor of Player, we're calling `pc.events.attach()` which adds even
 
 Listen for events firing by using `on()` and `off()`
 
-`player.on("move", function (x, y) { console.log("Player moved"); }, this)`
+~~~js~~~
+player.on("move", function (x, y) { console.log("Player moved"); }, this)
+~~~
 
 Fire events using `fire()`
 
-`player.fire("move", x, y);`
+~~~js~~~
+player.fire("move", x, y);
+~~~
 
 More details in the [API Reference](http://developer.playcanvas.com/engine/api/stable/symbols/pc.events.html#fire)
