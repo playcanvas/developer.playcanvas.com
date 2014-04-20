@@ -1,6 +1,7 @@
 ---
-title: self hosting
+title: Self-hosting
 page: page.tmpl.html
+position: 2
 ---
 
 ## Self-Hosting your PlayCanvas Game

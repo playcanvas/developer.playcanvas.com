@@ -1,9 +1,8 @@
 ---
-title: app stores
+title: App Stores
 template: page.tmpl.html
+position: 3
 ---
-
-## Publishing to App Stores
 
 To publish your PlayCanvas game, we recommend you use [CocoonJS][cocoonjs] from [Ludei][ludei]. CocoonJS can wrap your PlayCanvas game as a native application which can then be sumitted to either Google Play or the Apple App Store.
 

@@ -1,6 +1,7 @@
 ---
-title: firefox os
+title: Firefox OS
 template: page.tmpl.html
+position: 4
 ---
 
 ## Publishing to Firefox OS

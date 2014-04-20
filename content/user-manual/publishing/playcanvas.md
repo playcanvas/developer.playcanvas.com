@@ -1,11 +1,10 @@
 ---
-title: playcanvas.com
+title: PlayCanvas
 template: page.tmpl.html
+position: 1
 ---
 
-## Publishing on playcanvas.com
-
-The fastest, easiest, most convenient way to publish your game is to make it live on playcanvas.com. To publish in this way, follow these steps:
+The fastest, easiest, most convenient way to publish your game is to make it live on [playcanvas.com][playcanvas]. To publish in this way, follow these steps:
 
 * In your project dashboard, select the 'Designer' tab.
 * Check the pack that you want to export.
@@ -15,3 +14,5 @@ The fastest, easiest, most convenient way to publish your game is to make it liv
 * Click the 'Publish' button at the top right of the exports lister.
 * A dialog will ask you for a name for the published app. This is used to construct the URL in the form `http://apps.playcanvas.com/<USERNAME>/<PROJECTNAME>/<GAMENAME>`. So for example, if PlayCanvas user 'will' had a project called 'callofhonor' and chose a publish name of 'megawar', the published URL would be `http://apps.playcanvas.com/will/callofhonor/megawar`. Enter a name and click 'OK'.
 * Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+
+[playcanvas]: https://playcanvas.com
