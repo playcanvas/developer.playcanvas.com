@@ -2,9 +2,10 @@
     $(document).ready(function () {
         // Set current sidebar navigation class
         var path = window.location.pathname.slice(0, -1); // get path and remove trailing slash
-        var element = $('#sidebar a[href="' + path + '"]');
-        element.addClass("current");
+        var current = $('#sidebar a[href="' + path + '"]');
+        current.addClass("current");
 
+        var element = null;
         // Set navtabs class
         if (path.slice(0, 12) === "/user-manual") {
             element = $('.navbar-dashboard a[href="/user-manual/"]');

@@ -8,7 +8,7 @@ position: 9
 
 The Designer's Camera is controlled with the Mouse and Keyboard
 
-<table class="table">
+<table class="table table-striped">
     <colgroup class="pc-title-column"></colgroup>
     <tr>
         <td>ALT + Left Mouse Button</td><td>Orbit camera</td>
@@ -29,7 +29,7 @@ The Designer's Camera is controlled with the Mouse and Keyboard
 
 ## Mouse Controls
 
-<table class="table">
+<table class="table table-striped">
     <colgroup class="pc-title-column"></colgroup>
     <tr>
         <td>Left Mouse Button</td><td>Select entity</td>
@@ -41,7 +41,7 @@ The Designer's Camera is controlled with the Mouse and Keyboard
 
 ## Keyboard Controls
 
-<table class="table">
+<table class="table table-striped">
     <colgroup class="pc-title-column"></colgroup>
     <tr>
         <td>DELETE</td><td>Delete</td><td>Deletes the current entity selection</td>
@@ -63,6 +63,9 @@ The Designer's Camera is controlled with the Mouse and Keyboard
     </tr>
     <tr>
         <td>W</td><td>Translate</td><td>Change gizmo mode to translate</td>
+    </tr>
+    <tr>
+        <td>A</td><td>Toggle Asset Panel</td><td>Opens or closes the Asset Panel</td>
     </tr>
     <tr>
         <td>CTRL+E</td><td>New Entity</td><td>Creates a new entity as a child of the currently selected entity</td>
