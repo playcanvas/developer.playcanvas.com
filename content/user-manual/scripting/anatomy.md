@@ -25,7 +25,11 @@ pc.script.create("script_name", function (context) {
 ~~~
 *A skeleton script*
 
-Here is the skeleton of a script, it shows almost the minimum amount of code necessary to make a functioning script. Almost the minimum, because the `initialize` and `update` methods on the prototype is optional, and you could leave this off entirely. However, most scripts will need an update method in order actually do anything, and initialize is useful for setting up values before your game starts.
+Here is the skeleton of a script, it shows the minimum amount of code necessary to make a functioning script.
+
+<div class="alert alert-info">
+Actually, you could leave the `initialize` and `update` methods out of a script. But most scripts will need an update method in order actually do anything, and initialize is useful for setting up values before your game starts.
+</div>
 
 We'll break down each part of this script section by section.
 
@@ -49,6 +53,8 @@ The `context` variable is available for use throughout your script object becaus
 * `mouse` An instance of `pc.input.Mouse`
 * `scene` An instance of `pc.scene.Scene`
 * `loader` An instance of `pc.resources.ResourceLoader`
+
+See the [API Reference][context_api] for more details on the context object.
 
 ## Defining the Script object
 
@@ -130,3 +136,5 @@ pc.script.create('oscillator', function (context) {
 ~~~
 
 [application_context]: /user-manual/glossary#application_context
+[context_api]: /engine/api/stable/symbols/pc.fw.ApplicationContext.html
+
