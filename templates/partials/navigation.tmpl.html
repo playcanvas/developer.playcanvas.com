@@ -1,0 +1,10 @@
+<li>
+    <h5>
+        <a href="/{{this.file.path}}">{{this.title}}</a>
+    </h5>
+    <ul id="{{this.id}}" class="">
+    {{#children}}
+        {{> navigation this}}
+    {{/children}}
+    </ul>
+</li>

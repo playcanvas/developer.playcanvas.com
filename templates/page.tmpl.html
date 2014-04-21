@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/css/styles.css"></link>
+        <link rel="stylesheet" href="/css/monokai_sublime.css"></link>
+
+        {{#if local}}
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/lOWHNvsjx4w9y10ZnUyGWLlnNYI/localhost/42185.css" type="text/css" />
+        {{/if}}
+
+        {{#if dev}}
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/lOWHNvsjx4w9y10ZnUyGWLlnNYI/dev.developer.playcanvas.com/42549.css" type="text/css" />
+        {{/if}}
+
+        {{#if prod}}
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/lOWHNvsjx4w9y10ZnUyGWLlnNYI/developer.playcanvas.com/42607.css" type="text/css" />
+        {{/if}}
+
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+        {{> header}}
+
+        {{> title-banner}}
+
+        <div class="row-fix tab-bar">
+            <div class="container tab-container">
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10">
+                        <ul class="nav navbar-nav navbar-dashboard">
+                            <li><a href="/">INTRODUCTION</a></li>
+                            <li><a href="/user-manual/">USER MANUAL</a></li>
+                            <li><a href="/engine/api/stable/">API REFERENCE</a></li>
+                            <li><a href="/tutorials/">TUTORIALS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-container" class="container">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-3">
+                    <ul id="sidebar" class="nav">
+                        {{> user-manual-navigation}}
+                    </ul>
+                </div>
+                <div id="page-content" class="col-md-7">
+                    <h1>{{ title }}</h1>
+                    {{{ contents }}}
+                </div>
+            </div>
+        </div>
+
+        {{> scripts}}
+
+        {{#if prod}}
+        <script>
+            var _gaq = [['_setAccount', 'UA-23605814-1'], ['_setDomainName', 'developer.playcanvas.com'], ['_trackPageview']];
+            (function(d, t) {
+            var g = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            g.async = true;
+            g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s);
+            })(document, 'script');
+        </script>
+        {{/if}}
+    </body>
+</html>

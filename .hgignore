@@ -1,5 +1,6 @@
 syntax: glob
 
-deploy
+build
+node_modules
 .sass-cache
 .DS_Store
