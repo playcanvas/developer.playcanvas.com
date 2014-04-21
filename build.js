@@ -12,6 +12,12 @@ var metadata    = require("metalsmith-metadata");
 var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
 
+var env = null;
+var args = process.argv.slice(2);
+if (args.length) {
+    env = args[0];
+}
+
 // Load partials
 handlebars.registerPartial("header",
     fs.readFileSync(path.join(__dirname, "templates/partials/header.tmpl.html"), "utf-8"));
@@ -27,8 +33,14 @@ m.source("content")
     .use(permalinks({
         pattern: ":filename"
     }))
-    .use(metadata())
-    .use(navbuilder("user-manual")({
+    .use(metadata());
+
+// set environment
+m.metadata().local = (env === null);
+m.metadata().prod = (env === "prod");
+m.metadata().dev = (env === "dev");
+
+    m.use(navbuilder("user-manual")({
         engine: handlebars,
         template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
         partialName: "user-manual-navigation"
