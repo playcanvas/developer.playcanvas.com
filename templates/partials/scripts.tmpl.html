@@ -17,5 +17,36 @@
             element = $('.navbar-dashboard a[href="/"]');
             element.parent().addClass("current");
         }
+
+
+        // This builds next/prev links.
+
+        var href = '#';
+
+        // First get the child of the current page.
+        var nextPage = current.parent().next("ul").children();
+        if (!nextPage.length) {
+            // If there are no children get the next sibling
+            nextPage = current.parent().parent().next("li");
+        }
+        if (!nextPage.length) {
+            // If there still no next, go up to the previous parent and get the next sibling
+            nextPage = current.parent().parent().parent().parent().next()
+        }
+
+        if (nextPage.length) {
+            href = nextPage.find("h5 > a").attr("href");
+            $('#next').attr('href', href);
+
+        }
+
+        var prevPage = current.parent().parent().prev("li");
+        if (!prevPage.length) {
+            prevPage = current.parent().parent().parent().parent();
+        }
+        if (prevPage.length) {
+            href = prevPage.find("h5 > a").attr("href");
+            $('#prev').attr('href', href);
+        }
     });
 </script>

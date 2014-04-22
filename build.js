@@ -23,6 +23,8 @@ handlebars.registerPartial("head",
     fs.readFileSync(path.join(__dirname, "templates/partials/head.tmpl.html"), "utf-8"));
 handlebars.registerPartial("navbar",
     fs.readFileSync(path.join(__dirname, "templates/partials/navbar.tmpl.html"), "utf-8"));
+handlebars.registerPartial("usermanual-navbar",
+    fs.readFileSync(path.join(__dirname, "templates/partials/usermanual-navbar.tmpl.html"), "utf-8"));
 handlebars.registerPartial("header",
     fs.readFileSync(path.join(__dirname, "templates/partials/header.tmpl.html"), "utf-8"));
 handlebars.registerPartial("title-banner",
