@@ -8,4 +8,4 @@ The PlayCanvas User Manual is the in-depth reference to the complete PlayCanvas 
 
 By reading through the manual you'll soon grasp the complete process of building games using PlayCanvas.
 
-[Lets get started!](/user-manual/profile)
+[Lets get started!](/user-manual/introduction)

@@ -1,6 +1,6 @@
 ---
 title: PlayCanvas Developer Resources
-template: page.tmpl.html
+template: intro.tmpl.html
 ---
 
 Welcome to the PlayCanvas Developer Site.
