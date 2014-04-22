@@ -126,6 +126,14 @@
 
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: $screen-sm-min) {
+    .navbar-dashboard {
+        li {
+            a {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
