@@ -1,6 +1,6 @@
 ---
 title: Oh No!
-template: page.tmpl.html
+template: intro.tmpl.html
 ---
 
 ### We can't find that page
