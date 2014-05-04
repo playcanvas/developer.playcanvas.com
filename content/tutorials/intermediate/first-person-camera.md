@@ -107,8 +107,8 @@ pc.script.create('first_person_camera', function (context) {
 
         // Camera euler angle rotation around x and y axes
         var eulers = this.entity.getEulerAngles()
-        this.ex = eulers[0];
-        this.ey = eulers[1];
+        this.ex = eulers.x;
+        this.ey = eulers.y;
 
 
         // Disabling the context menu stops the browser displaying a menu when
