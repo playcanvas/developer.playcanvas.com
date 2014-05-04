@@ -1,13 +1,14 @@
 ---
 title: FPS Character Controller
 template: tutorial-page.tmpl.html
+position: 1
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/fps_character_controller?overlay=false" ></iframe>
 
 *Use the mouse to look around, and WASD or cursor keys to move, spacebar to jump. Click the mouse to hide the cursor*
 
-In this tutorial, we'll walk you through how to create a controllable first-person camera which uses the built-in physics engine so that your character is solid in the world. 
+In this tutorial, we'll walk you through how to create a controllable first-person camera which uses the built-in physics engine so that your character is solid in the world.
 
 This tutorial expands on the [first-person camera][first_person_camera] tutorial. If you haven't completed that, you should head over there now.
 
@@ -25,11 +26,11 @@ We won't go into much detail about the camera script, as it is identical to the 
 
 ### What is a Character Controller?
 
-There are many ways of controlling interactive elements in games, the character controller is a specific class of object designed to take player input and move an object around in the world realistically. 
+There are many ways of controlling interactive elements in games, the character controller is a specific class of object designed to take player input and move an object around in the world realistically.
 
-In the case of this tutorial we are using a Dynamic Character Controller. Dynamic, because it relies on a Rigid Body and physics engine to contrain it's movement to the world. Dynamic Character Controllers can work in many cases, but sometimes the 'realism' of using a physics engine to move the character gets in the way of the fun. An example would be moving upstairs, you normally don't want the character to collide with each step on the way up. 
+In the case of this tutorial we are using a Dynamic Character Controller. Dynamic, because it relies on a Rigid Body and physics engine to contrain it's movement to the world. Dynamic Character Controllers can work in many cases, but sometimes the 'realism' of using a physics engine to move the character gets in the way of the fun. An example would be moving upstairs, you normally don't want the character to collide with each step on the way up.
 
-The other main sort of character controller is a Kinematic Character Controller, which uses a Kinematic physics body. A Kinematic body can collide with other rigid bodies but does not respond to the collisions meaning you can customize the collision response to make the game fun. A Kinematic Character Controller is more work to create, but can have better results in your game. 
+The other main sort of character controller is a Kinematic Character Controller, which uses a Kinematic physics body. A Kinematic body can collide with other rigid bodies but does not respond to the collisions meaning you can customize the collision response to make the game fun. A Kinematic Character Controller is more work to create, but can have better results in your game.
 
 ## The Character Controller Code
 
@@ -53,7 +54,7 @@ _checkGround: function () {
     rayEnd.add2(pos, groundCheckRay);
     self.onGround = false;
 
-    // Fire a ray straight down to just below the bottom of the rigid body, 
+    // Fire a ray straight down to just below the bottom of the rigid body,
     // if it hits something then the character is standing on something.
     context.systems.rigidbody.raycastFirst(pos, rayEnd, function (result) {
         self.onGround = true;
@@ -86,7 +87,7 @@ jump: function () {
     if (this.onGround) {
         this.entity.rigidbody.activate();
         this.entity.rigidbody.applyImpulse(this.jumpImpulse, origin);
-        this.onGround = false;                
+        this.onGround = false;
     }
 },
 ~~~
@@ -129,11 +130,11 @@ update: function (dt) {
     transform.getZ(this.z);
     this.z.y = 0;
     this.z.normalize();
-    
+
     transform.getX(this.x);
     this.x.y = 0;
     this.x.normalize();
-    
+
     this.heading.set(0, 0, 0);
 
     // Strafe left/right
@@ -144,7 +145,7 @@ update: function (dt) {
         this.heading.add(this.x);
         input = true;
     }
-    
+
     // Move forwards/backwards
     if (this.controller.isPressed('forward')) {
         this.heading.sub(this.z);

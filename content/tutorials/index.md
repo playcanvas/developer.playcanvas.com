@@ -30,7 +30,7 @@ You can find our complete collection of video tutorials on our [YouTube Channel]
 
 * [Programmatically Creating Entities][programmatically_creating]
 * [FPS Character Controller][fps_character_controller]
-
+* [Custom Shaders][custom_shaders]
 
 [keyboard_input]: /tutorials/beginner/keyboard-input
 [mouse_input]: /tutorials/beginner/mouse-input
@@ -45,3 +45,4 @@ You can find our complete collection of video tutorials on our [YouTube Channel]
 
 [fps_character_controller]: /tutorials/advanced/fps-controller
 [programmatically_creating]: /tutorials/advanced/programmatically-creating
+[custom_shaders]: /tutorials/advanced/custom-shaders
