@@ -86,7 +86,7 @@ var shaderDefinition = {
 };
 ~~~
 
-The shader definition contains three sections. In `attributes` you must specify the variable names and the value of attributes that will be defined for each Vertex that your vertex shader is executed for. These values are later declared in your vertex shader as and `attribute`.
+The shader definition contains three sections. In `attributes` you must specify the variable names and the value of attributes that will be defined for each Vertex that your vertex shader is executed for. These values are later declared in your vertex shader as an `attribute`.
 
 The Vertex Shader code is supplied as a string in the `vshader` property and the Fragment Shader is supplied as a string in the 'fshader' property.
 
