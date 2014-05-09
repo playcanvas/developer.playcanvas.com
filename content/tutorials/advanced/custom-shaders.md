@@ -18,45 +18,62 @@ WebGL uses GLSL (GL Shader Language) to write shaders that can be run across all
 
 ~~~javascript~~~
 var shaderDefinition = {
+    // Define the attributes variables that pull data from vertex buffers. [http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.html]
     attributes: {
-        aPosition: pc.gfx.SEMANTIC_POSITION,
-        aUv0: pc.gfx.SEMANTIC_TEXCOORD0
+        aPosition: pc.gfx.SEMANTIC_POSITION, // vertex position
+        aUv0: pc.gfx.SEMANTIC_TEXCOORD0 // UV texture co-ordinate
     },
     vshader: [
+        // attributes are supplied to vertex shaders from vertex buffers
+        // aPosition is the current vertex position
+        // aUv0 is the UV co-ordinate at the current vertex
         "attribute vec3 aPosition;",
         "attribute vec2 aUv0;",
         "",
+        // uniforms are supplied to both vertex and fragment shaders
+        // matrix_model is the Model Matrix
+        // matrix_viewProjection is the View Projection Matrix
         "uniform mat4 matrix_model;",
         "uniform mat4 matrix_viewProjection;",
         "",
+        // varyings are variables that are set in the vertex and used in the fragment shader
+        // vUv0 is the UV co-ordinate at the current vertex
         "varying vec2 vUv0;",
         "",
+        // The main function in the vertex shader is called once for every vertex
         "void main(void)",
         "{",
-        "    vUv0 = aUv0;",
-        "    gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);",
+        "    vUv0 = aUv0;", // pass the UV co-ordinate on to the fragment shader
+        "    gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);", // Transform the vertex into screen space
         "}"
     ].join("\n"),
     fshader: [
         "precision " + gd.precision + " float;",
         "",
+        // This is the UV co-ordinate from the vertex shader
         "varying vec2 vUv0;",
         "",
+        // These uniforms are set in the main program
+        // The diffuse map is the color texture that is applied to the model
         "uniform sampler2D uDiffuseMap;",
+        // The height map is the cloud texture that we're using for the special effect
         "uniform sampler2D uHeightMap;",
+        // This is an incrementing/decrementing value between 0-2
         "uniform float uTime;",
         "",
+        // The main function in the fragment shader is called once for every pixel that could be rendered using this shader
         "void main(void)",
         "{",
-        "    float height = texture2D(uHeightMap, vUv0).r;",
-        "    vec4 color = texture2D(uDiffuseMap, vUv0);",
-        "    if (height < uTime) {",
-        "      discard;",
+        "    vec4 height = texture2D(uHeightMap, vUv0);", // Use the texture2D function to pull the color out of the height map at this pixel.
+        "    float h = height.r;", // The height map is greyscale so we can use the 'red' value to get a value between 0-1 at this pixel.
+        "    vec4 color = texture2D(uDiffuseMap, vUv0);", // Get the color from the diffuse texture at this pixel
+        "    if (h < uTime) {",
+        "      discard;", // When the heightmap pixel is less than the time value skip the rendering of this pixel.
         "    }",
-        "    if (height < (uTime+0.04)) {",
-        "      color = vec4(0, 0.2, 1, 1.0);",
+        "    if (h < (uTime + 0.04)) {",
+        "      color = vec4(0, 0.2, 1, 1.0);", // This adds an orange border close to the areas where we discard the pixel
         "    }",
-        "    gl_FragColor = color;",
+        "    gl_FragColor = color;", // Otherwise we set the pixel to be the one from the diffuse texture.
         "}"
     ].join("\n")
 };
