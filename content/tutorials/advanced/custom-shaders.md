@@ -75,7 +75,7 @@ var shaderDefinition = {
         "    if (height < uTime) {",
         "      discard;",
         "    }",
-        // This adds an orange border close to the areas where we discard the pixel
+        // This adds an blue border close to the areas where we discard the pixel
         "    if (height < (uTime + 0.04)) {",
         "      color = vec4(0, 0.2, 1, 1.0);",
         "    }",
