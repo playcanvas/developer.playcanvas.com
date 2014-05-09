@@ -43,8 +43,10 @@ var shaderDefinition = {
         // The main function in the vertex shader is called once for every vertex
         "void main(void)",
         "{",
-        "    vUv0 = aUv0;", // pass the UV co-ordinate on to the fragment shader
-        "    gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);", // Transform the vertex into screen space
+        // pass the UV co-ordinate on to the fragment shader
+        "    vUv0 = aUv0;",
+        // Transform the vertex into screen space
+        "    gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);",
         "}"
     ].join("\n"),
     fshader: [
@@ -64,16 +66,21 @@ var shaderDefinition = {
         // The main function in the fragment shader is called once for every pixel that could be rendered using this shader
         "void main(void)",
         "{",
-        "    vec4 height = texture2D(uHeightMap, vUv0);", // Use the texture2D function to pull the color out of the height map at this pixel.
-        "    float h = height.r;", // The height map is greyscale so we can use the 'red' value to get a value between 0-1 at this pixel.
-        "    vec4 color = texture2D(uDiffuseMap, vUv0);", // Get the color from the diffuse texture at this pixel
-        "    if (h < uTime) {",
-        "      discard;", // When the heightmap pixel is less than the time value skip the rendering of this pixel.
+        // Use the texture2D function to pull the color out of the height map at this pixel.
+        // The height map is greyscale so we can use the 'red' value to get a value between 0-1 at this pixel.
+        "    vec4 height = texture2D(uHeightMap, vUv0).r;",
+        // By default we use the color from the diffuse texture at this pixel
+        "    vec4 color = texture2D(uDiffuseMap, vUv0);",
+        // When the heightmap pixel is less than the time value skip the rendering of this pixel.
+        "    if (height < uTime) {",
+        "      discard;",
         "    }",
-        "    if (h < (uTime + 0.04)) {",
-        "      color = vec4(0, 0.2, 1, 1.0);", // This adds an orange border close to the areas where we discard the pixel
+        // This adds an orange border close to the areas where we discard the pixel
+        "    if (height < (uTime + 0.04)) {",
+        "      color = vec4(0, 0.2, 1, 1.0);",
         "    }",
-        "    gl_FragColor = color;", // Otherwise we set the pixel to be the one from the diffuse texture.
+        // Finally output the color of the pixel
+        "    gl_FragColor = color;",
         "}"
     ].join("\n")
 };
