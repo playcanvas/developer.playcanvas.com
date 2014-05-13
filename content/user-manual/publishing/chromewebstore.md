@@ -86,15 +86,6 @@ chrome.app.runtime.onLaunched.addListener(function() {
 
 * Create the icons referenced from the manifest and place them in the same folder as the index.html.
 * Transfer any script tag blocks of JavaScript in index.html into externally referenced JS files (there are two). This is because Chrome treats this as a security threat.
-* Remove the following statement (which causes another security error in Chrome) from playcanvas-0.XXX.X.min.js (search for 'unload'):
-
-~~~javascript~~~
-window.addEventListener("unload", function() {
-  o.disconnect();
-  o = null
-});
-~~~
-
 * Check to see if your game uses the LocalStorage HTML5 API. Packaged apps can't use this API, although they can use a Chrome specific alternative.
 
 We're done! Zip up the game's files again and upload to your new item in the CWS Developer Dashboard. Fill out the rest of the form as you would for a hosted app (although you now don't need to show ownership for a hosted app URL since there isn't one any more).
