@@ -14,7 +14,7 @@ The panel can be accessed by selecting 'Toggle Scene Settings' from Designer's V
 
 <img alt="Scene Settings Menu Option" src="/images/platform/scene_settings/scene_settings_view_menu.png" />
 
-This will show the Scene Settings panel to the left of Designer's 3D View:
+This will show the Scene Settings panel to the right of Designer's 3D View:
 
 <img alt="Scene Settings Panel" src="/images/platform/scene_settings/scene_settings_panel_default.png" />
 
