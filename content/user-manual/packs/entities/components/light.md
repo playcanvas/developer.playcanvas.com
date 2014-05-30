@@ -19,7 +19,7 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enable</td><td>If checked, the directional light will light the scene.</td></tr>
+    <tr><td>Enabled</td><td>If checked, the light will light the scene.</td></tr>
     <tr><td>Color</td><td>The color of the emitted light.</td></tr>
     <tr><td>Intensity</td><td>The intensity of the light that acts as a scalar value for the light's color. This value can exceed 1.</td></tr>
     <tr><td>Range</td><td>Point and Spot only. The distance from the spotlight source at which its contribution falls to zero.</td></tr>

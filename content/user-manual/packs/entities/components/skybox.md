@@ -4,7 +4,7 @@ template: page.tmpl.html
 skip: true
 ---
 
-The 'skybox' component attaches a skybox to an entity.
+The 'skybox' component enables a skybox in the scene.
 
 ![Component Interface](/images/platform/component_skybox.png)
 
@@ -14,6 +14,7 @@ The 'skybox' component attaches a skybox to an entity.
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Enabled</td><td>If checked, the component will render the skybox every frame.</td></tr>
     <tr><td>POSX</td><td>The image asset to use for the world-space positive X face of the skybox.</td></tr>
     <tr><td>NEGX</td><td>The image asset to use for the world-space negative X face of the skybox.</td></tr>
     <tr><td>POSY</td><td>The image asset to use for the world-space positive Y face of the skybox.</td></tr>

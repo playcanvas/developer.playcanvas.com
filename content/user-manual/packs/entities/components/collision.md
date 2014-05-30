@@ -12,6 +12,8 @@ The 'collision' component assigns a collision volume to the entity. The componen
 ![Component Interface](/images/platform/component_collisionsphere.png)
 #### Capsule
 ![Component Interface](/images/platform/component_collisioncapsule.png)
+#### Cylinder
+![Component Interface](/images/platform/component_collisioncylinder.png)
 #### Mesh
 ![Component Interface](/images/platform/component_collisionmesh.png)
 
@@ -23,6 +25,7 @@ If the entity also has a rigidbody component, the collision component determines
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Enabled</td><td>If selected and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.</td></tr>
     <tr><td>Type</td><td>The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
     <tr><td>Half Extents</td><td>Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth.</td></tr>
     <tr><td>Axis</td><td>Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity.</td></tr>

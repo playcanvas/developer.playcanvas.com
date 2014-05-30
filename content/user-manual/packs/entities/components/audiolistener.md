@@ -10,7 +10,12 @@ The 'audiolistener' component specifies the listener's position in 3D space. All
 
 ## Properties
 
-This component has no properties. It simply uses the entity's position in 3D space to determine the location of the listener.
+<table class="table table-striped">
+    <col class="property-name"></col>
+    <col class="property-description"></col>
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Enabled</td><td>If checked, the component will act as the listener position for 3D sound effects.</td></tr>
+</table>
 
 ## Scripting Interface
 
