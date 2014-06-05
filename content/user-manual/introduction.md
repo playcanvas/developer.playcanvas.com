@@ -78,7 +78,12 @@ The other major asset type in a PlayCanvas project is code. PlayCanvas offers th
 
 ## Publishing
 
-Lastly, you will want to publish your web app. PlayCanvas can take a snapshot of your project at any time and export it to a downloadable ZIP file. You are then free to transfer the contents of the ZIP to the web server of your choice. All models, textures, scripts etc will be present and correct. Conveniently, you can also publish your project to playcanvas.com in just a few clicks.
+Lastly, you will want to publish your PlayCanvas game. You have complete freedom and control over how and where your game is published. The options are:
+
+* Publish to playcanvas.com with the click of a button.
+* Download your game as a zip archive. You can then host the game yourself or deploy it to mobile app stores or web portals such as the Chrome Web Store.
+
+Find out more in the [publishing](/user-manual/publishing) section.
 
 ## Supported Browsers
 

@@ -18,13 +18,15 @@ This is how your Project will be set up be default when you create it. If you ha
 
 ![script picker][script_picker]
 
-To add a new script, open your Pack in PlayCanvas Designer and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the top most empty line and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
+To add a new script, open your Pack in PlayCanvas Designer and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
+
+Alternatively you can open the [Scripts Explorer][scripts_explorer] and drag and drop a script from there into the script picker control.
 
 <div class="alert alert-info small">
-You will only be able to edit scripts you are using the PlayCanvas to storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
+You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you have edit a script for the first time it will be created and saved. You can then see all scripts from the Code tab in your Project dashboard.
+Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you have edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Scripts Explorer][scripts_explorer] in the Designer.
 
 ## Local Server
 
@@ -108,6 +110,8 @@ Exporting packs will only use server-side for source code resources.
 [python]: http://www.python.org/download/
 [server_windows]: /downloads/localserver.bat
 [launch_buttons]: /images/platform/launch_buttons.png
-[script_picker]: /images/platform/script_picker.png
+[script_picker]: /images/platform/component_script.png
 [code_directory]: /images/platform/playcanvas_code_repo.jpg
 [code_repository]: /images/platform/bitbucket_code_repo.jpg
+[scripts_explorer]: /user-manual/designer/scripts-explorer
+[code_tab]: /user-manual/dashboard/code

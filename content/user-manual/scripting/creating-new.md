@@ -10,7 +10,7 @@ position: 1
 
 Script Components are attached to Entities in the same way as all other Components using the *New Component* command in the **Component** menu.
 
-Once you have added a Script Component you can specify the URLs of the javascript files to load. The script component has a field named URLs into which you can add paths to your scripts or other javascript libraries.
+Once you have added a Script Component you can specify the URLs of the javascript files to load. The script component has a field named URL into which you can add paths to your scripts or other javascript libraries. Just type the URL of your script and press Enter. You can also select an existing script from the [Scripts Explorer][scripts_explorer] and drag & drop it in here.
 
 The paths you supply for the scripts are relative your Local Server or Code Repository, e.g. `directory/script.js` see the [scripting workflow][coding_workflow] page for details on how to set these up.
 
@@ -36,4 +36,7 @@ If you are using the PlayCanvas code repository to store your code, you can edit
 If you are using Github or Bitbucket you can not edit you scripts in PlayCanvas, you must make your commits through your source control system.
 </div>
 
+The order in which you add your scripts on a Script Component is the order in which the scripts are going to be initialized and updated. If you want to change the order of a script, click on the Up - Down arrows next to the Script's title. To remove a script click on the X button.
+
 [coding_workflow]: /user-manual/scripting/workflow
+[scripts_explorer]: /user-manual/designer/scripts-explorer

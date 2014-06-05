@@ -8,13 +8,15 @@ The 'script' component enables an entity to run user-supplied scripts. In this w
 
 ![Component Interface](/images/platform/component_script.png)
 
+To assign a script. type its name into the URL box. For example, if you want to create a script called car.js, type car.js into the box and hit ENTER. This will create a script block below. If you click the hyperlinked script name, it will open in the PlayCanvas Script Editor. If you type a name of an existing script, autocomplete should activate and again, just press ENTER to add the script to the component.
+
 ## Properties
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>URLs</td><td>The scripts that are executed for this entity. A .js extension is enforced. Absolute URLs are used for scripts hosted on servers other than playcanvas.com, otherwise, relative URLs are used.</td></tr>
+    <tr><td>Enabled</td><td>If checked, all of the assigned scripts will have their update functions called every frame.</td></tr>
 </table>
 
 ## Scripting Interface

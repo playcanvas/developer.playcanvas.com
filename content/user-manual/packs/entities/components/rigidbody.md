@@ -4,9 +4,12 @@ template: page.tmpl.html
 skip: true
 ---
 
-The 'rigidbody' component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically.
+The 'rigidbody' component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.
 
-![Component Interface](/images/platform/component_rigidbody.png)
+#### Static
+![Component Interface](/images/platform/component_rigidbodystatic.png)
+#### Dynamic (and Kinematic)
+![Component Interface](/images/platform/component_rigidbodydynamic.png)
 
 Note that you must add a [collision component](/tools/designer/components/collision.html) in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
 
@@ -16,6 +19,7 @@ Note that you must add a [collision component](/tools/designer/components/collis
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Enabled</td><td>If selected and if the component has a sibling collision component, the rigid body will participate in the physics simulation.</td></tr>
     <tr><td>Type</td><td>The type of the body:<br><ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul></td></tr>
     <tr><td>Mass</td><td>The mass of the body. If world units in your scene are meters, units for mass is kilograms.</td></tr>
     <tr><td>Linear Damping</td><td>Specifies the proportion of linear velocity is that lost by the body every second.</td></tr>

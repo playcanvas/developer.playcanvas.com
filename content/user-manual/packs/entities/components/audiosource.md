@@ -14,7 +14,7 @@ The 'audiosource' component specifies the listener's position in 3D space. All 3
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If false, no audio will be placed.</td></tr>
+    <tr><td>Enabled</td><td>If checked, the component will play assigned audio assets.</td></tr>
     <tr><td>Assets</td><td>The audio assets that can be played from this audio source. Multiple audio assets can be specified by the picker control.</td></tr>
     <tr><td>Volume</td><td>The volume of the audio assets played back by the component.</td></tr>
     <tr><td>Pitch</td><td>The modifier to playback the audio at. A value of 1 means the audio is played back at the original pitch.</td></tr>

@@ -8,13 +8,13 @@ When you are building your game with PlayCanvas, you will probably want to use 3
 
 ## Accessing the Asset Library
 
-The Asset Library can be opened from PlayCanvas Designer. Just hit the big orange button in the top right of the interface:
+The Asset Library can be opened from PlayCanvas Designer. Just hit the big orange button on the top of the interface:
 
 <img alt="Asset Library Button" src="/images/platform/asset_library/asset_library_button.png" />
 
 The Asset Library opens in a dialog that shows the thumbnails of all assets that can be imported into your project:
 
-<img alt="Asset Library" width="640" src="/images/platform/asset_library/asset_library_open.png" />
+<img alt="Asset Library" width="640" src="/images/platform/asset_library/asset_library_open.jpg" />
 
 Choose an asset and hit the 'Add' button. Note that assets can only be imported into a project once, after which the 'Add' button becomes greyed out.
 

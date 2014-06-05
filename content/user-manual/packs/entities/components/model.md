@@ -14,6 +14,7 @@ The 'model' component enables an entity to render a primitive shape or a model a
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Enabled</td><td>If checked, the model will be added to the scene and rendered.</td></tr>
     <tr><td>Type</td><td>The type of the model to be rendered. Can be:<ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Sphere</li><li>Cylinder</li><li>Cone</li></ul></td></tr>
     <tr><td>Asset</td><td>The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component.</td></tr>
     <tr><td>Cast Shadows</td><td>If enabled, the model rendered by this component will cast shadows onto other models in the scene.</td></tr>
