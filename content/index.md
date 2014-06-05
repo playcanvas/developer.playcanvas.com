@@ -17,6 +17,12 @@ We suggest you start reading the [User Manual](/user-manual), it's the complete 
 
 <hr />
 
+## Engine Users
+
+[Engine](/engine) - This guide will get you going if you are only using the Engine and not the PlayCanvas Designer.
+
+<hr />
+
 # Getting Help
 
 #### Want to talk? [PlayCanvas Discussion](http://forum.playcanvas.com/)

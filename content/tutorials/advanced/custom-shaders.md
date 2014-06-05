@@ -60,7 +60,7 @@ var shaderDefinition = {
         "uniform sampler2D uDiffuseMap;",
         // The height map is the cloud texture that we're using for the special effect
         "uniform sampler2D uHeightMap;",
-        // This is an incrementing/decrementing value between 0-2
+        // This is an incrementing/decrementing value between 0-1
         "uniform float uTime;",
         "",
         // The main function in the fragment shader is called once for every pixel that could be rendered using this shader
