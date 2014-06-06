@@ -54,7 +54,6 @@ Generating a packaged app from a PlayCanvas game takes a little more effort than
 
 * Download the most recently exported version of the game from the Exports tab of the Project Dashboard.
 * Unzip the contents.
-* In the index.html, there are two externally referenced resources: the PlayCanvas engine (playcanvas-0.XXX.X.min.js and PLAY_FLAT_ORANGE3.png). Download these resources and change the paths so they are relative to the index.html file.
 * Create a manifest.json file . For SWOOOP, it looks like this:
 
 ~~~javascript~~~
