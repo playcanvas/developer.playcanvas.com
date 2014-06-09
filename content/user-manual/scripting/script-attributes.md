@@ -117,12 +117,12 @@ pc.script.attribute('on', 'boolean', false, {
 
 ### Asset
 
-The value is a reference to an Asset in the Project.
+The value is a reference to a list of Assets in the Project.
 
 #### Example
 
 ~~~js~~~
-pc.script.attribute('sound', 'asset', null, {
+pc.script.attribute('sound', 'asset', [], {
     displayName: "Sound Asset"
 });
 ~~~
@@ -133,6 +133,9 @@ pc.script.attribute('sound', 'asset', null, {
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
         <td>displayName</td><td>The name to show in the Designer.</td>
+    </tr>
+    <tr>
+        <td>type</td><td>Limit the asset selection to a single Asset type.</td>
     </tr>
 </table>
 
