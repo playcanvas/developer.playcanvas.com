@@ -14,4 +14,4 @@ Using the *Toggle Quad View* command in the menu, or by pressing the spacebar yo
 
 The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][gizmo]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate with arrows on the ends of the axes; Scale with cubes on the ends of the axes and Rotate which is made up of three colored rings.
 
-[gizmo]: /user-manual#gizmo
+[gizmo]: /user-manual/glossary#gizmo
