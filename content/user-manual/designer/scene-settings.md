@@ -1,7 +1,7 @@
 ---
 title: Scene Settings
 template: page.tmpl.html
-position: 5
+position: 6
 ---
 
 The Scene Settings panel allows you to set up global properties for your scene. The properties that are settable are:
@@ -10,7 +10,7 @@ The Scene Settings panel allows you to set up global properties for your scene. 
 * Ambient light
 * Gravity
 
-The panel can be accessed by selecting 'Toggle Scene Settings' from Designer's View menu:
+The panel can be accessed by selecting 'Show Scene Settings' from Designer's View menu:
 
 <img alt="Scene Settings Menu Option" src="/images/platform/scene_settings/scene_settings_view_menu.png" />
 

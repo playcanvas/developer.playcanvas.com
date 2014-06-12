@@ -1,7 +1,7 @@
 ---
 title: Scripts Explorer
 template: page.tmpl.html
-position: 6
+position: 5
 ---
 
 ![Scripts Explorer](/images/platform/scripts_explorer.png "Drag & drop scripts from the Scripts Explorer on Script Components")
