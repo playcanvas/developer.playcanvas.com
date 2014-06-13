@@ -6,8 +6,9 @@ position: 6
 
 The Scene Settings panel allows you to set up global properties for your scene. The properties that are settable are:
 
-* Fog
 * Ambient light
+* Fog
+* Shadow distance
 * Gravity
 
 The panel can be accessed by selecting 'Show Scene Settings' from Designer's View menu:
@@ -62,6 +63,10 @@ The distance in scene units from the viewpoint from where the fog reaches a maxi
 ### Fog Density
 
 The fog density controls the rate at which fog fades in for Exp and Exp2 fog types. Larger values cause fog to fade in more quickly. Fog density must be a positive number.
+
+### Shadow Distance
+
+The shadow distance determines the distance from the viewpoint beyond which shadows are no longer rendered.
 
 ## Physics Settings
 
