@@ -66,7 +66,7 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 ### Shadow Distance
 
-The shadow distance determines the distance from the viewpoint beyond which shadows are no longer rendered.
+The shadow distance is the maximum distance from the camera beyond which shadows that come from Directional Lights are no longer visible. Smaller values produce more detailed shadows.
 
 ## Physics Settings
 
