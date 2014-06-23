@@ -7,7 +7,7 @@ template: tutorial-page.tmpl.html
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Pack in full in the [Collision & Triggers Pack](http://playcanvas.com/playcanvas/tutorials/designer#pack/f190325d-41c7-4159-a278-f766e39406c7) in the [PlayCanvas Tutorials Project](http://playcanvas.com/playcanvas/tutorials).
+This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Pack in full in the [Collision & Triggers Pack](http://playcanvas.com/playcanvas/tutorials/designer/pack/f190325d-41c7-4159-a278-f766e39406c7) in the [PlayCanvas Tutorials Project](http://playcanvas.com/playcanvas/tutorials).
 
 ## The Collision Component
 
@@ -38,7 +38,7 @@ To create a rigid body in your Pack, pick an Entity and add a *rigidbody* compon
 
 For details on each property take a look at the [*rigidbody* documentation](rigidbody_docs).
 
-For this demo, the important property is the **Type**. You can pick one of three options: 
+For this demo, the important property is the **Type**. You can pick one of three options:
 
 * **Static** this Entity will never move.
 * **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
@@ -90,7 +90,7 @@ pc.script.create("trigger", function (context) {
 })
 ~~~
 
-There two significant parts to the code above. 
+There two significant parts to the code above.
 
 First in the ```initialize``` method we start listening to the **triggerenter** event. This event fires once when a rigid body enters a trigger volume (where a trigger volume is an entity that has a collision component but no rigidbody component). The companion event is **triggerleave** which is fired once the penetrating rigid body leaves the trigger.
 
@@ -114,7 +114,7 @@ This is the *rigidbody* and *collision* setup for the box component, the sphere 
 
 ## Contact Events
 
-There are three events available on the *collision* component: 
+There are three events available on the *collision* component:
 
 * **contact** - fires for every point of contact when two rigid bodies touch.
 * **collisionstart** - fires at the start of a collision when two rigid bodies touch.
@@ -137,9 +137,9 @@ pc.script.create("collider", function (context) {
 
         onCollisionStart: function (result) {
             if (result.other.rigidbody) {
-                this.entity.audiosource.play("hit");    
+                this.entity.audiosource.play("hit");
             }
-            
+
         }
     };
 
