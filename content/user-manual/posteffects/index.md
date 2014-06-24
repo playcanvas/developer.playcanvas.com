@@ -19,6 +19,7 @@ Built-in post effects include:
 * [Hue-Saturation][hue_saturation]
 * [FXAA][fxaa]
 * [Sepia][sepia]
+* [Vignette][vignette]
 
 [camera]: /user-manual/packs/entities/components/camera
 [github_posteffects]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
@@ -27,3 +28,4 @@ Built-in post effects include:
 [hue_saturation]: /user-manual/posteffects/hue_saturation
 [fxaa]: /user-manual/posteffects/fxaa
 [sepia]: /user-manual/posteffects/sepia
+[vignette]: /user-manual/posteffects/vignette
