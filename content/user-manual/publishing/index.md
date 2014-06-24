@@ -1,7 +1,7 @@
 ---
 title: Publishing
 template: page.tmpl.html
-position: 8
+position: 9
 ---
 
 Once you have built your game, you will no doubt want to publish it and allow people to enjoy its majesty! PlayCanvas makes things very easy for you. You have a choice in how you do this:
