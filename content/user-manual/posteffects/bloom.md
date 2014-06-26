@@ -15,8 +15,8 @@ and the same image with bloom applied:
 <img alt="Image with effect" src="/images/platform/posteffects/with_bloom.png"></img>
 
 The built-in bloom effect has the following attributes:
-* **bloomIntensity**: The intensity of the effect
-* **bloomThreshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
-* **blurAmount**: Controls the amount of blurring.
+* **Bloom Intensity**: The intensity of the effect
+* **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
+* **Blur Amount**: Controls the amount of blurring.
 
 [wikipedia]: http://en.wikipedia.org/wiki/Bloom_(shader_effect)

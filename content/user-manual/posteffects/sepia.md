@@ -16,4 +16,4 @@ and the same image with the effect applied:
 
 The built-in sepia effect has the following attributes:
 
-* **amount**: Controls the intensity of the effect. Ranges from 0 to 1.
+* **Amount**: Controls the intensity of the effect. Ranges from 0 to 1.
