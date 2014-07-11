@@ -85,5 +85,8 @@ The Designer's Camera is controlled with the Mouse and Keyboard
     <tr>
         <td>CTRL+SHIFT+Z</td><td>Redo</td><td>Redo the next action performed by the user</td>
     </tr>
+    <tr>
+        <td>SHIFT+Gizmo</td><td>Toggle Snap</td><td>Toggle snap to increment when using Translate/Rotate/Scale gizmos</td>
+    </tr>
 </table>
 
