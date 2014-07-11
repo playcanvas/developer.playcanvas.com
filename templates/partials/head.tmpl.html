@@ -15,8 +15,23 @@
         <link rel="stylesheet" href="//f.fontdeck.com/s/css/lOWHNvsjx4w9y10ZnUyGWLlnNYI/developer.playcanvas.com/42607.css" type="text/css" />
         {{/if}}
 
+        {{#if local}}
+        <script src="/contrib/jquery.min.js"></script>
+        <script src="/contrib/bootstrap.min.js"></script>
+        <script src="/contrib/highlight.min.js"></script>
+        {{/if}}
+
+        {{#if dev}}
         <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+        {{/if}}
+
+        {{#if prod}}
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+        {{/if}}
+
         <script>hljs.initHighlightingOnLoad();</script>
     </head>

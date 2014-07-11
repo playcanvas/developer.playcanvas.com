@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    {{> head}}
+
+    <body>
+        {{> header}}
+
+        {{> title-banner}}
+
+        {{> navbar}}
+
+        <div id="page-container" class="container">
+            <div class="row">
+                <div id="page-content" class="col-xs-offset-1 col-xs-10">
+                    <script>
+                    (function() {
+                      var cx = '002746929884179103209:xblwiyfekam';
+                      var gcse = document.createElement('script');
+                      gcse.type = 'text/javascript';
+                      gcse.async = true;
+                      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                          '//www.google.com/cse/cse.js?cx=' + cx;
+                      var s = document.getElementsByTagName('script')[0];
+                      s.parentNode.insertBefore(gcse, s);
+                    })();
+                    </script>
+                    <gcse:searchresults-only></gcse:searchresults-only>
+                </div>
+            </div>
+        </div>
+
+        {{> scripts}}
+
+        {{> analytics}}
+    </body>
+</html>
