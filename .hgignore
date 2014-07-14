@@ -1,6 +1,0 @@
-syntax: glob
-
-build
-node_modules
-.sass-cache
-.DS_Store
