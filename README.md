@@ -20,6 +20,11 @@ On Windows:
 To serve the site locally:
 
     cd developer.playcanvas.com
+    ./serve.sh
+
+On Windows:
+
+    cd developer.playcanvas.com
     node node_modules/http-server/bin/http-server build
 
 ## How to deploy
