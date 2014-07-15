@@ -10,6 +10,6 @@ The Attribute Editors shows attribute values for all the Components in the selec
 
 Some attributes are simple text or numbers in which case a standard text field or slider control will be used. Other values may require a more specialised input method. For example, choosing an Asset uses a special dialog which displays Assets that you have uploaded to the Project. Some values can be manipulated via the Design View, for example, the Translate, Rotate and Scale values can be edited by moving and Entity dragging the relevant [Gizmo][gizmo] around in the Design View.
 
-When running a game and the Designer simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button place the Designer and the game tabs side by side and tweak values in the Designer as you watch and play the game. Then once your happy with the changes, save the Pack in the Designer.
+When running both a game and the Designer simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Designer and the game tabs side by side and tweak values in the Designer as you watch and play the game. Then once you're happy with the changes, save the Pack in the Designer.
 
 [gizmo]: /user-manual/glossary#gizmo
