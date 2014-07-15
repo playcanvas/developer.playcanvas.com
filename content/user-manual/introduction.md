@@ -91,7 +91,7 @@ PlayCanvas was always designed to be plugin free, running natively in the browse
 
 * Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
 * PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard DOM element (a canvas) and you can composite it on the page or transform it via CSS.
+* PlayCanvas web apps run in a standard [DOM](/user-manual/glossary/#dom) element (a canvas) and you can composite it on the page or transform it via CSS.
 * No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
 
 So obviously this is all very good news, but you want your web app to run everywhere. Any device, any browser. At the time of writing, HTML5 continues to be adopted on more and more devices in more and more browsers. The browser requirements are currently as follows:
