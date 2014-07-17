@@ -9,37 +9,28 @@ Sometimes it's important to make your own unique assets, but sometimes a complet
 
 If you've got other suggestions of this page. Then let us know on the [forums](http://forum.playcanvas.com/)
 
-## Graphics
+## Asset Marketplaces
 
-### Models
+Asset marketplaces are online libraries of content that you can download, either for free or for a fee, and add to your PlayCanvas game.
 
-* [Open Game Art](http://opengameart.org/)
-* [BlendSwap](http://blendswap.com/)
-* [Props Planet](http://www.propsplanet.com/)
-* [Dexsoft](http://dexsoft-games.com)
-* [Fro Games](http://www.frogames.net/)
-* [Turbosquid](http://turbosquid.com/)
-* [CGTrader](http://cgtrader.com/)
+<table class="table table-striped table-bordered">
+    <tr><th>Provider</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
+    <tr><td><a href="http://www.3dmodels-textures.com/">3D Models Textures</a></td><td></td><td>&#x2713;</td><td>&#x2713;</td></tr>
+    <tr><td><a href="http://www.blendswap.com/">BlendSwap</a></td><td></td><td>&#x2713;</td><td></td></tr>
+    <tr><td><a href="http://www.cgtrader.com/">CGTrader</a></td><td></td><td>&#x2713;</td><td></td></tr>
+    <tr><td><a href="http://www.frogames.net/">Fro Games</a></td><td></td><td>&#x2713;</td><td></td></tr>
+    <tr><td><a href="https://www.gamedevmarket.net/">Game Dev Market</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
+    <tr><td><a href="http://www.mixamo.com/">Mixamo</a></td><td></td><td>&#x2713;</td><td></td></tr>
+    <tr><td><a href="http://www.playonloop.com/music-loops-category/videogame/">PlayOnLoop</a></td><td></td><td></td><td>&#x2713;</td></tr>
+    <tr><td><a href="http://www.propsplanet.com/">Props Planet</a></td><td></td><td>&#x2713;</td><td></td></tr>
+    <tr><td><a href="http://www.opengameart.org/">Open Game Art</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
+    <tr><td><a href="http://www.soundbible.com/">Sound Bible</a></td><td></td><td></td><td>&#x2713;</td></tr>
+    <tr><td><a href="http://www.turbosquid.com/">Turbosquid</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
+</table>
 
-### Animation
+## Procedural Generation Tools
 
-* [Mixamo](http://mixamo.com/)
+There are tools available that can generate game assets procedurally. Here are some good examples:
 
-### Skyboxes
-
-* [Spacescape skybox generator](http://alexcpeterson.com/spacescape)
-
----
-
-## Audio
-
-* [Big List of Music and Sounds](http://www.pixelprospector.com/the-big-list-of-royalty-free-music-and-sounds-free-edition/)
 * [Sound FX Generator](http://www.bfxr.net/)
-* [Sound Bible](http://soundbible.com/)
-* [PlayOnLoop](http://www.playonloop.com/music-loops-category/videogame/)
-
----
-
-## More
-
-* [All kinds of game resources](http://www.pixelprospector.com/indie-resources/)
+* [Spacescape Skybox Generator](http://alexcpeterson.com/spacescape)
