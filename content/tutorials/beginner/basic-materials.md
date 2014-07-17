@@ -3,11 +3,9 @@ title: Basic Materials
 template: tutorial-page.tmpl.html
 ---
 
-Materials are what define the appearance of the surfaces of a 3D Model. At it's very simplest a Material sets the color of the polygons, at it's most complex, a material can simulate the surface of an ocean or the way that light passes through glass.
+Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.
 
-In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties.
-
-First create a Project and a new Pack
+In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. Before starting you'll first create a Project and a new Pack, just like in the [Getting Started][getting_started] guide.
 
 ## Step 1 - Add a cube to your scene
 
@@ -70,6 +68,7 @@ You'll see something that looks a little like this:
 
 Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
 
+[getting_started]: /getting-started
 [add_material]: /images/content_creation/add_material.png
 [assign_material]: /images/content_creation/assign_material.png
 [diffuse_color]: /images/content_creation/material_editor.png
