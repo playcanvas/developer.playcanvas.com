@@ -6,8 +6,6 @@ position: 7
 
 The Designer Settings panel allows you to set up your preferences for the Designer for the current Scene. 
 
-Note that unless stated otherwise SI units are used by default.
-
 The properties that are settable are:
 
 * Grid settings
