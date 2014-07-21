@@ -72,7 +72,7 @@ Let's take a look at the high level workflow:
 
 ## Assets
 
-Your projects are created and managed in the cloud by PlayCanvas. As you build your web app, you will want to start incorporating 3D assets (a car, a spaceship, an animated character, etc). PlayCanvas Platform allows you to import assets that have been exported from just about any 3D content creation tool, including 3D Studio Max, Maya, SketchUp and Blender. Once these assets are imported into your asset library, you can quickly deploy them into your app.
+Your projects are created and managed in the cloud by PlayCanvas. As you build your web app, you will want to start incorporating 3D assets (a car, a spaceship, an animated character, etc). The PlayCanvas Platform allows you to import assets that have been exported from just about any 3D content creation tool, including 3D Studio Max, Maya, SketchUp and Blender. Once these assets are imported into your asset library, you can quickly deploy them into your app.
 
 The other major asset type in a PlayCanvas project is code. PlayCanvas offers the developer a wide variety of pre-baked functional components that can be bolted together to construct game entities. But it is possible to customize and extend the default behaviour of these components through the writing of scripts. For example, you might write a script that defines the handling of a vehicle or the AI of a non-player character. The code can be developed and served from a local web server or pulled from a linked repository hosted by BitBucket or GitHub.
 

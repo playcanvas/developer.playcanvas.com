@@ -14,5 +14,5 @@ You can upload assets by dropping files on the dashboard, or by clicking the New
 
 By default only Source Assets are shown in dashboard. You can use the filter to show and hide Target Assets too. 
 
-When you delete a Source Asset, all Target Assets created by from the Source will be deleted as well.
+When you delete a Source Asset, all Target Assets created from the Source Asset will be deleted as well.
 

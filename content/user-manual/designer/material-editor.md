@@ -4,17 +4,17 @@ template: page.tmpl.html
 position: 8
 ---
 
-Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as it's color, shininess, bumpiness.
+Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.
 
-In PlayCanvas, a material is an Asset type which collects all these properties together. By default, it represents a Phong material. This exposes the fundamental properties that can use to create many different types for visual effects, from smooth plastic, to rough wood, or scratched metal.
+In PlayCanvas, a material is an Asset type which collects all these properties together. By default, it represents a Phong material. This exposes the fundamental properties that can be used to create many different types for visual effects, from smooth plastic, to rough wood, or scratched metal.
 
 ## Importing Materials
 
-Materials are imported automatically when you upload a source model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they existing in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
+Materials are imported automatically when you upload a source model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they exist in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
 
 ## Creating New Materials
 
-You can create new material directly from the PlayCanvas Designer interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
+You can create new materials directly from the PlayCanvas Designer interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
 
 ![add_material](/images/content_creation/add_material.png)
 
@@ -54,7 +54,7 @@ Once you have a material selected you can edit it's properties. Click on each he
 Ambient color determines how the material appears in ambient light.
 
 ### Diffuse
-Diffuse properties define the color of the material. The diffuse texture is where you set your color texture.
+Diffuse properties define the base color of the material. The diffuse texture is where you set your color texture.
 
 ### Specular
 Specular properties defines the color of the specular highlights. I.e. the shininess
