@@ -5,7 +5,7 @@ clean:
 
 build: clean node_modules
 	mkdir build
-	node build.js
+	node build.js local
 
 dev: clean node_modules
 	mkdir build
