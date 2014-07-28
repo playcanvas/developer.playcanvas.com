@@ -49,7 +49,7 @@ pc.script.create("input", function (context) {
 });
 ~~~
 
-In the example above we have two scripts *player.js* and *input.js* are attached the the same Entity. The Input script checks for input on the keyboard and if the left or right arrow key is pressed it tells the Player script to move the player.
+In the example above we have two scripts: *player.js* and *input.js* are attached to the same Entity. The Input script checks for input on the keyboard and if the left or right arrow key is pressed it tells the Player script to move the player.
 
 This is the line that communicates between script instances
 

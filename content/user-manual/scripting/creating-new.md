@@ -8,9 +8,9 @@ position: 1
 
 ![Attribute Editor showing script component](/images/platform/component_script.png "Add urls of scripts to the script component")
 
-Script Components are attached to Entities in the same way as all other Components using the *New Component* command in the **Component** menu.
+Script Components are attached to Entities in the same way as all other Components using the *Add Component* command in the **Entity > add component** menu.
 
-Once you have added a Script Component you can specify the URLs of the javascript files to load. The script component has a field named URL into which you can add paths to your scripts or other javascript libraries. Just type the URL of your script and press Enter. You can also select an existing script from the [Scripts Explorer][scripts_explorer] and drag & drop it in here.
+Once you have added a Script Component you can specify the URLs of the javascript files to load. The script component has a field named URL into which you can add paths to your scripts or other javascript libraries. Just type the URL of your script and press Enter. You can also select an existing script from the [Scripts Explorer][scripts_explorer] and drag & drop it in here. Or just type a name into the URL box and press Enter to create a new script, then click the name to open.
 
 The paths you supply for the scripts are relative your Local Server or Code Repository, e.g. `directory/script.js` see the [scripting workflow][coding_workflow] page for details on how to set these up.
 
@@ -22,7 +22,7 @@ If the javascript library is included on your Local Server or Code Repository th
 directory/javascript_library.js
 ~~~
 
-If the javascript library is hosted on a remote server you can specify a fully qualified URl
+If the javascript library is hosted on a remote server you can specify a fully qualified URL.
 
 ~~~sh~~~
 http://example.com/javascript_library.js
@@ -30,7 +30,7 @@ http://example.com/javascript_library.js
 
 To specify multiple scripts for a single component, add one URL per line.
 
-If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click the script icon next to the URL to launch the editor.
+If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click a script's name below the URL input box, or on one of the list of scripts in the adjacent script panel to launch the editor.
 
 <div class="alert alert-info">
 If you are using Github or Bitbucket you can not edit you scripts in PlayCanvas, you must make your commits through your source control system.

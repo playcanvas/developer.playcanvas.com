@@ -51,7 +51,7 @@ CameraScript.prototype.update = function (dt) {
 };
 ~~~
 
-In this sample pressing the spacebar triggers a change in field of view. On the first line we `get()` the value of `fov` from the entity that this script is attached to.
+In this sample pressing the spacebar triggers a change in field of view. On the fourth line we `get()` the value of `fov` from the entity that this script is attached to.
 
 In the middle we detect the keypress and update the value of the `fov`.
 

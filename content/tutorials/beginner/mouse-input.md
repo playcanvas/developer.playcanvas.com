@@ -114,7 +114,7 @@ as the `event` property in `pc.input.MouseEvent`.
 
 ### Moving the mouse
 
-The first event handler is `onMouseMove`, this is fired whenever the mouse moves. For a `EVENT_MOUSEMOVE` event the `MouseEvent` object will have the current position of the mouse `x`, and `y` and also the change in position since the last event in `dx` and `dy`. In our tutorial we're using the current position of the mouse and moving the cube away from the cursor position.
+The first event handler is `onMouseMove`, this is fired whenever the mouse moves. For a `EVENT_MOUSEMOVE` event the `MouseEvent` object will have the current position of the mouse `x`, and `y` and also the change in position since the last event in `dx` and `dy`. In our tutorial we're using the current position of the mouse and moving the cube to the cursor position.
 
 ### Mouse buttons
 

@@ -18,7 +18,7 @@ A packaged app is essentially a ZIP file containing all the resources that make 
 
 ### Create the Manifest
 
-This file must be called manifest.webapp and be created in the root folder of your extracted exported PlayCanvas game. An example manifest (taken from the [Dungeon Fury][dungeon_fury] game) is shown below:
+This file must be called manifest.webapp and be created in the root folder of your extracted and exported PlayCanvas game. An example manifest (taken from the [Dungeon Fury][dungeon_fury] game) is shown below:
 
 ~~~javascript~~~
 {
@@ -46,7 +46,7 @@ A reference that fully documents this manifest format can be found on [MDN][mdn]
 
 ### Create App Icons
 
-In the [icons description][icons] in the manifest reference, it states you must include a 128x128 icon for inclusion in the Firefox Marketplace and a 60x60 icon to represent your app on the device. Place these images somewhere in your extracted PlayCanvas app folder and set the 'icons' propetry accordingly in your webapp.manifest.
+In the [icons description][icons] in the manifest reference, it states you must include a 128x128 icon for inclusion in the Firefox Marketplace and a 60x60 icon to represent your app on the device. Place these images somewhere in your extracted PlayCanvas app folder and set the 'icons' property accordingly in your webapp.manifest.
 
 ### Embed External Resources
 

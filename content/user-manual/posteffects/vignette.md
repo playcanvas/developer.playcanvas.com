@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 6
 ---
 
-In photography and optics, vignettings is a reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame. <small>(from [Wikipedia][wikipedia])</small>
+In photography and optics, vignetting is a reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame. <small>(from [Wikipedia][wikipedia])</small>
 
 Here is an image without the effect:
 

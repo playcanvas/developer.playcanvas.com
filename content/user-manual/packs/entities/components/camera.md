@@ -29,7 +29,7 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
     <tr><td>Near Clip</td><td>The distance in camera space from the camera's eye point to the near clip plane.</td></tr>
     <tr><td>Far Clip</td><td>The distance in camera space from the camera's eye point to the far clip plane.</td></tr>
     <tr><td>Priority</td><td>A number that defines the order in which camera views are rendered by the engine. Higher values have a higher priority and will be rendered sooner.</td></tr>
-    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. It is defined by normalised coordinates (0 to 1) in the following format:
+    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. This allows you to, when two or more cameras are enabled in the scene, to show multiple viewpoints at the same time on different areas of the user's screen, such as a 'quad view' arrangement, or a 'picture in picture' viewpoint. For an example see [our Lambo game][lambo]. It is defined by normalised coordinates (0 to 1) in the following format:
         <ul>
             <li>x: The lower left x coordinate</li>
             <li>y: The lower left y coordinate</li>
@@ -45,3 +45,4 @@ You can control a camera component's properties using a [script component][scrip
 
 [script_component]: /user-manual/packs/entities/components/script
 [docs]: /engine/api/stable/symbols/pc.fw.CameraComponent.html
+[lambo]: http://apps.playcanvas.com/will/lambo/lambo

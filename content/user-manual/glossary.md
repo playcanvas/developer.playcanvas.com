@@ -6,7 +6,7 @@ template: page.tmpl.html
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
 
 <h2 id="app_context">ApplicationContext</h2>
-The `pc.fw.ApplicationContext` class is where all the useful engine stuff that your application needs to run is store. It stores, the scene graph hierarchy, the Component Systems and the
+The `pc.fw.ApplicationContext` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the
 keyboard and mouse handlers. The ApplicationContext is made available to all user scripts by being passed into the initial callback from `pc.script.create`.
 
 <h2 id="asset">Asset</h2>
@@ -16,7 +16,7 @@ An asset is a unit of data that is typically imported into PlayCanvas from a con
 The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset](#source_asset) e.g. an FBX scene file into one or more [Target Assets](#target_asset) e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Designer.
 
 <h2 id="attribute">Attribute</h2>
-An attribute is a property of a [Component](#component). Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls, and the updates are live-streamed to the connected game in real time.
+An attribute is a property of a [Component](#component). Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Designer’s ‘Play’ icon, the updates are live-streamed to the connected game in real time.
 
 <h2 id="component">Component</h2>
 Components describe the properties and functionality of an [Entity](#entity). In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.
@@ -28,18 +28,18 @@ The DOM (Document Object Model) is a way of representing an HTML document. Web b
 is displayed in the users browser.
 
 <h2 id="entity">Entity</h2>
-An Entity is the one of the building blocks of your application in the [PlayCanvas Engine](#engine). Often an Entity will represent a single object in your game or application, though a single object may also be made of of multiple Entities.
+An Entity is the one of the building blocks of your application in the [PlayCanvas Engine](#engine). Often an Entity will represent a single object in your game or application, though a single object may also be made of multiple Entities.
 
-All Entities are have a transform matrix to provide their position and orientation;
-a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.
+All Entities have a transform matrix to provide their position and orientation;
+they have a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.
 
 <h2 id="framework">Framework</h2>
 The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Designer. See the [API Reference](/engine/api/stable) for more details.
 
 <h2 id="gizmo">Gizmo</h2>
-A Gizmo is a control that dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of
+A Gizmo is a control that can be dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of
 three color-coded parts, one for each axis in 3D space. Red is the X-axis, green is the Y-axis and blue is the Z-axis. Sometimes there will also be controls for manipulating
-more than one axis at once, e.g. X and Y, Y and Z, Z and X.
+more than one axis at once, e.g. the translate gizmo features clickable plane icons to allow translation in two dimensions at once, on the X and Y, Y and Z, Z and X planes.
 
 <h2 id="material">Material</h2>
 A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Designer, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
@@ -66,5 +66,5 @@ A source asset is the original file that has been uploaded into PlayCanvas. Sour
 A target asset is a file that can be loaded into your game at runtime. It will be in a format ready to use in the Engine. Target Assets are usually the product of a [Source Asset](#source_asset) being uploaded and imported through the asset pipeline.
 
 <h2 id="transform">Transformation Matrix</h2>
-A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity](#entity) has a transformation matrix accessible via the `getLocalTransform()` method.
+A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular: translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity](#entity) has a transformation matrix accessible via the `getLocalTransform()` method.
 

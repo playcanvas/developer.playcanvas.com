@@ -8,7 +8,7 @@ The 'script' component enables an entity to run user-supplied scripts. In this w
 
 ![Component Interface](/images/platform/component_script.png)
 
-To assign a script. type its name into the URL box. For example, if you want to create a script called car.js, type car.js into the box and hit ENTER. This will create a script block below. If you click the hyperlinked script name, it will open in the PlayCanvas Script Editor. If you type a name of an existing script, autocomplete should activate and again, just press ENTER to add the script to the component.
+To assign a script, type its name into the URL box. For example, if you want to create a script called car.js, type car.js into the box and hit ENTER. This will create a script block below. If you click the hyperlinked script name, it will open in the PlayCanvas Code Editor. If you type a name of an existing script, autocomplete should activate and again, just press ENTER to add the script to the component.
 
 ## Properties
 

@@ -11,7 +11,7 @@ The 'rigidbody' component enables an entity to participate in the scene's physic
 #### Dynamic (and Kinematic)
 ![Component Interface](/images/platform/component_rigidbodydynamic.png)
 
-Note that you must add a [collision component](/tools/designer/components/collision.html) in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
+Note that you must add a [collision component](/tools/designer/components/collision.html) to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
 
 ## Properties
 
@@ -21,13 +21,13 @@ Note that you must add a [collision component](/tools/designer/components/collis
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Enabled</td><td>If selected and if the component has a sibling collision component, the rigid body will participate in the physics simulation.</td></tr>
     <tr><td>Type</td><td>The type of the body:<br><ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul></td></tr>
-    <tr><td>Mass</td><td>The mass of the body. If world units in your scene are meters, units for mass is kilograms.</td></tr>
-    <tr><td>Linear Damping</td><td>Specifies the proportion of linear velocity is that lost by the body every second.</td></tr>
-    <tr><td>Angular Damping</td><td>Specifies the proportion of angular velocity is that lost by the body every second.</td></tr>
-    <tr><td>Linear Factor</td><td>Multiplier for a body's linear movement in each world axis.</td></tr>
-    <tr><td>Angular Factor</td><td>Multiplier for a body's angular movement in each world axis.</td></tr>
-    <tr><td>Friction</td><td>Controls how a body loses velocity when in contact with other bodies.</td></tr>
-    <tr><td>Restitution</td><td>A measure of the bounciness of a body between 0 and 1.</td></tr>
+    <tr><td>Mass</td><td>The mass of the body. If world units in your scene are meters, the unit for mass is kilograms.</td></tr>
+    <tr><td>Linear Damping</td><td>Specifies the proportion of linear velocity that is lost by the body every second.</td></tr>
+    <tr><td>Angular Damping</td><td>Specifies the proportion of angular velocity that is lost by the body every second.</td></tr>
+    <tr><td>Linear Factor</td><td>Multiplier for a body's linear movement in each world axis. If set to 0 for any axis no movement will occur in this axis - useful for the creation of 2D games or 1D/2D movement.</td></tr>
+    <tr><td>Angular Factor</td><td>Multiplier for a body's angular (rotational) movement about each world axis. If set to 0 for any axis, no rotation will occur around this axis.</td></tr>
+    <tr><td>Friction</td><td>Controls how quickly a body loses velocity when in contact with other bodies.</td></tr>
+    <tr><td>Restitution</td><td>A measure of the bounciness of a body between 0 and 1. Warning: setting to 1 means a moving body will never come to a stop (unless  colliding with other bodies with restitutions below 1, or unless a stop is scripted).</td></tr>
 </table>
 
 ## Scripting Interface

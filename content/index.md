@@ -5,9 +5,9 @@ template: intro.tmpl.html
 
 Welcome to the PlayCanvas Developer Site.
 
-Whether you are a programmer, a designer or a content creator, this is the place to come when you want to learn about PlayCanvas. Here are a quick links to get you to the right place. Alternatively, browse the full documentation using the menu on the left. Enjoy!
+Whether you are a programmer, a designer or a content creator, this is the place to come to when you want to learn about PlayCanvas. Here are a few quick links to get you to the right place. Alternatively, click the links to the User Manual or Tutorial sections shown above and browse the full documentation using the menu on the left. Enjoy!
 
-We suggest you start reading the [User Manual](/user-manual), it's the complete guide to PlayCanvas, read this through to learn everything there is know.
+We suggest you start reading the [User Manual](/user-manual), it's the complete guide to PlayCanvas, read this through to learn everything there is to know.
 
 [Getting Started](/getting-started) - Dive straight in and build your first PlayCanvas application.
 

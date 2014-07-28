@@ -66,7 +66,7 @@ Emissive materials are unlit by lights and glow.
 Opacity sets the transparency level.
 
 ### Normals
-Use this to specify normal maps (bumpiness).
+Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not bump maps).
 
 ### Reflectivity
 You can set a reflection texture on your material.
@@ -75,4 +75,7 @@ You can set a reflection texture on your material.
 Light maps are blended over the top of the diffuse color to "bake in" lighting.
 
 ### Render States
-Modify the render states of the Material. From here you can enable or disable the Depth Test and Depth Write. You can choose to cull front or back faces; and choose the blend mode of Normal or Additive.
+Modify the render states of the Material. From here you can enable or disable the Depth Test and Depth Write. You can choose to cull front or back faces; and choose the blend mode of:
+* None (for no blending).
+* Normal (which uses materials' alpha values to display typical transparency/translucency).
+* Additive (to form a material that, the less transparent it is, the more of its color is added to the material behind it - used for halo lighting effects etc.).

@@ -7,7 +7,7 @@ template: page.tmpl.html
 
 Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types.
 
-If you've got other suggestions of this page. Then let us know on the [forums](http://forum.playcanvas.com/)
+If you've got other suggestions for this page. Then let us know on the [forums](http://forum.playcanvas.com/)
 
 ## Graphics
 

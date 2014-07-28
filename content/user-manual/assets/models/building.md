@@ -4,9 +4,21 @@ template: page.tmpl.html
 skip: true
 ---
 
-Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example, Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
+Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
 
 PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+
+Some modelling and animation programs to consider: 
+* Free options: Blender*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio*.
+* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
+* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max*, Autodesk Maya*, Luxology Modo*.	
+A * denotes the program can create animations too.
+
+For generating textures, consider these programs:
+* Free: Krita desktop, GIMP, xNormal, MaPZone, Blender, MyPaint.
+* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Clip Studio Paint/Manga Studio, SERIF DrawPlus / PhotoPlus.
+Note many of the paid programs listed above for modelling also allow texture painting.
+If you would like more options, this [external wiki][wiki] page can help. Please note that some of the information may be out-of-date.
 
 ## General Considerations for Mesh Construction
 
@@ -91,7 +103,7 @@ If the material has an opacity map, it will override any alpha channel that may 
 
 ** Bump **
 
-Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the realtime rendering more closely.
+Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the real-time rendering more closely.
 
 There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
 
@@ -122,3 +134,5 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
 ![Sphere map](/images/artist_guide/maya_material_editor.jpg)
+
+[wiki]: http://wiki.polycount.com/CategoryTools
