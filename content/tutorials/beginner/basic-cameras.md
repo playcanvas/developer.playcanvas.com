@@ -28,7 +28,7 @@ Like all Components, the Camera Component has a set of properties which alter it
 
 ### `fov`
 
-The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (°) so the default value of 45° means that the top edge of the view to the bottom edge of the view form an arc of 45° from the position of the camera
+The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (&deg;) so the default value of 45° means that the top edge of the view to the bottom edge of the view form an arc of 45&deg; from the position of the camera
 
 ![Field of view](/images/platform/field_of_view.png)
 

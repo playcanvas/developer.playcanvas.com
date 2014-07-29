@@ -18,7 +18,7 @@ You should look at the [Pack][designer] for this tutorial yourself in the Design
 
 ## The Camera script
 
-The camera script is a normal PlayCanvas javascript file, for more information on scripts see the [scripting guide][scripting_guide]. The full source for the script is found at the bottom of this tutorial, or in the [tutorials code repository][tutorials_code]
+The camera script is a normal PlayCanvas javascript file, for more information on scripts see the [scripting guide][scripting_guide]. The full source for the script is found at the bottom of this tutorial, or in the [tutorials code repository][tutorials_code] (note you can only access this if you are logged in).
 
 ### The setup
 
@@ -159,6 +159,6 @@ pc.script.create('first_person_camera', function (context) {
 
 [designer]: http://playcanvas.com/playcanvas/tutorials/designer#pack/e22564b3-d380-4352-8e69-4fb0155f025a
 [scripting_guide]: http://developer.playcanvas.com/engine/scripting.html
-[tutorials_code]: https://bitbucket.org/playcanvas/tutorials/src/54c7046ebc090ebd84a8225d006ea43e24ec1cba/camera/?at=default
+[tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
 [mouse_event]: /engine/api/stable/symbols/pc.input.MouseEvent.html
 [entities_intro]: /tutorials/basic/manipulating-entities

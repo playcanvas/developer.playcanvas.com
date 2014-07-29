@@ -11,6 +11,8 @@ You can find our complete collection of video tutorials on our [YouTube Channel]
 
 ## Articles
 
+The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page](https://playcanvas.com/playcanvas/tutorials). Note that you must be logged in to the PlayCanvas site to access them.
+
 ### Beginner
 
 * [Basic Keyboard Input][keyboard_input]

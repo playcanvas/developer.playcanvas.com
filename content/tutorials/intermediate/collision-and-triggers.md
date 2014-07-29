@@ -36,7 +36,7 @@ To create a rigid body in your Pack, pick an Entity and add a *rigidbody* compon
 
 ![rigidbody component](/images/platform/component_rigidbody.png)
 
-For details on each property take a look at the [*rigidbody* documentation](rigidbody_docs).
+For details on each property take a look at the [*rigidbody* documentation](http://developer.playcanvas.com/user-manual/packs/entities/components/rigidbody/).
 
 For this demo, the important property is the **Type**. You can pick one of three options:
 
