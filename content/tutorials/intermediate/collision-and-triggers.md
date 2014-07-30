@@ -11,7 +11,7 @@ This tutorial introduces the basics of rigid-body physics, collision detection a
 
 ## The Collision Component
 
-The *collision* component defines a shape which can be used either to trigger events if another Entity enters or exits it -- we call this a Trigger Volume -- or it can be used together with the *rigidbody* component to give an Entity physical properties in your game -- like a bounching ball or a heavy crate.
+The *collision* component defines a shape which can be used either to trigger events if another Entity enters or exits it -- we call this a Trigger Volume -- or it can be used together with the *rigidbody* component to give an Entity physical properties in your game -- like a bouncing ball or a heavy crate.
 
 The most important property of a *collision* component is it's **Type**, this determines the shape of the volume that will be used. There are four options:
 
@@ -30,13 +30,13 @@ You can see the trigger volume underneath the ramp displayed as a blue outline.
 
 ### Rigid Bodies
 
-A rigid body is a physical presence in your game world. You can set it up with real physics properties like Mass and Friction; it will collide with other rigid bodies and respond in realistic manner.
+A rigid body is a physical presence in your game world. You can set it up with real physics properties like Mass and Friction; it will collide with other rigid bodies and respond in a realistic manner.
 
-To create a rigid body in your Pack, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of you object.
+To create a rigid body in your Pack, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
 
 ![rigidbody component](/images/platform/component_rigidbody.png)
 
-For details on each property take a look at the [*rigidbody* documentation](rigidbody_docs).
+For details on each property take a look at the [*rigidbody* documentation](http://developer.playcanvas.com/user-manual/packs/entities/components/rigidbody/).
 
 For this demo, the important property is the **Type**. You can pick one of three options:
 
@@ -51,7 +51,7 @@ The first Entity we need in this tutorial is the green block that forms the grou
 
 ![Ground Entity](/images/tutorials/collision/ground_setup.png)
 
-You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly stickier and slightly bouncier than the defaults.
+You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
 ## Setting up the trigger
 

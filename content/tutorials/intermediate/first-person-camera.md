@@ -18,7 +18,7 @@ You should look at the [Pack][designer] for this tutorial yourself in the Design
 
 ## The Camera script
 
-The camera script is a normal PlayCanvas javascript file, for more information on scripts see the [scripting guide][scripting_guide]. The full source for the script is found at the bottom of this tutorial, or in the [tutorials code repository][tutorials_code]
+The camera script is a normal PlayCanvas javascript file, for more information on scripts see the [scripting guide][scripting_guide]. The full source for the script is found at the bottom of this tutorial, or in the [tutorials code repository][tutorials_code] (note you can only access this if you are logged in).
 
 ### The setup
 
@@ -90,7 +90,7 @@ update: function (dt) {
 },
 ~~~
 
-In the update method we update the orienation and the position of the camera. First we set the Euler Angles (see the [Entities intro][entities_intro] for more about Eulers) using the values that are updated by mouse events. Then we check for keyboard input. We're listening for the four arrow keys and if they are pressed we translate the Entity in local space. We use local space because we always want to move forward/back orleft/right relative to the direction the camera is facing.
+In the update method we update the orientation and the position of the camera. First we set the Euler Angles (see the [Entities intro][entities_intro] for more about Eulers) using the values that are updated by mouse events. Then we check for keyboard input. We're listening for the four arrow keys and if they are pressed we translate the Entity in local space. We use local space because we always want to move forward/back or left/right relative to the direction the camera is facing.
 
 ## Summary
 
@@ -159,6 +159,6 @@ pc.script.create('first_person_camera', function (context) {
 
 [designer]: http://playcanvas.com/playcanvas/tutorials/designer#pack/e22564b3-d380-4352-8e69-4fb0155f025a
 [scripting_guide]: http://developer.playcanvas.com/engine/scripting.html
-[tutorials_code]: http://bitbucket.org/playcanvas/tutorials
+[tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
 [mouse_event]: /engine/api/stable/symbols/pc.input.MouseEvent.html
 [entities_intro]: /tutorials/basic/manipulating-entities

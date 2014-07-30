@@ -23,7 +23,7 @@ This is the main interface to the PlayCanvas Designer. You can see labeled the m
 * **Attribute Editor** Detailed properties of each [Component][component] attached to the selected Entity.
 * **Design View** A 3D view onto your scene, use this view to select, position and orientate Entities.
 * **Assets Explorer** A view of all the Assets in the current Project. You can search for assets by name, filter by type and also drag and drop assets to various slots or in the Design View.
-* **Scripts Explorer** A view of all the Scripts in the current Project. You can drag and drop scripts from this view on the Script Component.
+* **Scripts Explorer** A view of all the Scripts in the current Project. You can drag and drop scripts from this view into the Script Component box within the attribute editor panel (once a Script Component has been added to an [Entity][entity]).
 
 [pack]: /user-manual/glossary#pack
 [entity]: /user-manual/glossary#entity

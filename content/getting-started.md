@@ -17,7 +17,7 @@ Once you've signed in you will be greeted with your profile page. Your profile p
 
 A Project is a collection of:
 
-* **Packs** - An collection Entities used to build up a part of your game. A Pack could be a single level or your entire game. It depends.
+* **Packs** - An collection [Entities][entity] used to build up a part of your game. A Pack could be a single level or your entire game. It depends.
 * **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
 * **Code** - Your source code. You can either write code using the PlayCanvas built-in code editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
 * **Exports** and **Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
@@ -141,3 +141,4 @@ With that done, you can select the Launch button from the toolbar once again. Th
 [collaborators]: /images/platform/collaborators.png "Collaborators"
 [pack_explorer]: /images/platform/pack_explorer.png "Pack Explorer"
 [launch_buttons]: /images/platform/launch_buttons.png "Launch Buttons"
+[entity]: /user-manual/glossary/#entity

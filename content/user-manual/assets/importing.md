@@ -30,4 +30,4 @@ Note, if you have the Designer open while uploading assets to the Dashboard, the
 
 ## Updating Existing Assets
 
-If you want to update an Asset that you have already created follow the same steps as above. If you upload an Asset of the same type and same name as an existing Asset, PlayCanvas will update the existing asset with new upload.
+If you want to update an Asset that you have already created follow the same steps as above. If you upload an Asset of the same type and same name as an existing Asset, PlayCanvas will update the existing asset with the new upload.

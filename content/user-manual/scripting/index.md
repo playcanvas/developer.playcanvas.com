@@ -12,6 +12,8 @@ Generally you won't have to worry about the engine code, it's a single javascrip
 
 Scripts are individual javascript files, which are attached to Script [Components][components] on [Entities][entities] via the PlayCanvas Designer. Generally, a script file should define a single javascript object which is instantiated once for each Entity that it is attached to.
 
+**Note please make sure your scripts are not cached by the browser - otherwise you will not see the results of changes to your scripts. [See here.][caching]**
+
 ## Terminology
 
 First off, lets define a few pieces of terminology.
@@ -22,5 +24,6 @@ First off, lets define a few pieces of terminology.
 * ***Script Instance*** A script instance is script object which has been instantiated at runtime, using the `new` keyword in javascript. A script instance is created for every Entity that has the script attached.
 
 [application_context]: /engine/api/stable
-[components]: /user-manual#gizmo
-[entities]: /user-manual#entities
+[components]: /user-manual/packs/components/
+[entities]: /user-manual/packs/entities/
+[caching]: /user-manual/scripting/debugging/

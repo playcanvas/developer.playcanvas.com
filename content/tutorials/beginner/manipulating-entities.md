@@ -5,7 +5,7 @@ template: tutorial-page.tmpl.html
 
 In this tutorial we'll show you how you can change an Entity's position, orientation and scale.
 
-Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be point in space.
+Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be a point in space.
 
 Entities are a special form of graph node, they inherit a lot of their behavior from `pc.scene.GraphNode`. All the manipulations we apply below can also be applied to graph nodes
 
@@ -23,7 +23,7 @@ An important part of understanding how to move and manipulate Entities is unders
 
 ### Hierarchy
 
-An important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will `(1,1,0)`
+An important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will be `(1,1,0)`
 
 ## Position
 
@@ -37,7 +37,7 @@ var lp = entity.getLocalPosition();
 var wp = entity.getPosition();
 ~~~
 
-These methods both return a `pc.Vec3`.
+These methods both return a `pc.Vec3` (a vector quantity in the array form [x,y,z]).
 
 Setting the position of an entity is just as straightforward.
 
@@ -112,7 +112,7 @@ For example, to rotate an Entity by 180 degrees around the world up axis:
 entity.rotate(0, 180, 0);
 ~~~
 
-Or to rotate the Entity 90 degrees around its local z axis do:
+Or to rotate the Entity 90 degrees around its local x axis do:
 
 ~~~js~~~
 entity.rotateLocal(90, 0, 0);

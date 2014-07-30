@@ -4,7 +4,7 @@ template: page.tmpl.html
 skip: true
 ---
 
-The 'skybox' component enables a skybox in the scene.
+The 'skybox' component enables a skybox in the scene. A skybox surrounds the game world and determines what any camera will see at the ‘edge of the world’ when no objects are in view.
 
 ![Component Interface](/images/platform/component_skybox.png)
 
@@ -25,7 +25,7 @@ The 'skybox' component enables a skybox in the scene.
 
 ## Scripting Interface
 
-You can control an skybox component's properties using a [script component][script_component]. The skybox component's scripting interface is [here][docs].
+You can control a skybox component's properties using a [script component][script_component]. The skybox component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
 [docs]: /engine/api/stable/symbols/pc.fw.SkyBoxComponent.html

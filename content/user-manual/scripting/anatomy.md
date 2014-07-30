@@ -28,7 +28,7 @@ pc.script.create("script_name", function (context) {
 Here is the skeleton of a script, it shows the minimum amount of code necessary to make a functioning script.
 
 <div class="alert alert-info">
-Actually, you could leave the `initialize` and `update` methods out of a script. But most scripts will need an update method in order actually do anything, and initialize is useful for setting up values before your game starts.
+Actually, you could leave the `initialize` and `update` methods out of a script. But most scripts will need an update method in order to actually do anything, and initialize is useful for setting up values before your game starts.
 </div>
 
 We'll break down each part of this script section by section.

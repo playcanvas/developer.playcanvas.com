@@ -10,9 +10,11 @@ In order to create scripts for PlayCanvas, it is vital that you know how to acce
 
 Chrome has [Developer Tools](https://developers.google.com/chrome-developer-tools/) integrated directly into the browser. Access them by pressing F12 on Windows or ALT-CMD-I on Mac.
 
+
 ### Disabling the Cache
 
 One thing to be aware of is Chrome's caching behavior. By default, Chrome will often attempt to load resources from a local browser cache. If you are developing scripts or making other changes to your game on a regular basis, you may find that these changes are not reflected on a reload. Therefore, while you are developing, it is wise to disable the cache. To do this, open Developer Tools, click the cog in the top right and check the 'Disable cache (while DevTools is open)' option as shown below:
+
 
 <img alt="Disable cache in Chrome" width="640" src="/images/platform/browser_chrome_disable_cache.png"></img>
 

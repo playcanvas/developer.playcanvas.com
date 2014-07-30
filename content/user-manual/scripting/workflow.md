@@ -12,7 +12,7 @@ There are two ways for you to run your application scripts while developing Play
 
 By far the simplest way of developing scripts for PlayCanvas applications is by using the built-in code editor and storing your scripts in PlayCanvas so that the server can access them at all times.
 
-This is how your Project will be set up be default when you create it. If you have linked your Project to an external Code Repository you can unsync the Code Repository at any time to revert back to using the code directory.
+This is how your Project will be set up by default when you create it. If you have linked your Project to an external Code Repository you can unsync the Code Repository at any time to revert back to using the code directory.
 
 ### Adding a new script
 
@@ -26,7 +26,7 @@ Alternatively you can open the [Scripts Explorer][scripts_explorer] and drag and
 You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you have edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Scripts Explorer][scripts_explorer] in the Designer.
+Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Scripts Explorer][scripts_explorer] in the Designer.
 
 ## Local Server
 
@@ -66,7 +66,7 @@ Serving HTTP on 0.0.0.0 port 51000 ...
 
 ### Running applications against the local server
 
-Once you have started your local server you can see test your server is running correctly by visiting `http://localhost:51000` in your web browser.
+Once you have started your local server you can test to see if your server is running correctly by visiting `http://localhost:51000` in your web browser.
 You will see a directory of files. Like this:
 
 ![served directory](/images/platform/localserver.png "Local server directory")
@@ -83,7 +83,7 @@ For these scenarios we provide support for external code repositories. That is, 
 
 ![code repository][code_repository]
 
-We provide simple integration with two popular third-part code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](http://platform.playcanvas.com/account/services) page. Just click the authorize button for the services you wish to use.
+We provide simple integration with two popular third-party code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](http://platform.playcanvas.com/account/services) page. Just click the authorize button for the services you wish to use.
 
 Once the service is authorized, you setup your project with the particular repository you wish to use. Go to your project's code page; enter the username and repository name for your application; then click the Update button.
 
@@ -102,9 +102,9 @@ You can easily switch between using local code and a code repository when using 
 
 ![Launch Buttons][launch_buttons]
 
-**Launch** (on the left) will launch using code on the server, i.e. your code repository or code directory, **Launch Local** (on the right) will launch against a locally running server
+**Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local server)** will launch against a locally running server
 
-Exporting packs will only use server-side for source code resources.
+Exporting packs will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
 
 [server_osx_linux]: /downloads/localserver
 [python]: http://www.python.org/download/

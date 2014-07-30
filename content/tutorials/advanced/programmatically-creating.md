@@ -39,7 +39,7 @@ context.root.addChild(entity);
 
 An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. Each `ComponentSystem` provides  a `addComponent(entity, data)` method which takes the Entity and a data object as arguments.
 
-Each Component type has different properties that can be passed in on the data object, see the Component's documentation for more detail about which properties are available. The `data` argument can be left out and default values will be used.
+Each Component type has different properties that can be passed in on the data object, see the [Component's documentation](http://developer.playcanvas.com/user-manual/packs/components/) for more detail about which properties are available. The `data` argument can be left out and default values will be used.
 
 ## Removing Components
 

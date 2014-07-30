@@ -118,7 +118,7 @@ The second method of handling key presses is to listen for events. Two keyboard 
 * `pc.input.EVENT_KEYDOWN`
 * `pc.input.EVENT_KEYUP`
 
-[DOM](dom) keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.input.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.input.KeyboardEvent` object which contains the key code of the key that was pressed on released.
+[DOM][dom] keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.input.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.input.KeyboardEvent` object which contains the key code of the key that was pressed on released.
 
 Notice we are also passing a third argument to on(), which is `this` or the Script Instance itself. The third argument to on() is used as `this` in the event callbacks, so we need to pass it in here, otherwise it won't be set to the correct object.
 
@@ -134,4 +134,4 @@ Try it out in full screen [here][tutorial] or at the top of the page. Compare ta
 
 [project]: http://playcanvas.com/playcanvas/tutorials
 [tutorial]: http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard
-[dom]: /user-manual/glossary#dom
+[dom]: /user-manual/glossary#dom 
