@@ -44,7 +44,7 @@ m.source("content")
     .use(metadata());
 
 // set environment
-m.metadata().local = (env === null);
+m.metadata().local = (env === "local");
 m.metadata().prod = (env === "prod");
 m.metadata().dev = (env === "dev");
 

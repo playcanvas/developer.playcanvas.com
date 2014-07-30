@@ -28,8 +28,8 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
     <tr><td>Ortho Height</td><td>The distance in world units between the top and bottom clip planes of an orthographic camera. This property is only displayed if 'Projection' is set to 'Orthographic'.</td></tr>
     <tr><td>Near Clip</td><td>The distance in camera space from the camera's eye point to the near clip plane.</td></tr>
     <tr><td>Far Clip</td><td>The distance in camera space from the camera's eye point to the far clip plane.</td></tr>
-    <tr><td>Priority</td><td>A number that defines the order in which camera views are rendered by the engine. Higher values have a higher priority and will be rendered sooner.</td></tr>
-    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. This allows you to, when two or more cameras are enabled in the scene, to show multiple viewpoints at the same time on different areas of the user's screen, such as a 'quad view' arrangement, or a 'picture in picture' viewpoint. For an example see [our Lambo game][lambo]. It is defined by normalised coordinates (0 to 1) in the following format:
+    <tr><td>Priority</td><td>A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first.</td></tr>
+    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalised coordinates (0 to 1) in the following format:
         <ul>
             <li>x: The lower left x coordinate</li>
             <li>y: The lower left y coordinate</li>

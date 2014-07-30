@@ -108,7 +108,7 @@ So obviously this is all very good news, but you want your web app to run everyw
         <td>&#x2713;</td><td></td><td></td><td></td><td></td><td></td>
     </tr>
     <tr><td><a href="http://www.apple.com/safari/">Safari</a></td><td>5.1+</td>
-        <td></td><td>&#x2713;</td><td></td><td></td><td></td><td></td>
+        <td></td><td>&#x2713;</td><td></td><td></td><td></td><td>&#x2713;</td>
     </tr>
     <tr><td><a href="http://www.opera.com/">Opera</a></td><td>12.0+</td>
         <td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td></td><td>&#x2713;</td><td></td>

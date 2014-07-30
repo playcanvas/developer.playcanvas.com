@@ -26,7 +26,7 @@ A Project is a collection of:
 
 On your profile page, press the "+" button to create a new Project. This takes you to a page where you set the details of your new project:
 
-* **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or an FPS, or simply display a 3D model that you've made, you can use a starter kit.
+* **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or simply display a 3D model that you've made, you can use a starter kit.
 * **Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
 * **Description** - A short description of your project that will appear on the main project page.
 * **Private** - The project visibility. By default, new projects are public allowing other community members to check out your work. Checking this option will allow you to work in private but note that you will need a [Pro account](https://playcanvas.com/plans) to use this feature.
@@ -37,11 +37,11 @@ Choose "No Starter kit" and set a name and description for your project. Then cl
 
 Now we're ready to build a simple 3D web app: a spinning box!
 
-The first thing to do is create a new pack. A pack represents the data required to bootstrap the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one pack. Therefore, on the project home page, select the 'New Pack' button at the top right of the 'designer' tab. This opens a new browser tab and fires up the visual editor: PlayCanvas Designer.
+The first thing to do is create a new pack. A pack represents the data required to start up the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one pack. Therefore, on the project home page, select the 'New Pack' button at the top right of the 'designer' tab. This opens a new browser tab and fires up the visual editor: PlayCanvas Designer.
 
 ### Packs, Entities and Components
 
-A PlayCanvas Pack is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the 'Pack Explorer' panel in Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
+A PlayCanvas Pack is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the 'Pack Explorer' panel in the Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
 
 ![Pack Explorer][pack_explorer]
 
@@ -78,7 +78,7 @@ You should now have someone similar to the following in the 3D View:
 
 ### Save your work
 
-Now would seem to be a good time to save your work, right? In actual fact, PlayCanvas Designer continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decided to close the Designer tab at any point.
+Now would seem to be a good time to save your work, right? In actual fact, PlayCanvas Designer continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decide to close the Designer tab at any point.
 
 ### Previewing Your Work
 
@@ -90,7 +90,7 @@ This will open a new tab and fire up your web app. Based on the steps above, you
 
 <img alt="Cube in engine" width="640" src="/images/platform/designer_cube_preview.jpg"></img>
 
-Once you are done with previewing your pack, you can switch back to Designer and stop your application (the Launch option will display a Stop icon while the app is running).
+Once you are done with previewing your pack, you can switch back to Designer and stop your application. The Launch option will display a Stop icon while the app is running, or you can simply close the application's tab.
 
 ### Scripting Entities
 

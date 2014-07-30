@@ -19,6 +19,7 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 * [Basic Mouse Input][mouse_input]
 * [Basic Camera][basic_camera]
 * [Basic Audio][basic_audio]
+* [Basic Materials][basic_materials]
 * [Manipulating Entities][manipulating_entities]
 
 ### Intermediate
@@ -39,6 +40,7 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 [mouse_input]: /tutorials/beginner/mouse-input
 [basic_camera]: /tutorials/beginner/basic-cameras
 [basic_audio]: /tutorials/beginner/basic-audio
+[basic_materials]: /tutorials/beginner/basic-materials
 [manipulating_entities]: /tutorials/beginner/manipulating-entities
 
 [animation_blending]: /tutorials/intermediate/animation-blending
