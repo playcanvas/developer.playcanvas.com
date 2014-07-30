@@ -104,7 +104,7 @@ You can easily switch between using local code and a code repository when using 
 
 **Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local server)** will launch against a locally running server
 
-Exporting packs will only use source code resources on the PlayCanvas servers - so upload your code to our site before exporting!.
+Exporting packs will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
 
 [server_osx_linux]: /downloads/localserver
 [python]: http://www.python.org/download/

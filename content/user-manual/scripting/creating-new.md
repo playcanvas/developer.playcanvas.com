@@ -30,7 +30,7 @@ http://example.com/javascript_library.js
 
 To specify multiple scripts for a single component, add one URL per line.
 
-If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click a script's name below the URL input box, or on one of the list of scripts in the adjacent script panel to launch the editor.
+If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click a script's name below the URL input box, or in the Script Explorer to launch the editor.
 
 <div class="alert alert-info">
 If you are using Github or Bitbucket you can not edit you scripts in PlayCanvas, you must make your commits through your source control system.

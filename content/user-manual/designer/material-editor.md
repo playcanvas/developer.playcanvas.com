@@ -66,7 +66,7 @@ Emissive materials are unlit by lights and glow.
 Opacity sets the transparency level.
 
 ### Normals
-Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not bump maps).
+Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
 
 ### Reflectivity
 You can set a reflection texture on your material.

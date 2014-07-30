@@ -29,7 +29,7 @@ Once your code is on the PlayCanvas server then open the Designer and click the 
 
 ![Refresh Script Attributes][refresh_image]
 
-Refreshing attributes loads all your scripts and parses out any attributes that were declared. Then they are inserted into the script components that reference that script (and as such are accessible via script as 'entity name'.script.'script name'.'attribute name') and are also exposed into the Designer.
+Refreshing attributes loads all your scripts and parses out any attributes that were declared. Then they are inserted into the script components that reference that script (and as such are accessible in your scripts as `this.attribute_name`) and are also exposed into the Designer.
 
 In the Designer each script with attributes gets its own attribute block in the Attribute Editor, just like a Component.
 
