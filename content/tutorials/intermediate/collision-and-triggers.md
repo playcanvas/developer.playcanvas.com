@@ -3,7 +3,7 @@ title: Collision and Triggers
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/rigid_bodies?overlay=false" ></iframe>
+<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/collision_and_triggers?overlay=false"></iframe>
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 
