@@ -7,7 +7,7 @@ Tutorials are a great way to learn to use PlayCanvas. You'll find both video tut
 
 ## Videos
 
-You can find our complete collection of video tutorials on our [YouTube Channel](http://youtube.com/playcanvas).
+You can find our complete collection of video tutorials on our [YouTube Channel](https://youtube.com/playcanvas). You can also [download](/tutorials/video) assets for following along to the videos.
 
 ## Articles
 
