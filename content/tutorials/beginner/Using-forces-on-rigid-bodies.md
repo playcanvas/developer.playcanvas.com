@@ -1,10 +1,10 @@
 ---
 title: Using Forces on Rigid Bodies
 template: tutorial-page.tmpl.html
-position: 6
+
 ---
 
-<iframe src="http://apps.playcanvas.com/adamraz/using_forces_on_rigid_bodies/DynamicBody?overlay=true"></iframe>
+<iframe src="http://apps.playcanvas.com/adamraz/using_forces_on_rigid_bodies/DynamicBody?overlay=false"></iframe>
 
 *Use the cursor keys to apply impulses, the WASD to apply torques and rotate the cube. Press and hold F to apply a constant upward force and stop the cube from falling*
 *Try to get the cube to balance and spin on one of its corners!*
@@ -114,6 +114,7 @@ pc.script.create('MrDynamic', function (context) {
             this.brakeX = false;
             this.brakeY = false;
             this.torque = 7;
+            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
         // Called every frame, dt is time in seconds since last update
@@ -174,6 +175,10 @@ pc.script.create('MrDynamic', function (context) {
                 this.entity.setLocalPosition(-8.2, playerPos.y, playerPos.z) ;
                 this.entity.rigidbody.syncEntityToBody();
             }
+            //event.event.preventDefault();
+        },
+        onKeyDown: function (event) {
+            event.event.preventDefault();
         },
         
         reset: function () {
