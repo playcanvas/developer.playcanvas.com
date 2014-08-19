@@ -92,4 +92,4 @@ First we set up an object containing the names of the four camera Entities that 
 Next we loop through the arrow keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCurrent()` method on the Camera ComponentSystem.
 
 [basic_cameras]: /tutorials/basic/basic-camera
-[frustum]: /user-manual/glossary#frustum
+[frustum]: https://en.wikipedia.org/wiki/Frustum
