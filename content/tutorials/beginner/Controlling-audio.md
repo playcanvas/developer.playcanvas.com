@@ -41,7 +41,7 @@ If an action is required to execute when an audio file stops playing, a timer [(
 
 Pausing and unpausing can still cause an audio file to play even after the `stop()` function has been called on the audiosource entity. ***This happens if a sound has been paused, then stopped, then unpaused.***
 
-The code used for one sphere in the above Playcanvas app is as follows:
+The code used for one sphere in the above PlayCanvas app is as follows:
 
 ~~~javascript~~~
 pc.script.create('audioL', function (context) {

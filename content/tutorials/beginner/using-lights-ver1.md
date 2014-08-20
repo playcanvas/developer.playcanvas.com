@@ -28,7 +28,12 @@ The main lighting commands to access the light component of an entity and affect
 ~~~javascript~~~
 this.entity.light.color.r = 0.5;
 
-this.activeCamera.light.color.set(0, 1, 0, 1)
+var x = this.activeLight.light.color;
+x.set(0, 1, 0, 1)
+this.activeLight.light.color = x;
+
+var c = new pc.Color(1,1,1);
+this.activeLight.color = c;
 
 this.entity.light.intensity = 9.5;
 
