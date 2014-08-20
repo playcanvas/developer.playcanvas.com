@@ -5,6 +5,7 @@ template: tutorial-page.tmpl.html
 ---
 
 <iframe src="http://apps.playcanvas.com/adamraz/lightingtutorial/ControllingLights4?overlay=false"></iframe>
+*Press 1, 2 or 3 to enable/disable each of the three lights.*
 
 In this tutorial we will show you how to use lights in PlayCanvas and to change light color and intensity. Note that there are many more controllable light features and properties. See the [API listing here][lights] for more details.
 

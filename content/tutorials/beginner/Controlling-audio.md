@@ -90,6 +90,9 @@ pc.script.create('audioL', function (context) {
     return AudioL;
 });
 ~~~
+
+Note: for sound file attributions see script file 'Attributions' [here][sounds]
     
 [audio]: /engine/api/stable/symbols/pc.fw.AudioSourceComponent.html
-[audio tutorial]:  
+[audio tutorial]: https://playcanvas.com/adamraz/tutorials 
+[sounds]: https://playcanvas.com/adamraz/tutorials/editor/attributions.js
