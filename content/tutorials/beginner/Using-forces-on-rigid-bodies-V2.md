@@ -4,10 +4,11 @@ template: tutorial-page.tmpl.html
 
 ---
 
-<iframe src="http://apps.playcanvas.com/adamraz/using_forces_on_rigid_bodies/DynamicBody?overlay=false"></iframe>
+<iframe src="http://apps.playcanvas.com/adamraz/using_forces_on_rigid_bodies/DynamicBody2?overlay=false"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force and stop the cube from falling.*
+*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
 *Press R to reset the cube.*
+
 *Try to get the cube to balance and spin on one of its corners!*
 *The full code used is shown at the bottom of this page.*
 
