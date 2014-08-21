@@ -19,7 +19,7 @@ The [AudioListener][audio_listener] Component determines how an AudioSource is h
 
 ## Pack Setup
 
-![Pack Explorer](/public/images/tutorials/basic_audio_pack.png)
+![Pack Explorer](/images/tutorials/basic_audio_pack.png)
 
 You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
 
@@ -29,7 +29,7 @@ To create an AudioSource select the Entity you wish to add the source to and cho
 
 AudioSource properties will now appear in the AttributeEditor.
 
-![AudioSource Component](/public/images/tutorials/audiosource_component.png)
+![AudioSource Component](/images/tutorials/audiosource_component.png)
 
 There are quite a few options available on the AudioSource component, but for now the only ones we need to worry about are *Assets*, *Loop*, *Activate* and *3d*.
 
