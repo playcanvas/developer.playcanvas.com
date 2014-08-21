@@ -16,80 +16,116 @@ The first way you might want to modify a camera at runtime, is to change the val
 methods on the ComponentSystem.
 
 ~~~javascript~~~
-CameraScript.prototype.update = function (dt) {
-    // Press the space bar to change the field of view and zoom in and out on the central cube
-    var camera;
-    var fov = this.entity.camera.fov;
-    if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
-        // Make sure the right camera is selected
-        camera = context.root.findOne("Zoom camera");
-        context.systems.camera.current = camera;
+pc.script.create('zoom', function (context) {
+    // Creates a new Zoom instance
+    var Zoom = function (entity) {
+        this.entity = entity;
 
-        if (this.targetFov == 10) {
-            this.targetFov = 45;
-        } else {
-            this.targetFov = 10;
+        this.targetFov = 45;
+    };
+
+    Zoom.prototype = {
+        // Called once after all resources are loaded and before the first update
+        initialize: function () {
+        },
+
+        // Called every frame, dt is time in seconds since last update
+        update: function (dt) {
+            if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+                if (this.targetFov == 10) {
+                    this.targetFov = 45;
+                } else {
+                    this.targetFov = 10;
+                }
+            }
+
+            var fov = this.entity.camera.fov;
+
+            if (fov < this.targetFov) {
+                fov += (10 * dt);
+                if (fov > this.targetFov) {
+                    fov = this.targetFov;
+                }
+            }
+
+            if (fov > this.targetFov) {
+                fov -= (10 * dt);
+                if (fov < this.targetFov) {
+                    fov = this.targetFov;
+                }
+            }
+
+            this.entity.camera.fov = fov;
         }
-    }
+    };
 
-    if(fov < this.targetFov) {
-        fov += (10 * dt);
-        if (fov > this.targetFov) {
-            fov = this.targetFov;
-        }
-    }
-
-    if(fov > this.targetFov) {
-        fov -= (10 * dt);
-        if (fov < this.targetFov) {
-            fov = this.targetFov;
-        }
-    }
-    this.entity.camera.fov = fov;
-
-    // more ...
-};
+    return Zoom;
+});
 ~~~
 
-In this sample pressing the spacebar triggers a change in field of view. On the fourth line we `get()` the value of `fov` from the entity that this script is attached to.
+In this sample pressing the spacebar triggers a change in field of view. With the line `var fov = this.entity.camera.fov` we `get()` the value of `fov` from the camera component of the entity that this script is attached to.
 
-In the middle we detect the keypress and update the value of the `fov`.
+With `context.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
-On the last line we `set()` the `fov` attribute to the new value.
+With the two `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the PlayCanvas Designer where the cubes sit next to the
-top and bottom sides of the [frustum][frustum]
+With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
+
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Designer scene][designer] where the cubes sit next to the
+top and bottom sides of the camera [frustum][frustum]
 
 ## Current Camera
 
 Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your pack; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
 
 ~~~javascript~~~
-CameraScript.prototype.update = function (dt) {
-    // more ...
+pc.script.create('camera_manager', function (context) {
+    // Creates a new CameraManager instance
+    var CameraManager = function (entity) {
+        this.entity = entity;
+        
+        this.activeCamera = null;
+    };
 
-    // Press the arrow keys to switch between the four corner cameras
-    var cameras = {};
-    cameras[pc.input.KEY_LEFT] = "Camera one";
-    cameras[pc.input.KEY_RIGHT] = "Camera two";
+    CameraManager.prototype = {
+        setCamera: function (cameraName) {
+            // Disable the currently active camera
+            this.activeCamera.enabled = false;
 
-    if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
-        camera = context.root.findOne(cameras[pc.input.KEY_LEFT]);
-        context.systems.camera.current = camera;
-    }
+            // Enable the newly specified camera
+            this.activeCamera = this.entity.findByName(cameraName);
+            this.activeCamera.enabled = true;
+        },
+        
+        // Called once after all resources are loaded and before the first update
+        initialize: function () {
+            this.activeCamera = this.entity.findByName('Center');
+        },
 
-    if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
-        camera = context.root.findOne(cameras[pc.input.KEY_RIGHT]);
-        context.systems.camera.current = camera;
-    }
-};
+        // Called every frame, dt is time in seconds since last update
+        update: function (dt) {
+            if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+                this.setCamera('Center');
+            } else if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+                this.setCamera('Left');
+            } else if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+                this.setCamera('Right');
+            }
+        }
+    };
+
+    return CameraManager;
+});
 ~~~
 
-In this sample, pressing the arrow keys sets the current camera to be one of four camera Entities that are in the currently loaded Pack.
+In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Pack) and the space key activates the central camera.
 
-First we set up an object containing the names of the four camera Entities that correspond to the four arrow keys.
+We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `context.root.findByName()` to search through all the entities in the pack).
 
-Next we loop through the arrow keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCurrent()` method on the Camera ComponentSystem.
+We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Designer scene)][designer].
 
-[basic_cameras]: /tutorials/basic/basic-camera
+Next we loop through the keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
+
+[basic_cameras]: /tutorials/beginner/basic-cameras/
 [frustum]: https://en.wikipedia.org/wiki/Frustum
+[designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/470b8e24-857a-4608-8c84-4237452e39b1

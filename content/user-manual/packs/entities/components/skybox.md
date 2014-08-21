@@ -4,7 +4,7 @@ template: page.tmpl.html
 skip: true
 ---
 
-The 'skybox' component enables a skybox in the scene. A skybox surrounds the game world and determines what any camera will see at the ‘edge of the world’ when no objects are in view.
+The 'skybox' component enables a skybox in the scene. A skybox surrounds the game world and determines what any camera will see at the 'edge of the world' when no objects are in view.
 
 ![Component Interface](/images/platform/component_skybox.png)
 
@@ -23,9 +23,13 @@ The 'skybox' component enables a skybox in the scene. A skybox surrounds the gam
     <tr><td>NEGZ</td><td>The image asset to use for the world-space negative Z face of the skybox.</td></tr>
 </table>
 
+All 6 of the image assets need to be present for the skybox to be displayed. 
+
+
 ## Scripting Interface
 
 You can control a skybox component's properties using a [script component][script_component]. The skybox component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.SkyBoxComponent.html
+[docs]: /engine/api/stable/symbols/pc.fw.SkyboxComponent.html
+

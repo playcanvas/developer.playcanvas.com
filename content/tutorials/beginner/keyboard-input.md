@@ -12,7 +12,7 @@ Keyboard handling in the PlayCanvas engine is provided by the `pc.input.Keyboard
 for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
 handling keycodes and charcodes.
 
-Take a look at the input_keyboard Pack in the [tutorials project][project]. Here is the code for the tutorial:
+Take a look at the keyboard input Pack in the [tutorials project][project]. Here is the code for the tutorial:
 
 ~~~javascript~~~
 pc.script.create("keyboard_handler", function (context) {

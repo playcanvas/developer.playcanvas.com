@@ -6,7 +6,7 @@ position: 5
 
 ## Publishing to Firefox OS
 
-[Firefox OS][firefoxos] is the new mobile operating system from Mozilla. And currently, PlayCanvas is the only 3D game engine targeting Firefox OS. If you publish your PlayCanvas game to [PlayCanvas](publish_playcanvas), you can play it quite happily via Firefox OS's bundled Firefox browser app. But what if your users want to install the game to their home screen and play offline without having to access it via the browser? Achieving this is easy with PlayCanvas and involves converting your exported game into a 'packaged app'.
+[Firefox OS][firefoxos] is the new mobile operating system from Mozilla. And currently, PlayCanvas is the only 3D game engine targeting Firefox OS. If you publish your PlayCanvas game to [PlayCanvas][publish_playcanvas], you can play it quite happily via Firefox OS's bundled Firefox browser app. But what if your users want to install the game to their home screen and play offline without having to access it via the browser? Achieving this is easy with PlayCanvas and involves converting your exported game into a 'packaged app'.
 
 ## Creating a Packaged App
 
@@ -105,8 +105,8 @@ And download the file to the root of your extracted PlayCanvas app.
 You should now have a valid packaged app. Simply re-zip the files back into a file called package.zip and copy to a web location of your choice.
 
 [firefoxos]: http://www.mozilla.org/en-US/firefox/os/
-[publish_playcanvas]: /user-manual/publishing/playcanvas
-[publish_selfhost]: /user-manual/publishing/selfhosting
+[publish_playcanvas]: /user-manual/publishing/playcanvas/
+[publish_selfhost]: /user-manual/publishing/self-hosting/
 [dungeon_fury]: http://apps.playcanvas.com/playcanvas/dungeonfury/dungeonfury
 [mdn]: https://developer.mozilla.org/en-US/Apps/Developing/Manifest
 [icons]: https://developer.mozilla.org/en-US/Apps/Developing/Manifest#icons

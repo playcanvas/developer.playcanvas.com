@@ -4,6 +4,8 @@ template: page.tmpl.html
 position: 2
 ---
 
+![Dashboard](/images/platform/dashboard_assets.png)
+
 The Asset dashboard lists all the Assets that are in your Project.
 
 ## Uploading Assets

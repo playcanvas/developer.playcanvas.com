@@ -11,7 +11,7 @@ position: 2
 Mouse handling in the PlayCanvas engine is provided by the `pc.input.Mouse` object. The Mouse object provides a simple interface for detecting when the
 mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistancies with handling mouse co-ordinates.
 
-Take a look at the input_mouse Pack in the [tutorials project][project]. Here is the code from mouse.js:
+Take a look at the mouse input Pack in the [tutorials project][project]. Here is the code from mouse.js:
 
 ~~~javascript~~~
 pc.script.create("mouse", function (context) {

@@ -35,4 +35,4 @@ If you've got a technical question about using PlayCanvas, the API or any part o
 
 #### IRC
 
-We're often available (UK time) on the [#playcanvas](http://webchat.freenode.net/?channels=playcanvas&uio=d4) channel on [freenode](http://freenode.net). You can get a chat window on our [community page](http://playcanvas.com/community)
+We're often available (UK time) on the [#playcanvas](http://webchat.freenode.net/?channels=playcanvas&uio=d4) channel on [freenode](http://freenode.net).

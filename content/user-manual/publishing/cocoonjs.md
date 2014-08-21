@@ -43,4 +43,4 @@ Now that you have tested your game on your mobile device via the CocoonJS Launch
 [android_launcher]: https://play.google.com/store/apps/details?id=com.ideateca.cocoonjslauncher&hl=en_GB
 [ios_launcher]: https://itunes.apple.com/gb/app/cocoonjs-by-ludei/id519623307?mt=8
 [ludei_dev]: https://sso.ludei.com/login?client=cloud
-[self_hosting]: /user-manual/publishing/selfhosting
+[self_hosting]: /user-manual/publishing/self-hosting/
