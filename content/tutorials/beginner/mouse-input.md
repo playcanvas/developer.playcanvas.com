@@ -10,7 +10,7 @@ position: 2
 
 Mouse handling in the PlayCanvas engine is provided by the `pc.input.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistancies with handling mouse co-ordinates.
 
-Take a look at the input_mouse Pack in the [tutorials project][project]. Here is the code from mouse.js:
+Take a look at the 'Mouse Input' Pack in the [tutorials project][project]. Here is the code from mouse.js:
 
 ~~~javascript~~~
 pc.script.attribute("materials", "asset", [], {type: "material"});
@@ -71,7 +71,7 @@ pc.script.create("mouse", function (context) {
 });
 ~~~
 
-### `pc.input.Mouse`
+### Accessing the mouse
 
 Mouse control is managed by the `pc.input.Mouse` object. The [framework][framework] provides an instance of this on the [application context][context] which is available to all script objects as:
 
@@ -89,10 +89,9 @@ context.mouse.disableContextMenu();
 
 ### Binding to events
 
-The `pc.input.Mouse` object allows you to listen to different events corresponding to mouse actions, in the tutorial we are binding the method `onMouseMove` to the move event and `onMouseDown`
-to the button down event.
+The `pc.input.Mouse` object allows you to listen to different events corresponding to mouse actions. In the tutorial, we are binding the method `onMouseMove` to the move event and `onMouseDown` to the button down event.
 
-Notice we also pass `this` into the on() method for binding to events. This third argument is the object that is used as `this` in the event callback.
+Notice how we also pass `this` into the on() method for binding to events. This third argument is the object that is used as `this` in the event callback.
 
 ~~~javascript~~~
 context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
@@ -106,26 +105,26 @@ Events available on `pc.input.Mouse` are:
 * `pc.input.EVENT_MOUSEMOVE` - fires when the mouse is moved
 * `pc.input.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
 
-Mouse input in browsers is usually implemented by listening to [DOM][dom] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.input.MouseEvent` object when the event fires which is consistant across all browsers. If you do need the original DOM event it is available as the `event` property in `pc.input.MouseEvent`.
+Mouse input in browsers is usually implemented by listening to [DOM][dom] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.input.MouseEvent` object when the event fires which is consistant across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.input.MouseEvent`.
 
 ### Moving the mouse
 
-The first event handler is `onMouseMove`, this is fired whenever the mouse moves. For a `EVENT_MOUSEMOVE` event the `MouseEvent` object will have the current position of the mouse `x`, and `y` and also the change in position since the last event in `dx` and `dy`. In our tutorial we're using the current position of the mouse and moving the cube to the cursor position.
+The first event handler is `onMouseMove`. This is fired whenever the mouse moves. For an `EVENT_MOUSEMOVE` event, the `MouseEvent` object will have the current position of the mouse `x` and `y` and also the change in position since the last event in `dx` and `dy`. In our tutorial we're using the current position of the mouse and moving the cube to the cursor position.
 
 ### Mouse buttons
 
-The second event handler is `onMouseDown`, this is fired whenever one of the three mouse buttons is clicked. In the `EVENT_MOUSEDOWN` and `EVENT_MOUSEUP` events the `MouseEvent` object will have a `button` property which contains the button that has been pressed/released. It can be one of the following values:
+The second event handler is `onMouseDown`. This is fired whenever one of the three mouse buttons is clicked. In the `EVENT_MOUSEDOWN` and `EVENT_MOUSEUP` events, the `MouseEvent` object will have a `button` property which contains the button that has been pressed/released. It can be one of the following values:
 
 * `pc.input.MOUSEBUTTON_NONE`
 * `pc.input.MOUSEBUTTON_LEFT`
 * `pc.input.MOUSEBUTTON_MIDDLE`
 * `pc.input.MOUSEBUTTON_RIGHT`
 
-In our tutorial we're changing the color of the cube depending on which mouse button was pressed.
+In our tutorial, we're changing the color of the cube depending on which mouse button was pressed.
 
 ### Try it out
 
-Try the tutorial in full screen [here][tutorial] or at the top of the page. Move the mouse to move the cube, and click the left, middle and right mouse button to change the color of the cube.
+Try the tutorial in full screen [here][tutorial] or at the top of the page. Move the mouse to move the cube and click the left, middle and right mouse button to change the color of the cube.
 
 [project]: http://playcanvas.com/playcanvas/tutorials
 [framework]: /user-manual/glossary#framework
