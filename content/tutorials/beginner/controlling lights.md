@@ -1,10 +1,10 @@
 ---
-title: Using Lights V5
+title: Controlling Lights
 template: tutorial-page.tmpl.html
 
 ---
 
-<iframe src="http://apps.playcanvas.com/adamraz/lightingtutorial/ControllingLights5?overlay=false"></iframe>
+<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/controllingLights?overlay=false"></iframe>
 *Press 1, 2 or 3 to enable/disable each of the three lights.*
 
 In this tutorial we will show you how to enable/disable lights in PlayCanvas and to change light color and intensity. Note that there are many more controllable light features and properties, for example the light range. See the [API listing here][lights] for more details.
@@ -40,7 +40,11 @@ These lines assign values to r, g and b variables based on a sin wave and then a
 We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Pack. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Designer scene and scripts can be accessed here][light tutorial].
 
 ##Activating Light properties
-The light properties, require assignment of a new value directly to the color and intensity property references as shown, in particular `light.color` requires the creation and use of a `pc.Color` array. Using `entity.light.color.r` to access and change the red value of a light's color will not register updates. Assigning the color or intensity to a new variable (e.g. ` c = this.spot.light.color`) and executing `c.r = 0.5` will only change a copy of the initial red color value now stored in c, leaving `this.spot.light.color.r` unchanged.
+The light properties, **require assignment of a vector/array quantity** directly to the color and intensity property references as shown above, in particular `light.color` requires the creation and use of a `pc.Color` array.
+
+<div class="alert alert-warning">
+ Using `entity.light.color.r` to access and change the red value of a light's color will not register updates. Assigning the color or intensity to a new variable (e.g. ` c = this.spot.light.color`) and executing `c.r = 0.5` will only change a copy of the initial red color value now stored in c, leaving `this.spot.light.color.r` unchanged.
+</div>
 
 The full code used for the above PlayCanvas app is as follows.
 ~~~javascript~~~
@@ -121,4 +125,4 @@ pc.script.create('LightControl', function (context) {
 ~~~
 
 [lights]: /engine/api/stable/symbols/pc.fw.LightComponent.html
-[light tutorial]:  https://playcanvas.com/adamraz/lightingtutorial
+[light tutorial]:  https://playcanvas.com/playcanvas/tutorials
