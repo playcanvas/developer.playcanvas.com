@@ -15,6 +15,8 @@ We suggest you start reading the [User Manual](/user-manual), it's the complete 
 
 [API Reference](/engine/api/stable) - The complete PlayCanvas Engine reference
 
+Also, remember that you can always take a look at the [play page](https://playcanvas.com/play) to see how whole projects have been designed and built.
+
 <hr />
 
 ## Engine Users

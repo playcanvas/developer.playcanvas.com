@@ -23,7 +23,7 @@ The 'skybox' component enables a skybox in the scene. A skybox surrounds the gam
     <tr><td>NEGZ</td><td>The image asset to use for the world-space negative Z face of the skybox.</td></tr>
 </table>
 
-All 6 of the image assets need to be present for the skybox to be displayed. 
+**All 6 of the image assets need to be present for the skybox to be displayed.** 
 
 
 ## Scripting Interface
