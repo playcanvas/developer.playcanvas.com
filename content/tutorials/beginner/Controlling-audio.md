@@ -1,5 +1,5 @@
 ---
-title: Controlling Audio
+title: Controlling-Audio
 template: tutorial-page.tmpl.html
 
 ---

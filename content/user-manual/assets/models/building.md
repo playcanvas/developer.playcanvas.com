@@ -11,12 +11,13 @@ PlayCanvas is designed to import content most faithfully via the FBX interchange
 Some modelling and animation programs to consider: 
 * Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
 * Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.	
-A * denotes the program can create animations too.
+* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+
+\* *this program can create animations too.*
 
 For generating textures, consider these programs:
-* Free: Krita desktop, GIMP, xNormal, MaPZone, Blender, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Clip Studio Paint/Manga Studio, SERIF DrawPlus / PhotoPlus.
+* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 Note many of the programs listed above for modelling also allow texture painting.
 If you would like more options, this [external wiki][wiki] page can help. Please note that some of the information may be out-of-date.

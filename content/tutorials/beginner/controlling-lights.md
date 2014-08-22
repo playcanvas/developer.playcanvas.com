@@ -1,17 +1,18 @@
 ---
-title: Controlling Lights
+title: Controlling-Lights
 template: tutorial-page.tmpl.html
 
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/controllingLights?overlay=false"></iframe>
-*Press 1, 2 or 3 to enable/disable each of the three lights.*
 
-In this tutorial we will show you how to enable/disable lights in PlayCanvas and to change light color and intensity. Note that there are many more controllable light features and properties, for example the light range. See the [API listing here][lights] for more details.
+*Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
 
-It is also important to be aware of the different limits for differing light properties, for example red, green and blue values are set between 0 and 1, but intensity reaches from 0 up to 10. Also some lights have properties unique to them such as the cone angles for the spot light.
+In this tutorial we will show you how to enable/disable lights in PlayCanvas and to change light color and intensity. Note that there are many more controllable light features and properties, such as the light range. See the [API listing here][lights] for more details.
 
-##The important Code
+It is also important to be aware of the different limits for differing light properties, for example red, green and blue values are set between 0 and 1, but intensity reaches from 0 up to 10. Also some lights have properties unique to them, such as the cone angles for the spot light.
+
+##The lighting commands
 
 ~~~javascript~~~
 if (context.keyboard.wasPressed(pc.input.KEY_1)) { 
@@ -35,16 +36,14 @@ this.spot.light.intensity = 10*s;
 ~~~
 These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z, 1)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0. 
 
+<div class="alert alert-warning">
+ Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1,1,1);`.
+</div>
 
 ##General setup
 We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Pack. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Designer scene and scripts can be accessed here][light tutorial].
 
-##Activating Light properties
-The light properties, **require assignment of a vector/array quantity** directly to the color and intensity property references as shown above, in particular `light.color` requires the creation and use of a `pc.Color` array.
 
-<div class="alert alert-warning">
- Using `entity.light.color.r` to access and change the red value of a light's color will not register updates. Assigning the color or intensity to a new variable (e.g. ` c = this.spot.light.color`) and executing `c.r = 0.5` will only change a copy of the initial red color value now stored in c, leaving `this.spot.light.color.r` unchanged.
-</div>
 
 The full code used for the above PlayCanvas app is as follows.
 ~~~javascript~~~

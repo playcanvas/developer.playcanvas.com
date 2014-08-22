@@ -1,5 +1,5 @@
 ---
-title: Using Forces on Rigid Bodies
+title: Using-Forces-on-Rigid-Bodies
 template: tutorial-page.tmpl.html
 
 ---
@@ -12,7 +12,7 @@ template: tutorial-page.tmpl.html
 *Try to get the cube to balance and spin on one of its corners!*
 *The full code used is shown at the bottom of this page.*
 
-In this tutorial we will show you how to use forces to control a dynamic rigidbody and produce the demo shown above. We will briefly show the use of forces, impulses, torques and the use of Designer settings to customize behaviour (via gravity, damping and friction settings).
+In this tutorial we will show you how to use forces to control a dynamic rigidbody and produce the demo shown above. We will briefly show the use of forces, impulses, torques and the use of Designer settings to customize behaviour.
 
 ##The force commands
 
@@ -22,7 +22,7 @@ if (context.keyboard.isPressed(pc.input.KEY_F) ) {
     this.entity.rigidbody.applyForce(0, 9.8, 0);
 }
 ~~~
-Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyImpulse(x, y, z)`][force]. The point of application of the force vector can also be set. [See this documentation][rigidbody api] for more details.
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][force]. The point of application of the force vector can also be set. [See this documentation][rigidbody api] for more details.
 
 ###Impulses
 ~~~javascript~~~
@@ -57,7 +57,7 @@ For more information on rigidbody types, see [the collision API page][collision 
 
 ##General setup
 
-We set up a basic scene with a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube’s rigidbody was set to dynamic while the floor’s rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the ‘cast shadows’ option on both the DirectionalLight and DynamicBody entities. The full 'usingForces' pack and code  for [this PlayCanvas app can be found here][pack].
+We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube’s rigidbody was set to dynamic while the floor’s rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the ‘cast shadows’ option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code  for [this PlayCanvas app can be found here][pack].
 
 ##Limiting and control
 
