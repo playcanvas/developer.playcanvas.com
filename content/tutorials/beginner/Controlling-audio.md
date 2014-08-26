@@ -28,7 +28,7 @@ this.entity.audiosource.stop();
 In order, the lines of code above: play one audio file that has been attached to the audiosource component from the Designer, pause all audio files that are playing from the entity, unpause all audio files attached to the entity and stop audio playback.
 
 ##General setup
-The audio file was uploaded in .mp3 format (.ogg files are also usable). A sphere was created, and an audiosource component attached. The audio file was then added to the assets list within the audiosource settings. The activate option in the audiosource settings was disabled so as not to play the file immediately on loading. An audiolistener component was added to the default camera. The [full Designer scene and scripts can be accessed here][audio tutorial]. 
+The audio file was uploaded in .mp3 format (.ogg files are also usable). A sphere was created, and an audiosource component attached. The audio file was then added to the assets list within the audiosource settings. The activate option in the audiosource settings was disabled so as not to play the file immediately on loading. An audiolistener component was added to the default camera. The [full Designer scene and scripts can be accessed here][audio tutorial] in the 'controllingAudio' pack. 
 
 <img src="/images/tutorials/audio/audiosource-settings.png" />
 

@@ -74,3 +74,5 @@ pc.script.create("animation_blending", function (context) {
 ~~~
 
 From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
+
+See [the full Pack here](http://playcanvas.com/playcanvas/tutorials/designer/pack/5e42b2be-18e0-11e4-a3dc-22000a4a0339)

@@ -230,6 +230,8 @@ pc.script.create('posteffect_example', function (context) {
 
 For more tutorials on custom shaders look [here][custom-shader].
 
+See the [Custom Post Effects Pack here][pack].
+
 
 [shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.Shader.html
 [api_posteffect]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.posteffect.PostEffect.html
@@ -237,3 +239,4 @@ For more tutorials on custom shaders look [here][custom-shader].
 [github_posteffects]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [custom-shader]: /tutorials/advanced/custom-shaders
 [posteffect_queue]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.fw.CameraComponent.html#postEffects
+[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/b3bea7aa-fc45-11e3-9c67-22000a4a0339
