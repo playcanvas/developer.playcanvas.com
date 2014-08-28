@@ -15,6 +15,8 @@ We suggest you start reading the [User Manual](/user-manual), it's the complete 
 
 [API Reference](/engine/api/stable) - The complete PlayCanvas Engine reference
 
+[GitHub](https://github.com/playcanvas) - check out our GitHub page for instructions on displaying [2D images](https://github.com/playcanvas/sprites) and [text](https://github.com/playcanvas/fonts) in your project.
+
 Also, remember that you can always take a look at the [play page](https://playcanvas.com/play) to see how whole projects have been designed and built.
 
 <hr />
@@ -38,3 +40,4 @@ If you've got a technical question about using PlayCanvas, the API or any part o
 #### IRC
 
 We're often available (UK time) on the [#playcanvas](http://webchat.freenode.net/?channels=playcanvas&uio=d4) channel on [freenode](http://freenode.net).
+

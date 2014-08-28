@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 3
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/more_cameras?overlay=false" ></iframe>
+<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/more_cameras_2?overlay=false" ></iframe>
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
@@ -100,6 +100,12 @@ pc.script.create('camera_manager', function (context) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.activeCamera = this.entity.findByName('Center');
+            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+        },
+        
+        //prevents default browser actions, such as scrolling when pressing cursor keys
+        onKeyDown: function (event) {
+            event.event.preventDefault();
         },
 
         // Called every frame, dt is time in seconds since last update
