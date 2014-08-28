@@ -12,5 +12,5 @@ Some of our Video tutorials use pre-made assets. You can download the assets fro
 
 [Introduction to PlayCanvas series][intro] - Samba Dancing Robot, Prototype textures, Music.
 
-[youtube]: [https://youtube.com/playcanvas]
+[youtube]: https://www.youtube.com/user/playcanvas
 [intro]: /downloads/tutorials/intro.zip
