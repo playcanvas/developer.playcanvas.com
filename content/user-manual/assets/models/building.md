@@ -40,11 +40,11 @@ Regardless which modelling application you are using, there a number of things t
 
 Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
 
-### Map Types
+### **Map Types**
 
 As of Blender 2.71 both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Designer. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit. Or right-click the model and select 'Edit Material'.
 
-### Embedding Textures
+### **Embedding Textures**
 Embedded Textures make importing much easier.
 
 The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
@@ -53,15 +53,17 @@ The 2.71 release of Blender features a revamped fbx export module that enables m
 
 Alternatively, use the [Autodesk FBX Converter](http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112) to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
 
-Note there seems to be an issue with Blender's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, change the material's Diffuse color setting to 0. Or simply reduce emissivity from within the Playcanvas Designer. 
+<div class="alert alert-warning">
+Note: there seems to be an issue with Blender 2.71's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Designer.
+</div>
 
-### Animations
+### **Animations**
 
 As of Blender 2.71:
 
 Animations included within the blend file are exported with the default fbx exporter settings and are compatible with the PlayCanvas asset import pipeline. Note that for multiple animations for the same model you will need to upload multiple fbx files - one for each animation. To save memory you can delete models and textures from the blend file before exporting, choose to export only armatures in the fbx exporter settings, or simply delete the duplicate 'model' target assets from the assets page on your project dashboard (select 'target' from the drop-down menu on the assets page to view target assets).
 
-### Learning Blender
+### **Learning Blender**
 
 There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
 

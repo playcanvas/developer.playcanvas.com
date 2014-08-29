@@ -67,7 +67,7 @@ In this sample pressing the spacebar triggers a change in field of view. With th
 
 With `context.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
-With the two `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
+With the final two nested `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
 
 With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
 
@@ -130,7 +130,7 @@ We initially  create a function to find the camera entity we want by name - with
 
 We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Designer scene)][designer].
 
-Next we loop through the keys and if one was pressed then we find the entity by it's name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
+Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
 
 [basic_cameras]: /tutorials/beginner/basic-cameras/
 [frustum]: https://en.wikipedia.org/wiki/Frustum

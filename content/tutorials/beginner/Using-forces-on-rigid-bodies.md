@@ -51,7 +51,7 @@ Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x
 
 In order to move rigidbodies, you apply linear forces and rotational forces (torque) using the methods above. Usually you should try to avoid directly modifying the position or velocity of a rigidbody as this will override the simulation and it can lead to odd effects, especially when objects collide.
 
-However, if you need to, you can override the velocity by assigning a new value directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`. You can also override the position or orientation using the usual [Entity methods][entities], but you must then update the rigidbody simulation from the Entity using [`entity.rigidbody.syncEntityToBody()`][sync].
+However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][Vec]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`. You can also override the position or orientation using the usual [Entity methods][entities], but you must then update the rigidbody simulation from the Entity using [`entity.rigidbody.syncEntityToBody()`][sync].
 
 For more information on rigidbody types, see [the collision API page][collision api], [the pc.fw API page][pc.fw], [the fps-controller tutorial][fps] and [the collision tutorial][collision].
 
@@ -100,7 +100,7 @@ reset: function () {
     this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
 }
 ~~~
-We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody’s location to that of the teleported entity. The final two lines in the reset function reset the bodies linear and angular velocities to zero. The objects orientation could also be reset, but is not carried out in this code.
+We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody’s location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
 
 
 ##Full code listing
@@ -198,3 +198,4 @@ pc.script.create('DynamicBody', function (context) {
 [entities]: /tutorials/beginner/manipulating-entities/
 [force]:/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyForce
 [rigidbody api]: /engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyForce
+[Vec]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Vec3.html
