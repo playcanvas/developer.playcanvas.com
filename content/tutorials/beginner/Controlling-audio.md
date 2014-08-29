@@ -60,28 +60,27 @@ pc.script.create('audioHandler', function (context) {
             
              if (context.keyboard.wasPressed(pc.input.KEY_UP) && this.paused === true) {
                 this.audio.audiosource.unpause();
-                this.audio.setLocalScale(4,4,4);
+                this.audio.setLocalScale(4, 4, 4);
                 this.playing = true;
                 this.paused = false;
             }
             
             if (context.keyboard.wasPressed(pc.input.KEY_DOWN) && this.playing === true) {
                 this.audio.audiosource.pause();
-                this.audio.audiosource.pause();
-                this.audio.setLocalScale(2,2,2);
+                this.audio.setLocalScale(2, 2, 2);
                 this.playing = false;
                 this.paused = true;
             }
             
             if (context.keyboard.wasPressed(pc.input.KEY_RIGHT) && this.playing === false) {
                 this.audio.audiosource.play("swooop_theme");
-                this.audio.setLocalScale(4,4,4);
+                this.audio.setLocalScale(4, 4, 4);
                 this.playing = true;
             }
             
             if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
                 this.audio.audiosource.stop();
-                this.audio.setLocalScale(2,2,2);
+                this.audio.setLocalScale(2, 2, 2);
                 this.playing = false;
                 this.paused = false;
             }

@@ -39,7 +39,7 @@ if (context.keyboard.isPressed(pc.input.KEY_W) ) {
     this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
 }
 ~~~
-Torques are applied to the entity via [`applyTorque(x, y, z)`][torque].
+[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][torque].
 
 ###TorqueImpulses
 ~~~javascript~~~
@@ -57,7 +57,7 @@ For more information on rigidbody types, see [the collision API page][collision 
 
 ##General setup
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube’s rigidbody was set to dynamic while the floor’s rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the ‘cast shadows’ option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code  for [this PlayCanvas app can be found here][pack].
+We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube’s rigidbody was set to dynamic while the floor’s rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the ‘cast shadows’ option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code for [this PlayCanvas app can be found here][pack].
 
 ##Limiting and control
 

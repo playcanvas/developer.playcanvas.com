@@ -16,28 +16,28 @@ It is also important to be aware of the different limits for differing light pro
 
 ~~~javascript~~~
 if (context.keyboard.wasPressed(pc.input.KEY_1)) { 
-    this.spot.light.enabled = !this.spot.light.enabled; 
+    this.spot.light.enabled = !this.spot.light.enabled;
 }
 ~~~
 This line toggles on and off the light component of the 'spot' entity.
 
 ~~~javascript~~~
-this.color1 = new pc.Color(1,1,1,1);
+this.color1 = new pc.Color(1, 1, 1);
 ~~~
-A new color array is declared, the first three values affect red, green and blue values respectively, while the last is alpha (which defaults to 1 if not set).
+A new color array is declared, the first three values affect red, green and blue values respectively.
 ~~~javascript~~~
 var s = Math.abs(Math.sin(1 + this.timer));
 var r = 1-s/2;
 var g = s-0.2;
 var b = 0.55+s/2;
-this.color1.set(r, g, b, 1);
+this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
 ~~~
-These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z, 1)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0. 
+These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0. 
 
 <div class="alert alert-warning">
- Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1,1,1);`.
+ Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
 </div>
 
 ##General setup
@@ -47,13 +47,13 @@ We added a spot light (attached to a parent assembly of a basic torch model), a 
 
 The full code used for the above PlayCanvas app is as follows.
 ~~~javascript~~~
-pc.script.create('LightControl', function (context) {
-    // Creates a new LightControl instance
-    var LightControl = function (entity) {
+pc.script.create('lightHandler', function (context) {
+    // Creates a new LightHandler instance
+    var LightHandler = function (entity) {
         this.entity = entity;
     };
 
-    LightControl.prototype = {
+    LightHandler.prototype = {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.spot = context.root.findByName("SpotLight");
@@ -62,9 +62,9 @@ pc.script.create('LightControl', function (context) {
             this.pivot1 = context.root.findByName("Pivot1");
             this.pivot2 = context.root.findByName("Pivot2");
             this.timer = 0;
-            this.color1 = new pc.Color(1,1,1,1);
-            this.color2 = new pc.Color(1,1,1,1);
-            this.color3 = new pc.Color(1,1,1,1);
+            this.color1 = new pc.Color(1, 1, 1);
+            this.color2 = new pc.Color(1, 1, 1);
+            this.color3 = new pc.Color(1, 1, 1);
         },
 
         // Called every frame, dt is time in seconds since last update
@@ -90,7 +90,7 @@ pc.script.create('LightControl', function (context) {
             var r = 1-s/2;
             var g = s-0.2;
             var b = 0.55+s/2;
-            this.color1.set(r, g, b, 1);
+            this.color1.set(r, g, b);
             this.spot.light.color = this.color1;
             this.spot.light.intensity = 10*s;
             
@@ -98,7 +98,7 @@ pc.script.create('LightControl', function (context) {
             r = s/2;
             g = 0.25+s/2;
             b = 1.0-s;
-            this.color2.set(r, g, b, 1);
+            this.color2.set(r, g, b);
             this.point.light.color = this.color2;
             this.point.light.intensity = 10*s;
             
@@ -106,20 +106,20 @@ pc.script.create('LightControl', function (context) {
             r = 0.25+s/2;
             g = 0.75-s/2;
             b = 0.25+s/2;
-            this.color3.set(r, g, b, 1);
+            this.color3.set(r, g, b);
             this.directional.light.color = this.color3;
             this.directional.light.intensity = 3*(1-s);
         },
         
         // this function rotates all three lights about their parent entities (all at the centre of the scene) to easily create circular motion.
         pivot: function (){
-            this.pivot1.rotate(0,2,0);
-            this.pivot2.rotate(0,-3,0);
+            this.pivot1.rotate(0, 2, 0);
+            this.pivot2.rotate(0, -3, 0);
              
         }
     };
 
-    return LightControl;
+    return LightHandler;
 });
 ~~~
 
