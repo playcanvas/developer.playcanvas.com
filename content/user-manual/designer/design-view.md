@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 4
 ---
 
-<img alt="Design View" width="640" height="480" src="/images/platform/design_view2.png" />
+<img alt="Design View" width="640" height="480" src="/images/platform/design_view2.PNG" />
 
 The Design View shows you the scene rendered by your Pack. You can freely move around the scene by manipulating the Designer's current camera.
 
