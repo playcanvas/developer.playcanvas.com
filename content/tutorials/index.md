@@ -7,7 +7,7 @@ Tutorials are a great way to learn to use PlayCanvas. You'll find both video tut
 
 ## Videos
 
-You can find our complete collection of video tutorials on our [YouTube Channel](http://youtube.com/playcanvas).
+You can find our complete collection of video tutorials on our [YouTube Channel](https://youtube.com/playcanvas). You can also [download](/tutorials/video) assets for following along to the videos.
 
 ## Articles
 
@@ -28,6 +28,7 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 * [More Cameras][more_cameras]
 * [First Person Camera][first_person_camera]
 * [Collision and Triggers][collision_and_triggers]
+* [Using the Asset Registry][using_the_asset_registry]
 
 ### Advanced
 
@@ -51,6 +52,7 @@ For instructions in displaying 2D images see [our GitHub sprites page][sprites] 
 [more_cameras]: /tutorials/intermediate/more-cameras
 [first_person_camera]: /tutorials/intermediate/first-person-camera
 [collision_and_triggers]: /tutorials/intermediate/collision-and-triggers
+[using_the_asset_registry]: /tutorials/intermediate/using-assets
 
 [fps_character_controller]: /tutorials/advanced/fps-controller
 [programmatically_creating]: /tutorials/advanced/programmatically-creating

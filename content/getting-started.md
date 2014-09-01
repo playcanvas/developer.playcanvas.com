@@ -5,7 +5,7 @@ template: page.tmpl.html
 
 In order to learn the basics of PlayCanvas Platform, let's build the following simple 3D web app:
 
-<iframe id='cube-frame' src="http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/playcanvas/tutorials/cube/"></iframe>
+<iframe id='cube-frame' src="http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/playcanvas/tutorials/spinning_cube/"></iframe>
 
 ## Your Profile
 
@@ -50,7 +50,7 @@ Entities are built from Components. A Component powers an Entity with a particul
 Let's begin by naming our new Pack:
 
 * Select the root node 'Untitled' in the Pack Explorer.
-* In the Attribute Editor below the Pack Explorer, rename the Untitled root node to something more meaningful such as 'Box Test' and hit Enter.
+* In the Attribute Editor below the Pack Explorer, rename the Untitled root node to something more meaningful such as 'Spinning Cube' and hit Enter.
 
 Now, for our spinning box experiment, we will need 3 Entities:
 
@@ -60,7 +60,7 @@ Now, for our spinning box experiment, we will need 3 Entities:
 
 Fortunately, Designer automatically creates a directional light and a camera for you when a new pack is created. So here are the steps to create the box:
 
-* Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new child box entity of 'Box Test' in the Pack Explorer.
+* Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new child box entity of 'Spinning Cube' in the Pack Explorer.
 
 Now let's set up the camera so that it is viewing the box properly:
 
@@ -70,7 +70,7 @@ Now let's set up the camera so that it is viewing the box properly:
 Finally, let's set up the light to light the box from an angle:
 
 * Select the light entity, entitled 'Directional Light', in the Pack Explorer to activate the Attribute Editor.
-* In the Attribute Editor, set 'Rotation:' to 45, -30, 0 to reorient the light.
+* In the Attribute Editor, set 'Rotation:' to 30, 0, 30 to reorient the light.
 
 You should now have someone similar to the following in the 3D View:
 
