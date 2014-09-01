@@ -1,5 +1,5 @@
 ---
-title: Using-Forces-on-Rigid-Bodies
+title: Forces and Impulses
 template: tutorial-page.tmpl.html
 
 ---
@@ -57,13 +57,13 @@ For more information on rigidbody types, see [the collision API page][collision 
 
 ##General setup
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube’s rigidbody was set to dynamic while the floor’s rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the ‘cast shadows’ option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code for [this PlayCanvas app can be found here][pack].
+We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code for [this PlayCanvas app can be found here][pack].
 
 ##Limiting and control
 
-Some Designer settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube’s attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
+Some Designer settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube's attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
 
-<img src="/images/tutorials/forces/rigidbody_settings.png" alt="rigidbody_settings"/>
+<img src="/images/tutorials/forces/rigidbody_settings.PNG" alt="rigidbody_settings"/>
 
 ##Teleport code
 ~~~js~~~
@@ -100,7 +100,7 @@ reset: function () {
     this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
 }
 ~~~
-We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody’s location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
+We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
 
 
 ##Full code listing

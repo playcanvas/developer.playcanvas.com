@@ -14,7 +14,7 @@ This tutorial expands on the [first-person camera][first_person_camera] tutorial
 
 ## The Pack setup
 
-![Pack Explorer](/images/tutorials/fps_controller_pack2.png)
+![Pack Explorer](/images/tutorials/fps_controller_pack.png)
 
 You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][first_person_camera] from the previous tutorial.
 

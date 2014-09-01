@@ -1,5 +1,5 @@
 ---
-title: Controlling-Lights
+title: Controlling Lights
 template: tutorial-page.tmpl.html
 
 ---

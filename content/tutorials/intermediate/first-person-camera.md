@@ -12,7 +12,7 @@ In this tutorial, we'll create a simple script for a first-person camera. That i
 
 ## The Pack setup
 
-![Pack Explorer](/images/tutorials/first_person_camera_pack2.png)
+![Pack Explorer](/images/tutorials/first_person_camera_pack.png)
 
 You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
 
