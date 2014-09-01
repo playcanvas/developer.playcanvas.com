@@ -14,7 +14,7 @@ This tutorial expands on the [first-person camera][first_person_camera] tutorial
 
 ## The Pack setup
 
-![Pack Explorer](/images/tutorials/fps_controller_pack.png)
+![Pack Explorer](/images/tutorials/fps_controller_pack2.png)
 
 You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][first_person_camera] from the previous tutorial.
 
@@ -34,7 +34,7 @@ The other main sort of character controller is a Kinematic Character Controller,
 
 ## The Character Controller Code
 
-The full source for this tutorial is found in the [tutorials code repository][tutorials_code]
+The full source for this tutorial is found in the [tutorials project code page][tutorials_code].
 
 There are three important functions in the character controller for this tutorial, but first an important piece of setup code:
 
@@ -172,8 +172,8 @@ Getting input from the player is slightly more complicated than simply translati
 Finally we just check for the jump action and if required, we call the `jump()` method of the character controller script.
 
 [first_person_camera]: /tutorials/intermediate/first-person-camera
-[designer]: http://playcanvas.com/playcanvas/tutorials/designer#pack/0c72839a-2ad2-4bfe-94d1-5f4434630fc3
-[tutorials_code]: http://bitbucket.org/playcanvas/tutorials
+[designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/0c72839a-2ad2-4bfe-94d1-5f4434630fc3
+[tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
 [rigidbody_system]: /engine/api/stable/symbols/pc.fw.RigidBodyComponentSystem.html
 [raycast_result]: /engine/api/stable/symbols/pc.fw.RaycastResult.html
 [input_controller]: /engine/api/stable/symbols/pc.input.Controller.html

@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 4
 ---
 
-<img alt="Design View" width="640" height="480" src="/images/platform/design_view.png" />
+<img alt="Design View" width="640" height="480" src="/images/platform/design_view2.png" />
 
 The Design View shows you the scene rendered by your Pack. You can freely move around the scene by manipulating the Designer's current camera.
 
@@ -21,6 +21,8 @@ It is also possible to view your scene through one of the cameras in the Hierarc
 Using the *Toggle Quad View* command in the menu, or by pressing the spacebar you can toggle between single view and quad view. In quad view mode four cameras are display simultaneously. The *Front*, *Side*, *Top* and also the *Perspective* views. Quad view is great for aligning objects in 3D space as you can see the object from all angles at once.
 
 ## Gizmos
+
+<img alt="Design View" src="/images/platform/rotate-gizmo.PNG" align = left style="margin:0px 0px" />  <img alt="Design View" src="/images/platform/scale-gizmo.PNG" align = center  style="margin:0px 30px"/>
 
 The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][gizmo]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Scale (with cubes on the ends of the axes) and Rotate (which is made up of three colored rings).
 

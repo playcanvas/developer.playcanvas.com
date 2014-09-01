@@ -16,7 +16,7 @@ An asset is a unit of data that is typically imported into PlayCanvas from a con
 The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset](#source_asset) e.g. an FBX scene file into one or more [Target Assets](#target_asset) e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Designer.
 
 <h2 id="attribute">Attribute</h2>
-An attribute is a property of a [Component](#component). Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Designer’s ‘Play’ icon, the updates are live-streamed to the connected game in real time.
+An attribute is a property of a [Component](#component). Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Designer's 'Play' icon, the updates are live-streamed to the connected game in real time.
 
 <h2 id="component">Component</h2>
 Components describe the properties and functionality of an [Entity](#entity). In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.

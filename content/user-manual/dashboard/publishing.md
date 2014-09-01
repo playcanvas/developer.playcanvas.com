@@ -14,5 +14,5 @@ To publish in this way, follow these steps:
 * Select the 'Exports' tab. You should see your exported pack. The generation of the export may not be complete when you view the Exports page. After all, the server has to do some work to generate your download for you. If the download link has not yet appeared, refresh the page until it is visible.
 * Check the newly exported pack.
 * Click the 'Publish' button at the top right of the exports lister.
-* A dialog will ask you for a name for the published app. This is used to construct the URL in the form `http://apps.playcanvas.com/<USERNAME>/<PROJECTNAME>/<GAMENAME>`. So for example, if PlayCanvas user 'will' had a project called 'callofhonor' and chose a publish name of 'megawar', the published URL would be `http://apps.playcanvas.com/will/callofhonor/megawar`. Enter a name and click 'OK'.
+* A dialog will ask you for a name for the published app. This is used to construct the URL in the form `http://apps.playcanvas.com/<USERNAME>/<PROJECTNAME>/<GAMENAME>`. So for example, if PlayCanvas user 'will' had a project called 'callofhonor' and chose a publish name of 'megawar', the published URL would be `http://apps.playcanvas.com/will/callofhonor/megawar`. Enter a name, click 'Publish' and check the 'Apps' tab... 
 * Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.

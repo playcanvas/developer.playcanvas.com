@@ -18,6 +18,6 @@ Learn more about:
 [modeling]: /user-manual/assets/models/building
 [blender]: http://blender.org/
 [source_asset]: /user-manual/glossary#source_asset
-[target_asset]: /user-manual/glossary#target_asset
+[target_asset]: /user-manual/glossary/#target_asset
 [building_models]: /user-manual/assets/models/building
 [exporting_models]: /user-manual/assets/models/exporting

@@ -78,7 +78,7 @@ You should now have someone similar to the following in the 3D View:
 
 ### Save your work
 
-Now would seem to be a good time to save your work, right? In actual fact, PlayCanvas Designer continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decide to close the Designer tab at any point.
+Now would seem to be a good time to save your work, right? In actual fact, PlayCanvas Designer continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decide to close the Designer tab at any point. You can also use the 'Fork' button at the top-right of a project page to create a copy of the whole project.
 
 ### Previewing Your Work
 

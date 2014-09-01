@@ -8,6 +8,6 @@ Once you have built your game, you will no doubt want to publish it and allow pe
 
 * [Publish to PlayCanvas](/user-manual/publishing/playcanvas)
 * [Self-host on your own web-site](/user-manual/publishing/self-hosting)
-* [Publish to Google Play or the iOS App Store](/user-manual/publishing/mobile/cocoonjs)
+* [Publish to Google Play or the iOS App Store](/user-manual/publishing/cocoonjs/)
 * [Publish to the Chrome Web Store](/user-manual/publishing/chromewebstore)
 * [Publish to Firefox OS](/user-manual/publishing/firefoxos)

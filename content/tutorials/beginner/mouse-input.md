@@ -69,6 +69,8 @@ pc.script.create("mouse", function (context) {
 
     return MouseHandler;
 });
+
+
 ~~~
 
 ### Accessing the mouse
@@ -100,8 +102,8 @@ context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 Events available on `pc.input.Mouse` are:
 
-* `pc.input.EVENT_MOUSEUP` - fires when a mouse button is pressed
-* `pc.input.EVENT_MOUSEDOWN` - fires when a mouse button is released
+* `pc.input.EVENT_MOUSEUP` - fires when a mouse button is released
+* `pc.input.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
 * `pc.input.EVENT_MOUSEMOVE` - fires when the mouse is moved
 * `pc.input.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
 

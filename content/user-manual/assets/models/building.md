@@ -1,7 +1,7 @@
 ---
 title: Building Models
 template: page.tmpl.html
-skip: true
+skip: false
 ---
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
@@ -9,15 +9,17 @@ Building art and animations for PlayCanvas can be done using almost any of the m
 PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
 Some modelling and animation programs to consider: 
-* Free options: Blender*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio*.
+* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
 * Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max*, Autodesk Maya*, Luxology Modo*.	
-A * denotes the program can create animations too.
+* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+
+\* *this program can create animations too.*
 
 For generating textures, consider these programs:
-* Free: Krita desktop, GIMP, xNormal, MaPZone, Blender, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Clip Studio Paint/Manga Studio, SERIF DrawPlus / PhotoPlus.
-Note many of the paid programs listed above for modelling also allow texture painting.
+* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+
+Note many of the programs listed above for modelling also allow texture painting.
 If you would like more options, this [external wiki][wiki] page can help. Please note that some of the information may be out-of-date.
 
 ## General Considerations for Mesh Construction
@@ -38,19 +40,34 @@ Regardless which modelling application you are using, there a number of things t
 
 Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
 
-### Non-Diffuse maps
+### **Map Types**
 
-Only the Diffuse map of your material will be exported to the FBX file. Other map types like Normal or Specular are lost on export. This means you have to set-up additional maps in the Material Editor in the Designer. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit.
+As of Blender 2.71 both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Designer. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit. Or right-click the model and select 'Edit Material'.
 
-### Embedding Textures
+### **Embedding Textures**
+Embedded Textures make importing much easier.
 
-The Blender FBX and COLLADA exporters do not have the ability to embed textures into the exported model file. Embedded Textures make importing much easier. Use the [Autodesk FBX Converter](http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112) to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
 
-### Learning Blender
+The 2.71 release of Blender features a revamped fbx export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to fbx, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
+
+Alternatively, use the [Autodesk FBX Converter](http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112) to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+
+<div class="alert alert-warning">
+Note: there seems to be an issue with Blender 2.71's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Designer.
+</div>
+
+### **Animations**
+
+As of Blender 2.71:
+
+Animations included within the blend file are exported with the default fbx exporter settings and are compatible with the PlayCanvas asset import pipeline. Note that for multiple animations for the same model you will need to upload multiple fbx files - one for each animation. To save memory you can delete models and textures from the blend file before exporting, choose to export only armatures in the fbx exporter settings, or simply delete the duplicate 'model' target assets from the assets page on your project dashboard (select 'target' from the drop-down menu on the assets page to view target assets).
+
+### **Learning Blender**
 
 There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
 
-* [Blender Cookie](http://blendercookie.com/)
+* [Blender Cookie](http://cgcookie.com/blender/)
 * [Blender Guru](http://www.blenderguru.com/)
 
 ---
@@ -135,4 +152,4 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 
 ![Sphere map](/images/artist_guide/maya_material_editor.jpg)
 
-[wiki]: http://wiki.polycount.com/CategoryTools
+[wiki]: http://wiki.polycount.com/wiki/Tools

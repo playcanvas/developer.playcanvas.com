@@ -68,8 +68,12 @@ You'll see something that looks a little like this:
 
 Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
 
+See the [Basic Materials project pack here][pack] in the [PlayCanvas tutorials project][tutorials]. Left-click the 'Box' item in the Pack Explorer and press F to focus if the view is zoomed-out too far.
+
 [getting_started]: /getting-started
 [add_material]: /images/content_creation/add_material.png
 [assign_material]: /images/content_creation/assign_material.png
 [diffuse_color]: /images/content_creation/material_editor.png
 [diffuse_normal_cube]: /images/content_creation/diffuse_normal_cube.jpg
+[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/14ebeca6-1d5f-11e4-9fba-22000a4a0339
+[tutorials]: https://playcanvas.com/playcanvas/tutorials

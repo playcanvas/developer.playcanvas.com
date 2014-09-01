@@ -277,5 +277,9 @@ pc.script.create('custom_shader', function (context) {
 
 Here is the complete script. Attach this to an Entity with a model component to see it in action. *Note, it only works on a model with a single mesh.* It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
 
+See [the Pack here][pack] and the [PlayCanvas tutorials project page here][tutorials]
+
 
 [shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.Shader.html
+[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/5f19a57e-d35f-11e3-a805-22000a4a0339
+[tutorials]: https://playcanvas.com/playcanvas/tutorials

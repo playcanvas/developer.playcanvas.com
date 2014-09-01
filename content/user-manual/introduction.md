@@ -10,7 +10,7 @@ PlayCanvas is a visual development platform for 3D web content. Both the tools a
 
 ## The PlayCanvas Workflow
 
-Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some Javascript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
+Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some JavaScript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
 
 Let's take a look at the high level workflow:
 
@@ -87,7 +87,7 @@ Find out more in the [publishing](/user-manual/publishing) section.
 
 ## Supported Browsers
 
-PlayCanvas was always designed to be plugin free, running natively in the browser. The client-side codebase is 100% Javascript and built entirely on HTML5 and related APIs (such as WebGL). Why was this important?
+PlayCanvas was always designed to be plugin free, running natively in the browser. The client-side codebase is 100% JavaScript and built entirely on HTML5 and related APIs (such as WebGL). Why was this important?
 
 * Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
 * PlayCanvas web apps load seamlessly without a plugin install or plugin load step.

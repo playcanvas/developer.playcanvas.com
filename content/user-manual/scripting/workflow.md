@@ -83,7 +83,7 @@ For these scenarios we provide support for external code repositories. That is, 
 
 ![code repository][code_repository]
 
-We provide simple integration with two popular third-party code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](http://platform.playcanvas.com/account/services) page. Just click the authorize button for the services you wish to use.
+We provide simple integration with two popular third-party code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](https://playcanvas.com/account) page. Just click the authorize button for the services you wish to use.
 
 Once the service is authorized, you setup your project with the particular repository you wish to use. Go to your project's code page; enter the username and repository name for your application; then click the Update button.
 
@@ -111,7 +111,7 @@ Exporting packs will only use source code resources on the PlayCanvas servers - 
 [server_windows]: /downloads/localserver.bat
 [launch_buttons]: /images/platform/launch_buttons.png
 [script_picker]: /images/platform/component_script.png
-[code_directory]: /images/platform/playcanvas_code_repo.jpg
-[code_repository]: /images/platform/bitbucket_code_repo.jpg
+[code_directory]: /images/platform/playcanvas_code_repo2.png
+[code_repository]: /images/platform/bitbucket_code_repo2.png
 [scripts_explorer]: /user-manual/designer/scripts-explorer
 [code_tab]: /user-manual/dashboard/code

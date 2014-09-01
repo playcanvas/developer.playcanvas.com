@@ -37,6 +37,10 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 * [Custom Shaders][custom_shaders]
 * [Custom Post Effects][custom_posteffects]
 
+###Sprites and Fonts
+
+For instructions in displaying 2D images see [our GitHub sprites page][sprites] and for displaying on-screen text see [our fonts page on GitHub][fonts].
+
 [keyboard_input]: /tutorials/beginner/keyboard-input
 [mouse_input]: /tutorials/beginner/mouse-input
 [basic_camera]: /tutorials/beginner/basic-cameras
@@ -54,3 +58,7 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 [programmatically_creating]: /tutorials/advanced/programmatically-creating
 [custom_shaders]: /tutorials/advanced/custom-shaders
 [custom_posteffects]: /tutorials/advanced/custom-posteffect
+
+[sprites]: https://github.com/playcanvas/sprites
+[fonts]: https://github.com/playcanvas/fonts
+

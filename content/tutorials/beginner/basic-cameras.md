@@ -50,7 +50,7 @@ The **perspective** projection is the most common type for games. Alternatively,
 
 ### `Field of View`
 
-The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (&deg;) so the default value of 45° means that the top edge of the view to the bottom edge of the view form an arc of 45&deg; from the position of the camera
+The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (&deg;) so the default value of 45&deg; means that the top edge of the view to the bottom edge of the view form an arc of 45&deg; from the position of the camera
 
 ![Field of view](/images/platform/field_of_view.png)
 
