@@ -21,7 +21,7 @@ var shaderDefinition = {
     // Define the attributes variables that pull data from vertex buffers. [http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.html]
     attributes: {
         aPosition: pc.gfx.SEMANTIC_POSITION, // vertex position
-        aUv0: pc.gfx.SEMANTIC_TEXCOORD0 // UV texture co-ordinate
+        aUv0: pc.gfx.SEMANTIC_TEXCOORD0 // UV texture coordinate
     },
     vshader: [
         // attributes are supplied to vertex shaders from vertex buffers
@@ -68,7 +68,7 @@ var shaderDefinition = {
         "{",
         // Use the texture2D function to pull the color out of the height map at this pixel.
         // The height map is greyscale so we can use the 'red' value to get a value between 0-1 at this pixel.
-        "    vec4 height = texture2D(uHeightMap, vUv0).r;",
+        "    float height = texture2D(uHeightMap, vUv0).r;",
         // By default we use the color from the diffuse texture at this pixel
         "    vec4 color = texture2D(uDiffuseMap, vUv0);",
         // When the heightmap pixel is less than the time value skip the rendering of this pixel.
@@ -76,7 +76,7 @@ var shaderDefinition = {
         "      discard;",
         "    }",
         // This adds an blue border close to the areas where we discard the pixel
-        "    if (height < (uTime + 0.04)) {",
+        "    if (height < (uTime+0.04)) {",
         "      color = vec4(0, 0.2, 1, 1.0);",
         "    }",
         // Finally output the color of the pixel
@@ -128,17 +128,22 @@ Once we've got the shader definition we create a new Shader and a new Material a
 
 ~~~javascript~~~
     // Get the "clouds" height map from the assets and set the material to use it
-    var asset = context.assets.find("clouds");
-    if (asset) {
-        context.assets.load(asset).then(function (results) {
-            this.heightMap = results[0];
-            this.material.setParameter('uHeightMap', this.heightMap);
-
-        }.bind(this));
-    }
+    this.heightMap = context.assets.getAssetByResourceId(this.maps[0]).resource;
+    this.material.setParameter('uHeightMap', this.heightMap);
 ~~~
 
-The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. When it's loaded we can set the uniform `uHeightMap` to be the `pc.gfx.Texture` object.
+The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
+top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Designer:
+
+~~~javascript~~~
+    // Declare script attribute visible in the Designer
+    pc.script.attribute('maps', 'asset', [], {
+        displayName: 'Height Map',
+        type: 'texture'
+    });
+~~~
+
+When our height map texture is loaded we can set the uniform `uHeightMap` to be the `pc.gfx.Texture` object.
 
 **Updating uniforms**
 
@@ -165,9 +170,14 @@ In our shader if the value of the heightmap on a pixel is less than the value ti
 **Complete listing**
 
 ~~~javascript~~~
-pc.script.create('custom_shader', function (context) {
-    // Creates a new Custom_shader instance
-    var Custom_shader = function (entity) {
+pc.script.attribute('maps', 'asset', [], {
+    displayName: 'Height Map',
+    type: 'texture'
+});
+
+pc.script.create('customShader', function (context) {
+    // Creates a new CustomShader instance
+    var CustomShader = function (entity) {
         this.entity = entity;
 
         this.time = 0;
@@ -176,7 +186,7 @@ pc.script.create('custom_shader', function (context) {
     };
 
 
-    Custom_shader.prototype = {
+    CustomShader.prototype = {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             var model = this.entity.model.model;
@@ -244,16 +254,9 @@ pc.script.create('custom_shader', function (context) {
             // Replace the material on the model with our new material
             model.meshInstances[0].material = this.material;
 
-
             // Get the "clouds" height map from the assets and set the material to use it
-            var asset = context.assets.find("clouds");
-            if (asset) {
-                context.assets.load(asset).then(function (results) {
-                    this.heightMap = results[0];
-                    this.material.setParameter('uHeightMap', this.heightMap);
-
-                }.bind(this));
-            }
+            this.heightMap = context.assets.getAssetByResourceId(this.maps[0]).resource;
+            this.material.setParameter('uHeightMap', this.heightMap);
         },
 
         // Called every frame, dt is time in seconds since last update
@@ -271,15 +274,11 @@ pc.script.create('custom_shader', function (context) {
         }
     };
 
-    return Custom_shader;
+    return CustomShader;
 });
 ~~~
 
 Here is the complete script. Attach this to an Entity with a model component to see it in action. *Note, it only works on a model with a single mesh.* It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
 
-See [the Pack here][pack] and the [PlayCanvas tutorials project page here][tutorials]
-
 
 [shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.Shader.html
-[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/5f19a57e-d35f-11e3-a805-22000a4a0339
-[tutorials]: https://playcanvas.com/playcanvas/tutorials
