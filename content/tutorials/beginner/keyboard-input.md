@@ -19,7 +19,6 @@ pc.script.create("keyboard_handler", function (context) {
 
     var KeyboardHandler = function (entity) {
         this.entity = entity;
-        this.angle = 0;
     };
 
     KeyboardHandler.prototype = {

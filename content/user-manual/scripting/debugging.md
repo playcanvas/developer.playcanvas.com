@@ -35,3 +35,7 @@ In order to debug your scripts, select the Sources tab in Developer Tools. Open 
 <img alt="Show sources in Chrome" width="640" src="/images/platform/browser_chrome_view_sources.png"></img>
 
 The navigator lists all of the scripts currently running in the active tab, including any PlayCanvas scripts that you have written. Find one of your scripts in the navigator and select it to open the source code. You are now able to set breakpoints and debug.
+
+<div class="alert alert-info">
+Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Designer etc.) might also be paused.
+</div>
