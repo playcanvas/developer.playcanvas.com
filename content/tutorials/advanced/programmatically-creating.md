@@ -81,6 +81,8 @@ When you are finished with an Entity you call the `destroy` method on the Entity
 ## In Action
 
 ~~~js~~~
+pc.script.attribute("materials", "asset", [], {type: "material"});
+
 pc.script.create('entity_creator', function (context) {
 
     var MAX_X = 10;
@@ -101,7 +103,6 @@ pc.script.create('entity_creator', function (context) {
 
     EntityCreator.prototype = {
         initialize: function () {
-            this.redMaterial = context.assets.getAssetByName('Red', pc.asset.ASSET_MATERIAL);
         },
 
         update: function (dt) {
@@ -128,9 +129,10 @@ pc.script.create('entity_creator', function (context) {
 
             // Add a new Model Component and add it to the Entity.
             context.systems.model.addComponent(entity, {
-                type: 'box',
-                materialAsset: this.redMaterial
+                type: 'box'
             });
+            var red = context.assets.getAssetByResourceId(this.materials[0]).resource;
+            entity.model.model.meshInstances[0].material = red;
 
             // Move to a random position
             entity.setLocalPosition(
@@ -151,7 +153,7 @@ pc.script.create('entity_creator', function (context) {
     };
 
     return EntityCreator;
-});;
+});
 ~~~
 
 This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
