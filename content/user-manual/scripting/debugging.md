@@ -8,7 +8,7 @@ In order to create scripts for PlayCanvas, it is vital that you know how to acce
 
 ## Google Chrome
 
-Chrome has [Developer Tools](https://developers.google.com/chrome-developer-tools/) integrated directly into the browser. Access them by pressing F12 on Windows or ALT-CMD-I on Mac.
+Chrome has [Developer Tools](https://developer.chrome.com/devtools) integrated directly into the browser. Access them by pressing F12 on Windows or ALT-CMD-I on Mac.
 
 ### Debugging Scripts
 
