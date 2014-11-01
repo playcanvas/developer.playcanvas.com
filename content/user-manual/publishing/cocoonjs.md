@@ -1,10 +1,10 @@
 ---
-title: App Stores
+title: Ludei CocoonJS
 template: page.tmpl.html
-position: 3
+skip: true
 ---
 
-To publish your PlayCanvas game, we recommend you use [CocoonJS][cocoonjs] from [Ludei][ludei]. CocoonJS can wrap your PlayCanvas game as a native application which can then be sumitted to either Google Play or the Apple App Store.
+[CocoonJS][cocoonjs] from [Ludei][ludei] can wrap your PlayCanvas game as a native application which can then be submitted to either Google Play or the Apple App Store.
 
 ## Testing your PlayCanvas Game in CocoonJS
 
@@ -14,9 +14,9 @@ Let's step through the process to illustrate how easy it is:
 
 1. Create an account on [ludei.com][ludei].
 2. Install the CocoonJS Launcher for [Android][android_launcher] or [iOS][ios_launcher].
-3. Start the Launcher on your mobile device.<br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/launcher.png"></img>
-4. Select 'Your App' and log in.<br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/launcher_login.png"></img>
-5. Select URL and enter the URL to your PlayCanvas game.<br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/launcher_url.png"></img><br>Ordinarily, the URL would be of the form 'http://apps.playcanvas.com/username/projectname/gamename'. However, this page is actually a wrapper page for your game, with your game contained within an iframe. The URL referenced by the iframe is what you need to pass to the launcher. To get this URL, view source of your published game and search for 'iframe'. You will find a URL of the form 'http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/username/projectname/gamename/'. Type this into the URL edit box in the Launcher and hit 'CANVAS 2D/WEBGL'!
+3. Start the Launcher on your mobile device.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/launcher.png"></img><p>
+4. Select 'Your App' and log in.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/signin.png"></img><p>
+5. Select URL and enter the URL to your PlayCanvas game.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/applist.png"></img><br><br>Ordinarily, the URL would be of the form 'http://apps.playcanvas.com/username/projectname/gamename'. However, this page is actually a wrapper page for your game, with your game contained within an iframe. The URL referenced by the iframe is what you need to pass to the launcher. To get this URL, view source of your published game and search for 'iframe'. You will find a URL of the form 'http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/username/projectname/gamename/'. Type this into the URL edit box in the Launcher and hit 'CANVAS+'!
 
 <p class="alert alert-warning">
 Note that if the trailing forward slash on the URL is not present, CocoonJS will fail to load your game.
