@@ -20,4 +20,9 @@ Testing and building a native build of your game is a simple process. Let's walk
 8. After hitting 'Build App Now', your game is uploaded to Intel's server where the build is executed. You can then download the generated APKs.<img alt="Build Complete" width="640" src="/images/publishing/xdk/buildcomplete.png"></img>
 9. Once the APK ZIP has been downloaded, you should have an ARM and an X86 build.<img alt="Downloaded Build" width="640" src="/images/publishing/xdk/downloadedbuild.png"></img><br>It's now a simple matter to copy your APK to your device and test before submitting to Google Play.
 
+<p class="alert alert-warning">
+To ensure the best experience for your users, be sure to publish both x86 and ARM APKs. It only take a few minutes, following the directions [here][apksubmission].
+</p>
+
 [xdk]: https://software.intel.com/en-us/html5/tools
+[apksubmission]: https://software.intel.com/sites/default/files/managed/9a/72/Intel_Walkthrough_GP-Multiple_APK_Submissions.pdf
