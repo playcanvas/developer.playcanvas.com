@@ -24,7 +24,7 @@ A Project is a collection of:
 
 ## Creating a New Project
 
-On your profile page, press the "+" button to create a new Project. This takes you to a page where you set the details of your new project:
+On your profile page, click on the PROJECTS tab and click on 'Create a Project'. This takes you to a page where you set the details of your new project:
 
 * **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or simply display a 3D model that you've made, you can use a starter kit.
 * **Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
@@ -136,7 +136,7 @@ Once you've edited the code, press the "Save" button in the code editor and swit
 
 With that done, you can select the Launch button from the toolbar once again. This time, you should see your box rotating on the spot. Congratulations, you have built your first PlayCanvas app!
 
-[profile]: /images/platform/profile.jpg "Profile"
+[profile]: /images/platform/profile.png "Profile"
 [project_list]:  /images/platform/project_list.jpg "Project List"
 [collaborators]: /images/platform/collaborators.png "Collaborators"
 [pack_explorer]: /images/platform/pack_explorer.png "Pack Explorer"
