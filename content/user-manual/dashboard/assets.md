@@ -1,7 +1,7 @@
 ---
 title: Assets
 template: page.tmpl.html
-position: 2
+position: 3
 ---
 
 ![Dashboard](/images/platform/dashboard_assets.png)

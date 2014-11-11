@@ -15,5 +15,5 @@ You can change your profile image using the [Gravatar][gravatar] global profile 
 Click the 'cog' icon in the top-right here to access your global profile settings. From here you can control your account and billing info and see your cloud storage use.
 
 
-[profile_page]: /images/platform/profile.jpg "Profile"
+[profile_page]: /images/platform/profile.png "Profile"
 [gravatar]: https://gravatar.com/

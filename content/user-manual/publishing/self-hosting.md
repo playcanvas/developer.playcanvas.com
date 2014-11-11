@@ -7,7 +7,7 @@ position: 2
 If you want to self-host your game on your own web site, there are a couple of options:
 
 1. Embed a PlayCanvas hosted game using an [iframe][iframe].
-2. Download your game from your project page and upload the files to your own site. 
+2. Download your game from your project page and upload the files to your own site.
 
 ## iframe Embedding
 
@@ -39,11 +39,14 @@ The simplest example of a page which embeds this PlayCanvas game would be:
 
 In order to host your game independently of PlayCanvas' servers, do the following:
 
-* In your project dashboard, select the 'Designer' tab.
-* Check the pack that you want to export.
-* Click the 'Export' button at the top right of the pack lister.<br><br><img alt="Export" width="640" src="/images/publishing/selfhosting/export.png"></img>
-* Select the 'Exports' tab. You should see your exported pack. The generation of the export may not be complete when you view the Exports page. After all, the server has to do some work to generate your download for you. If the download link has not yet appeared, refresh the page until it is visible.
-* Click download and your ZIP will be downloaded to your hard drive.
+* In your project dashboard, select the 'PUBLISH' tab.
+
+![Publish](/images/platform/dashboard_publish.png)
+
+* Click the DOWNLOAD button
+* Enter a name for your export. This will be the name of the .zip file that will be created for you.
+* Select the Packs you want to include in your export from the list. Notice that the Primary Pack (the one with the blue banner icon), is always included and it will be the first pack loaded when your app is launched.
+* Click on the 'Web' button on the bottom to download your export for Web deployment.
 * Extract the contents wherever you like and point a browser at the contained index.html. You PlayCanvas web app will load.
 
 If you run your game from your local file system, it needs to be served from a local web server. If you don't do this, the browser will block HTTP requests made by the engine (for security purposes). There are many options for running a web server. Here are a few:
