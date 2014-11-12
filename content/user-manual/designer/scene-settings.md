@@ -6,10 +6,13 @@ position: 6
 
 The Scene Settings panel allows you to set up global properties for your scene. The properties that are settable are:
 
-* Ambient light
-* Fog
-* Shadow distance
-* Gravity
+* Render Settings
+  * Ambient light
+  * Fog
+  * Shadow distance
+  * Gamma correction
+* Physics Settings
+  * Gravity
 
 The panel can be accessed by selecting 'Show Scene Settings' from Designer's View menu:
 
@@ -67,6 +70,10 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 ### Shadow Distance
 
 The shadow distance is the maximum distance from the camera beyond which shadows that come from Directional Lights are no longer visible. Smaller values produce more detailed shadows. The closer the limit the less shadow data has to be mapped to, and represented by, any shadow map; shadow map pixels are mapped spatially and so the less distance the shadow map has to cover, the smaller the pixels and so the more resolution any shadow has. 
+
+### Gamma Correction
+
+Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then fully the lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. To find out more about gamma correction, read [this GPU Gems chapter](http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html).
 
 ## Physics Settings
 
