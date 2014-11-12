@@ -73,7 +73,11 @@ The shadow distance is the maximum distance from the camera beyond which shadows
 
 ### Gamma Correction
 
-Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then fully the lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. To find out more about gamma correction, read [this GPU Gems chapter](http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html).
+Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then fully the lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. The following image shows a simple scene with a sphere. On the left the scene has been gamma corrected while on the right, the scene is uncorrected.
+
+<img alt="Gamma correction comparison" width="640" src="/images/platform/scene_settings/scene_settings_gamma_correction.png" />
+
+To find out more about gamma correction, read [this GPU Gems chapter](http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html).
 
 ## Physics Settings
 
