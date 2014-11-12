@@ -52,7 +52,7 @@ Check it out for yourself <a href="https://chrome.google.com/webstore/detail/swo
 
 Generating a packaged app from a PlayCanvas game takes a little more effort than a hosted app. Here's a run down of the steps required to package and publish a game like SWOOOP:
 
-* Download the most recently exported version of the game from the Exports tab of the Project Dashboard.
+* Download an export of your game from the Publish tab of the Project Dashboard.
 * Unzip the contents.
 * Create a manifest.json file . For SWOOOP, it looks like this:
 
