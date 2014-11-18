@@ -19,11 +19,11 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
         <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
     </tr>
     <tr>
-        <td>[Audiolistener][audiolistener]</td>
+        <td>[Audio Listener][audiolistener]</td>
         <td>Specifies the location of the listener for 3D audio playback.</td>
     </tr>
     <tr>
-        <td>[Audiosource][audiosource]</td>
+        <td>[Audio Source][audiosource]</td>
         <td>Specifies audio assets that can be played at the position of the entity.</td>
     </tr>
     <tr>
@@ -43,7 +43,11 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
         <td>Renders a 3D model at the location of the entity.</td>
     </tr>
     <tr>
-        <td>[Rigidbody][rigidbody]</td>
+        <td>[Particle System][particlesystem]</td>
+        <td>Attach a dynamic light source to the Entity.</td>
+    </tr>
+    <tr>
+        <td>[Rigid Body][rigidbody]</td>
         <td>Adds the entity to the scene's physical simulation.</td>
     </tr>
     <tr>
@@ -63,6 +67,7 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
 [collision]: /user-manual/packs/entities/components/collision
 [light]: /user-manual/packs/entities/components/light
 [model]: /user-manual/packs/entities/components/model
+[particlesystem]: /user-manual/packs/entities/components/particlesystem
 [rigidbody]: /user-manual/packs/entities/components/rigidbody
 [script]: /user-manual/packs/entities/components/script
 [skybox]: /user-manual/packs/entities/components/skybox
