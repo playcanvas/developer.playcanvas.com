@@ -12,7 +12,7 @@ The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It
 
 ## Enabling Shadows
 
-Enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows. Note that only directional and spot lights can cast shadows. PlayCanvas does not support shadow casting from point lights.
+Enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows.
 
 Select the lights in the Pack Explorer and check the 'Cast Shadows' option:
 
