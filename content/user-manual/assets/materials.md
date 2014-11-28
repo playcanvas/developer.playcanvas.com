@@ -1,7 +1,7 @@
 ---
 title: Materials
 template: page.tmpl.html
-position: 4
+position: 5
 ---
 
 A material is a type of asset which determines how a mesh is displayed.
