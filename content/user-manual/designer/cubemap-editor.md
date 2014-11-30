@@ -6,7 +6,7 @@ position: 9
 
 Cube maps are a special type of texture asset. Typically they are used to render things like sky boxes and reflections in your scene.
 
-<iframe src="http://apps.playcanvas.com/will/cubemap/bunny?overlay=false"></iframe>
+<iframe width="640" height="480" src="http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/will/cubemap/bunny/"></iframe>
 
 ## Importing Cube Map Textures
 
