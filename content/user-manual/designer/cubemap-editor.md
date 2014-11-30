@@ -6,6 +6,8 @@ position: 9
 
 Cube maps are a special type of texture asset. Typically they are used to render things like sky boxes and reflections in your scene.
 
+<iframe src="http://apps.playcanvas.com/will/cubemap/bunny?overlay=false"></iframe>
+
 ## Importing Cube Map Textures
 
 A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Designer. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
