@@ -42,7 +42,7 @@ This setting determines how the pixels of the cubemaps are interpolated as they 
 This setting controls additional controls to improve the quality of a cube map as it is minified. Linear gives the best results visually, followed by Nearest and then None.
 
 ### Mag Filter
-This setting determines how the pixels of the cubemaps are interpolated as they are magified. Magification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
 ### Anisotropy
 Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
