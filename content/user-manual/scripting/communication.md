@@ -23,7 +23,9 @@ pc.script.create("player", function (context) {
 
     return Player;
 });
+~~~
 
+~~~javascript~~~
 
 // input.js
 pc.script.create("input", function (context) {
@@ -58,5 +60,12 @@ this.entity.script.player.move(1,0);
 ~~~
 
 All scripts attached to a script component are exposed on the script component itself under the name defined in the `pc.script.create()` function.
+
+## Events
+
+If you wish to broadcast to many scripts all at once you can use the [event system][0] to send and listen for events.
+
+
+[0]: /user-manual/scripting/events
 
 
