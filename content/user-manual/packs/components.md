@@ -54,10 +54,6 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
         <td>[Script][script]</td>
         <td>Allows the script to run JavaScript fragments to implement custom behavior.</td>
     </tr>
-    <tr>
-        <td>[Skybox][skybox]</td>
-        <td>Renders a skybox in the scene.</td>
-    </tr>
 </tbody></table>
 
 [animation]: /user-manual/packs/entities/components/animation
@@ -70,4 +66,3 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
 [particlesystem]: /user-manual/packs/entities/components/particlesystem
 [rigidbody]: /user-manual/packs/entities/components/rigidbody
 [script]: /user-manual/packs/entities/components/script
-[skybox]: /user-manual/packs/entities/components/skybox

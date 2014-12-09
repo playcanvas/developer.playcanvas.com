@@ -69,7 +69,7 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 ### Shadow Distance
 
-The shadow distance is the maximum distance from the camera beyond which shadows that come from Directional Lights are no longer visible. Smaller values produce more detailed shadows. The closer the limit the less shadow data has to be mapped to, and represented by, any shadow map; shadow map pixels are mapped spatially and so the less distance the shadow map has to cover, the smaller the pixels and so the more resolution any shadow has. 
+The shadow distance is the maximum distance from the camera beyond which shadows that come from Directional Lights are no longer visible. Smaller values produce more detailed shadows. The closer the limit the less shadow data has to be mapped to, and represented by, any shadow map; shadow map pixels are mapped spatially and so the less distance the shadow map has to cover, the smaller the pixels and so the more resolution any shadow has.
 
 ### Gamma Correction
 
@@ -79,6 +79,27 @@ Computer screens are set up to output not physically linear, but perceptually li
 
 To find out more about gamma correction, read [this GPU Gems chapter](http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html).
 
+### Tonemapping
+
+Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tonemapping.
+
+* **Linear:** imply scales HDR colors by exposure.
+* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+
+Linear tonemapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
+
+Filmic tonemapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tonemapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tonemapping gives you nice abilities to get rid of such spots.
+
+### Exposure
+
+The exposure value tweaks the overall brightness of the scene.
+
+### Skybox
+
+The Skybox is a [cubemap] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
+
+To add a skybox, create a cubemap asset and then select it using the asset picker.
+
 ## Physics Settings
 
 Physics settings affect the simulation of all the rigid body components in your scene.
@@ -86,3 +107,5 @@ Physics settings affect the simulation of all the rigid body components in your 
 ### Gravity
 
 Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g).
+
+[cubemap]: /user-manual/assets/cubemaps
