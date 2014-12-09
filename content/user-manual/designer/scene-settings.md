@@ -11,6 +11,9 @@ The Scene Settings panel allows you to set up global properties for your scene. 
   * Fog
   * Shadow distance
   * Gamma correction
+  * Tonemapping
+  * Exposure
+  * Skybox
 * Physics Settings
   * Gravity
 
