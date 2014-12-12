@@ -37,7 +37,7 @@ The 'particlesystem' component specifies particle emitter in 3D space.
             <li>Older First: Particles are rendered in age order, oldest first.</li>
         </ul>
     </td></tr>
-    <tr><td>Blending Mode</td><td>The blending mode determines how particles are composited when they are written to the frame buffer. Let's consider that Prgb is the RGB color of a particle's pixel, Pa is its alpha value, and rgb is the RGB color already in the frame buffer. The blending options are:
+    <tr><td>Blending Mode</td><td>The blending mode determines how particles are composited when they are written to the frame buffer. Let's consider that Prgb is the RGB color of a particle's pixel, Pa is its alpha value, and Drgb is the RGB color already in the frame buffer. The blending options are:
         <ul>
             <li>Additive: Prgb + Drgb</li>
             <li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li>
