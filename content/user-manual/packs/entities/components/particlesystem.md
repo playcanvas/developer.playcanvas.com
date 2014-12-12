@@ -47,8 +47,8 @@ The 'particlesystem' component specifies particle emitter in 3D space.
     <tr><td>Stretch</td><td>A value that controls the amount by which particles are stretched along their height.</td></tr>
     <tr><td>Align To Motion</td><td>Orient particle in their direction of motion. This option is especially useful when enabling particle stretching.</td></tr>
     <tr><td>Spawn Bounds</td><td>The half extents of a local space bounding box within which particles are spawned at random positions.</td></tr>
-    <tr><td>Wrap</td><td></td></tr>
-    <tr><td>Wrap Bounds</td><td></td></tr>
+    <tr><td>Wrap</td><td>Enables wrap bounds.</td></tr>
+    <tr><td>Wrap Bounds</td><td>World space AABB volume centered on the owner entity's position. If a particle crosses the boundary of one side of the volume, it teleports to the opposite side. You can use this to make environmental effects like rain by moving a wrapped emitter's owner entity.</td></tr>
     <tr><td>Color Map</td><td>The color map texture to apply to all particles in the system. If no texture asset is assigned, a default spot texture is used.</td></tr>
     <tr><td>Normal Map</td><td>The normal map texture to apply to all particles in the system. Applying a normal map can make billboard particles appear more consistent with the scenes lighting.</td></tr>
     <tr><td>Particle Mesh</td><td>A model asset. The first mesh found in the model is used to represent all particles rather than a flat billboard.</td></tr>
