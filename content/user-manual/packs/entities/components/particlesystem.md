@@ -15,23 +15,38 @@ The 'particlesystem' component specifies particle emitter in 3D space.
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Enabled</td><td>If checked, the particle system will be added to the scene and rendered.</td></tr>
-    <tr><td>Particle Count</td><td></td></tr>
-    <tr><td>Lifetime</td><td></td></tr>
-    <tr><td>Emission Rate</td><td></td></tr>
-    <tr><td>Emission Rate 2</td><td></td></tr>
-    <tr><td>Start Angle</td><td></td></tr>
-    <tr><td>Start Angle 2</td><td></td></tr>
-    <tr><td>One Shot</td><td></td></tr>
-    <tr><td>Pre Warm</td><td>If enabled, the particle system will be initialized as though it had already completed a full cycle (only works if One Shot is unchecked).</td></tr>
-    <tr><td>Lighting</td><td></td></tr>
-    <tr><td>Half-Lambert</td><td></td></tr>
-    <tr><td>Color Intensity</td><td></td></tr>
-    <tr><td>Depth Test</td><td></td></tr>
-    <tr><td>Depth Softening</td><td></td></tr>
-    <tr><td>Sorting Mode</td><td></td></tr>
-    <tr><td>Blending Mode</td><td></td></tr>
-    <tr><td>Stretch</td><td></td></tr>
-    <tr><td>Spawn Bounds</td><td></td></tr>
+    <tr><td>Auto Play</td><td>If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script.</td>
+    <tr><td>Particle Count</td><td>The maximum number of particles managed by this particle system.</td></tr>
+    <tr><td>Lifetime</td><td>The length of time in seconds between a particle's birth and its death.</td></tr>
+    <tr><td>Emission Rate</td><td>The lower bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
+    <tr><td>Emission Rate 2</td><td>The upper bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
+    <tr><td>Start Angle</td><td>The lower bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'.</td></tr>
+    <tr><td>Start Angle 2</td><td>The upper bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'.</td></tr>
+    <tr><td>Loop</td><td>If checked, the particle system will emit indefinitely. Otherwise, it will emit the number of particles specified by the 'Particle Count' property and then stop.</td></tr>
+    <tr><td>Pre Warm</td><td>If enabled, the particle system will be initialized as though it had already completed a full cycle. This option is only available for looping particle systems.</td></tr>
+    <tr><td>Lighting</td><td>If checked, the particle will be lit by the dynamic lights in the scene. In some circumstances, it may be advisable to set a normal map on the particle system in order to achieve more realistic lighting.</td></tr>
+    <tr><td>Half-Lambert</td><td>Enabling Half Lambert lighting avoids particles looking too flat when lights appear to be shining towards the back sides of the particles. It is a completely non-physical lighting model but can give more pleasing visual results. This option is only available when Lighting is enabled.</td></tr>
+    <tr><td>Color Intensity</td><td>Scales the color of particles to allow them to have arbitrary brightness.</td></tr>
+    <tr><td>Depth Test</td><td>If checked, the particles will write depth information to the depth buffer. If unchecked, the depth buffer is left unchanged and particles will be guaranteed to overwrite one another in the order in which they are rendered.</td></tr>
+    <tr><td>Depth Softening</td><td>This variable value determines how much particles fade out as they get closer to another surface. This avoids the situation where particles appear to cut into surfaces.</td></tr>
+    <tr><td>Sorting Mode</td><td>Sorting mode gives you control over the order in which particles are rendered. The options are:
+        <ul>
+            <li>None: Particles are rendered in arbitrary order. When this option is selected, the particle system is simulated on the GPU and it is recommended you use this setting to get the best performance.</li>
+            <li>Camera Distance: Particles are sorted on the CPU and rendered in back to front order (in terms of camera z depth).</li>
+            <li>Newer First: Particles are rendered in age order, youngest first.</li>
+            <li>Older First: Particles are rendered in age order, oldest first.</li>
+        </ul>
+    </td></tr>
+    <tr><td>Blending Mode</td><td>The blending mode determines how particles are composited when they are written to the frame buffer. Let's consider that Prgb is the RGB color of a particle's pixel, Pa is its alpha value, and rgb is the RGB color already in the frame buffer. The blending options are:
+        <ul>
+            <li>Additive: Prgb + Drgb</li>
+            <li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li>
+            <li>Multiply: Prgb + Drgb x (1 - Pa)</li>
+        </ul>
+    </td></tr>
+    <tr><td>Stretch</td><td>A value that controls the amount by which particles are stretched along their height.</td></tr>
+    <tr><td>Align To Motion</td><td>Orient particle in their direction of motion. This option is especially useful when enabling particle stretching.</td></tr>
+    <tr><td>Spawn Bounds</td><td>The half extents of a local space bounding box within which particles are spawned at random positions.</td></tr>
     <tr><td>Wrap</td><td></td></tr>
     <tr><td>Wrap Bounds</td><td></td></tr>
     <tr><td>Color Map</td><td>The color map texture to apply to all particles in the system. If no texture asset is assigned, a default spot texture is used.</td></tr>
