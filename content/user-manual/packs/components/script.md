@@ -1,7 +1,7 @@
 ---
-title: Script Component
+title: Script
 template: page.tmpl.html
-skip: true
+position: 10
 ---
 
 The 'script' component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.

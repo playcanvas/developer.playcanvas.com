@@ -1,7 +1,7 @@
 ---
-title: Model Component
+title: Model
 template: page.tmpl.html
-skip: true
+position: 7
 ---
 
 The 'model' component enables an entity to render a primitive shape or a model asset.
