@@ -40,45 +40,10 @@ Every light casts shadows via a shadow map. This shadow map can have a resolutio
 
 ### Shadow Bias
 
-Shadow mapping can be prone to rendering artifacts that can look very ugly. If you notice bands of shadow or speckled patches where you do not expect, you should try tuning the shadow bias to resolve the problem. The shadow bias is not yet exposed via Designer's interface and so, currently, you have to set this value in a script. Here is an example showing how this can be done:
+Shadow mapping can be prone to rendering artifacts that can look very ugly. If you notice bands of shadow or speckled patches where you do not expect, you should try tuning the shadow bias to resolve the problem.
 
-~~~javascript~~~
-// Expose the light's shadow bias to Designer. Don't forget to select
-// the 'Refresh Script Attributes' option from the Entity menu
-pc.script.attribute('shadowBias', 'number', -0.0005, {
-    displayName: 'Shadow Bias',
-    decimalPrecision: 5
-});
+### Normal Offset Bias
 
-pc.script.create('light', function (context) {
-    // Creates a new Light instance
-    var Light = function (entity) {
-        this.entity = entity;
-        this.light = null;
-    };
+'Shadow acne' artifacts are a big problem and the shadow bias can eliminate them quite effectively. Unfortunately, this always introduces some level of 'Peter Panning', the phenomenon where shadows make a object appear to be floating in mid-air.
 
-    Light.prototype = {
-        // Called once after all resources are loaded and before the first update
-        initialize: function () {
-            this.light = this.entity.light.model.lights[0];
-        },
-
-        // Called every frame, dt is time in seconds since last update
-        update: function (dt) {
-            this.light.setShadowBias(this.shadowBias);
-        }
-    };
-
-    return Light;
-});
-~~~
-
-To use this script:
-
-* Add a script component to your light
-* Create a script called light.js
-* Open the script in the PlayCanvas Script Editor and copy the code above into it
-* Save and close the code editor
-* Select 'Refresh Script Attributes' from Designer's Entity menu
-
-Now you should be able to see a 'Shadow Bias' property exposed for your light entity. Try tweaking the value and observe the effect on your shadows.
+The Normal Offset Bias solves this problem. In addition to using the depth bias, we can avoid both shadow acne and Peter Panning by making small tweaks to the UV coordinates used in the shadow map look-up. A fragment's position is offset along its geometric normal. This "Normal Offset" technique yields vastly superior results to a constant shadow bias only approach.
