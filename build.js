@@ -11,6 +11,7 @@ var static      = require("metalsmith-static");
 var metadata    = require("metalsmith-metadata");
 var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
+var locale      = require("./lib/locale/index");
 
 var env = null;
 var args = process.argv.slice(2);
@@ -48,12 +49,12 @@ m.metadata().local = (env === "local");
 m.metadata().prod = (env === "prod");
 m.metadata().dev = (env === "dev");
 
-    m.use(navbuilder("user-manual")({
+    m.use(navbuilder("en/user-manual")({
         engine: handlebars,
         template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
         partialName: "user-manual-navigation"
     }))
-    .use(navbuilder("tutorials")({
+    .use(navbuilder("en/tutorials")({
         engine: handlebars,
         template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
         partialName: "tutorials-navigation"
@@ -68,4 +69,5 @@ m.metadata().dev = (env === "dev");
         dest: "."
     }))
     .use(metallic())
+    .use(locale()())
     .build();

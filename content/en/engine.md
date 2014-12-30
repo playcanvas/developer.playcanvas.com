@@ -9,7 +9,7 @@ The PlayCanvas Engine is an open source javascript framework which you can use t
 
 Download the full source for the engine from our [Github page][1]. Instructions on how to build the complete engine are included in the README file.
 
-## Now what?
+## Now what?
 
 Check out the [engine examples][2]. The source code for all samples is included in the engine repository.
 
