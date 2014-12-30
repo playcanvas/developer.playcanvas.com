@@ -112,6 +112,8 @@ def po_2_md(po_path, out_path):
             f.write('\n\n')
 
 def create_pots(dir, out_path):
+    shutil.rmtree(out_path)
+
     '''Update source .pot files from markdown'''
     for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
@@ -144,7 +146,7 @@ def _generate_resource_slug(project, path):
     return "%s.%s" % (project, path.replace("/", '-').replace(".pot", ""))
 
 def tx_set(dir):
-    '''initialize a tx project from the source .pot files, only need to do this once locally'''
+    '''initialize a tx project from the source .pot files'''
     project = "playcanvas-developer-site"
     for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
@@ -176,6 +178,10 @@ def tx_pull():
 if 'gettext' in sys.argv:
     print("gettext strings from source markdown")
     create_pots('content/en', 'po')
+
+if 'set' in sys.argv:
+    print("update tx config")
+    tx_set('po')
 
 if 'pull' in sys.argv:
     print("pull new localization files from transifex")

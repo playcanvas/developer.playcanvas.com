@@ -31,12 +31,6 @@ source_file = po/search.pot
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-test_localization]
-file_filter = po/test_localization.<lang>.po
-source_file = po/test_localization.pot
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-tutorials-index]
 file_filter = po/tutorials/index.<lang>.po
 source_file = po/tutorials/index.pot
@@ -166,42 +160,6 @@ type = PO
 [playcanvas-developer-site.po-tutorials-intermediate-using-assets]
 file_filter = po/tutorials/intermediate/using-assets.<lang>.po
 source_file = po/tutorials/intermediate/using-assets.pot
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-starter-kits-index]
-file_filter = po/tutorials/starter-kits/index.<lang>.po
-source_file = po/tutorials/starter-kits/index.pot
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-starter-kits-platform-game-challenges]
-file_filter = po/tutorials/starter-kits/platform-game/challenges.<lang>.po
-source_file = po/tutorials/starter-kits/platform-game/challenges.pot
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-starter-kits-platform-game-enemies]
-file_filter = po/tutorials/starter-kits/platform-game/enemies.<lang>.po
-source_file = po/tutorials/starter-kits/platform-game/enemies.pot
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-starter-kits-platform-game-goal]
-file_filter = po/tutorials/starter-kits/platform-game/goal.<lang>.po
-source_file = po/tutorials/starter-kits/platform-game/goal.pot
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-starter-kits-platform-game-index]
-file_filter = po/tutorials/starter-kits/platform-game/index.<lang>.po
-source_file = po/tutorials/starter-kits/platform-game/index.pot
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-starter-kits-platform-game-player-character]
-file_filter = po/tutorials/starter-kits/platform-game/player-character.<lang>.po
-source_file = po/tutorials/starter-kits/platform-game/player-character.pot
 source_lang = en
 type = PO
 
