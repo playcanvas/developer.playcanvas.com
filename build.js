@@ -12,6 +12,7 @@ var metadata    = require("metalsmith-metadata");
 var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
 var locale      = require("./lib/locale/index");
+var i18n        = require("./lib/i18n/index");
 
 var env = null;
 var args = process.argv.slice(2);
@@ -49,7 +50,10 @@ m.metadata().local = (env === "local");
 m.metadata().prod = (env === "prod");
 m.metadata().dev = (env === "dev");
 
-    m.use(navbuilder("en/user-manual")({
+    m.use(i18n()({
+        locales: [{file: 'content/ja/titles.js.json', locale: 'ja'}]
+    }))
+    .use(navbuilder("en/user-manual")({
         engine: handlebars,
         template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
         partialName: "user-manual-navigation"

@@ -31,6 +31,12 @@ source_file = po/search.pot
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-titles-js]
+file_filter = po/titles.js.<lang>.po
+source_file = po/titles.js.pot
+source_lang = en
+type = PO
+
 [playcanvas-developer-site.po-tutorials-index]
 file_filter = po/tutorials/index.<lang>.po
 source_file = po/tutorials/index.pot
