@@ -65,4 +65,4 @@ The 'particlesystem' component specifies a particle emitter in 3D space.
 You can control an particlesystem component's properties using a [script component][script_component]. The particlesystem component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.ParticleSystemComponent.html
+[docs]: /engine/api/stable/symbols/pc.ParticleSystemComponent.html

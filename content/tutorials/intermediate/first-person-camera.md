@@ -28,8 +28,8 @@ In the constructor of the script we initialize a few variables and then we set u
 // Disabling the context menu stops the browser displaying a menu when
 // you right-click the page
 context.mouse.disableContextMenu();
-context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
-context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
+context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~
 
 `context.mouse` is always available on desktop platforms, it is used to access mouse events, like movement and button presses.
@@ -38,7 +38,7 @@ context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 Next we bind two event handlers using the `on()` function.
 
-For example, `context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this)` responds to the EVENT_MOUSEMOVE event and calls the `this.onMouseMove` method. The final `this` is the scope of the event, it determines what the `this` variable is in your event handler.
+For example, `context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this)` responds to the EVENT_MOUSEMOVE event and calls the `this.onMouseMove` method. The final `this` is the scope of the event, it determines what the `this` variable is in your event handler.
 
 ### Event handlers
 
@@ -51,12 +51,12 @@ onMouseMove: function (event) {
 },
 ~~~
 
-Our first event handler handles the mouse move event. The `event` variable is a [`pc.input.MouseEvent`][mouse_event] and in this case we are interested in `event.dx` and `event.dy`, which are the number of pixels the mouse has moved since the last mouse event. In this handler we scale the amount moved and apply it to our values of `ex` and `ey` which are the orientation angles of the camera. We are clamping `ex` (the up/down angle) to be between -90 and 90.
+Our first event handler handles the mouse move event. The `event` variable is a [`pc.MouseEvent`][mouse_event] and in this case we are interested in `event.dx` and `event.dy`, which are the number of pixels the mouse has moved since the last mouse event. In this handler we scale the amount moved and apply it to our values of `ex` and `ey` which are the orientation angles of the camera. We are clamping `ex` (the up/down angle) to be between -90 and 90.
 
 ~~~javascript~~~
 onMouseDown: function (event) {
     // When the mouse button is clicked try and capture the pointer
-    if (!pc.input.Mouse.isPointerLocked()) {
+    if (!pc.Mouse.isPointerLocked()) {
         context.mouse.enablePointerLock();
     }
 },
@@ -76,15 +76,15 @@ update: function (dt) {
     this.entity.setEulerAngles(this.ex, this.ey, 0);
 
     // Update the camera's position
-    if (context.keyboard.isPressed(pc.input.KEY_UP)) {
+    if (context.keyboard.isPressed(pc.KEY_UP)) {
         this.entity.translateLocal(0, 0, -SPEED*dt);
-    } else if (context.keyboard.isPressed(pc.input.KEY_DOWN)) {
+    } else if (context.keyboard.isPressed(pc.KEY_DOWN)) {
         this.entity.translateLocal(0, 0, SPEED*dt);
     }
 
-    if (context.keyboard.isPressed(pc.input.KEY_LEFT)) {
+    if (context.keyboard.isPressed(pc.KEY_LEFT)) {
         this.entity.translateLocal(-SPEED*dt, 0, 0);
-    } else if (context.keyboard.isPressed(pc.input.KEY_RIGHT)) {
+    } else if (context.keyboard.isPressed(pc.KEY_RIGHT)) {
         this.entity.translateLocal(SPEED*dt, 0, 0);
     }
 },
@@ -114,8 +114,8 @@ pc.script.create('first_person_camera', function (context) {
         // Disabling the context menu stops the browser displaying a menu when
         // you right-click the page
         context.mouse.disableContextMenu();
-        context.mouse.on(pc.input.EVENT_MOUSEMOVE, this.onMouseMove, this);
-        context.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onMouseDown, this);
+        context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+        context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
     };
 
@@ -125,15 +125,15 @@ pc.script.create('first_person_camera', function (context) {
             this.entity.setEulerAngles(this.ex, this.ey, 0);
 
             // Update the camera's position
-            if (context.keyboard.isPressed(pc.input.KEY_UP)) {
+            if (context.keyboard.isPressed(pc.KEY_UP)) {
                 this.entity.translateLocal(0, 0, -SPEED*dt);
-            } else if (context.keyboard.isPressed(pc.input.KEY_DOWN)) {
+            } else if (context.keyboard.isPressed(pc.KEY_DOWN)) {
                 this.entity.translateLocal(0, 0, SPEED*dt);
             }
 
-            if (context.keyboard.isPressed(pc.input.KEY_LEFT)) {
+            if (context.keyboard.isPressed(pc.KEY_LEFT)) {
                 this.entity.translateLocal(-SPEED*dt, 0, 0);
-            } else if (context.keyboard.isPressed(pc.input.KEY_RIGHT)) {
+            } else if (context.keyboard.isPressed(pc.KEY_RIGHT)) {
                 this.entity.translateLocal(SPEED*dt, 0, 0);
             }
         },
@@ -147,7 +147,7 @@ pc.script.create('first_person_camera', function (context) {
 
         onMouseDown: function (event) {
             // When the mouse button is clicked try and capture the pointer
-            if (!pc.input.Mouse.isPointerLocked()) {
+            if (!pc.Mouse.isPointerLocked()) {
                 context.mouse.enablePointerLock();
             }
         },
@@ -160,5 +160,5 @@ pc.script.create('first_person_camera', function (context) {
 [designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/e22564b3-d380-4352-8e69-4fb0155f025a
 [scripting_guide]: /user-manual/scripting/
 [tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
-[mouse_event]: /engine/api/stable/symbols/pc.input.MouseEvent.html
+[mouse_event]: /engine/api/stable/symbols/pc.MouseEvent.html
 [entities_intro]: /tutorials/beginner/manipulating-entities/

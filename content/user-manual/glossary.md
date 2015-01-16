@@ -6,7 +6,7 @@ template: page.tmpl.html
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
 
 <h2 id="app_context">ApplicationContext</h2>
-The `pc.fw.ApplicationContext` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the
+The `pc.ApplicationContext` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the
 keyboard and mouse handlers. The ApplicationContext is made available to all user scripts by being passed into the initial callback from `pc.script.create`.
 
 <h2 id="asset">Asset</h2>

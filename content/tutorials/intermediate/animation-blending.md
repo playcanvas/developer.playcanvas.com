@@ -44,8 +44,8 @@ pc.script.create("animation_blending", function (context) {
 
         this.setState('idle');
 
-        context.keyboard.on(pc.input.EVENT_KEYDOWN, this.keyDown, this);
-        context.keyboard.on(pc.input.EVENT_KEYUP, this.keyUp, this);
+        context.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
+        context.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
     };
 
     AnimationBlender.prototype = {
@@ -57,13 +57,13 @@ pc.script.create("animation_blending", function (context) {
         },
 
         keyDown: function (e) {
-            if ((e.key === pc.input.KEY_P) && (this.state !== 'punch')) {
+            if ((e.key === pc.KEY_P) && (this.state !== 'punch')) {
                 this.setState('punch');
             }
         },
 
         keyUp: function (e) {
-            if ((e.key === pc.input.KEY_P) && (this.state === 'punch')) {
+            if ((e.key === pc.KEY_P) && (this.state === 'punch')) {
                 this.setState('idle');
             }
         }

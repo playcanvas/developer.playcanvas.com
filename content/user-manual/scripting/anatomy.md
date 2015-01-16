@@ -49,9 +49,9 @@ The `context` variable is available for use throughout your script object becaus
 
 * `systems` Container for all Component systems, e.g. `context.systems.model` is the Model Component System
 * `root` The root node of the Entity hierarchy.
-* `keyboard` An instance of `pc.input.Keyboard`
-* `mouse` An instance of `pc.input.Mouse`
-* `scene` An instance of `pc.scene.Scene`
+* `keyboard` An instance of `pc.Keyboard`
+* `mouse` An instance of `pc.Mouse`
+* `scene` An instance of `pc.Scene`
 * `loader` An instance of `pc.resources.ResourceLoader`
 
 See the [API Reference][context_api] for more details on the context object.
@@ -113,7 +113,7 @@ pc.script.create('oscillator', function (context) {
 
             // Use the keyboard handler from the ApplicationContext
             // to pause/unpause
-            if (context.keyboard.wasPressed(pc.input.KEY_SPACE)) {
+            if (context.keyboard.wasPressed(pc.KEY_SPACE)) {
                 this.paused = !this.paused; // toggle paused state
             }
 
@@ -136,5 +136,5 @@ pc.script.create('oscillator', function (context) {
 ~~~
 
 [application_context]: /user-manual/glossary#application_context
-[context_api]: /engine/api/stable/symbols/pc.fw.ApplicationContext.html
+[context_api]: /engine/api/stable/symbols/pc.ApplicationContext.html
 

@@ -67,7 +67,7 @@ That's it, the AudioListener has no options.
     You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
 </div>
 
-[audio_source]: /engine/api/stable/symbols/pc.fw.AudioSourceComponent.html
-[audio_listener]: /engine/api/stable/symbols/pc.fw.AudioListenerComponent.html
+[audio_source]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
+[audio_listener]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
 [designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/e5425adb-772d-4a1a-9dad-9bec77e55acc
 [importing_assets]: /user-manual/assets/importing

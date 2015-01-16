@@ -18,7 +18,7 @@ In this tutorial we will show you how to use forces to control a dynamic rigidbo
 
 ###Applying a constant force
 ~~~javascript~~~
-if (context.keyboard.isPressed(pc.input.KEY_F) ) {
+if (context.keyboard.isPressed(pc.KEY_F) ) {
     this.entity.rigidbody.applyForce(0, 9.8, 0);
 }
 ~~~
@@ -26,7 +26,7 @@ Here a force along the global y-axis is applied to the accessed entity when the 
 
 ###Impulses
 ~~~javascript~~~
-if (context.keyboard.isPressed(pc.input.KEY_LEFT) ) {
+if (context.keyboard.isPressed(pc.KEY_LEFT) ) {
     this.entity.rigidbody.applyImpulse(-1, 0, 0);
 }
 
@@ -35,7 +35,7 @@ The cube is given an x-axis impulse to impart an instant change of velocity via 
 
 ###Torques
 ~~~javascript~~~
-if (context.keyboard.isPressed(pc.input.KEY_W) ) {
+if (context.keyboard.isPressed(pc.KEY_W) ) {
     this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
 }
 ~~~
@@ -89,7 +89,7 @@ If the cube moves beyond the viewable area in the x-direction the teleport funct
 
 ##Reset cube code
 ~~~javascript~~~
-if (context.keyboard.wasPressed(pc.input.KEY_R)) {
+if (context.keyboard.wasPressed(pc.KEY_R)) {
     this.reset();
 }
 ~~~
@@ -116,7 +116,7 @@ pc.script.create('DynamicBody', function (context) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.torque = 7;
-            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
         // Called every frame, dt is time in seconds since last update
@@ -126,28 +126,28 @@ pc.script.create('DynamicBody', function (context) {
             this.playerPos = this.entity.getLocalPosition();
             
             //keyboard controls and applying forces and moments.
-            if (context.keyboard.isPressed(pc.input.KEY_LEFT) ) {
+            if (context.keyboard.isPressed(pc.KEY_LEFT) ) {
                 this.entity.rigidbody.applyImpulse(-1, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_RIGHT) ) {
+            if (context.keyboard.isPressed(pc.KEY_RIGHT) ) {
                 this.entity.rigidbody.applyImpulse(1, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_UP) ) {
+            if (context.keyboard.isPressed(pc.KEY_UP) ) {
                 this.entity.rigidbody.applyImpulse(0, 1, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_A) ) {
+            if (context.keyboard.isPressed(pc.KEY_A) ) {
                 this.entity.rigidbody.applyTorque(0, this.torque, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_D) ) {
+            if (context.keyboard.isPressed(pc.KEY_D) ) {
                 this.entity.rigidbody.applyTorque(0, -this.torque, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_W) ) {
+            if (context.keyboard.isPressed(pc.KEY_W) ) {
                 this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_S) ) {
+            if (context.keyboard.isPressed(pc.KEY_S) ) {
                 this.entity.rigidbody.applyTorque(this.torque, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.input.KEY_F) ) {
+            if (context.keyboard.isPressed(pc.KEY_F) ) {
                 this.entity.rigidbody.applyForce(0, 9.8, 0);
             }
             
@@ -160,7 +160,7 @@ pc.script.create('DynamicBody', function (context) {
             }
             
             // cube reset control
-            if (context.keyboard.wasPressed(pc.input.KEY_R) ) {
+            if (context.keyboard.wasPressed(pc.KEY_R) ) {
                 this.reset();
             }
         },
@@ -188,14 +188,14 @@ pc.script.create('DynamicBody', function (context) {
 
 [pack]: https://playcanvas.com/playcanvas/tutorials
 [collision]:/tutorials/intermediate/collision-and-triggers/
-[collision api]:/engine/api/stable/symbols/pc.fw.CollisionComponent.html
-[pc.fw]:/engine/api/stable/symbols/pc.fw.html
+[collision api]:/engine/api/stable/symbols/pc.CollisionComponent.html
+[pc.fw]:/engine/api/stable/symbols/pc.html
 [fps]:/tutorials/advanced/fps-controller/
-[sync]:/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#syncEntityToBody
-[impulse]:/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyImpulse
-[torque]:/http:/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyTorque
-[torque impulse]:/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyTorqueImpulse
+[sync]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
+[impulse]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[torque]:/http:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[torque impulse]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
 [entities]: /tutorials/beginner/manipulating-entities/
-[force]:/engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyForce
-[rigidbody api]: /engine/api/stable/symbols/pc.fw.RigidBodyComponent.html#applyForce
+[force]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
+[rigidbody api]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
 [Vec]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Vec3.html

@@ -31,4 +31,4 @@ The 'audiosource' component specifies the listener's position in 3D space. All 3
 You can control an audiosource component's properties using a [script component][script_component]. The audiosource component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.AudioSourceComponent.html
+[docs]: /engine/api/stable/symbols/pc.AudioSourceComponent.html

@@ -8,7 +8,7 @@ position: 1
 
 *Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
 
-Keyboard handling in the PlayCanvas engine is provided by the `pc.input.Keyboard` object. The Keyboard object provides a simple interface
+Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
 for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
 handling keycodes and charcodes.
 
@@ -28,8 +28,8 @@ pc.script.create("keyboard_handler", function (context) {
             // 1) The event name to listen for
             // 2) The callback function to call when the event fires
             // 3) (optional) The value to use for 'this' in the callback function
-            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
-            context.keyboard.on(pc.input.EVENT_KEYUP, this.onKeyUp, this);
+            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+            context.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
 
             this.redMaterial = context.assets.find("Red", pc.asset.ASSET_MATERIAL);
             this.whiteMaterial = context.assets.find("White", pc.asset.ASSET_MATERIAL);
@@ -43,9 +43,9 @@ pc.script.create("keyboard_handler", function (context) {
              * called once even if the key is held down.
              */
             var angle = 0;
-            if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+            if (context.keyboard.wasPressed(pc.KEY_LEFT)) {
                 angle = -5;
-            } else if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+            } else if (context.keyboard.wasPressed(pc.KEY_RIGHT)) {
                 angle = 5;
             }
 
@@ -55,7 +55,7 @@ pc.script.create("keyboard_handler", function (context) {
              * key is down right now. So it will be true every frame as long as
              * the key is still pressed.
              */
-            if (context.keyboard.isPressed(pc.input.KEY_SPACE)) {
+            if (context.keyboard.isPressed(pc.KEY_SPACE)) {
                 angle = 1;
             }
 
@@ -68,7 +68,7 @@ pc.script.create("keyboard_handler", function (context) {
         */
         onKeyDown: function (event) {
             // Check event.key to detect which key has been pressed
-            if (event.key === pc.input.KEY_A) {
+            if (event.key === pc.KEY_A) {
                 this.entity.model.materialAsset = this.redMaterial;
             }
 
@@ -82,7 +82,7 @@ pc.script.create("keyboard_handler", function (context) {
         */
         onKeyUp: function (event) {
             // Check event.key to detect which key has been pressed
-            if (event.key === pc.input.KEY_A) {
+            if (event.key === pc.KEY_A) {
                 this.entity.model.materialAsset = this.whiteMaterial;
             }
         },
@@ -114,18 +114,18 @@ If you press and hold the spacebar you will see that the cube rotates continuous
 
 The second method of handling key presses is to listen for events. Two keyboard events are supported on the Keyboard device:
 
-* `pc.input.EVENT_KEYDOWN`
-* `pc.input.EVENT_KEYUP`
+* `pc.EVENT_KEYDOWN`
+* `pc.EVENT_KEYUP`
 
-[DOM][dom] keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.input.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.input.KeyboardEvent` object which contains the key code of the key that was pressed on released.
+[DOM][dom] keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.KeyboardEvent` object which contains the key code of the key that was pressed on released.
 
 Notice we are also passing a third argument to on(), which is `this` or the Script Instance itself. The third argument to on() is used as `this` in the event callbacks, so we need to pass it in here, otherwise it won't be set to the correct object.
 
 ## Key Codes
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.input.KEY_A is the `A` key, pc.input.LEFT is the left arrow key.
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
 
-Note, you should always use the enumeration `pc.input.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
+Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
 ## Try it out
 

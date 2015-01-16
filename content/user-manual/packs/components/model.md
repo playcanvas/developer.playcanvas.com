@@ -26,4 +26,4 @@ The 'model' component enables an entity to render a primitive shape or a model a
 You can control a model component's properties using a [script component][script_component]. The model component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.ScriptComponent.html
+[docs]: /engine/api/stable/symbols/pc.ScriptComponent.html

@@ -36,4 +36,4 @@ You can control a rigidbody component's properties using a [script component][sc
 
 [script_component]: /user-manual/packs/entities/components/script
 [collision_component]: /user-manual/packs/entities/components/collision/
-[docs]: /engine/api/stable/symbols/pc.fw.RigidBodyComponent.html
+[docs]: /engine/api/stable/symbols/pc.RigidBodyComponent.html

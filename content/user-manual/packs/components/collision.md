@@ -39,4 +39,4 @@ If the entity also has a rigidbody component, the collision component determines
 You can control a collision component's properties using a [script component][script_component]. The collision component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.CollisionComponent.html
+[docs]: /engine/api/stable/symbols/pc.CollisionComponent.html

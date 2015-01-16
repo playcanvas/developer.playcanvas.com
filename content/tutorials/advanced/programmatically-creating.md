@@ -11,7 +11,7 @@ Usually you will be creating Entities via the PlayCanvas Designer, building up c
 ## Creating an Entity
 
 ~~~js
-var entity = new pc.fw.Entity(); // Create an Entity
+var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy
 context.root.addChild(entity);
@@ -23,7 +23,7 @@ First you need to create an Entity. This is straightforward, but it is important
 
 ~~~js~~~
 // Create a new Entity
-var entity = new pc.fw.Entity();
+var entity = new pc.Entity();
 
 // Add a new Camera Component with default values
 context.systems.camera.addComponent(entity);
@@ -44,7 +44,7 @@ Each Component type has different properties that can be passed in on the data o
 ## Removing Components
 
 ~~~js~~~
-var entity = new pc.fw.Entity();
+var entity = new pc.Entity();
 
 // Attach Camera Component with default values
 context.systems.camera.addComponent(entity);
@@ -59,7 +59,7 @@ Components can be deleted individually from an Entity by calling the `removeComp
 
 ~~~js~~~
 // Create a new Entity
-var entity = new pc.fw.Entity();
+var entity = new pc.Entity();
 
 // Create a new Camera Component with default values
 context.systems.camera.addComponent(entity);
@@ -125,7 +125,7 @@ pc.script.create('entity_creator', function (context) {
         },
 
         spawnCube: function () {
-            var entity = new pc.fw.Entity();
+            var entity = new pc.Entity();
 
             // Add a new Model Component and add it to the Entity.
             context.systems.model.addComponent(entity, {
