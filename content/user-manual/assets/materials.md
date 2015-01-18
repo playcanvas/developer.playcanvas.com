@@ -51,30 +51,43 @@ You can also drag and drop material Assets from the Asset Explorer onto the mate
 Once you have a material selected you can edit it's properties. Click on each heading to fold out the specific properties. Changes are saved automatically.
 
 ### Ambient
+![material_editor_ambient](/images/content_creation/material_editor_ambient.png)
 Ambient color determines how the material appears in ambient light.
 
 ### Diffuse
+![material_editor_diffuse](/images/content_creation/material_editor_diffuse.png)
 Diffuse properties define the base color of the material. The diffuse texture is where you set your color texture.
 
 ### Specular
+![material_editor_specular](/images/content_creation/material_editor_specular.png)
 Specular properties defines the color of the specular highlights. I.e. the shininess
 
 ### Emissive
+![material_editor_emissive](/images/content_creation/material_editor_emissive.png)
 Emissive materials are unlit by lights and glow.
 
 ### Opacity
+![material_editor_opacity](/images/content_creation/material_editor_opacity.png)
 Opacity sets the transparency level.
 
 ### Normals
+![material_editor_normals](/images/content_creation/material_editor_normals.png)
 Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
 
+### Parallax
+![material_editor_parallax](/images/content_creation/material_editor_parallax.png)
+A parallax map gives further realism to a normal map by giving the illusion of depth to a surface.
+
 ### Reflectivity
+![material_editor_reflectivity](/images/content_creation/material_editor_reflectivity.png)
 You can set a reflection texture on your material.
 
 ### Light Map
+![material_editor_lightmap](/images/content_creation/material_editor_lightmap.png)
 Light maps are blended over the top of the diffuse color to "bake in" lighting.
 
 ### Render States
+![material_editor_renderstates](/images/content_creation/material_editor_renderstates.png)
 Modify the render states of the Material. From here you can enable or disable the Depth Test and Depth Write. You can choose to cull front or back faces; and choose the blend mode of:
 * None (for no blending).
 * Normal (which uses materials' alpha values to display typical transparency/translucency).
