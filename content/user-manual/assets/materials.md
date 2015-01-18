@@ -71,10 +71,10 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
 
 <table class="table table-striped table-bordered">
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Texture</td><td>The diffuse map that specifies the per-pixel diffuse material color.</td></tr>
+    <tr><td>Texture</td><td>The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead.</td></tr>
     <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the diffuse map.</td></tr>
     <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the diffuse map.</td></tr>
-    <tr><td>Tint</td><td>Check this to modulate the material's diffuse map with a material specific color.</td></tr>
+    <tr><td>Tint</td><td>Check this to modulate the material's diffuse map with a material specific diffuse color.</td></tr>
     <tr><td>Color</td><td>The tint color used to modulate the material's diffuse map.</td></tr>
 </table>
 
@@ -84,11 +84,34 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
 
 Specular properties defines the color of the specular highlights. i.e. the shininess
 
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Specular Map</td><td>The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead.</td></tr>
+    <tr><td>Specular Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the specular map. Only available if Specular Map is set.</td></tr>
+    <tr><td>Specular Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the specular map. Only available if Specular Map is set.</td></tr>
+    <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
+    <tr><td>Color</td><td>The tint color used to modulate the material's specular map.</td></tr>
+    <tr><td>Shininess</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as is the surace is polished and shiny).</td></tr>
+    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. If no gloss map is set, the Shininess property is used instead.</td></tr>
+    <tr><td>Gloss Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
+    <tr><td>Gloss Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
+</table>
+
 ### Emissive
 
 ![material_editor_emissive](/images/content_creation/material_editor_emissive.png)
 
-Emissive materials are unlit by lights and glow.
+Emissive properties control how the material emits light (as opposed to reflecting light).
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Texture</td><td>The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the emissive map. Only available if Texture is set.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the emissive map. Only available if Texture is set.</td></tr>
+    <tr><td>Tint</td><td>Check this to modulate the material's emissive map with a material specific emissive color.</td></tr>
+    <tr><td>Color</td><td>The tint color used to modulate the material's emissive map.</td></tr>
+    <tr><td>Intensity</td><td>A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials.</td></tr>
+</table>
 
 ### Opacity
 
@@ -106,7 +129,15 @@ Use this to specify normal maps (these determine bumpiness - note you have to us
 
 ![material_editor_parallax](/images/content_creation/material_editor_parallax.png)
 
-A parallax map gives further realism to a normal map by giving the illusion of depth to a surface.
+A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Height Map</td><td>The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the height map.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the height map.</td></tr>
+    <tr><td>Strength</td><td>The strength of a parallax effect (a value between 0 and 2, defaulting to 1).</td></tr>
+</table>
 
 ### Reflectivity
 
@@ -114,11 +145,23 @@ A parallax map gives further realism to a normal map by giving the illusion of d
 
 You can set a reflection texture on your material.
 
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Reflectivity</td><td>A factor for the applied sphere map or cube map. This value defaults to 1 (full reflectivity).</td></tr>
+    <tr><td>Sphere Map</td><td>A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive).</td></tr>
+    <tr><td>Cube Map</td><td>A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive).</td></tr>
+</table>
+
 ### Light Map
 
 ![material_editor_lightmap](/images/content_creation/material_editor_lightmap.png)
 
 Light maps are blended over the top of the diffuse color to "bake in" lighting.
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Texture</td><td>The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs.</td></tr>
+</table>
 
 ### Render States
 
