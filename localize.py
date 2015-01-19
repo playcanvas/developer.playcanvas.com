@@ -170,7 +170,6 @@ def po_2_pot(po_path, pot_path):
     for entry in pofile:
         pot_entry = potfile.find(entry.msgid)
         if pot_entry:
-            print("found: " + entry.msgid)
             # update potfile msgstr to match pofile
             pot_entry.msgstr = entry.msgstr
         if not pot_entry:
@@ -325,7 +324,7 @@ for arg in sys.argv[1:]:
     if arg == 'gettext':
         print("gettext strings from source markdown")
         create_src_po('content/en', 'po')
-        create_title_po('content/en', 'po/titles.js.en-US.po')
+        create_title_pot('content/en', 'po/titles.js.en-US.po')
         update_pot_from_src_po('po')
 
     if arg == 'set':
