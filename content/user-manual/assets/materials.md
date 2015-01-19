@@ -64,7 +64,8 @@ Ambient properties determine how the material appears in ambient light.
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Tint</td><td>Check this to multiply the scene's global ambient color with a material specific color.</td></tr>
     <tr><td>Color</td><td>The tint color to multiply the scene's global ambient color.</td></tr>
-    <tr><td>AO Texture</td><td>An ambient occlusion map containing baked ambient occlusion. The map uses the first set of UVs in the mesh to which the material is assigned.</td></tr>
+    <tr><td>AO Texture</td><td>An ambient occlusion map containing pre-baked ambient occlusion.</td></tr>
+    <tr><td>AO UV Set</td><td>The UV set to use for the ambient occlusion map.</td></tr>
 </table>
 
 ### Diffuse
@@ -96,7 +97,7 @@ Specular properties defines the color of the specular highlights. i.e. the shini
     <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
     <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
     <tr><td>Shininess</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as is the surace is polished and shiny).</td></tr>
-    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. If no gloss map is set, the Shininess property is used instead.</td></tr>
+    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property.</td></tr>
     <tr><td>Gloss Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
     <tr><td>Gloss Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
 </table>
