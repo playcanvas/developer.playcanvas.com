@@ -22,6 +22,8 @@ import datetime
 import codecs
 import requests
 import subprocess
+import hashlib
+import pylev
 from requests.auth import HTTPBasicAuth
 from tempfile import TemporaryFile
 
@@ -31,9 +33,14 @@ def split_to_para(f):
     paras = []
     para = ''
 
+    in_code = False # look for lines starting with ~~~, keep code between lines starting with ~~~ in the same para
+
     linecount = 0
     for line in f:
-        if not line or line.isspace():
+        if line.startswith("~~~"):
+            in_code = not in_code
+
+        if not in_code and (not line or line.isspace()):
             if para:
                 paras.append({
                     'msg': para.rstrip(),
@@ -53,7 +60,12 @@ def split_to_para(f):
 
     return paras
 
-def new_pot_file():
+def hash(content):
+    h = hashlib.md5()
+    h.update(content.encode('utf-8'))
+    return h.hexdigest()
+
+def new_po_file():
     now = datetime.datetime.utcnow()
     isonow = now.isoformat()
 
@@ -70,31 +82,33 @@ def new_pot_file():
 
     return po
 
-def md_2_pot(dir, src, out_path):
+def md_2_po(dir, src, lang, out_path):
     '''
-    Take a src text/md file, split it into paragraphs and generate a matching .pot file
+    Take a src text/md file, split it into paragraphs and generate a matching .po file
     '''
-    po = new_pot_file()
+    po = new_po_file()
 
     src_path = os.path.join(dir, src)
     with codecs.open(src_path, 'r', 'utf-8') as f:
         paras = split_to_para(f)
 
         for para in paras:
-            entry = po.find(para['msg'])
+            #msgid = hash(para['msg'])
+            msgid = para['msg']
+            entry = po.find(msgid)
             if entry:
                 # for duplicates add to occurrences
                 entry.occurrences.append((src_path, para['line']))
             else:
                 entry = polib.POEntry(
-                    msgid=para['msg'],
+                    msgid=msgid,
                     msgstr=para['msg'],
                     occurrences=[(src_path, para['line'])]
                 )
                 po.append(entry)
 
     (base, ext) = os.path.splitext(os.path.join(out_path, src))
-    po_path = base + '.pot'
+    po_path = "%s.%s.po" % (base, lang)
     dir = os.path.dirname(po_path)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -145,6 +159,61 @@ def po_2_js(po_path, out_path):
     with open(out_path, 'w') as f:
         f.write(output)
 
+def po_2_pot(po_path, pot_path):
+    pofile = polib.pofile(po_path)
+    if not os.path.exists(pot_path):
+        # pot file doesn't exist, copy po
+        pofile.save(pot_path)
+        return
+
+    potfile = polib.pofile(pot_path)
+    for entry in pofile:
+        pot_entry = potfile.find(entry.msgid)
+        if pot_entry:
+            print("found: " + entry.msgid)
+            # update potfile msgstr to match pofile
+            pot_entry.msgstr = entry.msgstr
+        if not pot_entry:
+            # add new entry from pofile to potfile
+            pot_entry = polib.POEntry(
+                msgid = entry.msgid,
+                msgstr = entry.msgstr,
+                occurrences= entry.occurrences
+            )
+            potfile.append(pot_entry)
+    potfile.save(pot_path)
+
+# def compare_and_update(po_path, pot_path):
+#     """
+#     compare entries in the po file (for source language)
+#     with entries in the pot file. If they are similar enough
+#     update the po file to use the new msgstr with the old msgid.
+#     This maintains strings across updates
+#     """
+#     min = 1
+#     # for (dirpath, dirnames, filenames) in os.walk(dir):
+#     #     for filename in filenames:
+#     #         path = os.path.join(dirpath, filename)
+#     #         if path.endswith(".en-US.po"):
+#     #             po_path = path
+#     #             pot_path = path.replace(".en-US.po", ".pot")
+
+#     pofile = polib.pofile(po_path)
+#     potfile = polib.pofile(pot_path)
+
+#     pot = {}
+#     for entry in potfile:
+#         pot[entry.msgid] = entry.msgstr
+
+#     for poentry in pofile:
+#         for (_id, _str) in pot.items():
+#             v = float(pylev.levenschtein(poentry.msgstr, _str)) / float(len(poentry.msgstr))
+#             existing = poentry.msgid in pot
+#             if not existing and _id != poentry.msgid and v < 1:
+#                 print(v)
+#                 print("%s:%s" % (_id, poentry.msgid))
+#                 print("%s\n%s" % (_str, poentry.msgstr))
+
 def get_title(path):
     with codecs.open(path, 'r', 'utf-8') as f:
         for (count, line) in enumerate(f.readlines()):
@@ -152,20 +221,36 @@ def get_title(path):
             if m:
                 return (m.groups(0)[0].strip(), path, count)
 
-def create_pots(dir, out_path):
-    shutil.rmtree(out_path, True)
+def create_src_po(dir, out_path):
+    #shutil.rmtree(out_path, True)
 
-    '''Update source .pot files from markdown'''
+    '''Update source .po files from markdown'''
     for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
             path = os.path.join(dirpath, filename)
+            # delete src files "filename.en-US.po"
+            if path.endswith(".en-US.po"):
+                os.remove(path)
+            # for each .md file create a new .en-US.po file
             if path.endswith(".md"):
                 if _verbose:
-                    print("md_2_pot: " + path)
+                    print("md_2_po: " + path)
                 short_path = path.replace(dir + '/', "") # remove dir from path
-                md_2_pot(dir, short_path, out_path)
+                md_2_po(dir, short_path, "en-US", out_path)
+
+def update_pot_from_src_po(dir):
+    for (dirpath, dirnames, filenames) in os.walk(dir):
+        for filename in filenames:
+            path = os.path.join(dirpath, filename)
+            # for each .en-US.po file, duplicate into a .pot file
+            if path.endswith(".en-US.po"):
+                po_2_pot(path, path.replace(".en-US.po", ".pot"))
 
 def create_title_pot(dir, out_file):
+    '''
+    Create extra file just containing the titles of each markdown file.
+    Required to do specific translations for the navigation menus.
+    '''
     titles = []
 
     '''Update source .pot files from markdown'''
@@ -175,7 +260,7 @@ def create_title_pot(dir, out_file):
             if path.endswith(".md"):
                 titles.append(get_title(path))
 
-    pot = new_pot_file()
+    pot = new_po_file()
     for (title, path, line) in titles:
         entry = pot.find(title)
         if entry:
@@ -207,8 +292,8 @@ def update_localized_files(lang, dir, out_dir):
                 po_2_md(path, out_path)
 
 def _generate_resource_slug(project, path):
-    # WARNING - becareful editing this, it defines the link between md file and server resource
-    return "%s.%s" % (project, path.replace(".pot", "").replace("/", '-').replace(".", "-"))
+    # WARNING - be careful editing this, it defines the link between md file and server resource
+    return "%s.%s" % (project, path.replace(".pot", "").replace(".en-US.po", "").replace("/", '-').replace(".", "-"))
 
 def tx_set(dir):
     '''initialize a tx project from the source .pot files'''
@@ -216,9 +301,9 @@ def tx_set(dir):
     for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
             path = os.path.join(dirpath, filename)
-            if path.endswith(".pot"):
+            if path.endswith(".en-US.po"):
                 resource = _generate_resource_slug(project, path)
-                expr = path.replace(".pot", ".<lang>.po")
+                expr = path.replace(".en-US.po", ".<lang>.po")
                 cmd = ['tx', 'set', '--auto-local', '-r', resource, expr, '--type', 'PO', '--source-lang', 'en', '--source-file', path, '--execute']
                 r = subprocess.check_output(cmd)
                 if _verbose:
@@ -236,18 +321,12 @@ def tx_pull():
     if _verbose:
         print(r)
 
-#create_pots('content/en', 'po')
-#create_empty_po_files('ja_JP', 'po')
-#tx_set('po')
-#tx_push()
-#tx_pull()
-#update_localized_files('ja_JP', 'po', 'content/ja')
-
 for arg in sys.argv[1:]:
     if arg == 'gettext':
         print("gettext strings from source markdown")
-        create_pots('content/en', 'po')
-        create_title_pot('content/en', 'po/titles.js.pot')
+        create_src_po('content/en', 'po')
+        create_title_po('content/en', 'po/titles.js.en-US.po')
+        update_pot_from_src_po('po')
 
     if arg == 'set':
         print("update tx config")
@@ -264,3 +343,6 @@ for arg in sys.argv[1:]:
     if arg == 'update':
         print("convert current translations to markdown")
         update_localized_files('ja_JP', 'po', 'content/ja')
+
+    if arg == 'titles':
+        create_title_pot('content/en', 'po/titles.js.en-US.po')
