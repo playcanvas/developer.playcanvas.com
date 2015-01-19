@@ -140,7 +140,7 @@ Use this to specify normal maps (these determine bumpiness - note you have to us
 <table class="table table-striped table-bordered">
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exagerrated). It defaults to 1.</td></tr>
-    <tr><td>Texture</td><td>The opacity map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
+    <tr><td>Texture</td><td>The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
     <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the normal map. Only available if Texture is set.</td></tr>
     <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the normal map. Only available if Texture is set.</td></tr>
     <tr><td>Specular Anti-Aliasing</td><td>Enables Toksvig antialiasing for mipmapped normal maps with specular highlights. This produces crisper, more detailed specular highlights. Defaults to off.</td></tr>
