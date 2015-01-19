@@ -189,7 +189,7 @@ Render States gives additional controls over how a mesh is rendered with the spe
                 <li>None: The mesh is opaque. This is the default.</li>
                 <li>Normal: The mesh is transparent, like stained glass.</li>
                 <li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li>
-                <li>Pre-multiply: Like 'Mormal' blending excepth it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li>
+                <li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li>
                 <li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li>
             </ul>
         </td>
