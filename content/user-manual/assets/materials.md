@@ -173,9 +173,18 @@ Render States gives additional controls over how a mesh is rendered with the spe
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Depth Test</td><td>If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a view z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on.</td></tr>
     <tr><td>Depth Write</td><td>If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material.</td></tr>
-    <tr><td>Cull</td><td>Can be: None, Front Faces or Back Faces. PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. If set to None, both front faces and back faces are rendered. If set to Front Faces, front faces are rendered and back faces are not. If set to Back Faces, back faces are rendered and front faces are not. Defaults to Back Faces. Note tha backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels.</td></tr>
+    <tr><td>Cull</td>
+        <td>Options are:
+            <ul>
+                <li>None: Both front faces and back faces are rendered.</li>
+                <li>Front Faces: front faces are rendered and back faces are not.</li>
+                <li>Back Faces: back faces are rendered and front faces are not. This is the default.</li>
+            </ul>
+        PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note tha backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels.
+        </td>
+    </tr>
     <tr><td>Blend Type</td>
-        <td>Can be:
+        <td>Options are:
             <ul>
                 <li>None: The mesh is opaque. This is the default.</li>
                 <li>Normal: The mesh is transparent, like stained glass.</li>
