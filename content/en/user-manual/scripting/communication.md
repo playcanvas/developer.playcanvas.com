@@ -35,12 +35,12 @@ pc.script.create("input", function (context) {
 
     Input.prototype = {
         update: function (dt) {
-            if (context.keyboard.isPressed(pc.input.KEY_LEFT)) {
+            if (context.keyboard.isPressed(pc.KEY_LEFT)) {
                 // Call the move() method on the player script
                 this.entity.script.player.move(-1, 0);
             }
 
-            if (context.keyboard.isPressed(pc.input.KEY_RIGHT)) {
+            if (context.keyboard.isPressed(pc.KEY_RIGHT)) {
                 // Call the move() method on the player script
                 this.entity.script.player.move(1, 0);
             }

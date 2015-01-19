@@ -97,20 +97,20 @@ Finally, the `jump()` method is called when the player presses the spacebar, and
 
 ## Handling Input
 
-### `pc.input.Controller`
+### `pc.Controller`
 
 ~~~javascript~~~
 var element = document.getElementById('application-container');
-this.controller = new pc.input.Controller(element);
+this.controller = new pc.Controller(element);
 
-this.controller.registerKeys('forward', [pc.input.KEY_UP, pc.input.KEY_W]);
-this.controller.registerKeys('back', [pc.input.KEY_DOWN, pc.input.KEY_S]);
-this.controller.registerKeys('left', [pc.input.KEY_LEFT, pc.input.KEY_A, pc.input.KEY_Q]);
-this.controller.registerKeys('right', [pc.input.KEY_RIGHT, pc.input.KEY_D]);
-this.controller.registerKeys('jump', [pc.input.KEY_SPACE]);
+this.controller.registerKeys('forward', [pc.KEY_UP, pc.KEY_W]);
+this.controller.registerKeys('back', [pc.KEY_DOWN, pc.KEY_S]);
+this.controller.registerKeys('left', [pc.KEY_LEFT, pc.KEY_A, pc.KEY_Q]);
+this.controller.registerKeys('right', [pc.KEY_RIGHT, pc.KEY_D]);
+this.controller.registerKeys('jump', [pc.KEY_SPACE]);
 ~~~
 
-In order to easily handle multiple keys bound to the same command we are using [`pc.input.Controller`][input_controller]. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
+In order to easily handle multiple keys bound to the same command we are using [`pc.Controller`][input_controller]. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
 
 ~~~javascript~~~
 if (this.controller.isPressed('forward')) {
@@ -174,6 +174,6 @@ Finally we just check for the jump action and if required, we call the `jump()` 
 [first_person_camera]: /tutorials/intermediate/first-person-camera
 [designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/0c72839a-2ad2-4bfe-94d1-5f4434630fc3
 [tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
-[rigidbody_system]: /engine/api/stable/symbols/pc.fw.RigidBodyComponentSystem.html
-[raycast_result]: /engine/api/stable/symbols/pc.fw.RaycastResult.html
-[input_controller]: /engine/api/stable/symbols/pc.input.Controller.html
+[rigidbody_system]: /engine/api/stable/symbols/pc.RigidBodyComponentSystem.html
+[raycast_result]: /engine/api/stable/symbols/pc.RaycastResult.html
+[input_controller]: /engine/api/stable/symbols/pc.Controller.html

@@ -22,4 +22,4 @@ The 'audiolistener' component specifies the listener's position in 3D space. All
 You can control an audiolistener component's properties using a [script component][script_component]. The audiolistener component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.AudioListenerComponent.html
+[docs]: /engine/api/stable/symbols/pc.AudioListenerComponent.html

@@ -40,7 +40,7 @@ pc.script.create('update_asset', function (context) {
         },
 
         onKeyUp: function (e) {
-            if (e.key === pc.input.KEY_SPACE) {
+            if (e.key === pc.KEY_SPACE) {
                 // do something when space is released
 
                 e.event.preventDefault(); // prevent browser picking up key event
@@ -48,7 +48,7 @@ pc.script.create('update_asset', function (context) {
         },
 
         onKeyDown: function (e) {
-            if (e.key === pc.input.KEY_SPACE) {
+            if (e.key === pc.KEY_SPACE) {
                 // do something when space is pressed
 
                 e.event.preventDefault(); // prevent browser picking up key event
@@ -83,14 +83,14 @@ Let's add a function call `changeTo()`:
 
 
         onKeyUp: function (e) {
-            if (e.key === pc.input.KEY_SPACE) {
+            if (e.key === pc.KEY_SPACE) {
                 this.changeTo("A");
                 e.event.preventDefault(); // prevent browser picking up key event
             }
         },
 
         onKeyDown: function (e) {
-            if (e.key === pc.input.KEY_SPACE) {
+            if (e.key === pc.KEY_SPACE) {
                 this.changeTo("B");
                 e.event.preventDefault(); // prevent browser picking up key event
             }
@@ -156,14 +156,14 @@ Update_asset.prototype = {
     },
 
     onKeyUp: function (e) {
-        if (e.key === pc.input.KEY_SPACE) {
+        if (e.key === pc.KEY_SPACE) {
             this.changeToByIndex(0);
             e.event.preventDefault(); // prevent browser picking up key event
         }
     },
 
     onKeyDown: function (e) {
-        if (e.key === pc.input.KEY_SPACE) {
+        if (e.key === pc.KEY_SPACE) {
             this.changeToByIndex(1);
             e.event.preventDefault(); // prevent browser picking up key event
         }
@@ -208,14 +208,14 @@ pc.script.create('update_asset', function (context) {
         },
 
         onKeyUp: function (e) {
-            if (e.key === pc.input.KEY_SPACE) {
+            if (e.key === pc.KEY_SPACE) {
                 this.changeToByIndex(0);
                 e.event.preventDefault(); // prevent browser picking up key event
             }
         },
 
         onKeyDown: function (e) {
-            if (e.key === pc.input.KEY_SPACE) {
+            if (e.key === pc.KEY_SPACE) {
                 this.changeToByIndex(1);
                 e.event.preventDefault(); // prevent browser picking up key event
             }

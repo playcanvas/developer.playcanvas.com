@@ -42,9 +42,9 @@ pc.extend(pc.posteffect, function () {
     // Constructor - Creates an instance of our post effect
     var ExamplePostEffect = function (graphicsDevice) {
         // this is the shader definition for our effect
-        this.shader = new pc.gfx.Shader(graphicsDevice, {
+        this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
-                aPosition: pc.gfx.SEMANTIC_POSITION
+                aPosition: pc.SEMANTIC_POSITION
             },
             // Our vertex shader will pass the vertex position
             // to the fragment shader. And it will make the uv's
@@ -146,9 +146,9 @@ pc.extend(pc.posteffect, function () {
     // Constructor - Creates an instance of our post effect
     var ExamplePostEffect = function (graphicsDevice) {
         // this is the shader definition for our effect
-        this.shader = new pc.gfx.Shader(graphicsDevice, {
+        this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
-                aPosition: pc.gfx.SEMANTIC_POSITION
+                aPosition: pc.SEMANTIC_POSITION
             },
             vshader: [
                 "attribute vec2 aPosition;",
@@ -233,10 +233,10 @@ For more tutorials on custom shaders look [here][custom-shader].
 See the [Custom Post Effects Pack here][pack].
 
 
-[shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.Shader.html
+[shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Shader.html
 [api_posteffect]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.posteffect.PostEffect.html
 [camera]: /user-manual/packs/entities/components/camera
 [github_posteffects]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [custom-shader]: /tutorials/advanced/custom-shaders
-[posteffect_queue]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.fw.CameraComponent.html#postEffects
+[posteffect_queue]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.CameraComponent.html#postEffects
 [pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/b3bea7aa-fc45-11e3-9c67-22000a4a0339

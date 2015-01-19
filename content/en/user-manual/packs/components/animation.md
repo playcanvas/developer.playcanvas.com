@@ -26,4 +26,4 @@ The 'animation' component enables an entity to specify which animations can be a
 You can control an animation component's properties using a [script component][script_component]. The animation component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.AnimationComponent.html
+[docs]: /engine/api/stable/symbols/pc.AnimationComponent.html

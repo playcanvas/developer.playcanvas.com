@@ -52,33 +52,33 @@ pc.script.create('audioHandler', function (context) {
             this.playing = false;
             this.paused = false;
             //this sets up an event listener
-            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
             
-             if (context.keyboard.wasPressed(pc.input.KEY_UP) && this.paused === true) {
+             if (context.keyboard.wasPressed(pc.KEY_UP) && this.paused === true) {
                 this.audio.audiosource.unpause();
                 this.audio.setLocalScale(4, 4, 4);
                 this.playing = true;
                 this.paused = false;
             }
             
-            if (context.keyboard.wasPressed(pc.input.KEY_DOWN) && this.playing === true) {
+            if (context.keyboard.wasPressed(pc.KEY_DOWN) && this.playing === true) {
                 this.audio.audiosource.pause();
                 this.audio.setLocalScale(2, 2, 2);
                 this.playing = false;
                 this.paused = true;
             }
             
-            if (context.keyboard.wasPressed(pc.input.KEY_RIGHT) && this.playing === false) {
+            if (context.keyboard.wasPressed(pc.KEY_RIGHT) && this.playing === false) {
                 this.audio.audiosource.play("swooop_theme");
                 this.audio.setLocalScale(4, 4, 4);
                 this.playing = true;
             }
             
-            if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+            if (context.keyboard.wasPressed(pc.KEY_LEFT)) {
                 this.audio.audiosource.stop();
                 this.audio.setLocalScale(2, 2, 2);
                 this.playing = false;
@@ -95,5 +95,5 @@ pc.script.create('audioHandler', function (context) {
 });
 ~~~
 
-[audio]: /engine/api/stable/symbols/pc.fw.AudioSourceComponent.html
+[audio]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
 [audio tutorial]: https://playcanvas.com/playcanvas/tutorials

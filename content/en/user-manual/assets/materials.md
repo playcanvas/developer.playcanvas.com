@@ -46,36 +46,174 @@ You can also drag and drop material Assets from the Asset Explorer onto the mate
 
 ## Editing a Material
 
+Once you have a material selected you can edit its properties.
+
 ![material_editor](/images/content_creation/material_editor.png)
 
-Once you have a material selected you can edit it's properties. Click on each heading to fold out the specific properties. Changes are saved automatically.
+The default PlayCanvas material has a 'Shading Model' property. This defaults to 'Phong', and this page documents this shading model. Note that the alternative shading model is 'Physical' - this is the model for PlayCanvas' Physically Based Renderer (PBR). The physical shading model will be documented in the near future when the full workflow for this material type is implemented.
+
+Material properties are grouped. Click on each group heading to fold out the specific properties.
 
 ### Ambient
-Ambient color determines how the material appears in ambient light.
+
+Ambient properties determine how the material appears in ambient light.
+
+![material_editor_ambient](/images/content_creation/material_editor_ambient.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Tint</td><td>Check this to multiply the scene's global ambient color with a material specific color.</td></tr>
+    <tr><td>Color</td><td>The tint color to multiply the scene's global ambient color.</td></tr>
+    <tr><td>AO Texture</td><td>An ambient occlusion map containing pre-baked ambient occlusion.</td></tr>
+    <tr><td>AO UV Set</td><td>The UV set to use for the ambient occlusion map.</td></tr>
+</table>
 
 ### Diffuse
-Diffuse properties define the base color of the material. The diffuse texture is where you set your color texture.
+
+Diffuse properties define the how a material reflects diffuse light emitted by dynamic light sources in the scene.
+
+![material_editor_diffuse](/images/content_creation/material_editor_diffuse.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Texture</td><td>The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the diffuse map.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the diffuse map.</td></tr>
+    <tr><td>Tint</td><td>Check this to modulate the material's diffuse map with a material specific diffuse color.</td></tr>
+    <tr><td>Color</td><td>If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map.</td></tr>
+</table>
 
 ### Specular
-Specular properties defines the color of the specular highlights. I.e. the shininess
+
+Specular properties defines the color of the specular highlights. i.e. the shininess
+
+![material_editor_specular](/images/content_creation/material_editor_specular.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Specular Map</td><td>The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead.</td></tr>
+    <tr><td>Specular Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the specular map. Only available if Specular Map is set.</td></tr>
+    <tr><td>Specular Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the specular map. Only available if Specular Map is set.</td></tr>
+    <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
+    <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
+    <tr><td>Shininess</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as is the surace is polished and shiny).</td></tr>
+    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property.</td></tr>
+    <tr><td>Gloss Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
+    <tr><td>Gloss Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
+</table>
 
 ### Emissive
-Emissive materials are unlit by lights and glow.
+
+Emissive properties control how the material emits light (as opposed to reflecting light).
+
+![material_editor_emissive](/images/content_creation/material_editor_emissive.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Texture</td><td>The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the emissive map. Only available if Texture is set.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the emissive map. Only available if Texture is set.</td></tr>
+    <tr><td>Tint</td><td>Check this to modulate the material's emissive map with a material specific emissive color.</td></tr>
+    <tr><td>Color</td><td>If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map.</td></tr>
+    <tr><td>Intensity</td><td>A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials.</td></tr>
+</table>
 
 ### Opacity
+
 Opacity sets the transparency level.
 
+![material_editor_opacity](/images/content_creation/material_editor_opacity.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Amount</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (complately opaque. It defaults to 1.</td></tr>
+    <tr><td>Texture</td><td>The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the opacity map. Only available if Texture is set.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the opacity map. Only available if Texture is set.</td></tr>
+</table>
+
 ### Normals
+
 Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
 
+![material_editor_normals](/images/content_creation/material_editor_normals.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exagerrated). It defaults to 1.</td></tr>
+    <tr><td>Texture</td><td>The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the normal map. Only available if Texture is set.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the normal map. Only available if Texture is set.</td></tr>
+    <tr><td>Specular Anti-Aliasing</td><td>Enables Toksvig antialiasing for mipmapped normal maps with specular highlights. This produces crisper, more detailed specular highlights. Defaults to off.</td></tr>
+</table>
+
+### Parallax
+
+A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
+
+![material_editor_parallax](/images/content_creation/material_editor_parallax.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Height Map</td><td>The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the height map.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the height map.</td></tr>
+    <tr><td>Strength</td><td>The strength of a parallax effect (a value between 0 and 2, defaulting to 1).</td></tr>
+</table>
+
 ### Reflectivity
-You can set a reflection texture on your material.
+
+Reflectivity properties determine how a material reflects the environment.
+
+![material_editor_reflectivity](/images/content_creation/material_editor_reflectivity.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Reflectivity</td><td>A factor for the applied sphere map or cube map. This value defaults to 1 (full reflectivity).</td></tr>
+    <tr><td>Sphere Map</td><td>A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive).</td></tr>
+    <tr><td>Cube Map</td><td>A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive).</td></tr>
+</table>
 
 ### Light Map
-Light maps are blended over the top of the diffuse color to "bake in" lighting.
+
+Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
+
+![material_editor_lightmap](/images/content_creation/material_editor_lightmap.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Texture</td><td>The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs.</td></tr>
+</table>
 
 ### Render States
-Modify the render states of the Material. From here you can enable or disable the Depth Test and Depth Write. You can choose to cull front or back faces; and choose the blend mode of:
-* None (for no blending).
-* Normal (which uses materials' alpha values to display typical transparency/translucency).
-* Additive (to form a material that, the less transparent it is, the more of its color is added to the material behind it - used for halo lighting effects etc.).
+
+Render States gives additional controls over how a mesh is rendered with the specified material.
+
+![material_editor_renderstates](/images/content_creation/material_editor_renderstates.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Depth Test</td><td>If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on.</td></tr>
+    <tr><td>Depth Write</td><td>If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on.</td></tr>
+    <tr><td>Cull</td>
+        <td>Options are:
+            <ul>
+                <li>None: Both front faces and back faces are rendered.</li>
+                <li>Front Faces: front faces are rendered and back faces are not.</li>
+                <li>Back Faces: back faces are rendered and front faces are not. This is the default.</li>
+            </ul>
+        PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels.
+        </td>
+    </tr>
+    <tr><td>Blend Type</td>
+        <td>Options are:
+            <ul>
+                <li>None: The mesh is opaque. This is the default.</li>
+                <li>Normal: The mesh is transparent, like stained glass.</li>
+                <li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li>
+                <li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li>
+                <li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li>
+            </ul>
+        </td>
+    </tr>
+</table>

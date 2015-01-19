@@ -15,7 +15,7 @@ It is also important to be aware of the different limits for differing light pro
 ##The lighting commands
 
 ~~~javascript~~~
-if (context.keyboard.wasPressed(pc.input.KEY_1)) { 
+if (context.keyboard.wasPressed(pc.KEY_1)) { 
     this.spot.light.enabled = !this.spot.light.enabled;
 }
 ~~~
@@ -71,13 +71,13 @@ pc.script.create('lightHandler', function (context) {
         update: function (dt) {
             this.pivot();
             
-            if (context.keyboard.wasPressed(pc.input.KEY_1)) { 
+            if (context.keyboard.wasPressed(pc.KEY_1)) { 
                 this.spot.light.enabled = !this.spot.light.enabled; 
             }
-            if (context.keyboard.wasPressed(pc.input.KEY_2)) { 
+            if (context.keyboard.wasPressed(pc.KEY_2)) { 
                 this.point.light.enabled = !this.point.light.enabled; 
             }
-            if (context.keyboard.wasPressed(pc.input.KEY_3)) { 
+            if (context.keyboard.wasPressed(pc.KEY_3)) { 
                 this.directional.light.enabled = !this.directional.light.enabled;
             }
             
@@ -123,5 +123,5 @@ pc.script.create('lightHandler', function (context) {
 });
 ~~~
 
-[lights]: /engine/api/stable/symbols/pc.fw.LightComponent.html
+[lights]: /engine/api/stable/symbols/pc.LightComponent.html
 [light tutorial]:  https://playcanvas.com/playcanvas/tutorials

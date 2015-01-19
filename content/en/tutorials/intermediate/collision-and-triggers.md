@@ -152,4 +152,4 @@ In the ```initialize``` method we set up the event listener, and then in the eve
 And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
 [rigidbody_docs]: /user-manual/packs/entities/components/rigidbody
-[entity_docs]: /engine/api/stable/symbols/pc.fw.Entity.html
+[entity_docs]: /engine/api/stable/symbols/pc.Entity.html

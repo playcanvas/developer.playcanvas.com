@@ -14,14 +14,14 @@ However, you will often want to perform special effects or special cases for you
 
 **GLSL Shader Example**
 
-WebGL uses GLSL (GL Shader Language) to write shaders that can be run across all browsers. In PlayCanvas this code is assigned to a [Shader Definition][shader_def] and then used in the constructor to make a new `pc.fw.Shader`.
+WebGL uses GLSL (GL Shader Language) to write shaders that can be run across all browsers. In PlayCanvas this code is assigned to a [Shader Definition][shader_def] and then used in the constructor to make a new `pc.Shader`.
 
 ~~~javascript~~~
 var shaderDefinition = {
-    // Define the attributes variables that pull data from vertex buffers. [http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.html]
+    // Define the attributes variables that pull data from vertex buffers. [http://developer.playcanvas.com/engine/api/stable/symbols/pc.html]
     attributes: {
-        aPosition: pc.gfx.SEMANTIC_POSITION, // vertex position
-        aUv0: pc.gfx.SEMANTIC_TEXCOORD0 // UV texture coordinate
+        aPosition: pc.SEMANTIC_POSITION, // vertex position
+        aUv0: pc.SEMANTIC_TEXCOORD0 // UV texture coordinate
     },
     vshader: [
         // attributes are supplied to vertex shaders from vertex buffers
@@ -106,10 +106,10 @@ A variable declared **`uniform`** will be declared in both vertex and fragment s
 
 ~~~javascript~~~
     // Create the shader from the definition
-    this.shader = new pc.gfx.Shader(gd, shaderDefinition);
+    this.shader = new pc.Shader(gd, shaderDefinition);
 
     // Create a new material and set the shader
-    this.material = new pc.scene.Material();
+    this.material = new pc.Material();
     this.material.setShader(this.shader);
 
     // Set the initial parameters
@@ -143,7 +143,7 @@ top of our script we have declared a script attribute called 'maps' which allows
     });
 ~~~
 
-When our height map texture is loaded we can set the uniform `uHeightMap` to be the `pc.gfx.Texture` object.
+When our height map texture is loaded we can set the uniform `uHeightMap` to be the `pc.Texture` object.
 
 **Updating uniforms**
 
@@ -198,8 +198,8 @@ pc.script.create('customShader', function (context) {
             // A shader definition used to create a new shader.
             var shaderDefinition = {
                 attributes: {
-                    aPosition: pc.gfx.SEMANTIC_POSITION,
-                    aUv0: pc.gfx.SEMANTIC_TEXCOORD0
+                    aPosition: pc.SEMANTIC_POSITION,
+                    aUv0: pc.SEMANTIC_TEXCOORD0
                 },
                 vshader: [
                     "attribute vec3 aPosition;",
@@ -241,10 +241,10 @@ pc.script.create('customShader', function (context) {
             };
 
             // Create the shader from the definition
-            this.shader = new pc.gfx.Shader(gd, shaderDefinition);
+            this.shader = new pc.Shader(gd, shaderDefinition);
 
             // Create a new material and set the shader
-            this.material = new pc.scene.Material();
+            this.material = new pc.Material();
             this.material.setShader(this.shader);
 
             // Set the initial parameters
@@ -281,4 +281,4 @@ pc.script.create('customShader', function (context) {
 Here is the complete script. Attach this to an Entity with a model component to see it in action. *Note, it only works on a model with a single mesh.* It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
 
 
-[shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.gfx.Shader.html
+[shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Shader.html

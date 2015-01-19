@@ -31,7 +31,7 @@ pc.script.create('zoom', function (context) {
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
-            if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+            if (context.keyboard.wasPressed(pc.KEY_SPACE) ) {
                 if (this.targetFov == 10) {
                     this.targetFov = 45;
                 } else {
@@ -100,7 +100,7 @@ pc.script.create('camera_manager', function (context) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.activeCamera = this.entity.findByName('Center');
-            context.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
         
         //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -110,11 +110,11 @@ pc.script.create('camera_manager', function (context) {
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
-            if (context.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+            if (context.keyboard.wasPressed(pc.KEY_SPACE) ) {
                 this.setCamera('Center');
-            } else if (context.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+            } else if (context.keyboard.wasPressed(pc.KEY_LEFT)) {
                 this.setCamera('Left');
-            } else if (context.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+            } else if (context.keyboard.wasPressed(pc.KEY_RIGHT)) {
                 this.setCamera('Right');
             }
         }

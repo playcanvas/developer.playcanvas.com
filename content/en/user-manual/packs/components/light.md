@@ -37,4 +37,4 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
 You can control an light component's properties using a [script component][script_component]. The light component's scripting interface is [here][docs].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.fw.LightComponent.html
+[docs]: /engine/api/stable/symbols/pc.LightComponent.html
