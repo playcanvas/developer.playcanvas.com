@@ -46,9 +46,13 @@ You can also drag and drop material Assets from the Asset Explorer onto the mate
 
 ## Editing a Material
 
+Once you have a material selected you can edit its properties.
+
 ![material_editor](/images/content_creation/material_editor.png)
 
-Once you have a material selected you can edit it's properties. Click on each heading to fold out the specific properties. Changes are saved automatically.
+The default PlayCanvas material has a 'Shading Model' property. This defaults to 'Phong', and this page documents this shading model. Note that the alternative shading model is 'Physical' - this is the model for PlayCanvas' Physically Based Renderer (PBR). The physical shading model will be documented in the near future when the full workflow for this material type is implemented.
+
+Material properties are grouped. Click on each group heading to fold out the specific properties.
 
 ### Ambient
 
@@ -141,7 +145,7 @@ A parallax map gives further realism to a normal map by giving the illusion of d
 
 ### Reflectivity
 
-You can set a reflection texture on your material.
+Reflectivity properties determine how a material reflects the environment.
 
 ![material_editor_reflectivity](/images/content_creation/material_editor_reflectivity.png)
 
@@ -154,7 +158,7 @@ You can set a reflection texture on your material.
 
 ### Light Map
 
-Light maps are blended over the top of the diffuse color to "bake in" lighting.
+Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
 
 ![material_editor_lightmap](/images/content_creation/material_editor_lightmap.png)
 
@@ -171,8 +175,8 @@ Render States gives additional controls over how a mesh is rendered with the spe
 
 <table class="table table-striped table-bordered">
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Depth Test</td><td>If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a view z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on.</td></tr>
-    <tr><td>Depth Write</td><td>If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material.</td></tr>
+    <tr><td>Depth Test</td><td>If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on.</td></tr>
+    <tr><td>Depth Write</td><td>If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on.</td></tr>
     <tr><td>Cull</td>
         <td>Options are:
             <ul>
@@ -180,7 +184,7 @@ Render States gives additional controls over how a mesh is rendered with the spe
                 <li>Front Faces: front faces are rendered and back faces are not.</li>
                 <li>Back Faces: back faces are rendered and front faces are not. This is the default.</li>
             </ul>
-        PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note tha backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels.
+        PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels.
         </td>
     </tr>
     <tr><td>Blend Type</td>
