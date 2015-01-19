@@ -79,7 +79,7 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
     <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the diffuse map.</td></tr>
     <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the diffuse map.</td></tr>
     <tr><td>Tint</td><td>Check this to modulate the material's diffuse map with a material specific diffuse color.</td></tr>
-    <tr><td>Color</td><td>The tint color used to modulate the material's diffuse map.</td></tr>
+    <tr><td>Color</td><td>If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map.</td></tr>
 </table>
 
 ### Specular
@@ -94,7 +94,7 @@ Specular properties defines the color of the specular highlights. i.e. the shini
     <tr><td>Specular Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the specular map. Only available if Specular Map is set.</td></tr>
     <tr><td>Specular Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the specular map. Only available if Specular Map is set.</td></tr>
     <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
-    <tr><td>Color</td><td>The tint color used to modulate the material's specular map.</td></tr>
+    <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
     <tr><td>Shininess</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as is the surace is polished and shiny).</td></tr>
     <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. If no gloss map is set, the Shininess property is used instead.</td></tr>
     <tr><td>Gloss Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the gloss map. Only available if Gloss Map is set.</td></tr>
@@ -113,7 +113,7 @@ Emissive properties control how the material emits light (as opposed to reflecti
     <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the emissive map. Only available if Texture is set.</td></tr>
     <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the emissive map. Only available if Texture is set.</td></tr>
     <tr><td>Tint</td><td>Check this to modulate the material's emissive map with a material specific emissive color.</td></tr>
-    <tr><td>Color</td><td>The tint color used to modulate the material's emissive map.</td></tr>
+    <tr><td>Color</td><td>If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map.</td></tr>
     <tr><td>Intensity</td><td>A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials.</td></tr>
 </table>
 
@@ -123,11 +123,28 @@ Opacity sets the transparency level.
 
 ![material_editor_opacity](/images/content_creation/material_editor_opacity.png)
 
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Amount</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (complately opaque. It defaults to 1.</td></tr>
+    <tr><td>Texture</td><td>The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the opacity map. Only available if Texture is set.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the opacity map. Only available if Texture is set.</td></tr>
+</table>
+
 ### Normals
 
 Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
 
 ![material_editor_normals](/images/content_creation/material_editor_normals.png)
+
+<table class="table table-striped table-bordered">
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exagerrated). It defaults to 1.</td></tr>
+    <tr><td>Texture</td><td>The opacity map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
+    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by the normal map. Only available if Texture is set.</td></tr>
+    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by the normal map. Only available if Texture is set.</td></tr>
+    <tr><td>Specular Anti-Aliasing</td><td>Enables Toksvig antialiasing for mipmapped normal maps with specular highlights. This produces crisper, more detailed specular highlights. Defaults to off.</td></tr>
+</table>
 
 ### Parallax
 
