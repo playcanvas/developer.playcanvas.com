@@ -187,15 +187,15 @@ pc.script.create('DynamicBody', function (context) {
 ~~~
 
 [12]: https://playcanvas.com/playcanvas/tutorials
-[10]:/tutorials/intermediate/collision-and-triggers/
-[8]:/engine/api/stable/symbols/pc.CollisionComponent.html
-[9]:/engine/api/stable/symbols/pc.html
-[11]:/tutorials/advanced/fps-controller/
-[7]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[3]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[4]:/http:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[5]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[10]: /tutorials/intermediate/collision-and-triggers/
+[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[9]: /engine/api/stable/symbols/pc.html
+[11]: /tutorials/advanced/fps-controller/
+[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
+[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[4]: /http:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
 [7]: /tutorials/beginner/manipulating-entities/
-[1]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
+[1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
 [2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[6]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Vec3.html
+[6]: /engine/api/stable/symbols/pc.Vec3.html

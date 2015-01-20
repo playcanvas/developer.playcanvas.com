@@ -66,4 +66,6 @@ pc.script.create("player", function (context) {
 });
 ~~~
 
-More details in the [API Reference](http://developer.playcanvas.com/engine/api/stable/symbols/pc.events.html#fire)
+More details in the [API Reference][1]
+
+[1]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.events.html#fire
