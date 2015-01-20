@@ -2,6 +2,16 @@
 
 This is this the static site for the PlayCanvas Developer Tools
 
+## Style Guide
+
+### Links
+
+When writing a link in a markdown file use the following format:
+
+\[Link Text\]\[1\]
+
+\[1\]: /link/url
+
 ## How to build
 
 Building the site requires `node` and `npm`
