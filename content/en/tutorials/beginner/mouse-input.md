@@ -10,7 +10,7 @@ position: 2
 
 Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistancies with handling mouse co-ordinates.
 
-Take a look at the 'Mouse Input' Pack in the [tutorials project][project]. Here is the code from mouse.js:
+Take a look at the 'Mouse Input' Pack in the [tutorials project][1]. Here is the code from mouse.js:
 
 ~~~javascript~~~
 pc.script.attribute("materials", "asset", [], {type: "material"});
@@ -20,12 +20,12 @@ pc.script.create("mouse", function (context) {
         this.entity = entity;
         this.pos = new pc.Vec3();
 
-        // Disabling the context menu stops the browser displaying a menu when 
+        // Disabling the context menu stops the browser displaying a menu when
         // you right-click the page
         context.mouse.disableContextMenu();
 
-        // Use the on() method to attach event handlers. 
-        // The mouse object supports events on move, button down and 
+        // Use the on() method to attach event handlers.
+        // The mouse object supports events on move, button down and
         // up, and scroll wheel.
         context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
         context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
@@ -37,9 +37,9 @@ pc.script.create("mouse", function (context) {
             this.greenMaterial = context.assets.getAssetByResourceId(this.materials[1]).resource;
             this.blueMaterial = context.assets.getAssetByResourceId(this.materials[2]).resource;
         },
-        
+
         onMouseMove: function (event) {
-            // Use the camera component's screenToWorld function to convert the 
+            // Use the camera component's screenToWorld function to convert the
             // position of the mouse into a position in 3D space
             var depth = 10;
             var cameraEntity = context.root.findByName('Camera');
@@ -57,12 +57,12 @@ pc.script.create("mouse", function (context) {
 
             // If the left mouse button is pressed, change the cube color to green
             if (event.button === pc.MOUSEBUTTON_MIDDLE) {
-                this.entity.model.model.meshInstances[0].material = this.greenMaterial;            
+                this.entity.model.model.meshInstances[0].material = this.greenMaterial;
             }
 
             // If the left mouse button is pressed, change the cube color to blue
             if (event.button === pc.MOUSEBUTTON_RIGHT) {
-                this.entity.model.model.meshInstances[0].material = this.blueMaterial;                
+                this.entity.model.model.meshInstances[0].material = this.blueMaterial;
             }
         }
     };
@@ -75,7 +75,7 @@ pc.script.create("mouse", function (context) {
 
 ### Accessing the mouse
 
-Mouse control is managed by the `pc.Mouse` object. The [framework][framework] provides an instance of this on the [application context][context] which is available to all script objects as:
+Mouse control is managed by the `pc.Mouse` object. The [framework][2] provides an instance of this on the [application context][3] which is available to all script objects as:
 
 ~~~javascript~~~
 context.mouse
@@ -107,7 +107,7 @@ Events available on `pc.Mouse` are:
 * `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
 * `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
 
-Mouse input in browsers is usually implemented by listening to [DOM][dom] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistant across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
+Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistant across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
 
 ### Moving the mouse
 
@@ -126,10 +126,10 @@ In our tutorial, we're changing the color of the cube depending on which mouse b
 
 ### Try it out
 
-Try the tutorial in full screen [here][tutorial] or at the top of the page. Move the mouse to move the cube and click the left, middle and right mouse button to change the color of the cube.
+Try the tutorial in full screen [here][5] or at the top of the page. Move the mouse to move the cube and click the left, middle and right mouse button to change the color of the cube.
 
-[project]: http://playcanvas.com/playcanvas/tutorials
-[framework]: /user-manual/glossary#framework
-[context]: /user-manual/glossary#context
-[dom]: /user-manual/glossary#dom
-[tutorial]: http://apps.playcanvas.com/playcanvas/tutorials/input_mouse
+[1]: http://playcanvas.com/playcanvas/tutorials
+[2]: /user-manual/glossary#framework
+[3]: /user-manual/glossary#context
+[4]: /user-manual/glossary#dom
+[5]: http://apps.playcanvas.com/playcanvas/tutorials/input_mouse

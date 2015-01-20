@@ -11,17 +11,17 @@ template: tutorial-page.tmpl.html
 
 In this tutorial we will place two AudioSources in the scene, and attach an AudioListener to the main camera. By moving the listener closer and further from the two sources we will hear the sound panning from left to right and getting louder and quieter as we move.
 
-The basic audio system in PlayCanvas centres on two Component types. 
+The basic audio system in PlayCanvas centres on two Component types.
 
-The [AudioSource][audio_source] Component plays an audio asset like a Wave, MP3 or Ogg Vorbis file. Imagine AudioSource Components like loudspeakers in the scene. There can be many active AudioSources, each playing a single sound. 
+The [AudioSource][1] Component plays an audio asset like a Wave, MP3 or Ogg Vorbis file. Imagine AudioSource Components like loudspeakers in the scene. There can be many active AudioSources, each playing a single sound.
 
-The [AudioListener][audio_listener] Component determines how an AudioSource is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
+The [AudioListener][2] Component determines how an AudioSource is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
 
 ## Pack Setup
 
-![Pack Explorer](/images/tutorials/basic_audio_pack.png)
+![Pack Explorer][5]
 
-You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
+You should look at the [Pack][3] for this tutorial yourself in the Designer. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
 
 ## Creating Sources
 
@@ -29,13 +29,13 @@ To create an AudioSource select the Entity you wish to add the source to and cho
 
 AudioSource properties will now appear in the AttributeEditor.
 
-![AudioSource Component](/images/tutorials/audiosource_component.png)
+![AudioSource Component][6]
 
 There are quite a few options available on the AudioSource component, but for now the only ones we need to worry about are *Assets*, *Loop*, *Activate* and *3d*.
 
 ### Assets
 
-First you will need to upload an audio file to use in your scene. See the documentation for [importing assets][importing_assets] for details. 
+First you will need to upload an audio file to use in your scene. See the documentation for [importing assets][4] for details.
 
 <div class="pc-notice-message pc-small">
     Not all audio formats are supported across all browsers. At the moment we recommend using Wave (.wav) or Ogg Vorbis (.ogg), which are supported by Chrome, Firefox and Opera. Safari does not support Ogg Vorbis.
@@ -67,7 +67,9 @@ That's it, the AudioListener has no options.
     You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
 </div>
 
-[audio_source]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
-[audio_listener]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
-[designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/e5425adb-772d-4a1a-9dad-9bec77e55acc
-[importing_assets]: /user-manual/assets/importing
+[1]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
+[2]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
+[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329663
+[4]: /user-manual/assets/importing
+[5]: /images/tutorials/basic_audio_pack.png
+[6]: /images/tutorials/audiosource_component.png

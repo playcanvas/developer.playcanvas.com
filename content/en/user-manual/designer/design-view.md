@@ -24,7 +24,7 @@ Using the *Toggle Quad View* command in the menu, or by pressing the spacebar yo
 
 <img alt="Design View" src="/images/platform/rotate-gizmo.PNG" align = left style="margin:0px 0px" />  <img alt="Design View" src="/images/platform/scale-gizmo.PNG" align = center  style="margin:0px 30px"/>
 
-The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][gizmo]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Scale (with cubes on the ends of the axes) and Rotate (which is made up of three colored rings).
+The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][1]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Scale (with cubes on the ends of the axes) and Rotate (which is made up of three colored rings).
 
 ## Entity Context Menu
 
@@ -32,7 +32,7 @@ Right clicking on an Entity in the 3D viewport will bring up the Entity context 
 
 <img alt="Entity context menu" src="/images/platform/entity_context_menu.jpg" />
 
-From here you can select one of the parents of the selected Entity or perform any other operation that is also available by right clicking on an Entity in the [Pack Explorer][pack_explorer].
+From here you can select one of the parents of the selected Entity or perform any other operation that is also available by right clicking on an Entity in the [Pack Explorer][2].
 
-[gizmo]: /user-manual/glossary#gizmo
-[pack_explorer]: /user-manual/designer/pack-explorer
+[1]: /user-manual/glossary#gizmo
+[2]: /user-manual/designer/pack-explorer

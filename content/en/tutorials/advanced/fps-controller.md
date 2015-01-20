@@ -10,13 +10,13 @@ position: 1
 
 In this tutorial, we'll walk you through how to create a controllable first-person camera which uses the built-in physics engine so that your character is solid in the world.
 
-This tutorial expands on the [first-person camera][first_person_camera] tutorial. If you haven't completed that, you should head over there now.
+This tutorial expands on the [first-person camera][1] tutorial. If you haven't completed that, you should head over there now.
 
 ## The Pack setup
 
-![Pack Explorer](/images/tutorials/fps_controller_pack.png)
+![Pack Explorer][2]
 
-You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][first_person_camera] from the previous tutorial.
+You should look at the [Pack][3] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][1] from the previous tutorial.
 
 ## The Camera Script
 
@@ -34,7 +34,7 @@ The other main sort of character controller is a Kinematic Character Controller,
 
 ## The Character Controller Code
 
-The full source for this tutorial is found in the [tutorials project code page][tutorials_code].
+The full source for this tutorial is found in the [tutorials project code page][4].
 
 There are three important functions in the character controller for this tutorial, but first an important piece of setup code:
 
@@ -66,7 +66,7 @@ The internal method `_checkGround()` is called every frame to check if the chara
 
 To perform the test we fire a ray from the position of the character straight down. If the ray hits another Entity, then we can say we are on the ground. If it doesn't then we are not. Of course, this test may not be perfect, the entity the character is standing on could be anything, we don't care. However, we have the Entity that was hit in the result of the raycast, so if your game calls for you to be a little more fussy about what counts as 'ground', then you can modify the code here.
 
-`raycastFirst()` is a method provided by the [`RigidBodyComponentSystem`][rigidbody_system] it takes a start and end point in world-space, and a callback function which is given a [`RaycastResult`][raycast_result] object. `RaycastResult` contains all sorts of useful information, like the Entity that was hit, the point in space where the ray hit, and the normal vector at that point.
+`raycastFirst()` is a method provided by the [`RigidBodyComponentSystem`][5] it takes a start and end point in world-space, and a callback function which is given a [`RaycastResult`][6] object. `RaycastResult` contains all sorts of useful information, like the Entity that was hit, the point in space where the ray hit, and the normal vector at that point.
 
 ### move()
 ~~~javascript~~~
@@ -110,7 +110,7 @@ this.controller.registerKeys('right', [pc.KEY_RIGHT, pc.KEY_D]);
 this.controller.registerKeys('jump', [pc.KEY_SPACE]);
 ~~~
 
-In order to easily handle multiple keys bound to the same command we are using [`pc.Controller`][input_controller]. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
+In order to easily handle multiple keys bound to the same command we are using [`pc.Controller`][7]. In the above code you can see that using `registerKey()` we can create an named action like 'forward' or 'back' and register several keys to the same action.
 
 ~~~javascript~~~
 if (this.controller.isPressed('forward')) {
@@ -171,9 +171,10 @@ Getting input from the player is slightly more complicated than simply translati
 
 Finally we just check for the jump action and if required, we call the `jump()` method of the character controller script.
 
-[first_person_camera]: /tutorials/intermediate/first-person-camera
-[designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/0c72839a-2ad2-4bfe-94d1-5f4434630fc3
-[tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
-[rigidbody_system]: /engine/api/stable/symbols/pc.RigidBodyComponentSystem.html
-[raycast_result]: /engine/api/stable/symbols/pc.RaycastResult.html
-[input_controller]: /engine/api/stable/symbols/pc.Controller.html
+[1]: /tutorials/intermediate/first-person-camera
+[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329678
+[4]: https://playcanvas.com/playcanvas/tutorials/code
+[5]: /engine/api/stable/symbols/pc.RigidBodyComponentSystem.html
+[6]: /engine/api/stable/symbols/pc.RaycastResult.html
+[7]: /engine/api/stable/symbols/pc.Controller.html
+[2]: /images/tutorials/fps_controller_pack.png

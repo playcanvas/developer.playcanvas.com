@@ -8,7 +8,7 @@ Building art and animations for PlayCanvas can be done using almost any of the m
 
 PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
-Some modelling and animation programs to consider: 
+Some modelling and animation programs to consider:
 * Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
 * Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
 * Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
@@ -20,7 +20,7 @@ For generating textures, consider these programs:
 * Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 Note many of the programs listed above for modelling also allow texture painting.
-If you would like more options, this [external wiki][wiki] page can help. Please note that some of the information may be out-of-date.
+If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
 
 ## General Considerations for Mesh Construction
 
@@ -34,9 +34,9 @@ Regardless which modelling application you are using, there a number of things t
 
 ## Blender
 
-![Blender Logo](/images/Blender-Logo.jpg)
+![Blender Logo][3]
 
-[Blender](http://blender.org) is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender][4] is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
 
 Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
 
@@ -51,7 +51,7 @@ The Blender COLLADA exporter does not have the ability to embed textures into th
 
 The 2.71 release of Blender features a revamped fbx export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to fbx, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
 
-Alternatively, use the [Autodesk FBX Converter](http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112) to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
 
 <div class="alert alert-warning">
 Note: there seems to be an issue with Blender 2.71's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Designer.
@@ -67,8 +67,8 @@ Animations included within the blend file are exported with the default fbx expo
 
 There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
 
-* [Blender Cookie](http://cgcookie.com/blender/)
-* [Blender Guru](http://www.blenderguru.com/)
+* [Blender Cookie][2]
+* [Blender Guru][6]
 
 ---
 
@@ -84,7 +84,7 @@ You should now have a better feel for how PlayCanvas interprets your 3DS Max sce
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
-![Sphere map](/images/artist_guide/max_material_editor.jpg)
+![Sphere map][7]
 
 ### Supported Map Slots
 
@@ -124,11 +124,11 @@ Assigning a Normal Bump map to this slot enables normal mapping. Note that, by d
 
 There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
 
-![Normal map](/images/artist_guide/wall_norm.jpg)
+![Normal map][8]
 
 Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
 
-![Normal map with Y component flipped](/images/artist_guide/wall_norm_yflip.jpg)
+![Normal map with Y component flipped][9]
 
 Now, lighting in PlayCanvas will be consistent.
 
@@ -138,7 +138,7 @@ If the assigned normal map has an alpha channel, it will be treated as a paralla
 
 Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
 
-![Sphere map](/images/artist_guide/mountains_sphere.jpg)
+![Sphere map][10]
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
 
@@ -150,6 +150,16 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
-![Sphere map](/images/artist_guide/maya_material_editor.jpg)
+![Sphere map][11]
 
-[wiki]: http://wiki.polycount.com/wiki/Tools
+[1]: http://wiki.polycount.com/wiki/Tools
+[2]: http://cgcookie.com/blender/
+[3]: /images/Blender-Logo.jpg
+[4]: http://blender.org
+[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
+[6]: http://www.blenderguru.com/
+[7]: /images/artist_guide/max_material_editor.jpg
+[8]: /images/artist_guide/wall_norm.jpg
+[9]: /images/artist_guide/wall_norm_yflip.jpg
+[10]: /images/artist_guide/mountains_sphere.jpg
+[11]: /images/artist_guide/maya_material_editor.jpg

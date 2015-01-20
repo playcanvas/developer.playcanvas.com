@@ -17,15 +17,15 @@ Check out the [engine examples][2]. The source code for all samples is included 
 
 To load a 3D model into the Engine first you need to convert it from the format used by the modelling package (e.g. COLLADA or FBX) to the format used by the Engine (a JSON format). The conversion process is performed by our server. To convert a model follow [these instructions][3], when the model conversion is finished (the status light is green, this should only take a few seconds) then the model is ready to download.
 
-![Completed Model Conversion][asset_complete]
+![Completed Model Conversion][6]
 
 When you select the completed model you will see details about the asset and additional all the [target][4] assets that were created by this asset.
 
-![Asset Targets][asset_targets]
+![Asset Targets][7]
 
 Select the target asset of type "model" which is the 3D model in the runtime format and on the asset page for this model, click the "Export Model Archive" button.
 
-![Export Model][export_model]
+![Export Model][8]
 
 This will download the complete model including materials and textures, ready to load in the Engine.
 
@@ -37,6 +37,6 @@ To load the model file into your engine use the [loadFromUrl][5] API.
 [4]: /user-manual/glossary/#target_asset
 [5]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.asset.AssetRegistry.html#loadFromUrl
 
-[asset_complete]: /images/platform/assets/asset_complete.jpg
-[asset_targets]: /images/platform/assets/asset_targets.jpg
-[export_model]: /images/platform/assets/export_model.jpg
+[6]: /images/platform/assets/asset_complete.jpg
+[7]: /images/platform/assets/asset_targets.jpg
+[8]: /images/platform/assets/export_model.jpg

@@ -7,11 +7,11 @@ position: 9
 The 'rigidbody' component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.
 
 #### Static
-![Component Interface](/images/platform/component_rigidbodystatic.png)
+![Component Interface][1]
 #### Dynamic (and Kinematic)
-![Component Interface](/images/platform/component_rigidbodydynamic.png)
+![Component Interface][2]
 
-Note that you must add a [collision component][collision_component] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
+Note that you must add a [collision component][3] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
 
 ## Properties
 
@@ -32,8 +32,11 @@ Note that you must add a [collision component][collision_component] to the same 
 
 ## Scripting Interface
 
-You can control a rigidbody component's properties using a [script component][script_component]. The rigidbody component's scripting interface is [here][docs].
+You can control a rigidbody component's properties using a [script component][4]. The rigidbody component's scripting interface is [here][5].
 
-[script_component]: /user-manual/packs/entities/components/script
-[collision_component]: /user-manual/packs/entities/components/collision/
-[docs]: /engine/api/stable/symbols/pc.RigidBodyComponent.html
+[4]: /user-manual/packs/entities/components/script
+[3]: /user-manual/packs/entities/components/collision/
+[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html
+
+[1]: /images/platform/component_rigidbodystatic.png
+[2]: /images/platform/component_rigidbodydynamic.png

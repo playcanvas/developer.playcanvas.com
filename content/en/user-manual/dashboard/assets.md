@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 3
 ---
 
-![Dashboard](/images/platform/dashboard_assets.png)
+![Dashboard][2]
 
 The Asset dashboard lists all the Assets that are in your Project.
 
@@ -21,3 +21,4 @@ When you delete a Source Asset, all Target Assets created from the Source Asset 
 There is full explanation about the difference between Source and Target assets in [this section][1]
 
 [1]: /user-manual/assets/
+[2]: /images/platform/dashboard_assets.png

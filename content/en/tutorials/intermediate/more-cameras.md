@@ -8,7 +8,7 @@ position: 3
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
-The [Basic Cameras][basic_cameras] tutorial walks you through creating a camera Entity and adding it to your Pack. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Pack. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
 
 ## Altering Attributes
 
@@ -71,8 +71,8 @@ With the final two nested `if(){}` constucts we gradually change the fov values 
 
 With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Designer scene][designer] where the cubes sit next to the
-top and bottom sides of the camera [frustum][frustum]
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Designer scene][3] where the cubes sit next to the
+top and bottom sides of the camera [frustum][2]
 
 ## Current Camera
 
@@ -83,7 +83,7 @@ pc.script.create('camera_manager', function (context) {
     // Creates a new CameraManager instance
     var CameraManager = function (entity) {
         this.entity = entity;
-        
+
         this.activeCamera = null;
     };
 
@@ -96,13 +96,13 @@ pc.script.create('camera_manager', function (context) {
             this.activeCamera = this.entity.findByName(cameraName);
             this.activeCamera.enabled = true;
         },
-        
+
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.activeCamera = this.entity.findByName('Center');
             context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
-        
+
         //prevents default browser actions, such as scrolling when pressing cursor keys
         onKeyDown: function (event) {
             event.event.preventDefault();
@@ -128,10 +128,10 @@ In this sample, pressing the arrow keys sets the current camera to be a left or 
 
 We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `context.root.findByName()` to search through all the entities in the pack).
 
-We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Designer scene)][designer].
+We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Designer scene)][3].
 
 Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
 
-[basic_cameras]: /tutorials/beginner/basic-cameras/
-[frustum]: https://en.wikipedia.org/wiki/Frustum
-[designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/470b8e24-857a-4608-8c84-4237452e39b1
+[1]: /tutorials/beginner/basic-cameras/
+[2]: https://en.wikipedia.org/wiki/Frustum
+[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329672

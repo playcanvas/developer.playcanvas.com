@@ -12,13 +12,13 @@ In this tutorial, we'll create a simple script for a first-person camera. That i
 
 ## The Pack setup
 
-![Pack Explorer](/images/tutorials/first_person_camera_pack.png)
+![Pack Explorer][1]
 
-You should look at the [Pack][designer] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
+You should look at the [Pack][2] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
 
 ## The Camera script
 
-The camera script is a normal PlayCanvas javascript file, for more information on scripts see the [scripting guide][scripting_guide]. The full source for the script is found at the bottom of this tutorial, or in the [tutorials code repository][tutorials_code] (note you can only access this if you are logged in).
+The camera script is a normal PlayCanvas javascript file, for more information on scripts see the [scripting guide][3]. The full source for the script is found at the bottom of this tutorial, or in the [tutorials code repository][4] (note you can only access this if you are logged in).
 
 ### The setup
 
@@ -51,7 +51,7 @@ onMouseMove: function (event) {
 },
 ~~~
 
-Our first event handler handles the mouse move event. The `event` variable is a [`pc.MouseEvent`][mouse_event] and in this case we are interested in `event.dx` and `event.dy`, which are the number of pixels the mouse has moved since the last mouse event. In this handler we scale the amount moved and apply it to our values of `ex` and `ey` which are the orientation angles of the camera. We are clamping `ex` (the up/down angle) to be between -90 and 90.
+Our first event handler handles the mouse move event. The `event` variable is a [`pc.MouseEvent`][5] and in this case we are interested in `event.dx` and `event.dy`, which are the number of pixels the mouse has moved since the last mouse event. In this handler we scale the amount moved and apply it to our values of `ex` and `ey` which are the orientation angles of the camera. We are clamping `ex` (the up/down angle) to be between -90 and 90.
 
 ~~~javascript~~~
 onMouseDown: function (event) {
@@ -90,7 +90,7 @@ update: function (dt) {
 },
 ~~~
 
-In the update method we update the orientation and the position of the camera. First we set the Euler Angles (see the [Entities intro][entities_intro] for more about Eulers) using the values that are updated by mouse events. Then we check for keyboard input. We're listening for the four arrow keys and if they are pressed we translate the Entity in local space. We use local space because we always want to move forward/back or left/right relative to the direction the camera is facing.
+In the update method we update the orientation and the position of the camera. First we set the Euler Angles (see the [Entities intro][6] for more about Eulers) using the values that are updated by mouse events. Then we check for keyboard input. We're listening for the four arrow keys and if they are pressed we translate the Entity in local space. We use local space because we always want to move forward/back or left/right relative to the direction the camera is facing.
 
 ## Summary
 
@@ -157,8 +157,10 @@ pc.script.create('first_person_camera', function (context) {
 });
 ~~~
 
-[designer]: http://playcanvas.com/playcanvas/tutorials/designer/pack/e22564b3-d380-4352-8e69-4fb0155f025a
-[scripting_guide]: /user-manual/scripting/
-[tutorials_code]: https://playcanvas.com/playcanvas/tutorials/code
-[mouse_event]: /engine/api/stable/symbols/pc.MouseEvent.html
-[entities_intro]: /tutorials/beginner/manipulating-entities/
+[2]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329653
+[3]: /user-manual/scripting/
+[4]: https://playcanvas.com/playcanvas/tutorials/code
+[5]: /engine/api/stable/symbols/pc.MouseEvent.html
+[6]: /tutorials/beginner/manipulating-entities/
+
+[1]: /images/tutorials/first_person_camera_pack.png

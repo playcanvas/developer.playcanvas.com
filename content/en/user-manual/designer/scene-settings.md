@@ -76,7 +76,7 @@ Computer screens are set up to output not physically linear, but perceptually li
 
 <img alt="Gamma correction comparison" width="640" src="/images/platform/scene_settings/scene_settings_gamma_correction.png" />
 
-To find out more about gamma correction, read [this GPU Gems chapter](http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html).
+To find out more about gamma correction, read [this GPU Gems chapter][2].
 
 ### Tonemapping
 
@@ -95,7 +95,7 @@ The exposure value tweaks the overall brightness of the scene.
 
 ### Skybox
 
-The Skybox is a [cubemap] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
+The Skybox is a [cubemap][1] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
 
 To add a skybox, create a cubemap asset and then select it using the asset picker.
 
@@ -107,4 +107,5 @@ Physics settings affect the simulation of all the rigid body components in your 
 
 Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g).
 
-[cubemap]: /user-manual/assets/cubemaps
+[1]: /user-manual/assets/cubemaps
+[2]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html

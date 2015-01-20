@@ -6,7 +6,7 @@ position: 4
 
 The 'camera' component enables an entity to render a scene from a certain viewpoint.
 
-![Component Interface](/images/platform/component_camera.png)
+![Component Interface][3]
 
 ## Properties
 
@@ -41,8 +41,8 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
 
 ## Scripting Interface
 
-You can control a camera component's properties using a [script component][script_component]. The camera component's scripting interface is [here][docs].
+You can control a camera component's properties using a [script component][1]. The camera component's scripting interface is [here][2].
 
-[script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.CameraComponent.html
-[lambo]: http://apps.playcanvas.com/will/lambo/lambo
+[1]: /user-manual/packs/entities/components/script
+[2]: /engine/api/stable/symbols/pc.CameraComponent.html
+[3]: /images/platform/component_camera.png

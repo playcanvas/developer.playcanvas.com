@@ -22,7 +22,7 @@ if (context.keyboard.isPressed(pc.KEY_F) ) {
     this.entity.rigidbody.applyForce(0, 9.8, 0);
 }
 ~~~
-Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][force]. The point of application of the force vector can also be set. [See this documentation][rigidbody api] for more details.
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set. [See this documentation][2] for more details.
 
 ###Impulses
 ~~~javascript~~~
@@ -31,7 +31,7 @@ if (context.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 
 ~~~
-The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][impulse].
+The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][3].
 
 ###Torques
 ~~~javascript~~~
@@ -39,25 +39,25 @@ if (context.keyboard.isPressed(pc.KEY_W) ) {
     this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
 }
 ~~~
-[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][torque].
+[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][4].
 
 ###TorqueImpulses
 ~~~javascript~~~
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ~~~
-Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][torque impulse]. This was not used in the code for the above demo.
+Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][5]. This was not used in the code for the above demo.
 
 ##Moving dynamic rigidbodies
 
 In order to move rigidbodies, you apply linear forces and rotational forces (torque) using the methods above. Usually you should try to avoid directly modifying the position or velocity of a rigidbody as this will override the simulation and it can lead to odd effects, especially when objects collide.
 
-However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][Vec]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`. You can also override the position or orientation using the usual [Entity methods][entities], but you must then update the rigidbody simulation from the Entity using [`entity.rigidbody.syncEntityToBody()`][sync].
+However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][6]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`. You can also override the position or orientation using the usual [Entity methods][7], but you must then update the rigidbody simulation from the Entity using [`entity.rigidbody.syncEntityToBody()`][7].
 
-For more information on rigidbody types, see [the collision API page][collision api], [the pc.fw API page][pc.fw], [the fps-controller tutorial][fps] and [the collision tutorial][collision].
+For more information on rigidbody types, see [the collision API page][8], [the pc.fw API page][9], [the fps-controller tutorial][11] and [the collision tutorial][10].
 
 ##General setup
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code for [this PlayCanvas app can be found here][pack].
+We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' pack and code for [this PlayCanvas app can be found here][12].
 
 ##Limiting and control
 
@@ -121,10 +121,10 @@ pc.script.create('DynamicBody', function (context) {
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
-            
+
             //update player's position
             this.playerPos = this.entity.getLocalPosition();
-            
+
             //keyboard controls and applying forces and moments.
             if (context.keyboard.isPressed(pc.KEY_LEFT) ) {
                 this.entity.rigidbody.applyImpulse(-1, 0, 0);
@@ -150,7 +150,7 @@ pc.script.create('DynamicBody', function (context) {
             if (context.keyboard.isPressed(pc.KEY_F) ) {
                 this.entity.rigidbody.applyForce(0, 9.8, 0);
             }
-            
+
             // Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
             if (this.playerPos.x < -9.0) {
                 this.teleport(8.8, this.playerPos.y, this.playerPos.z);
@@ -158,23 +158,23 @@ pc.script.create('DynamicBody', function (context) {
             if (this.playerPos.x > 9.0) {
                 this.teleport(-8.8, this.playerPos.y, this.playerPos.z);
             }
-            
+
             // cube reset control
             if (context.keyboard.wasPressed(pc.KEY_R) ) {
                 this.reset();
             }
         },
-        
-        //teleport function that moves entity and then syncs rigidbody to parent entity's new position. 
+
+        //teleport function that moves entity and then syncs rigidbody to parent entity's new position.
         teleport: function (x, y, z) {
             this.entity.setLocalPosition(x, y, z);
             this.entity.rigidbody.syncEntityToBody();
         },
-        
+
         onKeyDown: function (event) {
             event.event.preventDefault();
         },
-        
+
         // reset function to move cube back to starting position.
         reset: function () {
             this.teleport(0, 2, 0);
@@ -186,16 +186,16 @@ pc.script.create('DynamicBody', function (context) {
 });
 ~~~
 
-[pack]: https://playcanvas.com/playcanvas/tutorials
-[collision]:/tutorials/intermediate/collision-and-triggers/
-[collision api]:/engine/api/stable/symbols/pc.CollisionComponent.html
-[pc.fw]:/engine/api/stable/symbols/pc.html
-[fps]:/tutorials/advanced/fps-controller/
-[sync]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[impulse]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[torque]:/http:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[torque impulse]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[entities]: /tutorials/beginner/manipulating-entities/
-[force]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[rigidbody api]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[Vec]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Vec3.html
+[12]: https://playcanvas.com/playcanvas/tutorials
+[10]:/tutorials/intermediate/collision-and-triggers/
+[8]:/engine/api/stable/symbols/pc.CollisionComponent.html
+[9]:/engine/api/stable/symbols/pc.html
+[11]:/tutorials/advanced/fps-controller/
+[7]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
+[3]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[4]:/http:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[5]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[7]: /tutorials/beginner/manipulating-entities/
+[1]:/engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
+[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
+[6]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Vec3.html

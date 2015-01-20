@@ -17,7 +17,7 @@ Let's examine how this is achieved via PlayCanvas...
 
 In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the skinned character as displayed in PlayCanvas Designer.
 
-![Animated Entity](/images/tutorials/animation_blending.png)
+![Animated Entity][1]
 
 In the image you can see the animation component in the Attribute Editor. There are 2 animation assets assigned: an 'idle' cycle and a 'punch' cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
 
@@ -30,11 +30,11 @@ So this kind of functionality goes beyond the abilities of the humble animation 
 ~~~javascript~~~
 pc.script.create("animation_blending", function (context) {
     var states = {
-        idle: { 
-            animation: 'male_idle' 
+        idle: {
+            animation: 'male_idle'
         },
-        punch: { 
-            animation: 'male_uppercut_jab' 
+        punch: {
+            animation: 'male_uppercut_jab'
         }
     };
 
@@ -68,11 +68,14 @@ pc.script.create("animation_blending", function (context) {
             }
         }
     };
-    
+
     return AnimationBlender;
 });
 ~~~
 
 From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
 
-See [the full Pack here](http://playcanvas.com/playcanvas/tutorials/designer/pack/5e42b2be-18e0-11e4-a3dc-22000a4a0339)
+See [the full Pack here][2]
+
+[1]: /images/tutorials/animation_blending.png
+[2]: http://playcanvas.com/playcanvas/tutorials/designer/pack/338867

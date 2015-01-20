@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 2
 ---
 
-![Pack Explorer](/images/platform/pack_explorer.png "Explore packs to discover their secrets")
+![Pack Explorer][1]
 
 The Pack Explorer shows you a tree view of your entire Pack which is made up from a hierarchy of Entities. A Pack will always contain the Pack Entity at the top of the tree, and the Designer Entity, which contains special Entities used by the PlayCanvas Designer. You won't be able to access these at runtime in your code. All the other Entities you see here have been added by the developer.
 
@@ -14,3 +14,5 @@ The order in which Entities are listed in the tree view is important. As the Pac
 it's not alway obvious where an Entity gets its position from if an ancestor has been moved.
 
 You can re-parent an Entity by dragging it over another Entity.
+
+[1]: /images/platform/pack_explorer.png "Explore packs to discover their secrets"

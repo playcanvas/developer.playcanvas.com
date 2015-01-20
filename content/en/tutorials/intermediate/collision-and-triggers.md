@@ -7,7 +7,7 @@ template: tutorial-page.tmpl.html
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Pack in full in the [Collision & Triggers Pack](http://playcanvas.com/playcanvas/tutorials/designer/pack/f190325d-41c7-4159-a278-f766e39406c7) in the [PlayCanvas Tutorials Project](http://playcanvas.com/playcanvas/tutorials).
+This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Pack in full in the [Collision & Triggers Pack][1] in the [PlayCanvas Tutorials Project][2].
 
 ## The Collision Component
 
@@ -24,7 +24,7 @@ The most important property of a *collision* component is it's **Type**, this de
 
 To create a Trigger Volume all we need to do is add a *collision* component to an Entity. In this tutorial we're adding a large box-shaped Trigger Volume underneath the slope to catch the falling bodies and reset their position.
 
-![Collisions & Triggers](/images/tutorials/collision/collision_and_triggers.jpg)
+![Collisions & Triggers][3]
 
 You can see the trigger volume underneath the ramp displayed as a blue outline.
 
@@ -34,9 +34,9 @@ A rigid body is a physical presence in your game world. You can set it up with r
 
 To create a rigid body in your Pack, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
 
-![rigidbody component](/images/platform/component_rigidbody.png)
+![rigidbody component][4]
 
-For details on each property take a look at the [*rigidbody* documentation](http://developer.playcanvas.com/user-manual/packs/entities/components/rigidbody/).
+For details on each property take a look at the [*rigidbody* documentation][5].
 
 For this demo, the important property is the **Type**. You can pick one of three options:
 
@@ -49,7 +49,7 @@ For this demo, the important property is the **Type**. You can pick one of three
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-![Ground Entity](/images/tutorials/collision/ground_setup.png)
+![Ground Entity][6]
 
 You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
@@ -57,7 +57,7 @@ You can see in the attribute panel, that it has *model*, *collision* and *rigidb
 
 The next Entity we'll need is the trigger.
 
-![Trigger Entity](/images/tutorials/collision/trigger_setup.jpg)
+![Trigger Entity][7]
 
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
@@ -100,7 +100,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 Notice, the third argument, ```this```, which is the 'scope' that will be used in the event listener. Usually, you'll want to add the current Script Object as the third argument so that the value of ```this``` in the event listener is that same Script Object.
 
-The second part of this code is the function which handles the event, ```onTriggerEnter```. When the trigger is entered, this function is called and passed the [```Entity```](entity_docs) object entering the trigger volume.
+The second part of this code is the function which handles the event, ```onTriggerEnter```. When the trigger is entered, this function is called and passed the [```Entity```][8] object entering the trigger volume.
 
 In this case, when the trigger is fired, we reset the penetrating Entity back up to the position it started in, and reset its velocities.
 
@@ -108,7 +108,7 @@ In this case, when the trigger is fired, we reset the penetrating Entity back up
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-![Box Entity](/images/tutorials/collision/box_setup.jpg)
+![Box Entity][9]
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 
@@ -151,5 +151,12 @@ In the ```initialize``` method we set up the event listener, and then in the eve
 
 And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
-[rigidbody_docs]: /user-manual/packs/entities/components/rigidbody
-[entity_docs]: /engine/api/stable/symbols/pc.Entity.html
+[1]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329662
+[2]: http://playcanvas.com/playcanvas/tutorials
+[3]: /images/tutorials/collision/collision_and_triggers.jpg
+[4]: /images/platform/component_rigidbody.png
+[5]: /user-manual/packs/entities/components/rigidbody/
+[6]: /images/tutorials/collision/ground_setup.png
+[7]: /images/tutorials/collision/trigger_setup.jpg
+[8]: /engine/api/stable/symbols/pc.Entity.html
+[9]: /images/tutorials/collision/box_setup.jpg

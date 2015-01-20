@@ -6,7 +6,7 @@ position: 10
 
 The 'script' component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.
 
-![Component Interface](/images/platform/component_script.png)
+![Component Interface][1]
 
 To assign a script, type its name into the URL box. For example, if you want to create a script called car.js, type car.js into the box and hit ENTER. This will create a script block below. If you click the hyperlinked script name, it will open in the PlayCanvas Code Editor. If you type a name of an existing script, autocomplete should activate and again, just press ENTER to add the script to the component.
 
@@ -21,7 +21,9 @@ To assign a script, type its name into the URL box. For example, if you want to 
 
 ## Scripting Interface
 
-The script component's scripting interface is [here][docs].
+The script component's scripting interface is [here][2].
 
 [script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.ScriptComponent.html
+[2]: /engine/api/stable/symbols/pc.ScriptComponent.html
+
+[1]: /images/platform/component_script.png

@@ -14,7 +14,7 @@ However, you will often want to perform special effects or special cases for you
 
 **GLSL Shader Example**
 
-WebGL uses GLSL (GL Shader Language) to write shaders that can be run across all browsers. In PlayCanvas this code is assigned to a [Shader Definition][shader_def] and then used in the constructor to make a new `pc.Shader`.
+WebGL uses GLSL (GL Shader Language) to write shaders that can be run across all browsers. In PlayCanvas this code is assigned to a [Shader Definition][1] and then used in the constructor to make a new `pc.Shader`.
 
 ~~~javascript~~~
 var shaderDefinition = {
@@ -281,4 +281,4 @@ pc.script.create('customShader', function (context) {
 Here is the complete script. Attach this to an Entity with a model component to see it in action. *Note, it only works on a model with a single mesh.* It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
 
 
-[shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Shader.html
+[1]: /engine/api/stable/symbols/pc.Shader.html

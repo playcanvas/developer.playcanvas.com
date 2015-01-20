@@ -7,11 +7,11 @@ position: 6
 The 'light' component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.
 
 #### Directional
-![Component Interface](/images/platform/component_directionallight.png)
+![Component Interface][1]
 #### Point
-![Component Interface](/images/platform/component_pointlight.png)
+![Component Interface][2]
 #### Spot
-![Component Interface](/images/platform/component_spotlight.png)
+![Component Interface][3]
 
 ## Properties
 
@@ -34,7 +34,11 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
 
 ## Scripting Interface
 
-You can control an light component's properties using a [script component][script_component]. The light component's scripting interface is [here][docs].
+You can control an light component's properties using a [script component][4]. The light component's scripting interface is [here][5].
 
-[script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.LightComponent.html
+[4]: /user-manual/packs/entities/components/script
+[5]: /engine/api/stable/symbols/pc.LightComponent.html
+
+[1]: /images/platform/component_directionallight.png
+[2]: /images/platform/component_pointlight.png
+[3]: /images/platform/component_spotlight.png

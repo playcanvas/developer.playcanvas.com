@@ -15,54 +15,54 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
             <th>Description</th>
         </tr>
     <tr>
-        <td>[Animation][animation]</td>
+        <td>[Animation][1]</td>
         <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
     </tr>
     <tr>
-        <td>[Audio Listener][audiolistener]</td>
+        <td>[Audio Listener][2]</td>
         <td>Specifies the location of the listener for 3D audio playback.</td>
     </tr>
     <tr>
-        <td>[Audio Source][audiosource]</td>
+        <td>[Audio Source][3]</td>
         <td>Specifies audio assets that can be played at the position of the entity.</td>
     </tr>
     <tr>
-        <td>[Camera][camera]</td>
+        <td>[Camera][4]</td>
         <td>Renders the scene from the location of the entity.</td>
     </tr>
     <tr>
-        <td>[Collision][collision]</td>
+        <td>[Collision][5]</td>
         <td>Assigns a collision volume to the entity.</td>
     </tr>
     <tr>
-        <td>[Light][light]</td>
+        <td>[Light][6]</td>
         <td>Attach a dynamic light source to the Entity.</td>
     </tr>
     <tr>
-        <td>[Model][model]</td>
+        <td>[Model][7]</td>
         <td>Renders a 3D model at the location of the entity.</td>
     </tr>
     <tr>
-        <td>[Particle System][particlesystem]</td>
+        <td>[Particle System][8]</td>
         <td>Attach a dynamic light source to the Entity.</td>
     </tr>
     <tr>
-        <td>[Rigid Body][rigidbody]</td>
+        <td>[Rigid Body][9]</td>
         <td>Adds the entity to the scene's physical simulation.</td>
     </tr>
     <tr>
-        <td>[Script][script]</td>
+        <td>[Script][10]</td>
         <td>Allows the script to run JavaScript fragments to implement custom behavior.</td>
     </tr>
 </tbody></table>
 
-[animation]: /user-manual/packs/entities/components/animation
-[audiolistener]: /user-manual/packs/entities/components/audiolistener
-[audiosource]: /user-manual/packs/entities/components/audiosource
-[camera]: /user-manual/packs/entities/components/camera
-[collision]: /user-manual/packs/entities/components/collision
-[light]: /user-manual/packs/entities/components/light
-[model]: /user-manual/packs/entities/components/model
-[particlesystem]: /user-manual/packs/entities/components/particlesystem
-[rigidbody]: /user-manual/packs/entities/components/rigidbody
-[script]: /user-manual/packs/entities/components/script
+[1]: /user-manual/packs/entities/components/animation
+[2]: /user-manual/packs/entities/components/audiolistener
+[3]: /user-manual/packs/entities/components/audiosource
+[4]: /user-manual/packs/entities/components/camera
+[5]: /user-manual/packs/entities/components/collision
+[6]: /user-manual/packs/entities/components/light
+[7]: /user-manual/packs/entities/components/model
+[8]: /user-manual/packs/entities/components/particlesystem
+[9]: /user-manual/packs/entities/components/rigidbody
+[10]: /user-manual/packs/entities/components/script

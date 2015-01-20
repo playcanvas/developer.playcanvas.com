@@ -9,15 +9,15 @@ In order to learn the basics of PlayCanvas Platform, let's build the following s
 
 ## Your Profile
 
-![Profile][profile]
+![Profile][1]
 
 Once you've signed in you will be greeted with your profile page. Your profile page shows you all the projects you have access to, this includes all projects you have created and any that you have been given permission to access.
 
-![Project List][project_list]
+![Project List][2]
 
 A Project is a collection of:
 
-* **Packs** - An collection [Entities][entity] used to build up a part of your game. A Pack could be a single level or your entire game. It depends.
+* **Packs** - An collection [Entities][3] used to build up a part of your game. A Pack could be a single level or your entire game. It depends.
 * **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
 * **Code** - Your source code. You can either write code using the PlayCanvas built-in code editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
 * **Exports** and **Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
@@ -29,7 +29,7 @@ On your profile page, click on the PROJECTS tab and click on 'Create a Project'.
 * **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or simply display a 3D model that you've made, you can use a starter kit.
 * **Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
 * **Description** - A short description of your project that will appear on the main project page.
-* **Private** - The project visibility. By default, new projects are public allowing other community members to check out your work. Checking this option will allow you to work in private but note that you will need a [Pro account](https://playcanvas.com/plans) to use this feature.
+* **Private** - The project visibility. By default, new projects are public allowing other community members to check out your work. Checking this option will allow you to work in private but note that you will need a [Pro account][4] to use this feature.
 
 Choose "No Starter kit" and set a name and description for your project. Then click the "Create" button and you are taken to the project home page.
 
@@ -43,7 +43,7 @@ The first thing to do is create a new pack. A pack represents the data required 
 
 A PlayCanvas Pack is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the 'Pack Explorer' panel in the Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
 
-![Pack Explorer][pack_explorer]
+![Pack Explorer][5]
 
 Entities are built from Components. A Component powers an Entity with a particular piece of functionality. For example, a Component can add a graphical model to an Entity, it can animate the model, it can add a light source to an Entity, it can add an audio source, and so the list goes on.
 
@@ -84,7 +84,7 @@ Now would seem to be a good time to save your work, right? In actual fact, PlayC
 
 From Designer, you can quickly preview your work at any time. To do this, press either the 'Launch' or 'Launch Local' button (more on these later) on the toolbar.
 
-![Launch Buttons][launch_buttons]
+![Launch Buttons][6]
 
 This will open a new tab and fire up your web app. Based on the steps above, you should see something similar to what is shown below:
 
@@ -102,7 +102,7 @@ The real power and versatility of PlayCanvas comes from the ability to assign sc
 
 There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in code editor, which saves directly to our servers. The second is to edit code in you favourite text editor and run a local web-server.
 
-For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow](http://developer.playcanvas.com/engine/workflow.html) page.
+For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow][7] page.
 
 First we need to create a script component and create a new script to edit.
 
@@ -136,9 +136,10 @@ Once you've edited the code, press the "Save" button in the code editor and swit
 
 With that done, you can select the Launch button from the toolbar once again. This time, you should see your box rotating on the spot. Congratulations, you have built your first PlayCanvas app!
 
-[profile]: /images/platform/profile.png "Profile"
-[project_list]:  /images/platform/project_list.jpg "Project List"
-[collaborators]: /images/platform/collaborators.png "Collaborators"
-[pack_explorer]: /images/platform/pack_explorer.png "Pack Explorer"
-[launch_buttons]: /images/platform/launch_buttons.png "Launch Buttons"
-[entity]: /user-manual/glossary/#entity
+[1]: /images/platform/profile.png "Profile"
+[2]: /images/platform/project_list.jpg "Project List"
+[3]: /user-manual/glossary/#entity
+[4]: https://playcanvas.com/plans
+[5]: /images/platform/pack_explorer.png "Pack Explorer"
+[6]: /images/platform/launch_buttons.png "Launch Buttons"
+[7]: http://developer.playcanvas.com/engine/workflow.html

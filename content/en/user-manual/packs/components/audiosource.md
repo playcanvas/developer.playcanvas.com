@@ -6,7 +6,7 @@ position: 3
 
 The 'audiosource' component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
 
-![Component Interface](/images/platform/component_audiosource.png)
+![Component Interface][3]
 
 ## Properties
 
@@ -28,7 +28,8 @@ The 'audiosource' component specifies the listener's position in 3D space. All 3
 
 ## Scripting Interface
 
-You can control an audiosource component's properties using a [script component][script_component]. The audiosource component's scripting interface is [here][docs].
+You can control an audiosource component's properties using a [script component][1]. The audiosource component's scripting interface is [here][2].
 
-[script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
+[1]: /user-manual/packs/entities/components/script
+[2]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
+[3]: /images/platform/component_audiosource.png

@@ -43,7 +43,7 @@ pc.script.create("script_name", function(context) {
 
 Enclosing the whole script is a call to `pc.script.create`. The first argument is the script name, this is used to identify this script later if you wish to communicate between script instances. The second argument is a function which is used to define the class that provides the script's behaviour.
 
-The definition function takes a single argument `context` which is an [`ApplicationContext`][application_context] instance.
+The definition function takes a single argument `context` which is an [`ApplicationContext`][1] instance.
 
 The `context` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
 
@@ -54,7 +54,7 @@ The `context` variable is available for use throughout your script object becaus
 * `scene` An instance of `pc.Scene`
 * `loader` An instance of `pc.resources.ResourceLoader`
 
-See the [API Reference][context_api] for more details on the context object.
+See the [API Reference][2] for more details on the context object.
 
 ## Defining the Script object
 
@@ -135,6 +135,6 @@ pc.script.create('oscillator', function (context) {
 });
 ~~~
 
-[application_context]: /user-manual/glossary#application_context
-[context_api]: /engine/api/stable/symbols/pc.ApplicationContext.html
+[1]: /user-manual/glossary#application_context
+[2]: /engine/api/stable/symbols/pc.ApplicationContext.html
 

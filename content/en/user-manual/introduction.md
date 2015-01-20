@@ -83,7 +83,7 @@ Lastly, you will want to publish your PlayCanvas game. You have complete freedom
 * Publish to playcanvas.com with the click of a button.
 * Download your game as a zip archive. You can then host the game yourself or deploy it to mobile app stores or web portals such as the Chrome Web Store.
 
-Find out more in the [publishing](/user-manual/publishing) section.
+Find out more in the [publishing][1] section.
 
 ## Supported Browsers
 
@@ -91,7 +91,7 @@ PlayCanvas was always designed to be plugin free, running natively in the browse
 
 * Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
 * PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM](/user-manual/glossary/#dom) element (a canvas) and you can composite it on the page or transform it via CSS.
+* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
 * No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
 
 So obviously this is all very good news, but you want your web app to run everywhere. Any device, any browser. At the time of writing, HTML5 continues to be adopted on more and more devices in more and more browsers. The browser requirements are currently as follows:
@@ -115,4 +115,8 @@ So obviously this is all very good news, but you want your web app to run everyw
     </tr>
 </table>
 
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page](http://get.webgl.org/). If you see a spinning cube, you are all set!
+If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][3]. If you see a spinning cube, you are all set!
+
+[1]: /user-manual/publishing
+[2]: /user-manual/glossary/#dom
+[3]: http://get.webgl.org/

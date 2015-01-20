@@ -12,11 +12,11 @@ position: 4
 
 You can create your own post effects in PlayCanvas, with a bit of Javascript and GLSL. Post effects are shaders that operate on the 2D rendered image from a camera. You can apply multiple post effects to your image - each effect uses the output of the previous effect as its input.
 
-In the next paragraphs we will demonstrate how to create your own post effects. You can see examples of existing post effects [here][github_posteffects].
+In the next paragraphs we will demonstrate how to create your own post effects. You can see examples of existing post effects [here][1].
 
 ## The script
 
-First we need to create a new script. This script will contain the [Shader Definition][shader_def] for our post effect and also code that will add the post effect to the camera. This script needs to be attached to an Entity with a [Camera component][camera]. We'll call this script posteffect_example.js:
+First we need to create a new script. This script will contain the [Shader Definition][2] for our post effect and also code that will add the post effect to the camera. This script needs to be attached to an Entity with a [Camera component][3]. We'll call this script posteffect_example.js:
 
 ~~~javascript~~~
 pc.script.create('posteffect_example', function (context) {
@@ -35,7 +35,7 @@ pc.script.create('posteffect_example', function (context) {
 
 ## The effect
 
-Now we need to create a new class for our post effect. This class will derive from [pc.posteffect.PostEffect][api_posteffect]. We will define this class inside our posteffect_example.js script just before the script definition:
+Now we need to create a new class for our post effect. This class will derive from [pc.posteffect.PostEffect][4]. We will define this class inside our posteffect_example.js script just before the script definition:
 
 ~~~javascript~~~
 pc.extend(pc.posteffect, function () {
@@ -110,7 +110,7 @@ pc.extend(pc.posteffect, function () {
 
 ## Wrap up
 
-We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][posteffect_queue]:
+We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][5]:
 
 ~~~javascript~~~
 pc.script.create('posteffect_example', function (context) {
@@ -228,15 +228,15 @@ pc.script.create('posteffect_example', function (context) {
 });
 ~~~
 
-For more tutorials on custom shaders look [here][custom-shader].
+For more tutorials on custom shaders look [here][6].
 
-See the [Custom Post Effects Pack here][pack].
+See the [Custom Post Effects Pack here][7].
 
 
-[shader_def]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.Shader.html
-[api_posteffect]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.posteffect.PostEffect.html
-[camera]: /user-manual/packs/entities/components/camera
-[github_posteffects]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
-[custom-shader]: /tutorials/advanced/custom-shaders
-[posteffect_queue]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.CameraComponent.html#postEffects
-[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/b3bea7aa-fc45-11e3-9c67-22000a4a0339
+[2]: /engine/api/stable/symbols/pc.Shader.html
+[4]: /engine/api/stable/symbols/pc.posteffect.PostEffect.html
+[3]: /user-manual/packs/entities/components/camera
+[1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
+[6]: /tutorials/advanced/custom-shaders
+[5]: /engine/api/stable/symbols/pc.CameraComponent.html#postEffects
+[7]: http://playcanvas.com/playcanvas/tutorials/designer/pack/338140

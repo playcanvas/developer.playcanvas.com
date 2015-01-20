@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 7
 ---
 
-The Designer Settings panel allows you to set up your preferences for the Designer for the current Scene. 
+The Designer Settings panel allows you to set up your preferences for the Designer for the current Scene.
 
 The properties that are settable are:
 
@@ -30,11 +30,11 @@ Here you can set the snap increment which will be used when you have Snap enable
 
 <img alt="Snap Tool" src="/images/platform/designer_settings/snap_tool.png" />
 
-When you have Snap enabled then Entities will snap to the closest increment from their starting position / rotation / scale when you move / rotate or scale them using the [Gizmos][gizmo].
+When you have Snap enabled then Entities will snap to the closest increment from their starting position / rotation / scale when you move / rotate or scale them using the [Gizmos][1].
 
 ## Camera Settings
 
 Here you can control various properties of the camera used for the 3D view, like the clear color that will be used or the near and far clip planes of the camera.
 
 
-[gizmo]: /user-manual/glossary#gizmo
+[1]: /user-manual/glossary#gizmo

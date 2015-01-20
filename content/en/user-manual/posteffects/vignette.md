@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 6
 ---
 
-In photography and optics, vignetting is a reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame. <small>(from [Wikipedia][wikipedia])</small>
+In photography and optics, vignetting is a reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame. <small>(from [Wikipedia][1])</small>
 
 Here is an image without the effect:
 
@@ -19,4 +19,4 @@ The built-in vignette effect has the following attributes:
 * **Offset**: Controls the offset of the effect.
 * **Darkness**: Controls the darkness of the effect.
 
-[wikipedia]: http://en.wikipedia.org/wiki/Vignetting
+[1]: http://en.wikipedia.org/wiki/Vignetting

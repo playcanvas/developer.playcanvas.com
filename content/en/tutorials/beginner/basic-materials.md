@@ -5,7 +5,7 @@ template: tutorial-page.tmpl.html
 
 Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.
 
-In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. Before starting you'll first create a Project and a new Pack, just like in the [Getting Started][getting_started] guide.
+In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. Before starting you'll first create a Project and a new Pack, just like in the [Getting Started][1] guide.
 
 ## Step 1 - Add a cube to your scene
 
@@ -17,7 +17,7 @@ Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new chil
 
 Create new material directly from the PlayCanvas Designer interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
 
-![Add Material][add_material]
+![Add Material][2]
 
 This creates a new Material Asset and opens up the Material Editor on the right-hand side of the screen. In the Material Editor rename the Material to "Box Material".
 
@@ -27,7 +27,7 @@ There are two ways to select a Material from a model in the 3D view. The first w
 
 When selected, the Material Editor will appear in the left column of the Designer.
 
-![Assign Material][assign_material]
+![Assign Material][3]
 
 When you first select a primitive object, the Material slot will be empty like this.
 
@@ -41,7 +41,7 @@ To change the color of the Material we will want to edit the *Diffuse* property 
 
 With the Material selected, open the Diffuse attribute section and modify the color to be a nice shade of red.
 
-![Diffuse Color][diffuse_color]
+![Diffuse Color][4]
 
 You'll see the color of the cube change as you edit the color of the diffuse property
 
@@ -64,16 +64,16 @@ Once they're uploaded it's time to assign them to texture slots on the Material.
 
 You'll see something that looks a little like this:
 
-![Cube][diffuse_normal_cube]
+![Cube][5]
 
 Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
 
-See the [Basic Materials project pack here][pack] in the [PlayCanvas tutorials project][tutorials]. Left-click the 'Box' item in the Pack Explorer and press F to focus if the view is zoomed-out too far.
+See the [Basic Materials project pack here][6] in the [PlayCanvas tutorials project][7]. Left-click the 'Box' item in the Pack Explorer and press F to focus if the view is zoomed-out too far.
 
-[getting_started]: /getting-started
-[add_material]: /images/content_creation/add_material.png
-[assign_material]: /images/content_creation/assign_material.png
-[diffuse_color]: /images/content_creation/material_editor.png
-[diffuse_normal_cube]: /images/content_creation/diffuse_normal_cube.jpg
-[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/14ebeca6-1d5f-11e4-9fba-22000a4a0339
-[tutorials]: https://playcanvas.com/playcanvas/tutorials
+[1]: /getting-started
+[2]: /images/content_creation/add_material.png
+[3]: /images/content_creation/assign_material.png
+[4]: /images/content_creation/material_editor.png
+[5]: /images/content_creation/diffuse_normal_cube.jpg
+[6]: http://playcanvas.com/playcanvas/tutorials/designer/pack/339076
+[7]: https://playcanvas.com/playcanvas/tutorials

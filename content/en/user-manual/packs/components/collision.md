@@ -7,15 +7,15 @@ position: 5
 The 'collision' component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.
 
 #### Box
-![Component Interface](/images/platform/component_collisionbox.png)
+![Component Interface][1]
 #### Sphere
-![Component Interface](/images/platform/component_collisionsphere.png)
+![Component Interface][2]
 #### Capsule
-![Component Interface](/images/platform/component_collisioncapsule.png)
+![Component Interface][3]
 #### Cylinder
-![Component Interface](/images/platform/component_collisioncylinder.png)
+![Component Interface][4]
 #### Mesh
-![Component Interface](/images/platform/component_collisionmesh.png)
+![Component Interface][5]
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
 
@@ -36,7 +36,13 @@ If the entity also has a rigidbody component, the collision component determines
 
 ## Scripting Interface
 
-You can control a collision component's properties using a [script component][script_component]. The collision component's scripting interface is [here][docs].
+You can control a collision component's properties using a [script component][6]. The collision component's scripting interface is [here][7].
 
-[script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[6]: /user-manual/packs/entities/components/script
+[7]: /engine/api/stable/symbols/pc.CollisionComponent.html
+
+[1]: /images/platform/component_collisionbox.png
+[2]: /images/platform/component_collisionsphere.png
+[3]: /images/platform/component_collisioncapsule.png
+[4]: /images/platform/component_collisioncylinder.png
+[5]: /images/platform/component_collisionmesh.png

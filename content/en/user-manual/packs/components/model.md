@@ -6,7 +6,7 @@ position: 7
 
 The 'model' component enables an entity to render a primitive shape or a model asset.
 
-![Component Interface](/images/platform/component_model.png)
+![Component Interface][1]
 
 ## Properties
 
@@ -23,7 +23,8 @@ The 'model' component enables an entity to render a primitive shape or a model a
 
 ## Scripting Interface
 
-You can control a model component's properties using a [script component][script_component]. The model component's scripting interface is [here][docs].
+You can control a model component's properties using a [script component][2]. The model component's scripting interface is [here][3].
 
-[script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.ScriptComponent.html
+[1]: /images/platform/component_model.png
+[2]: /user-manual/packs/entities/components/script
+[3]: /engine/api/stable/symbols/pc.ScriptComponent.html

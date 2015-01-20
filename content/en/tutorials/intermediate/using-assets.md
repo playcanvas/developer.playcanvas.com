@@ -7,9 +7,9 @@ template: tutorial-page.tmpl.html
 
 *Click to focus, press SPACEBAR to switch between two model assets*
 
-Usually you will set up all your assets in the Designer and there is no need to access them in scripts. But for more advanced games you may need to swap assets in and out, or assign them at runtime mid-game. To do this you will need to use the [`AssetRegistry`][asset_registry] and [Script Attributes][script_attributes].
+Usually you will set up all your assets in the Designer and there is no need to access them in scripts. But for more advanced games you may need to swap assets in and out, or assign them at runtime mid-game. To do this you will need to use the [`AssetRegistry`][1] and [Script Attributes][2].
 
-In this tutorial we'll build a small scene which lets you swap the model on a model component by pressing a key. You can see the completed [Pack, here,][pack] in our [tutorials project][tutorials].
+In this tutorial we'll build a small scene which lets you swap the model on a model component by pressing a key. You can see the completed [Pack, here,][3] in our [tutorials project][4].
 
 ## Setup
 
@@ -19,7 +19,7 @@ In this tutorial we'll build a small scene which lets you swap the model on a mo
 * A model Entity is added to the scene and the model **A** is assigned to the model component.
 * A script component is added to the model Entity and a new script is created called `update_asset.js`.
 
-Download the [A model][A] and the [B model][B] and upload them to your project. Ensure that the files are named A.dae and B.dae as this will influence the asset names.
+Download the [A model][5] and the [B model][6] and upload them to your project. Ensure that the files are named A.dae and B.dae as this will influence the asset names.
 
 ## Handling keypresses
 
@@ -100,13 +100,15 @@ Let's add a function call `changeTo()`:
 
 When you run this appliction and press space. You'll get this error message:
 
-![error message][error_message]
+![error message][7]
 
 Even though we've uploaded the model **B** to our project. The game can't find it in the asset registry. Why is this?
 
 The answer is down to how we optimize projects to prevent downloading excess assets when the game is loaded.
 
+<div class="alert alert-warning">
 **Only assets that are referenced in the pack are accessible**.
+</div>
 
 So in this case, we reference the **A** model in the model component, but we don't reference the **B** model anywhere in the pack. That means it's not included in the asset registry and it's not loaded when the application starts up.
 
@@ -114,7 +116,7 @@ So in this case, we reference the **A** model in the model component, but we don
 
 One way of ensuring that the **B** model is included in the Pack is to add a new Entity with a model component and assign the **B** model to it. This would work, but has the downside that we have an extra Entity in the scene. We'd need to make sure if was out of sight or we could just disable it.
 
-We're going to show you another method of adding a reference to an asset, using [Script Attributes][script_attributes]. Script Attributes let you declare variables in your scripts which are then exposed to the Designer. This makes it easy to create a generic script and customize it per-instance in the Designer.
+We're going to show you another method of adding a reference to an asset, using [Script Attributes][2]. Script Attributes let you declare variables in your scripts which are then exposed to the Designer. This makes it easy to create a generic script and customize it per-instance in the Designer.
 
 To declare a script attribute we add this code to the top of our `update_asset.js` script
 
@@ -124,7 +126,7 @@ pc.script.attribute("letters", "asset", [], {type: "model"});
 
 Then in the Designer choose the Refresh Script Attributes option from the Entity menu.
 
-![refresh_scripts][refresh_scripts]
+![refresh_scripts][8]
 
 <div class="alert alert-warning">
 It's important to make sure you refresh the script attributes when you upload a new asset, because when if you reference a new script attribute in your code, but you have exposed it in the designer, it will be uninitialized.
@@ -132,7 +134,7 @@ It's important to make sure you refresh the script attributes when you upload a 
 
 Once you've refreshed the script attributes you'll see that you now have an asset picker available in your script component.
 
-![letters_script_attributes][letters_script_attributes]
+![letters_script_attributes][9]
 
 Use this to add the two models **A** and **B** to your script. Now you have a reference to both models, which means the asset will be available at runtime.
 
@@ -226,12 +228,12 @@ pc.script.create('update_asset', function (context) {
 });
 ```
 
-[asset_registry]: /api
-[script_attributes]: /user-manual/scripting/script-attributes/
-[pack]: http://playcanvas.com/playcanvas/tutorials/designer/pack/28cd064c-1251-11e4-9e07-22000a4a0339
-[tutorials]: http://playcanvas.com/playcanvas/tutorials
-[A]: /downloads/tutorials/A.dae
-[B]: /downloads/tutorials/B.dae
-[error_message]: /images/tutorials/using_assets/error.jpg
-[refresh_scripts]: /images/scripting/refresh_attributes.png
-[letters_script_attributes]: /images/tutorials/using_assets/letters_script_attributed.jpg
+[1]: /api
+[2]: /user-manual/scripting/script-attributes/
+[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/338769
+[4]: http://playcanvas.com/playcanvas/tutorials
+[5]: /downloads/tutorials/A.dae
+[6]: /downloads/tutorials/B.dae
+[7]: /images/tutorials/using_assets/error.jpg
+[8]: /images/scripting/refresh_attributes.png
+[9]: /images/tutorials/using_assets/letters_script_attributed.jpg

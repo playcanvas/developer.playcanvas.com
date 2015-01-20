@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 4
 ---
 
-The PlayCanvas Designer is a visual editing tool which you use to create and edit the [Packs][pack] and [Entities][entity] that make up your game.
+The PlayCanvas Designer is a visual editing tool which you use to create and edit the [Packs][1] and [Entities][2] that make up your game.
 
 * Runs in your browser, so it's available wherever you are.
 * Uses the PlayCanvas Engine to render your scene. What you see is what you get.
@@ -20,11 +20,11 @@ This is the main interface to the PlayCanvas Designer. You can see labeled the m
 * **Menubar** Drop-down menus allow you to initiate almost all commands available in the Designer
 * **Toolbar** Commonly used commands are available on the toolbar for quick access.
 * **Pack Explorer** A hierarchical view of the Entities that make up the open Pack. Use this to select, delete and re-parent Entities.
-* **Attribute Editor** Detailed properties of each [Component][component] attached to the selected Entity.
+* **Attribute Editor** Detailed properties of each [Component][3] attached to the selected Entity.
 * **Design View** A 3D view onto your scene, use this view to select, position and orientate Entities.
 * **Assets Explorer** A view of all the Assets in the current Project. You can search for assets by name, filter by type and also drag and drop assets to various slots or in the Design View.
-* **Scripts Explorer** A view of all the Scripts in the current Project. You can drag and drop scripts from this view into the Script Component box within the attribute editor panel (once a Script Component has been added to an [Entity][entity]).
+* **Scripts Explorer** A view of all the Scripts in the current Project. You can drag and drop scripts from this view into the Script Component box within the attribute editor panel (once a Script Component has been added to an [Entity][2]).
 
-[pack]: /user-manual/glossary#pack
-[entity]: /user-manual/glossary#entity
-[component]: /user-manual/glossary#component
+[1]: /user-manual/glossary#pack
+[2]: /user-manual/glossary#entity
+[3]: /user-manual/glossary#component

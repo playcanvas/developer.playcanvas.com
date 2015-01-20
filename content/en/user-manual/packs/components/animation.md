@@ -6,7 +6,7 @@ position: 1
 
 The 'animation' component enables an entity to specify which animations can be applied to the model assigned to its model component.
 
-![Component Interface](/images/platform/component_animation.png)
+![Component Interface][3]
 
 ## Properties
 
@@ -23,7 +23,8 @@ The 'animation' component enables an entity to specify which animations can be a
 
 ## Scripting Interface
 
-You can control an animation component's properties using a [script component][script_component]. The animation component's scripting interface is [here][docs].
+You can control an animation component's properties using a [script component][1]. The animation component's scripting interface is [here][2].
 
-[script_component]: /user-manual/packs/entities/components/script
-[docs]: /engine/api/stable/symbols/pc.AnimationComponent.html
+[1]: /user-manual/packs/entities/components/script
+[2]: /engine/api/stable/symbols/pc.AnimationComponent.html
+[3]: /images/platform/component_animation.png

@@ -7,58 +7,62 @@ Tutorials are a great way to learn to use PlayCanvas. You'll find both video tut
 
 ## Videos
 
-You can find our complete collection of video tutorials on our [YouTube Channel](https://youtube.com/playcanvas). You can also [download](/tutorials/video) assets for following along to the videos.
+You can find our complete collection of video tutorials on our [YouTube Channel][1]. You can also [download][2] assets for following along to the videos.
 
 ## Articles
 
-The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page](https://playcanvas.com/playcanvas/tutorials). Note that you must be logged in to the PlayCanvas site to access them.
+The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page][3]. Note that you must be logged in to the PlayCanvas site to access them.
 
 ### Beginner
 
-* [Basic Keyboard Input][keyboard_input]
-* [Basic Mouse Input][mouse_input]
-* [Basic Camera][basic_camera]
-* [Basic Audio][basic_audio]
-* [Basic Materials][basic_materials]
-* [Manipulating Entities][manipulating_entities]
+* [Basic Keyboard Input][4]
+* [Basic Mouse Input][5]
+* [Basic Camera][6]
+* [Basic Audio][7]
+* [Basic Materials][8]
+* [Manipulating Entities][9]
 
 ### Intermediate
 
-* [Animation Blending][animation_blending]
-* [More Cameras][more_cameras]
-* [First Person Camera][first_person_camera]
-* [Collision and Triggers][collision_and_triggers]
-* [Using the Asset Registry][using_the_asset_registry]
+* [Animation Blending][10]
+* [More Cameras][11]
+* [First Person Camera][12]
+* [Collision and Triggers][13]
+* [Using the Asset Registry][14]
 
 ### Advanced
 
-* [Programmatically Creating Entities][programmatically_creating]
-* [FPS Character Controller][fps_character_controller]
-* [Custom Shaders][custom_shaders]
-* [Custom Post Effects][custom_posteffects]
+* [Programmatically Creating Entities][15]
+* [FPS Character Controller][16]
+* [Custom Shaders][17]
+* [Custom Post Effects][18]
 
 ###Sprites and Fonts
 
-For instructions in displaying 2D images see [our GitHub sprites page][sprites] and for displaying on-screen text see [our fonts page on GitHub][fonts].
+For instructions in displaying 2D images see [our GitHub sprites page][19] and for displaying on-screen text see [our fonts page on GitHub][20].
 
-[keyboard_input]: /tutorials/beginner/keyboard-input
-[mouse_input]: /tutorials/beginner/mouse-input
-[basic_camera]: /tutorials/beginner/basic-cameras
-[basic_audio]: /tutorials/beginner/basic-audio
-[basic_materials]: /tutorials/beginner/basic-materials
-[manipulating_entities]: /tutorials/beginner/manipulating-entities
+[1]: https://youtube.com/playcanvas
+[2]: /tutorials/video
+[3]: https://playcanvas.com/playcanvas/tutorials
 
-[animation_blending]: /tutorials/intermediate/animation-blending
-[more_cameras]: /tutorials/intermediate/more-cameras
-[first_person_camera]: /tutorials/intermediate/first-person-camera
-[collision_and_triggers]: /tutorials/intermediate/collision-and-triggers
-[using_the_asset_registry]: /tutorials/intermediate/using-assets
+[4]: /tutorials/beginner/keyboard-input
+[5]: /tutorials/beginner/mouse-input
+[6]: /tutorials/beginner/basic-cameras
+[7]: /tutorials/beginner/basic-audio
+[8]: /tutorials/beginner/basic-materials
+[9]: /tutorials/beginner/manipulating-entities
 
-[fps_character_controller]: /tutorials/advanced/fps-controller
-[programmatically_creating]: /tutorials/advanced/programmatically-creating
-[custom_shaders]: /tutorials/advanced/custom-shaders
-[custom_posteffects]: /tutorials/advanced/custom-posteffect
+[10]: /tutorials/intermediate/animation-blending
+[11]: /tutorials/intermediate/more-cameras
+[12]: /tutorials/intermediate/first-person-camera
+[13]: /tutorials/intermediate/collision-and-triggers
+[14]: /tutorials/intermediate/using-assets
 
-[sprites]: https://github.com/playcanvas/sprites
-[fonts]: https://github.com/playcanvas/fonts
+[16]: /tutorials/advanced/fps-controller
+[15]: /tutorials/advanced/programmatically-creating
+[17]: /tutorials/advanced/custom-shaders
+[18]: /tutorials/advanced/custom-posteffect
+
+[19]: https://github.com/playcanvas/sprites
+[20]: https://github.com/playcanvas/fonts
 
