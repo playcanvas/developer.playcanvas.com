@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    {{> head}}
+
+    <body>
+        {{> header}}
+
+        {{> title-banner}}
+
+        {{> navbar}}
+
+        <div id="page-container" class="container">
+            <div class="row">
+                <div id="page-content" class="col-md-offset-1 col-md-7">
+                    <h1>{{ title }}</h1>
+                    {{{ contents }}}
+                </div>
+            </div>
+        </div>
+
+        {{> scripts}}
+
+        <script>
+            // redirect old API pages
+            // to new namespaces
+
+            var url = window.location.href;
+            var redirect = false;
+            var old = ['.fw.', '.scene.', '.gfx.']
+            old.forEach(function (s) {
+                if (url.indexOf(s) >= 0) {
+                    redirect = true;
+                }
+            })
+
+            if (redirect) {
+                var url = url.replace('.fw.', '.').replace('.scene.', '.').replace('.gfx.', '.');
+                window.location = url;
+            }
+        </script>
+
+        {{> analytics}}
+    </body>
+</html>
