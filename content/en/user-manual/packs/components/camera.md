@@ -43,6 +43,6 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
 
 You can control a camera component's properties using a [script component][1]. The camera component's scripting interface is [here][2].
 
-[1]: /user-manual/packs/entities/components/script
+[1]: /user-manual/packs/components/script
 [2]: /engine/api/stable/symbols/pc.CameraComponent.html
 [3]: /images/platform/component_camera.png

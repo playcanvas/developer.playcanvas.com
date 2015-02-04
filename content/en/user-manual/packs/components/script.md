@@ -23,7 +23,5 @@ To assign a script, type its name into the URL box. For example, if you want to 
 
 The script component's scripting interface is [here][2].
 
-[script_component]: /user-manual/packs/entities/components/script
-[2]: /engine/api/stable/symbols/pc.ScriptComponent.html
-
 [1]: /images/platform/component_script.png
+[2]: /engine/api/stable/symbols/pc.ScriptComponent.html
