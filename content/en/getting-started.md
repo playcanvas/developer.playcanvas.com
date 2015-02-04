@@ -142,4 +142,4 @@ With that done, you can select the Launch button from the toolbar once again. Th
 [4]: https://playcanvas.com/plans
 [5]: /images/platform/pack_explorer.png "Pack Explorer"
 [6]: /images/platform/launch_buttons.png "Launch Buttons"
-[7]: /engine/workflow.html
+[7]: /user-manual/scripting/workflow/
