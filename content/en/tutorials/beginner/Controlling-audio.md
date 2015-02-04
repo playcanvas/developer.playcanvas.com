@@ -96,4 +96,4 @@ pc.script.create('audioHandler', function (context) {
 ~~~
 
 [1]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
-[2]: https://playcanvas.com/playcanvas/tutorials
+[2]: https://playcanvas.com/project/186/overview/tutorials

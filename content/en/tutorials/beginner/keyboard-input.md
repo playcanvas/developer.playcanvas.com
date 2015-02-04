@@ -131,6 +131,6 @@ Note, you should always use the enumeration `pc.KEY_*` rather than using numeric
 
 Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
 
-[1]: http://playcanvas.com/playcanvas/tutorials
+[1]: https://playcanvas.com/project/186/overview/tutorials
 [2]: http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard
 [3]: /user-manual/glossary#dom

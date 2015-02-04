@@ -75,5 +75,5 @@ See the [Basic Materials project pack here][6] in the [PlayCanvas tutorials proj
 [3]: /images/content_creation/assign_material.png
 [4]: /images/content_creation/material_editor.png
 [5]: /images/content_creation/diffuse_normal_cube.jpg
-[6]: http://playcanvas.com/playcanvas/tutorials/designer/pack/339076
-[7]: https://playcanvas.com/playcanvas/tutorials
+[6]: http://playcanvas.com/designer/186/scene/339076
+[7]: https://playcanvas.com/project/186/overview/tutorials

@@ -78,4 +78,4 @@ From this point, you are able to add more and more animations to the animation c
 See [the full Pack here][2]
 
 [1]: /images/tutorials/animation_blending.png
-[2]: http://playcanvas.com/playcanvas/tutorials/designer/pack/338867
+[2]: http://playcanvas.com/designer/186/scene/338867

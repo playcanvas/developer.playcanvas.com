@@ -134,4 +134,4 @@ Next we loop through the keys and if one was pressed then we find the entity by 
 
 [1]: /tutorials/beginner/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
-[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329672
+[3]: http://playcanvas.com/designer/186/scene/329672

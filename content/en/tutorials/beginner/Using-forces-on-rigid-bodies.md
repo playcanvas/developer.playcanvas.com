@@ -186,7 +186,7 @@ pc.script.create('DynamicBody', function (context) {
 });
 ~~~
 
-[12]: https://playcanvas.com/playcanvas/tutorials
+[12]: https://playcanvas.com/project/186/overview/tutorials
 [10]: /tutorials/intermediate/collision-and-triggers/
 [8]: /engine/api/stable/symbols/pc.CollisionComponent.html
 [9]: /engine/api/stable/symbols/pc.html

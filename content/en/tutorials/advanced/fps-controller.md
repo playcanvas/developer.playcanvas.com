@@ -172,8 +172,8 @@ Getting input from the player is slightly more complicated than simply translati
 Finally we just check for the jump action and if required, we call the `jump()` method of the character controller script.
 
 [1]: /tutorials/intermediate/first-person-camera
-[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329678
-[4]: https://playcanvas.com/playcanvas/tutorials/code
+[3]: http://playcanvas.com/designer/186/scene/329678
+[4]: https://playcanvas.com/project/186/code
 [5]: /engine/api/stable/symbols/pc.RigidBodyComponentSystem.html
 [6]: /engine/api/stable/symbols/pc.RaycastResult.html
 [7]: /engine/api/stable/symbols/pc.Controller.html

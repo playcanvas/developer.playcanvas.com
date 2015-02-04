@@ -128,7 +128,7 @@ In our tutorial, we're changing the color of the cube depending on which mouse b
 
 Try the tutorial in full screen [here][5] or at the top of the page. Move the mouse to move the cube and click the left, middle and right mouse button to change the color of the cube.
 
-[1]: http://playcanvas.com/playcanvas/tutorials
+[1]: https://playcanvas.com/project/186/overview/tutorials
 [2]: /user-manual/glossary#framework
 [3]: /user-manual/glossary#context
 [4]: /user-manual/glossary#dom
