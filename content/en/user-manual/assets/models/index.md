@@ -8,7 +8,7 @@ position: 2
 
 PlayCanvas supports a wide variety of formats, such as FBX, COLLADA and obj. We recommend using the FBX format for best results.
 
-Uploading one of these files will create a [Source Asset][3] of type 'scene' and will produce a [Target Asset](4) of type 'model'. You will use the target 'model' in your game.
+Uploading one of these files will create a [Source Asset][3] of type 'scene' and will produce a [Target Asset][4] of type 'model'. You will use the target 'model' in your game.
 
 Learn more about:
 
