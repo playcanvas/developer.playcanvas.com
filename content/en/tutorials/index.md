@@ -43,7 +43,7 @@ For instructions in displaying 2D images see [our GitHub sprites page][19] and f
 
 [1]: https://www.youtube.com/user/playcanvas
 [2]: /tutorials/video
-[3]: https://playcanvas.com/playcanvas/tutorials
+[3]: https://playcanvas.com/project/186/overview/tutorials
 
 [4]: /tutorials/beginner/keyboard-input
 [5]: /tutorials/beginner/mouse-input
