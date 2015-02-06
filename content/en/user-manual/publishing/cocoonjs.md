@@ -16,11 +16,19 @@ Let's step through the process to illustrate how easy it is:
 2. Install the CocoonJS Launcher for [Android][3] or [iOS][4].
 3. Start the Launcher on your mobile device.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/launcher.png"></img><p>
 4. Select 'Your App' and log in.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/signin.png"></img><p>
-5. Select URL and enter the URL to your PlayCanvas game.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/applist.png"></img><br><br>Ordinarily, the URL would be of the form 'http://apps.playcanvas.com/username/projectname/gamename'. However, this page is actually a wrapper page for your game, with your game contained within an iframe. The URL referenced by the iframe is what you need to pass to the launcher. To get this URL, view source of your published game and search for 'iframe'. You will find a URL of the form 'http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/username/projectname/gamename/'. Type this into the URL edit box in the Launcher and hit 'CANVAS+'!
+5. Select URL and enter the URL to your embeddable link (see below) for your PlayCanvas game.<br><br><img alt="CocoonJS Launcher" width="320" src="/images/publishing/cocoonjs/applist.png"></img><br><br>Type this into the URL edit box in the Launcher and hit 'CANVAS+' or 'WEBVIEW+'!
 
-<p class="alert alert-warning">
-Note that if the trailing forward slash on the URL is not present, CocoonJS will fail to load your game.
-</p>
+## Embeddable link
+
+Your game can be accessed by one of two links. The build link or the project link.
+
+* `http://playcanv.as/b/BUILD_ID` - links to a specific build
+* `http://playcanv.as/p/PROJECT_ID` - links to the project's Primary App
+
+To get the embeddable version of either link, add `/e/` after the host. e.g.
+
+* `http://playcanv.as/e/b/BUILD_ID`
+* `http://playcanv.as/e/p/PROJECT_ID`
 
 ## Generating the Native Build of your Game
 
