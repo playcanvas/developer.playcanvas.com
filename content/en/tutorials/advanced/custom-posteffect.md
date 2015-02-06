@@ -234,9 +234,9 @@ See the [Custom Post Effects Pack here][7].
 
 
 [2]: /engine/api/stable/symbols/pc.Shader.html
-[4]: /engine/api/stable/symbols/pc.posteffect.PostEffect.html
-[3]: /user-manual/packs/entities/components/camera
+[4]: /engine/api/stable/symbols/pc.PostEffect.html
+[3]: /user-manual/packs/components/camera
 [1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [6]: /tutorials/advanced/custom-shaders
 [5]: /engine/api/stable/symbols/pc.CameraComponent.html#postEffects
-[7]: http://playcanvas.com/playcanvas/tutorials/designer/pack/338140
+[7]: http://playcanvas.com/designer/186/scene/338140

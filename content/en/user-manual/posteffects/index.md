@@ -21,7 +21,7 @@ Built-in post effects include:
 * [Sepia][7]
 * [Vignette][8]
 
-[1]: /user-manual/packs/entities/components/camera
+[1]: /user-manual/packs/components/camera
 [2]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [3]: /user-manual/posteffects/bloom
 [4]: /user-manual/posteffects/brightness_contrast

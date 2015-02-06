@@ -56,13 +56,13 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
     </tr>
 </tbody></table>
 
-[1]: /user-manual/packs/entities/components/animation
-[2]: /user-manual/packs/entities/components/audiolistener
-[3]: /user-manual/packs/entities/components/audiosource
-[4]: /user-manual/packs/entities/components/camera
-[5]: /user-manual/packs/entities/components/collision
-[6]: /user-manual/packs/entities/components/light
-[7]: /user-manual/packs/entities/components/model
-[8]: /user-manual/packs/entities/components/particlesystem
-[9]: /user-manual/packs/entities/components/rigidbody
-[10]: /user-manual/packs/entities/components/script
+[1]: /user-manual/packs/components/animation
+[2]: /user-manual/packs/components/audiolistener
+[3]: /user-manual/packs/components/audiosource
+[4]: /user-manual/packs/components/camera
+[5]: /user-manual/packs/components/collision
+[6]: /user-manual/packs/components/light
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/particlesystem
+[9]: /user-manual/packs/components/rigidbody
+[10]: /user-manual/packs/components/script

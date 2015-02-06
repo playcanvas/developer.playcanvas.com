@@ -34,8 +34,8 @@ Note that you must add a [collision component][3] to the same entity in order to
 
 You can control a rigidbody component's properties using a [script component][4]. The rigidbody component's scripting interface is [here][5].
 
-[4]: /user-manual/packs/entities/components/script
-[3]: /user-manual/packs/entities/components/collision/
+[4]: /user-manual/packs/components/script
+[3]: /user-manual/packs/components/collision/
 [5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html
 
 [1]: /images/platform/component_rigidbodystatic.png

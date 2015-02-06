@@ -157,9 +157,9 @@ pc.script.create('first_person_camera', function (context) {
 });
 ~~~
 
-[2]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329653
+[2]: http://playcanvas.com/designer/186/scene/329653
 [3]: /user-manual/scripting/
-[4]: https://playcanvas.com/playcanvas/tutorials/code
+[4]: https://playcanvas.com/project/186/code
 [5]: /engine/api/stable/symbols/pc.MouseEvent.html
 [6]: /tutorials/beginner/manipulating-entities/
 

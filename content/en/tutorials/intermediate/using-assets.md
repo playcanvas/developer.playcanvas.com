@@ -228,10 +228,10 @@ pc.script.create('update_asset', function (context) {
 });
 ```
 
-[1]: /api
+[1]: /engine/api/stable/symbols/pc.asset.AssetRegistry.html
 [2]: /user-manual/scripting/script-attributes/
-[3]: http://playcanvas.com/playcanvas/tutorials/designer/pack/338769
-[4]: http://playcanvas.com/playcanvas/tutorials
+[3]: http://playcanvas.com/designer/186/scene/338769
+[4]: https://playcanvas.com/project/186/overview/tutorials
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /images/tutorials/using_assets/error.jpg

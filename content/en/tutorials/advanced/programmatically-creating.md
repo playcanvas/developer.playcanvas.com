@@ -161,4 +161,4 @@ This is a complete Entity script which you can see in action at the top of the t
 See [the full pack here][2].
 
 [1]: /user-manual/packs/components/
-[2]: http://playcanvas.com/playcanvas/tutorials/designer/pack/329669
+[2]: http://playcanvas.com/designer/186/scene/329669
