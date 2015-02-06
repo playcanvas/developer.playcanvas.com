@@ -228,7 +228,7 @@ pc.script.create('update_asset', function (context) {
 });
 ```
 
-[1]: /api
+[1]: /engine/api/stable/symbols/pc.asset.AssetRegistry.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: http://playcanvas.com/designer/186/scene/338769
 [4]: https://playcanvas.com/project/186/overview/tutorials
