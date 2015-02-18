@@ -15,34 +15,34 @@ Take a look at the 'Mouse Input' Pack in the [tutorials project][1]. Here is the
 ~~~javascript~~~
 pc.script.attribute("materials", "asset", [], {type: "material"});
 
-pc.script.create("mouse", function (context) {
+pc.script.create("mouse", function (app) {
     var MouseHandler = function (entity) {
         this.entity = entity;
         this.pos = new pc.Vec3();
 
-        // Disabling the context menu stops the browser displaying a menu when
+        // Disabling the app menu stops the browser displaying a menu when
         // you right-click the page
-        context.mouse.disableContextMenu();
+        app.mouse.disableContextMenu();
 
         // Use the on() method to attach event handlers.
         // The mouse object supports events on move, button down and
         // up, and scroll wheel.
-        context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-        context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
+        app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+        app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
     };
 
     MouseHandler.prototype = {
         initialize: function () {
-            this.redMaterial = context.assets.getAssetByResourceId(this.materials[0]).resource;
-            this.greenMaterial = context.assets.getAssetByResourceId(this.materials[1]).resource;
-            this.blueMaterial = context.assets.getAssetByResourceId(this.materials[2]).resource;
+            this.redMaterial = app.assets.getAssetByResourceId(this.materials[0]).resource;
+            this.greenMaterial = app.assets.getAssetByResourceId(this.materials[1]).resource;
+            this.blueMaterial = app.assets.getAssetByResourceId(this.materials[2]).resource;
         },
 
         onMouseMove: function (event) {
             // Use the camera component's screenToWorld function to convert the
             // position of the mouse into a position in 3D space
             var depth = 10;
-            var cameraEntity = context.root.findByName('Camera');
+            var cameraEntity = app.root.findByName('Camera');
             cameraEntity.camera.screenToWorld(event.x, event.y, depth, this.pos);
 
             // Finally update the cube's world-space position
@@ -75,10 +75,10 @@ pc.script.create("mouse", function (context) {
 
 ### Accessing the mouse
 
-Mouse control is managed by the `pc.Mouse` object. The [framework][2] provides an instance of this on the [application context][3] which is available to all script objects as:
+Mouse control is managed by the `pc.Mouse` object. The [framework][2] provides an instance of this on the [application app][3] which is available to all script objects as:
 
 ~~~javascript~~~
-context.mouse
+app.mouse
 ~~~
 
 ### Disabling the right-click menu
@@ -86,7 +86,7 @@ context.mouse
 In the constructor for our script object we disable the right-click menu to stop it popping up when we click the right mouse button.
 
 ~~~javascript~~~
-context.mouse.disableContextMenu();
+app.mouse.disableContextMenu();
 ~~~
 
 ### Binding to events
@@ -96,8 +96,8 @@ The `pc.Mouse` object allows you to listen to different events corresponding to 
 Notice how we also pass `this` into the on() method for binding to events. This third argument is the object that is used as `this` in the event callback.
 
 ~~~javascript~~~
-context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
+app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~
 
 Events available on `pc.Mouse` are:
@@ -130,6 +130,6 @@ Try the tutorial in full screen [here][5] or at the top of the page. Move the mo
 
 [1]: https://playcanvas.com/project/186/overview/tutorials
 [2]: /user-manual/glossary#framework
-[3]: /user-manual/glossary#context
+[3]: /user-manual/glossary#app
 [4]: /user-manual/glossary#dom
 [5]: http://apps.playcanvas.com/playcanvas/tutorials/input_mouse

@@ -28,7 +28,7 @@ In the image you can see the animation component in the Attribute Editor. There 
 So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Designer and it refers to a JS file called animation_blending.js. The contents of this file is:
 
 ~~~javascript~~~
-pc.script.create("animation_blending", function (context) {
+pc.script.create("animation_blending", function (app) {
     var states = {
         idle: {
             animation: 'male_idle'
@@ -44,8 +44,8 @@ pc.script.create("animation_blending", function (context) {
 
         this.setState('idle');
 
-        context.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
-        context.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
+        app.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
+        app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
     };
 
     AnimationBlender.prototype = {

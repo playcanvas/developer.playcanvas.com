@@ -114,7 +114,7 @@ First we need to create a script component and create a new script to edit.
 In the code editor update the script template to match the code below (you just need to fill in the body of the update function):
 
 ~~~javascript~~~
-pc.script.create("spinner", function (context) {
+pc.script.create("spinner", function (app) {
 
     var Spinner = function (entity) {
         // Cache the entity that this script instance affects

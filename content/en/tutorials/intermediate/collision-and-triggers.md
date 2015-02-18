@@ -62,7 +62,7 @@ The next Entity we'll need is the trigger.
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
 ~~~javascript~~~
-pc.script.create("trigger", function (context) {
+pc.script.create("trigger", function (app) {
 
     var zeroVec = pc.Vec3.ZERO;
 
@@ -125,7 +125,7 @@ The difference between **contact** and **collisionstart** is subtle but importan
 Both events are useful, but in this demo we'll use the **collisionstart** event to trigger a sound effect that plays when the objects hit the ground. Here's the code:
 
 ~~~javascript~~~
-pc.script.create("collider", function (context) {
+pc.script.create("collider", function (app) {
     var Collider = function (entity) {
         this.entity = entity;
     };

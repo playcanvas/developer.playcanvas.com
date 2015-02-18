@@ -56,7 +56,7 @@ _checkGround: function () {
 
     // Fire a ray straight down to just below the bottom of the rigid body,
     // if it hits something then the character is standing on something.
-    context.systems.rigidbody.raycastFirst(pos, rayEnd, function (result) {
+    app.systems.rigidbody.raycastFirst(pos, rayEnd, function (result) {
         self.onGround = true;
     });
 }

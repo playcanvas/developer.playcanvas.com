@@ -15,7 +15,7 @@ It is also important to be aware of the different limits for differing light pro
 ##The lighting commands
 
 ~~~javascript~~~
-if (context.keyboard.wasPressed(pc.KEY_1)) {
+if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
 ~~~
@@ -47,7 +47,7 @@ We added a spot light (attached to a parent assembly of a basic torch model), a 
 
 The full code used for the above PlayCanvas app is as follows.
 ~~~javascript~~~
-pc.script.create('lightHandler', function (context) {
+pc.script.create('lightHandler', function (app) {
     // Creates a new LightHandler instance
     var LightHandler = function (entity) {
         this.entity = entity;
@@ -56,11 +56,11 @@ pc.script.create('lightHandler', function (context) {
     LightHandler.prototype = {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
-            this.spot = context.root.findByName("SpotLight");
-            this.point = context.root.findByName("PointLight");
-            this.directional = context.root.findByName("DirectionalLight");
-            this.pivot1 = context.root.findByName("Pivot1");
-            this.pivot2 = context.root.findByName("Pivot2");
+            this.spot = app.root.findByName("SpotLight");
+            this.point = app.root.findByName("PointLight");
+            this.directional = app.root.findByName("DirectionalLight");
+            this.pivot1 = app.root.findByName("Pivot1");
+            this.pivot2 = app.root.findByName("Pivot2");
             this.timer = 0;
             this.color1 = new pc.Color(1, 1, 1);
             this.color2 = new pc.Color(1, 1, 1);
@@ -71,13 +71,13 @@ pc.script.create('lightHandler', function (context) {
         update: function (dt) {
             this.pivot();
 
-            if (context.keyboard.wasPressed(pc.KEY_1)) {
+            if (app.keyboard.wasPressed(pc.KEY_1)) {
                 this.spot.light.enabled = !this.spot.light.enabled;
             }
-            if (context.keyboard.wasPressed(pc.KEY_2)) {
+            if (app.keyboard.wasPressed(pc.KEY_2)) {
                 this.point.light.enabled = !this.point.light.enabled;
             }
-            if (context.keyboard.wasPressed(pc.KEY_3)) {
+            if (app.keyboard.wasPressed(pc.KEY_3)) {
                 this.directional.light.enabled = !this.directional.light.enabled;
             }
 

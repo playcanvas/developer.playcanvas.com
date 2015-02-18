@@ -26,7 +26,7 @@ Download the [A model][5] and the [B model][6] and upload them to your project. 
 First of all we'll set up the boilerplate code to handle the keydown and keyup events when the space bar is pressed.
 
 ```
-pc.script.create('update_asset', function (context) {
+pc.script.create('update_asset', function (app) {
     // Creates a new Update_asset instance
     var Update_asset = function (entity) {
         this.entity = entity;
@@ -35,8 +35,8 @@ pc.script.create('update_asset', function (context) {
     Update_asset.prototype = {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
-            context.keyboard.on("keyup", this.onKeyUp, this);
-            context.keyboard.on("keydown", this.onKeyDown, this);
+            app.keyboard.on("keyup", this.onKeyUp, this);
+            app.keyboard.on("keydown", this.onKeyDown, this);
         },
 
         onKeyUp: function (e) {
@@ -73,7 +73,7 @@ Let's add a function call `changeTo()`:
         //...
 
         changeTo: function (name) {
-            var asset = context.assets.find(name);
+            var asset = app.assets.find(name);
             if (asset) {
                 this.entity.model.model = asset.resource;
             } else {
@@ -151,7 +151,7 @@ Update_asset.prototype = {
     //...
 
     changeToByIndex: function (index) {
-        var asset = context.assets.getAssetByResourceId(this.letters[index]);
+        var asset = app.assets.getAssetByResourceId(this.letters[index]);
         if (asset) {
             this.entity.model.model = asset.resource;
         }
@@ -180,7 +180,7 @@ Now, instead of getting the assets by their name, we're using `this.letters` whi
 ```
 pc.script.attribute("letters", "asset", [], {type: "model"});
 
-pc.script.create('update_asset', function (context) {
+pc.script.create('update_asset', function (app) {
     // Creates a new Update_asset instance
     var Update_asset = function (entity) {
         this.entity = entity;
@@ -189,12 +189,12 @@ pc.script.create('update_asset', function (context) {
     Update_asset.prototype = {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
-            context.keyboard.on("keyup", this.onKeyUp, this);
-            context.keyboard.on("keydown", this.onKeyDown, this);
+            app.keyboard.on("keyup", this.onKeyUp, this);
+            app.keyboard.on("keydown", this.onKeyDown, this);
         },
 
         // changeTo: function (name) {
-        //     var asset = context.assets.find(name)
+        //     var asset = app.assets.find(name)
         //     if (asset) {
         //         this.entity.model.model = asset.resource;
         //     } else {
@@ -203,7 +203,7 @@ pc.script.create('update_asset', function (context) {
         // },
 
         changeToByIndex: function (index) {
-            var asset = context.assets.getAssetByResourceId(this.letters[index]);
+            var asset = app.assets.getAssetByResourceId(this.letters[index]);
             if (asset) {
                 this.entity.model.model = asset.resource;
             }

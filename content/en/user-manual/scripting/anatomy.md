@@ -5,7 +5,7 @@ position: 2
 ---
 
 ~~~js~~~
-pc.script.create("script_name", function (context) {
+pc.script.create("script_name", function (app) {
     var ScriptObject = function (entity) {
         this.entity = entity;
     };
@@ -33,33 +33,33 @@ Actually, you could leave the `initialize` and `update` methods out of a script.
 
 We'll break down each part of this script section by section.
 
-## Declaration and context
+## Declaration and Application
 
 ~~~js~~~
-pc.script.create("script_name", function(context) {
+pc.script.create("script_name", function(app) {
     //...
 });
 ~~~
 
 Enclosing the whole script is a call to `pc.script.create`. The first argument is the script name, this is used to identify this script later if you wish to communicate between script instances. The second argument is a function which is used to define the class that provides the script's behaviour.
 
-The definition function takes a single argument `context` which is an [`ApplicationContext`][1] instance.
+The definition function takes a single argument `app` which is the [`Application`][1] instance.
 
-The `context` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
+The `app` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
 
-* `systems` Container for all Component systems, e.g. `context.systems.model` is the Model Component System
+* `systems` Container for all Component systems, e.g. `app.systems.model` is the Model Component System
 * `root` The root node of the Entity hierarchy.
 * `keyboard` An instance of `pc.Keyboard`
 * `mouse` An instance of `pc.Mouse`
 * `scene` An instance of `pc.Scene`
 * `loader` An instance of `pc.resources.ResourceLoader`
 
-See the [API Reference][2] for more details on the context object.
+See the [API Reference][2] for more details on the pc.Application object.
 
 ## Defining the Script object
 
 ~~~js~~~
-pc.script.create("script_name", function (context) {
+pc.script.create("script_name", function (app) {
     var ScriptObject = function (entity) {
         this.entity = entity;
     }
@@ -82,7 +82,7 @@ The purpose of the function in the second argument is to define a Script object 
 
 Here you can see the basic set up. A variable `ScriptObject` is declared as a constructor function which takes the Entity it is attached to as it's only argument. It is usually useful to store this Entity in the instance for use later on, hence the line `this.entity = entity;` You will often create member variables for your object here too.
 
-Next we define the initialize and update functions. `initialize()` is called once for each Script Instance. It is called after all Entities are loaded (so that the Entity hierarchy in `context.root` is valid) but before any `update()` methods are called.
+Next we define the initialize and update functions. `initialize()` is called once for each Script Instance. It is called after all Entities are loaded (so that the Entity hierarchy in `app.root` is valid) but before any `update()` methods are called.
 `update()` is the update loop for our script. The Script Component system will call the update function every frame with the time in seconds that passed since the last update in the variable `dt`. Note, that both these function are optional and should be left out if they are not being used.
 
 Finally, we return the `ScriptObject` variable.
@@ -96,7 +96,7 @@ Here is a complete script, try saving it to a file and attaching it to an Entity
 // This script moves the entity backwards and forwards on the x-axis.
 // You can pause the oscillation by pressing the space bar.
 ///
-pc.script.create('oscillator', function (context) {
+pc.script.create('oscillator', function (app) {
 
     // define the constructor
     var Oscillator = function (entity) {
@@ -111,9 +111,9 @@ pc.script.create('oscillator', function (context) {
     Oscillator.prototype = {
         update: function (dt) {
 
-            // Use the keyboard handler from the ApplicationContext
+            // Use the keyboard handler from the Application
             // to pause/unpause
-            if (context.keyboard.wasPressed(pc.KEY_SPACE)) {
+            if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
                 this.paused = !this.paused; // toggle paused state
             }
 
@@ -135,6 +135,6 @@ pc.script.create('oscillator', function (context) {
 });
 ~~~
 
-[1]: /user-manual/glossary#application_context
-[2]: /engine/api/stable/symbols/pc.ApplicationContext.html
+[1]: /user-manual/glossary#application
+[2]: /engine/api/stable/symbols/pc.Application.html
 

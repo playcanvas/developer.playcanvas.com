@@ -39,7 +39,7 @@ The audio file was uploaded in .mp3 format (.ogg files are also usable). A spher
 The full code used for the above PlayCanvas app is as follows:
 
 ~~~javascript~~~
-pc.script.create('audioHandler', function (context) {
+pc.script.create('audioHandler', function (app) {
     // Creates a new AudioHandler instance
     var AudioHandler = function (entity) {
         this.entity = entity;
@@ -48,37 +48,37 @@ pc.script.create('audioHandler', function (context) {
     AudioHandler.prototype = {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
-            this.audio = context.root.findByName('AudioSphere');
+            this.audio = app.root.findByName('AudioSphere');
             this.playing = false;
             this.paused = false;
             //this sets up an event listener
-            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+            app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
 
-             if (context.keyboard.wasPressed(pc.KEY_UP) && this.paused === true) {
+             if (app.keyboard.wasPressed(pc.KEY_UP) && this.paused === true) {
                 this.audio.audiosource.unpause();
                 this.audio.setLocalScale(4, 4, 4);
                 this.playing = true;
                 this.paused = false;
             }
 
-            if (context.keyboard.wasPressed(pc.KEY_DOWN) && this.playing === true) {
+            if (app.keyboard.wasPressed(pc.KEY_DOWN) && this.playing === true) {
                 this.audio.audiosource.pause();
                 this.audio.setLocalScale(2, 2, 2);
                 this.playing = false;
                 this.paused = true;
             }
 
-            if (context.keyboard.wasPressed(pc.KEY_RIGHT) && this.playing === false) {
+            if (app.keyboard.wasPressed(pc.KEY_RIGHT) && this.playing === false) {
                 this.audio.audiosource.play("swooop_theme");
                 this.audio.setLocalScale(4, 4, 4);
                 this.playing = true;
             }
 
-            if (context.keyboard.wasPressed(pc.KEY_LEFT)) {
+            if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
                 this.audio.audiosource.stop();
                 this.audio.setLocalScale(2, 2, 2);
                 this.playing = false;

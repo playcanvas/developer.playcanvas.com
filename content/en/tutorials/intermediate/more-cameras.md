@@ -16,7 +16,7 @@ The first way you might want to modify a camera at runtime, is to change the val
 methods on the ComponentSystem.
 
 ~~~javascript~~~
-pc.script.create('zoom', function (context) {
+pc.script.create('zoom', function (app) {
     // Creates a new Zoom instance
     var Zoom = function (entity) {
         this.entity = entity;
@@ -31,7 +31,7 @@ pc.script.create('zoom', function (context) {
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
-            if (context.keyboard.wasPressed(pc.KEY_SPACE) ) {
+            if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
                 if (this.targetFov == 10) {
                     this.targetFov = 45;
                 } else {
@@ -65,7 +65,7 @@ pc.script.create('zoom', function (context) {
 
 In this sample pressing the spacebar triggers a change in field of view. With the line `var fov = this.entity.camera.fov` we `get()` the value of `fov` from the camera component of the entity that this script is attached to.
 
-With `context.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
+With `app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
 With the final two nested `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
 
@@ -79,7 +79,7 @@ top and bottom sides of the camera [frustum][2]
 Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your pack; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
 
 ~~~javascript~~~
-pc.script.create('camera_manager', function (context) {
+pc.script.create('camera_manager', function (app) {
     // Creates a new CameraManager instance
     var CameraManager = function (entity) {
         this.entity = entity;
@@ -100,7 +100,7 @@ pc.script.create('camera_manager', function (context) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.activeCamera = this.entity.findByName('Center');
-            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+            app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
         //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -110,11 +110,11 @@ pc.script.create('camera_manager', function (context) {
 
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
-            if (context.keyboard.wasPressed(pc.KEY_SPACE) ) {
+            if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
                 this.setCamera('Center');
-            } else if (context.keyboard.wasPressed(pc.KEY_LEFT)) {
+            } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
                 this.setCamera('Left');
-            } else if (context.keyboard.wasPressed(pc.KEY_RIGHT)) {
+            } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
                 this.setCamera('Right');
             }
         }
@@ -126,7 +126,7 @@ pc.script.create('camera_manager', function (context) {
 
 In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Pack) and the space key activates the central camera.
 
-We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `context.root.findByName()` to search through all the entities in the pack).
+We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `app.root.findByName()` to search through all the entities in the pack).
 
 We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Designer scene)][3].
 

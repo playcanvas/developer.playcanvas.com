@@ -18,7 +18,7 @@ In this tutorial we will show you how to use forces to control a dynamic rigidbo
 
 ###Applying a constant force
 ~~~javascript~~~
-if (context.keyboard.isPressed(pc.KEY_F) ) {
+if (app.keyboard.isPressed(pc.KEY_F) ) {
     this.entity.rigidbody.applyForce(0, 9.8, 0);
 }
 ~~~
@@ -26,7 +26,7 @@ Here a force along the global y-axis is applied to the accessed entity when the 
 
 ###Impulses
 ~~~javascript~~~
-if (context.keyboard.isPressed(pc.KEY_LEFT) ) {
+if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
     this.entity.rigidbody.applyImpulse(-1, 0, 0);
 }
 
@@ -35,7 +35,7 @@ The cube is given an x-axis impulse to impart an instant change of velocity via 
 
 ###Torques
 ~~~javascript~~~
-if (context.keyboard.isPressed(pc.KEY_W) ) {
+if (app.keyboard.isPressed(pc.KEY_W) ) {
     this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
 }
 ~~~
@@ -89,7 +89,7 @@ If the cube moves beyond the viewable area in the x-direction the teleport funct
 
 ##Reset cube code
 ~~~javascript~~~
-if (context.keyboard.wasPressed(pc.KEY_R)) {
+if (app.keyboard.wasPressed(pc.KEY_R)) {
     this.reset();
 }
 ~~~
@@ -106,7 +106,7 @@ We include a reset function that brings the cube to its original position and, a
 ##Full code listing
 
 ~~~javascript~~~
-pc.script.create('DynamicBody', function (context) {
+pc.script.create('DynamicBody', function (app) {
     // Creates a new MrDynamic instance
     var DynamicBody = function (entity) {
         this.entity = entity;
@@ -116,7 +116,7 @@ pc.script.create('DynamicBody', function (context) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.torque = 7;
-            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+            app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
         // Called every frame, dt is time in seconds since last update
@@ -126,28 +126,28 @@ pc.script.create('DynamicBody', function (context) {
             this.playerPos = this.entity.getLocalPosition();
 
             //keyboard controls and applying forces and moments.
-            if (context.keyboard.isPressed(pc.KEY_LEFT) ) {
+            if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
                 this.entity.rigidbody.applyImpulse(-1, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_RIGHT) ) {
+            if (app.keyboard.isPressed(pc.KEY_RIGHT) ) {
                 this.entity.rigidbody.applyImpulse(1, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_UP) ) {
+            if (app.keyboard.isPressed(pc.KEY_UP) ) {
                 this.entity.rigidbody.applyImpulse(0, 1, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_A) ) {
+            if (app.keyboard.isPressed(pc.KEY_A) ) {
                 this.entity.rigidbody.applyTorque(0, this.torque, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_D) ) {
+            if (app.keyboard.isPressed(pc.KEY_D) ) {
                 this.entity.rigidbody.applyTorque(0, -this.torque, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_W) ) {
+            if (app.keyboard.isPressed(pc.KEY_W) ) {
                 this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_S) ) {
+            if (app.keyboard.isPressed(pc.KEY_S) ) {
                 this.entity.rigidbody.applyTorque(this.torque, 0, 0);
             }
-            if (context.keyboard.isPressed(pc.KEY_F) ) {
+            if (app.keyboard.isPressed(pc.KEY_F) ) {
                 this.entity.rigidbody.applyForce(0, 9.8, 0);
             }
 
@@ -160,7 +160,7 @@ pc.script.create('DynamicBody', function (context) {
             }
 
             // cube reset control
-            if (context.keyboard.wasPressed(pc.KEY_R) ) {
+            if (app.keyboard.wasPressed(pc.KEY_R) ) {
                 this.reset();
             }
         },

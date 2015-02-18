@@ -128,7 +128,7 @@ Once we've got the shader definition we create a new Shader and a new Material a
 
 ~~~javascript~~~
     // Get the "clouds" height map from the assets and set the material to use it
-    this.heightMap = context.assets.getAssetByResourceId(this.maps[0]).resource;
+    this.heightMap = app.assets.getAssetByResourceId(this.maps[0]).resource;
     this.material.setParameter('uHeightMap', this.heightMap);
 ~~~
 
@@ -175,7 +175,7 @@ pc.script.attribute('maps', 'asset', [], {
     type: 'texture'
 });
 
-pc.script.create('customShader', function (context) {
+pc.script.create('customShader', function (app) {
     // Creates a new CustomShader instance
     var CustomShader = function (entity) {
         this.entity = entity;
@@ -190,7 +190,7 @@ pc.script.create('customShader', function (context) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             var model = this.entity.model.model;
-            var gd = context.graphicsDevice;
+            var gd = app.graphicsDevice;
 
             // Save the diffuse map from the original material before we replace it.
             this.diffuseTexture = model.meshInstances[0].material.diffuseMap;
@@ -255,7 +255,7 @@ pc.script.create('customShader', function (context) {
             model.meshInstances[0].material = this.material;
 
             // Get the "clouds" height map from the assets and set the material to use it
-            this.heightMap = context.assets.getAssetByResourceId(this.maps[0]).resource;
+            this.heightMap = app.assets.getAssetByResourceId(this.maps[0]).resource;
             this.material.setParameter('uHeightMap', this.heightMap);
         },
 

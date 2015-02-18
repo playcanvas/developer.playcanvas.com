@@ -25,20 +25,20 @@ The camera script is a normal PlayCanvas javascript file, for more information o
 In the constructor of the script we initialize a few variables and then we set up the mouse input, by binding some event handlers.
 
 ~~~javascript~~~
-// Disabling the context menu stops the browser displaying a menu when
+// Disabling the app menu stops the browser displaying a menu when
 // you right-click the page
-context.mouse.disableContextMenu();
-context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
+app.mouse.disableContextMenu();
+app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~
 
-`context.mouse` is always available on desktop platforms, it is used to access mouse events, like movement and button presses.
+`app.mouse` is always available on desktop platforms, it is used to access mouse events, like movement and button presses.
 
-`context.mouse.disableContextMenu()` prevents right-clicking on the canvas from bringing up the default browser context menu. You should do this if you want to respond to right-clicks, but be careful, browser users will expect right-clicking to bring up a menu, so use it only if you feel you have to.
+`app.mouse.disableContextMenu()` prevents right-clicking on the canvas from bringing up the default browser context menu. You should do this if you want to respond to right-clicks, but be careful, browser users will expect right-clicking to bring up a menu, so use it only if you feel you have to.
 
 Next we bind two event handlers using the `on()` function.
 
-For example, `context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this)` responds to the EVENT_MOUSEMOVE event and calls the `this.onMouseMove` method. The final `this` is the scope of the event, it determines what the `this` variable is in your event handler.
+For example, `app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this)` responds to the EVENT_MOUSEMOVE event and calls the `this.onMouseMove` method. The final `this` is the scope of the event, it determines what the `this` variable is in your event handler.
 
 ### Event handlers
 
@@ -57,7 +57,7 @@ Our first event handler handles the mouse move event. The `event` variable is a 
 onMouseDown: function (event) {
     // When the mouse button is clicked try and capture the pointer
     if (!pc.Mouse.isPointerLocked()) {
-        context.mouse.enablePointerLock();
+        app.mouse.enablePointerLock();
     }
 },
 ~~~
@@ -76,15 +76,15 @@ update: function (dt) {
     this.entity.setEulerAngles(this.ex, this.ey, 0);
 
     // Update the camera's position
-    if (context.keyboard.isPressed(pc.KEY_UP)) {
+    if (app.keyboard.isPressed(pc.KEY_UP)) {
         this.entity.translateLocal(0, 0, -SPEED*dt);
-    } else if (context.keyboard.isPressed(pc.KEY_DOWN)) {
+    } else if (app.keyboard.isPressed(pc.KEY_DOWN)) {
         this.entity.translateLocal(0, 0, SPEED*dt);
     }
 
-    if (context.keyboard.isPressed(pc.KEY_LEFT)) {
+    if (app.keyboard.isPressed(pc.KEY_LEFT)) {
         this.entity.translateLocal(-SPEED*dt, 0, 0);
-    } else if (context.keyboard.isPressed(pc.KEY_RIGHT)) {
+    } else if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
         this.entity.translateLocal(SPEED*dt, 0, 0);
     }
 },
@@ -99,7 +99,7 @@ That's all there is to it. The next step for most games is to make the first per
 ## Complete Listing
 
 ~~~javascript~~~
-pc.script.create('first_person_camera', function (context) {
+pc.script.create('first_person_camera', function (app) {
     var SPEED = 10;
 
     var FirstPersonCamera = function (entity) {
@@ -111,11 +111,11 @@ pc.script.create('first_person_camera', function (context) {
         this.ey = eulers.y;
 
 
-        // Disabling the context menu stops the browser displaying a menu when
+        // Disabling the app menu stops the browser displaying a menu when
         // you right-click the page
-        context.mouse.disableContextMenu();
-        context.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-        context.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
+        app.mouse.disableContextMenu();
+        app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+        app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
     };
 
@@ -125,15 +125,15 @@ pc.script.create('first_person_camera', function (context) {
             this.entity.setEulerAngles(this.ex, this.ey, 0);
 
             // Update the camera's position
-            if (context.keyboard.isPressed(pc.KEY_UP)) {
+            if (app.keyboard.isPressed(pc.KEY_UP)) {
                 this.entity.translateLocal(0, 0, -SPEED*dt);
-            } else if (context.keyboard.isPressed(pc.KEY_DOWN)) {
+            } else if (app.keyboard.isPressed(pc.KEY_DOWN)) {
                 this.entity.translateLocal(0, 0, SPEED*dt);
             }
 
-            if (context.keyboard.isPressed(pc.KEY_LEFT)) {
+            if (app.keyboard.isPressed(pc.KEY_LEFT)) {
                 this.entity.translateLocal(-SPEED*dt, 0, 0);
-            } else if (context.keyboard.isPressed(pc.KEY_RIGHT)) {
+            } else if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
                 this.entity.translateLocal(SPEED*dt, 0, 0);
             }
         },
@@ -148,7 +148,7 @@ pc.script.create('first_person_camera', function (context) {
         onMouseDown: function (event) {
             // When the mouse button is clicked try and capture the pointer
             if (!pc.Mouse.isPointerLocked()) {
-                context.mouse.enablePointerLock();
+                app.mouse.enablePointerLock();
             }
         },
     };

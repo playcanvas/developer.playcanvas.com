@@ -15,7 +15,7 @@ handling keycodes and charcodes.
 Take a look at the keyboard input Pack in the [tutorials project][1]. Here is the code for the tutorial:
 
 ~~~javascript~~~
-pc.script.create("keyboard_handler", function (context) {
+pc.script.create("keyboard_handler", function (app) {
 
     var KeyboardHandler = function (entity) {
         this.entity = entity;
@@ -28,11 +28,11 @@ pc.script.create("keyboard_handler", function (context) {
             // 1) The event name to listen for
             // 2) The callback function to call when the event fires
             // 3) (optional) The value to use for 'this' in the callback function
-            context.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
-            context.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
+            app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+            app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
 
-            this.redMaterial = context.assets.find("Red", pc.asset.ASSET_MATERIAL);
-            this.whiteMaterial = context.assets.find("White", pc.asset.ASSET_MATERIAL);
+            this.redMaterial = app.assets.find("Red", pc.asset.ASSET_MATERIAL);
+            this.whiteMaterial = app.assets.find("White", pc.asset.ASSET_MATERIAL);
         },
 
         update: function (dt) {
@@ -43,9 +43,9 @@ pc.script.create("keyboard_handler", function (context) {
              * called once even if the key is held down.
              */
             var angle = 0;
-            if (context.keyboard.wasPressed(pc.KEY_LEFT)) {
+            if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
                 angle = -5;
-            } else if (context.keyboard.wasPressed(pc.KEY_RIGHT)) {
+            } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
                 angle = 5;
             }
 
@@ -55,7 +55,7 @@ pc.script.create("keyboard_handler", function (context) {
              * key is down right now. So it will be true every frame as long as
              * the key is still pressed.
              */
-            if (context.keyboard.isPressed(pc.KEY_SPACE)) {
+            if (app.keyboard.isPressed(pc.KEY_SPACE)) {
                 angle = 1;
             }
 

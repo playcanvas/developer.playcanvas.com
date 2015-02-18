@@ -14,10 +14,10 @@ Usually you will be creating Entities via the PlayCanvas Designer, building up c
 var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy
-context.root.addChild(entity);
+app.root.addChild(entity);
 ~~~
 
-First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `ApplicationContext` object which is passed into your script. By convention this is usually named `context` and the hierarchy root is available as `context.root`.
+First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `app.root`.
 
 ## Adding Components
 
@@ -26,18 +26,18 @@ First you need to create an Entity. This is straightforward, but it is important
 var entity = new pc.Entity();
 
 // Add a new Camera Component with default values
-context.systems.camera.addComponent(entity);
+entity.addComponent("camera");
 
 // Add a new Model Component and add it to the Entity.
-context.systems.model.addComponent(entity, {
+entity.addComponent("model", {
     type: 'box',
 });
 
 // Add it to the Entity hierarchy
-context.root.addChild(entity);
+app.root.addChild(entity);
 ~~~
 
-An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. Each `ComponentSystem` provides  a `addComponent(entity, data)` method which takes the Entity and a data object as arguments.
+An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. You can use the `addComponent` method of the Entity to create and add a new Component to the Entity.
 
 Each Component type has different properties that can be passed in on the data object, see the [Component's documentation][1] for more detail about which properties are available. The `data` argument can be left out and default values will be used.
 
@@ -47,13 +47,13 @@ Each Component type has different properties that can be passed in on the data o
 var entity = new pc.Entity();
 
 // Attach Camera Component with default values
-context.systems.camera.addComponent(entity);
+entity.addComponent("camera");
 
 // Delete the Camera Component
-context.systems.camera.removeComponent(entity);
+entity.removeComponent("camera");
 ~~~
 
-Components can be deleted individually from an Entity by calling the `removeComponent` method on the `ComponentSystem`.
+Components can be deleted individually from an Entity by calling the `removeComponent` method on the Entity.
 
 ## Deleting Entities
 
@@ -62,15 +62,15 @@ Components can be deleted individually from an Entity by calling the `removeComp
 var entity = new pc.Entity();
 
 // Create a new Camera Component with default values
-context.systems.camera.addComponent(entity);
+entity.addComponent("camera");
 
 // Create a new Model Component and add it to the Entity.
-context.systems.model.addComponent(entity, {
+entity.addComponent("model", {
     type: 'box',
 });
 
 // Add it to the Entity hierarchy
-context.root.addChild(entity);
+app.root.addChild(entity);
 
 // Delete the Entity and remove it from the hierarchy
 entity.destroy();
@@ -83,7 +83,7 @@ When you are finished with an Entity you call the `destroy` method on the Entity
 ~~~js~~~
 pc.script.attribute("materials", "asset", [], {type: "material"});
 
-pc.script.create('entity_creator', function (context) {
+pc.script.create('entity_creator', function (app) {
 
     var MAX_X = 10;
     var MIN_X = -10;
@@ -128,10 +128,10 @@ pc.script.create('entity_creator', function (context) {
             var entity = new pc.Entity();
 
             // Add a new Model Component and add it to the Entity.
-            context.systems.model.addComponent(entity, {
+            entity.addComponent("model", {
                 type: 'box'
             });
-            var red = context.assets.getAssetByResourceId(this.materials[0]).resource;
+            var red = app.assets.getAssetByResourceId(this.materials[0]).resource;
             entity.model.model.meshInstances[0].material = red;
 
             // Move to a random position
@@ -142,7 +142,7 @@ pc.script.create('entity_creator', function (context) {
             );
 
             // Add to the Hierarchy
-            context.root.addChild(entity);
+            app.root.addChild(entity);
 
             // Store in a list for some random duration before deleting
             this.entities.push({

@@ -19,7 +19,7 @@ In the next paragraphs we will demonstrate how to create your own post effects. 
 First we need to create a new script. This script will contain the [Shader Definition][2] for our post effect and also code that will add the post effect to the camera. This script needs to be attached to an Entity with a [Camera component][3]. We'll call this script posteffect_example.js:
 
 ~~~javascript~~~
-pc.script.create('posteffect_example', function (context) {
+pc.script.create('posteffect_example', function (app) {
     var Posteffect_example = function (entity) {
         this.entity = entity;
     };
@@ -113,12 +113,12 @@ pc.extend(pc.posteffect, function () {
 We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][5]:
 
 ~~~javascript~~~
-pc.script.create('posteffect_example', function (context) {
+pc.script.create('posteffect_example', function (app) {
 
     var Posteffect_example = function (entity) {
         this.entity = entity;
         // create an instance of our effect
-        this.effect = new pc.posteffect.ExamplePostEffect(context.graphicsDevice);
+        this.effect = new pc.posteffect.ExamplePostEffect(app.graphicsDevice);
     };
 
     Posteffect_example.prototype = {
@@ -203,12 +203,12 @@ pc.extend(pc.posteffect, function () {
 }());
 
 //--------------- SCRIPT DEFINITION------------------------//
-pc.script.create('posteffect_example', function (context) {
+pc.script.create('posteffect_example', function (app) {
 
     var Posteffect_example = function (entity) {
         this.entity = entity;
         // create an instance of our effect
-        this.effect = new pc.posteffect.ExamplePostEffect(context.graphicsDevice);
+        this.effect = new pc.posteffect.ExamplePostEffect(app.graphicsDevice);
     };
 
     Posteffect_example.prototype = {

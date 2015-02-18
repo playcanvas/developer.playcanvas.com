@@ -10,7 +10,7 @@ For example,
 
 ~~~javascript~~~
 // player.js
-pc.script.create("player", function (context) {
+pc.script.create("player", function (app) {
     var Player = function (entity) {
         this.entity = entity;
     };
@@ -28,19 +28,19 @@ pc.script.create("player", function (context) {
 ~~~javascript~~~
 
 // input.js
-pc.script.create("input", function (context) {
+pc.script.create("input", function (app) {
     var Input = function (entity) {
         this.entity = entity;
     };
 
     Input.prototype = {
         update: function (dt) {
-            if (context.keyboard.isPressed(pc.KEY_LEFT)) {
+            if (app.keyboard.isPressed(pc.KEY_LEFT)) {
                 // Call the move() method on the player script
                 this.entity.script.player.move(-1, 0);
             }
 
-            if (context.keyboard.isPressed(pc.KEY_RIGHT)) {
+            if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
                 // Call the move() method on the player script
                 this.entity.script.player.move(1, 0);
             }

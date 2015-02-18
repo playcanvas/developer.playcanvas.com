@@ -5,9 +5,8 @@ template: page.tmpl.html
 
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
 
-<h2 id="app_context">ApplicationContext</h2>
-The `pc.ApplicationContext` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the
-keyboard and mouse handlers. The ApplicationContext is made available to all user scripts by being passed into the initial callback from `pc.script.create`.
+<h2 id="app">Application</h2>
+The `pc.Application` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the keyboard and mouse handlers. The Application is made available to all user scripts by being passed into the initial callback from `pc.script.create`.
 
 <h2 id="asset">Asset</h2>
 An asset is a unit of data that is typically imported into PlayCanvas from a content creation application (such as Blender or 3D Studio Max). It can represent a 3D model, an animation, an audio sample or an image. Assets can be assigned to certain attributes of [Components][1]. For example, it is possible to assign a model asset to the 'model' attribute of a model component. Also see [Source Assets][2] and [Target Assets][3].

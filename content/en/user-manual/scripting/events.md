@@ -21,14 +21,14 @@ By default all script instances can fire events you don't need to call this manu
 Listen for events firing by using `on()` and `off()`.
 
 ~~~javascript~~~
-pc.script.create("display", function (context) {
+pc.script.create("display", function (app) {
     var Display = function (entity) {
         this.entity = entity;
     };
 
     Display.prototype = {
         initialize: function () {
-            var player = context.findByName("Player");
+            var player = app.findByName("Player");
 
             // remove move event listeners
             player.script.player.off("move");
@@ -48,7 +48,7 @@ pc.script.create("display", function (context) {
 Trigger an event using `fire()`
 
 ~~~javascript~~~
-pc.script.create("player", function (context) {
+pc.script.create("player", function (app) {
     var Player = function (entity) {
         this.entity = entity;
     };
