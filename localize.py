@@ -284,7 +284,7 @@ def update_localized_files(lang, dir, out_dir):
                 if _verbose:
                     print("po_2_js: " + path)
                 po_2_js(path, out_path)
-            elif path.endswith(".po"):
+            elif path.endswith(".po") and path.find(lang) >= 0:
                 out_path = os.path.join(out_dir, path.replace(dir+'/', '').replace('.'+lang, "")).replace(".po", ".md")
                 if _verbose:
                     print("po_2_md: " + path)
