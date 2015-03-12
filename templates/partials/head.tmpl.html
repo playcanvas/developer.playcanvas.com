@@ -4,7 +4,6 @@
         <link rel="stylesheet" href="/css/monokai_sublime.css"></link>
 
         <link rel="icon" type="image/png" href="//s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/icons/favicon.png">
-        <link rel="stylesheet" href="//f.fontdeck.com/s/css/lOWHNvsjx4w9y10ZnUyGWLlnNYI/developer.playcanvas.com/42607.css" type="text/css" />
 
         {{#if local}}
         <script src="/contrib/jquery.min.js"></script>
@@ -23,6 +22,20 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
         {{/if}}
+
+      <script type="text/javascript">
+        WebFontConfig = { fontdeck: { id: '42607' } };
+
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })();
+      </script>
 
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
