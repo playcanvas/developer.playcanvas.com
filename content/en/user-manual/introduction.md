@@ -35,7 +35,7 @@ Let's take a look at the high level workflow:
         <td>
             <h2>2 - Build Game Entities</h2>
             <ul>
-                <li>Create game entities in PlayCanvas Designer.</li>
+                <li>Create game entities in PlayCanvas Editor.</li>
                 <li>Add components to determine an entity's behavior.</li>
                 <li>Set a component's attributes to fine tune an entity.</li>
                 <li>Preview your changes live in-game using a live link.</li>

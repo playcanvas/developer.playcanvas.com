@@ -21,7 +21,7 @@ The [AudioListener][2] Component determines how an AudioSource is heard. Imagine
 
 ![Pack Explorer][5]
 
-You should look at the [Pack][3] for this tutorial yourself in the Designer. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
+You should look at the [Pack][3] for this tutorial yourself in the Editor. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
 
 ## Creating Sources
 
@@ -69,7 +69,7 @@ That's it, the AudioListener has no options.
 
 [1]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
 [2]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
-[3]: http://playcanvas.com/designer/186/scene/329663
+[3]: https://playcanvas.com/editor/scene/329663
 [4]: /user-manual/assets/importing
 [5]: /images/tutorials/basic_audio_pack.png
 [6]: /images/tutorials/audiosource_component.png

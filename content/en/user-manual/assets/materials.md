@@ -14,7 +14,7 @@ Materials are imported automatically when you upload a source model (e.g. FBX or
 
 ## Creating New Materials
 
-You can create new materials directly from the PlayCanvas Designer interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
+You can create new materials directly from the PlayCanvas Editor interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
 
 ![add_material](/images/content_creation/add_material.png)
 
@@ -30,7 +30,7 @@ To select a material to edit or to apply a new material to a mesh, first select 
 
 Once the model is selected, then you can select a specific material by clicking again in the 3D view, this time on the material you wish to select.
 
-When a material is selected the Editor panel on the right of the Designer will show the Material Editor. The Material Editor is used to assign materials to mesh instances and to modify material properties.
+When a material is selected the Editor panel on the right of the Editor will show the Material Editor. The Material Editor is used to assign materials to mesh instances and to modify material properties.
 
 ## Assigning Materials
 

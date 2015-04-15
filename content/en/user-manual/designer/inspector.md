@@ -18,7 +18,7 @@ Modifying these values is how you specify how your [Entity][2] behaves. For exam
 
 Some attributes are simple text or numbers in which case a standard text field or slider control will be used. Other values may require a more specialised input method. For example, choosing an Asset highlights available Assets in the asset panel. Some values can be manipulated via the viewport, for example, the Translate, Rotate and Scale values can be edited by moving and Entity dragging the relevant [Gizmo][3] around in the viewport.
 
-When running both a game and the Editor simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Designer and the game tabs side by side and tweak values in the Designer as you watch and play the game.
+When running both a game and the Editor simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Editor and the game tabs side by side and tweak values in the Editor as you watch and play the game.
 
 [3]: /user-manual/glossary#gizmo
 [2]: /user-manual/glossary#entity

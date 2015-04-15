@@ -22,7 +22,7 @@ Now you need to specify which graphical objects in your scene cast and receive s
 
 <img alt="Enabling model shadow casting" src="/images/shadows/model_enable_shadows.png"></img>
 
-Shadows should now be visible in the Designer's 3D view.
+Shadows should now be visible in the Editor's 3D view.
 
 ## Tuning Shadows
 

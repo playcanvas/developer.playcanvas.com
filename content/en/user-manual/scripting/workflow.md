@@ -18,7 +18,7 @@ This is how your Project will be set up by default when you create it. If you ha
 
 ![script picker][script_picker]
 
-To add a new script, open your Pack in PlayCanvas Designer and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
+To add a new script, open your Pack in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
 
 Alternatively you can open the [Scripts Explorer][scripts_explorer] and drag and drop a script from there into the script picker control.
 
@@ -26,7 +26,7 @@ Alternatively you can open the [Scripts Explorer][scripts_explorer] and drag and
 You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Scripts Explorer][scripts_explorer] in the Designer.
+Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Scripts Explorer][scripts_explorer] in the Editor.
 
 ## Local Server
 
@@ -71,7 +71,7 @@ You will see a directory of files. Like this:
 
 ![served directory](/images/platform/localserver.png "Local server directory")
 
-Launching packs from the PlayCanvas Designer using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
+Launching packs from the PlayCanvas Editor using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
 
 ## Code Repository
 
@@ -89,7 +89,7 @@ Once the service is authorized, you setup your project with the particular repos
 
 Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status says 'ready', the code is synced.
 
-Now when you run your application from the PlayCanvas Designer the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Packs which have a code repository set up the code will be included in your exports.
+Now when you run your application from the PlayCanvas Editor the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Packs which have a code repository set up the code will be included in your exports.
 
 <div class="pc-notice-message pc-small">
 <p>Code Repositories are only updated when you press the Update button on the code settings page.</p>
@@ -98,7 +98,7 @@ Now when you run your application from the PlayCanvas Designer the code will be 
 
 ## Switching
 
-You can easily switch between using local code and a code repository when using the PlayCanvas Designer by choosing which Launch button to use.
+You can easily switch between using local code and a code repository when using the PlayCanvas Editor by choosing which Launch button to use.
 
 ![Launch Buttons][launch_buttons]
 

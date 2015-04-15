@@ -16,16 +16,16 @@ To upload an asset to PlayCanvas, follow these steps:
 * Alternatively, select the 'New Asset' link to navigate to the upload form.
 * The asset will now start to upload.
 
-### In the Designer
+### In the Editor
 
-* Drag and drop your asset file into the Designer window.
+* Drag and drop your asset file into the Editor window.
 * A progress bar will appear along the bottom.
 * When the progress bar has disappeared your asset is ready to use.
 
 Now, when you attempt to choose an asset via the asset picker attribute control (for the Model component or the Animation component for example), your asset will be available for assignment.
 
 <div class="alert alert-info">
-Note, if you have the Designer open while uploading assets to the Dashboard, the asset panel won't automatiically update. You can click the refresh button on the right of the Asset Panel to reload the list of Assets.
+Note, if you have the Editor open while uploading assets to the Dashboard, the asset panel won't automatiically update. You can click the refresh button on the right of the Asset Panel to reload the list of Assets.
 </div>
 
 ## Updating Existing Assets

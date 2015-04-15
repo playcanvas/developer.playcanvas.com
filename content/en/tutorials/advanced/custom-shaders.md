@@ -133,10 +133,10 @@ Once we've got the shader definition we create a new Shader and a new Material a
 ~~~
 
 The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
-top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Designer:
+top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
 
 ~~~javascript~~~
-    // Declare script attribute visible in the Designer
+    // Declare script attribute visible in the Editor
     pc.script.attribute('maps', 'asset', [], {
         displayName: 'Height Map',
         type: 'texture'

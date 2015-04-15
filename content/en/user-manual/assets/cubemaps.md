@@ -13,11 +13,11 @@ Cube maps are a special type of texture asset. They are formed from 6 texture as
 
 ## Importing Cube Map Textures
 
-A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Designer. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
+A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Editor. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
 
 ## Creating New Cube Map
 
-You can create new cube map assets directly from the PlayCanvas Designer interface. First, ensure that the Asset Explorer is shown (Press A or select Toggle Asset Explorer from the View menu). Then press the + button next to the Cube Maps filter.
+You can create new cube map assets directly from the PlayCanvas Editor interface. First, ensure that the Asset Explorer is shown (Press A or select Toggle Asset Explorer from the View menu). Then press the + button next to the Cube Maps filter.
 
 ![add_cubemap](/images/content_creation/add_cubemap.png)
 
@@ -27,7 +27,7 @@ This creates a new cube map Asset and opens up the Cube Map Editor on the right-
 
 To select a cube map in order to edit it, select it in the Asset Explorer. The easiest way to do this is to select the Cube Map filter to narrow down the options for selection. Cube maps are identified by a 3D cube icon.
 
-When a cube map is selected, the Editor panel on the right of the Designer will show the Cube Map Editor.
+When a cube map is selected, the Editor panel on the right of the Editor will show the Cube Map Editor.
 
 ## Editing a Cube Map
 

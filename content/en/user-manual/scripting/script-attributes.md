@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 6
 ---
 
-Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Designer. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties.
+Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties.
 
 ## Declaring Script Attributes
 
@@ -21,19 +21,19 @@ pc.script.attribute('speed', 'number', 80);
 ~~~
 
 
-## Getting Attributes into Designer
+## Getting Attributes into Editor
 
-Once you've declared your attributes they must be available for the server to analyze. If you are using PlayCanvas to write your code then you don't need to do anything. If you are using an external code repository like Github or Bitbucket then you will need to make sure that the latest version of your [code is synced][workflow].
+Once you've declared your attributes they must be available for the server to analyze. If you are using PlayCanvas to write your code then you don't need to do anything. If you are using an external code repository like Github or Bitbucket then you will need to make sure that the latest version of your [code is synced][1].
 
-Once your code is on the PlayCanvas server then open the Designer and click the *Refresh Script Attributes* option in the Entity menu
+Once your code is on the PlayCanvas server then open the Editor and click the *Refresh Script Attributes* option in the Entity menu
 
-![Refresh Script Attributes][refresh_image]
+![Refresh Script Attributes][2]
 
-Refreshing attributes loads all your scripts and parses out any attributes that were declared. Then they are inserted into the script components that reference that script (and as such are accessible in your scripts as `this.attribute_name`) and are also exposed into the Designer.
+Refreshing attributes loads all your scripts and parses out any attributes that were declared. Then they are inserted into the script components that reference that script (and as such are accessible in your scripts as `this.attribute_name`) and are also exposed into the Editor.
 
-In the Designer each script with attributes gets its own attribute block in the Attribute Editor, just like a Component.
+In the Editor each script with attributes gets its own attribute block in the Attribute Editor, just like a Component.
 
-![Script Attributes][script_component_attr_image]
+![Script Attributes][3]
 
 ## Types
 
@@ -57,7 +57,7 @@ pc.script.attribute('speed', 'number', 80, {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
     <tr>
         <td>min</td><td>The minimum value that is valid.</td>
@@ -66,7 +66,7 @@ pc.script.attribute('speed', 'number', 80, {
         <td>max</td><td>The maximum value that is valid.</td>
     </tr>
     <tr>
-        <td>step</td><td>The amount to increment the number by when clicking up/down in the Designer.</td>
+        <td>step</td><td>The amount to increment the number by when clicking up/down in the Editor.</td>
     </tr>
     <tr>
         <td>decimalPrecision</td><td>The number of decimal places that are supported.</td>
@@ -90,7 +90,7 @@ pc.script.attribute('title', 'string', 'Untitled', {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
 </table>
 
@@ -111,7 +111,7 @@ pc.script.attribute('on', 'boolean', false, {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
 </table>
 
@@ -132,7 +132,7 @@ pc.script.attribute('sound', 'asset', [], {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
     <tr>
         <td>type</td><td>Limit the asset selection to a single Asset type.</td>
@@ -156,7 +156,7 @@ pc.script.attribute('color', 'rgb', [1,1,1], {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
 </table>
 
@@ -178,7 +178,7 @@ pc.script.attribute('color', 'rgba', [1,1,1,0.5], {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
 </table>
 
@@ -199,14 +199,14 @@ pc.script.attribute('direction', 'vector', [0,1,0], {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
 </table>
 
 
 ### Enumeration
 
-The value is one of a possible set of values. This will expose a dropdown list of items in the Designer. You can only choose one of the predefined choices.
+The value is one of a possible set of values. This will expose a dropdown list of items in the Editor. You can only choose one of the predefined choices.
 
 #### Example
 
@@ -228,7 +228,7 @@ pc.script.attribute('pet', 'enumeration', 0, {
 <table class="table table-striped">
     <tr><th>Option</th><th>Description</th></tr>
     <tr>
-        <td>displayName</td><td>The name to show in the Designer.</td>
+        <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
     <tr>
         <td>enumerations</td><td>This list of possible enumerations. Supplied as a list of objects with a `name` and a `value` property.</td>
@@ -237,6 +237,6 @@ pc.script.attribute('pet', 'enumeration', 0, {
 
 
 
-[workflow]: /user-manual/scripting/workflow
-[refresh_image]: /images/scripting/refresh_attributes.png
-[script_component_attr_image]: /images/scripting/script_component_attribute.png
+[1]: /user-manual/scripting/workflow
+[2]: /images/scripting/refresh_attributes.png
+[3]: /images/scripting/script_component_attribute.png

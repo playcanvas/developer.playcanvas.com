@@ -8,7 +8,7 @@ position: 1
 
 The Dashboard Header provides various buttons to quickly perform common actions for a project.
 
-By clicking on the EDITOR button you can open up the PlayCanvas Designer and also manage your packs.
+By clicking on the EDITOR button you can open up the PlayCanvas Editor and also manage your packs.
 
 ![Editor][2]
 

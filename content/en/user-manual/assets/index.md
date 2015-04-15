@@ -27,5 +27,5 @@ Put simply, Source Assets reference the original files that you uploaded. Target
 
 For example, if you upload a Photoshop (PSD) file for a texture, we create a Source Asset of type *texture* for that PSD file. Then we run the import pipeline and convert the PSD file into a JPG file. At the end of the process we create a Target Asset of type *texture* for the new JPG file.
 
-In the Designer and in your game, you will only ever be referring to Target Assets. That is because they are in formats optimized and ready to use at runtime.
+In the Editor and in your game, you will only ever be referring to Target Assets. That is because they are in formats optimized and ready to use at runtime.
 

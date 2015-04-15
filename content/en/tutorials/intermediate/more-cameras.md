@@ -71,7 +71,7 @@ With the final two nested `if(){}` constucts we gradually change the fov values 
 
 With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Designer scene][3] where the cubes sit next to the
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
 top and bottom sides of the camera [frustum][2]
 
 ## Current Camera
@@ -128,10 +128,10 @@ In this sample, pressing the arrow keys sets the current camera to be a left or 
 
 We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `app.root.findByName()` to search through all the entities in the pack).
 
-We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Designer scene)][3].
+We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Editor scene)][3].
 
 Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
 
 [1]: /tutorials/beginner/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
-[3]: http://playcanvas.com/designer/186/scene/329672
+[3]: https://playcanvas.com/editor/scene/329672

@@ -7,7 +7,7 @@ template: tutorial-page.tmpl.html
 
 *Click to focus, press SPACEBAR to switch between two model assets*
 
-Usually you will set up all your assets in the Designer and there is no need to access them in scripts. But for more advanced games you may need to swap assets in and out, or assign them at runtime mid-game. To do this you will need to use the [`AssetRegistry`][1] and [Script Attributes][2].
+Usually you will set up all your assets in the Editor and there is no need to access them in scripts. But for more advanced games you may need to swap assets in and out, or assign them at runtime mid-game. To do this you will need to use the [`AssetRegistry`][1] and [Script Attributes][2].
 
 In this tutorial we'll build a small scene which lets you swap the model on a model component by pressing a key. You can see the completed [Pack, here,][3] in our [tutorials project][4].
 
@@ -116,7 +116,7 @@ So in this case, we reference the **A** model in the model component, but we don
 
 One way of ensuring that the **B** model is included in the Pack is to add a new Entity with a model component and assign the **B** model to it. This would work, but has the downside that we have an extra Entity in the scene. We'd need to make sure if was out of sight or we could just disable it.
 
-We're going to show you another method of adding a reference to an asset, using [Script Attributes][2]. Script Attributes let you declare variables in your scripts which are then exposed to the Designer. This makes it easy to create a generic script and customize it per-instance in the Designer.
+We're going to show you another method of adding a reference to an asset, using [Script Attributes][2]. Script Attributes let you declare variables in your scripts which are then exposed to the Editor. This makes it easy to create a generic script and customize it per-instance in the Editor.
 
 To declare a script attribute we add this code to the top of our `update_asset.js` script
 
@@ -124,12 +124,12 @@ To declare a script attribute we add this code to the top of our `update_asset.j
 pc.script.attribute("letters", "asset", [], {type: "model"});
 ```
 
-Then in the Designer choose the Refresh Script Attributes option from the Entity menu.
+Then in the Editor choose the Refresh Script Attributes option from the Entity menu.
 
 ![refresh_scripts][8]
 
 <div class="alert alert-warning">
-It's important to make sure you refresh the script attributes when you upload a new asset, because when if you reference a new script attribute in your code, but you have exposed it in the designer, it will be uninitialized.
+It's important to make sure you refresh the script attributes when you upload a new asset, because when if you reference a new script attribute in your code, but you have exposed it in the Editor, it will be uninitialized.
 </div>
 
 Once you've refreshed the script attributes you'll see that you now have an asset picker available in your script component.
@@ -142,7 +142,7 @@ If you now relaunch your application and press space. The model will switch betw
 
 ### Bonus - using the assets from the script attributes
 
-In the example so far we've declared the script attributes but we aren't actually using the values. This is fine and works because you can get the asset by it's name, but in this case you are introducting a dependency between the name of the asset and the code. Instead, we can just use the assets that have been added in the Designer. That way, any Designer user can update the assets without having to edit the code.
+In the example so far we've declared the script attributes but we aren't actually using the values. This is fine and works because you can get the asset by it's name, but in this case you are introducting a dependency between the name of the asset and the code. Instead, we can just use the assets that have been added in the Editor. That way, any Editor user can update the assets without having to edit the code.
 
 So lets add a new function `changeToByIndex()` and update the keyup and keydown events.
 
@@ -173,7 +173,7 @@ Update_asset.prototype = {
 };
 ```
 
-Now, instead of getting the assets by their name, we're using `this.letters` which is the script attribute we declared and we're getting the asset by the resource id that is stored from the Designer. So now, you could drop in any two assets into the `update_asset.js` script in the Designer and pressing space will switch between them.
+Now, instead of getting the assets by their name, we're using `this.letters` which is the script attribute we declared and we're getting the asset by the resource id that is stored from the Editor. So now, you could drop in any two assets into the `update_asset.js` script in the Editor and pressing space will switch between them.
 
 ## The complete script
 
@@ -230,7 +230,7 @@ pc.script.create('update_asset', function (app) {
 
 [1]: /engine/api/stable/symbols/pc.asset.AssetRegistry.html
 [2]: /user-manual/scripting/script-attributes/
-[3]: http://playcanvas.com/designer/186/scene/338769
+[3]: https://playcanvas.com/scene/scene/338769
 [4]: https://playcanvas.com/project/186/overview/tutorials
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
