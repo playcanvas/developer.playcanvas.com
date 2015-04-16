@@ -52,7 +52,7 @@ The `app` variable is available for use throughout your script object because `S
 * `keyboard` An instance of `pc.Keyboard`
 * `mouse` An instance of `pc.Mouse`
 * `scene` An instance of `pc.Scene`
-* `loader` An instance of `pc.resources.ResourceLoader`
+* `assets` An instance of `pc.AssetRegistry` for loading and accessing assets
 
 See the [API Reference][2] for more details on the pc.Application object.
 

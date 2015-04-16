@@ -16,11 +16,11 @@ This is how your Project will be set up by default when you create it. If you ha
 
 ### Adding a new script
 
-![script picker][script_picker]
+<img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 To add a new script, open your Pack in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
 
-Alternatively you can open the [Scripts Explorer][scripts_explorer] and drag and drop a script from there into the script picker control.
+Alternatively you can drag and drop a script from the asset panel into the script component.
 
 <div class="alert alert-info small">
 You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
@@ -98,11 +98,11 @@ Now when you run your application from the PlayCanvas Editor the code will be in
 
 ## Switching
 
+<img src="/images/user-manual/launch-options.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+
 You can easily switch between using local code and a code repository when using the PlayCanvas Editor by choosing which Launch button to use.
 
-![Launch Buttons][launch_buttons]
-
-**Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local server)** will launch against a locally running server
+**Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local)** will launch against a locally running server
 
 Exporting packs will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
 

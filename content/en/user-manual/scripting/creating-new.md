@@ -6,9 +6,9 @@ position: 1
 
 ## Attaching a script to an Entity
 
-![Attribute Editor showing script component][3]
+<img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-Script Components are attached to Entities in the same way as all other Components using the *Add Component* command in the **Entity > add component** menu.
+Script Components are attached to Entities in the same way as all other Components using the *Add Component* button in the Entity inspector.
 
 Once you have added a Script Component you can specify the URLs of the javascript files to load. The script component has a field named URL into which you can add paths to your scripts or other javascript libraries. Just type the URL of your script and press Enter. You can also select an existing script from the Asssets Panel and drag & drop it in here. Or just type a name into the URL box and press Enter to create a new script, then click the name to open.
 

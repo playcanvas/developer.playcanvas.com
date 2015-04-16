@@ -23,17 +23,15 @@ pc.script.attribute('speed', 'number', 80);
 
 ## Getting Attributes into Editor
 
+<img src="/images/user-manual/components/component-script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+
 Once you've declared your attributes they must be available for the server to analyze. If you are using PlayCanvas to write your code then you don't need to do anything. If you are using an external code repository like Github or Bitbucket then you will need to make sure that the latest version of your [code is synced][1].
 
-Once your code is on the PlayCanvas server then open the Editor and click the *Refresh Script Attributes* option in the Entity menu
-
-![Refresh Script Attributes][2]
+Once your code is on the PlayCanvas server then open the Editor and click the <img src="/images/user-manual/refresh-script-attributes.jpg" style="text-align: middle" /> button.
 
 Refreshing attributes loads all your scripts and parses out any attributes that were declared. Then they are inserted into the script components that reference that script (and as such are accessible in your scripts as `this.attribute_name`) and are also exposed into the Editor.
 
 In the Editor each script with attributes gets its own attribute block in the Attribute Editor, just like a Component.
-
-![Script Attributes][3]
 
 ## Types
 
