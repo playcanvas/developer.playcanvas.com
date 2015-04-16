@@ -6,7 +6,7 @@ position: 1
 
 The 'animation' component enables an entity to specify which animations can be applied to the model assigned to its model component.
 
-![Component Interface][3]
+<img src="/images/user-manual/components/component-animation.jpg" style="width: 300px" />
 
 ## Properties
 
@@ -27,4 +27,3 @@ You can control an animation component's properties using a [script component][1
 
 [1]: /user-manual/packs/components/script
 [2]: /engine/api/stable/symbols/pc.AnimationComponent.html
-[3]: /images/platform/component_animation.png

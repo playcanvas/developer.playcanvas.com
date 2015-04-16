@@ -7,15 +7,15 @@ position: 5
 The 'collision' component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.
 
 #### Box
-![Component Interface][1]
+<img src="/images/user-manual/components/component-collision-box.jpg" style="width: 300px" />
 #### Sphere
-![Component Interface][2]
+<img src="/images/user-manual/components/component-collision-sphere.jpg" style="width: 300px" />
 #### Capsule
-![Component Interface][3]
+<img src="/images/user-manual/components/component-collision-capsule.jpg" style="width: 300px" />
 #### Cylinder
-![Component Interface][4]
+<img src="/images/user-manual/components/component-collision-cylinder.jpg" style="width: 300px" />
 #### Mesh
-![Component Interface][5]
+<img src="/images/user-manual/components/component-collision-mesh.jpg" style="width: 300px" />
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
 

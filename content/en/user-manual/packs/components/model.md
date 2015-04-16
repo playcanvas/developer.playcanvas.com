@@ -6,7 +6,7 @@ position: 7
 
 The 'model' component enables an entity to render a primitive shape or a model asset.
 
-![Component Interface][1]
+<img src="/images/user-manual/components/component-model.jpg" style="width: 300px" />
 
 ## Properties
 

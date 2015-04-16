@@ -6,8 +6,6 @@ position: 2
 
 The 'audiolistener' component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
 
-<img alt="Component Interface" src="/images/platform/component_audiolistener.png" />
-
 ## Properties
 
 <table class="table table-striped">

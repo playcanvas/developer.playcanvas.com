@@ -7,11 +7,11 @@ position: 6
 The 'light' component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.
 
 #### Directional
-![Component Interface][1]
+<img src="/images/user-manual/components/component-light-directional.jpg" style="width: 300px" />
 #### Point
-![Component Interface][2]
+<img src="/images/user-manual/components/component-light-point.jpg" style="width: 300px" />
 #### Spot
-![Component Interface][3]
+<img src="/images/user-manual/components/component-light-spot.jpg" style="width: 300px" />
 
 ## Properties
 

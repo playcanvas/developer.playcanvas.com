@@ -6,7 +6,7 @@ position: 3
 
 The 'audiosource' component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
 
-![Component Interface][3]
+<img src="/images/user-manual/components/component-audiosource.jpg" style="width: 300px" />
 
 ## Properties
 
