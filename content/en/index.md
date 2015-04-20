@@ -23,7 +23,7 @@ Also, remember that you can always take a look at the [play page][8] to see how 
 
 ## Engine Users
 
-[Engine][9] - This guide will get you going if you are only using the Engine and not the PlayCanvas Designer.
+[Engine][9] - This guide will get you going if you are only using the Engine and not the PlayCanvas Editor.
 
 <hr />
 

@@ -6,7 +6,7 @@ position: 2
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/creating_entities?overlay=false" ></iframe>
 
-Usually you will be creating Entities via the PlayCanvas Designer, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
+Usually you will be creating Entities via the PlayCanvas Editor, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
 
 ## Creating an Entity
 
@@ -161,4 +161,4 @@ This is a complete Entity script which you can see in action at the top of the t
 See [the full pack here][2].
 
 [1]: /user-manual/packs/components/
-[2]: http://playcanvas.com/designer/186/scene/329669
+[2]: https://playcanvas.com/editor/scene/329669

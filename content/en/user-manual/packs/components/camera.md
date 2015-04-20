@@ -6,7 +6,7 @@ position: 4
 
 The 'camera' component enables an entity to render a scene from a certain viewpoint.
 
-![Component Interface][3]
+<img src="/images/user-manual/components/component-camera.jpg" style="width: 300px" />
 
 ## Properties
 

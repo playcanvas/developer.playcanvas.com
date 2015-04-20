@@ -6,7 +6,7 @@ position: 7
 
 The 'particlesystem' component specifies a particle emitter in 3D space.
 
-<img alt="Component Interface" src="/images/platform/component_particlesystem.png" />
+<img src="/images/user-manual/components/component-particles.jpg" style="width: 300px" />
 
 ## Properties
 

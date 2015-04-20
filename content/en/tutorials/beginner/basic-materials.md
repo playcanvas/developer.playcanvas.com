@@ -15,7 +15,7 @@ Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new chil
 
 ## Step 2 - Create a new Material
 
-Create new material directly from the PlayCanvas Designer interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
+Create new material directly from the PlayCanvas Editor interface. Bring up the Asset Explorer (Press A or select Toggle Asset Explorer from the View menu) and press the + button next to the materials filter.
 
 ![Add Material][2]
 
@@ -25,7 +25,7 @@ This creates a new Material Asset and opens up the Material Editor on the right-
 
 There are two ways to select a Material from a model in the 3D view. The first way is to right-click on the the model in the 3D view, and select "Edit Material". The second is to left-click once to select the Entity, and then left-click again on the Material which you wish to edit.
 
-When selected, the Material Editor will appear in the left column of the Designer.
+When selected, the Material Editor will appear in the left column of the Editor.
 
 ![Assign Material][3]
 
@@ -58,7 +58,7 @@ Download & save these sample textures:
 <a href="/downloads/proto_orange.png"><img style="float:left; margin-right: 32px;" src="/downloads/proto_orange.png" width="128px"/></a>
 <a href="/downloads/proto_gray_n.png"><img src="/downloads/proto_gray_n.png" width="128px"/></a>
 
-Then upload them to your project by dragging the files into the Designer.
+Then upload them to your project by dragging the files into the Editor.
 
 Once they're uploaded it's time to assign them to texture slots on the Material. Select the Material as before and open up the Diffuse section. Instead of modifing the color, open the Texture picker and assign the `proto_orange` texture. Then open the Normal section and in the Texture slot assign the `proto_gray_n` texture.
 
@@ -75,5 +75,5 @@ See the [Basic Materials project pack here][6] in the [PlayCanvas tutorials proj
 [3]: /images/content_creation/assign_material.png
 [4]: /images/content_creation/material_editor.png
 [5]: /images/content_creation/diffuse_normal_cube.jpg
-[6]: http://playcanvas.com/designer/186/scene/339076
+[6]: https://playcanvas.com/editor/scene/339076
 [7]: https://playcanvas.com/project/186/overview/tutorials

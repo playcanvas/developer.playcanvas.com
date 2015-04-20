@@ -16,7 +16,7 @@ This tutorial expands on the [first-person camera][1] tutorial. If you haven't c
 
 ![Pack Explorer][2]
 
-You should look at the [Pack][3] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][1] from the previous tutorial.
+You should look at the [Pack][3] for this tutorial yourself in the Editor. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][1] from the previous tutorial.
 
 ## The Camera Script
 
@@ -172,7 +172,7 @@ Getting input from the player is slightly more complicated than simply translati
 Finally we just check for the jump action and if required, we call the `jump()` method of the character controller script.
 
 [1]: /tutorials/intermediate/first-person-camera
-[3]: http://playcanvas.com/designer/186/scene/329678
+[3]: http://playcanvas.com/editor/scene/329678
 [4]: https://playcanvas.com/project/186/code
 [5]: /engine/api/stable/symbols/pc.RigidBodyComponentSystem.html
 [6]: /engine/api/stable/symbols/pc.RaycastResult.html

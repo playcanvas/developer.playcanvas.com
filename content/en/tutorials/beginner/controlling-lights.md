@@ -41,7 +41,7 @@ These lines assign values to r, g and b variables based on a sin wave and then a
 </div>
 
 ##General setup
-We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Pack. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Designer scene and scripts can be accessed here][2] in the 'controllingLights' pack.
+We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Pack. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' pack.
 
 
 

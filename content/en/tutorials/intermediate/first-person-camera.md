@@ -14,7 +14,7 @@ In this tutorial, we'll create a simple script for a first-person camera. That i
 
 ![Pack Explorer][1]
 
-You should look at the [Pack][2] for this tutorial yourself in the Designer. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
+You should look at the [Pack][2] for this tutorial yourself in the Editor. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
 
 ## The Camera script
 
@@ -157,7 +157,7 @@ pc.script.create('first_person_camera', function (app) {
 });
 ~~~
 
-[2]: http://playcanvas.com/designer/186/scene/329653
+[2]: https://playcanvas.com/editor/scene/329653
 [3]: /user-manual/scripting/
 [4]: https://playcanvas.com/project/186/code
 [5]: /engine/api/stable/symbols/pc.MouseEvent.html

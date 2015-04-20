@@ -12,15 +12,15 @@ The `pc.Application` class is where all the useful engine stuff that your applic
 An asset is a unit of data that is typically imported into PlayCanvas from a content creation application (such as Blender or 3D Studio Max). It can represent a 3D model, an animation, an audio sample or an image. Assets can be assigned to certain attributes of [Components][1]. For example, it is possible to assign a model asset to the 'model' attribute of a model component. Also see [Source Assets][2] and [Target Assets][3].
 
 <h2 id="asset_pipeline">Asset Pipeline</h2>
-The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset][4] e.g. an FBX scene file into one or more [Target Assets][5] e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Designer.
+The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset][4] e.g. an FBX scene file into one or more [Target Assets][5] e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Editor.
 
 <h2 id="attribute">Attribute</h2>
-An attribute is a property of a [Component][6]. Attributes are represented in the PlayCanvas Designer interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Designer's 'Play' icon, the updates are live-streamed to the connected game in real time.
+An attribute is a property of a [Component][6]. Attributes are represented in the PlayCanvas Editor interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Editor's 'Play' icon, the updates are live-streamed to the connected game in real time.
 
 <h2 id="component">Component</h2>
 Components describe the properties and functionality of an [Entity][7]. In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.
 
-Components are added to Entities via the Component menu in the PlayCanvas Designer, or they can be added at runtime via their respective `ComponentSystem` object.
+Components are added to Entities via the Component menu in the PlayCanvas Editor, or they can be added at runtime via their respective `ComponentSystem` object.
 
 <h2 id="dom">DOM</h2>
 The DOM (Document Object Model) is a way of representing an HTML document. Web browsers make an interface available for querying and modifying the DOM that makes up the HTML page that
@@ -33,7 +33,7 @@ All Entities have a transform matrix to provide their position and orientation;
 they have a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.
 
 <h2 id="framework">Framework</h2>
-The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Designer. See the [API Reference][9] for more details.
+The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Editor. See the [API Reference][9] for more details.
 
 <h2 id="gizmo">Gizmo</h2>
 A Gizmo is a control that can be dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of
@@ -41,15 +41,15 @@ three color-coded parts, one for each axis in 3D space. Red is the X-axis, green
 more than one axis at once, e.g. the translate gizmo features clickable plane icons to allow translation in two dimensions at once, on the X and Y, Y and Z, Z and X planes.
 
 <h2 id="material">Material</h2>
-A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Designer, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
+A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Editor, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
 
 <h2 id="pack">Pack</h2>
 A Pack is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Pack may represent your entire game, or just a single level or part of your game.
-A Pack is defined by creating an Entity that has a Pack Component. When you create a new Pack in the [PlayCanvas Designer](#designer) the root of the tree visible in the [Pack Explorer][10]
+A Pack is defined by creating an Entity that has a Pack Component. When you create a new Pack in the [PlayCanvas Editor](#editor) the root of the tree visible in the [Pack Explorer][10]
 is an Entity with a Pack Component.
 
-<h2 id="designer">PlayCanvas Designer</h2>
-The PlayCanvas Designer is a visual editing tool which can be used by members of your development team to edit [Packs][11]. The PlayCanvas Designer is used to manipulate [Entities][12]
+<h2 id="editor">PlayCanvas Editor</h2>
+The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Packs][11]. The PlayCanvas Editor is used to manipulate [Entities][12]
 
 <h2 id="engine">PlayCanvas Engine</h2>
 The PlayCanvas Engine is a javascript library which provides all the functionality you will need to create an interactive 3D application or game.

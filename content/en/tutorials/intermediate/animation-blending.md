@@ -15,7 +15,7 @@ Let's examine how this is achieved via PlayCanvas...
 
 ## The Animation Component
 
-In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the skinned character as displayed in PlayCanvas Designer.
+In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the skinned character as displayed in PlayCanvas Editor.
 
 ![Animated Entity][1]
 
@@ -25,7 +25,7 @@ In the image you can see the animation component in the Attribute Editor. There 
 * Blend to a looping punch animation on a key press.
 * Blend back to idle on key release.
 
-So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Designer and it refers to a JS file called animation_blending.js. The contents of this file is:
+So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Editor and it refers to a JS file called animation_blending.js. The contents of this file is:
 
 ~~~javascript~~~
 pc.script.create("animation_blending", function (app) {
@@ -78,4 +78,4 @@ From this point, you are able to add more and more animations to the animation c
 See [the full Pack here][2]
 
 [1]: /images/tutorials/animation_blending.png
-[2]: http://playcanvas.com/designer/186/scene/338867
+[2]: https://playcanvas.com/editor/scene/338867
