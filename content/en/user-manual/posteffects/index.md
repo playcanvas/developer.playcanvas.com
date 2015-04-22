@@ -4,15 +4,11 @@ template: page.tmpl.html
 position: 9
 ---
 
-<div class="alert alert-warning">
-In the new PlayCanvas Editor we have currently disabled Post Effect support. It will be returning soon. In the meantime, please post a question on the <a href="http://forum.playcanvas.com/">forum</a> to ask about how to use post-effects.
-</div>
-
 PlayCanvas has built-in support for post-processing effects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
 
 We have implemented post effects as external scripts that you can add to an Entity that has a [Camera][1] component attached. To easily add built-in post effects to a camera, simply right click on the camera entity in the hierarchy and select the desired post effect from the list:
 
-<img alt="Adding built-in post effects" src="/images/platform/builtin_posteffects.png"></img>
+<img alt="Adding built-in post effects" src="/images/platform/builtin_posteffects.jpg"></img>
 
 You can also create your own post effects - for examples have a look at the built-in effects on [GitHub][2].
 
