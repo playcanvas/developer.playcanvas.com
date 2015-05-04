@@ -5,7 +5,7 @@ template: page.tmpl.html
 
 In order to learn the basics of PlayCanvas Platform, let's build the following simple 3D web app:
 
-<iframe id='cube-frame' src="http://apps.playcanvas.com.s3-website-eu-west-1.amazonaws.com/playcanvas/tutorials/spinning_cube/"></iframe>
+<iframe  width="640" height="480" src="http://playcanv.as/b/fPYP6Swg" allowfullscreen></iframe>
 
 ## Your Profile
 
@@ -17,40 +17,47 @@ Once you've signed in you will be greeted with your profile page. Your profile p
 
 A Project is a collection of:
 
-* **Packs** - An collection [Entities][3] used to build up a part of your game. A Pack could be a single level or your entire game. It depends.
+* **Scenes** - An hierarchy of [Entities][3] used to build up your game. A Scene could be a single level or your entire game. It depends.
 * **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
-* **Code** - Your source code. You can either write code using the PlayCanvas built-in code editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
-* **Exports** and **Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
+* **Scripts** - Your source code. You can either write code using the PlayCanvas built-in script editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
+* **Published Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
 
 ## Creating a New Project
 
 On your profile page, click on the PROJECTS tab and click on 'Create a Project'. This takes you to a page where you set the details of your new project:
 
-* **Starter Kit** - Starter kits are great ways to get a project up and running quickly. If you want to create a platformer or simply display a 3D model that you've made, you can use a starter kit.
-* **Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at http://playcanvas.com/joebloggs/spacewar
-* **Description** - A short description of your project that will appear on the main project page.
-* **Private** - The project visibility. By default, new projects are public allowing other community members to check out your work. Checking this option will allow you to work in private but note that you will need a [Pro account][4] to use this feature.
+* **Project Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at https://playcanvas.com/joebloggs/spacewar
+* **Description** - A short description of your project that is displayed when you share a published build to social media.
+* **Visibility** - By default, new projects are public allowing other community members read access to your work. Selecting PRIVATE will allow you to work in private but note that you will need a [Pro account][4] to use this feature.
 
-Choose "No Starter kit" and set a name and description for your project. Then click the "Create" button and you are taken to the project home page.
+Set a name and description for your project. Then click the CREATE button and you are taken to the project home page.
 
 ## A Simple Example: Spinning Cube
 
 Now we're ready to build a simple 3D web app: a spinning box!
 
-The first thing to do is create a new pack. A pack represents the data required to start up the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one pack. Therefore, on the project home page, select the 'New Pack' button at the top right of the 'designer' tab. This opens a new browser tab and fires up the visual editor: PlayCanvas Designer.
+The first thing to do is create a new scene. A scene represents the data required to start up the PlayCanvas engine. It could represent an entire game or perhaps a single level of a game. It's up to you, but you will require at least one scene. Therefore, on the project home page, select the EDITOR button in the header. This opens a the Scene Selection dialog.
 
-### Packs, Entities and Components
+![Scene Selection][5]
 
-A PlayCanvas Pack is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the 'Pack Explorer' panel in the Designer's interface. It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
+A new project automatically contains a single scene named 'Untitled'. Select the 'Untitled' link to open the scene in the PlayCanvas Editor.
 
-![Pack Explorer][5]
+![Editor][6]
+
+### Scenes, Entities and Components
+
+A PlayCanvas Scene is effectively a collection of 'things' that make up your app. We call these things Entities and they represent the functional objects in your app: a vehicle, a character, a light, a camera, etc. Entities are shown in the HIERARCHY panel in the Editor's interface.
+
+![Hierarchy][7]
+
+It's represented by a tree control because entities are hierarchical. You can parent one to another and if the parent moves, the children move with it.
 
 Entities are built from Components. A Component powers an Entity with a particular piece of functionality. For example, a Component can add a graphical model to an Entity, it can animate the model, it can add a light source to an Entity, it can add an audio source, and so the list goes on.
 
-Let's begin by naming our new Pack:
+Let's begin by naming our new Scene:
 
-* Select the root node 'Untitled' in the Pack Explorer.
-* In the Attribute Editor below the Pack Explorer, rename the Untitled root node to something more meaningful such as 'Spinning Cube' and hit Enter.
+* Select the cog icon in the bottom left of the Editor toolbar.
+* In the INSPECTOR panel, set the Scene Name property to something like 'Spinning Cube' and hit Enter.
 
 Now, for our spinning box experiment, we will need 3 Entities:
 
@@ -58,39 +65,31 @@ Now, for our spinning box experiment, we will need 3 Entities:
 * A camera (to view the box).
 * A light (to give some definition to the box).
 
-Fortunately, Designer automatically creates a directional light and a camera for you when a new pack is created. So here are the steps to create the box:
+Fortunately, the Editor automatically creates a directional light and a camera for you when a new pack is created. So here are the steps to create the box:
 
-* Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new child box entity of 'Spinning Cube' in the Pack Explorer.
+* Right click on the Root node in the HIERARCHY panel to bring up the context menu and select 'New Entity' -> 'Box'. This creates a new child box entity of 'Root' in the HIERARCHY.
 
-Now let's set up the camera so that it is viewing the box properly:
-
-* Select the camera entity, entitled 'Camera', in the Pack Explorer to activate the Attribute Editor.
-* In the Attribute Editor, set 'Position:' to 0, 0, 5.
-
-Finally, let's set up the light to light the box from an angle:
-
-* Select the light entity, entitled 'Directional Light', in the Pack Explorer to activate the Attribute Editor.
-* In the Attribute Editor, set 'Rotation:' to 30, 0, 30 to reorient the light.
+![New Box][8]
 
 You should now have someone similar to the following in the 3D View:
 
-<img alt="Box in 3D View" width="640" src="/images/platform/designer_cube.png"></img>
+![Box In Editor][9]
 
-### Save your work
+### Save your work?
 
-Now would seem to be a good time to save your work, right? In actual fact, PlayCanvas Designer continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decide to close the Designer tab at any point. You can also use the 'Fork' button at the top-right of a project page to create a copy of the whole project.
+Now would seem to be a good time to save your work, right? In actual fact, the PlayCanvas Editor continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decide to close the Editor tab at any point. You can also use the 'Fork' button at the top-right of a project dashboard page to create a copy of the whole project.
 
 ### Previewing Your Work
 
-From Designer, you can quickly preview your work at any time. To do this, press either the 'Launch' or 'Launch Local' button (more on these later) on the toolbar.
+From the Editor, you can quickly preview your work at any time. To do this, press either the 'Launch' button on the toolbar.
 
-![Launch Buttons][6]
+![Launch Buttons][10]
 
 This will open a new tab and fire up your web app. Based on the steps above, you should see something similar to what is shown below:
 
-<img alt="Cube in engine" width="640" src="/images/platform/designer_cube_preview.jpg"></img>
+![Box Launched][11]
 
-Once you are done with previewing your pack, you can switch back to Designer and stop your application. The Launch option will display a Stop icon while the app is running, or you can simply close the application's tab.
+Once you are done with previewing your Scene, you can either close the Launch tab or simply switch back to the Editor tab. Note that if you leave the Launch tab open, a live link persists between the Editor and the running app. One method of working it to tear off the Launch tab and place it side by side with the Editor tab which makes previewing any live updates much easier.
 
 ### Scripting Entities
 
@@ -100,16 +99,18 @@ The real power and versatility of PlayCanvas comes from the ability to assign sc
 
 #### Hosted or Local code?
 
-There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in code editor, which saves directly to our servers. The second is to edit code in you favourite text editor and run a local web-server.
+There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in script editor, which saves directly to the PlayCanvas servers. The second is to edit code in you favourite text editor and run a local web-server.
 
-For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow][7] page.
+For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow][12] page.
 
 First we need to create a script component and create a new script to edit.
 
-* Select the entity called 'Box' in the Pack Explorer.
-* Select the following menu item: 'Entity' -> 'Add Component' -> 'script'.
-* In the Script section of the Attribute Editor, click the top line of the URLs field to edit the filename. Set the URL attribute of the script component to 'spinner.js' and hit Enter.
-* Click on the name of the script 'spinner.js' and the PlayCanvas code editor will open in a new tab.
+* Right click the entity called 'Box' in the HIERARCHY panel and select the following menu item: 'Add Component' -> 'Script'.
+
+![Add Script][13]
+
+* In the Script section in INSPECTOR, click the top line of the URLs field to edit the filename. Set the Add attribute of the script component to 'spinner.js' and hit Enter.
+* Click on the name of the script 'spinner.js' and the PlayCanvas script editor will open in a new tab.
 
 In the code editor update the script template to match the code below (you just need to fill in the body of the update function):
 
@@ -132,14 +133,20 @@ pc.script.create("spinner", function (app) {
 });
 ~~~
 
-Once you've edited the code, press the "Save" button in the code editor and switch back to the Designer tab.
+Once you've edited the code, press the "Save" button in the code editor and switch back to the Editor tab. Note that the script editor actually does require you to explicitly save, unlike the main Editor application.
 
-With that done, you can select the Launch button from the toolbar once again. This time, you should see your box rotating on the spot. Congratulations, you have built your first PlayCanvas app!
+With that done, you can select the Launch button again. This time, you should see your box rotating on the spot. Congratulations, you have built your first PlayCanvas app!
 
 [1]: /images/platform/profile.png "Profile"
 [2]: /images/platform/project_list.jpg "Project List"
 [3]: /user-manual/glossary/#entity
 [4]: https://playcanvas.com/plans
-[5]: /images/platform/pack_explorer.png "Pack Explorer"
-[6]: /images/platform/launch_buttons.png "Launch Buttons"
-[7]: /user-manual/scripting/workflow/
+[5]: /images/getting_started/scene_selection.png "Scene Selection"
+[6]: /images/getting_started/editor.png "Editor"
+[7]: /images/getting_started/hierarchy.png "Hierarchy"
+[8]: /images/getting_started/new_box.png "New Box"
+[9]: /images/getting_started/box_in_editor.png "Box In Editor"
+[10]: /images/getting_started/launch_buttons.png "Launch Buttons"
+[11]: /images/getting_started/box_launched.png "Box Launched"
+[12]: /user-manual/scripting/workflow/ "Scripting Workflow"
+[13]: /images/getting_started/add_script.png "Add Script"
