@@ -8,7 +8,7 @@ There are two ways for you to run your application scripts while developing Play
 
 ## PlayCanvas Code Directory
 
-![code directory][code_directory]
+<img src="/images/platform/playcanvas_repo.jpg" style="max-width: 100%" />
 
 By far the simplest way of developing scripts for PlayCanvas applications is by using the built-in code editor and storing your scripts in PlayCanvas so that the server can access them at all times.
 
@@ -18,7 +18,7 @@ This is how your Project will be set up by default when you create it. If you ha
 
 <img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-To add a new script, open your Pack in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
+To add a new script, either click on the Add Script button or open your Scene in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
 
 Alternatively you can drag and drop a script from the asset panel into the script component.
 
@@ -81,20 +81,40 @@ accessible to the PlayCanvas servers so that it can be included in any exported 
 
 For these scenarios we provide support for external code repositories. That is, a connection between your source control system and our servers.
 
-![code repository][code_repository]
+<img src="/images/platform/external_repo.jpg" style="max-width:100%" />
 
-We provide simple integration with two popular third-party code hosting sites, [Github](http://github.com) and [Bitbucket](http://bitbucket.org). To access your code we first need you to authorize PlayCanvas with your chosen service. You can do this on your [account](https://playcanvas.com/account) page. Just click the authorize button for the services you wish to use.
+We fully support Git and Mercurial repositories.
 
-Once the service is authorized, you setup your project with the particular repository you wish to use. Go to your project's code page; enter the username and repository name for your application; then click the Update button.
+In order to clone a repository you need to enter its clone URL in the topmost input field. Then just hit Enter. Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status is 'green', the repository has been cloned.
 
-Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status says 'ready', the code is synced.
+Examples of valid clone URLs are any of these:
+* `ssh://hg@bitbucket.org/username/repository`
+* `https://username@bitbucket.org/username/repository`
+* `git@github.com:username/repository.git`
+* `https://github.com/username/repository.git`
+* Any other Git or Mercurial URL as long as it's accessible from Playcanvas.
 
-Now when you run your application from the PlayCanvas Editor the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Packs which have a code repository set up the code will be included in your exports.
+Now when you run your application from the PlayCanvas Editor the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Scenes which have a code repository set up the code will be included in your exports.
 
-<div class="pc-notice-message pc-small">
-<p>Code Repositories are only updated when you press the Update button on the code settings page.</p>
-<p>Currently we support public or private repositories hosted on Bitbucket (mercurial only) or Github.</p>
-</div>
+## How to give permissions for all repositories
+
+The Public Key that is shown in the box underneath your URL is used to get permissions to clone a repository. For example to get permissions to clone any repository that you have access to on <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>, you need to:
+
+1. Copy your Public Key.
+2. Go to your <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>, account.
+3. Add your public key in the SSH Keys section.
+4. Sync your repository.
+
+You only need to do this once for your account.
+
+## How to give permissions for a single repository
+
+If instead you only want access to a specific repository, you can instead:
+
+1. Copy your Public Key.
+2. Go to your repository settings on <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>,.
+3. Add your public key in the Deploy Keys section.
+4. Sync your repository.
 
 ## Switching
 
@@ -111,7 +131,7 @@ Exporting packs will only use source code resources on the PlayCanvas servers - 
 [server_windows]: /downloads/localserver.bat
 [launch_buttons]: /images/platform/launch_buttons.png
 [script_picker]: /images/platform/component_script.png
-[code_directory]: /images/platform/playcanvas_code_repo2.png
-[code_repository]: /images/platform/bitbucket_code_repo2.png
 [scripts_explorer]: /user-manual/designer/scripts-explorer
 [code_tab]: /user-manual/dashboard/code
+
+
