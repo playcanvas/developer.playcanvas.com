@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 3
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/custom_shaders?overlay=false" ></iframe>
+<iframe src="http://playcanv.as/b/wUcIJUSV" allowfullscreen></iframe>
 
 *This tutorial uses a custom shader on a material to create a dissolve effect in GLSL*
 
@@ -128,7 +128,7 @@ Once we've got the shader definition we create a new Shader and a new Material a
 
 ~~~javascript~~~
     // Get the "clouds" height map from the assets and set the material to use it
-    this.heightMap = app.assets.getAssetByResourceId(this.maps[0]).resource;
+    this.heightMap = app.assets.get(this.maps[0]).resource;
     this.material.setParameter('uHeightMap', this.heightMap);
 ~~~
 
