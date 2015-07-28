@@ -37,10 +37,6 @@ Talk about your game, show off your latest project, seek out new team members, o
 
 If you've got a technical question about using PlayCanvas, the API or any part of the platform, you can use [PlayCanvas Answers][11] to get help.
 
-#### IRC
-
-We're often available (UK time) on the [#playcanvas][12] channel on [freenode][13].
-
 [1]: /user-manual
 [2]: /getting-started
 [3]: /tutorials
@@ -52,5 +48,3 @@ We're often available (UK time) on the [#playcanvas][12] channel on [freenode][1
 [9]: /engine
 [10]: http://forum.playcanvas.com/
 [11]: http://answers.playcanvas.com/
-[12]: http://webchat.freenode.net/?channels=playcanvas&uio=d4
-[13]: http://freenode.net

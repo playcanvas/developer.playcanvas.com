@@ -8,10 +8,6 @@ position: 3
 
 The Asset dashboard lists all the Assets that are in your Project.
 
-## Uploading Assets
-
-You can upload assets by dropping files on the dashboard, or by clicking the New Asset button.
-
 ## Source Assets and Target Assets
 
 By default only Source Assets are shown in dashboard. You can use the filter to show and hide Target Assets too.
@@ -22,3 +18,4 @@ There is full explanation about the difference between Source and Target assets 
 
 [1]: /user-manual/assets/
 [2]: /images/platform/dashboard_assets.png
+[3]: /user-manual/designer/assets/

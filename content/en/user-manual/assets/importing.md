@@ -8,14 +8,6 @@ position: 1
 
 To upload an asset to PlayCanvas, follow these steps:
 
-### In the Dashboard
-
-* Navigate to the home page of the project to which the asset will be added.
-* Select the 'Assets' tab and the project's asset list will be displayed.
-* Drag and drop and asset file from your computer onto the top of the asset form. The drop area will expand to accept your file.
-* Alternatively, select the 'New Asset' link to navigate to the upload form.
-* The asset will now start to upload.
-
 ### In the Editor
 
 * Drag and drop your asset file into the Asset panel in the Editor window.
