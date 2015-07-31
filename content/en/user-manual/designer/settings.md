@@ -13,6 +13,8 @@ The Settings panel lets you to set up global properties for your scene. The prop
 * Environment
   * Ambient Light Color
   * Skybox
+  * Skybox Intensity
+  * Skybox Mip
 * Camera
   * Gamma correction
   * Tonemapping
@@ -22,6 +24,8 @@ The Settings panel lets you to set up global properties for your scene. The prop
   * Density
   * Distance
   * Color
+* Loading Screen
+  * Script
 
 The settings panel is accessed using the <img src="/images/user-manual/cog.jpg" style="text-align: middle;" /> button in the bottom right of the Editor.
 
@@ -50,6 +54,14 @@ The Skybox is a [cubemap][1] asset that is rendered behind your 3D scene. This l
 To add a skybox, create a cubemap asset and then assign it to the cubemap slot in the settings panel.
 
 Note, if you are using a Prefiltered Cubemap, the skybox will be used as the default environment map for all Physical materials.
+
+### Skybox Intensity
+
+This is a slider that controls the intensity or brightness of the skybox. The value can range from 0 (totally black) to 32 (brightest).
+
+### Skybox Mip
+
+When using a Prefiltered Skybox, you can select the skybox mip that you want to display. Each mip is a more blurred version of the original Skybox. You can use this to show a more blurred / abstract version of your original Skybox for example for artistic purposes.
 
 ## Camera
 
@@ -104,6 +116,99 @@ The distance in scene units from the viewpoint from where the fog reaches a maxi
 ### Fog Density
 
 The fog density controls the rate at which fog fades in for Exp and Exp2 fog types. Larger values cause fog to fade in more quickly. Fog density must be a positive number.
+
+## Loading Screen (Available for ORG users only)
+
+## Script
+
+Here you can set the script that creates the loading screen of you application. Here is an example of such a script:
+
+```
+pc.script.createLoadingScreen(function (app) {
+    var showSplash = function () {
+        // splash
+        var splash = document.createElement('div');
+        splash.id = 'application-splash';
+        document.body.appendChild(splash);
+
+        var logo = document.createElement('img');
+        logo.src = 'logo.png';
+        splash.appendChild(logo);
+
+        // progress bar
+        var container = document.createElement('div');
+        container.id = 'progress-container';
+        splash.appendChild(container);
+
+        var bar = document.createElement('div');
+        bar.id = 'progress-bar';
+        container.appendChild(bar);
+    };
+
+    var hideSplash = function () {
+        var splash = document.getElementById('application-splash');
+        splash.parentElement.removeChild(splash);
+    };
+
+    var setProgress = function (value) {
+        var bar = document.getElementById('progress-bar');
+        if(bar) {
+            value = Math.min(1, Math.max(0, value));
+            bar.style.width = value * 100 + '%';
+        }
+    };
+
+    var createCss = function () {
+        var css = [
+            '#application-splash {',
+            '    position: absolute;',
+            '    top: 42%;',
+            '    width: 10%;',
+            '    left: 45%;',
+            '}',
+
+            '#application-splash img {',
+            '    width: 100%;',
+            '}',
+
+            '#progress-container {',
+            '    width: 100%;',
+            '    height: 2px;',
+            '    position: absolute;',
+            '    background-color: #444;',
+            '}',
+
+            '#progress-bar {',
+            '    width: 0%;',
+            '    height: 100%;',
+            '    background-color: white;',
+            '}'
+        ].join('\n');
+
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        if (style.styleSheet) {
+          style.styleSheet.cssText = css;
+        } else {
+          style.appendChild(document.createTextNode(css));
+        }
+
+        document.head.appendChild(style);
+    };
+
+
+    createCss();
+
+    showSplash();
+
+    app.on("preload:end", function () {
+        app.off("preload:progress");
+    });
+    app.on("preload:progress", setProgress);
+    app.on("start", hideSplash);
+});
+
+```
 
 [1]: /user-manual/assets/cubemaps
 [2]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
