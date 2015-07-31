@@ -12,11 +12,11 @@ In this tutorial, we'll walk you through how to create a controllable first-pers
 
 This tutorial expands on the [first-person camera][1] tutorial. If you haven't completed that, you should head over there now.
 
-## The Pack setup
+## The Scene setup
 
-![Pack Explorer][2]
+![Hierarchy][2]
 
-You should look at the [Pack][3] for this tutorial yourself in the Editor. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][1] from the previous tutorial.
+You should look at the [Hierarchy][3] for this tutorial yourself in the Editor. The setup is very simple, pay particular attention to the Character Entity. The Character Entity has two scripts attached which is where the code for the character controller are. There is an additional script on the Camera Entity which is similar to the [first-person camera][1] from the previous tutorial.
 
 ## The Camera Script
 

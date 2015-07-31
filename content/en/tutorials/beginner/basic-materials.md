@@ -5,13 +5,13 @@ template: tutorial-page.tmpl.html
 
 Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.
 
-In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. Before starting you'll first create a Project and a new Pack, just like in the [Getting Started][1] guide.
+In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. Before starting you'll first create a Project and a new Scene, just like in the [Getting Started][1] guide.
 
 ## Step 1 - Add a cube to your scene
 
-Select the root Entity of your Pack. At the start this will be called "Untitled". In the Attribute Editor rename the Entity to something meaningful, like "Material Tutorial".
+Select the root Entity of your Scene. At the start this will be called "Root". In the Attribute Editor rename the Entity to something meaningful, like "Material Tutorial".
 
-Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new child box Entity in the Pack Explorer.
+Select 'New Entity' -> 'New Box' from the 'Entity' menu. This creates a new child box Entity in the Hierarchy.
 
 ## Step 2 - Create a new Material
 
@@ -68,7 +68,7 @@ You'll see something that looks a little like this:
 
 Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
 
-See the [Basic Materials project pack here][6] in the [PlayCanvas tutorials project][7]. Left-click the 'Box' item in the Pack Explorer and press F to focus if the view is zoomed-out too far.
+See the [Basic Materials project scene here][6] in the [PlayCanvas tutorials project][7]. Left-click the 'Box' item in the Hierarcy and press F to focus if the view is zoomed-out too far.
 
 [1]: /getting-started
 [2]: /images/content_creation/add_material.png

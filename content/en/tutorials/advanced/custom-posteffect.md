@@ -230,7 +230,7 @@ pc.script.create('posteffect_example', function (app) {
 
 For more tutorials on custom shaders look [here][6].
 
-See the [Custom Post Effects Pack here][7].
+See the [Custom Post Effects Scene here][7].
 
 
 [2]: /engine/api/stable/symbols/pc.Shader.html

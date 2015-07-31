@@ -16,7 +16,7 @@ The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It
 
 Enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows.
 
-Select the lights in the Pack Explorer and check the 'Cast Shadows' option:
+Select the lights in the Hierarchy and check the 'Cast Shadows' option:
 
 <img src="/images/user-manual/components/component-model.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 

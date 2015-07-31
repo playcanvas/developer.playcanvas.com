@@ -7,7 +7,7 @@ template: tutorial-page.tmpl.html
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Pack in full in the [Collision & Triggers Pack][1] in the [PlayCanvas Tutorials Project][2].
+This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Scene in full in the [Collision & Triggers Scene][1] in the [PlayCanvas Tutorials Project][2].
 
 ## The Collision Component
 
@@ -32,7 +32,7 @@ You can see the trigger volume underneath the ramp displayed as a blue outline.
 
 A rigid body is a physical presence in your game world. You can set it up with real physics properties like Mass and Friction; it will collide with other rigid bodies and respond in a realistic manner.
 
-To create a rigid body in your Pack, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
+To create a rigid body in your Scene, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
 
 ![rigidbody component][4]
 

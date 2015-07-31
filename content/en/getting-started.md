@@ -65,7 +65,7 @@ Now, for our spinning box experiment, we will need 3 Entities:
 * A camera (to view the box).
 * A light (to give some definition to the box).
 
-Fortunately, the Editor automatically creates a directional light and a camera for you when a new pack is created. So here are the steps to create the box:
+Fortunately, the Editor automatically creates a directional light and a camera for you when a new scene is created. So here are the steps to create the box:
 
 * Right click on the Root node in the HIERARCHY panel to bring up the context menu and select 'New Entity' -> 'Box'. This creates a new child box entity of 'Root' in the HIERARCHY.
 

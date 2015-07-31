@@ -71,7 +71,7 @@ You will see a directory of files. Like this:
 
 ![served directory](/images/platform/localserver.png "Local server directory")
 
-Launching packs from the PlayCanvas Editor using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
+Launching scenes from the PlayCanvas Editor using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
 
 ## Code Repository
 
@@ -124,7 +124,7 @@ You can easily switch between using local code and a code repository when using 
 
 **Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local)** will launch against a locally running server
 
-Exporting packs will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
+Exporting scenes will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
 
 [server_osx_linux]: /downloads/localserver
 [python]: http://www.python.org/download/

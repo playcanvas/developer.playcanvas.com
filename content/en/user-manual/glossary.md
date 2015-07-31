@@ -43,13 +43,11 @@ more than one axis at once, e.g. the translate gizmo features clickable plane ic
 <h2 id="material">Material</h2>
 A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Editor, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
 
-<h2 id="pack">Pack</h2>
-A Pack is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Pack may represent your entire game, or just a single level or part of your game.
-A Pack is defined by creating an Entity that has a Pack Component. When you create a new Pack in the [PlayCanvas Editor](#editor) the root of the tree visible in the [Pack Explorer][10]
-is an Entity with a Pack Component.
+<h2 id="scene">Scene</h2>
+A Scene is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Scene may represent your entire game, or just a single level or part of your game.
 
 <h2 id="editor">PlayCanvas Editor</h2>
-The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Packs][11]. The PlayCanvas Editor is used to manipulate [Entities][12]
+The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Scenes][11]. The PlayCanvas Editor is used to manipulate [Entities][12]
 
 <h2 id="engine">PlayCanvas Engine</h2>
 The PlayCanvas Engine is a javascript library which provides all the functionality you will need to create an interactive 3D application or game.
@@ -78,7 +76,7 @@ A Transformation Matrix is a mathematical matrix that represents a set of linear
 [8]: #engine
 [9]: /engine/api/stable
 [10]: #explorer
-[11]: #pack
+[11]: #scene
 [12]: #entity
 [13]: #target_asset
 [14]: #source_asset

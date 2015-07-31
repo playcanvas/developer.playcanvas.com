@@ -17,11 +17,11 @@ The [AudioSource][1] Component plays an audio asset like a Wave, MP3 or Ogg Vorb
 
 The [AudioListener][2] Component determines how an AudioSource is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
 
-## Pack Setup
+## Scene Setup
 
-![Pack Explorer][5]
+![Hierarchy][5]
 
-You should look at the [Pack][3] for this tutorial yourself in the Editor. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
+You should look at the [Hierarchy][3] for this tutorial yourself in the Editor. The setup is quite simple, pay particular attention to the *audiosource* Components on *Source One* and *Source Two*. Also the note, that there is an *audiolistener* Component attached to the *Camera* Entity.
 
 ## Creating Sources
 

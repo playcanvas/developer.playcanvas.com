@@ -8,7 +8,7 @@ position: 3
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
-The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Pack. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
 
 ## Altering Attributes
 
@@ -76,7 +76,7 @@ top and bottom sides of the camera [frustum][2]
 
 ## Current Camera
 
-Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your pack; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
+Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your Scene; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
 
 ~~~javascript~~~
 pc.script.create('camera_manager', function (app) {
@@ -124,9 +124,9 @@ pc.script.create('camera_manager', function (app) {
 });
 ~~~
 
-In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Pack) and the space key activates the central camera.
+In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Scene) and the space key activates the central camera.
 
-We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `app.root.findByName()` to search through all the entities in the pack).
+We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `app.root.findByName()` to search through all the entities in the Scene).
 
 We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Editor scene)][3].
 
