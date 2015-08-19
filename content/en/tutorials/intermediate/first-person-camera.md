@@ -10,11 +10,11 @@ position: 4
 
 In this tutorial, we'll create a simple script for a first-person camera. That is, a scene where it is like the camera is your eyes and you can look around with by moving the mouse and move around using the cursor keys.
 
-## The Pack setup
+## The Scene setup
 
-![Pack Explorer][1]
+![Hierarchy][1]
 
-You should look at the [Pack][2] for this tutorial yourself in the Editor. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
+You should look at the [Hierarchy][2] for this tutorial yourself in the Editor. The setup is very simple, pay particular attention to the Camera Entity. The Camera Entity has a single script attached which where the code for the first person controls are.
 
 ## The Camera script
 

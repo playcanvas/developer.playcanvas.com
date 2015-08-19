@@ -8,13 +8,13 @@ position: 3
 
 To view the scene created by your PlayCanvas application a Camera Entity is used to render it to the screen.
 
-In order to run your Pack from the PlayCanvas Designer, you must add at least one active Camera Entity to your Pack.
+In order to run your Scene from the PlayCanvas Editor, you must add at least one active Camera Entity to your Scene.
 
 ## Creating a Camera Entity
 
 To create a new Camera Entity, you need to add a Camera [Component][1] to an Entity.
 
-* Select the root Entity of your Pack in the Entity Explorer
+* Select the root Entity of your Scene in the Entity Explorer
 * Create a new Entity by selecting *New Entity* from the *Entity* menu.
 * Add a Component by selecting *New Component* from *Component* menu
 * Choose *Camera* when you are prompted to choose which type of Component to create
@@ -28,7 +28,7 @@ Like all Components, the Camera Component has a set of properties which alter it
 
 ### `Enabled`
 
-If the enabled property is true, then the camera will render the scene to its rendering buffer when the Pack loads. Multiple cameras can be enabled at the same time. This is useful in situations where you want to implement a split-screen game or a mini-map, for example. The priority property determines the order in which the enabled cameras are rendered.
+If the enabled property is true, then the camera will render the scene to its rendering buffer when the Scene loads. Multiple cameras can be enabled at the same time. This is useful in situations where you want to implement a split-screen game or a mini-map, for example. The priority property determines the order in which the enabled cameras are rendered.
 
 ### `Clear Color Buffer`
 

@@ -20,7 +20,7 @@ To publish you will need to have at least one scene in your project.
 * In your project dashboard, select the 'PUBLISH' tab.
 * Click the PUBLISH button
 * Enter a name for this build. Set it to some useful like "version 1" or "With highscore table".
-* Select the Packs you want to include in your app from the list. Notice that the Primary Pack (the one with the blue banner icon), is always included in your app and it will be the first pack loaded when your app is launched.
+* Select the Scenes you want to include in your app from the list. Notice that the Primary Scene (the one with the blue banner icon), is always included in your app and it will be the first scene loaded when your app is launched.
 * Click 'PUBLISH NOW'
 * You will see a new app created in the PUBLISH tab. Wait until it finishes processing.
 * Your build is now live.

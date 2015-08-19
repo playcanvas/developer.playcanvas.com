@@ -158,7 +158,7 @@ pc.script.create('entity_creator', function (app) {
 
 This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
 
-See [the full pack here][2].
+See [the full scene here][2].
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/329669
