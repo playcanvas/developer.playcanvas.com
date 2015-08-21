@@ -137,6 +137,27 @@ pc.script.attribute('sound', 'asset', [], {
     </tr>
 </table>
 
+### Entity
+
+The value is an Entity in the Hierarchy.
+
+#### Example
+
+~~~js~~~
+pc.script.attribute('myEntity', 'entity', null, {
+    displayName: "Entity"
+});
+~~~
+
+#### Options
+
+<table class="table table-striped">
+    <tr><th>Option</th><th>Description</th></tr>
+    <tr>
+        <td>displayName</td><td>The name to show in the Editor.</td>
+    </tr>
+</table>
+
 ### RGB Color
 
 The value is a color with no alpha (transparency).
@@ -233,8 +254,54 @@ pc.script.attribute('pet', 'enumeration', 0, {
     </tr>
 </table>
 
+### Curve
 
+The value is a [pc.Curve][4] or a [pc.CurveSet][5] if there are multiple curves.
+
+#### Example
+
+~~~js~~~
+pc.script.attribute('speed', 'curve', null, {
+    min: 0,
+    max: 5
+});
+pc.script.attribute('position', 'curve', null, {
+    curves: ['x', 'y', 'z']
+});
+~~~
+
+#### Options
+
+<table class="table table-striped">
+    <tr><th>Option</th><th>Description</th></tr>
+    <tr><td>displayName</td><td>The name to show in the Editor.</td></tr>
+    <tr><td>min</td><td>The minimum value for a curve.</td></tr>
+    <tr><td>max</td><td>The maximum value for a curve.</td></tr>
+    <tr><td>curves</td><td>An array of strings that define the number and name of each channel in a curve. This can take up to 4 strings.</td></tr>
+</table>
+
+### Color Curve
+
+The value is a [pc.Curve][4] or a [pc.CurveSet][5] if there are multiple color channels.
+
+#### Example
+
+~~~js~~~
+pc.script.attribute('color', 'colorcurve', null, {
+    type: 'rgba'
+});
+~~~
+
+#### Options
+
+<table class="table table-striped">
+    <tr><th>Option</th><th>Description</th></tr>
+    <tr><td>displayName</td><td>The name to show in the Editor.</td></tr>
+    <tr><td>type</td><td>The type of the color curve. Can be one of 'r', 'g', 'b', 'rgb' or 'rgba'.</td></tr>
+</table>
 
 [1]: /user-manual/scripting/workflow
 [2]: /images/scripting/refresh_attributes.png
 [3]: /images/scripting/script_component_attribute.png
+[4]: /engine/api/stable/symbols/pc.Curve.html
+[5]: /engine/api/stable/symbols/pc.CurveSet.html
