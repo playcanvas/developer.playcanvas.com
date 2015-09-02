@@ -128,6 +128,7 @@ def po_2_md(po_path, out_path):
     for entry in pofile:
         for occ in entry.occurrences:
             strings.append({
+                'msgid': entry.msgid,
                 'msgstr': entry.msgstr,
                 'line': int(occ[1])
             })
@@ -140,7 +141,12 @@ def po_2_md(po_path, out_path):
 
     with open(out_path, 'w') as f:
         for para in ordered:
-            f.write(para['msgstr'].encode('utf-8'))
+            msg = para['msgstr'].encode('utf-8')
+            if msg:
+                f.write(msg)
+            else:
+                # no data? use default original
+                f.write(para['msgid'].encode('utf-8'))
             f.write('\n\n')
 
 def po_2_js(po_path, out_path):
@@ -309,12 +315,14 @@ def tx_set(dir):
                     print(r)
 
 def tx_push():
+    '''push pot files to transifex'''
     cmd = ['tx', 'push', '-s']
     r = subprocess.check_output(cmd)
     if _verbose:
         print(r)
 
 def tx_pull():
+    '''pull all from transifex'''
     cmd = ['tx', 'pull', '-a']
     r = subprocess.check_output(cmd)
     if _verbose:

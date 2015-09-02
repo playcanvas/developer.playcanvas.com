@@ -23,7 +23,7 @@ PlayCanvas 開発者サイトへようこそ。
 
 ## Engine 利用者
 
-[Engine][9] - こちらはPlayCanvasエンジンを利用される方のためのコンテンツです。
+[Engine][9] - This guide will get you going if you are only using the Engine and not the PlayCanvas Editor.
 
 <hr />
 
@@ -37,10 +37,6 @@ PlayCanvas 開発者サイトへようこそ。
 
 PlayCanvas、API、プラットフォームについての質問など、PlayCanvasを利用する上での技術的な質問があれば、 [PlayCanvas Answers][11] を使って問題を解決してください。 
 
-#### IRC
-
-[freenode][13] にて [#playcanvas][12] チャネル (UK time) を公開しています。
-
 [1]: /user-manual
 [2]: /getting-started
 [3]: /tutorials
@@ -52,6 +48,4 @@ PlayCanvas、API、プラットフォームについての質問など、PlayCan
 [9]: /engine
 [10]: http://forum.playcanvas.com/
 [11]: http://answers.playcanvas.com/
-[12]: http://webchat.freenode.net/?channels=playcanvas&uio=d4
-[13]: http://freenode.net
 

@@ -595,3 +595,81 @@ source_file = po/titles.js.en-US.po
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-user-manual-assets-css]
+file_filter = po/user-manual/assets/css.<lang>.po
+source_file = po/user-manual/assets/css.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-html]
+file_filter = po/user-manual/assets/html.<lang>.po
+source_file = po/user-manual/assets/html.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-loading_and_streaming]
+file_filter = po/user-manual/assets/loading_and_streaming.<lang>.po
+source_file = po/user-manual/assets/loading_and_streaming.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-phong-material]
+file_filter = po/user-manual/assets/phong-material.<lang>.po
+source_file = po/user-manual/assets/phong-material.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-physical-material]
+file_filter = po/user-manual/assets/physical-material.<lang>.po
+source_file = po/user-manual/assets/physical-material.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-designer-hierarchy]
+file_filter = po/user-manual/designer/hierarchy.<lang>.po
+source_file = po/user-manual/designer/hierarchy.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-designer-inspector]
+file_filter = po/user-manual/designer/inspector.<lang>.po
+source_file = po/user-manual/designer/inspector.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-designer-settings]
+file_filter = po/user-manual/designer/settings.<lang>.po
+source_file = po/user-manual/designer/settings.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-designer-viewport]
+file_filter = po/user-manual/designer/viewport.<lang>.po
+source_file = po/user-manual/designer/viewport.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-profile-account]
+file_filter = po/user-manual/profile/account.<lang>.po
+source_file = po/user-manual/profile/account.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-profile-home]
+file_filter = po/user-manual/profile/home.<lang>.po
+source_file = po/user-manual/profile/home.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-profile-projects]
+file_filter = po/user-manual/profile/projects.<lang>.po
+source_file = po/user-manual/profile/projects.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-cocoon_io]
+file_filter = po/user-manual/publishing/cocoon_io.<lang>.po
+source_file = po/user-manual/publishing/cocoon_io.en-US.po
+source_lang = en
+type = PO
+

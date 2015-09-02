@@ -230,7 +230,7 @@ pc.script.create('posteffect_example', function (app) {
 
 カスタムシェーダーのより詳しいチュートリアルは [こちら][6]。
 
-[カスタムポストエフェクトパック][7] はこちらから確認できます。
+See the [Custom Post Effects Scene here][7].
 
 [2]: /engine/api/stable/symbols/pc.Shader.html
 [4]: /engine/api/stable/symbols/pc.PostEffect.html
@@ -238,5 +238,5 @@ pc.script.create('posteffect_example', function (app) {
 [1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [6]: /tutorials/advanced/custom-shaders
 [5]: /engine/api/stable/symbols/pc.CameraComponent.html#postEffects
-[7]: http://playcanvas.com/designer/186/scene/338140
+[7]: https://playcanvas.com/editor/scene/338140
 
