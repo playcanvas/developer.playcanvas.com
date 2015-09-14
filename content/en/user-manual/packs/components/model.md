@@ -27,22 +27,9 @@ You can control a model component's properties using a [script component][2]. Th
 
 ## Customizing Materials
 
-<img src="/images/user-manual/material_overrides/model.png" style="max-width: 100%" />
-
-There are two ways to customize the materials of a model. You can click on Asset Materials to select the model Asset; there you can change the materials for every instance of the model.
-
-Alternatively, you can click on Entity Materials to customize the materials of the selected Entities only. Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
-
-<img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
-
-After selecting the mesh instance a new material picker will appear in the model component:
-
-<img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
-
-Then you can select a different material for this particular Entity:
-
-<img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
+You can learn how to customize the materials of your model [here][4].
 
 [1]: /images/platform/component_model.png
 [2]: /user-manual/packs/components/script
 [3]: /engine/api/stable/symbols/pc.ScriptComponent.html
+[4]: /user-manual/assets/materials/#assigning-materials

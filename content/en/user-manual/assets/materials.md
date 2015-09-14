@@ -32,15 +32,35 @@ You can select a material in the asset panel. You can also select materials from
 
 Generally, clicking on a material preview icon will take you to the material inspector.
 
-## Assigning Materals
+## Assigning Materials
+
+<img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+
+You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
+
+When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
+
+<br style="clear:both;" />
 
 <img src="/images/user-manual/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-You can modify which materials are assigned to where on a model using the Model Inspector. Selecting a model either from the asset panel or from the viewport.
-
-The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
+Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
 
 You can also drag and drop material Assets from the asset panel onto the material slot.
+
+<br style="clear:both;" />
+
+Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
+
+<img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
+
+After selecting the mesh instance a new material picker will appear in the model component:
+
+<img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
+
+Then you can select a different material for this particular Entity:
+
+<img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
 
 <br style="clear:both;" />
 
