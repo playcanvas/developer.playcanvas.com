@@ -4,7 +4,7 @@ template: page.tmpl.html
 position: 3
 ---
 
-The 'audiosource' component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
+The 'audiosource' component controls playback of an audio sample.
 
 <img src="/images/user-manual/components/component-audiosource.jpg" style="width: 300px" />
 
