@@ -26,11 +26,6 @@ Private projects are only visible to users who have been explicitly assigned rea
 Only users with premium accounts can access private projects
 </div>
 
-#### Private Assets
-
-If you want to make your project public, but you do not want to allow everyone to duplicate your assets, you can use the *Private Assets* setting. This will hide just the Source Assets from other users and disable Forking. In other regards the Project remains open to all.
-
-
 ## Application Settings
 
 #### Resolution
