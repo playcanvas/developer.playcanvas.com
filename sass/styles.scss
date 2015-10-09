@@ -92,6 +92,11 @@
         width: 640px;
         height: 480px;
         border: none;
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
     }
 
     pre code {
