@@ -10908,18 +10908,24 @@ h1, h2, h3 {
     width: 640px;
     height: 480px;
     border: none;
+    max-width: 100%;
   }
 
-  /* line 97, ../../sass/styles.scss */
+  /* line 98, ../../sass/styles.scss */
+  img {
+    max-width: 100%;
+  }
+
+  /* line 102, ../../sass/styles.scss */
   pre code {
     font-size: 12px;
   }
 
-  /* line 101, ../../sass/styles.scss */
+  /* line 106, ../../sass/styles.scss */
   .table {
     font-size: 14px;
   }
-  /* line 104, ../../sass/styles.scss */
+  /* line 109, ../../sass/styles.scss */
   .table th {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -10927,15 +10933,15 @@ h1, h2, h3 {
     font-style: normal;
     font-size: 16px;
   }
-  /* line 111, ../../sass/styles.scss */
+  /* line 116, ../../sass/styles.scss */
   .table .table-bordered th {
     border-radius: 0px !important;
   }
-  /* line 116, ../../sass/styles.scss */
+  /* line 121, ../../sass/styles.scss */
   .table .property-name {
     width: 20%;
   }
-  /* line 120, ../../sass/styles.scss */
+  /* line 125, ../../sass/styles.scss */
   .table td:first-child {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -10943,41 +10949,41 @@ h1, h2, h3 {
     font-style: normal;
   }
 
-  /* line 125, ../../sass/styles.scss */
+  /* line 130, ../../sass/styles.scss */
   .alert {
     font-size: 85%;
   }
 
-  /* line 130, ../../sass/styles.scss */
+  /* line 135, ../../sass/styles.scss */
   body .gsc-inline-block {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
-  /* line 137, ../../sass/styles.scss */
+  /* line 142, ../../sass/styles.scss */
   body div .gsc-control-cse {
     line-height: normal;
   }
-  /* line 141, ../../sass/styles.scss */
+  /* line 146, ../../sass/styles.scss */
   body div .gsc-control-cse table {
     border-collapse: separate;
   }
 
-  /* line 148, ../../sass/styles.scss */
+  /* line 153, ../../sass/styles.scss */
   .site-search {
     padding-bottom: 20px;
   }
 
-  /* line 153, ../../sass/styles.scss */
+  /* line 158, ../../sass/styles.scss */
   .api-reference navigation ul {
     font-size: 14px;
   }
-  /* line 157, ../../sass/styles.scss */
+  /* line 162, ../../sass/styles.scss */
   .api-reference #left-column .nav > li > a {
     padding-top: 0px;
     padding-bottom: 0px;
   }
-  /* line 162, ../../sass/styles.scss */
+  /* line 167, ../../sass/styles.scss */
   .api-reference h4 {
     font-family: "Proxima Nova Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size-adjust: 0.488;
@@ -10987,45 +10993,45 @@ h1, h2, h3 {
     font-size: 16px;
     margin-bottom: 0px;
   }
-  /* line 169, ../../sass/styles.scss */
+  /* line 174, ../../sass/styles.scss */
   .api-reference p {
     font-size: 14px;
   }
-  /* line 173, ../../sass/styles.scss */
+  /* line 178, ../../sass/styles.scss */
   .api-reference .code {
     font-family: monospace !important;
   }
-  /* line 177, ../../sass/styles.scss */
+  /* line 182, ../../sass/styles.scss */
   .api-reference pre.code {
     font-size: 12px;
   }
-  /* line 181, ../../sass/styles.scss */
+  /* line 186, ../../sass/styles.scss */
   .api-reference .table {
     border: 1px solid #ddd;
     border-radius: 0px;
   }
-  /* line 185, ../../sass/styles.scss */
+  /* line 190, ../../sass/styles.scss */
   .api-reference .table th, .api-reference .table tr, .api-reference .table td {
     border-radius: 0px !important;
   }
-  /* line 189, ../../sass/styles.scss */
+  /* line 194, ../../sass/styles.scss */
   .api-reference .table th {
     border: none;
     border-right: 1px solid #ddd;
   }
-  /* line 194, ../../sass/styles.scss */
+  /* line 199, ../../sass/styles.scss */
   .api-reference .table td {
     border: none;
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
   }
-  /* line 201, ../../sass/styles.scss */
+  /* line 206, ../../sass/styles.scss */
   .api-reference .table td:first-child {
     border-right: none;
     border-left: none;
   }
-  /* line 206, ../../sass/styles.scss */
+  /* line 211, ../../sass/styles.scss */
   .api-reference .table td:last-child {
     border-right: none;
     border-left: none;
@@ -11034,7 +11040,7 @@ h1, h2, h3 {
 /* Extra small: (phones, 480px and up) */
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 223, ../../sass/styles.scss */
+  /* line 228, ../../sass/styles.scss */
   .navbar-dashboard li a {
     padding-left: 12px;
     padding-right: 12px;
