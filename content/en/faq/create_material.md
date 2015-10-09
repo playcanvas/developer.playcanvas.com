@@ -1,6 +1,6 @@
 ---
 title: Create a material
-keywords: asset, material, create, color, surface, normal, specular, phong, pbr, physical
+keywords: asset, material, create, color, surface, normal, specular, reflection, phong, pbr, physical
 ---
 
 ## How do I create a material?

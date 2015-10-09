@@ -1,6 +1,6 @@
 ---
 title: Use physics
-keywords: component, physics, collision, rigid, body, gravity, ammo, trigger
+keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
 ---
 
 ## How do I use physics?
