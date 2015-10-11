@@ -1,6 +1,6 @@
 ---
 title: Glossary
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 ---
 
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.

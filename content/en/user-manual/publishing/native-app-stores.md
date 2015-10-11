@@ -1,6 +1,6 @@
 ---
 title: Native App Stores
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 3
 ---
 

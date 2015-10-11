@@ -13,6 +13,7 @@ var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
 var locale      = require("./lib/locale/index");
 var i18n        = require("./lib/i18n/index");
+var contents    = require("./lib/contents-json/index");
 
 var env = null;
 var args = process.argv.slice(2);
@@ -27,6 +28,12 @@ handlebars.registerPartial("navbar",
     fs.readFileSync(path.join(__dirname, "templates/partials/navbar.tmpl.html"), "utf-8"));
 handlebars.registerPartial("usermanual-navbar",
     fs.readFileSync(path.join(__dirname, "templates/partials/usermanual-navbar.tmpl.html"), "utf-8"));
+handlebars.registerPartial("usermanual-contents",
+    fs.readFileSync(path.join(__dirname, "templates/partials/usermanual-contents.tmpl.html"), "utf-8"));
+handlebars.registerPartial("tutorial-navbar",
+    fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-navbar.tmpl.html"), "utf-8"));
+handlebars.registerPartial("tutorial-contents",
+    fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"), "utf-8"));
 handlebars.registerPartial("header",
     fs.readFileSync(path.join(__dirname, "templates/partials/header.tmpl.html"), "utf-8"));
 handlebars.registerPartial("title-banner",
@@ -40,10 +47,17 @@ var m = new Metalsmith(__dirname);
 
 m.source("content")
     .use(markdown())
+    .use(contents()())
     .use(permalinks({
         pattern: ":filename"
     }))
     .use(metadata());
+
+// m.build(function (err, files) {
+//     console.error(err);
+// });
+
+// return;
 
 // set environment
 m.metadata().local = (env === "local");
@@ -56,11 +70,13 @@ m.metadata().dev = (env === "dev");
     .use(navbuilder("en/user-manual")({
         engine: handlebars,
         template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+        contentPath: "content/_usermanual_contents.json",
         partialName: "user-manual-navigation"
     }))
     .use(navbuilder("en/tutorials")({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+        template: path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"),
+        contentPath: "content/_tutorial_contents.json",
         partialName: "tutorials-navigation"
     }))
     .use(templates({
@@ -74,4 +90,8 @@ m.metadata().dev = (env === "dev");
     }))
     .use(metallic())
     .use(locale()())
-    .build();
+    .build(function (err, files) {
+        if (err) {
+            console.log(err);
+        }
+    });

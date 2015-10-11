@@ -3,23 +3,14 @@
     {{> head}}
 
     <body>
-        {{> header}}
+        {{> header frontpage=true}}
 
-        {{> title-banner}}
-
-        {{> navbar}}
-
-        <div id="page-container" class="container">
-            <div class="row">
-                <div id="page-content" class="col-md-offset-1 col-md-7">
-                    <h1>{{ title }}</h1>
-                    {{{ contents }}}
-                </div>
-            </div>
-        </div>
+        <main class="container content-width">
+            <h1>{{ title }}</h1>
+            {{{ contents }}}
+        </main>
 
         {{> scripts}}
-
         {{> analytics}}
     </body>
 </html>

@@ -1,4 +1,84 @@
 <script type="text/javascript">
+(function () {
+    function ready(fn) {
+      if (document.readyState != 'loading'){
+        fn();
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+
+    ready(function () {
+        var url =window.location.href;
+        if (url.indexOf("tutorials") >= 0) {
+            tutorials.setCurrentNavbar(url);
+            tutorials.setCurrentSidebar(url);
+        }
+
+        if (window.location.href.indexOf("usermanual") >= 0) {
+            // usermanual
+
+        }
+
+        var search = document.getElementById("search");
+        search.addEventListener("keydown", function (e) {
+            if (e.which === 13 || e.keyCode === 13) {
+                window.location.href = "/search?q=" + e.target.value;
+            }
+        }, true);
+
+    });
+
+    var tutorials = {
+        setCurrentNavbar: function (url) {
+            var level = null;
+
+            // tutorials
+            if (url.indexOf("intermediate") >= 0) {
+                level = "beginner";
+            } else if (url.indexOf("intermediate") >= 0) {
+                level = "intermediate";
+            } else if (url.indexOf("advanced") >= 0) {
+                level = "advanced";
+            }
+
+            var el = document.querySelector("#tutorials-navbar-" + level);
+            if (el && el.classList)
+                el.classList.add("active");
+        },
+
+        setCurrentSidebar: function (url) {
+            var level = null;
+            if (url.indexOf("intermediate") >= 0) {
+                level = "beginner";
+            } else if (url.indexOf("intermediate") >= 0) {
+                level = "intermediate";
+            } else if (url.indexOf("advanced") >= 0) {
+                level = "advanced";
+            }
+
+            // show the correct sidebar
+            var el = document.querySelector("ul." + level)
+            if(el) {
+                el.style.display = "block";
+            }
+
+            // set the active tutorial
+            var nav = document.querySelector("nav.tutorial");
+            var links = nav.querySelectorAll("a");
+            for(var i = 0; i < links.length; i++) {
+                if (url.indexOf(links[i].getAttribute("href")) >= 0) {
+                    if(links[i].parentNode.classList) {
+                        links[i].parentNode.classList.add("active");
+                    }
+                }
+            }
+        }
+    }
+})();
+</script>
+
+<!-- <script type="text/javascript">
     $(document).ready(function () {
         // Set current sidebar navigation class
         var path = window.location.pathname.slice(0, -1); // get path and remove trailing slash
@@ -50,3 +130,4 @@
         }
     });
 </script>
+ -->

@@ -1,6 +1,6 @@
 ---
 title: PlayCanvas
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 1
 ---
 

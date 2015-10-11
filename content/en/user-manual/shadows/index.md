@@ -1,6 +1,6 @@
 ---
 title: Shadows
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 8
 ---
 

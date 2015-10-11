@@ -3,18 +3,17 @@
     {{> head}}
 
     <body>
-        {{> header header-title="Tutorials"}}
-        {{> tutorial-navbar}}
+        {{> header}}
+        {{> usermanual-navbar}}
 
         <div class="container content-width">
-            {{> tutorials-navigation}}
+            {{> user-manual-navigation}}
             <main>
                 {{{ contents }}}
             </main>
         </div>
 
         {{> scripts}}
-
         {{> analytics}}
     </body>
 </html>

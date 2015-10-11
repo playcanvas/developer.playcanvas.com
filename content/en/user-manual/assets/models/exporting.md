@@ -1,6 +1,6 @@
 ---
 title: Exporting Assets
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 skip: false
 ---
 
