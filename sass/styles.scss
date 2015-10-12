@@ -307,7 +307,7 @@
 
         nav.usermanual {
             float: left;
-            width: 240px;
+            width: 100%;
             padding: 27px 0px;
             font-size: 12px;
             color: $contents-text-color;
@@ -338,7 +338,8 @@
         main {
             float: left;
             width: 640px;
-            padding: 20px 30px;
+            padding: 20px 0px;
+            padding-left: 30px;
             color: $main-text-color;
 
             h1 {
@@ -395,6 +396,19 @@
         }
     }
 
+    nav.usermanual {
+        width: 180px;
+    }
+
+    nav.tutorial {
+        width: 180px;
+    }
+
+    .container {
+        main {
+            width: 300px;
+        }
+    }
 }
 
 /* Small devices (tablets, desktops, 768px and up) */
@@ -416,6 +430,19 @@
         }
     }
 
+    nav.usermanual {
+        width: 180px;
+    }
+
+    nav.tutorial {
+        width: 180px;
+    }
+
+    .container {
+        main {
+            width: 300px;
+        }
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -424,12 +451,26 @@
         width: 850px;
     }
 
+    nav.usermanual {
+        width: 240px;
+    }
+
+    nav.tutorial {
+        width: 240px;
+    }
+
     nav.intro {
         ul {
             width: 816px;
             li {
                 width: 200px;
             }
+        }
+    }
+
+    .container {
+        main {
+            width: 480px;
         }
     }
 }
@@ -446,6 +487,25 @@
             li {
                 width: 200px;
             }
+        }
+    }
+
+    nav.tutorial {
+        width: 240px;
+    }
+
+    nav.intro {
+        ul {
+            width: 816px;
+            li {
+                width: 200px;
+            }
+        }
+    }
+
+    .container {
+        main {
+            width: 640px;
         }
     }
 }
