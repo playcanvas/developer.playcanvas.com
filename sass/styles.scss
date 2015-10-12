@@ -7,18 +7,24 @@
 
         padding: 0;
         margin: 0;
+
+        color: $text-color;
+        font-size: 16px;
     }
 
     h1 {
-        @include font-regular();
+        @include font-bold();
+        font-size: 20px;
+    }
+
+    h2 {
+        @include font-bold();
+        font-size: 18px;
     }
 
     a {
         color: $text-color;
         text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
     }
 
     ul {
@@ -39,26 +45,27 @@
         color: $header-text-color;
 
         a {
-            color: $header-text-color;
-
-            &:hover {}
+            color: rgba(255, 255, 255, 0.75);
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+                text-decoration: none;
+            }
         }
 
         .header-title {
             display: inline-block;
 
             h1 {
+                @include font-regular();
+                font-size: 22px;
                 margin: 18px 0px;
-                font-size: 18px;
             }
         }
 
         nav {
             @include font-thin();
-            //width: $content-width;
             margin: auto;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            font-size: 14px;
+            font-size: 16px;
         }
 
         ul {
@@ -69,11 +76,15 @@
 
             li {
                 display: inline;
-                padding: 26px 30px;
+                padding: 10px 0px;
+                margin: auto 30px;
             }
 
             li.active {
-                border-bottom: thin solid $header-text-highlight;
+                border-bottom: 2px solid $header-text-highlight;
+                a {
+                    color: rgba(255, 255, 255, 1);
+                }
             }
         }
 
@@ -84,7 +95,7 @@
         .header-content {
             clear: both;
             margin: auto;
-            padding: 20px;
+            padding: 20px 0px;
 
             h1 {
                 font-size: 24px;
@@ -117,6 +128,15 @@
         .header-front-page {
             text-align: center;
         }
+
+    }
+
+    .search-icon:before {
+        font-size: 26px;
+        position: relative;
+        right: 70px;
+        top: 3px;
+        content: "\E333";
     }
 
     input.search {
@@ -161,7 +181,6 @@
 
         ul {
             list-style-type: none;
-            //width: $content-width;
             margin: auto;
             padding: 15px 0px;
 
@@ -184,6 +203,66 @@
                 }
 
             }
+        }
+
+        usermanual-navbar {
+            float: right;
+        }
+    }
+
+    nav.intro {
+        background-color: $navbar-background-color;
+        border-top: 1px solid $navbar-background-color;
+        border-bottom: 1px solid $navbar-border-color;
+        font-size: 14px;
+
+        a {
+            color: $navbar-text-color;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: auto;
+            padding: 20px 0px;
+
+            width: 100%;
+
+            li {
+                width: calc(25% - 4px);
+                padding: 5px 0px;
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                border-left: 1px solid $navbar-border-color;
+            }
+
+            li:last-child {
+                border-right: 1px solid $navbar-border-color;
+            }
+        }
+
+        span {
+            font-size: 64px;
+        }
+
+        .video-icon:after {
+            content: "\E275";
+            @include font-icon();
+        }
+
+        .manual-icon:after {
+            content: "\E222";
+            @include font-icon();
+        }
+
+        .tutorials-icon:after {
+            content: "\E212";
+            @include font-icon();
+        }
+
+        .api-icon:after {
+            content: "\E286";
+            @include font-icon();
         }
     }
 
@@ -228,8 +307,8 @@
 
         nav.usermanual {
             float: left;
-            width: calc(20% - 40px);
-            padding: 27px 10px;
+            width: 240px;
+            padding: 27px 0px;
             font-size: 12px;
             color: $contents-text-color;
 
@@ -239,6 +318,10 @@
                 padding: 0;
 
                 li {
+                    padding: 5px 0px;
+                }
+
+                li li {
                     padding: 5px 15px;
                 }
             }
@@ -254,8 +337,8 @@
 
         main {
             float: left;
-            width: calc(70%);
-            padding: 20px 5%;
+            width: 640px;
+            padding: 20px 30px;
             color: $main-text-color;
 
             h1 {
@@ -302,6 +385,16 @@
     .content-width {
         width: 100%;
     }
+
+    nav.intro {
+        ul {
+            width: 100%;
+            li {
+                width: calc(25% - 4px);
+            }
+        }
+    }
+
 }
 
 /* Small devices (tablets, desktops, 768px and up) */
@@ -309,6 +402,20 @@
     .content-width {
         width: 700px;
     }
+
+    nav.intro {
+        ul {
+            width: 616px;
+            li {
+                width: 150px;
+            }
+
+            li:last-child {
+                border-right: none;
+            }
+        }
+    }
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -316,11 +423,29 @@
     .content-width {
         width: 850px;
     }
+
+    nav.intro {
+        ul {
+            width: 816px;
+            li {
+                width: 200px;
+            }
+        }
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .content-width {
-        width: 1024px;
+        width: 970px;
+    }
+
+    nav.intro {
+        ul {
+            width: 816px;
+            li {
+                width: 200px;
+            }
+        }
     }
 }

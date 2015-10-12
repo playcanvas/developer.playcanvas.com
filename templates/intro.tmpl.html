@@ -5,6 +5,36 @@
     <body>
         {{> header frontpage=true}}
 
+        <div class="nav-container">
+            <nav id="intro-navbar" class="intro">
+                <ul class="content-width">
+                    <li>
+                        <a href="/user-manual">
+                        <span class="manual-icon"></span>
+                        <p>USER MANUAL</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tutorials">
+                        <span class="tutorials-icon"></span>
+                        <p>TUTORIALS</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tutorials/videos">
+                        <span class="video-icon"></span>
+                        <p>VIDEOS</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/engine/api/stable">
+                        <span class="api-icon"></span>
+                        <p>API REFERENCE</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <main class="container content-width">
             <h1>{{ title }}</h1>
             {{{ contents }}}

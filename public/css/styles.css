@@ -38,40 +38,34 @@
   font-style: normal;
 }
 
-/* line 56, ../../sass/_fonts.scss */
-.font-icon {
-  font-family: 'ui-font-solid';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-}
-
-/* line 87, ../../sass/_fonts.scss */
+/* line 99, ../../sass/_fonts.scss */
 .font-thin {
   font-family: 'Proxima Nova Thin', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
-/* line 91, ../../sass/_fonts.scss */
+/* line 103, ../../sass/_fonts.scss */
 .font-light {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
-/* line 95, ../../sass/_fonts.scss */
+/* line 107, ../../sass/_fonts.scss */
 .font-regular {
   font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 99, ../../sass/_fonts.scss */
+/* line 111, ../../sass/_fonts.scss */
 .font-bold {
   font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (min-width: 0px) {
@@ -82,116 +76,148 @@
     font-style: normal;
     padding: 0;
     margin: 0;
+    color: #324447;
+    font-size: 16px;
   }
 
-  /* line 12, ../../sass/styles.scss */
+  /* line 15, ../../sass/styles.scss */
   h1 {
-    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-weight: normal;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
   }
 
-  /* line 16, ../../sass/styles.scss */
+  /* line 20, ../../sass/styles.scss */
+  h2 {
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+  }
+
+  /* line 25, ../../sass/styles.scss */
   a {
-    color: #333333;
+    color: #324447;
     text-decoration: none;
   }
-  /* line 19, ../../sass/styles.scss */
-  a:hover {
-    text-decoration: underline;
-  }
 
-  /* line 30, ../../sass/styles.scss */
+  /* line 36, ../../sass/styles.scss */
   .content-width {
     width: 100%;
   }
 
-  /* line 34, ../../sass/styles.scss */
+  /* line 40, ../../sass/styles.scss */
   header {
     width: 100%;
     background-image: url(/images/common/BANNER_STRIPS1_Orange.png);
     background-position: center;
-    color: #eeeeee;
-  }
-  /* line 41, ../../sass/styles.scss */
-  header a {
-    color: #eeeeee;
+    color: rgba(255, 255, 255, 0.75);
   }
   /* line 47, ../../sass/styles.scss */
+  header a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  /* line 49, ../../sass/styles.scss */
+  header a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  /* line 55, ../../sass/styles.scss */
   header .header-title {
     display: inline-block;
   }
-  /* line 50, ../../sass/styles.scss */
+  /* line 58, ../../sass/styles.scss */
   header .header-title h1 {
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
     margin: 18px 0px;
-    font-size: 18px;
   }
-  /* line 56, ../../sass/styles.scss */
+  /* line 65, ../../sass/styles.scss */
   header nav {
     font-family: 'Proxima Nova Thin', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-style: normal;
     margin: auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 14px;
+    font-size: 16px;
   }
-  /* line 64, ../../sass/styles.scss */
+  /* line 71, ../../sass/styles.scss */
   header ul {
     float: right;
     list-style-type: none;
     margin: 22px 0px;
     padding: 0;
   }
-  /* line 70, ../../sass/styles.scss */
+  /* line 77, ../../sass/styles.scss */
   header ul li {
     display: inline;
-    padding: 26px 30px;
+    padding: 10px 0px;
+    margin: auto 30px;
   }
-  /* line 75, ../../sass/styles.scss */
+  /* line 83, ../../sass/styles.scss */
   header ul li.active {
-    border-bottom: thin solid white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.75);
   }
-  /* line 80, ../../sass/styles.scss */
+  /* line 85, ../../sass/styles.scss */
+  header ul li.active a {
+    color: white;
+  }
+  /* line 91, ../../sass/styles.scss */
   header .header-mobile-icon {
     display: none;
   }
-  /* line 84, ../../sass/styles.scss */
+  /* line 95, ../../sass/styles.scss */
   header .header-content {
     clear: both;
     margin: auto;
-    padding: 20px;
+    padding: 20px 0px;
   }
-  /* line 89, ../../sass/styles.scss */
+  /* line 100, ../../sass/styles.scss */
   header .header-content h1 {
     font-size: 24px;
   }
-  /* line 93, ../../sass/styles.scss */
+  /* line 104, ../../sass/styles.scss */
   header .header-content img {
     padding: 30px;
     margin: auto;
   }
-  /* line 98, ../../sass/styles.scss */
+  /* line 109, ../../sass/styles.scss */
   header .header-content p {
     font-size: 14px;
     margin: 0;
     padding: 0;
   }
-  /* line 106, ../../sass/styles.scss */
+  /* line 117, ../../sass/styles.scss */
   header .header-page h1 {
     display: inline-block;
   }
-  /* line 110, ../../sass/styles.scss */
+  /* line 121, ../../sass/styles.scss */
   header .header-page .search {
     float: right;
     margin: 0;
     margin-top: 10px;
   }
-  /* line 117, ../../sass/styles.scss */
+  /* line 128, ../../sass/styles.scss */
   header .header-front-page {
     text-align: center;
   }
 
-  /* line 122, ../../sass/styles.scss */
+  /* line 134, ../../sass/styles.scss */
+  .search-icon:before {
+    font-size: 26px;
+    position: relative;
+    right: 70px;
+    top: 3px;
+    content: "\E333";
+  }
+
+  /* line 142, ../../sass/styles.scss */
   input.search {
     height: 32px;
     width: 30%;
@@ -199,184 +225,270 @@
     padding: 5px 20px;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid rgba(255, 255, 255, 0.5);
-    color: #eeeeee;
+    color: rgba(255, 255, 255, 0.75);
     font-size: 14px;
   }
-  /* line 133, ../../sass/styles.scss */
+  /* line 153, ../../sass/styles.scss */
   input.search::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 136, ../../sass/styles.scss */
+  /* line 156, ../../sass/styles.scss */
   input.search::-moz-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 139, ../../sass/styles.scss */
+  /* line 159, ../../sass/styles.scss */
   input.search::-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 142, ../../sass/styles.scss */
+  /* line 162, ../../sass/styles.scss */
   input.search::input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
-  /* line 146, ../../sass/styles.scss */
+  /* line 166, ../../sass/styles.scss */
   input.search:focus {
     outline: 0;
     border-color: white;
   }
 
-  /* line 152, ../../sass/styles.scss */
+  /* line 172, ../../sass/styles.scss */
   nav.regular {
     background-color: #f4f4f4;
     border-top: 1px solid #f4f4f4;
     border-bottom: 1px solid #dddddd;
     font-size: 14px;
   }
-  /* line 158, ../../sass/styles.scss */
+  /* line 178, ../../sass/styles.scss */
   nav.regular a {
-    color: #8a8a8a;
+    color: #5b7073;
   }
-  /* line 162, ../../sass/styles.scss */
+  /* line 182, ../../sass/styles.scss */
   nav.regular ul {
     list-style-type: none;
     margin: auto;
     padding: 15px 0px;
   }
-  /* line 168, ../../sass/styles.scss */
+  /* line 187, ../../sass/styles.scss */
   nav.regular ul li {
     display: inline;
     padding: 17px 26px;
     border-left: 1px solid #dddddd;
   }
-  /* line 174, ../../sass/styles.scss */
+  /* line 193, ../../sass/styles.scss */
   nav.regular ul li:last-child {
     border-right: 1px solid #dddddd;
   }
-  /* line 178, ../../sass/styles.scss */
+  /* line 197, ../../sass/styles.scss */
   nav.regular ul li.active {
     background-color: white;
     border-bottom: 1px solid white;
   }
-  /* line 182, ../../sass/styles.scss */
+  /* line 201, ../../sass/styles.scss */
   nav.regular ul li.active a {
-    color: #333333;
+    color: #324447;
+  }
+  /* line 208, ../../sass/styles.scss */
+  nav.regular usermanual-navbar {
+    float: right;
   }
 
-  /* line 190, ../../sass/styles.scss */
+  /* line 213, ../../sass/styles.scss */
+  nav.intro {
+    background-color: #f4f4f4;
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #dddddd;
+    font-size: 14px;
+  }
+  /* line 219, ../../sass/styles.scss */
+  nav.intro a {
+    color: #5b7073;
+  }
+  /* line 223, ../../sass/styles.scss */
+  nav.intro ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 20px 0px;
+    width: 100%;
+  }
+  /* line 230, ../../sass/styles.scss */
+  nav.intro ul li {
+    width: calc(25% - 4px);
+    padding: 5px 0px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-left: 1px solid #dddddd;
+  }
+  /* line 239, ../../sass/styles.scss */
+  nav.intro ul li:last-child {
+    border-right: 1px solid #dddddd;
+  }
+  /* line 244, ../../sass/styles.scss */
+  nav.intro span {
+    font-size: 64px;
+  }
+  /* line 248, ../../sass/styles.scss */
+  nav.intro .video-icon:after {
+    content: "\E275";
+    font-family: 'ui-font-solid';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+  }
+  /* line 253, ../../sass/styles.scss */
+  nav.intro .manual-icon:after {
+    content: "\E222";
+    font-family: 'ui-font-solid';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+  }
+  /* line 258, ../../sass/styles.scss */
+  nav.intro .tutorials-icon:after {
+    content: "\E212";
+    font-family: 'ui-font-solid';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+  }
+  /* line 263, ../../sass/styles.scss */
+  nav.intro .api-icon:after {
+    content: "\E286";
+    font-family: 'ui-font-solid';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+  }
+
+  /* line 269, ../../sass/styles.scss */
   .container {
     margin: auto;
   }
-  /* line 193, ../../sass/styles.scss */
+  /* line 272, ../../sass/styles.scss */
   .container nav.tutorial {
     float: left;
     width: calc(20% - 40px);
     padding: 27px 10px;
     font-size: 12px;
-    color: #8a8a8a;
+    color: #5b7073;
   }
-  /* line 200, ../../sass/styles.scss */
+  /* line 279, ../../sass/styles.scss */
   .container nav.tutorial ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  /* line 205, ../../sass/styles.scss */
+  /* line 284, ../../sass/styles.scss */
   .container nav.tutorial ul li {
     padding: 10px 0px;
   }
-  /* line 210, ../../sass/styles.scss */
+  /* line 289, ../../sass/styles.scss */
   .container nav.tutorial ul li.active {
-    color: #333333;
-    border-bottom: 2px dotted #8a8a8a;
+    color: #324447;
+    border-bottom: 2px dotted #5b7073;
   }
-  /* line 216, ../../sass/styles.scss */
+  /* line 295, ../../sass/styles.scss */
   .container nav.tutorial ul.level {
     display: none;
   }
-  /* line 220, ../../sass/styles.scss */
+  /* line 299, ../../sass/styles.scss */
   .container nav.tutorial a {
     color: inherit;
   }
-  /* line 223, ../../sass/styles.scss */
+  /* line 302, ../../sass/styles.scss */
   .container nav.tutorial a:hover {
     text-decoration: underline;
   }
-  /* line 229, ../../sass/styles.scss */
+  /* line 308, ../../sass/styles.scss */
   .container nav.usermanual {
     float: left;
-    width: calc(20% - 40px);
-    padding: 27px 10px;
+    width: 240px;
+    padding: 27px 0px;
     font-size: 12px;
-    color: #8a8a8a;
+    color: #5b7073;
   }
-  /* line 236, ../../sass/styles.scss */
+  /* line 315, ../../sass/styles.scss */
   .container nav.usermanual ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  /* line 241, ../../sass/styles.scss */
+  /* line 320, ../../sass/styles.scss */
   .container nav.usermanual ul li {
+    padding: 5px 0px;
+  }
+  /* line 324, ../../sass/styles.scss */
+  .container nav.usermanual ul li li {
     padding: 5px 15px;
   }
-  /* line 246, ../../sass/styles.scss */
+  /* line 329, ../../sass/styles.scss */
   .container nav.usermanual a {
     color: inherit;
   }
-  /* line 249, ../../sass/styles.scss */
+  /* line 332, ../../sass/styles.scss */
   .container nav.usermanual a:hover {
     text-decoration: underline;
   }
-  /* line 255, ../../sass/styles.scss */
+  /* line 338, ../../sass/styles.scss */
   .container main {
     float: left;
-    width: calc(70%);
-    padding: 20px 5%;
-    color: #333333;
+    width: 640px;
+    padding: 20px 30px;
+    color: #324447;
   }
-  /* line 261, ../../sass/styles.scss */
+  /* line 344, ../../sass/styles.scss */
   .container main h1 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
   }
-  /* line 265, ../../sass/styles.scss */
+  /* line 348, ../../sass/styles.scss */
   .container main h2 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
   }
-  /* line 269, ../../sass/styles.scss */
+  /* line 352, ../../sass/styles.scss */
   .container main h3 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
   }
-  /* line 273, ../../sass/styles.scss */
+  /* line 356, ../../sass/styles.scss */
   .container main h4 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 12px;
   }
-  /* line 277, ../../sass/styles.scss */
+  /* line 360, ../../sass/styles.scss */
   .container main h5 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 10px;
   }
-  /* line 282, ../../sass/styles.scss */
+  /* line 365, ../../sass/styles.scss */
   .container main a {
-    color: #333333;
+    color: #324447;
   }
-  /* line 285, ../../sass/styles.scss */
+  /* line 368, ../../sass/styles.scss */
   .container main a:hover {
     text-decoration: underline;
   }
-  /* line 290, ../../sass/styles.scss */
+  /* line 373, ../../sass/styles.scss */
   .container main iframe {
     width: 640px;
     height: 480px;
@@ -386,29 +498,69 @@
 }
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 480px) {
-  /* line 302, ../../sass/styles.scss */
+  /* line 385, ../../sass/styles.scss */
   .content-width {
     width: 100%;
+  }
+
+  /* line 390, ../../sass/styles.scss */
+  nav.intro ul {
+    width: 100%;
+  }
+  /* line 392, ../../sass/styles.scss */
+  nav.intro ul li {
+    width: calc(25% - 4px);
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 309, ../../sass/styles.scss */
+  /* line 402, ../../sass/styles.scss */
   .content-width {
     width: 700px;
+  }
+
+  /* line 407, ../../sass/styles.scss */
+  nav.intro ul {
+    width: 616px;
+  }
+  /* line 409, ../../sass/styles.scss */
+  nav.intro ul li {
+    width: 150px;
+  }
+  /* line 413, ../../sass/styles.scss */
+  nav.intro ul li:last-child {
+    border-right: none;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 316, ../../sass/styles.scss */
+  /* line 423, ../../sass/styles.scss */
   .content-width {
     width: 850px;
+  }
+
+  /* line 428, ../../sass/styles.scss */
+  nav.intro ul {
+    width: 816px;
+  }
+  /* line 430, ../../sass/styles.scss */
+  nav.intro ul li {
+    width: 200px;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 323, ../../sass/styles.scss */
+  /* line 439, ../../sass/styles.scss */
   .content-width {
-    width: 1024px;
+    width: 970px;
+  }
+
+  /* line 444, ../../sass/styles.scss */
+  nav.intro ul {
+    width: 816px;
+  }
+  /* line 446, ../../sass/styles.scss */
+  nav.intro ul li {
+    width: 200px;
   }
 }

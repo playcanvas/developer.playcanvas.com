@@ -3,23 +3,25 @@
         <a href="/" class="header-title"><h1>PLAYCANVAS MANUAL</h1></a>
         <a class="header-mobile-icon" href="">icon</a>
         <ul class="header-menu">
-            <li><a href="/user-manual">User Manual</a></li>
-            <li><a href="/tutorials">Tutorials</a></li>
-            <li><a href="/tutorials/video">Video</a></li>
-            <li><a href="/engine/api/stable">API Reference</a></li>
+            <li class="user-manual"><a href="/user-manual">User Manual</a></li>
+            <li class="tutorials"><a href="/tutorials">Tutorials</a></li>
+            <li class="video"><a href="/tutorials/video">Video</a></li>
+            <li class="api"><a href="/engine/api/stable">API Reference</a></li>
         </ul>
     </nav>
 
     {{#if frontpage}}
     <div class="header-content header-front-page">
-        <img src="http://dummyimage.com/150x150"></img>
+        <img src="/images/wireframe_logo.png"></img>
         <h1>PlayCanvas Developer Resources</h1>
         <p>Whether you are a programmer, a designer or an artist, this is place to learn about how
         PlayCanvas.</p>
 
-        <input class="search" type="text" placeholder="Search"></input>
+        <input id="search" class="search" type="text" placeholder="Search" />
     </div>
+
     {{else}}
+
     <div class="header-content header-page content-width">
         <h1><span class="font-icon"></span>{{header-title}}</h1>
         <input id="search" class="search" type="text" placeholder="Search"></input>
