@@ -6,9 +6,15 @@ position: 10
 
 The 'script' component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.
 
-<img src="/images/user-manual/components/component-script.jpg" style="width: 300px" />
+<img src="/images/user-manual/components/component-script.jpg"/>
 
-To assign a script, type its name into the URL box. For example, if you want to create a script called car.js, type car.js into the box and hit ENTER. This will create a script block below. If you click the hyperlinked script name, it will open in the PlayCanvas Code Editor. If you type a name of an existing script, autocomplete should activate and again, just press ENTER to add the script to the component.
+To create a new script, click on the <span class="ui-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+
+<img src="/images/user-manual/new_script.jpg"/>
+
+You can then drag the new script on a script component or you can click the Add Script button in the script component Inspector and then select it from the Assets Panel.
+
+To edit the script in the PlayCanvas Code Editor you can either click on the hyperlinked script name, or you can select the script from the Assets Panel and click Edit.
 
 ## Properties
 
