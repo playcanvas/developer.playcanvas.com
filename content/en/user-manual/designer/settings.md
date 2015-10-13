@@ -133,7 +133,7 @@ pc.script.createLoadingScreen(function (app) {
 
         var logo = document.createElement('img');
         // replace with your logo
-        logo.src = 'https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/logo/PLAY_FLAT_ORANGE3.png';
+        logo.src = 'https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/logo/play.png';
         splash.appendChild(logo);
 
         // progress bar
