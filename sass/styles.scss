@@ -321,6 +321,11 @@
                     padding: 5px 0px;
                 }
 
+                li:before {
+                    content: "\E113";
+                    @include font-icon();
+                }
+
                 li li {
                     padding: 5px 15px;
                 }
@@ -396,15 +401,15 @@
         }
     }
 
-    nav.usermanual {
-        width: 180px;
-    }
-
-    nav.tutorial {
-        width: 180px;
-    }
-
     .container {
+        nav.usermanual {
+            width: 180px;
+        }
+
+        nav.tutorial {
+            width: 180px;
+        }
+
         main {
             width: 300px;
         }
@@ -430,15 +435,15 @@
         }
     }
 
-    nav.usermanual {
-        width: 180px;
-    }
-
-    nav.tutorial {
-        width: 180px;
-    }
-
     .container {
+        nav.usermanual {
+            width: 180px;
+        }
+
+        nav.tutorial {
+            width: 180px;
+        }
+
         main {
             width: 300px;
         }
@@ -451,14 +456,6 @@
         width: 850px;
     }
 
-    nav.usermanual {
-        width: 240px;
-    }
-
-    nav.tutorial {
-        width: 240px;
-    }
-
     nav.intro {
         ul {
             width: 816px;
@@ -469,6 +466,14 @@
     }
 
     .container {
+        nav.usermanual {
+            width: 240px;
+        }
+
+        nav.tutorial {
+            width: 240px;
+        }
+
         main {
             width: 480px;
         }
@@ -490,20 +495,15 @@
         }
     }
 
-    nav.tutorial {
-        width: 240px;
-    }
-
-    nav.intro {
-        ul {
-            width: 816px;
-            li {
-                width: 200px;
-            }
-        }
-    }
-
     .container {
+        nav.usermanual {
+            width: 240px;
+        }
+
+        nav.tutorial {
+            width: 240px;
+        }
+
         main {
             width: 640px;
         }
