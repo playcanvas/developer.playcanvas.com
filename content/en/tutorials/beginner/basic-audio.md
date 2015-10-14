@@ -71,5 +71,5 @@ That's it, the AudioListener has no options.
 [2]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
 [3]: https://playcanvas.com/editor/scene/329663
 [4]: /user-manual/assets/importing
-[5]: /images/tutorials/basic_audio_pack.png
-[6]: /images/tutorials/audiosource_component.png
+[5]: /images/tutorials/basic_audio_pack.jpg
+[6]: /images/tutorials/audiosource_component.jpg

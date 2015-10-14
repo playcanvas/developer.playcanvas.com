@@ -77,5 +77,5 @@ From this point, you are able to add more and more animations to the animation c
 
 See [the full Scene here][2]
 
-[1]: /images/tutorials/animation_blending.png
+[1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/338867
