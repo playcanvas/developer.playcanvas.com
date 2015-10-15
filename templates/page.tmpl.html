@@ -3,28 +3,16 @@
     {{> head}}
 
     <body>
-        {{> header}}
+        {{> header header-title="Tutorials"}}
 
-        {{> title-banner}}
-
-        {{> usermanual-navbar}}
-
-        <div id="page-container" class="container">
-            <div class="row">
-                <div class="col-md-offset-1 col-md-3">
-                    <ul id="sidebar" class="nav">
-                        {{> user-manual-navigation}}
-                    </ul>
-                </div>
-                <div id="page-content" class="col-md-7">
-                    <h1>{{ title }}</h1>
-                    {{{ contents }}}
-                </div>
-            </div>
+        <div class="container content-width">
+            <main class="full-width">
+                <h1>{{ title }}</h1>
+                {{{ contents }}}
+            </main>
         </div>
 
         {{> scripts}}
-
         {{> analytics}}
     </body>
 </html>

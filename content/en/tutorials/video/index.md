@@ -1,6 +1,6 @@
 ---
 title: Video Tutorials
-template: tutorial-page.tmpl.html
+template: videos-page.tmpl.html
 position: 1
 ---
 

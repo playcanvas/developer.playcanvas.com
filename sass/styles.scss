@@ -9,18 +9,21 @@
         margin: 0;
 
         color: $text-color;
-        font-size: 16px;
-        line-height: 30px;
+
+        .container {
+            font-size: 16px;
+            line-height: 30px;
+        }
     }
 
     h1 {
         @include font-bold();
-        font-size: 20px;
+        font-size: 18px;
     }
 
     h2 {
         @include font-bold();
-        font-size: 18px;
+        font-size: 16px;
     }
 
     a {
@@ -38,28 +41,8 @@
         overflow: scroll
     }
 
-    table {
-        border-collapse: collapse;
-
-        th {
-            @include font-bold();
-            border: 1px solid $table-border-color;
-            padding: 5px;
-        }
-
-        td {
-            border: 1px solid $table-border-color;
-            padding: 5px;
-        }
-    }
-
-    ul {
-        li {
-
-        }
-    }
-
     .content-width {
+        margin: auto;
         width: 100%;
     }
 
@@ -81,15 +64,22 @@
         .header-title {
             display: inline-block;
 
+            img {
+                padding: 24px 0px;
+                padding-right: 8px;
+                vertical-align: middle;
+            }
+
             h1 {
                 @include font-regular();
                 font-size: 22px;
-                margin: 18px 0px;
+                display: inline;
+                vertical-align: middle;
             }
         }
 
         nav {
-            @include font-thin();
+            @include font-regular();
             margin: auto;
             font-size: 16px;
         }
@@ -124,6 +114,7 @@
             padding: 20px 0px;
 
             h1 {
+                color: $header-title-color;
                 font-size: 24px;
             }
 
@@ -136,6 +127,15 @@
                 font-size: 14px;
                 margin: 0;
                 padding: 0;
+            }
+
+            .font-icon {
+                @include font-smoothing(on);
+                font-size: 50px;
+                font-weight: normal;
+                vertical-align: text-top;
+                line-height: 18px;
+                margin-right: 10px;
             }
         }
 
@@ -166,7 +166,7 @@
     }
 
     input.search {
-        height: 32px;
+        height: 24px;
         width: 30%;
         margin: 25px;
         padding: 5px 20px;
@@ -231,7 +231,7 @@
                     color: $navbar-text-color;
                     height: $nav-height;
                     line-height: $nav-height;
-                    padding: 0 16px;
+                    padding: 0 36px;
                 }
             }
         }
@@ -319,16 +319,14 @@
     }
 
     .container {
-        margin: auto;
-
         nav {
             line-height: 24px;
         }
 
         nav.tutorial {
             float: left;
-            width: calc(20% - 40px);
-            padding: 27px 10px;
+            width: 100%;
+            padding: 27px 0px;
             font-size: 16px;
             color: $sidebar-text-color;
 
@@ -491,7 +489,7 @@
             }
 
             a {
-                color: $main-text-color;
+                color: $main-link-color;
 
                 &:hover {
                     text-decoration: underline;
@@ -502,6 +500,39 @@
                 display: block;
                 margin: 0 auto;
                 max-width: 640px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+
+                margin: 20px 0px;
+
+                th {
+                    @include font-bold();
+                    border-top: 1px solid $table-border-color;
+                    border-bottom: 1px solid $table-border-color;
+                    padding: 5px;
+                    font-size: 14px;
+                }
+
+                td {
+                    border-top: 1px solid $table-border-color;
+                    border-bottom: 1px solid $table-border-color;
+                    padding: 5px;
+                    font-size: 14px;
+                }
+
+                &.head-column {
+                    td:first-child {
+                        width: 60%;
+                    }
+
+                    td:last-child {
+                        @include font-bold();
+                        font-size: 14px;
+                    }
+                }
             }
 
             iframe {
@@ -516,6 +547,11 @@
                 background-color: #ddd;
                 color: #ccc;
             }
+
+            &.full-width {
+                width: 100%;
+            }
+
         }
     }
 }
@@ -583,9 +619,9 @@
         }
 
         main {
-            width: 300px;
+            width: 360px;
             img {
-                max-width: 300px;
+                max-width: 360px;
             }
         }
     }
@@ -617,9 +653,9 @@
         }
 
         main {
-            width: 480px;
+            width: 540px;
             img {
-                max-width: 480px;
+                max-width: 540px;
             }
         }
     }
@@ -650,9 +686,13 @@
         }
 
         main {
-            width: 640px;
+            width: 700px;
             img {
-                max-width: 640px;
+                max-width: 700px;
+            }
+
+            .full-width {
+                width: 970px;
             }
         }
     }

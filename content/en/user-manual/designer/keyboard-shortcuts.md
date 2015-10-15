@@ -8,82 +8,76 @@ position: 11
 
 The Editor's Camera is controlled with the Mouse and Keyboard
 
-<table class="table table-striped">
-    <colgroup class="pc-title-column"></colgroup>
+<table class="head-column">
     <tr>
-        <td>LEFT MOUSE BUTTON (LMB)</td><td>Orbit camera</td>
+        <td>Orbit camera</td><td>Left Mouse Button (LMB)</td>
     </tr>
     <tr>
-        <td>MIDDLE MOUSE BUTTON (MMB)</td><td>Pan camera</td>
+        <td>Pan camera</td><td>Middle Mouse Button (MMB)</td>
     </tr>
     <tr>
-        <td>RIGHT MOUSE BUTTON (RMB)</td><td>Look camera</td>
+        <td>Look camera</td><td>Right Mouse Button (RMB)</td>
     </tr>
     <tr>
-        <td>SHIFT + LMB</td><td>Pan camera</td>
+        <td>Pan camera</td><td>Shift + LMB</td>
     </tr>
     <tr>
-        <td>MOUSE WHEEL</td><td>Zoom / Dolly camera</td>
+        <td>Zoom / Dolly camera</td><td>Mouse Wheel</td>
     </tr>
     <tr>
-        <td>W-A-S-D</td><td>Move Camera</td>
+        <td>Move Camera</td><td>W-A-S-D</td>
     </tr>
     <tr>
-        <td>SHIFT + W-A-S-D</td><td>Move Camera Fast</td>
+        <td>Move Camera Fast</td><td>Shift + W-A-S-D</td>
     </tr>
 </table>
 
 ## General Mouse Controls
 
-<table class="table table-striped">
-    <colgroup class="pc-title-column"></colgroup>
+<table class="head-column">
     <tr>
-        <td>CLICK LMB</td><td>Select entity</td>
+        <td>Select entity</td><td>Click LMB</td>
     </tr>
     <tr>
-        <td>CLICK RMB</td><td>Activate popup menu (in 3D view)</td>
+        <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
     </tr>
     <tr>
-        <td>CLICK AND DRAG GIZMO</td><td>Translate / Rotate / Scale Entity according to gizmo</td>
-    </tr>
-    <tr>
-        <td>SHIFT + CLICK AND DRAG GIZMO</td><td>Toogle Editor's Snap setting while operating gizmo</td>
+        <td>Toogle Editor's Snap setting while operating gizmo</td><td>Shift click and drag</td>
     </tr>
 </table>
 
 ## Hot Keys
 
-<table class="table table-striped">
-    <colgroup class="pc-title-column"></colgroup>
+<table class="head-column">
     <tr>
-        <td>DELETE</td><td>Delete</td><td>Deletes the current entity selection</td>
+        <td>Delete - Deletes the current entity selection</td><td>DELETE</td>
     </tr>
     <tr>
-        <td>SPACE</td><td>Toggle all panels</td><td>Hides or shows all the panels</td>
+        <td>Toggle all panels - Hides or shows all the panels</td><td>SPACE</td>
     </tr>
     <tr>
-        <td>CTRL + D</td><td>Duplicate</td><td>Duplicates the selected entity and all children</td>
+        <td>Duplicate - Duplicates the selected entity and all children</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>CTRL + N</td><td>New Entity</td><td>Creates a new entity as a child of the currently selected entity</td>
+        <td>New Entity - Creates a new entity as a child of the currently selected entity</td><td>CTRL + N</td>
     </tr>
     <tr>
-        <td>CTRL + Z</td><td>Undo</td><td>Undo the last action performed by the user</td>
+        <td>Undo - Undo the last action performed by the user</td><td>CTRL + Z</td>
     </tr>
     <tr>
-        <td>CTRL + Y</td><td>Redo</td><td>Redo the next action performed by the user</td>
+        <td>Redo - Redo the next action performed by the user</td><td>CTRL + Y</td>
     </tr>
     <tr>
-        <td>1</td><td>Translate</td><td>Change gizmo mode to translate</td>
+        <td>Translate - Change gizmo mode to translate</td><td>1</td>
     </tr>
     <tr>
-        <td>2</td><td>Rotate</td><td>Change gizmo mode to rotate</td>
+        <td>Rotate - Change gizmo mode to rotate</td><td>2</td>
     </tr>
     <tr>
-        <td>3</td><td>Scale</td><td>Change gizmo mode to scale</td>
+        <td>Scale - Change gizmo mode to scale</td><td>3</td>
     </tr>
     <tr>
-        <td>F</td><td>Frame Selection</td><td>Frame the active camera on the entity selection</td>
+        <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
     </tr>
 </table>
 

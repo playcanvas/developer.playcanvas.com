@@ -3,12 +3,13 @@
     {{> head}}
 
     <body>
-        {{> header header-title="Tutorials"}}
+        {{> header header-icon="&#57874;" header-title="Tutorials"}}
         {{> tutorial-navbar}}
 
         <div class="container content-width">
             {{> tutorials-navigation}}
             <main>
+                <h1>{{ title }}</h1>
                 {{{ contents }}}
             </main>
         </div>
