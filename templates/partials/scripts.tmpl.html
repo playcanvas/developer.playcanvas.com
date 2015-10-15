@@ -55,7 +55,7 @@
             var els = document.querySelectorAll("nav.usermanual li");
             for (var i = 0; i < els.length; i++) {
                 var li = els[i]
-                var expander = li.previousElementSibling;
+                var expander = li.firstElementChild;
                 if (li.querySelectorAll("ul li").length > 0) {
                     if(expander.classList) {
                         // closed by default
@@ -64,7 +64,7 @@
 
                         // toggle on click
                         expander.addEventListener("click", function (e) {
-                            var li = e.currentTarget.nextElementSibling;
+                            var li = e.currentTarget.parentNode;
                             usermanual.toggle(e.currentTarget);
                             usermanual.toggle(li);
                             e.preventDefault();
@@ -76,14 +76,19 @@
                 }
 
                 // Find the current page and expand all parents
-                var a = li.querySelector("a");
+                var a = li.querySelector("a.page-link");
                 if (a) {
                     var re = new RegExp("^" + a.getAttribute("href") + ".*");
                     if (re.test(url)) {
                         var li = a.parentNode;
-                        var expander = a.parentNode.previousElementSibling;
+                        var expander = a.parentNode.firstElementChild;
                         usermanual.toggle(li);
                         usermanual.toggle(expander);
+                    }
+
+                    var re = new RegExp("^" + a.getAttribute("href") + "/$");
+                    if (re.test(url)) {
+                        a.classList.add("current");
                     }
                 }
             }
@@ -152,57 +157,3 @@
     }
 })();
 </script>
-
-<!-- <script type="text/javascript">
-    $(document).ready(function () {
-        // Set current sidebar navigation class
-        var path = window.location.pathname.slice(0, -1); // get path and remove trailing slash
-        var current = $('#sidebar a[href="' + path + '"]');
-        current.addClass("current");
-
-        var element = null;
-        // Set navtabs class
-        if (path.slice(0, 12) === "/user-manual") {
-            element = $('.navbar-dashboard a[href="/user-manual/"]');
-            element.parent().addClass("current");
-        } else if (path.slice(0, 10) === "/tutorials") {
-            element = $('.navbar-dashboard a[href="/tutorials/"]');
-            element.parent().addClass("current");
-        } else if (path === "") {
-            element = $('.navbar-dashboard a[href="/"]');
-            element.parent().addClass("current");
-        }
-
-
-        // This builds next/prev links.
-
-        var href = '#';
-
-        // First get the child of the current page.
-        var nextPage = current.parent().next("ul").children();
-        if (!nextPage.length) {
-            // If there are no children get the next sibling
-            nextPage = current.parent().parent().next("li");
-        }
-        if (!nextPage.length) {
-            // If there still no next, go up to the previous parent and get the next sibling
-            nextPage = current.parent().parent().parent().parent().next()
-        }
-
-        if (nextPage.length) {
-            href = nextPage.find("h5 > a").attr("href");
-            $('#next').attr('href', href);
-
-        }
-
-        var prevPage = current.parent().parent().prev("li");
-        if (!prevPage.length) {
-            prevPage = current.parent().parent().parent().parent();
-        }
-        if (prevPage.length) {
-            href = prevPage.find("h5 > a").attr("href");
-            $('#prev').attr('href', href);
-        }
-    });
-</script>
- -->

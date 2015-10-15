@@ -28,6 +28,21 @@
         text-decoration: none;
     }
 
+    table {
+        border-collapse: collapse;
+
+        th {
+            @include font-bold();
+            border: 1px solid $table-border-color;
+            padding: 5px;
+        }
+
+        td {
+            border: 1px solid $table-border-color;
+            padding: 5px;
+        }
+    }
+
     ul {
         li {
 
@@ -297,14 +312,14 @@
         margin: auto;
 
         nav {
-            line-height: 16px;
+            line-height: 24px;
         }
 
         nav.tutorial {
             float: left;
             width: calc(20% - 40px);
             padding: 27px 10px;
-            font-size: 12px;
+            font-size: 16px;
             color: $sidebar-text-color;
 
             ul {
@@ -324,7 +339,7 @@
                             &:before {
                                 content: "\E113";
                                 @include font-icon();
-                                margin-left: -14px;
+                                margin-left: -16px;
                                 margin-top: -2px;
                                 position: absolute;
                             }
@@ -344,7 +359,7 @@
                                 color: $playcanvas-orange;
                                 content: "\E113";
                                 @include font-icon();
-                                margin-left: -14px;
+                                margin-left: -16px;
                                 margin-top: -2px;
                                 position: absolute;
                             }
@@ -363,7 +378,7 @@
             float: left;
             width: 100%;
             padding: 27px 0px;
-            font-size: 12px;
+            font-size: 16px;
 
             ul {
                 list-style-type: none;
@@ -373,14 +388,14 @@
 
                 .expander {
                     float: left;
-                    margin-top: 4px;
-                    margin-left: -14px;
+                    margin-left: -24px;
 
                     &.hidden {
                         display: none;
                     }
 
                     &.open {
+                        margin-top: -2px;
                         .expander-icon {
                             transform: rotate(90deg);
                             display: block;
@@ -397,6 +412,7 @@
                             display: block;
                         }
                     }
+
                 }
 
                 li {
@@ -423,6 +439,10 @@
 
                     > a {
                         color: $sidebar-text-color;
+
+                        &.current {
+                            color: $playcanvas-orange;
+                        }
                     }
 
                 }
@@ -469,7 +489,9 @@
             }
 
             img {
-                width: 100%;
+                display: block;
+                margin: 0 auto;
+                max-width: 640px;
             }
 
             iframe {
@@ -508,6 +530,9 @@
 
         main {
             width: 300px;
+            img {
+                max-width: 300px;
+            }
         }
     }
 }
@@ -543,6 +568,9 @@
 
         main {
             width: 300px;
+            img {
+                max-width: 300px;
+            }
         }
     }
 }
@@ -574,6 +602,9 @@
 
         main {
             width: 480px;
+            img {
+                max-width: 480px;
+            }
         }
     }
 }
@@ -604,6 +635,9 @@
 
         main {
             width: 640px;
+            img {
+                max-width: 640px;
+            }
         }
     }
 }
