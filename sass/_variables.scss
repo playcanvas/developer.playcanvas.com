@@ -11,17 +11,15 @@ $light-text-color: #5b7073;
 $header-text-color: rgba(255, 255, 255, 0.75);;
 $header-text-highlight: rgba(255, 255, 255, 0.75);
 
-// $content-width: 937px;
-
 $navbar-background-color: #f1f1ef;
 $navbar-border-color: #e6e6e6;
 $navbar-text-color: $light-text-color;
-$navbar-active-text-colorl: #8a8a8a;
 $navbar-active-background-color: #fff;
 $navbar-active-text-color: $text-color;
 
-$contents-text-color: $navbar-text-color;
-$contents-active-text-color: $text-color;
-$contents-border-color: $contents-text-color;
+$sidebar-text-color: $light-text-color;
+$sidebar-rollover-text-color: $text-color;
+$sidebar-active-text-color: $text-color;
+$sidebar-border-color: $sidebar-text-color;
 
 $main-text-color: $text-color;

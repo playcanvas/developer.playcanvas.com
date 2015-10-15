@@ -54,7 +54,9 @@ m.source("content")
     .use(metadata());
 
 // m.build(function (err, files) {
-//     console.error(err);
+//     if (err) {
+//         console.log(err);
+//     }
 // });
 
 // return;
@@ -92,6 +94,6 @@ m.metadata().dev = (env === "dev");
     .use(locale()())
     .build(function (err, files) {
         if (err) {
-            console.log(err);
+            console.error(err);
         }
     });

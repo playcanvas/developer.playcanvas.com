@@ -258,75 +258,92 @@
     font-size: 14px;
   }
   /* line 178, ../../sass/styles.scss */
-  nav.regular a {
-    color: #5b7073;
-  }
-  /* line 182, ../../sass/styles.scss */
   nav.regular ul {
     list-style-type: none;
-    margin: auto;
-    padding: 15px 0px;
+    margin: 0 auto;
+    padding: 0;
+    height: 52px;
   }
-  /* line 187, ../../sass/styles.scss */
-  nav.regular ul li {
-    display: inline;
-    padding: 17px 26px;
+  /* line 186, ../../sass/styles.scss */
+  nav.regular ul > li {
+    float: left;
     border-left: 1px solid #e6e6e6;
   }
-  /* line 193, ../../sass/styles.scss */
-  nav.regular ul li:last-child {
+  /* line 190, ../../sass/styles.scss */
+  nav.regular ul > li:last-child {
     border-right: 1px solid #e6e6e6;
   }
-  /* line 197, ../../sass/styles.scss */
-  nav.regular ul li.active {
+  /* line 194, ../../sass/styles.scss */
+  nav.regular ul > li.active {
     background-color: white;
     border-bottom: 1px solid white;
   }
-  /* line 201, ../../sass/styles.scss */
-  nav.regular ul li.active a {
+  /* line 198, ../../sass/styles.scss */
+  nav.regular ul > li.active > a {
     color: #324447;
   }
-  /* line 208, ../../sass/styles.scss */
+  /* line 203, ../../sass/styles.scss */
+  nav.regular ul > li > a {
+    display: block;
+    color: #5b7073;
+    height: 52px;
+    line-height: 52px;
+    padding: 0 16px;
+  }
+  /* line 213, ../../sass/styles.scss */
   nav.regular usermanual-navbar {
     float: right;
   }
 
-  /* line 213, ../../sass/styles.scss */
+  /* line 219, ../../sass/styles.scss */
   nav.intro {
     background-color: #f1f1ef;
     border-top: 1px solid #f1f1ef;
     border-bottom: 1px solid #e6e6e6;
     font-size: 14px;
   }
-  /* line 219, ../../sass/styles.scss */
-  nav.intro a {
-    color: #5b7073;
-  }
-  /* line 223, ../../sass/styles.scss */
+  /* line 225, ../../sass/styles.scss */
   nav.intro ul {
     list-style-type: none;
-    margin: auto;
-    padding: 20px 0px;
+    margin: 0 auto;
+    height: 170px;
+    padding: 0;
     width: 100%;
   }
-  /* line 230, ../../sass/styles.scss */
-  nav.intro ul li {
+  /* line 233, ../../sass/styles.scss */
+  nav.intro ul > li {
+    float: left;
     width: calc(25% - 4px);
-    padding: 5px 0px;
-    display: inline-block;
+    padding: 0;
     vertical-align: middle;
     text-align: center;
     border-left: 1px solid #e6e6e6;
   }
-  /* line 239, ../../sass/styles.scss */
-  nav.intro ul li:last-child {
-    border-right: 1px solid #e6e6e6;
+  /* line 241, ../../sass/styles.scss */
+  nav.intro ul > li > a {
+    display: block;
+    color: #5b7073;
+    height: 170px;
+    padding: 0 0px;
   }
-  /* line 244, ../../sass/styles.scss */
+  /* line 248, ../../sass/styles.scss */
+  nav.intro ul > li > a:hover > span {
+    color: #f16524;
+  }
+  /* line 252, ../../sass/styles.scss */
+  nav.intro ul > li > a > span {
+    display: block;
+    padding-top: 30px;
+  }
+  /* line 258, ../../sass/styles.scss */
+  nav.intro ul > li > a > p {
+    margin: 0;
+  }
+  /* line 270, ../../sass/styles.scss */
   nav.intro span {
     font-size: 64px;
   }
-  /* line 248, ../../sass/styles.scss */
+  /* line 274, ../../sass/styles.scss */
   nav.intro .video-icon:after {
     content: "\E275";
     font-family: 'ui-font-solid';
@@ -334,7 +351,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
-  /* line 253, ../../sass/styles.scss */
+  /* line 279, ../../sass/styles.scss */
   nav.intro .manual-icon:after {
     content: "\E222";
     font-family: 'ui-font-solid';
@@ -342,7 +359,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
-  /* line 258, ../../sass/styles.scss */
+  /* line 284, ../../sass/styles.scss */
   nav.intro .tutorials-icon:after {
     content: "\E212";
     font-family: 'ui-font-solid';
@@ -350,7 +367,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
-  /* line 263, ../../sass/styles.scss */
+  /* line 289, ../../sass/styles.scss */
   nav.intro .api-icon:after {
     content: "\E286";
     font-family: 'ui-font-solid';
@@ -359,11 +376,11 @@
     font-smoothing: antialiased;
   }
 
-  /* line 269, ../../sass/styles.scss */
+  /* line 295, ../../sass/styles.scss */
   .container {
     margin: auto;
   }
-  /* line 272, ../../sass/styles.scss */
+  /* line 298, ../../sass/styles.scss */
   .container nav.tutorial {
     float: left;
     width: calc(20% - 40px);
@@ -371,34 +388,56 @@
     font-size: 12px;
     color: #5b7073;
   }
-  /* line 279, ../../sass/styles.scss */
+  /* line 305, ../../sass/styles.scss */
   .container nav.tutorial ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  /* line 284, ../../sass/styles.scss */
-  .container nav.tutorial ul li {
+  /* line 310, ../../sass/styles.scss */
+  .container nav.tutorial ul > li {
     padding: 10px 0px;
   }
-  /* line 289, ../../sass/styles.scss */
-  .container nav.tutorial ul li.active {
-    color: #324447;
-    border-bottom: 2px dotted #5b7073;
+  /* line 314, ../../sass/styles.scss */
+  .container nav.tutorial ul > li > ul > li > a {
+    color: #5b7073;
   }
-  /* line 295, ../../sass/styles.scss */
+  /* line 319, ../../sass/styles.scss */
+  .container nav.tutorial ul > li > ul > li:hover:before {
+    content: "\E113";
+    font-family: 'ui-font-solid';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    margin-left: -14px;
+    margin-top: -2px;
+    position: absolute;
+  }
+  /* line 327, ../../sass/styles.scss */
+  .container nav.tutorial ul > li > ul > li:hover > a {
+    color: #324447;
+  }
+  /* line 334, ../../sass/styles.scss */
+  .container nav.tutorial ul > li > ul > li.active > a {
+    color: #324447;
+  }
+  /* line 338, ../../sass/styles.scss */
+  .container nav.tutorial ul > li > ul > li.active:before {
+    color: #f16524;
+    content: "\E113";
+    font-family: 'ui-font-solid';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    margin-left: -14px;
+    margin-top: -2px;
+    position: absolute;
+  }
+  /* line 358, ../../sass/styles.scss */
   .container nav.tutorial ul.level {
     display: none;
   }
-  /* line 299, ../../sass/styles.scss */
-  .container nav.tutorial a {
-    color: inherit;
-  }
-  /* line 302, ../../sass/styles.scss */
-  .container nav.tutorial a:hover {
-    text-decoration: underline;
-  }
-  /* line 308, ../../sass/styles.scss */
+  /* line 367, ../../sass/styles.scss */
   .container nav.usermanual {
     float: left;
     width: 100%;
@@ -406,17 +445,17 @@
     font-size: 12px;
     color: #5b7073;
   }
-  /* line 315, ../../sass/styles.scss */
+  /* line 374, ../../sass/styles.scss */
   .container nav.usermanual ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  /* line 320, ../../sass/styles.scss */
+  /* line 379, ../../sass/styles.scss */
   .container nav.usermanual ul li {
     padding: 5px 0px;
   }
-  /* line 324, ../../sass/styles.scss */
+  /* line 382, ../../sass/styles.scss */
   .container nav.usermanual ul li:before {
     content: "\E113";
     font-family: 'ui-font-solid';
@@ -424,19 +463,16 @@
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
-  /* line 329, ../../sass/styles.scss */
+  /* line 387, ../../sass/styles.scss */
   .container nav.usermanual ul li li {
     padding: 5px 15px;
   }
-  /* line 334, ../../sass/styles.scss */
-  .container nav.usermanual a {
+  /* line 391, ../../sass/styles.scss */
+  .container nav.usermanual ul li > a {
+    display: inline-block;
     color: inherit;
   }
-  /* line 337, ../../sass/styles.scss */
-  .container nav.usermanual a:hover {
-    text-decoration: underline;
-  }
-  /* line 343, ../../sass/styles.scss */
+  /* line 403, ../../sass/styles.scss */
   .container main {
     float: left;
     width: 640px;
@@ -444,7 +480,7 @@
     padding-left: 30px;
     color: #324447;
   }
-  /* line 350, ../../sass/styles.scss */
+  /* line 410, ../../sass/styles.scss */
   .container main h1 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -453,7 +489,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
   }
-  /* line 354, ../../sass/styles.scss */
+  /* line 414, ../../sass/styles.scss */
   .container main h2 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -462,7 +498,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
   }
-  /* line 358, ../../sass/styles.scss */
+  /* line 418, ../../sass/styles.scss */
   .container main h3 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -471,7 +507,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
   }
-  /* line 362, ../../sass/styles.scss */
+  /* line 422, ../../sass/styles.scss */
   .container main h4 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -480,7 +516,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 12px;
   }
-  /* line 366, ../../sass/styles.scss */
+  /* line 426, ../../sass/styles.scss */
   .container main h5 {
     font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -489,15 +525,15 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 10px;
   }
-  /* line 371, ../../sass/styles.scss */
+  /* line 431, ../../sass/styles.scss */
   .container main a {
     color: #324447;
   }
-  /* line 374, ../../sass/styles.scss */
+  /* line 434, ../../sass/styles.scss */
   .container main a:hover {
     text-decoration: underline;
   }
-  /* line 379, ../../sass/styles.scss */
+  /* line 439, ../../sass/styles.scss */
   .container main iframe {
     width: 640px;
     height: 480px;
@@ -507,120 +543,120 @@
 }
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 480px) {
-  /* line 391, ../../sass/styles.scss */
+  /* line 451, ../../sass/styles.scss */
   .content-width {
     width: 100%;
   }
 
-  /* line 396, ../../sass/styles.scss */
+  /* line 456, ../../sass/styles.scss */
   nav.intro ul {
     width: 100%;
   }
-  /* line 398, ../../sass/styles.scss */
+  /* line 458, ../../sass/styles.scss */
   nav.intro ul li {
     width: calc(25% - 4px);
   }
 
-  /* line 405, ../../sass/styles.scss */
+  /* line 465, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 409, ../../sass/styles.scss */
+  /* line 469, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 413, ../../sass/styles.scss */
+  /* line 473, ../../sass/styles.scss */
   .container main {
     width: 300px;
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 421, ../../sass/styles.scss */
+  /* line 481, ../../sass/styles.scss */
   .content-width {
     width: 700px;
   }
 
-  /* line 426, ../../sass/styles.scss */
+  /* line 486, ../../sass/styles.scss */
   nav.intro ul {
     width: 616px;
   }
-  /* line 428, ../../sass/styles.scss */
+  /* line 488, ../../sass/styles.scss */
   nav.intro ul li {
     width: 150px;
   }
-  /* line 432, ../../sass/styles.scss */
+  /* line 491, ../../sass/styles.scss */
   nav.intro ul li:last-child {
-    border-right: none;
+    border-right: 1px solid #e6e6e6;
   }
 
-  /* line 439, ../../sass/styles.scss */
+  /* line 500, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 443, ../../sass/styles.scss */
+  /* line 504, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 447, ../../sass/styles.scss */
+  /* line 508, ../../sass/styles.scss */
   .container main {
     width: 300px;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 455, ../../sass/styles.scss */
+  /* line 516, ../../sass/styles.scss */
   .content-width {
     width: 850px;
   }
 
-  /* line 460, ../../sass/styles.scss */
+  /* line 521, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 462, ../../sass/styles.scss */
+  /* line 523, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 469, ../../sass/styles.scss */
+  /* line 531, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 473, ../../sass/styles.scss */
+  /* line 535, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 477, ../../sass/styles.scss */
+  /* line 539, ../../sass/styles.scss */
   .container main {
     width: 480px;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 485, ../../sass/styles.scss */
+  /* line 547, ../../sass/styles.scss */
   .content-width {
     width: 970px;
   }
 
-  /* line 490, ../../sass/styles.scss */
+  /* line 552, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 492, ../../sass/styles.scss */
+  /* line 554, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 499, ../../sass/styles.scss */
+  /* line 561, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 503, ../../sass/styles.scss */
+  /* line 565, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 507, ../../sass/styles.scss */
+  /* line 569, ../../sass/styles.scss */
   .container main {
     width: 640px;
   }
