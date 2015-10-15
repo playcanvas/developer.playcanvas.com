@@ -53,14 +53,6 @@ m.source("content")
     }))
     .use(metadata());
 
-// m.build(function (err, files) {
-//     if (err) {
-//         console.log(err);
-//     }
-// });
-
-// return;
-
 // set environment
 m.metadata().local = (env === "local");
 m.metadata().prod = (env === "prod");

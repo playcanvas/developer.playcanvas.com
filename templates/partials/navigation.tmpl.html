@@ -1,14 +1,17 @@
 <nav class="usermanual">
  <ul>
     {{#en}}
+    <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
     <li>
         <a href="{{this.path}}">{{this.name}}</a>
         <ul>
         {{#children}}
+            <div class="expander"><span class="font-icon closed-icon">&#57619;</span></div>
             <li>
                 <a href="{{this.path}}">{{this.name}}</a>
                 <ul>
                 {{#children}}
+                    <div class="expander"><span class="font-icon closed-icon">&#57619;</span></div>
                     <li>
                         <a href="{{this.path}}">{{this.name}}</a>
                     </li>

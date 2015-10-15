@@ -19,7 +19,9 @@
 
         if (window.location.href.indexOf("user-manual") >= 0) {
             // usermanual
-            header.setActive("user-manual")
+            header.setActive("user-manual");
+
+            usermanual.buildMenu(url);
         }
 
         if (window.location.href.indexOf("videos") >= 0) {
@@ -47,6 +49,60 @@
 
         }
     };
+
+    var usermanual = {
+        buildMenu: function (url) {
+            var els = document.querySelectorAll("nav.usermanual li");
+            for (var i = 0; i < els.length; i++) {
+                var li = els[i]
+                var expander = li.previousElementSibling;
+                if (li.querySelectorAll("ul li").length > 0) {
+                    if(expander.classList) {
+                        // closed by default
+                        expander.classList.add("closed");
+                        li.classList.add("closed");
+
+                        // toggle on click
+                        expander.addEventListener("click", function (e) {
+                            var li = e.currentTarget.nextElementSibling;
+                            usermanual.toggle(e.currentTarget);
+                            usermanual.toggle(li);
+                            e.preventDefault();
+                            return false;
+                        }, true);
+                    }
+                } else {
+                    expander.classList.add("hidden");
+                }
+
+                // Find the current page and expand all parents
+                var a = li.querySelector("a");
+                if (a) {
+                    var re = new RegExp("^" + a.getAttribute("href") + ".*");
+                    if (re.test(url)) {
+                        var li = a.parentNode;
+                        var expander = a.parentNode.previousElementSibling;
+                        usermanual.toggle(li);
+                        usermanual.toggle(expander);
+                    }
+                }
+            }
+        },
+
+        // open/close a menu item
+        toggle: function (e) {
+            if (e.classList) {
+                if (e.classList.contains("closed")) {
+                    e.classList.remove("closed");
+                    e.classList.add("open");
+                } else {
+                    e.classList.remove("open");
+                    e.classList.add("closed");
+                }
+            }
+        }
+    };
+
 
     var tutorials = {
         setCurrentNavbar: function (url) {

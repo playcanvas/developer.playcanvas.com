@@ -10,6 +10,7 @@
 
         color: $text-color;
         font-size: 16px;
+        line-height: 30px;
     }
 
     h1 {
@@ -295,6 +296,10 @@
     .container {
         margin: auto;
 
+        nav {
+            line-height: 16px;
+        }
+
         nav.tutorial {
             float: left;
             width: calc(20% - 40px);
@@ -344,15 +349,7 @@
                                 position: absolute;
                             }
                         }
-
-
                     }
-
-                    // > a {
-                    //     &:hover {
-                    //         color: $sidebar-rollover-text-color;
-                    //     }
-                    // }
                 }
 
                 &.level {
@@ -360,8 +357,6 @@
                 }
 
             }
-
-
         }
 
         nav.usermanual {
@@ -369,19 +364,57 @@
             width: 100%;
             padding: 27px 0px;
             font-size: 12px;
-            color: $sidebar-text-color;
 
             ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
+                margin-top: 3px;
+
+                .expander {
+                    float: left;
+                    margin-top: 4px;
+                    margin-left: -14px;
+
+                    &.hidden {
+                        display: none;
+                    }
+
+                    &.open {
+                        .expander-icon {
+                            transform: rotate(90deg);
+                            display: block;
+
+                            > a {
+                                color: $playcanvas-orange;
+                            }
+                        }
+                    }
+
+                    &.closed {
+                        .expander-icon {
+                            transform: rotate(0deg);
+                            display: block;
+                        }
+                    }
+                }
 
                 li {
                     padding: 5px 0px;
 
-                    &:before {
-                        content: "\E113";
-                        @include font-icon();
+                    &.parent {
+                        &:before {
+                            content: "\E113";
+                            @include font-icon();
+                        }
+                    }
+
+                    &.closed > ul {
+                        display: none;
+                    }
+
+                    &.open > ul {
+                        display: block;
                     }
 
                     & li {
@@ -389,8 +422,7 @@
                     }
 
                     > a {
-                        display: inline-block;;
-                        color: inherit;
+                        color: $sidebar-text-color;
                     }
 
                 }
@@ -434,6 +466,10 @@
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+
+            img {
+                width: 100%;
             }
 
             iframe {

@@ -111,3 +111,7 @@
 .font-bold {
     @include font-bold();
 }
+
+.font-icon {
+    @include font-icon();
+}
