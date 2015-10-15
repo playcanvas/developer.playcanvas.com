@@ -28,6 +28,16 @@
         text-decoration: none;
     }
 
+    pre {
+        font-size: 12px;
+        line-height:1.5em;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    }
+
+    code {
+        overflow: scroll
+    }
+
     table {
         border-collapse: collapse;
 
@@ -499,6 +509,12 @@
                 height: 480px;
                 max-width: 100%;
                 border: none;
+            }
+
+            .alert-info {
+                border: 1px solid #eee;
+                background-color: #ddd;
+                color: #ccc;
             }
         }
     }

@@ -1,5 +1,7 @@
 <script type="text/javascript">
 (function () {
+    var _current = null;
+
     function ready(fn) {
       if (document.readyState != 'loading'){
         fn();
@@ -22,6 +24,7 @@
             header.setActive("user-manual");
 
             usermanual.buildMenu(url);
+            usermanual.setNextPrevButtons();
         }
 
         if (window.location.href.indexOf("videos") >= 0) {
@@ -89,10 +92,43 @@
                     var re = new RegExp("^" + a.getAttribute("href") + "/$");
                     if (re.test(url)) {
                         a.classList.add("current");
+                        _current = a;
                     }
                 }
             }
         },
+
+        setNextPrevButtons: function () {
+            var search = function (e) {
+                var parent = e.parentNode;
+                while (!parent.matches("li")) {
+                    parent = parent.parentNode;
+                }
+                return parent;
+            }
+
+            var next = document.getElementById("next");
+            next.addEventListener("click", function (e) {
+                var li = _current.parentNode;
+                if (li.nextElementSibling) {
+                    var a = li.nextElementSibling.querySelector("a.page-link");
+                    window.location.href = a.getAttribute("href");
+                } else {
+                    li = search(li);
+                    if (li.nextElementSibling) {
+                        var a = li.nextElementSibling.querySelector("a.page-link");
+                        window.location.href = a.getAttribute("href");
+                    } else {
+                        li = search(li);
+                        if (li.nextElementSibling) {
+                            var a = li.nextElementSibling.querySelector("a.page-link");
+                            window.location.href = a.getAttribute("href");
+                        }
+                    }
+                }
+            }, true);
+        },
+
 
         // open/close a menu item
         toggle: function (e) {
@@ -105,6 +141,10 @@
                     e.classList.add("closed");
                 }
             }
+        },
+
+        next: function () {
+
         }
     };
 
