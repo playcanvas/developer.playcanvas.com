@@ -12,14 +12,15 @@
 
     ready(function () {
         var url = window.location.pathname;
-        if (url.indexOf("tutorials") >= 0) {
+
+        if (url.indexOf("video") >= 0) {
+            header.setActive("video");
+        } else if (url.indexOf("tutorials") >= 0) {
             tutorials.setCurrentNavbar(url);
             tutorials.setCurrentSidebar(url);
 
             header.setActive("tutorials")
-        }
-
-        if (window.location.href.indexOf("user-manual") >= 0) {
+        } else if (url.indexOf("user-manual") >= 0) {
             // usermanual
             header.setActive("user-manual");
 
@@ -27,16 +28,12 @@
             usermanual.setNextPrevButtons();
         }
 
-        if (window.location.href.indexOf("videos") >= 0) {
-            header.setActive("videos");
-        }
-
         // search
         var search = document.getElementById("search");
         if (search) {
             search.addEventListener("keydown", function (e) {
                 if (e.which === 13 || e.keyCode === 13) {
-                    window.location.href = "/search?q=" + e.target.value;
+                    window.location.href = "/search/?q=" + e.target.value;
                 }
             }, true);
         }
@@ -187,11 +184,13 @@
 
             // set the active tutorial
             var nav = document.querySelector("nav.tutorial");
-            var links = nav.querySelectorAll("a");
-            for(var i = 0; i < links.length; i++) {
-                if (url.indexOf(links[i].getAttribute("href")) >= 0) {
-                    if(links[i].parentNode.classList) {
-                        links[i].parentNode.classList.add("active");
+            if (nav) {
+                var links = nav.querySelectorAll("a");
+                for(var i = 0; i < links.length; i++) {
+                    if (url.indexOf(links[i].getAttribute("href")) >= 0) {
+                        if(links[i].parentNode.classList) {
+                            links[i].parentNode.classList.add("active");
+                        }
                     }
                 }
             }
