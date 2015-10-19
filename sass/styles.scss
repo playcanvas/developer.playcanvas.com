@@ -555,6 +555,36 @@
 
         }
     }
+
+    .search-container {
+        > main {
+            @include font-regular();
+            font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+            font-size: 16px !important;
+
+            a.gs-title {
+                color: $main-link-color !important;
+                text-decoration: none !important;
+            }
+
+            .gs-visibleUrl {
+                color: $main-text-color !important;
+                font-style: italic;
+            }
+
+            .gsc-table-result {
+                color: $main-text-color !important;
+            }
+
+            .gsc-results .gsc-cursor-box .gsc-cursor-page {
+                color: $main-link-color !important;
+            }
+
+            .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+                color: $main-link-color !important;
+            }
+        }
+    }
 }
 
 /* Extra small: (phones, 480px and up) */
