@@ -6,7 +6,7 @@ position: 8
 
 Shadows are a great way to add realism to your games.
 
-<img alt="Characters with shadow casting" width="640" src="/images/shadows/doom3_shadows.png"></img>
+![Characters with shadow casting][1]
 
 The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop. Furthermore, shadows are free for everybody to use - you don't need a Pro account to make your game look great.
 
@@ -48,3 +48,4 @@ Shadow mapping can be prone to rendering artifacts that can look very ugly. If y
 
 The Normal Offset Bias solves this problem. In addition to using the depth bias, we can avoid both shadow acne and Peter Panning by making small tweaks to the UV coordinates used in the shadow map look-up. A fragment's position is offset along its geometric normal. This "Normal Offset" technique yields vastly superior results to a constant shadow bias only approach.
 
+[1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
