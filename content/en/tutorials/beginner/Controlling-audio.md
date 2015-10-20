@@ -34,7 +34,7 @@ In order, the lines of code above: play one audio file that has been attached to
 ##General setup
 The audio file was uploaded in .mp3 format (.ogg files are also usable). A sphere was created, and an audiosource component attached. The audio file was then added to the assets list within the audiosource settings. The activate option in the audiosource settings was disabled so as not to play the file immediately on loading. An audiolistener component was added to the default camera. The [full Editor scene and scripts can be accessed here][2] in the 'controllingAudio' Scene.
 
-<img src="/images/tutorials/audio/audiosource-settings.PNG" />
+<img src="/images/tutorials/audio/audiosource-settings.jpg" />
 
 The full code used for the above PlayCanvas app is as follows:
 
