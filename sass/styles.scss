@@ -313,7 +313,7 @@
         }
 
         .api-icon:after {
-            content: "\E286";
+            content: "\E353";
             @include font-icon();
         }
     }
@@ -543,9 +543,12 @@
             }
 
             .alert-info {
-                border: 1px solid #eee;
-                background-color: #ddd;
-                color: #ccc;
+                border: 1px solid $alert-border-color;
+                background-color: $alert-background-color;
+                color: $alert-text-color;
+                padding: 14px;
+                font-size: 14px;
+                line-height: 24px;
             }
 
             &.full-width {
@@ -553,7 +556,26 @@
                 padding: 0;
             }
 
+            &.frontpage {
+                float: none;
+                padding: 0px;
+                width: 100%;
+            }
         }
+
+        // .thumbnail {
+        //     float: left;
+        //     img {
+        //         width: 33%;
+        //         margin: 0;
+        //         padding: 0;
+        //     }
+
+        //     p {
+        //         margin: 0;
+        //         padding: 0;
+        //     }
+        // }
     }
 
     .search-container {
@@ -588,7 +610,13 @@
 }
 
 /* Extra small: (phones, 480px and up) */
-@media (min-width: 480px) {
+@media (min-width: 300px) {
+    header {
+        > nav {
+            display: none;
+        }
+    }
+
     .content-width {
         width: 100%;
     }
@@ -622,6 +650,17 @@
 
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
+    header {
+        > nav {
+            display: block;
+            > ul {
+                > li {
+                    margin: auto 5px;
+                }
+            }
+        }
+    }
+
     .content-width {
         width: 700px;
     }
@@ -660,6 +699,16 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    header {
+        > nav {
+            > ul {
+                > li {
+                    margin: auto 30px;
+                }
+            }
+        }
+    }
+
     .content-width {
         width: 850px;
     }

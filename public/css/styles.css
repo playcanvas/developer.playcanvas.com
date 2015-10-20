@@ -412,7 +412,7 @@
   }
   /* line 315, ../../sass/styles.scss */
   nav.intro .api-icon:after {
-    content: "\E286";
+    content: "\E353";
     font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -667,17 +667,26 @@
   }
   /* line 545, ../../sass/styles.scss */
   .container main .alert-info {
-    border: 1px solid #eee;
-    background-color: #ddd;
-    color: #ccc;
+    border: 1px solid #bce8f1;
+    background-color: #d9edf7;
+    color: #31708f;
+    padding: 14px;
+    font-size: 14px;
+    line-height: 24px;
   }
-  /* line 551, ../../sass/styles.scss */
+  /* line 554, ../../sass/styles.scss */
   .container main.full-width {
     width: 100%;
     padding: 0;
   }
+  /* line 559, ../../sass/styles.scss */
+  .container main.frontpage {
+    float: none;
+    padding: 0px;
+    width: 100%;
+  }
 
-  /* line 560, ../../sass/styles.scss */
+  /* line 582, ../../sass/styles.scss */
   .search-container > main {
     font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -685,165 +694,184 @@
     font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
     font-size: 16px !important;
   }
-  /* line 565, ../../sass/styles.scss */
+  /* line 587, ../../sass/styles.scss */
   .search-container > main a.gs-title {
     color: #0099ec !important;
     text-decoration: none !important;
   }
-  /* line 570, ../../sass/styles.scss */
+  /* line 592, ../../sass/styles.scss */
   .search-container > main .gs-visibleUrl {
     color: #324447 !important;
     font-style: italic;
   }
-  /* line 575, ../../sass/styles.scss */
+  /* line 597, ../../sass/styles.scss */
   .search-container > main .gsc-table-result {
     color: #324447 !important;
   }
-  /* line 579, ../../sass/styles.scss */
+  /* line 601, ../../sass/styles.scss */
   .search-container > main .gsc-results .gsc-cursor-box .gsc-cursor-page {
     color: #0099ec !important;
   }
-  /* line 583, ../../sass/styles.scss */
+  /* line 605, ../../sass/styles.scss */
   .search-container > main .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
     color: #0099ec !important;
   }
 }
 /* Extra small: (phones, 480px and up) */
-@media (min-width: 480px) {
-  /* line 592, ../../sass/styles.scss */
+@media (min-width: 300px) {
+  /* line 615, ../../sass/styles.scss */
+  header > nav {
+    display: none;
+  }
+
+  /* line 620, ../../sass/styles.scss */
   .content-width {
     width: 100%;
   }
 
-  /* line 597, ../../sass/styles.scss */
+  /* line 625, ../../sass/styles.scss */
   nav.intro ul {
     width: 100%;
   }
-  /* line 599, ../../sass/styles.scss */
+  /* line 627, ../../sass/styles.scss */
   nav.intro ul li {
     width: calc(25% - 4px);
   }
 
-  /* line 606, ../../sass/styles.scss */
+  /* line 634, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 610, ../../sass/styles.scss */
+  /* line 638, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 614, ../../sass/styles.scss */
+  /* line 642, ../../sass/styles.scss */
   .container main {
     width: 300px;
   }
-  /* line 616, ../../sass/styles.scss */
+  /* line 644, ../../sass/styles.scss */
   .container main img {
     max-width: 300px;
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 625, ../../sass/styles.scss */
+  /* line 654, ../../sass/styles.scss */
+  header > nav {
+    display: block;
+  }
+  /* line 657, ../../sass/styles.scss */
+  header > nav > ul > li {
+    margin: auto 5px;
+  }
+
+  /* line 664, ../../sass/styles.scss */
   .content-width {
     width: 700px;
   }
 
-  /* line 630, ../../sass/styles.scss */
+  /* line 669, ../../sass/styles.scss */
   nav.intro ul {
     width: 616px;
   }
-  /* line 632, ../../sass/styles.scss */
+  /* line 671, ../../sass/styles.scss */
   nav.intro ul li {
     width: 150px;
   }
-  /* line 635, ../../sass/styles.scss */
+  /* line 674, ../../sass/styles.scss */
   nav.intro ul li:last-child {
     border-right: 1px solid #e6e6e6;
   }
 
-  /* line 644, ../../sass/styles.scss */
+  /* line 683, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 648, ../../sass/styles.scss */
+  /* line 687, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 652, ../../sass/styles.scss */
+  /* line 691, ../../sass/styles.scss */
   .container main {
     width: 360px;
   }
-  /* line 654, ../../sass/styles.scss */
+  /* line 693, ../../sass/styles.scss */
   .container main img {
     max-width: 360px;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 663, ../../sass/styles.scss */
+  /* line 705, ../../sass/styles.scss */
+  header > nav > ul > li {
+    margin: auto 30px;
+  }
+
+  /* line 712, ../../sass/styles.scss */
   .content-width {
     width: 850px;
   }
 
-  /* line 668, ../../sass/styles.scss */
+  /* line 717, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 670, ../../sass/styles.scss */
+  /* line 719, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 678, ../../sass/styles.scss */
+  /* line 727, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 682, ../../sass/styles.scss */
+  /* line 731, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 686, ../../sass/styles.scss */
+  /* line 735, ../../sass/styles.scss */
   .container main {
     width: 540px;
   }
-  /* line 688, ../../sass/styles.scss */
+  /* line 737, ../../sass/styles.scss */
   .container main img {
     max-width: 540px;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 697, ../../sass/styles.scss */
+  /* line 746, ../../sass/styles.scss */
   .content-width {
     width: 970px;
   }
 
-  /* line 702, ../../sass/styles.scss */
+  /* line 751, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 704, ../../sass/styles.scss */
+  /* line 753, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 711, ../../sass/styles.scss */
+  /* line 760, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 715, ../../sass/styles.scss */
+  /* line 764, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 719, ../../sass/styles.scss */
+  /* line 768, ../../sass/styles.scss */
   .container main {
     width: 700px;
   }
-  /* line 721, ../../sass/styles.scss */
+  /* line 770, ../../sass/styles.scss */
   .container main img {
     max-width: 700px;
   }
-  /* line 725, ../../sass/styles.scss */
+  /* line 774, ../../sass/styles.scss */
   .container main .full-width {
     width: 970px;
   }

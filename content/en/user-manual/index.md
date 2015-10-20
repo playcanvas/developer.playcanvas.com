@@ -10,5 +10,5 @@ By reading through the manual you'll soon grasp the complete process of building
 
 [Lets get started!][2]
 
-[1]: /user-manual/glossary#entity
+[1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction
