@@ -660,7 +660,7 @@
   }
   /* line 538, ../../sass/styles.scss */
   .container main iframe {
-    width: 640px;
+    width: 100%;
     height: 480px;
     max-width: 100%;
     border: none;
@@ -843,7 +843,7 @@
 @media (min-width: 1200px) {
   /* line 746, ../../sass/styles.scss */
   .content-width {
-    width: 970px;
+    width: 1070px;
   }
 
   /* line 751, ../../sass/styles.scss */
@@ -865,7 +865,7 @@
   }
   /* line 768, ../../sass/styles.scss */
   .container main {
-    width: 700px;
+    width: 800px;
   }
   /* line 770, ../../sass/styles.scss */
   .container main img {

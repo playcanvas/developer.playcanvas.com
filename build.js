@@ -46,6 +46,7 @@ handlebars.registerPartial("analytics",
 var m = new Metalsmith(__dirname);
 
 m.source("content")
+    .concurrency(10)
     .use(markdown())
     .use(contents()())
     .use(permalinks({
@@ -53,10 +54,10 @@ m.source("content")
     }))
     .use(metadata());
 
-// set environment
-m.metadata().local = (env === "local");
-m.metadata().prod = (env === "prod");
-m.metadata().dev = (env === "dev");
+    // set environment
+    m.metadata().local = (env === "local");
+    m.metadata().prod = (env === "prod");
+    m.metadata().dev = (env === "dev");
 
     m.use(i18n()({
         locales: [{file: 'content/ja/titles.js.json', locale: 'ja'}]
@@ -75,8 +76,8 @@ m.metadata().dev = (env === "dev");
     }))
     .use(templates({
         engine: "handlebars",
-        directory: "templates",
-        default: "page.tmpl.html"
+        directory: "templates"
+        // default: "intro.tmpl.html"
     }))
     .use(static({
         src: "public",
