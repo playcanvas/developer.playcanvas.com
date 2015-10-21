@@ -667,7 +667,7 @@
     }
 
     .content-width {
-        width: 100%;
+        width: calc(100% - 60px);
     }
 
     nav.intro {
@@ -689,7 +689,7 @@
         }
 
         main {
-            width: 300px;
+            width: calc(100% - 210px);
             img {
                 max-width: 300px;
             }
@@ -711,7 +711,7 @@
     }
 
     .content-width {
-        width: 700px;
+        width: calc(100% - 60px);
     }
 
     nav.intro {
@@ -738,7 +738,7 @@
         }
 
         main {
-            width: 360px;
+            width: calc(100% - 210px);
             img {
                 max-width: 360px;
             }
@@ -759,7 +759,7 @@
     }
 
     .content-width {
-        width: 850px;
+        width: calc(100% - 60px);
     }
 
     nav.intro {
@@ -782,7 +782,7 @@
         }
 
         main {
-            width: 540px;
+            width: calc(100% - 270px);
             img {
                 max-width: 540px;
             }
