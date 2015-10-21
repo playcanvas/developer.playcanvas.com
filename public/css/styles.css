@@ -768,11 +768,6 @@
 }
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 300px) {
-  /* line 664, ../../sass/styles.scss */
-  header > nav {
-    display: none;
-  }
-
   /* line 669, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);

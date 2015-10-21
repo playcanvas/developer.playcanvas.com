@@ -660,11 +660,11 @@
 
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 300px) {
-    header {
-        > nav {
-            display: none;
-        }
-    }
+    // header {
+    //     > nav {
+    //         display: none;
+    //     }
+    // }
 
     .content-width {
         width: calc(100% - 60px);
