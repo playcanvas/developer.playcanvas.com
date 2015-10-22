@@ -768,154 +768,154 @@
 }
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 300px) {
-  /* line 669, ../../sass/styles.scss */
+  /* line 664, ../../sass/styles.scss */
+  header > nav {
+    display: block;
+  }
+  /* line 667, ../../sass/styles.scss */
+  header > nav > ul > li {
+    margin: auto 5px;
+  }
+
+  /* line 675, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 674, ../../sass/styles.scss */
+  /* line 680, ../../sass/styles.scss */
   nav.intro ul {
     width: 100%;
   }
-  /* line 676, ../../sass/styles.scss */
+  /* line 682, ../../sass/styles.scss */
   nav.intro ul li {
     width: calc(25% - 4px);
   }
 
-  /* line 683, ../../sass/styles.scss */
+  /* line 689, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 687, ../../sass/styles.scss */
+  /* line 693, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 691, ../../sass/styles.scss */
+  /* line 697, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
-  /* line 693, ../../sass/styles.scss */
+  /* line 699, ../../sass/styles.scss */
   .container main img {
     max-width: 300px;
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 703, ../../sass/styles.scss */
-  header > nav {
-    display: block;
-  }
-  /* line 706, ../../sass/styles.scss */
-  header > nav > ul > li {
-    margin: auto 5px;
-  }
-
-  /* line 713, ../../sass/styles.scss */
+  /* line 709, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 718, ../../sass/styles.scss */
+  /* line 714, ../../sass/styles.scss */
   nav.intro ul {
     width: 616px;
   }
-  /* line 720, ../../sass/styles.scss */
+  /* line 716, ../../sass/styles.scss */
   nav.intro ul li {
     width: 150px;
   }
-  /* line 723, ../../sass/styles.scss */
+  /* line 719, ../../sass/styles.scss */
   nav.intro ul li:last-child {
     border-right: 1px solid #e6e6e6;
   }
 
-  /* line 732, ../../sass/styles.scss */
+  /* line 728, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 736, ../../sass/styles.scss */
+  /* line 732, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 740, ../../sass/styles.scss */
+  /* line 736, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
-  /* line 742, ../../sass/styles.scss */
+  /* line 738, ../../sass/styles.scss */
   .container main img {
     max-width: 360px;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 754, ../../sass/styles.scss */
+  /* line 750, ../../sass/styles.scss */
   header > nav > ul > li {
     margin: auto 30px;
   }
 
-  /* line 761, ../../sass/styles.scss */
+  /* line 757, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 766, ../../sass/styles.scss */
+  /* line 762, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 768, ../../sass/styles.scss */
+  /* line 764, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 776, ../../sass/styles.scss */
+  /* line 772, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 780, ../../sass/styles.scss */
+  /* line 776, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 784, ../../sass/styles.scss */
+  /* line 780, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 270px);
   }
-  /* line 786, ../../sass/styles.scss */
+  /* line 782, ../../sass/styles.scss */
   .container main img {
     max-width: 540px;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 795, ../../sass/styles.scss */
+  /* line 791, ../../sass/styles.scss */
   .content-width {
     width: 1070px;
   }
 
-  /* line 800, ../../sass/styles.scss */
+  /* line 796, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 802, ../../sass/styles.scss */
+  /* line 798, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 809, ../../sass/styles.scss */
+  /* line 805, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 813, ../../sass/styles.scss */
+  /* line 809, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 817, ../../sass/styles.scss */
+  /* line 813, ../../sass/styles.scss */
   .container main {
     width: 800px;
   }
-  /* line 819, ../../sass/styles.scss */
+  /* line 815, ../../sass/styles.scss */
   .container main img {
     max-width: 700px;
   }
-  /* line 823, ../../sass/styles.scss */
+  /* line 819, ../../sass/styles.scss */
   .container main .full-width {
     width: 970px;
   }
