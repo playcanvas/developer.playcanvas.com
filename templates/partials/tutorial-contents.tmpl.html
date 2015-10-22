@@ -1,0 +1,64 @@
+<nav class="tutorial">
+    <ul class="beginner level">
+    {{#en}}
+        {{#beginner}}
+        <li>
+            <ul class="children">
+            {{#children}}
+                <li>
+                    <a href="{{this.path}}">{{this.name}}</a>
+                    <ul>
+                    {{#children}}
+                        <li>
+                            <a href="{{this.path}}">{{this.name}}</a>
+                        </li>
+                    {{/children}}
+                    </ul>
+                </li>
+            {{/children}}
+            </ul>
+        </li>
+        {{/beginner}}
+    </ul>
+    <ul class="intermediate level">
+        {{#intermediate}}
+        <li>
+            <ul class="children">
+            {{#children}}
+                <li>
+                    <a href="{{this.path}}">{{this.name}}</a>
+                    <ul>
+                    {{#children}}
+                        <li>
+                            <a href="{{this.path}}">{{this.name}}</a>
+                        </li>
+                    {{/children}}
+                    </ul>
+                </li>
+            {{/children}}
+            </ul>
+        </li>
+        {{/intermediate}}
+    </ul>
+    <ul class="advanced level">
+        {{#advanced}}
+        <li>
+            <ul class="children">
+            {{#children}}
+                <li>
+                    <a href="{{this.path}}">{{this.name}}</a>
+                    <ul>
+                    {{#children}}
+                        <li>
+                            <a href="{{this.path}}">{{this.name}}</a>
+                        </li>
+                    {{/children}}
+                    </ul>
+                </li>
+            {{/children}}
+            </ul>
+        </li>
+        {{/advanced}}
+    </ul>
+    {{/en}}
+</nav>

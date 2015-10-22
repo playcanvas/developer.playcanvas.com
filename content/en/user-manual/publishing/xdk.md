@@ -1,6 +1,6 @@
 ---
 title: Intel XDK
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 skip: true
 ---
 

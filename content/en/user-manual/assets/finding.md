@@ -1,6 +1,6 @@
 ---
 title: Finding Assets
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 ---
 
 ## Where can I get 3D models/Sound FX/Music for PlayCanvas?

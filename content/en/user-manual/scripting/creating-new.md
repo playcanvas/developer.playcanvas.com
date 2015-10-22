@@ -1,6 +1,6 @@
 ---
 title: Creating and attaching scripts
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 1
 ---
 

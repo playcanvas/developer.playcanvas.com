@@ -63,7 +63,7 @@ We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, 
 
 Some Editor settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube's attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
 
-<img src="/images/tutorials/forces/rigidbody_settings.PNG" alt="rigidbody_settings"/>
+<img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
 
 ##Teleport code
 ~~~js~~~

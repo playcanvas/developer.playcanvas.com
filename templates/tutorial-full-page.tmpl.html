@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    {{> head}}
+
+    <body>
+        {{> header header-icon="&#57874;" header-title="Tutorials"}}
+        {{> tutorial-navbar}}
+
+        <div class="container content-width">
+            <main class="full-width">
+                {{#with tutorials-navigation}}
+                <div class="tutorial-tag-cloud">
+                    <h1>Beginner</h1>
+                    {{#each en.beginner}}
+                        {{#each children}}
+                            <span><a href="{{path}}">{{name}}</a></span>
+                        {{/each}}
+                    {{/each}}
+                </div>
+                <div class="tutorial-tag-cloud">
+                    <h1>Intermediate</h1>
+                    {{#each en.intermediate}}
+                        {{#each children}}
+                            <span><a href="{{path}}">{{name}}</a></span>
+                        {{/each}}
+                    {{/each}}
+                </div>
+                <div class="tutorial-tag-cloud">
+                    <h1>Advanced</h1>
+                    {{#each en.advanced}}
+                        {{#each children}}
+                            <span><a href="{{path}}">{{name}}</a></span>
+                        {{/each}}
+                    {{/each}}
+                </div>
+                {{/with}}
+            </main>
+        </div>
+
+        {{> scripts}}
+        {{> analytics}}
+    </body>
+</html>

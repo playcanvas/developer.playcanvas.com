@@ -1,6 +1,6 @@
 ---
 title: Publishing
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 5
 ---
 
@@ -8,12 +8,12 @@ The fastest, easiest, most convenient way to publish your game is to publish it 
 
 To publish you will need to have at least one scene in your project. Then you can follow these steps:
 
-* In your project dashboard, select the 'PUBLISH' tab.
 
 ![Publish][1]
 
+* In your project dashboard, select the 'PUBLISH' tab.
 * Click the PUBLISH button
-* Enter a name for your app. This is used to construct the URL in the form `http://apps.playcanvas.com/<USERNAME>/<PROJECTNAME>/<GAMENAME>`. So for example, if PlayCanvas user 'will' had a project called 'callofhonor' and chose a publish name of 'megawar', the published URL would be `http://apps.playcanvas.com/will/callofhonor/megawar`.
+* Enter a name for your app.
 * Select the Scenes you want to include in your app from the list. Notice that the Primary Scene (the one with the blue banner icon), is always included in your app and it will be the first scene loaded when your app is launched.
 * Click 'PUBLISH NOW'
 * You will see a new app created in the PUBLISH tab. Wait until it finishes processing.

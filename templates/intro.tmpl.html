@@ -3,23 +3,63 @@
     {{> head}}
 
     <body>
-        {{> header}}
+        {{> header frontpage=true}}
 
-        {{> title-banner}}
-
-        {{> navbar}}
-
-        <div id="page-container" class="container">
-            <div class="row">
-                <div id="page-content" class="col-md-offset-1 col-md-7">
-                    <h1>{{ title }}</h1>
-                    {{{ contents }}}
-                </div>
-            </div>
+        <div class="nav-container">
+            <nav id="intro-navbar" class="intro">
+                <ul class="content-width">
+                    <li>
+                        <a href="/user-manual">
+                        <span class="manual-icon"></span>
+                        <p>USER MANUAL</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tutorials">
+                        <span class="tutorials-icon"></span>
+                        <p>TUTORIALS</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tutorials/video">
+                        <span class="video-icon"></span>
+                        <p>VIDEOS</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/api">
+                        <span class="api-icon"></span>
+                        <p>API REFERENCE</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+        <div class="container content-width">
+            <main class="frontpage">
+                <div class="thumbnail">
+                    <a href="http://tanx.playcanvas.com"><img src="/images/thumbnails/Tanx_Thumb.png" /></a>
+                    <h1>Games</h1>
+                    <p>Awesome games</p>
+                </div>
+                <div class="thumbnail">
+                    <a href="http://car.playcanvas.com"><img src="/images/thumbnails/BMW_Thumb.png" /></a>
+                    <h1>Brand Experiences</h1>
+                    <p>Incredible brand experiences</p>
+                </div>
+                <div class="thumbnail">
+                    <a href="playcanv.as/p/1ha5glKf"><img src="/images/thumbnails/Orange_Thumb.png" /></a>
+                    <h1>Visualizations</h1>
+                    <p>High quality product visualizations</p>
+                </div>
+                <div style="clear:both"></div>
 
+                <hr />
+
+                {{{ contents }}}
+            </main>
+        </div>
         {{> scripts}}
-
         {{> analytics}}
     </body>
 </html>

@@ -1,6 +1,6 @@
 ---
 title: Viewport
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 4
 ---
 

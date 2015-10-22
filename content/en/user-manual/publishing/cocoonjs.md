@@ -1,6 +1,6 @@
 ---
 title: Ludei CocoonJS
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 skip: true
 ---
 

@@ -1,52 +1,200 @@
 <script type="text/javascript">
-    $(document).ready(function () {
-        // Set current sidebar navigation class
-        var path = window.location.pathname.slice(0, -1); // get path and remove trailing slash
-        var current = $('#sidebar a[href="' + path + '"]');
-        current.addClass("current");
+(function () {
+    var _current = null;
 
-        var element = null;
-        // Set navtabs class
-        if (path.slice(0, 12) === "/user-manual") {
-            element = $('.navbar-dashboard a[href="/user-manual/"]');
-            element.parent().addClass("current");
-        } else if (path.slice(0, 10) === "/tutorials") {
-            element = $('.navbar-dashboard a[href="/tutorials/"]');
-            element.parent().addClass("current");
-        } else if (path === "") {
-            element = $('.navbar-dashboard a[href="/"]');
-            element.parent().addClass("current");
+    function ready(fn) {
+      if (document.readyState != 'loading'){
+        fn();
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+
+    ready(function () {
+        var url = window.location.pathname;
+
+        if (url.indexOf("video") >= 0) {
+            header.setActive("video");
+        } else if (url.indexOf("tutorials") >= 0) {
+            tutorials.setCurrentNavbar(url);
+            tutorials.setCurrentSidebar(url);
+
+            header.setActive("tutorials")
+        } else if (url.indexOf("user-manual") >= 0) {
+            // usermanual
+            header.setActive("user-manual");
+
+            usermanual.buildMenu(url);
+            usermanual.setNextPrevButtons();
         }
 
-
-        // This builds next/prev links.
-
-        var href = '#';
-
-        // First get the child of the current page.
-        var nextPage = current.parent().next("ul").children();
-        if (!nextPage.length) {
-            // If there are no children get the next sibling
-            nextPage = current.parent().parent().next("li");
-        }
-        if (!nextPage.length) {
-            // If there still no next, go up to the previous parent and get the next sibling
-            nextPage = current.parent().parent().parent().parent().next()
+        // search
+        var search = document.getElementById("search");
+        if (search) {
+            search.addEventListener("keydown", function (e) {
+                if (e.which === 13 || e.keyCode === 13) {
+                    window.location.href = "/search/?q=" + e.target.value;
+                }
+            }, true);
         }
 
-        if (nextPage.length) {
-            href = nextPage.find("h5 > a").attr("href");
-            $('#next').attr('href', href);
-
-        }
-
-        var prevPage = current.parent().parent().prev("li");
-        if (!prevPage.length) {
-            prevPage = current.parent().parent().parent().parent();
-        }
-        if (prevPage.length) {
-            href = prevPage.find("h5 > a").attr("href");
-            $('#prev').attr('href', href);
-        }
     });
+
+    var header = {
+        setActive: function (_class) {
+            var li = document.querySelector("li." + _class);
+            if (li && li.classList) {
+                li.classList.add("active");
+            }
+
+        }
+    };
+
+    var usermanual = {
+        buildMenu: function (url) {
+            var els = document.querySelectorAll("nav.usermanual li");
+            for (var i = 0; i < els.length; i++) {
+                var li = els[i]
+                var expander = li.firstElementChild;
+                if (li.querySelectorAll("ul li").length > 0) {
+                    if(expander.classList) {
+                        // closed by default
+                        expander.classList.add("closed");
+                        li.classList.add("closed");
+
+                        // toggle on click
+                        expander.addEventListener("click", function (e) {
+                            var li = e.currentTarget.parentNode;
+                            usermanual.toggle(e.currentTarget);
+                            usermanual.toggle(li);
+                            e.preventDefault();
+                            return false;
+                        }, true);
+                    }
+                } else {
+                    expander.classList.add("hidden");
+                }
+
+                // Find the current page and expand all parents
+                var a = li.querySelector("a.page-link");
+                if (a) {
+                    var re = new RegExp("^" + a.getAttribute("href") + ".*");
+                    if (re.test(url)) {
+                        var li = a.parentNode;
+                        var expander = a.parentNode.firstElementChild;
+                        usermanual.toggle(li);
+                        usermanual.toggle(expander);
+                    }
+
+                    var re = new RegExp("^" + a.getAttribute("href") + "/$");
+                    if (re.test(url)) {
+                        a.classList.add("current");
+                        _current = a;
+                    }
+                }
+            }
+        },
+
+        setNextPrevButtons: function () {
+            var search = function (e) {
+                var parent = e.parentNode;
+                while (!parent.matches("li")) {
+                    parent = parent.parentNode;
+                }
+                return parent;
+            }
+
+            var next = document.getElementById("next");
+            if (next) {
+                next.addEventListener("click", function (e) {
+                    var li = _current.parentNode;
+                    if (li.nextElementSibling) {
+                        var a = li.nextElementSibling.querySelector("a.page-link");
+                        window.location.href = a.getAttribute("href");
+                    } else {
+                        li = search(li);
+                        if (li.nextElementSibling) {
+                            var a = li.nextElementSibling.querySelector("a.page-link");
+                            window.location.href = a.getAttribute("href");
+                        } else {
+                            li = search(li);
+                            if (li.nextElementSibling) {
+                                var a = li.nextElementSibling.querySelector("a.page-link");
+                                window.location.href = a.getAttribute("href");
+                            }
+                        }
+                    }
+                }, true);
+            };
+        },
+
+
+        // open/close a menu item
+        toggle: function (e) {
+            if (e.classList) {
+                if (e.classList.contains("closed")) {
+                    e.classList.remove("closed");
+                    e.classList.add("open");
+                } else {
+                    e.classList.remove("open");
+                    e.classList.add("closed");
+                }
+            }
+        },
+
+        next: function () {
+
+        }
+    };
+
+
+    var tutorials = {
+        setCurrentNavbar: function (url) {
+            var level = null;
+
+            // tutorials
+            if (url.indexOf("beginner") >= 0) {
+                level = "beginner";
+            } else if (url.indexOf("intermediate") >= 0) {
+                level = "intermediate";
+            } else if (url.indexOf("advanced") >= 0) {
+                level = "advanced";
+            }
+
+            var el = document.querySelector("#tutorials-navbar-" + level);
+            if (el && el.classList)
+                el.classList.add("active");
+        },
+
+        setCurrentSidebar: function (url) {
+            var level = null;
+            if (url.indexOf("beginner") >= 0) {
+                level = "beginner";
+            } else if (url.indexOf("intermediate") >= 0) {
+                level = "intermediate";
+            } else if (url.indexOf("advanced") >= 0) {
+                level = "advanced";
+            }
+
+            // show the correct sidebar
+            var el = document.querySelector("ul." + level)
+            if(el) {
+                el.style.display = "block";
+            }
+
+            // set the active tutorial
+            var nav = document.querySelector("nav.tutorial");
+            if (nav) {
+                var links = nav.querySelectorAll("a");
+                for(var i = 0; i < links.length; i++) {
+                    if (url.indexOf(links[i].getAttribute("href")) >= 0) {
+                        if(links[i].parentNode.classList) {
+                            links[i].parentNode.classList.add("active");
+                        }
+                    }
+                }
+            }
+        }
+    }
+})();
 </script>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    {{> head}}
+
+    <body>
+        {{> header header-icon="&#57890;" header-title="User Manual"}}
+        {{> usermanual-navbar}}
+
+        <div class="container content-width">
+            {{> user-manual-navigation}}
+            <main>
+                <h1>{{ title }}</h1>
+                {{{ contents }}}
+            </main>
+        </div>
+
+        {{> scripts}}
+        {{> analytics}}
+    </body>
+</html>

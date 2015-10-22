@@ -1,6 +1,6 @@
 ---
 title: Rigid Body
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 9
 ---
 

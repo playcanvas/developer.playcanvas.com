@@ -3,25 +3,15 @@
     {{> head}}
 
     <body>
+        {{> header header-icon="&#57874;" header-title="Tutorials"}}
+        {{> tutorial-navbar}}
 
-        {{> header}}
-
-        {{> title-banner}}
-
-        {{> navbar}}
-
-        <div id="page-container" class="container">
-            <div class="row">
-                <div class="col-md-offset-1 col-md-3">
-                    <ul id="sidebar" class="nav">
-                    {{> tutorials-navigation}}
-                    </ul>
-                </div>
-                <div id="page-content" class="col-md-8">
-                    <h1>{{ title }}</h1>
-                    {{{ contents }}}
-                </div>
-            </div>
+        <div class="container content-width">
+            {{> tutorials-navigation}}
+            <main>
+                <h1>{{ title }}</h1>
+                {{{ contents }}}
+            </main>
         </div>
 
         {{> scripts}}

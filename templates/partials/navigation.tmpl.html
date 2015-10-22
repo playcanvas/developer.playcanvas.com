@@ -1,10 +1,26 @@
-<li>
-    <h5>
-        <a href="/{{this.file.path}}">{{i18n this.title}}</a>
-    </h5>
-    <ul id="{{this.id}}" class="">
-    {{#children}}
-        {{> navigation this}}
-    {{/children}}
-    </ul>
-</li>
+<nav class="usermanual">
+ <ul>
+    {{#en}}
+    <li>
+        <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+        <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+        <ul>
+        {{#children}}
+            <li>
+                <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+                <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+                <ul>
+                {{#children}}
+                    <li>
+                        <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+                        <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+                    </li>
+                {{/children}}
+                </ul>
+            </li>
+        {{/children}}
+        </ul>
+    </li>
+    {{/en}}
+</ul>
+</nav>
