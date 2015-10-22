@@ -58,6 +58,9 @@ pc.script.attribute('speed', 'number', 80, {
         <td>displayName</td><td>The name to show in the Editor.</td>
     </tr>
     <tr>
+        <td>description</td><td>The description to show in the Editor when the user hovers over the script attribute.</td>
+    </tr>
+    <tr>
         <td>min</td><td>The minimum value that is valid.</td>
     </tr>
     <tr>
