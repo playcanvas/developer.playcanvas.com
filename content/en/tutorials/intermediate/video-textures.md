@@ -65,7 +65,7 @@ pc.script.create('videotexture', function (app) {
         },
 
         update: function (dt) {
-            // Upload the video data to the texture every frame
+            // Upload the video data to the texture every other frame
             this.upload = !this.upload;
             if (this.upload) {
                 this.videoTexture.upload();
