@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas Editor
+title: Editor
 template: usermanual-page.tmpl.html
 position: 4
 ---
