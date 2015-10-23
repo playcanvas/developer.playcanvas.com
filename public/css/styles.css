@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'ui-font-solid';
-  src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.eot");
-  src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.ttf") format("truetype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.svg") format("svg");
+  font-family: 'pc-icon';
+  src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.eot");
+  src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.ttf") format("truetype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.svg#pc") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -38,28 +38,28 @@
   font-style: normal;
 }
 
-/* line 99, ../../sass/_fonts.scss */
+/* line 101, ../../sass/_fonts.scss */
 .font-thin {
   font-family: 'Proxima Nova Thin', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
-/* line 103, ../../sass/_fonts.scss */
+/* line 105, ../../sass/_fonts.scss */
 .font-light {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
-/* line 107, ../../sass/_fonts.scss */
+/* line 109, ../../sass/_fonts.scss */
 .font-regular {
   font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 111, ../../sass/_fonts.scss */
+/* line 113, ../../sass/_fonts.scss */
 .font-bold {
   font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -68,9 +68,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 115, ../../sass/_fonts.scss */
+/* line 117, ../../sass/_fonts.scss */
 .font-icon {
-  font-family: 'ui-font-solid';
+  font-family: 'pc-icon';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
@@ -389,7 +389,7 @@
   /* line 300, ../../sass/styles.scss */
   nav.intro .video-icon:after {
     content: "\E275";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -397,7 +397,7 @@
   /* line 305, ../../sass/styles.scss */
   nav.intro .manual-icon:after {
     content: "\E222";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -405,7 +405,7 @@
   /* line 310, ../../sass/styles.scss */
   nav.intro .tutorials-icon:after {
     content: "\E212";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -413,7 +413,7 @@
   /* line 315, ../../sass/styles.scss */
   nav.intro .api-icon:after {
     content: "\E353";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -448,7 +448,7 @@
   /* line 347, ../../sass/styles.scss */
   .container nav.tutorial ul > li > ul > li:hover:before {
     content: "\E113";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -468,7 +468,7 @@
   .container nav.tutorial ul > li > ul > li.active:before {
     color: #f16524;
     content: "\E113";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -528,7 +528,7 @@
   /* line 430, ../../sass/styles.scss */
   .container nav.usermanual ul li.parent:before {
     content: "\E113";
-    font-family: 'ui-font-solid';
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
