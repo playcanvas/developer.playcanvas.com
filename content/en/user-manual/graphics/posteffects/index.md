@@ -1,7 +1,7 @@
 ---
 title: Post Effects
 template: usermanual-page.tmpl.html
-position: 9
+position: 1
 ---
 
 PlayCanvas has built-in support for post-processing effects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
