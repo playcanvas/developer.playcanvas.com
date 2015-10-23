@@ -8,7 +8,7 @@ position: 4
 
 This is an application that implements first person character movement.
 
-The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player, if no camera entity is present a new entity is created. See the full scene setup in the Tutorial Project
+The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player, if no camera entity is present a new entity is created. See the full scene setup in the [Tutorial Project][1].
 
 The script below performs the following functions:
 
@@ -123,3 +123,5 @@ pc.script.create('first_person_movement', function (app) {
     return First_person_movement;
 });
 ~~~
+
+[1]: https://playcanvas.com/project/359952/overview/tutorial-first-person-movement
