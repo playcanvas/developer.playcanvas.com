@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas
+title: PlayCanvas Hosting
 template: usermanual-page.tmpl.html
 position: 1
 ---
