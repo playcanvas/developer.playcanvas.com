@@ -14,7 +14,6 @@ A packaged app is essentially a ZIP file containing all the resources that make 
 
 * A manifest file
 * Some icon files
-* PlayCanvas resources that are externally referenced by exported PlayCanvas games
 
 ### Create the Manifest
 
@@ -48,65 +47,13 @@ A reference that fully documents this manifest format can be found on [MDN][5].
 
 In the [icons description][6] in the manifest reference, it states you must include a 128x128 icon for inclusion in the Firefox Marketplace and a 60x60 icon to represent your app on the device. Place these images somewhere in your extracted PlayCanvas app folder and set the 'icons' property accordingly in your webapp.manifest.
 
-### Embed External Resources
-
-There are potentially three files that must be copied into your app folder that are normally externally referenced by a PlayCanvas app:
-
-#### The PlayCanvas Engine
-
-The PlayCanvas Engine is referenced in your exported game's index.html. Search for a line of this form (bearing in mind your engine version may well be different):
-
-~~~html~~~
-    <script src="https://code.playcanvas.com/playcanvas-0.141.1.min.js"></script>
-~~~
-
-And convert it to this:
-
-~~~html~~~
-    <script src="playcanvas-0.141.1.min.js"></script>
-~~~
-
-And download the file to the root of your extracted PlayCanvas app.
-
-#### The PlayCanvas Loading Screen Image
-
-The PlayCanvas loading screen image is referenced in your exported game's index.html. Search for the following line:
-
-~~~html~~~
-    <a href="http://playcanvas.com" target="_blank"><img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/logo/PLAY_FLAT_ORANGE3.png"/></a>
-~~~
-
-And convert it to this:
-
-~~~html~~~
-    <img src="PLAY_FLAT_ORANGE3.png"/>
-~~~
-
-And download the file to the root of your extracted PlayCanvas app.
-
-#### The PlayCanvas Physics Engine
-
-In your extracted app folder, locate and open data.js. Search for a line of the form:
-
-~~~javascript~~~
-    "libraries": ["https://code.playcanvas.com/ammo.3c2cc63.js"]
-~~~
-
-And convert it to:
-
-~~~javascript~~~
-    "libraries": ["ammo.3c2cc63.js"]
-~~~
-
-And download the file to the root of your extracted PlayCanvas app.
-
 ### Re-zip Your Packaged App
 
 You should now have a valid packaged app. Simply re-zip the files back into a file called package.zip and copy to a web location of your choice.
 
 [1]: http://www.mozilla.org/en-US/firefox/os/
-[2]: /user-manual/publishing/playcanvas/
-[3]: /user-manual/publishing/self-hosting/
-[4]: http://apps.playcanvas.com/playcanvas/dungeonfury/dungeonfury
+[2]: /user-manual/publishing/web/playcanvas-hosting
+[3]: /user-manual/publishing/web/self-hosting
+[4]: http://dungeonfury.playcanvas.com/
 [5]: https://developer.mozilla.org/en-US/Apps/Developing/Manifest
 [6]: https://developer.mozilla.org/en-US/Apps/Developing/Manifest#icons
