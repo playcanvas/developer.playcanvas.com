@@ -93,4 +93,4 @@ We're done! Zip up the game's files again and upload to your new item in the CWS
 
 So hopefully this gives some insight into how simple it is to publish your game to the Chrome Web Store. Whether you choose to publish a hosted or packaged app is up to you and, as we've shown, both have their advantages and disadvantages. Our recommendation to you is to experiment. It's an awesome publishing platform that anyone can start to use today, so try it out for yourself!
 
-[1]: /images/user-manual/publishing/web/chromewebstore.png
+[1]: /images/publishing/web/chromewebstore.png
