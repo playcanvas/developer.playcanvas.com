@@ -8,6 +8,8 @@ position: 3
 
 If you're building HTML5 games, chances are that you want as many people to play your game as possible and, in an ideal world, you'll make some money in the process. Monetization on the web is harder than it is on mobile app stores, where payment processing is standardised and credit card details are stored. But there are still a number of options. One great platform you should consider for your game is the <a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a>.
 
+![Chrome Web Store][1]
+
 It's a carefully curated app store for the desktop version of Chrome (available on Win, Mac, Linux and Chrome OS). Publishing your game here will expose it to a wider audience and offer you a simple mechanism for taking payments. Let's step through the process for publishing a free game.
 
 Google lets you publish your game in two forms: as a hosted app or a packaged app.
@@ -90,3 +92,5 @@ chrome.app.runtime.onLaunched.addListener(function() {
 We're done! Zip up the game's files again and upload to your new item in the CWS Developer Dashboard. Fill out the rest of the form as you would for a hosted app (although you now don't need to show ownership for a hosted app URL since there isn't one any more).
 
 So hopefully this gives some insight into how simple it is to publish your game to the Chrome Web Store. Whether you choose to publish a hosted or packaged app is up to you and, as we've shown, both have their advantages and disadvantages. Our recommendation to you is to experiment. It's an awesome publishing platform that anyone can start to use today, so try it out for yourself!
+
+[1]: /images/user-manual/publishing/web/chromewebstore.png
