@@ -9,9 +9,7 @@ PlayCanvas games are just web pages. An index.html file and a collection of reso
 * [Intel XDK][1]
 * [Ludei's CocoonJS][2]
 * [Firefox OS][3]
-* [PlayCanvas iOS Xcode project downloader][4]
 
 [1]: /user-manual/publishing/mobile/xdk
 [2]: /user-manual/publishing/mobile/cocoonjs
 [2]: /user-manual/publishing/mobile/firefoxos
-[3]: /user-manual/publishing/mobile/xcode
