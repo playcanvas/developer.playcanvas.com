@@ -1,12 +1,12 @@
 ---
-title: Cocoon.io
+title: Cocoon
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-[Cocoon.io][1] from [Ludei][2] is a cloud service that can wrap your PlayCanvas game as a native application which can then be submitted to either Google Play, Amazon App Store or the Apple App Store.
+[Cocoon][1] from [Ludei][2] is a cloud service that can wrap your PlayCanvas game as a native application which can then be submitted to either Google Play, Amazon App Store or the Apple App Store.
 
-## Testing your PlayCanvas Game in Cocoon.io
+## Testing your PlayCanvas Game in Cocoon
 
 Before you generate a native build of your PlayCanvas game, you will want to test it in Cocoon.io and see how it performs. Ludei has created an awesome app called the Developer App that can pull your PlayCanvas game directly from playcanvas.com and run it on the device. Just give the Developer App your game's URL and it will happily run in the Developer App.
 
@@ -53,4 +53,4 @@ When the OS icons at the top of the card stop flickering, you will be able to do
 [2]: https://ludei.com/
 [3]: https://cocoon.io/doc/cloud_compiler#create-a-project
 [4]: https://cocoon.io/doc/developer_app
-[5]: /user-manual/publishing/self-hosting/
+[5]: /user-manual/publishing/web/self-hosting/

@@ -25,5 +25,5 @@ To ensure the best experience for your users, be sure to publish both x86 and AR
 </p>
 
 [1]: https://software.intel.com/en-us/html5/tools
-[2]: /user-manual/publishing/self-hosting
+[2]: /user-manual/publishing/web/self-hosting
 [3]: https://software.intel.com/sites/default/files/managed/9a/72/Intel_Walkthrough_GP-Multiple_APK_Submissions.pdf
