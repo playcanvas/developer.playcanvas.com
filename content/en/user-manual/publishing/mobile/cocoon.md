@@ -1,7 +1,7 @@
 ---
 title: Cocoon.io
 template: usermanual-page.tmpl.html
-position:
+position: 1
 ---
 
 [Cocoon.io][1] from [Ludei][2] is a cloud service that can wrap your PlayCanvas game as a native application which can then be submitted to either Google Play, Amazon App Store or the Apple App Store.

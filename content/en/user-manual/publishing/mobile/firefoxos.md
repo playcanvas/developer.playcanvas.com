@@ -1,7 +1,7 @@
 ---
 title: Firefox OS
 template: usermanual-page.tmpl.html
-position: 5
+position: 3
 ---
 
 ## Publishing to Firefox OS

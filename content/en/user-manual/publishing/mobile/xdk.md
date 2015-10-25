@@ -1,7 +1,7 @@
 ---
 title: Intel XDK
 template: usermanual-page.tmpl.html
-skip: true
+position: 2
 ---
 
 The [Intel XDK][1] can wrap your PlayCanvas game as a native application which can then be sumitted to a number of monetization platforms, including Google Play or the Apple App Store.
