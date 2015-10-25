@@ -1,5 +1,5 @@
 ---
-title: Mobile Publishing
+title: Mobile
 template: usermanual-page.tmpl.html
 position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: Web Publishing
+title: Web
 template: usermanual-page.tmpl.html
 position: 1
 ---
