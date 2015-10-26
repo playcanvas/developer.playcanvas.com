@@ -1,7 +1,7 @@
 ---
 title: Common Questions
-template: page.tmpl.html
-position: 2
+template: usermanual-page.tmpl.html
+position: 11
 ---
 
 ## How do I add a component?
