@@ -7,6 +7,7 @@
     "metalsmith-permalinks": "0.4.0",
     "metalsmith-static": "0.0.5",
     "metalsmith-metadata": "0.0.1",
+    "metalsmith-metallic": "0.1.1",
     "metalsmith": "1.7.0",
     "handlebars": "^2.0.0-alpha.2",
     "http-server": "0.6.1"
