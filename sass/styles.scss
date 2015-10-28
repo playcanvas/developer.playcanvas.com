@@ -499,7 +499,7 @@
             img {
                 display: block;
                 margin: 0 auto;
-                max-width: 640px;
+                max-width: 800px;
             }
 
             table {
@@ -697,7 +697,7 @@
         main {
             width: calc(100% - 210px);
             img {
-                max-width: 300px;
+                max-width: 100%;
             }
         }
     }
@@ -736,7 +736,7 @@
         main {
             width: calc(100% - 210px);
             img {
-                max-width: 360px;
+                max-width: 100%;
             }
         }
     }
@@ -780,7 +780,7 @@
         main {
             width: calc(100% - 270px);
             img {
-                max-width: 540px;
+                max-width: 100%;
             }
         }
     }
@@ -813,7 +813,7 @@
         main {
             width: 800px;
             img {
-                max-width: 700px;
+                max-width: 800px;
             }
 
             .full-width {
