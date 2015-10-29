@@ -32,14 +32,14 @@ You can create a new material and drag and drop it on your model or you can sele
 
 Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube.
 
-To create a cubemap click on the **<span class="font-icon">&#57632;</span> Add** button in the Assets panel and select **New Cubemap**. Then drag 6 textures in the cubemap inspector. To take advantage of Physically Based Rendering make sure you click **Prefilter** after setting the 6 textures.
+To create a cubemap click on the **<span class="pc-icon">&#57632;</span> Add** button in the Assets panel and select **New Cubemap**. Then drag 6 textures in the cubemap inspector. To take advantage of Physically Based Rendering make sure you click **Prefilter** after setting the 6 textures.
 
 <a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">View User Manual</a>
 ## How do I create an Entity?
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_entity.gif"/>
 
-You can create a new Entity by clicking on the <span class="font-icon">&#57632;</span> Add button in the Hierarchy panel or right click on an Entity and use the **New Entity** menu item.
+You can create a new Entity by clicking on the <span class="pc-icon">&#57632;</span> Add button in the Hierarchy panel or right click on an Entity and use the **New Entity** menu item.
 
 ## How do I create a light?
 
@@ -50,7 +50,7 @@ You can create a light by adding a **Light** component to an Entity. You can als
 
 Every surface on a 3D model is rendered using a **material**. The material defines the properties of that surface, such as its color, shininess, bumpiness etc.
 
-To create a material click on the **<span class="font-icon">&#57632;</span> Add** button in the Assets panel and then select **New Material**.
+To create a material click on the **<span class="pc-icon">&#57632;</span> Add** button in the Assets panel and then select **New Material**.
 
 <a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">View User Manual</a>
 ## How do I create a shape like a box, sphere etc?
@@ -73,11 +73,11 @@ To create a skybox for your scene you first need to create a <a href="http://dev
 To delete an asset select it and press **Delete** or right click on it and select Delete.
 ## How do I delete an Entity?
 
-You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="font-icon">&#57637;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
+You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="pc-icon">&#57637;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
 
 ## How do I duplicate an Entity?
 
-To duplicate an Entity use the <span class="font-icon">&#57638;</span> Duplicate button in the Hierarchy panel or press **Ctrl+D**.
+To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate button in the Hierarchy panel or press **Ctrl+D**.
 
 You can also copy and paste an Entity. To copy press **Ctrl+C** and to paste **Ctrl+V**.
 
@@ -100,7 +100,7 @@ You can create Audio assets by dragging audio files from your computer into the 
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/remove_component.jpg" />
 
-To remove a component, select the Entity and then click on the **<span class="font-icon">&#57638;</span> Delete** button in the Inspector next the component’s title.
+To remove a component, select the Entity and then click on the **<span class="pc-icon">&#57638;</span> Delete** button in the Inspector next the component’s title.
 
 ## How do I render a 3D model?
 
@@ -113,7 +113,7 @@ To render a 3D model you need to add a **Model Component** to an Entity and drag
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/transform.gif"/>
 
-To move an Entity, select it and then move it using the **<span class="font-icon">&#57617;</span> Translate tool**. To rotate it use the **<span class="font-icon">&#57619;</span> Rotate tool** and to scale it use the **<span class="font-icon">&#57618;</span> Scale tool**.
+To move an Entity, select it and then move it using the **<span class="pc-icon">&#57617;</span> Translate tool**. To rotate it use the **<span class="pc-icon">&#57619;</span> Rotate tool** and to scale it use the **<span class="pc-icon">&#57618;</span> Scale tool**.
 
 Switch between the Translate / Rotate / Scale tools by pressing 1 / 2 / 3 respectively.
 ## How do I upload assets?

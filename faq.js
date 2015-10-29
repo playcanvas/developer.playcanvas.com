@@ -29,7 +29,8 @@ var files = fs.readdirSync(faqDir);
 files.sort();
 
 var processFile = function (content) {
-    var processed = content.replace(/^---[\s\S]*?[\s\S]---/, '');
+    var processed = content.replace(/font-icon/g, 'pc-icon');
+    processed = processed.replace(/^---[\s\S]*?[\s\S]---/, '');
 
     processed = processed.replace(/^\n*/, '');
     return processed + '\n';
