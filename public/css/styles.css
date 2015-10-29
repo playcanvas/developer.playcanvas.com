@@ -618,7 +618,7 @@
   .container main img {
     display: block;
     margin: 0 auto;
-    max-width: 640px;
+    max-width: 800px;
   }
   /* line 505, ../../sass/styles.scss */
   .container main table {
@@ -805,7 +805,7 @@
   }
   /* line 699, ../../sass/styles.scss */
   .container main img {
-    max-width: 300px;
+    max-width: 100%;
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
@@ -842,7 +842,7 @@
   }
   /* line 738, ../../sass/styles.scss */
   .container main img {
-    max-width: 360px;
+    max-width: 100%;
   }
 }
 /* Medium devices (desktops, 992px and up) */
@@ -880,7 +880,7 @@
   }
   /* line 782, ../../sass/styles.scss */
   .container main img {
-    max-width: 540px;
+    max-width: 100%;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
@@ -913,7 +913,7 @@
   }
   /* line 815, ../../sass/styles.scss */
   .container main img {
-    max-width: 700px;
+    max-width: 800px;
   }
   /* line 819, ../../sass/styles.scss */
   .container main .full-width {
