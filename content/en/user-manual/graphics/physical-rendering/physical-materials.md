@@ -4,26 +4,98 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-COMING SOON...
+To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
 
-What is a Physical Material?
+In this section we'll talk about the most useful properties of the material and you can see in the live demos how altering them affects the appearance of a material.
+
+First a note about Cubemaps and Workflows
+
+## Cubemaps
+
+First up cubemaps and skyboxes, because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below.
+
+**Physical Materials require a cubemap in order to look great!** Cubemaps are used to create a large portion of the reflected light component of the material. So if you don't have a cubemap either applied directly the material in the Environment section, or applied to the entire scene as a skybox, your materials won't look as good.
+
+In addition, for the best results, the cubemaps should be created from [High Dynamic Range][2] (HDR) textures.
+
+<div class="alert-info">For physical materials to use your cubemap it **must** be prefiltered. Once you have set up your cubemap asset, ensure you press the "prefilter" button just below it.
+</div>
+
+## Metalness and Specular Workflow
+
+![Workflows][4]
+
+PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At PlayCanvas we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
+
+The **metalness** workflow involves setting a metalness value or creating a metalness map which determines which areas of the material are metal or non-metal. Usually this is a simple binary choice. 1 for metal, 0 for non-metal. It is not often that you have a value between the two.
+
+The **specular** workflow involves setting a specular value or creating a specular map which determines the color and intensity of the reflected light for your material.
+
+There is a good explanation of the differences on the [Marmoset Toolbag blog][5].
+
+On to materials...
 
 # Material Properties and Maps
 
 ## Diffuse
 
-Otherwise know as Albedo or Base Color.
+The Diffuse Color is the base color of the material. This is an RGB color value. For clean pure (metal, plastic) substances this can be a constant value but it can also be supplied as a diffuse map texture. Note, you should usually avoid including lighting detail (shadows or highlights) in your diffuse map as this can be applied in other maps.
+
+It can also be known as **albedo** or **base color**.
+
+<iframe src="http://playcanv.as/p/Q28EwTwQ?color"></iframe>
+
+You can often find the charts of recorded values for diffuse/albedo values on the internet.
+
+![Metals][3]
+
+<table class="centered">
+  <tr>
+  <th>Material</th><th>RGB</th>
+  </tr>
+  <tr>
+  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  </tr>
+  <tr>
+  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  </tr>
+  <tr>
+  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  </tr>
+</table>
 
 ## Metalness
 
+The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
+
+<div class="alert-info">
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+</div>
+
+You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
+
+<iframe src="http://playcanv.as/p/Q28EwTwQ?metal"></iframe>
+
 ## Glossiness
 
-Microsurface, Inverse of Roughness
+Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
 
-## Ambient Occlusion
+<iframe src="http://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
 
-## Reflectivity
+Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
-## Refraction
+Sometimes glossiness and roughness are referred to as the **microsurface** value.
 
+## All together
 
+These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
+
+There are many other additional properties to investigate that can be used to make great materials such as Ambient Occulusion, Emissive, Opacity, Normal and Height maps.
+
+<iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
+
+[1]: http://store.playcanvas.com
+[2]: /user-manual/glossary#hdr
+[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
+[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion

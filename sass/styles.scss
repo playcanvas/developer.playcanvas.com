@@ -533,6 +533,10 @@
                         font-size: 14px;
                     }
                 }
+
+                &.centered {
+                    text-align: center;
+                }
             }
 
             iframe {

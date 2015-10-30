@@ -66,6 +66,8 @@ A target asset is a file that can be loaded into your game at runtime. It will b
 <h2 id="transform">Transformation Matrix</h2>
 A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular: translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity][15] has a transformation matrix accessible via the `getLocalTransform()` method.
 
+<h2 id="hdr">High Dynamic Range</h2>
+High Dynamic Range or HDR refers to color information that is outside of the usual 0-1 range. In the standard range, 0 is black and 1 is the brightest color that the display device can show. In the real world there is no such limitations for example, the sun can be many times brighter than sky that surrounds it.
 
 [1]: #component
 [2]: #source_asset
