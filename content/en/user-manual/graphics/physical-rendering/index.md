@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-![Cerberus][1]
+![Star-Lord][1]
 *Cerberus Model by [artisaverb][2]*
 
 Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
@@ -54,7 +54,7 @@ Some PBR systems use Roughness, some use Glossiness, they are the same thing. Ro
 *More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
 
 
-[1]: /images/user-manual/graphics/physical-rendering/cerberus.jpg
+[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
 [2]: http://artisaverb.info/
 [3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
 [4]: /images/user-manual/graphics/physical-rendering/materials.jpg
