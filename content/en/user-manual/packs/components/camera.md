@@ -6,6 +6,8 @@ position: 4
 
 The 'camera' component enables an entity to render a scene from a certain viewpoint.
 
+The camera component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the camera will render the scene every frame.
+
 ![Camera component][1]
 
 ## Properties
@@ -14,10 +16,13 @@ The 'camera' component enables an entity to render a scene from a certain viewpo
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If selected, the camera will render the scene every frame.</td></tr>
-    <tr><td>Clear Color Buffer</td><td>If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</td></tr>
+    <tr><td>Clear Buffers</td><td>Controls how the camera's render target is cleared before rendering each frame. The camera maintains two types of buffer: the color buffer which stores the visible image and a depth buffer that stores information about the distance of a rendered pixel in relation to the position of the camera. The buffers can be cleared independently:       
+        <ul>
+            <li>Color: If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</li>
+            <li>Depth: If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</li>
+        </ul>
+    </td></tr>
     <tr><td>Clear Color</td><td>The color used to clear the camera's render target.  This property is only displayed if 'Clear Color Buffer' is selected.</td></tr>
-    <tr><td>Clear Depth Buffer</td><td>If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</td></tr>
     <tr><td>Projection</td><td>The projection type of the camera. Options are:
         <ul>
             <li>Perspective</li>
