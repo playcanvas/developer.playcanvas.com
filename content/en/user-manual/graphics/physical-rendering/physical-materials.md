@@ -95,7 +95,7 @@ There are many other additional properties to investigate that can be used to ma
 <iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
 
 [1]: http://store.playcanvas.com
-[2]: /glossary#hdr
+[2]: /user-manual/glossary#hdr
 [3]: /images/user-manual/graphics/physical-rendering/metals.jpg
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
