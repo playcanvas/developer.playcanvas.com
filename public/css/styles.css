@@ -658,14 +658,18 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
   }
-  /* line 538, ../../sass/styles.scss */
+  /* line 537, ../../sass/styles.scss */
+  .container main table.centered {
+    text-align: center;
+  }
+  /* line 542, ../../sass/styles.scss */
   .container main iframe {
     width: 100%;
     height: 480px;
     max-width: 100%;
     border: none;
   }
-  /* line 545, ../../sass/styles.scss */
+  /* line 549, ../../sass/styles.scss */
   .container main .alert-info {
     border: 1px solid #bce8f1;
     background-color: #d9edf7;
@@ -674,24 +678,24 @@
     font-size: 14px;
     line-height: 24px;
   }
-  /* line 554, ../../sass/styles.scss */
+  /* line 558, ../../sass/styles.scss */
   .container main.full-width {
     width: 100%;
     padding: 0;
   }
-  /* line 559, ../../sass/styles.scss */
+  /* line 563, ../../sass/styles.scss */
   .container main.frontpage {
     float: none;
     padding: 0px;
     width: 100%;
   }
-  /* line 565, ../../sass/styles.scss */
+  /* line 569, ../../sass/styles.scss */
   .container main hr {
     border: 1px solid #cfcfcf;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  /* line 571, ../../sass/styles.scss */
+  /* line 575, ../../sass/styles.scss */
   .container main .thumbnail {
     float: left;
     overflow: hidden;
@@ -699,43 +703,43 @@
     text-align: center;
     padding-top: 30px;
   }
-  /* line 578, ../../sass/styles.scss */
+  /* line 582, ../../sass/styles.scss */
   .container main .thumbnail h1 {
     padding: 0;
     margin: 0;
   }
-  /* line 583, ../../sass/styles.scss */
+  /* line 587, ../../sass/styles.scss */
   .container main .thumbnail p {
     padding: 0;
     margin: 0;
     font-size: 12px;
     color: #5b7073;
   }
-  /* line 591, ../../sass/styles.scss */
+  /* line 595, ../../sass/styles.scss */
   .container main .tutorial-tag-cloud {
     float: left;
     text-align: center;
     width: 33%;
     font-size: 14px;
   }
-  /* line 597, ../../sass/styles.scss */
+  /* line 601, ../../sass/styles.scss */
   .container main .tutorial-tag-cloud span {
     float: left;
     background-color: #f1f1ef;
     padding: 0px 15px;
     margin: 5px;
   }
-  /* line 604, ../../sass/styles.scss */
+  /* line 608, ../../sass/styles.scss */
   .container main .tutorial-tag-cloud a {
     color: #5b7073;
   }
-  /* line 607, ../../sass/styles.scss */
+  /* line 611, ../../sass/styles.scss */
   .container main .tutorial-tag-cloud a:hover {
     color: #0099ec;
     text-decoration: none;
   }
 
-  /* line 631, ../../sass/styles.scss */
+  /* line 635, ../../sass/styles.scss */
   .search-container > main {
     font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -743,179 +747,179 @@
     font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
     font-size: 16px !important;
   }
-  /* line 636, ../../sass/styles.scss */
+  /* line 640, ../../sass/styles.scss */
   .search-container > main a.gs-title {
     color: #0099ec !important;
     text-decoration: none !important;
   }
-  /* line 641, ../../sass/styles.scss */
+  /* line 645, ../../sass/styles.scss */
   .search-container > main .gs-visibleUrl {
     color: #324447 !important;
     font-style: italic;
   }
-  /* line 646, ../../sass/styles.scss */
+  /* line 650, ../../sass/styles.scss */
   .search-container > main .gsc-table-result {
     color: #324447 !important;
   }
-  /* line 650, ../../sass/styles.scss */
+  /* line 654, ../../sass/styles.scss */
   .search-container > main .gsc-results .gsc-cursor-box .gsc-cursor-page {
     color: #0099ec !important;
   }
-  /* line 654, ../../sass/styles.scss */
+  /* line 658, ../../sass/styles.scss */
   .search-container > main .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
     color: #0099ec !important;
   }
 }
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 300px) {
-  /* line 664, ../../sass/styles.scss */
+  /* line 668, ../../sass/styles.scss */
   header > nav {
     display: block;
   }
-  /* line 667, ../../sass/styles.scss */
+  /* line 671, ../../sass/styles.scss */
   header > nav > ul > li {
     margin: auto 5px;
   }
 
-  /* line 675, ../../sass/styles.scss */
+  /* line 679, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 680, ../../sass/styles.scss */
+  /* line 684, ../../sass/styles.scss */
   nav.intro ul {
     width: 100%;
   }
-  /* line 682, ../../sass/styles.scss */
+  /* line 686, ../../sass/styles.scss */
   nav.intro ul li {
     width: calc(25% - 4px);
   }
 
-  /* line 689, ../../sass/styles.scss */
+  /* line 693, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 693, ../../sass/styles.scss */
+  /* line 697, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 697, ../../sass/styles.scss */
+  /* line 701, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
-  /* line 699, ../../sass/styles.scss */
+  /* line 703, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 709, ../../sass/styles.scss */
+  /* line 713, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 714, ../../sass/styles.scss */
+  /* line 718, ../../sass/styles.scss */
   nav.intro ul {
     width: 616px;
   }
-  /* line 716, ../../sass/styles.scss */
+  /* line 720, ../../sass/styles.scss */
   nav.intro ul li {
     width: 150px;
   }
-  /* line 719, ../../sass/styles.scss */
+  /* line 723, ../../sass/styles.scss */
   nav.intro ul li:last-child {
     border-right: 1px solid #e6e6e6;
   }
 
-  /* line 728, ../../sass/styles.scss */
+  /* line 732, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 732, ../../sass/styles.scss */
+  /* line 736, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 736, ../../sass/styles.scss */
+  /* line 740, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
-  /* line 738, ../../sass/styles.scss */
+  /* line 742, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 750, ../../sass/styles.scss */
+  /* line 754, ../../sass/styles.scss */
   header > nav > ul > li {
     margin: auto 30px;
   }
 
-  /* line 757, ../../sass/styles.scss */
+  /* line 761, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 762, ../../sass/styles.scss */
+  /* line 766, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 764, ../../sass/styles.scss */
+  /* line 768, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 772, ../../sass/styles.scss */
+  /* line 776, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 776, ../../sass/styles.scss */
+  /* line 780, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 780, ../../sass/styles.scss */
+  /* line 784, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 270px);
   }
-  /* line 782, ../../sass/styles.scss */
+  /* line 786, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 791, ../../sass/styles.scss */
+  /* line 795, ../../sass/styles.scss */
   .content-width {
     width: 1070px;
   }
 
-  /* line 796, ../../sass/styles.scss */
+  /* line 800, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 798, ../../sass/styles.scss */
+  /* line 802, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 805, ../../sass/styles.scss */
+  /* line 809, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 809, ../../sass/styles.scss */
+  /* line 813, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 813, ../../sass/styles.scss */
+  /* line 817, ../../sass/styles.scss */
   .container main {
     width: 800px;
   }
-  /* line 815, ../../sass/styles.scss */
+  /* line 819, ../../sass/styles.scss */
   .container main img {
     max-width: 800px;
   }
-  /* line 819, ../../sass/styles.scss */
+  /* line 823, ../../sass/styles.scss */
   .container main .full-width {
     width: 970px;
   }
