@@ -47,7 +47,13 @@ var m = new Metalsmith(__dirname);
 
 m.source("content")
     .concurrency(10)
-    .use(markdown())
+    .use(static({
+        src: "public",
+        dest: "."
+    }))
+    .use(markdown({
+        gfm: true
+    }))
     .use(contents()())
     .use(permalinks({
         pattern: ":filename"
@@ -77,13 +83,7 @@ m.source("content")
     .use(templates({
         engine: "handlebars",
         directory: "templates"
-        // default: "intro.tmpl.html"
     }))
-    .use(static({
-        src: "public",
-        dest: "."
-    }))
-    .use(metallic())
     .use(locale()())
     .build(function (err, files) {
         if (err) {
