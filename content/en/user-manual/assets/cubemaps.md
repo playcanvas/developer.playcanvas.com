@@ -9,7 +9,7 @@ Cube maps are a special type of texture asset. They are formed from 6 texture as
 1. A cube map can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
 2. A cube map can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cube map as the cube map on a reflective object's materials.
 
-<iframe width="640" height="480" src="http://playcanv.as/p/fUViqHIf" allowfullscreen></iframe>
+<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
 
 ## Importing Cube Map Textures
 
