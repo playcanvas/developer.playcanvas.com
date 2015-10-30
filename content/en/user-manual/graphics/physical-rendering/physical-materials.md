@@ -18,6 +18,9 @@ First up cubemaps and skyboxes, because inevitably you'll jump into the Editor a
 
 In addition, for the best results, the cubemaps should be created from [High Dynamic Range][2] (HDR) textures.
 
+<div class="alert-info">For physical materials to use your cubemap it **must** be prefiltered. Once you have set up your cubemap asset, ensure you press the "prefilter" button just below it.
+</div>
+
 ## Metalness and Specular Workflow
 
 ![Workflows][4]
