@@ -37,7 +37,7 @@ this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
 ~~~
 
-[1]: /images/user-manual/graphics/particles/particle_system_icon.jpg
-[2]: /images/user-manual/graphics/particles/particle_system_create.jpg
+[1]: /images/user-manual/graphics/particles/particle_system_icon.png
+[2]: /images/user-manual/graphics/particles/particle_system_create.png
 [3]: /images/user-manual/graphics/particles/particle_system_default.gif
 [4]: /user-manual/packs/components/particlesystem
