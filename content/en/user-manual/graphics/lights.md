@@ -1,7 +1,7 @@
 ---
 title: Lights
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources that approximate the different types of light we find in reality.

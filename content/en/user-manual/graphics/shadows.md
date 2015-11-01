@@ -1,7 +1,7 @@
 ---
 title: Shadows
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 Shadows are a great way to add realism to your games.

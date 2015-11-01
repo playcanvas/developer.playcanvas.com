@@ -1,7 +1,7 @@
 ---
 title: Particles
 template: usermanual-page.tmpl.html
-position: 4
+position: 5
 ---
 
 PlayCanvas provides comprehensive support for creating and editing particle systems.
