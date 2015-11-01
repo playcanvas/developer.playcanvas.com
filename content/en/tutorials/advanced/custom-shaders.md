@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 3
 ---
 
-<iframe src="http://playcanv.as/b/wUcIJUSV" allowfullscreen></iframe>
+<iframe src="http://playcanv.as/p/q1mMPMPo" allowfullscreen></iframe>
 
 *This tutorial uses a custom shader on a material to create a dissolve effect in GLSL*
 
