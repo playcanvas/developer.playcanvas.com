@@ -13,17 +13,17 @@ The loaded CSS asset resource is just a string. You can use the string as you li
 ```
 // get asset from registry by id
 var asset = app.assets.get(32);
-​
+
 // create element
 var style = pc.createStyle(asset.resource || '');
 document.head.appendChild(style);
-​
+
 // when asset resource loads/changes,
 // update html of element
 asset.on('load', function() {
     style.innerHTML = asset.resource;
 });
-​
+
 // make sure assets loads
 app.assets.load(asset);
 ```
