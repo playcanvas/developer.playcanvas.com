@@ -33,6 +33,6 @@ To load the model file into your engine use the [loadFromUrl][5] API.
 [2]: http://playcanvas.github.io
 [3]: /user-manual/assets/importing/
 [4]: /user-manual/glossary/#target_asset
-[5]: /engine/api/stable/symbols/pc.asset.AssetRegistry.html#loadFromUrl
+[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
 [6]: /images/user-manual/editor/assets-completed.png
 [7]: /images/user-manual/editor/export-archive.jpg
