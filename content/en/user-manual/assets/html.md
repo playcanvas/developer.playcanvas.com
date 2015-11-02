@@ -10,12 +10,21 @@ To edit an HTML asset, right click on it in the Editor and select Edit.
 
 The loaded HTML asset is just a string. You can use that string as you like - a common way to add HTML to the document is the following
 
-```
-var asset = app.assets.find('my_html_asset');
-asset.ready(function (asset) {
-    var div = document.createElement('div');
+```javascript
+// get asset from registry by id
+var asset = app.assets.get(32);
+
+// create element
+var div = document.createElement('div');
+div.innerHTML = asset.resource || '';
+document.body.appendChild(div);
+
+// when asset resource loads/changes,
+// update html of element
+asset.on('load', function() {
     div.innerHTML = asset.resource;
-    document.body.appendChild(div);
 });
-asset.load();
+
+// make sure assets loads
+app.assets.load(asset);
 ```
