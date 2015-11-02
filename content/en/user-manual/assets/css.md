@@ -10,7 +10,7 @@ To edit a CSS asset, right click on it in the Editor and select Edit.
 
 The loaded CSS asset resource is just a string. You can use the string as you like. A common way to add the loaded CSS string to the document is the following:
 
-```
+```javascript
 // get asset from registry by id
 var asset = app.assets.get(32);
 

@@ -10,7 +10,7 @@ To edit an HTML asset, right click on it in the Editor and select Edit.
 
 The loaded HTML asset is just a string. You can use that string as you like - a common way to add HTML to the document is the following
 
-```
+```javascript
 // get asset from registry by id
 var asset = app.assets.get(32);
 
