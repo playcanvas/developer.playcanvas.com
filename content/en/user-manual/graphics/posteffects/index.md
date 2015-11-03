@@ -1,7 +1,7 @@
 ---
 title: Post Effects
 template: usermanual-page.tmpl.html
-position: 3
+position: 6
 ---
 
 PlayCanvas has built-in support for post-processing effects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
@@ -23,9 +23,9 @@ Built-in post effects include:
 
 [1]: /user-manual/packs/components/camera
 [2]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
-[3]: /user-manual/posteffects/bloom
-[4]: /user-manual/posteffects/brightness_contrast
-[5]: /user-manual/posteffects/hue_saturation
-[6]: /user-manual/posteffects/fxaa
-[7]: /user-manual/posteffects/sepia
-[8]: /user-manual/posteffects/vignette
+[3]: /user-manual/graphics/posteffects/bloom
+[4]: /user-manual/graphics/posteffects/brightness_contrast
+[5]: /user-manual/graphics/posteffects/hue_saturation
+[6]: /user-manual/graphics/posteffects/fxaa
+[7]: /user-manual/graphics/posteffects/sepia
+[8]: /user-manual/graphics/posteffects/vignette

@@ -8,7 +8,7 @@ The 'script' component enables an entity to run user-supplied scripts. In this w
 
 <img src="/images/user-manual/components/component-script.jpg"/>
 
-To create a new script, click on the <span class="ui-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+To create a new script, click on the <span class="font-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
 
 <img src="/images/user-manual/new_script.jpg"/>
 
