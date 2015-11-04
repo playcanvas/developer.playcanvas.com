@@ -153,9 +153,9 @@ And that's all there is to handling Collisions and Triggers in PlayCanvas.
 [1]: https://playcanvas.com/editor/scene/329662
 [2]: https://playcanvas.com/project/186/overview/tutorials
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
-[4]: /images/platform/component_rigidbodydynamic.png
+[4]: /images/platform/component_rigidbodydynamic.jpg
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.png
+[6]: /images/tutorials/collision/ground_setup.jpg
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
 [9]: /images/tutorials/collision/box_setup.jpg

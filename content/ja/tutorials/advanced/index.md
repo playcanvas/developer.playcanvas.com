@@ -1,8 +1,8 @@
 ---
-title: Advanced
+title: 上級
 template: tutorial-page.tmpl.html
 position: 4
 ---
 
-Advanced tutorials cover more complex tasks in PlayCanvas, such as full game-style camera controls and creating game content via code.
+上級チュートリアルでは、ゲームスタイルのカメラコントロールやコードからのゲームコンテンツ作成などを含む、PlayCanvasのより複雑なタスクについて説明します。
 

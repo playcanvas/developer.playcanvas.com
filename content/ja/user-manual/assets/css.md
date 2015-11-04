@@ -1,21 +1,30 @@
 ---
 title: CSS
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 10
 ---
 
-A CSS asset contains CSS code. You can create a new CSS asset in the Editor or by uploading a file with a .css extension.
+CSSアセットにはCSSコードが含まれます。新規のCSSアセットはEditorから作成することができます。また、.css拡張子を持つファイルをアップロードして作成することも可能です。
 
-To edit a CSS asset, right click on it in the Editor and select Edit.
+CSSアセットを編集するには、Editorでアセットを右クリックして、Editを選択します。
 
-The loaded CSS asset resource is just a string. You can use the string as you like. A common way to add the loaded CSS string to the document is the following:
+読み込まれたCSSアセットリソースは文字列です。文字列は自由に使用することができます。読み込まれたCSS文字列をドキュメントに追加するための一般的な方法は次の通りです：
 
-```
-var asset = app.assets.find('my_css_asset');
-asset.ready(function (asset) {
-    var style = pc.createStyle(asset.resource);
-    document.head.appendChild(style);
+```javascript
+// get asset from registry by id
+var asset = app.assets.get(32);
+
+// create element
+var style = pc.createStyle(asset.resource || '');
+document.head.appendChild(style);
+
+// when asset resource loads/changes,
+// update html of element
+asset.on('load', function() {
+    style.innerHTML = asset.resource;
 });
-asset.load();
+
+// make sure assets loads
+app.assets.load(asset);
 ```
 

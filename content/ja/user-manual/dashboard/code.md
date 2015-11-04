@@ -1,22 +1,22 @@
 ---
 title: Code
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 4
 ---
 
-The code dashboard allows you view and edit code files that are used in your project.
+コードダッシュボードでは、プロジェクトで使用しているコードファイルを閲覧および編集できます。
 
-There are two main methods for adding code to your project. Using PlayCanvas for your code repository or using a code repository from a third-party service like Github or Bitbucket.
+プロジェクトにコードを追加する主な方法は二つあります。コードリポジトリにPlayCanvasを使用する方法と、Github や Bitbucketなどの外部パーティのサービスを使用する方法です。
 
 ## PlayCanvas
 
-When using PlayCanvas for your code, you can use the Code Dashboard to rename, delete and edit your code files.
+コードにPlayCanvasを使用する場合、コードダッシュボードを使用してコードファイルのリネーム、削除、編集が行えます。
 
-## Git or Mercurial
+## Git または Mercurial
 
-When using a Git or Mercurial code repository, you can use the Code Dashboard to set up the clone URL of the repository and sync to the latest code.
+Git や Mercurialコードリポジトリを使用する場合、コードダッシュボードを使用してリポジトリのクローンURLを設定して、最新のコードと同期させることができます。
 
-Note, you must have permissions to access that repository before you can sync up your code. More on this [here][workflow].
+補足：コードの同期を行う前に、該当リポジトリにアクセスできる状態にする必要があります。詳細は [こちら][ワークフロー]。
 
-[workflow]: /user-manual/scripting/workflow
+[ワークフロー]: /user-manual/scripting/workflow
 

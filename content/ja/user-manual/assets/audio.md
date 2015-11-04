@@ -1,12 +1,12 @@
 ---
 title: Audio
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 9
 ---
 
-Audio assets are sound files which can be played back using the Audiosource component.
+オーディオアセットとはAudiosourceコンポーネントを使用してプレイバックできるサウンドファイルです。
 
-Any audio format that is supported by the web-browser is supported by PlayCanvas. No processing is done to the audio file on import.
+ウェブブラウザで対応されているオーディオ形式は全てPlayCanvasでも対応されています。インポート時に、オーディオファイルに対する処理は行われません。
 
-Note: not all formats are supported in all browsers. As of writing the most widely supported format is MP3 although Firefox requires OS level support for MP3 playback in order for this format to work.
+補足：全ての形式が全てのブラウザで対応されているとは限りません。書き込む際、最も幅広く対応されている形式はMP3ですが、Firefoxはこの形式が動作させるのにMP3プレイバックのOSレベルでの対応を必要とします。
 

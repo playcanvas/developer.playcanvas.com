@@ -1,15 +1,15 @@
 ---
-title: User Manual
-template: page.tmpl.html
-position: 2
+title: ユーザーマニュアル
+template: usermanual-page.tmpl.html
+position: 0.5
 ---
 
-The PlayCanvas User Manual is the in-depth reference to the complete PlayCanvas platform. From coding Javascript against the Engine to building [Scenes][1] using the PlayCanvas Editor to publishing games to the web and to mobile app stores.
+PlayCanvasユーザーマニュアルは、PlayCanvasプラットフォーム全体に関する詳細なマニュアルです。エンジンに対するJavascriptのコーディング、 PlayCanvas Editorを使った[シーン][1] の構築、ウェブやモバイルAppストアへのゲームの公開について説明します。
 
-By reading through the manual you'll soon grasp the complete process of building games using PlayCanvas.
+マニュアルを読むと、PlayCanvasを使用してゲームを構築するプロセスが理解できます。
 
-[Lets get started!][2]
+[はじめよう！][2]
 
-[1]: /user-manual/glossary#entity
+[1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction
 

@@ -1,8 +1,8 @@
 ---
-title: Intermediate
+title: 中級
 template: tutorial-page.tmpl.html
 position: 3
 ---
 
-The intermediate tutorials cover more advanced topics like, animation blending, simple camera controls, physics, collision and triggers.
+中級チュートリアルでは、アニメーションのブレンド、簡単なカメラ操作、物理、コリジョン、トリガーなどについて説明します。
 

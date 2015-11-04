@@ -1,6 +1,6 @@
 ---
 title: Assets
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 6
 ---
 
@@ -19,7 +19,7 @@ PlayCanvas supports the importing of a wide variety of content types:
 
 When you upload a new file the asset type will be set automatically from the type of file you've uploaded. For example, if you upload a PNG file, the Asset created will be a *texture* type.
 
-## Source Assets and Target Assets
+## ソースアセットとターゲットアセット
 
 After the asset type, then next most important property of an Asset is whether it is a **Source** Asset or a **Target** Asset.
 

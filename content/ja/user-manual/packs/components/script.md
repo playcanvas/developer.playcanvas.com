@@ -1,28 +1,34 @@
 ---
 title: Script
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 10
 ---
 
-The 'script' component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.
+スクリプトコンポーネントを使えば、エンティティはユーザーが準備したスクリプトを実行することができます。これにより、ユーザーはエンティティがインスタンス化されフレーム単位で更新される際に実行されるスクリプト(JavaScript言語)を書くことができます。
 
-<img src="/images/user-manual/components/component-script.jpg" style="width: 300px" />
+<img src="/images/user-manual/components/component-script.jpg"/>
 
-To assign a script, type its name into the URL box. For example, if you want to create a script called car.js, type car.js into the box and hit ENTER. This will create a script block below. If you click the hyperlinked script name, it will open in the PlayCanvas Code Editor. If you type a name of an existing script, autocomplete should activate and again, just press ENTER to add the script to the component.
+To create a new script, click on the <span class="font-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
 
-## Properties
+<img src="/images/user-manual/new_script.jpg"/>
+
+You can then drag the new script on a script component or you can click the Add Script button in the script component Inspector and then select it from the Assets Panel.
+
+To edit the script in the PlayCanvas Code Editor you can either click on the hyperlinked script name, or you can select the script from the Assets Panel and click Edit.
+
+## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If checked, all of the assigned scripts will have their update functions called every frame.</td></tr>
-    <tr><td>Script</td><td>Add scripts by typing in the name of a new or existing URL.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Enabled</td><td>チェックが入っていると、割り当てられた全てのスクリプトの更新機能が毎フレーム呼ばれます。</td></tr>
+    <tr><td>Script</td><td>新規または既存のURLの名前を入力してスクリプトを追加。</td></tr>
 </table>
 
-## Scripting Interface
+## スクリプティングインターフェイス
 
-The script component's scripting interface is [here][2].
+スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]。
 
 [2]: /engine/api/stable/symbols/pc.ScriptComponent.html
 

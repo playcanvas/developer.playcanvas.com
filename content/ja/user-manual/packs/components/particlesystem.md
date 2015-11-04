@@ -1,6 +1,6 @@
 ---
 title: Particle System
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 7
 ---
 
@@ -8,7 +8,7 @@ The 'particlesystem' component specifies a particle emitter in 3D space.
 
 <img src="/images/user-manual/components/component-particles.jpg" style="width: 300px" />
 
-## Properties
+## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -60,7 +60,7 @@ The 'particlesystem' component specifies a particle emitter in 3D space.
     <tr><td>Opacity</td><td>A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves.</td></tr>
 </table>
 
-## Scripting Interface
+## スクリプティングインターフェイス
 
 You can control an particlesystem component's properties using a [script component][1]. The particlesystem component's scripting interface is [here][2].
 

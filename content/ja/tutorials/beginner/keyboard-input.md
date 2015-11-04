@@ -1,5 +1,5 @@
 ---
-title: Basic Keyboard Input
+title: 基本的なキーボード入力
 template: tutorial-page.tmpl.html
 position: 1
 ---
@@ -110,7 +110,7 @@ If you press and hold the spacebar you will see that the cube rotates continuous
 
 `wasPressed(key)` checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
 
-## Events
+## イベント
 
 The second method of handling key presses is to listen for events. Two keyboard events are supported on the Keyboard device:
 
@@ -121,13 +121,13 @@ The second method of handling key presses is to listen for events. Two keyboard 
 
 Notice we are also passing a third argument to on(), which is `this` or the Script Instance itself. The third argument to on() is used as `this` in the event callbacks, so we need to pass it in here, otherwise it won't be set to the correct object.
 
-## Key Codes
+## キーコード
 
 Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
 
 Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
-## Try it out
+## 試してみよう
 
 Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
 

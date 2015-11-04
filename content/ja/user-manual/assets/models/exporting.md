@@ -1,18 +1,18 @@
 ---
 title: Exporting Assets
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 skip: false
 ---
 
-PlayCanvas can import 3D content in three different formats: FBX, 3DS and COLLADA (DAE). We strongly recommend you use FBX since this the most robust and well tested interchange format. It also supports embedding of textures which preserve your material-texture relationships on import to PlayCanvas.
+PlayCanvasでは次の3つの形式で3Dコンテンツをインポートできます：FBX, 3DS, COLLADA (DAE)。FBXが最も安定していて、良くテストされている交換形式になります。テクスチャーの組み込みに対応しているので、PlayCanvasへのインポート時に素材・テクスチャーの関係を保つことができます。
 
-Here are some tips for exporting to the FBX file format:
+FBXファイル形式にエクスポートする際のヒントです：
 
-* Ensure you have the latest available FBX exporter for your modelling application installed.
-* Only export what you need from your scene to FBX. For example, if your scene contains a red car and a blue car but you only want to import the red car, export only the red car to FBX. Your modelling application should have an 'Export Selected' option.
-* If available, check the 'Embed Media' option in the FBX exporter panel.
-* In Blender, use [Autodesk FBX Converter][1] to re-convert FBX files and Embed Media.
-* Select the 'Binary' file format option in the FBX exporter panel.
+* モデリングアプリケーションのFBXエクスポータがインストールされていることを確認してください。
+* 必要な物のみシーンからFBXにエクスポートしてください。例えば、シーン0ンに赤い車と青い車が含まれていて、赤い車のインポートしたい場合、FBXには赤い車のみエクスポートしてください。モデリングアプリケーションには選択した物のみエクスポートするオプションがあるはずです。
+* 可能であれば、FBXエクスポータパネルでEmbed Mediaオプションにチェックを入れてください。
+* Blenderで [Autodesk FBX Converter][1]を使用してFBXファイルを再変換して、メディアを埋め込みます。
+* FBXエクスポータパネルのBinaryファイル形式オプションを選択します。
 
 [1]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
 

@@ -1,6 +1,6 @@
 ---
 title: Rigid Body
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 9
 ---
 
@@ -13,7 +13,7 @@ The 'rigidbody' component enables an entity to participate in the scene's physic
 
 Note that you must add a [collision component][3] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
 
-## Properties
+## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -30,7 +30,7 @@ Note that you must add a [collision component][3] to the same entity in order to
     <tr><td>Restitution</td><td>A measure of the bounciness of a body between 0 and 1. Warning: setting to 1 means a moving body will never come to a stop (unless  colliding with other bodies with restitutions below 1, or unless a stop is scripted).</td></tr>
 </table>
 
-## Scripting Interface
+## スクリプティングインターフェイス
 
 You can control a rigidbody component's properties using a [script component][4]. The rigidbody component's scripting interface is [here][5].
 

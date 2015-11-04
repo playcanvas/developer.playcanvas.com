@@ -1,12 +1,12 @@
 ---
 title: Asset Library
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 7
 ---
 
-## Store
+## ストア
 
-You can get free 3D models for you project in the [PlayCanvas Store][1]
+ [PlayCanvas Store][1]からプロジェクトで使用できる無料の3Dモデルを取得できます。
 
 [1]: http://store.playcanvas.com/
 

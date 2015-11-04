@@ -1,12 +1,12 @@
 ---
 title: Overview
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 2
 ---
 
-![Overview][1]
+![概要][1]
 
-The overview page shows information about your project along with your project's dev log. You can see and manage your team and also post news or updates about your project.
+概要ページでは、プロジェクトに関する情報や、プロジェクトの開発ログが確認できます。また、チームの確認・管理や、プロジェクトに関するニュースや更新の投稿ができます。
 
 [1]: /images/platform/dashboard_overview.png
 

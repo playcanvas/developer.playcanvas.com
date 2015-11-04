@@ -1,5 +1,5 @@
 ---
-title: Basic Mouse Input
+title: 基本的なマウス入力
 template: tutorial-page.tmpl.html
 position: 2
 ---

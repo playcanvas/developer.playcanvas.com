@@ -134,7 +134,9 @@ pc.script.create('update_asset', function (app) {
                     }
                 }
 
+
             }
+
 
             if (app.keyboard.isPressed(pc.KEY_L)) {
                 app.assets.load(this.c);

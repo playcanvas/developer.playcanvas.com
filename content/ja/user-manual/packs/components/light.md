@@ -1,6 +1,6 @@
 ---
 title: Light
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 6
 ---
 
@@ -13,7 +13,7 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
 #### Spot
 <img src="/images/user-manual/components/component-light-spot.jpg" style="width: 300px" />
 
-## Properties
+## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -32,7 +32,7 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
     <tr><td>Falloff Mode</td><td>Point and spot only. Controls the rate at which a light attentuates from its position.</td></tr>
 </table>
 
-## Scripting Interface
+## スクリプティングインターフェイス
 
 You can control an light component's properties using a [script component][4]. The light component's scripting interface is [here][5].
 

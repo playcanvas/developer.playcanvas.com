@@ -1,7 +1,7 @@
 ---
-title: Oh No!
+title: 問題が発生しました
 template: error.tmpl.html
 ---
 
-### We can't find that page
+### ページが見つかりません
 

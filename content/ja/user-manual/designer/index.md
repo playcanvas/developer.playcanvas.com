@@ -1,28 +1,28 @@
 ---
-title: PlayCanvas Editor
-template: page.tmpl.html
+title: Editor
+template: usermanual-page.tmpl.html
 position: 4
 ---
 
-The PlayCanvas Editor is a visual editing tool which you use to create and edit the [Scenes][1] and [Entities][2] that make up your game.
+PlayCanvas エディタはゲームを構成する[シーン][1]や[エンティティ][2]を作成および編集するために使用する視覚的な編集ツールです。
 
-* Runs in your browser, so it's available wherever you are.
-* Uses the PlayCanvas Engine to render your scene. What you see is what you get.
-* One button press and you are playing your game in a new tab.
-* Live editing means that you can iterate on your game, even while it's running.
+* ブラウザ内で実行できるのでどこでも利用可能。
+* PlayCanvas エンジンを使ってシーンをレンダリングします。WYSIWYG。
+* ボタン一つでゲームを新規タブでプレイ。
+* ライブ編集によりゲーム実行時にもイテレート可能。
 
-## Interface
+## インターフェイス
 
 <img alt="Editor Interface" width="640" src="/images/user-manual/editor-annotated.jpg" />
 
-This is the main interface to the PlayCanvas Editor. You can see labeled the main areas
+これはPlayCanvas Editorのメインインターフェイスです。メインエリアにラベルを付けています。
 
-* **Menu** The menu contains all the commands available in the Editor. If you can't find the button or remember the hotkey, use the menu.
-* **Toolbar** Commonly used commands are available on the toolbar for quick access.
-* **Hierarchy** A hierarchical view of the Entities that make up the open Scene. Use this to select, delete and re-parent Entities.
-* **Inspector** Detailed properties of the selected [Entity][2], [Asset][4] or [Component][3].
-* **Viewport** A 3D view onto your scene, use this view to select, position and orientate Entities.
-* **Assets** A view of all the Assets in the current Project. You can search for assets by name, filter by type and also drag and drop assets to various slots or in the Design View.
+* **Menu** メニューにはエディタで利用可能な全てのコマンドが含まれています。ボタンが見つからない場合やhotkeyを忘れた場合はメニューを使用してください。
+* **Toolbar** 良く使われるコマンドはすぐにアクセスできるようツールバーに設置されています。
+* **Hierarchy** 開いているシーンを構成するエンティティの階層ビュー。これを使用してエンティティを選択、削除、再度親に設定することができます。
+* **Inspector** 選択した [エンティティ][2], [アセット][4] または [コンポーネント][3]の詳細なプロパティ。
+* **Viewport** シーンの3Dビュー。このビューを使用してエンティティの選択、配置、方向付けができます。
+* **Assets** 現在のプロジェクト内にある全アセットのビュー。アセット名を検索したり、タイプでフィルタすることができます。また、Designビューの様々なスロットにアセットをドラッグ＆ドロップすることもできます。
 
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/glossary#entity

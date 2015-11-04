@@ -1,19 +1,19 @@
 ---
 title: Tutorials
-template: tutorial-page.tmpl.html
+template: tutorial-full-page.tmpl.html
 ---
 
-Tutorials are a great way to learn to use PlayCanvas. You'll find both video tutorials and examples and articles for you here.
+チュートリアルでPlayCanvasの使い方を覚えましょう。こちらから動画チュートリアル、実例、記事をご確認ください。
 
-## Videos
+## 動画
 
 You can find our complete collection of video tutorials on our [YouTube Channel][1]. You can also [download][2] assets for following along to the videos.
 
-## Articles
+## 記事
 
 The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page][3]. Note that you must be logged in to the PlayCanvas site to access them.
 
-### Beginner
+### 初級
 
 * [Basic Keyboard Input][4]
 * [Basic Mouse Input][5]
@@ -22,7 +22,7 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 * [Basic Materials][8]
 * [Manipulating Entities][9]
 
-### Intermediate
+### 中級
 
 * [Animation Blending][10]
 * [More Cameras][11]
@@ -30,7 +30,7 @@ The resources for all tutorials listed below can be found on our [PlayCanvas tut
 * [Collision and Triggers][13]
 * [Using the Asset Registry][14]
 
-### Advanced
+### 上級
 
 * [Programmatically Creating Entities][15]
 * [FPS Character Controller][16]

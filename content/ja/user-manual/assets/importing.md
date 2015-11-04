@@ -1,22 +1,22 @@
 ---
 title: Uploading and Importing
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## Creating New Assets
+## 新しいアセットの作成
 
-To upload an asset to PlayCanvas, follow these steps:
+PlayCanvasにアセットをアップロードするには、次の手順に従います：
 
-### In the Editor
+### Editor内
 
-* Drag and drop your asset file into the Asset panel in the Editor window.
-* A progress bar will appear along the bottom.
-* When the progress bar disappears, your new Asset will appear in the Asset panel.
+* Editor画面のAssetパネルにアセットファイルをドラッグ＆ドロップします。
+* 下部に表示されます。
+* 進行バーが消えるとAssetパネルに新しいアセットが表示されます。
 
-Now, when you attempt to choose an asset via the asset picker attribute control (for the Model component or the Animation component for example), your asset will be available for assignment.
+これで、アセットピッカーの属性コントロールからアセットを選択する際 (ModelコンポーネントやAnimationコンポーネントなどに)、アセットが割り当て可能になります。
 
-## Updating Existing Assets
+## 既存のアセットの更新
 
-To update an Asset that you have already uploaded. Upload the asset again, ensuring that you have the same filename as the existing asset. PlayCanvas will update the existing asset with the new upload.
+アップロード済みのアセットを更新するには、既存のアップロードと同じファイル名を使用して、再度アセットをアップロードします。 PlayCanvasが既存のアセットを新しくアップロードしたアセットで更新します。
 
