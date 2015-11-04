@@ -335,7 +335,7 @@ for arg in sys.argv[1:]:
         print("gettext strings from source markdown")
         create_src_po('content/en', 'po')
         create_title_pot('content/en', 'po/titles.js.en-US.po')
-        update_pot_from_src_po('po')
+        # update_pot_from_src_po('po')
 
     if arg == 'set':
         print("update tx config")
@@ -352,6 +352,7 @@ for arg in sys.argv[1:]:
     if arg == 'update':
         print("convert current translations to markdown")
         update_localized_files('ja_JP', 'po', 'content/ja')
+        update_localized_files('ru', 'po', 'content/ru')
 
     if arg == 'titles':
         create_title_pot('content/en', 'po/titles.js.en-US.po')

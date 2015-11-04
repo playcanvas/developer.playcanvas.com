@@ -56,47 +56,47 @@ handlebars.registerHelper("lang-selector-close", function (lang) {
 var m = new Metalsmith(__dirname);
 
 m.source("content")
-    .concurrency(10)
-    .use(static({
-        src: "public",
-        dest: "."
-    }))
-    .use(markdown({
-        gfm: true
-    }))
-    .use(contents()())
-    .use(permalinks({
-        pattern: ":filename"
-    }))
-    .use(metadata());
+.concurrency(10)
+.use(static({
+    src: "public",
+    dest: "."
+}))
+.use(markdown({
+    gfm: true
+}))
+.use(contents()())
+.use(permalinks({
+    pattern: ":filename"
+}))
+.use(metadata());
 
-    // set environment
-    m.metadata().local = (env === "local");
-    m.metadata().prod = (env === "prod");
-    m.metadata().dev = (env === "dev");
+// set environment
+m.metadata().local = (env === "local");
+m.metadata().prod = (env === "prod");
+m.metadata().dev = (env === "dev");
 
-    m.use(i18n()({
-        locales: [{file: 'content/ja/titles.js.json', locale: 'ja'}]
-    }))
-    .use(navbuilder("en")({
-        engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
-        contentPath: "content/_usermanual_contents.json",
-        partialName: "user-manual-navigation"
-    }))
-    .use(navbuilder("en/tutorials")({
-        engine: handlebars,
-        template: path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"),
-        contentPath: "content/_tutorial_contents.json",
-        partialName: "tutorials-navigation"
-    }))
-    .use(templates({
-        engine: "handlebars",
-        directory: "templates"
-    }))
-    .use(locale()())
-    .build(function (err, files) {
-        if (err) {
-            console.error(err);
-        }
-    });
+m.use(i18n()({
+    locales: [{file: 'content/ja/titles.js.json', locale: 'ja'}]
+}))
+.use(navbuilder("en")({
+    engine: handlebars,
+    template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+    contentPath: "content/_usermanual_contents.json",
+    partialName: "user-manual-navigation"
+}))
+.use(navbuilder("en/tutorials")({
+    engine: handlebars,
+    template: path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"),
+    contentPath: "content/_tutorial_contents.json",
+    partialName: "tutorials-navigation"
+}))
+.use(templates({
+    engine: "handlebars",
+    directory: "templates"
+}))
+.use(locale()())
+.build(function (err, files) {
+    if (err) {
+        console.error(err);
+    }
+});
