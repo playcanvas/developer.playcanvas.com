@@ -43,6 +43,16 @@ handlebars.registerPartial("scripts",
 handlebars.registerPartial("analytics",
     fs.readFileSync(path.join(__dirname, "templates/partials/analytics.tmpl.html"), "utf-8"));
 
+// handlebars.registerHelper("", function (lang) {
+
+handlebars.registerHelper("lang-selector", function (lang) {
+    return "{{#if " + lang + "}}";
+});
+
+handlebars.registerHelper("lang-selector-close", function (lang) {
+    return "{{/if}}";
+});
+
 var m = new Metalsmith(__dirname);
 
 m.source("content")
@@ -68,7 +78,7 @@ m.source("content")
     m.use(i18n()({
         locales: [{file: 'content/ja/titles.js.json', locale: 'ja'}]
     }))
-    .use(navbuilder("en/user-manual")({
+    .use(navbuilder("en")({
         engine: handlebars,
         template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
         contentPath: "content/_usermanual_contents.json",

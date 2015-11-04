@@ -33,11 +33,11 @@ def split_to_para(f):
     paras = []
     para = ''
 
-    in_code = False # look for lines starting with ~~~, keep code between lines starting with ~~~ in the same para
+    in_code = False # look for lines starting with ~~~ or ```, keep code between lines starting with ~~~ or ```in the same para
 
     linecount = 0
     for line in f:
-        if line.startswith("~~~"):
+        if line.startswith("~~~") or line.startswith("```"):
             in_code = not in_code
 
         if not in_code and (not line or line.isspace()):
@@ -162,7 +162,7 @@ def po_2_js(po_path, out_path):
             output = output + '    "%s": "%s"\n' % (entry.msgid, entry.msgstr)
     output = output + "}"
 
-    with open(out_path, 'w') as f:
+    with codecs.open(out_path, 'w', 'utf-8') as f:
         f.write(output)
 
 def po_2_pot(po_path, pot_path):
@@ -249,6 +249,8 @@ def update_pot_from_src_po(dir):
             path = os.path.join(dirpath, filename)
             # for each .en-US.po file, duplicate into a .pot file
             if path.endswith(".en-US.po"):
+                if _verbose:
+                    print("po_2_pot: " + path)
                 po_2_pot(path, path.replace(".en-US.po", ".pot"))
 
 def create_title_pot(dir, out_file):

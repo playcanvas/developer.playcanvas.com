@@ -1,26 +1,90 @@
 <nav class="usermanual">
+
+{{#lang-selector "en"}}{{/lang-selector}}
+{{#with en}}
  <ul>
-    {{#en}}
+    {{#each this}}
     <li>
         <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
         <a class="page-link" href="{{this.path}}">{{this.name}}</a>
         <ul>
-        {{#children}}
+        {{#each this.children}}
             <li>
                 <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
                 <a class="page-link" href="{{this.path}}">{{this.name}}</a>
                 <ul>
-                {{#children}}
+                {{#each this.children}}
                     <li>
                         <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
                         <a class="page-link" href="{{this.path}}">{{this.name}}</a>
                     </li>
-                {{/children}}
+                {{/each}}
                 </ul>
             </li>
-        {{/children}}
+        {{/each}}
         </ul>
     </li>
-    {{/en}}
+    {{/each}}
 </ul>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+
+{{#lang-selector "ja"}}{{/lang-selector}}
+{{#with ja}}
+ <ul>
+    {{#each this}}
+    <li>
+        <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+        <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+        <ul>
+        {{#each this.children}}
+            <li>
+                <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+                <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+                <ul>
+                {{#each this.children}}
+                    <li>
+                        <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+                        <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+                    </li>
+                {{/each}}
+                </ul>
+            </li>
+        {{/each}}
+        </ul>
+    </li>
+    {{/each}}
+</ul>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+
+{{#lang-selector "ru"}}{{/lang-selector}}
+{{#with ru}}
+ <ul>
+    {{#each this}}
+    <li>
+        <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+        <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+        <ul>
+        {{#each this.children}}
+            <li>
+                <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+                <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+                <ul>
+                {{#each this.children}}
+                    <li>
+                        <div class="expander"><span class="font-icon expander-icon"><a href="#">&#57619;</a></span></div>
+                        <a class="page-link" href="{{this.path}}">{{this.name}}</a>
+                    </li>
+                {{/each}}
+                </ul>
+            </li>
+        {{/each}}
+        </ul>
+    </li>
+    {{/each}}
+</ul>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+
 </nav>
