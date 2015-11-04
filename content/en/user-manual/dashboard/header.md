@@ -18,4 +18,4 @@ By clickin on START you can star or like this project, providing motivation to t
 
 By clicking on the FORK button you can fork this project, which means that a clone of this project will be copied to your account.
 
-[1]: /images/platform/dashboard_header.png
+[1]: /images/platform/dashboard_header.jpg
