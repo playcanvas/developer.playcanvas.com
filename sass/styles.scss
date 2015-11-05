@@ -185,6 +185,7 @@
 
                 &.flags {
                     padding-left: 0px;
+                    margin-right: 16px;
 
                     a {
                         padding-left: 0px;
@@ -199,12 +200,27 @@
         }
     }
 
+    .localization-note {
+        clear:both;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
     .search-icon:before {
         font-size: 26px;
         position: relative;
         right: 70px;
         top: 3px;
         content: "\E333";
+    }
+
+    .alert-info {
+        border: 1px solid $alert-border-color;
+        background-color: $alert-background-color;
+        color: $alert-text-color;
+        padding: 14px;
+        font-size: 14px;
+        line-height: 24px;
     }
 
     input.search {
@@ -586,15 +602,6 @@
                 height: 480px;
                 max-width: 100%;
                 border: none;
-            }
-
-            .alert-info {
-                border: 1px solid $alert-border-color;
-                background-color: $alert-background-color;
-                color: $alert-text-color;
-                padding: 14px;
-                font-size: 14px;
-                line-height: 24px;
             }
 
             &.full-width {
