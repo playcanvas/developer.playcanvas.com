@@ -13,6 +13,7 @@ var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
 var locale      = require("./lib/locale/index");
 var i18n        = require("./lib/i18n/index");
+var i18nout     = require("./lib/i18n-out/index");
 var contents    = require("./lib/contents-json/index");
 
 var env = null;
@@ -42,6 +43,8 @@ handlebars.registerPartial("scripts",
     fs.readFileSync(path.join(__dirname, "templates/partials/scripts.tmpl.html"), "utf-8"));
 handlebars.registerPartial("analytics",
     fs.readFileSync(path.join(__dirname, "templates/partials/analytics.tmpl.html"), "utf-8"));
+handlebars.registerPartial("footer",
+    fs.readFileSync(path.join(__dirname, "templates/partials/footer.tmpl.html"), "utf-8"));
 
 // handlebars.registerHelper("", function (lang) {
 
@@ -52,6 +55,11 @@ handlebars.registerHelper("lang-selector", function (lang) {
 handlebars.registerHelper("lang-selector-close", function (lang) {
     return "{{/if}}";
 });
+
+// handlebars.registerHelper("")
+
+// store strings requested
+var localization = {};
 
 var m = new Metalsmith(__dirname);
 
@@ -76,7 +84,12 @@ m.metadata().prod = (env === "prod");
 m.metadata().dev = (env === "dev");
 
 m.use(i18n()({
-    locales: [{file: 'content/ja/titles.js.json', locale: 'ja'}]
+    locales: [{
+        file: 'content/ja/titles.js.json', locale: 'ja'
+    }, {
+        file: 'content/ru/titles.js.json', locale: 'ru'
+    }],
+    output: localization
 }))
 .use(navbuilder("en")({
     engine: handlebars,
@@ -95,7 +108,11 @@ m.use(i18n()({
     directory: "templates"
 }))
 .use(locale()())
+.use(i18nout()({
+    data: localization
+}))
 .build(function (err, files) {
+    console.log("doneone")
     if (err) {
         console.error(err);
     }

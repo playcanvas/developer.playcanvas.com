@@ -283,6 +283,19 @@ def create_title_pot(dir, out_file):
 
     pot.save(out_file)
 
+def general_messages(in_file, out_file):
+    with codecs.open(in_file, "r", 'utf-8') as _in:
+        po = new_po_file()
+        for (index, line) in enumerate(_in.readlines()):
+            entry = polib.POEntry(
+                msgid=line,
+                msgstr=line,
+                occurrences=[(in_file, index)]
+            )
+            po.append(entry)
+
+        po.save(out_file)
+
 def update_localized_files(lang, dir, out_dir):
     for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
@@ -335,6 +348,7 @@ for arg in sys.argv[1:]:
         print("gettext strings from source markdown")
         create_src_po('content/en', 'po')
         create_title_pot('content/en', 'po/titles.js.en-US.po')
+        general_messages('messages.txt', 'po/messages.txt.en-US.po')
         # update_pot_from_src_po('po')
 
     if arg == 'set':
@@ -356,3 +370,7 @@ for arg in sys.argv[1:]:
 
     if arg == 'titles':
         create_title_pot('content/en', 'po/titles.js.en-US.po')
+
+    if arg == 'messages':
+        general_messages('messages.txt', 'po/messages.txt.en-US.po')
+

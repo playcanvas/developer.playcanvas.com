@@ -47,6 +47,21 @@
             }
             hljs.highlightBlock(codes[i]);
         }
+
+        // language buttons
+        var flags = document.querySelectorAll(".flags > a");
+        for (i = 0; i < flags.length; i++) {
+            flags[i].addEventListener("click", function (e) {
+                var url = window.location.pathname;
+                window.location.href = url.replace(/\/(en|ja|ru)\//, "/" + e.currentTarget.dataset.lang + "/");
+                e.preventDefault();
+            });
+
+            var locale = window.location.pathname.slice(1,3);
+            if (flags[i].dataset.lang !== locale) {
+                flags[i].classList.add("inactive");
+            }
+        }
     });
 
     var header = {

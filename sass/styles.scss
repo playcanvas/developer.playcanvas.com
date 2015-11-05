@@ -157,6 +157,48 @@
 
     }
 
+    footer {
+        height: 100px;
+        width: 100%;
+        clear: both;
+
+        ul {
+            margin: auto;
+            padding: 0px;
+            padding-top: 16px;
+            line-height: 32px;
+
+            border-top: 1px solid $footer-border-color;
+
+            list-style-type: none;
+
+            li {
+                float: left;
+                a {
+                    padding: 8px 16px;
+                    color: $footer-text-color;
+
+                    &.inactive {
+                        opacity: 0.5;
+                    }
+                }
+
+                &.flags {
+                    padding-left: 0px;
+
+                    a {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                    }
+
+                    img {
+                        height: 14px;
+                    }
+                }
+            }
+        }
+    }
+
     .search-icon:before {
         font-size: 26px;
         position: relative;

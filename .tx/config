@@ -853,3 +853,9 @@ source_file = po/user-manual/publishing/web/self-hosting.en-US.po
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-messages-txt]
+file_filter = po/messages.txt.<lang>.po
+source_file = po/messages.txt.en-US.po
+source_lang = en
+type = PO
+

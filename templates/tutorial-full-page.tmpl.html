@@ -12,7 +12,7 @@
                 {{#with tutorials-navigation}}
                     {{#with en}}
                         <div class="tutorial-tag-cloud">
-                            <h1>Beginner</h1>
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
                             {{#each beginner}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -20,7 +20,7 @@
                             {{/each}}
                         </div>
                         <div class="tutorial-tag-cloud">
-                            <h1>Intermediate</h1>
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
                             {{#each intermediate}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -28,7 +28,7 @@
                             {{/each}}
                         </div>
                         <div class="tutorial-tag-cloud">
-                            <h1>Advanced</h1>
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
                             {{#each advanced}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -48,7 +48,7 @@
                 {{#with tutorials-navigation}}
                     {{#with ja}}
                         <div class="tutorial-tag-cloud">
-                            <h1>Beginner</h1>
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
                             {{#each beginner}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -56,7 +56,7 @@
                             {{/each}}
                         </div>
                         <div class="tutorial-tag-cloud">
-                            <h1>Intermediate</h1>
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
                             {{#each intermediate}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -64,7 +64,7 @@
                             {{/each}}
                         </div>
                         <div class="tutorial-tag-cloud">
-                            <h1>Advanced</h1>
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
                             {{#each advanced}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -83,7 +83,7 @@
                 {{#with tutorials-navigation}}
                     {{#with ru}}
                         <div class="tutorial-tag-cloud">
-                            <h1>Beginner</h1>
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
                             {{#each beginner}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -91,7 +91,7 @@
                             {{/each}}
                         </div>
                         <div class="tutorial-tag-cloud">
-                            <h1>Intermediate</h1>
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
                             {{#each intermediate}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -99,7 +99,7 @@
                             {{/each}}
                         </div>
                         <div class="tutorial-tag-cloud">
-                            <h1>Advanced</h1>
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
                             {{#each advanced}}
                                 {{#each children}}
                                     <span><a href="{{path}}">{{name}}</a></span>
@@ -114,5 +114,6 @@
 
         {{> scripts}}
         {{> analytics}}
+        {{> footer}}
     </body>
 </html>
