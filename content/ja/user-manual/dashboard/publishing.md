@@ -1,25 +1,24 @@
 ---
-title: Publishing
-template: page.tmpl.html
+title: パブリッシュ
+template: usermanual-page.tmpl.html
 position: 5
 ---
 
-The fastest, easiest, most convenient way to publish your game is to publish it live on playcanvas.com.
+最も速く簡単で便利にゲームを公開できる方法はTplaycanvas.comへのパブリッシュです。
 
-To publish you will need to have at least one scene in your project. Then you can follow these steps:
-
-* In your project dashboard, select the 'PUBLISH' tab.
+公開するには、プロジェクトに最低一つのシーンが必要です。その後、次の手順に従います：
 
 ![Publish][1]
 
-* Click the PUBLISH button
-* Enter a name for your app. This is used to construct the URL in the form `http://apps.playcanvas.com/<USERNAME>/<PROJECTNAME>/<GAMENAME>`. So for example, if PlayCanvas user 'will' had a project called 'callofhonor' and chose a publish name of 'megawar', the published URL would be `http://apps.playcanvas.com/will/callofhonor/megawar`.
-* Select the Scenes you want to include in your app from the list. Notice that the Primary Scene (the one with the blue banner icon), is always included in your app and it will be the first scene loaded when your app is launched.
-* Click 'PUBLISH NOW'
-* You will see a new app created in the PUBLISH tab. Wait until it finishes processing.
-* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+* プロジェクトダッシュボード内のPUBLISHタブを選択
+* PUBLISHボタンをクリック
+* Appの名前を入力
+* リストから、Appに含みたいシーンを選択。最初のシーン(青いバナーアイコン)は常にappに含まれ、appが起動する際に最初に読み込まれます。
+* PUBLISH NOWをクリック
+* PUBLISHタブに新しいappが作成されます。処理が終わるまで待ちます。
+* ウェブappが公開されました！公開されたURLからツイートやフェイスブックでシェアできます。
 
-In this page you can also set the Primary App for your project, by clicking on the banner icon on the left of each app. This will be the app that users play when they click on the PLAY button in the Dashboard Header.
+このページでappの左にあるバナーアイコンをクリックして、プロジェクトのプライマリAppを設定することができます。これは、ユーザーがダッシュボードヘッダーでPLAYボタンをクリックした際にプレイするappです。
 
 [1]: /images/platform/dashboard_publish.png
 

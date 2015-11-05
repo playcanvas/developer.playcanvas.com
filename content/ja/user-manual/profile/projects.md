@@ -1,32 +1,32 @@
 ---
-title: Projects
-template: page.tmpl.html
+title: プロジェクト
+template: usermanual-page.tmpl.html
 position: 2
 ---
 
-The Projects tab lists all the projects you have created or have been granted access to.
+プロジェクトタブには、過去に作成した全てのプロジェクトとアクセス可能な全てのプロジェクトがリストされています。
 
 ![projects_page][1]
 
-## New Project
+## 新規プロジェクト
 
-Click on the NEW button on the top right to create a new project.
+新規プロジェクトを作成するには右上のNEWボタンをクリックします。
 
-## Delete Project
+## プロジェクトの削除
 
-Click on the arrow next to a project and select Delete to permantently delete it from your account.
+プロジェクトの横の矢印をクリックしてDeleteを選択するとアカウントから完全に削除することができます。
 
-## Export Project
+## プロジェクトのエキスポート
 
-If you have an ORG plan, you can export a .zip archive of your project. You can later choose to import that .zip archive as a new project. You can use this mechanism to backup your projects on your machine.
+ORGプランの場合、プロジェクトの.zipアーカイブをエキスポートすることができます。後にその.zipアーカイブを新規プロジェクトとしてインポートすることができます。この仕組みを使用して、マシンにプロジェクトのバックアップを保存することができます。
 
-To export a project click on the arrow next to a project and select Export.
+プロジェクトをエキスポートするには、プロジェクトの横の矢印をクリックしてExportを選択します。
 
-## Import Project
+## プロジェクトのインポート
 
-If you have an ORG plan you can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
+ORGプランの場合、エキスポートプロジェクトを含む.zipアーカイブをインポートすることができます。.zipファイルは上記で説明したエキスポート方法で作成されている必要があります。
 
-Click on Import Project on the left hand side of the Projects page and select the zip file to import it.
+Projectsページの左側にあるImport Projectをクリックし、zipファイルを選択してインポートします。
 
-[1]: /images/platform/profile.png "Projects"
+[1]: /images/platform/profile.png "プロジェクト"
 

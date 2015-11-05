@@ -1,29 +1,29 @@
 ---
-title: Animation
-template: page.tmpl.html
+title: アニメーション
+template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The 'animation' component enables an entity to specify which animations can be applied to the model assigned to its model component.
+アニメーションコンポーネントを使用すれば、エンティティはモデルコンポーネントに割り当てられているモデルに適用することのできるアニメーションを指定できます。
 
 <img src="/images/user-manual/components/component-animation.jpg" style="width: 300px" />
 
-## Properties
+## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If checked, the component will play the animation.</td></tr>
-    <tr><td>Asset</td><td>The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control.</td></tr>
-    <tr><td>Speed Factor</td><td>A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset.</td></tr>
-    <tr><td>Loop</td><td>If checked, the animation will continue to loop back to the start on completion. Otherwise, the animation will come to a stop on its final frame.</td></tr>
-    <tr><td>Activate</td><td>If checked, the component will start playing the animation on load.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Enabled</td><td>チェックが入っているとコンポーネントはアニメーションを再生します。</td></tr>
+    <tr><td>Asset</td><td>こおエンティティで利用できるアニメーションアセット。ピッカーコントロールから複数のアニメーションを割り当てることが出来ます。</td></tr>
+    <tr><td>Speed Factor</td><td>アニメーションのプレイバック速度の乗数。0はアニメーションプレイバックをフリーズさせます。1はアセットの通常のプレイバック速度を意味します。</td></tr>
+    <tr><td>Loop</td><td>チェックが入っていると、アニメーションは終了した際に最初に戻ります。チェックが入っていない場合は、アニメーションは最終フレームで停止します。</td></tr>
+    <tr><td>Activate</td><td>チェックが入っていると、コンポーネントは読み込み時にアニメーションを再生します。</td></tr>
 </table>
 
-## Scripting Interface
+## スクリプティングインターフェイス
 
-You can control an animation component's properties using a [script component][1]. The animation component's scripting interface is [here][2].
+アニメーションコンポーネントのプロパティは[スクリプトコンポーネント][1]を使用して制御することができます。アニメーションコンポーネントのスクリプティングインターフェイスは[こちら][2]です。
 
 [1]: /user-manual/packs/components/script
 [2]: /engine/api/stable/symbols/pc.AnimationComponent.html

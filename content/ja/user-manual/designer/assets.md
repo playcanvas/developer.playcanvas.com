@@ -1,28 +1,28 @@
 ---
-title: Assets
-template: page.tmpl.html
+title: アセット
+template: usermanual-page.tmpl.html
 position: 6
 ---
 
-The Assets panel includes all Assets that are available in your project.
+アセットパネルにはプロジェクトで利用できる全てのアセットが含まれています。
 
-![Assets Panel][1]
+![アセットパネル][1]
 
-## Create and Delete Assets
+## アセットの作成と削除
 
-You can create new assets by dragging a file from you computer into the assets panel. We will upload and import the asset for you. You can also create new Materials and Cubemaps using the Add Asset icon.
+コンピューターからアセットパネルにファイルをドラッグして新しいアセットを作成することができます。PlayCanvasがアセットをアップロード及びインポートします。Add Assetアイコンを使って新しい素材やキューブマップの作成もできます。
 
-You can delete assets by selecting them and clicking the Delete Asset icon.
+アセットを選択してDelete Assetアイコンをクリックすると、削除できます。
 
-## Filtering
+## フィルタリング
 
-Filter which assets are visible using the filter drop down to select the type of asset to view. You can also search for assets by name using the search box.
+アセット表示のフィルタドロップダウンから表示させるアップロードの種類を選択します。検索ボックスを使ってアセット名を検索することもできます。
 
-## Drag and Drop
+## ドラッグ＆ドロップ
 
-You can drag Assets from the Asset Panel into asset slots in the [Inspect][2] to add them to Components. Drop locations will highlight when you start dragging so you know where you are allowed to drop assets.
+アセットパネルのアセットを[Inspect][2]のアセットスロットにドラッグすると、コンポーネントに追加することができます。ドラッグをすると、ドロップ可能な場所がハイライトされます。
 
-You can also drag Model Assets directly into the [viewport][3]
+モデルアセットを直接 [ビューポート][3]にドラッグすることもできます。
 
 [1]: /images/user-manual/assets-panel.jpg
 [2]: /user-manual/designer/inspector

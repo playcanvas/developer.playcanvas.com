@@ -1,32 +1,32 @@
 ---
-title: Viewport
-template: page.tmpl.html
+title: ビューポート
+template: usermanual-page.tmpl.html
 position: 4
 ---
 
 <img alt="Viewport" width="640" height="480" src="/images/user-manual/viewport.jpg" />
 
-The viewport shows your scene as currently rendered. You can freely move around the scene by manipulating the Editor's current camera.
+ビューポートは現在レンダリングされるシーンを表示します。エディタの現在のカメラを操作することで、自由にシーンを動かすことができます。
 
 <img alt="Cameras dropdown" src="/images/user-manual/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;"/>
 
-## Cameras
+## カメラ
 
-Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras. The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perpspective. Useful for fine-tuning positions.
+エディタは**Perspective（遠近）**カメラを使用するために初期で設定します。このカメラは、シーン内でカメラが浮いているように動作します。カメラのドロップダウンメニューから他のカメラを選択してシーンを閲覧できます。**Orthographic（正射）** カメラ：上, 下, 前, 後ろ, 左, 右。遠近感無しでシーンを見ることができます。位置の微調整に便利です。
 
-You can also use the camera menu to select any of the camera Entities in your scene. This way you can position your in-game camera exactly as required.
+カメラメニューを使用してシーンの如何なるカメラエンティティを選択することができます。ゲーム内のカメラを必要に応じて正確に配置できます。
 
-## Gizmos
+## Gizmo
 
 <img src="/images/user-manual/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
 <img src="/images/user-manual/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
 <img src="/images/user-manual/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
 
-The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][1]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Rotate (which is made up of three colored rings) and Scale (with cubes on the ends of the axes).
+上記スクリーンショットに表示されている3色の軸は[Gizmo][1]といいます。これは、選択されたエンティティの変換行列を操作するのに使います。Gizmoには3つの種類があります：Translate (軸の先に矢印); Rotate (3色のリングで構成される), Scale (軸の先にキューブ)。
 
-## Entity Context Menu
+## エンティティコンテキスト メニュー
 
-Right clicking on an Entity in the 3D viewport will bring up the Entity context menu.
+3Dビューポートでエンティティを右クリックするとエンティティのコンテキストメニューが表示されます。
 
 [1]: /user-manual/glossary#gizmo
 

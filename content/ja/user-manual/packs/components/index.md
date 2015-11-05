@@ -1,6 +1,6 @@
 ---
-title: Components
-template: page.tmpl.html
+title: コンポーネント
+template: usermanual-page.tmpl.html
 position: 2
 ---
 

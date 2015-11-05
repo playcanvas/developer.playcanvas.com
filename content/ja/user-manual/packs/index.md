@@ -1,8 +1,8 @@
 ---
-title: Scenes
-template: page.tmpl.html
+title: シーン
+template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Scenes contain the Entity hierarchy which lists the order and structure of all Entities in your scene. They are edited using the PlayCanvas Editor.
+シーンには、シーン内の全てのエンティティの順番と構成をリストする、エンティティ階層が含まれています。これらはPlayCanvas Ediorを使って編集できます。
 

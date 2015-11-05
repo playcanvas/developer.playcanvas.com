@@ -1,57 +1,53 @@
 ---
-title: Settings
-template: page.tmpl.html
+title: 設定
+template: usermanual-page.tmpl.html
 position: 6
 ---
 
-The settings dashboard lets you set up Project and Application settings.
+設定ダッシュボードではプロジェクトやアプリケーションの設定を行えます。
 
-## Project Settings
+## プロジェクト設定
 
-#### Name and Description
+#### 名前と説明
 
-You can update the description of your project here. Currently it is not possible to change the name.
+ここからプロジェクトの説明を更新できます。名前の変更は現時点ではできません。
 
-#### Project Image
+#### プロジェクト画像
 
-Assign a square 720x720 image to go along with your project. This image is also used to represent any published games from this project. And it will appear on social sites like Twitter and Facebook if users share your game.
+720x720の正方形の画像をプロジェクトに割り当てます。この画像は、このプロジェクトから公開される全てのゲームを代表するもので、TwitterやFacebookなどのSNSでシェアされた場合に表示されます。
 
-If you want your project to be featured on playcanvas.com, you must add a project image.
+プロジェクトをPlayCanvasでフィーチャリングさせるには、プロジェクト画像を追加する必要があります。
 
-#### Private
+#### プライベート
 
-Private projects are only visible to users who have been explicitly assigned read, write or admin access.
+プライベートプロジェクトは読み込み、書き込み、adminアクセスを明示的に与えられたユーザーにしか表示されません。
 
 <div class="alert alert-info">
-Only users with premium accounts can access private projects
+Premiumアカウントのユーザーしかプライベートプロジェクトにアクセスできません。
 </div>
 
-#### Private Assets
+## アプリケーション設定
 
-If you want to make your project public, but you do not want to allow everyone to duplicate your assets, you can use the *Private Assets* setting. This will hide just the Source Assets from other users and disable Forking. In other regards the Project remains open to all.
+#### 解像度
 
-## Application Settings
+このプロジェクトから公開された如何なるゲームの解像度を設定。最終的な解像度はフィルモードと解像度モードにも左右されます。
 
-#### Resolution
+#### フィルモード
 
-Set the resolution of the any games published from this project. The final resolution is also dependent on the fill mode and resolution mode.
+フィルモードはキャンバスがそのようにブラウザのウィンドウを埋めるかを定めます。
 
-#### Fill Mode
+* Keep aspect ratio - キャンバスは画面一杯に拡大しますが正しいアスペクト比を維持します。
+* Fill window - キャンバスは拡大して画面を完全に埋めます。
+* None - キャンバスは解像度の幅と高さのサイズを保ちます。
 
-Fill Mode decides how the canvas fills the browser window.
+#### 解像度モード
 
-* Keep aspect ratio - the canvas will expand to fill the window while maintaining the correct aspect ratio.
-* Fill window - the canvas will stretch to fill the window completely.
-* None - the canvas will be the same size as the resolution width and height.
+解像度モードはキャンバスの解像度がリサイズ時に変更されるかを定めます。
 
-#### Resolution Mode
+* Fixed - 解像度は必ず幅 x 高さになります。
+* Auto - 解像度は必ずキャンバスと同じサイズになります。
 
-Resolution Mode decides whether the canvas resolution will change when it resized
+#### 3D物理を有効化
 
-* Fixed - the resolution will always be width x height.
-* Auto - the resolution will always be the same as the canvas size.
-
-#### Enable 3D Physics
-
-By default, we don't include the Physics engine as part of published applications because it increases the download size. If you have included any physics components (rigidbody or collision) we automatically enable this option. But you may want to enable or disable manually.
+ダウンロードサイズが大きくなるため、デフォルトではPhysics（物理）エンジンは公開するアプリケーションに含みません。物理コンポーネント (リジッドボディやコリジョン) を使用している場合、自動的にこのオプションを有効にします。しかし、手動で無効にすることもできます。
 

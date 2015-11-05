@@ -1,31 +1,31 @@
 ---
-title: Animation Blending
+title: アニメーションブレンディング
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/animation_blend?overlay=false" ></iframe>
 
-*Click on screen to focus, then press the 'p' key to blend to a punch animation*
+*画面をクリックしてフォーカス。次にpキーを押してパンチアニメーションにブレンド*
 
-This tutorial illustrates the basics of animation blending.
+このチュートリアルではアニメーションブレンディングの基本を説明します。
 
-Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.
+シーンのオブジェクトにアニメーションを付けることができます。マシンやキャラクターはアニメ化するのに向いています。基本的に、3Dコンテンツを作成すると個別のアニメーションが作られ、これらのアニメーションはサイクルと呼ばれます(ループするため)。例えば、人間キャラクターに待機サイクル、歩きサイクル、走りサイクルなどを持たせることができます。PlayCanvasの開発者としてアニメ化されたオブジェクトにこれらのアニメーションを再生するための仕組みが必要です。また、アニメーションを切り替える際に飛ばないようにする必要があります。これを防ぐには、アニメーションをブレンドして切り替え時にスムーズに移行させます。これによりアニメ化したオブジェクトの視覚的な迫真性.が高まります。
 
-Let's examine how this is achieved via PlayCanvas...
+PlayCanvasを通してこれがどのように行われるかを確認しましょう…
 
-## The Animation Component
+## アニメーションコンポーネント
 
-In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the skinned character as displayed in PlayCanvas Editor.
+モデルにアニメーションを適用するにはアニメーションコンポーネントをエンティティに追加します。下記はPlayCanvas Editorで表示されるスキンを加えたキャラクターの構成です。
 
 ![Animated Entity][1]
 
-In the image you can see the animation component in the Attribute Editor. There are 2 animation assets assigned: an 'idle' cycle and a 'punch' cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
+画像では、Attribute Editor内のアニメーションコンポーネントが確認できます。2つのアニメーションアセットが割り当てられています：「待機」サイクルと「パンチ」サイクルです。このようにアニメーションを構成すると、最初のアニメーション(待機サイクル)が再生され、ループオプションが設定されているため永久に動きます。しかし、それでは面白くないのでこのようにします：
 
-* Play a looping idle animation.
-* Blend to a looping punch animation on a key press.
-* Blend back to idle on key release.
+* ループしている待機アニメーションを再生。
+* キーを押してループしているパンチアニメーションにブレンド。
+* キーを離して待機にブレンドし戻す。
 
-So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Editor and it refers to a JS file called animation_blending.js. The contents of this file is:
+このような機能はアニメーションコンポーネントの能力を超えてしまうので、スクリプトコンポーネントを使用して追加の挙動を設定する必要があります。上記は、Editor内のスキンを加えたキャラクターエンティティのスクリーンショットです。スクリプトコンポーネントを確認できます。 これはanimation_blending.jsをいうJSファイルを参照します。このファイルの内容：
 
 ~~~javascript~~~
 pc.script.create("animation_blending", function (app) {
@@ -51,8 +51,8 @@ pc.script.create("animation_blending", function (app) {
     AnimationBlender.prototype = {
         setState: function (state) {
             this.state = state;
-            // Set the current animation, taking 0.2 seconds to blend from
-            // the current animation state to the start of the target animation.
+            // 現在のアニメーションの状態からターゲットアニメーションの開始に
+// ブレンドするまで0.2秒かかるように、現在のアニメーションを設定。
             this.entity.animation.play(states[state].animation, this.blendTime);
         },
 
@@ -73,10 +73,10 @@ pc.script.create("animation_blending", function (app) {
 });
 ~~~
 
-From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
+ここからはアニメーションコンポーネントにより多くのアニメーションを追加することができ、より複雑なアニメーション状態チャートをスクリプトすることが可能になります。
 
-See [the full Scene here][2]
+ [フルシーンはこちら][2]
 
-[1]: /images/tutorials/animation_blending.png
+[1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/338867
 

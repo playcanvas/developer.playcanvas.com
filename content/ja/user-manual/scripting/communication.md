@@ -1,12 +1,12 @@
 ---
 title: Communication
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 4
 ---
 
 Communication between different scripts is very straightforward. Script Instances are exposed through the script component on an Entity.
 
-For example,
+例えば
 
 ~~~javascript~~~
 // player.js
@@ -61,7 +61,7 @@ this.entity.script.player.move(1,0);
 
 All scripts attached to a script component are exposed on the script component itself under the name defined in the `pc.script.create()` function.
 
-## Events
+## イベント
 
 If you wish to broadcast to many scripts all at once you can use the [event system][0] to send and listen for events.
 

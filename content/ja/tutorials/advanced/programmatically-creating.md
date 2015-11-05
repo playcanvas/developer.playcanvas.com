@@ -8,7 +8,7 @@ position: 2
 
 Usually you will be creating Entities via the PlayCanvas Editor, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
 
-## Creating an Entity
+## エンティティの作成
 
 ~~~js
 var entity = new pc.Entity(); // Create an Entity
@@ -19,7 +19,7 @@ app.root.addChild(entity);
 
 First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `app.root`.
 
-## Adding Components
+## コンポーネントの追加
 
 ~~~js~~~
 // Create a new Entity
@@ -41,7 +41,7 @@ An Entity on it's own doesn't do much, so you will need to add Components in ord
 
 Each Component type has different properties that can be passed in on the data object, see the [Component's documentation][1] for more detail about which properties are available. The `data` argument can be left out and default values will be used.
 
-## Removing Components
+## コンポーネントの削除
 
 ~~~js~~~
 var entity = new pc.Entity();
@@ -55,7 +55,7 @@ entity.removeComponent("camera");
 
 Components can be deleted individually from an Entity by calling the `removeComponent` method on the Entity.
 
-## Deleting Entities
+## エンティティの削除
 
 ~~~js~~~
 // Create a new Entity
@@ -158,7 +158,7 @@ pc.script.create('entity_creator', function (app) {
 
 This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
 
-See [the full scene here][2].
+[フルシーンはこちらから][2].
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/329669

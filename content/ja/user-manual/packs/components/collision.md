@@ -1,6 +1,6 @@
 ---
-title: Collision
-template: page.tmpl.html
+title: コリジョン
+template: usermanual-page.tmpl.html
 position: 5
 ---
 
@@ -19,7 +19,7 @@ The 'collision' component assigns a collision volume to the entity. The componen
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
 
-## Properties
+## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -34,7 +34,7 @@ If the entity also has a rigidbody component, the collision component determines
     <tr><td>Asset</td><td>Mesh only. The model asset that will be used as a source for the triangle-based collision mesh.</td></tr>
 </table>
 
-## Scripting Interface
+## スクリプティングインターフェイス
 
 You can control a collision component's properties using a [script component][6]. The collision component's scripting interface is [here][7].
 

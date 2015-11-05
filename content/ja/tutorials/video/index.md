@@ -1,16 +1,16 @@
 ---
 title: Video Tutorials
-template: tutorial-page.tmpl.html
+template: videos-page.tmpl.html
 position: 1
 ---
 
-We have several video series on our [Youtube Channel][1] which will walk you through using PlayCanvas to create games and interactive 3D applications.
+弊社の [Youtube Channel][1] から動画チュートリアルをご覧いただけます。PlayCanvasを使用してゲームやインタラクティブな3Dアプリケーションを制作するステップを説明します。
 
-## Tutorial Assets
+## チュートリアルのアセット
 
-Some of our Video tutorials use pre-made assets. You can download the assets from here:
+事前に作成されたアセットを使用する動画チュートリアルもあります。アセットはこちらからダウンロードできます：
 
-[Introduction to PlayCanvas series][2] - Samba Dancing Robot, Prototype textures, Music.
+[PlayCanvasシリーズの紹介][2] - Samba Dancing Robot（サンバダンス ロボット, プロトタイプ テクスチャー, 音楽。
 
 [1]: https://www.youtube.com/user/playcanvas
 [2]: /downloads/tutorials/intro.zip

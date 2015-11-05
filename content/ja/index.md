@@ -3,19 +3,7 @@ title: PlayCanvas 開発者向けサイト
 template: intro.tmpl.html
 ---
 
-PlayCanvas 開発者サイトへようこそ。
-
-プログラマー、デザイナー、ライターであれ、ここはPlayCanvasについて学ぶためのサイトです。あなたが知りたい場所にすぐたどりつくためのリンクをまとめてあります。あるいは、ユーザーマニュアルやチュートリアル内の左メニューから詳細な説明ページにいってください。
-
-最初に [ユーザーマニュアル][1]を読むことをお勧めします。こちらはPlayCanvasにとって完璧なガイドであり、これを読むことで、知りたいことをすべて学ぶことができます。
-
-[はじめに][2] - Dive straight in and build your first PlayCanvas application.
-
-[チュートリアル][3] - Playcanvasの特徴を一歩ずつ学ぶためのガイドです。
-
-[API リファレンス][4] - PlayCanvasエンジンについてのリファレンスです。
-
-[GitHub][5] - PlayCanvasのGitHubページです。 あなたのプロジェクトに[2D images][6] や [text][7]　を表示させるための説明を確認できます。
+We suggest you start reading the [User Manual][1], it's the complete guide to PlayCanvas, read this through to learn everything there is to know. Next, dig into the [Tutorials][3] and [Videos][12], step-by-step guides for the specific features of PlayCanvas. Finally, the [API Reference][4] is the complete PlayCanvas Engine reference.
 
 [play page][8] でゲームプロジェクトがどのようにデザインされ、作られているのかを見ることができるので、忘れないようにしてください。
 
@@ -25,15 +13,17 @@ PlayCanvas 開発者サイトへようこそ。
 
 [Engine][9] - This guide will get you going if you are only using the Engine and not the PlayCanvas Editor.
 
+[GitHub][5] - PlayCanvasのGitHubページです。 あなたのプロジェクトに[2D images][6] や [text][7]　を表示させるための説明を確認できます。
+
 <hr />
 
 # 困ったときは？
 
-#### コミュニケーションをとろう? [PlayCanvas フォーラム][10]
+## Want to talk?
 
-自分のゲームや、最新プロジェクト、チームメンバー募集、お手伝いの提案などを語りあうための場所です。 [forums][10])に参加しよう。
+Talk about your game, show off your latest project, seek out new team members, or offer your assistance to others. Join us in the discussion [forums][10].
 
-#### 質問は? [PlayCanvas Answers][11]
+## Questions?
 
 PlayCanvas、API、プラットフォームについての質問など、PlayCanvasを利用する上での技術的な質問があれば、 [PlayCanvas Answers][11] を使って問題を解決してください。 
 
@@ -48,4 +38,5 @@ PlayCanvas、API、プラットフォームについての質問など、PlayCan
 [9]: /engine
 [10]: http://forum.playcanvas.com/
 [11]: http://answers.playcanvas.com/
+[12]: /tutorials/video
 

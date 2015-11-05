@@ -49,12 +49,6 @@ source_file = po/tutorials/advanced/custom-shaders.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-tutorials-advanced-fps-controller]
-file_filter = po/tutorials/advanced/fps-controller.<lang>.po
-source_file = po/tutorials/advanced/fps-controller.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-tutorials-advanced-index]
 file_filter = po/tutorials/advanced/index.<lang>.po
 source_file = po/tutorials/advanced/index.en-US.po
@@ -139,12 +133,6 @@ source_file = po/tutorials/intermediate/collision-and-triggers.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-tutorials-intermediate-first-person-camera]
-file_filter = po/tutorials/intermediate/first-person-camera.<lang>.po
-source_file = po/tutorials/intermediate/first-person-camera.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-tutorials-intermediate-index]
 file_filter = po/tutorials/intermediate/index.<lang>.po
 source_file = po/tutorials/intermediate/index.en-US.po
@@ -184,12 +172,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-introduction]
 file_filter = po/user-manual/introduction.<lang>.po
 source_file = po/user-manual/introduction.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-profile]
-file_filter = po/user-manual/profile.<lang>.po
-source_file = po/user-manual/profile.en-US.po
 source_lang = en
 type = PO
 
@@ -259,12 +241,6 @@ source_file = po/user-manual/assets/models/index.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-dashboard-assets]
-file_filter = po/user-manual/dashboard/assets.<lang>.po
-source_file = po/user-manual/dashboard/assets.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-dashboard-code]
 file_filter = po/user-manual/dashboard/code.<lang>.po
 source_file = po/user-manual/dashboard/code.en-US.po
@@ -313,24 +289,6 @@ source_file = po/user-manual/designer/assets.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-designer-attribute-editor]
-file_filter = po/user-manual/designer/attribute-editor.<lang>.po
-source_file = po/user-manual/designer/attribute-editor.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-design-view]
-file_filter = po/user-manual/designer/design-view.<lang>.po
-source_file = po/user-manual/designer/design-view.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-designer-settings]
-file_filter = po/user-manual/designer/designer-settings.<lang>.po
-source_file = po/user-manual/designer/designer-settings.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-designer-index]
 file_filter = po/user-manual/designer/index.<lang>.po
 source_file = po/user-manual/designer/index.en-US.po
@@ -346,24 +304,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-designer-menus-and-toolbar]
 file_filter = po/user-manual/designer/menus-and-toolbar.<lang>.po
 source_file = po/user-manual/designer/menus-and-toolbar.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-pack-explorer]
-file_filter = po/user-manual/designer/pack-explorer.<lang>.po
-source_file = po/user-manual/designer/pack-explorer.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-scene-settings]
-file_filter = po/user-manual/designer/scene-settings.<lang>.po
-source_file = po/user-manual/designer/scene-settings.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-scripts-explorer]
-file_filter = po/user-manual/designer/scripts-explorer.<lang>.po
-source_file = po/user-manual/designer/scripts-explorer.en-US.po
 source_lang = en
 type = PO
 
@@ -445,93 +385,9 @@ source_file = po/user-manual/packs/entities/index.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-posteffects-bloom]
-file_filter = po/user-manual/posteffects/bloom.<lang>.po
-source_file = po/user-manual/posteffects/bloom.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-posteffects-brightness_contrast]
-file_filter = po/user-manual/posteffects/brightness_contrast.<lang>.po
-source_file = po/user-manual/posteffects/brightness_contrast.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-posteffects-fxaa]
-file_filter = po/user-manual/posteffects/fxaa.<lang>.po
-source_file = po/user-manual/posteffects/fxaa.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-posteffects-hue_saturation]
-file_filter = po/user-manual/posteffects/hue_saturation.<lang>.po
-source_file = po/user-manual/posteffects/hue_saturation.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-posteffects-index]
-file_filter = po/user-manual/posteffects/index.<lang>.po
-source_file = po/user-manual/posteffects/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-posteffects-sepia]
-file_filter = po/user-manual/posteffects/sepia.<lang>.po
-source_file = po/user-manual/posteffects/sepia.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-posteffects-vignette]
-file_filter = po/user-manual/posteffects/vignette.<lang>.po
-source_file = po/user-manual/posteffects/vignette.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-chromewebstore]
-file_filter = po/user-manual/publishing/chromewebstore.<lang>.po
-source_file = po/user-manual/publishing/chromewebstore.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-cocoonjs]
-file_filter = po/user-manual/publishing/cocoonjs.<lang>.po
-source_file = po/user-manual/publishing/cocoonjs.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-firefoxos]
-file_filter = po/user-manual/publishing/firefoxos.<lang>.po
-source_file = po/user-manual/publishing/firefoxos.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-publishing-index]
 file_filter = po/user-manual/publishing/index.<lang>.po
 source_file = po/user-manual/publishing/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-native-app-stores]
-file_filter = po/user-manual/publishing/native-app-stores.<lang>.po
-source_file = po/user-manual/publishing/native-app-stores.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-playcanvas]
-file_filter = po/user-manual/publishing/playcanvas.<lang>.po
-source_file = po/user-manual/publishing/playcanvas.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-self-hosting]
-file_filter = po/user-manual/publishing/self-hosting.<lang>.po
-source_file = po/user-manual/publishing/self-hosting.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-xdk]
-file_filter = po/user-manual/publishing/xdk.<lang>.po
-source_file = po/user-manual/publishing/xdk.en-US.po
 source_lang = en
 type = PO
 
@@ -580,12 +436,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-scripting-workflow]
 file_filter = po/user-manual/scripting/workflow.<lang>.po
 source_file = po/user-manual/scripting/workflow.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-shadows-index]
-file_filter = po/user-manual/shadows/index.<lang>.po
-source_file = po/user-manual/shadows/index.en-US.po
 source_lang = en
 type = PO
 
@@ -667,9 +517,345 @@ source_file = po/user-manual/profile/projects.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-publishing-cocoon_io]
-file_filter = po/user-manual/publishing/cocoon_io.<lang>.po
-source_file = po/user-manual/publishing/cocoon_io.en-US.po
+[playcanvas-developer-site.po-faq-add_component]
+file_filter = po/faq/add_component.<lang>.po
+source_file = po/faq/add_component.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-add_script]
+file_filter = po/faq/add_script.<lang>.po
+source_file = po/faq/add_script.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-change_background]
+file_filter = po/faq/change_background.<lang>.po
+source_file = po/faq/change_background.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-change_color]
+file_filter = po/faq/change_color.<lang>.po
+source_file = po/faq/change_color.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_cubemap]
+file_filter = po/faq/create_cubemap.<lang>.po
+source_file = po/faq/create_cubemap.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_entity]
+file_filter = po/faq/create_entity.<lang>.po
+source_file = po/faq/create_entity.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_light]
+file_filter = po/faq/create_light.<lang>.po
+source_file = po/faq/create_light.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_material]
+file_filter = po/faq/create_material.<lang>.po
+source_file = po/faq/create_material.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_shape]
+file_filter = po/faq/create_shape.<lang>.po
+source_file = po/faq/create_shape.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_skybox]
+file_filter = po/faq/create_skybox.<lang>.po
+source_file = po/faq/create_skybox.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-delete_asset]
+file_filter = po/faq/delete_asset.<lang>.po
+source_file = po/faq/delete_asset.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-delete_entity]
+file_filter = po/faq/delete_entity.<lang>.po
+source_file = po/faq/delete_entity.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-duplicate_entity]
+file_filter = po/faq/duplicate_entity.<lang>.po
+source_file = po/faq/duplicate_entity.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-play_animation]
+file_filter = po/faq/play_animation.<lang>.po
+source_file = po/faq/play_animation.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-play_sound]
+file_filter = po/faq/play_sound.<lang>.po
+source_file = po/faq/play_sound.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-remove_component]
+file_filter = po/faq/remove_component.<lang>.po
+source_file = po/faq/remove_component.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-render_model]
+file_filter = po/faq/render_model.<lang>.po
+source_file = po/faq/render_model.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-transform_entity]
+file_filter = po/faq/transform_entity.<lang>.po
+source_file = po/faq/transform_entity.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-upload_asset]
+file_filter = po/faq/upload_asset.<lang>.po
+source_file = po/faq/upload_asset.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-use_physics]
+file_filter = po/faq/use_physics.<lang>.po
+source_file = po/faq/use_physics.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-use_shadows]
+file_filter = po/faq/use_shadows.<lang>.po
+source_file = po/faq/use_shadows.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-advanced-plasma-shader]
+file_filter = po/tutorials/advanced/plasma-shader.<lang>.po
+source_file = po/tutorials/advanced/plasma-shader.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-advanced-terrain-generation]
+file_filter = po/tutorials/advanced/terrain-generation.<lang>.po
+source_file = po/tutorials/advanced/terrain-generation.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-loading-json]
+file_filter = po/tutorials/beginner/loading-json.<lang>.po
+source_file = po/tutorials/beginner/loading-json.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-entity-picking]
+file_filter = po/tutorials/intermediate/entity-picking.<lang>.po
+source_file = po/tutorials/intermediate/entity-picking.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-first-person-movement]
+file_filter = po/tutorials/intermediate/first-person-movement.<lang>.po
+source_file = po/tutorials/intermediate/first-person-movement.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-procedural-levels]
+file_filter = po/tutorials/intermediate/procedural-levels.<lang>.po
+source_file = po/tutorials/intermediate/procedural-levels.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-video-textures]
+file_filter = po/tutorials/intermediate/video-textures.<lang>.po
+source_file = po/tutorials/intermediate/video-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-shader]
+file_filter = po/user-manual/assets/shader.<lang>.po
+source_file = po/user-manual/assets/shader.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-designer-loading-screen]
+file_filter = po/user-manual/designer/loading-screen.<lang>.po
+source_file = po/user-manual/designer/loading-screen.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-designer-scenes]
+file_filter = po/user-manual/designer/scenes.<lang>.po
+source_file = po/user-manual/designer/scenes.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-cameras]
+file_filter = po/user-manual/graphics/cameras.<lang>.po
+source_file = po/user-manual/graphics/cameras.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-index]
+file_filter = po/user-manual/graphics/index.<lang>.po
+source_file = po/user-manual/graphics/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lights]
+file_filter = po/user-manual/graphics/lights.<lang>.po
+source_file = po/user-manual/graphics/lights.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-particles]
+file_filter = po/user-manual/graphics/particles.<lang>.po
+source_file = po/user-manual/graphics/particles.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-shadows]
+file_filter = po/user-manual/graphics/shadows.<lang>.po
+source_file = po/user-manual/graphics/shadows.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-physical-rendering-index]
+file_filter = po/user-manual/graphics/physical-rendering/index.<lang>.po
+source_file = po/user-manual/graphics/physical-rendering/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-physical-rendering-physical-materials]
+file_filter = po/user-manual/graphics/physical-rendering/physical-materials.<lang>.po
+source_file = po/user-manual/graphics/physical-rendering/physical-materials.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-bloom]
+file_filter = po/user-manual/graphics/posteffects/bloom.<lang>.po
+source_file = po/user-manual/graphics/posteffects/bloom.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-brightness_contrast]
+file_filter = po/user-manual/graphics/posteffects/brightness_contrast.<lang>.po
+source_file = po/user-manual/graphics/posteffects/brightness_contrast.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-fxaa]
+file_filter = po/user-manual/graphics/posteffects/fxaa.<lang>.po
+source_file = po/user-manual/graphics/posteffects/fxaa.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-hue_saturation]
+file_filter = po/user-manual/graphics/posteffects/hue_saturation.<lang>.po
+source_file = po/user-manual/graphics/posteffects/hue_saturation.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-index]
+file_filter = po/user-manual/graphics/posteffects/index.<lang>.po
+source_file = po/user-manual/graphics/posteffects/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-sepia]
+file_filter = po/user-manual/graphics/posteffects/sepia.<lang>.po
+source_file = po/user-manual/graphics/posteffects/sepia.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-posteffects-vignette]
+file_filter = po/user-manual/graphics/posteffects/vignette.<lang>.po
+source_file = po/user-manual/graphics/posteffects/vignette.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-physics-index]
+file_filter = po/user-manual/physics/index.<lang>.po
+source_file = po/user-manual/physics/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-profile-index]
+file_filter = po/user-manual/profile/index.<lang>.po
+source_file = po/user-manual/profile/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-desktop-index]
+file_filter = po/user-manual/publishing/desktop/index.<lang>.po
+source_file = po/user-manual/publishing/desktop/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-mobile-cocoon]
+file_filter = po/user-manual/publishing/mobile/cocoon.<lang>.po
+source_file = po/user-manual/publishing/mobile/cocoon.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-mobile-firefox-os]
+file_filter = po/user-manual/publishing/mobile/firefox-os.<lang>.po
+source_file = po/user-manual/publishing/mobile/firefox-os.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-mobile-index]
+file_filter = po/user-manual/publishing/mobile/index.<lang>.po
+source_file = po/user-manual/publishing/mobile/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-mobile-xdk]
+file_filter = po/user-manual/publishing/mobile/xdk.<lang>.po
+source_file = po/user-manual/publishing/mobile/xdk.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-chrome-web-store]
+file_filter = po/user-manual/publishing/web/chrome-web-store.<lang>.po
+source_file = po/user-manual/publishing/web/chrome-web-store.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-index]
+file_filter = po/user-manual/publishing/web/index.<lang>.po
+source_file = po/user-manual/publishing/web/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-playcanvas-hosting]
+file_filter = po/user-manual/publishing/web/playcanvas-hosting.<lang>.po
+source_file = po/user-manual/publishing/web/playcanvas-hosting.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-self-hosting]
+file_filter = po/user-manual/publishing/web/self-hosting.<lang>.po
+source_file = po/user-manual/publishing/web/self-hosting.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-messages-json]
+file_filter = po/messages.json.<lang>.po
+source_file = po/messages.json.en-US.po
 source_lang = en
 type = PO
 

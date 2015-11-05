@@ -16,6 +16,7 @@ To get the latest translations from the transifex server
 import sys
 import os
 import re
+import json
 import shutil
 import polib
 import datetime
@@ -33,11 +34,11 @@ def split_to_para(f):
     paras = []
     para = ''
 
-    in_code = False # look for lines starting with ~~~, keep code between lines starting with ~~~ in the same para
+    in_code = False # look for lines starting with ~~~ or ```, keep code between lines starting with ~~~ or ```in the same para
 
     linecount = 0
     for line in f:
-        if line.startswith("~~~"):
+        if line.startswith("~~~") or line.startswith("```"):
             in_code = not in_code
 
         if not in_code and (not line or line.isspace()):
@@ -149,7 +150,7 @@ def po_2_md(po_path, out_path):
                 f.write(para['msgid'].encode('utf-8'))
             f.write('\n\n')
 
-def po_2_js(po_path, out_path):
+def po_2_json(po_path, out_path):
     pofile = polib.pofile(po_path)
 
     output = "{\n"
@@ -162,7 +163,7 @@ def po_2_js(po_path, out_path):
             output = output + '    "%s": "%s"\n' % (entry.msgid, entry.msgstr)
     output = output + "}"
 
-    with open(out_path, 'w') as f:
+    with codecs.open(out_path, 'w', 'utf-8') as f:
         f.write(output)
 
 def po_2_pot(po_path, pot_path):
@@ -187,37 +188,6 @@ def po_2_pot(po_path, pot_path):
             )
             potfile.append(pot_entry)
     potfile.save(pot_path)
-
-# def compare_and_update(po_path, pot_path):
-#     """
-#     compare entries in the po file (for source language)
-#     with entries in the pot file. If they are similar enough
-#     update the po file to use the new msgstr with the old msgid.
-#     This maintains strings across updates
-#     """
-#     min = 1
-#     # for (dirpath, dirnames, filenames) in os.walk(dir):
-#     #     for filename in filenames:
-#     #         path = os.path.join(dirpath, filename)
-#     #         if path.endswith(".en-US.po"):
-#     #             po_path = path
-#     #             pot_path = path.replace(".en-US.po", ".pot")
-
-#     pofile = polib.pofile(po_path)
-#     potfile = polib.pofile(pot_path)
-
-#     pot = {}
-#     for entry in potfile:
-#         pot[entry.msgid] = entry.msgstr
-
-#     for poentry in pofile:
-#         for (_id, _str) in pot.items():
-#             v = float(pylev.levenschtein(poentry.msgstr, _str)) / float(len(poentry.msgstr))
-#             existing = poentry.msgid in pot
-#             if not existing and _id != poentry.msgid and v < 1:
-#                 print(v)
-#                 print("%s:%s" % (_id, poentry.msgid))
-#                 print("%s\n%s" % (_str, poentry.msgstr))
 
 def get_title(path):
     with codecs.open(path, 'r', 'utf-8') as f:
@@ -249,6 +219,8 @@ def update_pot_from_src_po(dir):
             path = os.path.join(dirpath, filename)
             # for each .en-US.po file, duplicate into a .pot file
             if path.endswith(".en-US.po"):
+                if _verbose:
+                    print("po_2_pot: " + path)
                 po_2_pot(path, path.replace(".en-US.po", ".pot"))
 
 def create_title_pot(dir, out_file):
@@ -281,15 +253,29 @@ def create_title_pot(dir, out_file):
 
     pot.save(out_file)
 
+def general_messages(in_file, out_file):
+    with codecs.open(in_file, "r", 'utf-8') as _in:
+        po = new_po_file()
+        _json = json.loads(_in.read())
+        for (index, line) in enumerate(_json['msgs']):
+            entry = polib.POEntry(
+                msgid=line,
+                msgstr=line,
+                occurrences=[(in_file, index)]
+            )
+            po.append(entry)
+
+        po.save(out_file)
+
 def update_localized_files(lang, dir, out_dir):
     for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
             path = os.path.join(dirpath, filename)
-            if path.endswith(".js.%s.po" % (lang)):
-                out_path = os.path.join(out_dir, path.replace(dir+'/', '').replace('.'+lang, "")).replace(".po", ".json")
+            if path.endswith(".js.%s.po" % (lang)) or path.endswith(".json.%s.po" % (lang)):
+                out_path = os.path.join(out_dir, path.replace(dir+'/', '').replace('.'+lang, "")).replace(".po", "")
                 if _verbose:
-                    print("po_2_js: " + path)
-                po_2_js(path, out_path)
+                    print("po_2_json: " + path)
+                po_2_json(path, out_path)
             elif path.endswith(".po") and path.find(lang) >= 0:
                 out_path = os.path.join(out_dir, path.replace(dir+'/', '').replace('.'+lang, "")).replace(".po", ".md")
                 if _verbose:
@@ -333,7 +319,8 @@ for arg in sys.argv[1:]:
         print("gettext strings from source markdown")
         create_src_po('content/en', 'po')
         create_title_pot('content/en', 'po/titles.js.en-US.po')
-        update_pot_from_src_po('po')
+        general_messages('messages.json', 'po/messages.json.en-US.po')
+        # update_pot_from_src_po('po')
 
     if arg == 'set':
         print("update tx config")
@@ -350,6 +337,11 @@ for arg in sys.argv[1:]:
     if arg == 'update':
         print("convert current translations to markdown")
         update_localized_files('ja_JP', 'po', 'content/ja')
+        update_localized_files('ru', 'po', 'content/ru')
 
     if arg == 'titles':
         create_title_pot('content/en', 'po/titles.js.en-US.po')
+
+    if arg == 'messages':
+        general_messages('messages.json', 'po/messages.json.en-US.po')
+

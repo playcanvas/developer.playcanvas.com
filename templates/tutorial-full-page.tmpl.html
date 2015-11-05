@@ -6,38 +6,114 @@
         {{> header header-icon="&#57874;" header-title="Tutorials"}}
         {{> tutorial-navbar}}
 
+        {{#if en}}
         <div class="container content-width">
             <main class="full-width">
                 {{#with tutorials-navigation}}
-                <div class="tutorial-tag-cloud">
-                    <h1>Beginner</h1>
-                    {{#each en.beginner}}
-                        {{#each children}}
-                            <span><a href="{{path}}">{{name}}</a></span>
-                        {{/each}}
-                    {{/each}}
-                </div>
-                <div class="tutorial-tag-cloud">
-                    <h1>Intermediate</h1>
-                    {{#each en.intermediate}}
-                        {{#each children}}
-                            <span><a href="{{path}}">{{name}}</a></span>
-                        {{/each}}
-                    {{/each}}
-                </div>
-                <div class="tutorial-tag-cloud">
-                    <h1>Advanced</h1>
-                    {{#each en.advanced}}
-                        {{#each children}}
-                            <span><a href="{{path}}">{{name}}</a></span>
-                        {{/each}}
-                    {{/each}}
-                </div>
+                    {{#with en}}
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
+                            {{#each beginner}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
+                            {{#each intermediate}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
+                            {{#each advanced}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
                 {{/with}}
             </main>
         </div>
+        {{/if}}
+
+
+        {{#if ja}}
+        <div class="container content-width">
+            <main class="full-width">
+                {{#with tutorials-navigation}}
+                    {{#with ja}}
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
+                            {{#each beginner}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
+                            {{#each intermediate}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
+                            {{#each advanced}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
+                {{/with}}
+            </main>
+        </div>
+        {{/if}}
+
+        {{#if ru}}
+        <div class="container content-width">
+            <main class="full-width">
+                {{#with tutorials-navigation}}
+                    {{#with ru}}
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
+                            {{#each beginner}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
+                            {{#each intermediate}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
+                            {{#each advanced}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
+                {{/with}}
+            </main>
+        </div>
+        {{/if}}
 
         {{> scripts}}
         {{> analytics}}
+        {{> footer}}
     </body>
 </html>

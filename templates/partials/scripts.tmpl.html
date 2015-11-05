@@ -13,14 +13,14 @@
     ready(function () {
         var url = window.location.pathname;
 
-        if (url.indexOf("video") >= 0) {
+        if (url.indexOf("/video/") >= 0) {
             header.setActive("video");
-        } else if (url.indexOf("tutorials") >= 0) {
+        } else if (url.indexOf("/tutorials/") >= 0) {
             tutorials.setCurrentNavbar(url);
             tutorials.setCurrentSidebar(url);
 
             header.setActive("tutorials")
-        } else if (url.indexOf("user-manual") >= 0) {
+        } else if (url.indexOf("/user-manual/") >= 0) {
             // usermanual
             header.setActive("user-manual");
 
@@ -40,13 +40,27 @@
 
 
         // script highlighting
-
         var codes = document.querySelectorAll("pre code");
         for (var i = 0; i < codes.length; i++) {
             if (codes[i].classList.contains("lang-javascript")) {
                 codes[i].classList.add("javascript");
             }
             hljs.highlightBlock(codes[i]);
+        }
+
+        // language buttons
+        var flags = document.querySelectorAll(".flags > a");
+        for (i = 0; i < flags.length; i++) {
+            flags[i].addEventListener("click", function (e) {
+                var url = window.location.pathname;
+                window.location.href = url.replace(/\/(en|ja|ru)\//, "/" + e.currentTarget.dataset.lang + "/");
+                e.preventDefault();
+            });
+
+            var locale = window.location.pathname.slice(1,3);
+            if (flags[i].dataset.lang !== locale) {
+                flags[i].classList.add("inactive");
+            }
         }
     });
 

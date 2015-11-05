@@ -1,6 +1,6 @@
 ---
-title: Preloading and Streaming
-template: page.tmpl.html
+title: プレロード及びストリーミング
+template: usermanual-page.tmpl.html
 position: 6
 ---
 

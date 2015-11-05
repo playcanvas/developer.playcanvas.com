@@ -1,20 +1,20 @@
 ---
-title: Controlling Audio
+title: オーディオの操作
 template: tutorial-page.tmpl.html
 
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/controllingAudio?overlay=false"></iframe>
 
-*Use Right and Left cursor keys to play and stop the sounds respectively.*
-*Use the Down and Up cursor keys to pause and unpause a sound respectively.*
-*The full code used is shown at the bottom of this page.*
+*左右のカーソルキーを使用して音声を再生（右）または停止（左） *
+*上下のカーソルキーで音声を一時停止（下）または再開（上）*
+*使用されているフルコードはこのページの最下部からご確認ください。*
 
-In this tutorial we will show you how to play and control audio files in PlayCanvas. Note that there are more controllable features and properties (such as pitch control). See the [audio API listing here][1] for more details.
+このチュートリアルでは、PlayCanvasで音声を再生および制御する方法を説明します。より制御しやすい機能やプロパティが存在します(ピッチコントロールなど)。詳細は[audio API リスト][1]からご確認ください。
 
-##The audio commands
+##オーディオコマンド
 
-The main audio commands to access the audiosource component of an entity and affect values are:
+エンティティのaudiosourceコンポーネントにアクセスするため、また、値に影響を与えるメイン音声コマンド：
 
 ~~~javascript~~~
 this.entity.audiosource.play("swooop_theme");
@@ -25,18 +25,18 @@ this.entity.audiosource.unpause();
 
 this.entity.audiosource.stop();
 ~~~
-In order, the lines of code above: play one audio file that has been attached to the audiosource component from the Editor, pause the audio file that is playing from the entity, unpause the audio file that was playing from the entity and stop audio playback.
+上記コードの順番：Editorのaudiosourceコンポーネントに添付されている音声ファイルをひとつ再生、エンティティから再生されている音声ファイルを一時停止、エンティティから再生されている音声ファイルを再開して音声プレイバックを停止。
 
 <div class="alert alert-warning">
- Note that one audiosource component (and so one entity) can only play one attached audio file at a time. Utilise the entity hierarchy to build a range of entities at the required positions in 3D space in order to play multiple sounds from a single object with correct 3D audio representation. For example a parent 'human' entity with a range of child entities: one entity and audiosource component placed at a character's mouth for speech and one entity and audiosource at a character's feet to play footstep sounds.
+ひとつの音声ファイルに一度に添付できるaudiosourceコンポーネントは一つです(つまり一つのエンティティ)。階層全体を利用して、必要に応じて3D空間内にエンティティを構築し、一つのオブジェクトから複数の音声を再生して正しい3D音声を再現してください。例えば、親である「人間」エンティティと、広い範囲の子エンティティ：声を再現するため、キャラクターの口元にひとつのエンティティとaudiosourceコンポーネントを設置。足音を再現するため、キャラクターの足元にひとつのエンティティとaudiosourceコンポーネントを設置。
 </div>
 
-##General setup
-The audio file was uploaded in .mp3 format (.ogg files are also usable). A sphere was created, and an audiosource component attached. The audio file was then added to the assets list within the audiosource settings. The activate option in the audiosource settings was disabled so as not to play the file immediately on loading. An audiolistener component was added to the default camera. The [full Editor scene and scripts can be accessed here][2] in the 'controllingAudio' Scene.
+##一般的な設定
+音声ファイルを.mp3 形式でアップロード (.ogg ファイルも使えます)。球体が作成され、audiosourceコンポーネントが添付される。音声ファイルがaudiosource設定内のアセットリストに追加された。audiosource設定のアクティベートオプションが無効になったので、読み込みと同時にファイルが再生されなくなった。デフォルトカメラにaudiolistenerコンポーネントが追加された。controllingAudioシーンの[完全なEditorシーンやスクリプトにアクセス][2]。 
 
-<img src="/images/tutorials/audio/audiosource-settings.PNG" />
+<img src="/images/tutorials/audio/audiosource-settings.jpg" />
 
-The full code used for the above PlayCanvas app is as follows:
+PlayCanvas appで使用される完全なコードは次の通り：
 
 ~~~javascript~~~
 pc.script.create('audioHandler', function (app) {
@@ -46,7 +46,7 @@ pc.script.create('audioHandler', function (app) {
     };
 
     AudioHandler.prototype = {
-        // Called once after all resources are loaded and before the first update
+        // 最初の更新の前に、全てのリソースが読み込まれた後に呼ばれる
         initialize: function () {
             this.audio = app.root.findByName('AudioSphere');
             this.playing = false;
@@ -55,7 +55,7 @@ pc.script.create('audioHandler', function (app) {
             app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
-        // Called every frame, dt is time in seconds since last update
+        // 毎フレーム呼ばれる。dtは秒単位の最後の更新からの時間。
         update: function (dt) {
 
              if (app.keyboard.wasPressed(pc.KEY_UP) && this.paused === true) {
@@ -85,7 +85,7 @@ pc.script.create('audioHandler', function (app) {
                 this.paused = false;
             }
         },
-        // This function is simply to prevent default browser actions such as scrolling when cursor keys are pressed
+        // カーソルキーを押しながらのスクロールなどの、デフォルトのブラウザ動作を防ぐための機能
         onKeyDown: function (event) {
             event.event.preventDefault();
         }

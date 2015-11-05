@@ -1,21 +1,21 @@
 ---
-title: Menu and Toolbar
-template: page.tmpl.html
+title: メニューとツールバー
+template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## Menu
+## メニュー
 
-![Menu][1]
+![メニュー][1]
 
-The menu is available by clicking on the PLAYCANVAS icon and contains a complete list of all the commands that you can perform on your scene. If you can't find a button or remember a hotkey, the command will always be available in the menu.
+メニューはPLAYCANVASアイコンをクリックして開きます。メニューには、シーンで行うことができる全てのコマンドのリストが含まれます。ボタンの位置が分からない場合や、hotkeyを忘れてしまった場合、メニュー内から必ずコマンドを確認することができます。
 
-## Toolbar
+## ツールバー
 
 <img src="/images/user-manual/toolbar.jpg" style="padding-right: 20px; float: left;"></img>
 
-The Toolbar features common commands for easy access, the most useful one of all is the Launch Button. The Launch Button starts a game instance in a separate browser tab and loads your Scene. You can then start play testing immediately. See the section on the Attribute Editor for how to edit values on a live running instance of your game.
+ツールバーには簡単にアクセスできる一般的なコマンドが設置されています。最も便利なのはLaunchボタンです。Launchボタンは別のブラウザタブでゲームインスタンスを開始して、シーンを読み込みます。これで、即時にプレイテストが行えます。Attribute Editorのセクションから、ゲームで実行しているライブインスタンスの値を編集する方法についてご確認ください。
 
-[1]: /images/user-manual/menu.jpg "The menu bar contains all the commands!"
-[2]: /images/user-manual/toolbar.jpg "The toolbar contains useful commands!"
+[1]: /images/user-manual/menu.jpg "メニューバーには全てのコマンドが含まれています！"
+[2]: /images/user-manual/toolbar.jpg "ツールバーには便利なコマンドが含まれています！"
 

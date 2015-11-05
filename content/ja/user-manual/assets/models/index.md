@@ -1,19 +1,19 @@
 ---
-title: Scenes and Models
-template: page.tmpl.html
+title: シーンとモデル
+template: usermanual-page.tmpl.html
 position: 2
 ---
 
-3D models and animations are imported into PlayCanvas by uploading scene files from a [3D modeling application][1] such as [Blender][2], 3D Studio Max or Maya.
+3Dのモデルやアニメーションは、[Blender][2], 3D Studio Max, Mayaなどの [3D モデリングアプリケーション][1] のシーンファイルをアップロードすることにより、PlayCanvasにインポートされます。
 
-PlayCanvas supports a wide variety of formats, such as FBX, COLLADA and obj. We recommend using the FBX format for best results.
+PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応しています。最も良い結果を得るには、FBX 形式をお勧めします。
 
-Uploading one of these files will create a [Source Asset][3] of type 'scene' and will produce a [Target Asset][4] of type 'model'. You will use the target 'model' in your game.
+これらの如何なるファイルをアップロードすると、sceneタイプの [Source Asset][3] が作成され、modelタイプの [Target Asset][4] が作成されます。modelターゲットをゲームで使用します。
 
-Learn more about:
+次についてもっと知る：
 
-* [Building Models][5]
-* [Exporting Models][6]
+* [モデルの構築][5]
+* [モデルのエキスポート][6]
 
 [1]: /user-manual/assets/models/building
 [2]: http://blender.org/

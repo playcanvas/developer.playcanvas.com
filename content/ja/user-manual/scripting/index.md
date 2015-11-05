@@ -1,6 +1,6 @@
 ---
 title: Scripting
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 7
 ---
 
@@ -14,7 +14,7 @@ Scripts are individual JavaScript files, which are attached to Script [Component
 
 **Note please make sure your scripts are not cached by the browser - otherwise you will not see the results of changes to your scripts. [See here.][3]**
 
-## Terminology
+## 用語
 
 First off, lets define a few pieces of terminology.
 

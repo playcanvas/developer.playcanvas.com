@@ -1,20 +1,20 @@
 ---
-title: Finding Assets
-template: page.tmpl.html
+title: アセットの検索
+template: usermanual-page.tmpl.html
 ---
 
-## Where can I get 3D models/Sound FX/Music for PlayCanvas?
+## PlayCanvas用の3D モデル/Sound FX/Musicはどこで取得できますか？
 
-Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types.
+自身のアセットを作成するのも良いですが、作成に時間や費用がかかりすぎてしまう場合もあります。様々な種類の無料または有料のアセットを取得することができる場所のリンクを集めました。
 
-If you've got other suggestions for this page. Then let us know on the [forums](http://forum.playcanvas.com/)
+このページに関するご提案は[フォーラム](http://forum.playcanvas.com/)からご連絡ください。
 
-## Asset Marketplaces
+## アセットマーケットプレイス
 
-Asset marketplaces are online libraries of content that you can download, either for free or for a fee, and add to your PlayCanvas game.
+アセットマーケットプレイスとはダウンロードしてPlayCanvasゲームに追加できる、無料または有料コンテンツのオンラインライブラリです。
 
 <table class="table table-striped table-bordered">
-    <tr><th>Provider</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
+    <tr><th>提供者</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
     <tr><td><a href="http://www.3dmodels-textures.com/">3D Models Textures</a></td><td></td><td>&#x2713;</td><td>&#x2713;</td></tr>
     <tr><td><a href="http://www.blendswap.com/">BlendSwap</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="http://www.cgtrader.com/">CGTrader</a></td><td></td><td>&#x2713;</td><td></td></tr>
@@ -29,9 +29,9 @@ Asset marketplaces are online libraries of content that you can download, either
     <tr><td><a href="http://www.yobi3d.com/">Yobi3D</a></td><td></td><td>&#x2713;</td><td></td></tr>
 </table>
 
-## Procedural Generation Tools
+## プロシージャル生成ツール
 
-There are tools available that can generate game assets procedurally. Here are some good examples:
+ゲームアセットをプロシージャルに生成できるツールがあります。いくつかの例を紹介します：
 
 * [Sound FX Generator](http://www.bfxr.net/)
 * [Spacescape Skybox Generator](http://alexcpeterson.com/spacescape)

@@ -1,12 +1,12 @@
 ---
-title: Home
-template: page.tmpl.html
+title: ホーム
+template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The Home tab lists the latest posts of PlayCanvas users. Here you can also check out your recent activity.
+ホームタブにはPlayCanvasユーザーの最新の投稿が表示されます。自身の最近のアクティビティもここから確認できます。
 
 ![home_page][1]
 
-[1]: /images/platform/home.png "Home"
+[1]: /images/platform/home.png "ホーム"
 

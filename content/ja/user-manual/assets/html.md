@@ -1,22 +1,31 @@
 ---
 title: HTML
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 9
 ---
 
-An HTML asset contains HTML code. The code can either be a full HTML page or just partial HTML. You can create a new HTML asset in the Editor or by uploading a file with an .html extension.
+HTMLアセットにはHTMLコードが含まれます。コードは、完成されたHTMLページ、または一部のHTMLとすることができます。新規のHTMLアセットはEditorから作成することができます。また、.css拡張子を持つファイルをアップロードして作成することも可能です。
 
-To edit an HTML asset, right click on it in the Editor and select Edit.
+HTMLアセットを編集するには、Editorでアセットを右クリックして、Editを選択します。
 
-The loaded HTML asset is just a string. You can use that string as you like - a common way to add HTML to the document is the following
+読み込まれたHTMLアセットリソースは文字列です。文字列は自由に使用することができます。読み込まれたHTML文字列をドキュメントに追加するための一般的な方法は次の通りです：
 
-```
-var asset = app.assets.find('my_html_asset');
-asset.ready(function (asset) {
-    var div = document.createElement('div');
+```javascript
+// レジストリからidでアセットを取得
+var asset = app.assets.get(32);
+
+// エレメントを作成
+var div = document.createElement('div');
+div.innerHTML = asset.resource || '';
+document.body.appendChild(div);
+
+// アセットリソースが読み込まれる／変更されたら
+// エレメントのhtmlを更新
+asset.on('load', function() {
     div.innerHTML = asset.resource;
-    document.body.appendChild(div);
 });
-asset.load();
+
+// アセットが読み込まれることを確認
+app.assets.load(asset);
 ```
 

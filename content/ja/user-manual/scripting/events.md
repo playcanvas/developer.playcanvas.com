@@ -1,24 +1,24 @@
 ---
-title: Events
-template: page.tmpl.html
+title: イベント
+template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Events are a useful way of responding to things that happen without checking every frame.
+イベントは、毎フレーム確認をせずに、発生する出来事に応答できる便利な方法です。
 
-The PlayCanvas Engine contains a simple way to add event handling to any object:
+PlayCanvas Engineには、如何なるオブジェクトにもイベント処理を追加できるシンプルな方法があります。
 
 ~~~javascript~~~
 pc.events.attach(object);
 ~~~
 
-This will add the methods: `on()`, `off()`, `fire()` and `hasEvent()` to the object. Which means that you can listen for events fired by that object.
+これにより`on()`, `off()`, `fire()` , `hasEvent()` メソッドがオブジェクトに追加されます。つまり、そのオブジェクトから始動されるイベントに対してリッスンすることができます。
 
-By default all script instances can fire events you don't need to call this manually.
+デフォルトで、全てのスクリプトインスタンスはイベントを始動できます。手動で呼ぶ必要はありません。
 
-## Using events
+## イベントの使用
 
-Listen for events firing by using `on()` and `off()`.
+`on()` と `off()`で起動するイベントをリッスン
 
 ~~~javascript~~~
 pc.script.create("display", function (app) {
@@ -45,7 +45,7 @@ pc.script.create("display", function (app) {
 });
 ~~~
 
-Trigger an event using `fire()`
+`fire()`を使用してイベントをトリガー
 
 ~~~javascript~~~
 pc.script.create("player", function (app) {
@@ -66,7 +66,7 @@ pc.script.create("player", function (app) {
 });
 ~~~
 
-More details in the [API Reference][1]
+詳細は [API Reference][1]からご確認ください
 
 [1]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.events.html#fire
 

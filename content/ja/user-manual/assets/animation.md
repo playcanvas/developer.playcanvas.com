@@ -1,10 +1,10 @@
 ---
 title: Animation
-template: page.tmpl.html
+template: usermanual-page.tmpl.html
 position: 8
 ---
 
-An Animation asset is used to play a single animation on a 3D model. Animations are imported by uploading 3D scenes (such as FBX files) which contain animation data. The animation data is extracted from the uploaded file by the [asset pipeline][asset_pipeline] and a [Target Asset][target_asset] is created to use in game.
+アニメーションアセットは3Dモデルで一つのアニメーションを再生するために使用されます。アニメーションは、アニメーションデフォルトを含む3Dシーン (FBXファイルなど)をアップロードすることでインポートされます。アニメーションデータは [asset pipeline][asset_pipeline] でアップロードされたファイルから摘出され、ゲーム内で使用する[Target Asset][target_asset] が作成されます。
 
 [asset_pipeline]: /user-manual/glossary#asset_pipeline
 [target_asset]: /user-manual/glossary#target_asset

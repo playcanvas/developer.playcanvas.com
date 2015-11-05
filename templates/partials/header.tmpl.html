@@ -1,22 +1,22 @@
 <header>
     <nav class="content-width">
-        <a href="/" class="header-title"><img src="/images/header/PLAYMANUAL.png"></a>
+        <a href="/{{locale}}/" class="header-title"><img src="/images/header/PLAYMANUAL.png"></a>
         <a class="header-mobile-icon" href="">icon</a>
         <ul class="header-menu">
-            <li class="user-manual"><a href="/user-manual">User Manual</a></li>
-            <li class="tutorials"><a href="/tutorials">Tutorials</a></li>
-            <li class="video"><a href="/tutorials/video">Video</a></li>
-            <li class="api"><a href="/api/">API Reference</a></li>
+            <li class="user-manual"><a href="/user-manual">{{#i18n}}User Manual{{/i18n}}</a></li>
+            <li class="tutorials"><a href="/tutorials">{{#i18n}}Tutorials{{/i18n}}</a></li>
+            <li class="video"><a href="/tutorials/video">{{#i18n}}Video{{/i18n}}</a></li>
+            <li class="api"><a href="/api/">{{#i18n}}API Reference{{/i18n}}</a></li>
         </ul>
     </nav>
 
     {{#if frontpage}}
     <div class="header-content header-front-page">
         <img src="/images/wireframe_logo.png"></img>
-        <h1>PlayCanvas Developer Resources</h1>
-        <p>Find everything you need to make games and interactive experiences with PlayCanvas.</p>
+        <h1>{{#i18n}}PlayCanvas Developer Resources{{/i18n}}</h1>
+        <p>{{#i18n}}Find everything you need to make games and interactive experiences with PlayCanvas.{{/i18n}}</p>
 
-        <input id="search" class="search" type="text" placeholder="Search" />
+        <input id="search" class="search" type="text" placeholder="{{#i18n}}Search{{/i18n}}" />
     </div>
 
     {{else}}

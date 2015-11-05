@@ -1,12 +1,12 @@
 ---
-title: Account
-template: page.tmpl.html
+title: アカウント
+template: usermanual-page.tmpl.html
 position: 3
 ---
 
-The Account tab lets you edit your global profile settings. From here you can control your account and billing info and see your cloud storage use.
+アカウントタブからグローバルプロフィール設定を変更できます。アカウントや請求の情報を制御したり、クラウドストレージの使用状況を確認できます。
 
 ![account_page][1]
 
-[1]: /images/platform/account.png "Account"
+[1]: /images/platform/account.png "アカウント"
 
