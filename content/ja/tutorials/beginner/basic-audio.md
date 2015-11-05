@@ -62,7 +62,7 @@ AudioListenerを作成するには、リスナーの代表をするエンティ�
 以上です。AudioListenerにはオプションはありません。
 
 <div class="alert-info">
-    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+    一度に使用できるAudioListenerは一つです。最後に作成されたAudioListenerコンポーネントが有効になります。
 </div>
 
 [1]: /engine/api/stable/symbols/pc.AudioSourceComponent.html

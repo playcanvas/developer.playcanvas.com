@@ -1,5 +1,5 @@
 ---
-title: Finding Assets
+title: アセットの検索
 template: usermanual-page.tmpl.html
 ---
 

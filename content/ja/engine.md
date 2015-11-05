@@ -15,15 +15,15 @@ PlayCanvas Engineとは、ウェブ用のゲームやインタラクティブな
 
 ## どのようにEngineで3Dモデルを使用しますか？
 
-To load a 3D model into the Engine first you need to convert it from the format used by the modelling package (e.g. COLLADA or FBX) to the format used by the Engine (a JSON format). The conversion process is performed by our server. To convert a model follow [these instructions][3], when the model conversion is finished (this should only take a few seconds) then the model is ready to download.
+Engineに3Dモデルを読み込むには、モデリングパッケージの形式 (例：COLLADAやFBX) からEngineで使用されている形式(JSON形式)に返還する必要があります。変換の処理は弊社のサーバで行われます。モデルを変換するには[こちらの手順][3]に従ってください。 モデルの変換が完了すると(数秒しか掛かりません。)モデルをダウンロードする準備ができます。
 
 ![完了したモデル変換][6]
 
-When you select the completed model you will see details about the asset and additional all the target assets that were created by this asset.
+完成されたモデルを選択すると、アセットの詳細と、このアセットから作成された全てのターゲットアセットが確認できます。
 
-Select the asset of type "model" which is the 3D model in the runtime format and click Export Archive in the Inspector.
+ランタイム形式の3Dモデルである、モデルタイプのアセットを選択して、インスペクターでExport Archiveをクリックしてください。
 
-![Export Model][7]
+![モデルをエクスポート][7]
 
 これで、素材とテクスチャーを含む、Engineに読み込み可能な完全なモデルがダウンロードされます。
 

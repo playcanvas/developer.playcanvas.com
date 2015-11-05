@@ -11,20 +11,20 @@ CSSアセットを編集するには、Editorでアセットを右クリック�
 読み込まれたCSSアセットリソースは文字列です。文字列は自由に使用することができます。読み込まれたCSS文字列をドキュメントに追加するための一般的な方法は次の通りです：
 
 ```javascript
-// get asset from registry by id
+// レジストリからidでアセットを取得
 var asset = app.assets.get(32);
 
-// create element
+// エレメントの作成
 var style = pc.createStyle(asset.resource || '');
 document.head.appendChild(style);
 
-// when asset resource loads/changes,
-// update html of element
+// アセットリソースが読み込まれる／変更したら
+// エレメントのhtmlを更新
 asset.on('load', function() {
     style.innerHTML = asset.resource;
 });
 
-// make sure assets loads
+// アップロードが読み込まれたことを確認
 app.assets.load(asset);
 ```
 

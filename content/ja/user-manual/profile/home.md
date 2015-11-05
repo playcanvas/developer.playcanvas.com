@@ -1,5 +1,5 @@
 ---
-title: Home
+title: ホーム
 template: usermanual-page.tmpl.html
 position: 1
 ---

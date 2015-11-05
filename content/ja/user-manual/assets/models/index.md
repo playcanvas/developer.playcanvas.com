@@ -1,5 +1,5 @@
 ---
-title: Scenes and Models
+title: シーンとモデル
 template: usermanual-page.tmpl.html
 position: 2
 ---

@@ -1,13 +1,13 @@
 ---
-title: Add a script
-keywords: script, code, create, javascript, behaviour
+title: スクリプトを追加
+keywords: スクリプト, コード, 作成, javascript, 挙動
 ---
 
-## How do I add a script?
+## スクリプトを追加するには？
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/add-new-script.gif"/>
 
-You can use javascript to control the behaviour of entities. Add a script component, and create a new script.
+Javascriptを使用してエンティティの挙動を制御できます。スクリプトコンポーネントを追加して、新しいスクリプトを追加します。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/scripting/creating-new/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/scripting/creating-new/" target="_blank">ユーザーマニュアルを参照</a>
 

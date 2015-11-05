@@ -1,5 +1,5 @@
 ---
-title: Hierarchy
+title: 階層
 template: usermanual-page.tmpl.html
 position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: プロジェクト
 template: usermanual-page.tmpl.html
 position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: Debugging
+title: デバッグ
 template: usermanual-page.tmpl.html
 position: 7
 ---

@@ -1,5 +1,5 @@
 ---
-title: Events
+title: イベント
 template: usermanual-page.tmpl.html
 position: 5
 ---

@@ -1,5 +1,5 @@
 ---
-title: Exporting Assets
+title: アセットのエクスポート
 template: usermanual-page.tmpl.html
 skip: false
 ---

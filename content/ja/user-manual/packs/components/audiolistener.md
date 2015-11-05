@@ -1,5 +1,5 @@
 ---
-title: Audio Listener
+title: オーディオリスナー
 template: usermanual-page.tmpl.html
 position: 2
 ---

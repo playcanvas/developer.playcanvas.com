@@ -1,5 +1,5 @@
 ---
-title: Scenes
+title: シーン
 template: usermanual-page.tmpl.html
 position: 5
 ---

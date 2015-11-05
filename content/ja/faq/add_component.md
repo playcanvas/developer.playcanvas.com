@@ -1,11 +1,11 @@
 ---
-title: Add a component
+title: コンポーネントを追加
 keywords: entity, add, component, behaviour
 ---
 
-## How do I add a component?
+## コンポーネントを追加するには？
 
-To add a **component** to an Entity, select the Entity and then click **Add Component** in the **Inspector** or right click on the Entity and select a component from the Add Component context menu.
+エンティティに**コンポーネント**を追加するには、エンティティを選択してから**Add Component** in the **Inspector**をクリックするか、エンティティを右クリックして Add Componentコンテキストメニューからコンポーネントを選択します。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/" target="_blank">ユーザーマニュアルを参照</a>
 

@@ -1,5 +1,5 @@
 ---
-title: Code
+title: コード
 template: usermanual-page.tmpl.html
 position: 4
 ---

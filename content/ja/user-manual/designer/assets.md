@@ -1,5 +1,5 @@
 ---
-title: Assets
+title: アセット
 template: usermanual-page.tmpl.html
 position: 6
 ---

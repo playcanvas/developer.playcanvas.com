@@ -1,5 +1,5 @@
 ---
-title: Publishing
+title: パブリッシュ
 template: usermanual-page.tmpl.html
 position: 5
 ---
@@ -10,13 +10,13 @@ position: 5
 
 ![Publish][1]
 
-* In your project dashboard, select the 'PUBLISH' tab.
-* Click the PUBLISH button
-* Enter a name for your app.
-* Select the Scenes you want to include in your app from the list. Notice that the Primary Scene (the one with the blue banner icon), is always included in your app and it will be the first scene loaded when your app is launched.
-* Click 'PUBLISH NOW'
-* You will see a new app created in the PUBLISH tab. Wait until it finishes processing.
-* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+* プロジェクトダッシュボード内のPUBLISHタブを選択
+* PUBLISHボタンをクリック
+* Appの名前を入力
+* リストから、Appに含みたいシーンを選択。最初のシーン(青いバナーアイコン)は常にappに含まれ、appが起動する際に最初に読み込まれます。
+* PUBLISH NOWをクリック
+* PUBLISHタブに新しいappが作成されます。処理が終わるまで待ちます。
+* ウェブappが公開されました！公開されたURLからツイートやフェイスブックでシェアできます。
 
 このページでappの左にあるバナーアイコンをクリックして、プロジェクトのプライマリAppを設定することができます。これは、ユーザーがダッシュボードヘッダーでPLAYボタンをクリックした際にプレイするappです。
 

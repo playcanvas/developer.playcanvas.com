@@ -1,5 +1,5 @@
 ---
-title: Components
+title: コンポーネント
 template: usermanual-page.tmpl.html
 position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: 設定
 template: usermanual-page.tmpl.html
 position: 6
 ---

@@ -1,5 +1,5 @@
 ---
-title: Textures
+title: テクスチャー
 template: usermanual-page.tmpl.html
 position: 3
 ---

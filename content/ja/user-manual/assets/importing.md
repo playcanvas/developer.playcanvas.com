@@ -1,5 +1,5 @@
 ---
-title: Uploading and Importing
+title: アップロードとインポート
 template: usermanual-page.tmpl.html
 position: 1
 ---

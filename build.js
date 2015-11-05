@@ -85,9 +85,9 @@ m.metadata().dev = (env === "dev");
 
 m.use(i18n()({
     locales: [{
-        file: 'content/ja/titles.js.json', locale: 'ja'
+        file: 'content/ja/messages.json', locale: 'ja'
     }, {
-        file: 'content/ru/titles.js.json', locale: 'ru'
+        file: 'content/ru/messages.json', locale: 'ru'
     }],
     output: localization
 }))

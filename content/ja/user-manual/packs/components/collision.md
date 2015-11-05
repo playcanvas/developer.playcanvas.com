@@ -1,5 +1,5 @@
 ---
-title: Collision
+title: コリジョン
 template: usermanual-page.tmpl.html
 position: 5
 ---
