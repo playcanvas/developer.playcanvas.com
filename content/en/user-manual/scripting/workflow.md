@@ -26,7 +26,7 @@ Alternatively you can drag and drop a script from the asset panel into the scrip
 You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Scripts Explorer][scripts_explorer] in the Editor.
+Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Assets Panel][assets_panel] in the Editor.
 
 ## Local Server
 
@@ -131,7 +131,7 @@ Exporting scenes will only use source code resources on the PlayCanvas servers -
 [server_windows]: /downloads/localserver.bat
 [launch_buttons]: /images/platform/launch_buttons.png
 [script_picker]: /images/platform/component_script.png
-[scripts_explorer]: /user-manual/designer/scripts-explorer
+[assets_panel]: /user-manual/designer/assets
 [code_tab]: /user-manual/dashboard/code
 
 

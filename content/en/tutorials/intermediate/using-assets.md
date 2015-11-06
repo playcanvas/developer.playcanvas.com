@@ -40,7 +40,7 @@ initialize: function () {
 }
 ```
 
-The [`pc.AssetRegistry`][8] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we're searching by the asset name.
+The [`pc.AssetRegistry`][1] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we're searching by the asset name.
 
 ## Using preloaded assets
 
@@ -201,9 +201,8 @@ app.assets.load(asset);
 
 The `asset.ready()` method will call it's callback as soon as the asset is loaded, if the asset is already loaded, it will call it straight away. `app.assets.load()` does nothing if the asset is already loaded.
 
-[1]: /engine/api/stable/symbols/pc.asset.AssetRegistry.html
+[1]: /en/api/pc.AssetRegistry.html
 [3]: https://playcanvas.com/project/349519/overview/tutorial-asset-registry
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
-[8]: /engine/api/stable/symbols/pc.AssetRegistry.html

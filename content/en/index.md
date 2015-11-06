@@ -30,7 +30,7 @@ If you've got a technical question about using PlayCanvas, the API or any part o
 [1]: /user-manual
 [2]: /getting-started
 [3]: /tutorials
-[4]: /engine/api/stable
+[4]: /en/api/
 [5]: https://github.com/playcanvas
 [6]: https://github.com/playcanvas/sprites
 [7]: https://github.com/playcanvas/fonts
