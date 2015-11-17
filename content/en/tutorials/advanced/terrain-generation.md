@@ -143,3 +143,4 @@ pc.script.create('terrain', function (app) {
 ~~~
 
 [1]: http://developer.playcanvas.com/en/api/pc.html#createMesh
+[2]: https://playcanvas.com/project/362224/overview/tutorial-terrain-from-heightmap
