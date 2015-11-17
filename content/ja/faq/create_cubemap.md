@@ -1,15 +1,15 @@
 ---
-title: Create a cubemap
-keywords: asset, cubemap, create, skybox, texture, pbr, physical
+title: キューブマップの作成
+keywords: アセット, キューブマップ, 作成, スカイボックス, テクスチャー, pbr, 物理
 ---
 
-## How do I create a cubemap?
+## キューブマップを作成するには？
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_cubemap.gif"/>
 
-Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube.
+キューブマップは特別な種類のテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。
 
-To create a cubemap click on the **<span class="font-icon">&#57632;</span> Add** button in the Assets panel and select **New Cubemap**. Then drag 6 textures in the cubemap inspector. To take advantage of Physically Based Rendering make sure you click **Prefilter** after setting the 6 textures.
+キューブマップを作成するにはアセットパネルの**<span class="font-icon">&#57632;</span> Add** ボタンをクリックして、**New Cubemap**を選択します。次にキューブマップインスペクタに6つのテクスチャーをドラッグします。物理ベースのレンダリングを活用するためには、6つのテクスチャーを設定した後に**Prefilter**をクリックしてください。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">ユーザーマニュアルを参照</a>
 

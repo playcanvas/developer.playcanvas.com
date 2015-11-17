@@ -1,16 +1,16 @@
 ---
-title: Publishing
+title: パブリッシング
 template: usermanual-page.tmpl.html
 position: 11
 ---
 
-Once you have built your game, you will no doubt want to publish it and allow people to enjoy its majesty! PlayCanvas makes things very easy for you to target just about any operating system or app store.
+ゲームの構築が完了したら、それを公開して皆にプレイしてもらいましょう！PlayCanvasでは、如何なるOSやappストアを容易にターゲットできます。
 
-## Where can I publish PlayCanvas games?
+## PlayCanvasゲームはどこで公開できますか？
 
-* [Web][1]
-* [Mobile][2]
-* [Desktop][3]
+* [ウェブ][1]
+* [モバイル][2]
+* [デスクトップ][3]
 
 [1]: /user-manual/publishing/web
 [2]: /user-manual/publishing/mobile

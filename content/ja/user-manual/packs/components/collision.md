@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 5
 ---
 
-The 'collision' component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.
+コリジョンコンポーネントはエンティティにコリジョンボリュームを割り当てます。コンポーネントインターフェイスはType属性に基づいて動的に様々な属性を表示させます。 
 
 #### Box
 <img src="/images/user-manual/components/component-collision-box.jpg" style="width: 300px" />
@@ -17,26 +17,26 @@ The 'collision' component assigns a collision volume to the entity. The componen
 #### Mesh
 <img src="/images/user-manual/components/component-collision-mesh.jpg" style="width: 300px" />
 
-If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
+エンティティがrigidbodyコンポーネントを持つ場合、コリジョンコンポーネントはリジッドボディの形を定めます。Rigidbodyコンポーネントが存在する場合、コリジョンコンポーネントはトリガーボリュームとして扱われます。トリガーボリュームはシーン内の他のリジッドボディのシミュレーションに影響を与えることができません。かわりに、スクリプトコンポーネントを追加してトリガーイベントに反応するスクリプトを添付することができます。例えば、rigidbodyコンポーネントを持つ他のエンティティがトリガーに出入りする際に、スクリプトに通知が行くように設定できます。
 
 ## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If selected and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.</td></tr>
-    <tr><td>Type</td><td>The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
-    <tr><td>Half Extents</td><td>Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth.</td></tr>
-    <tr><td>Axis</td><td>Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity.</td></tr>
-    <tr><td>Height</td><td>Capsule only. The tip-to-tip height of the capsule.</td></tr>
-    <tr><td>Radius</td><td>Sphere and Capsule only. The radius of the sphere or capsule body.</td></tr>
-    <tr><td>Asset</td><td>Mesh only. The model asset that will be used as a source for the triangle-based collision mesh.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Enabled</td><td>これが選択されていて、コンポーネントがトリガーボリュームの場合(兄弟のrigidbodyコンポーネントが無いため)、トリガーボリュームが有効になります。同様に、コンポーネントに兄弟のrigidbodyコンポーネントがある場合、rigidbodyが有効になります。</td></tr>
+    <tr><td>Type</td><td>コリジョンプリミティブの種類。次を使用可能：<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
+    <tr><td>Half Extents</td><td>Boxのみ。コリジョンボックスの長さの半分。これは3次元のベクターです：ローカルスペースの幅の半分、高さの半分、奥行きの半分。</td></tr>
+    <tr><td>Axis</td><td>Capsuleのみ。CapsuleをエンティティのローカルスペースのX, Y または Z 軸に整列する。</td></tr>
+    <tr><td>Height</td><td>Capsuleのみ。Capsuleの先端から頂点までの高さ。</td></tr>
+    <tr><td>Radius</td><td>SphereとCapsuleのみ。SphereまたはCapsuleボディの半径。</td></tr>
+    <tr><td>Asset</td><td>Meshのみ。三角ベースのコリジョンメッシュのソースとして使用されるモデルアセット。</td></tr>
 </table>
 
 ## スクリプティングインターフェイス
 
-You can control a collision component's properties using a [script component][6]. The collision component's scripting interface is [here][7].
+コリジョンコンポーネントのプロパティは[スクリプトコンポーネント][6]を使ってコントロールできます。コリジョンコンポーネントのスクリプティングインターフェイスは[こちら][7]。
 
 [6]: /user-manual/packs/components/script
 [7]: /engine/api/stable/symbols/pc.CollisionComponent.html

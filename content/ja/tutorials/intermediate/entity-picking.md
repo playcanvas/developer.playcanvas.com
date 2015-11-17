@@ -1,114 +1,114 @@
 ---
-title: Entity Picking
+title: エンティティの選択
 template: tutorial-page.tmpl.html
 position: 5
 ---
 
 <iframe src="http://playcanv.as/b/QR8LcbJU"></iframe>
-**Collision Picking** - *click to select a shape*
+**コリジョンの選択** - *クリックして形を選択*
 
 <iframe src="http://playcanv.as/b/Uud3Q7PG"></iframe>
-**Frame Buffer Picking** - *click to select a shape*
+**フレームバッファの選択** - *クリックして形を選択*
 
-Try it from the Editor in the [tutorial project.][1]
+[チュートリアルプロジェクト][1]のEditorからお試しください。
 
-This tutorial describes to methods of selecting an Entity from the 3D scene, for example, on the click of the mouse.
+このチュートリアルでは、3Dシーンからエンティティを選択する方法（マウスのクリックなど）を説明します。
 
-## Collision Picking
+## コリジョンの選択
 
-Collision based picking uses the collision components to add a shape to each Entity that needs to be picked. Then we use the [raycastFirst()][2] method in the rigidbody system to fire a ray from the mouse click position into the screen to see if it hits a collision component. If it does, that Entity is "selected".
+コリジョンベースのピッキングは、選ぶする必要がある各エンティティに図形を追加するために、コリジョンコンポーネントを使用します。その後、リジッドボディシステムで[raycastFirst()][2]メソッドを使用して、マウスのクリック位置から画面に光線を発射し、それがコリジョンコンポーネントに当たるかどうかを確認します。当たる場合、そのエンティティは「選択」されています
 
 ~~~javascript~~~
 pc.script.create('picker_raycast', function (app) {
-    // Creates a new PickerRaycast instance
-    var PickerRaycast = function (entity) {
-        this.entity = entity;
-    };
+// 新しいPickerRaycastインスタンスを作成
+var PickerRaycast = function (entity) {
+this.entity = entity;
+};
 
-    PickerRaycast.prototype = {
-        // Called once after all resources are loaded and before the first update
-        initialize: function () {
-            app.mouse.on(pc.EVENT_MOUSEDOWN, this.onSelect, this);
-        },
+PickerRaycast.prototype = {
+// 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
+initialize: function () {
+app.mouse.on(pc.EVENT_MOUSEDOWN, this.onSelect, this);
+},
 
-        onSelect: function (e) {
-            var from = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.nearClip);
-            var to = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.farClip);
+onSelect: function (e) {
+var from = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.nearClip);
+var to = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.farClip);
 
-            app.systems.rigidbody.raycastFirst(from, to, function (result) {
-                var pickedEntity = result.entity;
+app.systems.rigidbody.raycastFirst(from, to, function (result) {
+var pickedEntity = result.entity;
 
-                pickedEntity.script.pulse.pulse();
-            });
-        },
+pickedEntity.script.pulse.pulse();
+});
+},
 
-        // Called every frame, dt is time in seconds since last update
-        update: function (dt) {
-        }
-    };
+// 毎フレーム呼ばれる。dtは最後の更新以来の秒単位の時間
+update: function (dt) {
+}
+};
 
-    return PickerRaycast;
+return PickerRaycast;
 });
 ~~~
 
-## Frame Buffer Picking
+## フレームバッファの選択
 
-Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method. Advantages include: using a rectangle to pick many items in a scene at once, this method doesn't have require the physics library to be included and active in your project. The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly no mobile.
+フレームバッファベースのピッキングは、内部バッファにシーンをレンダリングするために[pc.Picker][3]クラスを使用します。マウスをクリックすると、マウス位置のバッファの色を使用して、どのメッシュインスタンスが選択されたか判断します。これは、コリジョンベースの方法と比べいくつかの利点と欠点があります。利点には次のようなものがあります：シーン内の複数のアイテム四角形で選択するので、プロジェクトに物理ライブラリが含まれる、また、有効で必要がありません。主な欠点は、グラフィックパイプラインを失速させる`readPixels`メソッドを使用していることです。これは、特にモバイルに、レンダリングパフォーマンスに深刻な影響を及ぼす可能性があります。
 
 ~~~javascript~~~
 pc.script.create('picker', function (app) {
-    // Creates a new PickerFramebuffer instance
-    var PickerFramebuffer = function (entity) {
-        this.entity = entity;
+// Creates a new PickerFramebuffer instance
+var PickerFramebuffer = function (entity) {
+this.entity = entity;
 
-        // Create a frame buffer picker with a resolution of 1024x1024
-        this.picker = new pc.scene.Picker(app.graphicsDevice, 1024, 1024);
-    };
+// 解像度1024x1024のフレームバッファピッカーを作成
+this.picker = new pc.scene.Picker(app.graphicsDevice, 1024, 1024);
+};
 
-    PickerFramebuffer.prototype = {
-        // Called once after all resources are loaded and before the first update
-        initialize: function () {
-            app.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onSelect, this);
-        },
+PickerFramebuffer.prototype = {
+// 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
+initialize: function () {
+app.mouse.on(pc.input.EVENT_MOUSEDOWN, this.onSelect, this);
+},
 
-        onSelect: function (event) {
-            var canvas = app.graphicsDevice.canvas;
-            var canvasWidth = parseInt(canvas.clientWidth, 10);
-            var canvasHeight = parseInt(canvas.clientHeight, 10);
+onSelect: function (event) {
+var canvas = app.graphicsDevice.canvas;
+var canvasWidth = parseInt(canvas.clientWidth, 10);
+var canvasHeight = parseInt(canvas.clientHeight, 10);
 
-            var camera = this.entity.camera.camera;
-            var scene = app.scene;
-            var picker = this.picker;
+var camera = this.entity.camera.camera;
+var scene = app.scene;
+var picker = this.picker;
 
-            picker.prepare(camera, scene);
+picker.prepare(camera, scene);
 
-            // Map the mouse coordinates into picker coordinates and
-            // query the selection
-            var selected = picker.getSelection({
-                x: Math.floor(event.x * (picker.width / canvasWidth)),
-                y: picker.height - Math.floor(event.y * (picker.height / canvasHeight))
-            });
+// ピッカー座標にマウス座標をマップして
+// 選択をクエリー
+var selected = picker.getSelection({
+x: Math.floor(event.x * (picker.width / canvasWidth)),
+y: picker.height - Math.floor(event.y * (picker.height / canvasHeight))
+});
 
-            if (selected.length > 0) {
-                // Get the graph node used by the selected mesh instance
-                var entity = selected[0].node;
+if (selected.length > 0) {
+// 選択したメッシュインスタンスで使用されるグラフノードを取得
+var entity = selected[0].node;
 
-                // Bubble up the hierarchy until we find an actual Entity
-                while (!(entity instanceof pc.Entity) && entity !== null) {
-                    entity = entity.getParent();
-                }
-                if (entity) {
-                    entity.script.pulse.pulse();
-                }
-            }
-        },
+// 実際のエンティティを見つけるまで階層をバブルアップ
+while (!(entity instanceof pc.Entity) && entity !== null) {
+entity = entity.getParent();
+}
+if (entity) {
+entity.script.pulse.pulse();
+}
+}
+},
 
-        // Called every frame, dt is time in seconds since last update
-        update: function (dt) {
-        }
-    };
+// 毎フレーム呼ばれる。dtは最後の更新以来の秒単位の時間
+update: function (dt) {
+}
+};
 
-    return PickerFramebuffer;
+return PickerFramebuffer;
 });
 ~~~
 

@@ -1,27 +1,27 @@
 ---
-title: Scripting
+title: スクリプティング
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-Scripting is how you make your game interactive. Scripts are written in **JavaScript**. This is the programming language used by web pages everywhere.
+ゲームをインタラクティブにするにはスクリプトを使います。スクリプトは**JavaScript**で書きます。これはあらゆるウェブページで使用されているプログラミング言語です。
 
-You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which will often be specific to your application or re-usable chunks that provide useful behaviours.
+アプリケーションは二つの個別のコードベースに分かれているものと考えてください。一つはPlayCanvasが提供するエンジンです。これは、グラフィックレンダリング、入力処理、オーディオ、PlayCanvasツールのインターフェイスなどを含む基本的な機能を実装します。もう一つはスクリプトです。これは多くの場合、便利な挙動を提供する再利用可能なブロックか、アプリケーション特有のものです。
 
-Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application via a `<script>` tag. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+基本的に、エンジンコードは<script>タグでアプリケーションに含まれる単一のJavaScriptファイルなので、気にかける必要はありません。エンジンの一部を書き換える場合、スクリプティングに関するこの導入は必要ないです。
 
-Scripts are individual JavaScript files, which are attached to Script [Components][1] on [Entities][2] via the PlayCanvas Editor. Generally, a script file should define a single JavaScript object which is instantiated once for each Entity that it is attached to.
+スクリプトとはPlayCanvas Editorを通して[エンティティ][2]のスクリプト[コンポーネント][1]に追加される個別のJavaScriptファイルです。基本的に、スクリプトファイルは添付されているエンティティ毎に一度インスタンス化される、単一のJavaScriptオブジェクトを定義するべきです。 
 
-**Note please make sure your scripts are not cached by the browser - otherwise you will not see the results of changes to your scripts. [See here.][3]**
+**スクリプトがブラウザによりキャッシュされないよう注意してください。キャッシュされると、スクリプトへの変更による結果が確認できません。[こちらを確認][3]**
 
 ## 用語
 
-First off, lets define a few pieces of terminology.
+まず、いくつかの用語を定義しましょう。
 
-* ***Script*** A script is single JavaScript file which includes the correct JavaScript to define a script object
-* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
-* ***Script Object*** A script object is a standard JavaScript object which is registered with the PlayCanvas engine and can be instantiated when a new script Component is created. There will generally only be a single script object of each type per application.
-* ***Script Instance*** A script instance is script object which has been instantiated at runtime, using the `new` keyword in JavaScript. A script instance is created for every Entity that has the script attached.
+* ***スクリプト*** スクリプトとはスクリプトオブジェクトを定義するための正しいJavaScriptを含む単一のJavaScriptファイルです。
+* ***スクリプトコンポーネント*** スクリプトコンポーネントはPlayCanvasエンジンで定義され、ゲームエンティティにスクリプトを読み込みスクリプトオブジェクトを作成する機能を与えます。
+* ***スクリプトオブジェクト*** スクリプトオブジェクトはPlayCanvasエンジンでレジスタされるスタンダードなJavaScriptオブジェクトです。新規のスクリプトコンポーネントが作成される際にインスタンス化することができます。基本的に、アプリケーションのタイプ毎に存在するスクリプトオブジェクトは一つです。
+* ***スクリプトインスタンス*** スクリプトインスタンスは、JavaScriptでnewキーワードを使用して実行時にインスタンス化されたスクリプトオブジェクトです。スクリプトインスタンスはそのスクリプトが添付されている全てのエンティティに対して作成されます。
 
 [1]: /user-manual/packs/components/
 [2]: /user-manual/packs/entities/

@@ -1,5 +1,5 @@
 ---
-title: Using the Asset Registry
+title: アセットレジストリの使用
 template: tutorial-page.tmpl.html
 ---
 
@@ -13,9 +13,9 @@ For more advanced products you may wish to access your assets in code, change re
 
 In this tutorial, we'll build a small scene which lets you swap the model on a model component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
-## Setup
+## 設定
 
-*The project is set up as follows*
+*プロジェクトは次のように設定されます*
 
 * Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
 * The **C** model asset is set up *not* to be preloaded.
@@ -24,7 +24,7 @@ In this tutorial, we'll build a small scene which lets you swap the model on a m
 
 Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
 
-## Searching the AssetRegistry
+## アセットレジストリを検索
 
 First let's look at the initialize method which searches the `pc.AssetRegistry` for the assets we need.
 
@@ -35,24 +35,24 @@ initialize: function () {
     this.b = app.assets.find("B");
     this.c = app.assets.find("C");
 
-    // prevent the page scrolling when we press space.
+    // スペース押下時のページスクロールを防ぐ
     app.keyboard.preventDefault = true;
 }
 ```
 
 The [`pc.AssetRegistry`][8] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we're searching by the asset name.
 
-## Using preloaded assets
+## プレロードされたアセットを使用
 
 ```
 if (app.keyboard.isPressed(pc.KEY_SPACE)) {
     if (this.entity.model.model !== this.b.resource) {
-        // update the model component to the new model
+        // 新しいモデルにモデルコンポーネントを更新
         this.entity.model.model = this.b.resource;
     }
 } else {
     if (this.entity.model.model !== this.a.resource) {
-        // restore original model
+        // 元のモデルを復活
         this.entity.model.model = this.a.resource;
     }
     //...
@@ -63,7 +63,7 @@ The **A** and **B** assets are marked as **preload** in this project. This means
 
 So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the model on the model component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Model` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
-## Loading assets at runtime
+## 実行時にアセットを読み込む
 
 ```
 if (app.keyboard.isPressed(pc.KEY_C)) {
@@ -91,7 +91,7 @@ When you press the `L` key we load the **C** model. To do this we pass the unloa
 
 Once the asset is loaded `asset.resource` will be a `pc.Model` instance and we can assign it by pressing the `C` key.
 
-## The complete script
+## 完全なスクリプト
 
 ```
 pc.script.create('update_asset', function (app) {
@@ -148,7 +148,7 @@ pc.script.create('update_asset', function (app) {
 });
 ```
 
-## AssetRegistry events
+## アセットレジストリのイベント
 
 One thing we don't demonstrate in this example is how to know when an asset is loaded. To do this we use `pc.AssetRegistry` events like the `"load"` event. Here's some sample code:
 

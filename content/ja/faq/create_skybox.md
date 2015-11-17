@@ -1,11 +1,11 @@
 ---
-title: Create a skybox
-keywords: skybox, cubemap, create, asset, pbr, physical
+title: スカイボックスを作成
+keywords: スカイボックス, キューブマップ, 作成, アセット, pbr, 物理的
 ---
 
-## How do I create a skybox?
+## スカイボックスを作成するには？
 
-To create a skybox for your scene you first need to create a <a href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">Cubemap asset</a>. Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">Scene Settings</a> and drag the Cubemap in the Skybox field.
+スカイボックスを作成するには、まず<a href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">Cubemap アセット</a>を作成する必要があります。次に、Cubemapを3Dビューポートにドラッグ＆ドロップするか、 <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">Scene Settings</a> からCubemapをSkyboxフィールドにドラッグします。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">ユーザーマニュアルを参照</a>
 

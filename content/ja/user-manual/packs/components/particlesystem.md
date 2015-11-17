@@ -1,68 +1,20 @@
 ---
-title: Particle System
+title: パーティクルシステム
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-The 'particlesystem' component specifies a particle emitter in 3D space.
+’particlesystem'コンポーネントは、3D空間のパーティクルエミッタを指定します。
 
 <img src="/images/user-manual/components/component-particles.jpg" style="width: 300px" />
 
 ## プロパティ
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If checked, the particle system will be added to the scene and rendered.</td></tr>
-    <tr><td>Auto Play</td><td>If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script.</td>
-    <tr><td>Particle Count</td><td>The maximum number of particles managed by this particle system.</td></tr>
-    <tr><td>Lifetime</td><td>The length of time in seconds between a particle's birth and its death.</td></tr>
-    <tr><td>Emission Rate</td><td>The lower bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
-    <tr><td>Emission Rate 2</td><td>The upper bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
-    <tr><td>Start Angle</td><td>The lower bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'.</td></tr>
-    <tr><td>Start Angle 2</td><td>The upper bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'.</td></tr>
-    <tr><td>Loop</td><td>If checked, the particle system will emit indefinitely. Otherwise, it will emit the number of particles specified by the 'Particle Count' property and then stop.</td></tr>
-    <tr><td>Pre Warm</td><td>If enabled, the particle system will be initialized as though it had already completed a full cycle. This option is only available for looping particle systems.</td></tr>
-    <tr><td>Lighting</td><td>If checked, the particle will be lit by the directional and ambient light in the scene. In some circumstances, it may be advisable to set a normal map on the particle system in order to achieve more realistic lighting.</td></tr>
-    <tr><td>Half-Lambert</td><td>Enabling Half Lambert lighting avoids particles looking too flat when lights appear to be shining towards the back sides of the particles. It is a completely non-physical lighting model but can give more pleasing visual results. This option is only available when Lighting is enabled.</td></tr>
-    <tr><td>Color Intensity</td><td>Scales the color of particles to allow them to have arbitrary brightness.</td></tr>
-    <tr><td>Depth Test</td><td>If checked, the particles will write depth information to the depth buffer. If unchecked, the depth buffer is left unchanged and particles will be guaranteed to overwrite one another in the order in which they are rendered.</td></tr>
-    <tr><td>Depth Softening</td><td>This variable value determines how much particles fade out as they get closer to another surface. This avoids the situation where particles appear to cut into surfaces.</td></tr>
-    <tr><td>Sorting Mode</td><td>Sorting mode gives you control over the order in which particles are rendered. The options are:
-        <ul>
-            <li>None: Particles are rendered in arbitrary order. When this option is selected, the particle system is simulated on the GPU (if the underlying hardware supports floating point textures) and it is recommended you use this setting to get the best performance.</li>
-            <li>Camera Distance: Particles are sorted on the CPU and rendered in back to front order (in terms of camera z depth).</li>
-            <li>Newer First: Particles are sorted on the CPU and rendered in age order, youngest first.</li>
-            <li>Older First: Particles are sorted on the CPU and rendered in age order, oldest first.</li>
-        </ul>
-    </td></tr>
-    <tr><td>Blending Mode</td><td>The blending mode determines how particles are composited when they are written to the frame buffer. Let's consider that Prgb is the RGB color of a particle's pixel, Pa is its alpha value, and Drgb is the RGB color already in the frame buffer. The blending options are:
-        <ul>
-            <li>Additive: Prgb + Drgb</li>
-            <li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li>
-            <li>Multiply: Prgb * Drgb</li>
-        </ul>
-    </td></tr>
-    <tr><td>Stretch</td><td>A value in world units that controls the amount by which particles are stretched based on their velocity. Particles are stretched from their center towards their previous position.</td></tr>
-    <tr><td>Align To Motion</td><td>Orient particle in their direction of motion.</td></tr>
-    <tr><td>Spawn Bounds</td><td>The half extents of a local space bounding box within which particles are spawned at random positions.</td></tr>
-    <tr><td>Wrap</td><td>Enables wrap bounds.</td></tr>
-    <tr><td>Wrap Bounds</td><td>World space AABB volume centered on the owner entity's position. If a particle crosses the boundary of one side of the volume, it teleports to the opposite side. You can use this to make environmental effects like rain by moving a wrapped emitter's owner entity.</td></tr>
-    <tr><td>Color Map</td><td>The color map texture to apply to all particles in the system. If no texture asset is assigned, a default spot texture is used.</td></tr>
-    <tr><td>Normal Map</td><td>The normal map texture to apply to all particles in the system. Applying a normal map can make billboard particles appear more consistent with the scenes lighting.</td></tr>
-    <tr><td>Particle Mesh</td><td>A model asset. The first mesh found in the model is used to represent all particles rather than a flat billboard.</td></tr>
-    <tr><td>Local Velocity</td><td>A curve defining how each particle's velocity with respect to the particle system's local coordinate system changes over time. If two curves are specified in the curve editor, local velocity will be a random lerp between both curves.</td></tr>
-    <tr><td>Velocity</td><td>A curve defining how each particle's velocity with respect to the world coordinate system changes over time. If two curves are specified in the curve editor, velocity will be a random lerp between both curves.</td></tr>
-    <tr><td>Rotation Speed</td><td>A curve defining how each particle's angular velocity changes over time. If two curves are specified in the curve editor, the angular velocity will be a random lerp between both curves.</td></tr>
-    <tr><td>Scale</td><td>A curve defining how each particle's scale changes over time. By default, a particle is 1 unit in width and height. If two curves are specified in the curve editor, the scale will be a random lerp between both curves.</td></tr>
-    <tr><td>Color</td><td>A curve defining how each particle's color changes over time.</td></tr>
-    <tr><td>Opacity</td><td>A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves.</td></tr>
-</table>
+<table class="table table-striped"><col class="property-name"></col><col class="property-description"></col><tr><th>プロパティ</th><th>説明</th></tr><tr><td>Enabled</td><td>チェックされているとパーティクルがシーンに追加されレンダリングされます。</td></tr><tr><td>Auto Play</td><td>チェックされているとパーティクルシステムは作成時に即時に再生されます。チェックがされていない場合、パーティクルシステムコンポーネントの再生機能をスクリプトから呼ぶ必要があります。</td><tr><td>Particle Count</td><td>このパーティクルシステムで管理されるパーティクルの最大数。</td></tr><tr><td>Lifetime</td><td>パーティクルの生成から破棄までの秒単位の時間。</td></tr><tr><td>Emission Rate</td><td>パーティクル生成の間隔を定義する時間範囲の下限。次のパーティクル生成までの時間は、'Emission Rate'と'Emission Rate2'の間でランダムに選択されます。</td></tr><tr><td>Emission Rate 2</td><td>パーティクル生成の間隔を定義する時間範囲の上限。次のパーティクル生成までの時間は、'Emission Rate'と'Emission Rate2'の間でランダムに選択されます。</td></tr><tr><td>Start Angle</td><td>角度で指定される初期のパーティクル回転の下限。各パーティクルに対して、この角度は、'Start Angle'と'Start Angle 2'の間でランダムに選択されます。</td></tr><tr><td>Start Angle 2</td><td>角度で指定される初期のパーティクル回転の上限。各パーティクルに対して、この角度は、'Start Angle'と'Start Angle 2'の間でランダムに選択されます。</td></tr><tr><td>Loop</td><td>チェックされていると、パーティクルシステムは不明確に放射します。チェックされていないと、'Particle Count'プロパティで指定した数のパーティクルを放射してから停止します。</td></tr><tr><td>Pre Warm</td><td>有効にすると、パーティクルシステムは完全なサイクルを完了したかのように初期化されます。このオプションはループされたパーティクルシステムでのみ利用可能です。</td></tr><tr><td>Lighting</td><td>チェックされていると、パーティクルはシーン内のdirectionalライトとambientライトに照らされます。状況によってはよりリアルなライティングを作るために、パーティクルシステムに法線マップを設定すると良い結果が得られます。</td></tr><tr><td>Half-Lambert</td><td>Half Lambertライティングを有効にすると、ライトがパーティクルの裏側を照らす際にパーティクルが平たく見えすぎることを防げます。完全に非物理的なライティングモデルですが、より良い視覚的結果を得られます。このオプションはLightingを有効にしている場合のみ利用可能です。</td></tr><tr><td>Color Intensity</td><td>パーティクルの色をスケーリングして、任意の明るさを持つことができるようにします。</td></tr><tr><td>Depth Test</td><td>チェックしている場合、パーティクルは深度バッファに深度情報を書き込みます。オフにした場合、深度バッファは変更されず、パーティクルはレンダリングされた順に互いを上書きされます。</td></tr><tr><td>Depth Softening</td><td>この変数の値は、パーティクルが別の表面に近づく際にどの程度のパーティクルがフェードアウトするかを決定します。パーティクルが表面に食い込むように見えるのを避けることができます。</td></tr><tr><td>Sorting Mode</td><td>Sorting Modeではパーティクルがレンダリングされる順序を制御できます。オプションは次のとおりです：<ul><li>無し：パーティクルは、任意の順序でレンダリングされます。このオプションを選択すると、パーティクルシステムはGPU上で(基盤となるハードウェアが浮点テクスチャに対応している場合)シミュレートされます。最高のパフォーマンスを得るには、この設定を使用することをお勧めします。</li><li>Camera Distance: パーティクルはCPUでソートされ、後ろから前の順番でレンダリングされなおします(カメラのZ深度基準)。</li><li>Newer First: パーティクルはCPUでソートされ、若い物から順番にレンダリングされる。</li><li>Older First:  パーティクルはCPUでソートされ、古い物から順番にレンダリングされる。</li></ul></td></tr><tr><td>Blending Mode</td><td>Blending Modeはパーティクルがフレームバッファに書き込まれる際にどのように合成されるかを決定します。PrgbはパーティクルのピクセルのRGBカラーです。Paはそのアルファ値、Drgbは既にフレームバッファにあるRGBカラー。ブレンドオプションは次の通り：<ul><li>Additive: Prgb + Drgb</li><li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li><li>Multiply: Prgb * Drgb</li></ul></td></tr><tr><td>Stretch</td><td>速度に基づいてパーティクルが引き伸ばされる度合いを制御するワールド単位の値。パーティクルは以前の位置に向かって中心から引き伸ばされる。</td></tr><tr><td>Align To Motion</td><td>パーティクルを動きの方向に方向付ける。</td></tr><tr><td>Spawn Bounds</td><td>内部でパーティクルがランダムな位置に生成される、ローカル空間の境界ボックスの範囲の半分。</td></tr><tr><td>Wrap</td><td>Wrap Boundを有効にする。</td></tr><tr><td>Wrap Bounds</td><td>オーナーエンティティの位置を中心としたワールド空間AABBの体積。パーティクルが体積の片側の境界を越えると、反対側にテレポートします。ラップされたエミッタのオーナーエンティティを移動させることで、雨などの環境エフェクトを作ることができます。</td></tr><tr><td>Color Map</td><td>システム内の全てのパーティクルに適用されるカラーマップテクスチャ。テクスチャアセットが割り当てられていない場合、デフォルトのスポットテクスチャが使用されます。</td></tr><tr><td>Normal Map</td><td>システム内の全てのパーティクルに適用する通常のマップテクスチャ。法線マップを適用すると、ビルボードパーティクルがシーンのライトとより一貫して表示されます。</td></tr><tr><td>Particle Mesh</td><td>モデルアセット。モデルの最初のメッシュは、平らなビルボードではなく全てのパーティクルを表すために使用されます。</td></tr><tr><td>Local Velocity</td><td>各パーティクルの速度が、パーティクルシステムのローカル座標システムと関連して、時間と共にどのように変化するかを定義する曲線。カーブエディタで二つの曲線が指定されている場合、ローカル速度は両方の曲線の間のランダムなlerpになります。</td></tr><tr><td>Velocity</td><td>各パーティクルの速度が、ワールド座標システムと関連して、時間と共にどのように変化するかを定義する曲線。カーブエディタで二つの曲線が指定されている場合は、ローカル速度は両方の曲線の間のランダムなlerpになります。</td></tr><tr><td>Rotation Speed</td><td>各パーティクルの角速度が時間と共にどのように変化するかを定義する曲線。カーブエディタで二つの曲線が指定されている場合、角速度は両方の曲線の間のランダムなlerpになります。</td></tr><tr><td>Scale</td><td>各パーティクルの尺度が時間と共にどのように変化するかを定義する曲線。デフォルトでは、パーティクルの高さと幅は1unitになります。カーブエディタで二つの曲線が指定されている場合、尺度は両方の曲線の間のランダムなlerpになります。</td></tr><tr><td>Color</td><td>各パーティクルの色が時間と共にどのように変化するかを定義する曲線。</td></tr><tr><td>Opacity</td><td>各パーティクルの不透明度が時間と共にどのように変化するかを定義する曲線。カーブエディタで二つの曲線が指定されている場合、不透明度は両方の曲線の間のランダムなlerpになります。</td></tr></table>
 
 ## スクリプティングインターフェイス
 
-You can control an particlesystem component's properties using a [script component][1]. The particlesystem component's scripting interface is [here][2].
+[スクリプトコンポーネント][1]を使用してパーティクルシステムコンポーネントのプロパティを制御することができます。パーティクルシステムコンポーネントのスクリプトインターフェイスは[こちら][2]。
 
 [1]: /user-manual/packs/components/script
 [2]: /engine/api/stable/symbols/pc.ParticleSystemComponent.html

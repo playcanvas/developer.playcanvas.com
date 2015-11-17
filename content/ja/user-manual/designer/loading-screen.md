@@ -1,16 +1,16 @@
 ---
-title: Loading Screen
+title: 画面の読み込み
 template: usermanual-page.tmpl.html
 position: 9
 ---
 
-<div class="alert alert-info">Custom loading screens is an ORG account feature.</div>
+<div class="alert alert-info">カスタムの読み込み画面はORGアカウントの機能です</div>
 
-If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
+カスタムの読み込み画面を作成するには [Scene Settings][1] に進み、*Loading Screen* セクションの**Create Default**をクリックします。すでに有効な読み込み画面のスクリプトがある場合は、読み込み画面パネルにドラッグ＆ドロップするか、**Select Existing**をクリックします：
 
 <img alt="Loading Screen" src="/images/user-manual/loading_screen.png" />
 
-Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
+**Create Default** をクリックすると、いくつかのデフォルトコンテンツをもつ新しいスクリプトが作成されます。読み込み画面を変更したい場合は、そのスクリプトを編集することができます。デフォルトのスクリプトの例：
 
 ```
 pc.script.createLoadingScreen(function (app) {
@@ -21,11 +21,11 @@ pc.script.createLoadingScreen(function (app) {
         document.body.appendChild(splash);
 
         var logo = document.createElement('img');
-        // replace with your logo
+        // 自分のロゴで置き換えてください
         logo.src = 'http://static.playcanvas.com/images/logo/play.png';
         splash.appendChild(logo);
 
-        // progress bar
+        // 進行バー
         var container = document.createElement('div');
         container.id = 'progress-container';
         splash.appendChild(container);

@@ -1,108 +1,108 @@
 ---
-title: Materials
+title: 素材
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.
+3Dモデルの全ての表面は素材を使ってレンダリングされます。素材は、その表面の色、光沢、平滑度などのプロパティを定義します。
 
-In PlayCanvas, a material is an Asset type which collects all these properties together. By default, it represents a Physical material. This exposes the fundamental properties that can be used to create many different types for visual effects, from smooth plastic, to rough wood, or scratched metal.
+PlayCanvasでは、素材とはこれらのプロパティを収集するアセットタイプです。デフォルトでは物理的な素材を表します。表面の荒い木材、傷の付いた金属に、滑らかなプラスチックなどの様々な視覚効果を作成するために使用できる基本的なプロパティを露出します。
 
-We also support our old Phong Material type.
+古いPhong素材タイプにも対応しています。
 
-## Importing Materials
+## 素材のインポート
 
-Materials are imported automatically when you upload a 3D model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they exist in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
+3Dモデルファイルを(例えばFBXやCOLLADA)PlayCanvasにアップロードすると素材は自動的にインポートされます。素材は、3Dモデリングツール内のものと同様のプロパティを使用して生成されます。埋め込まれたメディア(FBXのみ)を使用してアップロードする場合、関連するすべてのテクスチャマップが自動的に設定されます。
 
-## Creating New Materials
+## 新規素材の作成
 
-You can create new materials directly from the PlayCanvas Editor interface.
+PlayCanvas Editorインターフェイスから直接新しい素材を作成することができます。
 
 <img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px;" />
 
-This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
+これにより、新素材のアセットを作成し、画面の右側に素材インスペクタを開きます。
 
-## Selecting a Material
+## 素材の選択
 
 <img src="/images/user-manual/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
 
-In order to edit a material, first you must select it. This will bring up the material inspector.
+素材を編集するには、まずそれを選択する必要があります。これで素材インスペクタが開きます。
 
-You can select a material in the asset panel. You can also select materials from the model inspector or from the model component.
+アセットパネルで素材を選択することができます。また、モデルコンポーネントのモデルインスペクタから素材を選択することもできます。
 
-Generally, clicking on a material preview icon will take you to the material inspector.
+基本的に、素材のプレビューアイコンをクリックすると、素材インスペクタに移行します。
 
-## Assigning Materials
+## 素材の指定
 
 <img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
+モデルアセットのどこにどの素材が割り当てられるかを修正することができます。また、モデルコンポーネントを持つ特定のエンティティの素材をカスタマイズすることもできます。
 
-When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
+モデルコンポーネントを持つエンティティを選択すると、2つのボタンが表示されます。Asset MaterialsとEntity Materialsです。
 
 <br style="clear:both;" />
 
 <img src="/images/user-manual/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
+Asset Materialsをクリックすると、モデルのアセットが選択されます。また、アセットパネルからモデルアセットを選択することもできます。モデルインスペクタはモデルのメッシュと、それぞれに割り当てられる素材を表示します。Xボタンで素材をクリアし、空のスロットをクリックして新しい素材を割り当てます。
 
-You can also drag and drop material Assets from the asset panel onto the material slot.
+アセットパネルから素材のアセットを素材スロットにドラッグ＆ドロップすることもできます。
 
 <br style="clear:both;" />
 
-Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
+エンティティマテリアルをクリックすると、まず、素材をカスタマイズしたいメッシュインスタンスを選択するように求められます：
 
 <img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
 
-After selecting the mesh instance a new material picker will appear in the model component:
+メッシュインスタンスを選択した後、新しい素材ピッカーがモデルコンポーネントに表示されます。
 
 <img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
 
-Then you can select a different material for this particular Entity:
+次にこの特定のエンティティ用に別の素材を選択することができます：
 
 <img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
 
 <br style="clear:both;" />
 
-## Editing a Material
+## 素材の編集
 
 <img src="/images/user-manual/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-Once you have a material selected you can edit its properties.
+素材を選択すればそのプロパティを編集することができます。
 
-The Editor supports to types of material 'Shading Model', this is defined in a drop-down at the top of the material inspector.
+エディタは、'Shading Model'の素材タイプに対応しています。素材インスペクタの上部にあるドロップダウンで定義されます。
 
-### Physical
+### 物理的
 
-The physical shading model is our most advanced shading model. This is the model for PlayCanvas's Physically Based Renderer (PBR).
+物理的なシェーディングモデルは、最も先進的なシェーディングモデルです。これはPlayCanvasのPhysically Based Renderer (PBR)のモデルです。
 
-[Physical Material Properties][1]
+[物理的な素材プロパティ][1]
 
 ### Phong
 
-The phong shading model is our legacy shading model. Use this for compatibility reasons.
+フォンシェーディングモデルは、受け継がれてきたシェーディングモデルです。互換性のために使用してください。
 
-[Phong Material Properties][2]
+[Phong素材プロパティ][2]
 
-## Material Maps
+## 素材マップ
 
 <img src="/images/user-manual/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
+素材の編集の大部分は、上記のページで説明している様々なスロットに対してテクスチャーマップを作成および指定することです。
 
-There are a few options that are available on most texture map slots for a material.
+素材のほとんどのテクスチャマップスロットで利用可能なオプションがいくつかあります。
 
-### Texture Asset
+### テクスチャーアセット
 
-First is the texture asset, upload an image to PlayCanvas and we'll create a texture asset for you. you can assign this to a slot on a material.
+一つ目はテクスチャアセットです。PlayCanvasに画像をアップロードすると、テクスチャアセットが作成されます。素材のスロットにこれを割り当てることができます。
 
-### Color or Tint Color
+### カラーまたはティントカラー
 
-Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
+いくつかのマップスロットをテクスチャマップではなく単色にすることができます。テクスチャーが指定されているスロットがティントカラーにも対応している場合もあります。有効にした場合、ティントカラーはテクスチャマップスロットの中の色で乗算されます。
 
-### Channel
+### チャンネル
 
-Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
+一部のマップは、単一のグレースケール値を必要とします。例：0.0 - >1.0。この場合、使用するテクスチャのチャンネルを選択することが可能です。** RGB**は、3つすべてのチャネルが使用されることを意味します。**R**, **G** または **B**は、赤、緑、青のチャンネルのみが使用されることを意味します。
 
 [1]: /user-manual/assets/physical-material
 [2]: /user-manual/assets/phong-material

@@ -1,22 +1,22 @@
 ---
-title: Self-hosting
+title: セルフホスティング
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-There are two options for self-hosting a PlayCanvas game on your own domain.
+自身のドメインでPlayCanvasをセルフホスティングする方法は二つあります。
 
-1. Embed a PlayCanvas hosted game using an [iframe][1].
-2. Download your game from your project page and upload the files to your own site.
+1.  [iframe][1]を使用してPlayCanvasでホストするゲームを組み込む。
+2. プロジェクトページからゲームをダウンロードしてサイトにファイルをアップロード。
 
-## iframe Embedding
+## iframe の埋め込み
 
-When you [publish to playcanvas.com][2], your game is assigned a URL. To embed your application in another page. You can simply include this URL as the `src` property of an iframe.
+[playcanvas.comに公開][2]すると、ゲームにURLが割り当てられます。別のページにアプリケーションを組み込むには、このURLをiframeのsrcプロパティとして含みます。
 
 ~~~html~~~
 <html>
 	<head>
-        <title>My Great Game</title>
+        <title>あなたのゲーム</title>
 	</head>
 	<body>
 		<iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
@@ -24,28 +24,28 @@ When you [publish to playcanvas.com][2], your game is assigned a URL. To embed y
 </html>
 ~~~
 
-## Self-hosting on your own server
+## 自身のサーバでセルフホスティング
 
-In order to host your game independently of PlayCanvas' servers, do the following:
+PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
-![Publish][4]
+![パブリッシュ][4]
 
-* In your project dashboard, select the 'PUBLISH' tab.
-* Click the DOWNLOAD button
-* Enter a name for your export. This will be the name of the .zip file that will be created for you.
-* Select the Packs you want to include in your export from the list. Notice that the Primary Pack (the one with the blue banner icon), is always included and it will be the first pack loaded when your app is launched.
-* Click on the 'Web' button on the bottom to download a zip file of your project ready for deployment.
-* Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your game.
+* プロジェクトダッシュボードでPUBLISHタブを選択します。
+* DOWNLOADボタンをクリック。
+* エクスポートに名前をつけます。これは作成される.zipファイルの名前になります。
+* リストから、エクスポートに含みたいPackを選択します。Primary Pack (青いバナーアイコン)は必ず含まれ、appが起動する際に最初に読み込まれます。
+* 下部のWebボタンをクリックして、デプロイ可能なプロジェクトのzipファイルをダウンロードします。
+* 任意の場所にzipファイルのコンテンツを摘出します。index.htmlファイルがゲームを読み込みます。
 
 <div class="alert alert-warning">
-You cannot load your game by opening the index.html file in a browser or from a **file://** url. You must use a local webserver to load the index.html file.
+**file://** urlや、ブラウザからindex.htmlファイルを開くことでゲームを読み込むことはできません。ローカルのウェブサーバを使用してindex.htmlファイルを読み込む必要があります。
 </div>
 
-There are many options for running a web server. Here are a few:
+ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *Easy:* Install [Python][5] and run the command *python -m SimpleHTTPServer* from the same folder as your game's index.html. Then point your browser to http://localhost:8000
-* *Intermediate:* Install [XAMPP][6]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
-* *Advanced:* Install [Apache][7] or [nginx][8] as a standalone service.
+* *初級：* [Python][5]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを http://localhost:8000 にポイントします。
+* *中級：* [XAMPP][6]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
+* *上級：* [Apache][7] または [nginx][8]をスタンドアローンサービスとしてインストールします。
 
 [1]: https://developer.mozilla.org/en/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting

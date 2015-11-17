@@ -1,18 +1,18 @@
 ---
-title: Introduction
+title: Введение
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## What is PlayCanvas?
+## Что такое PlayCanvas?
 
-PlayCanvas is a visual development platform for 3D web content. Both the tools and the web apps you build are powered by HTML5. The entire software platform is web hosted so there's nothing to install and you can access your work from any device that runs one of the supported web browsers.
+PlayCanvas — это визуальная платформа для создания трехмерного веб-контента. Так же как инструменты, веб-приложения, которые вы создаете, построены на базе HTML5. Вся программная платформа находится в сети, так что нет нужды что-либо устанавливать, а доступ к вашей работе возможен с любого устройства, на котором есть один из поддерживаемых веб-браузеров.
 
-## The PlayCanvas Workflow
+## Процесс работы в PlayCanvas
 
-Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some JavaScript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
+Процесс создания трехмерных веб-приложений при помощи PlayCanvas прост. Чтобы получить наилучший результат, потребуется писать JavaScript-код. Однако, набор инструментов PlayCanvas построен таким образом, что позволит вам редактировать и публиковать проекты с невероятной простотой.
 
-Let's take a look at the high level workflow:
+Давайте кратко взглянем на процесс работы:
 
 <table class="table">
     <tr>
@@ -20,11 +20,11 @@ Let's take a look at the high level workflow:
             <img alt="Create artwork" width="320" src="/images/platform/workflow/workflow_art.jpg"></img>
         </td>
         <td>
-            <h2>1 - Create and Upload Assets</h2>
+            <h2>1 - Создание и загрузка ассетов</h2>
             <ul>
-                <li>Generate 3D models using industry standard applications.</li>
-                <li>Export models to FBX.</li>
-                <li>Upload FBX to PlayCanvas using a simple drag and drop control.</li>
+                <li>Сгенерируйте трехмерные модели при помощи общепринятых программ.</li>
+                <li>Экспортируйте их в FBX.</li>
+                <li>Загрузите FBX в PlayCanvas, просто перетащив файлы в окно редактора.</li>
             </ul>
         </td>
     </tr>
@@ -33,12 +33,12 @@ Let's take a look at the high level workflow:
             <img alt="Create game entities" width="320" src="/images/platform/workflow/workflow_design.jpg"></img>
         </td>
         <td>
-            <h2>2 - Build Game Entities</h2>
+            <h2>2 - Создание игровых сущностей</h2>
             <ul>
-                <li>Create game entities in PlayCanvas Editor.</li>
-                <li>Add components to determine an entity's behavior.</li>
-                <li>Set a component's attributes to fine tune an entity.</li>
-                <li>Preview your changes live in-game using a live link.</li>
+                <li>Создайте игровые сущности в редакторе PlayCanvas.</li>
+                <li>Добавьте компоненты, чтобы определить поведение сущности.</li>
+                <li>Редактируйте атрибуты компонента для более точной настройки.</li>
+                <li>Возможность предпросмотра вносимых изменений в реальном времени.</li>
             </ul>
         </td>
     </tr>
@@ -47,11 +47,11 @@ Let's take a look at the high level workflow:
             <img alt="Tag scripts on entities" width="320" src="/images/platform/workflow/workflow_scripting.jpg"></img>
         </td>
         <td>
-            <h2>3 - Script Game Entities</h2>
+            <h2>3 - Написание кода сущностей</h2>
             <ul>
-                <li>Tag any entity with modular scripts.</li>
-                <li>Edit scripts in the PlayCanvas in-browser code editor or work in your choice of editor via a local HTTP server.</li>
-                <li>Synchronize code with Github or Bitbucket.</li>
+                <li>Добавляйте модульные скрипты к любой сущности.</li>
+                <li>Редактируйте скрипты в редакторе кода PlayCanvas прямо в браузере или же используйте предпочитаемый вами редактор через локальный HTTP-сервер.</li>
+                <li>Синхронизируйте код с GitHub или Bitbucket.</li>
             </ul>
         </td>
     </tr>
@@ -60,44 +60,44 @@ Let's take a look at the high level workflow:
             <img alt="Publish game" width="320" src="/images/platform/workflow/workflow_publish.jpg"></img>
         </td>
         <td>
-            <h2>4 - Publish Game</h2>
+            <h2>4 - Публикация игры</h2>
             <ul>
-                <li>Export your game at any time.</li>
-                <li>Quickly publish your game to PlayCanvas' application servers.</li>
-                <li>Download your zipped exported game and host it on any web server.</li>
+                <li>Экспортируйте вашу игру в любой момент.</li>
+                <li>Возможность быстрой публикации игры на серверах PlayCanvas.</li>
+                <li>Скачайте упакованную версию игры и размещайте ее на любом веб-сервере.</li>
             </ul>
         </td>
     </tr>
 </table>
 
-## Assets
+## Ассеты
 
-Your projects are created and managed in the cloud by PlayCanvas. As you build your web app, you will want to start incorporating 3D assets (a car, a spaceship, an animated character, etc). The PlayCanvas Platform allows you to import assets that have been exported from just about any 3D content creation tool, including 3D Studio Max, Maya, SketchUp and Blender. Once these assets are imported into your asset library, you can quickly deploy them into your app.
+Ваши проекты создаются и управляются в облаке при помощи PlayCanvas. По мере создания веб-приложения, вы наверняка захотите добавить в него 3D-ассеты (автомобиль, космический корабль, анимированного персонажа и так далее). Платформа PlayCanvas позволяет вам импортировать ассеты, которые были экспортированы практически из любой программы для создания трехмерной графики, включая 3D Studio Max, Maya, SketchUp и Blender. Когда они импортированы в библиотеку ассетов, вы можете быстро добавить их в свое приложение.
 
-The other major asset type in a PlayCanvas project is code. PlayCanvas offers the developer a wide variety of pre-baked functional components that can be bolted together to construct game entities. But it is possible to customize and extend the default behaviour of these components through the writing of scripts. For example, you might write a script that defines the handling of a vehicle or the AI of a non-player character. The code can be developed and served from a local web server or pulled from a linked repository hosted by BitBucket or GitHub.
+Другой важный тип ассетов в проекте — программный код. PlayCanvas предоставляет разработчику обширный набор готовых функциональных компонентов, которые могут быть использованы при конструировании игровых сущностей. Но возможно также настраивать и расширять стандартное поведение этих компонентов при помощи написания скриптов. Например, вы можете создать скрипт, который определяет управление транспортным средством или искусственный интеллект неуправляемого игроком персонажа. Код может быть разработан и обслуживаться на локальном веб-сервере или получен из связанного репозитория на Bitbucket или GitHub.
 
-## Publishing
+## Публикация
 
-Lastly, you will want to publish your PlayCanvas game. You have complete freedom and control over how and where your game is published. The options are:
+Наконец, вы захотите опубликовать свою игру. В вашем распоряжении полный контроль и свобода над тем, как и где ваша игра будет располагаться. Доступные варианты:
 
-* Publish to playcanvas.com with the click of a button.
-* Download your game as a zip archive. You can then host the game yourself or deploy it to mobile app stores or web portals such as the Chrome Web Store.
+* Публикация на playcanvas.com нажатием кнопки.
+* Загрузка упакованной версии игры, которую вы впоследствии сможете опубликовать самостоятельно или загрузить в магазины приложений для мобильных телефонов или такие веб-порталы, как Chrome Web Store.
 
-Find out more in the [publishing][1] section.
+Ознакомьтесь с деталями в секции [публикации][1].
 
-## Supported Browsers
+## Поддерживаемые браузеры
 
-PlayCanvas was always designed to be plugin free, running natively in the browser. The client-side codebase is 100% JavaScript and built entirely on HTML5 and related APIs (such as WebGL). Why was this important?
+PlayCanvas изначально задумывался так, чтобы запускаться в браузере без использования каких-либо плагинов. Программный код клиента на 100% состоит из JavaScript и построен на базе HTML5 и связанных API (таких как WebGL). Почему это было важно?
 
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
+* Мобильные телефоны и планшеты не позволяют установку плагинов, а поддержка HTML5 в них все лучше и лучше.
+* Веб-приложения, написанные на PlayCanvas, запускаются без необходимости установки или загрузки плагина.
+* Веб-приложения, написанные на PlayCanvas, запускаются внутри стандартного [DOM][2]-элемента (canvas), так что вы можете разместить их на странице и трансформировать при помощи CSS.
+* Отсутствие зависимости на стороннюю технологию плагина, которая может измениться со временем. Единственная зависимость — сам браузер.
 
-So obviously this is all very good news, but you want your web app to run everywhere. Any device, any browser. At the time of writing, HTML5 continues to be adopted on more and more devices in more and more browsers. The browser requirements are currently as follows:
+Все это звучит здорово, но вы хотите, чтобы ваше приложение запускалось везде. На момент написания, поддержка HTML5 появляется на все большем количестве устройств и браузеров. На данный момент список поддерживаемых браузеров выглядит так:
 
 <table class="table table-striped table-bordered">
-    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
+    <tr><th>Браузер</th><th>Версия</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
     <tr><td><a href="http://www.google.com/chrome/">Chrome</a></td><td>9.0+</td>
         <td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td></td>
     </tr>
@@ -115,7 +115,7 @@ So obviously this is all very good news, but you want your web app to run everyw
     </tr>
 </table>
 
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][3]. If you see a spinning cube, you are all set!
+Если вы сомневаетесь поддерживает ли ваш браузер WebGL (технология, необходимая для запуска PlayCanvas), посетите [эту страницу][3]. Если вы видите вращающийся куб — у вас все настроено!
 
 [1]: /user-manual/publishing
 [2]: /user-manual/glossary/#dom

@@ -1,5 +1,5 @@
 ---
-title: Tutorials
+title: チュートリアル
 template: tutorial-full-page.tmpl.html
 ---
 
@@ -7,39 +7,39 @@ template: tutorial-full-page.tmpl.html
 
 ## 動画
 
-You can find our complete collection of video tutorials on our [YouTube Channel][1]. You can also [download][2] assets for following along to the videos.
+弊社の[YouTube Channel][1]で動画チュートリアル集をごらんいただけます。動画で使用するアセットを[ダウンロード][2]することもできます。
 
 ## 記事
 
-The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page][3]. Note that you must be logged in to the PlayCanvas site to access them.
+下記にリストされる全てのチュートリアルのリソースは[PlayCanvas チュートリアルページ][3]で入手できます。アクセスするにはPlayCanvasサイトにログインする必要があります。
 
 ### 初級
 
-* [Basic Keyboard Input][4]
-* [Basic Mouse Input][5]
-* [Basic Camera][6]
-* [Basic Audio][7]
-* [Basic Materials][8]
-* [Manipulating Entities][9]
+* [基本的なキーボード入力][4]
+* [基本的なマウス入力][5]
+* [基本的なカメラ][6]
+* [基本的なオーディオ][7]
+* [基本的な素材][8]
+* [エンティティの操作][9]
 
 ### 中級
 
-* [Animation Blending][10]
-* [More Cameras][11]
-* [First Person Camera][12]
-* [Collision and Triggers][13]
-* [Using the Asset Registry][14]
+* [アニメーションブレンディング][10]
+* [その他のカメラ][11]
+* [ファーストパーソンカメラ][12]
+* [コリジョンとトリガー][13]
+* [アセットレジストリの使用][14]
 
 ### 上級
 
-* [Programmatically Creating Entities][15]
-* [FPS Character Controller][16]
-* [Custom Shaders][17]
-* [Custom Post Effects][18]
+* [プログラムでエンティティを作成][15]
+* [FPSキャラクタコントロール][16]
+* [カスタムのシェーダー][17]
+* [カスタムのポストエフェクト][18]
 
-###Sprites and Fonts
+###スプライトとフォント
 
-For instructions in displaying 2D images see [our GitHub sprites page][19] and for displaying on-screen text see [our fonts page on GitHub][20].
+2D画像を表示するための手順は[GitHub スプライトページ][19]からご確認ください。画面内のテキストを表示させるには[GitHubのフォントページ][20]をご確認ください。
 
 [1]: https://www.youtube.com/user/playcanvas
 [2]: /tutorials/video

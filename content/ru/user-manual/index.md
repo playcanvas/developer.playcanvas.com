@@ -1,14 +1,14 @@
 ---
-title: User Manual
+title: Руководство пользователя
 template: usermanual-page.tmpl.html
 position: 0.5
 ---
 
-The PlayCanvas User Manual is the in-depth reference to the complete PlayCanvas platform. From coding Javascript against the Engine to building [Scenes][1] using the PlayCanvas Editor to publishing games to the web and to mobile app stores.
+Руководство пользователя — это подробный справочник ко всей платформе PlayCanvas. От написания JavaScript-кода до создания [сцен][1] с помощью редактора PlayCanvas, публикации игр в сети и магазинах приложений для мобильных телефонов.
 
-By reading through the manual you'll soon grasp the complete process of building games using PlayCanvas.
+Изучая это руководство, вы вскоре полностью освоите процесс создания игр с помощью PlayCanvas.
 
-[Lets get started!][2]
+[Итак, приступим!][2]
 
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction

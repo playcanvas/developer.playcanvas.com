@@ -1,12 +1,12 @@
 ---
-title: Shader
+title: シェーダー
 template: usermanual-page.tmpl.html
 position: 11
 ---
 
-A shader asset contains GLSL code. You can create a new Shader asset by clicking New Shader in the Asset Panel in the Editor or by uploading a file with an extension of ```.vert```, ```.frag``` or ```.glsl```.
+シェーダーアセットにはGLSLコードが含まれます。エディタのアセットパネルのNew Shaderをクリックするか、 ```.vert```, ```.frag```, ```.glsl```拡張子でファイルをアップロードすることで、新しいシェーダーアセットを作成することができます。
 
-To edit a Shader asset, right click on it in the Editor and select Edit. Here's an example on using Shader assets to create a custom material.
+シェーダーアセットを編集するには、エディタでそれを右クリックしEditを選択します。シェーダーアセットを使用してカスタム素材を作成する例です。
 
 ```
 var vertexShader = app.assets.find('my_vertex_shader');

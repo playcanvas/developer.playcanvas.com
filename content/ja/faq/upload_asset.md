@@ -1,11 +1,11 @@
 ---
-title: Upload assets
-keywords: asset, new, create, upload
+title: アセットのアップロード
+keywords: アセット, 新規, 作成, アップロード
 ---
 
-## How do I upload assets?
+## アセットをアップロードするには？
 
-To upload Assets simply drag and drop files from your computer into the Assets panel. Your files will be processed by the server and will appear shortly after in the Assets Panel.
+アセットをアップロードするには、コンピュータからアセットパネルにファイルをドラッグ＆ドロップします。ファイルはサーバにより処理され、少しするとアセットパネルに表示されます。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/" target="_blank">ユーザーマニュアルを参照<</a>
 

@@ -1,32 +1,32 @@
 ---
-title: Projects
+title: Проекты
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-The Projects tab lists all the projects you have created or have been granted access to.
+Во вкладке «Проекты» выводится список всех проектов, которые вы создали или к которым вы получили доступ.
 
 ![projects_page][1]
 
-## New Project
+## Новый проект
 
-Click on the NEW button on the top right to create a new project.
+Нажмите на кнопку «Создать», чтобы создать новый проект.
 
-## Delete Project
+## Удалить проект
 
-Click on the arrow next to a project and select Delete to permantently delete it from your account.
+Нажмите на стрелку рядом с названием проекта и выберите «Удалить», чтобы перманентно удалить его из вашей учетной записи.
 
-## Export Project
+## Экспортировать проект
 
-If you have an ORG plan, you can export a .zip archive of your project. You can later choose to import that .zip archive as a new project. You can use this mechanism to backup your projects on your machine.
+Если у вас ORG-план, то вы можете экспортировать zip-архив, содержащий ваш проект. Позднее его можно импортировать в качестве нового проекта. Вы можете использовать этот механизм для создания резервных копий проектов на вашем компьютере.
 
-To export a project click on the arrow next to a project and select Export.
+Чтобы экспортировать проект, нажмите на стрелку рядом с названием проекта и выберите «Экспортировать».
 
-## Import Project
+## Импортировать проект
 
-If you have an ORG plan you can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
+Если у вас ORG-план, то вы можете импортировать zip-архив, содержащий экспортированный при помощии описанного ранее механизма проект.
 
-Click on Import Project on the left hand side of the Projects page and select the zip file to import it.
+Нажмите на «Импортировать проект» (находится в левой части страницы) и выберите необходимый zip-файл.
 
-[1]: /images/platform/profile.png "Projects"
+[1]: /images/platform/profile.png "Проекты"
 

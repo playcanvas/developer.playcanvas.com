@@ -4,20 +4,20 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-## Publishing to Firefox OS
+## Firefox OSへの公開
 
-[Firefox OS][1] is the new mobile operating system from Mozilla. And currently, PlayCanvas is the only 3D game engine targeting Firefox OS. If you publish your PlayCanvas game to [PlayCanvas][2], you can play it quite happily via Firefox OS's bundled Firefox browser app. But what if your users want to install the game to their home screen and play offline without having to access it via the browser? Achieving this is easy with PlayCanvas and involves converting your exported game into a 'packaged app'.
+[Firefox OS][1]はMozillaの新しいモバイルOSです。現在、PlayCanvasはFirefox OSをターゲットとする唯一の3Dゲームエンジンです。あなたのPlayCanvasゲームを[PlayCanvas][2]に公開すると、Firefox OSのバンドルされたFirefoxブラウザappを通して快適にプレイすることができます。では、ユーザーがホーム画面にゲームをインストールし、ブラウザ経由でアクセスせずにオフラインでプレイしたい場合はどうでしょう？PlayCanvasでは、「パッケージ化されたアプリ」にエクスポートしたゲームを変換することで、簡単に達成できます。
 
-## Creating a Packaged App
+## パッケージされたAppの作成
 
-A packaged app is essentially a ZIP file containing all the resources that make up your game. But wait, that's exactly what PlayCanvas generates when you [export your game][3]. But to create a valid packaged app for Firefox OS, you will need to include some additional files:
+パッケージ化されたappとは基本的に、ゲームを構成する全てのリソースを含むZIPファイルです。PlayCanvasで[ゲームをエクスポート][3]するとそのZIPファイルが生成されますが、Firefox OS用の有効なパッケージ化されたappを作成するには、いくつかの追加ファイルを組み込む必要があります：
 
-* A manifest file
-* Some icon files
+* マニフェストファイル
+* いくつかのアイコンファイル
 
-### Create the Manifest
+### Manifestの作成
 
-This file must be called manifest.webapp and be created in the root folder of your extracted and exported PlayCanvas game. An example manifest (taken from the [Dungeon Fury][4] game) is shown below:
+このファイルの名前はmanifest.webappである必要があります。また、展開およびエクスポートされたPlayCanvasゲームのルートフォルダに作成される必要があります。マニフェストの例 ([Dungeon Fury][4] ゲームから)を以下に示します：
 
 ~~~javascript~~~
 {
@@ -29,7 +29,7 @@ This file must be called manifest.webapp and be created in the root folder of yo
         "name": "PlayCanvas",
         "url": "http://playcanvas.com"
     },
-    "description": "Swipe your way to freedom in Dungeon Fury, the fun new 3D game from PlayCanvas that will test your reflexes to the limit! Knock down doors and counter attacks from brutish Orcs to escape!",
+    "説明": "スワイプで自由を目指そう。PlayCanvas上の新しい3Dゲーム、Dungeon Furyはあなたの反射神経を限界まで試します！ドアを壊したり恐ろしいオークのカウンター攻撃に立ち向かい、逃げ出そう！",
     "launch_path": "/game.html",
     "icons": {
         "128": "/icons/icon_128.png",
@@ -41,15 +41,15 @@ This file must be called manifest.webapp and be created in the root folder of yo
 }
 ~~~
 
-A reference that fully documents this manifest format can be found on [MDN][5].
+このマニフェスト形式に関する完成されたドキュメントは[MDN][5]からご確認ください。
 
-### Create App Icons
+### Appアイコンの作成
 
-In the [icons description][6] in the manifest reference, it states you must include a 128x128 icon for inclusion in the Firefox Marketplace and a 60x60 icon to represent your app on the device. Place these images somewhere in your extracted PlayCanvas app folder and set the 'icons' property accordingly in your webapp.manifest.
+マニフェスト参照の[アイコンの説明][6] に記載されている通り、Firefox Marketplaceでは128×128のアイコンを含む必要があり、デバイス上でのapp表示には60x60のアイコンが必要です。これらの画像を、展開したPlayCanvas appのフォルダに配置して、webapp.manifestに応じて'icons'プロパティを設定します。
 
-### Re-zip Your Packaged App
+### パッケージ化されたAppを再圧縮
 
-You should now have a valid packaged app. Simply re-zip the files back into a file called package.zip and copy to a web location of your choice.
+これで有効なパッケージ化されたappができました。ファイルをpackage.zipというファイルに再圧縮し、Web上の任意の場所にコピーします。
 
 [1]: http://www.mozilla.org/en-US/firefox/os/
 [2]: /user-manual/publishing/web/playcanvas-hosting

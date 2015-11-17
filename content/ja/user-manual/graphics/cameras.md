@@ -1,42 +1,42 @@
 ---
-title: Cameras
+title: カメラ
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-Cameras are responsible for rendering a scene to the screen. You need at least one camera in your scene to see anything. When you create a new scene in PlayCanvas, it is automatically populated with a single camera (along with a directional light).
+カメラは画面にシーンをレンダリングします。何かを見るためにはシーンに少なくとも1つのカメラを設置する必要があります。PlayCanvasで新しいシーンを作成すると、自動的に単一のカメラが取り込まれます(指向性ライトと共に)。
 
-## Creating a Camera
+## カメラを作成する
 
-In the Editor's 3D View, a unselected camera is represented with the following icon:
+Editorの3Dビューでは、選択されていないカメラが次のアイコンで表されます：
 
-![Camera icon][1]
+![カメラアイコン][1]
 
-To create a new camera, simply create a new entity and add a camera component to it. For convenience, the Editor menu has an item that does this in a single step:
+新しいカメラを作成するには、新しいエンティティを作成してそこにカメラコンポーネントを追加します。Editorのメニューには、これをワンステップで行うための項目があります。
 
-![Camera creation][2]
+![カメラの作成][2]
 
-## Orthographic vs Persective Projection
+## 正投影vs.遠近投影の映写
 
-Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometic games.
+カメラの投影には正投影または遠近投影の二つのタイプがあります。正投影カメラは、平行投影を定義して、主に2Dやアイソメトリックゲームに使用します。
 
-![Orthographic camera][3]
+![正投影カメラ][3]
 
-More commonly used is the perspective projection. It more closely mimics how our eyes or cameras work.
+より一般的に使用されるのは透視投影です。より密接に目やカメラの動きを擬態します。
 
-![Perspective camera][4]
+![遠近投影カメラ][4]
 
-## Controlling the Viewport
+## ビューポートの制御
 
-By default, a camera will render to the full width and height of its render target. However, there are circumstances where you might want to change this behavior. For example, perhaps you are writing a game that has a local multiplayer mode that requires split-screen rendering to show each player's viewpoint.
+デフォルトで、カメラはレンダーターゲットの完全な幅と高さにレンダリングされます。ただし、この挙動を変更したい場合もあります。例えば、各プレイヤーの視点を示すために分割画面のレンダリングを必要とする、ローカルマルチプレイヤーモードのゲームを書く場合などです。
 
-For 2-player horizontal splitscreen, you would create two cameras and configure their viewports as follows:
+2プレイヤーの水平分割画面の場合、二つのカメラを作成して次のようにビューポートを構成します：
 
-![Horizontal splitscreen][5]
+![水平の画面分割][5]
 
-And for vertical splitscreen, you would configure the viewports as follows:
+垂直分割画面の場合、次のようにビューポートを構成します：
 
-![Vertical splitscreen][6]
+![垂直の画面分割][6]
 
 [1]: /images/user-manual/graphics/cameras/camera_icon.png
 [2]: /images/user-manual/graphics/cameras/camera_create.png
