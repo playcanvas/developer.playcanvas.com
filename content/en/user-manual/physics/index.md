@@ -1,7 +1,7 @@
 ---
 title: Physics
 template: usermanual-page.tmpl.html
-position: 10
+position: 9
 ---
 
 PlayCanvas incorporates a physics engine. The physics engine can realistically control the motion of objects in your scene. If you think about it, a great many games rely on some form of physical simulation to enable gameplay. For example, consider the classic game Asteroids: the ship accelerates as its rockets fire, it has inertia, and asteroids will destroy it when they come into contact. Solving a simple case such as this is reasonably straighforward for a seasoned programmer, but a physics engine makes it a breeze for anybody.
