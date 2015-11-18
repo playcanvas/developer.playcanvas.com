@@ -8,13 +8,13 @@ PlayCanvas provides comprehensive support for creating and editing particle syst
 
 ## What is a Particle System?
 
-A particle system is a simulation that manages many independently moving particles. They can be used to approxmiate a huge number of effects such as rain, snow, smoke, fire and so on.
+A particle system is a simulation that manages many independently moving particles. They can be used to approximate a huge number of effects such as rain, snow, smoke, fire and so on.
 
 Note that particles are not physically simulated. They do not interact or collide with each other. They will pass through surfaces in your scene.
 
 ## Creating a Particle System
 
-In the Editor's 3D View, a unselected particle system is represented with the following icon:
+In the Editor's 3D View, an unselected particle system is represented with the following icon:
 
 ![Particle system icon][1]
 
