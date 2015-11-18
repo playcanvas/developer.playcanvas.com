@@ -1,18 +1,18 @@
 ---
-title: Introduction
+title: 導入
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## What is PlayCanvas?
+## PlayCanvasとは？
 
-PlayCanvas is a visual development platform for 3D web content. Both the tools and the web apps you build are powered by HTML5. The entire software platform is web hosted so there's nothing to install and you can access your work from any device that runs one of the supported web browsers.
+PlayCanvasは3Dウェブコンテンツの視覚的開発プラットフォームです。ツールと構築するウェブappはHTML5にで動作します。ソフトウェアプラットフォーム全体がウェブホスティングされているので、インストールの必要は無く、対応されているウェブブラウザを実行する如何なるデバイスからアクセスすることができます。
 
-## The PlayCanvas Workflow
+## PlayCanvasのワークフロー
 
-Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some JavaScript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
+PlayCanvasでの3Dウェブappの構築は簡単です。PlayCanvasを最大限に利用するには、コードを書く必要があります(ウェブの言語であるJavaScript)。しかし、PlayCanvasのツールセットは視覚的にプロジェクトを編集して簡単に公開できるよう設計されています。
 
-Let's take a look at the high level workflow:
+高レベルのワークフローを見てみましょう：
 
 <table class="table">
     <tr>
@@ -20,84 +20,84 @@ Let's take a look at the high level workflow:
             <img alt="Create artwork" width="320" src="/images/platform/workflow/workflow_art.jpg"></img>
         </td>
         <td>
-            <h2>1 - Create and Upload Assets</h2>
+            <h2>1 - アセットを作成してアップロード</h2>
             <ul>
-                <li>Generate 3D models using industry standard applications.</li>
-                <li>Export models to FBX.</li>
-                <li>Upload FBX to PlayCanvas using a simple drag and drop control.</li>
+                <li>業界標準のアプリケーションを使用して3Dモデルを生成。</li>
+                <li>FBXにモデルをエクスポート。</li>
+                <li>シンプルなドラッグ＆ドロップ操作でFBXをPlayCanvasにアップロード。</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td>
-            <img alt="Create game entities" width="320" src="/images/platform/workflow/workflow_design.jpg"></img>
+            <img alt="ゲームエンティティを作成" width="320" src="/images/platform/workflow/workflow_design.jpg"></img>
         </td>
         <td>
-            <h2>2 - Build Game Entities</h2>
+            <h2>2 - ゲームエンティティを構築</h2>
             <ul>
-                <li>Create game entities in PlayCanvas Editor.</li>
-                <li>Add components to determine an entity's behavior.</li>
-                <li>Set a component's attributes to fine tune an entity.</li>
-                <li>Preview your changes live in-game using a live link.</li>
+                <li>PlayCanvas Editorでゲームエンティティを作成。</li>
+                <li>コンポーネントを追加してエンティティの挙動を定義。</li>
+                <li>コンポーネントの属性を設定してエンティティを微調整。</li>
+                <li>ライブなリンクを使用して変更をゲーム内でライブプレビュー。</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td>
-            <img alt="Tag scripts on entities" width="320" src="/images/platform/workflow/workflow_scripting.jpg"></img>
+            <img alt="エンティティのスクリプトをタグ" width="320" src="/images/platform/workflow/workflow_scripting.jpg"></img>
         </td>
         <td>
-            <h2>3 - Script Game Entities</h2>
+            <h2>3 - スクリプトゲームエンティティ</h2>
             <ul>
-                <li>Tag any entity with modular scripts.</li>
-                <li>Edit scripts in the PlayCanvas in-browser code editor or work in your choice of editor via a local HTTP server.</li>
-                <li>Synchronize code with Github or Bitbucket.</li>
+                <li>モジュール式スクリプトを使用して如何なるエンティティをタグ。</li>
+                <li>PlayCanvasのブラウザ内コードエディタでスクリプトを編集、またはローカルのHTTP作成から任意のエディタを使用。</li>
+                <li>Github または Bitbucketでコードを同期</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td>
-            <img alt="Publish game" width="320" src="/images/platform/workflow/workflow_publish.jpg"></img>
+            <img alt="ゲームをパブリッシュ" width="320" src="/images/platform/workflow/workflow_publish.jpg"></img>
         </td>
         <td>
-            <h2>4 - Publish Game</h2>
+            <h2>4 - ゲームをパブリッシュ</h2>
             <ul>
-                <li>Export your game at any time.</li>
-                <li>Quickly publish your game to PlayCanvas' application servers.</li>
-                <li>Download your zipped exported game and host it on any web server.</li>
+                <li>いつでもゲームをエクスポートできます。</li>
+                <li>速やかにゲームをPlayCanvasアプリケーションサーバに公開。</li>
+                <li>エクスポートしたゲームのzipをダウンロードして任意のウェブサーバでホスティング。</li>
             </ul>
         </td>
     </tr>
 </table>
 
-## Assets
+## アセット
 
-Your projects are created and managed in the cloud by PlayCanvas. As you build your web app, you will want to start incorporating 3D assets (a car, a spaceship, an animated character, etc). The PlayCanvas Platform allows you to import assets that have been exported from just about any 3D content creation tool, including 3D Studio Max, Maya, SketchUp and Blender. Once these assets are imported into your asset library, you can quickly deploy them into your app.
+プロジェクトはPlayCanvasによりクラウドで管理されます。ウェブappを構築していくと3Dアセットの組み込みが必要になります(車、スペースシップ、アニメーションキャラクターなど)。PlayCanvasプラットフォームには、3D Studio Max, Maya, SketchUp, Blenderなどを含む、ほとんど全ての3Dコンテンツ作成ツールからエクスポートされたアセットをインポートできます。アセットライブラリにアセットをインポートした後は速やかにappにデプロイできます。
 
-The other major asset type in a PlayCanvas project is code. PlayCanvas offers the developer a wide variety of pre-baked functional components that can be bolted together to construct game entities. But it is possible to customize and extend the default behaviour of these components through the writing of scripts. For example, you might write a script that defines the handling of a vehicle or the AI of a non-player character. The code can be developed and served from a local web server or pulled from a linked repository hosted by BitBucket or GitHub.
+PlayCanvasプロジェクトで使用されるもう一方の主要なアセットタイプはコードです。PlayCanvasは、組み合わせてゲームエンティティを構築できる幅広い種類のプリベークされた機能性コンポーネントを提供します。スクリプトを書くことでこれらのコンポーネントのデフォルト挙動をカスタマイズおよび拡張することができます。例えば、車体の処理やプレイヤー以外のキャラクタのAIを定義するスクリプトを書くことができます。コードはローカルのウェブサーバから開発およびサーブすることできます。また、BitBucket又はGitHubがホスティングするリンクされたリポジトリからプルすることも可能です。
 
-## Publishing
+## パブリッシング
 
-Lastly, you will want to publish your PlayCanvas game. You have complete freedom and control over how and where your game is published. The options are:
+最後に、PlayCanvasゲームの公開を行います。公開の仕方や場所は自由に決めることができます。選択肢は次の通りです：
 
-* Publish to playcanvas.com with the click of a button.
-* Download your game as a zip archive. You can then host the game yourself or deploy it to mobile app stores or web portals such as the Chrome Web Store.
+* ボタン一つで playcanvas.comに公開
+* zipアーカイブとしてゲームをダウンロード。その後、自身でゲームをホスティングしてモバイルappストアやChrome Web Storeなどのウェブポータルへデプロイすることができます。
 
-Find out more in the [publishing][1] section.
+詳細は [パブリッシング][1]セクションでご確認ください。
 
-## Supported Browsers
+## 対応ブラウザ
 
-PlayCanvas was always designed to be plugin free, running natively in the browser. The client-side codebase is 100% JavaScript and built entirely on HTML5 and related APIs (such as WebGL). Why was this important?
+PlayCanvasは常にプラグイン不要で、ブラウザでネイティブに実行するよう設計されています。クライアント側のコードベースは100% JavaScriptでHTML5と関連API (WebGLなど)上に構築されています。この重要性を説明します。
 
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
+* モバイル/タブレット端末はプラグインのインストールを許可していません。HTML5の対応を改良し続けています。
+* PlayCanvasウェブappはプラグインインストールやプラグイン読み込み無しでシームレスに読み込まれます。
+* PlayCanvasウェブappはスタンダードな[DOM][2] エレメント(キャンバス)で実行されます。ぺー上での合成またはCSSでの変換が可能です。
+* いずれ変更される可能性のある外部パーティーのプラグイン技術に依存していません。ブラウザにのみ依存しています。
 
-So obviously this is all very good news, but you want your web app to run everywhere. Any device, any browser. At the time of writing, HTML5 continues to be adopted on more and more devices in more and more browsers. The browser requirements are currently as follows:
+ご覧の通り、理想的な特徴がそろっています。ウェブappは全てのデバイスやブラウザで実行できるべきです。HTML5はより多くの端末とブラウザで利用できるよう進化し続けています。現在のブラウザ必須条件は次の通りです：
 
 <table class="table table-striped table-bordered">
-    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
+    <tr><th>ブラウザ</th><th>バージョン</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
     <tr><td><a href="http://www.google.com/chrome/">Chrome</a></td><td>9.0+</td>
         <td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td></td>
     </tr>
@@ -115,7 +115,7 @@ So obviously this is all very good news, but you want your web app to run everyw
     </tr>
 </table>
 
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][3]. If you see a spinning cube, you are all set!
+ブラウザがWebGL(PlayCanvasを実行するのに必要)に対応しているか確認するには[このページ][3]を参照してください。回転するキューブが表示されれば、準備完了です！
 
 [1]: /user-manual/publishing
 [2]: /user-manual/glossary/#dom

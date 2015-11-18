@@ -1,5 +1,5 @@
 ---
-title: Collision and Triggers
+title: コリジョンとトリガー
 template: tutorial-page.tmpl.html
 ---
 
@@ -9,7 +9,7 @@ template: tutorial-page.tmpl.html
 
 This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Scene in full in the [Collision & Triggers Scene][1] in the [PlayCanvas Tutorials Project][2].
 
-## The Collision Component
+## コリジョンコンポーネント
 
 The *collision* component defines a shape which can be used either to trigger events if another Entity enters or exits it -- we call this a Trigger Volume -- or it can be used together with the *rigidbody* component to give an Entity physical properties in your game -- like a bouncing ball or a heavy crate.
 
@@ -24,19 +24,19 @@ The most important property of a *collision* component is it's **Type**, this de
 
 To create a Trigger Volume all we need to do is add a *collision* component to an Entity. In this tutorial we're adding a large box-shaped Trigger Volume underneath the slope to catch the falling bodies and reset their position.
 
-![Collisions & Triggers][3]
+![コリジョン＆トリガー][3]
 
 You can see the trigger volume underneath the ramp displayed as a blue outline.
 
-### Rigid Bodies
+### リジッドボディ
 
 A rigid body is a physical presence in your game world. You can set it up with real physics properties like Mass and Friction; it will collide with other rigid bodies and respond in a realistic manner.
 
 To create a rigid body in your Scene, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
 
-![rigidbody component][4]
+![リジッドボディコンポーネント][4]
 
-For details on each property take a look at the [*rigidbody* documentation][5].
+各プロパティの詳細は[*リジッドボディ* ドキュメント][5]をご確認ください。
 
 For this demo, the important property is the **Type**. You can pick one of three options:
 
@@ -44,19 +44,19 @@ For this demo, the important property is the **Type**. You can pick one of three
 * **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
 * **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
-## Setting up the ground
+## 地面の設定
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-![Ground Entity][6]
+![地面エンティティ][6]
 
 You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
-## Setting up the trigger
+## トリガーの設定
 
-The next Entity we'll need is the trigger.
+次に必要なエンティティはトリガーです。
 
-![Trigger Entity][7]
+![トリガーエンティティ][7]
 
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
@@ -75,7 +75,7 @@ pc.script.create("trigger", function (app) {
         },
 
         onTriggerEnter: function (entity) {
-            // Reset back to roughly the position the entity started in.
+            // エンティティが最初に開始した大体の位置にリセット。
             var position = entity.getPosition();
             entity.setPosition(position.x, 10, 0);
 
@@ -103,11 +103,11 @@ The second part of this code is the function which handles the event, ```onTrigg
 
 In this case, when the trigger is fired, we reset the penetrating Entity back up to the position it started in, and reset its velocities.
 
-## The Rigid Bodies
+## リジッドボディ
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-![Box Entity][9]
+![ボックスエンティティ][9]
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 

@@ -1,11 +1,11 @@
 ---
-title: Create a light
-keywords: component, light, sun, shadows, directional, spot, point
+title: ライトの作成
+keywords: コンポーネント, ライト, 太陽, 影, 指向性, スポット, ポイント
 ---
 
-## How do I create a light?
+## ライトを作成するには？
 
-You can create a light by adding a **Light** component to an Entity. You can also right click on an Entity and select New Entity / Directional Light to create a new directional light and similarly for spot lights and point lights.
+エンティティに**Light** コンポーネントを追加することでライトを作成できます。エンティティを右クリックしてNew Entity / Directional Lightを選択することで新規の指向性ライトを作成することができます。スポットライトやポイントライトも同様です。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/light/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/light/" target="_blank">ユーザーマニュアルを参照</a>
 

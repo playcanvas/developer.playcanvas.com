@@ -1,85 +1,85 @@
 ---
-title: Manipulating Entities
+title: エンティティの操作
 template: tutorial-page.tmpl.html
 ---
 
-In this tutorial we'll show you how you can change an Entity's position, orientation and scale.
+このチュートリアルではエンティティの位置、方向、尺度を変更する方法を紹介します。
 
-Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be a point in space.
+エンティティはPlayCanvasフレームワークを使用して構築されたほとんどのアプリケーションの基礎を形成します。エンティティは、プレイヤキャラクター、銃弾、敵、または単に空間内の点を表すことができます。
 
-Entities are a special form of graph node, they inherit a lot of their behavior from `pc.GraphNode`. All the manipulations we apply below can also be applied to graph nodes.
+エンティティは特殊な形態のグラフノードです。`pc.GraphNode`から挙動の多くを継承します。以下で適用されるすべての操作はグラフノードにも適用することができます。
 
-One of the most common operations you will need to perform on Entities is to change its transform matrix. The local transform property of the Entity determines the position, orientation and scale of the Entity and affects all child Entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
+エンティティに実行する最も一般的な操作の1つは、変換行列の変更です。エンティティのローカル変換プロパティはエンティティの位置、方向及び尺度を決定し、同様にすべての子エンティティに影響を与えます。変換の操作方法を覚えるのは、インタラクティブなアプリケーションを作るために重要です。
 
-### Local and World Co-ordinates
+### ローカル及びワールド座標
 
 An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
 
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*World and Local co-ordinate systems*
+*ワールドとローカルの座標システム*
 <br />
 
-### Hierarchy
+### 階層
 
 An important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will be `(1,1,0)`
 
-## Position
+## 位置
 
-Getting the position of the entity is straightforward
+エンティティの位置を取得するのは簡単です
 
 ~~~js~~~
-// Get the entity's position relative to the coordinate system of the entity's parent
+// エンティティの親の座標システムに関連したエンティティの位置を取得
 var lp = entity.getLocalPosition();
 
-// Get the entity's position in world space
+// ワールド空間でエンティティの位置を取得
 var wp = entity.getPosition();
 ~~~
 
-These methods both return a `pc.Vec3` (a vector quantity in the array form [x,y,z]).
+これらのメソッドはどちらも`pc.Vec3`(配列形式[x,y,z]のベクトル量) を返します。
 
-Setting the position of an entity is just as straightforward.
+エンティティの位置の設定は同じように簡単です。
 
 ~~~js~~~
-// Set the entity's position relative to the coordinate system of the entity's parent
+// エンティティの親の座標系に関連させて、エンティティの位置を設定します
 entity.setLocalPosition(x, y, z);
 
-// Set the entity's position in world space
+// ワールド空間内にエンティティの位置を設定します
 entity.setPosition(x, y, z);
 ~~~
 
-### Moving the entity
+### エンティティを動かす
 
-To move the Entity you can add to the Entity's position or you can use the helper functions translate and translateLocal.
+エンティティを移動するには、エンティティの位置を追加するか、translate と translateLocalのヘルパー関数を使用します。
 
 ~~~js~~~
-// Translate the entity 1 unit down the positive x axis of world space
+// エンティティをワールド空間の正のX軸から1単位下に移す
 entity.translate(1, 0, 0);
 
-// Translate the entity 1 unit down the entity's local z axis
+// エンティティをエンティティのローカルz軸から1単位下に移す
 entity.translateLocal(0, 0, 1);
 ~~~
 
-## Orientation
+## 方向付け
 
-To set an Entity's orientation you can either set an absolute rotation, or apply an incremental rotation.
+エンティティの方向を設定するには、絶対的な回転を設定するか、インクリメンタルな回転を適用します。
 
 Setting absolute rotations can be done using either [Euler angles][1] or [quaternions][2]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
 
-** Euler Angles **
+** オイラー角 **
 
 * Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
 * If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
 * Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
-** Quaternions **
+** 4元数 **
 
 * Quaternions are stored as 4 numbers and represent any orientation in 3D space.
 * They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
 * Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
 
-When scripting entities, it is more likely that you will set an Entity's rotation using Euler angles. For example:
+エンティティをスクリプトする場合、オイラー角を使用してエンティティの回転を設定する可能性が高いです。 例えば：
 
 ~~~js~~~
 // Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
@@ -93,50 +93,50 @@ entity.setEulerAngles(30, 45, 60);
 However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ~~~js~~~
-// Create an identity rotation
+// アイデンティティ回転を作成
 var q = new pc.Quat();
-// Set the entity to have the same rotation as its parent - equivalent to
+// エンティティが同じ回転を持つように設定。次と同じ：
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);
 
-// Set the entity to have no rotation with respect to the world space coordinate
-// system  - equivalent to entity.setEulerAngles(0, 0, 0)
+// エンティティがワールド空間座標システムに関連する回転を
+// 持たないよう設定。entity.setEulerAngles(0, 0, 0)と同じ。
 entity.setRotation(q);
 ~~~
 
-To rotate an Entity incrementally, you can use rotate to rotate the Entity with respect to world space axes or rotateLocal to rotate with respect to the Entity's current axes.
+インクリメンタルにエンティティを回転するには、rotateを使用してエンティティをワールド空間軸に関連させて回転させるか、rotateLocalを使用してエンティティの現在の軸に関連させて回転させます。
 
-For example, to rotate an Entity by 180 degrees around the world up axis:
+例えば、ワールド上軸の周りに180度エンティティを回転させるには：
 
 ~~~js~~~
 entity.rotate(0, 180, 0);
 ~~~
 
-Or to rotate the Entity 90 degrees around its local x axis do:
+または、ローカルX軸の周りにエンティティを90度回転させるには：
 
 ~~~js~~~
 entity.rotateLocal(90, 0, 0);
 ~~~
 
-## Scale
+## スケール
 
-To scale an Entity you simply need to call the following function:
+エンティティを拡大縮小するには次の関数を呼び出します：
 
 ~~~js~~~
-// Scale the entity by a factor of 2 in the local Y axis
+// ローカルY軸でエンティティを2の倍数でスケール
 entity.setLocalScale(1, 2, 1);
 ~~~
 
-And here is a slightly more interesting example:
+もう少し興味深い例を紹介します：
 
 ~~~js~~~
-// Scale the entity using a sine function over time
+// 時間上でsine関数を使用してエンティティをスケール
 this.timer += deltaTime;
 var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);
 ~~~
 
-Note that you cannot currently set the Entity's scale in world space.
+現在、ワールド空間でエンティティのスケールを設定することはできません。
 
 [1]: http://en.wikipedia.org/wiki/Euler_angles
 [2]: http://en.wikipedia.org/wiki/Quaternion

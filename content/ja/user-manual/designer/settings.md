@@ -1,10 +1,10 @@
 ---
-title: Settings
+title: 設定
 template: usermanual-page.tmpl.html
 position: 8
 ---
 
-## Settings
+## 設定
 
 The Settings panel lets you to set up global properties for your scene. The properties that are settable are:
 
@@ -29,17 +29,17 @@ The Settings panel lets you to set up global properties for your scene. The prop
 
 The settings panel is accessed using the <img src="/images/user-manual/cog.jpg" style="text-align: middle;" /> button in the bottom right of the Editor.
 
-## Physics Settings
+## 物理の設定
 
 Physics settings affect the simulation of all the rigid body components in your scene.
 
-### Gravity
+### 重力
 
 Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g).
 
-## Environment
+## 環境
 
-Environment settings effect the geometry in your scene.
+環境設定は、シーン内のジオメトリに影響を与えます。
 
 ### Global Ambient Color
 
@@ -47,7 +47,7 @@ The color of the scene's ambient light source. PlayCanvas allows you to create d
 
 Note, if you are using a Skybox and Physical Materials the Ambient Color has no effect.
 
-### Skybox
+### スカイボックス
 
 The Skybox is a [cubemap][1] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
 
@@ -55,17 +55,17 @@ To add a skybox, create a cubemap asset and then assign it to the cubemap slot i
 
 Note, if you are using a Prefiltered Cubemap, the skybox will be used as the default environment map for all Physical materials.
 
-### Skybox Intensity
+### スカイボックスの強度
 
 This is a slider that controls the intensity or brightness of the skybox. The value can range from 0 (totally black) to 32 (brightest).
 
-### Skybox Mip
+###スカイボックス Mip
 
 When using a Prefiltered Skybox, you can select the skybox mip that you want to display. Each mip is a more blurred version of the original Skybox. You can use this to show a more blurred / abstract version of your original Skybox for example for artistic purposes.
 
-## Camera
+## カメラ
 
-### Tonemapping
+### トーンマッピング
 
 Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tonemapping.
 
@@ -76,11 +76,11 @@ Linear tonemapping is active by default, it's simply (color * exposure). You can
 
 Filmic tonemapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tonemapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tonemapping gives you nice abilities to get rid of such spots.
 
-### Exposure
+### 露出
 
-The exposure value tweaks the overall brightness of the scene.
+露出値はシーン全体の明るさを微調整します。
 
-### Gamma Correction
+### ガンマの調整
 
 Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then the fully lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. The following image shows a simple scene with a sphere. On the left the scene has been gamma corrected while on the right, the scene is uncorrected.
 
@@ -88,28 +88,28 @@ Computer screens are set up to output not physically linear, but perceptually li
 
 To find out more about gamma correction, read [this GPU Gems chapter][2].
 
-## Fog
+## Fog（霧）
 
-### Type
+### タイプ
 
 The Fog Type property can be used to control an approximation of an ambient fog in your scene. Here is an example of fog being enabled:
 
-The types available are as follows:
+利用可能なタイプ：
 
 * None - Fog is disabled
 * Linear - Fog fades in linearly between a Fog Start and Fog End distance
 * Exp - Fog fades in from the view position according to an exponential function
 * Exp2 - Fog fades in from the view position according to an exponential squared function
 
-### Color
+### 色
 
 The color of the fog. This color is blended with a surface's color more as the fog fades in.
 
-### Start Distance
+### 開始距離
 
 The distance in scene units from the viewpoint from where the fog starts to fade in.
 
-### End Distance
+### 終了距離
 
 The distance in scene units from the viewpoint from where the fog reaches a maximum. Any objects beyond this distance will be rendered with the fog color.
 
@@ -117,7 +117,7 @@ The distance in scene units from the viewpoint from where the fog reaches a maxi
 
 The fog density controls the rate at which fog fades in for Exp and Exp2 fog types. Larger values cause fog to fade in more quickly. Fog density must be a positive number.
 
-## Loading Screen (Available for ORG users only)
+ロード画面（ORGのユーザーのみ利用可能）
 
 Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][3].
 

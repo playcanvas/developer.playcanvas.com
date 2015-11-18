@@ -1,12 +1,12 @@
 ---
-title: Account
+title: Учетная запись
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-The Account tab lets you edit your global profile settings. From here you can control your account and billing info and see your cloud storage use.
+Вкладка «Учетная запись» позволяет редактировать настройки вашего глобального профиля. Здесь же вы можете контролировать вашу учетную запись, биллинг, а также использование вами облачного пространства. 
 
 ![account_page][1]
 
-[1]: /images/platform/account.png "Account"
+[1]: /images/platform/account.png "Учетная запись"
 

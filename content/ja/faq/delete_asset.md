@@ -1,9 +1,9 @@
 ---
-title: Delete an asset
-keywords: asset, delete, remove
+title: アセットの削除
+keywords: アセット, 削除, 除去
 ---
 
-## How do I delete an asset?
+## アセットを削除するには？
 
-To delete an asset select it and press **Delete** or right click on it and select Delete.
+アセットを削除するには、選択をしてから**Delete**を押すか、右クリックをしてDeleteを選択します。
 

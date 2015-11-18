@@ -1,21 +1,21 @@
 ---
-title: Video Textures
+title: 動画テクスチャー
 template: tutorial-page.tmpl.html
 position: 5
 ---
 
 <iframe src="http://playcanv.as/p/NQ2f87MT"></iframe>
 
-Try it from the Editor in the [tutorial project.][1]
+[チュートリアルプロジェクト][1]のEditorからお試しください。
 
-This project creates a texture and runtime, downloads and plays a video file and renders the video into the texture. This texture is then applied to a model and used in the scene.
+このプロジェクトは、テクスチャとランタイムを作成し、動画ファイルをダウンロード及び再生し、テクスチャーに動画をレンダリングします。このテクスチャはモデルに適用され、シーンで使用されます。
 
-This script performs the following functions:
+スクリプトは次の機能を行います：
 
-* Create new Texture
-* Create an HTML Video element and play the video
-* Apply the new texture to the material on the TV model
-* Update the texture with video data every frame
+* 新しいテクスチャーを作成
+* HTML動画要素を作成して動画を再生
+* TVモデルの素材に新しいテクスチャーを適用
+* 毎フレームにて動画データでテクスチャーを更新
 
 ~~~javascript~~~
 pc.script.attribute('materials', 'asset', [], {
@@ -24,14 +24,14 @@ pc.script.attribute('materials', 'asset', [], {
 pc.script.attribute('videoUrl', 'string', "");
 
 pc.script.create('videotexture', function (app) {
-    // Creates a new Videotexture instance
+    // 新規のVideotextureインスタンスを作成
     var Videotexture = function (entity) {
         this.entity = entity;
     };
 
     Videotexture.prototype = {
         initialize: function () {
-            // Create a texture to hold the video frame data
+            // 動画フレームデータを保管するテクスチャーを作成
             var videoTexture = new pc.Texture(app.graphicsDevice, {
                 format: pc.PIXELFORMAT_R5_G6_B5,
                 autoMipmap: false
@@ -41,7 +41,7 @@ pc.script.create('videotexture', function (app) {
             videoTexture.addressU = pc.ADDRESS_CLAMP_TO_EDGE;
             videoTexture.addressV = pc.ADDRESS_CLAMP_TO_EDGE;
 
-            // Create HTML Video Element to play the video
+            // 動画を再生するHTML 動画要素を作成
             var video = document.createElement('video');
             video.addEventListener('canplay', function (e) {
                 videoTexture.setSource(video);
@@ -51,8 +51,8 @@ pc.script.create('videotexture', function (app) {
             video.loop = true;
             video.play();
 
-            // Get the material that we want to play the video on and assign the new video
-            // texture to it.
+            // 動画を再生させたい素材を取り、新しい動画テクスチャーを
+            // 割り当てる
             for (var i = 0; i < this.materials.length; i++) {
                 var material = app.assets.get(this.materials[i]).resource;
                 material.emissiveMap = videoTexture;
@@ -65,7 +65,7 @@ pc.script.create('videotexture', function (app) {
         },
 
         update: function (dt) {
-            // Upload the video data to the texture every other frame
+            // ひとつおきのフレームのテクスチャーに動画データをアップロード
             this.upload = !this.upload;
             if (this.upload) {
                 this.videoTexture.upload();

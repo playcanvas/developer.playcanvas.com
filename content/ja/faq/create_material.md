@@ -1,13 +1,13 @@
 ---
-title: Create a material
-keywords: asset, material, create, color, surface, normal, specular, reflection, phong, pbr, physical
+title: 素材を作成
+keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュラ, 反射, フォン, pbr, 物理
 ---
 
-## How do I create a material?
+## 素材を作成するには？
 
-Every surface on a 3D model is rendered using a **material**. The material defines the properties of that surface, such as its color, shininess, bumpiness etc.
+3Dモデルの全ての表面は**素材**を使ってレンダリングされます。素材は、その表面の色、光沢、平滑度などのプロパティを定義します。
 
-To create a material click on the **<span class="font-icon">&#57632;</span> Add** button in the Assets panel and then select **New Material**.
+素材を作成するにはアセットパネルの**<span class="font-icon">&#57632;</span> Add** ボタンをクリックして、**New Material**を選択します。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">ユーザーマニュアルを参照</a>
 

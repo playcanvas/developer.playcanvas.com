@@ -1,36 +1,36 @@
 ---
-title: Particles
+title: パーティクル
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-PlayCanvas provides comprehensive support for creating and editing particle systems.
+PlayCanvasはパーティクルシステムの作成と編集のための包括的なサポートを提供します。
 
-## What is a Particle System?
+## パーティクルシステムとは？
 
-A particle system is a simulation that manages many independently moving particles. They can be used to approxmiate a huge number of effects such as rain, snow, smoke, fire and so on.
+パーティクルシステムは、多数の独立して移動するパーティクルを管理するシミュレーションです。雨、雪、煙、火などの膨大な数のエフェクトをまとめるために使用できます。
 
-Note that particles are not physically simulated. They do not interact or collide with each other. They will pass through surfaces in your scene.
+パーティクルは物理的にシミュレーションされません。互いにインタラクトや衝突することはありません。シーンの表面を通り抜けます。
 
-## Creating a Particle System
+## パーティクルシステムの作成
 
-In the Editor's 3D View, a unselected particle system is represented with the following icon:
+Editor's 3Dビューでは、選択されていないパーティクルシステムは次のアイコンで表されます：
 
-![Particle system icon][1]
+![パーティクルシステムアイコン][1]
 
-To create a new particle system, simply create a new entity and add a particle system component to it. For convenience, the Editor menu has an item that does this in a single step:
+新しいパーティクルシステムを作成するには、新規エンティティを作成してパーティクルシステムコンポーネントを追加します。Editorメニューには、これをワンステップで行うためのアイテムが設置されています：
 
-![Particle system creation][2]
+![パーティクルシステムの作成][2]
 
-Note that your particle system does not play in the Editor's 3D view. To see your particle system animate, you must run your game by hitting the Launch button. A newly created particle system with the default settings looks like this:
+パーティクルシステムは、エディタの3Dビューでは再生されません。パーティクルシステムのアニメーションを表示するには、Launchボタンを押してゲームを実行する必要があります。新規に作成されたデフォルト設定のパーティクルシステムは次のようになります：
 
-![Default particle system][3]
+![デフォルトのパーティクルシステム][3]
 
-To configure the particle system via the particle system component interface, consult the reference [here][4].
+パーティクルシステムコンポーネントのインタフェースからパーティクルシステムを構成する場合は[こちら][4]を参照してください。
 
-## Triggering a Particle System in Script
+## スクリプトでパーティクルシステムをトリガー
 
-Sometimes, you might want a particle system to play in response to some event or at a particular time. For example, an explosion should play when a missile reaches its target. To do this, ensure that the Autoplay option is disabled for your particle system. Then, attach a script component to your particle system entity. The following two lines will start (or restart) a particle sytem:
+パーティクルシステムをイベントまたは特定の時間に反応して再生させたい場合もあります。例えば、ミサイルが目標に到達したときには爆発が再生されるべきです。これを行うには、パーティクルシステムでAutoplayオプションが無効になっている必要があります。次に、パーティクルシステムのエンティティにスクリプトコンポーネントを添付します。次の2行がパーティクルシステムを起動(または再起動)します：
 
 ~~~js~~~
 this.entity.particlesystem.reset();

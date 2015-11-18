@@ -1,12 +1,12 @@
 ---
-title: Home
+title: Главная
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The Home tab lists the latest posts of PlayCanvas users. Here you can also check out your recent activity.
+Во вкладке «Главная» выводится список последних сообщений пользователей PlayCanvas. Также здесь вы можете посмотреть вашу недавнюю активность.
 
 ![home_page][1]
 
-[1]: /images/platform/home.png "Home"
+[1]: /images/platform/home.png "Главная"
 

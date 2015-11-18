@@ -1,66 +1,66 @@
 ---
-title: Cube Maps
+title: キューブマップ
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-Cube maps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
+キューブマップは特別な種類のテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：
 
-1. A cube map can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cube map can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cube map as the cube map on a reflective object's materials.
+1.キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルイメージが含まれます。
+2.キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
 
 <iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
 
-## Importing Cube Map Textures
+## キューブマップテクスチャーのインポート
 
-A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Editor. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
+キューブマップは、入力として6つのテクスチャアセットを必要とするアセットです。そのため、新しいキューブマップアセットを構成するためには、まずプロジェクトに6つの画像をインポートする必要があります。これを行うには、PlayCanvasエディタを実行しているブラウザのタブに、ファイルシステムから6つの画像をドラッグします。アップロードされ、処理されると、画像がアセットエクスプローラに表示され、キューブマップアセットに割り当てる準備ができます。
 
-## Creating New Cube Map
+## 新しいキューブマップを作成
 
-You can create new cube map assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
+PlayCanvas Editorインターフェイスから直接キューブマップアセットを作成することができます。アセットパネルのCreate Assetメニューを使用してください。
 
 <img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px" />
 
-This creates a new cube map Asset and opens up the Cube Map Editor on the right-hand side of the screen.
+これにより新規のキューブマップアセットが作成され、画面の右側にCube Map Editorを開きます。
 
-## Selecting a Cube Map
+## キューブマップを選択
 
-To select a cube map in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cube map filter to narrow down the options for selection. Cube maps are identified by a 3D cube icon.
+キューブマップを編集するために選択するには、アセットパネルで選択します。最も簡単な方法はキューブマップフィルタを選択して選択肢のオプションを絞ることです。キューブマップは、3Dのキューブアイコンで見分けます。
 
-When a cube map is selected, the Editor panel on the right of the Editor will show the Cube Map Editor.
+キューブマップを選択するとEditorの右側のEditorパネルにCube Map Editorが表示されます。
 
-## Editing a Cube Map
+## キューブマップを編集
 
 <img src="/images/user-manual/cubemap-inspector.jpg" style="width: 300px; float: left; padding: 20px; padding-top: 0px;" />
 
-Once you have a cube map selected, you can edit its properties.
+キューブマップを選択してそのプロパティを編集できます。
 
 ### Min Filter
-This setting determines how the pixels of the cube maps are interpolated as they are minified. Minification is when the texel to screen pixel ratio is greater than one. Linear gives the best results visually, followed by Nearest.
+この設定では、キューブマップが縮小される際にピクセルが補間される方法を定義します。縮小とは、テクセルと画面のピクセル比が1より大きい状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
 
 ### Mip Filter
-This setting controls additional controls to improve the quality of a cube map as it is minified. Linear gives the best results visually, followed by Nearest and then None.
+この設定では、キューブマップが縮小される際にその品質を改善する追加のコントロールを提供します。Linearが視覚的に最適です。次に適しているのはNearestです。
 
 ### Mag Filter
-This setting determines how the pixels of the cube maps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+この設定では、キューブマップが拡大される際にピクセルが補間される方法を定義します。拡大とは、テクセル対画面のピクセル比が1より少ない状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
 
 ### Anisotropy
-Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
+Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面により密接に合わせられるにつれて、テクスチャサンプリングの品質を制御できる1と16の間の値です。
 
 ### Texture Slots
-The six texture assets that correspond to the faces of a cube. The cube map preview panel at the top of the editor if your guide, helping you to connect faces together correctly. Think of the preview as a box unfolded to a flat plane.
+キューブの各面に対応する6つのテクスチャーアセット。エディタの上部にあるキューブマップのプレビューパネルがガイドとなり、各面を正しく接続できるようにします。プレビューはボックスを展開して平面にしたようなものです。
 
-### Prefilter
+### プレフィルタ
 
-The cube map inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cube map is essential for using the Physical material.
+キューブマップインスペクタには、低解像度のフィルタリングされたテクスチャーのセットを生成するプレフィルタのボタンがあります。これらは物理的素材の環境マップで使用されます。物理的な素材を使用する際、キューブマップのプレフィルタリングは不可欠です。
 
-## Assigning Cube Maps to Materials
+## 素材にキューブマップを割り当てる
 
-The default Phong and Physical material types both have reflection properties. If you expand the Environment property section, you see the following:
+デフォルトのフォンと物理素材の種類はどちらも反射プロパティを持ちます。Environmentプロパティセクションを展開すると、次が表示されます：
 
 <img src="/images/user-manual/material-environment.jpg" style="width: 300px;"/>
 
-You can click the Empty slot to select a cube map or drag and drop a cube map asset from the asset panel into the cube map slot.
+Emptyスロットをクリックしてキューブマップを選択するか、アセットパネルからキューブマップスロットにキューブマップアセットをドラッグ＆ドロップすることができます。
 
-Note: a Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
+補足：物理素材が割り当てられ、プレフィルタされる場合は、デフォルトの環境マップとしてシーンのスカイボックスを使用します。
 

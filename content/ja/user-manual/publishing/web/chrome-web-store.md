@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-## Publishing to the Chrome Web Store
+## Chrome Web Storeに公開
 
 If you're building HTML5 games, chances are that you want as many people to play your game as possible and, in an ideal world, you'll make some money in the process. Monetization on the web is harder than it is on mobile app stores, where payment processing is standardised and credit card details are stored. But there are still a number of options. One great platform you should consider for your game is the <a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a>.
 
@@ -12,9 +12,9 @@ If you're building HTML5 games, chances are that you want as many people to play
 
 It's a carefully curated app store for the desktop version of Chrome (available on Win, Mac, Linux and Chrome OS). Publishing your game here will expose it to a wider audience and offer you a simple mechanism for taking payments. Let's step through the process for publishing a free game.
 
-Google lets you publish your game in two forms: as a hosted app or a packaged app.
+Googleでは、ホスティングされたappまたはパッケージ化されたappの2つの方法でゲームを公開することができます。
 
-## Creating a Hosted App
+## ホスティングされたappを作成
 
 Hosted apps are essentially vanilla websites with a little extra metadata. Why are hosted apps good?
 
@@ -25,7 +25,7 @@ So this sounds great. More people will be installing and playing your game.
 
 To get started, hit the cog icon at the top right of the landing page for the Chrome Web Store and select Developer Dashboard. Sign in and click the button labelled 'Add New Item'.
 
-Here's a little checklist of things that you'll need to publish a hosted app:
+ホスティングされたappを公開するために必要な事項のチェックリスト：
 
 * A zip file containing a manifest and a 128×128 icon for your game. Google supplies a reference for the manifest file format and guidelines for creating icons (and other images related to your submission).
 * A description for your game. Make it fun and exciting! Remember, you're trying to persuade somebody to install your game so make it sound amazing.
@@ -35,9 +35,9 @@ Here's a little checklist of things that you'll need to publish a hosted app:
 
 There are a few other options that cover Google Analytics, game category, regions where your game will be listed and so on. When you're done, hit 'Publish'. Note that Google spends a little time (no longer than 60 minutes but should be much faster) to scan your upload before it is made live in the store.
 
-## Creating a Packaged App
+## パッケージされたAppの作成
 
-So hosted apps are great, but they have some problems:
+ホスティングされたappにはいくつかの問題もあります：
 
 * Users may think you've been lazy! 'Hey! This is just a link to their web-site! Grrr!'. Users expect a little more from something that is being installed to their browser.
 * Hosted apps won't run offline (unless you make clever use of the browser's local storage).
@@ -46,17 +46,17 @@ So hosted apps are great, but they have some problems:
 
 Enter packaged apps! These are essentially apps that are fully installed to Chrome, can run offline and launch in there own window minus Chrome's browser decoration (although this can be added if you wish). And because they're loaded from local storage, they start up extremely quickly.
 
-PlayCanvas has also published an example of a packaged app in the Chrome Web Store. It's a game called SWOOOP:
+PlayCanvasはChrome Web Storeでパッケージ化されたappの例を公開しています。SWOOOPというゲームです。
 
 <img alt="SWOOOP" src="/images/publishing/swooop.png">
 
-Check it out for yourself <a href="https://chrome.google.com/webstore/detail/swooop/jblimahfbhdcengjfbdpdngcfcghladf" target="_blank">here</a>.
+<a href="https://chrome.google.com/webstore/detail/swooop/jblimahfbhdcengjfbdpdngcfcghladf" target="_blank">こちらから</a>自身でご確認できます。
 
 Generating a packaged app from a PlayCanvas game takes a little more effort than a hosted app. Here's a run down of the steps required to package and publish a game like SWOOOP:
 
-* Download an export of your game from the Publish tab of the Project Dashboard.
-* Unzip the contents.
-* Create a manifest.json file . For SWOOOP, it looks like this:
+* プロジェクトダッシュボードのPublishタブから、ゲームのエクスポートをダウンロード
+*コンテンツを解凍
+* manifest.jsonファイルを作成。 SWOOOPの場合、次のようになります：
 
 ~~~javascript~~~
 {
@@ -72,7 +72,7 @@ Generating a packaged app from a PlayCanvas game takes a little more effort than
 }
 ~~~
 
-* Create background.js that contains the following to configure how the game is launched:
+* ゲームの起動方法を設定するために以下が含まれているbackground.jsを作成します：
 
 ~~~javascript~~~
 chrome.app.runtime.onLaunched.addListener(function() {

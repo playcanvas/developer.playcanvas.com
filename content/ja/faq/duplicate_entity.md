@@ -1,11 +1,11 @@
 ---
-title: Duplicate an Entity
-keywords: entity, duplicate, copy, paste
+title: エンティティの複製
+keywords: エンティティ, 複製, コピー, ペースト
 ---
 
-## How do I duplicate an Entity?
+## エンティティを複製するには？
 
-To duplicate an Entity use the <span class="font-icon">&#57638;</span> Duplicate button in the Hierarchy panel or press **Ctrl+D**.
+エンティティを複製するには階層パネルの <span class="font-icon">&#57638;</span> Duplicate ボタンを使用するか、**Ctrl+D**を押します。
 
-You can also copy and paste an Entity. To copy press **Ctrl+C** and to paste **Ctrl+V**.
+エンティティをコピー＆ペーストすることもできます。コピーするには**Ctrl+C**、ペーストするには**Ctrl+V**を押します。
 

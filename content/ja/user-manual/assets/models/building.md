@@ -1,5 +1,5 @@
 ---
-title: Building Models
+title: モデルの構築
 template: usermanual-page.tmpl.html
 skip: false
 ---
@@ -13,7 +13,7 @@ Some modelling and animation programs to consider:
 * Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
 * Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
-\* *this program can create animations too.*
+\* *このプログラムはアニメーションも作成できます*
 
 For generating textures, consider these programs:
 * Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
@@ -34,18 +34,18 @@ Regardless which modelling application you are using, there a number of things t
 
 ## Blender
 
-![Blender Logo][3]
+![Blender ロゴ][3]
 
 [Blender][4] is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
 
 Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
 
-### **Map Types**
+### **マップの種類**
 
 As of Blender 2.71 both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit. Or right-click the model and select 'Edit Material'.
 
-### **Embedding Textures**
-Embedded Textures make importing much easier.
+### **テクスチャーの組み込み**
+テクスチャーを組み込むとインポートが簡単になります。
 
 The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
 
@@ -57,13 +57,13 @@ Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Ble
 Note: there seems to be an issue with Blender 2.71's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
 </div>
 
-### **Animations**
+### **アニメーション**
 
-As of Blender 2.71:
+Blender 2.71の場合：
 
 Animations included within the blend file are exported with the default fbx exporter settings and are compatible with the PlayCanvas asset import pipeline. Note that for multiple animations for the same model you will need to upload multiple fbx files - one for each animation. To save memory you can delete models and textures from the blend file before exporting, choose to export only armatures in the fbx exporter settings, or simply delete the duplicate 'model' target assets from the assets page on your project dashboard (select 'target' from the drop-down menu on the assets page to view target assets).
 
-### **Learning Blender**
+### **Blenderについて**
 
 There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
 
@@ -80,13 +80,13 @@ To see a practical example of some PlayCanvas content being creation in Max, che
 
 You should now have a better feel for how PlayCanvas interprets your 3DS Max scenes. However, let's now look at what is and what isn't supported in a little more detail.
 
-### Materials
+### 素材
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
-![Sphere map][7]
+![スフィアマップ][7]
 
-### Supported Map Slots
+### 対応しているマップスロット
 
 PlayCanvas interprets a subset of the 3DS Max material map types on export. Note that maps can be in any format that 3DS Max supports, but if the maps are not in a web format (namely JPEG, GIF or PNG) then they will be converted to these formats on export.
 
@@ -124,7 +124,7 @@ Assigning a Normal Bump map to this slot enables normal mapping. Note that, by d
 
 There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
 
-![Normal map][8]
+![法線マップ][8]
 
 Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
 
@@ -134,11 +134,11 @@ Now, lighting in PlayCanvas will be consistent.
 
 If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
 
-** Reflection **
+** 反射 **
 
 Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
 
-![Sphere map][10]
+![スフィアマップ][10]
 
 Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
 
@@ -146,11 +146,11 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 ## Autodesk Maya
 
-### Materials
+### 素材
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
-![Sphere map][11]
+![スフィアマップ][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: http://cgcookie.com/blender/

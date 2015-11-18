@@ -1,5 +1,5 @@
 ---
-title: Forces and Impulses
+title: ForceとImpulse
 template: tutorial-page.tmpl.html
 
 ---
@@ -47,15 +47,15 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ~~~
 Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][5]. This was not used in the code for the above demo.
 
-##Moving dynamic rigidbodies
+##動的なリジッドボディの移動
 
 In order to move rigidbodies, you apply linear forces and rotational forces (torque) using the methods above. Usually you should try to avoid directly modifying the position or velocity of a rigidbody as this will override the simulation and it can lead to odd effects, especially when objects collide.
 
 However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][6]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`. You can also override the position or orientation using the usual [Entity methods][7], but you must then update the rigidbody simulation from the Entity using [`entity.rigidbody.syncEntityToBody()`][7].
 
-For more information on rigidbody types, see [the collision API page][8], [the pc.fw API page][9], [the fps-controller tutorial][11] and [the collision tutorial][10].
+リジッドボディタイプに関する商大は[コリジョン API ページ][8], [pc.fw API ページ][9], [fps-コントローラチュートリアル][11], [コリジョンチュートリアル][10]をご確認ください。
 
-##General setup
+##一般的な設定
 
 We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][12].
 

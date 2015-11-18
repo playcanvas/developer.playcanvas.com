@@ -4,55 +4,55 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Components define behaviours that are attached to Entities. An Entity is a container for Components.
+コンポーネントはエンティティに添付されている挙動を定義します。エンティティはコンポーネントのコンテナです。
 
-There are many different Components defined in the PlayCanvas Engine. You can add a Component to an Entity using the PlayCanvas Editor. The properties exposed by Components are listed in the Attribute Editor when you select an Entity.
+PlayCanvas Engineで定義されるコンポーネントは沢山あります。PlayCanvas Editorを使用してエンティティにコンポーネントを追加することができます。コンポーネントにより露出されるプロパティはエンティティ選択時にAttribute Editorでリスト表示されます。
 
 <table class="table table-striped">
     <tbody>
         <tr>
-            <th>Component</th>
-            <th>Description</th>
+            <th>コンポーネント</th>
+            <th>説明</th>
         </tr>
     <tr>
         <td>[Animation][1]</td>
-        <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
+        <td>エンティティのモデルコンポーネントが指定するモデルで実行可能なアニメーションアセットを指定。</td>
     </tr>
     <tr>
         <td>[Audio Listener][2]</td>
-        <td>Specifies the location of the listener for 3D audio playback.</td>
+        <td>3Dオーディオプレイバックのリスナーの位置を指定。</td>
     </tr>
     <tr>
         <td>[Audio Source][3]</td>
-        <td>Specifies audio assets that can be played at the position of the entity.</td>
+        <td>エンティティの位置で再生できるオーディオアセットを指定。</td>
     </tr>
     <tr>
         <td>[Camera][4]</td>
-        <td>Renders the scene from the location of the entity.</td>
+        <td>エンティティの位置からシーンをレンダリング。</td>
     </tr>
     <tr>
         <td>[Collision][5]</td>
-        <td>Assigns a collision volume to the entity.</td>
+        <td>エンティティにコリジョンボリュームを指定。</td>
     </tr>
     <tr>
         <td>[Light][6]</td>
-        <td>Attach a dynamic light source to the Entity.</td>
+        <td>エンティティに動的なライトソースを添付。</td>
     </tr>
     <tr>
         <td>[Model][7]</td>
-        <td>Renders a 3D model at the location of the entity.</td>
+        <td>エンティティの位置で3Dモデルをレンダリング。</td>
     </tr>
     <tr>
         <td>[Particle System][8]</td>
-        <td>Attach a dynamic light source to the Entity.</td>
+        <td>エンティティに動的なライトソースを添付。</td>
     </tr>
     <tr>
         <td>[Rigid Body][9]</td>
-        <td>Adds the entity to the scene's physical simulation.</td>
+        <td>シーンの物理的シミュレーションにエンティティを追加。</td>
     </tr>
     <tr>
         <td>[Script][10]</td>
-        <td>Allows the script to run JavaScript fragments to implement custom behavior.</td>
+        <td>スクリプトがJavaScript断片を実行してカスタムな挙動を実施できるようにする。</td>
     </tr>
 </tbody></table>
 

@@ -1,10 +1,10 @@
 ---
-title: Glossary
+title: 用語集
 template: usermanual-page.tmpl.html
 position: 50
 ---
 
-Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
+PlayCanvas EngineやToolsで使用する用語の概要です。
 
 <h2 id="app">Application</h2>
 The `pc.Application` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the keyboard and mouse handlers. The Application is made available to all user scripts by being passed into the initial callback from `pc.script.create`.
@@ -21,7 +21,7 @@ An attribute is a property of a [Component][6]. Attributes are represented in th
 <h2 id="component">Component</h2>
 Components describe the properties and functionality of an [Entity][7]. In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.
 
-Components are added to Entities via the Component menu in the PlayCanvas Editor, or they can be added at runtime via their respective `ComponentSystem` object.
+コンポーネントはPlayCanvas EditorでComponentメニューからエンティティに追加されるか、それぞれの`ComponentSystem`オブジェクトから実行時に追加することができます。
 
 <h2 id="dom">DOM</h2>
 The DOM (Document Object Model) is a way of representing an HTML document. Web browsers make an interface available for querying and modifying the DOM that makes up the HTML page that

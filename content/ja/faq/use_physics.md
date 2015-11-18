@@ -1,13 +1,13 @@
 ---
-title: Use physics
-keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
+title: 物理を使用する
+keywords: コンポーネント, 物理, コリジョン, コライダー, リジッド, ボディ, 重力, ammo, トリガー
 ---
 
-## How do I use physics?
+## 物理を使用するには？
 
-To give physical properties to an Entity you need to add a <a href="http://developer.playcanvas.com/en/user-manual/packs/components/collision/" target="_blank">Collision</a> component to it and a <a href="http://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/" target="_blank">RigidBody</a> component. The Collision component gives a physical shape to the Entity and the RigidBody component makes the Entity be simulated by the physics engine.
+エンティティに物理的なプロパティを加えるには <a href="http://developer.playcanvas.com/en/user-manual/packs/components/collision/" target="_blank">Collision</a> コンポーネントと <a href="http://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/" target="_blank">RigidBody</a> コンポーネントを追加する必要があります。Collision コンポーネントはエンティティに物理的な形を与え、RigidBodyコンポーネントはエンティティを物理エンジンでシミュレートできるようにします。
 
-You can change the built-in <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#gravity" target="_blank">gravity</a> from the <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/" target="_blank">Scene Settings</a>.
+ビルドインの<a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#gravity" target="_blank">gravity</a> じゃ<a href="http://developer.playcanvas.com/en/user-manual/designer/settings/" target="_blank">Scene Settings</a>から変更できます。
 
-<a class="docs" href="http://developer.playcanvas.com/en/tutorials/intermediate/collision-and-triggers/" target="_blank">View Tutorial</a>
+<a class="docs" href="http://developer.playcanvas.com/en/tutorials/intermediate/collision-and-triggers/" target="_blank">チュートリアルを見る</a>
 

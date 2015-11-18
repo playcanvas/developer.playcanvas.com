@@ -1,9 +1,9 @@
 ---
-title: Delete an Entity
-keywords: entity, delete, destroy, remove
+title: エンティティの削除
+keywords: エンティティ, 削除, 破棄, 除去
 ---
 
-## How do I delete an Entity?
+## エンティティを削除するには？
 
-You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="font-icon">&#57636;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
+エンティティを削除するには、選択をしてから**Delete**を押します。または、階層パネルの<span class="font-icon">&#57636;</span> Delete ボタンを押すか、エンティティを右クリックしてコンテキストメニューのDeleteを選択します。
 

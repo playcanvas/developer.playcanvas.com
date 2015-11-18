@@ -1,24 +1,24 @@
 ---
-title: Scenes
+title: シーン
 template: usermanual-page.tmpl.html
 position: 10
 ---
 
-## Scenes
+## シーン
 
-You can manage your scenes by opening the Scenes dialog.
+シーンダイアログを開いてシーンを管理することができます。
 
-You can open the Scenes dialog either by clicking on the 'Scenes' menu option in the menu:
+シーンダイアログはメニューの'Scenes'オプションをクリックして開きます：
 
 <img src="/images/user-manual/editor/scenes-menu.jpg" style="max-width: 100%"/>
 
-Or by clicking on the Scenes Menu button on the top left inside the 3D viewport:
+また、3Dビューポート内の左上にあるScenes Menuボタンをクリックして開くこともできます：
 
 <img src="/images/user-manual/editor/scenes-viewport.jpg" style="max-width: 100%"/>
 
-This will open up the Scenes dialog:
+シーンダイアログが開きます：
 
 <img src="/images/user-manual/editor/scenes.jpg" style="max-width: 100%"/>
 
-You can create a new scene by clicking on the NEW button, you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left of each scene to make it the Primary Scene. The Primary Scene is the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
+NEWボタンをクリックして新しいシーンを作成します。シーンをクリックすると開くことができますし、シーンの複製や削除は各シーンの右側にあるボタンから行えます。また、各シーンの左のバナーアイコンをクリックすればプライマリシーンに設定できます。プライマリシーンは、プロジェクトをエクスポートする際やappを公開する際に最初に読み込まれるシーンです。アプリケーションの最初の「レベル」と考えてください。
 

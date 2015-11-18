@@ -1,5 +1,5 @@
 ---
-title: Model
+title: モデル
 template: usermanual-page.tmpl.html
 position: 7
 ---
@@ -25,7 +25,7 @@ position: 7
 
 [Script component][2]を使用して、モデルコンポーネントのプロパティを操作できます。モデルコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
-## Customizing Materials
+## 素材のカスタマイズ
 
 You can learn how to customize the materials of your model [here][4].
 

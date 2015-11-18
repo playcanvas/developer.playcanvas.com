@@ -1,32 +1,32 @@
 ---
-title: Creating and attaching scripts
+title: スクリプトの作成および添付
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## Creating a new script
+## 新しいスクリプトの作成
 
-To create a new script use the Asset Panel and select New Script
+新しいスクリプトを作成するには、アセットパネルを使用してNew Scriptを選択します
 
-![New Script][0]
+![新規スクリプト][0]
 
-## Attaching a script to an Entity
+## エンティティにスクリプトを追加
 
 <img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-Script Components are attached to Entities in the same way as all other Components using the *Add Component* button in the Entity inspector.
+スクリプトコンポーネントは他のコンポーネントと同様、エンティティインスペクタの*Add Component*ボタンを使用してエンティティに添付されます。
 
-Once you have added a Script Component you can specify which javascript files to load. Use the Add Script button to pick scripts from your asset panel. Or drag and drop a script from the asset panel onto the component.
+スクリプトコンポーネントを追加したら、読み込むJavaScriptファイルを指定することができます。Add Scriptボタンを使用してアセットパネルからスクリプトを選択してください。またはアセットパネルからコンポーネント上にスクリプトをドラッグ＆ドロップします。
 
-If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click a script's name below the URL input box.
+コードを格納するためにPlayCanvasのコードリポジトリを使用している場合、PlayCanvasコードエディタでコードを編集して、URL入力ボックスの下でスクリプトの名前をクリックすることができます。
 
 <div class="alert alert-info">
-If you are using Github or Bitbucket you can not edit you scripts in PlayCanvas, you must make your commits through your source control system.
+GithubやBitbucketを使用している場合はソース管理システムを介してコミットを行う必要があり、PlayCanvasでスクリプトを編集することはできません。
 </div>
 
-A script component can load multiple script files, just add multiple scripts to the component. The order in which you add your scripts on a Script Component is the order in which the scripts are going to be initialized and updated. If you want to change the order of a script, click on the Up - Down arrows next to the Script's title. To remove a script click on the X button.
+スクリプトコンポーネントは、複数のスクリプトファイルを読み込むことができます。コンポーネントに複数のスクリプトを追加するだけです。スクリプトコンポーネントにスクリプトを追加した順番通り、スクリプトは初期化および更新されます。スクリプトの順序を変更したい場合は、スクリプトのタイトルの横にある上下矢印をクリックします。スクリプトを削除するにはXボタンを押します。
 
 [0]: /images/user-manual/new_script.jpg
 [2]: /user-manual/scripting/workflow
-[3]: /images/platform/component_script.png "Add urls of scripts to the script component"
+[3]: /images/platform/component_script.png "スクリプトコンポーネントにスクリプトのurlを追加"
 

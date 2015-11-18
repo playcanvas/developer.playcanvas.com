@@ -1,5 +1,5 @@
 ---
-title: Tutorials
+title: Уроки
 template: tutorial-full-page.tmpl.html
 ---
 

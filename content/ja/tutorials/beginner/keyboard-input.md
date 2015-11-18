@@ -6,13 +6,11 @@ position: 1
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard?overlay=false"></iframe>
 
-*Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
+*クリックでフォーカスして、左矢印、右矢印、空白バーを押してキューブを回転します。aキーを押して離すことで色を変更します。*
 
-Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
-for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
-handling keycodes and charcodes.
+PlayCanvasエンジンのキーボード処理はpc.Keyboardオブジェクトにより提供されます。Keyboardオブジェクトは一般的なキーボード操作のシンプルなインターフェイスを提供します。また、keycodeやcharcodeの処理に伴うクロスブラウザの問題を取り除きます。
 
-Take a look at the keyboard input Scene in the [tutorials project][1]. Here is the code for the tutorial:
+[チュートリアルプロジェクト][1]のキーボード入力シーンをご確認ください。チュートリアルのコードはこちらです：
 
 ~~~javascript~~~
 pc.script.create("keyboard_handler", function (app) {
@@ -23,11 +21,11 @@ pc.script.create("keyboard_handler", function (app) {
 
     KeyboardHandler.prototype = {
         initialize: function () {
-            // Use on() to listen for events on the keyboard device.
-            // Arguments are:
-            // 1) The event name to listen for
-            // 2) The callback function to call when the event fires
-            // 3) (optional) The value to use for 'this' in the callback function
+            // on()を使用してキーボードデバイスでイベントをリッスンします。
+            // 引数：
+            // 1) リッスンスルイベント名
+            // 2) イベントが発動する際に呼ぶコールバック関数
+            // 3) (任意) コールバック関数で'this'に使用する値
             app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
             app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
 
@@ -37,10 +35,10 @@ pc.script.create("keyboard_handler", function (app) {
 
         update: function (dt) {
             /*
-             * Notice in the demo that pressing and holding the arrow keys doesn't
-             * make the block spin. wasPressed() is used to detect a
-             * keypress that occurred since the last frame and will only be
-             * called once even if the key is held down.
+             * デモでは矢印キーを押して押さえても
+             * ブロックはスピンしません。wasPressed()を使って
+             * 最後のフレーム以降に発生したkeypressを探知。
+             * キーが押さえられていても一度しか呼ばれません。
              */
             var angle = 0;
             if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
@@ -50,38 +48,38 @@ pc.script.create("keyboard_handler", function (app) {
             }
 
             /*
-             * Notice that pressing and holding the space bar makes the block
-             * continuously spin. isPressed() is used to detected if a
-             * key is down right now. So it will be true every frame as long as
-             * the key is still pressed.
+             * スペースバーを押して押さえるとブロックは
+             * 繰り返しスピンします。isPressed()を使用して
+             * キーが押さえられているかを探知します。つまりキーが押されている限り
+             * 毎フレームでtrueになります。
              */
             if (app.keyboard.isPressed(pc.KEY_SPACE)) {
                 angle = 1;
             }
 
-            // Update the spinning cube
+            // スピンするキューブを更新
             this.entity.rotateLocal(0, angle, 0);
         },
 
         /*
-        * Event handler called when key is pressed
+        * キーが押されるとイベントハンドラが呼ばれる
         */
         onKeyDown: function (event) {
-            // Check event.key to detect which key has been pressed
+            // event.keyを確認してどのキーが押されたかを探知
             if (event.key === pc.KEY_A) {
                 this.entity.model.materialAsset = this.redMaterial;
             }
 
-            // When the space bar is pressed this scrolls the window.
-            // Calling preventDefault() on the original browser event stops this.
+            // スペースバーが押されると画面をスクロール
+            // 元のブラウザイベントでpreventDefault()を呼ぶとこれが停止
             event.event.preventDefault();
         },
 
         /*
-        * Event handler called when key is released
+        * キーが開放されるとイベントハンドラが呼ばれる
         */
         onKeyUp: function (event) {
-            // Check event.key to detect which key has been pressed
+            // event.keyを確認してどのキーが押されたかを探知
             if (event.key === pc.KEY_A) {
                 this.entity.model.materialAsset = this.whiteMaterial;
             }
@@ -92,44 +90,44 @@ pc.script.create("keyboard_handler", function (app) {
 });
 ~~~
 
-There are two ways of detecting keyboard input. The first is done in the update method of your scripts. Use `isPressed()` and `wasPressed()` and check whether a key is currently pressed or has just been pressed. The second uses events to respond to a key press or release as it happens.
+キーボードの入力を探知する方法は二つあります。一つ目はスクリプトの更新メソッドで行われます。isPressed()とwasPressed()を使用してキーが現在押されているか、押されたばかりかを確認します。二つ目は、イベントを使用してキーの押下や開放の実行時に反応します。
 
 ## `isPressed` vs `wasPressed`
 
-In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`.
+上記デモで、isPressed()とwasPressed()の挙動の違いを確認できます。
 
-When you press and hold the left or right arrow keys the cube will rotate by 5&deg;, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed.
+左右どちらかのキーを押さえるとキューブは5&deg;回転しますが、回転するのは一度のみです。wasPressed()はキーが押された直後のフレームにのみtrueを返すからです。
 
-If you press and hold the spacebar you will see that the cube rotates continuously by 1&deg; per frame. This is because `isPressed()` returns true for every frame in which the key is pressed.
+スペースバーを押さえると、キューブはフレーム毎に繰り返し1&deg;回転します。isPressed()がキーが押される全てのフレームに対してtrueを返すためです。
 
 ### `isPressed(key)`
 
-`isPressed(key)` checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
+sPressed(key)はkeyが現在押されているかを確認して、押されている場合はtrueを返します。キーが押されている間の全てのフレームにtrueを返します。
 
 ### `wasPressed(key)`
 
-`wasPressed(key)` checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
+wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを確認します。wasPressed()は一度のキー押下に対して一度のみtrueを返します。
 
 ## イベント
 
-The second method of handling key presses is to listen for events. Two keyboard events are supported on the Keyboard device:
+キーの押下を処理する二つ目の方法は、イベントへのリッスンです。Keyboardデバイスでは二つのキーボードイベントが対応されています：
 
 * `pc.EVENT_KEYDOWN`
 * `pc.EVENT_KEYUP`
 
-[DOM][3] keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.KeyboardEvent` object which contains the key code of the key that was pressed on released.
+[DOM][3] キーボードイベントは異なるブラウザで異なる形で実装されるので、PlayCanvas Engineは如何なる場所でも同じコードを使用できるよう、`pc.Keyboard`オブジェクトでイベントを提供します。キーボードイベントが発動すると、押下または開放されたキーのキーコードを含むpc.KeyboardEvent`オブジェクトがイベントハンドラに渡されます。
 
-Notice we are also passing a third argument to on(), which is `this` or the Script Instance itself. The third argument to on() is used as `this` in the event callbacks, so we need to pass it in here, otherwise it won't be set to the correct object.
+`this`またはスクリプトインスタンス自体である3つ目の引数をon()に渡しています。on()に渡す3つ目の引数はイベントコールバックの`this`として使用されるので、この中で渡さないと、正しいオブジェクトに設定されません。
 
 ## キーコード
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
+キーコードを使用してどのキーが押されたかを識別します。これらはキーボードのキーと一致する数値です。例えば、pc.KEY_Aは`A` キー、pc.LEFTは矢印キーです。
 
-Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
+数値を使用するのではなく、常に`pc.KEY_*`列挙を使用してください。後にこれらの不変数の実績値は変わる可能性があるからです。
 
 ## 試してみよう
 
-Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
+[こちら][2] またはページの上部からお試しください。矢印キーやスペースバーを叩いたり押さえたりして比べて見てください。
 
 [1]: https://playcanvas.com/project/186/overview/tutorials
 [2]: http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard

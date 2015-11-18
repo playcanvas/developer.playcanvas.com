@@ -1,5 +1,5 @@
 ---
-title: Asset Library
+title: アセットライブラリ
 template: usermanual-page.tmpl.html
 position: 7
 ---

@@ -1,11 +1,11 @@
 ---
-title: Use real-time shadows
-keywords: real-time, shadows, light, realism, pbr
+title: リアルタイムシャドーを使用
+keywords: リアルタイム, 影, ライト, リアリズム, pbr
 ---
 
-## How do I use real-time shadows?
+## リアルタイムシャドーを使用するには？
 
-Real-time shadows are rendered for each light source that has **Cast Shadows** enabled. To enable shadows, select an Entity with a Light component and enable Cast Shadows. You also need to enable Cast Shadows on any Model components in your scene.
+リアルタイムシャドーは**Cast Shadows**を有効にしている各ライトソースでレンダリングされます。影を有効にするには、ライトコンポーネントを持つエンティティを選択してCast Shadowsを有効にします。シーン内のモデルコンポーネントのCast Shadowsも有効にする必要があります。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/shadows/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/shadows/" target="_blank">ユーザーマニュアルを参照</a>
 

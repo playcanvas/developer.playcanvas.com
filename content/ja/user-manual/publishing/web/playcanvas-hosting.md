@@ -1,43 +1,43 @@
 ---
-title: PlayCanvas Hosting
+title: PlayCanvas ホスティング
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The fastest, easiest, most convenient way to publish your game is to publish it to playcanvas.com.
+最も速く簡単で便利にゲームを公開できる方法はplaycanvas.comへのパブリッシュです。
 
-Publishing to PlayCanvas consists of two simple steps:
+2つの簡単なステップでPlayCanvasに公開できます：
 
-1. Publish a new **Build**
-2. Set the build as the **Primary App**
+1.新規 **ビルド**の公開
+2. ビルドを**プライマリApp**に設定
 
-To publish you will need to have at least one scene in your project.
+公開するにはプロジェクトに最低ひとつのシーンが必要です。
 
-## Publishing a new Build
+## 新規ビルドの公開
 
-![Publish][1]
+![パブリッシュ][1]
 
-* In your project dashboard, select the 'PUBLISH' tab.
-* Click the PUBLISH button
-* Enter a name for this build. Set it to some useful like "version 1" or "With highscore table".
-* Select the Scenes you want to include in your app from the list. Notice that the Primary Scene (the one with the blue banner icon), is always included in your app and it will be the first scene loaded when your app is launched.
-* Click 'PUBLISH NOW'
-* You will see a new app created in the PUBLISH tab. Wait until it finishes processing.
-* Your build is now live.
+* プロジェクトダッシュボード内のPUBLISHタブを選択
+* PUBLISHボタンをクリック
+* ビルドの名前を入力。"バージョン1" や "ハイスコアテーブル有り"などの分かりやすい名前にします。
+* リストから、Appに含みたいシーンを選択。最初のシーン(青いバナーアイコン)は常にappに含まれ、appが起動する際に最初に読み込まれます。
+* PUBLISH NOWをクリック
+* PUBLISHタブに新しいappが作成されます。処理が終わるまで待ちます。
+* ビルドが公開されました！
 
-Builds are given permanent link in the form `http://playcanv.as/b/BUILD_ID`. This link will be valid until you delete the build, if you over-write the build the contents at this URL will change. If you want to share a link to your game, you should probably use the published project link explained below.
+ビルドは次の形式で永久的にリンクを与えられます： `http://playcanv.as/b/BUILD_ID` 。このリンクはビルドを削除しない限り有効です。ビルドを上書きすると、このURLのコンテンツは変更されます。ゲームへのリンクをシェアしたい場合は、以下に説明する公開されたプロジェクトリンクを使用することを推奨します。
 
-## Set the Primary App
+## プライマリAppの設定
 
-It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why we each project has a Primary App link. This will always be in the form `http://playcanv.as/p/PROJECT_ID`
+ゲームの最新版を参照する単一のリンクがあると便利です。古いビルドの削除により壊れたリンクを心配する必要がなくなります。各プロジェクトにプライマリAppリンクが用意されているのはこの理由のためです。常に次の形式になります： `http://playcanv.as/p/PROJECT_ID`
 
 <div class="alert alert-info">
-If you are sharing a link to your game you should use the Primary App link. That means you know it won't change when you re-publish.
+ゲームへのリンクをシェアしている場合は、プライマリAppリンクを使用するべきです。これにより、再公開する際にリンクが変更される心配がなくなります。
 </div>
 
-The first time you publish a build it will automatically become the Primary App. For subsequent builds you can choose when to assigned the Primary App. This means you can publish builds and test them before finally setting them as the Primary App.
+初めてビルドを公開する際、それはプライマリAppになります。その後のビルドにおいては、プライマリappを指定するタイミングを選択することができます。ビルドを公開して検証してから、プライマリappに設定することができます。
 
-To set the Primary App for your project, click the Primary marker to the left of build. This will be the app that users play when they click on the PLAY button in the Dashboard Header.
+プロジェクトのプライマリAppを設定するには、ビルドの左側にあるPrimaryマーカーをクリックします。これが、ユーザーがダッシュボードヘッダーでPLAYボタンをクリックした際にプレイするAppになります。
 
 [1]: /images/platform/dashboard_publish.png
 
