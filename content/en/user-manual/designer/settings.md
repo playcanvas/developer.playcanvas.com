@@ -123,9 +123,9 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
 
-[2]: /user-manual/designer/menus-and-toolbar
-[1]: /images/user-manual/cog.jpg
-[2]: /user-manual/assets/cubemaps
-[3]: /images/user-manual/gamma-correction.jpg
-[4]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
-[5]: /user-manual/designer/loading-screen
+[1]: /user-manual/designer/menus-and-toolbar
+[2]: /images/user-manual/cog.jpg
+[3]: /user-manual/assets/cubemaps
+[4]: /images/user-manual/gamma-correction.jpg
+[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[6]: /user-manual/designer/loading-screen
