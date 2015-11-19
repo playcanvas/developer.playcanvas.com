@@ -56,6 +56,9 @@ The Editor's Camera is controlled with the Mouse and Keyboard
         <td>Toggle all panels - Hides or shows all the panels</td><td>SPACE</td>
     </tr>
     <tr>
+        <td>Select All - Selects all assets in the currently selected folder</td><td>CTRL + A</td>
+    </tr>
+    <tr>
         <td>Duplicate - Duplicates the selected entity and all children</td><td>CTRL + D</td>
     </tr>
     <tr>
@@ -80,4 +83,3 @@ The Editor's Camera is controlled with the Mouse and Keyboard
         <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
     </tr>
 </table>
-
