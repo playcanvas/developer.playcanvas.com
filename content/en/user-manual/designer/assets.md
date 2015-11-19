@@ -56,8 +56,7 @@ You can also drag model, material, and cubemap assets directly into the [Viewpor
 * If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
 * If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
-[1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/editor/assets-panel.png
-[3]: /user-manual/designer/inspector
-[4]: /user-manual/designer/viewport
-[5]: /user-manual/designer/settings
+[1]: /images/user-manual/editor/assets-panel.png
+[2]: /user-manual/designer/inspector
+[3]: /user-manual/designer/viewport
+[4]: /user-manual/designer/settings

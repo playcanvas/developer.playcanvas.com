@@ -123,6 +123,7 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
 
+[2]: /user-manual/designer/menus-and-toolbar
 [1]: /images/user-manual/cog.jpg
 [2]: /user-manual/assets/cubemaps
 [3]: /images/user-manual/gamma-correction.jpg
