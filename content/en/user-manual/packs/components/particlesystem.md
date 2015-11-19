@@ -4,9 +4,11 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-The 'particlesystem' component specifies a particle emitter in 3D space.
+The Particle System component specifies a particle emitter in 3D space.
 
-<img src="/images/user-manual/components/component-particles.jpg" style="width: 300px" />
+The Particle System component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the particle system will be added to the scene and rendered.
+
+![Particle System component][1]
 
 ## Properties
 
@@ -14,7 +16,6 @@ The 'particlesystem' component specifies a particle emitter in 3D space.
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If checked, the particle system will be added to the scene and rendered.</td></tr>
     <tr><td>Auto Play</td><td>If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script.</td>
     <tr><td>Particle Count</td><td>The maximum number of particles managed by this particle system.</td></tr>
     <tr><td>Lifetime</td><td>The length of time in seconds between a particle's birth and its death.</td></tr>
@@ -62,7 +63,8 @@ The 'particlesystem' component specifies a particle emitter in 3D space.
 
 ## Scripting Interface
 
-You can control an particlesystem component's properties using a [script component][1]. The particlesystem component's scripting interface is [here][2].
+You can control a Particle System component's properties using a [script component][2]. The Particle System component's scripting interface is [here][3].
 
-[1]: /user-manual/packs/components/script
-[2]: /engine/api/stable/symbols/pc.ParticleSystemComponent.html
+[1]: /images/user-manual/scenes/components/component-particle-system.png
+[2]: /user-manual/packs/components/script
+[3]: /engine/api/stable/symbols/pc.ParticleSystemComponent.html

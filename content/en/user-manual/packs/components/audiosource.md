@@ -4,9 +4,11 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-The 'audiosource' component controls playback of an audio sample.
+The Audio Source component controls playback of an audio sample.
 
-<img src="/images/user-manual/components/component-audiosource.jpg" style="width: 300px" />
+The Audio Source component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play assigned audio assets.
+
+![Audio Source component][1]
 
 ## Properties
 
@@ -14,7 +16,6 @@ The 'audiosource' component controls playback of an audio sample.
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If checked, the component will play assigned audio assets.</td></tr>
     <tr><td>Assets</td><td>The audio assets that can be played from this audio source. Multiple audio assets can be specified by the picker control.</td></tr>
     <tr><td>Volume</td><td>The volume of the audio assets played back by the component.</td></tr>
     <tr><td>Pitch</td><td>The pitch to playback the audio at. A value of 1 means the audio is played back at the original pitch.</td></tr>
@@ -28,8 +29,8 @@ The 'audiosource' component controls playback of an audio sample.
 
 ## Scripting Interface
 
-You can control an audiosource component's properties using a [script component][1]. The audiosource component's scripting interface is [here][2].
+You can control an Audio Source component's properties using a [script component][2]. The Audio Source component's scripting interface is [here][3].
 
-[1]: /user-manual/packs/components/script
-[2]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
-[3]: /images/platform/component_audiosource.png
+[1]: /images/user-manual/scenes/components/component-audio-source.png
+[2]: /user-manual/packs/components/script
+[3]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
