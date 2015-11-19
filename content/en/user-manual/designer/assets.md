@@ -24,6 +24,6 @@ You can drag Assets from the Asset Panel into asset slots in the [Inspect][2] to
 
 You can also drag Model Assets directly into the [viewport][3]
 
-[1]: /images/user-manual/assets-panel.jpg
+[1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector
 [3]: /user-manual/designer/viewport
