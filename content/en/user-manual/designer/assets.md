@@ -12,7 +12,7 @@ The Assets Panel manages all of the Assets that are available in your project. F
 
 The folder panel allows you to organize your assets into a tree of folders. 
 
-To create a new Folder, select the Add Asset (+) button and select 'Folder'. Alternatively, right click the folder where you would like a new folder to be created and select 'New Asset' -> 'Folder'.
+To create a new Folder, select the Add Asset (+) button and select 'Folder'. Alternatively, right click the folder where you would like a new folder to be created and select 'New Asset' > 'Folder'.
 
 To rename a folder, double click it in the hierarchy panel and edit the Name field in the Inspector.
 
@@ -54,9 +54,10 @@ You can also drag model, material, and cubemap assets directly into the [Viewpor
 
 * If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
 * If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubmeap of the scene. This property can also be set from the [Scene Settings][4].
+* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
-[1]: /images/user-manual/editor/assets-panel.png
-[2]: /user-manual/designer/inspector
-[3]: /user-manual/designer/viewport
-[4]: /user-manual/designer/settings
+[1]: /user-manual/designer/menus-and-toolbar
+[2]: /images/user-manual/editor/assets-panel.png
+[3]: /user-manual/designer/inspector
+[4]: /user-manual/designer/viewport
+[5]: /user-manual/designer/settings

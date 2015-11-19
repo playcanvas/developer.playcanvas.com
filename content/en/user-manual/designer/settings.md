@@ -27,7 +27,9 @@ The Settings panel lets you to set up global properties for your scene. The prop
 * Loading Screen
   * Script
 
-The settings panel is accessed using the <img src="/images/user-manual/cog.jpg" style="text-align: middle;" /> button in the bottom right of the Editor.
+The settings panel is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
+
+![Cog][2]
 
 ## Physics Settings
 
@@ -49,7 +51,7 @@ Note, if you are using a Skybox and Physical Materials the Ambient Color has no 
 
 ### Skybox
 
-The Skybox is a [cubemap][1] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
+The Skybox is a [cubemap][3] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
 
 To add a skybox, create a cubemap asset and then assign it to the cubemap slot in the settings panel.
 
@@ -84,9 +86,9 @@ The exposure value tweaks the overall brightness of the scene.
 
 Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then the fully lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. The following image shows a simple scene with a sphere. On the left the scene has been gamma corrected while on the right, the scene is uncorrected.
 
-<img alt="Gamma correction comparison" width="640" src="/images/user-manual/gamma-correction.jpg" />
+![Gamma Correction][4]
 
-To find out more about gamma correction, read [this GPU Gems chapter][2].
+To find out more about gamma correction, read [this GPU Gems chapter][5].
 
 ## Fog
 
@@ -119,8 +121,10 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 ## Loading Screen (Available for ORG users only)
 
-Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][3].
+Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
 
-[1]: /user-manual/assets/cubemaps
-[2]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
-[3]: /user-manual/designer/loading-screen
+[1]: /images/user-manual/cog.jpg
+[2]: /user-manual/assets/cubemaps
+[3]: /images/user-manual/gamma-correction.jpg
+[4]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[5]: /user-manual/designer/loading-screen
