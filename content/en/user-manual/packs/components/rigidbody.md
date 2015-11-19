@@ -4,14 +4,18 @@ template: usermanual-page.tmpl.html
 position: 9
 ---
 
-The 'rigidbody' component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.
+The Rigid Body component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.
+
+The Rigid Body component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component has a sibling collision component, the rigid body will participate in the physics simulation.
 
 #### Static
-<img src="/images/user-manual/components/component-rigidbody-static.jpg" style="width: 300px" />
+![Rigid Body component (Static)][1]
 #### Dynamic (and Kinematic)
-<img src="/images/user-manual/components/component-rigidbody-dynamic.jpg" style="width: 300px" />
+![Rigid Body component (Dynamic)][2]
+#### Kinematic
+![Rigid Body component (Kinematic)][3]
 
-Note that you must add a [collision component][3] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
+Note that you must add a [collision component][4] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
 
 ## Properties
 
@@ -19,7 +23,6 @@ Note that you must add a [collision component][3] to the same entity in order to
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If selected and if the component has a sibling collision component, the rigid body will participate in the physics simulation.</td></tr>
     <tr><td>Type</td><td>The type of the body:<br><ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul></td></tr>
     <tr><td>Mass</td><td>The mass of the body. If world units in your scene are meters, the unit for mass is kilograms.</td></tr>
     <tr><td>Linear Damping</td><td>Specifies the proportion of linear velocity that is lost by the body every second.</td></tr>
@@ -32,8 +35,11 @@ Note that you must add a [collision component][3] to the same entity in order to
 
 ## Scripting Interface
 
-You can control a rigidbody component's properties using a [script component][4]. The rigidbody component's scripting interface is [here][5].
+You can control a Rigid Body component's properties using a [script component][5]. The Rigid Body component's scripting interface is [here][6].
 
-[4]: /user-manual/packs/components/script
-[3]: /user-manual/packs/components/collision/
-[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html
+[1]: /images/user-manual/scenes/components/component-rigid-body-static.png
+[2]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
+[3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
+[4]: /user-manual/packs/components/collision/
+[5]: /user-manual/packs/components/script
+[6]: /engine/api/stable/symbols/pc.RigidBodyComponent.html

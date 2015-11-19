@@ -4,18 +4,20 @@ template: usermanual-page.tmpl.html
 position: 5
 ---
 
-The 'collision' component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.
+The Collision component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.
+
+The Collision component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.
 
 #### Box
-<img src="/images/user-manual/components/component-collision-box.jpg" style="width: 300px" />
+![Collision component (Box)][1]
 #### Sphere
-<img src="/images/user-manual/components/component-collision-sphere.jpg" style="width: 300px" />
+![Collision component (Sphere)][2]
 #### Capsule
-<img src="/images/user-manual/components/component-collision-capsule.jpg" style="width: 300px" />
+![Collision component (Capsule)][3]
 #### Cylinder
-<img src="/images/user-manual/components/component-collision-cylinder.jpg" style="width: 300px" />
+![Collision component (Cylinder)][4]
 #### Mesh
-<img src="/images/user-manual/components/component-collision-mesh.jpg" style="width: 300px" />
+![Collision component (Mesh)][5]
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
 
@@ -25,7 +27,6 @@ If the entity also has a rigidbody component, the collision component determines
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If selected and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.</td></tr>
     <tr><td>Type</td><td>The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
     <tr><td>Half Extents</td><td>Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth.</td></tr>
     <tr><td>Axis</td><td>Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity.</td></tr>
@@ -36,13 +37,12 @@ If the entity also has a rigidbody component, the collision component determines
 
 ## Scripting Interface
 
-You can control a collision component's properties using a [script component][6]. The collision component's scripting interface is [here][7].
+You can control a Collision component's properties using a [script component][6]. The Collision component's scripting interface is [here][7].
 
+[1]: /images/user-manual/scenes/components/component-collision-box.png
+[2]: /images/user-manual/scenes/components/component-collision-sphere.png
+[3]: /images/user-manual/scenes/components/component-collision-capsule.png
+[4]: /images/user-manual/scenes/components/component-collision-cylinder.png
+[5]: /images/user-manual/scenes/components/component-collision-mesh.png
 [6]: /user-manual/packs/components/script
 [7]: /engine/api/stable/symbols/pc.CollisionComponent.html
-
-[1]: /images/platform/component_collisionbox.png
-[2]: /images/platform/component_collisionsphere.png
-[3]: /images/platform/component_collisioncapsule.png
-[4]: /images/platform/component_collisioncylinder.png
-[5]: /images/platform/component_collisionmesh.png
