@@ -93,7 +93,7 @@ Here is a list of all methods of a Script that are called by the engine if they 
 
 `initialize()`
 
-This is the first method called on a script after all Entities are loaded. Use it for initialization.
+This is the first method called on a script after all Entities are loaded and its called only once. Use it for initialization.
 
 `onEnable()`
 
@@ -101,7 +101,7 @@ Called whenever the Script Component that this script is attached to or its Enti
 
 `postInitialize()`
 
-Called after `onEnable`. Use this to order initialization of different scripts for example you might want some scripts to initialize after a different script has been initialized.
+Called only once after `onEnable`. Use this to order initialization of different scripts for example you might want some scripts to initialize after a different script has been initialized.
 
 `update(dt)`
 
