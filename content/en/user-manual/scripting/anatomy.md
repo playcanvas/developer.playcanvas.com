@@ -87,42 +87,6 @@ Next we define the initialize and update functions. `initialize()` is called onc
 
 Finally, we return the `ScriptObject` variable.
 
-## Built-in script methods
-
-Here is a list of all methods of a Script that are called by the engine if they exist, in the order that they are called.
-
-`initialize()`
-
-This is the first method called on a script after all Entities are loaded and its called only once. Use it for initialization.
-
-`onEnable()`
-
-Called whenever the Script Component that this script is attached to or its Entity get enabled. Also called right after the `initialize` method. Use this for things that should happen every time the Script Component or Entity get enabled.
-
-`postInitialize()`
-
-Called only once after `onEnable`. Use this to order initialization of different scripts for example you might want some scripts to initialize after a different script has been initialized.
-
-`update(dt)`
-
-Called every frame with the time in seconds that passed since the last update in the variable `dt`. Use this for things that should run continuously like moving objects, applying forces, checking for input etc. If you don't need an update method then delete it for better performance.
-
-`postUpdate(dt)`
-
-Called every frame after the `update` method with the same `dt` as the `update` method. Use this to perform actions needed after the `update` step, for example Camera scripts that follow Entities should be moved in `postUpdate` because they might be tracking Entities that have moved in `update`.
-
-`onDisable()`
-
-Called when the Script Component that this script is attached to or its Entity get disabled. Also called right before the `destroy` method. Use this for things that should happen every time the Script Component or Entity get disabled.
-
-`destroy()`
-
-Called when the Script Component that this script is attached to or its Entity get destroyed. Use this to clean up.
-
-`onAttributeChanged(name, oldValue, newValue)`
-
-Called when the value of a [Script Attribute][3] is changed from the Editor. The name of the attribute and its old and new values are passed in the method. Use this to update your script if an attribute changes.
-
 ## A complete example
 
 Here is a complete script, try saving it to a file and attaching it to an Entity in a pack.
@@ -170,6 +134,42 @@ pc.script.create('oscillator', function (app) {
     return Oscillator;
 });
 ~~~
+
+## Built-in script methods
+
+Here is a list of all methods of a Script that are called by the engine if they exist, in the order that they are called.
+
+`initialize()`
+
+This is the first method called on a script after all Entities are loaded and its called only once. Use it for initialization.
+
+`onEnable()`
+
+Called whenever the Script Component that this script is attached to or its Entity get enabled. Also called right after the `initialize` method. Use this for things that should happen every time the Script Component or Entity get enabled.
+
+`postInitialize()`
+
+Called only once after `onEnable`. Use this to order initialization of different scripts for example you might want some scripts to initialize after a different script has been initialized.
+
+`update(dt)`
+
+Called every frame with the time in seconds that passed since the last update in the variable `dt`. Use this for things that should run continuously like moving objects, applying forces, checking for input etc. If you don't need an update method then delete it for better performance.
+
+`postUpdate(dt)`
+
+Called every frame after the `update` method with the same `dt` as the `update` method. Use this to perform actions needed after the `update` step, for example Camera scripts that follow Entities should be moved in `postUpdate` because they might be tracking Entities that have moved in `update`.
+
+`onDisable()`
+
+Called when the Script Component that this script is attached to or its Entity get disabled. Also called right before the `destroy` method. Use this for things that should happen every time the Script Component or Entity get disabled.
+
+`destroy()`
+
+Called when the Script Component that this script is attached to or its Entity get destroyed. Use this to clean up.
+
+`onAttributeChanged(name, oldValue, newValue)`
+
+Called when the value of a [Script Attribute][3] is changed from the Editor. The name of the attribute and its old and new values are passed in the method. Use this to update your script if an attribute changes.
 
 [1]: /user-manual/glossary#application
 [2]: /engine/api/stable/symbols/pc.Application.html
