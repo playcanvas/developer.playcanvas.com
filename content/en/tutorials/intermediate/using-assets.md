@@ -31,16 +31,16 @@ First let's look at the initialize method which searches the `pc.AssetRegistry` 
 ```
 initialize: function () {
     // get assets from the asset registry
-    this.a = app.assets.find("A");
-    this.b = app.assets.find("B");
-    this.c = app.assets.find("C");
+    this.a = app.assets.get(this.aAsset);
+    this.b = app.assets.get(this.bAsset);
+    this.c = app.assets.get(this.cAsset);
 
     // prevent the page scrolling when we press space.
     app.keyboard.preventDefault = true;
 }
 ```
 
-The [`pc.AssetRegistry`][1] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we're searching by the asset name.
+The [`pc.AssetRegistry`][1] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we've declared three script attributes `aAsset`, `bAsset` and `cAsset` which are assigned to assets in the Editor. We then use the script attributes to find the assets from the registry.
 
 ## Using preloaded assets
 
