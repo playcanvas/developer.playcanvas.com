@@ -1,5 +1,5 @@
 ---
-title: Script Priorty
+title: Script Priority
 template: usermanual-page.tmpl.html
 position: 2
 ---
