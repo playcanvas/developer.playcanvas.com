@@ -644,7 +644,7 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 18px;
+    font-size: 40px;
   }
   /* line 532, ../../sass/styles.scss */
   .container main h2 {
@@ -653,7 +653,7 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
+    font-size: 30px;
   }
   /* line 536, ../../sass/styles.scss */
   .container main h3 {
@@ -662,7 +662,7 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 14px;
+    font-size: 24px;
   }
   /* line 540, ../../sass/styles.scss */
   .container main h4 {
@@ -671,7 +671,7 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
+    font-size: 18px;
   }
   /* line 544, ../../sass/styles.scss */
   .container main h5 {
@@ -680,7 +680,7 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 10px;
+    font-size: 16px;
   }
   /* line 549, ../../sass/styles.scss */
   .container main a {
