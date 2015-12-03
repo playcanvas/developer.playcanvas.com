@@ -10,24 +10,24 @@ Script Attributes are a powerful feature that lets you expose values from your s
 
 Script Attributes are declared at the top of your script file using this format:
 
-~~~js~~~
+```javascript
 pc.script.attribute(attributeName, attributeType, defaultValue, options);
-~~~
+```
 
 In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
 
-~~~js~~~
+```javascript
 pc.script.attribute('speed', 'number', 80);
-~~~
+```
 
 
 ## Getting Attributes into Editor
 
-<img src="/images/user-manual/components/component-script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scenes/components/component-script-attributes.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 Once you've declared your attributes they must be available for the server to analyze. If you are using PlayCanvas to write your code then you don't need to do anything. If you are using an external code repository like Github or Bitbucket then you will need to make sure that the latest version of your [code is synced][1].
 
-Once your code is on the PlayCanvas server then open the Editor and click the <img src="/images/user-manual/refresh-script-attributes.jpg" style="text-align: middle" /> button.
+Once your code is on the PlayCanvas server then open the Editor and click the <img src="/images/user-manual/refresh-script-attributes.jpg" style="display: inline; vertical-align: middle;" /> button.
 
 Refreshing attributes loads all your scripts and parses out any attributes that were declared. Then they are inserted into the script components that reference that script (and as such are accessible in your scripts as `this.attribute_name`) and are also exposed into the Editor.
 
@@ -43,12 +43,12 @@ The value is an number.
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('speed', 'number', 80, {
     min: 0,
     max: 100
 });
-~~~
+```
 
 #### Options
 
@@ -80,11 +80,11 @@ The value is a string
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('title', 'string', 'Untitled', {
     displayName: "Title"
 });
-~~~
+```
 
 #### Options
 
@@ -101,11 +101,11 @@ The value is true or false.
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('on', 'boolean', false, {
     displayName: "On"
 });
-~~~
+```
 
 #### Options
 
@@ -122,11 +122,11 @@ The value is a reference to a list of Assets in the Project.
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('sound', 'asset', [], {
     displayName: "Sound Asset"
 });
-~~~
+```
 
 #### Options
 
@@ -146,11 +146,11 @@ The value is an Entity in the Hierarchy.
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('myEntity', 'entity', null, {
     displayName: "Entity"
 });
-~~~
+```
 
 #### Options
 
@@ -167,11 +167,11 @@ The value is a color with no alpha (transparency).
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('color', 'rgb', [1,1,1], {
     displayName: "Color"
 });
-~~~
+```
 
 #### Options
 
@@ -189,11 +189,11 @@ The value is a color with alpha (transparency).
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('color', 'rgba', [1,1,1,0.5], {
     displayName: "Color"
 });
-~~~
+```
 
 #### Options
 
@@ -204,17 +204,25 @@ pc.script.attribute('color', 'rgba', [1,1,1,0.5], {
     </tr>
 </table>
 
-### Vector
+### Vec2, Vec3, Vec4
 
-The value is a Vec3, an array of 3 numbers.
+The value is a Vector, an array of 2, 3 or 4 numbers.
 
 #### Example
 
-~~~js~~~
-pc.script.attribute('direction', 'vector', [0,1,0], {
-    displayName: "Direction"
+```javascript
+pc.script.attribute('direction', 'vec2', [0,1], {
+    displayName: "Vector 2"
 });
-~~~
+
+pc.script.attribute('direction', 'vec3', [0,1,0], {
+    displayName: "Vector 3"
+});
+
+pc.script.attribute('transform', 'vec4', [0,1,0,1], {
+    displayName: "Vector 4"
+});
+```
 
 #### Options
 
@@ -232,7 +240,7 @@ The value is one of a possible set of values. This will expose a dropdown list o
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('pet', 'enumeration', 0, {
     displayName: "Pet",
     enumerations: [{
@@ -243,7 +251,7 @@ pc.script.attribute('pet', 'enumeration', 0, {
        value: 1
     }]
 });
-~~~
+```
 
 #### Options
 
@@ -263,7 +271,7 @@ The value is a [pc.Curve][4] or a [pc.CurveSet][5] if there are multiple curves.
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('speed', 'curve', null, {
     min: 0,
     max: 5
@@ -271,7 +279,7 @@ pc.script.attribute('speed', 'curve', null, {
 pc.script.attribute('position', 'curve', null, {
     curves: ['x', 'y', 'z']
 });
-~~~
+```
 
 #### Options
 
@@ -289,11 +297,11 @@ The value is a [pc.Curve][4] or a [pc.CurveSet][5] if there are multiple color c
 
 #### Example
 
-~~~js~~~
+```javascript
 pc.script.attribute('color', 'colorcurve', null, {
     type: 'rgba'
 });
-~~~
+```
 
 #### Options
 

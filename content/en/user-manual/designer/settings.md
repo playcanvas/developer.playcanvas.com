@@ -4,8 +4,6 @@ template: usermanual-page.tmpl.html
 position: 8
 ---
 
-## Settings
-
 The Settings panel lets you to set up global properties for your scene. The properties that are settable are:
 
 * Physics
