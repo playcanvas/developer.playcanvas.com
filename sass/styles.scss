@@ -527,15 +527,15 @@
 
             h1 {
                 @include font-bold();
-                font-size: 48px;
+                font-size: 40px;
             }
             h2 {
                 @include font-bold();
-                font-size: 36px;
+                font-size: 30px;
             }
             h3 {
                 @include font-bold();
-                font-size: 26px;
+                font-size: 24px;
             }
             h4 {
                 @include font-bold();
