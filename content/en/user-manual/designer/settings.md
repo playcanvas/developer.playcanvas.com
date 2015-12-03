@@ -6,7 +6,7 @@ position: 8
 
 The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
 
-![Cog][2]
+<img src="/images/user-manual/cog.jpg" style="display: inline; vertical-align: middle;">
 
 ## Editor
 
