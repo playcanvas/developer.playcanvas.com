@@ -4,44 +4,57 @@ template: usermanual-page.tmpl.html
 position: 8
 ---
 
-The Settings panel lets you to set up global properties for your scene. The properties that are settable are:
+## Settings
 
-* Physics
-  * Gravity
-* Environment
-  * Ambient Light Color
-  * Skybox
-  * Skybox Intensity
-  * Skybox Mip
-* Camera
-  * Gamma correction
-  * Tonemapping
-  * Exposure
-* Fog
-  * Type
-  * Density
-  * Distance
-  * Color
-* Loading Screen
-  * Script
-
-The settings panel is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
+The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
 
 ![Cog][2]
+
+## Editor
+
+These are personal preferences for the Editor.
+
+### Grid
+
+You can set the number of divisions and the size of each division for the Grid that appears in the Editor scene.
+
+### Snap
+
+This is the snap increment used when snapping is enabled.
+
+### Camera Clip
+
+Here you can set the near and far clip planes for the Editor cameras.
+
+### Clear Color
+
+This is the clear color of the Editor cameras.
+
+### Icon Size
+
+This is the size of the icons that appear over various components inside the 3D viewport. Set this to 0 if you don't want to see icons at all.
+
+### Local Server
+
+This is the URL where all the scripts are going to be loaded from, when launching the Application with Launch Local.
 
 ## Physics Settings
 
 Physics settings affect the simulation of all the rigid body components in your scene.
 
+### Enable
+
+If this is enabled then the 3D physics library will be included in your Application.
+
 ### Gravity
 
 Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g).
 
-## Environment
+## Rendering
 
-Environment settings effect the geometry in your scene.
+Rendering settings effect various graphics related properties.
 
-### Global Ambient Color
+### Ambient Color
 
 The color of the scene's ambient light source. PlayCanvas allows you to create directional, point and spot lights. These lights account for direct light that falls on objects. But in reality, light actually bounces around the environment and we call this indirect light. A global ambient light is a crude approximation of this and allows you to set a light source that appears to shine from all directions. The global ambient color is multiplied with the Ambient property of a Phong Material to add a contribution to the final color of an object.
 
@@ -62,8 +75,6 @@ This is a slider that controls the intensity or brightness of the skybox. The va
 ### Skybox Mip
 
 When using a Prefiltered Skybox, you can select the skybox mip that you want to display. Each mip is a more blurred version of the original Skybox. You can use this to show a more blurred / abstract version of your original Skybox for example for artistic purposes.
-
-## Camera
 
 ### Tonemapping
 
@@ -88,9 +99,7 @@ Computer screens are set up to output not physically linear, but perceptually li
 
 To find out more about gamma correction, read [this GPU Gems chapter][5].
 
-## Fog
-
-### Type
+### Fog
 
 The Fog Type property can be used to control an approximation of an ambient fog in your scene. Here is an example of fog being enabled:
 
@@ -116,6 +125,25 @@ The distance in scene units from the viewpoint from where the fog reaches a maxi
 ### Fog Density
 
 The fog density controls the rate at which fog fades in for Exp and Exp2 fog types. Larger values cause fog to fade in more quickly. Fog density must be a positive number.
+
+### Resolution
+
+Control the width and height of your Application. You can also set the resolution mode to one of the following values:
+
+* Auto - The resolution will always be the same as the canvas size
+* Fixed - The resolution will always be width x height pixels.
+
+### Fill Mode
+
+Fill mode controls the sizing behaviour of the canvas. You can set one of the following values:
+
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* Fill window - The canvas will stretch to fill the window completely.
+
+### Device Pixel Ratio
+
+When enabled the canvas resolution will be calculated including the device pixel ratio.
 
 ## Loading Screen (Available for ORG users only)
 
