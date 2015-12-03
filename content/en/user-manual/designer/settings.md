@@ -50,7 +50,7 @@ Gravity is the acceleration applied every frame to all rigid bodies in your scen
 
 ## Rendering
 
-Rendering settings effect various graphics related properties.
+Rendering settings affect various graphics related properties.
 
 ### Ambient Color
 
