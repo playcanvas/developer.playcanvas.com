@@ -16,7 +16,7 @@ This is how your Project will be set up by default when you create it. If you ha
 
 ### Adding a new script
 
-<img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 To add a new script, either click on the Add Script button or open your Scene in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
 
@@ -26,7 +26,7 @@ Alternatively you can drag and drop a script from the asset panel into the scrip
 You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][code_tab] tab in your Project dashboard or from the [Assets Panel][assets_panel] in the Editor.
+Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][1] tab in your Project dashboard or from the [Assets Panel][2] in the Editor.
 
 ## Local Server
 
@@ -37,9 +37,9 @@ Installing and setting up the local server is slightly different for each platfo
 
 ### Windows
 
-* First you will need to install python from [here][python]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
+* First you will need to install python from [here][3]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
 
-* [Download the server script][server_windows]
+* [Download the server script][4]
 
 * Save the file `localserver.bat` into the folder containing your scripts.
 
@@ -50,7 +50,7 @@ Serving HTTP on 0.0.0.0 port 51000 ...
 
 ### OS X and Linux
 
-* [Download the server script][server_osx_linux]
+* [Download the server script][5]
 
 * Save the file `localserver` into the folder containing your scripts
 
@@ -126,12 +126,8 @@ You can easily switch between using local code and a code repository when using 
 
 Exporting scenes will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
 
-[server_osx_linux]: /downloads/localserver
-[python]: http://www.python.org/download/
-[server_windows]: /downloads/localserver.bat
-[launch_buttons]: /images/platform/launch_buttons.png
-[script_picker]: /images/platform/component_script.png
-[assets_panel]: /user-manual/designer/assets
-[code_tab]: /user-manual/dashboard/code
-
-
+[1]: /user-manual/dashboard/code
+[2]: /user-manual/designer/assets
+[3]: http://www.python.org/download/
+[4]: /downloads/localserver.bat
+[5]: /downloads/localserver
