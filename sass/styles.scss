@@ -525,25 +525,38 @@
             padding-left: 30px;
             color: $main-text-color;
 
+            > h1:first-child {
+                margin-top: 0.5em;
+            }
+
+            h1, h2, h3, h4, h5 {
+                margin-top: 1.5em;
+                margin-bottom: 0;
+            }
+
             h1 {
                 @include font-bold();
-                font-size: 18px;
+                font-size: 28px;
             }
             h2 {
                 @include font-bold();
-                font-size: 16px;
+                font-size: 24px;
             }
             h3 {
                 @include font-bold();
-                font-size: 14px;
+                font-size: 20px;
             }
             h4 {
                 @include font-bold();
-                font-size: 12px;
+                font-size: 18px;
             }
             h5 {
                 @include font-bold();
-                font-size: 10px;
+                font-size: 16px;
+            }
+
+            p {
+                margin-top: 0.2em;
             }
 
             a {
