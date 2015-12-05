@@ -1,7 +1,7 @@
 ---
 title: CSS
 template: usermanual-page.tmpl.html
-position: 10
+position: 11
 ---
 
 A CSS asset contains CSS code. You can create a new CSS asset in the Editor or by uploading a file with a .css extension.
