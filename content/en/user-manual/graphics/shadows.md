@@ -24,7 +24,7 @@ Shadows should now be visible in the Editor's Viewport.
 
 ## Tuning Shadows
 
-The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [light component UI].
+The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
 
 ### Shadow Distance
 
@@ -48,7 +48,7 @@ The Normal Offset Bias solves this problem. In addition to using the depth bias,
 
 The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in PlayCanvas but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
 
-![Hard vs soft shadows][2]
+![Hard vs soft shadows][3]
 
 Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
 
@@ -63,4 +63,5 @@ Enabling shadows has performance implications:
 * Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
 
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
-[2]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
+[2]: /user-manual/packs/components/light
+[3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
