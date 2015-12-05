@@ -1,7 +1,7 @@
 ---
 title: Cube Maps
 template: usermanual-page.tmpl.html
-position: 4
+position: 5
 ---
 
 Cube maps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:

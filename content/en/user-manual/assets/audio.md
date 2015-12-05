@@ -1,7 +1,7 @@
 ---
 title: Audio
 template: usermanual-page.tmpl.html
-position: 9
+position: 10
 ---
 
 Audio assets are sound files which can be played back using the Audiosource component.
