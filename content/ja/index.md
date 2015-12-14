@@ -1,9 +1,9 @@
 ---
-title: PlayCanvas 開発者向けサイト
+title: PlayCanvasデベロッパー向けサイト
 template: intro.tmpl.html
 ---
 
-We suggest you start reading the [User Manual][1], it's the complete guide to PlayCanvas, read this through to learn everything there is to know. Next, dig into the [Tutorials][3] and [Videos][12], step-by-step guides for the specific features of PlayCanvas. Finally, the [API Reference][4] is the complete PlayCanvas Engine reference.
+はじめに[User Manual][1]を読むことをおすすめします。これはPlayCanvasの使い方の完全なマニュアルで、これを端から端まで読むことで、必要なことをすべて学ぶことができます。次に、[チュートリアル][3]と[ビデオ][12]を見ていきましょう。PlayCanvasの機能に関する順を追った説明になっています。最後に、[APIリファレンス][4]は、PlayCanvasエンジンの完全なリファレンスです。
 
 [play page][8] でゲームプロジェクトがどのようにデザインされ、作られているのかを見ることができるので、忘れないようにしてください。
 
@@ -11,7 +11,7 @@ We suggest you start reading the [User Manual][1], it's the complete guide to Pl
 
 ## Engine 利用者
 
-[Engine][9] - This guide will get you going if you are only using the Engine and not the PlayCanvas Editor.
+[エンジン][9] - PlayCanvasエディタを使わず、エンジンだけを使う場合はこちらのガイドを参照してください。
 
 [GitHub][5] - PlayCanvasのGitHubページです。 あなたのプロジェクトに[2D images][6] や [text][7]　を表示させるための説明を確認できます。
 
@@ -19,11 +19,11 @@ We suggest you start reading the [User Manual][1], it's the complete guide to Pl
 
 # 困ったときは？
 
-## Want to talk?
+## コミュニケーションを取りたいとき
 
-Talk about your game, show off your latest project, seek out new team members, or offer your assistance to others. Join us in the discussion [forums][10].
+あなたのゲームのことについて話したり、自分のプロジェクトを見せたり、チームのメンバーを探したり、あるいは他の人を助けたりしましょう。[フォーラム][10]までぜひお越しください。
 
-## Questions?
+## 質問がある場合
 
 PlayCanvas、API、プラットフォームについての質問など、PlayCanvasを利用する上での技術的な質問があれば、 [PlayCanvas Answers][11] を使って問題を解決してください。 
 

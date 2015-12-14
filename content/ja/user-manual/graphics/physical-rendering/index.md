@@ -1,57 +1,57 @@
 ---
-title: Physically Based Rendering
+title: 物理ベースレンダリング
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
 ![Star-Lord][1]
-*Star-Lord Model by [Joachim Coppens][2]*
+*Star-Lordモデル [Joachim Coppens][2]*
 
-Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
+物理ベースレンダリング(PBR)では、一貫性のあるグラフィクスレンダリングが、アーティストによる素材作成、計測された物理的プロパティとマテリアルシェーダの組み合わせによって実現されます。光源と物体表面との関係をあらわす物理原則を適応することで、どのような照明環境でも特別な処理をすることなく自然な描画を行うことができます。
 
-# Fundamental Principles
+# 基礎となる原理
 
-Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in PlayCanvas.
+ここでは、物理ベースのシェーダが実行するライティングの計算の基礎となる原則を説明します。次のセクションでは物理ベースのレンダリングをどのようにPlayCanvas上で使用するかを詳しく説明します。
 
-## Diffuse & Specular
+## 拡散(Diffuse)とスペキュラ(Specular)
 
-Diffuse and Specular (or reflected) light are the two terms that describe two main types of interaction between light and a material. Specular light refers to light which has bounced off the surface. On a smooth surface this light will reflect all the in same direction and the surface will appear mirror-like. Diffuse light is light that has been absorbed, scattered in the material and re-emerged. This light tends to be uniform in direction unlike specular light. During this absorbing and re-emerging some light wavelengths will be absorbed. The wavelengths that are not absorbed give the material it's color. For example, if all blue and green wavelengths are absorbed, the material will appear red. In rendering terms, diffuse color is sometimes known as "albedo" or "base color".
+拡散と反射(あるいはスペキュラ)は光源とマテリアル間の関係をあらわす二つの主要な要素を表現するための用語です。反射光は物体表面で反射した光をあらわします。なめらかな表面では反射した光はすべて同じ方向に進み、表面は鏡のように見えます。拡散光は物体に一旦吸収され、物体内で反射されて再び放出される光です。この光は反射光とは違い、すべての方向に同じように放出されます。また、吸収と再放出が行われる際に、特定の波長の光は吸収されます。物体に吸収されなかった波長の光はその物体の色となります。例えば、青と緑の波長の光が吸収された場合にはその物体は赤く見えます。レンダリング用語では、拡散色は"アルベド"や"ベースカラー"と呼ばれます。
 
-## Energy Conservation
+## エネルギーの保存
 
 ![Energy Conservation][3]
-*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
+*なめらかな表面には鋭く明るいハイライトがあらわれ、粗い表面には広くぼんやりとしたハイライトがあらわれます。*
 
-One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practise this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+物理的に正しいレンダリングの重要な要素は、エネルギーの保存です。拡散光と反射光がどちらも物体表面に投射される光から発生していることから考えると、拡散光と反射光を足しあわせた総量は、物体表面に投射された光の総量を上回ることはできません。この法則が現実世界で意味することは、物体表面の反射率が高ければ拡散光は非常に小さくなり、反対に拡散光が大きければ反射はあまり起こらないということになります。
 
-The joy of PBR is that energy conservation is included in the shader, so as an artist you don't have to think about it. It just works!
+物理ベースのレンダリングの利点は、このエネルギー保存則がシェーダに内包されているということです。アーティストは法則を考えなくても物理ベースのレンダリングを行うことができます。
 
-## Metals & Non-metals
+## 金属と非金属
 
 ![Metals & Non-metals][4]
-*Metals and Non-metals*
+*金属と非金属*
 
-One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine it's behaviour. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
+物理ベースのレンダリングとこれまでのシェーディングモデルの違いの一つは、マテリアルの振る舞いを、物体がどのようなものでできているか、ということを考慮して決めることです。ここで考慮する主な要素は、その物体が伝導体(通常は金属)であるか、あるいは絶縁体(通常は非金属)であるかということです。
 
-The reason this is important is it determines many factors about how the material responds to light. For example, metals are generally reflective (between 60%-90%) where as non-metals are not (0%-20%). Secondly, reflections on non-metals are usually white where as metals will usually reflect the same color as the diffuse.
+この要素はマテリアルがどのように光に反応するかということの多くを決定する重要なものです。例えば、金属は一般的に光を反射します。(60%から90%ほど) 一方で非金属は光をあまり反射しません。(0%から20%ほど) つぎに、非金属の反射光は通常白色光ですが、金属の反射光は拡散光と同じ色になります。
 
-Because of these differences one of the PBR workflows includes a **metalness** property which makes this stuff simple by defining a material as either a metal, or a non-metal. More on metalness workflow in the following sections.
+この違いのため、物理ベースのレンダリングの設定手順の一つでは、そのマテリアルが金属か非金属かを決定する**金属質(metalness)**プロパティを使用します。金属質を使った設定手順は後ほど詳しく説明します。
 
-## Fresnel
+## フレネル
 
-Fresnel is a term that you don't really have to know about to work with PBR in PlayCanvas, but it will give you a better view of how materials behave if you do.
+フレネルはPlayCanvasで物理ベースのレンダリングを使う上で理解しなければいけない要素ではありません。ただ、この要素を理解することで、物体が光に対してどのように振る舞うかをより深く知ることができます。
 
-All you need to know about Fresnel is it means that the angle at which you are viewing a surface influences how reflective that surface appears. If the surface is almost edge on to your view, it will be almost completely reflective.
+フレネルは、物体を見る視線とその物体表面の角度によって、その物体の反射光成分がどのように影響を受けるかということを表現します。もし物体表面が視線とほとんど平行なら、その表面はほとんど完全に光を反射します。
 
-## Microsurface
+## 微細表面
 
-Finally onto microsurface. Generally, 3D artists are familiar with the idea of normal maps. Textures that modify the direction of the surface they are applied to. Microsurface, otherwise known as roughness or glossiness, provides a similar thing, only on a much smaller scale. The microsurface of a material describes how rough or smooth a surface is. Compare glass (high glossiness, low roughness) to sandpaper (high roughness, low glossiness). We're not specifying the exact direction the surface faces, just the general idea of rough or smooth.
+最後に微細表面について説明します。3Dアーティストにとって親しみやすいこの概念の表現は法線マップでしょう。このテクスチャを与えると、その表面の方向を変えることができます。光沢度や粗さとも呼ばれる微細表面は、これと同じ概念を非常に小さなスケールで表現します。微細表面はその物体表面が粗いのかなめらかなのかをあらわします。ガラス(光沢度が高く、粗さは低い)とサンドペーパー(光沢度が低く、粗さは高い)を比べてみてください。この方法では、表面がどちらを向いているかは表現せず、単に表面が粗いかなめらかかということだけを表現します。
 
-Some PBR systems use Roughness, some use Glossiness, they are the same thing. Roughness is the inverse of Glossiness and vice versa. If you want to convert from one to the other, simply invert the texture or value.
+いくつかの物理ベースのレンダリングシステムは粗さという表現を使い、いくつかは光沢度という表現を使いますが、それらは同じものです。粗さを反転すると光沢度になり、その逆も行うことができます。もし変換を行いたい場合には、単純にテクスチャの値を反転してください。
 
-[Next: Physical Materials][6]
+[物理的マテリアルに続く][6]
 
-*More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
+*さらに詳しい説明は、Marmoset Toolbagの[PBR Theory][5]という素晴らしい記事を参照してください。*
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
 [2]: http://joachimcoppens.com/

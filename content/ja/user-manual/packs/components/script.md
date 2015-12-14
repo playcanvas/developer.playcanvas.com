@@ -1,5 +1,5 @@
 ---
-title: Script
+title: スクリプト
 template: usermanual-page.tmpl.html
 position: 10
 ---
@@ -8,13 +8,13 @@ position: 10
 
 <img src="/images/user-manual/components/component-script.jpg"/>
 
-To create a new script, click on the <span class="font-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+新しいスクリプトを作成するには、アセットパネルの<span class="font-icon" style="font-size: 18px">&#58468;</span>ボタンを押し、New Scriptを選択してください。そして、ポップアップウィンドウにスクリプトの名前を入力してEnterを押してください。
 
 <img src="/images/user-manual/new_script.jpg"/>
 
-You can then drag the new script on a script component or you can click the Add Script button in the script component Inspector and then select it from the Assets Panel.
+新しいスクリプトはスクリプトコンポーネント上にドラッグすることができます。また、スクリプトコンポーネントのインスペクタにあるAdd Scriptボタンを押して、アセットパネルからスクリプトを選択することもできます。
 
-To edit the script in the PlayCanvas Code Editor you can either click on the hyperlinked script name, or you can select the script from the Assets Panel and click Edit.
+スクリプトをPlayCanvasエディタで編集するには、スクリプト名のハイパーリンクをクリックするか、スクリプトをアセットパネルから選択してEditをクリックしてください。
 
 ## プロパティ
 
@@ -28,7 +28,7 @@ To edit the script in the PlayCanvas Code Editor you can either click on the hyp
 
 ## スクリプティングインターフェイス
 
-スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]。
+スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]を参照してください。
 
 [2]: /engine/api/stable/symbols/pc.ScriptComponent.html
 

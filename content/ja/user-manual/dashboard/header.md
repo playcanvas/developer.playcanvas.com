@@ -1,22 +1,22 @@
 ---
-title: Dashboard Header
+title: ダッシュボードのヘッダ
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
 ![ダッシュボード][1]
 
-ダッシュボードヘッダーにはプロジェクトの一般的な動作を速やかに行うための様々なボタンが設置されています。
+ダッシュボードのヘッダにはプロジェクトの一般的な動作を速やかに行うための様々なボタンが配置されています。
 
-By clicking on the EDITOR button you can open up the PlayCanvas Editor.
+EDITORボタンをクリックすると、PlayCanvasエディタが開きます。
 
-By clicking on the PLAY button you can play the Primary App of this project.
+PLAYボタンを押すと、そのプロジェクトのプライマリアプリケーションが実行されます。
 
-By clicking on WATCH you can watch or follow this project, receiving updates for new posts about this project.
+WATCHボタンを押すと、そのプロジェクトをウォッチします。そのプロジェクトに関する新しいポストがあるたびにアップデート情報を受け取るようになります。
 
-By clickin on START you can star or like this project, providing motivation to the developer.
+STARボタンをクリックするとそのプロジェクトをLikeします。開発者のやる気につながります。
 
-By clicking on the FORK button you can fork this project, which means that a clone of this project will be copied to your account.
+FORKボタンをクリックすることによって、そのプロジェクトをフォークすることができます。フォークすることで、あなたのアカウントに対象のプロジェクト全体をコピーすることができます。
 
 [1]: /images/platform/dashboard_header.jpg
 

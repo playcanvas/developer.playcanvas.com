@@ -6,75 +6,75 @@ position: 8
 
 ## 設定
 
-The Settings panel lets you to set up global properties for your scene. The properties that are settable are:
+設定パネルではシーンのグローバルプロパティを設定することができます。設定可能なプロパティは次のとおりです：
 
-* Physics
-  * Gravity
-* Environment
-  * Ambient Light Color
-  * Skybox
-  * Skybox Intensity
-  * Skybox Mip
-* Camera
-  * Gamma correction
-  * Tonemapping
-  * Exposure
-* Fog
-  * Type
-  * Density
-  * Distance
-  * Color
-* Loading Screen
-  * Script
+* Physics（物理）
+  * Gravity（重力）
+* Environment（環境）
+  * Ambient Light Color（アンビエントライトカラー）
+  * Skybox（スカイボックス）
+  * Skybox Intensity（スカイボックス強度）
+  * Skybox Mip（スカイボックス Mip）
+* Camera（カメラ）
+  * Gamma correction（ガンマ調整）
+  * Tonemapping（トーンマッピング）
+  * Exposure（露出）
+* Fog（フォグ）
+  * Type（タイプ）
+  * Density（密度）
+  * Distance（距離）
+  * Color（色）
+* Loading Screen（読み込み画面）
+  * Script（スクリプト）
 
-The settings panel is accessed using the <img src="/images/user-manual/cog.jpg" style="text-align: middle;" /> button in the bottom right of the Editor.
+設定パネルにはエディタの右下にある<img src="/images/user-manual/cog.jpg" style="text-align: middle;" />ボタンからアクセスできます。
 
 ## 物理の設定
 
-Physics settings affect the simulation of all the rigid body components in your scene.
+物理設定は、シーン内のすべてのリジッドボディのシミュレーションに影響を与えます。
 
 ### 重力
 
-Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g).
+重力は、シーン内のすべてのリジッドボディに対してフレームごとに適用される加速度です。デフォルトでは毎秒あたり-9.8メートルに設定されています。これは地球の重力を近似します。宇宙を設定にしたゲームを作っている場合は0, 0, 0 (重力ゼロ)に設定すると良いかも知れません。
 
 ## 環境
 
 環境設定は、シーン内のジオメトリに影響を与えます。
 
-### Global Ambient Color
+### グローバルアンビエントカラー
 
-The color of the scene's ambient light source. PlayCanvas allows you to create directional, point and spot lights. These lights account for direct light that falls on objects. But in reality, light actually bounces around the environment and we call this indirect light. A global ambient light is a crude approximation of this and allows you to set a light source that appears to shine from all directions. The global ambient color is multiplied with the Ambient property of a Phong Material to add a contribution to the final color of an object.
+シーンのライトソースの色。 PlayCanvasでは指向性ライト、ポイントライト、スポットライトを作成することができます。これらのライトが、オブジェクトに直接当たる光になります。現実世界では、光は環境内で反射をします。このような光を、間接光と呼びます。グローバルのアンビエントライトは、この粗近似値であり、すべての方向から照らすように見える光源を設定することができます。このグローバルのアンビエント色は、Phong素材のAmbientプロパティで乗算され、オブジェクトの最終的な色に追加されます。
 
-Note, if you are using a Skybox and Physical Materials the Ambient Color has no effect.
+補足：SkyboxとPhysical Materials（物理素材）を使用している場合、アンビエントカラーは効果がありません。
 
 ### スカイボックス
 
-The Skybox is a [cubemap][1] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
+スカイボックスは、3Dシーンの裏でレンダリングされる [cubemap][1] アセットです。これにより、シーン内3Dモデルの先にある遠くの世界を表示する、6つの2D画像のセットを使用することができます。
 
-To add a skybox, create a cubemap asset and then assign it to the cubemap slot in the settings panel.
+スカイボックスを追加するには、キューブマップアセットを作成し、設定パネルでキューブマップスロットに割り当てます。
 
-Note, if you are using a Prefiltered Cubemap, the skybox will be used as the default environment map for all Physical materials.
+補足：プレフィルタされたキューブマップを使用している場合、すべての物理的な素材のデフォルトの環境マップとしてスカイボックスが使用されます。
 
 ### スカイボックスの強度
 
-This is a slider that controls the intensity or brightness of the skybox. The value can range from 0 (totally black) to 32 (brightest).
+これは、スカイボックスの強さや明るさを制御するスライダーです。値の範囲は0から(完全に黒)32(最も明るい)です。
 
 ###スカイボックス Mip
 
-When using a Prefiltered Skybox, you can select the skybox mip that you want to display. Each mip is a more blurred version of the original Skybox. You can use this to show a more blurred / abstract version of your original Skybox for example for artistic purposes.
+プレフィルタリングされたスカイボックスを使用している場合、表示したいスカイボックスのmipを選択することができます。各MIPは、元のスカイボックスのよりぼやけたものです。アーティスティックな理由等で、元のスカイボックスのぼやけた/抽象的なバージョンを表示させたい場合に使用します。
 
 ## カメラ
 
 ### トーンマッピング
 
-Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tonemapping.
+トーンマッピングは、ハイダイナミックレンジ(HDR)の色を低ダイナミックレンジ(例：目に見えるモニタ出力値に)に圧縮する方法です。トーンマッピングには2つのオプションがあります。
 
-* **Linear:** imply scales HDR colors by exposure.
-* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+* **Linear：** HDRの色を暴露によってスケーリング。
+* **Filmic：** より複雑な曲線。過度に明るいスポットを軟化させながら、暗い色合いを保つことができる。
 
-Linear tonemapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
+リニアトーンマッピングはデフォルトで有効になっていますが、それは単に(色*露出)です。明るさへの迅速な変更を行うために露出を調整することができます。入力はHDRの場合がありますので、Photoshopでの単純な明るさ調整とは異なります。 例：強度= 8のライトソースを使用している場合、暴露=0.5の後はまだかなり明るい(4)です。すべての目に見えるものは直線的にフェードアウトするだけではありません。
 
-Filmic tonemapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tonemapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tonemapping gives you nice abilities to get rid of such spots.
+Filmicトーンマッピングは、インテリア内の明るい光が壁/天井の近くに設置されたシーンや、明るい太陽に照らされたシーンなどのように、ハイコントラストな環境で使用するのに適しています。範囲外の非常に明るい値をより知覚的に現実的なもの(私たちの目やフィルムも同様にトーンマッピングを行っています。物理的にリニアな値は見えません)に再マップします。写真家の方に聞いたら分かりますが、非常に明るいスポットや真っ黒い点を写真に残すことは避けるべきです。Filmicトーンマッピングによって、そのようなスポットを取り除くことができます。
 
 ### 露出
 
@@ -82,44 +82,44 @@ Filmic tonemapping is a good choice in high-contrast environments, like scenes l
 
 ### ガンマの調整
 
-Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then the fully lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. The following image shows a simple scene with a sphere. On the left the scene has been gamma corrected while on the right, the scene is uncorrected.
+コンピュータの画面は物理的にリニアではないが、知覚的にリニア(sRGB)な信号を出力するように設定されています。しかし、ライティングの計算を実行するとき、正しく表示させるためにはカラーテクスチャを物理的にリニアな空間に変換して、完全に照らされた画像をsRGBのに再びフィットする必要があります。ガンマ補正を有効にしてレンダリングをすると、彩度を上げすぎた醜いハイライトを減らし、ライティング後に色をより良く保持するので、基本的には有効にすることをお勧めします。次の図では、球体が置かれたシンプルなシーンを示しています。左のシーンではガンマが修正されています。右のシーンは未修正です。
 
 <img alt="Gamma correction comparison" width="640" src="/images/user-manual/gamma-correction.jpg" />
 
-To find out more about gamma correction, read [this GPU Gems chapter][2].
+ガンマ調整の詳細については [こちらのGPU Gems チャプター][2]をご確認ください。
 
 ## Fog（霧）
 
 ### タイプ
 
-The Fog Type property can be used to control an approximation of an ambient fog in your scene. Here is an example of fog being enabled:
+フォグタイプのプロパティは、シーンを取り巻く霧の近似値を制御するために使用します。霧を有効にする際の例：
 
 利用可能なタイプ：
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
-* Exp2 - Fog fades in from the view position according to an exponential squared function
+*None - 霧が無効になっています
+*Linear - 霧はFog StartとFog End距離の間で直線的にフェードインします
+*Exp - 霧は指数関数に応じて視点位置からフェードインします
+* Exp2 - 霧は指数乗の関数に応じて視点位置からフェードインします
 
 ### 色
 
-The color of the fog. This color is blended with a surface's color more as the fog fades in.
+フォグ（霧）の色。霧がフェードインするにつれ、表面の色とブレンドされます。
 
 ### 開始距離
 
-The distance in scene units from the viewpoint from where the fog starts to fade in.
+霧がフェードインし始める位置のビューポイントからの、シーン単位での距離。
 
 ### 終了距離
 
-The distance in scene units from the viewpoint from where the fog reaches a maximum. Any objects beyond this distance will be rendered with the fog color.
+霧が最大になる位置の視点からの、シーン単位での距離。この距離を越えたオブジェクトは、フォグの色でレンダリングされます。
 
-### Fog Density
+### フォグ（霧）濃度
 
-The fog density controls the rate at which fog fades in for Exp and Exp2 fog types. Larger values cause fog to fade in more quickly. Fog density must be a positive number.
+Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、霧がフェードインする速度を制御します。値が大きいほど霧がより迅速にフェードインされます。霧の濃度は正の数でなければなりません。
 
 ロード画面（ORGのユーザーのみ利用可能）
 
-Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][3].
+ここでは、アプリケーションの読み込み画面を作成するスクリプトを設定することができます。新しい読み込み画面のスクリプトを作成するには、*Create Default*をクリックします。カスタムの読み込み画面の詳細は[こちら][3]。
 
 [1]: /user-manual/assets/cubemaps
 [2]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
