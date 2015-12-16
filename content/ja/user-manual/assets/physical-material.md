@@ -1,10 +1,10 @@
 ---
-title: Physical Material
+title: 物理素材
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-The Physical Material represents the most advanced and highest quality shading model available in PlayCanvas. We recommend you use the Physical shading model.
+Physical Material（物理素材）はPlayCanvasで利用可能な最も先進的でクオリティの高いシェーディングモデルを表しています。物理的なシェーディングモデルを使用することを推奨します。
 
 ### オフセット & タイリング
 
@@ -49,14 +49,14 @@ The Physical Material represents the most advanced and highest quality shading m
 <img src="/images/user-manual/material-inspector/specular.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Use Metalness</td><td>Toggle between specular and metalness workflow.</td></tr>
-    <tr><td>Specular Map</td><td>The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead.</td></tr>
-    <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
-    <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
-    <tr><td>Metalness Map</td><td>[Only when using metalness] This map specifies per-pixel metalness values. A value of 1 is metal and a value of 0 is non-metal.</td></tr>
-    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property.</td></tr>
-    <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as is the surace is polished and shiny).</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Use Metalness</td><td>スペキュラとメタル質ワークフロー間で切り替える。</td></tr>
+    <tr><td>Specular Map</td><td>ピクセル単位のスペキュラ色を指定するスペキュラマップ。スペキュラマップが設定されていない場合はスペキュラ色が代わりに使用されます。</td></tr>
+    <tr><td>Tint</td><td>素材のスペキュラマップを素材固有のスペキュラ色で調節する場合、チェックを入れます。</td></tr>
+    <tr><td>Color</td><td>スペキュラマップが設定されていない場合、これは、素材のスペキュラ色になります。スペキュラマップが設定されていてtintが有効になっている場合、この色が素材のスペキュラマップを調節します。</td></tr>
+    <tr><td>Metalness Map</td><td>[メタル質を使用している場合のみ]このマップは、ピクセル単位のメタル質値を指定します。 1の値はメタル（金属）であり、0の値はノンメタル（非金属）です。</td></tr>
+    <tr><td>Gloss Map</td><td>ピクセル単位の光沢値を指定するグロス（光沢）マップ。グロス（光沢）マップは光沢プロパティによって変調されます。</td></tr>
+    <tr><td>Glossiness</td><td>表面の平滑性を決定する値。小さい値にすると、表面が粗くなりスペキュラハイライトはより広範になります。大きな値にすると、表面は滑らかになり、より濃縮されたスペキュラハイライトを展示します （表面が研磨され光沢があるように）。</td></tr>
 </table>
 
 ### Emissive（発光）

@@ -1,53 +1,53 @@
 ---
-title: Camera
+title: カメラ
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-カメラコンポーネントを使用すれば、エンティティは特定のビューポイントからシーンをレンダリングできます。
+カメラコンポーネントを使うと、エンティティは特定のビューポイントからシーンをレンダリングできるようになります。
 
-The camera component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the camera will render the scene every frame.
+カメラコンポーネントはコンポーネントパネルの右上のチェックボックスで有効と無効を切り替えることができます。有効になった場合、カメラはシーンを毎フレームレンダリングします。
 
-![Camera component][1]
+![カメラコンポーネント][1]
 
 ## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Clear Buffers</td><td>Controls how the camera's render target is cleared before rendering each frame. The camera maintains two types of buffer: the color buffer which stores the visible image and a depth buffer that stores information about the distance of a rendered pixel in relation to the position of the camera. The buffers can be cleared independently:
+    <tr><th>プロパティ</th><th>Description</th></tr>
+    <tr><td>Clear Buffers</td><td>カメラのレンダリングターゲットとなるバッファをどのように毎フレームクリアするかを設定します。カメラは二種類のバッファを使用します。ひとつはカラーバッファで、これは実際に見える画像を保持します。もう一つはデプスバッファで、描画されるそれぞれのピクセルのカメラ位置からの遠さを保持します。これらのバッファはそれぞれ独立にクリアすることができます。
         <ul>
-            <li>Color: If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</li>
-            <li>Depth: If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</li>
+            <li>Color: これが選択された場合、シーンのレンダリングを行う前に、カメラはレンダリングターゲットを指定された色でクリアします。</li>
+            <li>Depth: これが選択された場合、シーンのレンダリングを行う前に、カメラはデプスバッファを明示的にクリアします。</li>
         </ul>
     </td></tr>
-    <tr><td>Clear Color</td><td>The color used to clear the camera's render target.  This property is only displayed if 'Clear Color Buffer' is selected.</td></tr>
-    <tr><td>Projection</td><td>The projection type of the camera. Options are:
+    <tr><td>Clear Color</td><td>カメラのレンダリングターゲットをクリアする際に使用する色です。この項目は'Clear Color Buffer'が選択されたときのみ表示されます。</td></tr>
+    <tr><td>Projection</td><td>カメラの投影方法を選択します。選択可能な方法は以下のとおりです:
         <ul>
-            <li>Perspective</li>
-            <li>Orthographic</li>
+            <li>Perspective - 透視射影</li>
+            <li>Orthographic - 正射影</li>
         </ul>
     </td></tr>
-    <tr><td>Frustum Culling</td><td>If selected, the camera will only render mesh instances whose axis-aligned bounding boxes intersect with the camera's view frustum. Otherwise, the entire scene will be rendered regardless of visibility.</td></tr>
-    <tr><td>Field of View</td><td>The angle between top and bottom clip planes of a perspective camera. This property is only displayed if 'Projection' is set to 'Perspective'.</td></tr>
-    <tr><td>Ortho Height</td><td>The distance in world units between the top and bottom clip planes of an orthographic camera. This property is only displayed if 'Projection' is set to 'Orthographic'.</td></tr>
-    <tr><td>Near Clip</td><td>The distance in camera space from the camera's eye point to the near clip plane.</td></tr>
-    <tr><td>Far Clip</td><td>The distance in camera space from the camera's eye point to the far clip plane.</td></tr>
-    <tr><td>Priority</td><td>A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first.</td></tr>
-    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalised coordinates (0 to 1) in the following format:
+    <tr><td>Frustum Culling</td><td>これが選択された場合、カメラは軸に平行なバウンディングボックスがカメラの視野錐体に交差するものだけをレンダリングします。選択されていない場合には、見えるか見えないかにかかわらず全シーンがレンダリングされます。</td></tr>
+    <tr><td>Field of View</td><td>透視射影カメラの上部と下部のクリッピング平面の角度です。この項目は'Projection'が'Perspective'に設定された時だけ表示されます。</td></tr>
+    <tr><td>Ortho Height</td><td>正射影カメラの上部と下部のクリッピング平面の距離です。この項目は'Projection'が'Orthographic'に設定された時だけ表示されます。</td></tr>
+    <tr><td>Near Clip</td><td>カメラ座標系における、カメラ位置からニアクリッピング平面までの距離です。</td></tr>
+    <tr><td>Far Clip</td><td>カメラ座標系における、カメラ位置からファークリッピング平面までの距離です。</td></tr>
+    <tr><td>Priority</td><td>どのカメラのビューが優先してレンダリングされるかを決める数字です。小さい数字が優先的にレンダリングされます。</td></tr>
+    <tr><td>Viewport</td><td>ビューポートをカメラに割り当てられたレンダリングターゲットに割り当てる長方形を指定します。これを使うことで、分割スクリーンやピクチャインピクチャのような効果を実装することができます。この値は以下のような0から1の範囲の正規化された座標で指定されます:
         <ul>
-            <li>x: The lower left x coordinate</li>
-            <li>y: The lower left y coordinate</li>
-            <li>w: The width of the rectangle</li>
-            <li>h: The height of the rectangle</li>
+            <li>x: 左下頂点のx座標</li>
+            <li>y: 左下頂点のy座標</li>
+            <li>w: 長方形の幅</li>
+            <li>h: 長方形の高さ</li>
         </ul>
     </td></tr>
 </table>
 
 ## スクリプティングインターフェイス
 
-You can control a camera component's properties using a [script component][2]. The camera component's scripting interface is [here][3].
+カメラコンポーネントのプロパティは[スクリプトコンポーネント][2]を使って操作することができます。カメラコンポーネントのスクリプトインタフェースは[ここ][3]で確認してください。
 
 [1]: /images/user-manual/components/component-camera.png
 [2]: /user-manual/packs/components/script

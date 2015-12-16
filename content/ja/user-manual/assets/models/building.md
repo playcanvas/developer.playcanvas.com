@@ -1,34 +1,34 @@
 ---
-title: モデルの構築
+title: モデルの作成
 template: usermanual-page.tmpl.html
 skip: false
 ---
 
-Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
+PlayCanvas向けの素材とアニメーションの作成は、ほとんどすべての3Dモデリングツールを使って行うことができます。例としては、 Blender, Sketch Up, Autodesk 3D Studio MaxやAutodesk Mayaなどが対応しています。
 
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+PlayCanvasは相互変換のためのFBXフォーマットから最も正確にコンテンツをインポートするよう設計されています。そのため、ご使用のモデリングアプリケーションがFBXに対応していれば、PlayCanvasはそのツールに対応していることになります。そのようになっているため、PlayCanvasをターゲットとして素材を作るために特別なプラグインやツール、PlayCanvas専用のワークフローを準備する必要はありません。
 
-Some modelling and animation programs to consider:
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+PlayCanvasに対応する主だったモデリングツールとアニメーションツールは以下の通りです:
+* フリー: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+* 低価格の有料ソフト: 3D-Coat, NVIL, Hexagon.
+* 高価格の有料ソフト: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
 \* *このプログラムはアニメーションも作成できます*
 
-For generating textures, consider these programs:
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+テクスチャの作成は以下のアプリケーションを使うことができます:
+* フリー: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* 有料: Substance Designer (Substance PainterとBitmap2Materialも同様に対応しています), Photoshop, Quixel NDOとDDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
-Note many of the programs listed above for modelling also allow texture painting.
-If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+上記のモデリングツールの多くがテクスチャペインティングにも対応しています。
+さらに他の選択肢を確認したい場合には、こちらの[外部wiki][1]ページを参照してください。情報の一部は古くなっていることにご注意ください。
 
-## General Considerations for Mesh Construction
+## メッシュ作成に関する一般的な注意点
 
-Regardless which modelling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+どのようなモデリングアプリケーションを使っているかにかかわらず、PlayCanvasで使用する3Dシーンを作成する際に注意しておくべきことがいくつかあります。
 
-* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+* それぞれのメッシュオブジェクトは65,535個以上の頂点を含んではいけません。もしひとつのオブジェクトがこの制限を超える場合には、制限以下になるまでオブジェクトを分割してください。
+* メッシュは256本までのボーンを使ってスキンすることができます。
+* NURBSメッシュはPlayCanvasのネイティブフォーマットに変換される際に、トライアングルメッシュに変換されます。
 
 ---
 
@@ -36,36 +36,36 @@ Regardless which modelling application you are using, there a number of things t
 
 ![Blender ロゴ][3]
 
-[Blender][4] is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender][4]は素晴らしいフリーの3Dモデリングツールで、PlayCanvas用の3Dアセットを作るために最適です。
 
-Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
+BlenderはCOLLADAとFBXのエクスポートの両方に対応しています。ただしビルトインのエクスポーターはいくつか制限があります。
 
 ### **マップの種類**
 
-As of Blender 2.71 both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit. Or right-click the model and select 'Edit Material'.
+Blender 2.71では、拡散マップとノーマルマップはFBXファイルにエクスポートされますが、その他のマップは失われます。そのためPlayCanvasエディタのマテリアルエディタを使ってそれらのマップを再設定する必要があります。マテリアルエディタを使うには、モデルエンティティを選択し、編集したいマテリアルを選択し編集してください。あるいはモデルを右クリックして'Edit Material'を選択してください。
 
-### **テクスチャーの組み込み**
-テクスチャーを組み込むとインポートが簡単になります。
+### **テクスチャーの埋め込み**
+テクスチャーを埋め込むと、インポートが簡単になります。
 
-The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
+BlenderのCOLLADAエクスポーターはテクスチャをモデルファイルに埋め込む機能がありません。
 
-The 2.71 release of Blender features a revamped fbx export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to fbx, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
+Blender 2.71ではfbxエクスポートモジュールが一新され、複数の埋め込みテクスチャをBlenderから直接使うことができるようになりました。まずオブジェクトがBlender内で正常にレンダリングされることを確認してください。そしてFBXにエクスポートする際に、'Path Mode'をコピーに設定し、’Embed Textures'チェックボックスをチェックしてください。
 
-Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+あるいは、[Autodesk FBX Converter][5]を使ってBlenderからエクスポートしたファイルをメディアを埋め込んだファイルに変換することもできます。FBX Converterでファイルを開き、*Embedded Media*チェックボックスをチェックしてセーブしなおしてください。
 
 <div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+注意: Blender 2.71のFBXエクスポート機能は、Blender内で発光プロパティが設定されていなくても、発光するようにエクスポートをする不具合があるようです。これはPlayCanvasエンジンの問題ではありません。この問題を回避するためには、マテリアルの拡散色設定を0にする('Material'タブの'Properties Editor'から)か、あるいは発光プロパティをPlayCanvasエディタの中から減らしてください。
 </div>
 
 ### **アニメーション**
 
 Blender 2.71の場合：
 
-Animations included within the blend file are exported with the default fbx exporter settings and are compatible with the PlayCanvas asset import pipeline. Note that for multiple animations for the same model you will need to upload multiple fbx files - one for each animation. To save memory you can delete models and textures from the blend file before exporting, choose to export only armatures in the fbx exporter settings, or simply delete the duplicate 'model' target assets from the assets page on your project dashboard (select 'target' from the drop-down menu on the assets page to view target assets).
+blendファイルに含まれているアニメーションは、デフォルトのFBXエクスポーターの設定でエクスポート可能で、PlayCanvasのアセットインポートパイプラインと互換性があります。複数のアニメーションが一つのモデルの中にある場合は、複数のFBXファイルをアップロードしなければいけないことに注意してください。一つのアニメーションにつきひとつのファイルとなります。使用メモリを削減するために、モデルとテクスチャをblendファイルからあらかじめ削除してからエクスポートを行うか、FBXエクスポーターの設定からアーマチュアのみをエクスポートする設定をおこなうか、あるいはPlayCanvasのプロジェクトダッシュボードのアセットページから、重複したモデルのターゲットアセットを削除して対応できます。(ターゲットアセットを見るには、'target'をアセットページのドロップダウンメニューから選択してください)
 
-### **Blenderについて**
+### **Blenderの使い方を学ぶには**
 
-There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
+Blenderの使い方については様々な資料がweb上にあります。私達は以下の二つをおすすめします:
 
 * [Blender Cookie][2]
 * [Blender Guru][6]
@@ -74,81 +74,81 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 ## Autodesk 3D Studio Max
 
-To see a practical example of some PlayCanvas content being creation in Max, check out the following video:
+実践的なPlayCanvas向けのコンテンツを3D Studio Maxで作る例は、以下のビデオを参照してください:
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/5xXSFXj_GUQ?rel=0" frameborder="0" allowfullscreen></iframe>
 
-You should now have a better feel for how PlayCanvas interprets your 3DS Max scenes. However, let's now look at what is and what isn't supported in a little more detail.
+このビデオを見れば、PlayCanvasがどのように3DS Maxのシーンを解釈するかより良く理解できるはずです。ここでさらに何がサポートされていて何がサポートされていないかをもう少し細かく見ていきましょう。
 
-### 素材
+### マテリアル
 
-You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
+Max内では標準マテリアルタイプを使用してください。あるいは、標準マテリアルを参照している限りは、Multi/Subオブジェクトマテリアルタイプを使うこともできます。以下のスクリーンショットでハイライトされている領域が、PlayCanvasにエクスポートされる際に考慮される部分をあらわしています:
 
 ![スフィアマップ][7]
 
 ### 対応しているマップスロット
 
-PlayCanvas interprets a subset of the 3DS Max material map types on export. Note that maps can be in any format that 3DS Max supports, but if the maps are not in a web format (namely JPEG, GIF or PNG) then they will be converted to these formats on export.
+PlayCanvasは3DS Maxのマテリアルマップタイプの一部だけしかエクスポート時に扱えません。マップのフォーマットは3DS Maxがサポートするどのような種類でも対応しています。しかしもしマップのフォーマットがwebフォーマット(JPEG, GIFあるいはPNG)でない場合は、エクスポート時にそれらのフォーマットに変換されます。
 
-** Diffuse Color **
+** 拡散色 **
 
-Assigning a Bitmap map to this slot enables diffuse mapping on the PlayCanvas material. This essentially overrides whatever diffuse color has been set on the material (via the color picker). If the diffuse map has an alpha channel, it will be used as the per pixel alpha value in the PlayCanvas runtime.
+このスロットにビットマップのマップを割り当てと、PlayCanvasマテリアルの拡散マッピングが使用されます。これは(カラーピッカーを使用して)マテリアルに設定された拡散色を上書きします。拡散マップがアルファチャンネルを持っている場合、PlayCanvasランタイム上ではピクセルごとのアルファ値として使用されます。
 
-Additionally, it is possible to assign an RGB Multiply map to the Diffuse Color slot. This has the effect of enabling lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap.
+加えて、RGB乗算マップを拡散色スロットに設定することもできます。これを行うと、ライトマッピングの機能がPlayCanvas上で使用されます。マップ1は拡散色マップとして、マップ2はライトマップとして使用されます。
 
-** Specular Color **
+** スペキュラ色 **
 
-Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas material. This essentially overrides whatever specular color has been set on the material (via the color picker). This allows you to mask out areas of specularity on a surface, or tinge specular highlights different colors in different areas. If the specular map has an alpha channel, it will be used to set per-pixel shininess.
+ビットマップマップをこのスロットに割り当てると、PlayCanas上ではマテリアルのスペキュラマップが使用されます。これは(カラーピッカーを使用して)マテリアルに設定されたスペキュラ色を上書きします。この方法を使うと、物体表面の反射性のあるエリアをマスクしたり、反射によるハイライトの色を物体の位置によって変えることができます。もしスペキュラマップにアルファチャネルがある場合には、PlayCanvas上ではピクセルごとの輝度として使用されます。
 
-** Specular Level **
+** スペキュラレベル **
 
-Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
+ビットマップマップをこのスロットに割り当てると、PlayCanvas上ではピクセルごとのマテリアルのスペキュラ色の増幅が使用されます。これはマテリアル上に設定されていたスペキュラレベルを上書きします。
 
-** Glossiness **
+** 光沢度 - Glossiness **
 
-Assigning a Bitmap map to this slot activates per-pixel glossiness on the material. This essentially overrides whatever glossiness has been set on the material.
+ビットマップマップをこのスロットに割り当てると、PlayCanvas上ではマテリアルのピクセルごとの光沢度が使用されます。これはマテリアル上に設定された光沢度の値を上書きします。
 
-** Self-Illumination **
+** 自己発光 **
 
-Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel's value.  Anything else will increase a pixel's luminosity.
+このスロットにビットマップマップを割り当てると、PlayCanvas上では発光マッピングが使用されます。発光マップはRGB色に対応しており(グレースケールに限定されません)、最終的には物体表面のライティングの結果に加算されます。つまり、発光マップ上の黒いピクセルは、ピクセルの値に何も加算しません。黒以外のすべての値はピクセルの発光度を上げます。
 
-** Opacity **
+** 不透明度 **
 
-Assigning a Bitmap map to this slot enables opacity mapping on the PlayCanvas material. A black pixel in the opacity map will be fully transparent, a white pixel will be fully opaque and any grey pixel will correspond to some equivalent intermediate alpha value.
+ビットマップマップをこのスロットに割り当てると、PlayCanvas上ではマテリアルの不透明度マッピングが使用されます。不透明度マップの黒いピクセルは完全な透明となります。白いピクセルは完全な不透明となります。そしてその他のグレーのピクセルはその中間のアルファ値と対応します。
 
-If the material has an opacity map, it will override any alpha channel that may have been set in the diffuse map. It is less efficient to use the opacity map slot over the alpha channel of the diffuse map since two textures are generated in the PlayCanvas runtime instead of one and the default shader must do a little more work. However, if performance is not a concern and it is convenient to use an opacity map, the functionality is supported.
+マテリアルが不透明度マップを持つ場合には、その値は拡散マップ内で定義されたアルファチャネルの値を上書きします。拡散マップのアルファチャネルではなく不透明度マップスロットをを使うと、PlayCanvasのランタイムでは二つのテクスチャが生成され、さらにシェーダの処理が増えるので効率が悪くなります。しかし、パフォーマンスが問題にならず不透明度マップを使う方が便利なのであれば、不透明度マップを使用することができます。
 
-** Bump **
+** バンプ - Bump **
 
-Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the real-time rendering more closely.
+通常のバンプマップをこのスロットに割り当てると、PlayCanvas上では法線マップが使用されます。デフォルトではバンプスロットの'Amount'値は30に設定されていますが、PlayCanvasはそれを無視して100が設定されているかのように振る舞います。そのため、Max側でも100を設定し、レンダリング結果をリアルタイムレンダリングにより近づけることを推奨します。
 
-There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
+法線マップの作成には複数の方法があり、フォーマット内の緑の要素の扱い方によって二種類に分類されます。例えば、デフォルトでは3DS Maxはレンガの壁の法線マップは以下のようになります:
 
 ![法線マップ][8]
 
-Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
+盛り上がった部分の下部のエッジに明るい部分があることがわかります。PlayCanvasは緑要素(あるいは法線マップ上のそれぞれの法線のY要素)が反転していることを想定しています。ファイルをPhotoShopで読み込み、緑チャンネルを選択してCtrl+Iを押すことで以下のような画像になります:
 
-![Normal map with Y component flipped][9]
+![Y要素を反転した法線マップ][9]
 
-Now, lighting in PlayCanvas will be consistent.
+これでライティングの一貫性をPlayCanvas上で保つことができます。
 
-If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
+割り当てた法線マップがアルファチャンネルを持つ場合、それはアルファチャンネルをハイトマップとして扱う視差マップとして扱われます。ハイトマップの明るい部分は暗い部分よりも'高い'ものとして扱われます。
 
 ** 反射 **
 
-Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
+ビットマップマップをこのスロットに割り当てると、PlayCanvasではスフィアマッピングをマテリアルに割り当てます。ビットマップは以下のようなものです:
 
 ![スフィアマップ][10]
 
-Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
+スフィアマップはコストのかからない、もっとも信頼性の低いリフレクションマッピングの手法です。しかし多くのケースで物体表面に十分にきれいな光沢を与えることができます。
 
 ---
 
 ## Autodesk Maya
 
-### 素材
+### マテリアル
 
-You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
+Mayaを使う場合には、lambert, blinnあるいはphongの標準マテリアルタイプを使用してください。以下のスクリーン・ショットでハイライトされている部分は、PlayCanvasにエクスポートする際に考慮されるマテリアル設定です。
 
 ![スフィアマップ][11]
 

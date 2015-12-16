@@ -6,45 +6,45 @@ position: 3
 
 ## Chrome Web Storeに公開
 
-If you're building HTML5 games, chances are that you want as many people to play your game as possible and, in an ideal world, you'll make some money in the process. Monetization on the web is harder than it is on mobile app stores, where payment processing is standardised and credit card details are stored. But there are still a number of options. One great platform you should consider for your game is the <a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a>.
+HTML5のゲームを構築している場合、可能な限り多くの人にゲームをプレイしてもらことを目標とし、その際に利益を得ることを理想としているはずです。支払い処理が標準化され、クレジットカードの詳細が格納されているモバイルのAppストアと比べ、ウェブ上の収益化は難しい場合があります。しかし、方法はいくつかあります。検討すべき優れたプラットフォームの一つとして、<a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a>があります。
 
 ![Chrome Web Store][1]
 
-It's a carefully curated app store for the desktop version of Chrome (available on Win, Mac, Linux and Chrome OS). Publishing your game here will expose it to a wider audience and offer you a simple mechanism for taking payments. Let's step through the process for publishing a free game.
+これは、デスクトップ版Chromeのために慎重にキュレーションされたAppストアです(Win, Mac, Linuc, Chrome OSで利用可能)。ここでゲームをパブリッシュすると、幅広い視聴者に公開し、シンプルな仕組みの支払い処理を利用できます。無料ゲームを公開するためのプロセスを説明します。
 
 Googleでは、ホスティングされたappまたはパッケージ化されたappの2つの方法でゲームを公開することができます。
 
 ## ホスティングされたappを作成
 
-Hosted apps are essentially vanilla websites with a little extra metadata. Why are hosted apps good?
+ホストされるアプリケーションは、基本的に少し余分なメタデータを持つ基礎的なウェブサイトです。なぜホストされたアプリが良いのでしょうか？
 
-* Your game will be discoverable by Chrome Web Store users.
-* Chrome Web Store users can install your hosted app to their Apps page in Chrome which is really just a beefed up bookmark for your game. This will be synched across the different devices on which you use Chrome (if you're signed in).
+*Chrome Web Storeでゲームが検索可能になります。
+* Chrome We Storeのユーザーは、あなたのホストされたappをChromeのAppsページにインストールすることができます。これは、進化したブックマークのようなものです。これは、Chromeを使用している様々なデバイス間で同期されます(ログインしている場合)。
 
-So this sounds great. More people will be installing and playing your game.
+これでより多くのユーザーがあなたのゲームをインストールおよびプレイするようになります。
 
-To get started, hit the cog icon at the top right of the landing page for the Chrome Web Store and select Developer Dashboard. Sign in and click the button labelled 'Add New Item'.
+開始するには、Chrome Web Storeのランティングページの右上にあるコグアイコンを押してDeveloper Dashboardを選択してください。ログインして'Add New Item'ボタンをクリックします。
 
 ホスティングされたappを公開するために必要な事項のチェックリスト：
 
-* A zip file containing a manifest and a 128×128 icon for your game. Google supplies a reference for the manifest file format and guidelines for creating icons (and other images related to your submission).
-* A description for your game. Make it fun and exciting! Remember, you're trying to persuade somebody to install your game so make it sound amazing.
-* A number of screenshots and YouTube links to give potential users an idea of what your game is like to play.
-* A number of images that Google can use to promote your game in the Web Store. Depending on how successful your game becomes, it may be displayed in a small, medium or large (marquee) tile. Spend time ensuring that you provide all of these images. A great game can be let down by uninspiring promotional images!
-* Verification that you own the URL of your hosted app. You should do this using Google's WebMaster Tools.
+*マニフェストとゲームのための128×128アイコンを含むzipファイル。 Googleは、アイコン（また、提出に関連する他の画像）を作成するためのガイドラインと、マニフェストファイル形式の参照を提供します。
+*ゲームの説明。興味を引くものにしましょう！ゲームをインストールしてもらえるよう、説得力のある説明にしましょう。
+*スクリーンショットとYouTubeのリンク。ユーザーに、どのようなゲームかを想像させるため。
+* GoogleがWeb Storeであなたのゲームを促進するために使用する数点の画像。ゲームの注目度に応じて、小、中、大規模のタイル（マーキー）で表示されます。画像を全て提供してください。どんなに素晴らしいゲームでも、パッとしないプロモーション画像では台無しです！
+*ホストされたAppのURLを所有していることを検証。Googleのウェブマスターツールを使用してこれを行う必要があります。
 
-There are a few other options that cover Google Analytics, game category, regions where your game will be listed and so on. When you're done, hit 'Publish'. Note that Google spends a little time (no longer than 60 minutes but should be much faster) to scan your upload before it is made live in the store.
+Google Analytics、ゲームのカテゴリ、ゲームが表示されるリージョン等をカバーする他のいくつかのオプションがあります。完了したら、'Publish'を押してください。Googleはアップロードをスキャンするために僅かな時間しか必要としません(60分かかることは殆どありません)ので注意してください。
 
 ## パッケージされたAppの作成
 
 ホスティングされたappにはいくつかの問題もあります：
 
-* Users may think you've been lazy! 'Hey! This is just a link to their web-site! Grrr!'. Users expect a little more from something that is being installed to their browser.
-* Hosted apps won't run offline (unless you make clever use of the browser's local storage).
-* Hosted apps are just web pages and don't feel like applications.
-* If your game consists of a large quantity of data and doesn't do any caching, load times can be long.
+*ユーザーに不親切だと思わせてしまうかも知れません！ ウェブサイトへのリンクのみだと不満を与えてしまうことがあります！ブラウザにインストールされるものに対して、ユーザーはある程度の期待をしています。
+*ホストされたAppはオフラインで実行できません(ブラウザのローカルストレージを上手く利用している場合を除く)。
+*ホストされたAppは、ただのウェブページでなのでアプリケーションのように感じられない可能性があります。
+*ゲームが大量のデータで構成されキャッシュをしない場合、読み込み時間が長くなる可能性があります。
 
-Enter packaged apps! These are essentially apps that are fully installed to Chrome, can run offline and launch in there own window minus Chrome's browser decoration (although this can be added if you wish). And because they're loaded from local storage, they start up extremely quickly.
+パッケージ化されたアプリを入れてください！これらは、Chromeに完全にインストールされ、オフラインで実行でき、独自のウィンドウで起動でき、Chromeのブラウザデコレーションを外す(希望なら使用可能)することができる基本的なappです。ローカルストレージから読み込まれるので、スピーディーに起動します。
 
 PlayCanvasはChrome Web Storeでパッケージ化されたappの例を公開しています。SWOOOPというゲームです。
 
@@ -52,7 +52,7 @@ PlayCanvasはChrome Web Storeでパッケージ化されたappの例を公開し
 
 <a href="https://chrome.google.com/webstore/detail/swooop/jblimahfbhdcengjfbdpdngcfcghladf" target="_blank">こちらから</a>自身でご確認できます。
 
-Generating a packaged app from a PlayCanvas game takes a little more effort than a hosted app. Here's a run down of the steps required to package and publish a game like SWOOOP:
+PlayCanvasゲームからパッケージ化されたappを生成するのは、ホストされたappよりも少し手間がかかります。SWOOOPのようなゲームをパッケージ化しおよび公開するために必要な手順は次のとおりです：
 
 * プロジェクトダッシュボードのPublishタブから、ゲームのエクスポートをダウンロード
 *コンテンツを解凍
@@ -60,11 +60,11 @@ Generating a packaged app from a PlayCanvas game takes a little more effort than
 
 ~~~javascript~~~
 {
-  "name": "SWOOOP",
-  "description": "Loop and swoop your bi-plane around the magical island. What's your highscore?",
-  "version": "1.0",
+  "名前": "SWOOOP",
+  "説明": "魔法の島で複葉機をループ＆スゥープ。あなたのハイスコアは？",
+  "バージョン": "1.0",
   "app": {
-    "background": {
+    "バックグラウンド": {
       "scripts": ["background.js"]
     }
   },
@@ -85,13 +85,13 @@ chrome.app.runtime.onLaunched.addListener(function() {
 });
 ~~~
 
-* Create the icons referenced from the manifest and place them in the same folder as the index.html.
-* Transfer any script tag blocks of JavaScript in index.html into externally referenced JS files (there are two). This is because Chrome treats this as a security threat.
-* Check to see if your game uses the LocalStorage HTML5 API. Packaged apps can't use this API, although they can use a Chrome specific alternative.
+*マニフェストから参照したアイコンを作成して、index.htmlと同じフォルダに配置します。
+*index.html内のJavaScriptの全てのスクリプトタグブロックを外部参照JSファイル(二つあります)へ転送。Chromeがこれらをセキュリティ上の脅威として扱うためです。
+*ゲームがローカルストレージHTML5 APIを使用するかどうかを確認してください。パッケージ化されたappはChrome特定の代替を使用することができますが、このAPIを使用することはできません。
 
-We're done! Zip up the game's files again and upload to your new item in the CWS Developer Dashboard. Fill out the rest of the form as you would for a hosted app (although you now don't need to show ownership for a hosted app URL since there isn't one any more).
+完了です！再びゲームのファイルを圧縮し、CWS Developer Dashboardで新しいアイテムにアップロードしてください。ホストされたアプリの場合と同じようにフォームに記入してください(ホストされたappのURLはもう存在しないので所有権を証明する必要はありませんが)。
 
-So hopefully this gives some insight into how simple it is to publish your game to the Chrome Web Store. Whether you choose to publish a hosted or packaged app is up to you and, as we've shown, both have their advantages and disadvantages. Our recommendation to you is to experiment. It's an awesome publishing platform that anyone can start to use today, so try it out for yourself!
+これでChrome Web Storeにゲームを公開するのがいかに簡単か理解していただけましたでしょうか？ホストされたappとパッケージ化されたappのどちらを使用するかはあなた次第です。どちらにも、それぞれの長所と短所があります。是非実験してみてください。誰もが、すぐに始められる素晴らしいパブリッシングプラットフォームです！是非お試しください！
 
 [1]: /images/publishing/web/chromewebstore.png
 

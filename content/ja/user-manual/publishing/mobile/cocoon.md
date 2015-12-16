@@ -4,50 +4,50 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-[Cocoon][1] from [Ludei][2] is a cloud service that can wrap your PlayCanvas game as a native application which can then be submitted to either Google Play, Amazon App Store or the Apple App Store.
+[Ludei][2]社の[Cocoon][1]は、PlayCanvasのゲームをGoogle Play、Amazon Android アプリストア、Apple App Storeに提出できるようネイティブアプリケーションに変換してくれるクラウドサービスです。
 
-## Testing your PlayCanvas Game in Cocoon
+## PlayCanvasのゲームをCocoon上でテストする
 
-Before you generate a native build of your PlayCanvas game, you will want to test it in Cocoon.io and see how it performs. Ludei has created an awesome app called the Developer App that can pull your PlayCanvas game directly from playcanvas.com and run it on the device. Just give the Developer App your game's URL and it will happily run in the Developer App.
+PlayCanvasで作成されたゲームのネイティブビルドを作成する前に、Cocoon.io上でゲームの動作を確認してください。Cocoon社が提供するDeveloper AppにゲームのURLを入力することで、PlayCanvasのゲームを直接ロードし、デバイス上で実行することができます。
 
-So, how can you get a Developer App? Let's step through the process to illustrate how easy it is:
+それでは、Developer Appをインストールする手順をご説明します:
 
-1. Create an account on [Cocoon.io][1] and log in.
-2. Create a new project. The fastest way is to drag and drop a zip file with the content of your PlayCanvas game on a empty project card: <br><br><img alt="Cocoon.io - Create project" width="320" src="/images/publishing/cocoon/create-project-cocoon.png"></img><p><br><br>Download your game from PlayCanvas as explained in the [self-hosting][5] guide.<br><br>The project will be created automatically. There are more ways of creating a project, you can have a look at them at this [Cocoon.io documentation section][3].
+1. [Cocoon.io][1]でアカウントを作成し、ログインします。
+2. プロジェクトを作成します。PlayCanvasゲームのコンテンツが入ったzipファイルを空のプロジェクトカードにドラッグ&ドロップすると、簡単にプロジェクトを作成できます: <br><br><img alt="Cocoon.io - Create project" width="320" src="/images/publishing/cocoon/create-project-cocoon.png"></img><p><br><br>PlayCanvasからゲーのコンテンツをダウンロードする方法については、[self-hosting][5]ガイドを参考にしてください。<br><br>これでプロジェクトは自動的に作成されます。これ以外にもプロジェクトを作成する方法はありますので、[Cocoon.ioのドキュメント][3]を参照してください。
 
-3. Open the project settings clicking on the name of the project.
+3. プロジェクト名をクリックして、プロジェクトの設定を開きます。
 
-4. Cocoon.io is a cordova based cloud compiler. If your project requires any plugin, it is the right time to install them in the project using the plugins tab:<br><br><img alt="Cocoon.io - Add plugins" width="320" src="/images/publishing/cocoon/plugins-wizard-cocoon.png"></img><p><br><br>This is important because the Developer App will be generated using the same configuration your project has. Important: if your target webview engine is Canvas+, remember to uninstall the white-list plugin.
+4. Cocoon.ioはcordovaをベースにしたクラウドサービスです。プロジェクトがプラグインを使う場合には、この段階でプラグインタブからインストールしてください:<br><br><img alt="Cocoon.io - Add plugins" width="320" src="/images/publishing/cocoon/plugins-wizard-cocoon.png"></img><p><br><br>ここで指定した設定を使って、Developer Appが生成されるので、注意してください。もしプロジェクトのターゲットとなるwebviewエンジンがCanvas+の場合、white-listプラグインをアンインストールすることを忘れずに行ってください。
 
-5. Just under the project settings, you will see the Developer App section. Click the blue button to start compiling the Developer App:<br><br><img alt="Cocoon.io - Compile the Developer App" width="320" src="/images/publishing/cocoon/compile-devapp-cocoon.png"></img><p><br><br>When the OS icons at the top of the card stop flickering, you will be able to download the Developer App and install it on your device.For more information about the Developer App, you can visit this [Cocoon.io documentation section][4].
+5. プロジェクト設定のすぐ下に、Developer Appセクションが表示されます。青いボタンをクリックしてDeveloper Appのビルドを開始してください:<br><br><img alt="Cocoon.io - Compile the Developer App" width="320" src="/images/publishing/cocoon/compile-devapp-cocoon.png"></img><p><br><br>画面の上部に表示されているOSアイコンの点滅が終わると、Developer Appをダウンロードしてデバイスにインストールすることができるようになります。Developer Appについてのより詳しい情報は、[Cocoon.ioドキュメント][4]を参照してください。
 
-6. Open the Developer App. Select URL and enter the URL to your embeddable link (see below) for your PlayCanvas game.<br><br><img alt="Cocoon.io - Developer App" width="320" src="/images/publishing/cocoon/devapp-urls-cocoon.png"></img><br><br>Type this into the URL edit box in the Launcher and hit 'CANVAS+' or 'WEBVIEW+'!
+6. Developer Appをデバイス上で開き、URLを選択し、PlayCanvasゲームの埋め込みURLをランチャー上のURLテキストボックスに入力してください。(URLについては下記を参照してください)<br><br><img alt="Cocoon.io - Developer App" width="320" src="/images/publishing/cocoon/devapp-urls-cocoon.png"></img><br><br>その後、CANVAS+あるいはWEBVIEW+ボタンをクリックしてください。
 
-## Embeddable link
+## 埋め込みリンクURLについて
 
-Your game can be accessed by one of two links. The build link or the project link.
+PlayCanvasゲームはビルドリンクとプロジェクトリンクの二つのリンクURLのいずれかを使ってアクセスすることができます。
 
-* `http://playcanv.as/b/BUILD_ID` - links to a specific build
-* `http://playcanv.as/p/PROJECT_ID` - links to the project's Primary App
+* `http://playcanv.as/b/BUILD_ID` - 特定のビルドにリンクします
+* `http://playcanv.as/p/PROJECT_ID` - そのプロジェクトのプライマリアプリケーションにリンクします
 
-To get the embeddable version of either link, add `/e/` after the host. e.g.
+これらのリンクの埋め込みバージョンは、以下の例のように、それぞれのURLのホストの後に/e/を付け加えたものになります。
 
 * `http://playcanv.as/e/b/BUILD_ID`
 * `http://playcanv.as/e/p/PROJECT_ID`
 
-## Generating the Native Build of your Game
+## ゲームのネイティブビルドを作成する
 
-Now that you have tested your game on your mobile device via the Cocoon.io Developer App, you are ready to build a native version. Once again, Cocoon.io makes this really easy for you. Just follow these simple steps:
+ここまでの手順でCocoon.io Developer Appを使ってゲームをデバイス上でテストしましたので、ネイティブ版のビルドをする準備が整いました。以下の手順で簡単にビルドを行うことができます:
 
-1. Back to the project configuration, click on the settings tab and configure your project according to your needs. If you want, you can edit the config.xml file directly on the editor from the config.xml tab.
+1. プロジェクトの設定を開き、設定タブから必要に応じてプロジェクトの設定を変更してください。config.xmlタブからconfig.xmlファイルを直接編集することもできます。
 
-2. In the icons tab, you can add custom icons to your game. If you leave this configuration empty, Cocoon.io default ones will be used.
+2. アイコンタブからゲームのカスタムアイコンを設定することができます。アイコンを空のままにした場合、Cocoon.ioのデフォルトのアイコンが使用されます。
 
-3. Optionally, you can add a signing key in the signing section, so your project will be signed during the compilation.
+3. オプションとしてアプリケーションがコンパイルされる際の署名に使う鍵を、署名セクションから登録することもできます。
 
-4. Hit 'Compile' button (the hammer icon under the creation and last compilation dates) and you're done.
+4. コンパイルボタン(最終コンパイルと作成日の下にあるハンマーアイコン)を押して、ネイティブ版のビルドを行います。
 
-When the OS icons at the top of the card stop flickering, you will be able to download your final app and install it on your device.
+画面の上部に表示されているOSアイコンの点滅が終わると、最終版のアプリケーションをダウンロードしてデバイスにインストールすることができるようになります。
 
 [1]: http://cocoon.io/
 [2]: https://ludei.com/

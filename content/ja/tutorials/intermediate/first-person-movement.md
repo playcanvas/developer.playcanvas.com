@@ -1,25 +1,25 @@
 ---
-title: First Person Movement
+title: 一人称カメラを使った操作と移動
 template: tutorial-page.tmpl.html
 position: 4
 ---
 
 <iframe src="http://playcanv.as/p/R0ZMNPBw"></iframe>
 
-This is an application that implements first person character movement.
+ここでは一人称視点でキャラクターを移動させるアプリケーションを紹介します。
 
-The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player, if no camera entity is present a new entity is created. See the full scene setup in the [Tutorial Project][1].
+キャラクターにはrigidbody(剛体)コンポーネントとcollision(衝突判定)コンポーネントを、スクリプトに加えて設定する必要があるため、このコントローラのためのシーン設定は注意して行ってください。さらに、このスクリプトはカメラエンティティが存在しない場合、新たにカメラエンティティをPlayerの子として設定します。以下が[チュートリアルプロジェクト][1] の中の全シーン設定のコードですので、参考にしてください。
 
-The script below performs the following functions:
+下のスクリプトは次のような機能があります:
 
-* Listen for mouse and keyboard input
-* Update a camera entity from the mouse input
-* Apply forces to move the player entity around the scene
+* マウスとキーボードの入力を読み取る
+* カメラエンティティをマウス入力に基づいて動かす
+* プレイヤーエンティティがシーン内を動き回れるよう、物理的な力を加える
 
-Note, the player's velocity is never set directly but he is moved by apply forces. To limit the maximum velocity, we have linear damping applied on the rigidbody component.
+プレイヤーの速度を直接設定することはなく、物理的な力を与えることでプレイヤーを動かしていることに注意してください。最高速度を制限するために、線形で速度が減衰するようrigidbodyコンポーネントに設定がしてあります。
 
 ~~~javascript~~~
-pc.script.attribute("camera", "entity", null); // optional, assign a camera entity, otherwise one is created
+pc.script.attribute("camera", "entity", null); // これは必須の後リビューとではない。カメラエンティティが指定されなかった場合は新規にカメラを作成する
 pc.script.attribute("power", "number", 5000);
 pc.script.attribute("lookSpeed", "number", 0.5);
 
@@ -34,17 +34,17 @@ pc.script.create('first_person_movement', function (app) {
     };
 
     First_person_movement.prototype = {
-        // Called once after all resources are loaded and before the first update
+        // すべてのリソースがロードされ、最初のupdateが呼び出される前に呼び出される
         initialize: function () {
-            // Listen for mouse move events
+            // マウス移動イベントを監視する
             app.mouse.on("mousemove", this._onMouseMove, this);
 
-            // when the mouse is clicked hide the cursor
+            // マウスが移動した時、カーソルを隠す
             app.mouse.on("mousedown", function () {
                 app.mouse.enablePointerLock();
             }, this);
 
-            // Check for required components
+            // 必要なコンポーネントがあるか確認する
             if (!this.entity.collision) {
                 console.error("First Person Movement script needs to have a 'collision' component");
             }
@@ -54,23 +54,23 @@ pc.script.create('first_person_movement', function (app) {
             }
         },
 
-        // Called every frame, dt is time in seconds since last update
+        // 毎フレーム呼び出される。dtは前回のupdateからの経過時間を秒単位で表したもの
         update: function (dt) {
-            // If a camera isn't assigned from the Editor, create one
+            // カメラがなければ、新しいモノを作成する
             if (!this.camera) {
                 this._createCamera();
             }
 
-            // Get camera directions to determine movement directions
+            // カメラの方向を確認し、進行方向を決定する
             var forward = this.camera.forward;
             var right = this.camera.right;
 
-            // movement
+            // 移動量
             var x = 0;
             var z = 0;
 
-            // Use W-A-S-D keys to move player
-            // Check for key presses
+            // W-A-S-Dキーをプレイヤーの移動に使用する
+            // キーが押されているかを判定
             if (app.keyboard.isPressed(pc.KEY_A) || app.keyboard.isPressed(pc.KEY_Q)) {
                 x -= right.x;
                 z -= right.z;
@@ -91,19 +91,19 @@ pc.script.create('first_person_movement', function (app) {
                 z -= forward.z;
             }
 
-            // use direction from keypresses to apply a force to the character
+            // キー押し下げから計算した方向を使ってキャラクタに物理的な力を加える
             if (x !== 0 && z !== 0) {
                 force.set(x, 0, z).normalize().scale(this.power);
                 this.entity.rigidbody.applyForce(force);
             }
 
-            // update camera angle from mouse events
+            // カメラの角度をマウスイベントを元に更新する
             this.camera.setLocalEulerAngles(this.eulers.y, this.eulers.x, 0);
         },
 
         _onMouseMove: function (e) {
-            // If pointer is disabled
-            // If the left mouse button is down update the camera from mouse movement
+            // ポインターが無効になっているか?
+            // 左マウスボタンが押されていたら、カメラをマウスの移動を元に更新する
             if (pc.Mouse.isPointerLocked() || e.buttons[0]) {
                 this.eulers.x -= this.lookSpeed * e.dx;
                 this.eulers.y -= this.lookSpeed * e.dy;
@@ -111,7 +111,7 @@ pc.script.create('first_person_movement', function (app) {
         },
 
         _createCamera: function () {
-            // If user hasn't assigned a camera, create a new one
+            // もしユーザーがカメラを割り当てていなければ、新しいカメラを作成する
             this.camera = new pc.Entity();
             this.camera.setName("First Person Camera");
             this.camera.addComponent("camera");

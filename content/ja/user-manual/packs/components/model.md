@@ -27,7 +27,7 @@ position: 7
 
 ## 素材のカスタマイズ
 
-You can learn how to customize the materials of your model [here][4].
+モデルのマテリアルをカスタマイズする方法については、[こちら][4]を参照してください。
 
 [1]: /images/platform/component_model.png
 [2]: /user-manual/packs/components/script
