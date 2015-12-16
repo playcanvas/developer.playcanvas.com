@@ -4,70 +4,67 @@ template: usermanual-page.tmpl.html
 position: 50
 ---
 
-PlayCanvas EngineやToolsで使用する用語の概要です。
+PlayCanvasエンジンとツールで使用する用語の概要です。
 
-<h2 id="app">Application</h2>
-The `pc.Application` class is where all the useful engine stuff that your application needs to run is stored. It stores: the scene graph hierarchy, the Component Systems and the keyboard and mouse handlers. The Application is made available to all user scripts by being passed into the initial callback from `pc.script.create`.
+<h2 id="app">アプリケーション - Application</h2>
+`pc.Application`クラスにはアプリケーションを実行するために必要なすべてのエンジンの機能が実装されています。このクラスはシーンのグラフ階層、コンポーネントシステム、マウスとキーボード入力ハンドラを保持します。アプリケーションは`pc.script.create`のコールバック関数の引数としてユーザーのスクリプトに渡されます。
 
-<h2 id="asset">Asset</h2>
-An asset is a unit of data that is typically imported into PlayCanvas from a content creation application (such as Blender or 3D Studio Max). It can represent a 3D model, an animation, an audio sample or an image. Assets can be assigned to certain attributes of [Components][1]. For example, it is possible to assign a model asset to the 'model' attribute of a model component. Also see [Source Assets][2] and [Target Assets][3].
+<h2 id="asset">アセット - Asset</h2>
+アセットはデータの集合を表す用語です。アセットは通常PlayCanvasに(Blenderや3D Studio MAXのような)コンテンツ作成用プログラムからインポートされます。アセットは3Dモデルやアニメーション、音声や画像のいずれかをあらわします。アセットは特定の[コンポーネント][1]の属性値として指定することがでいます。例えば、モデルコンポーネントのモデル属性値として、モデルアセットを指定することができます。[ソースアセット][2]と[ターゲットアセット][3]もあわせて参照してください。
 
-<h2 id="asset_pipeline">Asset Pipeline</h2>
-The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset][4] e.g. an FBX scene file into one or more [Target Assets][5] e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Editor.
+<h2 id="asset_pipeline">アセットパイプライン - Asset Pipeline</h2>
+アセットパイプラインはPlayCanvasサーバ上で実行されるプロセスで、アップロードされたFBXファイルなどの[ソースアセット][4]を一つかそれ以上の[ターゲットアセット][5](モデルファイル、マテリアルやテクスチャなど)に変換します。パイプラインはアップロードされた素材をゲームで使用できる最適化されたものに変換するよう設計されています。アセットをパイプラインで処理するには、ダッシュボードかPlayCanvasエディタからアセットをPlayCanvasにアップロードしてください。
 
-<h2 id="attribute">Attribute</h2>
-An attribute is a property of a [Component][6]. Attributes are represented in the PlayCanvas Editor interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Editor's 'Play' icon, the updates are live-streamed to the connected game in real time.
+<h2 id="attribute">属性値 - Attribute</h2>
+属性値は[コンポーネント][6]のプロパティです。属性値はPlayCanvasエディタ上で、UIコントロール(ピッカー、チェックボックス、スライダーなど)を伴って表示されます。属性値はそれらのコントロールを使って調整することができます。また、エディタの'Play'アイコンからゲームが実行された後は、エディタ上の変更はリアルタイムでゲームに反映されます。
 
-<h2 id="component">Component</h2>
-Components describe the properties and functionality of an [Entity][7]. In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.
+<h2 id="component">コンポーネント - Component</h2>
+コンポーネントは[エンティティ][7]のプロパティや機能をあらわします。PlayCanvasエンジンでは、ゲーム上のオブジェクトは長い継承関係によって定義されたクラスではなく、エンティティとそれに関連付けられたコンポーネント群によって定義されます。
 
-コンポーネントはPlayCanvas EditorでComponentメニューからエンティティに追加されるか、それぞれの`ComponentSystem`オブジェクトから実行時に追加することができます。
+コンポーネントはPlayCanvasエディタでComponentメニューからエンティティに追加することがでいます。また、それぞれの`ComponentSystem`オブジェクトから実行時に追加することもできます。
 
 <h2 id="dom">DOM</h2>
-The DOM (Document Object Model) is a way of representing an HTML document. Web browsers make an interface available for querying and modifying the DOM that makes up the HTML page that
-is displayed in the users browser.
+DOM (Document Object Model)はHTMLドキュメントを表現する方法です。Webブラウザはユーザーのブラウザ上に表示されているHTMLドキュメントを構成するDOMの中を検索し、変更を加えるためのインタフェースを提供しています。
 
-<h2 id="entity">Entity</h2>
-An Entity is the one of the building blocks of your application in the [PlayCanvas Engine][8]. Often an Entity will represent a single object in your game or application, though a single object may also be made of multiple Entities.
+<h2 id="entity">エンティティ- Entity</h2>
+エンティティは[PlayCanvasエンジン][8]上に構築されるアプリケーションを構築するブロックのようなものです。通常、エンティティはゲームやアプリケーション内の一つのオブジェクトをあらわします。ただし、一つのオブジェクトが複数のエンティティから構成されることもありえます。
 
-All Entities have a transform matrix to provide their position and orientation;
-they have a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.
+すべてのエンティティは自身の位置と回転をあらわす変換行列を持ちます。
+さらに、それぞれのエンティティは親ノードを持ち、変換行列を継承します。エンティティが子ノードをもつ場合は、自身の変換行列を子ノードに提供します。
 
-<h2 id="framework">Framework</h2>
-The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Editor. See the [API Reference][9] for more details.
+<h2 id="framework">フレームワーク</h2>
+フレームワークはPlayCanvasエンジンにおける抽象化の上位層です。フレームワークはエンティティやコンポーネントシステムや、PlayCanvasエディタとのインタフェースといったものから構成されています。詳しくは[APIリファレンス][9]を参照してください。
 
-<h2 id="gizmo">Gizmo</h2>
-A Gizmo is a control that can be dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of
-three color-coded parts, one for each axis in 3D space. Red is the X-axis, green is the Y-axis and blue is the Z-axis. Sometimes there will also be controls for manipulating
-more than one axis at once, e.g. the translate gizmo features clickable plane icons to allow translation in two dimensions at once, on the X and Y, Y and Z, Z and X planes.
+<h2 id="gizmo">ギズモ - Gizmo</h2>
+ギズモはエンティティの属性値を変更するために、マウスを使ってドラッグできるコントロールの総称です。通常は変換行列を変更するために使用されます。ギズモは三色のパーツで構成され、一色が3D空間の一つの軸に対応しています。赤はX軸、緑がY軸、そして青がZ軸です。状況によっては一つ以上の軸を同時に操作するためのコントロールが表示されることがあります。例えば、移動ギズモは平面を表すアイコンをがついており、それを使うことでXY平面、YZ平面、ZX平面上の二次元の移動を行うことができます。
 
-<h2 id="material">Material</h2>
-A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Editor, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
+<h2 id="material">マテリアル - Material</h2>
+マテリアルは3Dモデルの表面のプロパティを決めるアセットの一種です。マテリアルは拡散色、反射色、拡散マップや反射マップ用のテクスチャアセットへの参照といったプロパティ群で構成されます。PlayCanvasエディタでは、マテリアルはモデルを3Dビューで選択し、表示されたマテリアルをクリックして編集することができます。
 
-<h2 id="scene">Scene</h2>
-A Scene is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Scene may represent your entire game, or just a single level or part of your game.
+<h2 id="scene">シーン - Scene</h2>
+シーンはエンティティ、アート、コードの集合で、ひとつの単位としてまとめてロードされます。一つのシーンがゲーム全体をあらわすケースもあり、また一つのシーンがゲーム内の一レベルやゲーム全体の一部だけをあらわすケースもあります。
 
-<h2 id="editor">PlayCanvas Editor</h2>
-The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Scenes][11]. The PlayCanvas Editor is used to manipulate [Entities][12]
+<h2 id="editor">PlayCanvasエディタ</h2>
+PlayCanvasエディタは開発チーム全体で[シーン][11]を編集するために使うことができる、ビジュアルな編集ツールです。PlayCanvasエディタは[エンティティ][12]を操作するために使用します。
 
-<h2 id="engine">PlayCanvas Engine</h2>
-The PlayCanvas Engine is a javascript library which provides all the functionality you will need to create an interactive 3D application or game.
-Programs created using the PlayCanvas Engine will run directly in a modern web browser with no need for third-party plugins.
+<h2 id="engine">PlayCanvasエンジン</h2>
+PlayCanvasエンジンはインタラクティブな3Dアプリケーションやゲームを作るために必要な機能を提供するJavaScriptライブラリです。
+PlayCanvasエンジンを使って作られたプログラムは、近代的なブラウザ上でプラグインを追加することなく動かすことができます。
 
-<h2 id="project">Project</h2>
-A Project is a collection of Entities, Assets and Code that belongs to a single user. Usually a single Project will only contain resources for a single application, though you can export multiple applications from a single Project.
+<h2 id="project">プロジェクト</h2>
+プロジェクトはエンティティ、アセット、コードの集合で、一人のユーザーによって所有されます。通常一つのプロジェクトは一つのアプリケーションのためのリソースだけを持ちます。ただ、一つのプロジェクトから複数のアプリケーションをエクスポートすることもできます。
 
-<h2 id="source_asset">Source Asset</h2>
-A source asset is the original file that has been uploaded into PlayCanvas. Source Assets are the input for the PlayCanvas asset pipeline which creates [Target Assets][13].
+<h2 id="source_asset">ソースアセット</h2>
+ソースアセットはPlayCanvasにアップロードされたアセットのオリジナルのファイルです。ソースアセットは[ターゲットアセット][13]を出力するPlayCanvasのアセットパイプラインへの入力ファイルです。
 
-<h2 id="target_asset">Target Asset</h2>
-A target asset is a file that can be loaded into your game at runtime. It will be in a format ready to use in the Engine. Target Assets are usually the product of a [Source Asset][14] being uploaded and imported through the asset pipeline.
+<h2 id="target_asset">ターゲットアセット</h2>
+ターゲットアセットはゲームが実行される際にロードすることができるファイルです。ターゲットアセットはPlayCanvasエンジンで使用する事ができるフォーマットで保存されます。ターゲットアセットは通常[ソースアセット][14]からアセットパイプラインを通してアップロードされ、生成されます。
 
-<h2 id="transform">Transformation Matrix</h2>
-A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular: translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity][15] has a transformation matrix accessible via the `getLocalTransform()` method.
+<h2 id="transform">変換行列</h2>
+変換行列は一連の線形変換を表す数学的な行列です。線形変換とは、移動、回転、縮小拡大をあらわします。このことは、変換行列は3D空間上のオブジェクトの位置、方向、大きさを表すことができることを意味します。PlayCanvasエンジンでは、それぞれの[エンティティ][15]が変換行列を持っており、`getLocalTransform()`メソッドから参照することができます。
 
-<h2 id="hdr">High Dynamic Range</h2>
-High Dynamic Range or HDR refers to color information that is outside of the usual 0-1 range. In the standard range, 0 is black and 1 is the brightest color that the display device can show. In the real world there is no such limitations for example, the sun can be many times brighter than sky that surrounds it.
+<h2 id="hdr">高ダイナミックレンジ</h2>
+高ダイナミックレンジあるいはHDRとは、通常の0から1の範囲を超える色情報をあらわします。標準的な範囲は0が黒で1がそのディスプレイが表示できる最も明るい色となります。実世界ではそのような制限はありません。例えば太陽はそのまわりの空よりもずっと明るいです。
 
 [1]: #component
 [2]: #source_asset

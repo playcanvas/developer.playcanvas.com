@@ -1,12 +1,12 @@
 ---
-title: Dashboard
+title: ダッシュボード
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
 ![ダッシュボード][1]
 
-The Project Dashboard is the control centre for your project. From the dashboard you can view your project's development log, access the Editor, and edit Project Settings. The project dashboard displays your code directory, either your PlayCanvas directory or your synced repository from a service like [Github][2] or [Bitbucket][3]. Finally, you can also publish your game live to the web, or export it to a zip file and download it.
+プロジェクトダッシュボードはプロジェクトの操作の中心となる場所です。ダッシュボードからはプロジェクトの開発ログ、エディタの実行、そしてプロジェクト設定の編集ができます。プロジェクトダッシュボードにはコードのディレクトリが表示されます。コードのディレクトリには、PlayCanvasのディレクトリあるいはプロジェクトが同期している[Github][2]や[Bitbucket][3]のようなソースリポジトリが表示されます。また、ゲームをWebに公開したり、zipファイルにエクスポートしてダウンロードすることができます。
 
 [1]: /images/platform/dashboard2.jpg
 [2]: https://github.com

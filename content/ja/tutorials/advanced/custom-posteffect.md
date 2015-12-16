@@ -230,7 +230,7 @@ pc.script.create('posteffect_example', function (app) {
 
 カスタムシェーダーのより詳しいチュートリアルは [こちら][6]。
 
-See the [Custom Post Effects Scene here][7].
+[カスタムポストエフェクトシーン][7]についてはこちらを参照してください。
 
 [2]: /engine/api/stable/symbols/pc.Shader.html
 [4]: /engine/api/stable/symbols/pc.PostEffect.html

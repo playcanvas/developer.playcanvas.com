@@ -1,5 +1,5 @@
 ---
-title: Keyboard Shortcuts
+title: キーボードショートカット
 template: usermanual-page.tmpl.html
 position: 11
 ---
@@ -10,25 +10,25 @@ position: 11
 
 <table class="head-column">
     <tr>
-        <td>Orbit camera</td><td>Left Mouse Button (LMB)</td>
+        <td>ある点を中心にしたカメラの回転移動</td><td>左マウスボタン</td>
     </tr>
     <tr>
-        <td>Pan camera</td><td>Middle Mouse Button (MMB)</td>
+        <td>カメラの平行移動</td><td>中マウスボタン</td>
     </tr>
     <tr>
-        <td>Look camera</td><td>Right Mouse Button (RMB)</td>
+        <td>カメラの回転</td><td>右マウスボタン</td>
     </tr>
     <tr>
-        <td>Pan camera</td><td>Shift + LMB</td>
+        <td>パン</td><td>シフト+左マウスボタン</td>
     </tr>
     <tr>
-        <td>Zoom / Dolly camera</td><td>Mouse Wheel</td>
+        <td>ズーム</td><td>マウスホイール</td>
     </tr>
     <tr>
-        <td>Move Camera</td><td>W-A-S-D</td>
+        <td>カメラの移動</td><td>W-A-S-Dキー</td>
     </tr>
     <tr>
-        <td>Move Camera Fast</td><td>Shift + W-A-S-D</td>
+        <td>カメラの高速移動</td><td>シフト + W-A-S-Dキー</td>
     </tr>
 </table>
 
@@ -36,13 +36,13 @@ position: 11
 
 <table class="head-column">
     <tr>
-        <td>Select entity</td><td>Click LMB</td>
+        <td>エンティティの選択</td><td>左クリック</td>
     </tr>
     <tr>
-        <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
+        <td>ギズモによるエンティティの平行移動 / 回転 / 拡大縮小</td><td>クリックしてドラッグ</td>
     </tr>
     <tr>
-        <td>Toogle Editor's Snap setting while operating gizmo</td><td>Shift click and drag</td>
+        <td>ギズモの使用中にスナップを有効/無効化</td><td>シフト + クリックしてドラッグ</td>
     </tr>
 </table>
 
@@ -50,34 +50,34 @@ position: 11
 
 <table class="head-column">
     <tr>
-        <td>Delete - Deletes the current entity selection</td><td>DELETE</td>
+        <td>削除 - 現在選択中のエンティティをすべて削除</td><td>DEL</td>
     </tr>
     <tr>
-        <td>Toggle all panels - Hides or shows all the panels</td><td>SPACE</td>
+        <td>パネル切り替え - すべてのパネルを表示 / 非表示にする</td><td>スペース</td>
     </tr>
     <tr>
-        <td>Duplicate - Duplicates the selected entity and all children</td><td>CTRL + D</td>
+        <td>複製 - 選択したエンティティとその子エンティティをすべて複製する</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>New Entity - Creates a new entity as a child of the currently selected entity</td><td>CTRL + N</td>
+        <td>新規作成 - 現在選択中のエンティティの子エンティティを新規作成する</td><td>CTRL + N</td>
     </tr>
     <tr>
-        <td>Undo - Undo the last action performed by the user</td><td>CTRL + Z</td>
+        <td>アンドゥ - ユーザーが行った直前の動作をアンドゥする</td><td>CTRL + Z</td>
     </tr>
     <tr>
-        <td>Redo - Redo the next action performed by the user</td><td>CTRL + Y</td>
+        <td>リドゥ - ユーザーが行った次のアクションをやり直す</td><td>CTRL + Y</td>
     </tr>
     <tr>
-        <td>Translate - Change gizmo mode to translate</td><td>1</td>
+        <td>移動 - ギズモを移動モードに切り替え</td><td>1</td>
     </tr>
     <tr>
-        <td>Rotate - Change gizmo mode to rotate</td><td>2</td>
+        <td>回転 - ギズモを回転モードに切り替え</td><td>2</td>
     </tr>
     <tr>
-        <td>Scale - Change gizmo mode to scale</td><td>3</td>
+        <td>拡大縮小 - ギズモを拡大縮小モードに切り替え</td><td>3</td>
     </tr>
     <tr>
-        <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
+        <td>フレーム選択 - 選択したエンティティ全体がフレームに入るようアクティブなカメラを調整する</td><td>F</td>
     </tr>
 </table>
 

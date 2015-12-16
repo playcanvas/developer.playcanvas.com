@@ -13,24 +13,24 @@ template: tutorial-page.tmpl.html
 
 ### ローカル及びワールド座標
 
-An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
+エンティティの移動及び操作を理解するには、ローカルとワールド座標系を理解する必要があります。ワールド座標系は全てのエンティティで共有され、固定の軸である`(0,0,0)`と、 `(0,1,0)` を上とする固定の方向があります。ローカルの座標系はエンティティ自体に比較します。つまり、ローカルの軸はエンティティの位置となり、方向はエンティティの方向に従います。
 
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*ワールドとローカルの座標システム*
+*ワールドとローカルの座標系*
 <br />
 
 ### 階層
 
-An important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will be `(1,1,0)`
+エンティティシステムについて理解しておくべき重要な部分は、エンティティグラフまたは階層です。エンティティはグラフノードタイプなので、グラフまたは親と子の階層に収集されています。各エンティティは、単一の親と複数の子を持つことができます。子エンティティは、親から変換情報を相続します。エンティティのワールド変換行列は、ローカルの変換を親エンティティのワールド変換と乗算します。例えば、子エンティティが`(1,0,0)`のローカル変換を持ち、その親が`(0,1,0)`のローカル変換を持つ場合、子のワールド位置は`(1,1,0)`になります。
 
 ## 位置
 
 エンティティの位置を取得するのは簡単です
 
 ~~~js~~~
-// エンティティの親の座標システムに関連したエンティティの位置を取得
+// エンティティの親の座標系に関連したエンティティの位置を取得
 var lp = entity.getLocalPosition();
 
 // ワールド空間でエンティティの位置を取得
@@ -65,32 +65,32 @@ entity.translateLocal(0, 0, 1);
 
 エンティティの方向を設定するには、絶対的な回転を設定するか、インクリメンタルな回転を適用します。
 
-Setting absolute rotations can be done using either [Euler angles][1] or [quaternions][2]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
+絶対的な回転の設定は、 [Euler angles][1] または [quaternions][2]を使用して行うことができます。これら二つの数学的表現に対するWikipediaの説明は少し難しいですが、基本は簡単です。重要事項は次のとおりです：
 
 ** オイラー角 **
 
-* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
-* Euler angles are easy to understand because you can visualize the effect they will have in your head.
+*オイラー角は、座標系のX,Y, Z軸を中心として（その順番通り）度単位の3つの回転です。
+*座標系の軸を下に見ていくと、正のオイラー角は、その軸を中心とした反時計回りの回転となります。
+*オイラー角は、その効果を思い浮かべることができるので、理解しやすいです。
 
 ** 4元数 **
 
-* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
-* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
-* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
+*クォータニオンは4つの数字として格納され、3D空間内の任意の方向を表します。
+*これらは、直接設定することは困難ですが、オイラー角、回転マトリックスまたは軸角表現から設定することができます。
+*視覚化するのは難しいですが、堅牢であり、速やかに補間することができるので、(回転をアニメーション化する場合)便利です。
 
 エンティティをスクリプトする場合、オイラー角を使用してエンティティの回転を設定する可能性が高いです。 例えば：
 
 ~~~js~~~
-// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
-// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
+// 親エンティティの座標系のX軸を中心に反時計回りに30度回転してから
+// Y軸を中心に45度回転して、最後に、Z軸を中心に60度回転します。
 entity.setLocalEulerAngles(30, 45, 60);
 
-// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
-// around the world space y axis and lastly 60 degrees around the world space z axis
+// ワールド空間のX軸を中心に反時計回りに30度回転してから
+// ワールド空間のY軸を中心に45度回転して、最後に、ワールド空間のZ軸を中心に60度回転します。
 entity.setEulerAngles(30, 45, 60);
 ~~~
-However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
+しかし、エンティティの回転を四元形式で設定したい場合、次の何れかの関数を利用できます：
 
 ~~~js~~~
 // アイデンティティ回転を作成
@@ -99,7 +99,7 @@ var q = new pc.Quat();
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);
 
-// エンティティがワールド空間座標システムに関連する回転を
+// エンティティがワールド空間座標系に関連する回転を
 // 持たないよう設定。entity.setEulerAngles(0, 0, 0)と同じ。
 entity.setRotation(q);
 ~~~

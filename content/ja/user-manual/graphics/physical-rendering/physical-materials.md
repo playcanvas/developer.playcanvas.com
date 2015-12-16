@@ -1,96 +1,96 @@
 ---
-title: Physical Materials
+title: 物理的マテリアル
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
+物理ベースのレンダリングをPlayCanvasで使うためには、物理的マテリアルをどのように設定するか、そして様々なプロパティを変更することによってどのような効果があるかを理解する必要があります。
 
-In this section we'll talk about the most useful properties of the material and you can see in the live demos how altering them affects the appearance of a material.
+このセクションでは、マテリアルに設定できる効果的なプロパティについて説明します。また、プロパティを変更する事によってどのような影響があるかを、実際に動作するデモで確認します。
 
-First a note about Cubemaps and Workflows
+ではまず最初に、キューブマップとワークフローについて説明します。
 
-## Cubemaps
+## キューブマップ
 
-First up cubemaps and skyboxes, because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below.
+多くの人はまず最初にエディタでマテリアルを作成した時、なぜ下のサンプルのように見えないのか困惑すると思いますので、まず最初にキューブマップとスカイボックスについて説明します。
 
-**Physical Materials require a cubemap in order to look great!** Cubemaps are used to create a large portion of the reflected light component of the material. So if you don't have a cubemap either applied directly the material in the Environment section, or applied to the entire scene as a skybox, your materials won't look as good.
+**物理的マテリアルをきれいに表示するには、キューブマップが必要です** キューブマップはマテリアルの反射光成分の大きな割合を占める要素として使われます。そのため、マテリアルに直接キューブマップを割り当てるか、あるいはEnvironmentセクションでシーン全体にスカイボックスとしてキューブマップを設定しない場合、マテリアルはきれいに表示されません。
 
-In addition, for the best results, the cubemaps should be created from [High Dynamic Range][2] (HDR) textures.
+さらに、キューブマップに[HDR][2] (高ダイナミックレンジ) テクスチャを使うことで、よりマテリアルをきれいに表示することができます。
 
-<div class="alert-info">For physical materials to use your cubemap it **must** be prefiltered. Once you have set up your cubemap asset, ensure you press the "prefilter" button just below it.
+<div class="alert-info">キューブマップを物理的マテリアルに適用するには、**キューブマップを事前にフィルタリングしなければいけないことに注意してください**。キューブマップの素材を設定したら、その真下にある"prefilter"ボタンを必ず押してください。
 </div>
 
-## Metalness and Specular Workflow
+## 金属質(metalness)とスペキュラを使った設定法
 
 ![Workflows][4]
 
-PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At PlayCanvas we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
+物理ベースのレンダリングはアセット作成の方法が大きく分けて二種類あります。二つの方法は等価で、結果は同じものになります。最終的にはどちらの方法が好みかというところで選択することになります。PlayCanvasでは金属質を使った方法を使うことが多いです。というのも、金属質マップはより簡単に作ることができ、さらにシングルチャネルですので、一般的に効率がよりよいためです。
 
-The **metalness** workflow involves setting a metalness value or creating a metalness map which determines which areas of the material are metal or non-metal. Usually this is a simple binary choice. 1 for metal, 0 for non-metal. It is not often that you have a value between the two.
+**金属質**を使った方法では、金属質値あるいはマテリアルのどの部分が金属質であるかどうかを決める金属質マップを設定します。通常は非金属であれば0、金属であれば1を設定するという単純な二択です。1と0の間の値を取るケースはそれほど多くありません。
 
-The **specular** workflow involves setting a specular value or creating a specular map which determines the color and intensity of the reflected light for your material.
+**スペキュラ**を使った方法では、スペキュラ値あるいはマテリアルによって反射された光の強さと色を決めるスペキュラマップを設定します。
 
-There is a good explanation of the differences on the [Marmoset Toolbag blog][5].
+[Marmoset Toolbag blog][5]にこの二つの方法の違いがわかりやすく説明されています。
 
-On to materials...
+それではマテリアル設定に進んでいきましょう。
 
-# Material Properties and Maps
+# マテリアルのプロパティとマップ
 
-## Diffuse
+## 拡散(Diffuse)
 
-The Diffuse Color is the base color of the material. This is an RGB color value. For clean pure (metal, plastic) substances this can be a constant value but it can also be supplied as a diffuse map texture. Note, you should usually avoid including lighting detail (shadows or highlights) in your diffuse map as this can be applied in other maps.
+拡散色はマテリアルの下地の色で、RGB色の値を取ります。なめらかで純粋な物質(金属やプラスチックなど)の場合はひとつの値だけを取ることができますが、拡散マップテクスチャとして与えることもできます。拡散マップを使う場合には、照明の影響(影やハイライトなど)を含めないようにしてください。これらの効果は別のマップで適応することができるためです。
 
-It can also be known as **albedo** or **base color**.
+拡散色は**アルベド**や**ベースカラー**と呼ばれることもあります。
 
 <iframe src="http://playcanv.as/p/Q28EwTwQ?color"></iframe>
 
-You can often find the charts of recorded values for diffuse/albedo values on the internet.
+インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
 
 ![Metals][3]
 
 <table class="centered">
   <tr>
-  <th>Material</th><th>RGB</th>
+  <th>素材</th><th>RGB</th>
   </tr>
   <tr>
-  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  <td>金</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
   </tr>
   <tr>
-  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  <td>銀</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
   </tr>
   <tr>
-  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  <td>銅</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
   </tr>
 </table>
 
-## Metalness
+## 金属質(Metalness)
 
-The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
+金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
 
 <div class="alert-info">
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+金属質の値はほぼいつでも0か1かのいずれかを設定します。この間の値を設定する必要があることはまれです。
 </div>
 
-You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
+また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
 
 <iframe src="http://playcanv.as/p/Q28EwTwQ?metal"></iframe>
 
-## Glossiness
+## 光沢度(Glossiness)
 
-Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
+光沢度は**金属質*と**スペキュラ**を使う方法の両方で使われ、マテリアルの表面がどのくらいなめらかかを定義します。光沢度はマテリアルの表面で反射する光がぼやけるか鋭いか、あるいはスペキュラハイライトが広いか狭いかに影響します。光沢度は0から100の間の値か、あるいは光沢度マップとして与えることができます。
 
 <iframe src="http://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
 
-Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
+いくつかの物理ベースレンダリングシステムでは、光沢度という用語の代わりに**粗さ (Roughness)**という用語を使います。粗さは光沢度の反対の意味です。光沢度と粗さを変換する際には、単純にその値を反転してください。
 
-Sometimes glossiness and roughness are referred to as the **microsurface** value.
+光沢度と粗さは、**microsurface値**という用語で呼ばれることもあります。
 
-## All together
+## まとめ
 
-These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
+物理的マテリアルの仕組みでは、**拡散**、**金属質**、**光沢度**が重要な役割を果たします。下のデモを使って色々な組み合わせを試してみてください。
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occulusion, Emissive, Opacity, Normal and Height maps.
+マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
 
 <iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
 

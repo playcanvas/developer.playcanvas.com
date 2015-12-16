@@ -1,64 +1,64 @@
 ---
-title: コリジョンとトリガー
+title: 当たり判定とトリガー
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/collision_and_triggers?overlay=false"></iframe>
 
-*Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
+*剛体が互いに衝突すると音がなります。剛体がトリガーボリュームに当たると元の場所に戻ります。*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Scene in full in the [Collision & Triggers Scene][1] in the [PlayCanvas Tutorials Project][2].
+このチュートリアルでは剛体シミュレーション、当たり判定とトリガーボリュームの基礎を紹介します。シーンの内容は[PlayCanvasチュートリアルプロジェクト][2]の[当たり判定とトリガーのシーン][1]を参照してください。
 
 ## コリジョンコンポーネント
 
-The *collision* component defines a shape which can be used either to trigger events if another Entity enters or exits it -- we call this a Trigger Volume -- or it can be used together with the *rigidbody* component to give an Entity physical properties in your game -- like a bouncing ball or a heavy crate.
+*コリジョン - 当たり判定*コンポーネントは二つの用途に使うことができる形状を定義します。一つは他のエンティティが形状の中に入ってきたり出て行った時にイベントを発生させるトリガーボリュームと呼ばれる用途、もう一つは*rigidbody*コンポーネントと組み合わせて、エンティティに弾むボールや重い箱のような物理的な性質をゲーム内で与える用途です。
 
-The most important property of a *collision* component is it's **Type**, this determines the shape of the volume that will be used. There are four options:
+*コリジョン*コンポーネントで最も重要なプロパティは、その**タイプ**です。これは使用する当たり判定の形状を決定します。全部で四種類があります:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+* **Box** 箱型の形状です。
+* **Sphere** 球型の形状です。
+* **Capsule** 錠剤のような形をしたカプセル型の形状です。キャラクターのように背が高く細く、かつ尖っていなくて地面に一点で触れているようなものの当たり判定に使われます。
+* **Mesh** 任意形状のメッシュです。**注意** メッシュの当たり判定には制限があります。特に、*rigidbody*と組み合わせて使う場合は、そのrigidbodyは**Static**でなければなりません。
 
-### Trigger Volumes
+### トリガーボリューム
 
-To create a Trigger Volume all we need to do is add a *collision* component to an Entity. In this tutorial we're adding a large box-shaped Trigger Volume underneath the slope to catch the falling bodies and reset their position.
+トリガーボリュームは、エンティティに*collision*コンポーネントを追加することで作ることができます。このチュートリアルでは大きな箱型のトリガーボリュームを坂道の下に置き、落ちてきた物体を検出して元の場所に戻すために使います。
 
-![コリジョン＆トリガー][3]
+![当たり判定とトリガー][3]
 
-You can see the trigger volume underneath the ramp displayed as a blue outline.
+ブルーの枠線で表示されたトリガーボリュームが、坂道の下に表示されているのがわかります。
 
-### リジッドボディ
+### Rigid Bodies - 剛体
 
-A rigid body is a physical presence in your game world. You can set it up with real physics properties like Mass and Friction; it will collide with other rigid bodies and respond in a realistic manner.
+Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわします。重量や摩擦などの物理的な性質を設定することができ、自分以外の剛体を衝突したとき、現実的な反応をします。
 
-To create a rigid body in your Scene, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
+剛体をシーン内に作るには、エンティティを選択して*rigidbody*コンポーネントと*collision*コンポーネントを追加してください。デフォルトでは**static box**が作られます。**rigidbody**コンポーネントは物体の性質を調整するために様々な設定を行うことができます。
 
-![リジッドボディコンポーネント][4]
+![rigidbodyコンポーネント][4]
 
-各プロパティの詳細は[*リジッドボディ* ドキュメント][5]をご確認ください。
+各プロパティの詳細は[*rigidbody* ドキュメント][5]をご確認ください。
 
-For this demo, the important property is the **Type**. You can pick one of three options:
+このデモで重要なプロパティは**Type**です。以下の三種類があります。
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
-* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
+* **Static** エンティティを固定し、動かなくします。
+* **Dynamic** エンティティは重力と外部から与えられた力に影響されて動くようになります。
+* **Kinematic** エンティティは力に反応しなくなりますが、位置と速度を直接指定して動かすことができるようになります。
 
 ## 地面の設定
 
-The first Entity we need in this tutorial is the green block that forms the ground.
+チュートリアルのはじめの一歩として、地面となる緑色のブロックを作ります。
 
-![地面エンティティ][6]
+![地面をあらわすエンティティ][6]
 
-You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
+属性パネル内に*model*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
 
 ## トリガーの設定
 
-次に必要なエンティティはトリガーです。
+次にトリガーとなるエンティティを作成します。
 
 ![トリガーエンティティ][7]
 
-With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
+このエンティティは*collision*コンポーネントはありますが、*rigidbody*コンポーネントはありません。そのためこのエンティティはトリガーとして振る舞います。このトリガーエンティティにはコードが書き込まれた*script*コンポーネントが与えられています。トリガーは発生した時に何らかの処理を行った時はじめて意味があるものになります。そのため、処理を行うコードとトリガーが発生した際のイベントを監視するコードを追加する必要があります。
 
 ~~~javascript~~~
 pc.script.create("trigger", function (app) {
@@ -75,7 +75,7 @@ pc.script.create("trigger", function (app) {
         },
 
         onTriggerEnter: function (entity) {
-            // エンティティが最初に開始した大体の位置にリセット。
+            // エンティティが最初にあった大体の位置に戻す。
             var position = entity.getPosition();
             entity.setPosition(position.x, 10, 0);
 
@@ -89,39 +89,39 @@ pc.script.create("trigger", function (app) {
 })
 ~~~
 
-There two significant parts to the code above.
+上記のコードには大きく分けて二つの機能があります。
 
-First in the ```initialize``` method we start listening to the **triggerenter** event. This event fires once when a rigid body enters a trigger volume (where a trigger volume is an entity that has a collision component but no rigidbody component). The companion event is **triggerleave** which is fired once the penetrating rigid body leaves the trigger.
+まず、```initialize```メソッド内で**triggerenter**イベントの監視を始めます。このイベントは剛体がトリガーボリューム(collisionコンポーネントのみを持ち、rigidbodyコンポーネントを持たないエンティティ)に入った時に発生します。対応する反対のイベントは**triggerleave**イベントで、これは剛体がトリガーボリュームの外に出た時に発生します。
 
 ~~~javascript~~~
 this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 ~~~
 
-Notice, the third argument, ```this```, which is the 'scope' that will be used in the event listener. Usually, you'll want to add the current Script Object as the third argument so that the value of ```this``` in the event listener is that same Script Object.
+三番目の引数である```this```はイベントリスナーで使われる'scope'であることに注意してください。通常は三番目の引数として、現在のスクリプトオブジェクトを与えます。これはイベントリスナー内の```this```の値をイベントリスナーを設定しているスクリプトオブジェクトと同じものにするためです。
 
-The second part of this code is the function which handles the event, ```onTriggerEnter```. When the trigger is entered, this function is called and passed the [```Entity```][8] object entering the trigger volume.
+このコードの二番目の部分は、イベント処理部分の```onTriggerEnter```.です。トリガーが発生すると、この関数が呼び出されてトリガーボリュームに入ってくる[```Entity```][8]オブジェクトが渡されます。
 
-In this case, when the trigger is fired, we reset the penetrating Entity back up to the position it started in, and reset its velocities.
+このサンプルでトリガーが発生した場合は、トリガーボリュームに侵入したエンティティを初期位置にリセットし、同時に速度もリセットしています。
 
-## リジッドボディ
+## Rigid Bodies - 剛体
 
-We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
+地面は**Static**な剛体として設定します。さらに、落ちてくるオブジェクトを作成し、**Dynamic**として設定します。
 
 ![ボックスエンティティ][9]
 
-This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
+ボックスコンポーネント用の*rigidbody*と*collision*設定を行います。球とカプセルについても同様に設定します。
 
-## Contact Events
+## 接触イベント
 
-There are three events available on the *collision* component:
+*collision*コンポーネントには三種類のイベントが用意されています。
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
-* **collisionend** - fires when two rigid bodies separate.
+* **contact** - 二つの剛体が互いに触れている時、すべての接触点について発生ます。
+* **collisionstart** - 二つの剛体が衝突し始めた時に発生します。
+* **collisionend** - 二つの剛体が離れた時に発生します。
 
-The difference between **contact** and **collisionstart** is subtle but important. Imagine a cube landing at an angle on a flat surface. When the edge of the cube hits the surface the two corners of the cube will strike at the same moment. Three events will fire, two **contact** events for each corner of the cube, and one **collisionstart** event. Then the cube will rotate and continue to fall until it lies flat, all the while remaining in contact with the surface. When it lands flat, two more **contact** events will fire as the edge of the cube hits the surface. As the cube remained in contact with the surface all that time, no more **collisionstart** events are fired.
+**contact**と**collisionstart**の違いはささいなことですが重要なものです。立方体が一定の角度で平面に落ちるとします。立方体の辺が平面に触ったとき、立方体の二つの頂点が同時に平面に当たります。この状態では、三つのイベントが発生します。二つの**contact**イベントがそれぞれの頂点向けに発生し、さらに一つの**collisionstart**イベントが発生します。そして立方体は平面上に静止するまで回転して落ち続けます。その間ずっと平面上と何らかの形で接触し続けるものとします。平面上に静止したとき、頂点が平面に触った時、さらに二つの**contact**イベントが発生します。しかし、立方体は平面に触れ続けているので、**collisionstart**が追加で発生することはありません。
 
-Both events are useful, but in this demo we'll use the **collisionstart** event to trigger a sound effect that plays when the objects hit the ground. Here's the code:
+どちらのイベントも便利ですが、このデモでは**collisionstart**イベントを地面に触れた時の効果音を鳴らすトリガーとして使用しています。以下がコードです:
 
 ~~~javascript~~~
 pc.script.create("collider", function (app) {
@@ -146,9 +146,9 @@ pc.script.create("collider", function (app) {
 });
 ~~~
 
-In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now everytime an Entity with the collider script attached collides with another rigid body it will play the hit sound.
+```initialize```メソッドでイベントリスナが設定されています。そしてイベントハンドラの中では、衝突した相手のエンティティが**rigidbody**コンポーネントを持っているかを確認し(これはトリガーボリュームに入った際に効果音を鳴らさないためです)、そして"hit"サウンドエフェクトを鳴らします。このようにして、colliderスクリプトを持つエンティティが他の剛体と衝突すると、毎回衝突の効果音を鳴らしています。
 
-And that's all there is to handling Collisions and Triggers in PlayCanvas.
+これでPlayCanvasでの当たり判定とトリガーの扱い方の説明を終わります。
 
 [1]: https://playcanvas.com/editor/scene/329662
 [2]: https://playcanvas.com/project/186/overview/tutorials
