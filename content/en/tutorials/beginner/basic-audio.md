@@ -60,7 +60,7 @@ If this is checked it means that the sound will be heard relative to the positio
 Each slot has an Asset picker which allows you to play different audio assets from different slots. See [importing assets][4] for details on how to upload audio assets.
 
 <div class="pc-notice-message pc-small">
-    Not all audio formats are supported across all browsers. At the moment we recommend using Wave (.wav) or Ogg Vorbis (.ogg), which are supported by Chrome, Firefox and Opera. Safari does not support Ogg Vorbis.
+    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
 </div>
 
 Once you have uploaded your assets, use the Asset Picker to select the audio asset for your slot.
