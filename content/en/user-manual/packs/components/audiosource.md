@@ -4,6 +4,10 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
+<br/>
+<div class="alert alert-info">The Audio Source component is going to be deprecated in favor of the new [Sound Component][4]</div>
+<br/>
+
 The Audio Source component controls playback of an audio sample.
 
 The Audio Source component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play assigned audio assets.
@@ -34,3 +38,4 @@ You can control an Audio Source component's properties using a [script component
 [1]: /images/user-manual/scenes/components/component-audio-source.png
 [2]: /user-manual/packs/components/script
 [3]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
+[4]: /user-manual/packs/components/sound
