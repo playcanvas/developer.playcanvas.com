@@ -5,7 +5,7 @@ position: 3
 ---
 
 <br/>
-<div class="alert alert-info">The Audio Source component is going to be deprecated in favor of the new [Sound Component][4]</div>
+<div class="alert alert-info">The Audio Source component is deprecated in favor of the new [Sound Component][4]</div>
 <br/>
 
 The Audio Source component controls playback of an audio sample.
