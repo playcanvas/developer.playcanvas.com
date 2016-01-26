@@ -5,7 +5,7 @@ template: tutorial-page.tmpl.html
 
 <iframe src="http://playcanv.as/p/kvMKtuwp" ></iframe>
 
-* Click on the various buttons to try out different sound effects. *
+*Click on the various buttons to try out different sound effects.*
 
 <div class="alert alert-info">This tutorial requires Web Audio API support.</div>
 
