@@ -11,6 +11,7 @@ In this series of tutorials we're going to show you how a complete game is made 
 We'll cover these topics:
 
 1. **The Scene and Hierarchy**
+1. Material Setup
 1. The Game Script
 1. Ball Physics and Input
 1. Audio & Effects
