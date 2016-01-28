@@ -28,23 +28,23 @@ Download the [A model][5], [B model][6] and [C model][7] and upload them to your
 
 First let's look at the initialize method which searches the `pc.AssetRegistry` for the assets we need.
 
-```
+```javascript
 initialize: function () {
     // get assets from the asset registry
-    this.a = app.assets.find("A");
-    this.b = app.assets.find("B");
-    this.c = app.assets.find("C");
+    this.a = app.assets.get(this.aAsset);
+    this.b = app.assets.get(this.bAsset);
+    this.c = app.assets.get(this.cAsset);
 
     // prevent the page scrolling when we press space.
     app.keyboard.preventDefault = true;
 }
 ```
 
-The [`pc.AssetRegistry`][8] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we're searching by the asset name.
+The [`pc.AssetRegistry`][1] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we've declared three script attributes `aAsset`, `bAsset` and `cAsset` which are assigned to assets in the Editor. We then use the script attributes to find the assets from the registry.
 
 ## Using preloaded assets
 
-```
+```javascript
 if (app.keyboard.isPressed(pc.KEY_SPACE)) {
     if (this.entity.model.model !== this.b.resource) {
         // update the model component to the new model
@@ -65,7 +65,7 @@ So, the `A` and `B` models are preloaded, which means we know they will be ready
 
 ## Loading assets at runtime
 
-```
+```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
     if (this.c.resource) {
         if (this.entity.model.model !== this.c.resource) {
@@ -81,7 +81,7 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 
 The **C** model is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.resource` is empty, then the resource isn't loaded and we can't change the model component. If the **C** model is loaded then `this.c.resource` will be the `pc.Model` property and we'll be able to assign it.
 
-```
+```javascript
 if (app.keyboard.isPressed(pc.KEY_L)) {
     app.assets.load(this.c);
 }
@@ -93,7 +93,7 @@ Once the asset is loaded `asset.resource` will be a `pc.Model` instance and we c
 
 ## The complete script
 
-```
+```javascript
 pc.script.create('update_asset', function (app) {
     // Creates a new Update_asset instance
     var Update_asset = function (entity) {
@@ -152,7 +152,7 @@ pc.script.create('update_asset', function (app) {
 
 One thing we don't demonstrate in this example is how to know when an asset is loaded. To do this we use `pc.AssetRegistry` events like the `"load"` event. Here's some sample code:
 
-```
+```javascript
 // find the asset in the registry
 var asset = app.assets.find("A");
 // set up a one-off event listener for the load event
@@ -163,7 +163,7 @@ app.assets.once("load", function (asset) {
 
 The `"load"` event is quite broad. It is fired for every asset that is loaded, so if assets are loaded elsewhere, you won't know that this is your asset. Instead you can narrow your event down by using the `"load:id"` event.
 
-```
+```javascript
 // find the asset in the registry
 var asset = app.assets.find("A");
 // set up a one-off event listener for the load event
@@ -176,7 +176,7 @@ The above event will only be fired for that specific asset. Much more useful.
 
 Finally, there is one specific coding pattern, that often occurs. So often, in fact, that we've provided a convenient method to do it for you.
 
-```
+```javascript
 var asset = app.assets.find("A");
 if (!asset.resource) {
     app.assets.once("load:" + asset.id, function (asset) {
@@ -190,7 +190,7 @@ if (!asset.resource) {
 
 This code loads an asset when it is needed, but it's a bit long winded. So, instead, you can use the `asset.ready()` method. This code performs the same function as above
 
-```
+```javascript
 var asset = app.assets.find("A");
 asset.ready(function (asset) {
     // do something with asset.resource
@@ -200,10 +200,9 @@ app.assets.load(asset);
 
 The `asset.ready()` method will call it's callback as soon as the asset is loaded, if the asset is already loaded, it will call it straight away. `app.assets.load()` does nothing if the asset is already loaded.
 
-[1]: /engine/api/stable/symbols/pc.asset.AssetRegistry.html
+[1]: /en/api/pc.AssetRegistry.html
 [3]: https://playcanvas.com/project/349519/overview/tutorial-asset-registry
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
-[8]: /engine/api/stable/symbols/pc.AssetRegistry.html
 

@@ -4,11 +4,12 @@ template: usermanual-page.tmpl.html
 skip: false
 ---
 
-Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, Sketch Up, Autodesk 3D Studio Max or Autodesk Maya.
+Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
 
 PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
 Some modelling and animation programs to consider:
+
 * Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
 * Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
 * Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
@@ -16,17 +17,16 @@ Some modelling and animation programs to consider:
 \* *this program can create animations too.*
 
 For generating textures, consider these programs:
+
 * Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
 * Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
-Note many of the programs listed above for modelling also allow texture painting.
-If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+Note many of the programs listed above for modelling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
 
 ## General Considerations for Mesh Construction
 
 Regardless which modelling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
 
-* Each mesh object should contain no more than 65,535 vertices. If a single object contains more vertices that this, break the object up until all objects fall below this limit.
 * Meshes can be skinned to up to 256 bones.
 * NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
@@ -42,19 +42,20 @@ Blender supports exporting to both COLLADA and FBX, but the built-in exporters d
 
 ### **Map Types**
 
-As of Blender 2.71 both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor. To access the Material Editor, select the Model Entity, then click again on the material you wish to edit. Or right-click the model and select 'Edit Material'.
+As of Blender 2.71, both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor.
 
 ### **Embedding Textures**
+
 Embedded Textures make importing much easier.
 
 The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
 
-The 2.71 release of Blender features a revamped fbx export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to fbx, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
+The 2.71 release of Blender features a revamped FBX export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to FBX, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
 
 Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
 
 <div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's fbx export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
 </div>
 
 ### **Animations**
@@ -73,12 +74,6 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 ---
 
 ## Autodesk 3D Studio Max
-
-To see a practical example of some PlayCanvas content being creation in Max, check out the following video:
-
-<iframe width="640" height="360" src="http://www.youtube.com/embed/5xXSFXj_GUQ?rel=0" frameborder="0" allowfullscreen></iframe>
-
-You should now have a better feel for how PlayCanvas interprets your 3DS Max scenes. However, let's now look at what is and what isn't supported in a little more detail.
 
 ### Materials
 

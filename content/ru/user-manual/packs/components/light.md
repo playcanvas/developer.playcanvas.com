@@ -4,14 +4,16 @@ template: usermanual-page.tmpl.html
 position: 6
 ---
 
-The 'light' component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.
+The Light component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.
+
+The Light component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the light will light the scene.
 
 #### Directional
-<img src="/images/user-manual/components/component-light-directional.jpg" style="width: 300px" />
+![Light component (Directional)][1]
 #### Point
-<img src="/images/user-manual/components/component-light-point.jpg" style="width: 300px" />
+![Light component (Point)][2]
 #### Spot
-<img src="/images/user-manual/components/component-light-spot.jpg" style="width: 300px" />
+![Light component (Spot)][3]
 
 ## Properties
 
@@ -19,7 +21,6 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Enabled</td><td>If checked, the light will light the scene.</td></tr>
     <tr><td>Color</td><td>The color of the emitted light.</td></tr>
     <tr><td>Intensity</td><td>The intensity of the light, this acts as a scalar value for the light's color. This value can exceed 1.</td></tr>
     <tr><td>Range</td><td>Point and Spot only. The distance from the spotlight source at which its contribution falls to zero.</td></tr>
@@ -34,12 +35,11 @@ The 'light' component attaches a dynamic light source to the Entity. The 'Type' 
 
 ## Scripting Interface
 
-You can control an light component's properties using a [script component][4]. The light component's scripting interface is [here][5].
+You can control a Light component's properties using a [script component][4]. The Light component's scripting interface is [here][5].
 
+[1]: /images/user-manual/scenes/components/component-light-directional.png
+[2]: /images/user-manual/scenes/components/component-light-point.png
+[3]: /images/user-manual/scenes/components/component-light-spot.png
 [4]: /user-manual/packs/components/script
 [5]: /engine/api/stable/symbols/pc.LightComponent.html
-
-[1]: /images/platform/component_directionallight.png
-[2]: /images/platform/component_pointlight.png
-[3]: /images/platform/component_spotlight.png
 

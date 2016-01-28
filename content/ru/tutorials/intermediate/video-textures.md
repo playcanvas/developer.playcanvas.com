@@ -17,7 +17,7 @@ This script performs the following functions:
 * Apply the new texture to the material on the TV model
 * Update the texture with video data every frame
 
-~~~javascript~~~
+```javascript
 pc.script.attribute('materials', 'asset', [], {
     type: 'material'
 });
@@ -75,7 +75,7 @@ pc.script.create('videotexture', function (app) {
 
     return Videotexture;
 });
-~~~
+```
 
 [1]: https://playcanvas.com/project/362226/overview/tutorial-video-textures
 

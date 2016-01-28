@@ -1,7 +1,7 @@
 ---
 title: Materials
 template: usermanual-page.tmpl.html
-position: 5
+position: 6
 ---
 
 Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.

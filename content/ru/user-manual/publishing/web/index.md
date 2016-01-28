@@ -9,8 +9,10 @@ PlayCanvas games are actually web pages and as such, are most at home in the bro
 * [PlayCanvas Hosting][1]
 * [Self-hosting][2]
 * [Chrome Web Store][3]
+* [Kongregate][4]
 
 [1]: /user-manual/publishing/web/playcanvas-hosting
 [2]: /user-manual/publishing/web/self-hosting
 [3]: /user-manual/publishing/web/chrome-web-store
+[4]: /user-manual/publishing/web/kongregate
 
