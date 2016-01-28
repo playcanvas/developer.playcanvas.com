@@ -4,5 +4,5 @@ template: tutorial-page.tmpl.html
 position: 2
 ---
 
-実体、カメラ、入力、その他のPlayCanvas Engineのエリアについて説明するこちらのチュートリアルから始めてください。
+こちらのチュートリアルでは、エンティティ、カメラ、入力、その他のPlayCanvasエンジンの機能の基礎を解説します。
 

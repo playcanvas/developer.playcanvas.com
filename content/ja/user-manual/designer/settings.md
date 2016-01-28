@@ -4,44 +4,55 @@ template: usermanual-page.tmpl.html
 position: 8
 ---
 
-## 設定
+The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
 
-設定パネルではシーンのグローバルプロパティを設定することができます。設定可能なプロパティは次のとおりです：
+<img src="/images/user-manual/cog.jpg" style="display: inline; vertical-align: middle;">
 
-* Physics（物理）
-  * Gravity（重力）
-* Environment（環境）
-  * Ambient Light Color（アンビエントライトカラー）
-  * Skybox（スカイボックス）
-  * Skybox Intensity（スカイボックス強度）
-  * Skybox Mip（スカイボックス Mip）
-* Camera（カメラ）
-  * Gamma correction（ガンマ調整）
-  * Tonemapping（トーンマッピング）
-  * Exposure（露出）
-* Fog（フォグ）
-  * Type（タイプ）
-  * Density（密度）
-  * Distance（距離）
-  * Color（色）
-* Loading Screen（読み込み画面）
-  * Script（スクリプト）
+## Editor
 
-設定パネルにはエディタの右下にある<img src="/images/user-manual/cog.jpg" style="text-align: middle;" />ボタンからアクセスできます。
+These are personal preferences for the Editor.
+
+### Grid
+
+You can set the number of divisions and the size of each division for the Grid that appears in the Editor scene.
+
+### Snap
+
+This is the snap increment used when snapping is enabled.
+
+### Camera Clip
+
+Here you can set the near and far clip planes for the Editor cameras.
+
+### Clear Color
+
+This is the clear color of the Editor cameras.
+
+### Icon Size
+
+This is the size of the icons that appear over various components inside the 3D viewport. Set this to 0 if you don't want to see icons at all.
+
+### Local Server
+
+This is the URL where all the scripts are going to be loaded from, when launching the Application with Launch Local.
 
 ## 物理の設定
 
 物理設定は、シーン内のすべてのリジッドボディのシミュレーションに影響を与えます。
 
+### Enable
+
+If this is enabled then the 3D physics library will be included in your Application.
+
 ### 重力
 
 重力は、シーン内のすべてのリジッドボディに対してフレームごとに適用される加速度です。デフォルトでは毎秒あたり-9.8メートルに設定されています。これは地球の重力を近似します。宇宙を設定にしたゲームを作っている場合は0, 0, 0 (重力ゼロ)に設定すると良いかも知れません。
 
-## 環境
+## Rendering
 
-環境設定は、シーン内のジオメトリに影響を与えます。
+Rendering settings affect various graphics related properties.
 
-### グローバルアンビエントカラー
+### Ambient Color
 
 シーンのライトソースの色。 PlayCanvasでは指向性ライト、ポイントライト、スポットライトを作成することができます。これらのライトが、オブジェクトに直接当たる光になります。現実世界では、光は環境内で反射をします。このような光を、間接光と呼びます。グローバルのアンビエントライトは、この粗近似値であり、すべての方向から照らすように見える光源を設定することができます。このグローバルのアンビエント色は、Phong素材のAmbientプロパティで乗算され、オブジェクトの最終的な色に追加されます。
 
@@ -49,7 +60,7 @@ position: 8
 
 ### スカイボックス
 
-スカイボックスは、3Dシーンの裏でレンダリングされる [cubemap][1] アセットです。これにより、シーン内3Dモデルの先にある遠くの世界を表示する、6つの2D画像のセットを使用することができます。
+The Skybox is a [cubemap][3] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
 
 スカイボックスを追加するには、キューブマップアセットを作成し、設定パネルでキューブマップスロットに割り当てます。
 
@@ -62,8 +73,6 @@ position: 8
 ###スカイボックス Mip
 
 プレフィルタリングされたスカイボックスを使用している場合、表示したいスカイボックスのmipを選択することができます。各MIPは、元のスカイボックスのよりぼやけたものです。アーティスティックな理由等で、元のスカイボックスのぼやけた/抽象的なバージョンを表示させたい場合に使用します。
-
-## カメラ
 
 ### トーンマッピング
 
@@ -84,13 +93,11 @@ Filmicトーンマッピングは、インテリア内の明るい光が壁/天�
 
 コンピュータの画面は物理的にリニアではないが、知覚的にリニア(sRGB)な信号を出力するように設定されています。しかし、ライティングの計算を実行するとき、正しく表示させるためにはカラーテクスチャを物理的にリニアな空間に変換して、完全に照らされた画像をsRGBのに再びフィットする必要があります。ガンマ補正を有効にしてレンダリングをすると、彩度を上げすぎた醜いハイライトを減らし、ライティング後に色をより良く保持するので、基本的には有効にすることをお勧めします。次の図では、球体が置かれたシンプルなシーンを示しています。左のシーンではガンマが修正されています。右のシーンは未修正です。
 
-<img alt="Gamma correction comparison" width="640" src="/images/user-manual/gamma-correction.jpg" />
+![Gamma Correction][4]
 
-ガンマ調整の詳細については [こちらのGPU Gems チャプター][2]をご確認ください。
+To find out more about gamma correction, read [this GPU Gems chapter][5].
 
-## Fog（霧）
-
-### タイプ
+### Fog
 
 フォグタイプのプロパティは、シーンを取り巻く霧の近似値を制御するために使用します。霧を有効にする際の例：
 
@@ -117,11 +124,33 @@ Filmicトーンマッピングは、インテリア内の明るい光が壁/天�
 
 Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、霧がフェードインする速度を制御します。値が大きいほど霧がより迅速にフェードインされます。霧の濃度は正の数でなければなりません。
 
+### Resolution
+
+Control the width and height of your Application. You can also set the resolution mode to one of the following values:
+
+* Auto - The resolution will always be the same as the canvas size
+* Fixed - The resolution will always be width x height pixels.
+
+### Fill Mode
+
+Fill mode controls the sizing behaviour of the canvas. You can set one of the following values:
+
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* Fill window - The canvas will stretch to fill the window completely.
+
+### Device Pixel Ratio
+
+When enabled the canvas resolution will be calculated including the device pixel ratio.
+
 ロード画面（ORGのユーザーのみ利用可能）
 
-ここでは、アプリケーションの読み込み画面を作成するスクリプトを設定することができます。新しい読み込み画面のスクリプトを作成するには、*Create Default*をクリックします。カスタムの読み込み画面の詳細は[こちら][3]。
+Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
 
-[1]: /user-manual/assets/cubemaps
-[2]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
-[3]: /user-manual/designer/loading-screen
+[1]: /user-manual/designer/menus-and-toolbar
+[2]: /images/user-manual/cog.jpg
+[3]: /user-manual/assets/cubemaps
+[4]: /images/user-manual/gamma-correction.jpg
+[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[6]: /user-manual/designer/loading-screen
 

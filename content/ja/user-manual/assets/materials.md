@@ -1,7 +1,7 @@
 ---
-title: 素材
+title: Materials
 template: usermanual-page.tmpl.html
-position: 5
+position: 6
 ---
 
 3Dモデルの全ての表面は素材を使ってレンダリングされます。素材は、その表面の色、光沢、平滑度などのプロパティを定義します。

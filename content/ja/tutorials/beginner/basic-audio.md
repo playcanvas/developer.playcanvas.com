@@ -3,71 +3,93 @@ title: 基本的なオーディオ
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/basic_audio?overlay=false" ></iframe>
+<iframe src="http://playcanv.as/p/OCjXz0bh" ></iframe>
 
-*カメラは異なる音楽を再生する二つのオーディオソースの間を動きます*
+*The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
 
-## ソースとリスナー
+## Sound sources and Listeners
 
-このチュートリアルでは、シーンに二つのAudioSourcesを置き、メインカメラにAudioListenerを添付します。リスナーを二つのソースから離したり近づけたりすると、音が左右にパンされ、音量も上下します。
+In this tutorial we have placed a robot in the middle of the scene with a tank rotating around the robot. The sound playing from the tank's engine is heard relative to the ears of the robot. As the tank moves around the robot we can hear the sound shifting position from left to back to right to front.
 
-PlayCanvasの基本的なオーディオシステムは二つのコンポーネントタイプを中心に構成されています。
+The basic audio system in PlayCanvas centers on two Component types.
 
-[AudioSource][1] コンポーネントはWave, MP3 または Ogg Vorbisファイルのようなオーディオアセットを再生します。AudioSourceコンポーネントはシーン内のloudspeakerのようなものです。複数のAudioSourcesをアクティブにして、各自に単一の音を再生させることができます。
+The [Sound][1] Component plays audio assets like Wave, MP3 or Ogg Vorbis files. Imagine Sound Components like loudspeakers in the scene. There can be many Sound Components in the scene each playing multiple sounds.
 
-[AudioListener][2] コンポーネントはAudioSourceがどのように聞こえるかを定めます。AudioListenerコンポーネントはシーン内のマイクのようなものです。一度にアクティブにできるAudioListenerは一つのみです。
+Each Sound component comprises of a number of slots. Each slot has a name and defines a specific sound to be played. You can have multiple slots on a Sound component each playing independently from each other.
+
+The [AudioListener][2] Component determines how a Sound is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
 
 ## シーンの設定
 
-Editorでこのチュートリアルの[Hierarchy][3] を確認してください。設定は非常に簡単です。特に、*Source One* と *Source Two*の*audiosource*コンポーネントに注意してください。また、*Camera*エンティティに添付されている*audiolistener*コンポーネントもあります。
+You should look at the [Hierarchy][3] for this tutorial yourself in the Editor. These are the main Entities in the Scene:
 
-## ソースの作成
+### Playbot
 
-AudioSourceを作成するにはソースを追加したいエンティティを選択して、*Entity*メニューから*New Component*を選択します。コンポーネントリストから*audiosource*を選び、*Add*ボタンを押します。
+Our robot. It has an AudioListener component so all sound is going to be heard relative to the position of the robot.
 
-これでAttributeEditorでAudioSourceプロパティが表示されます。
+### Rotator
 
-![AudioSource Component][6]
+An Entity used to rotate the tank. It has a Script component with a script that rotates the entity around the Y axis at a constant speed.
 
-AudioSourceコンポーネントで使用できるオプションはいくつかありますが、まずは*Assets*, *Loop*, *Activate* ,*3d*に集中しましょう。
+### Tank
 
-### アセット
+Our tank. It is a child of the Rotator Entity, that way it rotates with it. It has a Sound component with 2 slots:
 
-まず、シーンで使用するオーディオファイルをアップロードします。詳細は[importing assets][4] のドキュメントをご確認ください。
+The "engine" slot is responsible for playing the looping engine sound of the tank. It's set to Auto Play as soon as the scene is loaded.
+
+The other slot is the "shoot" slot. That slot is played by script every time we click on the canvas to make the tank's turret shoot. The Overlap checkbox is true for this slot which means that we can shoot multiple times and a new sound will be created every time instead of using just a single sound that restarts every time.
+
+The tank also has a Script component which handles user input to make its turret shoot and also handles playing the shooting sound and other effects like a simple animation and a particle system.
+
+## Creating Sound sources
+
+To create a Sound source select the Entity you wish to add the Sound to and choose *New Component* from the *Entity* menu. Select *sound* from the list of Components and press the *Add* button.
+
+Sound properties will now appear in the AttributeEditor.
+
+![Sound Component][5]
+
+Here is the Sound component of the tank Entity. Here's some information about some of the properties:
+
+### Positional
+
+If this is checked it means that the sound will be heard relative to the position of the current AudioListener (our robot) in 3D space. If this is unchecked then the sound will be heard in 2D by both speakers.
+
+### Asset
+
+Each slot has an Asset picker which allows you to play different audio assets from different slots. See [importing assets][4] for details on how to upload audio assets.
 
 <div class="pc-notice-message pc-small">
-    全てのブラウザが全てのオーディオ形式に対応しているとは限りません。現時点では、Wave (.wav) または Ogg Vorbis (.ogg)を推奨します。これらはChrome, Firefox, Operaに対応されています。SafariはOgg Vorbisに対応していません。
+    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
 </div>
 
-アセットをアップロードしたら、Asset Pickerを使用してソースのオーディオアセットを選択してください。一つのAudioSourceに複数のアセットを追加することは可能ですが、スクリプト無しで再生されるのは最初のアセットのみです。
+Once you have uploaded your assets, use the Asset Picker to select the audio asset for your slot.
 
-### ループ
+### Auto Play
 
-デフォルトにより、オーディオサンプルは一度再生されてから停止します。オーディオを連続でループさせるには（例：BGMなど）、*Loop*ボックスにチェックを入れます。
+If you want a slot to start playing as soon as the scene is loaded then set this to true. Otherwise set this to false and play the slot using a script.
 
-### アクティベート
+### Overlap
 
-デフォルトで、オーディオはシーンが読み込まれてすぐに再生されます。再生を遅らせるにはスクリプトでトリガーします。次に、*Activate*のチェックを外すと、サウンドはスクリプトでトリガーされない限り再生されなくなります。
+If this is unchecked then the slot will play its sound from the beginning every time you play it in script. If this doesn't matter to you for example if you are playing some background music or a sound that doesn't need to be repeated leave this unchecked.
 
-### 3D
+If however you want to play a sound repeatedly without stopping every time the sound is replayed, set this to true. Our shooting sound is set to overlap in this tutorial.
 
-*3d*オプションにチェックが入っている(デフォルト)AudioSourceは現在のAudioListenerを使用して3D空間で再生される音のエフェクトを再現します。例えば、ソースがリスナーの左側に配置されている場合、音は左のスピーカーでのみ再生されます。
+### Loop
 
-*3d*オプションのチェックを外すとAudioListenerを使用せずに音が生成されます。
+By default, the audio sample will be played once, and then stop. If you want the sound to loop continuously, e.g. for background music, then you can check the *Loop* box. Our engine is a looping sound in the example but the shooting sound is not.
 
 ## リスナーの作成
 
-AudioListenerを作成するには、リスナーの代表をするエンティティを選択します。多くの場合、それはプレイヤーの「頭」がある、ゲーム内カメラになります。
-
-以上です。AudioListenerにはオプションはありません。
+To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
 
 <div class="alert-info">
     一度に使用できるAudioListenerは一つです。最後に作成されたAudioListenerコンポーネントが有効になります。
 </div>
 
-[1]: /engine/api/stable/symbols/pc.AudioSourceComponent.html
-[2]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
-[3]: https://playcanvas.com/editor/scene/329663
+[1]: /user-manual/packs/components/sound
+[2]: /user-manual/packs/components/audiolistener
+[3]: https://playcanvas.com/editor/scene/403241
 [4]: /user-manual/assets/importing
-[6]: /images/tutorials/audiosource_component.jpg
+[5]: /images/tutorials/audio/sound.jpg
 

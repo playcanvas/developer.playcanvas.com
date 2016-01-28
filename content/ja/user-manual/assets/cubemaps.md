@@ -1,7 +1,7 @@
 ---
-title: キューブマップ
+title: Cube Maps
 template: usermanual-page.tmpl.html
-position: 4
+position: 5
 ---
 
 キューブマップは特別な種類のテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：

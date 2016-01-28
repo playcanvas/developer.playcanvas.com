@@ -8,13 +8,13 @@ PlayCanvasはパーティクルシステムの作成と編集のための包括�
 
 ## パーティクルシステムとは？
 
-パーティクルシステムは、多数の独立して移動するパーティクルを管理するシミュレーションです。雨、雪、煙、火などの膨大な数のエフェクトをまとめるために使用できます。
+A particle system is a simulation that manages many independently moving particles. They can be used to approximate a huge number of effects such as rain, snow, smoke, fire and so on.
 
 パーティクルは物理的にシミュレーションされません。互いにインタラクトや衝突することはありません。シーンの表面を通り抜けます。
 
 ## パーティクルシステムの作成
 
-Editor's 3Dビューでは、選択されていないパーティクルシステムは次のアイコンで表されます：
+In the Editor's 3D View, an unselected particle system is represented with the following icon:
 
 ![パーティクルシステムアイコン][1]
 

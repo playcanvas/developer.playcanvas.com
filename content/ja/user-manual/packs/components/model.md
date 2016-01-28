@@ -4,33 +4,34 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-モデルコンポーネントを使用すれば、エンティティは基本的な形やモデルアセットをレンダリングすることができます。
+The Model component enables an entity to render a primitive shape or a model asset.
 
-<img src="/images/user-manual/components/component-model.jpg" style="width: 300px" />
+The Model component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the model will be added to the scene and rendered.
+
+![Model component][1]
 
 ## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>Enabled</td><td>チェックが入っていると、モデルはシーンに追加されレンダリングされます。</td></tr>
-    <tr><td>Type</td><td>レンダリングされるモデルのタイプ。次が利用可能：<ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Sphere</li><li>Cylinder</li><li>Cone</li></ul></td></tr>
-    <tr><td>Asset</td><td>このモデルコンポーネントにレンダリングされるモデルアセット。「アセット」タイプのモデルにのみ当てはまります。各モデルコンポーネントにレンダリングできるモデルの数は一つだけです。</td></tr>
-    <tr><td>Cast Shadows</td><td>有効にすると、このコンポーネントでレンダリングされるモデルはシーン内の他のモデルに影を落とします。</td></tr>
-    <tr><td>Receive Shadows</td><td>有効にすると、シーン内の他のモデルはこのコンポーネントでレンダリングされるモデルに影を落とします。</td></tr>
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Type</td><td>The type of the model to be rendered. Can be:<ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Sphere</li><li>Cylinder</li><li>Cone</li></ul></td></tr>
+    <tr><td>Asset</td><td>The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component.</td></tr>
+    <tr><td>Cast Shadows</td><td>If enabled, the model rendered by this component will cast shadows onto other models in the scene.</td></tr>
+    <tr><td>Receive Shadows</td><td>If enabled, the model rendered by this component will receive shadows cast by other models in the scene.</td></tr>
 </table>
 
 ## スクリプティングインターフェイス
 
-[Script component][2]を使用して、モデルコンポーネントのプロパティを操作できます。モデルコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
+You can control a Model component's properties using a [script component][2]. The Model component's scripting interface is [here][3].
 
 ## 素材のカスタマイズ
 
 モデルのマテリアルをカスタマイズする方法については、[こちら][4]を参照してください。
 
-[1]: /images/platform/component_model.png
+[1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/packs/components/script
-[3]: /engine/api/stable/symbols/pc.ScriptComponent.html
+[3]: /engine/api/stable/symbols/pc.ModelComponent.html
 [4]: /user-manual/assets/materials/#assigning-materials
 

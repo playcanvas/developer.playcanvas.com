@@ -1,7 +1,7 @@
 ---
-title: テクスチャー
+title: Textures
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 テクスチャーアセットは [素材][素材]の一部として使用され、3Dモデルにリアルな体面を加える画像ファイルです。

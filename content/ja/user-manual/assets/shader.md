@@ -1,7 +1,7 @@
 ---
-title: シェーダー
+title: Shader
 template: usermanual-page.tmpl.html
-position: 11
+position: 12
 ---
 
 シェーダーアセットにはGLSLコードが含まれます。エディタのアセットパネルのNew Shaderをクリックするか、 ```.vert```, ```.frag```, ```.glsl```拡張子でファイルをアップロードすることで、新しいシェーダーアセットを作成することができます。

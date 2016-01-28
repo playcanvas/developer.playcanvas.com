@@ -10,23 +10,23 @@ position: 6
 
 スクリプトのアトリビュートは、スクリプトの先頭で以下のフォーマットにしたがって宣言します:
 
-~~~js~~~
+```javascript
 pc.script.attribute(attributeName, attributeType, defaultValue, options);
-~~~
+```
 
 この例では、`speed`プロパティをデフォルト値`80`を持つ`number`(数値)として宣言しています:
 
-~~~js~~~
+```javascript
 pc.script.attribute('speed', 'number', 80);
-~~~
+```
 
 ## アトリビュートをエディタ上で使う
 
-<img src="/images/user-manual/components/component-script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scenes/components/component-script-attributes.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 アトリビュートは宣言された後、サーバによって解析が可能な状態になっていなければなりません。コードの編集にPlayCanvasエディタを使っている場合には何もする必要はありません。もしGithubやBitbucketなどの外部リポジトリを使っている場合には、変更を加えた最新のコードが[同期されている][1]ことを確認してください。
 
-変更したコードがPlayCanvasサーバ上に配置されたら、PlayCanvasエディタを開いてこのボタンをクリックしてください。<img src="/images/user-manual/refresh-script-attributes.jpg" style="text-align: middle" />.
+Once your code is on the PlayCanvas server then open the Editor and click the <img src="/images/user-manual/refresh-script-attributes.jpg" style="display: inline; vertical-align: middle;" /> button.
 
 アトリビュートを更新すると、スクリプトが再ロードされ、宣言されている全てのアトリビュートが再度パースされます。そして、そのスクリプトを参照するスクリプトコンポーネント全てがその値を受け取り、さらにエディタ上にも表示されます。(その値はたとえば`this.attirubte_name`のような形でスクリプト内から参照できます)
 
@@ -42,12 +42,12 @@ pc.script.attribute('speed', 'number', 80);
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('speed', 'number', 80, {
     min: 0,
     max: 100
 });
-~~~
+```
 
 #### オプション
 
@@ -79,11 +79,11 @@ pc.script.attribute('speed', 'number', 80, {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('title', 'string', 'Untitled', {
     displayName: "Title"
 });
-~~~
+```
 
 #### オプション
 
@@ -100,11 +100,11 @@ pc.script.attribute('title', 'string', 'Untitled', {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('on', 'boolean', false, {
     displayName: "On"
 });
-~~~
+```
 
 #### オプション
 
@@ -121,11 +121,11 @@ pc.script.attribute('on', 'boolean', false, {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('sound', 'asset', [], {
     displayName: "Sound Asset"
 });
-~~~
+```
 
 #### オプション
 
@@ -145,11 +145,11 @@ pc.script.attribute('sound', 'asset', [], {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('myEntity', 'entity', null, {
     displayName: "Entity"
 });
-~~~
+```
 
 #### オプション
 
@@ -166,11 +166,11 @@ pc.script.attribute('myEntity', 'entity', null, {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('color', 'rgb', [1,1,1], {
     displayName: "Color"
 });
-~~~
+```
 
 #### オプション
 
@@ -187,11 +187,11 @@ pc.script.attribute('color', 'rgb', [1,1,1], {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('color', 'rgba', [1,1,1,0.5], {
     displayName: "Color"
 });
-~~~
+```
 
 #### オプション
 
@@ -202,17 +202,25 @@ pc.script.attribute('color', 'rgba', [1,1,1,0.5], {
     </tr>
 </table>
 
-### Vector
+### Vec2, Vec3, Vec4
 
-三つの数値の配列であるVec3を値として取ります。
+The value is a Vector, an array of 2, 3 or 4 numbers.
 
 #### 例
 
-~~~js~~~
-pc.script.attribute('direction', 'vector', [0,1,0], {
-    displayName: "Direction"
+```javascript
+pc.script.attribute('direction', 'vec2', [0,1], {
+    displayName: "Vector 2"
 });
-~~~
+
+pc.script.attribute('direction', 'vec3', [0,1,0], {
+    displayName: "Vector 3"
+});
+
+pc.script.attribute('transform', 'vec4', [0,1,0,1], {
+    displayName: "Vector 4"
+});
+```
 
 #### オプション
 
@@ -229,7 +237,7 @@ pc.script.attribute('direction', 'vector', [0,1,0], {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('pet', 'enumeration', 0, {
     displayName: "Pet",
     enumerations: [{
@@ -240,7 +248,7 @@ pc.script.attribute('pet', 'enumeration', 0, {
        value: 1
     }]
 });
-~~~
+```
 
 #### オプション
 
@@ -260,7 +268,7 @@ pc.script.attribute('pet', 'enumeration', 0, {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('speed', 'curve', null, {
     min: 0,
     max: 5
@@ -268,7 +276,7 @@ pc.script.attribute('speed', 'curve', null, {
 pc.script.attribute('position', 'curve', null, {
     curves: ['x', 'y', 'z']
 });
-~~~
+```
 
 #### オプション
 
@@ -286,11 +294,11 @@ pc.script.attribute('position', 'curve', null, {
 
 #### 例
 
-~~~js~~~
+```javascript
 pc.script.attribute('color', 'colorcurve', null, {
     type: 'rgba'
 });
-~~~
+```
 
 #### オプション
 

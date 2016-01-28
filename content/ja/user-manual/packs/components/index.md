@@ -11,48 +11,48 @@ PlayCanvas Engineで定義されるコンポーネントは沢山あります。
 <table class="table table-striped">
     <tbody>
         <tr>
-            <th>コンポーネント</th>
-            <th>説明</th>
+            <th>Component</th>
+            <th>Description</th>
         </tr>
     <tr>
         <td>[Animation][1]</td>
-        <td>エンティティのモデルコンポーネントが指定するモデルで実行可能なアニメーションアセットを指定。</td>
+        <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
     </tr>
     <tr>
         <td>[Audio Listener][2]</td>
-        <td>3Dオーディオプレイバックのリスナーの位置を指定。</td>
+        <td>Specifies the location of the listener for 3D audio playback.</td>
     </tr>
     <tr>
         <td>[Audio Source][3]</td>
-        <td>エンティティの位置で再生できるオーディオアセットを指定。</td>
+        <td>Specifies audio assets that can be played at the position of the entity.</td>
     </tr>
     <tr>
         <td>[Camera][4]</td>
-        <td>エンティティの位置からシーンをレンダリング。</td>
+        <td>Renders the scene from the location of the entity.</td>
     </tr>
     <tr>
         <td>[Collision][5]</td>
-        <td>エンティティにコリジョンボリュームを指定。</td>
+        <td>Assigns a collision volume to the entity.</td>
     </tr>
     <tr>
         <td>[Light][6]</td>
-        <td>エンティティに動的なライトソースを添付。</td>
+        <td>Attach a dynamic light source to the Entity.</td>
     </tr>
     <tr>
         <td>[Model][7]</td>
-        <td>エンティティの位置で3Dモデルをレンダリング。</td>
+        <td>Renders a 3D model at the location of the entity.</td>
     </tr>
     <tr>
         <td>[Particle System][8]</td>
-        <td>エンティティに動的なライトソースを添付。</td>
+        <td>Attach a particle system to the Entity.</td>
     </tr>
     <tr>
         <td>[Rigid Body][9]</td>
-        <td>シーンの物理的シミュレーションにエンティティを追加。</td>
+        <td>Adds the entity to the scene's physical simulation.</td>
     </tr>
     <tr>
         <td>[Script][10]</td>
-        <td>スクリプトがJavaScript断片を実行してカスタムな挙動を実施できるようにする。</td>
+        <td>Allows the script to run JavaScript fragments to implement custom behavior.</td>
     </tr>
 </tbody></table>
 

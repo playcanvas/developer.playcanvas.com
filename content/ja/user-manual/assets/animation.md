@@ -1,7 +1,7 @@
 ---
 title: Animation
 template: usermanual-page.tmpl.html
-position: 8
+position: 9
 ---
 
 アニメーションアセットは3Dモデルで一つのアニメーションを再生するために使用されます。アニメーションは、アニメーションデフォルトを含む3Dシーン (FBXファイルなど)をアップロードすることでインポートされます。アニメーションデータは [asset pipeline][asset_pipeline] でアップロードされたファイルから摘出され、ゲーム内で使用する[Target Asset][target_asset] が作成されます。

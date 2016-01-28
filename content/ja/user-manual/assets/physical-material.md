@@ -1,7 +1,7 @@
 ---
-title: 物理素材
+title: Physical Material
 template: usermanual-page.tmpl.html
-position: 6
+position: 7
 ---
 
 Physical Material（物理素材）はPlayCanvasで利用可能な最も先進的でクオリティの高いシェーディングモデルを表しています。物理的なシェーディングモデルを使用することを推奨します。

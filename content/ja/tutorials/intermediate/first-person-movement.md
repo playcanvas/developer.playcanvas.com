@@ -19,7 +19,7 @@ position: 4
 プレイヤーの速度を直接設定することはなく、物理的な力を与えることでプレイヤーを動かしていることに注意してください。最高速度を制限するために、線形で速度が減衰するようrigidbodyコンポーネントに設定がしてあります。
 
 ~~~javascript~~~
-pc.script.attribute("camera", "entity", null); // これは必須の後リビューとではない。カメラエンティティが指定されなかった場合は新規にカメラを作成する
+pc.script.attribute("camera", "entity", null); // これは必須のアトリビューとではない。カメラエンティティが指定されなかった場合は新規にカメラを作成する
 pc.script.attribute("power", "number", 5000);
 pc.script.attribute("lookSpeed", "number", 0.5);
 

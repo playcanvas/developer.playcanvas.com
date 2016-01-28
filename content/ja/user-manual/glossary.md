@@ -21,7 +21,7 @@ PlayCanvasエンジンとツールで使用する用語の概要です。
 <h2 id="component">コンポーネント - Component</h2>
 コンポーネントは[エンティティ][7]のプロパティや機能をあらわします。PlayCanvasエンジンでは、ゲーム上のオブジェクトは長い継承関係によって定義されたクラスではなく、エンティティとそれに関連付けられたコンポーネント群によって定義されます。
 
-コンポーネントはPlayCanvasエディタでComponentメニューからエンティティに追加することがでいます。また、それぞれの`ComponentSystem`オブジェクトから実行時に追加することもできます。
+コンポーネントはPlayCanvasエディタでComponentメニューからエンティティに追加することができます。また、それぞれの`ComponentSystem`オブジェクトから実行時に追加することもできます。
 
 <h2 id="dom">DOM</h2>
 DOM (Document Object Model)はHTMLドキュメントを表現する方法です。Webブラウザはユーザーのブラウザ上に表示されているHTMLドキュメントを構成するDOMの中を検索し、変更を加えるためのインタフェースを提供しています。
@@ -74,7 +74,7 @@ PlayCanvasエンジンを使って作られたプログラムは、近代的な�
 [6]: #component
 [7]: #entity
 [8]: #engine
-[9]: /engine/api/stable
+[9]: /en/api/
 [10]: #explorer
 [11]: #scene
 [12]: #entity
