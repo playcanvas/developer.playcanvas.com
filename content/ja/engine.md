@@ -21,9 +21,9 @@ Engineに3Dモデルを読み込むには、モデリングパッケージの形
 
 完成されたモデルを選択すると、アセットの詳細と、このアセットから作成された全てのターゲットアセットが確認できます。
 
-ランタイム形式の3Dモデルである、モデルタイプのアセットを選択して、インスペクターでExport Archiveをクリックしてください。
+Select the asset of type "model" which is the 3D model in the runtime format and click Download in the Inspector.
 
-![モデルをエクスポート][7]
+![Download][7]
 
 これで、素材とテクスチャーを含む、Engineに読み込み可能な完全なモデルがダウンロードされます。
 
@@ -35,5 +35,5 @@ Engineに3Dモデルを読み込むには、モデリングパッケージの形
 [4]: /user-manual/glossary/#target_asset
 [5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
 [6]: /images/user-manual/editor/assets-completed.png
-[7]: /images/user-manual/editor/export-archive.jpg
+[7]: /images/user-manual/editor/download-model.jpg
 
