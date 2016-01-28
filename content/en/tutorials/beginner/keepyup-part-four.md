@@ -141,6 +141,8 @@ pc.script.create('ball', function (app) {
 
 The first thing you'll notice at the top of the script are a set of script attributes that we've defined. Defining script attributes lets you expose values from your script into the editor. There are three very good reasons to do this.
 
+![Script Attributes][5]
+
 First, it lets you use the same script for many different Entities with different values. For example, you could have a script attribute which sets a color, and in the editor create a red, blue and green version of a entity just by modifying the script attribute.
 
 Second, you can quickly and easily tune the behaviour of scripts. When you modify a script attribute (or indeed any property from the editor) the changes are made instantly to any instance of the game that you have launched from the editor. So for example in the case of the `ballMinimum` property we define here, you can launch the game and test what the value of `ballMinimum` should be to allow the ball to drop off the bottom of the screen without ever having to reload the game. Test the game, modify the value, test the game.
@@ -169,13 +171,13 @@ In our simulation we have a constant acceleration due to gravity, when you tap t
 
 The update loop does this:
 
-<em>(Change in Velocity) = (Acceleration) \* (Time since last frame)</em>
+>_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
 
-<em>(New Velocity) = (Old Velocity) + (Change in Velocity)</em>
+>_(New Velocity) = (Old Velocity) + (Change in Velocity)_
 
-<em>(Change in Position) = (New Velocity) \* (Time since last frame)</em>
+>_(Change in Position) = (New Velocity) \* (Time since last frame)_
 
-<em>(New Position) = (Old Position) + (Change in Position)</em>
+>_(New Position) = (Old Position) + (Change in Position)_
 
 In code this looks like this:
 
@@ -213,3 +215,4 @@ The ball script runs a simply physical simulation to make the ball fall under gr
 [2]: /tutorials/beginner/keepyup-part-two
 [3]: /tutorials/beginner/keepyup-part-three
 [4]: /tutorials/beginner/keepyup-part-four
+[5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
