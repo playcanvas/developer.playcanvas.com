@@ -5,62 +5,50 @@ template: tutorial-page.tmpl.html
 
 Material（素材）は3Dモデルの表面の外見を定義します。多角形の色の変更などのシンプルな設定も可能ですし、海の表面やガラスを通り抜ける光の再現などの複雑な設定もできます。
 
-このチュートリアルでは、Material（素材）の作成、基本的な形への割り当て、プロパティの編集について説明します。始める前に、 [Getting Started][1]ガイドのように、プロジェクトと新しいシーンを作成してください。
+In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. First create a new and empty scene.
 
 ## Step 1 - シーンにキューブを追加
 
 シーンのルートエンティティを選択してください。初期の名前はRootです。Attribute Editorでエンティティの名前を"Material Tutorial"などの分かりやすい名前に変更してください。
 
-'Entity'メニューの'New Entity' -> 'New Box' を選択してください。これでHierarchyに新規の子ボックスエンティティが作成されます。
+Select 'New Entity' -> 'Box' menu in the Hierarchy panel. This creates a new Box Entity in the Hierarchy.
+
+![New Box][1]
 
 ## Step 2 - 新しい素材を作成
 
-PlayCanvas Editorインターフェイスから直接新しい素材を作ります。Asset Explorerを開き (Aを押すか、ViewメニューのToggle Asset Explorerを選択) 、素材フィルタの横にある+ボタンを押します。
+Create new material directly from the PlayCanvas Editor interface. In the Asset panel use the + button to open the New Asset menu and select Material.
 
 ![Add Material][2]
 
-これにより新規のMaterial Assetが作成され、画面の右側にMaterial Editorを開きます。Material Editorで、素材の名前をBox Materialに変えてください。
+This creates a new Material Asset and brings up the Material Editor on the right-hand side of the screen. In the Material Editor rename the Material to "Box Material".
 
-## Step 3 - 既存のキューブ素材を選択
+## Step 3 - Assign the material to the cube
 
-3Dビューで素材を選択する方法は二つあります。一つ目は、3Dビューでモデルを右クリックしてEdit Material（素材の編集）を選択する方法です。二つ目は、左クリックでエンティティを選択してから変種したい素材を左クリックする方法です。
+When you create a new cube in the Editor it will have no material assigned and will be rendered using a plain default material. To assign your new material to a model in the scene simply drag the model from the asset panel into the viewport and drop it on to the model you want to assign it to.
 
-選択すると、Material EditorがEditorの左コラムに表示されます。
-
-![Assign Material][3]
-
-基本のオブジェクトを選択した際、初期のMaterialスロットはこのように空になっています。
-
-## Step 4 - メッシュに素材を割り当てる
-
-Assetピッカーの+ボタンをクリックして、新しい素材を選択してください。Material Editor は素材のプレビューや編集できる属性オプションを表示します。PlayCanvasで作成される素材は、"Phong" Materialとして知られているものです。これは、3Dモデリングプログラムで最も一般的に使用されている素材の種類です。
-
-## Step 5 - 素材の色を変更
+## Step 4 - Change the color of the material
 
 素材の色を変えるには、素材のプロパティの*Diffuse*を編集します。
 
-素材を選択したら、Diffuse属性のセクションを開き、赤いシェードになるよう色を編集します。
+Select the material either by clicking on it in the asset panel. Or by selecting it from the property inspector when you select the box.
 
 ![Diffuse Color][4]
 
-Diffuseプロパティの色を編集すると、キューブの色が変わります。
-
-## Bonus - その他の素材プロパティ
-
-Diffuse以外のプロパティも編集できます。**specular color** や **emissive color** を編集して変化をご確認ください。
+You'll have to expand the Diffuse settings panel in the material editor in the right panel. Click on the color property to edit the diffuse color of the material.
 
 ## Bonus - 素材にテクスチャを追加
 
-素材の色の変更ができたので、次に テクスチャーマップを使用して均一でない色のつけかたを説明します。
+Changing the color of the material is a good start, but you'll quickly want more detail than a flat color. That is where texture maps come in.
 
 こちらのサンプルテクスチャをダウンロード＆保存：
 
-<a href="/downloads/proto_orange.png"><img style="float:left; margin-right: 32px;" src="/downloads/proto_orange.png" width="128px"/></a>
-<a href="/downloads/proto_gray_n.png"><img src="/downloads/proto_gray_n.png" width="128px"/></a>
+<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
+<a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"/></a>
 
 次に、ファイルをEditorにドラッグしてプロジェクトにアップロードします。
 
-アップロードが完了したら、次に素材のテクスチャースロットに割り当てます。以前と同様、素材を選択してDiffuseセクションを開きます。色の修正を行う代わりに、Textureピッカーを開き、`proto_orange`テクスチャーを割り当てます。次に、Normalセクションを開き、Textureスロットで`proto_gray_n`テクスチャーを割り当てます。
+Once they're uploaded it's time to assign them to texture slots on the Material. Select the Material as before and open up the Diffuse section. Drag the `proto_orange` texture from the asset panel into the empty diffuse slot. Then open the Normals section and drag the `proto_gray_n` texture into the normal map slot.
 
 次のようになります：
 
@@ -68,13 +56,12 @@ Diffuse以外のプロパティも編集できます。**specular color** や **
 
 **Tiling** と **Offset** プロパティを編集して、テクスチャーがどのようびキューブを覆うか確認してください。
 
-[PlayCanvas tutorials project][7]の [Basic Materials project scene here][6]をご確認ください。Hierarcy のBoxアイテムを左クリックして、ビューがズームアウトしすぎている場合はFを押してフォーカスしてください。
+Take a look at the user manual section on [Physical Materials][6] for more depth on setting up materials.
 
-[1]: /getting-started
-[2]: /images/content_creation/add_material.png
-[3]: /images/content_creation/assign_material.png
-[4]: /images/content_creation/material_editor.png
-[5]: /images/content_creation/diffuse_normal_cube.jpg
-[6]: https://playcanvas.com/editor/scene/339076
-[7]: https://playcanvas.com/project/186/overview/tutorials
+[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
+[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
+[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
+[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
+[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
+[6]: /user-manual/graphics/physical-rendering/physical-materials/
 

@@ -77,7 +77,7 @@ High Dynamic Range or HDR refers to color information that is outside of the usu
 [6]: #component
 [7]: #entity
 [8]: #engine
-[9]: /engine/api/stable
+[9]: /en/api/
 [10]: #explorer
 [11]: #scene
 [12]: #entity

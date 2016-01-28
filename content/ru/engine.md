@@ -21,9 +21,9 @@ To load a 3D model into the Engine first you need to convert it from the format 
 
 When you select the completed model you will see details about the asset and additional all the target assets that were created by this asset.
 
-Select the asset of type "model" which is the 3D model in the runtime format and click Export Archive in the Inspector.
+Select the asset of type "model" which is the 3D model in the runtime format and click Download in the Inspector.
 
-![Export Model][7]
+![Download][7]
 
 Это загрузит всю модель, включая материалы и текстуры, готовые к использованию в движке.
 
@@ -35,5 +35,5 @@ Select the asset of type "model" which is the 3D model in the runtime format and
 [4]: /user-manual/glossary/#target_asset
 [5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
 [6]: /images/user-manual/editor/assets-completed.png
-[7]: /images/user-manual/editor/export-archive.jpg
+[7]: /images/user-manual/editor/download-model.jpg
 

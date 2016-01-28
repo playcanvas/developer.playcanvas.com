@@ -44,7 +44,7 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
     </tr>
     <tr>
         <td>[Particle System][8]</td>
-        <td>Attach a dynamic light source to the Entity.</td>
+        <td>Attach a particle system to the Entity.</td>
     </tr>
     <tr>
         <td>[Rigid Body][9]</td>

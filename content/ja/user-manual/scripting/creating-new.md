@@ -12,7 +12,7 @@ position: 1
 
 ## エンティティにスクリプトを追加
 
-<img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 スクリプトコンポーネントは他のコンポーネントと同様、エンティティインスペクタの*Add Component*ボタンを使用してエンティティに添付されます。
 
@@ -26,7 +26,12 @@ GithubやBitbucketを使用している場合はソース管理システムを�
 
 スクリプトコンポーネントは、複数のスクリプトファイルを読み込むことができます。コンポーネントに複数のスクリプトを追加するだけです。スクリプトコンポーネントにスクリプトを追加した順番通り、スクリプトは初期化および更新されます。スクリプトの順序を変更したい場合は、スクリプトのタイトルの横にある上下矢印をクリックします。スクリプトを削除するにはXボタンを押します。
 
+## Using Script Priorities
+
+The second way to use a script in your application is to add them to the script priority list. This will load your script up front, before the rest of your application. See the [Script Priorities][4] page.
+
 [0]: /images/user-manual/new_script.jpg
 [2]: /user-manual/scripting/workflow
-[3]: /images/platform/component_script.png "スクリプトコンポーネントにスクリプトのurlを追加"
+[3]: /images/user-manual/scenes/components/component-script.png "Add urls of scripts to the script component"
+[4]: /user-manual/scripting/script-priorities
 

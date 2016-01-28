@@ -1,7 +1,7 @@
 ---
 title: Textures
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 Textures assets are image files which are used as part of a [material][material] to give a 3D model a realistic appearance.

@@ -1,7 +1,7 @@
 ---
-title: Phong 素材
+title: Phong Material
 template: usermanual-page.tmpl.html
-position: 7
+position: 8
 ---
 
 フォン素材は、受け継がれてきたシェーディングモデルです。特定の理由がない限り、Physical Shadingモデルを使用することを推奨します。

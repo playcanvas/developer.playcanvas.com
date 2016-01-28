@@ -859,3 +859,123 @@ source_file = po/messages.json.en-US.po
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-messages-txt]
+file_filter = po/messages.txt.<lang>.po
+source_file = po/messages.txt.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-faq-create_shader]
+file_filter = po/faq/create_shader.<lang>.po
+source_file = po/faq/create_shader.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-advanced-audio-effects]
+file_filter = po/tutorials/advanced/audio-effects.<lang>.po
+source_file = po/tutorials/advanced/audio-effects.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-keepyup-part-five]
+file_filter = po/tutorials/beginner/keepyup-part-five.<lang>.po
+source_file = po/tutorials/beginner/keepyup-part-five.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-keepyup-part-four]
+file_filter = po/tutorials/beginner/keepyup-part-four.<lang>.po
+source_file = po/tutorials/beginner/keepyup-part-four.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-keepyup-part-one]
+file_filter = po/tutorials/beginner/keepyup-part-one.<lang>.po
+source_file = po/tutorials/beginner/keepyup-part-one.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-keepyup-part-six]
+file_filter = po/tutorials/beginner/keepyup-part-six.<lang>.po
+source_file = po/tutorials/beginner/keepyup-part-six.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-keepyup-part-three]
+file_filter = po/tutorials/beginner/keepyup-part-three.<lang>.po
+source_file = po/tutorials/beginner/keepyup-part-three.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-keepyup-part-two]
+file_filter = po/tutorials/beginner/keepyup-part-two.<lang>.po
+source_file = po/tutorials/beginner/keepyup-part-two.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-light-halos]
+file_filter = po/tutorials/intermediate/light-halos.<lang>.po
+source_file = po/tutorials/intermediate/light-halos.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-music-visualizer]
+file_filter = po/tutorials/intermediate/music-visualizer.<lang>.po
+source_file = po/tutorials/intermediate/music-visualizer.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-import-pipeline]
+file_filter = po/user-manual/assets/import-pipeline.<lang>.po
+source_file = po/user-manual/assets/import-pipeline.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-preloading-and-streaming]
+file_filter = po/user-manual/assets/preloading-and-streaming.<lang>.po
+source_file = po/user-manual/assets/preloading-and-streaming.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-file-format]
+file_filter = po/user-manual/graphics/file-format.<lang>.po
+source_file = po/user-manual/graphics/file-format.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-optimization-guidelines]
+file_filter = po/user-manual/optimization/guidelines.<lang>.po
+source_file = po/user-manual/optimization/guidelines.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-optimization-index]
+file_filter = po/user-manual/optimization/index.<lang>.po
+source_file = po/user-manual/optimization/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-optimization-profiler]
+file_filter = po/user-manual/optimization/profiler.<lang>.po
+source_file = po/user-manual/optimization/profiler.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-packs-components-sound]
+file_filter = po/user-manual/packs/components/sound.<lang>.po
+source_file = po/user-manual/packs/components/sound.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-kongregate]
+file_filter = po/user-manual/publishing/web/kongregate.<lang>.po
+source_file = po/user-manual/publishing/web/kongregate.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-script-priorities]
+file_filter = po/user-manual/scripting/script-priorities.<lang>.po
+source_file = po/user-manual/scripting/script-priorities.en-US.po
+source_lang = en
+type = PO
+

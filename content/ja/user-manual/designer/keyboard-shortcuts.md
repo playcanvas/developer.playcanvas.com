@@ -50,34 +50,37 @@ position: 11
 
 <table class="head-column">
     <tr>
-        <td>削除 - 現在選択中のエンティティをすべて削除</td><td>DEL</td>
+        <td>Delete - Deletes the current entity selection</td><td>DELETE</td>
     </tr>
     <tr>
-        <td>パネル切り替え - すべてのパネルを表示 / 非表示にする</td><td>スペース</td>
+        <td>Toggle all panels - Hides or shows all the panels</td><td>SPACE</td>
     </tr>
     <tr>
-        <td>複製 - 選択したエンティティとその子エンティティをすべて複製する</td><td>CTRL + D</td>
+        <td>Select All - Selects all assets in the currently selected folder</td><td>CTRL + A</td>
     </tr>
     <tr>
-        <td>新規作成 - 現在選択中のエンティティの子エンティティを新規作成する</td><td>CTRL + N</td>
+        <td>Duplicate - Duplicates the selected entity and all children</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>アンドゥ - ユーザーが行った直前の動作をアンドゥする</td><td>CTRL + Z</td>
+        <td>New Entity - Creates a new entity as a child of the currently selected entity</td><td>CTRL + N</td>
     </tr>
     <tr>
-        <td>リドゥ - ユーザーが行った次のアクションをやり直す</td><td>CTRL + Y</td>
+        <td>Undo - Undo the last action performed by the user</td><td>CTRL + Z</td>
     </tr>
     <tr>
-        <td>移動 - ギズモを移動モードに切り替え</td><td>1</td>
+        <td>Redo - Redo the next action performed by the user</td><td>CTRL + Y</td>
     </tr>
     <tr>
-        <td>回転 - ギズモを回転モードに切り替え</td><td>2</td>
+        <td>Translate - Change gizmo mode to translate</td><td>1</td>
     </tr>
     <tr>
-        <td>拡大縮小 - ギズモを拡大縮小モードに切り替え</td><td>3</td>
+        <td>Rotate - Change gizmo mode to rotate</td><td>2</td>
     </tr>
     <tr>
-        <td>フレーム選択 - 選択したエンティティ全体がフレームに入るようアクティブなカメラを調整する</td><td>F</td>
+        <td>Scale - Change gizmo mode to scale</td><td>3</td>
+    </tr>
+    <tr>
+        <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
     </tr>
 </table>
 

@@ -1,7 +1,7 @@
 ---
-title: シーンとモデル
+title: Scenes and Models
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 3Dのモデルやアニメーションは、[Blender][2], 3D Studio Max, Mayaなどの [3D モデリングアプリケーション][1] のシーンファイルをアップロードすることにより、PlayCanvasにインポートされます。

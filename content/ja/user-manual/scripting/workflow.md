@@ -16,7 +16,7 @@ PlayCanvasアプリケーション用のスクリプトを開発する最も簡�
 
 ### 新規スクリプトの追加
 
-<img src="/images/user-manual/components/component-script.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 新しいスクリプトを追加するには、Add Scriptをクリックするか、PlayCanvasエディタでシーンを開き、スクリプトを追加したいエンティティでScript Componentを選択または追加します。その後、スクリプトピッカーコントロールでURLフィールドをクリックし、スクリプトの名前を入力してEnterキーを押します。スクリプトの名前はリンクになるので、それをクリックしてコードエディタを開きます。スクリプト名の横にあるXをクリックしてこのコンポーネントからスクリプトを削除します。
 
@@ -26,7 +26,7 @@ PlayCanvasアプリケーション用のスクリプトを開発する最も簡�
 スクリプトを格納するためPlayCanvasを使用している場合のみ、スクリプトを編集することができます。外部のコードリポジトリを設定している場合は、PlayCanvas経由でスクリプトを編集することはできません。ローカルサーバを使用するか、リポジトリにコードをコミットする必要があります。
 </div>
 
-スクリプトリンクをクリックすると新しいタブで内蔵のコードエディタが開きます。あなたは、新しいタブを表示するにはplaycanvas.comからのポップアップを許可する必要があります。初めてスクリプトを編集するとき、それは作成され、保存されます。次に、プロジェクトダッシュボードの[Code][code_tab]タブ、またはエディタの [Scripts Explorer][scripts_explorer] で全てのスクリプトを確認することができます。
+Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][1] tab in your Project dashboard or from the [Assets Panel][2] in the Editor.
 
 ## ローカルサーバ
 
@@ -37,9 +37,9 @@ PlayCanvasアプリケーション用のスクリプトを開発する最も簡�
 
 ### Windows
 
-* まず[ここ][python]からPythonをインストールします。デフォルトでは`localserver.bat`はPython2.7を使用しますが、最近のバージョンで動作するように変更することができます。
+* First you will need to install python from [here][3]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
 
-* [サーバスクリプトをダウンロード][server_windows]
+* [Download the server script][4]
 
 * `localserver.bat`ファイルをスクリプトが含まれているフォルダに保存。
 
@@ -50,7 +50,7 @@ Serving HTTP on 0.0.0.0 port 51000 ...
 
 ### OS X と Linux
 
-* [サーバスクリプトをダウンロード][server_osx_linux]
+* [Download the server script][5]
 
 * `localserver`ファイルをスクリプトが含まれているフォルダに保存。
 
@@ -126,11 +126,9 @@ PlayCanvasエディタを使用する際、Launchボタンを選択するだけ�
 
 シーンのエクスポートは、PlayCanvasサーバのソースコードリソースのみを使用します。必ず、エクスポートする前に弊社サイトにコードをアップロードまたは同期してください。
 
-[server_osx_linux]: /downloads/localserver
-[python]: http://www.python.org/download/
-[server_windows]: /downloads/localserver.bat
-[launch_buttons]: /images/platform/launch_buttons.png
-[script_picker]: /images/platform/component_script.png
-[scripts_explorer]: /user-manual/designer/scripts-explorer
-[code_tab]: /user-manual/dashboard/code
+[1]: /user-manual/dashboard/code
+[2]: /user-manual/designer/assets
+[3]: http://www.python.org/download/
+[4]: /downloads/localserver.bat
+[5]: /downloads/localserver
 

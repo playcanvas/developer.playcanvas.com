@@ -17,21 +17,21 @@ position: 5
 * TVモデルの素材に新しいテクスチャーを適用
 * 毎フレームにて動画データでテクスチャーを更新
 
-~~~javascript~~~
+```javascript
 pc.script.attribute('materials', 'asset', [], {
     type: 'material'
 });
 pc.script.attribute('videoUrl', 'string', "");
 
 pc.script.create('videotexture', function (app) {
-    // 新規のVideotextureインスタンスを作成
+    // Creates a new Videotexture instance
     var Videotexture = function (entity) {
         this.entity = entity;
     };
 
     Videotexture.prototype = {
         initialize: function () {
-            // 動画フレームデータを保管するテクスチャーを作成
+            // Create a texture to hold the video frame data
             var videoTexture = new pc.Texture(app.graphicsDevice, {
                 format: pc.PIXELFORMAT_R5_G6_B5,
                 autoMipmap: false
@@ -41,7 +41,7 @@ pc.script.create('videotexture', function (app) {
             videoTexture.addressU = pc.ADDRESS_CLAMP_TO_EDGE;
             videoTexture.addressV = pc.ADDRESS_CLAMP_TO_EDGE;
 
-            // 動画を再生するHTML 動画要素を作成
+            // Create HTML Video Element to play the video
             var video = document.createElement('video');
             video.addEventListener('canplay', function (e) {
                 videoTexture.setSource(video);
@@ -51,8 +51,8 @@ pc.script.create('videotexture', function (app) {
             video.loop = true;
             video.play();
 
-            // 動画を再生させたい素材を取り、新しい動画テクスチャーを
-            // 割り当てる
+            // Get the material that we want to play the video on and assign the new video
+            // texture to it.
             for (var i = 0; i < this.materials.length; i++) {
                 var material = app.assets.get(this.materials[i]).resource;
                 material.emissiveMap = videoTexture;
@@ -65,7 +65,7 @@ pc.script.create('videotexture', function (app) {
         },
 
         update: function (dt) {
-            // ひとつおきのフレームのテクスチャーに動画データをアップロード
+            // Upload the video data to the texture every other frame
             this.upload = !this.upload;
             if (this.upload) {
                 this.videoTexture.upload();
@@ -75,7 +75,7 @@ pc.script.create('videotexture', function (app) {
 
     return Videotexture;
 });
-~~~
+```
 
 [1]: https://playcanvas.com/project/362226/overview/tutorial-video-textures
 

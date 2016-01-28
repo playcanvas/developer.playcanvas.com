@@ -1,7 +1,7 @@
 ---
 title: Scenes and Models
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 3D models and animations are imported into PlayCanvas by uploading scene files from a [3D modeling application][1] such as [Blender][2], 3D Studio Max or Maya.
