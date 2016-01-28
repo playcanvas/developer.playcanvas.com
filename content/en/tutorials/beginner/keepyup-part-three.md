@@ -284,4 +284,4 @@ If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball scri
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two
-[2]: /tutorials/beginner/keepyup-part-four
+[3]: /tutorials/beginner/keepyup-part-four
