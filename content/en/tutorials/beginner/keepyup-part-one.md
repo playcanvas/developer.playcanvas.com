@@ -22,7 +22,7 @@ This isn't a step-by-step guide, but we will talk about all areas of the scripts
 
 ## Part 1: The Scene and Hierarchy
 
-In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities arrange and them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
+In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities and arrange them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
 
 In our Keepy Up scene we have 7 top level Entities in the hierarchy.
 
@@ -58,7 +58,7 @@ The Background Entity has another model component. This time it is the back plan
 
 ### Impact Effect Entity
 
-The Impact Effect Entity is a particle effect the plays when the ball is bounced. We'll go into more detail in Part 4.
+The Impact Effect Entity is a particle effect that plays when the ball is bounced. We'll go into more detail in Part 4.
 
 ### Audio
 
