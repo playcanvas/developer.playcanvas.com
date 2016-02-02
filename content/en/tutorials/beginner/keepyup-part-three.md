@@ -6,7 +6,7 @@ position: 12
 
 <iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
 
-*If you haven't see [Part 1][1] and [Part 2][2] read them first.*
+*You can find the [full project here][4]. If you haven't see [Part 1][1] and [Part 2][2] read them first.*
 
 ## The Game script & Input
 
@@ -285,3 +285,4 @@ If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball scri
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two
 [3]: /tutorials/beginner/keepyup-part-four
+[4]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up

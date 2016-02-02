@@ -6,7 +6,7 @@ position: 13
 
 <iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
 
-*If you haven't see [Part 1][1], [Part 2][2] and [Part 3][3] read them first.*
+*You can find the [full project here][6]. If you haven't see [Part 1][1], [Part 2][2] and [Part 3][3] read them first.*
 
 ## The Football
 
@@ -216,3 +216,4 @@ The ball script runs a simply physical simulation to make the ball fall under gr
 [3]: /tutorials/beginner/keepyup-part-three
 [4]: /tutorials/beginner/keepyup-part-four
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
+[6]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
