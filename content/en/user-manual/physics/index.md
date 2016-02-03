@@ -21,7 +21,11 @@ At any time, you can query (or even directly set) a body's velocity which takes 
 * Linear Velocity
 * Angular Velocity
 
-Bodies move in response to forces that are applied to them.
+## Forces and Impulses
+
+Bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant. Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time. If you want to fire a cannonball from a cannon, you would apply a single impulse:
+
+
 
 ## Units of Measurement
 
