@@ -5,6 +5,7 @@ position: 10
 ---
 
 <iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+*You can find the [full project here][3]*
 
 In this series of tutorials we're going to show you how a complete game is made using PlayCanvas. We've made a simple "Keepy Up" game where the object is to click or tap on the soccer ball to keep it in the air.
 
@@ -21,7 +22,7 @@ This isn't a step-by-step guide, but we will talk about all areas of the scripts
 
 ## Part 1: The Scene and Hierarchy
 
-In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities arrange and them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
+In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities and arrange them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
 
 In our Keepy Up scene we have 7 top level Entities in the hierarchy.
 
@@ -57,7 +58,7 @@ The Background Entity has another model component. This time it is the back plan
 
 ### Impact Effect Entity
 
-The Impact Effect Entity is a particle effect the plays when the ball is bounced. We'll go into more detail in Part 4.
+The Impact Effect Entity is a particle effect that plays when the ball is bounced. We'll go into more detail in Part 4.
 
 ### Audio
 
@@ -71,3 +72,4 @@ The UI Entity is the parent of several other Entities, one for each screen that 
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
 [2]: /tutorials/beginner/keepyup-part-two
+[3]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
