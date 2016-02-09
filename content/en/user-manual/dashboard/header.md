@@ -10,7 +10,7 @@ The Dashboard Header provides various buttons to quickly perform common actions 
 
 By clicking on the EDITOR button you can open up the PlayCanvas Editor.
 
-By clicking on the PLAY button you can play the Primary App of this project.
+By clicking on the PLAY button you can play the Primary Build of this project.
 
 By clicking on WATCH you can watch or follow this project, receiving updates for new posts about this project.
 
