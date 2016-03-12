@@ -1,4 +1,3 @@
-require 'bootstrap-sass'
 
 # Require any additional compass plugins here.
 

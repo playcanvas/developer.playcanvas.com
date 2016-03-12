@@ -1,10 +1,10 @@
 ---
 title: Shadows
 template: usermanual-page.tmpl.html
-position: 3
+position: 2
 ---
 
-Shadows are a great way to add realism to your games.
+Shadows are a great way to add realism to your games. However, dynamic (realtime) shadows, can come with a significant runtime performance cost. For a more performant way of adding static shadows to your scene. See [Lightmaps][4].
 
 ![Characters with shadow casting][1]
 
@@ -12,7 +12,7 @@ The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It
 
 ## Enabling Shadows
 
-<img src="/images/user-manual/scenes/components/component-light-directional.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scenes/components/component-light-directional.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
 By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
@@ -61,7 +61,9 @@ Enabling shadows has performance implications:
 * For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Point light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
 * Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
 * Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
+* If your shadows are static parts of the environment, consider using [lightmaps][4] to bake shadows into textures.
 
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
+[4]: /user-manual/graphics/lighting/lightmaps
