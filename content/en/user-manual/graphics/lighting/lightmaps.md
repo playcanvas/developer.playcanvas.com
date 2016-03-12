@@ -26,7 +26,7 @@ PlayCanvas offers a very convenient solution to generating lightmaps. Using the 
 The advantanges are so:
 
 * Lighting is not performed at runtime
-* It is possible to use hundreds of lights to light your scene
+* It is possible to use hundreds of static lights to light your scene
 * Rendering lightmaps at runtime is faster than downloading many lightmap textures
 * It is possible to mix static and dynamic lights in the Editor
 * Rebaking can be performed at runtime
@@ -40,7 +40,7 @@ Each Light Component contains settings for enabling lightmap baking. By default 
 
 ![Dynamic Light][2]
 
-By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any lightmapped model that is in range.
+By enabling the **Lightmap: Bake** setting txhe light will bake lightmaps for any lightmapped model that is in range.
 
 There are two other options that modify the lights behaviour. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
 
@@ -85,15 +85,17 @@ As you see there several combinations of light settings that can be used. These 
 
 ### Lightmap Size Multipliers
 
-PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this based on the size and geometry of the model. You can override this size using the size multipler field in the Model Component.
+PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the size and geometry of the model. You can influence this calculation by modifiying the size multipler field in the Model Component.
 
 ![Global Settings][6]
 
-There is also a global lightmap size multipler which affects all Model Components and also you can set the limit the maximum size for the generated lightmaps in order to conserve memory.
+There is also a global lightmap size multipler which affects all Model Components. You can also set the limit the maximum resolution for the generated lightmaps in order to conserve memory.
 
 ### Auto-unwrapping and UV1 generation
 
-Lightmaps are always applied using the second set of UV co-ordinates (UV1) on the model asset. For convenience, if your model hasn't got a UV1 set the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+Lightmaps are always applied using the second set of UV co-ordinates (UV1) on the model asset. For best results we recommend that you add a second UV set in your 3D content tool to your model before you upload it to PlayCanvas.
+
+For convenience, if your model hasn't got a UV1 set the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
 
 ![UV1 Missing][7]
 
@@ -104,8 +106,6 @@ If a model is missing a UV1 map you will see a warning in the model component wh
 To fix the warning select the model asset and open the **Pipeline** section. Click the **Auto-unwrap** button and wait for the progress bar to complete. Running auto-unwrap edits the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the UV1's will be deleted and you will need to unwrap the model again.
 
 The **padding** section determines the space between sections when the unwrapping occurs. If you see *"light bleeding"*, where light appears in the lightmaps that shouldn't be there, you can increase the padding to reduce the bleeding.
-
-Of course you can upload model assets that already have a UV1 set that you create in your 3D content tool.
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
 [2]: /images/user-manual/lighting/lightmaps/spot-dynamic.jpg

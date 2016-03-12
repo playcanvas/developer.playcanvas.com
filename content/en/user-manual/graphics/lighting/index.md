@@ -20,7 +20,7 @@ There are two methods of creating lightmaps:
 
 ### PlayCanvas Runtime Lightmap Generation
 
-The PlayCanvas Editor has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
+The PlayCanvas Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
 
 ### External Lightmap Generation
 
