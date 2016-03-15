@@ -40,7 +40,7 @@ Each Light Component contains settings for enabling lightmap baking. By default 
 
 ![Dynamic Light][2]
 
-By enabling the **Lightmap: Bake** setting txhe light will bake lightmaps for any lightmapped model that is in range.
+By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any lightmapped model that is in range.
 
 There are two other options that modify the lights behaviour. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
 
