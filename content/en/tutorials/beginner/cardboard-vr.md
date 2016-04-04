@@ -5,7 +5,7 @@ template: tutorial-page.tmpl.html
 
 <iframe src="http://playcanv.as/e/p/ktssxBWc" ></iframe>
 
-PlayCanvas makes it very easy to add support for Mobile VR demos like you would need to support Google Cardboard. We've created a [plugin library][1]that you can drop into your scene to enable VR support.
+PlayCanvas makes it very easy to add support for Mobile VR demos like you would need to support Google Cardboard. We've created a [plugin library][1] that you can drop into your scene to enable VR support.
 
 Here's how to add VR support
 
@@ -25,8 +25,9 @@ The WebVR library also includes a file called `vr_camera.js`. This should be att
 
 That's the minimum you need to do to get a VR camera up and running. If you launch your scene now on mobile and tap the screen the view will split into two and you can place your device into a Cardboard VR headset.
 
+See the full source code for this tutorial in the [project][4].
 
 [1]: http://github.com/playcanvas/webvr
 [2]: /images/tutorials/beginner/cardboard-vr/script-priorities.jpg
 [3]: /images/tutorials/beginner/cardboard-vr/script-component.jpg
-
+[4]: https://playcanvas.com/project/389453/overview/tutorial-cardboard-vr
