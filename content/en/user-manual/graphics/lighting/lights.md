@@ -1,7 +1,7 @@
 ---
 title: Lights
 template: usermanual-page.tmpl.html
-position: 2
+position: 1
 ---
 
 In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources that approximate the different types of light we find in reality.
@@ -20,7 +20,7 @@ When unselected, a directional light is represented by the following icon in the
 
 ![Directional light icon][1]
 
-Click this icon to select the light in the Hierarchy and Inspector panels. 
+Click this icon to select the light in the Hierarchy and Inspector panels.
 
 A directional light lights an object like this:
 
@@ -36,7 +36,7 @@ When unselected, a point light is represented by the following icon in the Edito
 
 ![Point light icon][3]
 
-Click this icon to select the light in the Hierarchy and Inspector panels. 
+Click this icon to select the light in the Hierarchy and Inspector panels.
 
 A point light lights an object like this:
 
@@ -52,7 +52,7 @@ When unselected, a spot light is represented by the following icon in the Editor
 
 ![Spot light icon][5]
 
-Click this icon to select the light in the Hierarchy and Inspector panels. 
+Click this icon to select the light in the Hierarchy and Inspector panels.
 
 A spot light lights an object like this:
 
