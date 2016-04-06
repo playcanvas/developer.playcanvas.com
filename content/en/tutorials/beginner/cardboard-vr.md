@@ -3,7 +3,7 @@ title: Cardboard VR
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/e/p/ktssxBWc" ></iframe>
+<iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="http://playcanv.as/e/p/ktssxBWc" ></iframe>
 
 PlayCanvas makes it very easy to add support for Mobile VR demos like you would need to support Google Cardboard. We've created a [plugin library][1] that you can drop into your scene to enable VR support.
 
