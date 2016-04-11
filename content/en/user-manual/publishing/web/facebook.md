@@ -1,7 +1,7 @@
 ---
 title: Facebook
 template: usermanual-page.tmpl.html
-position: 5
+position: 7
 ---
 
 [Facebook][1] is an excellent place to publish PlayCanvas games in order to reach an enormous audience. Publishing games from PlayCanvas to Facebook is straightforward.
