@@ -6,8 +6,8 @@ position: 2
 
 自身のドメインでPlayCanvasをセルフホスティングする方法は二つあります。
 
-1.  [iframe][1]を使用してPlayCanvasでホストするゲームを組み込む。
-2. プロジェクトページからゲームをダウンロードしてサイトにファイルをアップロード。
+1. Embed a PlayCanvas hosted game using an [iframe][1].
+2. Download your game from the Editor and upload the files to your own site.
 
 ## iframe の埋め込み
 
@@ -15,12 +15,12 @@ position: 2
 
 ~~~html~~~
 <html>
-	<head>
-        <title>あなたのゲーム</title>
-	</head>
-	<body>
-		<iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
-	</body>
+    <head>
+        <title>My Great Game</title>
+    </head>
+    <body>
+        <iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
+    </body>
 </html>
 ~~~
 
@@ -28,14 +28,23 @@ position: 2
 
 PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
+* Go to your Project and open the Editor.
+* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+
+![Publish Button][5]
+
+* This will open up the Publishing Dialog.
+
 ![パブリッシュ][4]
 
-* プロジェクトダッシュボードでPUBLISHタブを選択します。
-* DOWNLOADボタンをクリック。
-* エクスポートに名前をつけます。これは作成される.zipファイルの名前になります。
-* リストから、エクスポートに含みたいPackを選択します。Primary Pack (青いバナーアイコン)は必ず含まれ、appが起動する際に最初に読み込まれます。
-* 下部のWebボタンをクリックして、デプロイ可能なプロジェクトのzipファイルをダウンロードします。
-* 任意の場所にzipファイルのコンテンツを摘出します。index.htmlファイルがゲームを読み込みます。
+* Click the DOWNLOAD button
+
+![Download][6]
+
+* Enter a name for your export. This will be the name of the .zip file that will be created for you.
+* Select the Scenes you want to include in your export from the list. Notice that the Primary Scene (the one with the active banner icon), will be the first scene loaded when your app is launched.
+* Click on the 'WEB DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
+* Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your game.
 
 <div class="alert alert-warning">
 **file://** urlや、ブラウザからindex.htmlファイルを開くことでゲームを読み込むことはできません。ローカルのウェブサーバを使用してindex.htmlファイルを読み込む必要があります。
@@ -43,16 +52,18 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 
 ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *初級：* [Python][5]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを http://localhost:8000 にポイントします。
-* *中級：* [XAMPP][6]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
-* *上級：* [Apache][7] または [nginx][8]をスタンドアローンサービスとしてインストールします。
+* *Easy:* Install [Python][7] and run the command *python -m SimpleHTTPServer* from the same folder as your game's index.html. Then point your browser to http://localhost:8000
+* *Intermediate:* Install [XAMPP][8]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
+* *Advanced:* Install [Apache][9] or [nginx][10] as a standalone service.
 
 [1]: https://developer.mozilla.org/en/docs/Web/HTML/Element/iframe
-[2]: /user-manual/publishing/web/playcanvas-hosting
+[2]: /user-manual/publishing/playcanvas
 [3]: /images/publishing/selfhosting/bottombar.png
-[4]: /images/platform/dashboard_publish.png
-[5]: https://www.python.org/downloads/
-[6]: https://www.apachefriends.org/index.html
-[7]: http://httpd.apache.org/download.cgi
-[8]: http://nginx.org/
+[4]: /images/user-manual/editor/publishing.jpg
+[5]: /images/user-manual/editor/publishing-toolbar.jpg
+[6]: /images/user-manual/editor/publishing-download.jpg
+[7]: https://www.python.org/downloads/
+[8]: https://www.apachefriends.org/index.html
+[9]: http://httpd.apache.org/download.cgi
+[10]: http://nginx.org/
 

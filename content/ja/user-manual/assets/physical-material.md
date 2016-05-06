@@ -1,5 +1,5 @@
 ---
-title: Physical Material
+title: 物理的マテリアル
 template: usermanual-page.tmpl.html
 position: 7
 ---

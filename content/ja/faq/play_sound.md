@@ -1,11 +1,11 @@
 ---
-title: Play a sound
-keywords: component, sound, audio, music, audiosource, audiolistener
+title: 音声の再生
+keywords: コンポーネント, オーディオ, 音声, 音楽, audiosource, audiolistener
 ---
 
 ## 音声を再生するには？
 
-To play sounds you need to add a <a href="http://developer.playcanvas.com/en/user-manual/packs/components/sound/" target="_blank">Sound</a> component to an Entity. Then you can create slots to play <a href="http://developer.playcanvas.com/en/user-manual/assets/audio/" target="_blank">Audio assets</a>. Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an <a href="http://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/" target="_blank">AudioListener</a> component to an Entity - usually to the Camera Entity.
+サウンドを再生するには、<a href="http://developer.playcanvas.com/en/user-manual/packs/components/sound/" target="_blank">Sound</a> コンポーネントをエンティティに追加する必要があります。その次に、<a href="http://developer.playcanvas.com/en/user-manual/assets/audio/" target="_blank">オーディオアセット</a>を再生するためにスロットを追加してください。"Add Slot"をクリックして、オーディオアセットをAssetフィールドにドラッグするだけです。ゲーム再生されたサウンドを聞こえるようにするには、<a href="http://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/" target="_blank">AudioListener</a>コンポーネントをエンティティに追加する必要があります。通常はカメラコンポーネントに追加します。
 
 コンピュータからアセットパネルにオーディオファイルをドラッグすることで、オーディオアセットを作成することができます。
 

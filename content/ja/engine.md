@@ -21,9 +21,9 @@ Engineに3Dモデルを読み込むには、モデリングパッケージの形
 
 完成されたモデルを選択すると、アセットの詳細と、このアセットから作成された全てのターゲットアセットが確認できます。
 
-Select the asset of type "model" which is the 3D model in the runtime format and click Download in the Inspector.
+"model"をアセットの種類として選択してください。これは実行時フォーマットの3Dモデルをあらわしています。そして、インスペクタからダウンロードをクリックしてください。
 
-![Download][7]
+![ダウンロード][7]
 
 これで、素材とテクスチャーを含む、Engineに読み込み可能な完全なモデルがダウンロードされます。
 

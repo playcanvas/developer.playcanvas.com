@@ -5,11 +5,11 @@ keywords: カメラ, 色, 背景, カラー, 空
 
 ##背景色を変更するには？
 
-To change the background color of your scene. You should update the Clear Color property of the camera in your scene.
+シーンの背景色を変えるには、シーン内のカメラのClear Colorプロパティを変更してください。
 
-You could also try and adding a [skybox][1] to your scene
+あるいは、[スカイボックス][1]をシーンに追加することでも変更ができます。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/camera/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/camera/" target="_blank">ユーザーマニュアルを見る</a>
 
 [1]: http://developer.playcanvas.com/en/user-manual/assets/cubemaps/
 

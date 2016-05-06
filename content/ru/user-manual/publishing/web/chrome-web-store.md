@@ -1,7 +1,7 @@
 ---
 title: Chrome Web Store
 template: usermanual-page.tmpl.html
-position: 3
+position: 5
 ---
 
 ## Publishing to the Chrome Web Store
@@ -54,7 +54,7 @@ Check it out for yourself <a href="https://chrome.google.com/webstore/detail/swo
 
 Generating a packaged app from a PlayCanvas game takes a little more effort than a hosted app. Here's a run down of the steps required to package and publish a game like SWOOOP:
 
-* Download an export of your game from the Publish tab of the Project Dashboard.
+* Download your game from PlayCanvas as explained in the [self-hosting guide][2].
 * Unzip the contents.
 * Create a manifest.json file . For SWOOOP, it looks like this:
 
@@ -94,4 +94,5 @@ We're done! Zip up the game's files again and upload to your new item in the CWS
 So hopefully this gives some insight into how simple it is to publish your game to the Chrome Web Store. Whether you choose to publish a hosted or packaged app is up to you and, as we've shown, both have their advantages and disadvantages. Our recommendation to you is to experiment. It's an awesome publishing platform that anyone can start to use today, so try it out for yourself!
 
 [1]: /images/publishing/web/chromewebstore.png
+[2]: /user-manual/publishing/web/self-hosting
 

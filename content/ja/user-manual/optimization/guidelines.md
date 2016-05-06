@@ -8,7 +8,7 @@ Here are some tips and hints on how to achieve good performance in your PlayCanv
 
 ## JavaScript
 
-* Calling 'new' to allocate a PlayCanvas object (particularly vectors, matrices and quaternions) represents a dynamic allocation and can be expensive. Therefore you should, where possible, preallocate objects in a script's initialize function and reuse them in the update function.
+* Calling 'new' to allocate a JavaScript object (particularly vectors, matrices and quaternions) represents a dynamic allocation and can be expensive. Therefore you should, where possible, preallocate objects in a script's initialize function and reuse them in the update function. It also leads to Garbage Collection which can cause periodical freezes.
 
 ## Graphics
 

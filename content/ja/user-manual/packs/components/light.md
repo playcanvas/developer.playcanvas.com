@@ -18,9 +18,10 @@ The Light component can be enabled or disabled using the toggle in the top right
 ## プロパティ
 
 <table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
+    <tr><th>Property</th><th style="width: 75%;">Description</th></tr>
+    <tr><td>Lightmap</td><td>Enable lightmap baking from this light</td></tr>
+    <tr><td>Affect Dynamic</td><td>If true this light will affect non-lightmapped model components at runtime</td></tr>
+    <tr><td>Affect Lightmapped</td><td>If true this light will affect lightmapped model components at runtime</td></tr>
     <tr><td>Color</td><td>The color of the emitted light.</td></tr>
     <tr><td>Intensity</td><td>The intensity of the light, this acts as a scalar value for the light's color. This value can exceed 1.</td></tr>
     <tr><td>Range</td><td>Point and Spot only. The distance from the spotlight source at which its contribution falls to zero.</td></tr>
@@ -37,9 +38,9 @@ The Light component can be enabled or disabled using the toggle in the top right
 
 You can control a Light component's properties using a [script component][4]. The Light component's scripting interface is [here][5].
 
-[1]: /images/user-manual/scenes/components/component-light-directional.png
-[2]: /images/user-manual/scenes/components/component-light-point.png
-[3]: /images/user-manual/scenes/components/component-light-spot.png
+[1]: /images/user-manual/scenes/components/component-light-directional.jpg
+[2]: /images/user-manual/scenes/components/component-light-point.jpg
+[3]: /images/user-manual/scenes/components/component-light-spot.jpg
 [4]: /user-manual/packs/components/script
 [5]: /engine/api/stable/symbols/pc.LightComponent.html
 

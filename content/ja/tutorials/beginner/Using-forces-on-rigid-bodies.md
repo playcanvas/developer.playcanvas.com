@@ -12,83 +12,87 @@ template: tutorial-page.tmpl.html
 *キューブを角で立たせ回転させてみましょう！*
 *使用されている完全なコードはこのページの下部に表示されています。*
 
-このチュートリアルでは、力を使用して動的なリジッドボディを制御し、上に示したデモを生成する方法を説明します。力、衝動、トルクの利用とDesigner設定を使用して動作をカスタマイズする方法を簡単に説明します。
+In this tutorial we will show you how to use forces to control a dynamic rigidbody and produce the demo shown above. We will briefly show the use of forces, impulses, torques and the use of rigidbody component UI to customize behavior.
 
-##フォース（力）コマンド
+## Scripting Forces
 
-###一定の力を適用
+### Applying a Constant Force
+
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_F) ) {
     this.entity.rigidbody.applyForce(0, 9.8, 0);
 }
 ~~~
-ユーザが[`applyForce(x, y, z)`][1]を通してFキーを押したとき、グローバルy軸に沿った力がアクセスエンティティに適用されます。力ベクトルの適用時点を設定することもできます。詳細は[こちらのドキュメント][2] 。
 
-###Impulses
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set. [See this documentation][2] for more details.
+
+### Impulses
+
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
     this.entity.rigidbody.applyImpulse(-1, 0, 0);
 }
-
 ~~~
-キューブには[`applyImpulse(x, y, z)`][3]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
 
-###Torques
+The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][3].
+
+### Torques
+
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_W) ) {
     this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
 }
 ~~~
- [`applyTorque(x, y, z)`][4]を通してエンティティに[Torques](https://en.wikipedia.org/wiki/Torque) (回転フォース)が適用されます。
 
-###TorqueImpulses
+[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][4].
+
+### TorqueImpulses
+
 ~~~javascript~~~
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ~~~
-角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][5]を通して適用されます。これは、上記のデモのコードでは使用されていません。
 
-##動的なリジッドボディの移動
+Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][5]. This was not used in the code for the above demo.
+
+## Moving dynamic rigidbodies
 
 リジッドボディを移動させるためには、上記の方法でリニア力および回転力(トルク)を適用します。シミュレーションが上書きされ、オブジェクトが衝突する際などに不自然な効果をもたらすことを避けるため、通常はこのようにリジッドボディの位置や速度を直接変更することは避けるべきです。
 
-必要に応じて、新しい'[pc.Vec3][6]'値のセットを`entity.rigidbody.linearVelocity`または`entity.rigidbody.angularVelocity`に直接割り当てることによって、速度を上書きすることができます。通常の[Entity methods][7]を使用して、位置や向きを上書きすることもできますが、その場合は、[`entity.rigidbody.syncEntityToBody()`][7]を使用してエンティティからリジッドボディのシミュレーションを更新する必要があります。
+However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][6]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
 
-リジッドボディタイプに関する商大は[コリジョン API ページ][8], [pc.fw API ページ][9], [fps-コントローラチュートリアル][11], [コリジョンチュートリアル][10]をご確認ください。
+For more information on rigidbody types, see [the collision API page][8], [the pc namespace page][9], [the fps-controller tutorial][11] and [the collision tutorial][10].
 
-##一般的な設定
+## General setup
 
 スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][12]。
 
-##制限と制御
+## Limiting and control
 
 アンバランスな力が適用され続けることを防ぐため(つまり、ボディが加速し続け制御不能になることを防ぐため)、いくつかの設定をEditorで行いました。キューブの属性エディタで角度減衰を有効にしました。また、キューブと床の両方で、摩擦を可能にしました。リニア減衰はここでは使用されていませんが、空気抵抗やシミュレートするために使用することができます。また、減速はコードで適用することができます。
 
 <img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
 
-##テレポートコード
+## Teleporting a Body
+
+To instantly teleport a body to a new position, you can't use the setPosition function from the pc.Entity API. This is because the physics engine would still think the body is in the old location. Instead, you have to use the rigidbody component's teleport function:
+
 ~~~js~~~
-//更新機能内のコード
+//code within the update function
 this.playerPos = this.entity.getLocalPosition();
-~~~
-~~~javascript~~~
+
+// Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
 if (this.playerPos.x < -9.0) {
-    this.teleport(8.8, this.playerPos.y, this.playerPos.z);
+    this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
 }
 if (this.playerPos.x > 9.0) {
-    this.teleport(-8.8, this.playerPos.y, this.playerPos.z);
+    this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
 }
 ~~~
-~~~javascript~~~
-// キューブを画面内にとどめる。キューブは画面の一つの端から消え、反対の端から再度現れる。
-teleport: function (x, y, z) {
-    this.entity.setLocalPosition(x, y, z);
-    this.entity.rigidbody.syncEntityToBody();
-},
-~~~
 
-x方向の表示領域を超えてキューブが移動するとテレポート機能が呼び出され、キューブエンティティは画面上をテレポートされ、エンティティの新しい位置に一致するようリジッドボディが同期されます。エンティティは、`if()`ステートメントを連続的にアクティベートしないよう、比較的極端でない左/右の位置にテレポートされます。
+If the cube moves beyond the viewable area in the x-direction, the teleport function is called and the cube entity is teleported across the screen. The entity is teleported to a less extreme left/right position so as not to continuously activate the `if()` statement.
 
-##Reset cube code
+## Reset cube code
+
 ~~~javascript~~~
 if (app.keyboard.wasPressed(pc.KEY_R)) {
     this.reset();
@@ -96,37 +100,37 @@ if (app.keyboard.wasPressed(pc.KEY_R)) {
 ~~~
 ~~~javascript~~~
 reset: function () {
-    this.teleport(0, 2, 0);
+    this.entity.rigidbody.teleport(0, 2, 0);
     this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
     this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
 }
 ~~~
 
-キューブを元の位置に戻し、上記のようにテレポートされたエンティティの位置にリジッドボディを同期させるリセット機能を用意しました。リセット機能の最後の2行はボディの線速度および角速度をゼロにリセットします。オブジェクトの向きもリセットすることができますが、このコードでは行われません。
+We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
 
-##完全なコードのリスト
+## Full code listing
 
 ~~~javascript~~~
 pc.script.create('DynamicBody', function (app) {
-    // 新しいMrDynamicインスタンスを作成
+    // Creates a new MrDynamic instance
     var DynamicBody = function (entity) {
         this.entity = entity;
     };
 
     DynamicBody.prototype = {
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度だけ呼ばれる
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.torque = 7;
             app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
-        // 毎フレーム呼ばれる。dtは最後の更新以降の秒単位の時間
+        // Called every frame, dt is time in seconds since last update
         update: function (dt) {
 
-            //プレイヤーの位置を更新
+            //update player's position
             this.playerPos = this.entity.getLocalPosition();
 
-            //キーボードコントロールとフォースとモーメントの適用
+            //keyboard controls and applying forces and moments.
             if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
                 this.entity.rigidbody.applyImpulse(-1, 0, 0);
             }
@@ -152,33 +156,27 @@ pc.script.create('DynamicBody', function (app) {
                 this.entity.rigidbody.applyForce(0, 9.8, 0);
             }
 
-            // キューブを画面にとどめる。キューブは一つの画面の端から消え、反対の端から再び現れる。
+            // Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
             if (this.playerPos.x < -9.0) {
-                this.teleport(8.8, this.playerPos.y, this.playerPos.z);
+                this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
             }
             if (this.playerPos.x > 9.0) {
-                this.teleport(-8.8, this.playerPos.y, this.playerPos.z);
+                this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
             }
 
-            // キューブリセットコントロール
+            // cube reset control
             if (app.keyboard.wasPressed(pc.KEY_R) ) {
                 this.reset();
             }
-        },
-
-        //エンティティを動かしてリジッドボディを親エンティティの新しい位置に同期させるテレポート機能。
-        teleport: function (x, y, z) {
-            this.entity.setLocalPosition(x, y, z);
-            this.entity.rigidbody.syncEntityToBody();
         },
 
         onKeyDown: function (event) {
             event.event.preventDefault();
         },
 
-        // キューブを開始位置に動かすリセット機能。
+        // reset function to move cube back to starting position.
         reset: function () {
-            this.teleport(0, 2, 0);
+            this.entity.rigidbody.teleport(0, 2, 0);
             this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
             this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
         }

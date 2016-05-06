@@ -1,7 +1,7 @@
 ---
 title: Chrome Web Store
 template: usermanual-page.tmpl.html
-position: 3
+position: 5
 ---
 
 ## Chrome Web Storeに公開
@@ -54,9 +54,9 @@ PlayCanvasはChrome Web Storeでパッケージ化されたappの例を公開し
 
 PlayCanvasゲームからパッケージ化されたappを生成するのは、ホストされたappよりも少し手間がかかります。SWOOOPのようなゲームをパッケージ化しおよび公開するために必要な手順は次のとおりです：
 
-* プロジェクトダッシュボードのPublishタブから、ゲームのエクスポートをダウンロード
-*コンテンツを解凍
-* manifest.jsonファイルを作成。 SWOOOPの場合、次のようになります：
+* Download your game from PlayCanvas as explained in the [self-hosting guide][2].
+* Unzip the contents.
+* Create a manifest.json file . For SWOOOP, it looks like this:
 
 ~~~javascript~~~
 {
@@ -94,4 +94,5 @@ chrome.app.runtime.onLaunched.addListener(function() {
 これでChrome Web Storeにゲームを公開するのがいかに簡単か理解していただけましたでしょうか？ホストされたappとパッケージ化されたappのどちらを使用するかはあなた次第です。どちらにも、それぞれの長所と短所があります。是非実験してみてください。誰もが、すぐに始められる素晴らしいパブリッシングプラットフォームです！是非お試しください！
 
 [1]: /images/publishing/web/chromewebstore.png
+[2]: /user-manual/publishing/web/self-hosting
 

@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 4
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/posteffects?overlay=false" ></iframe>
+<iframe src="https://playcanv.as/p/vQBffMnK" ></iframe>
 
 *このチュートリアルでは、GLSL内でエフェクトを作成するための、カスタムぽポストエフェクトを使う手順を説明します。*
 
@@ -18,7 +18,7 @@ JavascriptやGLSLを使って、PlayCanvas上でポストエフェクトを作�
 
 最初に、新しくスクリプトを作成する必要があります。このスクリプトは、ポストエフェクトのための [Shader Definition][2] 、そしてカメラへのポストエフェクトを追加するコードが含まれています。なお、このスクリプトには、[Camera component][3]のエンティティをアタッチする必要があります。以下をposteffect_example.jsとして、説明します。
 
-~~~javascript~~~
+```javascript
 pc.script.create('posteffect_example', function (app) {
     var Posteffect_example = function (entity) {
         this.entity = entity;
@@ -31,58 +31,28 @@ pc.script.create('posteffect_example', function (app) {
 
     return Posteffect_example;
 });
-~~~
+```
 
 ## エフェクト
 
 次にポストエフェクトのための新しいクラスを作成する必要があります。このクラスは[pc.posteffect.PostEffect][4]から引き継がれます。posteffect_example.js 内の定義の前部分で、そのクラスの定義を行います。
 
-~~~javascript~~~
-pc.extend(pc.posteffect, function () {
-    // コンストラクター - ポストエフェクトのインスタンスを作成する
-    var ExamplePostEffect = function (graphicsDevice) {
-        // エフェクトを定義するためのシェーダーについて
+```javascript
+pc.extend(pc, function () {
+    // Constructor - Creates an instance of our post effect
+    var ExamplePostEffect = function (graphicsDevice, vs, fs) {
+        // this is the shader definition for our effect
         this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
                 aPosition: pc.SEMANTIC_POSITION
             },
-            // Our vertex shader will pass the vertex position
-            // to the fragment shader. And it will make the uv's
-            // range from [0,0] for the bottom left corner to [1,1]
-            // for the top right corner
-            vshader: [
-                "attribute vec2 aPosition;",
-                "",
-                "varying vec2 vUv0;",
-                "",
-                "void main(void)",
-                "{",
-                "    gl_Position = vec4(aPosition, 0.0, 1.0);",
-                "    vUv0 = (aPosition.xy + 1.0) * 0.5;",
-                "}"
-            ].join("\n"),
-            // The fragment shader transforms the green channel of our image
-            // to be a function of the x,y coordinates. This is just an example
-            // you can imagine doing more complicated calculations here depending on
-            // the effect you want to create
-            fshader: [
-                "precision " + graphicsDevice.precision + " float;",
-                "",
-                "uniform sampler2D uColorBuffer;",
-                "",
-                "varying vec2 vUv0;",
-                "",
-                "void main() {",
-                    "vec4 texel = texture2D(uColorBuffer, vUv0);",
-                    " texel.g = vUv0.x * vUv0.x / vUv0.y;",
-                    "gl_FragColor = vec4(texel.rgb, texel.a);",
-                "}"
-            ].join("\n")
+            vshader: vs,
+            fshader: fs
         });
-    }
+    };
 
-    // このエフェクトはpc.posteffect.PostEffectから引き継がれなければならない
-    ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.posteffect.PostEffect);
+    // Our effect must derive from pc.PostEffect
+    ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.PostEffect);
 
     ExamplePostEffect.prototype = pc.extend(ExamplePostEffect.prototype, {
         // Every post effect must implement the render method which
@@ -92,13 +62,12 @@ pc.extend(pc.posteffect, function () {
             var device = this.device;
             var scope = device.scope;
 
-            // シェーダーへレンダリングするターゲットをセットする。カメラからイメージがレンダリングされます。
+            // Set the input render target to the shader. This is the image rendered from our camera
             scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
 
-            // Draw a full screen quad on the output target.
-            // In this case the output target is the screen.
+            // Draw a full screen quad on the output target. In this case the output target is the screen.
             // Drawing a full screen quad will run the shader that we defined above
-            pc.posteffect.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
+            pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
         }
     });
 
@@ -106,46 +75,53 @@ pc.extend(pc.posteffect, function () {
         ExamplePostEffect: ExamplePostEffect
     };
 }());
-~~~
+```
 
 ## まとめ
 
 ポストエフェクトに必要なコンポーネントが用意できました。次にすることは、さきほど定義したExamplePostEffect のインスタンスにカメラの [ポストエフェクトキュー][5]を追加することです。
 
-~~~javascript~~~
+```javascript
 pc.script.create('posteffect_example', function (app) {
 
     var Posteffect_example = function (entity) {
         this.entity = entity;
-        // エフェクト内にインスタンスを作成する
-        this.effect = new pc.posteffect.ExamplePostEffect(app.graphicsDevice);
     };
 
     Posteffect_example.prototype = {
+        initialize: function () {
+            // create an instance of our effect
+            var vert = app.assets.get(this.vertexShaderAssetId);
+            var frag = app.assets.get(this.fragShaderAssetId);
+            this.effect = new pc.ExamplePostEffect(app.graphicsDevice, vert.resource, frag.resource);
+        },
+
         onEnable: function () {
-            // スクリプトが実行可能になったとき、カメラのポストエフェクトキューへエフェクトを追加する
+            // when the script is enabled add our effect to the camera's postEffects queue
             this.entity.camera.postEffects.addEffect(this.effect, false);
         },
 
         onDisable: function () {
-            // スクリプトが実行不可になったとき、カメラのポストエフェクトキューからエフェクトを削除する
+            // when the script is disabled remove our effect from the camera's postEffects queue
             this.entity.camera.postEffects.removeEffect(this.effect);
         }
     };
 
     return Posteffect_example;
-
 });
-~~~
+```
 
 これですべての説明が完了です。以下スクリプト全文となります。
 
-~~~javascript~~~
-//--------------- ポストエフェクトの定義------------------------//
+```javascript
+pc.script.attribute("vertexShaderAssetId", "asset", null, {type: "shader", max: 1, displayName: "Vertex Shader"});
+pc.script.attribute("fragShaderAssetId", "asset", null, {type: "shader", max: 1, displayName: "Fragment Shader"});
+
+//--------------- POST EFFECT DEFINITION------------------------//
 pc.extend(pc.posteffect, function () {
-    // コンストラクター　ポストエフェクトのインスタンスの作成
+    // Constructor - Creates an instance of our post effect
     var ExamplePostEffect = function (graphicsDevice) {
-        // シェーダーエフェクトを定義します。
+        // this is the shader definition for our effect
         this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
                 aPosition: pc.SEMANTIC_POSITION
@@ -202,23 +178,23 @@ pc.extend(pc.posteffect, function () {
     };
 }());
 
-//--------------- スクリプトの定義------------------------//
+//--------------- SCRIPT DEFINITION------------------------//
 pc.script.create('posteffect_example', function (app) {
 
     var Posteffect_example = function (entity) {
         this.entity = entity;
-        // エフェクト内にインスタンスを作成する
+        // create an instance of our effect
         this.effect = new pc.posteffect.ExamplePostEffect(app.graphicsDevice);
     };
 
     Posteffect_example.prototype = {
         onEnable: function () {
-            //スクリプトが実行可能になったとき、カメラのポストエフェクトキューへエフェクトを追加する
+            // when the script is enabled add our effect to the camera's postEffects queue
             this.entity.camera.postEffects.addEffect(this.effect, false);
         },
 
         onDisable: function () {
-            // スクリプトが実行不可になったとき、カメラのポストエフェクトキューからエフェクトを削除する
+            // when the script is disabled remove our effect from the camera's postEffects queue
             this.entity.camera.postEffects.removeEffect(this.effect);
         }
     };
@@ -226,17 +202,17 @@ pc.script.create('posteffect_example', function (app) {
     return Posteffect_example;
 
 });
-~~~
+```
 
 カスタムシェーダーのより詳しいチュートリアルは [こちら][6]。
 
-[カスタムポストエフェクトシーン][7]についてはこちらを参照してください。
+See the [Custom Post Effects project here][7].
 
-[2]: /engine/api/stable/symbols/pc.Shader.html
-[4]: /engine/api/stable/symbols/pc.PostEffect.html
+[2]: /api/pc.Shader.html
+[4]: /api/pc.PostEffect.html
 [3]: /user-manual/packs/components/camera
 [1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [6]: /tutorials/advanced/custom-shaders
-[5]: /engine/api/stable/symbols/pc.CameraComponent.html#postEffects
-[7]: https://playcanvas.com/editor/scene/338140
+[5]: /api/pc.CameraComponent.html#postEffects
+[7]: https://playcanvas.com/project/388378/overview/tutorial-custom-post-effect
 

@@ -6,7 +6,7 @@ position: 16
 
 <iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
 
-*If you haven't see [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] and [Part 5][5] read them first.*
+*You can find the [full project here][11]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] and [Part 5][5] read them first.*
 
 ## User Interface
 
@@ -86,4 +86,5 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [8]: http://forum.playcanvas.com
 [9]: /images/tutorials/beginner/keepyup-part-six/ui-hierarchy.jpg
 [10]: /images/tutorials/beginner/keepyup-part-six/sprite-setup.jpg
+[11]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
 

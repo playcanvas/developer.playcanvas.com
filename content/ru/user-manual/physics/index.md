@@ -21,8 +21,6 @@ At any time, you can query (or even directly set) a body's velocity which takes 
 * Linear Velocity
 * Angular Velocity
 
-Bodies move in response to forces that are applied to them.
-
 ## Units of Measurement
 
 By default, the PlayCanvas physics engine interprets 1 unit as 1 meter. Therefore, for objects to fall at a rate that appears to be physically accurate, you should ensure that your scenes size objects appropriately.
@@ -32,6 +30,30 @@ For example, if your game features a character that is 1.8m tall, he should be 1
 ## Gravity
 
 Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero. To edit the gravity applied to your scene, open the Scene Settings panel.
+
+## Moving Rigid Bodies with Forces
+
+Bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant. Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time:
+
+~~~javascript~~~
+    update: function (dt) {
+        // While the right arrow key is pressed, apply a force to the right
+        if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
+            this.entity.rigidbody.applyForce(10, 0, 0);
+        }
+    }
+~~~
+
+If you want to fire a cannonball from a cannon, you would apply a single impulse:
+
+~~~javascript~~~
+    update: function (dt) {
+        // If the space bar was pressed, apply an impulse up and to the right
+        if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
+            this.entity.rigidbody.applyImpulse(10, 10, 0);
+        }
+    }
+~~~
 
 ## Teleporting Rigid Bodies
 
