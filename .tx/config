@@ -859,12 +859,6 @@ source_file = po/messages.json.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-messages-txt]
-file_filter = po/messages.txt.<lang>.po
-source_file = po/messages.txt.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-faq-create_shader]
 file_filter = po/faq/create_shader.<lang>.po
 source_file = po/faq/create_shader.en-US.po
@@ -976,6 +970,66 @@ type = PO
 [playcanvas-developer-site.po-user-manual-scripting-script-priorities]
 file_filter = po/user-manual/scripting/script-priorities.<lang>.po
 source_file = po/user-manual/scripting/script-priorities.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-cardboard-vr]
+file_filter = po/tutorials/beginner/cardboard-vr.<lang>.po
+source_file = po/tutorials/beginner/cardboard-vr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-animated-textures]
+file_filter = po/tutorials/intermediate/animated-textures.<lang>.po
+source_file = po/tutorials/intermediate/animated-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-facebook-api]
+file_filter = po/tutorials/intermediate/facebook-api.<lang>.po
+source_file = po/tutorials/intermediate/facebook-api.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-index]
+file_filter = po/user-manual/graphics/lighting/index.<lang>.po
+source_file = po/user-manual/graphics/lighting/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-lightmaps]
+file_filter = po/user-manual/graphics/lighting/lightmaps.<lang>.po
+source_file = po/user-manual/graphics/lighting/lightmaps.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-lights]
+file_filter = po/user-manual/graphics/lighting/lights.<lang>.po
+source_file = po/user-manual/graphics/lighting/lights.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-shadows]
+file_filter = po/user-manual/graphics/lighting/shadows.<lang>.po
+source_file = po/user-manual/graphics/lighting/shadows.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-communicating-webpage]
+file_filter = po/user-manual/publishing/web/communicating-webpage.<lang>.po
+source_file = po/user-manual/publishing/web/communicating-webpage.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-facebook]
+file_filter = po/user-manual/publishing/web/facebook.<lang>.po
+source_file = po/user-manual/publishing/web/facebook.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-self-hosting-for-beginners]
+file_filter = po/user-manual/publishing/web/self-hosting-for-beginners.<lang>.po
+source_file = po/user-manual/publishing/web/self-hosting-for-beginners.en-US.po
 source_lang = en
 type = PO
 
