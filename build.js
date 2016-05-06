@@ -88,6 +88,8 @@ m.use(i18n()({
         file: 'content/ja/messages.json', locale: 'ja'
     }, {
         file: 'content/ru/messages.json', locale: 'ru'
+    }, {
+        file: 'content/zh/messages.json', locale: 'zh'
     }],
     output: localization
 }))
