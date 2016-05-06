@@ -34,9 +34,11 @@ pc.script.create('fb_ui', function (app) {
     Fb_ui.prototype = {
         initialize: function () {
             var self = this;
+            this._ready = false;
 
-            // wait for Facebook SDK to load
+            // When FB SDK is ready start by checking log in status
             app.on("fb:init", function () {
+                this._ready = true;
                 FB.getLoginStatus(self.loginChangeFn);
             }, this);
 
@@ -46,20 +48,20 @@ pc.script.create('fb_ui', function (app) {
             this.loginChangeFn = this.loginChangeFn.bind(this);
         },
 
+        // This method is called when ever the log in status is checked or changed
         loginChangeFn: function (response) {
-            // respond to changes in logged in status
             if (response.status === "connected") {
                 this.showLogout();
                 this.hideLogin();
-                app.fire("fb:login");
+                app.fire("app:fblogin");
             } else {
                 this.showLogin();
                 this.hideLogout();
-                app.fire("fb:logout");
+                app.fire("app:fblogout");
             }
         },
 
-        // show the login dialog
+        // Show the dialog with a login button
         showLogin: function () {
             var self = this;
 
@@ -67,6 +69,7 @@ pc.script.create('fb_ui', function (app) {
             if (login) {
                 login.style.display = "block";
                 if (!this._loginHandler) {
+                    // log in to FB when the buttons is clicked
                     this._loginHandler = function () {
                         FB.login(self.loginChangeFn, {
                             scope: 'public_profile, user_photos'
@@ -78,7 +81,7 @@ pc.script.create('fb_ui', function (app) {
             }
         },
 
-        // hide the login dialog
+        // Hide the dialog with a login button
         hideLogin: function () {
             var login = document.querySelector(".fb-login");
             if (login) {
@@ -86,12 +89,13 @@ pc.script.create('fb_ui', function (app) {
             }
         },
 
-        // show the logout dialog
+        // Show the dialog with a logout button
         showLogout: function () {
             var self = this;
             var logout = document.querySelector(".fb-logout");
             if (logout) {
                 logout.style.display = "block";
+                // log out of FB when the button is clicked
                 if (!this._logoutHandler) {
                     this._logoutHandler = function () {
                         FB.logout(self.loginChangeFn);
@@ -102,7 +106,7 @@ pc.script.create('fb_ui', function (app) {
             }
         },
 
-        // hide the logout dialog
+        // Hide the dialog with a logout button
         hideLogout: function () {
             var logout = document.querySelector(".fb-logout");
             if (logout) {
@@ -123,7 +127,7 @@ It is important to notice here is that `FB.login()` must be called in response t
 
 The function `loginChangeFn` is a callback which is used to respond to changes in logged in state and using the four show/hide functions we show the correct dialog box depending on the state.
 
-Note, also we fire our own application events `fb:login` and `fb:logout` to tell other parts of the application that the Facebook status has changed.
+Note, also we fire our own application events `app:fblogin` and `app:fblogout` to tell other parts of the application that the Facebook status has changed.
 
 
 ### Accessing the Facebook API
@@ -140,17 +144,17 @@ pc.script.create('face_photo', function (app) {
 
         this.textures = [];
 
+        // Set the texture loader up so that it can request cross-origin images
         app.loader.getHandler("texture").crossOrigin = "anonymous";
 
     };
 
     Face_photo.prototype = {
         initialize: function () {
-            // wait until user is logged in
-            app.on("fb:login", this.reset, this);
+            // listen for the event that signals we've been logged into facebook
+            app.on("app:fblogin", this.reset, this);
         },
 
-        // start loading photos from the FB API
         reset: function () {
             var self = this;
             var path = pc.string.format("{0}/photos", FB.getUserID());
@@ -162,12 +166,17 @@ pc.script.create('face_photo', function (app) {
                 }
             };
 
+            // request the most recent photos from user's facebook account
             FB.api(path, function (lists) {
                 for (var i = 0; i < lists.data.length; i++) {
                     count = lists.data.length;
                     var photoId = lists.data[i].id;
                     path = pc.string.format("/{0}?fields=images", photoId);
+
+                    // request more information including source URL of the photos
                     FB.api(path, function (photo) {
+
+                        // create a texture asset using the image URL
                         var asset = new pc.Asset(photo.id, "texture", {
                             url: photo.images[0].source
                         });
@@ -184,21 +193,20 @@ pc.script.create('face_photo', function (app) {
             });
         },
 
-        // Duplicate the photo entity and update the material with the texture
         createPhoto: function(texture) {
+            // clone the image template entity
             var e = this.template.clone();
             e.enabled = true;
             var mesh = e.model.model.meshInstances[0];
 
-            e.model.material.emissiveMap = texture;
-            e.model.material.update();
-
+            // override the emissive map on the mesh instance to display the photo texture
             mesh.setParameter("texture_emissiveMap", texture);
 
             app.root.addChild(e);
             var MIN = -2.5;
             var MAX = 2.5;
 
+            // randomly position the photo and set the aspect ratio to the same as the texture
             e.translate(pc.math.random(MIN, MAX), pc.math.random(MIN, MAX), pc.math.random(MIN, MAX));
             e.rotate(90, 0, 0);
 
@@ -226,13 +234,17 @@ app.on("fb:login", this.reset, this);
 This line listens for the login event from our `fb-ui.js` file. When the user logs in, we start the process of loading the photos.
 
 ```javascript
-var path = pc.string.format("{0}/photos", FB.getUserID());
+// request the most recent photos from user's facebook account
 FB.api(path, function (lists) {
     for (var i = 0; i < lists.data.length; i++) {
         count = lists.data.length;
         var photoId = lists.data[i].id;
         path = pc.string.format("/{0}?fields=images", photoId);
+
+        // request more information including source URL of the photos
         FB.api(path, function (photo) {
+
+            // create a texture asset using the image URL
             var asset = new pc.Asset(photo.id, "texture", {
                 url: photo.images[0].source
             });
@@ -255,25 +267,25 @@ Once we have the URL, we create a new `texture` asset and we load the image.
 
 ```javascript
 createPhoto: function(texture) {
+    // clone the image template entity
     var e = this.template.clone();
     e.enabled = true;
     var mesh = e.model.model.meshInstances[0];
 
-    e.model.material.emissiveMap = texture;
-    e.model.material.update();
-
+    // override the emissive map on the mesh instance to display the photo texture
     mesh.setParameter("texture_emissiveMap", texture);
 
     app.root.addChild(e);
     var MIN = -2.5;
     var MAX = 2.5;
 
+    // randomly position the photo and set the aspect ratio to the same as the texture
     e.translate(pc.math.random(MIN, MAX), pc.math.random(MIN, MAX), pc.math.random(MIN, MAX));
     e.rotate(90, 0, 0);
 
     var aspect = texture.width / texture.height;
     e.setLocalScale(aspect, 1, 1);
-},
+}
 ```
 
 Finally, once we have loaded the texture asset, we create a new Photo entity and we override the emissive texture with our newly loaded photo texture.
