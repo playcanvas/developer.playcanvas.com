@@ -14,7 +14,7 @@ By clicking on the PLAY button you can play the Primary Build of this project.
 
 By clicking on WATCH you can watch or follow this project, receiving updates for new posts about this project.
 
-By clickin on START you can star or like this project, providing motivation to the developer.
+By clicking on STAR you can star or like this project, providing motivation to the developer.
 
 By clicking on the FORK button you can fork this project, which means that a clone of this project will be copied to your account.
 
