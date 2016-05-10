@@ -218,10 +218,16 @@ socket.broadcast.emit(‘test’, data);
 
 Will emit the message to everyone except the original sender.
 
-Next we have to account for the data being received about other players. Back on the Network.js, we need to create two new functions:
+Next we have to account for the data being received about other players. Back on the Network.js, we need to add onto the initialize method, and creata new method:
 
 ~~~javascript~~~
-setListeners: function () {
+initialize: function () {
+	socket = io.connect('http://localhost:3000/');
+	socket.emit ('initialize');
+	
+	this.player = app.root.findByName ('Player');
+	this.other = app.root.findByName ('Other');
+
 	var self = this;
 	socket.on ('playerData', function (data) {
 		self.players = data.players;
@@ -243,22 +249,23 @@ setListeners: function () {
 
 createPlayerEntity: function (data) {
 	var newPlayer = this.other.clone ();
+	// Create a new player entity.
+	
 	newPlayer.enabled = true;
+	// Enable the newly created player.
             
 	this.other.getParent ().addChild (newPlayer);
+	// Add the entity to the entity hierarchy.
             
 	if (data)
 		newPlayer.rigidbody.teleport (data.x, data.y, data.z);
+	// If a location was given, teleport the new entity to the position of the connected player.
             
 	return newPlayer;
+	// Return the new entity.
 }
 ~~~
 
-Don’t forget to call the setListeners function in the initialize method:
-
-~~~javascript~~~
-this.setListeners ();
-~~~
 
 
 [1]: /images/tutorials/multiplayer/socket_installed.png
