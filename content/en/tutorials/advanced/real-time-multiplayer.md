@@ -220,9 +220,9 @@ Will emit the message to everyone except the original sender.
 Next we have to account for the data being received about other players. Back on the Network.js, we need to create two new functions:
 
 ~~~javascript~~~
-  setListeners: function () {
-            var self = this;
-            socket.on ('playerData', function (data) {
+  	setListeners: function () {
+        	var self = this;
+		socket.on ('playerData', function (data) {
             	self.players = data.players;
 		// Create a player array and populate it with the currently connected players.
 		
@@ -239,19 +239,19 @@ Next we have to account for the data being received about other players. Back on
             	this.initialized = true;
 		// This will be used later.
             });
-  },
+  	},
 
-createPlayerEntity: function (data) {
-	var newPlayer = this.other.clone ();
-            newPlayer.enabled = true;
+    	createPlayerEntity: function (data) {
+		var newPlayer = this.other.clone ();
+            	newPlayer.enabled = true;
             
-            this.other.getParent ().addChild (newPlayer);
+            	this.other.getParent ().addChild (newPlayer);
             
-            if (data)
-            	newPlayer.rigidbody.teleport (data.x, data.y, data.z);
+            	if (data)
+            		newPlayer.rigidbody.teleport (data.x, data.y, data.z);
             
-            return newPlayer;
-}
+            	return newPlayer;
+	}
 ~~~
 
 Don’t forget to call the setListeners function in the initialize method:
