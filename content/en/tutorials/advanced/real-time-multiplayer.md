@@ -26,7 +26,7 @@ It should take a few seconds. When it's done, you should have Node.js and Socket
 
 Next, we’ll need to create a server file. Open up a text editor and type in the following:
 	
-~~~javascript
+~~~javascript~~~
 var server = require('http').createServer();
 var io = require(‘socket.io')(server);
 
