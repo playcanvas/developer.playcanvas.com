@@ -162,7 +162,6 @@ function Player (id) {
 	this.y = 0;
 	this.z = 0;
 	this.entity = null;
-	this.deleted = false;
 }
 
 io.sockets.on('connection', function(socket) {
@@ -214,7 +213,7 @@ initializePlayers: function (data) {
 	// Keep track of what ID number you are.
 		
 	for (i = 0; i < this.players.length; i++) {
-		if (i !== this.id && !this.players[i].deleted) {
+		if (i !== this.id) {
 			this.players[i].entity = this.createPlayerEntity (data.players[i]);
 		}
 	}
@@ -305,7 +304,9 @@ socket.on ('positionUpdate', function (data) {
 
 That's about it! If you'd like, try adding some of these ideas on your own:
 * Players are removed when they close the game.
-* Clients only send the server their position when they're moving.
+* Adding respawning functionality for when players fall off the edge.
+
+There's a lot of information online about creating multiplayer games that you can read into. Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an [authoritive server][10], instead of handling all the game logic on the client. You might also want to look into a more permanent server host like [Amazon][5], [OpenShift][6], or [Azure.][11]
 
 Here's the full Network script:
 
@@ -343,7 +344,7 @@ pc.script.create('Network', function (app) {
             this.id = data.id;
 
             for (i = 0; i < this.players.length; i++) {
-                if (i !== this.id && !this.players[i].deleted) {
+                if (i !== this.id) {
                     this.players[i].entity = this.createPlayerEntity (data.players[i]);
                 }
             }
@@ -404,7 +405,6 @@ function Player (id) {
     this.y = 0;
     this.z = 0;
     this.entity = null;
-    this.deleted = false;
 }
 
 io.sockets.on('connection', function(socket) {
@@ -438,3 +438,6 @@ server.listen(3000);
 [6]: https://www.openshift.com/
 [7]: /images/tutorials/multiplayer/ground_entity.png
 [8]: /images/tutorials/multiplayer/player_entity.png
+[9]: http://blog.artillery.com/2012/05/realtime-multiplayer-3d-gaming-html5.html
+[10]: http://docs.unity3d.com/Manual/net-HighLevelOverview.html
+[11]: https://azure.microsoft.com/en-gb/
