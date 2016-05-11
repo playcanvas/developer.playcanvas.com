@@ -109,8 +109,8 @@ pc.script.create('Movement', function (app) {
 			var forward = this.entity.forward;
 			var right = this.entity.right;
             
-			x = 0;
-			z = 0;
+			var x = 0;
+			var z = 0;
             
 			if (app.keyboard.isPressed(pc.KEY_A)) {
 				x -= right.x;
