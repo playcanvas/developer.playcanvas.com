@@ -306,7 +306,7 @@ That's about it! If you'd like, try adding some of these ideas on your own:
 * Players are removed when they close the game.
 * Adding respawning functionality for when players fall off the edge.
 
-There's a lot of information online about creating multiplayer games that you can read into. Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an [authoritive server][10], instead of handling all the game logic on the client. You might also want to look into a more permanent server host like [Amazon][5], [OpenShift][6], or [Azure.][11]
+There's a lot of information online about creating multiplayer games that you can read into. Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritive server, instead of handling all the game logic on the client. You might also want to look into a more permanent server host like [Amazon][5], [OpenShift][6], or [Azure][9].
 
 Here's the full Network script:
 
@@ -438,6 +438,4 @@ server.listen(3000);
 [6]: https://www.openshift.com/
 [7]: /images/tutorials/multiplayer/ground_entity.png
 [8]: /images/tutorials/multiplayer/player_entity.png
-[9]: http://blog.artillery.com/2012/05/realtime-multiplayer-3d-gaming-html5.html
-[10]: http://docs.unity3d.com/Manual/net-HighLevelOverview.html
-[11]: https://azure.microsoft.com/en-gb/
+[9]: https://azure.microsoft.com/en-gb/
