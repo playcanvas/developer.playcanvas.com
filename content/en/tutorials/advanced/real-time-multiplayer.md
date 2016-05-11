@@ -94,7 +94,7 @@ Duplicate the player entity and rename it as 'Other'. This is the entity we'll b
 Add a script component to your player, and attach a new script called 'Movement.js':
 
 ~~~javascript~~~
-pc.script.attribute('playerSpeed', 'number', 10, {displayName: 'Player Speed'});
+pc.script.attribute('playerSpeed', 'number', 30, {displayName: 'Player Speed'});
 
 pc.script.create('Movement', function (app) {
 	// Creates a new Movement instance
@@ -136,9 +136,8 @@ pc.script.create('Movement', function (app) {
 				x *= dt;
 				z *= dt;
                 
-				this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed / 100));
-				this.entity.translate (this.force);
-				this.entity.rigidbody.syncEntityToBody ();
+				this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed));
+				this.entity.rigidbody.applyForce (this.force);
 			}
 		}
 	};
