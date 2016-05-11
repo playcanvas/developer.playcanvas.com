@@ -380,7 +380,7 @@ pc.script.create('Network', function (app) {
         updatePosition: function () {
             if (this.initialized) {    
                 var pos = this.player.getPosition ();
-                socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
+                socket.emit ('positionUpdate', {id: this.id, x: pos.x, y: pos.y, z: pos.z});
             }
         }
     };
