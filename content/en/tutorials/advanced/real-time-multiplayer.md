@@ -3,7 +3,7 @@ title: Real Time Multiplayer
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/kvMKtuwp" ></iframe>
+<iframe src="http://playcanv.as/p/0lGQe06X" ></iframe>
 *Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
 
 In this tutorial we’ll cover how to setup basic multiplayer project, using Node.js and Socket.io. It will also cover the basics of sending and receiving messages to/from the server. By the end of the demo you should have a project similar to the one above.
@@ -16,7 +16,7 @@ Head over to nodejs.org and download and install the recommended version of Node
 
 Open up a command prompt window (terminal for Mac) and type in:
 
-~~~bash~~~
+~~~
 npm install socket.io
 ~~~
 
@@ -39,7 +39,7 @@ server.listen(3000);
 
 Notice that the server is listening on port 3000. We’ll come back to this. Save it in your home folder as ‘server.js’. Make sure it’s saved as a Javascript file and not Server.js.txt. To start your server, open up a command prompt window and type in:
 
-~~~bash~~~
+~~~
 node server.js
 ~~~
 
@@ -49,7 +49,7 @@ You should see ‘Server started.’ Congratulations, you’re now running your 
 
 ## Setting up the Project
 
-Open up PlayCanvas and create a new project. Firstly, you’ll want to create a new script called ‘socket.js’. Next, add it to your projects priority list.
+Open up PlayCanvas and create a new project. First, you’ll want to create a new script called ‘socket.js’. Next, add it to your projects priority list.
 
 ![Script Priority][3]
 
@@ -81,7 +81,7 @@ socket.on (‘playerJoined’, function (name) {
 
 This will log whatever data is sent to the server when ‘playerJoined’ is emitted.
 
-For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environemnt. Start by create an entity to use as a ground, and add a collision box and static rigidbody.
+For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody.
 
 ![Ground Entity][7]
 
@@ -97,59 +97,59 @@ Add a script component to your player, and attach a new script called 'Movement.
 pc.script.attribute('playerSpeed', 'number', 10, {displayName: 'Player Speed'});
 
 pc.script.create('Movement', function (app) {
-// Creates a new Movement instance
-var Movement = function (entity) {
-	this.entity = entity;
-	this.force = new pc.Vec3 ();
-};
+	// Creates a new Movement instance
+	var Movement = function (entity) {
+		this.entity = entity;
+		this.force = new pc.Vec3 ();
+	};
 
-Movement.prototype = {
-	// Called every frame, dt is time in seconds since last update
-	update: function (dt) {
-		var forward = this.entity.forward;
-		var right = this.entity.right;
+	Movement.prototype = {
+		// Called every frame, dt is time in seconds since last update
+		update: function (dt) {
+			var forward = this.entity.forward;
+			var right = this.entity.right;
             
-		x = 0;
-		z = 0;
+			x = 0;
+			z = 0;
             
-		if (app.keyboard.isPressed(pc.KEY_A)) {
-			x -= right.x;
-			z -= right.z;
+			if (app.keyboard.isPressed(pc.KEY_A)) {
+				x -= right.x;
+				z -= right.z;
 			}		
 
-		if (app.keyboard.isPressed(pc.KEY_D)) {
-			x += right.x;
-			z += right.z;
-		}
+			if (app.keyboard.isPressed(pc.KEY_D)) {
+				x += right.x;
+				z += right.z;
+			}
 
-		if (app.keyboard.isPressed(pc.KEY_W)) {
-			x += forward.x;
-			z += forward.z;
-		}
+			if (app.keyboard.isPressed(pc.KEY_W)) {
+				x += forward.x;
+				z += forward.z;
+			}
 
-		if (app.keyboard.isPressed(pc.KEY_S)) {
-			x -= forward.x;
-			z -= forward.z;
-		}
+			if (app.keyboard.isPressed(pc.KEY_S)) {
+				x -= forward.x;
+				z -= forward.z;
+			}
                 
-		if (x !== 0 || z !== 0) {
-			x *= dt;
-			z *= dt;
+			if (x !== 0 || z !== 0) {
+				x *= dt;
+				z *= dt;
                 
-			this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed / 100));
-			this.entity.translate (this.force);
-			this.entity.rigidbody.syncEntityToBody ();
+				this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed / 100));
+				this.entity.translate (this.force);
+				this.entity.rigidbody.syncEntityToBody ();
+			}
 		}
-	}
-};
+	};
 
-return Movement;
+	return Movement;
 
 });
 ~~~
 
-When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or not set the correct settings for the entity. (Try changing the speed attribute on the movement script?)
-For the game to work in real time multiplayer, we need to keep track of all players in the game, as well as their current positions. Replace the current server code with this:
+When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
+For the game to work in real time multiplayer, we need to keep track of all players in the game. Replace the current server code with this:
 
 ~~~javascript~~~
 var server = require('http').createServer();
@@ -167,25 +167,6 @@ function Player (id) {
 }
 
 io.sockets.on('connection', function(socket) {
-});
-
-console.log ('Server started.');
-server.listen(3000);
-~~~
-
-This code creates a new data type called ‘Player’ that stores all the information about each player, and creates an array called ‘players’.
-
-Back on the Network script, in the initialize method, we need to add a message to tell the server that we’ve joined.
-
-~~~javascript~~~
-socket.emit (‘initialize’);
-~~~
-
-Now, on the server code we need to decide what happens when a player connects. Replace part of the server code with this:
-
-~~~javascript~~~
-io.sockets.on('connection', function(socket) {
-
 	socket.on (‘initialize’, function () {
 		var idNum = players.length;
 		var newPlayer = new Player (idNum);
@@ -199,26 +180,14 @@ io.sockets.on('connection', function(socket) {
 
 		socket.broadcast.emit (‘playerJoined’, newPlayer);
 		// Sends everyone except the connecting player data about the new player.
-	}); 
-
+	});
 });
+
+console.log ('Server started.');
+server.listen(3000);
 ~~~
 
-In the code above, we are creating a new player, adding them to the array, sending the connecting client his ID number as well as the other players’ data, and finally telling already connected players that a new player has joined. The way we distinguish this is with by adding broadcast in the function. Inside of a ‘socket.on’ method, using:
-
-~~~javascript~~~
-socket.emit (‘test’, data);
-~~~
-
-Will only emit the message to the original sender. But using:
-
-~~~javascript~~~
-socket.broadcast.emit(‘test’, data);
-~~~
-
-Will emit the message to everyone except the original sender.
-
-Next we have to account for the data being received about other players. Back on the Network.js, we need to add onto the initialize method, and creata new method:
+In the code above, when a player sends the message 'initialize', we send him his unique ID and data about other players in the game. It also tells others that a new player has connected. Let's add that logic into our Network script.
 
 ~~~javascript~~~
 initialize: function () {
@@ -230,22 +199,31 @@ initialize: function () {
 
 	var self = this;
 	socket.on ('playerData', function (data) {
-		self.players = data.players;
-		// Create a player array and populate it with the currently connected players.
-		
-		this.id = data.id
-		// Keep track of what ID number you are.
-		
-		for (i = 0; i < this.players.length; i++) {
-			if (i !== id && !this.players[i].deleted) {
-			this.players[i].entity = this.createPlayerEntity (data.players[i]);
-		}
-		// For every player already connected, create a new capsule entity.
-
-		this.initialized = true;
-		// Mark that the client has received data from the server.
+		self.initializePlayers (data);
+	});
+	
+	socket.on ('playerJoined', function (data) {
+		self.addPlayer (data);
 	});
 },
+
+initializePlayers: function (data) {
+	self.players = data.players;
+	// Create a player array and populate it with the currently connected players.
+		
+	this.id = data.id
+	// Keep track of what ID number you are.
+		
+	for (i = 0; i < this.players.length; i++) {
+		if (i !== this.id && !this.players[i].deleted) {
+			this.players[i].entity = this.createPlayerEntity (data.players[i]);
+		}
+	}
+	// For every player already connected, create a new capsule entity.
+	
+	this.initialized = true;
+	// Mark that the client has received data from the server.
+}
 
 createPlayerEntity: function (data) {
 	var newPlayer = this.other.clone ();
@@ -263,10 +241,193 @@ createPlayerEntity: function (data) {
             
 	return newPlayer;
 	// Return the new entity.
+},
+
+addPlayer: function (data) {
+	this.players.push (data);
+	this.players[this.players.length - 1].entity = this.createPlayerEntity ();
 }
 ~~~
 
+Now when we join the game, the client tells the server we've connected, and the server sends us a list of players with their positions. The game then creates a new entity for each player connected, and moves them to their current position. The only problem is, the server doesn't know the positions of all players. We need to send the server our current position every frame. Add this code into your Network.js script:
 
+~~~javascript~~~
+initialize: function () {
+	socket = io.connect('http://localhost:3000/');
+	socket.emit ('initialize');
+	
+	this.player = app.root.findByName ('Player');
+	this.other = app.root.findByName ('Other');
+
+	var self = this;
+	socket.on ('playerData', function (data) {
+		self.initializePlayers (data);
+	});
+	
+	socket.on ('playerJoined', function (data) {
+		self.addPlayer (data);
+	});
+	
+	socket.on ('playerMoved', function (data) {
+		self.movePlayer (data);
+	});
+},
+
+movePlayer: function (data) {
+	if (this.initialized)
+		this.players[data.id].entity.rigidbody.teleport (data.x, data.y, data.z);
+},
+
+update: function (dt) {
+	this.updatePosition ();
+},
+        
+updatePosition: function () {
+	if (this.initialized) {    
+		var pos = this.player.getPosition ();
+		socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
+	}
+}
+~~~
+
+And back on the server, we need to account for what happens when the player sends us their position.
+
+~~~javascript~~~
+socket.on ('positionUpdate', function (data) {
+	players[data.id].x = data.x;
+	players[data.id].y = data.y;
+	players[data.id].z = data.z;
+        
+	socket.broadcast.emit ('playerMoved', data);
+});
+~~~
+
+And that's about it! If you'd like, try adding some of these ideas on your own:
+* Players are removed when they close the game.
+* Clients only send the server their position when they're moving.
+
+Here's the full Network script:
+
+~~~javascript~~~
+pc.script.create('Network', function (app) {
+    // Creates a new Network instance
+    var Network = function (entity) {
+        this.entity = entity;
+    };
+
+    Network.prototype = {
+        initialize: function () {
+            this.player = app.root.findByName ('Player');
+            this.other = app.root.findByName ('Other');
+            
+            socket = io.connect('http://58.172.79.85:3000/');
+            socket.emit ('initialize');
+            
+            var self = this;
+            socket.on ('playerData', function (data) {
+                self.initializePlayers (data);
+            });
+            
+            socket.on ('playerJoined', function (data) {
+                self.addPlayer (data);
+            });
+            
+            socket.on ('playerMoved', function (data) {
+                self.movePlayer (data);
+            });
+        },
+        
+        initializePlayers: function (data) {
+            this.players = data.players;
+            this.id = data.id;
+
+            for (i = 0; i < this.players.length; i++) {
+                if (i !== this.id && !this.players[i].deleted) {
+                    this.players[i].entity = this.createPlayerEntity (data.players[i]);
+                }
+            }
+
+            this.initialized = true;
+        },
+        
+        addPlayer: function (data) {
+            this.players.push (data);
+            this.players[this.players.length - 1].entity = this.createPlayerEntity ();
+        },
+        
+        movePlayer: function (data) {
+            if (this.initialized) {
+                this.players[data.id].entity.rigidbody.teleport (data.x, data.y, data.z);
+            }
+        },
+        
+        createPlayerEntity: function (data) {
+            var newPlayer = this.other.clone ();
+            newPlayer.enabled = true;
+            
+            this.other.getParent ().addChild (newPlayer);
+            
+            if (data)
+                newPlayer.rigidbody.teleport (data.x, data.y, data.z);
+            
+            return newPlayer;
+        },
+        
+        update: function (dt) {
+            this.updatePosition ();
+        },
+        
+        updatePosition: function () {
+            if (this.initialized) {    
+                var pos = this.player.getPosition ();
+                socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
+            }
+        }
+    };
+
+    return Network;
+});
+~~~
+
+Here's the full server script:
+
+~~~javascript~~~
+var server = require('http').createServer();
+var io = require('socket.io')(server);
+
+var players = [];
+
+function Player (id) {
+    this.id = id;
+    this.x = 0;
+    this.y = 0;
+    this.z = 0;
+    this.entity = null;
+    this.deleted = false;
+}
+
+io.sockets.on('connection', function(socket) {
+	socket.on ('initialize', function () {
+	        var idNum = players.length;
+	        var newPlayer = new Player (idNum);
+	        players.push (newPlayer);
+	        
+	        socket.emit ('playerData', {id: idNum, players: players});
+	        socket.broadcast.emit ('playerJoined', newPlayer);
+	});
+	    
+	socket.on ('positionUpdate', function (data) {
+	        players[data.id].x = data.x;
+	        players[data.id].y = data.y;
+	        players[data.id].z = data.z;
+	        
+		socket.broadcast.emit ('playerMoved', data);
+	});
+});
+
+console.log ('Server started.');
+server.listen(3000);
+~~~
 
 [1]: /images/tutorials/multiplayer/socket_installed.png
 [2]: /images/tutorials/multiplayer/server_started.png
