@@ -302,7 +302,9 @@ socket.on ('positionUpdate', function (data) {
 });
 ~~~
 
-And that's about it! If you'd like, try adding some of these ideas on your own:
+## Conclusion
+
+That's about it! If you'd like, try adding some of these ideas on your own:
 * Players are removed when they close the game.
 * Clients only send the server their position when they're moving.
 
@@ -380,7 +382,7 @@ pc.script.create('Network', function (app) {
         updatePosition: function () {
             if (this.initialized) {    
                 var pos = this.player.getPosition ();
-                socket.emit ('positionUpdate', {id: this.id, x: pos.x, y: pos.y, z: pos.z});
+                socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
             }
         }
     };
