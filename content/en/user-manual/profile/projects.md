@@ -16,6 +16,10 @@ Click on the NEW button on the top right to create a new project.
 
 Click on the arrow next to a project and select Delete to permantently delete it from your account.
 
+## Unlock Project
+
+Click on the arrow next to a project and select Unlock to unlock a *locked* project. This will make the project public.
+
 ## Export Project
 
 If you have an ORG plan, you can export a .zip archive of your project. You can later choose to import that .zip archive as a new project. You can use this mechanism to backup your projects on your machine.
@@ -27,5 +31,6 @@ To export a project click on the arrow next to a project and select Export.
 If you have an ORG plan you can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
 
 Click on Import Project on the left hand side of the Projects page and select the zip file to import it.
+
 
 [1]: /images/platform/profile.png "Projects"
