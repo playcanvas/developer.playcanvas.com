@@ -18,7 +18,7 @@ This will bring up the following popup:
 
 <img src="/images/user-manual/orgs/new_org_popup.png" alt="Organization popup" style="border: 1px solid #ccc">
 
-Enter the name for the Organization and a username. The default e-mail address is your own but you can change it to a different one.
+Enter the name for the Organization and an Organization ID which is a string with only alphanumeric characters and dashes allowed. The default e-mail address is your own but you can change it to a different one.
 
 Click CREATE and that will take you to the [profile][2] page of the Organization.
 
