@@ -662,6 +662,7 @@
                 text-align: center;
                 width: 33%;
                 font-size: 14px;
+                margin-bottom: 25px;
 
                 span {
                     float: left;
@@ -678,6 +679,12 @@
                         text-decoration: none;
                     }
                 }
+            }
+
+            .alert {
+                clear: both;
+                margin-bottom: 25px;
+                text-align: center;
             }
         }
 
