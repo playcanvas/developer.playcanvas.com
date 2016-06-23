@@ -56,7 +56,7 @@ You can find out more about the Sound Component API [here][8].
 
 [1]: https://playcanvas.com/editor/scene/403361
 [2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
+[3]: /tutorials/legacy/beginner/basic-audio
 [4]: /user-manual/packs/components/script
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode

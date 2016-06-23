@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 10
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 *You can find the [full project here][3]*
 
 In this series of tutorials we're going to show you how a complete game is made using PlayCanvas. We've made a simple "Keepy Up" game where the object is to click or tap on the soccer ball to keep it in the air.
@@ -72,4 +72,4 @@ The UI Entity is the parent of several other Entities, one for each screen that 
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
 [2]: /tutorials/beginner/keepyup-part-two
-[3]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
+[3]: https://playcanvas.com/project/406050

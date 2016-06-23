@@ -190,12 +190,12 @@ pc.script.create('DynamicBody', function (app) {
 [3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
 [4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
 [5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[7]: /tutorials/beginner/manipulating-entities/
+[7]: /tutorials/legacy/beginner/manipulating-entities/
 [6]: /engine/api/stable/symbols/pc.Vec3.html
 [7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
 [8]: /engine/api/stable/symbols/pc.CollisionComponent.html
 [9]: /engine/api/stable/symbols/pc.html
-[10]: /tutorials/intermediate/collision-and-triggers/
-[11]: /tutorials/advanced/fps-controller/
+[10]: /tutorials/legacy/intermediate/collision-and-triggers/
+[11]: /tutorials/legacy/advanced/fps-controller/
 [12]: https://playcanvas.com/project/186/overview/tutorials
 

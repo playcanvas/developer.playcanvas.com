@@ -45,23 +45,23 @@ For instructions in displaying 2D images see [our GitHub sprites page][19] and f
 [2]: /tutorials/video
 [3]: https://playcanvas.com/project/186/overview/tutorials
 
-[4]: /tutorials/beginner/keyboard-input
-[5]: /tutorials/beginner/mouse-input
-[6]: /tutorials/beginner/basic-cameras
-[7]: /tutorials/beginner/basic-audio
-[8]: /tutorials/beginner/basic-materials
-[9]: /tutorials/beginner/manipulating-entities
+[4]: /tutorials/legacy/beginner/keyboard-input
+[5]: /tutorials/legacy/beginner/mouse-input
+[6]: /tutorials/legacy/beginner/basic-cameras
+[7]: /tutorials/legacy/beginner/basic-audio
+[8]: /tutorials/legacy/beginner/basic-materials
+[9]: /tutorials/legacy/beginner/manipulating-entities
 
-[10]: /tutorials/intermediate/animation-blending
-[11]: /tutorials/intermediate/more-cameras
-[12]: /tutorials/intermediate/first-person-camera
-[13]: /tutorials/intermediate/collision-and-triggers
-[14]: /tutorials/intermediate/using-assets
+[10]: /tutorials/legacy/intermediate/animation-blending
+[11]: /tutorials/legacy/intermediate/more-cameras
+[12]: /tutorials/legacy/intermediate/first-person-camera
+[13]: /tutorials/legacy/intermediate/collision-and-triggers
+[14]: /tutorials/legacy/intermediate/using-assets
 
-[16]: /tutorials/advanced/fps-controller
-[15]: /tutorials/advanced/programmatically-creating
-[17]: /tutorials/advanced/custom-shaders
-[18]: /tutorials/advanced/custom-posteffect
+[16]: /tutorials/legacy/advanced/fps-controller
+[15]: /tutorials/legacy/advanced/programmatically-creating
+[17]: /tutorials/legacy/advanced/custom-shaders
+[18]: /tutorials/legacy/advanced/custom-posteffect
 
 [19]: https://github.com/playcanvas/sprites
 [20]: https://github.com/playcanvas/fonts

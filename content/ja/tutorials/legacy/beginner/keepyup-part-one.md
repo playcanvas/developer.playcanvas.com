@@ -71,6 +71,6 @@ UIエンティティはいくつかのエンティティの親エンティティ
 [チュートリアルその2][2]ではメインのゲームスクリプトについて説明します。
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[2]: /tutorials/legacy/beginner/keepyup-part-two
 [3]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
 

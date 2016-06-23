@@ -161,7 +161,7 @@ pc.script.create('first_person_camera', function (app) {
 [3]: /user-manual/scripting/
 [4]: https://playcanvas.com/project/186/code
 [5]: /engine/api/stable/symbols/pc.MouseEvent.html
-[6]: /tutorials/beginner/manipulating-entities/
+[6]: /tutorials/legacy/beginner/manipulating-entities/
 
 [1]: /images/tutorials/first_person_camera_pack.png
 

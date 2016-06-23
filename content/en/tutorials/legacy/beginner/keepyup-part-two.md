@@ -78,7 +78,7 @@ The overlay material is even simpler than the backdrop. In this case all we are 
 
 Continue on to [Part 3][15].
 
-[1]: /tutorials/beginner/keepyup-part-one
+[1]: /tutorials/legacy/beginner/keepyup-part-one
 [2]: http://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
@@ -92,5 +92,5 @@ Continue on to [Part 3][15].
 [12]: /images/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
-[15]: /tutorials/beginner/keepyup-part-three
+[15]: /tutorials/legacy/beginner/keepyup-part-three
 [16]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up

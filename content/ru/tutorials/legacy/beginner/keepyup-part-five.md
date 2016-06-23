@@ -54,11 +54,11 @@ Using the Local Velocity graph in the Particle Effect editor, the particle effec
 
 Continue on to [Part 6][6].
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
-[6]: /tutorials/beginner/keepyup-part-six
+[1]: /tutorials/legacy/beginner/keepyup-part-one
+[2]: /tutorials/legacy/beginner/keepyup-part-two
+[3]: /tutorials/legacy/beginner/keepyup-part-three
+[4]: /tutorials/legacy/beginner/keepyup-part-four
+[6]: /tutorials/legacy/beginner/keepyup-part-six
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
 [9]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up

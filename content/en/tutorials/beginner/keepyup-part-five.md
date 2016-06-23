@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 14
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
 *You can find the [full project here][9]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3] and [Part 4][4] read them first.*
 
@@ -62,4 +62,4 @@ Continue on to [Part 6][6].
 [6]: /tutorials/beginner/keepyup-part-six
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
-[9]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
+[9]: https://playcanvas.com/project/406050

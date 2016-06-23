@@ -132,7 +132,7 @@ pc.script.create('camera_manager', function (app) {
 
 次に、キーをループして、そのうちの一つが押されるとエンティティを名前から探し、以前にスクリプトで定義した、現在のアクティブなカメラを無効にして有効にする次のカメラを探す`setCamera()` 関数を使用して現在のカメラに設定します。
 
-[1]: /tutorials/beginner/basic-cameras/
+[1]: /tutorials/legacy/beginner/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/329672
 

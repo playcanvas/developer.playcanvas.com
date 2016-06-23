@@ -281,8 +281,8 @@ Once we have the the 3D point where we've just tapped, we test to see if it is o
 
 If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball script we pass in the distance from the ball where the tap occurred. We'll use that in the [Part 4][3].
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/legacy/beginner/keepyup-part-one
+[2]: /tutorials/legacy/beginner/keepyup-part-two
+[3]: /tutorials/legacy/beginner/keepyup-part-four
 [4]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
 
