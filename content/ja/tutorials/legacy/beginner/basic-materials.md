@@ -1,6 +1,6 @@
 ---
 title: 基本的な素材
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 Material（素材）は3Dモデルの表面の外見を定義します。多角形の色の変更などのシンプルな設定も可能ですし、海の表面やガラスを通り抜ける光の再現などの複雑な設定もできます。

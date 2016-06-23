@@ -1,6 +1,6 @@
 ---
 title: Basic Audio
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/OCjXz0bh" ></iframe>

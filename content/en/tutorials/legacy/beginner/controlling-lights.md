@@ -1,6 +1,6 @@
 ---
 title: Controlling Lights
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 
 ---
 

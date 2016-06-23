@@ -1,6 +1,6 @@
 ---
 title: ForceとImpulse
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 
 ---
 

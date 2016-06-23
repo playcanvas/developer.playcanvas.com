@@ -1,6 +1,6 @@
 ---
 title: Collision and Triggers
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/collision_and_triggers?overlay=false"></iframe>

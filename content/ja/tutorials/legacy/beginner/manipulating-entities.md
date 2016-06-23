@@ -1,6 +1,6 @@
 ---
 title: エンティティの操作
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 このチュートリアルではエンティティの位置、方向、尺度を変更する方法を紹介します。

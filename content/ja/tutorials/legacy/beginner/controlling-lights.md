@@ -1,6 +1,6 @@
 ---
 title: ライトの操作
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 
 ---
 

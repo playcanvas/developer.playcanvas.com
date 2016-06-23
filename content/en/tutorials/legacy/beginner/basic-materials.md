@@ -1,6 +1,6 @@
 ---
 title: Basic Materials
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.

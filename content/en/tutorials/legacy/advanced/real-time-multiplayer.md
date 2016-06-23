@@ -1,6 +1,6 @@
 ---
 title: Real Time Multiplayer
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/OGC9kOyH" ></iframe>
@@ -25,7 +25,7 @@ It should take a few seconds. When it's done, you should have Node.js and Socket
 ![Socket Installed][1]
 
 Next, we’ll need to create a server file. Open up a text editor and type in the following:
-	
+
 ~~~javascript~~~
 var server = require('http').createServer();
 var io = require(‘socket.io')(server);
@@ -72,7 +72,7 @@ this.socket.emit (‘playerJoined’, ‘John’);
 ~~~
 
 This emits a message called ‘playerJoined’, with the data ‘John’. For the server to receive the message, we need to write in the server file:
-	
+
 ~~~javascript~~~
 socket.on (‘playerJoined’, function (name) {
 	console.log (name);
@@ -108,14 +108,14 @@ pc.script.create('Movement', function (app) {
 		update: function (dt) {
 			var forward = this.entity.forward;
 			var right = this.entity.right;
-            
+
 			var x = 0;
 			var z = 0;
-            
+
 			if (app.keyboard.isPressed(pc.KEY_A)) {
 				x -= right.x;
 				z -= right.z;
-			}		
+			}
 
 			if (app.keyboard.isPressed(pc.KEY_D)) {
 				x += right.x;
@@ -131,11 +131,11 @@ pc.script.create('Movement', function (app) {
 				x -= forward.x;
 				z -= forward.z;
 			}
-                
+
 			if (x !== 0 || z !== 0) {
 				x *= dt;
 				z *= dt;
-                
+
 				this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed));
 				this.entity.rigidbody.applyForce (this.force);
 			}
@@ -172,7 +172,7 @@ io.sockets.on('connection', function(socket) {
 
 		players.push (newPlayer);
 		// Adds the newly created player to the array.
-			
+
 		socket.emit (‘playerData’, {id: idNum, players: players});
 		// Sends the connecting client his unique ID, and data about the other players already connected.
 
@@ -191,7 +191,7 @@ In the code above, when a player sends the message 'initialize', we send him his
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
-	
+
 	this.player = app.root.findByName ('Player');
 	this.other = app.root.findByName ('Other');
 
@@ -199,7 +199,7 @@ initialize: function () {
 	socket.on ('playerData', function (data) {
 		self.initializePlayers (data);
 	});
-	
+
 	socket.on ('playerJoined', function (data) {
 		self.addPlayer (data);
 	});
@@ -208,17 +208,17 @@ initialize: function () {
 initializePlayers: function (data) {
 	self.players = data.players;
 	// Create a player array and populate it with the currently connected players.
-		
+
 	this.id = data.id
 	// Keep track of what ID number you are.
-		
+
 	for (i = 0; i < this.players.length; i++) {
 		if (i !== this.id) {
 			this.players[i].entity = this.createPlayerEntity (data.players[i]);
 		}
 	}
 	// For every player already connected, create a new capsule entity.
-	
+
 	this.initialized = true;
 	// Mark that the client has received data from the server.
 }
@@ -226,17 +226,17 @@ initializePlayers: function (data) {
 createPlayerEntity: function (data) {
 	var newPlayer = this.other.clone ();
 	// Create a new player entity.
-	
+
 	newPlayer.enabled = true;
 	// Enable the newly created player.
-            
+
 	this.other.getParent ().addChild (newPlayer);
 	// Add the entity to the entity hierarchy.
-            
+
 	if (data)
 		newPlayer.rigidbody.teleport (data.x, data.y, data.z);
 	// If a location was given, teleport the new entity to the position of the connected player.
-            
+
 	return newPlayer;
 	// Return the new entity.
 },
@@ -253,7 +253,7 @@ Now when we join the game, the client tells the server we've connected, and the 
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
-	
+
 	this.player = app.root.findByName ('Player');
 	this.other = app.root.findByName ('Other');
 
@@ -261,11 +261,11 @@ initialize: function () {
 	socket.on ('playerData', function (data) {
 		self.initializePlayers (data);
 	});
-	
+
 	socket.on ('playerJoined', function (data) {
 		self.addPlayer (data);
 	});
-	
+
 	socket.on ('playerMoved', function (data) {
 		self.movePlayer (data);
 	});
@@ -279,9 +279,9 @@ movePlayer: function (data) {
 update: function (dt) {
 	this.updatePosition ();
 },
-        
+
 updatePosition: function () {
-	if (this.initialized) {    
+	if (this.initialized) {
 		var pos = this.player.getPosition ();
 		socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
 	}
@@ -295,7 +295,7 @@ socket.on ('positionUpdate', function (data) {
 	players[data.id].x = data.x;
 	players[data.id].y = data.y;
 	players[data.id].z = data.z;
-        
+
 	socket.broadcast.emit ('playerMoved', data);
 });
 ~~~
@@ -321,24 +321,24 @@ pc.script.create('Network', function (app) {
         initialize: function () {
             this.player = app.root.findByName ('Player');
             this.other = app.root.findByName ('Other');
-            
+
             socket = io.connect('http://58.172.79.85:3000/');
             socket.emit ('initialize');
-            
+
             var self = this;
             socket.on ('playerData', function (data) {
                 self.initializePlayers (data);
             });
-            
+
             socket.on ('playerJoined', function (data) {
                 self.addPlayer (data);
             });
-            
+
             socket.on ('playerMoved', function (data) {
                 self.movePlayer (data);
             });
         },
-        
+
         initializePlayers: function (data) {
             this.players = data.players;
             this.id = data.id;
@@ -351,36 +351,36 @@ pc.script.create('Network', function (app) {
 
             this.initialized = true;
         },
-        
+
         addPlayer: function (data) {
             this.players.push (data);
             this.players[this.players.length - 1].entity = this.createPlayerEntity ();
         },
-        
+
         movePlayer: function (data) {
             if (this.initialized) {
                 this.players[data.id].entity.rigidbody.teleport (data.x, data.y, data.z);
             }
         },
-        
+
         createPlayerEntity: function (data) {
             var newPlayer = this.other.clone ();
             newPlayer.enabled = true;
-            
+
             this.other.getParent ().addChild (newPlayer);
-            
+
             if (data)
                 newPlayer.rigidbody.teleport (data.x, data.y, data.z);
-            
+
             return newPlayer;
         },
-        
+
         update: function (dt) {
             this.updatePosition ();
         },
-        
+
         updatePosition: function () {
-            if (this.initialized) {    
+            if (this.initialized) {
                 var pos = this.player.getPosition ();
                 socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
             }
@@ -412,16 +412,16 @@ io.sockets.on('connection', function(socket) {
 	        var idNum = players.length;
 	        var newPlayer = new Player (idNum);
 	        players.push (newPlayer);
-	        
+
 	        socket.emit ('playerData', {id: idNum, players: players});
 	        socket.broadcast.emit ('playerJoined', newPlayer);
 	});
-	    
+
 	socket.on ('positionUpdate', function (data) {
 	        players[data.id].x = data.x;
 	        players[data.id].y = data.y;
 	        players[data.id].z = data.z;
-	        
+
 		socket.broadcast.emit ('playerMoved', data);
 	});
 });

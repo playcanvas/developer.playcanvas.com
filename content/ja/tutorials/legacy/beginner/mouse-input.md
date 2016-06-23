@@ -1,6 +1,6 @@
 ---
 title: 基本的なマウス入力
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 position: 2
 ---
 

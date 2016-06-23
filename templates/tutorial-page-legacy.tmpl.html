@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    {{> head}}
+
+    <body>
+        {{> header header-icon="&#57874;" header-title="Tutorials"}}
+        {{> tutorial-navbar-legacy}}
+
+        <div class="container content-width">
+            {{> tutorials-navigation-legacy}}
+            <main>
+                <h1>{{ title }}</h1>
+                {{{ contents }}}
+            </main>
+        </div>
+
+        {{> scripts}}
+        {{> analytics}}
+        {{> footer}}
+    </body>
+</html>

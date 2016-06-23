@@ -1,6 +1,6 @@
 ---
 title: Using the Asset Registry
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/abEsrnCw"></iframe>

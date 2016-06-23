@@ -1,6 +1,6 @@
 ---
 title: Animated Textures
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/qFDE1q2H"></iframe>

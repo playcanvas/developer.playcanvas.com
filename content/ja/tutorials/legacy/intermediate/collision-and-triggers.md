@@ -1,6 +1,6 @@
 ---
 title: 当たり判定とトリガー
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/collision_and_triggers?overlay=false"></iframe>

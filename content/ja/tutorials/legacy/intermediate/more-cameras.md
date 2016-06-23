@@ -1,6 +1,6 @@
 ---
 title: その他のカメラ
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 position: 3
 ---
 

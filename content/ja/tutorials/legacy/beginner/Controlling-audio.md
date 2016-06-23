@@ -1,6 +1,6 @@
 ---
 title: オーディオの操作
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 
 ---
 
@@ -32,7 +32,7 @@ this.entity.audiosource.stop();
 </div>
 
 ##一般的な設定
-音声ファイルを.mp3 形式でアップロード (.ogg ファイルも使えます)。球体が作成され、audiosourceコンポーネントが添付される。音声ファイルがaudiosource設定内のアセットリストに追加された。audiosource設定のアクティベートオプションが無効になったので、読み込みと同時にファイルが再生されなくなった。デフォルトカメラにaudiolistenerコンポーネントが追加された。controllingAudioシーンの[完全なEditorシーンやスクリプトにアクセス][2]。 
+音声ファイルを.mp3 形式でアップロード (.ogg ファイルも使えます)。球体が作成され、audiosourceコンポーネントが添付される。音声ファイルがaudiosource設定内のアセットリストに追加された。audiosource設定のアクティベートオプションが無効になったので、読み込みと同時にファイルが再生されなくなった。デフォルトカメラにaudiolistenerコンポーネントが追加された。controllingAudioシーンの[完全なEditorシーンやスクリプトにアクセス][2]。
 
 <img src="/images/tutorials/audio/audiosource-settings.jpg" />
 

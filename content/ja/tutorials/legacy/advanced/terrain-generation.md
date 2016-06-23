@@ -1,6 +1,6 @@
 ---
 title: ハイトマップから地形生成
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 position: 5
 ---
 

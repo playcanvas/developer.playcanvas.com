@@ -1,6 +1,6 @@
 ---
 title: Manipulating Entities
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 In this tutorial we'll show you how you can change an Entity's position, orientation and scale.

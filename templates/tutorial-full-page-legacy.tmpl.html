@@ -4,12 +4,12 @@
 
     <body>
         {{> header header-icon="&#57874;" header-title="Tutorials"}}
-        {{> tutorial-navbar}}
+        {{> tutorial-navbar-legacy}}
 
         {{#if en}}
         <div class="container content-width">
             <main class="full-width">
-                {{#with tutorials-navigation}}
+                {{#with tutorials-navigation-legacy}}
                     {{#with en}}
                         <div class="tutorial-tag-cloud">
                             <h1>{{#i18n}}Beginners{{/i18n}}</h1>
@@ -45,7 +45,7 @@
         {{#if ja}}
         <div class="container content-width">
             <main class="full-width">
-                {{#with tutorials-navigation}}
+                {{#with tutorials-navigation-legacy}}
                     {{#with ja}}
                         <div class="tutorial-tag-cloud">
                             <h1>{{#i18n}}Beginners{{/i18n}}</h1>
@@ -80,7 +80,7 @@
         {{#if ru}}
         <div class="container content-width">
             <main class="full-width">
-                {{#with tutorials-navigation}}
+                {{#with tutorials-navigation-legacy}}
                     {{#with ru}}
                         <div class="tutorial-tag-cloud">
                             <h1>{{#i18n}}Beginners{{/i18n}}</h1>
@@ -115,7 +115,7 @@
         {{#if zh}}
         <div class="container content-width">
             <main class="full-width">
-                {{#with tutorials-navigation}}
+                {{#with tutorials-navigation-legacy}}
                     {{#with zh}}
                         <div class="tutorial-tag-cloud">
                             <h1>{{#i18n}}Beginners{{/i18n}}</h1>

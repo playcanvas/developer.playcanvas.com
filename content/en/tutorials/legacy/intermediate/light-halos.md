@@ -1,6 +1,6 @@
 ---
 title: Light Halos
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/KxohYUqg"></iframe>

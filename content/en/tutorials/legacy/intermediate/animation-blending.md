@@ -1,6 +1,6 @@
 ---
 title: Animation Blending
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/animation_blend?overlay=false" ></iframe>

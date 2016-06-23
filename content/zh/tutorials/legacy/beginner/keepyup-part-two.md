@@ -1,6 +1,6 @@
 ---
 title: Making a Simple Game - Part 2
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 position: 11
 ---
 

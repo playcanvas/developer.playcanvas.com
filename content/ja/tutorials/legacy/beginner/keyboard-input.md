@@ -1,6 +1,6 @@
 ---
 title: 基本的なキーボード入力
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 position: 1
 ---
 

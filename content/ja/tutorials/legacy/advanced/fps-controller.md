@@ -1,6 +1,6 @@
 ---
 title: FPS Character Controller
-template: tutorial-page.tmpl.html
+template: tutorial-page-legacy.tmpl.html
 position: 1
 ---
 
