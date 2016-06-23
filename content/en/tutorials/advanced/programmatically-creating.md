@@ -132,7 +132,7 @@ pc.script.create('entity_creator', function (app) {
                 type: 'box'
             });
             var red = app.assets.getAssetByResourceId(this.materials[0]).resource;
-            entity.model.model.meshInstances[0].material = red;
+            entity.model.meshInstances[0].material = red;
 
             // Move to a random position
             entity.setLocalPosition(

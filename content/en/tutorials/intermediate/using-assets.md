@@ -3,7 +3,7 @@ title: Using the Asset Registry
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/abEsrnCw"></iframe>
+<iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
 
 *Click to focus, press SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Press 'C' to display the C model.*
 
@@ -24,23 +24,11 @@ In this tutorial, we'll build a small scene which lets you swap the model on a m
 
 Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
 
-## Searching the AssetRegistry
+## The AssetRegistry
 
-First let's look at the initialize method which searches the `pc.AssetRegistry` for the assets we need.
+The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
 
-```javascript
-initialize: function () {
-    // get assets from the asset registry
-    this.a = app.assets.get(this.aAsset);
-    this.b = app.assets.get(this.bAsset);
-    this.c = app.assets.get(this.cAsset);
-
-    // prevent the page scrolling when we press space.
-    app.keyboard.preventDefault = true;
-}
-```
-
-The [`pc.AssetRegistry`][1] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we've declared three script attributes `aAsset`, `bAsset` and `cAsset` which are assigned to assets in the Editor. We then use the script attributes to find the assets from the registry.
+In this case we've declared three script attributes `a`, `b` and `c` which are assigned to assets in the Editor. Then they are automatically available in our script.
 
 ## Using preloaded assets
 
@@ -66,7 +54,7 @@ So, the `A` and `B` models are preloaded, which means we know they will be ready
 ## Loading assets at runtime
 
 ```javascript
-if (app.keyboard.isPressed(pc.KEY_C)) {
+if (this.app.keyboard.isPressed(pc.KEY_C)) {
     if (this.c.resource) {
         if (this.entity.model.model !== this.c.resource) {
             this.entity.model.model = this.c.resource;
@@ -82,70 +70,75 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 The **C** model is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.resource` is empty, then the resource isn't loaded and we can't change the model component. If the **C** model is loaded then `this.c.resource` will be the `pc.Model` property and we'll be able to assign it.
 
 ```javascript
-if (app.keyboard.isPressed(pc.KEY_L)) {
-    app.assets.load(this.c);
+if (this.app.keyboard.isPressed(pc.KEY_L)) {
+    this.app.assets.load(this.c);
 }
 ```
 
-When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `app.assets.load()`. If the asset is already loaded, this method will do nothing.
+When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `this.app.assets.load()`. If the asset is already loaded, this method will do nothing.
 
 Once the asset is loaded `asset.resource` will be a `pc.Model` instance and we can assign it by pressing the `C` key.
 
 ## The complete script
 
 ```javascript
-pc.script.create('update_asset', function (app) {
-    // Creates a new Update_asset instance
-    var Update_asset = function (entity) {
-        this.entity = entity;
-    };
+var UpdateAsset = pc.createScript('updateAsset');
 
-    Update_asset.prototype = {
-        initialize: function () {
-            // get assets from the asset registry
-            this.a = app.assets.find("A");
-            this.b = app.assets.find("B");
-            this.c = app.assets.find("C");
+UpdateAsset.attributes.add('a', {
+    type: 'asset',
+    assetType: 'model'
+});
 
-            app.keyboard.preventDefault = true;
-        },
+UpdateAsset.attributes.add('b', {
+    type: 'asset',
+    assetType: 'model'
+});
 
-        update: function (dt) {
-            if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-                if (this.entity.model.model !== this.b.resource) {
-                    // update the model component to the new model
-                    this.entity.model.model = this.b.resource;
+UpdateAsset.attributes.add('c', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+// initialize code called once per entity
+UpdateAsset.prototype.initialize = function() {
+    this.app.keyboard.preventDefault = true;
+};
+
+// update code called every frame
+UpdateAsset.prototype.update = function(dt) {
+    var app = this.app;
+
+    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+        if (this.entity.model.model !== this.b.resource) {
+            // update the model component to the new model
+            this.entity.model.model = this.b.resource;
+        }
+    } else {
+        if (this.entity.model.model !== this.a.resource) {
+            // restore original model
+            this.entity.model.model = this.a.resource;
+        }
+
+        if (app.keyboard.isPressed(pc.KEY_C)) {
+            if (this.c.resource) {
+                if (this.entity.model.model !== this.c.resource) {
+                    this.entity.model.model = this.c.resource;
                 }
-            } else {
-                if (this.entity.model.model !== this.a.resource) {
-                    // restore original model
-                    this.entity.model.model = this.a.resource;
-                }
-
-                if (app.keyboard.isPressed(pc.KEY_C)) {
-                    if (this.c.resource) {
-                        if (this.entity.model.model !== this.c.resource) {
-                            this.entity.model.model = this.c.resource;
-                        }
-                    }
-                } else {
-                    if (this.entity.model.model !== this.a.resource) {
-                        this.entity.model.model = this.a.resource;
-                    }
-                }
-
-
             }
-
-
-            if (app.keyboard.isPressed(pc.KEY_L)) {
-                app.assets.load(this.c);
+        } else {
+            if (this.entity.model.model !== this.a.resource) {
+                this.entity.model.model = this.a.resource;
             }
         }
-    };
 
-    return Update_asset;
-});
+
+    }
+
+
+    if (app.keyboard.isPressed(pc.KEY_L)) {
+        app.assets.load(this.c);
+    }
+};
 ```
 
 ## AssetRegistry events
@@ -154,9 +147,9 @@ One thing we don't demonstrate in this example is how to know when an asset is l
 
 ```javascript
 // find the asset in the registry
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 // set up a one-off event listener for the load event
-app.assets.once("load", function (asset) {
+this.app.assets.once("load", function (asset) {
     // asset.resource is now ready
 }, this);
 ```
@@ -165,9 +158,9 @@ The `"load"` event is quite broad. It is fired for every asset that is loaded, s
 
 ```javascript
 // find the asset in the registry
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 // set up a one-off event listener for the load event
-app.assets.once("load:" + asset.id, function (asset) {
+this.app.assets.once("load:" + asset.id, function (asset) {
     // asset.resource is now ready
 }, this);
 ```
@@ -177,12 +170,12 @@ The above event will only be fired for that specific asset. Much more useful.
 Finally, there is one specific coding pattern, that often occurs. So often, in fact, that we've provided a convenient method to do it for you.
 
 ```javascript
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 if (!asset.resource) {
-    app.assets.once("load:" + asset.id, function (asset) {
+    this.app.assets.once("load:" + asset.id, function (asset) {
         // do something with asset.resource
     });
-    app.assets.load(asset);
+    this.app.assets.load(asset);
 } else {
     // do something with asset.resource
 }
@@ -192,17 +185,17 @@ This code loads an asset when it is needed, but it's a bit long winded. So, inst
 
 
 ```javascript
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
     // do something with asset.resource
 });
-app.assets.load(asset);
+this.app.assets.load(asset);
 ```
 
 The `asset.ready()` method will call it's callback as soon as the asset is loaded, if the asset is already loaded, it will call it straight away. `app.assets.load()` does nothing if the asset is already loaded.
 
 [1]: /en/api/pc.AssetRegistry.html
-[3]: https://playcanvas.com/project/349519/overview/tutorial-asset-registry
+[3]: https://playcanvas.com/project/406036
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
