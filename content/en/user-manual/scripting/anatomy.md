@@ -1,177 +1,121 @@
 ---
-title: Anatomy of a Script
+title: Anatomy of a script
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
-~~~js~~~
-pc.script.create("script_name", function (app) {
-    var ScriptObject = function (entity) {
-        this.entity = entity;
-    };
+Here is a basic script. We can learn about the basic structure of a PlayCanvas script from it.
 
-    ScriptObject.prototype = {
-        initialize: function () {
 
-        },
+```javascript
+var Rotate = pc.createScript('rotate');
 
-        update: function (dt) {
+Rotate.attributes.add("speed", {type: "number", default: 10});
 
-        }
-    };
+// initialize code called once per entity
+Rotate.prototype.initialize = function() {
+    // local rotation or world rotation
+    this.local = false;
+};
 
-    return ScriptObject;
-});
-~~~
-*A skeleton script*
-
-Here is the skeleton of a script, it shows the minimum amount of code necessary to make a functioning script.
-
-<div class="alert alert-info">
-Actually, you could leave the `initialize` and `update` methods out of a script. But most scripts will need an update method in order to actually do anything, and initialize is useful for setting up values before your game starts.
-</div>
-
-We'll break down each part of this script section by section.
-
-## Declaration and Application
-
-~~~js~~~
-pc.script.create("script_name", function(app) {
-    //...
-});
-~~~
-
-Enclosing the whole script is a call to `pc.script.create`. The first argument is the script name, this is used to identify this script later if you wish to communicate between script instances. The second argument is a function which is used to define the class that provides the script's behaviour.
-
-The definition function takes a single argument `app` which is the [`Application`][1] instance.
-
-The `app` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
-
-* `systems` Container for all Component systems, e.g. `app.systems.model` is the Model Component System
-* `root` The root node of the Entity hierarchy.
-* `keyboard` An instance of `pc.Keyboard`
-* `mouse` An instance of `pc.Mouse`
-* `scene` An instance of `pc.Scene`
-* `assets` An instance of `pc.AssetRegistry` for loading and accessing assets
-
-See the [API Reference][2] for more details on the pc.Application object.
-
-## Defining the Script object
-
-~~~js~~~
-pc.script.create("script_name", function (app) {
-    var ScriptObject = function (entity) {
-        this.entity = entity;
+// update code called every frame
+Rotate.prototype.update = function(dt) {
+    if (this.local) {
+        this.entity.rotateLocal(0, tihs.speed*dt, 0);
+    } else {
+        this.entity.rotate(0, this.speed*dt, 0);
     }
 
-    ScriptObject.prototype = {
-        initialize: function () {
+};
 
-        },
+// swap method called for script hot-reloading
+// inherit your script state here
+Rotate.prototype.swap = function(old) {
+    this.local = old.local;
+};
+```
 
-        update: function (dt) {
+We'll break down each section of the script
 
-        }
-    };
+# Script Methods
 
-    return ScriptObject;
-})
-~~~
+## Declaration of Script Type
 
-The purpose of the function in the second argument is to define a Script object and return that definition so that the engine can instantiate a new instance for each Entity.
+```javascript
+var Rotate = pc.createScript('rotate');
+```
 
-Here you can see the basic set up. A variable `ScriptObject` is declared as a constructor function which takes the Entity it is attached to as it's only argument. It is usually useful to store this Entity in the instance for use later on, hence the line `this.entity = entity;` You will often create member variables for your object here too.
+This line creates a new script type called 'rotate'. The name of the script is used to identify the script in script components. Each script type that is declared in a project must have a unique name. The returned object `Rotate` is a javascript object which is ready to have it's prototype extended with a standard set of methods. Somewhat like class inheritance.
 
-Next we define the initialize and update functions. `initialize()` is called once for each Script Instance. It is called after all Entities are loaded (so that the Entity hierarchy in `app.root` is valid) but before any `update()` methods are called.
-`update()` is the update loop for our script. The Script Component system will call the update function every frame with the time in seconds that passed since the last update in the variable `dt`. Note, that both these function are optional and should be left out if they are not being used.
+## Script Attributes
 
-Finally, we return the `ScriptObject` variable.
+```javascript
+Rotate.attributes.add("speed", {type: "number", default: 10});
+```
 
-## A complete example
+This line declares a script attribute which is a property of the script instance that is exposed into the Editor. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
 
-Here is a complete script, try saving it to a file and attaching it to an Entity in a pack.
+## Initialize
 
-~~~js~~~
-///
-// This script moves the entity backwards and forwards on the x-axis.
-// You can pause the oscillation by pressing the space bar.
-///
-pc.script.create('oscillator', function (app) {
+```javascript
+// initialize code called once per entity
+Rotate.prototype.initialize = function() {
+    // local rotation or world rotation
+    this.local = false;
+};
+```
 
-    // define the constructor
-    var Oscillator = function (entity) {
-        this.entity = entity;
+The `initialize` method is called on each entity after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is called once for each entity. You can use it to set up member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
 
-        this.paused = false; // paused state
-        this.amplitude = 10; // The amount to oscillate
-        this.time = 0; // The time value for the oscillation
-    };
+## Update
 
-    // define the update function
-    Oscillator.prototype = {
-        update: function (dt) {
+```javascript
+// update code called every frame
+Rotate.prototype.update = function(dt) {
+    if (this.local) {
+        this.entity.rotateLocal(0, tihs.speed*dt, 0);
+    } else {
+        this.entity.rotate(0, this.speed*dt, 0);
+    }
 
-            // Use the keyboard handler from the Application
-            // to pause/unpause
-            if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
-                this.paused = !this.paused; // toggle paused state
-            }
+};
+```
 
-            if (!this.paused) {
-                // increment the time value by the frametime
-                this.time += dt;
+The update method is called for each entity every frame while the entity, the script component and the script instance are enabled. Each frame `update` is passed the time in seconds since the last frame.
 
-                // Calculate the new value
-                var x = this.amplitude * Math.sin(this.time);
+## Swap
 
-                // Update the x position of the Entity
-                this.entity.setLocalPosition(x, 0, 0);
-            }
-        }
-    };
+```javascript
+// swap method called for script hot-reloading
+// inherit your script state here
+Rotate.prototype.swap = function(old) {
+    this.local = old.local;
+};
+```
 
-    // return the class definition
-    return Oscillator;
-});
-~~~
+The `swap` method is called when ever a script is changed at runtime from the editor. This method allows you to support live editing of code whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up.
 
-## Built-in script methods
+The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
 
-Here is a list of all methods of a Script that are called by the engine if they exist, in the order that they are called.
+If you do not wish to support hot-swapping of code you can delete the swap method and the engine will not attempt to refresh the script.
 
-`initialize()`
+## Additional Methods: postInitialize and postUpdate
 
-This is the first method called on a script after all Entities are loaded and its called only once. Use it for initialization.
+There are two more methods that are called by the engine on scripts if they are present. `postInitialize` is called on all scripts that implement it after all scripts have been initialized. Use this method to perform functions that can assume all scripts are initialized. `postUpdate` is an update method that is called after all scripts have been updated. Use this to perform functions that can assume that all scripts have been update. For example, cameras tracking another entity should update their position in `postUpdate` so that the other entity has completed its motion for the frame.
 
-`onEnable()`
+# Events
 
-Called whenever the Script Component that this script is attached to or its Entity get enabled. Also called right after the `initialize` method. Use this for things that should happen every time the Script Component or Entity get enabled.
+Script instances fire a number of events that can be used to respond to specific circumstances.
 
-`postInitialize()`
+## state, enable, disable
 
-Called only once after `onEnable`. Use this to order initialization of different scripts for example you might want some scripts to initialize after a different script has been initialized.
+The `state` event is fired when the script instance changes state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
 
-`update(dt)`
+## destroy
 
-Called every frame with the time in seconds that passed since the last update in the variable `dt`. Use this for things that should run continuously like moving objects, applying forces, checking for input etc. If you don't need an update method then delete it for better performance.
+The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method or because the Entity it was attached to was destroyed.
 
-`postUpdate(dt)`
+## attr & attr:[name]
 
-Called every frame after the `update` method with the same `dt` as the `update` method. Use this to perform actions needed after the `update` step, for example Camera scripts that follow Entities should be moved in `postUpdate` because they might be tracking Entities that have moved in `update`.
-
-`onDisable()`
-
-Called when the Script Component that this script is attached to or its Entity get disabled. Also called right before the `destroy` method. Use this for things that should happen every time the Script Component or Entity get disabled.
-
-`destroy()`
-
-Called when the Script Component that this script is attached to or its Entity get destroyed. Use this to clean up.
-
-`onAttributeChanged(name, oldValue, newValue)`
-
-Called when the value of a [Script Attribute][3] is changed from the Editor. The name of the attribute and its old and new values are passed in the method. Use this to update your script if an attribute changes.
-
-[1]: /user-manual/glossary#application
-[2]: /engine/api/stable/symbols/pc.Application.html
-[3]: /user-manual/scripting/script-attributes/
+The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
 
