@@ -4,9 +4,9 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-Scripting is how you make your PlayCanvas application interactive, they are written in regular **JavaScript** the same programmng language that is used to program web pages.
+Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programmng language that is used to program web pages.
 
-You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviours.
+You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviours.
 
 Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
 
@@ -28,7 +28,7 @@ Lets define a few pieces of terminology.
 
 * ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
 * ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
-* ***ScriptType*** A ScriptType is JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
 * ***Script Instance*** A script instance is a instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
 [1] /user-manual/packs/components/script/
