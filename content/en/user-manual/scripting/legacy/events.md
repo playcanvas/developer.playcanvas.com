@@ -28,7 +28,7 @@ pc.script.create("display", function (app) {
 
     Display.prototype = {
         initialize: function () {
-            var player = app.findByName("Player");
+            var player = app.root.findByName("Player");
 
             // remove move event listeners
             player.script.player.off("move");
@@ -68,4 +68,4 @@ pc.script.create("player", function (app) {
 
 More details in the [API Reference][1]
 
-[1]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.events.html#fire
+[1]: http://developer.playcanvas.com/en/api/pc.events.html#fire
