@@ -4,25 +4,32 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-Scripting is how you make your game interactive. Scripts are written in **JavaScript**. This is the programming language used by web pages everywhere.
+Scripting is how you make your PlayCanvas application interactive, they are written in regular **JavaScript** the same programmng language that is used to program web pages.
 
-You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which will often be specific to your application or re-usable chunks that provide useful behaviours.
+You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviours.
 
-Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application via a `<script>` tag. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
 
-Scripts are individual JavaScript files, which are attached to Script [Components][1] on [Entities][2] via the PlayCanvas Editor. Generally, a script file should define a single JavaScript object which is instantiated once for each Entity that it is attached to.
+Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
 
-**Note please make sure your scripts are not cached by the browser - otherwise you will not see the results of changes to your scripts. [See here.][3]**
+```javascript
+
+var Rotate = pc.createScript("rotate");
+
+Rotate.prototype.update = function (dt) {
+    this.entity.rotate(0, 10*dt, 0);
+};
+```
+
+Scripts are defined by the name given when they are created and they are attached to [Script Component][1] via the Editor or by adding a script component to an Entity in your code.
 
 ## Terminology
 
-First off, lets define a few pieces of terminology.
+Lets define a few pieces of terminology.
 
-* ***Script*** A script is single JavaScript file which includes the correct JavaScript to define a script object
+* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
 * ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
-* ***Script Object*** A script object is a standard JavaScript object which is registered with the PlayCanvas engine and can be instantiated when a new script Component is created. There will generally only be a single script object of each type per application.
-* ***Script Instance*** A script instance is script object which has been instantiated at runtime, using the `new` keyword in JavaScript. A script instance is created for every Entity that has the script attached.
+* ***ScriptType*** A ScriptType is JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***Script Instance*** A script instance is a instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
-[1]: /user-manual/packs/components/
-[2]: /user-manual/packs/entities/
-[3]: /user-manual/scripting/debugging/
+[1] /user-manual/packs/components/script/
