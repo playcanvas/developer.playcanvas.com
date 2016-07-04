@@ -35,8 +35,8 @@ var UiMenu = pc.createScript('uiMenu');
 
 // initialize code called once per entity
 UiMenu.prototype.initialize = function() {
-    this.on('enabled', this.onEnable, this);
-    this.on('disabled', this.onDisable, this);
+    this.on('enable', this.onEnable, this);
+    this.on('disable', this.onDisable, this);
 
     this.onEnable();
 };

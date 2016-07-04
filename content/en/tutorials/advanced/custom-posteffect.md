@@ -130,12 +130,12 @@ PosteffectExample.prototype.initialize = function() {
     queue.addEffect(effect);
 
     // when the script is enabled add our effect to the camera's postEffects queue
-    this.on('enabled', function () {
+    this.on('enable', function () {
         queue.addEffect(effect, false);
     });
 
     // when the script is disabled remove our effect from the camera's postEffects queue
-    this.on('disabled', function () {
+    this.on('disable', function () {
         queue.removeEffect(effect);
     });
 
