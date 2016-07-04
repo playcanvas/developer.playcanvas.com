@@ -13,7 +13,6 @@ Generally you won't have to worry about the engine code, it's a single JavaScrip
 Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
 
 ```javascript
-
 var Rotate = pc.createScript("rotate");
 
 Rotate.prototype.update = function (dt) {
