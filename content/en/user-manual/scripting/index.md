@@ -10,7 +10,7 @@ You can think of your application as divided into two separate code bases. The E
 
 Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
 
-Here is an example of a very script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
+Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
 
 ```javascript
 

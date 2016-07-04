@@ -1,7 +1,20 @@
 ---
 title: Legacy Scripting
 template: usermanual-page.tmpl.html
-position: 7
+position: 10
+---
+
+This is the documentation for the legacy script system. The legacy script system is still available for new and existing projects. When you create a new project you are given the choice over which script system you wish to use.
+
+In general, we recommend you use the new script system. However, there are some use cases where the legacy script system is still required. Use the legacy script system if:
+
+- you require the "local workflow". e.g. Editing scripts in text editor on your machine
+- you require integration with a version control system like Git or Mercurial
+- you have an existing project that you do not wish to recreate.
+
+
+Below is the documentation for the legacy script system
+
 ---
 
 Scripting is how you make your game interactive. Scripts are written in **JavaScript**. This is the programming language used by web pages everywhere.

@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file. All script files must end in `.js`.
+To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file.
 
 ![New Script][0]
 
@@ -34,7 +34,9 @@ entity.script.create("rotate", {
 });
 ```
 
-and to remove a script from a component use the `destroy` method
+Note, that the "rotate" script should already have been loaded at this point. You can load a script using the Asset Registry's [load()][3] method.
+
+To remove a script from a component use the `destroy` method
 
 ```javascript
 entity.script.destroy("rotate");
@@ -43,3 +45,4 @@ entity.script.destroy("rotate");
 [0]: /images/user-manual/scripting/new-script.jpg
 [1]: /images/user-manual/scripting/code-editor.jpg
 [2]: /images/user-manual/scripting/select-script.jpg
+[3]: /api/pc.AssetRegistry.html#load

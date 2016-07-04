@@ -14,16 +14,15 @@ The loading order panel shows all your scripts and the order that they are loade
 
 You can drag to move individual scripts around in order.
 
-When scripts are first loaded, they are immediately executed, that means that the scripts are first executed in the order that they are loaded. However, note that the loading order of the script does not effect the execution of order of script methods. E.g. the initialize methods of scripts on the same entity are called in the order that they are listed on the Entity not the loading order.
+When scripts are first loaded, they are immediately executed, that means that the scripts are first executed in the order that they are loaded. However, the loading order of the script **does not** effect the execution of order of script methods. E.g. the initialize methods of scripts on the same entity are called in the order that they are listed on the Entity not the loading order.
 
 ## Preloading
 
-Like other assets in PlayCanvas by default a script asset is marked as `preloaded`. This means that it will be loaded before the application starts. If you disable preloading on a script it will not be loaded under normal circumstances. This way you can include a script in your project but disable it and prevent it loading by unchecking `preload`. You can trigger a non-preloading script to load dynamically by using the regular asset API. e.g. `this.app.assets.load(asset);`
+Like other assets in PlayCanvas by default a script asset is marked as `preload`. This means that it will be loaded before the application starts. If you disable preloading on a script it will not be loaded under normal circumstances. This way you can include a script in your project but prevent it from loading by unchecking `preload`. You can trigger a non-preloading script to load dynamically by using the regular asset API. e.g. `this.app.assets.load(asset);`
 
 ## Concatenation
 
 By default when you publish or export your application all preloaded scripts are concatenated into a single script file. This optimizes the loading by reducing the number of requests that are needed to load all your scripts.
-
 
 [1]: /images/user-manual/scripting/script-loading-order.jpg
 [2]: /images/user-manual/scripting/loading-order-list.jpg
