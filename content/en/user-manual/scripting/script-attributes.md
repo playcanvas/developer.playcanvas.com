@@ -22,7 +22,7 @@ In this example, we're declaring a property called `speed` which is a `number` a
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. The code is parsed automatically when you add a script to an entity. However, if you need ever need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. The code is parsed automatically when you add a script to an entity. However, if you ever need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
 
 ## Accessing attributes in your code
 
@@ -71,7 +71,7 @@ The Entity type lets your reference another entity in your hierarchy. A great wa
 MyScript.attributes.add("texture", {type: "asset", assetType: "texture", array: true});
 ```
 
-The Asset attribute let's you reference an project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. "texture", "material", "model".
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. "texture", "material", "model".
 
 
 ### Color attribute
