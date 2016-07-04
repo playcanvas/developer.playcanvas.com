@@ -29,6 +29,6 @@ Lets define a few pieces of terminology.
 * ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
 * ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
 * ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
-* ***Script Instance*** A script instance is a instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
+* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
 [1] /user-manual/packs/components/script/
