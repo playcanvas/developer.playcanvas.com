@@ -3,7 +3,7 @@ title: Cardboard VR
 template: tutorial-page.tmpl.html
 ---
 
-<iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="http://playcanv.as/e/p/ktssxBWc" ></iframe>
+<iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://playcanv.as/p/ItQwDzOa" ></iframe>
 
 PlayCanvas makes it very easy to add support for Mobile VR demos like you would need to support Google Cardboard. We've created a [plugin library][1] that you can drop into your scene to enable VR support.
 
@@ -11,9 +11,9 @@ Here's how to add VR support
 
 ## Step One: Add HMD Input library
 
-The PlayCanvas WebVR library includes a file called `input_hmd.js`. This adds support for getting input information from Head-mounted displays (HMDs). This is library code meaning that it doesn't need to be added to an entity, but should be loaded up front before the application starts. To do this we add it to the Script Priorities list. In the PlayCanvas menu select Script Priorities.
+The PlayCanvas WebVR library includes a file called `input_hmd.js`. This adds support for getting input information from Head-mounted displays (HMDs). This is library code meaning that it doesn't need to be added to an entity, but should be loaded up front before the application starts. To do this make sure it is loaded before other scripts in the Scripts Loading Order in the Settings panel.
 
-![Script Priorities][2]
+![Scripts Loading Order][2]
 
 ## Step Two: Add the VR Camera script
 
@@ -28,6 +28,6 @@ That's the minimum you need to do to get a VR camera up and running. If you laun
 See the full source code for this tutorial in the [project][4].
 
 [1]: http://github.com/playcanvas/webvr
-[2]: /images/tutorials/beginner/cardboard-vr/script-priorities.jpg
+[2]: /images/tutorials/beginner/cardboard-vr/script_loading_order.jpg
 [3]: /images/tutorials/beginner/cardboard-vr/script-component.jpg
-[4]: https://playcanvas.com/project/389453/overview/tutorial-cardboard-vr
+[4]: https://playcanvas.com/project/406299

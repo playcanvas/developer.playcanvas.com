@@ -3,7 +3,7 @@ title: Real Time Multiplayer
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/OGC9kOyH" ></iframe>
+<iframe src="http://playcanv.as/p/XFp1Ty3X/" ></iframe>
 *Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
 
 In this tutorial we’ll cover how to setup basic multiplayer project, using Node.js and Socket.io. It will also cover the basics of sending and receiving messages to/from the server. By the end of the demo you should have a project similar to the one above.
@@ -25,7 +25,7 @@ It should take a few seconds. When it's done, you should have Node.js and Socket
 ![Socket Installed][1]
 
 Next, we’ll need to create a server file. Open up a text editor and type in the following:
-	
+
 ~~~javascript~~~
 var server = require('http').createServer();
 var io = require(‘socket.io')(server);
@@ -49,9 +49,7 @@ You should see ‘Server started.’ Congratulations, you’re now running your 
 
 ## Setting up the Project
 
-Open up PlayCanvas and create a new project. First, you’ll want to create a new script called ‘socket.js’. Next, add it to your projects priority list.
-
-![Script Priority][3]
+Open up PlayCanvas and create a new project. First, you’ll want to create a new script called ‘socket.js’.
 
 Open the script and replace the contents of the file with [this.][4]
 
@@ -72,7 +70,7 @@ this.socket.emit (‘playerJoined’, ‘John’);
 ~~~
 
 This emits a message called ‘playerJoined’, with the data ‘John’. For the server to receive the message, we need to write in the server file:
-	
+
 ~~~javascript~~~
 socket.on (‘playerJoined’, function (name) {
 	console.log (name);
@@ -94,57 +92,56 @@ Duplicate the player entity and rename it as 'Other'. This is the entity we'll b
 Add a script component to your player, and attach a new script called 'Movement.js':
 
 ~~~javascript~~~
-pc.script.attribute('playerSpeed', 'number', 30, {displayName: 'Player Speed'});
+var Movement = pc.createScript('movement');
 
-pc.script.create('Movement', function (app) {
-	// Creates a new Movement instance
-	var Movement = function (entity) {
-		this.entity = entity;
-		this.force = new pc.Vec3 ();
-	};
-
-	Movement.prototype = {
-		// Called every frame, dt is time in seconds since last update
-		update: function (dt) {
-			var forward = this.entity.forward;
-			var right = this.entity.right;
-            
-			var x = 0;
-			var z = 0;
-            
-			if (app.keyboard.isPressed(pc.KEY_A)) {
-				x -= right.x;
-				z -= right.z;
-			}		
-
-			if (app.keyboard.isPressed(pc.KEY_D)) {
-				x += right.x;
-				z += right.z;
-			}
-
-			if (app.keyboard.isPressed(pc.KEY_W)) {
-				x += forward.x;
-				z += forward.z;
-			}
-
-			if (app.keyboard.isPressed(pc.KEY_S)) {
-				x -= forward.x;
-				z -= forward.z;
-			}
-                
-			if (x !== 0 || z !== 0) {
-				x *= dt;
-				z *= dt;
-                
-				this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed));
-				this.entity.rigidbody.applyForce (this.force);
-			}
-		}
-	};
-
-	return Movement;
-
+Movement.attributes.add('playerSpeed', {
+    type: 'number',
+    default: 30,
+    title: 'Player Speed'
 });
+
+// initialize code called once per entity
+Movement.prototype.initialize = function() {
+    this.force = new pc.Vec3();
+};
+
+// update code called every frame
+Movement.prototype.update = function(dt) {
+    var forward = this.entity.forward;
+    var right = this.entity.right;
+    var app = this.app;
+
+    x = 0;
+    z = 0;
+
+    if (app.keyboard.isPressed(pc.KEY_A)) {
+        x -= right.x;
+        z -= right.z;
+    }
+
+    if (app.keyboard.isPressed(pc.KEY_D)) {
+        x += right.x;
+        z += right.z;
+    }
+
+    if (app.keyboard.isPressed(pc.KEY_W)) {
+        x += forward.x;
+        z += forward.z;
+    }
+
+    if (app.keyboard.isPressed(pc.KEY_S)) {
+        x -= forward.x;
+        z -= forward.z;
+    }
+
+    if (x !== 0 || z !== 0) {
+        x *= dt;
+        z *= dt;
+
+        this.force.set (x, 0, z).normalize ().scale ((this.playerSpeed));
+        this.entity.rigidbody.applyForce (this.force);
+    }
+};
 ~~~
 
 When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
@@ -172,7 +169,7 @@ io.sockets.on('connection', function(socket) {
 
 		players.push (newPlayer);
 		// Adds the newly created player to the array.
-			
+
 		socket.emit (‘playerData’, {id: idNum, players: players});
 		// Sends the connecting client his unique ID, and data about the other players already connected.
 
@@ -191,15 +188,15 @@ In the code above, when a player sends the message 'initialize', we send him his
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
-	
-	this.player = app.root.findByName ('Player');
-	this.other = app.root.findByName ('Other');
+
+	this.player = this.app.root.findByName ('Player');
+	this.other = this.app.root.findByName ('Other');
 
 	var self = this;
 	socket.on ('playerData', function (data) {
 		self.initializePlayers (data);
 	});
-	
+
 	socket.on ('playerJoined', function (data) {
 		self.addPlayer (data);
 	});
@@ -208,17 +205,17 @@ initialize: function () {
 initializePlayers: function (data) {
 	self.players = data.players;
 	// Create a player array and populate it with the currently connected players.
-		
+
 	this.id = data.id
 	// Keep track of what ID number you are.
-		
+
 	for (i = 0; i < this.players.length; i++) {
 		if (i !== this.id) {
 			this.players[i].entity = this.createPlayerEntity (data.players[i]);
 		}
 	}
 	// For every player already connected, create a new capsule entity.
-	
+
 	this.initialized = true;
 	// Mark that the client has received data from the server.
 }
@@ -226,17 +223,17 @@ initializePlayers: function (data) {
 createPlayerEntity: function (data) {
 	var newPlayer = this.other.clone ();
 	// Create a new player entity.
-	
+
 	newPlayer.enabled = true;
 	// Enable the newly created player.
-            
+
 	this.other.getParent ().addChild (newPlayer);
 	// Add the entity to the entity hierarchy.
-            
+
 	if (data)
 		newPlayer.rigidbody.teleport (data.x, data.y, data.z);
 	// If a location was given, teleport the new entity to the position of the connected player.
-            
+
 	return newPlayer;
 	// Return the new entity.
 },
@@ -253,19 +250,19 @@ Now when we join the game, the client tells the server we've connected, and the 
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
-	
-	this.player = app.root.findByName ('Player');
-	this.other = app.root.findByName ('Other');
+
+	this.player = this.app.root.findByName ('Player');
+	this.other = this.app.root.findByName ('Other');
 
 	var self = this;
 	socket.on ('playerData', function (data) {
 		self.initializePlayers (data);
 	});
-	
+
 	socket.on ('playerJoined', function (data) {
 		self.addPlayer (data);
 	});
-	
+
 	socket.on ('playerMoved', function (data) {
 		self.movePlayer (data);
 	});
@@ -279,9 +276,9 @@ movePlayer: function (data) {
 update: function (dt) {
 	this.updatePosition ();
 },
-        
+
 updatePosition: function () {
-	if (this.initialized) {    
+	if (this.initialized) {
 		var pos = this.player.getPosition ();
 		socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
 	}
@@ -295,7 +292,7 @@ socket.on ('positionUpdate', function (data) {
 	players[data.id].x = data.x;
 	players[data.id].y = data.y;
 	players[data.id].z = data.z;
-        
+
 	socket.broadcast.emit ('playerMoved', data);
 });
 ~~~
@@ -311,84 +308,106 @@ There's a lot of information online about creating multiplayer games that you ca
 Here's the full Network script:
 
 ~~~javascript~~~
-pc.script.create('Network', function (app) {
-    // Creates a new Network instance
-    var Network = function (entity) {
-        this.entity = entity;
-    };
+var Network = pc.createScript('network');
 
-    Network.prototype = {
-        initialize: function () {
-            this.player = app.root.findByName ('Player');
-            this.other = app.root.findByName ('Other');
-            
-            socket = io.connect('http://58.172.79.85:3000/');
-            socket.emit ('initialize');
-            
-            var self = this;
-            socket.on ('playerData', function (data) {
-                self.initializePlayers (data);
-            });
-            
-            socket.on ('playerJoined', function (data) {
-                self.addPlayer (data);
-            });
-            
-            socket.on ('playerMoved', function (data) {
-                self.movePlayer (data);
-            });
-        },
-        
-        initializePlayers: function (data) {
-            this.players = data.players;
-            this.id = data.id;
+// static variables
+Network.id = null;
+Network.socket = null;
 
-            for (i = 0; i < this.players.length; i++) {
-                if (i !== this.id) {
-                    this.players[i].entity = this.createPlayerEntity (data.players[i]);
-                }
-            }
+// initialize code called once per entity
+Network.prototype.initialize = function() {
+    this.player = this.app.root.findByName('Player');
+    this.other = this.app.root.findByName('Other');
 
-            this.initialized = true;
-        },
-        
-        addPlayer: function (data) {
-            this.players.push (data);
-            this.players[this.players.length - 1].entity = this.createPlayerEntity ();
-        },
-        
-        movePlayer: function (data) {
-            if (this.initialized) {
-                this.players[data.id].entity.rigidbody.teleport (data.x, data.y, data.z);
-            }
-        },
-        
-        createPlayerEntity: function (data) {
-            var newPlayer = this.other.clone ();
-            newPlayer.enabled = true;
-            
-            this.other.getParent ().addChild (newPlayer);
-            
-            if (data)
-                newPlayer.rigidbody.teleport (data.x, data.y, data.z);
-            
-            return newPlayer;
-        },
-        
-        update: function (dt) {
-            this.updatePosition ();
-        },
-        
-        updatePosition: function () {
-            if (this.initialized) {    
-                var pos = this.player.getPosition ();
-                socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
-            }
+    var socket = io.connect('http://40.76.222.228/'); // playcanvas hosted server
+    Network.socket = socket;
+
+    socket.emit ('initialize');
+
+    var self = this;
+    socket.on ('playerData', function (data) {
+        console.log('Connected.');
+        self.initializePlayers (data);
+    });
+
+    socket.on ('playerJoined', function (data) {
+        self.addPlayer(data);
+    });
+
+    socket.on ('playerMoved', function (data) {
+        self.movePlayer(data);
+    });
+
+    socket.on ('killPlayer', function (data) {
+        self.removePlayer(data);
+    });
+
+    setInterval (function () {
+        if (self.initialized) {
+            socket.emit('ping', Network.id);
+            console.log('pinged as #' + Network.id);
         }
-    };
+    }, 1000);
+};
 
-    return Network;
-});
+Network.prototype.initializePlayers = function (data) {
+    this.players = data.players;
+    Network.id = data.id;
+
+    for (i = 0; i < this.players.length; i++) {
+        if (i !== Network.id && !this.players[i].deleted) {
+            this.players[i].entity = this.createPlayerEntity(data.players[i]);
+            console.log('Found player.');
+        }
+        console.log(data);
+    }
+
+    this.initialized = true;
+    console.log('initialized');
+};
+
+Network.prototype.addPlayer = function (data) {
+    this.players.push(data);
+    this.players[this.players.length - 1].entity = this.createPlayerEntity();
+};
+
+Network.prototype.movePlayer = function (data) {
+    if (this.initialized && !this.players[data.id].deleted) {
+        this.players[data.id].entity.rigidbody.teleport(data.x, data.y, data.z);
+    }
+};
+
+Network.prototype.removePlayer = function (data) {
+    if (this.players[data].entity) {
+        this.players[data].entity.destroy ();
+        this.players[data].deleted = true;
+    }
+};
+
+Network.prototype.createPlayerEntity = function (data) {
+    var newPlayer = this.other.clone();
+    newPlayer.enabled = true;
+
+    this.other.getParent().addChild(newPlayer);
+
+    if (data)
+        newPlayer.rigidbody.teleport(data.x, data.y, data.z);
+
+    return newPlayer;
+};
+
+// update code called every frame
+Network.prototype.update = function(dt) {
+    this.updatePosition();
+};
+
+Network.prototype.updatePosition = function () {
+    if (this.initialized) {
+        var pos = this.player.getPosition();
+        Network.socket.emit('positionUpdate', {id: Network.id, x: pos.x, y: pos.y, z: pos.z});
+    }
+};
+
 ~~~
 
 Here's the full server script:
@@ -412,16 +431,16 @@ io.sockets.on('connection', function(socket) {
 	        var idNum = players.length;
 	        var newPlayer = new Player (idNum);
 	        players.push (newPlayer);
-	        
+
 	        socket.emit ('playerData', {id: idNum, players: players});
 	        socket.broadcast.emit ('playerJoined', newPlayer);
 	});
-	    
+
 	socket.on ('positionUpdate', function (data) {
 	        players[data.id].x = data.x;
 	        players[data.id].y = data.y;
 	        players[data.id].z = data.z;
-	        
+
 		socket.broadcast.emit ('playerMoved', data);
 	});
 });

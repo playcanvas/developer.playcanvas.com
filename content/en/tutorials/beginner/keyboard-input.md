@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 1
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
 
 *Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
 
@@ -15,81 +15,82 @@ handling keycodes and charcodes.
 Take a look at the keyboard input Scene in the [tutorials project][1]. Here is the code for the tutorial:
 
 ~~~javascript~~~
-pc.script.create("keyboard_handler", function (app) {
+var KeyboardHandler = pc.createScript('keyboardHandler');
 
-    var KeyboardHandler = function (entity) {
-        this.entity = entity;
-    };
-
-    KeyboardHandler.prototype = {
-        initialize: function () {
-            // Use on() to listen for events on the keyboard device.
-            // Arguments are:
-            // 1) The event name to listen for
-            // 2) The callback function to call when the event fires
-            // 3) (optional) The value to use for 'this' in the callback function
-            app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
-            app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
-
-            this.redMaterial = app.assets.find("Red", pc.asset.ASSET_MATERIAL);
-            this.whiteMaterial = app.assets.find("White", pc.asset.ASSET_MATERIAL);
-        },
-
-        update: function (dt) {
-            /*
-             * Notice in the demo that pressing and holding the arrow keys doesn't
-             * make the block spin. wasPressed() is used to detect a
-             * keypress that occurred since the last frame and will only be
-             * called once even if the key is held down.
-             */
-            var angle = 0;
-            if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
-                angle = -5;
-            } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
-                angle = 5;
-            }
-
-            /*
-             * Notice that pressing and holding the space bar makes the block
-             * continuously spin. isPressed() is used to detected if a
-             * key is down right now. So it will be true every frame as long as
-             * the key is still pressed.
-             */
-            if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-                angle = 1;
-            }
-
-            // Update the spinning cube
-            this.entity.rotateLocal(0, angle, 0);
-        },
-
-        /*
-        * Event handler called when key is pressed
-        */
-        onKeyDown: function (event) {
-            // Check event.key to detect which key has been pressed
-            if (event.key === pc.KEY_A) {
-                this.entity.model.materialAsset = this.redMaterial;
-            }
-
-            // When the space bar is pressed this scrolls the window.
-            // Calling preventDefault() on the original browser event stops this.
-            event.event.preventDefault();
-        },
-
-        /*
-        * Event handler called when key is released
-        */
-        onKeyUp: function (event) {
-            // Check event.key to detect which key has been pressed
-            if (event.key === pc.KEY_A) {
-                this.entity.model.materialAsset = this.whiteMaterial;
-            }
-        },
-    };
-
-    return KeyboardHandler;
+KeyboardHandler.attributes.add('redMaterial', {
+    type: 'asset',
+    assetType: 'material'
 });
+
+KeyboardHandler.attributes.add('whiteMaterial', {
+    type: 'asset',
+    assetType: 'material'
+});
+
+// initialize code called once per entity
+KeyboardHandler.prototype.initialize = function() {
+    // Use on() to listen for events on the keyboard device.
+    // Arguments are:
+    // 1) The event name to listen for
+    // 2) The callback function to call when the event fires
+    // 3) (optional) The value to use for 'this' in the callback function
+
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
+};
+
+// update code called every frame
+KeyboardHandler.prototype.update = function(dt) {
+    /*
+     * Notice in the demo that pressing and holding the arrow keys doesn't
+     * make the block spin. wasPressed() is used to detect a
+     * keypress that occurred since the last frame and will only be
+     * called once even if the key is held down.
+     */
+    var angle = 0;
+    if (this.app.keyboard.wasPressed(pc.KEY_LEFT)) {
+        angle = -5;
+    } else if (this.app.keyboard.wasPressed(pc.KEY_RIGHT)) {
+        angle = 5;
+    }
+
+    /*
+     * Notice that pressing and holding the space bar makes the block
+     * continuously spin. isPressed() is used to detected if a
+     * key is down right now. So it will be true every frame as long as
+     * the key is still pressed.
+     */
+    if (this.app.keyboard.isPressed(pc.KEY_SPACE)) {
+        angle = 1;
+    }
+
+    // Update the spinning cube
+    this.entity.rotateLocal(0, angle, 0);
+};
+
+/*
+* Event handler called when key is pressed
+*/
+KeyboardHandler.prototype.onKeyDown = function (event) {
+    // Check event.key to detect which key has been pressed
+    if (event.key === pc.KEY_A && this.redMaterial) {
+        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+    }
+
+    // When the space bar is pressed this scrolls the window.
+    // Calling preventDefault() on the original browser event stops this.
+    event.event.preventDefault();
+};
+
+/*
+* Event handler called when key is released
+*/
+KeyboardHandler.prototype.onKeyUp = function (event) {
+    // Check event.key to detect which key has been pressed
+    if (event.key === pc.KEY_A && this.whiteMaterial) {
+        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+    }
+};
 ~~~
 
 There are two ways of detecting keyboard input. The first is done in the update method of your scripts. Use `isPressed()` and `wasPressed()` and check whether a key is currently pressed or has just been pressed. The second uses events to respond to a key press or release as it happens.
@@ -131,6 +132,6 @@ Note, you should always use the enumeration `pc.KEY_*` rather than using numeric
 
 Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
 
-[1]: https://playcanvas.com/project/186/overview/tutorials
-[2]: http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard
+[1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
+[2]: https://playcanv.as/p/rFZGQWCi
 [3]: /user-manual/glossary#dom
