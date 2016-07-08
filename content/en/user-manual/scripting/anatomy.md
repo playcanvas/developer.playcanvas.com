@@ -10,7 +10,7 @@ Here is a basic script. We can learn about the structure of a PlayCanvas script 
 ```javascript
 var Rotate = pc.createScript('rotate');
 
-Rotate.attributes.add("speed", {type: "number", default: 10});
+Rotate.attributes.add('speed', { type: 'number', default: 10 });
 
 // initialize code called once per entity
 Rotate.prototype.initialize = function() {
@@ -43,15 +43,16 @@ We'll break down each section of the script
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned object `Rotate` is a javascript object which is ready to have it's prototype extended with a standard set of methods. Somewhat like class inheritance.
+This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have it's prototype extended with a standard set of methods. Somewhat like class inheritance.
 
 ## Script Attributes
 
 ```javascript
-Rotate.attributes.add("speed", {type: "number", default: 10});
+Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
+This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
+Attributes are automatically inherited to new script instance during code hot-swap.
 
 ## Initialize
 
@@ -73,15 +74,14 @@ If a script component has multiple scripts attached to it, `initialize` is calle
 // update code called every frame
 Rotate.prototype.update = function(dt) {
     if (this.local) {
-        this.entity.rotateLocal(0, tihs.speed*dt, 0);
+        this.entity.rotateLocal(0, this.speed * dt, 0);
     } else {
-        this.entity.rotate(0, this.speed*dt, 0);
+        this.entity.rotate(0, this.speed * dt, 0);
     }
-
 };
 ```
 
-The update method is called for each entity every frame while the entity, the script component and the script instance are enabled. Each frame `update` is passed the time in seconds since the last frame.
+The update method is called for each entity every frame while the entity, the script component and the script instance are enabled. Each frame `dt` is passed as argument, which is time in seconds since the last frame.
 
 If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
 
@@ -95,7 +95,7 @@ Rotate.prototype.swap = function(old) {
 };
 ```
 
-The `swap` method is called when ever a script is changed at runtime from the editor. This method allows you to support "hot reloading" of code whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up.
+The `swap` method is called when ever a ScriptType with same is added to registry. This is done automatically in Launch when script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
 
 The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
 
@@ -111,7 +111,7 @@ Script instances fire a number of events that can be used to respond to specific
 
 ## state, enable, disable
 
-The `state` event is fired when the script instance changes state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
+The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -142,7 +142,7 @@ Rotate.prototype.initialize = function () {
 
 ## destroy
 
-The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method or because the Entity it was attached to was destroyed.
+The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method, or script component been removed from Entity, or because the Entity it was attached to was destroyed.
 
 ```javascript
 Rotate.prototype.initialize = function () {
