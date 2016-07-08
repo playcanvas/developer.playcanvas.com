@@ -3,7 +3,7 @@ title: アセットレジストリの使用
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/abEsrnCw"></iframe>
+<iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
 
 *クリックしてフォーカス。SpaceキーでAとBの2つのモデルを切り替えることができます。'L'でCモデルを読み込みます。'C'でCモデルを表示します。
 
@@ -24,23 +24,11 @@ template: tutorial-page.tmpl.html
 
  [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
 
-## アセットレジストリを検索
+## The AssetRegistry
 
-まず、必要とするアセットの`pc.AssetRegistry`を検索する初期化メソッドを見てみましょう。
+The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
 
-```javascript
-initialize: function () {
-    // get assets from the asset registry
-    this.a = app.assets.get(this.aAsset);
-    this.b = app.assets.get(this.bAsset);
-    this.c = app.assets.get(this.cAsset);
-
-    // prevent the page scrolling when we press space.
-    app.keyboard.preventDefault = true;
-}
-```
-
-The [`pc.AssetRegistry`][1] is available in all scripts as `app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application. In this case we've declared three script attributes `aAsset`, `bAsset` and `cAsset` which are assigned to assets in the Editor. We then use the script attributes to find the assets from the registry.
+In this case we've declared three script attributes `a`, `b` and `c` which are assigned to assets in the Editor. Then they are automatically available in our script.
 
 ## プレロードされたアセットを使用
 
@@ -66,7 +54,7 @@ if (app.keyboard.isPressed(pc.KEY_SPACE)) {
 ## 実行時にアセットを読み込む
 
 ```javascript
-if (app.keyboard.isPressed(pc.KEY_C)) {
+if (this.app.keyboard.isPressed(pc.KEY_C)) {
     if (this.c.resource) {
         if (this.entity.model.model !== this.c.resource) {
             this.entity.model.model = this.c.resource;
@@ -82,70 +70,75 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 **Cは**モデルは、*プリロード*としてマークされていないので、上記のコードでは使用する前にリソースが読み込まれていることを確認します。`asset.resource`が空の場合、リソースは読み込まれていないので、モデルコンポーネントを変更することができません。 **C**モデルが読み込まれている場合、`this.c.resource`は`pc.Model`プロパティとなり、割り当てることができます。
 
 ```javascript
-if (app.keyboard.isPressed(pc.KEY_L)) {
-    app.assets.load(this.c);
+if (this.app.keyboard.isPressed(pc.KEY_L)) {
+    this.app.assets.load(this.c);
 }
 ```
 
-'L'キーを押すと**C**モデルを読み込みます。これを行うには、アンロードされたアセットを`app.assets.load()`に渡します。アセットが既に読み込まれている場合、このメソッドは何も行いません。
+When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `this.app.assets.load()`. If the asset is already loaded, this method will do nothing.
 
 アセットが読み込まれると`asset.resource`は`pc.Model`のインスタンスになり、`C`キーを押してそれを割り当てることができます。
 
 ## 完全なスクリプト
 
 ```javascript
-pc.script.create('update_asset', function (app) {
-    // Creates a new Update_asset instance
-    var Update_asset = function (entity) {
-        this.entity = entity;
-    };
+var UpdateAsset = pc.createScript('updateAsset');
 
-    Update_asset.prototype = {
-        initialize: function () {
-            // get assets from the asset registry
-            this.a = app.assets.find("A");
-            this.b = app.assets.find("B");
-            this.c = app.assets.find("C");
+UpdateAsset.attributes.add('a', {
+    type: 'asset',
+    assetType: 'model'
+});
 
-            app.keyboard.preventDefault = true;
-        },
+UpdateAsset.attributes.add('b', {
+    type: 'asset',
+    assetType: 'model'
+});
 
-        update: function (dt) {
-            if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-                if (this.entity.model.model !== this.b.resource) {
-                    // update the model component to the new model
-                    this.entity.model.model = this.b.resource;
+UpdateAsset.attributes.add('c', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+// initialize code called once per entity
+UpdateAsset.prototype.initialize = function() {
+    this.app.keyboard.preventDefault = true;
+};
+
+// update code called every frame
+UpdateAsset.prototype.update = function(dt) {
+    var app = this.app;
+
+    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+        if (this.entity.model.model !== this.b.resource) {
+            // update the model component to the new model
+            this.entity.model.model = this.b.resource;
+        }
+    } else {
+        if (this.entity.model.model !== this.a.resource) {
+            // restore original model
+            this.entity.model.model = this.a.resource;
+        }
+
+        if (app.keyboard.isPressed(pc.KEY_C)) {
+            if (this.c.resource) {
+                if (this.entity.model.model !== this.c.resource) {
+                    this.entity.model.model = this.c.resource;
                 }
-            } else {
-                if (this.entity.model.model !== this.a.resource) {
-                    // restore original model
-                    this.entity.model.model = this.a.resource;
-                }
-
-                if (app.keyboard.isPressed(pc.KEY_C)) {
-                    if (this.c.resource) {
-                        if (this.entity.model.model !== this.c.resource) {
-                            this.entity.model.model = this.c.resource;
-                        }
-                    }
-                } else {
-                    if (this.entity.model.model !== this.a.resource) {
-                        this.entity.model.model = this.a.resource;
-                    }
-                }
-
-
             }
-
-
-            if (app.keyboard.isPressed(pc.KEY_L)) {
-                app.assets.load(this.c);
+        } else {
+            if (this.entity.model.model !== this.a.resource) {
+                this.entity.model.model = this.a.resource;
             }
         }
-    };
 
-    return Update_asset;
-});
+
+    }
+
+
+    if (app.keyboard.isPressed(pc.KEY_L)) {
+        app.assets.load(this.c);
+    }
+};
 ```
 
 ## アセットレジストリのイベント
@@ -154,9 +147,9 @@ pc.script.create('update_asset', function (app) {
 
 ```javascript
 // find the asset in the registry
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 // set up a one-off event listener for the load event
-app.assets.once("load", function (asset) {
+this.app.assets.once("load", function (asset) {
     // asset.resource is now ready
 }, this);
 ```
@@ -165,9 +158,9 @@ app.assets.once("load", function (asset) {
 
 ```javascript
 // find the asset in the registry
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 // set up a one-off event listener for the load event
-app.assets.once("load:" + asset.id, function (asset) {
+this.app.assets.once("load:" + asset.id, function (asset) {
     // asset.resource is now ready
 }, this);
 ```
@@ -177,12 +170,12 @@ app.assets.once("load:" + asset.id, function (asset) {
 最後に、良く発生する一つの特定のコーディングパターンがあります。それを行うための便利な方法を提供しています。
 
 ```javascript
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 if (!asset.resource) {
-    app.assets.once("load:" + asset.id, function (asset) {
+    this.app.assets.once("load:" + asset.id, function (asset) {
         // do something with asset.resource
     });
-    app.assets.load(asset);
+    this.app.assets.load(asset);
 } else {
     // do something with asset.resource
 }
@@ -191,17 +184,17 @@ if (!asset.resource) {
 このコードは必要とされるアセットを読み込みますが、少し長いので代わりに`asset.ready()`メソッドを使用することができます。このコードは、上記と同じ機能を実行します。
 
 ```javascript
-var asset = app.assets.find("A");
+var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
     // do something with asset.resource
 });
-app.assets.load(asset);
+this.app.assets.load(asset);
 ```
 
 `asset.ready()`メソッドはアセットが読み込まれるとすぐにそのコールバックを呼びます。また、アセットがすでに読み込まれている場合、すぐにそれを呼び出します。アセットがすでに読み込まれている場合、 `app.assets.load()`は何もしません。
 
 [1]: /en/api/pc.AssetRegistry.html
-[3]: https://playcanvas.com/project/349519/overview/tutorial-asset-registry
+[3]: https://playcanvas.com/project/406036
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae

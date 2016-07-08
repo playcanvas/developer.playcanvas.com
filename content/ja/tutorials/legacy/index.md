@@ -1,45 +1,45 @@
 ---
-title: チュートリアル
+title: Tutorials
 template: tutorial-full-page-legacy.tmpl.html
 ---
 
-チュートリアルでPlayCanvasの使い方を覚えましょう。こちらから動画チュートリアル、実例、記事をご確認ください。
+Tutorials are a great way to learn to use PlayCanvas. You'll find both video tutorials and examples and articles for you here.
 
-## 動画
+## Videos
 
-弊社の[YouTube Channel][1]で動画チュートリアル集をごらんいただけます。動画で使用するアセットを[ダウンロード][2]することもできます。
+You can find our complete collection of video tutorials on our [YouTube Channel][1]. You can also [download][2] assets for following along to the videos.
 
-## 記事
+## Articles
 
-下記にリストされる全てのチュートリアルのリソースは[PlayCanvas チュートリアルページ][3]で入手できます。アクセスするにはPlayCanvasサイトにログインする必要があります。
+The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page][3]. Note that you must be logged in to the PlayCanvas site to access them.
 
-### 初級
+### Beginner
 
-* [基本的なキーボード入力][4]
-* [基本的なマウス入力][5]
-* [基本的なカメラ][6]
-* [基本的なオーディオ][7]
-* [基本的な素材][8]
-* [エンティティの操作][9]
+* [Basic Keyboard Input][4]
+* [Basic Mouse Input][5]
+* [Basic Camera][6]
+* [Basic Audio][7]
+* [Basic Materials][8]
+* [Manipulating Entities][9]
 
-### 中級
+### Intermediate
 
-* [アニメーションブレンディング][10]
-* [その他のカメラ][11]
-* [ファーストパーソンカメラ][12]
-* [コリジョンとトリガー][13]
-* [アセットレジストリの使用][14]
+* [Animation Blending][10]
+* [More Cameras][11]
+* [First Person Camera][12]
+* [Collision and Triggers][13]
+* [Using the Asset Registry][14]
 
-### 上級
+### Advanced
 
-* [プログラムでエンティティを作成][15]
-* [FPSキャラクタコントロール][16]
-* [カスタムのシェーダー][17]
-* [カスタムのポストエフェクト][18]
+* [Programmatically Creating Entities][15]
+* [FPS Character Controller][16]
+* [Custom Shaders][17]
+* [Custom Post Effects][18]
 
-###スプライトとフォント
+###Sprites and Fonts
 
-2D画像を表示するための手順は[GitHub スプライトページ][19]からご確認ください。画面内のテキストを表示させるには[GitHubのフォントページ][20]をご確認ください。
+For instructions in displaying 2D images see [our GitHub sprites page][19] and for displaying on-screen text see [our fonts page on GitHub][20].
 
 [1]: https://www.youtube.com/user/playcanvas
 [2]: /tutorials/video

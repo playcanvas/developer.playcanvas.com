@@ -1,21 +1,21 @@
 ---
-title: 動画テクスチャー
+title: Video Textures
 template: tutorial-page-legacy.tmpl.html
 position: 5
 ---
 
 <iframe src="http://playcanv.as/p/NQ2f87MT"></iframe>
 
-[チュートリアルプロジェクト][1]のEditorからお試しください。
+Try it from the Editor in the [tutorial project.][1]
 
-このプロジェクトは、テクスチャとランタイムを作成し、動画ファイルをダウンロード及び再生し、テクスチャーに動画をレンダリングします。このテクスチャはモデルに適用され、シーンで使用されます。
+This project creates a texture and runtime, downloads and plays a video file and renders the video into the texture. This texture is then applied to a model and used in the scene.
 
-スクリプトは次の機能を行います：
+This script performs the following functions:
 
-* 新しいテクスチャーを作成
-* HTML動画要素を作成して動画を再生
-* TVモデルの素材に新しいテクスチャーを適用
-* 毎フレームにて動画データでテクスチャーを更新
+* Create new Texture
+* Create an HTML Video element and play the video
+* Apply the new texture to the material on the TV model
+* Update the texture with video data every frame
 
 ```javascript
 pc.script.attribute('materials', 'asset', [], {

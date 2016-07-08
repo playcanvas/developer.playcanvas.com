@@ -1,143 +1,142 @@
 ---
-title: Манипулирование сущностями
+title: Manipulating Entities
 template: tutorial-page-legacy.tmpl.html
 ---
 
-В этом уроке мы Вам покажем как можно изменять положение сущности, её ориентацию в пространстве и размер.
+In this tutorial we'll show you how you can change an Entity's position, orientation and scale.
 
-Сущности - это базовая форма для большинства приложений созданных в PlayCanvas. Сущность может представлять собой что угодно, персонажа героя, пули, врага, или просто точку в пространстве.
+Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be a point in space.
 
-Сущности - это узлы графа, они могут наследовать своё поведение из `pc.GraphNode`. Все манипуляции, которые мы будем применять ниже, также могут применяться на узлы графа.
+Entities are a special form of graph node, they inherit a lot of their behavior from `pc.GraphNode`. All the manipulations we apply below can also be applied to graph nodes.
 
-Одна из основных операций, которую Вы должны будете выполнить над сущностями - это изменение матрицы преобразования. Свойство локальной трансформации определяет позицию, ориентацию и размер сущности, также влияет на все дочерние сущности. Изучение того, как использовать трансформации необходимо чтобы делать интересные интерактивные приложения.
+One of the most common operations you will need to perform on Entities is to change its transform matrix. The local transform property of the Entity determines the position, orientation and scale of the Entity and affects all child Entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
 
-### Локальные и мировые координаты
+### Local and World Co-ordinates
 
-Важная часть понимания, как манипулировать сущностями - знание локальных и мировых координатных систем. Мировая координатная система едина для всех сущностей, она имеет начало в `(0,0,0)` и фиксированную ориентацию вверх - `(0,1,0)`. Локальная система координат относится к самой сущности. Так, локальное начало - позиция сущности, и ориентация - это ориентация сущности в пространстве.
+An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
 
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*Мировые и локальные координатные системы*
+*World and Local co-ordinate systems*
 <br />
 
-### Иерархия
+### Hierarchy
 
-Важная часть понимания системы сущностей, это понимание графа сущностей, или иерархии. Так как сущности - узлы графа, которые собраны вместе в графе, или иерархии, состоящей из родителей и детей. Каждая сущность может иметь один родительский объект, и несколько дочерних. Дочерняя сущность наследует информацию о трансформации родительской. Мировая матрица преобразований сущности является результатом умножения локальной трансформации на мировую от родительского объекта. Например, если дочерняя сущность имеет локальное перемещение `(1,0,0)` и родитель имеет локальные координаты в `(0,1,0)`, позиция в мировых координатах дочернего объекта будет - `(1,1,0)`.
+An important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will be `(1,1,0)`
 
-## Позиция
+## Position
 
-Получение позиции сущности
+Getting the position of the entity is straightforward
 
 ~~~js~~~
-// Получаем позицию сущности, относительно координатной системы родителя
+// Get the entity's position relative to the coordinate system of the entity's parent
 var lp = entity.getLocalPosition();
 
-// Получаем позицию в мировом пространстве
+// Get the entity's position in world space
 var wp = entity.getPosition();
 ~~~
 
-Оба метода возвращают pc.Vec3`  (вектор, состоящий из массива [x,y,z]).
+These methods both return a `pc.Vec3` (a vector quantity in the array form [x,y,z]).
 
-Установка положения сущности.
+Setting the position of an entity is just as straightforward.
 
 ~~~js~~~
-// Устанавливаем позицию, относительного координатной системы родителя
+// Set the entity's position relative to the coordinate system of the entity's parent
 entity.setLocalPosition(x, y, z);
 
-// Устанавливаем позицию в мировом пространтсве
+// Set the entity's position in world space
 entity.setPosition(x, y, z);
 ~~~
 
-### Перемещение сущности
+### Moving the entity
 
-Чтобы передвигать сущность, Вы можете прибавить к позиции значение, или используйте вспомогательные функции и 'translateLocal'.
+To move the Entity you can add to the Entity's position or you can use the helper functions translate and translateLocal.
 
 ~~~js~~~
-// Переместить сущность на 1 единицу по оси X в мировом пространстве
+// Translate the entity 1 unit down the positive x axis of world space
 entity.translate(1, 0, 0);
 
-// Сместить объект на 1 единицу по оси Z локально
+// Translate the entity 1 unit down the entity's local z axis
 entity.translateLocal(0, 0, 1);
 ~~~
 
-## Ориентация
+## Orientation
 
-Для установки ориентации сущности вы можете либо применить абсолютное вращение, либо добавочное вращение.
+To set an Entity's orientation you can either set an absolute rotation, or apply an incremental rotation.
 
-Установка абсолютного значения поворота может быть достигнута использованием либо [углов Эйлера][1], либо [кватернионов][2]. Объяснения в Википедии этих двух математических представлений поворота немного трудны для понимания, однако основные пункты просты. Вот важные факты:
+Setting absolute rotations can be done using either [Euler angles][1] or [quaternions][2]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
 
-** Углы Эйлера **
+** Euler Angles **
 
-* Углы Эйлера это набор трёх углов вокруг осей X, Y и Z в координатной системе в *определённом порядке*.
-* Если смотреть вниз оси координат , положительный угол Эйлера приведет к вращению против часовой стрелки вокруг этой оси.
-* Углы Эйлера легки в понимании, так как Вы можете визуализировать этот эффект в голове.
+* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
+* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
+* Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
-** Кватернионы **
+** Quaternions **
 
-* Кватернионы хранятся как 4 числа и представляют любую ориентацию в 3D пространстве.
-* Их сложно задавать напрямую, но можно установить через углы Эйлера, матрицы поворота или через представление ось-угол.
-*  Несмотря на то, что их трудно визуализировать, они полезны, так как являются надежными и могут быть быстро интерполированны (при анимации вращения).
+* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
+* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
+* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
 
-При программировании сущностей наиболее вероятно, что Вы захотите использовать поворот объекта используя углы Эйлера. Например:
+When scripting entities, it is more likely that you will set an Entity's rotation using Euler angles. For example:
 
 ~~~js~~~
-// Поворот на 30 градусов против часовой стрелки вокруг оси X родительской
-// координатной системы, на 45 градусов вокруг её оси Y и, наконец, на 60 градусов
-//вокруг оси Z
+// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
+// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
 entity.setLocalEulerAngles(30, 45, 60);
 
-// Поворот на 30 градусов против часовой стрелки вокруг оси X мировой системы
-// координат, на 45 градусов вокруг Y и наконец, 60 градусов вокруг мировой оси Z
+// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
+// around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ~~~
-Тем не менее, если Вы хотите, чтобы установить вращение сущности в форме кватернионов, можете использовать следующие функции:
+However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ~~~js~~~
-// Создаём переменную для поворота
+// Create an identity rotation
 var q = new pc.Quat();
-// Устанавливаем сущности тот же поворот, что и у родителя, эквивалент:
+// Set the entity to have the same rotation as its parent - equivalent to
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);
 
-// Устанавливаем сущности отсутствие вращения в мировой координатной системе
-// эквивалент: entity.setEulerAngles(0, 0, 0)
+// Set the entity to have no rotation with respect to the world space coordinate
+// system  - equivalent to entity.setEulerAngles(0, 0, 0)
 entity.setRotation(q);
 ~~~
 
-Чтобы вращать сущность постепенно по отношению к мировому пространству Вы можете использовать 'rotate ' или же 'rotateLocal' для вращения по отношению к локальным осям Вашего объекта.
+To rotate an Entity incrementally, you can use rotate to rotate the Entity with respect to world space axes or rotateLocal to rotate with respect to the Entity's current axes.
 
-Для примера, вращение сущности на 180 градусов вокруг мировой оси вверх:
+For example, to rotate an Entity by 180 degrees around the world up axis:
 
 ~~~js~~~
 entity.rotate(0, 180, 0);
 ~~~
 
-Или поворот сущности на 90 градусов вокруг локальной оси X:
+Or to rotate the Entity 90 degrees around its local x axis do:
 
 ~~~js~~~
 entity.rotateLocal(90, 0, 0);
 ~~~
 
-## Масштаб
+## Scale
 
-Чтобы масштабировать сущность Вы просто должны вызвать следующую функцию:
+To scale an Entity you simply need to call the following function:
 
 ~~~js~~~
-// Масштабировать сущность по оси Y в 2 раза
+// Scale the entity by a factor of 2 in the local Y axis
 entity.setLocalScale(1, 2, 1);
 ~~~
 
-И здесь немного более интересный пример:
+And here is a slightly more interesting example:
 
 ~~~js~~~
-// Масштабирование сущности используя функцию синуса
+// Scale the entity using a sine function over time
 this.timer += deltaTime;
 var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);
 ~~~
 
-Обратите внимание, что Вы  не можете устанавливать масштаб сущности в мировом пространстве.
+Note that you cannot currently set the Entity's scale in world space.
 
 [1]: http://en.wikipedia.org/wiki/Euler_angles
 [2]: http://en.wikipedia.org/wiki/Quaternion

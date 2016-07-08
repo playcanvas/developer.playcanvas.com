@@ -3,11 +3,11 @@ title: 当たり判定とトリガー
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/collision_and_triggers?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
 
 *剛体が互いに衝突すると音がなります。剛体がトリガーボリュームに当たると元の場所に戻ります。*
 
-このチュートリアルでは剛体シミュレーション、当たり判定とトリガーボリュームの基礎を紹介します。シーンの内容は[PlayCanvasチュートリアルプロジェクト][2]の[当たり判定とトリガーのシーン][1]を参照してください。
+This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the [tutorial project][1].
 
 ## コリジョンコンポーネント
 
@@ -61,32 +61,20 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 このエンティティは*collision*コンポーネントはありますが、*rigidbody*コンポーネントはありません。そのためこのエンティティはトリガーとして振る舞います。このトリガーエンティティにはコードが書き込まれた*script*コンポーネントが与えられています。トリガーは発生した時に何らかの処理を行った時はじめて意味があるものになります。そのため、処理を行うコードとトリガーが発生した際のイベントを監視するコードを追加する必要があります。
 
 ~~~javascript~~~
-pc.script.create("trigger", function (app) {
+var Trigger = pc.createScript('trigger');
 
-    var zeroVec = pc.Vec3.ZERO;
+// initialize code called once per entity
+Trigger.prototype.initialize = function() {
+    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+};
 
-    var Trigger = function (entity) {
-        this.entity = entity;
-    };
-
-    Trigger.prototype = {
-        initialize: function () {
-            this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-        },
-
-        onTriggerEnter: function (entity) {
-            // エンティティが最初にあった大体の位置に戻す。
-            var position = entity.getPosition();
-            entity.setPosition(position.x, 10, 0);
-
-            entity.rigidbody.linearVelocity = zeroVec;
-            entity.rigidbody.angularVelocity = zeroVec;
-            entity.rigidbody.syncEntityToBody();
-        }
-    };
-
-    return Trigger;
-})
+Trigger.prototype.onTriggerEnter = function(entity) {
+    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+    // Reset back to roughly the position the entity started in.
+    var position = entity.getPosition();
+    entity.rigidbody.teleport(position.x, 10, 0);
+};
 ~~~
 
 上記のコードには大きく分けて二つの機能があります。
@@ -124,34 +112,25 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 どちらのイベントも便利ですが、このデモでは**collisionstart**イベントを地面に触れた時の効果音を鳴らすトリガーとして使用しています。以下がコードです:
 
 ~~~javascript~~~
-pc.script.create("collider", function (app) {
-    var Collider = function (entity) {
-        this.entity = entity;
-    };
+var Collider = pc.createScript('collider');
 
-    Collider.prototype = {
-        initialize: function () {
-            this.entity.collision.on('collisionstart', this.onCollisionStart, this);
-        },
+// initialize code called once per entity
+Collider.prototype.initialize = function () {
+    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
+};
 
-        onCollisionStart: function (result) {
-            if (result.other.rigidbody) {
-                this.entity.audiosource.play("hit");
-            }
-
-        }
-    };
-
-    return Collider;
-});
+Collider.prototype.onCollisionStart = function (result) {
+    if (result.other.rigidbody) {
+        this.entity.sound.play("hit");
+    }
+};
 ~~~
 
 ```initialize```メソッドでイベントリスナが設定されています。そしてイベントハンドラの中では、衝突した相手のエンティティが**rigidbody**コンポーネントを持っているかを確認し(これはトリガーボリュームに入った際に効果音を鳴らさないためです)、そして"hit"サウンドエフェクトを鳴らします。このようにして、colliderスクリプトを持つエンティティが他の剛体と衝突すると、毎回衝突の効果音を鳴らしています。
 
 これでPlayCanvasでの当たり判定とトリガーの扱い方の説明を終わります。
 
-[1]: https://playcanvas.com/editor/scene/329662
-[2]: https://playcanvas.com/project/186/overview/tutorials
+[1]: https://playcanvas.com/project/405871
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/

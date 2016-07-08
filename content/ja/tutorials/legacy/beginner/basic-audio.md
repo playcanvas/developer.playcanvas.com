@@ -1,5 +1,5 @@
 ---
-title: 基本的なオーディオ
+title: Basic Audio
 template: tutorial-page-legacy.tmpl.html
 ---
 
@@ -19,7 +19,7 @@ Each Sound component comprises of a number of slots. Each slot has a name and de
 
 The [AudioListener][2] Component determines how a Sound is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
 
-## シーンの設定
+## Scene Setup
 
 You should look at the [Hierarchy][3] for this tutorial yourself in the Editor. These are the main Entities in the Scene:
 
@@ -79,12 +79,12 @@ If however you want to play a sound repeatedly without stopping every time the s
 
 By default, the audio sample will be played once, and then stop. If you want the sound to loop continuously, e.g. for background music, then you can check the *Loop* box. Our engine is a looping sound in the example but the shooting sound is not.
 
-## リスナーの作成
+## Creating Listeners
 
 To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
 
 <div class="alert-info">
-    一度に使用できるAudioListenerは一つです。最後に作成されたAudioListenerコンポーネントが有効になります。
+    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
 </div>
 
 [1]: /user-manual/packs/components/sound

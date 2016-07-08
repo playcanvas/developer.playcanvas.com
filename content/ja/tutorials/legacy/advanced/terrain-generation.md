@@ -1,16 +1,16 @@
 ---
-title: ハイトマップから地形生成
+title: Terrain Generation from Heightmap
 template: tutorial-page-legacy.tmpl.html
 position: 5
 ---
 
 <iframe src="http://playcanv.as/p/XbCljYAK"></iframe>
 
-このプロジェクトは[`pc.createMesh`][1] APIを使用して、手順に従い、ハイトマップテクスチャから転がる山腹の生成およびテクスチャ付けします。
+This project uses the [`pc.createMesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
 
-[チュートリアルプロジェクト[2]のEditorからお試しください。
+Try it from the Editor in the [tutorial project.][2]
 
-地形生成は下記のスクリプトで行われます。
+The script below performs the terrain generation.
 
 ~~~javascript~~~
 pc.script.attribute('heightMap', 'asset', [], {
@@ -29,7 +29,7 @@ pc.script.attribute('material', 'asset', [], {
 
 pc.script.create('terrain', function (app) {
 
-    // 新しい地形インスタンスを作成
+    // Creates a new Terrain instance
     var Terrain = function (entity) {
         this.entity = entity;
     };
@@ -124,7 +124,7 @@ pc.script.create('terrain', function (app) {
             return model;
         },
 
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
             var img = app.assets.get(this.heightMap).resource.getSource();
             var model = this.createTerrainFromHeightMap(img);
@@ -133,7 +133,7 @@ pc.script.create('terrain', function (app) {
             this.entity.model.model = model;
         },
 
-        // 毎フレーム呼ばれる。dtは最後の更新以来の秒単位の時間
+        // Called every frame, dt is time in seconds since last update
         update: function (dt) {
         }
     };

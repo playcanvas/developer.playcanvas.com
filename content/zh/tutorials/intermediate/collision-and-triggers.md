@@ -3,11 +3,11 @@ title: Collision and Triggers
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/collision_and_triggers?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the Scene in full in the [Collision & Triggers Scene][1] in the [PlayCanvas Tutorials Project][2].
+This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the [tutorial project][1].
 
 ## The Collision Component
 
@@ -61,32 +61,20 @@ The next Entity we'll need is the trigger.
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
 ~~~javascript~~~
-pc.script.create("trigger", function (app) {
+var Trigger = pc.createScript('trigger');
 
-    var zeroVec = pc.Vec3.ZERO;
+// initialize code called once per entity
+Trigger.prototype.initialize = function() {
+    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+};
 
-    var Trigger = function (entity) {
-        this.entity = entity;
-    };
-
-    Trigger.prototype = {
-        initialize: function () {
-            this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-        },
-
-        onTriggerEnter: function (entity) {
-            // Reset back to roughly the position the entity started in.
-            var position = entity.getPosition();
-            entity.setPosition(position.x, 10, 0);
-
-            entity.rigidbody.linearVelocity = zeroVec;
-            entity.rigidbody.angularVelocity = zeroVec;
-            entity.rigidbody.syncEntityToBody();
-        }
-    };
-
-    return Trigger;
-})
+Trigger.prototype.onTriggerEnter = function(entity) {
+    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+    // Reset back to roughly the position the entity started in.
+    var position = entity.getPosition();
+    entity.rigidbody.teleport(position.x, 10, 0);
+};
 ~~~
 
 There two significant parts to the code above.
@@ -124,34 +112,25 @@ The difference between **contact** and **collisionstart** is subtle but importan
 Both events are useful, but in this demo we'll use the **collisionstart** event to trigger a sound effect that plays when the objects hit the ground. Here's the code:
 
 ~~~javascript~~~
-pc.script.create("collider", function (app) {
-    var Collider = function (entity) {
-        this.entity = entity;
-    };
+var Collider = pc.createScript('collider');
 
-    Collider.prototype = {
-        initialize: function () {
-            this.entity.collision.on('collisionstart', this.onCollisionStart, this);
-        },
+// initialize code called once per entity
+Collider.prototype.initialize = function () {
+    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
+};
 
-        onCollisionStart: function (result) {
-            if (result.other.rigidbody) {
-                this.entity.audiosource.play("hit");
-            }
-
-        }
-    };
-
-    return Collider;
-});
+Collider.prototype.onCollisionStart = function (result) {
+    if (result.other.rigidbody) {
+        this.entity.sound.play("hit");
+    }
+};
 ~~~
 
 In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now everytime an Entity with the collider script attached collides with another rigid body it will play the hit sound.
 
 And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
-[1]: https://playcanvas.com/editor/scene/329662
-[2]: https://playcanvas.com/project/186/overview/tutorials
+[1]: https://playcanvas.com/project/405871
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/

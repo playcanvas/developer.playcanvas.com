@@ -1,16 +1,16 @@
 ---
 title: Events
 template: usermanual-page.tmpl.html
-position: 5
+position: 6
 ---
 
 Events are a useful way of responding to things that happen without checking every frame.
 
 The PlayCanvas Engine contains a simple way to add event handling to any object:
 
-~~~javascript~~~
+```javascript
 pc.events.attach(object);
-~~~
+```
 
 This will add the methods: `on()`, `off()`, `fire()` and `hasEvent()` to the object. Which means that you can listen for events fired by that object.
 
@@ -18,55 +18,76 @@ By default all script instances can fire events you don't need to call this manu
 
 ## Using events
 
-Listen for events firing by using `on()` and `off()`.
+Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the x and y values passed as arguments.
 
-~~~javascript~~~
-pc.script.create("display", function (app) {
-    var Display = function (entity) {
-        this.entity = entity;
-    };
+```javascript
+var Player = pc.createScript("player");
 
-    Display.prototype = {
-        initialize: function () {
-            var player = app.findByName("Player");
+Player.prototype.update = function (dt) {
+    var x = 1;
+    var y = 1;
+    this.fire("move", x, y);
+};
+```
 
-            // remove move event listeners
-            player.script.player.off("move");
+Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
 
-            // listen move event
-            player.script.player.on("move", function (x, y) {
-                //...
-            });
+```javascript
+var Display = pc.createScript("display");
 
-        }
-    };
+// set up an entity reference for the player entity
+Display.attributes.add("playerEntity", {type: "entity"});
 
-    return Display;
-});
-~~~
+Display.prototype.initialize = function () {
+    // remove all move event listeners on the player
+    this.playerEntity.script.player.off("move");
 
-Trigger an event using `fire()`
+    // listen for the move event
+    this.playerEntity.script.player.on("move", function (x, y) {
+        console.log(x, y);
+    });
+};
+```
 
-~~~javascript~~~
-pc.script.create("player", function (app) {
-    var Player = function (entity) {
-        this.entity = entity;
-    };
+## Application Events
 
-    Player.prototype = {
-        update: function (dt) {
-            var x = 1;
-            var y = 1;
+There is a very convenient and powerful method of using events to communicate between entities that we call "Application Events". As you can see in the example above listening for events on specific entities incurs some set up cost. For instance, the listener must have a reference to the specific entity that is firing the event. This works with some cases, but for a more general case we find that it is more appropriate to use the main application (`this.app`) as a central hub for firing events. This means you don't have to keep references of entities around in order to use the events.
 
-            this.fire("move", x, y);
-        }
-    };
+This works by firing and listening to all events on `this.app`. By convention we use namespaces in event names in order to signal event scope and prevent clashes. For example, the `player:move` event is fired on the application instead of firing the `move` event on the player.
 
-    return Player;
-});
-~~~
+Let's try the same example using application events.
 
-More details in the [API Reference][1]
+Firing the `player:move` event.
 
-[1]: http://developer.playcanvas.com/engine/api/stable/symbols/pc.events.html#fire
+```javascript
+var Player = pc.createScript("player");
+
+Player.prototype.update = function (dt) {
+    var x = 1;
+    var y = 1;
+    this.app.fire("player:move", x, y);
+};
+```
+
+Listening for the `player:move` event.
+
+```javascript
+var Display = pc.createScript("display");
+
+Display.prototype.initialize = function () {
+    // remove all player:move event listeners
+    this.app.off("player:move");
+
+    // listen for the player:move event
+    this.app.on("player:move", function (x, y) {
+        console.log(x, y);
+    });
+};
+```
+
+As you can see this reduces set up code and makes for cleaner code.
+
+More details on events in the [API Reference][1]
+
+[1]: http://developer.playcanvas.com/en/api/pc.events.html
 

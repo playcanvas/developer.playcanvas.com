@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 11
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
 *You can find the [full project here][16]. If you haven't seen [Part 1][1] read it first.*
 
@@ -93,5 +93,5 @@ Continue on to [Part 3][15].
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
 [15]: /tutorials/beginner/keepyup-part-three
-[16]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
+[16]: https://playcanvas.com/project/406050
 

@@ -1,22 +1,22 @@
 ---
-title: Пользовательские пост-эффекты
+title: Custom Post Effects
 template: tutorial-page-legacy.tmpl.html
 position: 4
 ---
 
 <iframe src="https://playcanv.as/p/vQBffMnK" ></iframe>
 
-*Этот урок использует пользовательские пост-эффекты для создания эффектов в GLSL*
+*This tutorial uses a custom post effect to create an effect in GLSL*
 
-## Обзор
+## Overview
 
-Вы можете создавать свои эффекты постобработки в PlayCanvas, с небольшим количеством Javascript и GLSL. Эти пост-эффекты - шейдеры, которые оперируют готовым 2D изображением с камеры. Вы можете применить несколько эффектов к Вашему изображению - каждый пост-эффект использует в качестве исходного изображения выходное изображение предыдущего эффекта.
+You can create your own post effects in PlayCanvas, with a bit of Javascript and GLSL. Post effects are shaders that operate on the 2D rendered image from a camera. You can apply multiple post effects to your image - each effect uses the output of the previous effect as its input.
 
-В следующих параграфах мы продемонстрируем как создавать свои собственные пост-эффекты. Вы можете посмотреть уже существующие эффекты [здесь] [1].
+In the next paragraphs we will demonstrate how to create your own post effects. You can see examples of existing post effects [here][1].
 
-## Сценарий
+## The script
 
-Во-первых, мы должны создать новый сценарий. Он будет содержать [объявление шейдера][2] для нашего пост-эффекта а также код, который будет добавлен к камере. Сценарий должен быть прикреплён к сущности с [компонентом камеры][3]. Мы назовём сценарий posteffect_example.js:
+First we need to create a new script. This script will contain the [Shader Definition][2] for our post effect and also code that will add the post effect to the camera. This script needs to be attached to an Entity with a [Camera component][3]. We'll call this script posteffect_example.js:
 
 ```javascript
 pc.script.create('posteffect_example', function (app) {
@@ -33,9 +33,9 @@ pc.script.create('posteffect_example', function (app) {
 });
 ```
 
-## Эффект
+## The effect
 
-Теперь мы должны создать новый класс для нашего пост-эффекта. Этот класс должен происходить от [pc.posteffect.PostEffect][4]. Мы определим этот класс внутри нашего posteffect_example.js непосредственно перед определением сценария:
+Now we need to create a new class for our post effect. This class will derive from [pc.posteffect.PostEffect][4]. We will define this class inside our posteffect_example.js script just before the script definition:
 
 ```javascript
 pc.extend(pc, function () {
@@ -204,7 +204,7 @@ pc.script.create('posteffect_example', function (app) {
 });
 ```
 
-Больше уроков по пользовательским шейдерам [тут][6].
+For more tutorials on custom shaders look [here][6].
 
 See the [Custom Post Effects project here][7].
 

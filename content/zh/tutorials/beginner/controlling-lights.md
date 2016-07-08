@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/controllingLights?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/tiKpka9M"></iframe>
 
 *Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
 
@@ -45,82 +45,76 @@ We added a spot light (attached to a parent assembly of a basic torch model), a 
 
 The full code used for the above PlayCanvas app is as follows.
 ~~~javascript~~~
-pc.script.create('lightHandler', function (app) {
-    // Creates a new LightHandler instance
-    var LightHandler = function (entity) {
-        this.entity = entity;
-    };
+var LightHandler = pc.createScript('lightHandler');
 
-    LightHandler.prototype = {
-        // Called once after all resources are loaded and before the first update
-        initialize: function () {
-            this.spot = app.root.findByName("SpotLight");
-            this.point = app.root.findByName("PointLight");
-            this.directional = app.root.findByName("DirectionalLight");
-            this.pivot1 = app.root.findByName("Pivot1");
-            this.pivot2 = app.root.findByName("Pivot2");
-            this.timer = 0;
-            this.color1 = new pc.Color(1, 1, 1);
-            this.color2 = new pc.Color(1, 1, 1);
-            this.color3 = new pc.Color(1, 1, 1);
-        },
+// initialize code called once per entity
+LightHandler.prototype.initialize = function() {
+    var app = this.app;
 
-        // Called every frame, dt is time in seconds since last update
-        update: function (dt) {
-            this.pivot();
+    this.spot = app.root.findByName("SpotLight");
+    this.point = app.root.findByName("PointLight");
+    this.directional = app.root.findByName("DirectionalLight");
+    this.pivot1 = app.root.findByName("Pivot1");
+    this.pivot2 = app.root.findByName("Pivot2");
+    this.timer = 0;
+    this.color1 = new pc.Color(1, 1, 1);
+    this.color2 = new pc.Color(1, 1, 1);
+    this.color3 = new pc.Color(1, 1, 1);
+};
 
-            if (app.keyboard.wasPressed(pc.KEY_1)) {
-                this.spot.light.enabled = !this.spot.light.enabled;
-            }
-            if (app.keyboard.wasPressed(pc.KEY_2)) {
-                this.point.light.enabled = !this.point.light.enabled;
-            }
-            if (app.keyboard.wasPressed(pc.KEY_3)) {
-                this.directional.light.enabled = !this.directional.light.enabled;
-            }
+// update code called every frame
+LightHandler.prototype.update = function(dt) {
+    var app = this.app;
 
-            // a counter that is used as input to sin the functions determining light properties for all lights.
-            this.timer += dt;
+    this.pivot();
 
-            //these 3 code blocks assign color and intensity values that vary according to a sin function
-            //all sin inputs are in radians
-            var s = Math.abs(Math.sin(1 + this.timer));
-            var r = 1-s/2;
-            var g = s-0.2;
-            var b = 0.55+s/2;
-            this.color1.set(r, g, b);
-            this.spot.light.color = this.color1;
-            this.spot.light.intensity = 10*s;
+    if (app.keyboard.wasPressed(pc.input.KEY_1)) {
+        this.spot.light.enabled = !this.spot.light.enabled;
+    }
+    if (app.keyboard.wasPressed(pc.input.KEY_2)) {
+        this.point.light.enabled = !this.point.light.enabled;
+    }
+    if (app.keyboard.wasPressed(pc.input.KEY_3)) {
+        this.directional.light.enabled = !this.directional.light.enabled;
+    }
 
-            s = Math.abs(Math.sin(2 + this.timer));
-            r = s/2;
-            g = 0.25+s/2;
-            b = 1.0-s;
-            this.color2.set(r, g, b);
-            this.point.light.color = this.color2;
-            this.point.light.intensity = 10*s;
+    // a counter that is used as input to sin the functions determining light properties for all lights.
+    this.timer += dt;
 
-            s = Math.abs(Math.sin(3 + this.timer));
-            r = 0.25+s/2;
-            g = 0.75-s/2;
-            b = 0.25+s/2;
-            this.color3.set(r, g, b);
-            this.directional.light.color = this.color3;
-            this.directional.light.intensity = 3*(1-s);
-        },
+    //these 3 code blocks assign color and intensity values that vary according to a sin function
+    //all sin inputs are in radians
+    var s = Math.abs(Math.sin(1 + this.timer));
+    var r = 1-s/2;
+    var g = s-0.2;
+    var b = 0.55+s/2;
+    this.color1.set(r, g, b);
+    this.spot.light.color = this.color1;
+    this.spot.light.intensity = 10*s;
 
-        // this function rotates all three lights about their parent entities (all at the centre of the scene) to easily create circular motion.
-        pivot: function (){
-            this.pivot1.rotate(0, 2, 0);
-            this.pivot2.rotate(0, -3, 0);
+    s = Math.abs(Math.sin(2 + this.timer));
+    r = s/2;
+    g = 0.25+s/2;
+    b = 1.0-s;
+    this.color2.set(r, g, b);
+    this.point.light.color = this.color2;
+    this.point.light.intensity = 10*s;
 
-        }
-    };
+    s = Math.abs(Math.sin(3 + this.timer));
+    r = 0.25+s/2;
+    g = 0.75-s/2;
+    b = 0.25+s/2;
+    this.color3.set(r, g, b);
+    this.directional.light.color = this.color3;
+    this.directional.light.intensity = 3*(1-s);
+};
 
-    return LightHandler;
-});
+// this function rotates all three lights about their parent entities (all at the centre of the scene) to easily create circular motion.
+LightHandler.prototype.pivot = function () {
+    this.pivot1.rotate(0, 2, 0);
+    this.pivot2.rotate(0, -3, 0);
+};
 ~~~
 
 [1]: /engine/api/stable/symbols/pc.LightComponent.html
-[2]:  https://playcanvas.com/project/186/overview/tutorials
+[2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
 

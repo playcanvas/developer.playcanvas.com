@@ -14,7 +14,9 @@ It can be very useful to animate a material that has been applied to a surface. 
 The square plane in the example uses the script `scrolling-texture.js` to constantly move the UV offset every frame. For example, this can be used to simulate flowing water. The update loop is displayed below.
 
 ```javascript
-update: function (dt) {
+ScrollingTexture.prototype.update = function(dt) {
+    var tmp = ScrollingTexture.tmp;
+
     // Calculate how much to offset the texture
     // Speed * dt
     tmp.set(this.speed.x, this.speed.y);
@@ -24,12 +26,12 @@ update: function (dt) {
     this.material.diffuseMapOffset.add(tmp);
     this.material.normalMapOffset.add(tmp);
     this.material.update();
-}
+};
 ```
 
 We calculate the required offset into a temporary vector `tmp`. This is simply: `speed * timeStep`. Then we add this offset to the offset property for both the diffuse map and the normal map by modifying the `diffuseMapOffset` and `normalMapOffset` properties. These values are `pc.Vec2`s which shift the UV co-ordinates used to map the texture to the surface. If you are using other maps (e.g. emissive) you will also need to update these offset properties as well. Finally we call `material.update()` to propogate the changes into the shader.
 
-This is a simple straightforward method to modify a material's offset and scroll a texture. It does have one downside which is this code modifies the actual material's properties. So if you have multiple models in a scene with the same material, they will all be affects.
+This is a simple straightforward method to modify a material's offset and scroll a texture. It does have one downside which is this code modifies the actual material's properties. So if you have multiple models in a scene with the same material, they will all be affected.
 
 ## Animating multiple materials with map offset
 
@@ -38,7 +40,7 @@ If you want to have many entities with animating textures updating independently
 In our code example, the coins and the number counters are both duplicated and we've set them to use different frame rates and the numbers use different animation frames.
 
 ```javascript
-update: function (dt) {
+AnimatedTexture.prototype.update = function(dt) {
     // calculate when to animate to next frame
     this.timer -= dt;
     if (this.timer < 0) {
@@ -53,9 +55,9 @@ update: function (dt) {
         // reset the timer
         this.timer = 1/this.frameRate;
     }
-},
+};
 
-updateMaterial: function (frame) {
+AnimatedTexture.prototype.updateMaterial = function (frame) {
     // calculate how much to change UV to go to next frame
     var dx = 1 / this.width;
     var dy = 1 / this.height;
@@ -64,16 +66,16 @@ updateMaterial: function (frame) {
     var x = frame % this.width;
     var y = Math.floor(frame / this.width);
 
-    var meshes = this.entity.model.model.meshInstances;
+    var meshes = this.entity.model.meshInstances;
 
     // create the transform vector (tilingx, tilingy, offsetx, offsety)
     // and override the material properties for this mesh
     // This allows us to use different settings for different Entities, but share the same material
-    this.transform.set(_x, dy, x * dx, (1 - dy) - (y * dy));
+    this.transform.set(dx, dy, x * dx, (1 - dy) - (y * dy));
     meshes[0].setParameter("texture_diffuseMapTransform", this.transform.data);
     meshes[0].setParameter("texture_emissiveMapTransform", this.transform.data);
     meshes[0].setParameter("texture_opacityMapTransform", this.transform.data);
-}
+};
 ```
 
 In this example, we're taking a sprite sheet for example this rotating coin
@@ -92,6 +94,6 @@ The main difference from the previous scrolling example. Is that we're using `pc
 
 As you can see in our example, the two coins have a different frame rate and one set of numbers is only using 3 frames for the animation. This method is very useful if you wish to make sprite-based 2D animation and the script `animated-texture.js` is a good starting point.
 
-[1]: https://playcanvas.com/project/379180/overview/tutorial-animated-textures
+[1]: https://playcanvas.com/project/405882
 [2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png
 

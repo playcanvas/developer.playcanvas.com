@@ -3,7 +3,7 @@ title: Basic Audio
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/OCjXz0bh" ></iframe>
+<iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>
 
 *The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
 
@@ -89,7 +89,7 @@ To create an AudioListener, select the Entity you wish to represent the listener
 
 [1]: /user-manual/packs/components/sound
 [2]: /user-manual/packs/components/audiolistener
-[3]: https://playcanvas.com/editor/scene/403241
+[3]: https://playcanvas.com/editor/scene/440098
 [4]: /user-manual/assets/importing
 [5]: /images/tutorials/audio/sound.jpg
 

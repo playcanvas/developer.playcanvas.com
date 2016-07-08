@@ -1,17 +1,18 @@
 ---
-title: Основы ввода с клавиатуры
+title: Basic Keyboard Input
 template: tutorial-page-legacy.tmpl.html
 position: 1
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard?overlay=false"></iframe>
 
-*Нажмите на окно с приложением для фокусировки, потом на клавиатуре стрелка влево, стрелка вправо и пробел для вращения куба. Нажмите и отпустите клавишу 'a' для смены цвета.
+*Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
 
-Ввод с клавиатуры в PlayCanvas предоставляется объектом 'pc.Keyboard'.
-Объект клавиатуры предоставляет простой интерфейс для основных операций, таких как: клавиша нажата однократно или клавиша удерживается. Этот объект также исключает различные кросс-браузерные проблемы по обработке кодов клавиш.
+Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
+for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
+handling keycodes and charcodes.
 
-Посмотрите на сцену обработки ввода с клавиатуры в [уроке][1]. Здесь полный код урока:
+Take a look at the keyboard input Scene in the [tutorials project][1]. Here is the code for the tutorial:
 
 ~~~javascript~~~
 pc.script.create("keyboard_handler", function (app) {
@@ -91,44 +92,44 @@ pc.script.create("keyboard_handler", function (app) {
 });
 ~~~
 
-Есть два пути обнаружения ввода с клавиатуры. Первый делается в методе обновления ваших скриптов. Используйте `isPressed()` и`wasPressed()` и проверяйте нажата ли клавиша сейчас, или была нажата. Второй использует события отвечающие нажата или отпущена кнопка, как только это происходит.
+There are two ways of detecting keyboard input. The first is done in the update method of your scripts. Use `isPressed()` and `wasPressed()` and check whether a key is currently pressed or has just been pressed. The second uses events to respond to a key press or release as it happens.
 
-## `isPressed` против `wasPressed`
+## `isPressed` vs `wasPressed`
 
-В демо выше Вы можете видеть разницу в поведении между `isPressed()` и `wasPressed()`.
+In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`.
 
-Когда вы нажимаете и удерживаете левую или правую стрелку мыши, куб вращается на 5&deg; один раз. Всё потому, что `wasPressed()` возвращает истину для кадра сразу после того, как клавиша была нажата.
+When you press and hold the left or right arrow keys the cube will rotate by 5&deg;, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed.
 
-Если Вы нажимаете и удерживаете пробел, можете увидеть, что куб вращается непрерывно на 1&deg; каждый кадр. Потому как  `isPressed()` возвращает истину для каждого кадра, в котором нажата кнопка.
+If you press and hold the spacebar you will see that the cube rotates continuously by 1&deg; per frame. This is because `isPressed()` returns true for every frame in which the key is pressed.
 
-### `isPressed(клавиша)`
+### `isPressed(key)`
 
-`isPressed(клавиша)` проверяет если клавиша в данный момент нажата и возвращает истину, если это так. Истина возвращается для каждого кадра, пока нажата кнопка.
+`isPressed(key)` checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
 
-### `wasPressed(клавиша)`
+### `wasPressed(key)`
 
-`wasPressed(клавиша)` смотрит, если клавиша была нажата *с момента последнего кадра*. `wasPressed()` возвратит истину однажды для единичного нажатия на клавишу.
+`wasPressed(key)` checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
 
-## События
+## Events
 
-Второй метод обращения с нажатиями клавиш - это прослушивание событий. Два события клавиатуры поддерживаются на устройстве клавиатура:
+The second method of handling key presses is to listen for events. Two keyboard events are supported on the Keyboard device:
 
 * `pc.EVENT_KEYDOWN`
 * `pc.EVENT_KEYUP`
 
-[DOM][3] события клавиатуры реализованы по-разному в разных браузерах, поэтому движок PlayCanvas обеспечивает события объектом `pc.Keyboard`, таким образом Вы можете использовать один код везде. Когда события с клавиатуры запущены, обработчик событий передаёт объект `pc.KeyboardEvent`, который содержит информацию о коде клавиши: нажата ли она, либо отпущена.
+[DOM][3] keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.KeyboardEvent` object which contains the key code of the key that was pressed on released.
 
-Обратите внимание, третьим аргументом в on() мы передаём `this` - сам экземпляр, выполняющий скрипт. Третий аргумент в on()  использует `this` для события обратного вызова, так что мы должны передать его здесь. В противном случае он будет применяться неправильному объекту.
+Notice we are also passing a third argument to on(), which is `this` or the Script Instance itself. The third argument to on() is used as `this` in the event callbacks, so we need to pass it in here, otherwise it won't be set to the correct object.
 
-## Коды клавиш
+## Key Codes
 
-Идентификация того, какая клавиша нажата выполняется использованием кодов клавиш. Это числовые значения, которые соответствуют клавишам на клавиатуре. Например, pc.KEY_A это  кнопка `A` , pc.LEFT - это стрелка влево.
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
 
-Обратите внимание, что Вы всегда должны использовать перечисления `pc.KEY_*` вместо использования числовых значений. Настоящее значение этих констант может измениться в будущем.
+Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
-## Попробуйте
+## Try it out
 
-Проверьте полноэкранный режим [здесь][2]  или в начале страницы. Сравните нажатия и удержания стрелок на клавиатуре с нажатием и удержанием клавиши пробел.
+Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
 
 [1]: https://playcanvas.com/project/186/overview/tutorials
 [2]: http://apps.playcanvas.com/playcanvas/tutorials/input_keyboard

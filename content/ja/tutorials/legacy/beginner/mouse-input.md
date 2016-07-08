@@ -1,16 +1,16 @@
 ---
-title: 基本的なマウス入力
+title: Basic Mouse Input
 template: tutorial-page-legacy.tmpl.html
 position: 2
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/input_mouse?overlay=false"></iframe>
 
-*マウスを動かすとキューブが動きます。マウスのボタンを押すとキューブの色が変わります。*
+*Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
 
-PlayCanvasエンジンでの処理マウスは`pc.Mouse`オブジェクトによって提供されます。マウスオブジェクトは、マウスが移動したときや、マウスボタンが押されたことを検出するための簡単なインターフェースを提供します。また、マウス座標の処理におけるクロスブラウザの不一致を一部改善します。
+Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistancies with handling mouse co-ordinates.
 
-[チュートリアルプロジェクト][1]の'Mouse Input'シーンをご確認ください。mouse.jsのコードが次の通りです：
+Take a look at the 'Mouse Input' Scene in the [tutorials project][1]. Here is the code from mouse.js:
 
 ~~~javascript~~~
 pc.script.attribute("materials", "asset", [], {type: "material"});
@@ -20,13 +20,13 @@ pc.script.create("mouse", function (app) {
         this.entity = entity;
         this.pos = new pc.Vec3();
 
-        // appメニューを無効にするとページを右クリックした際に
-        // ブラウザでメニューが表示されなくなります
+        // Disabling the app menu stops the browser displaying a menu when
+        // you right-click the page
         app.mouse.disableContextMenu();
 
-        // on()メソッドを使用してイベントハンドラを添付
-        // マウスオブジェクトはマウスの動き、上下ボタン、スクロール
-        // のイベントに対応しています
+        // Use the on() method to attach event handlers.
+        // The mouse object supports events on move, button down and
+        // up, and scroll wheel.
         app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
         app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
     };
@@ -39,28 +39,28 @@ pc.script.create("mouse", function (app) {
         },
 
         onMouseMove: function (event) {
-            // カメラコンポーネントのscreenToWorld機能を使用して
-            // マウスの位置を3D空間の位置に変換
+            // Use the camera component's screenToWorld function to convert the
+            // position of the mouse into a position in 3D space
             var depth = 10;
             var cameraEntity = app.root.findByName('Camera');
             cameraEntity.camera.screenToWorld(event.x, event.y, depth, this.pos);
 
-            // 最後に、キューブのワールド空間位置を更新します
+            // Finally update the cube's world-space position
             this.entity.setPosition(this.pos);
         },
 
         onMouseDown: function (event) {
-            // マウスの左ボタンを押すとキューブの色が赤に変わります
+            // If the left mouse button is pressed, change the cube color to red
             if (event.button === pc.MOUSEBUTTON_LEFT) {
                 this.entity.model.model.meshInstances[0].material = this.redMaterial;
             }
 
-            // マウスの左ボタンを押すとキューブの色が緑に変わります
+            // If the left mouse button is pressed, change the cube color to green
             if (event.button === pc.MOUSEBUTTON_MIDDLE) {
                 this.entity.model.model.meshInstances[0].material = this.greenMaterial;
             }
 
-            // マウスの左ボタンを押すとキューブの色が青に変わります
+            // If the left mouse button is pressed, change the cube color to blue
             if (event.button === pc.MOUSEBUTTON_RIGHT) {
                 this.entity.model.model.meshInstances[0].material = this.blueMaterial;
             }
@@ -73,60 +73,60 @@ pc.script.create("mouse", function (app) {
 
 ~~~
 
-### マウスにアクセス
+### Accessing the mouse
 
-マウスコントロールは`pc.Mouse`オブジェクトによって管理されます。  [フレームワーク][2]は、[アプリケーションapp][3]でこのインスタンスを提供します。これは次のように全てのスクリプトオブジェクトで利用可能です：
+Mouse control is managed by the `pc.Mouse` object. The [framework][2] provides an instance of this on the [application app][3] which is available to all script objects as:
 
 ~~~javascript~~~
 app.mouse
 ~~~
 
-### 右クリックメニューを無効化
+### Disabling the right-click menu
 
-スクリプトオブジェクトのコンストラクタでは、右クリックメニューを無効にしているので、マウスの右ボタンをクリックしてもポップアップメニューは表示されません。
+In the constructor for our script object we disable the right-click menu to stop it popping up when we click the right mouse button.
 
 ~~~javascript~~~
 app.mouse.disableContextMenu();
 ~~~
 
-### イベントにバインド
+### Binding to events
 
-`pc.Mouse`オブジェクトから、マウス操作に対応したさまざまなイベントを聞くことができます。チュートリアルでは、moveイベントに`onMouseMove`メソッドを、ボタンダウンイベントに`onMouseDown`をバインドします。
+The `pc.Mouse` object allows you to listen to different events corresponding to mouse actions. In the tutorial, we are binding the method `onMouseMove` to the move event and `onMouseDown` to the button down event.
 
-イベントへのバインドのために`this` をon()メソッドに渡します。この3番目の引数は、イベントコールバックで`this`として使用されるオブジェクトです。
+Notice how we also pass `this` into the on() method for binding to events. This third argument is the object that is used as `this` in the event callback.
 
 ~~~javascript~~~
 app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
 app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~
 
-`pc.Mouse`で利用可能なイベント：
+Events available on `pc.Mouse` are:
 
-* `pc.EVENT_MOUSEUP` - マウスボタンが開放されると発動
-* `pc.EVENT_MOUSEDOWN` - マウスボタンが押されると発動
-* `pc.EVENT_MOUSEMOVE` - マウスが動かされると発動
-* `pc.EVENT_MOUSEWHEEL` - マウスホイールが動かされると発動
+* `pc.EVENT_MOUSEUP` - fires when a mouse button is released
+* `pc.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
+* `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
+* `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
 
-ブラウザでのマウス入力は通常、ページのDOMの要素の[DOM][4]のイベントをリッスンすることで実装されます。問題は、異なるブラウザはそれぞれ少しずつ異なるイベントを実装し、別の値を提供していることです。書くコードをシンプルにするために、PlayCanvasエンジンはイベントハンドラを直接DOM要素にバインドするのではなく、PlayCanvasマウスハンドラにバインドすることを可能にします。エンジンはイベント発生時に、すべてのブラウザで一貫性がある`pc.MouseEvent`オブジェクトを提供します。オリジナルのDOMイベントが必要な場合は`pc.MouseEvent`の`event`プロパティとして利用可能です。
+Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistant across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
 
-### マウスを動かす
+### Moving the mouse
 
-最初のイベントハンドラは`onMouseMove`です。これは、マウスが移動するたびに発動します。`EVENT_MOUSEMOVE`イベントの場合、` MouseEvent`オブジェクトには、現在のマウスの位置を`x`と`y`、最後のイベント以来の位置の変化を`dx`と`dy`で示します。チュートリアルでは、マウスの現在位置を使用して、カーソル位置にキューブを移動します。
+The first event handler is `onMouseMove`. This is fired whenever the mouse moves. For an `EVENT_MOUSEMOVE` event, the `MouseEvent` object will have the current position of the mouse `x` and `y` and also the change in position since the last event in `dx` and `dy`. In our tutorial we're using the current position of the mouse and moving the cube to the cursor position.
 
-### マウスボタン
+### Mouse buttons
 
-二つ目のイベントハンドラは`onMouseDown`です。3つのマウスボタンのいずれかがクリックされると発動します。`EVENT_MOUSEDOWN`と` EVENT_MOUSEUP`イベントでは、`MouseEvent`オブジェクトに押下／開放されたボタンを含む` button`プロパティがあります。これは、次の値のいずれかになります：
+The second event handler is `onMouseDown`. This is fired whenever one of the three mouse buttons is clicked. In the `EVENT_MOUSEDOWN` and `EVENT_MOUSEUP` events, the `MouseEvent` object will have a `button` property which contains the button that has been pressed/released. It can be one of the following values:
 
 * `pc.MOUSEBUTTON_NONE`
 * `pc.MOUSEBUTTON_LEFT`
 * `pc.MOUSEBUTTON_MIDDLE`
 * `pc.MOUSEBUTTON_RIGHT`
 
-チュートリアルでは、押されたマウスボタンに応じてキューブの色を変更します。
+In our tutorial, we're changing the color of the cube depending on which mouse button was pressed.
 
-### 試してみよう
+### Try it out
 
-フルスクリーンでのチュートリアルはページ上部または[こちらから] [5]お試しください。マウスの移動でキューブを動かし、左、中、右マウスボタンをクリックしてキューブの色を変更します。
+Try the tutorial in full screen [here][5] or at the top of the page. Move the mouse to move the cube and click the left, middle and right mouse button to change the color of the cube.
 
 [1]: https://playcanvas.com/project/186/overview/tutorials
 [2]: /user-manual/glossary#framework

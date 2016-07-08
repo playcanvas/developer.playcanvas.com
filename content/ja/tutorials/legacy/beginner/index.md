@@ -1,8 +1,8 @@
 ---
-title: 初心者
+title: Beginners
 template: tutorial-page-legacy.tmpl.html
 position: 2
 ---
 
-こちらのチュートリアルでは、エンティティ、カメラ、入力、その他のPlayCanvasエンジンの機能の基礎を解説します。
+Get started with these tutorials which cover the basics of Entities, Cameras, Input and other areas of the PlayCanvas Engine.
 

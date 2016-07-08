@@ -3,7 +3,7 @@ title: Audio Effects
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/kvMKtuwp" ></iframe>
+<iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
 
 *Click on the various buttons to try out different sound effects.*
 
@@ -17,7 +17,7 @@ PlayCanvas allows you to fully leverage the power of the Web Audio API to add po
 
 You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Componenent with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
 
-The Root Entity also has a [Script][4] Component with two scripts. One script is responsible for the user interface and the other is the script we're going to focus on: <a href="https://playcanvas.com/editor/code/373920/application.js" target="_blank">https://playcanvas.com/editor/code/373920/application.js</a>.
+The Root Entity also has a [Script][4] Component with two scripts. One script is responsible for the user interface and the other is the script we're going to focus on: <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>.
 
 This script manages the sound effects of the application.
 
@@ -28,13 +28,13 @@ The Web Audio API allows you to create various audio nodes which can be connecte
 In this example we are using a [Convolver node][6]. In our application script we are creating that node like so:
 
 ~~~javascript~~~
-this.convolver = app.systems.sound.context.createConvolver();
+this.convolver = this.app.systems.sound.context.createConvolver();
 ~~~
 
 We then use a bunch of audio samples as impulse responses for the convolver as explained [here][7]. Each audio sample is an audio asset and depending on which button you press we use that asset and assign its internal buffer to the convolver buffer like so:
 
 ~~~javascript~~~
-var asset = app.assets.get(this[assetName]);
+var asset = this[assetName];
 this.convolver.buffer = asset.resource.buffer;
 ~~~
 
@@ -54,7 +54,7 @@ If you have a bigger graph of Audio Nodes and you want to connect it to a slot y
 
 You can find out more about the Sound Component API [here][8].
 
-[1]: https://playcanvas.com/editor/scene/403361
+[1]: https://playcanvas.com/editor/scene/440346
 [2]: /user-manual/packs/components/sound
 [3]: /tutorials/beginner/basic-audio
 [4]: /user-manual/packs/components/script

@@ -3,7 +3,7 @@ title: Light Halos
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://playcanv.as/p/KxohYUqg"></iframe>
+<iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
 
 Find out more by forking the [full project][4].
 
@@ -69,58 +69,53 @@ We're using the `setParameter` method on the [pc.MeshInstance][5] to set a value
 Here's the complete listing:
 
 ```javascript
-pc.script.attribute("camera", "entity");
-pc.script.attribute("unidirectional", "boolean", false);
+var Halo = pc.createScript('halo');
 
-pc.script.create('halo', function (app) {
-    var tmp = new pc.Vec3();
+Halo.attributes.add('camera', {type: 'entity'});
+Halo.attributes.add('unidirectional', {type: 'boolean', default: false});
 
-    // Creates a new Camera_facing instance
-    var Halo = function (entity) {
-        this.entity = entity;
-    };
+Halo.tmp = new pc.Vec3();
 
-    Halo.prototype = {
-        initialize: function () {
-            // Get the Entity with the plane model on it
-            this.plane = this.entity.getChildren()[0];
+// initialize code called once per entity
+Halo.prototype.initialize = function() {
+    // Get the Entity with the plane model on it
+    this.plane = this.entity.getChildren()[0];
 
-            // Get the parent entity which is used for direction
-            this.parent = this.entity.getParent();
-        },
+    // Get the parent entity which is used for direction
+    this.parent = this.entity.getParent();
+};
 
-        update: function (dt) {
-            // Store the vector the parent is facing (note forwards is negative z)
-            tmp.copy(this.parent.forward).scale(-1);
+// update code called every frame
+Halo.prototype.update = function(dt) {
+    var tmp = Halo.tmp;
 
-            var meshes = this.plane.model.model.meshInstances;
+    // Store the vector the parent is facing (note forwards is negative z)
+    tmp.copy(this.parent.forward).scale(-1);
 
-            if (this.camera) {
+    var meshes = this.plane.model.meshInstances;
 
-                // Set the glow to always face the camera
-                this.entity.lookAt(this.camera.getPosition());
+    if (this.camera) {
 
-                // If enabled, unidirectional means the glow fades off as it turns away from the camera
-                if (this.unidirectional) {
-                    // Get the dot product of the parent direction and the camera direction
-                    var dot = -1 * tmp.dot(this.camera.forward);
-                    // If the dot product is less that 0 the glow is facing away from the camera
-                    if (dot < 0) {
-                        dot = 0;
-                    }
+        // Set the glow to always face the camera
+        this.entity.lookAt(this.camera.getPosition());
 
-                    // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
-                    meshes[0].setParameter("material_opacity", dot);
-                } else {
-                    // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
-                    meshes[0].setParameter("material_opacity", 1);
-                }
+        // If enabled, unidirectional means the glow fades off as it turns away from the camera
+        if (this.unidirectional) {
+            // Get the dot product of the parent direction and the camera direction
+            var dot = -1 * tmp.dot(this.camera.forward);
+            // If the dot product is less that 0 the glow is facing away from the camera
+            if (dot < 0) {
+                dot = 0;
             }
-        }
-    };
 
-    return Halo;
-});
+            // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
+            meshes[0].setParameter("material_opacity", dot);
+        } else {
+            // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
+            meshes[0].setParameter("material_opacity", 1);
+        }
+    }
+};
 ```
 
 That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
@@ -128,6 +123,6 @@ That's it. A simple but pretty effect to add to your scene. Take a look at the [
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
 [2]: /images/tutorials/intermediate/light-halos/material.jpg
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
-[4]: https://playcanvas.com/project/366988/overview/tutorial-light-halos
+[4]: https://playcanvas.com/project/406040
 [5]: http://developer.playcanvas.com/en/api/pc.MeshInstance.html
 

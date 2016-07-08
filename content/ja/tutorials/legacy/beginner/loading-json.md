@@ -1,13 +1,13 @@
 ---
-title: JSONデータをロードする
+title: Loading JSON Data
 template: tutorial-page-legacy.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/xK29Smti" ></iframe>
 
-[このプロジェクト][1] は、二種類のJSONデータのロードの仕方を説明します。一つ目はプロジェクトのアセットの中からロードする方法、もう一つはHTTPを使ってリモートのサーバからロードする方法です。
+[This project][1] shows you how to load JSON data in two ways. First, from an asset in the project. Second, over HTTP from a remote server.
 
-## アセットの中のJSONをロードする
+## Loading JSON from an asset
 
 ```javascript
 pc.script.attribute('characterData', 'asset', null, {type: 'json', max: 1});
@@ -22,7 +22,7 @@ loadJsonFromAsset: function () {
 parseCharacterData: function (data) {
     var names = [];
 
-    // JSONアセットの中から文字列データを読み込み、JavaScriptコンソールに表示する
+    // Read the character data from the JSON asset and print the names to the JS console
     var characters = data.characters;
     for (var i = 0; i < characters.length; i++) {
         var character = characters[i];
@@ -35,18 +35,18 @@ parseCharacterData: function (data) {
 
 //...
 
-// JSONデータをプロジェクトのアセットから取得する
+// Get JSON data from a project asset
 var characterData = this.loadJsonFromAsset();
 
-// JSONデータをパースする
+// Parse JSON data
 var names = this.parseCharacterData(characterData);
 ```
 
-上のコードからも分かるように、プロジェクトのアセットの中のJSONデータをロードするには、アセットレジストリからアセットを取得し、次にその`resource`プロパティにアクセスします。JSONタイプのアセットにアクセスする場合は、`resource`プロパティにアクセスする前にすでにデータはパースされており、標準のJavaScriptオブジェクトとして扱うことができます。
+You can see in the code above that all you need to do to load JSON data from an asset in your project is retrieve the asset from the asset registry, then access the `resource` property. For an asset of type `json` the data will already be parsed into a standard javascript object when you access the `resource` property.
 
-一度JavaScriptオブジェクトを取得すれば、普通にデータにアクセスすることができます。例えば、プロパティを`parseCharacterData`を使ってループを使って走査するといったようなことです。
+Once you have the javascript object you can access the data as normal. For example, looping through properties as in `parseCharacterData`.
 
-## JSONデータをリモートサーバからロードする
+## Loading JSON from a remote server
 
 ```javascript
 loadJsonFromRemote: function (url, callback) {
@@ -60,7 +60,7 @@ loadJsonFromRemote: function (url, callback) {
 
 //...
 
-// JSONをリモートサーバからロードする
+// load JSON from a remote server
 this.loadJsonFromRemote("https://api.github.com/", function (data) {
     // display JSON data from remote server
     el = document.querySelector("#xhr-json");
@@ -69,51 +69,51 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
 
 ```
 
-このコードでは、(通常のWEBブラウザのAPIである)　XMLHttpRequestオブジェクトをGitHub APIのURLからJSONデータをロードするために使用します。
+In this code we are using the XMLHttpRequest object (which is part of the standard web browser API) to request JSON data from a URL, in this case the Github API.
 
-loadイベントを受け取った後、ロードしたJSONデータを`JSON.parse`(これも通常のWEBブラウザのAPIです)を使ってパースし、コールバック関数の引数としてパースされたデータを受け取ります。
+After receiving the `"load"` event we parse the JSON data using `JSON.parse` (another part of the standard web browser API) and return the data via the `callback` function.
 
-`loadJsonFromAsset()`は**同期**関数であり、`loadJsonFromRemote`は**非同期**関数であることに注意してください。
+Note, the difference between the **synchronous** call to `loadJsonFromAsset()` and the **asynchronous** call to `loadJsonFromRemote`.
 
-以下が全コードになります:
+Here is the full code listing:
 
 ```javascript
 pc.script.attribute("display", "asset", null, {type: "html"});
 pc.script.attribute("style", "asset", null, {type: "css"});
 
-// キャラクターデータを含むJSONアセットをドラッグ&ドロップできるようにするスクリプトアトリビュートを作成します
+// Create a script attribute to enable the drag and drop of a JSON asset containing character data
 pc.script.attribute('characterData', 'asset', null, {type: 'json', max: 1});
 
 pc.script.create('game', function (app) {
-    // 新しいゲームのインスタンスを作成します
+    // Creates a new Game instance
     var Game = function (entity) {
         this.entity = entity;
     };
 
     Game.prototype = {
-        // すべてのリソースがロードされ、最初のupdateが呼ばれる前に呼び出されます
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.initDisplay();
 
             var el;
 
-            // プロジェクトのアセットからJSONデータをロードします
+            // Get JSON data from a project asset
             var characterData = this.loadJsonFromAsset();
 
-            // JSONデータをパースします
+            // Parse JSON data
             var names = this.parseCharacterData(characterData);
 
-            // キャラクターの名前を表示します
+            // display character names
             el = document.querySelector("#character-name");
             el.textContent = names.join(", ");
 
-            // JSONデータをアセットから表示します
+            // display JSON data from asset
             el = document.querySelector("#asset-json");
             el.textContent = JSON.stringify(characterData, null, 4);
 
-            // JSONをリモートサーバからロードします
+            // load JSON from a remote server
             this.loadJsonFromRemote("https://api.github.com/", function (data) {
-                // リモートサーバから受け取ったJSONデータを表示します
+                // display JSON data from remote server
                 el = document.querySelector("#xhr-json");
                 el.textContent = JSON.stringify(data, null, 4);
             });
@@ -140,7 +140,7 @@ pc.script.create('game', function (app) {
         parseCharacterData: function (data) {
             var names = [];
 
-            // JSONアセットからキャラクターデータを読み込み、名前のリストを返します
+            // Read the character data from the JSON asset return a list of names
             var characters = data.characters;
             for (var i = 0; i < characters.length; i++) {
                 var character = characters[i];
@@ -164,7 +164,7 @@ pc.script.create('game', function (app) {
 });
 ```
 
-[このプロジェクト][1] で自分で色々試してみてください。
+Try [the project][1] for yourself.
 
 [1]: https://playcanvas.com/project/362232/overview/tutorial-read-json-data
 

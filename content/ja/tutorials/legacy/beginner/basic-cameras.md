@@ -1,76 +1,76 @@
 ---
-title: 基本的なカメラ
+title: Basic Cameras
 template: tutorial-page-legacy.tmpl.html
 position: 3
 ---
 
-## カメラ・エンティティ
+## Camera Entities
 
-PlayCanvasアプリケーションで作成されたシーンを見るためには、カメラエンティティを使ってシーンにレンダーします。
+To view the scene created by your PlayCanvas application a Camera Entity is used to render it to the screen.
 
-PlayCanvas エディタからシーンを実行するには、最低でも一つのアクティブなカメラエンティティをシーンに追加する必要があります。
+In order to run your Scene from the PlayCanvas Editor, you must add at least one active Camera Entity to your Scene.
 
-## カメラ・エンティティの作成
+## Creating a Camera Entity
 
-新しいカメラエンティティを作成するには、エンティティにカメラ [Component][1] を追加する必要があります。
+To create a new Camera Entity, you need to add a Camera [Component][1] to an Entity.
 
-* Entity Explorerでシーンのルートエンティティを選択
-* *Entity*メニューから*New Entity*を選択して新しいエンティティを作成
-* *Component*メニューから*New Component*を選択してコンポーネントを追加
-* 作成するコンポーネントタイプを選ぶ際、*Camera*を選択
+* Select the root Entity of your Scene in the Entity Explorer
+* Create a new Entity by selecting *New Entity* from the *Entity* menu.
+* Add a Component by selecting *New Component* from *Component* menu
+* Choose *Camera* when you are prompted to choose which type of Component to create
 
-カメラエンティティの作成は一般的な操作なのでショートカットが存在します：*Entity*メニューの*New Entity* -> *New Camera*を選択してください。
-これで新しいエンティティが作成されてカメラコンポーネントが追加されます。
+As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
+This is equivalent to creating a new Entity and adding a Camera Component to it.
 
-## カメラ・プロパティ
+## Camera Properties
 
-他のコンポーネントのように、カメラコンポーネントにはどの挙動を操作するプロパティのセットがあります。
+Like all Components, the Camera Component has a set of properties which alter it's behaviour.
 
-### Enabled（有効化）
+### `Enabled`
 
-有効にしたプロパティがtrueの場合、カメラはシーンが読み込まれる際にレンダリングバッファにシーンをレンダーします。一度に複数のカメラを有効に出来ます。これは、例えば、画面が分割されたゲームやミニマップなどを実装する状況に役立ちます。プライオリティプロパティは有効なカメラがレンダーされる順番を定めます。
+If the enabled property is true, then the camera will render the scene to its rendering buffer when the Scene loads. Multiple cameras can be enabled at the same time. This is useful in situations where you want to implement a split-screen game or a mini-map, for example. The priority property determines the order in which the enabled cameras are rendered.
 
-### Clear Color Buffer（クリアカラーのバッファ）
+### `Clear Color Buffer`
 
-このプロパティがチェックされていると、カメラはシーンのレンダリング前に、カメラのフレームバッファに以前に入っていたもの(つまり、以前にレンダーされたフレーム)を削除して、クリアカラーで埋めます。
+If this property is checked, before rendering the scene, the camera will erase whatever was previously in the camera's frame buffer (namely the previously rendered frame), and fills it with a clear color.
 
-### Clear Color（クリアカラー）
+### `Clear Color`
 
-フラームバッファがクリアされたカラー。Clear Color Buffer（クリアカラーバッファ）プロパティがチェックされていること前提。
+The color to which the frame buffer is cleared, providing that the Clear Color Buffer property has been checked.
 
-### Clear Depth Buffer（奥行バッファのクリア）
+### `Clear Depth Buffer`
 
-このプロパティにチェックが入っている場合、カメラはシーンのレンダリング前に、以前にカメラの深度バッファに保管されたものを削除します。通常、チェックを入れておくべきですが、シーンのレンダリング時に深度順を問わない場合は無効にした方が最適化できます。
+If this property is checked, before rendering the scene, the camera will erase whatever was previously stored in the camera's depth buffer. Normally, this should be left checked but in certain circumstances, where you don't care about depth order when rendering the scene, it can be an optimization to disable it.
 
-### Projection（プロジェクション）
+### `Projection`
 
-プロジェクションタイプは3Dシーンをページにレンダーされた2Dビューに変換するために使用されるマトリックスプロジェクションの種類を定めます。
+The projection type determines which type of matrix projection is used to convert the 3D scene in to the 2D view rendered to the page.
 
-**perspective** プロジェクションはゲームで使用される最も一般的なプロジェクションです。代わりに、**orthographic**プロジェクションを使用することができます。これは、遠近感無しでシーンをレンダーするので、2Dのゲームに便利です。
+The **perspective** projection is the most common type for games. Alternatively, you can use an **orthographic** projection, which renders the scene without perspective so is useful for 2D games.
 
-### Field of View（視界）
+### `Field of View`
 
-カメラのfield of view（視界）はカメラに表示されるシーンの範囲を定めます。これは角度(&deg;) で測定されます。デフォルト値の45&deg;の場合、ビューの上端と下端が作る弧形の角度はカメラの位置から45&deg;です。
+The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (&deg;) so the default value of 45&deg; means that the top edge of the view to the bottom edge of the view form an arc of 45&deg; from the position of the camera
 
 ![Field of view][2]
 
-こちらの図で確認できる通り、fov(視界)の値はディスプレーの幅に固定されていません。ワイドなスクリーンビュー(水色)にすると、縦に表示される範囲は同じですが、横は狭いスクリーンビュー（青）よりも広くなります。
+You can see in this diagram that because the `fov` value is independent of the width of the display a wide screen view (light blue) shows the same amount vertically but more horizontally than a narrow screen view (dark blue).
 
-### Near Clip（ニアクリップ）
+### `Near Clip`
 
-ニアクリッピング距離は、カメラから最も近い描画距離です。
+The near clipping distance is the distance, in metres, from the camera before which nothing will be drawn.
 
-### Far Clip（ファークリップ）
+### `Far Clip`
 
-ファークリッピング距離は、カメラから最も遠い描画距離です。
+The far clipping distance is the distance, in metres, from the camera after which nothing will be drawn.
 
-### Priority（プライオリティ）
+### `Priority`
 
-この値は複数のカメラが有効な場合、カメラがレンダーされる順番を定めます。値が小さいほどプライオリティが高くなり、最初にレンダーされます。
+This value is a number which determines the order in which a camera is rendered, if multiple cameras are enabled. Smaller numbers are higher priority and will be rendered first.
 
-### Viewport（ビューポート）
+### `Viewport`
 
-ビューポートはカメラのレンダリングバッファにある四角形のエリアです。 次の形式の4つの値があります：左下 X, 左下 Y, 横, 縦。これらの値は正規座標であり、レンダリングバッファは寸法に関わらず0..1でXとYにマップされます。つまり、カメラが画面の左下部分のみをレンダリングするよう制限したい場合は、ビューポートを0, 0, 0.5, 0.5に設定します。
+The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalised coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
 
 [1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png

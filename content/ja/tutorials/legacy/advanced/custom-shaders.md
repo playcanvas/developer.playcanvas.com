@@ -1,22 +1,22 @@
 ---
-title: カスタムシェーダー
+title: Custom Shaders
 template: tutorial-page-legacy.tmpl.html
 position: 3
 ---
 
 <iframe src="http://playcanv.as/p/q1mMPMPo" allowfullscreen></iframe>
 
-*このチュートリアルでは素材にカスタムシェーダを使用してGLSLでdissolveエフェクトを作成します*
+*This tutorial uses a custom shader on a material to create a dissolve effect in GLSL*
 
-PlayCanvasに3Dモデルをインポートすると、デフォルトで[Physical Material][3]を使用します。これは、多くのレンダリングニーズをカバーすることができる汎用性の高い素材タイプです。
+When you import your 3D models into PlayCanvas by default they will use our [Physical Material][3]. This is a versatile material type that can cover a lot of your rendering needs.
 
-素材に対して特別なエフェクトや特殊な例が必要になることも多くあります。そのためには、カスタムシェーダを作成する必要があります。
+However, you will often want to perform special effects or special cases for your materials. To do this you will need to write a custom shader.
 
-## シェーダーとシェーダーの定義
+## Shaders and Shader Definition
 
-WebGLは、GLSL言語を使用して全てのブラウザで実行することができるシェーダを書き込みます。PlayCanvasではこのコードをシェーダーアセットで作成して、それを使用して新しい `pc.Shader`を作成する前に[Shader Definition][1]にコードを割り当てます。
+WebGL uses the GLSL language to write shaders that can be run across all browsers. In PlayCanvas you create this code in shader assets and then assign the code to a [Shader Definition][1] before using this to create a new `pc.Shader`.
 
-### Vertex シェーダー
+### Vertex Shader
 
 ~~~
 attribute vec3 aPosition;
@@ -34,7 +34,7 @@ void main(void)
 }
 ~~~
 
-### フラグメントシェーダー
+### Fragment Shader
 
 ~~~
 varying vec2 vUv0;
@@ -57,19 +57,19 @@ void main(void)
 }
 ~~~
 
-上記の2つのシェーダーは、新しい素材の機能を定義します。頂点シェーダーでは、画面空間にメッシュの頂点位置を変換します。フラグメントシェーダーでは、ピクセルの色を設定します。このピクセルの色は、このアセットに提供される2つのテクスチャーに基づいて選択されます。uTime値が高さマップの色より小さい場合、ピクセルはレンダリングされません(モデルは非表示)。uTimeの値が高さマップの値よりも大きい場合、提供するdiffuseマップテクスチャーから色を取得します。
+The two shaders above define the functionality of the new Material. In the Vertex Shader we are transforming the vertex positions of the mesh into screen space. In the Fragment Shader we are setting the color of the pixel. This pixel color is chosen based on the two textures that are provided into this asset. If the value uTime is less than the color in the heightmap then we don't render any pixel (the model is invisible). If the value of uTime is greater than the heightmap value then we get the color from the diffuse map texture that we provide
 
-### シェーダー定義
+### Shader Definition
 
 ```javascript
 var vertexShader = app.assets.get(this.vs).resource;
 
-// デバイスに応じて動的に精度を設定。
+// dynamically set the precision depending on device.
 var fragmentShader = "precision " + gd.precision + " float;\n";
 fragmentShader = fragmentShader + app.assets.get(this.fs).resource;
 
 
-// 新しいシェーダーを作成するために使用するシェーダー定義。
+// A shader definition used to create a new shader.
 var shaderDefinition = {
     attributes: {
         aPosition: pc.gfx.SEMANTIC_POSITION,
@@ -80,51 +80,50 @@ var shaderDefinition = {
 };
 ```
 
-シェーダーの定義には3つのセクションがあります。`attributes`では、変数名と、頂点シェーダーが実行される各Vertex（頂点）に定義される属性の値を指定する必要があります。これらの値は、後に`attribute`としての
-頂点シェーダーで宣言されます。
+The shader definition contains three sections. In `attributes` you must specify the variable names and the value of attributes that will be defined for each Vertex that your vertex shader is executed for. These values are later declared in your vertex shader as an `attribute`.
 
-頂点シェーダーコードは`vshader`プロパティに文字列として供給され、フラグメントシェーダーは'fshader'プロパティに文字列として供給されます。
+The Vertex Shader code is supplied as a string in the `vshader` property and the Fragment Shader is supplied as a string in the 'fshader' property.
 
-上記はdissolve効果を作るために使用されるシェーダの定義です。2つのアセットからシェーダーコードを取得しています。これらのアセットは、[script attributes][2]を使用して供給され、スクリプトから簡単にアセットにアクセス出来るようにします。
+Above is the shader definition used to make the dissoving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
 
-GLSLシェーダーには、属性とは別で、二つの特殊なタイプの変数があります：`varying`と` uniform`
+Aside from attributes there are two other special types of variable in the GLSL shaders: `varying` and `uniform`
 
-## GLSL `varying` 変数
+## GLSL `varying` variables
 
-**varying（変化する**と宣言された変数は頂点シェーダーで設定されますが、フラグメントシェーダーで使用されます。これは、最初のプログラムから2つ目のプログラムにデータを渡すための方法です。
+A variable that is declared **varying** will be set in the vertex shader, but used in the fragment shader. It's a way of passing data on from the first program to the second.
 
-## GLSL `uniform` 変数
+## GLSL `uniform` variables
 
-**`uniform`**を定義された変数は頂点シェーダーとフラグメントシェーダーの両方で宣言されます。この変数の値はメインアプリケーションからシェーダーに渡す必要があります。例えば、シーン内のライトの位置です。
+A variable declared **`uniform`** will be declared in both vertex and fragment shaders. The value of this variable must be passed into the shader from the main application. For example, the position of a light in your scene.
 
-## 素材の作成
+## Creating Materials
 
 ~~~javascript
-// 定義からシェーダーを作成
+// Create the shader from the definition
 this.shader = new pc.gfx.Shader(gd, shaderDefinition);
 
-// 新しい素材を作成してシェーダーを設定
+// Create a new material and set the shader
 this.material = new pc.Material();
 this.material.setShader(this.shader);
 
-// 初期timeのパラメータを設定
+// Set the initial time parameter
 this.material.setParameter('uTime', 0);
 
-// diffuseテクスチャーを設定
+// Set the diffuse texture
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 
-// "clouds"テクスチャーを高さマッププロパティに使用
+// Use the "clouds" texture as the height map property
 this.material.setParameter('uHeightMap', heightTexture);
 
-// モデルの素材を新しい素材で置き換える
+// Replace the material on the model with our new material
 model.meshInstances[0].material = this.material;
 ~~~
 
-シェーダーの定義ができたら、新しいシェーダーと新しい素材を作成して、`setShader()`を使用してシェーダを素材に渡します。uniformはその後`setParameter()`メソッドを使って初期化されます。最後に、モデルの元の素材を作成した新しい素材で置き換えます。モデルの各メッシュは固有の素材を持ちます。モデルに複数のメッシュがある場合、ひとつ以上のメッシュインスタンスに素材を設定する必要があるかも知れません。
+Once we've got the shader definition we create a new Shader and a new Material and pass the shader onto the material using `setShader()`. The uniforms are then initialized using the `setParameter()` method. Finally we replace the original material on the model with the new material we've created. Notice, that each mesh in a model has it's own material. So if your model has more than one mesh, you may need to set the material onto more than one mesh instance.
 
-*同じ素材をひとつ以上のメッシュに使用することができます(また、そうするべきです)*
+*You can (and should) use the same material on more than one mesh.*
 
-## 新しい素材でテクスチャーを使用
+## Using a texture in a new Material
 
 ~~~javascript
 var diffuseTexture = app.assets.get(this.diffuseMap).resource;
@@ -132,8 +131,8 @@ var diffuseTexture = app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ~~~
 
-このチュートリアルで紹介されているエフェクトは高さマップテクスチャーを使用して行われます。上記のコードを使用してアセットレジストリからテクスチャーにアクセスします。
-スクリプトの先頭で、PlayCanvas Editorからテクスチャーを設定することができる'maps'というスクリプト属性を宣言しています：
+The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
+top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
 
 ~~~javascript
 pc.script.attribute("vs", "asset", null, {displayName: "Vertex Shader", type: "shader", max: 1});
@@ -142,31 +141,31 @@ pc.script.attribute('diffuseMap', 'asset', null, {displayName: 'Diffuse Map', ty
 pc.script.attribute('heightMap', 'asset', null, {displayName: 'Height Map', type: 'texture', max: 1});
 ~~~
 
-高さマップが読み込まれるとuniform `uHeightMap` を `pc.Texture` オブジェクトに設定することができます。
+When our height map texture is loaded we can set the uniform `uHeightMap` to be the `pc.Texture` object.
 
-## uniformの更新
+## Updating uniforms
 
 ~~~javascript
-// 毎フレーム呼ばれる。dtは最後の更新以降の秒単位の時間。
+// Called every frame, dt is time in seconds since last update
 update: function (dt) {
     this.time += dt;
 
-    // t 0->1->0のbounce値
+    // Bounce value of t 0->1->0
     var t = (this.time % 2);
     if (t > 1) {
         t = 1 - (t - 1);
     }
 
-    // 素材のtime値を更新
+    // Update the time value in the material
     this.material.setParameter('uTime', t);
 }
 ~~~
 
-消失エフェクトを得るために、高さマップの値を閾値として使用して、閾値を時間と共に増やします。上記の更新方法では、`t`の値を0と1の間でバウンスして、それを` uTime` uniformとして設定します。
+To achieve the disappearing effect we use the height map value as a threshold, and we increase the threshold over time. In the update method above we bounce the value of `t` between 0 and 1 and we set this as the `uTime` uniform.
 
-シェーダーで、ピクセルの高さマップの値がtime値より小さい場合、ピクセルを描画しません。また、閾値に近い値では、エフェクトに綺麗な「縁」を表示するためにピクセルを青で描画します。
+In our shader if the value of the heightmap on a pixel is less than the value time value we don't draw the pixel. In addition at values that are close to the threshold, we draw the pixel in blue to display a nice 'edge' to the effect.
 
-## 完全なリスト
+## Complete listing
 
 ~~~javascript
 pc.script.attribute("vs", "asset", null, {displayName: "Vertex Shader", type: "shader", max: 1});
@@ -175,7 +174,7 @@ pc.script.attribute('diffuseMap', 'asset', null, {displayName: 'Diffuse Map', ty
 pc.script.attribute('heightMap', 'asset', null, {displayName: 'Height Map', type: 'texture', max: 1});
 
 pc.script.create('customShader', function (app) {
-    // 新しいCustomShaderインスタンスを作成
+    // Creates a new CustomShader instance
     var CustomShader = function (entity) {
         this.entity = entity;
 
@@ -186,7 +185,7 @@ pc.script.create('customShader', function (app) {
 
 
     CustomShader.prototype = {
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
             var model = this.entity.model.model;
             var gd = app.graphicsDevice;
@@ -198,7 +197,7 @@ pc.script.create('customShader', function (app) {
             var fragmentShader = "precision " + gd.precision + " float;\n";
             fragmentShader = fragmentShader + app.assets.get(this.fs).resource;
 
-            // 新しいシェーダーを作成するために使用されるシェーダー定義
+            // A shader definition used to create a new shader.
             var shaderDefinition = {
                 attributes: {
                     aPosition: pc.gfx.SEMANTIC_POSITION,
@@ -208,37 +207,37 @@ pc.script.create('customShader', function (app) {
                 fshader: fragmentShader
             };
 
-            // シェーダーを定義から作成
+            // Create the shader from the definition
             this.shader = new pc.gfx.Shader(gd, shaderDefinition);
 
-            // 新しい素材を作成してシェーダーを設定
+            // Create a new material and set the shader
             this.material = new pc.Material();
             this.material.setShader(this.shader);
 
-            // 初期のtimeパラメータを設定
+            // Set the initial time parameter
             this.material.setParameter('uTime', 0);
 
-            // diffuseテクスチャーを設定
+            // Set the diffuse texture
             this.material.setParameter('uDiffuseMap', diffuseTexture);
 
-            // 高さマッププロパティに"clouds"テクスチャーを使用
+            // Use the "clouds" texture as the height map property
             this.material.setParameter('uHeightMap', heightTexture);
 
-            // モデルの素材を新しい素材で置き換え
+            // Replace the material on the model with our new material
             model.meshInstances[0].material = this.material;
         },
 
-        // 毎フレーム呼ばれる。dtは最後の更新以降の秒単位の時間
+        // Called every frame, dt is time in seconds since last update
         update: function (dt) {
             this.time += dt;
 
-            // t 0->1->0のbounce値
+            // Bounce value of t 0->1->0
             var t = (this.time % 2);
             if (t > 1) {
                 t = 1 - (t - 1);
             }
 
-            // 素材のtime値を更新
+            // Update the time value in the material
             this.material.setParameter('uTime', t);
         }
     };
@@ -247,7 +246,7 @@ pc.script.create('customShader', function (app) {
 });
 ~~~
 
-完全なスクリプトです。動作させるためには、頂点シェーダーとフラグメントシェーダーのアセットを作成する必要があります。沢山のメッシュと素材を持つモデルにdissolveエフェクトを適用するシェーダーの実施はリーダーへの課題として残されます。
+Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work. It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
 
 [1]: /engine/api/stable/symbols/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/

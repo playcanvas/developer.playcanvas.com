@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 3
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/more_cameras?overlay=false" ></iframe>
+<iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>
 
 *クリックでフォーカス、`space`でズームイン及びアウト、`左arrow`と `右arrow`で左右のカメラに切り替えるます*
 
@@ -16,56 +16,46 @@ position: 3
 ComponentSystemの`set()` と `get()`メソッドを使用して行います。
 
 ~~~javascript~~~
-pc.script.create('zoom', function (app) {
-    // 新しいズームインスタンスを作成
-    var Zoom = function (entity) {
-        this.entity = entity;
+var Zoom = pc.createScript('zoom');
 
-        this.targetFov = 45;
-    };
+// initialize code called once per entity
+Zoom.prototype.initialize = function() {
+    this.targetFov = 45;
+};
 
-    Zoom.prototype = {
-        // すべてのリソースがロードされた後、最初の更新の前に一度呼び出されます
-        initialize: function () {
-        },
+// update code called every frame
+Zoom.prototype.update = function(dt) {
 
-        // すべてのフレームで呼ばれる。dtは前回の更新からの秒単位の時間。
-        update: function (dt) {
-            if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
-                if (this.targetFov == 10) {
-                    this.targetFov = 45;
-                } else {
-                    this.targetFov = 10;
-                }
-            }
-
-            var fov = this.entity.camera.fov;
-
-            if (fov < this.targetFov) {
-                fov += (10 * dt);
-                if (fov > this.targetFov) {
-                    fov = this.targetFov;
-                }
-            }
-
-            if (fov > this.targetFov) {
-                fov -= (10 * dt);
-                if (fov < this.targetFov) {
-                    fov = this.targetFov;
-                }
-            }
-
-            this.entity.camera.fov = fov;
+    if (this.app.keyboard.wasPressed(pc.KEY_SPACE) ) {
+        if (this.targetFov == 10) {
+            this.targetFov = 45;
+        } else {
+            this.targetFov = 10;
         }
-    };
+    }
 
-    return Zoom;
-});
+    var fov = this.entity.camera.fov;
+    if (fov < this.targetFov) {
+        fov += (10 * dt);
+        if (fov > this.targetFov) {
+            fov = this.targetFov;
+        }
+    }
+
+    if (fov > this.targetFov) {
+        fov -= (10 * dt);
+        if (fov < this.targetFov) {
+            fov = this.targetFov;
+        }
+    }
+    this.entity.camera.fov = fov;
+};
+
 ~~~
 
 このサンプルでは、スペースバーを押すと視野の変化をトリガーします。`var fov = this.entity.camera.fov`行では、スクリプトが追加されているエンティティのカメラコンポーネントの`fov`の値を`get()`します。
 
-`app.keyboard.wasPressed()`でキー入力を検出し、ターゲットFOVの値を切り替えます。
+With `this.app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
 ネストされた最後の二つの`if(){}`コンストラクトで徐々にfov値を変更してズームイン／ズームアウト効果を作成します。
 
@@ -79,54 +69,45 @@ pc.script.create('zoom', function (app) {
 カメラでインタラクティビティを作成する一つの方法は、複数のカメラを切り替えることです。シーンに複数のカメラエンティティを追加することで実現することができます。一つのみがアクティベートされるようにして、スクリプト内で、実行時のカメラを変更します。
 
 ~~~javascript~~~
-pc.script.create('camera_manager', function (app) {
-    // 新規のCameraManagerインスタンスを作成
-    var CameraManager = function (entity) {
-        this.entity = entity;
+var CameraManager = pc.createScript('cameraManager');
 
-        this.activeCamera = null;
-    };
+// initialize code called once per entity
+CameraManager.prototype.initialize = function() {
+    this.activeCamera = this.entity.findByName('Center');
+    this.app.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+};
 
-    CameraManager.prototype = {
-        setCamera: function (cameraName) {
-            // 現在アクティブなカメラを無効にする
-            this.activeCamera.enabled = false;
+//prevents default browser actions, such as scrolling when pressing cursor keys
+CameraManager.prototype.onKeyDown = function (event) {
+    event.event.preventDefault();
+};
 
-            // 新規で指定したカメラを有効にする
-            this.activeCamera = this.entity.findByName(cameraName);
-            this.activeCamera.enabled = true;
-        },
+CameraManager.prototype.setCamera = function (cameraName) {
+    // Disable the currently active camera
+    this.activeCamera.enabled = false;
 
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
-        initialize: function () {
-            this.activeCamera = this.entity.findByName('Center');
-            app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
-        },
+    // Enable the newly specified camera
+    this.activeCamera = this.entity.findByName(cameraName);
+    this.activeCamera.enabled = true;
+};
 
-        //カーソルキー押下によるスクロールなどのデフォルトのブラウザ動作を防ぐ
-        onKeyDown: function (event) {
-            event.event.preventDefault();
-        },
+// update code called every frame
+CameraManager.prototype.update = function(dt) {
+    var app = this.app;
 
-        // すべてのフレームで呼ばれる。dtは前回の更新からの秒単位の時間。
-        update: function (dt) {
-            if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
-                this.setCamera('Center');
-            } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
-                this.setCamera('Left');
-            } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
-                this.setCamera('Right');
-            }
-        }
-    };
-
-    return CameraManager;
-});
+    if (app.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+        this.setCamera('Center');
+    } else if (app.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+        this.setCamera('Left');
+    } else if (app.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+        this.setCamera('Right');
+    }
+};
 ~~~
 
 このサンプルでは、矢印キーを押すと、左または右のカメラエンティティ(現在読み込まれているシーン内か)を現在のカメラに設定して、スペースキーが中央カメラを起動します。
 
-最初に、名前からカメラエンティティを検索するための関数を作成します。これには、このスクリプトの親エンティティに適用される`findByName()`関数を使用します(カメラがそこにあることを前提にすると、`app.root.findByName()`を使ってシーンの全てのエンティティを検索する必要がありません)。
+We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `this.app.root.findByName()` to search through all the entities in the Scene).
 
 矢印とスペースキーに対応するカメラエンティティの名前を含むオブジェクトを設定しました [(Editorシーンを参照)][3]。
 
@@ -134,5 +115,5 @@ pc.script.create('camera_manager', function (app) {
 
 [1]: /tutorials/beginner/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
-[3]: https://playcanvas.com/editor/scene/329672
+[3]: https://playcanvas.com/editor/scene/440116
 

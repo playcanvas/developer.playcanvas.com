@@ -1,34 +1,34 @@
 ---
-title: プロシージャルレベル
+title: Procedural Levels
 template: tutorial-page-legacy.tmpl.html
 position: 5
 ---
 
 <iframe src="http://playcanv.as/p/1Q3MMsLj"></iframe>
 
-このプロジェクトは、エンティティの[clone()][1] 機能を使用してエディタで作成されたエンティティからレベルをランダムに生成します。
+This project uses [clone()][1] function on the Entity to randomly generate a level from Entities that have been created in the Editor.
 
-[チュートリアルプロジェクト][2]のEditorからお試しください。
+Try it from the Editor in the [tutorial project.][2]
 
-下記のスクリプトは、非常に簡単なレベル生成プログラムです。エディタで設定された2つのエンティティ'Grass' と 'House'を、グリッドベースレベルのタイルのように使用します。ランダムにタイルを選択し、そのタイルをクローンして新しいエンティティを作成してから、正しいグリッド位置に新しいエンティティを配置することでレベルを作成します。
+This script below is a very simple level generation program. It takes two Entities that have been setup in the Editor: 'Grass' and 'House' and uses them as tiles for a grid based level. The level is created by randomly choosing one of the tiles, cloning the tile to create a new Entity, then placing the new Entity at the correct grid position.
 
 ~~~javascript~~~
 pc.script.attribute('numTilesX', 'number', 10);
 pc.script.attribute('numTilesY', 'number', 10);
 
 pc.script.create('generate', function (app) {
-    // 新規の生成インスタンスを作成
+    // Creates a new Generate instance
     var Generate = function (entity) {
         this.entity = entity;
     };
 
     Generate.prototype = {
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
-            // ワールドタイルであるいくつかのテンプレートを作成しました
-            // テンプレートは表示されるべきではないので、エディタ階層で
-            // 無効にしています。生成されたワールドのみ
-            // 表示されるべきです。
+            // We've created a couple of templates that are our world tiles
+            // In the Editor hierarchy, we have disabled the templates because
+            // we don't want them to be visible. We just want our generated
+            // world to be visible
             var templates = app.root.findByName('Templates');
             var grass = templates.findByName('Grass');
             var house = templates.findByName('House');
@@ -38,21 +38,21 @@ pc.script.create('generate', function (app) {
                     // Pick a tile at random, with grass more likely than a house
                     var tile = (Math.random() > 0.8) ? house : grass;
 
-                    // タイルをクローン
+                    // Clone the tile
                     var e = tile.clone();
 
-                    // クローンしたタイルのワールド位置を設定。
-                    // タイルはX,Y寸法で10x10なので位置を
-                    // 10でかける必要があります。
+                    // Set the world position of the cloned tile. Note that because
+                    // our tiles are 10x10 in X,Z dimensions, we have to multiply
+                    // the position by 10
                     e.setPosition((x - this.numTilesX / 2) * 10, 0, (y - this.numTilesX / 2) * 10);
 
-                    // シーンの階層にタイルを追加
+                    // Add the tile to the scene's hierarchy
                     app.root.addChild(e);
                 }
             }
         },
 
-        // 毎フレーム呼ばれる。dtは最後の更新以来の秒単位の時間
+        // Called every frame, dt is time in seconds since last update
         update: function (dt) {
         }
     };

@@ -1,23 +1,23 @@
 ---
-title: その他のカメラ
+title: More Cameras
 template: tutorial-page-legacy.tmpl.html
 position: 3
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/more_cameras?overlay=false" ></iframe>
 
-*クリックでフォーカス、`space`でズームイン及びアウト、`左arrow`と `右arrow`で左右のカメラに切り替えるます*
+*Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
-[基本的なカメラ] [1]チュートリアルでは、カメラのエンティティを作成してシーンに追加する手順を説明します。単一の静止カメラの場合、スクリプトは必要ありません。しかし、より動的でインタラクティブなカメラやより高度な利用のためには、スクリプトコンポーネントを追加してカメラの動作を自分でプログラムする必要があります。
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
 
-## 属性の変更
+## Altering Attributes
 
-実行時にカメラを変更する最初の方法は、カメラのコンポーネントの属性の値を変更することです。これは他のコンポーネントの属性を設定するのと同じように
-ComponentSystemの`set()` と `get()`メソッドを使用して行います。
+The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
+methods on the ComponentSystem.
 
 ~~~javascript~~~
 pc.script.create('zoom', function (app) {
-    // 新しいズームインスタンスを作成
+    // Creates a new Zoom instance
     var Zoom = function (entity) {
         this.entity = entity;
 
@@ -25,11 +25,11 @@ pc.script.create('zoom', function (app) {
     };
 
     Zoom.prototype = {
-        // すべてのリソースがロードされた後、最初の更新の前に一度呼び出されます
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
         },
 
-        // すべてのフレームで呼ばれる。dtは前回の更新からの秒単位の時間。
+        // Called every frame, dt is time in seconds since last update
         update: function (dt) {
             if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
                 if (this.targetFov == 10) {
@@ -63,24 +63,24 @@ pc.script.create('zoom', function (app) {
 });
 ~~~
 
-このサンプルでは、スペースバーを押すと視野の変化をトリガーします。`var fov = this.entity.camera.fov`行では、スクリプトが追加されているエンティティのカメラコンポーネントの`fov`の値を`get()`します。
+In this sample pressing the spacebar triggers a change in field of view. With the line `var fov = this.entity.camera.fov` we `get()` the value of `fov` from the camera component of the entity that this script is attached to.
 
-`app.keyboard.wasPressed()`でキー入力を検出し、ターゲットFOVの値を切り替えます。
+With `app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
-ネストされた最後の二つの`if(){}`コンストラクトで徐々にfov値を変更してズームイン／ズームアウト効果を作成します。
+With the final two nested `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
 
-新しい行`this.entity.camera.fov= fov`でfovカメラ属性を新しい値に `set()`します。
+With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
 
-ズームアウトされている時、上部と下部のキューブが画面の端にあります。これは[PlayCanvas Editorシーン][3]でカメラ[視野円錐][2]の上下端の横にキューブが
-置かれている位置と一致しています。
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
+top and bottom sides of the camera [frustum][2]
 
-## 現在のカメラ
+## Current Camera
 
-カメラでインタラクティビティを作成する一つの方法は、複数のカメラを切り替えることです。シーンに複数のカメラエンティティを追加することで実現することができます。一つのみがアクティベートされるようにして、スクリプト内で、実行時のカメラを変更します。
+Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your Scene; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
 
 ~~~javascript~~~
 pc.script.create('camera_manager', function (app) {
-    // 新規のCameraManagerインスタンスを作成
+    // Creates a new CameraManager instance
     var CameraManager = function (entity) {
         this.entity = entity;
 
@@ -89,26 +89,26 @@ pc.script.create('camera_manager', function (app) {
 
     CameraManager.prototype = {
         setCamera: function (cameraName) {
-            // 現在アクティブなカメラを無効にする
+            // Disable the currently active camera
             this.activeCamera.enabled = false;
 
-            // 新規で指定したカメラを有効にする
+            // Enable the newly specified camera
             this.activeCamera = this.entity.findByName(cameraName);
             this.activeCamera.enabled = true;
         },
 
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
+        // Called once after all resources are loaded and before the first update
         initialize: function () {
             this.activeCamera = this.entity.findByName('Center');
             app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
         },
 
-        //カーソルキー押下によるスクロールなどのデフォルトのブラウザ動作を防ぐ
+        //prevents default browser actions, such as scrolling when pressing cursor keys
         onKeyDown: function (event) {
             event.event.preventDefault();
         },
 
-        // すべてのフレームで呼ばれる。dtは前回の更新からの秒単位の時間。
+        // Called every frame, dt is time in seconds since last update
         update: function (dt) {
             if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
                 this.setCamera('Center');
@@ -124,13 +124,13 @@ pc.script.create('camera_manager', function (app) {
 });
 ~~~
 
-このサンプルでは、矢印キーを押すと、左または右のカメラエンティティ(現在読み込まれているシーン内か)を現在のカメラに設定して、スペースキーが中央カメラを起動します。
+In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Scene) and the space key activates the central camera.
 
-最初に、名前からカメラエンティティを検索するための関数を作成します。これには、このスクリプトの親エンティティに適用される`findByName()`関数を使用します(カメラがそこにあることを前提にすると、`app.root.findByName()`を使ってシーンの全てのエンティティを検索する必要がありません)。
+We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `app.root.findByName()` to search through all the entities in the Scene).
 
-矢印とスペースキーに対応するカメラエンティティの名前を含むオブジェクトを設定しました [(Editorシーンを参照)][3]。
+We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Editor scene)][3].
 
-次に、キーをループして、そのうちの一つが押されるとエンティティを名前から探し、以前にスクリプトで定義した、現在のアクティブなカメラを無効にして有効にする次のカメラを探す`setCamera()` 関数を使用して現在のカメラに設定します。
+Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
 
 [1]: /tutorials/legacy/beginner/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum

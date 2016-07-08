@@ -1,8 +1,8 @@
 ---
-title: Начинающие
+title: Beginners
 template: tutorial-page-legacy.tmpl.html
 position: 2
 ---
 
-Начните с этих уроков, которые охватывают основы сущностей, камер, ввода и другие сферы движка PlayCanvas.
+Get started with these tutorials which cover the basics of Entities, Cameras, Input and other areas of the PlayCanvas Engine.
 

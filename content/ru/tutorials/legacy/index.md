@@ -1,46 +1,45 @@
 ---
-title: Уроки
+title: Tutorials
 template: tutorial-full-page-legacy.tmpl.html
 ---
 
-Уроки - это удобный способ обучения работы с PlayCanvas. Здесь вы найдете видео уроки, примеры с кодом, а также статьи.
+Tutorials are a great way to learn to use PlayCanvas. You'll find both video tutorials and examples and articles for you here.
 
-## Видео
+## Videos
 
-Вы можете найти коллекцию видеоуроков на нашем [YouTube канале][1].
-Также вы можете [загрузить][2] ассеты применяемые в видео.
+You can find our complete collection of video tutorials on our [YouTube Channel][1]. You can also [download][2] assets for following along to the videos.
 
-## Статьи
+## Articles
 
-Ресурсы для всех уроков приведённых ниже можно найти на нашей [странице уроков PlayCanvas][3]. Обратите внимание, что Вы должны быть авторизованы на сайте PlayCanvas для доступа к ним.
+The resources for all tutorials listed below can be found on our [PlayCanvas tutorials page][3]. Note that you must be logged in to the PlayCanvas site to access them.
 
-### Начальный
+### Beginner
 
-* [Основы ввода с клавиатуры][4]
-* [Основы управления мышью][5]
-* [Основы камеры][6]
-* [Основы аудио][7]
-* [Основы материалов][8]
-* [Управление сущностями][9]
+* [Basic Keyboard Input][4]
+* [Basic Mouse Input][5]
+* [Basic Camera][6]
+* [Basic Audio][7]
+* [Basic Materials][8]
+* [Manipulating Entities][9]
 
-### Средний
+### Intermediate
 
-* [Смешанные анимации][10]
-* [Больше о камерах][11]
-* [Камера от первого лица][12]
-* [Столкновения и триггеры][13]
-* [Использование реестра ассетов][14]
+* [Animation Blending][10]
+* [More Cameras][11]
+* [First Person Camera][12]
+* [Collision and Triggers][13]
+* [Using the Asset Registry][14]
 
-### Продвинутый
+### Advanced
 
-* [Программное создание сущностей][15]
-* [Управление героем от первого лица][16]
-* [Пользовательские шейдеры][17]
-* [Пользовательские эффекты постобработки][18]
+* [Programmatically Creating Entities][15]
+* [FPS Character Controller][16]
+* [Custom Shaders][17]
+* [Custom Post Effects][18]
 
-###Спрайты и шрифты
+###Sprites and Fonts
 
-Для инструкций по отрисовке 2D изображений смотрите [нашу страницу на GitHub][19] и для отображения текста на экране [страница на GitHub][20].
+For instructions in displaying 2D images see [our GitHub sprites page][19] and for displaying on-screen text see [our fonts page on GitHub][20].
 
 [1]: https://www.youtube.com/user/playcanvas
 [2]: /tutorials/video

@@ -3,7 +3,7 @@ title: アニメーションブレンディング
 template: tutorial-page.tmpl.html
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/animation_blend?overlay=false" ></iframe>
+<iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
 
 *画面をクリックしてフォーカス。次にpキーを押してパンチアニメーションにブレンド*
 
@@ -19,7 +19,7 @@ PlayCanvasを通してこれがどのように行われるかを確認しまし�
 
 ![Animated Entity][1]
 
-画像では、Attribute Editor内のアニメーションコンポーネントが確認できます。2つのアニメーションアセットが割り当てられています：「待機」サイクルと「パンチ」サイクルです。このようにアニメーションを構成すると、最初のアニメーション(待機サイクル)が再生され、ループオプションが設定されているため永久に動きます。しかし、それでは面白くないのでこのようにします：
+In the image you can see the animation component in the Inspector. There are 2 animation assets assigned: an 'idle' cycle and a 'punch' cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
 
 * ループしている待機アニメーションを再生。
 * キーを押してループしているパンチアニメーションにブレンド。
@@ -28,49 +28,47 @@ PlayCanvasを通してこれがどのように行われるかを確認しまし�
 このような機能はアニメーションコンポーネントの能力を超えてしまうので、スクリプトコンポーネントを使用して追加の挙動を設定する必要があります。上記は、Editor内のスキンを加えたキャラクターエンティティのスクリーンショットです。スクリプトコンポーネントを確認できます。 これはanimation_blending.jsをいうJSファイルを参照します。このファイルの内容：
 
 ~~~javascript~~~
-pc.script.create("animation_blending", function (app) {
-    var states = {
-        idle: {
-            animation: 'male_idle'
-        },
-        punch: {
-            animation: 'male_uppercut_jab'
-        }
-    };
+var AnimationBlending = pc.createScript('animationBlending');
 
-    var AnimationBlender = function (entity) {
-        this.entity = entity;
-        this.blendTime = 0.2;
+AnimationBlending.states = {
+    idle: {
+        animation: 'male.json'
+    },
+    punch: {
+        animation: 'male_uppercut_jab.json'
+    }
+};
 
+// initialize code called once per entity
+AnimationBlending.prototype.initialize = function() {
+    this.blendTime = 0.2;
+
+    this.setState('idle');
+
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
+};
+
+AnimationBlending.prototype.setState = function (state) {
+    var states = AnimationBlending.states;
+
+    this.state = state;
+    // Set the current animation, taking 0.2 seconds to blend from
+    // the current animation state to the start of the target animation.
+    this.entity.animation.play(states[state].animation, this.blendTime);
+};
+
+AnimationBlending.prototype.keyDown = function (e) {
+    if ((e.key === pc.KEY_P) && (this.state !== 'punch')) {
+        this.setState('punch');
+    }
+};
+
+AnimationBlending.prototype.keyUp = function (e) {
+    if ((e.key === pc.KEY_P) && (this.state === 'punch')) {
         this.setState('idle');
-
-        app.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
-        app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
-    };
-
-    AnimationBlender.prototype = {
-        setState: function (state) {
-            this.state = state;
-            // 現在のアニメーションの状態からターゲットアニメーションの開始に
-// ブレンドするまで0.2秒かかるように、現在のアニメーションを設定。
-            this.entity.animation.play(states[state].animation, this.blendTime);
-        },
-
-        keyDown: function (e) {
-            if ((e.key === pc.KEY_P) && (this.state !== 'punch')) {
-                this.setState('punch');
-            }
-        },
-
-        keyUp: function (e) {
-            if ((e.key === pc.KEY_P) && (this.state === 'punch')) {
-                this.setState('idle');
-            }
-        }
-    };
-
-    return AnimationBlender;
-});
+    }
+};
 ~~~
 
 ここからはアニメーションコンポーネントにより多くのアニメーションを追加することができ、より複雑なアニメーション状態チャートをスクリプトすることが可能になります。
@@ -78,5 +76,5 @@ pc.script.create("animation_blending", function (app) {
  [フルシーンはこちら][2]
 
 [1]: /images/tutorials/animation_blending.jpg
-[2]: https://playcanvas.com/editor/scene/338867
+[2]: https://playcanvas.com/editor/scene/440156
 

@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 13
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
 *You can find the [full project here][6]. If you haven't see [Part 1][1], [Part 2][2] and [Part 3][3] read them first.*
 
@@ -15,126 +15,147 @@ The football is the center of attention in our Keepy Up game. It responds to pla
 ## ball.js
 
 ```javascript
-pc.script.attribute("gravity", "number", -9.8, {description: "The value of gravity to use"});
-pc.script.attribute("defaultTap", "number", 5, {description: "Speed to set the ball to when it is tapped"});
-pc.script.attribute("impactEffect", "entity", null, {description: "The particle effect to trigger when the ball is tapped"});
-pc.script.attribute("ballMinimum", "number", -6, {description: "When ball goes below minumum y value game over is triggered"});
-pc.script.attribute("speedMult", "number", 4, {description: "Multiplier to apply to X speed when tap is off center"});
-pc.script.attribute("angMult", "number", -6, {description: "Multiplier to apply to angular speed when tap is off center"});
+var Ball = pc.createScript('ball');
 
-pc.script.create('ball', function (app) {
-    var tmp = new pc.Vec3();
-
-    // Creates a new Ball instance
-    var Ball = function (entity) {
-        this.entity = entity;
-    };
-
-    Ball.prototype = {
-        // Called once after all resources are loaded and before the first update
-        initialize: function () {
-            this.paused = true;
-
-            // Get the "Game" Entity and start listening for events
-            this.game = app.root.findByName("Game");
-
-            app.on("game:start", this.unpause, this);
-            app.on("game:gameover", this.pause, this);
-            app.on("game:reset", this.reset, this);
-
-            // Initialize properties
-            this._vel = new pc.Vec3(0, 0, 0);
-            this._acc = new pc.Vec3(0, this.gravity, 0);
-            this._angSpeed = 0;
-
-            // Store the initial position and rotation for reseting
-            this._origin = this.entity.getLocalPosition().clone();
-            this._rotation = this.entity.getLocalRotation().clone();
-        },
-
-        // Called every frame, dt is time in seconds since last update
-        update: function (dt) {
-            // Don't update when paused
-            if (this.paused) {
-                this.entity.rotate(0, 30*dt, 0);
-                return;
-            }
-
-            var p = this.entity.getLocalPosition();
-
-            // integrate the velocity in a temporary variable
-            tmp.copy(this._acc).scale(dt);
-            this._vel.add(tmp);
-
-            // integrate the position in a temporary variable
-            tmp.copy(this._vel).scale(dt);
-            p.add(tmp);
-
-            // update position
-            this.entity.setLocalPosition(p);
-
-            // rotate by angular speed
-            this.entity.rotate(0, 0, this._angSpeed);
-
-            // check for game over condition
-            if (p.y < this.ballMinimum) {
-                this.game.script.game.gameOver();
-            }
-        },
-
-        /*
-         * Called by the input handler to tap the ball up in the air
-         * dx is the tap distance from centre of ball in x
-         * dy is the tap distance from centre of ball in y
-         */
-        tap: function (dx, dy) {
-            // Update velocity and spin based on position of tap
-            this._vel.set(this.speedMult * dx, this.defaultTap, 0);
-            this._angSpeed += this.angMult * dx;
-
-            // calculate the position of the tap in world space
-            tmp.copy(this.entity.getLocalPosition());
-            tmp.x -= dx;
-            tmp.y -= dy;
-
-            // trigger particle effect to tap position, facing away from the center of the ball
-            this.impactEffect.setLocalPosition(tmp);
-            this.impactEffect.particlesystem.reset();
-            this.impactEffect.particlesystem.play();
-            this.impactEffect.lookAt(this.entity.getPosition());
-
-            // play audio
-            this.entity.sound.play("bounce");
-
-            // increment the score by 1
-            this.game.script.game.addScore(1);
-        },
-
-        // Pause the ball update when not playing the game
-        unpause: function () {
-            this.paused = false;
-
-            // start game with a tap
-            this.tap(0, 0);
-        },
-
-        // Resume ball updating
-        pause: function () {
-            this.paused = true;
-        },
-
-        // Reset the ball to initial values
-        reset: function () {
-            this.entity.setLocalPosition(this._origin);
-            this.entity.setLocalRotation(this._rotation);
-            this._vel.set(0,0,0);
-            this._acc.set(0, this.gravity, 0);
-            this._angSpeed = 0;
-        }
-    };
-
-    return Ball;
+Ball.attributes.add('gravity', {
+    type: 'number',
+    default: -9.8,
+    description: 'The value of gravity to use'
 });
+
+Ball.attributes.add('defaultTap', {
+    type: 'number',
+    default: 5,
+    description: 'Speed to set the ball to when it is tapped'
+});
+
+Ball.attributes.add('impactEffect', {
+    type: 'entity',
+    description: 'The particle effect to trigger when the ball is tapped'
+});
+
+Ball.attributes.add('ballMinimum', {
+    type: 'number',
+    default: -6,
+    description: 'When ball goes below minimum y value game over is triggered'
+});
+
+Ball.attributes.add('speedMult', {
+    type: 'number',
+    default: 4,
+    description: 'Multiplier to apply to X speed when tap is off center'
+});
+
+Ball.attributes.add('angMult', {
+    type: 'number',
+    default: -6,
+    description: 'Multiplier to apply to angular speed when tap is off center'
+});
+
+Ball.tmp = new pc.Vec3();
+
+// initialize code called once per entity
+Ball.prototype.initialize = function() {
+    this.paused = true;
+
+    // Get the "Game" Entity and start listening for events
+    this.game = this.app.root.findByName("Game");
+
+    this.app.on("game:start", this.unpause, this);
+    this.app.on("game:gameover", this.pause, this);
+    this.app.on("game:reset", this.reset, this);
+
+    // Initialize properties
+    this._vel = new pc.Vec3(0, 0, 0);
+    this._acc = new pc.Vec3(0, this.gravity, 0);
+    this._angSpeed = 0;
+
+    // Store the initial position and rotation for reseting
+    this._origin = this.entity.getLocalPosition().clone();
+    this._rotation = this.entity.getLocalRotation().clone();
+};
+
+// update code called every frame
+Ball.prototype.update = function(dt) {
+    // Don't update when paused
+    if (this.paused) {
+        this.entity.rotate(0, 30*dt, 0);
+        return;
+    }
+
+    var p = this.entity.getLocalPosition();
+    var tmp = Ball.tmp;
+
+    // integrate the velocity in a temporary variable
+    tmp.copy(this._acc).scale(dt);
+    this._vel.add(tmp);
+
+    // integrate the position in a temporary variable
+    tmp.copy(this._vel).scale(dt);
+    p.add(tmp);
+
+    // update position
+    this.entity.setLocalPosition(p);
+
+    // rotate by angular speed
+    this.entity.rotate(0, 0, this._angSpeed);
+
+    // check for game over condition
+    if (p.y < this.ballMinimum) {
+        this.game.script.game.gameOver();
+    }
+};
+
+/*
+ * Called by the input handler to tap the ball up in the air
+ * dx is the tap distance from centre of ball in x
+ * dy is the tap distance from centre of ball in y
+ */
+Ball.prototype.tap = function (dx, dy) {
+    // Update velocity and spin based on position of tap
+    this._vel.set(this.speedMult * dx, this.defaultTap, 0);
+    this._angSpeed += this.angMult * dx;
+
+    // calculate the position of the tap in world space
+    var tmp = Ball.tmp;
+    tmp.copy(this.entity.getLocalPosition());
+    tmp.x -= dx;
+    tmp.y -= dy;
+
+    // trigger particle effect to tap position, facing away from the center of the ball
+    this.impactEffect.setLocalPosition(tmp);
+    this.impactEffect.particlesystem.reset();
+    this.impactEffect.particlesystem.play();
+    this.impactEffect.lookAt(this.entity.getPosition());
+
+    // play audio
+    this.entity.sound.play("bounce");
+
+    // increment the score by 1
+    this.game.script.game.addScore(1);
+};
+
+// Pause the ball update when not playing the game
+Ball.prototype.unpause = function () {
+    this.paused = false;
+
+    // start game with a tap
+    this.tap(0, 0);
+};
+
+// Resume ball updating
+Ball.prototype.pause = function () {
+    this.paused = true;
+};
+
+// Reset the ball to initial values
+Ball.prototype.reset = function () {
+    this.entity.setLocalPosition(this._origin);
+    this.entity.setLocalRotation(this._rotation);
+    this._vel.set(0,0,0);
+    this._acc.set(0, this.gravity, 0);
+    this._angSpeed = 0;
+};
 ```
 
 ### Script Attributes
@@ -202,7 +223,7 @@ Finally, for a nice effect we add rotate the ball by the angular speed value usi
 
 #### Responding to input
 
-You many remember from [Part 2][2] that the `input.js` script checked to see if an input has hit the ball and if so it calls the `tap()` method. The `tap()` method defined above applies a direct change to the velocity and the angular speed of the ball. We use a couple of our script attributes `this.speedMult` and `this.angMult` to multiple the new velocity and angular speed to match our expectations of the gameplay.
+You may remember from [Part 2][2] that the `input.js` script checked to see if an input has hit the ball and if so it calls the `tap()` method. The `tap()` method defined above applies a direct change to the velocity and the angular speed of the ball. We use a couple of our script attributes `this.speedMult` and `this.angMult` to multiple the new velocity and angular speed to match our expectations of the gameplay.
 
 We also use the tap method to trigger a particle dust cloud at the point of impact and play a sound effect. We'll talk about particle and sounds in [Part 4][4].
 
@@ -215,5 +236,5 @@ The ball script runs a simply physical simulation to make the ball fall under gr
 [3]: /tutorials/beginner/keepyup-part-three
 [4]: /tutorials/beginner/keepyup-part-four
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
-[6]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
+[6]: https://playcanvas.com/project/406050
 

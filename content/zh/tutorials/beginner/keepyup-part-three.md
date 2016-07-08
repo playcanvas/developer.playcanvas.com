@@ -4,123 +4,112 @@ template: tutorial-page.tmpl.html
 position: 12
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
 *You can find the [full project here][4]. If you haven't see [Part 1][1] and [Part 2][2] read them first.*
 
 ## The Game script & Input
 
-These two scripts `game.js` and `input.js` are attached the root entity in the scene, called "Game". Scripts are generally executed in the order they are encountered in the hierarchy so it's easiest to attach any non-Entity specific scripts the first Entity. (Note, you can also use the Script Priorty dialog to load scripts first without attaching them to an Entity)
+These two scripts `game.js` and `input.js` are attached the root entity in the scene, called "Game". Scripts are generally executed in the order they are encountered in the hierarchy so it's easiest to attach any non-Entity specific scripts the first Entity. You can also manage the loading order of Scripts in the Settings panel of the Editor, to load scripts first without attaching them to an Entity.
 
 ## game.js
 
 ```javascript
-pc.script.attribute("uiMenu", "entity", null);
-pc.script.attribute("uiInGame", "entity", null);
-pc.script.attribute("uiGameOver", "entity", null);
-pc.script.attribute("audio", "entity", null);
+var Game = pc.createScript('game');
 
-pc.script.create('game', function (app) {
-    var STATE_MENU = "menu";
-    var STATE_INGAME = "ingame";
-    var STATE_GAMEOVER = "gameover";
+Game.attributes.add('uiMenu', {type: 'entity'});
+Game.attributes.add('uiInGame', {type: 'entity'});
+Game.attributes.add('uiGameOver', {type: 'entity'});
+Game.attributes.add('audio', {type: 'entity'});
 
-    // Creates a new Game instance
-    var Game = function (entity) {
-        this.entity = entity;
+Game.STATE_MENU = 'menu';
+Game.STATE_INGAME = 'ingame';
+Game.STATE_GAMEOVER = 'gameover';
 
-        this._state = STATE_MENU;
-    };
+// initialize code called once per entity
+Game.prototype.initialize = function() {
+    this._state = Game.STATE_MENU;
+    this._score = 0;
 
-    Game.prototype = {
-        initialize: function () {
-            this._score = 0;
+    this.setResolution();
 
-            this.setResolution();
+    window.addEventListener("resize", this.setResolution.bind(this));
 
-            window.addEventListener("resize", this.setResolution.bind(this));
+    // listen to events from the UI
+    this.app.on("ui:start", this.start, this);
+    this.app.on("ui:reset", this.reset, this);
+};
 
-            // listen to events from the UI
-            app.on("ui:start", this.start, this);
-            app.on("ui:reset", this.reset, this);
-        },
+Game.prototype.setResolution = function () {
+    // if the screen width is less than 640
+    // fill the whole window
+    // otherwise
+    // use the default setting
 
-        update: function (dt) {
-        },
+    var w = window.screen.width;
+    var h = window.screen.height;
 
-        setResolution: function () {
-            // if the screen width is less than 640
-            // fill the whole window
-            // otherwise
-            // use the default setting
+    if (w < 640) {
+        this.app.setCanvasResolution(pc.RESOLUTION_AUTO, w, h);
+        this.app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
+    }
+};
 
-            var w = window.screen.width;
-            var h = window.screen.height;
+// Call this to move from MENU to INGAME
+Game.prototype.start = function () {
+    this._state = Game.STATE_INGAME;
+    this.app.fire("game:start");
+    this.uiMenu.enabled = false;
+    this.uiInGame.enabled = true;
 
-            if (w < 640) {
-                app.setCanvasResolution(pc.RESOLUTION_AUTO, w, h);
-                app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
-            }
-        },
+    this.audio.sound.play("music");
+};
 
-        // Call this to move from MENU to INGAME
-        start: function () {
-            this._state = STATE_INGAME;
-            app.fire("game:start");
-            this.uiMenu.enabled = false;
-            this.uiInGame.enabled = true;
+// Call this to move from INGAME to GAMEOVER
+Game.prototype.gameOver = function () {
+    this._state = Game.STATE_GAMEOVER;
+    this.app.fire("game:gameover");
+    this.uiInGame.enabled = false;
+    this.uiGameOver.enabled = true;
 
-            this.audio.sound.play("music");
-        },
+    this.audio.sound.stop();
+    this.audio.sound.play("gameover");
+};
 
-        // Call this to move from INGAME to GAMEOVER
-        gameOver: function () {
-            this._state = STATE_GAMEOVER;
-            app.fire("game:gameover");
-            this.uiInGame.enabled = false;
-            this.uiGameOver.enabled = true;
+// Call this to move from GAMEOVER to MENU
+Game.prototype.reset = function () {
+    this.app.fire("game:reset");
+    this.resetScore();
+    this._state = Game.STATE_MENU;
+    this.uiGameOver.enabled = false;
+    this.uiMenu.enabled = true;
 
-            this.audio.sound.stop();
-            this.audio.sound.play("gameover");
-        },
+    this.audio.sound.stop();
+};
 
-        // Call this to move from GAMEOVER to MENU
-        reset: function () {
-            app.fire("game:reset");
-            this.resetScore();
-            this._state = STATE_MENU;
-            this.uiGameOver.enabled = false;
-            this.uiMenu.enabled = true;
+// return the current score
+Game.prototype.getScore = function () {
+    return this._score;
+};
 
-            this.audio.sound.stop();
-        },
+// add a value to the score
+Game.prototype.addScore = function (v) {
+    this._score += v;
+    this.app.fire("game:score", this._score);
+};
 
-        // return the current score
-        getScore: function () {
-            return this._score;
-        },
-
-        // add a value to the score
-        addScore: function (v) {
-            this._score += v;
-            app.fire("game:score", this._score);
-        },
-
-        // reset the score
-        resetScore: function () {
-            this._score = 0;
-            app.fire("game:score", this._score);
-        }
-    };
-
-    return Game;
-});
+// reset the score
+Game.prototype.resetScore = function () {
+    this._score = 0;
+    this.app.fire("game:score", this._score);
+};
 ```
+
 ### Game State
 
 The game script manages the overall state of the game, it exposes some methods to alter the game state and fires events to alert other code that the game state has changed.
 
-We've divided the game up into three main states: Menu, In Game and Game Over. The game script provides the methods to transition between each state, `start()`, `gameOver()` and `reset()`. Each one sets the `_state` variable to remember which state we're in; fires an application event to alert other scripts to state changes; switchs user interface elements on and off; and manages the state of the music or game over sound effect.
+We've divided the game up into three main states: Menu, In Game and Game Over. The game script provides the methods to transition between each state, `start()`, `gameOver()` and `reset()`. Each one sets the `_state` variable to remember which state we're in; fires an application event to alert other scripts to state changes; switches user interface elements on and off; and manages the state of the music or game over sound effect.
 
 These state change methods will be called from other scripts when the appropriate trigger events occur. For example, the `gameOver()` method is called by `ball.js` when the ball goes off the bottom of the screen.
 
@@ -129,17 +118,17 @@ These state change methods will be called from other scripts when the appropriat
 Let's pause to take a look at the way the game script fires events on the application.
 
 ```javascript
-app.fire("game:start")
+this.app.fire("game:start")
 ```
 
-Events are an extremely useful way to communicate form one script to many other scripts. The way an event works is that an object (in this case `app`) chooses to "fire" an event. Any other code that has access to the object can choose to listen to one or more events on this object and the code will be notified when the event is fired.
+Events are an extremely useful way to communicate form one script to many other scripts. The way an event works is that an object (in this case `this.app`) chooses to "fire" an event. Any other code that has access to the object can choose to listen to one or more events on this object and the code will be notified when the event is fired.
 
-One of the issues with this is that the code needs access to the object in order to start listening to the event. This is why application events are so useful. Every script in PlayCanvas has access to the `app` variable as it is passed to scripts when they are created. That makes it useful to act as a central communications hub between any other scripts.
+One of the issues with this is that the code needs access to the object in order to start listening to the event. This is why application events are so useful. Every script in PlayCanvas has access to `this.app`. That makes it useful to act as a central communications hub between any other scripts.
 
-We have chose to adopt an namespace pattern to make events clearer and avoid clashes. To listen for the `game:start` event from above. You would use this code:
+We have chosen to adopt a namespace pattern to make events clearer and avoid clashes. To listen for the `game:start` event from above. You would use this code:
 
 ```javascript
-app.on("game:start", function () {
+this.app.on("game:start", function () {
     console.log("game:start event was fired");
 }, this)
 ```
@@ -157,91 +146,83 @@ Finally the game script handles the initial choice of resolution to make sure th
 The input script listens for input from the mouse or touchscreen, normalizes the input from the two into a general purpose "tap" and communicates with the rest of the application that a tap has occurred.
 
 ```javascript
-pc.script.attribute("ball", "entity", null);
-pc.script.attribute("camera", "entity", null);
-pc.script.attribute("ballRadius", "number", 0.5);
+var Input = pc.createScript('input');
 
-pc.script.create('input', function (app) {
-    var PIXEL_SIZE = 30;
+Input.attributes.add('ball', {type: 'entity'});
+Input.attributes.add('camera', {type: 'entity'});
+Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
 
-    var screenPos = new pc.Vec3();
-    var worldPos = new pc.Vec3();
+Input.worldPos = new pc.Vec3();
 
-    // Creates a new Input instance
-    var Input = function (entity) {
-        this.entity = entity;
-        this._paused = true;
-    };
+// initialize code called once per entity
+Input.prototype.initialize = function() {
 
-    Input.prototype = {
-        initialize: function () {
-            var self = this;
+    var self = this;
 
-            // Listen for game events so we know whether to respond to input
-            app.on("game:start", function () {
-                self._paused = false;
-            });
-            app.on("game:gameover", function () {
-                self._paused = true;
-            });
+    this._paused = true;
 
-            // set up touch events if available
-            if(app.touch) {
-                app.touch.on("touchstart", this._onTouchStart, this);
-            }
+    // Listen for game events so we know whether to respond to input
+    this.app.on("game:start", function () {
+        self._paused = false;
+    });
+    this.app.on("game:gameover", function () {
+        self._paused = true;
+    });
 
-            // set up mouse events
-            app.mouse.on("mousedown", this._onMouseDown, this);
-        },
+    // set up touch events if available
+    if (this.app.touch) {
+        this.app.touch.on("touchstart", this._onTouchStart, this);
+    }
 
-        _onTap: function (x, y) {
-            var p = this.ball.getPosition();
-            var camPos = this.camera.getPosition();
+    // set up mouse events
+    this.app.mouse.on("mousedown", this._onMouseDown, this);
+};
 
-            // Get the position in the 3D world of the touch or click
-            // Store the in worldPos variable.
-            // This position is at the same distance away from the camera as the ball
-            this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
+Input.prototype._onTap = function (x, y) {
+    var p = this.ball.getPosition();
+    var camPos = this.camera.getPosition();
+    var worldPos = Input.worldPos;
 
-            // get the distance of the touch/click to the ball
-            var dx = (p.x - worldPos.x);
-            var dy = (p.y - worldPos.y);
+    // Get the position in the 3D world of the touch or click
+    // Store the in worldPos variable.
+    // This position is at the same distance away from the camera as the ball
+    this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
-            // If the click is inside the ball, tap the ball
-            var lenSqr = dx*dx + dy*dy;
-            if (lenSqr < this.ballRadius*this.ballRadius) {
-                this.ball.script.ball.tap(dx, dy);
-            }
-        },
+    // get the distance of the touch/click to the ball
+    var dx = (p.x - worldPos.x);
+    var dy = (p.y - worldPos.y);
 
-        _onTouchStart: function (e) {
-            if (this._paused) {
-                return;
-            }
+    // If the click is inside the ball, tap the ball
+    var lenSqr = dx*dx + dy*dy;
+    if (lenSqr < this.ballRadius*this.ballRadius) {
+        this.ball.script.ball.tap(dx, dy);
+    }
+};
 
-            // respond to event
-            var touch = e.changedTouches[0];
-            this._onTap(touch.x, touch.y);
+Input.prototype._onTouchStart = function (e) {
+    if (this._paused) {
+        return;
+    }
 
-            // stop mouse events firing as well
-            e.event.preventDefault();
-        },
+    // respond to event
+    var touch = e.changedTouches[0];
+    this._onTap(touch.x, touch.y);
 
-        _onMouseDown: function (e) {
-            if (this._paused) {
-                return;
-            }
+    // stop mouse events firing as well
+    e.event.preventDefault();
+};
 
-            // respond to event
-            this._onTap(e.x, e.y);
-        }
-    };
+Input.prototype._onMouseDown = function (e) {
+    if (this._paused) {
+        return;
+    }
 
-    return Input;
-});
+    // respond to event
+    this._onTap(e.x, e.y);
+};
 ```
 
-First, in initialize we are setting up event listening. We listen for application events to determine if the game is in a paused state (that is in the menu or in the game over state). If the input is paused we don't respond to the taps. Next we listen for touch events (note, you must check if `app.touch` is available) and mouse events.
+First, in initialize we are setting up event listening. We listen for application events to determine if the game is in a paused state (that is in the menu or in the game over state). If the input is paused we don't respond to the taps. Next we listen for touch events (note, you must check if `this.app.touch` is available) and mouse events.
 
 ### Touch Events
 
@@ -249,7 +230,7 @@ For touch events we take the first touch and pass through the screen co-ordinate
 
 ### Mouse Events
 
-On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same co-ordinate system. This is not the case with normal browser events!
+On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same coordinate system. This is not the case with normal browser events!
 
 ### Taps
 
@@ -261,7 +242,7 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
 In detail, this function takes the screen co-ordinates (x, y) and asks the camera to convert them into a position in 3D space under that point on the screen. To do this, we need to supply a depth, as in how far away from the screen do you want the 3D point. In this case we get the 3D point at the same depth as the ball is.
 
-We also pass in a vector `worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparitively slow) operation and will cause your game or application to stutter if it happens often.
+We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparitively slow) operation and will cause your game or application to stutter if it happens often.
 
 In most cases, PlayCanvas will provide an option to pass in vector or similar option so that you can pre-allocate and re-use objects.
 
@@ -284,5 +265,5 @@ If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball scri
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two
 [3]: /tutorials/beginner/keepyup-part-four
-[4]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
+[4]: https://playcanvas.com/project/406050
 

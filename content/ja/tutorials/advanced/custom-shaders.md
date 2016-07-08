@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 3
 ---
 
-<iframe src="http://playcanv.as/p/q1mMPMPo" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
 
 *このチュートリアルでは素材にカスタムシェーダを使用してGLSLでdissolveエフェクトを作成します*
 
@@ -62,14 +62,14 @@ void main(void)
 ### シェーダー定義
 
 ```javascript
-var vertexShader = app.assets.get(this.vs).resource;
+var vertexShader = this.vs.resource;
 
-// デバイスに応じて動的に精度を設定。
+// dynamically set the precision depending on device.
 var fragmentShader = "precision " + gd.precision + " float;\n";
-fragmentShader = fragmentShader + app.assets.get(this.fs).resource;
+fragmentShader = fragmentShader + this.fs.resource;
 
 
-// 新しいシェーダーを作成するために使用するシェーダー定義。
+// A shader definition used to create a new shader.
 var shaderDefinition = {
     attributes: {
         aPosition: pc.gfx.SEMANTIC_POSITION,
@@ -100,23 +100,23 @@ GLSLシェーダーには、属性とは別で、二つの特殊なタイプの�
 ## 素材の作成
 
 ~~~javascript
-// 定義からシェーダーを作成
-this.shader = new pc.gfx.Shader(gd, shaderDefinition);
+// Create the shader from the definition
+this.shader = new pc.Shader(gd, shaderDefinition);
 
-// 新しい素材を作成してシェーダーを設定
+// Create a new material and set the shader
 this.material = new pc.Material();
 this.material.setShader(this.shader);
 
-// 初期timeのパラメータを設定
+// Set the initial time parameter
 this.material.setParameter('uTime', 0);
 
-// diffuseテクスチャーを設定
+// Set the diffuse texture
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 
-// "clouds"テクスチャーを高さマッププロパティに使用
+// Use the "clouds" texture as the height map property
 this.material.setParameter('uHeightMap', heightTexture);
 
-// モデルの素材を新しい素材で置き換える
+// Replace the material on the model with our new material
 model.meshInstances[0].material = this.material;
 ~~~
 
@@ -127,7 +127,7 @@ model.meshInstances[0].material = this.material;
 ## 新しい素材でテクスチャーを使用
 
 ~~~javascript
-var diffuseTexture = app.assets.get(this.diffuseMap).resource;
+var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 //...
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ~~~
@@ -136,10 +136,29 @@ this.material.setParameter('uDiffuseMap', diffuseTexture);
 スクリプトの先頭で、PlayCanvas Editorからテクスチャーを設定することができる'maps'というスクリプト属性を宣言しています：
 
 ~~~javascript
-pc.script.attribute("vs", "asset", null, {displayName: "Vertex Shader", type: "shader", max: 1});
-pc.script.attribute("fs", "asset", null, {displayName: "Fragment Shader", type: "shader", max: 1});
-pc.script.attribute('diffuseMap', 'asset', null, {displayName: 'Diffuse Map', type: 'texture', max: 1});
-pc.script.attribute('heightMap', 'asset', null, {displayName: 'Height Map', type: 'texture', max: 1});
+CustomShader.attributes.add('vs', {
+    type: 'asset',
+    assetType: 'shader',
+    title: 'Vertex Shader'
+});
+
+CustomShader.attributes.add('fs', {
+    type: 'asset',
+    assetType: 'shader',
+    title: 'Fragment Shader'
+});
+
+CustomShader.attributes.add('diffuseMap', {
+    type: 'asset',
+    assetType: 'texture',
+    title: 'Diffuse Map'
+});
+
+CustomShader.attributes.add('heightMap', {
+    type: 'asset',
+    assetType: 'texture',
+    title: 'Height Map'
+});
 ~~~
 
 高さマップが読み込まれるとuniform `uHeightMap` を `pc.Texture` オブジェクトに設定することができます。
@@ -147,19 +166,19 @@ pc.script.attribute('heightMap', 'asset', null, {displayName: 'Height Map', type
 ## uniformの更新
 
 ~~~javascript
-// 毎フレーム呼ばれる。dtは最後の更新以降の秒単位の時間。
-update: function (dt) {
+// update code called every frame
+CustomShader.prototype.update = function(dt) {
     this.time += dt;
 
-    // t 0->1->0のbounce値
+    // Bounce value of t 0->1->0
     var t = (this.time % 2);
     if (t > 1) {
         t = 1 - (t - 1);
     }
 
-    // 素材のtime値を更新
+    // Update the time value in the material
     this.material.setParameter('uTime', t);
-}
+};
 ~~~
 
 消失エフェクトを得るために、高さマップの値を閾値として使用して、閾値を時間と共に増やします。上記の更新方法では、`t`の値を0と1の間でバウンスして、それを` uTime` uniformとして設定します。
@@ -169,82 +188,90 @@ update: function (dt) {
 ## 完全なリスト
 
 ~~~javascript
-pc.script.attribute("vs", "asset", null, {displayName: "Vertex Shader", type: "shader", max: 1});
-pc.script.attribute("fs", "asset", null, {displayName: "Fragment Shader", type: "shader", max: 1});
-pc.script.attribute('diffuseMap', 'asset', null, {displayName: 'Diffuse Map', type: 'texture', max: 1});
-pc.script.attribute('heightMap', 'asset', null, {displayName: 'Height Map', type: 'texture', max: 1});
+var CustomShader = pc.createScript('customShader');
 
-pc.script.create('customShader', function (app) {
-    // 新しいCustomShaderインスタンスを作成
-    var CustomShader = function (entity) {
-        this.entity = entity;
-
-        this.time = 0;
-        this.heightMap = null;
-        this.shader = null;
-    };
-
-
-    CustomShader.prototype = {
-        // 全てのリソースが読み込まれた後、最初の更新の前に一度呼ばれる
-        initialize: function () {
-            var model = this.entity.model.model;
-            var gd = app.graphicsDevice;
-
-            var diffuseTexture = app.assets.get(this.diffuseMap).resource;
-            var heightTexture = app.assets.get(this.heightMap).resource;
-
-            var vertexShader = app.assets.get(this.vs).resource;
-            var fragmentShader = "precision " + gd.precision + " float;\n";
-            fragmentShader = fragmentShader + app.assets.get(this.fs).resource;
-
-            // 新しいシェーダーを作成するために使用されるシェーダー定義
-            var shaderDefinition = {
-                attributes: {
-                    aPosition: pc.gfx.SEMANTIC_POSITION,
-                    aUv0: pc.gfx.SEMANTIC_TEXCOORD0
-                },
-                vshader: vertexShader,
-                fshader: fragmentShader
-            };
-
-            // シェーダーを定義から作成
-            this.shader = new pc.gfx.Shader(gd, shaderDefinition);
-
-            // 新しい素材を作成してシェーダーを設定
-            this.material = new pc.Material();
-            this.material.setShader(this.shader);
-
-            // 初期のtimeパラメータを設定
-            this.material.setParameter('uTime', 0);
-
-            // diffuseテクスチャーを設定
-            this.material.setParameter('uDiffuseMap', diffuseTexture);
-
-            // 高さマッププロパティに"clouds"テクスチャーを使用
-            this.material.setParameter('uHeightMap', heightTexture);
-
-            // モデルの素材を新しい素材で置き換え
-            model.meshInstances[0].material = this.material;
-        },
-
-        // 毎フレーム呼ばれる。dtは最後の更新以降の秒単位の時間
-        update: function (dt) {
-            this.time += dt;
-
-            // t 0->1->0のbounce値
-            var t = (this.time % 2);
-            if (t > 1) {
-                t = 1 - (t - 1);
-            }
-
-            // 素材のtime値を更新
-            this.material.setParameter('uTime', t);
-        }
-    };
-
-    return CustomShader;
+CustomShader.attributes.add('vs', {
+    type: 'asset',
+    assetType: 'shader',
+    title: 'Vertex Shader'
 });
+
+CustomShader.attributes.add('fs', {
+    type: 'asset',
+    assetType: 'shader',
+    title: 'Fragment Shader'
+});
+
+CustomShader.attributes.add('diffuseMap', {
+    type: 'asset',
+    assetType: 'texture',
+    title: 'Diffuse Map'
+});
+
+CustomShader.attributes.add('heightMap', {
+    type: 'asset',
+    assetType: 'texture',
+    title: 'Height Map'
+});
+
+// initialize code called once per entity
+CustomShader.prototype.initialize = function() {
+    this.time = 0;
+
+    var app = this.app;
+    var model = this.entity.model.model;
+    var gd = app.graphicsDevice;
+
+    var diffuseTexture = this.diffuseMap.resource;
+    var heightTexture = this.heightMap.resource;
+
+    var vertexShader = this.vs.resource;
+    var fragmentShader = "precision " + gd.precision + " float;\n";
+    fragmentShader = fragmentShader + this.fs.resource;
+
+    // A shader definition used to create a new shader.
+    var shaderDefinition = {
+        attributes: {
+            aPosition: pc.SEMANTIC_POSITION,
+            aUv0: pc.SEMANTIC_TEXCOORD0
+        },
+        vshader: vertexShader,
+        fshader: fragmentShader
+    };
+
+    // Create the shader from the definition
+    this.shader = new pc.Shader(gd, shaderDefinition);
+
+    // Create a new material and set the shader
+    this.material = new pc.Material();
+    this.material.setShader(this.shader);
+
+    // Set the initial time parameter
+    this.material.setParameter('uTime', 0);
+
+    // Set the diffuse texture
+    this.material.setParameter('uDiffuseMap', diffuseTexture);
+
+    // Use the "clouds" texture as the height map property
+    this.material.setParameter('uHeightMap', heightTexture);
+
+    // Replace the material on the model with our new material
+    model.meshInstances[0].material = this.material;
+};
+
+// update code called every frame
+CustomShader.prototype.update = function(dt) {
+    this.time += dt;
+
+    // Bounce value of t 0->1->0
+    var t = (this.time % 2);
+    if (t > 1) {
+        t = 1 - (t - 1);
+    }
+
+    // Update the time value in the material
+    this.material.setParameter('uTime', t);
+};
 ~~~
 
 完全なスクリプトです。動作させるためには、頂点シェーダーとフラグメントシェーダーのアセットを作成する必要があります。沢山のメッシュと素材を持つモデルにdissolveエフェクトを適用するシェーダーの実施はリーダーへの課題として残されます。

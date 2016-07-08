@@ -1,5 +1,5 @@
 ---
-title: シンプルなゲームを作る - その1
+title: Making a Simple Game - Part 1
 template: tutorial-page-legacy.tmpl.html
 position: 10
 ---
@@ -7,68 +7,68 @@ position: 10
 <iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
 *You can find the [full project here][3]*
 
-このチュートリアルでは、PlayCanvasを使って一本の完全なゲームを作る流れを説明します。"Keepy Up"という、ボールをタッチかクリックし続けることでボールを滞空させ続けるゲームを作りましたのでそれを、題材として説明します。
+In this series of tutorials we're going to show you how a complete game is made using PlayCanvas. We've made a simple "Keepy Up" game where the object is to click or tap on the soccer ball to keep it in the air.
 
-以下の項目について説明していきます:
+We'll cover these topics:
 
-1. **シーンと階層構造**
-1. マテリアルの設定
-1. ゲームスクリプト
-1. ボールの物理シミュレーションと入力
-1. 効果音とエフェクト
-1. ユーザインタフェース
+1. **The Scene and Hierarchy**
+1. Material Setup
+1. The Game Script
+1. Ball Physics and Input
+1. Audio & Effects
+1. User Interface
 
-このチュートリアルは手順を一つ一つ説明するガイドではありません。その代わり、ゲームを構成するすべてのスクリプト要素について、それらがどのように機能するかを説明していきます。チュートリアルを読むにあたって、このゲームプロジェクトをフォークし、自分のアカウント上で見ながら進めることをおすすめします。
+This isn't a step-by-step guide, but we will talk about all areas of the scripts and try and explain how each bit works. We recommend you fork the Game project into your own account and follow along as we go through.
 
-## その1: シーンと階層構造
+## Part 1: The Scene and Hierarchy
 
 In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities and arrange them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
 
-Keepy Upのシーンの階層構造には、7つのエンティティが最上位のエンティティとして存在します。
+In our Keepy Up scene we have 7 top level Entities in the hierarchy.
 
-![階層構造][1]
+![Hierarchy][1]
 
-### Cameraエンティティ
+### Camera Entity
 
-カメラはゲームが実行中の時に、その場所からシーンを見ることになる場所です。このゲームにはカメラは一つしか存在せず、またカメラは静止しています。
+A Camera is where your scene is viewed from while the application is running. In this game we only have one camera and it is stationary.
 
-### Directional Lightエンティティ
+### Directional Light Entity
 
-ライトはシーン内の3Dモデルを照らします。有効になっているライトの数が増えれば増えるほど、シーンのレンダリングにかかる時間が増えます。これはゲームのフレームレートに影響します。通常は同時に有効になっているライトの数は数個に抑えることをおすすめします。このゲームでは、静止している指向性ライトを一つ使っています
+Lights illuminate 3D models in the scene. The more lights you have active at once, the longer it will take to render a scene and this can effect the frame rate of your game. You should aim to have only a few lights active at once. In this game we have a single stationary Directional Light.
 
-### Footballエンティティ
+### Football Entity
 
-サッカーボールはシーンの中心となる動的なエンティティです。Footballエンティティは三つのコンポーネントを持っています。サッカーボールを選択すると、エディタ右側のアトリビュートパネルから確認することができます。三つのコンポーネントはそれぞれ以下のとおりです:
+The football is the main dynamic Entity in the scene. The Football Entity has 3 components attached to it. You can see the components by selecting the Football and viewing the Attribute Panel on the right side of the editor. The 3 components are:
 
-#### サウンドコンポーネント
+#### Sound Component
 
-サウンドコンポーネントを使うと、サウンドファイルを再生することができます。それぞれのサウンドコンポーネントはサウンドファイルごとに一つ割り当てられるスロットをいくつも持っています。サウンドをループさせるか、ボリュームやピッチといったオプションを指定することもできます。このサッカーボールにはボールがバウンドした時の効果音用のスロットがひとつ割り当てられています。
+The sound component lets you play back sound files. Each Sound component has a number of slots, one for each sound file. You can choose playback settings like, whether the sound will loop, the volume or the pitch. The football has a single slot for the sound made when the ball bounces.
 
-#### モデルコンポーネント
+#### Model Component
 
-モデルコンポーネントは3Dモデルをエンティティにつける際に使います。エンティティについているモデルコンポーネントを有効にすると、3D空間のエンティティの場所に3Dモデルがレンダリングされます。このゲームでは、サッカーボールのモデルをつけてあります。
+The model component is used to attach a 3D model asset to an Entity. When you have an enabled model component on an Entity the 3D model will be rendered at the Entity's position in the 3D space. In this case, we have attached the football model.
 
-#### スクリプトコンポーネント
+#### Script Component
 
-スクリプトコンポーネントを使うと、JavaScriptをエンティティにつけることができます。それぞれのエンティティは、エンティティの動作をカスタマイズできるよう、JavaScriptファイルの中のスクリプトのインスタンスを生成します。スクリプトの詳細についてはチュートリアルのその3で詳しく説明します。
+The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behaviour of the Entity. We'll go into more detail about the script on the football in Part 3.
 
-### Backgroundエンティティ
+### Background
 
-Backgroundエンティティにはもう一つのモデルコンポーネントがついています。今回はゲームの背景に使う板です。背景は標準エンティティの一つであるPlane(平面)エンティティに競技場のテクスチャを使ったマテリアルを割り当てることで作られています。このゲームではEmissive(発光性)スロットにマテリアルを割当て、サッカーボールや照明にかかわらず、影が落ちず一定の絵が表示されるようにしています。このエフェクトは昔の映画の背景のベタ塗りのような働きをします。
+The Background Entity has another model component. This time it is the back plane that forms the background to the game. The background is created using a texture of a stadium in a material asset applied to the built in Plane Entity type. We're using the Emissive slot on the material to make sure the background is bright and is not shadowed by the light and the football. This effect is a bit like a matte painting used in an old film.
 
-### Impact Effectエンティティ
+### Impact Effect Entity
 
 The Impact Effect Entity is a particle effect that plays when the ball is bounced. We'll go into more detail in Part 4.
 
-### Audioエンティティ
+### Audio
 
-Audioエンティティにはいくつかのサウンドコンポーネントがついています。このエンティティは音楽とゲームオーバー時の効果音を鳴らすためのエンティティです。
+The Audio Entity has more sound components attached to it. This Entity is for playing the music and the gameover sound.
 
-### UI (ユーザインタフェース)
+### UI (User Interface)
 
-UIエンティティはいくつかのエンティティの親エンティティです。子エンティティは、それぞれがゲームのある画面でのユーザインタフェースです。UIエンティティについてはチュートリアルその5で説明します。
+The UI Entity is the parent of several other Entities, one for each screen that is used for the user interface of the game. We'll cover the UI Entity in Part 5.
 
-[チュートリアルその2][2]ではメインのゲームスクリプトについて説明します。
+[Part 2][2] covers the main game script.
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
 [2]: /tutorials/legacy/beginner/keepyup-part-two
