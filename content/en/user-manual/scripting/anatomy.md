@@ -20,11 +20,10 @@ Rotate.prototype.initialize = function() {
 // update code called every frame
 Rotate.prototype.update = function(dt) {
     if (this.local) {
-        this.entity.rotateLocal(0, tihs.speed*dt, 0);
+        this.entity.rotateLocal(0, this.speed * dt, 0);
     } else {
-        this.entity.rotate(0, this.speed*dt, 0);
+        this.entity.rotate(0, this.speed * dt, 0);
     }
-
 };
 
 // swap method called for script hot-reloading
