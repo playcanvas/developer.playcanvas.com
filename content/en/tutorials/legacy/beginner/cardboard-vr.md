@@ -27,7 +27,7 @@ That's the minimum you need to do to get a VR camera up and running. If you laun
 
 See the full source code for this tutorial in the [project][4].
 
-[1]: http://github.com/playcanvas/webvr
+[1]: http://github.com/playcanvas/webvr/tree/legacy
 [2]: /images/tutorials/beginner/cardboard-vr/script-priorities.jpg
 [3]: /images/tutorials/beginner/cardboard-vr/script-component.jpg
 [4]: https://playcanvas.com/project/389453/overview/tutorial-cardboard-vr
