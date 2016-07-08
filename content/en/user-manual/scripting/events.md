@@ -1,10 +1,10 @@
 ---
-title: Events
+title: Communication
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-Events are a useful way of responding to things that happen without checking every frame.
+Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.
 
 The PlayCanvas Engine contains a simple way to add event handling to any object:
 
