@@ -1,26 +1,26 @@
 ---
-title: Scenes
+title: 场景
 template: usermanual-page.tmpl.html
 position: 10
 ---
 
-## Scenes
+## 场景
 
-You can manage your scenes by opening the Scenes dialog.
+可以通过打开 Scenes 对话框来管理场景。
 
-You can open the Scenes dialog either by clicking on the 'Scenes' menu option in the menu:
+可以在菜单中点击 'Scenes' 按钮来打开场景对话框：
 
 ![Scenes Menu][1]
 
-Or by clicking on the Scenes Menu button on the top left inside the 3D viewport:
+或者点击 3D 视口左上角的快捷按钮：
 
 ![Scenes Viewport][2]
 
-This will open up the Scenes dialog:
+这样也能打开场景对话框：
 
 ![Scenes][3]
 
-You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left of each scene to make it the Primary Scene. The Primary Scene is the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
+在这里可以点击 “ADD NEW SCENE" 创建新场景，也可以点击场景展开更多操作，可以点击场景右侧的场景复制按钮复制或者删除按钮删除。同样也可以点击左侧的横幅按钮来标记主场景。主场景是应用发布后最先被加载和执行的场景。你可以把它想象成是应用的第一个“关卡”
 
 [1]: /images/user-manual/editor/scenes-menu.jpg
 [2]: /images/user-manual/editor/scenes-viewport.jpg

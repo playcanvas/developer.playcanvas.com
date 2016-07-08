@@ -1,60 +1,60 @@
 ---
-title: Assets
+title: 资源
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-The Assets Panel manages all of the Assets that are available in your project. From here, you can create, upload, delete, inspect and edit any Asset.
+资源面板管理了所有的项目中的可用资源。从这个面板可以创建，上传，删除，查看和编辑任何资源。
 
 ![Assets Panel][1]
 
-## Folder Hierarchy
+## 层级文件夹
 
-The folder panel allows you to organize your assets into a tree of folders.
+文件夹面板帮助你以文件夹树的形式管理所有资源。
 
-To create a new Folder, select the Add Asset (+) button and select 'Folder'. Alternatively, right click the folder where you would like a new folder to be created and select 'New Asset' > 'Folder'.
+点击 Add Asset (+) 按钮然后选择 'Folder' 创建一个新文件夹。另外，右键点击想创建文件夹的目的地，然后选择 ‘New Asset' >  'Folder’ 也是一样的效果。
 
-To rename a folder, double click it in the hierarchy panel and edit the Name field in the Inspector.
+双击文件夹可以在检查器中的名称栏位中修改文件夹的名字。
 
-To delete a folder, double click it in the hierarchy and hit delete. Alternatively, right click the folder you want to delete and select 'Delete' from the context menu.
+在层级菜单中双机文件夹然后点击删除可以删除一个文件夹。同样也可以右键点击想删除的文件夹，然后在上下文菜单中选择 'Delete'。
 
-Folders can be drag and dropped into each other if you want to reorgnize your folder structure.
+文件夹可以互相拖拽，可以使用这种方式重新组织目录结构。
 
-## Creating and Uploading Assets
+## 创建和上传资源
 
-You can create new assets by dragging a file from you computer's file system into the Assets Panel. The Editor will upload and import the asset for you.
+可以通过拖放本地文件到资源面板来完成新的资源创建。编辑器会自动上传和转换文件为可用资源。
 
-You can also create certain assets types using the Add Asset (+) icon.
+一些特定的资源类型可以在 Add Asset (+) 图标中创建。
 
-You can delete assets by selecting them and clicking the Delete Asset icon.
+选择想要删除的资源然后点击垃圾桶按钮删除资源。
 
-## Editing Assets
+## 编辑资源
 
-Certain text-based assets can be opened and edited in the PlayCanvas Script Editor: text, json, shader, html, css and script assets. To do this, simply double click on the asset's thumbnail.
+特定的基于文本的资源可以通过 PlayCanvas 的脚本编辑器来打开和编辑。譬如文本，json，shader，html，css 以及脚本资源。双击这些资源图标就可以。
 
-## Inspecting Assets
+## 检查资源
 
-To inspect the details of any given asset, select its thumbnail in the Assets Panel. The asset's details will be displayed in the Inspector.
+在资源面板中选择缩略图，检查器就会同步显示出资源的详细信息。
 
-## Filtering
+## 过滤
 
-Filter which assets are visible using the filter drop down to select the type of asset to view.
+在过滤器下来菜单中筛选类型以过滤其它非相关类型的资源。
 
-## Searching
+## 搜索
 
-You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
+在搜索框中可以对工程中的资源进行全局搜索。简单的在搜索框中输入关键字，编辑器会实时进行资源搜索。
 
-## Drag and Drop
+## 拖放
 
-Assets can be moved to different folders by dragging them from the main panel to a folder in the folder hierarchy. Note that assets support multi-selection. Pressing CTRL+A will select all assets in the currently selected folder.
+资源可以通过从主面板拖放到文件夹的树形结构来移动。资源支持多选，按 CTRL+A 可以选中当前目录下的全部资源。
 
-You can also drag Assets from the Asset Panel to highligted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
+还可以通过拖放把资源从资源面板链接到[检查器][2]的高亮位置上。检查器上的高亮位置通常是组件的资源属性或者是资源类型的脚本属性。
 
-You can also drag model, material, and cubemap assets directly into the [Viewport][3]
+此外还可以拖动模型，材质以及 cubemap 资源直接到[视口][3] 中进行应用。
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+* 如果拖动模型资源到视口中，编辑器将会创建一个新的实体并添加模型组件同时将模型资源添加至模型组件引用。视口摄影机将会自动缩放至呈现新创建实体的位置。
+* 如果拖动材质至视口中的模型实体上时，材质将会实时替换掉模型上的材质 (用于预览)。如果确定需要替换材质，则松开鼠标完成拖放即可。
+* 如果拖放 cubemap 到视口中的场景背景上，cubemap 会被做为场景的天空盒使用。在[场景设置][4]中也有对应的参数可以修改。
 
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector

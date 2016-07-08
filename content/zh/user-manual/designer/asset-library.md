@@ -1,12 +1,12 @@
 ---
-title: Asset Library
+title: 资源库
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-## Store
+## 商店
 
-You can get free 3D models for you project in the [PlayCanvas Store][1]
+可以从 [PlayCanvas Store][1] 中找到免费的 3D 模型用于你的练手项目。
 
 [1]: http://store.playcanvas.com/
 

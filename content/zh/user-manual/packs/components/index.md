@@ -1,58 +1,58 @@
 ---
-title: Components
+title: 组件
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Components define behaviours that are attached to Entities. An Entity is a container for Components.
+组件定义了附加了该组件的实体的实体行为。一个实体实际上是一个组件的容器。
 
-There are many different Components defined in the PlayCanvas Engine. You can add a Component to an Entity using the PlayCanvas Editor. The properties exposed by Components are listed in the Attribute Editor when you select an Entity.
+PlayCanvas 引擎定义了多种不同的组件。你可以通过 PlayCanvas 编辑器向实体添加组件。当选中一个实体时，组件的参数展示将会通过编辑器的属性编辑工具呈现出来。
 
 <table class="table table-striped">
     <tbody>
         <tr>
-            <th>Component</th>
-            <th>Description</th>
+            <th>组件</th>
+            <th>描述</th>
         </tr>
     <tr>
-        <td>[Animation][1]</td>
-        <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
+        <td>[动画][1]</td>
+        <td>为实体上的模型组件指定的模型指定对应的动画资源</td>
     </tr>
     <tr>
-        <td>[Audio Listener][2]</td>
-        <td>Specifies the location of the listener for 3D audio playback.</td>
+        <td>[音频侦听器][2]</td>
+        <td>指定3D空间中音频回放的侦听器位置</td>
     </tr>
     <tr>
-        <td>[Audio Source][3]</td>
-        <td>Specifies audio assets that can be played at the position of the entity.</td>
+        <td>[音频源][3]</td>
+        <td>指定音频资源并可以在实体所在位置播放</td>
     </tr>
     <tr>
-        <td>[Camera][4]</td>
-        <td>Renders the scene from the location of the entity.</td>
+        <td>[摄影机][4]</td>
+        <td>从实体所在的位置渲染场景</td>
     </tr>
     <tr>
-        <td>[Collision][5]</td>
-        <td>Assigns a collision volume to the entity.</td>
+        <td>[碰撞体][5]</td>
+        <td>为实体赋予碰撞体积</td>
     </tr>
     <tr>
-        <td>[Light][6]</td>
-        <td>Attach a dynamic light source to the Entity.</td>
+        <td>[灯光][6]</td>
+        <td>在实体所在的位置附加一个光源</td>
     </tr>
     <tr>
-        <td>[Model][7]</td>
-        <td>Renders a 3D model at the location of the entity.</td>
+        <td>[模型][7]</td>
+        <td>在实体所在的位置渲染一套3D模型</td>
     </tr>
     <tr>
-        <td>[Particle System][8]</td>
-        <td>Attach a particle system to the Entity.</td>
+        <td>[粒子系统][8]</td>
+        <td>在实体所在位置附加一套粒子系统</td>
     </tr>
     <tr>
-        <td>[Rigid Body][9]</td>
-        <td>Adds the entity to the scene's physical simulation.</td>
+        <td>[刚体][9]</td>
+        <td>将实体加入到场景的物理仿真中</td>
     </tr>
     <tr>
-        <td>[Script][10]</td>
-        <td>Allows the script to run JavaScript fragments to implement custom behavior.</td>
+        <td>[脚本][10]</td>
+        <td>允许 JavaScript 脚本实现自定义的行为</td>
     </tr>
 </tbody></table>
 

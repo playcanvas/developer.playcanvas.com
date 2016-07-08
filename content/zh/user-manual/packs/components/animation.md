@@ -1,30 +1,30 @@
 ---
-title: Animation
+title: 动画 | Animation
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The Animation component enables an entity to specify which animations can be applied to the model assigned to its Model component.
+动画组件将会对实体上模型组件所指定的模型加入特定的动画。
 
-The Animation component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play the assigned animation.
+动画组件可以被启用或关闭。通过组件面板右上角的开关来控制。在打开的情况下，组件将会播放指定的动画。
 
-![Animation component][1]
+![动画组件][1]
 
-## Properties
+## 参数
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Assets</td><td>The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control.</td></tr>
-    <tr><td>Speed</td><td>A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset.</td></tr>
-    <tr><td>Activate</td><td>If checked, the component will start playing the animation on load.</td></tr>
-    <tr><td>Loop</td><td>If checked, the animation will continue to loop back to the start on completion. Otherwise, the animation will come to a stop on its final frame.</td></tr>
+    <tr><th>参数</th><th>描述</th></tr>
+    <tr><td>Assets</td><td>可以被实体利用的动画资源。可以使用拾取工具选取复数个动画资源。</td></tr>
+    <tr><td>Speed</td><td>动画回放速度的倍增系数。0表示动画静止，1表示动画的标准回放速度。</td></tr>
+    <tr><td>Activate</td><td>如果选中，组件会在动画加载后自动播放动画。</td></tr>
+    <tr><td>Loop</td><td>如果选中，动画将会自动在播放后回到开头。否则动画将会停止在最后一帧位置。</td></tr>
 </table>
 
-## Scripting Interface
+## 编程接口
 
-You can control an Animation component's properties using a [script component][2]. The Animation component's scripting interface is [here][3].
+可以通过[脚本组件][2]来修改动画组件的属性。动画组件的脚本接口在[这里][3]。
 
 [1]: /images/user-manual/scenes/components/component-animation.png
 [2]: /user-manual/packs/components/script

@@ -1,16 +1,16 @@
 ---
-title: Loading Screen
+title: 加载屏
 template: usermanual-page.tmpl.html
 position: 9
 ---
 
-<div class="alert alert-info">Custom loading screens is an ORG account feature.</div>
+<div class="alert alert-info">自定义加载屏仅限 ORG 账户使用。</div>
 
-If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
+如果希望创建一个自定义的加载屏，你可以进入[场景设置][1] 然后在 *Loading Screen* 部分点击 **Create Default**。如果你已经有了一个合适的加载屏脚本，就可以把它拖放到加载屏上或者点击 **Select Existing** 了：
 
 <img alt="Loading Screen" src="/images/user-manual/loading_screen.png" />
 
-Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
+点击 **Create Default** 将会创建一个新的脚本和一些默认的资源。你可以修改这些脚本如果你希望修改加载屏的话。这里有个修改演示：
 
 ```
 pc.script.createLoadingScreen(function (app) {
