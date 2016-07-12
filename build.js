@@ -122,7 +122,7 @@ m.use(i18n()({
     data: localization
 }))
 .build(function (err, files) {
-    console.log("doneone")
+    console.log("done");
     if (err) {
         console.error(err);
     }

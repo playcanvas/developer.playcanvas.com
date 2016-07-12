@@ -17,40 +17,43 @@ MyScript.prototype.swap = function(old) {
 };
 ```
 
-When a script with a swap function is changed in the code editor a brand new script instance is created and the old script instance is destroyed. The `initialize` method of the script is *not* called again. Instead the old script instance is passed into the `swap` method and it is up to the developer to ensure that the state of the old script is copied into the new one. Declared script attributes are automatically copied over into the new script instance. It is also important to remove any event listeners from the old instance and re-attach them to the new one.
+When a script with a swap function is changed in the code editor any launched applications will reload script and add it to script registry, then it creates a brand new script instances to swap old ones calling `swap` method during that process per each instance. The `initialize` method of the script is *not* called again. Instead the old script instance is passed into the `swap` method and it is up to the developer to ensure that the state of the old script is copied into the new one. Declared script attributes are automatically copied over into the new script instance. It is also important to remove any event listeners from the old instance and re-attach them to the new one.
 
 For example:
 
 ```javascript
-var Rotator = pc.createScript("rotater");
+var Rotator = pc.createScript('rotator');
 
-Rotator.attributes.add("xspeed", {type: "number", default: 10});
+Rotator.attributes.add('xSpeed', { type: 'number', default: 10 });
 
 Rotator.prototype.initialize = function () {
     // listen for enable event and call method
-    this.on("enable", this._onEnable);
+    this.on('enable', this._onEnable);
 
-    this.yspeed = 0;
+    this.ySpeed = 0;
 };
 
 Rotator.prototype.update = function (dt) {
-    this.entity.rotate(this.xspeed * dt, this.yspeed * dt, 0);
+    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
 };
 
 Rotator.prototype._onEnable = function () {
     // when enabled randomize the speed
-    this.yspeed = pc.math.random(0, 10);
+    this.ySpeed = pc.math.random(0, 10);
 };
 
 Rotator.prototype.swap = function (old) {
-    // xspeed is an attribute and so is automatically copied
+    // xSpeed is an attribute and so is automatically copied
 
-    // copy the yspeed property from the old script instance to the new one
-    this.yspeed = old.yspeed;
+    // copy the ySpeed property from the old script instance to the new one
+    this.ySpeed = old.ySpeed;
 
     // remove the old event listener
-    old.off("enable", this._onEnable);
+    old.off('enable', this._onEnable);
     // add a new event listener
-    this.on("enable", this._onEnable);
+    this.on('enable', this._onEnable);
 };
 ```
+
+Try changing logic within `update` method and save the code. Launched application will automatically swap script instances `rotator` with new ones and your application will keep working with new logic.  
+`swap` method is called regardless of running state of a script instance, so if it was disabled due to an error it can be re-enabled during swap method.
