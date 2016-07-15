@@ -13,7 +13,7 @@ In this tutorial, we'll walk through how you create a Material, assign it to a p
 
 Select 'New Entity' -> 'Box' menu in the Hierarchy panel. This creates a new Box Entity in the Hierarchy.
 
-![New Box][1]
+![新規ボックス][1]
 
 ## Step 2 - 新しい素材を作成
 
@@ -21,13 +21,13 @@ Create new material directly from the PlayCanvas Editor interface. In the Asset 
 
 ![Add Material][2]
 
-This creates a new Material Asset and brings up the Material Editor on the right-hand side of the screen. In the Material Editor rename the Material to "Box Material".
+これにより新規のMaterial Assetが作成され、画面の右側にMaterial Editorを開きます。Material Editorで、素材の名前をBox Materialに変えてください。
 
-## Step 3 - Assign the material to the cube
+## Step 3 - メッシュに素材を割り当てる
 
 When you create a new cube in the Editor it will have no material assigned and will be rendered using a plain default material. To assign your new material to a model in the scene simply drag the model from the asset panel into the viewport and drop it on to the model you want to assign it to.
 
-## Step 4 - Change the color of the material
+## Step 4 - 素材の色を変更
 
 素材の色を変えるには、素材のプロパティの*Diffuse*を編集します。
 

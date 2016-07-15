@@ -21,8 +21,6 @@ PlayCanvasは物理エンジンを搭載しています。物理エンジンは�
 * 線速度
 * 角速度
 
-ボディはそれらに印加される力に応じて移動します。
-
 ## 測定の単位
 
 デフォルトでは、PlayCanvas物理エンジンは1メートルを1 unitとしています。オブジェクトを物理的に正確であると思われる速度で落下させるには、シーンのオブジェクトサイズが適切であることを確認する必要があります。
@@ -32,6 +30,30 @@ PlayCanvasは物理エンジンを搭載しています。物理エンジンは�
 ## 重力
 
 重力はシーン内のすべてのリジッドボディに適用される一定の力です。デフォルトでは、ワールドの負のY軸に-9.81に設定されています(つまり、直下)。このデフォルトは、地球の重力に近い値です。この値を増減することもできます。例えば、宇宙設定のゲームの重力をゼロに設定することも可能です。シーンにかかる重力を編集するには、Scene Settingsパネルを開きます。
+
+## Moving Rigid Bodies with Forces
+
+Bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant. Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time:
+
+~~~javascript~~~
+    update: function (dt) {
+        // While the right arrow key is pressed, apply a force to the right
+        if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
+            this.entity.rigidbody.applyForce(10, 0, 0);
+        }
+    }
+~~~
+
+If you want to fire a cannonball from a cannon, you would apply a single impulse:
+
+~~~javascript~~~
+    update: function (dt) {
+        // If the space bar was pressed, apply an impulse up and to the right
+        if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
+            this.entity.rigidbody.applyImpulse(10, 10, 0);
+        }
+    }
+~~~
 
 ## リジッドボディのテレポート
 

@@ -859,12 +859,6 @@ source_file = po/messages.json.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-messages-txt]
-file_filter = po/messages.txt.<lang>.po
-source_file = po/messages.txt.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-faq-create_shader]
 file_filter = po/faq/create_shader.<lang>.po
 source_file = po/faq/create_shader.en-US.po
@@ -976,6 +970,378 @@ type = PO
 [playcanvas-developer-site.po-user-manual-scripting-script-priorities]
 file_filter = po/user-manual/scripting/script-priorities.<lang>.po
 source_file = po/user-manual/scripting/script-priorities.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-beginner-cardboard-vr]
+file_filter = po/tutorials/beginner/cardboard-vr.<lang>.po
+source_file = po/tutorials/beginner/cardboard-vr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-animated-textures]
+file_filter = po/tutorials/intermediate/animated-textures.<lang>.po
+source_file = po/tutorials/intermediate/animated-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-intermediate-facebook-api]
+file_filter = po/tutorials/intermediate/facebook-api.<lang>.po
+source_file = po/tutorials/intermediate/facebook-api.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-index]
+file_filter = po/user-manual/graphics/lighting/index.<lang>.po
+source_file = po/user-manual/graphics/lighting/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-lightmaps]
+file_filter = po/user-manual/graphics/lighting/lightmaps.<lang>.po
+source_file = po/user-manual/graphics/lighting/lightmaps.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-lights]
+file_filter = po/user-manual/graphics/lighting/lights.<lang>.po
+source_file = po/user-manual/graphics/lighting/lights.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-shadows]
+file_filter = po/user-manual/graphics/lighting/shadows.<lang>.po
+source_file = po/user-manual/graphics/lighting/shadows.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-communicating-webpage]
+file_filter = po/user-manual/publishing/web/communicating-webpage.<lang>.po
+source_file = po/user-manual/publishing/web/communicating-webpage.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-facebook]
+file_filter = po/user-manual/publishing/web/facebook.<lang>.po
+source_file = po/user-manual/publishing/web/facebook.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-publishing-web-self-hosting-for-beginners]
+file_filter = po/user-manual/publishing/web/self-hosting-for-beginners.<lang>.po
+source_file = po/user-manual/publishing/web/self-hosting-for-beginners.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-advanced-real-time-multiplayer]
+file_filter = po/tutorials/advanced/real-time-multiplayer.<lang>.po
+source_file = po/tutorials/advanced/real-time-multiplayer.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-index]
+file_filter = po/tutorials/legacy/index.<lang>.po
+source_file = po/tutorials/legacy/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-audio-effects]
+file_filter = po/tutorials/legacy/advanced/audio-effects.<lang>.po
+source_file = po/tutorials/legacy/advanced/audio-effects.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-custom-posteffect]
+file_filter = po/tutorials/legacy/advanced/custom-posteffect.<lang>.po
+source_file = po/tutorials/legacy/advanced/custom-posteffect.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-custom-shaders]
+file_filter = po/tutorials/legacy/advanced/custom-shaders.<lang>.po
+source_file = po/tutorials/legacy/advanced/custom-shaders.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-index]
+file_filter = po/tutorials/legacy/advanced/index.<lang>.po
+source_file = po/tutorials/legacy/advanced/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-programmatically-creating]
+file_filter = po/tutorials/legacy/advanced/programmatically-creating.<lang>.po
+source_file = po/tutorials/legacy/advanced/programmatically-creating.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-real-time-multiplayer]
+file_filter = po/tutorials/legacy/advanced/real-time-multiplayer.<lang>.po
+source_file = po/tutorials/legacy/advanced/real-time-multiplayer.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-advanced-terrain-generation]
+file_filter = po/tutorials/legacy/advanced/terrain-generation.<lang>.po
+source_file = po/tutorials/legacy/advanced/terrain-generation.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-basic-audio]
+file_filter = po/tutorials/legacy/beginner/basic-audio.<lang>.po
+source_file = po/tutorials/legacy/beginner/basic-audio.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-basic-cameras]
+file_filter = po/tutorials/legacy/beginner/basic-cameras.<lang>.po
+source_file = po/tutorials/legacy/beginner/basic-cameras.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-basic-materials]
+file_filter = po/tutorials/legacy/beginner/basic-materials.<lang>.po
+source_file = po/tutorials/legacy/beginner/basic-materials.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-cardboard-vr]
+file_filter = po/tutorials/legacy/beginner/cardboard-vr.<lang>.po
+source_file = po/tutorials/legacy/beginner/cardboard-vr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-controlling-lights]
+file_filter = po/tutorials/legacy/beginner/controlling-lights.<lang>.po
+source_file = po/tutorials/legacy/beginner/controlling-lights.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-index]
+file_filter = po/tutorials/legacy/beginner/index.<lang>.po
+source_file = po/tutorials/legacy/beginner/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keepyup-part-five]
+file_filter = po/tutorials/legacy/beginner/keepyup-part-five.<lang>.po
+source_file = po/tutorials/legacy/beginner/keepyup-part-five.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keepyup-part-four]
+file_filter = po/tutorials/legacy/beginner/keepyup-part-four.<lang>.po
+source_file = po/tutorials/legacy/beginner/keepyup-part-four.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keepyup-part-one]
+file_filter = po/tutorials/legacy/beginner/keepyup-part-one.<lang>.po
+source_file = po/tutorials/legacy/beginner/keepyup-part-one.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keepyup-part-six]
+file_filter = po/tutorials/legacy/beginner/keepyup-part-six.<lang>.po
+source_file = po/tutorials/legacy/beginner/keepyup-part-six.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keepyup-part-three]
+file_filter = po/tutorials/legacy/beginner/keepyup-part-three.<lang>.po
+source_file = po/tutorials/legacy/beginner/keepyup-part-three.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keepyup-part-two]
+file_filter = po/tutorials/legacy/beginner/keepyup-part-two.<lang>.po
+source_file = po/tutorials/legacy/beginner/keepyup-part-two.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-keyboard-input]
+file_filter = po/tutorials/legacy/beginner/keyboard-input.<lang>.po
+source_file = po/tutorials/legacy/beginner/keyboard-input.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-loading-json]
+file_filter = po/tutorials/legacy/beginner/loading-json.<lang>.po
+source_file = po/tutorials/legacy/beginner/loading-json.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-manipulating-entities]
+file_filter = po/tutorials/legacy/beginner/manipulating-entities.<lang>.po
+source_file = po/tutorials/legacy/beginner/manipulating-entities.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-mouse-input]
+file_filter = po/tutorials/legacy/beginner/mouse-input.<lang>.po
+source_file = po/tutorials/legacy/beginner/mouse-input.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-beginner-Using-forces-on-rigid-bodies]
+file_filter = po/tutorials/legacy/beginner/Using-forces-on-rigid-bodies.<lang>.po
+source_file = po/tutorials/legacy/beginner/Using-forces-on-rigid-bodies.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-animated-textures]
+file_filter = po/tutorials/legacy/intermediate/animated-textures.<lang>.po
+source_file = po/tutorials/legacy/intermediate/animated-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-animation-blending]
+file_filter = po/tutorials/legacy/intermediate/animation-blending.<lang>.po
+source_file = po/tutorials/legacy/intermediate/animation-blending.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-collision-and-triggers]
+file_filter = po/tutorials/legacy/intermediate/collision-and-triggers.<lang>.po
+source_file = po/tutorials/legacy/intermediate/collision-and-triggers.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-entity-picking]
+file_filter = po/tutorials/legacy/intermediate/entity-picking.<lang>.po
+source_file = po/tutorials/legacy/intermediate/entity-picking.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-facebook-api]
+file_filter = po/tutorials/legacy/intermediate/facebook-api.<lang>.po
+source_file = po/tutorials/legacy/intermediate/facebook-api.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-first-person-movement]
+file_filter = po/tutorials/legacy/intermediate/first-person-movement.<lang>.po
+source_file = po/tutorials/legacy/intermediate/first-person-movement.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-index]
+file_filter = po/tutorials/legacy/intermediate/index.<lang>.po
+source_file = po/tutorials/legacy/intermediate/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-light-halos]
+file_filter = po/tutorials/legacy/intermediate/light-halos.<lang>.po
+source_file = po/tutorials/legacy/intermediate/light-halos.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-more-cameras]
+file_filter = po/tutorials/legacy/intermediate/more-cameras.<lang>.po
+source_file = po/tutorials/legacy/intermediate/more-cameras.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-music-visualizer]
+file_filter = po/tutorials/legacy/intermediate/music-visualizer.<lang>.po
+source_file = po/tutorials/legacy/intermediate/music-visualizer.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-procedural-levels]
+file_filter = po/tutorials/legacy/intermediate/procedural-levels.<lang>.po
+source_file = po/tutorials/legacy/intermediate/procedural-levels.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-using-assets]
+file_filter = po/tutorials/legacy/intermediate/using-assets.<lang>.po
+source_file = po/tutorials/legacy/intermediate/using-assets.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-legacy-intermediate-video-textures]
+file_filter = po/tutorials/legacy/intermediate/video-textures.<lang>.po
+source_file = po/tutorials/legacy/intermediate/video-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-code-editor]
+file_filter = po/user-manual/scripting/code-editor.<lang>.po
+source_file = po/user-manual/scripting/code-editor.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-hot-reloading]
+file_filter = po/user-manual/scripting/hot-reloading.<lang>.po
+source_file = po/user-manual/scripting/hot-reloading.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-loading-order]
+file_filter = po/user-manual/scripting/loading-order.<lang>.po
+source_file = po/user-manual/scripting/loading-order.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-version-control]
+file_filter = po/user-manual/scripting/version-control.<lang>.po
+source_file = po/user-manual/scripting/version-control.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-anatomy]
+file_filter = po/user-manual/scripting/legacy/anatomy.<lang>.po
+source_file = po/user-manual/scripting/legacy/anatomy.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-communication]
+file_filter = po/user-manual/scripting/legacy/communication.<lang>.po
+source_file = po/user-manual/scripting/legacy/communication.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-creating-new]
+file_filter = po/user-manual/scripting/legacy/creating-new.<lang>.po
+source_file = po/user-manual/scripting/legacy/creating-new.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-debugging]
+file_filter = po/user-manual/scripting/legacy/debugging.<lang>.po
+source_file = po/user-manual/scripting/legacy/debugging.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-events]
+file_filter = po/user-manual/scripting/legacy/events.<lang>.po
+source_file = po/user-manual/scripting/legacy/events.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-index]
+file_filter = po/user-manual/scripting/legacy/index.<lang>.po
+source_file = po/user-manual/scripting/legacy/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-script-attributes]
+file_filter = po/user-manual/scripting/legacy/script-attributes.<lang>.po
+source_file = po/user-manual/scripting/legacy/script-attributes.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-script-priorities]
+file_filter = po/user-manual/scripting/legacy/script-priorities.<lang>.po
+source_file = po/user-manual/scripting/legacy/script-priorities.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-scripting-legacy-workflow]
+file_filter = po/user-manual/scripting/legacy/workflow.<lang>.po
+source_file = po/user-manual/scripting/legacy/workflow.en-US.po
 source_lang = en
 type = PO
 

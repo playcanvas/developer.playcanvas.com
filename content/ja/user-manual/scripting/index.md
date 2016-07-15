@@ -4,26 +4,32 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-ゲームをインタラクティブにするにはスクリプトを使います。スクリプトは**JavaScript**で書きます。これはあらゆるウェブページで使用されているプログラミング言語です。
+Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programmng language that is used to program web pages.
 
-アプリケーションは二つの個別のコードベースに分かれているものと考えてください。一つはPlayCanvasが提供するエンジンです。これは、グラフィックレンダリング、入力処理、オーディオ、PlayCanvasツールのインターフェイスなどを含む基本的な機能を実装します。もう一つはスクリプトです。これは多くの場合、便利な挙動を提供する再利用可能なブロックか、アプリケーション特有のものです。
+You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviours.
 
-基本的に、エンジンコードは<script>タグでアプリケーションに含まれる単一のJavaScriptファイルなので、気にかける必要はありません。エンジンの一部を書き換える場合、スクリプティングに関するこの導入は必要ないです。
+Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
 
-スクリプトとはPlayCanvas Editorを通して[エンティティ][2]のスクリプト[コンポーネント][1]に追加される個別のJavaScriptファイルです。基本的に、スクリプトファイルは添付されているエンティティ毎に一度インスタンス化される、単一のJavaScriptオブジェクトを定義するべきです。 
+Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
 
-**スクリプトがブラウザによりキャッシュされないよう注意してください。キャッシュされると、スクリプトへの変更による結果が確認できません。[こちらを確認][3]**
+```javascript
+var Rotate = pc.createScript("rotate");
+
+Rotate.prototype.update = function (dt) {
+    this.entity.rotate(0, 10*dt, 0);
+};
+```
+
+Scripts are defined by the name given when they are created and they are attached to [Script Component][1] via the Editor or by adding a script component to an Entity in your code.
 
 ## 用語
 
-まず、いくつかの用語を定義しましょう。
+Lets define a few pieces of terminology.
 
-* ***スクリプト*** スクリプトとはスクリプトオブジェクトを定義するための正しいJavaScriptを含む単一のJavaScriptファイルです。
-* ***スクリプトコンポーネント*** スクリプトコンポーネントはPlayCanvasエンジンで定義され、ゲームエンティティにスクリプトを読み込みスクリプトオブジェクトを作成する機能を与えます。
-* ***スクリプトオブジェクト*** スクリプトオブジェクトはPlayCanvasエンジンでレジスタされるスタンダードなJavaScriptオブジェクトです。新規のスクリプトコンポーネントが作成される際にインスタンス化することができます。基本的に、アプリケーションのタイプ毎に存在するスクリプトオブジェクトは一つです。
-* ***スクリプトインスタンス*** スクリプトインスタンスは、JavaScriptでnewキーワードを使用して実行時にインスタンス化されたスクリプトオブジェクトです。スクリプトインスタンスはそのスクリプトが添付されている全てのエンティティに対して作成されます。
+* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
+* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
+* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
-[1]: /user-manual/packs/components/
-[2]: /user-manual/packs/entities/
-[3]: /user-manual/scripting/debugging/
+[1] /user-manual/packs/components/script/
 

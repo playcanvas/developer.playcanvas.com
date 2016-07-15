@@ -4,73 +4,74 @@ template: tutorial-page.tmpl.html
 position: 2
 ---
 
-<iframe src="http://apps.playcanvas.com/playcanvas/tutorials/input_mouse?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/MHIdZgaj?overlay=false"></iframe>
 
 *Перемещайте мышь чтобы двигать куб вокруг, нажимайте кнопки мыши для смены цвета куба.
 
 Управление мышью в движке PlayCanvas предоставляется объектом  `pc.Mouse`. Объект мыши предоставляет простой интерфейс для обнаружения движения и нажатия кнопок. Он так же устраняет некоторые несоответствия между браузерами в обработке координат мыши.
 
-Взгляните на сцену 'Mouse Input' в [уроке][1]. Исходный код из файла mouse.js:
+Take a look at the [tutorial project][1]. Here is the code from mouse.js:
 
 ~~~javascript~~~
-pc.script.attribute("materials", "asset", [], {type: "material"});
+var Mouse = pc.createScript('mouse');
 
-pc.script.create("mouse", function (app) {
-    var MouseHandler = function (entity) {
-        this.entity = entity;
-        this.pos = new pc.Vec3();
-
-        // Disabling the app menu stops the browser displaying a menu when
-        // you right-click the page
-        app.mouse.disableContextMenu();
-
-        // Use the on() method to attach event handlers.
-        // The mouse object supports events on move, button down and
-        // up, and scroll wheel.
-        app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-        app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
-    };
-
-    MouseHandler.prototype = {
-        initialize: function () {
-            this.redMaterial = app.assets.getAssetByResourceId(this.materials[0]).resource;
-            this.greenMaterial = app.assets.getAssetByResourceId(this.materials[1]).resource;
-            this.blueMaterial = app.assets.getAssetByResourceId(this.materials[2]).resource;
-        },
-
-        onMouseMove: function (event) {
-            // Use the camera component's screenToWorld function to convert the
-            // position of the mouse into a position in 3D space
-            var depth = 10;
-            var cameraEntity = app.root.findByName('Camera');
-            cameraEntity.camera.screenToWorld(event.x, event.y, depth, this.pos);
-
-            // Finally update the cube's world-space position
-            this.entity.setPosition(this.pos);
-        },
-
-        onMouseDown: function (event) {
-            // If the left mouse button is pressed, change the cube color to red
-            if (event.button === pc.MOUSEBUTTON_LEFT) {
-                this.entity.model.model.meshInstances[0].material = this.redMaterial;
-            }
-
-            // If the left mouse button is pressed, change the cube color to green
-            if (event.button === pc.MOUSEBUTTON_MIDDLE) {
-                this.entity.model.model.meshInstances[0].material = this.greenMaterial;
-            }
-
-            // If the left mouse button is pressed, change the cube color to blue
-            if (event.button === pc.MOUSEBUTTON_RIGHT) {
-                this.entity.model.model.meshInstances[0].material = this.blueMaterial;
-            }
-        }
-    };
-
-    return MouseHandler;
+Mouse.attributes.add('redMaterial', {
+    type: 'asset',
+    assetType: 'material'
 });
 
+Mouse.attributes.add('greenMaterial', {
+    type: 'asset',
+    assetType: 'material'
+});
 
+Mouse.attributes.add('blueMaterial', {
+    type: 'asset',
+    assetType: 'material'
+});
+
+// initialize code called once per entity
+Mouse.prototype.initialize = function() {
+    this.pos = new pc.Vec3();
+
+    // Disabling the context menu stops the browser displaying a menu when
+    // you right-click the page
+    this.app.mouse.disableContextMenu();
+
+    // Use the on() method to attach event handlers.
+    // The mouse object supports events on move, button down and
+    // up, and scroll wheel.
+    this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+    this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
+};
+
+Mouse.prototype.onMouseMove = function (event) {
+    // Use the camera component's screenToWorld function to convert the
+    // position of the mouse into a position in 3D space
+    var depth = 10;
+    var cameraEntity = this.app.root.findByName('Camera');
+    cameraEntity.camera.screenToWorld(event.x, event.y, depth, this.pos);
+
+    // Finally update the cube's world-space position
+    this.entity.setPosition(this.pos);
+};
+
+Mouse.prototype.onMouseDown = function (event) {
+    // If the left mouse button is pressed, change the cube color to red
+    if (event.button === pc.MOUSEBUTTON_LEFT) {
+        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+    }
+
+    // If the left mouse button is pressed, change the cube color to green
+    if (event.button === pc.MOUSEBUTTON_MIDDLE) {
+        this.entity.model.meshInstances[0].material = this.greenMaterial.resource;
+    }
+
+    // If the left mouse button is pressed, change the cube color to blue
+    if (event.button === pc.MOUSEBUTTON_RIGHT) {
+        this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
+    }
+};
 ~~~
 
 ### Доступ к мыши
@@ -78,7 +79,7 @@ pc.script.create("mouse", function (app) {
 Управление мышью регулируется объектом  `pc.Mouse`. [Фреймворк][2] предоставляет экземпляр класса [приложение][3], который доступен для всех сценариев объектов как:
 
 ~~~javascript~~~
-app.mouse
+this.app.mouse
 ~~~
 
 ### Отключение меню правой кнопки мыши
@@ -86,7 +87,7 @@ app.mouse
 В конструкторе нашего сценария для объекта мы отключаем меню, чтобы остановить его появление при нажатии правой кнопки мыши.
 
 ~~~javascript~~~
-app.mouse.disableContextMenu();
+this.app.mouse.disableContextMenu();
 ~~~
 
 ### Привязка к событиям
@@ -96,8 +97,8 @@ app.mouse.disableContextMenu();
 Отметьте, в метод для связки событий on() мы передаём `this`. Третий аргумент в объекте используется для события обратного вызова.
 
 ~~~javascript~~~
-app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
+this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
+this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ~~~
 
 События доступные для `pc.Mouse`:
@@ -128,9 +129,9 @@ app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 Попробуйте запустить урок в полноэкранном режиме [тут][5] или наверху этой страницы. Двигайте мышь чтобы смещать куб и нажимайте левую, среднюю и правую кнопки мыши для изменения цвета.
 
-[1]: https://playcanvas.com/project/186/overview/tutorials
+[1]: https://playcanvas.com/project/405819/overview/tutorial-basic-mouse-input
 [2]: /user-manual/glossary#framework
 [3]: /user-manual/glossary#app
 [4]: /user-manual/glossary#dom
-[5]: http://apps.playcanvas.com/playcanvas/tutorials/input_mouse
+[5]: https://playcanv.as/p/MHIdZgaj
 

@@ -1,5 +1,5 @@
 ---
-title: Audio
+title: オーディオ
 template: usermanual-page.tmpl.html
 position: 10
 ---

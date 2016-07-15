@@ -97,21 +97,24 @@ PlayCanvasは常にプラグイン不要で、ブラウザでネイティブに�
 ご覧の通り、理想的な特徴がそろっています。ウェブappは全てのデバイスやブラウザで実行できるべきです。HTML5はより多くの端末とブラウザで利用できるよう進化し続けています。現在のブラウザ必須条件は次の通りです：
 
 <table class="table table-striped table-bordered">
-    <tr><th>ブラウザ</th><th>バージョン</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
-    <tr><td><a href="http://www.google.com/chrome/">Chrome</a></td><td>9.0+</td>
-        <td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td></td>
+    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
+    <tr><td style="text-align:center"><a href="http://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td><a href="http://www.mozilla.org/firefox/">Firefox</a></td><td>4.0+</td>
-        <td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td></td><td>&#x2713;</td><td></td>
+    <tr><td style="text-align:center"><a href="http://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td><td>11.0+</td>
-        <td>&#x2713;</td><td></td><td></td><td></td><td></td><td></td>
+    <tr><td style="text-align:center"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td><td style="text-align:center">11.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
-    <tr><td><a href="http://www.apple.com/safari/">Safari</a></td><td>5.1+</td>
-        <td></td><td>&#x2713;</td><td></td><td></td><td></td><td>&#x2713;</td>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-gb/windows/microsoft-edge">Edge</a></td><td style="text-align:center">12.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
-    <tr><td><a href="http://www.opera.com/">Opera</a></td><td>12.0+</td>
-        <td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td><td></td><td>&#x2713;</td><td></td>
+    <tr><td style="text-align:center"><a href="http://www.apple.com/safari/">Safari</a></td><td style="text-align:center">5.1+</td>
+        <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
+    </tr>
+    <tr><td style="text-align:center"><a href="http://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
     </tr>
 </table>
 

@@ -338,6 +338,7 @@ for arg in sys.argv[1:]:
         print("convert current translations to markdown")
         update_localized_files('ja_JP', 'po', 'content/ja')
         update_localized_files('ru', 'po', 'content/ru')
+        update_localized_files('zh_CN', 'po', 'content/zh')
 
     if arg == 'titles':
         create_title_pot('content/en', 'po/titles.js.en-US.po')

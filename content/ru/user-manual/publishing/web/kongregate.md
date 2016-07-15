@@ -1,7 +1,7 @@
 ---
 title: Kongregate
 template: usermanual-page.tmpl.html
-position: 4
+position: 6
 ---
 
 [Kongregate][1] is one of the biggest web game portals in the world. Originally a site for flash games they've been accepting HTML5 games for a while. Kongregate shares up to 50% of their advertising revenue with the game developer so they are a good place to start making money from your games.

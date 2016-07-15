@@ -53,7 +53,7 @@
         for (i = 0; i < flags.length; i++) {
             flags[i].addEventListener("click", function (e) {
                 var url = window.location.pathname;
-                window.location.href = url.replace(/\/(en|ja|ru)\//, "/" + e.currentTarget.dataset.lang + "/");
+                window.location.href = url.replace(/\/(en|ja|ru|zh)\//, "/" + e.currentTarget.dataset.lang + "/");
                 e.preventDefault();
             });
 

@@ -4,7 +4,7 @@ template: tutorial-page.tmpl.html
 position: 16
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
 *You can find the [full project here][11]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] and [Part 5][5] read them first.*
 
@@ -31,41 +31,37 @@ To add a script we have add `sprite.js` from the Sprite library above to our pro
 Let's take a look at the script for the main menu.
 
 ```javascript
-pc.script.create('ui_menu', function (app) {
-    // Creates a new Ui_menu instance
-    var Ui_menu = function (entity) {
-        this.entity = entity;
-    };
+var UiMenu = pc.createScript('uiMenu');
 
-    Ui_menu.prototype = {
-        initialize: function () {
-        },
+// initialize code called once per entity
+UiMenu.prototype.initialize = function() {
+    this.on('enable', this.onEnable, this);
+    this.on('disable', this.onDisable, this);
 
-        onEnable: function () {
-            // Listen for clicks on the play button
-            app.mouse.on("mouseup", this.start, this);
-            if (app.touch) {
-                app.touch.on("touchend", this.start, this);
-            }
-        },
+    this.onEnable();
+};
 
-        onDisable: function () {
-            // Stop listening to events
-            app.mouse.off("mouseup", this.start, this);
-            if (app.touch) {
-                app.touch.off("touchend", this.start, this);
-            }
-        },
+UiMenu.prototype.onEnable = function () {
+    // Listen for clicks on the play button
+    this.app.mouse.on("mouseup", this.start, this);
+    if (this.app.touch) {
+        this.app.touch.on("touchend", this.start, this);
+    }
+};
 
-        start: function (e) {
-            app.fire("ui:start");
-            // prevent touch and mouse events
-            e.event.preventDefault();
-        }
-    };
+UiMenu.prototype.onDisable = function () {
+    // Stop listening to events
+    this.app.mouse.off("mouseup", this.start, this);
+    if (this.app.touch) {
+        this.app.touch.off("touchend", this.start, this);
+    }
+};
 
-    return Ui_menu;
-});
+UiMenu.prototype.start = function (e) {
+    this.app.fire("ui:start");
+    // prevent touch and mouse events
+    e.event.preventDefault();
+};
 ```
 
 When the Entity is enabled we start listening for mouse and touch events, when the Entity is disabled we stop listening to the events. When an event is triggered we fire a "ui:start" event which the main game script is listening for and that triggers a change of game state.
@@ -86,4 +82,4 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [8]: http://forum.playcanvas.com
 [9]: /images/tutorials/beginner/keepyup-part-six/ui-hierarchy.jpg
 [10]: /images/tutorials/beginner/keepyup-part-six/sprite-setup.jpg
-[11]: https://playcanvas.com/project/362703/overview/sample-game-keepy-up
+[11]: https://playcanvas.com/project/406050

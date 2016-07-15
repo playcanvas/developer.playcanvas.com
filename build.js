@@ -33,6 +33,8 @@ handlebars.registerPartial("usermanual-contents",
     fs.readFileSync(path.join(__dirname, "templates/partials/usermanual-contents.tmpl.html"), "utf-8"));
 handlebars.registerPartial("tutorial-navbar",
     fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-navbar.tmpl.html"), "utf-8"));
+handlebars.registerPartial("tutorial-navbar-legacy",
+    fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-navbar-legacy.tmpl.html"), "utf-8"));
 handlebars.registerPartial("tutorial-contents",
     fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"), "utf-8"));
 handlebars.registerPartial("header",
@@ -88,6 +90,8 @@ m.use(i18n()({
         file: 'content/ja/messages.json', locale: 'ja'
     }, {
         file: 'content/ru/messages.json', locale: 'ru'
+    }, {
+        file: 'content/zh/messages.json', locale: 'zh'
     }],
     output: localization
 }))
@@ -103,6 +107,12 @@ m.use(i18n()({
     contentPath: "content/_tutorial_contents.json",
     partialName: "tutorials-navigation"
 }))
+.use(navbuilder("en/tutorials/legacy")({
+    engine: handlebars,
+    template: path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"),
+    contentPath: "content/_tutorial_contents_legacy.json",
+    partialName: "tutorials-navigation-legacy"
+}))
 .use(templates({
     engine: "handlebars",
     directory: "templates"
@@ -112,7 +122,7 @@ m.use(i18n()({
     data: localization
 }))
 .build(function (err, files) {
-    console.log("doneone")
+    console.log("done");
     if (err) {
         console.error(err);
     }

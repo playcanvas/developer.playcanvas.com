@@ -1,36 +1,48 @@
 ---
-title: Creating and attaching scripts
+title: Creating new scripts
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## Creating a new script
-
-To create a new script use the Asset Panel and select New Script
+To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file.
 
 ![New Script][0]
 
-## Attaching a script to an Entity
+Double-click the script asset in the panel to open it in the code editor.
 
-<img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+![Code Editor][1]
 
-Script Components are attached to Entities in the same way as all other Components using the *Add Component* button in the Entity inspector.
+## Attaching to a script component
 
-Once you have added a Script Component you can specify which javascript files to load. Use the Add Script button to pick scripts from your asset panel. Or drag and drop a script from the asset panel onto the component.
+The script component is created in the same way as other components. Once you have a script component you can select a script from your asset list.
 
-If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click a script's name below the URL input box.
+![Select Script][2]
 
-<div class="alert alert-info">
-If you are using Github or Bitbucket you can not edit you scripts in PlayCanvas, you must make your commits through your source control system.
-</div>
+Scripts are shown by their name, when you select a script to add it to a component, the script content is parsed and any attributes that have been declared are exposed in the interface.
 
-A script component can load multiple script files, just add multiple scripts to the component. The order in which you add your scripts on a Script Component is the order in which the scripts are going to be initialized and updated. If you want to change the order of a script, click on the Up - Down arrows next to the Script's title. To remove a script click on the X button.
+## Adding a script component at run time
 
-## Using Script Priorities
+If you want to dynamically add scripts while your application is running you can do so from the script component
 
-The second way to use a script in your application is to add them to the script priority list. This will load your script up front, before the rest of your application. See the [Script Priorities][4] page.
+```javascript
+var entity = new pc.Entity();
+entity.addComponent("script");
+entity.script.create("rotate", {
+    attributes: {
+        speed: 20
+    }
+});
+```
 
-[0]: /images/user-manual/new_script.jpg
-[2]: /user-manual/scripting/workflow
-[3]: /images/user-manual/scenes/components/component-script.png "Add urls of scripts to the script component"
-[4]: /user-manual/scripting/script-priorities
+Note, that the "rotate" script should already have been loaded at this point. You can load a script using the Asset Registry's [load()][3] method.
+
+To remove a script from a component use the `destroy` method
+
+```javascript
+entity.script.destroy("rotate");
+```
+
+[0]: /images/user-manual/scripting/new-script.jpg
+[1]: /images/user-manual/scripting/code-editor.jpg
+[2]: /images/user-manual/scripting/select-script.jpg
+[3]: /api/pc.AssetRegistry.html#load

@@ -13,7 +13,7 @@ PlayCanvas offers two ways to use lightmaps in your scene.
 
 ## External lightmap generation
 
-Many 3D content tools have ways to generate lightmap textures. For example, 3DS Max, Maya and Blender all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination, bounced lighting, soft shadows, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
+Many 3D content tools have ways to generate lightmap textures. For example, 3DS Max, Maya and Blender all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
 
 Once you have created lightmaps using an external tool you simply upload them as regular texture assets and they can be added to your materials using the lightmap slot in the standard Physical Material.
 
@@ -27,12 +27,12 @@ The advantanges are so:
 
 * Lighting is not performed at runtime
 * It is possible to use hundreds of static lights to light your scene
-* Rendering lightmaps at runtime is faster than downloading many lightmap textures
+* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
 * It is possible to mix static and dynamic lights in the Editor
 * Rebaking can be performed at runtime
 * Lightmaps are HDR
 
-The disadvantage of using runtime lightmap generation is that currently only diffuse lighting (no specular) is supported.
+The disadvantage of using runtime lightmap generation is that currently we do not support baking global illumination, ambient occulusion or some of the other advanced features of a specialized baking tool.
 
 ### Setting up lights for baking
 

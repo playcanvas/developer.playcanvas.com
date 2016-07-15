@@ -37,6 +37,10 @@
                         </div>
                     {{/with}}
                 {{/with}}
+
+                <div class="alert alert-info">
+                    Click <a href="/tutorials/legacy">here</a> to see Tutorials using the legacy script system.
+                </div>
             </main>
         </div>
         {{/if}}
@@ -73,6 +77,10 @@
                         </div>
                     {{/with}}
                 {{/with}}
+
+                <div class="alert alert-info">
+                    Click <a href="/tutorials/legacy">here</a> to see Tutorials using the legacy script system.
+                </div>
             </main>
         </div>
         {{/if}}
@@ -108,6 +116,49 @@
                         </div>
                     {{/with}}
                 {{/with}}
+
+                <div class="alert alert-info">
+                    Click <a href="/tutorials/legacy">here</a> to see Tutorials using the legacy script system.
+                </div>
+            </main>
+        </div>
+        {{/if}}
+
+        {{#if zh}}
+        <div class="container content-width">
+            <main class="full-width">
+                {{#with tutorials-navigation}}
+                    {{#with zh}}
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Beginners{{/i18n}}</h1>
+                            {{#each beginner}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Intermediate{{/i18n}}</h1>
+                            {{#each intermediate}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                        <div class="tutorial-tag-cloud">
+                            <h1>{{#i18n}}Advanced{{/i18n}}</h1>
+                            {{#each advanced}}
+                                {{#each children}}
+                                    <span><a href="{{path}}">{{name}}</a></span>
+                                {{/each}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
+                {{/with}}
+
+                <div class="alert alert-info">
+                    Click <a href="/tutorials/legacy">here</a> to see Tutorials using the legacy script system.
+                </div>
             </main>
         </div>
         {{/if}}

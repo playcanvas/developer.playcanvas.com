@@ -198,3 +198,70 @@
 </nav>
 {{/with}}
 {{#lang-selector-close}}{{/lang-selector-close}}
+
+{{#lang-selector "zh"}}{{/lang-selector}}
+{{#with zh}}
+<nav class="tutorial">
+    <ul class="beginner level">
+        {{#each beginner}}
+        <li>
+            <ul class="children">
+            {{#each children}}
+                <li>
+                    <a href="{{this.path}}">{{this.name}}</a>
+                    <ul>
+                    {{#each children}}
+                        <li>
+                            <a href="{{this.path}}">{{this.name}}</a>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </li>
+            {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+    <ul class="intermediate level">
+        {{#each intermediate}}
+        <li>
+            <ul class="children">
+            {{#children}}
+                <li>
+                    <a href="{{this.path}}">{{this.name}}</a>
+                    <ul>
+                    {{#children}}
+                        <li>
+                            <a href="{{this.path}}">{{this.name}}</a>
+                        </li>
+                    {{/children}}
+                    </ul>
+                </li>
+            {{/children}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+    <ul class="advanced level">
+        {{#each advanced}}
+        <li>
+            <ul class="children">
+            {{#children}}
+                <li>
+                    <a href="{{this.path}}">{{this.name}}</a>
+                    <ul>
+                    {{#children}}
+                        <li>
+                            <a href="{{this.path}}">{{this.name}}</a>
+                        </li>
+                    {{/children}}
+                    </ul>
+                </li>
+            {{/children}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</nav>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}

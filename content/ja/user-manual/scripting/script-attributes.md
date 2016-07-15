@@ -1,316 +1,112 @@
 ---
-title: スクリプトのアトリビュート(属性値)
+title: Script Attributes
 template: usermanual-page.tmpl.html
-position: 6
+position: 4
 ---
 
-スクリプトのアトリビュート機能は、スクリプト内で使用する変数をPlayCanvasエディタ内で編集することができるようにする便利な機能です。この機能を使うことで、一度コードを書いた後にエンティティごと作られるインスタンスにそれぞれ違うパラメータを設定する調整ができるようになります。
+Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
 
 ## スクリプトのアトリビュートを宣言する
 
 スクリプトのアトリビュートは、スクリプトの先頭で以下のフォーマットにしたがって宣言します:
 
 ```javascript
-pc.script.attribute(attributeName, attributeType, defaultValue, options);
+var MyScript = pc.createScript("myscript");
+
+MyScript.attributes.add("speed", "number", 80);
 ```
 
 この例では、`speed`プロパティをデフォルト値`80`を持つ`number`(数値)として宣言しています:
 
-```javascript
-pc.script.attribute('speed', 'number', 80);
-```
-
 ## アトリビュートをエディタ上で使う
 
-<img src="/images/user-manual/scenes/components/component-script-attributes.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-アトリビュートは宣言された後、サーバによって解析が可能な状態になっていなければなりません。コードの編集にPlayCanvasエディタを使っている場合には何もする必要はありません。もしGithubやBitbucketなどの外部リポジトリを使っている場合には、変更を加えた最新のコードが[同期されている][1]ことを確認してください。
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. The code is parsed automatically when you add a script to an entity. However, if you ever need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
 
-Once your code is on the PlayCanvas server then open the Editor and click the <img src="/images/user-manual/refresh-script-attributes.jpg" style="display: inline; vertical-align: middle;" /> button.
+## Accessing attributes in your code
 
-アトリビュートを更新すると、スクリプトが再ロードされ、宣言されている全てのアトリビュートが再度パースされます。そして、そのスクリプトを参照するスクリプトコンポーネント全てがその値を受け取り、さらにエディタ上にも表示されます。(その値はたとえば`this.attirubte_name`のような形でスクリプト内から参照できます)
-
-エディタ上では、あるアトリビュートを持つそれぞれのスクリプトについて、アトリビュートエディタの中にそのアトリビュートの欄が表示されます。その表示はコンポーネントの表示欄と似たような形になります。
-
-## データ型について
-
-以下の詳細な説明のとおり、たくさんのデータ型がサポートっされています。オプションはJavaScriptのオブジェクトとして渡されます。
-
-### Number
-
-値として数値を取ります。
-
-#### 例
+When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
 
 ```javascript
-pc.script.attribute('speed', 'number', 80, {
-    min: 0,
-    max: 100
+MyScript.prototype.update = function (dt) {
+    this.entity.translate(this.speed * dt, 0, 0);
+}
+```
+
+## Updating attributes
+
+When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behaviour when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+
+```javascript
+MyScript.prototype.initialize = function () {
+    // fires only for `speed` attribute
+    this.on("attr:speed", function (value, prev) {
+        // new value for speed
+    });
+
+    // fires for all attribute changes
+    this.on("attr", name, value, prev) {
+        // new attribute value
+    }
+}
+```
+
+## Attribute types
+
+When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, "boolean", number" or "string". But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
+
+### Entity attribute
+
+```javascript
+MyScript.attributes.add("target", {type: "entity"})
+```
+
+The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
+
+### Asset attribute
+
+```javascript
+MyScript.attributes.add("texture", {type: "asset", assetType: "texture", array: true});
+```
+
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. "texture", "material", "model".
+
+### Color attribute
+
+```javascript
+MyScript.attributes.add("color", {type: "rgba"});
+```
+
+The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
+
+### Curve attribute
+
+```javascript
+MyScript.attributes.add("wave", {type: "curve"}); // one curve
+MyScript.attributes.add("wave", {type: "curve", curves: ['x', 'y', 'z']}); // three curves: x, y, z
+MyScript.attributes.add("wave", {type: "curve", color: 'r'}); // one curve for red channel
+MyScript.attributes.add("wave", {type: "curve", color: 'rgba'}); // four curves for full color including alpha
+```
+
+The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
+
+### Enumeration attribute
+
+The last special attribute type is the Enumeration attribute
+
+```javascript
+MyScript.attributes.add("value", {
+    type: "number",
+    enum: [
+        {'valueOne': 1},
+        {'valueTwo': 2},
+        {'valueThree': 3}
+    ]
 });
 ```
 
-#### オプション
+Use the enum property to declare the list of possible values for your enumeration.
 
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-    <tr>
-        <td>description</td><td>スクリプトアトリビュート上にマウスカーソルがおかれたとき、説明文として表示されます。</td>
-    </tr>
-    <tr>
-        <td>min</td><td>有効な値の最小値をあらわします。</td>
-    </tr>
-    <tr>
-        <td>max</td><td>有効な値の最大値をあらわします。</td>
-    </tr>
-    <tr>
-        <td>step</td><td>エディタ上で上下矢印をクリックした際に増減する値をあらわします。</td>
-    </tr>
-    <tr>
-        <td>decimalPrecision</td><td>小数点以下の桁数をあらわします。</td>
-    </tr>
-</table>
-
-### String
-
-値として文字列を取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('title', 'string', 'Untitled', {
-    displayName: "Title"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-</table>
-
-### Boolean
-
-値としてtrueあるいはfalseを取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('on', 'boolean', false, {
-    displayName: "On"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-</table>
-
-### Asset
-
-値としてプロジェクトの中のアセットを取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('sound', 'asset', [], {
-    displayName: "Sound Asset"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-    <tr>
-        <td>type</td><td>選択できるアセットの種類を一種類に限定します。</td>
-    </tr>
-</table>
-
-### Entity
-
-値として階層構造下にあるエンティティをとります。
-
-#### 例
-
-```javascript
-pc.script.attribute('myEntity', 'entity', null, {
-    displayName: "Entity"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-</table>
-
-### RGB Color
-
-値としてアルファ値(透明度)のない色を取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('color', 'rgb', [1,1,1], {
-    displayName: "Color"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-</table>
-
-### RGBA Color
-
-値としてアルファ値(透明度)のある色を取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('color', 'rgba', [1,1,1,0.5], {
-    displayName: "Color"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-</table>
-
-### Vec2, Vec3, Vec4
-
-The value is a Vector, an array of 2, 3 or 4 numbers.
-
-#### 例
-
-```javascript
-pc.script.attribute('direction', 'vec2', [0,1], {
-    displayName: "Vector 2"
-});
-
-pc.script.attribute('direction', 'vec3', [0,1,0], {
-    displayName: "Vector 3"
-});
-
-pc.script.attribute('transform', 'vec4', [0,1,0,1], {
-    displayName: "Vector 4"
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-</table>
-
-### Enumeration
-
-幾つかの値のセットの中から一つの値を取ります。エディタ上ではドロップダウンリストとして表示され、その中の値を一つだけ選択できます。
-
-#### 例
-
-```javascript
-pc.script.attribute('pet', 'enumeration', 0, {
-    displayName: "Pet",
-    enumerations: [{
-       name: "Cat",
-       value: 0
-    }, {
-       name: "Dog",
-       value: 1
-    }]
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr>
-        <td>displayName</td><td>名前としてエディタ上に表示されます。</td>
-    </tr>
-    <tr>
-        <td>enumerations</td><td>取り得る値のリストです。内容は`name`と`value`プロパティを持つオブジェクトのリストとなります。</td>
-    </tr>
-</table>
-
-### Curve
-
-[pc.Curve][4]を値として取ります。複数の曲線を表現する場合には[pc.CurveSet][5]を値として取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('speed', 'curve', null, {
-    min: 0,
-    max: 5
-});
-pc.script.attribute('position', 'curve', null, {
-    curves: ['x', 'y', 'z']
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr><td>displayName</td><td>名前としてエディタ上に表示されます。</td></tr>
-    <tr><td>min</td><td>その曲線の最小の値です。</td></tr>
-    <tr><td>max</td><td>その曲線の最大の値です。</td></tr>
-    <tr><td>curves</td><td>文字列の配列を値として取ります。この文字列はカーブのなかのそれぞれのチャンネルについて、その番号と名前を定義します。</td></tr>
-</table>
-
-### Color Curve
-
-[pc.Curve][4]を値として取ります。複数のカラーチャンネルを表現する場合には[pc.CurveSet][5]を値として取ります。
-
-#### 例
-
-```javascript
-pc.script.attribute('color', 'colorcurve', null, {
-    type: 'rgba'
-});
-```
-
-#### オプション
-
-<table class="table table-striped">
-    <tr><th>オプション</th><th>説明</th></tr>
-    <tr><td>displayName</td><td>名前としてエディタ上に表示されます。</td></tr>
-    <tr><td>type</td><td>カラーカーブの種類をあらわします。'r', 'g', 'b', 'rgb'あるいは'rgba'のいずれかの値を取ります。</td></tr>
-</table>
-
-[1]: /user-manual/scripting/workflow
-[2]: /images/scripting/refresh_attributes.png
-[3]: /images/scripting/script_component_attribute.png
-[4]: /engine/api/stable/symbols/pc.Curve.html
-[5]: /engine/api/stable/symbols/pc.CurveSet.html
+[1]: /api/pc.ScriptAttributes.html
 

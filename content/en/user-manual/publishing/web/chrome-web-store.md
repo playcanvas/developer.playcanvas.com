@@ -1,7 +1,7 @@
 ---
 title: Chrome Web Store
 template: usermanual-page.tmpl.html
-position: 3
+position: 5
 ---
 
 ## Publishing to the Chrome Web Store

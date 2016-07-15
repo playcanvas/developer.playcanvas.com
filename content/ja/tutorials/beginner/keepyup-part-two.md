@@ -1,50 +1,50 @@
 ---
-title: Making a Simple Game - Part 2
+title: シンプルなゲームを作る - その2
 template: tutorial-page.tmpl.html
 position: 11
 ---
 
-<iframe src="http://playcanv.as/p/1gDqCWa8"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*If you haven't seen [Part 1][1] read it first.*
+*You can find the [full project here][16]. If you haven't seen [Part 1][1] read it first.*
 
-## Material Setup
+## マテリアルの設定
 
-We've kept the graphics very simple for this game so there isn't too much set up but will have to set up some Material assets for the ball, the background and the overlay.
+このゲームのグラフィクスは非常に単純なものですので、たくさんの設定をしなければいけないということはありません。ボール、背景とオーバーレイについて設定を行います。
 
-### What is a material?
+### マテリアルとは？
 
-A Material is a type of asset in PlayCanvas that describes the way that the surface of a 3D model looks when it is rendered to the screen. The material determines the color of the surface, but also the way the surface interacts with light. For example, you can set up a material to be a smooth metal, or a rough rubber. PlayCanvas has a built in material called a Physical Material which should cover 90% of your use cases for a material. When you get more advanced it is possible to create your own materials by using GLSL shader code to write your own.
+マテリアルとはPlayCanvasでのアセットのひとつで、3Dモデルがスクリーン上に描画される時、それがどのように見えるべきかを決めるものです。マテリアルは物体表面の色を決め、また同時に物体表面が光にどのように反応するかも決めます。例えば、マテリアルの設定によっては物体は金属のように滑らかになったり、ゴムのようにざらざらとしたものになります。PlayCanvasは物理的マテリアルという組み込みの機能をもっており、マテリアルの用途の9割ほどをカバーします。あなたが上級者になったら、自分のマテリアルを、GLSLシェーダ言語を用いて自分で書くこともできます。
 
-### Cubemap
+### キューブマップ
 
-Before we jump into the materials, we're going to set up our cubemap asset. A cubemap is an asset that consists of 6 textures on the faces of a cube. You can think of this as the far off environment of your scene. The PlayCanvas Physical materials can use a cubemap to do Image Based Lighting. This uses the colors in the cubemap to light materials in the scene. For example in our scene the cubemap has a blue sky and a green grass surface. So our ball will be lit blue from above and green from below. [Read more][7] in our documentation.
+マテリアルについて話し始める前に、キューブマップの設定をします。キューブマップとは、立方体のそれぞれの面に貼られた6枚のテクスチャからなるアセットです。これはシーンの遠方にある背景として処理されます。PlayCanvasの物理的マテリアルは、キューブマップを画像ベースのライティングに使用することができます。このライティングは、キューブマップの色をシーン内のマテリアルを照らす明かりとして使います。例えば、このゲームのシーンでは、キューブマップは青い空と緑の草の地面です。そのため、ゲーム内のぼーるは上からは青い光で、下からは緑の光で照らされます。[詳しくはドキュメントを参照してください][7]。
 
-![Cubemap][8]
+![キューブマップ][8]
 
-To set up a cubemap, first create a Cubemap asset from the New Asset menu, assign 6 textures, one to each face of the cubemap. When your cubemap has all 6 faces assigned, press the "Prefilter" button. **Prefiltering in required for the cubemap to work correctly!**
+キューブマップを設定するには、まずキューブマップアセットをNew Assetメニューから作成し、キューブマップの面に6枚のテクスチャを割り当てます。キューブマップの6面全てにテクスチャを割り当てたら、"Prefilter"ボタンをクリックしてください。**プレフィルタリングはキューブマップを正しく動作させるために必要な準備です。**
 
-## Football Material
+## Footballマテリアル
 
-![Football][3]
+![サッカーボール][3]
 
-The football is a 3D model that we imported from the [PlayCanvas Asset Library][2]. The football materials will mostly be set up for you but you may need to make some simple changes. Lets look at each map used by the football
+サッカーボールは[PlayCanvasアセットライブラリ][2]からインポートした3Dモデルです。footballマテリアルはすでに設定済みですが、いくつか単純な調整が必要になるかもしれません。サッカーボールに使われているそれぞれのテクスチャを確認してみましょう。
 
-#### Diffuse
+#### 拡散マップ
 
-![Diffuse][4]
+![拡散マップ][4]
 
-The diffuse map defines the color of the surface. In this case it is the black and white pattern of the football.
+拡散マップは表面の色を決めます。このゲームでは黒と白のサッカーボールのパターンになっています。
 
-#### Environment
+#### 環境マップ
 
-![Environment][9]
+![環境マップ][9]
 
-We're going to jump quickly to the Environment section as this is needed to see the effects of the Specular changes. To set up the Environment drag the Cubemap asset on the the cubemap slot in the material.
+スペキュラマップの効果を説明するために必要なため、環境マップの説明を簡単にここでしておきます。環境マップの設定をしたい場合は、キューブマップをマテリアルのスロットにドラッグしてください。
 
-#### Specular
+#### スペキュラマップ
 
-![Specular][5]
+![スペキュラマップ][5]
 
 The specular section determines how the material interacts with lights. There are two "workflows" for specular, the "Metalness workflow" and the "Specular workflow", you can find more information in our [documentation][6]. For the football we are using Metalness, so be sure to check the "Use Metalness" box. Our football is not made of metal, so we slide the metalness slider all the way down to 0. Then we use the glossiness slider to set our rough/smooth the material should be. We've set this to about halfway which gives a nice shine to the ball, but not completely smooth.
 
@@ -93,4 +93,5 @@ Continue on to [Part 3][15].
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
 [15]: /tutorials/beginner/keepyup-part-three
+[16]: https://playcanvas.com/project/406050
 

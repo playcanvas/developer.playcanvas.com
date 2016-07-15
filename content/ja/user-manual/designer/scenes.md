@@ -10,15 +10,19 @@ position: 10
 
 シーンダイアログはメニューの'Scenes'オプションをクリックして開きます：
 
-<img src="/images/user-manual/editor/scenes-menu.jpg" style="max-width: 100%"/>
+![Scenes Menu][1]
 
 また、3Dビューポート内の左上にあるScenes Menuボタンをクリックして開くこともできます：
 
-<img src="/images/user-manual/editor/scenes-viewport.jpg" style="max-width: 100%"/>
+![Scenes Viewport][2]
 
 シーンダイアログが開きます：
 
-<img src="/images/user-manual/editor/scenes.jpg" style="max-width: 100%"/>
+![Scenes][3]
 
-NEWボタンをクリックして新しいシーンを作成します。シーンをクリックすると開くことができますし、シーンの複製や削除は各シーンの右側にあるボタンから行えます。また、各シーンの左のバナーアイコンをクリックすればプライマリシーンに設定できます。プライマリシーンは、プロジェクトをエクスポートする際やappを公開する際に最初に読み込まれるシーンです。アプリケーションの最初の「レベル」と考えてください。
+You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left of each scene to make it the Primary Scene. The Primary Scene is the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
+
+[1]: /images/user-manual/editor/scenes-menu.jpg
+[2]: /images/user-manual/editor/scenes-viewport.jpg
+[3]: /images/user-manual/editor/scenes.jpg
 

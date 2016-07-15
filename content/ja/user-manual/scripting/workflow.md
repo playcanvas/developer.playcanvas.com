@@ -26,7 +26,7 @@ PlayCanvasアプリケーション用のスクリプトを開発する最も簡�
 スクリプトを格納するためPlayCanvasを使用している場合のみ、スクリプトを編集することができます。外部のコードリポジトリを設定している場合は、PlayCanvas経由でスクリプトを編集することはできません。ローカルサーバを使用するか、リポジトリにコードをコミットする必要があります。
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][1] tab in your Project dashboard or from the [Assets Panel][2] in the Editor.
+スクリプトリンクをクリックすると新しいタブで内蔵のコードエディタが開きます。あなたは、新しいタブを表示するにはplaycanvas.comからのポップアップを許可する必要があります。初めてスクリプトを編集するとき、それは作成され、保存されます。次に、プロジェクトダッシュボードの[Code][1]タブ、またはエディタの [Scripts Explorer][2] で全てのスクリプトを確認することができます。
 
 ## ローカルサーバ
 
@@ -37,9 +37,9 @@ Click the script link and the built-in code editor will open in a new tab. You m
 
 ### Windows
 
-* First you will need to install python from [here][3]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
+* まず[ここ][3]からPythonをインストールします。デフォルトでは`localserver.bat`はPython2.7を使用しますが、最近のバージョンで動作するように変更することができます。
 
-* [Download the server script][4]
+* [サーバスクリプトをダウンロード][4]
 
 * `localserver.bat`ファイルをスクリプトが含まれているフォルダに保存。
 
@@ -50,7 +50,7 @@ Serving HTTP on 0.0.0.0 port 51000 ...
 
 ### OS X と Linux
 
-* [Download the server script][5]
+* [サーバスクリプトをダウンロード][5]
 
 * `localserver`ファイルをスクリプトが含まれているフォルダに保存。
 
