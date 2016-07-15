@@ -28,7 +28,7 @@ Here you can increase or decrease the number of seats for your Organization. Thi
 
 The Owner of the Organization can delete the Organization from here. This will completely erase the account and all its projects. This action cannot be reversed.
 
-[1]: /images/user-manual/orgs/permissions.png "Permissions"
-[2]: /images/user-manual/orgs/seats.png "Seats"
-[3]: /images/user-manual/orgs/upgrade.png "Upgrade"
-[4]: /images/user-manual/orgs/delete.png "Delete"
+[1]: /images/user-manual/organizations/permissions.png "Permissions"
+[2]: /images/user-manual/organizations/seats.png "Seats"
+[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
+[4]: /images/user-manual/organizations/delete.png "Delete"
