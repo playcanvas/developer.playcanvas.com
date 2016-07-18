@@ -19,4 +19,4 @@ You can also purchase an [Organization Plan][1] which includes:
 - Offline Archive & Restore
 - Additional storage space
 
-[1]: https://playcanvas.com/pricing
+[1]: https://playcanvas.com/plans
