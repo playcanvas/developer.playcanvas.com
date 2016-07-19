@@ -76,6 +76,18 @@ MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array
 
 The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
+The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
+
+```javascript
+MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
+
+MyScript.prototype.initialize = function () {
+    console.log('This is the texture asset', this.texture);
+    console.log('This is the texture resource', this.texture.resource);
+};
+
+```
+
 
 ### Color attribute
 
