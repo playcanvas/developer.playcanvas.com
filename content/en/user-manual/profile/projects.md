@@ -35,4 +35,4 @@ If you have an ORG plan you can import a .zip archive that contains an export pr
 Click on Import Project on the left hand side of the Projects page and select the zip file to import it.
 
 
-[1]: /images/platform/profile.png "Projects"
+[1]: /images/user-manual/profile.png "Projects"
