@@ -18,7 +18,9 @@ Click on the arrow next to a project and select Delete to permantently delete it
 
 ## Unlock Project
 
-Click on the arrow next to a project and select Unlock to unlock a *locked* project. This will make the project public.
+Click on the arrow next to a project and select Unlock to unlock a *locked* project. Unlocking a project depends on the project owner's subscription type. If the owner has a Personal plan then Unlocking means removing any Free users from the Project (because Personal plans require all users to have a subscription). Otherwise unlocking a project means making it Public.
+
+If you have an Organization account another way to unlock Projects is by purchasing more seats until you are no longer hitting your seats limit.
 
 ## Export Project
 
