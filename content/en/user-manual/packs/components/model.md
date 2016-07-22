@@ -32,7 +32,7 @@ You can control a Model component's properties using a [script component][2]. Th
 
 You can learn how to customize the materials of your model [here][4].
 
-[1]: /images/user-manual/scenes/components/component-model.jpg
+[1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/packs/components/script
 [3]: /engine/api/stable/symbols/pc.ModelComponent.html
 [4]: /user-manual/assets/materials/#assigning-materials
