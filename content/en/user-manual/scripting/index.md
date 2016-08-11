@@ -31,4 +31,4 @@ Lets define a few pieces of terminology.
 * ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
 * ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
-[1] /user-manual/packs/components/script/
+[1]: /user-manual/packs/components/script/
