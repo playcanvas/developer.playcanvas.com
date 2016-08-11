@@ -1,13 +1,13 @@
 ---
-title: Create a new shader
-keywords: asset, shader, create, material
+title: Создание шейдера
+keywords: ресурс, шейдер, создание, материал
 ---
 
-## How do I create a new shader?
+## Как создать шейдер?
 
-You can create a new shader asset from the asset panel. Click **Add Asset -> Shader**.
+Вы можете создать шейдер из панели ресурсов. Кликните на **Добавить Ресурс -> Шейдер**
 
-To use your shader on a material take a look at our [custom shader tutorial][1].
+Чтобы применить шейдер к материалу, посмотрите [урок по своим шейдерам][1].
 
-[1]: http://developer.playcanvas.com/en/tutorials/advanced/custom-shaders/
+[1]: http://developer.playcanvas.com/ru/tutorials/advanced/custom-shaders/
 

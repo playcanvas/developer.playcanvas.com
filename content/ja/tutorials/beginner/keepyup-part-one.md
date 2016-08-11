@@ -5,7 +5,7 @@ position: 10
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
-*You can find the [full project here][3]*
+*[完成されたプロジェクトはこちら][3]です*
 
 このチュートリアルでは、PlayCanvasを使って一本の完全なゲームを作る流れを説明します。"Keepy Up"という、ボールをタッチかクリックし続けることでボールを滞空させ続けるゲームを作りましたのでそれを、題材として説明します。
 
@@ -22,7 +22,7 @@ position: 10
 
 ## その1: シーンと階層構造
 
-In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities and arrange them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
+PlayCanvasではシーンはエンティティの階層構造によって構築されています。それぞれのエンティティはゲームの中の「物体」に相当します。それぞれのエンティティはID, 名前とトランスフォームを持ちます。トランスフォームは3D空間でのエンティティの位置・回転・拡大縮小を表す行列です。シーンを構築するには、画面左側のパネルに表示されているツリー構造で、エンティティを作成したり並び替えたりします。ツリー構造では親要素が子要素に影響を及ぼします。例えば、すべての子要素は親要素の位置, 回転, スケールを引き継ぎます。また、親要素が無効にされた場合には、子要素も全て無効になります。
 
 Keepy Upのシーンの階層構造には、7つのエンティティが最上位のエンティティとして存在します。
 
@@ -58,7 +58,7 @@ Backgroundエンティティにはもう一つのモデルコンポーネント�
 
 ### Impact Effectエンティティ
 
-The Impact Effect Entity is a particle effect that plays when the ball is bounced. We'll go into more detail in Part 4.
+Impact Effect Entityはボールがバウンスする時に再生されるパーティクルエフェクトです。その4で詳細を説明します。
 
 ### Audioエンティティ
 

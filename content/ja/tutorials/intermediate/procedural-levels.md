@@ -16,39 +16,39 @@ position: 5
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
-    type: 'number',
-    default: 10
+    型: 'number',
+    デフォルト: 10
 });
 
 Generate.attributes.add('numTilesY', {
-    type: 'number',
-    default: 10
+    型: 'number',
+    デフォルト: 10
 });
 
-// initialize code called once per entity
+// initializeコードがエンティティ毎に一度呼ばれる
 Generate.prototype.initialize = function() {
-    // We've created a couple of templates that are our world tiles
-    // In the Editor hierarchy, we have disabled the templates because
-    // we don't want them to be visible. We just want our generated
-    // world to be visible
+    // ワールドタイルのテンプレートをいくつか作成しました
+    // テンプレートが表示されないよう、Editor階層で
+    // 無効にしました。生成されたワールドのみ
+    // 表示されるようにします。
     var templates = this.app.root.findByName('Templates');
     var grass = templates.findByName('Grass');
     var house = templates.findByName('House');
 
     for (var y = 0; y < this.numTilesY; y++) {
         for (var x = 0; x < this.numTilesX; x++) {
-            // Pick a tile at random, with grass more likely than a house
+            // ランダムにタイルを選びます。家より草の可能性が高いです。
             var tile = (Math.random() > 0.8) ? house : grass;
 
-            // Clone the tile
+            // タイルをクローンします
             var e = tile.clone();
 
-            // Set the world position of the cloned tile. Note that because
-            // our tiles are 10x10 in X,Z dimensions, we have to multiply
-            // the position by 10
+            // クローンされたタイルのワールド位置を設定します。タイルはX,Z寸法で
+            // 10x10なので、位置を10で
+            // 掛けます。
             e.setPosition((x - this.numTilesX / 2) * 10, 0, (y - this.numTilesX / 2) * 10);
 
-            // Add the tile to the scene's hierarchy
+            // シーンの階層にタイルを追加します。
             this.app.root.addChild(e);
         }
     }

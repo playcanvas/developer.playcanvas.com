@@ -1,22 +1,22 @@
 ---
-title: Custom Shaders
+title: Пользовательские шейдеры
 template: tutorial-page.tmpl.html
 position: 3
 ---
 
 <iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
 
-*This tutorial uses a custom shader on a material to create a dissolve effect in GLSL*
+*Этот урок использует пользовательские шейдеры на материале чтобы создать эффект растворения на GLSL*
 
-When you import your 3D models into PlayCanvas by default they will use our [Physical Material][3]. This is a versatile material type that can cover a lot of your rendering needs.
+Когда вы импортируете ваши 3D-модели в PlayCanvas, по умолчанию, они используют [Физический материал][3]. Это материал общего назначения, который может покрыть большую часть ваших нужд.
 
-However, you will often want to perform special effects or special cases for your materials. To do this you will need to write a custom shader.
+Однако, вам часто может потребоваться добавить особые эффекты или особые действия к вашему материалу. Чтобы сделать это, вам нужно написать шейдер.
 
-## Shaders and Shader Definition
+## Шейдеры и их объявления
 
-WebGL uses the GLSL language to write shaders that can be run across all browsers. In PlayCanvas you create this code in shader assets and then assign the code to a [Shader Definition][1] before using this to create a new `pc.Shader`.
+WebGL использует язык GLSL для написания шейдеров, которые могут работать во всех браузерах. В PlayCanvas вы можете хранить код в ресурсе шейдера, а потом подключить его в [Объявлении шейдера][1], до того, как создать новый `pc.Shader`.
 
-### Vertex Shader
+## Вершинный шейдер
 
 ~~~
 attribute vec3 aPosition;
@@ -34,7 +34,7 @@ void main(void)
 }
 ~~~
 
-### Fragment Shader
+### Фрагментный (пиксельный) шейдер
 
 ~~~
 varying vec2 vUv0;
@@ -57,19 +57,19 @@ void main(void)
 }
 ~~~
 
-The two shaders above define the functionality of the new Material. In the Vertex Shader we are transforming the vertex positions of the mesh into screen space. In the Fragment Shader we are setting the color of the pixel. This pixel color is chosen based on the two textures that are provided into this asset. If the value uTime is less than the color in the heightmap then we don't render any pixel (the model is invisible). If the value of uTime is greater than the heightmap value then we get the color from the diffuse map texture that we provide
+Эти два шейдера выше описывают функционал нового материала. В вершинном шейдере мы трансформируем позиции вершин модели в пространство экрана. В фрагментном шейдере мы устанавливает цвет пикселей. Цвет пикселей выбирает на основе двух текстур, которые мы передаем через ресурсы. Если значение uTime меньше, чем цвет в карте высот, тогда мы не отображаем никаких пикселей (модель невидима). Если значение uTime больше, чем значение в карте высот, то мы получаем цвет из карты цвета, которую мы так же используем
 
-### Shader Definition
+### Объявление шейдера
 
 ```javascript
 var vertexShader = this.vs.resource;
 
-// dynamically set the precision depending on device.
+// Динамически указываем точность, в зависимости от устройства
 var fragmentShader = "precision " + gd.precision + " float;\n";
 fragmentShader = fragmentShader + this.fs.resource;
 
 
-// A shader definition used to create a new shader.
+// Объявление шейдера, для создания нового
 var shaderDefinition = {
     attributes: {
         aPosition: pc.gfx.SEMANTIC_POSITION,
@@ -80,50 +80,50 @@ var shaderDefinition = {
 };
 ```
 
-The shader definition contains three sections. In `attributes` you must specify the variable names and the value of attributes that will be defined for each Vertex that your vertex shader is executed for. These values are later declared in your vertex shader as an `attribute`.
+Объявление шейдера содержит две секции. в `атрибутах` вы должны указать переменные и значения атрибутов, которые будут объявлены в для каждой вершины, для которой будет выполнен вершинный шейдер. Эти значения после будут объявлены в вашем  вершинном шейдере как `атрибут`.
 
-The Vertex Shader code is supplied as a string in the `vshader` property and the Fragment Shader is supplied as a string in the 'fshader' property.
+Код вершинного шейдера отправляется как строка в свойство `vshader`, а фрагментный шейдер в свойство `fshader`.
 
-Above is the shader definition used to make the dissoving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
+Выше - объявление шейдера, который делает эффект растворения. Заметьте, что мы получаем код шейдеров из двух ресурсов. Эти ресурсы подставляются через [атрибуты скрипта][2], которые упрощают доступ к ресурсам из скрипта.
 
-Aside from attributes there are two other special types of variable in the GLSL shaders: `varying` and `uniform`
+Поодаль от атрибутов, мы видим два специальных типа переменных в GLSL шейдере: `varying` и `uniform`
 
-## GLSL `varying` variables
+## GLSL переменные типа `varying` 
 
-A variable that is declared **varying** will be set in the vertex shader, but used in the fragment shader. It's a way of passing data on from the first program to the second.
+Переменные, которые объявлены как **varying** будут установлены в вершинный шейдер, но будут использоваться в фрагментном. Это способ передать дату из первой программы во вторую.
 
-## GLSL `uniform` variables
+## GLSL переменные типа `uniform` 
 
-A variable declared **`uniform`** will be declared in both vertex and fragment shaders. The value of this variable must be passed into the shader from the main application. For example, the position of a light in your scene.
+Переменные, объявленые как **`uniform`** будут доступны в обоих шейдерах. Значение этих переменных передается в шейдер из основой программы. Например, позиция света в сцене.
 
-## Creating Materials
+## Создание материалов
 
 ~~~javascript
-// Create the shader from the definition
+// Создание материала из объявления
 this.shader = new pc.Shader(gd, shaderDefinition);
 
-// Create a new material and set the shader
+// Создание материала и установка шейдера
 this.material = new pc.Material();
 this.material.setShader(this.shader);
 
-// Set the initial time parameter
+// Установка изначального параметра uTime
 this.material.setParameter('uTime', 0);
 
-// Set the diffuse texture
+// Добавление карты цвета
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 
-// Use the "clouds" texture as the height map property
+// Используем текстуру облаков, как карту высот
 this.material.setParameter('uHeightMap', heightTexture);
 
-// Replace the material on the model with our new material
+// Заменяем материал на новый
 model.meshInstances[0].material = this.material;
 ~~~
 
-Once we've got the shader definition we create a new Shader and a new Material and pass the shader onto the material using `setShader()`. The uniforms are then initialized using the `setParameter()` method. Finally we replace the original material on the model with the new material we've created. Notice, that each mesh in a model has it's own material. So if your model has more than one mesh, you may need to set the material onto more than one mesh instance.
+Когда мы объявили шейдер, мы создаем новый объект Shader и новый Material. Далее мы устанавливаем шейдер к материалу, используя `setShader()`. Переменные типа uniform инициализируются через метод `setParameter()`. В конце мы заменяем оригинальный материал модели новым, который мы создали. Заметьте, что каждая фигура в модели имеет свой собственный материал. Если ваша модель содержит больше, чем одну фигуру, вам может потребоваться установить материал и на них тоже.
 
-*You can (and should) use the same material on more than one mesh.*
+Вы можете (и должны) использовать один материал больше, чем на одной фигуре.
 
-## Using a texture in a new Material
+## Использование текстуры в новом материале
 
 ~~~javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
@@ -131,8 +131,7 @@ var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ~~~
 
-The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
-top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
+Эффект, демонстрируемый в этом уроке, достигается использованием карты висок. Мы получаем доступ к текстуре через ресурс, используя код выше. В верху нашего скрипта мы объявили атрибут скрипта 'карты', который дает нам возможность установить текстуру из редактора PlayCanvas.
 
 ~~~javascript
 CustomShader.attributes.add('vs', {
@@ -160,31 +159,31 @@ CustomShader.attributes.add('heightMap', {
 });
 ~~~
 
-When our height map texture is loaded we can set the uniform `uHeightMap` to be the `pc.Texture` object.
+Когда карта текстур загружена, мы можем добавить переменную типа uniform, которая будет называться 'uHeightMap' к объекту 'pc.Texture'.
 
-## Updating uniforms
+## Обновление переменных uniform
 
 ~~~javascript
-// update code called every frame
+// Обновление кода происходит каждый кадр
 CustomShader.prototype.update = function(dt) {
     this.time += dt;
 
-    // Bounce value of t 0->1->0
+    // Меняем значение 0 > 1 > 0
     var t = (this.time % 2);
     if (t > 1) {
         t = 1 - (t - 1);
     }
 
-    // Update the time value in the material
+    // Обновляем параметр на материале
     this.material.setParameter('uTime', t);
 };
 ~~~
 
-To achieve the disappearing effect we use the height map value as a threshold, and we increase the threshold over time. In the update method above we bounce the value of `t` between 0 and 1 and we set this as the `uTime` uniform.
+Чтобы достичь эффекта исчезания мы используем значения карты высок как порог и мы увеличиваем порог со временем. В методе обновления, мы изменяем значение 't' между 0 и 1 и устанавливаем его в переменную `uTime`.
 
-In our shader if the value of the heightmap on a pixel is less than the value time value we don't draw the pixel. In addition at values that are close to the threshold, we draw the pixel in blue to display a nice 'edge' to the effect.
+В нашем шейдере, если значение карты высот на пикселе меньше, чем значения кремени, мы не показываем пиксель. Помимо этого, когда значение близко к порогу, мы показываем пиксель в синем цвете, чтобы показывать клевый эффект грани.
 
-## Complete listing
+## Полный код
 
 ~~~javascript
 var CustomShader = pc.createScript('customShader');
@@ -213,7 +212,7 @@ CustomShader.attributes.add('heightMap', {
     title: 'Height Map'
 });
 
-// initialize code called once per entity
+// Инициализация для каждой модели
 CustomShader.prototype.initialize = function() {
     this.time = 0;
 
@@ -228,7 +227,7 @@ CustomShader.prototype.initialize = function() {
     var fragmentShader = "precision " + gd.precision + " float;\n";
     fragmentShader = fragmentShader + this.fs.resource;
 
-    // A shader definition used to create a new shader.
+    // Объявление шейдера
     var shaderDefinition = {
         attributes: {
             aPosition: pc.SEMANTIC_POSITION,
@@ -238,42 +237,42 @@ CustomShader.prototype.initialize = function() {
         fshader: fragmentShader
     };
 
-    // Create the shader from the definition
+    // Создание шейдера из объявления
     this.shader = new pc.Shader(gd, shaderDefinition);
 
-    // Create a new material and set the shader
+    // Создание нового материала
     this.material = new pc.Material();
     this.material.setShader(this.shader);
 
-    // Set the initial time parameter
+    // Установка изначального параметра времени
     this.material.setParameter('uTime', 0);
 
-    // Set the diffuse texture
+    // Установка текстуры цвета
     this.material.setParameter('uDiffuseMap', diffuseTexture);
 
-    // Use the "clouds" texture as the height map property
+    // Используем текстуру облаков как карту высот
     this.material.setParameter('uHeightMap', heightTexture);
 
-    // Replace the material on the model with our new material
+    // Заменяем материал на наш новый
     model.meshInstances[0].material = this.material;
 };
 
-// update code called every frame
+// Обновление каждый кадр
 CustomShader.prototype.update = function(dt) {
     this.time += dt;
 
-    // Bounce value of t 0->1->0
+    // Изменяем значение  0->1->0
     var t = (this.time % 2);
     if (t > 1) {
         t = 1 - (t - 1);
     }
 
-    // Update the time value in the material
+    // Обновляем значение в материале
     this.material.setParameter('uTime', t);
 };
 ~~~
 
-Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work. It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
+Это весь скрипт. Запомните, вам будет нужно создавать вершинные и фрагментные ресурсы шейдеров во время работы. Мы оставляем это как упражнение для читателя. Реализуйте шейдер, который будет реализовывать этот эффект на несколько моделей и материалах.
 
 [1]: /engine/api/stable/symbols/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/

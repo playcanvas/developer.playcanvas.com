@@ -1,5 +1,5 @@
 ---
-title: 看门见山
+title: 简介
 template: usermanual-page.tmpl.html
 position: 1
 ---

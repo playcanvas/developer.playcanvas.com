@@ -1,15 +1,15 @@
 ---
-title: Create a shape like a box, sphere etc.
-keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
+title: Создать такую фигуру, как куб, сфера и другие.
+keywords: компонент, модель, куб, сфера, цилиндр, конус, куб, плоскость, фигура, примитив
 ---
 
-## How do I create a shape like a box, sphere etc?
+## Как создать фигуру вроде куба, сферы и подобных им?
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_box.gif"/>
 
-You can add primitive shapes like boxes, spheres and others by adding a **Model Component** on an Entity and changing its type to the desired shape.
+Вы можете добавить такие примитивы как кубы, сферы и добавив **Компонент модель** на Сущности и выбрав желаемый тип фигуры.
 
-You can also right click on an Entity and select New Entity/Box to add a box (similarly for other shapes).
+Вы также можете сделать клик правой кнопкой мыши по Сущности и выбрать Новая сущность/Куб чтобы добавить куб (аналогично для других фигур)
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/ru/user-manual/packs/components/model/" target="_blank">Посмотреть руководство пользователя</a>
 

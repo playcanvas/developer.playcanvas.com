@@ -1,39 +1,39 @@
 ---
-title: Making a Simple Game - Part 6
+title: シンプルなゲームを作る - その6
 template: tutorial-page.tmpl.html
 position: 16
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][11]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] and [Part 5][5] read them first.*
+*[完成されたプロジェクトはこちら][11]です。先に[その1][1], [その2][2], [その3][3], [その4][4], [その5][5]を読んでください。*
 
-## User Interface
+## ユーザインターフェース
 
-The user interface of a game is the first thing you see and often it's the last thing people think about when making a game. But a good user interface will not only give your game a great style. It can activaly affect the number of people who can play your game.
+ゲームのユーザーインターフェースはユーザが最初に触れるものですが、開発の際には後回しにされがちです。優れたユーザーインターフェースは、ゲームに個性を与えるだけでなく、ゲームをプレイすることができる人数に影響を与えます。
 
-There are several ways to build a user interface in a PlayCanvas application. You can use HTML and CSS assets or you can use WebGL geometry rendered in your main scene. We're going to use the second method. Using the [Sprite library][6] and the [Font library][7] that are available from the PlayCanvas Github pages.
+PlayCanvasアプリケーションでユーザインタフェースを構築する方法はいくつかあります。HTMLやCSSのアセットを使用するか、メインシーンでレンダリングされるWebGLのジオメトリを使用することができます。今回は後者を使用します。PlayCanvas Githubのページから入手できる[Sprite library][6]と[Font library][7]を使用します。
 
-### User Interface Entities
+### ユーザインターフェースのエンティティ
 
-![Hierarchy][9]
+![階層][9]
 
-We have divided our user interface up into the three game states: Menu, In Game and Game Over. Each state has an parent Entity that contains the graphics for that interface screen. There is also a script for each interface screen which handles the user interaction and any other game events.
+ユーザーインターフェースをメニュー、ゲーム内、ゲームオーバーの3つのゲームの状態に分けました。各状態には、そのインタフェース画面のグラフィックを含む親エンティティがあります。ユーザーのインタラクションや、その他のゲームイベントを処理する各インタフェース画面用のスクリプトもあります。
 
-### Sprite Setup
+### Spriteの設定
 
-![Sprites][10]
+![Sprite][10]
 
-To add a script we have add `sprite.js` from the Sprite library above to our project and we're adding script component. The Sprite code exposes attributes which we use to render a sprite in 2D in our scene. The Sprite script attributes are documented on the [Github page][6]
+スクリプトを追加するには、プロジェクトに上記のSpriteライブラリから`sprite.js`を追加して、Spriteコンポーネントを追加します。Spriteコードは、シーンで2DのSpriteをレンダリングするために使用する属性を公開します。Spriteスクリプト属性は[Githubページ]に記載されています[6]
 
-### User Interface script
+### ユーザインターフェースのスクリプト
 
-Let's take a look at the script for the main menu.
+メインメニューのスクリプトを見てみましょう。
 
 ```javascript
 var UiMenu = pc.createScript('uiMenu');
 
-// initialize code called once per entity
+// initializeコードが各エンティティで一度のみ呼ばれる
 UiMenu.prototype.initialize = function() {
     this.on('enable', this.onEnable, this);
     this.on('disable', this.onDisable, this);
@@ -42,7 +42,7 @@ UiMenu.prototype.initialize = function() {
 };
 
 UiMenu.prototype.onEnable = function () {
-    // Listen for clicks on the play button
+    // プレイボタンのクリックをリッスン
     this.app.mouse.on("mouseup", this.start, this);
     if (this.app.touch) {
         this.app.touch.on("touchend", this.start, this);
@@ -50,7 +50,7 @@ UiMenu.prototype.onEnable = function () {
 };
 
 UiMenu.prototype.onDisable = function () {
-    // Stop listening to events
+    // イベントへのリッスンを止める
     this.app.mouse.off("mouseup", this.start, this);
     if (this.app.touch) {
         this.app.touch.off("touchend", this.start, this);
@@ -59,18 +59,18 @@ UiMenu.prototype.onDisable = function () {
 
 UiMenu.prototype.start = function (e) {
     this.app.fire("ui:start");
-    // prevent touch and mouse events
+    // タッチとマウスイベントを防ぐ
     e.event.preventDefault();
 };
 ```
 
-When the Entity is enabled we start listening for mouse and touch events, when the Entity is disabled we stop listening to the events. When an event is triggered we fire a "ui:start" event which the main game script is listening for and that triggers a change of game state.
+エンティティが有効の場合、マウスやタッチイベントをリッスンし始め、エンティティが無効の場合は、イベントのリッスンを停止します。 イベントがトリガされると、メインのゲームスクリプトがリッスンしゲーム状態の変更をトリガする "ui:start" イベントを発動します。
 
-We repeat similar behaviour in the other two UI scripts where we listen for game events and fire ui events.
+ゲームのイベントにリッスンしたり、UIイベントを発動させる他の二つのUIスクリプトでも、同様の動作を繰り返します。
 
-## Game Complete
+## ゲーム完成
 
-Congratulations on reaching the end of the series! We hope you've learn a lot about how you can structure and build a game using PlayCanvas. If you have any feedback on the tutorial, please get in touch on our [forum][8].
+シリーズの最後に到達しました！PlayCanvasを使用してゲームを構成および構築する方法について説明をしました。チュートリアルに関するご意見は[フォーラム][8]から連絡ください。
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two

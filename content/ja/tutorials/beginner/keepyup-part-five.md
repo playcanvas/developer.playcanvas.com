@@ -1,43 +1,43 @@
 ---
-title: Making a Simple Game - Part 5
+title:  シンプルなゲームを作る - その5
 template: tutorial-page.tmpl.html
 position: 14
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][9]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3] and [Part 4][4] read them first.*
+* [完成されたプロジェクトはこちら][9]です。先に[その1][1], [その2][2], [その3][3], [その4][4]を読んでください。*
 
-## Audio & Particles
+## 音声とパーティクル
 
-### Audio
+### Audio（音声）
 
-Audio is a critical part of your game. It will provide valuable feedback to the player that their inputs are having and effect, plus it can create mood and atmosphere.
+音声はゲームの重要な要素です。プレイヤーの入力に対するフィードバックを提供したり、気分や雰囲気を盛り上げる効果があります。
 
-The Keepy Up game has 3 audio effects: A background music track, a tap sound when you hit the ball and the sad trombone sting when you lose. Each of them is handled slightly differently.
+Keepy Upゲームには次の3つの音声エフェクトがあります：BGM、ボールを打ったときのタップ音、負けたときの悲しげなトロンボーンの音です。それぞれの処理は少しずつ異なります。
 
 #### Music & Sting
 
-The music and sting are handle in a similar way. The main difference is that the music is set to loop. The `game.js` we have a script attribute which links the game script to the Entity with our sound component and we simply play and stop the correct slot.
+音楽やstingの同様の方法処理されます。主な違いは、音楽はループに設定されていることです。 `game.js`に、音声コンポーネントを持つエンティティにゲームスクリプトをリンクさせるスクリプト属性があるので、単純に正しいスロットを再生・停止することができます。
 
 ```javascript
-this.audio.sound.stop(); // stop current sound playing
-this.audio.sound.play("gameover") // play the 'gameover' slot
+this.audio.sound.stop(); // 現在再生している音声を停止
+this.audio.sound.play("gameover") // 'gameover' スロットを再生
 ```
 
-#### Ball tap
+#### ボールをタップ
 
-The ball tap sound is attached directly to the ball Entity. It's a short, non-looping sound. So we play it every time the a tap hits the ball.
+ボールタップ音はボールエンティティに直接添付されています。短い、単発の音声です。タップがボールに当たるたびに再生されます。
 
 ```javascript
 this.entity.sound.play("bounce");
 ```
 
-### Particles
+### パーティクル
 
-![Particles][7]
+![パーティクル][7]
 
-We have one particle effect in Keepy Up. It's a dust cloud that is triggered whenever the ball is tapped. The dust cloud is a non-looping effect and it needs to be positioned and rotated so that the cloud moves away from the ball when it runs.
+Keepy Upには一つのパーティクルエフェクトがあります。それは、ボールがタップされるたびにトリガーされるダストの雲です。ダストの雲は、非ループ効果であり、実行時に雲がボールから離れるように配置し回転させる必要があります。
 
 ```javascript
 this.impactEffect.setLocalPosition(tmp);
@@ -46,13 +46,13 @@ this.impactEffect.particlesystem.play();
 this.impactEffect.lookAt(this.entity.getPosition());
 ```
 
-In this code we restart the one shot particle effect by calling `reset()` and `play()` and we position and rotate it so that it points towards the center of the ball.
+このコードでは、`reset()`と`play()`を呼ぶことでワンショットパーティクルエフェクトを再起動し、それがボールの中心に向かって指すように回転させます。
 
-![Curves][8]
+![曲線][8]
 
-Using the Local Velocity graph in the Particle Effect editor, the particle effect is set up to fire away from the direction it is facing i.e. the particles move along the positive z axis.
+Particle EffectのエディタでLocal Velocityグラフを使用して、パーティクルエフェクトが向いている方向から離れて発射するように設定します。例：パーティクルは正のz軸に沿って移動します。
 
-Continue on to [Part 6][6].
+[その6][6]に進む。
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two

@@ -1,11 +1,11 @@
 ---
-title: Create a skybox
-keywords: skybox, cubemap, create, asset, pbr, physical
+title: Создание скайбокса
+keywords: скайбокс, кубическая текстура, создание, ресурс, pbr, физический
 ---
 
-## How do I create a skybox?
+## Как создать скайбокс?
 
-To create a skybox for your scene you first need to create a <a href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">Cubemap asset</a>. Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">Scene Settings</a> and drag the Cubemap in the Skybox field.
+Чтобы создать скайбоск, вам нужно первоначально создать  <a href="http://developer.playcanvas.com/ru/user-manual/assets/cubemaps/" target="_blank">Кубическую текстуру</a>. После вы можете перетащить кубическую текстуру на рабочую область или можете зайти в <a href="http://developer.playcanvas.com/ru/user-manual/designer/settings/#skybox" target="_blank">Настройки сцены</a> и перетащить кубическую текстуру в поле скайбокса.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/ru/user-manual/designer/settings/#skybox" target="_blank">Посмотреть руководство пользователя</a>
 

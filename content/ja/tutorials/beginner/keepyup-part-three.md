@@ -1,16 +1,16 @@
 ---
-title: Making a Simple Game - Part 3
+title: シンプルなゲームを作る - その3
 template: tutorial-page.tmpl.html
 position: 12
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][4]. If you haven't see [Part 1][1] and [Part 2][2] read them first.*
+*[完成されたプロジェクトはこちら][4]です。先に[その1][1]と[その2][2] を読んでください。*
 
-## The Game script & Input
+## ゲームスクリプトと入力
 
-These two scripts `game.js` and `input.js` are attached the root entity in the scene, called "Game". Scripts are generally executed in the order they are encountered in the hierarchy so it's easiest to attach any non-Entity specific scripts the first Entity. You can also manage the loading order of Scripts in the Settings panel of the Editor, to load scripts first without attaching them to an Entity.
+これらの2つのスクリプト`game.js`と` input.js`は、「Game」と呼ばれるシーンのルートエンティティに添付されています。スクリプトは基本的に階層で遭遇される順に実行されるので、エンティティ特有でない任意のスクリプトを最初のエンティティに添付するのが最も簡単です。また、エンティティに添付せずに最初にスクリプトを読み込むために、エディタの設定パネルでのスクリプトの読み込み順を管理することができます。
 
 ## game.js
 
@@ -26,7 +26,7 @@ Game.STATE_MENU = 'menu';
 Game.STATE_INGAME = 'ingame';
 Game.STATE_GAMEOVER = 'gameover';
 
-// initialize code called once per entity
+// initializeコードが各エンティティで一度のみ呼ばれる
 Game.prototype.initialize = function() {
     this._state = Game.STATE_MENU;
     this._score = 0;
@@ -35,16 +35,16 @@ Game.prototype.initialize = function() {
 
     window.addEventListener("resize", this.setResolution.bind(this));
 
-    // listen to events from the UI
+    // UIからイベントをリッスン
     this.app.on("ui:start", this.start, this);
     this.app.on("ui:reset", this.reset, this);
 };
 
 Game.prototype.setResolution = function () {
-    // if the screen width is less than 640
-    // fill the whole window
-    // otherwise
-    // use the default setting
+    // 画面の幅が640未満の場合
+    // 画面全体を埋める
+    // その他の場合
+    // デフォルト設定を使用
 
     var w = window.screen.width;
     var h = window.screen.height;
@@ -55,7 +55,7 @@ Game.prototype.setResolution = function () {
     }
 };
 
-// Call this to move from MENU to INGAME
+// MENUからINGAMEに移行するにはこれを呼ぶ
 Game.prototype.start = function () {
     this._state = Game.STATE_INGAME;
     this.app.fire("game:start");
@@ -65,7 +65,7 @@ Game.prototype.start = function () {
     this.audio.sound.play("music");
 };
 
-// Call this to move from INGAME to GAMEOVER
+// INGAMEからGAMEOVERに移行するにはこれを呼ぶ
 Game.prototype.gameOver = function () {
     this._state = Game.STATE_GAMEOVER;
     this.app.fire("game:gameover");
@@ -76,7 +76,7 @@ Game.prototype.gameOver = function () {
     this.audio.sound.play("gameover");
 };
 
-// Call this to move from GAMEOVER to MENU
+// GAMEOVERからMENUに移行するにはこれを呼ぶ
 Game.prototype.reset = function () {
     this.app.fire("game:reset");
     this.resetScore();
@@ -87,63 +87,63 @@ Game.prototype.reset = function () {
     this.audio.sound.stop();
 };
 
-// return the current score
+// 現在のスコアを返す
 Game.prototype.getScore = function () {
     return this._score;
 };
 
-// add a value to the score
+// スコアに値を追加
 Game.prototype.addScore = function (v) {
     this._score += v;
     this.app.fire("game:score", this._score);
 };
 
-// reset the score
+// スコアをリセット
 Game.prototype.resetScore = function () {
     this._score = 0;
     this.app.fire("game:score", this._score);
 };
 ```
 
-### Game State
+### ゲームの状態
 
-The game script manages the overall state of the game, it exposes some methods to alter the game state and fires events to alert other code that the game state has changed.
+ゲームスクリプトはゲームの状態の全体を管理します。ゲームの状態を変更するためにいくつかのメソッドを公開し、ゲームの状態が変更されたことを他のコードに知らせるためにイベントを発生させます。
 
-We've divided the game up into three main states: Menu, In Game and Game Over. The game script provides the methods to transition between each state, `start()`, `gameOver()` and `reset()`. Each one sets the `_state` variable to remember which state we're in; fires an application event to alert other scripts to state changes; switches user interface elements on and off; and manages the state of the music or game over sound effect.
+ゲームには3つの主要の状態、メニュー、ゲーム内、ゲームオーバーがあります。`start()`, `gameOver()`,  `reset()`のゲームスクリプトを使用して各状態間を移行します。それぞれが現在の状態を記憶するために`_state`変数を設定し、状態の変化を他のスクリプトに通知するためにアプリケーションイベントを発生させ、ユーザインタフェース要素のオン・オフを切り替え、音楽やゲームオーバーの効果音の状態を管理します。
 
-These state change methods will be called from other scripts when the appropriate trigger events occur. For example, the `gameOver()` method is called by `ball.js` when the ball goes off the bottom of the screen.
+これらの状態の変更メソッドは、適切なトリガーイベントが発生した場合に他のスクリプトから呼び出されます。例えば、`gameOver()`メソッドはボールが画面下から出た時に `ball.js` によって呼び出されます。
 
-### Application Events
+### アプリケーションイベント
 
-Let's pause to take a look at the way the game script fires events on the application.
+ゲームスクリプトがどのようにアプリケーションでイベントを発生させるかを確認してみましょう。
 
 ```javascript
 this.app.fire("game:start")
 ```
 
-Events are an extremely useful way to communicate form one script to many other scripts. The way an event works is that an object (in this case `this.app`) chooses to "fire" an event. Any other code that has access to the object can choose to listen to one or more events on this object and the code will be notified when the event is fired.
+イベントは、一つのスクリプトを他のスクリプトと通信させるための非常に便利な方法です。オブジェクトがイベントの発生を選択します(この場合は`this.app`)。オブジェクトへのアクセス権を持つ他のコードは、このオブジェクトのイベントにリッスンすることができ、イベントが発生したとき、コードに通知が送られます。
 
-One of the issues with this is that the code needs access to the object in order to start listening to the event. This is why application events are so useful. Every script in PlayCanvas has access to `this.app`. That makes it useful to act as a central communications hub between any other scripts.
+ここで問題となのは、コードがイベントにリッスンし始めるために、オブジェクトにアクセスする必要があるということです。アプリケーションイベントが非常に便利なのはこのためです。PlayCanvas内のすべてのスクリプトに`this.app`へのアクセス権があります。それは他のスクリプトとの間の中央通信ハブとして機能させることで有用になります。
 
-We have chosen to adopt a namespace pattern to make events clearer and avoid clashes. To listen for the `game:start` event from above. You would use this code:
+イベントを明確にし、衝突を避けるために、名前空間パターンを使用しています。上記の`game:start` イベントをリッスンする場合、次のコードを使用します：
 
 ```javascript
 this.app.on("game:start", function () {
-    console.log("game:start event was fired");
+    console.log("game:startイベントが発動");
 }, this)
 ```
 
-### Scoring
+### スコア
 
-The game script also manages the current score. It exposes methods that are used to modify the score and also fires events to let other code know that the score has changed.
+ゲームスクリプトは現在のスコアも管理します。これは、スコアを変更するためのメソッドを公開し、スコアが変更したことを他のコードに知らせるためにイベントを発生させます。
 
-### Resolution
+### 解像度
 
-Finally the game script handles the initial choice of resolution to make sure the main canvas is the correct size on both mobile and desktop. On mobile (defined by a screen less than 640 pixels wide) the game simply fills the entire screen. On desktop we use the predefined resolution set in the project settings.
+最後に、モバイルとデスクトップの両方でメインキャンバスが正しいサイズになることを確認するために、ゲームのスクリプトは解像度の初期の選択を処理します。モバイルでは(640ピクセル未満の画面)、ゲームが画面全体を埋めます。デスクトップでは、プロジェクト設定で設定した定義済みの解像度を使用します。
 
 ## input.js
 
-The input script listens for input from the mouse or touchscreen, normalizes the input from the two into a general purpose "tap" and communicates with the rest of the application that a tap has occurred.
+入力スクリプトはマウスやタッチスクリーンからの入力にリッスンし、これらの入力を標準的な「タップ」に統一し、アプリケーションにタップが発生していることを知らせます。
 
 ```javascript
 var Input = pc.createScript('input');
@@ -154,14 +154,14 @@ Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
 
 Input.worldPos = new pc.Vec3();
 
-// initialize code called once per entity
+// エンティティ毎に一度呼び出されるコードのinitialize
 Input.prototype.initialize = function() {
 
     var self = this;
 
     this._paused = true;
 
-    // Listen for game events so we know whether to respond to input
+    // 入力に応答するべきか分かるよう、ゲームイベントにリッスンする
     this.app.on("game:start", function () {
         self._paused = false;
     });
@@ -169,12 +169,12 @@ Input.prototype.initialize = function() {
         self._paused = true;
     });
 
-    // set up touch events if available
+    // 可能であればタッチイベントを設定する
     if (this.app.touch) {
         this.app.touch.on("touchstart", this._onTouchStart, this);
     }
 
-    // set up mouse events
+    // マウスイベントを設定
     this.app.mouse.on("mousedown", this._onMouseDown, this);
 };
 
@@ -183,16 +183,16 @@ Input.prototype._onTap = function (x, y) {
     var camPos = this.camera.getPosition();
     var worldPos = Input.worldPos;
 
-    // Get the position in the 3D world of the touch or click
-    // Store the in worldPos variable.
-    // This position is at the same distance away from the camera as the ball
+    // タッチまたはクリックの3Dワールドで位置を取得
+    // worldPos変数で保管。
+    // この位置はボールと同じだけカメラから離れています
     this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
-    // get the distance of the touch/click to the ball
+    // ボールへのタッチ／クリックの距離を取得
     var dx = (p.x - worldPos.x);
     var dy = (p.y - worldPos.y);
 
-    // If the click is inside the ball, tap the ball
+    // クリックがボールの中の場合、ボールをタップします
     var lenSqr = dx*dx + dy*dy;
     if (lenSqr < this.ballRadius*this.ballRadius) {
         this.ball.script.ball.tap(dx, dy);
@@ -204,11 +204,11 @@ Input.prototype._onTouchStart = function (e) {
         return;
     }
 
-    // respond to event
+    // イベントに反応
     var touch = e.changedTouches[0];
     this._onTap(touch.x, touch.y);
 
-    // stop mouse events firing as well
+    // マウスイベントが発動するのも止めます
     e.event.preventDefault();
 };
 
@@ -217,50 +217,50 @@ Input.prototype._onMouseDown = function (e) {
         return;
     }
 
-    // respond to event
+    // イベントに反応
     this._onTap(e.x, e.y);
 };
 ```
 
-First, in initialize we are setting up event listening. We listen for application events to determine if the game is in a paused state (that is in the menu or in the game over state). If the input is paused we don't respond to the taps. Next we listen for touch events (note, you must check if `this.app.touch` is available) and mouse events.
+まず、initializeでイベントのリスニングを設定します。ゲームが一時停止中(つまりメニューまたはゲームオーバー状態)であることを判断するために、アプリケーションのイベントはにリッスンします。入力が一時停止されている場合、タップに反応しません。次に、タッチイベント (`this.app.touch`が利用可能か確認する必要があります)とマウスイベントにリッスンします。
 
-### Touch Events
+### タッチイベント
 
-For touch events we take the first touch and pass through the screen co-ordinates. We also call `preventDefault()` on the browser event to stop the browser also generating a `click` event which it will do otherwise.
+タッチイベントの場合、最初のタッチの画面座標を渡します。また、ブラウザが `click`イベントを生成することを防ぐためにブラウザで`preventDefault()` を呼びます。
 
-### Mouse Events
+### マウスイベント
 
-On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same coordinate system. This is not the case with normal browser events!
+「マウスダウン」イベントではタップコードを介してスクリーン座標を渡します。 PlayCanvasはタッチとマウスイベントが同じ座標系を持っていることを保証します。これは通常のブラウザイベントとは異なります！
 
-### Taps
+### タップ
 
-`_onTap()` takes a screen co-ordinate (x, y) works out if this has "hit" the ball and if so tells the ball code that it has been tapped.
+`_onTap()` は画面座標(x, y)を使用してボールに当たっているかを判断し、当たっている場合はボールのコードにタップされたことを知らせます。
 
 ```javascript
 this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 ```
 
-In detail, this function takes the screen co-ordinates (x, y) and asks the camera to convert them into a position in 3D space under that point on the screen. To do this, we need to supply a depth, as in how far away from the screen do you want the 3D point. In this case we get the 3D point at the same depth as the ball is.
+具体的には、この関数は画面座標を(x, y)を使用してカメラに要求を出し、画面上のその位置の下に3Dの点が来るよう変換します。これを行うには、この3Dの点の画面からの距離を深さで指定する必要があります。このケースでは、ボールの位置と同じ深さに3Dの点があります。
 
-We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparitively slow) operation and will cause your game or application to stutter if it happens often.
+ベクター`Input.worldPos`も渡します。PlayCanvasアプリケーションでは、更新ループ内で新しいオブジェクトを作成することを回避するべきです。例えば、新しいベクターを作成するために`new pc.Vec3()` を呼び出す場合です。メモリ割り当てが増えると(`new`を呼ぶことで)、割り当てをクリアするためにブラウザはより多くのGarbage Collectionを行う必要があります。Garbage Collectionはオペレーション(比較的遅い)で、頻繁に行うとゲームやアプリケーションの動作に支障をもたらします。
 
-In most cases, PlayCanvas will provide an option to pass in vector or similar option so that you can pre-allocate and re-use objects.
+ほとんどの場合、PlayCanvasは事前にオブジェクトの割り当てや再利用ができるようにベクターまたは類似のオプションを渡すオプションを提供します。
 
 ```javascript
-// get the distance of the touch/click to the ball
+// タッチ／クリックからボールへの距離を取得
 var dx = (p.x - worldPos.x);
 var dy = (p.y - worldPos.y);
 
-// If the click is inside the ball, tap the ball
+// クリックがボールの中の場合、ボールをタップ
 var lenSqr = dx*dx + dy*dy;
 if (lenSqr < this.ballRadius*this.ballRadius) {
     this.ball.script.ball.tap(dx, dy);
 }
 ```
 
-Once we have the the 3D point where we've just tapped, we test to see if it is overlapping with the ball. You'll see here we are testing the radius squared against the distance between the tap and the ball squared. This prevents us doing a slow Square Root operation everytime we test.
+タップした位置の3D点を取したら、それがボールと重なっているかどうかをテストします。ここでは、二乗半径を、タップとボールの間の距離の二乗値に対してテストします。これにより、テストするたびに時間のかかる平方根オペレーションを行わずにすみます。
 
-If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball script we pass in the distance from the ball where the tap occurred. We'll use that in the [Part 4][3].
+タップがボールに当たると、タップが発生した場所のボールからの距離を渡し、ボールスクリプトで`tap(dx, dy)` 関数を呼び出します。これは[パート4][3]で使用します。
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two

@@ -5,27 +5,27 @@ template: tutorial-page.tmpl.html
 
 <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://playcanv.as/p/ItQwDzOa" ></iframe>
 
-PlayCanvas makes it very easy to add support for Mobile VR demos like you would need to support Google Cardboard. We've created a [plugin library][1] that you can drop into your scene to enable VR support.
+PlayCanvasでは、Google Cardboardへの対応と同じ様に、簡単にMobile VRのデモへの対応を追加できます。シーンにドロップしてVRへの対応を有効にできる[プラグインライブラリ][1]を用意しました。
 
-Here's how to add VR support
+VRへの対応を追加する方法
 
-## Step One: Add HMD Input library
+## 手順1： HMD入力ライブラリを追加
 
-The PlayCanvas WebVR library includes a file called `input_hmd.js`. This adds support for getting input information from Head-mounted displays (HMDs). This is library code meaning that it doesn't need to be added to an entity, but should be loaded up front before the application starts. To do this make sure it is loaded before other scripts in the Scripts Loading Order in the Settings panel.
+PlayCanvas WebVRライブラリには`input_hmd.js`というファイルが含まれています。これは、ヘッドマウントディスプレイ(HMD)からの入力情報を取得するためのサポートを追加します。ライブラリコードなので、エンティティに追加する必要はありませんが、アプリケーションが開始する前に読み込む必要があります。そのために、SettingsパネルのScripts Loading Order で他のスクリプトの前に読み込まれるよう設定してください。
 
-![Scripts Loading Order][2]
+![スクリプトを読み込む順番][2]
 
-## Step Two: Add the VR Camera script
+## 手順2： VR Cameraスクリプトを追加
 
-The WebVR library also includes a file called `vr_camera.js`. This should be attached to an Entity that will behave as your camera. This Entity could already have a camera component attached (though that is not required). The VrCamera script will create a pair of cameras (one for each eye!) when VR mode is activated and disable the existing camera component.
+WebVRライブラリには `vr_camera.js`というファイルが含まれています。これはカメラのように動作するエンティティに添付する必要があります。エンティティに既にカメラが添付されていても問題ありません(必須ではありません)。VrCameraスクリプトは、VRモードが起動されたときに二つのカメラ(左右の目に一つずつ)を作成して、既存のカメラコンポーネントを無効にします。
 
 ![VR Camera][3]
 
-## Step Three: That's it!
+## 手順3： 完了！
 
-That's the minimum you need to do to get a VR camera up and running. If you launch your scene now on mobile and tap the screen the view will split into two and you can place your device into a Cardboard VR headset.
+VRカメラを起動し稼働させるために行う最低限のことを説明しました。モバイルでシーンを起動して画面をタップすると、ビューが2つに分割され、デバイスがCardboard VRヘッドデットに配置されるようになりました。
 
-See the full source code for this tutorial in the [project][4].
+このチュートリアルの完全なソースコードは[プロジェクト][4]でご確認ください。
 
 [1]: http://github.com/playcanvas/webvr
 [2]: /images/tutorials/beginner/cardboard-vr/script_loading_order.jpg

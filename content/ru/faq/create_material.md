@@ -1,13 +1,13 @@
 ---
-title: Create a material
-keywords: asset, material, create, color, surface, normal, specular, reflection, phong, pbr, physical
+title: Создание материала
+keywords: ресурс, материал, создать, цвет, поверхность, нормаль, зеркало, отражение, phong, pbr, физический
 ---
 
-## How do I create a material?
+## Как создать материал?
 
-Every surface on a 3D model is rendered using a **material**. The material defines the properties of that surface, such as its color, shininess, bumpiness etc.
+Каждая поверхность в 3D-модели рендерится используя **материал**. Материал определяет свойства модели, такие как цвет, отражение, рельефность и другие.
 
-To create a material click on the **<span class="font-icon">&#57632;</span> Add** button in the Assets panel and then select **New Material**.
+Чтобы добавить новый материал кликните по кнопке **<span class="font-icon">&#57632;</span> Добавить** в панели ресурсов и выберите **Новый материал**
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">Посмотреть руководство пользователя</a>
 

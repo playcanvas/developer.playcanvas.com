@@ -1,15 +1,15 @@
 ---
-title: Change the background color
-keywords: camera, color, background, colour, sky
+title: Смена фонового цвета
+keywords: камера, цвет, фон, цвет, небо
 ---
 
-## How do I change the background color?
+## Как изменить фоновый цвет?
 
-To change the background color of your scene. You should update the Clear Color property of the camera in your scene.
+Чтобы изменить фоновый цвет вашей сцены, вам необходимо изменить свойство "Clear Color" в настройках камеры.
 
-You could also try and adding a [skybox][1] to your scene
+Вы также можете попробовать добавить [skybox][1] к вашей сцене
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/camera/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/camera/" target="_blank">Посмотреть руководство пользователя</a>
 
 [1]: http://developer.playcanvas.com/en/user-manual/assets/cubemaps/
 

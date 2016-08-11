@@ -19,7 +19,7 @@ PlayCanvasを通してこれがどのように行われるかを確認しまし�
 
 ![Animated Entity][1]
 
-In the image you can see the animation component in the Inspector. There are 2 animation assets assigned: an 'idle' cycle and a 'punch' cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
+画像では、Inspectorの中のアニメーションコンポーネントを確認することができます。 2つのアニメーションアセットが割り当てられています：「idle（待機）」サイクルと「punch（パンチ）」サイクルです。このようにアニメーションコンポーネントを構成すると、最初のアニメーション(idleサイクル)にループオプションが設定されているので、無限に再生されます。それだけではつまらないので次のように行います：
 
 * ループしている待機アニメーションを再生。
 * キーを押してループしているパンチアニメーションにブレンド。
@@ -39,7 +39,7 @@ AnimationBlending.states = {
     }
 };
 
-// initialize code called once per entity
+// initializeコードがエンティティ毎に一度呼ばれる
 AnimationBlending.prototype.initialize = function() {
     this.blendTime = 0.2;
 
@@ -53,8 +53,8 @@ AnimationBlending.prototype.setState = function (state) {
     var states = AnimationBlending.states;
 
     this.state = state;
-    // Set the current animation, taking 0.2 seconds to blend from
-    // the current animation state to the start of the target animation.
+    // 現在のアニメーション常態からターゲットアニメーションの開始まで
+    // ブレンドするのに0.2秒かかるよう、現在のアニメーションを設定。
     this.entity.animation.play(states[state].animation, this.blendTime);
 };
 

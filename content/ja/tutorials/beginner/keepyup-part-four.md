@@ -1,16 +1,16 @@
 ---
-title: Making a Simple Game - Part 4
+title: シンプルなゲームを作る - その4
 template: tutorial-page.tmpl.html
 position: 13
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][6]. If you haven't see [Part 1][1], [Part 2][2] and [Part 3][3] read them first.*
+* [完成されたプロジェクトはこちら][6]です。先に[その1][1], [その2][2], [その3][3]を読んでください。*
 
-## The Football
+## サッカーボール
 
-The football is the center of attention in our Keepy Up game. It responds to player input, it responds to the environment (well, gravity), it makes sounds. It's probably the most complicated part of the game. Fortunately, we're going to explain all the bits to your as simply as we can.
+Keepy Upゲームはサッカーボールを使用します。プレイヤーの入力や環境(つまり重力)に反応し、音声を再生します。ゲームの最も複雑な部分です。可能な限りシンプルに説明します。
 
 ## ball.js
 
@@ -18,66 +18,66 @@ The football is the center of attention in our Keepy Up game. It responds to pla
 var Ball = pc.createScript('ball');
 
 Ball.attributes.add('gravity', {
-    type: 'number',
-    default: -9.8,
-    description: 'The value of gravity to use'
+    型: 'number',
+    デフォルト: -9.8,
+    説明: '使用する引力の値'
 });
 
 Ball.attributes.add('defaultTap', {
-    type: 'number',
-    default: 5,
-    description: 'Speed to set the ball to when it is tapped'
+    型: 'number',
+    デフォルト: 5,
+    説明: 'ボールをタップした際に設定する速度'
 });
 
 Ball.attributes.add('impactEffect', {
-    type: 'entity',
-    description: 'The particle effect to trigger when the ball is tapped'
+    型: 'entity',
+    説明: 'ボールをタップした際にトリガーするパーティクル効果'
 });
 
 Ball.attributes.add('ballMinimum', {
-    type: 'number',
-    default: -6,
-    description: 'When ball goes below minimum y value game over is triggered'
+    型: 'number',
+    デフォルト: -6,
+    説明: 'ボールが最低のy値を下回るとゲームオーバーがトリガーされる'
 });
 
 Ball.attributes.add('speedMult', {
-    type: 'number',
-    default: 4,
-    description: 'Multiplier to apply to X speed when tap is off center'
+    型: 'number',
+    デフォルト: 4,
+    説明: 'タップが中心から外れた場合にX速度に適用する乗数'
 });
 
 Ball.attributes.add('angMult', {
-    type: 'number',
-    default: -6,
-    description: 'Multiplier to apply to angular speed when tap is off center'
+    型: 'number',
+    デフォルト: -6,
+    説明: 'タップが中心から外れた場合に角速度に適用する乗数'
 });
 
 Ball.tmp = new pc.Vec3();
 
-// initialize code called once per entity
+// initializeコードが各エンティティで一度のみ呼ばれる
 Ball.prototype.initialize = function() {
     this.paused = true;
 
-    // Get the "Game" Entity and start listening for events
+    // "Game" エンティティを使用してイベントのリッスンを開始
     this.game = this.app.root.findByName("Game");
 
     this.app.on("game:start", this.unpause, this);
     this.app.on("game:gameover", this.pause, this);
     this.app.on("game:reset", this.reset, this);
 
-    // Initialize properties
+    // Initializeのプロパティ
     this._vel = new pc.Vec3(0, 0, 0);
     this._acc = new pc.Vec3(0, this.gravity, 0);
     this._angSpeed = 0;
 
-    // Store the initial position and rotation for reseting
+    // リセットのために初期の位置と回転を保管
     this._origin = this.entity.getLocalPosition().clone();
     this._rotation = this.entity.getLocalRotation().clone();
 };
 
-// update code called every frame
+// 毎フレームで更新コードを呼ぶ
 Ball.prototype.update = function(dt) {
-    // Don't update when paused
+    // 一時停止の場合は更新しない
     if (this.paused) {
         this.entity.rotate(0, 30*dt, 0);
         return;
@@ -86,69 +86,69 @@ Ball.prototype.update = function(dt) {
     var p = this.entity.getLocalPosition();
     var tmp = Ball.tmp;
 
-    // integrate the velocity in a temporary variable
+    // 一時的な変数で速度を統合
     tmp.copy(this._acc).scale(dt);
     this._vel.add(tmp);
 
-    // integrate the position in a temporary variable
+    // 一時的な変数で位置を統合
     tmp.copy(this._vel).scale(dt);
     p.add(tmp);
 
-    // update position
+    // 位置を更新
     this.entity.setLocalPosition(p);
 
-    // rotate by angular speed
+    // 各速度を回転
     this.entity.rotate(0, 0, this._angSpeed);
 
-    // check for game over condition
+    // ゲームオーバー状態を確認
     if (p.y < this.ballMinimum) {
         this.game.script.game.gameOver();
     }
 };
 
 /*
- * Called by the input handler to tap the ball up in the air
- * dx is the tap distance from centre of ball in x
- * dy is the tap distance from centre of ball in y
+ * 空気中のボールをタップするために入力ハンドラによって呼び出される
+ * dxはxで表すボールの中心からタップの距離
+ * dyはyで表すボールの中心からタップの距離
  */
 Ball.prototype.tap = function (dx, dy) {
-    // Update velocity and spin based on position of tap
+    // タップの位置に基づいて速度と回転を更新
     this._vel.set(this.speedMult * dx, this.defaultTap, 0);
     this._angSpeed += this.angMult * dx;
 
-    // calculate the position of the tap in world space
+    // ワールド空間でタップの位置を計算
     var tmp = Ball.tmp;
     tmp.copy(this.entity.getLocalPosition());
     tmp.x -= dx;
     tmp.y -= dy;
 
-    // trigger particle effect to tap position, facing away from the center of the ball
+    // ボールの中心の外に向けて、位置をタップするパーティクルエフェクトをトリガー
     this.impactEffect.setLocalPosition(tmp);
     this.impactEffect.particlesystem.reset();
     this.impactEffect.particlesystem.play();
     this.impactEffect.lookAt(this.entity.getPosition());
 
-    // play audio
+    // 音声を再生
     this.entity.sound.play("bounce");
 
-    // increment the score by 1
+    // スコアを1でインクリメント
     this.game.script.game.addScore(1);
 };
 
-// Pause the ball update when not playing the game
+// ゲームをプレイしていない時ボールを一時停止
 Ball.prototype.unpause = function () {
     this.paused = false;
 
-    // start game with a tap
+    // タップしてゲームを開始
     this.tap(0, 0);
 };
 
-// Resume ball updating
+// ボールの更新を再開
 Ball.prototype.pause = function () {
     this.paused = true;
 };
 
-// Reset the ball to initial values
+// ボールを初期値にリセット
 Ball.prototype.reset = function () {
     this.entity.setLocalPosition(this._origin);
     this.entity.setLocalRotation(this._rotation);
@@ -158,78 +158,78 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### Script Attributes
+### スクリプトのアトリビュート
 
-The first thing you'll notice at the top of the script are a set of script attributes that we've defined. Defining script attributes lets you expose values from your script into the editor. There are three very good reasons to do this.
+スクリプトの先頭には、定義したスクリプト属性のセットがあります。スクリプトの属性を定義することで、エディタにスクリプトから値を公開することができます。これを行う理由は3つあります。
 
-![Script Attributes][5]
+![スクリプトのアトリビュート][5]
 
-First, it lets you use the same script for many different Entities with different values. For example, you could have a script attribute which sets a color, and in the editor create a red, blue and green version of a entity just by modifying the script attribute.
+まず、異なる値を持つ異なるエンティティに対して同じスクリプトを使用することができます。たとえば、色を設定するスクリプトの属性の場合、エディタでスクリプトの属性を変更するだけでエンティティの赤、青、緑のバージョンを作成できます。
 
-Second, you can quickly and easily tune the behaviour of scripts. When you modify a script attribute (or indeed any property from the editor) the changes are made instantly to any instance of the game that you have launched from the editor. So for example in the case of the `ballMinimum` property we define here, you can launch the game and test what the value of `ballMinimum` should be to allow the ball to drop off the bottom of the screen without ever having to reload the game. Test the game, modify the value, test the game.
+二つ目は、迅速かつ容易にスクリプトの動作を調整することができるという理由です。スクリプト属性を変更すると(またはエディタから任意のプロパティ)エディタから起動しているゲームのインスタンスに対して即時に変更が加えられます。ここで定義する`ballMinimum`プロパティの場合、ゲームを起動して、再読み込みすることなくボールを画面の下部から落下させるために必要な`ballMinimum`の値をテストすることができます。ゲームをテストし、値を変更し、再びゲームをテストします。
 
-This is known as "iteration speed". The faster you can modify and test your game, the quicker you can get it developed!
+これは、「反復速度」と呼ばれます。より速くゲームを修正してテストするほど、速く開発することができます！
 
-For the ball, we define script attributes that let us tweak a number of game play properties like the gravity, the impulse applied when the ball is tapped. These attributes let us very quickly tune the game to our liking.
+ボールにスクリプト属性を定義して、重力やボールをタップした際の弾みなどのゲームプレイプロパティの値を調整することができます。これらの属性を使用することで、好みに合わせて簡単にゲームを調整できます。
 
-Third, the script attribute is a great way to link a script to an Entity or an Asset in your scene. For example, the ball script needs to trigger a particle effect when it is tapped. The particle effect is on another Entity in our scene. We define a script attribute called `impactEffect` of type `entity` and in the Editor we link this to the entity with our particle effect. Our script now has a reference to the entity and we are free to modify this entity or change to another entity without breaking our code.
+最後に、スクリプト属性はエンティティまたはシーン内のアセットにスクリプトをリンクするための素晴らしい方法です。例えば、ボールのスクリプトをタップしたときにパーティクルエフェクトをトリガーする必要があります。パーティクルエフェクトは、シーンで別のエンティティに添付されています。`entity`タイプの` impactEffect`というスクリプト属性を定義し、エディタからパーティクルエフェクトを持つエンティティにリンクします。スクリプトはエンティティへの参照を持つようになり、コードを壊すことなくこのエンティティを変更したり、別のエンティティに変更することが可能になります。
 
-### The Physics Simulation
+### 物理のシミュレーション
 
-For those of you with some basic vector maths knowledge this `update()` loop of the ball should be simple, but for everyone else we'll explain a little about simulating a ball in a video game.
+基本的なベクトル数学の知識があればボールの`update()`ループは簡単ですが、ここではビデオゲームでボールをシミュレートする方法について少し説明します。
 
-A simple way to simulate something in video game is to give that object an acceleration, a velocity and a position. Every time step (or frame) the acceleration (which the rate of change velocity) changes the velocity and the velocity (which is the rate of change of position) changes the position. Then you draw your object at the new position.
+ビデオゲームで何かをシミュレートする簡単な方法は、そのオブジェクトに加速、速度および位置を与えることです。各タイムステップ(またはフレーム)で、加速度(速度の変化率)が速度を変更して、速度は(位置の変化率)が位置を変更します。次に、新しい位置でオブジェクトを描画します。
 
-You can influence the position of your object in one of three ways.
+オブジェクトの位置は3つの方法で変更できます。
 
-* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
-* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
-* **Change the position**, like teleportation, there isn't a real world equivalent!
+* **加速度の変更**, これは重力のように、ボールに一定の期間力を適用する場合に便利です。
+* **速度の変更**, これは瞬間的な変化です。床から跳ね返るボールなど。
+* **位置の変更**, テレポーテーションのように、現実の世界では存在しないもの！
 
-In our simulation we have a constant acceleration due to gravity, when you tap the ball we apply an instant change in velocity and when you reset the game we teleport the ball back to it's starting position.
+シミュレーションでは、重力による一定の加速度があります。ボールをタップすると速度に瞬時の変化を適用して、ゲームをリセットすると開始位置にボールをテレポートさせて戻します。
 
-#### Simulating
+#### シミュレーション
 
-The update loop does this:
+更新ループは次のことを行います：
 
->_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
+>_(速度の変更) = (加速) \* (最後のフレームから過ぎた時間)_
 
->_(New Velocity) = (Old Velocity) + (Change in Velocity)_
+>_(新しい速度) = (古い速度) + (速度の変更)_
 
->_(Change in Position) = (New Velocity) \* (Time since last frame)_
+>_(位置の変更) = (新しい速度) \* (最後のフレームから過ぎた時間)_
 
->_(New Position) = (Old Position) + (Change in Position)_
+>_(新しい位置) = (古い位置) + (位置の変更)_
 
-In code this looks like this:
+コード内では次のようになります：
 
 ```javascript
 var p = this.entity.getLocalPosition();
 
-// integrate the velocity in a temporary variable
+// 速度を一時的な値で統合
 tmp.copy(this._acc).scale(dt);
 this._vel.add(tmp);
 
-// integrate the position in a temporary variable
+// 位置を一時的な値で統合
 tmp.copy(this._vel).scale(dt);
 p.add(tmp);
 
-// update position
+// 位置の更新
 this.entity.setLocalPosition(p);
 ```
 
-You will note that we use temporary vector `tmp` to store intermediate values. It's important not to create a new vector every frame for this. Also notice that we have to call `setLocalPosition` to apply the updated position.
+中間値を格納するために`tmp`の一時的なベクトルを使用します。全てのフレームで新たなベクトルを作成することは避けるべきです。また、更新された位置を適用するため、`setLocalPosition` を呼び出す必要があります。
 
-Finally, for a nice effect we add rotate the ball by the angular speed value using `entity.rotate()`. This isn't very physically accurate, but it looks nice.
+最後に、良い効果を得るために`entity.rotate()`を使用して角速度値でボールに回転を追加します。これは物理的に正確ではありませんが、見た目が良いです。
 
-#### Responding to input
+#### 入力に反応
 
-You may remember from [Part 2][2] that the `input.js` script checked to see if an input has hit the ball and if so it calls the `tap()` method. The `tap()` method defined above applies a direct change to the velocity and the angular speed of the ball. We use a couple of our script attributes `this.speedMult` and `this.angMult` to multiple the new velocity and angular speed to match our expectations of the gameplay.
+[その2][2]で説明したとおり、 `input.js`スクリプトは入力がボールに当たったかどうかを確認して、当たった場合は`tap()`メソッドを呼び出します。上記で定義された`tap()`メソッドは、ボールの速度と角速度に直接変更を適用します。`this.speedMult` や `this.angMult`などのいくつかのスクリプト属性を使用して新しい速度および角速度を掛けて、ゲームプレイに合わせます。
 
-We also use the tap method to trigger a particle dust cloud at the point of impact and play a sound effect. We'll talk about particle and sounds in [Part 4][4].
+インパクトの点で埃のパーティクルと効果音の再生をトリガーするためにもタップメソッドを使用しています。パーティクルと音声については[その4][4]で説明します。
 
-## Summary
+## まとめ
 
-The ball script runs a simply physical simulation to make the ball fall under gravity and respond to taps. It also listens for game events to know when to pause and reset. Finally, it interacts with some other systems to show particle effects and play sounds.
+ボールスクリプトは、重力下でのボールの落下や、タップへの反応を可能にするため、単純な物理シミュレーションを実行します。また、ゲームイベントにリッスンして、一時停止やリセットを行います。最後に、他のシステムと相互作用してパーティクルエフェクトの表示や音声の再生を行います。
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two

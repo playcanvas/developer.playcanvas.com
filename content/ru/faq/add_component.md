@@ -1,11 +1,11 @@
 ---
-title: Add a component
-keywords: entity, add, component, behaviour
+title: Добавление компонента
+keywords: сущность, добавить, компонент, поведение
 ---
 
-## How do I add a component?
+## Как добавить компонент?
 
-To add a **component** to an Entity, select the Entity and then click **Add Component** in the **Inspector** or right click on the Entity and select a component from the Add Component context menu.
+Чтобы добавить **компонент** к сущности, выберите сущность и нажмите **Добавить компонент** в **Инспекторе**. Также, вы можете кликнуть по сущности правой кнопкой мыши и выбрать пункт "Добавить компонент" в контекстном меню.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/" target="_blank">Посмотреть руководство пользователя</a>
 

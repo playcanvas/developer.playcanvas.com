@@ -24,9 +24,9 @@ position: 4
 
 ```javascript
 pc.extend(pc, function () {
-    // Constructor - Creates an instance of our post effect
+    // Конструктор - создает объект вашего эффекта
     var ExamplePostEffect = function (graphicsDevice, vs, fs) {
-        // this is the shader definition for our effect
+        // Шейдер, который определяет сам эффект
         this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
                 aPosition: pc.SEMANTIC_POSITION
@@ -36,23 +36,23 @@ pc.extend(pc, function () {
         });
     };
 
-    // Our effect must derive from pc.PostEffect
+    // Наш эффект находится в pc.PostEffect
     ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.PostEffect);
 
     ExamplePostEffect.prototype = pc.extend(ExamplePostEffect.prototype, {
-        // Every post effect must implement the render method which
-        // sets any parameters that the shader might require and
-        // also renders the effect on the screen
+        // Каждый пост-эффект должен реализовывать метод,
+        // который устанавливает любые параметры, которые могут
+        // быть необходимы шейдеру и рендерит эффект на экран
         render: function (inputTarget, outputTarget, rect) {
             var device = this.device;
             var scope = device.scope;
 
-            // Set the input render target to the shader. This is the image rendered from our camera
+            // Устанавливает, куда шейдер будет рендерить. Это изображение с нашей камеры.
             scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
 
-            // Draw a full screen quad on the output target. In this case the output target is the screen.
-            // Drawing a full screen quad will run the shader that we defined above
-            pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
+            // Выводим полноразмерный квад в цель рендера. В данном случае, на экран.
+            // Это вызовет работу шейдера, который мы определили выше
+ pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
         }
     });
 
@@ -62,16 +62,16 @@ pc.extend(pc, function () {
 }());
 ```
 
-## Wrap up
+## Обертка
 
-We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][5]. Here's the full listing:
+Теперь у нас есть все необходимые компоненты для нашего пост-эффекта. Все, что нам нужно сделать, это добавить указатель на ExamplePostEffect, который мы объявили выше, к [очереди пост-эффектов][5] нашей камеры. Ниже полный код:
 
 ```javascript
-//--------------- POST EFFECT DEFINITION------------------------//
+//--------------- ОПРЕДЕЛЕНИЕ ПОСТ-ЭФФЕКТА------------------------//
 pc.extend(pc, function () {
-    // Constructor - Creates an instance of our post effect
+    // Конструктор = создает указатель на пост-эффект
     var ExamplePostEffect = function (graphicsDevice, vs, fs) {
-        // this is the shader definition for our effect
+        // Это - объявление шейдера для нашего эффекта
         this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
                 aPosition: pc.SEMANTIC_POSITION
@@ -81,22 +81,22 @@ pc.extend(pc, function () {
         });
     };
 
-    // Our effect must derive from pc.PostEffect
+    // Наш эффект должен находиться в pc.PosstEffect
     ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.PostEffect);
 
     ExamplePostEffect.prototype = pc.extend(ExamplePostEffect.prototype, {
-        // Every post effect must implement the render method which
-        // sets any parameters that the shader might require and
-        // also renders the effect on the screen
+        // Каждый пост-эффект должен реализовывать этот метод
+        // который устанавливает любые параметры, которые могут
+        // быть необходимы шейдеру и рендерит эффект на экран
         render: function (inputTarget, outputTarget, rect) {
             var device = this.device;
             var scope = device.scope;
 
-            // Set the input render target to the shader. This is the image rendered from our camera
+            // Устанавливает, куда шейдер будет рендерить. Это изображение с нашей камеры
             scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
 
-            // Draw a full screen quad on the output target. In this case the output target is the screen.
-            // Drawing a full screen quad will run the shader that we defined above
+            // Выводим полнорамзерный квад в рендер. В данном случае, это наш экран.
+            // Это вызовет работу шейдера, который мы определили выше
             pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
         }
     });
@@ -106,7 +106,7 @@ pc.extend(pc, function () {
     };
 }());
 
-//--------------- SCRIPT DEFINITION------------------------//
+//--------------- ОПРЕДЕЛЕНИЕ СКРИПТА ------------------------//
 var PosteffectExample = pc.createScript('posteffectExample');
 
 PosteffectExample.attributes.add('vs', {
@@ -121,20 +121,20 @@ PosteffectExample.attributes.add('fs', {
     title: 'Fragment Shader'
 });
 
-// initialize code called once per entity
+// Вызывает код, который относится к одной сущности
 PosteffectExample.prototype.initialize = function() {
     var effect = new pc.ExamplePostEffect(this.app.graphicsDevice, this.vs.resource, this.fs.resource);
 
-    // add the effect to the camera's postEffects queue
+    // Добавляет эффект в очередь эффектов камеры
     var queue = this.entity.camera.postEffects;
     queue.addEffect(effect);
 
-    // when the script is enabled add our effect to the camera's postEffects queue
+    // Когда скрипт включен, добавляем его к очереди 
     this.on('enable', function () {
         queue.addEffect(effect, false);
     });
 
-    // when the script is disabled remove our effect from the camera's postEffects queue
+    // Когда выключен, убираем из очереди эффектов камеры
     this.on('disable', function () {
         queue.removeEffect(effect);
     });
@@ -145,7 +145,7 @@ PosteffectExample.prototype.initialize = function() {
 
 Больше уроков по пользовательским шейдерам [тут][6].
 
-See the [Custom Post Effects project here][7].
+Посмотрите [проект с пользовательскими пост-эффектами здесь][7]
 
 [1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [2]: /api/pc.Shader.html

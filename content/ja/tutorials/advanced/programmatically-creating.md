@@ -11,29 +11,29 @@ position: 2
 ## エンティティの作成
 
 ~~~js
-var entity = new pc.Entity(); // Create an Entity
+var entity = new pc.Entity(); // エンティティを作成
 
-// Add it to the Entity hierarchy
+// エンティティ階層に追加
 this.app.root.addChild(entity);
 ~~~
 
-First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `this.app.root`.
+まず、エンティティを作成する必要があります。これは簡単ですが、メインのエンティティ階層にエンティティを追加することが重要です。階層内のエンティティのみ、トランスフォーム、コンポーネントおよびスクリプトが更新されます。スクリプトに渡される`Application`オブジェクトからエンティティ階層のルートにアクセスすることができます。慣例により、これは通常`app`と名付けられ、階層ルートは`this.app.root`として提供されます。
 
 ## コンポーネントの追加
 
 ~~~js~~~
-// Create a new Entity
+// 新しいエンティティを作成
 var entity = new pc.Entity();
 
-// Add a new Camera Component with default values
+// デフォルト値の新しいCamera Componentを追加
 entity.addComponent("camera");
 
-// Add a new Model Component and add it to the Entity.
+// 新しいModel Componentを追加してエンティティに追加
 entity.addComponent("model", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// エンティティ階層に追加
 this.app.root.addChild(entity);
 ~~~
 
@@ -58,21 +58,21 @@ entity.removeComponent("camera");
 ## エンティティの削除
 
 ~~~js~~~
-// Create a new Entity
+// 新しいエンティティを作成
 var entity = new pc.Entity();
 
-// Create a new Camera Component with default values
+// デフォルト値の新しいCamera Componentを作成
 entity.addComponent("camera");
 
-// Create a new Model Component and add it to the Entity.
+// 新しいModel Componentを作成してエンティティに追加
 entity.addComponent("model", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// エンティティ階層に追加
 this.app.root.addChild(entity);
 
-// Delete the Entity and remove it from the hierarchy
+// エンティティを削除して階層から取り除く
 entity.destroy();
 ~~~
 
@@ -103,26 +103,26 @@ EntityCreator.attributes.add('maxCubes', {
     default: 10
 });
 
-// initialize code called once per entity
+// initializeコードがエンティティ毎に一度のみ呼ばれる
 EntityCreator.prototype.initialize = function() {
     this.entities = [];
 };
 
-// update code called every frame
+// updateコードが毎フレーム呼ばれる
 EntityCreator.prototype.update = function(dt) {
-    // Spawn new cubes if there are less than maxCubes
+    // maxCubes以下の場合、新しいキューブをスポーンする
     while (this.entities.length < this.maxCubes) {
         this.spawnCube();
     }
 
-    // Loop through Entities and delete them when their time is up
+    // エンティティの中をループして時間切れの際に削除する
     for (i = 0; i < this.entities.length; i++) {
         this.entities[i].timer -= dt;
         if (this.entities[i].timer < 0) {
-            // entity.destroy() deletes all components and removes Entity from the hierarchy
+            // entity.destroy()は全てのコンポーネントを削除してエンティティを階層から取り除く
             this.entities[i].entity.destroy();
 
-            // Remove from the local list
+            // ローカルリストから除外
             this.entities.splice(i, 1);
         }
     }
@@ -131,25 +131,25 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // Add a new Model Component and add it to the Entity.
+    // 新しいModel Componentを追加してエンティティに追加
     entity.addComponent("model", {
         type: 'box'
     });
 
-    // set material
+    // 素材を設定
     entity.model.material = this.material.resource;
 
-    // Move to a random position
+    // ランダムな位置に移動
     entity.setLocalPosition(
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions)
     );
 
-    // Add to the Hierarchy
+    // 階層に追加
     this.app.root.addChild(entity);
 
-    // Store in a list for some random duration before deleting
+    // 削除前にランダムな期間、リストに保管
     this.entities.push({
         entity: entity,
         timer: pc.math.random(0, this.lifetime)

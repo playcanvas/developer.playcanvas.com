@@ -10,12 +10,12 @@ position: 1
 
 ![动画组件][1]
 
-## 参数
+## 属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>参数</th><th>描述</th></tr>
+    <tr><th>属性</th><th>描述</th></tr>
     <tr><td>Assets</td><td>可以被实体利用的动画资源。可以使用拾取工具选取复数个动画资源。</td></tr>
     <tr><td>Speed</td><td>动画回放速度的倍增系数。0表示动画静止，1表示动画的标准回放速度。</td></tr>
     <tr><td>Activate</td><td>如果选中，组件会在动画加载后自动播放动画。</td></tr>

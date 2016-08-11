@@ -15,15 +15,15 @@ template: usermanual-page.tmpl.html
 
 ## Как я могу использовать 3D модели в движке?
 
-To load a 3D model into the Engine first you need to convert it from the format used by the modelling package (e.g. COLLADA or FBX) to the format used by the Engine (a JSON format). The conversion process is performed by our server. To convert a model follow [these instructions][3], when the model conversion is finished (this should only take a few seconds) then the model is ready to download.
+Чтобы загрузить 3D-модель в движок, сперва вам нужно сконвертировать ее из формата 3D-пакета (например COLLADA или FBX) в формат, который используется в движке (формат JSON). Конвертирование происходит на нашем сервере. Чтобы сконвертировать модель, следуйте [этим инструкциям][3]. Когда модель будет готова (это займет всего пару секунд), она будет готова для скачивания.
 
 ![Сконвертированная модель][6]
 
-When you select the completed model you will see details about the asset and additional all the target assets that were created by this asset.
+Когда вы выберете законченную модель, вы увидите описание о наборе и все наборы, которые были созданы этим набором.
 
-Select the asset of type "model" which is the 3D model in the runtime format and click Download in the Inspector.
+Выберите тип набора "model", который является форматом 3D-модели, и нажмите на Скачать в окне инспектора.
 
-![Download][7]
+![Скачать][7]
 
 Это загрузит всю модель, включая материалы и текстуры, готовые к использованию в движке.
 

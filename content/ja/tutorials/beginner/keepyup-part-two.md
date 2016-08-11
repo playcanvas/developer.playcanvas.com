@@ -6,7 +6,7 @@ position: 11
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][16]. If you haven't seen [Part 1][1] read it first.*
+*[完成されたプロジェクトはこちら][16]です。先に[その1][1]を読んでください。*
 
 ## マテリアルの設定
 
@@ -46,37 +46,37 @@ position: 11
 
 ![スペキュラマップ][5]
 
-The specular section determines how the material interacts with lights. There are two "workflows" for specular, the "Metalness workflow" and the "Specular workflow", you can find more information in our [documentation][6]. For the football we are using Metalness, so be sure to check the "Use Metalness" box. Our football is not made of metal, so we slide the metalness slider all the way down to 0. Then we use the glossiness slider to set our rough/smooth the material should be. We've set this to about halfway which gives a nice shine to the ball, but not completely smooth.
+specular（鏡面）セクションは素材がどのように照明と相互作用するかを決定します。specularには、「Metalnessワークフロー」と「Specularワークフロー」の2つの「ワークフロー」があります。詳細は[ドキュメント][6]をご確認ください。サッカーボールではMetalnessを使用しているので、「Use Metalness」チェックボックスをオンにしてください。サッカーボールは金属製でないので、metalnessスライダーを0になるようスライドさせます。次に、光沢スライダーを使用して素材の滑らかさを設定します。ボールが滑らか過ぎず、ちょうど良い光沢になるよう約半分の位置に設定します。
 
 #### Normal
 
 ![Normal][10]
 
-The final texture map we apply is the normal map. The normal map is used to add details to the model. In this case, the separate patches of the football are not modelled in the geometry (which is smooth sphere) but they are in the normal map. This means the ball will be correctly lit as if the patches were there, but without the overhead of lots of extra polygons.
+最終に適用するテクスチャマップはnormal（法線）マップです。normalマップは、モデルにディテールを加えるために使用します。この場合、サッカーボールの繋ぎ目がジオメトリでモデル化されていませんが(滑らかな球体)、normalマップではモデル化されています。つまり、ボールは繋ぎ目があるかのように点灯しますが、余分なポリゴンのオーバーヘッドはありません。
 
-## Backdrop Material
+## Backdrop 素材
 
 ![Backdrop][11]
 
-The backdrop material is much simpler, we have only one texture map.
+Backdrop素材はより単純です。テキスチャーマップは一つのみです。
 
-#### Emissive
+#### Emissive（発光）
 
-![Emissive][12]
+![Emissive（発光）][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emmissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+emissiveマップは、表面の色を設定して、まるでその色の光を発光しているかのように見せます。つまり、シーン内の照明はemissiveの表面の明るさに影響を与えません。emissive素材はシーン内の他のオブジェクトには影響しませんが、実際に光は発光されません。
 
-In this case, we don't want the background to be lit, it is just a static scene. So we use the emissive map to do that.
+この場合、静的なシーンなので背景が点灯されないようにします。そのためには、emissiveマップを使用します。
 
-## Overlay Material
+## オーバーレイ素材
 
-![Overlay][13]
+![オーバーレイ][13]
 
-The overlay material is even simpler than the backdrop. In this case all we are doing is setting the color off the emissive property
+オーバーレイ素材は背景よりも簡単です。この場合、emissiveプロパティの色を設定するだけです。
 
-![Emissive][14]
+![Emissive（発光）][14]
 
-Continue on to [Part 3][15].
+[その3][15]に進む。
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: http://store.playcanvas.com/

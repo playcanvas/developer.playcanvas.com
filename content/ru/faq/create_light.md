@@ -1,11 +1,11 @@
 ---
-title: Create a light
-keywords: component, light, sun, shadows, directional, spot, point
+title: Создание света
+keywords: компонент, свет, солнце, тени, направленный, прожектор, рассеянный
 ---
 
-## How do I create a light?
+## Как создать свет?
 
-You can create a light by adding a **Light** component to an Entity. You can also right click on an Entity and select New Entity / Directional Light to create a new directional light and similarly for spot lights and point lights.
+Вы можете добавить источник света добавив компонент **Свет** к сущности. Вы также можете сделать клик правой кнопкой мыши по Сущности и выбрать Новая сущность / Направленный свет, чтобы создать новый источник направленного цвета. Аналогично добавляются прожекторы и рассеянные источники света.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/light/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/light/" target="_blank">Посмотреть руководство пользователя</a>
 

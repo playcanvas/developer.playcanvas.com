@@ -1,22 +1,22 @@
 ---
-title: Communication with web pages
+title: ウェブページとの通信
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-One the key advantages of using PlayCanvas and WebGL over other plugins or cross-compiled engines is the ability to interact directly between your application and the surrounding webpage. In this page we'll talk about some common ways of interfacing your PlayCanvas application with a web page or web application.
+プラグインやクロスコンパイルエンジンの代わりにPlayCanvasとWebGLを使用する主な利点のひとつは、アプリケーションとそれを囲うウェブページ間で直接、相互作用できることです。このページでは、PlayCanvasアプリケーションをウェブページやウェブアプリケーションに対してインタフェースするためのいくつかの一般的な方法について説明します。
 
-There are two ways you may find your PlayCanvas application communicating with the surrounding Web page. First, you may have embedded your application in a iframe in a page. Second you may be serving your own HTML page which loads an PlayCanvas page. These two methods require very different ways of communicating between web page and application.
+PlayCanvasアプリケーションとそれを囲ウェブページを通信させるには二つの方法があります。最初の方法は、ページ内のiframe内にアプリケーションを埋め込むことです。二つ目の方法は、PlayCanvasページをロードする独自のHTMLページをサーブすることです。これらの2つの方法は、大きく異なる形でウェブページとアプリケーション間の通信を行います。
 
-## Defining an API
+## APIの定義
 
-Common to both methods of hosting you should think about what features of your PlayCanvas application you need to expose to the web page. Perhaps you need to change the color of something based on a button click or a slider; or you might need to send some text input into the application to be rendered to a texture. Decide in advance what features you need to expose and in your PlayCanvas application write an explicit API or set of functions which are the only functions that your web page will call.
+どちらのホスティング方法でも、ウェブページに公開する必要があるPlayCanvasアプリケーションの機能について考える必要があります。ボタンのクリックやスライダーに基づいて何かの色を変更する必要があるかも知れません。または、テクスチャにレンダリングするためにアプリケーションにテキスト入力を送信する必要があるかも知れません。公開する必要がある機能を事前に決定して、PlayCanvasアプリケーションで明示的なAPIや、ウェブページが呼び出す唯一の関数のセットを書いてください。
 
-Here is a simple example where we show a couple of different ways of exposing an API from a PlayCanvas application to a web page.
+PlayCanvasアプリケーションからウェブページにAPIを露出させるいくつかの方法を示す簡単な例です。
 
 ```javascript
 
-// method one: define a global function to set the score
+// メソッド１:スコアを設定するためのグローバル機能を定義
 window.setScore = function (score) {
     var app = pc.Application.getApplication();
     var entity = app.root.findByName("Score Keeper");
@@ -26,7 +26,7 @@ window.setScore = function (score) {
 pc.script.create("score_keeper", function (app) {
 
     var ScoreKeeper = function (entity) {
-        // method two: define an application event to set the score
+        // メソッド２: スコアを設定するためのアプリケーションイベントを定義
         app.on("score:set", function (score) {
             this.setScore(score);
         }, this);
@@ -34,33 +34,33 @@ pc.script.create("score_keeper", function (app) {
 
     ScoreKeeper.prototype = {
         setScore: function (score) {
-            // do the score setting here.
+            // ここでスコア設定を行う
         }
     }
 
     return ScoreKeeper;
 });
 
-// how to use the API:
+// APIの使用方法：
 
-// method one:
+//メソッド１:
 window.setScore(10);
 
-// method two:
+// メソッド２:
 var app = pc.Application.getApplication();
 app.fire("score:set", 10);
 
 ```
 
-Method one defines a global function which can be called anywhere in your page to access your application. Method two defines an application event which you can fire from your page. The application listens for this event and performs actions in response to the event. Both are valid methods of defining an API with your application.
+方法1は、アプリケーションにアクセスするために、ページ内のどこでも呼び出すことができるグローバルな関数を定義します。方法2は、ページから発射することができるアプリケーションイベントを定義します。アプリケーションはこのイベントをリッスンし、イベントに応じてアクションを実行します。どちらもアプリケーションでAPIを定義する有効な方法です。
 
-### Embedded in IFrame
+### IFrameへの埋め込み
 
-Embedding a PlayCanvas application in an iframe is a quick and easy way to get your PlayCanvas content in a page. It also means that you can make use of our optimized hosting and don't need to worry about serving all the PlayCanvas content. However, the downside is that you can not call javascript functions in the PlayCanvas application directly from the hosting page because they are running on different pages.
+iframe内にPlayCanvasアプリケーションを埋め込むのは、PlayCanvasのコンテンツをページ内に挿入する迅速かつ簡単な方法です。また、弊社の最適化されたホスティングを利用することができ、PlayCanvasのコンテンツのサーブの心配をする必要はありません。欠点は、JavaScript関数が別のページ上で実行されているので、ホスティングページから直接PlayCanvasアプリケーションのJavascript関数を呼び出すことができないことです。
 
-To communicate between a parent page and an iframe you will need to use the [postMessage][1] javascript API to send data between your page and the PlayCanvas application.
+親ページとiframe間で通信するには[postMessage][1] javascript APIを使用して、ページとPlayCanvasアプリケーション間でデータを送信します。
 
-In your host page
+ホストページにて
 
 ```html
 <iframe id="app-frame" src="http://playcanv.as/p/example">
@@ -72,25 +72,25 @@ iframe.contentWindow.postMessage({
 </script>
 ```
 
-In your application
+アプリケーションで
 ```javascript
 window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // always check message came from your website
+    if (event.origin === "http://example.com") { // メッセージが自身のウェブサイトから来ていることを必ず確認してください
         var score = event.data.score;
 
-        // call API method one:
+        // APIメソッド１を呼ぶ:
         window.setScore(score);
 
-        // call API method two:
+        // APIメソッド２を呼ぶ:
         var app = pc.Application.getApplication();
         app.fire("score:set", score);
     }
 }, false);
 ```
 
-### Serve your own HTML
+### 自身のHTMLをサーブ
 
-When you download your PlayCanvas application for self-hosting. This is the index.html page that we include to run your application.
+自己ホスティングのためにPlayCanvasアプリケーションをダウンロードしてください。これがアプリケーションを実行するために含まれるindex.htmlページです。
 
 ```html
 <!doctype html>
@@ -99,7 +99,7 @@ When you download your PlayCanvas application for self-hosting. This is the inde
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
+    <title>アプリケーションタイトル</title>
     <script src="playcanvas-stable.min.js"></script>
     <script>
         SCENE_PATH = "12346.json";
@@ -116,13 +116,13 @@ When you download your PlayCanvas application for self-hosting. This is the inde
 </html>
 ```
 
-It is absolutely possible and even recommended, that you modify start from this page as the basis of your web page and you can modify it to add any additional content that is required for you page.
+ウェブページの基礎としてこのページから始めることをお勧めします。ページに必要な任意のコンテンツを追加するために、修正を加えることができます。
 
-When it comes to communicating with your PlayCanvas application, for example from a button push. You can call the APIs we defined above directly from your script. There is no need for the `postMessage` calls.
+ボタンの押下などでPlayCanvasアプリケーションと通信する場合、スクリプトから直接上で定義されたAPIを呼び出すことができます。`postMessage`を呼び出す必要はありません。
 
-Note, it is important that you run any custom code after the `__start__.js` scripts as this creates the PlayCanvas application. In many cases you may wish to wait until after all the asset loading has finished, but before the application starts. You can do this by responding to the `start` event.
+`__start__.js`がPlayCanvasアプリケーションを作成するので、その後に全てのカスタムコードを実行してください。多くのケースでは、全てのアセットの読み込みが終わり、アプリケーションが起動する前まで待つべきです。これを行うには`start`イベントに応答します。
 
-For example:
+例：
 
 ```html
 <!doctype html>
@@ -147,10 +147,10 @@ For example:
     <script>
     var app = pc.Application.getApplication();
     app.on("start", function () {
-        // get the root of the scene.
+        // シーンのルートを取得
         var hierarchy = app.root.getChildren()[0];
 
-        // do other stuff here
+        // 他はここで行う
     });
     </script>
 </body>

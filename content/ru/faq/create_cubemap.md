@@ -1,15 +1,15 @@
 ---
-title: Create a cubemap
-keywords: asset, cubemap, create, skybox, texture, pbr, physical
+title: Создание кубической текстуры
+keywords: набор, кубическая текстура, создание, skybox, текстура, pbr, физический
 ---
 
-## How do I create a cubemap?
+## Как создать кубическую текстуру?
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_cubemap.gif"/>
 
-Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube.
+Кубическая текстура - особый тип текстуры. Она состоит из шести текстур, каждая из которых представляет собой сторону куба.
 
-To create a cubemap click on the **<span class="font-icon">&#57632;</span> Add** button in the Assets panel and select **New Cubemap**. Then drag 6 textures in the cubemap inspector. To take advantage of Physically Based Rendering make sure you click **Prefilter** after setting the 6 textures.
+Чтобы создать кубическую текстуру, кликните на кнопку **<span class="font-icon">&#57632;</span> Добавить** в панели наборов и выберите **Новая кубическая текстура**. Затем перетащите шесть текстур в инспектор кубической текстуры. Чтобы добиться эффекта физически-правильного рендера, нажмите на **Предварительный фильтр**, после добавления шести текстур.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">Посмотреть руководство пользователя</a>
 

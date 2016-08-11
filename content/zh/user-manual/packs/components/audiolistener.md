@@ -1,18 +1,18 @@
 ---
-title: Audio Listener
+title: 音频侦听器
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-The Audio Listener component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
+音频侦听器组件用于指定侦听器在3D空间中的位置。所有的3D音频效果都和侦听器所在的位置有关。
 
-The Audio Listener component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will act as the listener position for 3D sound effects.
+音频侦听器组件可以使用组件面板顶端右侧的开关进行控制。在启用的情况，侦听器的位置将会影响3D声响的效果。
 
-![Audio Listener component][1]
+![音频侦听器组件][1]
 
-## Scripting Interface
+## 脚本接口
 
-You can control an Audio Listener component's properties using a [script component][2]. The Audio Listener component's scripting interface is [here][3].
+可以通过[脚本组件][2]来修改音频侦听器组件的属性。音频侦听器组件的脚本接口在[这里][3]。
 
 [1]: /images/user-manual/scenes/components/component-audio-listener.png
 [2]: /user-manual/packs/components/script

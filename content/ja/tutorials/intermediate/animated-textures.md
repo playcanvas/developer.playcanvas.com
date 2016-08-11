@@ -1,50 +1,50 @@
 ---
-title: Animated Textures
+title: アニメ化されたテクスチャー
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/qFDE1q2H"></iframe>
 
-*Two types of texture animation. The plane is simple scrolling material, the others are animation frames. See the [full project][1].*
+*２種類のテクスチャーアニメーション。planeはシンプルなスクロールマテリアルで、他はアニメーションフレームです。[完成されたプロジェクト][1]をご確認ください。*
 
-It can be very useful to animate a material that has been applied to a surface. Two common use-cases are shown in this tutorial. The first is to scroll a texture to simulate some movement. The second is to use a sprite sheet to play back animation frames.
+表面に適用されたマテリアルをアニメーション化するととても便利な場合があります。このチュートリアルでは二つの一般的なユースケースを紹介します。一つ目では動きをシミュレートするために、テクスチャをスクロールします。二つ目では、アニメーションフレームをプレイバックするスプライトシートを使用します。
 
-## Scrolling a material with map offset
+## マップオフセットでマテリアルをスクロール
 
-The square plane in the example uses the script `scrolling-texture.js` to constantly move the UV offset every frame. For example, this can be used to simulate flowing water. The update loop is displayed below.
+例で示される正方形の平面は、常にフレーム毎でUVオフセットを移動するためのスクリプト `scrolling-texture.js` を使用しています。例えば、水の流れをシミュレートするために使用します。更新ループを下記に表示します。
 
 ```javascript
 ScrollingTexture.prototype.update = function(dt) {
     var tmp = ScrollingTexture.tmp;
 
-    // Calculate how much to offset the texture
+    // テクスチャーをオフセットする量を計算
     // Speed * dt
     tmp.set(this.speed.x, this.speed.y);
     tmp.scale(dt);
 
-    // Update the diffuse and normal map offset values
+    // diffuseと通常アップのオフセット値を更新
     this.material.diffuseMapOffset.add(tmp);
     this.material.normalMapOffset.add(tmp);
     this.material.update();
 };
 ```
 
-We calculate the required offset into a temporary vector `tmp`. This is simply: `speed * timeStep`. Then we add this offset to the offset property for both the diffuse map and the normal map by modifying the `diffuseMapOffset` and `normalMapOffset` properties. These values are `pc.Vec2`s which shift the UV co-ordinates used to map the texture to the surface. If you are using other maps (e.g. emissive) you will also need to update these offset properties as well. Finally we call `material.update()` to propogate the changes into the shader.
+一時的なベクトル`tmp`に必要なオフセットを計算します。これは単に`speed * timeStep`になります。その後、`diffuseMapOffset` と`normalMapOffset`プロパティを変更して、拡散マップと通常マップの両方のオフセットプロパティにこのオフセットを追加します。これらの値は`pc.Vec2`で、表面にテクスチャをマッピングするために使用されるUV座標をシフトします。他のマップを使用している場合も(例えば発光マップ)、同様にこれらのオフセットプロパティを更新する必要があります。最後に、`material.update()`を呼んで`シェーダに変更を適用します。
 
-This is a simple straightforward method to modify a material's offset and scroll a texture. It does have one downside which is this code modifies the actual material's properties. So if you have multiple models in a scene with the same material, they will all be affected.
+これは、マテリアルのオフセットを変更しテクスチャーをスクロールする簡単でシンプルな方法です。欠点は、このコードがマテリアルの実際のプロパティを変更することです。シーン内に同じマテリアルを使用する複数のモデルが存在する場合、全てに影響してしまいます。
 
-## Animating multiple materials with map offset
+## マップオフセットで複数のマテリアルをアニメ化
 
-If you want to have many entities with animating textures updating independently we modify the properties on the MeshInstance instead of on the material. When that mesh instance is rendered the material properties are overrided with parameters from the mesh instance. For example, this allows us to have several sprites using different animation frames but sharing the same material. The code for this is in the project file `animated-texture.js`
+アニメーションテクスチャが独立して更新をするエンティティを沢山使用する場合、マテリアルのプロパティの代わりにMeshInstanceのプロパティを変更します。そのメッシュのインスタンスがレンダリングされると、マテリアルプロパティは、メッシュインスタンスのパラメータでオーバーライドされます。これにより、異なるアニメーションフレームを使用しながら同じマテリアルを共有する複数のスプライトを使用することができます。このためのコードはプロジェクトファイル`animated-texture.js`にあります。
 
-In our code example, the coins and the number counters are both duplicated and we've set them to use different frame rates and the numbers use different animation frames.
+コード例では、コインや数値カウンタはどちらも複製されます。異なるフレームレートを使用し、数値は異なるアニメーションフレームを使用するように設定しています。
 
 ```javascript
 AnimatedTexture.prototype.update = function(dt) {
-    // calculate when to animate to next frame
+    // 次のフレームにアニメーション化するタイミングを計算
     this.timer -= dt;
     if (this.timer < 0) {
-        // move to next frame
+        // 次のフレームに移動
         this.frame++;
         if (this.frame >= (this.numFrames + this.startFrame)) {
             this.frame = this.startFrame;
@@ -52,25 +52,25 @@ AnimatedTexture.prototype.update = function(dt) {
 
         this.updateMaterial(this.frame);
 
-        // reset the timer
+        // タイマーをリセット
         this.timer = 1/this.frameRate;
     }
 };
 
 AnimatedTexture.prototype.updateMaterial = function (frame) {
-    // calculate how much to change UV to go to next frame
+    // 次のフレームに移動するUVをいくつ変更するかを計算
     var dx = 1 / this.width;
     var dy = 1 / this.height;
 
-    // Convert frame number into UV co-ordinate
+    // フレーム数値をUV座標に変換
     var x = frame % this.width;
     var y = Math.floor(frame / this.width);
 
     var meshes = this.entity.model.meshInstances;
 
-    // create the transform vector (tilingx, tilingy, offsetx, offsety)
-    // and override the material properties for this mesh
-    // This allows us to use different settings for different Entities, but share the same material
+    // トランスフォームベクターを作成して(tilingx, tilingy, offsetx, offsety)
+    // このメッシュのマテリアルプロパティを上書きする
+    // これで、異なるエンティティに異なる設定を使用しながら同じマテリアルを共有することが可能になります
     this.transform.set(dx, dy, x * dx, (1 - dy) - (y * dy));
     meshes[0].setParameter("texture_diffuseMapTransform", this.transform.data);
     meshes[0].setParameter("texture_emissiveMapTransform", this.transform.data);
@@ -78,21 +78,21 @@ AnimatedTexture.prototype.updateMaterial = function (frame) {
 };
 ```
 
-In this example, we're taking a sprite sheet for example this rotating coin
+この例では、回転するコインのためにスプライトシートを使用します。
 
 ![Coin][2]
 
-We've set up script attributes which let us specify the size of each frame of animation, by specifying the width and height of the image; the starting frame number and the number of frames to play in the animation. This means we can select a single animation from a page of multiple animations. And finally the framerate to play the animation back at.
+画像の幅と高さ、開始フレームの番号、アニメーションで再生するフレーム数を設定することでアニメーションの各フレームのサイズを指定できるスクリプトの属性を設定しました。複数のアニメーションのページから単一のアニメーションを選択できます。そして最後に、フレームレートはアニメーションをプレイバックします。
 
-In our code we use a timer to count down to when we advance the frame then we convert the frame number into a UV co-ordinate on the texture. Noting that, for the V co-ordinate, 0 is the bottom of the texture. Whilst in spritesheets usually the run the animation top to bottom. So subtract the V co-ordinate from `(1 - dy)` when we set the offset transform.
+コードでは、フレームを進めるときにカウントダウンするタイマーを使用します。その後、テクスチャ上のUV座標にフレーム番号を変換します。V座標の場合、0はテクスチャの一番下です。一方、スプライトシートでは通常アニメーションは上から下に実行されます。そのため、オフセットのトランスフォームを設定する際は`(1 - dy)`からのV座標を引きます。
 
-The main difference from the previous scrolling example. Is that we're using `pc.MeshInstance.setParameter` to set a specific value in the shader. `setParameter` is lower level code than modifying the material as above. In order to use it we need to know the exact uniform variable name that the PlayCanvas shader uses to modify the map transform. In this case `texture_diffuseMapTransform` which is a 4 value array of numbers that represent the tiling and the offset.
+前のスクロールの例との主な違いは、シェーダ内の特定の値を設定するために `pc.MeshInstance.setParameter`を使用していることです。`setParameter`は、上記のようにマテリアルを変更するよりも低いレベルのコードです。それを使用するためには、PlayCanvasシェーダがマップトランスフォームを変更するために使用する正確な均一な変数名を知る必要があります。この場合、`texture_diffuseMap Transform`は、タイリングとオフセットを表す数字の4の値の配列です。
 
 <div class="alert-info">
-`setParameter` is currently an undocumented API in the PlayCanvas engine. It is a very useful feature but is dependent on the exact variable names in the shader. As such, use it with caution as the engine code may change before it becomes public API.
+`setParameter`は現時点ではPlayCanvasエンジンでドキュメント化されていないAPIです。これは非常に便利な機能ですが、シェーダーの正確な変数名に依存しています。そのため、パブリックAPIになる前にエンジンコードが変更する可能性があるので使用には注意が必要です。
 </div>
 
-As you can see in our example, the two coins have a different frame rate and one set of numbers is only using 3 frames for the animation. This method is very useful if you wish to make sprite-based 2D animation and the script `animated-texture.js` is a good starting point.
+例を見てわかるように、２枚のコインには異なるフレームレートがあり、１組の数字はアニメーションに3つのフレームのみを使用しています。これはスプライトベースの2Dアニメーションを使用する場合に便利です。 `animated-texture.js`から始めることをお勧めします。
 
 [1]: https://playcanvas.com/project/405882
 [2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png

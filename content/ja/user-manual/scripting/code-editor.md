@@ -1,43 +1,43 @@
 ---
-title: Code Editor
+title: コードエディタ
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Script assets are edited using PlayCanvas' Code Editor. Double click on a script asset to open the file in the Editor. The Editor supports real-time collaborative editing by all users with permission to edit the code. You will see other user's avatars in the bottom right of the code editor window
+スクリプトアセットはPlayCanvasのコードエディタを使用して編集されます。エディタでファイルを開くにはスクリプトアセットをダブルクリックします。コード編集の権限を持つ全てのユーザはエディタでリアルタイムに共同編集することができます。コードエディタ画面の右下に他のユーザーのアバターが表示されます。
 
-![Code Editor][1]
+![コードエディタ][1]
 
-## Collaboration, Saving & Reverting
+## コラボレーション、保存、復帰
 
-The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time. The Revert button will restore the document back to the last saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
+コードエディタでは共同作業が可能です。つまり、エディタでドキュメントを開いているすべてのユーザーが、他の開発者によって加えられる変更を確認することができます。ただし、変更内容は自動的に保存されず、アプリケーションをエディタから実行すると保存されたバージョンが読み込まれます。つまり、どの時点で変更をコミットさせアプリケーションで使用するかを選択できます。すべてのユーザーが任意の時点でドキュメントを保存することができます。「元に戻す」ボタンを使用すると最後に保存したバージョンにドキュメントを復元します。変更を保存する前にすべてのユーザーがドキュメントを終了すると、未保存の変更は少しの間保管され、ドキュメントは保存されたバージョンに自動的に戻されます。このため、ドキュメントを終了する前に作業を保存する必要があります。
 
-## Hot Keys
+## ホットキー
 
 <table>
 <tr>
-    <td>Ctrl + F</td><td>Find in file</td>
+    <td>Ctrl + F</td><td>ファイル内で検索</td>
 </tr>
 <tr>
-    <td>Ctrl + G</td><td>Find next match</td>
+    <td>Ctrl + G</td><td>次のマッチを検索</td>
 </tr>
 <tr>
-    <td>Ctrl + /</td><td>Comment line</td>
+    <td>Ctrl + /</td><td>コメントライン</td>
 </tr>
 <tr>
-    <td>Ctrl + Q</td><td>Rename variable</td>
+    <td>Ctrl + Q</td><td>変数の名前を変更</td>
 </tr>
 <tr>
-    <td>Alt + .</td><td>Jump to declaration</td>
+    <td>Alt + .</td><td>宣言へジャンプ</td>
 </tr>
 <tr>
-    <td>Ctrl + Space</td><td>Show autocomplete</td>
+    <td>Ctrl + Space</td><td>オートコンプリートを表示</td>
 </tr>
 <tr>
-    <td>Ctrl + I</td><td>Show type</td>
+    <td>Ctrl + I</td><td>タイプを表示</td>
 </tr>
 <tr>
-    <td>Ctrl + O</td><td>Show documentation</td>
+    <td>Ctrl + O</td><td>ドキュメントを表示</td>
 </tr>
 </table>
 
