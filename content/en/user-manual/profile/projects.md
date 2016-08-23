@@ -34,5 +34,11 @@ If you have an ORG plan you can import a .zip archive that contains an export pr
 
 Click on Import Project on the left hand side of the Projects page and select the zip file to import it.
 
+## Transfer Project Ownership
+
+If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership. A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to. Enter the username and click FIND or press Enter. Then click Transfer.
+
+The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list. If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+
 
 [1]: /images/user-manual/profile/profile.png "Projects"
