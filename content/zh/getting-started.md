@@ -57,61 +57,62 @@ PlayCanvas 的场景高效的管理应用中的各种“事物”。我们把所
 我们先来命名我们的场景：
 
 * 选择编辑器工具栏左下角的齿轮图标按钮。
+* 在检测面板中，将场景的名称设置为类似“旋转的立方体”的字段，然后敲击回车保存。
 
-Now, for our spinning box experiment, we will need 3 Entities:
+为了实现我们的旋转立方体测试，我们需要3个实体：
 
-* A box.
-* A camera (to view the box).
-* A light (to give some definition to the box).
+* 一个立方体.
+* 摄像机 (用于观察立方体).
+* 一个光照 (对立方体进行一些光照影响).
 
-Fortunately, the Editor automatically creates a directional light and a camera for you when a new scene is created. So here are the steps to create the box:
+幸运的是，编辑器会在创建一个新的场景时自动创建好一个定向光源和摄像头。因此，下列是创建一个立方体的操作步骤：
 
-* Right click on the Root node in the HIERARCHY panel to bring up the context menu and select 'New Entity' -> 'Box'. This creates a new child box entity of 'Root' in the HIERARCHY.
+* 右键点击场景面板中的根节点唤出操作菜单，然后点击'New Entity' -> 'Box'。这样就在场景的根节点 'Root' 下新建了一个新的子物体立方体。
 
 ![New Box][8]
 
-You should now have someone similar to the following in the 3D View:
+现在，你在3D场景面板中应该可以看到这些东西：
 
-![Box In Editor][9]
+![编辑器中的立方体][9]
 
-### Save your work?
+### 保存作业?
 
-Now would seem to be a good time to save your work, right? In actual fact, the PlayCanvas Editor continually updates your project on the server and therefore there is no need for a save button. Your work is preserved should you decide to close the Editor tab at any point. You can also use the 'Fork' button at the top-right of a project dashboard page to create a copy of the whole project.
+现在是适合保存您的作业的时刻了对么？事实上，PlayCanvas引擎一直在不断地更新和保存您的工程在服务器上的状态，因此它不需要您手动进行保存操作。您的工作结果已被保存，因此您任何时刻都可以点击关闭按钮退出编辑器。你还可以通过点击在项目仪表盘页面右上方的“叉”按钮来创建一份完整工程的副本。
 
-### Previewing Your Work
+### 预览您的工作
 
-From the Editor, you can quickly preview your work at any time. To do this, press either the 'Launch' button on the toolbar.
+在编辑器中，你可以在任意时刻快速地预览您的工作。为了达成这个，点击工具栏中的“运行”按钮即可。
 
 ![Launch Buttons][10]
 
-This will open a new tab and fire up your web app. Based on the steps above, you should see something similar to what is shown below:
+这将打开一个新的标签并启动你的web应用程序。基于以上的步骤，你应该看到类似于如下所示的内容：
 
 ![Box Launched][11]
 
-Once you are done with previewing your Scene, you can either close the Launch tab or simply switch back to the Editor tab. Note that if you leave the Launch tab open, a live link persists between the Editor and the running app. One method of working it to tear off the Launch tab and place it side by side with the Editor tab which makes previewing any live updates much easier.
+一旦你完成了场景预览，您可以关闭该启动的选项卡或者干脆切换回编辑器选项卡。请注意，如果你离开的启动选项卡打开，一个活链接编辑器和运行的应用程序之间仍然存在。一种将启动的选项标签撕下，和编辑器并排放置的工作方式就形成了。这让实时预览更新后的工作结果变得更加容易。
 
-### Scripting Entities
+### 脚本实例
 
-So far, we've managed to render a box. Now, let's animate it.
+到目前为止，我们已经成功地创建了一个立方体。现在，让我们旋转它。
 
-The real power and versatility of PlayCanvas comes from the ability to assign scripted behaviour to individual entities. This is done by assigning a script component to an entity and then specifying the JavaScript file that executes in relation to that entity. In order to get the box to spin, we need to write some code that executes every frame, rotating the box on its vertical axis by a small amount at a time.
+PlayCanvas的真正威力和多功能性来自于它可以把脚本的行为分配到各个实体。这是通过分配一个脚本组件到实体上，然后指定有关该实体执行JavaScript文件完成的。为了使指定立方体旋转，我们需要编写一些每一帧都会执行的代码，让它每帧在垂直轴上进行小幅度旋转。
 
-#### Hosted or Local code?
+#### 托管或本地代码?
 
-There are two main ways of writing code for PlayCanvas. The first and simplest is to use the PlayCanvas built-in script editor, which saves directly to the PlayCanvas servers. The second is to edit code in you favourite text editor and run a local web-server.
+在Playcanvas中编写代码主要有两种方式。第一种以及最简单的一种是使用PlayCanvas内置脚本编辑器，它可以直接把内容保存到PlayCanvas服务器。二是使用你最喜欢的文本编辑器编辑代码并运行本地Web服务器。
 
-For this tutorial we're going to stick to editing code using PlayCanvas, but for more details see our [Scripting Workflow][12] page.
+在本教程中我们将使用PlayCanvas的内置编辑器编辑代码，详细内容见我们的[脚本工作流程] [12]页。
 
-First we need to create a script component and create a new script to edit.
+首先，我们要创建一个脚本组建并为其添加一个脚本文件用于编辑。
 
-* Right click the entity called 'Box' in the HIERARCHY panel and select the following menu item: 'Add Component' -> 'Script'.
+* 右击层级树面板中的名为“Box”的立方体实例，然后选择下拉菜单中的按钮选项: 'Add Component' -> 'Script'.
 
 ![Add Script][13]
 
-* In the Script section in INSPECTOR, click the top line of the URLs field to edit the filename. Set the Add attribute of the script component to 'spinner.js' and hit Enter.
-* Click on the name of the script 'spinner.js' and the PlayCanvas script editor will open in a new tab.
+* 在检查器的脚本部分，点击URL字段的顶部行来编辑文件名。脚本组件添加属性设置为“spinner.js，然后按Enter按键进行设置。
+* 点击脚本的名称'spinner.js“然后PlayCanvas的脚本编辑器将打开一个新标签。
 
-In the code editor update the script template to match the code below (you just need to fill in the body of the update function):
+在代码编辑器中更新脚本模板使其与前代码相匹配(你只需要把被更新的功能内容填入):
 
 ~~~javascript~~~
 pc.script.create("spinner", function (app) {
@@ -132,9 +133,9 @@ pc.script.create("spinner", function (app) {
 });
 ~~~
 
-Once you've edited the code, press the "Save" button in the code editor and switch back to the Editor tab. Note that the script editor actually does require you to explicitly save, unlike the main Editor application.
+一旦你编辑了代码，请在代码编辑器中按“保存”按钮后切换回编辑器选项卡。需要注意的是脚本编辑器要求你进行明确的保存操作，而不像主编辑器应用程序。
 
-With that done, you can select the Launch button again. This time, you should see your box rotating on the spot. Congratulations, you have built your first PlayCanvas app!
+在做完这些后，你可以再次点击运行按钮。这次，你可以看到你的立方体在视野中旋转。恭喜，你已经完成了你的第一个PlayCanvas的可运行程序！
 
 [1]: /images/platform/profile.png "Profile"
 [2]: /images/platform/project_list.jpg "Project List"

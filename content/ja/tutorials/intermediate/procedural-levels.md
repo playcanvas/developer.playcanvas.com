@@ -16,13 +16,13 @@ position: 5
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
-    型: 'number',
-    デフォルト: 10
+type: 'number',
+default: 10
 });
 
 Generate.attributes.add('numTilesY', {
-    型: 'number',
-    デフォルト: 10
+type: 'number',
+default: 10
 });
 
 // initializeコードがエンティティ毎に一度呼ばれる

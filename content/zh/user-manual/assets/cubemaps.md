@@ -1,66 +1,66 @@
 ---
-title: Cube Maps
+title: 立方体贴图
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Cube maps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
+立方体贴图是一种特殊的纹理资源。它由每一个都该表一个立方体的面的6份纹理资源组成。立方体贴图通常有两个用途:
 
-1. A cube map can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cube map can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cube map as the cube map on a reflective object's materials.
+1. 立方体贴图可以定义场景的天空盒。一个天空盒包含视觉效果较远的场景，如丘陵，山区，天空等的图像。
+2. 一个立方体贴图可以在任何材料上添加反射来。想象一个光照和镀了铬的球在你的场景中。这个球上反映了周围的景象。在开放的环境中，你通常会把场景的天空盒立方体贴图设置为反射物体的材料立方体贴图。
 
 <iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
 
-## Importing Cube Map Textures
+## 导入立方体贴图
 
-A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Editor. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
+立方体贴图是需要六个纹理资源作为输入的材质。因此，为了充分配置一个新的立方体贴图资源，你必须先向工程中导入6个贴图资源。这一步很简单，只需要将6分图像文件拖拽到当前工程的PlayCanvas编辑器中。一旦图像上传处理完毕，它们会在资源栏里呈现，并能够被作为立方体贴图的输入资源。
 
-## Creating New Cube Map
+## 创建立方体贴图
 
-You can create new cube map assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
+你可以直接使用PlayCanvas编辑器界面创建资源菜单中的资源面板创建一个新的立方体贴图。
 
 <img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px" />
 
-This creates a new cube map Asset and opens up the Cube Map Editor on the right-hand side of the screen.
+这将创建一个新的立方体资源并在屏幕的右侧打开立方体地图编辑器。
 
-## Selecting a Cube Map
+## 选择一个立方体贴图
 
-To select a cube map in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cube map filter to narrow down the options for selection. Cube maps are identified by a 3D cube icon.
+为了选择一个立方体贴图以编辑它, 应该在资源面板中选择它。 要做到这一点最简单的方法是选择立方体贴图过滤器来缩小可供选择的选项。立方体地图资源被3D魔方图标标识。
 
-When a cube map is selected, the Editor panel on the right of the Editor will show the Cube Map Editor.
+当一个立方体贴图被选定后，右侧的编辑器面板就会显示立方体贴图编辑器。
 
-## Editing a Cube Map
+## 编辑立方体贴图
 
 <img src="/images/user-manual/cubemap-inspector.jpg" style="width: 300px; float: left; padding: 20px; padding-top: 0px;" />
 
-Once you have a cube map selected, you can edit its properties.
+一旦你选中了立方体贴图资源，你就可以编辑它的属性。
 
-### Min Filter
-This setting determines how the pixels of the cube maps are interpolated as they are minified. Minification is when the texel to screen pixel ratio is greater than one. Linear gives the best results visually, followed by Nearest.
+### 最小值过滤
+此设置决定了如何缩小的立方体贴图的像素插值。缩小倍率为纹理像素到屏幕像素比率。线性效果的视觉最佳，紧随其后的是最近的效果。
 
-### Mip Filter
-This setting controls additional controls to improve the quality of a cube map as it is minified. Linear gives the best results visually, followed by Nearest and then None.
+### 中值过滤
+此设置控制额外控件在贴图缩小时提高立方体贴图的质量。线性效果提供最佳的视觉体验，其次是最近的效果，最后是无效果。
 
-### Mag Filter
-This setting determines how the pixels of the cube maps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+### 最大值过滤
+此设置决定了立方体贴图被放大后的像素插值。倍率是当前纹理像素到屏幕像素比率。线性效果最佳视觉，紧随其后的是最近的效果。。
 
-### Anisotropy
-Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
+### 各向异性
+各向异性是一个从1和16之间的值，它控制纹理采样的质量，从而让摄像机的视图矢量与纹理表面的排列变得更紧密。
 
-### Texture Slots
-The six texture assets that correspond to the faces of a cube. The cube map preview panel at the top of the editor if your guide, helping you to connect faces together correctly. Think of the preview as a box unfolded to a flat plane.
+### 纹理槽
+六个纹理资源对应于立方体的面。编辑器的顶部的立方体地图预览面板会为你把立方体的面按照你的指示正确连接到一起。试想预览就像把一个盒子展开到一个平面上。
 
-### Prefilter
+### 前置过滤
 
-The cube map inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cube map is essential for using the Physical material.
+立方体贴图编辑器有一个预过滤器按钮，它会生成一组用于物理材料的环境映射的低分辨率纹理。预过滤立方体贴图在物理材质的使用中必不可少。
 
-## Assigning Cube Maps to Materials
+## 指定立方体贴图到材质
 
-The default Phong and Physical material types both have reflection properties. If you expand the Environment property section, you see the following:
+默认的蓬状和物理的材质都具有反射特性。如果展开环境属性部分，您将看到以下内容：
 
 <img src="/images/user-manual/material-environment.jpg" style="width: 300px;"/>
 
-You can click the Empty slot to select a cube map or drag and drop a cube map asset from the asset panel into the cube map slot.
+您可以点击空槽选择一个立方体贴图或从资源面板拖放立方体贴图资产到立方体贴图插槽上面。
 
-Note: a Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
+注: 物理材质如果被分配和预过滤将被作为默认环境贴图使用到场景天空盒。
 

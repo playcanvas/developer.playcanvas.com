@@ -1,84 +1,84 @@
 ---
-title: Programmatically Creating Entities
+title: Программное создание сущностей
 template: tutorial-page.tmpl.html
 position: 2
 ---
 
 <iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>
 
-Usually you will be creating Entities via the PlayCanvas Editor, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
+Обычно, вы создавали сущности через редактор PlayCanvas, собирая коллекции компонентов и скриптов для созданий разных частей вашей игры. Однако, в некоторых случаях, вам необходимо создавать сущности в скрипте. В этом уроке узнаете, как это делать.
 
-## Creating an Entity
+## Создание сущности
 
 ~~~js
-var entity = new pc.Entity(); // Create an Entity
+var entity = new pc.Entity(); // Создание сущности
 
-// Add it to the Entity hierarchy
+// Добавление сущности в иерархию
 this.app.root.addChild(entity);
 ~~~
 
-First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `this.app.root`.
+Сперва вам нужно создать сущность. Это просто, но важно не забыть добавить сущность к главной иерархии сущностей. Только сущности в иерархии могут быть трансформированы, иметь компоненты и скрипты. В ваших скриптах вы можете обратиться к корню иерархии сущностей из объекта класса Application, который передан в ваш скрипт. Условно, он обычно называется "app" и иерархия доступна через "this.app.root".
 
-## Adding Components
+## Добавление компонентов
 
 ~~~js~~~
-// Create a new Entity
+// Создание новой сущности
 var entity = new pc.Entity();
 
-// Add a new Camera Component with default values
+// Добавление камеры со стандартными настройками
 entity.addComponent("camera");
 
-// Add a new Model Component and add it to the Entity.
+// Создание новой модели и добавление ее к сущности
 entity.addComponent("model", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// Добавляем сущность к иерархии
 this.app.root.addChild(entity);
 ~~~
 
-An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. You can use the `addComponent` method of the Entity to create and add a new Component to the Entity.
+Сущность, как она есть, не имеет смысла, поэтому вам необходимо добавить компоненты, чтобы добиться результата. Вы можете использовать метод `Добавить компонент` сущности чтобы создать и добавить компонент.
 
-Each Component type has different properties that can be passed in on the data object, see the [Component's documentation][1] for more detail about which properties are available. The `data` argument can be left out and default values will be used.
+Каждый тип компонентов имеет разные свойства, которые могут быть переданы в одном объекте, смотрите  [Документацию по компонентам][1] чтобы узнать о том, какими свойствами обладает данный тип. Аргумент `data` может быть пропущен и тогда компонент получит стандартные значения.
 
-## Removing Components
+## Удаление компонентов
 
 ~~~js~~~
 var entity = new pc.Entity();
 
-// Attach Camera Component with default values
+// Добавляем камеру со стандартными свойствами
 entity.addComponent("camera");
 
-// Delete the Camera Component
+// Удаляем камеру
 entity.removeComponent("camera");
 ~~~
 
-Components can be deleted individually from an Entity by calling the `removeComponent` method on the Entity.
+Компоненты сущности могут быть удалены по отдельности, по средством метода `removeComponent`.
 
-## Deleting Entities
+## Удаление сущностей
 
 ~~~js~~~
-// Create a new Entity
+// Создание сущности
 var entity = new pc.Entity();
 
-// Create a new Camera Component with default values
+// Создание камеры со стандартными значениями
 entity.addComponent("camera");
 
-// Create a new Model Component and add it to the Entity.
+// Создание модели куба и добавление его к сущности
 entity.addComponent("model", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// Добавление модели к иерархии
 this.app.root.addChild(entity);
 
-// Delete the Entity and remove it from the hierarchy
+// Удаление сущности и удаление ее из иерархии
 entity.destroy();
 ~~~
 
-When you are finished with an Entity you call the `destroy` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
+Когда вы закончите работу с сущностью, вы можете вызвать метод `destroy`. Это удалит все компоненты и удалит сущность из иерархии. Это также удалит и все дочерние сущности.
 
-## In Action
+## В действии
 
 ~~~js~~~
 var EntityCreator = pc.createScript('entityCreator');
@@ -103,26 +103,26 @@ EntityCreator.attributes.add('maxCubes', {
     default: 10
 });
 
-// initialize code called once per entity
+// Код, который вызывается единожды
 EntityCreator.prototype.initialize = function() {
     this.entities = [];
 };
 
-// update code called every frame
+// Обновление каждый кадр
 EntityCreator.prototype.update = function(dt) {
-    // Spawn new cubes if there are less than maxCubes
+    // Спауним кубы, если их количество меньше, чем максимальное
     while (this.entities.length < this.maxCubes) {
         this.spawnCube();
     }
 
-    // Loop through Entities and delete them when their time is up
+    // Цикл по всем сущностям. Удаляем их, если их время вышло
     for (i = 0; i < this.entities.length; i++) {
         this.entities[i].timer -= dt;
         if (this.entities[i].timer < 0) {
-            // entity.destroy() deletes all components and removes Entity from the hierarchy
+            // entity.destroy() удаляет все компоненты и сущность из иерархии
             this.entities[i].entity.destroy();
 
-            // Remove from the local list
+            // Удаление из местного списка
             this.entities.splice(i, 1);
         }
     }
@@ -131,25 +131,25 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // Add a new Model Component and add it to the Entity.
+    // Создание модели кубика и добавление ее к сущности.
     entity.addComponent("model", {
         type: 'box'
     });
 
-    // set material
+    // Установка материала
     entity.model.material = this.material.resource;
 
-    // Move to a random position
+    // Перемещение в случайное место
     entity.setLocalPosition(
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions)
     );
 
-    // Add to the Hierarchy
+    // Добавление модели к иерархии
     this.app.root.addChild(entity);
 
-    // Store in a list for some random duration before deleting
+    // Добавление в лист со случайным временем жизни
     this.entities.push({
         entity: entity,
         timer: pc.math.random(0, this.lifetime)
@@ -157,9 +157,9 @@ EntityCreator.prototype.spawnCube = function () {
 };
 ~~~
 
-This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
+Это полный скрипт, работу которого вы можете видеть в начале уроке. Это продолжает создавать и удалять новые сущности с добавленными компонентами модели.
 
-See [the full scene here][2].
+Смотрите [полную сцену здесь][2].
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341

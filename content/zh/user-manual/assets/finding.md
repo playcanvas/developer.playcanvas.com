@@ -1,17 +1,17 @@
 ---
-title: Finding Assets
+title: 获取资源
 template: usermanual-page.tmpl.html
 ---
 
-## Where can I get 3D models/Sound FX/Music for PlayCanvas?
+##我可以从哪里获取适用于PlayCanvas的3D模型/声效/音乐资源 ?
 
-Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types.
+创建个人独有的资源是非常重要的，但有时完全定制一份资源需要太昂贵的价格或更多的时间。因此，我们整理并收集了一份资源链接的列表，你可以从这里得到免费或付费的各类资源。
 
-If you've got other suggestions for this page. Then let us know on the [forums](http://forum.playcanvas.com/)
+如果你有对本页更多的其它可行的建议。请在 [论坛](http://forum.playcanvas.com/)告诉我们。
 
-## Asset Marketplaces
+## 资源交易市场
 
-Asset marketplaces are online libraries of content that you can download, either for free or for a fee, and add to your PlayCanvas game.
+资源交易市场作为数据库存放了免费或收费的资源。你可以在此下载资源并添加到您的PlayCanvas游戏内容中。
 
 <table class="table table-striped table-bordered">
     <tr><th>Provider</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
@@ -29,9 +29,9 @@ Asset marketplaces are online libraries of content that you can download, either
     <tr><td><a href="http://www.yobi3d.com/">Yobi3D</a></td><td></td><td>&#x2713;</td><td></td></tr>
 </table>
 
-## Procedural Generation Tools
+## 程序创建工具
 
-There are tools available that can generate game assets procedurally. Here are some good examples:
+还有一些可以通过程序性操作创建可用的游戏资源的工具。这里有一些很好的例子：
 
 * [Sound FX Generator](http://www.bfxr.net/)
 * [Spacescape Skybox Generator](http://alexcpeterson.com/spacescape)
