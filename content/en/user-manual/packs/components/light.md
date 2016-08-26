@@ -33,7 +33,7 @@ The Light component can be enabled or disabled using the toggle in the top right
     <tr><td>Color</td><td>The color of the emitted light.</td></tr>
     <tr><td>Intensity</td><td>The intensity of the light, this acts as a scalar value for the light's color. This value can exceed 1.</td></tr>
     <tr><td>Range</td><td>Point and Spot only. The distance from the spotlight source at which its contribution falls to zero.</td></tr>
-    <tr><td>Falloff Mode</td><td>Point and spot only. Controls the rate at which a light attentuates from its position.</td></tr>
+    <tr><td>Falloff Mode</td><td>Point and spot only. Controls the rate at which a light attenuates from its position.</td></tr>
     <tr><td>Cone Angles</td><td>Spot only. The inner and outer cone angles, measured from the spotlight's direction, at which light falls from its maximum to zero.</td></tr>
     <tr><td>Shadows</td><td>If checked, the light will cause shadow casting models to cast shadows.</td></tr>
     <tr><td>Update Mode</td><td>Determines when the shadowmap for this light is updated. Can be:
