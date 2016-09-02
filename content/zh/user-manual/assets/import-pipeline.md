@@ -1,65 +1,65 @@
 ---
-title: Asset Import Pipeline
+title: 资源导入通道
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Some assets are uploaded in source format and need to be converted into a "target" format before they can be used in a game at runtime. This process is called *Importing*. For example, a 3D model can be uploaded as an FBX file, but must be converted into a PlayCanvas compatible model file before it can be loaded in the game.
+有些资源以源格式被上传，在应用到游戏之前需要被转换成“目标”格式。这个过程称为“导入”。比如，一个FBX文件的3D模型可以通过上传，但是在游戏加载之前必须转换成可被PlayCanvas兼容的模型文件。
 
-Some assets don't need to be imported before they can be used. For example a PNG image can be used as a texture immediately.
+有些资源在被使用之前没有必要被导入。比如，PNG图像可以立刻作为纹理被运用到游戏设计当中。
 
-## Asset Tasks
+## 资源任务
 
-When a source asset is uploaded that needs to be imported. PlayCanvas starts an Asset Task to perform this import process on our server. You can see the asset tasks that you are currently running in the Asset Panel.
+当一个需要被导入的源资源被上传时。PlayCanvas启动一个资源任务在服务器上执行导入过程。你将可以在资源面板中查看最近运行的资源任务。
 
 ![asset tasks][1]
 
-There are a variety of options available to tune the behaviour of the import pipeline to suit your needs.
+为了满足用户的需求，这里提供了多种选项用以调整导入通道的行为。
 
 ![asset task options][2]
 
-### Auto-run
+### 自动运行
 
-By default, when you upload a file we will automatically run the import pipline for that asset. If you don't want to run the pipeline you can disable auto-run from the task panel or from the settings.
+默认情况下，当你上传一个文件时系统将会对资源自动运行导入通道。如果用户不希望自动运行导入通道，可以通过设置或者在任务面板中关闭自动运行来停止。
 
-If auto-run is disabled you can run or dismiss tasks individually from the asset panel.
+如果关闭自动运行导入通道，你可以在资源面板中单独运行或排除任务。
 
-### Search related assets
+### 搜索相关资源
 
-When you update an source asset by uploading a new version of the file. There are two possible behaviours for how we update the target assets that are created by the import pipeline.
+当你通过上传一个新版本的文件来更新一个源资源时，对于用户如何通过导入通道来更新目标资源，这里有两种可能的方式。
 
-* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
-* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
+如果**Search related assets**被开启，通道将会更新目标资源无论它们位于哪个文件夹。
+如果**Search related assets**被关闭，通道将只会寻找在于源资源在同一文件夹中的目标资源。
 
-So, if you leave this enabled, you are able to organize your source and target assets into folders and be sure that when you update a source assets it will update all related assets.
+因此，如果你将这个选项设置为开启，用户将可以添加文件资源以及目标资源到文件夹中，确保当更新源资源时，所有相关资源将会被更新。
 
-## Texture Options
+## 纹理选项
 
-These options only affect the importing of images and textures
+以下这些选项将只会影响图像和纹理的导入
 
 ### Texture POT (Power of Two)
 
-When this option is enabled textures that are not a power of two will be converted to the nearest power of two resolution when they are imported.
+当这个选项被开启，在贴图被导入时贴图尺寸将不会成为2的整倍数，而是将会被转换成最接近的2的整倍数的分辨率。
 
-## Model Options
+## 纹理选项
 
-These options only affect the importing of model or scene files (e.g. FBX, Collada, obj, etc)
+以下选项只会影响模型或场景文件（譬如FBX，Collada，obj等）的导入。
 
-### Overwrite Models
+### 覆盖模型
 
-When a model file is updated or reimported this option determines whether or not the target model file is overwritten. The default behaviour is to overwrite with the new model.
+这个选项决定了当更新或者重新导入一个模型文件时，目标资源是否会被覆盖。在默认情况下，目标资源将会被一个新的模型所覆盖。
 
-### Overwrite Animations
+### 覆盖动画
 
-When a model file is updated or reimported this option determines whether or not a animations created from the model are overwritten. The default behaviour is to overwrite with the new animations.
+这个选项决定了当更新或重新导入一个模型文件时，从模型创建的动画是否会被覆盖。在默认情况下，新动画将会覆盖。
 
-### Overwrite Materials
+### 覆盖材质
 
-When a model file is updated or reimported this option determines whether or not materials created from the model are overwritten. The default behaviour is to leave existing materials.
+这个选项决定了当更新或重新导入一个模型文件时，从模型创建的材质是否会被覆盖。在默认情况下，将会使用新材质代替现有材质。
 
-### Overwrite Textures
+### 覆盖贴图
 
-When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behaviour is to overwrite with the new textures.
+这个选项决定了当更新或重新导入一个模型文件时，从模型创建的贴图是否会被覆盖。在默认情况下。新贴图将会覆盖。
 
 [1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
 [2]: /images/user-manual/assets/import-pipeline/asset-tasks.jpg

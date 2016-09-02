@@ -1,12 +1,12 @@
 ---
-title: Shader
+title: 着色器
 template: usermanual-page.tmpl.html
 position: 12
 ---
 
-A shader asset contains GLSL code. You can create a new Shader asset by clicking New Shader in the Asset Panel in the Editor or by uploading a file with an extension of ```.vert```, ```.frag``` or ```.glsl```.
+ 一个包含了GLSL代码的着色器资源。用户可以在编辑器的资源面板中通过点击New Shader或上传带有```.vert```, ```.frag``` or ```.glsl```后缀的文件来创建新的着色器资源。
 
-To edit a Shader asset, right click on it in the Editor and select Edit. Here's an example on using Shader assets to create a custom material.
+编辑一个着色器资源，左键点击编辑器选择编辑。以下是一个例子通过使用着色器来创建一个自定义材料。
 
 ```
 var vertexShader = app.assets.find('my_vertex_shader');

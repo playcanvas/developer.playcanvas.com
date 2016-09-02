@@ -1,17 +1,17 @@
 ---
-title: Textures
+title: 纹理
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-Textures assets are image files which are used as part of a [material][material] to give a 3D model a realistic appearance.
+纹理资源是图像文件作为一种[material][材质]给予了3D模型逼真的外观。
 
-We accept a wide variety of image files as the source for a texture asset. After uploading, textures will be converted to a web-friendly format. Currently the conversion process is this:
+PlayCanvas允许各类的图像文件作为纹理资源的素材。在上传之后，纹理将会被转换为合适网页的格式。目前转换的过程是这样的：
 
-* PNG files persist as PNG files. This preserves transparency.
-* All other files are converted to JPEG files. This does not preserve transparency.
+* PNG文件将不会改变，保留了图像的透明度。
+* 除PNG之外的其它文件将会全都转换为JPEG格式的文件，这不会保留图像的透明度。
 
-The width and height of an uploaded texture should ideally be a power of two. If this is not the case, the uploaded image is automatically resized to the nearest power of two in either dimension. Note that an uploaded texture image does not have to be square (with the width equalling the height). So a valid dimension could be 64x512 or 1024x256. If the uploaded image is greater than 2048 in width or height, the image will be resized down to 2048.
+一个已经上传的纹理的理想长度和高度应该为2次幂。如果情况并非如此，上传的图像的尺寸将会自动变成最接近的2次幂。注意一个上传了的纹理图像并不一定是正方形的（宽度和高度相等），因此一个有效的尺寸可以为64x512或者1024x256.如果上传的图像的宽度或高度大于2048那么这个图像将会被缩减到2048。
 
 [material]: /user-manual/assets/materials
 

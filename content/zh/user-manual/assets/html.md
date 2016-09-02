@@ -4,11 +4,11 @@ template: usermanual-page.tmpl.html
 position: 10
 ---
 
-An HTML asset contains HTML code. The code can either be a full HTML page or just partial HTML. You can create a new HTML asset in the Editor or by uploading a file with an .html extension.
+HTML资源包含了HTML代码。代码可以是全HTML也可以是部分HTML。用户将可以在编辑器中或者上传一个带有.html后缀的文件来创建一个新的HTML资源。
 
-To edit an HTML asset, right click on it in the Editor and select Edit.
+编辑HTML资源，通过左键点击编辑器选择编辑。
 
-The loaded HTML asset is just a string. You can use that string as you like - a common way to add HTML to the document is the following
+加载的HTML资源实际上就是字符串。你可以任意使用这个字符串－以下是将HTML添加进入文件的常见方法
 
 ```javascript
 // get asset from registry by id

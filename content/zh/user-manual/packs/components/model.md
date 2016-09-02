@@ -1,16 +1,16 @@
 ---
-title: Model
+title: 模型
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-The Model component enables an entity to render a primitive shape or a model asset.
+模型组件允许一个实体渲染图元或者模型元件。
 
-The Model component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the model will be added to the scene and rendered.
+使用模型模版右上角的切换键可以开启或关闭模型组件。在启用状态下，模型将会被添加到场景并且进行渲染。
 
-![Model component][1]
+![模型组件][1]
 
-## Properties
+## 属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -24,13 +24,13 @@ The Model component can be enabled or disabled using the toggle in the top right
     <tr><td>Receive Shadows</td><td>If enabled, the model rendered by this component will receive shadows cast by other models in the scene.</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
-You can control a Model component's properties using a [script component][2]. The Model component's scripting interface is [here][3].
+可以通过[脚本组件][2]来修改模型组件的属性。模型组件的脚本接口在[这里][3]。
 
-## Customizing Materials
+## 制作材质
 
-You can learn how to customize the materials of your model [here][4].
+学习如果制作一个模型的材质 点击 [这里][4].
 
 [1]: /images/user-manual/scenes/components/component-model.jpg
 [2]: /user-manual/packs/components/script

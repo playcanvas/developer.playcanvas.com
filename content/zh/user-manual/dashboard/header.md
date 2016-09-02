@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-![Dashboard][1]
+![指示板][1]
 
 指示板标题提供了很多项目操作的常用功能按钮。
 

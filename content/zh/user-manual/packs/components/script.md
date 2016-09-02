@@ -1,26 +1,26 @@
 ---
-title: Script
+title: 脚本
 template: usermanual-page.tmpl.html
 position: 10
 ---
 
-The Script component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.
+脚本组件允许实体运行用户所支持的脚本。在每一帧的基础上当实体被实例化或者更新，用户可以通过JavaScript编程语言编写脚本。
 
-The Script component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, all of the assigned scripts will have their update functions called every frame.
+使用脚本面板右上角的切换键可以开启或者关闭脚本组件。在启用的状态下，所有指定脚本将由他们自己的更新函数呼叫每一帧。
 
-![Script component][1]
+![脚本组件][1]
 
-To create a new script, click on the <span class="font-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+创建一个新的组件，点击这里  <span class="font-icon" style="font-size: 18px">&#58468;</span>点击按钮选择创建新的脚本，然后在弹出的窗口中输入脚本的名称。
 
 <img src="/images/user-manual/new_script.jpg"/>
 
-You can then drag the new script on a script component or you can click the Add Script button in the script component Inspector and then select it from the Assets Panel.
+你可以拖拽一个新的脚本到脚本组件或者你可以在脚本组件检查器中点击"Add Script"按钮再从资源面板中选择。
 
-To edit the script in the PlayCanvas Code Editor you can either click on the hyperlinked script name, or you can select the script from the Assets Panel and click Edit.
+在PlayCanvas Code Editor中你可以通过点击超链接脚本名称或者在资源面板中选择你要修改的脚本点击Edit来进行对脚本的编辑。
 
-## Scripting Interface
+## 脚本接口
 
-The Script component's scripting interface is [here][2].
+脚本组件点击 [这里][2].
 
 [1]: /images/user-manual/scenes/components/component-script.png
 [2]: /engine/api/stable/symbols/pc.ScriptComponent.html

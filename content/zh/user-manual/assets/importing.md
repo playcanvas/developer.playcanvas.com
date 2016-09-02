@@ -1,22 +1,22 @@
 ---
-title: Uploading and Importing
+title: 上传并导入
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## Creating New Assets
+## 创建新资源
 
-To upload an asset to PlayCanvas, follow these steps:
+在PlayCanvas中上传一个新的资源，通过一下几个步骤：
 
-### In the Editor
+### 在编辑器中
 
-* Drag and drop your asset file into the Asset panel in the Editor window.
-* A progress bar will appear along the bottom.
-* When the progress bar disappears, your new Asset will appear in the Asset panel.
+* 将您的资源文件拖拽放入编辑器窗口的资源面板。
+* 一个进度条将会出现在面板底部。
+* 当进度条读取进度完成，您新的资源将会出现在资源面板中。
 
-Now, when you attempt to choose an asset via the asset picker attribute control (for the Model component or the Animation component for example), your asset will be available for assignment.
+现在，当我们尝试通过资源选择器（譬如模型组件或者动画组件）选中一个资源时，您的资源将会出现在任务中。
 
-## Updating Existing Assets
+## 更新已有资源
 
-To update an Asset that you have already uploaded. Upload the asset again, ensuring that you have the same filename as the existing asset. PlayCanvas will update the existing asset with the new upload.
+更新一个您已经上传了的资源，再一次上传您的资源，确保和已有资源有着相同的文件吗。PlayCanvas将会通过新的上传文件更新现有资源。
 
