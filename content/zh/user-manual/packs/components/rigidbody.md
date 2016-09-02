@@ -1,7 +1,7 @@
 ---
-title: 刚体
+title: Rigid Body
 template: usermanual-page.tmpl.html
-position: 9
+position: 8
 ---
 
 刚体组件决定了一个实体是否加入场景的物理模拟，这将真实地模拟一个实体的真实运动。组件接口的动态显示将基于不同“Type”类型的属性。

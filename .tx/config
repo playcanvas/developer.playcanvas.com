@@ -1345,3 +1345,27 @@ source_file = po/user-manual/scripting/legacy/workflow.en-US.po
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-tutorials-intermediate-light-cookies]
+file_filter = po/tutorials/intermediate/light-cookies.<lang>.po
+source_file = po/tutorials/intermediate/light-cookies.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-organizations-creating-organizations]
+file_filter = po/user-manual/organizations/creating-organizations.<lang>.po
+source_file = po/user-manual/organizations/creating-organizations.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-organizations-index]
+file_filter = po/user-manual/organizations/index.<lang>.po
+source_file = po/user-manual/organizations/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-organizations-managing-organizations]
+file_filter = po/user-manual/organizations/managing-organizations.<lang>.po
+source_file = po/user-manual/organizations/managing-organizations.en-US.po
+source_lang = en
+type = PO
+

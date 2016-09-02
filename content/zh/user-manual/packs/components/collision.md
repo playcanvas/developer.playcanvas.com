@@ -1,7 +1,7 @@
 ---
-title: 碰撞体
+title: Collision
 template: usermanual-page.tmpl.html
-position: 5
+position: 4
 ---
 
 碰撞体组件指定了对于实体的碰撞体体积。组件接口动态地显示了基于”Type”属性的不同属性。

@@ -8,8 +8,10 @@ position: 2
 
 ![profile_page][1]
 
-Вы можете изменить изображение вашего профиля при помощи [Gravatar][2].
+You can update your profile image by clicking on the image and uploading a new image
 
-[1]: /images/platform/profile.png "Профиль"
-[2]: https://gravatar.com/
+![profile image][2]
+
+[1]: /images/user-manual/profile/profile.png
+[2]: /images/user-manual/profile/update-profile-image.jpg
 

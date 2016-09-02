@@ -15,51 +15,50 @@ position: 7
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>属性</th><th>描述</th></tr>
-    <tr><td>Auto Play</td><td>如果被选中，粒子系统将会在场景出现时立即被播放。如果这个选项没有被选中，用户则需要使用脚本来播放粒子系统。</td>
-    <tr><td>Particle Count</td><td>可以被这个粒子系统管理的最大粒子数量。</td></tr>
-    <tr><td>Lifetime</td><td>一个粒子从出现到消失的时间长度，以秒计算。</td></tr>
-    <tr><td>Emission Rate</td><td>定义了粒子出现时间的范围下限。下一个粒子发射时间将从“Emission Rate” and “Emission Rate 2”之间随机选择。</td></tr>
-    <tr><td>Emission Rate 2</td><td>定义了粒子出现时间的范围上限。下一个粒子发射时间将从“Emission Rate” and “Emission Rate 2”之间随机选择。</td></tr>
-    <tr><td>Start Angle</td><td>定义了粒子的初始旋转角度的下限。这个角度对于每个粒子将会从 “Start Angle”and “Start Angle 2”中随机选择。</td></tr>
-    <tr><td>Start Angle 2</td><td>定义了粒子的初始旋转角度的上限。这个角度对于每个粒子将会从 “Start Angle”and “Start Angle 2”中随机选择。</td></tr>
-    <tr><td>Loop</td><td></td></tr>
-    <tr><td>Pre Warm</td><td>如果这个选项被选中，粒子系统将不会停止发射粒子。否则，粒子刺痛将会按照“Particle Count”中设置的数量发射粒子然后停止。</td></tr>
-    <tr><td>Lighting</td><td>如果这个选项被选中，粒子将会被场景内的定向光和环境光照亮。在一些情况下，为了达到更逼真的照明效果，可以选择在粒子系统中设置一个普通的台灯。</td></tr>
-    <tr><td>Half-Lambert</td><td>当灯光出现在前方照射到后方粒子时，Half Lambert lighting设置避免粒子看起来太单调。这完全是个非物理性照明模型，但是可以提供更多赏心悦目的视觉效果。这个效果只有当灯光被设置为可用时才能使用。</td></tr>
-    <tr><td>Color Intensity</td><td>这个设置使得粒子的颜色可以拥有任意的亮度。</td></tr>
-    <tr><td>Depth Test</td><td>如果这个选项被选中，粒子将向深度缓冲区写入深度信息。如果这个选项没有被选中，深度缓冲区将保持不变，并且粒子将会被确保以渲染的先后顺序被覆盖。</td></tr>
-    <tr><td>Depth Softening</td><td>这个变量的值决定了当它们靠近另一个物体的表面时候，粒子将会消失多少。这个避免了粒子嵌入物体表面。</td></tr>
-    <tr><td>Sorting Mode</td><td>这个属性可以使得用户控制被渲染的粒子的顺序。分别有以下几种选项：
+    <tr><th>Property</th><th>Description</th></tr>
+    <tr><td>Auto Play</td><td>If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script.</td>
+    <tr><td>Particle Count</td><td>The maximum number of particles managed by this particle system.</td></tr>
+    <tr><td>Lifetime</td><td>The length of time in seconds between a particle's birth and its death.</td></tr>
+    <tr><td>Emission Rate</td><td>The lower bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
+    <tr><td>Emission Rate 2</td><td>The upper bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
+    <tr><td>Start Angle</td><td>The lower bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'.</td></tr>
+    <tr><td>Start Angle 2</td><td>The upper bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'.</td></tr>
+    <tr><td>Loop</td><td>If checked, the particle system will emit indefinitely. Otherwise, it will emit the number of particles specified by the 'Particle Count' property and then stop.</td></tr>
+    <tr><td>Pre Warm</td><td>If enabled, the particle system will be initialized as though it had already completed a full cycle. This option is only available for looping particle systems.</td></tr>
+    <tr><td>Lighting</td><td>If checked, the particle will be lit by the directional and ambient light in the scene. In some circumstances, it may be advisable to set a normal map on the particle system in order to achieve more realistic lighting.</td></tr>
+    <tr><td>Half-Lambert</td><td>Enabling Half Lambert lighting avoids particles looking too flat when lights appear to be shining towards the back sides of the particles. It is a completely non-physical lighting model but can give more pleasing visual results. This option is only available when Lighting is enabled.</td></tr>
+    <tr><td>Color Intensity</td><td>Scales the color of particles to allow them to have arbitrary brightness.</td></tr>
+    <tr><td>Depth Test</td><td>If checked, the particles will write depth information to the depth buffer. If unchecked, the depth buffer is left unchanged and particles will be guaranteed to overwrite one another in the order in which they are rendered.</td></tr>
+    <tr><td>Depth Softening</td><td>This variable value determines how much particles fade out as they get closer to another surface. This avoids the situation where particles appear to cut into surfaces. Setting this value to zero effectively disables depth softening. Setting a value greater than zero requires the scene to be rendered to a depth target for depth comparisons to be performed. This can have a significant performance impact by increasing the overall number of draw calls submitted every frame.</td></tr>
+    <tr><td>Sorting Mode</td><td>Sorting mode gives you control over the order in which particles are rendered. The options are:
         <ul>
-            <li>None:粒子随机被渲染。当这个选项被选中时，粒子系统在GPU中进行模拟（如果底层的硬件支持浮点纹理）建议您使用此设置以达到最佳性能。</li>
-            <li>粒子在CPU中被排序以从后到前的顺序被渲染（在摄像机Z深度）。</li>
-            <li>粒子在CPU中被排序以从新到旧的方式被渲染，最新的粒子优先。</li>
-            <li>粒子在CPU中被排序以从旧到新的方式被渲染，旧的粒子优先。</li>
+            <li>None: Particles are rendered in arbitrary order. When this option is selected, the particle system is simulated on the GPU (if the underlying hardware supports floating point textures) and it is recommended you use this setting to get the best performance.</li>
+            <li>Camera Distance: Particles are sorted on the CPU and rendered in back to front order (in terms of camera z depth).</li>
+            <li>Newer First: Particles are sorted on the CPU and rendered in age order, youngest first.</li>
+            <li>Older First: Particles are sorted on the CPU and rendered in age order, oldest first.</li>
         </ul>
     </td></tr>
-    <tr><td>Blending Mode</td><td>混合模式决定了当粒子写入到帧缓存区时，粒子复合的方式。Prgb相当于粒子像素的RGB颜色，Pa就是这个粒子像素的alpha值，Drgb就是在帧缓存区中的RGB颜色。混合选项有以下几类：
+    <tr><td>Blending Mode</td><td>The blending mode determines how particles are composited when they are written to the frame buffer. Let's consider that Prgb is the RGB color of a particle's pixel, Pa is its alpha value, and Drgb is the RGB color already in the frame buffer. The blending options are:
         <ul>
             <li>Additive: Prgb + Drgb</li>
             <li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li>
             <li>Multiply: Prgb * Drgb</li>
         </ul>
     </td></tr>
-    <tr><td>Stretch</td><td>在世界单位中的一个值，通过是否基于粒子速度的拉伸来控制数量。粒子从它的中心点向着它之前的位置进行拉伸。</td></tr>
+    <tr><td>Stretch</td><td>A value in world units that controls the amount by which particles are stretched based on their velocity. Particles are stretched from their center towards their previous position.</td></tr>
     <tr><td>Align To Motion</td><td>Orient particle in their direction of motion.</td></tr>
-    <tr><td>Spawn Bounds</td><td>在半个本地空间边界框中随机位置产生的粒子。</td></tr>
-    <tr><td>Wrap</td><td>从边界产生粒子向中心移动。</td></tr>
+    <tr><td>Spawn Bounds</td><td>The half extents of a local space bounding box within which particles are spawned at random positions.</td></tr>
+    <tr><td>Wrap</td><td>Enables wrap bounds.</td></tr>
     <tr><td>Wrap Bounds</td><td>World space AABB volume centered on the owner entity's position. If a particle crosses the boundary of one side of the volume, it teleports to the opposite side. You can use this to make environmental effects like rain by moving a wrapped emitter's owner entity.</td></tr>
-    <tr><td>Color Map</td><td>将颜色贴图纹理应用到在粒子系统中的所有粒子。如果没有纹理素材，将使用默认纹理。</td></tr>
-    <tr><td>Normal Map</td><td>将标准贴图纹理应用到在粒子系统中的所有粒子。标准贴图的应用可以为粒子和场景灯光提供更好的一致性。/td></tr>
-    <tr><td>Particle Mesh</td><td>一个模型资源。在模型中所呈现所有的粒子而不是一个平面广告板。</td></tr>
-    <tr><td>Local Velocity</td><td>通过对弧度的调整可以改变粒子在单位时间内移动的速度和运动轨迹。如果有两种弧度共同存在，那么粒子将在两条弧线之间随机运动。</td></tr>
-    <tr><td>Velocity</td><td>通过对弧度的调整可以改变随着时间推移每个粒子相对于世界坐标系统的位置。如果有两种弧度共同存在，那么粒子运动速度将在两条弧线之间随机选择。</td></tr>
-    <tr><td>Rotation Speed</td><td> 通过对弧度的调整可以改变随着时间推移每个粒子运行的速度。如果有两种弧度共同存在，那么粒子将在两条弧线之间随机运动。 </td></tr>
-    <tr><td>Scale</td><td>通过对弧度的调整可以改变随着时间推移每个粒子的大小规模。如果有两种弧度共同存在，那么粒子规模将在两条弧线之间随机选择。</td></tr>
-    <tr><td>Color</td><td>通过对弧度的调整可以改变随着时间推移每个粒子的颜色。</td></tr>
-    <tr><td>Opacity</td><td>通过对弧度的调整可以改变随着时间推移每个粒子的不透明度。如果有两种弧度共同存在，那么粒子不透明度将在两条弧线之间随机选择。
-</td></tr>
+    <tr><td>Color Map</td><td>The color map texture to apply to all particles in the system. If no texture asset is assigned, a default spot texture is used.</td></tr>
+    <tr><td>Normal Map</td><td>The normal map texture to apply to all particles in the system. Applying a normal map can make billboard particles appear more consistent with the scenes lighting.</td></tr>
+    <tr><td>Particle Mesh</td><td>A model asset. The first mesh found in the model is used to represent all particles rather than a flat billboard.</td></tr>
+    <tr><td>Local Velocity</td><td>A curve defining how each particle's velocity with respect to the particle system's local coordinate system changes over time. If two curves are specified in the curve editor, local velocity will be a random lerp between both curves.</td></tr>
+    <tr><td>Velocity</td><td>A curve defining how each particle's velocity with respect to the world coordinate system changes over time. If two curves are specified in the curve editor, velocity will be a random lerp between both curves.</td></tr>
+    <tr><td>Rotation Speed</td><td>A curve defining how each particle's angular velocity changes over time. If two curves are specified in the curve editor, the angular velocity will be a random lerp between both curves.</td></tr>
+    <tr><td>Scale</td><td>A curve defining how each particle's scale changes over time. By default, a particle is 1 unit in width and height. If two curves are specified in the curve editor, the scale will be a random lerp between both curves.</td></tr>
+    <tr><td>Color</td><td>A curve defining how each particle's color changes over time.</td></tr>
+    <tr><td>Opacity</td><td>A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves.</td></tr>
 </table>
 
 ## 脚本接口

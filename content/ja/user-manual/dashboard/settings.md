@@ -1,7 +1,7 @@
 ---
-title: 設定
+title: Settings
 template: usermanual-page.tmpl.html
-position: 6
+position: 3
 ---
 
 設定ダッシュボードではプロジェクトやアプリケーションの設定を行えます。

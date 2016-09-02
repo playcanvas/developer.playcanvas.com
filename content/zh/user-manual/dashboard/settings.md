@@ -1,7 +1,7 @@
 ---
-title: 设置
+title: Settings
 template: usermanual-page.tmpl.html
-position: 6
+position: 3
 ---
 
 从设置控制板可以调整项目和应用的基础特征。
