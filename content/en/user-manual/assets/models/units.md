@@ -18,7 +18,7 @@ To check or set working units in 3D Studio Max, open the Units Setup dialog and 
 
 To check or set working units in Maya, open the Preferences dialog:
 
-![Maya units][1]
+![Maya units][2]
 
 [1]: /images/user-manual/assets/models/max-units.png
 [2]: /images/user-manual/assets/models/maya-units.png
