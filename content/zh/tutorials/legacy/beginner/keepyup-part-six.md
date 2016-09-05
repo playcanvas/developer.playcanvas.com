@@ -81,8 +81,8 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [3]: /tutorials/legacy/beginner/keepyup-part-three
 [4]: /tutorials/legacy/beginner/keepyup-part-four
 [5]: /tutorials/legacy/beginner/keepyup-part-five
-[6]: https://github.com/playcanvas/sprites
-[7]: https://github.com/playcanvas/fonts
+[6]: https://github.com/playcanvas/sprites/tree/legacy
+[7]: https://github.com/playcanvas/fonts/tree/legacy
 [8]: http://forum.playcanvas.com
 [9]: /images/tutorials/beginner/keepyup-part-six/ui-hierarchy.jpg
 [10]: /images/tutorials/beginner/keepyup-part-six/sprite-setup.jpg

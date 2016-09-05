@@ -1,31 +1,31 @@
 ---
-title: Preloading and Streaming
+title: 预加载和流媒体
 template: usermanual-page.tmpl.html
 ---
 
-On the web it's critical to get users into your application as soon as possible after they load the page. Presenting a loading bar and asking people to wait will lead to visitors leaving the page before your application has even got started. The PlayCanvas asset system implements a number of features to help you streamline the loading process and get your application running as fast as possible.
+当用户加载网页之后就能立刻进入到网页的应用程序这是在网页开发中十分重要的一步。在应用程序开始之前出现进度条以及告知用户需要等待将会导致用户的流失。PlayCanvas资源系统实现了多个功能帮助用户将加载过程简单化，将应用程序运行更快速更顺畅。
 
-## Preload
+## 预加载
 
 ![Asset Properties][1]
 
-Every asset in your project has a property called `preload`. By default this is set to true. If an asset is marked as preload it will be downloaded and created before the initialize phase of your application begins.
+在项目中的每一个资源都有一个被称为“预加载”的属性。在默认情况下，这个属性设置为开启。如果一个资源被标记为预加载那么这个资源将在应用程序的初始化阶段被自动下载和创建。
 
-You should use preloading to make sure all the assets you need at the start of your application are present. This will prevent any assets from 'popping' in after the application begins.
+使用预加载确保资源在应用程序被开启的第一时间内被呈现。这将预防任何资源在应用程序开始之后突然出现。
 
-## Streaming
+## 流媒体
 
 ![Streaming][2]
 
-If an Entity in your scene and references an asset, then a loading request will be initiated when the Entity is enabled. If the Entity is enabled in the scene, then this request is made as soon as the application starts.
+如果在场景中存在一个实体并且这个实体引用了一个资源，当这个实体被启用时，加载请求将会被开启。如果实体在场景中被启用，那么当应用开启时加载请求将会立刻启动。
 
-All components will gracefully handle dynamically loading assets and will start operating as normal, once the asset is loaded. When streaming assets in dynamically like this, you will often see "popup". As a model will appear as soon as it is loaded, even if it doesn't have materials or textures yet.
+所有组件将会妥善处理动态加载的资源，并且当资源加载完成时开始正常运行。当一个流动资源被动态加载时，用户将会经常看见弹出框。当被加载模型就会出现，即便这个模型并没有包含材质和纹理。
 
-## Asset Tags
+## 资源标签
 
-In many cases, you don't wish assets to "popup" as they load. It's preferable to load a set of assets and then display them. To do this, you can use Asset Tags to create groups of assets. Then you can load all assets with a particular tag before using them.
+在很多情况下，用户都不希望当资源被加载时资源被弹出。加载一组资源然后再集体显示它们，为了达到这个效果，用户可以使用资源标签创建一组资源，然后用户可以在使用资源之前集体加载有着相同标签的资源。
 
-Here is some example javascript which shows you how you might load a set of assets using a tag.
+以下是一个例子显示了用户如何使用标签加载一组资源。
 
 ```javascript
 var assets = app.assets.findByTag("level-1");

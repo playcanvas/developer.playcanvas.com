@@ -4,13 +4,13 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-The Particle System component specifies a particle emitter in 3D space.
+粒子系统组件定义了在3D空间中的粒子发射器。
 
-The Particle System component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the particle system will be added to the scene and rendered.
+使用粒子系统右上角的切换键可以开启或关闭粒子系统组件。在启用状态下，粒子系统将会被添加到场景并且进行渲染。
 
-![Particle System component][1]
+![粒子系统组件][1]
 
-## Properties
+## 属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -29,7 +29,7 @@ The Particle System component can be enabled or disabled using the toggle in the
     <tr><td>Half-Lambert</td><td>Enabling Half Lambert lighting avoids particles looking too flat when lights appear to be shining towards the back sides of the particles. It is a completely non-physical lighting model but can give more pleasing visual results. This option is only available when Lighting is enabled.</td></tr>
     <tr><td>Color Intensity</td><td>Scales the color of particles to allow them to have arbitrary brightness.</td></tr>
     <tr><td>Depth Test</td><td>If checked, the particles will write depth information to the depth buffer. If unchecked, the depth buffer is left unchanged and particles will be guaranteed to overwrite one another in the order in which they are rendered.</td></tr>
-    <tr><td>Depth Softening</td><td>This variable value determines how much particles fade out as they get closer to another surface. This avoids the situation where particles appear to cut into surfaces.</td></tr>
+    <tr><td>Depth Softening</td><td>This variable value determines how much particles fade out as they get closer to another surface. This avoids the situation where particles appear to cut into surfaces. Setting this value to zero effectively disables depth softening. Setting a value greater than zero requires the scene to be rendered to a depth target for depth comparisons to be performed. This can have a significant performance impact by increasing the overall number of draw calls submitted every frame.</td></tr>
     <tr><td>Sorting Mode</td><td>Sorting mode gives you control over the order in which particles are rendered. The options are:
         <ul>
             <li>None: Particles are rendered in arbitrary order. When this option is selected, the particle system is simulated on the GPU (if the underlying hardware supports floating point textures) and it is recommended you use this setting to get the best performance.</li>
@@ -61,9 +61,9 @@ The Particle System component can be enabled or disabled using the toggle in the
     <tr><td>Opacity</td><td>A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves.</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
-You can control a Particle System component's properties using a [script component][2]. The Particle System component's scripting interface is [here][3].
+可以通过 [脚本组件][2]来修改粒子系统组件的属性。粒子系统组件的脚本接口在[这里][3]。
 
 [1]: /images/user-manual/scenes/components/component-particle-system.png
 [2]: /user-manual/packs/components/script

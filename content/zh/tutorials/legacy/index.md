@@ -63,6 +63,6 @@ For instructions in displaying 2D images see [our GitHub sprites page][19] and f
 [17]: /tutorials/legacy/advanced/custom-shaders
 [18]: /tutorials/legacy/advanced/custom-posteffect
 
-[19]: https://github.com/playcanvas/sprites
-[20]: https://github.com/playcanvas/fonts
+[19]: https://github.com/playcanvas/sprites/tree/legacy
+[20]: https://github.com/playcanvas/fonts/tree/legacy
 

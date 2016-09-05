@@ -1,5 +1,5 @@
 ---
-title: 动画 | Animation
+title: 动画
 template: usermanual-page.tmpl.html
 position: 1
 ---

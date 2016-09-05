@@ -1,38 +1,38 @@
 ---
-title: Materials
+title: 材质
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.
+3D模型的每一个面都通过使用材质被渲染。材质决定了外观的属性，譬如颜色，亮度，表面是否隆起等。
 
-In PlayCanvas, a material is an Asset type which collects all these properties together. By default, it represents a Physical material. This exposes the fundamental properties that can be used to create many different types for visual effects, from smooth plastic, to rough wood, or scratched metal.
+在PlayCanvas中，材质就是一种将所有属性集合在一起的资源类型。在默认情况下，一般为物理材质。这表明一些基础的属性就可以用来创造出许多不同类型的视觉效果。譬如：光滑的塑料，粗糙的木材，刮花的金属。
 
 We also support our old Phong Material type.
 
-## Importing Materials
+## 导入材质
 
-Materials are imported automatically when you upload a 3D model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they exist in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
+当用户上传一个3D模型文件（譬如 FBX or COLLADA） 时，材质将会自动被导入到PlayCanvas引擎中。材质将会生成和现有的3D建模工具一样的属性。如果用户通过嵌入式媒体（FBX）上传所有相关联的纹理贴图系统将会自动为用户进行设置。
 
-## Creating New Materials
+## 创建新材质
 
-You can create new materials directly from the PlayCanvas Editor interface.
+用户可以直接使用PlayCanvas编辑接口来创建新的材质。
 
 <img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px;" />
 
-This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
+这将创建新的材质资源并且开启在屏幕右边的材质检查器。
 
-## Selecting a Material
+## 选择一个材质
 
 <img src="/images/user-manual/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
 
-In order to edit a material, first you must select it. This will bring up the material inspector.
+为了能够编辑一个材质，首先用户需要选中它，这个操作将会显示材料检查器。
 
-You can select a material in the asset panel. You can also select materials from the model inspector or from the model component.
+用户可以在资源面板中选择想要的材质。同样用户还可以在模型检查起或模型组件中选择材质。
 
-Generally, clicking on a material preview icon will take you to the material inspector.
+一般来说，点击一个材质预览图标将会带着用户进入材质检查器。
 
-## Assigning Materials
+## 指定材质
 
 <img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 

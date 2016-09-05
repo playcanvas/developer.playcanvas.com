@@ -1,7 +1,7 @@
 ---
 title: Rigid Body
 template: usermanual-page.tmpl.html
-position: 9
+position: 8
 ---
 
 The Rigid Body component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.

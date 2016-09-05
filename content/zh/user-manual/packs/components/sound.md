@@ -1,32 +1,32 @@
 ---
 title: Sound
 template: usermanual-page.tmpl.html
-position: 3
+position: 10
 ---
 
-The Sound component controls playback of audio samples.
+音频组件控制音频样本的播放。
 
-![Sound component][1]
+![音频组件][1]
 
-Each Sound component contains "Slots" that are responsible for playing sounds. Each Slot can be assigned a different audio Asset, and can be played independently from the other Slots.
+每个音频组件包含了插槽用以负责音频播放。每个插槽可以指定不同的音频源，每个音频源可以从不同的插槽被单独播放。
 
-You can add a new Slot by clicking on the "ADD SLOT" button. You can remove a Slot by clicking on the bin icon in the header of each slot.
+可以通过点击“ADD SLOT”来添加新的插槽。同样你也可以通过点击位于插槽顶部的删除标志来移除插槽。
 
-The Sound component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play the Slots that are marked as Auto Play. The rest of the Slots can be played by scripts.
+使用音频面板右上角的切换键可以开启或关闭音频。在启用的状态下，组件将会播放被标记为自动播放的插槽。剩余的插槽将可以通过脚本进行播放。
 
-## Component Properties
+## 组件属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Positional</td><td>If checked, the component will play back audio assets as if played from the location of the entity in 3D space.</td></tr>
-    <tr><td>Volume</td><td>The volume that will be multiplied with the volume of each Slot when playing an audio asset. </td></tr>
-    <tr><td>Pitch</td><td>The pitch that will be multiplied with the pitch of each Slot when playing an audio asset. A value of 1 means the audio is played back at the original pitch.</td></tr>
-    <tr><td>Ref Distance</td><td>The reference distance for reducing volume as the sound source moves further from the listener.</td></tr>
-    <tr><td>Max Distance</td><td>The maximum distance from the listener at which audio falloff stops. Note the volume of the audio is not necessarily 0 after this distance, but just doesn't fall off anymore.</td></tr>
-    <tr><td>Distance Model</td><td>Determines which algorithm to use to reduce the volume of the sound as it moves away from the listener. Can be one of Linear, Inverse or Exponential.</td></tr>
-    <tr><td>Roll-off Factor</td><td>The rate at which volume fall-off occurs.</td></tr>
+    <tr><th>属性</th><th>描述</th></tr>
+    <tr><td>Positional</td><td>选中之后，组件将会以实体在3D场景中的位置模拟播放后台音乐文件。</td></tr>
+    <tr><td>Volume</td><td>当播放一个音频资源时，各个插槽的音量将会使得音频的音量增加。 </td></tr>
+    <tr><td>Pitch</td><td>在播放一个音频资源时，各个插槽的音调将会使得音频的音调上升。当值为1时意味着播放的是原始音调。</td></tr>
+    <tr><td>Ref Distance</td><td>当音源远离侦听器时，参考距离将会显示降低的音量。</td></tr>
+    <tr><td>Max Distance</td><td>T最大距离为从音频侦听器开始到音频衰减停止。当超出最大距离时音量不再衰减，且没有必要标为0。</td></tr>
+    <tr><td>Distance Model</td><td>当声源远离侦听器时选择一种算法以计算减少的音量。可以为线性，逆向，指数型。</td></tr>
+    <tr><td>Roll-off Factor</td><td>音量衰减的发生率。</td></tr>
 </table>
 
 ## Slot Properties
@@ -43,12 +43,12 @@ The Sound component can be enabled or disabled using the toggle in the top right
     <tr><td>Overlap</td><td>If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script.</td></tr>
     <tr><td>Loop</td><td>If checked, the Slot will loop continuously. Otherwise, it will be played once to completion.</td></tr>
     <tr><td>Volume</td><td>The volume of the audio asset played back by the slot.</td></tr>
-    <tr><td>Pitch</td><td>The pitch to playback the audio at. A value of 1 means the audio is played back at the original pitch.</td></tr>
+    <tr><td>Pitch</td><td>The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch.</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
-You can control the properties of a Sound component using a [script component][2]. The scripting interface for the Sound component is [here][3].
+可以通过[脚本组件][2]来修改音频组件的属性。 音频组件的脚本接口在 [这里][3].
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/packs/components/script

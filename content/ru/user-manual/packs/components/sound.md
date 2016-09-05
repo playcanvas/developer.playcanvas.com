@@ -1,7 +1,7 @@
 ---
 title: Sound
 template: usermanual-page.tmpl.html
-position: 3
+position: 10
 ---
 
 The Sound component controls playback of audio samples.
@@ -43,7 +43,7 @@ The Sound component can be enabled or disabled using the toggle in the top right
     <tr><td>Overlap</td><td>If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script.</td></tr>
     <tr><td>Loop</td><td>If checked, the Slot will loop continuously. Otherwise, it will be played once to completion.</td></tr>
     <tr><td>Volume</td><td>The volume of the audio asset played back by the slot.</td></tr>
-    <tr><td>Pitch</td><td>The pitch to playback the audio at. A value of 1 means the audio is played back at the original pitch.</td></tr>
+    <tr><td>Pitch</td><td>The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch.</td></tr>
 </table>
 
 ## Scripting Interface

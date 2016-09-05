@@ -8,8 +8,10 @@ position: 2
 
 ![profile_page][1]
 
-You can change your profile image using the [Gravatar][2]グローバル プロフィール画像サービスを利用して、プロフィール画像を変更することができます。
+You can update your profile image by clicking on the image and uploading a new image
 
-[1]: /images/platform/profile.png "Profile"
-[2]: https://gravatar.com/
+![profile image][2]
+
+[1]: /images/user-manual/profile/profile.png
+[2]: /images/user-manual/profile/update-profile-image.jpg
 

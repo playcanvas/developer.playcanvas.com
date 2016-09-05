@@ -11,9 +11,12 @@ Script Attributes are a powerful feature that lets you expose values from your s
 Script Attributes are declared at the top of your script file using this format:
 
 ```javascript
-var MyScript = pc.createScript("myscript");
+var MyScript = pc.createScript('myScript');
 
-MyScript.attributes.add("speed", "number", 80);
+MyScript.attributes.add('speed', {
+    type: 'number',
+    default: 80
+});
 ```
 
 In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
@@ -22,7 +25,7 @@ In this example, we're declaring a property called `speed` which is a `number` a
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. The code is parsed automatically when you add a script to an entity. However, if you ever need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
 
 ## Accessing attributes in your code
 
@@ -41,41 +44,53 @@ When you modify an attribute in the editor the changes are sent to any copies of
 ```javascript
 MyScript.prototype.initialize = function () {
     // fires only for `speed` attribute
-    this.on("attr:speed", function (value, prev) {
+    this.on('attr:speed', function (value, prev) {
         // new value for speed
     });
 
     // fires for all attribute changes
-    this.on("attr", name, value, prev) {
+    this.on('attr', function(name, value, prev) {
         // new attribute value
-    }
+    });
 }
 ```
 
 ## Attribute types
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, "boolean", number" or "string". But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
+When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
 
 ### Entity attribute
 
 ```javascript
-MyScript.attributes.add("target", {type: "entity"})
+MyScript.attributes.add('target', { type: 'entity' })
 ```
 
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
-### Asset attribute
+### Asset attribute
 
 ```javascript
-MyScript.attributes.add("texture", {type: "asset", assetType: "texture", array: true});
+MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. "texture", "material", "model".
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+
+The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
+
+```javascript
+MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
+
+MyScript.prototype.initialize = function () {
+    console.log('This is the texture asset', this.texture);
+    console.log('This is the texture resource', this.texture.resource);
+};
+
+```
 
 ### Color attribute
 
 ```javascript
-MyScript.attributes.add("color", {type: "rgba"});
+MyScript.attributes.add('color', { type: 'rgba' });
 ```
 
 The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
@@ -83,30 +98,30 @@ The color attribute shows a color picker when exposed in the editor. There are t
 ### Curve attribute
 
 ```javascript
-MyScript.attributes.add("wave", {type: "curve"}); // one curve
-MyScript.attributes.add("wave", {type: "curve", curves: ['x', 'y', 'z']}); // three curves: x, y, z
-MyScript.attributes.add("wave", {type: "curve", color: 'r'}); // one curve for red channel
-MyScript.attributes.add("wave", {type: "curve", color: 'rgba'}); // four curves for full color including alpha
+MyScript.attributes.add('wave', { type: 'curve' }); // one curve
+MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // three curves: x, y, z
+MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for red channel
+MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
 ```
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
 
 ### Enumeration attribute
 
-The last special attribute type is the Enumeration attribute
+The last special attribute property is the Enumeration
 
 ```javascript
-MyScript.attributes.add("value", {
-    type: "number",
+MyScript.attributes.add('value', {
+    type: 'number',
     enum: [
-        {'valueOne': 1},
-        {'valueTwo': 2},
-        {'valueThree': 3}
+        { 'valueOne': 1 },
+        { 'valueTwo': 2 },
+        { 'valueThree': 3 }
     ]
 });
 ```
 
-Use the enum property to declare the list of possible values for your enumeration.
+Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a ttile of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
 
 [1]: /api/pc.ScriptAttributes.html
 

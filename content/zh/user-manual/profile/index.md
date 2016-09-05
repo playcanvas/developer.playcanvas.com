@@ -8,8 +8,10 @@ position: 2
 
 ![profile_page][1]
 
-你可以通过 [Gravatar][2] 全球个人资料图像服务提供你的个人照片
+You can update your profile image by clicking on the image and uploading a new image
 
-[1]: /images/platform/profile.png "Profile"
-[2]: https://gravatar.com/
+![profile image][2]
+
+[1]: /images/user-manual/profile/profile.png
+[2]: /images/user-manual/profile/update-profile-image.jpg
 

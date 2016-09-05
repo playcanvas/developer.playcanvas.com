@@ -1,7 +1,7 @@
 ---
 title: Settings
 template: usermanual-page.tmpl.html
-position: 6
+position: 3
 ---
 
 The settings dashboard lets you set up Project and Application settings.
