@@ -16,11 +16,11 @@ position: 2
 
 点击项目右侧的向下箭头展开菜单，选择移除项目选项。
 
-## Unlock Project
+## 解锁项目
 
-Click on the arrow next to a project and select Unlock to unlock a *locked* project. Unlocking a project depends on the project owner's subscription type. If the owner has a Personal plan then Unlocking means removing any Free users from the project (because Personal plans require all users to have a subscription). Otherwise unlocking a project means making it Public.
+点击项目旁边的箭头，并选择解锁以解锁锁定*项目*。解锁项目依赖于该项目所有者的订阅类型。如果用户将一个个人计划的项目锁定，解锁装置会把项目中其它的免费用户删除(因为个人计划要求所有用户都订阅)。否则解锁项目表示使其公开。
 
-If you have an Organization account another way to unlock projects is by purchasing more seats until you are no longer hitting your seats limit.
+如果你有一个组织账户，另一种方式解锁项目的方式是通过购买更多的项目席位，直到你不再打你的座位限制。
 
 ## 导出项目
 
@@ -34,11 +34,11 @@ If you have an Organization account another way to unlock projects is by purchas
 
 点击项目右侧的向下箭头展开菜单，选择导入。
 
-## Transfer Project Ownership
+## 转让工程所有权
 
-If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership. A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to. Enter the username and click FIND or press Enter. Then click Transfer.
+如果你希望把工程的所有权转让，点击工程边的箭头然后再点击转让所有权。一个弹窗会弹出并要求你输入被转让者的用户名。输入用户名后点击FIND寻找按键或直接按下回车键。转让完毕。
 
-The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list. If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+其他用户将需要接受您的要求转移的项目。传送请求将出现在其项目列表的顶部。如果用户接受了请求，那么转让就完成了，除了新主人的所有团队成员都会从项目中删除。
 
-[1]: /images/user-manual/profile/profile.png "Projects"
+[1]: /images/user-manual/profile/profile.png "项目"
 

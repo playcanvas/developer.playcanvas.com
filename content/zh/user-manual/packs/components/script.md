@@ -1,5 +1,5 @@
 ---
-title: Script
+title: 脚本
 template: usermanual-page.tmpl.html
 position: 9
 ---

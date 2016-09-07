@@ -1,32 +1,32 @@
 ---
-title: Managing Organizations
+title: 管理组织
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-### Permissions
+### 权限
 
-You can manage permissions of your Organization from its account page.
+你可以在你的组织的账户界面管理该组织的权限。
 
-![permissions][1]
+![权限][1]
 
-Here you can see who is the Owner and the Administrators of the Organization. You can transfer ownership to a different user and add or remove Administrators.
+在这里你可以得知组织的所有者以及管理员们。 您可以将所有权转让给其它用户，以及添加或删除管理员。
 
-Administrators can do everything the owner can do e.g. create and delete projects, except delete the Organization.
+管理员可以做一切所有者可以做的事情，如创建和删除的项目，除了删除该组织。
 
-### Seats
+### 席位
 
-![seats][2]
+![席位][2]
 
-You can see which users have access to your private projects and occupy your available seats. From here you can remove users which will remove them from all your projects, freeing up seats.
+你可以看到哪些用户可以访问你的私人项目和占据你的可用席位。从这里你把用户从对应项目中删除，腾出席位。
 
-![upgrade][3]
+![升级][3]
 
-Here you can increase or decrease the number of seats for your Organization. This view is available if you have subscribed for an Organization plan.
+在这里，您可以增加或减少您的组织的可用席位。该视图在你已经订阅了一个组织的计划后可被呈现。
 
-![delete][4]
+![删除][4]
 
-The Owner of the Organization can delete the Organization from here. This will completely erase the account and all its projects. This action cannot be reversed.
+组织的所有者可以从这里删除该组织。这将彻底删除帐户及其所有项目。这个操作不能逆转。
 
 [1]: /images/user-manual/organizations/permissions.png "Permissions"
 [2]: /images/user-manual/organizations/seats.png "Seats"

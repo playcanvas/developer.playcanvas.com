@@ -1,24 +1,24 @@
 ---
-title: Events
+title: 事件
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-Events are a useful way of responding to things that happen without checking every frame.
+事件是种有效的方法来响应某些对象而不用检查每个帧。
 
-The PlayCanvas Engine contains a simple way to add event handling to any object:
+PlayCanvas引擎包含了一个简单的方法添加事件到任意对象：
 
 ```javascript
 pc.events.attach(object);
 ```
 
-This will add the methods: `on()`, `off()`, `fire()` and `hasEvent()` to the object. Which means that you can listen for events fired by that object.
+这将会添加以下几种方法到对象： `on()`, `off()`, `fire()` and `hasEvent()` 。这就意味着用户可以响应对象所触发的事件。
 
-By default all script instances can fire events you don't need to call this manually.
+默认情况下，所有脚本实例都可以触发事件用户不必通过手动方式触发。
 
-## Using events
+## 使用事件
 
-Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the x and y values passed as arguments.
+通过`fire()`来触发一个事件。在这个例子中，名为player的脚本在每个帧都触发了`move` 事件，X和Y值作为参数传递。
 
 ```javascript
 var Player = pc.createScript("player");
@@ -30,7 +30,7 @@ Player.prototype.update = function (dt) {
 };
 ```
 
-Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
+通过`on()` 和 `off()`监听事件的触发。在这个例子中，名为DIsplay的脚本监听了在Player上的`move` 事件并且显示X和Y的值。
 
 ```javascript
 var Display = pc.createScript("display");
@@ -49,15 +49,15 @@ Display.prototype.initialize = function () {
 };
 ```
 
-## Application Events
+## 应用事件
 
-There is a very convenient and powerful method of using events to communicate between entities that we call "Application Events". As you can see in the example above listening for events on specific entities incurs some set up cost. For instance, the listener must have a reference to the specific entity that is firing the event. This works with some cases, but for a more general case we find that it is more appropriate to use the main application (`this.app`) as a central hub for firing events. This means you don't have to keep references of entities around in order to use the events.
+PlayCanvas提供了一个方便而又强大的方法来对实体和实体之间进行通信，我们称之为“应用事件”。就像上面的例子，在特定的实体监听事件将会带来一些设置成本。譬如，监听器必须引用正在触发事件的特定实体，这将发生在某些情况下，但是对于一般情况下，我们发现它更适合使用主要应用(`this.app`) 作为中心枢纽来触发事件。这意味着为了使用事件用户不必每次都引用实体。
 
-This works by firing and listening to all events on `this.app`. By convention we use namespaces in event names in order to signal event scope and prevent clashes. For example, the `player:move` event is fired on the application instead of firing the `move` event on the player.
+通过触发和监听在`this.app`的所有事件。按照惯例，为了向事件范围内发射信号和避免冲突我们使用命名空间作为事件名称。譬如，`player:move` 事件将会在应用程序中被触发而不是触发`move`事件。
 
-Let's try the same example using application events.
+来让我们通过使用应用事件来进行相同的例子。
 
-Firing the `player:move` event.
+触发 `player:move` 事件。
 
 ```javascript
 var Player = pc.createScript("player");
@@ -69,7 +69,7 @@ Player.prototype.update = function (dt) {
 };
 ```
 
-Listening for the `player:move` event.
+监听 `player:move` 事件。
 
 ```javascript
 var Display = pc.createScript("display");
@@ -85,9 +85,9 @@ Display.prototype.initialize = function () {
 };
 ```
 
-As you can see this reduces set up code and makes for cleaner code.
+就如您所见，这有效的减少了代码设置帮助代码看起来更清晰。
 
-More details on events in the [API Reference][1]
+更多的消息请点击 [API Reference][1]
 
 [1]: http://developer.playcanvas.com/en/api/pc.events.html
 

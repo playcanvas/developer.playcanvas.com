@@ -1,5 +1,5 @@
 ---
-title: Collision
+title: 碰撞体
 template: usermanual-page.tmpl.html
 position: 4
 ---

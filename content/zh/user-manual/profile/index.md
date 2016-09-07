@@ -8,7 +8,7 @@ position: 2
 
 ![profile_page][1]
 
-You can update your profile image by clicking on the image and uploading a new image
+用户可以通过点击图像以及上传新的图片来更新信息
 
 ![profile image][2]
 

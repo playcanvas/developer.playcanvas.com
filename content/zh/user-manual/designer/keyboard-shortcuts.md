@@ -36,68 +36,68 @@ position: 12
 
 <table class="head-column">
     <tr>
-        <td>Select entity</td><td>Click LMB</td>
+        <td>选择实体</td><td>点击 LMB</td>
     </tr>
     <tr>
-        <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
+        <td>平移 / 旋转 / 缩放 Gizmo</td><td> 按住拖动 </td>
     </tr>
     <tr>
-        <td>Toggle Editor's Snap setting while operating gizmo</td><td>Shift click and drag</td>
+        <td>在拖动 Gizmo 过程中启用编辑器的吸附设置</td><td> Shift 点击拖动 </td>
     </tr>
 </table>
 
 ## 热键
 
-Note that on a Mac, CMD should be used instead of CTRL.
+注意在Mac系统中CLRT应该取代CMD。
 
 <table class="head-column">
     <tr>
-        <td>Delete - Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
+        <td>删除 - 删除当前选定实体</td><td>DELETE or CTRL + BACKSPACE</td>
     </tr>
     <tr>
-        <td>Toggle All Panels - Hides or shows all the panels</td><td>SPACE</td>
+        <td>开关所有面板 - 隐藏或显示所有面板</td><td>SPACE</td>
     </tr>
     <tr>
-        <td>Undo - Undo the last action performed by the user</td><td>CTRL + Z</td>
+        <td>撤销 - 撤销用户操作的最近一个操作</td><td>CTRL + Z</td>
     </tr>
     <tr>
-        <td>Redo - Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
+        <td>重做 - 重新执行用户的最近一次操作</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
     </tr>
     <tr>
-        <td>New Entity - Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
+        <td>新建实体 - 新建一个新的实体做为当前选定实体的子实体</td><td>CTRL + N</td>
     </tr>
     <tr>
-        <td>Duplicate Entity - Duplicates the selected entity and all children</td><td>CTRL + D</td>
+        <td>实体副本 - 创建被选中的实体以及子实体的副本</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>Copy Entity - Copy a single selected entity</td><td>CTRL + C</td>
+        <td>复制 - 复制一个被选中的实体</td><td>CTRL + C</td>
     </tr>
     <tr>
-        <td>Paste Entity - Paste an entity under the currently selected entity</td><td>CTRL + V</td>
+        <td>粘贴 - 在当前被选中的实体中粘贴一个被复制的实体</td><td>CTRL + V</td>
     </tr>
     <tr>
-        <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
+        <td>全屏目标 - 将摄影机移动至刚好容纳当前选定目标的全屏尺寸位置</td><td>F</td>
     </tr>
     <tr>
-        <td>Translate - Change gizmo mode to translate</td><td>1</td>
+        <td>平移  - 切换小工具到平移模式</td><td>1</td>
     </tr>
     <tr>
-        <td>Rotate - Change gizmo mode to rotate</td><td>2</td>
+        <td>旋转 - 切换小工具到旋转模式</td><td>2</td>
     </tr>
     <tr>
-        <td>Scale - Change gizmo mode to scale</td><td>3</td>
+        <td>缩放 - 切换小工具到缩放模式 </td><td>3</td>
     </tr>
     <tr>
-        <td>World/Local - Switch between local and world space gizmo</td><td>L</td>
+        <td>World/Local - 切换小工具的local和world模式</td><td>L</td>
     </tr>
     <tr>
-        <td>Launch - Launch the scene in a new tab</td><td>CTRL + ENTER</td>
+        <td>发布 - 将场景发布在一个新的页面中</td><td>CTRL + ENTER</td>
     </tr>
     <tr>
-        <td>Bake - Re-bake lightmaps</td><td>CTRL + B</td>
+        <td>bake - 再次渲染光照贴图</td><td>CTRL + B</td>
     </tr>
     <tr>
-        <td>Show Controls - Display the Editor controls</td><td>?</td>
+        <td>帮助- 显示编辑器的快捷操作</td><td>?</td>
     </tr>
 </table>
 

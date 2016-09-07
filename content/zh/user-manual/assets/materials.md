@@ -8,7 +8,7 @@ position: 6
 
 在PlayCanvas中，材质就是一种将所有属性集合在一起的资源类型。在默认情况下，一般为物理材质。这表明一些基础的属性就可以用来创造出许多不同类型的视觉效果。譬如：光滑的塑料，粗糙的木材，刮花的金属。
 
-We also support our old Phong Material type.
+我们同样也支持旧Phong材质类型。
 
 ## 导入材质
 
@@ -36,73 +36,73 @@ We also support our old Phong Material type.
 
 <img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
+用户可以修改材质被分配到哪个模型资源或者用户可以打造包含模型组件的特定实体的材质。
 
-When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
+当用户选中一个有着模型组件的实体，用户将会看到两个按钮－资源材质和实体材质。
 
 <br style="clear:both;" />
 
 <img src="/images/user-manual/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
+用户可以修改材质被分配到哪个模型资源或者用户可以打造包含模型组件的特定实体的材质。当用户选中一个有着模型组件的实体，用户将会看到两个按钮－资源材质和实体材质。点击资源材质将会选中模型资源。用户同样可以从资源面板中选择模型资源。模型检测器将会显示网格模型以及材质的分配。用户可以通过点击X按钮来清除材质，点击空白插槽来分配一个新的材质。
 
-You can also drag and drop material Assets from the asset panel onto the material slot.
+用户同样可以通过从资源面板拖拽材质素材到材质插槽。
 
 <br style="clear:both;" />
 
-Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
+点击实体材质将会系统将会向通知用户为所创建的材质选择网格实例：
 
 <img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
 
-After selecting the mesh instance a new material picker will appear in the model component:
+在选择网格实例之后，一个新的材质选择器将会出现在模型组件中：
 
 <img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
 
-Then you can select a different material for this particular Entity:
+之后用户就可以为特定实体选择不同的材质了：
 
 <img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
 
 <br style="clear:both;" />
 
-## Editing a Material
+## 编辑材质
 
 <img src="/images/user-manual/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-Once you have a material selected you can edit its properties.
+当用户选中一个材质时就可以对材质的属性进行编辑。
 
-The Editor supports to types of material 'Shading Model', this is defined in a drop-down at the top of the material inspector.
+编辑器支持类型为“光照模型”的模型，这个属性在材质检查器顶部的下拉菜单中定义。
 
-### Physical
+### 物理
 
-The physical shading model is our most advanced shading model. This is the model for PlayCanvas's Physically Based Renderer (PBR).
+物理光照模型为PlayCanvas中最前沿的光照模型。这个模型用于PlayCanvas的Physically Based Renderer(PBR)。
 
-[Physical Material Properties][1]
+[物理材质]属性[1]
 
 ### Phong
 
-The phong shading model is our legacy shading model. Use this for compatibility reasons.
+Phong光照模型作为遗留的光照模型，在兼容性方面有着很重要的作用。
 
-[Phong Material Properties][2]
+[Phong材质属性][2]
 
-## Material Maps
+## 材质贴图
 
 <img src="/images/user-manual/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
-Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
+大量的编辑材质涉及了创建和分配纹理贴图到多个插槽在页面上进行详细说明。
 
-There are a few options that are available on most texture map slots for a material.
+这里有一些选项将出现在材质的大多数纹理贴图中。
 
-### Texture Asset
+### 纹理资源
 
-First is the texture asset, upload an image to PlayCanvas and we'll create a texture asset for you. you can assign this to a slot on a material.
+首先纹理资源，上传一个图像到PlayCanvas，我们将会为用户创建一个纹理资源。用户可以为这个纹理在材质中资源分配插槽。
 
-### Color or Tint Color
+### 颜色或色调
 
 Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
 
-### Channel
+### 通道
 
-Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
+有些贴图只要求一个简单的灰度值譬如0.0 -> 1.0。在这种情况中是有可能选择纹理的哪个通道被使用。**RGB**意味着所有通道都被使用。**R**, **G** or **B** 意味着只有红，绿或者蓝通道将会被使用。
 
 [1]: /user-manual/assets/physical-material
 [2]: /user-manual/assets/phong-material

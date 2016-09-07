@@ -6,21 +6,21 @@ position: 2
 
 <img src="/images/user-manual/editor/hierarchy.png" style="float: right; padding: 20px; padding-top: 0px;"></img>
 
-The Hierarchy panel shows you a tree view of your entire Scene which is made up from a hierarchy of Entities. A Scene will always contain the Root Entity at the top of the tree. All the other Entities you see here on the right have been added by the developer.
+场景是由层级结构的实体组成，场景层级树显示了当前整个场景的树形结构。一个场景永远包含一个根节点实体，位于层级树的最顶端。所有其他的实体都是由开发者逐步加入的。
 
-The Hierarchy panel is great for quickly finding Entities as all the Entities in your Scene will be visible all the time. Clicking on an Entity in the Hierarchy will select it.
+层级树面板包含了场景中的全部实体，可以在其中快速定位实体，而不必在场景中搜寻。点击层级树上的实体将会选中它。
 
-## Creating and Destroying Entities
+## 创建和删除实体。
 
-Once an Entity is selected in the Hierarchy, you can create a new child Entity or delete the Selection. You can do this, either using the buttons in the top right of the Hierarchy panel, or by opening the context menu via a right click operation.
+当在层级树中选中一个实体时，用户可以创建一个新的实体或者选出这个所选中的选项。或者使用位于层级树面板左上角的各种按钮，又或者通过点击操作打开内容目录来进行操作。
 
-## Organizing the Hierarchy
+## 规划层级树
 
-The order in which Entities are listed in the tree view is important. As the Scene is a hierarchy, Entities can be *children* of another Entity -- their *parent* -- and the transform matrix of a parent Entity is applied to all of its children. If you move or rotate a parent Entity, all children will move or rotate underneath the parent. This is very useful for simplifying the manipulation of many Entities. But be careful! In a deep tree, it's not always obvious where an Entity gets its position from if an ancestor has been moved.
+实体在层级树中的陈列顺序是非重要的。场景是层级结构的，实体可以是另外一个实体的 *子节点* 也可以是其他节点的 *父节点*，子节点的实体将会继承父级的变换矩阵。如果移动或者旋转父级实体，所有的子节点实体都会跟着移动和旋转。这个功能非常方便简化复数实体的整体操作问题，不过同时需要注意，在一个层次非常深的节点有时会很难看出来父级是否有产生过偏移。
 
-The structure of the Hierarchy can be edited via drag and drop. Simply select and drag any Entity in the Hierarchy. In this way, you can quickly reorder or reparent Entities.
+用户可以通过拖拽的方式来对层级树的结构进行修改。简单地选择和拖动层级树中的任何实体，用户可以快速的对实体进行重新排序或者重新定义根目录。
 
-## Searching the Hierarchy
+## 搜索层级树
 
-Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree. The search is fuzzy which means it matches names that are similar to the search string rather than exactly the same. This is useful if you can't quite remember the name of the Entity you are searching for.
+靠近层级树面板顶部的部分是搜索框，在这里用户可以动态过滤实体树的内容。这个搜索是模糊的，这就意味着它将匹配通过所有字符串来匹配相似的名称而不是完全相同的。
 

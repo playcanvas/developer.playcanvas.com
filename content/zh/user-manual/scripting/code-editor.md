@@ -1,18 +1,19 @@
 ---
-title: Code Editor
+title: 代码编辑器
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Script assets are edited using PlayCanvas' Code Editor. Double click on a script asset to open the file in the Editor. The Editor supports real-time collaborative editing by all users with permission to edit the code. You will see other user's avatars in the bottom right of the code editor window
+脚本资源通过使用PlayCanvas的代码编辑器进行编辑。双击一个脚本资源后编辑器会打开它。该编辑器支持所有有权限的用户同时编辑代码。你会在代码编辑器窗口的右下方看到其他用户的化身头像。
 
-![Code Editor][1]
+![代码编辑器][1]
 
-## Collaboration, Saving & Reverting
+## 协作, 保存 & 还原
 
-The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time. The Revert button will restore the document back to the last saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
+代码编辑器为可协作的意味着所有使用编辑器打开了该文档的用户都能够看到其它开发者对代码进行的更改。然而，更改并不是实时被保存的，当应用程序运行时会加载最近保存的版本。这意味着你可以选择合适的时间提交你的修改。任何用户可以在任何时间保存文档。
+撤销按钮将文件恢复到上次保存的版本。如果所有用户在未保存更改之前退出该文件将被保存前的文件会自动还原到最近保存的版本。所以，你应该在退出文档之前进行保存工作。
 
-## Hot Keys
+## 热键
 
 <table>
 <tr>

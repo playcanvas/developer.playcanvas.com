@@ -1,5 +1,5 @@
 ---
-title: Rigid Body
+title: 刚体
 template: usermanual-page.tmpl.html
 position: 8
 ---

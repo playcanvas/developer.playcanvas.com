@@ -1,23 +1,23 @@
 ---
-title: Organizations
+title: 组织
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Organizations offer a way for businesses and large projects to manage many users. They can have multiple administrators and permissions can be handled on a per project basis.
+组织提供了一种可由多个用户来管理的用于商业的大型项目的管理方式。每个组织都可以有多个管理员和有权操作者，可以在每个项目的基础处理。
 
-Free Organizations includes:
+免费组织包括:
 
-- Unlimited public projects
-- Unlimited public team members
+无限制的开放项目
+无限制的公众团队成员
 
-You can also purchase an [Organization Plan][1] which includes:
+您也可以购买 [组织计划][1] 其中包括:
 
-- Unlimited private projects
-- Project-based permissions
-- Ability to remove PlayCanvas branding
-- Offline Archive & Restore
-- Additional storage space
+- 无限制的私有项目
+- 可设置权限的项目
+- 去除PlayCanvas品牌标题的权限
+- 离线归档和恢复
+- 额外的存储空间
 
 [1]: https://playcanvas.com/plans
 

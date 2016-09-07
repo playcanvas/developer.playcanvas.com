@@ -11,48 +11,48 @@ PlayCanvas 引擎定义了多种不同的组件。你可以通过 PlayCanvas 编
 <table class="table table-striped">
     <tbody>
         <tr>
-            <th>Component</th>
-            <th>Description</th>
+            <th>组件</th>
+            <th>描述</th>
         </tr>
     <tr>
-        <td>[Animation][1]</td>
-        <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
+        <td>[动画][1]</td>
+        <td>被实体的模型组件指定可以在模型上运行的动画资源。</td>
     </tr>
     <tr>
-        <td>[Audio Listener][2]</td>
-        <td>Specifies the location of the listener for 3D audio playback.</td>
+        <td>[音频侦听器][2]</td>
+        <td>指定3D空间中音频回放的侦听器位置。</td>
     </tr>
     <tr>
-        <td>[Camera][3]</td>
-        <td>Renders the scene from the location of the entity.</td>
+        <td>[摄像机][3]</td>
+        <td>从实体所在的位置渲染场景</td>
     </tr>
     <tr>
-        <td>[Collision][4]</td>
-        <td>Assigns a collision volume to the entity.</td>
+        <td>[碰撞体][4]</td>
+        <td>为实体赋予碰撞体积。</td>
     </tr>
     <tr>
-        <td>[Light][5]</td>
-        <td>Attach a dynamic light source to the Entity.</td>
+        <td>[灯光][5]</td>
+        <td>在实体所在的位置附加一个物理光源</td>
     </tr>
     <tr>
-        <td>[Model][6]</td>
-        <td>Renders a 3D model at the location of the entity.</td>
+        <td>[模型][6]</td>
+        <td>在实体所在的位置渲染的一套3D模型。</td>
     </tr>
     <tr>
-        <td>[Particle System][7]</td>
-        <td>Attach a particle system to the Entity.</td>
+        <td>[粒子系统][7]</td>
+        <td>在实体所在位置附加一套粒子系统。</td>
     </tr>
     <tr>
-        <td>[Rigid Body][8]</td>
-        <td>Adds the entity to the scene's physical simulation.</td>
+        <td>[刚体][8]</td>
+        <td>将实体加入到场景的物理仿真中。</td>
     </tr>
     <tr>
-        <td>[Script][9]</td>
-        <td>Allows the entity to run JavaScript fragments to implement custom behavior.</td>
+        <td>[脚本][9]</td>
+        <td>允许 JavaScript 脚本实现自定义的行为</td>
     </tr>
     <tr>
-        <td>[Sound][10]</td>
-        <td>Plays audio assets.</td>
+        <td>[音频][10]</td>
+        <td>播放音频资源。</td>
     </tr>
 </tbody></table>
 
