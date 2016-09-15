@@ -1,12 +1,12 @@
 ---
-title: Graphics
+title: 图形
 template: usermanual-page.tmpl.html
 position: 8
 ---
 
-PlayCanvas incorporates an advanced graphics engine. Internally it uses the WebGL API to draw graphical primitives to the screen.
+PlayCanvas采用了先进的图形引擎，内部采用了WebGL API绘制图形图元。
 
-Some of its key features are as follows:
+主要有以下几个关键特征：
 
 * Physically based rendering (PBR)
 * Directional, point and spot lights (all of which can cast shadows)

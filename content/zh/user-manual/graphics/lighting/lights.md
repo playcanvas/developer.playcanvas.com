@@ -1,34 +1,34 @@
 ---
-title: Lights
+title: 灯光
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources that approximate the different types of light we find in reality.
+在现实世界中，我们周边的坏境被许多光源照亮。太阳，路灯，电视屏幕等等。在PlayCanvas场景中，用户可以设置许多不同类型的光源模拟在现实生活中的真实光源。
 
-There are three types of light in PlayCanvas:
+PlayCanvas拥有三种不同的光源：
 
-* Directional lights
-* Point lights
-* Spot lights
+* 定向灯
+* 点光源
+* 聚光灯
 
-## Directional Lights
+## 定向光
 
-The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as travelling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
+定向光是和太阳光及其相似的一种光源。因为太阳距离地球十分的遥远，阳光照射到地球表面相当于向一个方向照射。在PlayCanvas中，这个类型的光源被称为定向光。
 
-When unselected, a directional light is represented by the following icon in the Editor's 3D view:
+当为被选中时，定向光在编辑器3D视角中呈现如下图标：
 
 ![Directional light icon][1]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+在层级树和检查器中点击这个图标选择灯光。
 
-A directional light lights an object like this:
+定向光如何照亮一个对象：
 
 ![Directional light][2]
 
-Directional lights are the fastest to process by the engine in terms of performance.
+在性能方面引擎处理定向光是最快的。
 
-## Point Lights
+## 点光源
 
 Point lights are light sources that emit light from a single point in all directions. Examples of this type of light are an unshaded light bulb or candlelight.
 
@@ -36,7 +36,7 @@ When unselected, a point light is represented by the following icon in the Edito
 
 ![Point light icon][3]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+在层级树和检查器中点击这个图标选择灯光。
 
 A point light lights an object like this:
 
@@ -52,7 +52,7 @@ When unselected, a spot light is represented by the following icon in the Editor
 
 ![Spot light icon][5]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+在层级树和检查器中点击这个图标选择灯光。
 
 A spot light lights an object like this:
 

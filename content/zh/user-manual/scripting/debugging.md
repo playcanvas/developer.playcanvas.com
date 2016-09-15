@@ -1,26 +1,26 @@
 ---
-title: Debugging
+title: 调试
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-In order to create scripts for PlayCanvas, it is vital that you know how to access and use your browser's development tools.
+为了使PlayCanvas创建脚本，用户了解如何使用浏览器的开发工具是十分重要的。
 
-Chrome, Firefox and other browsers have Developer Tools integrated directly into the browser. You can usually access them by pressing F12 on Windows or ALT-CMD-I on Mac. Or use menu of a browser to access developer tools.
+Chrome, Firefox以及其它的浏览器都直接集成开发者工具到浏览器中。用户可以通过在windows中按F12键或者在Mac系统中按ALT-CMD-I组合对其进行访问，或者使用浏览器的目录对开发者工具进行访问。
 
-### Debugging Scripts
+### 调试脚本
 
-In order to debug your scripts, select the Sources tab in Developer Tools (Chrome). Open the 'navigator' by clicking the icon in the top left corner of the Sources pane. You should see something similar to what is shown below:
+为了调试脚本，在开发者工具（Chrome）中选择来源标签。通过点击在资源面板左上角的图标来打开”导航器”。用户可以看到如下界面：
 
 ![Debugger][1]
 
-In Firefox it looks like this:
+在火狐浏览器（Firefox）中显示如下：
 
 ![Firefox][2]
 
-The navigator lists all of the scripts currently running in the active tab, including any PlayCanvas scripts that you have written. Find one of your scripts in the navigator and select it to open the source code. You are now able to set breakpoints and debug.
+导航器列出了当前在活动标签页中运行的所有脚本，包括所有用户编写的PlayCanvas脚本。在导航器中找到一个需要查看的脚本，点击可以查看脚本的源代码，现在用户就可以对代码进行断点和调试了。
 
-Each browser has detailed instructions on how to debug javascript. You should read through these documents: [Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
+浏览器上有详细说明如何调试JavaScript。用户可以通过以下页面进行了解：[Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
 <div class="alert alert-info">
 Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.

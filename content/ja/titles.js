@@ -88,6 +88,7 @@
     "Building Models": "モデルの構築",
     "Exporting Assets": "アセットのエキスポート",
     "Scenes and Models": "シーンとモデル",
+    "Units": "",
     "Dashboard Header": "ダッシュボードヘッダー",
     "Dashboard": "ダッシュボード",
     "Overview": "概要",

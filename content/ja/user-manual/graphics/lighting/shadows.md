@@ -1,5 +1,5 @@
 ---
-title: Shadows
+title: 影
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -8,11 +8,11 @@ Shadows are a great way to add realism to your games. However, dynamic (realtime
 
 ![Characters with shadow casting][1]
 
-The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop. Furthermore, shadows are free for everybody to use - you don't need a Pro account to make your game look great.
+PlayCanvasにはシャドウマッピングという影を生成するアルゴリズムが実装されています。プラットフォーム間の互換性があり、モバイル端末とデスクトップ両方で動作することが保証されています。さらに、影の機能は無料で誰でも使うことができます。ゲームの見栄えをよくするためにProアカウントを作る必要はありません。
 
-## Enabling Shadows
+## 影をつける
 
-![Directional Light][5]
+![指向性ライト][5]
 
 By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
@@ -22,27 +22,27 @@ Now you need to specify which graphical objects in your scene cast and receive s
 
 Shadows should now be visible in the Editor's Viewport.
 
-## Tuning Shadows
+## 影のチューニング
 
 The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
 
-### Shadow Distance
+### 投影距離のチューニング
 
 The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
 
-### Shadow Resolution
+### 影野解像度
 
-Every light casts shadows via a shadow map. This shadow map can have a resolution of 256x256, 512x512, 1024x1024 or 2048x2048 and this value is also set in the light component's interface. The higher the resolution, the crisper the shadows. However, higher resolution shadows are more expensive to render so be sure to balance performance against quality.
+すべての光源はシャドウマップを使用して影を投影します。シャドウマップは256x256, 512x512, 1024x1024, 2048x2048のいずれかの解像度を設定できます。この値はlightコンポーネントのインタフェースにも設定できます。この解像度が高ければ高いほど、影は鮮明になります。ただし、高い解像度の影はレンダリングに時間がかかるため、パフォーマンスの影のクオリティのバランスを考えて設定してください。
 
-### Shadow Bias
+### 影のバイアス
 
-Shadow mapping can be prone to rendering artifacts that can look very ugly. If you notice bands of shadow or speckled patches where you do not expect, you should try tuning the shadow bias to resolve the problem.
+シャドウマッピングは非常に目立つ不自然な描画をする場合があります。もし影の帯や斑点状のノイズを見つけたら、影のバイアスを調整することで解決する場合があります。
 
-### Normal Offset Bias
+### 法線方向のオフセットバイアス
 
-'Shadow acne' artifacts are a big problem and the shadow bias can eliminate them quite effectively. Unfortunately, this always introduces some level of 'Peter Panning', the phenomenon where shadows make a object appear to be floating in mid-air.
+'影の斑点'と呼ばれる不自然な表示は目立つ問題ですが、シャドウバイアスを調整して対処することができます。ただし、この調整をすると’ピーターパン現象'が発生し、影によって多少物体が浮いているように見えてしまうことがあります。
 
-The Normal Offset Bias solves this problem. In addition to using the depth bias, we can avoid both shadow acne and Peter Panning by making small tweaks to the UV coordinates used in the shadow map look-up. A fragment's position is offset along its geometric normal. This "Normal Offset" technique yields vastly superior results to a constant shadow bias only approach.
+法線方向のオフセットバイアスによってこの問題に対処することができます。深さ方向のバイアスに加えて、シャドウマップの参照時に使われるUVマッピングをわずかに調整することで、影の斑点とピーターパン現象の二つを同時に避けることができます。フラグメントの位置を法線方向にずらす"法線方向のオフセット"はシャドウバイアスだけで問題に対処するよりも、大幅に見た目を改善します。
 
 ## Soft Shadows vs Hard Shadows
 

@@ -1,7 +1,7 @@
 ---
-title: アセットのエクスポート
+title: Exporting Assets
 template: usermanual-page.tmpl.html
-skip: false
+position: 3
 ---
 
 PlayCanvas can import 3D content in the following formats: FBX, OBJ, 3DS and COLLADA (DAE). We strongly recommend you use FBX since this the most robust and well tested interchange format.

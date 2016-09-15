@@ -16,9 +16,9 @@ Editorの3Dビューでは、選択されていないカメラが次のアイコ
 
 ![カメラの作成][2]
 
-## 正投影vs.遠近投影の映写
+## Orthographic vs Perspective Projection
 
-カメラの投影には正投影または遠近投影の二つのタイプがあります。正投影カメラは、平行投影を定義して、主に2Dやアイソメトリックゲームに使用します。
+Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometric games.
 
 ![正投影カメラ][3]
 

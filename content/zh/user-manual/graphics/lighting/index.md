@@ -1,28 +1,28 @@
 ---
-title: Lighting
+title: 灯光
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Lighting a scene is the process of calculating the color or shading of a pixel render to the screen based on the material properties of the surface and the light sources that are applied to that material.
+照亮一个场景是一个对像素的颜色和阴影的计算过程，场景的渲染基于平面的材质属性以及应用在该材质的光源。
 
-In PlayCanvas, lighting can be broadly divided up into two basic categories: dynamic lights and lightmaps.
+在PlayCAnvas中，灯光可以大致分为两个基本类别：动态光源和光照贴图。
 
-## Dynamic Lights
+## 动态光源
 
-Lighting calculations that are performed at runtime are classed as dynamic. Every frame the engine calculates the amount of light falling on a surface from the type, position and properties of Light Entities and uses this to color the material.
+照明计算在实时运行状态下被归类为动态。
 
-## Lightmaps
+## 光照贴图
 
-For lights and geometry that does not move, it is often preferable to determine the lighting information in advance. This information is then saved into lightmap textures which are applied to the surface materials. This method has a very low runtime cost at the expense of having static lighting which can not change.
+对于固定的灯光和几何形状，比较适合的是提前定义灯光的信息。这个信息将会保存在应用在平面材质的光照贴图纹理。这个方法对于不能改变的静止灯光有着极低的运行消耗。
 
-There are two methods of creating lightmaps:
+这里有两种方式创建光照贴图：
 
-### PlayCanvas Runtime Lightmap Generation
+### PlayCanvas光照贴图生成
 
-The PlayCanvas Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
+PlayCanvas引擎已经搭建了光照贴图生成器。这个可以帮助自动生成光照贴图在游戏开始之前。用这种方法用户可以使用标准灯光组件，更改以及在编辑器中预览场景。
 
-### External Lightmap Generation
+### 外部光照贴图生成
 
-Many 3D creation tools have lightmap generation included or available as an add-on, including 3DS Max, Maya and Blender. These tools generally generate lightmap textures which can be uploaded as regular assets and added to the Lightmap slot in the standard Physical Material.
+许多3D创建工具包含了光照贴图生成器或者允许在程序中自主添加，包括3DS Max，Maya以及Blender。这些工具普遍都可以生成允许作为常规资源被上传的光照贴图，添加到标准物理材质的光照贴图插槽。
 

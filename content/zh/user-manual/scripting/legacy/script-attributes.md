@@ -1,26 +1,27 @@
 ---
-title: Script Attributes
+title: 脚本属性
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties.
+脚本属性是一个非常强大的功能，用户可以在PlayCanvas编辑器中找到它。用户可以只编写一次代码，然后稍稍更改不同实体的实例的值，以给予他们不同的属性。
 
-## Declaring Script Attributes
+## 脚本属性声明
 
 Script Attributes are declared at the top of your script file using this format:
+通过以下的格式在脚本文件顶部对脚本属性进行声明：
 
 ```javascript
 pc.script.attribute(attributeName, attributeType, defaultValue, options);
 ```
 
-In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
+在这个例子中我们声明了一个叫作“speed”的属性，这个属性为数值型，默认值为80:
 
 ```javascript
 pc.script.attribute('speed', 'number', 80);
 ```
 
-## Getting Attributes into Editor
+## 编辑器中的属性
 
 <img src="/images/user-manual/scenes/components/component-script-attributes.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 

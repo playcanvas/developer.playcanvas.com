@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-用户可以通过脚本进行PlayCanvas应用交互。脚本使用“JavaScript”程序语言设计，应用在项目网页。
+Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programming language that is used to program web pages.
 
 用户可以想象一下应用程序被分割成两个独立的代码库。有PlayCanvas所提供的引擎，实现了通用功能譬如图形绘制，输入处理，音频，PlayCanvas工具的接口；应用程序的脚本或者可以显示有效行为的可重复使用块。
 

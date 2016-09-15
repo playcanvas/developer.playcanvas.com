@@ -415,12 +415,6 @@ source_file = po/user-manual/scripting/debugging.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-scripting-events]
-file_filter = po/user-manual/scripting/events.<lang>.po
-source_file = po/user-manual/scripting/events.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-scripting-index]
 file_filter = po/user-manual/scripting/index.<lang>.po
 source_file = po/user-manual/scripting/index.en-US.po
@@ -454,12 +448,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-assets-html]
 file_filter = po/user-manual/assets/html.<lang>.po
 source_file = po/user-manual/assets/html.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-loading_and_streaming]
-file_filter = po/user-manual/assets/loading_and_streaming.<lang>.po
-source_file = po/user-manual/assets/loading_and_streaming.en-US.po
 source_lang = en
 type = PO
 
@@ -715,21 +703,9 @@ source_file = po/user-manual/graphics/index.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-graphics-lights]
-file_filter = po/user-manual/graphics/lights.<lang>.po
-source_file = po/user-manual/graphics/lights.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-graphics-particles]
 file_filter = po/user-manual/graphics/particles.<lang>.po
 source_file = po/user-manual/graphics/particles.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-shadows]
-file_filter = po/user-manual/graphics/shadows.<lang>.po
-source_file = po/user-manual/graphics/shadows.en-US.po
 source_lang = en
 type = PO
 

@@ -1,7 +1,7 @@
 ---
-title: モデルの作成
+title: Building Models
 template: usermanual-page.tmpl.html
-skip: false
+position: 2
 ---
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.

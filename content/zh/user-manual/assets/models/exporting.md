@@ -1,7 +1,7 @@
 ---
-title: 导出资源
+title: Exporting Assets
 template: usermanual-page.tmpl.html
-skip: false
+position: 3
 ---
 
 PlayCanvas可以导入3D媒体通过以下文件类型：FBX, OBJ, 3DS and COLLADA (DAE)。我们强烈推荐用户使用FBX类型文件已达到最佳效果。

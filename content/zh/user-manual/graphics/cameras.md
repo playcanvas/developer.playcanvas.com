@@ -1,40 +1,40 @@
 ---
-title: Cameras
+title: 摄像机
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-Cameras are responsible for rendering a scene to the screen. You need at least one camera in your scene to see anything. When you create a new scene in PlayCanvas, it is automatically populated with a single camera (along with a directional light).
+摄像机负责向屏幕渲染场景。用户需要至少保持一个摄像机在场景中。当用户在PlayCanvas中创建一个新的场景，系统将会自动加载一个摄像机（默认为定向光）。
 
-## Creating a Camera
+## 创建一个摄像机
 
-In the Editor's 3D View, a unselected camera is represented with the following icon:
+在编辑器的3D视角中，一个未被选中的摄像机呈现的是以下的这个图标：
 
 ![Camera icon][1]
 
-To create a new camera, simply create a new entity and add a camera component to it. For convenience, the Editor menu has an item that does this in a single step:
+创建一个新的摄像机，只要创建一个新的实体然后为这个实体添加一个摄像机组件就可以。为了用户的便利，编辑器目录有一个选项可以一步完成这个操作：
 
 ![Camera creation][2]
 
-## Orthographic vs Persective Projection
+## Orthographic vs Perspective Projection
 
-Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometic games.
+Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometric games.
 
 ![Orthographic camera][3]
 
-More commonly used is the perspective projection. It more closely mimics how our eyes or cameras work.
+透视投影被更广泛的使用，透视投影更真实的模仿了人眼或摄像机工作。
 
 ![Perspective camera][4]
 
-## Controlling the Viewport
+## 控制视口
 
-By default, a camera will render to the full width and height of its render target. However, there are circumstances where you might want to change this behavior. For example, perhaps you are writing a game that has a local multiplayer mode that requires split-screen rendering to show each player's viewpoint.
+默认情况下，摄像机将会对目标的全部宽度和高度进行渲染。然而，在有些情况下，用户可能想要改变这个行为。譬如，用户在编写一个游戏，允许本地多人模式，需要分屏渲染显示每个玩家的视点。
 
-For 2-player horizontal splitscreen, you would create two cameras and configure their viewports as follows:
+对于双人模式视角分屏，用户可以创建两个摄像机并且可以根据以下以下设置它们的视点：
 
 ![Horizontal splitscreen][5]
 
-And for vertical splitscreen, you would configure the viewports as follows:
+对于垂直分屏，用户可以通过以下设置配置它们的视点：
 
 ![Vertical splitscreen][6]
 

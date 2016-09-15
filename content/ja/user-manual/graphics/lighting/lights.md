@@ -4,61 +4,61 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources that approximate the different types of light we find in reality.
+現実の世界の環境は、太陽、街路灯、テレビの画面などの様々な光に照らされています。PlayCanvasシーンでは、現実世界にある光の種類を再現できるよう、複数の種類のライトソースを用意しています。
 
-There are three types of light in PlayCanvas:
+PlayCanvasには3種類のライトがあります：
 
-* Directional lights
-* Point lights
-* Spot lights
+* 指向性ライト
+* ポイントライト
+* スポットライト
 
-## Directional Lights
+## 指向性ライト
 
-The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as travelling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
+最も身近な光源は太陽です。太陽は地球から非常に遠いので、地球の表面に当たる光は単一方向を向くよう近似することができます。PlayCanvasでは、このタイプのライトソースをDirectional（指向性）ライトと呼びます。
 
-When unselected, a directional light is represented by the following icon in the Editor's 3D view:
+選択されていない場合、指向性ライトはエディタの3Dビュー内で次のアイコンで表されます。
 
-![Directional light icon][1]
+![指向性ライトアイコン][1]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+階層パネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
-A directional light lights an object like this:
+指向性ライトは次のようにオブジェクトを照らします：
 
-![Directional light][2]
+![指向性ライト][2]
 
-Directional lights are the fastest to process by the engine in terms of performance.
+指向性ライトは、パフォーマンスの面ではエンジンに最も速く処理されます。
 
-## Point Lights
+## ポイントライト
 
-Point lights are light sources that emit light from a single point in all directions. Examples of this type of light are an unshaded light bulb or candlelight.
+ポイントライトは、一点から全方向に光を放射するライトソースです。このタイプのライトの例は、裸の電球やキャンドルライトです。
 
-When unselected, a point light is represented by the following icon in the Editor's 3D view:
+選択されていない場合、ポイントライトはエディタの3Dビュー内で次のアイコンで表されます。
 
-![Point light icon][3]
+![ポイントライトアイコン][3]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+階層パネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
-A point light lights an object like this:
+ポイントライトは次のようにオブジェクトを照らします：
 
-![Point light][4]
+![ポイントライト][4]
 
-Point lights are more costly than directional lights but faster to process than spot lights.
+ポイントライトは指向性ライトより消費が高いですが、スポットライトより速く処理されます。
 
-## Spot Lights
+## スポットライト
 
-Spot lights, like point lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light would be a torch or the light from a lighthouse.
+スポットライトはポイントライトのように、空間内の一点から光を放射します。しかし、スポットライトの光は円錐形状に制限されます。スポットライトの例にはたいまつや灯台の光などがあります。
 
-When unselected, a spot light is represented by the following icon in the Editor's 3D view:
+選択されていない場合、スポットライトはエディタの3Dビュー内で次のアイコンで表されます。
 
-![Spot light icon][5]
+![スポットライトアイコン][5]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+階層パネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
-A spot light lights an object like this:
+スポットライトは次のようにオブジェクトを照らします：
 
-![Spot light][6]
+![スポットライト][6]
 
-Spot lights are the most costly type of light so use them sparingly.
+スポットライトは最も消費が高いタイプのライトなので、使用には注意が必要です。
 
 [1]: /images/user-manual/graphics/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lights/directional.jpg

@@ -1,10 +1,10 @@
 ---
-title: Anatomy of a script
+title: 脚本解析
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Here is a basic script. We can learn about the structure of a PlayCanvas script from it.
+以下是一组基础脚本，用户可以从中学习PlayCanvas脚本的结构。
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -32,28 +32,28 @@ Rotate.prototype.swap = function(old) {
 };
 ```
 
-We'll break down each section of the script
+来让我们对脚本代码的每个部份来进行分析
 
-# Script Methods
+# 脚本方法
 
-## Declaration of Script Type
+## 脚本类型说明
 
 ```javascript
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have it's prototype extended with a standard set of methods. Somewhat like class inheritance.
+这行代码创建了一个新的脚本类型名为“rotate”。脚本的名称用以识别在脚本组件中各个脚本。在程序中每个脚本类型都必须有它们专属的名称。返回函数“Rotate”是一个将已有属性进行扩展的Javascript函数。类似于类继承。
 
-## Script Attributes
+## 脚本特性
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
-Attributes are automatically inherited to new script instance during code hot-swap.
+这行代码定义了脚本的属性。脚本属性是一个脚本实例的特性用户可以在编辑器UI中找到这个。允许用户在 编辑器中对单个实体进行自定义。在上面代码的情况中，属性称之为“speed”在代码中也可以使用“this.speed”。默认数字为“10”。
+属性在代码热交换过程中自动继承到新的脚本实例。
 
-## Initialize
+## 初始化
 
 ```javascript
 // initialize code called once per entity
@@ -63,11 +63,11 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
-The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only ever called once for each entity. You can use it to define and initalize member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
+当脚本附加实体时候，初始化函数被调用。在应用程序加载之后初始化函数将会被响应，但在第一次上传循环或者帧渲染之前实体层次结构已被构造。初始化函数将仅仅只会对每个实体响应一次。用户可以使用初始化函数定义或者初始化脚本实例的数字变量。当应用程序开始如果一个实体或者脚本被关闭，初始化函数被响应，在第一时间实体将会被开启。
 
-If a script component has multiple scripts attached to it, `initialize` is called in the order of the scripts on the component.
+如果一个脚本组件附加了有多个脚本，“初始化”将在组件中按照脚本的排序被响应。
 
-## Update
+## 上传
 
 ```javascript
 // update code called every frame
@@ -80,11 +80,11 @@ Rotate.prototype.update = function(dt) {
 };
 ```
 
-The update method is called for each entity every frame while the entity, the script component and the script instance are enabled. Each frame `dt` is passed as argument, which is time in seconds since the last frame.
+在实体的每个框架中，每个实体都需要更新函数，脚本组件和脚本实例被启用。每个框架的“dt”属性将被当作参数传递。
 
-If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
+如果一个脚本组件附加了多个脚本，“更新”函数将在组件中按照脚本的排序被响应。
 
-## Swap
+## 交换
 
 ```javascript
 // swap method called for script hot-reloading
@@ -94,23 +94,23 @@ Rotate.prototype.swap = function(old) {
 };
 ```
 
-The `swap` method is called when ever a ScriptType with same is added to registry. This is done automatically in Launch when script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
+当有一个脚本类型被添加到注册表时交换函数将会响应。这个将会在编辑器中脚本在运行状态下被自动完成。这个函数允许用户在运行应用时支持“代码热加载”。对于用户来说这个是十分有帮助的，如果用户希望对代码进行迭代当运行App时。用户可以进行修改可以实时看到结果并不需要重新加载和设置。
 
-The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
+旧的脚本实例作为参数被传递给交换函数，用户可以这个步骤将旧实例的状态复制给新的实例。还必须要确保事件的状态为‘unsubscribed’and‘re-subscribed’。
 
-If you do not wish to support hot-swapping of code you can delete the swap method and the engine will not attempt to refresh the script.
+如果用户不希望进行代码的热交换，用户可以删除交换函数，引擎将不会尝试更新脚本。
 
-## Additional Methods: postInitialize and postUpdate
+## 其它方法: postInitialize and postUpdate
 
-There are two more methods that are called by the engine on scripts if they are present. `postInitialize` is called on all scripts that implement it after all scripts have been initialized. Use this method to perform functions that can assume all scripts are initialized. `postUpdate` is an update method that is called after all scripts have been updated. Use this to perform functions that can assume that all scripts have been updated. For example, a camera that is tracking another entity should update its position in `postUpdate` so that the other entity has completed its motion for the frame.
+‘postInitialize’可以在所有脚本中被调用，并且在脚本被初始化之后进行实现。使用这个方法来执行可以认为所有脚本都被初始化。‘postUpdate’是一个更新函数，在所有脚本被更新之后响应。使用这个方法来执行可以认为所有脚本都被更新。譬如，摄像机在跟踪一个应该在’postUpdate‘中更新其位置的实体，与此同时另外一个实体已经在这个框架中完成了这个动作。
 
-# Events
+# 事件
 
-Script instances fire a number of events that can be used to respond to specific circumstances.
+脚本实例触发多个事件，可以用来对特定的情况做出响应。
 
-## state, enable, disable
+## state, 启用, 禁用
 
-The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
+当脚本实例改变运行状态从启用到禁用，或禁用到启用，‘state’事件被响应。脚本实例状态可以通过开启/禁用脚本来进行，组件和脚本也是其中一员，或者有脚本组件附加的实体。‘enable’事件仅仅只当状态从禁用到启用时被响应，‘disable’事件仅仅只当状态从启用到禁用时才被 响应。
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -125,7 +125,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-or the equivalent using `enable` and `disable`
+或使用 `enable`和  `disable`等式
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -141,7 +141,7 @@ Rotate.prototype.initialize = function () {
 
 ## destroy
 
-The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method, or script component been removed from Entity, or because the Entity it was attached to was destroyed.
+当脚本实例被销毁时，‘destroy’事件被触发。这可能是因为脚本从组件通过使用’destroy()’函数被移动，或者脚本组件已经从实体移动，又或者实体所附加的脚本已经被销毁。
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -154,7 +154,7 @@ Rotate.prototype.initialize = function () {
 
 ## attr & attr:[name]
 
-The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
+当声明脚本属性值被更改时`attr` 和 `attr:[name]` 事件将被触发。这可能发生在运行过程中的应用程序，或者在通过编辑器进行更改模型的值的时候。`attr`事件当每个属性发生改变时被触发。`attr:[name]` 事件只当特定属性被改变时候被触发。譬如如果用户有一个'speed' 的属性 `attr:speed`事件为当speed被改变时才会触发。
 
 ```javascript
 Rotate.prototype.initialize = function () {

@@ -88,6 +88,7 @@
     "Building Models": "制作模型",
     "Exporting Assets": "导出资源",
     "Scenes and Models": "场景与模型",
+    "Units": "",
     "Dashboard Header": "指示板标题",
     "Dashboard": "指示板",
     "Overview": "总览",

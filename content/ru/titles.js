@@ -88,6 +88,7 @@
     "Building Models": "Построение моделей",
     "Exporting Assets": "Экспорт ассетов",
     "Scenes and Models": "Сцены и модели",
+    "Units": "",
     "Dashboard Header": "Заголовок панели",
     "Dashboard": "Панель",
     "Overview": "Обзор",
