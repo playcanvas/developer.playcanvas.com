@@ -777,6 +777,43 @@
             }
         }
     }
+
+    pre.api {
+        min-height: 2em;
+        line-height: 2em;
+        color: #fff;
+        background: #1d292c;
+        padding: 0.5em;
+        font-size: 12px;
+    }
+
+    .params {
+        margin: 1em 0;
+        line-height: 2;
+        border-left: 4px solid #1d292c;
+        padding: 0 0.5em 0 1em;
+        font-size: 14px;
+        display: table;
+
+        .parameter {
+            display: table-row;
+        }
+
+        p {
+            display: table-cell;
+        }
+
+        .param {
+            display: table-cell;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0.5em 1em 0.5em 0.5em;
+
+            &:after {
+                content: ':';
+            }
+        }
+    }
 }
 
 /* Small devices (tablets, desktops, 768px and up) */
