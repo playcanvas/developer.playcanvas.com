@@ -16,9 +16,9 @@ To create a new camera, simply create a new entity and add a camera component to
 
 ![Camera creation][2]
 
-## Orthographic vs Persective Projection
+## Orthographic vs Perspective Projection
 
-Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometic games.
+Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometric games.
 
 ![Orthographic camera][3]
 
