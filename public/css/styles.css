@@ -897,115 +897,154 @@
   .container main img {
     max-width: 100%;
   }
+
+  /* line 781, ../../sass/styles.scss */
+  pre.api {
+    min-height: 2em;
+    line-height: 2em;
+    color: #fff;
+    background: #1d292c;
+    padding: 0.5em;
+    font-size: 12px;
+  }
+
+  /* line 790, ../../sass/styles.scss */
+  .params {
+    margin: 1em 0;
+    line-height: 2;
+    border-left: 4px solid #1d292c;
+    padding: 0 0.5em 0 1em;
+    font-size: 14px;
+    display: table;
+  }
+  /* line 798, ../../sass/styles.scss */
+  .params .parameter {
+    display: table-row;
+  }
+  /* line 802, ../../sass/styles.scss */
+  .params p {
+    display: table-cell;
+  }
+  /* line 806, ../../sass/styles.scss */
+  .params .param {
+    display: table-cell;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0.5em 1em 0.5em 0.5em;
+  }
+  /* line 812, ../../sass/styles.scss */
+  .params .param:after {
+    content: ':';
+  }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
-  /* line 785, ../../sass/styles.scss */
+  /* line 822, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 790, ../../sass/styles.scss */
+  /* line 827, ../../sass/styles.scss */
   nav.intro ul {
     width: 616px;
   }
-  /* line 792, ../../sass/styles.scss */
+  /* line 829, ../../sass/styles.scss */
   nav.intro ul li {
     width: 150px;
   }
-  /* line 795, ../../sass/styles.scss */
+  /* line 832, ../../sass/styles.scss */
   nav.intro ul li:last-child {
     border-right: 1px solid #e6e6e6;
   }
 
-  /* line 804, ../../sass/styles.scss */
+  /* line 841, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
-  /* line 808, ../../sass/styles.scss */
+  /* line 845, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
-  /* line 812, ../../sass/styles.scss */
+  /* line 849, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
-  /* line 814, ../../sass/styles.scss */
+  /* line 851, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* line 826, ../../sass/styles.scss */
+  /* line 863, ../../sass/styles.scss */
   header > nav > ul > li {
     margin: auto 30px;
   }
 
-  /* line 833, ../../sass/styles.scss */
+  /* line 870, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
-  /* line 838, ../../sass/styles.scss */
+  /* line 875, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 840, ../../sass/styles.scss */
+  /* line 877, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 848, ../../sass/styles.scss */
+  /* line 885, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 852, ../../sass/styles.scss */
+  /* line 889, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 856, ../../sass/styles.scss */
+  /* line 893, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 270px);
   }
-  /* line 858, ../../sass/styles.scss */
+  /* line 895, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* line 867, ../../sass/styles.scss */
+  /* line 904, ../../sass/styles.scss */
   .content-width {
     width: 1070px;
   }
 
-  /* line 872, ../../sass/styles.scss */
+  /* line 909, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
-  /* line 874, ../../sass/styles.scss */
+  /* line 911, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
-  /* line 881, ../../sass/styles.scss */
+  /* line 918, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
-  /* line 885, ../../sass/styles.scss */
+  /* line 922, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
-  /* line 889, ../../sass/styles.scss */
+  /* line 926, ../../sass/styles.scss */
   .container main {
     width: 800px;
   }
-  /* line 891, ../../sass/styles.scss */
+  /* line 928, ../../sass/styles.scss */
   .container main img {
     max-width: 800px;
   }
-  /* line 895, ../../sass/styles.scss */
+  /* line 932, ../../sass/styles.scss */
   .container main .full-width {
     width: 970px;
   }
