@@ -33,10 +33,6 @@ Status: 200
 ```none
 {
     "id": int,
-    "scope": {
-      "type": "user" or "project",
-      "id": int
-    },
     "created_at": date,
     "modified_at": date,
     "status": "running" or "complete" or "error",

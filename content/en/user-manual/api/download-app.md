@@ -40,18 +40,14 @@ Status: 201 Created
 ```none
 {
     "id": int,
-    "scope": {
-      "type": "user",
-      "id": int
-    },
     "created_at": date,
     "modified_at": date,
     "status": "running" or "complete" or "error",
     "messages": list of strings,
     "data": {
-    'owner_id': int,
+      'owner_id': int,
       'project_id': int,
-      'source_pack_ids': list of int scene ids,
+      'scenes': list of int scene ids,
       'name': string,
       'target': string,
       'concatenate': boolean,
