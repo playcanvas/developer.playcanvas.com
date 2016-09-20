@@ -1,14 +1,14 @@
 ---
-title: Download App
+title: Apps - Download app
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
 ## Route URL
 
-<pre class="api">
+```none
 POST https://playcanvas.com/api/apps/download
-</pre>
+```
 
 ## Description
 
@@ -33,11 +33,11 @@ This route uses a [very strict][1] rate limit.
 
 ## Response Schema
 
-<pre class="api">
+```none
 Status: 201 Created
-</pre>
+```
 
-<pre class="api">
+```none
 {
     "id": int,
     "scope": {
@@ -58,7 +58,7 @@ Status: 201 Created
       "download_url": string
     }
 }
-</pre>
+```
 
 ## Errors
 

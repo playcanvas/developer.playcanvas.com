@@ -1,14 +1,14 @@
 ---
-title: Get Job
+title: Jobs - Get job
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
 ## Route URL
 
-<pre class="api">
+```none
 GET https://playcanvas.com/api/jobs/:id
-</pre>
+```
 
 ## Description
 
@@ -26,11 +26,11 @@ This route uses a [normal][1] rate limit.
 
 ## Response Schema
 
-<pre class="api">
+```none
 Status: 200
-</pre>
+```
 
-<pre class="api">
+```none
 {
     "id": int,
     "scope": {
@@ -43,7 +43,7 @@ Status: 200
     "messages": list of strings,
     "data": object - contents depend on the job
 }
-</pre>
+```
 
 ## Errors
 

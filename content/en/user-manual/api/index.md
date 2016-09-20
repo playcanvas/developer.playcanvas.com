@@ -1,10 +1,10 @@
 ---
-title: Developer API
+title: REST API
 template: usermanual-page.tmpl.html
 position: 12
 ---
 
-PlayCanvas offers a Developer REST API for [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more.
+PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more.
 
 ## Authorization
 
@@ -16,17 +16,17 @@ From your Account page you can also Revoke all the tokens you have generated or 
 
 When you make calls to the API you must set the 'Authorization' header in your HTTP request to this value:
 
-<pre class="api">
+```none
 Bearer [access_token]
-</pre>
+```
 
 Replace `[access_token]` with an Access Token you generated in your Account page.
 
 For example:
 
-<pre class="api">
+```none
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
-</pre>
+```
 
 ## Parameters
 
@@ -44,7 +44,7 @@ If you are trying to GET a single resource the response will be a JSON object wi
 
 If you are trying to GET multiple resources like for example listing the Apps of a Project you will get a JSON object with this format:
 
-<pre class="api">
+```none
 {
     "result": [
         resource_1,
@@ -58,7 +58,7 @@ If you are trying to GET multiple resources like for example listing the Apps of
         "total": number
     }
 }
-</pre>
+```
 
 As you can notice the response in this case also contains pagination data. To control the pagination of the response you can pass the following URL parameters:
 
@@ -71,19 +71,19 @@ As you can notice the response in this case also contains pagination data. To co
 
 So for example to get 32 items after the first 16 items you would send this request:
 
-<pre class="api">
+```none
 https://playcanvas.com/api/items?limit=32&amp;skip=16
-</pre>
+```
 
 #### Errors
 
 When an error is raised you will get a JSON object with this format:
 
-<pre class="api">
+```none
 {
     "error": "This is the error message"
 }
-</pre>
+```
 
 Also the status code of the response will be the appropriate HTTP error code.
 
@@ -93,7 +93,7 @@ Calls to the REST API have a rate limit. There are different rate limits dependi
 
 * **normal:** The normal rate limit allows 120 requests per minute.
 * **strict:** The strict rate limit allows 60 requests per minute.
-* **very strict:** The very strict rate limit allows 30 requests per minute.
+* **very strict:** The very strict rate limit allows 5 requests per minute.
 
 The response will contain the following headers to help you regulate how often you call the API:
 
