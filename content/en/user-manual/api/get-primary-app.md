@@ -34,14 +34,11 @@ Status: 200
 {
     "id": int,
     "project_id": int,
-    "project": string,
     "owner_id": int,
-    "owner": string,
     "name": string,
     "description": string,
     "version": string,
     "release_notes": string,
-    "has_thumbnails": boolean,
     "thumbnails": {
         "s": string,
         "m": string,
@@ -49,7 +46,6 @@ Status: 200
         "xl": string
     },
     "size": int,
-    "task": dictionary,
     "views": int,
     "completed_at": date,
     "created_at": date,
