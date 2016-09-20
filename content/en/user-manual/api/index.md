@@ -93,7 +93,7 @@ Calls to the REST API have a rate limit. There are different rate limits dependi
 
 * **normal:** The normal rate limit allows 120 requests per minute.
 * **strict:** The strict rate limit allows 60 requests per minute.
-* **very strict:** The very strict rate limit allows 30 requests per minute.
+* **very strict:** The very strict rate limit allows 5 requests per minute.
 
 The response will contain the following headers to help you regulate how often you call the API:
 
