@@ -1,14 +1,14 @@
 ---
-title: List Project Apps
+title: Apps - Get project apps
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
 ## Route URL
 
-<pre class="api">
+```none
 GET https://playcanvas.com/api/projects/:project_id/apps
-</pre>
+```
 
 ## Description
 
@@ -26,11 +26,11 @@ This route uses a [normal][1] rate limit.
 
 ## Response Schema
 
-<pre class="api">
+```none
 Status: 200
-</pre>
+```
 
-<pre class="api">
+```none
 {
   result: [{
     "id": int,
@@ -64,7 +64,7 @@ Status: 200
      ...
   }
 }
-</pre>
+```
 
 ## Errors
 
