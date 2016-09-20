@@ -42,7 +42,6 @@ Status: 200
     "description": string,
     "version": string,
     "release_notes": string,
-    "storage": string,
     "has_thumbnails": boolean,
     "thumbnails": {
         "s": string,
