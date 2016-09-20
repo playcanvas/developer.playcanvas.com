@@ -41,7 +41,6 @@ Status: 200
     "description": string,
     "version": string,
     "release_notes": string,
-    "storage": string,
     "has_thumbnails": boolean,
     "thumbnails": {
         "s": string,
@@ -49,7 +48,6 @@ Status: 200
         "l": string,
         "xl": string
     },
-    "featured_weight": int,
     "size": int,
     "task": dictionary,
     "views": int,
