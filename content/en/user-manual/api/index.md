@@ -4,6 +4,10 @@ template: usermanual-page.tmpl.html
 position: 12
 ---
 
+<div class="alert alert-info">
+    The REST API is currently in beta. This means we may change certain endpoints and API responses.
+</div>
+
 PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more.
 
 ## Authorization
