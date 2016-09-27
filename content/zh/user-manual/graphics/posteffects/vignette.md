@@ -1,23 +1,23 @@
 ---
-title: Vignette Effect
+title: 暗角
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-In photography and optics, vignetting is a reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame. <small>(from [Wikipedia][1])</small>
+在摄影和光学角度来说，暗角指图像外围的亮度和饱和度比图像中心的图像亮度和饱和度小。你可以使用这个效果突出画面的中央。<small>(来自于[Wikipedia][1])</small>
 
-Here is an image without the effect:
+这是一张没有经过处理的图片:
 
 <img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
 
-and the same image with the effect applied:
+这是一张已经经过了处理的图片:
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_vignette.png"></img>
 
-The built-in vignette effect has the following attributes:
+内置的暗角效果有以下属性:
 
-* **Offset**: Controls the offset of the effect.
-* **Darkness**: Controls the darkness of the effect.
+* **偏移量**: 控制效果的位置偏移。
+* **暗度**: 控制效果的变暗程度。
 
 [1]: http://en.wikipedia.org/wiki/Vignetting
 

@@ -1,57 +1,57 @@
 ---
-title: Physically Based Rendering
+title: 基于物理渲染
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-![Star-Lord][1]
-*Star-Lord Model by [Joachim Coppens][2]*
+![星际骑士][1]
+*星际骑士 模型，作者： [Joachim Coppens][2]*
 
-Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
+基于物理的渲染(PBR)是一个艺术工作流程的组合，使在图形渲染时一同工作的物理性能和材质着色器获得协调和一致。
 
-# Fundamental Principles
+# 基本原理
 
-Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in PlayCanvas.
+接下来，我们会尝试基于物理的着色器背后是如何计算照明的并总结这些基本原理。在接下来的章节中，我们将详细介绍在PlayCanvas中使用的基于物理的渲染方式的工作细节。
 
-## Diffuse & Specular
+## 漫反射 & 镜面反射
 
-Diffuse and Specular (or reflected) light are the two terms that describe two main types of interaction between light and a material. Specular light refers to light which has bounced off the surface. On a smooth surface this light will reflect all the in same direction and the surface will appear mirror-like. Diffuse light is light that has been absorbed, scattered in the material and re-emerged. This light tends to be uniform in direction unlike specular light. During this absorbing and re-emerging some light wavelengths will be absorbed. The wavelengths that are not absorbed give the material it's color. For example, if all blue and green wavelengths are absorbed, the material will appear red. In rendering terms, diffuse color is sometimes known as "albedo" or "base color".
+漫反射和镜面反射(或者说高光)光描述了两种主要的光与材质之间的影响效果。镜面光指被光滑表面被反弹后的光亮。在光滑表面上这种光效可以把所有在相同的方向的物体反映在表面上，产生镜面般的效果。漫反射光的光线是被材质吸收加疏散过后在此产生的。这种光往往不同于镜面光，在方向上被分散得很均匀。在这个吸收和重现的过程中一些光的波长会被吸收。没有被吸收的波长会在材质上映出颜色。举个例子，如果所有的蓝光和绿光都被吸收了，那么这个材质会呈现红色。在渲染项中，漫反射颜色有时又被认作为"颜色反射率" 或是 "基础颜色"。
 
-## Energy Conservation
+## 节约性能
 
-![Energy Conservation][3]
-*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
+![节约性能][3]
+*越光滑表面反射光光斑越小越亮, 越粗糙的表面反射光光斑越大越暗 *
 
-One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practise this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+正确的物理渲染的一个主要特征就是节约了性能。从漫射光与反射光都是从光与材料接触后产生这个事实可以看出，漫射和反射光的总和不能超过与材料接触的光的总和。在实践中，这意味着，如果一个表面是高度镜面的，那么它会显示极少的漫反射颜色。与此相反，如果材质显示了一个非常明显的漫反射颜色，那么它将显示很少的反射内容。
 
-The joy of PBR is that energy conservation is included in the shader, so as an artist you don't have to think about it. It just works!
+PBR让人欣喜的地方在于性能的节约全部包含在了着色器内，因此作为一个美术工作者你就不需要考虑这方面的问题了。它会自己工作！
 
-## Metals & Non-metals
+## 金属 & 非金属
 
-![Metals & Non-metals][4]
-*Metals and Non-metals*
+![金属 & 废金属][4]
+*金属和非金属*
 
-One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine it's behaviour. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
+与旧的渲染机制相比较，PBR的一个新特性是提前想好这个材质是用于做什么的而不是去决定它的表现现象。我们在这里考虑的主要问题是材料是否是导体(通常以金属做例) 还是绝缘体(非金属)。
 
-The reason this is important is it determines many factors about how the material responds to light. For example, metals are generally reflective (between 60%-90%) where as non-metals are not (0%-20%). Secondly, reflections on non-metals are usually white where as metals will usually reflect the same color as the diffuse.
+这很重要的原因是它决定了关于材料将如何呈现光照的许多因素。举个例子，金属的反射率一般在(60％-90％之间)而非金属则在(0％-20％)之间。第二点，非金属反射出的影子通常是白色的，而金属通常会反射出与影像漫反射相同的颜色。
 
-Because of these differences one of the PBR workflows includes a **metalness** property which makes this stuff simple by defining a material as either a metal, or a non-metal. More on metalness workflow in the following sections.
+因为有这些差异的存在，PBR工作流程中设置了**金属**参数，使得定义材质位金属或非金属变得简单了许多。更多关于金属设置的工作流程请看下方。
 
-## Fresnel
+## 菲涅尔透视效果
 
-Fresnel is a term that you don't really have to know about to work with PBR in PlayCanvas, but it will give you a better view of how materials behave if you do.
+菲涅尔是一个术语，你不需要真的明白PlayCanvas是怎样进行PBR工作的，但是它会给你一个关于如何表现材质的更好的意见。
 
-All you need to know about Fresnel is it means that the angle at which you are viewing a surface influences how reflective that surface appears. If the surface is almost edge on to your view, it will be almost completely reflective.
+你对于菲涅尔所需要了解的部分只有它意味着在你通过一个面观察事物的角度会影响反射后呈现出的景象。如果这个面在你的视野里几乎只有边缘，它将会呈现完全反射。
 
-## Microsurface
+## 微观表面
 
-Finally onto microsurface. Generally, 3D artists are familiar with the idea of normal maps. Textures that modify the direction of the surface they are applied to. Microsurface, otherwise known as roughness or glossiness, provides a similar thing, only on a much smaller scale. The microsurface of a material describes how rough or smooth a surface is. Compare glass (high glossiness, low roughness) to sandpaper (high roughness, low glossiness). We're not specifying the exact direction the surface faces, just the general idea of rough or smooth.
+最后我们来看微观表面部分。通常来说，3D美术师们对法线贴图这个概念是很熟悉的。即用于修改材质被贴到面上的方向的贴图。微观表面，或者还可以认作粗糙度或光滑度，只在很小的尺寸们中提供了一个相似的效果。材质的围观表面描述了材质有多粗糙或者光滑。从玻璃比较(最高光滑度，最低粗糙度)到砂纸(最高粗糙度，最低光滑度)。我们并没有指定确切的方向上的确切的面数，仅仅是一个粗糙与光滑的概念。
 
-Some PBR systems use Roughness, some use Glossiness, they are the same thing. Roughness is the inverse of Glossiness and vice versa. If you want to convert from one to the other, simply invert the texture or value.
+一些PBR系统会使用粗糙系数，一些使用光滑系数，这些都是相同的概念。粗糙系数指与光滑相背离的程度，反之同样。如果你想从一个效果转换到另一个，简单的做法是反转纹理或系数值。
 
-[Next: Physical Materials][6]
+[下一章: 物理材质][6]
 
-*More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
+*更多信息请参阅 Marmoset Toolbag 的 [PBR 理论][5] 文章 *。
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
 [2]: http://joachimcoppens.com/

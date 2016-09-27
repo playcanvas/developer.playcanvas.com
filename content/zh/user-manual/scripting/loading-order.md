@@ -1,34 +1,33 @@
 ---
-title: Loading Order
+title: 加载顺序
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-Generally all scripts are loaded at the beginning of your application. The loading order is determined by a setting in your project which you can access from the main Editor menu or Scene Settings
+总的来说所有的脚本都会在程序的开始部分被加载。加载顺序是由你可以从项目的主编辑器菜单或场景访问的设置决定的。
 
-![Loading Order][1]
+![加载顺序][1]
 
-The loading order panel shows all your scripts that marked as `preload` and the order that they are loaded and executed in.
+加载顺序面板会显示你的所有被标记为`预加载` 的脚本并把它们按加载和运行的顺序排列。
 
-![Loading Order List][2]
+![加载顺序列表][2]
 
-You can drag to move individual scripts around in order.
+你可以拖动并移动单个脚本以改变它在排序中的位置。
 
-When scripts are first loaded, they are immediately executed, that means that the scripts are first executed in the order that they are loaded. However, the loading order of the script **does not** effect the execution of order of script methods within script component. E.g. the initialize methods of scripts on the same entity are called in the order that they are listed on the Entity not the loading order.
+当脚本第一次被加载时，它们会被立即执行，这意味着第一个被加载的脚本也会是序列中第一个被执行的。然而脚本的加载顺序**不会** 影响脚本组件中的脚本方法执行的顺序。例如，在同一个实例上的脚本对象们的初始化部分会按照他们在实例上的悬挂顺序被调用，而不是按照加载顺序。
 
-## Preloading
+## 预加载
 
-Like other assets in PlayCanvas by default a script asset is marked as `preload`. This means that it will be loaded before the application starts. If you disable preloading on a script it will not be loaded under normal circumstances. This way you can include a script in your project but prevent it from loading by unchecking `preload`. You can trigger a non-preloading script to load dynamically by using the regular asset API. e.g. `this.app.assets.load(asset);`  
-It is possible to subscribe to dynamic changes to script registry:
+就像在默认情况下PlayCanvas的其他资源，脚本资源被标记为'预加载`的。这意味着它会在程序开始运行之前被加载。如果你选择禁用脚本预加载，它不会在正常情况下加载。这样你就可以在项目中包含一个脚本，并通过取消'预加载`选项防止它加载。你可以通过使用常规的资源API传递一个未加载的脚本到动态加载中。例如，使用`this.app.assets.load(asset);` 它能够订阅动态变化的脚本注册表:
 ```javascript
 this.app.scripts.on('add', function(name, scriptType) {
     console.log('script', name, 'has been loaded');
 });
 ```
 
-## Concatenation
+## 并列
 
-By default when you publish or export your application all preloaded scripts are concatenated into a single script file. This optimizes the loading by reducing the number of requests that are needed to load all your scripts.
+通常情况下当您发布或导出您的应用程序时所有预加载了的脚本会被连接成一个单独的脚本文件。这可以通过减少需要加载的所有脚本的请求数来优化装载步骤。
 
 [1]: /images/user-manual/scripting/script-loading-order.jpg
 [2]: /images/user-manual/scripting/loading-order-list.jpg

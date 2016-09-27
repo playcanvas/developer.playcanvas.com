@@ -1,5 +1,5 @@
 ---
-title: Publishing
+title: 发布
 template: usermanual-page.tmpl.html
 position: 11
 ---

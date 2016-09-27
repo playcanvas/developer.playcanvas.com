@@ -1,110 +1,110 @@
 ---
-title: Lightmaps
+title: 光照贴图
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
 ![Sponza][10]
-*All the lighting in this scene is provided by lightmap textures*
+*在场景中的所有光照贴图都需通过光照贴图纹理设置*
 
-Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied to materials. This is an efficient way of lighting a scene if much of the light sources and geometry are static or environmental.
+光照贴图的生成是预先计算的照明信息的静态场景存储在纹理，并将其应用于材料的过程。这是一个十分有效的方式来照亮一个场景，如果在场景中存在太多的静态或者环境光源和几何形状。
 
-PlayCanvas offers two ways to use lightmaps in your scene.
+PlayCanvas提供了两种在场景中使用光照贴图的方式。
 
-## External lightmap generation
+## 外部光照贴图生成
 
-Many 3D content tools have ways to generate lightmap textures. For example, 3DS Max, Maya and Blender all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
+许多3D工具可以生成光照贴图纹理。譬如，3DS Max，Maya以及Blender都可以使纹理行程光照贴图。使用这些离线工具生成光照贴图的优点是用户可以使用非常复杂的照片计算，如用于反射照明的全局照明，软阴影等。其中最主要的优点是，在3D工具中用户必须有一个完全的场景展示。因此如果PlayCanvas场景由许多实例所组成在编辑器中，用户需要重新对光照贴图工具进行创建。
 
-Once you have created lightmaps using an external tool you simply upload them as regular texture assets and they can be added to your materials using the lightmap slot in the standard Physical Material.
+当你通过外部工具创建了光照贴图，通过简单的上传将作为常规纹理素材，可以通过光照贴图插槽添加到材质中。
 
 ![Lightmap slot][1]
 
-## PlayCanvas Runtime Lightmap Generation
+## PlayCanvas光照贴图生成
 
-PlayCanvas offers a very convenient solution to generating lightmaps. Using the standard light components in the Editor you choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. Lights that are set to bake are then used when the application starts to generate lightmaps which are used to light the scene.
+PlayCanvas对于生成光照贴图有着十分便利的解决方式。使用在编辑器中的标准灯光组件，选择哪种光源被用来照亮光照贴图，哪种光源用于在在场景运行时的动态灯光。
 
-The advantanges are so:
+它的优点有这些：
 
-* Lighting is not performed at runtime
-* It is possible to use hundreds of static lights to light your scene
-* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
-* It is possible to mix static and dynamic lights in the Editor
-* Rebaking can be performed at runtime
-* Lightmaps are HDR
+* 照明计算不在运行时执行
+* 它可以使用数百个静态光源来照亮你的场景
+* 在运行时渲染光照贴图，在许多情况下，速度比下载许多光照渲染贴图要快。
+* 可以在编辑器中混合静态光源和动态光源
+* 重复烘焙可以在运行时进行
+* 光照贴图是高动态范围成像HDR的
 
-The disadvantage of using runtime lightmap generation is that currently we do not support baking global illumination, ambient occulusion or some of the other advanced features of a specialized baking tool.
+在运行时进行光照贴图生成的缺点是目前我们不支持烘焙全局照明，环境光遮蔽和一些如专门的烘焙工具等的高级功能。
 
-### Setting up lights for baking
+### 设置用于烘焙的光照
 
-Each Light Component contains settings for enabling lightmap baking. By default a new light is set to Dynamic.
+每个光源组件都含有进行光照贴图烘焙的设置。默认情况下一个新的光源会被设置为动态的。
 
-![Dynamic Light][2]
+![动态光源][2]
 
-By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any lightmapped model that is in range.
+通过启用 **光照贴图: 烘焙** 选项这个光源会为在范围内的任意可接收光照贴图的模型烘焙出光照贴图。
 
-There are two other options that modify the lights behaviour. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
+这里有两外两个选项用于修改光照的效果。这些决定了哪些模型会在运行时被光照影响。如果它们都没有被启用，光照会在运行时进行渲染，因此增加运行消耗。
 
- If the **Affect Dynamic** box is true, then this light will affect any model that is **not** lightmapped. If the **Affect Lightmapped** box is true, then this light will also affect any model that **is** lightmapped.
+如果 **影响动态** 选项框被勾选, 这个光源会影响所有**不接收** 光照贴图的模型。 如果 **影响光照贴图** 选项框被勾选, 这个光源会对**接受** 光照贴图的模型产生影响。
 
-Note, that a light cannot have **Lightmap** true and **Affect Lightmapped** true, as this would mean that a lightmap is generated for a model and the light will add the same lighting at runtime, i.e. doing the same work twice.
+注意，一个光源是不能同时设置 **光照贴图** 选项和 **影响光照贴图**选项均为真的，因为这将意味着一个光照会为模型生成一次光照贴图同时光会在运行时为其添加相同的光线，即做同样的工作两次。
 
-![Shadows][3]
+![阴影][3]
 
-The shadows setting for lightmap lights is the same as for dynamic lights, except in this case the shadow calculations are done once when generating the lightmaps so it is much cheaper to enable shadows on lightmap lights. See the section on [Shadows][4].
+光照贴图的光源的阴影效果的设置与动态光源相同，除了在这种情况下阴影的计算只在 产生的光照贴图时完成一次，因此启用光照贴图灯光的阴影是一种非常节约性能的做法。详情参见[阴影]部分[4]。
 
-### Setting up models for baking
+### 设置模型烘焙
 
-Each Model Component has to have lightmapping enabled on it for it to receive lightmaps. Lightmapping is enabled in the properties of the Model Component by checking the **Lightmapped** option.
+每个模型组建都有是否接收光照贴图影响的选项。模型组件是否接受光照贴图通过**Lightmapped** 选项进行设置。
 
-![Model Component][5]
+![模型组件][5]
 
-The **Shadows: Cast Lightmap** option determines if the model is casting shadows in the lightmap. In addition you can see the resolution of the lightmap texture generated and there is an option to apply a multiplier to this size. Lightmap size multipliers are discussed below.
+ **阴影: 光照贴图投影** 选项决定了该模型在光照贴图上是否投射阴影。此外，您可以看到光照贴图所产生的阴影并且有一个控制此阴影尺寸的选项。 光照贴图大小的倍数设置将在下面进行讨论。
 
-### Common Light Settings
+### 常见的光照设置
 
-As you see there several combinations of light settings that can be used. These combinations all have a use-case and by using lights with different combinations you can balance high-quality visuals with performance.
+如你所见这里列举了几个常见的可用的光照设置。这些组合均有实现案例，通过使用不同的组合你可以获得性能与高品质平衡的视觉效果。
 
 <table>
 <tr>
-    <th>Lightmap</th><th>Affect Dynamic</th><th>Affect Lightmapped</th><th style="width: 50%;">Description</th>
+    <th>光照贴图</th><th>动态影响</th><th>光照贴图影响</th><th style="width: 50%;">描述</th>
 </tr>
 <tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>这是默认的动态光。对所有非光照贴图模型产生影响。</td>
 </tr>
 <tr>
-    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and is cheap to use at runtime. Most environmental lights would use this setting.</td>
+    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>这种光源为接受光照贴图的模型所产生的光照贴图在程序运行时非常好用。大多数的环境光都使用这个设置。</td>
 </tr>
 <tr>
-    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
+    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>这种类型的光源不仅为接受光照贴图的模型创建光照贴图，还会影响不接受光照贴图的模型。 这在你有需要被光照到的移动的物体时非常有用。举个例子，一个杰出的环境光应该也能够影响到玩家角色。</td>
 </tr>
 <tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models. For example, a flashlight would use this setting.</td>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>这种光源是一种不仅影响光照贴图，还会影响不接受光照贴图模型的动态光源。例如，一个手电筒的光源就会使用这种设置。</td>
 </tr>
 </table>
 
-### Lightmap Size Multipliers
+### 光照贴图分辨率
 
-PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the size and geometry of the model. You can influence this calculation by modifiying the size multipler field in the Model Component.
+PlayCanvas会自动为模型决定需要什么样的光照贴图的分辨率。他根据模型的尺寸和几何形状来计算分辨率值。您可以通过修改模型的尺寸缩放来影响力这个计算结果。
 
-![Global Settings][6]
+![全局设置][6]
 
-There is also a global lightmap size multipler which affects all Model Components. You can also set the limit the maximum resolution for the generated lightmaps in order to conserve memory.
+还有一种会影响所有模型组件的全局光照的分辨率设置。 您也可以限制生成光照贴图的最大分辨率，以节约内存。
 
-### Auto-unwrapping and UV1 generation
+### 自动解压和创建法线组UV1
 
-Lightmaps are always applied using the second set of UV co-ordinates (UV1) on the model asset. For best results we recommend that you add a second UV set in your 3D content tool to your model before you upload it to PlayCanvas.
+光照贴图常常在模型上启用双层的UV配合(UV1)的法线贴图设置。为了达到最佳效果，我们建议您在把3D模型把上传到PlayCanvas之前使用3D工具为你的模型添加第二个UV集。
 
-For convenience, if your model hasn't got a UV1 set the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+为了使用方便，若你的模型并没有第二层的UV1集设置，PlayCanvas引擎会为它自动解析并生成UV1坐标。
 
-![UV1 Missing][7]
+![UV1 丢失][7]
 
-If a model is missing a UV1 map you will see a warning in the model component when you enable lightmapping.
+若一个模型丢失了UV1贴图，当你启用光照贴图功能时会在模型组件上看到一个警告。
 
-![Auto Unwrap][8]
+![自动延展][8]
 
-To fix the warning select the model asset and open the **Pipeline** section. Click the **Auto-unwrap** button and wait for the progress bar to complete. Running auto-unwrap edits the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the UV1's will be deleted and you will need to unwrap the model again.
+消除这个警告的做法是选择这个模型资源并打开 **管道** 选项。点击**自动延展**按钮并等待进度条走完。运行自动解压以编辑模型资源，这样如果你重新上传这个模型资源(例如上传一个新的FBX文件)它的UV1设置将被删除，您需要再次展开模型。
 
-The **padding** section determines the space between sections when the unwrapping occurs. If you see *"light bleeding"*, where light appears in the lightmaps that shouldn't be there, you can increase the padding to reduce the bleeding.
+ **填充**选项决定了当延展发生时面之间的距离。如果你看见了*"光照渗色"*，即光照贴图上出现了本不该出现的光线，可以增加填充系数，以减少渗漏。
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
 [2]: /images/user-manual/lighting/lightmaps/spot-dynamic.jpg

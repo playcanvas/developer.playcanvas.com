@@ -121,7 +121,7 @@ MyScript.attributes.add('value', {
 });
 ```
 
-Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
+枚举类型可以为您可能用到的参数定义一个列表。属性是一个数组类型的对象，其中每个对象都是一个以`key`为标题，`value`为属性值的选项。该属性可以被用于各种属性类型，例如`number`数值型，`string`字符串型，`vec3`向量型。
 
 [1]: /api/pc.ScriptAttributes.html
 

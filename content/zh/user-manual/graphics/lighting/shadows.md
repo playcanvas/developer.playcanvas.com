@@ -1,62 +1,62 @@
 ---
-title: Shadows
+title: 阴影
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Shadows are a great way to add realism to your games. However, dynamic (realtime) shadows, can come with a significant runtime performance cost. For a more performant way of adding static shadows to your scene. See [Lightmaps][4].
+在场景中呈现阴影将用户的游戏更接近现实。然后，动态（实时）阴影，会产生大量的运行性能消耗。[光照贴图][4]查看在场景中更有效的添加静态阴影。
 
 ![Characters with shadow casting][1]
 
-The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop. Furthermore, shadows are free for everybody to use - you don't need a Pro account to make your game look great.
+PlayCanvas引擎去实现了阴影算法称为阴影贴图。这个是跨平台的一种算法所以保证了能在移动端和电脑端运行。此外，阴影对任何用户是免费开放的－用户不需要购买会员来让您的游戏看起来更棒。
 
-## Enabling Shadows
+## 开启阴影
 
 ![Directional Light][5]
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+默认情况下，在PlayCanvas中阴影效果是关闭的。用户需要手动将它开启。幸运的是，开始阴影是一件极其简便的事情。首先，识别在场景中哪种类型的灯光是可以制造阴影的。在层级树中选择灯光并且在检查器中修改属性。每个灯光都有“Cast Shadows”（制造阴影）属性。点击这个选项将会让灯光在场景中对图形对象造成阴影。
 
 ![Model Component][6]
 
-Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all model components receive shadows but do not cast them. Therefore, in order to see an entity cast shadows, select it in the Hierarchy, locate the model component in the Inspector and check the 'Cast Shadows' option.
+现在用户需要定义在场景中哪个图形对象可以制造阴影和接收阴影。默认情况下，所有模型组件可以接受阴影但不能知道阴影。因此，为了能让一个实体产生阴影，在层级树中选中这个实体，在检查器中找到模型组件并且点击“Cast Shadows”选项。
 
-Shadows should now be visible in the Editor's Viewport.
+现在在编辑器视角中用户应该可以看得见这个实体制造的阴影了。
 
-## Tuning Shadows
+## 调整阴影
 
-The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
+通过PlayCanvas创造的阴影贴图技术只能提供有限的分辨率。因此，用户可能需要掉整一个参数来得到更好的效果。以下的几个属性可以从[Light Component][2] UI中找到。
 
-### Shadow Distance
+### 阴影距离
 
 The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
 
-### Shadow Resolution
+### 阴影分辨率
 
-Every light casts shadows via a shadow map. This shadow map can have a resolution of 256x256, 512x512, 1024x1024 or 2048x2048 and this value is also set in the light component's interface. The higher the resolution, the crisper the shadows. However, higher resolution shadows are more expensive to render so be sure to balance performance against quality.
+每个灯光都通过阴影贴图来产生阴影。阴影贴图可以有256x256, 512x512, 1024x1024 or 2048x2048等的像素，并且可以在灯光组件的接口中可以进行值的设置。分辨率越高，形成的阴影就越清晰。然而，高品质的阴影需要耗费更多的性能去行程，所以确保性能和品质能达到平衡。
 
-### Shadow Bias
+### 阴影偏移
 
-Shadow mapping can be prone to rendering artifacts that can look very ugly. If you notice bands of shadow or speckled patches where you do not expect, you should try tuning the shadow bias to resolve the problem.
+阴影贴图可以很容易地渲染工件，但是看起来并不好看。如果用户注意到意料之外的带阴影的斑点或斑块，就需要调整阴影偏移来解决这个问题。
 
-### Normal Offset Bias
+### 法向等距偏值
 
-'Shadow acne' artifacts are a big problem and the shadow bias can eliminate them quite effectively. Unfortunately, this always introduces some level of 'Peter Panning', the phenomenon where shadows make a object appear to be floating in mid-air.
+“Shadow acne”是一个比较棘手的问题，但是通过阴影偏值就可以有效的解决。遗憾的是，这经常导致某种程度的“Peter Paning”，一种阴影使得物体看起来像漂浮在空中的现象。
 
-The Normal Offset Bias solves this problem. In addition to using the depth bias, we can avoid both shadow acne and Peter Panning by making small tweaks to the UV coordinates used in the shadow map look-up. A fragment's position is offset along its geometric normal. This "Normal Offset" technique yields vastly superior results to a constant shadow bias only approach.
+法相等距偏值解决了这个问题。另外通过使用偏移量，我们可以避免shadow acne 和 Peter Panning问题，一段代码片段的位置沿着几何法线偏移。
 
-## Soft Shadows vs Hard Shadows
+## 软阴影和硬阴影
 
-The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in PlayCanvas but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
+阴影的轮廓被称为penumbra。这是一个从暗到明亮的过渡，给予了阴影一个柔和的边缘。柔和的阴影边缘在PlayCanvas中是被默认设置的，用户可以通过改变参数得到一个硬边阴影。如下图所示可看到两者的区别：
 
 ![Hard vs soft shadows][3]
 
-Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
+通过在GPU中生成多次阴影贴图的样本来达到实现柔和阴影。该算法被称为Percentage Closest Filtering或者PCF for short。该算法从阴影中读取9个本地化的样本（3x3矩阵），而不是仅仅只有一个。
 
-The shadow sampling type is specified per material and so the option can be found in the Material Editor in the Other section.
+阴影样本类型由每个材质所指定，因此用户可以在材质编辑器中找到相对应的选项。
 
-## Performance Considerations
+##性能方面的考虑
 
-Enabling shadows has performance implications:
+开启阴影会对性能产生影响：
 
 * For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Point light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
 * Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
