@@ -1,12 +1,12 @@
 ---
-title: File Format
+title: 文件格式
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-Generally speaking, you do not need to know the structure of the file format used to serialize your models. However, this section describes the format for those who are interested in writing their own file converters.
+一般来说，你不需要知道用于载入你的模型的文件格式的结构。然而，本节为那些对写出自己的文件转换器的人们介绍了这些格式的结构。
 
-To get models into PlayCanvas, you have to upload an FBX (or OBJ, DAE, DXJ, 3DS) file. On the server, this file is converted to a JSON format. This format is textual. Let's take a look at a very simple example of a plane consisting of two triangles:
+为了在PlayCanvas内部获得模型，你需要上传一个 FBX (或 OBJ, DAE, DXJ, 3DS) 格式的文件。在服务器中，这个文件会被转换为JSON格式。这是一个文本格式。让我们来看看一个很简单的由两个三角形组成的平面的例子：
 
 ~~~javascript~~~
 {
@@ -65,43 +65,43 @@ To get models into PlayCanvas, you have to upload an FBX (or OBJ, DAE, DXJ, 3DS)
 }
 ~~~
 
-Here is a reference for the different properties that appear in the JSON object above:
+以下是出现在JSON对象中的不同属性的引用：
 
 <table>
   <tr><th>Property</th><th>Description</th></tr>
-  <tr><td>model</td><td>Denotes that this JSON object is a PlayCanvas model.</td></tr>
-  <tr><td>version</td><td>The version of the JSON object. Current head version is 2.</td></tr>
-  <tr><td>nodes</td><td>An array of nodes that constitute the scene hierarchy. The array is flat but the 'parents' array specifies the parent-child relationships between scene nodes.</td></tr>
-  <tr><td>name</td><td>The node's name (usually assigned by an artist).</td></tr>
-  <tr><td>position</td><td>3-component position (XYZ) relative to the node's parent.</td></tr>
-  <tr><td>rotation</td><td>3-component Euler angle rotation (XYZ) relative to the node's parent. Units are degrees.</td></tr>
-  <tr><td>scale</td><td>3-component scale (XYZ) relative to the node's parent.</td></tr>
-  <tr><td>parents</td><td>Array of parent node indices. The root node has a parent of -1. In the example above, the node 'Plane' has 'RootNode' for a parent.</td></tr>
-  <tr><td>skins</td><td>Skinning data is left undocumented for now.</td></tr>
+  <tr><td>model</td><td>表示该JSON对象是一个PlayCanvas模型。</td></tr>
+  <tr><td>version</td><td>JSON对象的版本。当前最新版本是2。</td></tr>
+  <tr><td>nodes</td><td>构成场景树节点的数组。该阵列是扁平的，但“父母”数组指定了场景节点之间的父子关系。</td></tr>
+  <tr><td>name</td><td>该节点的名称 (常常由艺术家来设置)。</td></tr>
+  <tr><td>position</td><td>相对于父节点在3个分方向(XYZ)的位置分量。</td></tr>
+  <tr><td>rotation</td><td>相对于父节点在3个分方向(XYZ)的角度分量。 单位是度。</td></tr>
+  <tr><td>scale</td><td>相对于父节点在3个分方向(XYZ)的缩放分量</td></tr>
+  <tr><td>parents</td><td>父节点数组索引。根节点具有被设置为-1的节点。在上面的例子中，节点'平面'具有'根节点'的父对象。</td></tr>
+  <tr><td>skins</td><td>蒙皮数据现在已经被去除了。</td></tr>
   <tr>
     <td>vertices</td>
     <td>
-      An array of objects containing vertex information. Each object has a number of vertex properties. These can be:
+      包含顶点信息对象的数组。每个对象有若干顶点属性。这些可以是：
       <ul>
-        <li>position: vertex positions</li>
-        <li>normal: vertex normals</li>
-        <li>texCoord0: first texture coordinate set</li>
-        <li>texCoord1: second texture coordinate set</li>
-        <li>skinWeights: vertex skin weights</li>
-        <li>skinIndices: vertex skin indices</li>
-        <li>color: vertex colors</li>
+        <li>position: 定点位置</li>
+        <li>normal: 顶点法线</li>
+        <li>texCoord0: 第一个纹理坐标集</li>
+        <li>texCoord1: 第二个纹理坐标集</li>
+        <li>skinWeights: 顶点蒙皮权重</li>
+        <li>skinIndices: 顶点皮肤指数</li>
+        <li>color: 定点颜色</li>
       </ul>
-      Each property has a type (float32, uint8, uint16, uint64) and a number of components (1-4).
+      每个属性都有一个类型 (float32, uint8, uint16, uint64) 以及一个组建的数量(1-4)。
     </td>
   </tr>
-  <tr><td>meshes</td><td>An array of mesh objects. Mesh are used to interpret how vertex information is rendered.</td></tr>
-  <tr><td>aabb</td><td>The axis-aligned local space bounding box of a mesh.</td></tr>
-  <tr><td>min</td><td>The minimum coordinate of the mesh's axis-aligned bounding box.</td></tr>
-  <tr><td>max</td><td>The maximum coordinate of the mesh's axis-aligned bounding box.</td></tr>
-  <tr><td>vertices</td><td>The index of the vertex information object referenced by this mesh.</td></tr>
-  <tr><td>indices</td><td>An array of indices that defines the points of the primitive represented by the mesh.</td></tr>
+  <tr><td>meshes</td><td>网格对象的数组。网用于解释信息如何在顶点被渲染。</td></tr>
+  <tr><td>aabb</td><td>网状的轴线对齐的局部空间的边界框。</td></tr>
+  <tr><td>min</td><td>网状的轴对齐包围盒的最小坐标。</td></tr>
+  <tr><td>max</td><td>网状的轴对齐包围盒的最大坐标。</td></tr>
+  <tr><td>vertices</td><td>该网所引用的顶点信息对象的索引。</td></tr>
+  <tr><td>indices</td><td>索引的阵列，它定义表示网格的原始的点。</td></tr>
   <tr><td>type</td>
-    <td>The type of the primitive of this mesh. Can be:
+    <td>原始类型的网格。 可以是：
       <ul>
         <li>points</li>
         <li>lines</li>
@@ -113,10 +113,10 @@ Here is a reference for the different properties that appear in the JSON object 
       </ul>
     </td>
   </tr>
-  <tr><td>base</td><td>The first index used by this mesh.</td></tr>
-  <tr><td>count</td><td>The number of indices used by this mesh.</td></tr>
-  <tr><td>meshInstances</td><td>An array of objects representing instances of meshes. A single mesh can be shared between multiple mesh instances. This is an optimization that saves memory at runtime.</td></tr>
-  <tr><td>node</td><td>The index of the node referenced by this mesh instance.</td></tr>
-  <tr><td>mesh</td><td>The index of the mesh referenced by this mesh instance.</td></tr>
+  <tr><td>base</td><td>该网格使用的第一个索引。</td></tr>
+  <tr><td>count</td><td>该网格使用的索引数量。</td></tr>
+  <tr><td>meshInstances</td><td>代表网格的实例对象的数组。单目网格可以被多个网格实例之间共享。这是一个在运行时可以节省存储器的优化。</td></tr>
+  <tr><td>node</td><td>通过此网格实例引用的节点的索引。</td></tr>
+  <tr><td>mesh</td><td>通过此网格实例引用的网格的索引。</td></tr>
 </table>
 

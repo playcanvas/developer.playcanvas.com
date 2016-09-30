@@ -16,7 +16,7 @@ PlayCanvas拥有三种不同的光源：
 
 定向光是和太阳光及其相似的一种光源。因为太阳距离地球十分的遥远，阳光照射到地球表面相当于向一个方向照射。在PlayCanvas中，这个类型的光源被称为定向光。
 
-当为被选中时，定向光在编辑器3D视角中呈现如下图标：
+当未被选中时，定向光在编辑器3D视角中呈现如下图标：
 
 ![Directional light icon][1]
 
@@ -30,35 +30,35 @@ PlayCanvas拥有三种不同的光源：
 
 ## 点光源
 
-Point lights are light sources that emit light from a single point in all directions. Examples of this type of light are an unshaded light bulb or candlelight.
+点光源是从一个中心点向空间内所有范围都发射灯光的一种光源。这个类型的灯光例子是一种无罩灯泡或者蜡烛。
 
-When unselected, a point light is represented by the following icon in the Editor's 3D view:
+当未被选中时，点光源在编辑器的3D视角中呈现如下图标：
 
 ![Point light icon][3]
 
 在层级树和检查器中点击这个图标选择灯光。
 
-A point light lights an object like this:
+点光源如何照亮一个对象：
 
 ![Point light][4]
 
-Point lights are more costly than directional lights but faster to process than spot lights.
+点光源对比定向光需要更多时间处理，但是比聚光灯快。
 
-## Spot Lights
+## 聚光灯
 
-Spot lights, like point lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light would be a torch or the light from a lighthouse.
+聚光灯，和点光源一样，光源来自空间中的一个点。然而，聚光灯的光源被一个圆锥型外罩所包裹。聚光灯的例子将会是一个火炬或者从灯塔发射的一束灯光。
 
-When unselected, a spot light is represented by the following icon in the Editor's 3D view:
+当未被选中时，聚光灯在编辑器3D视角中呈现如下图标：
 
 ![Spot light icon][5]
 
 在层级树和检查器中点击这个图标选择灯光。
 
-A spot light lights an object like this:
+聚光灯如何照亮一个对象：
 
 ![Spot light][6]
 
-Spot lights are the most costly type of light so use them sparingly.
+聚光灯是内存消耗最大的光源类型，所以需要谨慎使用。
 
 [1]: /images/user-manual/graphics/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lights/directional.jpg

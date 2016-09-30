@@ -1,20 +1,20 @@
 ---
-title: Sepia Effect
+title: 复古风格
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-The Sepia effect makes the image look like an old photograph.
+复古风格效果使图像看上去就和老照片一样。
 
-Here is an image without the effect:
+这是一张没有经过处理的图片:
 
 <img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
 
-and the same image with the effect applied:
+这是一张已经经过了处理的图片:
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_sepia.png"></img>
 
-The built-in sepia effect has the following attributes:
+内置的复古效果有以下的属性设置:
 
-* **Amount**: Controls the intensity of the effect. Ranges from 0 to 1.
+* **程度**: 控制效果的显示强度。范围从0 到 1.
 

@@ -1,34 +1,34 @@
 ---
-title: Creating and attaching scripts
+title: 创建并附上脚本
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-## Creating a new script
+## 创建一个新脚本
 
-To create a new script use the Asset Panel and select New Script
+创建脚本请在资源面板处选择“New Script”新脚本选项。
 
-![New Script][0]
+![新脚本][0]
 
-## Attaching a script to an Entity
+## 为实例附着一个脚本
 
 <img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-Script Components are attached to Entities in the same way as all other Components using the *Add Component* button in the Entity inspector.
+脚本组件像其它类型的组件一样，使用实例的属性面板中的*Add Component* 添加组建按钮附着到实例上。
 
-Once you have added a Script Component you can specify which javascript files to load. Use the Add Script button to pick scripts from your asset panel. Or drag and drop a script from the asset panel onto the component.
+一旦你添加了一个脚本组建，你可以选择加载哪个javascript文件。点击“Add Script”添加脚本按钮然后在资源面板中选择脚本资源。或者直接把资源面板中的脚本资源拖拽到组件上。
 
-If you are using the PlayCanvas code repository to store your code, you can edit code in the PlayCanvas code editor, click a script's name below the URL input box.
+如果你使用了PlayCanvas的代码库来储存你的代码，你可以通过PlayCanvas自带的代码编辑器来编辑脚本。点击网址下面的框中的脚本名称。
 
 <div class="alert alert-info">
-If you are using Github or Bitbucket you can not edit you scripts in PlayCanvas, you must make your commits through your source control system.
+如果您正在使用Github或Bitbucket，你不能直接使用PlayCanvas编辑你的脚本，而是必须通过源代码控制系统提交。
 </div>
 
-A script component can load multiple script files, just add multiple scripts to the component. The order in which you add your scripts on a Script Component is the order in which the scripts are going to be initialized and updated. If you want to change the order of a script, click on the Up - Down arrows next to the Script's title. To remove a script click on the X button.
+一个脚本组件可以加载多个脚本资源，只需添加多个脚本文件到组件中。在其中一个脚本组件上添加脚本，脚本排列的顺序就是脚本将要被初始化和更新的顺序。如果你想改变一个脚本的顺序，单击脚本名称旁边的向上 - 向下箭头。要删除脚本请点击X按钮。
 
-## Using Script Priorities
+## 设置脚本优先级
 
-The second way to use a script in your application is to add them to the script priority list. This will load your script up front, before the rest of your application. See the [Script Priorities][4] page.
+第二种在你的应用中使用脚本的方式是把它们添加进脚本优先级列表。这将在你的应用程序的其余部分启动之前加载脚本。请参阅[脚本优先级] [4]页。
 
 [0]: /images/user-manual/new_script.jpg
 [2]: /user-manual/scripting/workflow

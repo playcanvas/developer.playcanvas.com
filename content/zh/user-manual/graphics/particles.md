@@ -1,36 +1,36 @@
 ---
-title: Particles
+title: 粒子
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-PlayCanvas provides comprehensive support for creating and editing particle systems.
+PlayCanvas为创建和编辑粒子系统提供了全面的支持。
 
-## What is a Particle System?
+## 什么是粒子系统?
 
-A particle system is a simulation that manages many independently moving particles. They can be used to approximate a huge number of effects such as rain, snow, smoke, fire and so on.
+粒子系统是管理多个独立运动的粒子的模拟器。 它们可以被用作于制作与雨，雪，烟雾，火焰等类似的效果。
 
-Note that particles are not physically simulated. They do not interact or collide with each other. They will pass through surfaces in your scene.
+请注意，粒子并不是按物理效果被模拟的。它们不会互相影响和碰撞。且粒子们会直接穿过你场景中的面。
 
-## Creating a Particle System
+## 创建一个粒子系统
 
-In the Editor's 3D View, an unselected particle system is represented with the following icon:
+在编辑器的3D视图中，一个没有设置过的粒子系统通过下列按钮创建:
 
-![Particle system icon][1]
+![粒子系统图标][1]
 
-To create a new particle system, simply create a new entity and add a particle system component to it. For convenience, the Editor menu has an item that does this in a single step:
+创建一个新的粒子系统，需要先创建一个新的实例，并添加一个粒子系统组件到它上面。为了方便操作，编辑器菜单中就已经有一个用于实现这一步骤的选项:
 
-![Particle system creation][2]
+![粒子系统创建][2]
 
-Note that your particle system does not play in the Editor's 3D view. To see your particle system animate, you must run your game by hitting the Launch button. A newly created particle system with the default settings looks like this:
+请注意现在你的粒子系统不会立刻在编辑器的3D场景中播放。为了看见你的粒子动画，你必须点击运行按钮使你的游戏运行起来。一个新创建的，使用默认设置的粒子系统看上去会是这个样子的:
 
-![Default particle system][3]
+![默认粒子系统][3]
 
-To configure the particle system via the particle system component interface, consult the reference [here][4].
+要通过粒子系统组建的面板配置粒子系统，可以参考 [这里][4].
 
-## Triggering a Particle System in Script
+## 通过脚本来传递一个粒子系统
 
-Sometimes, you might want a particle system to play in response to some event or at a particular time. For example, an explosion should play when a missile reaches its target. To do this, ensure that the Autoplay option is disabled for your particle system. Then, attach a script component to your particle system entity. The following two lines will start (or restart) a particle sytem:
+有些情况下，你可能想让让一个粒子系统再某些特定的事件触发时或是特定的时间段里播放。举个例子，一个爆炸效果应该在导弹触碰到它的目标时播放。为了达成它，请确认你已经为你的粒子系统禁用了自动播放选项。然后，添加一个脚本组件到您的粒子系统的实体上。下面两行代码可以启动(或重新播放)粒子系统:
 
 ~~~js~~~
 this.entity.particlesystem.reset();

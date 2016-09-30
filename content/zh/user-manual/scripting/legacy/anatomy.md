@@ -1,5 +1,5 @@
 ---
-title: Anatomy of a Script
+title: 脚本解析
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -23,17 +23,17 @@ pc.script.create("script_name", function (app) {
     return ScriptObject;
 });
 ~~~
-*A skeleton script*
+*脚本框架*
 
-Here is the skeleton of a script, it shows the minimum amount of code necessary to make a functioning script.
+这是一份脚本框架，它展示了使一个功能具备功能的必要的最小量代码。
 
 <div class="alert alert-info">
-Actually, you could leave the `initialize` and `update` methods out of a script. But most scripts will need an update method in order to actually do anything, and initialize is useful for setting up values before your game starts.
+事实上, 你可以把 `initialize` 和 `update` 部分也从脚本中删除。 不过大多数的脚本都需要一个“update”更新环节来做些事情, 以及一个”initialize “环节在游戏开始之前对有用的属性值进行设置。
 </div>
 
-We'll break down each part of this script section by section.
+我们将把这份脚本拆分成一个部分一个部分。
 
-## Declaration and Application
+## 声明和应用
 
 ~~~js~~~
 pc.script.create("script_name", function(app) {
@@ -41,22 +41,22 @@ pc.script.create("script_name", function(app) {
 });
 ~~~
 
-Enclosing the whole script is a call to `pc.script.create`. The first argument is the script name, this is used to identify this script later if you wish to communicate between script instances. The second argument is a function which is used to define the class that provides the script's behaviour.
+将整个脚本进行封装的做法是调用 `pc.script.create`。第一个被传入的参数是脚本的名字，这将在稍后你想实现脚本实例之间的通信的时候被用来识别该脚本。第二个参数就是用来定义提供脚本的行为和功能的类。
 
-The definition function takes a single argument `app` which is the [`Application`][1] instance.
+定义函数只有一个参数`app`，这是当前[`应用`] [1]的实例。
 
-The `app` variable is available for use throughout your script object because `ScriptObject` is a Closure. It contains various useful properties.
+因为`ScriptObject`是一个闭合对象，该`app`变量可在脚本对象内被使用。它还包含了其它各种有用的属性。
 
-* `systems` Container for all Component systems, e.g. `app.systems.model` is the Model Component System
-* `root` The root node of the Entity hierarchy.
-* `keyboard` An instance of `pc.Keyboard`
-* `mouse` An instance of `pc.Mouse`
-* `scene` An instance of `pc.Scene`
-* `assets` An instance of `pc.AssetRegistry` for loading and accessing assets
+* `systems` 集装箱的所有组件系统，例如`app.systems.model` 就是一个模型组件的系统。
+* `root` 实例面板中的根节点。
+* `keyboard`  `pc.Keyboard`的一个实例
+* `mouse` `pc.Mouse`的一个实例
+* `scene`  `pc.Scene`的一个实例
+* `assets`  `pc.AssetRegistry` 用于装载和访问资源的一个实例
 
-See the [API Reference][2] for more details on the pc.Application object.
+参见[API参考] [2]可获得pc.Application对象的更多细节。
 
-## Defining the Script object
+## 定义脚本对象
 
 ~~~js~~~
 pc.script.create("script_name", function (app) {
@@ -78,18 +78,18 @@ pc.script.create("script_name", function (app) {
 })
 ~~~
 
-The purpose of the function in the second argument is to define a Script object and return that definition so that the engine can instantiate a new instance for each Entity.
+在第二个参数位置的函数目的是定义脚本对象，并返回该定义，以使发动机能够实例化每个新实例。
 
-Here you can see the basic set up. A variable `ScriptObject` is declared as a constructor function which takes the Entity it is attached to as it's only argument. It is usually useful to store this Entity in the instance for use later on, hence the line `this.entity = entity;` You will often create member variables for your object here too.
+在这里，你可以看到基本设置。变量`ScriptObject`被声明为一个构造函数，它把它能够链接到的实例作为唯一的参数。为便以后使用把这个实体存储在该实例中的行为通常是有用的，因此行`this.entity=Entiy;`在为你的对象创建其它成员变量时会经常被使用到。
 
-Next we define the initialize and update functions. `initialize()` is called once for each Script Instance. It is called after all Entities are loaded (so that the Entity hierarchy in `app.root` is valid) but before any `update()` methods are called.
-`update()` is the update loop for our script. The Script Component system will call the update function every frame with the time in seconds that passed since the last update in the variable `dt`. Note, that both these function are optional and should be left out if they are not being used.
+接下来，我们来定义初始化和更新功能。 `initialize()` 在所有的脚本实例中都只被调用一次。它在所有的实例都在加载完成后(因此脚本中通过调用`app.root` 获取实例面板的根节点是可行的)以及所有`update()` 方法运行前被调用。
+`update()` 是我们脚本的一个循环执行的部分。脚本组件系统会在与自变量`dt`上一次更新传入秒的时间相隔时间dt的每帧调用一次update方法。注意，这两种功能是可选的，如果没有使用它们，应把它们从脚本内容里排除。
 
-Finally, we return the `ScriptObject` variable.
+最后，我们把 `ScriptObject` 对象返回。
 
-## A complete example
+## 一个完整的例子
 
-Here is a complete script, try saving it to a file and attaching it to an Entity in a pack.
+这里是一份完整的脚本代码，尝试把它保存为一个文件，并附加到一个实体上。
 
 ~~~js~~~
 ///
@@ -135,41 +135,41 @@ pc.script.create('oscillator', function (app) {
 });
 ~~~
 
-## Built-in script methods
+## 脚本内置方法
 
-Here is a list of all methods of a Script that are called by the engine if they exist, in the order that they are called.
+以下是一份按照引擎调用顺序排列的方法列表，如果它们存在即被调用，它们被称为脚本的内置方法。
 
 `initialize()`
 
-This is the first method called on a script after all Entities are loaded and its called only once. Use it for initialization.
+这是脚本内部在所有的实例都被加载后被第一个执行的方法，并且它只执行一次。通常使用它进行属性值的初始化。
 
 `onEnable()`
 
-Called whenever the Script Component that this script is attached to or its Entity get enabled. Also called right after the `initialize` method. Use this for things that should happen every time the Script Component or Entity get enabled.
+每当该脚本组件连接到其实体或该脚本得到启用时调用。它紧跟`initialize`方法被执行。使用它处理发生的每一个脚本组件或实体得到启用的时候会发生的事。
 
 `postInitialize()`
 
-Called only once after `onEnable`. Use this to order initialization of different scripts for example you might want some scripts to initialize after a different script has been initialized.
+只在`onEnable`后被调用一次。使用此命令对不同的脚本进行初始化。例如，你可能在别的脚本被初始化后，再进行一些初始化的语句操作。
 
 `update(dt)`
 
-Called every frame with the time in seconds that passed since the last update in the variable `dt`. Use this for things that should run continuously like moving objects, applying forces, checking for input etc. If you don't need an update method then delete it for better performance.
+每帧都被检测，当时间间隔长于当时距离变量 `dt`传入的时间时执行。这个方法被用于执行像物体移动，力的作用，输入检测等等行为。如果你不需要使用更新方法，删除它以获得更好的效率。
 
 `postUpdate(dt)`
 
-Called every frame after the `update` method with the same `dt` as the `update` method. Use this to perform actions needed after the `update` step, for example Camera scripts that follow Entities should be moved in `postUpdate` because they might be tracking Entities that have moved in `update`.
+在每次 `update`方法执行后被调用。使用此方法执行`update`步骤后需要采取的行动，例如相机脚本中的移动相机行为在`postUpdate`执行，因为它可能需要跟踪已在`update`中被移动过的物体实体。
 
 `onDisable()`
 
-Called when the Script Component that this script is attached to or its Entity get disabled. Also called right before the `destroy` method. Use this for things that should happen every time the Script Component or Entity get disabled.
+当该脚本被停用或脚本组件连接到实体被停用时调用。也会在`destroy`方法执行前被调用。使用这个脚本处理每次脚本组件或链接实例被停用前要做的事。
 
 `destroy()`
 
-Called when the Script Component that this script is attached to or its Entity get destroyed. Use this to clean up.
+当脚本组件或该脚本连接到的实体被摧毁时调用。使用它进行清理工作。
 
 `onAttributeChanged(name, oldValue, newValue)`
 
-Called when the value of a [Script Attribute][3] is changed from the Editor. The name of the attribute and its old and new values are passed in the method. Use this to update your script if an attribute changes.
+在每次 [脚本属性][3]的值被编辑器更改后被调用。 属性的名称和新、旧属性值被传送进入方法。 使用它在属性值改变时更新你的脚本。
 
 [1]: /user-manual/glossary#application
 [2]: /engine/api/stable/symbols/pc.Application.html

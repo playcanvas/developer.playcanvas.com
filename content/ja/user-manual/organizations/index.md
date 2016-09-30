@@ -18,6 +18,8 @@ You can also purchase an [Organization Plan][1] which includes:
 - Ability to remove PlayCanvas branding
 - Offline Archive & Restore
 - Additional storage space
+- Access to [REST API][2]
 
 [1]: https://playcanvas.com/plans
+[2]: /user-manual/api
 

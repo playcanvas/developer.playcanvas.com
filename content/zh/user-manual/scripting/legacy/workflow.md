@@ -1,130 +1,126 @@
 ---
-title: Workflow
+title: 工作流程
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-There are two ways for you to run your application scripts while developing PlayCanvas applications. While developing and iterating you will use a Local Server for your code and in order to share and publish you will use a Code Repository. Each have different advantages and you will often switch between the two.
+有两种方法供你在开发应用PlayCanvas的同时运行应用程序的脚本。在开发和迭代程序时，本地服务器会为您的代码进行服务，而在进行共享和发布时你将使用代码库。每种方式都有不同的优点，你会经常在两者之间切换。
 
-## PlayCanvas Code Directory
+## PlayCanvas 代码目录
 
 <img src="/images/platform/playcanvas_repo.jpg" style="max-width: 100%" />
 
-By far the simplest way of developing scripts for PlayCanvas applications is by using the built-in code editor and storing your scripts in PlayCanvas so that the server can access them at all times.
+迄今为止开发PlayCanvas应用脚本的最简单的方法是使用PlayCanvas内置的代码编辑器编辑和存储您的脚本，这样服务器可以在任何时候访问它们。
 
-This is how your Project will be set up by default when you create it. If you have linked your Project to an external Code Repository you can unsync the Code Repository at any time to revert back to using the code directory.
+这就是为什么你的项目在您创建它时被设成为默认设置。如果你已将自己的项目转移到外部代码库，你可以随时使用代码目录同步代码库使其恢复。
 
-### Adding a new script
+### 添加一个新脚本
 
 <img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-To add a new script, either click on the Add Script button or open your Scene in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
+为了添加一个新的脚本，无论是单击Add Script按钮还是PlayCanvas编辑器中打开你的场景并选择或添加脚本组件到的您希望将脚本添加到的实体上都可以。然后在脚本选取器控件中点击您脚本的URL类型的名称，然后按Enter键。
 
-Alternatively you can drag and drop a script from the asset panel into the script component.
+另外，您可以从资源面板中拖拽脚本到脚本组件上。
 
 <div class="alert alert-info small">
-You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
+你只能在使用的是PlayCanvas用于存储你的脚本时才能编辑脚本。 如果你设置了一个外部的代码库，你无法通过PlayCanvas编辑它的脚本。你将不得不使用本地服务器或提交代码到你的资料库中。
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][1] tab in your Project dashboard or from the [Assets Panel][2] in the Editor.
+点击脚本链接，内置的代码编辑器会为其打开一个新的标签。您可能需要允许来自playcanvas.com弹出窗口来查看新的标签。当您对脚本进行第一次编辑后它将被创建和保存。然后，您可以通过点击编辑器上的[Code][1]标签在你的[资源面板][2]中看到所有的代码文件。
 
-## Local Server
+## 本地服务器
 
-Whilst developing your game you want quick iteration times. Your script files reside on your local computer and you edit them there. By running a tiny web server on your local machine any changes you make to your scripts will be instantly incorporated into the application by simply refreshing the browser.
+在你开发游戏时你总想快速地迭代它。你的脚本文件驻留在本地计算机中，并且你也在这里编辑它们。通过在本地机器上会运行一个很小的Web服务器，要使你对脚本的任何更改被立即纳入应用程序将只需刷新浏览器。
 
-The web server is simple to run, you drop the launch script in the folder where your code lives on your computer, and then start the server.
-Installing and setting up the local server is slightly different for each platform.
+开启web服务器很简单，你将要启动的脚本放置于电脑上的文件夹中，然后启动此服务即可。安装和设置本地服务器的方法在每个平台上都略有不同。
 
 ### Windows
 
-* First you will need to install python from [here][3]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
+首先，你需要从 [这里][3]获取python环境。默认情况下`localserver.bat`使用的Python版本为2.7，你也可以设置它以任何最近的版本运行。
 
-* [Download the server script][4]
+* [下载服务器脚本][4]
 
-* Save the file `localserver.bat` into the folder containing your scripts.
+* 保存文件 `localserver.bat` 到存放脚本的文件夹。
 
-* Double click the server to run it. You should see a terminal prompt wth a message something like this:
+* 双击服务以运行它。 您将会在终端上看到一条像这样的提示：
 ~~~sh~~~
 Serving HTTP on 0.0.0.0 port 51000 ...
 ~~~
 
 ### OS X and Linux
 
-* [Download the server script][5]
+* [下载服务器脚本][5]
 
-* Save the file `localserver` into the folder containing your scripts
+* 保存文件 `localserver.bat` 到存放脚本的文件夹。
 
-* Make the server executable. At the command line type
+* 使服务器文件获得执行权限。在命令行中键入：
 ~~~sh~~~
 chmod a+x /path/to/scripts/localserver
 ~~~
 
-* Now you can double-click the localserver file to start your server. You should see a terminal prompt with a message something like this:
+* 现在你可以双击本地服务器文件启动服务。您将会在终端上看到一条像这样的提示：
 ~~~sh~~~
 Serving HTTP on 0.0.0.0 port 51000 ...
 ~~~
 
-### Running applications against the local server
+### 运行连接本地服务器的应用程序
 
-Once you have started your local server you can test to see if your server is running correctly by visiting `http://localhost:51000` in your web browser.
-You will see a directory of files. Like this:
+一旦你开启了服务器，你可以通过在浏览器中访问网址`http://localhost:51000` 来测试服务器是否正常工作。你将会看到如下服务目录:
 
-![served directory](/images/platform/localserver.png "Local server directory")
+![服务目录](/images/platform/localserver.png "本地服务目录")
 
-Launching scenes from the PlayCanvas Editor using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
+在PlayCanvas编辑器中启动场景需要使用 `Launch Local` 命令使应用查找到连接到 `http://localhost:51000` 的脚本，这意味着如果你的本地服务器正在运行，浏览器会从您的计算机加载脚本。
 
-## Code Repository
+## 代码库
 
-Whilst running the local server is nice and simple, it is not really necessary for people on your team who aren't going to be editing the code, like the artists
-and production staff. In addition, if you want to publish or export your application into a releasable format your script code needs to be somewhere that is
-accessible to the PlayCanvas servers so that it can be included in any exported package.
+虽然运行在本地服务器是很好和简单的做法，但这对在团队中不编辑代码的其它成员而言并不是真的有必要，比如说艺术设计师和制作人员。此外，如果你想发布或以可解压的形式导出脚本代码，您的脚本代码必须被放置在PlayCanvas服务器可以访问到的地方，只有这样它才可以被打包并导出。
 
-For these scenarios we provide support for external code repositories. That is, a connection between your source control system and our servers.
+对于这些情况，我们提供了外部代码库进行支持。也就是说，你的源代码控制系统和我们的服务器之间会有连接。
 
 <img src="/images/platform/external_repo.jpg" style="max-width:100%" />
 
-We fully support Git and Mercurial repositories.
+我们完全支持Git和Mercurial的代码仓库。
 
-In order to clone a repository you need to enter its clone URL in the topmost input field. Then just hit Enter. Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status is 'green', the repository has been cloned.
+为了克隆一个代码库，你需要在最上面的输入字段中输入其克隆网址。幕后PlayCanvas将克隆或同步出的代码的副本，并上传到我们的服务器上。这种同步操作的状态显示在代码页上，当状态为“绿色”，表示该库已被克隆。
 
-Examples of valid clone URLs are any of these:
+有效的URL克隆的例子有任何这些:
 * `ssh://hg@bitbucket.org/username/repository`
 * `https://username@bitbucket.org/username/repository`
 * `git@github.com:username/repository.git`
 * `https://github.com/username/repository.git`
-* Any other Git or Mercurial URL as long as it's accessible from Playcanvas.
+* 任何其他的能被Playcanvas访问的Git或Mercurial的网址。
 
-Now when you run your application from the PlayCanvas Editor the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Scenes which have a code repository set up the code will be included in your exports.
+现在，当您从PlayCanvas运行您的应用程序，代码将在程序运行的同时被包含在应用程序中。这意味着你并不需要运行本地服务器。此外，当您导出一个有代码库设置的场景时，代码将被包含在您的输出内容里。
 
-## How to give permissions for all repositories
+## 如何为所有的资料库提供权限
 
-The Public Key that is shown in the box underneath your URL is used to get permissions to clone a repository. For example to get permissions to clone any repository that you have access to on <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>, you need to:
+显示在您的网址下面的框中的公共密钥是用于获取克隆库权限的。 举个例子， 获得 <a href="https://bitbucket.org" target="_blank">Bitbucket</a> 或 <a href="https://github.com" target="_blank">Github</a>中任何一个你可以访问的资料库的克隆权限, 你需要:
 
-1. Copy your Public Key.
-2. Go to your <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>, account.
-3. Add your public key in the SSH Keys section.
-4. Sync your repository.
+1. 复制你的公开密钥。
+2. 前往您的<a href="https://bitbucket.org" target="_blank">Bitbucket</a> 或 <a href="https://github.com" target="_blank">Github</a>账户。
+3. 添加您的公钥到SSH密钥部分。
+4. 同步您的资料库。
 
-You only need to do this once for your account.
+你只需要为您的帐户设置一遍。
 
-## How to give permissions for a single repository
+## 如何为特定的资料库提供权限
 
-If instead you only want access to a specific repository, you can instead:
+相反，如果你只是想访问特定的资源库，可以改为：
 
-1. Copy your Public Key.
-2. Go to your repository settings on <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>,.
-3. Add your public key in the Deploy Keys section.
-4. Sync your repository.
+1. 复制你的公开密钥。
+2. 前往您的 <a href="https://bitbucket.org" target="_blank">Bitbucket</a> 或<a href="https://github.com" target="_blank">Github</a>账户。
+3. 添加您的公钥到密钥部署部分。
+4.同步您的资料库。
 
-## Switching
+## 切换
 
 <img src="/images/user-manual/launch-options.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-You can easily switch between using local code and a code repository when using the PlayCanvas Editor by choosing which Launch button to use.
+你可以在使用PlayCanvas编辑器时通过选择使用哪些启动按钮轻松地在使用本地代码和使用代码库之间进行切换。
 
-**Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local)** will launch against a locally running server
+**Launch** 将启用服务器上的代码，即使用你的代码库或代码目录， **Launch (Local)** 将针对启用本地运行的服务器。
 
-Exporting scenes will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
+导出场景的操作将只会使用PlayCanvas服务器上的代码资源 - 因此请在进行导出前确认你已经将代码进行了上传或同步。
 
 [1]: /user-manual/dashboard/code
 [2]: /user-manual/designer/assets

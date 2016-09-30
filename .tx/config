@@ -79,12 +79,6 @@ source_file = po/tutorials/beginner/basic-materials.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-tutorials-beginner-Controlling-audio]
-file_filter = po/tutorials/beginner/Controlling-audio.<lang>.po
-source_file = po/tutorials/beginner/Controlling-audio.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-tutorials-beginner-controlling-lights]
 file_filter = po/tutorials/beginner/controlling-lights.<lang>.po
 source_file = po/tutorials/beginner/controlling-lights.en-US.po
@@ -241,12 +235,6 @@ source_file = po/user-manual/assets/models/index.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-dashboard-code]
-file_filter = po/user-manual/dashboard/code.<lang>.po
-source_file = po/user-manual/dashboard/code.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-dashboard-header]
 file_filter = po/user-manual/dashboard/header.<lang>.po
 source_file = po/user-manual/dashboard/header.en-US.po
@@ -262,12 +250,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-dashboard-overview]
 file_filter = po/user-manual/dashboard/overview.<lang>.po
 source_file = po/user-manual/dashboard/overview.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-dashboard-publishing]
-file_filter = po/user-manual/dashboard/publishing.<lang>.po
-source_file = po/user-manual/dashboard/publishing.en-US.po
 source_lang = en
 type = PO
 
@@ -322,12 +304,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-packs-components-audiolistener]
 file_filter = po/user-manual/packs/components/audiolistener.<lang>.po
 source_file = po/user-manual/packs/components/audiolistener.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-audiosource]
-file_filter = po/user-manual/packs/components/audiosource.<lang>.po
-source_file = po/user-manual/packs/components/audiosource.en-US.po
 source_lang = en
 type = PO
 
@@ -424,12 +400,6 @@ type = PO
 [playcanvas-developer-site.po-user-manual-scripting-script-attributes]
 file_filter = po/user-manual/scripting/script-attributes.<lang>.po
 source_file = po/user-manual/scripting/script-attributes.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-workflow]
-file_filter = po/user-manual/scripting/workflow.<lang>.po
-source_file = po/user-manual/scripting/workflow.en-US.po
 source_lang = en
 type = PO
 
@@ -943,12 +913,6 @@ source_file = po/user-manual/publishing/web/kongregate.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-scripting-script-priorities]
-file_filter = po/user-manual/scripting/script-priorities.<lang>.po
-source_file = po/user-manual/scripting/script-priorities.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-tutorials-beginner-cardboard-vr]
 file_filter = po/tutorials/beginner/cardboard-vr.<lang>.po
 source_file = po/tutorials/beginner/cardboard-vr.en-US.po
@@ -1342,6 +1306,48 @@ type = PO
 [playcanvas-developer-site.po-user-manual-organizations-managing-organizations]
 file_filter = po/user-manual/organizations/managing-organizations.<lang>.po
 source_file = po/user-manual/organizations/managing-organizations.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-download-app]
+file_filter = po/user-manual/api/download-app.<lang>.po
+source_file = po/user-manual/api/download-app.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-get-app]
+file_filter = po/user-manual/api/get-app.<lang>.po
+source_file = po/user-manual/api/get-app.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-get-job]
+file_filter = po/user-manual/api/get-job.<lang>.po
+source_file = po/user-manual/api/get-job.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-get-primary-app]
+file_filter = po/user-manual/api/get-primary-app.<lang>.po
+source_file = po/user-manual/api/get-primary-app.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-get-project-apps]
+file_filter = po/user-manual/api/get-project-apps.<lang>.po
+source_file = po/user-manual/api/get-project-apps.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-index]
+file_filter = po/user-manual/api/index.<lang>.po
+source_file = po/user-manual/api/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-models-units]
+file_filter = po/user-manual/assets/models/units.<lang>.po
+source_file = po/user-manual/assets/models/units.en-US.po
 source_lang = en
 type = PO
 

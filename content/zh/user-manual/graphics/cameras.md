@@ -16,9 +16,9 @@ position: 1
 
 ![Camera creation][2]
 
-## Orthographic vs Perspective Projection
+## 正交投影 VS 透视投影
 
-Camera's can have one of two types of projection: orthographic or perspective. Orthographic camera define a parallel projection and is often use for 2D or isometric games.
+摄像机的投影类型可以为：正交或者透视。正交摄像机定义了平行投影，这个经常用于2D或者等距游戏。
 
 ![Orthographic camera][3]
 

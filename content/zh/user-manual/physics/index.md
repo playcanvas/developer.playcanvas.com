@@ -1,39 +1,39 @@
 ---
-title: Physics
+title: 物理
 template: usermanual-page.tmpl.html
 position: 9
 ---
 
-PlayCanvas incorporates a physics engine. The physics engine can realistically control the motion of objects in your scene. If you think about it, a great many games rely on some form of physical simulation to enable gameplay. For example, consider the classic game Asteroids: the ship accelerates as its rockets fire, it has inertia, and asteroids will destroy it when they come into contact. Solving a simple case such as this is reasonably straighforward for a seasoned programmer, but a physics engine makes it a breeze for anybody.
+PlayCanvas采用了物理引擎。该物理引擎可以逼真地控制物体在场景中的运动。如果你考虑过这点，很大一部分的游戏都或多或少对物理模拟的游戏玩法有依赖。举个例子，考虑一下经典游戏爆破彗星:飞船通过给火箭点火进行加速，它具有惯性，并且当它碰到小行星时会被销毁。解决这个简单例子对经验丰富的程序员而言是非常简单的，但是一个物理引擎能让它变得对任何人而言都是简单的。
 
-## Rigid Bodies
+## 刚体
 
-More specifically, PlayCanvas exposes a rigid body physics engine. In other words, the engine simulates rigid bodies, where a rigid body is an idealised representation of an object that never deforms in any way. This approximation is sufficient to simulate most solid real world objects. Rigid bodies have a number of properties that influence how they move:
+进一步来说，PlayCanvas公开了一个刚体物理引擎。也就是，这个引擎表示的刚体是一个永远不会以任何方式变形的理想化的对象。这种近似化足以模拟现实世界中最坚固的物体。刚体有一些可以影响他们如何移动的特性：
 
-* Mass
-* Restitution
-* Friction
-* Angular Factor
-* Linear Factor
+* Mass质量
+* Restitution阻尼
+* Friction摩擦系数
+* Angular Factor角度因子
+* Linear Factor线性因子
 
-At any time, you can query (or even directly set) a body's velocity which takes two forms:
+在任何时候，你都可以通过两种形式请求(甚至直接设置)一个物体的移动速度：
 
-* Linear Velocity
-* Angular Velocity
+* Linear Velocity 线性速度
+* Angular Velocity 角速度
 
-## Units of Measurement
+## 度量单位
 
-By default, the PlayCanvas physics engine interprets 1 unit as 1 meter. Therefore, for objects to fall at a rate that appears to be physically accurate, you should ensure that your scenes size objects appropriately.
+通常情况下，PlayCanvas的物理引擎定义一个单位为1米。因此，为了使物品按照精确的速率落到物理上，你应该确保你的场景大小与对象大小是合适的。
 
-For example, if your game features a character that is 1.8m tall, he should be 1.8 units high in the Editor's 3D view.
+举个例子，如果你的游戏设置一个角色的身高位1.8m，那么他在编辑器的3D视图中应该有1.8个单位高。
 
-## Gravity
+## 重力
 
-Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero. To edit the gravity applied to your scene, open the Scene Settings panel.
+重力是一个场景中的适用于所有刚体恒力。通常情况下，它被设置为在世界坐标Y轴的负方向(换句话说，垂直向下)，值为-9.81。不过也许你想增加或减小它的属性值。举个例子，在一个设置在真空中的游戏中，你也许会想将重力设置成0。要编辑应用于场景中的重力，请打开场景设置面板。
 
-## Moving Rigid Bodies with Forces
+## 通过力移动刚体
 
-Bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant. Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time:
+物体会受到力和冲量的影响进行移动。一个力是被施加到物体上并经过了一段时间的，而冲量则是在某一时间点施加的力。我们来看几个案例。如果你想推动一个很重的东西使它通过地面，你将会在一定量的时间里一直施加这个力:
 
 ~~~javascript~~~
     update: function (dt) {
@@ -44,7 +44,7 @@ Bodies move in response to forces and impulses. A force is applied to a body ove
     }
 ~~~
 
-If you want to fire a cannonball from a cannon, you would apply a single impulse:
+你过你想要通过炮口发射一个炮弹，你需要应用一个冲量:
 
 ~~~javascript~~~
     update: function (dt) {
@@ -55,7 +55,7 @@ If you want to fire a cannonball from a cannon, you would apply a single impulse
     }
 ~~~
 
-## Teleporting Rigid Bodies
+## 瞬移刚体
 
-By adding rigid body and collision components to an entity, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid bodies position and/or orientation.
+通过向实体加入刚体和碰撞检测组建，你将为了设置该实体的位置和方向从而将它们传递给物理引擎。这意味着如果你想使用 pc.Entity API更新一个实体的位置或方向，该功能将不会有效果。反之，你必须调用该刚体组件的函数对实体进行移动，此外你还要明确通知物理引擎要随时更新刚体的位置和方向。
 

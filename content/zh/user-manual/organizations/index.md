@@ -13,11 +13,13 @@ position: 3
 
 您也可以购买 [组织计划][1] 其中包括:
 
-- 无限制的私有项目
-- 可设置权限的项目
-- 去除PlayCanvas品牌标题的权限
-- 离线归档和恢复
-- 额外的存储空间
+- Unlimited private projects
+- Project-based permissions
+- Ability to remove PlayCanvas branding
+- Offline Archive & Restore
+- Additional storage space
+- Access to [REST API][2]
 
 [1]: https://playcanvas.com/plans
+[2]: /user-manual/api
 
