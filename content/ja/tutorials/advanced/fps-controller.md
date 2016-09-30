@@ -56,7 +56,7 @@ _checkGround: function () {
 
     // Fire a ray straight down to just below the bottom of the rigid body,
     // if it hits something then the character is standing on something.
-    app.systems.rigidbody.raycastFirst(pos, rayEnd, function (result) {
+    if (app.systems.rigidbody.raycastFirst(pos, rayEnd)) {
         self.onGround = true;
     });
 }
@@ -66,7 +66,7 @@ The internal method `_checkGround()` is called every frame to check if the chara
 
 To perform the test we fire a ray from the position of the character straight down. If the ray hits another Entity, then we can say we are on the ground. If it doesn't then we are not. Of course, this test may not be perfect, the entity the character is standing on could be anything, we don't care. However, we have the Entity that was hit in the result of the raycast, so if your game calls for you to be a little more fussy about what counts as 'ground', then you can modify the code here.
 
-`raycastFirst()` is a method provided by the [`RigidBodyComponentSystem`][5] it takes a start and end point in world-space, and a callback function which is given a [`RaycastResult`][6] object. `RaycastResult` contains all sorts of useful information, like the Entity that was hit, the point in space where the ray hit, and the normal vector at that point.
+`raycastFirst()` is a method provided by the [`RigidBodyComponentSystem`][5] it takes a start and end point in world-space, and returns a [`RaycastResult`][6] object or `null` if there was no hit. `RaycastResult` contains all sorts of useful information, like the Entity that was hit, the point in space where the ray hit, and the normal vector at that point.
 
 ### move()
 ~~~javascript~~~
