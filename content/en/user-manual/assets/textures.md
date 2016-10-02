@@ -6,9 +6,15 @@ position: 4
 
 A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
 
-## Importing a Texture
+## Importing Textures
 
-You can import a wide variety of texture formats into the PlayCanvas Editor. Supported formats are:
+There are 3 ways you can import texture assets into PlayCanvas:
+
+1. Drag and drop images into the Assets panel.
+2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
+3. Import an FBX file that embeds textures.
+
+Supported image formats are:
 
 * JPG
 * PNG
@@ -63,13 +69,13 @@ The Editor has the ability to apply lossy compression schemes to your textures t
 
 Consider this texture asset:
 
-![Brick Texture][5]
+<img src="/images/user-manual/assets/textures/brick.jpg" alt="Brick Texture" style="width: 256px; height: 256px;"/>
 
-It's a JPG and 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
+It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
 
 Enabling all compression schemes achieves the following results:
 
-![Compression Results][6]
+![Compression Results][5]
 
 The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
 
@@ -77,6 +83,5 @@ The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in 
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
 [3]: /images/user-manual/assets/textures/texture-properties.png
 [4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/brick.jpg
-[6]: /images/user-manual/assets/textures/compression-results.png
+[5]: /images/user-manual/assets/textures/compression-results.png
 
