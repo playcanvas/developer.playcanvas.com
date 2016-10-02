@@ -77,6 +77,6 @@ The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in 
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
 [3]: /images/user-manual/assets/textures/texture-properties.png
 [4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/brink.jpg
+[5]: /images/user-manual/assets/textures/brick.jpg
 [6]: /images/user-manual/assets/textures/compression-results.png
 
