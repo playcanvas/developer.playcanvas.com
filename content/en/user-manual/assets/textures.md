@@ -55,7 +55,9 @@ Note that as anisotropy increases, the cost of sampling the texture on the GPU a
 
 ### Texture Addressing
 
-The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1.
+The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
+
+![Addressing][5]
 
 ## Texture Compression
 
@@ -75,7 +77,7 @@ It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format an
 
 Enabling all compression schemes achieves the following results:
 
-![Compression Results][5]
+![Compression Results][6]
 
 The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
 
@@ -83,5 +85,6 @@ The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in 
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
 [3]: /images/user-manual/assets/textures/texture-properties.png
 [4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/compression-results.png
+[5]: /images/user-manual/assets/textures/texture-address.png
+[6]: /images/user-manual/assets/textures/compression-results.png
 
