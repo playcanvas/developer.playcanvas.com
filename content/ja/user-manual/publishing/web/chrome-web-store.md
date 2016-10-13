@@ -54,9 +54,9 @@ PlayCanvasはChrome Web Storeでパッケージ化されたappの例を公開し
 
 PlayCanvasゲームからパッケージ化されたappを生成するのは、ホストされたappよりも少し手間がかかります。SWOOOPのようなゲームをパッケージ化しおよび公開するために必要な手順は次のとおりです：
 
-* Download your game from PlayCanvas as explained in the [self-hosting guide][2].
-* Unzip the contents.
-* Create a manifest.json file . For SWOOOP, it looks like this:
+* [セルフホスティングガイド][2]の説明に従い、PlayCanvasからゲームをダウンロード。
+* コンテンツを解凍。
+* manifest.jsonファイルを作成。SWOOOPの場合は次のようになります：
 
 ~~~javascript~~~
 {

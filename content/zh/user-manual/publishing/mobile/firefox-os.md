@@ -1,23 +1,23 @@
 ---
-title: Firefox OS
+title: 火狐OS
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-## Publishing to Firefox OS
+## 在 Firefox OS 发布
 
-[Firefox OS][1] is the new mobile operating system from Mozilla. And currently, PlayCanvas is the only 3D game engine targeting Firefox OS. If you publish your PlayCanvas game to [PlayCanvas][2], you can play it quite happily via Firefox OS's bundled Firefox browser app. But what if your users want to install the game to their home screen and play offline without having to access it via the browser? Achieving this is easy with PlayCanvas and involves converting your exported game into a 'packaged app'.
+[Firefox OS][1] 是来自Mozilla的新型移动操作系统。并且在目前, PlayCanvas 是唯一的针对Firefox OS的3D游戏引擎。如果你把你的PlayCanvas 游戏发表到 [PlayCanvas][2], 你讲可以通过Firefox OS's中捆绑的Firefox浏览器应用程序愉快地进行玩耍。但如果你的用户们想要把游戏安装到他们自己的主屏幕并不想通过浏览器进行登陆的话呢? 你可以通过PlayCanvas并将你的游戏内容导出为 'packaged app'轻易地做到。
 
-## Creating a Packaged App
+## 创建一个压缩包应用
 
-A packaged app is essentially a ZIP file containing all the resources that make up your game. But wait, that's exactly what PlayCanvas generates when you [export your game][3]. But to create a valid packaged app for Firefox OS, you will need to include some additional files:
+打包应用程序本质上是包含了你的游戏的所有资源的ZIP文件。别急，这正是PlayCanvas当你[导出游戏] [3]时所创建的东西。但为Firefox OS创建一个有效的打包应用程序，你需要包括一些额外的文件：
 
-* A manifest file
-* Some icon files
+* 清单文件
+* 一些图标文件
 
-### Create the Manifest
+### 创建清单
 
-This file must be called manifest.webapp and be created in the root folder of your extracted and exported PlayCanvas game. An example manifest (taken from the [Dungeon Fury][4] game) is shown below:
+这个文件必须被命名为manifest.webapp并被在你所提取并导出的PlayCanvas游戏的根文件夹中创建。一个清单文件的案例(从 [Dungeon Fury][4] 游戏获取) 如下所展示:
 
 ~~~javascript~~~
 {
@@ -41,15 +41,15 @@ This file must be called manifest.webapp and be created in the root folder of yo
 }
 ~~~
 
-A reference that fully documents this manifest format can be found on [MDN][5].
+关于这个清单格式的充分说明文档可以在 [MDN][5]中找到。
 
-### Create App Icons
+### 创建应用图标
 
-In the [icons description][6] in the manifest reference, it states you must include a 128x128 icon for inclusion in the Firefox Marketplace and a 60x60 icon to represent your app on the device. Place these images somewhere in your extracted PlayCanvas app folder and set the 'icons' property accordingly in your webapp.manifest.
+在参考清单的 [图标说明][6] 中, 它规定必须包括一个为列入Firefox的市场128x128 大小的图标和一个代表设备上的应用的 60x60大小的图标。 把这些图标放置到您提取的PlayCanvas应用的文件夹中并在webapp.manifest中相应地设置“图标”属性。
 
-### Re-zip Your Packaged App
+### 重新压缩打包应用程序
 
-You should now have a valid packaged app. Simply re-zip the files back into a file called package.zip and copy to a web location of your choice.
+你现在应该获得了一个有效的打包应用程序。接下来只需重新压缩文件为一个名为package.zip的文件并把它复制到您选择的Web位置。
 
 [1]: http://www.mozilla.org/en-US/firefox/os/
 [2]: /user-manual/publishing/web/playcanvas-hosting

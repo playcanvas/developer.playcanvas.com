@@ -1,18 +1,18 @@
 ---
-title: Communication with web pages
+title: 网页通信
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-One the key advantages of using PlayCanvas and WebGL over other plugins or cross-compiled engines is the ability to interact directly between your application and the surrounding webpage. In this page we'll talk about some common ways of interfacing your PlayCanvas application with a web page or web application.
+相对于其他插件或者交叉编译引擎使用PlsyCanvas和WebGL的优势在于对应用程序和周边网站进行直接互动。在这个页面中我们将讨论一些关于链接PlayCanvas应用程序和网页或者网页应用的常见方法。
 
-There are two ways you may find your PlayCanvas application communicating with the surrounding Web page. First, you may have embedded your application in a iframe in a page. Second you may be serving your own HTML page which loads an PlayCanvas page. These two methods require very different ways of communicating between web page and application.
+有两种方法用户可以将PlayCanvas应用程序和周边网页通信。首先，用户需要在网页中将标签嵌入一个应用程序，其次可能需要使用你自己的HTML网页加载PlayCanvas。这两种方法有着截然不同的方式来进行网页和应用程序的通信。
 
-## Defining an API
+## 定义API
 
-Common to both methods of hosting you should think about what features of your PlayCanvas application you need to expose to the web page. Perhaps you need to change the color of something based on a button click or a slider; or you might need to send some text input into the application to be rendered to a texture. Decide in advance what features you need to expose and in your PlayCanvas application write an explicit API or set of functions which are the only functions that your web page will call.
+对于这两种方法，用户应该思考PlayCanvas的哪一种特性用户想展现在网页上。可能你会需要通过点击按钮或者滑块改变某个物体的颜色。或者你想要对应用程序进行文本的输入从而能渲染纹理。实现决定哪一类特性是你需要展现的，以及在PlayCanvas应用程序中写入一个明确的API或者编写一个函数，在页面中只能调用这个函数。
 
-Here is a simple example where we show a couple of different ways of exposing an API from a PlayCanvas application to a web page.
+以下是一个简单的例子展示了从PlayCanvas应用程序到网页端显示API的不同方法。
 
 ```javascript
 
@@ -20,26 +20,21 @@ Here is a simple example where we show a couple of different ways of exposing an
 window.setScore = function (score) {
     var app = pc.Application.getApplication();
     var entity = app.root.findByName("Score Keeper");
-    entity.script.score_keeper.setScore(score);
+    entity.script.scoreKeeper.setScore(score);
 }
 
-pc.script.create("score_keeper", function (app) {
+var ScoreKeeper = pc.createScript("scoreKeeper");
 
-    var ScoreKeeper = function (entity) {
-        // method two: define an application event to set the score
-        app.on("score:set", function (score) {
-            this.setScore(score);
-        }, this);
-    };
+ScoreKeeper.prototype.initialize = function (entity) {
+    // method two: define an application event to set the score
+    this.app.on("score:set", function (score) {
+        this.setScore(score);
+    }, this);
+};
 
-    ScoreKeeper.prototype = {
-        setScore: function (score) {
-            // do the score setting here.
-        }
-    }
-
-    return ScoreKeeper;
-});
+ScoreKeeper.prototype.setScore = function (score) {
+    // do the score setting here.
+};
 
 // how to use the API:
 
@@ -52,15 +47,15 @@ app.fire("score:set", 10);
 
 ```
 
-Method one defines a global function which can be called anywhere in your page to access your application. Method two defines an application event which you can fire from your page. The application listens for this event and performs actions in response to the event. Both are valid methods of defining an API with your application.
+第一个方法定了一个全局函数，这个函数可以在页面中的任何地方进行调用从而进入到应用程序中。第二个方法定义了一个应用程序事件，在网页中可以对其进行激活这个事件。应用程序监听并且响应这个事件。这两个方法都是有效可行的。
 
-### Embedded in IFrame
+### 内嵌框架
 
-Embedding a PlayCanvas application in an iframe is a quick and easy way to get your PlayCanvas content in a page. It also means that you can make use of our optimized hosting and don't need to worry about serving all the PlayCanvas content. However, the downside is that you can not call javascript functions in the PlayCanvas application directly from the hosting page because they are running on different pages.
+在内嵌框架中嵌入一个PlayCanvas应用程序是一种简单快捷的方式将您的PlayCanvas显示在网页中。这同样意味着可以确保优化托管以及不需要去考虑服务所有PlayCanvas内容。然后，坏处是用户并不能在PlayCanvas应用程序中直接从托管网页调用javascript函数，因为它们在不同的网页中运行。
 
-To communicate between a parent page and an iframe you will need to use the [postMessage][1] javascript API to send data between your page and the PlayCanvas application.
+对父页面和内嵌框架进行通讯，用户需要使用[postMessage][1]javascript API来对页面和PlayCanvas应用程序之前发送数据。
 
-In your host page
+在您的主页中
 
 ```html
 <iframe id="app-frame" src="http://playcanv.as/p/example">
@@ -90,7 +85,7 @@ window.addEventListener("message", function (event) {
 
 ### Serve your own HTML
 
-When you download your PlayCanvas application for self-hosting. This is the index.html page that we include to run your application.
+当你下载为自托管服务器下载你的PlayCanvas应用程序时。你的应用程序之中将包含一个index.html文件。
 
 ```html
 <!doctype html>
@@ -116,13 +111,13 @@ When you download your PlayCanvas application for self-hosting. This is the inde
 </html>
 ```
 
-It is absolutely possible and even recommended, that you modify start from this page as the basis of your web page and you can modify it to add any additional content that is required for you page.
+这个是十分推荐以及有高可能性的，用户将这个网页修改为你的基础网页，并且可以在网页中添加任何额外的内容。
 
-When it comes to communicating with your PlayCanvas application, for example from a button push. You can call the APIs we defined above directly from your script. There is no need for the `postMessage` calls.
+当网页对PlayCanvas应用程序进行通讯时，比如从一个按钮，用户可以从脚本中直接调用之前定义好的API。在这里就不需要使用`postMessage`进行调用了。
 
-Note, it is important that you run any custom code after the `__start__.js` scripts as this creates the PlayCanvas application. In many cases you may wish to wait until after all the asset loading has finished, but before the application starts. You can do this by responding to the `start` event.
+提示，重要的是，在`__start__.js`脚本在PlayCanvas应用程序创建之后运行任何自定义代码。在很多情况下，用户可能希望等待直到所有的资源被加载完成之后，在应用程序开始之前。用户可以通过响应`start`事件来进行这一操作。
 
-For example:
+比如:
 
 ```html
 <!doctype html>

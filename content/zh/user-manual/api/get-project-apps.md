@@ -10,21 +10,23 @@ position: 3
 GET https://playcanvas.com/api/projects/:project_id/apps
 ```
 
-## Description
+## 描述
 
-Lists all the published Apps of a Project.
+项目的所有已发布APP。
 
-## Rate Limiting
+## Example
 
-This route uses a [normal][1] rate limit.
+```none
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps
+```
 
-## Parameters
+## 参数
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
+<div class="parameter"><span class="param">project_id</span><p>项目的ID。</p></div>
 </div>
 
-## Response Schema
+## 响应格式
 
 ```none
 Status: 200
@@ -58,14 +60,18 @@ Status: 200
 }
 ```
 
-## Errors
+## 错误
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止访问</p></div>
+<div class="parameter"><span class="param">404</span><p>项目未找到</p></div>
+<div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
+
+## 速率限制
+
+This route uses a [normal][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
 

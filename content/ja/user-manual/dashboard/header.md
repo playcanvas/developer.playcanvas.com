@@ -10,11 +10,11 @@ position: 1
 
 EDITORボタンをクリックすると、PlayCanvasエディタが開きます。
 
-By clicking on the PLAY button you can play the Primary Build of this project.
+PLAYボタンを押すと、そのプロジェクトのプライマリビルドをプレイできます。
 
 WATCHボタンを押すと、そのプロジェクトをウォッチします。そのプロジェクトに関する新しいポストがあるたびにアップデート情報を受け取るようになります。
 
-By clicking on STAR you can star or like this project, providing motivation to the developer.
+STARボタンをクリックするとプロジェクトをStarまたはLikeします。開発者のやる気につながります。
 
 FORKボタンをクリックすることによって、そのプロジェクトをフォークすることができます。フォークすることで、あなたのアカウントに対象のプロジェクト全体をコピーすることができます。
 

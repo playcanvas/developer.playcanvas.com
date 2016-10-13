@@ -1,16 +1,16 @@
 ---
-title: Video Tutorials
+title: 视频教程
 template: videos-page.tmpl.html
 position: 1
 ---
 
-We have several video series on our [Youtube Channel][1] which will walk you through using PlayCanvas to create games and interactive 3D applications.
+我们在我们的[Youtube 频道][1]里发布了一些视频教程，它们可以引导您使用PlayCanvas创建游戏和交互式3D应用程序。
 
-## Tutorial Assets
+## 教程资源
 
-Some of our Video tutorials use pre-made assets. You can download the assets from here:
+我们的一部分视频教程使用的是预创建的资源。你可以在这里下载他们:
 
-[Introduction to PlayCanvas series][2] - Samba Dancing Robot, Prototype textures, Music.
+[PlayCanvas系列简介][2] - 跳桑巴舞机器人，样板纹理，音乐。
 
 [1]: https://www.youtube.com/user/playcanvas
 [2]: /downloads/tutorials/intro.zip

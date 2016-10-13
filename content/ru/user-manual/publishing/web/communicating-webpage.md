@@ -20,26 +20,21 @@ Here is a simple example where we show a couple of different ways of exposing an
 window.setScore = function (score) {
     var app = pc.Application.getApplication();
     var entity = app.root.findByName("Score Keeper");
-    entity.script.score_keeper.setScore(score);
+    entity.script.scoreKeeper.setScore(score);
 }
 
-pc.script.create("score_keeper", function (app) {
+var ScoreKeeper = pc.createScript("scoreKeeper");
 
-    var ScoreKeeper = function (entity) {
-        // method two: define an application event to set the score
-        app.on("score:set", function (score) {
-            this.setScore(score);
-        }, this);
-    };
+ScoreKeeper.prototype.initialize = function (entity) {
+    // method two: define an application event to set the score
+    this.app.on("score:set", function (score) {
+        this.setScore(score);
+    }, this);
+};
 
-    ScoreKeeper.prototype = {
-        setScore: function (score) {
-            // do the score setting here.
-        }
-    }
-
-    return ScoreKeeper;
-});
+ScoreKeeper.prototype.setScore = function (score) {
+    // do the score setting here.
+};
 
 // how to use the API:
 

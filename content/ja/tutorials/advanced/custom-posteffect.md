@@ -64,7 +64,7 @@ pc.extend(pc, function () {
 
 ## まとめ
 
-We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][5]. Here's the full listing:
+これでポストエフェクトに必要なすべてのコンポーネントが揃いました。後は、上位で定義したExamplePostEffectのインスタンスをカメラの[ポストエフェクトキュー][5]に追加するだけです。ここでは完全なリストは次のとおりです。完全なリスト：
 
 ```javascript
 //--------------- POST EFFECT DEFINITION------------------------//
@@ -145,7 +145,7 @@ PosteffectExample.prototype.initialize = function() {
 
 カスタムシェーダーのより詳しいチュートリアルは [こちら][6]。
 
-See the [Custom Post Effects project here][7].
+[カスタムポストエフェクトのプロジェクト][7] はこちらです。
 
 [1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
 [2]: /api/pc.Shader.html

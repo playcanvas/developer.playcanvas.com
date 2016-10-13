@@ -1,76 +1,76 @@
 ---
-title: Basic Cameras
+title: 基础摄影机
 template: tutorial-page.tmpl.html
 position: 3
 ---
 
-## Camera Entities
+## 摄影机实例
 
-To view the scene created by your PlayCanvas application a Camera Entity is used to render it to the screen.
+要查看由PlayCanvas应用程序创建的场景，就需要使用相机实体将场景呈现到屏幕。
 
-In order to run your Scene from the PlayCanvas Editor, you must add at least one active Camera Entity to your Scene.
+为了从PlayCanvas编辑器运行您的场景，您必须至少添加一个活动的相机实体到您的场景。
 
-## Creating a Camera Entity
+##创建相机实体
 
-To create a new Camera Entity, you need to add a Camera [Component][1] to an Entity.
+要创建新的相机实体，您需要向实体添加一个相机[组件] [1]。
 
-* Select the root Entity of your Scene in the Entity Explorer
-* Create a new Entity by selecting *New Entity* from the *Entity* menu.
-* Add a Component by selecting *New Component* from *Component* menu
-* Choose *Camera* when you are prompted to choose which type of Component to create
+*在实例管理器*中选择场景的根节点
+*通过从*Entity*菜单中选择*新实体*创建一个新实体
+*通过从* Component *菜单项中选择* New Component *添加组件
+*当提示您选择要创建的组件类型时，请选择*Camera*
 
-As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
-This is equivalent to creating a new Entity and adding a Camera Component to it.
+由于制作相机实体是一项常见任务，因此有一个快捷方式：在*实体*菜单中选择*新实体* - > *新建相机*。
+这相当于创建一个新实体并向其中添加一个相机组件。
 
-## Camera Properties
+## 摄像机属性
 
-Like all Components, the Camera Component has a set of properties which alter it's behaviour.
+像所有组件一样，相机组件具有一组改变其行为的属性。
 
-### `Enabled`
+### `Enabled`启用
 
-If the enabled property is true, then the camera will render the scene to its rendering buffer when the Scene loads. Multiple cameras can be enabled at the same time. This is useful in situations where you want to implement a split-screen game or a mini-map, for example. The priority property determines the order in which the enabled cameras are rendered.
+如果enabled属性为true，则当场景加载时，摄像机将渲染场景到其渲染缓冲区。 可以同时启用多个摄像头。 在需要实现分屏屏幕游戏或迷你地图的情况下，这是非常有用的。 priority属性确定已启用的摄像机的渲染顺序。
 
-### `Clear Color Buffer`
+### `Clear Color Buffer`清除颜色缓冲区
 
-If this property is checked, before rendering the scene, the camera will erase whatever was previously in the camera's frame buffer (namely the previously rendered frame), and fills it with a clear color.
+如果选中此属性，则在渲染场景之前，相机将删除相机的帧缓冲区(即先前渲染的帧)中的所有内容，并用清晰的颜色填充。
 
-### `Clear Color`
+### `Clear Color`清空颜色
 
-The color to which the frame buffer is cleared, providing that the Clear Color Buffer property has been checked.
+清除帧缓冲区的颜色，前提是已选中“清除颜色缓冲区”属性。
 
-### `Clear Depth Buffer`
+### `Clear Depth Buffer`清除深度缓冲区
 
-If this property is checked, before rendering the scene, the camera will erase whatever was previously stored in the camera's depth buffer. Normally, this should be left checked but in certain circumstances, where you don't care about depth order when rendering the scene, it can be an optimization to disable it.
+如果选中此属性，则在渲染场景之前，相机将删除之前存储在相机深度缓冲区中的所有内容。 通常，深度缓冲顺序应该被检查，但在某些情况下，你不关心渲染场景的深度顺序，禁用它可以被用作为一个优化。
 
-### `Projection`
+### `投影`
 
-The projection type determines which type of matrix projection is used to convert the 3D scene in to the 2D view rendered to the page.
+投影类型确定使用哪种类型的矩阵投影来将3D场景转换为呈现到页面的2D视图。
 
-The **perspective** projection is the most common type for games. Alternatively, you can use an **orthographic** projection, which renders the scene without perspective so is useful for 2D games.
+**透视**投影是游戏所用的最常见的类型。 或者，您可以使用**正交影**投影，它渲染出的场景没有透视，因此对2D游戏很有用。
 
-### `Field of View`
+### `视野`
 
-The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (&deg;) so the default value of 45&deg; means that the top edge of the view to the bottom edge of the view form an arc of 45&deg; from the position of the camera
+相机的视场确定相机显示的场景的多少。 它以度(＆deg;)测量，因此默认值为45＆deg; 意味着从相机的位置观察视图的顶部边缘和视图的底部边缘，会形成45°的弧度。
 
-![Field of view][2]
+![视野][2]
 
-You can see in this diagram that because the `fov` value is independent of the width of the display a wide screen view (light blue) shows the same amount vertically but more horizontally than a narrow screen view (dark blue).
+您可以在此图中看到，因为`fov'值与显示器的宽度无关，所以宽屏幕视图(浅蓝色)在垂直方向上显示相同的量，但在水平方向上比窄屏幕视图(深蓝色)更大。
 
-### `Near Clip`
+### `近距离裁切`
 
-The near clipping distance is the distance, in metres, from the camera before which nothing will be drawn.
+近距离剪切是指不会绘制任何在距相机的以米为单位的指定距离之内的内容。
 
-### `Far Clip`
+### `远景剪切`
 
-The far clipping distance is the distance, in metres, from the camera after which nothing will be drawn.
+远景剪切是指在不会绘制距相机的以米为单位的指定距离之外的任何内容。
 
-### `Priority`
+### `优先级`
 
-This value is a number which determines the order in which a camera is rendered, if multiple cameras are enabled. Smaller numbers are higher priority and will be rendered first.
+该值是一个数字，如果启用多个摄像机，则该值确定物体渲染摄像机上的顺序。 较小的数字具有较高的优先级，将首先渲染。
 
-### `Viewport`
+### `视口`
 
-The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalised coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
+视口表示相机渲染缓冲区上的一个矩形区域。 有以下格式的4个值：左下X，左下Y，宽度，高度。 这些值是归一化坐标，其中渲染缓冲区，不管维度，被认为在X和Y中映射到0..1。 因此，为了限制摄像机在屏幕的左下象限渲染，将视口设置为0,0,0.5,0.5。
 
 [1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png

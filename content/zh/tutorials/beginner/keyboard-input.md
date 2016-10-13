@@ -1,18 +1,16 @@
 ---
-title: Basic Keyboard Input
+title: 基础键盘输入
 template: tutorial-page.tmpl.html
 position: 1
 ---
 
 <iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
 
-*Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
+*点击以聚焦, 然后按下 `左箭头`, `右箭头` 以及`空格键` 来旋转方块。 按下或抬起按键 'a' 来改变颜色。*
 
-Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
-for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
-handling keycodes and charcodes.
+PlayCanvas引擎中的键盘处理由`pc.Keyboard`对象提供。Keyboard 为常见的键盘操作，比如检查键是被敲击还是按住，提供了一个简单的接口。它还消除了处理关键代码和字符码的各种跨浏览器问题。
 
-Take a look at the keyboard input Scene in the [tutorials project][1]. Here is the code for the tutorial:
+在[教程项目][1]中看一看键盘输入场景。以下是该教程所用的代码:
 
 ~~~javascript~~~
 var KeyboardHandler = pc.createScript('keyboardHandler');
@@ -93,44 +91,44 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 };
 ~~~
 
-There are two ways of detecting keyboard input. The first is done in the update method of your scripts. Use `isPressed()` and `wasPressed()` and check whether a key is currently pressed or has just been pressed. The second uses events to respond to a key press or release as it happens.
+有两种方式检测键盘输入。第一种是在你的脚本的update环节中更新。使用`isPressed()` 和 `wasPressed()` 检测一个按键当前是否被按下或之前已经被按下。第二种是当按键按下或抬起时通过事件来响应。
 
-## `isPressed` vs `wasPressed`
+## `isPressed` 与 `wasPressed`
 
-In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`.
+在下方的案例中你可以看到`isPressed()` 与 `wasPressed()`的表现的不同处。
 
-When you press and hold the left or right arrow keys the cube will rotate by 5&deg;, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed.
+当你按下并保持按住左箭头或右箭头按键时，方块会旋转5&deg;。这是因为`wasPressed()` 只在键被按下后立即返回true。
 
-If you press and hold the spacebar you will see that the cube rotates continuously by 1&deg; per frame. This is because `isPressed()` returns true for every frame in which the key is pressed.
+如果你按住空格键，你会看到立方体每帧连续旋转1＆deg; 。 这是因为 `isPressed()` 对于检测到键被按下的每一帧都返回true。
 
 ### `isPressed(key)`
 
-`isPressed(key)` checks to see if `key` is currently pressed and returns true if it is. It will return true for every frame while the key is pressed.
+`isPressed(key)` 检查`key`当前是否被按下，如果是，则返回true。 当按下键时，它每帧都将返回true。
 
 ### `wasPressed(key)`
 
-`wasPressed(key)` checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
+`wasPressed(key)` 从之前的最后一帧开始检查是否按下了“key”*。`wasPressed(key)`对于单个按键只返回true一次。
 
-## Events
+## 事件
 
-The second method of handling key presses is to listen for events. Two keyboard events are supported on the Keyboard device:
+第二种处理按键的方式是监听事件。键盘设备支持两种键盘事件:
 
 * `pc.EVENT_KEYDOWN`
 * `pc.EVENT_KEYUP`
 
-[DOM][3] keyboard events are implemented differently on different browsers so the PlayCanvas Engine provides events on the `pc.Keyboard` object so you can use the same code everywhere. When the keyboard events are fired the event handler is passed a `pc.KeyboardEvent` object which contains the key code of the key that was pressed on released.
+[DOM] [3]键盘事件在不同的浏览器上的实现不同，所以PlayCanvas引擎在`pc.Keyboard`对象上提供事件，所以你可以在任何地方使用相同的代码。 当键盘事件被触发时，一个包含被释放的按键的键代码的`pc.KeyboardEvent`对象被传递给事件处理程序。
 
-Notice we are also passing a third argument to on(), which is `this` or the Script Instance itself. The third argument to on() is used as `this` in the event callbacks, so we need to pass it in here, otherwise it won't be set to the correct object.
+注意我们也传递一个第三个参数给on()，这是`this`或者脚本实例本身。 on()的第三个参数在事件回调中用作于`this`，所以我们需要在这里传递它，否则它不会被设置为正确的对象。
 
-## Key Codes
+## 键盘编码
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
+分辨哪一个键被按下时就要使用按键编码。它们是与键盘上的键所匹配的数值。 例如，pc.KEY_A是`A`键，pc.LEFT是左箭头键。
 
-Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
+注意，你应该总是使用枚举`pc.KEY_ *`，而不是使用数值。 因为这些常数的实际值可能会在将来进行更改。
 
-## Try it out
+## 试试看
 
-Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
+在[这里] [2]进行全屏尝试或在页面顶部尝试。 比较轻敲并按住箭头键，然后点击并按住空格键。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
 [2]: https://playcanv.as/p/rFZGQWCi

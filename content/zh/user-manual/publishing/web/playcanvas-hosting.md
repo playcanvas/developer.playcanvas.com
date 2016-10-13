@@ -1,61 +1,61 @@
 ---
-title: PlayCanvas Hosting
+title: PlayCanvas 托管
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The fastest, easiest, most convenient way to publish your game is to publish it to playcanvas.com.
+最快，最简单以及最方便的方式就是将您的游戏发布在PlayCanvas.com。
 
-Publishing to PlayCanvas consists of two simple steps:
+在PlayCanvas中发布包含了一下两个步骤：
 
-1. Publish a new **Build**
-2. Set the build as the **Primary Build**
+1. 发布一个新的 **版本**
+2. 将其设置为 **首要版本**
 
-To publish you will need to have at least one scene in your project.
+为了能顺利发布游戏，用户需要在程序中添加至少一个场景。
 
-## Publishing a new Build
+## 发布一个新的版本
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* 进入您的程序并打开编辑器。
+* 点击在工具栏左下角的<span class="pc-icon" style="font-size">&#57911;</span> 按钮，或者点击在左上角的目录中的发布。
 
 ![Publish Button][1]
 
-* This will open up the Publishing dialog. Here you can see a list of existing published builds. Here you can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button in the Dashboard Header.
+* 这个将会打开发布对话框。在这里用户可以看到现存的已发布的工程。在这里页同样可以为您的程序设置主要工程，可以通过点击位于项目左侧的旗帜标签进行这个操作。这将会成为当用户操作板中在点击PLAY按钮时候出现的游戏画面。
 
 ![Publish][2]
 
-* Click PUBLISH.
+* 点击发布
 
 ![Publish New Build][3]
 
-* You will then have to fill out some details about your new build. The available fields are:
+* 用户将需要填写一些关于项目的如下细节内容：
 
-  * *Image*: Click on the image to upload a different one if you want. This will be used when sharing the build on Social Media.
-  * *Title*: The title of your build.
-  * *Description*: The description of your build. This will be used when sharing the link of your build on Social Media.
-  * *Version*: The version is there to help you distinguish one build from another. Use a value that makes sense to you.
-  * *Release Notes*: Enter any new changes you made for this build. Again like the Version, this will only be shown to you so that you keep better track of your builds.
+  * *Image*: 点击上传图像。当将项目分享在社交媒体上时，这个图像将会展现给其他用户。
+  * *Title*: 项目的名称。
+  * *Description*: 项目的描述。用于当将项目链接分享在社交媒体上时。
+  * *Version*:   版本帮助用户对项目进行分辨。使用版本序号可以很大程度上帮助我们。
+  * *Release Notes*：注明用户对这个项目进行任何的更改变化。
 
 ![Select scenes][4]
 
-* Select the Scenes you want to include in your build from the list. Notice that the Primary Scene (the one with the active banner icon), will be loaded first when your build is launched if you include it in the build.
-* Click 'PUBLISH NOW'
-* You will see a new build created in the PUBLISH tab. Wait until it finishes processing.
-* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+* 从列表中选择你想包含在项目中的场景。注意主要场景（有旗帜标志）将会在项目运行时候首先加载。
+* 点击“PUBLISH NOW”
+* 您将会看到一个新的项目在发布面板中被创建。
+* 现在您的网页App已经创建完成，通过Tweet和Facebook对你的项目进行分享吧！
 
-Builds are given permanent link in the form `http://playcanv.as/b/BUILD_ID`. This link will be valid until you delete the build. If you want to share a link to your game, you should probably use the published project link explained below.
+项目从`http://playcanv.as/b/BUILD_ID`被给予了永久链接。这个链接将会一直有效直到用户删除项目。如果用户想要分享一个链接到你的游戏，用户应该使用已发布的项目链接在其底部进行解释。
 
 ## Set the Primary Build
 
-It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why we each project has a Primary Build link. This will always be in the form `http://playcanv.as/p/PROJECT_ID`
+保存一个单一的链接用于指向游戏的最新版本是非常有用的。这就不需要去担心当我们删除一个旧项目时我们会破坏链接。这就是为什么每个工程都有一个首要项目链接。这将会存在于`http://playcanv.as/p/PROJECT_ID`
 
 <div class="alert alert-info">
-If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
+如果用户分享一个链接到游戏中，请使用首要工程链接。这表明当用户知道这个链接不会因为重新发布而改变。
 </div>
 
-The first time you publish a build it will automatically become the Primary Build. For subsequent builds you can choose when to assigned the Primary Build. This means you can publish builds and test them before finally setting them as the Primary Build.
+当第一次用户发布一个项目时，这个将会将会被自动设置为首要项目。对于随后的工程用户可以选择合适将其设置为首要工程。这意味着用户可以发布这个工程以及检测在将其设置为首要工程之前。
 
-To set the Primary Build for your project, click the Primary marker to the left of build. This will be the app that users play when they click on the PLAY button in the Dashboard Header.
+为您的项目设置首要工程，点击工程左侧的旗帜标记。当用户在操作板中点击PLAY按钮时这个工程将会被生成用户所使用的App。
 
 [1]: /images/user-manual/editor/publishing-toolbar.jpg
 [2]: /images/user-manual/editor/publishing.jpg

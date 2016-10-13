@@ -57,7 +57,7 @@ MyScript.prototype.initialize = function () {
 
 ## 属性类型
 
-当用户声明一个属性时，用户同意声明了一个属性类型。这个允许了编辑器显示了用户所编辑的属性的相关控件。大多数类型为自解释，比如“boolean”，“number”以及“string”。但是有些类型需要一些进一步的解释，如下所示。查看[full attribute reference][1]更多信息。
+当用户声明一个属性时，用户同时声明了一个属性类型。这个允许了编辑器显示了用户所编辑的属性的相关控件。大多数类型为自解释，比如“boolean”，“number”以及“string”。但是有些类型需要一些进一步的解释，如下所示。查看[full attribute reference][1]更多信息。
 
 ### 实体属性
 

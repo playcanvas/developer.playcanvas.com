@@ -7,7 +7,7 @@ template: tutorial-page.tmpl.html
 
 *剛体が互いに衝突すると音がなります。剛体がトリガーボリュームに当たると元の場所に戻ります。*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the [tutorial project][1].
+このチュートリアルでは剛体の物理、当たり判定とトリガーボリュームの基礎を紹介します。[チュートリアルプロジェクト][1]を参照してください。
 
 ## コリジョンコンポーネント
 

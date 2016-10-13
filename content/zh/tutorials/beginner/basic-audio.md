@@ -1,90 +1,90 @@
 ---
-title: Basic Audio
+title: 初级的音频
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>
 
-*The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
+*坦克围绕着机器人在移动。你可以在游戏中通过点击鼠标进行射击。*
 
-## Sound sources and Listeners
+## 音乐播放源与听众
 
-In this tutorial we have placed a robot in the middle of the scene with a tank rotating around the robot. The sound playing from the tank's engine is heard relative to the ears of the robot. As the tank moves around the robot we can hear the sound shifting position from left to back to right to front.
+在这个教程中我们在场景中心放置了一个机器人，并使它被一个坦克围绕着旋转。从坦克引擎中发出的声音由机器人的耳朵监听。随着机器人围绕坦克移动，我们可以听到的声音的位置从左到背后到右再到前。
 
-The basic audio system in PlayCanvas centers on two Component types.
+PlayCanvas中的基本的音频系统有两个组件类型。
 
-The [Sound][1] Component plays audio assets like Wave, MP3 or Ogg Vorbis files. Imagine Sound Components like loudspeakers in the scene. There can be many Sound Components in the scene each playing multiple sounds.
+ [声音][1] 组件播放格式如Wave, MP3 或 Ogg Vorbis 的音频资源文件。试想一下，声音组件，就如场景中的扬声器。 在场景中可以有很多播放着不同声源的声音组建。
 
-Each Sound component comprises of a number of slots. Each slot has a name and defines a specific sound to be played. You can have multiple slots on a Sound component each playing independently from each other.
+每个声音组建包含多个声源槽。每个槽都有一个名字并定义了即将播放的声音资源。你可以使一个声音组件上包含多个彼此独立播放声音的插槽。
 
-The [AudioListener][2] Component determines how a Sound is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
+ [音频接收器][2] 组件决定了一个声音会如何被监听。试想一下，音频监听器组件，如同场景中的麦克风。同一时刻只能有一个活跃的音频接收器。
 
-## Scene Setup
+## 场景设置
 
-You should look at the [Hierarchy][3] for this tutorial yourself in the Editor. These are the main Entities in the Scene:
+你应该看看本教程中编辑器中的 [层级树][3]面板。这些是在场景里的主要实体：
 
-### Playbot
+### 玩家角色
 
-Our robot. It has an AudioListener component so all sound is going to be heard relative to the position of the robot.
+我们的机器人。它拥有一个音频接收器，所以所有的声音都会按照这个机器人的位置被监听。
 
-### Rotator
+### 围绕者
 
-An Entity used to rotate the tank. It has a Script component with a script that rotates the entity around the Y axis at a constant speed.
+一个用于使坦克旋转的实体。它拥有一个有能够使实体围绕指定Y轴按照固定速度旋转的脚本的脚本组件。
 
-### Tank
+### 坦克
 
-Our tank. It is a child of the Rotator Entity, that way it rotates with it. It has a Sound component with 2 slots:
+我们的坦克。它是围绕者实体的一个子物体，因此它会跟随运动。它拥有一个有2个声源槽的音频组件:
 
-The "engine" slot is responsible for playing the looping engine sound of the tank. It's set to Auto Play as soon as the scene is loaded.
+"引擎"声源槽主管循环播放坦克的引擎声。它被设置为一进入场景就开始播放。
 
-The other slot is the "shoot" slot. That slot is played by script every time we click on the canvas to make the tank's turret shoot. The Overlap checkbox is true for this slot which means that we can shoot multiple times and a new sound will be created every time instead of using just a single sound that restarts every time.
+另一个声源槽就是"射击"槽。这个槽会在我们每次点击屏幕使坦克射击时由脚本控制播放。该槽的重叠选项框设为真，意味着我们能够多次射击，每次射击都会产生一个新的声音而不是使旧声音重新播放。
 
-The tank also has a Script component which handles user input to make its turret shoot and also handles playing the shooting sound and other effects like a simple animation and a particle system.
+坦克同样也有一个脚本组件，它处理用户的输入，使炮塔射击，也处理射击的声音播放和特效，比如简单的动画和粒子系统。
 
-## Creating Sound sources
+## 创建声音资源
 
-To create a Sound source select the Entity you wish to add the Sound to and choose *New Component* from the *Entity* menu. Select *sound* from the list of Components and press the *Add* button.
+创建一个声音资源，选择你想要为之添加音源的实体然后从*实体* 的菜单中选择*新组建* 。从组件列表中选择 *声音* 并点击*添加* 按钮。
 
-Sound properties will now appear in the AttributeEditor.
+声音属性将不会出现在属性编辑器中。
 
-![Sound Component][5]
+![音频组件][5]
 
-Here is the Sound component of the tank Entity. Here's some information about some of the properties:
+坦克的实体上有一个音频组建。这里是关于它的属性的一些信息:
 
-### Positional
+### 位置相关
 
-If this is checked it means that the sound will be heard relative to the position of the current AudioListener (our robot) in 3D space. If this is unchecked then the sound will be heard in 2D by both speakers.
+如果它被勾选了就意味着这个声音的监听效果将会被它自己和当前的声音接收者 (我们的机器人)在3D空间中的距离所影响。 如果它没有被勾选，那么这个声音将以2D方式被两个扬声器所播放。
 
-### Asset
+### 资源
 
-Each slot has an Asset picker which allows you to play different audio assets from different slots. See [importing assets][4] for details on how to upload audio assets.
+每一个音源槽都有一个资源选择器，它能够允许你从不同的槽中播放不同的声音资源。查看[导入资源][4]以获得关于如何上传音频资源的详情。
 
 <div class="pc-notice-message pc-small">
-    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
+    并非所有浏览器都支持所有的音频格式。目前，我们建议使用的是大多数浏览器都支持的MP3格式(.MP3)。
 </div>
 
-Once you have uploaded your assets, use the Asset Picker to select the audio asset for your slot.
+一旦你上传你的资源，使用资源选择器为您的声源槽选择音频资源。
 
-### Auto Play
+### 自动播放
 
-If you want a slot to start playing as soon as the scene is loaded then set this to true. Otherwise set this to false and play the slot using a script.
+如果你希望一个声源槽在场景加载后立刻播放，那么勾选它。否则取消勾选，然后使用脚本控制其播放。
 
-### Overlap
+### 重叠
 
-If this is unchecked then the slot will play its sound from the beginning every time you play it in script. If this doesn't matter to you for example if you are playing some background music or a sound that doesn't need to be repeated leave this unchecked.
+如果不勾选它，槽每次被脚本控制播放声音都会从头开始。如果这对你并没有影响比如你正在播放背景音乐或一个不需要重复的声音，那么放着不勾。
 
-If however you want to play a sound repeatedly without stopping every time the sound is replayed, set this to true. Our shooting sound is set to overlap in this tutorial.
+然而，如果你想重复播放声音并重放的时候不停止所有的声音，设置此项为true。在本教程中我们的射击声音就是设置为重叠的。
 
-### Loop
+### 循环
 
-By default, the audio sample will be played once, and then stop. If you want the sound to loop continuously, e.g. for background music, then you can check the *Loop* box. Our engine is a looping sound in the example but the shooting sound is not.
+默认情况下，音频样板将被播放一次，然后停止。如果你想要的声音不断循环，例如播放背景音乐，那么你可以勾选*循环*框。比如我们的发动机就是一个循环的声音，但射击的声音不是。
 
-## Creating Listeners
+## 创建听众
 
-To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
+要创建一个声音监听者，选择代表监听器的实体。通常情况下，这会是游戏中的摄像头，因为这是玩家的'头'的位置。在我们的情况下，声音监听者被附着到机器人上。
 
 <div class="alert-info">
-    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+你一次只能有一个音频监听器。所创建的最后一个音频监听器组件将成为唯一活动的监听器。
 </div>
 
 [1]: /user-manual/packs/components/sound

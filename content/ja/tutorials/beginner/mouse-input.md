@@ -10,7 +10,7 @@ position: 2
 
 PlayCanvasエンジンでの処理マウスは`pc.Mouse`オブジェクトによって提供されます。マウスオブジェクトは、マウスが移動したときや、マウスボタンが押されたことを検出するための簡単なインターフェースを提供します。また、マウス座標の処理におけるクロスブラウザの不一致を一部改善します。
 
-Take a look at the [tutorial project][1]. Here is the code from mouse.js:
+[チュートリアルプロジェクト][1]をご確認ください。mouse.jsのコードは次の通りです：
 
 ~~~javascript~~~
 var Mouse = pc.createScript('mouse');
