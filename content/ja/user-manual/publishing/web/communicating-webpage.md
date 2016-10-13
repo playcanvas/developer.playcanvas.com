@@ -16,37 +16,32 @@ PlayCanvasアプリケーションからウェブページにAPIを露出させ�
 
 ```javascript
 
-// メソッド１:スコアを設定するためのグローバル機能を定義
+// method one: define a global function to set the score
 window.setScore = function (score) {
     var app = pc.Application.getApplication();
     var entity = app.root.findByName("Score Keeper");
-    entity.script.score_keeper.setScore(score);
+    entity.script.scoreKeeper.setScore(score);
 }
 
-pc.script.create("score_keeper", function (app) {
+var ScoreKeeper = pc.createScript("scoreKeeper");
 
-    var ScoreKeeper = function (entity) {
-        // メソッド２: スコアを設定するためのアプリケーションイベントを定義
-        app.on("score:set", function (score) {
-            this.setScore(score);
-        }, this);
-    };
+ScoreKeeper.prototype.initialize = function (entity) {
+    // method two: define an application event to set the score
+    this.app.on("score:set", function (score) {
+        this.setScore(score);
+    }, this);
+};
 
-    ScoreKeeper.prototype = {
-        setScore: function (score) {
-            // ここでスコア設定を行う
-        }
-    }
+ScoreKeeper.prototype.setScore = function (score) {
+    // do the score setting here.
+};
 
-    return ScoreKeeper;
-});
+// how to use the API:
 
-// APIの使用方法：
-
-//メソッド１:
+// method one:
 window.setScore(10);
 
-// メソッド２:
+// method two:
 var app = pc.Application.getApplication();
 app.fire("score:set", 10);
 

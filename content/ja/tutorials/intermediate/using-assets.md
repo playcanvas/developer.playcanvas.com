@@ -24,11 +24,11 @@ template: tutorial-page.tmpl.html
 
  [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
 
-## The AssetRegistry
+## AssetRegistry
 
-The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
+ [`pc.AssetRegistry`][1] は`this.app.assets`.としてすべてのスクリプトで使用できます。レジストリには、それらが読み込まれているかどうかに関わらず、プロジェクトに追加されたすべてのランタイムアセットの詳細が入力されます。Asset Registryを使用してアプリケーションに必要なアセットを見つけてください。
 
-In this case we've declared three script attributes `a`, `b` and `c` which are assigned to assets in the Editor. Then they are automatically available in our script.
+このケースでは3つのスクリプトを、 `a`、`b`、`c`として定義してEditorでアセットに割り当てます。その後、スクリプトで自動的に使用可能になります。
 
 ## プレロードされたアセットを使用
 
@@ -75,7 +75,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 }
 ```
 
-When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `this.app.assets.load()`. If the asset is already loaded, this method will do nothing.
+`L`キーを押すと、** C**モデルを読み込みます。これを行うには`this.app.assets.load()`にアンロードされたアセットを渡します。アセットがすでに読み込まれている場合、このメソッドは何も行いません。
 
 アセットが読み込まれると`asset.resource`は`pc.Model`のインスタンスになり、`C`キーを押してそれを割り当てることができます。
 

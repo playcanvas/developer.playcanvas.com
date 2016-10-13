@@ -1,74 +1,74 @@
 ---
-title: Making a Simple Game - Part 1
+title: 制作一个简单的游戏 - Part1
 template: tutorial-page.tmpl.html
 position: 10
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
-*You can find the [full project here][3]*
+*你可以在 [这里][3]找到完整的工程*
 
-In this series of tutorials we're going to show you how a complete game is made using PlayCanvas. We've made a simple "Keepy Up" game where the object is to click or tap on the soccer ball to keep it in the air.
+在本系列教程中，我们将向您展示如何使用PlayCanvas完成一个完整的游戏。 我们做了一个简单的“保持住”的游戏，其玩法是点击或选择足球以使它保持在空中。
 
-We'll cover these topics:
+我们将介绍以下内容:
 
-1. **The Scene and Hierarchy**
-1. Material Setup
-1. The Game Script
-1. Ball Physics and Input
-1. Audio & Effects
-1. User Interface
+1. **场景和层级树**
+1. 材质设置
+1. 游戏脚本
+1. 球体的物理和输入
+1. 音频 & 特效
+1. 用户界面
 
-This isn't a step-by-step guide, but we will talk about all areas of the scripts and try and explain how each bit works. We recommend you fork the Game project into your own account and follow along as we go through.
+这并不是一个手把手的引导，但是我们会详细讲解脚本的所有部分并尝试向你解释每一块脚本是如何工作的。我们建议你将游戏工程复刻到你自己的账号下并跟随我们的讲解。
 
-## Part 1: The Scene and Hierarchy
+## 第 1 部分: 场景和层级树
 
-In PlayCanvas your scene is described by a hierarchy of Entities. Each Entity is a "thing" in your application, it will always consist of an ID, a name and a transform. A transform is a matrix which defines the position, rotation and scale of the Entity in 3D space. To build your scene you create Entities and arrange them in a tree structure which is displayed on the left panel of the editor. The tree structure allows parent Entities to affect their children, for example, all child Entities inherit their parents position, rotation and scale. Also, if you disable a parent Entity all child Entities will also be disabled.
+在PlayCanvas中您的场景由实体的层次结构描述。 每个实体在你的应用程序中是一个“东西”，它总是包含一个ID，一个名称和一个变换。 变换定义了实体在3D空间中的位置、旋转和缩放的矩阵。 要构建场景，您可以创建实体并将其排列在树结构中，该树结构显示在编辑器的左面板上。 树结构允许父实体影响他们的子物体，例如，所有的子实体继承他们的父节点的位置，旋转和缩放。 此外，如果禁用父实体，所有子实体也将被禁用。
 
-In our Keepy Up scene we have 7 top level Entities in the hierarchy.
+在我们的Keepy Up游戏场景中，我们在层次结构中设置了7个顶级的实体。
 
-![Hierarchy][1]
+![层级树][1]
 
-### Camera Entity
+### 摄影机实体
 
-A Camera is where your scene is viewed from while the application is running. In this game we only have one camera and it is stationary.
+相机是一个你在应用程序运行时从其中查看场景的位置的部件。 在这个游戏中，我们只有一个摄像头，它是静止的。
 
-### Directional Light Entity
+### 定向光实体
 
-Lights illuminate 3D models in the scene. The more lights you have active at once, the longer it will take to render a scene and this can effect the frame rate of your game. You should aim to have only a few lights active at once. In this game we have a single stationary Directional Light.
+灯光用于照亮场景中的3D模型。 您一次激活的灯光越多，渲染场景所需的时间就越长，这会影响游戏的帧速率。 你应该设置为同一时间只有几个灯处于激活状态。 在这个游戏中，我们有一个单一的固定方向灯。
 
-### Football Entity
+### 足球实体
 
-The football is the main dynamic Entity in the scene. The Football Entity has 3 components attached to it. You can see the components by selecting the Football and viewing the Attribute Panel on the right side of the editor. The 3 components are:
+足球是场景中的主要动态实体。 足球实体上包含3个组件。 您可以通过选择足球并查看编辑器右侧的属性面板来查看组件。 这3个组件是：
 
-#### Sound Component
+#### 音频组件
 
-The sound component lets you play back sound files. Each Sound component has a number of slots, one for each sound file. You can choose playback settings like, whether the sound will loop, the volume or the pitch. The football has a single slot for the sound made when the ball bounces.
+声音组件允许您播放声音文件。 每个声音组件有多个插槽，每个插槽对应一个声音文件。 您可以进行播放设置，例如声音是否会循环，音量或音高。 足球上只有一个音槽，播放的是当球弹起时产生的声音。
 
-#### Model Component
+#### 模型组件
 
-The model component is used to attach a 3D model asset to an Entity. When you have an enabled model component on an Entity the 3D model will be rendered at the Entity's position in the 3D space. In this case, we have attached the football model.
+模型组件用于将3D模型资源附加到实体。 当您在实体上启用模型组件时，3D模型将在实体的3D空间位置上呈现。 在本案例中，我们为实体附上了足球模型。
 
-#### Script Component
+#### 脚本组件
 
-The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behaviour of the Entity. We'll go into more detail about the script on the football in Part 3.
+脚本组件允许您将JavaScript文件附加到实体。 每个实体将在javascript文件内创建一个脚本实例，以便您可以自定义实体的行为。 我们将在第3部分详细介绍足球上的脚本。
 
-### Background
+### 背景
 
-The Background Entity has another model component. This time it is the back plane that forms the background to the game. The background is created using a texture of a stadium in a material asset applied to the built in Plane Entity type. We're using the Emissive slot on the material to make sure the background is bright and is not shadowed by the light and the football. This effect is a bit like a matte painting used in an old film.
+背景实体有另一个模型组件。 这一次是形成游戏背景的背板。 使用应用于内置平面实体类型的素材资源中的体育场的纹理来创建背景。 我们在材料上使用了自发光选项，以确保背景是明亮的，不会被其它光和足球遮蔽。 这种效果有点像在老电影中使用的哑光绘画。
 
-### Impact Effect Entity
+### 碰撞特效实体
 
-The Impact Effect Entity is a particle effect that plays when the ball is bounced. We'll go into more detail in Part 4.
+碰撞特效实体是当球被点击弹跳时起作用的粒子效果。 我们将在第4部分中更详细地介绍它。
 
-### Audio
+### 音频
 
-The Audio Entity has more sound components attached to it. This Entity is for playing the music and the gameover sound.
+音频实体中关联了更多的音频组件。这是一个用于播放背景音乐和游戏结束声效的实体。
 
-### UI (User Interface)
+### UI (用户界面)
 
-The UI Entity is the parent of several other Entities, one for each screen that is used for the user interface of the game. We'll cover the UI Entity in Part 5.
+UI实体是其他几个屏幕实体的父级，每个屏幕均用于游戏的用户界面。 我们将在第5部分介绍UI实体。
 
-[Part 2][2] covers the main game script.
+[第2部分] [2]涵盖主要游戏脚本。
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
 [2]: /tutorials/beginner/keepyup-part-two

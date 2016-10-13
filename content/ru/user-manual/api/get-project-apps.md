@@ -14,9 +14,11 @@ GET https://playcanvas.com/api/projects/:project_id/apps
 
 Lists all the published Apps of a Project.
 
-## Rate Limiting
+## Example
 
-This route uses a [normal][1] rate limit.
+```none
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps
+```
 
 ## Parameters
 
@@ -66,6 +68,10 @@ Status: 200
 <div class="parameter"><span class="param">404</span><p>Project not found</p></div>
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
+
+## Rate Limiting
+
+This route uses a [normal][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
 

@@ -4,13 +4,13 @@ template: usermanual-page.tmpl.html
 position: 11
 ---
 
-Once you have built your game, you will no doubt want to publish it and allow people to enjoy its majesty! PlayCanvas makes things very easy for you to target just about any operating system or app store.
+当用户完成游戏制作，毫无疑问想对其进行发布和许多人分享！PlayCanvas可以通过任何操作系统或者App store来进行十分简单的发布操作。
 
-## Where can I publish PlayCanvas games?
+## 在哪里我可以上传我的游戏？
 
-* [Web][1]
-* [Mobile][2]
-* [Desktop][3]
+* [网页][1]
+* [手机][2]
+* [桌面电脑][3]
 
 [1]: /user-manual/publishing/web
 [2]: /user-manual/publishing/mobile

@@ -1351,3 +1351,9 @@ source_file = po/user-manual/assets/models/units.en-US.po
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-user-manual-publishing-web-hosting-cdn]
+file_filter = po/user-manual/publishing/web/hosting-cdn.<lang>.po
+source_file = po/user-manual/publishing/web/hosting-cdn.en-US.po
+source_lang = en
+type = PO
+

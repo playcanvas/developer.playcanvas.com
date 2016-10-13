@@ -5,48 +5,48 @@ position: 12
 ---
 
 <div class="alert alert-info">
-    The REST API is currently in beta. This means we may change certain endpoints and API responses.
+    REST API 目前正在测试阶段。 这意味着我们可能会改变某些端口和API的响应。
 </div>
 
-PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more.
+PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more. Here is a [tutorial][2] about using REST APIs.
 
-## Authorization
+## 授权
 
-You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page. In the API Tokens section click on Generate Token. Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
+你只能通过https来使用这个 REST API 。 为了访问REST API 你需要一个授权。 您可以通过您组织的帐户页面生成一个访问令牌。在 API 令牌面板中点击创建令牌。 为你的标志起个名字并点击按钮创建你的新令牌。 会有一个显示你的新访问令牌的窗口弹出。
 
-Make sure you note that down because you will not be able to see the token once you close this window. This token is meant to be kept secret so do not share it with anyone other than your team (for example do not post this on forums).
+请务必注意了，因为一旦你关闭此窗口，你将无法再看到令牌。 此令牌是私密的，所以不要向你的团队以外的任何人分享 (例如，不要把它张贴在论坛上)。
 
-From your Account page you can also Revoke all the tokens you have generated or a specific one. You can also edit the name of a token.
+从你的帐户页面，您还可以撤销已生成的所有或指定的某一个令牌。你也可以编辑修改一个令牌的名字。
 
-When you make calls to the API you must set the 'Authorization' header in your HTTP request to this value:
+当你试图调用API时，你必须设置你的HTTP请求中的'授权'头为这个值:
 
 ```none
 Bearer [access_token]
 ```
 
-Replace `[access_token]` with an Access Token you generated in your Account page.
+在你的帐户页面用你新建的令牌替换`[access_token]` 。
 
-For example:
+比如:
 
 ```none
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## Parameters
+## 参数
 
-Various routes accept a number of parameters. For GET requests if the parameter is not part of the URL, you can pass it as an HTTP query string parameter. For POST, PUT and DELETE requests parameters not included in the URL should be encoded as JSON with a Content-Type of 'application/json'.
+API中有很多途径接收复数的参数。对于GET请求，如果参数不是URL的一部分，你可以把它作为HTTP查询字符串参数进行放行。对于POST，PUT和DELETE请求，不包含在URL内的参数应编码为包含内容为“应用/ JSON”的JSON格式字段。
 
-## Response Format
+## 响应格式
 
-Our REST API is following some generic guidelines when it comes to the response format of each API call.
+当涉及到每个API调用的响应格式时，我们的REST API 是遵循以下的通用原则的。
 
-#### GET resource
+#### 获取资源
 
-If you are trying to GET a single resource the response will be a JSON object with the resource you requested.
+当你尝试去获取单个资源，你所的到的回复会是一个包含你所请求的资源的JSON对象。
 
-#### GET multiple resources
+#### 获取多个资源
 
-If you are trying to GET multiple resources like for example listing the Apps of a Project you will get a JSON object with this format:
+当你尝试去获取像是已上市项目应用的一组资源，你所得到的回复会是这种格式的JSON对象：
 
 ```none
 {
@@ -64,24 +64,24 @@ If you are trying to GET multiple resources like for example listing the Apps of
 }
 ```
 
-As you can notice the response in this case also contains pagination data. To control the pagination of the response you can pass the following URL parameters:
+正如你所能看到的，在这种响应下的回复往往包含分页数据。你可以通过以下网址参数控制回复中的分页数据：
 
 <div class="params">
-<div class="parameter"><span class="param">limit</span><p>The maximum number of items to include in the response.</p></div>
-<div class="parameter"><span class="param">skip</span><p>The number of items to skip from the original result set.</p></div>
-<div class="parameter"><span class="param">sort</span><p>The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here.</p></div>
-<div class="parameter"><span class="param">order</span><p>If you want results in ascending order pass 1 otherwise pass -1 for descending order.</p></div>
+<div class="parameter"><span class="param">limit</span><p>包含在回复中的项目的最大数目。</p></div>
+<div class="parameter"><span class="param">skip</span><p>从原始结果设置中跳过的项目的数目。</p></div>
+<div class="parameter"><span class="param">sort</span><p>用于对结果进行排序的文件名。查看每一个请求的文档以知晓这里所允许的赋值。</p></div>
+<div class="parameter"><span class="param">order</span><p>如果你想让结果按升序排列就传递 1 ，不然传递 -1 使其按降序排列。</p></div>
 </div>
 
-So for example to get 32 items after the first 16 items you would send this request:
+因此，举个例子，在获取了32个项目中的前16个后你会发送这个请求:
 
 ```none
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### Errors
+#### 错误
 
-When an error is raised you will get a JSON object with this format:
+当一个错误发生时你会收到一个这样格式的JSON对象:
 
 ```none
 {
@@ -89,24 +89,25 @@ When an error is raised you will get a JSON object with this format:
 }
 ```
 
-Also the status code of the response will be the appropriate HTTP error code.
+并且响应的状态码会变为合适的HTTP错误代码。
 
-## Rate Limiting
+## 速率限制
 
-Calls to the REST API have a rate limit. There are different rate limits depending on the request:
+调用REST API具有速率限制。按照不同的请求，限制速率也会不同:
 
-* **normal:** The normal rate limit allows 120 requests per minute.
-* **strict:** The strict rate limit allows 5 requests per minute.
+* **normal:** 正常的速率限制允许每分钟120请求。
+* **strict:** 严格的速率限制允许每分钟5的请求。
 
-The response will contain the following headers to help you regulate how often you call the API:
+回复会包含以下头信息来帮助你调节多久调用一次API：
 
 <div class="params">
-<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>The number of requests allowed in a minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>The remaining number of requests that you are allowed to make this minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>The time at which the current rate limit window resets in <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC epoch seconds</a>.</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>每分钟所允许的总请求次数。</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>你在这分钟内还可以请求的次数。</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>当前速率按照<a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC秒计数</a>限制窗口复位的时间 。</p></div>
 </div>
 
-If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
+如果超过了速率限制，你会得到一个`429请求过多`的状态代码。你将不得不等待当前窗口复位以继续发出请求。
 
 [1]: /user-manual/organizations
+[2]: https://www.codecademy.com/courses/javascript-beginner-en-EID4t/0/1?curriculum_id=5122e3cbb5827b93e2000865
 

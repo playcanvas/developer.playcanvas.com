@@ -31,9 +31,9 @@ PlayCanvasは物理エンジンを搭載しています。物理エンジンは�
 
 重力はシーン内のすべてのリジッドボディに適用される一定の力です。デフォルトでは、ワールドの負のY軸に-9.81に設定されています(つまり、直下)。このデフォルトは、地球の重力に近い値です。この値を増減することもできます。例えば、宇宙設定のゲームの重力をゼロに設定することも可能です。シーンにかかる重力を編集するには、Scene Settingsパネルを開きます。
 
-## Moving Rigid Bodies with Forces
+## 剛体に力を加えて動かす
 
-Bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant. Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time:
+ボディは力や衝撃に反応して動きます。力は一定の期間にボディに対して加えられますが、衝撃は瞬時に加えられます。いくつかの例をあげます。床の上で重い物を押す場合は、一定の時間にわたって力を加えます：
 
 ~~~javascript~~~
     update: function (dt) {
@@ -44,7 +44,7 @@ Bodies move in response to forces and impulses. A force is applied to a body ove
     }
 ~~~
 
-If you want to fire a cannonball from a cannon, you would apply a single impulse:
+大砲から砲弾を発射する場合は、単一の衝撃を加えます：
 
 ~~~javascript~~~
     update: function (dt) {

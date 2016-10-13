@@ -4,37 +4,37 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-[Facebook][1] is an excellent place to publish PlayCanvas games in order to reach an enormous audience. Publishing games from PlayCanvas to Facebook is straightforward.
+[Facebook][1]是一个面向广大受众的很好的发布PlayCanvas游戏的地方。 从PlayCanvas发布游戏到Facebook是很直接了当的。
 
-## How to publish to Facebook
+## 怎样发布到Facebook
 
-**1.** Publish your game to PlayCanvas. (You can also publish self-hosted games to Facebook, it will be a similar process to below)
+**1.** 发布您的游戏到PlayCanvas。 (您也可以发布自托管的游戏到Facebook，这将是一个类似如下的过程)
 
-**2.** Visit the [Facebook Developer Portal][2] and create a new Facebook App for your game.
+**2.** 访问 [Facebook 开发者门户网站][2]并为你的游戏创建一个新的 Facebook 应用。
 
-**3.** When requested choose **Facebook Canvas** as the type of application
+**3.** 当被要求时选择 **Facebook Canvas** 作为应用类型。
 
 ![Facebook Canvas][3]
 
-**4.** For the Secure Canvas URL enter the `playcanv.as` URL for your game
+**4.** 对于安全窗口的 URL输入你的游戏的 `playcanv.as` URL
 
-![Secure Canvas][4]
+![安全窗口][4]
 
-**5.** In the Application Settings section add the Website URL so that it looks like this: `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`. To find this URL take your `playcanv.as` game link e.g. `https://playcanv.as/p/JtL2iqIH` and add an `e/` before the `p/` e.g. `https://playcanv.as/e/p/JtL2iqIH`. This will redirect in your browser, use this URL for the Website URL
+**5.** 在应用程序设置部分添加网页的URL ，它会看上去像是这样的: 'https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html'.。为了找到这个URL地址，直接使用你的`playcanv.as`游戏链接，比如`https://playcanv.as/p/JtL2iqIH` 并在 `e/` 之前添加  `p/` 字符，就像这样 `https://playcanv.as/e/p/JtL2iqIH`.。 使用这个网址会使你的浏览器重定向到你要发布的游戏地址。
 
-![Website URL][5]
+![网址][5]
 
 <div class="alert alert-info">
-Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
+添加这个URL地址作为你的游戏网址是必须的， 因为PlayCanvas按照这个方式托管游戏才能让实现Facebook 的安全性要求，以允许访问其API。我们正在努力修复PlayCanvas的这一方面，以便你只需要设置安全窗口URL。
 </div>
 
-**6.** Finally, set up all the images and icons that are required for your game
+**6.** 最后, 设置你游戏所需要的所有的图片和图标。
 
-![Images][6]
+![图片][6]
 
-**7.** You can test your game by visiting the App URL listed in the Settings page
+**7.** 您可以通过访问设置页面中列出的程序的URL测试游戏
 
-![App URL][7]
+![应用 URL][7]
 
 [1]: http://facebook.com
 [2]: https://developers.facebook.com/

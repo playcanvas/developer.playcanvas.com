@@ -16,11 +16,11 @@ position: 2
 
 プロジェクトの横の矢印をクリックしてDeleteを選択するとアカウントから完全に削除することができます。
 
-## Unlock Project
+## プロジェクトをアンロック
 
-Click on the arrow next to a project and select Unlock to unlock a *locked* project. Unlocking a project depends on the project owner's subscription type. If the owner has a Personal plan then Unlocking means removing any Free users from the project (because Personal plans require all users to have a subscription). Otherwise unlocking a project means making it Public.
+プロジェクト横にある矢印をクリックしてUnlockを選択して*ロック*されたプロジェクトをアンロックする。プロジェクトのアンロックはプロジェクトの所有者のサブスクリプションの種類によって異なります。Personalプランの場合、プロジェクトから無料のユーザーを削除します(Personalプランは、すべてのユーザーがサブスクリプションを持っていることを必要とするため)。それ以外の場合は、プロジェクトをアンロックするとそれを公開することになります。
 
-If you have an Organization account another way to unlock projects is by purchasing more seats until you are no longer hitting your seats limit.
+Organizationアカウントの場合、上限に達することがなくなるまでseatを購入することでプロジェクトをアンロックすることもできます。
 
 ## プロジェクトのエキスポート
 
@@ -34,11 +34,11 @@ ORGプランの場合、エキスポートプロジェクトを含む.zipアー�
 
 Projectsページの左側にあるImport Projectをクリックし、zipファイルを選択してインポートします。
 
-## Transfer Project Ownership
+## プロジェクトの所有権を転移
 
-If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership. A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to. Enter the username and click FIND or press Enter. Then click Transfer.
+プロジェクトの所有権を他に譲渡する場合、プロジェクトの横の矢印をクリックして、Transfer Ownershipをクリックします。ポップアップが表示されて所有権を転送したいユーザーまたは組織のユーザ名を入力するように求められます。ユーザー名を入力し、FINDをクリックするかEnterキーを押します。次に、Transferをクリックします。
 
-The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list. If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+他のユーザはプロジェクトを譲渡するためにリクエストを承認する必要があります。そのユーザのプロジェクトリストの最上部に転送リクエストが表示されます。ユーザがリクエストを承認すると、転送が完了し、新しい所有者以外のすべてのチームメンバーはプロジェクトから削除されます。
 
 [1]: /images/user-manual/profile/profile.png "Projects"
 

@@ -1,5 +1,5 @@
 ---
-title: Exporting Assets
+title: 导入资源
 template: usermanual-page.tmpl.html
 position: 3
 ---

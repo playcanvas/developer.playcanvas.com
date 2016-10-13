@@ -1,46 +1,46 @@
 ---
-title: Making a Simple Game - Part 2
+title: 制作一个简单的游戏 - Part 2
 template: tutorial-page.tmpl.html
 position: 11
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][16]. If you haven't seen [Part 1][1] read it first.*
+*你可以在这里找到[完整项目] [16]。 如果你还没有看过[第1部分] [1]请先阅读它。
 
-## Material Setup
+## 材质设置
 
-We've kept the graphics very simple for this game so there isn't too much set up but will have to set up some Material assets for the ball, the background and the overlay.
+我们保证这个游戏的图形需求非常简单，因此没有太多的设置，但我们还是不得不位球、背景和前景设置一些材质资源。
 
-### What is a material?
+### 什么是材质?
 
-A Material is a type of asset in PlayCanvas that describes the way that the surface of a 3D model looks when it is rendered to the screen. The material determines the color of the surface, but also the way the surface interacts with light. For example, you can set up a material to be a smooth metal, or a rough rubber. PlayCanvas has a built in material called a Physical Material which should cover 90% of your use cases for a material. When you get more advanced it is possible to create your own materials by using GLSL shader code to write your own.
+材质是PlayCanvas中的一种资源，它描述了3D模型表面在呈现到屏幕时的外观的方式。 材质决定了模型表面的颜色，也决定了表面与光相互作用的方式。 例如，您可以将材质设置为光滑金属或粗糙橡胶。 PlayCanvas有一个内置的材质，称为物理材质，它可以覆盖90％的材质用例。 当你需要更高级的效果，可以选择通过使用GLSL着色器代码来编写创建自己的材质。
 
-### Cubemap
+### 立方体贴图
 
-Before we jump into the materials, we're going to set up our cubemap asset. A cubemap is an asset that consists of 6 textures on the faces of a cube. You can think of this as the far off environment of your scene. The PlayCanvas Physical materials can use a cubemap to do Image Based Lighting. This uses the colors in the cubemap to light materials in the scene. For example in our scene the cubemap has a blue sky and a green grass surface. So our ball will be lit blue from above and green from below. [Read more][7] in our documentation.
+在我们转到材质之前，我们先进行立方体贴图资源的设置。 立方体贴图是由多维数据集表面上的6个纹理组成的资源。 你可以认为这是远离你的场景的环境。 PlayCanvas物理材质可以使用立方体贴图做基于图像的照明。 这使用立方体地图中的颜色来点亮场景中的材质。 例如在我们的场景中，立方体贴图有一个蓝色的天空和一个绿色的草地表面。 所以我们的球将从上面点亮蓝色，从下面点亮绿色。你可以在我们的文档中 [阅读更多] [7]。
 
-![Cubemap][8]
+![立方体贴图][8]
 
-To set up a cubemap, first create a Cubemap asset from the New Asset menu, assign 6 textures, one to each face of the cubemap. When your cubemap has all 6 faces assigned, press the "Prefilter" button. **Prefiltering in required for the cubemap to work correctly!**
+要设置立方图，首先从新建资源菜单创建立方体资源，分配6个纹理到立方体贴图的每个面。 当您的立方体地图分配了所有6个面时，按下“预过滤器”按钮。 **所需的预滤波使立方体地图正常工作！**
 
-## Football Material
+## 足球实体
 
-![Football][3]
+![足球][3]
 
-The football is a 3D model that we imported from the [PlayCanvas Asset Library][2]. The football materials will mostly be set up for you but you may need to make some simple changes. Lets look at each map used by the football
+足球是我们从[PlayCanvas素材库] [2]导入的3D模型。 足球材料已经将主要部分为你设置好了，但你可能需要做一些简单的更改。 让我们看看足球使用的每个贴图。
 
-#### Diffuse
+#### 漫反射
 
-![Diffuse][4]
+![漫反射][4]
 
-The diffuse map defines the color of the surface. In this case it is the black and white pattern of the football.
+漫反射贴图定义了材质表面的颜色。 在本案例中，它是足球的黑白图案。
 
-#### Environment
+#### 环境
 
-![Environment][9]
+![环境][9]
 
-We're going to jump quickly to the Environment section as this is needed to see the effects of the Specular changes. To set up the Environment drag the Cubemap asset on the the cubemap slot in the material.
+我们将快速地跳转到环境部分，因为在这里我们需要看到的镜面变化的影响。 要设置环境，请在材质中的立方体贴图的插槽上拖入Cubemap资源。
 
 #### Specular
 

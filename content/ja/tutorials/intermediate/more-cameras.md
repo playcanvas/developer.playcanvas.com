@@ -55,7 +55,7 @@ Zoom.prototype.update = function(dt) {
 
 このサンプルでは、スペースバーを押すと視野の変化をトリガーします。`var fov = this.entity.camera.fov`行では、スクリプトが追加されているエンティティのカメラコンポーネントの`fov`の値を`get()`します。
 
-With `this.app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
+`this.app.keyboard.wasPressed()`でキー入力を検出し、ターゲットFOVの値を切り替えます。
 
 ネストされた最後の二つの`if(){}`コンストラクトで徐々にfov値を変更してズームイン／ズームアウト効果を作成します。
 
@@ -107,7 +107,7 @@ CameraManager.prototype.update = function(dt) {
 
 このサンプルでは、矢印キーを押すと、左または右のカメラエンティティ(現在読み込まれているシーン内か)を現在のカメラに設定して、スペースキーが中央カメラを起動します。
 
-We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `this.app.root.findByName()` to search through all the entities in the Scene).
+最初に、名前からカメラエンティティを検索するための関数を作成します。これには、このスクリプトの親エンティティに適用される`findByName()`関数を使用します(カメラがそこにあることを前提にすると、`this.app.root.findByName()` を使ってシーンの全てのエンティティを検索する必要がありません)。
 
 矢印とスペースキーに対応するカメラエンティティの名前を含むオブジェクトを設定しました [(Editorシーンを参照)][3]。
 
