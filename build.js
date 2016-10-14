@@ -1,5 +1,6 @@
 var path        = require("path");
 var fs          = require("fs");
+var url         = require("url");
 
 var handlebars  = require("handlebars");
 
@@ -58,7 +59,11 @@ handlebars.registerHelper("lang-selector-close", function (lang) {
     return "{{/if}}";
 });
 
-// handlebars.registerHelper("")
+// Convert relativeURL with a locale like en/manual to a full url with the
+// desired locale e.g. http://developer.playcanvas.com/ja/manual
+handlebars.registerHelper('locale-url', function (locale, relativeUrl) {
+    return url.resolve('http://developer.playcanvas.com', path.join(locale, relativeUrl.substring(2)));
+});
 
 // store strings requested
 var localization = {};
@@ -121,7 +126,8 @@ m.use(i18n()({
 .use(i18nout()({
     data: localization
 }))
-.build(function (err, files) {
+
+m.build(function (err, files) {
     console.log("done");
     if (err) {
         console.error(err);
