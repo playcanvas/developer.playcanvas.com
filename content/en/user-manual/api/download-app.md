@@ -71,7 +71,7 @@ Status: 201 Created
 
 ## Rate Limiting
 
-This route uses a [very strict][1] rate limit.
+This route uses a [strict][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
 [2]: /user-manual/api/get-job
