@@ -1,5 +1,5 @@
 ---
-title: Optimization
+title: Performance
 template: usermanual-page.tmpl.html
 position: 10
 ---
