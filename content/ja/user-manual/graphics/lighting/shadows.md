@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Shadows are a great way to add realism to your games. However, dynamic (realtime) shadows, can come with a significant runtime performance cost. For a more performant way of adding static shadows to your scene. See [Lightmaps][4].
+影を使用すればゲームにリアリティを加えることができます。しかし、動的な(リアルタイムな)影は、実行時のパフォーマンスに大きな負荷を加えてしまいます。パフォーマンスへの影響を少なく、シーンに静的な影を追加する方法については[Lightmaps][4]を参照してください。
 
 ![Characters with shadow casting][1]
 
@@ -14,21 +14,21 @@ PlayCanvasにはシャドウマッピングという影を生成するアルゴ�
 
 ![指向性ライト][5]
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+デフォルトで、PlayCanvasではシャドウキャスティングが無効になっています。自身で明示的に有効にする必要があります。影を有効にするのは簡単です。まず第一に、影を落としたいシーンを決めます。Inspectorパネルで階層内のライトを選択してそのプロパティを編集します。すべてのライトには、「Cast Shadows」のオプションがあります。シーンのグラフィックオブジェクトの影を生成するには、このオプションにチェックを入れます。
 
-![Model Component][6]
+![モデルコンポーネント][6]
 
-Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all model components receive shadows but do not cast them. Therefore, in order to see an entity cast shadows, select it in the Hierarchy, locate the model component in the Inspector and check the 'Cast Shadows' option.
+シーン内で影を落とす又は受けるグラフィカルオブジェクトを指定する必要があります。デフォルトでは、すべてのモデルコンポーネントは影を受けるのみで、落としません。したがって、エンティティに影を落とさせるには、階層でエンティティを選択して、Inspectorでモデルコンポーネントを見つけて、「Cast Shadows」オプションにチェックを入れます。
 
-Shadows should now be visible in the Editor's Viewport.
+これで、Editorのビューポートに影が表示されるはずです。
 
 ## 影のチューニング
 
-The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
+PlayCanvasで使われているシャドウマッピングは有限の解像度しか持ちませんが、パラメータを調整することで見た目を良くすることができます。[Light Component][2] UIに次のプロパティがあります。
 
 ### 投影距離のチューニング
 
-The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
+shadow distance（投影距離）はビューポイントから指向性ライトの影が描画されなくなる距離を決めるパラメータです。この値が小さければ小さいほど、影は鮮明になります。この値を小さくしすぎると、シーン内で視点を動かした時に突然影が現れるかもしれません。プレイヤーがどれだけ遠くを見るかという要素と、影がおおむねきれいに見えるバランスを考えて値を決めてください。
 
 ### 影野解像度
 
@@ -44,24 +44,24 @@ The shadow distance is the distance from the viewpoint beyond which directional 
 
 法線方向のオフセットバイアスによってこの問題に対処することができます。深さ方向のバイアスに加えて、シャドウマップの参照時に使われるUVマッピングをわずかに調整することで、影の斑点とピーターパン現象の二つを同時に避けることができます。フラグメントの位置を法線方向にずらす"法線方向のオフセット"はシャドウバイアスだけで問題に対処するよりも、大幅に見た目を改善します。
 
-## Soft Shadows vs Hard Shadows
+## Soft Shadow 対 Hard Shadow
 
-The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in PlayCanvas but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
+影の輪郭はpenumbra（半影）と呼ばれています。これは、影に柔らかい輪郭を与える、暗から明への移行です。PlayCanvasのデフォルトでは、影の輪郭は柔らかく設定されていますが、この設定を変更することで輪郭を鋭くすることもできます。柔らかい輪郭と鋭い輪郭の比較は以下を参照してください。
 
-![Hard vs soft shadows][3]
+![Soft Shadow 対 Hard Shadow][3]
 
-Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
+柔らかい影はGPU上でシャドウマップのサンプルを複数実行することによって達成できます。使用されるアルゴリズムは、Percentage Closest Filtering または PCFと呼ばれています。このアルゴリズムは、9つのローカライズされたサンプル(3×3の行列)をシャドウマップから読み出します。硬い影の場合は1つのみです。
 
-The shadow sampling type is specified per material and so the option can be found in the Material Editor in the Other section.
+影のサンプリングタイプは、素材ごとに指定されるので、オプションはOtherセクションのMaterial Editor内にあります。
 
-## Performance Considerations
+## パフォーマンスの考慮事項
 
-Enabling shadows has performance implications:
+影を有効にすると、パフォーマンスに影響があります：
 
-* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Point light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
-* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
-* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
-* If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
+* 指向性またはスポットライトを落とすそれぞれの影のために、すべてのフレームで一度シーンをシャドウマップにレンダリングする必要があります。ポイントライトの場合はシーンがライトごとに6回レンダリングされるので(シャドウマップが6面のキューブマップとして保存される)、負荷が大きくなります。シャドウマップの中にシーンをレンダリングすると、CPUとGPUの両方に負荷を加えます。
+* シャドウマップの解像度を上げるとより鮮明な影を生成しますが、GPUはより多くのシャドウマップピクセルを埋める必要があり、フレームレートに影響を与える可能性があります。
+* 影を受ける素材のシャドウサンプルタイプとしてソフトシャドウ(PCF3x3)を選択すると、ハードシャドウのオプションを使用した場合よりも、GPUに負荷がかかります。
+* 影が環境の静的な部分から発生している場合は、[ライトマップ][4]を使用してテクスチャに影をbakeすることを検討してください。
 
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light

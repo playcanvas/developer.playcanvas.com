@@ -1,28 +1,28 @@
 ---
-title: Creating new scripts
+title: 新しいスクリプトの作成
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file.
+新しいスクリプトを作成するにはアセットパネルを使用してNew Scriptを選択します。当たらしスクリプトファイルに名前を入力するよう促されます。
 
 ![新規スクリプト][0]
 
-Double-click the script asset in the panel to open it in the code editor.
+パネルでスクリプトアセットをダブルクリックしてコードエディタで開く。
 
-![Code Editor][1]
+![コードエディタ][1]
 
-## Attaching to a script component
+## スクリプトコンポーネントに添付
 
-The script component is created in the same way as other components. Once you have a script component you can select a script from your asset list.
+スクリプトコンポーネントは他のコンポーネントと同じように作成します。スクリプトコンポーネントを作成したらアセットリストからスクリプトを選択します。
 
-![Select Script][2]
+![スクリプトを選択][2]
 
-Scripts are shown by their name, when you select a script to add it to a component, the script content is parsed and any attributes that have been declared are exposed in the interface.
+スクリプトは名前で表示され、コンポーネントに追加するためにスクリプトを選択するとスクリプトコンテンツはパースされ、宣言された属性は全てインターフェイスで露出されます。
 
-## Adding a script component at run time
+## 実行時にスクリプトコンポーネントを追加
 
-If you want to dynamically add scripts while your application is running you can do so from the script component
+スクリプトコンポーネントから、アプリケーションが実行している間に動的にスクリプトを追加することができます。
 
 ```javascript
 var entity = new pc.Entity();
@@ -34,9 +34,9 @@ entity.script.create("rotate", {
 });
 ```
 
-Note, that the "rotate" script should already have been loaded at this point. You can load a script using the Asset Registry's [load()][3] method.
+この時点で既にrotateスクリプトが読み込まれているはずです。Asset Registryの[load()][3]メソッドを使用してスクリプトを読み込むことができます。
 
-To remove a script from a component use the `destroy` method
+コンポーネントからスクリプトを取り除くには`destroy`メソッドを使用します。
 
 ```javascript
 entity.script.destroy("rotate");

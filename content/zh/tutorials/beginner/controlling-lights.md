@@ -1,25 +1,25 @@
 ---
-title: Controlling Lights
+title: 控制灯光
 template: tutorial-page.tmpl.html
 
 ---
 
 <iframe src="https://playcanv.as/p/tiKpka9M"></iframe>
 
-*Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
+*按下1, 2 或 3 来分别使射灯、点光源和直射光启动/关闭。*
 
-In this tutorial we will show you how to enable/disable lights in PlayCanvas and to change light color and intensity. Note that there are many more controllable light features and properties, such as the light range. See the [API listing here][1] for more details.
+在本教程中我们会为你展示如何在PlayCanvas中对光源进行启动/关闭和改变其灯光颜色和亮度。请注意还有很多其他的可以控制的灯光属性和细节，比如光照范围。请查看 [此处的API][1]以获得更多细节。
 
-It is also important to be aware of the different limits for differing light properties, for example red, green and blue values are set between 0 and 1, but intensity reaches from 0 up to 10. Also some lights have properties unique to them, such as the cone angles for the spot light.
+同样重要的是注意不同的光的特性有不同限制，例如红色，绿色和蓝色值被设置在0和1之间，但是强度可以是从0到10。 同样的有些灯光还有他们独有的属性，比如聚光灯的夹角。
 
-##The lighting commands
+##照明命令
 
 ~~~javascript~~~
 if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
 ~~~
-This line toggles on and off the light component of the 'spot' entity.
+这段代码设置了实体上的射灯光源组件的开关功能。
 
 ~~~javascript~~~
 this.color1 = new pc.Color(1, 1, 1);
@@ -34,14 +34,14 @@ this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
 ~~~
-These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
+这段代码基于正弦波将值分配给r，g和b变量，然后通过 `color1.set(x, y, z)`将这些值赋给先前声明的颜色数组，然后添加到light属性中。 其强度也被设置为最大光强度值10最小强度为0的正弦变化。
 
 <div class="alert alert-warning">
- Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
+使用 `entity.light.color.r` 来赋值或改变灯光的红色值的做法并不会生效。只有灯光的 `color` 值的改变能被监听到, 因此你必须为要修改的属性分配一个 `pc.Color`的值，比如像是`entity.light.color = new pc.Color(1, 1, 1);`。
 </div>
 
-##General setup
-We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
+##通用设置
+除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问] [2]。
 
 The full code used for the above PlayCanvas app is as follows.
 ~~~javascript~~~

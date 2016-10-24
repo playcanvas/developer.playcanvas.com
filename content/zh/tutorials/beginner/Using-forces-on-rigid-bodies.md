@@ -1,22 +1,22 @@
 ---
-title: Forces and Impulses
+title: 力和冲量
 template: tutorial-page.tmpl.html
 
 ---
 
 <iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
-*Press R to reset the cube.*
+*使用按键来表示冲量，使用WASD键应用扭矩并旋转立方体。 按住F可应用恒定的向上力以消除重力效应
+*按R重置立方体*
 
-*Try to get the cube to balance and spin on one of its corners!*
-*The full code used is shown at the bottom of this page.*
+*尝试让立方体平衡在恒定的一个角落并旋转！*
+*使用到的完整代码显示在本页的底部。*
 
-In this tutorial we will show you how to use forces to control a dynamic rigidbody and produce the demo shown above. We will briefly show the use of forces, impulses, torques and the use of rigidbody component UI to customize behavior.
+在本教程中，我们将向您展示如何使用力来控制动态刚体并生成上述演示的内容。 我们将简要地显示力，冲量，扭矩的使用和刚体组件UI的使用以定制行为。
 
-## Scripting Forces
+## 力度脚本
 
-### Applying a Constant Force
+### 施加一个恒定的力
 
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_F) ) {
@@ -24,9 +24,9 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ~~~
 
-Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set. [See this documentation][2] for more details.
+这里，当用户通过 [`applyForce(x, y, z)`][1]按下F键时，沿着全局y轴的力被施加到被访问的实体。 也可以设置力矢量的施加点。 [参见文档] [2]了解更多信息。
 
-### Impulses
+### 冲量
 
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
@@ -34,9 +34,9 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ~~~
 
-The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][3].
+立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][3]给出速度的瞬时变化。
 
-### Torques
+### 扭矩
 
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_W) ) {
@@ -44,37 +44,37 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ~~~
 
-[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][4].
+[扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][4]施加到实体上。
 
-### TorqueImpulses
+### 扭矩冲量
 
 ~~~javascript~~~
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ~~~
 
-Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][5]. This was not used in the code for the above demo.
+角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][5]来表示。 这在上面的演示的代码中没有被使用。
 
-## Moving dynamic rigidbodies
+## 移动动态刚体
 
-In order to move rigidbodies, you apply linear forces and rotational forces (torque) using the methods above. Usually you should try to avoid directly modifying the position or velocity of a rigidbody as this will override the simulation and it can lead to odd effects, especially when objects collide.
+为了移动刚体，使用上述方法应用线性力和旋转力(扭矩)。 通常你应该尽量避免直接修改刚体的位置或速度，因为这将会变得不真实，它可能导致奇怪的效果，特别是当物体之间产生碰撞时。
 
-However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][6]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
+然而，如果你需要，你可以通过直接赋给`entity.rigidbody.linear Velocity`或`entity.rigidbody.angularVelocity`一个新的'[pc.Vec3] [6]'值来更新速度。
 
-For more information on rigidbody types, see [the collision API page][8], [the pc namespace page][9], [the fps-controller tutorial][11] and [the collision tutorial][10].
+有关刚体类型的更多信息，请参见[碰撞体API页面] [8]，[pc命名空间页] [9]，[fps控制器教程] [11]和[碰撞教程] [10]。
 
-## General setup
+## 常用设置
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][12].
+我们使用聚光灯，立方体(具有模型，刚体，碰撞和脚本组件的实体)和地板(具有模型，刚体和碰撞组件)来设置基本场景。 立方体的刚体设置为动态，而地板的刚体设置为静态。 我们为每个盒子创建了一些材料，并改变漫反射的颜色只是为了更容易在眼睛。 我们还在SpotLight和DynamicBody实体上激活了“投射阴影”选项。 这个PlayCanvas应用程序'usesForces'的完整的场景和代码可以在[这里] [12]找到。
 
-## Limiting and control
+## 限制和控制
 
-Some Editor settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube's attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
+一些编辑器设置被设置为防止不平衡力的持续应用(并且同时防止物体因不断加速而失去控制)。 我们在立方体的属性编辑器上启用了角度阻尼以及在立方体和地板上的摩擦。 这里不使用线性阻尼，但是它可以用于模拟空气阻力，当然可以根据需要通过代码应用减速。
 
 <img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
 
-## Teleporting a Body
+## 传送一个物体
 
-To instantly teleport a body to a new position, you can't use the setPosition function from the pc.Entity API. This is because the physics engine would still think the body is in the old location. Instead, you have to use the rigidbody component's teleport function:
+要立即将物体传送到新位置的话，您不能使用来自pc.Entity API的setPosition函数。 这是因为物理引擎仍然会认为身体在旧的位置。 相反，你必须使用刚体组件的teleport函数：
 
 ~~~js~~~
 //code within the update function
@@ -89,9 +89,9 @@ if (this.playerPos.x > 9.0) {
 }
 ~~~
 
-If the cube moves beyond the viewable area in the x-direction, the teleport function is called and the cube entity is teleported across the screen. The entity is teleported to a less extreme left/right position so as not to continuously activate the `if()` statement.
+如果立方体在x方向上移动超出可视区域，则调用传送功能，立方体实体在屏幕上传送。 实体被传送到离远点不太远的左/右位置，以便不连续激活`if()` 语句。
 
-## Reset cube code
+## 重置立方体的代码
 
 ~~~javascript~~~
 if (app.keyboard.wasPressed(pc.KEY_R)) {
@@ -106,9 +106,9 @@ reset: function () {
 }
 ~~~
 
-We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
+我们采用了使立方体回到其原始位置的复位功能，并且如上所述，将刚体的位置与传送的实体的位置同步。 复位功能中的最后两行将物体的线速度和角速度也复位为零。 对象的方向也可以重置，但不在此代码中执行。
 
-## Full code listing
+## 整段代码
 
 ~~~javascript~~~
 var DynamicBody = pc.createScript('dynamicBody');

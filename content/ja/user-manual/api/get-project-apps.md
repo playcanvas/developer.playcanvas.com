@@ -1,32 +1,32 @@
 ---
-title: Apps - Get project apps
+title: Apps - プロジェクトappを取得
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-## Route URL
+## ルート URL
 
 ```none
 GET https://playcanvas.com/api/projects/:project_id/apps
 ```
 
-## Description
+## 説明
 
-Lists all the published Apps of a Project.
+プロジェクトの公開されたappを全て一覧表示。
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
+<div class="parameter"><span class="param">project_id</span><p>プロジェクトのid。</p></div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 200
@@ -60,18 +60,18 @@ Status: 200
 }
 ```
 
-## Errors
+## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>非認証</p></div>
+<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
+<div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
+<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
-This route uses a [normal][1] rate limit.
+Tこのルートは[normal][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
 

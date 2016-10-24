@@ -1,44 +1,44 @@
 ---
-title: Hosting using a CDN
+title: CDNを使用してホスティング
 template: usermanual-page.tmpl.html
 position: 8
 ---
 
-When deploying your PlayCanvas application for self-hosting it is often necessary to separate the location your application is served from (the index.html) from the assets that the application loads. For example, a Content Delivery Network (CDN) is used to make sure that assets are delivered from a server that is geographically close to the user's computer. This makes your application load much more quickly. This guide will show you how to configure your PlayCanvas application to use a separate location for your assets.
+セルフホスティングでPlayCanvasアプリケーションをデプロイするとき、アプリケーションがロードするアセットの負荷から、アプリケーションが提供されている場所(index.html)を分ける必要がある場合が多いです。例えば、コンテンツ配信ネットワーク(CDN)はアセットがユーザーのコンピュータから地理的に近いサーバから配信されていることを確認するために使用されます。これによりアプリケーションは速くロードするようになります。このガイドでは、PlayCanvasアプリケーションを設定して、アセットに別の場所を使用する方法を説明します。
 
-The first step is to download a web build of your application following the steps in [the publishing guide][1]. Then we start by making changes to the `index.html` file in the downloaded build.
+最初のステップは、[パブリッシュガイド][1]の手順に従って、アプリケーションのウェブビルドをダウンロードすることです。その後、ダウンロードしたビルドの`index.html`ファイルに変更を加えます。
 
-## Serving Assets from another location
+## 別の場所からアセットをサービング
 
-The simplest change to make is to load all assets from a different location. This is done by setting the `ASSET_PREFIX` property in your index.html
+最も簡単な変更は、別の場所からのすべてのアセットをロードすることです。これはindex.htmlの`ASSET_PREFIX`プロパティを設定して行います。
 
 ![index.html][2]
 
-The `ASSET_PREFIX` will be prepended to all request that are made for an asset (including a scene) both during the preload phase and during runtime. For example, you should set this to the root folder of your CDN asset store.  In the above example, previously an asset that would had a URL like `files/123456/1/texture.jpg` will now be loaded from `http://keepy-up-cdn.example.com/files/123456/1/texture.jpg`.
+`ASSET_PREFIX`は、プリロード時とランタイム時の両方で、アセットのために作られるすべての要求(シーンを含む)の前に追加されます。たとえば、CDNアセットストアのルートフォルダに設定するべきます。上記の例では、以前は`files/123456/1/texture.jpg` のようなURLのアセットが`http://keepy-up-cdn.example.com/files/123456/1/texture.jpg` からロードされるようになりました。
 
-## Additional URLs
+## その他のURL
 
-There are a few remaining files that are referenced directly by the `index.html`. In particular, the style sheet, the PlayCanvas javascript engine, the application `config.json` and the `__loading__.js` and `__start__.js` application scripts. Update your index.html as seen below.
+`index.html`によって直接参照されるファイルがいくつか残っています。具体的には、スタイルシート、PlayCanvasのjavascriptエンジン、アプリケーション`config.json`、`__loading__.js`、 `__start__.js`アプリケーションスクリプトです。以下のようにindex.htmlを更新します。
 
 ![index.html][3]
 
-## Copy Files to CDN
+## CDNにファイルをコピー
 
-Next you should copy all the required files into the new location on your server. These files are loaded using the `ASSET_PREFIX`:
+次に、サーバー上の新しい場所に必要なファイルを全てコピーする必要があります。これらのファイルは、 `ASSET_PREFIX`を使用してロードします。
 
-`__game_scripts.js`, scene json (e.g. `123456.json`), assets (everything inside the `files` folder) and `logo.png` the default loading screen logo.
+`__game_scripts.js`, シーン json (e.g. `123456.json`), アセット (`files` フォルダの中の全て), デフォルトの画面ロゴの`logo.png`。
 
-And these files are referenced by the index.html: `playcanvas-stable.min.js`, `config.json`, `__loading__.js`, `__start__.js` and `styles.css`.
+そしてこれらのファイルはindex.html: `playcanvas-stable.min.js`, `config.json`, `__loading__.js`, `__start__.js` , `styles.css`によって参照されます。
 
-![CDN files][4]
+![CDN ファイル][4]
 
-You should copy all these files onto your CDN hosting service.
+これらのファイルを全てCDNホスティングサービスにコピーするべきです。
 
-## Setting up CORS
+## CORSの設定
 
-Your application is now ready to load files from a separate server. The final step to tackle is to ensure your server is correctly set up to serve Cross-Origin Resource Sharing (CORS) headers. CORS is a security feature of the browser which means that by default a web page on `http://example.com` can't download files from a web page on `http://keepy-up-cdn.example.com/` because they have a different "origin". To get around this, you must set the server at `http://keepy-up-cdn.example.com/` to serve CORS headers that tell the browser that other pages are allowed to download the content.
+これでアプリケーションが別のサーバーからファイルをロードすることが可能になりました。最後のステップは、サーバーが正しくクロスオリジンリソース・シェアリング(CORS)ヘッダをサーブできるように正しく設定されていることを確認することです。CORSはブラウザのセキュリティ機能です。デフォルトでは`http://example.com` 上のWebページを、`http://keepy-up-cdn.example.com/` 上のWebページからファイルをダウンロードできないことを意味します。二つの起源が異なるためです。これを回避するためにはサーバをhttp://keepy-up-cdn.example.com/`  に設定して、他のページによるコンテンツのダウンロードを許可するようブラウザに指示するCORSヘッダを提供する必要があります。
 
-Setting up CORS is different depending on which CDN or server you are using. You will need to check the documentation of your server or CDN provider to find out how to set up CORS header. For example, the page for Amazon Web Services CORS settings is [here][5]
+CORSの設定は、使用するCDNまたはサーバによって異なります。CORSヘッダーの設定方法を確認するにはサーバまたはCDNプロバイダのマニュアルを確認する必要があります。例えば、Amazon Web Services CORSの設定のページは[こちら][5]です。
 
 [1]: /user-manual/publishing/web/self-hosting
 [2]: /images/user-manual/publishing/web/cdn-index.jpg

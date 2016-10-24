@@ -39,7 +39,7 @@ var characterData = this.characterData.resource;
 var names = this.parseCharacterData(characterData);
 ```
 
-You can see in the code above that all you need to do to load JSON data from an asset in your project is to use a Script Attribute of type 'asset' or to retrieve the asset from the asset registry, then access the `resource` property. For an asset of type `json` the data will already be parsed into a standard javascript object when you access the `resource` property.
+上のコードからも分かるように、プロジェクトのアセットの中のJSONデータをロードするには、アセットレジストリからアセットを取得するか'asset'タイプのScript属性を使用して、次にその`resource`プロパティにアクセスします。JSONタイプのアセットにアクセスする場合は、`resource`プロパティにアクセスする前にすでにデータはパースされており、標準のJavaScriptオブジェクトとして扱うことができます。
 
 一度JavaScriptオブジェクトを取得すれば、普通にデータにアクセスすることができます。例えば、プロパティを`parseCharacterData`を使ってループを使って走査するといったようなことです。
 
@@ -70,7 +70,7 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
 
 loadイベントを受け取った後、ロードしたJSONデータを`JSON.parse`(これも通常のWEBブラウザのAPIです)を使ってパースし、コールバック関数の引数としてパースされたデータを受け取ります。
 
-Note, that the call to `loadJsonFromRemote` is **asynchronous**.
+`loadJsonFromRemote`への呼び出しは**非同期**です。
 
 以下が全コードになります:
 

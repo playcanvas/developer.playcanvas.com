@@ -4,15 +4,15 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-The Audio Listener component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
+Audio Listenerコンポーネントは3D空間でのリスナーの位置を指定します。全ての3D オーディオプレイバックはこの位置に関連します。
 
-The Audio Listener component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will act as the listener position for 3D sound effects.
+Audio Listenerコンポーネントはコンポーネントパネルの右上のトグルで有効と無効を切り替えることができます。有効になった場合、コンポーネントは3Dサウンドエフェクトのリスナーポジションとして機能します。
 
-![Audio Listener component][1]
+![Audio Listener コンポーネント][1]
 
 ## スクリプティングインターフェイス
 
-You can control an Audio Listener component's properties using a [script component][2]. The Audio Listener component's scripting interface is [here][3].
+[Script component][2]を使用して、Audio Listenerコンポーネントのプロパティをコントロールできます。Audio Listenerコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-audio-listener.png
 [2]: /user-manual/packs/components/script

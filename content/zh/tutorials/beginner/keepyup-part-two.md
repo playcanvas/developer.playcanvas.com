@@ -42,41 +42,41 @@ position: 11
 
 我们将快速地跳转到环境部分，因为在这里我们需要看到的镜面变化的影响。 要设置环境，请在材质中的立方体贴图的插槽上拖入Cubemap资源。
 
-#### Specular
+#### 镜面
 
-![Specular][5]
+![镜面][5]
 
-The specular section determines how the material interacts with lights. There are two "workflows" for specular, the "Metalness workflow" and the "Specular workflow", you can find more information in our [documentation][6]. For the football we are using Metalness, so be sure to check the "Use Metalness" box. Our football is not made of metal, so we slide the metalness slider all the way down to 0. Then we use the glossiness slider to set our rough/smooth the material should be. We've set this to about halfway which gives a nice shine to the ball, but not completely smooth.
+镜面部分确定材料如何与灯光相互作用。 镜面效果有两个“工作流程”，“金属工作流”和“镜面工作流”，您可以在我们的[文档] [6]中找到更多信息。 对于足球我们使用金属性设置，所以一定要勾选“使用金属”框。 由于我们的足球不是由金属制成，所以我们滑动金属滑块一直到0。然后我们滑动光泽滑块设置我们的粗糙/光滑的材料直到材质呈现它应该有的样子。 我们把它设置到大约一半的位置，这可以让球发出不错的光泽，但又不是完全光滑的。
 
-#### Normal
+#### 法线
 
-![Normal][10]
+![法线][10]
 
-The final texture map we apply is the normal map. The normal map is used to add details to the model. In this case, the separate patches of the football are not modelled in the geometry (which is smooth sphere) but they are in the normal map. This means the ball will be correctly lit as if the patches were there, but without the overhead of lots of extra polygons.
+我们附着上的最后一个贴图就是法线贴图。法线贴图用于为模型添加细节。 在这种情况下，足球的单独补丁不在几何形状(即平滑球体)中建模，而是在法线图中进行。 这意味着足球将被正确按照补丁的样子被附上高光，并不会产生大量额外的多边形的开销。
 
-## Backdrop Material
+## 背景材质
 
-![Backdrop][11]
+![背景][11]
 
-The backdrop material is much simpler, we have only one texture map.
+我们的背景材料更简单，只有一个纹理贴图。
 
-#### Emissive
+#### 自发光
 
-![Emissive][12]
+![自发光][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emmissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+自发光贴图设置表面处的颜色自行发出对应光，就好像它默认就是那种颜色。 这意味着场景中的灯光不会影响发光表面的亮度。 注意，发光材料不会影响场景中的任何其他对象，实际上没有发射光。
 
-In this case, we don't want the background to be lit, it is just a static scene. So we use the emissive map to do that.
+在本案例中下，我们不希望背景被点亮，它只是一个静态场景。 所以我们使用自发光贴图来做到这一点。
 
-## Overlay Material
+## 罩子材质
 
-![Overlay][13]
+![罩子][13]
 
-The overlay material is even simpler than the backdrop. In this case all we are doing is setting the color off the emissive property
+罩子的材质甚至比背景更简单。 在这种情况下，我们要做的只有设置设置自发光属性的颜色。
 
-![Emissive][14]
+![自发光][14]
 
-Continue on to [Part 3][15].
+继续前往 [第 3 部分][15].
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: http://store.playcanvas.com/

@@ -1,12 +1,12 @@
 ---
-title: Camera
+title: カメラ
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-The Camera component enables an entity to render a scene from a certain viewpoint.
+カメラコンポーネントは、エンティティが特定の視点からシーンをレンダリングすることを可能にします。
 
-The Camera component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the camera will render the scene every frame.
+カメラコンポーネントはコンポーネントパネルの右上のチェックボックスで有効と無効を切り替えることができます。有効になった場合、カメラはシーンを毎フレームレンダリングします。
 
 ![カメラコンポーネント][1]
 
@@ -47,7 +47,7 @@ The Camera component can be enabled or disabled using the toggle in the top righ
 
 ## スクリプティングインターフェイス
 
-You can control a Camera component's properties using a [script component][2]. The Camera component's scripting interface is [here][3].
+[スクリプトコンポーネント][2]を使用して、カメラのコンポーネントのプロパティを制御することができます。カメラコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-camera.png
 [2]: /user-manual/packs/components/script

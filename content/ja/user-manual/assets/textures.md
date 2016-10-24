@@ -6,15 +6,15 @@ position: 4
 
 A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
 
-## Importing Textures
+## テクスチャのインポート
 
-There are 3 ways you can import texture assets into PlayCanvas:
+PlayCanvasにテクスチャアセットをインポートする方法は3つあります:
 
 1. Drag and drop images into the Assets panel.
 2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
 3. Import an FBX file that embeds textures.
 
-Supported image formats are:
+次の画像形式に対応しています：
 
 * JPG
 * PNG
@@ -25,7 +25,7 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG and PNG files remain in their original format.
+インポートだれたJPGとPNGファイルは元の形式のまま保たれます。
 
 GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
 
@@ -33,23 +33,23 @@ HDR and EXR are [high dynamic range formats][2] formats. Images of these types a
 
 By default, imported images will be resized to the next highest power of two. For example, an image that is 400x400 will be resized to 512x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 
-## Texture Properties
+## テクスチャプロパティ
 
 Selecting a texture's thumbnail in the Assets panel will load it into the Inspector panel. Note that you can multi-select textures and edit the whole selection simultaneously in the Inspector.
 
 A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
 
-![Texture Properties][3]
+![テクスチャプロパティ][3]
 
-### Texture Filtering
+### テクスチャのフィルタリング
 
 Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbours. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
 
-### Anisotropy
+### 異方性
 
 When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
 
-![Anisotropy][4]
+![異方性][4]
 
 Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
 
@@ -59,7 +59,7 @@ The texture addressing properties give you control over how a texture is sampled
 
 ![Addressing][5]
 
-## Texture Compression
+## テクスチャの圧縮
 
 Texture data is stored in a device's video memory (or VRAM). It is important to ensure that your application does not exhaust VRAM as this can cause undesirable things like browser tab crashes.
 
@@ -77,7 +77,7 @@ It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format an
 
 Enabling all compression schemes achieves the following results:
 
-![Compression Results][6]
+![圧縮の結果][6]
 
 The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
 
