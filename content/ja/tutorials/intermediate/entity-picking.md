@@ -5,10 +5,10 @@ position: 5
 ---
 
 <iframe src="https://playcanv.as/b/0iehjK3i/"></iframe>
-**Collision Picking** - *click to select a shape*
+**コリジョンの選択** - *クリックして形を選択*
 
 <iframe src="https://playcanv.as/b/RxJFqzy5"></iframe>
-**Frame Buffer Picking** - *click to select a shape*
+**フレームバッファの選択** - *クリックして形を選択*
 
 [チュートリアルプロジェクト][1]のEditorからお試しください。
 

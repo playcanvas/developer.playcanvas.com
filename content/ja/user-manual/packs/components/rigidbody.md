@@ -1,36 +1,36 @@
 ---
-title: Rigid Body
+title: リジッドボディ
 template: usermanual-page.tmpl.html
 position: 8
 ---
 
-The Rigid Body component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.
+Rigid Bodyコンポーネントはエンティティがシーンの物理シミュレーションに参加できるようにします。これにより、エンティティの動きを写実的にシミュレーションできます。コンポーネントインターフェイスは、Type属性に基づいて動的に異なる属性を表示します。
 
-The Rigid Body component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component has a sibling collision component, the rigid body will participate in the physics simulation.
+Rigid Body コンポーネントはコンポーネントパネルの右上のチェックボックスで有効と無効を切り替えることができます。有効になった場合、また、コンポーネントに兄弟コリジョンコンポーネントがある場合、Rigid Bodyは物理シミュレーションに含まれます。
 
 #### Static
-![Rigid Body component (Static)][1]
-#### Dynamic (and Kinematic)
-![Rigid Body component (Dynamic)][2]
+![Rigid Body コンポーネント (Static)][1]
+#### Dynamic (およびKinematic)
+![Rigid Body コンポーネント (Dynamic)][2]
 #### Kinematic
-![Rigid Body component (Kinematic)][3]
+![Rigid Body コンポーネント (Kinematic)][3]
 
-Note that you must add a [collision component][4] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
+Rigid bodyの形を定義するには、同じエンティティに[コリジョンコンポーネント][4]を追加する必要があります。追加しないと、rigidbodyコンポーネントには効果がなく、物理シミュレーションに参加しません。
 
 ## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Type</td><td>The type of the body:<br><ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul></td></tr>
-    <tr><td>Mass</td><td>The mass of the body. If world units in your scene are meters, the unit for mass is kilograms.</td></tr>
-    <tr><td>Linear Damping</td><td>Specifies the proportion of linear velocity that is lost by the body every second.</td></tr>
-    <tr><td>Angular Damping</td><td>Specifies the proportion of angular velocity that is lost by the body every second.</td></tr>
-    <tr><td>Linear Factor</td><td>Multiplier for a body's linear movement in each world axis. If set to 0 for any axis no movement will occur in this axis - useful for the creation of 2D games or 1D/2D movement.</td></tr>
-    <tr><td>Angular Factor</td><td>Multiplier for a body's angular (rotational) movement about each world axis. If set to 0 for any axis, no rotation will occur around this axis.</td></tr>
-    <tr><td>Friction</td><td>Controls how quickly a body loses velocity when in contact with other bodies.</td></tr>
-    <tr><td>Restitution</td><td>A measure of the bounciness of a body between 0 and 1. Warning: setting to 1 means a moving body will never come to a stop (unless  colliding with other bodies with restitutions below 1, or unless a stop is scripted).</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Type</td><td>ボディの種類：<br><ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul></td></tr>
+    <tr><td>Mass</td><td>ボディの大きさ。シーンのワールド単位がメートルなら、massの単位はキログラムです。</td></tr>
+    <tr><td>Linear Damping</td><td>毎秒ボディが失う線速度の割合。</td></tr>
+    <tr><td>Angular Damping</td><td>毎秒ボディが失う角運動速度.の割合。</td></tr>
+    <tr><td>Linear Factor</td><td>各ワールド軸内でのボディの直線運動の乗数。如何なる軸に対して0に設定されていると、その軸で動作は発生しません。2Dゲームや1D/2D動作に便利です。</td></tr>
+    <tr><td>Angular Factor</td><td>各ワールド軸内でのボディの角運動(回転)の乗数。如何なる軸に対して0に設定されていると、その軸近辺で回転動作は発生しません。</td></tr>
+    <tr><td>Friction</td><td>ボディが他のボディと接触した際の速度の減少を制御。</td></tr>
+    <tr><td>Restitution</td><td>ボディの跳ね返りの度合いを0 から 1で設定。注意：1に設定すると動いているボディが止まらずに動き続けます(restitutionが1以下の他のボディと接触する場合や停止スクリプトが設定されている場合を除く)。</td></tr>
 </table>
 
 ## スクリプティングインターフェイス

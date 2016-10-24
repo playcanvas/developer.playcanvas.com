@@ -1,16 +1,16 @@
 ---
-title: Making a Simple Game - Part 3
+title: 制作一个简单的游戏 - Part 3
 template: tutorial-page.tmpl.html
 position: 12
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
 
-*You can find the [full project here][4]. If you haven't see [Part 1][1] and [Part 2][2] read them first.*
+*你可以在这里找到[完整项目] [4]。 如果你还没有看过[第1部分] [1]和[第2部分] [2]请先阅读它们。*
 
-## The Game script & Input
+## 游戏的脚本 & 输入
 
-These two scripts `game.js` and `input.js` are attached the root entity in the scene, called "Game". Scripts are generally executed in the order they are encountered in the hierarchy so it's easiest to attach any non-Entity specific scripts the first Entity. You can also manage the loading order of Scripts in the Settings panel of the Editor, to load scripts first without attaching them to an Entity.
+这两个脚本`game.js`和`input.js`被附加在场景中的根实体上，称为“游戏”。 脚本通常按照它们在层次结构中遇到的顺序执行，因此在第一个节点的实体上附加任何非实体需求的脚本最容易。 您还可以在编辑器的“设置”面板中管理脚本的加载顺序，以在不将其附加到实体的情况下让其首先加载脚本。
 
 ## game.js
 
@@ -105,27 +105,27 @@ Game.prototype.resetScore = function () {
 };
 ```
 
-### Game State
+### 游戏状态
 
-The game script manages the overall state of the game, it exposes some methods to alter the game state and fires events to alert other code that the game state has changed.
+游戏脚本管理游戏的整体状态，其公开了一些以改变游戏状态并且触发事件以警告其他代码游戏状态已经改变的方法。
 
-We've divided the game up into three main states: Menu, In Game and Game Over. The game script provides the methods to transition between each state, `start()`, `gameOver()` and `reset()`. Each one sets the `_state` variable to remember which state we're in; fires an application event to alert other scripts to state changes; switches user interface elements on and off; and manages the state of the music or game over sound effect.
+我们将游戏分为三个主要状态：菜单，游戏和游戏结束。 游戏脚本提供了在每个状态 `start()`，`gameOver()` 和`reset()`之间转换的方法。 每个脚本都通过设置`_state`变量来记住我们在哪个状态; 触发应用程序事件以警告其他脚本进行状态更改; 切换用户界面元素; 并管理音乐或游戏的声音效果的状态。
 
-These state change methods will be called from other scripts when the appropriate trigger events occur. For example, the `gameOver()` method is called by `ball.js` when the ball goes off the bottom of the screen.
+当适当的触发事件发生时，将从其他脚本调用这些状态更改方法。 例如，当球从屏幕底部离开时，`gameOver()` 方法被`ball.js`调用。
 
-### Application Events
+### 应用事件
 
-Let's pause to take a look at the way the game script fires events on the application.
+让我们暂停一下，看看游戏脚本是如何触发应用程序上的事件的。
 
 ```javascript
 this.app.fire("game:start")
 ```
 
-Events are an extremely useful way to communicate form one script to many other scripts. The way an event works is that an object (in this case `this.app`) chooses to "fire" an event. Any other code that has access to the object can choose to listen to one or more events on this object and the code will be notified when the event is fired.
+事件是一个脚本与许多其他脚本之间互相通信的非常有用的方式。 事件的工作方式是一个对象(在这种情况下为`this.app`)选择“触发”一个事件。 任何其他有权访问该对象的代码都可以选择监听该对象上的一个或多个事件，当事件被触发时，代码将被通知。
 
-One of the issues with this is that the code needs access to the object in order to start listening to the event. This is why application events are so useful. Every script in PlayCanvas has access to `this.app`. That makes it useful to act as a central communications hub between any other scripts.
+其中一个问题是代码需要访问对象才能开始侦听事件。 这就是为什么应用程序事件是如此有用。 PlayCanvas中的每个脚本都可以访问`this.app`。 这使其能够在任何其他脚本之间充当中心通信中心。
 
-We have chosen to adopt a namespace pattern to make events clearer and avoid clashes. To listen for the `game:start` event from above. You would use this code:
+我们选择采用命名空间模式来使事件更清晰，避免冲突。 从上面收听 `game:start` 事件。 您将使用此代码:
 
 ```javascript
 this.app.on("game:start", function () {
@@ -133,17 +133,17 @@ this.app.on("game:start", function () {
 }, this)
 ```
 
-### Scoring
+### 记分
 
-The game script also manages the current score. It exposes methods that are used to modify the score and also fires events to let other code know that the score has changed.
+游戏脚本还管理当前分数。 它公开了用于修改分数的方法，并且触发事件以让其他代码知道分数已更改。
 
-### Resolution
+### 分辨率
 
-Finally the game script handles the initial choice of resolution to make sure the main canvas is the correct size on both mobile and desktop. On mobile (defined by a screen less than 640 pixels wide) the game simply fills the entire screen. On desktop we use the predefined resolution set in the project settings.
+最后，游戏脚本处理分辨率为引擎的初始选择，以确保主画布在移动和桌面上都是正确的大小。 在移动设备上(由640像素小于宽的屏幕定义)，游戏只需填充整个屏幕。 在桌面上，我们使用在项目设置中设置的预置分辨率。
 
 ## input.js
 
-The input script listens for input from the mouse or touchscreen, normalizes the input from the two into a general purpose "tap" and communicates with the rest of the application that a tap has occurred.
+输入脚本监听来自鼠标或触摸屏的输入，将来自两者的输入归一化为通用目的“点击”，并与应用程序的其余部分通信传送已发生敲击信息。
 
 ```javascript
 var Input = pc.createScript('input');
@@ -222,29 +222,29 @@ Input.prototype._onMouseDown = function (e) {
 };
 ```
 
-First, in initialize we are setting up event listening. We listen for application events to determine if the game is in a paused state (that is in the menu or in the game over state). If the input is paused we don't respond to the taps. Next we listen for touch events (note, you must check if `this.app.touch` is available) and mouse events.
+首先，在初始化中我们设置事件监听。 我们监听应用程序事件，以确定游戏是否处于暂停状态(即在菜单或游戏结束状态)。 如果状态为暂停，我们不响应tap。 接下来我们监听touch事件(注意，你必须检查`this.app.touch`是否可用)和鼠标事件。
 
-### Touch Events
+### 触摸事件
 
-For touch events we take the first touch and pass through the screen co-ordinates. We also call `preventDefault()` on the browser event to stop the browser also generating a `click` event which it will do otherwise.
+对于触摸事件，我们首先触摸并通过屏幕坐标。 我们也在浏览器事件上调用`preventDefault()` 生成一个`click`事件，除非浏览器停止工作它才不会调用。
 
-### Mouse Events
+### 鼠标事件
 
-On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same coordinate system. This is not the case with normal browser events!
+在“mousedown”事件中，我们将屏幕坐标传递到敲击代码中。 注意，PlayCanvas确保触摸和鼠标事件具有相同的坐标系。 这与一般的浏览器事件的情况不一样！
 
-### Taps
+### 敲击
 
-`_onTap()` takes a screen co-ordinate (x, y) works out if this has "hit" the ball and if so tells the ball code that it has been tapped.
+`_onTap()`获取屏幕坐标(x, y) ，如果此时已经“击中”球，它会告诉球的代码它已经被点击。
 
 ```javascript
 this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 ```
 
-In detail, this function takes the screen co-ordinates (x, y) and asks the camera to convert them into a position in 3D space under that point on the screen. To do this, we need to supply a depth, as in how far away from the screen do you want the 3D point. In this case we get the 3D point at the same depth as the ball is.
+详细地，该函数采用屏幕坐标 (x, y) ，并要求相机将它们转换成屏幕上该点下的3D空间中的位置。 为了做到这一点，我们需要提供一个深度，就像你想要的3D点距离屏幕有多远。 本案例中，我们需要得到一个与球的深度相同的3D点。
 
-We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparitively slow) operation and will cause your game or application to stutter if it happens often.
+我们还传入一个向量`Input.worldPos`。 在PlayCanvas应用程序中，避免创建新对象是很重要的，例如在更新循环中调用`new pc.Vec3()` 创建一个新向量。 你这样做的次数越多内存分配就越多(通过调用`new`)，浏览器就需要做更多的垃圾收集来清除你的分配。 垃圾收集是一个(比较慢)的操作，这将导致您的游戏或应用程序经常发生卡顿。
 
-In most cases, PlayCanvas will provide an option to pass in vector or similar option so that you can pre-allocate and re-use objects.
+在大多数情况下，PlayCanvas将提供一个传入向量或类似的选项，以便您可以预分配和重新使用对象。
 
 ```javascript
 // get the distance of the touch/click to the ball
@@ -258,9 +258,9 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 }
 ```
 
-Once we have the the 3D point where we've just tapped, we test to see if it is overlapping with the ball. You'll see here we are testing the radius squared against the distance between the tap and the ball squared. This prevents us doing a slow Square Root operation everytime we test.
+一旦我们获得了我们刚刚点击的3D点，我们测试看它是否与球重叠。 你会看到在这里我们正在测试的敲击点与球的半径平方之间的距离。 这样可以避免我们每次测试时进行速度较慢的平方根操作。
 
-If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball script we pass in the distance from the ball where the tap occurred. We'll use that in the [Part 4][3].
+如果点击动作击中了球，我们调用球的代码中的 `tap(dx, dy)` 方法并传入我们的点击点到球之间的距离。 我们将在[第4部分] [3]中使用。
 
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two

@@ -1,13 +1,13 @@
 ---
-title: Loading JSON Data
+title: 载入JSON 数据
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/cHnXIXoN/" ></iframe>
 
-[This project][1] shows you how to load JSON data in two ways. First, from an asset in the project. Second, over HTTP from a remote server.
+[本项目] [1] 向我们展示了两种加载JSON数据的方式。第一种，从项目中的资源文件加载。 第二种，通过HTTP从远程服务器加载。
 
-## Loading JSON from an asset
+## 从资源中读取JSON数据
 
 ```javascript
 Game.attributes.add('characterData', {
@@ -39,11 +39,11 @@ var characterData = this.characterData.resource;
 var names = this.parseCharacterData(characterData);
 ```
 
-You can see in the code above that all you need to do to load JSON data from an asset in your project is to use a Script Attribute of type 'asset' or to retrieve the asset from the asset registry, then access the `resource` property. For an asset of type `json` the data will already be parsed into a standard javascript object when you access the `resource` property.
+您可以在上面的代码中看到，您在项目中从资源里加载JSON数据所需要做的是使用“asset”类型的脚本属性，或者从资源注册表中检索资源，然后访问其“resource” 属性。 对于类型为`json`的资源，当访问`resource`属性时，数据已经被解析为一个标准的javascript对象传回。
 
-Once you have the javascript object you can access the data as normal. For example, looping through properties as in `parseCharacterData`.
+一旦你有了javascript对象，你就可以正常地访问其数据了。 例如示例中的循环遍历属性`parseCharacterData`。
 
-## Loading JSON from a remote server
+## 从远程服务器加载JSON
 
 ```javascript
 Game.prototype.loadJsonFromRemote = function (url, callback) {
@@ -66,13 +66,13 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
 
 ```
 
-In this code we are using the XMLHttpRequest object (which is part of the standard web browser API) to request JSON data from a URL, in this case the Github API.
+在此代码中，我们使用XMLHttpRequest对象(它是标准Web浏览器API的一部分)从URL，在本例中为Github API，链接请求JSON数据。
 
-After receiving the `"load"` event we parse the JSON data using `JSON.parse` (another part of the standard web browser API) and return the data via the `callback` function.
+在收到`“load”`事件后，我们使用`JSON.parse`(标准Web浏览器API的另一部分)解析JSON数据，并通过`callback`函数返回数据。
 
-Note, that the call to `loadJsonFromRemote` is **asynchronous**.
+请注意，调用`loadJsonFromRemote` 的行为是**异步**的。
 
-Here is the full code listing:
+以下是整段的代码:
 
 ```javascript
 var Game = pc.createScript('game');
@@ -154,7 +154,7 @@ Game.prototype.loadJsonFromRemote = function (url, callback) {
 };
 ```
 
-Try [the project][1] for yourself.
+请自行在 [工程][1]中进行尝试。
 
 [1]: https://playcanvas.com/project/405827
 

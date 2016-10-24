@@ -1,62 +1,62 @@
 ---
-title: Basic Materials
+title: 基本材质
 template: tutorial-page.tmpl.html
 ---
 
-Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.
+材料是定义3D模型的表面的外观的东西。 最简单的举例，一个材质设置了多边形的颜色，在其最复杂的情况下，一种材料可以模拟海洋的表面或光通过玻璃的效果。
 
-In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. First create a new and empty scene.
+在本教程中，我们会逐步讲解如何创建一个材质，如何把它附给一个形状，以及如何编辑材质的各项属性。首先我们来创建一个新的空场景。
 
-## Step 1 - Add a cube to your scene
+## 第 1 步 - 在你的场景中添加一个方块
 
-Select the root Entity of your Scene. At the start this will be called "Root". In the Attribute Editor rename the Entity to something meaningful, like "Material Tutorial".
+选择场景中的根实体。在场景初建成时它会被称作位"Root"。在属性编辑器中将实体重命名使其有意义，如“材质教程”。
 
-Select 'New Entity' -> 'Box' menu in the Hierarchy panel. This creates a new Box Entity in the Hierarchy.
+选择层级树中的'New Entity' -> 'Box'菜单。这就在层级树中创建了一个新的立方体实体。
 
-![New Box][1]
+![新的立方体][1]
 
-## Step 2 - Create a new Material
+## 第2步 - 创建一个新的材质
 
-Create new material directly from the PlayCanvas Editor interface. In the Asset panel use the + button to open the New Asset menu and select Material.
+直接从PlayCanvas编辑器界面创建新材料。 在资源面板中，使用+按钮打开“新建资源”菜单，然后选择材质。
 
-![Add Material][2]
+![添加材质][2]
 
-This creates a new Material Asset and brings up the Material Editor on the right-hand side of the screen. In the Material Editor rename the Material to "Box Material".
+这将创建一个新的材质资源，并在屏幕的右侧显示材质编辑器。 在材质编辑器中将材料重命名为"Box Material"。
 
-## Step 3 - Assign the material to the cube
+## 第3步 - 把材质赋给立方体
 
-When you create a new cube in the Editor it will have no material assigned and will be rendered using a plain default material. To assign your new material to a model in the scene simply drag the model from the asset panel into the viewport and drop it on to the model you want to assign it to.
+当您在编辑器中创建新的多维数据集时，它没有被分配任何材料，并且将使用默认材质进行渲染。 要将新材质分配到场景中的模型，只需将模型从资源面板拖动到视口中，并将其拖放到要分配给它的模型。
 
-## Step 4 - Change the color of the material
+## 第 4 步 - 改变材质的颜色
 
-To change the color of the Material we will want to edit the *Diffuse* property of the material.
+为了改变材质的颜色，我们需要编辑材质的 *默认*属性。
 
-Select the material either by clicking on it in the asset panel. Or by selecting it from the property inspector when you select the box.
+通过在资产面板中单击选择材质。或当你选择了方块实体时从其属性检查器中的参数选择材质。
 
-![Diffuse Color][4]
+![漫反射颜色][4]
 
-You'll have to expand the Diffuse settings panel in the material editor in the right panel. Click on the color property to edit the diffuse color of the material.
+您必须在右面板中的材质编辑器中展开“漫反射”设置面板。 单击颜色属性以编辑材料的漫反射颜色。
 
-## Bonus - Add textures to the material
+## 优化 - 向材质添加贴图
 
-Changing the color of the material is a good start, but you'll quickly want more detail than a flat color. That is where texture maps come in.
+能够改变材质的颜色是一个很好的开始，但是你会很快地想拥有更多的细节而不是单纯的颜色。这就是贴图所存在的意义。
 
-Download & save these sample textures:
+下载& 保存这些样板贴图:
 
 <a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
 <a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"/></a>
 
-Then upload them to your project by dragging the files into the Editor.
+然后通过将文件拖动到编辑器中将它们上传到您的项目。
 
-Once they're uploaded it's time to assign them to texture slots on the Material. Select the Material as before and open up the Diffuse section. Drag the `proto_orange` texture from the asset panel into the empty diffuse slot. Then open the Normals section and drag the `proto_gray_n` texture into the normal map slot.
+上传之后，就可以将它们分配到材质上的纹理插槽中。 选择材料，打开漫反射部分。 将“proto_orange”纹理从资源面板拖动到空的漫反射贴图槽中。 然后打开Normals部分，并将“proto_gray_n”纹理拖动到法线贴图槽中。
 
-You'll see something that looks a little like this:
+你将会看到像是这样的东西:
 
-![Cube][5]
+![立方体][5]
 
-Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
+尝试修改**平铺**和**偏移**属性，以影响纹理在多维数据集周围的方式。
 
-Take a look at the user manual section on [Physical Materials][6] for more depth on setting up materials.
+有关设置材料的更多详情，请参阅用户手册的[物理材料] [6]部分。
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg

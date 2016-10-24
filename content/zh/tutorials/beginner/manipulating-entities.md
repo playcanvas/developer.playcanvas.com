@@ -1,33 +1,33 @@
 ---
-title: Manipulating Entities
+title: 操纵实体
 template: tutorial-page.tmpl.html
 ---
 
-In this tutorial we'll show you how you can change an Entity's position, orientation and scale.
+在这个教程中，我们会向你展示如何改变一个实体的位置，面对方向和体积大小。
 
-Entities form the basis of most applications built using the PlayCanvas framework. An Entity can represent anything from the player character, a bullet, an enemy or just simply be a point in space.
+大多数应用程序的基本实体均使用PlayCanvas框架构建而成。 一个实体可以代表任何东西，比如玩家角色，子弹，敌人或只是简单的一个在空间中的点。
 
-Entities are a special form of graph node, they inherit a lot of their behavior from `pc.GraphNode`. All the manipulations we apply below can also be applied to graph nodes.
+实体是图形节点的一种特殊表现形式，他们从`pc.GraphNode`继承了很多行为。  我们在下面应用的所有操作也可以应用于图形节点。
 
-One of the most common operations you will need to perform on Entities is to change its transform matrix. The local transform property of the Entity determines the position, orientation and scale of the Entity and affects all child Entities as well. Learning how to manipulate the transform is critical to making interesting and interactive applications.
+您需要在实体上执行的最常见操作之一是更改其变换矩阵。 实体的局部变换属性决定了实体的位置，方向和比例，并能够影响所有子实体。 学习如何操作变换对于创建有趣和交互式应用程序至关重要。
 
-### Local and World Co-ordinates
+### 自身坐标系和世界坐标系
 
-An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
+理解如何移动和变换实体的很重要的一步是理解自身坐标系和世界坐标系系统。世界坐标系系统被向所有实体公开，并有着固定不变的原点`(0,0,0)`和固定的轴向，即 `(0,1,0)` 表示垂直向上。自身坐标系是依赖于实体自身的。因此自身坐标系原点即实体所处的位置，并且自身坐标系的轴向遵循实体当前的面向。
 
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*World and Local co-ordinate systems*
+*世界坐标系和自身坐标系*
 <br />
 
-### Hierarchy
+### 层级树
 
-An important part of the Entity system to understand is the Entity Graph or Hierarchy. As Entities are a type of graph node they are collected together in a graph or a hierarchy of parents and children. Each Entity can have a single parent and multiple children. Child Entities inherit transformation information from their parents. An Entity's world transformation matrix is multiplying the local transform by the world transform of the parent Entity. So, for example, if a child Entity has a local translation of `(1,0,0)` and it's parent has a local translation of `(0,1,0)`, the world position of the child will be `(1,1,0)`
+实体系统要理解的一个重要部分是实体图即层级树。 因为实体是一种图形节点，所以它们被一起收集在父图和子图的图或层级中。 每个实体可以有单个父级和多个子级。 子实体从它们的父母继承转换信息。 实体的世界变换矩阵将局部变换乘以父实体的世界变换。 因此，例如，如果子实体具有自身位置为`(1,0,0)`，并且其父类的自身位置为`(0,1,0)`，则子类的世界位置将是 `(1,1,0)`
 
-## Position
+## 位置点
 
-Getting the position of the entity is straightforward
+获取实体的位置是直截了当的
 
 ~~~js~~~
 // Get the entity's position relative to the coordinate system of the entity's parent
@@ -37,9 +37,9 @@ var lp = entity.getLocalPosition();
 var wp = entity.getPosition();
 ~~~
 
-These methods both return a `pc.Vec3` (a vector quantity in the array form [x,y,z]).
+这些方法均返回一个`pc.Vec3` (数组形式[x,y,z]的向量)值。
 
-Setting the position of an entity is just as straightforward.
+设置实体的位置也同样简单。
 
 ~~~js~~~
 // Set the entity's position relative to the coordinate system of the entity's parent
@@ -49,9 +49,9 @@ entity.setLocalPosition(x, y, z);
 entity.setPosition(x, y, z);
 ~~~
 
-### Moving the entity
+### 移动实体
 
-To move the Entity you can add to the Entity's position or you can use the helper functions translate and translateLocal.
+要移动实体，您可以直接把位置信息灌入实体，或者可以使用帮助函数translate和translateLocal进行操作。
 
 ~~~js~~~
 // Translate the entity 1 unit down the positive x axis of world space
@@ -61,25 +61,25 @@ entity.translate(1, 0, 0);
 entity.translateLocal(0, 0, 1);
 ~~~
 
-## Orientation
+## 方向
 
-To set an Entity's orientation you can either set an absolute rotation, or apply an incremental rotation.
+你可以通过设置绝对的旋转量, 或者应用一个旋转增量来改变实体的方向。
 
-Setting absolute rotations can be done using either [Euler angles][1] or [quaternions][2]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
+设置绝对旋转可以使用[欧拉角] [1]或[四元数] [2]。 维基百科对这两个数学表示的旋转的解释有点难以理解，但这个理念的基础很容易理解。 以下是重要的部分:
 
-** Euler Angles **
+** 欧拉角 **
 
-* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
-* Euler angles are easy to understand because you can visualize the effect they will have in your head.
+*欧拉角是以*坐标系*的X，Y和Z轴为中心的三个以度为单位的旋转量组成的
+*如果俯视坐标系轴，正欧拉角将导致围绕该轴的逆时针旋转
+*欧拉角很容易理解，因为你可以在脑中想象他们所产生的影响。
 
-** Quaternions **
+** 四元数**
 
-* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
-* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
-* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
+*四元数被存储为4个数字，并能够表示3D空间中的任何方向
+*它们难以直接设置，但可以从欧拉角，旋转矩阵或轴角度转换成
+*虽然它们难以可视化，但它们非常有用，因为它们的功能是强大的，并可以快速进行插值(当进行动态旋转时)。
 
-When scripting entities, it is more likely that you will set an Entity's rotation using Euler angles. For example:
+当使用脚本操作一个实体时，你更可能愿意通过欧拉角来设置实体的方向。举个例子：
 
 ~~~js~~~
 // Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
@@ -90,7 +90,7 @@ entity.setLocalEulerAngles(30, 45, 60);
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ~~~
-However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
+另一方面，如果您想要以四元数形式设置实体的旋转，则可以使用以下函数：
 
 ~~~js~~~
 // Create an identity rotation
@@ -104,30 +104,30 @@ entity.setLocalRotation(q);
 entity.setRotation(q);
 ~~~
 
-To rotate an Entity incrementally, you can use rotate to rotate the Entity with respect to world space axes or rotateLocal to rotate with respect to the Entity's current axes.
+要以增量方式旋转实体，可以使用rotate相对于世界空间轴旋转实体，或者使用rotateLocal以相对于实体的当前轴旋转。
 
-For example, to rotate an Entity by 180 degrees around the world up axis:
+举个例子，要使一个实体围绕世界坐标的向上轴旋转180°，可以这样做:
 
 ~~~js~~~
 entity.rotate(0, 180, 0);
 ~~~
 
-Or to rotate the Entity 90 degrees around its local x axis do:
+或者将实体围绕其自身坐标系的x轴旋转90度：
 
 ~~~js~~~
 entity.rotateLocal(90, 0, 0);
 ~~~
 
-## Scale
+## 缩放
 
-To scale an Entity you simply need to call the following function:
+为了使一个实体缩放，你会需要调用到以下函数:
 
 ~~~js~~~
 // Scale the entity by a factor of 2 in the local Y axis
 entity.setLocalScale(1, 2, 1);
 ~~~
 
-And here is a slightly more interesting example:
+以及这里是一些轻量的有趣的例子:
 
 ~~~js~~~
 // Scale the entity using a sine function over time
@@ -136,7 +136,7 @@ var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);
 ~~~
 
-Note that you cannot currently set the Entity's scale in world space.
+请注意，您目前无法在世界空间中设置实体的缩放比例。
 
 [1]: http://en.wikipedia.org/wiki/Euler_angles
 [2]: http://en.wikipedia.org/wiki/Quaternion

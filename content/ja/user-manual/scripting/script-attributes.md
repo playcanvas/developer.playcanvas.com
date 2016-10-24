@@ -1,10 +1,10 @@
 ---
-title: Script Attributes
+title: スクリプト属性
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
+スクリプトのアトリビュート機能は、スクリプト内で使用する変数をPlayCanvasエディタ内で編集することができるようにする便利な機能です。この機能を使うことで、一度コードを書いた後にエンティティごと作られるインスタンスにそれぞれ違うパラメータを設定する調整ができるようになります。これにより、アーティスト、デザイナーやその他のプログラマーではないチームメンバーがコードを書かずに値を変更できるにプロパティを露出させることができます。
 
 ## スクリプトのアトリビュートを宣言する
 
@@ -25,11 +25,11 @@ MyScript.attributes.add('speed', {
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
+属性を宣言したらEditorは、スクリプトの属性を露出させるためにコードをパースする必要があります。属性が変更された場合は、手動で属性を更新する必要があります。パースボタンをクリックすることができます <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" />。
 
-## Accessing attributes in your code
+## コードで属性にアクセス
 
-When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
+スクリプト内で属性を宣言すると、スクリプトインスタンス上のメンバー変数として使用できるようになります。例えば、上記で宣言した`speed`プロパティは`this.speed`として利用可能です。
 
 ```javascript
 MyScript.prototype.update = function (dt) {
@@ -37,9 +37,9 @@ MyScript.prototype.update = function (dt) {
 }
 ```
 
-## Updating attributes
+## 属性の更新
 
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behaviour when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+Editorで属性を変更すると、変更はEditorから起動したアプリケーションのすべてのコピーに送信されます。これは、アプリケーションをリロードすることなく、属性をライブで編集生きることができることを意味します。属性が変更されたときに特殊な動作を適用する必要がある場合、`attr` と `attr:[name]`のイベントを使用して変化に対応します。
 
 ```javascript
 MyScript.prototype.initialize = function () {
@@ -55,27 +55,27 @@ MyScript.prototype.initialize = function () {
 }
 ```
 
-## Attribute types
+## 属性のタイプ
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
+属性を宣言する際、属性のタイプも宣言します。これにより、Editorは属性を編集するための関連コントロールを表示できるようになります。'boolean', 'number', 'string'のように、ほとんどのタイプは単純です。しかし、いくつかは、以下の例のように説明を必要とします。詳細については、[完全な属性の参照][1]を参照してください。
 
-### Entity attribute
+### エンティティ属性
 
 ```javascript
 MyScript.attributes.add('target', { type: 'entity' })
 ```
 
-The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
+エンティティタイプにより、階層で他のエンティティを参照することができます。二つのエンティティをリンクする良い方法です。
 
-### Asset attribute
+### アセットの属性
 
 ```javascript
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+アセット属性により、スクリプトの中でプロジェクトアセットを参照できます。アセット属性は、アセットのリストと、特定のタイプのアセットに属性を制限する` assetType`プロパティ`array`プロパティに対応しています。例：「テクスチャ」、「素材」、「モデル」。
 
-The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
+アセット属性の実行時のタイプは`pc.Asset`です。次のように、実行時にアセット属性のリソースを参照することができます：
 
 ```javascript
 MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
@@ -87,15 +87,15 @@ MyScript.prototype.initialize = function () {
 
 ```
 
-### Color attribute
+### 色の属性
 
 ```javascript
 MyScript.attributes.add('color', { type: 'rgba' });
 ```
 
-The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
+色属性は、エディタで露出されたときにカラーピッカーを示します。アルファチャンネルを公開するか否かに応じて、二つのオプション`rgb`と` rgba`があります。
 
-### Curve attribute
+### 曲線の属性
 
 ```javascript
 MyScript.attributes.add('wave', { type: 'curve' }); // one curve
@@ -104,11 +104,11 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for
 MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
 ```
 
-The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
+曲線の属性は、時間にわたって変化する値を表現するために使用されます。1.0 - すべての曲線は0.0-1.0の期間上で定義されます。複数の曲線を定義することができます。例えば、曲線から3Dの位置を得る場合、`curves`プロパティを使用してx,y,zに3つの曲線を定義します。また、`color`プロパティを使用して色を変更するための特別なカーブエディタもあります。
 
-### Enumeration attribute
+### 列挙の属性
 
-The last special attribute property is the Enumeration
+最後の属性プロパティはEnumeration（列挙）です。
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -121,7 +121,7 @@ MyScript.attributes.add('value', {
 });
 ```
 
-Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
+列挙のために可能な値のリストを宣言するためにenumプロパティを使用します。プロパティは、各オブジェクトがオプションとなるオブジェクトの配列です。`key`はオプションのタイトル、`value`は属性の値です。このプロパティは、さまざまな属性タイプで使用することができます。例：`number`,`sting`,`vec3`。
 
 [1]: /api/pc.ScriptAttributes.html
 

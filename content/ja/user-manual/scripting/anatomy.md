@@ -1,10 +1,10 @@
 ---
-title: Anatomy of a script
+title: スクリプトの構造
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Here is a basic script. We can learn about the structure of a PlayCanvas script from it.
+基本的なスクリプトです。PlayCanvasのスクリプトの構造を学ぶために使用できます。
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -32,28 +32,29 @@ Rotate.prototype.swap = function(old) {
 };
 ```
 
-We'll break down each section of the script
+スクリプトの各セクションを分解します。
 
-# Script Methods
+# スクリプトメソッド
 
-## Declaration of Script Type
+## スクリプトタイプの宣言
 
 ```javascript
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have it's prototype extended with a standard set of methods. Somewhat like class inheritance.
+この行は、「rotate」という新しいScriptTypeを作成します。スクリプトの名前は、スクリプトコンポーネントでスクリプトを識別するために使用されます。プロジェクト内で宣言された各ScriptTypeには固有の名前が必要です。返される関数の`Rotate`は、メソッドの標準セットでそのプロトタイプを拡張できるjavascript関数です。クラス継承のようなものです。
 
-## Script Attributes
+### スクリプトの属性
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
-Attributes are automatically inherited to new script instance during code hot-swap.
+この行は、スクリプトの属性を宣言します。スクリプト属性は、スクリプトインスタンスのプロパティであり、Editor UIに露出されています。エディタで個々のエンティティをカスタマイズすることができます。この場合、属性は「speed」と呼ばれ、`this.speed`としてスクリプトコードでアクセスできます。数値であり、デフォルトでは10に初期設定されています。
 
-## Initialize
+属性は、自動的にコードのホットスワップ中に、新しいスクリプトインスタンスに継承されています。
+
+## 初期化
 
 ```javascript
 // initialize code called once per entity
@@ -63,11 +64,11 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
-The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only ever called once for each entity. You can use it to define and initalize member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
+`initialize`メソッドは、スクリプトが接続されている各エンティティで呼び出されます。アプリケーションのロードが完了し、エンティティ階層が構築された後、最初の更新ループまたはフレームのレンダリングされる前に呼び出されます。`initialize`メソッドは、各エンティティで一度のみ呼び出されます。スクリプトインスタンスのメンバー変数を定義し、初期化するために使用することができます。アプリケーションの起動時にエンティティまたはスクリプトが無効になっている場合、initializeメソッドは、エンティティが最初に有効になった時に呼ばれます。
 
-If a script component has multiple scripts attached to it, `initialize` is called in the order of the scripts on the component.
+スクリプトコンポーネントに複数のスクリプトが添付されている場合、`initialize`はコンポーネント上のスクリプトの順序で呼び出されます。
 
-## Update
+## 更新
 
 ```javascript
 // update code called every frame
@@ -80,11 +81,11 @@ Rotate.prototype.update = function(dt) {
 };
 ```
 
-The update method is called for each entity every frame while the entity, the script component and the script instance are enabled. Each frame `dt` is passed as argument, which is time in seconds since the last frame.
+エンティティ、スクリプトコンポーネント、スクリプトインスタンスが有効になっている間、更新メソッドは、フレームごとに各エンティティに呼び出されます。各フレームの`dt`は、最後のフレームからの秒単位の時間となる引数として渡されます。
 
-If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
+スクリプトコンポーネントに複数のスクリプトが添付されている場合、`update`はコンポーネント上のスクリプトの順序で呼び出されます。
 
-## Swap
+## スワップ
 
 ```javascript
 // swap method called for script hot-reloading
@@ -94,23 +95,23 @@ Rotate.prototype.swap = function(old) {
 };
 ```
 
-The `swap` method is called when ever a ScriptType with same is added to registry. This is done automatically in Launch when script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
+同様のScriptTypeがレジストリに追加されたときに`swap`メソッドが呼び出されます。スクリプトがエディタから実行時に変更されたとき、自動的にLaunchで行われます。このメソッドにより、アプリケーションを実行し続けながら「コードのホットリロード」に対応することができます。アプリ実行中、到達時間がかかるコードの反復処理を行いたい場合には極めて有用です。ゲーム状態の復元やリロードをして複数の設定を行うことなく、変更を加え確認することができます。
 
-The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
+`swap`メソッドは、引数として古いスクリプトインスタンスで渡され、それを利用して古いインスタンスから新しいインスタンスに状態をコピーすることができます。また、イベントの購読解除とに再購読が行われることを確認する必要があります。
 
-If you do not wish to support hot-swapping of code you can delete the swap method and the engine will not attempt to refresh the script.
+コードのホットスワップをサポートしたくない場合は、スワップメソッドを削除すればエンジンはスクリプトを更新しません。
 
-## Additional Methods: postInitialize and postUpdate
+## 他のメソッド： postInitialize と postUpdate
 
-There are two more methods that are called by the engine on scripts if they are present. `postInitialize` is called on all scripts that implement it after all scripts have been initialized. Use this method to perform functions that can assume all scripts are initialized. `postUpdate` is an update method that is called after all scripts have been updated. Use this to perform functions that can assume that all scripts have been updated. For example, a camera that is tracking another entity should update its position in `postUpdate` so that the other entity has completed its motion for the frame.
+存在する限り、スクリプトでエンジンによって呼び出される二つのメソッドがあります。`postInitialize`は、すべてのスクリプトが初期化された後、それを実装するすべてのスクリプトで呼び出されます。すべてのスクリプトが初期化されると仮定することができる機能を実行するために、このメソッドを使用します。`postUpdate`は、すべてのスクリプトが更新された後に呼び出されるupdateメソッドです。すべてのスクリプトが更新されていると仮定することができる機能を実行するために使用します。例えば、他のエンティティを追跡するカメラは、別のエンティティがフレームで動作を完了できるように、`postUpdate`でその位置を更新する必要があります。
 
-# Events
+## イベント
 
-Script instances fire a number of events that can be used to respond to specific circumstances.
+スクリプトのインスタンスは、特定の状況に対応するために使用することができるイベントを複数発動させます。
 
-## state, enable, disable
+## state（状態）、enable（有効化）、disable（無効化）
 
-The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
+スクリプトインスタンスが実行状態を有効から無効、またはその逆に切り替える際に`state`イベントが発生します。スクリプトインスタンスの状態は、スクリプト自体、スクリプトが所属するコンポーネント、スクリプトコンポーネントが添付されているエンティティを有効／無効にすることで変更できます。`enable`イベントは、状態が無効から有効に変更された場合にのみ発生します。また、`disable`イベントは、、状態が有効から無効に変更された場合にのみ発生します。
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -125,7 +126,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-or the equivalent using `enable` and `disable`
+または、同様で`enable`と`disable`を利用した場合。
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -139,9 +140,9 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## destroy
+## 破棄
 
-The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method, or script component been removed from Entity, or because the Entity it was attached to was destroyed.
+スクリプトインスタンスが破棄されると`destroy`イベントが発生します。`destroy()`メソッドの呼び出しによりコンポーネントからスクリプトが削除されたことが原因の場合もありますし、エンティティからスクリプトコンポーネントが削除された場合や、添付されているエンティティが破壊された場合もあります。
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -154,7 +155,7 @@ Rotate.prototype.initialize = function () {
 
 ## attr & attr:[name]
 
-The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
+`attr`と`attr:[name]`イベントは宣言されたスクリプト属性値変更された時に発生します。これは、アプリケーションを実行する過程、あるいはエディタから値に変更が加えられたときに起きる可能性があります。`attr`は変更されたすべての属性に対して発生します。 `attr:[name]`は特定の属性に対してのみ発生します。例えば、「speed」という属性がある場合、速度が変更されたときに`attr:speed` イベントが発生します。
 
 ```javascript
 Rotate.prototype.initialize = function () {

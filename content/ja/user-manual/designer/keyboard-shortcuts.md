@@ -1,5 +1,5 @@
 ---
-title: Keyboard Shortcuts
+title: キーボードショートカット
 template: usermanual-page.tmpl.html
 position: 12
 ---
@@ -36,68 +36,68 @@ position: 12
 
 <table class="head-column">
     <tr>
-        <td>Select entity</td><td>Click LMB</td>
+        <td>エンティティを選択</td><td>クリック LMB</td>
     </tr>
     <tr>
-        <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
+        <td>gizmoに応じてエンティティの変換 / 回転 / スケール</td><td>クリック＆ドラッグ</td>
     </tr>
     <tr>
-        <td>Toggle Editor's Snap setting while operating gizmo</td><td>Shift click and drag</td>
+        <td>gizmoを操作している間にEditorのSnap設定を切り替え</td><td>Shift クリック＆ドラッグ</td>
     </tr>
 </table>
 
 ## ホットキー
 
-Note that on a Mac, CMD should be used instead of CTRL.
+MacではCTRLの代わりにCMDを使用してください。
 
 <table class="head-column">
     <tr>
-        <td>Delete - Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
+        <td>Delete - 現在選択している範囲を削除</td><td>DELETE またはCTRL + BACKSPACE</td>
     </tr>
     <tr>
-        <td>Toggle All Panels - Hides or shows all the panels</td><td>SPACE</td>
+        <td>Toggle All Panels - 全てのパネルを隠す又は表示</td><td>SPACE</td>
     </tr>
     <tr>
-        <td>Undo - Undo the last action performed by the user</td><td>CTRL + Z</td>
+        <td>Undo - ユーザによる最後の動作を取り消す</td><td>CTRL + Z</td>
     </tr>
     <tr>
-        <td>Redo - Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
+        <td>Redo - ユーザによる次の動作をやり直す</td><td>CTRL + SHIFT + Z 又は CTRL + Y</td>
     </tr>
     <tr>
-        <td>New Entity - Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
+        <td>New Entity - 現在選択しているエンティティの子として新しいエンティティを作成</td><td>CTRL + E</td>
     </tr>
     <tr>
-        <td>Duplicate Entity - Duplicates the selected entity and all children</td><td>CTRL + D</td>
+        <td>Duplicate Entity - 選択されたエンティティとその子を複製</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>Copy Entity - Copy a single selected entity</td><td>CTRL + C</td>
+        <td>Copy Entity - 単一の選択されたエンティティをコピー</td><td>CTRL + C</td>
     </tr>
     <tr>
-        <td>Paste Entity - Paste an entity under the currently selected entity</td><td>CTRL + V</td>
+        <td>Paste Entity - 現在選択されたエンティティの下にエンティティを貼り付け</td><td>CTRL + V</td>
     </tr>
     <tr>
-        <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
+        <td>Frame Selection - 選択エンティティ上でアクティブなカメラをフレーム</td><td>F</td>
     </tr>
     <tr>
-        <td>Translate - Change gizmo mode to translate</td><td>1</td>
+        <td>Translate - gizmoモードをtranslateに変更</td><td>1</td>
     </tr>
     <tr>
-        <td>Rotate - Change gizmo mode to rotate</td><td>2</td>
+        <td>Rotate - gizmoモードをrotateに変更</td><td>2</td>
     </tr>
     <tr>
-        <td>Scale - Change gizmo mode to scale</td><td>3</td>
+        <td>Scale - gizmoモードをscaleに変更</td><td>3</td>
     </tr>
     <tr>
-        <td>World/Local - Switch between local and world space gizmo</td><td>L</td>
+        <td>World/Local - gizmoをローカルとワールドのスペース間で切り替える</td><td>L</td>
     </tr>
     <tr>
-        <td>Launch - Launch the scene in a new tab</td><td>CTRL + ENTER</td>
+        <td>Launch - シーンを新しいタブで起動する</td><td>CTRL + ENTER</td>
     </tr>
     <tr>
-        <td>Bake - Re-bake lightmaps</td><td>CTRL + B</td>
+        <td>Bake - ライトマップを再ベイク</td><td>CTRL + B</td>
     </tr>
     <tr>
-        <td>Show Controls - Display the Editor controls</td><td>?</td>
+        <td>Show Controls - Editorのコントロールを表示</td><td>?</td>
     </tr>
 </table>
 

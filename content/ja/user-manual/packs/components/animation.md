@@ -4,27 +4,27 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The Animation component enables an entity to specify which animations can be applied to the model assigned to its Model component.
+Animationコンポーネントを使用すれば、エンティティはModelコンポーネントに割り当てられているモデルに適用することのできるアニメーションを指定できます。
 
-The Animation component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play the assigned animation.
+Animationコンポーネントはコンポーネントパネルの右上のチェックボックスで有効と無効を切り替えることができます。有効になった場合、コンポーネント指定されたアニメーションを再生します。
 
-![Animation component][1]
+![アニメーションコンポーネント][1]
 
 ## プロパティ
 
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Assets</td><td>The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control.</td></tr>
-    <tr><td>Speed</td><td>A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset.</td></tr>
-    <tr><td>Activate</td><td>If checked, the component will start playing the animation on load.</td></tr>
-    <tr><td>Loop</td><td>If checked, the animation will continue to loop back to the start on completion. Otherwise, the animation will come to a stop on its final frame.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Assets</td><td>このエンティティで利用できるアニメーションアセット。ピッカーコントロールから複数のアニメーションを割り当てることが出来ます。</td></tr>
+    <tr><td>Speed</td><td>アニメーションのプレイバック速度の乗数。0はアニメーションプレイバックをフリーズさせます。1はアセットの通常のプレイバック速度を意味します。</td></tr>
+    <tr><td>Activate</td><td>チェックが入っていると、コンポーネントは読み込み時にアニメーションを再生します。</td></tr>
+    <tr><td>Loop</td><td>チェックが入っていると、アニメーションは終了した際に最初に戻ります。チェックが入っていない場合は、アニメーションは最終フレームで停止します。</td></tr>
 </table>
 
 ## スクリプティングインターフェイス
 
-You can control an Animation component's properties using a [script component][2]. The Animation component's scripting interface is [here][3].
+アニメーションコンポーネントのプロパティは[スクリプトコンポーネント][2]を使用して制御することができます。アニメーションコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-animation.png
 [2]: /user-manual/packs/components/script

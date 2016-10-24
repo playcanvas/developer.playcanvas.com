@@ -4,57 +4,57 @@ template: usermanual-page.tmpl.html
 position: 6
 ---
 
-The Assets Panel manages all of the Assets that are available in your project. From here, you can create, upload, delete, inspect and edit any Asset.
+アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査が行えます。
 
 ![アセットパネル][1]
 
-## Folder Hierarchy
+## フォルダ階層
 
-The folder panel allows you to organize your assets into a tree of folders.
+フォルダパネルから、フォルダのツリーにアセットを整理することができます。
 
-To create a new Folder, select the Add Asset (+) button and select 'Folder'. Alternatively, right click the folder where you would like a new folder to be created and select 'New Asset' > 'Folder'.
+新しいフォルダを作成するには、Add Asset (+) ボタンをクリック、Folderを選択します。また、新しいフォルダを作成する場所を右クリックして、New Asset> Folderを選択します。
 
-To rename a folder, double click it in the hierarchy panel and edit the Name field in the Inspector.
+フォルダの名前を変更するには、階層パネルでそれをダブルクリックして、InspectorのName フィールドを編集します。
 
-To delete a folder, double click it in the hierarchy and hit delete. Alternatively, right click the folder you want to delete and select 'Delete' from the context menu.
+フォルダを削除するには、階層でそれをダブルクリックしてdeleteを押します。また、削除したいフォルダを右クリックして、コンテキストメニューからDeleteを選択します。
 
-Folders can be drag and dropped into each other if you want to reorgnize your folder structure.
+フォルダの構成を整理するにはフォルダを互いの中にドラッグすることができます。
 
-## Creating and Uploading Assets
+## アセットの作成とアップロード
 
-You can create new assets by dragging a file from you computer's file system into the Assets Panel. The Editor will upload and import the asset for you.
+コンピューターのファイルシステムからアセットパネルにファイルをドラッグして新しいアセットを作成することができます。Editorがアセットをアップロード及びインポートします。
 
-You can also create certain assets types using the Add Asset (+) icon.
+Add Asset (+) アイコンを使用して特定のアセットタイプを作成することもできます。
 
 アセットを選択してDelete Assetアイコンをクリックすると、削除できます。
 
-## Editing Assets
+## アセットの編集
 
-Certain text-based assets can be opened and edited in the PlayCanvas Script Editor: text, json, shader, html, css and script assets. To do this, simply double click on the asset's thumbnail.
+次の特定のテキストベースのアセットはPlayCanvas Script Editorで開いて編集することができます：text, json, shader, html, css, script asset。これを行うには、アセットのサムネイルをダブルクリックします。
 
-## Inspecting Assets
+## アセットの調査
 
-To inspect the details of any given asset, select its thumbnail in the Assets Panel. The asset's details will be displayed in the Inspector.
+任意のアセットの詳細を確認するには、アセットパネルのサムネイルを選択します。アセットの詳細がInspectorに表示されます。
 
 ## フィルタリング
 
-Filter which assets are visible using the filter drop down to select the type of asset to view.
+フィルタドロップダウンから表示させるアセットの種類を選択して表示されているアセットをフィルタします。
 
-## Searching
+## 検索
 
-You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
+検索ボックスを使用して、プロジェクト内のアセットのグローバル検索を実行することができます。ボックスに入力し始めると、Editorは一致する結果を動的にアセットパネルで表示します。
 
 ## ドラッグ＆ドロップ
 
-Assets can be moved to different folders by dragging them from the main panel to a folder in the folder hierarchy. Note that assets support multi-selection. Pressing CTRL+A will select all assets in the currently selected folder.
+アセットは、メインパネルからフォルダ階層内のフォルダにドラッグして別のフォルダに移動することができます。アセットは複数選択に対応しています。CTRL+ Aで、現在選択されているフォルダ内のすべてのアセットを選択します。
 
-You can also drag Assets from the Asset Panel to highligted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
+アセットパネルから、[Inspector][2]でハイライトされたスロットにアセットをドラッグすることもできます。Inspectorのスロットは、コンポーネントのアセット属性またはアセットタイプのスクリプト属性のどちらかになります。
 
-You can also drag model, material, and cubemap assets directly into the [Viewport][3]
+モデル、素材、キューブマップなどのアセットを直接 [ビューポート][3]にドラッグすることもできます。
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+* ビューポートにモデルアセットをドラッグすると、モデルアセットが割り当てられたモデルコンポーネントを有する新しいエンティティが作成されます。ビューポートのカメラは自動的に新しく作成されたエンティティにズームします。
+* ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
+* ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
 
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector

@@ -1,31 +1,31 @@
 ---
-title: Preloading and Streaming
+title: プレロード及びストリーミング
 template: usermanual-page.tmpl.html
 ---
 
-On the web it's critical to get users into your application as soon as possible after they load the page. Presenting a loading bar and asking people to wait will lead to visitors leaving the page before your application has even got started. The PlayCanvas asset system implements a number of features to help you streamline the loading process and get your application running as fast as possible.
+ウェブ上では、ページをロードした後にできる限り早くアプリケーションを起動することが重要です。ローディングバーを表示して、ユーザを待たせてしまうとアプリケーションが始まる前にユーザが離れてしまう可能性があります。PlayCanvasアセットシステムに実装されている機能を使用すれば、ロードプロセスを合理化し速くアプリケーションを起動することができます。
 
-## Preload
+## プレロード
 
-![Asset Properties][1]
+![アセットプロパティ][1]
 
-Every asset in your project has a property called `preload`. By default this is set to true. If an asset is marked as preload it will be downloaded and created before the initialize phase of your application begins.
+プロジェクト内のすべてのアセットには`preload`というプロパティがあります。デフォルトでは、これはtrueに設定されています。アセットがプリロードとしてマークされている場合は、アプリケーションの初期化フェーズが始まる前にダウンロードおよび作成されます。
 
-You should use preloading to make sure all the assets you need at the start of your application are present. This will prevent any assets from 'popping' in after the application begins.
+プリロードを使用してアプリケーションの開始時に必要とする全てのアセットがあることを確認します。これは、アプリケーションが開始した後にアセットが入ってくることを防ぎます。
 
-## Streaming
+## ストリーミング
 
-![Streaming][2]
+![ストリーミング][2]
 
-If an Entity in your scene and references an asset, then a loading request will be initiated when the Entity is enabled. If the Entity is enabled in the scene, then this request is made as soon as the application starts.
+シーンのエンティティがアセットを参照している場合、エンティティが有効になるとロード要求が開始されます。シーンでエンティティが有効になっている場合、この要求はアプリケーションが起動すると同時に作られます。
 
-All components will gracefully handle dynamically loading assets and will start operating as normal, once the asset is loaded. When streaming assets in dynamically like this, you will often see "popup". As a model will appear as soon as it is loaded, even if it doesn't have materials or textures yet.
+すべてのコンポーネントは動的なアセットのロードを処理して、アセットがロードされると、通常通り動作を開始します。このように動的にアセットをストリーミングする場合、多くの場合、「ポップアップ」が表示されます。素材やテクスチャが無くても、ロードされるとすぐにモデルが表示されます。
 
-## Asset Tags
+## アセットタグ
 
-In many cases, you don't wish assets to "popup" as they load. It's preferable to load a set of assets and then display them. To do this, you can use Asset Tags to create groups of assets. Then you can load all assets with a particular tag before using them.
+ロードされると同時にアセットを「ポップアップ」させたくない場合があります。アセットのセットをロードして、それらを表示させることが好ましいです。これを行うには、アセットタグを利用してアセットのグループを作成します。それらを使用する前に、特定のタグを持つすべてのアセットを読み込むことができます。
 
-Here is some example javascript which shows you how you might load a set of assets using a tag.
+タグを利用してアセットのセットを読み込む方法を説明するjavascriptの例です。
 
 ```javascript
 var assets = app.assets.findByTag("level-1");

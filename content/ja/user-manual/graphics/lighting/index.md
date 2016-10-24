@@ -1,28 +1,28 @@
 ---
-title: Lighting
+title: ライティング
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Lighting a scene is the process of calculating the color or shading of a pixel render to the screen based on the material properties of the surface and the light sources that are applied to that material.
+シーンの照明は、表面の素材プロパティおよび素材に適用されるライトソースに基づいて、画面に描画されるピクセルの色やシェーディングを算出する処理です。
 
-In PlayCanvas, lighting can be broadly divided up into two basic categories: dynamic lights and lightmaps.
+PlayCanvasでは、照明は大きく次の2つの基本的なカテゴリに分割することができます：ダイナミックライトとライトマップ。
 
-## Dynamic Lights
+## 動的照明
 
-Lighting calculations that are performed at runtime are classed as dynamic. Every frame the engine calculates the amount of light falling on a surface from the type, position and properties of Light Entities and uses this to color the material.
+実行時に行われる照明の計算は、動的として分類されます。各フレームで、エンジンはLightエンティティのタイプ、位置、プロパティから表面に当たる光の量を算出して、それを使用して素材を着色します。
 
-## Lightmaps
+## ライトマップ
 
-For lights and geometry that does not move, it is often preferable to determine the lighting information in advance. This information is then saved into lightmap textures which are applied to the surface materials. This method has a very low runtime cost at the expense of having static lighting which can not change.
+移動しない光と ジオメトリの場合、予め照明の情報を決定することが望ましい場合が多いです。この情報は、表面素材に適用されるライトマップテクスチャに保存されます。この方法は、静的な照明を使用して変更ができませんが、代わりにランタイムが非常に軽くなります。
 
-There are two methods of creating lightmaps:
+ライトマップを作成する方法は二つあります：
 
-### PlayCanvas Runtime Lightmap Generation
+### PlayCanvas 実行時のライトマップ生成
 
-The PlayCanvas Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
+PlayCanvasエンジンにはライトマップ生成が組み込まれています。これはゲームが実行される直前に自動的にライトマップを生成するために使用できます。この方法を使用すると、標準のライトコンポーネントを使用して変更を行い、Editorで直接シーンをプレビューすることができます。
 
-### External Lightmap Generation
+### 外部ライトマップ生成
 
-Many 3D creation tools have lightmap generation included or available as an add-on, including 3DS Max, Maya and Blender. These tools generally generate lightmap textures which can be uploaded as regular assets and added to the Lightmap slot in the standard Physical Material.
+多くの3D作成ツールは、ライトマップ生成が含まれているか、3DS Max, Maya,  Blenderのようなアドオンとして利用できます。これらのツールは一般的に、通常のアセットとしてアップロードされ、標準的なPhysical MaterialでLightmapスロットに追加することができるライトマップテクスチャを生成します。
 
