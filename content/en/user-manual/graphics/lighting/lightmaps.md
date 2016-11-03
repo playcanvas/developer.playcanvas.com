@@ -23,7 +23,7 @@ Once you have created lightmaps using an external tool you simply upload them as
 
 PlayCanvas offers a very convenient solution to generating lightmaps. Using the standard light components in the Editor you choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. Lights that are set to bake are then used when the application starts to generate lightmaps which are used to light the scene.
 
-The advantanges are so:
+The advantages are so:
 
 * Lighting is not performed at runtime
 * It is possible to use hundreds of static lights to light your scene
