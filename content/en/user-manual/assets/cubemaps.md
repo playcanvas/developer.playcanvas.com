@@ -13,7 +13,7 @@ Cube maps are a special type of texture asset. They are formed from 6 texture as
 
 ## Importing Cube Map Textures
 
-A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Editor. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
+A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into the Assets panel (or select the Asset panel's Upload option). Once uploaded and processed, the images will appear in the Assets panel where they are now ready to be assigned to a cube map asset.
 
 ## Creating New Cube Map
 
@@ -58,8 +58,8 @@ Cube map faces must be:
 To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cube map faces, such as:
 
 * negx, posx, negy, posy, negz, posz
-* 0-6
 * left, right, top|up, bottom|down, front|forward, back|backward
+* 0-5|1-6
 
 An example of a texture set that would match is:
 
@@ -78,7 +78,7 @@ The cube map inspector has a Prefilter button which generates a set of low-resol
 
 The default Phong and Physical material types both have reflection properties. If you expand the Environment property section, you see the following:
 
-<img src="/images/user-manual/material-environment.jpg" style="width: 300px;"/>
+![Cubemap Material][5]
 
 You can click the Empty slot to select a cube map or drag and drop a cube map asset from the asset panel into the cube map slot.
 
@@ -88,3 +88,4 @@ Note: a Physical material will use the scene's skybox as a default environment m
 [2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
+[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
