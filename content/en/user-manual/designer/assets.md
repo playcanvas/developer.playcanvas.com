@@ -72,6 +72,8 @@ If an asset does have references, you can check them via the References content 
 
 ![Asset References][6]
 
+Selecting a reference will load it into the Inspector panel.
+
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector
 [3]: /user-manual/designer/viewport
