@@ -9,8 +9,8 @@ A shader asset contains GLSL code. You can create a new Shader asset by clicking
 To edit a Shader asset, right click on it in the Editor and select Edit. Here's an example on using Shader assets to create a custom material.
 
 ```
-var vertexShader = app.assets.find('my_vertex_shader');
-var fragmentShader = app.assets.find('my_fragment_shader');
+var vertexShader = this.app.assets.find('my_vertex_shader');
+var fragmentShader = this.app.assets.find('my_fragment_shader');
 var shaderDefinition = {
     attributes: {
         aPosition: pc.SEMANTIC_POSITION,
@@ -20,7 +20,7 @@ var shaderDefinition = {
     fshader: fragmentShader.resource
 };
 
-var shader = new pc.Shader(app.graphicsDevice, shaderDefinition);
+var shader = new pc.Shader(this.app.graphicsDevice, shaderDefinition);
 var material = new pc.Material();
 material.setShader(shader);
 ```

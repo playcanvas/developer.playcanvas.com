@@ -28,7 +28,7 @@ In many cases, you don't wish assets to "popup" as they load. It's preferable to
 Here is some example javascript which shows you how you might load a set of assets using a tag.
 
 ```javascript
-var assets = app.assets.findByTag("level-1");
+var assets = this.app.assets.findByTag("level-1");
 var count = 0;
 
 for (var i = 0; i < assets.length; i++) {
@@ -38,7 +38,7 @@ for (var i = 0; i < assets.length; i++) {
             // asset loading complete
         }
     });
-    app.assets.load(assets[i]);
+    this.app.assets.load(assets[i]);
 }
 ```
 

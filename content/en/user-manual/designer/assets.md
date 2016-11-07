@@ -44,6 +44,8 @@ Filter which assets are visible using the filter drop down to select the type of
 
 You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
 
+The Search box supports wildcards. For example, *. will list every asset in your project.
+
 ## Drag and Drop
 
 Assets can be moved to different folders by dragging them from the main panel to a folder in the folder hierarchy. Note that assets support multi-selection. Pressing CTRL+A will select all assets in the currently selected folder.
