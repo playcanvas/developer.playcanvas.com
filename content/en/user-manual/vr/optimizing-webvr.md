@@ -1,7 +1,7 @@
 ---
 title: Optimizing WebVR applications
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 ## Introduction
