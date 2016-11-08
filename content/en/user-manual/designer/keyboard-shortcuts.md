@@ -94,6 +94,9 @@ Note that on a Mac, CMD should be used instead of CTRL.
         <td>Bake</td><td>Re-bake and recalculate lights</td><td>CTRL + B</td>
     </tr>
     <tr>
+        <td>Previous Selection</td><td>Select previously selected items</td><td>SHIFT + Z</td>
+    </tr>
+    <tr>
         <td>Undo</td><td>Undo the last action performed by the user</td><td>CTRL + Z</td>
     </tr>
     <tr>
