@@ -50,7 +50,7 @@ The Editor's Camera is controlled with the Mouse and Keyboard
 
 Note that on a Mac, CMD should be used instead of CTRL.
 
-<table class="head-column">
+<table class="three-column">
     <tr>
         <td>Launch</td><td>Launch the scene in a new tab</td><td>CTRL + ENTER</td>
     </tr>
