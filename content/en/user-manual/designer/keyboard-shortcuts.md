@@ -52,51 +52,57 @@ Note that on a Mac, CMD should be used instead of CTRL.
 
 <table class="head-column">
     <tr>
-        <td>Delete - Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
+        <td>Launch</td><td>Launch the scene in a new tab</td><td>CTRL + ENTER</td>
     </tr>
     <tr>
-        <td>Toggle All Panels - Hides or shows all the panels</td><td>SPACE</td>
+        <td>New Entity</td><td>Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
     </tr>
     <tr>
-        <td>Undo - Undo the last action performed by the user</td><td>CTRL + Z</td>
+        <td>Duplicate Entity</td><td>Duplicates the selected entity and all children</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>Redo - Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
+        <td>Rename</td><td>Focuses on name field of selected entities or an asset</td><td>N or F2</td>
     </tr>
     <tr>
-        <td>New Entity - Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
+        <td>Copy Entity</td><td>Copy a single selected entity</td><td>CTRL + C</td>
     </tr>
     <tr>
-        <td>Duplicate Entity - Duplicates the selected entity and all children</td><td>CTRL + D</td>
+        <td>Paste Entity</td><td>Paste an entity under the currently selected entity</td><td>CTRL + V</td>
     </tr>
     <tr>
-        <td>Copy Entity - Copy a single selected entity</td><td>CTRL + C</td>
+        <td>Delete</td><td>Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
     </tr>
     <tr>
-        <td>Paste Entity - Paste an entity under the currently selected entity</td><td>CTRL + V</td>
+        <td>Frame Selection</td><td>Focus on the entity selection</td><td>F</td>
     </tr>
     <tr>
-        <td>Frame Selection - Frame the active camera on the entity selection</td><td>F</td>
+        <td>Translate</td><td>Change gizmo mode to translate</td><td>1</td>
     </tr>
     <tr>
-        <td>Translate - Change gizmo mode to translate</td><td>1</td>
+        <td>Rotate</td><td>Change gizmo mode to rotate</td><td>2</td>
     </tr>
     <tr>
-        <td>Rotate - Change gizmo mode to rotate</td><td>2</td>
+        <td>Scale</td><td>Change gizmo mode to scale</td><td>3</td>
     </tr>
     <tr>
-        <td>Scale - Change gizmo mode to scale</td><td>3</td>
+        <td>World / Local</td><td>Switch between local and world space gizmo</td><td>L</td>
     </tr>
     <tr>
-        <td>World/Local - Switch between local and world space gizmo</td><td>L</td>
+        <td>Toggle All Panels</td><td>Hides or shows all the panels</td><td>SPACE</td>
     </tr>
     <tr>
-        <td>Launch - Launch the scene in a new tab</td><td>CTRL + ENTER</td>
+        <td>Bake</td><td>Re-bake and recalculate lights</td><td>CTRL + B</td>
     </tr>
     <tr>
-        <td>Bake - Re-bake lightmaps</td><td>CTRL + B</td>
+        <td>Undo</td><td>Undo the last action performed by the user</td><td>CTRL + Z</td>
     </tr>
     <tr>
-        <td>Show Controls - Display the Editor controls</td><td>?</td>
+        <td>Redo</td><td>Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
+    </tr>
+    <tr>
+        <td>How do I...?</td><td>Bring search toolbar for mini-tutorials</td><td>CTRL + SPACE</td>
+    </tr>
+    <tr>
+        <td>Show Controls</td><td>Display the Editor controls</td><td>SHIFT + ?</td>
     </tr>
 </table>
