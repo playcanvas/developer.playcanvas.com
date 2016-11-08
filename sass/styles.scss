@@ -601,7 +601,16 @@
                     td:first-child {
                         width: 60%;
                     }
-
+                    td:last-child {
+                        @include font-bold();
+                        font-size: 14px;
+                    }
+                }
+                &.three-column {
+                    td:first-child {
+                        @include font-bold();
+                        width: 30%;
+                    }
                     td:last-child {
                         @include font-bold();
                         font-size: 14px;
