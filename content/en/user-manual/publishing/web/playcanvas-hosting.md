@@ -20,11 +20,11 @@ To publish you will need to have at least one scene in your project.
 
 ![Publish Button][1]
 
-* This will open up the Publishing dialog. Here you can see a list of existing published builds. Here you can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button in the Dashboard Header.
+* This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
 
 ![Publish][2]
 
-* Click PUBLISH.
+* Click the PUBLISH button next to "Publish on PlayCanvas".
 
 ![Publish New Build][3]
 
@@ -40,12 +40,20 @@ To publish you will need to have at least one scene in your project.
 
 * Select the Scenes you want to include in your build from the list. Notice that the Primary Scene (the one with the active banner icon), will be loaded first when your build is launched if you include it in the build.
 * Click 'PUBLISH NOW'
-* You will see a new build created in the PUBLISH tab. Wait until it finishes processing.
+* You will see a new build created in the BUILDS tab. Wait until it finishes processing.
 * Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
 
 Builds are given permanent link in the form `http://playcanv.as/b/BUILD_ID`. This link will be valid until you delete the build. If you want to share a link to your game, you should probably use the published project link explained below.
 
-## Set the Primary Build
+## Existing Builds
+
+Click Builds on the same popup.
+
+![Builds][5]
+
+Here you can see a list of existing published builds.
+
+Here you can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button in the Dashboard Header.
 
 It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why we each project has a Primary Build link. This will always be in the form `http://playcanv.as/p/PROJECT_ID`
 
@@ -62,4 +70,5 @@ To set the Primary Build for your project, click the Primary marker to the left 
 [2]: /images/user-manual/editor/publishing.jpg
 [3]: /images/user-manual/editor/publishing-new-top.jpg
 [4]: /images/user-manual/editor/publishing-new-bottom.jpg
+[5]: /images/user-manual/publishing/web/builds.jpg
 
