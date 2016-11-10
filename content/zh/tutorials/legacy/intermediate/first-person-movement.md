@@ -1,22 +1,22 @@
 ---
-title: First Person Movement
+title: 第一人称移动
 template: tutorial-page-legacy.tmpl.html
 position: 4
 ---
 
 <iframe src="http://playcanv.as/p/R0ZMNPBw"></iframe>
 
-This is an application that implements first person character movement.
+这是一个实现第一人称角色运动的应用程序。
 
-The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player, if no camera entity is present a new entity is created. See the full scene setup in the [Tutorial Project][1].
+此场景的控制器设置很重要，因为您的角色必须具有刚体和碰撞组件以及附加的脚本。 此外，脚本支持将相机实体添加为Player的子级，如果不存在相机实体，则创建新实体。 请参阅[教程项目] [1]中的完整场景设置。
 
-The script below performs the following functions:
+下面的脚本执行以下功能：
 
-* Listen for mouse and keyboard input
-* Update a camera entity from the mouse input
-* Apply forces to move the player entity around the scene
+*监听鼠标和键盘输入
+*从鼠标输入更新相机实体
+*应用力将玩家实体移动到场景周围
 
-Note, the player's velocity is never set directly but he is moved by apply forces. To limit the maximum velocity, we have linear damping applied on the rigidbody component.
+注意，不要直接设置玩家的速度，而是通过应用力移动。 为了限制最大速度，我们在刚体部件上施加线性阻尼。
 
 ~~~javascript~~~
 pc.script.attribute("camera", "entity", null); // optional, assign a camera entity, otherwise one is created

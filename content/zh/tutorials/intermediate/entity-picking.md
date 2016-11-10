@@ -1,22 +1,22 @@
 ---
-title: Entity Picking
+title: 实体选择
 template: tutorial-page.tmpl.html
 position: 5
 ---
 
 <iframe src="https://playcanv.as/b/0iehjK3i/"></iframe>
-**Collision Picking** - *click to select a shape*
+**碰撞检测** - *点击并选择一个形状*
 
 <iframe src="https://playcanv.as/b/RxJFqzy5"></iframe>
-**Frame Buffer Picking** - *click to select a shape*
+**帧缓冲区选取** - *点击并选择一个形状*
 
-Try it from the Editor in the [tutorial project.][1]
+在[教学项目][1]中尝试一下。
 
-This tutorial describes to methods of selecting an Entity from the 3D scene, for example, on the click of the mouse.
+本教程描述了从3D场景中选择一个实体的方法，比如在鼠标的点击时。
 
-## Collision Picking
+## 碰撞体选择
 
-Collision based picking uses the collision components to add a shape to each Entity that needs to be picked. Then we use the [raycastFirst()][2] method in the rigidbody system to fire a ray from the mouse click position into the screen to see if it hits a collision component. If it does, that Entity is "selected".
+碰撞体的基础选择方式是使用组件添加一个形状,每个实体需要挑选。然后我们使用刚体系统的[raycastFirst()][2]方法从鼠标点击屏幕的位置发射射线，检测它是否碰撞到碰撞体。如果是,该实体被“选择”。
 
 ~~~javascript~~~
 var PickerRaycast = pc.createScript('pickerRaycast');
@@ -38,9 +38,9 @@ PickerRaycast.prototype.onSelect = function (e) {
 };
 ~~~
 
-## Frame Buffer Picking
+## 帧缓冲选择
 
-Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method. Advantages include: using a rectangle to pick many items in a scene at once, this method doesn't have require the physics library to be included and active in your project. The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly no mobile.
+帧缓冲式的基本选取方式是使用[pc.Picker][3]类将场景渲染到一个内部缓冲区。当鼠标单击鼠标缓冲区对应位置处的颜色时，用于确定选择哪一种网格实例。这在基于碰撞的方法上有一定的优点和缺点。优点包括:使用一个矩形在一个场景中选择多个项目，这种方法不需要在你的项目中包含物理库。缺点是使用`readPixels`方法要不断访问图形渲染管道。这可能严重影响渲染的性能，特别是当屏幕中没有变化产生的时候。
 
 ~~~javascript~~~
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');

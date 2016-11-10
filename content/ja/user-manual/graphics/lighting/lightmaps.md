@@ -1,110 +1,110 @@
 ---
-title: Lightmaps
+title: ライトマップ
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
 ![Sponza][10]
-*All the lighting in this scene is provided by lightmap textures*
+*このシーン内のすべての照明はライトマップテクスチャによって提供されています*
 
-Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied to materials. This is an efficient way of lighting a scene if much of the light sources and geometry are static or environmental.
+ライトマップ生成は静的シーンの照明情報を事前に計算し、多くの場合素材に適用されるテクスチャに格納する処理です。これは、ライトソースや形状の多くが静的または環境に使用されている場合にシーンを照らす効率的な方法です。
 
-PlayCanvas offers two ways to use lightmaps in your scene.
+PlayCanvasでは、シーン内のライトマップを使用するための方法が2つあります。
 
-## External lightmap generation
+## 外部ライトマップの生成
 
-Many 3D content tools have ways to generate lightmap textures. For example, 3DS Max, Maya and Blender all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
+多くの3Dコンテンツツールには、ライトマップテクスチャを生成するための方法があります。たとえば、3DS、 Max、Maya、Blenderにはすべて、テクスチャにライトマップをベイクする方法があります。ライトマップ生成にオフラインツールを使用する利点は、グローバルイルミネーション、バウンスライティング、ソフトシャドウ、などの洗練された照明の計算ができるということです。主要な欠点は、3Dツール内でシーンを完全に描写する必要があるということです。PlayCanvasシーンがエディタ内に沢山のインスタンスを配置している場合、ライトマップツールの中にこれを再作成する必要があります。
 
-Once you have created lightmaps using an external tool you simply upload them as regular texture assets and they can be added to your materials using the lightmap slot in the standard Physical Material.
+外部ツールを使用してライトマップを作成したら、通常のテクスチャアセットとしてアップロードすれば標準のPhysical Materialのライトマップスロットを使用して素材に添加することができます。
 
-![Lightmap slot][1]
+![ライトマップスロット][1]
 
-## PlayCanvas Runtime Lightmap Generation
+## PlayCanvas 実行時のライトマップ生成
 
-PlayCanvas offers a very convenient solution to generating lightmaps. Using the standard light components in the Editor you choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. Lights that are set to bake are then used when the application starts to generate lightmaps which are used to light the scene.
+PlayCanvasではライトマップを生成する非常に便利な方法があります。Editorの標準的なライトコンポーネントを使用して、ライトマップをベークするために使用するライトと実行しにシーンを動的に照らすライトコンポーネントを選択します。ベークするために設定されたライトは、アプリケーション起動時にシーンを照らすライトマップを生成するために使用されます。
 
-The advantanges are so:
+利点は次の通りです：
 
-* Lighting is not performed at runtime
-* It is possible to use hundreds of static lights to light your scene
-* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
-* It is possible to mix static and dynamic lights in the Editor
-* Rebaking can be performed at runtime
-* Lightmaps are HDR
+*照明は実行時に実行されません
+*数百の静的ライトを使用してシーンを点灯することができます
+*多くの場合、複数のライトマップテクスチャをダウンロードするよりも実行時にライトマップをレンダリングする方が速いです
+*Editorで静的および動的ライトを混合することができます
+*再ベークは、実行時に行うことができます
+*ライトマップはHDRです
 
-The disadvantage of using runtime lightmap generation is that currently we do not support baking global illumination, ambient occulusion or some of the other advanced features of a specialized baking tool.
+実行時のライトマップ生成を使用する欠点は、グローバルイルミネーション、アンビエントオクルージョンやその他の特殊なベーキングツールの高度な機能のをベーキングに現在対応していないということです。
 
-### Setting up lights for baking
+### ベーキング用にライトを設定
 
-Each Light Component contains settings for enabling lightmap baking. By default a new light is set to Dynamic.
+各ライトコンポーネントには、ライトマップベーキングを有効にするための設定が含まれています。デフォルトで、新しいライトは動的に設定されています。
 
-![Dynamic Light][2]
+![動的なライト][2]
 
-By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any lightmapped model that is in range.
+**Lightmap: Bake**設定を有効にすると、照明は範囲内にある全てのライトマップされたモデルのライトマップをベークします。
 
-There are two other options that modify the lights behaviour. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
+ライトの動作を変更する方法が他に二つあります。これらは、光が実行時に影響を与えるモデルを決定します。これらのいずれかをtrueにすると、照明は実行時に動作し、実行時の負荷に影響します。
 
- If the **Affect Dynamic** box is true, then this light will affect any model that is **not** lightmapped. If the **Affect Lightmapped** box is true, then this light will also affect any model that **is** lightmapped.
+**Affect Dynamic** ボックスがtrueの場合、この照明はライトマップ**されていない**全てのモデルに影響を与えます。**Affect Lightmapped**ボックスがtrueの場合、この照明はライトマップ**されている**全てのモデルに影響を与えます。
 
-Note, that a light cannot have **Lightmap** true and **Affect Lightmapped** true, as this would mean that a lightmap is generated for a model and the light will add the same lighting at runtime, i.e. doing the same work twice.
+照明の**Lightmap**と**Affect Lightmapped**を両方trueにすることはできません。なぜなら、モデルにライトマップが生成されているのに、実行時にもライトが同じライティングを追加することになるからです。
 
-![Shadows][3]
+![影][3]
 
-The shadows setting for lightmap lights is the same as for dynamic lights, except in this case the shadow calculations are done once when generating the lightmaps so it is much cheaper to enable shadows on lightmap lights. See the section on [Shadows][4].
+ライトマップライトの影の設定は、動的ライトと同じですが、この場合はライトマップ生成時に一度影の計算が行われるのでライトマップライトに影を有効にする方が軽くなります。[影][4]の項を参照してください。
 
-### Setting up models for baking
+### ベーキング用にモデルを設定
 
-Each Model Component has to have lightmapping enabled on it for it to receive lightmaps. Lightmapping is enabled in the properties of the Model Component by checking the **Lightmapped** option.
+各モデルコンポーネントでライトマップを受信するには、ライトマップを有効にする必要があります。ライトマップは、モデルコンポーネントのプロパティで**Lightmapped**オプションにチェックを入れて有効にします。
 
-![Model Component][5]
+![モデルコンポーネント][5]
 
-The **Shadows: Cast Lightmap** option determines if the model is casting shadows in the lightmap. In addition you can see the resolution of the lightmap texture generated and there is an option to apply a multiplier to this size. Lightmap size multipliers are discussed below.
+ **Shadows: Cast Lightmap** オプションはモデルがライトマップに影を落としているか否かを決定します。また、生成されたライトマップテクスチャの解像度を確認したり、その大きさに乗数を適用するためのオプションがあります。ライトマップのサイズ乗算については、以下で説明します。
 
-### Common Light Settings
+### 一般的なライトの設定
 
-As you see there several combinations of light settings that can be used. These combinations all have a use-case and by using lights with different combinations you can balance high-quality visuals with performance.
+ご覧の通り、いくつかの組み合わせのライトの設定があります。これらの組み合わせにはユースケースがあり、異なる組み合わせでライトを使用することにより、パフォーマンスと高品質なビジュアルのバランスをとることができます。
 
 <table>
 <tr>
-    <th>Lightmap</th><th>Affect Dynamic</th><th>Affect Lightmapped</th><th style="width: 50%;">Description</th>
+    <th>ライトマップ</th><th>動的に影響</th><th>ライトマップに影響</th><th style="width: 50%;">説明</th>
 </tr>
 <tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>これがデフォルトの動的ライトです。ライトマップされていない全てのモデルに影響します。</td>
 </tr>
 <tr>
-    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and is cheap to use at runtime. Most environmental lights would use this setting.</td>
+    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>このライトはライトマップされたモデルのライトマップを生成し、実行時に軽い負荷で使用できます。ほとんどの環境ライトは、この設定を使用します。</td>
 </tr>
 <tr>
-    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
+    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>このライトはライトマップを生成しますが、ライトマップされていないモデルにも影響を与えます。このライトで点灯する必要のある動的/移動するエンティティがある場合に便利です。例えば、プレイヤキャラクタにも影響を与える環境照明。</td>
 </tr>
 <tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models. For example, a flashlight would use this setting.</td>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>このライトは、ライトマップされたモデルセルとライトマップされていないモデルの両方に影響を与える動的ライトです。例えば、懐中電灯などはこの設定を使用します。</td>
 </tr>
 </table>
 
-### Lightmap Size Multipliers
+### ライトマップのサイズ乗数
 
-PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the size and geometry of the model. You can influence this calculation by modifiying the size multipler field in the Model Component.
+PlayCanvasは自動的にモデルに必要とされるライトマップの解像度を決定します。この値は、モデルのサイズおよび形状に基づいて計算されます。モデルコンポーネントのサイズ乗数フィールドを修正することで、この計算に影響を与えることができます。
 
-![Global Settings][6]
+![グローバル設定][6]
 
-There is also a global lightmap size multipler which affects all Model Components. You can also set the limit the maximum resolution for the generated lightmaps in order to conserve memory.
+すべてのモデルコンポーネントに影響を与える、グローバルライトマップのサイズ乗数もあります。また、生成されたライトマップの最大解像度の上限を設定してメモリを節約することができます。
 
-### Auto-unwrapping and UV1 generation
+### 自動アンラップとUV1の生成
 
-Lightmaps are always applied using the second set of UV co-ordinates (UV1) on the model asset. For best results we recommend that you add a second UV set in your 3D content tool to your model before you upload it to PlayCanvas.
+ライトマップは、常にモデルアセットのUV座標(UV1)の第2のセットを使用して適用されます。最良の結果を得るためには、モデルをPlayCanvasにアップロードする前に、3Dコンテンツツールに第2のUVセットを追加することをお勧めします。
 
-For convenience, if your model hasn't got a UV1 set the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+便宜上、使用しているモデルがにUV1セットがない場合、PlayCanvas Editorは自動的にアンラップをしてモデルのためにUV1座標を生成することができます。
 
-![UV1 Missing][7]
+![UV1 の欠損][7]
 
-If a model is missing a UV1 map you will see a warning in the model component when you enable lightmapping.
+モデルのUV1マップが不足している場合は、ライトマッピングを有効にするときに、モデルコンポーネントに警告が表示されます。
 
-![Auto Unwrap][8]
+![自動アンラップ][8]
 
-To fix the warning select the model asset and open the **Pipeline** section. Click the **Auto-unwrap** button and wait for the progress bar to complete. Running auto-unwrap edits the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the UV1's will be deleted and you will need to unwrap the model again.
+警告を解決するには、モデルアセットを選択して**Pipeline**セクションを開きます。**Auto-Unwrap**ボタンをクリックして、進行バーが完了するのを待ちます。自動アンラップを実行するとモデルアセットが編集され、ソースからモデルを再インポートすると(例えば、新しいFBXをアップロード)UV1が削除されてモデルの再アンラップが必要になります。
 
-The **padding** section determines the space between sections when the unwrapping occurs. If you see *"light bleeding"*, where light appears in the lightmaps that shouldn't be there, you can increase the padding to reduce the bleeding.
+**padding**セクションでは、アンラップが発生した際のセクション間のスペースを決定します。ライトマップ上の不適切な場所にライトが表示されてしまう*"light bleeding"*が発生している場合、paddingを増やして軽減することができます。
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
 [2]: /images/user-manual/lighting/lightmaps/spot-dynamic.jpg

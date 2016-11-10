@@ -1,16 +1,16 @@
 ---
-title: Procedural Levels
+title: 程序关卡
 template: tutorial-page.tmpl.html
 position: 5
 ---
 
 <iframe src="https://playcanv.as/p/smskdMrk/"></iframe>
 
-This project uses [clone()][1] function on the Entity to randomly generate a level from Entities that have been created in the Editor.
+该项目使用Entity上的[clone()][1]函数从编辑器中创建的实体中随机生成一个关卡节点。
 
-Try it from the Editor in the [tutorial project.][2]
+在[教学项目][2]中尝试一下。
 
-This script below is a very simple level generation program. It takes two Entities that have been setup in the Editor: 'Grass' and 'House' and uses them as tiles for a grid based level. The level is created by randomly choosing one of the tiles, cloning the tile to create a new Entity, then placing the new Entity at the correct grid position.
+下面的脚本是一个非常简单的关卡生成程序。 它需要在编辑器中设置两个实体：“草”和“房子”，并将其平铺用作于基础网格的平面。 通过随机选择其中一个图块，克隆图块以创建新实体，然后将新实体放置在正确的网格位置来创建级别。
 
 ~~~javascript~~~
 var Generate = pc.createScript('generate');

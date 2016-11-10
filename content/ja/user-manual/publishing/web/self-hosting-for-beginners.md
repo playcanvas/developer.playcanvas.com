@@ -1,22 +1,22 @@
 ---
-title: Self-hosting for beginners
+title: 初心者向けのセルフホスティング
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-This document is aimed at people who are complete beginners to web programming and describes at high level how the different parts of a web application combine to serve PlayCanvas applications, or other web pages to a user's browser.
+このドキュメントは、Webプログラミングの初心者向けです。Webアプリケーションのさまざまな部分をどのように組み合わせてPlayCanvasアプリケーションを提供したり、ユーザのブラウザに他のウェブページを提供するかを説明します。
 
-# The Web Stack
+# Web Stack
 
-In general you can separate a web application into 3 parts: Server-side, Client-side and Static content. In almost all cases you will have all three of these parts for your web application, though sometimes one or several parts will be either very simple or handled by another service.
+基本的に、ウェブアプリケーションを3つに分離することができます：サーバーサイド、クライアントサイド、静的コンテンツです。一部のみ非常にシンプルな場合や他のサービスにより処理される場合がありますが、ほとんどの場合、ウェブアプリケーションには3つとも含まれます。
 
-## Server-side Code
+## サーバサイドのコード
 
-When a user opens a link in their web browser the browser sends a request to a server somewhere on the internet asking for an HTML page. At its simplest this is a page of text that sits on a hard disk on the web server and is set back over the internet to the browser.
+ユーザーがウェブブラウザでリンクを開くと、ブラウザは、インターネット上のどこかでサーバに要求を送信してHTMLページを要求します。最もシンプルな形の場合、ウェブサーバ上のハードディスクに置かれるテキストのページで、インターネットを介してブラウザに戻り設定されます。
 
-For web pages which are documents for displaying text or images this works very well. But in order to provide a level of interactivity often a server will do some processing after receiving the request and then **render** a page of HTML including the results of that processing.
+テキストや画像を表示するドキュメントであるウェブページの場合、これは非常にうまく機能します。しかし、インタラクティブな要素を加えるには、多くの場合、サーバは要求を受信した後にいくつかの処理を行い、その処理の結果を含むHTMLのページを**レンダリング**します。
 
-For example, in PHP you could show the current date and time, inside your page.
+例えば、PHPでページ内の現在の日付と時刻を表示することができます。
 
 ```php
 <html>
@@ -33,7 +33,7 @@ For example, in PHP you could show the current date and time, inside your page.
 </html>
 ```
 
-This PHP code creates an HTML page like below and send it to the browser to display.
+このPHPコードは以下のようなHTMLページを作成し、ブラウザに送信して表示させることができます。
 
 ```html
 <html>
@@ -48,52 +48,52 @@ This PHP code creates an HTML page like below and send it to the browser to disp
 </html>
 ```
 
-There are many, many different languages and frameworks to choose from when writing server-side code. PHP, Python, Nodejs, Ruby are all popular choices. But ultimately they have the same outcome, they receive a request for an HTML page, they do some processing and then they return the HTML data.
+サーバサイドのコードを書く際、沢山の異なる言語やフレームワークから選択することができます。PHP、Python、Nodejs、Rubyは一般的な選択肢です。これらの最終的な結果は同じです。HTMLページの要求を受信し、いくつかの処理を行い、HTMLデータを返します。
 
-When writing PlayCanvas applications, no code you write in PlayCanvas runs server-side and we don't provide any server-side code for your projects.
+PlayCanvasのアプリケーションを作成する際、PlayCanvasで書くコードがサーバ側で実行されることはなく、プロジェクトのサーバサイドのコードは提供していません。
 
-## Client-side Code
+## クライアントサイドコード
 
-In the web stack, the server is not the only place where we can do programming and respond to user input. Client-side refers to code running inside your browser. This code is always in Javascript, which is the language that browsers run. With client-side javascript you can perform many different operations. In the simplest case, you can modify the HTML page that was downloaded from the server
+ウェブスタックでは、プログラミングを行いユーザー入力に応答するのはサーバだけではありません。クライアントサイドは、ブラウザ内で実行しているコードを指します。このコードは、ブラウザが実行される言語である、JavaScriptです。クライアントサイドのJavaScriptでさまざまな操作を実行することができます。最もシンプルなのは、サーバからダウンロードしたHTMLページの変更です。
 
 ```javascript
 var title = document.getElementById("title");
 title.innerHTML = "This is the new title";
 ```
 
-Or in the most complex case, you can write a full 3D WebGL game using PlayCanvas. Because everything you write using PlayCanvas is client-side javascript.
+また、最も複雑なケースは、PlayCanvasを使用して完全な3D WebGLゲームを書くこと場合です。PlayCanvasを使用して書くものは全て、クライアントサイドのJavaScriptです。
 
-## Static Content
+## 静的コンテンツ
 
-Some parts of your web application are not dynamic and do not need to change. For example, images, audio files, text files and in the case of PlayCanvas applications 3D models and textures. You can think of this a bit like loading files of a local disk, except that of course it comes over the internet so it's a bit slower. Serving static content is done by a web server, very much like server-side code and in some cases it will be the same machine. As there is no interactivity, there is no processing done to fullfill the request. The web server just sends back the requested file.
+ウェブアプリケーションの一部は、動的ではなく、変更する必要がありません。例えば、画像、オーディオファイル、テキストファイル、また、PlayCanvasアプリケーションの場合は3Dモデルやテクスチャです。これは、ローカルディスクのファイルを読み込むようなものですが、インターネット上なので少し遅くなります。静的コンテンツの提供はサーバサイドコードのようにウェブサーバによって実行され、場合によっては、同じマシンになります。インタラクティブな要素がないため、要求を満たすための処理は行われません。ウェブサーバは単に要求されたファイルを返送します。
 
-The important thing about static content is making sure it downloads to the client as fast as possible.
+静的コンテンツにおいて重要なのは、できるだけ速くクライアントにダウンロードすることです。
 
-## Hosting PlayCanvas Applications
+## PlayCanvas アプリケーションのホスティング
 
-When you build a PlayCanvas application your are writing client-side javascript code and creating assets which are static content. In PlayCanvas projects you will have no server-side code at all.
+PlayCanvasアプリケーションを構築すると、クライアントサイドのJavaScriptコードを書いて、静的コンテンツであるアセットを作成します。PlayCanvasプロジェクトではサーバサイドのコードは一切ありません。
 
-When you publish using PlayCanvas we handle the server-side by setting up a URL where your application is served from sending back the HTML page that starts your client-side application. When the HTML page loads it runs the client-side javascript of your PlayCanvas application this will load all your assets from our static content servers.
+PlayCanvasを使用して公開すると、アプリケーションが提供される場所でURLを設定して、クライアントサイドアプリケーションを起動するHTMLページを送り返し、サーバサイドを処理します。HTMLページが読み込まれるとそれはPlayCanvasアプリケーションのクライアントサイドjavascriptを実行します。これにより、静的コンテンツサーバからすべてのアセットを読み込みます。
 
-We have designed the PlayCanvas hosting to be optimized for serving your PlayCanvas applications to end users throughout the world as quickly as possible. This is why the easiest way to deploy a PlayCanvas application is by clicking the publish button and sending out the `playcanv.as` URL. However, in some cases you may be required to host your own application.
+可能な限り迅速に、世界中のエンドユーザーにPlayCanvasアプリケーションを提供するため、PlayCanvasのホスティングを最適化しました。PlayCanvasアプリケーションをデプロイする最も簡単な方法は、公開ボタンをクリックして、 `playcanv.as` URLを送信することです。場合によっては、独自のアプリケーションをホストする必要があります。
 
-## Self-hosting PlayCanvas Applications
+## PlayCanvas アプリケーションのセルフホスティング
 
-We have a more [detailed page][1] about self-hosting a PlayCanvas application. But in summary, to self-host you need to provide the three parts of the web stack described above.
+PlayCanvasアプリケーションのセルフホスティングに関する[詳細ページ][1]があります。要約すると、セルフホスティングを行うには上記で説明したのウェブスタックの三つの部分を提供する必要があります。
 
-### Server
+### サーバ
 
-For a standard PlayCanvas application there is no server-side code required. However, you will still need to supply a web-server because you need to serve the static content including the `index.html` file that is found in your downloaded application. It is this file that the browser will request to load your application. There are two common web server application for Linux: Apache and Nginx and one common web server for Windows: IIS.
+標準的なPlayCanvasアプリケーションの場合、サーバサイドのコードは必要ありません。しかし、ダウンロードしたアプリケーションに含まれる`index.html`ファイルなどの静的コンテンツを提供する必要があるので、ウェブサーバを指定する必要があります。Linuxで使用する2つの一般的なウェブサーバアプリケーションはApacheとNginxです。Windowsで使用する1つの一般的なウェブサーバはIISです。
 
-### Static Content
+### 静的コンテンツ
 
-As described in **Server** you will be serving all your PlayCanvas content including the `index.html` file from your web server as static content.
+**Server**で説明した通り、静的なコンテンツとして、ウェブサーバの`index.html`ファイルを含むすべてPlayCanvasのコンテンツを提供します。
 
-To get good performance when serving the static content it is **critical** to enable gzip compression and set the correct cache headers for the content. See your web server documentation for how to enable compression and caching headers on static content.
+静的コンテンツを提供する際、良好なパフォーマンスを得るためにはgzip圧縮を有効にして、コンテンツの正しいキャッシュ・ヘッダーを設定することが**重要**です。静的コンテンツでヘッダのキャッシングと圧縮を有効にする方法は、ウェブサーバーのドキュメントを参照してください。
 
-### Client
+### クライアント
 
-The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the index.html file it will start your PlayCanvas application and run all the client-side code that you have written.
+クライアントサイドのコードは、PlayCanvasアプリケーションの一部として書かれている全てです。ブラウザがindex.htmlファイルを読み込む際、PlayCanvasアプリケーションを起動し、あなたが書いたすべてのクライアントサイドコードを実行します。
 
 [1]: /user-manual/publishing/web/self-hosting/
 

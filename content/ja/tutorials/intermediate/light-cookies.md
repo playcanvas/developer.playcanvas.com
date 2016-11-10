@@ -1,36 +1,36 @@
 ---
-title: Light Cookies
+title: ライト Cookie
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/AGtssoOU/"></iframe>
 
-Find out more by forking the [full project][1].
+[完成されたプロジェクト][1]をフォークして詳細をご確認ください。
 
-In theatre it is common to create visual effects on stage by using shape masks to cast shadows across the scene. These masks are called "cucoloris" or "cookies". Creating a light cookie in WebGL using PlayCanvas is achieved using a texture or a cubemap that is applied to the Light Component. Light Cookies are applicable to spot lights and point lights.
+劇場などでは、形状マスクを使用してシーン全体に影を落として、ステージ上で視覚効果を作成するのが一般的です。これらのマスクは、「cucoloris」または「cookie」と呼ばれています。PlayCanvasでWebGLにライトクッキーを作成するには、ライトコンポーネントに適用されるテクスチャやキューブマップを使用します。ライトクッキーはスポットライトやポイントライトに適用可能です。
 
-![Grid Cookie][2]
-**A simple grid cookie gives the impression of a window**
+![グリッド Cookie][2]
+**シンプルなグリッドクッキーは窓のような印象です**
 
-## Cookie Texture
+## Cookie テクスチャ
 
-A cookie texture is just a regular texture asset which is applied to a spot light component in the Cookie section. When a cookie is applied you can choose which channels of the texture to use. For example, if you are doing a simple mask, you can use just the Alpha channel. Or if you would like a full color effect like a stained glass window you can use the full RGB value.
+クッキーテクスチャは、クッキーセクションでスポットライトコンポーネントに適用される普通のテクスチアセットです。クッキーが適用されると、使用するテクスチャのチャンネルを選択できます。例えば、単純なマスクをする場合、アルファチャンネルを使用することができます。または、ステンドグラスのような完全なカラー効果を希望する場合は完全なRGB値を使用することができます。
 
-![Light Settings][3]
+![ライト設定][3]
 
-## Cookie Cubemap
+## Cookie キューブマップ
 
-For a point light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
+ポイントライトの場合、ライトの点を6つの方向で投影できるように、クッキーをキューブマップにする必要があります。
 
-## Use Cases
+## ユースケース
 
-**Shaped Lights** - cookies are useful for masking the shape of a light source. For example, if you're scene contains a window or a fluorescent strip light using a spot light will create a light shape that is rounded. You can mask the shape of the light to be long and thin, or square in order to simulate the shape of the light.
+**形状ライト** - クッキーを使用して、ライトソースをマスキングすることができます。たとえば、シーンに窓や蛍光ストリップライトがある場合、スポットライトを使用して丸みを帯びたライトの形状を作成することができます。ライトの形をマスキングして形状をシミュレートすることができます。
 
-![Shaped Light][5]
+![ライトの形][5]
 
-**Torches** - Torches and headlights don't light a surface evenly instead they have light and dark "caustic" areas. You can use a light cookie to create this effect.
+**たいまつ** - たいまつやヘッドライトは均等に表面を照らしません。代わりに、明るい"苛性"領域と暗い"苛性"領域があります。ライトクッキーを使用してこの効果を作成することができます。
 
-![Torch Light][4]
+![たいまつライト][4]
 
 [1]: https://playcanvas.com/project/409793/overview/example-light-cookies
 [2]: /images/tutorials/intermediate/light-cookies/window-cookie.jpg

@@ -1,50 +1,50 @@
 ---
-title: Light Halos
+title: 光晕
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
 
-Find out more by forking the [full project][4].
+更多的细节可以参考[完整的工程][4]。
 
-This simple effect is great for adding atmosphere to your scene. Add a glow to a light source or an emissive texture to give the effect of a dusty or foggy atmosphere or simulate the effect of looking at a bright light.
+这个简单的效果在为你的场景添加气氛方面十分有用。 向光源或发光纹理添加辉光，以产生灰尘或雾气的效果，或模拟看向亮光的效果。
 
-It works like this: We create an entity with a plane primitive attached which has a glowing halo material on it. We attach a script to entity which makes the plane always face the camera (billboarding). For added fun, we're fading the halo out if it faces away from the camera to simulate a directional light.
+它的工作原理是这样的：我们创建一个具有平面原型的实体，附着上一个发光的光环材料。 我们附加一个脚本到实体，使这个平面总是面对相机(就像广告牌)。 为了增加乐趣，我们设定它模拟定向光，在面对远离镜头方向时衰减光晕。
 
-## Assets
+## 材质
 
-### Texture
+### 贴图
 
-First you'll need a halo texture. In this example we've just used a very simple blurred blob that was created in a art program like Photoshop.
+首先，你需要一个光环纹理。 在这个例子中，我们使用了一个非常简单的模糊滤镜文理，它是在像Photoshop这样的艺术程序中创建的。
 
 ![blob][1]
 
-This texture will form the basis of the glow.
+这种纹理将形成辉光的基础。
 
-### Material
+### 材质
 
-![material][2]
+![材质][2]
 
-The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot. This is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+光晕的材料使用光线槽中的斑点纹理。 使用 **着色** 属性设置光环的颜色。 我们还在不透明度插槽中启用了混合。 这项被设置为**Additive Alpha**。**Additive** 部分意味着材料的颜色被添加到其下面的背景颜色。 这意味着光晕发光也能够影响背景。**Alpha**部分意味着它使用`不透明度'的值来设置材质的透明度。
 
-## Entities
+## 实体
 
-![entities][3]
+![实体][3]
 
-The Entity setup for the glow is simple too. We have a parent Entity for the halo script and a child Entity which has the plane primitive attached to it. The reason we do this is to simplify the code so that we can use `entity.lookAt` to set the orientation of the glow. The Plane primitive faces upwards so we create a child entity and apply a rotation to this child so that the plane is correctly positioned facing the camera.
+为实体设置的辉光也很简单。 我们有一个用于光晕脚本的父实体和一个具有连接到它的发光平面的子实体。 这样做可以简化代码，以便我们可以使用`entity.lookAt`来设置辉光的方向。 由于发光平面默认面向上方，因此我们创建一个子实体，并对该子实体应用旋转，以使平面正确定位于面向相机的方向。
 
-## Code
+## 代码
 
-The code for this project has two particularly interesting features.
+这个项目的代码有两个特别有趣的特性。
 
-First, we update the halo entity to face the camera every frame
+首先，我们每帧更新光晕实体使其面对相机。
 
 ```javascript
 // Set the glow to always face the camera
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowy modify the opacity so that it gets more transparent the more it points away from the camera.
+第二，如果光晕被标记为“单向的”(具有我们暴露的脚本属性)，则我们修改不透明度，可以使得光晕在面向远离相机时不可见。 事实上，我们是在慢速修改不透明度，在它越远离相机时使它变得更透明。
 
 ```javascript
 // If enabled, unidirectional means the glow fades off as it turns away from the camera
@@ -64,9 +64,9 @@ if (this.unidirectional) {
 }
 ```
 
-We're using the `setParameter` method on the [pc.MeshInstance][5] to set a value for the fragment shader to use. This is currently an undocumented feature in the engine (you won't find it on the link to the developer docs). The reason for this is because it relies on knowing exactly the name of the uniform variable in the shader. These values might change and this API might change in the future. But it's pretty useful, because it let's you override a single value in a shader just for that mesh instance. In this case, it's important because all the glows use the same material, but we will want a different value for the opacity for each instance of the glow.
+我们在[pc.MeshInstance] [5]上使用`setParameter`方法来设置要使用的片段着色器的值。 这是引擎中目前未提供的功能(您无法在开发人员文件的连结中找到)。 这是因为它依赖于知道着色器中的统一变量的名称。 这些值是可能会更改的，并且此API可能会在将来更改。 但这点其实非常有用，因为它让你在一个着色器中为一个网格物体实例覆盖一个值。 在这种情况下，它是重要的，因为所有的发光使用相同的材料，但我们将需要每个发光的实例的不透明度值不同。
 
-Here's the complete listing:
+这里是完整的列表：
 
 ```javascript
 var Halo = pc.createScript('halo');
@@ -118,7 +118,7 @@ Halo.prototype.update = function(dt) {
 };
 ```
 
-That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
+这就是全部。 一个简单但漂亮的效果已经被添加到你的场景了。 有关更多信息，请参阅[工程项目] [4]。
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
 [2]: /images/tutorials/intermediate/light-halos/material.jpg

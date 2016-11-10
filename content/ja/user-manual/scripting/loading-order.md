@@ -1,34 +1,34 @@
 ---
-title: Loading Order
+title: 読み込みの順番
 template: usermanual-page.tmpl.html
 position: 6
 ---
 
-Generally all scripts are loaded at the beginning of your application. The loading order is determined by a setting in your project which you can access from the main Editor menu or Scene Settings
+基本的に、すべてのスクリプトは、アプリケーションの開始時に読み込まれます。読み込みの順番は、メインのEditorメニューやScene Settingsシからアクセスすることができる、プロジェクト内の設定によって決定されます。
 
-![Loading Order][1]
+![読み込みの順番][1]
 
-The loading order panel shows all your scripts that marked as `preload` and the order that they are loaded and executed in.
+読み込み順のパネルには`preload` としてマークされる全てのスクリプトと、それらが実行される読み込みの順番が表示されます。
 
-![Loading Order List][2]
+![読み込み順のリスト][2]
 
-You can drag to move individual scripts around in order.
+個別のスクリプトの順番をドラッグして移動することができます。
 
-When scripts are first loaded, they are immediately executed, that means that the scripts are first executed in the order that they are loaded. However, the loading order of the script **does not** effect the execution of order of script methods within script component. E.g. the initialize methods of scripts on the same entity are called in the order that they are listed on the Entity not the loading order.
+スクリプトが最初に読み込まれると、それらはすぐに実行され、スクリプトは最初にそれらが読み込まれた順番で実行されることを意味します。しかし、スクリプトの読み込み順は、スクリプトコンポーネント内でのスクリプトメソッドの順番実行には影響しません。 例：同じエンティティ上のスクリプトの初期化方法は、読み込み順ではなく、それらがエンティティでリストされている順序で呼び出されます。
 
-## Preloading
+## プレロード
 
-Like other assets in PlayCanvas by default a script asset is marked as `preload`. This means that it will be loaded before the application starts. If you disable preloading on a script it will not be loaded under normal circumstances. This way you can include a script in your project but prevent it from loading by unchecking `preload`. You can trigger a non-preloading script to load dynamically by using the regular asset API. e.g. `this.app.assets.load(asset);`  
-It is possible to subscribe to dynamic changes to script registry:
+PlayCanvasの他のアセットと同様、デフォルトでスクリプトアセットは`preload`としてマークされます。スクリプトのプリロードを無効にすると、アプリケーションの起動前に読み込まれます。こうすることにより、プロジェクトにスクリプトを含みながら、`preload`をオフにして読み込まれるのを防ぐことができます。通常のアセットAPIを使用して、非プリロードスクリプトを動的に読み込むようにトリガすることができます。 例：`this.app.assets.load(アセット);`
+スクリプトレジストリへの動的な変更にサブスクライブすることができます：
 ```javascript
 this.app.scripts.on('add', function(name, scriptType) {
-    console.log('script', name, 'has been loaded');
+console.log('script', name, 'has been loaded');
 });
 ```
 
-## Concatenation
+## 連結
 
-By default when you publish or export your application all preloaded scripts are concatenated into a single script file. This optimizes the loading by reducing the number of requests that are needed to load all your scripts.
+デフォルトで、アプリケーションを公開したり、エクスポートすると、すべてのプリロードされたスクリプトは、ひとつのスクリプトファイルに連結されます。これは、すべてのスクリプトを読み込むために必要とされるリクエストの数を減らすことで読み込みを最適化します。
 
 [1]: /images/user-manual/scripting/script-loading-order.jpg
 [2]: /images/user-manual/scripting/loading-order-list.jpg

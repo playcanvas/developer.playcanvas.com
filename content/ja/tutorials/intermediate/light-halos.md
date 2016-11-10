@@ -1,50 +1,50 @@
 ---
-title: Light Halos
+title: ライトハロー
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
 
-Find out more by forking the [full project][4].
+[完成されたプロジェクト][4]をフォークして詳細をご確認ください。
 
-This simple effect is great for adding atmosphere to your scene. Add a glow to a light source or an emissive texture to give the effect of a dusty or foggy atmosphere or simulate the effect of looking at a bright light.
+このシンプルなエフェクトはシーンに様々な効果を加えるのに適しています。照明に輝きを追加したり、発光テクスチャで埃や霧の効果を加えることができます。また、まぶしい光の効果をシミュレートすることもできます。
 
-It works like this: We create an entity with a plane primitive attached which has a glowing halo material on it. We attach a script to entity which makes the plane always face the camera (billboarding). For added fun, we're fading the halo out if it faces away from the camera to simulate a directional light.
+次のように動作します：輝くハロー素材を有する、平面プリミティブを添付したエンティティを作成します。エンティティに、面を常にカメラに向けさせるスクリプトを添付します(ビルボーディング)。さらに、指向性のライトをシミュレートするために、カメラに背を向けた際はハローをフェードアウトさせます。
 
-## Assets
+## アセット
 
-### Texture
+### テクスチャ
 
-First you'll need a halo texture. In this example we've just used a very simple blurred blob that was created in a art program like Photoshop.
+まずはハローテクスチャが必要になります。この例では、Photoshopのようなアートプログラムで作成された非常にシンプルな、ぼやけたblobを使用します。
 
 ![blob][1]
 
-This texture will form the basis of the glow.
+このテクスチャは、輝きの基礎を形成します。
 
-### Material
+### 素材
 
-![material][2]
+![素材][2]
 
-The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot. This is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+ライトハローの素材は、emissiveスロット内のblobテクスチャを使用します。ハローの色を設定する**tint**プロパティを使用します。また、Opacityスロットでブレンディングを有効にしています。これは、**Additive Alpha**に設定されています。*Additive**の部分は、素材の色がその下の背景色に追加されることを意味します。つまり、ハローは背景に対して光ります。**Alpha**の部分は、`opacity`の値を使用して素材の透明度を設定することを意味します。
 
-## Entities
+## エンティティ
 
-![entities][3]
+![エンティティ][3]
 
-The Entity setup for the glow is simple too. We have a parent Entity for the halo script and a child Entity which has the plane primitive attached to it. The reason we do this is to simplify the code so that we can use `entity.lookAt` to set the orientation of the glow. The Plane primitive faces upwards so we create a child entity and apply a rotation to this child so that the plane is correctly positioned facing the camera.
+グローのためのエンティティの設定も簡単です。ハロースクリプトの親エンティティと、プリミティブな面が添付されている子エンティティがあります。これは、グローの向きを設定するために `entity.lookAt`を使用できるようにコードを簡素化するために行います。平面プリミティブは上を向いているので、子エンティティを作成して回転を適用し、平面が正しくカメラに向くようにします。
 
-## Code
+## コード
 
-The code for this project has two particularly interesting features.
+このプロジェクトのコードには、2つの興味深い特徴があります。
 
-First, we update the halo entity to face the camera every frame
+まず、毎フレームでカメラの方向を向くよう、haloエンティティを更新します。
 
 ```javascript
 // Set the glow to always face the camera
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowy modify the opacity so that it gets more transparent the more it points away from the camera.
+次に、ハローは`unidirectional`としてマークされ(露出したスクリプトの属性で)、ハローがカメラに背を向けた際に表示されないように不透明度を変更します。カメラに背を向けるほどより透明なるように、設定します。
 
 ```javascript
 // If enabled, unidirectional means the glow fades off as it turns away from the camera
@@ -64,9 +64,9 @@ if (this.unidirectional) {
 }
 ```
 
-We're using the `setParameter` method on the [pc.MeshInstance][5] to set a value for the fragment shader to use. This is currently an undocumented feature in the engine (you won't find it on the link to the developer docs). The reason for this is because it relies on knowing exactly the name of the uniform variable in the shader. These values might change and this API might change in the future. But it's pretty useful, because it let's you override a single value in a shader just for that mesh instance. In this case, it's important because all the glows use the same material, but we will want a different value for the opacity for each instance of the glow.
+フラグメントシェーダで使用する値を設定するために[pc.MeshInstance][5]で`setParameter`メソッドを使用します。これは、現在のエンジンでドキュメント化されていない機能です(開発者向けドキュメントには記載されていません)。シェーダーで均一化された変数の名前を正確に知ることに依存しているためです。これらの値は変更される可能性があり、このAPIも将来変更される可能性があります。しかし、特定のメッシュインスタンスに対してシェーダの単一の値を上書きすることができるので便利です。このケースでは、すべてのグローが同じ素材を使用していますが、グローの各インスタンスの不透明度に異なる値を設定する必要があるので、有用です。
 
-Here's the complete listing:
+完全なリストはこちらです：
 
 ```javascript
 var Halo = pc.createScript('halo');
@@ -118,7 +118,7 @@ Halo.prototype.update = function(dt) {
 };
 ```
 
-That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
+以上です。シーンに追加するシンプルで綺麗な効果です。詳細は[プロジェクト][4]でご確認ください。
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
 [2]: /images/tutorials/intermediate/light-halos/material.jpg

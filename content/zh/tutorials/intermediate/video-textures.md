@@ -1,21 +1,21 @@
 ---
-title: Video Textures
+title: 视频纹理
 template: tutorial-page.tmpl.html
 position: 5
 ---
 
 <iframe src="http://playcanv.as/p/6wt5T87E"></iframe>
 
-Try it from the Editor in the [tutorial project.][1]
+在[教学项目][1]中尝试一下。
 
-This project creates a texture and runtime, downloads and plays a video file and renders the video into the texture. This texture is then applied to a model and used in the scene.
+这个项目创建一个可在运行时改变的纹理，下载了可播放的视频文件，并渲染视频到纹理中。 然后将该纹理应用于模型并在场景中使用。
 
-This script performs the following functions:
+该脚本执行以下功能：
 
-* Create new Texture
-* Create an HTML Video element and play the video
-* Apply the new texture to the material on the TV model
-* Update the texture with video data every frame
+*创建新的纹理
+*创建一个HTML视频元素并播放视频短片
+*将新纹理应用于电视模型上的材质
+*每帧更新带有视频数据的纹理
 
 ```javascript
 var Videotexture = pc.createScript('videotexture');

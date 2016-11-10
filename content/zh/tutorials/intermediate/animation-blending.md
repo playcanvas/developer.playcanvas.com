@@ -1,31 +1,31 @@
 ---
-title: Animation Blending
+title: 混合动画
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
 
-*Click on screen to focus, then press the 'p' key to blend to a punch animation*
+*点击屏幕进行对焦，然后按'p'键变化到一个拳击动画。*
 
-This tutorial illustrates the basics of animation blending.
+本教程介绍了动画混合的基本知识。
 
-Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.
+场景中的对象可能会被绑定动画，机器和角色是你可能想要绑定动画的很好的例子。 通常，当创建3D内容时，模型的默认动画被同时创建，并且这些动画通常被设置为周期播放(因为它们可循环)。 例如，人物角色可以具有空闲周期，步行周期，运行周期等。 作为一个PlayCanvas开发人员，你需要一个机制来控制你的动画对象播放这些动画。 此外，你不希望这些动画从一个切换为另一个时被'pop'掉。 要解决这个问题，您应该使用动画混合，实现从一个动画到另一个动画的平滑过渡。 这极大地提高了您的动画对象的视觉保真度。
 
-Let's examine how this is achieved via PlayCanvas...
+让我们来看看如何通过PlayCanvas实现...
 
-## The Animation Component
+## 动画组件
 
-In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the skinned character as displayed in PlayCanvas Editor.
+要将动画应用于模型，请将动画组件添加到实体。 下面是在PlayCanvas编辑器中显示的蒙皮角色的配置。
 
-![Animated Entity][1]
+![能动作的实体][1]
 
-In the image you can see the animation component in the Inspector. There are 2 animation assets assigned: an 'idle' cycle and a 'punch' cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
+在图像中，您可以在编辑器中看到动画组件。 有2个动画资源被分配：一个“空闲”周期和一个“拳击”周期。 使用以这种方式配置的动画组件，其默认行为是播放第一个动画(空闲周期)，并且因为循环选项被设置，它将继续无限制地动画。 但是，我们想要实现一些更有趣的东西：
 
-* Play a looping idle animation.
-* Blend to a looping punch animation on a key press.
-* Blend back to idle on key release.
+* 播放循环空闲动画。
+* 按键时混合到一个循环拳击动画。
+* 在按键释放时混合回空闲动画。
 
-So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Editor and it refers to a JS file called animation_blending.js. The contents of this file is:
+所以这种功能超出了不起眼的动画组件的能力。 我们需要一个脚本组件来管理此附加行为。 你可以在上面截图中的编辑器中看到角色实体的脚本组件，它引用了一个名为animation_blending.js的JS文件。 此文件的内容是：
 
 ~~~javascript~~~
 var AnimationBlending = pc.createScript('animationBlending');
@@ -71,9 +71,9 @@ AnimationBlending.prototype.keyUp = function (e) {
 };
 ~~~
 
-From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
+从这一点上来说，您可以向动画组件添加越来越多的动画，并开始编写更复杂的动画状态图表。
 
-See [the full Scene here][2]
+在这里查看 [完整的场景][2]
 
 [1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/440156
