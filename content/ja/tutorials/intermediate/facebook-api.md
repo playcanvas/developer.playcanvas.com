@@ -4,15 +4,15 @@ template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
-*Log in with facebook to see your photos in a 3D sculpture*
+*facebookでログインして写真を3D彫刻で表示*
 
-PlayCanvas is a perfect partner for building WebGL Facebook games and applications. Facebook is a great place to find a large audience for your games and PlayCanvas lets you create fast and performant games that are optimized for the web.
+PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築するために適しています。Facebookはゲームのユーザにアピールする絶好の場所です。一方、PlayCanvasでは、ウェブ用に最適化された高速かつ高性能なゲームを作成することができます。
 
-In this tutorial we'll show you how to integrate the Facebook API into your PlayCanvas application. Once you have access to the Facebook API there are many possibilities. For example, sharing games with friends, posting stories to Facebook and more. Check out the [tutorial project][5].
+このチュートリアルでは、PlayCanvasアプリケーションにFacebookのAPIを統合する方法を説明します。Facebook APIにアクセスできるようにすれば、多くの可能性が開きます。例えば、Facebookにストーリーを投稿したり、友人とゲームを共有することができます。[チュートリアルプロジェクト][5]をご確認ください。
 
-## Facebook Plugin
+## Facebook プラグイン
 
-There is a plugin to help you integrate Facebook available [on github][1]. This simplifies the work of loading the Facebook javascript SDK. Just attach the plugin script `lib/facebook-setup.js` to an entity in your scene and listen for the `fb:init` event and you'll know the API is ready. More instruction are available on the [github page][1].
+[github上][1]にFacebookの統合を可能にするプラグインがあります。これにより、FacebookのJavaScript SDKを読み込む作業を簡素化します。シーンのエンティティにプラグインスクリプト`lib/facebook-setup.js`を添付して、`fb:init` イベントをリッスンすればAPIの準備ができていることが確認できます。[githubページ][1]で詳しい手順をご確認ください。
 
 ```javascript
   this.app.on("fb:init", function () {
@@ -21,9 +21,9 @@ There is a plugin to help you integrate Facebook available [on github][1]. This 
   }, this);`
 ```
 
-## Login to Facebook
+## Facebookにログイン
 
-In this example we've implemented a user interface to let you log in and log out of your Facebook account in the application. This is the code in `fb-ui.js`.
+この例では、アニメーション内でFacebookログインおよびログアウトできるユーザーインターフェイスを実装しました。これは、`fb-ui.js`のコードです。
 
 ```javascript
 var FbUi = pc.createScript('fbUi');
@@ -112,19 +112,19 @@ FbUi.prototype.hideLogout = function () {
 };
 ```
 
-In the initialize step of this code we're listening for the `fb:init` event from the Facebook plugin. Once this has been fired we know that the Facebook SDK has been loaded and is ready to be used. We use three Facebook SDK functions. `FB.getLoginStatus()` reports back whether the user has already logged into Facebook through your application, `FB.login()` pops up a login dialog for the user and `FB.logout()` logs the user out of your application and of Facebook.
+このコードのinitializeステップでは、Facebookプラグインから`fb:init` イベントをリッスンします。これが発信されると、Facebook SDKが読み込まれ、利用可能であることが分かります。三つのFacebook SDK関数を使用しています。`FB.getLoginStatus()`はユーザが既にFacebookにログインしているかどうかをアプリケーションを通して報告します。`FB.login()` はユーザのためのログインダイアログをポップアップ表示します。`FB.logout()`はユーザをアプリケーションとFacebookからログアウトさせます。
 
 <div class="alert alert-info">
-It is important to notice here is that `FB.login()` must be called in response to a user action like clicking on a button, otherwise the user will see a pop-up warning.
+ここで重要なのは`FB.login()` がユーザの動作に対して呼ぶ必要があるということです。例えば、ボタンのクリックなどです。そうしないと警告が表示されます。
 </div>
 
-The function `loginChangeFn` is a callback which is used to respond to changes in logged in state and using the four show/hide functions we show the correct dialog box depending on the state.
+`loginChangeFn`関数はログイン状態の変更に応答するために使用するコールバックです。四つの表示/非表示関数を使用して、状態に応じて正しいダイアログボックスを表示させます。
 
-Note, also we fire our own application events `app:fblogin` and `app:fblogout` to tell other parts of the application that the Facebook status has changed.
+独自のアプリケーションイベント`app:fblogin` と`app:fblogout` を発信してFacebookのステータスが変更されたことをアプリケーションの他の部分に通知しています。
 
-### Accessing the Facebook API
+### Facebook APIにアクセス
 
-The file `face-photo.js` uses the Facebook API to retrieve a list of photos from the user and display them in the 3D world.
+`face-photo.js`ファイルはFacebook APIを使用して、ユーザからの写真のリストを取得して3Dの世界でそれらを表示しています。
 
 ```javascript
 var FacePhoto = pc.createScript('facePhoto');
@@ -205,19 +205,19 @@ FacePhoto.prototype.createPhoto = function(texture) {
 };
 ```
 
-Some key parts of this script.
+このスクリプトの重要部分。
 
 ```javascript
 this.app.loader.getHandler("texture").crossOrigin = "anonymous";
 ```
 
-This line is required to ensure that the resource loader can load textures from a different origin (URL) than the location where the application is hosted (i.e. `playcanv.as).
+この行は、リソースローダがアプリケーションがホストされている場所とは異なる起源(URL)からテクスチャを読み込むことができることを保証するために必要です(例：`playcanv.as)。
 
 ```javascript
 this.app.on("fb:login", this.reset, this);
 ```
 
-This line listens for the login event from our `fb-ui.js` file. When the user logs in, we start the process of loading the photos.
+この行は、`fb-ui.js`ファイルからログインイベントをリッスンします。ユーザがログインする際に写真の読み込み処理を開始します。
 
 ```javascript
 // request the most recent photos from user's facebook account
@@ -247,9 +247,9 @@ FB.api(path, function (lists) {
 });
 ```
 
-In this section of code we are using the Facebook API to access their [Graph API][2]. In this case, we're loading a list of photos from the logged in user, and then querying each photo to get the URL of the image.
+コードのこのセクションでは、Facebook API を使用してその[Graph API][2]にアクセスします。この場合、ログインしているユーザーの写真のリストを読み込み、各写真を照会して画像のURLを取得します。
 
-Once we have the URL, we create a new `texture` asset and we load the image.
+URLを取得したら新しい `texture`アセットを作成して画像を読み込みます。
 
 ```javascript
 FacePhoto.prototype.createPhoto = function(texture) {
@@ -274,13 +274,13 @@ FacePhoto.prototype.createPhoto = function(texture) {
 };
 ```
 
-Finally, once we have loaded the texture asset, we create a new Photo entity and we override the emissive texture with our newly loaded photo texture.
+最後に、テクスチャアセットを読み込んだら、新しいフォトエンティティを作成して新たに読み込まれた写真のテクスチャで発光テクスチャを上書きします。
 
-### More ideas
+### その他のアイディア
 
-This tutorial shows you how you can load the Facebook API and access Facebook data from within your PlayCanvas application. There are loads more things for you to try using the Facebook API. For example, try sharing Facebook Stories when game events occur, like breaking a high score. Or use the user's friend list to get them to challenge their friends to a game.
+このチュートリアルでは、PlayCanvasアプリケーション内からFacebook APIとFacebookデータを読み込む方法を説明しています。Facebook APIを使用して試せることは沢山あります。例えば、新記録達成などのゲームイベントが発生したときにFacebookにストーリーとして共有できます。または、ユーザのフレンドリストを取得して友人に挑戦状を送ることもできます。
 
-Our game SWOOOP shows some of these in action. Try it on [Facebook][4] now.
+SWOOOPはゲームでこれらのいくつかを実践しています。[Facebook][4]でお試しください。
 
 [1]: http://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api

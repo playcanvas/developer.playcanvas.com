@@ -1,17 +1,17 @@
 ---
-title: Creating a Music Visualizer
+title:音楽ビジュアライザの作成
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/BqhCi6oy"></iframe>
 
-*Find out more by forking the [full project][1].*
+*[完成されたプロジェクト][1]をフォークして詳細をご確認ください。*
 
-This tutorial teaches you how to create a Music Visualizer application in WebGL using PlayCanvas. We're going to take an audio stream extra frequency data and then render that data into a PlayCanvas canvas.
+このチュートリアルでは、PlayCanvasを使用して、WebGLの音楽ビジュアライザアプリケーションを作成する方法を説明します。オーディオストリームの余分な周波数データを取得し、PlayCanvasキャンバスにそのデータをレンダリングします。
 
-Our music visualizer consists of two scripts. The analyser, plays the audio and extracts the data via an Analyser Node. Which is part of the Web Audio API built into modern browsers. The visualizer, takes the data from the analyser and renders it onto screen as a funky graph.
+音楽ビジュアライザは2つのスクリプトで構成されています。アナライザは、オーディオを再生し、アナライザノードを介してデータを抽出します。これは最新のブラウザに組み込まれているWeb Audio APIの一部です。ビジュアライザは、アナライザからデータを取得してグラフとして画面上にそれをレンダリングします。
 
-## The Analyser
+## アナライザ
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -43,17 +43,17 @@ Analyser.prototype.update = function(dt) {
 };
 ```
 
-Let's take a closer look at the code here.
+こちらのコードをご確認ください。
 
-First we get hold of the `context`. This is the applications instance of an [`AudioContext`][2]. We use this to create a new [`AnalyserNode`][3] which is part of the Web Audio API the standard across all modern browsers. The `AnalyserNode` let's us access the raw data of the audio every frame as an array of values. It has a couple of properties `smoothingTimeConstant` determines whether the data sampling is smoothed over time. `0` means no smoothing, `1` means super-smooth. And `fftSize` this determines how many samples the analyser node will generate. It must be a power of two, the higher it is the more detailed and the more expensive for your CPU.
+まず、`context`を取得します。これは[`AudioContext`][2]のアプリケーションインスタンスです。これは、最新ブラウザの標準であるWeb Audio APIに含まれる[`AnalyserNode`][3] を新規で作成するために使用します。`AnalyserNode`により、フレーム毎にオーディオの生のデータに値の配列としてアクセスすることが可能になります。いくつかの`smoothingTimeConstant`プロパティにより、データサンプリングが時間と共に平滑化されるかどうかを決定します。`0`の場合は平滑化されません。`1`は非常に滑らかになります。`fftSize`は、アナライザノードが生成するサンプル数を定義します。これは2の累乗である必要があります。高いく設定するほど綿密になり、CPUに負荷がかかります。
 
-You can access the data from the `AnalyserNode` as integers, in a `Uint8Array` or as floats, in a `Float32Array`. In this demo we use floats, so we allocate two `Float32Arrays` each one needs to be half as big as `fftSize`.
+`Float32Array`のフロート、または` Uint8Array`の整数として`AnalyserNode`からデータにアクセスすることができます。このデモではフロートを使用しているので、2つの`Float32Arrays`を割り当てます。それぞれが`fftSize`の半分の大きさである必要があります。
 
-The final part of the setup is to use `setExternalNodes` from the PlayCanvas SoundSlot API to insert this new node into the node chain in the Sound Component.
+設定の最終ステップでは、PlayCanvasのSoundSlot APIの`setExternalNodes` を使用して、サウンドコンポーネント内のノードチェーンにこの新しいノードを挿入します。
 
-Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData` and `getFloatTimeDomainData` to fill our arrays with data. We'll be using this data in our Visualizer script.
+次に、更新ループで`AnalyserNode`メソッドの` getByteFrequencyData`と `getFloat TimeDomainData`を使用してデータで配列を埋めます。ビジュアライザスクリプトでこのデータを使用します。
 
-## The Visualizer
+## ビジュアライザ
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');
@@ -119,17 +119,17 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 };
 ```
 
-The visualizer script takes all the data from the analyser and renders it as line graph using the [`this.app.renderLines`][4] API.
+ビジュアライザスクリプトはアナライザからすべてのデータを取得して、 [`this.app.renderLines`][4] APIを使用して折れ線グラフとして描画します。
 
-In our setup we are allocating a load of vectors to use in for the lines. We need 2 for every point of data (for the start and end of the lines). Then we are setting up some scale factors to make sure the lines all appear on the screen. The `AnalyserNode` contains a min and max value of decibels that the data can contain. I've found this isn't particular accurate (I definitely got values outside of this range) but it forms a good basis for normalizing the data.
+設定では、線に使用するベクターを割り当てています。各データの点に対して2つ必要です(線の開始と終了)。その後、すべての線が画面に表示されることを確認するためにいくつかのスケールファクタを設定します。`AnalyserNode`にはデータに含むことができるデシベルの最小値と最大値が含まれています。これは必ず正確ではないようですが(この範囲外の値を取得しました)、データを正規化するための良い基礎となります。
 
-The `renderData` function loops through all the data and sets one of our pre-allocated vectors to be the start at the current point and finish at the next point.
+`renderData`機能は、すべてのデータをループして、事前に割り当てられたベクターを現在の点を開始点、次の点を終了点になるよう設定します。
 
-In our update loop we render the graphs for both the Frequency Data and the Time Domain Data.
+更新ループでは、Frequency Dataおよび Time Domain Dataの両方のグラフを描画します。
 
-## More ideas?
+## その他のアイディア？
 
-This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to soundcloud and let users pick tracks? There are loads of possibilities.
+音楽の視覚化の方法を一部紹介させていただきました。音楽に合わせて3Dバーのスケーリングや色や明るさの調整を行うこともできます。SoundCloudにビジュアライザを繋げてユーザに選択させる方法もあります。可能性はたくさんあります。
 
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext

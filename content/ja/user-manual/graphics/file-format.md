@@ -1,12 +1,12 @@
 ---
-title: File Format
+title: フォルダ形式
 template: usermanual-page.tmpl.html
 position: 7
 ---
 
-Generally speaking, you do not need to know the structure of the file format used to serialize your models. However, this section describes the format for those who are interested in writing their own file converters.
+基本的には、ファイル形式の構造が分からなくてもモデルをシリアル化することができます。しかし、このセクションでは、独自のファイルコンバータを書く場合の形式について説明します。
 
-To get models into PlayCanvas, you have to upload an FBX (or OBJ, DAE, DXJ, 3DS) file. On the server, this file is converted to a JSON format. This format is textual. Let's take a look at a very simple example of a plane consisting of two triangles:
+PlayCanvasにモデルを取りこむには、FBXファイル(またはOBJ、DAE、DXJ、3DS)をアップロードする必要があります。サーバでは、このファイルはJSON形式に変換されます。この形式はテキストです。2つの三角形を有する平面の簡単な例を見てみましょう：
 
 ~~~javascript~~~
 {
@@ -65,43 +65,43 @@ To get models into PlayCanvas, you have to upload an FBX (or OBJ, DAE, DXJ, 3DS)
 }
 ~~~
 
-Here is a reference for the different properties that appear in the JSON object above:
+上記のJSONオブジェクトに表示される異なるプロパティの参照です：
 
 <table>
-  <tr><th>Property</th><th>Description</th></tr>
-  <tr><td>model</td><td>Denotes that this JSON object is a PlayCanvas model.</td></tr>
-  <tr><td>version</td><td>The version of the JSON object. Current head version is 2.</td></tr>
-  <tr><td>nodes</td><td>An array of nodes that constitute the scene hierarchy. The array is flat but the 'parents' array specifies the parent-child relationships between scene nodes.</td></tr>
-  <tr><td>name</td><td>The node's name (usually assigned by an artist).</td></tr>
-  <tr><td>position</td><td>3-component position (XYZ) relative to the node's parent.</td></tr>
-  <tr><td>rotation</td><td>3-component Euler angle rotation (XYZ) relative to the node's parent. Units are degrees.</td></tr>
-  <tr><td>scale</td><td>3-component scale (XYZ) relative to the node's parent.</td></tr>
-  <tr><td>parents</td><td>Array of parent node indices. The root node has a parent of -1. In the example above, the node 'Plane' has 'RootNode' for a parent.</td></tr>
-  <tr><td>skins</td><td>Skinning data is left undocumented for now.</td></tr>
+  <tr><th>プロパティ</th><th>説明</th></tr>
+  <tr><td>model</td><td>このJSONオブジェクトがPlayCanvasモデルであることを示します。</td></tr>
+  <tr><td>version</td><td>JSONオブジェクトのバージョン。現在の最新バージョンは2です。</td></tr>
+  <tr><td>nodes</td><td>シーンの階層を構成するノードの配列。配列は平坦ですが、親の配列はシーンのノード間の親子関係を指定します。</td></tr>
+  <tr><td>name</td><td>ノードの名前(通常はアーティストによって割り当てられる)。</td></tr>
+  <tr><td>position</td><td>ノードの親に相対する3つのコンポーネントの位置(XYZ)。</td></tr>
+  <tr><td>rotation</td><td>ノードの親に相対する3つのコンポーネントのオイラー角回転(XYZ)。単位は度です。</td></tr>
+  <tr><td>scale</td><td>ノードの親に相対する3つのコンポーネントの尺度(XYZ)。</td></tr>
+  <tr><td>parents</td><td>親ノードのインデックスの配列。ルートノードの親は-1です。上記の例では、「Plane」ノードの親は「RootNode」です。</td></tr>
+  <tr><td>skins</td><td>現時点ではデータのスキンに関するドキュメントはありません。</td></tr>
   <tr>
     <td>vertices</td>
     <td>
-      An array of objects containing vertex information. Each object has a number of vertex properties. These can be:
+      頂点情報を含むオブジェクトの配列。各オブジェクトには複数の頂点プロパティがあります。次に設定できます；
       <ul>
-        <li>position: vertex positions</li>
-        <li>normal: vertex normals</li>
-        <li>texCoord0: first texture coordinate set</li>
-        <li>texCoord1: second texture coordinate set</li>
-        <li>skinWeights: vertex skin weights</li>
-        <li>skinIndices: vertex skin indices</li>
-        <li>color: vertex colors</li>
+        <li>position: 頂点の位置</li>
+        <li>normal: 頂点の法線</li>
+        <li>texCoord0: 最初のテクスチャの座標セット</li>
+        <li>texCoord1: 二つ目のテクスチャの座標セット</li>
+        <li>skinWeights: 頂点のスキンウェイト</li>
+        <li>skinIndices: 頂点のスキンインデックス</li>
+        <li>color: 頂点の色</li>
       </ul>
-      Each property has a type (float32, uint8, uint16, uint64) and a number of components (1-4).
+      各プロパティにはタイプ(float32, uint8, uint16, uint64)といくつかのコンポーネント(1-4)があります。
     </td>
   </tr>
-  <tr><td>meshes</td><td>An array of mesh objects. Mesh are used to interpret how vertex information is rendered.</td></tr>
-  <tr><td>aabb</td><td>The axis-aligned local space bounding box of a mesh.</td></tr>
-  <tr><td>min</td><td>The minimum coordinate of the mesh's axis-aligned bounding box.</td></tr>
-  <tr><td>max</td><td>The maximum coordinate of the mesh's axis-aligned bounding box.</td></tr>
-  <tr><td>vertices</td><td>The index of the vertex information object referenced by this mesh.</td></tr>
-  <tr><td>indices</td><td>An array of indices that defines the points of the primitive represented by the mesh.</td></tr>
+  <tr><td>meshes</td><td>メッシュオブジェクトの配列。メッシュは頂点情報のレンダリング方法を判断するために使用されます。</td></tr>
+  <tr><td>aabb</td><td>メッシュのローカル空間の軸整列された外接枠。</td></tr>
+  <tr><td>min</td><td>メッシュの軸整列された外接枠の 最小座標値。</td></tr>
+  <tr><td>max</td><td>メッシュの軸整列された外接枠の 最高座標値。</td></tr>
+  <tr><td>vertices</td><td>このメッシュによって参照される頂点情報オブジェクトのインデックス。</td></tr>
+  <tr><td>indices</td><td>メッシュが表すプリミティブの点を定義するインデックスの配列。</td></tr>
   <tr><td>type</td>
-    <td>The type of the primitive of this mesh. Can be:
+    <td>このメッシュのプリミティブのタイプ。次に設定できます：
       <ul>
         <li>points</li>
         <li>lines</li>
@@ -113,10 +113,10 @@ Here is a reference for the different properties that appear in the JSON object 
       </ul>
     </td>
   </tr>
-  <tr><td>base</td><td>The first index used by this mesh.</td></tr>
-  <tr><td>count</td><td>The number of indices used by this mesh.</td></tr>
-  <tr><td>meshInstances</td><td>An array of objects representing instances of meshes. A single mesh can be shared between multiple mesh instances. This is an optimization that saves memory at runtime.</td></tr>
-  <tr><td>node</td><td>The index of the node referenced by this mesh instance.</td></tr>
-  <tr><td>mesh</td><td>The index of the mesh referenced by this mesh instance.</td></tr>
+  <tr><td>base</td><td>このメッシュが使用する最初のインデックス。</td></tr>
+  <tr><td>count</td><td>このメッシュによって使用されるインデックスの数。</td></tr>
+  <tr><td>meshInstances</td><td>メッシュのインスタンスを表すオブジェクトの配列。ひとつのメッシュを複数のメッシュのインスタンス間で共有することができます。そうすることで実行時にメモリを節約することができます。</td></tr>
+  <tr><td>node</td><td>このメッシュインスタンスが参照するノードのインデックス。</td></tr>
+  <tr><td>mesh</td><td>このメッシュインスタンスが参照するメッシュのインデックス。</td></tr>
 </table>
 

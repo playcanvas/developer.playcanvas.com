@@ -1,12 +1,12 @@
 ---
-title: Legacy Scripting
+title: 遗留脚本
 template: usermanual-page.tmpl.html
 position: 10
 ---
 
-This is the documentation for the legacy script system. The legacy script system is still available for new and existing projects. When you create a new project you are given the choice over which script system you wish to use.
+这是一份遗留脚本系统的文档。无论是新的项目还是旧的项目都是使用遗留脚本系统。当你创建一个新的项目的时候，会有一个选项供你选择使用哪一个脚本系统。
 
-In general, we recommend you use the new script system. However, there are some use cases where the legacy script system is still required. Use the legacy script system if:
+通常，我们会推荐你使用新的脚本系统。但是，对于有些使用案例来说，这个遗留脚本系统仍然是必需的。如果你需要以下功能，你可以使用遗留脚本系统：
 
 - you require the "local workflow". e.g. Editing scripts in text editor on your machine
 - you require integration with a version control system like Git or Mercurial

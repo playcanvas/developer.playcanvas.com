@@ -1,22 +1,22 @@
 ---
-title: Custom Post Effects
+title: カスタムポストエフェクト
 template: tutorial-page-legacy.tmpl.html
 position: 4
 ---
 
 <iframe src="https://playcanv.as/p/vQBffMnK" ></iframe>
 
-*This tutorial uses a custom post effect to create an effect in GLSL*
+*このチュートリアルでは、カスタムポストエフェクトを使ってGLSLでエフェクトを作成する方法を説明します。*
 
-## Overview
+## 概要
 
-You can create your own post effects in PlayCanvas, with a bit of Javascript and GLSL. Post effects are shaders that operate on the 2D rendered image from a camera. You can apply multiple post effects to your image - each effect uses the output of the previous effect as its input.
+JavascriptやGLSLを少し使って、PlayCanvas上でポストエフェクトを作成することができます。ポストエフェクトとは、カメラから2Dでレンダリングされた画像を扱うシェーダーです。画像に複数のポストエフェクトを適用することができますし、それぞれのエフェクトは前のエフェクトの結果を元に、エフェクトをかけることができます。
 
-In the next paragraphs we will demonstrate how to create your own post effects. You can see examples of existing post effects [here][1].
+次のセクションでは、ポストエフェクトの作り方を説明します。既存のポストエフェクトの例は[こちら][1]からご確認ください。
 
-## The script
+## スクリプト
 
-First we need to create a new script. This script will contain the [Shader Definition][2] for our post effect and also code that will add the post effect to the camera. This script needs to be attached to an Entity with a [Camera component][3]. We'll call this script posteffect_example.js:
+最初に、新しくスクリプトを作成する必要があります。このスクリプトには、ポストエフェクトのための [Shader Definition][2] 、そしてカメラにポストエフェクトを追加するためのコードが含まれています。なお、このスクリプトは[Camera component][3]を持つエンティティに添付する必要があります。こちらのposteffect_example.jsを呼びます：
 
 ```javascript
 pc.script.create('posteffect_example', function (app) {
@@ -33,9 +33,9 @@ pc.script.create('posteffect_example', function (app) {
 });
 ```
 
-## The effect
+## エフェクト
 
-Now we need to create a new class for our post effect. This class will derive from [pc.posteffect.PostEffect][4]. We will define this class inside our posteffect_example.js script just before the script definition:
+次にポストエフェクトのための新しいクラスを作成する必要があります。このクラスは[pc.posteffect.PostEffect][4]から引き継がれます。posteffect_example.js 内の定義の前部分で、そのクラスの定義を行います。
 
 ```javascript
 pc.extend(pc, function () {
@@ -77,9 +77,9 @@ pc.extend(pc, function () {
 }());
 ```
 
-## Wrap up
+## まとめ
 
-We now have all the required components for our post effect. All we need to do is add an instance of the ExamplePostEffect that we defined above to our camera's [post effect queue][5]:
+ポストエフェクトに必要なコンポーネントが用意できました。後は、さきほど定義したExamplePostEffect のインスタンスをカメラの [ポストエフェクトキュー][5]に追加するだけです。
 
 ```javascript
 pc.script.create('posteffect_example', function (app) {
@@ -111,7 +111,7 @@ pc.script.create('posteffect_example', function (app) {
 });
 ```
 
-And that's it! Here is the full script:
+以上です！以下がスクリプトの全文です。
 
 ```javascript
 pc.script.attribute("vertexShaderAssetId", "asset", null, {type: "shader", max: 1, displayName: "Vertex Shader"});
@@ -204,9 +204,9 @@ pc.script.create('posteffect_example', function (app) {
 });
 ```
 
-For more tutorials on custom shaders look [here][6].
+カスタムシェーダーのより詳しいチュートリアルは [こちら][6]。
 
-See the [Custom Post Effects project here][7].
+[カスタムポストエフェクトのプロジェクト][7] はこちらです。
 
 [2]: /api/pc.Shader.html
 [4]: /api/pc.PostEffect.html

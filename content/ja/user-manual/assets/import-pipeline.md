@@ -1,65 +1,65 @@
 ---
-title: Asset Import Pipeline
+title: アセットのインポートパイプライン
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Some assets are uploaded in source format and need to be converted into a "target" format before they can be used in a game at runtime. This process is called *Importing*. For example, a 3D model can be uploaded as an FBX file, but must be converted into a PlayCanvas compatible model file before it can be loaded in the game.
+一部のアセットは、ソースフォーマットでアップロードされ、実行時にゲーム内で使用する前にtargetフォーマットに変換する必要があります。この処理は*Importing*と呼ばれています。たとえば、3DモデルはFBXファイルとしてアップロードすることができますが、ゲーム内に読み込む前にPlayCanvasと互換性のあるモデルファイルに変換する必要があります。
 
-Some assets don't need to be imported before they can be used. For example a PNG image can be used as a texture immediately.
+使用前のインポートが不要なアセットもあります。例えば、PNG画像は即座にテクスチャとして使用することができます。
 
-## Asset Tasks
+## アセットのタスク
 
-When a source asset is uploaded that needs to be imported. PlayCanvas starts an Asset Task to perform this import process on our server. You can see the asset tasks that you are currently running in the Asset Panel.
+ソースアセットをアップロードする際、それをインポートする必要があります。PlayCanvasは、サーバ上でアセットタスクを開始してこのインポート処理を実行します。現在実行しているアセットタスクはアセットパネルで確認することができます。
 
-![asset tasks][1]
+![アセットのタスク][1]
 
-There are a variety of options available to tune the behaviour of the import pipeline to suit your needs.
+ニーズに合わせてインポートパイプラインの挙動をチューニングするために利用できるオプションが複数あります。
 
-![asset task options][2]
+![アセットタスクのオプション][2]
 
-### Auto-run
+### オートラン
 
-By default, when you upload a file we will automatically run the import pipline for that asset. If you don't want to run the pipeline you can disable auto-run from the task panel or from the settings.
+デフォルトでは、ファイルをアップロードすると、そのアセットのインポートパイプラインを自動的に実行します。パイプラインを実行したくない場合は、タスクパネルまたは設定からauto-runを無効にすることができます。
 
-If auto-run is disabled you can run or dismiss tasks individually from the asset panel.
+auto-rinが無効になっている場合、アセットパネルから個別にタスクを実行または却下することができます。
 
-### Search related assets
+### 検索関連のアセット
 
-When you update an source asset by uploading a new version of the file. There are two possible behaviours for how we update the target assets that are created by the import pipeline.
+新しいバージョンのファイルでソースアセットを更新する際、インポートパイプラインにより作成されるターゲットアセットを更新する方法が二つあります。
 
-* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
-* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
+***Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
+***Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
 
-So, if you leave this enabled, you are able to organize your source and target assets into folders and be sure that when you update a source assets it will update all related assets.
+つまり、これを有効する場合、ソースとターゲットのアセットをフォルダで整理し、ソースアセットを更新すると、すべての関連アセットが更新されるように設定できます。
 
-## Texture Options
+## テクスチャオプション
 
-These options only affect the importing of images and textures
+これらのオプションは、画像やテクスチャのインポートにのみ影響を与えます
 
-### Texture POT (Power of Two)
+### テクスチャ POT (Power of Two)
 
-When this option is enabled textures that are not a power of two will be converted to the nearest power of two resolution when they are imported.
+このオプションを有効にすると、2の乗数でないテクスチャはインポート時に最も近い2の乗数の解像度に変換されます。
 
-## Model Options
+## モデルオプション
 
-These options only affect the importing of model or scene files (e.g. FBX, Collada, obj, etc)
+これらのオプションは、モデルやシーンファイル (例：FBX, Collada, obj, 等)のインポートにのみ影響を与えます
 
-### Overwrite Models
+### モデルの上書き
 
-When a model file is updated or reimported this option determines whether or not the target model file is overwritten. The default behaviour is to overwrite with the new model.
+モデルファイルが更新または再インポートされる際、このオプションは、ターゲットモデルのファイルが上書きされるか否かを定義します。デフォルトでは、新しいモデルで上書きします。
 
-### Overwrite Animations
+### アニメーションの上書き
 
-When a model file is updated or reimported this option determines whether or not a animations created from the model are overwritten. The default behaviour is to overwrite with the new animations.
+モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたアニメーションが上書きされるか否かを定義します。デフォルトでは、新しいアニメーションで上書きします。
 
-### Overwrite Materials
+### 素材の上書き
 
-When a model file is updated or reimported this option determines whether or not materials created from the model are overwritten. The default behaviour is to leave existing materials.
+モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成された素材が上書きされるか否かを定義します。デフォルトでは、既存の素材を維持します。
 
-### Overwrite Textures
+### テクスチャの上書き
 
-When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behaviour is to overwrite with the new textures.
+モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたテクスチャが上書きされるか否かを定義します。デフォルトでは、新しいテクスチャで上書きします。
 
 [1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
 [2]: /images/user-manual/assets/import-pipeline/asset-tasks.jpg

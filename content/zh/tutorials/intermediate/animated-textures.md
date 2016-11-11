@@ -1,17 +1,17 @@
 ---
-title: Animated Textures
+title: 动画纹理
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="http://playcanv.as/p/qFDE1q2H"></iframe>
 
-*Two types of texture animation. The plane is simple scrolling material, the others are animation frames. See the [full project][1].*
+*两种类型的纹理动画。 平面是简单的滚动材料，其他是动画帧。 参见[完整项目] [1]。*
 
-It can be very useful to animate a material that has been applied to a surface. Two common use-cases are shown in this tutorial. The first is to scroll a texture to simulate some movement. The second is to use a sprite sheet to play back animation frames.
+对已经应用了的材质进行动画操作可能非常有用。 本教程中显示了两个常见的用例。 第一个是滚动纹理来模拟一些运动。 第二个是使用精灵表来回放动画帧。
 
-## Scrolling a material with map offset
+## 使用贴图偏移量滚动一个材质
 
-The square plane in the example uses the script `scrolling-texture.js` to constantly move the UV offset every frame. For example, this can be used to simulate flowing water. The update loop is displayed below.
+在该示例中的正方形平面使用脚本`scrolling-texture.js` 来不断地每帧移动UV偏移量。 举个例子，这可以用于模拟流动的水。 更新循环如下所示。
 
 ```javascript
 ScrollingTexture.prototype.update = function(dt) {
@@ -29,15 +29,15 @@ ScrollingTexture.prototype.update = function(dt) {
 };
 ```
 
-We calculate the required offset into a temporary vector `tmp`. This is simply: `speed * timeStep`. Then we add this offset to the offset property for both the diffuse map and the normal map by modifying the `diffuseMapOffset` and `normalMapOffset` properties. These values are `pc.Vec2`s which shift the UV co-ordinates used to map the texture to the surface. If you are using other maps (e.g. emissive) you will also need to update these offset properties as well. Finally we call `material.update()` to propogate the changes into the shader.
+我们计算一个临时向量“tmp”中的偏移量。 这很简单：`speed * timeStep`。 然后，我们通过修改diffuseMapOffset和normalMapOffset属性，将这个偏移量添加到diffuse map和normal map的offset属性中。 这些值是`pc.Vec2`类型的，它们移动用于将纹理映射到表面的UV坐标。 如果您使用其他忒土(例如自发光)，您还需要更新这些偏移属性。 最后，我们调用 `material.update()`将更改传播到着色器中。
 
-This is a simple straightforward method to modify a material's offset and scroll a texture. It does have one downside which is this code modifies the actual material's properties. So if you have multiple models in a scene with the same material, they will all be affected.
+这是一个简单直接的修改材料的偏移和滚动纹理的方式。 它有一个缺点是这个代码修改的是实际材料的属性。 所以如果你在一个场景中有多个相同材质的模型，它们都会受到影响。
 
-## Animating multiple materials with map offset
+## 使用贴图偏移量为材质设置动画
 
-If you want to have many entities with animating textures updating independently we modify the properties on the MeshInstance instead of on the material. When that mesh instance is rendered the material properties are overrided with parameters from the mesh instance. For example, this allows us to have several sprites using different animation frames but sharing the same material. The code for this is in the project file `animated-texture.js`
+如果你想有很多实体动画化纹理独立更新，我们需要修改MeshInstance而不是材质上的属性。 当渲染该网格实例时，材质属性将被来自网格实例的参数覆盖。 例如，这允许我们让多个精灵对象使用不同的动画帧但是共享相同的材质。 代码是在项目文件`animated-texture.js`中
 
-In our code example, the coins and the number counters are both duplicated and we've set them to use different frame rates and the numbers use different animation frames.
+在我们的代码示例中，硬币和数字计数器都会被复制，我们设置硬币使用不同的帧速率，数字使用不同的动画帧。
 
 ```javascript
 AnimatedTexture.prototype.update = function(dt) {
@@ -78,21 +78,21 @@ AnimatedTexture.prototype.updateMaterial = function (frame) {
 };
 ```
 
-In this example, we're taking a sprite sheet for example this rotating coin
+在这个例子中，我们使用精灵面片来示例这个旋转的硬币。
 
-![Coin][2]
+![硬币][2]
 
-We've set up script attributes which let us specify the size of each frame of animation, by specifying the width and height of the image; the starting frame number and the number of frames to play in the animation. This means we can select a single animation from a page of multiple animations. And finally the framerate to play the animation back at.
+我们设置了脚本属性，让我们通过指定图像的宽度和高度来指定每个动画帧的大小;开始帧编号和在动画中播放的帧数。 这意味着我们可以从多个动画的页面中选择一个单独的动画。 最后，我们开始帧速率播放动画。
 
-In our code we use a timer to count down to when we advance the frame then we convert the frame number into a UV co-ordinate on the texture. Noting that, for the V co-ordinate, 0 is the bottom of the texture. Whilst in spritesheets usually the run the animation top to bottom. So subtract the V co-ordinate from `(1 - dy)` when we set the offset transform.
+在我们的代码中，我们使用计时器倒计时，当我们推进帧时将帧号转换为纹理上的UV坐标。 注意，对于V坐标，0是纹理的底部。 而在精灵面片中通常从上到下运行动画。 因此，当我们设置偏移变换时，要从 `(1 - dy)` 中减去V坐标。
 
-The main difference from the previous scrolling example. Is that we're using `pc.MeshInstance.setParameter` to set a specific value in the shader. `setParameter` is lower level code than modifying the material as above. In order to use it we need to know the exact uniform variable name that the PlayCanvas shader uses to modify the map transform. In this case `texture_diffuseMapTransform` which is a 4 value array of numbers that represent the tiling and the offset.
+与上一个滚动示例的主要区别。 是我们使用 `pc.MeshInstance.setParameter` 在着色器中设置一个特定的值。 `setParameter` 是比上面修改材质更低级别的代码。 为了使用它，我们需要知道PlayCanvas着色器用来修改地图变换的确切的统一变量名称。 在这种情况下， `texture_diffuseMapTransform`是一个4值数组，表示平铺和偏移量。
 
 <div class="alert-info">
-`setParameter` is currently an undocumented API in the PlayCanvas engine. It is a very useful feature but is dependent on the exact variable names in the shader. As such, use it with caution as the engine code may change before it becomes public API.
+`setParameter` 目前是PlayCanvas引擎中未记录的API。 这是一个非常有用的功能，但依赖于着色器中的确切变量名称。 因为引擎代码可能会在它变成公共API之前有改变，因此请谨慎使用它。
 </div>
 
-As you can see in our example, the two coins have a different frame rate and one set of numbers is only using 3 frames for the animation. This method is very useful if you wish to make sprite-based 2D animation and the script `animated-texture.js` is a good starting point.
+正如你在我们的例子中可以看到的，两个硬币有不同的帧速率，一组数字只使用3帧的动画。 这个方法是非常有用的，如果你想制作基于精灵的2D动画，脚本`animated-texture.js`是一个很好的起点。
 
 [1]: https://playcanvas.com/project/405882
 [2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png

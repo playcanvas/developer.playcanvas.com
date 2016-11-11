@@ -1,38 +1,38 @@
 ---
-title: Profiler
+title: プロファイラ
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-PlayCanvas provides an real-time profiler to assist in diagnosing performance problems.
+PlayCanvasは、パフォーマンスの問題の診断を支援するためのリアルタイムプロファイラを提供しています。
 
-![Profiler][1]
+![プロファイラ][1]
 
-The Profiler is a panel that overlays your app, displaying lots of useful timing information and performance stats. So whenever you’re wondering why your app isn’t hitting 60 frames per second, simply launch the Profiler and you should be able to figure out exactly what the problem is.
+プロファイラは、有用なタイミング情報やパフォーマンス統計情報を表示して、アプリをオーバーレイするパネルです。アプリが60フレーム／秒に達していない場合は、プロファイラを起動すれば原因が明確になります。
 
-To launch the Profiler, make a selection from the sub-menu of the Launch button:
+プロファイラを起動するには、Launchボタンのサブメニューから選択します：
 
-![Profiler Launch][2]
+![プロファイラの起動][2]
 
-Depending on whether your scripts are served from PlayCanvas or a local server, select the relevant option that enables the Profiler. The Editor will remember the option you select for the next time you hit the Launch button.
+スクリプトがPlayCanvasまたはローカルサーバから配信されているか否かに応じて、プロファイラを有効にする、該当オプションを選択します。エディタは、次に起動ボタンを押す時のために、選択したオプションを記憶します。
 
-There is also a hot-key to toggle the Profiler: CTRL (CMD) + ALT + T.
+次のホットキーでプロファイラを切り替えることができます：CTRL (CMD) + ALT + T。
 
-## Profiler Overview
+## プロファイラの概要
 
-![Profiler Stats][3]
+![プロファイラの統計][3]
 
-The left-hand panel of the Profiler displays statistics related to the currently rendered scene. It displays frame rate, the number of cameras enabled (you will normally want this to be 1), the number of shaders, materials, triangles and so on. Also, frame time is broken down into update (the time to run all component updates), physics (simulation time) and render time (the time to pass all of the graphics commands to WebGL). At a glance, you can quickly see where there might be problems.
+プロファイラの左側のパネルは現在レンダリングされているシーンに関連する統計情報を表示します。フレームレート、有効なカメラの数(通常は1)、シェーダの数、素材、三角形、等が表示されます。また、フレーム時間は、更新(すべてのコンポーネントのアップデートを実行する時間)、物理(シミュレーション時間)、レンダリング時間(WebGLに全てのグラフィックコマンドを渡す時間)に分かれています。一見するだけで問題の箇所を特定できます。
 
-![Profiler Timeline][4]
+![プロファイラのタイムライン][4]
 
-The right-hand panel is the Profiler Timeline. It displays a number of key events in your app’s life from launch:
+右側のパネルはプロファイラータイムラインです。アプリのライフのキーイベントを表示します：
 
-* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
-* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
-* **start**: event when PlayCanvas begins the main application loop and rendering begins.
+* **dom** (DOMインタラクティブ)：ブラウザがHTML文書を解析終了し、ページの最初のフレームを画面にレンダリングすることができるイベント。
+* **preload**: PlayCanvasが、アプリが起動する前に必要とされるすべてのアセットのプリロードを開始するイベント。
+* **start**: PlayCanvasが、メインアプリケーションのループを開始し、レンダリングを開始するイベント。
 
-Green bars represent individual asynchronous asset loads. Orange bars are blocking shader compilations.
+緑のバーは、個々の非同期アセットの負荷を表します。オレンジのバーは、シェーダのコンパイルをブロックしています。
 
 [1]: /images/user-manual/optimization/profiler/profiler.png
 [2]: /images/user-manual/optimization/profiler/profiler_launch.png

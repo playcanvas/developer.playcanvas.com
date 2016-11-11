@@ -35,7 +35,7 @@ Rigid bodyの形を定義するには、同じエンティティに[コリジョ
 
 ## スクリプティングインターフェイス
 
-You can control a Rigid Body component's properties using a [script component][5]. The Rigid Body component's scripting interface is [here][6].
+Rigidbodyコンポーネントのプロパティは[スクリプトコンポーネント][5]を使用して制御できます。Rigidbodyコンポーネントのスクリプティングインターフェイスは[こちら][6]です。
 
 [1]: /images/user-manual/scenes/components/component-rigid-body-static.png
 [2]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png

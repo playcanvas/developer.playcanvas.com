@@ -1,58 +1,58 @@
 ---
-title: Audio Effects
+title: オーディオ効果
 template: tutorial-page.tmpl.html
 ---
 
 <iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
 
-*Click on the various buttons to try out different sound effects.*
+*それぞれのボタンをクリックしてサウンドエフェクトを試してください。*
 
-<div class="alert alert-info">This tutorial requires Web Audio API support.</div>
+<div class="alert alert-info">このチュートリアルはWeb Audio API への対応を必要とします。</div>
 
-## Using The Web Audio API
+## Web Audio APIの使用
 
-PlayCanvas allows you to fully leverage the power of the Web Audio API to add powerful effects to your sounds. This tutorial demonstrates how to add various effects to an audio sample.
+PlayCanvasではWeb Audio APIを活用して音声に協力な効果を追加することができます。このチュートリアルでは、オーディオサンプルに様々な効果を追加する方法を説明します。
 
-## The setup
+## 設定
 
-You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Componenent with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
+[こちら][1]からシーンを確認できます。このシーンのルートエンティティには、ひとつのスロットで会話音声サンプルをループで再生する[Sound][2]コンポーネントがあります。Soundコンポーネントの仕組みにはこちらの[ベーシックチュートリアル][3]をご確認ください。
 
-The Root Entity also has a [Script][4] Component with two scripts. One script is responsible for the user interface and the other is the script we're going to focus on: <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>.
+ルートエンティティには、2つのスクリプトを持つ[スクリプト][4]コンポーネントがあります。一つのスクリプトはユーザーインターフェイスを担当します。次の、もう一方のスクリプトについて説明します： <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>
 
-This script manages the sound effects of the application.
+このスクリプトはアプリケーションの効果音を管理します。
 
-## Using AudioNodes
+## AudioNodesの使用
 
-The Web Audio API allows you to create various audio nodes which can be connected together to form an audio routing graph. When an audio sample is played it gets processes by each node and eventually reaches the destination usually your speakers. You can find out more details [here][5].
+Web Audio APIを使用すると、様々なオーディオノードを作成して、それらを接続してオーディオルーティンググラフを形成することができます。オーディオサンプルが再生されると、各ノードによって処理され、最終的に目的地に到達します（通常はスピーカー）。詳細は[こちら][5]です。
 
-In this example we are using a [Convolver node][6]. In our application script we are creating that node like so:
+この例では、[Convolver node][6]を使用しています。アプリケーションスクリプトでは、次のようにノードを作成しています：
 
 ~~~javascript~~~
 this.convolver = this.app.systems.sound.context.createConvolver();
 ~~~
 
-We then use a bunch of audio samples as impulse responses for the convolver as explained [here][7]. Each audio sample is an audio asset and depending on which button you press we use that asset and assign its internal buffer to the convolver buffer like so:
+[こちら][7]で説明しているように、コンボルバのインパルス応答として、オーディオサンプルを複数使用します。それぞれのオーディオサンプルはオーディオアセットです。押すボタンに応じてそのアセットを使用して、次のようにコンボルババッファに対して内部バッファを割り当てます。
 
 ~~~javascript~~~
 var asset = this[assetName];
 this.convolver.buffer = asset.resource.buffer;
 ~~~
 
-We then connect the convolver to our sound slot like so:
+次に、以下のように音声スロットにコンボルバを接続します：
 
 ~~~javascript~~~
 this.entity.sound.slot('speech').setExternalNodes(this.convolver);
 ~~~
 
-If you click on the button called 'None' we clear all the effects which basically means calling ```clearExternalNodes``` on the slot:
+Noneというボタンをクリックするとすべてのエフェクトをオフにしてスロットで```clearExternalNodes``` を呼び出します：
 
 ~~~javascript~~~
 this.entity.sound.slot('speech').clearExternalNodes();
 ~~~
 
-If you have a bigger graph of Audio Nodes and you want to connect it to a slot you need to supply the first node and the last node of the graph in ```setExternalNodes```. That way PlayCanvas can correctly connect the last node to the speakers.
+オーディオノードの大きなグラフがあり、スロットに接続したい場合は、```setExternalNodes```のグラフの最後のノードと最初のノードを指定する必要があります。そうすることで、PlayCanvasはスピーカーに正しく最後のノードを接続することができます。
 
-You can find out more about the Sound Component API [here][8].
+サウンドコンポーネントのAPIに関する詳細は[こちら][8]。
 
 [1]: https://playcanvas.com/editor/scene/440346
 [2]: /user-manual/packs/components/sound

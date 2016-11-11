@@ -1,19 +1,18 @@
 ---
-title: More Cameras
+title: 更多的摄像机
 template: tutorial-page-legacy.tmpl.html
 position: 3
 ---
 
 <iframe src="http://apps.playcanvas.com/playcanvas/tutorials/more_cameras?overlay=false" ></iframe>
 
-*Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
+*点击屏幕以聚焦, 然后按`空格`来拉近或推远镜头, 按下`左箭头`和 `右箭头`来选择切换成左边或右边的摄像机*
 
-The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
+ [基础摄像机][1] 教程中引导了我们创建一个摄像机的实体并把它加入到你的场景中。对于一个单独的静态的摄像机而言,不需要配置任何脚本。但是对于一个动态的可互动或包含更高级的应用的相机，你可能要为其附加一个脚本组件，并为相机的行为进行编程。
 
-## Altering Attributes
+## 更改属性
 
-The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
-methods on the ComponentSystem.
+你能够在运行时修改摄像机的第一种方法，是改变摄像机组件上的值。你可以像编辑其它组建一样通过组件系统中的`set()` 和 `get()`方法做到这点。
 
 ~~~javascript~~~
 pc.script.create('zoom', function (app) {
@@ -63,20 +62,19 @@ pc.script.create('zoom', function (app) {
 });
 ~~~
 
-In this sample pressing the spacebar triggers a change in field of view. With the line `var fov = this.entity.camera.fov` we `get()` the value of `fov` from the camera component of the entity that this script is attached to.
+在此示例中，按空格键触发视野的变化。 我们通过 `var fov = this.entity.camera.fov` 行 `get()` 来自该脚本附加到的实体的相机组件的`fov'的值。
 
-With `app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
+通过 `app.keyboard.wasPressed()` 我们检测按键并在目标fov的值之间切换。
 
-With the final two nested `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
+使用最后两个嵌套的 `if(){}` 构造，我们逐渐改变fov值来创建放大/缩小效果。
 
-With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
+使用 `this.entity.camera.fov = fov`我们将`set()` 摄像机的fov属性设置为新的值。
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
-top and bottom sides of the camera [frustum][2]
+请注意，当缩小时，顶部和底部的多维数据集位于屏幕的边缘，这与我们对[PlayCanvas 编辑器场景] [3]的期望相符，其中立方体位于相机[视角椎体边缘] [2]的顶部和底部。
 
-## Current Camera
+## 当前相机
 
-Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your Scene; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
+您可能想要与相机创建交互性的另一种方法是通过在多个相机之间切换。 你可以通过添加几个相机实体到你的场景来实现这一点; 确保只有一个被激活; 然后在运行时更改脚本中的当前相机。
 
 ~~~javascript~~~
 pc.script.create('camera_manager', function (app) {
@@ -124,13 +122,13 @@ pc.script.create('camera_manager', function (app) {
 });
 ~~~
 
-In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Scene) and the space key activates the central camera.
+在此示例中，按箭头键将当前摄像机设置为左侧或右侧摄像机实体(来自当前加载的场景中的那些)，空格键激活中央摄像机。
 
-We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `app.root.findByName()` to search through all the entities in the Scene).
+我们最初创建一个函数来通过名称找到我们想要的摄像机实体 - 将 `findByName()` 函数应用于此脚本的父实体(假设摄像机就位于那里，则不需要使用`app.root.findByName()` 来搜索场景中的所有实体)。
 
-We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Editor scene)][3].
+我们设置一个对象，包含对应于箭头和空格键的摄像机实体的名称 [参见(编辑器场景)][3]。
 
-Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
+接下来，我们循环遍历键，如果一个被按下，我们通过它的名称找到对应的实体，我们使用我们在脚本中早期定义的`setCamera()` 函数设置它为当前相机，禁用当前活动的摄像头， 然后找到要激活的新相机。
 
 [1]: /tutorials/legacy/beginner/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum

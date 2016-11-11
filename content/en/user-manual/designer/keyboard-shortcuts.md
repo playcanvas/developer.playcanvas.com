@@ -50,7 +50,7 @@ The Editor's Camera is controlled with the Mouse and Keyboard
 
 Note that on a Mac, CMD should be used instead of CTRL.
 
-<table class="head-column">
+<table class="three-column">
     <tr>
         <td>Launch</td><td>Launch the scene in a new tab</td><td>CTRL + ENTER</td>
     </tr>
@@ -92,6 +92,9 @@ Note that on a Mac, CMD should be used instead of CTRL.
     </tr>
     <tr>
         <td>Bake</td><td>Re-bake and recalculate lights</td><td>CTRL + B</td>
+    </tr>
+    <tr>
+        <td>Previous Selection</td><td>Select previously selected items</td><td>SHIFT + Z</td>
     </tr>
     <tr>
         <td>Undo</td><td>Undo the last action performed by the user</td><td>CTRL + Z</td>

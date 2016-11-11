@@ -155,7 +155,7 @@
     "Chrome Web Store": "Chrome ウェブストア",
     "Communication with web pages": "ウェブページとの通信",
     "Facebook": "Facebook",
-    "Hosting using a CDN": "",
+    "Hosting using a CDN": "CDNを使用してホスティング",
     "Web": "ウェブ",
     "Kongregate": "Kongregate",
     "PlayCanvas Hosting": "PlayCanvas ホスティング",

@@ -18,38 +18,38 @@ Keepy Upゲームはサッカーボールを使用します。プレイヤーの
 var Ball = pc.createScript('ball');
 
 Ball.attributes.add('gravity', {
-    型: 'number',
-    デフォルト: -9.8,
-    説明: '使用する引力の値'
+    type: 'number',
+    default: -9.8,
+    description: '使用する引力の値'
 });
 
 Ball.attributes.add('defaultTap', {
-    型: 'number',
-    デフォルト: 5,
-    説明: 'ボールをタップした際に設定する速度'
+    type: 'number',
+    default: 5,
+    description: 'ボールをタップした際に設定する速度'
 });
 
 Ball.attributes.add('impactEffect', {
-    型: 'entity',
-    説明: 'ボールをタップした際にトリガーするパーティクル効果'
+    type: 'entity',
+    description: 'ボールをタップした際にトリガーするパーティクル効果'
 });
 
 Ball.attributes.add('ballMinimum', {
-    型: 'number',
-    デフォルト: -6,
-    説明: 'ボールが最低のy値を下回るとゲームオーバーがトリガーされる'
+    type: 'number',
+    default: -6,
+    description: 'ボールが最低のy値を下回るとゲームオーバーがトリガーされる'
 });
 
 Ball.attributes.add('speedMult', {
-    型: 'number',
-    デフォルト: 4,
-    説明: 'タップが中心から外れた場合にX速度に適用する乗数'
+    type: 'number',
+    default: 4,
+    description: 'タップが中心から外れた場合にX速度に適用する乗数'
 });
 
 Ball.attributes.add('angMult', {
-    型: 'number',
-    デフォルト: -6,
-    説明: 'タップが中心から外れた場合に角速度に適用する乗数'
+    type: 'number',
+    default: -6,
+    description: 'タップが中心から外れた場合に角速度に適用する乗数'
 });
 
 Ball.tmp = new pc.Vec3();
