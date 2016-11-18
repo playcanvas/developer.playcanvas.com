@@ -400,9 +400,18 @@
                     padding: 4px;
                 }
 
+                a {
+                    color: $sidebar-text-color;
+                }
+
                 .tutorial-filter-text {
                     font-size: 18px;
                     padding: 16px 8px;
+
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 }
 
                 .tutorial-checkbox {
@@ -413,6 +422,14 @@
                     }
                     &:before {
                         content: "\E377";
+                        @include pc-icon();
+                    }
+                }
+
+                .tutorial-checkbox:hover {
+                    &:before {
+                        cursor: pointer;
+                        content: "\E379";
                         @include pc-icon();
                     }
                 }

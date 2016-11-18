@@ -30,9 +30,6 @@
             header.setActive("video");
         } else if (url.indexOf("/tutorials/") >= 0) {
             tutorials.attach();
-            // tutorials.setCurrentNavbar(url);
-            // tutorials.setCurrentSidebar(url);
-
             header.setActive("tutorials")
         } else if (url.indexOf("/user-manual/") >= 0) {
             // usermanual
@@ -191,14 +188,13 @@
         attach: function() {
             var checkboxes = document.querySelectorAll('.tutorial-checkbox');
             checkboxes.forEach(function (cb) {
+                if (cb.classList.contains('disabled')) return;
                 cb.addEventListener('click', function (e) {
                     var i = tutorials.tags.indexOf(cb.dataset.tag);
                     if (i < 0) {
                         tutorials.tags.push(cb.dataset.tag);
-                        // tutorials.enableTag(cb.dataset.tag);
                     } else {
                         tutorials.tags.splice(i, 1);
-                        // tutorials.disableTag(cb.dataset.tag);
                     }
                     tutorials.filter();
                     e.preventDefault();
@@ -207,10 +203,13 @@
 
             var filters = document.querySelectorAll('.tutorial-filter-text');
             filters.forEach(function (filter) {
+                if (filter.classList.contains("disabled")) return;
                 filter.addEventListener('click', function (e) {
-                    // tutorials.clearTags();
-                    // tutorials.enableTag(filter.dataset.tag);
-                    tutorials.tags = [filter.dataset.tag];
+                    if (tutorials.tags.length === 1 && tutorials.tags[0] === filter.dataset.tag) {
+                        tutorials.tags = []; // toggle off
+                    } else {
+                        tutorials.tags = [filter.dataset.tag]; // toggle on
+                    }
                     tutorials.filter();
                     e.preventDefault();
                 });
@@ -290,10 +289,6 @@
                     item.classList.add('hidden');
                 }
             });
-        },
-
-        setFilters: function () {
-
         },
 
         setCurrentNavbar: function (url) {
