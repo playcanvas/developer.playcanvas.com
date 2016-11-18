@@ -16,6 +16,7 @@ var locale      = require("./lib/locale/index");
 var i18n        = require("./lib/i18n/index");
 var i18nout     = require("./lib/i18n-out/index");
 var contents    = require("./lib/contents-json/index");
+var tutorialBuilder = require('./lib/tutorials/index');
 
 var env = null;
 var args = process.argv.slice(2);
@@ -34,8 +35,6 @@ handlebars.registerPartial("usermanual-contents",
     fs.readFileSync(path.join(__dirname, "templates/partials/usermanual-contents.tmpl.html"), "utf-8"));
 handlebars.registerPartial("tutorial-navbar",
     fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-navbar.tmpl.html"), "utf-8"));
-handlebars.registerPartial("tutorial-navbar-legacy",
-    fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-navbar-legacy.tmpl.html"), "utf-8"));
 handlebars.registerPartial("tutorial-contents",
     fs.readFileSync(path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"), "utf-8"));
 handlebars.registerPartial("header",
@@ -106,18 +105,7 @@ m.use(i18n()({
     contentPath: "content/_usermanual_contents.json",
     partialName: "user-manual-navigation"
 }))
-.use(navbuilder("en/tutorials")({
-    engine: handlebars,
-    template: path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"),
-    contentPath: "content/_tutorial_contents.json",
-    partialName: "tutorials-navigation"
-}))
-.use(navbuilder("en/tutorials/legacy")({
-    engine: handlebars,
-    template: path.join(__dirname, "templates/partials/tutorial-contents.tmpl.html"),
-    contentPath: "content/_tutorial_contents_legacy.json",
-    partialName: "tutorials-navigation-legacy"
-}))
+.use(tutorialBuilder("en/tutorials")())
 .use(templates({
     engine: "handlebars",
     directory: "templates"
