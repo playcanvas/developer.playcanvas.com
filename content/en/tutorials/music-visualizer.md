@@ -1,6 +1,7 @@
 ---
 title: Creating a Music Visualizer
 template: tutorial-page.tmpl.html
+tags: audio
 ---
 
 <iframe src="http://playcanv.as/p/BqhCi6oy"></iframe>

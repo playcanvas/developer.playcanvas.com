@@ -1,6 +1,7 @@
 ---
 title: Real Time Multiplayer
 template: tutorial-page.tmpl.html
+tags: multiplayer, networking
 ---
 
 <iframe src="http://playcanv.as/p/XFp1Ty3X/" ></iframe>

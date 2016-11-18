@@ -1,7 +1,7 @@
 ---
 title: Custom Post Effects
 template: tutorial-page.tmpl.html
-position: 4
+tags: posteffects
 ---
 
 <iframe src="https://playcanv.as/p/3je0YP0q/" ></iframe>

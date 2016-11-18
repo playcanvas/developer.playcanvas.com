@@ -1,7 +1,7 @@
 ---
 title: Custom Shaders
 template: tutorial-page.tmpl.html
-position: 3
+tags: shaders, materials
 ---
 
 <iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>

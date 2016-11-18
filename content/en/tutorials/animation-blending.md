@@ -1,6 +1,7 @@
 ---
 title: Animation Blending
 template: tutorial-page.tmpl.html
+tags: animation
 ---
 
 <iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>

@@ -2,6 +2,7 @@
 title: Basic Cameras
 template: tutorial-page.tmpl.html
 position: 3
+tags: cameras
 ---
 
 ## Camera Entities

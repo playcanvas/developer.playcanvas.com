@@ -1,7 +1,7 @@
 ---
 title: Programmatically Creating Entities
 template: tutorial-page.tmpl.html
-position: 2
+tags: procedural, basics
 ---
 
 <iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>

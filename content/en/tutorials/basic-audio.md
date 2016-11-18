@@ -1,6 +1,7 @@
 ---
 title: Basic Audio
 template: tutorial-page.tmpl.html
+tags: audio
 ---
 
 <iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>

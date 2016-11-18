@@ -1,7 +1,7 @@
 ---
 title: First Person Movement
 template: tutorial-page.tmpl.html
-position: 4
+tags: input, camera
 ---
 
 <iframe src="https://playcanv.as/p/HzOzlZOC"></iframe>

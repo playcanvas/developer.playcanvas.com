@@ -1,7 +1,7 @@
 ---
 title: Video Textures
 template: tutorial-page.tmpl.html
-position: 5
+tags: video, textures
 ---
 
 <iframe src="http://playcanv.as/p/6wt5T87E"></iframe>

@@ -1,7 +1,7 @@
 ---
 title: More Cameras
 template: tutorial-page.tmpl.html
-position: 3
+tags: basics, camera
 ---
 
 <iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>

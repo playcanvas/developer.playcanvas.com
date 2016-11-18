@@ -1,7 +1,7 @@
 ---
 title: Basic Keyboard Input
 template: tutorial-page.tmpl.html
-position: 1
+tags: input
 ---
 
 <iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>

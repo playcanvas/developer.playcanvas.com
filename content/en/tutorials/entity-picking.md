@@ -1,7 +1,7 @@
 ---
 title: Entity Picking
 template: tutorial-page.tmpl.html
-position: 5
+tags: raycast
 ---
 
 <iframe src="https://playcanv.as/b/0iehjK3i/"></iframe>

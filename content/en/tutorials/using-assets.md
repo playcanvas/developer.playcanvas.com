@@ -1,6 +1,7 @@
 ---
 title: Using the Asset Registry
 template: tutorial-page.tmpl.html
+tags: loading, assets
 ---
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>

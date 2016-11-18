@@ -1,6 +1,7 @@
 ---
 title: Cardboard VR
 template: tutorial-page.tmpl.html
+tags: vr
 ---
 
 <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://playcanv.as/p/ItQwDzOa" ></iframe>

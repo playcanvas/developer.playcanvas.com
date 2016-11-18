@@ -1,7 +1,7 @@
 ---
 title: Terrain Generation from Heightmap
 template: tutorial-page.tmpl.html
-position: 5
+tags: procedural
 ---
 
 <iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>

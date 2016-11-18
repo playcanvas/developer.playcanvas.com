@@ -1,6 +1,7 @@
 ---
 title: Loading JSON Data
 template: tutorial-page.tmpl.html
+tags: loading
 ---
 
 <iframe src="https://playcanv.as/p/cHnXIXoN/" ></iframe>

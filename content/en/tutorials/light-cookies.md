@@ -1,6 +1,7 @@
 ---
 title: Light Cookies
 template: tutorial-page.tmpl.html
+tags: lights
 ---
 
 <iframe src="https://playcanv.as/p/AGtssoOU/"></iframe>

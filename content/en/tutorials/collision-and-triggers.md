@@ -1,6 +1,7 @@
 ---
 title: Collision and Triggers
 template: tutorial-page.tmpl.html
+tags: collision, physics
 ---
 
 <iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>

@@ -1,6 +1,7 @@
 ---
 title: Facebook API
 template: tutorial-page.tmpl.html
+tags: facebook
 ---
 
 <iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>

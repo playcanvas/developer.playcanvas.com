@@ -1,7 +1,7 @@
 ---
 title: Making a Simple Game - Part 4
 template: tutorial-page.tmpl.html
-position: 13
+tags: games
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>

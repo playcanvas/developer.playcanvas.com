@@ -1,7 +1,7 @@
 ---
 title: Procedural Levels
 template: tutorial-page.tmpl.html
-position: 5
+tags: procedural
 ---
 
 <iframe src="https://playcanv.as/p/smskdMrk/"></iframe>

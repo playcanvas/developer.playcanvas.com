@@ -1,6 +1,7 @@
 ---
 title: Audio Effects
 template: tutorial-page.tmpl.html
+tags: audio
 ---
 
 <iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>

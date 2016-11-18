@@ -1,7 +1,7 @@
 ---
 title: Basic Mouse Input
 template: tutorial-page.tmpl.html
-position: 2
+tags: mouse, input
 ---
 
 <iframe src="https://playcanv.as/p/MHIdZgaj?overlay=false"></iframe>
