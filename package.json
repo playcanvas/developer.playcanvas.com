@@ -10,6 +10,7 @@
     "metalsmith-metallic": "0.1.1",
     "metalsmith": "1.7.0",
     "handlebars": "4.0.4",
-    "http-server": "0.6.1"
+    "http-server": "0.6.1",
+    "request": "2.78.0"
   }
 }

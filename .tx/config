@@ -1357,3 +1357,249 @@ source_file = po/user-manual/publishing/web/hosting-cdn.en-US.po
 source_lang = en
 type = PO
 
+[playcanvas-developer-site.po-tutorials-animated-textures]
+file_filter = po/tutorials/animated-textures.<lang>.po
+source_file = po/tutorials/animated-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-animation-blending]
+file_filter = po/tutorials/animation-blending.<lang>.po
+source_file = po/tutorials/animation-blending.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-audio-effects]
+file_filter = po/tutorials/audio-effects.<lang>.po
+source_file = po/tutorials/audio-effects.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-basic-audio]
+file_filter = po/tutorials/basic-audio.<lang>.po
+source_file = po/tutorials/basic-audio.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-basic-cameras]
+file_filter = po/tutorials/basic-cameras.<lang>.po
+source_file = po/tutorials/basic-cameras.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-basic-materials]
+file_filter = po/tutorials/basic-materials.<lang>.po
+source_file = po/tutorials/basic-materials.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-cardboard-vr]
+file_filter = po/tutorials/cardboard-vr.<lang>.po
+source_file = po/tutorials/cardboard-vr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-collision-and-triggers]
+file_filter = po/tutorials/collision-and-triggers.<lang>.po
+source_file = po/tutorials/collision-and-triggers.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-controlling-lights]
+file_filter = po/tutorials/controlling-lights.<lang>.po
+source_file = po/tutorials/controlling-lights.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-custom-posteffect]
+file_filter = po/tutorials/custom-posteffect.<lang>.po
+source_file = po/tutorials/custom-posteffect.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-custom-shaders]
+file_filter = po/tutorials/custom-shaders.<lang>.po
+source_file = po/tutorials/custom-shaders.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-entity-picking]
+file_filter = po/tutorials/entity-picking.<lang>.po
+source_file = po/tutorials/entity-picking.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-facebook-api]
+file_filter = po/tutorials/facebook-api.<lang>.po
+source_file = po/tutorials/facebook-api.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-first-person-movement]
+file_filter = po/tutorials/first-person-movement.<lang>.po
+source_file = po/tutorials/first-person-movement.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keepyup-part-five]
+file_filter = po/tutorials/keepyup-part-five.<lang>.po
+source_file = po/tutorials/keepyup-part-five.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keepyup-part-four]
+file_filter = po/tutorials/keepyup-part-four.<lang>.po
+source_file = po/tutorials/keepyup-part-four.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keepyup-part-one]
+file_filter = po/tutorials/keepyup-part-one.<lang>.po
+source_file = po/tutorials/keepyup-part-one.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keepyup-part-six]
+file_filter = po/tutorials/keepyup-part-six.<lang>.po
+source_file = po/tutorials/keepyup-part-six.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keepyup-part-three]
+file_filter = po/tutorials/keepyup-part-three.<lang>.po
+source_file = po/tutorials/keepyup-part-three.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keepyup-part-two]
+file_filter = po/tutorials/keepyup-part-two.<lang>.po
+source_file = po/tutorials/keepyup-part-two.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-keyboard-input]
+file_filter = po/tutorials/keyboard-input.<lang>.po
+source_file = po/tutorials/keyboard-input.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-light-cookies]
+file_filter = po/tutorials/light-cookies.<lang>.po
+source_file = po/tutorials/light-cookies.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-light-halos]
+file_filter = po/tutorials/light-halos.<lang>.po
+source_file = po/tutorials/light-halos.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-loading-json]
+file_filter = po/tutorials/loading-json.<lang>.po
+source_file = po/tutorials/loading-json.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-manipulating-entities]
+file_filter = po/tutorials/manipulating-entities.<lang>.po
+source_file = po/tutorials/manipulating-entities.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-more-cameras]
+file_filter = po/tutorials/more-cameras.<lang>.po
+source_file = po/tutorials/more-cameras.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-mouse-input]
+file_filter = po/tutorials/mouse-input.<lang>.po
+source_file = po/tutorials/mouse-input.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-music-visualizer]
+file_filter = po/tutorials/music-visualizer.<lang>.po
+source_file = po/tutorials/music-visualizer.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-procedural-levels]
+file_filter = po/tutorials/procedural-levels.<lang>.po
+source_file = po/tutorials/procedural-levels.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-programmatically-creating]
+file_filter = po/tutorials/programmatically-creating.<lang>.po
+source_file = po/tutorials/programmatically-creating.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-real-time-multiplayer]
+file_filter = po/tutorials/real-time-multiplayer.<lang>.po
+source_file = po/tutorials/real-time-multiplayer.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-terrain-generation]
+file_filter = po/tutorials/terrain-generation.<lang>.po
+source_file = po/tutorials/terrain-generation.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-using-assets]
+file_filter = po/tutorials/using-assets.<lang>.po
+source_file = po/tutorials/using-assets.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-Using-forces-on-rigid-bodies]
+file_filter = po/tutorials/Using-forces-on-rigid-bodies.<lang>.po
+source_file = po/tutorials/Using-forces-on-rigid-bodies.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-video-textures]
+file_filter = po/tutorials/video-textures.<lang>.po
+source_file = po/tutorials/video-textures.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-creating-account]
+file_filter = po/user-manual/creating-account.<lang>.po
+source_file = po/user-manual/creating-account.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-optimization-troubleshooting-performance]
+file_filter = po/user-manual/optimization/troubleshooting-performance.<lang>.po
+source_file = po/user-manual/optimization/troubleshooting-performance.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-vr-index]
+file_filter = po/user-manual/vr/index.<lang>.po
+source_file = po/user-manual/vr/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-vr-optimizing-webvr]
+file_filter = po/user-manual/vr/optimizing-webvr.<lang>.po
+source_file = po/user-manual/vr/optimizing-webvr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-vr-types-of-vr]
+file_filter = po/user-manual/vr/types-of-vr.<lang>.po
+source_file = po/user-manual/vr/types-of-vr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-vr-using-webvr]
+file_filter = po/user-manual/vr/using-webvr.<lang>.po
+source_file = po/user-manual/vr/using-webvr.en-US.po
+source_lang = en
+type = PO
+

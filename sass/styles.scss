@@ -396,50 +396,43 @@
                 margin: 0;
                 padding: 0;
 
-                > li {
-                    padding: 10px 0px;
+                .tutorial-filter {
+                    padding: 4px;
+                }
 
-                    > ul > li {
-                        > a {
-                            color: $sidebar-text-color;
-                        }
+                a {
+                    color: $sidebar-text-color;
+                }
 
-                        &:hover {
-                            &:before {
-                                content: "\E113";
-                                @include font-icon();
-                                margin-left: -16px;
-                                margin-top: -2px;
-                                position: absolute;
-                            }
+                .tutorial-filter-text {
+                    font-size: 18px;
+                    padding: 16px 8px;
 
-                            > a {
-                                color: $sidebar-rollover-text-color;
-                            }
-
-                        }
-
-                        &.active {
-                            > a {
-                                color: $sidebar-active-text-color;
-                            }
-
-                            &:before {
-                                color: $playcanvas-orange;
-                                content: "\E113";
-                                @include font-icon();
-                                margin-left: -16px;
-                                margin-top: -2px;
-                                position: absolute;
-                            }
-                        }
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
                     }
                 }
 
-                &.level {
-                    display: none;
+                .tutorial-checkbox {
+                    font-size: 20px;
+                    &.on:before {
+                        content: "\E379";
+                        @include pc-icon();
+                    }
+                    &:before {
+                        content: "\E377";
+                        @include pc-icon();
+                    }
                 }
 
+                .tutorial-checkbox:hover {
+                    &:before {
+                        cursor: pointer;
+                        content: "\E379";
+                        @include pc-icon();
+                    }
+                }
             }
         }
 
@@ -666,28 +659,59 @@
                 }
             }
 
-            .tutorial-tag-cloud {
-                float: left;
-                text-align: center;
-                width: 33%;
-                font-size: 14px;
-                margin-bottom: 25px;
-
-                span {
-                    float: left;
-                    background-color: $navbar-background-color;
-                    padding: 0px 15px;
-                    margin: 5px;
-                }
-
+            .tutorial-cloud {
+                width: 100%;
                 a {
+                    float: left;
+                    text-align: center;
+                    background-color: $navbar-background-color;
+                    font-size: 18px;
+                    padding: 0px 16px;
+                    margin: 5px;
                     color: $navbar-text-color;
+                    whitespace: nowrap;
 
                     &:hover {
                         color: $main-link-color;
+                        background-color: lighten($navbar-background-color, 5%);
                         text-decoration: none;
                     }
                 }
+            }
+
+            a.tutorial-button {
+                font-size: 18px;
+                padding: 4px 12px 4px 0px;
+                color: $navbar-text-color;
+                background-color: $navbar-background-color;
+                border: 1px solid $navbar-text-color;
+                display: block;
+                width: 120px;
+                float: left;
+                margin-right: 10px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            a.project-button {
+               &:before {
+                    content: "\E226";
+                    @include font-icon();
+                    padding: 0px 8px 0px 10px;
+                }
+            }
+
+            a.editor-button {
+                &:before {
+                    content: "\E367";
+                    @include font-icon();
+                    padding: 0px 8px 0px 10px;
+                }
+            }
+
+            .hidden {
+                display: none;
             }
 
             .alert {
@@ -925,10 +949,6 @@
 
     .container {
         nav.usermanual {
-            width: 240px;
-        }
-
-        nav.tutorial {
             width: 240px;
         }
 
