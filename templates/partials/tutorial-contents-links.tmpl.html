@@ -2,6 +2,7 @@
 <nav class="tutorial">
     <h2>Filter</h2>
     <ul>
+        <li class="tutorial-filter"><span class='tutorial-checkbox disabled' data-tag="{{id}}"><a href="/tutorials"><span class="tutorial-filter-text disabled">All</span></a></li>
         {{#each tags}}
         <li class="tutorial-filter"><a href="/tutorials/?tags={{id}}"><span class='tutorial-checkbox disabled' data-tag="{{id}}"></span><span class="tutorial-filter-text disabled" data-tag="{{id}}">{{name}}</span></a></li>
         {{/each}}
@@ -11,7 +12,9 @@
 
 {{#lang-selector "ja"}}{{/lang-selector}}
 <nav class="tutorial">
+    <h2>Filter</h2>
     <ul>
+        <li class="tutorial-filter"><span class='tutorial-checkbox disabled' data-tag="{{id}}"><a href="/tutorials"><span class="tutorial-filter-text disabled">All</span></a></li>
         {{#each tags}}
         <li class="tutorial-filter"><span class='tutorial-checkbox off' data-tag="{{id}}"></span><span class="tutorial-filter-text" data-tag="{{id}}">{{name}}</span></li>
         {{/each}}
@@ -21,7 +24,9 @@
 
 {{#lang-selector "ru"}}{{/lang-selector}}
 <nav class="tutorial">
+    <h2>Filter</h2>
     <ul>
+        <li class="tutorial-filter"><span class='tutorial-checkbox disabled' data-tag="{{id}}"><a href="/tutorials"><span class="tutorial-filter-text disabled">All</span></a></li>
         {{#each tags}}
         <li class="tutorial-filter"><span class='tutorial-checkbox off' data-tag="{{id}}"></span><span class="tutorial-filter-text" data-tag="{{id}}">{{name}}</span></li>
         {{/each}}
@@ -31,7 +36,9 @@
 
 {{#lang-selector "zh"}}{{/lang-selector}}
 <nav class="tutorial">
+    <h2>Filter</h2>
     <ul>
+        <li class="tutorial-filter"><span class='tutorial-checkbox disabled' data-tag="{{id}}"><a href="/tutorials"><span class="tutorial-filter-text disabled">All</span></a></li>
         {{#each tags}}
         <li class="tutorial-filter"><span class='tutorial-checkbox off' data-tag="{{id}}"></span><span class="tutorial-filter-text" data-tag="{{id}}">{{name}}</span></li>
         {{/each}}
