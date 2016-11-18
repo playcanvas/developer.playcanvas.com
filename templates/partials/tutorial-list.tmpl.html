@@ -1,5 +1,38 @@
+{{#with pages}}
+{{#lang-selector "en"}}{{/lang-selector}}
+{{#with en}}
 <div class="tutorial-cloud">
-    {{#each pages}}
+    {{#each .}}
     <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}">{{title}}</a>
     {{/each}}
 </div>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+{{#lang-selector "ja"}}{{/lang-selector}}
+{{#with ja}}
+<div class="tutorial-cloud">
+    {{#each .}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}">{{title}}</a>
+    {{/each}}
+</div>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+{{#lang-selector "ru"}}{{/lang-selector}}
+{{#with ru}}
+<div class="tutorial-cloud">
+    {{#each .}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}">{{title}}</a>
+    {{/each}}
+</div>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+{{#lang-selector "zh"}}{{/lang-selector}}
+{{#with zh}}
+<div class="tutorial-cloud">
+    {{#each .}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}">{{title}}</a>
+    {{/each}}
+</div>
+{{/with}}
+{{#lang-selector-close}}{{/lang-selector-close}}
+{{/with}}

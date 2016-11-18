@@ -105,7 +105,7 @@ m.use(i18n()({
     contentPath: "content/_usermanual_contents.json",
     partialName: "user-manual-navigation"
 }))
-.use(tutorialBuilder("en/tutorials")())
+.use(tutorialBuilder("tutorials")())
 .use(templates({
     engine: "handlebars",
     directory: "templates"
