@@ -1,14 +1,14 @@
 ---
-title: Programmatically Creating Entities
+title: 以编程方式创建实体
 template: tutorial-page.tmpl.html
 tags: procedural, basics
 ---
 
 <iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>
 
-Usually you will be creating Entities via the PlayCanvas Editor, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
+通常，您将通过PlayCanvas编辑器创建实体，构建组件和脚本的集合，以创建游戏的各个部分。 但是，在某些情况下，在脚本中创建实体很方便。 本教程将向您展示如何操作。
 
-## Creating an Entity
+## 创建一个实体
 
 ~~~js
 var entity = new pc.Entity(); // Create an Entity
@@ -17,9 +17,9 @@ var entity = new pc.Entity(); // Create an Entity
 this.app.root.addChild(entity);
 ~~~
 
-First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `this.app.root`.
+首先你需要创建一个Entity。 这很简单，但将Entity添加到主Entity层次结构这一步很重要。 只有在层次结构中的实体才具有变换块，组件和脚本更新。 在脚本中，您可以从传递到脚本中的`Application`对象访问Entity层次结构的根节点。 按照惯例，这通常命名为“app”，层次结构根可以作为`this.app.root`。
 
-## Adding Components
+## 添加组件
 
 ~~~js~~~
 // Create a new Entity
@@ -37,11 +37,11 @@ entity.addComponent("model", {
 this.app.root.addChild(entity);
 ~~~
 
-An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. You can use the `addComponent` method of the Entity to create and add a new Component to the Entity.
+一个实体本身没有太多功能，所以为了添加功能到您的实体您将需要添加组件。 您可以使用Entity的`addComponent`方法创建一个新的组件并添加到实体中。
 
-Each Component type has different properties that can be passed in on the data object, see the [Component's documentation][1] for more detail about which properties are available. The `data` argument can be left out and default values will be used.
+每个组件类型都具有可以在数据对象上传递的不同属性，有关可用属性的更多详细信息，请参见[组件文档] [1]。 `data`参数可以省略，并使用默认值。
 
-## Removing Components
+## 移除组建
 
 ~~~js~~~
 var entity = new pc.Entity();
@@ -53,9 +53,9 @@ entity.addComponent("camera");
 entity.removeComponent("camera");
 ~~~
 
-Components can be deleted individually from an Entity by calling the `removeComponent` method on the Entity.
+组件可以通过调用Entity上的`removeComponent`方法从Entity中单独删除。
 
-## Deleting Entities
+## 删除实体
 
 ~~~js~~~
 // Create a new Entity
@@ -76,9 +76,9 @@ this.app.root.addChild(entity);
 entity.destroy();
 ~~~
 
-When you are finished with an Entity you call the `destroy` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
+当你完成一个实体，你调用了实体上的`destroy`方法。 这将删除所有组件并从层次结构中删除实体。 它还将以相同的方式删除所有子实体。
 
-## In Action
+## 所有步骤
 
 ~~~js~~~
 var EntityCreator = pc.createScript('entityCreator');
@@ -157,9 +157,9 @@ EntityCreator.prototype.spawnCube = function () {
 };
 ~~~
 
-This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
+这是一个完整的实体脚本，您可以在教程顶部的操作中看到。 它持续创建和销毁附加了模型组件的新实体。
 
-See [the full scene here][2].
+在这里查看 [完整的场景][2]。
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341

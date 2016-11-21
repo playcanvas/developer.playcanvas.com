@@ -1,22 +1,22 @@
 ---
-title: Forces and Impulses
+title: ForceとImpulse
 template: tutorial-page.tmpl.html
 tags: physics, collision
 ---
 
 <iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
-*Press R to reset the cube.*
+*インパルスを適用するにはカーソルキーを使用します。トルクを適用してキューブを回転させるには、WASDキーを使用します。Fを長押しすると一定の力を上向きに適用して重力の効果をキャンセルします。*
+* Rキーを押しすとキューブをリセットします。*
 
-*Try to get the cube to balance and spin on one of its corners!*
-*The full code used is shown at the bottom of this page.*
+*キューブを角で立たせ回転させてみましょう！*
+*使用されている完全なコードはこのページの下部に表示されています。*
 
-In this tutorial we will show you how to use forces to control a dynamic rigidbody and produce the demo shown above. We will briefly show the use of forces, impulses, torques and the use of rigidbody component UI to customize behavior.
+このチュートリアルでは、力を使用して動的なリジッドボディを制御し、上に示したデモを生成する方法を説明します。力、衝動、トルクの利用とリジッドボディコンポーネントUIを使用して動作をカスタマイズする方法を簡単に説明します。
 
-## Scripting Forces
+## 力のスクリプティング
 
-### Applying a Constant Force
+### 一定の力を適用
 
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_F) ) {
@@ -24,9 +24,9 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ~~~
 
-Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set. [See this documentation][2] for more details.
+ユーザが[`applyForce(x, y, z)`][1]を通してFキーを押したとき、グローバルy軸に沿った力がアクセスエンティティに適用されます。力ベクトルの適用時点を設定することもできます。詳細は[こちらのドキュメント][2] 。
 
-### Impulses
+### 衝動
 
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
@@ -34,9 +34,9 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ~~~
 
-The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][3].
+キューブには[`applyImpulse(x, y, z)`][3]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
 
-### Torques
+### トルク
 
 ~~~javascript~~~
 if (app.keyboard.isPressed(pc.KEY_W) ) {
@@ -44,7 +44,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ~~~
 
-[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][4].
+[トルク](https://en.wikipedia.org/wiki/Torque) (回転力) は [`applyTorque(x, y, z)`][4]からエンティティに適用されます。
 
 ### TorqueImpulses
 
@@ -52,29 +52,29 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ~~~
 
-Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][5]. This was not used in the code for the above demo.
+角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][5]を通して適用されます。これは、上記のデモのコードでは使用されていません。
 
-## Moving dynamic rigidbodies
+## 動的なリジッドボディの移動
 
-In order to move rigidbodies, you apply linear forces and rotational forces (torque) using the methods above. Usually you should try to avoid directly modifying the position or velocity of a rigidbody as this will override the simulation and it can lead to odd effects, especially when objects collide.
+リジッドボディを移動させるためには、上記の方法でリニア力および回転力(トルク)を適用します。シミュレーションが上書きされ、オブジェクトが衝突する際などに不自然な効果をもたらすことを避けるため、通常はこのようにリジッドボディの位置や速度を直接変更することは避けるべきです。
 
-However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][6]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
+必要に応じて、新しい'[pc.Vec3][6]'値のセットを`entity.rigidbody.linearVelocity`または`entity.rigidbody.angularVelocity`に直接割り当てることによって、速度を上書きすることができます。
 
-For more information on rigidbody types, see [the collision API page][8], [the pc namespace page][9], [the fps-controller tutorial][11] and [the collision tutorial][10].
+リジッドボディタイプに関する商大は[コリジョン API ページ][8],  [pc namespace ページ][9], [fps-コントローラチュートリアル][11], [コリジョンチュートリアル][10]をご確認ください。
 
-## General setup
+## 一般的な設定
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][12].
+スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][12]。
 
-## Limiting and control
+## 制限と制御
 
-Some Editor settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube's attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
+アンバランスな力が適用され続けることを防ぐため(つまり、ボディが加速し続け制御不能になることを防ぐため)、いくつかの設定をEditorで行いました。キューブの属性エディタで角度減衰を有効にしました。また、キューブと床の両方で、摩擦を可能にしました。リニア減衰はここでは使用されていませんが、空気抵抗やシミュレートするために使用することができます。また、減速はコードで適用することができます。
 
 <img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
 
-## Teleporting a Body
+## ボディのテレポート
 
-To instantly teleport a body to a new position, you can't use the setPosition function from the pc.Entity API. This is because the physics engine would still think the body is in the old location. Instead, you have to use the rigidbody component's teleport function:
+新しい位置にボディを即座にテレポートするためにpc.EntityのAPIからsetPosition関数を使用することはできません。物理エンジンが、まだボディが古い場所にあると認識するからです。代わりにリジッドボディコンポーネントのテレポート機能を使用する必要があります。
 
 ~~~js~~~
 //code within the update function
@@ -89,9 +89,9 @@ if (this.playerPos.x > 9.0) {
 }
 ~~~
 
-If the cube moves beyond the viewable area in the x-direction, the teleport function is called and the cube entity is teleported across the screen. The entity is teleported to a less extreme left/right position so as not to continuously activate the `if()` statement.
+xの方向に表示領域を越えてキューブが移動した場合、テレポート機能が呼び出され、キューブエンティティが画面上をテレポートされます。`if()`宣言をアクティベートし続けないよう、エンティティは比較的極端でない右左の位置にテレポートされます。
 
-## Reset cube code
+## キューブのコードをリセット
 
 ~~~javascript~~~
 if (app.keyboard.wasPressed(pc.KEY_R)) {
@@ -106,9 +106,9 @@ reset: function () {
 }
 ~~~
 
-We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
+キューブを元の位置に戻し、上記のようにテレポートされたエンティティの位置にリジッドボディを同期させるリセット機能を用意しました。リセット機能の最後の2行はボディの線速度および角速度をゼロにリセットします。オブジェクトの向きもリセットすることができますが、このコードでは行われません。
 
-## Full code listing
+## 完全なコードのリスト
 
 ~~~javascript~~~
 var DynamicBody = pc.createScript('dynamicBody');

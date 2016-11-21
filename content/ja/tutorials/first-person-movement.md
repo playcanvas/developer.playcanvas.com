@@ -1,22 +1,22 @@
 ---
-title: First Person Movement
+title: 一人称カメラを使った操作と移動
 template: tutorial-page.tmpl.html
 tags: input, camera
 ---
 
 <iframe src="https://playcanv.as/p/HzOzlZOC"></iframe>
 
-This is an application that implements first person character movement.
+ここでは一人称視点でキャラクターを移動させるアプリケーションを紹介します。
 
-The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player, if no camera entity is present a new entity is created. See the full scene setup in the [Tutorial Project][1].
+キャラクターにはrigidbody(剛体)コンポーネントとcollision(衝突判定)コンポーネントを、スクリプトに加えて設定する必要があるため、このコントローラのためのシーン設定は注意して行ってください。さらに、このスクリプトはカメラエンティティが存在しない場合、新たにカメラエンティティをPlayerの子として設定します。以下が[チュートリアルプロジェクト][1] の中の全シーン設定のコードですので、参考にしてください。
 
-The script below performs the following functions:
+下のスクリプトは次のような機能があります:
 
-* Listen for mouse and keyboard input
-* Update a camera entity from the mouse input
-* Apply forces to move the player entity around the scene
+* マウスとキーボードの入力を読み取る
+* カメラエンティティをマウス入力に基づいて動かす
+* プレイヤーエンティティがシーン内を動き回れるよう、物理的な力を加える
 
-Note, the player's velocity is never set directly but he is moved by apply forces. To limit the maximum velocity, we have linear damping applied on the rigidbody component.
+プレイヤーの速度を直接設定することはなく、物理的な力を与えることでプレイヤーを動かしていることに注意してください。最高速度を制限するために、線形で速度が減衰するようrigidbodyコンポーネントに設定がしてあります。
 
 ~~~javascript~~~
 var FirstPersonMovement = pc.createScript('firstPersonMovement');

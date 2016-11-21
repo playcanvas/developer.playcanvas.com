@@ -1,84 +1,84 @@
 ---
-title: Programmatically Creating Entities
+title: プログラムでエンティティを作成
 template: tutorial-page.tmpl.html
 tags: procedural, basics
 ---
 
 <iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>
 
-Usually you will be creating Entities via the PlayCanvas Editor, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
+基本的に、エンティティはPlayCanvas Editorで作成され、ゲームを作成するためのコンポーネントやスクリプトを構築します。しかし、スクリプトからエンティティを作成する方が便利な場合もあります。このチュートリアルではその方法を説明します。
 
-## Creating an Entity
+## エンティティの作成
 
 ~~~js
-var entity = new pc.Entity(); // Create an Entity
+var entity = new pc.Entity(); // エンティティを作成
 
-// Add it to the Entity hierarchy
+// エンティティ階層に追加
 this.app.root.addChild(entity);
 ~~~
 
-First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `this.app.root`.
+まず、エンティティを作成する必要があります。これは簡単ですが、メインのエンティティ階層にエンティティを追加することが重要です。階層内のエンティティのみ、トランスフォーム、コンポーネントおよびスクリプトが更新されます。スクリプトに渡される`Application`オブジェクトからエンティティ階層のルートにアクセスすることができます。慣例により、これは通常`app`と名付けられ、階層ルートは`this.app.root`として提供されます。
 
-## Adding Components
+## コンポーネントの追加
 
 ~~~js~~~
-// Create a new Entity
+// 新しいエンティティを作成
 var entity = new pc.Entity();
 
-// Add a new Camera Component with default values
+// デフォルト値の新しいCamera Componentを追加
 entity.addComponent("camera");
 
-// Add a new Model Component and add it to the Entity.
+// 新しいModel Componentを追加してエンティティに追加
 entity.addComponent("model", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// エンティティ階層に追加
 this.app.root.addChild(entity);
 ~~~
 
-An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. You can use the `addComponent` method of the Entity to create and add a new Component to the Entity.
+エンティティはそのままの状態では機能しないので、コンポーネントを追加して機能を加えます。エンティティのaddComponentメソッドを使用して新規コンポーネントを作成し、エンティティに追加します。
 
-Each Component type has different properties that can be passed in on the data object, see the [Component's documentation][1] for more detail about which properties are available. The `data` argument can be left out and default values will be used.
+各コンポーネントタイプにはデータオブジェクトでパスインできる異なるプロパティがあります。利用可能なプロパティの詳細は[コンポーネントドキュメント][1]からご確認ください。data引数を空にするとデフォルト値が使用されます。
 
-## Removing Components
+## コンポーネントの削除
 
 ~~~js~~~
 var entity = new pc.Entity();
 
-// Attach Camera Component with default values
+// デフォルト値のカメラコンポーネントを添付
 entity.addComponent("camera");
 
-// Delete the Camera Component
+// カメラコンポーネントの削除
 entity.removeComponent("camera");
 ~~~
 
-Components can be deleted individually from an Entity by calling the `removeComponent` method on the Entity.
+エンティティでremoveComponentメソッドを呼ぶことで、エンティティから個別にコンポーネントを削除することができます。
 
-## Deleting Entities
+## エンティティの削除
 
 ~~~js~~~
-// Create a new Entity
+// 新しいエンティティを作成
 var entity = new pc.Entity();
 
-// Create a new Camera Component with default values
+// デフォルト値の新しいCamera Componentを作成
 entity.addComponent("camera");
 
-// Create a new Model Component and add it to the Entity.
+// 新しいModel Componentを作成してエンティティに追加
 entity.addComponent("model", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// エンティティ階層に追加
 this.app.root.addChild(entity);
 
-// Delete the Entity and remove it from the hierarchy
+// エンティティを削除して階層から取り除く
 entity.destroy();
 ~~~
 
-When you are finished with an Entity you call the `destroy` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
+エンティティの使用が完了したら、エンティティのdestroyメソッドを呼ぶことができます。これで、全てのコンポーネントは削除され階層からエンティティが削除されます。同じように、全ての子エンティティも削除されます。
 
-## In Action
+## 作動中
 
 ~~~js~~~
 var EntityCreator = pc.createScript('entityCreator');
@@ -103,26 +103,26 @@ EntityCreator.attributes.add('maxCubes', {
     default: 10
 });
 
-// initialize code called once per entity
+// initializeコードがエンティティ毎に一度のみ呼ばれる
 EntityCreator.prototype.initialize = function() {
     this.entities = [];
 };
 
-// update code called every frame
+// updateコードが毎フレーム呼ばれる
 EntityCreator.prototype.update = function(dt) {
-    // Spawn new cubes if there are less than maxCubes
+    // maxCubes以下の場合、新しいキューブをスポーンする
     while (this.entities.length < this.maxCubes) {
         this.spawnCube();
     }
 
-    // Loop through Entities and delete them when their time is up
+    // エンティティの中をループして時間切れの際に削除する
     for (i = 0; i < this.entities.length; i++) {
         this.entities[i].timer -= dt;
         if (this.entities[i].timer < 0) {
-            // entity.destroy() deletes all components and removes Entity from the hierarchy
+            // entity.destroy()は全てのコンポーネントを削除してエンティティを階層から取り除く
             this.entities[i].entity.destroy();
 
-            // Remove from the local list
+            // ローカルリストから除外
             this.entities.splice(i, 1);
         }
     }
@@ -131,25 +131,25 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // Add a new Model Component and add it to the Entity.
+    // 新しいModel Componentを追加してエンティティに追加
     entity.addComponent("model", {
         type: 'box'
     });
 
-    // set material
+    // 素材を設定
     entity.model.material = this.material.resource;
 
-    // Move to a random position
+    // ランダムな位置に移動
     entity.setLocalPosition(
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions)
     );
 
-    // Add to the Hierarchy
+    // 階層に追加
     this.app.root.addChild(entity);
 
-    // Store in a list for some random duration before deleting
+    // 削除前にランダムな期間、リストに保管
     this.entities.push({
         entity: entity,
         timer: pc.math.random(0, this.lifetime)
@@ -157,9 +157,9 @@ EntityCreator.prototype.spawnCube = function () {
 };
 ~~~
 
-This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
+これはチュートリアルの初めに作動している状態を確認できる、完全なエンティティスクリプトです。添付されたモデルコンポーネントを使用して、新規エンティティを繰り返し作成および削除します。
 
-See [the full scene here][2].
+[フルシーンはこちらから][2].
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341

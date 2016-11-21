@@ -1,18 +1,18 @@
 ---
-title: Creating a Music Visualizer
+title: 创建音乐可视化工具
 template: tutorial-page.tmpl.html
 tags: audio
 ---
 
 <iframe src="http://playcanv.as/p/BqhCi6oy"></iframe>
 
-*Find out more by forking the [full project][1].*
+*更多的细节可以参考[完整的工程][1]。*
 
-This tutorial teaches you how to create a Music Visualizer application in WebGL using PlayCanvas. We're going to take an audio stream extra frequency data and then render that data into a PlayCanvas canvas.
+这个教程将告诉你如何在WebGL中通过使用PlayCanvas创建一个音乐可视化工具。我们将会获取一个音频流的额外频率数据然后把它渲染到PlayCanvas的画布上。
 
-Our music visualizer consists of two scripts. The analyser, plays the audio and extracts the data via an Analyser Node. Which is part of the Web Audio API built into modern browsers. The visualizer, takes the data from the analyser and renders it onto screen as a funky graph.
+我们的音乐可视化面板包含了两个脚本。分析仪，播放音频并通过一个分析器节点提取数据，分析器是高等级浏览器的Web 音频 API的一部分功能。可视化工具，将分析器分析出来的数据渲染成时髦的图像到屏幕上。
 
-## The Analyser
+## 分析仪
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -44,17 +44,17 @@ Analyser.prototype.update = function(dt) {
 };
 ```
 
-Let's take a closer look at the code here.
+让我们仔细看看这些代码。
 
-First we get hold of the `context`. This is the applications instance of an [`AudioContext`][2]. We use this to create a new [`AnalyserNode`][3] which is part of the Web Audio API the standard across all modern browsers. The `AnalyserNode` let's us access the raw data of the audio every frame as an array of values. It has a couple of properties `smoothingTimeConstant` determines whether the data sampling is smoothed over time. `0` means no smoothing, `1` means super-smooth. And `fftSize` this determines how many samples the analyser node will generate. It must be a power of two, the higher it is the more detailed and the more expensive for your CPU.
+首先我们来看看 `context`。这是一个 [`AudioContext`][2]的应用实例。我们用它来创建一个新的 [`分析器节点`][3] ，这是所有现代标准浏览器Web音频API的一部分。`分析器节点`让我们能够每帧访问音频的原始数据并把它作为一个数组返回。它有几个特性， `smoothingTimeConstant` 决定采样数据平滑过度的时间。 `0`表示不平滑，`1`表示超级平滑。`fftSize` 决定分析器将创建多少个样本数据。它必须是2的倍数，它被设得越高，你所能获取的数据细节和CPU消耗就会越多。
 
-You can access the data from the `AnalyserNode` as integers, in a `Uint8Array` or as floats, in a `Float32Array`. In this demo we use floats, so we allocate two `Float32Arrays` each one needs to be half as big as `fftSize`.
+你可以从`分析器节点`读取类型为`Uint8Array`的整数数据，或 `Float32Array`的浮点型数据。在本案例中我们使用浮点型，因此我们分配两个`Float32Arrays`，每一个需要 `fftSize`的一半大小。
 
-The final part of the setup is to use `setExternalNodes` from the PlayCanvas SoundSlot API to insert this new node into the node chain in the Sound Component.
+设置的最后一部分是使用playcanvas soundslot API中的`setExternalNodes`插入新节点到音频组建的节点链中。
 
-Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData` and `getFloatTimeDomainData` to fill our arrays with data. We'll be using this data in our Visualizer script.
+然后在我们的更新循环中我们使用 `分析仪节点`的 `getFloatFrequencyData`和 `getFloatTimeDomainData` 功能将我们的数组填满数据。我们将在可视化脚本中使用这些数据。
 
-## The Visualizer
+## 可视化工具
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');
@@ -120,17 +120,17 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 };
 ```
 
-The visualizer script takes all the data from the analyser and renders it as line graph using the [`this.app.renderLines`][4] API.
+可视化工具的脚本将从分析器获取到所有的数据并使用[`this.app.renderLines`][4] API把他们渲染成线图。
 
-In our setup we are allocating a load of vectors to use in for the lines. We need 2 for every point of data (for the start and end of the lines). Then we are setting up some scale factors to make sure the lines all appear on the screen. The `AnalyserNode` contains a min and max value of decibels that the data can contain. I've found this isn't particular accurate (I definitely got values outside of this range) but it forms a good basis for normalizing the data.
+在我们的操作步骤中我们分配一些用于画线的向量。对每个数据我们需要2个点(线的起始点和结束点)。然后我们设置一些放大系数来确保这些线能够在屏幕上被看到。`分析器节点`包含一对数据可以携带的表示分贝的最小和最大的值。我们会发现它并不是特别准确的(我确保能够得到范围外的数据值)但是它为数据能够正常化奠定了良好的基础。
 
-The `renderData` function loops through all the data and sets one of our pre-allocated vectors to be the start at the current point and finish at the next point.
+`renderData`函数遍历所有的数据并设置我们预先加载好的一个向量的当前点为起始点，结束点为下一个点。
 
-In our update loop we render the graphs for both the Frequency Data and the Time Domain Data.
+在我们的更新循环中，我们同时渲染频率数据和时域数据的图形。
 
-## More ideas?
+## 更多想法?
 
-This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to soundcloud and let users pick tracks? There are loads of possibilities.
+这只是教你如何将你的音乐可视化的一个尝试。为什么不尝试在音乐播放时缩放3D拉条，改变颜色和亮度?勾选可视化工具，让用户选择云音乐的轨道？有很多的可能性。
 
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext

@@ -1,31 +1,31 @@
 ---
-title: Real Time Multiplayer
+title: リアルタイム マルチプレイヤー
 template: tutorial-page.tmpl.html
 tags: multiplayer, networking
 ---
 
 <iframe src="http://playcanv.as/p/XFp1Ty3X/" ></iframe>
-*Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
+*WASDを使用してプレイヤーを移動させます。カプセルが一つしか表示されない場合はこのページを別のタブまたは別のコンピュータで開いてみてください。*
 
-In this tutorial we’ll cover how to setup basic multiplayer project, using Node.js and Socket.io. It will also cover the basics of sending and receiving messages to/from the server. By the end of the demo you should have a project similar to the one above.
+このチュートリアルでは、Node.jsとSocket.ioを使用して基本的なマルチプロジェクトを設定する方法を説明します。また、サーバーに対するメッセージの送受信の基本を説明します。デモを終える頃には、上記と同様のプロジェクトが完成するはずです。
 
-## Setting up the Server
+## サーバの設定
 
-Before you can work on anything multiplayer related, you’ll need a server to process your game’s data. For this tutorial we’ll be using our own computer, but in the future you may want to look into server hosts such as [Amazon][5] or [OpenShift.][6]
+マルチプレイヤー関連の作業を行う前に、ゲームデータを処理するサーバが必要です。このチュートリアルでは独自のコンピュータを使用しますが、いずれは [Amazon][5]や[OpenShift.][6]のようなサーバホストを検討するべきです。
 
-Head over to nodejs.org and download and install the recommended version of Node.js.
+nodejs.orgに移動してNode.jsの推奨バージョンをダウンロードしてインストールします。
 
-Open up a command prompt window (terminal for Mac) and type in:
+コマンドプロンプトウィンドウを開いて(Macの場合はterminal)次の通り入力します：
 
 ~~~
 npm install socket.io
 ~~~
 
-It should take a few seconds. When it's done, you should have Node.js and Socket.io installed on your computer.
+数秒で完了します。終わったら、コンピュータにNode.jsとSocket.ioがインストールされているはずです。
 
-![Socket Installed][1]
+![ソケットがインストールされました][1]
 
-Next, we’ll need to create a server file. Open up a text editor and type in the following:
+次に、サーバファイルを作成する必要があります。テキストエディタを開き次を入力します：
 
 ~~~javascript~~~
 var server = require('http').createServer();
@@ -38,39 +38,39 @@ console.log ('Server started.');
 server.listen(3000);
 ~~~
 
-Notice that the server is listening on port 3000. We’ll come back to this. Save it in your home folder as ‘server.js’. Make sure it’s saved as a Javascript file and not Server.js.txt. To start your server, open up a command prompt window and type in:
+サーバがポート3000をリッスンしています。これについては後ほど説明します。ホームフォルダに「server.js」として保存してください。必ず、Server.js.txtではなくJavascriptファイルとして保存してください。サーバーを起動するには、コマンドプロンプトウィンドウを開き次を入力します：
 
 ~~~
 node server.js
 ~~~
 
-You should see ‘Server started.’ Congratulations, you’re now running your very own server.
+‘Server started.’と表示されます。これで自身のサーバが実行されました。
 
-![Server Started][2]
+![サーバが起動しました][2]
 
-## Setting up the Project
+## プロジェクトの設定
 
-Open up PlayCanvas and create a new project. First, you’ll want to create a new script called ‘socket.js’.
+PlayCanvasを開いて新規のプロジェクトを作成します。まず。‘socket.js’という新しいスクリプトを作成します。
 
-Open the script and replace the contents of the file with [this.][4]
+スクリプトを開き、内容を[こちら][4]で置き換えます。
 
-Now we need to create a new script to handle the network logic. Create a new script called ‘Network.js’. We first need to create a connection to the server. We can do this by adding this line in the initialize method:
+次に、ネットワーク・ロジックを処理するための新しいスクリプトを作成する必要があります。「Network.js」という新しいスクリプトを作成してください。まず最初にサーバとの通信を作成する必要があります。これはinitializeメソッドに次の行を追加することで行うことができます：
 
 ~~~javascript~~~
 this.socket = io.connect(‘http://localhost:3000/');
 ~~~
 
-‘http://localhost' is the address of your server and the ‘3000’ is the port. Since we’re connecting to our own computer, we use localhost. If you were hosting elsewhere this is what you'd want to change. Make sure the port you’re using to connect is the same as the one you set in the server file. The project is now setup to send and receive messages to/from the server.
+'http://localhost' がサーバーのアドレスで、‘3000’はポートです。この場合は自身のコンピュータに接続するので、localhostを使用します。他の場所でホスティングする場合、これを変更します。接続に使用するポートがサーバファイルで設定したものと同じであることを確認してください。これでプロジェクトがサーバに対してメッセージを送受信できるように設定されました。
 
-## Server and Client Communication
+## サーバとクライアントの通信
 
-The way you can send data between the client and server is with the socket connection we made earlier. To send data from the client, we use the emit function. Here’s an example:
+クライアントとサーバ間でデータを送るためには以前に作成したソケット接続を使用します。クライアントからデータを送信するにはemit関数を使用します。例：
 
 ~~~javascript~~~
 this.socket.emit (‘playerJoined’, ‘John’);
 ~~~
 
-This emits a message called ‘playerJoined’, with the data ‘John’. For the server to receive the message, we need to write in the server file:
+‘John’のデータを含む‘playerJoined’というメッセージを出力します。サーバーがメッセージを受信するためには、サーバー・ファイルに次を記述する必要があります：
 
 ~~~javascript~~~
 socket.on (‘playerJoined’, function (name) {
@@ -78,19 +78,19 @@ socket.on (‘playerJoined’, function (name) {
 });
 ~~~
 
-This will log whatever data is sent to the server when ‘playerJoined’ is emitted.
+これにより、‘playerJoined’が出力される際にサーバに送信されるデータがすべてログに記録されます。
 
-For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody.
+このデモではプレイヤーがリアルタイムで他のプレイヤーと動き回ることが目的なので、環境を作成する必要があります。まず、地面をあらわすエンティティを作成し、コリジョンボックスと静的リジッドボディを追加します。
 
-![Ground Entity][7]
+![地面をあらわすエンティティ][7]
 
-Next we’ll need a player to control. Create a new capsule and call it ‘Player’. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
+次に、制御するプレイヤーが必要です。新しいカプセルを作成して‘Player’と名づけます。動的なリジッドボディとこりジョンボックスを追加して、リジッドボディの設定を書き画像のように変更してください。
 
-![Player Entity][8]
+![プレイヤーエンティティ][8]
 
-Duplicate the player entity and rename it as 'Other'. This is the entity we'll be using to simulate other players in the game.
+プレイヤーエンティティを複製して'Other'に名前を変更します。これは、ゲーム上の他のプレイヤーをシミュレーションするためのエンティティです。
 
-Add a script component to your player, and attach a new script called 'Movement.js':
+プレイヤーにスクリプトコンポーネントを追加して'Movement.js'という新しいスクリプトを添付します：
 
 ~~~javascript~~~
 var Movement = pc.createScript('movement');
@@ -101,12 +101,12 @@ Movement.attributes.add('playerSpeed', {
     title: 'Player Speed'
 });
 
-// initialize code called once per entity
+// エンティティ毎にinitializeコードが一度呼ばれる
 Movement.prototype.initialize = function() {
     this.force = new pc.Vec3();
 };
 
-// update code called every frame
+// updateコードが毎フレーム呼ばれる
 Movement.prototype.update = function(dt) {
     var forward = this.entity.forward;
     var right = this.entity.right;
@@ -145,8 +145,8 @@ Movement.prototype.update = function(dt) {
 };
 ~~~
 
-When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
-For the game to work in real time multiplayer, we need to keep track of all players in the game. Replace the current server code with this:
+ゲームを起動すると、WASDを使用してプレーヤーを動かせるはずるです。動かせない場合は、手順を間違っているか、エンティティの設定が正しくありません。(動作スクリプト上の速度属性を変更してみてください)
+ゲームはリアルタイムのマルチプレイとして機能するためには、ゲーム内のすべてのプレイヤーを管理する必要があります。現在のサーバコードを次で置き換えます：
 
 ~~~javascript~~~
 var server = require('http').createServer();
@@ -166,16 +166,16 @@ io.sockets.on('connection', function(socket) {
 	socket.on (‘initialize’, function () {
 		var idNum = players.length;
 		var newPlayer = new Player (idNum);
-		// Creates a new player object with a unique ID number.
+		// 固有のID番号を持つ新規のプレイヤーオブジェクトを作成。
 
 		players.push (newPlayer);
-		// Adds the newly created player to the array.
+		// 新しく作成したプレイヤーを配列に追加。
 
 		socket.emit (‘playerData’, {id: idNum, players: players});
-		// Sends the connecting client his unique ID, and data about the other players already connected.
+		// 接続されたクライアントに固有のIDとすでに接続されているプレイヤーのデータを送信。
 
 		socket.broadcast.emit (‘playerJoined’, newPlayer);
-		// Sends everyone except the connecting player data about the new player.
+		// 接続されたプレイヤー以外の全員に新規プレイヤーのデータを送信。
 	});
 });
 
@@ -183,7 +183,7 @@ console.log ('Server started.');
 server.listen(3000);
 ~~~
 
-In the code above, when a player sends the message 'initialize', we send him his unique ID and data about other players in the game. It also tells others that a new player has connected. Let's add that logic into our Network script.
+上記のコードでプレイヤーが'initialize'メッセージを送信した際、そのプレイヤーの固有IDとゲーム内の他のプレーヤーのデータを送ります。また、他のプレイヤーに新しいプレーヤーが接続されたことを伝えます。ネットワークスクリプトにそのロジックを追加してみましょう。
 
 ~~~javascript~~~
 initialize: function () {
@@ -205,38 +205,38 @@ initialize: function () {
 
 initializePlayers: function (data) {
 	self.players = data.players;
-	// Create a player array and populate it with the currently connected players.
+	// プレイヤー配列を作成して現在接続されたプレイヤーで埋めます。
 
 	this.id = data.id
-	// Keep track of what ID number you are.
+	// 自分のIDを管理
 
 	for (i = 0; i < this.players.length; i++) {
 		if (i !== this.id) {
 			this.players[i].entity = this.createPlayerEntity (data.players[i]);
 		}
 	}
-	// For every player already connected, create a new capsule entity.
+	// すでに接続されたすべてのプレイヤーに対して新しいカプセルエンティティを作成。
 
 	this.initialized = true;
-	// Mark that the client has received data from the server.
+	// クライアントがサーバからデータを受信したことをマーク。
 }
 
 createPlayerEntity: function (data) {
 	var newPlayer = this.other.clone ();
-	// Create a new player entity.
+	// 新しいプレイヤーエンティティを作成。
 
 	newPlayer.enabled = true;
-	// Enable the newly created player.
+	// 新しく作成したプレイヤーを有効にする。
 
 	this.other.getParent ().addChild (newPlayer);
-	// Add the entity to the entity hierarchy.
+	// エンティティ階層にエンティティを追加。
 
 	if (data)
 		newPlayer.rigidbody.teleport (data.x, data.y, data.z);
-	// If a location was given, teleport the new entity to the position of the connected player.
+	// 場所が指定された場合は、新しいエンティティを接続されたプレイヤーの位置にテレポート。
 
 	return newPlayer;
-	// Return the new entity.
+	// 新しいエンティティを返す。
 },
 
 addPlayer: function (data) {
@@ -245,7 +245,7 @@ addPlayer: function (data) {
 }
 ~~~
 
-Now when we join the game, the client tells the server we've connected, and the server sends us a list of players with their positions. The game then creates a new entity for each player connected, and moves them to their current position. The only problem is, the server doesn't know the positions of all players. We need to send the server our current position every frame. Add this code into your Network.js script:
+これで、ゲームに参加するとクライアントは接続したことをサーバに伝え、サーバからプレイヤーのリストとその位置を受信するようになりました。その後、ゲームは接続された各プレーヤーに対して新しいエンティティを作成し、それらを現在の位置に移動します。唯一の問題は、サーバがすべてのプレイヤーの位置を把握していないことです。サーバに現在位置すべてのフレームを送信する必要があります。Network.jsスクリプトにこのコードを追加します：
 
 ~~~javascript~~~
 initialize: function () {
@@ -286,7 +286,7 @@ updatePosition: function () {
 }
 ~~~
 
-And back on the server, we need to account for what happens when the player sends us their position.
+サーバーでは、プレイヤーが自分の位置を送信したときに何が起こるかを把握する必要があります。
 
 ~~~javascript~~~
 socket.on ('positionUpdate', function (data) {
@@ -298,24 +298,24 @@ socket.on ('positionUpdate', function (data) {
 });
 ~~~
 
-## Conclusion
+## まとめ
 
-That's about it! If you'd like, try adding some of these ideas on your own:
-* Players are removed when they close the game.
-* Adding respawning functionality for when players fall off the edge.
+以上です！ご希望でしたら、次のいくつかを自身で追加してみてください：
+* ゲームを閉じた際にプレイヤーが削除される。
+* プレイヤーが端から落ちたときのための復活機能を追加。
 
-There's a lot of information online about creating multiplayer games that you can read into. Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritive server, instead of handling all the game logic on the client. You might also want to look into a more permanent server host like [Amazon][5], [OpenShift][6], or [Azure][9].
+マルチプレイヤーゲームの作成に関する情報はオンラインで読むことができます。このチュートリアルはマルチプレイヤーのごく基本的な実装です。大きなマルチプレイヤーゲームを作成する際は、クライアントでゲームロジックを処理するのではなく、認証サーバの使用を検討することをお勧めします。また、[Amazon][5], [OpenShift][6], [Azure][9]のような、より恒久的なサーバホストを検討しても良いかもしれません。
 
-Here's the full Network script:
+完全なNetworkスクリプトです:
 
 ~~~javascript~~~
 var Network = pc.createScript('network');
 
-// static variables
+// 静的変数
 Network.id = null;
 Network.socket = null;
 
-// initialize code called once per entity
+// 格エンティティでinitializeコードが一度だけ呼ばれる
 Network.prototype.initialize = function() {
     this.player = this.app.root.findByName('Player');
     this.other = this.app.root.findByName('Other');
@@ -397,7 +397,7 @@ Network.prototype.createPlayerEntity = function (data) {
     return newPlayer;
 };
 
-// update code called every frame
+// updateコードが毎フレーム呼ばれる
 Network.prototype.update = function(dt) {
     this.updatePosition();
 };
@@ -411,7 +411,7 @@ Network.prototype.updatePosition = function () {
 
 ~~~
 
-Here's the full server script:
+完全なサーバスクリプト:
 
 ~~~javascript~~~
 var server = require('http').createServer();

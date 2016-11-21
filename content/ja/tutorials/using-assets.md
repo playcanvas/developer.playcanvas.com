@@ -1,37 +1,37 @@
 ---
-title: Using the Asset Registry
+title: アセットレジストリの使用
 template: tutorial-page.tmpl.html
 tags: loading, assets
 ---
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
 
-*Click to focus, press SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Press 'C' to display the C model.*
+*クリックしてフォーカス。SpaceキーでAとBの2つのモデルを切り替えることができます。'L'でCモデルを読み込みます。'C'でCモデルを表示します。
 
-For simple games and products you will set up all your assets in the Editor, they will be preloaded before you application starts, and your app will just work.
+簡単なゲームや製品の場合、Editor内のすべてのアセットを設定します。アプリケーションが起動する前にプリロードされ、アプリは正常に動作します。
 
-For more advanced products you may wish to access your assets in code, change references, modify properties and also stream data in so that your application can load more quickly. Only loading the assets as they are needed. To do this you'll use the [`AssetRegistry`][1].
+より高度な製品の場合、コード内でアセットにアクセスし、参照を変更、プロパティを修正、データのストリーミングを行いアプリケーションをより迅速に読み込むこともできます。必要に応じてアセットを読み込みます。これを行うには[`AssetRegistry`][1]を使用します。
 
-In this tutorial, we'll build a small scene which lets you swap the model on a model component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
+このチュートリアルでは、キーを押して、モデルコンポーネントのモデルを入れ替えることのできる小さなシーンを構築します。また、プリロードされていない3つ目のモデルを動的に読み込みます。完了したプロジェクトは[ここで][3]を見ることができます。
 
-## Setup
+## 設定
 
-*The project is set up as follows*
+*プロジェクトは次のように設定されます*
 
-* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
-* The **C** model asset is set up *not* to be preloaded.
-* A model Entity is added to the scene and the model **A** is assigned to the model component.
-* A script component is added to the model Entity and a new script is created called `update_asset.js`.
+*3つのモデルアセットがアップロードされています：**A**はAという文字のモデル、**B**はBという文字のモデル、**C**はCという文字のモデルです。
+* ** C**モデルアセットはプリロード*されない*ように設定されています。
+*モデルエンティティはシーンに追加され、モデル**A**はモデルコンポーネントに割り当てられています。
+*スクリプトコンポーネントはモデルエンティティに追加され、`update_asset.js`という新たなスクリプトが作成されます。
 
-Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
+ [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
 
-## The AssetRegistry
+## AssetRegistry
 
-The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
+ [`pc.AssetRegistry`][1] は`this.app.assets`.としてすべてのスクリプトで使用できます。レジストリには、それらが読み込まれているかどうかに関わらず、プロジェクトに追加されたすべてのランタイムアセットの詳細が入力されます。Asset Registryを使用してアプリケーションに必要なアセットを見つけてください。
 
-In this case we've declared three script attributes `a`, `b` and `c` which are assigned to assets in the Editor. Then they are automatically available in our script.
+このケースでは3つのスクリプトを、 `a`、`b`、`c`として定義してEditorでアセットに割り当てます。その後、スクリプトで自動的に使用可能になります。
 
-## Using preloaded assets
+## プレロードされたアセットを使用
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_SPACE)) {
@@ -48,11 +48,11 @@ if (app.keyboard.isPressed(pc.KEY_SPACE)) {
 }
 ```
 
-The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource`. If `asset.resource` is `null`, then the asset isn't loaded.
+このプロジェクトでは、**A**と**B**のアセットは**プリロード**としてマークされています。読み込み画面中に、これらのアセットがダウンロードされることを意味します。アプリケーションの起動と同時に使用できるようになります。アセットが読み込まれると、読み込まれたリソースは`asset.resource`として利用可能です。`asset.resource`が` null`の場合、アセットは読み込まれません。
 
-So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the model on the model component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Model` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
+'A'と'B'モデルがプリロードされるので、アプリケーション実行時に利用可能になります。このコードは、スペースバーが押されていることを確認します。押されている場合、モデルコンポーネントのモデルをアセットのリソースプロパティになるよう変更します。この場合、`asset.resource`は` pc.Model`オブジェクトになります。`asset.resource`プロパティがそれぞれの異なるアセットタイプ(オーディオ、テクスチャ、など)の関連するタイプになります。
 
-## Loading assets at runtime
+## 実行時にアセットを読み込む
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_C)) {
@@ -68,7 +68,7 @@ if (this.app.keyboard.isPressed(pc.KEY_C)) {
 }
 ```
 
-The **C** model is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.resource` is empty, then the resource isn't loaded and we can't change the model component. If the **C** model is loaded then `this.c.resource` will be the `pc.Model` property and we'll be able to assign it.
+**Cは**モデルは、*プリロード*としてマークされていないので、上記のコードでは使用する前にリソースが読み込まれていることを確認します。`asset.resource`が空の場合、リソースは読み込まれていないので、モデルコンポーネントを変更することができません。 **C**モデルが読み込まれている場合、`this.c.resource`は`pc.Model`プロパティとなり、割り当てることができます。
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -76,11 +76,11 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 }
 ```
 
-When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `this.app.assets.load()`. If the asset is already loaded, this method will do nothing.
+`L`キーを押すと、** C**モデルを読み込みます。これを行うには`this.app.assets.load()`にアンロードされたアセットを渡します。アセットがすでに読み込まれている場合、このメソッドは何も行いません。
 
-Once the asset is loaded `asset.resource` will be a `pc.Model` instance and we can assign it by pressing the `C` key.
+アセットが読み込まれると`asset.resource`は`pc.Model`のインスタンスになり、`C`キーを押してそれを割り当てることができます。
 
-## The complete script
+## 完全なスクリプト
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');
@@ -142,9 +142,9 @@ UpdateAsset.prototype.update = function(dt) {
 };
 ```
 
-## AssetRegistry events
+## アセットレジストリのイベント
 
-One thing we don't demonstrate in this example is how to know when an asset is loaded. To do this we use `pc.AssetRegistry` events like the `"load"` event. Here's some sample code:
+この例では示していないのは、アセットが読み込まれたことを知る方法です。これを行うには、"load"イベントのような`pc.AssetRegistry`イベントを使用します。サンプルコードです：
 
 ```javascript
 // find the asset in the registry
@@ -155,7 +155,7 @@ this.app.assets.once("load", function (asset) {
 }, this);
 ```
 
-The `"load"` event is quite broad. It is fired for every asset that is loaded, so if assets are loaded elsewhere, you won't know that this is your asset. Instead you can narrow your event down by using the `"load:id"` event.
+`"load"`イベントは非常に幅広いです。読み込まれるすべてのアセットに発生するので、アセットが他の場所に読み込まれている場合、それがあなたのアセットか分かりません。代わりに、`"load:id"`イベントを使用して、イベントを絞り込むことができます。
 
 ```javascript
 // find the asset in the registry
@@ -166,9 +166,9 @@ this.app.assets.once("load:" + asset.id, function (asset) {
 }, this);
 ```
 
-The above event will only be fired for that specific asset. Much more useful.
+上記のイベントは、その特定のアセットのためにのみ稼動します。とても便利です。
 
-Finally, there is one specific coding pattern, that often occurs. So often, in fact, that we've provided a convenient method to do it for you.
+最後に、良く発生する一つの特定のコーディングパターンがあります。それを行うための便利な方法を提供しています。
 
 ```javascript
 var asset = this.app.assets.find("A");
@@ -182,7 +182,7 @@ if (!asset.resource) {
 }
 ```
 
-This code loads an asset when it is needed, but it's a bit long winded. So, instead, you can use the `asset.ready()` method. This code performs the same function as above
+このコードは必要とされるアセットを読み込みますが、少し長いので代わりに`asset.ready()`メソッドを使用することができます。このコードは、上記と同じ機能を実行します。
 
 ```javascript
 var asset = this.app.assets.find("A");
@@ -192,7 +192,7 @@ asset.ready(function (asset) {
 this.app.assets.load(asset);
 ```
 
-The `asset.ready()` method will call it's callback as soon as the asset is loaded, if the asset is already loaded, it will call it straight away. `app.assets.load()` does nothing if the asset is already loaded.
+`asset.ready()`メソッドはアセットが読み込まれるとすぐにそのコールバックを呼びます。また、アセットがすでに読み込まれている場合、すぐにそれを呼び出します。アセットがすでに読み込まれている場合、 `app.assets.load()`は何もしません。
 
 [1]: /en/api/pc.AssetRegistry.html
 [3]: https://playcanvas.com/project/406036

@@ -1,31 +1,31 @@
 ---
-title: Real Time Multiplayer
+title: 实时多人游戏
 template: tutorial-page.tmpl.html
 tags: multiplayer, networking
 ---
 
 <iframe src="http://playcanv.as/p/XFp1Ty3X/" ></iframe>
-*Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
+*使用WASD移动角色。 如果您只看到一个胶囊体，请尝试在另一个选项卡或另一台计算机上打开此页面。*
 
-In this tutorial we’ll cover how to setup basic multiplayer project, using Node.js and Socket.io. It will also cover the basics of sending and receiving messages to/from the server. By the end of the demo you should have a project similar to the one above.
+在本教程中，我们将介绍如何使用Node.js和Socket.io设置基本多人项目。 它还将涵盖向/从服务器发送和接收消息的基础知识。 在演示的结尾，你应该可以看到一个类似于上面的项目。
 
-## Setting up the Server
+## 设置服务器
 
-Before you can work on anything multiplayer related, you’ll need a server to process your game’s data. For this tutorial we’ll be using our own computer, but in the future you may want to look into server hosts such as [Amazon][5] or [OpenShift.][6]
+在你可以处理任何多人相关的游戏之前，你需要一个服务器来处理游戏的数据。 对于本教程，我们将使用我们自己的计算机，但在将来，你可能需要使用服务器主机，如[Amazon] [5]或[OpenShift] [6]。
 
-Head over to nodejs.org and download and install the recommended version of Node.js.
+转到nodejs.org并下载并安装推荐的Node.js.
 
-Open up a command prompt window (terminal for Mac) and type in:
+打开命令提示符窗口(Mac终端)，输入：
 
 ~~~
 npm install socket.io
 ~~~
 
-It should take a few seconds. When it's done, you should have Node.js and Socket.io installed on your computer.
+它应该需要几秒钟。 完成后，您应该在您的计算机上安装了Node.js和Socket.io。
 
-![Socket Installed][1]
+![安装Socket][1]
 
-Next, we’ll need to create a server file. Open up a text editor and type in the following:
+接下来，我们需要创建一个服务器文件。 打开文本编辑器，然后键入以下内容:
 
 ~~~javascript~~~
 var server = require('http').createServer();
@@ -38,39 +38,39 @@ console.log ('Server started.');
 server.listen(3000);
 ~~~
 
-Notice that the server is listening on port 3000. We’ll come back to this. Save it in your home folder as ‘server.js’. Make sure it’s saved as a Javascript file and not Server.js.txt. To start your server, open up a command prompt window and type in:
+请注意，服务器正在侦听端口3000。现在我们返回，将其作为'server.js'保存在您的主文件夹中。 确保它被保存为Javascript文件而不是Server.js.txt。 要启动服务器，请打开命令提示符窗口并输入：
 
 ~~~
 node server.js
 ~~~
 
-You should see ‘Server started.’ Congratulations, you’re now running your very own server.
+您应该看到‘Server started.’提示 。恭喜，您现在正在运行自己的服务器。
 
-![Server Started][2]
+![启动服务器][2]
 
-## Setting up the Project
+## 设置项目
 
-Open up PlayCanvas and create a new project. First, you’ll want to create a new script called ‘socket.js’.
+打开PlayCanvas并创建一个新项目。 首先，您需要创建一个名为“socket.js”的脚本。
 
-Open the script and replace the contents of the file with [this.][4]
+打开脚本并使用[这个] [4]替换文件的内容。
 
-Now we need to create a new script to handle the network logic. Create a new script called ‘Network.js’. We first need to create a connection to the server. We can do this by adding this line in the initialize method:
+现在我们需要创建一个新的脚本来处理网络逻辑。 创建一个名为“Network.js”的脚本。 我们首先需要创建一个到服务器的连接，这可以通过在initialize方法中添加这一行来实现：
 
 ~~~javascript~~~
 this.socket = io.connect(‘http://localhost:3000/');
 ~~~
 
-‘http://localhost' is the address of your server and the ‘3000’ is the port. Since we’re connecting to our own computer, we use localhost. If you were hosting elsewhere this is what you'd want to change. Make sure the port you’re using to connect is the same as the one you set in the server file. The project is now setup to send and receive messages to/from the server.
+‘http://localhost' 是您的本地服务器的地址， ‘3000’ 是端口。 因为我们连接到我们自己的计算机，我们使用localhost。 如果你想在别处托管，请确保您用于连接的端口与在服务器文件中设置的端口相同。 该项目现在设置为向/从服务器发送和接收消息。
 
-## Server and Client Communication
+## 服务器与客户端通讯
 
-The way you can send data between the client and server is with the socket connection we made earlier. To send data from the client, we use the emit function. Here’s an example:
+在客户端和服务器之间发送数据的方式是使用我们之前创建的套接字连接。 要从客户端发送数据，我们需要使用emit函数。 这里有一个例子:
 
 ~~~javascript~~~
 this.socket.emit (‘playerJoined’, ‘John’);
 ~~~
 
-This emits a message called ‘playerJoined’, with the data ‘John’. For the server to receive the message, we need to write in the server file:
+这会发送一个名为 ‘playerJoined’，数据为‘John’的消息。 为了服务器能够接收消息，我们需要在服务器文件中写入:
 
 ~~~javascript~~~
 socket.on (‘playerJoined’, function (name) {
@@ -78,19 +78,19 @@ socket.on (‘playerJoined’, function (name) {
 });
 ~~~
 
-This will log whatever data is sent to the server when ‘playerJoined’ is emitted.
+这将记录发送‘playerJoined’ 时发送到服务器的任何数据。
 
-For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody.
+对于这个演示，我们的目标是让玩家实时地与他人一起移动，所以我们需要创建一个环境。 首先创建一个实体作为地面，然后添加一个碰撞盒和静态刚体。
 
-![Ground Entity][7]
+![地面实体][7]
 
-Next we’ll need a player to control. Create a new capsule and call it ‘Player’. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
+接下来，我们需要一个可以控制的玩家。 我们创建一个新的作为 ‘Player’的胶囊体，为其添加一个动态刚体和碰撞盒，并更改刚体设置以匹配下面的图片。
 
-![Player Entity][8]
+![玩家实体][8]
 
-Duplicate the player entity and rename it as 'Other'. This is the entity we'll be using to simulate other players in the game.
+复制玩家实体，并将其重命名为 'Other'。 这是我们将用来模拟游戏中其他玩家的实体。
 
-Add a script component to your player, and attach a new script called 'Movement.js':
+将脚本组件添加到玩家实体上，并附加一个名为“Movement.js”的脚本:
 
 ~~~javascript~~~
 var Movement = pc.createScript('movement');
@@ -145,8 +145,8 @@ Movement.prototype.update = function(dt) {
 };
 ~~~
 
-When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
-For the game to work in real time multiplayer, we need to keep track of all players in the game. Replace the current server code with this:
+当你启动游戏后，你就能够使用WASD来移动你的player。 如果不行，您可能错过了一个步骤，或者没有为实体设置正确的属性。 (尝试改变移动脚本上的速度属性)
+对于实时多人游戏，我们需要跟踪游戏中的所有玩家。 将当前服务器代码替换为：
 
 ~~~javascript~~~
 var server = require('http').createServer();
@@ -183,7 +183,7 @@ console.log ('Server started.');
 server.listen(3000);
 ~~~
 
-In the code above, when a player sends the message 'initialize', we send him his unique ID and data about other players in the game. It also tells others that a new player has connected. Let's add that logic into our Network script.
+在上面的代码中，当玩家发送消息“初始化”时，我们向他发送他在游戏中其他玩家的唯一ID和数据。 它也告诉别人一个新的播放器已经连接。 让我们将这个逻辑添加到我们的网络脚本中。
 
 ~~~javascript~~~
 initialize: function () {
@@ -245,7 +245,7 @@ addPlayer: function (data) {
 }
 ~~~
 
-Now when we join the game, the client tells the server we've connected, and the server sends us a list of players with their positions. The game then creates a new entity for each player connected, and moves them to their current position. The only problem is, the server doesn't know the positions of all players. We need to send the server our current position every frame. Add this code into your Network.js script:
+现在我们加入游戏，客户端告诉了我们已经连接的服务器，服务器向我们发送了一个具有位置的玩家列表。 然后游戏为每个连接的玩家创建一个新实体，并将它们移动到当前位置。 唯一的问题是，服务器不知道所有玩家的位置。 我们需要向服务器发送我们每一帧的当前位置。 将此代码添加到您的Network.js脚本中：
 
 ~~~javascript~~~
 initialize: function () {
@@ -286,7 +286,7 @@ updatePosition: function () {
 }
 ~~~
 
-And back on the server, we need to account for what happens when the player sends us their position.
+回到服务器这边，我们需要考虑当玩家向我们发送他们的位置时会发生什么。
 
 ~~~javascript~~~
 socket.on ('positionUpdate', function (data) {
@@ -298,15 +298,15 @@ socket.on ('positionUpdate', function (data) {
 });
 ~~~
 
-## Conclusion
+## 总结
 
-That's about it! If you'd like, try adding some of these ideas on your own:
-* Players are removed when they close the game.
-* Adding respawning functionality for when players fall off the edge.
+就是这样！ 如果你愿意，可以尝试自己添加一些别的想法:
+*玩家在关闭游戏时能够被移除
+*添加当玩家脱离边缘时的复位功能。
 
-There's a lot of information online about creating multiplayer games that you can read into. Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritive server, instead of handling all the game logic on the client. You might also want to look into a more permanent server host like [Amazon][5], [OpenShift][6], or [Azure][9].
+有很多关于创建多人游戏的信息，你可以一一阅览。 记住这只是一个非常基本的多人游戏的实现。 实际上，当创建更大的多人游戏时，您需要考虑使用授权服务器，而不是处理客户端上的所有游戏逻辑。 您可能还想查看一个更永久的服务器主机，如[Amazon] [5]，[OpenShift] [6]或[Azure] [9]。
 
-Here's the full Network script:
+以下是整段的客户端联网代码:
 
 ~~~javascript~~~
 var Network = pc.createScript('network');
@@ -411,7 +411,7 @@ Network.prototype.updatePosition = function () {
 
 ~~~
 
-Here's the full server script:
+以下是整段的服务器代码:
 
 ~~~javascript~~~
 var server = require('http').createServer();
