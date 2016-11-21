@@ -30,7 +30,7 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 <div class="parameter"><span class="param">description [optional]</span><p>The description of the app. Must be less than 10,000 characters.</p></div>
 <div class="parameter"><span class="param">version [optional]</span><p>The version of the app. Can be a string up to 20 characters.</p></div>
 <div class="parameter"><span class="param">release_notes [optional]</span><p>Release notes for the app. Can be a string up to 10,000 characters.</p></div>
-<div class="parameter"><span class="param">script_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
+<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
 </div>
 
 ## Response Schema
@@ -71,7 +71,7 @@ Status: 201 Created
 
 ## Rate Limiting
 
-This route uses a [very strict][1] rate limit.
+This route uses a [strict][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
 [2]: /user-manual/api/get-job

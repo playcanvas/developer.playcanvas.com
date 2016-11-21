@@ -44,6 +44,8 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 検索ボックスを使用して、プロジェクト内のアセットのグローバル検索を実行することができます。ボックスに入力し始めると、Editorは一致する結果を動的にアセットパネルで表示します。
 
+The Search box supports wildcards. For example, *. will list every asset in your project.
+
 ## ドラッグ＆ドロップ
 
 アセットは、メインパネルからフォルダ階層内のフォルダにドラッグして別のフォルダに移動することができます。アセットは複数選択に対応しています。CTRL+ Aで、現在選択されているフォルダ内のすべてのアセットを選択します。
@@ -56,8 +58,26 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 * ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
 * ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
 
+## Checking References
+
+Sometimes it's useful to know where assets are being used (or referenced) within a particular scene. If the Editor cannot detect any references for an asset, a small dot will be displayed on its thumbnail:
+
+![Unreferenced Asset][5]
+
+<div class="alert alert-info">
+Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+</div>
+
+If an asset does have references, you can check them via the References content menu item:
+
+![Asset References][6]
+
+Selecting a reference will load it into the Inspector panel.
+
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector
 [3]: /user-manual/designer/viewport
 [4]: /user-manual/designer/settings
+[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
+[6]: /images/user-manual/editor/assets-panel/asset-references.png
 

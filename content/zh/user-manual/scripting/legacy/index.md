@@ -8,32 +8,32 @@ position: 10
 
 通常，我们会推荐你使用新的脚本系统。但是，对于有些使用案例来说，这个遗留脚本系统仍然是必需的。如果你需要以下功能，你可以使用遗留脚本系统：
 
-- you require the "local workflow". e.g. Editing scripts in text editor on your machine
-- you require integration with a version control system like Git or Mercurial
-- you have an existing project that you do not wish to recreate.
+- 您需要制定“本地工作流”。 例如 在机器上的文本编辑器中编辑脚本
+- 您需要与版本控制系统，如Git或Mercurial集成
+- 你有一个现有的项目，你不想重新创建。
 
-Below is the documentation for the legacy script system
+以下是旧版的脚本系统的文档
 
 ---
 
-Scripting is how you make your game interactive. Scripts are written in **JavaScript**. This is the programming language used by web pages everywhere.
+脚本是使你的游戏产生互动的方法。 脚本用** JavaScript **编写。 这是网页中随处可用的编程语言。
 
-You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which will often be specific to your application or re-usable chunks that provide useful behaviours.
+你可以把你的应用程序分成两个独立的代码库。 引擎，由PlayCanvas提供，并实现通用功能，如图形渲染，输入处理，音频和到PlayCanvas工具的接口; 和通常是特定于您的应用程序或可重复使用的提供有用行为的块的脚本。
 
-Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application via a `<script>` tag. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+通常你不必担心引擎代码，它是通过一个`<script>` 标签包含在你的应用程序中的单个JavaScript文件。 如果你正在重写引擎的一部分，你可能不需要这个脚本介绍。
 
-Scripts are individual JavaScript files, which are attached to Script [Components][1] on [Entities][2] via the PlayCanvas Editor. Generally, a script file should define a single JavaScript object which is instantiated once for each Entity that it is attached to.
+脚本是单独的JavaScript文件，它们通过PlayCanvas编辑器附加到[实体] [2]上的Script [组件] [1]中。 通常，脚本文件应该定义单个JavaScript对象，对于它附加到的每个实体，它将被实例化一次。
 
-**Note please make sure your scripts are not cached by the browser - otherwise you will not see the results of changes to your scripts. [See here.][3]**
+**注意，请确保您的脚本不会被浏览器缓存，否则您将看不到脚本更改的结果。 [详情见这里] [3] 。**
 
-## Terminology
+## 专业名词
 
-First off, lets define a few pieces of terminology.
+首先，来让我们开始定义一些新的专业名词。
 
-* ***Script*** A script is single JavaScript file which includes the correct JavaScript to define a script object
-* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
-* ***Script Object*** A script object is a standard JavaScript object which is registered with the PlayCanvas engine and can be instantiated when a new script Component is created. There will generally only be a single script object of each type per application.
-* ***Script Instance*** A script instance is script object which has been instantiated at runtime, using the `new` keyword in JavaScript. A script instance is created for every Entity that has the script attached.
+* *** 脚本***脚本是单个JavaScript文件，包括正确的JavaScript定义脚本对象
+* ***脚本组件***脚本组件在PlayCanvas引擎中定义，并为游戏实体提供加载脚本并创建脚本对象的功能。
+* ***脚本对象***脚本对象是一个标准的JavaScript对象，它已在PlayCanvas引擎中注册，并且可以在创建新脚本组件时实例化。 每个应用程序通常只有一种类型的脚本对象。
+* ***脚本实例***脚本实例是在运行时实例化的脚本对象，在JavaScript中使用 `new` 关键字。 为具有附加脚本的每个实体创建一个脚本实例。
 
 [1]: /user-manual/packs/components/
 [2]: /user-manual/packs/entities/

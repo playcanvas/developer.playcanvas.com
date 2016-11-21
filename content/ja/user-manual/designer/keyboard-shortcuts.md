@@ -50,54 +50,63 @@ position: 12
 
 MacではCTRLの代わりにCMDを使用してください。
 
-<table class="head-column">
+<table class="three-column">
     <tr>
-        <td>Delete - 現在選択している範囲を削除</td><td>DELETE またはCTRL + BACKSPACE</td>
+        <td>Launch</td><td>Launch the scene in a new tab</td><td>CTRL + ENTER</td>
     </tr>
     <tr>
-        <td>Toggle All Panels - 全てのパネルを隠す又は表示</td><td>SPACE</td>
+        <td>New Entity</td><td>Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
     </tr>
     <tr>
-        <td>Undo - ユーザによる最後の動作を取り消す</td><td>CTRL + Z</td>
+        <td>Duplicate Entity</td><td>Duplicates the selected entity and all children</td><td>CTRL + D</td>
     </tr>
     <tr>
-        <td>Redo - ユーザによる次の動作をやり直す</td><td>CTRL + SHIFT + Z 又は CTRL + Y</td>
+        <td>Rename</td><td>Focuses on name field of selected entities or an asset</td><td>N or F2</td>
     </tr>
     <tr>
-        <td>New Entity - 現在選択しているエンティティの子として新しいエンティティを作成</td><td>CTRL + E</td>
+        <td>Copy Entity</td><td>Copy a single selected entity</td><td>CTRL + C</td>
     </tr>
     <tr>
-        <td>Duplicate Entity - 選択されたエンティティとその子を複製</td><td>CTRL + D</td>
+        <td>Paste Entity</td><td>Paste an entity under the currently selected entity</td><td>CTRL + V</td>
     </tr>
     <tr>
-        <td>Copy Entity - 単一の選択されたエンティティをコピー</td><td>CTRL + C</td>
+        <td>Delete</td><td>Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
     </tr>
     <tr>
-        <td>Paste Entity - 現在選択されたエンティティの下にエンティティを貼り付け</td><td>CTRL + V</td>
+        <td>Frame Selection</td><td>Focus on the entity selection</td><td>F</td>
     </tr>
     <tr>
-        <td>Frame Selection - 選択エンティティ上でアクティブなカメラをフレーム</td><td>F</td>
+        <td>Translate</td><td>Change gizmo mode to translate</td><td>1</td>
     </tr>
     <tr>
-        <td>Translate - gizmoモードをtranslateに変更</td><td>1</td>
+        <td>Rotate</td><td>Change gizmo mode to rotate</td><td>2</td>
     </tr>
     <tr>
-        <td>Rotate - gizmoモードをrotateに変更</td><td>2</td>
+        <td>Scale</td><td>Change gizmo mode to scale</td><td>3</td>
     </tr>
     <tr>
-        <td>Scale - gizmoモードをscaleに変更</td><td>3</td>
+        <td>World / Local</td><td>Switch between local and world space gizmo</td><td>L</td>
     </tr>
     <tr>
-        <td>World/Local - gizmoをローカルとワールドのスペース間で切り替える</td><td>L</td>
+        <td>Toggle All Panels</td><td>Hides or shows all the panels</td><td>SPACE</td>
     </tr>
     <tr>
-        <td>Launch - シーンを新しいタブで起動する</td><td>CTRL + ENTER</td>
+        <td>Bake</td><td>Re-bake and recalculate lights</td><td>CTRL + B</td>
     </tr>
     <tr>
-        <td>Bake - ライトマップを再ベイク</td><td>CTRL + B</td>
+        <td>Previous Selection</td><td>Select previously selected items</td><td>SHIFT + Z</td>
     </tr>
     <tr>
-        <td>Show Controls - Editorのコントロールを表示</td><td>?</td>
+        <td>Undo</td><td>Undo the last action performed by the user</td><td>CTRL + Z</td>
+    </tr>
+    <tr>
+        <td>Redo</td><td>Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
+    </tr>
+    <tr>
+        <td>How do I...?</td><td>Bring search toolbar for mini-tutorials</td><td>CTRL + SPACE</td>
+    </tr>
+    <tr>
+        <td>Show Controls</td><td>Display the Editor controls</td><td>SHIFT + ?</td>
     </tr>
 </table>
 
