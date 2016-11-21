@@ -1,66 +1,92 @@
 ---
-title: キューブマップ
+title: Cubemaps
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-キューブマップは特別な種類のテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：
+Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
 
-1.キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルイメージが含まれます。
-2.キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
+1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
+2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
 <iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
 
-## キューブマップテクスチャーのインポート
+## Importing Cubemap Textures
 
-キューブマップは、入力として6つのテクスチャアセットを必要とするアセットです。そのため、新しいキューブマップアセットを構成するためには、まずプロジェクトに6つの画像をインポートする必要があります。これを行うには、PlayCanvasエディタを実行しているブラウザのタブに、ファイルシステムから6つの画像をドラッグします。アップロードされ、処理されると、画像がアセットエクスプローラに表示され、キューブマップアセットに割り当てる準備ができます。
+A cubemap is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cubemap asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into the Assets panel (or select the Asset panel's Upload option). Once uploaded and processed, the images will appear in the Assets panel where they are now ready to be assigned to a cubemap asset.
 
-## 新しいキューブマップを作成
+## Creating Cubemaps
 
-PlayCanvas Editorインターフェイスから直接キューブマップアセットを作成することができます。アセットパネルのCreate Assetメニューを使用してください。
+You can create new cubemap assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
 
-<img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px" />
+![Cubemap Creation][1]
 
-これにより新規のキューブマップアセットが作成され、画面の右側にCube Map Editorを開きます。
+This creates a new cubemap Asset and opens up the Cubemap Editor on the right-hand side of the screen.
 
-## キューブマップを選択
+## Selecting Cubemaps
 
-キューブマップを編集するために選択するには、アセットパネルで選択します。最も簡単な方法はキューブマップフィルタを選択して選択肢のオプションを絞ることです。キューブマップは、3Dのキューブアイコンで見分けます。
+To select a cubemap in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cubemap filter to narrow down the options for selection. Cubemaps are identified by cross-shaped thumbnails:
 
-キューブマップを選択するとEditorの右側のEditorパネルにCube Map Editorが表示されます。
+![Cubemap Thumbnails][2]
 
-## キューブマップを編集
+When a cubemap is selected, it will be loaded into the Inspector panel on the right of the Editor.
 
-<img src="/images/user-manual/cubemap-inspector.jpg" style="width: 300px; float: left; padding: 20px; padding-top: 0px;" />
+## Cubemap Properties
 
-キューブマップを選択してそのプロパティを編集できます。
+Once you have a cubemap selected, you can edit its properties.
 
-### Min Filter
-この設定では、キューブマップが縮小される際にピクセルが補間される方法を定義します。縮小とは、テクセルと画面のピクセル比が1より大きい状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
+![Cubemap Properties][3]
 
-### Mip Filter
-この設定では、キューブマップが縮小される際にその品質を改善する追加のコントロールを提供します。Linearが視覚的に最適です。次に適しているのはNearestです。
-
-### Mag Filter
-この設定では、キューブマップが拡大される際にピクセルが補間される方法を定義します。拡大とは、テクセル対画面のピクセル比が1より少ない状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
+### Filtering
+This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
 ### Anisotropy
 Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面により密接に合わせられるにつれて、テクスチャサンプリングの品質を制御できる1と16の間の値です。
 
-### Texture Slots
-キューブの各面に対応する6つのテクスチャーアセット。エディタの上部にあるキューブマップのプレビューパネルがガイドとなり、各面を正しく接続できるようにします。プレビューはボックスを展開して平面にしたようなものです。
+## Assigning Textures to Cubemaps
 
-### プレフィルタ
+![Cubemap Preview][4]
 
-キューブマップインスペクタには、低解像度のフィルタリングされたテクスチャーのセットを生成するプレフィルタのボタンがあります。これらは物理的素材の環境マップで使用されます。物理的な素材を使用する際、キューブマップのプレフィルタリングは不可欠です。
+The cubemap Preview panel displays the six faces of a cubemap flattened into the shape of a cross. Imagine a cardboard box that has been unfolded to lay flat. To construct a cubemap, simply drag texture assets from the Assets panel to the face slots in the Preview panel. You can also select a cubemap face slot and then select a texture asset from the Assets panel.
 
-## 素材にキューブマップを割り当てる
+Cubemap faces must be:
+
+* Square (the same resultion in width and height)
+* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+* All faces must be the same resolution
+
+To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cubemap faces, such as:
+
+* negx, posx, negy, posy, negz, posz
+* left, right, top|up, bottom|down, front|forward, back|backward
+* 0-5|1-6
+
+An example of a texture set that would match is:
+
+* face_posx.jpg
+* face_negx.jpg
+* face_posy.jpg
+* face_negy.jpg
+* face_posz.jpg
+* face_negz.jpg
+
+## Prefiltering Cubemaps
+
+The cubemap inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cubemap is essential for using the Physical material.
+
+## Assigning Cubemaps to Materials
 
 デフォルトのフォンと物理素材の種類はどちらも反射プロパティを持ちます。Environmentプロパティセクションを展開すると、次が表示されます：
 
-<img src="/images/user-manual/material-environment.jpg" style="width: 300px;"/>
+![Cubemap Material][5]
 
-Emptyスロットをクリックしてキューブマップを選択するか、アセットパネルからキューブマップスロットにキューブマップアセットをドラッグ＆ドロップすることができます。
+You can click the Empty slot to select a cubemap or drag and drop a cubemap asset from the asset panel into the cubemap slot.
 
 補足：物理素材が割り当てられ、プレフィルタされる場合は、デフォルトの環境マップとしてシーンのスカイボックスを使用します。
+
+[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
+[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
+[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
+[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
+[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
 

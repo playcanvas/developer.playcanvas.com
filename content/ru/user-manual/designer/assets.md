@@ -44,6 +44,8 @@ Filter which assets are visible using the filter drop down to select the type of
 
 You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
 
+The Search box supports wildcards. For example, *. will list every asset in your project.
+
 ## Drag and Drop
 
 Assets can be moved to different folders by dragging them from the main panel to a folder in the folder hierarchy. Note that assets support multi-selection. Pressing CTRL+A will select all assets in the currently selected folder.
@@ -56,8 +58,26 @@ You can also drag model, material, and cubemap assets directly into the [Viewpor
 * If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
 * If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
+## Checking References
+
+Sometimes it's useful to know where assets are being used (or referenced) within a particular scene. If the Editor cannot detect any references for an asset, a small dot will be displayed on its thumbnail:
+
+![Unreferenced Asset][5]
+
+<div class="alert alert-info">
+Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+</div>
+
+If an asset does have references, you can check them via the References content menu item:
+
+![Asset References][6]
+
+Selecting a reference will load it into the Inspector panel.
+
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector
 [3]: /user-manual/designer/viewport
 [4]: /user-manual/designer/settings
+[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
+[6]: /images/user-manual/editor/assets-panel/asset-references.png
 

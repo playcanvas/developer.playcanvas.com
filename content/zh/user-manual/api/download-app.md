@@ -23,14 +23,14 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 ## 参数
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>项目的ID。</p></div>
-<div class="parameter"><span class="param">name</span><p>app的名称，必须少于100个字符。</p></div>
-<div class="parameter"><span class="param">scenes [optional]</span><p>在app包含了一系列场景id。如果没有场景被指定那么项目的首要场景将会被使用。当用户指定了一个场景那么在列表中的第一个场景将会成为启动应用程序时第一时间的初始场景。</p></div>
-<div class="parameter"><span class="param">target [optional]</span><p>可以为’Web’或是‘IOS’。使用’web’下载一个普通的APP或者使用‘IOS’下载一个XCode项目。如果没有指定对象，将会默认下载’web’。</p></div>
-<div class="parameter"><span class="param">description [optional]</span><p>对于app的描述。必须少于10,000个字符。</p></div>
-<div class="parameter"><span class="param">version [optional]</span><p>app的版本。最多为20个字符。</p></div>
-<div class="parameter"><span class="param">release_notes [optional]</span><p>app的版本发布说明，可以容纳最多10,000个字符。</p></div>
-<div class="parameter"><span class="param">script_concatenate [optional]</span><p>Boolean型，如果设置为true，则将脚本进行级联。</p></div>
+<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
+<div class="parameter"><span class="param">name</span><p>The name of the app. Must be less than 1000 characters</p></div>
+<div class="parameter"><span class="param">scenes [optional]</span><p>A list of scene ids to be included in the app. If no scenes are specified then the primary scene of the project is used. When you specify scenes then the first scene in the list will be used as the initial scene of the application.</p></div>
+<div class="parameter"><span class="param">target [optional]</span><p>Can be either 'web' or 'ios'. Use 'web' to download a normal app or use 'ios' to download an XCode project. If no target is specified it defaults to 'web'.</p></div>
+<div class="parameter"><span class="param">description [optional]</span><p>The description of the app. Must be less than 10,000 characters.</p></div>
+<div class="parameter"><span class="param">version [optional]</span><p>The version of the app. Can be a string up to 20 characters.</p></div>
+<div class="parameter"><span class="param">release_notes [optional]</span><p>Release notes for the app. Can be a string up to 10,000 characters.</p></div>
+<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
 </div>
 
 ## 响应格式
@@ -71,7 +71,7 @@ Status: 201 Created
 
 ## 速率限制
 
-This route uses a [very strict][1] rate limit.
+This route uses a [strict][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
 [2]: /user-manual/api/get-job

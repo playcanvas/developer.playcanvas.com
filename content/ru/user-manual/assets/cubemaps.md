@@ -1,66 +1,92 @@
 ---
-title: Cube Maps
+title: Cubemaps
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Cube maps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
+Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
 
-1. A cube map can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cube map can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cube map as the cube map on a reflective object's materials.
+1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
+2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
 <iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
 
-## Importing Cube Map Textures
+## Importing Cubemap Textures
 
-A cube map is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cube map asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into your browser tab running PlayCanvas Editor. Once uploaded and processed, the images will appear in the Asset Explorer where they are now ready to be assigned to a cube map asset.
+A cubemap is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cubemap asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into the Assets panel (or select the Asset panel's Upload option). Once uploaded and processed, the images will appear in the Assets panel where they are now ready to be assigned to a cubemap asset.
 
-## Creating New Cube Map
+## Creating Cubemaps
 
-You can create new cube map assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
+You can create new cubemap assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
 
-<img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px" />
+![Cubemap Creation][1]
 
-This creates a new cube map Asset and opens up the Cube Map Editor on the right-hand side of the screen.
+This creates a new cubemap Asset and opens up the Cubemap Editor on the right-hand side of the screen.
 
-## Selecting a Cube Map
+## Selecting Cubemaps
 
-To select a cube map in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cube map filter to narrow down the options for selection. Cube maps are identified by a 3D cube icon.
+To select a cubemap in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cubemap filter to narrow down the options for selection. Cubemaps are identified by cross-shaped thumbnails:
 
-When a cube map is selected, the Editor panel on the right of the Editor will show the Cube Map Editor.
+![Cubemap Thumbnails][2]
 
-## Editing a Cube Map
+When a cubemap is selected, it will be loaded into the Inspector panel on the right of the Editor.
 
-<img src="/images/user-manual/cubemap-inspector.jpg" style="width: 300px; float: left; padding: 20px; padding-top: 0px;" />
+## Cubemap Properties
 
-Once you have a cube map selected, you can edit its properties.
+Once you have a cubemap selected, you can edit its properties.
 
-### Min Filter
-This setting determines how the pixels of the cube maps are interpolated as they are minified. Minification is when the texel to screen pixel ratio is greater than one. Linear gives the best results visually, followed by Nearest.
+![Cubemap Properties][3]
 
-### Mip Filter
-This setting controls additional controls to improve the quality of a cube map as it is minified. Linear gives the best results visually, followed by Nearest and then None.
-
-### Mag Filter
-This setting determines how the pixels of the cube maps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+### Filtering
+This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
 ### Anisotropy
 Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
 
-### Texture Slots
-The six texture assets that correspond to the faces of a cube. The cube map preview panel at the top of the editor if your guide, helping you to connect faces together correctly. Think of the preview as a box unfolded to a flat plane.
+## Assigning Textures to Cubemaps
 
-### Prefilter
+![Cubemap Preview][4]
 
-The cube map inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cube map is essential for using the Physical material.
+The cubemap Preview panel displays the six faces of a cubemap flattened into the shape of a cross. Imagine a cardboard box that has been unfolded to lay flat. To construct a cubemap, simply drag texture assets from the Assets panel to the face slots in the Preview panel. You can also select a cubemap face slot and then select a texture asset from the Assets panel.
 
-## Assigning Cube Maps to Materials
+Cubemap faces must be:
+
+* Square (the same resultion in width and height)
+* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+* All faces must be the same resolution
+
+To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cubemap faces, such as:
+
+* negx, posx, negy, posy, negz, posz
+* left, right, top|up, bottom|down, front|forward, back|backward
+* 0-5|1-6
+
+An example of a texture set that would match is:
+
+* face_posx.jpg
+* face_negx.jpg
+* face_posy.jpg
+* face_negy.jpg
+* face_posz.jpg
+* face_negz.jpg
+
+## Prefiltering Cubemaps
+
+The cubemap inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cubemap is essential for using the Physical material.
+
+## Assigning Cubemaps to Materials
 
 The default Phong and Physical material types both have reflection properties. If you expand the Environment property section, you see the following:
 
-<img src="/images/user-manual/material-environment.jpg" style="width: 300px;"/>
+![Cubemap Material][5]
 
-You can click the Empty slot to select a cube map or drag and drop a cube map asset from the asset panel into the cube map slot.
+You can click the Empty slot to select a cubemap or drag and drop a cubemap asset from the asset panel into the cubemap slot.
 
 Note: a Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
+
+[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
+[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
+[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
+[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
+[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
 

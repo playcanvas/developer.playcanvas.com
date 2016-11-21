@@ -20,11 +20,11 @@ position: 1
 
 ![Publish ボタン][1]
 
-*これによりPublishingダイアログが開きます。ここでは、公開既のビルドのリストを確認することができます。また、各ビルドの左のバナーアイコンをクリックして、プロジェクトのプライマリビルドを設定することができます。これは、Dashboard HeaderでユーザがPLAYボタンをクリックしたときに、再生されるビルドです。
+* This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
 
 ![公開][2]
 
-* PUBLISHをクリック。
+* Click the PUBLISH button next to "Publish on PlayCanvas".
 
 ![新しいビルドの公開][3]
 
@@ -38,14 +38,22 @@ position: 1
 
 ![シーンの選択][4]
 
-* ビルドに含みたいシーンをリストから選択。Primary Scene(青いバナーアイコン)がビルドに含まれている場合、ビルドを起動する際に最初に読み込まれます。
-* PUBLISH NOWをクリック
-* PUBLISHタブに新しいビルドが作成されます。処理が終わるまで待ちます。
-* ウェブappが公開されました！公開されたURLからツイートしたり、Facebookでシェアすることができます。
+* Select the Scenes you want to include in your build from the list. Notice that the Primary Scene (the one with the active banner icon), will be loaded first when your build is launched if you include it in the build.
+* Click 'PUBLISH NOW'
+* You will see a new build created in the BUILDS tab. Wait until it finishes processing.
+* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
 
 ビルドは次の形式で永久的にリンクを与えられます： `http://playcanv.as/b/BUILD_ID` 。このリンクはビルドを削除しない限り有効です。ゲームへのリンクをシェアしたい場合は、以下に説明する公開されたプロジェクトリンクを使用することを推奨します。
 
-## プライマリビルドの設定
+## Existing Builds
+
+Click Builds on the same popup.
+
+![Builds][5]
+
+Here you can see a list of existing published builds.
+
+Here you can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button in the Dashboard Header.
 
 ゲームの最新版を参照する単一のリンクがあると便利です。古いビルドの削除により壊れたリンクを心配する必要がなくなります。各プロジェクトにPrimary Buildリンクが用意されているのはこの理由のためです。常に次の形式になります： `http://playcanv.as/p/PROJECT_ID`
 
@@ -61,4 +69,5 @@ position: 1
 [2]: /images/user-manual/editor/publishing.jpg
 [3]: /images/user-manual/editor/publishing-new-top.jpg
 [4]: /images/user-manual/editor/publishing-new-bottom.jpg
+[5]: /images/user-manual/publishing/web/builds.jpg
 
