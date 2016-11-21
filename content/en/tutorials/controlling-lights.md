@@ -1,7 +1,7 @@
 ---
 title: Controlling Lights
 template: tutorial-page.tmpl.html
-tags: lights
+tags: lighting
 ---
 
 <iframe src="https://playcanv.as/p/tiKpka9M"></iframe>

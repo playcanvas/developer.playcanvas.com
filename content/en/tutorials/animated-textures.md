@@ -1,7 +1,7 @@
 ---
 title: Animated Textures
 template: tutorial-page.tmpl.html
-tags: animation, texture
+tags: animation, textures
 ---
 
 <iframe src="http://playcanv.as/p/qFDE1q2H"></iframe>
