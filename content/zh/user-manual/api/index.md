@@ -8,7 +8,7 @@ position: 12
     REST API 目前正在测试阶段。 这意味着我们可能会改变某些端口和API的响应。
 </div>
 
-PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more. Here is a [tutorial][2] about using REST APIs.
+PlayCanvas 为开发者们提供了[组织账户][1]与REST API。 您可以将这个 API 应用到通过编程方式访问您的项目，发表或下载应用等等。这里是一个关于使用REST API的[教程] [2]。
 
 ## 授权
 

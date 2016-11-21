@@ -9,8 +9,8 @@ position: 12
 编辑一个着色器资源，左键点击编辑器选择编辑。以下是一个例子通过使用着色器来创建一个自定义材料。
 
 ```
-var vertexShader = app.assets.find('my_vertex_shader');
-var fragmentShader = app.assets.find('my_fragment_shader');
+var vertexShader = this.app.assets.find('my_vertex_shader');
+var fragmentShader = this.app.assets.find('my_fragment_shader');
 var shaderDefinition = {
     attributes: {
         aPosition: pc.SEMANTIC_POSITION,
@@ -20,7 +20,7 @@ var shaderDefinition = {
     fshader: fragmentShader.resource
 };
 
-var shader = new pc.Shader(app.graphicsDevice, shaderDefinition);
+var shader = new pc.Shader(this.app.graphicsDevice, shaderDefinition);
 var material = new pc.Material();
 material.setShader(shader);
 ```

@@ -2,6 +2,19 @@
 (function () {
     var _current = null;
 
+    function getURLParameter(param) {
+        if (!window.location.search) {
+            return;
+        }
+
+        var m = new RegExp(param + '=([^&]*)').exec(window.location.search.substring(1));
+        if (!m) {
+            return;
+        }
+
+        return decodeURIComponent(m[1]);
+    }
+
     function ready(fn) {
       if (document.readyState != 'loading'){
         fn();
@@ -16,9 +29,7 @@
         if (url.indexOf("/video/") >= 0) {
             header.setActive("video");
         } else if (url.indexOf("/tutorials/") >= 0) {
-            tutorials.setCurrentNavbar(url);
-            tutorials.setCurrentSidebar(url);
-
+            tutorials.attach();
             header.setActive("tutorials")
         } else if (url.indexOf("/user-manual/") >= 0) {
             // usermanual
@@ -173,6 +184,113 @@
 
 
     var tutorials = {
+        tags: [],
+        attach: function() {
+            var checkboxes = document.querySelectorAll('.tutorial-checkbox');
+            checkboxes.forEach(function (cb) {
+                if (cb.classList.contains('disabled')) return;
+                cb.addEventListener('click', function (e) {
+                    var i = tutorials.tags.indexOf(cb.dataset.tag);
+                    if (i < 0) {
+                        tutorials.tags.push(cb.dataset.tag);
+                    } else {
+                        tutorials.tags.splice(i, 1);
+                    }
+                    tutorials.filter();
+                    e.preventDefault();
+                });
+            });
+
+            var filters = document.querySelectorAll('.tutorial-filter-text');
+            filters.forEach(function (filter) {
+                if (filter.classList.contains("disabled")) return;
+                filter.addEventListener('click', function (e) {
+                    if (tutorials.tags.length === 1 && tutorials.tags[0] === filter.dataset.tag) {
+                        tutorials.tags = []; // toggle off
+                    } else {
+                        tutorials.tags = [filter.dataset.tag]; // toggle on
+                    }
+                    tutorials.filter();
+                    e.preventDefault();
+                });
+            });
+
+            window.addEventListener('popstate', function () {
+                tutorials.filterFromUrl();
+            });
+            tutorials.filterFromUrl();
+        },
+
+        filterFromUrl: function () {
+            var params = getURLParameter('tags');
+            if (params && params.length) {
+                tutorials.tags = params.split(',');
+            } else {
+                tutorials.tags = [];
+            }
+
+            tutorials.filter(true);
+        },
+
+        enableTag: function (tag) {
+            var checkbox = document.querySelector('.tutorial-checkbox[data-tag="'+tag+'"');
+            if (checkbox) {
+                checkbox.classList.add('on');
+            }
+        },
+
+        disableTag: function (tag) {
+            var checkbox = document.querySelector('.tutorial-checkbox[data-tag="'+tag+'"');
+            if (checkbox) {
+                checkbox.classList.remove('on');
+            }
+        },
+
+        enableTags: function (tags) {
+            var checkboxes = document.querySelectorAll('.tutorial-checkbox');
+            checkboxes.forEach(function (cb) {
+                if (tags.indexOf(cb.dataset.tag) >= 0) {
+                    cb.classList.add('on');
+                } else {
+                    cb.classList.remove('on');
+                }
+            });
+        },
+
+        clearTags: function () {
+            var checkboxes = document.querySelectorAll('.tutorial-checkbox');
+            checkboxes.forEach(function (cb) {
+                cb.classList.remove('on');
+            });
+        },
+
+        // filter based on current tutorials.tags property
+        filter: function (nopush) {
+            tutorials.clearTags();
+            tutorials.enableTags(tutorials.tags);
+
+            if (!nopush) {
+                var search = "?tags="+tutorials.tags.join(',');
+                var url = document.location.pathname + search;
+                window.history.pushState({}, document.title, url);
+            }
+
+            var items = document.querySelectorAll(".tutorial-cloud-item");
+            items.forEach(function (item) {
+                var itemTags = item.dataset.tags.split(',');
+
+                var match = itemTags.filter(function (tag) {
+                    return (tutorials.tags.indexOf(tag) >= 0)
+                });
+
+                if (match.length === tutorials.tags.length) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        },
+
         setCurrentNavbar: function (url) {
             var level = null;
 

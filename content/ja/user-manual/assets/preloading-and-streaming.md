@@ -28,7 +28,7 @@ template: usermanual-page.tmpl.html
 タグを利用してアセットのセットを読み込む方法を説明するjavascriptの例です。
 
 ```javascript
-var assets = app.assets.findByTag("level-1");
+var assets = this.app.assets.findByTag("level-1");
 var count = 0;
 
 for (var i = 0; i < assets.length; i++) {
@@ -38,7 +38,7 @@ for (var i = 0; i < assets.length; i++) {
             // asset loading complete
         }
     });
-    app.assets.load(assets[i]);
+    this.app.assets.load(assets[i]);
 }
 ```
 
