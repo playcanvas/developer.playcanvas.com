@@ -1,7 +1,7 @@
 ---
 title: Light Halos
 template: tutorial-page.tmpl.html
-tags: lights
+tags: lighting
 ---
 
 <iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
