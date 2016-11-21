@@ -363,6 +363,11 @@
             @include font-icon();
         }
 
+        .forum-icon:after {
+            content: "\E477";
+            @include font-icon();
+        }
+
         .manual-icon:after {
             content: "\E222";
             @include font-icon();
