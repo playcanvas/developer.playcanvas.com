@@ -2,6 +2,7 @@
 title: 基本材质
 template: tutorial-page.tmpl.html
 tags: materials
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
 材料是定义3D模型的表面的外观的东西。 最简单的举例，一个材质设置了多边形的颜色，在其最复杂的情况下，一种材料可以模拟海洋的表面或光通过玻璃的效果。

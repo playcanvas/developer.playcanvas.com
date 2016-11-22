@@ -2,6 +2,7 @@
 title: アセットレジストリの使用
 template: tutorial-page.tmpl.html
 tags: loading, assets
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>

@@ -32,7 +32,6 @@
     "Basic Audio": "基本的なオーディオ",
     "Basic Cameras": "基本的なカメラ",
     "Basic Materials": "基本的な素材",
-    "Cardboard VR": "Cardboard VR",
     "Collision and Triggers": "コリジョン及びトリガー",
     "Controlling Lights": "ライトのコントロール",
     "Custom Post Effects": "カスタムの後処理エフェクト",

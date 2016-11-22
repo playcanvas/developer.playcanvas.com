@@ -2,6 +2,7 @@
 title: 基础键盘输入
 template: tutorial-page.tmpl.html
 tags: input
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>

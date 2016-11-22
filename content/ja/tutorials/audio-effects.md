@@ -2,6 +2,7 @@
 title: オーディオ効果
 template: tutorial-page.tmpl.html
 tags: audio
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>

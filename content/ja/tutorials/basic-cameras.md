@@ -3,6 +3,7 @@ title: 基本的なカメラ
 template: tutorial-page.tmpl.html
 position: 3
 tags: cameras
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
 ## カメラ・エンティティ

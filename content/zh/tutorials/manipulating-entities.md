@@ -2,6 +2,7 @@
 title: 操纵实体
 template: tutorial-page.tmpl.html
 tags: basics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 在这个教程中，我们会向你展示如何改变一个实体的位置，面对方向和体积大小。
