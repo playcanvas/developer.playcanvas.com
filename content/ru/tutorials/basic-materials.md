@@ -1,7 +1,8 @@
 ---
 title: Basic Materials
 template: tutorial-page.tmpl.html
-tags: materials
+tags: material
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
 Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.

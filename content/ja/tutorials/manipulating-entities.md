@@ -2,6 +2,7 @@
 title: エンティティの操作
 template: tutorial-page.tmpl.html
 tags: basics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 このチュートリアルではエンティティの位置、方向、尺度を変更する方法を紹介します。

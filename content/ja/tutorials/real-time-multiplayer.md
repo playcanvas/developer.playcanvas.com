@@ -2,6 +2,7 @@
 title: リアルタイム マルチプレイヤー
 template: tutorial-page.tmpl.html
 tags: multiplayer, networking
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
 <iframe src="http://playcanv.as/p/XFp1Ty3X/" ></iframe>

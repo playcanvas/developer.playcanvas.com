@@ -1,7 +1,8 @@
 ---
 title: ライト Cookie
 template: tutorial-page.tmpl.html
-tags: lights
+tags: lighting
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/AGtssoOU/"></iframe>
@@ -31,7 +32,7 @@ tags: lights
 
 **たいまつ** - たいまつやヘッドライトは均等に表面を照らしません。代わりに、明るい"苛性"領域と暗い"苛性"領域があります。ライトクッキーを使用してこの効果を作成することができます。
 
-![Torch Light][4]
+![たいまつライト][4]
 
 [1]: https://playcanvas.com/project/409793/overview/example-light-cookies
 [2]: /images/tutorials/intermediate/light-cookies/window-cookie.jpg

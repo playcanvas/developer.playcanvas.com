@@ -1,7 +1,8 @@
 ---
-title: Манипулирование сущностями
+title: Manipulating Entities
 template: tutorial-page.tmpl.html
 tags: basics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 В этом уроке мы Вам покажем как можно изменять положение сущности, её ориентацию в пространстве и размер.

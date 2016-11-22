@@ -2,6 +2,7 @@
 title: Making a Simple Game - Part 2
 template: tutorial-page.tmpl.html
 tags: games
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>

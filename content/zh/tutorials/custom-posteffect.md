@@ -2,6 +2,7 @@
 title: 自定义后期效果
 template: tutorial-page.tmpl.html
 tags: posteffects
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/3je0YP0q/" ></iframe>

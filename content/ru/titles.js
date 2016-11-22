@@ -32,7 +32,6 @@
     "Basic Audio": "Основы об аудио",
     "Basic Cameras": "Основы камер",
     "Basic Materials": "Основы материалов",
-    "Cardboard VR": "",
     "Collision and Triggers": "Столкновения и триггеры",
     "Controlling Lights": "Контроль света",
     "Custom Post Effects": "Пользовательские пост-эффекты",

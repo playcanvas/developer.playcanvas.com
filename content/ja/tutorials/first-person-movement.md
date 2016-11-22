@@ -2,6 +2,7 @@
 title: 一人称カメラを使った操作と移動
 template: tutorial-page.tmpl.html
 tags: input, camera
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/HzOzlZOC"></iframe>

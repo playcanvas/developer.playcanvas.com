@@ -2,6 +2,7 @@
 title: More Cameras
 template: tutorial-page.tmpl.html
 tags: basics, camera
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>

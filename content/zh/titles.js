@@ -32,7 +32,6 @@
     "Basic Audio": "音频入门",
     "Basic Cameras": "摄影机入门",
     "Basic Materials": "材质入门",
-    "Cardboard VR": "平面化虚拟现实",
     "Collision and Triggers": "碰撞与触发器",
     "Controlling Lights": "灯光管理",
     "Custom Post Effects": "自定义后期特效",
