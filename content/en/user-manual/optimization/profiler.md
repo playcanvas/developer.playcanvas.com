@@ -10,11 +10,9 @@ PlayCanvas provides an real-time profiler to assist in diagnosing performance pr
 
 The Profiler is a panel that overlays your app, displaying lots of useful timing information and performance stats. So whenever you’re wondering why your app isn’t hitting 60 frames per second, simply launch the Profiler and you should be able to figure out exactly what the problem is.
 
-To launch the Profiler, make a selection from the sub-menu of the Launch button:
+To launch the Profiler, tick the Profiler checkbox from the sub-menu of the Launch button:
 
 ![Profiler Launch][2]
-
-Depending on whether your scripts are served from PlayCanvas or a local server, select the relevant option that enables the Profiler. The Editor will remember the option you select for the next time you hit the Launch button.
 
 There is also a hot-key to toggle the Profiler: CTRL (CMD) + ALT + T.
 
