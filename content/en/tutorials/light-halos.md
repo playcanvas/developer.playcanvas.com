@@ -2,6 +2,7 @@
 title: Light Halos
 template: tutorial-page.tmpl.html
 tags: lighting
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
