@@ -71,7 +71,7 @@ You will see a directory of files. Like this:
 
 ![served directory](/images/platform/localserver.png "Local server directory")
 
-Launching scenes from the PlayCanvas Editor using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
+To user your local server tick the Use Local Server checkbox in the sub-menu of the Launch button. This will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
 
 ## Code Repository
 
@@ -118,11 +118,9 @@ If instead you only want access to a specific repository, you can instead:
 
 ## Switching
 
-<img src="/images/user-manual/launch-options.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/launch-options.jpg" style="float: right; padding: 20px; padding-top: 0px;"/>
 
-You can easily switch between using local code and a code repository when using the PlayCanvas Editor by choosing which Launch button to use.
-
-**Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local)** will launch against a locally running server
+Tick Use Local Server to launch against a locally running server or leave unticked to launch using code on the server, i.e. your code repository or code directory.
 
 Exporting scenes will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
 
