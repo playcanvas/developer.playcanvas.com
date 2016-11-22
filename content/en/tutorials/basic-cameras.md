@@ -3,7 +3,7 @@ title: Basic Cameras
 template: tutorial-page.tmpl.html
 position: 3
 tags: camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 ## Camera Entities
