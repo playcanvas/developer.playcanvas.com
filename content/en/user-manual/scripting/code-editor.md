@@ -54,6 +54,9 @@ The editor is based on [CodeMirror][2] and the full list of hot keys can be [fou
     <td>Un-Indent line or selection</td><td>Ctrl + ]</td><td>Cmd + ]</td>
 </tr>
 <tr>
+    <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
+</tr>
+<tr>
     <td>Jump to declaration</td><td>Alt + .</td><td>Alt + .</td>
 </tr>
 <tr>
