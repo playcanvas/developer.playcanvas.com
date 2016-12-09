@@ -104,5 +104,5 @@ If you are in doubt as to whether your browser supports WebGL (required to run P
 [5]: /images/user-manual/introduction-scene.jpg
 [6]: /images/user-manual/introduction-script.jpg
 [7]: /images/user-manual/introduction-published.jpg
-[8]: /user-manual/editor
+[8]: /user-manual/designer
 [9]: /user-manual/assets
