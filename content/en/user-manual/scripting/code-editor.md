@@ -42,7 +42,7 @@ The editor is based on [CodeMirror][2] and the full list of hot keys can be [fou
     <td>Replace all</td><td>Ctrl + Shift + R</td><td>Cmd + Shift + Alt + F</td>
 </tr>
 <tr>
-    <td>Rename variable</td><td>Ctrl + Q</td><td>Cmd + Q</td>
+    <td>Rename variable</td><td>Ctrl + Q</td><td>Ctrl + Q</td>
 </tr>
 <tr>
     <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
