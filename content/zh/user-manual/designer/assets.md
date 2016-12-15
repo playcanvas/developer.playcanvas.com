@@ -44,7 +44,7 @@ position: 6
 
 在搜索框中可以对工程中的资源进行全局搜索。简单的在搜索框中输入关键字，编辑器会实时进行资源搜索。
 
-The Search box supports wildcards. For example, *. will list every asset in your project.
+搜索框支持通配符。 例如， *. 将列出项目中的所有资源。
 
 ## 拖放
 
@@ -58,21 +58,21 @@ The Search box supports wildcards. For example, *. will list every asset in your
 * 如果拖动材质至视口中的模型实体上时，材质将会实时替换掉模型上的材质 (用于预览)。如果确定需要替换材质，则松开鼠标完成拖放即可。
 * 如果拖放 Cubemap 到视口中的场景背景上，Cubemap 会被做为场景的天空盒使用。在[场景设置][4]中也有对应的参数可以修改。
 
-## Checking References
+## 检查引用
 
-Sometimes it's useful to know where assets are being used (or referenced) within a particular scene. If the Editor cannot detect any references for an asset, a small dot will be displayed on its thumbnail:
+有时，知道资产在特定场景中被使用(或引用)的位置是有用的。 如果编辑器无法检测到资源的任何引用，则会在其缩略图上显示一个小点：
 
-![Unreferenced Asset][5]
+![未引用的资源][5]
 
 <div class="alert alert-info">
-Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+请注意，编辑器无法检测对代码中生成的资产的引用。 因此，在根据此指标删除资产之前，请仔细考虑！
 </div>
 
-If an asset does have references, you can check them via the References content menu item:
+如果资源被引用了，您可以通过引用内容菜单项检查它们：
 
-![Asset References][6]
+![已引用资源][6]
 
-Selecting a reference will load it into the Inspector panel.
+选择参考将把它加载到检查器面板中。
 
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector

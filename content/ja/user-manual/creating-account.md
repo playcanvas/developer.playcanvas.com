@@ -1,34 +1,34 @@
 ---
-title: Creating an Account
+title: アカウントの作成
 template: usermanual-page.tmpl.html
 position: 1.7
 ---
 
-## Sign Up
+## サインアップ
 
-In order to start using PlayCanvas you need to create a new account so first step is to click Sign Up anywhere on the front page.
+PlayCanvasの使用を開始するには、新しいアカウントを作成する必要があります。最初に、フロントページでSign Upをクリックしてください。
 
-![signup][1]
+![サインアップ][1]
 
-At the sign up page enter your email address and your password. If you want you can also sign up using your Google account by clicking on the Google button on the bottom.
+サインアップページでメールアドレスとパスワードを入力してください。下にあるGoogleボタンをクリックしてGoogleアカウントから登録することもできます。
 
 ![signup_details][2]
 
-In the next page enter you full name and your username. If you want toggle the skills that represent you the most. Finally, click on Create Account.
+次のページで氏名とユーザ名を入力します。代表的なスキルをトグルで選択することもできます。最後に、Create Accountをクリックします。
 
 ![signup_final][3]
 
-When you create your account we will automatically create a new demo project for you so that you get a first glance at the [PlayCanvas Editor][4]. Feel free to jump to your [profile][5] page at any time to start creating your own projects.
+アカウントを作成すると自動的に新しいデモプロジェクトが作成され、[PlayCanvas Editor][4]を確認できます。[プロフィール][5]ページに移動してプロジェクトを作成してください。
 
-## Logging In
+## ログイン
 
-In order to log in to your Account click Log In on the front page. If you are already logged in you will be taken to your [profile][5] page automatically. If you have signed up using your email and password make sure you enter those fields in the login page. Otherwise if you have logged in with Google then click on Google instead.
+アカウントにログインするには、フロントページのLog Inをクリックしてください。既にログインしている場合は、[プロフィール][5]ページに自動的に移動します。メールアドレスとパスワードを使用してサインアップした場合は、ログインページでこれらのフィールドに入力してください。Googleでログインした場合はGoogleをクリックしてください。
 
-![login][7]
+![ログイン][7]
 
 ## Persona
 
-We used to support the Persona login system, however [Mozilla have decided to shut it down][8] on November 30th 2016. If you have been using Persona to log in click [here][6] to set a password for your account.
+Personaログインシステムに対応していましたが、2016年11月30日に[Mozillaにより停止することが決まりました][8]。ログインにPersonaを使用していた場合は、[こちら][6]をクリックしてアカウントのパスワードを設定してください。
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png

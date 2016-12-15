@@ -14,7 +14,7 @@ GET https://playcanvas.com/api/projects/:project_id/apps
 
 项目的所有已发布APP。
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps

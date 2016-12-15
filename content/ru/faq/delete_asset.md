@@ -1,9 +1,9 @@
 ---
-title: Delete an asset
-keywords: asset, delete, remove
+title: Удаление ресурса
+keywords: ресурс, удаление
 ---
 
-## How do I delete an asset?
+## Как удалить ресурс?
 
-To delete an asset select it and press **Delete** or right click on it and select Delete.
+Чтобы удалить ресурс, выделите его и нажмите **Удалить** или щелкните правой кнопкой мыши на нем и выберите соответствующий пункт
 

@@ -1,14 +1,14 @@
 ---
-title: Using WebVR in PlayCanvas
+title: PlayCanvasでWebVRを使用
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-Once you've enabled WebVR in your project there is a small API for you to use in your scripts to manage the VR displays that are connected to your application and to enter and exit VR.
+プロジェクトでWebVRを有効にすると、スクリプトに使用してアプリケーションに接続されているVRディスプレイを管理し、VRを開始して終了するための小さなAPIを使用できます。
 
-## To Enter VR
+## VRの開始
 
-The API for entering VR is on the Camera Component. To start VR presenting you should use the `enterVr` method.
+VRに入るためのAPIはCamera Componentにあります。VRのプレゼンテーションを開始するには、 `enterVr`メソッドを使います。
 
 ```javascript
 this.entity.camera.enterVr(function (err)) {
@@ -20,9 +20,9 @@ this.entity.camera.enterVr(function (err)) {
 });
 ```
 
-## To Exit VR
+## VRの終了
 
-Exiting VR can be triggered in two ways. First, the user might exit VR via some external process. For example, hitting the back button on their browser. Second, you may trigger the camera to exit VR directly using the `exitVR` method.
+VRの終了は2つの方法でトリガーすることができます。一つ目は、何らかの外部プロセスでVRを終了する方法です。 たとえば、ブラウザの戻るボタンを押します。二つ目は、 `exitVR`メソッドを使用してカメラをVRから直接終了するようにトリガーする方法です。
 
 ```javascript
 this.entity.camera.exitVr(function (err) {
@@ -34,15 +34,15 @@ this.entity.camera.exitVr(function (err) {
 });
 ```
 
-## Camera Position in VR
+## VRでのカメラ位置
 
-When you are presenting in VR the position and orientation of the camera are overwritten by data from the head-mounted display. In some cases, such as when you are using a Google Cardboard style device, you may need to offset the camera's position. In this case, you should add a parent entity to your camera and apply your translation to this entity.
+VRでプレゼンテーションしているときは、カメラの位置と向きがヘッドマウントディスプレイのデータによって上書きされます。Google Cardboardスタイルの端末を使用している場合などのいくつかのケースでは、カメラの位置をオフセットする必要があります。この場合、カメラに親エンティティを追加して、このエンティティに変換を適用する必要があります。
 
-![Camera Offset][1]
+![カメラのオフセット][1]
 
 ## Magic Window Style VR
 
-Magic Window is a type of experience where you aren't viewing your scene through a stereo head-mounted display. Instead you can use a tablet or phone device to create a "magic window" view into a scene. To enable this type of view in PlayCanvas you set the VrDisplay property on the camera without calling `enterVr`.
+Magic Windowは、ステレオヘッドマウントディスプレイを使用せずにシーンを表示する体験です。代わりに、タブレットやスマートフォンを使ってシーンに「マジックウィンドウ」ビューを作成します。PlayCanvasでこのようなビューを有効にするには、`enterVr`を呼び出さずにカメラのVrDisplayプロパティを設定します。
 
 ```javascript
 if (this.app.vr.display) {
@@ -50,27 +50,27 @@ if (this.app.vr.display) {
 }
 ```
 
-### API Overview
+### API 概要
 
-Advanced users may wish to know more about the VR API available. However, in most cases you will simply need the use cases above.
+上級ユーザは、利用可能なVR APIについて知りたいかもしれません。ただし、ほとんどの場合、上記のユースケースで十分です。
 
 ## pc.VrManager
 
-If VR is enabled in your application an instance of the `pc.VrManager` is created and available to your application at `this.app.vr`. The VrManager is used to access and manage the displays that are connected to your application. The main purpose of the VrManager class is to make available a list of the displays that are connected and fire events to alert the application of new displays.
+アプリケーションでVRが有効になっている場合、 `pc.VrManager`のインスタンスが作成され、` this.app.vr`からアプリケーションで利用できます。VrManagerを使用して、アプリケーションに接続されているディスプレイにアクセスして管理します。VrManagerクラスの主な目的は、接続されているディスプレイのリストを使用可能にし、アプリケーションに新しいディスプレイについて警告するイベントを起動することです。
 
-The [pc.VrManager][2] documentation.
+[pc.VrManager][2] ドキュメント
 
 ## pc.VrDisplay
 
-For each display capable of displaying VR content the `pc.VrManager` will contain a `pc.VrDisplay` in it's displays list. The `pc.VrDisplay` is used for two main purposes. First, as an input device it supplies the position and orientation of the camera, this is usually supplied as the view and projection matrices that are applied to the camera that it is attached to. Second, as an output device it can be the location that the scene is rendered to, this is called "presenting". When a VrDisplay is presenting that means that VR content is being displayed on the display. To start presenting use the `enterVr` method described below. To use the display as an input device without presenting see the section on Magic Window VR below.
+VRコンテンツを表示することができる各ディスプレイは、 `pc.VrManager`はその表示リストに`pc.VrDisplay`を含みます。`pc.VrDisplay`は主に2つの目的で使用されます。まず、入力デバイスとしてカメラの位置と向きを指定しますが、これは通常、取り付けられているカメラに適用されるビューおよび投影マトリックスとして提供されます。次に、出力デバイスとして、シーンがレンダリングされる場所にすることができます。これは、「プレゼンテーション」と呼ばれます。 VrDisplayがプレゼンテーションされているときは、VRコンテンツがディスプレイに表示されていることを意味します。プレゼンテーションを開始するには、下記の `enterVr`メソッドを使います。プレゼンテーションせずに入力デバイスとしてディスプレイを使用するには、以下のMagic Window VRのセクションを参照してください。
 
-If you are familiar with the underlying WebVR API, the `pc.VrDisplay` class contains the `navigator.VRDisplay` object.
+基礎となるWebVR APIに精通している場合、 `pc.VrDisplay`クラスには` navigator.VRDisplay`オブジェクトが含まれています。
 
-The [pc.VrDisplay][3] documentation.
+[pc.VrDisplay][3] ドキュメント
 
-## Why can't I enable VR mode automatically?
+## VRモードを自動的に有効にできないのはなぜですか？
 
-Entering WebVR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason there is no way to enter VR immediately on loading a page.
+WebVRを開始するには、*ユーザアクション*によってブラウザをトリガする必要があります。つまり、キー入力、マウスクリック、またはタッチイベントに応答する必要があります。そのため、ページを読み込んですぐにVRに入る方法はありません。
 
 [1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
 [2]: /api/pc.VrManager.html

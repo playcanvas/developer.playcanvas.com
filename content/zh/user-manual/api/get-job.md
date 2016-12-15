@@ -14,7 +14,7 @@ GET https://playcanvas.com/api/jobs/:id
 
 通过ID寻找作业。
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/jobs/99999

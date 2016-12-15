@@ -12,9 +12,9 @@ POST https://playcanvas.com/api/apps/download
 
 ## 描述
 
-This will allow you to download an app which you can self host on your own server. The request will start an export job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, it's data will contain a URL to download the exported app.
+这将允许您下载一个应用程序，您可以在自己的服务器上自己托管。 请求将启动导出作业，作业详细信息将在响应中返回。 您可以[按id轮询作业] [2]，直到其状态为“完成”或“错误”。 作业完成后，其数据将包含用于下载导出的应用程序的URL。
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"project_id": 9999999, "name": "My App"}' https://playcanvas.com/api/apps/download
@@ -23,14 +23,14 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 ## 参数
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
-<div class="parameter"><span class="param">name</span><p>The name of the app. Must be less than 1000 characters</p></div>
-<div class="parameter"><span class="param">scenes [optional]</span><p>A list of scene ids to be included in the app. If no scenes are specified then the primary scene of the project is used. When you specify scenes then the first scene in the list will be used as the initial scene of the application.</p></div>
-<div class="parameter"><span class="param">target [optional]</span><p>Can be either 'web' or 'ios'. Use 'web' to download a normal app or use 'ios' to download an XCode project. If no target is specified it defaults to 'web'.</p></div>
-<div class="parameter"><span class="param">description [optional]</span><p>The description of the app. Must be less than 10,000 characters.</p></div>
-<div class="parameter"><span class="param">version [optional]</span><p>The version of the app. Can be a string up to 20 characters.</p></div>
-<div class="parameter"><span class="param">release_notes [optional]</span><p>Release notes for the app. Can be a string up to 10,000 characters.</p></div>
-<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
+<div class="parameter"><span class="param">project_id</span><p>工程ID</p></div>
+<div class="parameter"><span class="param">name</span><p>应用的名称， 必须小于1000个字符。</p></div>
+<div class="parameter"><span class="param">scenes [optional]</span><p>要包含在应用程序中的场景ID列表。 如果没有指定场景，则使用项目的主场景。 当您指定场景时，列表中的第一个场景将用作应用程序的初始场景。</p></div>
+<div class="parameter"><span class="param">target [optional]</span><p>可以是“web”或“ios”。 使用'web'下载一个正常的应用程序或使用'ios'下载一个XCode项目。 如果没有指定目标，它默认为'web'。</p></div>
+<div class="parameter"><span class="param">description [optional]</span><p>应用的说明。 必须小于10,000个字符。</p></div>
+<div class="parameter"><span class="param">version [optional]</span><p>应用程式的版本。 可以是最多20个字符的字符串。</p></div>
+<div class="parameter"><span class="param">release_notes [optional]</span><p>应用的版本资讯。 可以是最多10,000个字符的字符串。</p></div>
+<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>布尔值。 如果要连接脚本，请将其设置为true。</p></div>
 </div>
 
 ## 响应格式
@@ -71,7 +71,7 @@ Status: 201 Created
 
 ## 速率限制
 
-This route uses a [strict][1] rate limit.
+此路由使用[strict] [1]速率限制。
 
 [1]: /user-manual/api#rate-limiting
 [2]: /user-manual/api/get-job

@@ -1,13 +1,13 @@
 ---
-title: Play an animation
-keywords: component, animation, model, 3d, fbx
+title: Воспроизведение анимации
+keywords: компонент, анимация, модель, 3d, fbx
 ---
 
-## How do I play an animation?
+## Как воспроизвести анимацию?
 
 <iframe src="https://www.youtube.com/embed/2MAxwOYLnh0?list=PL0KdXFF26E4Bpjx5R3B8LH6blmU-h3JLV?controls=2&showinfo=0" width="560" height="315" allowFullScreen style="max-width:100%"></iframe>
 
-To play an animation of a 3D model you need to create an Entity with a <a href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">Model Component</a> and an <a href="http://developer.playcanvas.com/en/user-manual/packs/components/animation/" target="_blank">Animation Component</a>. The **Model Component** will render your model and the **Animation Component** will play animations.
+Чтобы воспроизвести анимацию 3D-модели, Вам нужно создать сущность с <a href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">компонентом Модель</a> а также <a href="http://developer.playcanvas.com/en/user-manual/packs/components/animation/" target="_blank">компонентом Анимация</a>.  **Модель** будет отображать на экране вашу модель, а **Анимация** будет проигрывать анимации.
 
-To render the model drag a model Asset in the Asset field of the Model Component. To play animations drag Animation Assets on the Assets field of the Animation Component.
+Чтобы отобразить модель на экране, перетащите ее в соответствующее поле компонента Модель. Чтобы воспроизвести анимацию, перетащите ее в соответствующее поле Анимации.
 

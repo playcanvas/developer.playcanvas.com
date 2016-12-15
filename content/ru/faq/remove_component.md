@@ -1,11 +1,11 @@
 ---
-title: Remove a component
-keywords: entity, remove, component, behaviour
+title: Удаление компонента
+keywords: сущность, удалить, компонент, поведение
 ---
 
-## How do I remove a component?
+## Как удалить компонент?
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/remove_component.jpg" />
 
-To remove a component, select the Entity and then click on the **<span class="font-icon">&#57636;</span> Delete** button in the Inspector next the component’s title.
+Чтобы удалить компонент, выберите сущность и затем кликните на кнопке **<span class="font-icon">&#57636;</span> Удалить** в инспекторе, находящемся после заголовка компонента.
 

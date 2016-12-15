@@ -1,11 +1,11 @@
 ---
-title: Duplicate an Entity
-keywords: entity, duplicate, copy, paste
+title: Дублирование сущности
+keywords: сущность, дублирование, копировать, вставить
 ---
 
-## How do I duplicate an Entity?
+## Как дублировать сущность?
 
-To duplicate an Entity use the <span class="font-icon">&#57638;</span> Duplicate button in the Hierarchy panel or press **Ctrl+D**.
+Чтобы продублировать сущность используйте <span class="font-icon">&#57638;</span> Дублировать в панели иерархии сцены или нажмите **Ctrl+D**.
 
-You can also copy and paste an Entity. To copy press **Ctrl+C** and to paste **Ctrl+V**.
+Вы можете скопировать и вставить сущность. Для того, чтобы скопировать, нажмите **Ctrl+C** и затем **Ctrl+V** чтобы вставить.
 

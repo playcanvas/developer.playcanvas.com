@@ -1,46 +1,46 @@
 ---
-title: Optimizing WebVR applications
+title: WebVR アプリケーションの最適化
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-## Introduction
+## はじめに
 
-A high and consistent framerate is critical for making and enjoyable VR or WebVR experience. When creating WebVR content it is more important than ever to test and optimize early in development and maintain the target framerate throughout development.
+楽しいVRまたはWebVR体験を実現するには、安定した高いフレームレートが重要です。WebVRコンテンツを作成する際、開発の初期段階でテストと最適化を行い、開発中終始ターゲットフレームレートを維持することが重要です。
 
-Rendering WebVR is expensive due to the fact that the scene must be rendered once for each eye. PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't not duplicate too much effort, but stereo rendering is still more expensive that mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR, whilst it doesn't have the high frame rates, may have another issue which is the lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
+WebVRのレンダリングは、各目に対してシーンを1度レンダリングする必要があるため、重くなります。 PlayCanvasエンジンには、VRレンダリングが重複しないように多くの最適化が含まれていますが、ステレオレンダリングはモノラルレンダリングよりもデータ量が上がります。さらに、Oculus RiftやHTC Viveなどのデバイスは、75Hzや90Hzなどの高いフレームレートを必要とするので、フレームをレンダリングする時間がさらに短縮されます。 モバイルVRは高いフレームレートを持ちませんが、歪みレンダリングのネイティブサポートの不足という別の問題があります。これは、このポストプロセス段階がJavascriptとWebGLで行われ、オーバーヘッドが追加されることを意味します。
 
-But, all is not lost. PlayCanvas includes a number of features specifically designed to let your application do more in less time.
+しかし、対策はあります。 PlayCanvasには、アプリケーションの処理時間を短縮するための機能が多数用意されています。
 
-### Runtime lightmap generation
+### ランタイムのライトマップ生成
 
-Each dynamic light has a per-frame runtime cost. The more lights have you the higher the costs and the slower your scene will render. By baking lights into lightmaps you can hugely reduce the cost of static lights to that of simply rendering a texture. Lightmaps can be generated offline using your favourite 3D modelling tool or you can use PlayCanvas's built in Runtime Lightmap Generation.
+各動的ライトにはフレームごとのランタイムコストがあります。 ライトが多いほど、コストが高くなり、シーンのレンダリングが遅くなります。ライトをライトマップにベイクすることで、単にテクスチャをレンダリングする場合と同じくらい、静的ライトのコストを大幅に削減することができます。ライトマップは、お好みの3Dモデリングツールを使用してオフラインで生成することができます。また、PlayCanvasに組み込まれているRuntime Lightmap Generation機能を使用することもできます。
 
-Read more about using [runtime lightmap generation][1].
+[ランタイムのライトマップ生成][1]についてはこちらをご確認ください。
 
-### Cautious use of real time shadows
+### リアルタイムシャドーの使用に関する注意
 
-For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Point lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
+動的ライトと同様の理由から、動的シャドウにもフレームごとのランタイムコストがあります。ポイントライトは影を生成するためにシーンを6回レンダリングする必要があります。動的シャドウを作るライトの数は制限するべきです。
 
-### Watch your fill rate and overdraw
+### フィルレートとオーバードローを監視
 
-Fill rate refers to the number of shader operations that are applied to each pixel on the screen. If you have expensive fragment shader calculations (e.g. lots of lights and complicated materials) and a high resolution (e.g. a mobile phone with a high device pixel ratio) then your application will spend too much time rendering the scene to maintain a high frame rate.
+フィルレートとは、画面上の各ピクセルに適用されるシェーダオペレーションの数を示します。フラグメントシェーダの計算が高く(ライトや複雑な素材が多いなど)、高解像度(デバイスピクセル比率が高いモバイル端末など)の場合、アプリケーションはフレームレートを高く保つためにシーンのレンダリングに時間をかけすぎてしまいます。
 
-Overdraw refers to how many pixels are overwritten by drawing geometry that is obscured by other geometry closer to the camera. Too much overdraw shows that you are wasting GPU processing trying to draw pixels that are not visible.
+オーバードローとは、カメラに近い他のジオメトリによって隠されているジオメトリを描画することで上書きされるピクセルの数を示します。オーバードローが多い場合、表示されていないピクセルを描画するためにGPU処理を無駄にしていることがわかります。
 
-Using an extension like [WebGL Insight][2] can help you visualize overdraw
+[WebGL Insight][2]のような拡張機能はオーバードローを視覚化するのに役立ちます
 
-### Garbage collection stalls
+### ガベージコレクションストール
 
-Web browsers feature automatic garbage collection of unused Javascript objects. The PlayCanvas engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not lots of objects created and discarded every frame.
+Webブラウザには、未使用のJavascriptオブジェクトの自動ガベージコレクションがあります。PlayCanvasエンジンはランタイムの割り当てを最小限に抑えるように設計されているのでコード内でも同じように注意するべきです。ベクターやその他のオブジェクトをあらかじめ割り当て、それらを再利用することで、フレーム毎にたくさんのオブジェクトが作成および破棄されることを防ぎます。
 
-### Profiling Tools
+### プロファイリングツール
 
-PlayCanvas comes with a built in profiler tool. In the Editor use the Launch Profiler button to run your application with profiling active. [Read more about the profiler][3]
+PlayCanvasにはプロファイラツールが組み込まれています。EditorのLaunch Profilerボタンを使用して、プロファイリングを有効にしてアプリケーションを実行します。[プロファイラの詳細はこちら][3]
 
-### General optimization tips
+### 最適化に関する基本的なアドバイス
 
-[Many more optimization guidelines][4] are available.
+[最適化に関する詳細のガイドライン][4]はこちら。
 
 [1]: /user-manual/graphics/lighting/lightmaps/#playcanvas-runtime-lightmap-generation
 [2]: https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko

@@ -1,24 +1,24 @@
 ---
-title: Events
+title: 事件
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Events are a useful way of responding to things that happen without checking every frame.
+事件是一种高效的，不在程序运行时每帧进行检查的情况下响应事件发生的方式。
 
-The PlayCanvas Engine contains a simple way to add event handling to any object:
+PlayCanvas引擎包含一种向任何对象添加事件处理的简单方法：
 
 ~~~javascript~~~
 pc.events.attach(object);
 ~~~
 
-This will add the methods: `on()`, `off()`, `fire()` and `hasEvent()` to the object. Which means that you can listen for events fired by that object.
+这将向对象添加方法: `on()`, `off()`, `fire()` 和`hasEvent()` 。这意味着你可以监听由该对象触发的对应事件。
 
-By default all script instances can fire events you don't need to call this manually.
+默认情况下，所有脚本实例都可以触发事件，您不需要手动调用触发事件。
 
-## Using events
+## 使用事件
 
-Listen for events firing by using `on()` and `off()`.
+通过使用 `on()`和`off()`来监听事件触发。
 
 ~~~javascript~~~
 pc.script.create("display", function (app) {
@@ -45,7 +45,7 @@ pc.script.create("display", function (app) {
 });
 ~~~
 
-Trigger an event using `fire()`
+使用 `fire()` 触发事件
 
 ~~~javascript~~~
 pc.script.create("player", function (app) {
@@ -66,7 +66,7 @@ pc.script.create("player", function (app) {
 });
 ~~~
 
-More details in the [API Reference][1]
+更多细节请 [参考 API ][1]
 
 [1]: http://developer.playcanvas.com/en/api/pc.events.html#fire
 

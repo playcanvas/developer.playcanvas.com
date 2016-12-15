@@ -1,9 +1,9 @@
 ---
-title: 基础摄影机
+title: 基础摄像机
 template: tutorial-page.tmpl.html
 position: 3
-tags: cameras
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
+tags: camera
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 ## 摄影机实例

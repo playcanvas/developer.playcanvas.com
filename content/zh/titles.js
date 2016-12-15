@@ -61,7 +61,7 @@
     "Using the Asset Registry": "使用资源注册",
     "Forces and Impulses": "力与冲量",
     "Video Textures": "视频纹理",
-    "Creating an Account": "",
+    "Creating an Account": "创建帐户",
     "Glossary": "词汇表",
     "User Manual": "用户手册",
     "Introduction": "简介",
@@ -176,6 +176,6 @@
     "Workflow": "工作流",
     "VR": "虚拟现实",
     "Optimizing WebVR applications": "优化WebVR应用程序",
-    "Types of VR experiences": "",
-    "Using WebVR in PlayCanvas": ""
+    "Types of VR experiences": "VR体验的类型",
+    "Using WebVR in PlayCanvas": "在PlayCanvas中使用WebVR"
 }

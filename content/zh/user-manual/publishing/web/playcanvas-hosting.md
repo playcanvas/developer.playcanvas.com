@@ -20,11 +20,11 @@ position: 1
 
 ![Publish Button][1]
 
-* This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
+* 这将打开“发布”对话框。 在这里，您可以发布构建或下载构建以供自托管。
 
 ![Publish][2]
 
-* Click the PUBLISH button next to "Publish on PlayCanvas".
+* 点击“在PlayCanvas上发布”旁边的PUBLISH按钮。
 
 ![Publish New Build][3]
 
@@ -38,22 +38,22 @@ position: 1
 
 ![Select scenes][4]
 
-* Select the Scenes you want to include in your build from the list. Notice that the Primary Scene (the one with the active banner icon), will be loaded first when your build is launched if you include it in the build.
-* Click 'PUBLISH NOW'
-* You will see a new build created in the BUILDS tab. Wait until it finishes processing.
-* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+*从列表中选择要包括在构建中的场景。 请注意，如果您在构建中包含它，那么将首先加载主场景(具有活动横幅图标的那个)。
+*点击“立即发布”
+*您将看到在BUILDS选项卡中创建的新构建。 等待，直到它完成处理
+*您的网络应用程序现已上线！ 随意发布，并从发布的网址分享到Facebook。
 
 项目从`http://playcanv.as/b/BUILD_ID`被给予了永久链接。这个链接将会一直有效直到用户删除项目。如果用户想要分享一个链接到你的游戏，用户应该使用已发布的项目链接在其底部进行解释。
 
-## Existing Builds
+## 现有版本
 
-Click Builds on the same popup.
+单击相同弹出窗口上的版本。
 
-![Builds][5]
+![版本][5]
 
-Here you can see a list of existing published builds.
+在这里，您可以看到现有已发布版本的列表。
 
-Here you can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button in the Dashboard Header.
+在这里，您还可以通过单击每个构建左侧的横幅图标为项目设置主构建。 这将是用户在单击仪表板标题中的PLAY按钮时播放的构建。
 
 保存一个单一的链接用于指向游戏的最新版本是非常有用的。这就不需要去担心当我们删除一个旧项目时我们会破坏链接。这就是为什么每个工程都有一个首要项目链接。这将会存在于`http://playcanv.as/p/PROJECT_ID`
 

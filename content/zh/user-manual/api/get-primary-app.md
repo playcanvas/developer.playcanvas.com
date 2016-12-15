@@ -14,7 +14,7 @@ GET https://playcanvas.com/api/projects/:project_id/app
 
 Gets the Primary App of a Project.
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/app

@@ -1,9 +1,9 @@
 ---
-title: Delete an Entity
-keywords: entity, delete, destroy, remove
+title: Удаление сущености
+keywords: сущность, удалить, убрать
 ---
 
-## How do I delete an Entity?
+## Как удалить сущность?
 
-You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="font-icon">&#57636;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
+Вы можете удалить сущность выбрав ее и нажав **Удалить**. Также, вы можете кликнуть  <span class="font-icon">&#57636;</span> Удалить в панели иерархии сцены или щелкнув правой кнопкой мыши на сущности и выбрав удаление в контекстном меню.
 

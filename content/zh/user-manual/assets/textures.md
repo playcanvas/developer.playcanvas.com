@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 4
 ---
 
-A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
+纹理是可以被分配到 [材质][1] 表面并应用到图元的图片。
 
-## Importing Textures
+## 导入材质
 
-There are 3 ways you can import texture assets into PlayCanvas:
+你有3种方式将纹理资源导入PlayCanvas:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
-3. Import an FBX file that embeds textures.
+1. 将图像拖放到“资源”面板中
+2. 从“资源”面板的上下文菜单中选择“上传”，然后使用文件浏览器选择一个图像
+3. 导入嵌入纹理的FBX文件。
 
-Supported image formats are:
+支持的图片格式有：
 
 * JPG
 * PNG
@@ -25,61 +25,61 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG and PNG files remain in their original format.
+导入的JPG和PNG文件保持原始格式。
 
-GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
+GIF，TGA，BMP和TIF图片类型将在导入时转换为JPG或PNG。 如果导入的图像具有透明度，则会将其转换为PNG。 否则，它将转换为JPG。
 
-HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format.
+HDR和EXR是[高动态范围格式] [2]格式。 这些类型的图像在导入时转换为PNG，并标记为以RGBM格式存储。 RGBM本质上在PNG的alpha通道中存储用于RGB值的乘法器，使得能够将HDR格式压缩为低动态范围格式。
 
-By default, imported images will be resized to the next highest power of two. For example, an image that is 400x400 will be resized to 512x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
+默认情况下，导入的图像将调整为下一个最高的2。 例如，在导入时，400x400的图片将调整为512x512。 这是因为图形引擎不能利用非功率的两个纹理的mip映射。 但是，在导入非功率两个纹理之前，可以通过在“资产任务”面板中禁用 '纹理POT' 设置来覆盖此行为。
 
-## Texture Properties
+## 纹理属性
 
-Selecting a texture's thumbnail in the Assets panel will load it into the Inspector panel. Note that you can multi-select textures and edit the whole selection simultaneously in the Inspector.
+在资源面板中选择纹理的缩略图，可以将其加载到“检查器”面板中。 请注意，您可以在检查器中同时多次选择纹理并编辑所有选项。
 
-A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
+纹理与材质共享了一部分的基础属性的设置 (ID, name, tags 以及一些其他的)。但它依旧有一些纹理独享的属性。
 
-![Texture Properties][3]
+![纹理属性][3]
 
-### Texture Filtering
+### 纹理过滤
 
-Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbours. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
+纹理过滤给出了如何计算纹理映射像素的颜色的控制。“点”应用没有过滤而“线性”将插入相邻像素的颜色。这会产生更好的视觉效果,尤其是作为一个最小化了的纹理(纹理在屏幕上占用更少像素的纹素比)。
 
-### Anisotropy
+### 各向异性
 
-When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
+当纹理表面被从一个倾斜的角度看时,他们的质量会下降并显得模糊。为了解决这个问题,你可以设置一个叫做各向异性的值。我们来看看不同的各向异性值会怎样影响纹理的外观:
 
-![Anisotropy][4]
+![各向异性][4]
 
-Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
+注意,随着各向异性增加,在GPU上抽样纹理的成本也增加了。
 
-### Texture Addressing
+### 纹理寻址
 
-The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
+纹理寻址属性让你能够在控制一个纹理如何采样范围0到1以外的纹理坐标。看看不同的模式如何影响下面的精灵的显示:
 
-![Addressing][5]
+![寻址][5]
 
-## Texture Compression
+## 纹理压缩
 
-Texture data is stored in a device's video memory (or VRAM). It is important to ensure that your application does not exhaust VRAM as this can cause undesirable things like browser tab crashes.
+纹理数据存储在设备的视频存储器(或VRAM)中。 重要的是要确保您的应用程序不会耗尽VRAM，因为这可能会导致浏览器标签崩溃等不良现象。
 
-The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used. These schemes are:
+编辑器能够对纹理应用有损压缩方案，以显着减少使用的VRAM数量。 这些方案是：
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
-* ETC: Typically supported by Android devices.
+* DXT：通常由桌面设备支持
+* PVR：通常由iOS设备支持
+* ETC：通常由Android设备支持。
 
-Consider this texture asset:
+就比如这个纹理资源:
 
 <img src="/images/user-manual/assets/textures/brick.jpg" alt="Brick Texture" style="width: 256px; height: 256px;"/>
 
-It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
+这是一个大小为202KB的512x512 JPG。 然而，JPG是一种压缩格式，当传递到图形引擎时，它被扩展为占用1.05MB VRAM(包括mipmap级别)的未压缩RGB8格式。
 
-Enabling all compression schemes achieves the following results:
+能够使所有的压缩方案实现以下结果:
 
-![Compression Results][6]
+![压缩结果][6]
 
-The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
+本次压缩减少了VRAM6倍的使用。此外,在这种情况下,压缩也将下载大小从202 kb减少到116 kb。
 
 [1]: /user-manual/assets/materials
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging

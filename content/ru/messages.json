@@ -1,19 +1,19 @@
 {
     "User Manual": "Руководство пользователя",
     "Tutorials": "Уроки",
-    "Forum": "",
+    "Forum": "Форум",
     "API Reference": "API Документация",
     "PlayCanvas Developer Resources": "Ресурсы разработчика PlayCanvas",
-    "Find everything you need to make games and interactive experiences with PlayCanvas.": "",
+    "Find everything you need to make games and interactive experiences with PlayCanvas.": "Найдите все, что вам нужно для создания игр и интерактивных приложений с PlayCanvas",
     "Search": "Поиск",
     "USER MANUAL": "Руководство пользователя",
     "TUTORIALS": "Уроки",
-    "FORUM": "",
+    "FORUM": "ФОРУМ",
     "API REFERENCE": "API Документация",
-    "Games": "",
-    "Awesome games": "",
-    "Brand Experiences": "",
-    "Incredible brand experiences": "",
-    "Visualizations": "",
-    "High quality product visualizations": ""
+    "Games": "Игры",
+    "Awesome games": "Отличные игры",
+    "Brand Experiences": "Примеры с брендами",
+    "Incredible brand experiences": "Невероятные примеры с брендами",
+    "Visualizations": "Визуализации",
+    "High quality product visualizations": "Высококачественные визуализации продуктов"
 }

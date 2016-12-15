@@ -23,14 +23,14 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 ## パラメータ
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
-<div class="parameter"><span class="param">name</span><p>The name of the app. Must be less than 1000 characters</p></div>
-<div class="parameter"><span class="param">scenes [optional]</span><p>A list of scene ids to be included in the app. If no scenes are specified then the primary scene of the project is used. When you specify scenes then the first scene in the list will be used as the initial scene of the application.</p></div>
-<div class="parameter"><span class="param">target [optional]</span><p>Can be either 'web' or 'ios'. Use 'web' to download a normal app or use 'ios' to download an XCode project. If no target is specified it defaults to 'web'.</p></div>
-<div class="parameter"><span class="param">description [optional]</span><p>The description of the app. Must be less than 10,000 characters.</p></div>
-<div class="parameter"><span class="param">version [optional]</span><p>The version of the app. Can be a string up to 20 characters.</p></div>
-<div class="parameter"><span class="param">release_notes [optional]</span><p>Release notes for the app. Can be a string up to 10,000 characters.</p></div>
-<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
+<div class="parameter"><span class="param">project_id</span><p>プロジェクトのid。</p></div>
+<div class="parameter"><span class="param">name</span><p>アプリの名前。1000文字以内。</p></div>
+<div class="parameter"><span class="param">scenes [optional]</span><p>アプリに含まれるシーンidのリスト。シーンが指定されていない場合、プロジェクトのプライマリシーンが使用されます。シーンを指定する場合はリストの最初のシーンがアプリケーションの初期シーンとして使用されます。</p></div>
+<div class="parameter"><span class="param">target [optional]</span><p>'web' または 'ios'に設定できます。通常アプリをダウンロードするには'web'を使用。XCodeプロジェクトをダウンロードするには'ios'を使用。ターゲットが指定されていない場合は'web'がデフォルトとなります。</p></div>
+<div class="parameter"><span class="param">description [optional]</span><p>アプリの説明。10,000文字以内。</p></div>
+<div class="parameter"><span class="param">version [optional]</span><p>アプリのバージョン。20文字以内の文字列。</p></div>
+<div class="parameter"><span class="param">release_notes [optional]</span><p>アプリのリリースノート。10,000文字以内の文字列。</p></div>
+<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean。スクリプトを連結したい場合はtrueに設定。</p></div>
 </div>
 
 ## 応答のスキーマ
@@ -71,7 +71,7 @@ Status: 201 Created
 
 ## レート制限
 
-This route uses a [strict][1] rate limit.
+Tこのルートは[strict][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
 [2]: /user-manual/api/get-job

@@ -1,39 +1,39 @@
 ---
-title: Legacy Scripting
+title: レガシースクリプティング
 template: usermanual-page.tmpl.html
 position: 10
 ---
 
-This is the documentation for the legacy script system. The legacy script system is still available for new and existing projects. When you create a new project you are given the choice over which script system you wish to use.
+これは、レガシースクリプトシステムのドキュメントです。レガシースクリプトシステムは、新規プロジェクトや既存プロジェクトでも使用できます。新しいプロジェクトを作成する際、使用するスクリプトシステムの選択肢が与えられます。
 
-In general, we recommend you use the new script system. However, there are some use cases where the legacy script system is still required. Use the legacy script system if:
+基本的に、新しいスクリプトシステムを使用することをお勧めします。ただし、従来のスクリプトシステムが必要な場合もあります。次の場合は、従来のスクリプトシステムを使用します：
 
-- you require the "local workflow". e.g. Editing scripts in text editor on your machine
-- you require integration with a version control system like Git or Mercurial
-- you have an existing project that you do not wish to recreate.
+- "ローカルワークフロー"が必要。例えば、マシンのテキストエディタでスクリプトを編集する場合
+- GitやMercurialのようなバージョン管理システムとの統合が必要
+- 再作成したくない既存のプロジェクトがある
 
-Below is the documentation for the legacy script system
+レガシースクリプトシステムのドキュメントは以下です。
 
 ---
 
-Scripting is how you make your game interactive. Scripts are written in **JavaScript**. This is the programming language used by web pages everywhere.
+スクリプトはゲームをインタラクティブにします。スクリプトは**JavaScript**で書きます。これはあらゆるウェブページで使用されているプログラミング言語です。
 
-You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, and implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which will often be specific to your application or re-usable chunks that provide useful behaviours.
+アプリケーションは二つの個別のコードベースに分かれています。一つはPlayCanvasが提供するエンジンです。これは、グラフィックレンダリング、入力処理、音声、PlayCanvasツールのインターフェイスなどを含む基本的な機能を実装します。もう一つはスクリプトです。これは多くの場合、便利な挙動を提供する再利用可能なブロックか、アプリケーション特有のものです。
 
-Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application via a `<script>` tag. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+基本的には、エンジンコードは<script>タグでアプリケーションに含まれる単一のJavaScriptファイルなので、気にかける必要はありません。エンジンの一部を書き換える場合、スクリプティングに関するこの導入は必要ないでしょう。
 
-Scripts are individual JavaScript files, which are attached to Script [Components][1] on [Entities][2] via the PlayCanvas Editor. Generally, a script file should define a single JavaScript object which is instantiated once for each Entity that it is attached to.
+スクリプトとはPlayCanvas Editorを通して[エンティティ][2]のスクリプト[コンポーネント][1]に追加される個別のJavaScriptファイルです。基本的に、スクリプトファイルは添付されているエンティティ毎に一度インスタンス化される単一のJavaScriptオブジェクトを定義するべきです。
 
-**Note please make sure your scripts are not cached by the browser - otherwise you will not see the results of changes to your scripts. [See here.][3]**
+**スクリプトがブラウザによりキャッシュされないよう注意してください。キャッシュされると、スクリプトへの変更による結果が確認できません。[こちらを確認][3]**
 
-## Terminology
+## 用語
 
-First off, lets define a few pieces of terminology.
+まず、いくつかの用語を定義しましょう。
 
-* ***Script*** A script is single JavaScript file which includes the correct JavaScript to define a script object
-* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
-* ***Script Object*** A script object is a standard JavaScript object which is registered with the PlayCanvas engine and can be instantiated when a new script Component is created. There will generally only be a single script object of each type per application.
-* ***Script Instance*** A script instance is script object which has been instantiated at runtime, using the `new` keyword in JavaScript. A script instance is created for every Entity that has the script attached.
+* ***Script*** スクリプトとはスクリプトオブジェクトを定義するための正しいJavaScriptを含む単一のJavaScriptファイルです。
+* ***Script Component*** スクリプトコンポーネントはPlayCanvasエンジンで定義され、ゲームエンティティにスクリプトを読み込みスクリプトオブジェクトを作成する機能を与えます。
+* ***Script Object*** スクリプトオブジェクトはPlayCanvasエンジンでレジスタされるスタンダードなJavaScriptオブジェクトです。新規のスクリプトコンポーネントが作成される際にインスタンス化することができます。基本的に、アプリケーションのタイプ毎に存在するスクリプトオブジェクトは一つです。
+* ***Script Instance*** スクリプトインスタンスは、JavaScriptでnewキーワードを使用して実行時にインスタンス化されたスクリプトオブジェクトです。スクリプトインスタンスはそのスクリプトが添付されている全てのエンティティに対して作成されます。
 
 [1]: /user-manual/packs/components/
 [2]: /user-manual/packs/entities/

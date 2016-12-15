@@ -3,7 +3,7 @@ title: Ресурсы разработчика PlayCanvas
 template: intro.tmpl.html
 ---
 
-We suggest you start reading the [User Manual][1], it's the complete guide to PlayCanvas, read this through to learn everything there is to know. Next, dig into the [Tutorials][3] and [Videos][12], step-by-step guides for the specific features of PlayCanvas. Finally, the [API Reference][4] is the complete PlayCanvas Engine reference.
+Мы предлагаем вам начать с [Руководства пользователя][1]. Это полное описание PlayCanvas, прочитав которое вы узнаете все, что вам может потребоваться. Далее, погрузитесь в [Обучение][3] и [Видеоуроки][12], шаг за шагом описывающие особенности PlayCanvas. И наконец, [описание API][4] содержит полную справочную информацию о PlayCanvas Engine.
 
 Также помните, что Вы всегда можете взглянуть на [игровую страницу][8], чтобы увидеть все созданные и законченные проекты.
 
@@ -19,11 +19,11 @@ We suggest you start reading the [User Manual][1], it's the complete guide to Pl
 
 # Получить помощь
 
-## Want to talk?
+## Хотите поговорить?
 
-Talk about your game, show off your latest project, seek out new team members, or offer your assistance to others. Join us in the discussion [forums][10].
+Обсуждайте ваши игры, делитесь последними проектами, ищите новых членов для команды или предложите сотрудничество. Присоединяйтесь к нашему [форуму][10]
 
-## Questions?
+## Вопросы?
 
 Если у Вас есть технический вопрос по использованию PlayCanvas, по API или любой другой части платформы, можете использовать [ответы на вопросы][11] для получения консультации. 
 
