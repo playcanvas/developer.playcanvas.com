@@ -1,13 +1,13 @@
 ---
-title: Render a 3D model
-keywords: component, model, 3d, fbx, mesh
+title: Отображение 3D модели
+keywords: компонент, модель, 3d, fbx, сетка
 ---
 
-## How do I render a 3D model?
+## Как отобразить 3D модель?
 
 <img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_model.gif"/>
 
-To render a 3D model you need to add a **Model Component** to an Entity and drag a **Model Asset** on the Asset field. Alternatively you can drag and drop a Model Asset from the Assets Panel into the 3D Viewport.
+Чтобы отобразить 3D модель вам нужно добавить компонент **Модель** к сущности и перетащить ресурс **Модель** в соответствующее поле. Также вы можете перетащить ресурс модели прямо в 3D-пространство.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">Посмотреть руководство пользователя</a>
 

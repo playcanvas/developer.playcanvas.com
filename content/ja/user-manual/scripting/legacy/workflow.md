@@ -1,130 +1,124 @@
 ---
-title: Workflow
+title: ワークフロー
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-There are two ways for you to run your application scripts while developing PlayCanvas applications. While developing and iterating you will use a Local Server for your code and in order to share and publish you will use a Code Repository. Each have different advantages and you will often switch between the two.
+PlayCanvasアプリケーションを開発しながら、アプリケーションのスクリプトを実行する方法は2つあります。開発や反復をしている際はコードにローカルサーバを使用します。共有や公開するためには、コードリポジトリを使用します。それぞれには異なる利点があるので、2つの間で切り替えて使用します。
 
-## PlayCanvas Code Directory
+## PlayCanvas コードディレクトリ
 
 <img src="/images/platform/playcanvas_repo.jpg" style="max-width: 100%" />
 
-By far the simplest way of developing scripts for PlayCanvas applications is by using the built-in code editor and storing your scripts in PlayCanvas so that the server can access them at all times.
+現時点でPlayCanvasアプリケーション用のスクリプトを開発する最も簡単な方法は、内蔵のコードエディタを使用して、サーバがいつでもそれらにアクセスできるよう、PlayCanvasでスクリプトを格納することです。
 
-This is how your Project will be set up by default when you create it. If you have linked your Project to an external Code Repository you can unsync the Code Repository at any time to revert back to using the code directory.
+プロジェクト作成時、デフォルトでこのように設定されます。外部コードのリポジトリにプロジェクトをリンクしている場合は、いつでもコードリポジトリの同期を外してコードディレクトリの使用に戻すことができます。
 
-### Adding a new script
+### 新規スクリプトの追加
 
 <img src="/images/user-manual/scenes/components/component-script.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
 
-To add a new script, either click on the Add Script button or open your Scene in PlayCanvas Editor and select or add a Script Component to the Entity you wish to add the script to. Then in the script picker control, click on the URL field and type in the name of your script, and press Enter. You will now see the name of your script is now a link, click this to open the Code Editor. Click the x next to the script name to remove the script from this component.
+新しいスクリプトを追加するには、Add Scriptをクリックするか、PlayCanvasエディタでシーンを開き、スクリプトを追加したいエンティティでScript Componentを選択するか、追加します。その後、スクリプトピッカーコントロールでURLフィールドをクリックし、スクリプトの名前を入力してEnterキーを押します。スクリプトの名前はリンクになるので、それをクリックしてコードエディタを開きます。スクリプト名の横にあるXをクリックしてこのコンポーネントからスクリプトを削除します。
 
-Alternatively you can drag and drop a script from the asset panel into the script component.
+代わりに、アセットパネルからスクリプトコンポーネントにスクリプトをドラッグ＆ドロップすることができます。
 
 <div class="alert alert-info small">
-You can only edit scripts if you are using PlayCanvas for storing your scripts. If you have an external code repository set up then you cannot edit scripts via PlayCanvas. You will have to use either the Local Server or commit code to your repository.
+PlayCanvasを使用してスクリプトを格納している場合のみ、スクリプトを編集することができます。外部のコードリポジトリを設定している場合は、PlayCanvas経由でスクリプトを編集することはできません。ローカルサーバを使用するか、リポジトリにコードをコミットする必要があります。
 </div>
 
-Click the script link and the built-in code editor will open in a new tab. You may need to allow pop-ups from playcanvas.com to see the new tab. When you edit a script for the first time it will be created and saved. You can then see all scripts from the [Code][1] tab in your Project dashboard or from the [Assets Panel][2] in the Editor.
+スクリプトリンクをクリックすると新しいタブで内蔵のコードエディタが開きます。新しいタブを表示するにはplaycanvas.comからのポップアップを許可する必要があります。初めてスクリプトを編集するとき、それは作成され、保存されます。次に、プロジェクトダッシュボードの[Code][1]タブ、またはエディタの [Scripts Explorer][2] で全てのスクリプトを確認することができます。
 
-## Local Server
+## ローカルサーバ
 
-Whilst developing your game you want quick iteration times. Your script files reside on your local computer and you edit them there. By running a tiny web server on your local machine any changes you make to your scripts will be instantly incorporated into the application by simply refreshing the browser.
+ゲームを開発するには迅速な反復時間が重要です。スクリプトファイルは、ローカルコンピュータ上に存在そこで編集します。ローカルマシンで小さなウェブサーバーを実行することで、スクリプトに加える変更はブラウザを更新してアプリケーションに即座に組み込まれるようになります。
 
-The web server is simple to run, you drop the launch script in the folder where your code lives on your computer, and then start the server.
-Installing and setting up the local server is slightly different for each platform.
+ウェブサーバの実行は簡単です。コンピュータ上でコードが存在するフォルダ内に起動スクリプトをドロップしてから、サーバを起動します。 ローカルサーバのインストールと設定は、プラットフォームごとに若干異なります。
 
 ### Windows
 
-* First you will need to install python from [here][3]. By default `localserver.bat` uses Python 2.7, but you can modify it to run with any recent version.
+* まず[こちら][3]からPythonをインストールします。デフォルトでは`localserver.bat`はPython2.7を使用しますが、最近のバージョンで動作するように変更することができます。
 
-* [Download the server script][4]
+* [サーバスクリプトをダウンロード][4]
 
-* Save the file `localserver.bat` into the folder containing your scripts.
+* `localserver.bat`ファイルをスクリプトが含まれているフォルダに保存。
 
-* Double click the server to run it. You should see a terminal prompt wth a message something like this:
+* サーバをダブルクリックして実行。次のようなメッセージを持つ端末プロンプトが表示されます：
 ~~~sh~~~
 Serving HTTP on 0.0.0.0 port 51000 ...
 ~~~
 
-### OS X and Linux
+### OS X と Linux
 
-* [Download the server script][5]
+* [サーバスクリプトをダウンロード][5]
 
-* Save the file `localserver` into the folder containing your scripts
+* スクリプトが含まれているフォルダに`localserver`ファイルを保存。
 
-* Make the server executable. At the command line type
+* サーバーを実行可能にする。コマンドラインで次を入力
 ~~~sh~~~
 chmod a+x /path/to/scripts/localserver
 ~~~
 
-* Now you can double-click the localserver file to start your server. You should see a terminal prompt with a message something like this:
+* LocalServerファイルをダブルクリックしてサーバを起動することができます。次のようなメッセージを持つ端末プロンプトが表示されます：
 ~~~sh~~~
 Serving HTTP on 0.0.0.0 port 51000 ...
 ~~~
 
-### Running applications against the local server
+### ローカルサーバに対してアプリケーションを実行
 
-Once you have started your local server you can test to see if your server is running correctly by visiting `http://localhost:51000` in your web browser.
-You will see a directory of files. Like this:
+ローカルサーバを起動したら、 ウェブブラウザから`http://localhost:51000` に移行してサーバが正しく実行されているかをテストして確認することができます。 次のようなファイルのディレクトリが表示されます：
 
-![served directory](/images/platform/localserver.png "Local server directory")
+![served directory](/images/platform/localserver.png "ローカルサーバディレクトリ")
 
-Launching scenes from the PlayCanvas Editor using the `Launch Local` command will start the application looking for scripts on `http://localhost:51000` which means if you are running your local server the browser loads scripts from your machine. If you have a code repository set up for your project -- see the next section -- you can run using the regular `Launch` command and scripts will be served entirely from your code repository.
+`Launch Local`コマンドを使用してPlayCanvasエディタからシーンを起動すると、アプリケーションは`http://localhost:51000` でスクリプトを検索します。つまり、ローカルサーバを実行している場合、ブラウザはマシンからスクリプトを読み込みます。プロジェクトのためにコードリポジトリを設定している場合（ 次のセクションを参照してください ）、通常の`Launch`コマンドを使用して実行することができ、スクリプトは完全にコードリポジトリから提供されます。
 
-## Code Repository
+## コードリポジトリ
 
-Whilst running the local server is nice and simple, it is not really necessary for people on your team who aren't going to be editing the code, like the artists
-and production staff. In addition, if you want to publish or export your application into a releasable format your script code needs to be somewhere that is
-accessible to the PlayCanvas servers so that it can be included in any exported package.
+ローカルサーバの実行は簡単ですが、アーティストや制作スタッフなど、コードの編集を行わないチームメンバーには必要のないものです。 さらに、アプリケーションを公開可能な形式でエクスポートするには、スクリプトコードをエクスポートされたパッケージに含めることができるように、 PlayCanvasサーバーにアクセス可能な場所に置く必要があります。
 
-For these scenarios we provide support for external code repositories. That is, a connection between your source control system and our servers.
+このようなケースのために外部コードリポジトリへの対応を提供しています。つまり、ソース管理システムと当社のサーバー間の接続です。
 
 <img src="/images/platform/external_repo.jpg" style="max-width:100%" />
 
-We fully support Git and Mercurial repositories.
+GitとMercurialリポジトリに完全に対応しています。
 
-In order to clone a repository you need to enter its clone URL in the topmost input field. Then just hit Enter. Behind the scenes PlayCanvas will clone or sync a copy of your code and hold it on our servers. The status of this syncing operation is displayed on the code page, when the status is 'green', the repository has been cloned.
+リポジトリをクローンするためには、最上位の入力フィールドにクローンのURLを入力する必要があります。次に、Enterを押します。PlayCanvasは、裏でコードのコピーをクローンまたは同期させ、サーバ上で保持します。この同期オペレーションのステータスはコードページに表示されます。ステータスが'グリーン'になると、リポジトリのクローンが完成します。
 
-Examples of valid clone URLs are any of these:
+有効なクローンURLの例は次の通りです：
 * `ssh://hg@bitbucket.org/username/repository`
 * `https://username@bitbucket.org/username/repository`
 * `git@github.com:username/repository.git`
 * `https://github.com/username/repository.git`
-* Any other Git or Mercurial URL as long as it's accessible from Playcanvas.
+* PlayCanvasからアクセス可能なその他のGit またはMercurial URL。
 
-Now when you run your application from the PlayCanvas Editor the code will be included in the application as it is run. Which means you don't need to be running a local server. Also when you export Scenes which have a code repository set up the code will be included in your exports.
+PlayCanvas1Editorからアプリケーションを実行すると、その際にコードが含まれるようになりました。ローカルサーバを実行する必要はありません。また、コードリポジトリが設定されているシーンをエクスポートする場合、コードがエクスポートに含まれます。
 
-## How to give permissions for all repositories
+## すべてのリポジトリのアクセス権を付与する方法
 
-The Public Key that is shown in the box underneath your URL is used to get permissions to clone a repository. For example to get permissions to clone any repository that you have access to on <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>, you need to:
+URLの下のボックスに表示されるパブリックキーは、リポジトリのクローンを作成する権限を取得するために使用されます。例えば <a href="https://bitbucket.org" target="_blank">Bitbucket</a> または <a href="https://github.com" target="_blank">Github</a>でアクセスできるリポジトリをクローンする許可を取得するあめには次のことを行う必要があります：
 
-1. Copy your Public Key.
-2. Go to your <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>, account.
-3. Add your public key in the SSH Keys section.
-4. Sync your repository.
+1. パブリックキーをコピー
+2. <a href="https://bitbucket.org" target="_blank">Bitbucket</a>または<a href="https://github.com" target="_blank">Github</a>のアカウントに移行。
+3. SSH Keysセクションでパブリックキーを追加。
+4. リポジトリを同期。
 
-You only need to do this once for your account.
+アカウントに対して、一度のみ実行する必要があります。
 
-## How to give permissions for a single repository
+## ひとつのリポジトリへのアクセス権を付与する方法
 
-If instead you only want access to a specific repository, you can instead:
+特定のリポジトリのみにアクセスしたい場合、次のようにします：
 
-1. Copy your Public Key.
-2. Go to your repository settings on <a href="https://bitbucket.org" target="_blank">Bitbucket</a> or <a href="https://github.com" target="_blank">Github</a>,.
-3. Add your public key in the Deploy Keys section.
-4. Sync your repository.
+1. パブリックキーをコピー
+2. <a href="https://bitbucket.org" target="_blank">Bitbucket</a>または<a href="https://github.com" target="_blank">Github</a>のリポジトリ設定に移行。
+3. Deploy Keysセクションでパブリックキーを追加。
+4. リポジトリを同期。
 
-## Switching
+## 切り替え
 
-<img src="/images/user-manual/launch-options.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/launch-options.jpg" style="float: right; padding: 20px; padding-top: 0px;"/>
 
-You can easily switch between using local code and a code repository when using the PlayCanvas Editor by choosing which Launch button to use.
+ローカルで実行されるサーバで起動する場合はUse Local Serverを選択します。サーバ上のコードを使用して起動する場合は選択を外します。例えば、コードリポジトリーまたはコードディレクトリーです。
 
-**Launch** will launch using code on the server, i.e. your code repository or code directory, **Launch (Local)** will launch against a locally running server
-
-Exporting scenes will only use source code resources on the PlayCanvas servers - so be sure to upload or sync your code to our site before exporting.
+シーンのエクスポートは、PlayCanvasサーバのソースコードリソースのみを使用します。エクスポートする前に弊社サイトにコードをアップロードまたは同期してください。
 
 [1]: /user-manual/dashboard/code
 [2]: /user-manual/designer/assets

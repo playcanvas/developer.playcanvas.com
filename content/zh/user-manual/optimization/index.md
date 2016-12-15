@@ -1,8 +1,8 @@
 ---
-title: Performance
+title: 性能
 template: usermanual-page.tmpl.html
 position: 10
 ---
 
-Your PlayCanvas apps are likely to run on a broad spectrum of device types. Anything from a high end desktop PC all the way down to a low end smartphone. To ensure that you achieve the best possible performance for your app, there are some guidelines to follow. PlayCanvas also provides tools to help your find and eliminate performance bottlenecks.
+您的PlayCanvas应用程式可能会在各种类型的装置上放送。 从高端台式电脑到低端智能手机的任何东西。 为了确保您的应用程式达到最佳效果，请遵循以下指南。 PlayCanvas还提供了工具来帮助您找到并消除性能瓶颈。
 

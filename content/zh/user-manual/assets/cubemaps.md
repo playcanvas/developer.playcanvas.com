@@ -1,67 +1,67 @@
 ---
-title: Cubemaps
+title: 立方体贴图
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
+立方体贴图是一种特殊类型的纹理资源。 立方体贴图由6个纹理资源组成，其中每个纹理表示立方体的一个面， 它们通常有两种用途：
 
-1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
+1.立方体贴图可以定义场景的天空盒。 天空盒包含您的场景的遥远视觉的图像，例如山丘，山脉，天空等。
+2.立方贴图可以向其它材料添加反射效果。 想象一下你的场景中有一个光泽的铬球轴承，球表面反映了周围的场景。 对于开放环境，通常将场景中天空的立方体贴图设置为物体材质上立方体贴图的反射内容。
 
 <iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
 
-## Importing Cubemap Textures
+## 导入立方体贴图
 
-A cubemap is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cubemap asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into the Assets panel (or select the Asset panel's Upload option). Once uploaded and processed, the images will appear in the Assets panel where they are now ready to be assigned to a cubemap asset.
+一个立方体贴图需要六个纹理资源作为输入资源。 因此，为了完全配置新的立方体资产，您必须首先将6个图像导入到项目中。 要执行此操作，只需将6个图像从文件系统拖动到“资源”面板(或选择“资源”面板的上传选项)。 上传和处理后，图像将显示在“资源”面板中，现在可以将其分配给立方体贴图资源。
 
-## Creating Cubemaps
+## 创建立方体贴图
 
-You can create new cubemap assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
+您可以直接从PlayCanvas编辑器界面的“资源”面板中的“创建资源”菜单创建新的立方体资源。
 
-![Cubemap Creation][1]
+![立方体贴图创建][1]
 
-This creates a new cubemap Asset and opens up the Cubemap Editor on the right-hand side of the screen.
+这将创建一个新的立方体贴图资源并打开屏幕右侧的立方体贴图编辑器。
 
-## Selecting Cubemaps
+## 选中立方体贴图
 
-To select a cubemap in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cubemap filter to narrow down the options for selection. Cubemaps are identified by cross-shaped thumbnails:
+要选择cubemap以编辑它，请在“资源面板”中选择它。 最简单的方法是选择cubemap过滤器来缩小选择的选项。 Cubemaps由十字形缩略图标识:
 
-![Cubemap Thumbnails][2]
+![立方体贴图缩略图][2]
 
-When a cubemap is selected, it will be loaded into the Inspector panel on the right of the Editor.
+选择立方体贴图时，它将被加载到编辑器右侧的“检查器”面板中。
 
-## Cubemap Properties
+## 立方体贴图属性
 
-Once you have a cubemap selected, you can edit its properties.
+一旦你选择了一个立方体贴图，你可以对它的属性进行编辑。
 
-![Cubemap Properties][3]
+![立方体贴图属性][3]
 
 ### Filtering
-This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+此设置确定立方体像素的像素在放大时如何插值。 当纹素到屏幕像素的比率小于1时是放大。此值可以线性调整在视觉上最好的效果。
 
 ### 各向异性
 各向异性是一个从1和16之间的值，它控制纹理采样的质量，从而让摄像机的视图矢量与纹理表面的排列变得更紧密。
 
-## Assigning Textures to Cubemaps
+## 将纹理分配给立方体贴图
 
-![Cubemap Preview][4]
+![立方体贴图预览][4]
 
-The cubemap Preview panel displays the six faces of a cubemap flattened into the shape of a cross. Imagine a cardboard box that has been unfolded to lay flat. To construct a cubemap, simply drag texture assets from the Assets panel to the face slots in the Preview panel. You can also select a cubemap face slot and then select a texture asset from the Assets panel.
+“立方体预览”面板显示一个立方体贴图的六个面，并将其平面化为十字形。 想象一下已经展开平放的纸板箱。 要构造立方体贴图，只需将纹理资源从“资源”面板拖动到“预览”面板中的代表面的孔中。 您还可以选择立方体的某个面，然后从“资源”面板中选择替换的纹理资源。
 
-Cubemap faces must be:
+立方体贴图的面必须为:
 
-* Square (the same resultion in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
-* All faces must be the same resolution
+*方形(宽和高的分辨率相同)
+*宽为二的次幂(1x1,2x2,4x4,8x8,16x16,32x32等)
+*所有面都必须具有相同的分辨率
 
-To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cubemap faces, such as:
+为了辅助你，编辑器试图找出如何智能地自动分配纹理到面中。 当您尝试通过将一个面贴图拖动到面插槽并按照常用的立方体贴图面的命名约定匹配时执行此操作，例如：
 
 * negx, posx, negy, posy, negz, posz
 * left, right, top|up, bottom|down, front|forward, back|backward
 * 0-5|1-6
 
-An example of a texture set that would match is:
+一个已匹配的纹理集的示例：
 
 * face_posx.jpg
 * face_negx.jpg
@@ -70,17 +70,17 @@ An example of a texture set that would match is:
 * face_posz.jpg
 * face_negz.jpg
 
-## Prefiltering Cubemaps
+## 预过滤立方体贴图
 
-The cubemap inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cubemap is essential for using the Physical material.
+立方体贴图检查器有一个Prefilter预过滤按钮，它生成一组低分辨率过滤的纹理，用于物理材质的环境贴图。 预先过滤立方体地图对于使用物理材质至关重要。
 
-## Assigning Cubemaps to Materials
+## 将立方体贴图分配给材质
 
 默认的蓬状和物理的材质都具有反射特性。如果展开环境属性部分，您将看到以下内容：
 
-![Cubemap Material][5]
+![立方体贴图材质][5]
 
-You can click the Empty slot to select a cubemap or drag and drop a cubemap asset from the asset panel into the cubemap slot.
+您可以单击空槽以选择立方体图或将立方体资源从资源面板拖放到立方体贴图的插槽中。
 
 注: 物理材质如果被分配和预过滤将被作为默认环境贴图使用到场景天空盒。
 

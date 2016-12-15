@@ -1,11 +1,11 @@
 ---
-title: Upload assets
-keywords: asset, new, create, upload
+title: Загрузка ресурсов
+keywords: ресурс, новый, создать, загрузить
 ---
 
-## How do I upload assets?
+## Как загрузить ресурс?
 
-To upload Assets simply drag and drop files from your computer into the Assets panel. Your files will be processed by the server and will appear shortly after in the Assets Panel.
+Чтобы загрузить ресурс, просто перетащите файлы с Вашего компьютера в панель ресурсов. Ваши файлы будут обработаны на сервере и появятся в панели ресурсов.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/" target="_blank">View User Manual</a>
+<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/" target="_blank">Руководство пользователя</a>
 

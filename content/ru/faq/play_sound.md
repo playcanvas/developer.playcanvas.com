@@ -1,13 +1,13 @@
 ---
-title: Play a sound
-keywords: component, sound, audio, music, audiosource, audiolistener
+title: Воспроизведение звука
+keywords: компонент, звук, песня, музыка, audiosource, audiolistener
 ---
 
-## How do I play a sound?
+## Как воспроизвести звук?
 
-To play sounds you need to add a <a href="http://developer.playcanvas.com/en/user-manual/packs/components/sound/" target="_blank">Sound</a> component to an Entity. Then you can create slots to play <a href="http://developer.playcanvas.com/en/user-manual/assets/audio/" target="_blank">Audio assets</a>. Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an <a href="http://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/" target="_blank">AudioListener</a> component to an Entity - usually to the Camera Entity.
+Для воспроизведения звука вам нужен компонент <a href="http://developer.playcanvas.com/en/user-manual/packs/components/sound/" target="_blank">Звук</a>  добавленный к сущности. После этого вы можете создать слот для прикрепления звука. <a href="http://developer.playcanvas.com/en/user-manual/assets/audio/" target="_blank">Audio assets</a>. Просто нажмите "Добавить слот" и перетащите звуковой ресурс в поле. Для того, чтобы услышать звук, вам также потребуется компонент<a href="http://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/" target="_blank">Слушатель</a>. Обычно им является сущность камеры.
 
-You can create Audio assets by dragging audio files from your computer into the Assets panel.
+Вы можете создать звуковой ресурс перетащив файлы с Вашего компьютера на панель ресурсов.
 
-<a class="docs" href="http://developer.playcanvas.com/en/tutorials/beginner/basic-audio/" target="_blank">View Tutorial</a>
+<a class="docs" href="http://developer.playcanvas.com/en/tutorials/beginner/basic-audio/" target="_blank">Посмотреть пример</a>
 

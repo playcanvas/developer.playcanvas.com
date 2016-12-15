@@ -1,72 +1,72 @@
 ---
-title: Building Models
+title: 创建模型
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
 
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此，一般来说，如果您的建模应用程序支持FBX，PlayCanvas也支持它。 因此，使用PlayCanvas导入模型时，您不必使用任何特殊的艺术工具插件，并且没有必须遵循的PlayCanvas特定的工作流程。
 
-Some modelling and animation programs to consider:
+一些可被考虑使用的建模和动画程序：
 
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+*免费选项：Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
+*低成本付费选项：3D-Coat, NVIL, Hexagon
+*高成本付费选项： ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
 
-\* *this program can create animations too.*
+\* *这个程序也能够创建动画。*
 
-For generating textures, consider these programs:
+为了生成纹理，请考虑这些程序:
 
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+* 免费选项: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* 付费选项: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
-Note many of the programs listed above for modelling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+注意许多上面列出的用于建模的程序也允许纹理绘画。 如果你想要更多的选择，这个页面[external wiki][1]可以帮助你。 请注意，某些信息可能已过期。
 
-## General Considerations for Mesh Construction
+## 网格构造的一般注意事项
 
-Regardless which modelling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+无论您使用哪个建模应用程序，在构建用于PlayCanvas的3D场景时需要注意一些事情。
 
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+*网格可以蒙皮到256骨骼上
+* NURBS网格将转换为三角形网格，进而转换为PlayCanvas所适应的格式。
 
 ---
 
-## Blender
+## 混合器
 
-![Blender Logo][3]
+![Blender图标][3]
 
-[Blender][4] is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender] [4]是一个用于3D建模的神奇的免费工具，非常适合为PlayCanvas生成3D资源。
 
-Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
+Blender支持将文件导出为COLLADA和FBX格式，但是内置的导出器确实有一些局限性。
 
-### **Map Types**
+### **贴图类型**
 
-As of Blender 2.71, both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor.
+从Blender 2.71开始，材质的漫反射和法线贴图将被导出到FBX文件。 如果导出时其他地图类型丢失，则必须在编辑器中的材质编辑器中设置这些地图。
 
-### **Embedding Textures**
+### **嵌入纹理**
 
-Embedded Textures make importing much easier.
+嵌入式纹理使模型导入变得更加容易。
 
-The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
+Blender 的COLLADA导出器不能将纹理嵌入到导出的模型文件中。
 
-The 2.71 release of Blender features a revamped FBX export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to FBX, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
+Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实现多种嵌入纹理。 首先确保对象在Blender中正确呈现。 导出到FBX时，将“路径模式”设置为复制并选中“嵌入纹理”框。
 
-Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+或者，使用[Autodesk FBX Converter] [5]将来自Blender的导出转换为带有嵌入式媒体的导出。 只需在FBX Converter中打开该文件，然后使用* Embedded Media *复选框进行重新保存。
 
 <div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+注意: 这里似乎存在一个问题，尽管用户没有在Blender中设置自发光属性，Blender 2.71的FBX导出依旧会生成自发光， - 这不是一个PlayCanvas引擎所需要的项。 为了避免这种情况，在Blender中，您可以将材质的Diffuse颜色设置更改为0(在“属性编辑器”中的“材质”选项卡下)。 或者直接降低PlayCanvas编辑器内的自发光率。
 </div>
 
-### **Animations**
+### **动画**
 
-As of Blender 2.71:
+对于 Blender 2.71:
 
-Animations included within the blend file are exported with the default fbx exporter settings and are compatible with the PlayCanvas asset import pipeline. Note that for multiple animations for the same model you will need to upload multiple fbx files - one for each animation. To save memory you can delete models and textures from the blend file before exporting, choose to export only armatures in the fbx exporter settings, or simply delete the duplicate 'model' target assets from the assets page on your project dashboard (select 'target' from the drop-down menu on the assets page to view target assets).
+包含在混合文件中的自动动画将使用默认的fbx导出器设置导出，并与PlayCanvas资源导入管道兼容。 请注意，对于同一模型的多个动画，您需要上传多个fbx文件 - 每个动画一个。 为了节省内存，您可以在导出之前从混合文件中删除模型和纹理，选择仅在fbx导出器设置中导出骨架，或者从项目仪表板的资产页面中删除重复的“模型”目标资源(选择“target” 从资源页面上的下拉菜单中查看目标资源)。
 
-### **Learning Blender**
+### **学习Blender**
 
-There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
+在网络上有大量的教授学习如何使用Blender的资源。 我们推荐的几个是：
 
 * [Blender Cookie][2]
 * [Blender Guru][6]
@@ -75,77 +75,77 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 ## Autodesk 3D Studio Max
 
-### Materials
+### 材质
 
-You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
+您应该使用Max中的标准材料类型，或Multi / Sub-Object材料类型，只要它所引用的材料是标准材料。 下面屏幕截图中突出显示的区域显示了导出到PlayCanvas时所遵循的设置:
 
-![Sphere map][7]
+![球状贴图][7]
 
-### Supported Map Slots
+### 支持的贴图插槽
 
-PlayCanvas interprets a subset of the 3DS Max material map types on export. Note that maps can be in any format that 3DS Max supports, but if the maps are not in a web format (namely JPEG, GIF or PNG) then they will be converted to these formats on export.
+PlayCanvas解释导出时3DS Max材质贴图类型的一个子集。 请注意，地图可以是3DS Max支持的任何格式，但如果地图不是Web格式(即JPEG，GIF或PNG)，则它们将在导出时转换为这些格式。
 
-** Diffuse Color **
+** 漫反射颜色 **
 
-Assigning a Bitmap map to this slot enables diffuse mapping on the PlayCanvas material. This essentially overrides whatever diffuse color has been set on the material (via the color picker). If the diffuse map has an alpha channel, it will be used as the per pixel alpha value in the PlayCanvas runtime.
+将位图映射分配给此插槽可在PlayCanvas材质上启用漫射映射。 这基本上覆盖了材料上已经设置的漫反射颜色(通过颜色选择器)。 如果漫射贴图有一个alpha通道，它将被用作PlayCanvas运行时中的每个像素的alpha值。
 
-Additionally, it is possible to assign an RGB Multiply map to the Diffuse Color slot. This has the effect of enabling lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap.
+此外，可以将RGB乘法映射分配给漫射颜色插槽。 这具有启用光照贴图的效果，其中地图1是漫射贴图，而贴图2是光贴图。
 
-** Specular Color **
+** 高光颜色 **
 
-Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas material. This essentially overrides whatever specular color has been set on the material (via the color picker). This allows you to mask out areas of specularity on a surface, or tinge specular highlights different colors in different areas. If the specular map has an alpha channel, it will be used to set per-pixel shininess.
+将位图映射分配给此插槽在PlayCanvas材质中启用镜像映射。 这基本上覆盖了材料上设置的任何镜面颜色(通过颜色选择器)。 这允许您屏蔽表面上的镜面反射区域，或者反射高光强调不同区域中的不同颜色。 如果镜面地图有一个alpha通道，它将用于设置每像素的闪耀。
 
-** Specular Level **
+** 高光级别 **
 
-Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
+将位图映射分配给此槽将激活材料镜面颜色的每像素衰减。 这基本上覆盖了对材料设置的任何镜面级。
 
-** Glossiness **
+** 光泽度 **
 
-Assigning a Bitmap map to this slot activates per-pixel glossiness on the material. This essentially overrides whatever glossiness has been set on the material.
+将位图映射分配给此插槽将激活材质上的每像素光泽度。 这基本上覆盖了在材料上设置的任何光泽度。
 
-** Self-Illumination **
+** 自发光 **
 
-Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel's value.  Anything else will increase a pixel's luminosity.
+将位图映射分配给此插槽将在PlayCanvas材质中启用贴图自发光。自发光贴图可以是完全RGB色(灰度不限制)，并且将被添加到发光面的结果中。 因此，发光贴图中的黑色像素将不会作为像素值添加任何内容。 而任何其他颜色的像素都会增加像素的亮度。
 
-** Opacity **
+** 不透明度**
 
-Assigning a Bitmap map to this slot enables opacity mapping on the PlayCanvas material. A black pixel in the opacity map will be fully transparent, a white pixel will be fully opaque and any grey pixel will correspond to some equivalent intermediate alpha value.
+把位图映射分配给此槽将允许在PlayCanvas材质上进行不透明度映射。 不透明度图中的黑色像素将是完全透明的，白色像素将是完全不透明的，并且任何灰色像素将对应于一些等效的中间α值。
 
-If the material has an opacity map, it will override any alpha channel that may have been set in the diffuse map. It is less efficient to use the opacity map slot over the alpha channel of the diffuse map since two textures are generated in the PlayCanvas runtime instead of one and the default shader must do a little more work. However, if performance is not a concern and it is convenient to use an opacity map, the functionality is supported.
+如果材质具有不透明度地图，则它将覆盖漫射地图中可能已设置的任何Alpha通道。 在漫反射贴图的alpha通道上使用不透明度贴图会降低程序速度，因为在PlayCanvas运行时需要生成两个纹理，而不是一个，默认着色器必须做一些工作。 但是，如果性能不是问题，并且使用不透明度映射很方便，则支持该功能。
 
-** Bump **
+** 凹凸 **
 
-Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the real-time rendering more closely.
+将正常凹凸贴图分配给此插槽启用正常映射。 请注意，默认情况下，此槽的“Amount”值设置被为30。 PlayCanvas会忽略此值并将其视为设置为100，为了使渲染匹配实时渲染更紧密，因此建议您将此值在Max中也设置为100 。
 
-There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
+创作法线贴图有许多不同的方式，主要有使用两种不同格式的绿色组件。 例如，默认情况下，3DS Max希望砖墙的法线贴图显示如下：
 
-![Normal map][8]
+![法线贴图][8]
 
-Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
+注意凸起区域底部边缘的较亮区域。 PlayCanvas期望绿色分量(或法线贴图中每个法线的Y分量)被翻转。 将文件加载到Photoshop中，选择绿色通道并按Ctrl + I反转通道，可以得到：
 
-![Normal map with Y component flipped][9]
+![具有Y分量翻转的法线贴图][9]
 
-Now, lighting in PlayCanvas will be consistent.
+现在，PlayCanvas中的照明将是一致的。
 
-If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
+如果分配的法线贴图具有alpha通道，则其将被视为具有高度的视差贴图。 高度图的alpha较浅区域被视为比较暗区域“更高”。
 
-** Reflection **
+** 影子 **
 
-Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
+将位图映射分配给此槽将允许其在PlayCanvas材质中进行球体映射。 位图将看起来像这样: 
 
-![Sphere map][10]
+![球状贴图][10]
 
-Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
+球体映射是反射映射的最简单，也最不令人信服的形式之一，但在许多情况下，它足以为物体表面提供令人愉快的光泽。
 
 ---
 
 ## Autodesk Maya
 
-### Materials
+### 材质
 
-You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
+您可以使用Maya中的标准材质类型：lambert，blinn和phong。 下面的屏幕截图中突出显示的区域显示导出到PlayCanvas时所遵循的材料设置：
 
-![Sphere map][11]
+![球状贴图][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: http://cgcookie.com/blender/

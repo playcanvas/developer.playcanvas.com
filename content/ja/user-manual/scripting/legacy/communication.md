@@ -1,12 +1,12 @@
 ---
-title: Communication
+title: 通信
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-Communication between different scripts is very straightforward. Script Instances are exposed through the script component on an Entity.
+異なるスクリプト間の通信はとても率直です。スクリプトインスタンスはエンティティのスクリプトコンポーネントを通してエクスポーズされます。
 
-For example,
+例えば：
 
 ~~~javascript~~~
 // player.js
@@ -51,19 +51,19 @@ pc.script.create("input", function (app) {
 });
 ~~~
 
-In the example above we have two scripts: *player.js* and *input.js* are attached to the same Entity. The Input script checks for input on the keyboard and if the left or right arrow key is pressed it tells the Player script to move the player.
+上記例には二つのスクリプトがあります： 同じエンティティに添付されている*player.js* と *input.js*です。インプットスクリプトはキーボードの入力を確認します。左右の矢印キーを押すとプレイヤースクリプトにプレイヤーを動かすよう指示します。
 
-This is the line that communicates between script instances
+スクリプトインスタンスの間で通信する行です。
 
 ~~~js~~~
 this.entity.script.player.move(1,0);
 ~~~
 
-All scripts attached to a script component are exposed on the script component itself under the name defined in the `pc.script.create()` function.
+スクリプトコンポーネントに添付されている全てのスクリプトは、スクリプトコンポーネント自体で、pc.script.create()関数で定義された名前でエクスポーズされます。
 
-## Events
+## イベント
 
-If you wish to broadcast to many scripts all at once you can use the [event system][0] to send and listen for events.
+一度に沢山のスクリプトにブロードキャストする場合、[イベントシステム][0]を使用してイベントを送信およびリッスンできます。
 
 [0]: /user-manual/scripting/events
 

@@ -14,7 +14,7 @@ GET https://playcanvas.com/api/apps/:id
 
 通过id寻找一个已经发布的App。
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/apps/99999

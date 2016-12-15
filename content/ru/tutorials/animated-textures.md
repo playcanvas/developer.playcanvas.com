@@ -1,45 +1,45 @@
 ---
-title: Animated Textures
+title: Анимированные текстуры
 template: tutorial-page.tmpl.html
-tags: animation, textures
+tags: анимация, текстуры
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
 ---
 
 <iframe src="http://playcanv.as/p/qFDE1q2H"></iframe>
 
-*Two types of texture animation. The plane is simple scrolling material, the others are animation frames. See the [full project][1].*
+*Два типа текстурной анимации. Первый - простой скролл материала, второй - покадровая анимация. Смотрите [полный проект][1].*
 
-It can be very useful to animate a material that has been applied to a surface. Two common use-cases are shown in this tutorial. The first is to scroll a texture to simulate some movement. The second is to use a sprite sheet to play back animation frames.
+Анимация материала, наложенная на поверхность, может быть очень полезной. Два широко используемые случая рассмотрены в этом уроке. Первый - прокрутка текстуры, симулирующая какое-то движение. Второй - использование таблицы спрайтов чтобы проигрывать анимацию по кадрам. 
 
-## Scrolling a material with map offset
+## Прокрутка материалов с картой отступа
 
-The square plane in the example uses the script `scrolling-texture.js` to constantly move the UV offset every frame. For example, this can be used to simulate flowing water. The update loop is displayed below.
+Квадратная поверхность в примере использует скрипт `scrolling-texture.js`, чтобы непрерывно менять отступ UV каждый кадр. Например, это может быть использовано для анимация текущей воды. Цикл обновления показан ниже.
 
 ```javascript
 ScrollingTexture.prototype.update = function(dt) {
     var tmp = ScrollingTexture.tmp;
 
-    // Calculate how much to offset the texture
-    // Speed * dt
+    // Рассчитаем насколько большой отступ у текстуры
+    // Скорость * dt
     tmp.set(this.speed.x, this.speed.y);
     tmp.scale(dt);
 
-    // Update the diffuse and normal map offset values
+    // Обновляем отступ у карты нормалей и цвета
     this.material.diffuseMapOffset.add(tmp);
     this.material.normalMapOffset.add(tmp);
     this.material.update();
 };
 ```
 
-We calculate the required offset into a temporary vector `tmp`. This is simply: `speed * timeStep`. Then we add this offset to the offset property for both the diffuse map and the normal map by modifying the `diffuseMapOffset` and `normalMapOffset` properties. These values are `pc.Vec2`s which shift the UV co-ordinates used to map the texture to the surface. If you are using other maps (e.g. emissive) you will also need to update these offset properties as well. Finally we call `material.update()` to propogate the changes into the shader.
+Мы рассчитываем необходимый отступ во временном векторе `tmp`. Это просто скорость умноженная на временный отступ. После этого, мы добавляем отступ к отступу карты нормалей и цвета изменяя параметры `diffuseMapOffset` и `normalMapOffset`. Эти значения являются `pc.Vec2`, которые и смещают UV-координаты, используемые на поверхности. Если вы используете другие карты (например, излучения), вам также надо обновлять и их отступ. Наконец, мы вызываем `material.update()` чтобы передать изменения в шейдер.
 
-This is a simple straightforward method to modify a material's offset and scroll a texture. It does have one downside which is this code modifies the actual material's properties. So if you have multiple models in a scene with the same material, they will all be affected.
+Это простой метод модификации отступа материала и прокрутки текстуры. Этот метод имеет один существенный недостаток - если на вашей сцене несколько моделей использует один и тот же материал, они все будут подвержены смещению.
 
-## Animating multiple materials with map offset
+## Анимация нескольких материалов с отступом
 
-If you want to have many entities with animating textures updating independently we modify the properties on the MeshInstance instead of on the material. When that mesh instance is rendered the material properties are overrided with parameters from the mesh instance. For example, this allows us to have several sprites using different animation frames but sharing the same material. The code for this is in the project file `animated-texture.js`
+Если в хотите иметь несколько сущностей, у которых будут независимые анимации, вы можете модифицировать отступ на MeshInstance, вместо всего материала. Тогда сетка отображает свойства материала и переопределяет параметры для себя. Например. это позволяет иметь несколько спрайтов использующих разные кадры анимации, но использующие один материал. Этот код в файле `animated-texture.js`
 
-In our code example, the coins and the number counters are both duplicated and we've set them to use different frame rates and the numbers use different animation frames.
+В нашем примере кода, монетки и цифры оба дублируют друг друга. И мы установили им разную частоту смены кадров. Таким образом, цифры используют другие кадры.
 
 ```javascript
 AnimatedTexture.prototype.update = function(dt) {

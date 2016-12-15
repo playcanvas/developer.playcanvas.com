@@ -6,82 +6,55 @@ position: 1
 
 ## Что такое PlayCanvas?
 
-PlayCanvas — это визуальная платформа для создания трехмерного веб-контента. Так же как инструменты, веб-приложения, которые вы создаете, построены на базе HTML5. Вся программная платформа находится в сети, так что нет нужды что-либо устанавливать, а доступ к вашей работе возможен с любого устройства, на котором есть один из поддерживаемых веб-браузеров.
+PlayCanvas is a visual development platform for interactive web content. Both the tools and the web apps you build are powered by HTML5. The platform is web hosted so there's nothing to install and you can access your work from any device that runs one of the supported web browsers.
 
 ## Процесс работы в PlayCanvas
 
-Процесс создания трехмерных веб-приложений при помощи PlayCanvas прост. Чтобы получить наилучший результат, потребуется писать JavaScript-код. Однако, набор инструментов PlayCanvas построен таким образом, что позволит вам редактировать и публиковать проекты с невероятной простотой.
+Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some Javascript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
 
-Давайте кратко взглянем на процесс работы:
+### Create and upload assets
 
-<table class="table">
-    <tr>
-        <td>
-            <img alt="Create artwork" width="320" src="/images/platform/workflow/workflow_art.jpg"></img>
-        </td>
-        <td>
-            <h2>1 - Создание и загрузка ассетов</h2>
-            <ul>
-                <li>Сгенерируйте трехмерные модели при помощи общепринятых программ.</li>
-                <li>Экспортируйте их в FBX.</li>
-                <li>Загрузите FBX в PlayCanvas, просто перетащив файлы в окно редактора.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img alt="Create game entities" width="320" src="/images/platform/workflow/workflow_design.jpg"></img>
-        </td>
-        <td>
-            <h2>2 - Создание игровых сущностей</h2>
-            <ul>
-                <li>Создайте игровые сущности в редакторе PlayCanvas.</li>
-                <li>Добавьте компоненты, чтобы определить поведение сущности.</li>
-                <li>Редактируйте атрибуты компонента для более точной настройки.</li>
-                <li>Возможность предпросмотра вносимых изменений в реальном времени.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img alt="Tag scripts on entities" width="320" src="/images/platform/workflow/workflow_scripting.jpg"></img>
-        </td>
-        <td>
-            <h2>3 - Написание кода сущностей</h2>
-            <ul>
-                <li>Добавляйте модульные скрипты к любой сущности.</li>
-                <li>Редактируйте скрипты в редакторе кода PlayCanvas прямо в браузере или же используйте предпочитаемый вами редактор через локальный HTTP-сервер.</li>
-                <li>Синхронизируйте код с GitHub или Bitbucket.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img alt="Publish game" width="320" src="/images/platform/workflow/workflow_publish.jpg"></img>
-        </td>
-        <td>
-            <h2>4 - Публикация игры</h2>
-            <ul>
-                <li>Экспортируйте вашу игру в любой момент.</li>
-                <li>Возможность быстрой публикации игры на серверах PlayCanvas.</li>
-                <li>Скачайте упакованную версию игры и размещайте ее на любом веб-сервере.</li>
-            </ul>
-        </td>
-    </tr>
-</table>
+![assets][4]
 
-## Ассеты
+PlayCanvas supports a wide variety of industry standard asset formats. For example, upload images, 3D models, audio files or custom text or binary file formats.
 
-Ваши проекты создаются и управляются в облаке при помощи PlayCanvas. По мере создания веб-приложения, вы наверняка захотите добавить в него 3D-ассеты (автомобиль, космический корабль, анимированного персонажа и так далее). Платформа PlayCanvas позволяет вам импортировать ассеты, которые были экспортированы практически из любой программы для создания трехмерной графики, включая 3D Studio Max, Maya, SketchUp и Blender. Когда они импортированы в библиотеку ассетов, вы можете быстро добавить их в свое приложение.
+### Construct your scene
 
-Другой важный тип ассетов в проекте — программный код. PlayCanvas предоставляет разработчику обширный набор готовых функциональных компонентов, которые могут быть использованы при конструировании игровых сущностей. Но возможно также настраивать и расширять стандартное поведение этих компонентов при помощи написания скриптов. Например, вы можете создать скрипт, который определяет управление транспортным средством или искусственный интеллект неуправляемого игроком персонажа. Код может быть разработан и обслуживаться на локальном веб-сервере или получен из связанного репозитория на Bitbucket или GitHub.
+![scene][5]
 
-## Публикация
+The PlayCanvas Editor is a visual building tool which is used to construct scenes. Build a hierarchy of entities using built in components like 3D models, collision, particle effects and more.
 
-Наконец, вы захотите опубликовать свою игру. В вашем распоряжении полный контроль и свобода над тем, как и где ваша игра будет располагаться. Доступные варианты:
+### Add interactivity
 
-* Публикация на playcanvas.com нажатием кнопки.
-* Загрузка упакованной версии игры, которую вы впоследствии сможете опубликовать самостоятельно или загрузить в магазины приложений для мобильных телефонов или такие веб-порталы, как Chrome Web Store.
+![script][6]
+
+Using web standard Javascript attach custom behaviours to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+
+### Publish your application
+
+![publish][7]
+
+When you application is ready for sharing a simple one-click publish will get your application live on the internet hosted by PlayCanvas for free. Alternatively download your application for self-hosting on your own web server.
+
+## Key Features
+
+### Editor
+
+The PlayCanvas Editor is a visual editing tool that lets you build scenes, applications and games in record time. Use the Editor to manage your project assets, to add interactivity and to communicate and work with your team. The Editor is collaborative in real-time which means you can immediately see changes made by your team and you can build and test your application across all devices instantly
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" frameborder="0" allowfullscreen></iframe>
+
+Find out more in the [editor][8] section.
+
+### Assets
+
+PlayCanvas is used to create and manage all the assets you need for your interactive web application. PlayCanvas accepts all major 3D file formats, plus upload images, audio and any other asset types you need.
+
+Find out more in the [assets][9] section.
+
+### Publishing
+
+PlayCanvas provides instant and trouble free hosting for your WebGL application with single click. We also support instant download of your complete project ready to host on your own web server.
 
 Ознакомьтесь с деталями в секции [публикации][1].
 
@@ -94,7 +67,7 @@ PlayCanvas изначально задумывался так, чтобы зап
 * Веб-приложения, написанные на PlayCanvas, запускаются внутри стандартного [DOM][2]-элемента (canvas), так что вы можете разместить их на странице и трансформировать при помощи CSS.
 * Отсутствие зависимости на стороннюю технологию плагина, которая может измениться со временем. Единственная зависимость — сам браузер.
 
-Все это звучит здорово, но вы хотите, чтобы ваше приложение запускалось везде. На момент написания, поддержка HTML5 появляется на все большем количестве устройств и браузеров. На данный момент список поддерживаемых браузеров выглядит так:
+At the time of writing, the browser requirements are currently as follows:
 
 <table class="table table-striped table-bordered">
     <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
@@ -123,4 +96,10 @@ PlayCanvas изначально задумывался так, чтобы зап
 [1]: /user-manual/publishing
 [2]: /user-manual/glossary/#dom
 [3]: http://get.webgl.org/
+[4]: /images/user-manual/introduction-assets.jpg
+[5]: /images/user-manual/introduction-scene.jpg
+[6]: /images/user-manual/introduction-script.jpg
+[7]: /images/user-manual/introduction-published.jpg
+[8]: /user-manual/editor
+[9]: /user-manual/assets
 

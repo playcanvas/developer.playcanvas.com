@@ -1,34 +1,34 @@
 ---
-title: Creating an Account
+title: 创建账号
 template: usermanual-page.tmpl.html
 position: 1.7
 ---
 
-## Sign Up
+## 注册
 
-In order to start using PlayCanvas you need to create a new account so first step is to click Sign Up anywhere on the front page.
+为了开始使用PlayCanvas，你需要创建一个新的帐户，所以第一步是在首页上的任何地方点击注册。
 
-![signup][1]
+![注册][1]
 
-At the sign up page enter your email address and your password. If you want you can also sign up using your Google account by clicking on the Google button on the bottom.
+在注册页面输入您的电子邮件地址和密码。 如果您愿意，也可以点击底部的Google按钮，使用您的Google帐户注册。
 
-![signup_details][2]
+![注册细节][2]
 
-In the next page enter you full name and your username. If you want toggle the skills that represent you the most. Finally, click on Create Account.
+在下一页中输入您的全名和您的用户名。 如果你想切换能代表你最多的技能，勾选它。 最后，点击创建帐户。
 
-![signup_final][3]
+![注册结尾][3]
 
-When you create your account we will automatically create a new demo project for you so that you get a first glance at the [PlayCanvas Editor][4]. Feel free to jump to your [profile][5] page at any time to start creating your own projects.
+当您创建帐户时，我们将为您自动创建一个新的演示项目，以便您首先浏览[PlayCanvas Editor] [4]。 随时跳转到您的[profile] [5]页面开始创建自己的项目。
 
-## Logging In
+## 登陆
 
-In order to log in to your Account click Log In on the front page. If you are already logged in you will be taken to your [profile][5] page automatically. If you have signed up using your email and password make sure you enter those fields in the login page. Otherwise if you have logged in with Google then click on Google instead.
+要登录您的帐户，请单击首页上的登录。 如果您已经登录，将自动转到您的[个人资料] [5]页面。 如果您使用电子邮件和密码注册，请确保在登录页面中输入这些字段。 否则，如果您已使用Google登录，请点击Google。
 
-![login][7]
+![登陆][7]
 
 ## Persona
 
-We used to support the Persona login system, however [Mozilla have decided to shut it down][8] on November 30th 2016. If you have been using Persona to log in click [here][6] to set a password for your account.
+我们曾经支持Persona登录系统，但是[Mozilla决定在2016年11月30日关闭] [8]。如果您已经使用Persona登录，请单击[here] [6]为您的帐户设置密码 。
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png

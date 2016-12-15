@@ -1,18 +1,18 @@
 ---
-title: Types of VR experiences
+title: VR 体验的类型
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
-## Seated VR
+## 坐式VR
 
-Seated VR includes devices such as Google Cardboard, Samsung Gear VR and Oculus Rift. These experiences are based around the user remaining roughly stationary. In some cases there is not positional data available (e.g. Google Cardboard) and only the orientation of the headset is used.
+坐式VR包括诸如Google Cardboard，Samsung Gear VR和Oculus Rift等设备的体验。 这些体验基于用户保持大致静止的状态。 在某些情况下，没有可用的位移数据(例如Google Cardboard)，并且定位只能够使用耳机的方向。
 
-## Room Scale VR
+## 房间规模 VR
 
-Room Scale VR includes devices such as the HTC Vive and the Oculus Rift. Room scale experiences are designed to allow a small or large amount of movement away from the origin position of the scene.
+Room Scale VR包括HTC Vive和Oculus Rift等设备的体验模式。 室内规模的体验被设计成玩家被允许远离场景的原始位置一定量的距离。
 
-## Magic Window
+## 魔术窗口
 
-A Magic Window experience benefits from not requiring a VR headset at all. In fact it isn't really VR but a immersive way of displaying content and using the gyroscope and accelerometers of modern smartphones to set your camera position.
+魔术窗口体验受益于不需要VR耳机。 事实上，它不是真正的VR，而是用一种使用陀螺仪和现代智能手机的加速度计来设置您的相机位置的沉浸式显示场景的方式。
 

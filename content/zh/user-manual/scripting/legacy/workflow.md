@@ -69,7 +69,7 @@ Serving HTTP on 0.0.0.0 port 51000 ...
 
 ![服务目录](/images/platform/localserver.png "本地服务目录")
 
-在PlayCanvas编辑器中启动场景需要使用 `Launch Local` 命令使应用查找到连接到 `http://localhost:51000` 的脚本，这意味着如果你的本地服务器正在运行，浏览器会从您的计算机加载脚本。
+要使用本地服务器，请在启动按钮的子菜单中选中使用本地服务器复选框。 这将在`http://localhost:51000` 上启动应用程序并进行脚本查找，这意味着如果您正在运行本地服务器，浏览器将从您的计算机加载脚本。 如果您为您的项目设置了代码存储库 - 请参阅下一部分 - 您可以使用常规的`Launch`命令运行，脚本将完全从您的代码存储库提供。
 
 ## 代码库
 
@@ -114,11 +114,9 @@ Serving HTTP on 0.0.0.0 port 51000 ...
 
 ## 切换
 
-<img src="/images/user-manual/launch-options.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/launch-options.jpg" style="float: right; padding: 20px; padding-top: 0px;"/>
 
-你可以在使用PlayCanvas编辑器时通过选择使用哪些启动按钮轻松地在使用本地代码和使用代码库之间进行切换。
-
-**Launch** 将启用服务器上的代码，即使用你的代码库或代码目录， **Launch (Local)** 将针对启用本地运行的服务器。
+勾选使用本地服务器对本地运行的服务器启动，或者保持未命中状态以使用服务器上的代码（即您的代码存储库或代码目录）启动。
 
 导出场景的操作将只会使用PlayCanvas服务器上的代码资源 - 因此请在进行导出前确认你已经将代码进行了上传或同步。
 

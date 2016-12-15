@@ -1,34 +1,34 @@
 ---
-title: Troubleshooting Performance
+title: 性能故障排除
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-Here are some tips to help you uncover common performance problems
+这里有一些技巧可以帮助你排查常见的性能问题。
 
-## PlayCanvas and other WebGL applications run very slowly in IE 11
+## PlayCanvas 和其他的 WebGL 应用在 IE 11 中运行十分缓慢
 
-On some computer hardware Internet Explorer 11 is not able to use the GPU (graphics processors) to do graphics acceleration. In these cases it will fall back to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. Unfortunately, there are no work arounds to this as it is a hardware issue. The only solution is to update graphics drivers or hardware on the problem machine.
+在某些计算机中，硬件的Internet Explorer 11无法使用GPU(图形处理器)做图形加速。在这种情况下，它会使用软件渲染器CPU渲染WebGL的内容。这将明显比使用GPU时减慢运行速度。不幸的是，这是硬件问题，没有变通的方式。唯一的解决方案是更新问题机上的图形驱动程序或硬件。
 
-To confirm if you are running using the software renderer, visit [http://webglreport.com][1]. If IE 11 is using the software renderer you will see the row for **Major Performance Caveat** is set to **Yes**.
+请访问 [http://webglreport.com][1] 以确认你正在使用图形渲染软件。如果IE 11正在使用渲染组件你将会看到 **主要性能警告 **这行的设置为**Yes**。
 
-## PlayCanvas and other WebGL applications run very slowly in Google Chrome
+## PlayCanvas 和其他的 WebGL 应用在Google Chrome浏览器中运行缓慢
 
-Chrome contains a blacklist of GPUs (graphics processors) and graphics card drivers which it will block from running WebGL content. In these cases Chrome will revert to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. It is possible that upgrading graphics card drivers will improve performance.
+Chrome包含一个黑名单的GPU(图形处理器)和显卡驱动程序，它会阻止运行WebGL内容。 在这种情况下，Chrome将还原为使用软件渲染器渲染WebGL内容。 这将显着慢于使用GPU。 升级显卡驱动程序可能会提高性能。
 
-You can view the blacklisted cards here: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
+你可以在这里查看黑名单卡片: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-To confirm if you are running using the software renderer, visit [http://webglreport.com][1]. If Chrome is using the software renderer you will see the row for **Unmasked Renderer** reports **SwiftShader**.
+要确认是否使用软件渲染器运行，请访问 [http://webglreport.com][1] 。 如果Chrome使用软件渲染器，您将看到“取消屏蔽渲染器”报告** SwiftShader **的行。
 
-## PlayCanvas and other WebGL applications do not load in Firefox
+## PlayCanvas和其他WebGL应用程序不会在Firefox中加载
 
-Firefox contains a blacklist of GPUs (graphics processors) and graphics card drivers which it will block from running WebGL content. In these cases Firefox not allow the application to create a WebGL context and the PlayCanvas application cannot start. It is possible that upgrading your graphics card drivers will enable the application to run.
+Firefox包含一个黑名单的GPU(图形处理器)和显卡驱动程序，它会阻止运行WebGL内容。 在这些情况下，Firefox不允许应用程序创建WebGL上下文，并且PlayCanvas应用程序无法启动。 有可能升级显卡驱动程序将使应用程序运行。
 
-You can view the blacklisted cards here: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
+你可以在这里查看黑名单卡片: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with NVidia graphics cards
+## PlayCanvas和其他WebGL应用程序在Windows上使用NVidia显卡的性能不如预期
 
-Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. NVidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
+许多Windows PC包含两个显卡，一个“集成”图形卡，一个低功耗的GPU内置在计算机的主板和一个额外的显卡。 NVidia卡配有一个控制面板，让PC所有者选择使用哪个显卡运行哪个应用程序。 默认情况下，许多PC设置为使用低功耗集成显卡运行Web浏览器，如谷歌浏览器。 为了在WebGL应用程序中获得最佳性能，重要的是确保使用更强大的图形卡加速Web浏览器。
 
 [1]: http://webglreport.com
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists

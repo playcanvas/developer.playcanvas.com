@@ -1,12 +1,12 @@
 ---
-title: Communication
+title: 交流
 template: usermanual-page.tmpl.html
 position: 4
 ---
 
-Communication between different scripts is very straightforward. Script Instances are exposed through the script component on an Entity.
+不同脚本之间的通信非常简单。 脚本实例通过实体上的脚本组件公开。
 
-For example,
+举个例子，
 
 ~~~javascript~~~
 // player.js
@@ -51,19 +51,19 @@ pc.script.create("input", function (app) {
 });
 ~~~
 
-In the example above we have two scripts: *player.js* and *input.js* are attached to the same Entity. The Input script checks for input on the keyboard and if the left or right arrow key is pressed it tells the Player script to move the player.
+在上面的例子中，我们有两个附加到同一个实体上的脚本：* player.js *和* input.js *。 input脚本检查键盘上的输入，如果按下向左或向右箭头键，它会告诉player脚本移动玩家实体。
 
-This is the line that communicates between script instances
+这是在脚本实例之间进行通信的关联处。
 
 ~~~js~~~
 this.entity.script.player.move(1,0);
 ~~~
 
-All scripts attached to a script component are exposed on the script component itself under the name defined in the `pc.script.create()` function.
+附加到脚本组件的所有脚本都以`pc.script.create()` 函数中定义的名称在脚本组件本身上公开。
 
-## Events
+## 事件
 
-If you wish to broadcast to many scripts all at once you can use the [event system][0] to send and listen for events.
+如果您希望同时广播消息到多个脚本，可以使用[event system] [0]发送和监听事件。
 
 [0]: /user-manual/scripting/events
 

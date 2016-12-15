@@ -1,34 +1,34 @@
 ---
-title: Troubleshooting Performance
+title: パフォーマンスのトラブルシューティング
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-Here are some tips to help you uncover common performance problems
+一般的なパフォーマンスの問題を解決するためのヒントをいくつか紹介します
 
-## PlayCanvas and other WebGL applications run very slowly in IE 11
+## PlayCanvasとその他のWebGLアプリケーションはIE 11で非常に遅く動作します
 
-On some computer hardware Internet Explorer 11 is not able to use the GPU (graphics processors) to do graphics acceleration. In these cases it will fall back to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. Unfortunately, there are no work arounds to this as it is a hardware issue. The only solution is to update graphics drivers or hardware on the problem machine.
+一部のコンピュータハードウェアでは、Internet Explorer 11はGPU(グラフィックスプロセッサ)を使用してグラフィックスアクセラレーションを実行できません。このような場合、WebGLコンテンツをレンダリングするためにソフトウェアレンダラを使用します。これは、GPUを使用するよりも大幅に遅くなります。残念ながら、これはハードウェアの問題であるため、回避する方法はありません。唯一の解決策は、問題のマシンのグラフィックドライバまたはハードウェアを更新することです。
 
-To confirm if you are running using the software renderer, visit [http://webglreport.com][1]. If IE 11 is using the software renderer you will see the row for **Major Performance Caveat** is set to **Yes**.
+ソフトウェアレンダラを使用して実行しているかどうかを確認するには、[http://webglreport.com][1] を参照してください。IE 11がソフトウェアレンダラを使用している場合、**Major Performance Caveat**の行は**Yes**に設定されています。
 
-## PlayCanvas and other WebGL applications run very slowly in Google Chrome
+## PlayCanvasとその他のWebGLアプリケーションはGoogle Chromeで非常に遅く動作します
 
-Chrome contains a blacklist of GPUs (graphics processors) and graphics card drivers which it will block from running WebGL content. In these cases Chrome will revert to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. It is possible that upgrading graphics card drivers will improve performance.
+Chromeには、GPU(グラフィックスプロセッサ)とグラフィックカードドライバのブラックリストが含まれており、WebGLコンテンツの実行をブロックします。このような場合、Chromeはソフトウェアレンダラを使用してWebGLコンテンツをレンダリングします。これは、GPUを使用するよりも大幅に遅くなります。グラフィックスカードドライバをアップグレードすると、パフォーマンスが向上する可能性があります。
 
-You can view the blacklisted cards here: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
+ブラックリストに載っているカードはこちらからご確認できます：[https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-To confirm if you are running using the software renderer, visit [http://webglreport.com][1]. If Chrome is using the software renderer you will see the row for **Unmasked Renderer** reports **SwiftShader**.
+ソフトウェアレンダラを使用して実行しているかどうかを確認するには、[http://webglreport.com][1] を参照してください。Chromeがソフトウェアレンダラを使用している場合、**Unmasked Renderer**の行は**SwiftShader**と報告します。
 
-## PlayCanvas and other WebGL applications do not load in Firefox
+## PlayCanvasとその他のWebGLアプリケーションはFirefoxで実行できません
 
-Firefox contains a blacklist of GPUs (graphics processors) and graphics card drivers which it will block from running WebGL content. In these cases Firefox not allow the application to create a WebGL context and the PlayCanvas application cannot start. It is possible that upgrading your graphics card drivers will enable the application to run.
+Firefoxには、GPU(グラフィックスプロセッサ)とグラフィックカードドライバのブラックリストが含まれており、それらのWebGLコンテンツの実行をブロックします。このような場合、FirefoxはアプリケーションのWebGLコンテキスト作成を許可せず、PlayCanvasアプリケーションは起動されません。グラフィックスカードドライバをアップグレードすると、アプリケーションが実行できる可能性があります。
 
-You can view the blacklisted cards here: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
+ブラックリストに載っているカードはこちらからご確認できます：[https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with NVidia graphics cards
+## PlayCanvasとその他のWebGLアプリケーションはNVidiaグラフィックスカードを搭載したWindowsで期待どおりに機能しません
 
-Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. NVidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
+多くのWindows PCには、コンピュータのマザーボード上に構築された低消費電力のGPUである「統合型」グラフィックスカードと、追加のグラフィックスカードが含まれています。NVidiaカードにはコントロールパネルがインストールされており、PC所有者はどのアプリケーションを実行するためにどのグラフィックカードを使用するかを選択できます。デフォルトでは、多くのPCが低電力内蔵グラフィックスカードを使用してGoogle ChromeのようなWebブラウザを実行するように設定されています。WebGLアプリケーションから最高のパフォーマンスを引き出すには、より強力なグラフィックスカードを使用してWebブラウザを高速化することが重要です。
 
 [1]: http://webglreport.com
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists

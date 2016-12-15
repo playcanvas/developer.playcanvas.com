@@ -4,27 +4,27 @@ template: usermanual-page.tmpl.html
 position: 10
 ---
 
-![VR View][3]
+![VR ビュー][3]
 
-PlayCanvas lets you create Virtual Reality (VR) applications for a variety of devices based on the new WebVR API. WebVR is an experimental new browser API that provides access to virtual reality headsets.
+PlayCanvasでは、新しいWebVR APIに基づいてさまざまなデバイス用のバーチャルリアリティ(VR)アプリケーションを作成できます。WebVRは、バーチャルリアリティヘッドセットへのアクセスを提供する実験的な新しいブラウザAPIです。
 
-## Platforms
+## プラットフォーム
 
-On mobile PlayCanvas VR is currently on Android and iOS devices using Cardboard-style VR headsets and it is supported on the Samsung Gear VR.
+現在、モバイルではPlayCanvas VRはCardboardスタイルのVRヘッドセットを使用しているAndroidおよびiOSデバイスに搭載されており、Samsung Gear VRで対応されています。
 
-On desktop PlayCanvas VR is currently supported on the Oculus Rift and HTC Vive headsets while using special builds of Chrome and Firefox. Learn more about getting WebVR support in browsers [here][1].
+現在、デスクトップではPlayCanvas VRはChromeとFirefoxの特別なビルドを使用して、Oculus RiftとHTC Viveヘッドセットで対応されています。ブラウザでのWebVRの対応については[こちら][1]をご覧ください。
 
 <div class="alert alert-info" style="text-align:left">
-WebVR is an experimental browser API and is not fully supported in all browsers. For mobile browsers we provided support by using a WebVR polyfill, a library that attempts to simulate the native browser experience although with less performance than native. Native support for mobile browsers should be available by the end of 2016.
+WebVRは実験的なブラウザAPIであり、すべてのブラウザで完全に対応されているわけではありません。モバイルブラウザでは、WebVR polyfillを使用して対応しています。これは、パフォーマンスを低下させたような形でネイティブブラウザをシミュレートするライブラリです。モバイルブラウザのネイティブへの対応は、2016年末には用意できます。
 
-For desktop, there is no polyfill, but experimental builds of browsers allow native support for Oculus Rift and HTC Vive. See [http://webvr.info/][1] for more details.
+デスクトップの場合、ポリフィルはありませんが、実験的なブラウザビルドではOculus RiftとHTC Viveのネイティブ対応が可能です。詳細は[http://webvr.info/][1] を参照してください。
 </div>
 
-## Getting started with WebVR
+## WebVRの開始
 
-By default PlayCanvas doesn't initialize the VrManager and does not load the additional WebVR polyfill library for optimization reasons. You can enable WebVR support in your project in the Render Settings of your project, or in the New Project dialog.
+デフォルトで、PlayCanvasはVrManagerを初期化せず、最適化の理由から追加のWebVR polyfillライブラリを読み込みません。WebVRへの対応は、プロジェクトのRender SettingsまたはNew Projectダイアログで有効にできます。
 
-![Render Settings][2]
+![設定をレンダリング][2]
 
 [1]: http://webvr.info/
 [2]: /images/user-manual/vr/render-settings.jpg
