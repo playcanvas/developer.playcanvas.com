@@ -37,12 +37,6 @@ source_file = po/tutorials/index.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-tutorials-video-index]
-file_filter = po/tutorials/video/index.<lang>.po
-source_file = po/tutorials/video/index.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-glossary]
 file_filter = po/user-manual/glossary.<lang>.po
 source_file = po/user-manual/glossary.en-US.po
@@ -661,12 +655,6 @@ source_file = po/faq/create_shader.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-tutorials-advanced-audio-effects]
-file_filter = po/tutorials/advanced/audio-effects.<lang>.po
-source_file = po/tutorials/advanced/audio-effects.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-assets-import-pipeline]
 file_filter = po/user-manual/assets/import-pipeline.<lang>.po
 source_file = po/user-manual/assets/import-pipeline.en-US.po
@@ -937,12 +925,6 @@ source_file = po/tutorials/basic-materials.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-tutorials-cardboard-vr]
-file_filter = po/tutorials/cardboard-vr.<lang>.po
-source_file = po/tutorials/cardboard-vr.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-tutorials-collision-and-triggers]
 file_filter = po/tutorials/collision-and-triggers.<lang>.po
 source_file = po/tutorials/collision-and-triggers.en-US.po
@@ -1144,6 +1126,12 @@ type = PO
 [playcanvas-developer-site.po-user-manual-vr-using-webvr]
 file_filter = po/user-manual/vr/using-webvr.<lang>.po
 source_file = po/user-manual/vr/using-webvr.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-api-project-archive]
+file_filter = po/user-manual/api/project-archive.<lang>.po
+source_file = po/user-manual/api/project-archive.en-US.po
 source_lang = en
 type = PO
 
