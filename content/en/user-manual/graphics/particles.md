@@ -22,7 +22,7 @@ To create a new particle system, simply create a new entity and add a particle s
 
 ![Particle system creation][2]
 
-Note that your particle system does not play in the Editor's 3D view. To see your particle system animate, you must run your game by hitting the Launch button. A newly created particle system with the default settings looks like this:
+A newly created particle system with the default settings looks like this:
 
 ![Default particle system][3]
 
