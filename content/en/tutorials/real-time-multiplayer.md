@@ -454,7 +454,7 @@ server.listen(3000);
 [1]: /images/tutorials/multiplayer/socket_installed.png
 [2]: /images/tutorials/multiplayer/server_started.png
 [3]: /images/tutorials/multiplayer/script_priority.png
-[4]: http://raw.githubusercontent.com/socketio/socket.io-client/master/socket.io.js
+[4]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [5]: http://aws.amazon.com/ec2/
 [6]: https://www.openshift.com/
 [7]: /images/tutorials/multiplayer/ground_entity.png
