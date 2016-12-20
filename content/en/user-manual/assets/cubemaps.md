@@ -70,9 +70,9 @@ An example of a texture set that would match is:
 * face_posz.jpg
 * face_negz.jpg
 
-## Prefiltering Cubemaps
+## Image Based Lighting
 
-The cubemap inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cubemap is essential for using the Physical material.
+This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
 
 ## Assigning Cubemaps to Materials
 
@@ -89,3 +89,4 @@ Note: a Physical material will use the scene's skybox as a default environment m
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
 [5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/

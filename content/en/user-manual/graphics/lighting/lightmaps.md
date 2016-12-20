@@ -1,7 +1,7 @@
 ---
-title: Lightmaps
+title: Lightmaps (old)
 template: usermanual-page.tmpl.html
-position: 3
+position: 6
 ---
 
 ![Sponza][10]
