@@ -11,11 +11,7 @@ In PlayCanvas, ambient lighting is multiplied by the AO map, both diffuse and sp
 ![Ambient Occlusion comparison: without/with][4]
 *Left: without AO; Right: with Global AO*
 
-There are generally two distinct AO representations:
-
-**Local AO** - this texture matches diffuse and other micro-surface maps, and highlights small relief details within the surface. It usually matches with diffuse, gloss and/or normal map on UV0.
-
-**Global AO** - this texture respects geometry and surrounding environment and highlights largely affected details. For example corners in a room would get less light than a wall in the middle of the room. It usually matches with lightmap on UV1.
+AO map can be of different scale. E.g. a texture detail AO, showing surface crevices or a world-scale AO with large shadowing effect of different parts of the model. Large-scale AO will give more effect, it usually matches lightmaps on UV1, and is more important.
 
 ## Rendering Global AO
 
