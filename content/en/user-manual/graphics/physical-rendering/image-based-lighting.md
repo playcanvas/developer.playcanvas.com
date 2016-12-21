@@ -12,7 +12,8 @@ This technique relies on [CubeMap][3] - the environment map that is made of 6 te
 
 Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tonemapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
 
-HDR brings depth and dynamics to imagery, and IBL is no exception.
+![HDR vs LDR CubeMap for Image Based Rendering][9]
+*Notice how bright parts in texture are clamped using LDR*
 
 ## Energy Conservation
 
@@ -64,3 +65,4 @@ Here is an [example][7] and [project][8] of the scene using CubeMap Box Projecti
 [6]: http://www.hdrlabs.com/sibl/archive.html
 [7]: https://playcanv.as/p/zdkARz26/
 [8]: https://playcanvas.com/project/446587/overview/archviz-example
+[9]: /images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg
