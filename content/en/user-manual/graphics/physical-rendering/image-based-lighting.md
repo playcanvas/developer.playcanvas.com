@@ -12,7 +12,8 @@ This technique relies on [Cubemaps][3] - an environment map that is made of 6 te
 
 Image data can be stored in regular (Low Dynamic Range or LDR) or High Dynamic Range (HDR) color space. In an LDR image colors are stored as a number between 0 and 1 for each channel (red, green and blue). HDR allow you to store values greater than 1 in single channel. When combined with other features such as gamma correction, tonemapping and exposure it means color values can contain more light detail and provide much better control over light quality and desirable results to artists.
 
-HDR brings depth and dynamics to imagery and IBL is no exception.
+![HDR vs LDR CubeMap for Image Based Rendering][9]
+*Notice how bright parts in texture are clamped using LDR*
 
 ## Energy Conservation
 
@@ -28,7 +29,7 @@ Environment maps comes in different projections: equirectangular, Cubemap (face 
 
 In order to convert between projections you can use various tools, one of them is the cross-platform open-source Cubemap filtering tool: [cmftStudio][0].
 
-Cubemaps can be CGI rendered or assembled from photography and there are websites to download/buy HDR environment maps. One good source for experimenting can be [sIBL Archive][6], their environment maps come in equirectangular projection and are convertible by using cmftStudio mentioned above. A number of the Cubemaps from sIBL Archive are available to add to you project from the [Asset Library][9].
+Cubemaps can be CGI rendered or assembled from photography and there are websites to download/buy HDR environment maps. One good source for experimenting can be [sIBL Archive][6], their environment maps come in equirectangular projection and are convertible by using cmftStudio mentioned above. A number of the Cubemaps from sIBL Archive are available to add to you project from the [Asset Library][10].
 
 One solution to creating Cubemaps is render them using a 3D modelling tool. They should be rendered in linear gamma space and without color corrections as described in the [Lightmapping Gamma Correction section][1].
 
@@ -63,4 +64,5 @@ Here is an [example][7] and [project][8] of the scene using a Cubemap and Box Pr
 [6]: http://www.hdrlabs.com/sibl/archive.html
 [7]: https://playcanv.as/p/zdkARz26/
 [8]: https://playcanvas.com/project/446587/overview/archviz-example
-[9]: https://store.playcanvas.com
+[9]: /images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg
+[10]: https://store.playcanvas.com
