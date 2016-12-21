@@ -25,7 +25,7 @@ Once you have created lightmaps using an external tool you simply upload them as
 
 ## Tools
 
-Various 3D tools can be used to render lightmaps. In this page we will use 3D Studio Max as example, but same functionality is achievable by any other similar modeling tools.
+Various 3D tools can be used to render lightmaps. In this page we will use 3D Studio Max with VRay, but same functionality is achievable by any other similar modeling tools.
 
 ## Gamma Correction
 
