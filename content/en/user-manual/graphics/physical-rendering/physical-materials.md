@@ -1,7 +1,7 @@
 ---
 title: Physical Materials
 template: usermanual-page.tmpl.html
-position: 2
+position: 1
 ---
 
 To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
@@ -10,16 +10,9 @@ In this section we'll talk about the most useful properties of the material and 
 
 First a note about Cubemaps and Workflows
 
-## Cubemaps
+## Image Based Lighting
 
-First up cubemaps and skyboxes, because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below.
-
-**Physical Materials require a cubemap in order to look great!** Cubemaps are used to create a large portion of the reflected light component of the material. So if you don't have a cubemap either applied directly the material in the Environment section, or applied to the entire scene as a skybox, your materials won't look as good.
-
-In addition, for the best results, the cubemaps should be created from [High Dynamic Range][2] (HDR) textures.
-
-<div class="alert-info">For physical materials to use your cubemap it **must** be prefiltered. Once you have set up your cubemap asset, ensure you press the "prefilter" button just below it.
-</div>
+[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with a HDR Prefiltered CubeMap look great!**
 
 ## Metalness and Specular Workflow
 
@@ -99,3 +92,4 @@ There are many other additional properties to investigate that can be used to ma
 [3]: /images/user-manual/graphics/physical-rendering/metals.jpg
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
