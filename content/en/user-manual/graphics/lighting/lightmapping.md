@@ -25,7 +25,7 @@ Once you have created lightmaps using an external tool you simply upload them as
 
 ## Tools
 
-In this page we will use 3ds Max to generate lightmaps, but the same functionality is achievable with any other similar modeling tools.
+In this page we will use 3ds Max with VRay to generate lightmaps, but the same functionality is achievable with any other similar modeling tools.
 
 ## Gamma Correction
 
