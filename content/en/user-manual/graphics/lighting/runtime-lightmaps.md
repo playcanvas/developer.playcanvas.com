@@ -4,6 +4,13 @@ template: usermanual-page.tmpl.html
 position: 5
 ---
 
+![Sponza][10]
+*All the lighting in this scene is provided by lightmap textures*
+
+Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied on materials. This is an efficient way of lighting a scene if much of the light sources and geometry are static or environmental. And produces realistic results.
+
+## Runtime LightMap Generation
+
 PlayCanvas offers a very convenient solution to generating lightmaps. Using the standard light components in the Editor you choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. Lights that are set to bake are then used when the application starts to generate lightmaps which are used to light the scene.
 
 The advantages are so:
@@ -16,7 +23,7 @@ The advantages are so:
 * Lightmaps are **HDR**
 * Not only **Color** but **Direction** data can be baked as well, enabling some specularity on baked surfaces.
 
-The disadvantage of using runtime lightmap generation is that currently we do not support baking global illumination, ambient occulusion or some of the other advanced features of a specialized baking tools.
+The disadvantage of using runtime lightmap generation is that currently we do not support baking global illumination, ambient occlusion or some of the other advanced features of a specialized baking tools.
 
 ## Setting up lights for baking
 
@@ -26,7 +33,7 @@ Each Light Component contains settings for enabling lightmap baking. By default 
 
 By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any lightmapped model that is in range.
 
-**Direction** option speicifes if light contribute to light direction information baking. This affects the specularity results if **Color and Direction** Lightmapping Mode is choosen in Scene Setting.
+**Direction** option specifies if light contribute to light direction information baking. This affects the specularity results if **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
 
 There are two other options that modify the lights behaviour. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
 
@@ -71,11 +78,11 @@ As you see there several combinations of light settings that can be used. These 
 
 ## Lightmapping Settings
 
-**Size Multiplier** affects all Model Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifiying the size multipler field in the Model Component and Global Settings.
+**Size Multiplier** affects all Model Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the size multiplier field in the Model Component and Global Settings.
 
-On example of plane which is 1x1 unit (meter) in size. If Global Size Multiplier is 16 and multiplier on Model Component is 2, then it will generate 32x32 Lightmap Texture size (1sq/m * 16 * 2), means you will get 32x32 pixels on one square meeter, which is about 3cm a pixel size.
+On example of plane which is 1x1 unit (meter) in size. If Global Size Multiplier is 16 and multiplier on Model Component is 2, then it will generate 32x32 Lightmap Texture size (1sq/m * 16 * 2), means you will get 32x32 pixels on one square meter, which is about 3cm a pixel size.
 
-**Max Resolution** sets the limit to maximum resolition for the generated lightmaps in order to conserve memory.
+**Max Resolution** sets the limit to maximum resolution for the generated lightmaps in order to conserve memory.
 
 **Mode** allows to specify what data should be baked, only diffuse Color or Direction from pixel to light as well. Direction data is used to simulate simplistic specularity. Only single direction can be baked which leads to complexity when multiple lights overlap. Direction baking can be then set on individual lights as well.
 

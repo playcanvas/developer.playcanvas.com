@@ -4,14 +4,10 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-TODO: make image clickable
-![PlayCanvas Lightmapping][1]
-*The lighting in this scene is provided by Lightmap and AO textures and IBL (reflections)*
+[![PlayCanvas Lightmapping][1]][13]
+*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
-Here is the link to final scene that uses these techniques to achieve results in image above: External HDR Lightmaps and Ambient Occlusiong rendered using 3D's Max Vray and HDR CubeMap applied using Box Projection to enable IBL ([Image Based Lighting][11]) reflections.
-
-TODO: link to AO doc
-TODO: link to project
+Here is the link to [final scene][13] and [project][14] that uses these techniques to achieve results in image above: External HDR Lightmaps (described in this page blow), [Ambient Occlusion][12] and HDR CubeMap applied using Box Projection using [Image Based Lighting][11] technique to achieve realistic reflections.
 
 ## Overview
 
@@ -21,7 +17,7 @@ PlayCanvas offers two ways to use lightmaps in your scene: **External lightmap g
 
 ## External Lightmap Generation
 
-Many 3D content tools have ways to generate lightmap textures. For example, 3DS Max, Maya, Blender and other tools all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, ambient occlusion, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
+Many 3D content tools have ways to generate lightmap textures. For example, 3D's Max, Maya, Blender and other tools all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, ambient occlusion, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
 
 Once you have created lightmaps using an external tool you simply upload them as regular texture assets and they can be added to your materials using the lightmap slot in the standard Physical Material.
 
@@ -33,7 +29,7 @@ Various 3D tools can be used to render lightmaps. In this page we will use 3D St
 
 ## Gamma Correction
 
-When rendering Lightmaps or CubeMaps they should be rendered in Linear Space, to ensure colour curves are not affected by gamma correction twice. PlayCanvas Engine will apply gamma correction during real-time rendering.
+When rendering Lightmaps or CubeMaps they should be rendered in Linear Space, to ensure color curves are not affected by gamma correction twice. PlayCanvas Engine will apply gamma correction during real-time rendering.
 
 In 3D's Max this option (Enable Gamma/LUT Correction) should be disabled and can be found in Preference Settings (Customize > Preferences):
 
@@ -54,7 +50,7 @@ Less geometry area - is better. Try to minimize area of triangles and eliminate 
 ![Lighmapping Tips: Simple Geometry][4]
 
 ### **Consistent Texel Size**
-Keep texels in UV not stretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close of far distance, naturaly as artistic and optimisations decision.
+Keep texels in UV not stretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close of far distance, naturally as artistic and optimizations decision.
 
 ![Lighmapping Tips: UV Consistent Texel Size][5]
 
@@ -68,7 +64,7 @@ Triangles in UV should not overlap to ensure each pixel have unique position in 
 To get good lightmap results, we need to ensure that rendering is based only on data that is relevant to light propagation and not point of view of camera during rendering.
 
 1. **Disable Normal Map** on materials - micro surface details are too tiny to be relevant in lightmap textures.
-2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and cimplications for renderers, leading to visual artefacts. Generally lightmaps should contain only diffuse lighting, and reflectivity implemented using some runtime technique.
+2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and complications for renderers, leading to visual artifacts. Generally lightmaps should contain only diffuse lighting, and reflectivity implemented using some runtime technique.
 4. Very **dark materials won't produce good results** as they do not reflect light much, so will not assist Global Illumination.
 5. In Render To Texture window (see bellow) set **Padding** to larger value.
 6. **Light can leak** from behind the geometry, add blocking geometry to prevent light.
@@ -81,12 +77,12 @@ To get illumination data out of modeling tool, we want to render light into Text
 
 In 3D's Max this is done using Render To Texture window. Where Padding need to be set to larger value; selected 2nd UV Channel; and Output profile depending on your renderer, in screenshot bellow `VRayRawTotalLightingMap` is used.
 
-![Render To Texture: Playcanvas Lightmapping][7]
+![Render To Texture: PlayCanvas Lightmapping][7]
 
 ## Noise
 
 Depending on quality and time of rendering, in different situations illumination data on texture might be not perfect and suffer from noise. This is easily solvable by applying some blur technique that will not blur edges in textures, but will smoothen plain sections.
-In Photoshop this is done using Sufrace Blur filter:
+In Photoshop this is done using Surface Blur filter:
 
 ![Lightmapping: Photoshop > Surface Blur][9]
 
@@ -98,7 +94,9 @@ At this stage you have your geometry with second UV channel (UV1) and HDR lightm
 
 ## Final marks
 
-Gamma Correction, Tonemapping and Exposure - are good settings you want to play with to get desirable look and colour for your scene.
+Gamma Correction, Tonemapping and Exposure - are good settings you want to play with to get desirable look and color for your scene.
+
+You can [explore example][13] that uses techniques described above and it's [project][14].
 
 [0]: /user-manual/graphics/lighting/runtime-lightmaps/
 [1]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
@@ -112,3 +110,6 @@ Gamma Correction, Tonemapping and Exposure - are good settings you want to play 
 [9]: /images/user-manual/lighting/lightmaps/lightmapping-surface-blur.jpg
 [10]: /images/user-manual/lighting/lightmaps/lightmapping-material-slot.png
 [11]: /user-manual/graphics/physical-rendering/image-based-lighting/
+[12]: /user-manual/graphics/lighting/ambient-occlusion/
+[13]: https://playcanv.as/p/zdkARz26/
+[14]: https://playcanvas.com/project/446587/overview/archviz-example
