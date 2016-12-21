@@ -4,6 +4,7 @@ var url         = require("url");
 
 var handlebars  = require("handlebars");
 
+var marked      = require('marked');
 var Metalsmith  = require("metalsmith");
 var markdown    = require("metalsmith-markdown");
 var permalinks  = require("metalsmith-permalinks");
@@ -67,6 +68,19 @@ handlebars.registerHelper('locale-url', function (locale, relativeUrl) {
 // store strings requested
 var localization = {};
 
+// links markdown override
+var renderer = new marked.Renderer();
+
+// make external links to open as new tabs
+renderer.link = function(href, title, text) {
+    var external = href.startsWith('http') && href.indexOf('developer.playcanvas.com') === -1;
+    var out = '<a href="' + href + '"';
+    if (title) out += ' title="' + title + '"';
+    if (external) out += ' target="_blank"';
+    out += '>' + text + '</a>';
+    return out;
+};
+
 var m = new Metalsmith(__dirname);
 
 m.source("content")
@@ -76,7 +90,8 @@ m.source("content")
     dest: "."
 }))
 .use(markdown({
-    gfm: true
+    gfm: true,
+    renderer: renderer
 }))
 .use(contents()())
 .use(permalinks({
