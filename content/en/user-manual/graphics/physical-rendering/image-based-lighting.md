@@ -19,7 +19,7 @@ Image data can be stored in LDR or HDR (High Dynamic Range) color space, which a
 
 The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practise this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
 
-In order to allow an artist to regulate glossiness of the surface with IBL, CubeMap should be sampled accordingly. To enable this, we have to Prefilter CubeMap - the process of generating lower resolution CubeMaps that do respect energy conservation concept, so bright areas would dominate darker ones.
+In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. PlayCanvas simulates this behaviour with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
 
 **Prefilter** button is available on CubeMap asset in the Inspector, it is mandatory to enable IBL on physical materials using a CubeMap.
 
