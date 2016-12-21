@@ -11,31 +11,29 @@ Ambient Occlusion is a technique to approximate how much light gets onto the sur
 
 There are generally two distinct AO representations:
 
-**Local AO** - this texture matches diffuse and other micro-surface maps, and highlights small relief details within the surface. It usually matches with diffuse, gloss and/or normal map on UV0.
+**Local AO** - this texture matches diffuse and other micro-surface maps, and highlights small relief details within the surface. It usually uses the same UV channel (UV0) as the diffuse, gloss and/or normal maps.
 
-**Global AO** - this texture respects geometry and surrounding environment and highlights largely affected details. For example corners in a room would get less light than a wall in the middle of the room. It usually matches with lightmap on UV1.
+**Global AO** - this texture respects geometry and surrounding environment and highlights largely affected details. For example corners in a room would get less light than a wall in the middle of the room. It usually uses the same UV channel (UV1) as lightmaps.
 
 ## Rendering Global AO
 
-Rendering AO can be done using popular 3D modelling and archviz tools. It is practically same as rendering Lightmap that is described in [Lightmapping Section][0].
+Rendering AO can be done using popular 3D modelling and archviz tools. It is practically same as rendering lightmaps which is described in the [Lightmapping Section][0] with few small differences. A special material is applied on all geometry that will paint it so it looks like AO and some different settings during rendering into texture.
 
-With few small differences where special material is applied on all geometry that will paint it so it looks like AO, and different settings during rendering into texture.
+In 3ds Max with VRay it is done by creating a material of **VRayDirt** type and **Ambient Occlusion** mode, where **radius** can be changed to get the desired result.
 
-In 3D's Max with VRay it is done by creating a material of **VRayDirt** type and **Ambient Occlusion** mode, where **radius** can be changed to get desirable results.
+![3ds Max: Ambient Occlusion VRay Material][1]
 
-![3D's Max: Ambient Occlusion VRay Material][1]
+This material should be applied on all static geometry that have to be in ambient occlusion map. In 3ds Max this can be done either by manually applying it on individual objects or by using VRay Render Settings using the **Override mtl** property. This way individual materials are preserved and it makes life easier.
 
-This material should be applied on all static geometry that have to be in ambient occlusion map. In 3D's Max this can be done either by manually applying it on individual objects or by using VRay Render Settings, using **Override mtl** property. This way individual materials are preserved and it makes life easier.
+![3ds Max VRay Render Settings: Override mtl][2]
 
-![3D's Max VRay Render Settings: Override mtl][2]
+Then we need to get this data out into the texture. In 3ds Max this is done by using [Render To Texture][3], in the same way as during Lightmapping rendering except the **output** option should be using **VRayCompleteMap**.
 
-Then we need to get this data out into the texture. In 3D's Max this is done by using [Render To Texture][3], same as during Lightmapping rendering, except **output** option should be using **VRayCompleteMap**.
-
-AO Texture does not need to store very detailed information, and visually does not suffers from texture compression artifacts much. So JPEG is economical and is suitable format for it.
+The AO Texture does not need to store very detailed information and visually does not suffer from texture compression artifacts so JPEG compression is an economical and suitable format for it.
 
 ## Upload to Editor
 
-Simply upload texture in Editor and apply it on Ambient Oclussion slot on materials.
+Simply upload texture to the Editor and apply it on Ambient Occlusion slot on materials.
 
 ![Editor Ambient Occlusion Map][5]
 
