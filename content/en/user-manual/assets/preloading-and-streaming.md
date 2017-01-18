@@ -1,6 +1,7 @@
 ---
 title: Preloading and Streaming
 template: usermanual-page.tmpl.html
+position: 3
 ---
 
 On the web it's critical to get users into your application as soon as possible after they load the page. Presenting a loading bar and asking people to wait will lead to visitors leaving the page before your application has even got started. The PlayCanvas asset system implements a number of features to help you streamline the loading process and get your application running as fast as possible.
@@ -20,6 +21,14 @@ You should use preloading to make sure all the assets you need at the start of y
 If an Entity in your scene and references an asset, then a loading request will be initiated when the Entity is enabled. If the Entity is enabled in the scene, then this request is made as soon as the application starts.
 
 All components will gracefully handle dynamically loading assets and will start operating as normal, once the asset is loaded. When streaming assets in dynamically like this, you will often see "popup". As a model will appear as soon as it is loaded, even if it doesn't have materials or textures yet.
+
+## When are assets loaded?
+
+You can determine when a particular asset will be loaded you can follow these rules.
+
+* If `preload = true` the asset will be loaded before the application starts. Otherwise:
+* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
+* If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
 
 ## Asset Tags
 
