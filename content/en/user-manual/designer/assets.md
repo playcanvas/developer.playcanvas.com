@@ -10,7 +10,7 @@ The Assets Panel manages all of the Assets that are available in your project. F
 
 ## Folder Hierarchy
 
-The folder panel allows you to organize your assets into a tree of folders. 
+The folder panel allows you to organize your assets into a tree of folders.
 
 To create a new Folder, select the Add Asset (+) button and select 'Folder'. Alternatively, right click the folder where you would like a new folder to be created and select 'New Asset' > 'Folder'.
 
@@ -44,7 +44,15 @@ Filter which assets are visible using the filter drop down to select the type of
 
 You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
 
-The Search box supports wildcards. For example, *. will list every asset in your project.
+**RegExp** - it is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
+
+**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.  
+Here are some examples:
+
+`[ level-1 ]` - returns all assets that are tagged by `level-1`.  
+`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.  
+`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.  
+`[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
 ## Drag and Drop
 
@@ -80,3 +88,4 @@ Selecting a reference will load it into the Inspector panel.
 [4]: /user-manual/designer/settings
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
+[7]: /api/pc.AssetRegistry.html#findByTag
