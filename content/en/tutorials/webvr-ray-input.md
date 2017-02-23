@@ -133,37 +133,6 @@ if (hitEntity) {
 }
 ~~~
 
-## Input Device Priority
-
-If a 3 DOF or 6 DOF VR input device is detected, then it takes priority any 0 DOF input device and disables the corresponding `controller-ray.js` script on the camera. This logic can be found in `app.js`.
-
-~~~javascript~~~
-var App = pc.createScript('app');
-
-App.attributes.add('gazeControllerEntity', {type: 'entity', title: 'Gaze Controller Entity'});
-
-// initialize code called once per entity
-App.prototype.initialize = function() {
-    // When a VR controller is detected, switch off the default gaze control on the camera
-    this._gazeControllerScript = this.gazeControllerEntity.script.controllerRay;
-    this.app.on('vrgamepad:pad:countchanged', this._onVrPadCountChanged, this);
-};
-
-App.prototype._onVrPadCountChanged = function (count) {
-    this._gazeControllerScript.enabled = count === 0;
-};
-~~~
-
-## Extra Notes
-
-WebVR on the Samsung Gear VR™ should be launched through the [Carmel VR browser][12] which is available as a Developer Preview. There a few conditions that need to be met though:
-
-* Content needs to be launched via the the standard browser with an `ovrweb` prefix ([see documentation][13]).
-~~~html~~~
-<a href="ovrweb:http://ocul.us/experience">Navigate to an HTTP experience</a>
-~~~
-* The application should enter VR immediately on launch (which is is done here in `web-vr-ui.js`)
-
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
 [2]: http://developer.playcanvas.com/en/user-manual/vr/using-webvr/
 [3]: http://developer.playcanvas.com/en/api/pc.Entity.html#forward
