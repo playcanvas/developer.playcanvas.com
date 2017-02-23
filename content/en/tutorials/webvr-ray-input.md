@@ -50,10 +50,6 @@ The level of fidelity for input devices can be broken into the following groups 
 
 This tutorial project supports all three via the `input-*.js` files. Mouse, touch and gamepad are for 0 DOF input. `input-vr.js` for 3 DOF (with a simulated arm model) and 6 DOF input types.
 
-As this is a scalable experience, it is catered for the lowest common dominator between the three and therefore it is assumed there is only one button on all input types.
-
-However, it is simple to modify or expand on top if you only wanted to support a particular controller like the Oculus Rift Touch™.
-
 ### VR Tracked Input Devices
 
 The system for the tracked input devices consists of two files:
@@ -90,6 +86,10 @@ this.entity.on('controller:hover:off', this._onHoverOff, this);
 ~~~
 
 For more information on using events, please refer to the [API reference][14].
+
+As this is a scalable experience, it is catered for the lowest common dominator between the three and therefore it is assumed there is only one button for interaction.
+
+However, it is simple to modify or expand on top if you only wanted to support a particular controller like the Oculus Rift Touch™.
 
 ### Shapes
 
