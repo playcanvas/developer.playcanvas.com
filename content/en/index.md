@@ -25,7 +25,7 @@ Talk about your game, show off your latest project, seek out new team members, o
 
 ## Questions?
 
-If you've got a technical question about using PlayCanvas, the API or any part of the platform, you can use [PlayCanvas Answers][11] to get help.
+If you've got a technical question about using PlayCanvas, the API or any part of the platform, you can use [PlayCanvas Forum][10] to get help.
 
 [1]: /user-manual
 [2]: /getting-started
@@ -37,5 +37,4 @@ If you've got a technical question about using PlayCanvas, the API or any part o
 [8]: https://playcanvas.com/play
 [9]: /engine
 [10]: http://forum.playcanvas.com/
-[11]: http://answers.playcanvas.com/
 [12]: /tutorials/video
