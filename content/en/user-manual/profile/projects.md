@@ -22,13 +22,17 @@ Click on the arrow next to a project and select Unlock to unlock a *locked* proj
 
 If you have an Organization account another way to unlock projects is by purchasing more seats until you are no longer hitting your seats limit.
 
-## Export Project
+## Export Project Archive
+
+![export-archive][2]
 
 If you have an ORG plan, you can export a .zip archive of your project. You can later choose to import that .zip archive as a new project. You can use this mechanism to backup your projects on your machine.
 
 To export a project click on the arrow next to a project and select Export.
 
-## Import Project
+## Import Project Archive
+
+![import-archive][3]
 
 If you have an ORG plan you can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
 
@@ -42,3 +46,5 @@ The other user will need to accept your request to transfer the Project. The tra
 
 
 [1]: /images/user-manual/profile/profile.png "Projects"
+[2]: /images/user-manual/profile/projects/export-archive-button.jpg
+[3]: /images/user-manual/profile/projects/import-archive-button.jpg
