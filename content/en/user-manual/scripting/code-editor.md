@@ -48,7 +48,9 @@ Here you can see various helpful messages while you are interacting with the Cod
 
 ## Collaboration, Saving & Reverting
 
-The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time. The Revert option in the File menu will restore the document back to the last saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
+The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time.
+
+If you have unsaved changes the Revert option in the File menu will cancel these changes and restore the document back to the saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
 
 ## Hot Keys
 
@@ -115,6 +117,8 @@ Enter your search term here and press Enter. You can navigate between matches by
 
 If you want to replace a match enter the text you want to replace it with in the Replace input field on the right. Then hit Enter to replace the match and keep hitting Enter to replace each subsequent match (or Shift + Enter to replace backwards).
 
+### Find in Files
+
 You can also find a term by searching in all your assets. To do this hit Ctrl + Shift + F to bring up the Find in Files panel on the bottom. Like before enter your search term and hit Enter. This will open up a new tab where the search results will be displayed:
 
 On the left side of the input fields there are various search options. These allow you to search using a regular espression, do a case-sensitive search or search for whole words. If you would like to learn and experiment more with regex, then [RegExr][10] is great site with cheatsheets, examples and an online editor for testing regex expressions.
@@ -122,6 +126,18 @@ On the left side of the input fields there are various search options. These all
 ![Find in Files][6]
 
 You can double click on a line in the search results to go that particular line in the asset.
+
+## Quick Open
+
+You can quickly open an asset by hitting Ctrl + P (or Cmd + P on Mac) which will open a panel where you can search for the asset by its name. Start typing the name of the asset and the panel will perform a fuzzy search to find the asset you are looking for. Hit Enter to open the selected asset.
+
+![Go to Anything][11]
+
+## Preferences
+
+You can edit your preferences by clicking on Edit -> Preferences. Here you can change the font size for the text editor and also edit other editor related options.
+
+![Preferences][12]
 
 ## Extra Tips
 
@@ -153,3 +169,5 @@ Holding down Alt and dragging left mouse button will create a rectangular select
 [8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
 [9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
 [10]: http://regexr.com/
+[11]: /images/user-manual/scripting/go-to-anything.gif
+[12]: /images/user-manual/scripting/preferences.png
