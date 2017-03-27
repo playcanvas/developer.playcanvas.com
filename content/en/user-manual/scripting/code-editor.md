@@ -4,17 +4,55 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Script assets are edited using PlayCanvas' Code Editor. Double click on a script asset to open the file in the Editor. The Editor supports real-time collaborative editing by all users with permission to edit the code. You will see other user's avatars in the bottom right of the code editor window
+The Code Editor is an online real-time collaborative editor that allows you to edit your Script assets and also all the other text based assets like JSON, HTML, CSS etc.
 
-![Code Editor][1]
+## Opening The Code Editor
+
+You can open the Code Editor from inside the [PlayCanvas Editor][2] by pressing Ctrl + I. You can also click on this toolbar icon:
+
+![Code Editor Toolbar][1]
+
+Alternatively you can double click on a text-based asset like a Script to open the Code Editor focused on that asset.
+
+## Interface
+
+![Code Editor][3]
+
+### Menu
+
+The menu contains all the different tools and options available along with their keyboard shortcuts.
+
+### Files
+
+Here you can see all the assets that can be edited by the Code Editor. Click on an asset to select it. Selecting an asset will open it in the Text Editor for editing.
+
+Single clicking an asset will open it in Preview Mode. This means that if you open another asset it will be shown in the same Tab. If you want to open an asset permanently double click on the asset or start editing it.
+
+By right clicking on an asset you will see the context menu with various asset-related options. You can also drag and drop assets into folders.
+
+### Tabs
+
+Each open asset has a corresponding tab in the tab view. You can rearrange tabs by dragging and dropping them and you can also close tabs by clicking on the X button that appears when you put your mouse cursor on a tab. If you right click on a tab you will see the tab context menu with various tab-related options.
+
+### Text Editor
+
+Here you can actually edit the contents of your assets. The editor uses a modified version of [CodeMirror][4].
+
+### Collaborators
+
+The Editor supports real-time collaborative editing by all users with permission to edit the code. You will see other user's avatars here.
+
+### Status Bar
+
+Here you can see various helpful messages while you are interacting with the Code Editor.
 
 ## Collaboration, Saving & Reverting
 
-The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time. The Revert button will restore the document back to the last saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
+The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time. The Revert option in the File menu will restore the document back to the last saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
 
 ## Hot Keys
 
-The editor is based on [CodeMirror][2] and the full list of hot keys can be [found in their documentation][3]. The most common can be found below:
+The editor supports various shortcuts to help you when editing code. You can find all those options in the Menu. The most common can be found below:
 
 <table class="table table-striped table-bordered">
 <tr>
@@ -30,28 +68,28 @@ The editor is based on [CodeMirror][2] and the full list of hot keys can be [fou
     <td>Find in file</td><td>Ctrl + F</td><td>Cmd + F</td>
 </tr>
 <tr>
-    <td>Find next match</td><td>Ctrl + G</td><td>Cmd + G</td>
+    <td>Find next match</td><td>F3</td><td>Cmd + G</td>
 </tr>
 <tr>
-    <td>Find previous match</td><td>Ctrl + Shift + G</td><td>Cmd + Shift + G</td>
+    <td>Find previous match</td><td>Shift + F3</td><td>Cmd + Shift + G</td>
 </tr>
 <tr>
-    <td>Replace</td><td>Ctrl + Shift + F</td><td>Cmd + Alt + F</td>
+    <td>Replace</td><td>Ctrl + H</td><td>Cmd + Alt + F</td>
 </tr>
 <tr>
-    <td>Replace all</td><td>Ctrl + Shift + R</td><td>Cmd + Shift + Alt + F</td>
-</tr>
-<tr>
-    <td>Rename variable</td><td>Ctrl + Q</td><td>Ctrl + Q</td>
+    <td>Find in Files</td><td>Shift + Ctrl + F</td><td>Shift + Cmd + F</td>
 </tr>
 <tr>
     <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
 </tr>
 <tr>
-    <td>Indent line or selection</td><td>Ctrl + [</td><td>Cmd + [</td>
+    <td>Block Comment line or selection</td><td>Alt + Cmd + /</td><td>Shift + Ctrl + /</td>
 </tr>
 <tr>
-    <td>Un-Indent line or selection</td><td>Ctrl + ]</td><td>Cmd + ]</td>
+    <td>Indent line or selection</td><td>Tab</td><td>Tab</td>
+</tr>
+<tr>
+    <td>Un-Indent line or selection</td><td>Shift + Tab</td><td>Shift + Tab</td>
 </tr>
 <tr>
     <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
@@ -67,58 +105,51 @@ The editor is based on [CodeMirror][2] and the full list of hot keys can be [fou
 </tr>
 </table>
 
+## Searching
+
+You can search for text in a file by pressing Ctrl + F. This will open up the Find panel on the bottom:
+
+![Find Panel][5]
+
+Enter your search term here and press Enter. You can navigate between matches by continuously hitting Enter (or Shift + Enter to go backwards).
+
+If you want to replace a match enter the text you want to replace it with in the Replace input field on the right. Then hit Enter to replace the match and keep hitting Enter to replace each subsequent match (or Shift + Enter to replace backwards).
+
+You can also find a term by searching in all your assets. To do this hit Ctrl + Shift + F to bring up the Find in Files panel on the bottom. Like before enter your search term and hit Enter. This will open up a new tab where the search results will be displayed:
+
+On the left side of the input fields there are various search options. These allow you to search using a regular espression, do a case-sensitive search or search for whole words. If you would like to learn and experiment more with regex, then [RegExr][10] is great site with cheatsheets, examples and an online editor for testing regex expressions.
+
+![Find in Files][6]
+
+You can double click on a line in the search results to go that particular line in the asset.
+
 ## Extra Tips
 
 ### Quick Searching
 
 Highlighting a word in the code editor will highlight all other matches in the file which makes it easier to check where a variable or function is being used.
 
-![Quick Searching][4]
-
-### Use Regex for Searching
-
-By default, the search feature is case insensitive and matches any part of a word. Regular expressions (regex) can be used to make more specific matches.
-
-![Example Regex][5]
-
-Common regex patterns are (using the word 'position' for all examples):
-<table class="table table-striped table-bordered">
-<tr>
-    <th>Description</th><th>Regex</th><th>Result</th>
-</tr>
-<tr>
-    <td>Case sensitive</td><td>/position/</td><td>Matches 'position' and 'getposition'. Doesn't match 'Position' or 'getPosition'.</td>
-</tr>
-<tr>
-    <td>Case insensitive</td><td>/position/i</td><td>Matches 'position', 'getposition', 'Position' and 'getPosition'.</td>
-</tr>
-<tr>
-    <td>Whole word (case sensitive)</td><td>/\bposition\b/</td><td>Matches 'position'. Doesn't match 'Position' or 'getPosition'.</td>
-</tr>
-<tr>
-    <td>Whole word (case insensitive)</td><td>/\bposition\b/i</td><td>Matches 'position' and 'Position'. Doesn't match 'getPosition'.</td>
-</tr>
-</table>
-
-If you would like to learn and experiment more with regex, then [RegExr][6] is great site with cheatsheets, examples and an online editor for testing regex expressions.
+![Quick Searching][7]
 
 ### Multiple Selection Editing
 
 Holding down Ctrl (PC) or Cmd (Mac) and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
 
-![Multple Selection Editing][7]
+![Multple Selection Editing][8]
 
 ### Rectangular Selection
 
 Holding down Alt and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
 
-![Rectangular Selection][8]
+![Rectangular Selection][9]
 
-[1]: /images/user-manual/scripting/code-editor.jpg
-[2]: https://codemirror.net/index.html
-[3]: https://codemirror.net/doc/manual.html#keymaps
-[4]: /images/user-manual/scripting/code-editor-quick-searching.gif
-[5]: /images/user-manual/scripting/code-editor-example-regex.png
-[6]: http://regexr.com/
-[7]: /images/user-manual/scripting/code-editor-multiple-selection.gif
-[8]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
+[1]: /images/user-manual/scripting/code-editor-toolbar.png
+[2]: /user-manual/designer/
+[3]: /images/user-manual/scripting/code-editor.png
+[4]: https://codemirror.net/
+[5]: /images/user-manual/scripting/find-panel.png
+[6]: /images/user-manual/scripting/find-in-files-results.png
+[7]: /images/user-manual/scripting/code-editor-quick-searching.gif
+[8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
+[9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
+[10]: http://regexr.com/
