@@ -38,6 +38,10 @@ Each open asset has a corresponding tab in the tab view. You can rearrange tabs 
 
 Here you can actually edit the contents of your assets. The editor uses a modified version of [CodeMirror][4].
 
+In addition, the editor supports auto-complete. When you type a letter or hit Ctrl+Space you will see a list of auto-complete suggestions.
+
+The editor will also lint your JavaScript code. This means that while you type your code the editor will scan your code for possible errors or suspicious usage. This is done with the help of [JSHint][13], which also supports special comments which control its behaviour. For a list of these special comments check out the [docs][14].
+
 ### Collaborators
 
 The Editor supports real-time collaborative editing by all users with permission to edit the code. You will see other user's avatars here.
@@ -171,3 +175,5 @@ Holding down Alt and dragging left mouse button will create a rectangular select
 [10]: http://regexr.com/
 [11]: /images/user-manual/scripting/go-to-anything.gif
 [12]: /images/user-manual/scripting/preferences.png
+[13]: http://jshint.com/
+[14]: http://jshint.com/docs/
