@@ -75,7 +75,7 @@ var CameraManager = pc.createScript('cameraManager');
 // initialize code called once per entity
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
-    this.app.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
 };
 
 //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -96,11 +96,11 @@ CameraManager.prototype.setCamera = function (cameraName) {
 CameraManager.prototype.update = function(dt) {
     var app = this.app;
 
-    if (app.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+    if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
         this.setCamera('Center');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
         this.setCamera('Left');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
         this.setCamera('Right');
     }
 };

@@ -71,13 +71,13 @@ LightHandler.prototype.update = function(dt) {
 
     this.pivot();
 
-    if (app.keyboard.wasPressed(pc.input.KEY_1)) {
+    if (app.keyboard.wasPressed(pc.KEY_1)) {
         this.spot.light.enabled = !this.spot.light.enabled;
     }
-    if (app.keyboard.wasPressed(pc.input.KEY_2)) {
+    if (app.keyboard.wasPressed(pc.KEY_2)) {
         this.point.light.enabled = !this.point.light.enabled;
     }
-    if (app.keyboard.wasPressed(pc.input.KEY_3)) {
+    if (app.keyboard.wasPressed(pc.KEY_3)) {
         this.directional.light.enabled = !this.directional.light.enabled;
     }
 
