@@ -28,7 +28,7 @@ import pylev
 from requests.auth import HTTPBasicAuth
 from tempfile import TemporaryFile
 
-_verbose = False
+_verbose = True
 
 def split_to_para(f):
     paras = []

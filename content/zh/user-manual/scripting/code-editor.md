@@ -15,32 +15,112 @@ position: 2
 
 ## 热键
 
-<table>
+编辑器是基于[CodeMirror][2]，完整的快捷键定义可以在 [他们的文档中被找到][3]。最常用的部分已在下方列出:
+
+<table class="table table-striped table-bordered">
 <tr>
-    <td>Ctrl + F</td><td>Find in file</td>
+    <th>Command</th><th>PC</th><th>Mac</th>
 </tr>
 <tr>
-    <td>Ctrl + G</td><td>Find next match</td>
+    <td>Undo</td><td>Ctrl + Z</td><td>Cmd + Z</td>
 </tr>
 <tr>
-    <td>Ctrl + /</td><td>Comment line</td>
+    <td>Redo</td><td>Ctrl + Y</td><td>Cmd + Shift + Z or Cmd + Y</td>
 </tr>
 <tr>
-    <td>Ctrl + Q</td><td>Rename variable</td>
+    <td>Find in file</td><td>Ctrl + F</td><td>Cmd + F</td>
 </tr>
 <tr>
-    <td>Alt + .</td><td>Jump to declaration</td>
+    <td>Find next match</td><td>Ctrl + G</td><td>Cmd + G</td>
 </tr>
 <tr>
-    <td>Ctrl + Space</td><td>Show autocomplete</td>
+    <td>Find previous match</td><td>Ctrl + Shift + G</td><td>Cmd + Shift + G</td>
 </tr>
 <tr>
-    <td>Ctrl + I</td><td>Show type</td>
+    <td>Replace</td><td>Ctrl + Shift + F</td><td>Cmd + Alt + F</td>
 </tr>
 <tr>
-    <td>Ctrl + O</td><td>Show documentation</td>
+    <td>Replace all</td><td>Ctrl + Shift + R</td><td>Cmd + Shift + Alt + F</td>
+</tr>
+<tr>
+    <td>Rename variable</td><td>Ctrl + Q</td><td>Ctrl + Q</td>
+</tr>
+<tr>
+    <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
+</tr>
+<tr>
+    <td>Indent line or selection</td><td>Ctrl + [</td><td>Cmd + [</td>
+</tr>
+<tr>
+    <td>Un-Indent line or selection</td><td>Ctrl + ]</td><td>Cmd + ]</td>
+</tr>
+<tr>
+    <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
+</tr>
+<tr>
+    <td>Jump to declaration</td><td>Alt + .</td><td>Alt + .</td>
+</tr>
+<tr>
+    <td>Show autocomplete</td><td>Ctrl + Space</td><td>Ctrl + Space</td>
+</tr>
+<tr>
+    <td>Show documentation</td><td>Ctrl + O</td><td>Cmd + O</td>
 </tr>
 </table>
 
+## 额外提示
+
+### 快速查找
+
+在代码编辑器中高亮标注一个单词将突出显示文件中的所有其他匹配项，从而更容易检查变量或函数的位置.。
+
+![快速查找][4]
+
+### 查找中使用正则表达式
+
+默认情况下，搜索特性将不区分大小写地匹配单词的任何部分。正则表达式(regex)可以用来做更具体的比较。
+
+![案例表达式][5]
+
+常用的正则表达式模式(所有案例以 'position'  为例)：
+<table class="table table-striped table-bordered">
+<tr>
+    <th>Description</th><th>Regex</th><th>Result</th>
+</tr>
+<tr>
+    <td>Case sensitive</td><td>/position/</td><td>匹配'position' 与 'getposition'。不匹配'Position' 或 'getPosition'。</td>
+</tr>
+<tr>
+    <td>Case insensitive</td><td>/position/i</td><td>匹配'position', 'getposition', 'Position' 与'getPosition'。</td>
+</tr>
+<tr>
+    <td>Whole word (case sensitive)</td><td>/\bposition\b/</td><td>匹配 'position'。 不匹配'Position' 或 'getPosition'。</td>
+</tr>
+<tr>
+    <td>Whole word (case insensitive)</td><td>/\bposition\b/i</td><td>匹配'position' 与 'Position'。 不匹配 'getPosition'。</td>
+</tr>
+</table>
+
+如果你想学习和尝试更多的正则表达式，[RegExr][6] 是一个有备忘录，实例和测试正则表达式在线编辑器的很好的平台。
+
+### 多选择编辑
+
+按住Ctrl (PC) 或 Cmd (Mac)并点击鼠标左键可以添加另一个光标移到编辑器中。这让您能够快速地在文件的多个区域中进行相同的更改。
+
+![多选编辑][7]
+
+### 矩形选区
+
+按住Alt拖动鼠标左键将创建一个矩形选区，选中将会被编辑的多行文本。
+
+![矩形选区][8]
+
 [1]: /images/user-manual/scripting/code-editor.jpg
+[2]: https://codemirror.net/index.html
+[3]: https://codemirror.net/doc/manual.html#keymaps
+[4]: /images/user-manual/scripting/code-editor-quick-searching.gif
+[5]: /images/user-manual/scripting/code-editor-example-regex.png
+[6]: http://regexr.com/
+[7]: /images/user-manual/scripting/code-editor-multiple-selection.gif
+[8]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
 

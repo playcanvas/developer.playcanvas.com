@@ -14,32 +14,112 @@ The code editor is collaborative which means that every user who has the documen
 
 ## Hot Keys
 
-<table>
+The editor is based on [CodeMirror][2] and the full list of hot keys can be [found in their documentation][3]. The most common can be found below:
+
+<table class="table table-striped table-bordered">
 <tr>
-    <td>Ctrl + F</td><td>Find in file</td>
+    <th>Command</th><th>PC</th><th>Mac</th>
 </tr>
 <tr>
-    <td>Ctrl + G</td><td>Find next match</td>
+    <td>Undo</td><td>Ctrl + Z</td><td>Cmd + Z</td>
 </tr>
 <tr>
-    <td>Ctrl + /</td><td>Comment line</td>
+    <td>Redo</td><td>Ctrl + Y</td><td>Cmd + Shift + Z or Cmd + Y</td>
 </tr>
 <tr>
-    <td>Ctrl + Q</td><td>Rename variable</td>
+    <td>Find in file</td><td>Ctrl + F</td><td>Cmd + F</td>
 </tr>
 <tr>
-    <td>Alt + .</td><td>Jump to declaration</td>
+    <td>Find next match</td><td>Ctrl + G</td><td>Cmd + G</td>
 </tr>
 <tr>
-    <td>Ctrl + Space</td><td>Show autocomplete</td>
+    <td>Find previous match</td><td>Ctrl + Shift + G</td><td>Cmd + Shift + G</td>
 </tr>
 <tr>
-    <td>Ctrl + I</td><td>Show type</td>
+    <td>Replace</td><td>Ctrl + Shift + F</td><td>Cmd + Alt + F</td>
 </tr>
 <tr>
-    <td>Ctrl + O</td><td>Show documentation</td>
+    <td>Replace all</td><td>Ctrl + Shift + R</td><td>Cmd + Shift + Alt + F</td>
+</tr>
+<tr>
+    <td>Rename variable</td><td>Ctrl + Q</td><td>Ctrl + Q</td>
+</tr>
+<tr>
+    <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
+</tr>
+<tr>
+    <td>Indent line or selection</td><td>Ctrl + [</td><td>Cmd + [</td>
+</tr>
+<tr>
+    <td>Un-Indent line or selection</td><td>Ctrl + ]</td><td>Cmd + ]</td>
+</tr>
+<tr>
+    <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
+</tr>
+<tr>
+    <td>Jump to declaration</td><td>Alt + .</td><td>Alt + .</td>
+</tr>
+<tr>
+    <td>Show autocomplete</td><td>Ctrl + Space</td><td>Ctrl + Space</td>
+</tr>
+<tr>
+    <td>Show documentation</td><td>Ctrl + O</td><td>Cmd + O</td>
 </tr>
 </table>
 
+## Extra Tips
+
+### Quick Searching
+
+Highlighting a word in the code editor will highlight all other matches in the file which makes it easier to check where a variable or function is being used.
+
+![Quick Searching][4]
+
+### Use Regex for Searching
+
+By default, the search feature is case insensitive and matches any part of a word. Regular expressions (regex) can be used to make more specific matches.
+
+![Example Regex][5]
+
+Common regex patterns are (using the word 'position' for all examples):
+<table class="table table-striped table-bordered">
+<tr>
+    <th>Description</th><th>Regex</th><th>Result</th>
+</tr>
+<tr>
+    <td>Case sensitive</td><td>/position/</td><td>Matches 'position' and 'getposition'. Doesn't match 'Position' or 'getPosition'.</td>
+</tr>
+<tr>
+    <td>Case insensitive</td><td>/position/i</td><td>Matches 'position', 'getposition', 'Position' and 'getPosition'.</td>
+</tr>
+<tr>
+    <td>Whole word (case sensitive)</td><td>/\bposition\b/</td><td>Matches 'position'. Doesn't match 'Position' or 'getPosition'.</td>
+</tr>
+<tr>
+    <td>Whole word (case insensitive)</td><td>/\bposition\b/i</td><td>Matches 'position' and 'Position'. Doesn't match 'getPosition'.</td>
+</tr>
+</table>
+
+If you would like to learn and experiment more with regex, then [RegExr][6] is great site with cheatsheets, examples and an online editor for testing regex expressions.
+
+### Multiple Selection Editing
+
+Holding down Ctrl (PC) or Cmd (Mac) and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
+
+![Multple Selection Editing][7]
+
+### Rectangular Selection
+
+Holding down Alt and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
+
+![Rectangular Selection][8]
+
 [1]: /images/user-manual/scripting/code-editor.jpg
+[2]: https://codemirror.net/index.html
+[3]: https://codemirror.net/doc/manual.html#keymaps
+[4]: /images/user-manual/scripting/code-editor-quick-searching.gif
+[5]: /images/user-manual/scripting/code-editor-example-regex.png
+[6]: http://regexr.com/
+[7]: /images/user-manual/scripting/code-editor-multiple-selection.gif
+[8]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
 

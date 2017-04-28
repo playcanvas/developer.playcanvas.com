@@ -71,6 +71,7 @@
     "Apps - Get primary app": "应用- 得到私有应用",
     "Apps - Get project apps": "应用- 获取项目应用",
     "REST API": "REST API",
+    "Projects - Archive project": "项目 - 项目归类",
     "Animation": "动画",
     "Audio": "音频",
     "CSS": "CSS",

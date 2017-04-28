@@ -71,6 +71,7 @@
     "Apps - Get primary app": "Apps - プライマリappを取得",
     "Apps - Get project apps": "Apps - プロジェクトappの取得",
     "REST API": "REST API",
+    "Projects - Archive project": "プロジェクト - プロジェクトのアーカイブ",
     "Animation": "アニメーション",
     "Audio": "オーディオ",
     "CSS": "CSS",
