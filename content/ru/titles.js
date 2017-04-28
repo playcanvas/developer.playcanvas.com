@@ -71,6 +71,7 @@
     "Apps - Get primary app": "Приложения - получить основное приложение",
     "Apps - Get project apps": "Приложения - получить проекты приложений",
     "REST API": "REST API",
+    "Projects - Archive project": "",
     "Animation": "Анимация",
     "Audio": "Аудио",
     "CSS": "Таблицы стилей CSS",
