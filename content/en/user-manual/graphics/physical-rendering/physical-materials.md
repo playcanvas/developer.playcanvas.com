@@ -36,7 +36,7 @@ The Diffuse Color is the base color of the material. This is an RGB color value.
 
 It can also be known as **albedo** or **base color**.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?color"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ?color"></iframe>
 
 You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
@@ -67,13 +67,13 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?metal"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ?metal"></iframe>
 
 ## Glossiness
 
 Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
 
 Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
@@ -85,7 +85,7 @@ These three properties **diffuse**, **metalness** and **glossiness** are the cor
 
 There are many other additional properties to investigate that can be used to make great materials such as Ambient Occulusion, Emissive, Opacity, Normal and Height maps.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ"></iframe>
 
 [1]: http://store.playcanvas.com
 [2]: /user-manual/glossary#hdr
