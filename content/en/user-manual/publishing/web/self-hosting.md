@@ -19,7 +19,7 @@ When you [publish to playcanvas.com][2], your game is assigned a URL. To embed y
         <title>My Great Game</title>
     </head>
     <body>
-        <iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
+        <iframe src="https://playcanv.as/p/PROJECT_ID"></iframe>
     </body>
 </html>
 ~~~

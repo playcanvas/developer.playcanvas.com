@@ -5,7 +5,7 @@ template: page.tmpl.html
 
 In order to learn the basics of PlayCanvas Platform, let's build the following simple 3D web app:
 
-<iframe  width="640" height="480" src="http://playcanv.as/b/fPYP6Swg" allowfullscreen></iframe>
+<iframe  width="640" height="480" src="https://playcanv.as/b/fPYP6Swg" allowfullscreen></iframe>
 
 ## Your Profile
 

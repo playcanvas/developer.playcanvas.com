@@ -58,12 +58,12 @@ To communicate between a parent page and an iframe you will need to use the [pos
 In your host page
 
 ```html
-<iframe id="app-frame" src="http://playcanv.as/p/example">
+<iframe id="app-frame" src="https://playcanv.as/p/example">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
     score: 10,
-}, "http://playcanv.as");
+}, "https://playcanv.as");
 </script>
 ```
 
