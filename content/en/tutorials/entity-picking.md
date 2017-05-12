@@ -8,7 +8,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 <iframe src="https://playcanv.as/b/0iehjK3i/"></iframe>
 **Collision Picking** - *click to select a shape*
 
-<iframe src="https://playcanv.as/b/RxJFqzy5"></iframe>
+<iframe src="https://playcanv.as/b/RxJFqzy5/"></iframe>
 **Frame Buffer Picking** - *click to select a shape*
 
 Try it from the Editor in the [tutorial project.][1]

@@ -43,7 +43,7 @@ To publish you will need to have at least one scene in your project.
 * You will see a new build created in the BUILDS tab. Wait until it finishes processing.
 * Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
 
-Builds are given permanent link in the form `https://playcanv.as/b/BUILD_ID`. This link will be valid until you delete the build. If you want to share a link to your game, you should probably use the published project link explained below.
+Builds are given permanent link in the form `https://playcanv.as/b/BUILD_ID/`. This link will be valid until you delete the build. If you want to share a link to your game, you should probably use the published project link explained below.
 
 ## Existing Builds
 
@@ -55,7 +55,7 @@ Here you can see a list of existing published builds.
 
 Here you can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button in the Dashboard Header.
 
-It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why we each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID`
+It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why we each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
 
 <div class="alert alert-info">
 If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.

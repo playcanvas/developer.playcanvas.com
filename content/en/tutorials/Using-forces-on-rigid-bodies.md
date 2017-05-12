@@ -5,7 +5,7 @@ tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
+<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
 *Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
 *Press R to reset the cube.*

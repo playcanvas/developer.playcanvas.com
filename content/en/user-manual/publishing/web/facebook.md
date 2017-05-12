@@ -20,7 +20,7 @@ position: 7
 
 ![Secure Canvas][4]
 
-**5.** In the Application Settings section add the Website URL so that it looks like this: `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`. To find this URL take your `playcanv.as` game link e.g. `https://playcanv.as/p/JtL2iqIH` and add an `e/` before the `p/` e.g. `https://playcanv.as/e/p/JtL2iqIH`. This will redirect in your browser, use this URL for the Website URL
+**5.** In the Application Settings section add the Website URL so that it looks like this: `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`. To find this URL take your `playcanv.as` game link e.g. `https://playcanv.as/p/JtL2iqIH/` and add an `e/` before the `p/` e.g. `https://playcanv.as/e/p/JtL2iqIH/`. This will redirect in your browser, use this URL for the Website URL
 
 ![Website URL][5]
 

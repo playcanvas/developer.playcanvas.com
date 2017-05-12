@@ -5,7 +5,7 @@ tags: animation, textures
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/qFDE1q2H"></iframe>
+<iframe src="https://playcanv.as/p/qFDE1q2H/"></iframe>
 
 *Two types of texture animation. The plane is simple scrolling material, the others are animation frames. See the [full project][1].*
 

@@ -5,7 +5,7 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *You can find the [full project here][9]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3] and [Part 4][4] read them first.*
 
