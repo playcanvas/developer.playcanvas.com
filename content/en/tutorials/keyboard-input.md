@@ -5,7 +5,7 @@ tags: input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
 
 *Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
 
@@ -134,5 +134,5 @@ Note, you should always use the enumeration `pc.KEY_*` rather than using numeric
 Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
-[2]: https://playcanv.as/p/rFZGQWCi
+[2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom

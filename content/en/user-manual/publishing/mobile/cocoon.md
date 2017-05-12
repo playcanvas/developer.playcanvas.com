@@ -27,13 +27,13 @@ So, how can you get a Developer App? Let's step through the process to illustrat
 
 Your game can be accessed by one of two links. The build link or the project link.
 
-* `https://playcanv.as/b/BUILD_ID` - links to a specific build
-* `https://playcanv.as/p/PROJECT_ID` - links to the project's Primary App
+* `https://playcanv.as/b/BUILD_ID/` - links to a specific build
+* `https://playcanv.as/p/PROJECT_ID/` - links to the project's Primary App
 
 To get the embeddable version of either link, add `/e/` after the host. e.g.
 
-* `https://playcanv.as/e/b/BUILD_ID`
-* `https://playcanv.as/e/p/PROJECT_ID`
+* `https://playcanv.as/e/b/BUILD_ID/`
+* `https://playcanv.as/e/p/PROJECT_ID/`
 
 ## Generating the Native Build of your Game
 

@@ -5,7 +5,7 @@ tags: mouse, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/MHIdZgaj?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false"></iframe>
 
 *Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
 
@@ -134,4 +134,4 @@ Try the tutorial in full screen [here][5] or at the top of the page. Move the mo
 [2]: /user-manual/glossary#framework
 [3]: /user-manual/glossary#app
 [4]: /user-manual/glossary#dom
-[5]: https://playcanv.as/p/MHIdZgaj
+[5]: https://playcanv.as/p/MHIdZgaj/

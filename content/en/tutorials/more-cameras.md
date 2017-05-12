@@ -5,7 +5,7 @@ tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>
+<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
