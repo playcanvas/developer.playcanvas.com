@@ -22,7 +22,7 @@ The image element displays an image using a texture asset or a solid color.
 
 ## Text Element
 
-The text element renders a string of text using a font asset.
+The text element renders a string of text using a [font asset][5].
 
 ![Text Element][3]
 
@@ -74,3 +74,4 @@ The text element renders a string of text using a font asset.
 [2]: /images/user-manual/scenes/components/component-element-image.png
 [3]: /images/user-manual/scenes/components/component-element-text.png
 [4]: /user-manual/user-interface/layout
+[5]: /user-manual/assets/fonts/
