@@ -42,6 +42,12 @@ In this image the Anchor is set to `[0,0,1,1]` so we are anchoring the edges of 
 
 The margin property is only available when the anchor value is split in one axis. The margin sets the number of Screen component pixels from the anchor that the edge of the element will be. Shortcuts to the margin values are available in scripts on the Element component as the properties `left`, `right`, `top` and `bottom`.
 
+# Loose Elements 
+
+Whilst the primary use-case of Elements is to be part of a User Interface Screen Component. It is valid to have an Element component which is not part of a screen. For example, a single in-world piece of text. 
+
+Sizes and positioning for Elements that do not have a Screen behaves slightly differently. Whereas for a screen a 32x32 Element is 32 pixels a Screen-less Element will be 32m by 32m. Adjust your sizes accordingly.
+
 [1]: /images/user-manual/user-interface/elements/element-guide.png
 [2]: /images/user-manual/user-interface/elements/pivot.png
 [3]: /images/user-manual/user-interface/elements/anchor-editor.png
