@@ -8,7 +8,9 @@ User Interfaces present a unique challenge for graphical applications. There are
 
 ## Screen & Element Components - Recommended
 
-PlayCanvas implements two components which can form the building blocks of a user interface system that runs directly inside your WebGL canvas. The primary advantage is that your user interface exists in the same context as the rest of your game. This allows interactions between the application and the user interface.
+![Intro][1]
+
+PlayCanvas implements two components which can form the building blocks of a user interface system that runs directly inside your WebGL canvas. The [Screen Component][2] is the user interface container, and the [Element Component][3] is used to add user interface elements. The primary advantage is that your user interface exists in the same context as the rest of your game. This allows interactions between the application and the user interface.
 
 ## DOM, HTML & CSS
 
@@ -19,3 +21,7 @@ The primary downside of using the DOM is performance. The DOM is not designed to
 ---
 
 The rest of this user guide will focus on the Screen and Element component system and using them to build user interfaces in PlayCanvas.
+
+[1]: /images/user-manual/user-interface/user-interface-intro-sq.png
+[2]: /packs/components/screen
+[3]: /packs/components/element
