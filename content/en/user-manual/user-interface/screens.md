@@ -6,21 +6,21 @@ position: 2
 
 The [Screen Component][1] defines the area that the User Interface is built inside. It's primary responsibilty is to determine how the contents of the Screen (child Entities with Element components) are rendered.
 
-## Screen Space or World Space
+## Screen space or world space
 
-The primary choice in render mode for a screen is whether it is rendered in Screen Space or World Space.
+The primary choice in render mode for a screen is whether it is rendered in screen space or world space.
 
-![Screen Space][2]
+![Screen space][2]
 
 A screen space Screen Component does not follow the normal transform hierarchy. Instead it is rendered as an overlay the camera. This is useful for creating 2D interfaces, HUDs or other game interfaces. There is an option to create a screen space screen in the menu by adding a *2D Screen*.
 
 ![World Space][3]
 
-If the Screen Space option is disabled, the Screen is instead rendered using the regular transform hierarchy. Elements are still positioned relative to the screens co-ordinate system, but the screen appears in the 3D world.
+If the screen space option is disabled, the Screen is instead rendered using the regular transform hierarchy. Elements are still positioned relative to the screens co-ordinate system, but the screen appears in the 3D world. There is an option to create a world space screen in the menu by adding a *3D Screen*.
 
-## Resolutions and Scaling
+## Resolutions and scaling
 
-As PlayCanvas applications can be viewed on many devices and at many resolutions. For Screen Space components it's important to think about how your user interface will be viewed on different screen sizes.
+As PlayCanvas applications can be viewed on many devices and at many resolutions. For screen space components it's important to think about how your user interface will be viewed on different screen sizes.
 
 The simplest way to render the elements is with no scaling.
 
@@ -32,7 +32,7 @@ In this case, the user interface works well on an iPad resolution. However, what
 
 Because of the smaller resolution of the phone, the user interface runs off the sides of the screen and is unusable.
 
-The Screen component features a Scaling Mode property which is available for Screen Space components. If this is set to *Blend*, then the screen scales the interface to fit the resolution of the screen that it is displayed on. Here is the same interface using Blending on the iPad:
+The Screen component features a Scaling Mode property which is available for screen space components. If this is set to *Blend*, then the screen scales the interface to fit the resolution of the screen that it is displayed on. Here is the same interface using blended scaling on the iPad:
 
 ![iPad Scaling][5]
 
