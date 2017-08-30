@@ -92,7 +92,7 @@ ProgressBar.prototype.update = function(dt) {
 };
 ```
 
-The script has 2 attributses - the Entity that shows the fill image and the max width of that image. It has a `setProgress` function which sets the progress to a value between 0 and 1.
+The script has 2 attributes - the Entity that shows the fill image and the max width of that image. It has a `setProgress` function which sets the progress to a value between 0 and 1.
 
 The `update` method essentially loops progress between 0 and 1. The important thing to note in this script is how we need to change the `width` and the `rect` of the fill image in order to properly resize our progress bar.
 
