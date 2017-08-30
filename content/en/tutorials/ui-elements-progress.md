@@ -70,8 +70,10 @@ ProgressBar.prototype.setProgress = function (value) {
     var width = pc.math.lerp(0, this.progressImageMaxWidth, value);
     // set the width of the fill image element
     this.progressImage.element.width = width;
-    // set rect.z to the progress value which is between 0 and 1.
-    // this is so that the fill image will only show the portion
+
+    // Set the width of the element's rect (rect.z) to be the same
+    // value as our 0-1 progress.
+    // This is so that the fill image will only show the portion
     // of the texture that is visible
     this.progressImage.element.rect.z = value;
     // force rect update

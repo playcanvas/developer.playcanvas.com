@@ -56,7 +56,7 @@ Our group has the following child Elements:
 
 ## Scripts
 
-We have a script on each button to allow us to change their texture based on hover states. This is similar to the script found in [this tutorial][9]. We also have a script to handle our progress bar.
+We have a script on each button to allow us to change their texture based on hover states. This is similar to the script found in [this tutorial][9]. We also have a script to handle our progress bar. There is more info on progress bars in [this tutorial][10].
 
 The main script that handles the interactions for each stat is `uiStats`:
 
@@ -106,3 +106,4 @@ In this script we find our child elements and when the plus or minus buttons are
 [7]: /images/tutorials/ui/stats/boost-attributes.png
 [8]: /images/tutorials/ui/stats/boost-hierarchy.png
 [9]: /tutorials/ui-elements-buttons/
+[10]: /tutorials/ui-elements-progress/
