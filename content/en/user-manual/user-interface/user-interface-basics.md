@@ -8,7 +8,7 @@ User Interfaces are built from two elements in PlayCanvas. A [Screen Component][
 
 ## Layout and Positioning
 
-One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to it's parent and the `pivot` property determines where the center point of the element is. Read more on the [Layout][3] page.
+One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to it's parent and the `pivot` property determines where the center point of the element is. Read more on the [Element][3] page.
 
 ## Draw Order
 
@@ -23,5 +23,5 @@ There is an additional way of handling input for UI Elements. An instance of the
 
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements
-[3]: /user-manual/user-interface/layout
+[3]: /user-manual/user-interface/elements
 [4]: /user-manual/user-interface/input
