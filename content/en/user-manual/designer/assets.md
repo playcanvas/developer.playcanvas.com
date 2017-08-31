@@ -44,14 +44,16 @@ Filter which assets are visible using the filter drop down to select the type of
 
 You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
 
-**RegExp** - it is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
+**ID** - Specific asset can be found by it's unique ID, by simply typing ID in search field it will recognize exact match and only show one asset with that ID.
 
-**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.  
+**RegExp** - It is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
+
+**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
 Here are some examples:
 
-`[ level-1 ]` - returns all assets that are tagged by `level-1`.  
-`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.  
-`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.  
+`[ level-1 ]` - returns all assets that are tagged by `level-1`.
+`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
+`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
 `[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
 ## Drag and Drop

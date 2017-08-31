@@ -1,7 +1,7 @@
 ---
 title: VR
 template: usermanual-page.tmpl.html
-position: 10
+position: 12
 ---
 
 ![VR View][3]
