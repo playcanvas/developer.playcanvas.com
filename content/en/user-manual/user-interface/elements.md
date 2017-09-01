@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Elements are the individual pieces that make up a user interface screen. A user interface element is added by attaching an Element component to an entity and adding that entity as a child or descendent of the Screen entity. An element that is part of a Screen differs from a regular entity in the way that it's transform is calculated and hence the way that it is positioned on screen. 
+Elements are the individual pieces that make up a user interface screen. A user interface element is added by attaching an Element component to an entity and adding that entity as a child or descendent of the Screen entity. An element that is part of a Screen differs from a regular entity in the way that it's transform is calculated and hence the way that it is positioned on screen.
 
 In addition to the local position, rotation and scale which are used to calculate an entity's position relative to its parent, Element components also use the anchor, pivot and margin properties to determine, where the local position should be measured against, where the center point of the Element rectangle should be and the distance between the edges of the Element rectangle and the anchors.
 
@@ -14,7 +14,15 @@ These new properties give you the plenty of control to layout your user interfac
 
 ![Element Guide][1]
 
+## Element Resizing
 
+To resize your Element activate the Resize gizmo or press '4':
+
+![Resize Gizmo Toolbar][5]
+
+Then drag the corners around to adjust the size of the Element:
+
+![Resize Gizmo Viewport][6]
 
 ## Pivot
 
@@ -42,9 +50,9 @@ In this image the Anchor is set to `[0,0,1,1]` so we are anchoring the edges of 
 
 The margin property is only available when the anchor value is split in one axis. The margin sets the number of Screen component pixels from the anchor that the edge of the element will be. Shortcuts to the margin values are available in scripts on the Element component as the properties `left`, `right`, `top` and `bottom`.
 
-# Loose Elements 
+# Loose Elements
 
-Whilst the primary use-case of Elements is to be part of a User Interface Screen Component. It is valid to have an Element component which is not part of a screen. For example, a single in-world piece of text. 
+Whilst the primary use-case of Elements is to be part of a User Interface Screen Component. It is valid to have an Element component which is not part of a screen. For example, a single in-world piece of text.
 
 Sizes and positioning for Elements that do not have a Screen behaves slightly differently. Whereas for a screen a 32x32 Element is 32 pixels a Screen-less Element will be 32m by 32m. Adjust your sizes accordingly.
 
@@ -52,3 +60,5 @@ Sizes and positioning for Elements that do not have a Screen behaves slightly di
 [2]: /images/user-manual/user-interface/elements/pivot.png
 [3]: /images/user-manual/user-interface/elements/anchor-editor.png
 [4]: /images/user-manual/user-interface/elements/split-anchor.png
+[5]: /images/user-manual/user-interface/elements/gizmo-resize.png
+[6]: /images/user-manual/user-interface/elements/gizmo-resize-viewport.png
