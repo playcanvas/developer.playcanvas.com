@@ -1,7 +1,7 @@
 ---
 title: Light
 template: usermanual-page.tmpl.html
-position: 5
+position: 6
 ---
 
 The Light component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.

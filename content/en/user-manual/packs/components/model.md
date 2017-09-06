@@ -1,7 +1,7 @@
 ---
 title: Model
 template: usermanual-page.tmpl.html
-position: 6
+position: 7
 ---
 
 The Model component enables an entity to render a primitive shape or a model asset.
