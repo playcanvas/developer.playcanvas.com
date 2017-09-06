@@ -31,27 +31,35 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
         <td>Assigns a collision volume to the entity.</td>
     </tr>
     <tr>
-        <td>[Light][5]</td>
+        <td>[Element][5]</td>
+        <td>Defines a user interface element.</td>
+    </tr>
+    <tr>
+        <td>[Light][6]</td>
         <td>Attach a dynamic light source to the Entity.</td>
     </tr>
     <tr>
-        <td>[Model][6]</td>
+        <td>[Model][7]</td>
         <td>Renders a 3D model at the location of the entity.</td>
     </tr>
     <tr>
-        <td>[Particle System][7]</td>
+        <td>[Particle System][8]</td>
         <td>Attach a particle system to the Entity.</td>
     </tr>
     <tr>
-        <td>[Rigid Body][8]</td>
+        <td>[Rigid Body][9]</td>
         <td>Adds the entity to the scene's physical simulation.</td>
     </tr>
     <tr>
-        <td>[Script][9]</td>
+        <td>[Screen][10]</td>
+        <td>Defines the area and rendering of a user interface.</td>
+    </tr>
+    <tr>
+        <td>[Script][11]</td>
         <td>Allows the entity to run JavaScript fragments to implement custom behavior.</td>
     </tr>
     <tr>
-        <td>[Sound][10]</td>
+        <td>[Sound][12]</td>
         <td>Plays audio assets.</td>
     </tr>
 </tbody></table>
@@ -60,9 +68,11 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
 [2]: /user-manual/packs/components/audiolistener
 [3]: /user-manual/packs/components/camera
 [4]: /user-manual/packs/components/collision
-[5]: /user-manual/packs/components/light
-[6]: /user-manual/packs/components/model
-[7]: /user-manual/packs/components/particlesystem
-[8]: /user-manual/packs/components/rigidbody
-[9]: /user-manual/packs/components/script
-[10]: /user-manual/packs/components/sound
+[5]: /user-manual/packs/components/element
+[6]: /user-manual/packs/components/light
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/particlesystem
+[9]: /user-manual/packs/components/rigidbody
+[10]: /user-manual/packs/components/screen
+[11]: /user-manual/packs/components/script
+[12]: /user-manual/packs/components/sound

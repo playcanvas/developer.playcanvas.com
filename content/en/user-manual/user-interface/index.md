@@ -14,7 +14,7 @@ PlayCanvas implements two components which can form the building blocks of a use
 
 ## DOM, HTML & CSS
 
-Web browsers have spent years building effective and optimized systems for rendering complex interfaces to users. For some use cases using the HTML, CSS and the browser DOM are a good fit for yoru user interface. 
+Web browsers have spent years building effective and optimized systems for rendering complex interfaces to users. For some use cases using the HTML, CSS and the browser DOM are a good fit for your user interface. 
 
 The primary downside of using the DOM is performance. The DOM is not designed to be run in a high framerate, real time setting. Page reflows and garbage collection can causes stutters in your application. If you're aiming for a consistent 60fps in your application this is not the best option.
 
@@ -23,5 +23,5 @@ The primary downside of using the DOM is performance. The DOM is not designed to
 The rest of this user guide will focus on the Screen and Element component system and using them to build user interfaces in PlayCanvas.
 
 [1]: /images/user-manual/user-interface/user-interface-intro-sq.png
-[2]: /packs/components/screen
-[3]: /packs/components/element
+[2]: /user-manual/packs/components/screen
+[3]: /user-manual/packs/components/element
