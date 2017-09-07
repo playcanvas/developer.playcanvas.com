@@ -226,7 +226,7 @@ Finally, for a nice effect we add rotate the ball by the angular speed value usi
 
 You may remember from [Part 2][2] that the `input.js` script checked to see if an input has hit the ball and if so it calls the `tap()` method. The `tap()` method defined above applies a direct change to the velocity and the angular speed of the ball. We use a couple of our script attributes `this.speedMult` and `this.angMult` to multiple the new velocity and angular speed to match our expectations of the gameplay.
 
-We also use the tap method to trigger a particle dust cloud at the point of impact and play a sound effect. We'll talk about particle and sounds in [Part 4][4].
+We also use the tap method to trigger a particle dust cloud at the point of impact and play a sound effect. We'll talk about particle and sounds in [Part 5][4].
 
 ## Summary
 
@@ -236,6 +236,6 @@ The ball script runs a simply physical simulation to make the ball fall under gr
 [1]: /tutorials/beginner/keepyup-part-one
 [2]: /tutorials/beginner/keepyup-part-two
 [3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
+[4]: /tutorials/beginner/keepyup-part-five
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
