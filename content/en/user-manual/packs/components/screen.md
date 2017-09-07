@@ -1,7 +1,7 @@
 ---
 title: Screen
 template: usermanual-page.tmpl.html
-position: 11
+position: 10
 ---
 
 The Screen component defines the area and rendering of a user interface. Children added to a Screen component should all have an Element component 

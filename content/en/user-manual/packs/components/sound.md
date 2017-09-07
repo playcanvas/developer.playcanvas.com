@@ -1,7 +1,7 @@
 ---
 title: Sound
 template: usermanual-page.tmpl.html
-position: 10
+position: 12
 ---
 
 The Sound component controls playback of audio samples.
