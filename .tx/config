@@ -709,12 +709,6 @@ source_file = po/user-manual/graphics/lighting/index.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-user-manual-graphics-lighting-lightmaps]
-file_filter = po/user-manual/graphics/lighting/lightmaps.<lang>.po
-source_file = po/user-manual/graphics/lighting/lightmaps.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-graphics-lighting-lights]
 file_filter = po/user-manual/graphics/lighting/lights.<lang>.po
 source_file = po/user-manual/graphics/lighting/lights.en-US.po
@@ -1132,6 +1126,144 @@ type = PO
 [playcanvas-developer-site.po-user-manual-api-project-archive]
 file_filter = po/user-manual/api/project-archive.<lang>.po
 source_file = po/user-manual/api/project-archive.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-tweening]
+file_filter = po/tutorials/tweening.<lang>.po
+source_file = po/tutorials/tweening.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-ui-elements-buttons]
+file_filter = po/tutorials/ui-elements-buttons.<lang>.po
+source_file = po/tutorials/ui-elements-buttons.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-ui-elements-leaderboard]
+file_filter = po/tutorials/ui-elements-leaderboard.<lang>.po
+source_file = po/tutorials/ui-elements-leaderboard.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-ui-elements-progress]
+file_filter = po/tutorials/ui-elements-progress.<lang>.po
+source_file = po/tutorials/ui-elements-progress.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-ui-elements-stats-counter]
+file_filter = po/tutorials/ui-elements-stats-counter.<lang>.po
+source_file = po/tutorials/ui-elements-stats-counter.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-tutorials-webvr-ray-input]
+file_filter = po/tutorials/webvr-ray-input.<lang>.po
+source_file = po/tutorials/webvr-ray-input.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-assets-fonts]
+file_filter = po/user-manual/assets/fonts.<lang>.po
+source_file = po/user-manual/assets/fonts.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-ambient-occlusion]
+file_filter = po/user-manual/graphics/lighting/ambient-occlusion.<lang>.po
+source_file = po/user-manual/graphics/lighting/ambient-occlusion.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-lightmapping]
+file_filter = po/user-manual/graphics/lighting/lightmapping.<lang>.po
+source_file = po/user-manual/graphics/lighting/lightmapping.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-lighting-runtime-lightmaps]
+file_filter = po/user-manual/graphics/lighting/runtime-lightmaps.<lang>.po
+source_file = po/user-manual/graphics/lighting/runtime-lightmaps.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-graphics-physical-rendering-image-based-lighting]
+file_filter = po/user-manual/graphics/physical-rendering/image-based-lighting.<lang>.po
+source_file = po/user-manual/graphics/physical-rendering/image-based-lighting.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-migration-guides-from-goo-create]
+file_filter = po/user-manual/migration-guides/from-goo-create.<lang>.po
+source_file = po/user-manual/migration-guides/from-goo-create.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-migration-guides-index]
+file_filter = po/user-manual/migration-guides/index.<lang>.po
+source_file = po/user-manual/migration-guides/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-packs-components-element]
+file_filter = po/user-manual/packs/components/element.<lang>.po
+source_file = po/user-manual/packs/components/element.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-packs-components-screen]
+file_filter = po/user-manual/packs/components/screen.<lang>.po
+source_file = po/user-manual/packs/components/screen.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-elements]
+file_filter = po/user-manual/user-interface/elements.<lang>.po
+source_file = po/user-manual/user-interface/elements.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-group-elements]
+file_filter = po/user-manual/user-interface/group-elements.<lang>.po
+source_file = po/user-manual/user-interface/group-elements.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-image-elements]
+file_filter = po/user-manual/user-interface/image-elements.<lang>.po
+source_file = po/user-manual/user-interface/image-elements.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-index]
+file_filter = po/user-manual/user-interface/index.<lang>.po
+source_file = po/user-manual/user-interface/index.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-input]
+file_filter = po/user-manual/user-interface/input.<lang>.po
+source_file = po/user-manual/user-interface/input.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-screens]
+file_filter = po/user-manual/user-interface/screens.<lang>.po
+source_file = po/user-manual/user-interface/screens.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-text-elements]
+file_filter = po/user-manual/user-interface/text-elements.<lang>.po
+source_file = po/user-manual/user-interface/text-elements.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-user-interface-user-interface-basics]
+file_filter = po/user-manual/user-interface/user-interface-basics.<lang>.po
+source_file = po/user-manual/user-interface/user-interface-basics.en-US.po
 source_lang = en
 type = PO
 
