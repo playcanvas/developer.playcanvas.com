@@ -167,6 +167,10 @@ Scene-wide multiplier applied to all lightmap sizes.
 
 The maximum texture size available for generated lightmap textures.
 
+## Batch Groups
+
+Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+
 ## Loading Screen (Available for ORG users only)
 
 Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
@@ -207,3 +211,6 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [4]: /images/user-manual/gamma-correction.jpg
 [5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
 [6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
