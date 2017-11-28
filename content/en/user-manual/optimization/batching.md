@@ -60,9 +60,9 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 
 ## Terminology
 
-* Batch Group - A named group, created in the Editor, that defines some hints on how meshes should be combined. Components are assigned to a batch group
-* Batch - An engine object created at runtime which is the set of meshes that are rendered in a single draw call. A batch group may result in multiple batches depending on the state of the meshes that are added to the batch group.
-* Batch Manager - The programmatic interface for creating and updating batches at runtime. See [API documentation][9].
+* **Batch Group** - A named group, created in the Editor, that defines some hints on how mesh instances should be combined. Components are assigned to a batch group
+* **Batch** - An engine object created at runtime which is the set of mesh instances that are rendered in a single draw call. A batch group may result in multiple batches depending on the properties of the mesh instances that are added to the batch group.
+* **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][9].
 
 
 [1]: /images/user-manual/optimization/batching/batch-groups.jpg
