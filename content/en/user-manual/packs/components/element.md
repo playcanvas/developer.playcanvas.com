@@ -39,6 +39,7 @@ The text element renders a string of text using a [font asset][5].
     <tr><td>Size</td><td>The width and height of the Element. This may be automatically calculated depending on other settings</td></tr>
     <tr><td>Margin</td><td>The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis).</td></tr>
     <tr><td>Use Input</td><td>If enabled, this Element is added to the list of elements that check for input and fire input related events.</td></tr>
+    <tr><td>Batch Group</td><td>The Batch Group that this Element belongs to. More on Batching [here][6]</td></tr>
 </table>
 
 ## Image Component Properties
@@ -75,3 +76,4 @@ The text element renders a string of text using a [font asset][5].
 [3]: /images/user-manual/scenes/components/component-element-text.png
 [4]: /user-manual/user-interface/layout
 [5]: /user-manual/assets/fonts/
+[6]: /user-manual/optimization/batching/

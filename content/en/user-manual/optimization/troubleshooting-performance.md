@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Performance
 template: usermanual-page.tmpl.html
-position: 1
+position: 4
 ---
 
 Here are some tips to help you uncover common performance problems
