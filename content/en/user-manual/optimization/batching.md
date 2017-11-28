@@ -44,6 +44,8 @@ The rules for whether the engine can combine mesh instances are fairly complicat
 * Model components must have same static property
 * For dynamic batches there is a maximum number of movable mesh instances. This hardware dependent but has a maximum of 1024.
 
+If a batch group contains components or mesh instances that do not obey all of the rules the batch group will produce multiple batches such that each individual batch contains mesh instance that follow all the rules.
+
 ## Example - Batching a static environment
 
 ![Western Scene][3]
