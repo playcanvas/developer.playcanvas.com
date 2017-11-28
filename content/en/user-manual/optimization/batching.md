@@ -4,34 +4,74 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Batching is the process of combining data for multiple models (e.g. vertex buffers) together into a single data set. This is designed to reduce the number of draw calls (ideally down to just 1) necessary to render the models. This works at the level of the mesh instance, e.g. combining 10 mesh instances that share a material, into a single mesh instance.
+Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7] and [Element][8] components that let you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
 
-Use cases:
-* Combine multiple static scene mesh instances into one, but ideally also split them into local groups, so culling is possible. *(Example: environment)*
-* Combine dynamic (moving or otherwise changing) models into a single mesh. *(Example: doors, cars, machinery, fake particles, anything movable & non-skinned. Dynamic batches can be also used to create different levels by just moving parts of environment around differently without recombining overhead)*
-* Combine all mesh instances inside of some entity into one. Use the combined version for every clone of this entity. *(Example: multiple instances of complex animated models)*.
+There are a variety of rules which the engine will apply to see if mesh instances are able to be combined. The primary rule is that all mesh instances must share the same material.
 
-## Terms and Definitions
+Common batching use cases are:
 
-### Batch Manager
+* Combine together static geometry -- e.g. environments -- into a single mesh instance or multiple large instances to reduce draw calls, but still support camera culling.
+* Combine together dynamic geometry -- e.g. a set of moving objects -- into a single mesh instance with dynamic properties that are applied on the GPU.
 
-The Batch Manager is created in the application and exposes an API to create and update batches. See the API reference [here][1].
+## Creating Batch Groups
 
-### Batch Group
+![Creating Batch Groups][1]
 
-Batch Groups are defined in the Editor by creating them under the [Settings panel][2]. Then the user can select the batch group on [Model][3] and [Element][4] components. The batch group defines a set of mesh instances that the user desires to be batched together. At runtime the Batch Group can be divided into Batches. Batching behaviour can be set up differently for each group.
+Batch Groups can be created from the Batch Groups section of the [scene settings panel][6]. Each batch group has a number of properties that are used to give the engine hints about how to create batches from this batch group.
 
-A batch group has the following properties:
+### Batch Group Properties
 
-* **Name**: Used to differentiate different batch groups, ideally it would describe the kinds of objects that this batch group will have.
-* **Dynamic**: If enabled then objects inside the batch group can still move/rotate/scale. You can use this for objects that are similar to each other and use the same materials e.g. bullets. Disable Dynamic if this batch group is for static objects e.g. walls.
-* **Max AABB size**: This is the maximum size on each axis for the bounding box that contains all of the objects in the batch group. If you set this to a large value then more objects around the scene will be in the same batch, therefore less draw calls will be generated. However, the dimensions of the batch will be larger thus harder to cull so it will get drawn more vs a smaller batch which would be easier to cull when not visible.
+* **Name**: Used to differentiate different batch groups, ideally it would describe the kinds of objects that this batch group will have. This name is available at runtime to retrieve the group.
+* **Dynamic**: If enabled then objects inside the batch group can still move/rotate/scale. You can use this for objects that are similar to each other and use the same materials e.g. bullets. Static groups use less runtime resources so you should disable Dynamic if the contents of batch group will not move.
+* **Max AABB size**: The maximum size of any one side of the bounding box that contains all objects in the batch group at the time when the batches are created. If the set of meshes are larger than the maximum size it will create multiple batches to be rendered. A larger bounding box will render in less draw calls, but will work less well with camera culling.
 
-### Batch
+## Adding a component to a Batch Group
 
-A Batch is a set of mesh instances that are able to be drawn in a single draw call.
+![Selecting Batch Groups][2]
 
-[1]: /api/pc.BatchManager.html
-[2]: /user-manual/designer/settings/#batch-groups
-[3]: /user-manual/packs/components/model
-[4]: /user-manual/packs/components/element
+The Model and Element components have a Batch Group property to assign a model into a batch group.
+
+## Rules for combining mesh instances
+
+The rules for whether the engine can combine mesh instances are fairly complicated but a good summary is that all mesh instances that belong to a single batch must obey the following:
+
+* Have the same Batch Group ID
+* Have the same material
+* Have the same shader parameters
+* Be within a bounding box with no side larger than the Max AABB Size
+* Be in the same layer
+* Each batch has a maximum vertex count of 65535
+* Model components must have same static property
+* For dynamic batches there is a maximum number of movable mesh instances. This hardware dependent but has a maximum of 1024.
+
+## Example - Batching a static environment
+
+![Western Scene][3]
+
+In this scene we have created a static environment from 7 separate model files, some of which are repeated in the scene. For example, the road tile is used to in 50 entities to create the long road through the center of the scene.
+
+![Western Animation][4]
+
+You can see in the animation each draw call as it is made. In this environment the engine makes over 50 draw calls to draw each of the models individually. However, apart from the ground, all of these models use the same material and so they can be combined into batch groups.
+
+![Western Animation Batched][5]
+
+In this animation we have created 4 batch groups for the buildings, the cacti, the road and the ground. Notice, that the road and the ground are not combined into single draw calls because the meshes are larger than the Max AABB Size defined on the batch group.
+
+## Terminology
+
+* Batch Group - A named group, created in the Editor, that defines some hints on how meshes should be combined. Components are assigned to a batch group
+* Batch - An engine object created at runtime which is the set of meshes that are rendered in a single draw call. A batch group may result in multiple batches depending on the state of the meshes that are added to the batch group.
+* Batch Manager - The programmatic interface for creating and updating batches at runtime. See [API documentation][9].
+
+
+[1]: /images/user-manual/optimization/batching/batch-groups.jpg
+[2]: /images/user-manual/optimization/batching/model-component.jpg
+[3]: /images/user-manual/optimization/batching/western-scene.jpg
+[4]: /images/user-manual/optimization/batching/western-animation-all.gif
+[5]: /images/user-manual/optimization/batching/western-animation.gif
+[6]: /user-manual/designer/settings/#batch-groups
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /api/pc.BatchManager.html
+
