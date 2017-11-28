@@ -41,7 +41,6 @@ The rules for whether the engine can combine mesh instances are fairly complicat
 * Be within a bounding box with no side larger than the Max AABB Size
 * Be in the same layer
 * Each batch has a maximum vertex count of 65535
-* Model components must have same static property
 * For dynamic batches there is a maximum number of movable mesh instances. This hardware dependent but has a maximum of 1024.
 
 If a batch group contains components or mesh instances that do not obey all of the rules the batch group will produce multiple batches such that each individual batch contains mesh instance that follow all the rules.
