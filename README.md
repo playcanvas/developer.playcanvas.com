@@ -2,9 +2,9 @@
 
 This is this the static site for the PlayCanvas Developer Tools
 
-## Style Guide
+## Style Guide
 
-### Links
+### Links
 
 When writing a link in a markdown file use the following format:
 
@@ -12,7 +12,7 @@ When writing a link in a markdown file use the following format:
 
 \[1\]: /link/url
 
-## How to build
+## How to build
 
 Building the site requires `node` and `npm`
 
