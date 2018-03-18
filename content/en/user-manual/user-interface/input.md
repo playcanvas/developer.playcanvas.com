@@ -111,11 +111,9 @@ update: function (dt) {
 ```
 ## Mouse and Touch event conflict on Google Chrome
 
-Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behaviour.
-For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
+Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behavior. For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
 
-To prevent this behaviour you can call the ```preventDefault()``` method of the native event object on the ```pc.EVENT_TOUCHEND``` event:
-
+To prevent this behavior you can call the ```preventDefault()``` method of the native event object on the ```pc.EVENT_TOUCHEND``` event:
 
 Here is small script to include once in your scene:
 
