@@ -18,7 +18,7 @@ When you launch your app from the Editor, a new tab is opened called the launch 
 
     https://launch.playcanvas.com/<scene_id>
 
-Simple edit the launch page's URL by adding the following string to the end:
+Simply edit the launch page's URL by adding the following string to the end:
 
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-latest.js
 
