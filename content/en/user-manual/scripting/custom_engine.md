@@ -48,7 +48,7 @@ To launch with the minified build, use:
 
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.min.js
 
-### Launch with a Locally Built Engine Build
+### Launch with a Locally Built Engine
 
 If you fork the engine repo on GitHub, you can build the engine yourself. To have the launch page launch your custom build, you need to start by serving it from localhost using port 51000. Verify you can see your engine source at the URL:
 
