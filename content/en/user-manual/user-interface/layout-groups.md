@@ -6,18 +6,17 @@ position: 7
 
 The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all it's direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
 
-## Creating a LayoutGroup
+## Creating a Layout Group
 
 Add a Layout Group by adding the LayoutGroup Component to an existing Element Entity.
 
 ![Create Layout Group][1]
 
-## LayoutGroup Properties
+## Layout Group Properties
 
 #### Orientation
 
 Set the `Orientation` to Horizontal to organize your layout from left-to-right or right-to-left. Or Vertical to organize your layout top-to-bottom or bottom-to-top
-
 
 #### Reverse
 
