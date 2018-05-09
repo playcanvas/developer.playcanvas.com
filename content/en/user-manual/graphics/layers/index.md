@@ -28,7 +28,7 @@ First is order of layers in the application. Each application contains a `pc.Lay
 
 ### Sort Modes
 
-Each sub-layers has a sort mode. Each frame all the meshes in a sub-layer are sorted according to the sort mode. This determines the order that the meshes are rendered in when the sub-layer is rendered.
+Each sub-layer has a sort mode. Every frame the meshes in a sub-layer are sorted according to its sort mode. This determines the order that the meshes are rendered in when the sub-layer is rendered.
 
 * **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - This is the default mode for opaque sub-layers. Mesh instances are sorted to minimize switching between materials and meshes to improve rendering performance.
 * **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - This is the default mode for transparent sub-layers. Mesh instances are sorted back to front. This is the way to properly render many semi-transparent objects on different depth, one is blended on top of another.
@@ -76,7 +76,7 @@ Add a sub-layer to the layer composition by selecting **ADD SUBLAYER** and choos
 
 ### Rendering entities in layers
 
-Components that render meshes all have a `layers` property which is used to determine which layer and sub-layer the mesh should be added to. These components include: Model, Element, Sprite, Particle System. The Camera and Light components also have a `layers` prpoerty to determine which layers they render and light respectively.
+Components that render meshes all have a `layers` property which is used to determine which layer and sub-layer the mesh should be added to. These components include: Model, Element, Sprite, Particle System. The Camera and Light components also have a `layers` property to determine which layers they render and light respectively.
 
 ![Layer Components][5]
 
