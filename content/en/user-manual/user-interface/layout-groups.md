@@ -42,16 +42,15 @@ A value of **None** will apply no fitting.
 
 A value of **Stretch** will stretch the children to fill the width or height of the container using the following procedure:
 
-* Sum the `fitWidthProportion` or `fitHeightProportion` values of each child and normalize so that all values sum to 1
-* Apply the `minWidth`/`minHeight` for each child.
-* If there is space remaining in the container, apply the natural `width`/`height` of each child.
-* If the new total width exceeds the available space of the container, reduce each child's width proportionally based on the normalized `fitWidthProportion`/`fitHeightProportion` values.
-* If there is space remaining in the container, distribute it to each child based on the normalized `fitWidthProportion` values, but do not exceed the `maxWidth`/`maxHeight` of each child.
+* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
+* Apply the natural width/height for each child.
+* If there is space remaining in the container, distribute it to each child based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the maxWidth/maxHeight of each child.
 
-A value of **Shrink** will shrink the children to fit the the container using the following procedure:
+A value of **Shrink** will shrink the children to fit the container using the following procedure:
 
-* Sum the `fitWidthProportion`/`fitHeightProportion` values of each child and normalize so that all values sum to 1.
-* Reduce each child's `width`/`height` proportionally based on the normalized `fitWidthProportion`/`fitHeightProportion` values, but do not exceed the `minWidth` of each child.
+* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
+* Apply the natural width/height for each child.
+* If the new total width/height of all children exceeds the available space of the container, reduce each child's width/height proportionally based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the minWidth/minHeight of each child.
 
 A value of **Both** will apply both **Stretch** and **Shrink**.
 
