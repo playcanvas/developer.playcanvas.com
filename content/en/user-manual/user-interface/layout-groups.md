@@ -6,6 +6,8 @@ position: 7
 
 The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all it's direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
 
+The Layout Group Component can be used to generate common layouts, for example, a [grid][10], a fixed width [vertical column][11], or [horizontal row][12].
+
 ## Creating a Layout Group
 
 Add a Layout Group by adding the LayoutGroup Component to an existing Element Entity.
@@ -54,6 +56,10 @@ A value of **Shrink** will shrink the children to fit the container using the fo
 
 A value of **Both** will apply both **Stretch** and **Shrink**.
 
+#### Wrap
+
+The wrap property causes children that are outside of the width (for vertical groups) or height (for horizontal groups) to be moved to a new row or column. Using the wrap property you can create grid-based layouts.
+
 ## Layout Children
 
 A Layout Group applies it's rules to all of it's direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
@@ -100,3 +106,8 @@ This row of buttons is laid out using a Layout Group with the Wrap setting enabl
 [7]: /images/user-manual/user-interface/layout-groups/grid-setup.jpg
 [8]: /images/user-manual/user-interface/layout-groups/layout-child-max-width.jpg
 [9]: /images/user-manual/user-interface/layout-groups/layout-child-setup.jpg
+
+[10]: /user-manual/user-interface/layout-groups#grid
+[11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
+[12]: /user-manual/user-interface/layout-groups#horizontal-buttons
+
