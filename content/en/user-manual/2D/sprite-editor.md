@@ -18,11 +18,11 @@ The viewport in the Sprite Editor shows the currently selected Texture Atlas. Fr
 
 ### Editing Texture Atlases
 
-With in the viewport use the mouse to drag the outline of a Frame, then use the green and blue handles to modify the frames extents and borders.
+Within the viewport use the mouse to drag the outline of a Frame, then use the green and blue handles to modify the frames extents and borders.
 
 #### Frames
 
-Frames are a defined region on a Texture Atlas. A frame has a name, a position and size and a border. The border is used to define the edges of the 9-slicing region. See the [9-slicing documentation][7] for more information
+Frames are a defined region on a Texture Atlas. A frame has a name, a position and size and a border. The border is used to define the edges of the 9-slicing region. See the [9-slicing documentation][7] for more information.
 
 ## Inspector
 
@@ -32,7 +32,7 @@ The inspector panel shows the properties of the currently selected item. The ins
 
 ![Texture Atlas Inspector][3]
 
-The Texture Atlas Inspector allows you to automatically slice a texture atlas into fixed grid.
+The Texture Atlas Inspector allows you to automatically slice a texture atlas into a fixed grid.
 
 First choose what to do with existing frames. You can choose to *Delete Existing* frames or do not delete and *Only Append* frames.
 
