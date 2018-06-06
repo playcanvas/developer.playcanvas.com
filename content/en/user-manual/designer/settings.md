@@ -185,6 +185,10 @@ Run the asset pipeline automatically when an asset is uploaded.
 
 When a texture is imported resize it to be the nearest power of two.
 
+#### Create Atlases
+
+When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
+
 #### Search related assets
 
 If an asset is updated with a new version, search for related assets (such as materials and textures) that were created from the original asset outside of the asset's folder. Otherwise, only check inside the current folder for related assets.

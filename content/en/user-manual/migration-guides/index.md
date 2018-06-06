@@ -1,7 +1,7 @@
 ---
 title: Migration Guides
 template: usermanual-page.tmpl.html
-position: 15
+position: 16
 ---
 
 Guides for PlayCanvas users coming from other engines and frameworks

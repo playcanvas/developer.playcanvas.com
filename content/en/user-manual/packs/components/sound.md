@@ -1,7 +1,7 @@
 ---
 title: Sound
 template: usermanual-page.tmpl.html
-position: 12
+position: 15
 ---
 
 The Sound component controls playback of audio samples.
@@ -29,7 +29,6 @@ The Sound component can be enabled or disabled using the toggle in the top right
     <tr><td>Distance Model</td><td>Determines which algorithm to use to reduce the volume of the sound as it moves away from the listener. Can be one of Linear, Inverse or Exponential.</td></tr>
     <tr><td>Roll-off Factor</td><td>The rate at which volume fall-off occurs.</td></tr>
 </table>
-
 
 ## Slot Properties
 
