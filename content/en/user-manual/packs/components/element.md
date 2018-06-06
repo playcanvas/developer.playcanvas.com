@@ -31,7 +31,7 @@ The text element renders a string of text using a [font asset][5].
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th></th><th>Description</th></tr>
+    <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Type</td><td>The type of Element: Group, Image or Text</td></tr>
     <tr><td>Preset</td><td>Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value.</td></tr>
     <tr><td>Anchor</td><td>Determine where the element calculates its position in relation to. See the [Layout][4] section for more information.</td></tr>
@@ -47,7 +47,7 @@ The text element renders a string of text using a [font asset][5].
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th></th><th>Description</th></tr>
+    <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Rect</td><td>Define the area of the texture asset to display.</td></tr>
     <tr><td>Mask</td><td>Switch Image Element into a mask. Masks do not render into the scene, but instead limit child elements to only be rendered where this element is rendered.</td></tr>
     <tr><td>Texture</td><td>The texture asset displayed</td></tr>
@@ -61,7 +61,7 @@ The text element renders a string of text using a [font asset][5].
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th></th><th>Description</th></tr>
+    <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Alignment</td><td>Determine how the text is aligned with in the element. (0,0) is bottom left, (1,1) is top right.</td></tr>
     <tr><td>Text</td><td>The text string to display.</td></tr>
     <tr><td>Font Size</td><td>The size in Screen component pixels to render the font at.</td></tr>
