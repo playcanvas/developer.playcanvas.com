@@ -1,7 +1,7 @@
 ---
 title: Jobs - Get job
 template: usermanual-page.tmpl.html
-position: 5
+position: 11
 ---
 
 ## Route URL

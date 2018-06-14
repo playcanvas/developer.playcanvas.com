@@ -1,7 +1,7 @@
 ---
 title: Assets - Delete asset
 template: usermanual-page.tmpl.html
-position:
+position: 6
 ---
 
 ## Route URL

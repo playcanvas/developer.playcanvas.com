@@ -1,7 +1,7 @@
 ---
 title: Assets - List assets
 template: usermanual-page.tmpl.html
-position:
+position: 9
 ---
 
 ## Route URL

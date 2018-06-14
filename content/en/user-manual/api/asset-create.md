@@ -1,7 +1,7 @@
 ---
-title: Assets - Create script|text|css|html asset
+title: Assets - Create asset
 template: usermanual-page.tmpl.html
-position:
+position: 5
 ---
 
 ## Route URL
@@ -12,7 +12,11 @@ POST https://playcanvas.com/api/assets
 
 ## Description
 
-Create a new script|text|css|html asset.
+Create a new asset.
+
+<div class="alert alert-info">
+    This endpoint currently only supports creating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+</div>
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 
@@ -52,9 +56,9 @@ Content-Type: application/javascript
 <div class="params">
 <div class="parameter"><span class="param">name: string</span><p>Name of the asset</p></div>
 <div class="parameter"><span class="param">projectId: number</span><p>Project id to add the asset to</p></div>
-<div class="parameter"><span class="param">parent(optional): number</span><p>Parent asset's id</p></div>
-<div class="parameter"><span class="param">preload(optional): boolean</span><p>Prealod the asset (true | false)</p></div>
-<div class="parameter"><span class="param">file(optional): file</span><p></p>Data to store as the asset file.</div>
+<div class="parameter"><span class="param">parent [optional]: number</span><p>Parent asset's id</p></div>
+<div class="parameter"><span class="param">preload [optional]: boolean</span><p>Preload the asset (true | false)</p></div>
+<div class="parameter"><span class="param">file [optional]: file</span><p></p>Data to store as the asset file.</div>
 </div>
 
 ## Response Schema

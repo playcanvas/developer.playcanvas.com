@@ -1,7 +1,7 @@
 ---
-title: Assets - Update script asset
+title: Assets - Update asset
 template: usermanual-page.tmpl.html
-position:
+position: 10
 ---
 
 ## Route URL
@@ -13,6 +13,10 @@ PUT https://playcanvas.com/api/assets/:assetId
 ## Description
 
 Update an existing script asset.
+
+<div class="alert alert-info">
+    This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+</div>
 
 **Unlike other REST API endpoints. The Update Asset endpoint expects data to be sent in `multipart/form-data`**
 
