@@ -16,6 +16,10 @@ The graphical portions of the user interface, Image and Text Elements, are drawn
 
 To change the draw order you simply re-order the entities in the Editor hierarchy. You can re-order elements programmatically by calling `entity.reparent(...)`. Though, note, that this forces the draw order to be recalculated for the entire Screen component.
 
+## 9-slicing
+
+9-slices (or 9-patches) are a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
+
 ## Input
 
 There is an additional way of handling input for UI Elements. An instance of the `pc.ElementInput` is provided on the Application object, usually accessible as `this.app.elementInput`. This allows you to listen for input directly on the element components, e.g. `this.entity.element.on('click', ...)`. Read more on the [Input][4] page.
@@ -25,3 +29,4 @@ There is an additional way of handling input for UI Elements. An instance of the
 [2]: /user-manual/user-interface/elements
 [3]: /user-manual/user-interface/elements
 [4]: /user-manual/user-interface/input
+[5]: /user-manual/2D/9-slicing

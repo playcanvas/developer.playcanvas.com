@@ -1,10 +1,10 @@
 ---
 title: Screen
 template: usermanual-page.tmpl.html
-position: 10
+position: 13
 ---
 
-The Screen component defines the area and rendering of a user interface. Children added to a Screen component should all have an Element component 
+The Screen component defines the area and rendering of a user interface. Children added to a Screen component should all have an Element component
 
 See the [User Interface][0] section for more details.
 
@@ -19,7 +19,7 @@ See the [User Interface][0] section for more details.
     <tr><td>Screen Space</td><td>When enabled the contents of the screen are rendered in 2D as an overlay to the canvas.</td></tr>
     <tr><td>Resolution</td><td>When Screen Space is false. The resolution of the screen co-ordinates. Screen co-ordinates go up as you move right and up. For Screen Space components the resolution is always determined from the resolution of the canvas.</td></tr>
     <tr><td>Reference Resolution</td><td>When Scale Mode is Blend. The resolution used to calculate the scale factor.</td></tr>
-    <tr><td>Scale Mode</td><td>Determine how the user interface changes when the window size does not match the screen size. 
+    <tr><td>Scale Mode</td><td>Determine how the user interface changes when the window size does not match the screen size.
     	<p>None. Nothing is scaled</p>
     	<p>Blend. Screen content is scaled by the ratio of the reference resolution to the actual resolution. Using the Scale Blend property to weight the scale between using the horizontal and vertial resolution.</p>
     </td></tr>

@@ -1,7 +1,7 @@
 ---
 title: Camera
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 The Camera component enables an entity to render a scene from a certain viewpoint.
