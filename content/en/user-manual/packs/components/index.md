@@ -23,6 +23,10 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
         <td>Specifies the location of the listener for 3D audio playback.</td>
     </tr>
     <tr>
+        <td>[Button][15]</td>
+        <td>Create a user interface button.</td>
+    </tr>
+    <tr>
         <td>[Camera][3]</td>
         <td>Renders the scene from the location of the entity.</td>
     </tr>
@@ -70,6 +74,10 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
         <td>[Sound][14]</td>
         <td>Plays audio assets.</td>
     </tr>
+    <tr>
+        <td>[Sprite][16]</td>
+        <td>Render 2D graphics at the location of the entity.</td>
+    </tr>
 </tbody></table>
 
 [1]: /user-manual/packs/components/animation
@@ -86,3 +94,5 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
 [12]: /user-manual/packs/components/screen
 [13]: /user-manual/packs/components/script
 [14]: /user-manual/packs/components/sound
+[15]: /user-manual/packs/components/button
+[16]: /user-manual/packs/components/sprite
