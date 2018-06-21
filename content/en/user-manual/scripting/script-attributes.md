@@ -21,6 +21,18 @@ MyScript.attributes.add('speed', {
 
 In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
 
+If you need an array of attributes set `array: true` like so:
+
+```javascript
+var MyScript = pc.createScript('myScript');
+
+MyScript.attributes.add('names', {
+    type: 'string',
+    array: true
+});
+```
+
+
 ## Getting Attributes into Editor
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
@@ -74,7 +86,7 @@ The Entity type lets your reference another entity in your hierarchy. A great wa
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
 The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
 
