@@ -38,7 +38,7 @@ To publish you will need to have at least one scene in your project.
 
 ![Select scenes][4]
 
-* Select the Scenes you want to include in your build from the list. Notice that the Primary Scene (the one with the active banner icon), will be loaded first when your build is launched if you include it in the build.
+* Select the Scenes you want to include in your build from the list. Notice that the Scene with the active banner icon will be loaded first when your build is launched if you include it in the build.
 * Click 'PUBLISH NOW'
 * You will see a new build created in the BUILDS tab. Wait until it finishes processing.
 * Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
@@ -71,4 +71,3 @@ To set the Primary Build for your project, click the Primary marker to the left 
 [3]: /images/user-manual/editor/publishing-new-top.jpg
 [4]: /images/user-manual/editor/publishing-new-bottom.jpg
 [5]: /images/user-manual/publishing/web/builds.jpg
-
