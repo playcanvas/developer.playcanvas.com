@@ -12,7 +12,7 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 ## Description
 
-Update an existing script asset.
+Update an existing asset's file.
 
 <div class="alert alert-info">
     This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
