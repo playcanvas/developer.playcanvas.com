@@ -7,22 +7,22 @@ position: 9
 ## Route URL
 
 ```none
-GET https://playcanvas.com/api/projects/:projectId/assets
+GET https://playcanvas.com/api/projects/:projectId/assets?branchId=:branchId
 ```
 
 ## Description
 
-Get the details of all assets in a project
+Get the details of all assets in a project for a specific branch
 
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/assets
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
 ```
 
 HTTP Request
 ```
-GET https://playcanvas.com/api/projects/{projectId}/assets
+GET https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
@@ -30,6 +30,7 @@ Authorization: Bearer {accessToken}
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list assets from</p></div>
+<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
 </div>
 
 ## Response Schema
