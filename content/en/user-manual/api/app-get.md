@@ -1,7 +1,7 @@
 ---
 title: Apps - Get app
 template: usermanual-page.tmpl.html
-position: 1
+position: 4
 ---
 
 ## Route URL

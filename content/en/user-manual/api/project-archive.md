@@ -1,7 +1,7 @@
 ---
 title: Projects - Archive project
 template: usermanual-page.tmpl.html
-position: 6
+position: 12
 ---
 
 ## Route URL
