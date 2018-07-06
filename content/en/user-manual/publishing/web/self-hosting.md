@@ -42,7 +42,7 @@ In order to host your game independently of PlayCanvas' servers, do the followin
 ![Download][6]
 
 * Enter a name for your export. This will be the name of the .zip file that will be created for you.
-* Select the Scenes you want to include in your export from the list. Notice that the Primary Scene (the one with the active banner icon), will be the first scene loaded when your app is launched.
+* Select the Scenes you want to include in your export from the list. Notice that the Scene with the active banner icon will be the first scene loaded when your app is launched.
 * Click on the 'WEB DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
 * Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your game.
 
