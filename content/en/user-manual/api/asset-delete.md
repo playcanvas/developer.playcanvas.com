@@ -7,22 +7,22 @@ position: 6
 ## Route URL
 
 ```none
-GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
+GET https://playcanvas.com/api/assets/:assetId
 ```
 
 ## Description
 
-Permanently delete an asset from a branch of your project. **Warning** deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
+Permanently delete an asset from your project. **Warning** deleting an asset is permanent and unrecoverable.
 
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/api/assets/{assetId}
 ```
 
 HTTP Request
 ```
-DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
+DELETE https://playcanvas.com/api/assets/{assetId}
 Authorization: Bearer {accessToken}
 ```
 
@@ -30,7 +30,6 @@ Authorization: Bearer {accessToken}
 
 <div class="params">
 <div class="parameter"><span class="param">assetId: number</span><p>The id of the asset to delete</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch to delete the asset from</p></div>
 </div>
 
 ## Response Schema

@@ -37,10 +37,6 @@ Content-Disposition: form-data; name="projectId"
 
 {projectId}
 ------WebKitFormBoundaryTdsfsfT
-Content-Disposition: form-data; name="branchId"
-
-{branchId}
-------WebKitFormBoundaryTdsfsfT
 Content-Disposition: form-data; name="parent"
 
 {parent}
@@ -60,7 +56,6 @@ Content-Type: application/javascript
 <div class="params">
 <div class="parameter"><span class="param">name: string</span><p>Name of the asset</p></div>
 <div class="parameter"><span class="param">projectId: number</span><p>Project id to add the asset to</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
 <div class="parameter"><span class="param">parent [optional]: number</span><p>Parent asset's id</p></div>
 <div class="parameter"><span class="param">preload [optional]: boolean</span><p>Preload the asset (true | false)</p></div>
 <div class="parameter"><span class="param">file [optional]: file</span><p></p>Data to store as the asset file.</div>

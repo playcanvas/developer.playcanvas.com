@@ -7,7 +7,7 @@ position: 7
 ## Route URL
 
 ```none
-GET https://playcanvas.com/api/assets/:assetId/file?branchId=:branchId
+GET https://playcanvas.com/api/assets/:assetId/file
 ```
 
 ## Description
@@ -17,12 +17,12 @@ Get the details of a single asset
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}/file?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}/file
 ```
 
 HTTP Request
 ```
-GET https://playcanvas.com/api/assets/{assetId}/file?branchId={branchId}
+GET https://playcanvas.com/api/assets/{assetId}/file
 Authorization: Bearer {accessToken}
 ```
 
@@ -30,7 +30,6 @@ Authorization: Bearer {accessToken}
 
 <div class="params">
 <div class="parameter"><span class="param">assetId: number</span><p>The id of the asset.</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch.</p></div>
 </div>
 
 ## Response Schema
