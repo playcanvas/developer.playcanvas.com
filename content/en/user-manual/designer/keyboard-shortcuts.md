@@ -41,10 +41,20 @@ The Editor's Camera is controlled with the Mouse and Keyboard
     <tr>
         <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
     </tr>
+
+</table>
+
+## General Modifier Keys
+
+<table class="head-column">
     <tr>
-        <td>Toggle Editor's Snap setting while operating gizmo</td><td>Shift click and drag</td>
+        <td>Toggle Editor's Snap setting while operating gizmo</td><td>Hold Shift while dragging the Entity</td>
+    </tr>
+    <tr>
+        <td>Do not preserve the Entity's transform when reparenting</td><td>Hold Ctrl when you reparent the Entity</td>
     </tr>
 </table>
+
 
 ## Hot Keys
 
