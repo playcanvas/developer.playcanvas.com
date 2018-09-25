@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7] and [Element][8] components that let you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
+Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7] component that let you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
 
 There are a variety of rules which the engine will apply to see if mesh instances are able to be combined. The primary rule is that all mesh instances must share the same material.
 
@@ -29,7 +29,7 @@ Batch Groups can be created from the Batch Groups section of the [scene settings
 
 ![Selecting Batch Groups][2]
 
-The Model and Element components have a Batch Group property to assign a model into a batch group.
+The Model component has a Batch Group property to assign a model into a batch group.
 
 ## Rules for combining mesh instances
 
@@ -63,7 +63,7 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 
 * **Batch Group** - A named group, created in the Editor, that defines some hints on how mesh instances should be combined. Components are assigned to a batch group
 * **Batch** - An engine object created at runtime which is the set of mesh instances that are rendered in a single draw call. A batch group may result in multiple batches depending on the properties of the mesh instances that are added to the batch group.
-* **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][9].
+* **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][8].
 
 
 [1]: /images/user-manual/optimization/batching/batch-groups.jpg
@@ -73,6 +73,5 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 [5]: /images/user-manual/optimization/batching/western-animation.gif
 [6]: /user-manual/designer/settings/#batch-groups
 [7]: /user-manual/packs/components/model
-[8]: /user-manual/packs/components/element
-[9]: /api/pc.BatchManager.html
+[8]: /api/pc.BatchManager.html
 
