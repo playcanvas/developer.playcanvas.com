@@ -2,7 +2,7 @@
 title: PlayCanvas Engine
 template: usermanual-page.tmpl.html
 ---
-haha
+
 The PlayCanvas Engine is an open source javascript framework which you can use to build games and interactive 3D content for the web. The Engine is provided free and separately to the PlayCanvas tools to allow you maximum flexibility for you development.
 
 ## How do I get the engine?
