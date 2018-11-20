@@ -4,11 +4,11 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-A branch is an isolated line of development. Every checkpoint created belongs to branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the master branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
+A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the master branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
 
 ## Master branch
 
-Every project has a branch called "master" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "master" branch will be used a default if no other branch is specified. A common scenario is to treat the master branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the master branch as best suits your needs.
+Every project has a branch called "master" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "master" branch will be used as a default if no other branch is specified. A common scenario is to treat the master branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the master branch as best suits your needs.
 
 ## Current branch
 
@@ -22,7 +22,7 @@ To create a branch open the version control panel, select the checkpoint that yo
 
 ![New branch dialog][2]
 
-You will be asked to name your branch. Try to give your branch a description name like `fix-player-bug` or `refactor-sound-effects`. After creating the branch you will automatically be switched the new branch you just created.
+You will be asked to name your branch. Try to give your branch a description name like `fix-player-bug` or `refactor-sound-effects`. After creating the branch you will automatically be switched to the new branch you just created.
 
 ## Switching to a branch
 
@@ -45,7 +45,7 @@ To close a branch open the version control panel, select the branch you wish to 
 You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here. **Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
 
 [1]: /images/user-manual/version-control/new-branch.jpg
-[5]: /images/user-manual/version-control/new-branch-dialog.jpg
+[2]: /images/user-manual/version-control/new-branch-dialog.jpg
 [3]: /images/user-manual/version-control/switch-branch.jpg
 [4]: /images/user-manual/version-control/close-branch.jpg
 [5]: /images/user-manual/version-control/close-branch-dialog.jpg

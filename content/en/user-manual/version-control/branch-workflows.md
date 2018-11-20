@@ -22,7 +22,7 @@ With this workflow new features are merged into the master branch and each time 
 
 ## Continuous delivery
 
-If your application is a long-lived product which will be continuously updated. For example, every day, every week or every month. You may wish to use a continuous delivery workflow.
+If your application is a long-lived product which will be continuously updated, for example, a new release every week, you may wish to use a continuous delivery workflow.
 
 ![Continuous Delivery][3]
 
