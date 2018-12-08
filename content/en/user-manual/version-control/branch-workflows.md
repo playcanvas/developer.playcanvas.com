@@ -28,6 +28,6 @@ If your application is a long-lived product which will be continuously updated, 
 
 In a continuous delivery workflow rather than having branches for each release, several long-lived branches are used to prepare the application for release. For example, features are merged into the master branch and after every feature is merged the master branch is merged into a branch called "staging". A build is published from staging to a sample environment where testing can be performed. Any required fixes are made into master and then merged into staging again. When staging is deemed ready, it is merged into another branch called "prod" (production). A build is made from prod and this is published to the live environment.
 
-[1]: /images/user-manual/version-control/branch-workflows/feature-branches.jpg
-[2]: /images/user-manual/version-control/branch-workflows/release-branches.jpg
-[3]: /images/user-manual/version-control/branch-workflows/continuous-delivery.jpg
+[1]: /images/user-manual/version-control/branch-workflows/feature-branches.png
+[2]: /images/user-manual/version-control/branch-workflows/release-branches.png
+[3]: /images/user-manual/version-control/branch-workflows/continuous-delivery.png

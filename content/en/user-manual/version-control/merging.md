@@ -12,7 +12,17 @@ In PlayCanvas a merge takes two checkpoints from two different branches, calcula
 
 First, it's important to note that when you perform a merge in PlayCanvas you are not actually merging two branches. You are, in fact, merging two checkpoints. This is relevant because you may have changes in one of the two branches that are more recent that the latest checkpoint. In the case of the branch you are merging into PlayCanvas will automatically create a checkpoint to ensure you do not lose any changes.
 
-![Merging checkpoints][2]
+### Example merges
+
+![Merging checkpoints][6]
+*Changes Y & Z are not included in merge result C and **are lost**.*
+
+![Merging checkpoints][7]
+*By default PlayCanvas creates a new checkpoint in the destination branch of a merge, so changes Y are included*
+
+![Merging checkpoints][8]
+*If changes Z are required, create a checkpoint in the source branch before starting the merge.*
+
 
 ## Starting a merge
 
@@ -43,7 +53,11 @@ The conflict manager shows each resource that is conflict on the left, and for e
 While the conflict manager and the merge is in progress your current branch is locked to further edits from other users. This prevents changes being overwritten by your merge when you finish resolving the conflicts. If another user has blocked a branch you need with a merge, you can forceable end their merge from the editor.
 
 [1]: /user-manual/version-control/branches
-[2]: /images/user-manual/version-control/merging-checkpoints.jpg
+
 [3]: /images/user-manual/version-control/start-merge.jpg
 [4]: /images/user-manual/version-control/conflict-manager.jpg
 [5]: /images/user-manual/version-control/conflicts-resolved.jpg
+
+[6]: /images/user-manual/version-control/merging-checkpoints-1.png
+[7]: /images/user-manual/version-control/merging-checkpoints-2.png
+[8]: /images/user-manual/version-control/merging-checkpoints-3.png

@@ -35,4 +35,4 @@ Note, restoring a checkpoint brings the changes from the checkpoint into your cu
 [2]: /images/user-manual/version-control/vc-panel.jpg
 [3]: /images/user-manual/version-control/create-checkpoint.jpg
 [4]: /images/user-manual/version-control/restore-checkpoint.jpg
-[5]: /images/user-manual/version-control/restore-checkpoint-applied.jpg
+[5]: /images/user-manual/version-control/restore-checkpoint-applied.png
