@@ -46,7 +46,7 @@ If one or more conflicts exist when merging two branches the Editor will show th
 
 ![Conflict Manager][4]
 
-The conflict manager shows each resource that is conflict on the left, and for each selected resource a comparison between the original version (the Base) and the version in each branch. For each conflicted property you can choose which version to accept. Once all properties for all resources have been resolved you click the "Complete Merge" button to finish the merge and create the new checkpoint.
+The conflict manager shows each resource that is in conflict on the left, and for each selected resource a comparison between the original version (the Base) and the version in each branch. For each conflicted property you can choose which version to accept. Once all properties for all resources have been resolved you click the "Complete Merge" button to finish the merge and create the new checkpoint.
 
 ![Resolved Conflicts][5]
 
