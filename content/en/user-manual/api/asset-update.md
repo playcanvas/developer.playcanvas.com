@@ -29,6 +29,7 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' http
 ## Parameters
 
 <div class="params">
+<div class="parameter"><span class="param">branchId: string</span><p></p>The id of the branch</div>
 <div class="parameter"><span class="param">file: file</span><p></p>Data to update asset file with</div>
 </div>
 
