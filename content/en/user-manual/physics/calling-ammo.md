@@ -137,7 +137,7 @@ PointToPointConstraint.prototype.update = function(dt) {
 
 You can find a project that implements all of the constraint types from ammo.js [here][3].
 
-You could access the ammo.js API to implements additional things like:
+You can access the ammo.js API to implement additional things like:
 
 * Compound collision shapes
 * Soft body simulation

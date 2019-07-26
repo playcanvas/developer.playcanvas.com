@@ -10,24 +10,24 @@ To apply a force or an impulse to a rigid body, you must use the [pc.RigidBodyCo
 
 Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time:
 
-~~~javascript~~~
+```javascript
     update: function (dt) {
         // While the right arrow key is pressed, apply a force to the right
         if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
             this.entity.rigidbody.applyForce(10, 0, 0);
         }
     }
-~~~
+```
 
 If you want to fire a cannonball from a cannon, you would apply a single impulse:
 
-~~~javascript~~~
+```javascript
     update: function (dt) {
         // If the space bar was pressed, apply an impulse up and to the right
         if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
             this.entity.rigidbody.applyImpulse(10, 10, 0);
         }
     }
-~~~
+```
 
 [1]: https://developer.playcanvas.com/en/api/pc.RigidBodyComponent.html
