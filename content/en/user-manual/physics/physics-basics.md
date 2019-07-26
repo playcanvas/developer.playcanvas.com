@@ -20,7 +20,7 @@ However, you can force the loading of ammo.js by checking Enable. As a convenien
 
 ## Gravity
 
-In the same Settings panel, you can set global gravity of the physics simulations. Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero.
+In the same Settings panel, you can set global gravity of the physics simulation. Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero.
 
 ## Units of Measurement
 
@@ -38,7 +38,7 @@ You can make any entity in your scene participate in the physics simulation. Jus
 
 It also specifies physical properties like mass, friction and restitution (essentially a measure of 'bounciness').
 
-The collision component specifies the physical shape of the body. Not that a rigid body's physical shape does not have to match its graphical shape. It is typical for physical representations of objects to be much simpler than the graphical. The available collision component types are:
+The collision component specifies the physical shape of the body. Note that a rigid body's physical shape does not have to match its graphical shape. It is typical for physical representations of objects to be much simpler than the graphical. The available collision component types are:
 
 * Box
 * Sphere
