@@ -8,7 +8,7 @@ The PlayCanvas integration with ammo.js does not expose the full capability of t
 
 PlayCanvas currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2].
 
-## Implementing Contstraints
+## Implementing Constraints
 
 There are currently no PlayCanvas components which implement physics constraints (sometimes known as physics joints). However, it is easy to leverage the ammo.js API to create scripts that implement constraints.
 
