@@ -1,7 +1,7 @@
 ---
 title: Calling the ammo.js API
 template: usermanual-page.tmpl.html
-position: 4
+position: 5
 ---
 
 The PlayCanvas integration with ammo.js does not expose the full capability of the ammo.js API. However, it is possible to call the ammo.js API directly from your PlayCanvas scripts.
@@ -139,7 +139,7 @@ You can find a project that implements all of the constraint types from ammo.js 
 
 ## Continuous Collision Detection
 
-Sometimes, you might find that fast moving rigid bodies in your simulations pass through one another. To overcome this, ammo.js provides a concept called Continuous Collision Detection (or CCD for short). This enables additional checks for collisions by sweeping sphere volume between the previous and current positions of a rigid body and looking for intersections with the volumes of other bodies.
+Sometimes, you might find that fast moving rigid bodies in your simulations pass through one another. To overcome this, ammo.js provides a concept called Continuous Collision Detection (or CCD for short). This enables additional checks for collisions by sweeping a sphere volume between the previous and current positions of a rigid body and looking for intersections with the volumes of other bodies.
 
 You can enable CCD for any PlayCanvas rigid body using the following script:
 
