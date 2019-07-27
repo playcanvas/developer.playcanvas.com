@@ -88,7 +88,7 @@ Movement.prototype.update = function(dt) {
 
 This script simply animates the box along the world x-axis using a sine function. You move kinematic bodies using the standard transformation functions on the entity like ```setPosition```, ```setRotation``` and ```setEulerAngles```. Now when we run the scene, the dynamic box falls on the kinematic box and is carried along on top of it:
 
-![Kinematic Box][10]
+![Kinematic Box][9]
 
 ## Teleporting Dynamic Bodies
 
