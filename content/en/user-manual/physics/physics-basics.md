@@ -72,7 +72,19 @@ Sometimes, it can be useful to be able to explicitly control the motion of physi
 
 The responsibility for animating kinematic bodies is on you, the developer. You will notice that the kinematic box shown above also has a script component with a script called movement.js assigned:
 
-![Movement Script][9]
+```javascript
+var Movement = pc.createScript('movement');
+
+// initialize code called once per entity
+Movement.prototype.initialize = function() {
+    
+};
+
+// update code called every frame
+Movement.prototype.update = function(dt) {
+    this.entity.setPosition(Math.sin(Date.now() / 1000), 0.5, 0);
+};
+```
 
 This script simply animates the box along the world x-axis using a sine function. You move kinematic bodies using the standard transformation functions on the entity like ```setPosition```, ```setRotation``` and ```setEulerAngles```. Now when we run the scene, the dynamic box falls on the kinematic box and is carried along on top of it:
 
@@ -90,5 +102,4 @@ Although you can use the standard entity transformation function with kinematic 
 [6]: /images/user-manual/physics/dynamic-box.png
 [7]: /images/user-manual/physics/falling-box.gif
 [8]: /images/user-manual/physics/kinematic-box.png
-[9]: /images/user-manual/physics/movement-script.png
-[10]: /images/user-manual/physics/kinematic-box.gif
+[9]: /images/user-manual/physics/kinematic-box.gif
