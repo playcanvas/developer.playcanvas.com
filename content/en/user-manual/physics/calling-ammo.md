@@ -6,13 +6,13 @@ position: 4
 
 The PlayCanvas integration with ammo.js does not expose the full capability of the ammo.js API. However, it is possible to call the ammo.js API directly from your PlayCanvas scripts.
 
-PlayCanvas currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2].
+PlayCanvas currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2]. Although there is no official documentation for ammo.js, you can refer to the [Bullet Physics User Guide][3] to learn more.
 
 ## Implementing Constraints
 
 There are currently no PlayCanvas components which implement physics constraints (sometimes known as physics joints). However, it is easy to leverage the ammo.js API to create scripts that implement constraints.
 
-Here is the script for a point-to-point constraint:
+Here is the script for a point-to-point constraint (essentially a ball and socket joint):
 
 ```javascript
 var PointToPointConstraint = pc.createScript('pointToPointConstraint');
@@ -135,7 +135,7 @@ PointToPointConstraint.prototype.update = function(dt) {
 };
 ```
 
-You can find a project that implements all of the constraint types from ammo.js [here][3].
+You can find a project that implements all of the constraint types from ammo.js [here][4].
 
 You can access the ammo.js API to implement additional things like:
 
@@ -145,4 +145,5 @@ You can access the ammo.js API to implement additional things like:
 
 [1]: https://github.com/kripken/ammo.js/commit/dcab07bf0e7f2b4b64c01dc45da846344c8f50be
 [2]: https://github.com/kripken/ammo.js/blob/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/ammo.idl
-[3]: https://playcanvas.com/project/618829/overview/physics-constraints
+[3]: https://github.com/bulletphysics/bullet3/blob/master/docs/Bullet_User_Manual.pdf
+[4]: https://playcanvas.com/project/618829/overview/physics-constraints
