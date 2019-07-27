@@ -8,7 +8,7 @@ The PlayCanvas integration with ammo.js does not expose the full capability of t
 
 PlayCanvas currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2]. Although there is no official documentation for ammo.js, you can refer to the [Bullet Physics User Guide][3] to learn more.
 
-## Implementing Constraints
+## Joint Constraints
 
 There are currently no PlayCanvas components which implement physics constraints (sometimes known as physics joints). However, it is easy to leverage the ammo.js API to create scripts that implement constraints.
 
@@ -137,13 +137,59 @@ PointToPointConstraint.prototype.update = function(dt) {
 
 You can find a project that implements all of the constraint types from ammo.js [here][4].
 
-You can access the ammo.js API to implement additional things like:
+## Continuous Collision Detection
+
+Sometimes, you might find that fast moving rigid bodies in your simulations pass through one another. To overcome this, ammo.js provides a concept called Continuous Collision Detection (or CCD for short). This enables additional checks for collisions by sweeping sphere volume between the previous and current positions of a rigid body and looking for intersections with the volumes of other bodies.
+
+You can enable CCD for any PlayCanvas rigid body using the following script:
+
+```javascript
+var Ccd = pc.createScript('ccd');
+
+Ccd.attributes.add('motionThreshold', {
+    type: 'number', 
+    default: 1, 
+    title: 'Motion Threshold', 
+    description: 'Number of meters moved in one frame before CCD is enabled'
+});
+
+Ccd.attributes.add('sweptSphereRadius', {
+    type: 'number', 
+    default: 0.2, 
+    title: 'Swept Sphere Radius', 
+    description: 'This should be below the half extent of the collision volume. E.g For an object of dimensions 1 meter, try 0.2'
+});
+
+// initialize code called once per entity
+Ccd.prototype.initialize = function() {
+    var body; // Type btRigidBody
+
+    body = this.entity.rigidbody.body;
+    body.setCcdMotionThreshold(this.motionThreshold);
+    body.setCcdSweptSphereRadius(this.sweptSphereRadius);
+
+    this.on('attr:motionThreshold', function(value, prev) {
+        body = this.entity.rigidbody.body;
+        body.setCcdMotionThreshold(value);
+    });
+    this.on('attr:sweptSphereRadius', function(value, prev) {
+        body = this.entity.rigidbody.body;
+        body.setCcdSweptSphereRadius(value);
+    });
+};
+```
+
+You can find a project that implements CCD [here][5].
+
+These are just two examples of using the ammo.js API directly. You can also use it to implement additional things like:
 
 * Compound collision shapes
 * Soft body simulation
+* Cloth simulation
 * Vehicles
 
 [1]: https://github.com/kripken/ammo.js/commit/dcab07bf0e7f2b4b64c01dc45da846344c8f50be
 [2]: https://github.com/kripken/ammo.js/blob/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/ammo.idl
 [3]: https://github.com/bulletphysics/bullet3/blob/master/docs/Bullet_User_Manual.pdf
 [4]: https://playcanvas.com/project/618829/overview/physics-constraints
+[5]: https://playcanvas.com/project/447023/overview/physics-with-ccd
