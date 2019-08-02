@@ -43,7 +43,7 @@ position: 2
 
 拡散色は**アルベド**や**ベースカラー**と呼ばれることもあります。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?color"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ?color"></iframe>
 
 インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
 
@@ -74,7 +74,7 @@ position: 2
 
 また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?metal"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ?metal"></iframe>
 
 ## 光沢度(Glossiness)
 
@@ -92,7 +92,7 @@ position: 2
 
 マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ"></iframe>
 
 [1]: http://store.playcanvas.com
 [2]: /user-manual/glossary#hdr
