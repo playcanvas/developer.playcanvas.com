@@ -16,7 +16,7 @@ You can import ammo.js modules into your project using the import button on the 
 
 ![Physics Settings][4]
 
-This will import the default build of ammo.js provided by Playcanvas. However please note it is possible to compile your own version of ammo.js and add it to your project instead. For more information see [this page][11].
+This will import the default build of ammo.js provided by PlayCanvas. However please note it is possible to compile your own version of ammo.js and add it to your project instead. For more information see [this page][11].
 
 For details on migrating legacy projects to the latest ammo.js see [this page][10].
 
