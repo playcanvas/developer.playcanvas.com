@@ -10,13 +10,15 @@ PlayCanvas provides the [rigidbody][2] and [collision][3] components to set up p
 
 ## Enabling Physics
 
-By default, a new PlayCanvas project will have physics disabled in the Scene Settings panel:
+By default, a new PlayCanvas project does not include ammo.js modules. This is because ammo.js weighs in at several hundred kilobytes and your app should not have to load this library if it is not needed.
+
+You can import ammo.js modules into your project using the import button on the Scene Settings panel:
 
 ![Physics Settings][4]
 
-This is because ammo.js weighs in at several hundred kilobytes and your app should not have to load this library if it is not needed.
+This will import the default build of ammo.js provided by Playcanvas. However please note it is possible to compile your own version of ammo.js and add it to your project instead. For more information see [this page][11].
 
-However, you can force the loading of ammo.js by checking Enable. As a convenience, if you create one or more collision or rigidbody components in your scene, the Editor will automatically check Enable for physics in your settings.
+For details on migrating legacy projects to the latest ammo.js see [this page][10].
 
 ## Gravity
 
@@ -95,11 +97,13 @@ This script simply animates the box along the world x-axis using a sine function
 Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid bodies position and/or orientation.
 
 [1]: https://github.com/kripken/ammo.js
-[2]: https://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/
-[3]: https://developer.playcanvas.com/en/user-manual/packs/components/collision/
+[2]: /en/user-manual/packs/components/rigidbody/
+[3]: /en/user-manual/packs/components/collision/
 [4]: /images/user-manual/physics/physics-settings.png
 [5]: /images/user-manual/physics/static-ground.png
 [6]: /images/user-manual/physics/dynamic-box.png
 [7]: /images/user-manual/physics/falling-box.gif
 [8]: /images/user-manual/physics/kinematic-box.png
 [9]: /images/user-manual/physics/kinematic-box.gif
+[10]: /en/user-manual/physics/physics-migration/
+[11]: /en/user-manual/assets/wasm-modules/
