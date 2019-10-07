@@ -20,7 +20,7 @@
     "url": "https://github.com/playcanvas/developer.playcanvas.com.git"
   },
   "dependencies": {
-    "handlebars": "4.0.4",
+    "handlebars": "4.4.2",
     "http-server": "^0.11.1",
     "marked": "^0.3.6",
     "metalsmith": "1.7.0",
