@@ -7,7 +7,7 @@ position: 20
 ## Route URL
 
 ```none
-GET https://playcanvas.com/api/projects/:projectId/scenes
+GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 ```
 
 ## Description
@@ -17,12 +17,12 @@ Get a list of all scenes for a project
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 ```
 
 HTTP Request
 ```
-GET https://playcanvas.com/api/projects/{projectId}/scenes
+GET https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
@@ -30,6 +30,7 @@ Authorization: Bearer {accessToken}
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list scenes from</p></div>
+<div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the master branch will be used.</p></div>
 </div>
 
 ## Response Schema
