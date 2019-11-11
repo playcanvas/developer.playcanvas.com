@@ -47,6 +47,9 @@ A Material is an Asset type which defines the properties of a surface on a 3D mo
 <h2 id="scene">Scene</h2>
 A Scene is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Scene may represent your entire game, or just a single level or part of your game.
 
+<h2 id="template">Template</h2>
+A Template is an Asset that contains a piece of an Entity hierarchy. It has a root Entity and can have any number of children. A Template is a reusable Entity that you can instantiate dynamically at runtime or place multiple instances of it in your Scene. When you change the Template Asset all instances of the Template will also change.
+
 <h2 id="editor">PlayCanvas Editor</h2>
 The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Scenes][11]. The PlayCanvas Editor is used to manipulate [Entities][12]
 
