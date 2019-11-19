@@ -36,6 +36,11 @@ This is the size of the icons that appear over various components inside the 3D 
 
 This is the URL where all the scripts are going to be loaded from, when launching the Application with Launch Local.
 
+#### Locale
+
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+have enabled Localization for Text Elements and when you use Localized Assets.
+
 ## Physics Settings
 
 Physics settings affect the simulation of all the rigid body components in your scene.
@@ -151,6 +156,10 @@ Enable alpha-blending on the main canvas element.
 
 Use the preserveDrawingBuffer option when creating the WebGL context.
 
+## Layers
+
+Manage rendering layers and their render order. You can find out more about layers [here][10].
+
 ## Audio
 
 #### Use Legacy Audio
@@ -174,6 +183,20 @@ Here you can create and manage Batch Groups for the Project. You can assign [Mod
 ## Loading Screen (Available for ORG users only)
 
 Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
+
+## External Scripts
+
+Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+
+## Input
+
+Here you can enable or disable various input devices for your application.
+
+## Localization
+
+Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+
+You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
 
 ## Asset Tasks
 
@@ -218,3 +241,4 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [7]: /user-manual/packs/components/model
 [8]: /user-manual/packs/components/element
 [9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
