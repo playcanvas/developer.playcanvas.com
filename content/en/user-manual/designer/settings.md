@@ -198,6 +198,8 @@ Here you can specify JSON Assets that contain localization data. Assets in this 
 
 You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
 
+Read more about localization [here][11].
+
 ## Asset Tasks
 
 #### Auto-run
@@ -242,3 +244,4 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [8]: /user-manual/packs/components/element
 [9]: /user-manual/optimization/batching
 [10]: /user-manual/graphics/layers/
+[11]: /user-manual/user-interface/localization
