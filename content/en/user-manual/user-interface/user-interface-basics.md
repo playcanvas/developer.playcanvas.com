@@ -24,9 +24,14 @@ To change the draw order you simply re-order the entities in the Editor hierarch
 
 There is an additional way of handling input for UI Elements. An instance of the `pc.ElementInput` is provided on the Application object, usually accessible as `this.app.elementInput`. This allows you to listen for input directly on the element components, e.g. `this.entity.element.on('click', ...)`. Read more on the [Input][4] page.
 
+## Localization
+
+PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
+
 
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements
 [3]: /user-manual/user-interface/elements
 [4]: /user-manual/user-interface/input
 [5]: /user-manual/2D/9-slicing
+[6]: /user-manual/user-interface/localization

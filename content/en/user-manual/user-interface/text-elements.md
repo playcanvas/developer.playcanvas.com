@@ -12,6 +12,12 @@ The Text Element contains a string field to enter the text that will be displaye
 
 *Note about performance:* Text elements are rendered to the screen using a single quad for each character in the string. When you change the text property, we re-generate the mesh for the element. There is a performance implication for this, though there should be no problems changing text content for a reasonable number of Elements every frame.
 
+## Localization
+
+You can the Localized checkbox to localize the text of the Text Element. If this is enabled then instead of the Text you specify the localization Key for the Text Element which will be used to get the localized text from the Localization assets.
+
+Read more about localization [here][11].
+
 ## Auto-size
 
 By default a Text Element is set to automatically adjust it's width and height to match the text string. You can disable this and specify the height and widht of the element directly in the Editor panel.
@@ -68,3 +74,4 @@ The Opacity property allows you to set the transparency of the string
 [8]: /images/user-manual/user-interface/text-element/spacing.png
 [9]: /images/user-manual/user-interface/text-element/tinted.png
 [10]: /images/user-manual/user-interface/text-element/transparent.png
+[11]: /user-manual/user-interface/localization
