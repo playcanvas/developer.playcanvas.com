@@ -47,7 +47,7 @@ Also notice the little dot on the right of the field that has been overriden. Yo
 
 To apply overrides select the root of the Template Instance and click Apply All on the Entity Inspector. You can also right click on the root of the Template Instance and select Template &rarr; Apply To Template.
 
-You can also apply individual overrides to a Template Asset by clicking on the dot next to the override in the Entity Inspector and selecting Apply to Template. Alternatively you can open the [Override Diff View][4] and apply overrides from there too.
+Alternatively you can open the [Override Diff View][4] and apply overrides from there too.
 
 Any overrides you apply to the Template Asset will propagate to other instances of the Template Asset in any scene that these might be.
 
