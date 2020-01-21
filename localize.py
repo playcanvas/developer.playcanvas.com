@@ -210,7 +210,7 @@ def create_src_po(dir, out_path):
             if path.endswith(".md"):
                 if _verbose:
                     print("md_2_po: " + path)
-                short_path = path.replace(dir + '/', "") # remove dir from path
+                short_path = path.replace(dir + os.path.sep, "") # remove dir from path
                 md_2_po(dir, short_path, "en-US", out_path)
 
 def update_pot_from_src_po(dir):
@@ -272,19 +272,19 @@ def update_localized_files(lang, dir, out_dir):
         for filename in filenames:
             path = os.path.join(dirpath, filename)
             if path.endswith(".js.%s.po" % (lang)) or path.endswith(".json.%s.po" % (lang)):
-                out_path = os.path.join(out_dir, path.replace(dir+'/', '').replace('.'+lang, "")).replace(".po", "")
+                out_path = os.path.join(out_dir, path.replace(dir + os.path.sep, '').replace('.' + lang, "")).replace(".po", "")
                 if _verbose:
                     print("po_2_json: " + path)
                 po_2_json(path, out_path)
             elif path.endswith(".po") and path.find(lang) >= 0:
-                out_path = os.path.join(out_dir, path.replace(dir+'/', '').replace('.'+lang, "")).replace(".po", ".md")
+                out_path = os.path.join(out_dir, path.replace(dir + os.path.sep, '').replace('.' + lang, "")).replace(".po", ".md")
                 if _verbose:
                     print("po_2_md: " + path)
                 po_2_md(path, out_path)
 
 def _generate_resource_slug(project, path):
     # WARNING - be careful editing this, it defines the link between md file and server resource
-    return "%s.%s" % (project, path.replace(".pot", "").replace(".en-US.po", "").replace("/", '-').replace(".", "-"))
+    return "%s.%s" % (project, path.replace(".pot", "").replace(".en-US.po", "").replace(os.path.sep, '-').replace(".", "-"))
 
 def tx_set(dir):
     '''initialize a tx project from the source .pot files'''
@@ -317,9 +317,9 @@ def tx_pull():
 for arg in sys.argv[1:]:
     if arg == 'gettext':
         print("gettext strings from source markdown")
-        create_src_po('content/en', 'po')
-        create_title_pot('content/en', 'po/titles.js.en-US.po')
-        general_messages('messages.json', 'po/messages.json.en-US.po')
+        create_src_po(os.path.join('content', 'en'), 'po')
+        create_title_pot(os.path.join('content', 'en'), os.path.join('po', 'titles.js.en-US.po'))
+        general_messages('messages.json', os.path.join('po', 'messages.json.en-US.po'))
         # update_pot_from_src_po('po')
 
     if arg == 'set':
@@ -336,13 +336,13 @@ for arg in sys.argv[1:]:
 
     if arg == 'update':
         print("convert current translations to markdown")
-        update_localized_files('ja_JP', 'po', 'content/ja')
-        update_localized_files('ru', 'po', 'content/ru')
-        update_localized_files('zh_CN', 'po', 'content/zh')
+        update_localized_files('ja_JP', 'po', os.path.join('content', 'ja'))
+        update_localized_files('ru', 'po', os.path.join('content', 'ru'))
+        update_localized_files('zh_CN', 'po', os.path.join('content', 'zh'))
 
     if arg == 'titles':
-        create_title_pot('content/en', 'po/titles.js.en-US.po')
+        create_title_pot(os.path.join('content', 'en'), os.path.join('po', 'titles.js.en-US.po'))
 
     if arg == 'messages':
-        general_messages('messages.json', 'po/messages.json.en-US.po')
+        general_messages('messages.json', os.path.join('po', 'messages.json.en-US.po'))
 
