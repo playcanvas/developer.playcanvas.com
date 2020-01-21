@@ -1,7 +1,7 @@
----
-title: Hosting using a CDN
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Hosting using a CDN
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 セルフホスティングでPlayCanvasアプリケーションをデプロイするとき、アプリケーションがロードするアセットの負荷から、アプリケーションが提供されている場所(index.html)を分ける必要がある場合が多いです。例えば、コンテンツ配信ネットワーク(CDN)はアセットがユーザーのコンピュータから地理的に近いサーバから配信されていることを確認するために使用されます。これによりアプリケーションは速くロードするようになります。このガイドでは、PlayCanvasアプリケーションを設定して、アセットに別の場所を使用する方法を説明します。
@@ -40,9 +40,9 @@ position: 8
 
 CORSの設定は、使用するCDNまたはサーバによって異なります。CORSヘッダーの設定方法を確認するにはサーバまたはCDNプロバイダのマニュアルを確認する必要があります。例えば、Amazon Web Services CORSの設定のページは[こちら][5]です。
 
-[1]: /user-manual/publishing/web/self-hosting
-[2]: /images/user-manual/publishing/web/cdn-index.jpg
-[3]: /images/user-manual/publishing/web/cdn-more.jpg
-[4]: /images/user-manual/publishing/web/cdn-files.jpg
+[1]: /user-manual/publishing/web/self-hosting
+[2]: /images/user-manual/publishing/web/cdn-index.jpg
+[3]: /images/user-manual/publishing/web/cdn-more.jpg
+[4]: /images/user-manual/publishing/web/cdn-files.jpg
 [5]: http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
 

@@ -1,7 +1,7 @@
----
-title: User Manual
-template: usermanual-page.tmpl.html
-position: 0.5
+---
+title: User Manual
+template: usermanual-page.tmpl.html
+position: 0.5
 ---
 
 PlayCanvasユーザーマニュアルは、エンジンを使ったJavascriptのコーディングをはじめとして、 PlayCanvasエディタを使った[シーン][1] の構築、ウェブやモバイルAppストアへのゲームの公開などについて解説する、PlayCanvasプラットフォーム全体に関する詳細なマニュアルです。
@@ -10,6 +10,6 @@ PlayCanvasユーザーマニュアルは、エンジンを使ったJavascriptの
 
 [それでははじめましょう！][2]
 
-[1]: /user-manual/glossary#scene
+[1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction
 

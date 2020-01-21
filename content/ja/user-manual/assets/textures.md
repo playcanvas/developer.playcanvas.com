@@ -1,7 +1,7 @@
----
-title: Textures
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Textures
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 テクスチャとは[素材][1]に割り当てて図形要素に適用される画像です。
@@ -10,19 +10,19 @@ position: 4
 
 PlayCanvasにテクスチャアセットをインポートする方法は3つあります:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
+1. Drag and drop images into the Assets panel.
+2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
 3. Import an FBX file that embeds textures.
 
 次の画像形式に対応しています：
 
-* JPG
-* PNG
-* GIF
-* TGA
-* BMP
-* TIF
-* HDR
+* JPG
+* PNG
+* GIF
+* TGA
+* BMP
+* TIF
+* HDR
 * EXR
 
 インポートだれたJPGとPNGファイルは元の形式のまま保たれます。
@@ -65,8 +65,8 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 Editorからテクスチャに非可逆圧縮スキーマを適用して、劇的に使用しているVRAMの量を減らすことができます。これらのスキーマは以下のとおりです：
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
+* DXT: Typically supported by desktop devices.
+* PVR: Typically supported by iOS devices.
 * ETC: Typically supported by Android devices.
 
 こちらのテクスチャアセットを考慮してください：
@@ -81,10 +81,10 @@ Editorからテクスチャに非可逆圧縮スキーマを適用して、劇�
 
 圧縮により、VRAM使用量を6倍減少できました。また、この場合、圧縮によりダウンロードサイズも202KBから116KBまで減らすことができました。
 
-[1]: /user-manual/assets/materials
-[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
-[3]: /images/user-manual/assets/textures/texture-properties.png
-[4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/texture-address.png
+[1]: /user-manual/assets/materials
+[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
+[3]: /images/user-manual/assets/textures/texture-properties.png
+[4]: /images/user-manual/assets/textures/anisotropy.png
+[5]: /images/user-manual/assets/textures/texture-address.png
 [6]: /images/user-manual/assets/textures/compression-results.png
 

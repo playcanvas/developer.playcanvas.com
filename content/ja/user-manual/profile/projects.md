@@ -1,7 +1,7 @@
----
-title: Projects
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Projects
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 プロジェクトタブには、過去に作成した全てのプロジェクトとアクセス可能な全てのプロジェクトがリストされています。
@@ -56,10 +56,10 @@ The other user will need to accept your request to transfer the Project. The tra
 
 If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
 
-[1]: /images/user-manual/profile/profile.png "Projects"
-[2]: /images/user-manual/profile/projects/export-archive-button.jpg
-[3]: /images/user-manual/profile/projects/import-archive-button.jpg
-[4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
-[5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
+[1]: /images/user-manual/profile/profile.png "Projects"
+[2]: /images/user-manual/profile/projects/export-archive-button.jpg
+[3]: /images/user-manual/profile/projects/import-archive-button.jpg
+[4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
+[5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
 [6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
 

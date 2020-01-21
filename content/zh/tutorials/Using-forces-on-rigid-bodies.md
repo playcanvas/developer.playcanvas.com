@@ -1,16 +1,16 @@
----
-title: Forces and Impulses
-template: tutorial-page.tmpl.html
-tags: physics, collision
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
+---
+title: Forces and Impulses
+template: tutorial-page.tmpl.html
+tags: physics, collision
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
+*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
 *Press R to reset the cube.*
 
-*Try to get the cube to balance and spin on one of its corners!*
+*Try to get the cube to balance and spin on one of its corners!*
 *The full code used is shown at the bottom of this page.*
 
 在本教程中，我们将向您展示如何使用力来控制动态刚体并生成上述演示的内容。 我们将简要地显示力，冲量，扭矩的使用和刚体组件UI的使用以定制行为。
@@ -19,38 +19,38 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 ### 施加一个恒定的力
 
-~~~javascript~~~
-if (app.keyboard.isPressed(pc.KEY_F) ) {
-    this.entity.rigidbody.applyForce(0, 9.8, 0);
-}
+~~~javascript~~~
+if (app.keyboard.isPressed(pc.KEY_F) ) {
+    this.entity.rigidbody.applyForce(0, 9.8, 0);
+}
 ~~~
 
 这里，当用户通过 [`applyForce(x, y, z)`][1]按下F键时，沿着全局y轴的力被施加到被访问的实体。 也可以设置力矢量的施加点。 [参见文档] [2]了解更多信息。
 
 ### 冲量
 
-~~~javascript~~~
-if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
-    this.entity.rigidbody.applyImpulse(-1, 0, 0);
-}
+~~~javascript~~~
+if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
+    this.entity.rigidbody.applyImpulse(-1, 0, 0);
+}
 ~~~
 
 立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][3]给出速度的瞬时变化。
 
 ### 扭矩
 
-~~~javascript~~~
-if (app.keyboard.isPressed(pc.KEY_W) ) {
-    this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
-}
+~~~javascript~~~
+if (app.keyboard.isPressed(pc.KEY_W) ) {
+    this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
+}
 ~~~
 
 [扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][4]施加到实体上。
 
 ### 扭矩冲量
 
-~~~javascript~~~
-this.entity.rigidbody.applyTorqueImpulse(x, y, z)
+~~~javascript~~~
+this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ~~~
 
 角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][5]来表示。 这在上面的演示的代码中没有被使用。
@@ -77,118 +77,118 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 要立即将物体传送到新位置的话，您不能使用来自pc.Entity API的setPosition函数。 这是因为物理引擎仍然会认为身体在旧的位置。 相反，你必须使用刚体组件的teleport函数：
 
-~~~js~~~
-//code within the update function
-this.playerPos = this.entity.getLocalPosition();
-
-// Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
-if (this.playerPos.x < -9.0) {
-    this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
-}
-if (this.playerPos.x > 9.0) {
-    this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
-}
+~~~js~~~
+//code within the update function
+this.playerPos = this.entity.getLocalPosition();
+
+// Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
+if (this.playerPos.x < -9.0) {
+    this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
+}
+if (this.playerPos.x > 9.0) {
+    this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
+}
 ~~~
 
 如果立方体在x方向上移动超出可视区域，则调用传送功能，立方体实体在屏幕上传送。 实体被传送到离远点不太远的左/右位置，以便不连续激活`if()` 语句。
 
 ## 重置立方体的代码
 
-~~~javascript~~~
-if (app.keyboard.wasPressed(pc.KEY_R)) {
-    this.reset();
-}
-~~~
-~~~javascript~~~
-reset: function () {
-    this.entity.rigidbody.teleport(0, 2, 0);
-    this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
-    this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
-}
+~~~javascript~~~
+if (app.keyboard.wasPressed(pc.KEY_R)) {
+    this.reset();
+}
+~~~
+~~~javascript~~~
+reset: function () {
+    this.entity.rigidbody.teleport(0, 2, 0);
+    this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+}
 ~~~
 
 我们采用了使立方体回到其原始位置的复位功能，并且如上所述，将刚体的位置与传送的实体的位置同步。 复位功能中的最后两行将物体的线速度和角速度也复位为零。 对象的方向也可以重置，但不在此代码中执行。
 
 ## 整段代码
 
-~~~javascript~~~
-var DynamicBody = pc.createScript('dynamicBody');
-
-// initialize code called once per entity
-DynamicBody.prototype.initialize = function() {
-    this.torque = 7;
-    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
-};
-
-DynamicBody.prototype.onKeyDown = function (event) {
-    event.event.preventDefault();
-};
-
-// update code called every frame
-DynamicBody.prototype.update = function(dt) {
-    //update player's position
-    this.playerPos = this.entity.getLocalPosition();
-
-    var app = this.app;
-
-    //keyboard controls and applying forces and moments.
-    if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
-        this.entity.rigidbody.applyImpulse(-1, 0, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_RIGHT) ) {
-        this.entity.rigidbody.applyImpulse(1, 0, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_UP) ) {
-        this.entity.rigidbody.applyImpulse(0, 1, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_A) ) {
-        this.entity.rigidbody.applyTorque(0, this.torque, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_D) ) {
-        this.entity.rigidbody.applyTorque(0, -this.torque, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_W) ) {
-        this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_S) ) {
-        this.entity.rigidbody.applyTorque(this.torque, 0, 0);
-    }
-    if (app.keyboard.isPressed(pc.KEY_F) ) {
-        this.entity.rigidbody.applyForce(0, 9.8, 0);
-    }
-
-    // Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
-    if (this.playerPos.x < -9.0) {
-        this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
-    }
-    if (this.playerPos.x > 9.0) {
-        this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
-    }
-
-    // cube reset control
-    if (app.keyboard.wasPressed(pc.KEY_R) ) {
-        this.reset();
-    }
-};
-
-DynamicBody.prototype.reset = function () {
-    this.entity.rigidbody.teleport(0, 2, 0);
-    this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
-    this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
-};
+~~~javascript~~~
+var DynamicBody = pc.createScript('dynamicBody');
+
+// initialize code called once per entity
+DynamicBody.prototype.initialize = function() {
+    this.torque = 7;
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+};
+
+DynamicBody.prototype.onKeyDown = function (event) {
+    event.event.preventDefault();
+};
+
+// update code called every frame
+DynamicBody.prototype.update = function(dt) {
+    //update player's position
+    this.playerPos = this.entity.getLocalPosition();
+
+    var app = this.app;
+
+    //keyboard controls and applying forces and moments.
+    if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
+        this.entity.rigidbody.applyImpulse(-1, 0, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_RIGHT) ) {
+        this.entity.rigidbody.applyImpulse(1, 0, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_UP) ) {
+        this.entity.rigidbody.applyImpulse(0, 1, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_A) ) {
+        this.entity.rigidbody.applyTorque(0, this.torque, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_D) ) {
+        this.entity.rigidbody.applyTorque(0, -this.torque, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_W) ) {
+        this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_S) ) {
+        this.entity.rigidbody.applyTorque(this.torque, 0, 0);
+    }
+    if (app.keyboard.isPressed(pc.KEY_F) ) {
+        this.entity.rigidbody.applyForce(0, 9.8, 0);
+    }
+
+    // Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
+    if (this.playerPos.x < -9.0) {
+        this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
+    }
+    if (this.playerPos.x > 9.0) {
+        this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
+    }
+
+    // cube reset control
+    if (app.keyboard.wasPressed(pc.KEY_R) ) {
+        this.reset();
+    }
+};
+
+DynamicBody.prototype.reset = function () {
+    this.entity.rigidbody.teleport(0, 2, 0);
+    this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+};
 ~~~
 
-[1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[7]: /tutorials/beginner/manipulating-entities/
-[6]: /engine/api/stable/symbols/pc.Vec3.html
-[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
-[9]: /engine/api/stable/symbols/pc.html
-[10]: /tutorials/intermediate/collision-and-triggers/
-[11]: /tutorials/advanced/fps-controller/
+[1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
+[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
+[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[7]: /tutorials/beginner/manipulating-entities/
+[6]: /engine/api/stable/symbols/pc.Vec3.html
+[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
+[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[9]: /engine/api/stable/symbols/pc.html
+[10]: /tutorials/intermediate/collision-and-triggers/
+[11]: /tutorials/advanced/fps-controller/
 [12]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
 

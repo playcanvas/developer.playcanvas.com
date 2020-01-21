@@ -1,7 +1,7 @@
----
-title: Models
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Models
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 3Dのモデルやアニメーションは、[Blender][2], 3D Studio Max, Mayaなどの [3D モデリングアプリケーション][1] のシーンファイルをアップロードすることにより、PlayCanvasにインポートされます。
@@ -12,13 +12,13 @@ PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応して
 
 次についてもっと知る：
 
-* [Building Models][5]
+* [Building Models][5]
 * [Exporting Models][6]
 
-[1]: /user-manual/assets/models/building
-[2]: http://blender.org/
-[3]: /user-manual/glossary#source_asset
-[4]: /user-manual/glossary/#target_asset
-[5]: /user-manual/assets/models/building
+[1]: /user-manual/assets/models/building
+[2]: http://blender.org/
+[3]: /user-manual/glossary#source_asset
+[4]: /user-manual/glossary/#target_asset
+[5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
 

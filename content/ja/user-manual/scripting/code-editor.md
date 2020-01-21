@@ -1,7 +1,7 @@
----
-title: Code Editor
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Code Editor
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 コードエディタは、スクリプトアセットやJSON、HTML、CSSなどのその他のテキストベースのアセットを編集できるオンラインのリアルタイムなコラボレーティブエディタです。
@@ -60,55 +60,55 @@ Ctrl + Iを押して[PlayCanvasエディタ][2]の中からコードエディタ
 
 エディタは、コードを編集するときに役立つさまざまなショートカットに対応しています。これらのオプションはすべてメニューから見つけることができます。最も一般的なものは次のとおりです：
 
-<table class="table table-striped table-bordered">
-<tr>
-    <th>Command</th><th>PC</th><th>Mac</th>
-</tr>
-<tr>
-    <td>Undo</td><td>Ctrl + Z</td><td>Cmd + Z</td>
-</tr>
-<tr>
-    <td>Redo</td><td>Ctrl + Y</td><td>Cmd + Shift + Z or Cmd + Y</td>
-</tr>
-<tr>
-    <td>Find in file</td><td>Ctrl + F</td><td>Cmd + F</td>
-</tr>
-<tr>
-    <td>Find next match</td><td>F3</td><td>Cmd + G</td>
-</tr>
-<tr>
-    <td>Find previous match</td><td>Shift + F3</td><td>Cmd + Shift + G</td>
-</tr>
-<tr>
-    <td>Replace</td><td>Ctrl + H</td><td>Cmd + Alt + F</td>
-</tr>
-<tr>
-    <td>Find in Files</td><td>Shift + Ctrl + F</td><td>Shift + Cmd + F</td>
-</tr>
-<tr>
-    <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
-</tr>
-<tr>
-    <td>Block Comment line or selection</td><td>Alt + Cmd + /</td><td>Shift + Ctrl + /</td>
-</tr>
-<tr>
-    <td>Indent line or selection</td><td>Tab</td><td>Tab</td>
-</tr>
-<tr>
-    <td>Un-Indent line or selection</td><td>Shift + Tab</td><td>Shift + Tab</td>
-</tr>
-<tr>
-    <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
-</tr>
-<tr>
-    <td>Jump to declaration</td><td>Alt + .</td><td>Alt + .</td>
-</tr>
-<tr>
-    <td>Show autocomplete</td><td>Ctrl + Space</td><td>Ctrl + Space</td>
-</tr>
-<tr>
-    <td>Show documentation</td><td>Ctrl + O</td><td>Cmd + O</td>
-</tr>
+<table class="table table-striped table-bordered">
+<tr>
+    <th>Command</th><th>PC</th><th>Mac</th>
+</tr>
+<tr>
+    <td>Undo</td><td>Ctrl + Z</td><td>Cmd + Z</td>
+</tr>
+<tr>
+    <td>Redo</td><td>Ctrl + Y</td><td>Cmd + Shift + Z or Cmd + Y</td>
+</tr>
+<tr>
+    <td>Find in file</td><td>Ctrl + F</td><td>Cmd + F</td>
+</tr>
+<tr>
+    <td>Find next match</td><td>F3</td><td>Cmd + G</td>
+</tr>
+<tr>
+    <td>Find previous match</td><td>Shift + F3</td><td>Cmd + Shift + G</td>
+</tr>
+<tr>
+    <td>Replace</td><td>Ctrl + H</td><td>Cmd + Alt + F</td>
+</tr>
+<tr>
+    <td>Find in Files</td><td>Shift + Ctrl + F</td><td>Shift + Cmd + F</td>
+</tr>
+<tr>
+    <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
+</tr>
+<tr>
+    <td>Block Comment line or selection</td><td>Alt + Cmd + /</td><td>Shift + Ctrl + /</td>
+</tr>
+<tr>
+    <td>Indent line or selection</td><td>Tab</td><td>Tab</td>
+</tr>
+<tr>
+    <td>Un-Indent line or selection</td><td>Shift + Tab</td><td>Shift + Tab</td>
+</tr>
+<tr>
+    <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
+</tr>
+<tr>
+    <td>Jump to declaration</td><td>Alt + .</td><td>Alt + .</td>
+</tr>
+<tr>
+    <td>Show autocomplete</td><td>Ctrl + Space</td><td>Ctrl + Space</td>
+</tr>
+<tr>
+    <td>Show documentation</td><td>Ctrl + O</td><td>Cmd + O</td>
+</tr>
 </table>
 
 ## 検索
@@ -163,18 +163,18 @@ Altキーを押しながらマウスの左ボタンをドラッグすると、�
 
 ![長方形選択][9]
 
-[1]: /images/user-manual/scripting/code-editor-toolbar.png
-[2]: /user-manual/designer/
-[3]: /images/user-manual/scripting/code-editor.png
-[4]: https://codemirror.net/
-[5]: /images/user-manual/scripting/find-panel.png
-[6]: /images/user-manual/scripting/find-in-files-results.png
-[7]: /images/user-manual/scripting/code-editor-quick-searching.gif
-[8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
-[9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
-[10]: http://regexr.com/
-[11]: /images/user-manual/scripting/go-to-anything.gif
-[12]: /images/user-manual/scripting/preferences.png
-[13]: http://jshint.com/
+[1]: /images/user-manual/scripting/code-editor-toolbar.png
+[2]: /user-manual/designer/
+[3]: /images/user-manual/scripting/code-editor.png
+[4]: https://codemirror.net/
+[5]: /images/user-manual/scripting/find-panel.png
+[6]: /images/user-manual/scripting/find-in-files-results.png
+[7]: /images/user-manual/scripting/code-editor-quick-searching.gif
+[8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
+[9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
+[10]: http://regexr.com/
+[11]: /images/user-manual/scripting/go-to-anything.gif
+[12]: /images/user-manual/scripting/preferences.png
+[13]: http://jshint.com/
 [14]: http://jshint.com/docs/
 

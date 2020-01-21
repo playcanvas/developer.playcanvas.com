@@ -1,6 +1,6 @@
----
-title: PlayCanvas Developer Resources
-template: intro.tmpl.html
+---
+title: PlayCanvas Developer Resources
+template: intro.tmpl.html
 ---
 
 我们推荐从 [用户手册][1] 开始阅读, 用户手册包含了 PlayCanvas 的完整指南，可以系统的了解每个细节。随后, 可以深入 [教程][3] 和 [视频][12]，进一步深入了解 PlayCanvas 的特定功能。最后，[API 参考][4] 提供了完整的 PlayCanvas 引擎参考。
@@ -27,15 +27,15 @@ template: intro.tmpl.html
 
 If you've got a technical question about using PlayCanvas, the API or any part of the platform, you can use [PlayCanvas Forum][10] to get help.
 
-[1]: /user-manual
-[2]: /getting-started
-[3]: /tutorials
-[4]: /en/api/
-[5]: https://github.com/playcanvas
-[6]: https://github.com/playcanvas/sprites
-[7]: https://github.com/playcanvas/fonts
-[8]: https://playcanvas.com/play
-[9]: /engine
-[10]: http://forum.playcanvas.com/
+[1]: /user-manual
+[2]: /getting-started
+[3]: /tutorials
+[4]: /en/api/
+[5]: https://github.com/playcanvas
+[6]: https://github.com/playcanvas/sprites
+[7]: https://github.com/playcanvas/fonts
+[8]: https://playcanvas.com/play
+[9]: /engine
+[10]: http://forum.playcanvas.com/
 [12]: /tutorials/video
 

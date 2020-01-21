@@ -1,8 +1,8 @@
----
-title: Basic Materials
-template: tutorial-page.tmpl.html
-tags: material
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+---
+title: Basic Materials
+template: tutorial-page.tmpl.html
+tags: material
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.
@@ -45,7 +45,7 @@ Changing the color of the material is a good start, but you'll quickly want more
 
 Download & save these sample textures:
 
-<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
+<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
 <a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"/></a>
 
 Then upload them to your project by dragging the files into the Editor.
@@ -60,10 +60,10 @@ Try modifying the **Tiling** and **Offset** properties to effect the way the tex
 
 Take a look at the user manual section on [Physical Materials][6] for more depth on setting up materials.
 
-[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
-[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
-[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
-[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
-[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
+[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
+[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
+[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
+[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
+[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
 [6]: /user-manual/graphics/physical-rendering/physical-materials/
 

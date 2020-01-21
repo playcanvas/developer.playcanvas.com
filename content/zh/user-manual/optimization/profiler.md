@@ -1,7 +1,7 @@
----
-title: Profiler
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Profiler
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 PlayCanvas提供了一个协助诊断性能问题的实时分析器。
@@ -26,14 +26,14 @@ PlayCanvas提供了一个协助诊断性能问题的实时分析器。
 
 右侧面板是分析器的时间线。这显示了用户app运行期间关键事件的数量：
 
-* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
-* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
+* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
+* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
 * **start**: event when PlayCanvas begins the main application loop and rendering begins.
 
 绿色横杠显示了单独的异步资源加载。橙色横杠为阻断着色器的事件。
 
-[1]: /images/user-manual/optimization/profiler/profiler.png
-[2]: /images/user-manual/optimization/profiler/profiler_launch.png
-[3]: /images/user-manual/optimization/profiler/profiler_stats.png
+[1]: /images/user-manual/optimization/profiler/profiler.png
+[2]: /images/user-manual/optimization/profiler/profiler_launch.png
+[3]: /images/user-manual/optimization/profiler/profiler_stats.png
 [4]: /images/user-manual/optimization/profiler/profiler_timeline.png
 

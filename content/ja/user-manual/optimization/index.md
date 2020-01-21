@@ -1,7 +1,7 @@
----
-title: Performance
-template: usermanual-page.tmpl.html
-position: 12
+---
+title: Performance
+template: usermanual-page.tmpl.html
+position: 12
 ---
 
 PlayCanvasアプリはハイエンドのデスクトップPCからローエンドのスマートフォンを含む幅広い種類のデバイス上で実行できます。アプリで最高のパフォーマンスを得るために従うべきいくつかのガイドラインがあります。PlayCanvasはパフォーマンスのボトルネックを探し出し解消するためのツールを提供します。

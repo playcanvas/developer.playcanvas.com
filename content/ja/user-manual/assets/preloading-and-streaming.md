@@ -1,7 +1,7 @@
----
-title: Preloading and Streaming
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Preloading and Streaming
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 ウェブ上では、ページをロードした後にできる限り早くアプリケーションを起動することが重要です。ローディングバーを表示して、ユーザを待たせてしまうとアプリケーションが始まる前にユーザが離れてしまう可能性があります。PlayCanvasアセットシステムに実装されている機能を使用すれば、ロードプロセスを合理化し速くアプリケーションを起動することができます。
@@ -26,8 +26,8 @@ position: 3
 
 特定のアセットがいつ読み込まれるかを確認するには、これらのルールに従ってください。
 
-* If `preload = true` the asset will be loaded before the application starts. Otherwise:
-* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
+* If `preload = true` the asset will be loaded before the application starts. Otherwise:
+* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
 * If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
 
 ## アセットタグ
@@ -36,21 +36,21 @@ position: 3
 
 タグを利用してアセットのセットを読み込む方法を説明するjavascriptの例です。
 
-```javascript
-var assets = this.app.assets.findByTag("level-1");
-var count = 0;
-
-for (var i = 0; i < assets.length; i++) {
-    assets[i].once("load", function () {
-        count++;
-        if (count === assets.length) {
-            // asset loading complete
-        }
-    });
-    this.app.assets.load(assets[i]);
-}
+```javascript
+var assets = this.app.assets.findByTag("level-1");
+var count = 0;
+
+for (var i = 0; i < assets.length; i++) {
+    assets[i].once("load", function () {
+        count++;
+        if (count === assets.length) {
+            // asset loading complete
+        }
+    });
+    this.app.assets.load(assets[i]);
+}
 ```
 
-[1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
+[1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
 [2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif
 

@@ -1,6 +1,6 @@
----
-title: Use real-time shadows
-keywords: real-time, shadows, light, realism, pbr
+---
+title: Use real-time shadows
+keywords: real-time, shadows, light, realism, pbr
 ---
 
 ## リアルタイムシャドーを使用するには？

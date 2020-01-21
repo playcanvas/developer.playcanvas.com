@@ -1,15 +1,15 @@
----
-title: Lights
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Lights
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 在现实世界中，我们周边的坏境被许多光源照亮。太阳，路灯，电视屏幕等等。在PlayCanvas场景中，用户可以设置许多不同类型的光源模拟在现实生活中的真实光源。
 
 PlayCanvas拥有三种不同的光源：
 
-* Directional lights
-* Point lights
+* Directional lights
+* Point lights
 * Spot lights
 
 ## 定向光
@@ -60,10 +60,10 @@ PlayCanvas拥有三种不同的光源：
 
 聚光灯是内存消耗最大的光源类型，所以需要谨慎使用。
 
-[1]: /images/user-manual/graphics/lights/directional_icon.jpg
-[2]: /images/user-manual/graphics/lights/directional.jpg
-[3]: /images/user-manual/graphics/lights/point_icon.jpg
-[4]: /images/user-manual/graphics/lights/point.jpg
-[5]: /images/user-manual/graphics/lights/spot_icon.jpg
+[1]: /images/user-manual/graphics/lights/directional_icon.jpg
+[2]: /images/user-manual/graphics/lights/directional.jpg
+[3]: /images/user-manual/graphics/lights/point_icon.jpg
+[4]: /images/user-manual/graphics/lights/point.jpg
+[5]: /images/user-manual/graphics/lights/spot_icon.jpg
 [6]: /images/user-manual/graphics/lights/spot.jpg
 

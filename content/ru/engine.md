@@ -1,6 +1,6 @@
----
-title: PlayCanvas Engine
-template: usermanual-page.tmpl.html
+---
+title: PlayCanvas Engine
+template: usermanual-page.tmpl.html
 ---
 
 Движок PlayCanvas - это javascript фреймворк с открытым исходным кодом, который Вы можете использовать для создания игр и интерактивных 3D приложений в интернете. Движок предоставляется бесплатно и отдельно от инструментов PlayCanvas, что даёт максимальную гибкость для разработчика.
@@ -29,11 +29,11 @@ template: usermanual-page.tmpl.html
 
 Для загрузки файла модели в движок используйте [loadFromUrl][5] API.
 
-[1]: https://github.com/playcanvas/engine
-[2]: http://playcanvas.github.io
-[3]: /user-manual/assets/importing/
-[4]: /user-manual/glossary/#target_asset
-[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
-[6]: /images/user-manual/editor/assets-completed.png
+[1]: https://github.com/playcanvas/engine
+[2]: http://playcanvas.github.io
+[3]: /user-manual/assets/importing/
+[4]: /user-manual/glossary/#target_asset
+[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
+[6]: /images/user-manual/editor/assets-completed.png
 [7]: /images/user-manual/editor/download-model.jpg
 

@@ -1,22 +1,22 @@
----
-title: Making a Simple Game - Part 1
-template: tutorial-page.tmpl.html
-tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+---
+title: Making a Simple Game - Part 1
+template: tutorial-page.tmpl.html
+tags: games
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 *You can find the [full project here][3]*
 
 In this series of tutorials we're going to show you how a complete game is made using PlayCanvas. We've made a simple "Keepy Up" game where the object is to click or tap on the soccer ball to keep it in the air.
 
 We'll cover these topics:
 
-1. **The Scene and Hierarchy**
-1. Material Setup
-1. The Game Script
-1. Ball Physics and Input
-1. Audio & Effects
+1. **The Scene and Hierarchy**
+1. Material Setup
+1. The Game Script
+1. Ball Physics and Input
+1. Audio & Effects
 1. User Interface
 
 This isn't a step-by-step guide, but we will talk about all areas of the scripts and try and explain how each bit works. We recommend you fork the Game project into your own account and follow along as we go through.
@@ -71,7 +71,7 @@ The UI Entity is the parent of several other Entities, one for each screen that 
 
 [Part 2][2] covers the main game script.
 
-[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
+[2]: /tutorials/beginner/keepyup-part-two
 [3]: https://playcanvas.com/project/406050
 

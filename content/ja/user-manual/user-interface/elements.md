@@ -1,7 +1,7 @@
----
-title: Elements
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Elements
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 要素は、ユーザインターフェイス画面を構成する個々の要素です。エンティティにElementコンポーネントを添付し、そのエンティティをScreenエンティティの子または子孫として追加することによって、ユーザインターフェイス要素が追加されます。スクリーンの一部である要素は、トランスフォームが計算される方法、したがってスクリーン上に配置される方法において、通常のエンティティと異なります。
@@ -56,10 +56,10 @@ Elementの主な使用事例は、ユーザーインターフェースScreenコ�
 
 スクリーンを持たないElementのサイズと配置はやや異なった動作をします。スクリーンの場合、32x32のElementは32ピクセルですが、スクリーンのないElementは32m×32mになります。それに応じてサイズを調整してください。
 
-[1]: /images/user-manual/user-interface/elements/element-guide.png
-[2]: /images/user-manual/user-interface/elements/pivot.png
-[3]: /images/user-manual/user-interface/elements/anchor-editor.png
-[4]: /images/user-manual/user-interface/elements/split-anchor.png
-[5]: /images/user-manual/user-interface/elements/gizmo-resize.png
+[1]: /images/user-manual/user-interface/elements/element-guide.png
+[2]: /images/user-manual/user-interface/elements/pivot.png
+[3]: /images/user-manual/user-interface/elements/anchor-editor.png
+[4]: /images/user-manual/user-interface/elements/split-anchor.png
+[5]: /images/user-manual/user-interface/elements/gizmo-resize.png
 [6]: /images/user-manual/user-interface/elements/gizmo-resize-viewport.png
 

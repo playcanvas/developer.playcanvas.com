@@ -1,6 +1,6 @@
----
-title: Change the color of a model
-keywords: asset, material, create, color, surface, normal, specular
+---
+title: Change the color of a model
+keywords: asset, material, create, color, surface, normal, specular
 ---
 
 ## 如何修改模型的颜色？

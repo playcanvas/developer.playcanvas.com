@@ -1,7 +1,7 @@
----
-title: Self-hosting for beginners
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Self-hosting for beginners
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 This document is aimed at people who are complete beginners to web programming and describes at high level how the different parts of a web application combine to serve PlayCanvas applications, or other web pages to a user's browser.
@@ -18,34 +18,34 @@ For web pages which are documents for displaying text or images this works very 
 
 For example, in PHP you could show the current date and time, inside your page.
 
-```php
-<html>
-    <head>
-        <title>My Homepage</title>
-    </head>
-    <body>
-        <h1>The date is</h1>
-        <?php
-            echo date(DATE_RFC2822);
-        ?>
-        <p>Have a nice day</p>
-    </body>
-</html>
+```php
+<html>
+    <head>
+        <title>My Homepage</title>
+    </head>
+    <body>
+        <h1>The date is</h1>
+        <?php
+            echo date(DATE_RFC2822);
+        ?>
+        <p>Have a nice day</p>
+    </body>
+</html>
 ```
 
 This PHP code creates an HTML page like below and send it to the browser to display.
 
-```html
-<html>
-    <head>
-        <title>My Homepage</title>
-    </head>
-    <body>
-        <h1>The date is</h1>
-        Mon, 11 Apr 2016 06:54:14 -0400
-        <p>Have a nice day</p>
-    </body>
-</html>
+```html
+<html>
+    <head>
+        <title>My Homepage</title>
+    </head>
+    <body>
+        <h1>The date is</h1>
+        Mon, 11 Apr 2016 06:54:14 -0400
+        <p>Have a nice day</p>
+    </body>
+</html>
 ```
 
 There are many, many different languages and frameworks to choose from when writing server-side code. PHP, Python, Nodejs, Ruby are all popular choices. But ultimately they have the same outcome, they receive a request for an HTML page, they do some processing and then they return the HTML data.
@@ -56,9 +56,9 @@ When writing PlayCanvas applications, no code you write in PlayCanvas runs serve
 
 In the web stack, the server is not the only place where we can do programming and respond to user input. Client-side refers to code running inside your browser. This code is always in Javascript, which is the language that browsers run. With client-side javascript you can perform many different operations. In the simplest case, you can modify the HTML page that was downloaded from the server
 
-```javascript
-var title = document.getElementById("title");
-title.innerHTML = "This is the new title";
+```javascript
+var title = document.getElementById("title");
+title.innerHTML = "This is the new title";
 ```
 
 Or in the most complex case, you can write a full 3D WebGL game using PlayCanvas. Because everything you write using PlayCanvas is client-side javascript.

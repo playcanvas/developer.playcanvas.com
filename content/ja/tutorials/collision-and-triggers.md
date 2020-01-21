@@ -1,8 +1,8 @@
----
-title: Collision and Triggers
-template: tutorial-page.tmpl.html
-tags: collision, physics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
+---
+title: Collision and Triggers
+template: tutorial-page.tmpl.html
+tags: collision, physics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
@@ -17,9 +17,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *コリジョン*コンポーネントで最も重要なプロパティは、その**タイプ**です。これは使用する当たり判定の形状を決定します。全部で四種類があります:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
+* **Box** A simple box
+* **Sphere** A simple sphere
+* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
 * **Mesh** Use any arbitary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### トリガーボリューム
@@ -42,8 +42,8 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 このデモで重要なプロパティは**Type**です。以下の三種類があります。
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
+* **Static** this Entity will never move.
+* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
 * **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
 ## 地面の設定
@@ -62,29 +62,29 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 このエンティティは*collision*コンポーネントはありますが、*rigidbody*コンポーネントはありません。そのためこのエンティティはトリガーとして振る舞います。このトリガーエンティティにはコードが書き込まれた*script*コンポーネントが与えられています。トリガーは発生した時に何らかの処理を行った時はじめて意味があるものになります。そのため、処理を行うコードとトリガーが発生した際のイベントを監視するコードを追加する必要があります。
 
-~~~javascript~~~
-var Trigger = pc.createScript('trigger');
-
-// initialize code called once per entity
-Trigger.prototype.initialize = function() {
-    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-};
-
-Trigger.prototype.onTriggerEnter = function(entity) {
-    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
-    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
-    // Reset back to roughly the position the entity started in.
-    var position = entity.getPosition();
-    entity.rigidbody.teleport(position.x, 10, 0);
-};
+~~~javascript~~~
+var Trigger = pc.createScript('trigger');
+
+// initialize code called once per entity
+Trigger.prototype.initialize = function() {
+    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+};
+
+Trigger.prototype.onTriggerEnter = function(entity) {
+    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+    // Reset back to roughly the position the entity started in.
+    var position = entity.getPosition();
+    entity.rigidbody.teleport(position.x, 10, 0);
+};
 ~~~
 
 上記のコードには大きく分けて二つの機能があります。
 
 まず、```initialize```メソッド内で**triggerenter**イベントの監視を始めます。このイベントは剛体がトリガーボリューム(collisionコンポーネントのみを持ち、rigidbodyコンポーネントを持たないエンティティ)に入った時に発生します。対応する反対のイベントは**triggerleave**イベントで、これは剛体がトリガーボリュームの外に出た時に発生します。
 
-~~~javascript~~~
-this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+~~~javascript~~~
+this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 ~~~
 
 三番目の引数である```this```はイベントリスナーで使われる'scope'であることに注意してください。通常は三番目の引数として、現在のスクリプトオブジェクトを与えます。これはイベントリスナー内の```this```の値をイベントリスナーを設定しているスクリプトオブジェクトと同じものにするためです。
@@ -105,39 +105,39 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 *collision*コンポーネントには三種類のイベントが用意されています。
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
+* **contact** - fires for every point of contact when two rigid bodies touch.
+* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
 * **collisionend** - fires when two rigid bodies separate.
 
 **contact**と**collisionstart**の違いはささいなことですが重要なものです。立方体が一定の角度で平面に落ちるとします。立方体の辺が平面に触ったとき、立方体の二つの頂点が同時に平面に当たります。この状態では、三つのイベントが発生します。二つの**contact**イベントがそれぞれの頂点向けに発生し、さらに一つの**collisionstart**イベントが発生します。そして立方体は平面上に静止するまで回転して落ち続けます。その間ずっと平面上と何らかの形で接触し続けるものとします。平面上に静止したとき、頂点が平面に触った時、さらに二つの**contact**イベントが発生します。しかし、立方体は平面に触れ続けているので、**collisionstart**が追加で発生することはありません。
 
 どちらのイベントも便利ですが、このデモでは**collisionstart**イベントを地面に触れた時の効果音を鳴らすトリガーとして使用しています。以下がコードです:
 
-~~~javascript~~~
-var Collider = pc.createScript('collider');
-
-// initialize code called once per entity
-Collider.prototype.initialize = function () {
-    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
-};
-
-Collider.prototype.onCollisionStart = function (result) {
-    if (result.other.rigidbody) {
-        this.entity.sound.play("hit");
-    }
-};
+~~~javascript~~~
+var Collider = pc.createScript('collider');
+
+// initialize code called once per entity
+Collider.prototype.initialize = function () {
+    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
+};
+
+Collider.prototype.onCollisionStart = function (result) {
+    if (result.other.rigidbody) {
+        this.entity.sound.play("hit");
+    }
+};
 ~~~
 
 ```initialize```メソッドでイベントリスナが設定されています。そしてイベントハンドラの中では、衝突した相手のエンティティが**rigidbody**コンポーネントを持っているかを確認し(これはトリガーボリュームに入った際に効果音を鳴らさないためです)、そして"hit"サウンドエフェクトを鳴らします。このようにして、colliderスクリプトを持つエンティティが他の剛体と衝突すると、毎回衝突の効果音を鳴らしています。
 
 これでPlayCanvasでの当たり判定とトリガーの扱い方の説明を終わります。
 
-[1]: https://playcanvas.com/project/405871
-[3]: /images/tutorials/collision/collision_and_triggers.jpg
-[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
-[5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
-[7]: /images/tutorials/collision/trigger_setup.jpg
-[8]: /engine/api/stable/symbols/pc.Entity.html
+[1]: https://playcanvas.com/project/405871
+[3]: /images/tutorials/collision/collision_and_triggers.jpg
+[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
+[5]: /user-manual/packs/components/rigidbody/
+[6]: /images/tutorials/collision/ground_setup.jpg
+[7]: /images/tutorials/collision/trigger_setup.jpg
+[8]: /engine/api/stable/symbols/pc.Entity.html
 [9]: /images/tutorials/collision/box_setup.jpg
 

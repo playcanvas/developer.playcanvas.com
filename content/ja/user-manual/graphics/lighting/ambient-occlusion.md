@@ -1,14 +1,14 @@
----
-title: Ambient Occlusion
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Ambient Occlusion
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 アンビエントオクルージョンは、環境によるオクルージョンに基づいて、どれくらいの光が表面に到達するかを予測する技法です。
 
 PlayCanvasでは、アンビエントライティングは拡散とスペキュラの両方のAOマップで乗算されます。
 
-![Ambient Occlusion comparison: without/with][4]
+![Ambient Occlusion comparison: without/with][4]
 *Left: without AO; Right: with Global AO*
 
 AOマップは、異なるスケールの場合があります。例えば、モデルの異なる部分の大きなシャドーイング効果を伴う表面の裂け目またはワールドスケールのAOを示すテクスチャ詳細AO。スケールの大きいAOは、より多くのエフェクトをもたらし、通常はUV1のライトマップと一致し、より重要です。
@@ -41,16 +41,16 @@ Editorでテクスチャをアップロードし、素材のAmbient Occlusionス
 
 上で説明したグローバルアンビエントオクルージョンを使用する[例][6]やその[project] [7]をご確認ください。
 
-[![PlayCanvas Lightmapping][8]][6]
+[![PlayCanvas Lightmapping][8]][6]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
-[0]: /user-manual/graphics/lighting/lightmapping/
-[1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png
-[2]: /images/user-manual/lighting/lightmaps/3ds-max-vray-override-mtl.png
-[3]: /user-manual/graphics/lighting/lightmapping#render-to-texture
-[4]: /images/user-manual/lighting/lightmaps/model-ao-comparison.jpg
-[5]: /images/user-manual/lighting/lightmaps/editor-ao-map.png
-[6]: https://playcanv.as/p/zdkARz26/
-[7]: https://playcanvas.com/project/446587/overview/archviz-example
+[0]: /user-manual/graphics/lighting/lightmapping/
+[1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png
+[2]: /images/user-manual/lighting/lightmaps/3ds-max-vray-override-mtl.png
+[3]: /user-manual/graphics/lighting/lightmapping#render-to-texture
+[4]: /images/user-manual/lighting/lightmaps/model-ao-comparison.jpg
+[5]: /images/user-manual/lighting/lightmaps/editor-ao-map.png
+[6]: https://playcanv.as/p/zdkARz26/
+[7]: https://playcanvas.com/project/446587/overview/archviz-example
 [8]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
 

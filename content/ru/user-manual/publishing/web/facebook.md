@@ -1,7 +1,7 @@
----
-title: Facebook
-template: usermanual-page.tmpl.html
-position: 7
+---
+title: Facebook
+template: usermanual-page.tmpl.html
+position: 7
 ---
 
 [Facebook][1] is an excellent place to publish PlayCanvas games in order to reach an enormous audience. Publishing games from PlayCanvas to Facebook is straightforward.
@@ -24,8 +24,8 @@ position: 7
 
 ![Website URL][5]
 
-<div class="alert alert-info">
-Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
+<div class="alert alert-info">
+Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
 </div>
 
 **6.** Finally, set up all the images and icons that are required for your game
@@ -36,11 +36,11 @@ Adding this URL as your website URL is required because of the way PlayCanvas ho
 
 ![App URL][7]
 
-[1]: http://facebook.com
-[2]: https://developers.facebook.com/
-[3]: /images/user-manual/publishing/web/facebook/choose-platform.jpg
-[4]: /images/user-manual/publishing/web/facebook/secure-canvas-url.jpg
-[5]: /images/user-manual/publishing/web/facebook/website-url.jpg
-[6]: /images/user-manual/publishing/web/facebook/icons.jpg
+[1]: http://facebook.com
+[2]: https://developers.facebook.com/
+[3]: /images/user-manual/publishing/web/facebook/choose-platform.jpg
+[4]: /images/user-manual/publishing/web/facebook/secure-canvas-url.jpg
+[5]: /images/user-manual/publishing/web/facebook/website-url.jpg
+[6]: /images/user-manual/publishing/web/facebook/icons.jpg
 [7]: /images/user-manual/publishing/web/facebook/app-url.jpg
 

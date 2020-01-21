@@ -1,7 +1,7 @@
----
-title: Lighting
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Lighting
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 照亮一个场景是一个对像素的颜色和阴影的计算过程，场景的渲染基于平面的材质属性以及应用在该材质的光源。

@@ -1,7 +1,7 @@
----
-title: Assets
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Assets
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 资源面板管理了所有的项目中的可用资源。从这个面板可以创建，上传，删除，查看和编辑任何资源。
@@ -48,12 +48,12 @@ position: 6
 
 **RegExp** - It is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
 
-**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
+**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
 Here are some examples:
 
-`[ level-1 ]` - returns all assets that are tagged by `level-1`.
-`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
-`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
+`[ level-1 ]` - returns all assets that are tagged by `level-1`.
+`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
+`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
 `[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
 ## 拖放
@@ -64,8 +64,8 @@ Here are some examples:
 
 此外还可以拖动模型，材质以及 cubemap 资源直接到[视口][3] 中进行应用。
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
+* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
+* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
 * If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
 ## 检查引用
@@ -74,8 +74,8 @@ Here are some examples:
 
 ![未引用的资源][5]
 
-<div class="alert alert-info">
-Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+<div class="alert alert-info">
+Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
 </div>
 
 如果资源被引用了，您可以通过引用内容菜单项检查它们：
@@ -84,11 +84,11 @@ Note that the Editor cannot detect references to assets that are made in code. S
 
 选择参考将把它加载到检查器面板中。
 
-[1]: /images/user-manual/editor/assets-panel.png
-[2]: /user-manual/designer/inspector
-[3]: /user-manual/designer/viewport
-[4]: /user-manual/designer/settings
-[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
-[6]: /images/user-manual/editor/assets-panel/asset-references.png
+[1]: /images/user-manual/editor/assets-panel.png
+[2]: /user-manual/designer/inspector
+[3]: /user-manual/designer/viewport
+[4]: /user-manual/designer/settings
+[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
+[6]: /images/user-manual/editor/assets-panel/asset-references.png
 [7]: /api/pc.AssetRegistry.html#findByTag
 

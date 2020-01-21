@@ -1,7 +1,7 @@
----
-title: Physical Materials
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Physical Materials
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 物理ベースのレンダリングをPlayCanvasで使うためには、物理的マテリアルをどのように設定するか、そして様々なプロパティを変更することによってどのような効果があるかを理解する必要があります。
@@ -42,27 +42,27 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 
 ![Metals][3]
 
-<table class="centered">
-  <tr>
-  <th>Material</th><th>RGB</th>
-  </tr>
-  <tr>
-  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
-  </tr>
+<table class="centered">
+  <tr>
+  <th>Material</th><th>RGB</th>
+  </tr>
+  <tr>
+  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  </tr>
+  <tr>
+  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  </tr>
+  <tr>
+  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  </tr>
 </table>
 
 ## 金属質(Metalness)
 
 金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
 
-<div class="alert-info">
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+<div class="alert-info">
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
 </div>
 
 また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
@@ -87,10 +87,10 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 <iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 
-[1]: http://store.playcanvas.com
-[2]: /user-manual/glossary#hdr
-[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
-[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[1]: http://store.playcanvas.com
+[2]: /user-manual/glossary#hdr
+[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
+[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

@@ -1,10 +1,10 @@
----
-title: Runtime Lightmaps
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Runtime Lightmaps
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
-![Sponza][10]
+![Sponza][10]
 *All the lighting in this scene is provided by lightmap textures*
 
 Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied on materials. This is an efficient way of lighting a scene if much of the light sources and geometry are static or environmental. And produces realistic results.
@@ -15,12 +15,12 @@ PlayCanvas offers a very convenient solution to generating lightmaps. Using the 
 
 The advantages are so:
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of static lights to light your scene
-* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
-* It is possible to mix static and dynamic lights in the Editor
-* Rebaking can be performed at runtime
-* Lightmaps are **HDR**
+* Lighting is not performed at **runtime**
+* It is possible to use hundreds of static lights to light your scene
+* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
+* It is possible to mix static and dynamic lights in the Editor
+* Rebaking can be performed at runtime
+* Lightmaps are **HDR**
 * Not only **Color** but **Direction** data can be baked as well, enabling some specularity on baked surfaces.
 
 The disadvantage of using runtime lightmap generation is that currently we do not support baking global illumination, ambient occlusion or some of the other advanced features of a specialized baking tools.
@@ -57,22 +57,22 @@ The **Shadows: Cast Lightmap** option determines if the model is casting shadows
 
 As you see there several combinations of light settings that can be used. These combinations all have a use-case and by using lights with different combinations you can balance high-quality visuals with performance.
 
-<table>
-<tr>
-    <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
-</tr>
-<tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
-</tr>
-<tr>
-    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting.</td>
-</tr>
-<tr>
-    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
-</tr>
-<tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models.</td>
-</tr>
+<table>
+<tr>
+    <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
+</tr>
+<tr>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
+</tr>
+<tr>
+    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting.</td>
+</tr>
+<tr>
+    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
+</tr>
+<tr>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models.</td>
+</tr>
 </table>
 
 ## Lightmapping Settings
@@ -103,14 +103,14 @@ To fix the warning select the model asset and open the **Pipeline** section. Cli
 
 The **padding** section determines the space between sections when the unwrapping occurs. If you see *"light bleeding"*, where light appears in the lightmaps that shouldn't be there, you can increase the padding to reduce the bleeding.
 
-[1]: /images/user-manual/material-inspector/lightmap.jpg
-[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
-[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
-[4]: /user-manual/graphics/lighting/shadows
-[5]: /images/user-manual/lighting/lightmaps/model-settings.png
-[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
-[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
-[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
-[9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
+[1]: /images/user-manual/material-inspector/lightmap.jpg
+[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
+[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
+[4]: /user-manual/graphics/lighting/shadows
+[5]: /images/user-manual/lighting/lightmaps/model-settings.png
+[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
+[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
+[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
+[9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
 [10]: /images/user-manual/lighting/lightmaps/sponza.jpg
 

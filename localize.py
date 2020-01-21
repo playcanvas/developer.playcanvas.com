@@ -140,7 +140,7 @@ def po_2_md(po_path, out_path):
     if not os.path.exists(dir):
         os.makedirs(dir)
 
-    with open(out_path, 'w') as f:
+    with open(out_path, 'wb') as f:
         for para in ordered:
             msg = para['msgstr'].encode('utf-8')
             if msg:

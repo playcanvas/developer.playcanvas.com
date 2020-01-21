@@ -1,7 +1,7 @@
----
-title: Viewport
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Viewport
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 <img alt="Viewport" width="640" height="480" src="/images/user-manual/viewport.jpg" />
@@ -18,8 +18,8 @@ You can also use the camera menu to select any of the camera Entities in your sc
 
 ## Gizmos
 
-<img src="/images/user-manual/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
 <img src="/images/user-manual/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
 
 The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][1]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Rotate (which is made up of three colored rings) and Scale (with cubes on the ends of the axes).

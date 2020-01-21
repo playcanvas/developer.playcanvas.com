@@ -1,7 +1,7 @@
----
-title: Communication with web pages
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Communication with web pages
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 相对于其他插件或者交叉编译引擎使用PlsyCanvas和WebGL的优势在于对应用程序和周边网站进行直接互动。在这个页面中我们将讨论一些关于链接PlayCanvas应用程序和网页或者网页应用的常见方法。
@@ -14,37 +14,37 @@ position: 4
 
 以下是一个简单的例子展示了从PlayCanvas应用程序到网页端显示API的不同方法。
 
-```javascript
-
-// method one: define a global function to set the score
-window.setScore = function (score) {
-    var app = pc.Application.getApplication();
-    var entity = app.root.findByName("Score Keeper");
-    entity.script.scoreKeeper.setScore(score);
-}
-
-var ScoreKeeper = pc.createScript("scoreKeeper");
-
-ScoreKeeper.prototype.initialize = function (entity) {
-    // method two: define an application event to set the score
-    this.app.on("score:set", function (score) {
-        this.setScore(score);
-    }, this);
-};
-
-ScoreKeeper.prototype.setScore = function (score) {
-    // do the score setting here.
-};
-
-// how to use the API:
-
-// method one:
-window.setScore(10);
-
-// method two:
-var app = pc.Application.getApplication();
-app.fire("score:set", 10);
-
+```javascript
+
+// method one: define a global function to set the score
+window.setScore = function (score) {
+    var app = pc.Application.getApplication();
+    var entity = app.root.findByName("Score Keeper");
+    entity.script.scoreKeeper.setScore(score);
+}
+
+var ScoreKeeper = pc.createScript("scoreKeeper");
+
+ScoreKeeper.prototype.initialize = function (entity) {
+    // method two: define an application event to set the score
+    this.app.on("score:set", function (score) {
+        this.setScore(score);
+    }, this);
+};
+
+ScoreKeeper.prototype.setScore = function (score) {
+    // do the score setting here.
+};
+
+// how to use the API:
+
+// method one:
+window.setScore(10);
+
+// method two:
+var app = pc.Application.getApplication();
+app.fire("score:set", 10);
+
 ```
 
 第一个方法定了一个全局函数，这个函数可以在页面中的任何地方进行调用从而进入到应用程序中。第二个方法定义了一个应用程序事件，在网页中可以对其进行激活这个事件。应用程序监听并且响应这个事件。这两个方法都是有效可行的。
@@ -57,58 +57,58 @@ app.fire("score:set", 10);
 
 在您的主页中
 
-```html
-<iframe id="app-frame" src="https://playcanv.as/p/example/">
-<script>
-var iframe = document.getElementById("app-frame");
-iframe.contentWindow.postMessage({
-    score: 10,
-}, "https://playcanv.as");
-</script>
+```html
+<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<script>
+var iframe = document.getElementById("app-frame");
+iframe.contentWindow.postMessage({
+    score: 10,
+}, "https://playcanv.as");
+</script>
 ```
 
-In your application
-```javascript
-window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // always check message came from your website
-        var score = event.data.score;
-
-        // call API method one:
-        window.setScore(score);
-
-        // call API method two:
-        var app = pc.Application.getApplication();
-        app.fire("score:set", score);
-    }
-}, false);
+In your application
+```javascript
+window.addEventListener("message", function (event) {
+    if (event.origin === "http://example.com") { // always check message came from your website
+        var score = event.data.score;
+
+        // call API method one:
+        window.setScore(score);
+
+        // call API method two:
+        var app = pc.Application.getApplication();
+        app.fire("score:set", score);
+    }
+}, false);
 ```
 
 ### Serve your own HTML
 
 当你下载为自托管服务器下载你的PlayCanvas应用程序时。你的应用程序之中将包含一个index.html文件。
 
-```html
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
-    <script src="playcanvas-stable.min.js"></script>
-    <script>
-        SCENE_PATH = "12346.json";
-        CONTEXT_OPTIONS = {
-            'alpha': false,
-            'preserveDrawingBuffer': false
-        };
-    </script>
-</head>
-<body>
-    <script src="__start__.js"></script>
-    <script src="__loading__.js"></script>
-</body>
-</html>
+```html
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Title</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        SCENE_PATH = "12346.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+    </script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
+</html>
 ```
 
 这个是十分推荐以及有高可能性的，用户将这个网页修改为你的基础网页，并且可以在网页中添加任何额外的内容。
@@ -119,37 +119,37 @@ window.addEventListener("message", function (event) {
 
 比如:
 
-```html
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
-    <script src="playcanvas-stable.min.js"></script>
-    <script>
-        SCENE_PATH = "12346.json";
-        CONTEXT_OPTIONS = {
-            'alpha': false,
-            'preserveDrawingBuffer': false
-        };
-    </script>
-</head>
-<body>
-    <script src="__start__.js"></script>
-    <script src="__loading__.js"></script>
-    <script>
-    var app = pc.Application.getApplication();
-    app.on("start", function () {
-        // get the root of the scene.
-        var hierarchy = app.root.getChildren()[0];
-
-        // do other stuff here
-    });
-    </script>
-</body>
-</html>
+```html
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Title</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        SCENE_PATH = "12346.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+    </script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+    <script>
+    var app = pc.Application.getApplication();
+    app.on("start", function () {
+        // get the root of the scene.
+        var hierarchy = app.root.getChildren()[0];
+
+        // do other stuff here
+    });
+    </script>
+</body>
+</html>
 ```
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage

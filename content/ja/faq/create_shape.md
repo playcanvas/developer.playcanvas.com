@@ -1,6 +1,6 @@
----
-title: Create a shape like a box, sphere etc.
-keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
+---
+title: Create a shape like a box, sphere etc.
+keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
 ---
 
 ## ボックスや球体などのような形を作るには？

@@ -1,8 +1,8 @@
----
-title: Creating a Music Visualizer
-template: tutorial-page.tmpl.html
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
+---
+title: Creating a Music Visualizer
+template: tutorial-page.tmpl.html
+tags: audio
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
@@ -15,34 +15,34 @@ Our music visualizer consists of two scripts. The analyser, plays the audio and 
 
 ## The Analyser
 
-```javascript
-var Analyser = pc.createScript('analyser');
-
-Analyser.attributes.add('fftsize', {
-    type: 'number'
-});
-
-// initialize code called once per entity
-Analyser.prototype.initialize = function() {
-    var context = this.app.systems.sound.context;
-
-    // create analyser node and set up
-    this.analyser = context.createAnalyser();
-    this.analyser.smoothingTimeConstant = 0.6;
-    this.analyser.fftSize = this.fftsize;
-
-    this.freqData = new Float32Array(this.fftsize/2);
-    this.timeData = new Float32Array(this.fftsize/2);
-
-    var slot = this.entity.sound.slot("track");
-    slot.setExternalNodes(this.analyser);
-};
-
-// update code called every frame
-Analyser.prototype.update = function(dt) {
-    this.analyser.getFloatFrequencyData(this.freqData);
-    this.analyser.getFloatTimeDomainData(this.timeData);
-};
+```javascript
+var Analyser = pc.createScript('analyser');
+
+Analyser.attributes.add('fftsize', {
+    type: 'number'
+});
+
+// initialize code called once per entity
+Analyser.prototype.initialize = function() {
+    var context = this.app.systems.sound.context;
+
+    // create analyser node and set up
+    this.analyser = context.createAnalyser();
+    this.analyser.smoothingTimeConstant = 0.6;
+    this.analyser.fftSize = this.fftsize;
+
+    this.freqData = new Float32Array(this.fftsize/2);
+    this.timeData = new Float32Array(this.fftsize/2);
+
+    var slot = this.entity.sound.slot("track");
+    slot.setExternalNodes(this.analyser);
+};
+
+// update code called every frame
+Analyser.prototype.update = function(dt) {
+    this.analyser.getFloatFrequencyData(this.freqData);
+    this.analyser.getFloatTimeDomainData(this.timeData);
+};
 ```
 
 Let's take a closer look at the code here.
@@ -57,68 +57,68 @@ Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData
 
 ## The Visualizer
 
-```javascript
-var Visualizer = pc.createScript('visualizer');
-
-Visualizer.attributes.add('analyser', {
-    type: 'entity'
-});
-
-Visualizer.attributes.add('freqcolor', {
-    type: 'rgba'
-});
-
-Visualizer.attributes.add('timecolor', {
-    type: 'rgba'
-});
-
-Visualizer.attributes.add('heightScale', {
-    type: 'number',
-    default: 1
-});
-
-// initialize code called once per entity
-Visualizer.prototype.initialize = function() {
-    this.lines = [];
-    var count = this.analyser.script.analyser.fftsize;
-    for (var i = 0; i < count; i++) {
-        this.lines.push(new pc.Vec3());
-    }
-
-    this.yScale = 1;
-    this.xScale = 0.10 * 2048 / count;
-
-    this.minDb = this.analyser.script.analyser.analyser.minDecibels;
-    this.maxDb = this.analyser.script.analyser.analyser.maxDecibels;
-    this.freqScale = 1 / (this.maxDb - this.minDb);
-    this.freqOffset = this.minDb;
-};
-
-// update code called every frame
-Visualizer.prototype.update = function(dt) {
-    this.freqScale = 1 / (this.maxDb - this.minDb);
-    this.freqOffset = this.minDb;
-
-    this.renderData(this.analyser.script.analyser.freqData, this.freqcolor, this.freqScale, this.freqOffset);
-    this.renderData(this.analyser.script.analyser.timeData, this.timecolor, 0.5, 0);
-};
-
-
-Visualizer.prototype.renderData = function (data, color, scale, offset) {
-    var line = 0;
-    for (var i = 0; i < data.length; i++) {
-        if (line < this.lines.length) {
-            var h1 = scale * (data[i] - offset);
-            var h2 = scale * (data[i+1] - offset);
-
-            this.lines[line].set(i * this.xScale, this.heightScale*h1, 0);
-            this.lines[line+1].set((i+1) * this.xScale, this.heightScale*h2, 0);
-
-            line += 2;
-        }
-    }
-    this.app.renderLines(this.lines, color);
-};
+```javascript
+var Visualizer = pc.createScript('visualizer');
+
+Visualizer.attributes.add('analyser', {
+    type: 'entity'
+});
+
+Visualizer.attributes.add('freqcolor', {
+    type: 'rgba'
+});
+
+Visualizer.attributes.add('timecolor', {
+    type: 'rgba'
+});
+
+Visualizer.attributes.add('heightScale', {
+    type: 'number',
+    default: 1
+});
+
+// initialize code called once per entity
+Visualizer.prototype.initialize = function() {
+    this.lines = [];
+    var count = this.analyser.script.analyser.fftsize;
+    for (var i = 0; i < count; i++) {
+        this.lines.push(new pc.Vec3());
+    }
+
+    this.yScale = 1;
+    this.xScale = 0.10 * 2048 / count;
+
+    this.minDb = this.analyser.script.analyser.analyser.minDecibels;
+    this.maxDb = this.analyser.script.analyser.analyser.maxDecibels;
+    this.freqScale = 1 / (this.maxDb - this.minDb);
+    this.freqOffset = this.minDb;
+};
+
+// update code called every frame
+Visualizer.prototype.update = function(dt) {
+    this.freqScale = 1 / (this.maxDb - this.minDb);
+    this.freqOffset = this.minDb;
+
+    this.renderData(this.analyser.script.analyser.freqData, this.freqcolor, this.freqScale, this.freqOffset);
+    this.renderData(this.analyser.script.analyser.timeData, this.timecolor, 0.5, 0);
+};
+
+
+Visualizer.prototype.renderData = function (data, color, scale, offset) {
+    var line = 0;
+    for (var i = 0; i < data.length; i++) {
+        if (line < this.lines.length) {
+            var h1 = scale * (data[i] - offset);
+            var h2 = scale * (data[i+1] - offset);
+
+            this.lines[line].set(i * this.xScale, this.heightScale*h1, 0);
+            this.lines[line+1].set((i+1) * this.xScale, this.heightScale*h2, 0);
+
+            line += 2;
+        }
+    }
+    this.app.renderLines(this.lines, color);
+};
 ```
 
 The visualizer script takes all the data from the analyser and renders it as line graph using the [`this.app.renderLines`][4] API.
@@ -133,8 +133,8 @@ In our update loop we render the graphs for both the Frequency Data and the Time
 
 This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to soundcloud and let users pick tracks? There are loads of possibilities.
 
-[1]: https://playcanvas.com/project/405891
-[2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
-[3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
+[1]: https://playcanvas.com/project/405891
+[2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
+[3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
 [4]: http://developer.playcanvas.com/en/api/pc.Application.html#renderLines
 

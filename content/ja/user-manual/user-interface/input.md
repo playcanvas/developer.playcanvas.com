@@ -1,7 +1,7 @@
----
-title: Input
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Input
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 ユーザは、Elementコンポーネントの `useInput`フィールドを有効にすることで、[Element][1]コンポーネントとインタラクトできます：
@@ -10,15 +10,15 @@ position: 8
 
 また、動作させるためには `pc.Application#elementInput`に`pc.ElementInput`のインスタンスを初期化しなければなりません。Editorを使用している場合は自動的に作成されます。Engineを使用している場合は、次のように、`pc.Mouse`や`pc.TouchDevice`のような他の入力デバイスの*前に*インスタンスを作成してください：
 
-```javascript
-var app = new pc.Application(canvas, {
-    elementInput: new pc.ElementInput(canvas),
-    mouse: new pc.Mouse(canvas),
-    touch: !!('ontouchstart' in window) ? new pc.TouchDevice(canvas) : null,
-    keyboard: new pc.Keyboard(window),
-    gamepads: new pc.GamePads(),
-    ...
-});
+```javascript
+var app = new pc.Application(canvas, {
+    elementInput: new pc.ElementInput(canvas),
+    mouse: new pc.Mouse(canvas),
+    touch: !!('ontouchstart' in window) ? new pc.TouchDevice(canvas) : null,
+    keyboard: new pc.Keyboard(window),
+    gamepads: new pc.GamePads(),
+    ...
+});
 ```
 
 ## イベント入力
@@ -73,42 +73,42 @@ Elementコンポーネントで入力を有効にすると、次のイベント�
 
 入力イベントを処理するには、Elementコンポーネントでリッスンします。
 
-```javascript
-this.entity.element.on('click', function (event) {
-    console.log('The element ' + event.element.entity.name + ' was clicked.');
-}, this);
+```javascript
+this.entity.element.on('click', function (event) {
+    console.log('The element ' + event.element.entity.name + ' was clicked.');
+}, this);
 ```
 
 ## イベントバブリング
 
 Elementコンポーネントで入力イベントが発生すると、 `event.stopPropagation()`を呼び出さない限り、親要素にバブルアップします。 例えば：
 
-```javascript
-this.entity.element.on('click', function (event) {
-    // stop bubbling
-    event.stopPropagation();
-
-    console.log('The element ' + event.element.entity.name + ' was clicked.');
-}, this);
+```javascript
+this.entity.element.on('click', function (event) {
+    // stop bubbling
+    event.stopPropagation();
+
+    console.log('The element ' + event.element.entity.name + ' was clicked.');
+}, this);
 ```
 
 `stopPropagation`を呼び出すと、イベントが` pc.Mouse`や `pc.TouchDevice`のような他の入力デバイスによって処理されなくなります。たとえば、`app.mouse.wasPressed`を使ってマウス入力を処理している場合、`mousedown`イベントで `stopPropagation`を呼び出して`app.mouse.wasPressed`がtrueを返さないようにします。 例えば：
 
-```javascript
-initialize: function () {
-    this.entity.element.on('mousedown', function (evt) {
-        evt.stopPropagation();
-    }, this);
-},
-
-update: function (dt) {
-    if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
-        // do something when the left button was pressed.
-        // this will not be called if the button was pressed on the Element
-        // because we call stopPropagation
-    }
-}
-```
+```javascript
+initialize: function () {
+    this.entity.element.on('mousedown', function (evt) {
+        evt.stopPropagation();
+    }, this);
+},
+
+update: function (dt) {
+    if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
+        // do something when the left button was pressed.
+        // this will not be called if the button was pressed on the Element
+        // because we call stopPropagation
+    }
+}
+```
 ## Mouse and Touch event conflict on Google Chrome
 
 Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behavior. For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
@@ -117,22 +117,22 @@ To prevent this behavior you can call the ```preventDefault()``` method of the n
 
 Here is small script to include once in your scene:
 
- ```javascript
+ ```javascript
 var TouchFix = pc.createScript('touchFix');
 
-// initialize code called once per entity
-TouchFix.prototype.initialize = function() {
-    // Only register touch events if the device supports touch
-    var touch = this.app.touch;
-    if (touch) {
-        touch.on(pc.EVENT_TOUCHEND, function(event) {
-            // This prevents that a mouse click event will be executed after a touch event.
-            event.event.preventDefault();
-        });
-    }
-};
-```
-
-[1]: /user-manual/packs/components/element/
+// initialize code called once per entity
+TouchFix.prototype.initialize = function() {
+    // Only register touch events if the device supports touch
+    var touch = this.app.touch;
+    if (touch) {
+        touch.on(pc.EVENT_TOUCHEND, function(event) {
+            // This prevents that a mouse click event will be executed after a touch event.
+            event.event.preventDefault();
+        });
+    }
+};
+```
+
+[1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/use-input.png
 

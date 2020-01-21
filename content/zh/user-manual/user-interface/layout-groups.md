@@ -1,7 +1,7 @@
----
-title: Layout Groups
-template: usermanual-page.tmpl.html
-position: 7
+---
+title: Layout Groups
+template: usermanual-page.tmpl.html
+position: 7
 ---
 
 The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all it's direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
@@ -44,14 +44,14 @@ A value of **None** will apply no fitting.
 
 A value of **Stretch** will stretch the children to fill the width or height of the container using the following procedure:
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
+* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
+* Apply the natural width/height for each child.
 * If there is space remaining in the container, distribute it to each child based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the maxWidth/maxHeight of each child.
 
 A value of **Shrink** will shrink the children to fit the container using the following procedure:
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
+* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
+* Apply the natural width/height for each child.
 * If the new total width/height of all children exceeds the available space of the container, reduce each child's width/height proportionally based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the minWidth/minHeight of each child.
 
 A value of **Both** will apply both **Stretch** and **Shrink**.
@@ -96,17 +96,17 @@ This row of buttons is laid out using a Layout Group with the Wrap setting enabl
 
 ![Setup][7]
 
-[1]: /images/user-manual/user-interface/layout-groups/create-layout-group.jpg
-[2]: /images/user-manual/user-interface/layout-groups/leaderboard.jpg
-[3]: /images/user-manual/user-interface/layout-groups/leaderboard-setup.jpg
-[4]: /images/user-manual/user-interface/layout-groups/horizontal-layout.jpg
-[5]: /images/user-manual/user-interface/layout-groups/horizontal-setup.jpg
-[6]: /images/user-manual/user-interface/layout-groups/grid-layout.jpg
-[7]: /images/user-manual/user-interface/layout-groups/grid-setup.jpg
-[8]: /images/user-manual/user-interface/layout-groups/layout-child-max-width.jpg
+[1]: /images/user-manual/user-interface/layout-groups/create-layout-group.jpg
+[2]: /images/user-manual/user-interface/layout-groups/leaderboard.jpg
+[3]: /images/user-manual/user-interface/layout-groups/leaderboard-setup.jpg
+[4]: /images/user-manual/user-interface/layout-groups/horizontal-layout.jpg
+[5]: /images/user-manual/user-interface/layout-groups/horizontal-setup.jpg
+[6]: /images/user-manual/user-interface/layout-groups/grid-layout.jpg
+[7]: /images/user-manual/user-interface/layout-groups/grid-setup.jpg
+[8]: /images/user-manual/user-interface/layout-groups/layout-child-max-width.jpg
 [9]: /images/user-manual/user-interface/layout-groups/layout-child-setup.jpg
 
-[10]: /user-manual/user-interface/layout-groups#grid
-[11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
+[10]: /user-manual/user-interface/layout-groups#grid
+[11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
 [12]: /user-manual/user-interface/layout-groups#horizontal-buttons
 

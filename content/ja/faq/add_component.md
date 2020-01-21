@@ -1,6 +1,6 @@
----
-title: Add a component
-keywords: entity, add, component, behaviour
+---
+title: Add a component
+keywords: entity, add, component, behaviour
 ---
 
 ## コンポーネントを追加するには？

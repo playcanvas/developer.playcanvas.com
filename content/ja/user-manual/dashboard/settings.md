@@ -1,7 +1,7 @@
----
-title: Settings
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Settings
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 設定ダッシュボードではプロジェクトの設定が行えます。
@@ -22,8 +22,8 @@ position: 3
 
 プライベートプロジェクトは読み込み、書き込み、adminアクセスを明示的に与えられたユーザーにしか表示されません。
 
-<div class="alert alert-info">
-Only users with premium accounts can access private projects
+<div class="alert alert-info">
+Only users with premium accounts can access private projects
 </div>
 
 ## チーム

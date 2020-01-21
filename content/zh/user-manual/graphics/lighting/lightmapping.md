@@ -1,10 +1,10 @@
----
-title: Lightmapping
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Lightmapping
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
-[![PlayCanvas Lightmapping][1]][13]
+[![PlayCanvas Lightmapping][1]][13]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
 Here is the link to [final scene][13] and [project][14] that uses these techniques to achieve results in image above: External HDR Lightmaps (described in this page below), [Ambient Occlusion][12] and HDR Cubemap applied using Box Projection using [Image Based Lighting][11] technique to achieve realistic reflections.
@@ -35,7 +35,7 @@ In 3ds Max this option (Enable Gamma/LUT Correction) should be disabled and can 
 
 ![3ds Max > Preferences > Linear Space][2]
 
-Then make sure Color Mapping is updated. It can be found in Render Settings (F10, or from Render to Texture window). Output should not be clamped, and not post-processed (Mode option), Linear Multiply should be used for linear color space.
+Then make sure Color Mapping is updated. It can be found in Render Settings (F10, or from Render to Texture window). Output should not be clamped, and not post-processed (Mode option), Linear Multiply should be used for linear color space.
 Here is a screenshot of what options should be set to what values, click the "Default" button to expand settings to "Expert":
 
 ![3D's Max > Render Settings][3]
@@ -44,17 +44,17 @@ Here is a screenshot of what options should be set to what values, click the "De
 
 In order to apply a lightmap texture on geometry we need to unwrap it first. Here are some practices that will help you to get good lightmap friendly UV's.
 
-### **Simple Geometry**
+### **Simple Geometry**
 A smaller area of geomtry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
 
 ![Lighmapping Tips: Simple Geometry][4]
 
-### **Consistent Texel Size**
+### **Consistent Texel Size**
 Keep texels in UV unstretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close or in the far distance as required by artistic and optimization decisions.
 
 ![Lighmapping Tips: UV Consistent Texel Size][5]
 
-### **Non-overlapping UV**
+### **Non-overlapping UV**
 Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store it's own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
 
 ![Lighmapping Tips: Non-overlapping UV][6]
@@ -63,10 +63,10 @@ Triangles in UV should not overlap to ensure each pixel has a unique position in
 
 To get good lightmap results we need to ensure that rendering is based only on data that is relevant to light propagation and not to the point of view of camera during rendering.
 
-1. **Disable normal maps** on materials - micro surface details are too tiny to be relevant in lightmap textures.
-2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and complications for renderers, leading to visual artifacts. Generally lightmaps should contain only diffuse lighting and reflectivity should be implemented using some runtime technique.
-4. **Very dark materials won't produce good results** as they do not reflect light much and so will not assist Global Illumination.
-5. In the Render To Texture window (see below) set **Padding** to larger value.
+1. **Disable normal maps** on materials - micro surface details are too tiny to be relevant in lightmap textures.
+2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and complications for renderers, leading to visual artifacts. Generally lightmaps should contain only diffuse lighting and reflectivity should be implemented using some runtime technique.
+4. **Very dark materials won't produce good results** as they do not reflect light much and so will not assist Global Illumination.
+5. In the Render To Texture window (see below) set **Padding** to larger value.
 6. **Light can leak** from behind the geometry, add blocking geometry to prevent light.
 
 ![Lighmapping Light Leaking][8]
@@ -97,19 +97,19 @@ Gamma Correction, Tonemapping and Exposure - are good settings that you will wan
 
 You can [explore the example][13] that uses the techniques described above and it's [project][14].
 
-[0]: /user-manual/graphics/lighting/runtime-lightmaps/
-[1]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
-[2]: /images/user-manual/lighting/lightmaps/3ds-max-preferences.png
-[3]: /images/user-manual/lighting/lightmaps/3ds-max-render-settings-color-mapping.png
-[4]: /images/user-manual/lighting/lightmaps/uv-geometry.jpg
-[5]: /images/user-manual/lighting/lightmaps/uv-consistency.jpg
-[6]: /images/user-manual/lighting/lightmaps/uv-overlapping.jpg
-[7]: /images/user-manual/lighting/lightmaps/3ds-max-render-to-texture-window.png
-[8]: /images/user-manual/lighting/lightmaps/lightmapping-light-leak.jpg
-[9]: /images/user-manual/lighting/lightmaps/lightmapping-surface-blur.jpg
-[10]: /images/user-manual/lighting/lightmaps/lightmapping-material-slot.png
-[11]: /user-manual/graphics/physical-rendering/image-based-lighting/
-[12]: /user-manual/graphics/lighting/ambient-occlusion/
-[13]: https://playcanv.as/p/zdkARz26/
+[0]: /user-manual/graphics/lighting/runtime-lightmaps/
+[1]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
+[2]: /images/user-manual/lighting/lightmaps/3ds-max-preferences.png
+[3]: /images/user-manual/lighting/lightmaps/3ds-max-render-settings-color-mapping.png
+[4]: /images/user-manual/lighting/lightmaps/uv-geometry.jpg
+[5]: /images/user-manual/lighting/lightmaps/uv-consistency.jpg
+[6]: /images/user-manual/lighting/lightmaps/uv-overlapping.jpg
+[7]: /images/user-manual/lighting/lightmaps/3ds-max-render-to-texture-window.png
+[8]: /images/user-manual/lighting/lightmaps/lightmapping-light-leak.jpg
+[9]: /images/user-manual/lighting/lightmaps/lightmapping-surface-blur.jpg
+[10]: /images/user-manual/lighting/lightmaps/lightmapping-material-slot.png
+[11]: /user-manual/graphics/physical-rendering/image-based-lighting/
+[12]: /user-manual/graphics/lighting/ambient-occlusion/
+[13]: https://playcanv.as/p/zdkARz26/
 [14]: https://playcanvas.com/project/446587/overview/archviz-example
 

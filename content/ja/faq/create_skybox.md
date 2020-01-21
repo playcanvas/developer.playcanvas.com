@@ -1,6 +1,6 @@
----
-title: Create a skybox
-keywords: skybox, cubemap, create, asset, pbr, physical
+---
+title: Create a skybox
+keywords: skybox, cubemap, create, asset, pbr, physical
 ---
 
 ## スカイボックスを作成するには？

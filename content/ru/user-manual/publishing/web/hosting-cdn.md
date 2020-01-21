@@ -1,7 +1,7 @@
----
-title: Hosting using a CDN
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Hosting using a CDN
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 When deploying your PlayCanvas application for self-hosting it is often necessary to separate the location your application is served from (the index.html) from the assets that the application loads. For example, a Content Delivery Network (CDN) is used to make sure that assets are delivered from a server that is geographically close to the user's computer. This makes your application load much more quickly. This guide will show you how to configure your PlayCanvas application to use a separate location for your assets.
@@ -40,9 +40,9 @@ Your application is now ready to load files from a separate server. The final st
 
 Setting up CORS is different depending on which CDN or server you are using. You will need to check the documentation of your server or CDN provider to find out how to set up CORS header. For example, the page for Amazon Web Services CORS settings is [here][5]
 
-[1]: /user-manual/publishing/web/self-hosting
-[2]: /images/user-manual/publishing/web/cdn-index.jpg
-[3]: /images/user-manual/publishing/web/cdn-more.jpg
-[4]: /images/user-manual/publishing/web/cdn-files.jpg
+[1]: /user-manual/publishing/web/self-hosting
+[2]: /images/user-manual/publishing/web/cdn-index.jpg
+[3]: /images/user-manual/publishing/web/cdn-more.jpg
+[4]: /images/user-manual/publishing/web/cdn-files.jpg
 [5]: http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
 

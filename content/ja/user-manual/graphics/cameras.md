@@ -1,7 +1,7 @@
----
-title: Cameras
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Cameras
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 カメラは画面にシーンをレンダリングします。何かを見るためにはシーンに少なくとも1つのカメラを設置する必要があります。PlayCanvasで新しいシーンを作成すると、自動的に単一のカメラが取り込まれます(指向性ライトと共に)。
@@ -38,10 +38,10 @@ Editorの3Dビューでは、選択されていないカメラが次のアイコ
 
 ![垂直の画面分割][6]
 
-[1]: /images/user-manual/graphics/cameras/camera_icon.png
-[2]: /images/user-manual/graphics/cameras/camera_create.png
-[3]: /images/user-manual/graphics/cameras/camera_orthographic.png
-[4]: /images/user-manual/graphics/cameras/camera_perspective.png
-[5]: /images/user-manual/graphics/cameras/camera_horizontal_splitscreen.png
+[1]: /images/user-manual/graphics/cameras/camera_icon.png
+[2]: /images/user-manual/graphics/cameras/camera_create.png
+[3]: /images/user-manual/graphics/cameras/camera_orthographic.png
+[4]: /images/user-manual/graphics/cameras/camera_perspective.png
+[5]: /images/user-manual/graphics/cameras/camera_horizontal_splitscreen.png
 [6]: /images/user-manual/graphics/cameras/camera_vertical_splitscreen.png
 

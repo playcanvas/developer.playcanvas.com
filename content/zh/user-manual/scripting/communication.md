@@ -1,15 +1,15 @@
----
-title: Communication
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Communication
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 事件是一种有效的方法来进行脚本和脚本之间的通信为了响应某些事件而不用检查每个帧。
 
 PlayCanvas引擎包含了一个简单的方法添加事件到任意对象：
 
-```javascript
-pc.events.attach(object);
+```javascript
+pc.events.attach(object);
 ```
 
 这将会添加以下几种方法到对象： `on()`, `off()`, `fire()` and `hasEvent()` 。这就意味着用户可以响应对象所触发的事件。
@@ -20,38 +20,38 @@ pc.events.attach(object);
 
 通过`fire()`来触发一个事件。在这个例子中，名为player的脚本在每个帧都触发了`move` 事件，X和Y值作为参数传递。
 
-```javascript
-var Player = pc.createScript('player');
-
-Player.prototype.update = function (dt) {
-    var x = 1;
-    var y = 1;
-    this.fire('move', x, y);
-};
+```javascript
+var Player = pc.createScript('player');
+
+Player.prototype.update = function (dt) {
+    var x = 1;
+    var y = 1;
+    this.fire('move', x, y);
+};
 ```
 
 通过`on()` 和 `off()`监听事件的触发。在这个例子中，名为DIsplay的脚本监听了在Player上的`move` 事件并且显示X和Y的值。
 
-```javascript
-var Display = pc.createScript('display');
-
-// set up an entity reference for the player entity
-Display.attributes.add('playerEntity', { type: 'entity' });
-
-Display.prototype.initialize = function () {
-    // method to call when player moves
-    var onPlayerMove = function(x, y) {
-        console.log(x, y);
-    };
-    
-    // listen for the player move event
-    this.playerEntity.script.player.on('move', onPlayerMove);
-    
-    // remove player move event listeners when script destroyed
-    this.playerEntity.script.player.on('destroy', function() {
-        this.playerEntity.script.player.app.off('move', onPlayerMove);
-    });
-};
+```javascript
+var Display = pc.createScript('display');
+
+// set up an entity reference for the player entity
+Display.attributes.add('playerEntity', { type: 'entity' });
+
+Display.prototype.initialize = function () {
+    // method to call when player moves
+    var onPlayerMove = function(x, y) {
+        console.log(x, y);
+    };
+    
+    // listen for the player move event
+    this.playerEntity.script.player.on('move', onPlayerMove);
+    
+    // remove player move event listeners when script destroyed
+    this.playerEntity.script.player.on('destroy', function() {
+        this.playerEntity.script.player.app.off('move', onPlayerMove);
+    });
+};
 ```
 
 ## 应用事件
@@ -64,35 +64,35 @@ PlayCanvas提供了一个方便而又强大的方法来对实体和实体之间�
 
 触发 `player:move` 事件。
 
-```javascript
-var Player = pc.createScript('player');
-
-Player.prototype.update = function (dt) {
-    var x = 1;
-    var y = 1;
-    this.app.fire('player:move', x, y);
-};
+```javascript
+var Player = pc.createScript('player');
+
+Player.prototype.update = function (dt) {
+    var x = 1;
+    var y = 1;
+    this.app.fire('player:move', x, y);
+};
 ```
 
 监听 `player:move` 事件。
 
-```javascript
-var Display = pc.createScript('display');
-
-Display.prototype.initialize = function () {
-    // method to call when player moves
-    var onPlayerMove = function(x, y) {
-        console.log(x, y);
-    };
-    
-    // listen for the player:move event
-    this.app.on('player:move', onPlayerMove);
-    
-    // remove player:move event listeners when script destroyed
-    this.on('destroy', function() {
-        this.app.off('player:move', onPlayerMove);
-    });
-};
+```javascript
+var Display = pc.createScript('display');
+
+Display.prototype.initialize = function () {
+    // method to call when player moves
+    var onPlayerMove = function(x, y) {
+        console.log(x, y);
+    };
+    
+    // listen for the player:move event
+    this.app.on('player:move', onPlayerMove);
+    
+    // remove player:move event listeners when script destroyed
+    this.on('destroy', function() {
+        this.app.off('player:move', onPlayerMove);
+    });
+};
 ```
 
 就如您所见，这有效的减少了代码设置帮助代码看起来更清晰。

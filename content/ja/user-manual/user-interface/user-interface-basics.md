@@ -1,7 +1,7 @@
----
-title: User Interface Basics
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: User Interface Basics
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 PlayCanvasではユーザインタフェースは2つの要素から構築されています。[Screen Component][1]はすべてのユーザインターフェース要素を含む領域を記述し、[Element Components][2]を持つ複数のエンティティは階層内のScreen Entityの下に添付されます。Screenは、ユーザインタフェースの領域とそれがどのようにレンダリングされるかを(2Dまたは3D世界で)定義します。Elementsはインタフェースの画像とテキストコンポーネントを構成します。
@@ -28,10 +28,10 @@ UI要素の入力を処理する別の方法があります。`pc.ElementInput`�
 
 PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
 
-[1]: /user-manual/user-interface/screens
-[2]: /user-manual/user-interface/elements
-[3]: /user-manual/user-interface/elements
-[4]: /user-manual/user-interface/input
-[5]: /user-manual/2D/9-slicing
+[1]: /user-manual/user-interface/screens
+[2]: /user-manual/user-interface/elements
+[3]: /user-manual/user-interface/elements
+[4]: /user-manual/user-interface/input
+[5]: /user-manual/2D/9-slicing
 [6]: /user-manual/user-interface/localization
 

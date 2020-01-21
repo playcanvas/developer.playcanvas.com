@@ -1,7 +1,7 @@
----
-title: Managing Organizations
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Managing Organizations
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 ### 許可
@@ -28,8 +28,8 @@ position: 3
 
 Organization（組織）の所有者はここから組織を削除することができます。これによりアカウントとその全てのプロジェクトを削除します。この動作は取り消せません。
 
-[1]: /images/user-manual/organizations/permissions.png "Permissions"
-[2]: /images/user-manual/organizations/seats.png "Seats"
-[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
+[1]: /images/user-manual/organizations/permissions.png "Permissions"
+[2]: /images/user-manual/organizations/seats.png "Seats"
+[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
 [4]: /images/user-manual/organizations/delete.png "Delete"
 

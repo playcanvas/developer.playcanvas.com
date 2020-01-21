@@ -1,7 +1,7 @@
----
-title: Materials
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Materials
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 3Dモデルの全ての表面は素材を使ってレンダリングされます。素材は、その表面の色、光沢、平滑度などのプロパティを定義します。
@@ -104,6 +104,6 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 一部のマップは、単一のグレースケール値を必要とします。例：0.0 - >1.0。この場合、使用するテクスチャのチャンネルを選択することが可能です。** RGB**は、3つすべてのチャネルが使用されることを意味します。**R**, **G** または **B**は、赤、緑、青のチャンネルのみが使用されることを意味します。
 
-[1]: /user-manual/assets/physical-material
+[1]: /user-manual/assets/physical-material
 [2]: /user-manual/assets/phong-material
 

@@ -1,8 +1,8 @@
----
-title: Light Halos
-template: tutorial-page.tmpl.html
-tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
+---
+title: Light Halos
+template: tutorial-page.tmpl.html
+tags: lighting
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
@@ -41,90 +41,90 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 首先，我们每帧更新光晕实体使其面对相机。
 
-```javascript
-// Set the glow to always face the camera
-this.entity.lookAt(this.camera.getPosition());
+```javascript
+// Set the glow to always face the camera
+this.entity.lookAt(this.camera.getPosition());
 ```
 
 第二，如果光晕被标记为“单向的”(具有我们暴露的脚本属性)，则我们修改不透明度，可以使得光晕在面向远离相机时不可见。 事实上，我们是在慢速修改不透明度，在它越远离相机时使它变得更透明。
 
-```javascript
-// If enabled, unidirectional means the glow fades off as it turns away from the camera
-if (this.unidirectional) {
-    // Get the dot product of the parent direction and the camera direction
-    var dot = -1 * tmp.dot(this.camera.forward);
-    // If the dot product is less that 0 the glow is facing away from the camera
-    if (dot < 0) {
-        dot = 0;
-    }
-
-    // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
-    meshes[0].setParameter("material_opacity", dot);
-} else {
-    // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
-    meshes[0].setParameter("material_opacity", 1);
-}
+```javascript
+// If enabled, unidirectional means the glow fades off as it turns away from the camera
+if (this.unidirectional) {
+    // Get the dot product of the parent direction and the camera direction
+    var dot = -1 * tmp.dot(this.camera.forward);
+    // If the dot product is less that 0 the glow is facing away from the camera
+    if (dot < 0) {
+        dot = 0;
+    }
+
+    // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
+    meshes[0].setParameter("material_opacity", dot);
+} else {
+    // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
+    meshes[0].setParameter("material_opacity", 1);
+}
 ```
 
 我们在[pc.MeshInstance] [5]上使用`setParameter`方法来设置要使用的片段着色器的值。 这是引擎中目前未提供的功能(您无法在开发人员文件的连结中找到)。 这是因为它依赖于知道着色器中的统一变量的名称。 这些值是可能会更改的，并且此API可能会在将来更改。 但这点其实非常有用，因为它让你在一个着色器中为一个网格物体实例覆盖一个值。 在这种情况下，它是重要的，因为所有的发光使用相同的材料，但我们将需要每个发光的实例的不透明度值不同。
 
 这里是完整的列表：
 
-```javascript
-var Halo = pc.createScript('halo');
-
-Halo.attributes.add('camera', {type: 'entity'});
-Halo.attributes.add('unidirectional', {type: 'boolean', default: false});
-
-Halo.tmp = new pc.Vec3();
-
-// initialize code called once per entity
-Halo.prototype.initialize = function() {
-    // Get the Entity with the plane model on it
-    this.plane = this.entity.getChildren()[0];
-
-    // Get the parent entity which is used for direction
-    this.parent = this.entity.getParent();
-};
-
-// update code called every frame
-Halo.prototype.update = function(dt) {
-    var tmp = Halo.tmp;
-
-    // Store the vector the parent is facing (note forwards is negative z)
-    tmp.copy(this.parent.forward).scale(-1);
-
-    var meshes = this.plane.model.meshInstances;
-
-    if (this.camera) {
-
-        // Set the glow to always face the camera
-        this.entity.lookAt(this.camera.getPosition());
-
-        // If enabled, unidirectional means the glow fades off as it turns away from the camera
-        if (this.unidirectional) {
-            // Get the dot product of the parent direction and the camera direction
-            var dot = -1 * tmp.dot(this.camera.forward);
-            // If the dot product is less that 0 the glow is facing away from the camera
-            if (dot < 0) {
-                dot = 0;
-            }
-
-            // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
-            meshes[0].setParameter("material_opacity", dot);
-        } else {
-            // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
-            meshes[0].setParameter("material_opacity", 1);
-        }
-    }
-};
+```javascript
+var Halo = pc.createScript('halo');
+
+Halo.attributes.add('camera', {type: 'entity'});
+Halo.attributes.add('unidirectional', {type: 'boolean', default: false});
+
+Halo.tmp = new pc.Vec3();
+
+// initialize code called once per entity
+Halo.prototype.initialize = function() {
+    // Get the Entity with the plane model on it
+    this.plane = this.entity.getChildren()[0];
+
+    // Get the parent entity which is used for direction
+    this.parent = this.entity.getParent();
+};
+
+// update code called every frame
+Halo.prototype.update = function(dt) {
+    var tmp = Halo.tmp;
+
+    // Store the vector the parent is facing (note forwards is negative z)
+    tmp.copy(this.parent.forward).scale(-1);
+
+    var meshes = this.plane.model.meshInstances;
+
+    if (this.camera) {
+
+        // Set the glow to always face the camera
+        this.entity.lookAt(this.camera.getPosition());
+
+        // If enabled, unidirectional means the glow fades off as it turns away from the camera
+        if (this.unidirectional) {
+            // Get the dot product of the parent direction and the camera direction
+            var dot = -1 * tmp.dot(this.camera.forward);
+            // If the dot product is less that 0 the glow is facing away from the camera
+            if (dot < 0) {
+                dot = 0;
+            }
+
+            // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
+            meshes[0].setParameter("material_opacity", dot);
+        } else {
+            // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
+            meshes[0].setParameter("material_opacity", 1);
+        }
+    }
+};
 ```
 
 这就是全部。 一个简单但漂亮的效果已经被添加到你的场景了。 有关更多信息，请参阅[工程项目] [4]。
 
-[1]: /images/tutorials/intermediate/light-halos/blob.jpg
-[2]: /images/tutorials/intermediate/light-halos/material.jpg
-[3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
-[4]: https://playcanvas.com/project/406040
+[1]: /images/tutorials/intermediate/light-halos/blob.jpg
+[2]: /images/tutorials/intermediate/light-halos/material.jpg
+[3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
+[4]: https://playcanvas.com/project/406040
 [5]: http://developer.playcanvas.com/en/api/pc.MeshInstance.html
 

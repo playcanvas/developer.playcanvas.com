@@ -1,15 +1,15 @@
----
-title: Lights
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Lights
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 現実の世界の環境は、太陽、街路灯、テレビの画面などの様々な光に照らされています。PlayCanvasシーンでは、現実世界にある光の種類を再現できるよう、複数の種類のライトソースを用意しています。
 
 PlayCanvasには3種類のライトがあります：
 
-* Directional lights
-* Point lights
+* Directional lights
+* Point lights
 * Spot lights
 
 ## 指向性ライト
@@ -60,10 +60,10 @@ PlayCanvasには3種類のライトがあります：
 
 スポットライトは最も消費が高いタイプのライトなので、使用には注意が必要です。
 
-[1]: /images/user-manual/graphics/lights/directional_icon.jpg
-[2]: /images/user-manual/graphics/lights/directional.jpg
-[3]: /images/user-manual/graphics/lights/point_icon.jpg
-[4]: /images/user-manual/graphics/lights/point.jpg
-[5]: /images/user-manual/graphics/lights/spot_icon.jpg
+[1]: /images/user-manual/graphics/lights/directional_icon.jpg
+[2]: /images/user-manual/graphics/lights/directional.jpg
+[3]: /images/user-manual/graphics/lights/point_icon.jpg
+[4]: /images/user-manual/graphics/lights/point.jpg
+[5]: /images/user-manual/graphics/lights/spot_icon.jpg
 [6]: /images/user-manual/graphics/lights/spot.jpg
 

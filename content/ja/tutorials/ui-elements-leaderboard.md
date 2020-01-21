@@ -1,8 +1,8 @@
----
-title: User Interface - Leaderboard
-template: tutorial-page.tmpl.html
-tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
+---
+title: User Interface - Leaderboard
+template: tutorial-page.tmpl.html
+tags: ui
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/nbMbtAGH/"></iframe>
@@ -83,83 +83,83 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 JSONアセットを読み込みリーダーボードを塗りつぶす `leaderboard`スクリプトです：
 
-```javascript
-var Leaderboard = pc.createScript('leaderboard');
-
-// the text entry template to clone
-Leaderboard.attributes.add("template", {type: "entity"});
-// the parent leaderboard for the personal score
-Leaderboard.attributes.add("personal", {type: "entity"});
-// the parent leaderboard for the top ten
-Leaderboard.attributes.add("leaderboard", {type: "entity"});
-
-Leaderboard.prototype.initialize = function() {
-    var self = this;
-
-    this.entries = [];
-
-    this.load(function (data) {
-        self.clear();
-
-        // add the personal entry
-        var y = -75;
-        self.addEntry(self.personal, y, data.personal.position, data.personal.name, data.personal.score);
-
-        // add the top ten
-        y = -60;
-        for (var i = 0; i < Math.min(data.leaderboard.length, 10); i++) {
-            self.addEntry(self.leaderboard, y, i+1, data.leaderboard[i].name, data.leaderboard[i].score);
-            y -= 99; // offset each entry
-        }
-    });
-};
-
-// clear all leaderboard entries
-Leaderboard.prototype.clear = function () {
-    for (var i = 0; i < this.entries.length; i++) {
-        this.entries[i].destroy();
-    }
-
-    this.entries = [];
-};
-
-// add a new entry into the leaderboard
-Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
-    var entry = this.template.clone();
-    entry.enabled = true;
-
-    entry.findByName("Position").element.text = position.toString();
-    entry.findByName("Name").element.text = name.toUpperCase();
-    entry.findByName("Score").element.text = score.toString();
-
-    this.entries.push(entry);
-
-    parent.addChild(entry);
-    entry.translateLocal(0, y, 0);
-};
-
-// Mock loading leaderboard data, for this demo we just get the data from a JSON file in the project
-// For your project you could download this from a server backend
-Leaderboard.prototype.load = function (callback) {
-    var asset = this.app.assets.find("leaderboard-data.json");
-    asset.ready(function () {
-        callback(asset.resource);
-    });
-    this.app.assets.load(asset);
-};
-
+```javascript
+var Leaderboard = pc.createScript('leaderboard');
+
+// the text entry template to clone
+Leaderboard.attributes.add("template", {type: "entity"});
+// the parent leaderboard for the personal score
+Leaderboard.attributes.add("personal", {type: "entity"});
+// the parent leaderboard for the top ten
+Leaderboard.attributes.add("leaderboard", {type: "entity"});
+
+Leaderboard.prototype.initialize = function() {
+    var self = this;
+
+    this.entries = [];
+
+    this.load(function (data) {
+        self.clear();
+
+        // add the personal entry
+        var y = -75;
+        self.addEntry(self.personal, y, data.personal.position, data.personal.name, data.personal.score);
+
+        // add the top ten
+        y = -60;
+        for (var i = 0; i < Math.min(data.leaderboard.length, 10); i++) {
+            self.addEntry(self.leaderboard, y, i+1, data.leaderboard[i].name, data.leaderboard[i].score);
+            y -= 99; // offset each entry
+        }
+    });
+};
+
+// clear all leaderboard entries
+Leaderboard.prototype.clear = function () {
+    for (var i = 0; i < this.entries.length; i++) {
+        this.entries[i].destroy();
+    }
+
+    this.entries = [];
+};
+
+// add a new entry into the leaderboard
+Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
+    var entry = this.template.clone();
+    entry.enabled = true;
+
+    entry.findByName("Position").element.text = position.toString();
+    entry.findByName("Name").element.text = name.toUpperCase();
+    entry.findByName("Score").element.text = score.toString();
+
+    this.entries.push(entry);
+
+    parent.addChild(entry);
+    entry.translateLocal(0, y, 0);
+};
+
+// Mock loading leaderboard data, for this demo we just get the data from a JSON file in the project
+// For your project you could download this from a server backend
+Leaderboard.prototype.load = function (callback) {
+    var asset = this.app.assets.find("leaderboard-data.json");
+    asset.ready(function () {
+        callback(asset.resource);
+    });
+    this.app.assets.load(asset);
+};
+
 ```
 
-[1]: https://playcanvas.com/editor/scene/547907
-[2]: /user-manual/user-interface/elements/
-[3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/leaderboard/hierarchy.png
-[5]: /images/tutorials/ui/leaderboard/screen.png
-[6]: /images/tutorials/ui/leaderboard/template.png
-[7]: /images/tutorials/ui/leaderboard/group.png
-[8]: /images/tutorials/ui/leaderboard/split-anchors.png
-[9]: /images/tutorials/ui/leaderboard/position.png
-[10]: /images/tutorials/ui/leaderboard/name.png
-[11]: /images/tutorials/ui/leaderboard/score.png
+[1]: https://playcanvas.com/editor/scene/547907
+[2]: /user-manual/user-interface/elements/
+[3]: /user-manual/user-interface/screens/
+[4]: /images/tutorials/ui/leaderboard/hierarchy.png
+[5]: /images/tutorials/ui/leaderboard/screen.png
+[6]: /images/tutorials/ui/leaderboard/template.png
+[7]: /images/tutorials/ui/leaderboard/group.png
+[8]: /images/tutorials/ui/leaderboard/split-anchors.png
+[9]: /images/tutorials/ui/leaderboard/position.png
+[10]: /images/tutorials/ui/leaderboard/name.png
+[11]: /images/tutorials/ui/leaderboard/score.png
 [12]: /images/tutorials/ui/leaderboard/pts.png
 

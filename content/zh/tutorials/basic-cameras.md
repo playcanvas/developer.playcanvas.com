@@ -1,9 +1,9 @@
----
-title: Basic Cameras
-template: tutorial-page.tmpl.html
-position: 3
-tags: camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+---
+title: Basic Cameras
+template: tutorial-page.tmpl.html
+position: 3
+tags: camera
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 ## 摄影机实例
@@ -16,12 +16,12 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 要创建新的相机实体，您需要向实体添加一个相机[组件] [1]。
 
-* Select the root Entity of your Scene in the Entity Explorer
-* Create a new Entity by selecting *New Entity* from the *Entity* menu.
-* Add a Component by selecting *New Component* from *Component* menu
+* Select the root Entity of your Scene in the Entity Explorer
+* Create a new Entity by selecting *New Entity* from the *Entity* menu.
+* Add a Component by selecting *New Component* from *Component* menu
 * Choose *Camera* when you are prompted to choose which type of Component to create
 
-As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
+As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
 This is equivalent to creating a new Entity and adding a Camera Component to it.
 
 ## 摄像机属性
@@ -74,6 +74,6 @@ This is equivalent to creating a new Entity and adding a Camera Component to it.
 
 视口表示相机渲染缓冲区上的一个矩形区域。 有以下格式的4个值：左下X，左下Y，宽度，高度。 这些值是归一化坐标，其中渲染缓冲区，不管维度，被认为在X和Y中映射到0..1。 因此，为了限制摄像机在屏幕的左下象限渲染，将视口设置为0,0,0.5,0.5。
 
-[1]: /user-manual/glossary#component
+[1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png
 

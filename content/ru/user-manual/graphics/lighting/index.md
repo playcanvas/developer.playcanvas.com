@@ -1,7 +1,7 @@
----
-title: Lighting
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Lighting
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 Lighting a scene is the process of calculating the color or shading of a pixel render to the screen based on the material properties of the surface and the light sources that are applied to that material.

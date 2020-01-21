@@ -1,7 +1,7 @@
----
-title: Uploading and Importing
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Uploading and Importing
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 ## 创建新资源
@@ -10,8 +10,8 @@ position: 1
 
 ### 在编辑器中
 
-* Drag and drop your asset file into the Asset panel in the Editor window.
-* A progress bar will appear along the bottom.
+* Drag and drop your asset file into the Asset panel in the Editor window.
+* A progress bar will appear along the bottom.
 * When the progress bar disappears, your new Asset will appear in the Asset panel.
 
 现在，当我们尝试通过资源选择器（譬如模型组件或者动画组件）选中一个资源时，您的资源将会出现在任务中。

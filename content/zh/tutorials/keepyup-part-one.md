@@ -1,22 +1,22 @@
----
-title: Making a Simple Game - Part 1
-template: tutorial-page.tmpl.html
-tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+---
+title: Making a Simple Game - Part 1
+template: tutorial-page.tmpl.html
+tags: games
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 *You can find the [full project here][3]*
 
 在本系列教程中，我们将向您展示如何使用PlayCanvas完成一个完整的游戏。 我们做了一个简单的“保持住”的游戏，其玩法是点击或选择足球以使它保持在空中。
 
 我们将介绍以下内容:
 
-1. **The Scene and Hierarchy**
-1. Material Setup
-1. The Game Script
-1. Ball Physics and Input
-1. Audio & Effects
+1. **The Scene and Hierarchy**
+1. Material Setup
+1. The Game Script
+1. Ball Physics and Input
+1. Audio & Effects
 1. User Interface
 
 这并不是一个手把手的引导，但是我们会详细讲解脚本的所有部分并尝试向你解释每一块脚本是如何工作的。我们建议你将游戏工程复刻到你自己的账号下并跟随我们的讲解。
@@ -71,7 +71,7 @@ UI实体是其他几个屏幕实体的父级，每个屏幕均用于游戏的用
 
 [第2部分] [2]涵盖主要游戏脚本。
 
-[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
+[2]: /tutorials/beginner/keepyup-part-two
 [3]: https://playcanvas.com/project/406050
 

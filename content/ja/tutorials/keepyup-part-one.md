@@ -1,22 +1,22 @@
----
-title: Making a Simple Game - Part 1
-template: tutorial-page.tmpl.html
-tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+---
+title: Making a Simple Game - Part 1
+template: tutorial-page.tmpl.html
+tags: games
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 *You can find the [full project here][3]*
 
 このチュートリアルでは、PlayCanvasを使って一本の完全なゲームを作る流れを説明します。"Keepy Up"という、ボールをタッチかクリックし続けることでボールを滞空させ続けるゲームを作りましたのでそれを、題材として説明します。
 
 以下の項目について説明していきます:
 
-1. **The Scene and Hierarchy**
-1. Material Setup
-1. The Game Script
-1. Ball Physics and Input
-1. Audio & Effects
+1. **The Scene and Hierarchy**
+1. Material Setup
+1. The Game Script
+1. Ball Physics and Input
+1. Audio & Effects
 1. User Interface
 
 このチュートリアルは手順を一つ一つ説明するガイドではありません。その代わり、ゲームを構成するすべてのスクリプト要素について、それらがどのように機能するかを説明していきます。チュートリアルを読むにあたって、このゲームプロジェクトをフォークし、自分のアカウント上で見ながら進めることをおすすめします。
@@ -71,7 +71,7 @@ UIエンティティはいくつかのエンティティの親エンティティ
 
 [チュートリアルその2][2]ではメインのゲームスクリプトについて説明します。
 
-[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
+[2]: /tutorials/beginner/keepyup-part-two
 [3]: https://playcanvas.com/project/406050
 

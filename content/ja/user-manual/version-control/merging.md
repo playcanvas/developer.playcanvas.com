@@ -1,7 +1,7 @@
----
-title: Merging and resolving conflicts
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Merging and resolving conflicts
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 Merging is the process by which you combine work that has been performed in one branch with work that has been performed in another branch. Merging is a natural part of the branch based workflow described in the [branches documentation][1].
@@ -14,13 +14,13 @@ First, it's important to note that when you perform a merge in PlayCanvas you ar
 
 ### Example merges
 
-![Merging checkpoints][6]
+![Merging checkpoints][6]
 *Changes Y & Z are not included in merge result C and **are lost**.*
 
-![Merging checkpoints][7]
+![Merging checkpoints][7]
 *By default PlayCanvas creates a new checkpoint in the destination branch of a merge, so changes Y are included*
 
-![Merging checkpoints][8]
+![Merging checkpoints][8]
 *If changes Z are required, create a checkpoint in the source branch before starting the merge.*
 
 ## Starting a merge
@@ -53,11 +53,11 @@ While the conflict manager and the merge is in progress your current branch is l
 
 [1]: /user-manual/version-control/branches
 
-[3]: /images/user-manual/version-control/start-merge.jpg
-[4]: /images/user-manual/version-control/conflict-manager.jpg
+[3]: /images/user-manual/version-control/start-merge.jpg
+[4]: /images/user-manual/version-control/conflict-manager.jpg
 [5]: /images/user-manual/version-control/conflicts-resolved.jpg
 
-[6]: /images/user-manual/version-control/merging-checkpoints-1.png
-[7]: /images/user-manual/version-control/merging-checkpoints-2.png
+[6]: /images/user-manual/version-control/merging-checkpoints-1.png
+[7]: /images/user-manual/version-control/merging-checkpoints-2.png
 [8]: /images/user-manual/version-control/merging-checkpoints-3.png
 

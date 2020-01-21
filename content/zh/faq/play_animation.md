@@ -1,6 +1,6 @@
----
-title: Play an animation
-keywords: component, animation, model, 3d, fbx
+---
+title: Play an animation
+keywords: component, animation, model, 3d, fbx
 ---
 
 ## 如何播放动画？

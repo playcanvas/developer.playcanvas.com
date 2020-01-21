@@ -1,7 +1,7 @@
----
-title: Image Based Lighting
-template: usermanual-page.tmpl.html
-position: 0
+---
+title: Image Based Lighting
+template: usermanual-page.tmpl.html
+position: 0
 ---
 
 To get best results with Physically Based Rendering in PlayCanvas you can use the technique called Image Based Lighting or IBL, it allows to use pre-rendered image data as source information for ambient and reflection light.
@@ -12,7 +12,7 @@ This technique relies on [CubeMap][3] - the environment map that is made of 6 te
 
 Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tonemapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
 
-![HDR vs LDR CubeMap for Image Based Rendering][9]
+![HDR vs LDR CubeMap for Image Based Rendering][9]
 *Notice how bright parts in texture are clamped using LDR*
 
 ## Energy Conservation
@@ -43,8 +43,8 @@ One of the plugins for 3D Studio Max such as [this][2] can be used to render VRa
 
 ## Applying IBL
 
-This can be done using two methods:
-1. Use CubeMap as Skybox in Scene Settings.
+This can be done using two methods:
+1. Use CubeMap as Skybox in Scene Settings.
 2. Use CubeMap as environment map on the Material directly.
 
 ## Box Projection Mapping
@@ -57,21 +57,21 @@ This technique changes the projection of environment map which allows to specify
 
 Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection, notice the reflection on the wooden floor of the windows and sattle reflection on the ceiling, as well as reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect, and can provide very realistic reflections and control to artist of how surfaces reflect the room environment.
 
-[![Environment Box Projection Mapping][5]][7]
+[![Environment Box Projection Mapping][5]][7]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
-[0]: https://github.com/dariomanesku/cmftStudio
-[1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction
-[2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
-[3]: /user-manual/assets/cubemaps/
-[4]: /images/user-manual/graphics/physical-rendering/cubemap-box-projection.png
-[5]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
-[6]: http://www.hdrlabs.com/sibl/archive.html
-[7]: https://playcanv.as/p/zdkARz26/
-[8]: https://playcanvas.com/project/446587/overview/archviz-example
-[9]: /images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg
-[10]: http://noemotionhdrs.net/
-[11]: http://www.openfootage.net/?tag=hdri
-[12]: http://www.pauldebevec.com/Probes/
+[0]: https://github.com/dariomanesku/cmftStudio
+[1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction
+[2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
+[3]: /user-manual/assets/cubemaps/
+[4]: /images/user-manual/graphics/physical-rendering/cubemap-box-projection.png
+[5]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
+[6]: http://www.hdrlabs.com/sibl/archive.html
+[7]: https://playcanv.as/p/zdkARz26/
+[8]: https://playcanvas.com/project/446587/overview/archviz-example
+[9]: /images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg
+[10]: http://noemotionhdrs.net/
+[11]: http://www.openfootage.net/?tag=hdri
+[12]: http://www.pauldebevec.com/Probes/
 [13]: /images/user-manual/graphics/physical-rendering/cubemap-faces.jpg
 

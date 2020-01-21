@@ -1,8 +1,8 @@
----
-title: Collision and Triggers
-template: tutorial-page.tmpl.html
-tags: collision, physics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
+---
+title: Collision and Triggers
+template: tutorial-page.tmpl.html
+tags: collision, physics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
@@ -17,9 +17,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 一个*collision* 组建的最重要的属性是它的**Type**，这决决定了将会用到的触发器的形状。这里有四种选项:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
+* **Box** A simple box
+* **Sphere** A simple sphere
+* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
 * **Mesh** Use any arbitary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### 触发器
@@ -42,8 +42,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 对于此案例，最重要的属性是**类型**。 您可以选择以下三个选项之一：
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
+* **Static** this Entity will never move.
+* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
 * **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
 ## 设置背景
@@ -62,29 +62,29 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 在这个实体上我们能取到*碰撞体*组件但取不到*刚体*组件，因此它可以被用作为一个触发器。触发器实体也有一个挂载了一些代码的*脚本*组建。触发器只在某些事情发生时被触发时有用，因此我们需要添加一些代码来发送和监听触发器活动时的事件。
 
-~~~javascript~~~
-var Trigger = pc.createScript('trigger');
-
-// initialize code called once per entity
-Trigger.prototype.initialize = function() {
-    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-};
-
-Trigger.prototype.onTriggerEnter = function(entity) {
-    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
-    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
-    // Reset back to roughly the position the entity started in.
-    var position = entity.getPosition();
-    entity.rigidbody.teleport(position.x, 10, 0);
-};
+~~~javascript~~~
+var Trigger = pc.createScript('trigger');
+
+// initialize code called once per entity
+Trigger.prototype.initialize = function() {
+    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+};
+
+Trigger.prototype.onTriggerEnter = function(entity) {
+    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+    // Reset back to roughly the position the entity started in.
+    var position = entity.getPosition();
+    entity.rigidbody.teleport(position.x, 10, 0);
+};
 ~~~
 
 上面的代码有两个重要的部分。
 
 首先在``` 初始化``` 方法中我们开始监听** triggerenter **事件。当一个刚体进入触发体积时这一事件触发一次(在触发器是一个实体，具有碰撞组件，但没有刚体组件的位置)。伴随事件有** triggerleave **，一旦有刚体离开触发器范围时它被触发。
 
-~~~javascript~~~
-this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+~~~javascript~~~
+this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 ~~~
 
 注意，第三个参数 ```this```，这是在事件侦听器中使用的“范围”。通常情况下，您将要添加当前脚本对象作为第三个参数，这样事件侦听器中的 ```this```的值才会是对应的脚本对象。
@@ -105,39 +105,39 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 在*碰撞体*组件上有三个事件是被响应的:
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
+* **contact** - fires for every point of contact when two rigid bodies touch.
+* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
 * **collisionend** - fires when two rigid bodies separate.
 
 **contact** 和 **collisionstart ** 的区别比较微妙但很重要。 想象一个立方体在一个平面上以一个角度着陆。 当立方体的边缘碰到表面时，立方体的两个角将在同一时刻产生撞击。 三个事件将触发，立方体的两个角的**接触**事件，和一个** 碰撞开始**事件。 然后立方体将旋转并继续下降，直到它被摆平，同时保持与表面接触。 当它保持平面状态时，两个**接触**事件将被激发，因为立方体的边缘与表面相接触。 由于立方体此后所有时间内都保持与表面接触，没有更多** collisionstart **事件被触发。
 
 这两个事件都很有用，但在这个演示中，我们将使用** collision start **事件来触发当对象撞到地面时播放的声音效果。 这里是代码：
 
-~~~javascript~~~
-var Collider = pc.createScript('collider');
-
-// initialize code called once per entity
-Collider.prototype.initialize = function () {
-    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
-};
-
-Collider.prototype.onCollisionStart = function (result) {
-    if (result.other.rigidbody) {
-        this.entity.sound.play("hit");
-    }
-};
+~~~javascript~~~
+var Collider = pc.createScript('collider');
+
+// initialize code called once per entity
+Collider.prototype.initialize = function () {
+    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
+};
+
+Collider.prototype.onCollisionStart = function (result) {
+    if (result.other.rigidbody) {
+        this.entity.sound.play("hit");
+    }
+};
 ~~~
 
 在```initialize```方法中，我们设置事件监听器，然后在事件处理程序中检查其他实体是否有一个** rigidbody **组件(这是为了避免在我们进入时播放声音 一个触发音量)，然后我们播放“命中”的声音效果。 所以现在每个具有碰撞脚本附件的实体与另一个刚体碰撞，它都将发出命中的声音。
 
 这就是在PlayCanvas中处理碰撞和触发的所有步骤。
 
-[1]: https://playcanvas.com/project/405871
-[3]: /images/tutorials/collision/collision_and_triggers.jpg
-[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
-[5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
-[7]: /images/tutorials/collision/trigger_setup.jpg
-[8]: /engine/api/stable/symbols/pc.Entity.html
+[1]: https://playcanvas.com/project/405871
+[3]: /images/tutorials/collision/collision_and_triggers.jpg
+[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
+[5]: /user-manual/packs/components/rigidbody/
+[6]: /images/tutorials/collision/ground_setup.jpg
+[7]: /images/tutorials/collision/trigger_setup.jpg
+[8]: /engine/api/stable/symbols/pc.Entity.html
 [9]: /images/tutorials/collision/box_setup.jpg
 

@@ -1,8 +1,8 @@
----
-title: Basic Audio
-template: tutorial-page.tmpl.html
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
+---
+title: Basic Audio
+template: tutorial-page.tmpl.html
+tags: audio
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>
@@ -61,8 +61,8 @@ AttributeEditorでSoundプロパティが表示されるようになります。
 
 各スロットには、異なるスロットから異なるオーディオアセットを再生することができるアセットピッカーがあります。オーディオアセットのアップロード方法の詳細については、[アセットのインポート][4]を参照してください。
 
-<div class="pc-notice-message pc-small">
-    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
+<div class="pc-notice-message pc-small">
+    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
 </div>
 
 アセットをアップロードしたら、Asset Pickerを使用してスロットに対するソースのオーディオアセットを選択してください。
@@ -85,13 +85,13 @@ AttributeEditorでSoundプロパティが表示されるようになります。
 
 AudioListenerを作成するには、リスナーを代表するエンティティを選択します。多くの場合、これはプレイヤーの頭の位置となる、ゲーム内のカメラになります。今回のケースでは、AudioListenerはロボットに取り付けられています。
 
-<div class="alert-info">
-    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+<div class="alert-info">
+    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
 </div>
 
-[1]: /user-manual/packs/components/sound
-[2]: /user-manual/packs/components/audiolistener
-[3]: https://playcanvas.com/editor/scene/440098
-[4]: /user-manual/assets/importing
+[1]: /user-manual/packs/components/sound
+[2]: /user-manual/packs/components/audiolistener
+[3]: https://playcanvas.com/editor/scene/440098
+[4]: /user-manual/assets/importing
 [5]: /images/tutorials/audio/sound.jpg
 

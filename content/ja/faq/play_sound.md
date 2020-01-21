@@ -1,6 +1,6 @@
----
-title: Play a sound
-keywords: component, sound, audio, music, audiosource, audiolistener
+---
+title: Play a sound
+keywords: component, sound, audio, music, audiosource, audiolistener
 ---
 
 ## 音声を再生するには？

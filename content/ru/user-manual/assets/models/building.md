@@ -1,7 +1,7 @@
----
-title: Building Models
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Building Models
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
@@ -10,15 +10,15 @@ PlayCanvas is designed to import content most faithfully via the FBX interchange
 
 Some modelling and animation programs to consider:
 
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
+* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
 * Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
 \* *this program can create animations too.*
 
 For generating textures, consider these programs:
 
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
 * Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 Note many of the programs listed above for modelling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
@@ -27,7 +27,7 @@ Note many of the programs listed above for modelling also allow texture painting
 
 Regardless which modelling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
 
-* Meshes can be skinned to up to 256 bones.
+* Meshes can be skinned to up to 256 bones.
 * NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
 ---
@@ -54,8 +54,8 @@ The 2.71 release of Blender features a revamped FBX export module that enables m
 
 Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
 
-<div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+<div class="alert alert-warning">
+Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
 </div>
 
 ### **Animations**
@@ -68,7 +68,7 @@ Animations included within the blend file are exported with the default fbx expo
 
 There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
 
-* [Blender Cookie][2]
+* [Blender Cookie][2]
 * [Blender Guru][6]
 
 ---
@@ -147,15 +147,15 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 
 ![Sphere map][11]
 
-[1]: http://wiki.polycount.com/wiki/Tools
-[2]: http://cgcookie.com/blender/
-[3]: /images/Blender-Logo.jpg
-[4]: http://blender.org
-[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
-[6]: http://www.blenderguru.com/
-[7]: /images/artist_guide/max_material_editor.jpg
-[8]: /images/artist_guide/wall_norm.jpg
-[9]: /images/artist_guide/wall_norm_yflip.jpg
-[10]: /images/artist_guide/mountains_sphere.jpg
+[1]: http://wiki.polycount.com/wiki/Tools
+[2]: http://cgcookie.com/blender/
+[3]: /images/Blender-Logo.jpg
+[4]: http://blender.org
+[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
+[6]: http://www.blenderguru.com/
+[7]: /images/artist_guide/max_material_editor.jpg
+[8]: /images/artist_guide/wall_norm.jpg
+[9]: /images/artist_guide/wall_norm_yflip.jpg
+[10]: /images/artist_guide/mountains_sphere.jpg
 [11]: /images/artist_guide/maya_material_editor.jpg
 

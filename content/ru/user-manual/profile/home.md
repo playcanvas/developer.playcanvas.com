@@ -1,7 +1,7 @@
----
-title: Home
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Home
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 Во вкладке «Главная» выводится список последних сообщений пользователей PlayCanvas. Также здесь вы можете посмотреть вашу недавнюю активность.

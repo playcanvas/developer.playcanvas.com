@@ -1,13 +1,13 @@
----
-title: Using a Custom Engine
-template: usermanual-page.tmpl.html
-position: 9
+---
+title: Using a Custom Engine
+template: usermanual-page.tmpl.html
+position: 9
 ---
 
 By default, when you launch your PlayCanvas app from the Editor, it will use the latest stable build of the engine. Sometimes, there may be a reason why you may want to run your app with a different build of the engine. For example:
 
-* To test your project against the latest dev build of the engine to test a new feature or bug fix, or detect any potential regressions before an upcoming engine release.
-* To temporarily step back to a previous stable engine version to mitigate a regression in the current stable build.
+* To test your project against the latest dev build of the engine to test a new feature or bug fix, or detect any potential regressions before an upcoming engine release.
+* To temporarily step back to a previous stable engine version to mitigate a regression in the current stable build.
 * To develop and debug against your own fork of the [engine repo on GitHub][1].
 
 Let's look at how you handle each of these situations:
@@ -60,6 +60,6 @@ To now use this engine in the launch page, edit the URL to:
 
 Note that you must edit the launch page to use http instead of https in order to match the use of http for the locally served engine.
 
-[1]: https://github.com/playcanvas/engine
+[1]: https://github.com/playcanvas/engine
 [2]: https://github.com/playcanvas/engine/releases
 

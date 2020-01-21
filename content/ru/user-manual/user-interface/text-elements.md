@@ -1,7 +1,7 @@
----
-title: Text Elements
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Text Elements
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 The Text Element is used to display a string of text using a [font asset][1].
@@ -40,10 +40,10 @@ Text Elements have an additional tool to help with positioning which is the alig
 
 The font size property sets the rendered size of the font in Screen Component pixels. The line height sets the distance in Screen Component pixels to move down when the text contains a new line character.
 
-![Font Size Line Equal][6]
+![Font Size Line Equal][6]
 **Equal Font Size and Line Height is the default**
 
-![Font Size Line Spaced][7]
+![Font Size Line Spaced][7]
 **Increase Line Height to increase line spacing**
 
 ## Spacing
@@ -64,15 +64,15 @@ The Opacity property allows you to set the transparency of the string
 
 ![Transparent][10]
 
-[1]: /user-manual/assets/fonts
-[2]: /images/user-manual/user-interface/text-element/auto-size.png
-[3]: /images/user-manual/user-interface/text-element/alignment-bottom-left.png
-[4]: /images/user-manual/user-interface/text-element/alignment-centered.png
-[5]: /images/user-manual/user-interface/text-element/alignment-top-right.png
-[6]: /images/user-manual/user-interface/text-element/font-line-equal.png
-[7]: /images/user-manual/user-interface/text-element/font-line-spaced.png
-[8]: /images/user-manual/user-interface/text-element/spacing.png
-[9]: /images/user-manual/user-interface/text-element/tinted.png
-[10]: /images/user-manual/user-interface/text-element/transparent.png
+[1]: /user-manual/assets/fonts
+[2]: /images/user-manual/user-interface/text-element/auto-size.png
+[3]: /images/user-manual/user-interface/text-element/alignment-bottom-left.png
+[4]: /images/user-manual/user-interface/text-element/alignment-centered.png
+[5]: /images/user-manual/user-interface/text-element/alignment-top-right.png
+[6]: /images/user-manual/user-interface/text-element/font-line-equal.png
+[7]: /images/user-manual/user-interface/text-element/font-line-spaced.png
+[8]: /images/user-manual/user-interface/text-element/spacing.png
+[9]: /images/user-manual/user-interface/text-element/tinted.png
+[10]: /images/user-manual/user-interface/text-element/transparent.png
 [11]: /user-manual/user-interface/localization
 

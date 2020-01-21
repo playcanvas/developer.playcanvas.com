@@ -1,7 +1,7 @@
----
-title: Textures
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Textures
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 纹理是可以被分配到 [材质][1] 表面并应用到图元的图片。
@@ -10,19 +10,19 @@ position: 4
 
 你有3种方式将纹理资源导入PlayCanvas:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
+1. Drag and drop images into the Assets panel.
+2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
 3. Import an FBX file that embeds textures.
 
 支持的图片格式有：
 
-* JPG
-* PNG
-* GIF
-* TGA
-* BMP
-* TIF
-* HDR
+* JPG
+* PNG
+* GIF
+* TGA
+* BMP
+* TIF
+* HDR
 * EXR
 
 导入的JPG和PNG文件保持原始格式。
@@ -65,8 +65,8 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 编辑器能够对纹理应用有损压缩方案，以显着减少使用的VRAM数量。 这些方案是：
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
+* DXT: Typically supported by desktop devices.
+* PVR: Typically supported by iOS devices.
 * ETC: Typically supported by Android devices.
 
 就比如这个纹理资源:
@@ -81,10 +81,10 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 本次压缩减少了VRAM6倍的使用。此外,在这种情况下,压缩也将下载大小从202 kb减少到116 kb。
 
-[1]: /user-manual/assets/materials
-[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
-[3]: /images/user-manual/assets/textures/texture-properties.png
-[4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/texture-address.png
+[1]: /user-manual/assets/materials
+[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
+[3]: /images/user-manual/assets/textures/texture-properties.png
+[4]: /images/user-manual/assets/textures/anisotropy.png
+[5]: /images/user-manual/assets/textures/texture-address.png
 [6]: /images/user-manual/assets/textures/compression-results.png
 

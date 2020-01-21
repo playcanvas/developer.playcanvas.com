@@ -1,7 +1,7 @@
----
-title: Settings
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Settings
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 The settings dashboard lets you set up Project settings.
@@ -22,8 +22,8 @@ If you want your project to be featured on playcanvas.com, you must add a projec
 
 Private projects are only visible to users who have been explicitly assigned read, write or admin access.
 
-<div class="alert alert-info">
-Only users with premium accounts can access private projects
+<div class="alert alert-info">
+Only users with premium accounts can access private projects
 </div>
 
 ## Team

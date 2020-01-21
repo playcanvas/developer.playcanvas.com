@@ -1,8 +1,8 @@
----
-title: Making a Simple Game - Part 3
-template: tutorial-page.tmpl.html
-tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+---
+title: Making a Simple Game - Part 3
+template: tutorial-page.tmpl.html
+tags: games
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
@@ -15,95 +15,95 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## game.js
 
-```javascript
-var Game = pc.createScript('game');
-
-Game.attributes.add('uiMenu', {type: 'entity'});
-Game.attributes.add('uiInGame', {type: 'entity'});
-Game.attributes.add('uiGameOver', {type: 'entity'});
-Game.attributes.add('audio', {type: 'entity'});
-
-Game.STATE_MENU = 'menu';
-Game.STATE_INGAME = 'ingame';
-Game.STATE_GAMEOVER = 'gameover';
-
-// initialize code called once per entity
-Game.prototype.initialize = function() {
-    this._state = Game.STATE_MENU;
-    this._score = 0;
-
-    this.setResolution();
-
-    window.addEventListener("resize", this.setResolution.bind(this));
-
-    // listen to events from the UI
-    this.app.on("ui:start", this.start, this);
-    this.app.on("ui:reset", this.reset, this);
-};
-
-Game.prototype.setResolution = function () {
-    // if the screen width is less than 640
-    // fill the whole window
-    // otherwise
-    // use the default setting
-
-    var w = window.screen.width;
-    var h = window.screen.height;
-
-    if (w < 640) {
-        this.app.setCanvasResolution(pc.RESOLUTION_AUTO, w, h);
-        this.app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
-    }
-};
-
-// Call this to move from MENU to INGAME
-Game.prototype.start = function () {
-    this._state = Game.STATE_INGAME;
-    this.app.fire("game:start");
-    this.uiMenu.enabled = false;
-    this.uiInGame.enabled = true;
-
-    this.audio.sound.play("music");
-};
-
-// Call this to move from INGAME to GAMEOVER
-Game.prototype.gameOver = function () {
-    this._state = Game.STATE_GAMEOVER;
-    this.app.fire("game:gameover");
-    this.uiInGame.enabled = false;
-    this.uiGameOver.enabled = true;
-
-    this.audio.sound.stop();
-    this.audio.sound.play("gameover");
-};
-
-// Call this to move from GAMEOVER to MENU
-Game.prototype.reset = function () {
-    this.app.fire("game:reset");
-    this.resetScore();
-    this._state = Game.STATE_MENU;
-    this.uiGameOver.enabled = false;
-    this.uiMenu.enabled = true;
-
-    this.audio.sound.stop();
-};
-
-// return the current score
-Game.prototype.getScore = function () {
-    return this._score;
-};
-
-// add a value to the score
-Game.prototype.addScore = function (v) {
-    this._score += v;
-    this.app.fire("game:score", this._score);
-};
-
-// reset the score
-Game.prototype.resetScore = function () {
-    this._score = 0;
-    this.app.fire("game:score", this._score);
-};
+```javascript
+var Game = pc.createScript('game');
+
+Game.attributes.add('uiMenu', {type: 'entity'});
+Game.attributes.add('uiInGame', {type: 'entity'});
+Game.attributes.add('uiGameOver', {type: 'entity'});
+Game.attributes.add('audio', {type: 'entity'});
+
+Game.STATE_MENU = 'menu';
+Game.STATE_INGAME = 'ingame';
+Game.STATE_GAMEOVER = 'gameover';
+
+// initialize code called once per entity
+Game.prototype.initialize = function() {
+    this._state = Game.STATE_MENU;
+    this._score = 0;
+
+    this.setResolution();
+
+    window.addEventListener("resize", this.setResolution.bind(this));
+
+    // listen to events from the UI
+    this.app.on("ui:start", this.start, this);
+    this.app.on("ui:reset", this.reset, this);
+};
+
+Game.prototype.setResolution = function () {
+    // if the screen width is less than 640
+    // fill the whole window
+    // otherwise
+    // use the default setting
+
+    var w = window.screen.width;
+    var h = window.screen.height;
+
+    if (w < 640) {
+        this.app.setCanvasResolution(pc.RESOLUTION_AUTO, w, h);
+        this.app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
+    }
+};
+
+// Call this to move from MENU to INGAME
+Game.prototype.start = function () {
+    this._state = Game.STATE_INGAME;
+    this.app.fire("game:start");
+    this.uiMenu.enabled = false;
+    this.uiInGame.enabled = true;
+
+    this.audio.sound.play("music");
+};
+
+// Call this to move from INGAME to GAMEOVER
+Game.prototype.gameOver = function () {
+    this._state = Game.STATE_GAMEOVER;
+    this.app.fire("game:gameover");
+    this.uiInGame.enabled = false;
+    this.uiGameOver.enabled = true;
+
+    this.audio.sound.stop();
+    this.audio.sound.play("gameover");
+};
+
+// Call this to move from GAMEOVER to MENU
+Game.prototype.reset = function () {
+    this.app.fire("game:reset");
+    this.resetScore();
+    this._state = Game.STATE_MENU;
+    this.uiGameOver.enabled = false;
+    this.uiMenu.enabled = true;
+
+    this.audio.sound.stop();
+};
+
+// return the current score
+Game.prototype.getScore = function () {
+    return this._score;
+};
+
+// add a value to the score
+Game.prototype.addScore = function (v) {
+    this._score += v;
+    this.app.fire("game:score", this._score);
+};
+
+// reset the score
+Game.prototype.resetScore = function () {
+    this._score = 0;
+    this.app.fire("game:score", this._score);
+};
 ```
 
 ### ゲームの状態
@@ -118,8 +118,8 @@ Game.prototype.resetScore = function () {
 
 ゲームスクリプトがどのようにアプリケーションでイベントを発生させるかを確認してみましょう。
 
-```javascript
-this.app.fire("game:start")
+```javascript
+this.app.fire("game:start")
 ```
 
 イベントは、一つのスクリプトを他のスクリプトと通信させるための非常に便利な方法です。オブジェクトがイベントの発生を選択します(この場合は`this.app`)。オブジェクトへのアクセス権を持つ他のコードは、このオブジェクトのイベントにリッスンすることができ、イベントが発生したとき、コードに通知が送られます。
@@ -128,10 +128,10 @@ this.app.fire("game:start")
 
 イベントを明確にし、衝突を避けるために、名前空間パターンを使用しています。上記の`game:start` イベントをリッスンする場合、次のコードを使用します：
 
-```javascript
-this.app.on("game:start", function () {
-    console.log("game:start event was fired");
-}, this)
+```javascript
+this.app.on("game:start", function () {
+    console.log("game:start event was fired");
+}, this)
 ```
 
 ### スコア
@@ -146,81 +146,81 @@ this.app.on("game:start", function () {
 
 入力スクリプトはマウスやタッチスクリーンからの入力にリッスンし、これらの入力を標準的な「タップ」に統一し、アプリケーションにタップが発生していることを知らせます。
 
-```javascript
-var Input = pc.createScript('input');
-
-Input.attributes.add('ball', {type: 'entity'});
-Input.attributes.add('camera', {type: 'entity'});
-Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
-
-Input.worldPos = new pc.Vec3();
-
-// initialize code called once per entity
-Input.prototype.initialize = function() {
-
-    var self = this;
-
-    this._paused = true;
-
-    // Listen for game events so we know whether to respond to input
-    this.app.on("game:start", function () {
-        self._paused = false;
-    });
-    this.app.on("game:gameover", function () {
-        self._paused = true;
-    });
-
-    // set up touch events if available
-    if (this.app.touch) {
-        this.app.touch.on("touchstart", this._onTouchStart, this);
-    }
-
-    // set up mouse events
-    this.app.mouse.on("mousedown", this._onMouseDown, this);
-};
-
-Input.prototype._onTap = function (x, y) {
-    var p = this.ball.getPosition();
-    var camPos = this.camera.getPosition();
-    var worldPos = Input.worldPos;
-
-    // Get the position in the 3D world of the touch or click
-    // Store the in worldPos variable.
-    // This position is at the same distance away from the camera as the ball
-    this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
-
-    // get the distance of the touch/click to the ball
-    var dx = (p.x - worldPos.x);
-    var dy = (p.y - worldPos.y);
-
-    // If the click is inside the ball, tap the ball
-    var lenSqr = dx*dx + dy*dy;
-    if (lenSqr < this.ballRadius*this.ballRadius) {
-        this.ball.script.ball.tap(dx, dy);
-    }
-};
-
-Input.prototype._onTouchStart = function (e) {
-    if (this._paused) {
-        return;
-    }
-
-    // respond to event
-    var touch = e.changedTouches[0];
-    this._onTap(touch.x, touch.y);
-
-    // stop mouse events firing as well
-    e.event.preventDefault();
-};
-
-Input.prototype._onMouseDown = function (e) {
-    if (this._paused) {
-        return;
-    }
-
-    // respond to event
-    this._onTap(e.x, e.y);
-};
+```javascript
+var Input = pc.createScript('input');
+
+Input.attributes.add('ball', {type: 'entity'});
+Input.attributes.add('camera', {type: 'entity'});
+Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
+
+Input.worldPos = new pc.Vec3();
+
+// initialize code called once per entity
+Input.prototype.initialize = function() {
+
+    var self = this;
+
+    this._paused = true;
+
+    // Listen for game events so we know whether to respond to input
+    this.app.on("game:start", function () {
+        self._paused = false;
+    });
+    this.app.on("game:gameover", function () {
+        self._paused = true;
+    });
+
+    // set up touch events if available
+    if (this.app.touch) {
+        this.app.touch.on("touchstart", this._onTouchStart, this);
+    }
+
+    // set up mouse events
+    this.app.mouse.on("mousedown", this._onMouseDown, this);
+};
+
+Input.prototype._onTap = function (x, y) {
+    var p = this.ball.getPosition();
+    var camPos = this.camera.getPosition();
+    var worldPos = Input.worldPos;
+
+    // Get the position in the 3D world of the touch or click
+    // Store the in worldPos variable.
+    // This position is at the same distance away from the camera as the ball
+    this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
+
+    // get the distance of the touch/click to the ball
+    var dx = (p.x - worldPos.x);
+    var dy = (p.y - worldPos.y);
+
+    // If the click is inside the ball, tap the ball
+    var lenSqr = dx*dx + dy*dy;
+    if (lenSqr < this.ballRadius*this.ballRadius) {
+        this.ball.script.ball.tap(dx, dy);
+    }
+};
+
+Input.prototype._onTouchStart = function (e) {
+    if (this._paused) {
+        return;
+    }
+
+    // respond to event
+    var touch = e.changedTouches[0];
+    this._onTap(touch.x, touch.y);
+
+    // stop mouse events firing as well
+    e.event.preventDefault();
+};
+
+Input.prototype._onMouseDown = function (e) {
+    if (this._paused) {
+        return;
+    }
+
+    // respond to event
+    this._onTap(e.x, e.y);
+};
 ```
 
 まず、initializeでイベントのリスニングを設定します。ゲームが一時停止中(つまりメニューまたはゲームオーバー状態)であることを判断するために、アプリケーションのイベントはにリッスンします。入力が一時停止されている場合、タップに反応しません。次に、タッチイベント (`this.app.touch`が利用可能か確認する必要があります)とマウスイベントにリッスンします。
@@ -237,8 +237,8 @@ Input.prototype._onMouseDown = function (e) {
 
 `_onTap()` は画面座標(x, y)を使用してボールに当たっているかを判断し、当たっている場合はボールのコードにタップされたことを知らせます。
 
-```javascript
-this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
+```javascript
+this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 ```
 
 具体的には、この関数は画面座標を(x, y)を使用してカメラに要求を出し、画面上のその位置の下に3Dの点が来るよう変換します。これを行うには、この3Dの点の画面からの距離を深さで指定する必要があります。このケースでは、ボールの位置と同じ深さに3Dの点があります。
@@ -247,24 +247,24 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
 ほとんどの場合、PlayCanvasは事前にオブジェクトの割り当てや再利用ができるようにベクターまたは類似のオプションを渡すオプションを提供します。
 
-```javascript
-// get the distance of the touch/click to the ball
-var dx = (p.x - worldPos.x);
-var dy = (p.y - worldPos.y);
-
-// If the click is inside the ball, tap the ball
-var lenSqr = dx*dx + dy*dy;
-if (lenSqr < this.ballRadius*this.ballRadius) {
-    this.ball.script.ball.tap(dx, dy);
-}
+```javascript
+// get the distance of the touch/click to the ball
+var dx = (p.x - worldPos.x);
+var dy = (p.y - worldPos.y);
+
+// If the click is inside the ball, tap the ball
+var lenSqr = dx*dx + dy*dy;
+if (lenSqr < this.ballRadius*this.ballRadius) {
+    this.ball.script.ball.tap(dx, dy);
+}
 ```
 
 タップした位置の3D点を取したら、それがボールと重なっているかどうかをテストします。ここでは、二乗半径を、タップとボールの間の距離の二乗値に対してテストします。これにより、テストするたびに時間のかかる平方根オペレーションを行わずにすみます。
 
 タップがボールに当たると、タップが発生した場所のボールからの距離を渡し、ボールスクリプトで`tap(dx, dy)` 関数を呼び出します。これは[パート4][3]で使用します。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/beginner/keepyup-part-one
+[2]: /tutorials/beginner/keepyup-part-two
+[3]: /tutorials/beginner/keepyup-part-four
 [4]: https://playcanvas.com/project/406050
 

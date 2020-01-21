@@ -1,14 +1,14 @@
----
-title: Ambient Occlusion
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Ambient Occlusion
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 Ambient Occlusion is a technique to approximate how much light gets onto the surface based on its occlusion by the environment.
 
 In PlayCanvas, ambient lighting is multiplied by the AO map, both diffuse and specular.
 
-![Ambient Occlusion comparison: without/with][4]
+![Ambient Occlusion comparison: without/with][4]
 *Left: without AO; Right: with Global AO*
 
 AO map can be of different scale. E.g. a texture detail AO, showing surface crevices or a world-scale AO with large shadowing effect of different parts of the model. Large-scale AO will give more effect, it usually matches lightmaps on UV1, and is more important.
@@ -41,16 +41,16 @@ Simply upload texture in Editor and apply it on Ambient Oclussion slot on materi
 
 You can [explore example][6] that uses global Ambient Occlusion described above and it's [project][7].
 
-[![PlayCanvas Lightmapping][8]][6]
+[![PlayCanvas Lightmapping][8]][6]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
-[0]: /user-manual/graphics/lighting/lightmapping/
-[1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png
-[2]: /images/user-manual/lighting/lightmaps/3ds-max-vray-override-mtl.png
-[3]: /user-manual/graphics/lighting/lightmapping#render-to-texture
-[4]: /images/user-manual/lighting/lightmaps/model-ao-comparison.jpg
-[5]: /images/user-manual/lighting/lightmaps/editor-ao-map.png
-[6]: https://playcanv.as/p/zdkARz26/
-[7]: https://playcanvas.com/project/446587/overview/archviz-example
+[0]: /user-manual/graphics/lighting/lightmapping/
+[1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png
+[2]: /images/user-manual/lighting/lightmaps/3ds-max-vray-override-mtl.png
+[3]: /user-manual/graphics/lighting/lightmapping#render-to-texture
+[4]: /images/user-manual/lighting/lightmaps/model-ao-comparison.jpg
+[5]: /images/user-manual/lighting/lightmaps/editor-ao-map.png
+[6]: https://playcanv.as/p/zdkARz26/
+[7]: https://playcanvas.com/project/446587/overview/archviz-example
 [8]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
 

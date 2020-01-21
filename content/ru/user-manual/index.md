@@ -1,7 +1,7 @@
----
-title: User Manual
-template: usermanual-page.tmpl.html
-position: 0.5
+---
+title: User Manual
+template: usermanual-page.tmpl.html
+position: 0.5
 ---
 
 Руководство пользователя — это подробный справочник ко всей платформе PlayCanvas. От написания JavaScript-кода до создания [сцен][1] с помощью редактора PlayCanvas, публикации игр в сети и магазинах приложений для мобильных телефонов.
@@ -10,6 +10,6 @@ position: 0.5
 
 [Итак, приступим!][2]
 
-[1]: /user-manual/glossary#scene
+[1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction
 

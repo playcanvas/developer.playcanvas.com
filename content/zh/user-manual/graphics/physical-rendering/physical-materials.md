@@ -1,7 +1,7 @@
----
-title: Physical Materials
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Physical Materials
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 在PlayCanvas中使用物理基础渲染，你需要理解物理材质是如何进行配置的以及什么参数会引起怎么样的效果变化。
@@ -42,27 +42,27 @@ PBR常常被分为创建资源或工作流程的两个不同的方法。这两�
 
 ![金属][3]
 
-<table class="centered">
-  <tr>
-  <th>Material</th><th>RGB</th>
-  </tr>
-  <tr>
-  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
-  </tr>
+<table class="centered">
+  <tr>
+  <th>Material</th><th>RGB</th>
+  </tr>
+  <tr>
+  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  </tr>
+  <tr>
+  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  </tr>
+  <tr>
+  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  </tr>
 </table>
 
 ## 金属性
 
 金属性属性值是**金属性**工作流中的一部分。 金属性值是一个在0-1之间的唯一值，它决定了一个材质是金属 (1) 还是非金属 (0).
 
-<div class="alert-info">
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+<div class="alert-info">
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
 </div>
 
 你也可以设置一个金属性的贴图，这可以让你自主定义你的材料的特定区域为金属的或是非金属的。
@@ -87,10 +87,10 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 <iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 
-[1]: http://store.playcanvas.com
-[2]: /user-manual/glossary#hdr
-[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
-[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[1]: http://store.playcanvas.com
+[2]: /user-manual/glossary#hdr
+[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
+[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

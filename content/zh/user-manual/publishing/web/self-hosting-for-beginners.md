@@ -1,7 +1,7 @@
----
-title: Self-hosting for beginners
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Self-hosting for beginners
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 这份文档是为了web编程的初学者设计的，并详细描述了web程序的不同部分是怎样组成PlayCanvas服务器应用或用户的浏览器页面的。
@@ -18,34 +18,34 @@ position: 3
 
 举个例子，在PHP页面中你能够在你的页面中显示当前的数据和时间。
 
-```php
-<html>
-    <head>
-        <title>My Homepage</title>
-    </head>
-    <body>
-        <h1>The date is</h1>
-        <?php
-            echo date(DATE_RFC2822);
-        ?>
-        <p>Have a nice day</p>
-    </body>
-</html>
+```php
+<html>
+    <head>
+        <title>My Homepage</title>
+    </head>
+    <body>
+        <h1>The date is</h1>
+        <?php
+            echo date(DATE_RFC2822);
+        ?>
+        <p>Have a nice day</p>
+    </body>
+</html>
 ```
 
 这份PHP代码创建了一个如下的HTML页面并将其发送到浏览器显示。
 
-```html
-<html>
-    <head>
-        <title>My Homepage</title>
-    </head>
-    <body>
-        <h1>The date is</h1>
-        Mon, 11 Apr 2016 06:54:14 -0400
-        <p>Have a nice day</p>
-    </body>
-</html>
+```html
+<html>
+    <head>
+        <title>My Homepage</title>
+    </head>
+    <body>
+        <h1>The date is</h1>
+        Mon, 11 Apr 2016 06:54:14 -0400
+        <p>Have a nice day</p>
+    </body>
+</html>
 ```
 
 有非常非常多不同的编程语言和框架供书写服务器端代码时选择。PHP, Python, Nodejs, Ruby 这些都是很流行的选择。但是最终他们都能达成相同的结果，他们从HTML页面获取一个请求，然后做一些处理，最后把结果的HTML数据返回回来。
@@ -56,9 +56,9 @@ position: 3
 
 在web堆栈中，服务器不是唯一一个我们可以进行运算和对用户输入进行反馈的地方。客户端提供了可在浏览器端运行的代码。这些代码通常用浏览器可以编译运行的javascript编写。在客户端中你可以通过javascript执行许多不同的操作。在最简单的情况中，你可以修改从服务器下载下来的HTML页面。
 
-```javascript
-var title = document.getElementById("title");
-title.innerHTML = "This is the new title";
+```javascript
+var title = document.getElementById("title");
+title.innerHTML = "This is the new title";
 ```
 
 或者在最复杂的情况下，你可以通过PlayCanvas来编写一个全3D的WebGL的游戏。因为你使用PlayCanvas写的客户端的一切部分都是JavaScript的。

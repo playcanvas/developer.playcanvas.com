@@ -1,6 +1,6 @@
----
-title: PlayCanvas Developer Resources
-template: intro.tmpl.html
+---
+title: PlayCanvas Developer Resources
+template: intro.tmpl.html
 ---
 
 Мы предлагаем вам начать с [Руководства пользователя][1]. Это полное описание PlayCanvas, прочитав которое вы узнаете все, что вам может потребоваться. Далее, погрузитесь в [Обучение][3] и [Видеоуроки][12], шаг за шагом описывающие особенности PlayCanvas. И наконец, [описание API][4] содержит полную справочную информацию о PlayCanvas Engine.
@@ -27,15 +27,15 @@ template: intro.tmpl.html
 
 If you've got a technical question about using PlayCanvas, the API or any part of the platform, you can use [PlayCanvas Forum][10] to get help.
 
-[1]: /user-manual
-[2]: /getting-started
-[3]: /tutorials
-[4]: /en/api/
-[5]: https://github.com/playcanvas
-[6]: https://github.com/playcanvas/sprites
-[7]: https://github.com/playcanvas/fonts
-[8]: https://playcanvas.com/play
-[9]: /engine
-[10]: http://forum.playcanvas.com/
+[1]: /user-manual
+[2]: /getting-started
+[3]: /tutorials
+[4]: /en/api/
+[5]: https://github.com/playcanvas
+[6]: https://github.com/playcanvas/sprites
+[7]: https://github.com/playcanvas/fonts
+[8]: https://playcanvas.com/play
+[9]: /engine
+[10]: http://forum.playcanvas.com/
 [12]: /tutorials/video
 

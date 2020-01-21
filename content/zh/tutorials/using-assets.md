@@ -1,8 +1,8 @@
----
-title: Using the Asset Registry
-template: tutorial-page.tmpl.html
-tags: loading, assets
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
+---
+title: Using the Asset Registry
+template: tutorial-page.tmpl.html
+tags: loading, assets
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
@@ -19,9 +19,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *该项目设置如下*
 
-* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
-* The **C** model asset is set up *not* to be preloaded.
-* A model Entity is added to the scene and the model **A** is assigned to the model component.
+* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
+* The **C** model asset is set up *not* to be preloaded.
+* A model Entity is added to the scene and the model **A** is assigned to the model component.
 * A script component is added to the model Entity and a new script is created called `update_asset.js`.
 
 下载[A模型] [5]，[B模型] [6]和[C模型] [7]并将它们上传到你的项目。 确保文件名为A.dae，B.dae和C.dae，因为这将影响资源名称。
@@ -34,19 +34,19 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## 使用预加载的资源
 
-```javascript
-if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-    if (this.entity.model.model !== this.b.resource) {
-        // update the model component to the new model
-        this.entity.model.model = this.b.resource;
-    }
-} else {
-    if (this.entity.model.model !== this.a.resource) {
-        // restore original model
-        this.entity.model.model = this.a.resource;
-    }
-    //...
-}
+```javascript
+if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+    if (this.entity.model.model !== this.b.resource) {
+        // update the model component to the new model
+        this.entity.model.model = this.b.resource;
+    }
+} else {
+    if (this.entity.model.model !== this.a.resource) {
+        // restore original model
+        this.entity.model.model = this.a.resource;
+    }
+    //...
+}
 ```
 
 在此项目中，** A **和** B **资源被标记为** preload **。 这意味着在加载屏幕期间，这些资源被下载。 一旦您的应用程序启动，他们就可以使用。 加载资源时，加载的资源可用为`asset.resource`。 如果`asset.resource`是`null`，那么不会加载资源。
@@ -55,26 +55,26 @@ if (app.keyboard.isPressed(pc.KEY_SPACE)) {
 
 ## 运行过程中加载资源
 
-```javascript
-if (this.app.keyboard.isPressed(pc.KEY_C)) {
-    if (this.c.resource) {
-        if (this.entity.model.model !== this.c.resource) {
-            this.entity.model.model = this.c.resource;
-        }
-    }
-} else {
-    if (this.entity.model.model !== this.a.resource) {
-        this.entity.model.model = this.a.resource;
-    }
-}
+```javascript
+if (this.app.keyboard.isPressed(pc.KEY_C)) {
+    if (this.c.resource) {
+        if (this.entity.model.model !== this.c.resource) {
+            this.entity.model.model = this.c.resource;
+        }
+    }
+} else {
+    if (this.entity.model.model !== this.a.resource) {
+        this.entity.model.model = this.a.resource;
+    }
+}
 ```
 
 ** C **模型未标记为* preload *，因此在上面的代码中，您可以看到我们在使用资源之前检查资源是否已加载。 如果`asset.resource`为空，那么资源不会被加载，我们不能改变模型组件。 如果加载了** C **模型，那么`this.c.resource`将是`pc.Model`的类型，我们可以赋值它。
 
-```javascript
-if (this.app.keyboard.isPressed(pc.KEY_L)) {
-    this.app.assets.load(this.c);
-}
+```javascript
+if (this.app.keyboard.isPressed(pc.KEY_L)) {
+    this.app.assets.load(this.c);
+}
 ```
 
 当你按下`L`键时，我们加载** C **模型。 为此，我们将卸载的资源传递给`this.app.assets.load()`。 如果资源已加载，此方法将不会执行任何操作。
@@ -83,121 +83,121 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 ## 完整的代码
 
-```javascript
-var UpdateAsset = pc.createScript('updateAsset');
-
-UpdateAsset.attributes.add('a', {
-    type: 'asset',
-    assetType: 'model'
-});
-
-UpdateAsset.attributes.add('b', {
-    type: 'asset',
-    assetType: 'model'
-});
-
-UpdateAsset.attributes.add('c', {
-    type: 'asset',
-    assetType: 'model'
-});
-
-// initialize code called once per entity
-UpdateAsset.prototype.initialize = function() {
-    this.app.keyboard.preventDefault = true;
-};
-
-// update code called every frame
-UpdateAsset.prototype.update = function(dt) {
-    var app = this.app;
-
-    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-        if (this.entity.model.model !== this.b.resource) {
-            // update the model component to the new model
-            this.entity.model.model = this.b.resource;
-        }
-    } else {
-        if (this.entity.model.model !== this.a.resource) {
-            // restore original model
-            this.entity.model.model = this.a.resource;
-        }
-
-        if (app.keyboard.isPressed(pc.KEY_C)) {
-            if (this.c.resource) {
-                if (this.entity.model.model !== this.c.resource) {
-                    this.entity.model.model = this.c.resource;
-                }
-            }
-        } else {
-            if (this.entity.model.model !== this.a.resource) {
-                this.entity.model.model = this.a.resource;
-            }
-        }
-
-
-    }
-
-
-    if (app.keyboard.isPressed(pc.KEY_L)) {
-        app.assets.load(this.c);
-    }
-};
+```javascript
+var UpdateAsset = pc.createScript('updateAsset');
+
+UpdateAsset.attributes.add('a', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+UpdateAsset.attributes.add('b', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+UpdateAsset.attributes.add('c', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+// initialize code called once per entity
+UpdateAsset.prototype.initialize = function() {
+    this.app.keyboard.preventDefault = true;
+};
+
+// update code called every frame
+UpdateAsset.prototype.update = function(dt) {
+    var app = this.app;
+
+    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+        if (this.entity.model.model !== this.b.resource) {
+            // update the model component to the new model
+            this.entity.model.model = this.b.resource;
+        }
+    } else {
+        if (this.entity.model.model !== this.a.resource) {
+            // restore original model
+            this.entity.model.model = this.a.resource;
+        }
+
+        if (app.keyboard.isPressed(pc.KEY_C)) {
+            if (this.c.resource) {
+                if (this.entity.model.model !== this.c.resource) {
+                    this.entity.model.model = this.c.resource;
+                }
+            }
+        } else {
+            if (this.entity.model.model !== this.a.resource) {
+                this.entity.model.model = this.a.resource;
+            }
+        }
+
+
+    }
+
+
+    if (app.keyboard.isPressed(pc.KEY_L)) {
+        app.assets.load(this.c);
+    }
+};
 ```
 
 ## 资源注册表事件
 
 我们在这个例子中没有展示的一件事是如何知道何时加载资产。 为此，我们使用`pc.AssetRegistry` 事件，如 `"load"` 事件。 以下是一些示例代码：
 
-```javascript
-// find the asset in the registry
-var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
-this.app.assets.once("load", function (asset) {
-    // asset.resource is now ready
-}, this);
+```javascript
+// find the asset in the registry
+var asset = this.app.assets.find("A");
+// set up a one-off event listener for the load event
+this.app.assets.once("load", function (asset) {
+    // asset.resource is now ready
+}, this);
 ```
 
  `"load"`事件的定义相当广泛。 它会为每个被加载的资产被触发，因此如果资源在其他地方加载，您将不不能得知这是您的资源。 相反，您可以使用 `"load:id"` 事件来简化你自己需要的事件。
 
-```javascript
-// find the asset in the registry
-var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
-this.app.assets.once("load:" + asset.id, function (asset) {
-    // asset.resource is now ready
-}, this);
+```javascript
+// find the asset in the registry
+var asset = this.app.assets.find("A");
+// set up a one-off event listener for the load event
+this.app.assets.once("load:" + asset.id, function (asset) {
+    // asset.resource is now ready
+}, this);
 ```
 
 上述事件只会针对该特定资源触发。 更有用。
 
 最后，有一个特定的编码模式，经常发生。 所以经常，事实上，我们提供了一个方便的方法来为你做。
 
-```javascript
-var asset = this.app.assets.find("A");
-if (!asset.resource) {
-    this.app.assets.once("load:" + asset.id, function (asset) {
-        // do something with asset.resource
-    });
-    this.app.assets.load(asset);
-} else {
-    // do something with asset.resource
-}
+```javascript
+var asset = this.app.assets.find("A");
+if (!asset.resource) {
+    this.app.assets.once("load:" + asset.id, function (asset) {
+        // do something with asset.resource
+    });
+    this.app.assets.load(asset);
+} else {
+    // do something with asset.resource
+}
 ```
 
 此代码在需要时加载资源，但它有些垄长。 所以，你可以使用 `asset.ready()` 方法来作替代。 此代码执行与上述相同的功能。
 
-```javascript
-var asset = this.app.assets.find("A");
-asset.ready(function (asset) {
-    // do something with asset.resource
-});
-this.app.assets.load(asset);
+```javascript
+var asset = this.app.assets.find("A");
+asset.ready(function (asset) {
+    // do something with asset.resource
+});
+this.app.assets.load(asset);
 ```
 
 `asset.ready()` 方法将在资源加载后立即调用它的回调函数，如果它被使用时资源已经加载，则它会立即调用回调函数。如果资源已经加载，则 `app.assets.load()` 什么也不做。
 
-[1]: /en/api/pc.AssetRegistry.html
-[3]: https://playcanvas.com/project/406036
-[5]: /downloads/tutorials/A.dae
-[6]: /downloads/tutorials/B.dae
+[1]: /en/api/pc.AssetRegistry.html
+[3]: https://playcanvas.com/project/406036
+[5]: /downloads/tutorials/A.dae
+[6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
 

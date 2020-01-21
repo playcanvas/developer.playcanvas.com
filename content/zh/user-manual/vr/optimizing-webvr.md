@@ -1,7 +1,7 @@
----
-title: Optimizing WebVR applications
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Optimizing WebVR applications
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 ## 简介
@@ -42,8 +42,8 @@ PlayCanvas自带一个内置的分析工具。 在编辑器中使用Launch Profi
 
 可用的[更多优化准则] [4]。
 
-[1]: /user-manual/graphics/lighting/lightmaps/#playcanvas-runtime-lightmap-generation
-[2]: https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko
-[3]: /user-manual/optimization/profiler/
+[1]: /user-manual/graphics/lighting/lightmaps/#playcanvas-runtime-lightmap-generation
+[2]: https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko
+[3]: /user-manual/optimization/profiler/
 [4]: /user-manual/optimization/guidelines/
 

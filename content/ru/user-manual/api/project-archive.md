@@ -1,13 +1,13 @@
----
-title: Projects - Archive project
-template: usermanual-page.tmpl.html
-position: 12
+---
+title: Projects - Archive project
+template: usermanual-page.tmpl.html
+position: 12
 ---
 
 ## Route URL
 
-```none
-POST https://playcanvas.com/api/projects/:id/export
+```none
+POST https://playcanvas.com/api/projects/:id/export
 ```
 
 ## Description
@@ -18,49 +18,49 @@ The request will start an archive job and the job details will be returned in th
 
 ## Example
 
-```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST https://playcanvas.com/api/projects/99999999/export
+```none
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST https://playcanvas.com/api/projects/99999999/export
 ```
 
 ## Response Schema
 
-```none
-Status: 201 Created
+```none
+Status: 201 Created
 ```
 
-```none
-{
-    "id": int,
-    "created_at": date,
-    "modified_at": date,
-    "status": "running" or "complete" or "error",
-    "messages": list of strings,
-    "data": {
-      'project': {
-         'id': int
-      },
-      "url": string
-    }
-}
+```none
+{
+    "id": int,
+    "created_at": date,
+    "modified_at": date,
+    "status": "running" or "complete" or "error",
+    "messages": list of strings,
+    "data": {
+      'project': {
+         'id': int
+      },
+      "url": string
+    }
+}
 ```
 
 ## Errors
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">403</span><p>Invalid plan</p></div>
-<div class="parameter"><span class="param">403</span><p>User is not an admin of the organization</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="params">
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">403</span><p>Invalid plan</p></div>
+<div class="parameter"><span class="param">403</span><p>User is not an admin of the organization</p></div>
+<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
+<div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## Rate Limiting
 
 This route uses a [strict][1] rate limit.
 
-[1]: /user-manual/api#rate-limiting
-[2]: /user-manual/api/get-job
+[1]: /user-manual/api#rate-limiting
+[2]: /user-manual/api/get-job
 [3]: /user-manual/profile/projects/#import-project
 

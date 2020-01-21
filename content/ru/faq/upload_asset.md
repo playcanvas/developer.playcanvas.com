@@ -1,6 +1,6 @@
----
-title: Upload assets
-keywords: asset, new, create, upload
+---
+title: Upload assets
+keywords: asset, new, create, upload
 ---
 
 ## Как загрузить ресурс?

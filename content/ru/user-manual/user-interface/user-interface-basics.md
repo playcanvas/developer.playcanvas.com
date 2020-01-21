@@ -1,7 +1,7 @@
----
-title: User Interface Basics
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: User Interface Basics
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 User Interfaces are built from two elements in PlayCanvas. A [Screen Component][1] describes the area that contains all the user interfaces elements and then multiple entities with [Element Components][2] are attached below the Screen Entity in the hierarchy. The Screen defines the area of the User Interface and how it is rendered (in 2D space or in the 3D world). The Elements make up the images and text components of the interface.
@@ -28,10 +28,10 @@ There is an additional way of handling input for UI Elements. An instance of the
 
 PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
 
-[1]: /user-manual/user-interface/screens
-[2]: /user-manual/user-interface/elements
-[3]: /user-manual/user-interface/elements
-[4]: /user-manual/user-interface/input
-[5]: /user-manual/2D/9-slicing
+[1]: /user-manual/user-interface/screens
+[2]: /user-manual/user-interface/elements
+[3]: /user-manual/user-interface/elements
+[4]: /user-manual/user-interface/input
+[5]: /user-manual/2D/9-slicing
 [6]: /user-manual/user-interface/localization
 

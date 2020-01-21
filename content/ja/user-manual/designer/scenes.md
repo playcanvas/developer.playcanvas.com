@@ -1,7 +1,7 @@
----
-title: Scenes
-template: usermanual-page.tmpl.html
-position: 10
+---
+title: Scenes
+template: usermanual-page.tmpl.html
+position: 10
 ---
 
 ## シーン
@@ -22,7 +22,7 @@ position: 10
 
 You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left to make it the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
 
-[1]: /images/user-manual/editor/scenes-menu.jpg
-[2]: /images/user-manual/editor/scenes-viewport.jpg
+[1]: /images/user-manual/editor/scenes-menu.jpg
+[2]: /images/user-manual/editor/scenes-viewport.jpg
 [3]: /images/user-manual/editor/scenes.jpg
 

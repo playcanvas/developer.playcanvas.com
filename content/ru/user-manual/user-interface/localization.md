@@ -1,7 +1,7 @@
----
-title: Localization
-template: usermanual-page.tmpl.html
-position: 9
+---
+title: Localization
+template: usermanual-page.tmpl.html
+position: 9
 ---
 
 This page describes how to localize your Text Elements to different languages.
@@ -12,50 +12,50 @@ For each language you want to support you will need to add a JSON asset that con
 
 The JSON asset looks like so:
 
-```javascript
-{
-    "header": {
-        "version": 1
-    },
-    "data": [
-        {
-            "info": {
-                "locale": "en-US"
-            },
-            "messages": {
-                "key": "Single key translation",
-                "key plural": [
-                    "One key translation",
-                    "Translation for {number} keys"
-                ]
-            }
-        }
-    ]
-}
+```javascript
+{
+    "header": {
+        "version": 1
+    },
+    "data": [
+        {
+            "info": {
+                "locale": "en-US"
+            },
+            "messages": {
+                "key": "Single key translation",
+                "key plural": [
+                    "One key translation",
+                    "Translation for {number} keys"
+                ]
+            }
+        }
+    ]
+}
 ```
 
 You can specify a different locale in the `info` part of the JSON file. The `messages` section contains key - value pairs for each localized phrase. The key is the identifier for that phrase and the text is the translated text for that key.
 
 PlayCanvas also supports plural forms for each locale. To specify plural forms for each phrase you need to pass an array of strings for each plural form instead of a single string. Each language has different plural forms which you can find [here][1]. Each array element corresponds to a plural form for that language. For example for English:
 
-```javascript
-"key plural": [
-    "One item", // plural form ONE
-    "Not one" // plural form OTHER
-]
+```javascript
+"key plural": [
+    "One item", // plural form ONE
+    "Not one" // plural form OTHER
+]
 ```
 
 For Arabic:
 
-```javascript
-"key plural": [
-    "Zero items", // plural form ZERO
-    "One item", // plural form ONE
-    "Two items", // plural form TWO
-    "Few items", // plural form FEW
-    "Many items", // plural form MANY
-    "Rest", // plural form OTHER
-]
+```javascript
+"key plural": [
+    "Zero items", // plural form ZERO
+    "One item", // plural form ONE
+    "Two items", // plural form TWO
+    "Few items", // plural form FEW
+    "Many items", // plural form MANY
+    "Rest", // plural form OTHER
+]
 ```
 
 Refer to the language tables [here][1] to determine the rules for each language.
@@ -78,6 +78,6 @@ At runtime when the application switches to a different locale it will load the 
 
 For the engine API reference for localization see [this page][2].
 
-[1]: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+[1]: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
 [2]: https://developer.playcanvas.com/en/api/pc.I18n.html
 

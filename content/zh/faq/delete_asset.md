@@ -1,6 +1,6 @@
----
-title: Delete an asset
-keywords: asset, delete, remove
+---
+title: Delete an asset
+keywords: asset, delete, remove
 ---
 
 ## 如何删除资源？

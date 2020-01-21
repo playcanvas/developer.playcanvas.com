@@ -1,7 +1,7 @@
----
-title: 9-slicing
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: 9-slicing
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 9-slicing (sometimes called 9-patch) is a technique for 2D graphics that splits a single image into 9 areas which are scaled individually in order to prevent stretching when the image is displayed at different sizes and with different aspect ratios.
@@ -10,9 +10,9 @@ position: 2
 
 In the image above you can see the 9 areas that a defined using the Texture Atlas editing features of the [Sprite Editor][2]. When added to a scene using either a [Sprite Component][3] or an [Image Element Component][4], the image can be resized using the width and height properties of the component. Each area is scaled using the following rules:
 
-* **Center** - stretch or tile both horizontally and vertically
-* **Top, Bottom** - stretch or tile horizontally only
-* **Left, Right** - stretch or tile vertically only
+* **Center** - stretch or tile both horizontally and vertically
+* **Top, Bottom** - stretch or tile horizontally only
+* **Left, Right** - stretch or tile vertically only
 * **TopLeft, TopRight, BottomLeft, BottomRight** - Do not stretch or tile
 
 ![Button Resize Animation][5]
@@ -47,14 +47,14 @@ Sprite Assets can have one of three Render Modes.
 
 *Tiled* Render Mode is similar to *Sliced* mode except instead of stretching the sections repeat in tiled manner. The center tiles horizontally and vertically; the left and right tile vertically; the top and bottom tile horizontally and the corners do not tile at all.
 
-[1]: /images/user-manual/2D/9-slicing/9-sliced-labelled.jpg
-[2]: /user-manual/2D/sprite-editor
-[3]: /user-manual/packs/components/sprite
-[4]: /user-manual/packs/components/element
+[1]: /images/user-manual/2D/9-slicing/9-sliced-labelled.jpg
+[2]: /user-manual/2D/sprite-editor
+[3]: /user-manual/packs/components/sprite
+[4]: /user-manual/packs/components/element
 [5]: /images/user-manual/2D/9-slicing/button-resize.gif
 
-[6]: /images/user-manual/2D/9-slicing/9-slice-setup.jpg
-[7]: /images/user-manual/2D/9-slicing/simple-resize.gif
-[8]: /images/user-manual/2D/9-slicing/sliced-resize.gif
+[6]: /images/user-manual/2D/9-slicing/9-slice-setup.jpg
+[7]: /images/user-manual/2D/9-slicing/simple-resize.gif
+[8]: /images/user-manual/2D/9-slicing/sliced-resize.gif
 [9]: /images/user-manual/2D/9-slicing/tiled-resize.gif
 

@@ -1,7 +1,7 @@
----
-title: Types of VR experiences
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Types of VR experiences
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 ## Seated VR

@@ -1,7 +1,7 @@
----
-title: Cameras
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Cameras
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 摄像机负责向屏幕渲染场景。用户需要至少保持一个摄像机在场景中。当用户在PlayCanvas中创建一个新的场景，系统将会自动加载一个摄像机（默认为定向光）。
@@ -38,10 +38,10 @@ position: 1
 
 ![Vertical splitscreen][6]
 
-[1]: /images/user-manual/graphics/cameras/camera_icon.png
-[2]: /images/user-manual/graphics/cameras/camera_create.png
-[3]: /images/user-manual/graphics/cameras/camera_orthographic.png
-[4]: /images/user-manual/graphics/cameras/camera_perspective.png
-[5]: /images/user-manual/graphics/cameras/camera_horizontal_splitscreen.png
+[1]: /images/user-manual/graphics/cameras/camera_icon.png
+[2]: /images/user-manual/graphics/cameras/camera_create.png
+[3]: /images/user-manual/graphics/cameras/camera_orthographic.png
+[4]: /images/user-manual/graphics/cameras/camera_perspective.png
+[5]: /images/user-manual/graphics/cameras/camera_horizontal_splitscreen.png
 [6]: /images/user-manual/graphics/cameras/camera_vertical_splitscreen.png
 

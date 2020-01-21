@@ -1,7 +1,7 @@
----
-title: Script
-template: usermanual-page.tmpl.html
-position: 14
+---
+title: Script
+template: usermanual-page.tmpl.html
+position: 14
 ---
 
 脚本组件允许实体运行用户所支持的脚本。在每一帧的基础上当实体被实例化或者更新，用户可以通过JavaScript编程语言编写脚本。
@@ -22,6 +22,6 @@ position: 14
 
 脚本组件点击 [这里][2].
 
-[1]: /images/user-manual/scenes/components/component-script.png
+[1]: /images/user-manual/scenes/components/component-script.png
 [2]: /engine/api/stable/symbols/pc.ScriptComponent.html
 

@@ -1,7 +1,7 @@
----
-title: Settings
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Settings
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 The settings dashboard lets you set up Project settings.
@@ -22,8 +22,8 @@ The settings dashboard lets you set up Project settings.
 
 隐私设置只允许管理员授予了权限的用户进行操作。
 
-<div class="alert alert-info">
-Only users with premium accounts can access private projects
+<div class="alert alert-info">
+Only users with premium accounts can access private projects
 </div>
 
 ## Team

@@ -1,10 +1,10 @@
----
-title: Physically Based Rendering
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Physically Based Rendering
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
-![Star-Lord][1]
+![Star-Lord][1]
 *Star-Lord Model by [Joachim Coppens][2]*
 
 基于物理的渲染(PBR)是一个艺术工作流程的组合，使在图形渲染时一同工作的物理性能和材质着色器获得协调和一致。
@@ -19,7 +19,7 @@ position: 4
 
 ## 节约性能
 
-![Energy Conservation][3]
+![Energy Conservation][3]
 *Smooth surfaces have small bright patches, rough surfaces have large dim patches*
 
 正确的物理渲染的一个主要特征就是节约了性能。从漫射光与反射光都是从光与材料接触后产生这个事实可以看出，漫射和反射光的总和不能超过与材料接触的光的总和。在实践中，这意味着，如果一个表面是高度镜面的，那么它会显示极少的漫反射颜色。与此相反，如果材质显示了一个非常明显的漫反射颜色，那么它将显示很少的反射内容。
@@ -28,7 +28,7 @@ PBR让人欣喜的地方在于性能的节约全部包含在了着色器内，�
 
 ## 金属 & 非金属
 
-![Metals & Non-metals][4]
+![Metals & Non-metals][4]
 *Metals and Non-metals*
 
 与旧的渲染机制相比较，PBR的一个新特性是提前想好这个材质是用于做什么的而不是去决定它的表现现象。我们在这里考虑的主要问题是材料是否是导体(通常以金属做例) 还是绝缘体(非金属)。
@@ -53,10 +53,10 @@ PBR让人欣喜的地方在于性能的节约全部包含在了着色器内，�
 
 *更多信息请参阅 Marmoset Toolbag 的 [PBR 理论][5] 文章 *。
 
-[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
-[2]: http://joachimcoppens.com/
-[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
-[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-theory
+[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
+[2]: http://joachimcoppens.com/
+[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
+[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-theory
 [6]: /user-manual/graphics/physical-rendering/physical-materials
 

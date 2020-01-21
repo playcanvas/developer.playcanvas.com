@@ -1,7 +1,7 @@
----
-title: Sepia Effect
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Sepia Effect
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 复古风格效果使图像看上去就和老照片一样。

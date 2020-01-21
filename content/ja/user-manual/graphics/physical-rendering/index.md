@@ -1,10 +1,10 @@
----
-title: Physically Based Rendering
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Physically Based Rendering
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
-![Star-Lord][1]
+![Star-Lord][1]
 *Star-Lord Model by [Joachim Coppens][2]*
 
 物理ベースレンダリング(PBR)では、一貫性のあるグラフィクスレンダリングが、アーティストによる素材作成、計測された物理的プロパティとマテリアルシェーダの組み合わせによって実現されます。光源と物体表面との関係をあらわす物理原則を適応することで、どのような照明環境でも特別な処理をすることなく自然な描画を行うことができます。
@@ -19,7 +19,7 @@ position: 4
 
 ## エネルギーの保存
 
-![Energy Conservation][3]
+![Energy Conservation][3]
 *Smooth surfaces have small bright patches, rough surfaces have large dim patches*
 
 物理的に正しいレンダリングの重要な要素は、エネルギーの保存です。拡散光と反射光がどちらも物体表面に投射される光から発生していることから考えると、拡散光と反射光を足しあわせた総量は、物体表面に投射された光の総量を上回ることはできません。この法則が現実世界で意味することは、物体表面の反射率が高ければ拡散光は非常に小さくなり、反対に拡散光が大きければ反射はあまり起こらないということになります。
@@ -28,7 +28,7 @@ position: 4
 
 ## 金属と非金属
 
-![Metals & Non-metals][4]
+![Metals & Non-metals][4]
 *Metals and Non-metals*
 
 物理ベースのレンダリングとこれまでのシェーディングモデルの違いの一つは、マテリアルの振る舞いを、物体がどのようなものでできているか、ということを考慮して決めることです。ここで考慮する主な要素は、その物体が伝導体(通常は金属)であるか、あるいは絶縁体(通常は非金属)であるかということです。
@@ -53,10 +53,10 @@ position: 4
 
 *さらに詳しい説明は、Marmoset Toolbagの[PBR Theory][5]という素晴らしい記事を参照してください。*
 
-[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
-[2]: http://joachimcoppens.com/
-[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
-[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-theory
+[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
+[2]: http://joachimcoppens.com/
+[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
+[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-theory
 [6]: /user-manual/graphics/physical-rendering/physical-materials
 

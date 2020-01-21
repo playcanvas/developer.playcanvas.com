@@ -1,7 +1,7 @@
----
-title: Assets
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Assets
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 アセットとはゲームで使用することができるリソースです。アセットには3Dモデルや音声ファイルなどの様々な種類のコンテンツタイプがあります。形状はソースとターゲットの二つです。
@@ -12,9 +12,9 @@ position: 6
 
 PlayCanvasは幅広いコンテンツタイプのインポートに対応しています：
 
-* Models e.g. FBX, COLLADA, obj
-* 3D Animations
-* Images for textures e.g. jpg, png
+* Models e.g. FBX, COLLADA, obj
+* 3D Animations
+* Images for textures e.g. jpg, png
 * Audio e.g. mp3, ogg
 
 新しいファイルをアップロードするとアセットタイプは自動的にアップロードしたファイルのタイプから設定されます。例えば、PNG ファイルをアップロードすると、作成されたアセットは*テクスチャー*タイプになります。

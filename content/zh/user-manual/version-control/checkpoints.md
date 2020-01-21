@@ -1,7 +1,7 @@
----
-title: Checkpoints
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Checkpoints
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 A checkpoint is a snapshot of your project at a point in time. It contains the complete set of data for your project so that you can restore this state at any point in the future. Checkpoints are similar to *commits* in other version control systems. Checkpoints are identified by a unique id number and a description that you enter at the time you create the checkpoint.
@@ -30,9 +30,9 @@ Note, restoring a checkpoint brings the changes from the checkpoint into your cu
 
 ![Restore checkpoint applied][5]
 
-[1]: /images/user-manual/version-control/checkpoint.jpg
-[2]: /images/user-manual/version-control/vc-panel.jpg
-[3]: /images/user-manual/version-control/create-checkpoint.jpg
-[4]: /images/user-manual/version-control/restore-checkpoint.jpg
+[1]: /images/user-manual/version-control/checkpoint.jpg
+[2]: /images/user-manual/version-control/vc-panel.jpg
+[3]: /images/user-manual/version-control/create-checkpoint.jpg
+[4]: /images/user-manual/version-control/restore-checkpoint.jpg
 [5]: /images/user-manual/version-control/restore-checkpoint-applied.png
 

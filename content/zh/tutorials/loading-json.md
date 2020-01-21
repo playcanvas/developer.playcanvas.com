@@ -1,8 +1,8 @@
----
-title: Loading JSON Data
-template: tutorial-page.tmpl.html
-tags: loading
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg
+---
+title: Loading JSON Data
+template: tutorial-page.tmpl.html
+tags: loading
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/cHnXIXoN/" ></iframe>
@@ -11,34 +11,34 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 ## 从资源中读取JSON数据
 
-```javascript
-Game.attributes.add('characterData', {
-    type: 'asset',
-    assetType: 'json'
-});
-
-//...
-
-Game.prototype.parseCharacterData = function (data) {
-    var names = [];
-
-    // Read the character data from the JSON asset return a list of names
-    var characters = data.characters;
-    for (var i = 0; i < characters.length; i++) {
-        var character = characters[i];
-        names.push(character.firstName + ' ' + character.lastName);
-    }
-
-    return names;
-};
-
-//...
-
-// Get JSON data from a project asset
-var characterData = this.characterData.resource;
-
-// Parse JSON data
-var names = this.parseCharacterData(characterData);
+```javascript
+Game.attributes.add('characterData', {
+    type: 'asset',
+    assetType: 'json'
+});
+
+//...
+
+Game.prototype.parseCharacterData = function (data) {
+    var names = [];
+
+    // Read the character data from the JSON asset return a list of names
+    var characters = data.characters;
+    for (var i = 0; i < characters.length; i++) {
+        var character = characters[i];
+        names.push(character.firstName + ' ' + character.lastName);
+    }
+
+    return names;
+};
+
+//...
+
+// Get JSON data from a project asset
+var characterData = this.characterData.resource;
+
+// Parse JSON data
+var names = this.parseCharacterData(characterData);
 ```
 
 您可以在上面的代码中看到，您在项目中从资源里加载JSON数据所需要做的是使用“asset”类型的脚本属性，或者从资源注册表中检索资源，然后访问其“resource” 属性。 对于类型为`json`的资源，当访问`resource`属性时，数据已经被解析为一个标准的javascript对象传回。
@@ -47,25 +47,25 @@ var names = this.parseCharacterData(characterData);
 
 ## 从远程服务器加载JSON
 
-```javascript
-Game.prototype.loadJsonFromRemote = function (url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", function () {
-        callback(JSON.parse(this.response));
-    });
-    xhr.open("GET", url);
-    xhr.send();
-};
-
-//...
-
-// load JSON from a remote server
-this.loadJsonFromRemote("https://api.github.com/", function (data) {
-    // display JSON data from remote server
-    el = document.querySelector("#xhr-json");
-    el.textContent = JSON.stringify(data, null, 4);
-});
-
+```javascript
+Game.prototype.loadJsonFromRemote = function (url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function () {
+        callback(JSON.parse(this.response));
+    });
+    xhr.open("GET", url);
+    xhr.send();
+};
+
+//...
+
+// load JSON from a remote server
+this.loadJsonFromRemote("https://api.github.com/", function (data) {
+    // display JSON data from remote server
+    el = document.querySelector("#xhr-json");
+    el.textContent = JSON.stringify(data, null, 4);
+});
+
 ```
 
 在此代码中，我们使用XMLHttpRequest对象(它是标准Web浏览器API的一部分)从URL，在本例中为Github API，链接请求JSON数据。
@@ -76,84 +76,84 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
 
 以下是整段的代码:
 
-```javascript
-var Game = pc.createScript('game');
-
-Game.attributes.add('display', {
-    type: 'asset',
-    assetType: 'html'
-});
-
-Game.attributes.add('style', {
-    type: 'asset',
-    assetType: 'css'
-});
-
-// Create a script attribute to enable the drag and drop of a JSON asset containing character data
-Game.attributes.add('characterData', {
-    type: 'asset',
-    assetType: 'json'
-});
-
-// initialize code called once per entity
-Game.prototype.initialize = function() {
-    this.initDisplay();
-
-    var el;
-
-    // Get JSON data from a project asset
-    var characterData = this.characterData.resource;
-
-    // Parse JSON data
-    var names = this.parseCharacterData(characterData);
-
-    // display character names
-    el = document.querySelector("#character-name");
-    el.textContent = names.join(", ");
-
-    // display JSON data from asset
-    el = document.querySelector("#asset-json");
-    el.textContent = JSON.stringify(characterData, null, 4);
-
-    // load JSON from a remote server
-    this.loadJsonFromRemote("https://api.github.com/", function (data) {
-        // display JSON data from remote server
-        el = document.querySelector("#xhr-json");
-        el.textContent = JSON.stringify(data, null, 4);
-    });
-};
-
-Game.prototype.initDisplay = function () {
-    var el = pc.createStyle(this.style.resource);
-    document.head.appendChild(el);
-
-    var div = document.createElement("div");
-    div.setAttribute("id", "container");
-    div.innerHTML = this.display.resource;
-    document.body.appendChild(div);
-};
-
-Game.prototype.parseCharacterData = function (data) {
-    var names = [];
-
-    // Read the character data from the JSON asset return a list of names
-    var characters = data.characters;
-    for (var i = 0; i < characters.length; i++) {
-        var character = characters[i];
-        names.push(character.firstName + ' ' + character.lastName);
-    }
-
-    return names;
-};
-
-Game.prototype.loadJsonFromRemote = function (url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", function () {
-        callback(JSON.parse(this.response));
-    });
-    xhr.open("GET", url);
-    xhr.send();
-};
+```javascript
+var Game = pc.createScript('game');
+
+Game.attributes.add('display', {
+    type: 'asset',
+    assetType: 'html'
+});
+
+Game.attributes.add('style', {
+    type: 'asset',
+    assetType: 'css'
+});
+
+// Create a script attribute to enable the drag and drop of a JSON asset containing character data
+Game.attributes.add('characterData', {
+    type: 'asset',
+    assetType: 'json'
+});
+
+// initialize code called once per entity
+Game.prototype.initialize = function() {
+    this.initDisplay();
+
+    var el;
+
+    // Get JSON data from a project asset
+    var characterData = this.characterData.resource;
+
+    // Parse JSON data
+    var names = this.parseCharacterData(characterData);
+
+    // display character names
+    el = document.querySelector("#character-name");
+    el.textContent = names.join(", ");
+
+    // display JSON data from asset
+    el = document.querySelector("#asset-json");
+    el.textContent = JSON.stringify(characterData, null, 4);
+
+    // load JSON from a remote server
+    this.loadJsonFromRemote("https://api.github.com/", function (data) {
+        // display JSON data from remote server
+        el = document.querySelector("#xhr-json");
+        el.textContent = JSON.stringify(data, null, 4);
+    });
+};
+
+Game.prototype.initDisplay = function () {
+    var el = pc.createStyle(this.style.resource);
+    document.head.appendChild(el);
+
+    var div = document.createElement("div");
+    div.setAttribute("id", "container");
+    div.innerHTML = this.display.resource;
+    document.body.appendChild(div);
+};
+
+Game.prototype.parseCharacterData = function (data) {
+    var names = [];
+
+    // Read the character data from the JSON asset return a list of names
+    var characters = data.characters;
+    for (var i = 0; i < characters.length; i++) {
+        var character = characters[i];
+        names.push(character.firstName + ' ' + character.lastName);
+    }
+
+    return names;
+};
+
+Game.prototype.loadJsonFromRemote = function (url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function () {
+        callback(JSON.parse(this.response));
+    });
+    xhr.open("GET", url);
+    xhr.send();
+};
 ```
 
 请自行在 [工程][1]中进行尝试。

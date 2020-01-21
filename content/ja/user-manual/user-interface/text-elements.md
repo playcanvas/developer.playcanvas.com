@@ -1,7 +1,7 @@
----
-title: Text Elements
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Text Elements
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 テキスト要素は、[font asset][1]を使用してテキスト文字列を表示するために使用されます。
@@ -40,10 +40,10 @@ Read more about localization [here][11].
 
 font sizeプロパティは、Screenコンポーネントピクセルでフォントのレンダリングサイズを設定します。テキストに改行文字が含まれている場合、行の高さは下に移動する距離をScreen Componentピクセルで設定します。
 
-![Font Size Line Equal][6]
+![Font Size Line Equal][6]
 **Equal Font Size and Line Height is the default**
 
-![Font Size Line Spaced][7]
+![Font Size Line Spaced][7]
 **Increase Line Height to increase line spacing**
 
 ## スペーシング
@@ -64,15 +64,15 @@ Opacityプロパティでは、文字列の透明度を設定できます
 
 ![透明][10]
 
-[1]: /user-manual/assets/fonts
-[2]: /images/user-manual/user-interface/text-element/auto-size.png
-[3]: /images/user-manual/user-interface/text-element/alignment-bottom-left.png
-[4]: /images/user-manual/user-interface/text-element/alignment-centered.png
-[5]: /images/user-manual/user-interface/text-element/alignment-top-right.png
-[6]: /images/user-manual/user-interface/text-element/font-line-equal.png
-[7]: /images/user-manual/user-interface/text-element/font-line-spaced.png
-[8]: /images/user-manual/user-interface/text-element/spacing.png
-[9]: /images/user-manual/user-interface/text-element/tinted.png
-[10]: /images/user-manual/user-interface/text-element/transparent.png
+[1]: /user-manual/assets/fonts
+[2]: /images/user-manual/user-interface/text-element/auto-size.png
+[3]: /images/user-manual/user-interface/text-element/alignment-bottom-left.png
+[4]: /images/user-manual/user-interface/text-element/alignment-centered.png
+[5]: /images/user-manual/user-interface/text-element/alignment-top-right.png
+[6]: /images/user-manual/user-interface/text-element/font-line-equal.png
+[7]: /images/user-manual/user-interface/text-element/font-line-spaced.png
+[8]: /images/user-manual/user-interface/text-element/spacing.png
+[9]: /images/user-manual/user-interface/text-element/tinted.png
+[10]: /images/user-manual/user-interface/text-element/transparent.png
 [11]: /user-manual/user-interface/localization
 

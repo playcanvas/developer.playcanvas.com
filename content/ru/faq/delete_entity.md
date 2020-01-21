@@ -1,6 +1,6 @@
----
-title: Delete an Entity
-keywords: entity, delete, destroy, remove
+---
+title: Delete an Entity
+keywords: entity, delete, destroy, remove
 ---
 
 ## Как удалить сущность?

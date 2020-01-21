@@ -1,7 +1,7 @@
----
-title: Units
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Units
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 PlayCanvas scenes generally treat 1 unit as 1 meter.
@@ -20,6 +20,6 @@ To check or set working units in Maya, open the Preferences dialog:
 
 ![Maya units][2]
 
-[1]: /images/user-manual/assets/models/max-units.png
+[1]: /images/user-manual/assets/models/max-units.png
 [2]: /images/user-manual/assets/models/maya-units.png
 

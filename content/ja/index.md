@@ -1,6 +1,6 @@
----
-title: PlayCanvas Developer Resources
-template: intro.tmpl.html
+---
+title: PlayCanvas Developer Resources
+template: intro.tmpl.html
 ---
 
 はじめに[ユーザーマニュアル][1]を読むことをおすすめします。これはPlayCanvasの使い方の完全なマニュアルで、これを読めばいろいろなことがわかります。次のステップでは、PlayCanvasの機能を順を追って説明している[チュートリアル][3]と[ビデオ][12]を見てください。最後に、[APIリファレンス][4]はPlayCanvasエンジンの完全なリファレンスマニュアルです。
@@ -27,15 +27,15 @@ template: intro.tmpl.html
 
 PlayCanvas, API, プラットフォームに関する技術的な質問がある場合は、[PlayCanvas Forum][10]をご利用ください。
 
-[1]: /user-manual
-[2]: /getting-started
-[3]: /tutorials
-[4]: /en/api/
-[5]: https://github.com/playcanvas
-[6]: https://github.com/playcanvas/sprites
-[7]: https://github.com/playcanvas/fonts
-[8]: https://playcanvas.com/play
-[9]: /engine
-[10]: http://forum.playcanvas.com/
+[1]: /user-manual
+[2]: /getting-started
+[3]: /tutorials
+[4]: /en/api/
+[5]: https://github.com/playcanvas
+[6]: https://github.com/playcanvas/sprites
+[7]: https://github.com/playcanvas/fonts
+[8]: https://playcanvas.com/play
+[9]: /engine
+[10]: http://forum.playcanvas.com/
 [12]: /tutorials/video
 

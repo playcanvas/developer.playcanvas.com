@@ -1,6 +1,6 @@
----
-title: Change the background color
-keywords: camera, color, background, colour, sky
+---
+title: Change the background color
+keywords: camera, color, background, colour, sky
 ---
 
 ## Как изменить фоновый цвет?

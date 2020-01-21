@@ -1,6 +1,6 @@
----
-title: Create a cubemap
-keywords: asset, cubemap, create, skybox, texture, pbr, physical
+---
+title: Create a cubemap
+keywords: asset, cubemap, create, skybox, texture, pbr, physical
 ---
 
 ## キューブマップを作成するには？

@@ -1,7 +1,7 @@
----
-title: Using WebVR in PlayCanvas
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Using WebVR in PlayCanvas
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 在项目中启用WebVR之后，有一个小的API可供您在脚本中使用，以管理连接到应用程序和进入和退出VR的VR显示。
@@ -10,28 +10,28 @@ position: 1
 
 用于输入VR的API位于相机组件上。 要启动VR视角，您应该使用`enterVr`方法。
 
-```javascript
-this.entity.camera.enterVr(function (err)) {
-    if (err) {
-        console.error(err); // could not enter VR
-    } else {
-        // in VR!
-    }
-});
+```javascript
+this.entity.camera.enterVr(function (err)) {
+    if (err) {
+        console.error(err); // could not enter VR
+    } else {
+        // in VR!
+    }
+});
 ```
 
 ## 退出VR
 
 退出VR可以通过两种方式触发。 首先，用户可能通过一些外部进程退出VR。 例如，点击浏览器上的后退按钮。 第二，你可以使用`exitVR`方法触发相机方法直接退出VR。
 
-```javascript
-this.entity.camera.exitVr(function (err) {
-    if (err) {
-        console.error(err); // could not exit VR
-    } else {
-        // not in VR!
-    }
-});
+```javascript
+this.entity.camera.exitVr(function (err) {
+    if (err) {
+        console.error(err); // could not exit VR
+    } else {
+        // not in VR!
+    }
+});
 ```
 
 ## 在VR中的相机位置
@@ -44,10 +44,10 @@ this.entity.camera.exitVr(function (err) {
 
 魔术窗口是一种当你不通过立体声头戴式显示器观看您的场景的体验。 相反，您可以使用平板电脑或手机设备在场景中创建“魔术窗口”视图。 要在PlayCanvas中启用此类型的视图，您可以在相机上设置VrDisplay属性，而无需调用`enterVr`。
 
-```javascript
-if (this.app.vr.display) {
-    this.entity.camera.vrDisplay = this.app.vr.display;
-}
+```javascript
+if (this.app.vr.display) {
+    this.entity.camera.vrDisplay = this.app.vr.display;
+}
 ```
 
 ### API 概述
@@ -72,7 +72,7 @@ if (this.app.vr.display) {
 
 启动WebVR需要通过*用户操作*触发浏览器方法。 这意味着它必须响应于按键按压，鼠标点击或触摸事件。 因为这个原因，我们没有办法在加载页面时立即进入VR。
 
-[1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
-[2]: /api/pc.VrManager.html
+[1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
+[2]: /api/pc.VrManager.html
 [3]: /api/pc.VrDisplay.html
 

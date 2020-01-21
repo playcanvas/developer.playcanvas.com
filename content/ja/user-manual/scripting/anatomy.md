@@ -1,35 +1,35 @@
----
-title: Anatomy of a script
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Anatomy of a script
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 基本的なスクリプトです。PlayCanvasのスクリプトの構造を学ぶために使用できます。
 
-```javascript
-var Rotate = pc.createScript('rotate');
-
-Rotate.attributes.add('speed', { type: 'number', default: 10 });
-
-// initialize code called once per entity
-Rotate.prototype.initialize = function() {
-    this.local = false; // choose local rotation or world rotation
-};
-
-// update code called every frame
-Rotate.prototype.update = function(dt) {
-    if (this.local) {
-        this.entity.rotateLocal(0, this.speed * dt, 0);
-    } else {
-        this.entity.rotate(0, this.speed * dt, 0);
-    }
-};
-
-// swap method called for script hot-reloading
-// inherit your script state here
-Rotate.prototype.swap = function(old) {
-    this.local = old.local;
-};
+```javascript
+var Rotate = pc.createScript('rotate');
+
+Rotate.attributes.add('speed', { type: 'number', default: 10 });
+
+// initialize code called once per entity
+Rotate.prototype.initialize = function() {
+    this.local = false; // choose local rotation or world rotation
+};
+
+// update code called every frame
+Rotate.prototype.update = function(dt) {
+    if (this.local) {
+        this.entity.rotateLocal(0, this.speed * dt, 0);
+    } else {
+        this.entity.rotate(0, this.speed * dt, 0);
+    }
+};
+
+// swap method called for script hot-reloading
+// inherit your script state here
+Rotate.prototype.swap = function(old) {
+    this.local = old.local;
+};
 ```
 
 スクリプトの各セクションを分解します。
@@ -38,29 +38,29 @@ Rotate.prototype.swap = function(old) {
 
 ## スクリプトタイプの宣言
 
-```javascript
-var Rotate = pc.createScript('rotate');
+```javascript
+var Rotate = pc.createScript('rotate');
 ```
 
 この行は、「rotate」という新しいScriptTypeを作成します。スクリプトの名前は、スクリプトコンポーネントでスクリプトを識別するために使用されます。プロジェクト内で宣言された各ScriptTypeには固有の名前が必要です。返される関数の`Rotate`は、メソッドの標準セットでそのプロトタイプを拡張できるjavascript関数です。クラス継承のようなものです。
 
 ### スクリプトの属性
 
-```javascript
-Rotate.attributes.add('speed', { type: 'number', default: 10 });
+```javascript
+Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
+This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
 Attributes are automatically inherited to new script instance during code hot-swap.
 
 ## 初期化
 
-```javascript
-// initialize code called once per entity
-Rotate.prototype.initialize = function() {
-    // local rotation or world rotation
-    this.local = false;
-};
+```javascript
+// initialize code called once per entity
+Rotate.prototype.initialize = function() {
+    // local rotation or world rotation
+    this.local = false;
+};
 ```
 
 `initialize`メソッドは、スクリプトが接続されている各エンティティで呼び出されます。アプリケーションのロードが完了し、エンティティ階層が構築された後、最初の更新ループまたはフレームのレンダリングされる前に呼び出されます。`initialize`メソッドは、各エンティティで一度のみ呼び出されます。スクリプトインスタンスのメンバー変数を定義し、初期化するために使用することができます。アプリケーションの起動時にエンティティまたはスクリプトが無効になっている場合、initializeメソッドは、エンティティが最初に有効になった時に呼ばれます。
@@ -71,15 +71,15 @@ Rotate.prototype.initialize = function() {
 
 ## 更新
 
-```javascript
-// update code called every frame
-Rotate.prototype.update = function(dt) {
-    if (this.local) {
-        this.entity.rotateLocal(0, this.speed * dt, 0);
-    } else {
-        this.entity.rotate(0, this.speed * dt, 0);
-    }
-};
+```javascript
+// update code called every frame
+Rotate.prototype.update = function(dt) {
+    if (this.local) {
+        this.entity.rotateLocal(0, this.speed * dt, 0);
+    } else {
+        this.entity.rotate(0, this.speed * dt, 0);
+    }
+};
 ```
 
 エンティティ、スクリプトコンポーネント、スクリプトインスタンスが有効になっている間、更新メソッドは、フレームごとに各エンティティに呼び出されます。各フレームの`dt`は、最後のフレームからの秒単位の時間となる引数として渡されます。
@@ -88,12 +88,12 @@ Rotate.prototype.update = function(dt) {
 
 ## スワップ
 
-```javascript
-// swap method called for script hot-reloading
-// inherit your script state here
-Rotate.prototype.swap = function(old) {
-    this.local = old.local;
-};
+```javascript
+// swap method called for script hot-reloading
+// inherit your script state here
+Rotate.prototype.swap = function(old) {
+    this.local = old.local;
+};
 ```
 
 同様のScriptTypeがレジストリに追加されたときに`swap`メソッドが呼び出されます。スクリプトがエディタから実行時に変更されたとき、自動的にLaunchで行われます。このメソッドにより、アプリケーションを実行し続けながら「コードのホットリロード」に対応することができます。アプリ実行中、到達時間がかかるコードの反復処理を行いたい場合には極めて有用です。ゲーム状態の復元やリロードをして複数の設定を行うことなく、変更を加え確認することができます。
@@ -114,55 +114,55 @@ Rotate.prototype.swap = function(old) {
 
 スクリプトインスタンスが実行状態を有効から無効、またはその逆に切り替える際に`state`イベントが発生します。スクリプトインスタンスの状態は、スクリプト自体、スクリプトが所属するコンポーネント、スクリプトコンポーネントが添付されているエンティティを有効／無効にすることで変更できます。`enable`イベントは、状態が無効から有効に変更された場合にのみ発生します。また、`disable`イベントは、、状態が有効から無効に変更された場合にのみ発生します。
 
-```javascript
-Rotate.prototype.initialize = function () {
-    this.on("state", function (enabled) {
-        // play a sound effect when the entity is enabled or disabled
-        if (enabled) {
-            this.entity.sound.play("bell");
-        } else {
-            this.entity.sound.play("horn");
-        }
-    });
-};
+```javascript
+Rotate.prototype.initialize = function () {
+    this.on("state", function (enabled) {
+        // play a sound effect when the entity is enabled or disabled
+        if (enabled) {
+            this.entity.sound.play("bell");
+        } else {
+            this.entity.sound.play("horn");
+        }
+    });
+};
 ```
 
 または、同様で`enable`と`disable`を利用した場合。
 
-```javascript
-Rotate.prototype.initialize = function () {
-    this.on("enable", function () {
-        this.entity.sound.play("bell");
-    });
-
-    this.on("disable", function () {
-        this.entity.sound.play("horn");
-    });
-};
+```javascript
+Rotate.prototype.initialize = function () {
+    this.on("enable", function () {
+        this.entity.sound.play("bell");
+    });
+
+    this.on("disable", function () {
+        this.entity.sound.play("horn");
+    });
+};
 ```
 
 ## 破棄
 
 スクリプトインスタンスが破棄されると`destroy`イベントが発生します。`destroy()`メソッドの呼び出しによりコンポーネントからスクリプトが削除されたことが原因の場合もありますし、エンティティからスクリプトコンポーネントが削除された場合や、添付されているエンティティが破壊された場合もあります。
 
-```javascript
-Rotate.prototype.initialize = function () {
-    this.on("destroy", function () {
-        // remove a DOM event listener when the entity is destroyed
-        window.removeEventListener("resize", this._onResize);
-    });
-};
+```javascript
+Rotate.prototype.initialize = function () {
+    this.on("destroy", function () {
+        // remove a DOM event listener when the entity is destroyed
+        window.removeEventListener("resize", this._onResize);
+    });
+};
 ```
 
 ## attr & attr:[name]
 
 `attr`と`attr:[name]`イベントは宣言されたスクリプト属性値変更された時に発生します。これは、アプリケーションを実行する過程、あるいはエディタから値に変更が加えられたときに起きる可能性があります。`attr`は変更されたすべての属性に対して発生します。 `attr:[name]`は特定の属性に対してのみ発生します。例えば、「speed」という属性がある場合、速度が変更されたときに`attr:speed` イベントが発生します。
 
-```javascript
-Rotate.prototype.initialize = function () {
-    this.on("attr:speed", function (value, prev) {
-        // speed attribute has changed
-    });
-};
+```javascript
+Rotate.prototype.initialize = function () {
+    this.on("attr:speed", function (value, prev) {
+        // speed attribute has changed
+    });
+};
 ```
 

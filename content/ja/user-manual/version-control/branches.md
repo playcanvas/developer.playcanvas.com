@@ -1,7 +1,7 @@
----
-title: Branches
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Branches
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the master branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
@@ -44,9 +44,9 @@ To close a branch open the version control panel, select the branch you wish to 
 
 You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here. **Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
 
-[1]: /images/user-manual/version-control/new-branch.jpg
-[2]: /images/user-manual/version-control/new-branch-dialog.jpg
-[3]: /images/user-manual/version-control/switch-branch.jpg
-[4]: /images/user-manual/version-control/close-branch.jpg
+[1]: /images/user-manual/version-control/new-branch.jpg
+[2]: /images/user-manual/version-control/new-branch-dialog.jpg
+[3]: /images/user-manual/version-control/switch-branch.jpg
+[4]: /images/user-manual/version-control/close-branch.jpg
 [5]: /images/user-manual/version-control/close-branch-dialog.jpg
 

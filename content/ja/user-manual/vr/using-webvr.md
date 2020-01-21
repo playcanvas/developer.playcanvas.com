@@ -1,7 +1,7 @@
----
-title: Using WebVR in PlayCanvas
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Using WebVR in PlayCanvas
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 プロジェクトでWebVRを有効にすると、スクリプトに使用してアプリケーションに接続されているVRディスプレイを管理し、VRを開始して終了するための小さなAPIを使用できます。
@@ -10,28 +10,28 @@ position: 1
 
 VRに入るためのAPIはCamera Componentにあります。VRのプレゼンテーションを開始するには、 `enterVr`メソッドを使います。
 
-```javascript
-this.entity.camera.enterVr(function (err)) {
-    if (err) {
-        console.error(err); // could not enter VR
-    } else {
-        // in VR!
-    }
-});
+```javascript
+this.entity.camera.enterVr(function (err)) {
+    if (err) {
+        console.error(err); // could not enter VR
+    } else {
+        // in VR!
+    }
+});
 ```
 
 ## VRの終了
 
 VRの終了は2つの方法でトリガーすることができます。一つ目は、何らかの外部プロセスでVRを終了する方法です。 たとえば、ブラウザの戻るボタンを押します。二つ目は、 `exitVR`メソッドを使用してカメラをVRから直接終了するようにトリガーする方法です。
 
-```javascript
-this.entity.camera.exitVr(function (err) {
-    if (err) {
-        console.error(err); // could not exit VR
-    } else {
-        // not in VR!
-    }
-});
+```javascript
+this.entity.camera.exitVr(function (err) {
+    if (err) {
+        console.error(err); // could not exit VR
+    } else {
+        // not in VR!
+    }
+});
 ```
 
 ## VRでのカメラ位置
@@ -44,10 +44,10 @@ VRでプレゼンテーションしているときは、カメラの位置と向
 
 Magic Windowは、ステレオヘッドマウントディスプレイを使用せずにシーンを表示する体験です。代わりに、タブレットやスマートフォンを使ってシーンに「マジックウィンドウ」ビューを作成します。PlayCanvasでこのようなビューを有効にするには、`enterVr`を呼び出さずにカメラのVrDisplayプロパティを設定します。
 
-```javascript
-if (this.app.vr.display) {
-    this.entity.camera.vrDisplay = this.app.vr.display;
-}
+```javascript
+if (this.app.vr.display) {
+    this.entity.camera.vrDisplay = this.app.vr.display;
+}
 ```
 
 ### API 概要
@@ -72,7 +72,7 @@ VRコンテンツを表示することができる各ディスプレイは、 `p
 
 WebVRを開始するには、*ユーザアクション*によってブラウザをトリガする必要があります。つまり、キー入力、マウスクリック、またはタッチイベントに応答する必要があります。そのため、ページを読み込んですぐにVRに入る方法はありません。
 
-[1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
-[2]: /api/pc.VrManager.html
+[1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
+[2]: /api/pc.VrManager.html
 [3]: /api/pc.VrDisplay.html
 

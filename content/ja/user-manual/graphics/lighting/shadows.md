@@ -1,7 +1,7 @@
----
-title: Shadows
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Shadows
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 影を使用すればゲームにリアリティを加えることができます。しかし、動的な(リアルタイムな)影は、実行時のパフォーマンスに大きな負荷を加えてしまいます。パフォーマンスへの影響を少なく、シーンに静的な影を追加する方法については[Lightmaps][4]を参照してください。
@@ -58,15 +58,15 @@ shadow distance（投影距離）はビューポイントから指向性ライ�
 
 影を有効にすると、パフォーマンスに影響があります：
 
-* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Point light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
-* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
-* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
+* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Point light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
+* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
+* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
 * If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
 
-[1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
-[2]: /user-manual/packs/components/light
-[3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
-[4]: /user-manual/graphics/lighting/lightmaps
-[5]: /images/user-manual/scenes/components/component-light-directional.png
+[1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
+[2]: /user-manual/packs/components/light
+[3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
+[4]: /user-manual/graphics/lighting/lightmaps
+[5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
 

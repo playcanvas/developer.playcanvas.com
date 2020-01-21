@@ -1,7 +1,7 @@
----
-title: Profiler
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Profiler
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 PlayCanvasは、パフォーマンスの問題の診断を支援するためのリアルタイムプロファイラを提供しています。
@@ -26,14 +26,14 @@ PlayCanvasは、パフォーマンスの問題の診断を支援するための�
 
 右側のパネルはプロファイラータイムラインです。アプリのライフのキーイベントを表示します：
 
-* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
-* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
+* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
+* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
 * **start**: event when PlayCanvas begins the main application loop and rendering begins.
 
 緑のバーは、個々の非同期アセットの負荷を表します。オレンジのバーは、シェーダのコンパイルをブロックしています。
 
-[1]: /images/user-manual/optimization/profiler/profiler.png
-[2]: /images/user-manual/optimization/profiler/profiler_launch.png
-[3]: /images/user-manual/optimization/profiler/profiler_stats.png
+[1]: /images/user-manual/optimization/profiler/profiler.png
+[2]: /images/user-manual/optimization/profiler/profiler_launch.png
+[3]: /images/user-manual/optimization/profiler/profiler_stats.png
 [4]: /images/user-manual/optimization/profiler/profiler_timeline.png
 

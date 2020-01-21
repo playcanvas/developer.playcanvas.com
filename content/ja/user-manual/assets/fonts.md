@@ -1,7 +1,7 @@
----
-title: Fonts
-template: usermanual-page.tmpl.html
-position: 13
+---
+title: Fonts
+template: usermanual-page.tmpl.html
+position: 13
 ---
 
 Fontアセットには、ユーザが選択したフォントのすべての文字と、各文字の表示方法に関するデータが含まれています。Fontアセットは、Textタイプの[要素][1]コンポーネントを使用してテキストをレンダリングするために使用されます。テキストをレンダリングするには、エンティティにElementコンポーネントを追加して、そのタイプをTextに設定し、FontアセットをElementコンポーネントのFontスロットにドラッグアンドドロップします。
@@ -36,6 +36,6 @@ Fontアセットに含める文字。 たとえば数字だけが必要な場合
 
 新しいバージョンを生成するためにFontアセットを変更した後、Process Fontボタンをクリックします。
 
-[1]: /user-manual/packs/components/element/
+[1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/font.png
 

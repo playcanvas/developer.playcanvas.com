@@ -1,23 +1,23 @@
----
-title: Updating ammo.js
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Updating ammo.js
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 ### Introduction
 
 Playcanvas has added support for the latest version of ammo.js.
 
-The new version has a number of benefits:
-* more of the underlying Bullet API has been exposed
-* support for ammo.js wasm module has been added
+The new version has a number of benefits:
+* more of the underlying Bullet API has been exposed
+* support for ammo.js wasm module has been added
 * the wasm version is smaller and runs faster
 
 ### Existing projects
 
 Projects created before the introduction of wasm modules continue by default to use the legacy version of ammo.js. It is up to project owners to migrate their physics system to the latest version of ammo.js.
 
-To check if your project is using the legacy version of ammo.js, navigate to the Scene Settings panel:
+To check if your project is using the legacy version of ammo.js, navigate to the Scene Settings panel:
 ![Physics Legacy Settings][1]
 
 If 'Enable Physics' does not appear, then the project is new and doesn't have the option of using the legacy built-in version of ammo.js.

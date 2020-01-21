@@ -1,7 +1,7 @@
----
-title: Communication with web pages
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Communication with web pages
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 One the key advantages of using PlayCanvas and WebGL over other plugins or cross-compiled engines is the ability to interact directly between your application and the surrounding webpage. In this page we'll talk about some common ways of interfacing your PlayCanvas application with a web page or web application.
@@ -14,37 +14,37 @@ Common to both methods of hosting you should think about what features of your P
 
 Here is a simple example where we show a couple of different ways of exposing an API from a PlayCanvas application to a web page.
 
-```javascript
-
-// method one: define a global function to set the score
-window.setScore = function (score) {
-    var app = pc.Application.getApplication();
-    var entity = app.root.findByName("Score Keeper");
-    entity.script.scoreKeeper.setScore(score);
-}
-
-var ScoreKeeper = pc.createScript("scoreKeeper");
-
-ScoreKeeper.prototype.initialize = function (entity) {
-    // method two: define an application event to set the score
-    this.app.on("score:set", function (score) {
-        this.setScore(score);
-    }, this);
-};
-
-ScoreKeeper.prototype.setScore = function (score) {
-    // do the score setting here.
-};
-
-// how to use the API:
-
-// method one:
-window.setScore(10);
-
-// method two:
-var app = pc.Application.getApplication();
-app.fire("score:set", 10);
-
+```javascript
+
+// method one: define a global function to set the score
+window.setScore = function (score) {
+    var app = pc.Application.getApplication();
+    var entity = app.root.findByName("Score Keeper");
+    entity.script.scoreKeeper.setScore(score);
+}
+
+var ScoreKeeper = pc.createScript("scoreKeeper");
+
+ScoreKeeper.prototype.initialize = function (entity) {
+    // method two: define an application event to set the score
+    this.app.on("score:set", function (score) {
+        this.setScore(score);
+    }, this);
+};
+
+ScoreKeeper.prototype.setScore = function (score) {
+    // do the score setting here.
+};
+
+// how to use the API:
+
+// method one:
+window.setScore(10);
+
+// method two:
+var app = pc.Application.getApplication();
+app.fire("score:set", 10);
+
 ```
 
 Method one defines a global function which can be called anywhere in your page to access your application. Method two defines an application event which you can fire from your page. The application listens for this event and performs actions in response to the event. Both are valid methods of defining an API with your application.
@@ -57,58 +57,58 @@ To communicate between a parent page and an iframe you will need to use the [pos
 
 In your host page
 
-```html
-<iframe id="app-frame" src="https://playcanv.as/p/example/">
-<script>
-var iframe = document.getElementById("app-frame");
-iframe.contentWindow.postMessage({
-    score: 10,
-}, "https://playcanv.as");
-</script>
+```html
+<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<script>
+var iframe = document.getElementById("app-frame");
+iframe.contentWindow.postMessage({
+    score: 10,
+}, "https://playcanv.as");
+</script>
 ```
 
-In your application
-```javascript
-window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // always check message came from your website
-        var score = event.data.score;
-
-        // call API method one:
-        window.setScore(score);
-
-        // call API method two:
-        var app = pc.Application.getApplication();
-        app.fire("score:set", score);
-    }
-}, false);
+In your application
+```javascript
+window.addEventListener("message", function (event) {
+    if (event.origin === "http://example.com") { // always check message came from your website
+        var score = event.data.score;
+
+        // call API method one:
+        window.setScore(score);
+
+        // call API method two:
+        var app = pc.Application.getApplication();
+        app.fire("score:set", score);
+    }
+}, false);
 ```
 
 ### Serve your own HTML
 
 When you download your PlayCanvas application for self-hosting. This is the index.html page that we include to run your application.
 
-```html
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
-    <script src="playcanvas-stable.min.js"></script>
-    <script>
-        SCENE_PATH = "12346.json";
-        CONTEXT_OPTIONS = {
-            'alpha': false,
-            'preserveDrawingBuffer': false
-        };
-    </script>
-</head>
-<body>
-    <script src="__start__.js"></script>
-    <script src="__loading__.js"></script>
-</body>
-</html>
+```html
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Title</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        SCENE_PATH = "12346.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+    </script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
+</html>
 ```
 
 It is absolutely possible and even recommended, that you modify start from this page as the basis of your web page and you can modify it to add any additional content that is required for you page.
@@ -119,37 +119,37 @@ Note, it is important that you run any custom code after the `__start__.js` scri
 
 For example:
 
-```html
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
-    <script src="playcanvas-stable.min.js"></script>
-    <script>
-        SCENE_PATH = "12346.json";
-        CONTEXT_OPTIONS = {
-            'alpha': false,
-            'preserveDrawingBuffer': false
-        };
-    </script>
-</head>
-<body>
-    <script src="__start__.js"></script>
-    <script src="__loading__.js"></script>
-    <script>
-    var app = pc.Application.getApplication();
-    app.on("start", function () {
-        // get the root of the scene.
-        var hierarchy = app.root.getChildren()[0];
-
-        // do other stuff here
-    });
-    </script>
-</body>
-</html>
+```html
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Title</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        SCENE_PATH = "12346.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+    </script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+    <script>
+    var app = pc.Application.getApplication();
+    app.on("start", function () {
+        // get the root of the scene.
+        var hierarchy = app.root.getChildren()[0];
+
+        // do other stuff here
+    });
+    </script>
+</body>
+</html>
 ```
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage

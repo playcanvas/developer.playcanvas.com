@@ -1,7 +1,7 @@
----
-title: Sprite
-template: usermanual-page.tmpl.html
-position: 15
+---
+title: Sprite
+template: usermanual-page.tmpl.html
+position: 15
 ---
 
 A Sprite is a 2D graphic that can be rendered into Scene. A Sprite Asset is a reference to a [Texture Atlas][1] and a sequence of frames from that atlas. In this way a sprite can either represent a single image (taken out of the atlas) or a flip-book style animation (multiple frames from the atlas).
@@ -18,15 +18,15 @@ If you create a *Sliced* sprite, by default it will be created with a `pixelsPer
 
 ### Render Mode
 
-* Simple - the sprite does not use the border values
-* Sliced - the sprite uses the border values to perform [9-sliced][2] rendering by stretching.
+* Simple - the sprite does not use the border values
+* Sliced - the sprite uses the border values to perform [9-sliced][2] rendering by stretching.
 * Tiled - the sprite uses the border values to perform [9-sliced][2] rendering by tiling.
 
 ### Texture Atlas
 
 The Texture Atlas asset that the sprite references
 
-[1]: /user-manual/assets/texture-atlas
-[2]: /user-manual/2D/9-slicing
+[1]: /user-manual/assets/texture-atlas
+[2]: /user-manual/2D/9-slicing
 [3]: /images/user-manual/assets/sprites/sprites.jpg
 

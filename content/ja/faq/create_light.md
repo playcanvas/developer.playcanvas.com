@@ -1,6 +1,6 @@
----
-title: Create a light
-keywords: component, light, sun, shadows, directional, spot, point
+---
+title: Create a light
+keywords: component, light, sun, shadows, directional, spot, point
 ---
 
 ## ライトを作成するには？

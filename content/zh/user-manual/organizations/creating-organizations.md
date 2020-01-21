@@ -1,7 +1,7 @@
----
-title: Creating Organizations
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Creating Organizations
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 创建组织有好几种方式。你所加入了的任何组织都会在您的个人资料临近你的名字的地方出现，就像这样：
@@ -34,16 +34,16 @@ position: 2
 
 将你的用户账户转换为组织账户意味着你再也不能用此账户进行登录了。因此，你需要指定新组织的所有者。
 
-<div class="alert alert-info">
-Make sure you can log in with the new owner's account.
+<div class="alert alert-info">
+Make sure you can log in with the new owner's account.
 </div>
 
 如果你已经开通了支付计划，除非你选择至少订阅一个弹出框所提供的组织计划，计划才会被取消。座位购买的数量将根据用户在现有的私人项目的数量自动为您计算。
 
 在您的帐户被转换后，它将被注销。在这之后重新登录新所有者的帐户，您将能够访问转换帐户及其所有项目。
 
-[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
-[2]: /user-manual/profile
-[3]: /user-manual/profile/account
+[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
+[2]: /user-manual/profile
+[3]: /user-manual/profile/account
 [4]: /images/user-manual/organizations/organizations.jpg "Organizations"
 

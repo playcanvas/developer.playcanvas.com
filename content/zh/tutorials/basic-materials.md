@@ -1,8 +1,8 @@
----
-title: Basic Materials
-template: tutorial-page.tmpl.html
-tags: material
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+---
+title: Basic Materials
+template: tutorial-page.tmpl.html
+tags: material
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 材料是定义3D模型的表面的外观的东西。 最简单的举例，一个材质设置了多边形的颜色，在其最复杂的情况下，一种材料可以模拟海洋的表面或光通过玻璃的效果。
@@ -45,7 +45,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 下载& 保存这些样板贴图:
 
-<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
+<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
 <a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"/></a>
 
 然后通过将文件拖动到编辑器中将它们上传到您的项目。
@@ -60,10 +60,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 有关设置材料的更多详情，请参阅用户手册的[物理材料] [6]部分。
 
-[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
-[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
-[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
-[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
-[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
+[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
+[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
+[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
+[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
+[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
 [6]: /user-manual/graphics/physical-rendering/physical-materials/
 

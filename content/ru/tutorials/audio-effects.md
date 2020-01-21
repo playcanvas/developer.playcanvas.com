@@ -1,8 +1,8 @@
----
-title: Audio Effects
-template: tutorial-page.tmpl.html
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
+---
+title: Audio Effects
+template: tutorial-page.tmpl.html
+tags: audio
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
@@ -29,39 +29,39 @@ The Web Audio API allows you to create various audio nodes which can be connecte
 
 In this example we are using a [Convolver node][6]. In our application script we are creating that node like so:
 
-~~~javascript~~~
-this.convolver = this.app.systems.sound.context.createConvolver();
+~~~javascript~~~
+this.convolver = this.app.systems.sound.context.createConvolver();
 ~~~
 
 We then use a bunch of audio samples as impulse responses for the convolver as explained [here][7]. Each audio sample is an audio asset and depending on which button you press we use that asset and assign its internal buffer to the convolver buffer like so:
 
-~~~javascript~~~
-var asset = this[assetName];
-this.convolver.buffer = asset.resource.buffer;
+~~~javascript~~~
+var asset = this[assetName];
+this.convolver.buffer = asset.resource.buffer;
 ~~~
 
 We then connect the convolver to our sound slot like so:
 
-~~~javascript~~~
-this.entity.sound.slot('speech').setExternalNodes(this.convolver);
+~~~javascript~~~
+this.entity.sound.slot('speech').setExternalNodes(this.convolver);
 ~~~
 
 If you click on the button called 'None' we clear all the effects which basically means calling ```clearExternalNodes``` on the slot:
 
-~~~javascript~~~
-this.entity.sound.slot('speech').clearExternalNodes();
+~~~javascript~~~
+this.entity.sound.slot('speech').clearExternalNodes();
 ~~~
 
 If you have a bigger graph of Audio Nodes and you want to connect it to a slot you need to supply the first node and the last node of the graph in ```setExternalNodes```. That way PlayCanvas can correctly connect the last node to the speakers.
 
 You can find out more about the Sound Component API [here][8].
 
-[1]: https://playcanvas.com/editor/scene/440346
-[2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
-[4]: /user-manual/packs/components/script
-[5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
-[6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
-[7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
+[1]: https://playcanvas.com/editor/scene/440346
+[2]: /user-manual/packs/components/sound
+[3]: /tutorials/beginner/basic-audio
+[4]: /user-manual/packs/components/script
+[5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+[6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
+[7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
 [8]: /api/pc.Sound.html
 

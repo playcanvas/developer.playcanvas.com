@@ -1,7 +1,7 @@
----
-title: Input
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Input
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 The user can interact with [Element][1] components, by enabling the `useInput` field on the Element component:
@@ -10,15 +10,15 @@ The user can interact with [Element][1] components, by enabling the `useInput` f
 
 Also in order for that to work there must be an initialized instance of `pc.ElementInput` for `pc.Application#elementInput`. This is created automatically for you if you are using the Editor. If you are using the Engine only make sure to create an instance *before* the other input devices like `pc.Mouse` or `pc.TouchDevice` like so:
 
-```javascript
-var app = new pc.Application(canvas, {
-    elementInput: new pc.ElementInput(canvas),
-    mouse: new pc.Mouse(canvas),
-    touch: !!('ontouchstart' in window) ? new pc.TouchDevice(canvas) : null,
-    keyboard: new pc.Keyboard(window),
-    gamepads: new pc.GamePads(),
-    ...
-});
+```javascript
+var app = new pc.Application(canvas, {
+    elementInput: new pc.ElementInput(canvas),
+    mouse: new pc.Mouse(canvas),
+    touch: !!('ontouchstart' in window) ? new pc.TouchDevice(canvas) : null,
+    keyboard: new pc.Keyboard(window),
+    gamepads: new pc.GamePads(),
+    ...
+});
 ```
 
 ## Input Events
@@ -73,42 +73,42 @@ Fired when a touch is cancelled on the component.
 
 To handle an input event you can listen for it on the Element component:
 
-```javascript
-this.entity.element.on('click', function (event) {
-    console.log('The element ' + event.element.entity.name + ' was clicked.');
-}, this);
+```javascript
+this.entity.element.on('click', function (event) {
+    console.log('The element ' + event.element.entity.name + ' was clicked.');
+}, this);
 ```
 
 ## Event bubbling
 
 When an input event is fired on an Element component it bubbles up to its parent Elements unless you call `event.stopPropagation()`. For example:
 
-```javascript
-this.entity.element.on('click', function (event) {
-    // stop bubbling
-    event.stopPropagation();
-
-    console.log('The element ' + event.element.entity.name + ' was clicked.');
-}, this);
+```javascript
+this.entity.element.on('click', function (event) {
+    // stop bubbling
+    event.stopPropagation();
+
+    console.log('The element ' + event.element.entity.name + ' was clicked.');
+}, this);
 ```
 
 Calling `stopPropagation` will also stop the event from being handled by the other input devices like `pc.Mouse` or `pc.TouchDevice`. So if for example you are handling mouse input using `app.mouse.wasPressed`, you can call `stopPropagation` on the `mousedown` event to prevent `app.mouse.wasPressed` from returning true. For example:
 
-```javascript
-initialize: function () {
-    this.entity.element.on('mousedown', function (evt) {
-        evt.stopPropagation();
-    }, this);
-},
-
-update: function (dt) {
-    if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
-        // do something when the left button was pressed.
-        // this will not be called if the button was pressed on the Element
-        // because we call stopPropagation
-    }
-}
-```
+```javascript
+initialize: function () {
+    this.entity.element.on('mousedown', function (evt) {
+        evt.stopPropagation();
+    }, this);
+},
+
+update: function (dt) {
+    if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
+        // do something when the left button was pressed.
+        // this will not be called if the button was pressed on the Element
+        // because we call stopPropagation
+    }
+}
+```
 ## Mouse and Touch event conflict on Google Chrome
 
 Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behavior. For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
@@ -117,22 +117,22 @@ To prevent this behavior you can call the ```preventDefault()``` method of the n
 
 Here is small script to include once in your scene:
 
- ```javascript
+ ```javascript
 var TouchFix = pc.createScript('touchFix');
 
-// initialize code called once per entity
-TouchFix.prototype.initialize = function() {
-    // Only register touch events if the device supports touch
-    var touch = this.app.touch;
-    if (touch) {
-        touch.on(pc.EVENT_TOUCHEND, function(event) {
-            // This prevents that a mouse click event will be executed after a touch event.
-            event.event.preventDefault();
-        });
-    }
-};
-```
-
-[1]: /user-manual/packs/components/element/
+// initialize code called once per entity
+TouchFix.prototype.initialize = function() {
+    // Only register touch events if the device supports touch
+    var touch = this.app.touch;
+    if (touch) {
+        touch.on(pc.EVENT_TOUCHEND, function(event) {
+            // This prevents that a mouse click event will be executed after a touch event.
+            event.event.preventDefault();
+        });
+    }
+};
+```
+
+[1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/use-input.png
 

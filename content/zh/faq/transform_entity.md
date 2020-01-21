@@ -1,6 +1,6 @@
----
-title: Move / Rotate / Scale an Entity
-keywords: entity, move, translate, rotate, scale, transform
+---
+title: Move / Rotate / Scale an Entity
+keywords: entity, move, translate, rotate, scale, transform
 ---
 
 ## 如何 移动 / 旋转 / 缩放 实体？

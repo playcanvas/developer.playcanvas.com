@@ -1,7 +1,7 @@
----
-title: Texture Atlas
-template: usermanual-page.tmpl.html
-position: 14
+---
+title: Texture Atlas
+template: usermanual-page.tmpl.html
+position: 14
 ---
 
 ![Texture Atlas][1]
@@ -18,20 +18,20 @@ The Texture Atlas is used in combination with the [Sprite Asset][4] to render 2D
 
 The Frames of a texture atlas are keyed by a unique value, usually a integer string. The format of a frame is:
 
-```
-{
-    rect: [0,0,0,0],    // u,v,width,height - width and height in pixels
-    pivot: [0,0],       // x,y - as a proportion 0-1
-    border: [0,0,0,0]   // left, bottom, right - top in pixels
-}
+```
+{
+    rect: [0,0,0,0],    // u,v,width,height - width and height in pixels
+    pivot: [0,0],       // x,y - as a proportion 0-1
+    border: [0,0,0,0]   // left, bottom, right - top in pixels
+}
 ```
 
 ### Texture Properties
 
 In addition to frame data the Texture Atlas contains the properties as a [texture asset][2].
 
-[1]: /images/user-manual/assets/texture-atlas/texture-atlas.jpg
-[2]: /user-manual/assets/textures
-[3]: /user-manual/designer/settings#create-atlases
+[1]: /images/user-manual/assets/texture-atlas/texture-atlas.jpg
+[2]: /user-manual/assets/textures
+[3]: /user-manual/designer/settings#create-atlases
 [4]: /user-manual/assets/sprites
 

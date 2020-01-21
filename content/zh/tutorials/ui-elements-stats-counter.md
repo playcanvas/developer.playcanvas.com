@@ -1,8 +1,8 @@
----
-title: User Interface - Stats Counter
-template: tutorial-page.tmpl.html
-tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
+---
+title: User Interface - Stats Counter
+template: tutorial-page.tmpl.html
+tags: ui
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/XVLr9TWc/"></iframe>
@@ -47,11 +47,11 @@ This is what our group looks like in the Hierarchy:
 
 Our group has the following child Elements:
 
-* `text-title`: A Text Element for the title of the group - anchored to the top of the group.
-* `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
-* `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
-* `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
-    * `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
+* `text-title`: A Text Element for the title of the group - anchored to the top of the group.
+* `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
+* `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
+* `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
+    * `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
     * `text`: The Text Element that displays our stats. Anchored to the center of the `progress-bar` Element.
 
 ## Scripts
@@ -60,51 +60,51 @@ We have a script on each button to allow us to change their texture based on hov
 
 The main script that handles the interactions for each stat is `uiStats`:
 
-```javascript
-var UiStats = pc.createScript('uiStats');
-
-UiStats.prototype.initialize = function() {
-    // find our widgets
-    this.btnPlus = this.entity.findByName('btn-plus');
-    this.btnMinus = this.entity.findByName('btn-minus');
-    this.progressBar = this.entity.findByName('progress-bar');
-    this.progressText = this.progressBar.findByName('text');
-
-    // initialize value to 0
-    this.setValue(0);
-
-    // increase value with plus button
-    this.btnPlus.element.on('click', function (evt) {
-        this.setValue(this.value + 1);
-    }, this);
-
-    // decrease value with minus button
-    this.btnMinus.element.on('click', function (evt) {
-        this.setValue(this.value - 1);
-    }, this);
-};
-
-// Sets the stat value
-UiStats.prototype.setValue = function (value) {
-    // clamp between min and max
-    this.value = pc.math.clamp(value, 0, 10);
-    // set progress
-    this.progressBar.script.progressBar.setProgress(this.value / 10);
-    // update progress text
-    this.progressText.element.text = this.value + ' / ' + 10;
-};
+```javascript
+var UiStats = pc.createScript('uiStats');
+
+UiStats.prototype.initialize = function() {
+    // find our widgets
+    this.btnPlus = this.entity.findByName('btn-plus');
+    this.btnMinus = this.entity.findByName('btn-minus');
+    this.progressBar = this.entity.findByName('progress-bar');
+    this.progressText = this.progressBar.findByName('text');
+
+    // initialize value to 0
+    this.setValue(0);
+
+    // increase value with plus button
+    this.btnPlus.element.on('click', function (evt) {
+        this.setValue(this.value + 1);
+    }, this);
+
+    // decrease value with minus button
+    this.btnMinus.element.on('click', function (evt) {
+        this.setValue(this.value - 1);
+    }, this);
+};
+
+// Sets the stat value
+UiStats.prototype.setValue = function (value) {
+    // clamp between min and max
+    this.value = pc.math.clamp(value, 0, 10);
+    // set progress
+    this.progressBar.script.progressBar.setProgress(this.value / 10);
+    // update progress text
+    this.progressText.element.text = this.value + ' / ' + 10;
+};
 ```
 
 In this script we find our child elements and when the plus or minus buttons are clicked we increase / decrease the stat and update the progress bar and its text.
 
-[1]: https://playcanvas.com/editor/scene/547905
-[2]: /user-manual/user-interface/elements/
-[3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/stats/hierarchy.png
-[5]: /images/tutorials/ui/stats/screen.png
-[6]: /images/tutorials/ui/stats/boost-editor.png
-[7]: /images/tutorials/ui/stats/boost-attributes.png
-[8]: /images/tutorials/ui/stats/boost-hierarchy.png
-[9]: /tutorials/ui-elements-buttons/
+[1]: https://playcanvas.com/editor/scene/547905
+[2]: /user-manual/user-interface/elements/
+[3]: /user-manual/user-interface/screens/
+[4]: /images/tutorials/ui/stats/hierarchy.png
+[5]: /images/tutorials/ui/stats/screen.png
+[6]: /images/tutorials/ui/stats/boost-editor.png
+[7]: /images/tutorials/ui/stats/boost-attributes.png
+[8]: /images/tutorials/ui/stats/boost-hierarchy.png
+[9]: /tutorials/ui-elements-buttons/
 [10]: /tutorials/ui-elements-progress/
 

@@ -1,6 +1,6 @@
----
-title: Delete an asset
-keywords: asset, delete, remove
+---
+title: Delete an asset
+keywords: asset, delete, remove
 ---
 
 ## Как удалить ресурс?

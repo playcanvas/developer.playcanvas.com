@@ -1,10 +1,10 @@
----
-title: Runtime Lightmaps
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Runtime Lightmaps
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
-![Sponza][10]
+![Sponza][10]
 *All the lighting in this scene is provided by lightmap textures*
 
 ライトマップ生成は静的シーンの照明情報を事前に計算し、素材に適用されるテクスチャに格納する処理です。ライトソースや形状の多くが静的または環境に使用されている場合にシーンを照らす効率的な方法です。
@@ -15,12 +15,12 @@ PlayCanvasにはライトマップを生成する非常に便利な方法があ�
 
 利点は次の通りです： 
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of static lights to light your scene
-* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
-* It is possible to mix static and dynamic lights in the Editor
-* Rebaking can be performed at runtime
-* Lightmaps are **HDR**
+* Lighting is not performed at **runtime**
+* It is possible to use hundreds of static lights to light your scene
+* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
+* It is possible to mix static and dynamic lights in the Editor
+* Rebaking can be performed at runtime
+* Lightmaps are **HDR**
 * Not only **Color** but **Direction** data can be baked as well, enabling some specularity on baked surfaces.
 
 実行時のライトマップ生成を使用する欠点は、グローバルイルミネーション、アンビエントオクルージョンやその他の特殊なベーキングツールの高度な機能のをベーキングに現在対応していないということです。 
@@ -57,22 +57,22 @@ PlayCanvasにはライトマップを生成する非常に便利な方法があ�
 
 ご覧の通り、いくつかの組み合わせのライトの設定を使用することができます。これらの組み合わせには全てユースケースがあり、異なる組み合わせでライトを使用することにより、パフォーマンスと高品質なビジュアルのバランスをとることができます。
 
-<table>
-<tr>
-    <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
-</tr>
-<tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
-</tr>
-<tr>
-    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting.</td>
-</tr>
-<tr>
-    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
-</tr>
-<tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models.</td>
-</tr>
+<table>
+<tr>
+    <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
+</tr>
+<tr>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
+</tr>
+<tr>
+    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting.</td>
+</tr>
+<tr>
+    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
+</tr>
+<tr>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models.</td>
+</tr>
 </table>
 
 ## ライトマッピングの設定
@@ -103,14 +103,14 @@ PlayCanvasにはライトマップを生成する非常に便利な方法があ�
 
 **Padding**セクションでは、アンラップが発生した際のセクション間のスペースを決定します。ライトマップ上の不適切な場所にライトが表示されてしまう*"light bleeding"*が発生している場合、paddingを増やして軽減することができます。 
 
-[1]: /images/user-manual/material-inspector/lightmap.jpg
-[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
-[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
-[4]: /user-manual/graphics/lighting/shadows
-[5]: /images/user-manual/lighting/lightmaps/model-settings.png
-[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
-[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
-[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
-[9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
+[1]: /images/user-manual/material-inspector/lightmap.jpg
+[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
+[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
+[4]: /user-manual/graphics/lighting/shadows
+[5]: /images/user-manual/lighting/lightmaps/model-settings.png
+[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
+[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
+[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
+[9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
 [10]: /images/user-manual/lighting/lightmaps/sponza.jpg
 

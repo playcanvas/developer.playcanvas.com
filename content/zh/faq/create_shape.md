@@ -1,6 +1,6 @@
----
-title: Create a shape like a box, sphere etc.
-keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
+---
+title: Create a shape like a box, sphere etc.
+keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
 ---
 
 ## 如何创建一个立方，球形等样式的形体？

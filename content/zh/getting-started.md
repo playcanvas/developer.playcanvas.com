@@ -1,6 +1,6 @@
----
-title: Getting Started
-template: page.tmpl.html
+---
+title: Getting Started
+template: page.tmpl.html
 ---
 
 我们通过一个实际的 3D Web 应用来学习 PlayCanvas 平台的基本操作：
@@ -17,17 +17,17 @@ template: page.tmpl.html
 
 一个工程包含这些：
 
-* **Scenes** - An hierarchy of [Entities][3] used to build up your game. A Scene could be a single level or your entire game. It depends.
-* **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
-* **Scripts** - Your source code. You can either write code using the PlayCanvas built-in script editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
+* **Scenes** - An hierarchy of [Entities][3] used to build up your game. A Scene could be a single level or your entire game. It depends.
+* **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
+* **Scripts** - Your source code. You can either write code using the PlayCanvas built-in script editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
 * **Published Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
 
 ## 创建新工程
 
 在个人信息页面点击“工程”分页然后点击“创建工程”。之后将会展开一个关于新项目的细节页面：
 
-* **Project Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at https://playcanvas.com/joebloggs/spacewar
-* **Description** - A short description of your project that is displayed when you share a published build to social media.
+* **Project Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at https://playcanvas.com/joebloggs/spacewar
+* **Description** - A short description of your project that is displayed when you share a published build to social media.
 * **Visibility** - By default, new projects are public allowing other community members read access to your work. Selecting PRIVATE will allow you to work in private but note that you will need a [Pro account][4] to use this feature.
 
 设置好项目的名称和描述之后，点击“创建”按钮。项目建立成功后会自动转至项目主页。
@@ -56,13 +56,13 @@ PlayCanvas 的场景高效的管理应用中的各种“事物”。我们把所
 
 我们先来命名我们的场景：
 
-* Select the cog icon in the bottom left of the Editor toolbar.
+* Select the cog icon in the bottom left of the Editor toolbar.
 * In the INSPECTOR panel, set the Scene Name property to something like 'Spinning Cube' and hit Enter.
 
 为了实现我们的旋转立方体测试，我们需要3个实体：
 
-* A box.
-* A camera (to view the box).
+* A box.
+* A camera (to view the box).
 * A light (to give some definition to the box).
 
 幸运的是，编辑器会在创建一个新的场景时自动创建好一个定向光源和摄像头。因此，下列是创建一个立方体的操作步骤：
@@ -109,45 +109,45 @@ PlayCanvas的真正威力和多功能性来自于它可以把脚本的行为分�
 
 ![Add Script][13]
 
-* In the Script section in INSPECTOR, click the top line of the URLs field to edit the filename. Set the Add attribute of the script component to 'spinner.js' and hit Enter.
+* In the Script section in INSPECTOR, click the top line of the URLs field to edit the filename. Set the Add attribute of the script component to 'spinner.js' and hit Enter.
 * Click on the name of the script 'spinner.js' and the PlayCanvas script editor will open in a new tab.
 
 在代码编辑器中更新脚本模板使其与前代码相匹配(你只需要把被更新的功能内容填入):
 
-~~~javascript~~~
-pc.script.create("spinner", function (app) {
-
-    var Spinner = function (entity) {
-        // Cache the entity that this script instance affects
-        this.entity = entity;
-    };
-
-    Spinner.prototype = {
-        update: function (dt) {
-            // Rotate 90 degrees around the world Y axis every second
-            this.entity.rotate(0, 90 * dt, 0);
-        }
-    };
-
-    return Spinner;
-});
+~~~javascript~~~
+pc.script.create("spinner", function (app) {
+
+    var Spinner = function (entity) {
+        // Cache the entity that this script instance affects
+        this.entity = entity;
+    };
+
+    Spinner.prototype = {
+        update: function (dt) {
+            // Rotate 90 degrees around the world Y axis every second
+            this.entity.rotate(0, 90 * dt, 0);
+        }
+    };
+
+    return Spinner;
+});
 ~~~
 
 一旦你编辑了代码，请在代码编辑器中按“保存”按钮后切换回编辑器选项卡。需要注意的是脚本编辑器要求你进行明确的保存操作，而不像主编辑器应用程序。
 
 在做完这些后，你可以再次点击运行按钮。这次，你可以看到你的立方体在视野中旋转。恭喜，你已经完成了你的第一个PlayCanvas的可运行程序！
 
-[1]: /images/platform/profile.png "Profile"
-[2]: /images/platform/project_list.jpg "Project List"
-[3]: /user-manual/glossary/#entity
-[4]: https://playcanvas.com/plans
-[5]: /images/getting_started/scene_selection.png "Scene Selection"
-[6]: /images/getting_started/editor.png "Editor"
-[7]: /images/getting_started/hierarchy.png "Hierarchy"
-[8]: /images/getting_started/new_box.png "New Box"
-[9]: /images/getting_started/box_in_editor.png "Box In Editor"
-[10]: /images/getting_started/launch_buttons.png "Launch Buttons"
-[11]: /images/getting_started/box_launched.png "Box Launched"
-[12]: /user-manual/scripting/workflow/ "Scripting Workflow"
+[1]: /images/platform/profile.png "Profile"
+[2]: /images/platform/project_list.jpg "Project List"
+[3]: /user-manual/glossary/#entity
+[4]: https://playcanvas.com/plans
+[5]: /images/getting_started/scene_selection.png "Scene Selection"
+[6]: /images/getting_started/editor.png "Editor"
+[7]: /images/getting_started/hierarchy.png "Hierarchy"
+[8]: /images/getting_started/new_box.png "New Box"
+[9]: /images/getting_started/box_in_editor.png "Box In Editor"
+[10]: /images/getting_started/launch_buttons.png "Launch Buttons"
+[11]: /images/getting_started/box_launched.png "Box Launched"
+[12]: /user-manual/scripting/workflow/ "Scripting Workflow"
 [13]: /images/getting_started/add_script.png "Add Script"
 

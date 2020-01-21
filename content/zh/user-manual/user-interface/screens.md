@@ -1,7 +1,7 @@
----
-title: Screens
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Screens
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 The [Screen Component][1] defines the area that the User Interface is built inside. It's primary responsibilty is to determine how the contents of the Screen (child Entities with Element components) are rendered.
@@ -48,23 +48,23 @@ We use the *Reference Resolution* property of the Screen component as the "ideal
 
 In these examples you can see how changing the Scale Blend property affects how the interface responds to rotating from Portrait to Landscape
 
-![Scale Blend 0][8]
+![Scale Blend 0][8]
 With a value of 0 the increase in horizontal resolution makes the button too large
 
-![Scale Blend 1][10]
+![Scale Blend 1][10]
 With a value of 1 the decrease in vertical resolution makes the button too small
 
-![Scale Blend 0.5][9]
+![Scale Blend 0.5][9]
 With a value of 0.5 the two changes are balanced and the button stays the same size
 
-[1]: /user-manual/packs/components/screen
-[2]: /images/user-manual/user-interface/screens/screen-space-viewport.png
-[3]: /images/user-manual/user-interface/screens/world-space-viewport.png
-[4]: /images/user-manual/user-interface/screens/ipad-no-scaling.png
-[5]: /images/user-manual/user-interface/screens/ipad-scaling.png
-[6]: /images/user-manual/user-interface/screens/iphone-no-scaling.png
-[7]: /images/user-manual/user-interface/screens/iphone-scaling.png
-[8]: /images/user-manual/user-interface/screens/scale-blend-0.png
-[9]: /images/user-manual/user-interface/screens/scale-blend-0.5.png
+[1]: /user-manual/packs/components/screen
+[2]: /images/user-manual/user-interface/screens/screen-space-viewport.png
+[3]: /images/user-manual/user-interface/screens/world-space-viewport.png
+[4]: /images/user-manual/user-interface/screens/ipad-no-scaling.png
+[5]: /images/user-manual/user-interface/screens/ipad-scaling.png
+[6]: /images/user-manual/user-interface/screens/iphone-no-scaling.png
+[7]: /images/user-manual/user-interface/screens/iphone-scaling.png
+[8]: /images/user-manual/user-interface/screens/scale-blend-0.png
+[9]: /images/user-manual/user-interface/screens/scale-blend-0.5.png
 [10]: /images/user-manual/user-interface/screens/scale-blend-1.png
 

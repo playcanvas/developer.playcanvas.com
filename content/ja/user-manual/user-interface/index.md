@@ -1,7 +1,7 @@
----
-title: User Interface
-template: usermanual-page.tmpl.html
-position: 9
+---
+title: User Interface
+template: usermanual-page.tmpl.html
+position: 9
 ---
 
 ユーザインターフェイスは、グラフィカルアプリケーション固有の課題です。PlayCanvasにはユーザインタフェースを構築するためのいくつかのオプションがあります。
@@ -22,7 +22,7 @@ DOMを使用する主な欠点はパフォーマンスです。DOMは、高い�
 
 このユーザーガイドの残りの部分では、スクリーンと要素コンポーネントシステムに焦点を当て、それらを使用してPlayCanvasでユーザーインターフェイスを構築します。
 
-[1]: /images/user-manual/user-interface/user-interface-intro-sq.png
-[2]: /user-manual/packs/components/screen
+[1]: /images/user-manual/user-interface/user-interface-intro-sq.png
+[2]: /user-manual/packs/components/screen
 [3]: /user-manual/packs/components/element
 

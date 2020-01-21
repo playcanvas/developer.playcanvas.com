@@ -1,7 +1,7 @@
----
-title: Materials
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Materials
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.
@@ -104,6 +104,6 @@ Some map slots can be a flat color instead of a texture map. Some slots also sup
 
 Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
 
-[1]: /user-manual/assets/physical-material
+[1]: /user-manual/assets/physical-material
 [2]: /user-manual/assets/phong-material
 

@@ -1,7 +1,7 @@
----
-title: Image Elements
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Image Elements
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 画像要素は、テクスチャまたはソリッドカラーを表示するために使用されます。画像要素は、ボタンなどの複雑なユーザインターフェイスコンポーネントの基礎として使用することができます。
@@ -30,6 +30,6 @@ Image Elements can be used to mask or hide elements that are descendents. To ena
 
 If there is no texture asset assigned to an image Element used for masking the mask will be a rectangle defined by the width and height. If the image Element has a texture assigned the alpha-channel of the texture is used as the mask. Note, an image mask is 1-bit, i.e. there is no fading out of the mask using the alpha-channel of the texture.
 
-[1]: /images/user-manual/user-interface/image-element/image-tinted.png
+[1]: /images/user-manual/user-interface/image-element/image-tinted.png
 [2]: /images/user-manual/user-interface/image-element/image-transparent.png
 

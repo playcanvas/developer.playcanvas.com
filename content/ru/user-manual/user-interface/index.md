@@ -1,7 +1,7 @@
----
-title: User Interface
-template: usermanual-page.tmpl.html
-position: 9
+---
+title: User Interface
+template: usermanual-page.tmpl.html
+position: 9
 ---
 
 User Interfaces present a unique challenge for graphical applications. There are several options for building User Interfaces in PlayCanvas.
@@ -22,7 +22,7 @@ The primary downside of using the DOM is performance. The DOM is not designed to
 
 The rest of this user guide will focus on the Screen and Element component system and using them to build user interfaces in PlayCanvas.
 
-[1]: /images/user-manual/user-interface/user-interface-intro-sq.png
-[2]: /user-manual/packs/components/screen
+[1]: /images/user-manual/user-interface/user-interface-intro-sq.png
+[2]: /user-manual/packs/components/screen
 [3]: /user-manual/packs/components/element
 

@@ -1,7 +1,7 @@
----
-title: Managing Organizations
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Managing Organizations
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 ### 权限
@@ -28,8 +28,8 @@ position: 3
 
 组织的所有者可以从这里删除该组织。这将彻底删除帐户及其所有项目。这个操作不能逆转。
 
-[1]: /images/user-manual/organizations/permissions.png "Permissions"
-[2]: /images/user-manual/organizations/seats.png "Seats"
-[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
+[1]: /images/user-manual/organizations/permissions.png "Permissions"
+[2]: /images/user-manual/organizations/seats.png "Seats"
+[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
 [4]: /images/user-manual/organizations/delete.png "Delete"
 

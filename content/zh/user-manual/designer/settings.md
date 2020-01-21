@@ -1,7 +1,7 @@
----
-title: Settings
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Settings
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 设置面板可以调整项目的各项参数。点击编辑器左下角的齿轮按钮打开(在[工具栏][1]上)
@@ -38,7 +38,7 @@ position: 8
 
 #### Locale
 
-The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
 have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## 物理设置
@@ -83,7 +83,7 @@ have enabled Localization for Text Elements and when you use Localized Assets.
 
 色调映射是一种压缩高动态范围色彩 (HDR) 至有限动态范围 (显示设备可呈现值) 的处理过程。有两种色调映射的方案。
 
-* **Linear:** imply scales HDR colors by exposure.
+* **Linear:** imply scales HDR colors by exposure.
 * **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
 线性色调映射为默认开启，它计算简单 (颜色*曝光)。可以设置曝光值来快速的调节画面明暗。注意这个参数与 Photoshop 的 brightness 并不是一回事，请考虑做为输入的亮度数据可能是大动态范围的。譬如如果我们有一个灯光的强度设定为 8，那么当曝光系数设定为 0.5 时，其亮度仍然达到 4。因此并不会因为调整它而使得画面直接变暗。
@@ -108,9 +108,9 @@ have enabled Localization for Text Elements and when you use Localized Assets.
 
 雾有如下的种类：
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
+* None - Fog is disabled
+* Linear - Fog fades in linearly between a Fog Start and Fog End distance
+* Exp - Fog fades in from the view position according to an exponential function
 * Exp2 - Fog fades in from the view position according to an exponential squared function
 
 #### 颜色
@@ -133,15 +133,15 @@ have enabled Localization for Text Elements and when you use Localized Assets.
 
 控制应用的宽度和高度。可以选择如下的分辨率模式：
 
-* Auto - The resolution will always be the same as the canvas size
+* Auto - The resolution will always be the same as the canvas size
 * Fixed - The resolution will always be width x height pixels.
 
 #### 填充模式
 
 填充模式将会控制游戏画面随着画布变化的方式，有如下的几种模式：
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
 * Fill window - The canvas will stretch to fill the window completely.
 
 #### 设备像素比例
@@ -234,15 +234,15 @@ When a new image is uploaded it will be created as a Texture Atlas instead of a 
 
 当倒入新的场景 (譬如一个FBX) 时，该选项决定场景中的贴图是否被覆盖为新版。
 
-[1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/cog.jpg
-[3]: /user-manual/assets/cubemaps
-[4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
-[6]: /user-manual/designer/loading-screen
-[7]: /user-manual/packs/components/model
-[8]: /user-manual/packs/components/element
-[9]: /user-manual/optimization/batching
-[10]: /user-manual/graphics/layers/
+[1]: /user-manual/designer/menus-and-toolbar
+[2]: /images/user-manual/cog.jpg
+[3]: /user-manual/assets/cubemaps
+[4]: /images/user-manual/gamma-correction.jpg
+[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
 

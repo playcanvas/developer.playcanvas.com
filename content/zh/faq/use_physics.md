@@ -1,6 +1,6 @@
----
-title: Use physics
-keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
+---
+title: Use physics
+keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
 ---
 
 ## 如何使用物理特性？

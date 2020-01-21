@@ -1,6 +1,6 @@
----
-title: PlayCanvas Engine
-template: usermanual-page.tmpl.html
+---
+title: PlayCanvas Engine
+template: usermanual-page.tmpl.html
 ---
 
 PlayCanvas 引擎是一款开放源代码 Javascript 框架，降低了游戏和3D网页内容的构建难度。引擎提供免费的独立开发工具，以提供最大的开发流水线弹性。
@@ -29,11 +29,11 @@ PlayCanvas 引擎是一款开放源代码 Javascript 框架，降低了游戏和
 
 在使用引擎时加载模型文件，请使用  [loadFromUrl][5] API。
 
-[1]: https://github.com/playcanvas/engine
-[2]: http://playcanvas.github.io
-[3]: /user-manual/assets/importing/
-[4]: /user-manual/glossary/#target_asset
-[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
-[6]: /images/user-manual/editor/assets-completed.png
+[1]: https://github.com/playcanvas/engine
+[2]: http://playcanvas.github.io
+[3]: /user-manual/assets/importing/
+[4]: /user-manual/glossary/#target_asset
+[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
+[6]: /images/user-manual/editor/assets-completed.png
 [7]: /images/user-manual/editor/download-model.jpg
 

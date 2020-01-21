@@ -1,12 +1,12 @@
----
-title: Cubemaps
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Cubemaps
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 立方体贴图是一种特殊类型的纹理资源。 立方体贴图由6个纹理资源组成，其中每个纹理表示立方体的一个面， 它们通常有两种用途：
 
-1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
+1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
 2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
 <iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
@@ -37,10 +37,10 @@ position: 5
 
 ![立方体贴图属性][3]
 
-### Filtering
+### Filtering
 This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
-### Anisotropy
+### Anisotropy
 Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
 
 ## 将纹理分配给立方体贴图
@@ -51,23 +51,23 @@ Anisotropy is a value between 1 and 16 that gives control over the quality of te
 
 立方体贴图的面必须为:
 
-* Square (the same resultion in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+* Square (the same resultion in width and height)
+* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
 * All faces must be the same resolution
 
 为了辅助你，编辑器试图找出如何智能地自动分配纹理到面中。 当您尝试通过将一个面贴图拖动到面插槽并按照常用的立方体贴图面的命名约定匹配时执行此操作，例如：
 
-* negx, posx, negy, posy, negz, posz
-* left, right, top|up, bottom|down, front|forward, back|backward
+* negx, posx, negy, posy, negz, posz
+* left, right, top|up, bottom|down, front|forward, back|backward
 * 0-5|1-6
 
 一个已匹配的纹理集的示例：
 
-* face_posx.jpg
-* face_negx.jpg
-* face_posy.jpg
-* face_negy.jpg
-* face_posz.jpg
+* face_posx.jpg
+* face_negx.jpg
+* face_posy.jpg
+* face_negy.jpg
+* face_posz.jpg
 * face_negz.jpg
 
 ## Image Based Lighting
@@ -84,10 +84,10 @@ This technique allows to use Environment Map such as CubeMap in order to simulat
 
 注: 物理材质如果被分配和预过滤将被作为默认环境贴图使用到场景天空盒。
 
-[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
-[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
-[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
-[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
-[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
+[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
+[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
+[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
+[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

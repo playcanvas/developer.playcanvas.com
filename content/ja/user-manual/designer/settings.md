@@ -1,7 +1,7 @@
----
-title: Settings
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Settings
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 設定パネルでは、さまざまなプロパティを設定できます。Editor([ツールバー][1]の)の左下の「cog」ボタンを使用してアクセスします。
@@ -38,7 +38,7 @@ Editorシーンで表示されるグリッドの各部分の分割数とサイ�
 
 #### Locale
 
-The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
 have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## 物理の設定
@@ -83,7 +83,7 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 トーンマッピングは、ハイダイナミックレンジ(HDR)の色を低ダイナミックレンジ(例：目に見えるモニタ出力値に)に圧縮する方法です。トーンマッピングには2つのオプションがあります。
 
-* **Linear:** imply scales HDR colors by exposure.
+* **Linear:** imply scales HDR colors by exposure.
 * **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
 リニアトーンマッピングはデフォルトで有効になっていますが、それは単に(色*露出)です。明るさへの迅速な変更を行うために露出を調整することができます。入力はHDRの場合がありますので、Photoshopでの単純な明るさ調整とは異なります。 例：強度= 8のライトソースを使用している場合、暴露=0.5の後はまだかなり明るい(4)です。すべての目に見えるものは直線的にフェードアウトするだけではありません。
@@ -108,9 +108,9 @@ Filmicトーンマッピングは、インテリア内の明るい光が壁/天�
 
 利用可能なタイプ：
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
+* None - Fog is disabled
+* Linear - Fog fades in linearly between a Fog Start and Fog End distance
+* Exp - Fog fades in from the view position according to an exponential function
 * Exp2 - Fog fades in from the view position according to an exponential squared function
 
 #### 色
@@ -133,15 +133,15 @@ Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、�
 
 アプリケーションの幅と高さを制御します。また、次のいずれかの値に解像度モードを設定することができます:
 
-* Auto - The resolution will always be the same as the canvas size
+* Auto - The resolution will always be the same as the canvas size
 * Fixed - The resolution will always be width x height pixels.
 
 #### フィルモード
 
 Fill（塗りつぶし）モードは、キャンバスのサイズ変更挙動を制御します。次のいずれかの値を設定することができます：
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
 * Fill window - The canvas will stretch to fill the window completely.
 
 #### デバイスピクセルの比率
@@ -234,15 +234,15 @@ When a new image is uploaded it will be created as a Texture Atlas instead of a 
 
 シーン(FBXなど)をインポートする際、この設定は、テクスチャファイルがシーンからインポートした新しいバージョンで上書きされるかどうかを決定します。
 
-[1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/cog.jpg
-[3]: /user-manual/assets/cubemaps
-[4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
-[6]: /user-manual/designer/loading-screen
-[7]: /user-manual/packs/components/model
-[8]: /user-manual/packs/components/element
-[9]: /user-manual/optimization/batching
-[10]: /user-manual/graphics/layers/
+[1]: /user-manual/designer/menus-and-toolbar
+[2]: /images/user-manual/cog.jpg
+[3]: /user-manual/assets/cubemaps
+[4]: /images/user-manual/gamma-correction.jpg
+[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
 

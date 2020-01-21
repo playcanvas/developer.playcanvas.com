@@ -1,7 +1,7 @@
----
-title: Hierarchy
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Hierarchy
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 <img src="/images/user-manual/editor/hierarchy.png" style="float: right; padding: 20px; padding-top: 0px;"></img>

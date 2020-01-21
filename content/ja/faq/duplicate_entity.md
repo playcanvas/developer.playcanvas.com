@@ -1,6 +1,6 @@
----
-title: Duplicate an Entity
-keywords: entity, duplicate, copy, paste
+---
+title: Duplicate an Entity
+keywords: entity, duplicate, copy, paste
 ---
 
 ## エンティティを複製するには？

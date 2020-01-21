@@ -1,8 +1,8 @@
----
-title: Manipulating Entities
-template: tutorial-page.tmpl.html
-tags: basics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+---
+title: Manipulating Entities
+template: tutorial-page.tmpl.html
+tags: basics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 在这个教程中，我们会向你展示如何改变一个实体的位置，面对方向和体积大小。
@@ -17,10 +17,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 理解如何移动和变换实体的很重要的一步是理解自身坐标系和世界坐标系系统。世界坐标系系统被向所有实体公开，并有着固定不变的原点`(0,0,0)`和固定的轴向，即 `(0,1,0)` 表示垂直向上。自身坐标系是依赖于实体自身的。因此自身坐标系原点即实体所处的位置，并且自身坐标系的轴向遵循实体当前的面向。
 
-<img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
-<img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
-<div style="clear:both" />
-*World and Local co-ordinate systems*
+<img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
+<img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
+<div style="clear:both" />
+*World and Local co-ordinate systems*
 <br />
 
 ### 层级树
@@ -31,36 +31,36 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 获取实体的位置是直截了当的
 
-~~~js~~~
-// Get the entity's position relative to the coordinate system of the entity's parent
-var lp = entity.getLocalPosition();
-
-// Get the entity's position in world space
-var wp = entity.getPosition();
+~~~js~~~
+// Get the entity's position relative to the coordinate system of the entity's parent
+var lp = entity.getLocalPosition();
+
+// Get the entity's position in world space
+var wp = entity.getPosition();
 ~~~
 
 这些方法均返回一个`pc.Vec3` (数组形式[x,y,z]的向量)值。
 
 设置实体的位置也同样简单。
 
-~~~js~~~
-// Set the entity's position relative to the coordinate system of the entity's parent
-entity.setLocalPosition(x, y, z);
-
-// Set the entity's position in world space
-entity.setPosition(x, y, z);
+~~~js~~~
+// Set the entity's position relative to the coordinate system of the entity's parent
+entity.setLocalPosition(x, y, z);
+
+// Set the entity's position in world space
+entity.setPosition(x, y, z);
 ~~~
 
 ### 移动实体
 
 要移动实体，您可以直接把位置信息灌入实体，或者可以使用帮助函数translate和translateLocal进行操作。
 
-~~~js~~~
-// Translate the entity 1 unit down the positive x axis of world space
-entity.translate(1, 0, 0);
-
-// Translate the entity 1 unit down the entity's local z axis
-entity.translateLocal(0, 0, 1);
+~~~js~~~
+// Translate the entity 1 unit down the positive x axis of world space
+entity.translate(1, 0, 0);
+
+// Translate the entity 1 unit down the entity's local z axis
+entity.translateLocal(0, 0, 1);
 ~~~
 
 ## 方向
@@ -71,75 +71,75 @@ entity.translateLocal(0, 0, 1);
 
 ** 欧拉角 **
 
-* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
+* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
+* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
 * Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
 ** 四元数**
 
-* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
-* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
+* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
+* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
 * Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
 
 当使用脚本操作一个实体时，你更可能愿意通过欧拉角来设置实体的方向。举个例子：
 
-~~~js~~~
-// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
-// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
-entity.setLocalEulerAngles(30, 45, 60);
-
-// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
-// around the world space y axis and lastly 60 degrees around the world space z axis
-entity.setEulerAngles(30, 45, 60);
-~~~
+~~~js~~~
+// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
+// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
+entity.setLocalEulerAngles(30, 45, 60);
+
+// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
+// around the world space y axis and lastly 60 degrees around the world space z axis
+entity.setEulerAngles(30, 45, 60);
+~~~
 However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
-~~~js~~~
-// Create an identity rotation
-var q = new pc.Quat();
-// Set the entity to have the same rotation as its parent - equivalent to
-// entity.setLocalEulerAngles(0, 0, 0)
-entity.setLocalRotation(q);
-
-// Set the entity to have no rotation with respect to the world space coordinate
-// system  - equivalent to entity.setEulerAngles(0, 0, 0)
-entity.setRotation(q);
+~~~js~~~
+// Create an identity rotation
+var q = new pc.Quat();
+// Set the entity to have the same rotation as its parent - equivalent to
+// entity.setLocalEulerAngles(0, 0, 0)
+entity.setLocalRotation(q);
+
+// Set the entity to have no rotation with respect to the world space coordinate
+// system  - equivalent to entity.setEulerAngles(0, 0, 0)
+entity.setRotation(q);
 ~~~
 
 要以增量方式旋转实体，可以使用rotate相对于世界空间轴旋转实体，或者使用rotateLocal以相对于实体的当前轴旋转。
 
 举个例子，要使一个实体围绕世界坐标的向上轴旋转180°，可以这样做:
 
-~~~js~~~
-entity.rotate(0, 180, 0);
+~~~js~~~
+entity.rotate(0, 180, 0);
 ~~~
 
 或者将实体围绕其自身坐标系的x轴旋转90度：
 
-~~~js~~~
-entity.rotateLocal(90, 0, 0);
+~~~js~~~
+entity.rotateLocal(90, 0, 0);
 ~~~
 
 ## 缩放
 
 为了使一个实体缩放，你会需要调用到以下函数:
 
-~~~js~~~
-// Scale the entity by a factor of 2 in the local Y axis
-entity.setLocalScale(1, 2, 1);
+~~~js~~~
+// Scale the entity by a factor of 2 in the local Y axis
+entity.setLocalScale(1, 2, 1);
 ~~~
 
 以及这里是一些轻量的有趣的例子:
 
-~~~js~~~
-// Scale the entity using a sine function over time
-this.timer += deltaTime;
-var s = Math.sin(this.timer) + 1;
-entity.setLocalScale(s, s, s);
+~~~js~~~
+// Scale the entity using a sine function over time
+this.timer += deltaTime;
+var s = Math.sin(this.timer) + 1;
+entity.setLocalScale(s, s, s);
 ~~~
 
 请注意，您目前无法在世界空间中设置实体的缩放比例。
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
+[1]: http://en.wikipedia.org/wiki/Euler_angles
 [2]: http://en.wikipedia.org/wiki/Quaternion
 

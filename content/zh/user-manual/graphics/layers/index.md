@@ -1,15 +1,15 @@
----
-title: Layers
-template: usermanual-page.tmpl.html
-position: 4.5
+---
+title: Layers
+template: usermanual-page.tmpl.html
+position: 4.5
 ---
 
 ## Layers Overview
 
 Layers allow you to customize the render loop for your application. Using layers you can implement some advanced rendering features. For example:
 
-* modify the order in which your meshes are rendered
-* set cameras to render only some meshes
+* modify the order in which your meshes are rendered
+* set cameras to render only some meshes
 * set which lights affect which meshes
 
 A PlayCanvas application is created with a default set of layers which are always present. You can create your own layers and re-order them to suit your particular requirements.
@@ -30,10 +30,10 @@ First is order of layers in the application. Each application contains a `pc.Lay
 
 Each sub-layer has a sort mode. Every frame the meshes in a sub-layer are sorted according to its sort mode. This determines the order that the meshes are rendered in when the sub-layer is rendered.
 
-* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - This is the default mode for opaque sub-layers. Mesh instances are sorted to minimize switching between materials and meshes to improve rendering performance.
-* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - This is the default mode for transparent sub-layers. Mesh instances are sorted back to front. This is the way to properly render many semi-transparent objects on different depth, one is blended on top of another.
-* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - Mesh instances are sorted front to back. Depending on GPU and the scene, this option may give better performance than `pc.SORTMODE_MATERIALMESH` due to reduced overdraw.
-* **Manual** (`pc.SORTMODE_MANUAL`) - This is the default mode for UI or 2D layers. Mesh instances are sorted based on `drawOrder` property. The Element Component and Sprite Component should be placed in layers with this sort mode.
+* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - This is the default mode for opaque sub-layers. Mesh instances are sorted to minimize switching between materials and meshes to improve rendering performance.
+* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - This is the default mode for transparent sub-layers. Mesh instances are sorted back to front. This is the way to properly render many semi-transparent objects on different depth, one is blended on top of another.
+* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - Mesh instances are sorted front to back. Depending on GPU and the scene, this option may give better performance than `pc.SORTMODE_MATERIALMESH` due to reduced overdraw.
+* **Manual** (`pc.SORTMODE_MANUAL`) - This is the default mode for UI or 2D layers. Mesh instances are sorted based on `drawOrder` property. The Element Component and Sprite Component should be placed in layers with this sort mode.
 * **None** (`pc.SORTMODE_NONE`) - No sorting is applied. Mesh instances are rendered in the same order they were added to a layer.
 
 ## Default Layers
@@ -42,12 +42,12 @@ PlayCanvas applications are created with a set of default layers. You should lea
 
 ![Default Layers][1]
 
-1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
-1. **Depth (Opaque)** - The depth layer is for advanced users only.
-1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
-1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
-1. **Immediate (Opaque)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **Immediate (Transparent)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
+1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
+1. **Depth (Opaque)** - The depth layer is for advanced users only.
+1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
+1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
+1. **Immediate (Opaque)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
+1. **Immediate (Transparent)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
 1. **UI (Transparent)** - Used to render Element components. All Element components are transparent, so the Opaque sub-layer is not used.
 
 ## Using Custom Layers
@@ -82,9 +82,9 @@ Components that render meshes all have a `layers` property which is used to dete
 
 *Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in it's layer list. In order for it to be lit, the light must include Test Layer in it's layer list too.
 
-[1]: /images/user-manual/graphics/layers/default-layers.jpg
-[2]: /images/user-manual/graphics/layers/new-layer.jpg
-[3]: /images/user-manual/graphics/layers/edit-layer.jpg
-[4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
+[1]: /images/user-manual/graphics/layers/default-layers.jpg
+[2]: /images/user-manual/graphics/layers/new-layer.jpg
+[3]: /images/user-manual/graphics/layers/edit-layer.jpg
+[4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
 [5]: /images/user-manual/graphics/layers/test-layer-components.jpg
 

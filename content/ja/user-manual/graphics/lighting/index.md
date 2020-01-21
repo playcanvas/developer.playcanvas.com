@@ -1,7 +1,7 @@
----
-title: Lighting
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Lighting
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 シーンの照明は、表面の素材プロパティおよび素材に適用されるライトソースに基づいて、画面に描画されるピクセルの色やシェーディングを算出する処理です。

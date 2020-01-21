@@ -1,6 +1,6 @@
----
-title: Render a 3D model
-keywords: component, model, 3d, fbx, mesh
+---
+title: Render a 3D model
+keywords: component, model, 3d, fbx, mesh
 ---
 
 ## Как отобразить 3D модель?

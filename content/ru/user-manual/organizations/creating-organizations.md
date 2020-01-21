@@ -1,7 +1,7 @@
----
-title: Creating Organizations
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Creating Organizations
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 There are various ways to create an Organization. Any organizations you are part of will appear next to your name on your profile like so:
@@ -34,16 +34,16 @@ This will bring up the following popup:
 
 Converting your user account into an Organization will mean that you will no longer be able to log in with this user account. For that reason you need to specify an owner for the new Organization.
 
-<div class="alert alert-info">
-Make sure you can log in with the new owner's account.
+<div class="alert alert-info">
+Make sure you can log in with the new owner's account.
 </div>
 
 If you have subscribed for a paid plan, that plan will be cancelled unless you choose to subscribe to an Organization plan which is offered in the popup. The number of seats to purchase will be calculated for you automatically based on the number of users in your existing private projects.
 
 After you convert your account, you will be logged out. Then log back in with the new owner's account and you will be able to access the converted account and all its projects.
 
-[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
-[2]: /user-manual/profile
-[3]: /user-manual/profile/account
+[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
+[2]: /user-manual/profile
+[3]: /user-manual/profile/account
 [4]: /images/user-manual/organizations/organizations.jpg "Organizations"
 

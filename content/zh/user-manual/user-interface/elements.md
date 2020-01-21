@@ -1,7 +1,7 @@
----
-title: Elements
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Elements
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 Elements are the individual pieces that make up a user interface screen. A user interface element is added by attaching an Element component to an entity and adding that entity as a child or descendent of the Screen entity. An element that is part of a Screen differs from a regular entity in the way that it's transform is calculated and hence the way that it is positioned on screen.
@@ -56,10 +56,10 @@ Whilst the primary use-case of Elements is to be part of a User Interface Screen
 
 Sizes and positioning for Elements that do not have a Screen behaves slightly differently. Whereas for a screen a 32x32 Element is 32 pixels a Screen-less Element will be 32m by 32m. Adjust your sizes accordingly.
 
-[1]: /images/user-manual/user-interface/elements/element-guide.png
-[2]: /images/user-manual/user-interface/elements/pivot.png
-[3]: /images/user-manual/user-interface/elements/anchor-editor.png
-[4]: /images/user-manual/user-interface/elements/split-anchor.png
-[5]: /images/user-manual/user-interface/elements/gizmo-resize.png
+[1]: /images/user-manual/user-interface/elements/element-guide.png
+[2]: /images/user-manual/user-interface/elements/pivot.png
+[3]: /images/user-manual/user-interface/elements/anchor-editor.png
+[4]: /images/user-manual/user-interface/elements/split-anchor.png
+[5]: /images/user-manual/user-interface/elements/gizmo-resize.png
 [6]: /images/user-manual/user-interface/elements/gizmo-resize-viewport.png
 

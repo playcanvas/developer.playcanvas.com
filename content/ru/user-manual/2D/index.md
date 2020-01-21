@@ -1,7 +1,7 @@
----
-title: 2D
-template: usermanual-page.tmpl.html
-position: 11
+---
+title: 2D
+template: usermanual-page.tmpl.html
+position: 11
 ---
 
 The PlayCanvas Engine is designed to make creating 3D games and applications fast and simple. However, we also support a number of great features for creating 2D games. With PlayCanvas' 2D features you get all the benefits of a powerful 3D engine but for 2D games.
@@ -28,13 +28,13 @@ The [Sprite Editor][4] is the tool used to generate Texture Atlas frames and Spr
 
 *Artwork created by [PixelBoy](https://twitter.com/2pblog1)*
 
-[0]: /user-manual/assets/sprites
-[1]: /user-manual/packs/components/sprite
-[2]: /user-manual/assets/texture-atlas
-[3]: /user-manual/assets/textures
+[0]: /user-manual/assets/sprites
+[1]: /user-manual/packs/components/sprite
+[2]: /user-manual/assets/texture-atlas
+[3]: /user-manual/assets/textures
 [4]: /user-manual/2D/sprite-editor
 
-[5]: /images/user-manual/2D/sprite.jpg
-[6]: /images/user-manual/2D/texture-atlas.jpg
+[5]: /images/user-manual/2D/sprite.jpg
+[6]: /images/user-manual/2D/texture-atlas.jpg
 [7]: /images/user-manual/2D/sprite-editor.jpg
 
