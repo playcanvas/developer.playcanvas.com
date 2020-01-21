@@ -1,6 +1,6 @@
----
-title: Воспроизведение звука
-keywords: компонент, звук, песня, музыка, audiosource, audiolistener
+---
+title: Play a sound
+keywords: component, sound, audio, music, audiosource, audiolistener
 ---
 
 ## Как воспроизвести звук?

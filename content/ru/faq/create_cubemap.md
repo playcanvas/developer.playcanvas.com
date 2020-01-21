@@ -1,6 +1,6 @@
----
-title: Создание кубической текстуры
-keywords: набор, кубическая текстура, создание, skybox, текстура, pbr, физический
+---
+title: Create a cubemap
+keywords: asset, cubemap, create, skybox, texture, pbr, physical
 ---
 
 ## Как создать кубическую текстуру?

@@ -1,7 +1,7 @@
----
-title: 资源库
-template: usermanual-page.tmpl.html
-position: 7
+---
+title: Asset Library
+template: usermanual-page.tmpl.html
+position: 7
 ---
 
 ## 商店

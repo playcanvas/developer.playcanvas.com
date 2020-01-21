@@ -1,9 +1,9 @@
----
-title: 基本的なカメラ
-template: tutorial-page.tmpl.html
-position: 3
-tags: camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+---
+title: Basic Cameras
+template: tutorial-page.tmpl.html
+position: 3
+tags: camera
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 ## カメラ・エンティティ
@@ -16,13 +16,13 @@ PlayCanvas エディタからシーンを実行するには、最低でも一つ
 
 新しいカメラエンティティを作成するには、エンティティにカメラ [Component][1] を追加する必要があります。
 
-* Entity Explorerでシーンのルートエンティティを選択
-* *Entity*メニューから*New Entity*を選択して新しいエンティティを作成
-* *Component*メニューから*New Component*を選択してコンポーネントを追加
-* 作成するコンポーネントタイプを選ぶ際、*Camera*を選択
+* Select the root Entity of your Scene in the Entity Explorer
+* Create a new Entity by selecting *New Entity* from the *Entity* menu.
+* Add a Component by selecting *New Component* from *Component* menu
+* Choose *Camera* when you are prompted to choose which type of Component to create
 
-カメラエンティティの作成は一般的な操作なのでショートカットが存在します：*Entity*メニューの*New Entity* -> *New Camera*を選択してください。
-これで新しいエンティティが作成されてカメラコンポーネントが追加されます。
+As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
+This is equivalent to creating a new Entity and adding a Camera Component to it.
 
 ## カメラ・プロパティ
 
@@ -74,6 +74,6 @@ PlayCanvas エディタからシーンを実行するには、最低でも一つ
 
 ビューポートはカメラのレンダリングバッファにある四角形のエリアです。 次の形式の4つの値があります：左下 X, 左下 Y, 横, 縦。これらの値は正規座標であり、レンダリングバッファは寸法に関わらず0..1でXとYにマップされます。つまり、カメラが画面の左下部分のみをレンダリングするよう制限したい場合は、ビューポートを0, 0, 0.5, 0.5に設定します。
 
-[1]: /user-manual/glossary#component
+[1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png
 

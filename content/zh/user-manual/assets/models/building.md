@@ -1,7 +1,7 @@
----
-title: 创建模型
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Building Models
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
@@ -10,16 +10,16 @@ PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此�
 
 一些可被考虑使用的建模和动画程序：
 
-*免费选项：Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
-*低成本付费选项：3D-Coat, NVIL, Hexagon
-*高成本付费选项： ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
+* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
+* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
 \* *这个程序也能够创建动画。*
 
 为了生成纹理，请考虑这些程序:
 
-* 免费选项: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* 付费选项: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 注意许多上面列出的用于建模的程序也允许纹理绘画。 如果你想要更多的选择，这个页面[external wiki][1]可以帮助你。 请注意，某些信息可能已过期。
 
@@ -27,8 +27,8 @@ PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此�
 
 无论您使用哪个建模应用程序，在构建用于PlayCanvas的3D场景时需要注意一些事情。
 
-*网格可以蒙皮到256骨骼上
-* NURBS网格将转换为三角形网格，进而转换为PlayCanvas所适应的格式。
+* Meshes can be skinned to up to 256 bones.
+* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
 ---
 
@@ -54,8 +54,8 @@ Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实�
 
 或者，使用[Autodesk FBX Converter] [5]将来自Blender的导出转换为带有嵌入式媒体的导出。 只需在FBX Converter中打开该文件，然后使用* Embedded Media *复选框进行重新保存。
 
-<div class="alert alert-warning">
-注意: 这里似乎存在一个问题，尽管用户没有在Blender中设置自发光属性，Blender 2.71的FBX导出依旧会生成自发光， - 这不是一个PlayCanvas引擎所需要的项。 为了避免这种情况，在Blender中，您可以将材质的Diffuse颜色设置更改为0(在“属性编辑器”中的“材质”选项卡下)。 或者直接降低PlayCanvas编辑器内的自发光率。
+<div class="alert alert-warning">
+Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
 </div>
 
 ### **动画**
@@ -68,7 +68,7 @@ Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实�
 
 在网络上有大量的教授学习如何使用Blender的资源。 我们推荐的几个是：
 
-* [Blender Cookie][2]
+* [Blender Cookie][2]
 * [Blender Guru][6]
 
 ---
@@ -147,15 +147,15 @@ PlayCanvas解释导出时3DS Max材质贴图类型的一个子集。 请注意�
 
 ![球状贴图][11]
 
-[1]: http://wiki.polycount.com/wiki/Tools
-[2]: http://cgcookie.com/blender/
-[3]: /images/Blender-Logo.jpg
-[4]: http://blender.org
-[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
-[6]: http://www.blenderguru.com/
-[7]: /images/artist_guide/max_material_editor.jpg
-[8]: /images/artist_guide/wall_norm.jpg
-[9]: /images/artist_guide/wall_norm_yflip.jpg
-[10]: /images/artist_guide/mountains_sphere.jpg
+[1]: http://wiki.polycount.com/wiki/Tools
+[2]: http://cgcookie.com/blender/
+[3]: /images/Blender-Logo.jpg
+[4]: http://blender.org
+[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
+[6]: http://www.blenderguru.com/
+[7]: /images/artist_guide/max_material_editor.jpg
+[8]: /images/artist_guide/wall_norm.jpg
+[9]: /images/artist_guide/wall_norm_yflip.jpg
+[10]: /images/artist_guide/mountains_sphere.jpg
 [11]: /images/artist_guide/maya_material_editor.jpg
 

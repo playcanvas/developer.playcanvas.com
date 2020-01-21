@@ -1,7 +1,7 @@
----
-title: ダッシュボードのヘッダ
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Dashboard Header
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 ![ダッシュボード][1]

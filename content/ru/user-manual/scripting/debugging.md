@@ -1,7 +1,7 @@
----
-title: Debugging
-template: usermanual-page.tmpl.html
-position: 7
+---
+title: Debugging
+template: usermanual-page.tmpl.html
+position: 7
 ---
 
 In order to create scripts for PlayCanvas, it is vital that you know how to access and use your browser's development tools.
@@ -22,14 +22,14 @@ The navigator lists all of the scripts currently running in the active tab, incl
 
 Each browser has detailed instructions on how to debug javascript. You should read through these documents: [Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
-<div class="alert alert-info">
-Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
+<div class="alert alert-info">
+Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
 </div>
 
-[1]: /images/user-manual/scripting/debugger-chrome.jpg
-[2]: /images/user-manual/scripting/debugger-firefox.jpg
-[3]: https://developer.chrome.com/devtools/docs/javascript-debugging
-[4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
-[5]: https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1
+[1]: /images/user-manual/scripting/debugger-chrome.jpg
+[2]: /images/user-manual/scripting/debugger-firefox.jpg
+[3]: https://developer.chrome.com/devtools/docs/javascript-debugging
+[4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
+[5]: https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1
 [6]: https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/debugger/
 

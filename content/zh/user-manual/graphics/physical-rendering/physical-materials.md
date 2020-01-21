@@ -1,7 +1,7 @@
----
-title: 物理材质
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Physical Materials
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 在PlayCanvas中使用物理基础渲染，你需要理解物理材质是如何进行配置的以及什么参数会引起怎么样的效果变化。
@@ -10,16 +10,9 @@ position: 2
 
 首先是关于立方体贴图和工作流程的注意事项
 
-## 立方体贴图
+## Image Based Lighting
 
-首先展示立方体贴图与天空盒子，是因为你会不可避免地跳进编辑器，并创建材料，然后开始疑惑为什么你的材料看起来不像下面的样本。
-
-**物理材质为了看起来效果更好需要一个立方体贴图!** 立方体贴图被用来 创造材质的大部分反射光。 因此如果你没有设置立方体贴图也没有直接应用环境中的部分材料,或者为整个场景设置天空盒子, 你的材质是不会变得好看的。
-
-此外，为了获得最好的效果，立方体贴图应该从[高动态范围][2] (HDR)的 贴图资源创建。
-
-<div class="alert-info">为了使物理材质能够使用你的立方体贴图，它 **必须** 是被预过滤过的。 一旦你对立方体贴图资源进行设置, 请确认你已经点击过下方的"预过滤" 按钮。
-</div>
+[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with a HDR Prefiltered CubeMap look great!**
 
 ## 金属星和镜面的工作流程
 
@@ -43,44 +36,44 @@ PBR常常被分为创建资源或工作流程的两个不同的方法。这两�
 
 它也常被认作 **光反射率** 或 **基础颜色**.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?color"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
 
 你可以常常在互联网上看到记录了漫反射/反射率值的图表。
 
 ![金属][3]
 
-<table class="centered">
-  <tr>
-  <th>材质</th><th>RGB值</th>
-  </tr>
-  <tr>
-  <td>金</td><td>(1.000, 0.766, 0.336) 或 [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>银</td><td>(0.972, 0.960, 0.915) 或[248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>铜</td><td>(0.955, 0.637, 0.538) 或[244, 162, 137]</td>
-  </tr>
+<table class="centered">
+  <tr>
+  <th>Material</th><th>RGB</th>
+  </tr>
+  <tr>
+  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  </tr>
+  <tr>
+  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  </tr>
+  <tr>
+  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  </tr>
 </table>
 
 ## 金属性
 
 金属性属性值是**金属性**工作流中的一部分。 金属性值是一个在0-1之间的唯一值，它决定了一个材质是金属 (1) 还是非金属 (0).
 
-<div class="alert-info">
-金属性属性值应该是几乎一直被取值为不是0就是1。需要取一个介于这两者之间的值的情况是很罕见的。
+<div class="alert-info">
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
 </div>
 
 你也可以设置一个金属性的贴图，这可以让你自主定义你的材料的特定区域为金属的或是非金属的。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?metal"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
 
 ## 光滑度
 
 光滑度在 **金属性** 和 **镜面**工作流程中都会被用到，它定义了你的材质表面有多光滑。光滑度会影响材质上倒影的模糊或清晰感，或是高光点的宽或窄。光滑度被从一个介于0-100之间的属性值或是一个光滑度贴图提供。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
 
 一些PBR系统会使用 **粗糙度** 来代替光滑度。 粗糙度是同光滑度相反的一个值。 如果你需要把一个粗糙的贴图转换为光滑的，只要简单地反转这个值就行。
 
@@ -92,11 +85,12 @@ PBR常常被分为创建资源或工作流程的两个不同的方法。这两�
 
 还有许多其他的可以进行探讨的附加属性，它们可以用来制造非常优秀的材质，如环境光遮蔽，自发光，不透明度，正常的和显示高度的贴图。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 
-[1]: http://store.playcanvas.com
-[2]: /user-manual/glossary#hdr
-[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
-[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[1]: http://store.playcanvas.com
+[2]: /user-manual/glossary#hdr
+[3]: /images/user-manual/graphics/physical-rendering/metals.jpg
+[4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

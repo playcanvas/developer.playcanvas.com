@@ -1,7 +1,7 @@
----
-title: 使用CDN进行托管
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Hosting using a CDN
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 在部署用于自承载的PlayCanvas应用程序时，通常需要将应用程序所提供的位置(index.html)与应用程序加载的资产分开。 例如，内容传送网络(CDN)用于确保资产从地理上靠近用户计算机的服务器传送。 这使您的应用程序加载更快。 本指南将向您介绍如何配置您的PlayCanvas应用程序，以便为资源指定单独的存放位置。
@@ -40,9 +40,9 @@ position: 8
 
 设置CORS因使用的CDN或服务器而异。 您需要检查您的服务器或CDN提供商的文档，以了解如何设置CORS头内容。 例如，亚马逊网页服务器CORS设置的页面是[这里] [5]
 
-[1]: /user-manual/publishing/web/self-hosting
-[2]: /images/user-manual/publishing/web/cdn-index.jpg
-[3]: /images/user-manual/publishing/web/cdn-more.jpg
-[4]: /images/user-manual/publishing/web/cdn-files.jpg
+[1]: /user-manual/publishing/web/self-hosting
+[2]: /images/user-manual/publishing/web/cdn-index.jpg
+[3]: /images/user-manual/publishing/web/cdn-more.jpg
+[4]: /images/user-manual/publishing/web/cdn-files.jpg
 [5]: http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
 

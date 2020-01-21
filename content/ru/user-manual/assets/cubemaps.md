@@ -1,15 +1,15 @@
----
-title: Cubemaps
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Cubemaps
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
 
-1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
+1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
 2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
-<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
 ## Importing Cubemap Textures
 
@@ -37,10 +37,10 @@ Once you have a cubemap selected, you can edit its properties.
 
 ![Cubemap Properties][3]
 
-### Filtering
+### Filtering
 This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
-### Anisotropy
+### Anisotropy
 Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
 
 ## Assigning Textures to Cubemaps
@@ -51,28 +51,28 @@ The cubemap Preview panel displays the six faces of a cubemap flattened into the
 
 Cubemap faces must be:
 
-* Square (the same resultion in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+* Square (the same resultion in width and height)
+* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
 * All faces must be the same resolution
 
 To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cubemap faces, such as:
 
-* negx, posx, negy, posy, negz, posz
-* left, right, top|up, bottom|down, front|forward, back|backward
+* negx, posx, negy, posy, negz, posz
+* left, right, top|up, bottom|down, front|forward, back|backward
 * 0-5|1-6
 
 An example of a texture set that would match is:
 
-* face_posx.jpg
-* face_negx.jpg
-* face_posy.jpg
-* face_negy.jpg
-* face_posz.jpg
+* face_posx.jpg
+* face_negx.jpg
+* face_posy.jpg
+* face_negy.jpg
+* face_posz.jpg
 * face_negz.jpg
 
-## Prefiltering Cubemaps
+## Image Based Lighting
 
-The cubemap inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cubemap is essential for using the Physical material.
+This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
 
 ## Assigning Cubemaps to Materials
 
@@ -84,9 +84,10 @@ You can click the Empty slot to select a cubemap or drag and drop a cubemap asse
 
 Note: a Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
 
-[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
-[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
-[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
-[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
-[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
+[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
+[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
+[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
+[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

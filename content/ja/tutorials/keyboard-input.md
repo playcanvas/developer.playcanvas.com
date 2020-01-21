@@ -1,95 +1,97 @@
----
-title: 基本的なキーボード入力
-template: tutorial-page.tmpl.html
-tags: input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
+---
+title: Basic Keyboard Input
+template: tutorial-page.tmpl.html
+tags: input
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
 
 *クリックでフォーカスして、左矢印、右矢印、空白バーを押してキューブを回転します。aキーを押して離すことで色を変更します。*
 
-PlayCanvasエンジンのキーボード処理はpc.Keyboardオブジェクトにより提供されます。Keyboardオブジェクトは一般的なキーボード操作のシンプルなインターフェイスを提供します。また、keycodeやcharcodeの処理に伴うクロスブラウザの問題を取り除きます。
+Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
+for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
+handling keycodes and charcodes.
 
 [チュートリアルプロジェクト][1]のキーボード入力シーンをご確認ください。チュートリアルのコードはこちらです：
 
-~~~javascript~~~
-var KeyboardHandler = pc.createScript('keyboardHandler');
-
-KeyboardHandler.attributes.add('redMaterial', {
-    type: 'asset',
-    assetType: 'material'
-});
-
-KeyboardHandler.attributes.add('whiteMaterial', {
-    type: 'asset',
-    assetType: 'material'
-});
-
-// initialize code called once per entity
-KeyboardHandler.prototype.initialize = function() {
-    // Use on() to listen for events on the keyboard device.
-    // Arguments are:
-    // 1) The event name to listen for
-    // 2) The callback function to call when the event fires
-    // 3) (optional) The value to use for 'this' in the callback function
-
-    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
-    this.app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
-};
-
-// update code called every frame
-KeyboardHandler.prototype.update = function(dt) {
-    /*
-     * Notice in the demo that pressing and holding the arrow keys doesn't
-     * make the block spin. wasPressed() is used to detect a
-     * keypress that occurred since the last frame and will only be
-     * called once even if the key is held down.
-     */
-    var angle = 0;
-    if (this.app.keyboard.wasPressed(pc.KEY_LEFT)) {
-        angle = -5;
-    } else if (this.app.keyboard.wasPressed(pc.KEY_RIGHT)) {
-        angle = 5;
-    }
-
-    /*
-     * Notice that pressing and holding the space bar makes the block
-     * continuously spin. isPressed() is used to detected if a
-     * key is down right now. So it will be true every frame as long as
-     * the key is still pressed.
-     */
-    if (this.app.keyboard.isPressed(pc.KEY_SPACE)) {
-        angle = 1;
-    }
-
-    // Update the spinning cube
-    this.entity.rotateLocal(0, angle, 0);
-};
-
-/*
-* Event handler called when key is pressed
-*/
-KeyboardHandler.prototype.onKeyDown = function (event) {
-    // Check event.key to detect which key has been pressed
-    if (event.key === pc.KEY_A && this.redMaterial) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
-    }
-
-    // When the space bar is pressed this scrolls the window.
-    // Calling preventDefault() on the original browser event stops this.
-    event.event.preventDefault();
-};
-
-/*
-* Event handler called when key is released
-*/
-KeyboardHandler.prototype.onKeyUp = function (event) {
-    // Check event.key to detect which key has been pressed
-    if (event.key === pc.KEY_A && this.whiteMaterial) {
-        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
-    }
-};
+~~~javascript~~~
+var KeyboardHandler = pc.createScript('keyboardHandler');
+
+KeyboardHandler.attributes.add('redMaterial', {
+    type: 'asset',
+    assetType: 'material'
+});
+
+KeyboardHandler.attributes.add('whiteMaterial', {
+    type: 'asset',
+    assetType: 'material'
+});
+
+// initialize code called once per entity
+KeyboardHandler.prototype.initialize = function() {
+    // Use on() to listen for events on the keyboard device.
+    // Arguments are:
+    // 1) The event name to listen for
+    // 2) The callback function to call when the event fires
+    // 3) (optional) The value to use for 'this' in the callback function
+
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
+};
+
+// update code called every frame
+KeyboardHandler.prototype.update = function(dt) {
+    /*
+     * Notice in the demo that pressing and holding the arrow keys doesn't
+     * make the block spin. wasPressed() is used to detect a
+     * keypress that occurred since the last frame and will only be
+     * called once even if the key is held down.
+     */
+    var angle = 0;
+    if (this.app.keyboard.wasPressed(pc.KEY_LEFT)) {
+        angle = -5;
+    } else if (this.app.keyboard.wasPressed(pc.KEY_RIGHT)) {
+        angle = 5;
+    }
+
+    /*
+     * Notice that pressing and holding the space bar makes the block
+     * continuously spin. isPressed() is used to detected if a
+     * key is down right now. So it will be true every frame as long as
+     * the key is still pressed.
+     */
+    if (this.app.keyboard.isPressed(pc.KEY_SPACE)) {
+        angle = 1;
+    }
+
+    // Update the spinning cube
+    this.entity.rotateLocal(0, angle, 0);
+};
+
+/*
+* Event handler called when key is pressed
+*/
+KeyboardHandler.prototype.onKeyDown = function (event) {
+    // Check event.key to detect which key has been pressed
+    if (event.key === pc.KEY_A && this.redMaterial) {
+        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+    }
+
+    // When the space bar is pressed this scrolls the window.
+    // Calling preventDefault() on the original browser event stops this.
+    event.event.preventDefault();
+};
+
+/*
+* Event handler called when key is released
+*/
+KeyboardHandler.prototype.onKeyUp = function (event) {
+    // Check event.key to detect which key has been pressed
+    if (event.key === pc.KEY_A && this.whiteMaterial) {
+        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+    }
+};
 ~~~
 
 キーボードの入力を探知する方法は二つあります。一つ目はスクリプトの更新メソッドで行われます。isPressed()とwasPressed()を使用してキーが現在押されているか、押されたばかりかを確認します。二つ目は、イベントを使用してキーの押下や開放の実行時に反応します。
@@ -114,7 +116,7 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 
 キーの押下を処理する二つ目の方法は、イベントへのリッスンです。Keyboardデバイスでは二つのキーボードイベントが対応されています：
 
-* `pc.EVENT_KEYDOWN`
+* `pc.EVENT_KEYDOWN`
 * `pc.EVENT_KEYUP`
 
 [DOM][3] キーボードイベントは異なるブラウザで異なる形で実装されるので、PlayCanvas Engineは如何なる場所でも同じコードを使用できるよう、`pc.Keyboard`オブジェクトでイベントを提供します。キーボードイベントが発動すると、押下または開放されたキーのキーコードを含むpc.KeyboardEvent`オブジェクトがイベントハンドラに渡されます。
@@ -131,7 +133,7 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 
 [こちら][2] またはページの上部からお試しください。矢印キーやスペースバーを叩いたり押さえたりして比べて見てください。
 
-[1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
-[2]: https://playcanv.as/p/rFZGQWCi
+[1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
+[2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
 

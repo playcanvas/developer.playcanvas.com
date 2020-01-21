@@ -1,6 +1,6 @@
----
-title: Добавление скрипта
-keywords: скрипт, код, создать, javascript, поведение
+---
+title: Add a script
+keywords: script, code, create, javascript, behaviour
 ---
 
 ## Как добавить скрипт?

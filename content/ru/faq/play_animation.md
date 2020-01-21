@@ -1,6 +1,6 @@
----
-title: Воспроизведение анимации
-keywords: компонент, анимация, модель, 3d, fbx
+---
+title: Play an animation
+keywords: component, animation, model, 3d, fbx
 ---
 
 ## Как воспроизвести анимацию?

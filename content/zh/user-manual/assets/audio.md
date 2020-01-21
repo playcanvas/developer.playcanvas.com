@@ -1,7 +1,7 @@
----
-title: 音频
-template: usermanual-page.tmpl.html
-position: 10
+---
+title: Audio
+template: usermanual-page.tmpl.html
+position: 10
 ---
 
 音频资源是可以通过音频资源组件进行播放的声音文件。

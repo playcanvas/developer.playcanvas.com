@@ -1,6 +1,6 @@
----
-title: 添加脚本
-keywords: 脚本, 代码, 创建, javascript, 行为
+---
+title: Add a script
+keywords: script, code, create, javascript, behaviour
 ---
 
 # 如何添加脚本？

@@ -1,7 +1,7 @@
----
-title: アセット
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Assets
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査が行えます。
@@ -44,7 +44,17 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 検索ボックスを使用して、プロジェクト内のアセットのグローバル検索を実行することができます。ボックスに入力し始めると、Editorは一致する結果を動的にアセットパネルで表示します。
 
-検索ボックスはワイルドカードに対応しています。 例えば、*.はプロジェクト内のすべてのアセットを一覧表示します。
+**ID** - 特定のアセットを固有のIDで検索することができます。検索フィールドにIDを入力するだけで正確な一致が認識され、そのIDを持つひとつのアセットが表示されます。
+
+**RegExp** - 正規表現を使用して検索することもできます。検索フィールドの先頭に `*` を追加し、後ろにregexpクエリを入力してください。すべてのアセットを検索するには `*.`(任意の文字の)正規表現クエリを使用します。
+
+**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
+Here are some examples:
+
+`[ level-1 ]` - returns all assets that are tagged by `level-1`.
+`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
+`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
+`[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
 ## ドラッグ＆ドロップ
 
@@ -54,9 +64,9 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 モデル、素材、キューブマップなどのアセットを直接 [ビューポート][3]にドラッグすることもできます。
 
-* ビューポートにモデルアセットをドラッグすると、モデルアセットが割り当てられたモデルコンポーネントを有する新しいエンティティが作成されます。ビューポートのカメラは自動的に新しく作成されたエンティティにズームします。
-* ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
-* ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
+* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
+* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
+* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
 ## 参照の確認
 
@@ -64,8 +74,8 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 ![参照されていないアセット][5]
 
-<div class="alert alert-info">
-Editorはコードで作成されたアセットの参照を検出できません。アセットを削除する際は注意が必要です。
+<div class="alert alert-info">
+Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
 </div>
 
 アセットに参照がある場合は、Referencesコンテンツメニュー項目を使用して参照することができます。
@@ -74,10 +84,11 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 
 参照を選択するとInspectorパネルに読み込まれます。
 
-[1]: /images/user-manual/editor/assets-panel.png
-[2]: /user-manual/designer/inspector
-[3]: /user-manual/designer/viewport
-[4]: /user-manual/designer/settings
-[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
-[6]: /images/user-manual/editor/assets-panel/asset-references.png
+[1]: /images/user-manual/editor/assets-panel.png
+[2]: /user-manual/designer/inspector
+[3]: /user-manual/designer/viewport
+[4]: /user-manual/designer/settings
+[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
+[6]: /images/user-manual/editor/assets-panel/asset-references.png
+[7]: /api/pc.AssetRegistry.html#findByTag
 

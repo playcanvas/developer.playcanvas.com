@@ -1,7 +1,7 @@
----
-title: ウェブページとの通信
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Communication with web pages
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 プラグインやクロスコンパイルエンジンの代わりにPlayCanvasとWebGLを使用する主な利点のひとつは、アプリケーションとそれを囲うウェブページ間で直接、相互作用できることです。このページでは、PlayCanvasアプリケーションをウェブページやウェブアプリケーションに対してインタフェースするためのいくつかの一般的な方法について説明します。
@@ -14,37 +14,37 @@ PlayCanvasアプリケーションとそれを囲ウェブページを通信さ�
 
 PlayCanvasアプリケーションからウェブページにAPIを露出させるいくつかの方法を示す簡単な例です。
 
-```javascript
-
-// method one: define a global function to set the score
-window.setScore = function (score) {
-    var app = pc.Application.getApplication();
-    var entity = app.root.findByName("Score Keeper");
-    entity.script.scoreKeeper.setScore(score);
-}
-
-var ScoreKeeper = pc.createScript("scoreKeeper");
-
-ScoreKeeper.prototype.initialize = function (entity) {
-    // method two: define an application event to set the score
-    this.app.on("score:set", function (score) {
-        this.setScore(score);
-    }, this);
-};
-
-ScoreKeeper.prototype.setScore = function (score) {
-    // do the score setting here.
-};
-
-// how to use the API:
-
-// method one:
-window.setScore(10);
-
-// method two:
-var app = pc.Application.getApplication();
-app.fire("score:set", 10);
-
+```javascript
+
+// method one: define a global function to set the score
+window.setScore = function (score) {
+    var app = pc.Application.getApplication();
+    var entity = app.root.findByName("Score Keeper");
+    entity.script.scoreKeeper.setScore(score);
+}
+
+var ScoreKeeper = pc.createScript("scoreKeeper");
+
+ScoreKeeper.prototype.initialize = function (entity) {
+    // method two: define an application event to set the score
+    this.app.on("score:set", function (score) {
+        this.setScore(score);
+    }, this);
+};
+
+ScoreKeeper.prototype.setScore = function (score) {
+    // do the score setting here.
+};
+
+// how to use the API:
+
+// method one:
+window.setScore(10);
+
+// method two:
+var app = pc.Application.getApplication();
+app.fire("score:set", 10);
+
 ```
 
 方法1は、アプリケーションにアクセスするために、ページ内のどこでも呼び出すことができるグローバルな関数を定義します。方法2は、ページから発射することができるアプリケーションイベントを定義します。アプリケーションはこのイベントをリッスンし、イベントに応じてアクションを実行します。どちらもアプリケーションでAPIを定義する有効な方法です。
@@ -57,58 +57,58 @@ iframe内にPlayCanvasアプリケーションを埋め込むのは、PlayCanvas
 
 ホストページにて
 
-```html
-<iframe id="app-frame" src="http://playcanv.as/p/example">
-<script>
-var iframe = document.getElementById("app-frame");
-iframe.contentWindow.postMessage({
-    score: 10,
-}, "http://playcanv.as");
-</script>
+```html
+<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<script>
+var iframe = document.getElementById("app-frame");
+iframe.contentWindow.postMessage({
+    score: 10,
+}, "https://playcanv.as");
+</script>
 ```
 
-アプリケーションで
-```javascript
-window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // メッセージが自身のウェブサイトから来ていることを必ず確認してください
-        var score = event.data.score;
-
-        // APIメソッド１を呼ぶ:
-        window.setScore(score);
-
-        // APIメソッド２を呼ぶ:
-        var app = pc.Application.getApplication();
-        app.fire("score:set", score);
-    }
-}, false);
+In your application
+```javascript
+window.addEventListener("message", function (event) {
+    if (event.origin === "http://example.com") { // always check message came from your website
+        var score = event.data.score;
+
+        // call API method one:
+        window.setScore(score);
+
+        // call API method two:
+        var app = pc.Application.getApplication();
+        app.fire("score:set", score);
+    }
+}, false);
 ```
 
 ### 自身のHTMLをサーブ
 
 自己ホスティングのためにPlayCanvasアプリケーションをダウンロードしてください。これがアプリケーションを実行するために含まれるindex.htmlページです。
 
-```html
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>アプリケーションタイトル</title>
-    <script src="playcanvas-stable.min.js"></script>
-    <script>
-        SCENE_PATH = "12346.json";
-        CONTEXT_OPTIONS = {
-            'alpha': false,
-            'preserveDrawingBuffer': false
-        };
-    </script>
-</head>
-<body>
-    <script src="__start__.js"></script>
-    <script src="__loading__.js"></script>
-</body>
-</html>
+```html
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Title</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        SCENE_PATH = "12346.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+    </script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
+</html>
 ```
 
 ウェブページの基礎としてこのページから始めることをお勧めします。ページに必要な任意のコンテンツを追加するために、修正を加えることができます。
@@ -119,37 +119,37 @@ window.addEventListener("message", function (event) {
 
 例：
 
-```html
-<!doctype html>
-<html>
-<head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
-    <meta charset='utf-8'>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
-    <script src="playcanvas-stable.min.js"></script>
-    <script>
-        SCENE_PATH = "12346.json";
-        CONTEXT_OPTIONS = {
-            'alpha': false,
-            'preserveDrawingBuffer': false
-        };
-    </script>
-</head>
-<body>
-    <script src="__start__.js"></script>
-    <script src="__loading__.js"></script>
-    <script>
-    var app = pc.Application.getApplication();
-    app.on("start", function () {
-        // シーンのルートを取得
-        var hierarchy = app.root.getChildren()[0];
-
-        // 他はここで行う
-    });
-    </script>
-</body>
-</html>
+```html
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Title</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        SCENE_PATH = "12346.json";
+        CONTEXT_OPTIONS = {
+            'alpha': false,
+            'preserveDrawingBuffer': false
+        };
+    </script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+    <script>
+    var app = pc.Application.getApplication();
+    app.on("start", function () {
+        // get the root of the scene.
+        var hierarchy = app.root.getChildren()[0];
+
+        // do other stuff here
+    });
+    </script>
+</body>
+</html>
 ```
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage

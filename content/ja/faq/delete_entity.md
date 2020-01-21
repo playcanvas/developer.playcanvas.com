@@ -1,6 +1,6 @@
----
-title: エンティティの削除
-keywords: エンティティ, 削除, 破棄, 除去
+---
+title: Delete an Entity
+keywords: entity, delete, destroy, remove
 ---
 
 ## エンティティを削除するには？

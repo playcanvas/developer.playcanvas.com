@@ -1,7 +1,7 @@
----
-title: Overview
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Overview
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 ![Overview][1]

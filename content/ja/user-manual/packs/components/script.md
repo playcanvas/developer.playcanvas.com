@@ -1,7 +1,7 @@
----
-title: スクリプト
-template: usermanual-page.tmpl.html
-position: 9
+---
+title: Script
+template: usermanual-page.tmpl.html
+position: 14
 ---
 
 スクリプトコンポーネントは、ユーザー提供のスクリプトを実行するエンティティを有効にします。このように、ユーザは、エンティティがインスタンス化され、フレームごとに更新される際に実行されるスクリプト(JavaScript言語を使用)を書くことができます。
@@ -22,6 +22,6 @@ position: 9
 
 スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]です。
 
-[1]: /images/user-manual/scenes/components/component-script.png
+[1]: /images/user-manual/scenes/components/component-script.png
 [2]: /engine/api/stable/symbols/pc.ScriptComponent.html
 

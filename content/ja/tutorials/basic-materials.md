@@ -1,8 +1,8 @@
----
-title: 基本的な素材
-template: tutorial-page.tmpl.html
-tags: material
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+---
+title: Basic Materials
+template: tutorial-page.tmpl.html
+tags: material
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
 Material（素材）は3Dモデルの表面の外見を定義します。多角形の色の変更などのシンプルな設定も可能ですし、海の表面やガラスを通り抜ける光の再現などの複雑な設定もできます。
@@ -45,7 +45,7 @@ Editorで新しいキューブを作成する場合、割り当てられてい�
 
 こちらのサンプルテクスチャをダウンロード＆保存：
 
-<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
+<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
 <a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"/></a>
 
 次に、ファイルをEditorにドラッグしてプロジェクトにアップロードします。
@@ -60,10 +60,10 @@ Editorで新しいキューブを作成する場合、割り当てられてい�
 
 素材の設定に関する詳細はユーザマニュアルの[Physical Materials][6]セクションをご確認ください。
 
-[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
-[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
-[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
-[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
-[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
+[1]: /images/tutorials/beginner/basic-materials/new-box.jpg
+[2]: /images/tutorials/beginner/basic-materials/new-material.jpg
+[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
+[4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
+[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
 [6]: /user-manual/graphics/physical-rendering/physical-materials/
 

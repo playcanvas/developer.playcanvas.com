@@ -1,7 +1,7 @@
----
-title: 纹理
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Textures
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 纹理是可以被分配到 [材质][1] 表面并应用到图元的图片。
@@ -10,19 +10,19 @@ position: 4
 
 你有3种方式将纹理资源导入PlayCanvas:
 
-1. 将图像拖放到“资源”面板中
-2. 从“资源”面板的上下文菜单中选择“上传”，然后使用文件浏览器选择一个图像
-3. 导入嵌入纹理的FBX文件。
+1. Drag and drop images into the Assets panel.
+2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
+3. Import an FBX file that embeds textures.
 
 支持的图片格式有：
 
-* JPG
-* PNG
-* GIF
-* TGA
-* BMP
-* TIF
-* HDR
+* JPG
+* PNG
+* GIF
+* TGA
+* BMP
+* TIF
+* HDR
 * EXR
 
 导入的JPG和PNG文件保持原始格式。
@@ -31,7 +31,7 @@ GIF，TGA，BMP和TIF图片类型将在导入时转换为JPG或PNG。 如果导�
 
 HDR和EXR是[高动态范围格式] [2]格式。 这些类型的图像在导入时转换为PNG，并标记为以RGBM格式存储。 RGBM本质上在PNG的alpha通道中存储用于RGB值的乘法器，使得能够将HDR格式压缩为低动态范围格式。
 
-默认情况下，导入的图像将调整为下一个最高的2。 例如，在导入时，400x400的图片将调整为512x512。 这是因为图形引擎不能利用非功率的两个纹理的mip映射。 但是，在导入非功率两个纹理之前，可以通过在“资产任务”面板中禁用 '纹理POT' 设置来覆盖此行为。
+By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 
 ## 纹理属性
 
@@ -65,9 +65,9 @@ HDR和EXR是[高动态范围格式] [2]格式。 这些类型的图像在导入�
 
 编辑器能够对纹理应用有损压缩方案，以显着减少使用的VRAM数量。 这些方案是：
 
-* DXT：通常由桌面设备支持
-* PVR：通常由iOS设备支持
-* ETC：通常由Android设备支持。
+* DXT: Typically supported by desktop devices.
+* PVR: Typically supported by iOS devices.
+* ETC: Typically supported by Android devices.
 
 就比如这个纹理资源:
 
@@ -81,10 +81,10 @@ HDR和EXR是[高动态范围格式] [2]格式。 这些类型的图像在导入�
 
 本次压缩减少了VRAM6倍的使用。此外,在这种情况下,压缩也将下载大小从202 kb减少到116 kb。
 
-[1]: /user-manual/assets/materials
-[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
-[3]: /images/user-manual/assets/textures/texture-properties.png
-[4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/texture-address.png
+[1]: /user-manual/assets/materials
+[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
+[3]: /images/user-manual/assets/textures/texture-properties.png
+[4]: /images/user-manual/assets/textures/anisotropy.png
+[5]: /images/user-manual/assets/textures/texture-address.png
 [6]: /images/user-manual/assets/textures/compression-results.png
 

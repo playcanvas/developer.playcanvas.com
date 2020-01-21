@@ -1,7 +1,7 @@
----
-title: 标题
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Dashboard Header
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 ![指示板][1]

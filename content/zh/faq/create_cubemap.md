@@ -1,6 +1,6 @@
----
-title: 创建 cubemap
-keywords: 资源, cubemap, 创建, 天空盒, 纹理, pbr, 物理
+---
+title: Create a cubemap
+keywords: asset, cubemap, create, skybox, texture, pbr, physical
 ---
 
 如何创建 cubemap ?

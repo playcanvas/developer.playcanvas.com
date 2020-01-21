@@ -1,7 +1,7 @@
----
-title: Creating an Account
-template: usermanual-page.tmpl.html
-position: 1.7
+---
+title: Creating an Account
+template: usermanual-page.tmpl.html
+position: 1.7
 ---
 
 ## Sign Up
@@ -30,12 +30,12 @@ In order to log in to your Account click Log In on the front page. If you are al
 
 We used to support the Persona login system, however [Mozilla have decided to shut it down][8] on November 30th 2016. If you have been using Persona to log in click [here][6] to set a password for your account.
 
-[1]: /images/user-manual/creating-account/signup.png
-[2]: /images/user-manual/creating-account/signup_details.png
-[3]: /images/user-manual/creating-account/signup_final.png
-[4]: /user-manual/designer/
-[5]: /user-manual/profile/
-[6]: https://login.playcanvas.com/persona_deprecated
-[7]: /images/user-manual/creating-account/login.png
+[1]: /images/user-manual/creating-account/signup.png
+[2]: /images/user-manual/creating-account/signup_details.png
+[3]: /images/user-manual/creating-account/signup_final.png
+[4]: /user-manual/designer/
+[5]: /user-manual/profile/
+[6]: https://login.playcanvas.com/persona_deprecated
+[7]: /images/user-manual/creating-account/login.png
 [8]: https://wiki.mozilla.org/Identity/Persona_Shutdown_Guidelines_for_Reliers
 

@@ -1,7 +1,7 @@
----
-title: Assets
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Assets
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 Assets are resources that are available to use in your game. Assets can be of various different content types, for example, 3D models or audio files. They come in two different forms: Source and Target.
@@ -12,9 +12,9 @@ After uploading a file for an Asset the file is run through the importing pipeli
 
 PlayCanvas supports the importing of a wide variety of content types:
 
-* Models e.g. FBX, COLLADA, obj
-* 3D Animations
-* Images for textures e.g. jpg, png
+* Models e.g. FBX, COLLADA, obj
+* 3D Animations
+* Images for textures e.g. jpg, png
 * Audio e.g. mp3, ogg
 
 When you upload a new file the asset type will be set automatically from the type of file you've uploaded. For example, if you upload a PNG file, the Asset created will be a *texture* type.

@@ -1,6 +1,7 @@
----
-title: 预加载和流媒体
-template: usermanual-page.tmpl.html
+---
+title: Preloading and Streaming
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 当用户加载网页之后就能立刻进入到网页的应用程序这是在网页开发中十分重要的一步。在应用程序开始之前出现进度条以及告知用户需要等待将会导致用户的流失。PlayCanvas资源系统实现了多个功能帮助用户将加载过程简单化，将应用程序运行更快速更顺畅。
@@ -21,27 +22,35 @@ template: usermanual-page.tmpl.html
 
 所有组件将会妥善处理动态加载的资源，并且当资源加载完成时开始正常运行。当一个流动资源被动态加载时，用户将会经常看见弹出框。当被加载模型就会出现，即便这个模型并没有包含材质和纹理。
 
+## When are assets loaded?
+
+You can determine when a particular asset will be loaded you can follow these rules.
+
+* If `preload = true` the asset will be loaded before the application starts. Otherwise:
+* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
+* If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
+
 ## 资源标签
 
 在很多情况下，用户都不希望当资源被加载时资源被弹出。加载一组资源然后再集体显示它们，为了达到这个效果，用户可以使用资源标签创建一组资源，然后用户可以在使用资源之前集体加载有着相同标签的资源。
 
 以下是一个例子显示了用户如何使用标签加载一组资源。
 
-```javascript
-var assets = this.app.assets.findByTag("level-1");
-var count = 0;
-
-for (var i = 0; i < assets.length; i++) {
-    assets[i].once("load", function () {
-        count++;
-        if (count === assets.length) {
-            // asset loading complete
-        }
-    });
-    this.app.assets.load(assets[i]);
-}
+```javascript
+var assets = this.app.assets.findByTag("level-1");
+var count = 0;
+
+for (var i = 0; i < assets.length; i++) {
+    assets[i].once("load", function () {
+        count++;
+        if (count === assets.length) {
+            // asset loading complete
+        }
+    });
+    this.app.assets.load(assets[i]);
+}
 ```
 
-[1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
+[1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
 [2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif
 

@@ -1,7 +1,7 @@
----
-title: アセットのインポートパイプライン
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Asset Import Pipeline
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 一部のアセットは、ソースフォーマットでアップロードされ、実行時にゲーム内で使用する前にtargetフォーマットに変換する必要があります。この処理は*Importing*と呼ばれています。たとえば、3DモデルはFBXファイルとしてアップロードすることができますが、ゲーム内に読み込む前にPlayCanvasと互換性のあるモデルファイルに変換する必要があります。
@@ -28,8 +28,8 @@ auto-rinが無効になっている場合、アセットパネルから個別に
 
 新しいバージョンのファイルでソースアセットを更新する際、インポートパイプラインにより作成されるターゲットアセットを更新する方法が二つあります。
 
-***Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
-***Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
+* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
+* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
 
 つまり、これを有効する場合、ソースとターゲットのアセットをフォルダで整理し、ソースアセットを更新すると、すべての関連アセットが更新されるように設定できます。
 
@@ -61,6 +61,6 @@ auto-rinが無効になっている場合、アセットパネルから個別に
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたテクスチャが上書きされるか否かを定義します。デフォルトでは、新しいテクスチャで上書きします。
 
-[1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
+[1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
 [2]: /images/user-manual/assets/import-pipeline/asset-tasks.jpg
 

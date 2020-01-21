@@ -1,7 +1,7 @@
----
-title: プロフィール
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Profile
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 プロフィールページはあなたのPlayCanvasゲームをアピールする公共の場です。
@@ -12,6 +12,6 @@ position: 2
 
 ![プロフィール画像][2]
 
-[1]: /images/user-manual/profile/profile.png
+[1]: /images/user-manual/profile/profile.png
 [2]: /images/user-manual/profile/update-profile-image.jpg
 

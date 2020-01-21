@@ -1,7 +1,7 @@
----
-title: Профиль
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Profile
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 Страница вашего профиля — это публичное место для демонстрации созданных вами игр.
@@ -12,6 +12,6 @@ You can update your profile image by clicking on the image and uploading a new i
 
 ![profile image][2]
 
-[1]: /images/user-manual/profile/profile.png
+[1]: /images/user-manual/profile/profile.png
 [2]: /images/user-manual/profile/update-profile-image.jpg
 

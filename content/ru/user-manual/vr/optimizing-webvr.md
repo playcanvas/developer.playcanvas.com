@@ -1,7 +1,7 @@
----
-title: Optimizing WebVR applications
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Optimizing WebVR applications
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 ## Introduction
@@ -42,8 +42,8 @@ PlayCanvas comes with a built in profiler tool. In the Editor use the Launch Pro
 
 [Many more optimization guidelines][4] are available.
 
-[1]: /user-manual/graphics/lighting/lightmaps/#playcanvas-runtime-lightmap-generation
-[2]: https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko
-[3]: /user-manual/optimization/profiler/
+[1]: /user-manual/graphics/lighting/lightmaps/#playcanvas-runtime-lightmap-generation
+[2]: https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko
+[3]: /user-manual/optimization/profiler/
 [4]: /user-manual/optimization/guidelines/
 

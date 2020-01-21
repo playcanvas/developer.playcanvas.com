@@ -1,7 +1,7 @@
----
-title: 単位
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Units
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 PlayCanvasのシーンは、基本的に1単位を1メートルとして扱います。
@@ -20,6 +20,6 @@ Mayaで作業単位を設定または確認するには、Preferences ウィン�
 
 ![Maya の単位][2]
 
-[1]: /images/user-manual/assets/models/max-units.png
+[1]: /images/user-manual/assets/models/max-units.png
 [2]: /images/user-manual/assets/models/maya-units.png
 

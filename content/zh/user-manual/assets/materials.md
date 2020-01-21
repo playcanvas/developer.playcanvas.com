@@ -1,7 +1,7 @@
----
-title: 材质
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Materials
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 3D模型的每一个面都通过使用材质被渲染。材质决定了外观的属性，譬如颜色，亮度，表面是否隆起等。
@@ -104,6 +104,6 @@ Some map slots can be a flat color instead of a texture map. Some slots also sup
 
 有些贴图只要求一个简单的灰度值譬如0.0 -> 1.0。在这种情况中是有可能选择纹理的哪个通道被使用。**RGB**意味着所有通道都被使用。**R**, **G** or **B** 意味着只有红，绿或者蓝通道将会被使用。
 
-[1]: /user-manual/assets/physical-material
+[1]: /user-manual/assets/physical-material
 [2]: /user-manual/assets/phong-material
 

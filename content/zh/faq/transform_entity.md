@@ -1,6 +1,6 @@
----
-title: 移动 / 旋转 / 缩放 实体
-keywords: 实体, 移动, 平移, 旋转, 缩放, 变换
+---
+title: Move / Rotate / Scale an Entity
+keywords: entity, move, translate, rotate, scale, transform
 ---
 
 ## 如何 移动 / 旋转 / 缩放 实体？

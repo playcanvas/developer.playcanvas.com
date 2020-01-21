@@ -1,7 +1,7 @@
----
-title: 资源导入通道
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Asset Import Pipeline
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 有些资源以源格式被上传，在应用到游戏之前需要被转换成“目标”格式。这个过程称为“导入”。比如，一个FBX文件的3D模型可以通过上传，但是在游戏加载之前必须转换成可被PlayCanvas兼容的模型文件。
@@ -28,8 +28,8 @@ position: 2
 
 当你通过上传一个新版本的文件来更新一个源资源时，对于用户如何通过导入通道来更新目标资源，这里有两种可能的方式。
 
-如果**Search related assets**被开启，通道将会更新目标资源无论它们位于哪个文件夹。
-如果**Search related assets**被关闭，通道将只会寻找在于源资源在同一文件夹中的目标资源。
+* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
+* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
 
 因此，如果你将这个选项设置为开启，用户将可以添加文件资源以及目标资源到文件夹中，确保当更新源资源时，所有相关资源将会被更新。
 
@@ -61,6 +61,6 @@ position: 2
 
 这个选项决定了当更新或重新导入一个模型文件时，从模型创建的贴图是否会被覆盖。在默认情况下。新贴图将会覆盖。
 
-[1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
+[1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
 [2]: /images/user-manual/assets/import-pipeline/asset-tasks.jpg
 

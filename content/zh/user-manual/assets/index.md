@@ -1,7 +1,7 @@
----
-title: 资源
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Assets
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 资源可以在游戏工程中被使用。资源可以是多种多样的，譬如3D模型或者音乐文件。它们有着两种不同的表现形式：源和目标。
@@ -12,10 +12,10 @@ position: 6
 
 PlayCanvas支持多种内容类型数据的导入：
 
-* 模型 譬如：FBX, COLLADA, obj
-* 3D 动画
-* 图像纹理 譬如：jpg, png
-* 音频 譬如：mp3, ogg
+* Models e.g. FBX, COLLADA, obj
+* 3D Animations
+* Images for textures e.g. jpg, png
+* Audio e.g. mp3, ogg
 
 当你上传一个新的文件时，该资源的类型将会根据你已经上传的文件自动设置。譬如：如果你上传的是一个PNG文件，资源类型将会被设置为“texture”（纹理）类型。
 

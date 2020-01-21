@@ -1,7 +1,7 @@
----
-title: Troubleshooting Performance
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Troubleshooting Performance
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 Here are some tips to help you uncover common performance problems
@@ -30,6 +30,6 @@ You can view the blacklisted cards here: [https://www.khronos.org/webgl/wiki/Bla
 
 Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. NVidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
 
-[1]: http://webglreport.com
+[1]: http://webglreport.com
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists
 

@@ -1,6 +1,6 @@
----
-title: Создать такую фигуру, как куб, сфера и другие.
-keywords: компонент, модель, куб, сфера, цилиндр, конус, куб, плоскость, фигура, примитив
+---
+title: Create a shape like a box, sphere etc.
+keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
 ---
 
 ## Как создать фигуру вроде куба, сферы и подобных им?

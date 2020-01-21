@@ -1,6 +1,6 @@
----
-title: 使用物理特性
-keywords: 组件, 物理, 碰撞, 碰撞体, 刚体, 重力, ammo, 触发器
+---
+title: Use physics
+keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
 ---
 
 ## 如何使用物理特性？

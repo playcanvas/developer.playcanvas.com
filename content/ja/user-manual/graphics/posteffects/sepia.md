@@ -1,7 +1,7 @@
----
-title: セピアエフェクト
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Sepia Effect
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 セピアエフェクトは画像を古い写真のような見え方にするエフェクトです。

@@ -1,7 +1,7 @@
----
-title: Settings
-template: usermanual-page.tmpl.html
-position: 8
+---
+title: Settings
+template: usermanual-page.tmpl.html
+position: 8
 ---
 
 The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
@@ -35,6 +35,11 @@ This is the size of the icons that appear over various components inside the 3D 
 #### Local Server
 
 This is the URL where all the scripts are going to be loaded from, when launching the Application with Launch Local.
+
+#### Locale
+
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## Physics Settings
 
@@ -78,7 +83,7 @@ When using a Prefiltered Skybox, you can select the skybox mip that you want to 
 
 Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tonemapping.
 
-* **Linear:** imply scales HDR colors by exposure.
+* **Linear:** imply scales HDR colors by exposure.
 * **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
 Linear tonemapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
@@ -103,9 +108,9 @@ The Fog Type property can be used to control an approximation of an ambient fog 
 
 The types available are as follows:
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
+* None - Fog is disabled
+* Linear - Fog fades in linearly between a Fog Start and Fog End distance
+* Exp - Fog fades in from the view position according to an exponential function
 * Exp2 - Fog fades in from the view position according to an exponential squared function
 
 #### Color
@@ -128,15 +133,15 @@ The fog density controls the rate at which fog fades in for Exp and Exp2 fog typ
 
 Control the width and height of your Application. You can also set the resolution mode to one of the following values:
 
-* Auto - The resolution will always be the same as the canvas size
+* Auto - The resolution will always be the same as the canvas size
 * Fixed - The resolution will always be width x height pixels.
 
 #### Fill Mode
 
 Fill mode controls the sizing behaviour of the canvas. You can set one of the following values:
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
 * Fill window - The canvas will stretch to fill the window completely.
 
 #### Device Pixel Ratio
@@ -150,6 +155,10 @@ Enable alpha-blending on the main canvas element.
 #### Preserve Drawing Buffer
 
 Use the preserveDrawingBuffer option when creating the WebGL context.
+
+## Layers
+
+Manage rendering layers and their render order. You can find out more about layers [here][10].
 
 ## Audio
 
@@ -167,9 +176,29 @@ Scene-wide multiplier applied to all lightmap sizes.
 
 The maximum texture size available for generated lightmap textures.
 
+## Batch Groups
+
+Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+
 ## Loading Screen (Available for ORG users only)
 
 Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
+
+## External Scripts
+
+Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+
+## Input
+
+Here you can enable or disable various input devices for your application.
+
+## Localization
+
+Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+
+You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
+
+Read more about localization [here][11].
 
 ## Asset Tasks
 
@@ -180,6 +209,10 @@ Run the asset pipeline automatically when an asset is uploaded.
 #### Textures POT (power-of-two)
 
 When a texture is imported resize it to be the nearest power of two.
+
+#### Create Atlases
+
+When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
 
 #### Search related assets
 
@@ -201,10 +234,15 @@ When importing a scene (e.g. an FBX) this setting decides whether material files
 
 When importing a scene (e.g. an FBX) this setting decides whether texture files are overwritten with a new version imported from the scene.
 
-[1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/cog.jpg
-[3]: /user-manual/assets/cubemaps
-[4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
-[6]: /user-manual/designer/loading-screen
+[1]: /user-manual/designer/menus-and-toolbar
+[2]: /images/user-manual/cog.jpg
+[3]: /user-manual/assets/cubemaps
+[4]: /images/user-manual/gamma-correction.jpg
+[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
+[11]: /user-manual/user-interface/localization
 

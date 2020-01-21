@@ -1,6 +1,6 @@
----
-title: 创建材质
-keywords: 资源, 材质, 创建, 颜色, 表面, 法线, 高光, 反射, phong, pbr, 物理
+---
+title: Create a material
+keywords: asset, material, create, color, surface, normal, specular, reflection, phong, pbr, physical
 ---
 
 ## 如何创建材质？

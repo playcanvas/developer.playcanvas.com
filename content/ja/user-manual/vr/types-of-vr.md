@@ -1,7 +1,7 @@
----
-title: VR 体験の種類
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Types of VR experiences
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 ## シーテッド VR

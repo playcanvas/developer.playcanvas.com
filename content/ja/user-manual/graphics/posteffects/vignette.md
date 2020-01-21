@@ -1,7 +1,7 @@
----
-title: ビネットエフェクト
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Vignette Effect
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 写真や視覚では、ビネットとは画像の中心に比べて、画像の明るさや彩度を減少させることです。フレームの中心に注意を引くために使用できます。<small>([Wikipediaから][1])</small>
@@ -16,8 +16,8 @@ position: 6
 
 ビルドインのビネットエフェクトには次の属性があります：
 
-* **Offset**: エフェクトのオフセットをコントロール。
-* **Darkness**: エフェクトの暗さをコントロール。
+* **Offset**: Controls the offset of the effect.
+* **Darkness**: Controls the darkness of the effect.
 
 [1]: http://en.wikipedia.org/wiki/Vignetting
 

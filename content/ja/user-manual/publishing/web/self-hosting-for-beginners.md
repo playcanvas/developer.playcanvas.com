@@ -1,7 +1,7 @@
----
-title: 初心者向けのセルフホスティング
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Self-hosting for beginners
+template: usermanual-page.tmpl.html
+position: 3
 ---
 
 このドキュメントは、Webプログラミングの初心者向けです。Webアプリケーションのさまざまな部分をどのように組み合わせてPlayCanvasアプリケーションを提供したり、ユーザのブラウザに他のウェブページを提供するかを説明します。
@@ -18,34 +18,34 @@ position: 3
 
 例えば、PHPでページ内の現在の日付と時刻を表示することができます。
 
-```php
-<html>
-    <head>
-        <title>My Homepage</title>
-    </head>
-    <body>
-        <h1>The date is</h1>
-        <?php
-            echo date(DATE_RFC2822);
-        ?>
-        <p>Have a nice day</p>
-    </body>
-</html>
+```php
+<html>
+    <head>
+        <title>My Homepage</title>
+    </head>
+    <body>
+        <h1>The date is</h1>
+        <?php
+            echo date(DATE_RFC2822);
+        ?>
+        <p>Have a nice day</p>
+    </body>
+</html>
 ```
 
 このPHPコードは以下のようなHTMLページを作成し、ブラウザに送信して表示させることができます。
 
-```html
-<html>
-    <head>
-        <title>My Homepage</title>
-    </head>
-    <body>
-        <h1>The date is</h1>
-        Mon, 11 Apr 2016 06:54:14 -0400
-        <p>Have a nice day</p>
-    </body>
-</html>
+```html
+<html>
+    <head>
+        <title>My Homepage</title>
+    </head>
+    <body>
+        <h1>The date is</h1>
+        Mon, 11 Apr 2016 06:54:14 -0400
+        <p>Have a nice day</p>
+    </body>
+</html>
 ```
 
 サーバサイドのコードを書く際、沢山の異なる言語やフレームワークから選択することができます。PHP、Python、Nodejs、Rubyは一般的な選択肢です。これらの最終的な結果は同じです。HTMLページの要求を受信し、いくつかの処理を行い、HTMLデータを返します。
@@ -56,9 +56,9 @@ PlayCanvasのアプリケーションを作成する際、PlayCanvasで書くコ
 
 ウェブスタックでは、プログラミングを行いユーザー入力に応答するのはサーバだけではありません。クライアントサイドは、ブラウザ内で実行しているコードを指します。このコードは、ブラウザが実行される言語である、JavaScriptです。クライアントサイドのJavaScriptでさまざまな操作を実行することができます。最もシンプルなのは、サーバからダウンロードしたHTMLページの変更です。
 
-```javascript
-var title = document.getElementById("title");
-title.innerHTML = "This is the new title";
+```javascript
+var title = document.getElementById("title");
+title.innerHTML = "This is the new title";
 ```
 
 また、最も複雑なケースは、PlayCanvasを使用して完全な3D WebGLゲームを書くこと場合です。PlayCanvasを使用して書くものは全て、クライアントサイドのJavaScriptです。

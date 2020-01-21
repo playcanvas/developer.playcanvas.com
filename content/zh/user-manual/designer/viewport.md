@@ -1,7 +1,7 @@
----
-title: 视口
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Viewport
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 <img alt="Viewport" width="640" height="480" src="/images/user-manual/viewport.jpg" />
@@ -18,8 +18,8 @@ position: 4
 
 ## 小工具
 
-<img src="/images/user-manual/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
 <img src="/images/user-manual/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
 
 在截图中看到的三色轴向玩意儿叫[小工具][1]。用来修改选中实体的变换矩阵。有三种不同类型的小工具：平移（箭头末端）；旋转（三色环）和缩放（方形末端）。

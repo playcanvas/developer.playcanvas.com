@@ -1,35 +1,35 @@
----
-title: セルフホスティング
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Self-hosting
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 自身のドメインでPlayCanvasをセルフホスティングする方法は二つあります。
 
-1. [iframe][1]を使用してPlayCanvasでホスティングしたゲームを埋め込む。
-2. Editorからゲームをダウンロードして自身のサイトにファイルをアップロード。
+1. Embed a PlayCanvas hosted game using an [iframe][1].
+2. Download your game from the Editor and upload the files to your own site.
 
 ## iframe の埋め込み
 
 [playcanvas.comに公開][2]すると、ゲームにURLが割り当てられます。別のページにアプリケーションを組み込むには、このURLをiframeのsrcプロパティとして含みます。
 
-~~~html~~~
-<html>
-    <head>
-        <title>My Great Game</title>
-    </head>
-    <body>
-        <iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
-    </body>
-</html>
+~~~html~~~
+<html>
+    <head>
+        <title>My Great Game</title>
+    </head>
+    <body>
+        <iframe src="https://playcanv.as/p/PROJECT_ID/"></iframe>
+    </body>
+</html>
 ~~~
 
 ## 自身のサーバでセルフホスティング
 
 PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
-* プロジェクトに移行してEditorを開く。
-* 左ツールバーの<span class="pc-icon" style="font-size">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
+* Go to your Project and open the Editor.
+* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
 
 ![Publish ボタン][5]
 
@@ -41,29 +41,29 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 
 ![ダウンロード][6]
 
-* エクスポートのための名前を入力します。これが作成される.zipファイルの名前になります。
-* リストから、エクスポートに含むシーンを選択。Primary Scene(アクティブなバナーアイコンがあるシーン)がアプリ起動時に最初に読み込まれるシーンになります。
-* 下部の'WEB DOWNLOAD'ボタンをクリックしてデプロイ可能なプロジェクトのzipファイルをダウンロードします。
-* zipファイルのコンテンツを任意の場所に展開します。`index.html`でゲームが読み込まれます。
+* Enter a name for your export. This will be the name of the .zip file that will be created for you.
+* Select the Scenes you want to include in your export from the list. Notice that the Scene with the active banner icon will be the first scene loaded when your app is launched.
+* Click on the 'WEB DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
+* Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your game.
 
-<div class="alert alert-warning">
-**file://** urlや、ブラウザからindex.htmlファイルを開くことでゲームを読み込むことはできません。ローカルのウェブサーバを使用してindex.htmlファイルを読み込む必要があります。
+<div class="alert alert-warning">
+You cannot load your game by opening the index.html file in a browser or from a **file://** url. You must use a local webserver to load the index.html file.
 </div>
 
 ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *初級：* [Python][7]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを http://localhost:8000 にポイントします。
-* *中級：* [XAMPP][8]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
-* *上級：* [Apache][9] または [nginx][10]をスタンドアローンサービスとしてインストールします。
+* *Easy:* Install [Python][7] and run the command *python -m SimpleHTTPServer* from the same folder as your game's index.html. Then point your browser to http://localhost:8000
+* *Intermediate:* Install [XAMPP][8]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
+* *Advanced:* Install [Apache][9] or [nginx][10] as a standalone service.
 
-[1]: https://developer.mozilla.org/en/docs/Web/HTML/Element/iframe
-[2]: /user-manual/publishing/playcanvas
-[3]: /images/publishing/selfhosting/bottombar.png
-[4]: /images/user-manual/editor/publishing.jpg
-[5]: /images/user-manual/editor/publishing-toolbar.jpg
-[6]: /images/user-manual/editor/publishing-download.jpg
-[7]: https://www.python.org/downloads/
-[8]: https://www.apachefriends.org/index.html
-[9]: http://httpd.apache.org/download.cgi
+[1]: https://developer.mozilla.org/en/docs/Web/HTML/Element/iframe
+[2]: /user-manual/publishing/playcanvas
+[3]: /images/publishing/selfhosting/bottombar.png
+[4]: /images/user-manual/editor/publishing.jpg
+[5]: /images/user-manual/editor/publishing-toolbar.jpg
+[6]: /images/user-manual/editor/publishing-download.jpg
+[7]: https://www.python.org/downloads/
+[8]: https://www.apachefriends.org/index.html
+[9]: http://httpd.apache.org/download.cgi
 [10]: http://nginx.org/
 

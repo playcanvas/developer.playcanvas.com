@@ -1,7 +1,7 @@
----
-title: Проекты
-template: usermanual-page.tmpl.html
-position: 2
+---
+title: Projects
+template: usermanual-page.tmpl.html
+position: 2
 ---
 
 Во вкладке «Проекты» выводится список всех проектов, которые вы создали или к которым вы получили доступ.
@@ -22,13 +22,17 @@ Click on the arrow next to a project and select Unlock to unlock a *locked* proj
 
 If you have an Organization account another way to unlock projects is by purchasing more seats until you are no longer hitting your seats limit.
 
-## Экспортировать проект
+## Export Project Archive
+
+![export-archive][2]
 
 Если у вас ORG-план, то вы можете экспортировать zip-архив, содержащий ваш проект. Позднее его можно импортировать в качестве нового проекта. Вы можете использовать этот механизм для создания резервных копий проектов на вашем компьютере.
 
 Чтобы экспортировать проект, нажмите на стрелку рядом с названием проекта и выберите «Экспортировать».
 
-## Импортировать проект
+## Import Project Archive
+
+![import-archive][3]
 
 Если у вас ORG-план, то вы можете импортировать zip-архив, содержащий экспортированный при помощии описанного ранее механизма проект.
 
@@ -36,9 +40,26 @@ If you have an Organization account another way to unlock projects is by purchas
 
 ## Transfer Project Ownership
 
-If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership. A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to. Enter the username and click FIND or press Enter. Then click Transfer.
+If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
 
-The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list. If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+![transfer-ownership-menu][4]
 
-[1]: /images/user-manual/profile/profile.png "Projects"
+A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to.
+
+![transfer-ownership-dialog][5]
+
+Enter the username and click FIND or press Enter. Then click TRANSFER.
+
+The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list.
+
+![transfer-ownership-accept][6]
+
+If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+
+[1]: /images/user-manual/profile/profile.png "Projects"
+[2]: /images/user-manual/profile/projects/export-archive-button.jpg
+[3]: /images/user-manual/profile/projects/import-archive-button.jpg
+[4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
+[5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
+[6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
 

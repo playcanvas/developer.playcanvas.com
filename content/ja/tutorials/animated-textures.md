@@ -1,11 +1,11 @@
----
-title: アニメ化されたテクスチャー
-template: tutorial-page.tmpl.html
-tags: animation, texture
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
+---
+title: Animated Textures
+template: tutorial-page.tmpl.html
+tags: animation, textures
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
 ---
 
-<iframe src="http://playcanv.as/p/qFDE1q2H"></iframe>
+<iframe src="https://playcanv.as/p/qFDE1q2H/"></iframe>
 
 *２種類のテクスチャーアニメーション。planeはシンプルなスクロールマテリアルで、他はアニメーションフレームです。[完成されたプロジェクト][1]をご確認ください。*
 
@@ -15,20 +15,20 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 例で示される正方形の平面は、常にフレーム毎でUVオフセットを移動するためのスクリプト `scrolling-texture.js` を使用しています。例えば、水の流れをシミュレートするために使用します。更新ループを下記に表示します。
 
-```javascript
-ScrollingTexture.prototype.update = function(dt) {
-    var tmp = ScrollingTexture.tmp;
-
-    // テクスチャーをオフセットする量を計算
-    // Speed * dt
-    tmp.set(this.speed.x, this.speed.y);
-    tmp.scale(dt);
-
-    // diffuseと通常アップのオフセット値を更新
-    this.material.diffuseMapOffset.add(tmp);
-    this.material.normalMapOffset.add(tmp);
-    this.material.update();
-};
+```javascript
+ScrollingTexture.prototype.update = function(dt) {
+    var tmp = ScrollingTexture.tmp;
+
+    // Calculate how much to offset the texture
+    // Speed * dt
+    tmp.set(this.speed.x, this.speed.y);
+    tmp.scale(dt);
+
+    // Update the diffuse and normal map offset values
+    this.material.diffuseMapOffset.add(tmp);
+    this.material.normalMapOffset.add(tmp);
+    this.material.update();
+};
 ```
 
 一時的なベクトル`tmp`に必要なオフセットを計算します。これは単に`speed * timeStep`になります。その後、`diffuseMapOffset` と`normalMapOffset`プロパティを変更して、拡散マップと通常マップの両方のオフセットプロパティにこのオフセットを追加します。これらの値は`pc.Vec2`で、表面にテクスチャをマッピングするために使用されるUV座標をシフトします。他のマップを使用している場合も(例えば発光マップ)、同様にこれらのオフセットプロパティを更新する必要があります。最後に、`material.update()`を呼んで`シェーダに変更を適用します。
@@ -41,43 +41,43 @@ ScrollingTexture.prototype.update = function(dt) {
 
 コード例では、コインや数値カウンタはどちらも複製されます。異なるフレームレートを使用し、数値は異なるアニメーションフレームを使用するように設定しています。
 
-```javascript
-AnimatedTexture.prototype.update = function(dt) {
-    // 次のフレームにアニメーション化するタイミングを計算
-    this.timer -= dt;
-    if (this.timer < 0) {
-        // 次のフレームに移動
-        this.frame++;
-        if (this.frame >= (this.numFrames + this.startFrame)) {
-            this.frame = this.startFrame;
-        }
-
-        this.updateMaterial(this.frame);
-
-        // タイマーをリセット
-        this.timer = 1/this.frameRate;
-    }
-};
-
-AnimatedTexture.prototype.updateMaterial = function (frame) {
-    // 次のフレームに移動するUVをいくつ変更するかを計算
-    var dx = 1 / this.width;
-    var dy = 1 / this.height;
-
-    // フレーム数値をUV座標に変換
-    var x = frame % this.width;
-    var y = Math.floor(frame / this.width);
-
-    var meshes = this.entity.model.meshInstances;
-
-    // トランスフォームベクターを作成して(tilingx, tilingy, offsetx, offsety)
-    // このメッシュのマテリアルプロパティを上書きする
-    // これで、異なるエンティティに異なる設定を使用しながら同じマテリアルを共有することが可能になります
-    this.transform.set(dx, dy, x * dx, (1 - dy) - (y * dy));
-    meshes[0].setParameter("texture_diffuseMapTransform", this.transform.data);
-    meshes[0].setParameter("texture_emissiveMapTransform", this.transform.data);
-    meshes[0].setParameter("texture_opacityMapTransform", this.transform.data);
-};
+```javascript
+AnimatedTexture.prototype.update = function(dt) {
+    // calculate when to animate to next frame
+    this.timer -= dt;
+    if (this.timer < 0) {
+        // move to next frame
+        this.frame++;
+        if (this.frame >= (this.numFrames + this.startFrame)) {
+            this.frame = this.startFrame;
+        }
+
+        this.updateMaterial(this.frame);
+
+        // reset the timer
+        this.timer = 1/this.frameRate;
+    }
+};
+
+AnimatedTexture.prototype.updateMaterial = function (frame) {
+    // calculate how much to change UV to go to next frame
+    var dx = 1 / this.width;
+    var dy = 1 / this.height;
+
+    // Convert frame number into UV co-ordinate
+    var x = frame % this.width;
+    var y = Math.floor(frame / this.width);
+
+    var meshes = this.entity.model.meshInstances;
+
+    // create the transform vector (tilingx, tilingy, offsetx, offsety)
+    // and override the material properties for this mesh
+    // This allows us to use different settings for different Entities, but share the same material
+    this.transform.set(dx, dy, x * dx, (1 - dy) - (y * dy));
+    meshes[0].setParameter("texture_diffuseMapTransform", this.transform.data);
+    meshes[0].setParameter("texture_emissiveMapTransform", this.transform.data);
+    meshes[0].setParameter("texture_opacityMapTransform", this.transform.data);
+};
 ```
 
 この例では、回転するコインのためにスプライトシートを使用します。
@@ -90,12 +90,12 @@ AnimatedTexture.prototype.updateMaterial = function (frame) {
 
 前のスクロールの例との主な違いは、シェーダ内の特定の値を設定するために `pc.MeshInstance.setParameter`を使用していることです。`setParameter`は、上記のようにマテリアルを変更するよりも低いレベルのコードです。それを使用するためには、PlayCanvasシェーダがマップトランスフォームを変更するために使用する正確な均一な変数名を知る必要があります。この場合、`texture_diffuseMap Transform`は、タイリングとオフセットを表す数字の4の値の配列です。
 
-<div class="alert-info">
-`setParameter`は現時点ではPlayCanvasエンジンでドキュメント化されていないAPIです。これは非常に便利な機能ですが、シェーダーの正確な変数名に依存しています。そのため、パブリックAPIになる前にエンジンコードが変更する可能性があるので使用には注意が必要です。
+<div class="alert-info">
+`setParameter` is currently an undocumented API in the PlayCanvas engine. It is a very useful feature but is dependent on the exact variable names in the shader. As such, use it with caution as the engine code may change before it becomes public API.
 </div>
 
 例を見てわかるように、２枚のコインには異なるフレームレートがあり、１組の数字はアニメーションに3つのフレームのみを使用しています。これはスプライトベースの2Dアニメーションを使用する場合に便利です。 `animated-texture.js`から始めることをお勧めします。
 
-[1]: https://playcanvas.com/project/405882
+[1]: https://playcanvas.com/project/405882
 [2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png
 

@@ -1,6 +1,6 @@
----
-title: 上传资源
-keywords: 资源, new, 创建, 上传
+---
+title: Upload assets
+keywords: asset, new, create, upload
 ---
 
 ## 如何上传资源？

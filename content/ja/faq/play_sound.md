@@ -1,6 +1,6 @@
----
-title: 音声の再生
-keywords: コンポーネント, オーディオ, 音声, 音楽, audiosource, audiolistener
+---
+title: Play a sound
+keywords: component, sound, audio, music, audiosource, audiolistener
 ---
 
 ## 音声を再生するには？

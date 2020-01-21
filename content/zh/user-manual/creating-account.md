@@ -1,7 +1,7 @@
----
-title: 创建账号
-template: usermanual-page.tmpl.html
-position: 1.7
+---
+title: Creating an Account
+template: usermanual-page.tmpl.html
+position: 1.7
 ---
 
 ## 注册
@@ -30,12 +30,12 @@ position: 1.7
 
 我们曾经支持Persona登录系统，但是[Mozilla决定在2016年11月30日关闭] [8]。如果您已经使用Persona登录，请单击[here] [6]为您的帐户设置密码 。
 
-[1]: /images/user-manual/creating-account/signup.png
-[2]: /images/user-manual/creating-account/signup_details.png
-[3]: /images/user-manual/creating-account/signup_final.png
-[4]: /user-manual/designer/
-[5]: /user-manual/profile/
-[6]: https://login.playcanvas.com/persona_deprecated
-[7]: /images/user-manual/creating-account/login.png
+[1]: /images/user-manual/creating-account/signup.png
+[2]: /images/user-manual/creating-account/signup_details.png
+[3]: /images/user-manual/creating-account/signup_final.png
+[4]: /user-manual/designer/
+[5]: /user-manual/profile/
+[6]: https://login.playcanvas.com/persona_deprecated
+[7]: /images/user-manual/creating-account/login.png
 [8]: https://wiki.mozilla.org/Identity/Persona_Shutdown_Guidelines_for_Reliers
 

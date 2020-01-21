@@ -1,8 +1,8 @@
----
-title: Collision and Triggers
-template: tutorial-page.tmpl.html
-tags: collision, physics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
+---
+title: Collision and Triggers
+template: tutorial-page.tmpl.html
+tags: collision, physics
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
@@ -17,9 +17,9 @@ The *collision* component defines a shape which can be used either to trigger ev
 
 The most important property of a *collision* component is it's **Type**, this determines the shape of the volume that will be used. There are four options:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
+* **Box** A simple box
+* **Sphere** A simple sphere
+* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
 * **Mesh** Use any arbitary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### Trigger Volumes
@@ -42,8 +42,8 @@ For details on each property take a look at the [*rigidbody* documentation][5].
 
 For this demo, the important property is the **Type**. You can pick one of three options:
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
+* **Static** this Entity will never move.
+* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
 * **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
 ## Setting up the ground
@@ -62,29 +62,29 @@ The next Entity we'll need is the trigger.
 
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
-~~~javascript~~~
-var Trigger = pc.createScript('trigger');
-
-// initialize code called once per entity
-Trigger.prototype.initialize = function() {
-    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-};
-
-Trigger.prototype.onTriggerEnter = function(entity) {
-    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
-    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
-    // Reset back to roughly the position the entity started in.
-    var position = entity.getPosition();
-    entity.rigidbody.teleport(position.x, 10, 0);
-};
+~~~javascript~~~
+var Trigger = pc.createScript('trigger');
+
+// initialize code called once per entity
+Trigger.prototype.initialize = function() {
+    this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+};
+
+Trigger.prototype.onTriggerEnter = function(entity) {
+    entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
+    entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
+    // Reset back to roughly the position the entity started in.
+    var position = entity.getPosition();
+    entity.rigidbody.teleport(position.x, 10, 0);
+};
 ~~~
 
 There two significant parts to the code above.
 
 First in the ```initialize``` method we start listening to the **triggerenter** event. This event fires once when a rigid body enters a trigger volume (where a trigger volume is an entity that has a collision component but no rigidbody component). The companion event is **triggerleave** which is fired once the penetrating rigid body leaves the trigger.
 
-~~~javascript~~~
-this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
+~~~javascript~~~
+this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 ~~~
 
 Notice, the third argument, ```this```, which is the 'scope' that will be used in the event listener. Usually, you'll want to add the current Script Object as the third argument so that the value of ```this``` in the event listener is that same Script Object.
@@ -105,39 +105,39 @@ This is the *rigidbody* and *collision* setup for the box component, the sphere 
 
 There are three events available on the *collision* component:
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
+* **contact** - fires for every point of contact when two rigid bodies touch.
+* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
 * **collisionend** - fires when two rigid bodies separate.
 
 The difference between **contact** and **collisionstart** is subtle but important. Imagine a cube landing at an angle on a flat surface. When the edge of the cube hits the surface the two corners of the cube will strike at the same moment. Three events will fire, two **contact** events for each corner of the cube, and one **collisionstart** event. Then the cube will rotate and continue to fall until it lies flat, all the while remaining in contact with the surface. When it lands flat, two more **contact** events will fire as the edge of the cube hits the surface. As the cube remained in contact with the surface all that time, no more **collisionstart** events are fired.
 
 Both events are useful, but in this demo we'll use the **collisionstart** event to trigger a sound effect that plays when the objects hit the ground. Here's the code:
 
-~~~javascript~~~
-var Collider = pc.createScript('collider');
-
-// initialize code called once per entity
-Collider.prototype.initialize = function () {
-    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
-};
-
-Collider.prototype.onCollisionStart = function (result) {
-    if (result.other.rigidbody) {
-        this.entity.sound.play("hit");
-    }
-};
+~~~javascript~~~
+var Collider = pc.createScript('collider');
+
+// initialize code called once per entity
+Collider.prototype.initialize = function () {
+    this.entity.collision.on('collisionstart', this.onCollisionStart, this);
+};
+
+Collider.prototype.onCollisionStart = function (result) {
+    if (result.other.rigidbody) {
+        this.entity.sound.play("hit");
+    }
+};
 ~~~
 
 In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now everytime an Entity with the collider script attached collides with another rigid body it will play the hit sound.
 
 And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
-[1]: https://playcanvas.com/project/405871
-[3]: /images/tutorials/collision/collision_and_triggers.jpg
-[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
-[5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
-[7]: /images/tutorials/collision/trigger_setup.jpg
-[8]: /engine/api/stable/symbols/pc.Entity.html
+[1]: https://playcanvas.com/project/405871
+[3]: /images/tutorials/collision/collision_and_triggers.jpg
+[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
+[5]: /user-manual/packs/components/rigidbody/
+[6]: /images/tutorials/collision/ground_setup.jpg
+[7]: /images/tutorials/collision/trigger_setup.jpg
+[8]: /engine/api/stable/symbols/pc.Entity.html
 [9]: /images/tutorials/collision/box_setup.jpg
 

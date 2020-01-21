@@ -1,11 +1,11 @@
----
-title: Начинаем
-template: page.tmpl.html
+---
+title: Getting Started
+template: page.tmpl.html
 ---
 
 В порядке изучения основ платформы PlayCanvas, давайте соберём следующее простое 3D веб-приложение:
 
-<iframe  width="640" height="480" src="http://playcanv.as/b/fPYP6Swg" allowfullscreen></iframe>
+<iframe  src="https://playcanv.as/b/fPYP6Swg/" allowfullscreen></iframe>
 
 ## Ваш профиль
 
@@ -17,18 +17,18 @@ template: page.tmpl.html
 
 Проект состоит из:
 
-* **Сцены** - Иерархия из [Объектов][3] используемых для создания игры. Сцена может быть одним уровнем, либо всей игрой. Зависит от случая.
-* **Ассеты** - 3D модели, текстуры, изображения, звуковые файлы и любые другие материалы, используемые Вашей игрой.
-* **Скрипты** - Ваш игровой исходный код. Вы можете либо писать код, используя встроенный в PlayCanvas редактор скриптов, или можете синхронизировать Ваш проект с такими сервисами как Github или Bitbucket.
-* **Опубликованные приложения** - Ваши приложения могут быть экспортированы в архивы, готовые к разворачиванию на вашем сайте или для публикации на серверах PlayCanvas.
+* **Scenes** - An hierarchy of [Entities][3] used to build up your game. A Scene could be a single level or your entire game. It depends.
+* **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
+* **Scripts** - Your source code. You can either write code using the PlayCanvas built-in script editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
+* **Published Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
 
 ## Создание нового проекта
 
 На странице Вашего профиля кликните на кнопку PROJECTS, далее нажмите  'Create a Project'. После этого откроется страница, где Вы можете настроить детали Вашего нового проекта:
 
-* **Имя проекта** - Имя, используемое при составлении URL-ссылки для Вашего проекта. Например, если пользователь 'joebloggs' создал проект с названием 'spacewar', проект может быть найден на https://playcanvas.com/joebloggs/spacewar
-* **Описание** - Короткое описание Вашего проекта, оно будет отображаться, когда проект будет опубликован.
-* **Видимость** - По умолчанию новые проекты публичны, это позволяет другим пользователям просматривать Вашу работу. Выбирая ЛИЧНЫЙ тип видимости Вы можете работать с проектом конфиденциально, стоить отметить, что для использования такой возможности Вы должны иметь [Про аккаунт][4].
+* **Project Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at https://playcanvas.com/joebloggs/spacewar
+* **Description** - A short description of your project that is displayed when you share a published build to social media.
+* **Visibility** - By default, new projects are public allowing other community members read access to your work. Selecting PRIVATE will allow you to work in private but note that you will need a [Pro account][4] to use this feature.
 
 Выберите имя и описание для Вашего проекта. Потом нажмите кнопку CREATE и Вы окажетесь на домашней странице проекта. 
 
@@ -56,14 +56,14 @@ template: page.tmpl.html
 
 Давайте начнём с именования нашей новой сцены:
 
-* Выберите иконку шестерёнки в левой нижней части панели инструментов редактора.
-* В панели ИНСПЕКТОРА справа установите имя сцены. Что-то вроде 'Spinning Cube' и нажмите Enter.
+* Select the cog icon in the bottom left of the Editor toolbar.
+* In the INSPECTOR panel, set the Scene Name property to something like 'Spinning Cube' and hit Enter.
 
 Теперь, для наших экспериментов с вращающимся кубом, нам понадобятся 3 сущности:
 
-* Куб.
-* Камера (чтобы видеть куб).
-* Свет (чтобы видеть куб).
+* A box.
+* A camera (to view the box).
+* A light (to give some definition to the box).
 
 К счастью, редактор автоматически добавляет направленный источник света и камеру при создании новой сцены. Итак, шаги для создания коробки:
 
@@ -109,45 +109,45 @@ template: page.tmpl.html
 
 ![Создание сценария][13]
 
-* В секции сценариев нажмите на поле URL для редактирования имени файла. Установите атрибут компонента сценария 'spinner.js' и нажмите Enter.
-* Нажмите на имя сценария 'spinner.js' и редактор сценариев PlatCanvas откроется в новой вкладке.
+* In the Script section in INSPECTOR, click the top line of the URLs field to edit the filename. Set the Add attribute of the script component to 'spinner.js' and hit Enter.
+* Click on the name of the script 'spinner.js' and the PlayCanvas script editor will open in a new tab.
 
 В редакторе кода измените сценарий так, чтобы он совпадал с кодом ниже (нужно всего лишь заполнить тело функции update):
 
-~~~javascript~~~
-pc.script.create("spinner", function (app) {
-
-    var Spinner = function (entity) {
-        // Cache the entity that this script instance affects
-        this.entity = entity;
-    };
-
-    Spinner.prototype = {
-        update: function (dt) {
-            // Rotate 90 degrees around the world Y axis every second
-            this.entity.rotate(0, 90 * dt, 0);
-        }
-    };
-
-    return Spinner;
-});
+~~~javascript~~~
+pc.script.create("spinner", function (app) {
+
+    var Spinner = function (entity) {
+        // Cache the entity that this script instance affects
+        this.entity = entity;
+    };
+
+    Spinner.prototype = {
+        update: function (dt) {
+            // Rotate 90 degrees around the world Y axis every second
+            this.entity.rotate(0, 90 * dt, 0);
+        }
+    };
+
+    return Spinner;
+});
 ~~~
 
 После того, как вы отредактировали код, нажмите кнопку "Save" в редакторе кода и вернитесь на вкладку редактора. Стоит отметить, что редактор скриптов требует, чтобы вы явно сохранили изменения, в отличии от главного редактора приложений.
 
 Теперь, когда всё сделано, Вы можете нажать кнопку Launch снова. В этот раз Вы должны видеть куб, вращающийся вокруг точки. Поздравляем, Вы создали своё первое PlatCanvas приложение!
 
-[1]: /images/platform/profile.png "Profile"
-[2]: /images/platform/project_list.jpg "Project List"
-[3]: /user-manual/glossary/#entity
-[4]: https://playcanvas.com/plans
-[5]: /images/getting_started/scene_selection.png "Scene Selection"
-[6]: /images/getting_started/editor.png "Editor"
-[7]: /images/getting_started/hierarchy.png "Hierarchy"
-[8]: /images/getting_started/new_box.png "New Box"
-[9]: /images/getting_started/box_in_editor.png "Box In Editor"
-[10]: /images/getting_started/launch_buttons.png "Launch Buttons"
-[11]: /images/getting_started/box_launched.png "Box Launched"
-[12]: /user-manual/scripting/workflow/ "Scripting Workflow"
+[1]: /images/platform/profile.png "Profile"
+[2]: /images/platform/project_list.jpg "Project List"
+[3]: /user-manual/glossary/#entity
+[4]: https://playcanvas.com/plans
+[5]: /images/getting_started/scene_selection.png "Scene Selection"
+[6]: /images/getting_started/editor.png "Editor"
+[7]: /images/getting_started/hierarchy.png "Hierarchy"
+[8]: /images/getting_started/new_box.png "New Box"
+[9]: /images/getting_started/box_in_editor.png "Box In Editor"
+[10]: /images/getting_started/launch_buttons.png "Launch Buttons"
+[11]: /images/getting_started/box_launched.png "Box Launched"
+[12]: /user-manual/scripting/workflow/ "Scripting Workflow"
 [13]: /images/getting_started/add_script.png "Add Script"
 

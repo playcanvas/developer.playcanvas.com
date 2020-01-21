@@ -1,10 +1,10 @@
----
-title: Physically Based Rendering
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Physically Based Rendering
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
-![Star-Lord][1]
+![Star-Lord][1]
 *Star-Lord Model by [Joachim Coppens][2]*
 
 Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
@@ -19,7 +19,7 @@ Diffuse and Specular (or reflected) light are the two terms that describe two ma
 
 ## Energy Conservation
 
-![Energy Conservation][3]
+![Energy Conservation][3]
 *Smooth surfaces have small bright patches, rough surfaces have large dim patches*
 
 One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practise this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
@@ -28,7 +28,7 @@ The joy of PBR is that energy conservation is included in the shader, so as an a
 
 ## Metals & Non-metals
 
-![Metals & Non-metals][4]
+![Metals & Non-metals][4]
 *Metals and Non-metals*
 
 One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine it's behaviour. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
@@ -53,10 +53,10 @@ Some PBR systems use Roughness, some use Glossiness, they are the same thing. Ro
 
 *More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
 
-[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
-[2]: http://joachimcoppens.com/
-[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
-[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-theory
+[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
+[2]: http://joachimcoppens.com/
+[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
+[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
+[5]: https://www.marmoset.co/toolbag/learn/pbr-theory
 [6]: /user-manual/graphics/physical-rendering/physical-materials
 

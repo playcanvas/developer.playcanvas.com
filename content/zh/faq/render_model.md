@@ -1,6 +1,6 @@
----
-title: 渲染 3D 模型
-keywords: 组件, 模型, 3d, fbx, 网格
+---
+title: Render a 3D model
+keywords: component, model, 3d, fbx, mesh
 ---
 
 ## 如何渲染 3D 模型？

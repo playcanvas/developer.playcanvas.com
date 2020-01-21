@@ -1,7 +1,7 @@
----
-title: Script
-template: usermanual-page.tmpl.html
-position: 9
+---
+title: Script
+template: usermanual-page.tmpl.html
+position: 14
 ---
 
 The Script component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.
@@ -22,6 +22,6 @@ To edit the script in the PlayCanvas Code Editor you can either click on the hyp
 
 The Script component's scripting interface is [here][2].
 
-[1]: /images/user-manual/scenes/components/component-script.png
+[1]: /images/user-manual/scenes/components/component-script.png
 [2]: /engine/api/stable/symbols/pc.ScriptComponent.html
 

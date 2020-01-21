@@ -1,8 +1,8 @@
----
-title: オーディオ効果
-template: tutorial-page.tmpl.html
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
+---
+title: Audio Effects
+template: tutorial-page.tmpl.html
+tags: audio
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
@@ -29,39 +29,39 @@ Web Audio APIを使用すると、様々なオーディオノードを作成し�
 
 この例では、[Convolver node][6]を使用しています。アプリケーションスクリプトでは、次のようにノードを作成しています：
 
-~~~javascript~~~
-this.convolver = this.app.systems.sound.context.createConvolver();
+~~~javascript~~~
+this.convolver = this.app.systems.sound.context.createConvolver();
 ~~~
 
 [こちら][7]で説明している通り、コンボルバのインパルス応答として、オーディオサンプルを複数使用します。それぞれのオーディオサンプルはオーディオアセットです。押すボタンに応じてそのアセットを使用して、次のようにコンボルババッファに対して内部バッファを割り当てます。
 
-~~~javascript~~~
-var asset = this[assetName];
-this.convolver.buffer = asset.resource.buffer;
+~~~javascript~~~
+var asset = this[assetName];
+this.convolver.buffer = asset.resource.buffer;
 ~~~
 
 次に、以下のように音声スロットにコンボルバを接続します：
 
-~~~javascript~~~
-this.entity.sound.slot('speech').setExternalNodes(this.convolver);
+~~~javascript~~~
+this.entity.sound.slot('speech').setExternalNodes(this.convolver);
 ~~~
 
 Noneというボタンをクリックするとすべてのエフェクトをオフにしてスロットで```clearExternalNodes``` を呼び出します：
 
-~~~javascript~~~
-this.entity.sound.slot('speech').clearExternalNodes();
+~~~javascript~~~
+this.entity.sound.slot('speech').clearExternalNodes();
 ~~~
 
 オーディオノードの大きなグラフがあり、スロットに接続したい場合は、```setExternalNodes```のグラフの最後のノードと最初のノードを指定する必要があります。そうすることで、PlayCanvasはスピーカーに正しく最後のノードを接続することができます。
 
 サウンドコンポーネントのAPIに関する詳細は[こちら][8]。
 
-[1]: https://playcanvas.com/editor/scene/440346
-[2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
-[4]: /user-manual/packs/components/script
-[5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
-[6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
-[7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
+[1]: https://playcanvas.com/editor/scene/440346
+[2]: /user-manual/packs/components/sound
+[3]: /tutorials/beginner/basic-audio
+[4]: /user-manual/packs/components/script
+[5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+[6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
+[7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
 [8]: /api/pc.Sound.html
 

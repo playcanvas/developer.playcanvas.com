@@ -1,16 +1,16 @@
+---
+title: Mobile
+template: usermanual-page.tmpl.html
+position: 2
 ---
-title: モバイル
-template: usermanual-page.tmpl.html
-position: 2
----
 
-PlayCanvasのゲームはただのウェブページです。つまり、index.htmlファイルと、リソース(JavaScriptファイル, JSON ファイル, 画像,など)を合わせたものです。ウェブブラウザではもちろん問題なく動作しますが、Google Play や Apple App StoreなどのモバイルAppストアにゲームを提出する場合、なんらかの方法でPlayCanvasゲームをネイティブAppに変換する必要があります。それには3つの方法があります：
+PlayCanvas games are just web pages. An index.html file and a collection of resources (JavaScript files, JSON files, images and so on). They work great in web browsers, of course, but if you want to submit your game to a mobile app store such as Google Play or the Apple App Store, then you somehow need to convert your PlayCanvas game to a native app. There are a few products available to simplify the process for you:
 
-* [AndroidとiOSでLudeiのCocoonを使用][1]
-* [AndroidとiOSでIntelの XDKを使用][2]
-* [Firefox OS][3]
+* [Cordova][1]
+* [PhoneGap][2]
 
-[1]: /user-manual/publishing/mobile/cocoon
-[2]: /user-manual/publishing/mobile/xdk
-[3]: /user-manual/publishing/mobile/firefox-os
+Alternatively, another option is to create an Android or iOS app the consists of a single fullscreen WebView that loads your PlayCanvas app from local app resources.
+
+[1]: https://cordova.apache.org/
+[2]: https://phonegap.com/
 

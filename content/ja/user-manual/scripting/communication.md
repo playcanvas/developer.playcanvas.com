@@ -1,15 +1,15 @@
----
-title: 通信
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Communication
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
 イベントは、毎フレーム確認をせずに、発生する出来事に応答するためにスクリプト間で通信する便利な方法です。
 
 PlayCanvas Engineには、如何なるオブジェクトにもイベント処理を追加できるシンプルな方法があります。
 
-```javascript
-pc.events.attach(object);
+```javascript
+pc.events.attach(object);
 ```
 
 これは`on()`, `off()`, `fire()` , `hasEvent()` メソッドをオブジェクトに追加します。つまり、そのオブジェクトから始動されるイベントに対してリッスンすることができます。
@@ -20,38 +20,38 @@ pc.events.attach(object);
 
 `fire()`を使用してイベントをトリガ（）`。この例では、プレイヤーのスクリプトは、フレーム毎に引数として渡すxとy値で`move`イベントを発生させます。
 
-```javascript
-var Player = pc.createScript('player');
-
-Player.prototype.update = function (dt) {
-    var x = 1;
-    var y = 1;
-    this.fire('move', x, y);
-};
+```javascript
+var Player = pc.createScript('player');
+
+Player.prototype.update = function (dt) {
+    var x = 1;
+    var y = 1;
+    this.fire('move', x, y);
+};
 ```
 
 `on()` と `off()`を使用してイベントをリッスン。この例では、表示スクリプトは、プレーヤーの`move`イベントをリッスンし、xとyの値を出力します。
 
-```javascript
-var Display = pc.createScript('display');
-
-// set up an entity reference for the player entity
-Display.attributes.add('playerEntity', { type: 'entity' });
-
-Display.prototype.initialize = function () {
-    // method to call when player moves
-    var onPlayerMove = function(x, y) {
-        console.log(x, y);
-    };
-    
-    // listen for the player move event
-    this.playerEntity.script.player.on('move', onPlayerMove);
-    
-    // remove player move event listeners when script destroyed
-    this.playerEntity.script.player.on('destroy', function() {
-        this.playerEntity.script.player.app.off('move', onPlayerMove);
-    });
-};
+```javascript
+var Display = pc.createScript('display');
+
+// set up an entity reference for the player entity
+Display.attributes.add('playerEntity', { type: 'entity' });
+
+Display.prototype.initialize = function () {
+    // method to call when player moves
+    var onPlayerMove = function(x, y) {
+        console.log(x, y);
+    };
+    
+    // listen for the player move event
+    this.playerEntity.script.player.on('move', onPlayerMove);
+    
+    // remove player move event listeners when script destroyed
+    this.playerEntity.script.player.on('destroy', function() {
+        this.playerEntity.script.player.app.off('move', onPlayerMove);
+    });
+};
 ```
 
 ### アプリケーションイベント
@@ -64,35 +64,35 @@ Display.prototype.initialize = function () {
 
 `player:move` イベントの発動。
 
-```javascript
-var Player = pc.createScript('player');
-
-Player.prototype.update = function (dt) {
-    var x = 1;
-    var y = 1;
-    this.app.fire('player:move', x, y);
-};
+```javascript
+var Player = pc.createScript('player');
+
+Player.prototype.update = function (dt) {
+    var x = 1;
+    var y = 1;
+    this.app.fire('player:move', x, y);
+};
 ```
 
 `player:move` イベントのリッスン。
 
-```javascript
-var Display = pc.createScript('display');
-
-Display.prototype.initialize = function () {
-    // method to call when player moves
-    var onPlayerMove = function(x, y) {
-        console.log(x, y);
-    };
-    
-    // listen for the player:move event
-    this.app.on('player:move', onPlayerMove);
-    
-    // remove player:move event listeners when script destroyed
-    this.on('destroy', function() {
-        this.app.off('player:move', onPlayerMove);
-    });
-};
+```javascript
+var Display = pc.createScript('display');
+
+Display.prototype.initialize = function () {
+    // method to call when player moves
+    var onPlayerMove = function(x, y) {
+        console.log(x, y);
+    };
+    
+    // listen for the player:move event
+    this.app.on('player:move', onPlayerMove);
+    
+    // remove player:move event listeners when script destroyed
+    this.on('destroy', function() {
+        this.app.off('player:move', onPlayerMove);
+    });
+};
 ```
 
 ご覧の通り、これにより設定コードを減らし、よりクリーンなコードになります。

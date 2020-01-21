@@ -1,6 +1,6 @@
----
-title: Изменение цвета модели
-keywords: набор, материал, создать, цвет, поверхность, нормаль, зеркало
+---
+title: Change the color of a model
+keywords: asset, material, create, color, surface, normal, specular
 ---
 
 ## Как изменить цвет модели??

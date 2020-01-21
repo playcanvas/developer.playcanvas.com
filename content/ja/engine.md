@@ -1,6 +1,6 @@
----
-title: PlayCanvas Engine
-template: usermanual-page.tmpl.html
+---
+title: PlayCanvas Engine
+template: usermanual-page.tmpl.html
 ---
 
 PlayCanvas Engineとは、ウェブ用のゲームやインタラクティブな3Dコンテンツを構築できるオープンソースのjavascriptフレームワークです。Engineは無料で、PlayCanvasのツールとは別で提供されるので柔軟な開発ができます。
@@ -29,11 +29,11 @@ Engineに3Dモデルを読み込むには、モデリングパッケージの形
 
 ゲームエンジンにモデルファイルを読み込むには[loadFromUrl][5] APIを使用します。
 
-[1]: https://github.com/playcanvas/engine
-[2]: http://playcanvas.github.io
-[3]: /user-manual/assets/importing/
-[4]: /user-manual/glossary/#target_asset
-[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
-[6]: /images/user-manual/editor/assets-completed.png
+[1]: https://github.com/playcanvas/engine
+[2]: http://playcanvas.github.io
+[3]: /user-manual/assets/importing/
+[4]: /user-manual/glossary/#target_asset
+[5]: /engine/api/stable/symbols/pc.AssetRegistry.html#loadFromUrl
+[6]: /images/user-manual/editor/assets-completed.png
 [7]: /images/user-manual/editor/download-model.jpg
 

@@ -1,7 +1,7 @@
----
-title: 简介
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Introduction
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 ## PlayCanvas 是什么？
@@ -62,44 +62,44 @@ PlayCanvas为您的WebGL应用程序提供即时和无故障托管单击。 我�
 
 PlayCanvas 坚持设计为不需要任何插件在浏览器上原生运行的模式。用户运行时环境为 100% JavaScript 实现，全部通过符合 HTML5 及相关 API (如 WebGL)工作。为什么这样设计如此重要？
 
-* 移动/平板 设备无法提供插件安装的权限，但却在不断完善对 HTML5 规范的支持。
-* 不需要任何的安装和额外加载过程。
-* 运行在标准的[DOM][2]元素中(一个 Canvas 元素)，可以任意和其他页面元素融合并通过 CSS 添加样式
-* 不依赖可能会随着时间变化的第三方部分，仅仅依赖浏览器本身
+* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
+* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
+* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
+* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
 
 在撰写本文时，浏览器的要求如下：
 
-<table class="table table-striped table-bordered">
-    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
-    <tr><td style="text-align:center"><a href="http://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="http://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td><td style="text-align:center">11.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-gb/windows/microsoft-edge">Edge</a></td><td style="text-align:center">12.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
-    </tr>
-    <tr><td style="text-align:center"><a href="http://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
-        <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="http://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
-    </tr>
+<table class="table table-striped table-bordered">
+    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
+    <tr><td style="text-align:center"><a href="http://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
+    </tr>
+    <tr><td style="text-align:center"><a href="http://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
+    </tr>
+    <tr><td style="text-align:center"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td><td style="text-align:center">11.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
+    </tr>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-gb/windows/microsoft-edge">Edge</a></td><td style="text-align:center">12.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
+    </tr>
+    <tr><td style="text-align:center"><a href="http://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
+        <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
+    </tr>
+    <tr><td style="text-align:center"><a href="http://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
+        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
+    </tr>
 </table>
 
 如果你对你目前使用的浏览器是否支持 WebGL 有所担心的话( PlayCanvas 依赖 WebGL)，可以试着访问[这个网站][3]。如果你在这个网站上看到一个旋转的立方的话，就说明你已经完全准备就绪了！
 
-[1]: /user-manual/publishing
-[2]: /user-manual/glossary/#dom
-[3]: http://get.webgl.org/
-[4]: /images/user-manual/introduction-assets.jpg
-[5]: /images/user-manual/introduction-scene.jpg
-[6]: /images/user-manual/introduction-script.jpg
-[7]: /images/user-manual/introduction-published.jpg
-[8]: /user-manual/designer
+[1]: /user-manual/publishing
+[2]: /user-manual/glossary/#dom
+[3]: http://get.webgl.org/
+[4]: /images/user-manual/introduction-assets.jpg
+[5]: /images/user-manual/introduction-scene.jpg
+[6]: /images/user-manual/introduction-script.jpg
+[7]: /images/user-manual/introduction-published.jpg
+[8]: /user-manual/designer
 [9]: /user-manual/assets
 

@@ -1,7 +1,7 @@
----
-title: Sepia Effect
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Sepia Effect
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 The Sepia effect makes the image look like an old photograph.

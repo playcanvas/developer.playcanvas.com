@@ -1,7 +1,7 @@
----
-title: 调试
-template: usermanual-page.tmpl.html
-position: 7
+---
+title: Debugging
+template: usermanual-page.tmpl.html
+position: 7
 ---
 
 为了使PlayCanvas创建脚本，用户了解如何使用浏览器的开发工具是十分重要的。
@@ -22,14 +22,14 @@ Chrome, Firefox以及其它的浏览器都直接集成开发者工具到浏览�
 
 浏览器上有详细说明如何调试JavaScript。用户可以通过以下页面进行了解：[Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
-<div class="alert alert-info">
-Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
+<div class="alert alert-info">
+Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
 </div>
 
-[1]: /images/user-manual/scripting/debugger-chrome.jpg
-[2]: /images/user-manual/scripting/debugger-firefox.jpg
-[3]: https://developer.chrome.com/devtools/docs/javascript-debugging
-[4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
-[5]: https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1
+[1]: /images/user-manual/scripting/debugger-chrome.jpg
+[2]: /images/user-manual/scripting/debugger-firefox.jpg
+[3]: https://developer.chrome.com/devtools/docs/javascript-debugging
+[4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
+[5]: https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1
 [6]: https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/debugger/
 

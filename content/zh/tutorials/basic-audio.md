@@ -1,8 +1,8 @@
----
-title: 初级的音频
-template: tutorial-page.tmpl.html
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
+---
+title: Basic Audio
+template: tutorial-page.tmpl.html
+tags: audio
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>
@@ -61,8 +61,8 @@ PlayCanvas中的基本的音频系统有两个组件类型。
 
 每一个音源槽都有一个资源选择器，它能够允许你从不同的槽中播放不同的声音资源。查看[导入资源][4]以获得关于如何上传音频资源的详情。
 
-<div class="pc-notice-message pc-small">
-    并非所有浏览器都支持所有的音频格式。目前，我们建议使用的是大多数浏览器都支持的MP3格式(.MP3)。
+<div class="pc-notice-message pc-small">
+    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
 </div>
 
 一旦你上传你的资源，使用资源选择器为您的声源槽选择音频资源。
@@ -85,13 +85,13 @@ PlayCanvas中的基本的音频系统有两个组件类型。
 
 要创建一个声音监听者，选择代表监听器的实体。通常情况下，这会是游戏中的摄像头，因为这是玩家的'头'的位置。在我们的情况下，声音监听者被附着到机器人上。
 
-<div class="alert-info">
-你一次只能有一个音频监听器。所创建的最后一个音频监听器组件将成为唯一活动的监听器。
+<div class="alert-info">
+    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
 </div>
 
-[1]: /user-manual/packs/components/sound
-[2]: /user-manual/packs/components/audiolistener
-[3]: https://playcanvas.com/editor/scene/440098
-[4]: /user-manual/assets/importing
+[1]: /user-manual/packs/components/sound
+[2]: /user-manual/packs/components/audiolistener
+[3]: https://playcanvas.com/editor/scene/440098
+[4]: /user-manual/assets/importing
 [5]: /images/tutorials/audio/sound.jpg
 

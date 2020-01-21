@@ -1,7 +1,7 @@
----
-title: Models
-template: usermanual-page.tmpl.html
-position: 3
+---
+title: Models
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 3D models and animations are imported into PlayCanvas by uploading scene files from a [3D modeling application][1] such as [Blender][2], 3D Studio Max or Maya.
@@ -12,13 +12,13 @@ Uploading one of these files will create a [Source Asset][3] of type 'scene' and
 
 Learn more about:
 
-* [Building Models][5]
+* [Building Models][5]
 * [Exporting Models][6]
 
-[1]: /user-manual/assets/models/building
-[2]: http://blender.org/
-[3]: /user-manual/glossary#source_asset
-[4]: /user-manual/glossary/#target_asset
-[5]: /user-manual/assets/models/building
+[1]: /user-manual/assets/models/building
+[2]: http://blender.org/
+[3]: /user-manual/glossary#source_asset
+[4]: /user-manual/glossary/#target_asset
+[5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
 

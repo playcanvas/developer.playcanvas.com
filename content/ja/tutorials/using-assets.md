@@ -1,8 +1,8 @@
----
-title: アセットレジストリの使用
-template: tutorial-page.tmpl.html
-tags: loading, assets
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
+---
+title: Using the Asset Registry
+template: tutorial-page.tmpl.html
+tags: loading, assets
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
@@ -19,10 +19,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *プロジェクトは次のように設定されます*
 
-*3つのモデルアセットがアップロードされています：**A**はAという文字のモデル、**B**はBという文字のモデル、**C**はCという文字のモデルです。
-* ** C**モデルアセットはプリロード*されない*ように設定されています。
-*モデルエンティティはシーンに追加され、モデル**A**はモデルコンポーネントに割り当てられています。
-*スクリプトコンポーネントはモデルエンティティに追加され、`update_asset.js`という新たなスクリプトが作成されます。
+* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
+* The **C** model asset is set up *not* to be preloaded.
+* A model Entity is added to the scene and the model **A** is assigned to the model component.
+* A script component is added to the model Entity and a new script is created called `update_asset.js`.
 
  [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
 
@@ -34,19 +34,19 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## プレロードされたアセットを使用
 
-```javascript
-if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-    if (this.entity.model.model !== this.b.resource) {
-        // update the model component to the new model
-        this.entity.model.model = this.b.resource;
-    }
-} else {
-    if (this.entity.model.model !== this.a.resource) {
-        // restore original model
-        this.entity.model.model = this.a.resource;
-    }
-    //...
-}
+```javascript
+if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+    if (this.entity.model.model !== this.b.resource) {
+        // update the model component to the new model
+        this.entity.model.model = this.b.resource;
+    }
+} else {
+    if (this.entity.model.model !== this.a.resource) {
+        // restore original model
+        this.entity.model.model = this.a.resource;
+    }
+    //...
+}
 ```
 
 このプロジェクトでは、**A**と**B**のアセットは**プリロード**としてマークされています。読み込み画面中に、これらのアセットがダウンロードされることを意味します。アプリケーションの起動と同時に使用できるようになります。アセットが読み込まれると、読み込まれたリソースは`asset.resource`として利用可能です。`asset.resource`が` null`の場合、アセットは読み込まれません。
@@ -55,26 +55,26 @@ if (app.keyboard.isPressed(pc.KEY_SPACE)) {
 
 ## 実行時にアセットを読み込む
 
-```javascript
-if (this.app.keyboard.isPressed(pc.KEY_C)) {
-    if (this.c.resource) {
-        if (this.entity.model.model !== this.c.resource) {
-            this.entity.model.model = this.c.resource;
-        }
-    }
-} else {
-    if (this.entity.model.model !== this.a.resource) {
-        this.entity.model.model = this.a.resource;
-    }
-}
+```javascript
+if (this.app.keyboard.isPressed(pc.KEY_C)) {
+    if (this.c.resource) {
+        if (this.entity.model.model !== this.c.resource) {
+            this.entity.model.model = this.c.resource;
+        }
+    }
+} else {
+    if (this.entity.model.model !== this.a.resource) {
+        this.entity.model.model = this.a.resource;
+    }
+}
 ```
 
 **Cは**モデルは、*プリロード*としてマークされていないので、上記のコードでは使用する前にリソースが読み込まれていることを確認します。`asset.resource`が空の場合、リソースは読み込まれていないので、モデルコンポーネントを変更することができません。 **C**モデルが読み込まれている場合、`this.c.resource`は`pc.Model`プロパティとなり、割り当てることができます。
 
-```javascript
-if (this.app.keyboard.isPressed(pc.KEY_L)) {
-    this.app.assets.load(this.c);
-}
+```javascript
+if (this.app.keyboard.isPressed(pc.KEY_L)) {
+    this.app.assets.load(this.c);
+}
 ```
 
 `L`キーを押すと、** C**モデルを読み込みます。これを行うには`this.app.assets.load()`にアンロードされたアセットを渡します。アセットがすでに読み込まれている場合、このメソッドは何も行いません。
@@ -83,121 +83,121 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 ## 完全なスクリプト
 
-```javascript
-var UpdateAsset = pc.createScript('updateAsset');
-
-UpdateAsset.attributes.add('a', {
-    type: 'asset',
-    assetType: 'model'
-});
-
-UpdateAsset.attributes.add('b', {
-    type: 'asset',
-    assetType: 'model'
-});
-
-UpdateAsset.attributes.add('c', {
-    type: 'asset',
-    assetType: 'model'
-});
-
-// initialize code called once per entity
-UpdateAsset.prototype.initialize = function() {
-    this.app.keyboard.preventDefault = true;
-};
-
-// update code called every frame
-UpdateAsset.prototype.update = function(dt) {
-    var app = this.app;
-
-    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-        if (this.entity.model.model !== this.b.resource) {
-            // update the model component to the new model
-            this.entity.model.model = this.b.resource;
-        }
-    } else {
-        if (this.entity.model.model !== this.a.resource) {
-            // restore original model
-            this.entity.model.model = this.a.resource;
-        }
-
-        if (app.keyboard.isPressed(pc.KEY_C)) {
-            if (this.c.resource) {
-                if (this.entity.model.model !== this.c.resource) {
-                    this.entity.model.model = this.c.resource;
-                }
-            }
-        } else {
-            if (this.entity.model.model !== this.a.resource) {
-                this.entity.model.model = this.a.resource;
-            }
-        }
-
-
-    }
-
-
-    if (app.keyboard.isPressed(pc.KEY_L)) {
-        app.assets.load(this.c);
-    }
-};
+```javascript
+var UpdateAsset = pc.createScript('updateAsset');
+
+UpdateAsset.attributes.add('a', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+UpdateAsset.attributes.add('b', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+UpdateAsset.attributes.add('c', {
+    type: 'asset',
+    assetType: 'model'
+});
+
+// initialize code called once per entity
+UpdateAsset.prototype.initialize = function() {
+    this.app.keyboard.preventDefault = true;
+};
+
+// update code called every frame
+UpdateAsset.prototype.update = function(dt) {
+    var app = this.app;
+
+    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+        if (this.entity.model.model !== this.b.resource) {
+            // update the model component to the new model
+            this.entity.model.model = this.b.resource;
+        }
+    } else {
+        if (this.entity.model.model !== this.a.resource) {
+            // restore original model
+            this.entity.model.model = this.a.resource;
+        }
+
+        if (app.keyboard.isPressed(pc.KEY_C)) {
+            if (this.c.resource) {
+                if (this.entity.model.model !== this.c.resource) {
+                    this.entity.model.model = this.c.resource;
+                }
+            }
+        } else {
+            if (this.entity.model.model !== this.a.resource) {
+                this.entity.model.model = this.a.resource;
+            }
+        }
+
+
+    }
+
+
+    if (app.keyboard.isPressed(pc.KEY_L)) {
+        app.assets.load(this.c);
+    }
+};
 ```
 
 ## アセットレジストリのイベント
 
 この例では示していないのは、アセットが読み込まれたことを知る方法です。これを行うには、"load"イベントのような`pc.AssetRegistry`イベントを使用します。サンプルコードです：
 
-```javascript
-// find the asset in the registry
-var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
-this.app.assets.once("load", function (asset) {
-    // asset.resource is now ready
-}, this);
+```javascript
+// find the asset in the registry
+var asset = this.app.assets.find("A");
+// set up a one-off event listener for the load event
+this.app.assets.once("load", function (asset) {
+    // asset.resource is now ready
+}, this);
 ```
 
 `"load"`イベントは非常に幅広いです。読み込まれるすべてのアセットに発生するので、アセットが他の場所に読み込まれている場合、それがあなたのアセットか分かりません。代わりに、`"load:id"`イベントを使用して、イベントを絞り込むことができます。
 
-```javascript
-// find the asset in the registry
-var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
-this.app.assets.once("load:" + asset.id, function (asset) {
-    // asset.resource is now ready
-}, this);
+```javascript
+// find the asset in the registry
+var asset = this.app.assets.find("A");
+// set up a one-off event listener for the load event
+this.app.assets.once("load:" + asset.id, function (asset) {
+    // asset.resource is now ready
+}, this);
 ```
 
 上記のイベントは、その特定のアセットのためにのみ稼動します。とても便利です。
 
 最後に、良く発生する一つの特定のコーディングパターンがあります。それを行うための便利な方法を提供しています。
 
-```javascript
-var asset = this.app.assets.find("A");
-if (!asset.resource) {
-    this.app.assets.once("load:" + asset.id, function (asset) {
-        // do something with asset.resource
-    });
-    this.app.assets.load(asset);
-} else {
-    // do something with asset.resource
-}
+```javascript
+var asset = this.app.assets.find("A");
+if (!asset.resource) {
+    this.app.assets.once("load:" + asset.id, function (asset) {
+        // do something with asset.resource
+    });
+    this.app.assets.load(asset);
+} else {
+    // do something with asset.resource
+}
 ```
 
 このコードは必要とされるアセットを読み込みますが、少し長いので代わりに`asset.ready()`メソッドを使用することができます。このコードは、上記と同じ機能を実行します。
 
-```javascript
-var asset = this.app.assets.find("A");
-asset.ready(function (asset) {
-    // do something with asset.resource
-});
-this.app.assets.load(asset);
+```javascript
+var asset = this.app.assets.find("A");
+asset.ready(function (asset) {
+    // do something with asset.resource
+});
+this.app.assets.load(asset);
 ```
 
 `asset.ready()`メソッドはアセットが読み込まれるとすぐにそのコールバックを呼びます。また、アセットがすでに読み込まれている場合、すぐにそれを呼び出します。アセットがすでに読み込まれている場合、 `app.assets.load()`は何もしません。
 
-[1]: /en/api/pc.AssetRegistry.html
-[3]: https://playcanvas.com/project/406036
-[5]: /downloads/tutorials/A.dae
-[6]: /downloads/tutorials/B.dae
+[1]: /en/api/pc.AssetRegistry.html
+[3]: https://playcanvas.com/project/406036
+[5]: /downloads/tutorials/A.dae
+[6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
 

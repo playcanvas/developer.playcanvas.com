@@ -1,7 +1,7 @@
----
-title: Textures
-template: usermanual-page.tmpl.html
-position: 4
+---
+title: Textures
+template: usermanual-page.tmpl.html
+position: 4
 ---
 
 A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
@@ -10,19 +10,19 @@ A texture is an image that can be assigned to a [material][1] and then applied t
 
 There are 3 ways you can import texture assets into PlayCanvas:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
+1. Drag and drop images into the Assets panel.
+2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
 3. Import an FBX file that embeds textures.
 
 Supported image formats are:
 
-* JPG
-* PNG
-* GIF
-* TGA
-* BMP
-* TIF
-* HDR
+* JPG
+* PNG
+* GIF
+* TGA
+* BMP
+* TIF
+* HDR
 * EXR
 
 Imported JPG and PNG files remain in their original format.
@@ -31,7 +31,7 @@ GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If 
 
 HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format.
 
-By default, imported images will be resized to the next highest power of two. For example, an image that is 400x400 will be resized to 512x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
+By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 
 ## Texture Properties
 
@@ -65,8 +65,8 @@ Texture data is stored in a device's video memory (or VRAM). It is important to 
 
 The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used. These schemes are:
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
+* DXT: Typically supported by desktop devices.
+* PVR: Typically supported by iOS devices.
 * ETC: Typically supported by Android devices.
 
 Consider this texture asset:
@@ -81,10 +81,10 @@ Enabling all compression schemes achieves the following results:
 
 The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
 
-[1]: /user-manual/assets/materials
-[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
-[3]: /images/user-manual/assets/textures/texture-properties.png
-[4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/texture-address.png
+[1]: /user-manual/assets/materials
+[2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
+[3]: /images/user-manual/assets/textures/texture-properties.png
+[4]: /images/user-manual/assets/textures/anisotropy.png
+[5]: /images/user-manual/assets/textures/texture-address.png
 [6]: /images/user-manual/assets/textures/compression-results.png
 

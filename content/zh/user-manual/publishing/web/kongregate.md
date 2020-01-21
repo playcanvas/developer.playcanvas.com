@@ -1,12 +1,14 @@
----
-title: Kongregate
-template: usermanual-page.tmpl.html
-position: 6
+---
+title: Kongregate
+template: usermanual-page.tmpl.html
+position: 6
 ---
 
-[Kongregate][1] 是世界上最大的网络游戏门户之一。 最初的时候它是一个flash游戏平台， 现在他们也已经接收HTML5游戏一段时间了。 Kongregate 会将它们广告收入的 50% 分享给游戏开发者，因此这是一个你想开始通过自己的游戏赚钱的好地方。
+[Kongregate][1] is one of the biggest web game portals in the world. Originally a site for Flash games, they've been accepting HTML5 games for a while. Kongregate shares up to 50% of their advertising revenue with the game developer so they are a good place to start making money from your games.
 
-## 怎样发布到Kongregate
+In November 2018 Kongregate launched [Kartridge][7], a community-driven PC gaming platform focused on indie games.
+
+## How to publish to Kongregate
 
 **1.** 下载您游戏的zip文件版本。按照 [自托管说明][2]进行操作。
 
@@ -14,11 +16,11 @@ position: 6
 
 **3.** 创建一个不包括包含文件夹的新的zip文件。
 
-#### Windows
+#### Windows
 
 选中没有进行压缩的所有文件, 右击并选择 **Send to -> Compressed (zipped) folder** ([更多信息][3])
 
-#### OS X
+#### OS X
 
 选中所有没有进行压缩的文件, 右击 (或组合按键Ctrl-Click) 并选中"Compress X Items"
 
@@ -32,10 +34,30 @@ position: 6
 
 **6.** 测试并公布你的游戏!
 
-[1]: http://kongregate.com
-[2]: /user-manual/publishing/web/self-hosting/
-[3]: http://windows.microsoft.com/en-gb/windows-10/zip-and-unzip-files#v1h=tab01
-[4]: http://www.kongregate.com/games/new
-[5]: /images/user-manual/publishing/web/upload.jpg
-[6]: /images/user-manual/publishing/web/make-zip.jpg
+## How to publish to Kartridge
+
+If you want to upload your games on [Kartridge][7], you will need to request developer access. To do this, follow these steps:
+
+**1.** Open up [Kartridge][7] and click on your profile name.
+
+**2.** Request Developer Access:
+
+![Developer Access][8]
+
+Fill out the form that pops up. If further verification is needed, the Kartridge developer support team will contact you directly via the email provided in the submission form.
+
+![Developer Access Form][9]
+
+For more information on Game File requirements and setting up your storefront, click [here][10]. If you have any questions about this process, contact support@kartridge.com.
+
+[1]: https://kongregate.com
+[2]: /user-manual/publishing/web/self-hosting/
+[3]: http://windows.microsoft.com/en-gb/windows-10/zip-and-unzip-files#v1h=tab01
+[4]: http://www.kongregate.com/games/new
+[5]: /images/user-manual/publishing/web/upload.jpg
+[6]: /images/user-manual/publishing/web/make-zip.jpg
+[7]: https://www.kartridge.com
+[8]: /images/user-manual/publishing/web/kongregate/mceclip0.png
+[9]: /images/user-manual/publishing/web/kongregate/mceclip1.png
+[10]: https://kartridge.zendesk.com/hc/en-us/articles/360018230352-Game-File-Requirements
 

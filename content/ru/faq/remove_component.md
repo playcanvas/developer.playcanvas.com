@@ -1,6 +1,6 @@
----
-title: Удаление компонента
-keywords: сущность, удалить, компонент, поведение
+---
+title: Remove a component
+keywords: entity, remove, component, behaviour
 ---
 
 ## Как удалить компонент?

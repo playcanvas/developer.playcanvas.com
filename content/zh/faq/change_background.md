@@ -1,6 +1,6 @@
----
-title: 修改背景色
-keywords: 摄影机, 颜色, 背静, 色彩, 天空
+---
+title: Change the background color
+keywords: camera, color, background, colour, sky
 ---
 
 ## 如何修改背景色？

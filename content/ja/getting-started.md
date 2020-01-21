@@ -1,11 +1,11 @@
----
-title: はじめてみよう
-template: page.tmpl.html
+---
+title: Getting Started
+template: page.tmpl.html
 ---
 
 PlayCanvasプラットフォームの基本を覚えるために、次のシンプルな3Dウェブappを構築します：
 
-<iframe  width="640" height="480" src="http://playcanv.as/b/fPYP6Swg" allowfullscreen></iframe>
+<iframe  src="https://playcanv.as/b/fPYP6Swg/" allowfullscreen></iframe>
 
 ## プロフィール
 
@@ -17,18 +17,18 @@ PlayCanvasプラットフォームの基本を覚えるために、次のシン�
 
 プロジェクトとは次のものを集めたものです：
 
-* **シーン** - ゲームを構築するために使用する[エンティティ][3] の階層。シーンは単一のレベルまたはゲーム全体に設定できます。
-* **アセット** - ゲームで使用する3Dモデル, テクスチャー, 画像, 音声ファイル, その他のアセット。
-* **スクリプト** - あなたのソースコード。PlayCanvasに組み込まれているスクリプトエディタを使用してコードを書くか、GithubやBitbucketなどのコードホスティングのサービスを使用してプロジェクトに同期することができます。
-* **公開されたApp** - アプリケーションをデプロイ可能なアーカイブにエクスポートするか、PlayCanvasサーバに直接公開することができます。
+* **Scenes** - An hierarchy of [Entities][3] used to build up your game. A Scene could be a single level or your entire game. It depends.
+* **Assets** - 3D Models, textures, images, sound files and anything other assets you use in your game.
+* **Scripts** - Your source code. You can either write code using the PlayCanvas built-in script editor, or you can sync to your project using code-hosting services like Github or Bitbucket.
+* **Published Apps** - Your applications can be exported to archives ready to be deployed, or published directly to PlayCanvas servers.
 
 ## 新しいプロジェクトの作成
 
 プロフィールページでPROJECTSタブをクリックして'Create a Project'をクリックします。新しいプロジェクトの詳細を設定するページに移行します。
 
-* **Project Name** - プロジェクト名はプロジェクトのURLを構築するために使用されます。例えば、ユーザー'joebloggs'が'spacewar'というプロジェクトを作成した場合、URLは次になります：https://playcanvas.com/joebloggs/spacewar
-* **Description** - SNSに公開ビルドをシェアした際に表示されるプロジェクトの短い説明文。
-* **Visibility** - デフォルトで、新規プロジェクトは他のコミュニティメンバーから読み取りアクセスできます。PRIVATEを選択するとプライベートで作業が行えますかこの機能を使用するには[Pro アカウント][4]が必要です。
+* **Project Name** - The name is used to build the URL for your project. For example, if user 'joebloggs' created a project called 'spacewar', the project can be found at https://playcanvas.com/joebloggs/spacewar
+* **Description** - A short description of your project that is displayed when you share a published build to social media.
+* **Visibility** - By default, new projects are public allowing other community members read access to your work. Selecting PRIVATE will allow you to work in private but note that you will need a [Pro account][4] to use this feature.
 
 プロジェクトの名前と説明を設定します。次にCREATEボタンをクリックすると、プロジェクトのホームページに移行します。
 
@@ -56,14 +56,14 @@ PlayCanvasのシーンはappを構成する様々な「もの」を集めたも�
 
 まずは新しいシーンに名前をつけます：
 
-* Editorツールバーの左下のcogアイコンを選択します。
-* INSPECTORパネルでシーン名プロパティをSpinning Cubeなどに設定して、Enterを押します。
+* Select the cog icon in the bottom left of the Editor toolbar.
+* In the INSPECTOR panel, set the Scene Name property to something like 'Spinning Cube' and hit Enter.
 
 回転するボックスの体験には3つのエンティティが必要です：
 
-* ボックス
-* カメラ (ボックスを見るため)
-* ライト (ボックスに鮮明度を加えるため)
+* A box.
+* A camera (to view the box).
+* A light (to give some definition to the box).
 
 幸い、Editorは新規シーン作成時に自動的に指向性ライトとカメラを作成します。ボックスを作成する手順は次の通りです：
 
@@ -109,45 +109,45 @@ PlayCanvasのコードを書く主要の方法は二つです。一つ目は、P
 
 ![スクリプトを追加][13]
 
-* INSPECTORのスクリプトセクションでURLフィールドの最初の行をクリックしてファイル名を編集します。フィルタコンポーネントのAdd属性を'spinner.js'に設定してEnterを押します。
-* 'spinner.js'スクリプトの名前をクリックするとPlayCanvasスクリプトエディタが新規タブで開きます。
+* In the Script section in INSPECTOR, click the top line of the URLs field to edit the filename. Set the Add attribute of the script component to 'spinner.js' and hit Enter.
+* Click on the name of the script 'spinner.js' and the PlayCanvas script editor will open in a new tab.
 
 コードエディタでスクリプトテンプレートを更新して下記のコードに合わせます(update関数の本体を埋めるだけです):
 
-~~~javascript~~~
-pc.script.create("spinner", function (app) {
-
-    var Spinner = function (entity) {
-        // このスクリプトインスタンスが影響を与えるエンティティをキャッシュ
-        this.entity = entity;
-    };
-
-    Spinner.prototype = {
-        update: function (dt) {
-            // 毎秒ワールドY軸の周りの90度回転
-            this.entity.rotate(0, 90 * dt, 0);
-        }
-    };
-
-    return Spinner;
-});
+~~~javascript~~~
+pc.script.create("spinner", function (app) {
+
+    var Spinner = function (entity) {
+        // Cache the entity that this script instance affects
+        this.entity = entity;
+    };
+
+    Spinner.prototype = {
+        update: function (dt) {
+            // Rotate 90 degrees around the world Y axis every second
+            this.entity.rotate(0, 90 * dt, 0);
+        }
+    };
+
+    return Spinner;
+});
 ~~~
 
 コードを編集したらコードエディタの"Save"ボタンを押してEditorタブに切り替えて戻します。スクリプトエディタは、メインのEditorアプリケーションとは違い、明示的に保存することを必須とします。
 
 この後、再度Launchボタンを選択することができます。ボックスがその場で回転しているはずです。最初のPlayCanvas appの完成です！
 
-[1]: /images/platform/profile.png "プロフィール"
-[2]: /images/platform/project_list.jpg "プロジェクトリスト"
-[3]: /user-manual/glossary/#entity
-[4]: https://playcanvas.com/plans
-[5]: /images/getting_started/scene_selection.png "シーンの選択"
-[6]: /images/getting_started/editor.png "Editor"
-[7]: /images/getting_started/hierarchy.png "階層"
-[8]: /images/getting_started/new_box.png "新規ボックス"
-[9]: /images/getting_started/box_in_editor.png "Editor内ボックス"
-[10]: /images/getting_started/launch_buttons.png "起動ボタン"
-[11]: /images/getting_started/box_launched.png "起動されたボックス"
-[12]: /user-manual/scripting/workflow/ "スクリプティングワークフロー"
-[13]: /images/getting_started/add_script.png "スクリプトを追加"
+[1]: /images/platform/profile.png "Profile"
+[2]: /images/platform/project_list.jpg "Project List"
+[3]: /user-manual/glossary/#entity
+[4]: https://playcanvas.com/plans
+[5]: /images/getting_started/scene_selection.png "Scene Selection"
+[6]: /images/getting_started/editor.png "Editor"
+[7]: /images/getting_started/hierarchy.png "Hierarchy"
+[8]: /images/getting_started/new_box.png "New Box"
+[9]: /images/getting_started/box_in_editor.png "Box In Editor"
+[10]: /images/getting_started/launch_buttons.png "Launch Buttons"
+[11]: /images/getting_started/box_launched.png "Box Launched"
+[12]: /user-manual/scripting/workflow/ "Scripting Workflow"
+[13]: /images/getting_started/add_script.png "Add Script"
 

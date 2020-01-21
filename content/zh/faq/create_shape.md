@@ -1,6 +1,6 @@
----
-title: 创建一个立方，球型等式样的形体
-keywords: 组件, 模型, 方盒, 球形, 圆柱, 圆锥, 立方, 平面, 形体, 图元
+---
+title: Create a shape like a box, sphere etc.
+keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
 ---
 
 ## 如何创建一个立方，球形等样式的形体？

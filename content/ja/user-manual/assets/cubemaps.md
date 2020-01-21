@@ -1,14 +1,15 @@
----
-title: キューブマップ
-template: usermanual-page.tmpl.html
-position: 5
+---
+title: Cubemaps
+template: usermanual-page.tmpl.html
+position: 5
 ---
 
 キューブマップは特別なテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：
 
-1. キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルが含まれます。 2. キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
+1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
+2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
-<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
 ## キューブマップテクスチャーのインポート
 
@@ -36,11 +37,11 @@ PlayCanvas Editorインターフェイスから直接キューブマップアセ
 
 ![キューブマップのプロパティ][3]
 
-### Filtering
-この設定では、キューブマップが拡大される際にピクセルが補間される方法を定義します。拡大とは、テクセル対画面のピクセル比が1より少ない状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
+### Filtering
+This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
-### Anisotropy
-Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面により密接に合わせられるにつれて、テクスチャサンプリングの品質を制御できる1と16の間の値です。
+### Anisotropy
+Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
 
 ## キューブマップにテクスチャを割り当てる
 
@@ -50,28 +51,28 @@ Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面�
 
 キューブマップの面は次の通りです：
 
-*正方形(幅と高さが同じ解像度)
-*次元の2乗(1x1, 2x2, 4x4, 8x8, 16x16, 32x32など)
-*すべての面は同じ解像度でなければなりません
+* Square (the same resultion in width and height)
+* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+* All faces must be the same resolution
 
 Editorは面に自動的にテクスチャを割り当てる方法を見つけようとします。これは、キューブマップの面によく使用される命名規則を一致させることによって、最初の面をスロットにドラッグするときに実行されます。例えば：
 
-* negx, posx, negy, posy, negz, posz
-* left, right, top|up, bottom|down, front|forward, back|backward
+* negx, posx, negy, posy, negz, posz
+* left, right, top|up, bottom|down, front|forward, back|backward
 * 0-5|1-6
 
 一致するテクスチャセットの例は次のとおりです：
 
-* face_posx.jpg
-* face_negx.jpg
-* face_posy.jpg
-* face_negy.jpg
-* face_posz.jpg
+* face_posx.jpg
+* face_negx.jpg
+* face_posy.jpg
+* face_negy.jpg
+* face_posz.jpg
 * face_negz.jpg
 
-## キューブマップのプレフィルタ
+## イメージベースの照明
 
-キューブマップインスペクタには、低解像度のフィルタリングされたテクスチャーのセットを生成するプレフィルタのボタンがあります。これらは物理的素材の環境マップで使用されます。物理的な素材を使用する際、キューブマップのプレフィルタリングは不可欠です。
+この手法により、CubeMapなどの環境マップを使用して物理に基づいたアンビエント照明や素材による反射をシミュレーションできます。これがどのように動作するか、また、IBL用にCubeMapを作成する方法については[こちら][6]をご確認ください。
 
 ## 素材にキューブマップを割り当てる
 
@@ -83,9 +84,10 @@ Emptyスロットをクリックしてキューブマップを選択するか、
 
 補足：物理素材が割り当てられ、プレフィルタされる場合は、デフォルトの環境マップとしてシーンのスカイボックスを使用します。
 
-[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
-[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
-[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
-[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
-[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[1]: /images/user-manual/assets/cubemaps/cubemap-create.png
+[2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
+[3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
+[4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
+[5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

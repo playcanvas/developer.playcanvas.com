@@ -1,15 +1,15 @@
----
-title: Lights
-template: usermanual-page.tmpl.html
-position: 1
+---
+title: Lights
+template: usermanual-page.tmpl.html
+position: 1
 ---
 
 In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources that approximate the different types of light we find in reality.
 
 There are three types of light in PlayCanvas:
 
-* Directional lights
-* Point lights
+* Directional lights
+* Point lights
 * Spot lights
 
 ## Directional Lights
@@ -60,10 +60,10 @@ A spot light lights an object like this:
 
 Spot lights are the most costly type of light so use them sparingly.
 
-[1]: /images/user-manual/graphics/lights/directional_icon.jpg
-[2]: /images/user-manual/graphics/lights/directional.jpg
-[3]: /images/user-manual/graphics/lights/point_icon.jpg
-[4]: /images/user-manual/graphics/lights/point.jpg
-[5]: /images/user-manual/graphics/lights/spot_icon.jpg
+[1]: /images/user-manual/graphics/lights/directional_icon.jpg
+[2]: /images/user-manual/graphics/lights/directional.jpg
+[3]: /images/user-manual/graphics/lights/point_icon.jpg
+[4]: /images/user-manual/graphics/lights/point.jpg
+[5]: /images/user-manual/graphics/lights/spot_icon.jpg
 [6]: /images/user-manual/graphics/lights/spot.jpg
 
