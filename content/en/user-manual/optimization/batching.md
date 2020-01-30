@@ -47,7 +47,7 @@ If a batch group contains components or mesh instances that do not obey all of t
 
 ## Trigger re-batching
 
-Based on Batch Groups the engine creates optimized version of mesh instances. Further changes to many properties of original mesh instancies are not reflected in optimized versions. To allow for good performance by using batching, while still allowing some further updates, you can request engine to rebatch individual Batch Groups after you make changes to original mesh instances. This is often useful with User Interface element components, where you might want to set up batching, but still need to do unfrequent updates. Note that re-batching a group is a potentially expensive operation. In many cases impact of rebatching can be minimized by separating elements that need updating to separate Batch Group.
+Based on Batch Groups the engine creates optimized version of mesh instances. Further changes to many properties of original mesh instances are not reflected in optimized versions. To allow for good performance by using batching, while still allowing some further updates, you can request the engine to rebatch individual Batch Groups after you make changes to original mesh instances. This is often useful with User Interface element components, where you might want to set up batching, but still need to do unfrequent updates. Note that re-batching a group is a potentially expensive operation. In many cases impact of rebatching can be minimized by separating elements that need updating to separate Batch Group.
 
 Here is an example of a simple script. The script updates textureAsset on an element, and marks the Batch Group as dirty.
 
