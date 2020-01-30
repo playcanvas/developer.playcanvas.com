@@ -29,6 +29,7 @@ Simple Sprite Components display a single frame from an atlas
     <tr><td>Flip Y</td><td>Flip the rendered sprite vertically.</td></tr>
     <tr><td>Layers</td><td>The Layers in which to render the sprite.</td></tr>
     <tr><td>Draw Order</td><td>The order in which this sprite is rendered. Lower numbers are rendered first.</td></tr>
+    <tr><td>Batch Group</td><td>The Batch Group that this model belongs to. More on Batching [here][6].</td></tr>
 </table>
 
 ## Animated Sprites
@@ -77,3 +78,4 @@ You can control the properties of a Sprite component using a [script component][
 [3]: /images/user-manual/scenes/components/component-sprite-animated.jpg
 [4]: /user-manual/packs/components/script
 [5]: /engine/api/pc.SpriteComponent.html
+[6]: /user-manual/optimization/batching

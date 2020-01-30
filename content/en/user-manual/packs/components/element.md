@@ -40,6 +40,7 @@ The text element renders a string of text using a [font asset][5].
     <tr><td>Margin</td><td>The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis).</td></tr>
     <tr><td>Use Input</td><td>If enabled, this Element is added to the list of elements that check for input and fire input related events.</td></tr>
     <tr><td>Layers</td><td>The Layers to render this element into. More on Layers [here][7]</td></tr>
+    <tr><td>Batch Group</td><td>The Batch Group that this model belongs to. More on Batching [here][8].</td></tr>
 </table>
 
 ## Image Component Properties
@@ -82,3 +83,4 @@ The text element renders a string of text using a [font asset][5].
 [5]: /user-manual/assets/fonts/
 [6]: /user-manual/optimization/batching/
 [7]: /user-manual/graphics/layers
+[8]: /user-manual/optimization/batching

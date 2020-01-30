@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7] component that lets you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
+Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7], [Sprite][9] and [Element][10] components that lets you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
 
 There are a variety of rules which the engine will apply to see if mesh instances are able to be combined. The primary rule is that all mesh instances must share the same material.
 
@@ -45,6 +45,21 @@ The rules for whether the engine can combine mesh instances are fairly complicat
 
 If a batch group contains components or mesh instances that do not obey all of the rules the batch group will produce multiple batches such that each individual batch contains mesh instance that follow all the rules.
 
+## Trigger re-batching
+
+Based on Batch Groups the engine creates optimized version of mesh instances. Further changes to many properties of original mesh instancies are not reflected in optimized versions. To allow for good performance by using batching, while still allowing some further updates, you can request engine to rebatch individual Batch Groups after you make changes to original mesh instances. This is often useful with User Interface element components, where you might want to set up batching, but still need to do unfrequent updates. Note that re-batching a group is a potentially expensive operation. In many cases impact of rebatching can be minimized by separating elements that need updating to separate Batch Group.
+
+Here is an example of a simple script. The script updates textureAsset on an element, and marks the Batch Group as dirty.
+
+```javascript 
+// change textureAsset on element
+element.textureAsset = this.hoverAsset;
+
+// if this element has Batch Group set, mark it dirty to rebuild the group in the next frame
+if (element.batchGroupId)
+    this.app.batcher.markGroupDirty(element.batchGroupId);
+```
+
 ## Example - Batching a static environment
 
 ![Western Scene][3]
@@ -74,4 +89,5 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 [6]: /user-manual/designer/settings/#batch-groups
 [7]: /user-manual/packs/components/model
 [8]: /api/pc.BatchManager.html
-
+[9]: /user-manual/packs/components/sprite
+[10]: /user-manual/packs/components/element
