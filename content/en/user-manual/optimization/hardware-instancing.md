@@ -6,7 +6,7 @@ position: 3
 
 Hardware instancing is a rendering technique which allows GPU to render multiple identical meshes in a small number of draw call. Each instance of the mesh can have different limited amount of state (for example position, or color). It's a technique suitable to drawing objects such as trees, bullets and similar.
 
-For its support on a device, check pc.GraphicsDevice.extInstancing. In general, it is supported on all WebGL2 devices, and also on majority of WebGL1 devices using ANGLE_instanced_arrays extension.
+For its support on a device, check pc.GraphicsDevice.supportsInstancing. In general, it is supported on all WebGL2 devices, and also on majority of WebGL1 devices using ANGLE_instanced_arrays extension.
 
 Note that all instances are submitted for rendering by the GPU and no camera frustum culling taking place.
 
