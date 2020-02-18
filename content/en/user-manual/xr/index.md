@@ -4,16 +4,16 @@ template: usermanual-page.tmpl.html
 position: 13
 ---
 
-![VR View][3]
+![VR View][2]
 
 PlayCanvas lets you create Virtual Reality (VR) and Augmented Reality applications for a variety of devices based on the new WebXR API. WebXR is an evolution from WebVR API, and is being added to modern browser APIs that provides access to virtual reality headsets, controllers and AR features of a device.
 
 ## Platforms
 
 WebXR being a new API, is being rolled out gradually to all major platforms.
-Up to date support can be checked on [caniuse.com][4].
+Up to date support can be checked on [caniuse.com][3].
 
-Additionally support can be extended with [WebXR Polyfill][5].
+Additionally support can be extended with [WebXR Polyfill][4].
 
 On **mobile** PlayCanvas XR is currently on Android and iOS devices using Cardboard-style VR headsets and it is supported on the Samsung Gear VR. Some level of AR is also available. As well as stand-alone Android based VR devices, such as Oculus Quest™.
 
@@ -38,7 +38,6 @@ button.element.on('click', function () {
 ```
 
 [1]: https://github.com/MozillaReality/WebXR-emulator-extension
-[2]: /images/user-manual/vr/render-settings.jpg
-[3]: /images/user-manual/vr/vr-view.png
-[4]: https://caniuse.com/#feat=webxr
-[5]: https://github.com/immersive-web/webxr-polyfill
+[2]: /images/user-manual/vr/vr-view.png
+[3]: https://caniuse.com/#feat=webxr
+[4]: https://github.com/immersive-web/webxr-polyfill
