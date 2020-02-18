@@ -23,7 +23,7 @@ The API for entering XR is on the Camera Component or [XrManager][2] on Applicat
 entity.camera.startXr(pc.XRTYPE_VR);
 ```
 
-It is asynchronous operation and is only possible to start on user interaction, such as button click or touch. To know when session is started, you can subscribe to `start` event:
+It is asynchronous operation and is only possible to start on user interaction, such as button click, mouse click or touch. To know when session is started, you can subscribe to `start` event:
 
 ```javascript
 app.xr.on('start', function () {
