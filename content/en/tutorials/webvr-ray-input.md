@@ -1,7 +1,7 @@
 ---
 title: WebXR Ray Input
 template: tutorial-page.tmpl.html
-tags: vr, ar, input
+tags: vr, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/4CA52F-image-75.jpg
 ---
 
@@ -26,7 +26,7 @@ button.element.on('click', function() {
     // check support for VR
     if (app.xr.isAvailable(pc.XRTYPE_VR)) {
         // start VR session
-        cameraEntity.camera.startXr(pc.XRTYPE_VR);
+        cameraEntity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
     }
 });
 ```
@@ -67,8 +67,8 @@ On each update, it will position and rotate entity based on input source positio
 ```javascript
 if (inputSource.grip) {
     entity.model.enabled = true;
-    entity.setPosition(inputSource.position);
-    entity.setRotation(inputSource.rotation);
+    entity.setLocalPosition(inputSource.position);
+    entity.setLocalRotation(inputSource.rotation);
 }
 ```
 
@@ -89,7 +89,7 @@ inputSource.on('select', function() {
 
 The Ray - is a way of pointing in XR environments. Either gaze, screen or laser pointer style input sources, they all have a ray with origin and direction of pointing.
 
-In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in scene.
+In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in scene. Ray, position and rotation on input source are in XR session space, but if we transform camera by ancestors, then we need to inherit that transformation on ray, position and rotation.
 
 The controller fires the following events to the entities that it interacts with:
 
