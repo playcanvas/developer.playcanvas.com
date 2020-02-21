@@ -17,10 +17,10 @@ if (app.xr.supported) {
 
 ## Starting XR Session
 
-The API for entering XR is on the Camera Component or [XrManager][2] on Application. To start VR presenting you should use the `startXr` method on CameraComponent:
+The API for entering XR is on the Camera Component or [XrManager][2] on Application. To start VR presenting you should use the `startXr` method on CameraComponent, provide the type of session and reference space type:
 
 ```javascript
-entity.camera.startXr(pc.XRTYPE_VR);
+entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
 ```
 
 It is asynchronous operation and is only possible to start on user interaction, such as button click, mouse click or touch. To know when session is started, you can subscribe to `start` event:
@@ -28,6 +28,16 @@ It is asynchronous operation and is only possible to start on user interaction, 
 ```javascript
 app.xr.on('start', function () {
     // XR session has started
+});
+```
+
+Session type or reference space might not be available on particular platform, so it will fail starting session, providing error in callback and firing `error` event on XrManager:
+
+```javascript
+entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, function(err) {
+    if (err) {
+        // failed to start session
+    }
 });
 ```
 
@@ -83,6 +93,8 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 When you are presenting in XR the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your translation to this entity.
 
 ![Camera Offset][1]
+
+Input source ray as well as position and rotation are in reference space. So if camera position is manipulated by parent transformation, then input source ray, position and rotation should be transformed accordingly.
 
 
 ## Why can't I enable XR mode automatically?

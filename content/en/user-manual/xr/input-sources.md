@@ -51,7 +51,7 @@ app.xr.input.on('select', function (inputSource) {
 
 ## Ray
 
-Each input source has a [Ray][2], which has origin where it points from, and direction of pointing. Some examples of input sources might be, but not limited to:
+Each input source has a [Ray][2], which has origin where it points from, and direction of pointing. Ray is transformed in XR local space, and if camera ancestors are transformed, then ray should be transformed accordingly. Some examples of input sources might be, but not limited to:
 
  * Gaze-based input, such as mobile device which is inserted into Google Cardboard™ style device. It will have input source with `targetRayMode` as `pc.XRTARGETRAY_GAZE`, and will originate from viewers position and direct straight where user is facing.
  * Screen-based input, might be available on mobile devices in Augmented Reality session types, where user can interact with virtual world by touchscreen.
@@ -67,15 +67,15 @@ if (meshInstance.aabb.intersectsRay(inputSource.ray)) {
 
 ## Grip
 
-Some input sources are associated with a physical handheld device, such as Oculus Touch™, and can have position and rotation in virtual world. Their position and rotation are calculated in world space, taking into the account position and rotation of XR camera:
+Some input sources are associated with a physical handheld device, such as Oculus Touch™, and can have position and rotation. Their position and rotation are calculated in XR session space. If XR camera parent is transformed, then controller entity should be in same parent, or inherit transformation accordingly:
 
 ```javascript
 if (inputSource.grip) {
     // can render device model
 
     // position and rotate associated entity with model
-    entity.setPosition(inputSource.position);
-    entity.setRotation(inputSource.rotation);
+    entity.setLocalPosition(inputSource.position);
+    entity.setLocalRotation(inputSource.rotation);
 }
 ```
 
