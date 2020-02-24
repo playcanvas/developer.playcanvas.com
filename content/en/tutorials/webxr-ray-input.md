@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4604
 
 This is a WebXR experience that interacts with valid XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Google Cardboard™, Google Daydream™, Samsung Gear VR™ and other VR/AR headsets.
 
-Let's have a look at the source of [tutorial project][1].
+Let's have a look at the source of the [tutorial project][1].
 
 
 ## Entering VR/AR
@@ -40,19 +40,20 @@ To read more about the direct PlayCanvas API for WebXR, please refer to the [Use
 
 The level of fidelity for input devices can be broken into the following groups (DOF == Degrees of Freedom):
 
-* **Gaze** - The default type which has no own position and orientation, and is based on orientation of head mounted display. Simply put - it is facing always forward where user is facing. These include mobile based VR such as Google Cardboard™ and Samsung Gear VR™.
-* **Screen** - Touch based input source, which is possible in AR. For example on mobile devices with touch screens.
-* **Tracked Pointer** - Input source which has a tracked rotation and optionally tracked position in space. This is usually a grippable device, and is associated with hands, either as hand controllers or tracked hands itself. This can be: Google Daydream™, Gear VR™ Controller, Oculus Touch™, Vive™ controllers and many others.
+* **Gaze** - The default type which has no position and orientation of its own, and is based on the orientation of the head mounted display. Simply put - it is always facing forwards in the direction the user is facing. These include mobile-based VR devices such as Google Cardboard™ and Samsung Gear VR™.
+* **Screen** - Touch based input source, which is possible in AR. For example, on mobile devices with touch screens.
+* **Tracked Pointer** - Input source which has a tracked rotation and an optionally tracked position in space. This is usually a grippable device, and is associated with hands, either as hand controllers or tracked hands itself. This can be: Google Daydream™, Gear VR™ Controller, Oculus Touch™, Vive™ controllers and many others.
 
-Every input source has a Ray with origin where it starts and direction of pointing. WebXR input sources implementation in PlayCanvas supports all input source types without any extra work from a developer. If input source is grippable, then we can render its model based on provided position and rotation.
+Every input source has a ray with an origin where it starts and a direction in which it is pointing. WebXR input source implementation in PlayCanvas supports all input source types without any extra work from a developer. If an input source is grippable, then we can render its model based on the provided position and rotation.
 
 ### XR Tracked Input Devices
 
 The system for the tracked input sources consists of two files:
 
 #### `xr-input-manager.js`
-That tracks added/removed input sources and makes instances of controller entities for them.
-E.g.
+
+This tracks added/removed input sources and makes instances of controller entities for them. For example:
+
 ```javascript
 app.xr.input.on('add', function (inputSource) {
     // new input source is added
@@ -60,7 +61,8 @@ app.xr.input.on('add', function (inputSource) {
 ```
 
 #### `controller.js`
-Is attached to each entity that represents input source. When input source can be gripped, it will enable rendering of a model for a controller.
+
+This is attached to each entity that represents an input source. When an input source can be gripped, it will enable the rendering of a model for a controller.
 
 On each update, it will position and rotate entity based on input source position and rotation:
 
@@ -72,7 +74,7 @@ if (inputSource.grip) {
 }
 ```
 
-Additionally it tracks primary action of input source that allows user to trigger `select` event. And uses Ray to interact with virtual objects. Here is a basic example of how to check if mesh AABB is intersecting with controller's Ray when user used primary action on an input source.
+Additionally, it tracks the primary action of an input source that allows the user to trigger the `select` event. And uses a ray to interact with virtual objects. Here is a basic example of how to check if a mesh AABB is intersecting with controller's ray when the user uses the primary action on an input source.
 
 ```javascript
 inputSource.on('select', function() {
@@ -87,14 +89,14 @@ inputSource.on('select', function() {
 
 ### Ray Picking
 
-The Ray - is a way of pointing in XR environments. Either gaze, screen or laser pointer style input sources, they all have a ray with origin and direction of pointing.
+The Ray is a way of pointing in XR environments. Either gaze, screen or laser pointer-style input sources, they all have a ray with an origin and a direction.
 
-In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in scene. Ray, position and rotation on input source are in XR session space, but if we transform camera by ancestors, then we need to inherit that transformation on ray, position and rotation.
+In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in the scene. Ray, position and rotation of an input source are in XR session space, but if we transform the camera by ancestors, then we need to inherit that transformation on the ray, position and rotation.
 
 The controller fires the following events to the entities that it interacts with:
 
-* `controller:hover:off` - User was pointing at the entity last frame and is no longer this frame
-* `controller:hover:on` - User was pointing at the entity last frame and is no longer this
+* `controller:hover:off` - User was pointing at the entity last frame and is no longer doing so this frame
+* `controller:hover:on` - User was not pointing at the entity last frame and is doing so this frame
 * `controller:button:down` - User starts primary action when pointing at an entity
 * `controller:button:up` - User ends primary action when pointing at an entity
 * `controller:button:click` - User "clicked" with primary action when pointing at an entity
@@ -121,7 +123,7 @@ This is all packaged in `shape.js` which are attached to the interactive entitie
 
 `shape.js` supports [Spheres][5], [Axis Aligned Boxes][6] and [Oriented Boxes][7] using the world position, world orientation and local scale to construct the Shape.
 
-Once the `shape.js` component has been added to the entity, the entity is now an object that can be interacted with `controller.js` and can listen for the events listed above.
+Once the `shape.js` script has been added to the entity, the entity is now an object that can be interacted with `controller.js` and can listen for the events listed above.
 
 Taking the *PlayCanvas Cube* entity as an example:
 
