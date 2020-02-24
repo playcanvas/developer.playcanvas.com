@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Different style of XR experience, might have different reference space, in which position and rotation of virtual objects related to real world. Refer to [pc.XRSPACE_*][1] for more information.
+Different styles of XR experience might have different reference spaces, in which position and rotation of virtual objects relate to the real world. Refer to [pc.XRSPACE_*][1] for more information.
 
 ## Seated VR
 
@@ -20,7 +20,7 @@ Suitable reference spaces: `pc.XRSPACE_LOCALFLOOR`, `pc.XRSPACE_BOUNDEDFLOOR`, `
 
 ## Augmented Reality
 
-Augmented Reality allows blending real world with virtual imagery, either by composing rendered buffer over camera feed or with special projection of rendered buffer on see through glasses. Usually it is provided with spatial tracking relative to the real world environment.
+Augmented Reality allows blending the real world with virtual imagery, either by composing a rendered buffer over the camera feed or with special projection of a rendered buffer on see-through glasses. Usually it is provided with spatial tracking relative to the real world environment.
 
 Suitable reference space: `pc.XRSPACE_VIEWER`.
 
