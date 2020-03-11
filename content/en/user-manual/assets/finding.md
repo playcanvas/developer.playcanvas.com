@@ -18,15 +18,14 @@ Asset marketplaces are online libraries of content that you can download, either
     <tr><td><a href="http://www.3dmodels-textures.com/">3D Models Textures</a></td><td></td><td>&#x2713;</td><td>&#x2713;</td></tr>
     <tr><td><a href="http://www.blendswap.com/">BlendSwap</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="http://www.cgtrader.com/">CGTrader</a></td><td></td><td>&#x2713;</td><td></td></tr>
-    <tr><td><a href="http://www.frogames.net/">Fro Games</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="https://www.gamedevmarket.net?ally=O0I9alFp">Game Dev Market</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
+    <tr><td><a href="https://gamesounds.xyz/">GameSounds.xyz</a></td><td></td><td></td><td>&#x2713;</td></tr>
+    <tr><td><a href="https://kenney.nl/">Kenney</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
     <tr><td><a href="http://www.mixamo.com/">Mixamo</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="http://www.playonloop.com/music-loops-category/videogame/">PlayOnLoop</a></td><td></td><td></td><td>&#x2713;</td></tr>
-    <tr><td><a href="http://www.propsplanet.com/">Props Planet</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="http://www.opengameart.org/">Open Game Art</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
     <tr><td><a href="http://www.soundbible.com/">Sound Bible</a></td><td></td><td></td><td>&#x2713;</td></tr>
     <tr><td><a href="http://www.turbosquid.com/">Turbosquid</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
-    <tr><td><a href="http://www.yobi3d.com/">Yobi3D</a></td><td></td><td>&#x2713;</td><td></td></tr>
 </table>
 
 ## Procedural Generation Tools
