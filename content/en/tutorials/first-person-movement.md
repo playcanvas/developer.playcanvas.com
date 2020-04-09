@@ -19,7 +19,7 @@ The script below performs the following functions:
 * Update a camera entity from the mouse input
 * Apply forces to move the player entity around the scene
 
-Note, the player's velocity is never set directly but he is moved by apply forces. 
+Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3]. 
 
 On the rigidbody component, we also have the following values set in the Editor Inspector:
 * To limit the maximum velocity, we have linear damping applied that stops the player from sliding after the player has released input keys.
@@ -144,3 +144,4 @@ FirstPersonMovement.prototype._createCamera = function () {
 
 [1]: https://playcanvas.com/project/405842
 [2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg
+[3]: https://developer.playcanvas.com/en/api/pc.RigidBodyComponent.html#applyForce
