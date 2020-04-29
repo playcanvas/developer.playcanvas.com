@@ -69,8 +69,8 @@ On each update, it will position and rotate entity based on input source positio
 ```javascript
 if (inputSource.grip) {
     entity.model.enabled = true;
-    entity.setLocalPosition(inputSource.position);
-    entity.setLocalRotation(inputSource.rotation);
+    entity.setPosition(inputSource.getPosition());
+    entity.setRotation(inputSource.getRotation());
 }
 ```
 
@@ -78,7 +78,10 @@ Additionally, it tracks the primary action of an input source that allows the us
 
 ```javascript
 inputSource.on('select', function() {
-    if (mesh.aabb.intersectsRay(inputSource.ray)) {
+    // set ray to match input source
+    ray.set(inputSource.getOrigin(), inputSource.getDirection());
+    // check for intersection
+    if (mesh.aabb.intersectsRay(ray)) {
         // use triggered primary action
         // on a virtual object
     }
@@ -91,7 +94,7 @@ inputSource.on('select', function() {
 
 The Ray is a way of pointing in XR environments. Either gaze, screen or laser pointer-style input sources, they all have a ray with an origin and a direction.
 
-In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in the scene. Ray, position and rotation of an input source are in XR session space, but if we transform the camera by ancestors, then we need to inherit that transformation on the ray, position and rotation.
+In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in the scene. Originally ray, position and rotation of an input source are in XR session space, but if we transform the XR camera by ancestors, then ray, position and rotation will automatically inherit such offset transformations. So ray and grip transforms are in XR camera parents transformation space.
 
 The controller fires the following events to the entities that it interacts with:
 
@@ -149,11 +152,13 @@ Where the core logic (in this case, rotate the cube left) of the entity is on th
 
 E.g.
 ```javascript
-var ray = inputSource.ray;
+// update ray
+ray.set(inputSource.getOrigin(), inputSource.getDirection());
+// check for intersections
 var hitEntity = app.shapeWorld.raycast(ray);
 if (hitEntity) {
-    // Ray has intersected with a Shape
-    // and hitEntity is the associated entity for that Shape
+    // ray has intersected with a shape
+    // and hitEntity is the associated entity for that shape
 }
 ```
 

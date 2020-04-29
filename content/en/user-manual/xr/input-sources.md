@@ -10,7 +10,7 @@ An [XrInputSource][1] represents an input mechanism that allows the user to inte
 
 ## Accessing Input Sources
 
-A list of input sources is available on the [XrInput][3] manager which is created by the [XrManager][4]:
+A list of input sources is available on the [XrInput][2] manager which is created by the [XrManager][3]:
 
 ```javascript
 var inputSources = app.xr.input.inputSources;
@@ -51,7 +51,7 @@ app.xr.input.on('select', function (inputSource) {
 
 ## Ray
 
-Each input source has a [Ray][2] which has an origin where it points from, and a direction in which it is pointing. A ray is transformed in XR local space, and if camera ancestors are transformed, then the ray should be transformed accordingly. Some examples of input sources might be, but not limited to:
+Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed in XR camera parents space. Some examples of input sources might be, but not limited to:
 
  * Gaze-based input, such as a mobile device which is inserted into a Google Cardboard™ style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
  * Screen-based input. This might be available on mobile devices in Augmented Reality session types, where the user can interact with the virtual world by touchscreen.
@@ -60,28 +60,30 @@ Each input source has a [Ray][2] which has an origin where it points from, and a
 Here is an example illustrating how to check whether a ray has intersected with the bounding-box of a mesh:
 
 ```javascript
-if (meshInstance.aabb.intersectsRay(inputSource.ray)) {
+// update ray with input source data
+ray.set(inputSource.getOrigin(), inputSource.getDirection());
+// check if mesh bounding box intersects with ray
+if (meshInstance.aabb.intersectsRay(ray)) {
     // input source is pointing on a mesh
 }
 ```
 
 ## Grip
 
-Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are calculated in XR session space. If the XR camera's parent is transformed, then the controller entity should be in the same parent, or inherit transformation accordingly:
+Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are calculated in XR camera parents space.
 
 ```javascript
 if (inputSource.grip) {
     // can render device model
-
     // position and rotate associated entity with model
-    entity.setLocalPosition(inputSource.position);
-    entity.setLocalRotation(inputSource.rotation);
+    entity.setPosition(inputSource.getPosition());
+    entity.setRotation(inputSource.getRotation());
 }
 ```
 
 ## GamePad
 
-If the platform supports the [WebXR Gamepads Module][5], then an input source might have an associated [GamePad][6] object with it, which can be accessed to get buttons, triggers, axes and other input hardware states:
+If the platform supports the [WebXR Gamepads Module][4], then an input source might have an associated [GamePad][5] object with it, which can be accessed to get buttons, triggers, axes and other input hardware states:
 
 ```javascript
 var gamepad = inputSource.gamepad;
@@ -94,7 +96,7 @@ if (gamepad) {
 
 ## Profiles
 
-Each input source might have a list of strings describing a type of input source, which is described in a [profile registry][7]. Based on this, you can figure out what type of model to render for handheld device or what capabilities it might have. Additionally, the profile registry lists gamepad mapping details, such as buttons and axes.
+Each input source might have a list of strings describing a type of input source, which is described in a [profile registry][6]. Based on this, you can figure out what type of model to render for handheld device or what capabilities it might have. Additionally, the profile registry lists gamepad mapping details, such as buttons and axes.
 
 ```javascript
 if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
@@ -104,9 +106,8 @@ if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
 
 
 [1]: /api/pc.XrInputSource.html
-[2]: /api/pc.Ray.html
-[3]: /api/pc.XrInput.html
-[4]: /api/pc.XrManager.html
-[5]: https://www.w3.org/TR/webxr-gamepads-module-1/
-[6]: https://w3c.github.io/gamepad/
-[7]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
+[2]: /api/pc.XrInput.html
+[3]: /api/pc.XrManager.html
+[4]: https://www.w3.org/TR/webxr-gamepads-module-1/
+[5]: https://w3c.github.io/gamepad/
+[6]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
