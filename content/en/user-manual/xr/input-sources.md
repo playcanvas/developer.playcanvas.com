@@ -51,7 +51,7 @@ app.xr.input.on('select', function (inputSource) {
 
 ## Ray
 
-Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed in XR camera parents space. Some examples of input sources might be, but not limited to:
+Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed in XR camera parent's space. Some examples of input sources might be, but not limited to:
 
  * Gaze-based input, such as a mobile device which is inserted into a Google Cardboard™ style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
  * Screen-based input. This might be available on mobile devices in Augmented Reality session types, where the user can interact with the virtual world by touchscreen.
@@ -70,7 +70,7 @@ if (meshInstance.aabb.intersectsRay(ray)) {
 
 ## Grip
 
-Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are calculated in XR camera parents space.
+Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are calculated in XR camera parent's space.
 
 ```javascript
 if (inputSource.grip) {
