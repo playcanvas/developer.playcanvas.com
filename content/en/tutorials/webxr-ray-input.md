@@ -94,7 +94,7 @@ inputSource.on('select', function() {
 
 The Ray is a way of pointing in XR environments. Either gaze, screen or laser pointer-style input sources, they all have a ray with an origin and a direction.
 
-In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in the scene. Originally ray, position and rotation of an input source are in XR session space, but if we transform the XR camera by ancestors, then ray, position and rotation will automatically inherit such offset transformations. So ray and grip transforms are in XR camera parents transformation space.
+In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in the scene. Originally, the ray, position and rotation of an input source are in XR session space but if we transform the XR camera by ancestors, then the ray, position and rotation will automatically inherit such offset transformations. So the ray and grip transforms are in the XR camera parent's transformation space.
 
 The controller fires the following events to the entities that it interacts with:
 
