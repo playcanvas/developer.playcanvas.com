@@ -76,9 +76,9 @@ if (inputSource.grip) {
 
 3D UI is created using [Button][6] and [Element][7] components. Using combination of both, we can create interactive buttons in 3D space.
 
-Creating 3D UI for XR environment is exactly same as creating 3D UI for interaction with mouse/touch in non-XR environment. More read on creating [User Interfaces][3].
+Creating a 3D UI for an XR environment is exactly the same as creating a 3D UI for mouse/touch interaction in a non-XR environment. Read more on creating [User Interfaces][3].
 
-By default each XrInputSource has `elementInput` property enabled. Meaning it will be interacting with Button component just like mouse or touch, but using its associated 3D ray. Each input source has a ray that has an [origin][8] and [direction][9]. In this tutorial we visualize input source ray:
+By default, each XrInputSource has an `elementInput` property enabled. This means it will interact with Button components just like mouse or touch input, but using its associated 3D ray. Each input source has a ray that has an [origin][8] and a [direction][9]. In this tutorial, we visualize an input source's ray:
 
 ```javascript
 // set starting point of ray
@@ -92,7 +92,7 @@ app.renderLine(vecA, vecB, color);
 
 ## UI Interaction
 
-In this tutorial, we have two types of buttons: Rotate (button-rotate.js) and Color (button-color.js) buttons. When rotate button is [clicked][10] it will set rotation speed of a cube:
+In this tutorial, we have two types of buttons: Rotate (button-rotate.js) and Color (button-color.js) buttons. When rotate button is [clicked][10], it will set the rotation speed of a cube:
 
 ```javascript
 entity.button.on('click', function() {
@@ -100,9 +100,9 @@ entity.button.on('click', function() {
 });
 ```
 
-When color button is clicked, we change diffuse color of each mesh instance of a cube model.
+When the color button is clicked, we change the diffuse color of each mesh instance of a cube model.
 
-This UI interaction is agnostic to input source: either it originates from VR handheld devices; gaze input of mobile VR; touch on screen in AR environment; as well as classic mouse and touch. So creating trully multi-platform applications and testing is easy.
+This UI interaction is agnostic to input source: either it originates from VR handheld devices; gaze input of mobile VR; on-screen touch in an AR environment; as well as classic mouse and touch. So creating truly multi-platform applications and testing is easy.
 
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
 [2]: /user-manual/xr/using-webxr/
