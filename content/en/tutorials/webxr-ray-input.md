@@ -61,9 +61,9 @@ app.xr.input.on('add', function (inputSource) {
 
 #### `controller.js`
 
-This is attached to each entity that represents input source and has original [XrInputSource][5] associated to it. When an input source can be gripped, it will enable the rendering of a model for a controller.
+This is attached to each entity that represents an input source and has the original [XrInputSource][5] associated with it. When an input source can be gripped, it will enable the rendering of a model for a controller.
 
-On each update, it will position and rotate entity based on input source position and rotation:
+On each update, it will position and rotate the entity based on the input source position and rotation:
 
 ```javascript
 if (inputSource.grip) {
