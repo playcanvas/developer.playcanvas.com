@@ -12,6 +12,6 @@ The information displayed is as follows:
 
 * **GPU** shows the number of milliseconds spent by the GPU rendering the frame
 * **CPU** shows approximate number of milliseconds spent by the CPU
-* **Frame** shows the frame time as passed in by the browser
+* **Frame** shows the browser's frame time as passed in to the requestAnimationFrame() callback
 
 The CPU and GPU graphs display a breakdown of the update and render portion of the frame using red and green respectively.
