@@ -2,7 +2,7 @@
 title: WebXR UI Interaction
 template: tutorial-page.tmpl.html
 tags: vr, input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/4CA52F-image-75.jpg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg
 ---
 
 <iframe allow="xr-spatial-tracking" src="https://playcanv.as/p/TAYVQgU2/"></iframe>
