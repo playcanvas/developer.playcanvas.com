@@ -29,7 +29,8 @@
     "metalsmith-metallic": "2.0.3",
     "metalsmith-permalinks": "2.2.0",
     "metalsmith-static": "0.0.5",
-    "metalsmith-templates": "0.7.0"
+    "metalsmith-templates": "0.7.0",
+    "request": "2.88.2"
   },
   "scripts": {
     "build": "node build.js",
