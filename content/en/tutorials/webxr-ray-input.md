@@ -1,18 +1,17 @@
 ---
-title: WebXR Ray Input
+title: WebXR UI Interaction
 template: tutorial-page.tmpl.html
 tags: vr, input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/4CA52F-image-75.jpg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/TAYVQgU2/"></iframe>
+<iframe allow="xr-spatial-tracking" src="https://playcanv.as/p/TAYVQgU2/"></iframe>
 
 *Click the VR/AR button if you have a VR/AR compatible device/headset.*
 
-This is a WebXR experience that interacts with valid XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Google Cardboard™, Google Daydream™, Samsung Gear VR™ and other VR/AR headsets.
+This is a WebXR experience that provides interaction between UI and XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Oculus Browser, Google Cardboard™, Google Daydream™, Samsung Gear VR™ and other VR/AR headsets.
 
 Let's have a look at the source of the [tutorial project][1].
-
 
 ## Entering VR/AR
 
@@ -26,7 +25,7 @@ button.element.on('click', function() {
     // check support for VR
     if (app.xr.isAvailable(pc.XRTYPE_VR)) {
         // start VR session
-        cameraEntity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
+        cameraEntity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });
 ```
@@ -46,13 +45,13 @@ The level of fidelity for input devices can be broken into the following groups 
 
 Every input source has a ray with an origin where it starts and a direction in which it is pointing. WebXR input source implementation in PlayCanvas supports all input source types without any extra work from a developer. If an input source is grippable, then we can render its model based on the provided position and rotation.
 
-### XR Tracked Input Devices
+### Input Sources
 
 The system for the tracked input sources consists of two files:
 
-#### `xr-input-manager.js`
+#### `controllers.js`
 
-This tracks added/removed input sources and makes instances of controller entities for them. For example:
+This tracks added input sources using [XrInput][4] and makes instances of controller entities for them. For example:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
@@ -62,9 +61,9 @@ app.xr.input.on('add', function (inputSource) {
 
 #### `controller.js`
 
-This is attached to each entity that represents an input source. When an input source can be gripped, it will enable the rendering of a model for a controller.
+This is attached to each entity that represents an input source and has the original [XrInputSource][5] associated with it. When an input source can be gripped, it will enable the rendering of a model for a controller.
 
-On each update, it will position and rotate entity based on input source position and rotation:
+On each update, it will position and rotate the entity based on the input source position and rotation:
 
 ```javascript
 if (inputSource.grip) {
@@ -73,106 +72,45 @@ if (inputSource.grip) {
     entity.setRotation(inputSource.getRotation());
 }
 ```
+## UI
 
-Additionally, it tracks the primary action of an input source that allows the user to trigger the `select` event. And uses a ray to interact with virtual objects. Here is a basic example of how to check if a mesh AABB is intersecting with controller's ray when the user uses the primary action on an input source.
+3D UI is created using [Button][6] and [Element][7] components. Using combination of both, we can create interactive buttons in 3D space.
+
+Creating a 3D UI for an XR environment is exactly the same as creating a 3D UI for mouse/touch interaction in a non-XR environment. Read more on creating [User Interfaces][3].
+
+By default, each XrInputSource has an `elementInput` property enabled. This means it will interact with Button components just like mouse or touch input, but using its associated 3D ray. Each input source has a ray that has an [origin][8] and a [direction][9]. In this tutorial, we visualize an input source's ray:
 
 ```javascript
-inputSource.on('select', function() {
-    // set ray to match input source
-    ray.set(inputSource.getOrigin(), inputSource.getDirection());
-    // check for intersection
-    if (mesh.aabb.intersectsRay(ray)) {
-        // use triggered primary action
-        // on a virtual object
-    }
+// set starting point of ray
+vecA.copy(inputSource.getOrigin());
+// set end point of ray
+vecB.copy(inputSource.getDirection());
+vecB.scale(1000).add(vecA);
+// render line between those two points
+app.renderLine(vecA, vecB, color);
+```
+
+## UI Interaction
+
+In this tutorial, we have two types of buttons: Rotate (button-rotate.js) and Color (button-color.js) buttons. When rotate button is [clicked][10], it will set the rotation speed of a cube:
+
+```javascript
+entity.button.on('click', function() {
+    targetEntity.script.cube.rotateSpeed = rotateSpeed;
 });
 ```
 
-## Interacting with World
+When the color button is clicked, we change the diffuse color of each mesh instance of a cube model.
 
-### Ray Picking
-
-The Ray is a way of pointing in XR environments. Either gaze, screen or laser pointer-style input sources, they all have a ray with an origin and a direction.
-
-In this tutorial, we track each input source and constantly check if it intersects with bounding shapes of pickable objects in the scene. Originally, the ray, position and rotation of an input source are in XR session space but if we transform the XR camera by ancestors, then the ray, position and rotation will automatically inherit such offset transformations. So the ray and grip transforms are in the XR camera parent's transformation space.
-
-The controller fires the following events to the entities that it interacts with:
-
-* `controller:hover:off` - User was pointing at the entity last frame and is no longer doing so this frame
-* `controller:hover:on` - User was not pointing at the entity last frame and is doing so this frame
-* `controller:button:down` - User starts primary action when pointing at an entity
-* `controller:button:up` - User ends primary action when pointing at an entity
-* `controller:button:click` - User "clicked" with primary action when pointing at an entity
-
-In this tutorial, we have the `button-type-toggle.js` listen to the `controller:hover:off`, `controller:hover:on` and `controller:button:click` events like so:
-
-```javascript
-entity.on('controller:button:click', function () {
-    // entity was clicked with a controller
-});
-```
-
-For more information on using events, please refer to the [API reference][14].
-
-As this is a scalable experience, it is catered for the lowest common dominator between input sources and therefore it is assumed there is only one primary action for interaction.
-
-However, it is simple to modify or expand on top if you only wanted to support a particular controller like the Oculus Rift Touch™.
-
-### Shapes
-
-We use the [PlayCanvas Shapes][4] to approximate the physical volume and they are added to a global collection that can be tested against.
-
-This is all packaged in `shape.js` which are attached to the interactive entities and are automatically added to the global collection in `shape-world.js` that can be queried against by the rest of the application.
-
-`shape.js` supports [Spheres][5], [Axis Aligned Boxes][6] and [Oriented Boxes][7] using the world position, world orientation and local scale to construct the Shape.
-
-Once the `shape.js` script has been added to the entity, the entity is now an object that can be interacted with `controller.js` and can listen for the events listed above.
-
-Taking the *PlayCanvas Cube* entity as an example:
-
-![PlayCanvcs Cube][8]
-
-The Shape is set to be an OBB ([Oriented Box][7]) with local scale of the entity is 1, 1, 1 so it will construct a Oriented Box that is of size, 1 by 1 by 1 unit.
-
-In the case where the Shape and visual representation are of different scales such as the *Rotate Left* entity, it should have the following hierarchy:
-
-![Rotate Left][10]
-
-Where the core logic (in this case, rotate the cube left) of the entity is on the parent entity (1), the Shape as a child with the local scale set to physical volume (2) and the visual representation as a child (3).
-
-'Use Parent' in the `shape.js` component is ticked so that `controller.js` events are fired at the parent entity where the core logic for the object is rather than the entity that the `shape.js` component is attached to.
-
-![Shape Use Parent][11]
-
-`shape.js` can also be used to create a compound of shapes to represent one entity simply by adding more Shape entities to the parent entity.
-
-### Shape World
-
-`shape-world.js` contains the collection of Shapes in the world and makes it globally accessible. Through this script component, we can raycast into the world and find the closest intersected entity to the ray's origin.
-
-E.g.
-```javascript
-// update ray
-ray.set(inputSource.getOrigin(), inputSource.getDirection());
-// check for intersections
-var hitEntity = app.shapeWorld.raycast(ray);
-if (hitEntity) {
-    // ray has intersected with a shape
-    // and hitEntity is the associated entity for that shape
-}
-```
+This UI interaction is agnostic to input source: either it originates from VR handheld devices; gaze input of mobile VR; on-screen touch in an AR environment; as well as classic mouse and touch. So creating truly multi-platform applications and testing is easy.
 
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
-[2]: http://developer.playcanvas.com/en/user-manual/vr/using-webvr/
-[3]: http://developer.playcanvas.com/en/api/pc.Entity.html#forward
-[4]: https://github.com/playcanvas/engine/tree/master/src/shape
-[5]: http://developer.playcanvas.com/en/api/pc.BoundingSphere.html
-[6]: http://developer.playcanvas.com/en/api/pc.BoundingBox.html
-[7]: http://developer.playcanvas.com/en/api/pc.OrientedBox.html
-[8]: /images/tutorials/webvr-ray-input/playcanvas-cube.jpg
-[9]: /images/tutorials/webvr-ray-input/input-vr.jpg
-[10]: /images/tutorials/webvr-ray-input/rotate-left.jpg
-[11]: /images/tutorials/webvr-ray-input/shape-use-parent.jpg
-[12]: https://developer.oculus.com/webvr/
-[13]: https://developer3.oculus.com/documentation/vrweb/latest/concepts/carmel-launching-content/
-[14]: http://developer.playcanvas.com/en/api/pc.events.html
+[2]: /user-manual/xr/using-webxr/
+[3]: /user-manual/user-interface/
+[4]: /api/pc.XrInput.html
+[5]: /api/pc.XrInputSource.html
+[6]: /api/pc.ButtonComponent.html
+[7]: /api/pc.ElementComponent.html
+[8]: /api/pc.XrInputSource.html#getOrigin
+[9]: /api/pc.XrInputSource.html#getDirection
+[10]: /api/pc.ButtonComponent.html#event:click
