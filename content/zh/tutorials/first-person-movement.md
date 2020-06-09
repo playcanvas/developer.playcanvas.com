@@ -19,7 +19,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 注意，不要直接设置玩家的速度，而是通过应用力移动。 为了限制最大速度，我们在刚体部件上施加线性阻尼。
 
-~~~javascript~~~
+```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');
 
 // optional, assign a camera entity, otherwise one is created
@@ -129,7 +129,7 @@ FirstPersonMovement.prototype._createCamera = function () {
     this.entity.addChild(this.camera);
     this.camera.translateLocal(0, 0.5, 0);
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405842
 

@@ -16,7 +16,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 実行時にカメラを変更する最初の方法は、カメラのコンポーネントの属性の値を変更することです。これは他のコンポーネントの属性を設定するのと同じように
 ComponentSystemの`set()` と `get()`メソッドを使用して行います。
 
-~~~javascript~~~
+```javascript
 var Zoom = pc.createScript('zoom');
 
 // initialize code called once per entity
@@ -52,7 +52,7 @@ Zoom.prototype.update = function(dt) {
     this.entity.camera.fov = fov;
 };
 
-~~~
+```
 
 このサンプルでは、スペースバーを押すと視野の変化をトリガーします。`var fov = this.entity.camera.fov`行では、スクリプトが追加されているエンティティのカメラコンポーネントの`fov`の値を`get()`します。
 
@@ -69,7 +69,7 @@ Zoom.prototype.update = function(dt) {
 
 カメラでインタラクティビティを作成する一つの方法は、複数のカメラを切り替えることです。シーンに複数のカメラエンティティを追加することで実現することができます。一つのみがアクティベートされるようにして、スクリプト内で、実行時のカメラを変更します。
 
-~~~javascript~~~
+```javascript
 var CameraManager = pc.createScript('cameraManager');
 
 // initialize code called once per entity
@@ -104,7 +104,7 @@ CameraManager.prototype.update = function(dt) {
         this.setCamera('Right');
     }
 };
-~~~
+```
 
 このサンプルでは、矢印キーを押すと、左または右のカメラエンティティ(現在読み込まれているシーン内か)を現在のカメラに設定して、スペースキーが中央カメラを起動します。
 

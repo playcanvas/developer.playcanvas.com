@@ -35,25 +35,25 @@ PlayCanvasは物理エンジンを搭載しています。物理エンジンは�
 
 ボディは力や衝撃に反応して動きます。力は一定の期間にボディに対して加えられますが、衝撃は瞬時に加えられます。いくつかの例をあげます。床の上で重い物を押す場合は、一定の時間にわたって力を加えます：
 
-~~~javascript~~~
+```javascript
     update: function (dt) {
         // While the right arrow key is pressed, apply a force to the right
         if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
             this.entity.rigidbody.applyForce(10, 0, 0);
         }
     }
-~~~
+```
 
 大砲から砲弾を発射する場合は、単一の衝撃を加えます：
 
-~~~javascript~~~
+```javascript
     update: function (dt) {
         // If the space bar was pressed, apply an impulse up and to the right
         if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
             this.entity.rigidbody.applyImpulse(10, 10, 0);
         }
     }
-~~~
+```
 
 ## リジッドボディのテレポート
 

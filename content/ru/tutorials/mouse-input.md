@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 Взгляните на сцену 'Mouse Input' в [уроке][1]. Исходный код из файла mouse.js:
 
-~~~javascript~~~
+```javascript
 var Mouse = pc.createScript('mouse');
 
 Mouse.attributes.add('redMaterial', {
@@ -73,23 +73,23 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
-~~~
+```
 
 ### Доступ к мыши
 
 Управление мышью регулируется объектом  `pc.Mouse`. [Фреймворк][2] предоставляет экземпляр класса [приложение][3], который доступен для всех сценариев объектов как:
 
-~~~javascript~~~
+```javascript
 this.app.mouse
-~~~
+```
 
 ### Отключение меню правой кнопки мыши
 
 В конструкторе нашего сценария для объекта мы отключаем меню, чтобы остановить его появление при нажатии правой кнопки мыши.
 
-~~~javascript~~~
+```javascript
 this.app.mouse.disableContextMenu();
-~~~
+```
 
 ### Привязка к событиям
 
@@ -97,10 +97,10 @@ this.app.mouse.disableContextMenu();
 
 Отметьте, в метод для связки событий on() мы передаём `this`. Третий аргумент в объекте используется для события обратного вызова.
 
-~~~javascript~~~
+```javascript
 this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
-~~~
+```
 
 События доступные для `pc.Mouse`:
 

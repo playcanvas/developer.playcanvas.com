@@ -15,18 +15,18 @@ It is also important to be aware of the different limits for differing light pro
 
 ##The lighting commands
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
-~~~
+```
 This line toggles on and off the light component of the 'spot' entity.
 
-~~~javascript~~~
+```javascript
 this.color1 = new pc.Color(1, 1, 1);
-~~~
+```
 A new color array is declared, the first three values affect red, green and blue values respectively.
-~~~javascript~~~
+```javascript
 var s = Math.abs(Math.sin(1 + this.timer));
 var r = 1-s/2;
 var g = s-0.2;
@@ -34,7 +34,7 @@ var b = 0.55+s/2;
 this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
-~~~
+```
 These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
 
 <div class="alert alert-warning">
@@ -45,7 +45,7 @@ These lines assign values to r, g and b variables based on a sin wave and then a
 We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
 
 The full code used for the above PlayCanvas app is as follows.
-~~~javascript~~~
+```javascript
 var LightHandler = pc.createScript('lightHandler');
 
 // initialize code called once per entity
@@ -114,7 +114,7 @@ LightHandler.prototype.pivot = function () {
     this.pivot1.rotate(0, 2, 0);
     this.pivot2.rotate(0, -3, 0);
 };
-~~~
+```
 
 [1]: /engine/api/stable/symbols/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights

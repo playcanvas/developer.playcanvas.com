@@ -13,7 +13,7 @@ position: 2
 
 [playcanvas.comに公開][2]すると、ゲームにURLが割り当てられます。別のページにアプリケーションを組み込むには、このURLをiframeのsrcプロパティとして含みます。
 
-~~~html~~~
+```html
 <html>
     <head>
         <title>My Great Game</title>
@@ -22,7 +22,7 @@ position: 2
         <iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
     </body>
 </html>
-~~~
+```
 
 ## 自身のサーバでセルフホスティング
 

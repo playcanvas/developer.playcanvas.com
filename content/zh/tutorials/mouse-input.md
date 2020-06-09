@@ -13,7 +13,7 @@ PlayCanvas引擎中的鼠标处理由`pc.Mouse`对象提供。 Mouse 对象提�
 
 看看[教学项目] [1]。 下面是来自mouse.js的代码：
 
-~~~javascript~~~
+```javascript
 var Mouse = pc.createScript('mouse');
 
 Mouse.attributes.add('redMaterial', {
@@ -73,23 +73,23 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
-~~~
+```
 
 ### 访问鼠标
 
 鼠标控制由`pc.Mouse`对象管理。 [框架] [2]在[应用程序] [3]上提供了一个这样的实例，它对所有脚本对象都是可用的：
 
-~~~javascript~~~
+```javascript
 this.app.mouse
-~~~
+```
 
 ### 禁用右键单击菜单
 
 在我们的脚本对象的构造函数中，我们禁用右键菜单，以实现我们点击鼠标右键时禁止它弹出。
 
-~~~javascript~~~
+```javascript
 this.app.mouse.disableContextMenu();
-~~~
+```
 
 ### 绑定事件
 
@@ -97,10 +97,10 @@ this.app.mouse.disableContextMenu();
 
 注意我们是如何将`this`传递给on()方法以绑定到事件的。 第三个参数是在事件回调中用作“this”的对象。
 
-~~~javascript~~~
+```javascript
 this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
-~~~
+```
 
 `pc.Mouse`可用的事件有:
 

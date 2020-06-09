@@ -29,28 +29,28 @@ The Web Audio API allows you to create various audio nodes which can be connecte
 
 In this example we are using a [Convolver node][6]. In our application script we are creating that node like so:
 
-~~~javascript~~~
+```javascript
 this.convolver = this.app.systems.sound.context.createConvolver();
-~~~
+```
 
 We then use a bunch of audio samples as impulse responses for the convolver as explained [here][7]. Each audio sample is an audio asset and depending on which button you press we use that asset and assign its internal buffer to the convolver buffer like so:
 
-~~~javascript~~~
+```javascript
 var asset = this[assetName];
 this.convolver.buffer = asset.resource.buffer;
-~~~
+```
 
 We then connect the convolver to our sound slot like so:
 
-~~~javascript~~~
+```javascript
 this.entity.sound.slot('speech').setExternalNodes(this.convolver);
-~~~
+```
 
 If you click on the button called 'None' we clear all the effects which basically means calling ```clearExternalNodes``` on the slot:
 
-~~~javascript~~~
+```javascript
 this.entity.sound.slot('speech').clearExternalNodes();
-~~~
+```
 
 If you have a bigger graph of Audio Nodes and you want to connect it to a slot you need to supply the first node and the last node of the graph in ```setExternalNodes```. That way PlayCanvas can correctly connect the last node to the speakers.
 

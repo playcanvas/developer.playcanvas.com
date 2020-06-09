@@ -13,7 +13,7 @@ Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. Th
 
 Take a look at the [tutorial project][1]. Here is the code from mouse.js:
 
-~~~javascript~~~
+```javascript
 var Mouse = pc.createScript('mouse');
 
 Mouse.attributes.add('redMaterial', {
@@ -73,23 +73,23 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
-~~~
+```
 
 ### Accessing the mouse
 
 Mouse control is managed by the `pc.Mouse` object. The [framework][2] provides an instance of this on the [application app][3] which is available to all script objects as:
 
-~~~javascript~~~
+```javascript
 this.app.mouse
-~~~
+```
 
 ### Disabling the right-click menu
 
 In the constructor for our script object we disable the right-click menu to stop it popping up when we click the right mouse button.
 
-~~~javascript~~~
+```javascript
 this.app.mouse.disableContextMenu();
-~~~
+```
 
 ### Binding to events
 
@@ -97,10 +97,10 @@ The `pc.Mouse` object allows you to listen to different events corresponding to 
 
 Notice how we also pass `this` into the on() method for binding to events. This third argument is the object that is used as `this` in the event callback.
 
-~~~javascript~~~
+```javascript
 this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
-~~~
+```
 
 Events available on `pc.Mouse` are:
 

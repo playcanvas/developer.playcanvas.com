@@ -30,7 +30,7 @@ On Windows:
 To serve the site locally:
 
     cd developer.playcanvas.com
-    ./serve.sh
+    npm run serve
 
 On Windows:
 

@@ -19,7 +19,7 @@ position: 3
 
 このファイルの名前はmanifest.webappである必要があります。また、展開およびエクスポートされたPlayCanvasゲームのルートフォルダに作成される必要があります。マニフェストの例 ([Dungeon Fury][4] ゲームから)を以下に示します：
 
-~~~javascript~~~
+```javascript
 {
     "name": "Dungeon Fury",
     "version": "1.0.2",
@@ -39,7 +39,7 @@ position: 3
     "fullscreen": true,
     "orientation": "portrait-primary"
 }
-~~~
+```
 
 このマニフェスト形式に関する完成されたドキュメントは[MDN][5]からご確認ください。
 

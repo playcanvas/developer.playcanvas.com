@@ -15,7 +15,7 @@ handling keycodes and charcodes.
 
 Take a look at the keyboard input Scene in the [tutorials project][1]. Here is the code for the tutorial:
 
-~~~javascript~~~
+```javascript
 var KeyboardHandler = pc.createScript('keyboardHandler');
 
 KeyboardHandler.attributes.add('redMaterial', {
@@ -92,7 +92,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
         this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
-~~~
+```
 
 There are two ways of detecting keyboard input. The first is done in the update method of your scripts. Use `isPressed()` and `wasPressed()` and check whether a key is currently pressed or has just been pressed. The second uses events to respond to a key press or release as it happens.
 

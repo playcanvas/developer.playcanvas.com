@@ -13,7 +13,7 @@ Try it from the Editor in the [tutorial project.][2]
 
 This script below is a very simple level generation program. It takes two Entities that have been setup in the Editor: 'Grass' and 'House' and uses them as tiles for a grid based level. The level is created by randomly choosing one of the tiles, cloning the tile to create a new Entity, then placing the new Entity at the correct grid position.
 
-~~~javascript~~~
+```javascript
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
@@ -54,7 +54,7 @@ Generate.prototype.initialize = function() {
         }
     }
 };
-~~~
+```
 
 [1]: http://developer.playcanvas.com/en/api/pc.Entity.html#clone
 [2]: https://playcanvas.com/project/405864

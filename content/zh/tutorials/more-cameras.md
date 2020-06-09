@@ -15,7 +15,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 你能够在运行时修改摄像机的第一种方法，是改变摄像机组件上的值。你可以像编辑其它组建一样通过组件系统中的`set()` 和 `get()`方法做到这点。
 
-~~~javascript~~~
+```javascript
 var Zoom = pc.createScript('zoom');
 
 // initialize code called once per entity
@@ -51,7 +51,7 @@ Zoom.prototype.update = function(dt) {
     this.entity.camera.fov = fov;
 };
 
-~~~
+```
 
 在此示例中，按空格键触发视野的变化。 我们通过 `var fov = this.entity.camera.fov` 行 `get()` 来自该脚本附加到的实体的相机组件的`fov'的值。
 
@@ -67,7 +67,7 @@ Zoom.prototype.update = function(dt) {
 
 您可能想要与相机创建交互性的另一种方法是通过在多个相机之间切换。 你可以通过添加几个相机实体到你的场景来实现这一点; 确保只有一个被激活; 然后在运行时更改脚本中的当前相机
 
-~~~javascript~~~
+```javascript
 var CameraManager = pc.createScript('cameraManager');
 
 // initialize code called once per entity
@@ -102,7 +102,7 @@ CameraManager.prototype.update = function(dt) {
         this.setCamera('Right');
     }
 };
-~~~
+```
 
 在此示例中，按箭头键将当前摄像机设置为左侧或右侧摄像机实体(来自当前加载的场景中的那些)，空格键激活中央摄像机。
 

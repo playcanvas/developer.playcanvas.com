@@ -19,7 +19,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 基于碰撞的拣选使用碰撞组件向需要拣选的每个实体添加一个形状。 然后，我们使用刚体系统中的 [raycastFirst()][2]方法将射线从鼠标单击位置触发到屏幕中，看看是否碰到碰撞组件。 如果是，则该实体被“选择”。
 
-~~~javascript~~~
+```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
 
 // initialize code called once per entity
@@ -37,13 +37,13 @@ PickerRaycast.prototype.onSelect = function (e) {
         pickedEntity.script.pulse.pulse();
     }
 };
-~~~
+```
 
 ## 帧缓冲选择
 
 基于帧缓冲区的拾取使用 [pc.Picker][3] 类将场景渲染到内部缓冲区。 当点击鼠标时，鼠标位置处的缓冲区的颜色用于确定选择了哪个网格实例。 这与基于碰撞的方法相比具有一些优点和缺点。 优点包括：使用矩形一次选择场景中的许多项目，此方法不需要在您的项目中包括和活动的物理库。 主要的缺点是，这种方式会使用`readPixels`方法停止图形管道。 这可能会对移动设备造成严重的渲染性能影响。
 
-~~~javascript~~~
+```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
 
 // initialize code called once per entity
@@ -84,7 +84,7 @@ PickerFramebuffer.prototype.onSelect = function (event) {
         }
     }
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405856
 [2]: http://developer.playcanvas.com/en/api/pc.RigidBodyComponentSystem.html#raycastFirst

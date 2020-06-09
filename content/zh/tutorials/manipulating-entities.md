@@ -31,37 +31,37 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 获取实体的位置是直截了当的
 
-~~~js~~~
+```javascript
 // Get the entity's position relative to the coordinate system of the entity's parent
 var lp = entity.getLocalPosition();
 
 // Get the entity's position in world space
 var wp = entity.getPosition();
-~~~
+```
 
 这些方法均返回一个`pc.Vec3` (数组形式[x,y,z]的向量)值。
 
 设置实体的位置也同样简单。
 
-~~~js~~~
+```javascript
 // Set the entity's position relative to the coordinate system of the entity's parent
 entity.setLocalPosition(x, y, z);
 
 // Set the entity's position in world space
 entity.setPosition(x, y, z);
-~~~
+```
 
 ### 移动实体
 
 要移动实体，您可以直接把位置信息灌入实体，或者可以使用帮助函数translate和translateLocal进行操作。
 
-~~~js~~~
+```javascript
 // Translate the entity 1 unit down the positive x axis of world space
 entity.translate(1, 0, 0);
 
 // Translate the entity 1 unit down the entity's local z axis
 entity.translateLocal(0, 0, 1);
-~~~
+```
 
 ## 方向
 
@@ -69,13 +69,13 @@ entity.translateLocal(0, 0, 1);
 
 设置绝对旋转可以使用[欧拉角] [1]或[四元数] [2]。 维基百科对这两个数学表示的旋转的解释有点难以理解，但这个理念的基础很容易理解。 以下是重要的部分:
 
-** 欧拉角 **
+**欧拉角**
 
 *欧拉角是以*坐标系*的X，Y和Z轴为中心的三个以度为单位的旋转量组成的
 *如果俯视坐标系轴，正欧拉角将导致围绕该轴的逆时针旋转
 *欧拉角很容易理解，因为你可以在脑中想象他们所产生的影响。
 
-** 四元数**
+**四元数**
 
 *四元数被存储为4个数字，并能够表示3D空间中的任何方向
 *它们难以直接设置，但可以从欧拉角，旋转矩阵或轴角度转换成
@@ -83,7 +83,7 @@ entity.translateLocal(0, 0, 1);
 
 当使用脚本操作一个实体时，你更可能愿意通过欧拉角来设置实体的方向。举个例子：
 
-~~~js~~~
+```javascript
 // Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
 // system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
 entity.setLocalEulerAngles(30, 45, 60);
@@ -91,10 +91,10 @@ entity.setLocalEulerAngles(30, 45, 60);
 // Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
-~~~
+```
 另一方面，如果您想要以四元数形式设置实体的旋转，则可以使用以下函数：
 
-~~~js~~~
+```javascript
 // Create an identity rotation
 var q = new pc.Quat();
 // Set the entity to have the same rotation as its parent - equivalent to
@@ -104,39 +104,39 @@ entity.setLocalRotation(q);
 // Set the entity to have no rotation with respect to the world space coordinate
 // system  - equivalent to entity.setEulerAngles(0, 0, 0)
 entity.setRotation(q);
-~~~
+```
 
 要以增量方式旋转实体，可以使用rotate相对于世界空间轴旋转实体，或者使用rotateLocal以相对于实体的当前轴旋转。
 
 举个例子，要使一个实体围绕世界坐标的向上轴旋转180°，可以这样做:
 
-~~~js~~~
+```javascript
 entity.rotate(0, 180, 0);
-~~~
+```
 
 或者将实体围绕其自身坐标系的x轴旋转90度：
 
-~~~js~~~
+```javascript
 entity.rotateLocal(90, 0, 0);
-~~~
+```
 
 ## 缩放
 
 为了使一个实体缩放，你会需要调用到以下函数:
 
-~~~js~~~
+```javascript
 // Scale the entity by a factor of 2 in the local Y axis
 entity.setLocalScale(1, 2, 1);
-~~~
+```
 
 以及这里是一些轻量的有趣的例子:
 
-~~~js~~~
+```javascript
 // Scale the entity using a sine function over time
 this.timer += deltaTime;
 var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);
-~~~
+```
 
 请注意，您目前无法在世界空间中设置实体的缩放比例。
 

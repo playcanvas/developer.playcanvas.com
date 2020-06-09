@@ -29,7 +29,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 所以这种功能超出了不起眼的动画组件的能力。 我们需要一个脚本组件来管理此附加行为。 你可以在上面截图中的编辑器中看到角色实体的脚本组件，它引用了一个名为animation_blending.js的JS文件。 此文件的内容是：
 
-~~~javascript~~~
+```javascript
 var AnimationBlending = pc.createScript('animationBlending');
 
 AnimationBlending.states = {
@@ -71,7 +71,7 @@ AnimationBlending.prototype.keyUp = function (e) {
         this.setState('idle');
     }
 };
-~~~
+```
 
 从这一点上来说，您可以向动画组件添加越来越多的动画，并开始编写更复杂的动画状态图表。
 

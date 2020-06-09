@@ -15,18 +15,18 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 ##照明命令
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
-~~~
+```
 这段代码设置了实体上的射灯光源组件的开关功能。
 
-~~~javascript~~~
+```javascript
 this.color1 = new pc.Color(1, 1, 1);
-~~~
+```
 A new color array is declared, the first three values affect red, green and blue values respectively.
-~~~javascript~~~
+```javascript
 var s = Math.abs(Math.sin(1 + this.timer));
 var r = 1-s/2;
 var g = s-0.2;
@@ -34,7 +34,7 @@ var b = 0.55+s/2;
 this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
-~~~
+```
 这段代码基于正弦波将值分配给r，g和b变量，然后通过 `color1.set(x, y, z)`将这些值赋给先前声明的颜色数组，然后添加到light属性中。 其强度也被设置为最大光强度值10最小强度为0的正弦变化。
 
 <div class="alert alert-warning">
@@ -45,7 +45,7 @@ this.spot.light.intensity = 10*s;
 除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问] [2]。
 
 The full code used for the above PlayCanvas app is as follows.
-~~~javascript~~~
+```javascript
 var LightHandler = pc.createScript('lightHandler');
 
 // initialize code called once per entity
@@ -114,7 +114,7 @@ LightHandler.prototype.pivot = function () {
     this.pivot1.rotate(0, 2, 0);
     this.pivot2.rotate(0, -3, 0);
 };
-~~~
+```
 
 [1]: /engine/api/stable/symbols/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
