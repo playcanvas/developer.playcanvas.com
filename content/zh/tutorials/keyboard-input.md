@@ -13,7 +13,7 @@ PlayCanvas引擎中的键盘处理由`pc.Keyboard`对象提供。Keyboard 为常
 
 在[教程项目][1]中看一看键盘输入场景。以下是该教程所用的代码:
 
-~~~javascript~~~
+```javascript
 var KeyboardHandler = pc.createScript('keyboardHandler');
 
 KeyboardHandler.attributes.add('redMaterial', {
@@ -90,7 +90,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
         this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
-~~~
+```
 
 有两种方式检测键盘输入。第一种是在你的脚本的update环节中更新。使用`isPressed()` 和 `wasPressed()` 检测一个按键当前是否被按下或之前已经被按下。第二种是当按键按下或抬起时通过事件来响应。
 

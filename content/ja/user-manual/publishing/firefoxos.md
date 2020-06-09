@@ -20,7 +20,7 @@ A packaged app is essentially a ZIP file containing all the resources that make 
 
 This file must be called manifest.webapp and be created in the root folder of your extracted and exported PlayCanvas game. An example manifest (taken from the [Dungeon Fury][4] game) is shown below:
 
-~~~javascript~~~
+```javascript
 {
     "name": "Dungeon Fury",
     "version": "1.0.2",
@@ -40,7 +40,7 @@ This file must be called manifest.webapp and be created in the root folder of yo
     "fullscreen": true,
     "orientation": "portrait-primary"
 }
-~~~
+```
 
 A reference that fully documents this manifest format can be found on [MDN][5].
 
@@ -56,15 +56,15 @@ There are potentially three files that must be copied into your app folder that 
 
 The PlayCanvas Engine is referenced in your exported game's index.html. Search for a line of this form (bearing in mind your engine version may well be different):
 
-~~~html~~~
+```html
     <script src="https://code.playcanvas.com/playcanvas-0.141.1.min.js"></script>
-~~~
+```
 
 And convert it to this:
 
-~~~html~~~
+```html
     <script src="playcanvas-0.141.1.min.js"></script>
-~~~
+```
 
 And download the file to the root of your extracted PlayCanvas app.
 
@@ -72,15 +72,15 @@ And download the file to the root of your extracted PlayCanvas app.
 
 The PlayCanvas loading screen image is referenced in your exported game's index.html. Search for the following line:
 
-~~~html~~~
+```html
     <a href="http://playcanvas.com" target="_blank"><img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/logo/PLAY_FLAT_ORANGE3.png"/></a>
-~~~
+```
 
 And convert it to this:
 
-~~~html~~~
+```html
     <img src="PLAY_FLAT_ORANGE3.png"/>
-~~~
+```
 
 And download the file to the root of your extracted PlayCanvas app.
 
@@ -88,15 +88,15 @@ And download the file to the root of your extracted PlayCanvas app.
 
 In your extracted app folder, locate and open data.js. Search for a line of the form:
 
-~~~javascript~~~
+```javascript
     "libraries": ["https://code.playcanvas.com/ammo.3c2cc63.js"]
-~~~
+```
 
 And convert it to:
 
-~~~javascript~~~
+```javascript
     "libraries": ["ammo.3c2cc63.js"]
-~~~
+```
 
 And download the file to the root of your extracted PlayCanvas app.
 

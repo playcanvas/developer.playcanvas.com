@@ -13,7 +13,7 @@ There are two options for self-hosting a PlayCanvas game on your own domain.
 
 When you [publish to playcanvas.com][2], your game is assigned a URL. To embed your application in another page. You can simply include this URL as the `src` property of an iframe.
 
-~~~html~~~
+```html
 <html>
     <head>
         <title>My Great Game</title>
@@ -22,7 +22,7 @@ When you [publish to playcanvas.com][2], your game is assigned a URL. To embed y
         <iframe src="https://playcanv.as/p/PROJECT_ID/"></iframe>
     </body>
 </html>
-~~~
+```
 
 ## Self-hosting on your own server
 

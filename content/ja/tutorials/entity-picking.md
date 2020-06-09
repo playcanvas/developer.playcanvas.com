@@ -19,7 +19,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 コリジョンベースのピッキングは、選ぶする必要がある各エンティティに図形を追加するために、コリジョンコンポーネントを使用します。その後、リジッドボディシステムで[raycastFirst()][2]メソッドを使用して、マウスのクリック位置から画面に光線を発射し、それがコリジョンコンポーネントに当たるかどうかを確認します。当たる場合、そのエンティティは「選択」されています
 
-~~~javascript~~~
+```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
 
 // initialize code called once per entity
@@ -37,13 +37,13 @@ PickerRaycast.prototype.onSelect = function (e) {
         pickedEntity.script.pulse.pulse();
     }
 };
-~~~
+```
 
 ## フレームバッファの選択
 
 フレームバッファベースのピッキングは、内部バッファにシーンをレンダリングするために[pc.Picker][3]クラスを使用します。マウスをクリックすると、マウス位置のバッファの色を使用して、どのメッシュインスタンスが選択されたか判断します。これは、コリジョンベースの方法と比べいくつかの利点と欠点があります。利点には次のようなものがあります：シーン内の複数のアイテム四角形で選択するので、プロジェクトに物理ライブラリが含まれる、また、有効で必要がありません。主な欠点は、グラフィックパイプラインを失速させる`readPixels`メソッドを使用していることです。これは、特にモバイルに、レンダリングパフォーマンスに深刻な影響を及ぼす可能性があります。
 
-~~~javascript~~~
+```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
 
 // initialize code called once per entity
@@ -84,7 +84,7 @@ PickerFramebuffer.prototype.onSelect = function (event) {
         }
     }
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405856
 [2]: http://developer.playcanvas.com/en/api/pc.RigidBodyComponentSystem.html#raycastFirst

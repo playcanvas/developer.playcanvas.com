@@ -63,7 +63,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 在这个实体上我们能取到*碰撞体*组件但取不到*刚体*组件，因此它可以被用作为一个触发器。触发器实体也有一个挂载了一些代码的*脚本*组建。触发器只在某些事情发生时被触发时有用，因此我们需要添加一些代码来发送和监听触发器活动时的事件。
 
-~~~javascript~~~
+```javascript
 var Trigger = pc.createScript('trigger');
 
 // initialize code called once per entity
@@ -78,15 +78,15 @@ Trigger.prototype.onTriggerEnter = function(entity) {
     var position = entity.getPosition();
     entity.rigidbody.teleport(position.x, 10, 0);
 };
-~~~
+```
 
 上面的代码有两个重要的部分。
 
 首先在``` 初始化``` 方法中我们开始监听** triggerenter **事件。当一个刚体进入触发体积时这一事件触发一次(在触发器是一个实体，具有碰撞组件，但没有刚体组件的位置)。伴随事件有** triggerleave **，一旦有刚体离开触发器范围时它被触发。
 
-~~~javascript~~~
+```javascript
 this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-~~~
+```
 
 注意，第三个参数 ```this```，这是在事件侦听器中使用的“范围”。通常情况下，您将要添加当前脚本对象作为第三个参数，这样事件侦听器中的 ```this```的值才会是对应的脚本对象。
 
@@ -114,7 +114,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 这两个事件都很有用，但在这个演示中，我们将使用** collision start **事件来触发当对象撞到地面时播放的声音效果。 这里是代码：
 
-~~~javascript~~~
+```javascript
 var Collider = pc.createScript('collider');
 
 // initialize code called once per entity
@@ -127,7 +127,7 @@ Collider.prototype.onCollisionStart = function (result) {
         this.entity.sound.play("hit");
     }
 };
-~~~
+```
 
 在```initialize```方法中，我们设置事件监听器，然后在事件处理程序中检查其他实体是否有一个** rigidbody **组件(这是为了避免在我们进入时播放声音 一个触发音量)，然后我们播放“命中”的声音效果。 所以现在每个具有碰撞脚本附件的实体与另一个刚体碰撞，它都将发出命中的声音。
 

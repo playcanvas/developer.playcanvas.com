@@ -11,18 +11,18 @@ Usually you will be creating Entities via the PlayCanvas Editor, building up col
 
 ## Creating an Entity
 
-~~~js
+```js
 var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy
 this.app.root.addChild(entity);
-~~~
+```
 
 First you need to create an Entity. This is straightforward, but it is important to add the Entity to the main Entity hierarchy. Only Entities in the hierarchy will have their transforms, Components and scripts updated. In your scripts you can access the root of the Entity hierarchy from the `Application` object which is passed into your script. By convention this is usually named `app` and the hierarchy root is available as `this.app.root`.
 
 ## Adding Components
 
-~~~js~~~
+```javascript
 // Create a new Entity
 var entity = new pc.Entity();
 
@@ -36,7 +36,7 @@ entity.addComponent("model", {
 
 // Add it to the Entity hierarchy
 this.app.root.addChild(entity);
-~~~
+```
 
 An Entity on it's own doesn't do much, so you will need to add Components in order to add functionality to your Entity. You can use the `addComponent` method of the Entity to create and add a new Component to the Entity.
 
@@ -44,7 +44,7 @@ Each Component type has different properties that can be passed in on the data o
 
 ## Removing Components
 
-~~~js~~~
+```javascript
 var entity = new pc.Entity();
 
 // Attach Camera Component with default values
@@ -52,13 +52,13 @@ entity.addComponent("camera");
 
 // Delete the Camera Component
 entity.removeComponent("camera");
-~~~
+```
 
 Components can be deleted individually from an Entity by calling the `removeComponent` method on the Entity.
 
 ## Deleting Entities
 
-~~~js~~~
+```javascript
 // Create a new Entity
 var entity = new pc.Entity();
 
@@ -75,13 +75,13 @@ this.app.root.addChild(entity);
 
 // Delete the Entity and remove it from the hierarchy
 entity.destroy();
-~~~
+```
 
 When you are finished with an Entity you call the `destroy` method on the Entity. This will delete all Components and remove the Entity from the hierarchy. It will also delete all child Entities in the same way.
 
 ## In Action
 
-~~~js~~~
+```javascript
 var EntityCreator = pc.createScript('entityCreator');
 
 EntityCreator.attributes.add('material', {
@@ -156,7 +156,7 @@ EntityCreator.prototype.spawnCube = function () {
         timer: pc.math.random(0, this.lifetime)
     });
 };
-~~~
+```
 
 This is a complete Entity script which you can see in action at the top of the tutorial. It continually creates and destroys new Entities with a Model Component attached.
 

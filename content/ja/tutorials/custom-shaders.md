@@ -19,7 +19,7 @@ WebGLは、GLSL言語を使用して全てのブラウザで実行すること�
 
 ### Vertex シェーダー
 
-~~~
+```
 attribute vec3 aPosition;
 attribute vec2 aUv0;
 
@@ -33,11 +33,11 @@ void main(void)
     vUv0 = aUv0;
     gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);
 }
-~~~
+```
 
 ### フラグメントシェーダー
 
-~~~
+```
 varying vec2 vUv0;
 
 uniform sampler2D uDiffuseMap;
@@ -56,7 +56,7 @@ void main(void)
     }
     gl_FragColor = color;
 }
-~~~
+```
 
 上記の2つのシェーダーは、新しい素材の機能を定義します。頂点シェーダーでは、画面空間にメッシュの頂点位置を変換します。フラグメントシェーダーでは、ピクセルの色を設定します。このピクセルの色は、このアセットに提供される2つのテクスチャーに基づいて選択されます。uTime値が高さマップの色より小さい場合、ピクセルはレンダリングされません(モデルは非表示)。uTimeの値が高さマップの値よりも大きい場合、提供するdiffuseマップテクスチャーから色を取得します。
 
@@ -100,7 +100,7 @@ GLSLシェーダーには、属性とは別で、二つの特殊なタイプの�
 
 ## 素材の作成
 
-~~~javascript
+```javascript
 // Create the shader from the definition
 this.shader = new pc.Shader(gd, shaderDefinition);
 
@@ -119,7 +119,7 @@ this.material.setParameter('uHeightMap', heightTexture);
 
 // Replace the material on the model with our new material
 model.meshInstances[0].material = this.material;
-~~~
+```
 
 シェーダーを定義したら、新しいシェーダーと素材を作成して、`setShader()`でシェーダを素材に渡します。その後`setParameter()`メソッドを使ってuniformを初期化します。最後に、モデルの元の素材を新しく作成した素材で置き換えます。モデルの各メッシュには固有の素材があります。モデルに複数のメッシュがある場合、ひとつ以上のメッシュインスタンスに素材を設定する必要があるかも知れません。
 
@@ -127,16 +127,16 @@ model.meshInstances[0].material = this.material;
 
 ## 新しい素材でテクスチャーを使用
 
-~~~javascript
+```javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 //...
 this.material.setParameter('uDiffuseMap', diffuseTexture);
-~~~
+```
 
 このチュートリアルで紹介されているエフェクトは高さマップテクスチャーを使用して行われます。上記のコードを使用してアセットレジストリからテクスチャーにアクセスします。
 スクリプトの先頭で、PlayCanvas Editorからテクスチャーを設定することができる'maps'というスクリプト属性を宣言しています：
 
-~~~javascript
+```javascript
 CustomShader.attributes.add('vs', {
     type: 'asset',
     assetType: 'shader',
@@ -160,13 +160,13 @@ CustomShader.attributes.add('heightMap', {
     assetType: 'texture',
     title: 'Height Map'
 });
-~~~
+```
 
 高さマップが読み込まれるとuniform `uHeightMap` を `pc.Texture` オブジェクトに設定することができます。
 
 ## uniformの更新
 
-~~~javascript
+```javascript
 // update code called every frame
 CustomShader.prototype.update = function(dt) {
     this.time += dt;
@@ -180,7 +180,7 @@ CustomShader.prototype.update = function(dt) {
     // Update the time value in the material
     this.material.setParameter('uTime', t);
 };
-~~~
+```
 
 消失エフェクトを得るために、高さマップの値を閾値として使用して、閾値を時間と共に増やします。上記の更新方法では、`t`の値を0と1の間でバウンスして、それを` uTime` uniformとして設定します。
 
@@ -188,7 +188,7 @@ CustomShader.prototype.update = function(dt) {
 
 ## 完全なリスト
 
-~~~javascript
+```javascript
 var CustomShader = pc.createScript('customShader');
 
 CustomShader.attributes.add('vs', {
@@ -273,7 +273,7 @@ CustomShader.prototype.update = function(dt) {
     // Update the time value in the material
     this.material.setParameter('uTime', t);
 };
-~~~
+```
 
 完全なスクリプトです。動作させるためには、頂点シェーダーとフラグメントシェーダーのアセットを作成する必要があります。沢山のメッシュと素材を持つモデルにdissolveエフェクトを適用するシェーダーの実施はリーダーへの課題として残されます。
 

@@ -19,39 +19,39 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 ### 施加一个恒定的力
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.isPressed(pc.KEY_F) ) {
     this.entity.rigidbody.applyForce(0, 9.8, 0);
 }
-~~~
+```
 
 这里，当用户通过 [`applyForce(x, y, z)`][1]按下F键时，沿着全局y轴的力被施加到被访问的实体。 也可以设置力矢量的施加点。 [参见文档] [2]了解更多信息。
 
 ### 冲量
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
     this.entity.rigidbody.applyImpulse(-1, 0, 0);
 }
-~~~
+```
 
 立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][3]给出速度的瞬时变化。
 
 ### 扭矩
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.isPressed(pc.KEY_W) ) {
     this.entity.rigidbody.applyTorque(-this.torque, 0, 0);
 }
-~~~
+```
 
 [扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][4]施加到实体上。
 
 ### 扭矩冲量
 
-~~~javascript~~~
+```javascript
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
-~~~
+```
 
 角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][5]来表示。 这在上面的演示的代码中没有被使用。
 
@@ -77,7 +77,7 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 要立即将物体传送到新位置的话，您不能使用来自pc.Entity API的setPosition函数。 这是因为物理引擎仍然会认为身体在旧的位置。 相反，你必须使用刚体组件的teleport函数：
 
-~~~js~~~
+```javascript
 //code within the update function
 this.playerPos = this.entity.getLocalPosition();
 
@@ -88,30 +88,30 @@ if (this.playerPos.x < -9.0) {
 if (this.playerPos.x > 9.0) {
     this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
 }
-~~~
+```
 
 如果立方体在x方向上移动超出可视区域，则调用传送功能，立方体实体在屏幕上传送。 实体被传送到离远点不太远的左/右位置，以便不连续激活`if()` 语句。
 
 ## 重置立方体的代码
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.wasPressed(pc.KEY_R)) {
     this.reset();
 }
-~~~
-~~~javascript~~~
+```
+```javascript
 reset: function () {
     this.entity.rigidbody.teleport(0, 2, 0);
     this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
     this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
 }
-~~~
+```
 
 我们采用了使立方体回到其原始位置的复位功能，并且如上所述，将刚体的位置与传送的实体的位置同步。 复位功能中的最后两行将物体的线速度和角速度也复位为零。 对象的方向也可以重置，但不在此代码中执行。
 
 ## 整段代码
 
-~~~javascript~~~
+```javascript
 var DynamicBody = pc.createScript('dynamicBody');
 
 // initialize code called once per entity
@@ -176,7 +176,7 @@ DynamicBody.prototype.reset = function () {
     this.entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
     this.entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
 };
-~~~
+```
 
 [1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
 [2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce

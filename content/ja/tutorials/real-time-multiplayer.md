@@ -18,9 +18,9 @@ nodejs.orgに移動してNode.jsの推奨バージョンをダウンロードし
 
 コマンドプロンプトウィンドウを開いて(Macの場合はterminal)次の通り入力します：
 
-~~~
+```
 npm install socket.io
-~~~
+```
 
 数秒で完了します。終わったら、コンピュータにNode.jsとSocket.ioがインストールされているはずです。
 
@@ -28,7 +28,7 @@ npm install socket.io
 
 次に、サーバファイルを作成する必要があります。テキストエディタを開き次を入力します：
 
-~~~javascript~~~
+```javascript
 var server = require('http').createServer();
 var io = require(‘socket.io')(server);
 
@@ -37,13 +37,13 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
-~~~
+```
 
 サーバがポート3000をリッスンしています。これについては後ほど説明します。ホームフォルダに「server.js」として保存してください。必ず、Server.js.txtではなくJavascriptファイルとして保存してください。サーバーを起動するには、コマンドプロンプトウィンドウを開き次を入力します：
 
-~~~
+```
 node server.js
-~~~
+```
 
 ‘Server started.’と表示されます。これで自身のサーバが実行されました。
 
@@ -57,9 +57,9 @@ PlayCanvasを開いて新規のプロジェクトを作成します。まず。�
 
 次に、ネットワーク・ロジックを処理するための新しいスクリプトを作成する必要があります。「Network.js」という新しいスクリプトを作成してください。まず最初にサーバとの通信を作成する必要があります。これはinitializeメソッドに次の行を追加することで行うことができます：
 
-~~~javascript~~~
+```javascript
 this.socket = io.connect(‘http://localhost:3000/');
-~~~
+```
 
 'http://localhost' がサーバーのアドレスで、‘3000’はポートです。この場合は自身のコンピュータに接続するので、localhostを使用します。他の場所でホスティングする場合、これを変更します。接続に使用するポートがサーバファイルで設定したものと同じであることを確認してください。これでプロジェクトがサーバに対してメッセージを送受信できるように設定されました。
 
@@ -67,17 +67,17 @@ this.socket = io.connect(‘http://localhost:3000/');
 
 クライアントとサーバ間でデータを送るためには以前に作成したソケット接続を使用します。クライアントからデータを送信するにはemit関数を使用します。例：
 
-~~~javascript~~~
+```javascript
 this.socket.emit (‘playerJoined’, ‘John’);
-~~~
+```
 
 ‘John’のデータを含む‘playerJoined’というメッセージを出力します。サーバーがメッセージを受信するためには、サーバー・ファイルに次を記述する必要があります：
 
-~~~javascript~~~
+```javascript
 socket.on (‘playerJoined’, function (name) {
 	console.log (name);
 });
-~~~
+```
 
 これにより、‘playerJoined’が出力される際にサーバに送信されるデータがすべてログに記録されます。
 
@@ -93,7 +93,7 @@ socket.on (‘playerJoined’, function (name) {
 
 プレイヤーにスクリプトコンポーネントを追加して'Movement.js'という新しいスクリプトを添付します：
 
-~~~javascript~~~
+```javascript
 var Movement = pc.createScript('movement');
 
 Movement.attributes.add('playerSpeed', {
@@ -144,12 +144,12 @@ Movement.prototype.update = function(dt) {
         this.entity.rigidbody.applyForce (this.force);
     }
 };
-~~~
+```
 
 ゲームを起動すると、WASDを使用してプレーヤーを動かせるはずるです。動かせない場合は、手順を間違っているか、エンティティの設定が正しくありません。(動作スクリプト上の速度属性を変更してみてください)
 ゲームはリアルタイムのマルチプレイとして機能するためには、ゲーム内のすべてのプレイヤーを管理する必要があります。現在のサーバコードを次で置き換えます：
 
-~~~javascript~~~
+```javascript
 var server = require('http').createServer();
 var io = require('socket.io')(server);
 
@@ -182,11 +182,11 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
-~~~
+```
 
 上記のコードでプレイヤーが'initialize'メッセージを送信した際、そのプレイヤーの固有IDとゲーム内の他のプレーヤーのデータを送ります。また、他のプレイヤーに新しいプレーヤーが接続されたことを伝えます。ネットワークスクリプトにそのロジックを追加してみましょう。
 
-~~~javascript~~~
+```javascript
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
@@ -244,11 +244,11 @@ addPlayer: function (data) {
 	this.players.push (data);
 	this.players[this.players.length - 1].entity = this.createPlayerEntity ();
 }
-~~~
+```
 
 これで、ゲームに参加するとクライアントは接続したことをサーバに伝え、サーバからプレイヤーのリストとその位置を受信するようになりました。その後、ゲームは接続された各プレーヤーに対して新しいエンティティを作成し、それらを現在の位置に移動します。唯一の問題は、サーバがすべてのプレイヤーの位置を把握していないことです。サーバに現在位置すべてのフレームを送信する必要があります。Network.jsスクリプトにこのコードを追加します：
 
-~~~javascript~~~
+```javascript
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
@@ -285,11 +285,11 @@ updatePosition: function () {
 		socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
 	}
 }
-~~~
+```
 
 サーバーでは、プレイヤーが自分の位置を送信したときに何が起こるかを把握する必要があります。
 
-~~~javascript~~~
+```javascript
 socket.on ('positionUpdate', function (data) {
 	players[data.id].x = data.x;
 	players[data.id].y = data.y;
@@ -297,7 +297,7 @@ socket.on ('positionUpdate', function (data) {
 
 	socket.broadcast.emit ('playerMoved', data);
 });
-~~~
+```
 
 ## まとめ
 
@@ -309,7 +309,7 @@ socket.on ('positionUpdate', function (data) {
 
 完全なNetworkスクリプトです:
 
-~~~javascript~~~
+```javascript
 var Network = pc.createScript('network');
 
 // 静的変数
@@ -410,11 +410,11 @@ Network.prototype.updatePosition = function () {
     }
 };
 
-~~~
+```
 
 完全なサーバスクリプト:
 
-~~~javascript~~~
+```javascript
 var server = require('http').createServer();
 var io = require('socket.io')(server);
 
@@ -449,7 +449,7 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
-~~~
+```
 
 [1]: /images/tutorials/multiplayer/socket_installed.png
 [2]: /images/tutorials/multiplayer/server_started.png

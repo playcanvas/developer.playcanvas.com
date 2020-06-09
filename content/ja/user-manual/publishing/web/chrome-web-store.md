@@ -58,7 +58,7 @@ PlayCanvasゲームからパッケージ化されたappを生成するのは、�
 * コンテンツを解凍。
 * manifest.jsonファイルを作成。SWOOOPの場合は次のようになります：
 
-~~~javascript~~~
+```javascript
 {
   "名前": "SWOOOP",
   "説明": "魔法の島で複葉機をループ＆スゥープ。あなたのハイスコアは？",
@@ -70,11 +70,11 @@ PlayCanvasゲームからパッケージ化されたappを生成するのは、�
   },
   "icons": { "16": "swooop16.png", "48": "swooop48.png", "128": "swooop128.png" }
 }
-~~~
+```
 
 * ゲームの起動方法を設定するために以下が含まれているbackground.jsを作成します：
 
-~~~javascript~~~
+```javascript
 chrome.app.runtime.onLaunched.addListener(function() {
  chrome.app.window.create('index.html', {
    'bounds': {
@@ -83,7 +83,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
    }
  });
 });
-~~~
+```
 
 *マニフェストから参照したアイコンを作成して、index.htmlと同じフォルダに配置します。
 *index.html内のJavaScriptの全てのスクリプトタグブロックを外部参照JSファイル(二つあります)へ転送。Chromeがこれらをセキュリティ上の脅威として扱うためです。

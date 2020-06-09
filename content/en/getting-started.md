@@ -114,7 +114,7 @@ First we need to create a script component and create a new script to edit.
 
 In the code editor update the script template to match the code below (you just need to fill in the body of the update function):
 
-~~~javascript~~~
+```javascript
 pc.script.create("spinner", function (app) {
 
     var Spinner = function (entity) {
@@ -131,7 +131,7 @@ pc.script.create("spinner", function (app) {
 
     return Spinner;
 });
-~~~
+```
 
 Once you've edited the code, press the "Save" button in the code editor and switch back to the Editor tab. Note that the script editor actually does require you to explicitly save, unlike the main Editor application.
 

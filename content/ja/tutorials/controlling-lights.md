@@ -15,18 +15,18 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 ##ライティングコマンド
 
-~~~javascript~~~
+```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
-~~~
+```
 Spotエンティティのライトコンポーネントをトグルでオン・オフ。
 
-~~~javascript~~~
+```javascript
 this.color1 = new pc.Color(1, 1, 1);
-~~~
+```
 新しいカラー配列が宣言され、最初の3つの値は赤、緑、青のそれぞれに影響します。
-~~~javascript~~~
+```javascript
 var s = Math.abs(Math.sin(1 + this.timer));
 var r = 1-s/2;
 var g = s-0.2;
@@ -34,7 +34,7 @@ var b = 0.55+s/2;
 this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
-~~~
+```
 これらの行は正弦波に基づいてr, g, b変数に値を割り当て、これらの値をcolor1.set(x, y, z)から以前に宣言されたカラー配列に割り当て、ライトプロパティに指定します。強度の正弦は異なるように設定されているので、最高のライト強度値は10、最低は0です。
 
 <div class="alert alert-warning">
@@ -45,7 +45,7 @@ entity.light.color.rを使用してライトの赤の値を変更することが
 全ての新規シーンに作成されるデフォルトの指向性ライトに加え、スポットライト(基本的なたいまつモデルの親アセンブリに添付)と、親球体モデルに添付されたポイントライトをついかしました。制御スクリプトはルートエンティティに添付しています。球体とたいまつは、回転しやすくするため、シーンの中心にある空のエンティティの子として作成しています。controllingLightsシーンで[完全なEditorシーンやスクリプトにアクセス][2]。
 
 The full code used for the above PlayCanvas app is as follows.
-~~~javascript~~~
+```javascript
 var LightHandler = pc.createScript('lightHandler');
 
 // initialize code called once per entity
@@ -114,7 +114,7 @@ LightHandler.prototype.pivot = function () {
     this.pivot1.rotate(0, 2, 0);
     this.pivot2.rotate(0, -3, 0);
 };
-~~~
+```
 
 [1]: /engine/api/stable/symbols/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights

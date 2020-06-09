@@ -13,7 +13,7 @@ PlayCanvasエンジンでの処理マウスは`pc.Mouse`オブジェクトによ
 
 [チュートリアルプロジェクト][1]をご確認ください。mouse.jsのコードは次の通りです：
 
-~~~javascript~~~
+```javascript
 var Mouse = pc.createScript('mouse');
 
 Mouse.attributes.add('redMaterial', {
@@ -73,23 +73,23 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
-~~~
+```
 
 ### マウスにアクセス
 
 マウスコントロールは`pc.Mouse`オブジェクトによって管理されます。  [フレームワーク][2]は、[アプリケーションapp][3]でこのインスタンスを提供します。これは次のように全てのスクリプトオブジェクトで利用可能です：
 
-~~~javascript~~~
+```javascript
 this.app.mouse
-~~~
+```
 
 ### 右クリックメニューを無効化
 
 スクリプトオブジェクトのコンストラクタでは、右クリックメニューを無効にしているので、マウスの右ボタンをクリックしてもポップアップメニューは表示されません。
 
-~~~javascript~~~
+```javascript
 this.app.mouse.disableContextMenu();
-~~~
+```
 
 ### イベントにバインド
 
@@ -97,10 +97,10 @@ this.app.mouse.disableContextMenu();
 
 イベントへのバインドのために`this` をon()メソッドに渡します。この3番目の引数は、イベントコールバックで`this`として使用されるオブジェクトです。
 
-~~~javascript~~~
+```javascript
 this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
-~~~
+```
 
 `pc.Mouse`で利用可能なイベント：
 

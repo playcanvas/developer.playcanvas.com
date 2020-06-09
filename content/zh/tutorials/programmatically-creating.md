@@ -11,18 +11,18 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## 创建一个实体
 
-~~~js
+```js
 var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy
 this.app.root.addChild(entity);
-~~~
+```
 
 首先你需要创建一个Entity。 这很简单，但将Entity添加到主Entity层次结构这一步很重要。 只有在层次结构中的实体才具有变换块，组件和脚本更新。 在脚本中，您可以从传递到脚本中的`Application`对象访问Entity层次结构的根节点。 按照惯例，这通常命名为“app”，层次结构根可以作为`this.app.root`。
 
 ## 添加组件
 
-~~~js~~~
+```javascript
 // Create a new Entity
 var entity = new pc.Entity();
 
@@ -36,7 +36,7 @@ entity.addComponent("model", {
 
 // Add it to the Entity hierarchy
 this.app.root.addChild(entity);
-~~~
+```
 
 一个实体本身没有太多功能，所以为了添加功能到您的实体您将需要添加组件。 您可以使用Entity的`addComponent`方法创建一个新的组件并添加到实体中。
 
@@ -44,7 +44,7 @@ this.app.root.addChild(entity);
 
 ## 移除组建
 
-~~~js~~~
+```javascript
 var entity = new pc.Entity();
 
 // Attach Camera Component with default values
@@ -52,13 +52,13 @@ entity.addComponent("camera");
 
 // Delete the Camera Component
 entity.removeComponent("camera");
-~~~
+```
 
 组件可以通过调用Entity上的`removeComponent`方法从Entity中单独删除。
 
 ## 删除实体
 
-~~~js~~~
+```javascript
 // Create a new Entity
 var entity = new pc.Entity();
 
@@ -75,13 +75,13 @@ this.app.root.addChild(entity);
 
 // Delete the Entity and remove it from the hierarchy
 entity.destroy();
-~~~
+```
 
 当你完成一个实体，你调用了实体上的`destroy`方法。 这将删除所有组件并从层次结构中删除实体。 它还将以相同的方式删除所有子实体。
 
 ## 所有步骤
 
-~~~js~~~
+```javascript
 var EntityCreator = pc.createScript('entityCreator');
 
 EntityCreator.attributes.add('material', {
@@ -156,7 +156,7 @@ EntityCreator.prototype.spawnCube = function () {
         timer: pc.math.random(0, this.lifetime)
     });
 };
-~~~
+```
 
 这是一个完整的实体脚本，您可以在教程顶部的操作中看到。 它持续创建和销毁附加了模型组件的新实体。
 

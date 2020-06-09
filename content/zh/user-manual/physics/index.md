@@ -35,25 +35,25 @@ PlayCanvas采用了物理引擎。该物理引擎可以逼真地控制物体在�
 
 物体会受到力和冲量的影响进行移动。一个力是被施加到物体上并经过了一段时间的，而冲量则是在某一时间点施加的力。我们来看几个案例。如果你想推动一个很重的东西使它通过地面，你将会在一定量的时间里一直施加这个力:
 
-~~~javascript~~~
+```javascript
     update: function (dt) {
         // While the right arrow key is pressed, apply a force to the right
         if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
             this.entity.rigidbody.applyForce(10, 0, 0);
         }
     }
-~~~
+```
 
 你过你想要通过炮口发射一个炮弹，你需要应用一个冲量:
 
-~~~javascript~~~
+```javascript
     update: function (dt) {
         // If the space bar was pressed, apply an impulse up and to the right
         if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
             this.entity.rigidbody.applyImpulse(10, 10, 0);
         }
     }
-~~~
+```
 
 ## 瞬移刚体
 
