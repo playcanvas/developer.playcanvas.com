@@ -56,7 +56,7 @@ Generating a packaged app from a PlayCanvas game takes a little more effort than
 * Unzip the contents.
 * Create a manifest.json file . For SWOOOP, it looks like this:
 
-~~~javascript~~~
+```javascript
 {
   "name": "SWOOOP",
   "description": "Loop and swoop your bi-plane around the magical island. What's your highscore?",
@@ -68,11 +68,11 @@ Generating a packaged app from a PlayCanvas game takes a little more effort than
   },
   "icons": { "16": "swooop16.png", "48": "swooop48.png", "128": "swooop128.png" }
 }
-~~~
+```
 
 * Create background.js that contains the following to configure how the game is launched:
 
-~~~javascript~~~
+```javascript
 chrome.app.runtime.onLaunched.addListener(function() {
  chrome.app.window.create('index.html', {
    'bounds': {
@@ -81,7 +81,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
    }
  });
 });
-~~~
+```
 
 * Create the icons referenced from the manifest and place them in the same folder as the index.html.
 * Transfer any script tag blocks of JavaScript in index.html into externally referenced JS files (there are two). This is because Chrome treats this as a security threat.

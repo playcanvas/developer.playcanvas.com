@@ -114,7 +114,7 @@ PlayCanvasのコードを書く主要の方法は二つです。一つ目は、P
 
 コードエディタでスクリプトテンプレートを更新して下記のコードに合わせます(update関数の本体を埋めるだけです):
 
-~~~javascript~~~
+```javascript
 pc.script.create("spinner", function (app) {
 
     var Spinner = function (entity) {
@@ -131,7 +131,7 @@ pc.script.create("spinner", function (app) {
 
     return Spinner;
 });
-~~~
+```
 
 コードを編集したらコードエディタの"Save"ボタンを押してEditorタブに切り替えて戻します。スクリプトエディタは、メインのEditorアプリケーションとは違い、明示的に保存することを必須とします。
 

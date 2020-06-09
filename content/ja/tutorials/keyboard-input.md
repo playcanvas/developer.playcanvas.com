@@ -13,7 +13,7 @@ PlayCanvasエンジンのキーボード処理はpc.Keyboardオブジェクト�
 
 [チュートリアルプロジェクト][1]のキーボード入力シーンをご確認ください。チュートリアルのコードはこちらです：
 
-~~~javascript~~~
+```javascript
 var KeyboardHandler = pc.createScript('keyboardHandler');
 
 KeyboardHandler.attributes.add('redMaterial', {
@@ -90,7 +90,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
         this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
-~~~
+```
 
 キーボードの入力を探知する方法は二つあります。一つ目はスクリプトの更新メソッドで行われます。isPressed()とwasPressed()を使用してキーが現在押されているか、押されたばかりかを確認します。二つ目は、イベントを使用してキーの押下や開放の実行時に反応します。
 

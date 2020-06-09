@@ -85,35 +85,35 @@ You should use the Standard material type in Max, or the Multi/Sub-Object materi
 
 PlayCanvas interprets a subset of the 3DS Max material map types on export. Note that maps can be in any format that 3DS Max supports, but if the maps are not in a web format (namely JPEG, GIF or PNG) then they will be converted to these formats on export.
 
-** Diffuse Color **
+**Diffuse Color**
 
 Assigning a Bitmap map to this slot enables diffuse mapping on the PlayCanvas material. This essentially overrides whatever diffuse color has been set on the material (via the color picker). If the diffuse map has an alpha channel, it will be used as the per pixel alpha value in the PlayCanvas runtime.
 
 Additionally, it is possible to assign an RGB Multiply map to the Diffuse Color slot. This has the effect of enabling lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap.
 
-** Specular Color **
+**Specular Color**
 
 Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas material. This essentially overrides whatever specular color has been set on the material (via the color picker). This allows you to mask out areas of specularity on a surface, or tinge specular highlights different colors in different areas. If the specular map has an alpha channel, it will be used to set per-pixel shininess.
 
-** Specular Level **
+**Specular Level**
 
 Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
 
-** Glossiness **
+**Glossiness**
 
 Assigning a Bitmap map to this slot activates per-pixel glossiness on the material. This essentially overrides whatever glossiness has been set on the material.
 
-** Self-Illumination **
+**Self-Illumination**
 
 Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel's value.  Anything else will increase a pixel's luminosity.
 
-** Opacity **
+**Opacity**
 
 Assigning a Bitmap map to this slot enables opacity mapping on the PlayCanvas material. A black pixel in the opacity map will be fully transparent, a white pixel will be fully opaque and any grey pixel will correspond to some equivalent intermediate alpha value.
 
 If the material has an opacity map, it will override any alpha channel that may have been set in the diffuse map. It is less efficient to use the opacity map slot over the alpha channel of the diffuse map since two textures are generated in the PlayCanvas runtime instead of one and the default shader must do a little more work. However, if performance is not a concern and it is convenient to use an opacity map, the functionality is supported.
 
-** Bump **
+**Bump**
 
 Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the real-time rendering more closely.
 
@@ -129,7 +129,7 @@ Now, lighting in PlayCanvas will be consistent.
 
 If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
 
-** Reflection **
+**Reflection**
 
 Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
 

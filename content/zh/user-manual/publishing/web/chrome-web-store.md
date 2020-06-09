@@ -58,7 +58,7 @@ PlayCanvas已经再Chrome在线商城中发布了一个压缩包应用的案例�
 * 解压缩这些内容。
 * 为SWOOOP创建manifest.json档案。它看起来像这样：
 
-~~~javascript~~~
+```javascript
 {
   "name": "SWOOOP",
   "description": "Loop and swoop your bi-plane around the magical island. What's your highscore?",
@@ -70,11 +70,11 @@ PlayCanvas已经再Chrome在线商城中发布了一个压缩包应用的案例�
   },
   "icons": { "16": "swooop16.png", "48": "swooop48.png", "128": "swooop128.png" }
 }
-~~~
+```
 
 * 创建一个包含游戏是如何启动的配置的background.js文件：
 
-~~~javascript~~~
+```javascript
 chrome.app.runtime.onLaunched.addListener(function() {
  chrome.app.window.create('index.html', {
    'bounds': {
@@ -83,7 +83,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
    }
  });
 });
-~~~
+```
 
 * 创建一个清单中会引用的图标并把它放到和index.html相同的文件夹中。
 * 转移所有index.html中的JavaScript脚本块到外部引用的JS文件中 (这里有两项)。这样做是因为Chrome 会将.html中的代码块认作外部威胁。

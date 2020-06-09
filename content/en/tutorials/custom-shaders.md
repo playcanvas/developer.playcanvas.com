@@ -19,7 +19,7 @@ WebGL uses the GLSL language to write shaders that can be run across all browser
 
 ### Vertex Shader
 
-~~~
+```
 attribute vec3 aPosition;
 attribute vec2 aUv0;
 
@@ -33,11 +33,11 @@ void main(void)
     vUv0 = aUv0;
     gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);
 }
-~~~
+```
 
 ### Fragment Shader
 
-~~~
+```
 varying vec2 vUv0;
 
 uniform sampler2D uDiffuseMap;
@@ -56,7 +56,7 @@ void main(void)
     }
     gl_FragColor = color;
 }
-~~~
+```
 
 The two shaders above define the functionality of the new Material. In the Vertex Shader we are transforming the vertex positions of the mesh into screen space. In the Fragment Shader we are setting the color of the pixel. This pixel color is chosen based on the two textures that are provided into this asset. If the value uTime is less than the color in the heightmap then we don't render any pixel (the model is invisible). If the value of uTime is greater than the heightmap value then we get the color from the diffuse map texture that we provide
 
@@ -99,7 +99,7 @@ A variable declared **`uniform`** will be declared in both vertex and fragment s
 
 ## Creating Materials
 
-~~~javascript
+```javascript
 // Create the shader from the definition
 this.shader = new pc.Shader(gd, shaderDefinition);
 
@@ -118,7 +118,7 @@ this.material.setParameter('uHeightMap', heightTexture);
 
 // Replace the material on the model with our new material
 model.meshInstances[0].material = this.material;
-~~~
+```
 
 Once we've got the shader definition we create a new Shader and a new Material and pass the shader onto the material using `setShader()`. The uniforms are then initialized using the `setParameter()` method. Finally we replace the original material on the model with the new material we've created. Notice, that each mesh in a model has it's own material. So if your model has more than one mesh, you may need to set the material onto more than one mesh instance.
 
@@ -126,16 +126,16 @@ Once we've got the shader definition we create a new Shader and a new Material a
 
 ## Using a texture in a new Material
 
-~~~javascript
+```javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 //...
 this.material.setParameter('uDiffuseMap', diffuseTexture);
-~~~
+```
 
 The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
 top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
 
-~~~javascript
+```javascript
 CustomShader.attributes.add('vs', {
     type: 'asset',
     assetType: 'shader',
@@ -159,13 +159,13 @@ CustomShader.attributes.add('heightMap', {
     assetType: 'texture',
     title: 'Height Map'
 });
-~~~
+```
 
 When our height map texture is loaded we can set the uniform `uHeightMap` to be the `pc.Texture` object.
 
 ## Updating uniforms
 
-~~~javascript
+```javascript
 // update code called every frame
 CustomShader.prototype.update = function(dt) {
     this.time += dt;
@@ -179,7 +179,7 @@ CustomShader.prototype.update = function(dt) {
     // Update the time value in the material
     this.material.setParameter('uTime', t);
 };
-~~~
+```
 
 To achieve the disappearing effect we use the height map value as a threshold, and we increase the threshold over time. In the update method above we bounce the value of `t` between 0 and 1 and we set this as the `uTime` uniform.
 
@@ -187,7 +187,7 @@ In our shader if the value of the heightmap on a pixel is less than the value ti
 
 ## Complete listing
 
-~~~javascript
+```javascript
 var CustomShader = pc.createScript('customShader');
 
 CustomShader.attributes.add('vs', {
@@ -272,7 +272,7 @@ CustomShader.prototype.update = function(dt) {
     // Update the time value in the material
     this.material.setParameter('uTime', t);
 };
-~~~
+```
 
 Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work. It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
 

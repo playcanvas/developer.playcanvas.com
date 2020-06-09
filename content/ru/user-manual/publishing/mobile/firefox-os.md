@@ -19,7 +19,7 @@ A packaged app is essentially a ZIP file containing all the resources that make 
 
 This file must be called manifest.webapp and be created in the root folder of your extracted and exported PlayCanvas game. An example manifest (taken from the [Dungeon Fury][4] game) is shown below:
 
-~~~javascript~~~
+```javascript
 {
     "name": "Dungeon Fury",
     "version": "1.0.2",
@@ -39,7 +39,7 @@ This file must be called manifest.webapp and be created in the root folder of yo
     "fullscreen": true,
     "orientation": "portrait-primary"
 }
-~~~
+```
 
 A reference that fully documents this manifest format can be found on [MDN][5].
 

@@ -19,7 +19,7 @@ This tutorial describes to methods of selecting an Entity from the 3D scene, for
 
 Collision based picking uses the collision components to add a shape to each Entity that needs to be picked. Then we use the [raycastFirst()][2] method in the rigidbody system to fire a ray from the mouse click position into the screen to see if it hits a collision component. If it does, that Entity is "selected".
 
-~~~javascript~~~
+```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
 
 // initialize code called once per entity
@@ -37,13 +37,13 @@ PickerRaycast.prototype.onSelect = function (e) {
         pickedEntity.script.pulse.pulse();
     }
 };
-~~~
+```
 
 ## Frame Buffer Picking
 
 Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method. Advantages include: using a rectangle to pick many items in a scene at once, this method doesn't have require the physics library to be included and active in your project. The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly on mobile.
 
-~~~javascript~~~
+```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
 
 // initialize code called once per entity
@@ -84,7 +84,7 @@ PickerFramebuffer.prototype.onSelect = function (event) {
         }
     }
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405856
 [2]: http://developer.playcanvas.com/en/api/pc.RigidBodyComponentSystem.html#raycastFirst

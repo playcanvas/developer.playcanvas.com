@@ -18,9 +18,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 打开命令提示符窗口(Mac终端)，输入：
 
-~~~
+```
 npm install socket.io
-~~~
+```
 
 它应该需要几秒钟。 完成后，您应该在您的计算机上安装了Node.js和Socket.io。
 
@@ -28,7 +28,7 @@ npm install socket.io
 
 接下来，我们需要创建一个服务器文件。 打开文本编辑器，然后键入以下内容:
 
-~~~javascript~~~
+```javascript
 var server = require('http').createServer();
 var io = require(‘socket.io')(server);
 
@@ -37,13 +37,13 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
-~~~
+```
 
 请注意，服务器正在侦听端口3000。现在我们返回，将其作为'server.js'保存在您的主文件夹中。 确保它被保存为Javascript文件而不是Server.js.txt。 要启动服务器，请打开命令提示符窗口并输入：
 
-~~~
+```
 node server.js
-~~~
+```
 
 您应该看到‘Server started.’提示 。恭喜，您现在正在运行自己的服务器。
 
@@ -57,9 +57,9 @@ node server.js
 
 现在我们需要创建一个新的脚本来处理网络逻辑。 创建一个名为“Network.js”的脚本。 我们首先需要创建一个到服务器的连接，这可以通过在initialize方法中添加这一行来实现：
 
-~~~javascript~~~
+```javascript
 this.socket = io.connect(‘http://localhost:3000/');
-~~~
+```
 
 ‘http://localhost' 是您的本地服务器的地址， ‘3000’ 是端口。 因为我们连接到我们自己的计算机，我们使用localhost。 如果你想在别处托管，请确保您用于连接的端口与在服务器文件中设置的端口相同。 该项目现在设置为向/从服务器发送和接收消息。
 
@@ -67,17 +67,17 @@ this.socket = io.connect(‘http://localhost:3000/');
 
 在客户端和服务器之间发送数据的方式是使用我们之前创建的套接字连接。 要从客户端发送数据，我们需要使用emit函数。 这里有一个例子:
 
-~~~javascript~~~
+```javascript
 this.socket.emit (‘playerJoined’, ‘John’);
-~~~
+```
 
 这会发送一个名为 ‘playerJoined’，数据为‘John’的消息。 为了服务器能够接收消息，我们需要在服务器文件中写入:
 
-~~~javascript~~~
+```javascript
 socket.on (‘playerJoined’, function (name) {
 	console.log (name);
 });
-~~~
+```
 
 这将记录发送‘playerJoined’ 时发送到服务器的任何数据。
 
@@ -93,7 +93,7 @@ socket.on (‘playerJoined’, function (name) {
 
 将脚本组件添加到玩家实体上，并附加一个名为“Movement.js”的脚本:
 
-~~~javascript~~~
+```javascript
 var Movement = pc.createScript('movement');
 
 Movement.attributes.add('playerSpeed', {
@@ -144,12 +144,12 @@ Movement.prototype.update = function(dt) {
         this.entity.rigidbody.applyForce (this.force);
     }
 };
-~~~
+```
 
 当你启动游戏后，你就能够使用WASD来移动你的player。 如果不行，您可能错过了一个步骤，或者没有为实体设置正确的属性。 (尝试改变移动脚本上的速度属性)
 对于实时多人游戏，我们需要跟踪游戏中的所有玩家。 将当前服务器代码替换为：
 
-~~~javascript~~~
+```javascript
 var server = require('http').createServer();
 var io = require('socket.io')(server);
 
@@ -182,11 +182,11 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
-~~~
+```
 
 在上面的代码中，当玩家发送消息“初始化”时，我们向他发送他在游戏中其他玩家的唯一ID和数据。 它也告诉别人一个新的播放器已经连接。 让我们将这个逻辑添加到我们的网络脚本中。
 
-~~~javascript~~~
+```javascript
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
@@ -244,11 +244,11 @@ addPlayer: function (data) {
 	this.players.push (data);
 	this.players[this.players.length - 1].entity = this.createPlayerEntity ();
 }
-~~~
+```
 
 现在我们加入游戏，客户端告诉了我们已经连接的服务器，服务器向我们发送了一个具有位置的玩家列表。 然后游戏为每个连接的玩家创建一个新实体，并将它们移动到当前位置。 唯一的问题是，服务器不知道所有玩家的位置。 我们需要向服务器发送我们每一帧的当前位置。 将此代码添加到您的Network.js脚本中：
 
-~~~javascript~~~
+```javascript
 initialize: function () {
 	socket = io.connect('http://localhost:3000/');
 	socket.emit ('initialize');
@@ -285,11 +285,11 @@ updatePosition: function () {
 		socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
 	}
 }
-~~~
+```
 
 回到服务器这边，我们需要考虑当玩家向我们发送他们的位置时会发生什么。
 
-~~~javascript~~~
+```javascript
 socket.on ('positionUpdate', function (data) {
 	players[data.id].x = data.x;
 	players[data.id].y = data.y;
@@ -297,7 +297,7 @@ socket.on ('positionUpdate', function (data) {
 
 	socket.broadcast.emit ('playerMoved', data);
 });
-~~~
+```
 
 ## 总结
 
@@ -309,7 +309,7 @@ socket.on ('positionUpdate', function (data) {
 
 以下是整段的客户端联网代码:
 
-~~~javascript~~~
+```javascript
 var Network = pc.createScript('network');
 
 // static variables
@@ -410,11 +410,11 @@ Network.prototype.updatePosition = function () {
     }
 };
 
-~~~
+```
 
 以下是整段的服务器代码:
 
-~~~javascript~~~
+```javascript
 var server = require('http').createServer();
 var io = require('socket.io')(server);
 
@@ -449,7 +449,7 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
-~~~
+```
 
 [1]: /images/tutorials/multiplayer/socket_installed.png
 [2]: /images/tutorials/multiplayer/server_started.png

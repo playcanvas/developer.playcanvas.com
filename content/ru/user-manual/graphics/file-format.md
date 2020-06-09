@@ -8,7 +8,7 @@ Generally speaking, you do not need to know the structure of the file format use
 
 To get models into PlayCanvas, you have to upload an FBX (or OBJ, DAE, DXJ, 3DS) file. On the server, this file is converted to a JSON format. This format is textual. Let's take a look at a very simple example of a plane consisting of two triangles:
 
-~~~javascript~~~
+```javascript
 {
   "model": {
     "version": 2,
@@ -63,7 +63,7 @@ To get models into PlayCanvas, you have to upload an FBX (or OBJ, DAE, DXJ, 3DS)
     ]
   }
 }
-~~~
+```
 
 Here is a reference for the different properties that appear in the JSON object above:
 

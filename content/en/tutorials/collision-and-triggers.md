@@ -63,7 +63,7 @@ The next Entity we'll need is the trigger.
 
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
-~~~javascript~~~
+```javascript
 var Trigger = pc.createScript('trigger');
 
 // initialize code called once per entity
@@ -78,15 +78,15 @@ Trigger.prototype.onTriggerEnter = function(entity) {
     var position = entity.getPosition();
     entity.rigidbody.teleport(position.x, 10, 0);
 };
-~~~
+```
 
 There two significant parts to the code above.
 
 First in the ```initialize``` method we start listening to the **triggerenter** event. This event fires once when a rigid body enters a trigger volume (where a trigger volume is an entity that has a collision component but no rigidbody component). The companion event is **triggerleave** which is fired once the penetrating rigid body leaves the trigger.
 
-~~~javascript~~~
+```javascript
 this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-~~~
+```
 
 Notice, the third argument, ```this```, which is the 'scope' that will be used in the event listener. Usually, you'll want to add the current Script Object as the third argument so that the value of ```this``` in the event listener is that same Script Object.
 
@@ -114,7 +114,7 @@ The difference between **contact** and **collisionstart** is subtle but importan
 
 Both events are useful, but in this demo we'll use the **collisionstart** event to trigger a sound effect that plays when the objects hit the ground. Here's the code:
 
-~~~javascript~~~
+```javascript
 var Collider = pc.createScript('collider');
 
 // initialize code called once per entity
@@ -127,7 +127,7 @@ Collider.prototype.onCollisionStart = function (result) {
         this.entity.sound.play("hit");
     }
 };
-~~~
+```
 
 In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now everytime an Entity with the collider script attached collides with another rigid body it will play the hit sound.
 

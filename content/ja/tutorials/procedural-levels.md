@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 下記のスクリプトは、非常に簡単なレベル生成プログラムです。エディタで設定された2つのエンティティ'Grass' と 'House'を、グリッドベースレベルのタイルのように使用します。ランダムにタイルを選択し、そのタイルをクローンして新しいエンティティを作成してから、正しいグリッド位置に新しいエンティティを配置することでレベルを作成します。
 
-~~~javascript~~~
+```javascript
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
@@ -54,7 +54,7 @@ Generate.prototype.initialize = function() {
         }
     }
 };
-~~~
+```
 
 [1]: http://developer.playcanvas.com/en/api/pc.Entity.html#clone
 [2]: https://playcanvas.com/project/405864

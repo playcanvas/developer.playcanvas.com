@@ -31,37 +31,37 @@ An important part of the Entity system to understand is the Entity Graph or Hier
 
 Getting the position of the entity is straightforward
 
-~~~js~~~
+```javascript
 // Get the entity's position relative to the coordinate system of the entity's parent
 var lp = entity.getLocalPosition();
 
 // Get the entity's position in world space
 var wp = entity.getPosition();
-~~~
+```
 
 These methods both return a `pc.Vec3` (a vector quantity in the array form [x,y,z]).
 
 Setting the position of an entity is just as straightforward.
 
-~~~js~~~
+```javascript
 // Set the entity's position relative to the coordinate system of the entity's parent
 entity.setLocalPosition(x, y, z);
 
 // Set the entity's position in world space
 entity.setPosition(x, y, z);
-~~~
+```
 
 ### Moving the entity
 
 To move the Entity you can add to the Entity's position or you can use the helper functions translate and translateLocal.
 
-~~~js~~~
+```javascript
 // Translate the entity 1 unit down the positive x axis of world space
 entity.translate(1, 0, 0);
 
 // Translate the entity 1 unit down the entity's local z axis
 entity.translateLocal(0, 0, 1);
-~~~
+```
 
 ## Orientation
 
@@ -69,13 +69,13 @@ To set an Entity's orientation you can either set an absolute rotation, or apply
 
 Setting absolute rotations can be done using either [Euler angles][1] or [quaternions][2]. The Wikipedia explanations of these two mathematical representations of rotation are a little hard to follow but the basics are easy to understand. Here are the important facts:
 
-** Euler Angles **
+**Euler Angles**
 
 * Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
 * If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
 * Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
-** Quaternions **
+**Quaternions**
 
 * Quaternions are stored as 4 numbers and represent any orientation in 3D space.
 * They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
@@ -83,7 +83,7 @@ Setting absolute rotations can be done using either [Euler angles][1] or [quater
 
 When scripting entities, it is more likely that you will set an Entity's rotation using Euler angles. For example:
 
-~~~js~~~
+```javascript
 // Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
 // system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
 entity.setLocalEulerAngles(30, 45, 60);
@@ -91,10 +91,10 @@ entity.setLocalEulerAngles(30, 45, 60);
 // Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
-~~~
+```
 However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
-~~~js~~~
+```javascript
 // Create an identity rotation
 var q = new pc.Quat();
 // Set the entity to have the same rotation as its parent - equivalent to
@@ -104,39 +104,39 @@ entity.setLocalRotation(q);
 // Set the entity to have no rotation with respect to the world space coordinate
 // system  - equivalent to entity.setEulerAngles(0, 0, 0)
 entity.setRotation(q);
-~~~
+```
 
 To rotate an Entity incrementally, you can use rotate to rotate the Entity with respect to world space axes or rotateLocal to rotate with respect to the Entity's current axes.
 
 For example, to rotate an Entity by 180 degrees around the world up axis:
 
-~~~js~~~
+```javascript
 entity.rotate(0, 180, 0);
-~~~
+```
 
 Or to rotate the Entity 90 degrees around its local x axis do:
 
-~~~js~~~
+```javascript
 entity.rotateLocal(90, 0, 0);
-~~~
+```
 
 ## Scale
 
 To scale an Entity you simply need to call the following function:
 
-~~~js~~~
+```javascript
 // Scale the entity by a factor of 2 in the local Y axis
 entity.setLocalScale(1, 2, 1);
-~~~
+```
 
 And here is a slightly more interesting example:
 
-~~~js~~~
+```javascript
 // Scale the entity using a sine function over time
 this.timer += deltaTime;
 var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);
-~~~
+```
 
 Note that you cannot currently set the Entity's scale in world space.
 

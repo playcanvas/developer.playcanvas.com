@@ -19,9 +19,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *该项目设置如下*
 
-*上传了三个模型资源：** A **是字母A的模型，** B **是字母B的模型，** C **是字母C的模型。
-* ** C **模型资产设置*不*预加载
-*将模型实体添加到场景中，并将模型** A **分配给模型组件
+*上传了三个模型资源：**A**是字母A的模型，**B**是字母B的模型，**C**是字母C的模型。
+* **C**模型资产设置*不*预加载
+*将模型实体添加到场景中，并将模型**A**分配给模型组件
 *脚本组件被添加到模型实体，并创建一个名为`update_asset.js`的新脚本。
 
 下载[A模型] [5]，[B模型] [6]和[C模型] [7]并将它们上传到你的项目。 确保文件名为A.dae，B.dae和C.dae，因为这将影响资源名称。
@@ -49,7 +49,7 @@ if (app.keyboard.isPressed(pc.KEY_SPACE)) {
 }
 ```
 
-在此项目中，** A **和** B **资源被标记为** preload **。 这意味着在加载屏幕期间，这些资源被下载。 一旦您的应用程序启动，他们就可以使用。 加载资源时，加载的资源可用为`asset.resource`。 如果`asset.resource`是`null`，那么不会加载资源。
+在此项目中，**A**和**B**资源被标记为** preload **。 这意味着在加载屏幕期间，这些资源被下载。 一旦您的应用程序启动，他们就可以使用。 加载资源时，加载的资源可用为`asset.resource`。 如果`asset.resource`是`null`，那么不会加载资源。
 
 因此， `A`和`B`模型是预加载的，这意味着我们知道当我们运行应用程序时，它们将准备就绪。 此代码检查是否按下空格键，如果是，我们将模型组件上的模型更改为资源的属性。 在这种情况下，`asset.resource` 将是一个`pc.Model`对象。 对于每种不同的资源类型(音频，纹理等)，`asset.resource` 属性也会表明相关类型。
 
@@ -69,7 +69,7 @@ if (this.app.keyboard.isPressed(pc.KEY_C)) {
 }
 ```
 
-** C **模型未标记为* preload *，因此在上面的代码中，您可以看到我们在使用资源之前检查资源是否已加载。 如果`asset.resource`为空，那么资源不会被加载，我们不能改变模型组件。 如果加载了** C **模型，那么`this.c.resource`将是`pc.Model`的类型，我们可以赋值它。
+**C**模型未标记为* preload *，因此在上面的代码中，您可以看到我们在使用资源之前检查资源是否已加载。 如果`asset.resource`为空，那么资源不会被加载，我们不能改变模型组件。 如果加载了**C**模型，那么`this.c.resource`将是`pc.Model`的类型，我们可以赋值它。
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -77,7 +77,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 }
 ```
 
-当你按下`L`键时，我们加载** C **模型。 为此，我们将卸载的资源传递给`this.app.assets.load()`。 如果资源已加载，此方法将不会执行任何操作。
+当你按下`L`键时，我们加载**C**模型。 为此，我们将卸载的资源传递给`this.app.assets.load()`。 如果资源已加载，此方法将不会执行任何操作。
 
 一旦资源被加载，asset.resource将是一个`pc.Model`实例，我们可以通过按下`C`键来对其进行赋值。
 

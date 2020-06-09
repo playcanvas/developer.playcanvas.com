@@ -29,7 +29,7 @@ In the image you can see the animation component in the Inspector. There are 2 a
 
 So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Editor and it refers to a JS file called animation_blending.js. The contents of this file is:
 
-~~~javascript~~~
+```javascript
 var AnimationBlending = pc.createScript('animationBlending');
 
 AnimationBlending.states = {
@@ -71,7 +71,7 @@ AnimationBlending.prototype.keyUp = function (e) {
         this.setState('idle');
     }
 };
-~~~
+```
 
 From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
 

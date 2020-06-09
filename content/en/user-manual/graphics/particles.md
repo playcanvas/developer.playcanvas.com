@@ -32,10 +32,10 @@ To configure the particle system via the particle system component interface, co
 
 Sometimes, you might want a particle system to play in response to some event or at a particular time. For example, an explosion should play when a missile reaches its target. To do this, ensure that the Autoplay option is disabled for your particle system. Then, attach a script component to your particle system entity. The following two lines will start (or restart) a particle sytem:
 
-~~~js~~~
+```javascript
 this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
-~~~
+```
 
 [1]: /images/user-manual/graphics/particles/particle_system_icon.png
 [2]: /images/user-manual/graphics/particles/particle_system_create.png

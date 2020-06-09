@@ -19,7 +19,7 @@ The script below performs the following functions:
 
 Note, the player's velocity is never set directly but he is moved by apply forces. To limit the maximum velocity, we have linear damping applied on the rigidbody component.
 
-~~~javascript~~~
+```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');
 
 // optional, assign a camera entity, otherwise one is created
@@ -129,7 +129,7 @@ FirstPersonMovement.prototype._createCamera = function () {
     this.entity.addChild(this.camera);
     this.camera.translateLocal(0, 0.5, 0);
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405842
 

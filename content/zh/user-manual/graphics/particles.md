@@ -32,10 +32,10 @@ PlayCanvas为创建和编辑粒子系统提供了全面的支持。
 
 有些情况下，你可能想让让一个粒子系统再某些特定的事件触发时或是特定的时间段里播放。举个例子，一个爆炸效果应该在导弹触碰到它的目标时播放。为了达成它，请确认你已经为你的粒子系统禁用了自动播放选项。然后，添加一个脚本组件到您的粒子系统的实体上。下面两行代码可以启动(或重新播放)粒子系统:
 
-~~~js~~~
+```javascript
 this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
-~~~
+```
 
 [1]: /images/user-manual/graphics/particles/particle_system_icon.png
 [2]: /images/user-manual/graphics/particles/particle_system_create.png
