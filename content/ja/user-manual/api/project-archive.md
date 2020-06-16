@@ -61,6 +61,6 @@ Status: 201 Created
 このルートは[strict][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-[2]: /user-manual/api/get-job
+[2]: /user-manual/api/job-get
 [3]: /user-manual/profile/projects/#import-project
 
