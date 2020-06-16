@@ -74,5 +74,5 @@ Status: 201 Created
 此路由使用[strict] [1]速率限制。
 
 [1]: /user-manual/api#rate-limiting
-[2]: /user-manual/api/get-job
+[2]: /user-manual/api/job-get
 
