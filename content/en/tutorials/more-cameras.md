@@ -16,7 +16,7 @@ The [Basic Cameras][1] tutorial walks you through creating a camera Entity and a
 The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
 methods on the ComponentSystem.
 
-~~~javascript~~~
+```javascript
 var Zoom = pc.createScript('zoom');
 
 // initialize code called once per entity
@@ -52,7 +52,7 @@ Zoom.prototype.update = function(dt) {
     this.entity.camera.fov = fov;
 };
 
-~~~
+```
 
 In this sample pressing the spacebar triggers a change in field of view. With the line `var fov = this.entity.camera.fov` we `get()` the value of `fov` from the camera component of the entity that this script is attached to.
 
@@ -69,7 +69,7 @@ top and bottom sides of the camera [frustum][2]
 
 Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your Scene; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
 
-~~~javascript~~~
+```javascript
 var CameraManager = pc.createScript('cameraManager');
 
 // initialize code called once per entity
@@ -104,7 +104,7 @@ CameraManager.prototype.update = function(dt) {
         this.setCamera('Right');
     }
 };
-~~~
+```
 
 In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Scene) and the space key activates the central camera.
 

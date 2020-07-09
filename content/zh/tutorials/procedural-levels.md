@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 下面的脚本是一个非常简单的关卡生成程序。 它需要在编辑器中设置两个实体：“草”和“房子”，并将其平铺用作于基础网格的平面。 通过随机选择其中一个图块，克隆图块以创建新实体，然后将新实体放置在正确的网格位置来创建级别。
 
-~~~javascript~~~
+```javascript
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
@@ -54,7 +54,7 @@ Generate.prototype.initialize = function() {
         }
     }
 };
-~~~
+```
 
 [1]: http://developer.playcanvas.com/en/api/pc.Entity.html#clone
 [2]: https://playcanvas.com/project/405864

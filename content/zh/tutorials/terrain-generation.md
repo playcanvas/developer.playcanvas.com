@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 下面的脚本执行地形生成。
 
-~~~javascript~~~
+```javascript
 var Terrain = pc.createScript('terrain');
 
 Terrain.attributes.add('heightMap', {
@@ -159,7 +159,7 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 
     return model;
 };
-~~~
+```
 
 [1]: http://developer.playcanvas.com/en/api/pc.html#createMesh
 [2]: https://playcanvas.com/project/406046

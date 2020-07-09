@@ -29,28 +29,28 @@ Web Audio APIを使用すると、様々なオーディオノードを作成し�
 
 この例では、[Convolver node][6]を使用しています。アプリケーションスクリプトでは、次のようにノードを作成しています：
 
-~~~javascript~~~
+```javascript
 this.convolver = this.app.systems.sound.context.createConvolver();
-~~~
+```
 
 [こちら][7]で説明している通り、コンボルバのインパルス応答として、オーディオサンプルを複数使用します。それぞれのオーディオサンプルはオーディオアセットです。押すボタンに応じてそのアセットを使用して、次のようにコンボルババッファに対して内部バッファを割り当てます。
 
-~~~javascript~~~
+```javascript
 var asset = this[assetName];
 this.convolver.buffer = asset.resource.buffer;
-~~~
+```
 
 次に、以下のように音声スロットにコンボルバを接続します：
 
-~~~javascript~~~
+```javascript
 this.entity.sound.slot('speech').setExternalNodes(this.convolver);
-~~~
+```
 
 Noneというボタンをクリックするとすべてのエフェクトをオフにしてスロットで```clearExternalNodes``` を呼び出します：
 
-~~~javascript~~~
+```javascript
 this.entity.sound.slot('speech').clearExternalNodes();
-~~~
+```
 
 オーディオノードの大きなグラフがあり、スロットに接続したい場合は、```setExternalNodes```のグラフの最後のノードと最初のノードを指定する必要があります。そうすることで、PlayCanvasはスピーカーに正しく最後のノードを接続することができます。
 

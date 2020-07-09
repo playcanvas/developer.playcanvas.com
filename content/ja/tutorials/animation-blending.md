@@ -29,7 +29,7 @@ PlayCanvasを通してこれがどのように行われるかを確認しまし�
 
 このような機能はアニメーションコンポーネントの能力を超えてしまうので、スクリプトコンポーネントを使用して追加の挙動を設定する必要があります。上記は、Editor内のスキンを加えたキャラクターエンティティのスクリーンショットです。スクリプトコンポーネントを確認できます。 これはanimation_blending.jsをいうJSファイルを参照します。このファイルの内容：
 
-~~~javascript~~~
+```javascript
 pc.script.create("animation_blending", function (app) {
     var states = {
         idle: {
@@ -73,7 +73,7 @@ pc.script.create("animation_blending", function (app) {
 
     return AnimationBlender;
 });
-~~~
+```
 
 ここからはアニメーションコンポーネントにより多くのアニメーションを追加することができ、より複雑なアニメーション状態チャートをスクリプトすることが可能になります。
 

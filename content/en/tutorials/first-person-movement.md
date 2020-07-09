@@ -9,7 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 This is an application that implements first person character movement.
 
-The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player and manually set in the inspector. If no camera entity is present a new entity is created. 
+The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player and manually set in the inspector. If no camera entity is present a new entity is created.
 
 See the full scene setup in the [Tutorial Project][1].
 
@@ -19,7 +19,7 @@ The script below performs the following functions:
 * Update a camera entity from the mouse input
 * Apply forces to move the player entity around the scene
 
-Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3]. 
+Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
 
 On the rigidbody component, we also have the following values set in the Editor Inspector:
 * To limit the maximum velocity, we have linear damping applied that stops the player from sliding after the player has released input keys.
@@ -27,7 +27,7 @@ On the rigidbody component, we also have the following values set in the Editor 
 
 ![Rigidbody Attributes][2]
 
-~~~javascript~~~
+```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');
 
 FirstPersonMovement.attributes.add('camera', {
@@ -140,7 +140,7 @@ FirstPersonMovement.prototype._createCamera = function () {
     this.entity.addChild(this.camera);
     this.camera.translateLocal(0, 0.5, 0);
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405842
 [2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg

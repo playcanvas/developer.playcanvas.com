@@ -13,7 +13,7 @@ Try it from the Editor in the [tutorial project.][2]
 
 The script below performs the terrain generation.
 
-~~~javascript~~~
+```javascript
 var Terrain = pc.createScript('terrain');
 
 Terrain.attributes.add('heightMap', {
@@ -159,7 +159,7 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 
     return model;
 };
-~~~
+```
 
 [1]: http://developer.playcanvas.com/en/api/pc.html#createMesh
 [2]: https://playcanvas.com/project/406046

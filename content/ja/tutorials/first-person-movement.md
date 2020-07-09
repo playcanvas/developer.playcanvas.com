@@ -19,7 +19,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 プレイヤーの速度を直接設定することはなく、物理的な力を与えることでプレイヤーを動かしていることに注意してください。最高速度を制限するために、線形で速度が減衰するようrigidbodyコンポーネントに設定がしてあります。
 
-~~~javascript~~~
+```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');
 
 // optional, assign a camera entity, otherwise one is created
@@ -129,7 +129,7 @@ FirstPersonMovement.prototype._createCamera = function () {
     this.entity.addChild(this.camera);
     this.camera.translateLocal(0, 0.5, 0);
 };
-~~~
+```
 
 [1]: https://playcanvas.com/project/405842
 

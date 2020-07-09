@@ -19,7 +19,7 @@ WebGL使用GLSL语言来编写可以在所有浏览器上运行的着色器。 �
 
 ### 顶点着色器
 
-~~~
+```
 attribute vec3 aPosition;
 attribute vec2 aUv0;
 
@@ -33,11 +33,11 @@ void main(void)
     vUv0 = aUv0;
     gl_Position = matrix_viewProjection * matrix_model * vec4(aPosition, 1.0);
 }
-~~~
+```
 
 ### 片段着色器
 
-~~~
+```
 varying vec2 vUv0;
 
 uniform sampler2D uDiffuseMap;
@@ -56,7 +56,7 @@ void main(void)
     }
     gl_FragColor = color;
 }
-~~~
+```
 
 上面的两个着色器定义了新材质的功能。 在顶点着色器中，我们将网格的顶点位置转换为屏幕空间。 在片断着色器中，我们设置像素的颜色。 此像素颜色是基于提供到此资产的两个纹理选择的。 如果值uTime小于heightmap中的颜色，那么我们不渲染任何像素(模型是不可见的)。 如果uTime的值大于heightmap值，那么我们从我们提供的漫反射贴图中获取颜色
 
@@ -99,7 +99,7 @@ var shaderDefinition = {
 
 ## 创建材质
 
-~~~javascript
+```javascript
 // Create the shader from the definition
 this.shader = new pc.Shader(gd, shaderDefinition);
 
@@ -118,7 +118,7 @@ this.material.setParameter('uHeightMap', heightTexture);
 
 // Replace the material on the model with our new material
 model.meshInstances[0].material = this.material;
-~~~
+```
 
 一旦我们得到着色器定义，我们创建一个新的着色器和一个新的材质，并使用`setShader()`将着色器传递到材质上。 然后使用`setParameter()`方法初始化全局。 最后，我们用我们创建的新材质替换模型上的原始材质。 注意，模型中的每个网格都有自己的材料。 因此，如果您的模型有多个网格，您可能需要将材质设置到多个网格实例上。
 
@@ -126,15 +126,15 @@ model.meshInstances[0].material = this.material;
 
 ## 在新材质中使用贴图
 
-~~~javascript
+```javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 //...
 this.material.setParameter('uDiffuseMap', diffuseTexture);
-~~~
+```
 
 本教程中演示的效果使用高度贴图纹理实现。 我们使用上面的代码从资产注册表访问纹理。 在我们的脚本的顶部，我们已经声明了一个名为“maps”的脚本属性，它允许我们从PlayCanvas编辑器设置一个纹理：
 
-~~~javascript
+```javascript
 CustomShader.attributes.add('vs', {
     type: 'asset',
     assetType: 'shader',
@@ -158,13 +158,13 @@ CustomShader.attributes.add('heightMap', {
     assetType: 'texture',
     title: 'Height Map'
 });
-~~~
+```
 
 当我们的高度贴图纹理加载时，我们可以设置统一的`uHeightMap`为`pc.Texture` 对象。
 
 ## 更新全局
 
-~~~javascript
+```javascript
 // update code called every frame
 CustomShader.prototype.update = function(dt) {
     this.time += dt;
@@ -178,7 +178,7 @@ CustomShader.prototype.update = function(dt) {
     // Update the time value in the material
     this.material.setParameter('uTime', t);
 };
-~~~
+```
 
 为了实现消失效果，我们使用高度图值作为阈值，并且随着时间增加阈值。 在上面的更新方法中，我们将`t`的值在0和1之间反弹，并将其设置为`uTime` 均量。
 
@@ -186,7 +186,7 @@ CustomShader.prototype.update = function(dt) {
 
 ## 完整的代码段
 
-~~~javascript
+```javascript
 var CustomShader = pc.createScript('customShader');
 
 CustomShader.attributes.add('vs', {
@@ -271,7 +271,7 @@ CustomShader.prototype.update = function(dt) {
     // Update the time value in the material
     this.material.setParameter('uTime', t);
 };
-~~~
+```
 
 这是完整的脚本。 记住你需要创建顶点着色器和片段着色器资源，以使它工作。 它留给作为一个练习读者实现一个着色器，对具有许多网格和材质的模型执行这种溶解效果。
 

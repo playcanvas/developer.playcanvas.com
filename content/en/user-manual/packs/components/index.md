@@ -15,84 +15,67 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
             <th>Description</th>
         </tr>
     <tr>
-        <td>[Animation][1]</td>
+        <td><a href="/user-manual/packs/components/animation">Animation</a></td>
         <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
     </tr>
     <tr>
-        <td>[Audio Listener][2]</td>
+        <td><a href="/user-manual/packs/components/audiolistener">Audio Listener</a></td>
         <td>Specifies the location of the listener for 3D audio playback.</td>
     </tr>
     <tr>
-        <td>[Button][15]</td>
+        <td><a href="/user-manual/packs/components/button">Button</a></td>
         <td>Create a user interface button.</td>
     </tr>
     <tr>
-        <td>[Camera][3]</td>
+        <td><a href="/user-manual/packs/components/camera">Camera</a></td>
         <td>Renders the scene from the location of the entity.</td>
     </tr>
     <tr>
-        <td>[Collision][4]</td>
+        <td><a href="/user-manual/packs/components/collision">Collision</a></td>
         <td>Assigns a collision volume to the entity.</td>
     </tr>
     <tr>
-        <td>[Element][5]</td>
+        <td><a href="/user-manual/packs/components/element">Element</a></td>
         <td>Defines a user interface element.</td>
     </tr>
     <tr>
-        <td>[Layout Group][6]</td>
+        <td><a href="/user-manual/packs/components/layout-group">Layout Group</a></td>
         <td>Automatically set position and scale of child user interface elements.</td>
     </tr>
     <tr>
-        <td>[Layout Child][7]</td>
+        <td><a href="/user-manual/packs/components/layout-child">Layout Child</a></td>
         <td>Override default Layout Group properties for one element.</td>
     </tr>
     <tr>
-        <td>[Light][8]</td>
+        <td><a href="/user-manual/packs/components/light">Light</a></td>
         <td>Attach a dynamic light source to the Entity.</td>
     </tr>
     <tr>
-        <td>[Model][9]</td>
+        <td><a href="/user-manual/packs/components/model">Model</a></td>
         <td>Renders a 3D model at the location of the entity.</td>
     </tr>
     <tr>
-        <td>[Particle System][10]</td>
+        <td><a href="/user-manual/packs/components/particlesystem">Particle System</a></td>
         <td>Attach a particle system to the Entity.</td>
     </tr>
     <tr>
-        <td>[Rigid Body][11]</td>
+        <td><a href="/user-manual/packs/components/rigidbody">Rigid Body</a></td>
         <td>Adds the entity to the scene's physical simulation.</td>
     </tr>
     <tr>
-        <td>[Screen][12]</td>
+        <td><a href="/user-manual/packs/components/screen">Screen</a></td>
         <td>Defines the area and rendering of a user interface.</td>
     </tr>
     <tr>
-        <td>[Script][13]</td>
+        <td><a href="/user-manual/packs/components/script">Script</a></td>
         <td>Allows the entity to run JavaScript fragments to implement custom behavior.</td>
     </tr>
     <tr>
-        <td>[Sound][14]</td>
+        <td><a href="/user-manual/packs/components/sound">Sound</a></td>
         <td>Plays audio assets.</td>
     </tr>
     <tr>
-        <td>[Sprite][16]</td>
+        <td><a href="/user-manual/packs/components/sprite">Sprite</a></td>
         <td>Render 2D graphics at the location of the entity.</td>
     </tr>
 </tbody></table>
-
-[1]: /user-manual/packs/components/animation
-[2]: /user-manual/packs/components/audiolistener
-[3]: /user-manual/packs/components/camera
-[4]: /user-manual/packs/components/collision
-[5]: /user-manual/packs/components/element
-[6]: /user-manual/packs/components/layout-group
-[7]: /user-manual/packs/components/layout-child
-[8]: /user-manual/packs/components/light
-[9]: /user-manual/packs/components/model
-[10]: /user-manual/packs/components/particlesystem
-[11]: /user-manual/packs/components/rigidbody
-[12]: /user-manual/packs/components/screen
-[13]: /user-manual/packs/components/script
-[14]: /user-manual/packs/components/sound
-[15]: /user-manual/packs/components/button
-[16]: /user-manual/packs/components/sprite

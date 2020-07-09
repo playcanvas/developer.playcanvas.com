@@ -13,7 +13,7 @@ position: 2
 
 当用户[向PlayCanvas.com发布游戏][2]时,您的用户将会被分配一个链接。将您的应用程序嵌入到另外一个页面，只需要简单的在框架的`src`属性中写入这个游戏的链接。
 
-~~~html~~~
+```html
 <html>
     <head>
         <title>My Great Game</title>
@@ -22,7 +22,7 @@ position: 2
         <iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
     </body>
 </html>
-~~~
+```
 
 ## 在您自己的服务器上进行自托管
 

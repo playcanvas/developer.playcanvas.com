@@ -19,7 +19,7 @@ position: 3
 
 这个文件必须被命名为manifest.webapp并被在你所提取并导出的PlayCanvas游戏的根文件夹中创建。一个清单文件的案例(从 [Dungeon Fury][4] 游戏获取) 如下所展示:
 
-~~~javascript~~~
+```javascript
 {
     "name": "Dungeon Fury",
     "version": "1.0.2",
@@ -39,7 +39,7 @@ position: 3
     "fullscreen": true,
     "orientation": "portrait-primary"
 }
-~~~
+```
 
 关于这个清单格式的充分说明文档可以在 [MDN][5]中找到。
 

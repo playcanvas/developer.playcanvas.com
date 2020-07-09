@@ -8,7 +8,7 @@ position: 7
 
 为了在PlayCanvas内部获得模型，你需要上传一个 FBX (或 OBJ, DAE, DXJ, 3DS) 格式的文件。在服务器中，这个文件会被转换为JSON格式。这是一个文本格式。让我们来看看一个很简单的由两个三角形组成的平面的例子：
 
-~~~javascript~~~
+```javascript
 {
   "model": {
     "version": 2,
@@ -63,7 +63,7 @@ position: 7
     ]
   }
 }
-~~~
+```
 
 以下是出现在JSON对象中的不同属性的引用：
 

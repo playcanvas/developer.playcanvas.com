@@ -62,7 +62,7 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 このエンティティは*collision*コンポーネントはありますが、*rigidbody*コンポーネントはありません。そのためこのエンティティはトリガーとして振る舞います。このトリガーエンティティにはコードが書き込まれた*script*コンポーネントが与えられています。トリガーは発生した時に何らかの処理を行った時はじめて意味があるものになります。そのため、処理を行うコードとトリガーが発生した際のイベントを監視するコードを追加する必要があります。
 
-~~~javascript~~~
+```javascript
 var Trigger = pc.createScript('trigger');
 
 // initialize code called once per entity
@@ -77,15 +77,15 @@ Trigger.prototype.onTriggerEnter = function(entity) {
     var position = entity.getPosition();
     entity.rigidbody.teleport(position.x, 10, 0);
 };
-~~~
+```
 
 上記のコードには大きく分けて二つの機能があります。
 
 まず、```initialize```メソッド内で**triggerenter**イベントの監視を始めます。このイベントは剛体がトリガーボリューム(collisionコンポーネントのみを持ち、rigidbodyコンポーネントを持たないエンティティ)に入った時に発生します。対応する反対のイベントは**triggerleave**イベントで、これは剛体がトリガーボリュームの外に出た時に発生します。
 
-~~~javascript~~~
+```javascript
 this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
-~~~
+```
 
 三番目の引数である```this```はイベントリスナーで使われる'scope'であることに注意してください。通常は三番目の引数として、現在のスクリプトオブジェクトを与えます。これはイベントリスナー内の```this```の値をイベントリスナーを設定しているスクリプトオブジェクトと同じものにするためです。
 
@@ -113,7 +113,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 どちらのイベントも便利ですが、このデモでは**collisionstart**イベントを地面に触れた時の効果音を鳴らすトリガーとして使用しています。以下がコードです:
 
-~~~javascript~~~
+```javascript
 var Collider = pc.createScript('collider');
 
 // initialize code called once per entity
@@ -126,7 +126,7 @@ Collider.prototype.onCollisionStart = function (result) {
         this.entity.sound.play("hit");
     }
 };
-~~~
+```
 
 ```initialize```メソッドでイベントリスナが設定されています。そしてイベントハンドラの中では、衝突した相手のエンティティが**rigidbody**コンポーネントを持っているかを確認し(これはトリガーボリュームに入った際に効果音を鳴らさないためです)、そして"hit"サウンドエフェクトを鳴らします。このようにして、colliderスクリプトを持つエンティティが他の剛体と衝突すると、毎回衝突の効果音を鳴らしています。
 

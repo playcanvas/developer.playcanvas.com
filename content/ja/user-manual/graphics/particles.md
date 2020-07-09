@@ -32,10 +32,10 @@ Editor's 3Dビューでは、選択されていないパーティクルシステ
 
 パーティクルシステムをイベントまたは特定の時間に反応して再生させたい場合もあります。例えば、ミサイルが目標に到達したときには爆発が再生されるべきです。これを行うには、パーティクルシステムでAutoplayオプションが無効になっている必要があります。次に、パーティクルシステムのエンティティにスクリプトコンポーネントを添付します。次の2行がパーティクルシステムを起動(または再起動)します：
 
-~~~js~~~
+```javascript
 this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
-~~~
+```
 
 [1]: /images/user-manual/graphics/particles/particle_system_icon.png
 [2]: /images/user-manual/graphics/particles/particle_system_create.png
