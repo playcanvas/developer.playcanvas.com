@@ -76,7 +76,14 @@ At runtime when the application switches to a different locale it will load the 
 
 ## Engine
 
-For the engine API reference for localization see [this page][2].
+To retrieve the text from a key in script, use the APIs:
+
+* [pc.I18n#getText][3] To retrieve the a non-plural or first text string in a plural list
+* [pc.I18n#getPluralText][4] To retrieve a plural text string based on the number
+
+For the complete engine API reference for localization see [this page][2].
 
 [1]: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
 [2]: https://developer.playcanvas.com/en/api/pc.I18n.html
+[3]: https://developer.playcanvas.com/en/api/pc.I18n.html#getText
+[4]: https://developer.playcanvas.com/en/api/pc.I18n.html#getPluralText
