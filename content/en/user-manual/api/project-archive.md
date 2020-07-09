@@ -12,7 +12,7 @@ POST https://playcanvas.com/api/projects/:id/export
 
 ## Description
 
-This will allow you to download a zip archive of your entire project. You can import that archive from your Projects Dashboard to create a new Project from that archive. More about importing projects [here][3]. You need an Organization plan to be able to download a project archive.
+This will allow you to download a zip archive of your entire project. You can import that archive from your Projects Dashboard to create a new Project from that archive. More about importing projects [here][3].
 
 The request will start an archive job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, it's data will contain a URL to download the project archive.
 
@@ -49,8 +49,6 @@ Status: 201 Created
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
 <div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">403</span><p>Invalid plan</p></div>
-<div class="parameter"><span class="param">403</span><p>User is not an admin of the organization</p></div>
 <div class="parameter"><span class="param">404</span><p>Project not found</p></div>
 <div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
