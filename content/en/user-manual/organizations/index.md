@@ -10,15 +10,15 @@ Free Organizations includes:
 
 - Unlimited public projects
 - Unlimited public team members
+- Project-based permissions
+- Offline Archive & Restore
+- Ability to remove PlayCanvas branding
+- Access to [REST API][2]
 
 You can also purchase an [Organization Plan][1] which includes:
 
 - Unlimited private projects
-- Project-based permissions
-- Ability to remove PlayCanvas branding
-- Offline Archive & Restore
 - Additional storage space
-- Access to [REST API][2]
 
 [1]: https://playcanvas.com/plans
 [2]: /user-manual/api
