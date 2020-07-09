@@ -8,8 +8,6 @@ position: 15
     The REST API is currently in beta. This means we may change certain endpoints and API responses.
 </div>
 
-PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more. Here is a [tutorial][2] about using REST APIs.
-
 ## Authorization
 
 You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page. In the API Tokens section click on Generate Token. Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
@@ -107,6 +105,3 @@ The response will contain the following headers to help you regulate how often y
 </div>
 
 If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
-
-[1]: /user-manual/organizations
-[2]: https://www.codecademy.com/courses/javascript-beginner-en-EID4t/0/1?curriculum_id=5122e3cbb5827b93e2000865
