@@ -122,7 +122,7 @@ And synchronising it on every update:
 for(var i = 0; i < joints.length; i++) {
     var entity = joints[i];
     var joint = entity.joint;
-    var radius = joint.getRadius() * 2;
+    var radius = joint.radius * 2;
     entity.setLocalScale(radius, radius, radius);
     entity.setPosition(joint.getPosition());
     entity.setRotation(joint.getRotation());
