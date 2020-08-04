@@ -75,7 +75,7 @@ We also recommend to have an option in the application for the user to be able t
 
 [1]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
 [2]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg
-[3]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.jpg
+[3]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.png
 [4]: /api/pc.GraphicsDevice.html#maxPixelRatio
 [5]: https://www.videocardbenchmark.net/GPU_mega_page.html
 [6]: https://www.notebookcheck.net/Smartphone-Graphics-Cards-Benchmark-List.149363.0.html
