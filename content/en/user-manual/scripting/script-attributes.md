@@ -149,21 +149,21 @@ MyScript.attributes.add('gameConfig', {
     schema: [{
         name: 'numEnemies',
         type: 'number',
-        default: '10'
+        default: 10
     }, {
         name: 'enemyModels',
         type: 'asset',
         assetType: 'model',
         array: true
-    }], {
+    }, {
         name: 'godMode',
         type: 'boolean',
         default: false
-    } 
+    }]
 });
 ```
 
-You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types. 
+You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
 
 *NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
