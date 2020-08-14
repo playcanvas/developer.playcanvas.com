@@ -165,6 +165,17 @@ MyScript.attributes.add('gameConfig', {
 
 You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
 
+Here's an example of accessing the above attributes in a script:
+```javascript
+MyScript.prototype.update = function (dt) {
+    if (this.gameConfig.godMode) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
+        }
+    }
+};
+```
+
 *NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
