@@ -123,7 +123,7 @@ The curve attribute is used to express a value that changes over a time period. 
 
 ### Enumeration attribute
 
-The last special attribute property is the Enumeration
+The Enumeration attribute allows you to choose one of the available options:
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -137,5 +137,45 @@ MyScript.attributes.add('value', {
 ```
 
 Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
+
+
+### JSON attribute
+
+The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+
+```javascript
+MyScript.attributes.add('gameConfig', {
+    type: 'json',
+    schema: [{
+        name: 'numEnemies',
+        type: 'number',
+        default: 10
+    }, {
+        name: 'enemyModels',
+        type: 'asset',
+        assetType: 'model',
+        array: true
+    }, {
+        name: 'godMode',
+        type: 'boolean',
+        default: false
+    }]
+});
+```
+
+You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+
+Here's an example of accessing the above attributes in a script:
+```javascript
+MyScript.prototype.update = function (dt) {
+    if (this.gameConfig.godMode) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
+        }
+    }
+};
+```
+
+*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
