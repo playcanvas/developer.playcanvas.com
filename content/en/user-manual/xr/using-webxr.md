@@ -17,10 +17,13 @@ if (app.xr.supported) {
 
 ## Starting XR Session
 
-The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide the type of session and reference space type:
+The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide arguments object with the type of session and reference space type:
 
 ```javascript
-entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
+entity.camera.startXr({
+    type: pc.XRTYPE_VR,
+    spaceType: pc.XRSPACE_LOCAL
+});
 ```
 
 It is an asynchronous operation and is only possible to start on a user interaction, such as a button click, mouse click or touch. To know when a session is started, you can subscribe to the `start` event:
@@ -34,9 +37,13 @@ app.xr.on('start', function () {
 Session type or reference space might not be available on a particular platform, so it will fail to start the session, providing an error in a callback and firing the `error` event on XrManager:
 
 ```javascript
-entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, function(err) {
-    if (err) {
-        // failed to start session
+entity.camera.startXr({
+    type: pc.XRTYPE_VR,
+    spaceType: pc.XRSPACE_UNBOUNDED,
+    callback: function(err) {
+        if (err) {
+            // failed to start session
+        }
     }
 });
 ```
@@ -99,6 +106,29 @@ Input source ray, as well as position and rotation, are in reference space. So i
 ## Why can't I enable XR mode automatically?
 
 Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason there is no way to enter XR immediately on loading a page.
+
+## Experimental features
+
+WebXR API is constantly evolving and additional APIs get released extending XR feature set. While engine is constantly updated with integrations for XR APIs, some of features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for WebXR Layers:
+
+```javascript
+app.xr.start({
+    camera: cameraComponent,
+    type: pc.XRTYPE_VR,
+    spaceType: pc.XRSPACE_LOCAL,
+    optionalFeatures: [ 'layers' ],
+    callback: function(err) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        if (app.xr.session.renderState.layers) {
+            // get access to WebXR Layers
+        }
+    }
+});
+```
 
 [1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
 [2]: /api/pc.XrManager.html
