@@ -17,7 +17,7 @@ if (app.xr.supported) {
 
 ## Starting XR Session
 
-The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide arguments object with the type of session and reference space type:
+The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
