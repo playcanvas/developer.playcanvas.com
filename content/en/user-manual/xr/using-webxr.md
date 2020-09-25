@@ -17,10 +17,10 @@ if (app.xr.supported) {
 
 ## Starting XR Session
 
-The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide the type of session and reference space type:
+The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
 
 ```javascript
-entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
+entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
 ```
 
 It is an asynchronous operation and is only possible to start on a user interaction, such as a button click, mouse click or touch. To know when a session is started, you can subscribe to the `start` event:
@@ -34,9 +34,11 @@ app.xr.on('start', function () {
 Session type or reference space might not be available on a particular platform, so it will fail to start the session, providing an error in a callback and firing the `error` event on XrManager:
 
 ```javascript
-entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, function(err) {
-    if (err) {
-        // failed to start session
+entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
+    callback: function(err) {
+        if (err) {
+            // failed to start session
+        }
     }
 });
 ```
@@ -90,15 +92,36 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 
 ## Camera Position and Orientation in XR
 
-When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your translation to this entity.
+When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
 
 ![Camera Offset][1]
 
-Input source ray, as well as position and rotation, are in reference space. So if the camera position is manipulated by a parent transformation, then the input source ray, position and rotation should be transformed accordingly.
+Input source ray, as well as position and rotation of grip and hands, provided in world space.
 
 ## Why can't I enable XR mode automatically?
 
 Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason there is no way to enter XR immediately on loading a page.
 
+## Experimental features
+
+WebXR API is constantly evolving and additional APIs get released extending XR feature set. While engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
+
+```javascript
+app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
+    optionalFeatures: [ 'layers' ],
+    callback: function(err) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        if (app.xr.session.renderState.layers) {
+            // get access to WebXR Layers
+        }
+    }
+});
+```
+
 [1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
 [2]: /api/pc.XrManager.html
+[3]: https://immersive-web.github.io/layers/

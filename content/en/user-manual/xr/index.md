@@ -31,7 +31,7 @@ button.element.on('click', function () {
     // check if XR is supported and VR is available
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_VR)) {
         // start VR using a camera component
-        entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCAL);
+        entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });
 ```
