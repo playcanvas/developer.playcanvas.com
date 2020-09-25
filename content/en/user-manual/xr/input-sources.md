@@ -19,7 +19,7 @@ for (var i = 0; i < inputSources.length; i++) {
 }
 ```
 
-Input sources can be added and removed dynamically. This can be done by connecting physical devices, or some input sources have a lifespan only during their primary action (for example, a touchscreen in an AR-type session on mobile). You can subscribe to `add` and `remove` events:
+Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices by underlying platform, and some input sources have a lifespan only during their primary action (for example, a touchscreen in an AR-type session on mobile). You can subscribe to `add` and `remove` events:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
@@ -33,7 +33,7 @@ app.xr.input.on('add', function (inputSource) {
 
 ## Primary Action (select)
 
-Each input source can have a primary action `select`. On gaze-based input sources, it is the touch of a screen/button. On handheld devices, it is the primary button/trigger. There are also `selectstart` and `selectend` events which you can subscribe to as follows:
+Each input source can have a primary action `select`. On gaze-based input sources, it is the touch of a screen/button. On handheld devices, it is the primary button/trigger. For tracked hands it is emulated by PlayCanvas engine when thumb and index tips are touching. There are also `selectstart` and `selectend` events which you can subscribe to as follows:
 
 ```javascript
 inputSource.on('select', function () {
@@ -51,11 +51,12 @@ app.xr.input.on('select', function (inputSource) {
 
 ## Ray
 
-Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed in XR camera parent's space. Some examples of input sources might be, but not limited to:
+Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed to world space. Some examples of input sources might be, but not limited to:
 
  * Gaze-based input, such as a mobile device which is inserted into a Google Cardboard™ style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
  * Screen-based input. This might be available on mobile devices in Augmented Reality session types, where the user can interact with the virtual world by touchscreen.
  * Handheld devices, like the Oculus Touch™, will have a ray originating from the tip of the handheld device and the direction is based on the rotation of device.
+ * Tracked Hands have an emulated by PlayCanvas engine ray that originates from point between thumb and index tips, and pointing forward.
 
 Here is an example illustrating how to check whether a ray has intersected with the bounding-box of a mesh:
 
@@ -70,7 +71,7 @@ if (meshInstance.aabb.intersectsRay(ray)) {
 
 ## Grip
 
-Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are calculated in XR camera parent's space.
+Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are provided in world space.
 
 ```javascript
 if (inputSource.grip) {
@@ -94,6 +95,40 @@ if (gamepad) {
 }
 ```
 
+## Hands
+
+If platform supports [WebXR Hand Input][7], then an input source might have an associated hand data, which is exposed as [XrHand][8], and provides convenient information in form of [XrFinger][9] and [XrJoint][10] for application developer to use, such as wrist, fingers, each joint, tips and events for detecting when hands loose/restore tracking.
+
+Creating basic hand model:
+
+```javascript
+var joints = [ ];
+var hand = inputSource.hand;
+
+if (hand) {
+    for(var i = 0; i < hand.joints.length; i++) {
+        var entity = new pc.Entity();
+        entity.joint = hand.joints[i];
+        entity.addComponent('model', { type: 'box' });
+        parent.addChild(entity);
+        joints.push(entity);
+    }
+}
+```
+
+And synchronising it on every update:
+
+```javascript
+for(var i = 0; i < joints.length; i++) {
+    var entity = joints[i];
+    var joint = entity.joint;
+    var radius = joint.radius * 2;
+    entity.setLocalScale(radius, radius, radius);
+    entity.setPosition(joint.getPosition());
+    entity.setRotation(joint.getRotation());
+}
+```
+
 ## Profiles
 
 Each input source might have a list of strings describing a type of input source, which is described in a [profile registry][6]. Based on this, you can figure out what type of model to render for handheld device or what capabilities it might have. Additionally, the profile registry lists gamepad mapping details, such as buttons and axes.
@@ -111,3 +146,7 @@ if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
 [4]: https://www.w3.org/TR/webxr-gamepads-module-1/
 [5]: https://w3c.github.io/gamepad/
 [6]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
+[7]: https://immersive-web.github.io/webxr-hand-input/
+[8]: /api/pc.XrHand.html
+[9]: /api/pc.XrFinger.html
+[10]: /api/pc.XrJoint.html
