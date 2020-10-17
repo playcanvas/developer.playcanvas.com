@@ -18,7 +18,7 @@ The Organization plan allows you to add and remove seats at any time. When seats
 ### Example:
 Imagine the following sequence of events:
 
-* A user signs up for a 1-seat Organization plan on 10th April.
+* A user signs up for a 1-seat Organization plan on 10th May.
 * The user then adds 1 seat on 20th June.
 * The user removes 1 seat on 20th August.
 
