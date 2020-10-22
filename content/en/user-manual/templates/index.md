@@ -6,6 +6,8 @@ position: 7.4
 
 Templates (or prefabs) allow you to speed up your development by creating Entities that are reusable. You can place multiple instances of a Template in your Scene and if you make any changes and apply them to the Template Asset, all instances of that Template will be updated.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" frameborder="0" allowfullscreen></iframe>
+
 ## Creating Templates
 
 To create a new Template Asset you can right-click on any Entity in your Scene and select Template &rarr; New Template. This will create a new Template Asset and add it to your currently selected folder in the Asset Panel. The Entity you right clicked will become an instance of that new Template Asset automatically.
