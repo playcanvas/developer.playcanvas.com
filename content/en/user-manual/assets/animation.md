@@ -22,7 +22,7 @@ They can be found the Project Settings under Asset Tasks.
 
 Available for both JSON and GLB export formats. The higher the rate, the higher detail and fidelity the animation at the cost of size. If you would like to keep the keyframes that have been set and defined in the original animation, select Disabled.
 
- ### Curve tolerance
+### Curve tolerance
 
 Available for both JSON and GLB export formats. Normally a value between 0 and 1 where the higher number, the smaller the file size but at cost of losing information in the animation. It's a lossy compression of the animation with the idea that a saving in file size can be made with little or no noticeable difference
 
