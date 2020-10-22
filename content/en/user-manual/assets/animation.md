@@ -30,7 +30,7 @@ Available for both JSON and GLB export formats. Normally a value between 0 and 1
 
 ### Cubic curves.
 
-Only available for GLB export formats. If wish to keep the easing in the animation curves from the original animation. However, this will mean that the file will have extra information per keyframe and increase the size.
+Only available for GLB export formats. If you wish to keep the easing in the animation curves from the original animation. However, this will mean that the file will have extra information per keyframe and increase the size.
 
 If enabling this option, it is recommended that Sample rate is disabled and Curve tolerance is set to 0.
 
