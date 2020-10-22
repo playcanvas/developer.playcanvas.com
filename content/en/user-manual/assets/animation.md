@@ -24,9 +24,11 @@ Available for both JSON and GLB export formats. The higher the rate, the higher 
 
 ### Curve tolerance
 
-Available for both JSON and GLB export formats. Normally a value between 0 and 1 where the higher number, the smaller the file size but at cost of losing information in the animation. It's a lossy compression of the animation with the idea that a saving in file size can be made with little or no noticeable difference
+Available for both JSON and GLB export formats. Curve tolerance controls a lossy compression setting of the animation import with the idea that a saving in file size can be made with little or no noticeable difference.
 
-0.01 or 0.02 is considered to be good starting point.
+This is a value between 0 and 100 where the higher number, the smaller the file size but at cost of losing information in the animation. 0 would be no compression and 100 would lose all information.
+
+1 or 2 is considered to be good starting point.
 
 ### Cubic curves.
 
