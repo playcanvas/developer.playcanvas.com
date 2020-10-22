@@ -16,9 +16,13 @@ Administrators can do everything the owner can do e.g. create and delete project
 
 ### Seats
 
+To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
+
 ![seats][2]
 
 You can see which users have access to your private projects and occupy your available seats. From here you can remove users which will remove them from all your projects, freeing up seats.
+
+The Owner of the organization does not need to occupy a seat if they are not actively working on any projects. It is recommended to have at least one user who will occupy a seat, to be an Admin of the Organization so that they can create new projects and manage existing projects.
 
 ![upgrade][3]
 
