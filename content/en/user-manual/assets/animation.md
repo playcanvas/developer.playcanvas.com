@@ -14,7 +14,7 @@ Note: This is an experimental feature. Please let us know your feedback in the <
 
 When importing animations, there are settings that can be tweaked to adjust the animation quality against the file size.
 
-They can be found the Project Settings under Asset Tasks.
+They can be found in the Project Settings under Asset Tasks.
 
 ![Animation Import Settings][animation_import_settings]
 
