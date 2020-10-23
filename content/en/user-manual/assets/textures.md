@@ -25,7 +25,7 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG and PNG files remain in their original format. 
+Imported JPG and PNG files remain in their original format.
 
 GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
 
@@ -81,10 +81,29 @@ Enabling all compression schemes achieves the following results:
 
 The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
 
+<div class="alert alert-info">Note: There are limitations on the dimensions of the texture that can be compressed</div>
+
+## Max Texture Size
+
+Different devices can support different texture sizes. Using [WebGL report][7] on the device and browser, we can see the max size supported.
+
+For example, this is from a MacBook Pro 16 inch (2020) laptop with Chrome which shows support up to 16384x16384.
+
+<img src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" style="width: 600px;"/>
+
+Whereas on a Samsung S7 mobile device, only 4096x4096 is supported.
+
+<img src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" style="width: 600px;"/>
+
+The PlayCanvas engine will automatically downsize textures at runtime that are too large to the max size supported by the device.
+
+If you would like to avoid downsizing at runtime, at the time of writing (Fri 23 Oct 2020), 4096x4096 is widely supported with some developers even opting for 2048x2048 to better support low end mobile devices.
+
+
 [1]: /user-manual/assets/materials
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
 [3]: /images/user-manual/assets/textures/texture-properties.png
 [4]: /images/user-manual/assets/textures/anisotropy.png
 [5]: /images/user-manual/assets/textures/texture-address.png
 [6]: /images/user-manual/assets/textures/compression-results.png
-
+[7]: https://webglreport.com/
