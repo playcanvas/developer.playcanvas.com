@@ -111,7 +111,7 @@ Once you are happy with your app, you can ship it to [App Store Connect][14].
 [2]: https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli
 [3]: https://playcanv.as/p/JERg21J8/
 [4]: https://cordova.apache.org/docs/en/latest/config_ref/images.html
-[5]: /images/user-manual/publishing/cordova/toolbar-publish.png
+[5]: /images/user-manual/publishing/toolbar-publish.png
 [6]: /images/user-manual/publishing/cordova/download-zip.png
 [7]: /images/user-manual/publishing/cordova/download-new-build.png
 [8]: /user-manual/api/app-download/
