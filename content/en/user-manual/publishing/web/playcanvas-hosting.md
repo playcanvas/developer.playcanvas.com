@@ -63,7 +63,7 @@ It's useful to have a single link that will always refer to the latest version o
 If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
 </div>
 
-The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publshing them to your audience.
+The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.
 
 [1]: /images/user-manual/publishing/toolbar-publish.png
 [2]: /images/user-manual/publishing/dialog-publish.png
