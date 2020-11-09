@@ -99,4 +99,4 @@ As you can see this reduces set up code and makes for cleaner code.
 
 More details on events in the [API Reference][1]
 
-[1]: http://developer.playcanvas.com/en/api/pc.events.html
+[1]: http://developer.playcanvas.com/en/api/pc.EventHandler.html
