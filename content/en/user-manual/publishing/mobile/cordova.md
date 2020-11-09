@@ -58,7 +58,7 @@ You are now ready to build your app for any of the platforms supported by Cordov
 
 ### Building for iOS
 
-A prerequisite for iOS development is installing Xcode. You can install it from the [Mac App Store][9].
+Building for iOS is limited to macOS based computers. You must also ensure you have Xcode installed. You can install it from the [Mac App Store][9].
 
 To build your app for iOS, add the Cordova iOS platform to your project. From the root of your project, issue the command:
 
@@ -82,7 +82,7 @@ By default, if you attempt to run a Cordova-based PlayCanvas app, you will encou
 
 ### Testing for iOS
 
-You are now ready to test your app. For iOS, you can Simulator or run on a physical iOS device. Simulator is installed as part the Xcode tools, runs on your Mac and simulates the various iOS based devices. To run your app in Simulator, issue the following command:
+You are now ready to test your app. For iOS, you can use Simulator or run on a physical iOS device. Simulator is installed as part the Xcode tools, runs on your Mac and simulates the various iOS based devices. To run your app in Simulator, issue the following command:
 
 ```
 cordova run ios
