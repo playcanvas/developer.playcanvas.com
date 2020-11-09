@@ -29,4 +29,4 @@ You can also create your own post effects. You can find the source for the above
 [7]: /user-manual/graphics/posteffects/sepia
 [8]: /user-manual/graphics/posteffects/vignette
 [9]: /user-manual/packs/components/script
-[10]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
+[10]: https://github.com/playcanvas/engine/tree/master/examples/assets/scripts/posteffects

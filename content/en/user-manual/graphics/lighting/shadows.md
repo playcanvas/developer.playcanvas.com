@@ -66,6 +66,6 @@ Enabling shadows has performance implications:
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
-[4]: /user-manual/graphics/lighting/lightmaps
+[4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png

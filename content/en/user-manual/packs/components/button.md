@@ -59,4 +59,4 @@ You can control the properties of a Button component using a [script component][
 [3]: /images/user-manual/scenes/components/component-button-swap.jpg
 [4]: /images/user-manual/scenes/components/component-button-tint.jpg
 [5]: /user-manual/packs/components/script
-[6]: /engine/api/pc.ButtonComponent.html
+[6]: /en/api/pc.ButtonComponent.html
