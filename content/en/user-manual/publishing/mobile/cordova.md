@@ -117,7 +117,7 @@ Once you are happy with your app, you can ship it to [App Store Connect][14].
 [8]: /user-manual/api/app-download/
 [9]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [10]: https://cordova.apache.org/announcements/2020/06/01/cordova-ios-release-6.0.0.html
-[11]: /images/user-manual/publishing/cordova/master-archer-simulator.png
+[11]: /images/user-manual/publishing/cordova/simulator-master-archer.png
 [12]: /images/user-manual/publishing/cordova/xcode-scheme.png
 [13]: /images/user-manual/publishing/cordova/xcode-run.png
 [14]: https://developer.apple.com/app-store-connect/
