@@ -24,7 +24,7 @@ Here are some tips and hints on how to achieve good performance in your PlayCanv
 * Post effects can be expensive so think carefully before you enable them. They can cost a lot in terms of pixel fill.
 * Only enable frustum culling on a camera component if, on balance, it is likely to save more performance than it costs to calculate visiblity. If you are rendering a scene where all mesh instances are always visible, definitely disable this option.
 * Enabling backface culling on a material will be cheaper than disabling it. Generally speaking, backface culling reduces the number of pixels that the GPU has to fill. This is the default setting for newly created materials.
-* For applications where there is little visual change over a period such as product configurators, there is a specialist property to reduce CPU and GPU usage. [`pc.Application#autoRender`][3] can be set to `false` so that frames are rendered on demand via [`pc.Application#autoRender`][4] when there is a visual change such as the user moving the camera or adding a part to the product.
+* For applications where there is little visual change over a period such as product configurators, there is a specialist property to reduce CPU and GPU usage. [`pc.Application#autoRender`][3] can be set to `false` so that frames are rendered on demand via [`pc.Application#renderNextFrame`][4] when there is a visual change such as the user moving the camera or adding a part to the product.
 
 ## Physics
 
