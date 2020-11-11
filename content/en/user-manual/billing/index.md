@@ -1,7 +1,7 @@
 ---
 title: Billing
 template: usermanual-page.tmpl.html
-position: 16
+position: 17
 ---
 
 ## Auto-renewal of Subscriptions
