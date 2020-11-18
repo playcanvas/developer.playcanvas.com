@@ -80,6 +80,12 @@ Note that on a Mac, CMD should be used instead of CTRL.
         <td>Paste Entity</td><td>Paste an entity under the currently selected entity</td><td>CTRL + V</td>
     </tr>
     <tr>
+        <td>Copy Asset</td><td>Copy selected asset or assets in assets panel</td><td>CTRL + C</td>
+    </tr>
+    <tr>
+        <td>Paste Entity</td><td>In the assets panel, paste previously selected asset or assets</td><td>CTRL + V</td>
+    </tr>
+    <tr>
         <td>Delete</td><td>Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
     </tr>
     <tr>

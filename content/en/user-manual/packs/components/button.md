@@ -52,11 +52,11 @@ The Button Component can be used in two Transition Modes. *Sprite Swap*, which u
 
 ## Scripting Interface
 
-You can control the properties of a Button component using a [script component][5]. The scripting interface for the Sprite component is [here][6].
+You can control the properties of a Button component using a [script component][5]. The scripting interface for the Button component is [here][6].
 
 [1]: /user-manual/packs/components/screen
 [2]: /user-manual/packs/components/element
 [3]: /images/user-manual/scenes/components/component-button-swap.jpg
 [4]: /images/user-manual/scenes/components/component-button-tint.jpg
 [5]: /user-manual/packs/components/script
-[6]: /engine/api/pc.ButtonComponent.html
+[6]: /en/api/pc.ButtonComponent.html
