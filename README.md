@@ -37,6 +37,20 @@ On Windows:
     cd developer.playcanvas.com
     node node_modules/http-server/bin/http-server build
 
+## Use 'watch' for quick iteration
+
+The watch build command will automatically build the site when changes are made in the `content` directory.
+
+    cd developer.playcanvas.com
+    npm install
+    npm run watch:osx
+
+On Windows:
+
+    cd developer.playcanvas.com
+    npm install
+    npm run watch:windows
+
 ## How to deploy
 
 Deployment is made by pushing to default branch
