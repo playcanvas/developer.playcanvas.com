@@ -51,6 +51,14 @@ On Windows:
     npm install
     npm run watch:windows
 
+## Update CSS from SCSS
+
+The site uses Sass to generate the CSS. To generate, run:
+
+    cd developer.playcanvas.com
+    npm install
+    npm run sass
+
 ## How to deploy
 
 Deployment is made by pushing to default branch
