@@ -1,8 +1,15 @@
 {{#with pages}}
 {{#lang-selector "en"}}{{/lang-selector}}
 {{#with en}}
+<h1>Tutorials</h1>
 <div class="tutorial-cloud">
-    {{#each .}}
+    {{#each tutorials}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
+    {{/each}}
+</div>
+<h1>Project Demos</h1>
+<div class="tutorial-cloud">
+    {{#each projectDemos}}
     <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
     {{/each}}
 </div>
@@ -10,8 +17,15 @@
 {{#lang-selector-close}}{{/lang-selector-close}}
 {{#lang-selector "ja"}}{{/lang-selector}}
 {{#with ja}}
+<h1>Tutorials</h1>
 <div class="tutorial-cloud">
-    {{#each .}}
+    {{#each tutorials}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
+    {{/each}}
+</div>
+<h1>Project Demos</h1>
+<div class="tutorial-cloud">
+    {{#each projectDemos}}
     <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
     {{/each}}
 </div>
@@ -19,8 +33,15 @@
 {{#lang-selector-close}}{{/lang-selector-close}}
 {{#lang-selector "ru"}}{{/lang-selector}}
 {{#with ru}}
+<h1>Tutorials</h1>
 <div class="tutorial-cloud">
-    {{#each .}}
+    {{#each tutorials}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
+    {{/each}}
+</div>
+<h1>Project Demos</h1>
+<div class="tutorial-cloud">
+    {{#each projectDemos}}
     <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
     {{/each}}
 </div>
@@ -28,8 +49,15 @@
 {{#lang-selector-close}}{{/lang-selector-close}}
 {{#lang-selector "zh"}}{{/lang-selector}}
 {{#with zh}}
+<h1>Tutorials</h1>
 <div class="tutorial-cloud">
-    {{#each .}}
+    {{#each tutorials}}
+    <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
+    {{/each}}
+</div>
+<h1>Project Demos</h1>
+<div class="tutorial-cloud">
+    {{#each projectDemos}}
     <a class="tutorial-cloud-item" data-tags="{{tags}}" href="{{url}}"><img class="thumb" src="{{thumbUrl}}">{{{title}}}</a>
     {{/each}}
 </div>

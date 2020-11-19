@@ -701,6 +701,7 @@
   }
   .container main .tutorial-cloud {
     width: 100%;
+    overflow: auto;
   }
   .container main .tutorial-cloud a {
     float: left;
