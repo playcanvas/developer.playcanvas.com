@@ -18,9 +18,6 @@ var i18n        = require("./lib/i18n/index");
 var i18nout     = require("./lib/i18n-out/index");
 var contents    = require("./lib/contents-json/index");
 var tutorialBuilder = require('./lib/tutorials/index');
-var headingsidentifier = require("metalsmith-headings-identifier");
-
-const { render } = require("sass");
 
 var env = null;
 var args = process.argv.slice(2);
@@ -95,11 +92,6 @@ m.source("content")
 .use(markdown({
     gfm: true,
     renderer: renderer
-}))
-.use(headingsidentifier({
-    selector: "h2,h3,h4,h5,h6",
-    linkTemplate: " <a class='header-anchor font-icon' href='#%s'>&#58216;</a>",
-    position: "right"
 }))
 .use(contents()())
 .use(permalinks({

@@ -269,9 +269,6 @@
             tutorials.clearTags();
             tutorials.enableTags(tutorials.tags);
 
-            var tutorialEnabledCount = 0;
-            var demoEnabledCount = 0;
-
             if (!nopush) {
                 var search = "?tags="+tutorials.tags.join(',');
                 var url = document.location.pathname + search;
@@ -288,31 +285,10 @@
 
                 if (match.length === tutorials.tags.length) {
                     item.classList.remove('hidden');
-                    if (itemTags.indexOf('_tutorial') >= 0) {
-                        tutorialEnabledCount += 1;
-                    }
-
-                    if (itemTags.indexOf('_demo') >= 0) {
-                        demoEnabledCount += 1;
-                    }
                 } else {
                     item.classList.add('hidden');
                 }
             });
-
-            var noTutorialsMessage = document.getElementById('no-tutorials-message');
-            if (tutorialEnabledCount > 0) {
-                noTutorialsMessage.classList.add('hidden');
-            } else {
-                noTutorialsMessage.classList.remove('hidden');
-            }
-
-            var demosTitle = document.getElementById('project-demos-title');
-            if (demoEnabledCount > 0) {
-                demosTitle.classList.remove('hidden');
-            } else {
-                demosTitle.classList.add('hidden');
-            }
         },
 
         setCurrentNavbar: function (url) {
