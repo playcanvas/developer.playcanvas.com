@@ -1,6 +1,10 @@
 @import "variables";
 @import "fonts";
 
+@mixin content-icon($code) {
+    content: unquote("\"\\#{$code}\"");
+}
+
 @media (min-width: 0px) {
     body {
         @include font-regular();
@@ -48,6 +52,10 @@
 
     .centered {
         text-align: center;
+    }
+
+    .header-anchor {
+        font-weight: normal;
     }
 
     header {
@@ -214,7 +222,7 @@
         position: relative;
         right: 70px;
         top: 3px;
-        content: "\E333";
+        @include content-icon("E333");
     }
 
     .alert-info {
@@ -359,27 +367,27 @@
         }
 
         .video-icon:after {
-            content: "\E275";
+            @include content-icon("E275");
             @include font-icon();
         }
 
         .forum-icon:after {
-            content: "\E477";
+            @include content-icon("E477");
             @include font-icon();
         }
 
         .manual-icon:after {
-            content: "\E222";
+            @include content-icon("E222");
             @include font-icon();
         }
 
         .tutorials-icon:after {
-            content: "\E212";
+            @include content-icon("E212");
             @include font-icon();
         }
 
         .api-icon:after {
-            content: "\E353";
+            @include content-icon("E353");
             @include font-icon();
         }
     }
@@ -422,11 +430,11 @@
                 .tutorial-checkbox {
                     font-size: 20px;
                     &.on:before {
-                        content: "\E379";
+                        @include content-icon("E379");
                         @include pc-icon();
                     }
                     &:before {
-                        content: "\E377";
+                        @include content-icon("E377");
                         @include pc-icon();
                     }
                 }
@@ -434,7 +442,7 @@
                 .tutorial-checkbox:hover {
                     &:before {
                         cursor: pointer;
-                        content: "\E379";
+                        @include content-icon("E379");
                         @include pc-icon();
                     }
                 }
@@ -487,7 +495,7 @@
 
                     &.parent {
                         &:before {
-                            content: "\E113";
+                            @include content-icon("E113");
                             @include font-icon();
                         }
                     }
@@ -667,6 +675,7 @@
 
             .tutorial-cloud {
                 width: 100%;
+                overflow: auto;
                 a {
                     float: left;
                     text-align: center;
@@ -703,7 +712,7 @@
                 background-color: $navbar-background-color;
                 border: 1px solid $navbar-text-color;
                 display: block;
-                width: 120px;
+                width: 160px;
                 float: left;
                 margin-right: 10px;
                 &:hover {
@@ -713,7 +722,7 @@
 
             a.project-button {
                &:before {
-                    content: "\E226";
+                    @include content-icon("E226");
                     @include font-icon();
                     padding: 0px 8px 0px 10px;
                 }
@@ -721,7 +730,7 @@
 
             a.editor-button {
                 &:before {
-                    content: "\E367";
+                    @include content-icon("E367");
                     @include font-icon();
                     padding: 0px 8px 0px 10px;
                 }
