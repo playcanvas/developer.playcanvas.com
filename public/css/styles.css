@@ -1,101 +1,110 @@
 @font-face {
-  font-family: "pc-icon";
+  font-family: 'pc-icon';
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.eot");
-  src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.ttf") format("truetype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.svg") format("svg");
+  src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.ttf") format("truetype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/pcicon-regular.svg#pc") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "ui-font-solid";
+  font-family: 'ui-font-solid';
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.eot");
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.ttf") format("truetype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/uifont-solid.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Proxima Nova Regular";
+  font-family: 'Proxima Nova Regular';
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_regular.eot");
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_regular.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_regular.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_regular.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Proxima Nova Light";
+  font-family: 'Proxima Nova Light';
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_light.eot");
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_light.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_light.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_light.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_light.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: "Proxima Nova Bold";
+  font-family: 'Proxima Nova Bold';
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_bold.eot");
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_bold.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_bold.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_bold.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: "Proxima Nova Thin";
+  font-family: 'Proxima Nova Thin';
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_thin_t.eot");
   src: url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_thin_t.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_thin_t.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_thin_t.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/fonts/proxima_nova_thin_t.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
+/* line 118, ../../sass/_fonts.scss */
 .font-thin {
-  font-family: "Proxima Nova Thin", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Proxima Nova Thin', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
+/* line 122, ../../sass/_fonts.scss */
 .font-light {
-  font-family: "Proxima Nova Light", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Proxima Nova Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
+/* line 126, ../../sass/_fonts.scss */
 .font-regular {
-  font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
+/* line 130, ../../sass/_fonts.scss */
 .font-bold {
-  font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* line 134, ../../sass/_fonts.scss */
 .pc-icon {
-  font-family: "pc-icon";
+  font-family: 'pc-icon';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
 }
 
+/* line 138, ../../sass/_fonts.scss */
 .font-icon {
-  font-family: "ui-font-solid";
+  font-family: 'ui-font-solid';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
 }
 
 @media (min-width: 0px) {
+  /* line 5, ../../sass/styles.scss */
   body {
-    font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     padding: 0;
     margin: 0;
     color: #324447;
   }
+  /* line 13, ../../sass/styles.scss */
   body .container {
     font-size: 16px;
     line-height: 30px;
   }
 
+  /* line 19, ../../sass/styles.scss */
   h1 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -103,8 +112,9 @@
     font-size: 18px;
   }
 
+  /* line 24, ../../sass/styles.scss */
   h2 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -112,108 +122,126 @@
     font-size: 16px;
   }
 
+  /* line 29, ../../sass/styles.scss */
   a {
     color: #324447;
     text-decoration: none;
   }
 
+  /* line 34, ../../sass/styles.scss */
   pre {
     font-size: 12px;
     line-height: 1.5em;
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   }
 
+  /* line 40, ../../sass/styles.scss */
   code {
     overflow: scroll;
   }
 
+  /* line 44, ../../sass/styles.scss */
   .content-width {
     margin: auto;
     width: 100%;
   }
 
+  /* line 49, ../../sass/styles.scss */
   .centered {
     text-align: center;
   }
 
-  .header-anchor {
-    font-weight: normal;
-  }
-
+  /* line 53, ../../sass/styles.scss */
   header {
     width: 100%;
     background-image: url(/images/common/BANNER_STRIPS1_Orange.png);
     background-position: center;
     color: rgba(255, 255, 255, 0.75);
   }
+  /* line 60, ../../sass/styles.scss */
   header a {
     color: rgba(255, 255, 255, 0.75);
   }
+  /* line 62, ../../sass/styles.scss */
   header a:hover {
     color: white;
     text-decoration: none;
   }
+  /* line 68, ../../sass/styles.scss */
   header .header-title {
     display: inline-block;
   }
+  /* line 71, ../../sass/styles.scss */
   header .header-title img {
     padding: 24px 0px;
     padding-right: 8px;
     vertical-align: middle;
   }
+  /* line 77, ../../sass/styles.scss */
   header .header-title h1 {
-    font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 22px;
     display: inline;
     vertical-align: middle;
   }
+  /* line 85, ../../sass/styles.scss */
   header nav {
-    font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     margin: auto;
     font-size: 16px;
   }
+  /* line 91, ../../sass/styles.scss */
   header ul {
     float: right;
     list-style-type: none;
     margin: 22px 0px;
     padding: 0;
   }
+  /* line 97, ../../sass/styles.scss */
   header ul li {
     display: inline;
     padding: 10px 0px;
     margin: auto 30px;
   }
+  /* line 103, ../../sass/styles.scss */
   header ul li.active {
     border-bottom: 2px solid rgba(255, 255, 255, 0.75);
   }
+  /* line 105, ../../sass/styles.scss */
   header ul li.active a {
     color: white;
   }
+  /* line 111, ../../sass/styles.scss */
   header .header-mobile-icon {
     display: none;
   }
+  /* line 115, ../../sass/styles.scss */
   header .header-content {
     clear: both;
     margin: auto;
     padding: 20px 0px;
   }
+  /* line 120, ../../sass/styles.scss */
   header .header-content h1 {
     color: white;
     font-size: 24px;
   }
+  /* line 125, ../../sass/styles.scss */
   header .header-content img {
     padding: 30px;
     margin: auto;
   }
+  /* line 130, ../../sass/styles.scss */
   header .header-content p {
     font-size: 14px;
     margin: 0;
     padding: 0;
   }
+  /* line 136, ../../sass/styles.scss */
   header .header-content .font-icon {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -223,23 +251,28 @@
     line-height: 18px;
     margin-right: 10px;
   }
+  /* line 147, ../../sass/styles.scss */
   header .header-page h1 {
     display: inline-block;
   }
+  /* line 151, ../../sass/styles.scss */
   header .header-page .search {
     float: right;
     margin: 0;
     margin-top: 10px;
   }
+  /* line 158, ../../sass/styles.scss */
   header .header-front-page {
     text-align: center;
   }
 
+  /* line 163, ../../sass/styles.scss */
   footer {
     height: 100px;
     width: 100%;
     clear: both;
   }
+  /* line 168, ../../sass/styles.scss */
   footer ul {
     margin: auto;
     padding: 0px;
@@ -248,34 +281,42 @@
     border-top: 1px solid #DDDDDD;
     list-style-type: none;
   }
+  /* line 178, ../../sass/styles.scss */
   footer ul li {
     float: left;
   }
+  /* line 180, ../../sass/styles.scss */
   footer ul li a {
     padding: 8px 16px;
     color: #7C8D8F;
   }
+  /* line 184, ../../sass/styles.scss */
   footer ul li a.inactive {
     opacity: 0.5;
   }
+  /* line 189, ../../sass/styles.scss */
   footer ul li.flags {
     padding-left: 0px;
     margin-right: 16px;
   }
+  /* line 193, ../../sass/styles.scss */
   footer ul li.flags a {
     padding-left: 0px;
     padding-right: 0px;
   }
+  /* line 198, ../../sass/styles.scss */
   footer ul li.flags img {
     height: 14px;
   }
 
+  /* line 206, ../../sass/styles.scss */
   .localization-note {
     clear: both;
     margin-top: 25px;
     text-align: center;
   }
 
+  /* line 212, ../../sass/styles.scss */
   .search-icon:before {
     font-size: 26px;
     position: relative;
@@ -284,6 +325,7 @@
     content: "\E333";
   }
 
+  /* line 220, ../../sass/styles.scss */
   .alert-info {
     border: 1px solid #bce8f1;
     background-color: #d9edf7;
@@ -293,59 +335,72 @@
     line-height: 24px;
   }
 
+  /* line 229, ../../sass/styles.scss */
   input.search {
     height: 24px;
     width: 30%;
     margin: 25px;
     padding: 5px 20px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.75);
     font-size: 14px;
   }
+  /* line 240, ../../sass/styles.scss */
   input.search::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
+  /* line 243, ../../sass/styles.scss */
   input.search::-moz-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
+  /* line 246, ../../sass/styles.scss */
   input.search::-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
+  /* line 249, ../../sass/styles.scss */
   input.search::input-placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
+  /* line 253, ../../sass/styles.scss */
   input.search:focus {
     outline: 0;
     border-color: white;
   }
 
+  /* line 259, ../../sass/styles.scss */
   nav.regular {
     background-color: #f1f1ef;
     border-top: 1px solid #f1f1ef;
     border-bottom: 1px solid #e6e6e6;
     font-size: 14px;
   }
+  /* line 265, ../../sass/styles.scss */
   nav.regular ul {
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
     height: 52px;
   }
+  /* line 273, ../../sass/styles.scss */
   nav.regular ul > li {
     float: left;
     border-left: 1px solid #e6e6e6;
   }
+  /* line 277, ../../sass/styles.scss */
   nav.regular ul > li:last-child {
     border-right: 1px solid #e6e6e6;
   }
+  /* line 281, ../../sass/styles.scss */
   nav.regular ul > li.active {
     background-color: #fff;
     border-bottom: 1px solid #fff;
   }
+  /* line 285, ../../sass/styles.scss */
   nav.regular ul > li.active > a {
     color: #324447;
   }
+  /* line 290, ../../sass/styles.scss */
   nav.regular ul > li > a {
     display: block;
     color: #5b7073;
@@ -353,16 +408,19 @@
     line-height: 52px;
     padding: 0 36px;
   }
+  /* line 300, ../../sass/styles.scss */
   nav.regular usermanual-navbar {
     float: right;
   }
 
+  /* line 306, ../../sass/styles.scss */
   nav.intro {
     background-color: #f1f1ef;
     border-top: 1px solid #f1f1ef;
     border-bottom: 1px solid #e6e6e6;
     font-size: 14px;
   }
+  /* line 312, ../../sass/styles.scss */
   nav.intro ul {
     list-style-type: none;
     margin: 0 auto;
@@ -370,6 +428,7 @@
     padding: 0;
     width: 100%;
   }
+  /* line 320, ../../sass/styles.scss */
   nav.intro ul > li {
     float: left;
     width: calc(25% - 4px);
@@ -378,64 +437,76 @@
     text-align: center;
     border-left: 1px solid #e6e6e6;
   }
+  /* line 328, ../../sass/styles.scss */
   nav.intro ul > li > a {
     display: block;
     color: #5b7073;
     height: 170px;
     padding: 0 0px;
   }
+  /* line 335, ../../sass/styles.scss */
   nav.intro ul > li > a:hover > span {
     color: #F16524;
   }
+  /* line 339, ../../sass/styles.scss */
   nav.intro ul > li > a > span {
     display: block;
     padding-top: 30px;
   }
+  /* line 345, ../../sass/styles.scss */
   nav.intro ul > li > a > p {
     margin: 0;
   }
+  /* line 357, ../../sass/styles.scss */
   nav.intro span {
     font-size: 64px;
   }
+  /* line 361, ../../sass/styles.scss */
   nav.intro .video-icon:after {
     content: "\E275";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 366, ../../sass/styles.scss */
   nav.intro .forum-icon:after {
     content: "\E477";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 371, ../../sass/styles.scss */
   nav.intro .manual-icon:after {
     content: "\E222";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 376, ../../sass/styles.scss */
   nav.intro .tutorials-icon:after {
     content: "\E212";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 381, ../../sass/styles.scss */
   nav.intro .api-icon:after {
     content: "\E353";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
 
+  /* line 388, ../../sass/styles.scss */
   .container nav {
     line-height: 24px;
   }
+  /* line 392, ../../sass/styles.scss */
   .container nav.tutorial {
     float: left;
     width: 100%;
@@ -443,108 +514,133 @@
     font-size: 16px;
     color: #5b7073;
   }
+  /* line 399, ../../sass/styles.scss */
   .container nav.tutorial ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
+  /* line 404, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-filter {
     padding: 4px;
   }
+  /* line 408, ../../sass/styles.scss */
   .container nav.tutorial ul a {
     color: #5b7073;
   }
+  /* line 412, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-filter-text {
     font-size: 18px;
     padding: 16px 8px;
   }
+  /* line 416, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-filter-text:hover {
     cursor: pointer;
     text-decoration: underline;
   }
+  /* line 422, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-checkbox {
     font-size: 20px;
   }
+  /* line 424, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-checkbox.on:before {
     content: "\E379";
-    font-family: "pc-icon";
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 428, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-checkbox:before {
     content: "\E377";
-    font-family: "pc-icon";
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 435, ../../sass/styles.scss */
   .container nav.tutorial ul .tutorial-checkbox:hover:before {
     cursor: pointer;
     content: "\E379";
-    font-family: "pc-icon";
+    font-family: 'pc-icon';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 444, ../../sass/styles.scss */
   .container nav.usermanual {
     float: left;
     width: 100%;
     padding: 27px 0px;
     font-size: 16px;
   }
+  /* line 450, ../../sass/styles.scss */
   .container nav.usermanual ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     margin-top: 3px;
   }
+  /* line 456, ../../sass/styles.scss */
   .container nav.usermanual ul .expander {
     float: left;
     margin-left: -24px;
   }
+  /* line 460, ../../sass/styles.scss */
   .container nav.usermanual ul .expander.hidden {
     display: none;
   }
+  /* line 464, ../../sass/styles.scss */
   .container nav.usermanual ul .expander.open {
     margin-top: -2px;
   }
+  /* line 466, ../../sass/styles.scss */
   .container nav.usermanual ul .expander.open .expander-icon {
     transform: rotate(90deg);
     display: block;
   }
+  /* line 470, ../../sass/styles.scss */
   .container nav.usermanual ul .expander.open .expander-icon > a {
     color: #F16524;
   }
+  /* line 477, ../../sass/styles.scss */
   .container nav.usermanual ul .expander.closed .expander-icon {
     transform: rotate(0deg);
     display: block;
   }
+  /* line 485, ../../sass/styles.scss */
   .container nav.usermanual ul li {
     padding: 5px 0px;
   }
+  /* line 489, ../../sass/styles.scss */
   .container nav.usermanual ul li.parent:before {
     content: "\E113";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
+  /* line 495, ../../sass/styles.scss */
   .container nav.usermanual ul li.closed > ul {
     display: none;
   }
+  /* line 499, ../../sass/styles.scss */
   .container nav.usermanual ul li.open > ul {
     display: block;
   }
+  /* line 503, ../../sass/styles.scss */
   .container nav.usermanual ul li li {
     padding: 5px 15px;
   }
+  /* line 507, ../../sass/styles.scss */
   .container nav.usermanual ul li > a {
     color: #5b7073;
   }
+  /* line 510, ../../sass/styles.scss */
   .container nav.usermanual ul li > a.current {
     color: #F16524;
   }
+  /* line 522, ../../sass/styles.scss */
   .container main {
     float: left;
     width: 640px;
@@ -552,74 +648,87 @@
     padding-left: 30px;
     color: #324447;
   }
+  /* line 529, ../../sass/styles.scss */
   .container main > h1:first-child {
     margin-top: 0.5em;
   }
+  /* line 533, ../../sass/styles.scss */
   .container main h1, .container main h2, .container main h3, .container main h4, .container main h5 {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
   }
+  /* line 538, ../../sass/styles.scss */
   .container main h1 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 28px;
   }
+  /* line 542, ../../sass/styles.scss */
   .container main h2 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 24px;
   }
+  /* line 546, ../../sass/styles.scss */
   .container main h3 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 20px;
   }
+  /* line 550, ../../sass/styles.scss */
   .container main h4 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
   }
+  /* line 554, ../../sass/styles.scss */
   .container main h5 {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
   }
+  /* line 559, ../../sass/styles.scss */
   .container main p {
     margin-top: 0.2em;
   }
+  /* line 563, ../../sass/styles.scss */
   .container main a {
     color: #0099EC;
   }
+  /* line 566, ../../sass/styles.scss */
   .container main a:hover {
     text-decoration: underline;
   }
+  /* line 571, ../../sass/styles.scss */
   .container main img {
     display: block;
     margin: 0 auto;
     max-width: 800px;
   }
+  /* line 577, ../../sass/styles.scss */
   .container main table {
     border-collapse: collapse;
     width: 100%;
     margin: 20px 0px;
   }
+  /* line 583, ../../sass/styles.scss */
   .container main table th {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -630,62 +739,73 @@
     font-size: 14px;
     text-align: left;
   }
+  /* line 592, ../../sass/styles.scss */
   .container main table td {
     border-top: 1px solid #cfcfcf;
     border-bottom: 1px solid #cfcfcf;
     padding: 5px;
     font-size: 14px;
   }
+  /* line 600, ../../sass/styles.scss */
   .container main table.head-column td:first-child {
     width: 60%;
   }
+  /* line 603, ../../sass/styles.scss */
   .container main table.head-column td:last-child {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
   }
+  /* line 609, ../../sass/styles.scss */
   .container main table.three-column td:first-child {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 30%;
   }
+  /* line 613, ../../sass/styles.scss */
   .container main table.three-column td:last-child {
-    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Bold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
   }
+  /* line 619, ../../sass/styles.scss */
   .container main table.centered {
     text-align: center;
   }
+  /* line 624, ../../sass/styles.scss */
   .container main iframe {
     width: 100%;
     height: 480px;
     max-width: 100%;
     border: none;
   }
+  /* line 631, ../../sass/styles.scss */
   .container main.full-width {
     width: 100%;
     padding: 0;
   }
+  /* line 636, ../../sass/styles.scss */
   .container main.frontpage {
     float: none;
     padding: 0px;
     width: 100%;
   }
+  /* line 642, ../../sass/styles.scss */
   .container main hr {
     border: 1px solid #cfcfcf;
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  /* line 648, ../../sass/styles.scss */
   .container main .thumbnail {
     float: left;
     overflow: hidden;
@@ -693,20 +813,23 @@
     text-align: center;
     padding-top: 30px;
   }
+  /* line 655, ../../sass/styles.scss */
   .container main .thumbnail h1 {
     padding: 0;
     margin: 0;
   }
+  /* line 660, ../../sass/styles.scss */
   .container main .thumbnail p {
     padding: 0;
     margin: 0;
     font-size: 12px;
     color: #5b7073;
   }
+  /* line 668, ../../sass/styles.scss */
   .container main .tutorial-cloud {
     width: 100%;
-    overflow: auto;
   }
+  /* line 670, ../../sass/styles.scss */
   .container main .tutorial-cloud a {
     float: left;
     text-align: center;
@@ -719,11 +842,13 @@
     height: 225px;
     line-height: 18px;
   }
+  /* line 682, ../../sass/styles.scss */
   .container main .tutorial-cloud a:hover {
     color: #0099EC;
     background-color: #fdfdfd;
     text-decoration: none;
   }
+  /* line 688, ../../sass/styles.scss */
   .container main .tutorial-cloud a .thumb {
     width: 150px;
     height: 150px;
@@ -732,6 +857,7 @@
     padding-bottom: 12px;
     vertical-align: middle;
   }
+  /* line 699, ../../sass/styles.scss */
   .container main a.tutorial-button {
     font-size: 18px;
     padding: 4px 12px 4px 0px;
@@ -739,96 +865,117 @@
     background-color: #f1f1ef;
     border: 1px solid #5b7073;
     display: block;
-    width: 160px;
+    width: 120px;
     float: left;
     margin-right: 10px;
   }
+  /* line 709, ../../sass/styles.scss */
   .container main a.tutorial-button:hover {
     text-decoration: none;
   }
+  /* line 715, ../../sass/styles.scss */
   .container main a.project-button:before {
     content: "\E226";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     padding: 0px 8px 0px 10px;
   }
+  /* line 723, ../../sass/styles.scss */
   .container main a.editor-button:before {
     content: "\E367";
-    font-family: "ui-font-solid";
+    font-family: 'ui-font-solid';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     padding: 0px 8px 0px 10px;
   }
+  /* line 730, ../../sass/styles.scss */
   .container main .hidden {
     display: none;
   }
+  /* line 734, ../../sass/styles.scss */
   .container main .alert {
     clear: both;
     margin-bottom: 25px;
     text-align: center;
   }
 
+  /* line 757, ../../sass/styles.scss */
   .search-container > main {
-    font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
-    font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
     font-size: 16px !important;
   }
+  /* line 762, ../../sass/styles.scss */
   .search-container > main a.gs-title {
     color: #0099EC !important;
     text-decoration: none !important;
   }
+  /* line 767, ../../sass/styles.scss */
   .search-container > main .gs-visibleUrl {
     color: #324447 !important;
     font-style: italic;
   }
+  /* line 772, ../../sass/styles.scss */
   .search-container > main .gsc-table-result {
     color: #324447 !important;
   }
+  /* line 776, ../../sass/styles.scss */
   .search-container > main .gsc-results .gsc-cursor-box .gsc-cursor-page {
     color: #0099EC !important;
   }
+  /* line 780, ../../sass/styles.scss */
   .search-container > main .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
     color: #0099EC !important;
   }
 }
 /* Extra small: (phones, 480px and up) */
 @media (min-width: 300px) {
+  /* line 790, ../../sass/styles.scss */
   header > nav {
     display: block;
   }
+  /* line 793, ../../sass/styles.scss */
   header > nav > ul > li {
     margin: auto 5px;
   }
 
+  /* line 801, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
+  /* line 806, ../../sass/styles.scss */
   nav.intro ul {
     width: 100%;
   }
+  /* line 808, ../../sass/styles.scss */
   nav.intro ul li {
     width: calc(25% - 4px);
   }
 
+  /* line 815, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
+  /* line 819, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
+  /* line 823, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
+  /* line 825, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 
+  /* line 831, ../../sass/styles.scss */
   pre.api {
     min-height: 2em;
     line-height: 2em;
@@ -838,6 +985,7 @@
     font-size: 12px;
   }
 
+  /* line 840, ../../sass/styles.scss */
   .params {
     margin: 1em 0;
     line-height: 2;
@@ -846,103 +994,130 @@
     font-size: 14px;
     display: table;
   }
+  /* line 848, ../../sass/styles.scss */
   .params .parameter {
     display: table-row;
   }
+  /* line 852, ../../sass/styles.scss */
   .params p {
     display: table-cell;
   }
+  /* line 856, ../../sass/styles.scss */
   .params .param {
     display: table-cell;
     font-size: 16px;
     font-weight: bold;
     padding: 0.5em 1em 0.5em 0.5em;
   }
+  /* line 862, ../../sass/styles.scss */
   .params .param:after {
-    content: ":";
+    content: ':';
   }
 }
 /* Small devices (tablets, desktops, 768px and up) */
 @media (min-width: 768px) {
+  /* line 872, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
+  /* line 877, ../../sass/styles.scss */
   nav.intro ul {
     width: 616px;
   }
+  /* line 879, ../../sass/styles.scss */
   nav.intro ul li {
     width: 150px;
   }
+  /* line 882, ../../sass/styles.scss */
   nav.intro ul li:last-child {
     border-right: 1px solid #e6e6e6;
   }
 
+  /* line 891, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 180px;
   }
+  /* line 895, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 180px;
   }
+  /* line 899, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 210px);
   }
+  /* line 901, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /* line 913, ../../sass/styles.scss */
   header > nav > ul > li {
     margin: auto 30px;
   }
 
+  /* line 920, ../../sass/styles.scss */
   .content-width {
     width: calc(100% - 60px);
   }
 
+  /* line 925, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
+  /* line 927, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
+  /* line 935, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
+  /* line 939, ../../sass/styles.scss */
   .container nav.tutorial {
     width: 240px;
   }
+  /* line 943, ../../sass/styles.scss */
   .container main {
     width: calc(100% - 270px);
   }
+  /* line 945, ../../sass/styles.scss */
   .container main img {
     max-width: 100%;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  /* line 954, ../../sass/styles.scss */
   .content-width {
     width: 1070px;
   }
 
+  /* line 959, ../../sass/styles.scss */
   nav.intro ul {
     width: 816px;
   }
+  /* line 961, ../../sass/styles.scss */
   nav.intro ul li {
     width: 200px;
   }
 
+  /* line 968, ../../sass/styles.scss */
   .container nav.usermanual {
     width: 240px;
   }
+  /* line 972, ../../sass/styles.scss */
   .container main {
     width: 800px;
   }
+  /* line 974, ../../sass/styles.scss */
   .container main img {
     max-width: 800px;
   }
+  /* line 978, ../../sass/styles.scss */
   .container main .full-width {
     width: 970px;
   }
