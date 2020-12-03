@@ -42,6 +42,6 @@
     "watch:windows": "watch \"npm run build\" content --interval=3 --wait=5 --ignoreDotFiles --filter=\"watch-filter.js\"",
     "build": "node build.js",
     "serve": "http-server build -a localhost -p 51000",
-    "test-links:en": "blc http://localhost:51000/en -ro --exclude '/api' | tee test-links-report.txt; sed '^...─OK─.. http:.*$' test-links-report.txt;echo 'Report in test-links-report.txt'"
+    "test-links:en": "node test-links.js"
   }
 }
