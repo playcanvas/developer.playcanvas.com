@@ -20,7 +20,7 @@ If you want to continue to work on legacy script projects, we recommend that you
 
 ### Step 1 - Create a New Project
 
-We will begin by creating a new, blank project to receive the update project. Delete the four entities created by default below the scene root entity.
+We will begin by creating a new, blank project to transfer assets and code into. Delete the four entities created by default below the scene root entity.
 
 ### Step 2 - Transfer Assets
 
@@ -42,7 +42,7 @@ You can now upload the legacy scripts to your new project.
 
 ### Step 4 - Update Scripts to Current Format
 
-The newly transferred scripts in your new project will now need to be updated to the current format. Here is an example, showing the legacy format:
+The transferred scripts in your new project will now need to be updated to the current format. Here is an example, showing the legacy format:
 
 ```javascript
 pc.script.attribute('speed', 'number', 10);
@@ -141,13 +141,17 @@ if (entities.length) {
 }  
 ```
 
+You should see something like the following:
+
+![Select Script Entities][6]
+
 You can then hit the delete button in the Inspector:
 
-![Delete Script Components][6]
+![Delete Script Components][7]
 
 Now you can successfully copy and paste your game's hierarchy from the read-only project to the new destination project.
 
-With this done, you can hit CTRL+Z to undo the previous deletion of your legacy script components.
+With this done, you can hit CTRL+Z (CMD+Z on Mac) to undo the previous deletion of your legacy script components.
 
 Reselect all entities that have a script component. Create a script component on every corresponding entity in the new project and add the corresponding scripts to those components. Finally, iterate through every script attribute on every script on every script component and copy it's value over to the new project.
 
@@ -158,4 +162,5 @@ You should now be done with the migration.
 [3]: /images/user-manual/scripting/migration-guide/editor-warning.png
 [4]: /images/user-manual/scripting/migration-guide/copy-assets.png
 [5]: /images/user-manual/scripting/migration-guide/download-scripts.png
-[6]: /images/user-manual/scripting/migration-guide/delete-script-components.png
+[6]: /images/user-manual/scripting/migration-guide/select-script-entities.png
+[7]: /images/user-manual/scripting/migration-guide/delete-script-components.png
