@@ -33,13 +33,15 @@
     "metalsmith-headings-identifier": "0.0.11",
     "request": "2.88.2",
     "watch": "1.0.2",
-    "sass": "1.29.0"
+    "sass": "1.29.0",
+    "broken-link-checker": "0.7.8"
   },
   "scripts": {
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css;",
     "watch:osx": "watch 'npm run build' content --interval=3 --wait=5 --ignoreDotFiles --filter='watch-filter.js'",
     "watch:windows": "watch \"npm run build\" content --interval=3 --wait=5 --ignoreDotFiles --filter=\"watch-filter.js\"",
     "build": "node build.js",
-    "serve": "http-server build -a localhost -p 51000"
+    "serve": "http-server build -a localhost -p 51000",
+    "test-links:en": "node test-links.js"
   }
 }

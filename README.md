@@ -59,6 +59,14 @@ The site uses Sass to generate the CSS. To generate, run:
     npm install
     npm run sass
 
+## Test for broken links
+
+Start the localhost server from [How to server](#how-to-serve) and in another terminal window, run:
+
+    cd developer.playcanvas.com
+    npm install
+    npm run test-links:en
+
 ## How to deploy
 
-Deployment is made by pushing to default branch
+Deployment is made by pushing to stable branch
