@@ -153,7 +153,7 @@ Now you can successfully copy and paste your game's hierarchy from the read-only
 
 With this done, you can hit CTRL+Z (CMD+Z on Mac) to undo the previous deletion of your legacy script components.
 
-Reselect all entities that have a script component. Create a script component on every corresponding entity in the new project and add the corresponding scripts to those components. Finally, iterate through every script attribute on every script on every script component and copy it's value over to the new project.
+Reselect all entities that have a script component. Create a script component on every corresponding entity in the new project and add the corresponding scripts to those components. Finally, iterate through every script attribute on every script on every script component and copy its value over to the new project.
 
 You should now be done with the migration.
 
