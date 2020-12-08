@@ -20,13 +20,13 @@ Enabling texture compression achieves the following results:
 
 <img src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" style="width: 400px;"/>
 
-The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 46KB using the Default quality setting.
+The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 46KB using the Default quality setting and ETC Mode.
 
 Below is a side by side comparison of the brick texture on Mac with Chrome:
 
 <a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison"/></a>
 
-Here is another example of the PlayCanvas cube [with Basis][2] and [without][3] on Mac with Chrome:
+Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [without][3] on Mac with Chrome:
 
 <a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison"/></a>
 
@@ -39,9 +39,10 @@ Once the texture has been imported into the Editor, select it and scroll down in
 
 1. Tick BASIS.
 2. Click on Import Basis to add the WASM module for the Basis runtime to the project (this only needs to be done once).
-3. Tick Normals if compressing a normal map.
-4. Change the quality setting to balance file size vs quality. Lower quality results in smaller file sizes.
-5. Click on Compress Basis.
+3. Change mode from 'ETC (smaller size, lower quality)' to 'ASTC (larger size, higher quality)' if you need to reduce compression artifacts on this texture.
+4. Tick Normals if compressing a normal map.
+5. Change the quality setting to balance file size vs quality. Lower quality results in smaller file sizes.
+6. Click on Compress Basis.
 
 <img src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" style="width: 400px;"/>
 
