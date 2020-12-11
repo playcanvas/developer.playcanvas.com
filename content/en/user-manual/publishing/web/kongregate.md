@@ -56,11 +56,11 @@ For more information on Game File requirements and setting up your storefront, c
 
 [1]: https://kongregate.com
 [2]: /user-manual/publishing/web/self-hosting/
-[3]: http://windows.microsoft.com/en-gb/windows-10/zip-and-unzip-files#v1h=tab01
+[3]: https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc
 [4]: http://www.kongregate.com/games/new
 [5]: /images/user-manual/publishing/web/upload.jpg
 [6]: /images/user-manual/publishing/web/make-zip.jpg
 [7]: https://www.kartridge.com
 [8]: /images/user-manual/publishing/web/kongregate/mceclip0.png
 [9]: /images/user-manual/publishing/web/kongregate/mceclip1.png
-[10]: https://kartridge.zendesk.com/hc/en-us/articles/360018230352-Game-File-Requirements
+[10]: https://developers.kartridge.com/help/game-file-requirements/

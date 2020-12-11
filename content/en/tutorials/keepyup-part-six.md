@@ -79,11 +79,11 @@ We repeat similar behaviour in the other two UI scripts where we listen for game
 
 Congratulations on reaching the end of the series! We hope you've learn a lot about how you can structure and build a game using PlayCanvas. If you have any feedback on the tutorial, please get in touch on our [forum][8].
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
-[5]: /tutorials/beginner/keepyup-part-five
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-three/
+[4]: /tutorials/keepyup-part-four/
+[5]: /tutorials/keepyup-part-five/
 [6]: /user-manual/user-interface/
 [7]: /user-manual/packs/components/screen/
 [8]: /user-manual/packs/components/element/
