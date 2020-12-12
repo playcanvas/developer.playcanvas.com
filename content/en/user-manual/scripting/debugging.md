@@ -28,7 +28,7 @@ Note that when a running app is paused at a breakpoint in the debugger, other br
 
 [1]: /images/user-manual/scripting/debugger-chrome.jpg
 [2]: /images/user-manual/scripting/debugger-firefox.jpg
-[3]: https://developer.chrome.com/devtools/docs/javascript-debugging
+[3]: https://developers.google.com/web/tools/chrome-devtools/javascript
 [4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
-[5]: https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1
-[6]: https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/debugger/
+[5]: https://developer.apple.com/safari/tools/
+[6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/debugger

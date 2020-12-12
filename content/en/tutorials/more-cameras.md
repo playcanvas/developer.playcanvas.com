@@ -114,6 +114,6 @@ We set up an object containing the names of the camera Entities that correspond 
 
 Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
 
-[1]: /tutorials/beginner/basic-cameras/
+[1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
