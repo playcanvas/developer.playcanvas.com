@@ -19,8 +19,14 @@ The request will start an archive job and the job details will be returned in th
 ## Example
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST https://playcanvas.com/api/projects/99999999/export
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"branch_id": "4c308c6d-e213-4ca1-afbb-6d87ff8edd9a"}' https://playcanvas.com/api/projects/99999999/export
 ```
+
+## Parameters
+
+<div class="params">
+<div class="parameter"><span class="param">branch_id [optional]</span><p>The id of the branch. If no id is specified the master branch will be used.</p></div>
+</div>
 
 ## Response Schema
 
