@@ -91,5 +91,5 @@ The Asset Panel shows you all the Sprite Assets that have been created from the 
 [3]: /images/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg
 [4]: /images/user-manual/2D/sprite-editor/frame-inspector.jpg
 [5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
-[6]: /user-manual/assets/sprite
-[7]: /user-manual/2D/9-slicing
+[6]: /user-manual/assets/sprites/
+[7]: /user-manual/2D/9-slicing/

@@ -42,7 +42,7 @@ PlayCanvas comes with a built in profiler tool. In the Editor use the Launch Pro
 
 [Many more optimization guidelines][4] are available.
 
-[1]: /user-manual/graphics/lighting/lightmaps/#playcanvas-runtime-lightmap-generation
+[1]: /user-manual/graphics/lighting/runtime-lightmaps/
 [2]: https://chrome.google.com/webstore/detail/webgl-insight/djdcbmfacaaocoomokenoalbomllhnko
 [3]: /user-manual/optimization/profiler/
 [4]: /user-manual/optimization/guidelines/
