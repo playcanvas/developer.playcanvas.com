@@ -76,9 +76,9 @@ The text element renders a string of text using a [font asset][5].
 </table>
 
 [0]: /user-manual/user-interface
-[1]: /images/user-manual/scenes/components/component-element-group.jpg
-[2]: /images/user-manual/scenes/components/component-element-image.jpg
-[3]: /images/user-manual/scenes/components/component-element-text.jpg
+[1]: /images/user-manual/scenes/components/component-element-group.png
+[2]: /images/user-manual/scenes/components/component-element-image.png
+[3]: /images/user-manual/scenes/components/component-element-text.png
 [4]: /user-manual/user-interface/layout
 [5]: /user-manual/assets/fonts/
 [6]: /user-manual/optimization/batching/
