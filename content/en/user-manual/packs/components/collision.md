@@ -10,14 +10,18 @@ The Collision component can be enabled or disabled using the toggle in the top r
 
 #### Box
 ![Collision component (Box)][1]
-#### Sphere
-![Collision component (Sphere)][2]
 #### Capsule
-![Collision component (Capsule)][3]
+![Collision component (Capsule)][2]
+#### Compound
+![Collision component (Compound)][3]
+#### Cone
+![Collision component (Cone)][4]
 #### Cylinder
-![Collision component (Cylinder)][4]
+![Collision component (Cylinder)][5]
 #### Mesh
-![Collision component (Mesh)][5]
+![Collision component (Mesh)][6]
+#### Sphere
+![Collision component (Sphere)][7]
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
 
@@ -37,12 +41,14 @@ If the entity also has a rigidbody component, the collision component determines
 
 ## Scripting Interface
 
-You can control a Collision component's properties using a [script component][6]. The Collision component's scripting interface is [here][7].
+You can control a Collision component's properties using a [script component][8]. The Collision component's scripting interface is [here][9].
 
 [1]: /images/user-manual/scenes/components/component-collision-box.png
-[2]: /images/user-manual/scenes/components/component-collision-sphere.png
-[3]: /images/user-manual/scenes/components/component-collision-capsule.png
-[4]: /images/user-manual/scenes/components/component-collision-cylinder.png
-[5]: /images/user-manual/scenes/components/component-collision-mesh.png
-[6]: /user-manual/packs/components/script
-[7]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[2]: /images/user-manual/scenes/components/component-collision-capsule.png
+[3]: /images/user-manual/scenes/components/component-collision-compound.png
+[4]: /images/user-manual/scenes/components/component-collision-cone.png
+[5]: /images/user-manual/scenes/components/component-collision-cylinder.png
+[6]: /images/user-manual/scenes/components/component-collision-mesh.png
+[7]: /images/user-manual/scenes/components/component-collision-sphere.png
+[8]: /user-manual/packs/components/script
+[9]: /engine/api/stable/symbols/pc.CollisionComponent.html
