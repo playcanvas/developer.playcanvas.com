@@ -149,7 +149,7 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: http://cgcookie.com/blender/
-[3]: /images/Blender-Logo.jpg
+[3]: /images/user-manual/assets/models/building/blender-logo.jpg
 [4]: http://blender.org
 [5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
 [6]: http://www.blenderguru.com/
