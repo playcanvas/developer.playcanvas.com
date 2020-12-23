@@ -193,9 +193,6 @@
   header ul li.active a {
     color: white;
   }
-  header .header-mobile-icon {
-    display: none;
-  }
   header .header-content {
     clear: both;
     margin: auto;
