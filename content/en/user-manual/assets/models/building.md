@@ -79,7 +79,7 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
-![Sphere map][7]
+![Max material editor][7]
 
 ### Supported Map Slots
 
@@ -145,7 +145,7 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
-![Sphere map][11]
+![Maya material editor][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: http://cgcookie.com/blender/
@@ -153,8 +153,8 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 [4]: http://blender.org
 [5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
 [6]: http://www.blenderguru.com/
-[7]: /images/artist_guide/max_material_editor.jpg
-[8]: /images/artist_guide/wall_norm.jpg
-[9]: /images/artist_guide/wall_norm_yflip.jpg
-[10]: /images/artist_guide/mountains_sphere.jpg
-[11]: /images/artist_guide/maya_material_editor.jpg
+[7]: /images/user-manual/assets/models/building/max-material-editor.jpg
+[8]: /images/user-manual/assets/models/building/wall-norm.jpg
+[9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
+[10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
+[11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
