@@ -1,6 +1,6 @@
 <header>
     <nav class="content-width">
-        <a href="/{{locale}}/" class="header-title"><img src="/images/header/PLAYMANUAL.png" alt="PlayCanvas Manual"></a>
+        <a href="/{{locale}}/" class="header-title"><img src="/images/header/PLAYMANUAL.png" width="229" height="18" alt="PlayCanvas Manual"></a>
         <ul class="header-menu">
             <li class="user-manual"><a href="/user-manual">{{#i18n}}User Manual{{/i18n}}</a></li>
             <li class="tutorials"><a href="/tutorials">{{#i18n}}Tutorials{{/i18n}}</a></li>
@@ -8,22 +8,18 @@
             <li class="api"><a href="/api/">{{#i18n}}API Reference{{/i18n}}</a></li>
         </ul>
     </nav>
-
     {{#if frontpage}}
     <div class="header-content header-front-page">
-        <img src="/images/wireframe_logo.png" alt="PlayCanvas Logo">
+        <img src="/images/wireframe_logo.png" width="160" height="160" alt="PlayCanvas Logo">
         <h1>{{#i18n}}PlayCanvas Developer Resources{{/i18n}}</h1>
         <p>{{#i18n}}Find everything you need to make games and interactive experiences with PlayCanvas.{{/i18n}}</p>
 
         <input id="search" class="search" type="text" placeholder="{{#i18n}}Search{{/i18n}}" />
     </div>
-
     {{else}}
-
     <div class="header-content header-page content-width">
         <h1><span class="font-icon">{{{header-icon}}}</span>{{header-title}}</h1>
         <input id="search" class="search" type="text" placeholder="Search">
     </div>
     {{/if}}
-
 </header>
