@@ -39,7 +39,7 @@ var processFile = function (content) {
 var concatStream = fs.createWriteStream(path.join(__dirname, outfile));
 concatStream.once('open', function () {
     // write metadata
-    concatStream.write('---\ntitle: Common Questions\ntemplate: usermanual-page.tmpl.html\nposition: 16\n---\n\n');
+    concatStream.write('---\ntitle: Common Questions\ntemplate: usermanual-page.tmpl.html\nposition: 18\n---\n\n');
 
     // write file content
     files.forEach(function (file) {

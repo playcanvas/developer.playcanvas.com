@@ -1,7 +1,7 @@
 ---
 title: Glossary
 template: usermanual-page.tmpl.html
-position: 50
+position: 19
 ---
 
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
