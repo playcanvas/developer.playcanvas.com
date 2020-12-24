@@ -8,6 +8,7 @@ Developing applications in PlayCanvas is easy and fun. Let's start by learning t
 
 <iframe  src="https://playcanv.as/p/TnUtDXWp/" allowfullscreen></iframe>
 
+*Use the arrow keys to moves the red ball around.*
 
 To begin, navigate to your PROJECTS page.
 
