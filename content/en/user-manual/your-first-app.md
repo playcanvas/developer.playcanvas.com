@@ -4,11 +4,11 @@ template: usermanual-page.tmpl.html
 position: 1.8
 ---
 
-Developing applications in PlayCanvas is easy and fun. Let's start by learning the basics of building and publishing. We'll recreate the following simple 3D app:
+Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes learning the basics. We'll recreate the following simple 3D app:
 
 <iframe  src="https://playcanv.as/p/TnUtDXWp/" allowfullscreen></iframe>
 
-*Use the arrow keys to moves the red ball around.*
+*Use the arrow keys to move the red ball around.*
 
 To begin, navigate to your PROJECTS page.
 
