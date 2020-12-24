@@ -54,7 +54,7 @@ Notice the little preview window that has appeared for the selected camera. Let'
 
 ![Camera Tranform][10]
 
-Next, let's make the sphere controllable with the arrow keys on the keyboard. To do this, we must create a script. To do this, right click the Sphere entity and select `Add Component -> Script`.
+Next, let's make the sphere controllable with the arrow keys on the keyboard. To do this, we must create a script. Right click the Sphere entity and select `Add Component -> Script`.
 
 ![Add Script Component][11]
 
