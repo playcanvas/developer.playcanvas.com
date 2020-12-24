@@ -134,7 +134,7 @@ There is a 'Live Link' between the Editor and the Launch page. Any change you ma
 ![Editor Live Link][16]
 </div>
 
-The final step is to publish your app so you can share it with others. To do this, lick on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar.
+The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar.
 
 ![Publish Button][17]
 
