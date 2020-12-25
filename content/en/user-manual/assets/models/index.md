@@ -17,7 +17,7 @@ Learn more about:
 
 [1]: /user-manual/assets/models/building
 [2]: https://www.blender.org/
-[3]: /user-manual/glossary#source_asset
-[4]: /user-manual/glossary/#target_asset
+[3]: /user-manual/glossary#source-asset
+[4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
