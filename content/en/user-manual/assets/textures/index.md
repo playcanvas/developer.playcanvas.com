@@ -59,29 +59,7 @@ The texture addressing properties give you control over how a texture is sampled
 
 ![Addressing][5]
 
-## Texture Compression
 
-Texture data is stored in a device's video memory (or VRAM). It is important to ensure that your application does not exhaust VRAM as this can cause undesirable things like browser tab crashes.
-
-The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used. These schemes are:
-
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
-* ETC: Typically supported by Android devices.
-
-Consider this texture asset:
-
-<img src="/images/user-manual/assets/textures/brick.jpg" alt="Brick Texture" style="width: 256px; height: 256px;"/>
-
-It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
-
-Enabling all compression schemes achieves the following results:
-
-![Compression Results][6]
-
-The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 116KB.
-
-<div class="alert alert-info">Note: There are limitations on the dimensions of the texture that can be compressed</div>
 
 ## Max Texture Size
 
@@ -104,5 +82,4 @@ If you would like to avoid downsizing at runtime, at the time of writing (Fri 23
 [3]: /images/user-manual/assets/textures/texture-properties.png
 [4]: /images/user-manual/assets/textures/anisotropy.png
 [5]: /images/user-manual/assets/textures/texture-address.png
-[6]: /images/user-manual/assets/textures/compression-results.png
 [7]: https://webglreport.com/
