@@ -63,7 +63,7 @@ Any overrides you apply to the Template Asset will propagate to other instances 
 
 ### Reverting Overrides
 
-To revert a specific override, click REVERT in the tooltip shown when you hover over the overriden field.
+To revert a specific override, click REVERT in the tooltip shown when you hover over the overridden field.
 
 To revert all overrides select the root of the Template Instance and click Revert All on the Entity Inspector.
 
