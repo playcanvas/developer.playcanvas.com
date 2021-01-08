@@ -72,8 +72,7 @@ VideoTexture.prototype.initialize = function() {
         magFilter: pc.FILTER_LINEAR,
         addressU: pc.ADDRESS_CLAMP_TO_EDGE,
         addressV: pc.ADDRESS_CLAMP_TO_EDGE,
-        mipmaps: true,
-        autoMipmap: true
+        mipmaps: true
     });
     this.videoTexture.setSource(video);
 
