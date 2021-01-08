@@ -45,7 +45,7 @@ You can see the summary of the overrides by selecting the root of the Template I
 
 Also notice the different color of the label of the field that has been overridden. You can also see a more detailed list of all the overrides by clicking View Diff. See [Overrides Diff View][4] for more information.
 
-If you hover over the colored label of the overriden field you can view more details about that specific override:
+If you hover over the colored label of the overridden field you can view more details about that specific override:
 
 ![Override Hover][5]
 
