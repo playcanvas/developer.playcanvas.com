@@ -301,10 +301,12 @@
             });
 
             var noTutorialsMessage = document.getElementById('no-tutorials-message');
-            if (tutorialEnabledCount > 0) {
-                noTutorialsMessage.classList.add('hidden');
-            } else {
-                noTutorialsMessage.classList.remove('hidden');
+            if (noTutorialsMessage) {
+                if (tutorialEnabledCount > 0) {
+                    noTutorialsMessage.classList.add('hidden');
+                } else {
+                    noTutorialsMessage.classList.remove('hidden');
+                }
             }
 
             var demosTitle = document.getElementById('project-demos-title');
