@@ -52,7 +52,7 @@ The outline of a shadow is called the penumbra. This is a transition from dark t
 
 Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
 
-The shadow sampling type is specified per material and so the option can be found in the Material Editor in the Other section.
+The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
 
 ## Performance Considerations
 
