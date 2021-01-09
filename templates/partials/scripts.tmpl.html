@@ -310,10 +310,12 @@
             }
 
             var demosTitle = document.getElementById('project-demos-title');
-            if (demoEnabledCount > 0) {
-                demosTitle.classList.remove('hidden');
-            } else {
-                demosTitle.classList.add('hidden');
+            if (demosTitle) {
+                if (demoEnabledCount > 0) {
+                    demosTitle.classList.remove('hidden');
+                } else {
+                    demosTitle.classList.add('hidden');
+                }
             }
         },
 
