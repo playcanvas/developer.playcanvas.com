@@ -53,7 +53,8 @@ Status: 201 Created
       'scenes': list of int scene ids,
       'name': string,
       'concatenate': boolean,
-      "download_url": string
+      'minify': boolean,
+      'download_url': string
     }
 }
 ```
