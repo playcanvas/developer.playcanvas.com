@@ -99,7 +99,7 @@ A new scene by default contains a single camera, and this is all that is needed 
 When you add an additional camera, these are the recommended steps:
 1. Set the priority of new and existing cameras to control the order in which they render.
 2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
-3. If your camera renders into a texture, use script to assign a render target to the renderTarget property of the camera.
+3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.
 
 [1]: /images/user-manual/graphics/layers/default-layers.jpg
 [2]: /images/user-manual/graphics/layers/new-layer.jpg
