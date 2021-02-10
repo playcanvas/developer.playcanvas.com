@@ -92,7 +92,7 @@ Components that render meshes all have a `layers` property which is used to dete
 
 ### Recommended setup
 
-Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly on layer. In most cases, these would be on World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
+Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
 
 A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture. 
 
