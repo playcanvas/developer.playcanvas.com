@@ -19,10 +19,7 @@ We'll be implementing a client-server model (as opposed to peer-to-peer). This w
 ```javascript
 var server = require('http').createServer();
 var options = {
-  cors: {
-    origin: "https://launch.playcanvas.com",
-    methods: ["GET", "POST"]
-  }
+  cors: true
 }
 
 var io = require('socket.io')(server, options);
@@ -167,10 +164,7 @@ For the game to work in real time multiplayer, we need to keep track of all play
 ```javascript
 var server = require('http').createServer();
 var options = {
-  cors: {
-    origin: "https://launch.playcanvas.com",
-    methods: ["GET", "POST"]
-  }
+  cors: true
 }
 
 var io = require('socket.io')(server, options);
