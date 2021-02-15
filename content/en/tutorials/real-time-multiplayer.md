@@ -18,7 +18,14 @@ We'll be implementing a client-server model (as opposed to peer-to-peer). This w
 
 ```javascript
 var server = require('http').createServer();
-var io = require('socket.io')(server);
+var options = {
+  cors: {
+    origin: "https://launch.playcanvas.com",
+    methods: ["GET", "POST"]
+  }
+}
+
+var io = require('socket.io')(server, options);
 
 io.sockets.on('connection', function(socket) {
     console.log("Client has connected!");
@@ -45,9 +52,21 @@ This server will simply log a message every time someone connects. This should b
 
 ## Setting up the Project
 
-Create a new project on PlayCanvas. We first need to include the Socket.io client, so create a new script called `socket.js`.
+Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script.
 
-Open the script and replace the contents of the file with the Socket.io client, [which can be found here][7].
+Go to project settings.
+![Project settings][12]
+
+Find and open 'External Scripts'.
+![External scripts settings][13]
+
+Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing: 
+![Project settings][14]
+
+
+```
+https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
+```
 
 Now we need to create a new script to handle the network logic. Create a new script called `Network.js`. We first need to create a connection to the server. We can do this by adding this line in the initialize method:
 
@@ -147,7 +166,14 @@ For the game to work in real time multiplayer, we need to keep track of all play
 
 ```javascript
 var server = require('http').createServer();
-var io = require('socket.io')(server);
+var options = {
+  cors: {
+    origin: "https://launch.playcanvas.com",
+    methods: ["GET", "POST"]
+  }
+}
+
+var io = require('socket.io')(server, options);
 
 var players = {};
 
@@ -316,4 +342,8 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [8]: /images/tutorials/multiplayer/ground_entity.png
 [9]: /images/tutorials/multiplayer/player_entity.png
-[10]: https://glitch.com/edit/#!/playcanvas-multiplayer
+[10]: https://glitch.com/edit/#!/sore-bloom-beech
+[11]: https://cdnjs.com/libraries/socket.io
+[12]: /images/tutorials/multiplayer/project_settings.png
+[13]: /images/tutorials/multiplayer/external_scripts_settings.png
+[14]: /images/tutorials/multiplayer/added_socket_io_library.png
