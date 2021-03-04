@@ -50,7 +50,7 @@ There are several common parameters that are used in each endpoint:
 
 ### project_id
 
-This is can be found in the URL on the project overview page.
+This can be found in the URL on the project overview page.
 
 ![Project ID][6]
 
