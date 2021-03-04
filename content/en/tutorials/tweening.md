@@ -41,7 +41,7 @@ To get the above we can do:
 ```javascript
 this.entity
 .tween(this.entity.getLocalRotation())
-.to(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
+.rotate(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
 .loop(true)
 .yoyo(true)
 .start();
