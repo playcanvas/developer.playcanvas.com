@@ -10,7 +10,7 @@ PlayCanvas supports the [Facebook Playable Ad][1] formats and requirements via a
 
 The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (uncompressed) ZIP formats via the configuration options. Full specifications for Facebook Playable Ads can be found on their [help centre][3].
 
-There are some limitations to be aware of with the tool which can be found on the documentation from [GitHub][2].
+There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
 
 
 ## Example project
