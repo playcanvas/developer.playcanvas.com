@@ -33,7 +33,7 @@ Try to keep images as small as possible in dimensions and use tools like [TinyPN
 
 ## How to export
 
-Follow the [setup steps][7] from the read me in the GitHub repo.
+Follow the [setup steps][7] from the readme in the GitHub repo.
 
 ### Single HTML
 
