@@ -11,7 +11,9 @@ Once you have built your game, you will no doubt want to publish it and allow pe
 * [Web][1]
 * [Mobile][2]
 * [Desktop][3]
+* [Playable Ads][4]
 
 [1]: /user-manual/publishing/web
 [2]: /user-manual/publishing/mobile
 [3]: /user-manual/publishing/desktop
+[4]: /user-manual/publishing/playable-ads
