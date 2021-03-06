@@ -36,7 +36,7 @@ VideoTexture.attributes.add('playEvent', {
 // initialize code called once per entity
 VideoTexture.prototype.initialize = function() {
     var app = this.app;
-    
+
     // Create HTML Video Element to play the video
     var video = document.createElement('video');
     video.loop = true;
@@ -46,12 +46,9 @@ VideoTexture.prototype.initialize = function() {
 
     // critical for iOS or the video won't initially play, and will go fullscreen when playing
     video.playsInline = true;
-    
+
     // needed because the video is being hosted on a different server url
     video.crossOrigin = "anonymous";
-
-    // set video source
-    video.src = this.video.getFileUrl();
 
     // iOS video texture playback requires that you add the video to the DOMParser
     // with at least 1x1 as the video's dimensions
@@ -65,7 +62,7 @@ VideoTexture.prototype.initialize = function() {
 
     document.body.appendChild(video);
 
-    // Create a texture to hold the video frame data            
+    // Create a texture to hold the video frame data
     this.videoTexture = new pc.Texture(app.graphicsDevice, {
         format: pc.PIXELFORMAT_R8_G8_B8,
         minFilter: pc.FILTER_LINEAR_MIPMAP_LINEAR,
@@ -76,10 +73,16 @@ VideoTexture.prototype.initialize = function() {
     });
     this.videoTexture.setSource(video);
 
-    video.addEventListener('canplay', function (e) {
+    video.addEventListener('canplaythrough', function (e) {
         app.fire(this.playEvent, this.videoTexture);
         video.play();
     }.bind(this));
+
+    // set video source
+    video.src = this.video ? this.video.getFileUrl() : this.videoUrl;
+
+    document.body.appendChild(video);
+    video.load();
 };
 
 // update code called every frame
