@@ -6,7 +6,7 @@ position: 3
 
 PlayCanvas supports the [Facebook Playable Ad][1] formats and requirements via an [official external tool on GitHub][2].
 
-<video loop controls autoplay muted src="/videos/fb-playable-ad-bitmoji-creator.mp4" width="200"> </video> <video loop controls autoplay muted src="/videos/fb-playable-ad-cube-jump.mp4" width="200"></video> <video loop controls autoplay muted src="/videos/fb-playable-ad-flappy-bird.mp4" width="200"></video>
+<img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" width="185px" style="margin:0px 5px; display:inline;"></img> <img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" width="185px" style="margin:0px 5px; display:inline;"></img> <img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" width="185px" style="margin:0px 5px; display:inline;"></img>
 
 The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (uncompressed) ZIP formats via the configuration options. Full specifications for Facebook Playable Ads can be found on their [help centre][3].
 

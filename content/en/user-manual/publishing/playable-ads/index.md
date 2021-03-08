@@ -8,4 +8,4 @@ Currently supporting the following playable ad formats:
 
 * [Facebook][1]
 
-[1]: /usermanual/publishing/playable-ads/fb-playable-ads
+[1]: /user-manual/publishing/playable-ads/fb-playable-ads
