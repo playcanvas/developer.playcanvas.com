@@ -24,9 +24,9 @@ The [Cube Jump project][5] is ready to be exported for the Facebook Playable Ad 
 
 As there is a strict file size limit, you will have to plan and budget the usage of assets for the ad.
 
-The minified PlayCanvas Engine code is **~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **~30%** to the size of each asset file.
+The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
 
-This means that for a single HTML format, this leaves ~500KB for assets before they are encoded into Base64 strings.
+This means that for a single HTML format, this leaves \~500KB for assets before they are encoded into Base64 strings. For the ZIP format, this would be about \~3MB for assets before encoding.
 
 Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
 
