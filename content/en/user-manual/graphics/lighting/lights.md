@@ -9,7 +9,7 @@ In the real world, the environment around you is lit from many sources. The Sun,
 There are three types of light in PlayCanvas:
 
 * Directional lights
-* Point lights
+* Omni lights
 * Spot lights
 
 ## Directional Lights
@@ -28,21 +28,21 @@ A directional light lights an object like this:
 
 Directional lights are the fastest to process by the engine in terms of performance.
 
-## Point Lights
+## Omni Lights
 
-Point lights are light sources that emit light from a single point in all directions. Examples of this type of light are an unshaded light bulb or candlelight.
+Omni lights are light sources that emit light in all directions. Examples of this type of light are an unshaded light bulb or candlelight.
 
-When unselected, a point light is represented by the following icon in the Editor's 3D view:
+When unselected, a omni light is represented by the following icon in the Editor's 3D view:
 
-![Point light icon][3]
+![Omni light icon][3]
 
 Click this icon to select the light in the Hierarchy and Inspector panels.
 
-A point light lights an object like this:
+An omni light lights an object like this:
 
-![Point light][4]
+![Omni light][4]
 
-Point lights are more costly than directional lights but faster to process than spot lights.
+Omni lights are more costly than directional lights but faster to process than spot lights.
 
 ## Spot Lights
 
@@ -60,9 +60,35 @@ A spot light lights an object like this:
 
 Spot lights are the most costly type of light so use them sparingly.
 
+There are four light source shapes:
+
+* Punctual
+* Rectangle
+* Disk
+* Sphere
+
+## Punctual
+
+The punctual light source shape is an intefissiemmally small point. This is the default light source shape.
+
+## Rectangle
+
+The rectangle light source shape is a flat 4 sided shape with a specified width and height. Examples of a rectangle shape light would be a TV screen.
+
+## Disk
+
+The disk light source shape is a round and flat light shape with a specified radius. Examples of a disk shape light would be a moon or sun.
+
+## Sphere
+
+The sphere light source shape is ball shaped with a specified radius. Examples of a sphere shape light would be a light bulb.
+
+![Shapes][7]
+
 [1]: /images/user-manual/graphics/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lights/directional.jpg
 [3]: /images/user-manual/graphics/lights/point_icon.jpg
 [4]: /images/user-manual/graphics/lights/point.jpg
 [5]: /images/user-manual/graphics/lights/spot_icon.jpg
 [6]: /images/user-manual/graphics/lights/spot.jpg
+[7]: /images/user-manual/graphics/lights/shapes.jpg
