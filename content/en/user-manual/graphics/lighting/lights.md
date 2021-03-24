@@ -4,7 +4,9 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources that approximate the different types of light we find in reality.
+In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
+
+## Light Types
 
 There are three types of light in PlayCanvas:
 
@@ -12,7 +14,7 @@ There are three types of light in PlayCanvas:
 * Omni lights
 * Spot lights
 
-## Directional Lights
+### Directional Lights
 
 The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as travelling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
 
@@ -26,11 +28,9 @@ A directional light lights an object like this:
 
 ![Directional light][2]
 
-Directional lights are the fastest to process by the engine in terms of performance.
+### Omni Lights
 
-## Omni Lights
-
-Omni lights are light sources that emit light in all directions. Examples of this type of light are an unshaded light bulb or candlelight.
+Omni lights are light sources that emit light in all directions. An examples of this type of light source is a candle and other examples can be seen in the [table](#use-cases) below.
 
 When unselected, a omni light is represented by the following icon in the Editor's 3D view:
 
@@ -42,11 +42,9 @@ An omni light lights an object like this:
 
 ![Omni light][4]
 
-Omni lights are more costly than directional lights but faster to process than spot lights.
+### Spot Lights
 
-## Spot Lights
-
-Spot lights, like point lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light would be a torch or the light from a lighthouse.
+Spot lights, like point lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light are provided in the [table](#use-cases) below.
 
 When unselected, a spot light is represented by the following icon in the Editor's 3D view:
 
@@ -58,7 +56,7 @@ A spot light lights an object like this:
 
 ![Spot light][6]
 
-Spot lights are the most costly type of light so use them sparingly.
+## Light Shapes
 
 There are four light source shapes:
 
@@ -67,23 +65,43 @@ There are four light source shapes:
 * Disk
 * Sphere
 
-## Punctual
+### Punctual
 
-The punctual light source shape is an intefissiemmally small point. This is the default light source shape.
+The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct ligthing specular reflections. Examples given in [table](#use-cases) below.
 
-## Rectangle
+### Rectangle
 
-The rectangle light source shape is a flat 4 sided shape with a specified width and height. Examples of a rectangle shape light would be a TV screen.
+The rectangle light source shape is a flat 4 sided shape with a specified width and height. Examples given in [table](#use-cases) below.
 
-## Disk
+### Disk
 
-The disk light source shape is a round and flat light shape with a specified radius. Examples of a disk shape light would be a moon or sun.
+The disk light source shape is a round and flat light shape with a specified radius. Examples given in [table](#use-cases) below.
 
-## Sphere
+### Sphere
 
-The sphere light source shape is ball shaped with a specified radius. Examples of a sphere shape light would be a light bulb.
+The sphere light source shape is ball shaped with a specified radius. Examples given in [table](#use-cases) below.
 
 ![Shapes][7]
+
+## Use Cases
+
+Below is a table of some common use cases each light source shape and light type:
+
+| Shape/Type    | Punctual      | Rectangle               | Disk                  | Sphere              |
+| ------------- |---------------| ------------------------| ----------------------| --------------------|
+| Directional   | sun           | x                       | sun or moon           | sun or moon         |
+| Omni          | unshaded bulb | x                       | x                     | unshaded round bulb |
+| Spot          | torch         | tv screen               | shaded bulb           | shaded round bulb   |
+
+x = no common use cases - but still can be used for application/game speciifc lighting effects.
+
+## Performance Considerations
+
+Directional lights are the fastest to process by the engine in terms of performance.
+Omni lights are more costly than directional lights but faster to process than spot lights.
+Spot lights are the most costly type of light so use them sparingly.
+
+Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where punctual lights would appear visibly incorrect.
 
 [1]: /images/user-manual/graphics/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lights/directional.jpg
