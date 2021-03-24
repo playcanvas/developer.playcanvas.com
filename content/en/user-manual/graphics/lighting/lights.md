@@ -67,7 +67,7 @@ There are four light source shapes:
 
 ### Punctual
 
-The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct ligthing specular reflections. Examples given in [table](#use-cases) below.
+The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct ligthing and specular reflections. Examples given in [table](#use-cases) below.
 
 ### Rectangle
 
@@ -93,15 +93,11 @@ Below is a table of some common use cases each light source shape and light type
 | Omni          | unshaded bulb | x                       | x                     | unshaded round bulb |
 | Spot          | torch         | tv screen               | shaded bulb           | shaded round bulb   |
 
-x = no common use cases - but still can be used for application/game speciifc lighting effects.
+x = no common use cases - but still can be used for application/game specific lighting effects.
 
 ## Performance Considerations
 
-Directional lights are the fastest to process by the engine in terms of performance.
-Omni lights are more costly than directional lights but faster to process than spot lights.
-Spot lights are the most costly type of light so use them sparingly.
-
-Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where punctual lights would appear visibly incorrect.
+Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
 
 [1]: /images/user-manual/graphics/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lights/directional.jpg
