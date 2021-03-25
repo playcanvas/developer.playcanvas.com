@@ -4,7 +4,9 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
+In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality. 
+
+Descriptions of each light type and light source shape are below and examples of different combinations of light types and given in [table](#use-cases) below.
 
 ## Light Types
 
@@ -30,7 +32,7 @@ A directional light lights an object like this:
 
 ### Omni Lights
 
-Omni lights are light sources that emit light in all directions. An examples of this type of light source is a candle and other examples can be seen in the [table](#use-cases) below.
+Omni lights are light sources that emit light in all directions. An example of this type of light source is a candle and other examples can be seen in the [table](#use-cases) below.
 
 When unselected, a omni light is represented by the following icon in the Editor's 3D view:
 
@@ -44,7 +46,7 @@ An omni light lights an object like this:
 
 ### Spot Lights
 
-Spot lights, like omni lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light are provided in the [table](#use-cases) below.
+Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
 
 When unselected, a spot light is represented by the following icon in the Editor's 3D view:
 
@@ -67,19 +69,19 @@ There are four light source shapes:
 
 ### Punctual
 
-The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct ligthing and specular reflections. Examples given in [table](#use-cases) below.
+The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct ligthing and specular reflections.
 
 ### Rectangle
 
-The rectangle light source shape is a flat 4 sided shape with a specified width and height. Examples given in [table](#use-cases) below.
+The rectangle light source shape is a flat 4 sided shape with a specified width and height.
 
 ### Disk
 
-The disk light source shape is a round and flat light shape with a specified radius. Examples given in [table](#use-cases) below.
+The disk light source shape is a round and flat light shape with a specified radius. 
 
 ### Sphere
 
-The sphere light source shape is ball shaped with a specified radius. Examples given in [table](#use-cases) below.
+The sphere light source shape is ball shaped with a specified radius.
 
 ![Shapes][7]
 
