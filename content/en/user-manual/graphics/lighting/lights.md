@@ -44,7 +44,7 @@ An omni light lights an object like this:
 
 ### Spot Lights
 
-Spot lights, like point lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light are provided in the [table](#use-cases) below.
+Spot lights, like omni lights, emit light from a single point in space. However, the light from the spot light is constrained to a cone shape. Examples of a spot light are provided in the [table](#use-cases) below.
 
 When unselected, a spot light is represented by the following icon in the Editor's 3D view:
 
