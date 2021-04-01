@@ -36,6 +36,6 @@ Only available for GLB export formats. Enable this option if you wish to keep th
 
 If enabling this option, it is recommended that Sample Rate is disabled and Curve Tolerance is set to 0.
 
-[asset_pipeline]: /user-manual/glossary#asset_pipeline
-[target_asset]: /user-manual/glossary#target_asset
+[asset_pipeline]: /user-manual/glossary#asset-pipeline
+[target_asset]: /user-manual/glossary#target-asset
 [animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png

@@ -18,11 +18,19 @@ At a fundamental level a layer is list of meshes to render. Each layer is divide
 
 ## Rendering Order
 
-There are two factors that determine the order in which meshes are rendered.
+There are three factors that determine the order in which meshes are rendered.
+
+### Camera Priority
+
+Priority of the camera is the main factor that controls the order in which the meshes are rendered. Each camera has a priority assigned to it, and cameras with smaller values for priority are rendered first.
+
+Each camera also has a list of layers set up on it, which controls which layers the camera renders. Their order is described in the next section.
+
+![Camera Layers][6]
 
 ### Layer Composition
 
-First is order of layers in the application. Each application contains a `pc.LayerComposition` object which is available in your application as `this.app.scene.layers`. The layer composition determines the order of all sub-layers. The ordering is based on the sub-layer not on the layer so that you can, for example, render all the opaque sub-layers first, then all the transparent sub-layers afterwards.
+Next is order of layers in the application. Each application contains a `pc.LayerComposition` object which is available in your application as `this.app.scene.layers`. The layer composition determines the order of all sub-layers. The ordering is based on the sub-layer not on the layer so that you can, for example, render all the opaque sub-layers first, then all the transparent sub-layers afterwards.
 
 **Note**: Putting a model component inside a layer that is rendered after the world layer **will not** make the model render on top of everything in the world layer! The Standard Material used to render models has a property called `depthTest`. When this is true (the default) before each pixel of the model is rendered the GPU will test to see if there is something else in front if this pixel. Even if that pixel was drawn in an earlier layer depth test ensures that only visible pixels are drawn. If you wish to ignore the distance from the camera when rendering a mesh, disable `depthTest` in your material.
 
@@ -82,8 +90,20 @@ Components that render meshes all have a `layers` property which is used to dete
 
 *Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in it's layer list. In order for it to be lit, the light must include Test Layer in it's layer list too.
 
+### Recommended setup
+
+Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
+
+A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture. 
+
+When you add an additional camera, these are the recommended steps:
+1. Set the priority of new and existing cameras to control the order in which they render.
+2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
+3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.
+
 [1]: /images/user-manual/graphics/layers/default-layers.jpg
 [2]: /images/user-manual/graphics/layers/new-layer.jpg
 [3]: /images/user-manual/graphics/layers/edit-layer.jpg
 [4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
 [5]: /images/user-manual/graphics/layers/test-layer-components.jpg
+[6]: /images/user-manual/graphics/layers/camera-layers.jpg

@@ -16,8 +16,8 @@ Learn more about:
 * [Exporting Models][6]
 
 [1]: /user-manual/assets/models/building
-[2]: http://blender.org/
-[3]: /user-manual/glossary#source_asset
-[4]: /user-manual/glossary/#target_asset
+[2]: https://www.blender.org/
+[3]: /user-manual/glossary#source-asset
+[4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting

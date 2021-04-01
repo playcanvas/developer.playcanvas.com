@@ -37,6 +37,36 @@ On Windows:
     cd developer.playcanvas.com
     node node_modules/http-server/bin/http-server build
 
+## Use 'watch' for quick iteration
+
+The watch build command will automatically build the site when changes are made in the `content` directory.
+
+    cd developer.playcanvas.com
+    npm install
+    npm run watch:osx
+
+On Windows:
+
+    cd developer.playcanvas.com
+    npm install
+    npm run watch:windows
+
+## Update CSS from SCSS
+
+The site uses Sass to generate the CSS. To generate, run:
+
+    cd developer.playcanvas.com
+    npm install
+    npm run sass
+
+## Test for broken links
+
+Start the localhost server from [How to server](#how-to-serve) and in another terminal window, run:
+
+    cd developer.playcanvas.com
+    npm install
+    npm run test-links:en
+
 ## How to deploy
 
-Deployment is made by pushing to default branch
+Deployment is made by pushing to stable branch

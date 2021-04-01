@@ -12,4 +12,4 @@ PlayCanvas games are just web pages. An index.html file and a collection of reso
 Alternatively, another option is to create an Android or iOS app the consists of a single fullscreen WebView that loads your PlayCanvas app from local app resources.
 
 [1]: /user-manual/publishing/mobile/cordova
-[2]: https://phonegap.com/
+[2]: https://build.phonegap.com/

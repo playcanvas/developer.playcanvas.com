@@ -12,7 +12,7 @@ First a note about Cubemaps and Workflows
 
 ## Image Based Lighting
 
-[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with a HDR Prefiltered CubeMap look great!**
+[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
 
 ## Metalness and Specular Workflow
 
@@ -87,9 +87,9 @@ There are many other additional properties to investigate that can be used to ma
 
 <iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 
-[1]: http://store.playcanvas.com
-[2]: /user-manual/glossary#hdr
+[1]: https://store.playcanvas.com
+[2]: /user-manual/glossary#high-dynamic-range
 [3]: /images/user-manual/graphics/physical-rendering/metals.jpg
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
