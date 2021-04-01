@@ -17,6 +17,10 @@ PlayCanvas offers two ways to use lightmaps in your scene: **External lightmap g
 
 This page gives details and best practices on rendering lightmaps from external tools.
 
+<div class="alert-info">
+    The use of <a href="/user-manual/optimization/batching">batching</a> is currently not compatible with lightmaps due to both using the same set of UV coordinates.
+</div>
+
 ## External Lightmap Generation
 
 Many 3D content tools have ways to generate lightmap textures. For example, 3ds Max, Maya, Blender and other tools all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, ambient occlusion, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
