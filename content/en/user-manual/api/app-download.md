@@ -55,7 +55,7 @@ Status: 201 Created
       'name': string,
       'concatenate': boolean,
       'minify': boolean,
-	    'optimize_scene_format': boolean,
+      'optimize_scene_format': boolean,
       'download_url': string
     }
 }
