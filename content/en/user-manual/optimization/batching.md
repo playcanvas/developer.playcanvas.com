@@ -14,7 +14,7 @@ Common batching use cases are:
 * Combine together dynamic geometry -- e.g. a set of moving objects -- into a single mesh instance with dynamic properties that are applied on the GPU.
 
 <div class="alert-info">
-    The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">lightmaps</a> due to both using the same set of UV coordinates.
+    The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">lightmaps</a> due to each lightmapped object requiring its own unique lightmap texture.
 </div>
 
 ## Creating Batch Groups
@@ -55,7 +55,7 @@ Based on Batch Groups the engine creates an optimized version of mesh instances.
 
 Here is an example of a simple script. The script updates `textureAsset` on an element, and marks the Batch Group as dirty.
 
-```javascript 
+```javascript
 // change textureAsset on element
 element.textureAsset = this.hoverAsset;
 
