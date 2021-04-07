@@ -68,6 +68,23 @@ Enable the `Localized` checkbox for a Text Element in order to use the Localizat
 
 To test your localization you can change the `Locale` field under the Editor Settings. That should update your Editor viewport to that locale and also this will update the locale used when you launch your application. This field is not used when you publish or download a build.
 
+## Localizing Numbers
+
+Different locales will have different rules on how numbers should be formatted. For example, English (UK and US) would format `1000000` as `1,000,000` and Dutch would format with a decimal instead `1.000.000`.
+
+JavaScript provides a built in function to do this formatting based on the locale code, [`Number.protoype.toLocaleString()`][5].
+
+An example of usage:
+
+```javascript
+var numberOfItems = 1000;
+var currentLocale = this.app.i18n.locale;
+var localeNumberString = numberOfItems.toLocaleString(currentLocale);
+
+console.log(localeNumberString);
+// expected output assuming currentLocale is en-US: "1,000"
+```
+
 ## Localized Fonts
 
 Often you will find that different languages might require different fonts to be used. In order to define a different font for a specific language select the primary font Asset you are using for your Text Element and towards the bottom of the Asset Attributes you will find the Localization section for that font Asset. Type the desired locale and assign a new font Asset for that locale.
@@ -87,3 +104,4 @@ For the complete engine API reference for localization see [this page][2].
 [2]: https://developer.playcanvas.com/en/api/pc.I18n.html
 [3]: https://developer.playcanvas.com/en/api/pc.I18n.html#getText
 [4]: https://developer.playcanvas.com/en/api/pc.I18n.html#getPluralText
+[5]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
