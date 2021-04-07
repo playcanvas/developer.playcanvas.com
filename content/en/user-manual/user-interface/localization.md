@@ -78,7 +78,7 @@ An example of usage:
 
 ```javascript
 var numberOfItems = 1000;
-var currentLocale = pc.Application.getApplication().i18n.locale;
+var currentLocale = this.app.i18n.locale;
 var localeNumberString = numberOfItems.toLocaleString(currentLocale);
 
 console.log(localeNumberString);
