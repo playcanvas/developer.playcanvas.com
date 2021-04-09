@@ -34,7 +34,7 @@ The game has 3 phases:
 
 The Preloader phase loads the assets that are needed for the first PlayCanvas scene which is the Title Screen and Character Customization. This would include assets for the UI, character model and assets.
 
-When the Title Screen is active, the game starts it's second load of assets in the background that are needed for the Main Game. The idea is with the transitions for the Title Screen and possible interaction of the character customization, by the time the user presses the start button, the assets would have finished loading.
+When the Title Screen is active, the game starts background loading the assets that are needed for the Main Game. During the transition to the Title Screen and possible interaction with the character customization, by the time the user presses the start button, the assets for the Main Game may have already finished loading.
 
 However, if the user presses the start button before the assets have finished loading, a progress bar will appear on the button instead. Once it reaches 100%, the game will automatically transition to the Main Game.
 
