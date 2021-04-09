@@ -44,7 +44,7 @@ With the assets being loaded in phases and giving something new for the user to 
 
 ### Further improvements
 
-Some developers will go as far as to reduce the reduce the Preloader phases to only load the bare minimum and add an 'in-application' loading screen that allows the developer to populate with application related assets and text, use animation, etc. This engages the user as they are seeing something that is directly related to the application.
+Some developers will go as far as to reduce the Preloader phase to only load the bare minimum and add an 'in-application' loading screen that allows the developer to populate with application related assets and text, use animation, etc. This engages the user as they are seeing something that is directly related to the application.
 
 If the game allows, using common placeholders while the more detailed assets are loading can get the user interacting with the application sooner.
 
