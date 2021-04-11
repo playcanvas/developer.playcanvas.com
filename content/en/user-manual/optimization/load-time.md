@@ -40,7 +40,7 @@ However, if the user presses the start button before the assets have finished lo
 
 <img src="/images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif" style="max-width: 480px;" />
 
-With the assets being loaded in phases and giving something new for the user to interact and/or look at periodically, the user stays engaged despite a long loading time.
+With the assets being loaded in phases and giving something new for the user to interact with and/or look at periodically, the user stays engaged despite a long loading time.
 
 ### Further improvements
 
