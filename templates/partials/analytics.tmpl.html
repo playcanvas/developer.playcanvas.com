@@ -1,5 +1,4 @@
 {{#if prod}}
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23605814-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -7,7 +6,8 @@
     gtag('set', 'developer_id.dNzMyY2', true); // OneTrust developer id
     gtag('consent', 'default', {
         'analytics_storage': 'denied',
-        'ad_storage': 'denied'
+        'ad_storage': 'denied',
+        'wait_for_update': 1000
     });
 
     // Google Analytics
@@ -20,18 +20,18 @@
     }
 
     _optanonCallbacks.push(function () {
-        // if consent given for Performance cookies then
+        // if consent given for cookies then
         // update gtag consent
-        if (OnetrustActiveGroups.indexOf('C0002') != -1) {
-            gtag('consent', 'update', {'analytics_storage': 'granted'});
-        }
-
-        // if consent given for Targeting cookies then
-        // update gtag consent
-        if (OnetrustActiveGroups.indexOf('C0004') != -1) {
-            gtag('consent', 'update', {'ad_storage': 'granted'});
+        var analytics = (OnetrustActiveGroups.indexOf('C0002') != -1);
+        var ads = (OnetrustActiveGroups.indexOf('C0004') != -1);
+        if (analytics || ads) {
+            gtag('consent', 'update', {
+                'analytics_storage': analytics ? 'granted' : 'denied',
+                'ad_storage': ads ? 'granted' : 'denied'
+            });
         }
     });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23605814-1"></script>
 <script src="https://playcanvas.com/static/platform/js/onetrust/consent.js"></script>
 {{/if}}
