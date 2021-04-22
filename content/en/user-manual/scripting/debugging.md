@@ -30,7 +30,7 @@ Note that when a running app is paused at a breakpoint in the debugger, other br
 
 On Android, it is possible to connect to the mobile Chrome browser via the desktop Chrome browser devtools and USB cable. [Google Developer documentation][7] has the detailed steps for the setup.
 
-iOS debugging requires access to a Mac and [BrowserStack has outlined the steps][8] needed to enable developer options to start debugging.
+iOS debugging requires access to a Mac and [Apple has outlined the steps][8] needed to enable developer options to start debugging.
 
 In the situation where either it's not possible to connect to the web view directly from Chrome or Safari (e.g. a web view in another app) or don't have access to a Mac, the following libraries and services can help and are simple to add to projects:
 
@@ -46,7 +46,7 @@ In the situation where either it's not possible to connect to the web view direc
 [5]: https://developer.apple.com/safari/tools/
 [6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/debugger
 [7]: https://developer.chrome.com/docs/devtools/remote-debugging/
-[8]: https://www.browserstack.com/guide/how-to-debug-on-iphone
+[8]: https://webkit.org/web-inspector/enabling-web-inspector/
 [9]: https://remotejs.com/
 [10]: https://github.com/Tencent/vConsole
 [11]: https://github.com/liriliri/eruda
