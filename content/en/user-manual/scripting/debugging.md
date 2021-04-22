@@ -34,7 +34,7 @@ iOS debugging requires access to a Mac and [Apple has outlined the steps][8] nee
 
 In the situation where either it's not possible to connect to the web view directly from Chrome or Safari (e.g. a web view in another app) or don't have access to a Mac, the following libraries and services can help and are simple to add to projects:
 
-* [RemoteJS][9] - Allows developers to view the console output remotely in a desktop browser and also execute JS in the console which makes it very powerful. The console output can delayed or slow though.
+* [RemoteJS][9] - Allows developers to view the console output remotely in a desktop browser and also execute JS in the console which makes it very powerful. The console output can be delayed or slow though.
 * [vConsole][10] or [Eruda][11] - Adds a widget DOM object to the page that can be expanded to show console output, network requests, the page elements and more.
 
 
