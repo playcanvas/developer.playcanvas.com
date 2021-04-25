@@ -8,7 +8,7 @@ Texture data is stored in a device's video memory (or VRAM). It is important to 
 
 The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used using Basis.
 
-[Basis][1] is a 'super-compressed' texture format. It's a platform independent lossy block compression format that can be transcoded to the natively supported hardware compression format at runtime.
+[Basis][1] is a 'super-compressed' texture format. It's a platform independent lossy block compression format that can be transcoded to the natively supported hardware compression format at runtime. Supported transcode formats are ASTC, DXT, ETC2, ETC, PVR and ATC (selected in that order where available).
 
 Consider this texture asset:
 
@@ -30,10 +30,7 @@ Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [w
 
 <a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison"/></a>
 
-
 ## Using Basis Texture Compression
-
-<div class="alert alert-info">Note: There is a limitation on the dimensions of the texture that can be compressed. The maximum size supported is 4096x4096</div>
 
 Once the texture has been imported into the Editor, select it and scroll down in the inspector to find the Compression section.
 
@@ -58,6 +55,13 @@ To remove Basis compression from a texture:
 If you would no longer want to use Basis, remove Basis compression from all textures and delete the Basis folder from the project.
 
 <img src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" style="width: 400px;"/>
+
+## Basis Limitations
+
+There are some limitations of Basis texture compression in PlayCanvas.
+
+1. The PVR format only supports textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. A Basis texture that is non-square or non-power of two cannot be transcoded to PVR format but will instead use a 16-bit 565 pixel format. It will still display correctly, although may occupy more VRAM.
+2. The maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
 
 ## Legacy Texture Compression
 
