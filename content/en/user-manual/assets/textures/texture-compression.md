@@ -30,10 +30,7 @@ Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [w
 
 <a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison"/></a>
 
-
 ## Using Basis Texture Compression
-
-<div class="alert alert-info">Note: There is a limitation on the dimensions of the texture that can be compressed. The maximum size supported is 4096x4096</div>
 
 Once the texture has been imported into the Editor, select it and scroll down in the inspector to find the Compression section.
 
@@ -58,6 +55,13 @@ To remove Basis compression from a texture:
 If you would no longer want to use Basis, remove Basis compression from all textures and delete the Basis folder from the project.
 
 <img src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" style="width: 400px;"/>
+
+## Basis Limitations
+
+There are some limitations of Basis texture compression in PlayCanvas.
+
+1. Basis can transcode to a number of formats natively supported by the GPU, namely DXT, ETC, ETC2, ASTC and PVR. The PVR format is quite limited, only supporting textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. On these devices, a Basis texture that is non-square or non-power of two cannot be trancoded to PVR format but will instead be decompressed to a 16-bit 565 pixel format. So these textures will still display correctly although they may occupy more memory compared to the equivalent PVR texture.
+2. Currently, the maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
 
 ## Legacy Texture Compression
 
