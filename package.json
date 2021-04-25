@@ -20,21 +20,21 @@
     "url": "https://github.com/playcanvas/developer.playcanvas.com.git"
   },
   "devDependencies": {
-    "handlebars": "4.7.6",
+    "broken-link-checker": "0.7.8",
+    "handlebars": "^4.7.7",
     "http-server": "0.12.3",
-    "marked": "2.0.0",
+    "marked": "^2.0.3",
     "metalsmith": "2.3.0",
+    "metalsmith-headings-identifier": "0.0.11",
     "metalsmith-markdown": "1.3.0",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-metallic": "2.0.3",
     "metalsmith-permalinks": "2.2.0",
     "metalsmith-static": "0.0.5",
     "metalsmith-templates": "0.7.0",
-    "metalsmith-headings-identifier": "0.0.11",
     "node-fetch": "2.6.1",
-    "watch": "1.0.2",
-    "sass": "1.32.6",
-    "broken-link-checker": "0.7.8"
+    "sass": "^1.32.11",
+    "watch": "1.0.2"
   },
   "scripts": {
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
