@@ -61,7 +61,7 @@ If you would no longer want to use Basis, remove Basis compression from all text
 There are some limitations of Basis texture compression in PlayCanvas.
 
 1. Basis can transcode to a number of formats natively supported by the GPU, namely DXT, ETC, ETC2, ASTC and PVR. The PVR format is quite limited, only supporting textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. On these devices, a Basis texture that is non-square or non-power of two cannot be trancoded to PVR format but will instead be decompressed to a 16-bit 565 pixel format. So these textures will still display correctly although they may occupy more memory compared to the equivalent PVR texture.
-2. Currently, the maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
+2. The maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
 
 ## Legacy Texture Compression
 
