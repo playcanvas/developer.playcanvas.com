@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Animstategraph assets are used to organise a set of different animation states, which are all the various ways in which a model might animation. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another.. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organised. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/en/user-manual/animation/anim-component/).
+Animstategraph assets are used to organise a set of different animation states, which are all the various ways in which a model might animation. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another.. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organised. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/en/user-manual/packs/components/anim/).
 
 The system was designed so that a single animstategraph can be used on many different entities, each with their own set of animation assets. An example being an animstategraph asset which manages the animations of humanoid character locomotion. This single asset could be used on a human entity, an elf entity and a dwarf entity. Each of these entities would be able to link their own character animation assets, all the while maintaining the same animation behaviour as each other.
 
@@ -23,6 +23,8 @@ In essence, states are used to specify which animations should play at a given p
 There are four types of states present in state graphs. Animation states, along with the START state, END state and ANY state. Only animation states can be created and deleted by the user and only these will be linked to animation assets. The other states are used to control the flow through the state machine.
 
 ### Animation States
+
+![State][7]
 
 Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show it’s inspector panel on the right hand side. Within this inspector the following state variables can be modified:
 
@@ -49,6 +51,8 @@ Animation states define a playable animation such as ‘Idle’, ‘Jump’ or �
 
 ### START state
 
+![Start State][8]
+
 The START state is the entrypoint of every state graph. When an anim component begins playing it’s assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
 
 ![Layers][2]
@@ -57,9 +61,13 @@ It is not possible to create any other transitions to or from the START state. I
 
 ### END state
 
+![End State][10]
+
 The end state marks an exit out of the current state graph. If your animation state is set up to transition to the END state, the system will move directly to the default animation state which is connected to the START state. This is useful to create cyclical flows through the graph while still laying out your graph in a linear fashion. It is not possible to create transitions from the END state to any other state. It will always transition directly to the START state.
 
 ### ANY state
+
+![Any State][9]
 
 This state is used to create transitions which can be activated while the system is currently in any of the other animation states. Any transitions that trigger from this state will blend as if they had been connected directly from the currently active animation state. You can create transitions from the ANY state but not to it.
 
@@ -156,3 +164,7 @@ Tip: Layers animate a model in the order that they’re created in the layers pa
 [4]: /images/user-manual/anim/condition.png
 [5]: /images/user-manual/anim/layers.png
 [6]: /images/user-manual/anim/select_layer.png
+[7]: /images/user-manual/anim/state.png
+[8]: /images/user-manual/anim/start_state.png
+[9]: /images/user-manual/anim/any_state.png
+[10]: /images/user-manual/anim/end_state.png
