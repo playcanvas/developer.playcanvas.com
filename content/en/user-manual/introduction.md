@@ -81,7 +81,7 @@ At the time of writing, the browser requirements are currently as follows:
     <tr><td style="text-align:center"><a href="https://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/download/internet-explorer.aspx">IE</a></td><td style="text-align:center">11.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">IE</a></td><td style="text-align:center">11.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
     <tr><td style="text-align:center"><a href="https://www.microsoft.com/edge">Edge</a></td><td style="text-align:center">12.0+</td>

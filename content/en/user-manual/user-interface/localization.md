@@ -91,6 +91,20 @@ Often you will find that different languages might require different fonts to be
 
 At runtime when the application switches to a different locale it will load the font Asset you defined for that locale.
 
+## Language Notes
+
+There are some languages that require specific workflows or considerations that are listed below.
+
+### Thai
+
+For word wrapping to work correctly in UI Text Elements with Thai text, [zero width characters (Unicode U+200B)][7] need be added between words by the translators.
+
+The Thai language has no spaces between words and the same run of glyphs can be split into different combinations of words depending on the context of the sentence.
+
+Being able to split Thai text correctly computationally is still an [unsolved problem][6] and usually done via a dictionary based approach which can be expensive to do at runtime.
+
+The [thai-language.com site also has a separate tool][8] to add the zero width characters between words using a dictionary based approach if you have existing text.
+
 ## Engine
 
 To retrieve the text from a key in script, use the APIs:
@@ -105,3 +119,6 @@ For the complete engine API reference for localization see [this page][2].
 [3]: https://developer.playcanvas.com/en/api/pc.I18n.html#getText
 [4]: https://developer.playcanvas.com/en/api/pc.I18n.html#getPluralText
 [5]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
+[6]: http://www.thai-language.com/ref/breaking-words
+[7]: https://en.wikipedia.org/wiki/Zero-width_space
+[8]: http://www.thai-language.com/?nav=zwsp
