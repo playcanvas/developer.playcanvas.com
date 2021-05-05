@@ -129,7 +129,7 @@ Each parameter has three variables which can be set:
     </tr>
     <tr>
         <td>Type</td>
-        <td>The type of variable that the parameter contains. One of; Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that it’s value is set back to false after it has been used to successfully activate a transition.</td>
+        <td>The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition.</td>
     </tr>
     <tr>
         <td>Default Value</td>
