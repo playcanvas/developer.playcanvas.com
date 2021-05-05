@@ -45,7 +45,7 @@ Animation states define a playable animation such as ‘Idle’, ‘Jump’ or �
     </tr>
     <tr>
         <td>Loop</td>
-        <td>Whether animations linked to this state should loop during playback. If set to false the animation will pause on it’s last keyframe until this state is exited.</td>
+        <td>Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited.</td>
     </tr>
 </tbody></table>
 
