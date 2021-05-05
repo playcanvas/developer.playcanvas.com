@@ -17,7 +17,7 @@ Let's examine how this is achieved via PlayCanvas...
 
 In order to add animations to a model, we must first create an animstategraph asset. These assets control multiple animations associated with a single entity, determine when each of those animations should play and how they should be blended together.
 
-When creating an animstategraph asset, you’ll be presented with it’s editor:
+When creating an animstategraph asset, you’ll be presented with its editor:
 
 ![Initial Editor][1]
 
