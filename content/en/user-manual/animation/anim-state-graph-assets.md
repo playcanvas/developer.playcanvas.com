@@ -14,7 +14,7 @@ When selecting an animstategraph asset in the editors asset panel, you’ll open
 
 ![Initial Editor][1]
 
-Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behaviour.
+Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behavior.
 
 ## States
 
