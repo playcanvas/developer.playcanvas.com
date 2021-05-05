@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Animstategraph assets are used to organise a set of different animation states, which are all the various ways in which a model might animation. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another.. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organised. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/en/user-manual/packs/components/anim/).
+Animstategraph assets are used to organize a set of different animation states, which are all the various ways in which a model might animate. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organized. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/en/user-manual/packs/components/anim/).
 
 The system was designed so that a single animstategraph can be used on many different entities, each with their own set of animation assets. An example being an animstategraph asset which manages the animations of humanoid character locomotion. This single asset could be used on a human entity, an elf entity and a dwarf entity. Each of these entities would be able to link their own character animation assets, all the while maintaining the same animation behavior as each other.
 
