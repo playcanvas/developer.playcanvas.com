@@ -93,7 +93,7 @@ The available transition variables are:
     </tr>
     <tr>
         <td>Exit Time</td>
-        <td>If provided, this transition will only be active for the exact frame during which the source states progress passes the time specified. Given as a normalized value of the source states duration. Values less than 1 will be checked every animation loop.</td>
+        <td>If provided, this transition will only be active for the exact frame during which the source states progress passes the time specified. Given as a normalized value of the source state's duration. Values less than 1 will be checked every animation loop.</td>
     </tr>
     <tr>
         <td>Offset</td>
