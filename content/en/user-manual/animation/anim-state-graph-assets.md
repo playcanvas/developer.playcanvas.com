@@ -97,7 +97,7 @@ The available transition variables are:
     </tr>
     <tr>
         <td>Offset</td>
-        <td>If provided, the destination state will begin playing its animation at this time. Given in normalised time based on the destinations states duration. Must be between 0 and 1.</td>
+        <td>If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destinations states duration. Must be between 0 and 1.</td>
     </tr>
     <tr>
         <td>Interruption Source</td>
