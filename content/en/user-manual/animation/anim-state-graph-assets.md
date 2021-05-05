@@ -147,7 +147,7 @@ Can be used in the transition between the Idle and Jump animation states to ensu
 
 ### Layers
 
-So far animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behaviour. An example could be animating a main character's movement and locomotion on a single layer, which animating it’s facial expressions on a separate layer that’s driven by its own state graph and parameters.
+So far, animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behavior. An example could be animating a main character's movement and locomotion on a single layer, while animating its facial expressions on a separate layer that’s driven by its own state graph and parameters.
 
 When an animstategraph is created, it comes with a single base layer. This layer is not deletable and for many scenarios will be the only one necessary. However if you wish to create another layer you can do so by selecting the new layer button on the layers panel to the left of the state graph view:
 
