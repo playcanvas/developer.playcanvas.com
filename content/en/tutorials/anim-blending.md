@@ -21,7 +21,7 @@ When creating an animstategraph asset, you’ll be presented with its editor:
 
 ![Initial Editor][1]
 
-By default the animstategraph asset creates a single animation state called ‘Initial State’ which has a default transition from the START state to it. This means when the animstategraph first begins playing, it’ll immediately begin playing the Initial State. This can be renamed to Idle which is the name of the initial animation used in this tutorial. We can then right click the canvas and select `Add new state` to create another animation state in the graph. This state can be renamed to Punch:
+By default, the animstategraph asset creates a single animation state called ‘Initial State’ which has a default transition from the START state to it. This means when the animstategraph first begins playing, it’ll immediately begin playing the Initial State. This can be renamed to Idle which is the name of the initial animation used in this tutorial. We can then right click the canvas and select `Add new state` to create another animation state in the graph. This state can be renamed to Punch:
 
 ![New State][2]
 
