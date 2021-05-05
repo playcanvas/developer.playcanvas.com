@@ -63,7 +63,7 @@ Once created it’ll display a slot for the animstategraph asset we just created
 
 ## Keyboard Input
 
-With the animations fully set up, we now need to make it possible for users to interact with our system. This is where scripts come in! A script component is required to enable this behaviour which will be written in the script `keyboard_controls.js`. You can see how it’s attached to the entity below:
+With the animations fully set up, we now need to make it possible for users to interact with our system. This is where scripts come in! A script component is required to enable this behavior which will be written in the script `keyboard_controls.js`. You can see how it’s attached to the entity below:
 
 ![Keyboard Input][9]
 
