@@ -139,7 +139,7 @@ Each parameter has three variables which can be set:
 
 The way in which they control the state graph is through the use of transition conditions. Each transition in the graph can have a list of conditions which define when a transition is usable by the system. A state will not be able to pass to another state through a given transition unless all of its conditions are met.
 
-Each condition consists of a conditional statement which compares the current value of a parameters variable to the given value in the condition using the designated operator. For example the following condition:
+Each condition consists of a conditional statement which compares the current value of a parameters variable to the given value in the condition using the designated operator. For example, the following condition:
 
 ![Condition][4]
 
