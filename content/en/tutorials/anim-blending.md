@@ -1,5 +1,5 @@
 ---
-title: Anim Blending
+title: Anim State Graph Blending
 template: tutorial-page.tmpl.html
 tags: animation
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
@@ -51,7 +51,7 @@ Here we have set it up with the same duration but its condition tests whether th
 
 Now with this complete animstategraph, we must connect it to animation assets and the chosen entity. This is where the anim component comes in.
 
-## The Anim Component 
+## The Anim Component
 
 First, we must add the anim component to our chosen entity.
 
