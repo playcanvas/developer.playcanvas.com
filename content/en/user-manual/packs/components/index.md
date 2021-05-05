@@ -15,6 +15,10 @@ There are many different Components defined in the PlayCanvas Engine. You can ad
             <th>Description</th>
         </tr>
     <tr>
+        <td><a href="/user-manual/packs/components/anim">Anim</a></td>
+        <td>Specifies the anim state graph and animation assets that can run on the model specified by the entity's render component.</td>
+    </tr>
+    <tr>
         <td><a href="/user-manual/packs/components/animation">Animation</a></td>
         <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
     </tr>
