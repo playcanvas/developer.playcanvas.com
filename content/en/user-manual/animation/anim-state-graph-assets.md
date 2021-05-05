@@ -105,7 +105,7 @@ The available transition variables are:
     </tr>
 </tbody></table>
 
-It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transitions arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
+It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
 
 ### Parameters
 
