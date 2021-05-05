@@ -47,7 +47,7 @@ Lastly, we need to create one more transition moving back from Punch to Idle as 
 
 ![Complete State Graph][6]
 
-Here we have set it up with the same duration but it’s condition tests whether the punch parameter is no longer true.
+Here we have set it up with the same duration but its condition tests whether the punch parameter is no longer true.
 
 Now with this complete animstategraph, we must connect it to animation assets and the chosen entity. This is where the anim component comes in.
 
