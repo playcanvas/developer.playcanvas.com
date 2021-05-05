@@ -53,7 +53,7 @@ Animation states define a playable animation such as ‘Idle’, ‘Jump’ or �
 
 ![Start State][8]
 
-The START state is the entrypoint of every state graph. When an anim component begins playing it’s assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
+The START state is the entry point of every state graph. When an anim component begins playing its assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
 
 ![Layers][2]
 
