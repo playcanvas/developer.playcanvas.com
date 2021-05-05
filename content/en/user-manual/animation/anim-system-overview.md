@@ -8,7 +8,7 @@ The animation system touches on three main areas of the PlayCanvas platform. Thi
 
 ## Animating in PlayCanvas
 
-In order to begin animating a PlayCanvas entity, you must have a set of animation assets available and imported into your PlayCanvas projecy. These animation assets will drive the animation of a given model you wish to animate. For example a humanoid character may have a set of animations; Idle, Walk, Jump.
+In order to begin animating a PlayCanvas entity, you must have a set of animation assets available and imported into your PlayCanvas project. These animation assets will drive the animation of a given model you wish to animate. For example a humanoid character may have a set of animations: Idle, Walk, Jump.
 
 ![Animations][1]
 
