@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The animation system touches on three main areas of the PlayCanvas platform. This section will walk through how these areas can be used together to create complex animation behaviour for your models. The following sections of the animation user manual then will explore each area in more detail.
+The animation system touches on three main areas of the PlayCanvas platform. This section will walk through how these areas can be used together to create complex animation behavior for your models. The following sections of the animation user manual then will explore each area in more detail.
 
 ## Animating in PlayCanvas
 
