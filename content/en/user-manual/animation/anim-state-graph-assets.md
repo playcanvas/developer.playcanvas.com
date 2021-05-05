@@ -109,7 +109,7 @@ It is possible to create multiple transitions between two animation states, whic
 
 ### Parameters
 
-The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behaviour of an entity's animation during its lifecycle.
+The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
 
 New parameters can be added to a state graph via the parameters panel on the left inspector:
 
