@@ -26,7 +26,7 @@ There are four types of states present in state graphs. Animation states, along 
 
 ![State][7]
 
-Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show it’s inspector panel on the right hand side. Within this inspector the following state variables can be modified:
+Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
 
 
 <table class="table table-striped">
