@@ -101,7 +101,7 @@ The available transition variables are:
     </tr>
     <tr>
         <td>Interruption Source</td>
-        <td>Defines whether another transition can interrupt this one and which of the current or previous states transitions can do so.</td>
+        <td>Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so.</td>
     </tr>
 </tbody></table>
 
