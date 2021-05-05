@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The anim component is used to connect an animstategraph asset and all of it’s required animation assets to a single entity.
+The anim component is used to connect an animstategraph asset and all of its required animation assets to a single entity.
 
 Below you can see the anim component after it has been added to a component. It shows an available slot for an animstategraph asset to be selected.
 
