@@ -34,7 +34,7 @@
     "metalsmith-static": "0.0.5",
     "metalsmith-templates": "0.7.0",
     "node-fetch": "2.6.1",
-    "sass": "^1.32.11",
+    "sass": "^1.32.12",
     "watch": "1.0.2"
   },
   "scripts": {
