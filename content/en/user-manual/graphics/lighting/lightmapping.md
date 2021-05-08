@@ -55,7 +55,7 @@ Keep texels in UV unstretched and consistent in size with other texels within sa
 ![Lighmapping Tips: UV Consistent Texel Size][5]
 
 ### **Non-overlapping UV**
-Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store it's own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
+Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store its own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
 
 ![Lighmapping Tips: Non-overlapping UV][6]
 
@@ -93,9 +93,9 @@ At this stage you have your geometry with a second UV channel (UV1) and HDR ligh
 
 ## Final remarks
 
-Gamma Correction, Tonemapping and Exposure - are good settings that you will want to play with to get the desired look and color for your scene.
+Gamma correction, tone mapping and exposure - are good settings that you will want to play with to get the desired look and color for your scene.
 
-You can [explore the example][13] that uses the techniques described above and it's [project][14].
+You can [explore the example][13] that uses the techniques described above and also its [project][14].
 
 [0]: /user-manual/graphics/lighting/runtime-lightmaps/
 [1]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg

@@ -14,7 +14,7 @@ But, all is not lost. PlayCanvas includes a number of features specifically desi
 
 ### Runtime lightmap generation
 
-Each dynamic light has a per-frame runtime cost. The more lights have you the higher the costs and the slower your scene will render. By baking lights into lightmaps you can hugely reduce the cost of static lights to that of simply rendering a texture. Lightmaps can be generated offline using your favourite 3D modelling tool or you can use PlayCanvas's built in Runtime Lightmap Generation.
+Each dynamic light has a per-frame runtime cost. The more lights have you the higher the costs and the slower your scene will render. By baking lights into lightmaps you can hugely reduce the cost of static lights to that of simply rendering a texture. Lightmaps can be generated offline using your favorite 3D modelling tool or you can use PlayCanvas's built in Runtime Lightmap Generation.
 
 Read more about using [runtime lightmap generation][1].
 

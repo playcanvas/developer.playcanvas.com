@@ -51,7 +51,7 @@ MyScript.prototype.update = function (dt) {
 
 ## Updating attributes
 
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behaviour when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
 
 ```javascript
 MyScript.prototype.initialize = function () {

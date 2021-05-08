@@ -83,7 +83,7 @@ Sometimes glossiness and roughness are referred to as the **microsurface** value
 
 These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occulusion, Emissive, Opacity, Normal and Height maps.
+There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
 
 <iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 

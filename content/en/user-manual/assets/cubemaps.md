@@ -51,7 +51,7 @@ The cubemap Preview panel displays the six faces of a cubemap flattened into the
 
 Cubemap faces must be:
 
-* Square (the same resultion in width and height)
+* Square (the same resolution in width and height)
 * Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
 * All faces must be the same resolution
 

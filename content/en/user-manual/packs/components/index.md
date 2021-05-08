@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Components define behaviours that are attached to Entities. An Entity is a container for Components.
+Components define behaviors that are attached to Entities. An Entity is a container for Components.
 
 There are many different Components defined in the PlayCanvas Engine. You can add a Component to an Entity using the PlayCanvas Editor. The properties exposed by Components are listed in the Attribute Editor when you select an Entity.
 

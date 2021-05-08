@@ -56,7 +56,7 @@ Specular properties defines the color of the specular highlights. i.e. the shini
     <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
     <tr><td>Metalness Map</td><td>[Only when using metalness] This map specifies per-pixel metalness values. A value of 1 is metal and a value of 0 is non-metal.</td></tr>
     <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property.</td></tr>
-    <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as is the surace is polished and shiny).</td></tr>
+    <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny).</td></tr>
 </table>
 
 ### Emissive
@@ -82,7 +82,7 @@ Opacity sets the transparency level.
 <table class="table table-striped table-bordered">
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Texture</td><td>The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property.</td></tr>
-    <tr><td>Intensity</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (complately opaque. It defaults to 1.</td></tr>
+    <tr><td>Intensity</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1.</td></tr>
 </table>
 
 ### Normals
@@ -93,7 +93,7 @@ Use this to specify normal maps (these determine bumpiness - note you have to us
 
 <table class="table table-striped table-bordered">
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exagerrated). It defaults to 1.</td></tr>
+    <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1.</td></tr>
     <tr><td>Texture</td><td>The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
 </table>
 
@@ -119,7 +119,7 @@ Environment properties determine how a material reflects the environment.
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Sphere Map</td><td>A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive).</td></tr>
     <tr><td>Cube Map</td><td>A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive).</td></tr>
-    <tr><td>Reflectivity</td><td>A factor to determin what portion of light is reflected from the material. This value defaults to 1 (full reflectivity).</td></tr>
+    <tr><td>Reflectivity</td><td>A factor to determine what portion of light is reflected from the material. This value defaults to 1 (full reflectivity).</td></tr>
     <tr><td>Refraction</td><td>A factor to determine what portion of light passes through the material</td></tr>
     <tr><td>Index of refraction</td><td>Determines the amount of distortion of light passing through the material.</td></tr>
 </table>

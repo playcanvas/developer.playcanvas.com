@@ -65,7 +65,7 @@ The backdrop material is much simpler, we have only one texture map.
 
 ![Emissive][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emmissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
 
 In this case, we don't want the background to be lit, it is just a static scene. So we use the emissive map to do that.
 

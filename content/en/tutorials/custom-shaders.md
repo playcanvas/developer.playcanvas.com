@@ -85,7 +85,7 @@ The shader definition contains three sections. In `attributes` you must specify 
 
 The Vertex Shader code is supplied as a string in the `vshader` property and the Fragment Shader is supplied as a string in the 'fshader' property.
 
-Above is the shader definition used to make the dissoving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
+Above is the shader definition used to make the dissolving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
 
 Aside from attributes there are two other special types of variable in the GLSL shaders: `varying` and `uniform`
 

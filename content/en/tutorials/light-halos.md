@@ -46,7 +46,7 @@ First, we update the halo entity to face the camera every frame
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowy modify the opacity so that it gets more transparent the more it points away from the camera.
+Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowly modify the opacity so that it gets more transparent the more it points away from the camera.
 
 ```javascript
 // If enabled, unidirectional means the glow fades off as it turns away from the camera

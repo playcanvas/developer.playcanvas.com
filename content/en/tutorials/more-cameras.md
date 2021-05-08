@@ -9,7 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
-The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behavior yourself.
 
 ## Altering Attributes
 
@@ -58,7 +58,7 @@ In this sample pressing the spacebar triggers a change in field of view. With th
 
 With `this.app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
-With the final two nested `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
+With the final two nested `if(){}` constructs we gradually change the fov values to create the zoom in/ zoom out effect.
 
 With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
 
