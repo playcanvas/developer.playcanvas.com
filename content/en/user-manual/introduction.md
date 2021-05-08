@@ -31,7 +31,7 @@ The PlayCanvas Editor is a visual building tool which is used to construct scene
 
 ![script][6]
 
-Using web standard Javascript attach custom behaviours to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
 
 
 ### Publish your application

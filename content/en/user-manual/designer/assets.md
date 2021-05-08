@@ -18,7 +18,7 @@ To rename a folder, double click it in the hierarchy panel and edit the Name fie
 
 To delete a folder, double click it in the hierarchy and hit delete. Alternatively, right click the folder you want to delete and select 'Delete' from the context menu.
 
-Folders can be drag and dropped into each other if you want to reorgnize your folder structure.
+Folders can be drag and dropped into each other if you want to reorganize your folder structure.
 
 ## Creating and Uploading Assets
 
@@ -44,7 +44,7 @@ Filter which assets are visible using the filter drop down to select the type of
 
 You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
 
-**ID** - Specific asset can be found by it's unique ID, by simply typing ID in search field it will recognize exact match and only show one asset with that ID.
+**ID** - Specific asset can be found by its unique ID, by simply typing ID in search field it will recognize exact match and only show one asset with that ID.
 
 **RegExp** - It is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
 
@@ -60,7 +60,7 @@ Here are some examples:
 
 Assets can be moved to different folders by dragging them from the main panel to a folder in the folder hierarchy. Note that assets support multi-selection. Pressing CTRL+A will select all assets in the currently selected folder.
 
-You can also drag Assets from the Asset Panel to highligted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
+You can also drag Assets from the Asset Panel to highlighted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
 
 You can also drag model, material, and cubemap assets directly into the [Viewport][3]
 
@@ -78,7 +78,7 @@ In the project that you want to copy the asset(s) to, right click in the assets 
 
 <img src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500"/>
 
-Copy and pasting an asset will also copy it's asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
+Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
 
 <img src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%"/>
 

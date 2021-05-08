@@ -52,7 +52,7 @@ The model component is used to attach a 3D model asset to an Entity. When you ha
 
 #### Script Component
 
-The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behaviour of the Entity. We'll go into more detail about the script on the football in Part 3.
+The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behavior of the Entity. We'll go into more detail about the script on the football in Part 3.
 
 ### Background
 
@@ -64,7 +64,7 @@ The Impact Effect Entity is a particle effect that plays when the ball is bounce
 
 ### Audio
 
-The Audio Entity has more sound components attached to it. This Entity is for playing the music and the gameover sound.
+The Audio Entity has more sound components attached to it. This Entity is for playing the music and the game over sound.
 
 ### UI (User Interface)
 

@@ -88,7 +88,7 @@ Components that render meshes all have a `layers` property which is used to dete
 
 ![Layer Components][5]
 
-*Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in it's layer list. In order for it to be lit, the light must include Test Layer in it's layer list too.
+*Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in its layer list. In order for it to be lit, the light must include Test Layer in its layer list too.
 
 ### Recommended setup
 

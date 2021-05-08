@@ -12,7 +12,7 @@ POST https://playcanvas.com/api/apps/download
 
 ## Description
 
-This will allow you to download an app which you can self host on your own server. The request will start an export job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, it's data will contain a URL to download the exported app.
+This will allow you to download an app which you can self host on your own server. The request will start an export job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, its data will contain a URL to download the exported app.
 
 ## Example
 

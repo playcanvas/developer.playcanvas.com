@@ -8,11 +8,11 @@ User Interfaces are built from two elements in PlayCanvas. A [Screen Component][
 
 ## Layout and Positioning
 
-One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to it's parent and the `pivot` property determines where the center point of the element is. Read more on the [Element][3] page.
+One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to its parent and the `pivot` property determines where the center point of the element is. Read more on the [Element][3] page.
 
 ## Draw Order
 
-The graphical portions of the user interface, Image and Text Elements, are drawn in the order that they appear in the hierarchy, i.e. the first child is drawn first, it's child is drawn next. A child that is draw later will appear on top of one that is draw earlier.
+The graphical portions of the user interface, Image and Text Elements, are drawn in the order that they appear in the hierarchy, i.e. the first child is drawn first, its child is drawn next. A child that is draw later will appear on top of one that is draw earlier.
 
 To change the draw order you simply re-order the entities in the Editor hierarchy. You can re-order elements programmatically by calling `entity.reparent(...)`. Though, note, that this forces the draw order to be recalculated for the entire Screen component.
 

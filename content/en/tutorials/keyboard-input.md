@@ -98,7 +98,7 @@ There are two ways of detecting keyboard input. The first is done in the update 
 
 ## `isPressed` vs `wasPressed`
 
-In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`.
+In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
 
 When you press and hold the left or right arrow keys the cube will rotate by 5&deg;, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed.
 

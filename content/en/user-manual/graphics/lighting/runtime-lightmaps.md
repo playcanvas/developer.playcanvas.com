@@ -39,7 +39,7 @@ By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any
 
 **Direction** option specifies if light contribute to light direction information baking. This affects the specularity results if **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
 
-There are two other options that modify the lights behaviour. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
+There are two other options that modify the lights behavior. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
 
 If the **Affect Non-Baked** box is true, then this light will affect any model that is **not** lightmapped. If the **Affect Baked** box is true, then this light will also affect any model that **is** lightmapped.
 

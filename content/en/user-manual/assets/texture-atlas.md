@@ -6,7 +6,7 @@ position: 14
 
 ![Texture Atlas][1]
 
-A Texture Atlas asset is a texture asset with additional data which describes 'Frames' inside the texture. Frames are regions defined in the texture as a rectangle with a 'pivot' point which sets the positonal and rotational center of the frame.
+A Texture Atlas asset is a texture asset with additional data which describes 'Frames' inside the texture. Frames are regions defined in the texture as a rectangle with a 'pivot' point which sets the positional and rotational center of the frame.
 
 Texture Atlases are created by right-clicking on a regular Texture Asset and selecting **Create Atlas**. Or by changing the default asset settings to enable [Create Atlases][3]
 

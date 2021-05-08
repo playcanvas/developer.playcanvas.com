@@ -26,9 +26,9 @@ Firefox contains a blacklist of GPUs (graphics processors) and graphics card dri
 
 You can view the blacklisted cards here: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with NVidia graphics cards
+## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with Nvidia graphics cards
 
-Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. NVidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
+Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. Nvidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
 
 
 [1]: http://webglreport.com

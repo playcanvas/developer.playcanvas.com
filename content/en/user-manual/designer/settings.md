@@ -81,14 +81,14 @@ When using a Prefiltered Skybox, you can select the skybox mip that you want to 
 
 #### Tonemapping
 
-Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tonemapping.
+Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
 * **Linear:** imply scales HDR colors by exposure.
 * **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
-Linear tonemapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
+Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
 
-Filmic tonemapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tonemapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tonemapping gives you nice abilities to get rid of such spots.
+Filmic tone mapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tone mapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tone mapping gives you nice abilities to get rid of such spots.
 
 #### Exposure
 
@@ -138,7 +138,7 @@ Control the width and height of your Application. You can also set the resolutio
 
 #### Fill Mode
 
-Fill mode controls the sizing behaviour of the canvas. You can set one of the following values:
+Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
 
 * None - The canvas will be the same size as the resolution width and height.
 * Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
