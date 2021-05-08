@@ -10,16 +10,16 @@ This technique relies on [CubeMap][3] - the environment map that is made of 6 te
 
 ## HDR
 
-Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tonemapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
+Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tone mapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
 
 ![HDR vs LDR CubeMap for Image Based Rendering][9]
 *Notice how bright parts in texture are clamped using LDR*
 
 ## Energy Conservation
 
-The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practise this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
 
-In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. PlayCanvas simulates this behaviour with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
+In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. PlayCanvas simulates this behavior with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
 
 **Prefilter** button is available on CubeMap asset in the Inspector, it is mandatory to enable IBL on physical materials using a CubeMap.
 
@@ -33,7 +33,7 @@ CubeMaps can be CGI rendered or assembled from photography, and there are websit
 
 ## Rendering CubeMap
 
-CubeMap is made of 6 faces, each representing square side of a cube, simply put: it can be rendered using square viewport camera, by rotating it in different 90 degrees dirrections with 90 degrees field of view.
+CubeMap is made of 6 faces, each representing square side of a cube, simply put: it can be rendered using square viewport camera, by rotating it in different 90 degrees directions with 90 degrees field of view.
 
 ![CubeMap Faces][13]
 
@@ -55,7 +55,7 @@ This technique changes the projection of environment map which allows to specify
 
 ## Example
 
-Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection, notice the reflection on the wooden floor of the windows and sattle reflection on the ceiling, as well as reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect, and can provide very realistic reflections and control to artist of how surfaces reflect the room environment.
+Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
 
 [![Environment Box Projection Mapping][5]][7]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*

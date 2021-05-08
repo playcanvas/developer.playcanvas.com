@@ -14,7 +14,7 @@ Below is an example of the Model Viewer Starter Kit with device pixel ratio enab
 
 This can be problematic on devices such as low or mid-tier mobile devices where they have high resolution screens but low graphics capability. This would lead to low frame rates if device pixel ratio is enabled due to fill rate limitations of the hardware.
 
-Ideally, we want the best of both worlds where users on high-tier devices will render at the highest quality but users on lower-tier devices will reduce the ratio to maintain a playable framerate.
+Ideally, we want the best of both worlds where users on high-tier devices will render at the highest quality but users on lower-tier devices will reduce the ratio to maintain a playable frame rate.
 
 The Device pixel ratio can be changed at runtime via the property [`pc.GraphicsDevice#maxPixelRatio`][4].
 
@@ -31,7 +31,7 @@ if (highTierDevice) {
 ```
 
 The challenge is working out the performance capabilities of the device and this can be done in a couple of ways:
-* Using some form of benchmark on the start of the application and observing the framerate
+* Using some form of benchmark on the start of the application and observing the frame rate
 * Querying the WebGL renderer data to get the name of the GPU and checking against a known list performance tiers
 
 To get information about the GPU, use the property `pc.GraphicsDevice#unmaskedRenderer`. This will contains a string with the information or an empty string if the browser does not support the property.

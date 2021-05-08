@@ -21,7 +21,7 @@ See the [User Interface][0] section for more details.
     <tr><td>Reference Resolution</td><td>When Scale Mode is Blend. The resolution used to calculate the scale factor.</td></tr>
     <tr><td>Scale Mode</td><td>Determine how the user interface changes when the window size does not match the screen size.
     	<p>None. Nothing is scaled</p>
-    	<p>Blend. Screen content is scaled by the ratio of the reference resolution to the actual resolution. Using the Scale Blend property to weight the scale between using the horizontal and vertial resolution.</p>
+    	<p>Blend. Screen content is scaled by the ratio of the reference resolution to the actual resolution. Using the Scale Blend property to weight the scale between using the horizontal and vertical resolution.</p>
     </td></tr>
     <tr><td>Scale Blend</td><td>The weighting of the scaling between horizontal (Scale Blend = 0) and vertical (Scale Blend = 1).</td></tr>
 </table>

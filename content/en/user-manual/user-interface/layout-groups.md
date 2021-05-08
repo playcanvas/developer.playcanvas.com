@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all it's direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
+The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all its direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
 
 The Layout Group Component can be used to generate common layouts, for example, a [grid][10], a fixed width [vertical column][11], or [horizontal row][12].
 
@@ -62,7 +62,7 @@ The wrap property causes children that are outside of the width (for vertical gr
 
 ## Layout Children
 
-A Layout Group applies it's rules to all of it's direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
+A Layout Group applies its rules to all of its direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
 
 ![Layout Child][8]
 

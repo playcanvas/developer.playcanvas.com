@@ -68,7 +68,7 @@ The box has been rotated so that when it collides with the static ground, it wil
 
 ## Creating Kinematic Bodies
 
-Sometimes, it can be useful to be able to explicitly control the motion of physical objects in your scene and have these objects exert an irresistable force on other physical objects. For example, imagine a moving platform that can carry the player across a level. To achieve this, you can set a rigid body's type to Kinematic. Let's create a kinematic box:
+Sometimes, it can be useful to be able to explicitly control the motion of physical objects in your scene and have these objects exert an irresistible force on other physical objects. For example, imagine a moving platform that can carry the player across a level. To achieve this, you can set a rigid body's type to Kinematic. Let's create a kinematic box:
 
 ![Kinematic Box][8]
 

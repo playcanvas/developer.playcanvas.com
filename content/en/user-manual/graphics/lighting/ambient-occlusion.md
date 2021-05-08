@@ -33,13 +33,13 @@ AO Texture does not need to store very detailed information, and visually does n
 
 ## Upload to Editor
 
-Simply upload texture in Editor and apply it on Ambient Oclussion slot on materials.
+Simply upload texture in Editor and apply it on Ambient Occlusion slot on materials.
 
 ![Editor Ambient Occlusion Map][5]
 
 ## Example
 
-You can [explore example][6] that uses global Ambient Occlusion described above and it's [project][7].
+You can [explore example][6] that uses global Ambient Occlusion described above and its [project][7].
 
 [![PlayCanvas Lightmapping][8]][6]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*

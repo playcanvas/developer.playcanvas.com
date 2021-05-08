@@ -26,7 +26,7 @@ This is equivalent to creating a new Entity and adding a Camera Component to it.
 
 ## Camera Properties
 
-Like all Components, the Camera Component has a set of properties which alter it's behaviour.
+Like all Components, the Camera Component has a set of properties which alter its behavior.
 
 ### `Enabled`
 
@@ -72,7 +72,7 @@ This value is a number which determines the order in which a camera is rendered,
 
 ### `Viewport`
 
-The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalised coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
+The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalized coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
 
 [1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png

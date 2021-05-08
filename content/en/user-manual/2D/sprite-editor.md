@@ -61,7 +61,7 @@ The Inspector lets you modify the Position, Size and Border properties of the fr
 
 Create a new Sprite Asset and assign the frames that you have selected to the Sprite, in the order that they were selected.
 
- * **New Sliced Sprite From Selection** - Create a new Sprite Asset and set it's type to *Sliced*. Assign the frames that you have selected to the Sprite, in the order that they were selected.
+ * **New Sliced Sprite From Selection** - Create a new Sprite Asset and set its type to *Sliced*. Assign the frames that you have selected to the Sprite, in the order that they were selected.
  * **Focus on Selection** - Focus the viewport on the selected Frames. [Keyboard Shortcut: F]
  * **Trim Selected Frames** - Reduce the size of the selected frames to remove any excess empty space around an image. [Keyboard Shortcut: T]
  * **Delete Selected Frames** - Delete the selected Frames [Keyboard Shortcut: Delete]

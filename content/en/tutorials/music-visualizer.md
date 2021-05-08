@@ -131,7 +131,7 @@ In our update loop we render the graphs for both the Frequency Data and the Time
 
 ## More ideas?
 
-This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to soundcloud and let users pick tracks? There are loads of possibilities.
+This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
 
 
 [1]: https://playcanvas.com/project/405891

@@ -20,7 +20,7 @@ Read more about localization [here][11].
 
 ## Auto-size
 
-By default a Text Element is set to automatically adjust it's width and height to match the text string. You can disable this and specify the height and widht of the element directly in the Editor panel.
+By default a Text Element is set to automatically adjust its width and height to match the text string. You can disable this and specify the height and width of the element directly in the Editor panel.
 
 ![Auto Size][2]
 

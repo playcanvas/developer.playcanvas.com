@@ -69,7 +69,7 @@ There are four light source shapes:
 
 ### Punctual
 
-The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct ligthing and specular reflections.
+The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct lighting and specular reflections.
 
 ### Rectangle
 

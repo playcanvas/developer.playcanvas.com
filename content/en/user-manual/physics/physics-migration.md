@@ -6,7 +6,7 @@ position: 6
 
 ### Introduction
 
-Playcanvas has added support for the latest version of ammo.js.
+PlayCanvas has added support for the latest version of ammo.js.
 
 The new version has a number of benefits:
 * more of the underlying Bullet API has been exposed
@@ -26,7 +26,7 @@ Otherwise, if 'Enable Physics' is checked the legacy version of ammo.js is silen
 
 ### Migration
 
-In order to use the latest version of ammo.js, disable 'Enable Physics' and click 'Import Ammo'. This imports the latest version of ammo.js provided by Playcanvas into the Assets Panel.
+In order to use the latest version of ammo.js, disable 'Enable Physics' and click 'Import Ammo'. This imports the latest version of ammo.js provided by PlayCanvas into the Assets Panel.
 
 If updating ammo.js causes issues with your project you may need to revert back to the old version. Do this by deleting (or disabling) the project's ammo.js modules and re-enabling the physics checkbox.
 
