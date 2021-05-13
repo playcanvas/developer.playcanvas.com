@@ -86,11 +86,11 @@ PickerFramebuffer.prototype.initialize = function() {
     var canvasHeight = parseInt(canvas.clientHeight, 10);
 
     this.picker = new pc.Picker(this.app, canvasWidth * this.pickAreaScale, canvasHeight * this.pickAreaScale);
-    this.layerIds = [];
+    this.layers = [];
     for (var i = 0; i < this.layerNames.length; ++i) {
-        var layerId = this.app.scene.layers.getLayerByName(this.layerNames[i]);
-        if (layerId) {
-            this.layerIds.push(layerId);
+        var layer = this.app.scene.layers.getLayerByName(this.layerNames[i]);
+        if (layer) {
+            this.layers.push(layer);
         }
     }
 
@@ -107,7 +107,7 @@ PickerFramebuffer.prototype.onSelect = function (event) {
     var picker = this.picker;
 
     picker.resize(canvasWidth * this.pickAreaScale, canvasHeight * this.pickAreaScale);
-    picker.prepare(camera, scene, this.layerIds);
+    picker.prepare(camera, scene, this.layers);
 
     // Map the mouse coordinates into picker coordinates and
     // query the selection
