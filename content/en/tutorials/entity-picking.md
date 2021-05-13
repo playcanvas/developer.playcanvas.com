@@ -10,8 +10,8 @@ Collision Picking - click to select a shape
 
 ---
 
-Frame Buffer Picking - click to select a shape
-<iframe src="https://playcanv.as/b/RxJFqzy5/"></iframe>
+Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
+<iframe src="https://playcanv.as/b/ofyWQWHS/"></iframe>
 
 ---
 
@@ -52,12 +52,15 @@ Advantages include:
 * Able to use a rectangle to pick many items in a scene at once
 * Doesn't require the physics library to be included which reduces preload time.
 
-The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly on mobile.
+The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly on mobile and GPU heavy applications.
 
 You are able modify the size of the buffer to be smaller to improve the performance at the cost of accuracy. In the example script below, the attribute `pickAreaScale` is used to do this where the lower the number, the faster and less accurate the picker becomes.
 
+It's also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
+
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
+
 PickerFramebuffer.attributes.add('pickAreaScale', {
     type: 'number',
     title: 'Pick Area Scale',
@@ -65,6 +68,14 @@ PickerFramebuffer.attributes.add('pickAreaScale', {
     default: 0.25,
     min: 0.01,
     max: 1
+});
+
+PickerFramebuffer.attributes.add('layerNames', {
+    type: 'string',
+    title: 'Layers Names',
+    array: true,
+    description: 'Layer names from which objects will be picked from.',
+    default: ['World']
 });
 
 // initialize code called once per entity
@@ -75,6 +86,14 @@ PickerFramebuffer.prototype.initialize = function() {
     var canvasHeight = parseInt(canvas.clientHeight, 10);
 
     this.picker = new pc.Picker(this.app, canvasWidth * this.pickAreaScale, canvasHeight * this.pickAreaScale);
+    this.layerIds = [];
+    for (var i = 0; i < this.layerNames.length; ++i) {
+        var layerId = this.app.scene.layers.getLayerByName(this.layerNames[i]);
+        if (layerId) {
+            this.layerIds.push(layerId);
+        }
+    }
+
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onSelect, this);
 };
 
@@ -88,7 +107,7 @@ PickerFramebuffer.prototype.onSelect = function (event) {
     var picker = this.picker;
 
     picker.resize(canvasWidth * this.pickAreaScale, canvasHeight * this.pickAreaScale);
-    picker.prepare(camera, scene);
+    picker.prepare(camera, scene, this.layerIds);
 
     // Map the mouse coordinates into picker coordinates and
     // query the selection
