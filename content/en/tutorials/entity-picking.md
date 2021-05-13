@@ -54,7 +54,7 @@ Advantages include:
 
 The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly on mobile.
 
-However, you are able modify the size of the buffer to be smaller to improve the performance at the cost of accuracy. In the example script below, the attribute `pickAreaScale` is used to do this where the lower the number, the faster and less accurate the picker becomes.
+You are able modify the size of the buffer to be smaller to improve the performance at the cost of accuracy. In the example script below, the attribute `pickAreaScale` is used to do this where the lower the number, the faster and less accurate the picker becomes.
 
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
