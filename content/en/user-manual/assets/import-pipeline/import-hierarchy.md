@@ -30,7 +30,7 @@ The follow assets will be created when imported
 |------------|-------------|
 | **[Materials][material_asset]** | Materials used by the imported model, mapped to the mesh instance. |
 | **[Textures][texture_asset]** | Embedded textures in the model file (if any). These will automatically be mapped to the associated materials. |
-| **[Template][template_asset]** | The template stores the model hierarchy. Create a instance of the template to bring the model into the scene. |
+| **[Template][template_asset]** | The template stores the scene hierarchy of the model. Create an instance of the template to bring the model into the scene. |
 | **Container** | The GLB that stores all the meshes of the model. |
 | **Renders** | Render assets reference a mesh in the container asset and is used by the [Render Component][render_component] to render the mesh in the project. They can also be used with the [Collision Component][collision_component] as a mesh for physics. |
 
