@@ -81,5 +81,5 @@ Please refer to the [Animation section][4] for more details.
 
 [1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
 [2]: /user-manual/assets/preloading-and-streaming/
-[3]: https://google.com
+[3]: /user-manual/assets/import-pipeline/import-hierarchy/
 [4]: /user-manual/assets/animation/
