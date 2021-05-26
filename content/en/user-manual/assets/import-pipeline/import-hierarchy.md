@@ -20,7 +20,7 @@ Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
 
 ## Importing models
 
-Drag the model file into the 'Assets Panel'
+Drag the model file into the 'Assets Panel':
 ![Drag Model into Assets Panel][import_model_gif]
 
 The following assets will be created when imported:
