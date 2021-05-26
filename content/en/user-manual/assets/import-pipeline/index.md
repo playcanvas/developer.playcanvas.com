@@ -29,7 +29,7 @@ So, if you leave this enabled, you are able to organize your source and target a
 
 ### Assets default to preload
 
-Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are Javascript script files which will always be set to preloaded when created.
+Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
 
 ## Texture Import Settings
 
