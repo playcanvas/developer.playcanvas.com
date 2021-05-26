@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-PlayCanvas supports importing models with the hierarchy of meshes, allowing you to edit the hierarchy directly in the Editor as entities. Components can be added, attach other entities, move/rotate/scale entities in the hierarchy etc.
+PlayCanvas supports importing models with their meshes as a hierarchy of entities in the scene. This allows you to edit the different meshes directly in the Editor. Components can be added, attach other entities, move/rotate/scale entities in the hierarchy etc.
 
 ![Edit model hierarchy in the Editor][edit_hierarchy_gif]
 
