@@ -14,7 +14,7 @@ Open the 'Project Settings'
 
 <img src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
 
-Scroll down to 'Assets Tasks' and enable 'Import Hierarchy'
+Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
 
 <img src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
 
