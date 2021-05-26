@@ -41,7 +41,7 @@ When this option is enabled textures that are not a power of two will be convert
 
 ### Create Atlases
 
-Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is useful time saver when uploading many spritesheets or UI assets.
+Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is a useful time saver when uploading many spritesheets or UI assets.
 
 ## Model Import Settings
 
