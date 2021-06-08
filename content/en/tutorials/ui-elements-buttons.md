@@ -103,7 +103,7 @@ With the following effect:
 
 ### Button events
 
-We have a script in the project listens for when the user clicks on the button and updates the text in the UI to the quality setting that they've selected.
+We have a script in the project that listens for when the user clicks on the button and updates the text in the UI to the quality setting that they've selected.
 
 ```javascript
 var ButtonLogic = pc.createScript('buttonLogic');
