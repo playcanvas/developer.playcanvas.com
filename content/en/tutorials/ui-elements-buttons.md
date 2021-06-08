@@ -122,7 +122,7 @@ ButtonLogic.prototype.initialize = function() {
 ```
 This script is attached to the button entities in the scene.
 
-The Button component has a [`click` event][click-event-api] that can have a callback function registered to and works for both mouse and touch input.
+The Button component has a [`click` event][click-event-api] against which a callback function can be registered that works for both mouse and touch input.
 
 ```
 this.entity.button.on('click', function(event) {
