@@ -130,7 +130,7 @@ this.entity.button.on('click', function(event) {
 }, this);
 ```
 
-There are other events that can be listened such as `mouseenter` and `mouseleave`. A full list can be found in the [API documentation][click-event-api].
+There are other events that can be listened to such as `mouseenter` and `mouseleave`. A full list can be found in the [API documentation][click-event-api].
 
 These events will only fire if Use Input is enabled on the Element component so make sure that has been ticked in the inspector.
 
