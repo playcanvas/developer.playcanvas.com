@@ -34,6 +34,13 @@ The following assets will be created when imported:
 | **Container** | The GLB that stores all the meshes of the model. |
 | **Render** | Render assets reference a mesh in the container asset and are used by the [Render Component][render_component] to render the mesh in the scene. They can also be used with the [Collision Component][collision_component] as a mesh for physics. |
 
+## Updating models
+
+As the hierarchy is created as part of a template, when a model is updated it may affect the template instances in the scenes.
+
+Added components to entities in the template will be kept during the update unless the mesh instance that the entity represents no longer exists in the updated model.
+
+The exception to this is if a script component is added to an entity in the template and the mesh instance it represents is no longer part of the updated model, it will be moved under the root entity in the template so there is no data loss. Any entities that were under it before the update will be kept as well.
 
 [edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
 [import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif
