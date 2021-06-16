@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 <iframe src="https://playcanv.as/p/jpRiV53D/"></iframe>
 
-*Simple buttons using Element components. See the [full scene][1].*
+*Simple buttons using Element and Button components. See the [full scene][1].*
 
 When building a UI for your application you will almost certainly need to create buttons. This tutorial demonstrates how you can achieve that using the built-in [Elements][2].
 
@@ -25,84 +25,117 @@ Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is 
 
 Our screen has various children like an Image Element for the logo that is displayed on the top, a Text Element for showing the 'SELECT QUALITY' text and 3 buttons.
 
+## Adding a button to the UI
+
+There are two ways to add a button to the scene.
+
+### Via the Hierarchy Panel
+
+This is the easiest way to add a button to the scene as it creates the necessary entities, components and preconfigures the properties.
+
+<img src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif">
+
+### With an existing Element
+
+If there is an existing Element that we would like to turn into a button, we can add Button component to it in the Inspector panel and configure it ourselves.
+
+<img src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300px">
+
+Remember to enable Use Input on the Element component so the user can interact with it:
+
+<img src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+
+And set the Image Entity property on the Button component to be same Entity that the Element component is on.
+
+<img src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300px">
+
 ## Button setup
 
-Let's take a closer look at the first button:
+Let's take a closer look at the first button in the example project:
 
-![Button][6]
+<img src="/images/tutorials/ui/buttons/button.png" width="300px">
 
-The button has 2 components - a Script component and an Element component. The Script is handling our interactions with the button and the Element is handling the rendering of the button. The button Entity also has a Text Element as a child for showing text.
+The button has 3 components:
 
-The Element's type is Image and it's anchored to the bottom of the screen. After anchoring the button we give it an offset from the bottom by simply moving it up. We also have Use Input enabled in order to interact with the button.
+- **Element component** - Positions the renders the button UI relative to it's parent Screen.
+- **Button component** - Handles how the button looks when the user is interacting with it.
+- **Script component** - Listens for events on the Button component and handles the logic on what to do when clicked.
 
-## Button events
+The button Entity also has a Text Element as a child for showing text (this is optional depending on the style of your button).
+<img src="/images/tutorials/ui/buttons/text-element.png" width="300px">
 
-Now let's have a look at the script that handles interaction with the button. This script will assign a different image to the button when we hover on it and when we press it. This script works for both mouse and touch:
+The Element's type is Image and it's anchored to the bottom of the screen.
+<img src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300px">
+
+After anchoring the button we give it an offset from the bottom by simply moving it up.
+<img src="/images/tutorials/ui/buttons/offset-position.png" width="300px">
+
+We also have Use Input enabled in order to interact with the button.
+<img src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+
+### Changing how the button looks on interaction
+
+We can change how the button looks when the user interacts with the button for the following states:
+
+- **Hover** - When the mouse cursor is over the button.
+- **Pressed** - When the user presses on the button.
+- **Inactive** - When the button is inactive.
+
+This can be done via two Transition Modes:
+
+#### Tinting the color
+
+Tinting the button color in each state is the easiest method to add some user feedback when they interact with it. In the project, the High Quality button has the following setup:
+
+<img src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300px">
+
+With the following effect:
+<img src="/images/tutorials/ui/buttons/high-quality-button-effect.gif">
+
+#### Changing the Sprite
+
+We can also change the sprite image of the button in the different states for cases where you may want the button to change shape or want to give a look of the button being 'pressed' into the screen. The Low Quality button has the following setup:
+
+<img src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300px">
+
+With the following effect:
+<img src="/images/tutorials/ui/buttons/low-quality-button-effect.gif">
+
+### Button events
+
+We have a script in the project that listens for when the user clicks on the button and updates the text in the UI to the quality setting that they've selected.
 
 ```javascript
-var BtnStates = pc.createScript('btnStates');
-
-BtnStates.attributes.add('hoverAsset', {
-    type:'asset',
-    assetType:'texture'
+var ButtonLogic = pc.createScript('buttonLogic');
+ButtonLogic.attributes.add('textEntity', {
+    type: 'entity',
+    description: 'The entity that we want to update when the button is clicked'
 });
-
-BtnStates.attributes.add('activeAsset', {
-    type:'asset',
-    assetType:'texture'
-});
+ButtonLogic.attributes.add('description', {type: 'string'});
 
 // initialize code called once per entity
-BtnStates.prototype.initialize = function() {
-    // Get the original button texture
-    this.originalTexture = this.entity.element.textureAsset;
-
-    // Whether the element is currently hovered or not
-    this.hovered = false;
-
-    // mouse events
-    this.entity.element.on('mouseenter', this.onEnter, this);
-    this.entity.element.on('mousedown', this.onPress, this);
-    this.entity.element.on('mouseup', this.onRelease, this);
-    this.entity.element.on('mouseleave', this.onLeave, this);
-
-    // touch events
-    this.entity.element.on('touchstart', this.onPress, this);
-    this.entity.element.on('touchend', this.onRelease, this);
-};
-
-
-// When the cursor enters the element assign the hovered texture
-BtnStates.prototype.onEnter = function (event) {
-    this.hovered = true;
-    event.element.textureAsset = this.hoverAsset;
-
-    // set our cursor to a pointer
-    document.body.style.cursor = 'pointer';
-};
-
-// When the cursor leaves the element assign the original texture
-BtnStates.prototype.onLeave = function (event) {
-    this.hovered = false;
-    event.element.textureAsset = this.originalTexture;
-
-    // go back to default cursor
-    document.body.style.cursor = 'default';
-};
-
-// When we press the element assign the active texture
-BtnStates.prototype.onPress = function (event) {
-    event.element.textureAsset = this.activeAsset;
-};
-
-// When we release the element assign the original texture if
-// we are not hovering or the hover texture if we are still hovering
-BtnStates.prototype.onRelease = function (event) {
-    event.element.textureAsset = this.hovered ? this.hoverAsset : this.originalTexture;
+ButtonLogic.prototype.initialize = function() {
+    this.entity.button.on('click', function(event) {
+        this.textEntity.element.text = this.description;
+    }, this);
 };
 ```
+This script is attached to the button entities in the scene.
 
-Our script has 2 script attributes which are used to set which texture asset is going to be used for each button state. In `initialize` we set up our input events - note that these work because have set Use Input to true on the button element. The rest of our methods assign the texture that corresponds to each button state.
+The Button component has a [`click` event][click-event-api] against which a callback function can be registered that works for both mouse and touch input.
+
+```
+this.entity.button.on('click', function(event) {
+    this.textEntity.element.text = this.description;
+}, this);
+```
+
+There are other events that can be listened to such as `mouseenter` and `mouseleave`. A full list can be found in the [API documentation][click-event-api].
+
+These events will only fire if Use Input is enabled on the Element component so make sure that has been ticked in the inspector.
+
+<img src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+
 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/
@@ -110,3 +143,5 @@ Our script has 2 script attributes which are used to set which texture asset is 
 [4]: /images/tutorials/ui/buttons/hierarchy.png
 [5]: /images/tutorials/ui/buttons/screen.png
 [6]: /images/tutorials/ui/buttons/button.png
+[elements-tutorial]: /user-manual/user-interface/elements/
+[click-event-api]: /api/pc.ButtonComponent.html#event:click

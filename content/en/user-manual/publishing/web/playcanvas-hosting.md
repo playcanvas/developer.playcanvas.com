@@ -38,6 +38,7 @@ To publish you will need to have at least one scene in your project.
   * *Concatenate Scripts*: Check this to combine all of your PlayCanvas scripts into a single JavaScript file.
   * *Minify Scripts*: Check this to minify your PlayCanvas scripts to reduce the file size.
   * *Generate Source Map*: Include Source Maps with the build. This can be useful for debugging but is generally disabled when publishing a production version of your app.
+  * *Optimize Scene Format*: Compresses the scene JSON up to 50%. Read more [here][6].
 
 ![Select scenes][4]
 
@@ -71,3 +72,4 @@ The first time you publish a build, it will automatically become the Primary Bui
 [3]: /images/user-manual/publishing/dialog-publish-build.png
 [4]: /images/user-manual/publishing/dialog-publish-build-scenes.png
 [5]: /images/user-manual/publishing/dialog-builds.png
+[6]: /user-manual/optimization/optimizing-scene-format
