@@ -18,6 +18,12 @@ They can be found in the Project Settings under Asset Tasks.
 
 ![Animation Import Settings][animation_import_settings]
 
+### Naming Strategy
+
+Only available for GLB export format. When importing an animation, the generated asset name can either be set from the 'Take Name' in the animation file, or use the animation filename instead.
+
+This is useful with assets that are brought/taken from a store such as [Mixamo][1] where all the take names are 'mixamo.com' and using the filename as the asset name is clearer.
+
 ### Sample rate
 
 Available for both JSON and GLB export formats. The higher the rate, the higher detail and fidelity the animation at the cost of size. If you would like to keep the keyframes that have been set and defined in the original animation, select Disabled.
@@ -39,3 +45,5 @@ If enabling this option, it is recommended that Sample Rate is disabled and Curv
 [asset_pipeline]: /user-manual/glossary#asset-pipeline
 [target_asset]: /user-manual/glossary#target-asset
 [animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
+
+ [1]: https://www.mixamo.com/
