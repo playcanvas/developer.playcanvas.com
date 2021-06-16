@@ -6,6 +6,8 @@ position: 3
 
 Currently supporting the following playable ad formats:
 
-* [Facebook][1]
+* [Facebook][fb-ad]
+* [Snapchat][snapchat-ad]
 
-[1]: /user-manual/publishing/playable-ads/fb-playable-ads
+[fb-ad]: /user-manual/publishing/playable-ads/fb-playable-ads
+[snapchat-ad]: /user-manual/publishing/playable-ads/snapchat-playable-ads
