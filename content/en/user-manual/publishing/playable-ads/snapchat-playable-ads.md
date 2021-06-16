@@ -6,7 +6,7 @@ position: 6
 
 PlayCanvas supports the Snapchat Playable Ad format and requirements via an [official external tool on GitHub][2].
 
-Snapchat playable ads uses [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
+Snapchat playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
 
 The external assets will need to be in a folder that is uniquely named (which the tool handles for you) so that they can be uploaded to Snapchat's CDN servers.
 
