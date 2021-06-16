@@ -16,13 +16,7 @@ When a source asset is uploaded that needs to be imported. PlayCanvas starts an 
 
 There are a variety of options available to tune the behavior of the import pipeline to suit your needs.
 
-![asset task options][2]
-
-### Auto-run
-
-By default, when you upload a file we will automatically run the import pipeline for that asset. If you don't want to run the pipeline you can disable auto-run from the task panel or from the settings.
-
-If auto-run is disabled you can run or dismiss tasks individually from the asset panel.
+<img src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
 ### Search related assets
 
@@ -33,17 +27,29 @@ When you update an source asset by uploading a new version of the file. There ar
 
 So, if you leave this enabled, you are able to organize your source and target assets into folders and be sure that when you update a source assets it will update all related assets.
 
-## Texture Options
+### Assets default to preload
 
-These options only affect the importing of images and textures
+Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
+
+## Texture Import Settings
+
+These options only affect the importing of images and textures.
 
 ### Texture POT (Power of Two)
 
 When this option is enabled textures that are not a power of two will be converted to the nearest power of two resolution when they are imported.
 
-## Model Options
+### Create Atlases
+
+Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is a useful time saver when uploading many spritesheets or UI assets.
+
+## Model Import Settings
 
 These options only affect the importing of model or scene files (e.g. FBX, Collada, obj, etc)
+
+### Preserve material mappings
+
+When a model file is updated or reimported, the Editor will try to preserve the material mappings that were set on it.
 
 ### Overwrite Models
 
@@ -61,5 +67,19 @@ When a model file is updated or reimported this option determines whether or not
 
 When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behavior is to overwrite with the new textures.
 
+### Convert to GLB
+
+Enabled by default on new projects, imported models and animations will create GLB model and animation assets instead of the older, deprecated JSON format.
+
+### Import Hierarchy
+
+Only available if using [Convert to GLB](#convert-to-glb) option. When a model file is imported, a template asset is created that contains the full hierarchy of the model as entities allowing to you to manipulate them directly in the Editor. See more information about this feature [here][3].
+
+## Animation Import Settings
+
+Please refer to the [Animation section][4] for more details.
+
 [1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
-[2]: /images/user-manual/assets/import-pipeline/asset-tasks.jpg
+[2]: /user-manual/assets/preloading-and-streaming/
+[3]: /user-manual/assets/import-pipeline/import-hierarchy/
+[4]: /user-manual/assets/animation/
