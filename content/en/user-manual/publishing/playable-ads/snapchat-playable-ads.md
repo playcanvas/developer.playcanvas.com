@@ -45,7 +45,7 @@ Follow the [setup steps][7] from the readme in the GitHub repo.
 
 ### Dry run test
 
-As Snapchat does not yet have an official tool to test with, we will have to do a dry run to test with first before exporting in a format that Snapchat ad network expects.
+As Snapchat does not yet have an official tool to test with, we will have to do a dry run to test with first before exporting in a format that the Snapchat ad network expects.
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
