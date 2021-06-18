@@ -30,6 +30,9 @@ This means that for a single HTML format, this leaves \~500KB for assets before 
 
 Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
 
+## Playable ad checklist:
+
+* Have you added the function call `FbPlayableAd.onCTAClick()` as part of your call to action callback?
 
 ## How to export
 
