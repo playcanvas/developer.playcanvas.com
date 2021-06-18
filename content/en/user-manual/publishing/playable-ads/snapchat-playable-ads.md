@@ -15,7 +15,7 @@ There are some limitations to be aware of with the tool which can be found in th
 
 ## Example project
 
-The [Cube Jump project][5] is ready to be exported for the Snapchat Playable Ad format and the expected [HTML output can be found here][6].
+The [Cube Jump project][5] is ready to be exported to the Snapchat Playable Ad format and the expected HTML output can be found [here][6].
 
 <iframe src="https://playcanv.as/e/p/X1nwbUGA/"></iframe>
 
