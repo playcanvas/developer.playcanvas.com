@@ -6,7 +6,7 @@ position: 9
 
 PlayCanvas supports the ironSource MRAID Playable Ad format and requirements via an [official external tool on GitHub][2].
 
-Snapchat playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
+ironSource playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
 
 The external assets will need to be uploaded to a server or CDN of your own for ironSource to serve the ad on their network.
 
