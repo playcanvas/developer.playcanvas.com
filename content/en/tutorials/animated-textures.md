@@ -73,7 +73,7 @@ AnimatedTexture.prototype.updateMaterial = function (frame) {
     // create the transform vector (tilingx, tilingy, offsetx, offsety)
     // and override the material properties for this mesh
     // This allows us to use different settings for different Entities, but share the same material
-    this.transform.set(dx, dy, x * dx, (1 - dy) - (y * dy));
+    this.transform.set(dx, dy, x * dx, y * dy);
     meshes[0].setParameter("texture_diffuseMapTransform", this.transform.data);
     meshes[0].setParameter("texture_emissiveMapTransform", this.transform.data);
     meshes[0].setParameter("texture_opacityMapTransform", this.transform.data);
