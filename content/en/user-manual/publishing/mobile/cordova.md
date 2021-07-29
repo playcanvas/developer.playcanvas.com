@@ -36,21 +36,20 @@ When you create a new Cordova project, it generates a skeleton web app in a fold
 
 If you're building on the Engine without the Editor, copy your app files into `www` such that your `index.html` file is in the root.
 
-If you have built your app in the PlayCanvas Editor, hit the Publish button on the toolbar:
+<div class="alert alert-info">
+    <div>Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.</div><br>
+    <div>We recommend using a tool like <a href='https://base64.guru/converter/encode/audio' target='_blank'>Base64 Guru</a> or automating this via a script.</div>
+</div>
 
-![Publish Toolbar Button][5]
+If you have built your app in the PlayCanvas Editor, we have an official external tool that will build and prepare the project to be most compatible with Cordova. This includes automating tasks such as converting the audio files to Base64 so that they can be loaded on iOS.
 
-Then select Download:
+The official external tool can be found on GitHub [here][rest-api-tools-readme].
 
-![Download Zip][6]
+Follow the [setup steps][rest-api-tools-setup] from the readme in the GitHub repo.
 
-Then select the scenes to include and hit DOWNLOAD:
+And run the command for the [Cordova Publish script][rest-api-tools-readme] as shown in the readme.
 
-![Download New Build][7]
-
-When you have downloaded the Zip file, extract its contents to the root of the `www` folder.
-
-Note that you can use the [PlayCanvas REST API][8] if you would like to automate this part of the process.
+This will create a ZIP of the project ready for Cordova. Extract its contents to the root of the `www` folder.
 
 ## Building Executables
 
@@ -121,3 +120,5 @@ Once you are happy with your app, you can ship it to [App Store Connect][14].
 [12]: /images/user-manual/publishing/cordova/xcode-scheme.png
 [13]: /images/user-manual/publishing/cordova/xcode-run.png
 [14]: https://developer.apple.com/app-store-connect/
+[rest-api-tools-readme]: https://github.com/playcanvas/playcanvas-rest-api-tools#cordova-publish
+[rest-api-tools-setup]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
