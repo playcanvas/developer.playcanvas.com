@@ -54,15 +54,25 @@ Terrain.attributes.add('material', {
 // initialize code called once per entity
 Terrain.prototype.initialize = function() {
     var img = this.heightMap.resource.getSource();
-    var renderModel = this.createTerrainFromHeightMap(img, this.subdivisions);
-    var collisionModel = this.createTerrainFromHeightMap(img, this.subdivisions / 2);
+    var visualMesh = this.createTerrainFromHeightMap(img, this.subdivisions);
+    var collisionMesh = this.createTerrainFromHeightMap(img, this.subdivisions / 2);
 
-    this.entity.addComponent('model');
-    this.entity.model.model = renderModel;
+    this.entity.addComponent('render', {
+        meshInstances: [new pc.MeshInstance(visualMesh, this.material.resource)]
+    });
 
     this.entity.addComponent('collision', {
         type: 'mesh'
     });
+
+    // We still have to create a model resource to create a runtime
+    // collision mesh
+    var node = new pc.GraphNode();
+    var meshInstance = new pc.MeshInstance(node, collisionMesh, this.material.resource);
+    var collisionModel = new pc.Model();
+    collisionModel.graph = node;
+    collisionModel.meshInstances.push(meshInstance);
+
     this.entity.collision.model = collisionModel;
 
     this.entity.addComponent('rigidbody', {
@@ -142,22 +152,13 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
         bufferHeight: bufferHeight
     });
 
-    var node = new pc.GraphNode();
-    var material = this.material.resource;
-
     var mesh = pc.createMesh(this.app.graphicsDevice, vertexData.positions, {
         normals: vertexData.normals,
         uvs: vertexData.uvs,
         indices: vertexData.indices
     });
 
-    var meshInstance = new pc.MeshInstance(node, mesh, material);
-
-    var model = new pc.Model();
-    model.graph = node;
-    model.meshInstances.push(meshInstance);
-
-    return model;
+    return mesh;
 };
 ```
 
