@@ -76,6 +76,10 @@ var CameraManager = pc.createScript('cameraManager');
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 //prevents default browser actions, such as scrolling when pressing cursor keys
