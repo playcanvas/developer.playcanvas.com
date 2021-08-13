@@ -119,6 +119,10 @@ var DynamicBody = pc.createScript('dynamicBody');
 DynamicBody.prototype.initialize = function() {
     this.torque = 7;
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 DynamicBody.prototype.onKeyDown = function (event) {
