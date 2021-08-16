@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
 
-This project uses the [`pc.createMesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
+This project uses the [`pc.Mesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
 
 Try it from the Editor in the [tutorial project.][2]
 
@@ -152,15 +152,16 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
         bufferHeight: bufferHeight
     });
 
-    var mesh = pc.createMesh(this.app.graphicsDevice, vertexData.positions, {
-        normals: vertexData.normals,
-        uvs: vertexData.uvs,
-        indices: vertexData.indices
-    });
+    var mesh = new pc.Mesh(this.app.graphicsDevice);
+    mesh.setPositions(vertexData.positions);
+    mesh.setNormals(vertexData.normals);
+    mesh.setUvs(0, vertexData.uvs);
+    mesh.setIndices(vertexData.indices);
+    mesh.update();
 
     return mesh;
 };
 ```
 
-[1]: http://developer.playcanvas.com/en/api/pc.html#createMesh
+[1]: https://developer.playcanvas.com/en/api/pc.Mesh.html
 [2]: https://playcanvas.com/project/406046
