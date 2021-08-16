@@ -74,7 +74,7 @@ To get the above we can do:
 
 ```javascript
 var color = new pc.Color(0, 0, 0);
-var material = this.entity.model.material;
+var material = this.entity.render.material;
 this.app
 .tween(color)
 .to(new pc.Color(1, 1, 1), 1.0, pc.Linear)
