@@ -17,16 +17,20 @@ The square plane in the example uses the script `scrolling-texture.js` to consta
 
 ```javascript
 ScrollingTexture.prototype.update = function(dt) {
-    var tmp = ScrollingTexture.tmp;
-
+    var velocity = ScrollingTexture.tmpVec2;
+    var offset = ScrollingTexture.tmpOffset;
+    
     // Calculate how much to offset the texture
     // Speed * dt
-    tmp.set(this.speed.x, this.speed.y);
-    tmp.scale(dt);
+    velocity.set(this.speed.x, this.speed.y);
+    velocity.scale(dt);
 
     // Update the diffuse and normal map offset values
-    this.material.diffuseMapOffset.add(tmp);
-    this.material.normalMapOffset.add(tmp);
+    offset.copy(this.material.diffuseMapOffset);
+    offset.add(velocity);
+    
+    this.material.diffuseMapOffset = offset;
+    this.material.normalMapOffset = offset;
     this.material.update();
 };
 ```
@@ -42,9 +46,9 @@ If you want to have many entities with animating textures updating independently
 In our code example, the coins and the number counters are both duplicated and we've set them to use different frame rates and the numbers use different animation frames.
 
 ```javascript
-AnimatedTexture.prototype.update = function(dt) {
+AAnimatedTexture.prototype.update = function(dt) {
     // calculate when to animate to next frame
-    this.timer -= dt;
+    this.timer -= dt;            
     if (this.timer < 0) {
         // move to next frame
         this.frame++;
@@ -61,22 +65,33 @@ AnimatedTexture.prototype.update = function(dt) {
 
 AnimatedTexture.prototype.updateMaterial = function (frame) {
     // calculate how much to change UV to go to next frame
-    var dx = 1 / this.width;
-    var dy = 1 / this.height;
+    var tileWidth = 1 / this.width;
+    var tileHeight = 1 / this.height;
 
     // Convert frame number into UV co-ordinate
-    var x = frame % this.width;
-    var y = Math.floor(frame / this.width);
+    var tileOffsetX = (frame % this.width) * tileWidth;
+    var tileOffsetY = (Math.floor(frame / this.width)) * tileHeight;
 
     var meshes = this.entity.model.meshInstances;
 
-    // create the transform vector (tilingx, tilingy, offsetx, offsety)
-    // and override the material properties for this mesh
-    // This allows us to use different settings for different Entities, but share the same material
-    this.transform.set(dx, dy, x * dx, y * dy);
-    meshes[0].setParameter("texture_diffuseMapTransform", this.transform.data);
-    meshes[0].setParameter("texture_emissiveMapTransform", this.transform.data);
-    meshes[0].setParameter("texture_opacityMapTransform", this.transform.data);
+    // Set the two uniform array datas needed for the material 
+    // See https://github.com/playcanvas/engine/blob/master/src/scene/materials/standard-material.js#L824
+    // And override the material properties for this mesh
+    // This allows us to use different settings for different Entities, but share the same material    
+    this.uniform0[0] = tileWidth;
+    this.uniform0[1] = 0;
+    this.uniform0[2] = tileOffsetX;
+    
+    this.uniform1[0] = 0; 
+    this.uniform1[1] = tileHeight;
+    this.uniform1[2] = tileOffsetY;
+    
+    meshes[0].setParameter("texture_diffuseMapTransform0", this.uniform0);
+    meshes[0].setParameter("texture_diffuseMapTransform1", this.uniform1);
+    meshes[0].setParameter("texture_emissiveMapTransform0", this.uniform0);
+    meshes[0].setParameter("texture_emissiveMapTransform1", this.uniform1);
+    meshes[0].setParameter("texture_opacityMapTransform0", this.uniform0);
+    meshes[0].setParameter("texture_opacityMapTransform1", this.uniform1);
 };
 ```
 
@@ -86,15 +101,15 @@ In this example, we're taking a sprite sheet for example this rotating coin
 
 We've set up script attributes which let us specify the size of each frame of animation, by specifying the width and height of the image; the starting frame number and the number of frames to play in the animation. This means we can select a single animation from a page of multiple animations. And finally the framerate to play the animation back at.
 
-In our code we use a timer to count down to when we advance the frame then we convert the frame number into a UV co-ordinate on the texture. Noting that, for the V co-ordinate, 0 is the bottom of the texture. Whilst in spritesheets usually the run the animation top to bottom. So subtract the V co-ordinate from `(1 - dy)` when we set the offset transform.
+In our code we use a timer to count down to when we advance the frame then we convert the frame number into a UV co-ordinate on the texture. 
 
-The main difference from the previous scrolling example. Is that we're using `pc.MeshInstance.setParameter` to set a specific value in the shader. `setParameter` is lower level code than modifying the material as above. In order to use it we need to know the exact uniform variable name that the PlayCanvas shader uses to modify the map transform. In this case `texture_diffuseMapTransform` which is a 4 value array of numbers that represent the tiling and the offset.
+The main difference from the previous scrolling example. Is that we're using `pc.MeshInstance.setParameter` to set a specific value in the shader. `setParameter` is lower level code than modifying the material as above. In order to use it we need to know the exact uniform variable name that the PlayCanvas shader uses to modify the map transform. In this case `texture_diffuseMapTransform0` and `texture_diffuseMapTransform1` which are 3 value arrays that represent the tiling, offset and rotation (which isn't used here).
 
 <div class="alert-info">
 `setParameter` is currently an undocumented API in the PlayCanvas engine. It is a very useful feature but is dependent on the exact variable names in the shader. As such, use it with caution as the engine code may change before it becomes public API.
 </div>
 
-As you can see in our example, the two coins have a different frame rate and one set of numbers is only using 3 frames for the animation. This method is very useful if you wish to make sprite-based 2D animation and the script `animated-texture.js` is a good starting point.
+As you can see in our example, the two coins have a different frame rate and one set of numbers is only using 3 frames for the animation. This method is very useful if you wish to animate textures on models (such as a TV screen) and the script `animated-texture.js` is a good starting point.
 
 [1]: https://playcanvas.com/project/405882
 [2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png
