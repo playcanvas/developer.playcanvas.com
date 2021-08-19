@@ -2,7 +2,7 @@
 title: Animated Textures
 template: tutorial-page.tmpl.html
 tags: animation, textures
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
+thumb: http://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/qFDE1q2H/"></iframe>
