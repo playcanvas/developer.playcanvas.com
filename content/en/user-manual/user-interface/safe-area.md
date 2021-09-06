@@ -24,11 +24,11 @@ However, when opened on a mobile device such as the iPhone X, the 'Left' text is
 
 To help developers, browsers on the these devices do support [environment variables][env-mdn] in CSS to return values for positioning elements within an area that is occupied by the notch or navigation bar. This is known as a 'safe area'.
 
-We have a [project with a reusable script][safe-area-project] that takes those CSS values and applies them to an UI Element Group entity via resizing the margins.
+We have a [project with a reusable script][safe-area-project] that takes those CSS values and applies them to an UI Group Element entity via resizing the margins.
 
 <img src="/images/user-manual/user-interface/safe-area/mobile-view-safe-area.png" width="500px">
 
-The UI setup in the project has an Entity with a full screen Element Group named 'Safe Area'. This has the script 'mobileSafeArea' attached which contains the logic for fitting the Element within the safe area of the device.
+The UI setup in the project has an Entity with a full screen Group Element named 'Safe Area'. This has the script 'mobileSafeArea' attached which contains the logic for fitting the Element within the safe area of the device.
 
 <img src="/images/user-manual/user-interface/safe-area/hierarchy-layout.png" width="420px">
 
