@@ -6,7 +6,9 @@ position: 10
 
 With the trend of mobile devices having full device screens, a notch or cut out in the display is used to make room for the ear piece speaker and front facing camera (see below for the iPhone X).
 
-<img src="/images/user-manual/user-interface/safe-area/iphone-notch.jpg">
+<img src="/images/user-manual/user-interface/safe-area/iphone-notch.png">
+
+(Image Original: Rafael Fernandez, Modified version:PlayCanvas, [CC BY-SA 4.0][cc-by-sa-40], via Wikimedia Commons)
 
 Developers will need to be mindful of any essential information that is needed for the user which could be hidden by the notch during development.
 
@@ -46,3 +48,4 @@ The debug config can be edited with live updates in the launch tab too.
 
 [env-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/env()
 [safe-area-project]: https://playcanvas.com/project/828118/overview/mobile-ui-safe-areas
+[cc-by-sa-40]: https://creativecommons.org/licenses/by-sa/4.0
