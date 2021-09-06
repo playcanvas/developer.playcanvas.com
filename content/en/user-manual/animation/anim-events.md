@@ -22,7 +22,7 @@ Each event has the following modifiable properties:
         </tr>
     <tr>
         <td>time</td>
-        <td>Defines the specific time during the playback of the animation when the event should trigger. Given in normalised time based on the animation's duration.</td>
+        <td>Defines the specific time during the playback of the animation when the event should trigger. Given in normalized time based on the animation's duration.</td>
     </tr>
     <tr>
         <td>name</td>
