@@ -171,10 +171,10 @@ var AnimationBlending = pc.createScript('animationBlending');
 AnimationBlending.prototype.initialize = function() {
     this.entity.anim.on('smile_start', function (event) {
         this.entity.anim.findAnimationLayer('smile').weight = 1;
-    }));
+    }), this);
     this.entity.anim.on('smile_end', function (event) {
         this.entity.anim.findAnimationLayer('smile').weight = 0;
-    }));
+    }), this);
 };
 ```
 
