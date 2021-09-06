@@ -26,7 +26,7 @@ We have a [project with a reusable script][safe-area-project] that takes those C
 
 <img src="/images/user-manual/user-interface/safe-area/mobile-view-safe-area.png" width="500px">
 
-The UI setup in the project has an Entity with a full screen Element Group named 'Safe Area'. This has the script 'mobileSafeArea' attached which contains the logic for fitting the Element within the safe area of the device.
+The UI setup in the project has an Entity with a full screen Group Element named 'Safe Area'. This has the script 'mobileSafeArea' attached which contains the logic for fitting the Element within the safe area of the device.
 
 <img src="/images/user-manual/user-interface/safe-area/hierarchy-layout.png" width="420px">
 
