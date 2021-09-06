@@ -22,7 +22,7 @@ Each event has the following modifiable properties:
         </tr>
     <tr>
         <td>time</td>
-        <td>Defines the specific time during the playback of the animation when the event should trigger. Given in normalised time based on the animation's duration.</td>
+        <td>Defines the specific time during the playback of the animation when the event should trigger. Given in normalized time based on the animation's duration.</td>
     </tr>
     <tr>
         <td>name</td>
@@ -50,7 +50,7 @@ AnimationEvents.prototype.initialize = function() {
         // get the foot bone from the event's string property, either right_foot or left_foot
         const footBone = this.entity.findByName(event.string);
         createDustCloudAtLocation(footBone.getPosition());
-    }));
+    }), this);
 };
 ```
 
