@@ -1,7 +1,7 @@
 ---
 title: Scrollview
 template: usermanual-page.tmpl.html
-position: 16
+position: 17
 ---
 
 The Scrollview component defines a scrollable area in a user interface. A scrollview can be scrolled via [Scrollbar][1] components.
