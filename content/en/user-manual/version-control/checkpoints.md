@@ -37,7 +37,7 @@ Hard reset allows you to delete all checkpoints after a selected checkpoint. Thi
 Hard reset can only delete the checkpoints if the following conditions are met:
 
 - No branches have been created from the checkpoints being deleted
-- The checkpoints being deleted has not been created by a merge of branches
+- The checkpoints being deleted have not been created by a merge of branches
 
 **Note, deleted checkpoints cannot be recovered.**
 
