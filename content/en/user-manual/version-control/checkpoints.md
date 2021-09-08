@@ -45,7 +45,7 @@ To hard reset, open the panel, find the checkpoint that you'd like to reset to t
 
 ![][hard-reset]
 
-Type 'hard rest' in the text box to confirm that you wish to delete all checkpoints after the selected checkpoint.
+Type 'hard reset' in the text box to confirm that you wish to delete all checkpoints after the selected checkpoint.
 
 ![][hard-reset-confirm]
 
