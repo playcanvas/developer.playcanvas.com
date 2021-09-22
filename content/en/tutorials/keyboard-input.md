@@ -125,7 +125,7 @@ Notice we are also passing a third argument to on(), which is `this` or the Scri
 
 ## Key Codes
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
 
 Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
