@@ -57,7 +57,7 @@ Go to project settings.
 Find and open 'External Scripts'.
 ![External scripts settings][13]
 
-Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing: 
+Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
 ![Project settings][14]
 
 
@@ -95,11 +95,11 @@ This will log whatever data is sent to the server when `playerJoined` is emitted
 
 For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
 
-![Ground Entity][8]
+<img src='/images/tutorials/multiplayer/ground_entity.png' width=360px>
 
 Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
 
-![Player Entity][9]
+<img src='/images/tutorials/multiplayer/player_entity.png' width=360px>
 
 Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
 
@@ -334,8 +334,6 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [5]: /images/tutorials/multiplayer/glitch_error.png
 [6]: /images/tutorials/multiplayer/glitch_add_package.png
 [7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
-[8]: /images/tutorials/multiplayer/ground_entity.png
-[9]: /images/tutorials/multiplayer/player_entity.png
 [10]: https://glitch.com/edit/#!/sore-bloom-beech
 [11]: https://cdnjs.com/libraries/socket.io
 [12]: /images/tutorials/multiplayer/project_settings.png
