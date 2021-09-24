@@ -13,16 +13,16 @@ For simple games and products you will set up all your assets in the Editor, the
 
 For more advanced products you may wish to access your assets in code, change references, modify properties and also stream data in so that your application can load more quickly. Only loading the assets as they are needed. To do this you'll use the [`AssetRegistry`][1].
 
-In this tutorial, we'll build a small scene which lets you swap the model on a model component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
+In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
 ## Setup
 
 *The project is set up as follows*
 
 * Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
-* The **C** model asset is set up *not* to be preloaded.
-* A model Entity is added to the scene and the model **A** is assigned to the model component.
-* A script component is added to the model Entity and a new script is created called `update_asset.js`.
+* The **C** render asset is set up *not* to be preloaded.
+* A render Entity is added to the scene and the model **A** is assigned to the render component.
+* A script component is added to the render Entity and a new script is created called `update_asset.js`.
 
 Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
 
@@ -36,50 +36,50 @@ In this case we've declared three script attributes `a`, `b` and `c` which are a
 
 ```javascript
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-        if (this.entity.model.asset !== this.b.id) {
-            // update the model component to the new model
-            console.log('Changed to B Model');
-            this.entity.model.asset = this.b;
+        if (this.entity.render.asset !== this.b.id) {
+            // update the render component to the new Render Asset
+            console.log('Changed to B Render Asset');
+            this.entity.render.asset = this.b;
         }
     } else {
         // ...
-            if (this.entity.model.asset !== this.a.id) {
-                // restore original model
-                console.log('Changed to A Model');
-                this.entity.model.asset = this.a;
+            if (this.entity.render.asset !== this.a.id) {
+                // restore original Render Asset
+                console.log('Changed to A Render Asset');
+                this.entity.render.asset = this.a;
             }
         // ...
     }
 ```
 
-The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [model component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
+The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
 
-![A asset preload ticked][9]
+<img src='/images/tutorials/using_assets/using-assets-a-preload.png' width=360px>
 
-So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the model on the model component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Model` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
+So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
 ## Loading assets at runtime
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
     if (this.c.loaded) {
-        if (this.entity.model.asset !== this.c.id) {
-            console.log('Changed to C Model');
-            this.entity.model.asset = this.c;
+        if (this.entity.render.asset !== this.c.id) {
+            console.log('Changed to C Render Asset');
+            this.entity.render.asset = this.c;
         }
     }
 } else {
-    if (this.entity.model.asset !== this.a.id) {
-        // restore original model
-        console.log('Changed to A Model');
-        this.entity.model.asset = this.a;
+    if (this.entity.render.asset !== this.a.id) {
+        // restore original Render Asset
+        console.log('Changed to A Render Asset');
+        this.entity.render.asset = this.a;
     }
 }
 ```
 
-The **C** model is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the model component. If the **C** model is loaded then `this.c.resource` will be the `pc.Model` property and `asset.loaded` will be true, we'll be then able to assign it.
+The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
 
-![C asset preload ticked][10]
+<img src='/images/tutorials/using_assets/using-assets-c-preload.png' width=360px>
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -89,7 +89,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `this.app.assets.load()`. If the asset is already loaded, this method will do nothing.
 
-Once the asset is loaded `asset.resource` will be a `pc.Model` instance and we can assign the asset to the model component by pressing the `C` key.
+Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
 
 ## The complete script
 
@@ -98,17 +98,17 @@ var UpdateAsset = pc.createScript('updateAsset');
 
 UpdateAsset.attributes.add('a', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 UpdateAsset.attributes.add('b', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 UpdateAsset.attributes.add('c', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 // initialize code called once per entity
@@ -121,24 +121,24 @@ UpdateAsset.prototype.update = function(dt) {
     var app = this.app;
 
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-        if (this.entity.model.asset !== this.b.id) {
-            // update the model component to the new model
-            console.log('Changed to B Model');
-            this.entity.model.asset = this.b;
+        if (this.entity.render.asset !== this.b.id) {
+            // update the render component to the new Render Asset
+            console.log('Changed to B Render Asset');
+            this.entity.render.asset = this.b;
         }
     } else {
         if (app.keyboard.isPressed(pc.KEY_C)) {
             if (this.c.loaded) {
-                if (this.entity.model.asset !== this.c.id) {
-                    console.log('Changed to C Model');
-                    this.entity.model.asset = this.c;
+                if (this.entity.render.asset !== this.c.id) {
+                    console.log('Changed to C Render Asset');
+                    this.entity.render.asset = this.c;
                 }
             }
         } else {
-            if (this.entity.model.asset !== this.a.id) {
-                // restore original model
-                console.log('Changed to A Model');
-                this.entity.model.asset = this.a;
+            if (this.entity.render.asset !== this.a.id) {
+                // restore original Render Asset
+                console.log('Changed to A Render Asset');
+                this.entity.render.asset = this.a;
             }
         }
     }
@@ -207,6 +207,4 @@ The `asset.ready()` method will call it's callback as soon as the asset is loade
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
-[8]: /en/api/pc.ModelComponent.html#asset
-[9]: /images/tutorials/using_assets/using-assets-a-preload.jpg
-[10]: /images/tutorials/using_assets/using-assets-c-preload.jpg
+[8]: /en/api/pc.RenderComponent.html#asset

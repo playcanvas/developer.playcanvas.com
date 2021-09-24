@@ -6,12 +6,12 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 ---
 
 Collision Picking - click to select a shape
-<iframe src="https://playcanv.as/b/0iehjK3i/"></iframe>
+<iframe src="https://playcanv.as/b/Ps1tTzWn/"></iframe>
 
 ---
 
 Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
-<iframe src="https://playcanv.as/b/ofyWQWHS/"></iframe>
+<iframe src="https://playcanv.as/b/ZQVQqgGU/"></iframe>
 
 ---
 
@@ -29,17 +29,21 @@ var PickerRaycast = pc.createScript('pickerRaycast');
 // initialize code called once per entity
 PickerRaycast.prototype.initialize = function() {
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onSelect, this);
+
+    this.on('destroy', function() {
+        this.app.mouse.off(pc.EVENT_MOUSEDOWN, this.onSelect, this);
+    }, this);
 };
 
 PickerRaycast.prototype.onSelect = function (e) {
     var from = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.nearClip);
     var to = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.farClip);
 
-    var result = this.app.systems.rigidbody.raycastFirst(from, to);
-    if (result) {
+    this.app.systems.rigidbody.raycastFirst(from, to, function (result) {
         var pickedEntity = result.entity;
+
         pickedEntity.script.pulse.pulse();
-    }
+    });
 };
 ```
 
@@ -95,6 +99,10 @@ PickerFramebuffer.prototype.initialize = function() {
     }
 
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onSelect, this);
+
+    this.on('destroy', function() {
+        this.app.mouse.off(pc.EVENT_MOUSEDOWN, this.onSelect, this);
+    }, this);
 };
 
 PickerFramebuffer.prototype.onSelect = function (event) {
@@ -121,7 +129,8 @@ PickerFramebuffer.prototype.onSelect = function (event) {
         var entity = selected[0].node;
 
         // Bubble up the hierarchy until we find an actual Entity
-        while (!(entity instanceof pc.Entity) && entity !== null) {
+        // that has the script we are looking for
+        while (entity !== null && !(entity instanceof pc.Entity) && (entity.script && entity.script.pulse)) {
             entity = entity.getParent();
         }
         if (entity) {
