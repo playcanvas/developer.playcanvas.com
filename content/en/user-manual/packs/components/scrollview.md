@@ -25,6 +25,8 @@ See the [User Interface][2] section for more details.
     </td></tr>
     <tr><td>Bounce</td><td>Controls how far the content should move before bouncing back.</td></tr>
     <tr><td>Friction</td><td>Controls how freely the content should move if thrown, i.e. By flicking on a phone or by flinging the scroll wheel on a mouse. A value of 1 means that content will stop immediately; 0 means that content will continue moving forever (or until the bounds of the content are reached, depending on the scroll mode).</td></tr>
+    <tr><td>Use Mouse Wheel</td><td>Whether to use mouse wheel for scrolling (horizontally and vertically) when mouse is within bounds.</td></tr>
+    <tr><td>Mouse Wheel Sensitivity</td><td>Mouse wheel horizontal and vertical sensitivity. Only used if *Use Mouse Wheel* is set. Setting a direction to 0 will disable mouse wheel scrolling in that direction. 1 is a default sensitivity that is considered to feel good. The values can be set higher or lower than 1 to tune the sensitivity. Defaults to [1, 1].</td></tr>
     <tr><td>Viewport</td><td>The entity to be used as the masked viewport area, within which the content will scroll. This entity must have an ElementGroup component.</td></tr>
     <tr><td>Content</td><td>The entity which contains the scrolling content itself. This entity must have an Element component.</td></tr>
     <tr><td>Horizontal</td><td>Whether to enable horizontal scrolling.</td></tr>
