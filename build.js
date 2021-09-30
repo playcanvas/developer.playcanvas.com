@@ -55,6 +55,8 @@ handlebars.registerPartial("footer",
 
 handlebars.registerPartial("shader-editor-navbar",
     fs.readFileSync(path.join(__dirname, "templates/partials/shader-editor-navbar.tmpl.html"), "utf-8"));
+handlebars.registerPartial("shader-editor-contents",
+    fs.readFileSync(path.join(__dirname, "templates/partials/shader-editor-contents.tmpl.html"), "utf-8"));
 
     // handlebars.registerHelper("", function (lang) {
 

@@ -4,16 +4,16 @@ template: shader-editor-page.tmpl.html
 position: 1.2
 ---
 
-The Shader Editor comprises a number of sub-windows or panes. The panes are highlighted below and a brief description of each follows:
+Shader Editor comprises a number of sub-windows or panes. The panes are highlighted below and a brief description of each follows:
 
 ![window-layout][1]
 
 | Pane | |
 |---|---|
-|[Nodes Pane][2] | Lists the built-in nodes available for constructing graphs. |
+|[Nodes Pane][2] | Lists the built-in nodes available when constructing graphs. |
 |[Inspector Pane][3] | Shows details of the currently selected item. |
 |[Assets Pane][4] | Is where the project’s graphs, materials and textures appear. |
-|[Graph Editor][5] | Where graph nodes and edges are edited. |
+|[Graph Editor][5] | Shows the selected graph and is where nodes and edges are edited. |
 |[Preview Pane][6] | Displays a preview of the currently selected graph or material. |
 
 [1]: /images/shader-editor/window-layout.png

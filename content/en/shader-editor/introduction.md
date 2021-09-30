@@ -15,7 +15,7 @@ Instead of writing shader programs directly, in __Shader Editor__ you construct 
 For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
 ![sample effect][1]
 
-The effect is made up of various graphs including the following, which takes care of unpacking normals stored in a normal map:
+The effect is made up of various graphs including the following one, which takes care of unpacking normals stored in a normal map:
 ![sample graph][2]
 
 The above graph is converted by __Shader Editor__ into a shader program, which is what gets executed on a GPU at runtime:
@@ -31,9 +31,11 @@ void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
 }
 ```
 
-To learn more about the general workflow, see the [Workflow][3] section.
+### Next steps
 
-To find out more about using the tool itself, see the [Window Layout][4] section.
+To learn more about the general workflow when using Shader Editor, see the [Workflow][3] section.
+
+To find out more about the window layout, see the [Window Layout][4] section.
 
 [1]: /images/shader-editor/sample-effect.gif
 [2]: /images/shader-editor/sample-graph.png
