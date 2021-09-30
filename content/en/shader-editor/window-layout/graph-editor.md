@@ -17,7 +17,7 @@ The Graph Editor displays the currently selected graph. This is where nodes are 
 | Modify a node | Select the node and modify its properties in the [Inspector Pane][4]. |
 | Connect two nodes | Left click the output port of the source node, drag and drop on the input port of the target node. |
 
-## Nodes
+### Nodes
 
 Nodes form a central part of Shader Editor and have the following anatomy:
 
