@@ -15,10 +15,10 @@ Instead of writing shader programs directly, in __Shader Editor__ you construct 
 For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
 ![sample effect][1]
 
-The effect is made up of various graphs including the following one, which takes care of unpacking normals stored in a normal map:
+The effect is made up of various graphs, including the following one. This graph takes care of unpacking the normals in a normal map:
 ![sample graph][2]
 
-The above graph is converted by __Shader Editor__ into a shader program, which is what gets executed on a GPU at runtime:
+__Shader Editor__ will convert this graph into a shader program, which is executed on a GPU at runtime:
 ```glsl
 void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
     float var_ = float(2);
