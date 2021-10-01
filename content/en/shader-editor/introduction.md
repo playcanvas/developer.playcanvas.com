@@ -33,11 +33,11 @@ void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
 
 ### Next steps
 
-To learn more about the general workflow when using Shader Editor, see the [Workflow][3] section.
+To learn more about Shader Editor in general, see the [Overview][3] section.
 
-To find out more about the window layout, see the [Window Layout][4] section.
+To find out more about the window layout, see [Window Layout][4].
 
 [1]: /images/shader-editor/sample-effect.gif
 [2]: /images/shader-editor/sample-graph.png
-[3]: /shader-editor/workflow
+[3]: /shader-editor/overview
 [4]: /shader-editor/window-layout
