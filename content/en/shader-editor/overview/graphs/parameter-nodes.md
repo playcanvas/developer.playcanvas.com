@@ -4,7 +4,7 @@ template: shader-editor-page.tmpl.html
 position: 2
 ---
 
-Parameter nodes are input nodes that allow values in the material to be configurable at runtime.
+Parameter nodes are input nodes that allow values in the material to be configurable at runtime. Parameter nodes added to a graph will appear in the Material Inspector Pane.
 
 To read more about editing parameters, see the [Inspector Pane][1] documentation.
 
