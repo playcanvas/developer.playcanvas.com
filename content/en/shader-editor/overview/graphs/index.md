@@ -4,7 +4,7 @@ template: shader-editor-page.tmpl.html
 position: 1
 ---
 
-Graphs are a central concept in Shader Editor. They are made up of nodes that do things, and edges that connect them together.
+Graphs are a central concept in Shader Editor. They are made up of nodes that do things, and edges that connect them together. Shader Editor uses the graphs to generate the shader programs for rendering.
 
 To find out how to manage graphs see the [Graph Editor][1] documentation.
 
@@ -14,11 +14,11 @@ There are two distinct types of graphs in Shader Editor, namely Material Graphs 
 
 Material Graphs define the look of a material and must contain a Material Node.
 
-For example, this is the simplest possible Material graph along with its preview. The graph feeds a constant color into the Material Node's emissive field:
+For example, this is a simple Material Graph. The graph feeds a constant color into the Material Node's emissive field:
 
 ![Material Graph Example][2]
 
-The Material Node has a number of input ports. Each port controls an aspect of the runtime lighting environment. The port details are as follows:
+As can be seen above, the Material Node has a number of input ports. Each port controls an aspect of the runtime lighting environment. The port details are as follows:
 
 | Port | Type | Default | Usage |
 |---|---|---|---|
@@ -34,11 +34,11 @@ The Material Node has a number of input ports. Each port controls an aspect of t
 
 ### Sub Graphs
 
-The second type of graph, namely Sub Graphs are used to create useful functions that can then be used elsewhere.
+The second type of graph in Shader Editor are Sub Graphs. These don't directly define a material, but instead encapsulate some useful functionality which can then be given used elsewhere. Sub Graphs can be used either in other Sub Graphs or directly in Material Graphs.
 
-Sub Graphs don't contain Material Nodes, but instead pass data in and out via Input and Output Nodes.
+Sub Graphs don't contain Material Nodes, but instead pass data in and out using Input and Output Nodes.
 
-For example, this is a simple Sub Graph which adds two floats together:
+For example, this is a simple Sub Graph that adds two floats together:
 
 ![Sub Graph Example][3]
 
@@ -46,7 +46,9 @@ If this Sub Graph were named "adder" it would appear in the Assets Pane as follo
 
 ![Sub Graph Icon][4]
 
-This Sub Graph can then be placed as a regular node into other graphs.
+The adder Sub Graph can then be placed as a node itself in another graph:
+
+![Place Sub Graph][5]
 
 For more information on how to edit graphs see the [Graph Editor][1] documentation.
 
@@ -54,3 +56,4 @@ For more information on how to edit graphs see the [Graph Editor][1] documentati
 [2]: /images/shader-editor/overview-graph-material.png
 [3]: /images/shader-editor/overview-graph-sub-graph.png
 [4]: /images/shader-editor/overview-graph-sub-graph-icon.png
+[5]: /images/shader-editor/overview-graph-place-sub-graph.gif

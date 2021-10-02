@@ -1,7 +1,7 @@
 ---
 title: File Handling
 template: shader-editor-page.tmpl.html
-position: 4
+position: 5
 ---
 
 Shader Editor is a browser-based tool. However the graphs, materials and textures created are stored locally on the user's machine.

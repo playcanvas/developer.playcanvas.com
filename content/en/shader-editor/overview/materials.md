@@ -4,7 +4,7 @@ template: shader-editor-page.tmpl.html
 position: 3
 ---
 
-Materials combine Material Graph's with the parameter values and render states.
+Materials combine Material Graphs with parameter values and render states.
 
 This makes it possible to create multiple variations of a Material Graph, all sharing the same underlying shader program.
 
