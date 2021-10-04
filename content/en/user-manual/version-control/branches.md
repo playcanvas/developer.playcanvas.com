@@ -36,16 +36,37 @@ The editor will reload with your current branch switched to the chosen branch.
 
 ![Close branch][4]
 
-It is not possible to delete branches as they are required for future merges. However, if you have completed work on a branch you can close the branch which will remove it from the interface.
+If you have completed work on a branch, you can close it which will remove it from the open branches list.
 
-To close a branch open the version control panel, select the branch you wish to close and choose the "Close branch" option in the branch's drop-down menu. Note, you cannot close your current branch or the master branch. Switch to a different branch first if you wish to close your current branch.
+To close a branch, open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note that you cannot close your current branch or the master branch. Switch to a different branch first if you wish to close your current branch.
 
 ![Close branch dialog][5]
 
-You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here. **Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
+You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here.
+
+**Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
+
+## Deleting a branch
+
+Deletion of branches are only supported if the following conditions are met:
+
+- The branch has not been merged into another branch
+- No branches have been created from this branch
+
+To delete a branch open the version control panel, select the branch you wish to delete and choose the "Delete this branch" option in the branch's drop-down menu.
+
+![][delete-branch]
+
+You will be asked to confirm the deletion of the branch by typing the name of the branch in the dialog box.
+
+**Note, deleted branches cannot be recovered after deletion! If in doubt, please close the branch instead.**
+
+![][delete-branch-dialog]
 
 [1]: /images/user-manual/version-control/new-branch.jpg
 [2]: /images/user-manual/version-control/new-branch-dialog.jpg
 [3]: /images/user-manual/version-control/switch-branch.jpg
 [4]: /images/user-manual/version-control/close-branch.jpg
 [5]: /images/user-manual/version-control/close-branch-dialog.jpg
+[delete-branch]:  /images/user-manual/version-control/delete-branch.png
+[delete-branch-dialog]:  /images/user-manual/version-control/delete-branch-dialog.png
