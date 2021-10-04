@@ -36,7 +36,7 @@ The editor will reload with your current branch switched to the chosen branch.
 
 ![Close branch][4]
 
-If you have completed work on a branch you can close the branch which will remove it from the the open branches list.
+If you have completed work on a branch, you can close it which will remove it from the open branches list.
 
 To close a branch open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note, you cannot close your current branch or the master branch. Switch to a different branch first if you wish to close your current branch.
 
