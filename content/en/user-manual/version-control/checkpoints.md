@@ -41,7 +41,7 @@ Hard reset can only delete the checkpoints if the following conditions are met:
 
 **Note, deleted checkpoints cannot be recovered.**
 
-To hard reset, open the panel, find the checkpoint that you'd like to reset to to and choose "Hard reset" from the checkpoint's drop down menu.
+To hard reset, open the panel, find the checkpoint that you'd like to reset to and choose "Hard reset" from the checkpoint's drop down menu.
 
 ![][hard-reset]
 
