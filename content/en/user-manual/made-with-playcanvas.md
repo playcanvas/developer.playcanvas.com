@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 1.6
 ---
 
-Below are our showcase videos of some of the best WebGL browser games and experiences made with PlayCanvas.
+Below is our showcase video of some of the best WebGL browser games and experiences made with PlayCanvas.
 
 Find more fantastic games and experiences made by our users at [Awesome PlayCanvas GitHub repo][awesome-playcanvas]!
 
