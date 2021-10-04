@@ -6,7 +6,7 @@ position: 1.6
 
 Below is our showcase video of some of the best WebGL browser games and experiences made with PlayCanvas.
 
-Find more fantastic games and experiences made by our users at [Awesome PlayCanvas GitHub repo][awesome-playcanvas]!
+Find more fantastic games and experiences made by our users in the [PlayCanvas Awesome List][awesome-playcanvas]!
 
 ## PlayCanvas Showcase 2021
 Links to the content showcased can be found on the [blog post][2021-blog-post].
