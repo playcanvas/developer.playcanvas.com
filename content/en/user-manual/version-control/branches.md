@@ -50,7 +50,7 @@ You will be asked to confirm the closing of the branch and you have an option to
 
 Deletion of branches are only supported if the following conditions are met:
 
-- The branch as not been merged into another branch
+- The branch has not been merged into another branch
 - No branches have been created from this branch
 
 To delete a branch open the version control panel, select the branch you wish to delete and choose the "Delete this branch" option in the branch's drop-down menu.
