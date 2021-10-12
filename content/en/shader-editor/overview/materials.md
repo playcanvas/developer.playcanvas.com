@@ -4,7 +4,7 @@ template: shader-editor-page.tmpl.html
 position: 3
 ---
 
-Materials combine Material Graphs with parameter values and render states.
+Materials combine Material Graphs, parameter values and [render states][3].
 
 This makes it possible to create multiple variations of a Material Graph, all sharing the same underlying shader program.
 
@@ -16,3 +16,4 @@ Multiple materials can be created, each with a different setting for the Vec3 Pa
 
 [1]: /images/shader-editor/overview-materials-graph.png
 [2]: /images/shader-editor/overview-materials-previews.png
+[3]: /shader-editor/window-layout/inspector-pane/material-inspector
