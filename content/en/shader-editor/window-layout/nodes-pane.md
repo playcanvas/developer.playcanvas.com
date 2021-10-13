@@ -1,7 +1,7 @@
 ---
 title: Nodes Pane
 template: shader-editor-page.tmpl.html
-position: 1
+position: 2
 ---
 
 <img src="/images/shader-editor/nodes-pane.png" style="float: right; padding: 20px; padding-top: 0px;"></img>

@@ -1,7 +1,7 @@
 ---
 title: Graph Editor
 template: shader-editor-page.tmpl.html
-position: 4
+position: 5
 ---
 
 The Graph Editor displays the currently selected graph. This is where nodes are created, arranged, connected and deleted.

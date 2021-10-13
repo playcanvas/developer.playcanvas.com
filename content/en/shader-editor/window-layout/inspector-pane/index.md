@@ -1,7 +1,7 @@
 ---
 title: Inspector Pane
 template: shader-editor-page.tmpl.html
-position: 2
+position: 3
 ---
 
 The Inspector Pane shows details of the currently selected item.

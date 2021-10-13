@@ -1,7 +1,7 @@
 ---
 title: Textures
 template: shader-editor-page.tmpl.html
-position: 3
+position: 4
 ---
 
 Textures are relatively static assets within Shader Editor.

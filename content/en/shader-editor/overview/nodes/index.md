@@ -1,7 +1,7 @@
 ---
 title: Nodes
 template: shader-editor-page.tmpl.html
-position: 1
+position: 2
 ---
 
 Shader Editor supports many types of nodes, but they all have the following structure:
@@ -15,6 +15,8 @@ Shader Editor supports many types of nodes, but they all have the following stru
 | 3 | Output Ports. |
 
 Certain nodes have no input ports and others have no output ports. (Though all nodes have at least one port).
+
+### Node Categories
 
 Based on this, we can identify three categories of nodes:
 - Input nodes - these have output ports, but no input ports.

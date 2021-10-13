@@ -1,7 +1,7 @@
 ---
 title: Assets Pane
 template: shader-editor-page.tmpl.html
-position: 3
+position: 4
 ---
 
 The Assets Pane is where the project’s graphs, materials and textures appear.
