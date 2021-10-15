@@ -5,7 +5,7 @@ keywords: набор, материал, создать, цвет, поверхн
 
 ## Как изменить цвет модели??
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/change_material.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/change_material.gif"/>
 
 Каждая поверхность 3D модели рендерится используя **материал**. Материал определяет свойства этой поверхности, такие как цвет, блеск, рельефность и другие.
 
