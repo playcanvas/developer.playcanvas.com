@@ -5,7 +5,7 @@ keywords: コンポーネント, モデル, 3d, fbx, メッシュ
 
 ## 3Dモデルをレンダリングするには？
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_model.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_model.gif"/>
 
 3Dモデルをレンダリングするには、エンティティに**モデルコンポーネント**を追加して**モデルアセット**をアセットフィールドをドラッグします。かわりに、アセットパネルからモデルアセットを3Dビューポートにドラッグ＆ドロップすることもできます。
 

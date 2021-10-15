@@ -5,7 +5,7 @@ keywords: компонент, модель, куб, сфера, цилиндр, 
 
 ## Как создать фигуру вроде куба, сферы и подобных им?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_box.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_box.gif"/>
 
 Вы можете добавить такие примитивы как кубы, сферы и добавив **Компонент модель** на Сущности и выбрав желаемый тип фигуры.
 

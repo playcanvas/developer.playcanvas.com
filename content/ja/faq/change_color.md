@@ -5,7 +5,7 @@ keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュ�
 
 ## モデルの色を変更するには？
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/change_material.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/change_material.gif"/>
 
 3Dモデルの全ての表面は**素材**を使ってレンダリングされます。素材は、その表面の色、光沢、平滑度などのプロパティを定義します。
 
