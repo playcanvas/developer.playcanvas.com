@@ -51,9 +51,9 @@ For this demo, the important property is the **Type**. You can pick one of three
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-![Ground Entity][6]
+<img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
+You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
 ## Setting up the trigger
 
@@ -98,7 +98,7 @@ In this case, when the trigger is fired, we reset the penetrating Entity back up
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-![Box Entity][9]
+<img src="/images/tutorials/collision/box_setup.png" width="300px">
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 
@@ -137,7 +137,7 @@ And that's all there is to handling Collisions and Triggers in PlayCanvas.
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
+[6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
-[9]: /images/tutorials/collision/box_setup.jpg
+[9]: /images/tutorials/collision/box_setup.png

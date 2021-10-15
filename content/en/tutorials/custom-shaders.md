@@ -9,6 +9,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *This tutorial uses a custom shader on a material to create a dissolve effect in GLSL*
 
+Complete project can be found [here][project].
+
 When you import your 3D models into PlayCanvas by default they will use our [Physical Material][3]. This is a versatile material type that can cover a lot of your rendering needs.
 
 However, you will often want to perform special effects or special cases for your materials. To do this you will need to write a custom shader.
@@ -219,7 +221,6 @@ CustomShader.prototype.initialize = function() {
     this.time = 0;
 
     var app = this.app;
-    var model = this.entity.model.model;
     var gd = app.graphicsDevice;
 
     var diffuseTexture = this.diffuseMap.resource;
@@ -244,7 +245,7 @@ CustomShader.prototype.initialize = function() {
 
     // Create a new material and set the shader
     this.material = new pc.Material();
-    this.material.setShader(this.shader);
+    this.material.shader = this.shader;
 
     // Set the initial time parameter
     this.material.setParameter('uTime', 0);
@@ -256,7 +257,14 @@ CustomShader.prototype.initialize = function() {
     this.material.setParameter('uHeightMap', heightTexture);
 
     // Replace the material on the model with our new material
-    model.meshInstances[0].material = this.material;
+    var renders = this.entity.findComponents('render');
+
+    for (var i = 0; i < renders.length; ++i) {
+        var meshInstances = renders[i].meshInstances;
+        for (var j = 0; j < meshInstances.length; j++) {
+            meshInstances[j].material = this.material;
+        }
+    }
 };
 
 // update code called every frame
@@ -274,8 +282,9 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work. It's left as an exercise to the reader to implement a shader which performs this dissolve effect on a model with many meshes and materials.
+Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
 
 [1]: /engine/api/stable/symbols/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
+[project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
