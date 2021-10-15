@@ -5,7 +5,7 @@ keywords: сущность, новая, создать
 
 ## Как создать сущность?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_entity.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_entity.gif"/>
 
 Чтобы создать новую сущность, кликните по кнопке <span class="font-icon">&#57632;</span> Добавить в панели Иерархии или сделайте щелчок правой кнопкой мыши на Сущности и используйте пункт **Новая сущность** в меню.
 

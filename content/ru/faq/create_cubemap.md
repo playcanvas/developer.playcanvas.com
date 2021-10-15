@@ -5,7 +5,7 @@ keywords: набор, кубическая текстура, создание, s
 
 ## Как создать кубическую текстуру?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_cubemap.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif"/>
 
 Кубическая текстура - особый тип текстуры. Она состоит из шести текстур, каждая из которых представляет собой сторону куба.
 

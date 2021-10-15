@@ -5,7 +5,7 @@ keywords: component, model, 3d, fbx, mesh
 
 ## How do I render a 3D model?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_model.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_model.gif"/>
 
 To render a 3D model you need to add a **Model Component** to an Entity and drag a **Model Asset** on the Asset field. Alternatively you can drag and drop a Model Asset from the Assets Panel into the 3D Viewport.
 
