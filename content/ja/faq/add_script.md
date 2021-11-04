@@ -5,7 +5,7 @@ keywords: スクリプト, コード, 作成, javascript, 挙動
 
 ## スクリプトを追加するには？
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/add-new-script.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif"/>
 
 Javascriptを使用してエンティティの挙動を制御できます。スクリプトコンポーネントを追加して、新しいスクリプトを追加します。
 

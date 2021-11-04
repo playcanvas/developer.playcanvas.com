@@ -5,7 +5,7 @@ keywords: script, code, create, javascript, behaviour
 
 ## How do I add a script?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/add-new-script.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif"/>
 
 You can use javascript to control the behavior of entities. Add a script component, and create a new script.
 
