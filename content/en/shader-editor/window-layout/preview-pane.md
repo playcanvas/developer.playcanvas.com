@@ -28,9 +28,7 @@ The toolbar offers control over the lighting environment and preview shape. The 
 | 2 | Direct lighting toggle. |
 | 3 | Environment lighting toggle. |
 | 4 | Show environment background toggle. |
-| 5 | Environment selector. |
-| 6 | Shape selector. |
-| 7 | Fullscreen toggle. |
+| 5 | Fullscreen toggle. |
 
 ### Custom environment lighting
 

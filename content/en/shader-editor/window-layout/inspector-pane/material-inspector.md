@@ -1,7 +1,7 @@
 ---
 title: Material Inspector
 template: shader-editor-page.tmpl.html
-position: 4
+position: 3
 ---
 
 <img src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;"></img>

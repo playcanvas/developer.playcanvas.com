@@ -1,7 +1,7 @@
 ---
 title: Texture Inspector
 template: shader-editor-page.tmpl.html
-position: 5
+position: 4
 ---
 
 <img src="/images/shader-editor/inspector-pane-texture.png" style="float: right; padding: 20px; padding-top: 0px;"></img>
