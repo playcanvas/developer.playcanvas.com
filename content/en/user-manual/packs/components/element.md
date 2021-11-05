@@ -34,8 +34,8 @@ The text element renders a string of text using a [font asset][5].
     <tr><th>Property</th><th>Description</th></tr>
     <tr><td>Type</td><td>The type of Element: Group, Image or Text</td></tr>
     <tr><td>Preset</td><td>Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value.</td></tr>
-    <tr><td>Anchor</td><td>Determine where the element calculates its position in relation to. See the <a href="/user-manual/user-interface/layout">Layout</a> section for more information.</td></tr>
-    <tr><td>Pivot</td><td>Determine where the pivot point of the Element is. (0,0) is bottom left, (1,1) is top right. See the <a href="/user-manual/user-interface/layout">Layout</a> section for more information.</td></tr>
+    <tr><td>Anchor</td><td>Determine where the element calculates its position in relation to. See the <a href="/user-manual/user-interface/elements/#anchor">Elements#Anchor</a> section for more information.</td></tr>
+    <tr><td>Pivot</td><td>Determine where the pivot point of the Element is. (0,0) is bottom left, (1,1) is top right. See the <a href="/user-manual/user-interface/elements/#pivot">Elements#Pivot</a> section for more information.</td></tr>
     <tr><td>Size</td><td>The width and height of the Element. This may be automatically calculated depending on other settings</td></tr>
     <tr><td>Margin</td><td>The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis).</td></tr>
     <tr><td>Use Input</td><td>If enabled, this Element is added to the list of elements that check for input and fire input related events.</td></tr>
