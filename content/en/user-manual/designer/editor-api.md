@@ -36,7 +36,7 @@ Editor API code:
 
 It is possible to add extra functionality to the Editor and create custom interfaces such as adding buttons. This can be done via a number of ways such as browser extensions or [user scripts][user-scripts].
 
-User scripts is more accessible out of the two which allows you to run custom code on top of the Editor.
+User scripts is the more accessible out of the two which allows you to run custom code on top of the Editor.
 
 Below we have an example where a button has been added to the [Viewport][viewport] to generate and random place boxes into the scene.
 
