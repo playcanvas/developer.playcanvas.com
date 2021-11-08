@@ -42,4 +42,4 @@ You can control a Rigid Body component's properties using a [script component][5
 [3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
 [4]: /user-manual/packs/components/collision/
 [5]: /user-manual/packs/components/script
-[6]: /engine/api/stable/symbols/pc.RigidBodyComponent.html
+[6]: /api/pc.RigidBodyComponent.html

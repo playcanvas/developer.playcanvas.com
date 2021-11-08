@@ -52,7 +52,7 @@ m.build(function (err, results) {
     // process results
     for (var key in results) {
         // remove html file
-        fs.unlink(path.join(__dirname, 'build/' + key));
+        fs.unlinkSync(path.join(__dirname, 'build/' + key));
 
         var html = results[key].contents.toString('utf-8');
 
