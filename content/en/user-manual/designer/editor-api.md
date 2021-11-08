@@ -169,7 +169,7 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
 [disable-red-boxes-gif]: /images/user-manual/editor/editor-api/disable-red-boxes.gif
 [github-api]: https://github.com/playcanvas/editor-api
 [user-scripts]: https://en.wikipedia.org/wiki/Userscript
-[viewport]: user-manual/designer/viewport
+[viewport]: /user-manual/designer/viewport
 [violentmonkey]: https://violentmonkey.github.io/
 [violentmonkey-docs]: https://violentmonkey.github.io/guide/creating-a-userscript/
 [violentmonkey-matching]: https://violentmonkey.github.io/api/matching/
