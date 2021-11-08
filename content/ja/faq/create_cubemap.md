@@ -5,7 +5,7 @@ keywords: アセット, キューブマップ, 作成, スカイボックス, �
 
 ## キューブマップを作成するには？
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_cubemap.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif"/>
 
 キューブマップは特別な種類のテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。
 

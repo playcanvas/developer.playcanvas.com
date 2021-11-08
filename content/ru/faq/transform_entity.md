@@ -5,7 +5,7 @@ keywords: сущность, перемещение, движение, враще
 
 ## Как переместить / повернуть / масштабировать сущность?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/transform.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/transform.gif"/>
 
 Чтобы переместить сущность, выберите ее и затем передвиньте используя инструмент **<span class="font-icon">&#57617;</span> Перемещение**. Чтобы повернуть модель, используйте инструмент **<span class="font-icon">&#57619;</span>Вращение**, а чтобы масштабировать модель, используйте инструмент  **<span class="font-icon">&#57618;</span> Масштабирование**.
 

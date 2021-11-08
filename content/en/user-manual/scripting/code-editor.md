@@ -65,6 +65,9 @@ The editor supports various shortcuts to help you when editing code. You can fin
     <th>Command</th><th>PC</th><th>Mac</th>
 </tr>
 <tr>
+    <td>Save</td><td>Ctrl + S</td><td>Cmd + S</td>
+</tr>
+<tr>
     <td>Undo</td><td>Ctrl + Z</td><td>Cmd + Z</td>
 </tr>
 <tr>

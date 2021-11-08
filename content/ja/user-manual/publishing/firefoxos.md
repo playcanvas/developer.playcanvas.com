@@ -73,7 +73,7 @@ And download the file to the root of your extracted PlayCanvas app.
 The PlayCanvas loading screen image is referenced in your exported game's index.html. Search for the following line:
 
 ```html
-    <a href="http://playcanvas.com" target="_blank"><img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/images/logo/PLAY_FLAT_ORANGE3.png"/></a>
+    <a href="http://playcanvas.com" target="_blank"><img src="https://playcanvas.com/static-assets/images/logo/PLAY_FLAT_ORANGE3.png"/></a>
 ```
 
 And convert it to this:

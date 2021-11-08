@@ -5,7 +5,7 @@ keywords: コンポーネント, モデル, ボックス, 球体, 円柱, コー
 
 ## ボックスや球体などのような形を作るには？
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_box.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_box.gif"/>
 
 エンティティに**モデルコンポーネント**を追加してタイプを任意の形に変更することで、ボックスや球体などのプリミティブな形を追加できます。
 

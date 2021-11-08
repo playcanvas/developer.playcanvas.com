@@ -60,17 +60,17 @@ Mouse.prototype.onMouseMove = function (event) {
 Mouse.prototype.onMouseDown = function (event) {
     // If the left mouse button is pressed, change the cube color to red
     if (event.button === pc.MOUSEBUTTON_LEFT) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // If the left mouse button is pressed, change the cube color to green
     if (event.button === pc.MOUSEBUTTON_MIDDLE) {
-        this.entity.model.meshInstances[0].material = this.greenMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.greenMaterial.resource;
     }
 
     // If the left mouse button is pressed, change the cube color to blue
     if (event.button === pc.MOUSEBUTTON_RIGHT) {
-        this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
 ```

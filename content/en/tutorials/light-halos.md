@@ -81,10 +81,10 @@ Halo.tmp = new pc.Vec3();
 // initialize code called once per entity
 Halo.prototype.initialize = function() {
     // Get the Entity with the plane model on it
-    this.plane = this.entity.getChildren()[0];
+    this.plane = this.entity.children[0];
 
     // Get the parent entity which is used for direction
-    this.parent = this.entity.getParent();
+    this.parent = this.entity.parent;
 };
 
 // update code called every frame
@@ -94,7 +94,7 @@ Halo.prototype.update = function(dt) {
     // Store the vector the parent is facing (note forwards is negative z)
     tmp.copy(this.parent.forward).scale(-1);
 
-    var meshes = this.plane.model.meshInstances;
+    var meshes = this.plane.render.meshInstances;
 
     if (this.camera) {
 

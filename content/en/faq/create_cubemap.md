@@ -5,7 +5,7 @@ keywords: asset, cubemap, create, skybox, texture, pbr, physical
 
 ## How do I create a cubemap?
 
-<img src="https://s3-eu-west-1.amazonaws.com/static.playcanvas.com/instructions/new_cubemap.gif"/>
+<img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif"/>
 
 Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube.
 

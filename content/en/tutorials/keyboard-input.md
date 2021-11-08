@@ -75,7 +75,7 @@ KeyboardHandler.prototype.update = function(dt) {
 KeyboardHandler.prototype.onKeyDown = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.redMaterial) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // When the space bar is pressed this scrolls the window.
@@ -89,7 +89,7 @@ KeyboardHandler.prototype.onKeyDown = function (event) {
 KeyboardHandler.prototype.onKeyUp = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.whiteMaterial) {
-        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
 ```
@@ -125,7 +125,7 @@ Notice we are also passing a third argument to on(), which is `this` or the Scri
 
 ## Key Codes
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
 
 Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
