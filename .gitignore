@@ -8,5 +8,6 @@ content/en/user-manual/faq.md
 content/_tutorial_contents.json
 content/_tutorial_contents_legacy.json
 content/_usermanual_contents.json
+content/_shadereditor_contents.json
 .DS_Store
 test-links-broken.txt
