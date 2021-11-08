@@ -115,7 +115,7 @@ The code for the above user script is:
         });
     }
 
-    // Wait till the Editor is available before adding the button
+    // Wait until the Editor is available before adding the button
     editor.once('load', () => createButton());
 })();
 ```
