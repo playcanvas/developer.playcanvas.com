@@ -194,3 +194,4 @@ Any layers that are set to `Overwrite` will completely replace the animation val
 [9]: /images/user-manual/anim/any_state.png
 [10]: /images/user-manual/anim/end_state.png
 [11]: /images/user-manual/anim/anim_layer_blend.png
+[anim-layer-masking]: /user-manual/animation/anim-layer-masking
