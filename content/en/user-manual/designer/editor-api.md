@@ -42,7 +42,7 @@ Below we have an example where a button has been added to the [Viewport][viewpor
 
 ![][generate-boxes-gif]
 
-The PlayCanvas team are currently using [Violentmonkey][violentmonkey] open source browser extension to manage user scripts.
+The PlayCanvas team are currently using the [Violentmonkey][violentmonkey] open source browser extension to manage user scripts.
 
 Once the browser extension has been installed, adding your own or another developer's user script is very straightforward. Steps can be found in [Violentmonkey's documentation][violentmonkey-docs].
 
