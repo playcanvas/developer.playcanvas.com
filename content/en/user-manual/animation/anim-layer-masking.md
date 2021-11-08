@@ -16,7 +16,7 @@ After creating an Anim State Graph asset and attaching it to an anim component, 
 
 ![Mask Inspector][2]
 
-The mask inspector displays the full hierarchy which the anim component is driving, starting at the `root bone` specifid in the anim component. Each bone in the hierarchy can be selected to be included in the mask. You can also right-click specific bones to include or exclude whole sections of the hierarchy. Any bones which are not selected in this mask will not be driven by any of the animations which play in this mask's layer.
+The mask inspector displays the full hierarchy which the anim component is driving, starting at the `root bone` specified in the anim component. Each bone in the hierarchy can be selected to be included in the mask. You can also right-click specific bones to include or exclude whole sections of the hierarchy. Any bones which are not selected in this mask will not be driven by any of the animations which play in this mask's layer.
 
 After creating masks, you can use [layer blending](/en/user-manual/animation/anim-state-graph-assets/#layer-blending) to smoothly blend the masked animations of multiple layers together.
 
