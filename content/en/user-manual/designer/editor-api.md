@@ -137,7 +137,7 @@ At the top is the informational header about the script if you do share the scri
 
 This is private Editor API to wait for an event when the Editor has fully loaded. Using the event ensures that the Editor API is accessible before the code to extend Editor features is ran.
 ```
-    // Wait till the Editor is available before adding the button
+    // Wait until the Editor is available before adding the button
     editor.once('load', () => createButton());
 ```
 
