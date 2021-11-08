@@ -8,7 +8,7 @@ position: 11
 The Editor API is a beta feature. Please use caution when using on live projects.
 </div>
 
-The Editor has an user accessible API that is currently in beta which can be used to help automate and extend the base functionality.
+The Editor has a user accessible API that is currently in beta which can be used to help automate and extend the base functionality.
 
 The API is not yet considered stable and may change in the future as we continue development. However, it is unlikely that API will change a lot from its current state.
 
