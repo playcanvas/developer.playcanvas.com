@@ -38,7 +38,7 @@ It is possible to add extra functionality to the Editor and create custom interf
 
 User scripts is the more accessible out of the two which allows you to run custom code on top of the Editor.
 
-Below we have an example where a button has been added to the [Viewport][viewport] to generate and random place boxes into the scene.
+Below we have an example where a button has been added to the [Viewport][viewport] to generate and randomly place boxes into the scene.
 
 ![][generate-boxes-gif]
 
