@@ -37,6 +37,12 @@
 
             usermanual.buildMenu(url);
             usermanual.setNextPrevButtons();
+        } else if (url.indexOf("/shader-editor/") >= 0) {
+            // shader editor
+            header.setActive("shader-editor");
+
+            usermanual.buildMenu(url);
+            usermanual.setNextPrevButtons();
         }
 
         // search

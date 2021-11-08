@@ -148,10 +148,10 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 ![Maya material editor][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
-[2]: http://cgcookie.com/blender/
+[2]: https://cgcookie.com/learn-blender
 [3]: /images/user-manual/assets/models/building/blender-logo.jpg
 [4]: http://blender.org
-[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
+[5]: https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives
 [6]: http://www.blenderguru.com/
 [7]: /images/user-manual/assets/models/building/max-material-editor.jpg
 [8]: /images/user-manual/assets/models/building/wall-norm.jpg

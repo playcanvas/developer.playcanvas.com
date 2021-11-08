@@ -157,7 +157,31 @@ It is then possible to switch to editing this layer by selecting it from the lay
 
 ![Select Layer][6]
 
-Tip: Layers animate a model in the order that they’re created in the layers panel. Any animation values they set on a model will be overwritten by subsequent layers if they are animating the same bones.
+### Layer Blending
+
+By default, layers animate a model in the order that they’re created in the layers panel. Any animation values they set on a model's bones will be overwritten by subsequent layers. If instead you wish to blend the animation values of the layers together, you can set the `blend type` of your layers to `Additive` rather than the default `Override`:
+
+![Layer Blend][11]
+
+The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
+```javascript
+var AnimationBlending = pc.createScript('animationBlending');
+
+// initialize code called once per entity
+AnimationBlending.prototype.initialize = function() {
+    this.entity.anim.on('smile_start', function (event) {
+        this.entity.anim.findAnimationLayer('smile').weight = 1;
+    }), this);
+    this.entity.anim.on('smile_end', function (event) {
+        this.entity.anim.findAnimationLayer('smile').weight = 0;
+    }), this);
+};
+```
+
+If you [mask your layers][anim-layer-masking], you can set the `blend type` of your layers to `Additive` to blend in an animation which only controls part of your model's bones. Updating the `blend weight` in real time as described above can allow you to create smooth blends between animations on different layers. This is particularly useful when animation characters that need to carry out different actions using their upper and lower body. For example, you could have a `shooting` animation that is blended in and out on a characters upper body, while freeing up the lower body for various locomotion animations such as `walking` and `running`.
+
+Any layers that are set to `Overwrite` will completely replace the animation values of the model's bones that are animated in that layer. In these instances, previous layers will not be taken into consideration when producing the final animation.
+
 
 [1]: /images/user-manual/anim/state_graph_editor.png
 [2]: /images/user-manual/anim/layers.png
@@ -169,3 +193,5 @@ Tip: Layers animate a model in the order that they’re created in the layers pa
 [8]: /images/user-manual/anim/start_state.png
 [9]: /images/user-manual/anim/any_state.png
 [10]: /images/user-manual/anim/end_state.png
+[11]: /images/user-manual/anim/anim_layer_blend.png
+[anim-layer-masking]: /user-manual/animation/anim-layer-masking

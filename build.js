@@ -52,7 +52,13 @@ handlebars.registerPartial("analytics",
 handlebars.registerPartial("footer",
     fs.readFileSync(path.join(__dirname, "templates/partials/footer.tmpl.html"), "utf-8"));
 
-// handlebars.registerHelper("", function (lang) {
+
+handlebars.registerPartial("shader-editor-navbar",
+    fs.readFileSync(path.join(__dirname, "templates/partials/shader-editor-navbar.tmpl.html"), "utf-8"));
+handlebars.registerPartial("shader-editor-contents",
+    fs.readFileSync(path.join(__dirname, "templates/partials/shader-editor-contents.tmpl.html"), "utf-8"));
+
+    // handlebars.registerHelper("", function (lang) {
 
 handlebars.registerHelper("lang-selector", function (lang) {
     return "{{#if " + lang + "}}";
@@ -127,6 +133,12 @@ m.use(i18n()({
     template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
     contentPath: "content/_usermanual_contents.json",
     partialName: "user-manual-navigation"
+}))
+.use(navbuilder("en")({
+    engine: handlebars,
+    template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+    contentPath: "content/_shadereditor_contents.json",
+    partialName: "shader-editor-navigation"
 }))
 .use(tutorialBuilder("tutorials")())
 .use(templates({
