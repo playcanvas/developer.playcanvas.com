@@ -10,7 +10,7 @@ The Editor API is a beta feature. Please use caution when using on live projects
 
 The Editor has an user accessible API that is currently in beta which can be used to help automate and extend the base functionality.
 
-The API is not yet considered stable and may change in the future as we continue development. However, it is unlikely that API will change a lot from it's current state.
+The API is not yet considered stable and may change in the future as we continue development. However, it is unlikely that API will change a lot from its current state.
 
 Full documentation of the API can be found on [GitHub][github-api].
 
