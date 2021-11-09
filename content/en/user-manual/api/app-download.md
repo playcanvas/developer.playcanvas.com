@@ -17,7 +17,7 @@ This will allow you to download an app which you can self host on your own serve
 ## Example
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"project_id": 9999999, "name": "My App"}' https://playcanvas.com/api/apps/download
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"project_id": 9999999, "scenes": [9999999], "name": "My App"}' https://playcanvas.com/api/apps/download
 ```
 
 ## Parameters
@@ -33,6 +33,7 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 <div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
 <div class="parameter"><span class="param">scripts_minify [optional]</span><p>Boolean. Set it to true if you want scripts to be minified. Defaults to true.</p></div>
 <div class="parameter"><span class="param">optimize_scene_format [optional]</span><p>Boolean. Set it to true if you want scenes to be in an optimized format (see <a href="/user-manual/optimization/optimizing-scene-format">Optimize Scene Format</a> for more information)</p></div>
+<div class="parameter"><span class="param">engine_version [optional]</span><p>String. Set it to a Engine version string (<a href="https://github.com/playcanvas/engine/releases" target="_blank">full list of releases</a>) if a specific version is needed for the app.</p></div>
 </div>
 
 ## Response Schema
@@ -43,21 +44,24 @@ Status: 201 Created
 
 ```none
 {
-    "id": int,
-    "created_at": date,
-    "modified_at": date,
     "status": "running" or "complete" or "error",
     "messages": list of strings,
+    "created_at": date,
+    "modified_at": date,
     "data": {
-      'owner_id': int,
-      'project_id': int,
-      'scenes': list of int scene ids,
-      'name': string,
-      'concatenate': boolean,
-      'minify': boolean,
-      'optimize_scene_format': boolean,
-      'download_url': string
-    }
+        "concatenate": boolean,
+        "branch_id": string,
+        "optimize_scene_format": boolean,
+        "minify": boolean,
+        "name": string,
+        "sourcemaps": boolean,
+        "scenes": list of int scene ids,
+        "engineVersion": string,
+        "preload_bundle": boolean,
+        "project_id": int,
+        "owner_id": int
+    },
+    "id": int
 }
 ```
 
