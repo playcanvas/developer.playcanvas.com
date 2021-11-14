@@ -1,7 +1,7 @@
 ---
 title: Version Control
 template: usermanual-page.tmpl.html
-position: 7.5
+position: 13
 ---
 
 Once you've moved beyond the simplest of projects, you will find that version control becomes an important part of your application development process. Version Control is a catch-all term for a system that performs the following functions

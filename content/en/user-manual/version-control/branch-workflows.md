@@ -1,7 +1,7 @@
 ---
 title: Branch Workflows
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 There are many different ways that you can use branches to suit your project needs. Below we describe a few methods that are commonly used for different types of project.

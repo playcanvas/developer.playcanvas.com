@@ -1,12 +1,12 @@
 ---
-title: Wasm Modules
+title: Wasm Module
 template: usermanual-page.tmpl.html
 position: 17
 ---
 
 Wasm Modules (also known was WebAssembly Modules) contain compiled executable code for the web.
 
-A wasm module comprises three parts:
+A Wasm module comprises three parts:
 * the binary executable file
 * the JavaScript glue code file
 * an optional fallback asm.js
@@ -22,7 +22,7 @@ Once the files have been added to the project, select the Wasm Module to display
 Name must match the module name defined in the glue and fallback script. This name is used to instantiate the module at load time.
 
 ### Glue script
-This is the JavaScript glue code required to execute wasm code.
+This is the JavaScript glue code required to execute Wasm code.
 
 ### Fallback script
 This is the optional fallback asm.js script to use when WebAssembly is not supported.

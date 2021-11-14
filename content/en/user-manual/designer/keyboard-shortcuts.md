@@ -1,7 +1,7 @@
 ---
 title: Keyboard Shortcuts
 template: usermanual-page.tmpl.html
-position: 12
+position: 11
 ---
 
 ## Camera Controls

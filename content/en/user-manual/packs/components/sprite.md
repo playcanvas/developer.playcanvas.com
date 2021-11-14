@@ -1,7 +1,7 @@
 ---
 title: Sprite
 template: usermanual-page.tmpl.html
-position: 19
+position: 20
 ---
 
 The Sprite Component renders and animates [Sprite Assets][1] into the scene.

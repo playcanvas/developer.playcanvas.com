@@ -1,7 +1,7 @@
 ---
 title: Profile
 template: usermanual-page.tmpl.html
-position: 2
+position: 5
 ---
 
 Your profile page is the public place for showing off your PlayCanvas games.

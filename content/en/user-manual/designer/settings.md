@@ -1,7 +1,7 @@
 ---
 title: Settings
 template: usermanual-page.tmpl.html
-position: 8
+position: 7
 ---
 
 The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).

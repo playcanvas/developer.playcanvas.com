@@ -1,7 +1,7 @@
 ---
 title: Scrollbar
 template: usermanual-page.tmpl.html
-position: 16
+position: 17
 ---
 
 The Scrollbar component defines a scrolling control for a [Scrollview][1] component.

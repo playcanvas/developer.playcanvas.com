@@ -1,7 +1,7 @@
 ---
 title: Assets
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 The Assets Panel manages all of the Assets that are available in your project. From here, you can create, upload, delete, inspect and edit any Asset.

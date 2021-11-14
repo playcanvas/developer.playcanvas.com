@@ -1,7 +1,7 @@
 ---
 title: Made with PlayCanvas
 template: usermanual-page.tmpl.html
-position: 1.6
+position: 2
 ---
 
 Below is our showcase video of some of the best WebGL browser games and experiences made with PlayCanvas.

@@ -1,7 +1,7 @@
 ---
 title: Physical Material
 template: usermanual-page.tmpl.html
-position: 7
+position: 1
 ---
 
 The Physical Material represents the most advanced and highest quality shading model available in PlayCanvas. We recommend you use the Physical shading model.

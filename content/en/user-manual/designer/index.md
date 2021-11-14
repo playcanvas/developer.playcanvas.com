@@ -1,7 +1,7 @@
 ---
 title: Editor
 template: usermanual-page.tmpl.html
-position: 4
+position: 8
 ---
 
 The PlayCanvas Editor is a visual editing tool which you use to create and edit the [Scenes][1] and [Entities][2] that make up your game.

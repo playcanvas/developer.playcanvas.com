@@ -1,7 +1,7 @@
 ---
 title: REST API
 template: usermanual-page.tmpl.html
-position: 15
+position: 22
 ---
 
 <div class="alert alert-info">

@@ -1,7 +1,7 @@
 ---
 title: Layers
 template: usermanual-page.tmpl.html
-position: 4.5
+position: 4
 ---
 
 ## Layers Overview

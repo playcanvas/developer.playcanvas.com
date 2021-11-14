@@ -1,7 +1,7 @@
 ---
 title: Your First App
 template: usermanual-page.tmpl.html
-position: 1.8
+position: 4
 ---
 
 Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes learning the basics. We'll recreate the following simple 3D app:

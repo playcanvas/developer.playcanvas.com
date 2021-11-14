@@ -1,7 +1,7 @@
 ---
 title: Scenes
 template: usermanual-page.tmpl.html
-position: 10
+position: 9
 ---
 
 ## Scenes
