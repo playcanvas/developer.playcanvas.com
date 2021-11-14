@@ -1,6 +1,6 @@
 ---
-title: Play a sound
-keywords: component, sound, audio, music, audiosource, audiolistener
+title: 播放声音
+keywords: 组件, 声音, 音频, 音乐, 音频源, 音频侦听器
 ---
 
 ## 如何播放声音？

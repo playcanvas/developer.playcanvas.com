@@ -1,6 +1,6 @@
 ---
-title: Use real-time shadows
-keywords: real-time, shadows, light, realism, pbr
+title: 使用实时阴影
+keywords: 实时, 阴影, 灯光, 真实, pbr
 ---
 
 ## 如何使用实时阴影？

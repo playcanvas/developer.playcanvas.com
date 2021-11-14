@@ -1,6 +1,6 @@
 ---
-title: Create a material
-keywords: asset, material, create, color, surface, normal, specular, reflection, phong, pbr, physical
+title: Создание материала
+keywords: ресурс, материал, создать, цвет, поверхность, нормаль, зеркало, отражение, phong, pbr, физический
 ---
 
 ## Как создать материал?

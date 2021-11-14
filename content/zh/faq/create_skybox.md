@@ -1,6 +1,6 @@
 ---
-title: Create a skybox
-keywords: skybox, cubemap, create, asset, pbr, physical
+title: 创建天空盒
+keywords: 天空盒, cubemap, 创建, 资源, pbr, 物理
 ---
 
 ## 如何创建天空盒？

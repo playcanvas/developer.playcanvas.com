@@ -1,6 +1,6 @@
 ---
-title: Remove a component
-keywords: entity, remove, component, behaviour
+title: コンポーネントを除去
+keywords: エンティティ, 除去, コンポーネント, 挙動
 ---
 
 ## コンポーネントを除去するには？

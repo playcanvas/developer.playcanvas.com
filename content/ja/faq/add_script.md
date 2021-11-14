@@ -7,7 +7,7 @@ keywords: スクリプト, コード, 作成, javascript, 挙動
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif"/>
 
-You can use javascript to control the behavior of entities. Add a script component, and create a new script.
+Javascriptを使用してエンティティの挙動を制御できます。スクリプトコンポーネントを追加して、新しいスクリプトを追加します。
 
 <a class="docs" href="http://developer.playcanvas.com/en/user-manual/scripting/creating-new/" target="_blank">ユーザーマニュアルを参照</a>
 

@@ -1,6 +1,6 @@
 ---
-title: Duplicate an Entity
-keywords: entity, duplicate, copy, paste
+title: 复制实体
+keywords: 实体, 复制, 复制, 粘贴
 ---
 
 ## 如何复制一个实体？

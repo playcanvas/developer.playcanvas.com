@@ -1,6 +1,6 @@
 ---
-title: Render a 3D model
-keywords: component, model, 3d, fbx, mesh
+title: 3Dモデルをレンダリング
+keywords: コンポーネント, モデル, 3d, fbx, メッシュ
 ---
 
 ## 3Dモデルをレンダリングするには？

@@ -1,6 +1,6 @@
 ---
-title: Duplicate an Entity
-keywords: entity, duplicate, copy, paste
+title: Дублирование сущности
+keywords: сущность, дублирование, копировать, вставить
 ---
 
 ## Как дублировать сущность?

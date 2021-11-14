@@ -1,6 +1,6 @@
 ---
-title: Use real-time shadows
-keywords: real-time, shadows, light, realism, pbr
+title: Использование теней в реальном времени
+keywords: real-time, тени, свет, реализм, pbr
 ---
 
 ## Как использовать тени в реальном времени?

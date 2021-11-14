@@ -1,6 +1,6 @@
 ---
-title: Create a new shader
-keywords: asset, shader, create, material
+title: Создание шейдера
+keywords: ресурс, шейдер, создание, материал
 ---
 
 ## Как создать шейдер?

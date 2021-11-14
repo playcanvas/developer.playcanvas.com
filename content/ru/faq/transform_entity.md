@@ -1,6 +1,6 @@
 ---
-title: Move / Rotate / Scale an Entity
-keywords: entity, move, translate, rotate, scale, transform
+title: Перемещение / Вращение / Масштабирование модели
+keywords: сущность, перемещение, движение, вращение, масштабирование, трансформирование
 ---
 
 ## Как переместить / повернуть / масштабировать сущность?

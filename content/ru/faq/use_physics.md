@@ -1,6 +1,6 @@
 ---
-title: Use physics
-keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
+title: Использование физики
+keywords: компонент, физика, столкновения, твердый, тело, гравитация, пуля, триггер
 ---
 
 ## Как использовать физику?

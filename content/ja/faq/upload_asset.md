@@ -1,6 +1,6 @@
 ---
-title: Upload assets
-keywords: asset, new, create, upload
+title: アセットのアップロード
+keywords: アセット, 新規, 作成, アップロード
 ---
 
 ## アセットをアップロードするには？

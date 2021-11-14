@@ -1,6 +1,6 @@
 ---
-title: Delete an asset
-keywords: asset, delete, remove
+title: アセットの削除
+keywords: アセット, 削除, 除去
 ---
 
 ## アセットを削除するには？

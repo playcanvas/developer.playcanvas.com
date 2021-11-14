@@ -1,6 +1,6 @@
 ---
-title: Create a skybox
-keywords: skybox, cubemap, create, asset, pbr, physical
+title: Создание скайбокса
+keywords: скайбокс, кубическая текстура, создание, ресурс, pbr, физический
 ---
 
 ## Как создать скайбокс?
