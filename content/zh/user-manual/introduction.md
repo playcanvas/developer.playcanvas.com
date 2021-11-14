@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: 简介
 template: usermanual-page.tmpl.html
 position: 1
 ---
