@@ -1,7 +1,7 @@
 ---
 title: Batching
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7], [Sprite][9] and [Element][10] components that lets you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.

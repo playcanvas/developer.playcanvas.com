@@ -1,7 +1,7 @@
 ---
 title: Anim Events
 template: usermanual-page.tmpl.html
-position: 4
+position: 5
 ---
 
 Anim events can be used to trigger event listeners during the playback of an animation. Each event is associated with a specified frame of the animation asset it is attached to. When the playback of the animation reaches that frame, the event will fire and the associated event listener is called.

@@ -1,7 +1,7 @@
 ---
 title: ironSource Playable Ad (MRAID)
 template: usermanual-page.tmpl.html
-position: 9
+position: 3
 ---
 
 PlayCanvas supports the ironSource MRAID Playable Ad format and requirements via an [official external tool on GitHub][2].

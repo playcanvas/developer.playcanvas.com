@@ -1,7 +1,7 @@
 ---
 title: FXAA Effect
 template: usermanual-page.tmpl.html
-position: 4
+position: 3
 ---
 
 Fast Approximate Anti-Aliasing (FXAA) is an anti-aliasing algorithm created by NVIDIA. It provides an easy and fast way to add anti-aliasing to your scene.

@@ -1,7 +1,7 @@
 ---
 title: Snapchat Playable Ad
 template: usermanual-page.tmpl.html
-position: 6
+position: 2
 ---
 
 PlayCanvas supports the Snapchat Playable Ad format and requirements via an [official external tool on GitHub][2].

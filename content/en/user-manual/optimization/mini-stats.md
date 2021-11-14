@@ -1,7 +1,7 @@
 ---
 title: Mini Stats
 template: usermanual-page.tmpl.html
-position: 6
+position: 3
 ---
 
 Mini stats is a lightweight graphical display of an application's key performance statistics. It shows draw call count, frame time, CPU load and (where supported) GPU load.

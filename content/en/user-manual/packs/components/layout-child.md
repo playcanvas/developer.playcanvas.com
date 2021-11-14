@@ -1,7 +1,7 @@
 ---
 title: Layout Child
 template: usermanual-page.tmpl.html
-position: 7
+position: 8
 ---
 
 The LayoutChild component enables an element that is controlled by a LayoutGroup component to override the default behavior of the Layout Group.

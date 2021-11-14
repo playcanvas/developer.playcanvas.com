@@ -1,7 +1,7 @@
 ---
 title: Branches - List branches
 template: usermanual-page.tmpl.html
-position: 10.5
+position: 11
 ---
 
 ## Route URL

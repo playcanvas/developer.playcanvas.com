@@ -1,7 +1,7 @@
 ---
 title: Communication
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.

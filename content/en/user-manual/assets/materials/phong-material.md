@@ -1,7 +1,7 @@
 ---
 title: Phong Material
 template: usermanual-page.tmpl.html
-position: 8
+position: 2
 ---
 
 The Phong Material is our legacy shading model. We recommend you use the Physical Shading model unless you have specific reasons not to.

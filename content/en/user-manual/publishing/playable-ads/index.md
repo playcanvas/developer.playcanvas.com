@@ -1,7 +1,7 @@
 ---
 title: Playable Ads
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 We are currently supporting the following playable ad networks:

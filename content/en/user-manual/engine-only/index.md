@@ -1,7 +1,7 @@
 ---
 title: Engine-Only Users
 template: usermanual-page.tmpl.html
-position: 16
+position: 23
 ---
 
 The vast majority of PlayCanvas developers build applications with the Editor. But it is also possible to build applications using just the PlayCanvas Engine, the open source JavaScript runtime which powers all PlayCanvas apps.

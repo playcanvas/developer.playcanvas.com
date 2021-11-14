@@ -1,7 +1,7 @@
 ---
 title: Loading Screen
 template: usermanual-page.tmpl.html
-position: 9
+position: 8
 ---
 
 If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:

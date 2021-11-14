@@ -1,7 +1,7 @@
 ---
 title: Collision
 template: usermanual-page.tmpl.html
-position: 5
+position: 6
 ---
 
 The Collision component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.

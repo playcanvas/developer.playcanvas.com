@@ -1,7 +1,7 @@
 ---
 title: Texture Atlas
 template: usermanual-page.tmpl.html
-position: 14
+position: 16
 ---
 
 ![Texture Atlas][1]

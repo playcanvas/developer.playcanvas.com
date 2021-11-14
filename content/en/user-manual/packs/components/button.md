@@ -1,7 +1,7 @@
 ---
 title: Button
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 The Button Component is a convenient shortcut for creating User Interface buttons for use with [Screen][1] and [Element][2] Components.

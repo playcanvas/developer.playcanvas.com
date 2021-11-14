@@ -1,7 +1,7 @@
 ---
 title: Managing Organizations
 template: usermanual-page.tmpl.html
-position: 3
+position: 2
 ---
 
 ### Permissions

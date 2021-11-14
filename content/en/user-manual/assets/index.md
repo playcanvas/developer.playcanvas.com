@@ -1,7 +1,7 @@
 ---
 title: Assets
 template: usermanual-page.tmpl.html
-position: 6
+position: 10
 ---
 
 Assets are resources that are available to use in your game. Assets can be of various different content types, for example, 3D models or audio files. They come in two different forms: Source and Target.

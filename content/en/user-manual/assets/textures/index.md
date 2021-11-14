@@ -1,7 +1,7 @@
 ---
-title: Textures
+title: Texture
 template: usermanual-page.tmpl.html
-position: 4
+position: 15
 ---
 
 A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.

@@ -1,7 +1,7 @@
 ---
 title: Graphics
 template: usermanual-page.tmpl.html
-position: 8
+position: 14
 ---
 
 PlayCanvas incorporates an advanced graphics engine. Internally it uses the WebGL API to draw graphical primitives to the screen.

@@ -1,7 +1,7 @@
 ---
 title: XR
 template: usermanual-page.tmpl.html
-position: 13
+position: 20
 ---
 
 ![VR View][2]
