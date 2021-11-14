@@ -1,5 +1,5 @@
 ---
-title: Search - PlayCanvas Developer Resources
+title: Поиск - ресурсы разработчика PlayCanvas
 template: search-page.tmpl.html
 ---
 
