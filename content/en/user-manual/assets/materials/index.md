@@ -1,5 +1,5 @@
 ---
-title: Materials
+title: Material
 template: usermanual-page.tmpl.html
 position: 10
 ---

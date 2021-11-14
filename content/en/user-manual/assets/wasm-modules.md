@@ -1,5 +1,5 @@
 ---
-title: Wasm Modules
+title: Wasm Module
 template: usermanual-page.tmpl.html
 position: 17
 ---
