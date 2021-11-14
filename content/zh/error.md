@@ -1,5 +1,5 @@
 ---
-title: 糟糕!
+title: Oh No!
 template: error.tmpl.html
 ---
 

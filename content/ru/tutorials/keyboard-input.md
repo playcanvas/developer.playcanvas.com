@@ -5,7 +5,7 @@ tags: input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
 
 *Click to focus, then press `left arrow`, `right arrow` and `spacebar` to rotate the cube. Press and release the 'a' key to change color.*
 
@@ -75,7 +75,7 @@ KeyboardHandler.prototype.update = function(dt) {
 KeyboardHandler.prototype.onKeyDown = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.redMaterial) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // When the space bar is pressed this scrolls the window.
@@ -89,7 +89,7 @@ KeyboardHandler.prototype.onKeyDown = function (event) {
 KeyboardHandler.prototype.onKeyUp = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.whiteMaterial) {
-        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
 ```
@@ -98,7 +98,7 @@ There are two ways of detecting keyboard input. The first is done in the update 
 
 ## `isPressed` vs `wasPressed`
 
-In the demo above you can see the difference in behaviour between `isPressed()` and `wasPressed()`.
+In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
 
 When you press and hold the left or right arrow keys the cube will rotate by 5&deg;, but it will only rotate once. This is because `wasPressed()` only returns true for the frame immediately after the key was pressed.
 
@@ -125,7 +125,7 @@ Notice we are also passing a third argument to on(), which is `this` or the Scri
 
 ## Key Codes
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.LEFT is the left arrow key.
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
 
 Note, you should always use the enumeration `pc.KEY_*` rather than using numerical values. As the actual value of these constants may change in the future.
 
@@ -134,6 +134,6 @@ Note, you should always use the enumeration `pc.KEY_*` rather than using numeric
 Try it out in full screen [here][2] or at the top of the page. Compare tapping and holding the arrow keys, and tapping and holding the spacebar.
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
-[2]: https://playcanv.as/p/rFZGQWCi
+[2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
 

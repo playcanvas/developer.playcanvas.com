@@ -1,7 +1,7 @@
 ---
-title: 设置
+title: Settings
 template: usermanual-page.tmpl.html
-position: 8
+position: 7
 ---
 
 设置面板可以调整项目的各项参数。点击编辑器左下角的齿轮按钮打开(在[工具栏][1]上)
@@ -35,6 +35,11 @@ position: 8
 #### 本地服务器
 
 这里指向的是代码的加载 URL，如果使用 Launch Local，游戏将从这里加载代码。
+
+#### Locale
+
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## 物理设置
 
@@ -76,14 +81,14 @@ position: 8
 
 #### 色调映射
 
-色调映射是一种压缩高动态范围色彩 (HDR) 至有限动态范围 (显示设备可呈现值) 的处理过程。有两种色调映射的方案。
+Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
-* **线性：** 根据曝光值缩放 HDR 色彩。
-* **胶片：** 更复杂的曲线，在高光位置更加柔和，同时暗部的细节也有更多保留。
+* **Linear:** imply scales HDR colors by exposure.
+* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
-线性色调映射为默认开启，它计算简单 (颜色*曝光)。可以设置曝光值来快速的调节画面明暗。注意这个参数与 Photoshop 的 brightness 并不是一回事，请考虑做为输入的亮度数据可能是大动态范围的。譬如如果我们有一个灯光的强度设定为 8，那么当曝光系数设定为 0.5 时，其亮度仍然达到 4。因此并不会因为调整它而使得画面直接变暗。
+Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
 
-胶片色调映射通常适用于高对比度的环境中，譬如场景由阳光照明或室内场景中有明亮的灯光靠近墙壁或天花板这样的环境。它将会非常流畅的将超高亮度的部分调整到更加感官真实的状态 (我们的眼睛以及银盐胶片也会有色调映射，我们肉眼无法看到物理线性的亮度)。同时，每个摄影师都会告诉你：没人喜欢刺眼的亮斑和死黑的暗部出现在照片里。胶片色调映射能帮你把这些细节去掉。
+Filmic tone mapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tone mapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tone mapping gives you nice abilities to get rid of such spots.
 
 #### 曝光
 
@@ -103,10 +108,10 @@ position: 8
 
 雾有如下的种类：
 
-* None - 没有雾
-* Linear - 雾的浓度会线性增加从雾的开始距离到截止距离
-* Exp - 雾从视野位置开始指数增加
-* Exp2 - 雾从视野位置开始指数平方增加
+* None - Fog is disabled
+* Linear - Fog fades in linearly between a Fog Start and Fog End distance
+* Exp - Fog fades in from the view position according to an exponential function
+* Exp2 - Fog fades in from the view position according to an exponential squared function
 
 #### 颜色
 
@@ -128,16 +133,16 @@ position: 8
 
 控制应用的宽度和高度。可以选择如下的分辨率模式：
 
-* 自动 - 分辨率将会始终和画布保持一致
-* 固定 - 分辨率将会示众固定于 宽度 x 高度 像素
+* Auto - The resolution will always be the same as the canvas size
+* Fixed - The resolution will always be width x height pixels.
 
 #### 填充模式
 
-填充模式将会控制游戏画面随着画布变化的方式，有如下的几种模式：
+Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
 
-* None - 画布将会和分辨率的宽高设定保持一致。
-* Keep aspect Ratio - 画布将会扩展填充窗口以保持正确的宽高比。
-* Fill window - 画布将会拉伸填满整个窗口。
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* Fill window - The canvas will stretch to fill the window completely.
 
 #### 设备像素比例
 
@@ -150,6 +155,10 @@ position: 8
 #### 保持绘图缓冲
 
 在绘制 WebGL 内容时启用缓冲区保护，以方便和 HTML 元素混合呈现。
+
+## Layers
+
+Manage rendering layers and their render order. You can find out more about layers [here][10].
 
 ## 音频
 
@@ -167,9 +176,29 @@ position: 8
 
 允许创建的最大光照图尺寸。
 
+## Batch Groups
+
+Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+
 ## 加载屏幕 (仅用于 ORG 用户)
 
 在这里你可以设定脚本创建独立的加载屏幕。点击 *Create Default* 创建新的加载屏。更相信的信息请阅读加载屏幕的相关文档。[点这里][6]
+
+## External Scripts
+
+Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+
+## Input
+
+Here you can enable or disable various input devices for your application.
+
+## Localization
+
+Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+
+You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
+
+Read more about localization [here][11].
 
 ## 资源任务
 
@@ -180,6 +209,10 @@ position: 8
 #### 纹理POT (二次方)
 
 当贴图上传后导入为最接近的2的整倍数尺寸。
+
+#### Create Atlases
+
+When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
 
 #### 搜索相关资源
 
@@ -205,6 +238,11 @@ position: 8
 [2]: /images/user-manual/cog.jpg
 [3]: /user-manual/assets/cubemaps
 [4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
+[11]: /user-manual/user-interface/localization
 

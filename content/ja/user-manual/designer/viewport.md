@@ -1,5 +1,5 @@
 ---
-title: ビューポート
+title: Viewport
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -12,7 +12,7 @@ position: 4
 
 ## カメラ
 
-エディタは**Perspective（遠近）**カメラを使用するために初期で設定します。このカメラは、シーン内でカメラが浮いているように動作します。カメラのドロップダウンメニューから他のカメラを選択してシーンを閲覧できます。**Orthographic（正射）** カメラ：上, 下, 前, 後ろ, 左, 右。遠近感無しでシーンを見ることができます。位置の微調整に便利です。
+Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras. The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perspective. Useful for fine-tuning positions.
 
 カメラメニューを使用してシーンの如何なるカメラエンティティを選択することができます。ゲーム内のカメラを必要に応じて正確に配置できます。
 

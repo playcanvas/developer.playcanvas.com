@@ -1,6 +1,6 @@
 ---
-title: 创建 shader
-keywords: 资源, shader, 创建, 材质
+title: Create a new shader
+keywords: asset, shader, create, material
 ---
 
 如何创建 shader？

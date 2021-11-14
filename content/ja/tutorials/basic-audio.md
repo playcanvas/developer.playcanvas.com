@@ -1,5 +1,5 @@
 ---
-title: 基本的なオーディオ
+title: Basic Audio
 template: tutorial-page.tmpl.html
 tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
@@ -61,8 +61,8 @@ AttributeEditorでSoundプロパティが表示されるようになります。
 
 各スロットには、異なるスロットから異なるオーディオアセットを再生することができるアセットピッカーがあります。オーディオアセットのアップロード方法の詳細については、[アセットのインポート][4]を参照してください。
 
-<div class="pc-notice-message pc-small">
-    すべてのオーディオフォーマットがすべてのブラウザで対応されている訳ではありません。現時点では、ほとんどのブラウザで対応されているMP3(.mp3)を使用することをお勧めします。
+<div class="alert-info">
+    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
 </div>
 
 アセットをアップロードしたら、Asset Pickerを使用してスロットに対するソースのオーディオアセットを選択してください。
@@ -86,7 +86,7 @@ AttributeEditorでSoundプロパティが表示されるようになります。
 AudioListenerを作成するには、リスナーを代表するエンティティを選択します。多くの場合、これはプレイヤーの頭の位置となる、ゲーム内のカメラになります。今回のケースでは、AudioListenerはロボットに取り付けられています。
 
 <div class="alert-info">
-    一度に使用できるAudioListenerは一つです。最後に作成されたAudioListenerコンポーネントが有効になります。
+    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
 </div>
 
 [1]: /user-manual/packs/components/sound

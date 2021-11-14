@@ -1,5 +1,5 @@
 ---
-title: 基本的な素材
+title: Basic Materials
 template: tutorial-page.tmpl.html
 tags: material
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg

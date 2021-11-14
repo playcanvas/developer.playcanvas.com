@@ -1,5 +1,5 @@
 ---
-title: 菜单和工具栏
+title: Menu and Toolbar
 template: usermanual-page.tmpl.html
 position: 1
 ---

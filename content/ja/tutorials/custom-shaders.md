@@ -1,5 +1,5 @@
 ---
-title: カスタムシェーダー
+title: Custom Shaders
 template: tutorial-page.tmpl.html
 tags: shaders, materials
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
@@ -8,6 +8,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 <iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
 
 *このチュートリアルでは素材にカスタムシェーダを使用してGLSLでdissolveエフェクトを作成します*
+
+Complete project can be found [here][project].
 
 PlayCanvasに3Dモデルをインポートすると、デフォルトで[Physical Material][3]を使用します。これは、多くのレンダリングニーズをカバーすることができる汎用性の高い素材タイプです。
 
@@ -86,7 +88,7 @@ var shaderDefinition = {
 
 頂点シェーダーコードは`vshader`プロパティに文字列として供給され、フラグメントシェーダーは'fshader'プロパティに文字列として供給されます。
 
-上記はdissolve効果を作るために使用されるシェーダの定義です。2つのアセットからシェーダーコードを取得しています。これらのアセットは、[script attributes][2]を使用して供給され、スクリプトから簡単にアセットにアクセス出来るようにします。
+Above is the shader definition used to make the dissolving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
 
 GLSLシェーダーには、属性とは別で、二つの特殊なタイプの変数があります：`varying`と` uniform`
 
@@ -133,8 +135,8 @@ var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ```
 
-このチュートリアルで紹介されているエフェクトは高さマップテクスチャーを使用して行われます。上記のコードを使用してアセットレジストリからテクスチャーにアクセスします。
-スクリプトの先頭で、PlayCanvas Editorからテクスチャーを設定することができる'maps'というスクリプト属性を宣言しています：
+The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
+top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
 
 ```javascript
 CustomShader.attributes.add('vs', {
@@ -220,7 +222,6 @@ CustomShader.prototype.initialize = function() {
     this.time = 0;
 
     var app = this.app;
-    var model = this.entity.model.model;
     var gd = app.graphicsDevice;
 
     var diffuseTexture = this.diffuseMap.resource;
@@ -245,7 +246,7 @@ CustomShader.prototype.initialize = function() {
 
     // Create a new material and set the shader
     this.material = new pc.Material();
-    this.material.setShader(this.shader);
+    this.material.shader = this.shader;
 
     // Set the initial time parameter
     this.material.setParameter('uTime', 0);
@@ -257,7 +258,14 @@ CustomShader.prototype.initialize = function() {
     this.material.setParameter('uHeightMap', heightTexture);
 
     // Replace the material on the model with our new material
-    model.meshInstances[0].material = this.material;
+    var renders = this.entity.findComponents('render');
+
+    for (var i = 0; i < renders.length; ++i) {
+        var meshInstances = renders[i].meshInstances;
+        for (var j = 0; j < meshInstances.length; j++) {
+            meshInstances[j].material = this.material;
+        }
+    }
 };
 
 // update code called every frame
@@ -275,9 +283,10 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-完全なスクリプトです。動作させるためには、頂点シェーダーとフラグメントシェーダーのアセットを作成する必要があります。沢山のメッシュと素材を持つモデルにdissolveエフェクトを適用するシェーダーの実施はリーダーへの課題として残されます。
+Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
 
-[1]: /engine/api/stable/symbols/pc.Shader.html
+[1]: /api/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
+[project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
 

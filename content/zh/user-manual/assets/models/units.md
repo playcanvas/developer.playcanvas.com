@@ -1,5 +1,5 @@
 ---
-title: 单位
+title: Units
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -20,6 +20,6 @@ PlayCanvas 的场景一般将1米作为一个单位。
 
 ![Maya 单位][2]
 
-[1]: /images/user-manual/assets/models/max-units.png
-[2]: /images/user-manual/assets/models/maya-units.png
+[1]: /images/user-manual/assets/models/units/max-units.png
+[2]: /images/user-manual/assets/models/units/maya-units.png
 

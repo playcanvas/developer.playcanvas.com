@@ -1,5 +1,5 @@
 ---
-title: ユーザーマニュアル
+title: User Manual
 template: usermanual-page.tmpl.html
 position: 0.5
 ---

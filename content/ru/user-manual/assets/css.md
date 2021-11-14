@@ -1,7 +1,7 @@
 ---
 title: CSS
 template: usermanual-page.tmpl.html
-position: 11
+position: 6
 ---
 
 CSS ассет содержит CSS код. Вы можете создать новый CSS ассет в редакторе или загрузив .css файл.

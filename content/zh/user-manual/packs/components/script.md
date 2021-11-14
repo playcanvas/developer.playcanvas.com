@@ -1,7 +1,7 @@
 ---
-title: 脚本
+title: Script
 template: usermanual-page.tmpl.html
-position: 9
+position: 16
 ---
 
 脚本组件允许实体运行用户所支持的脚本。在每一帧的基础上当实体被实例化或者更新，用户可以通过JavaScript编程语言编写脚本。

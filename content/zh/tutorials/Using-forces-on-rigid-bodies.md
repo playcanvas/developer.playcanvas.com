@@ -1,17 +1,17 @@
 ---
-title: 力和冲量
+title: Forces and Impulses
 template: tutorial-page.tmpl.html
 tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
+<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
-*使用按键来表示冲量，使用WASD键应用扭矩并旋转立方体。 按住F可应用恒定的向上力以消除重力效应
-*按R重置立方体*
+*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
+*Press R to reset the cube.*
 
-*尝试让立方体平衡在恒定的一个角落并旋转！*
-*使用到的完整代码显示在本页的底部。*
+*Try to get the cube to balance and spin on one of its corners!*
+*The full code used is shown at the bottom of this page.*
 
 在本教程中，我们将向您展示如何使用力来控制动态刚体并生成上述演示的内容。 我们将简要地显示力，冲量，扭矩的使用和刚体组件UI的使用以定制行为。
 
@@ -25,7 +25,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ```
 
-这里，当用户通过 [`applyForce(x, y, z)`][1]按下F键时，沿着全局y轴的力被施加到被访问的实体。 也可以设置力矢量的施加点。 [参见文档] [2]了解更多信息。
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
 
 ### 冲量
 
@@ -35,7 +35,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][3]给出速度的瞬时变化。
+The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][2].
 
 ### 扭矩
 
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][4]施加到实体上。
+[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][3].
 
 ### 扭矩冲量
 
@@ -53,19 +53,19 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][5]来表示。 这在上面的演示的代码中没有被使用。
+Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][4]. This was not used in the code for the above demo.
 
 ## 移动动态刚体
 
 为了移动刚体，使用上述方法应用线性力和旋转力(扭矩)。 通常你应该尽量避免直接修改刚体的位置或速度，因为这将会变得不真实，它可能导致奇怪的效果，特别是当物体之间产生碰撞时。
 
-然而，如果你需要，你可以通过直接赋给`entity.rigidbody.linear Velocity`或`entity.rigidbody.angularVelocity`一个新的'[pc.Vec3] [6]'值来更新速度。
+However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][5]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
 
-有关刚体类型的更多信息，请参见[碰撞体API页面] [8]，[pc命名空间页] [9]，[fps控制器教程] [11]和[碰撞教程] [10]。
+For more information on rigidbody types, see [the collision API page][6], [the pc namespace page][7], [the fps-controller tutorial][8] and [the collision tutorial][9].
 
 ## 常用设置
 
-我们使用聚光灯，立方体(具有模型，刚体，碰撞和脚本组件的实体)和地板(具有模型，刚体和碰撞组件)来设置基本场景。 立方体的刚体设置为动态，而地板的刚体设置为静态。 我们为每个盒子创建了一些材料，并改变漫反射的颜色只是为了更容易在眼睛。 我们还在SpotLight和DynamicBody实体上激活了“投射阴影”选项。 这个PlayCanvas应用程序'usesForces'的完整的场景和代码可以在[这里] [12]找到。
+We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][10].
 
 ## 限制和控制
 
@@ -118,6 +118,10 @@ var DynamicBody = pc.createScript('dynamicBody');
 DynamicBody.prototype.initialize = function() {
     this.torque = 7;
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 DynamicBody.prototype.onKeyDown = function (event) {
@@ -179,16 +183,13 @@ DynamicBody.prototype.reset = function () {
 ```
 
 [1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[7]: /tutorials/beginner/manipulating-entities/
-[6]: /engine/api/stable/symbols/pc.Vec3.html
-[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
-[9]: /engine/api/stable/symbols/pc.html
-[10]: /tutorials/intermediate/collision-and-triggers/
-[11]: /tutorials/advanced/fps-controller/
-[12]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
+[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[5]: /engine/api/stable/symbols/pc.Vec3.html
+[6]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[7]: /engine/api/stable/symbols/pc.html
+[8]: /tutorials/first-person-movement/
+[9]: /tutorials/collision-and-triggers/
+[10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
 

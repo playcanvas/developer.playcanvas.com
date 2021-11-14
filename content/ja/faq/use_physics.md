@@ -1,6 +1,6 @@
 ---
-title: 物理を使用する
-keywords: コンポーネント, 物理, コリジョン, コライダー, リジッド, ボディ, 重力, ammo, トリガー
+title: Use physics
+keywords: component, physics, collision, collider, rigid, body, gravity, ammo, trigger
 ---
 
 ## 物理を使用するには？

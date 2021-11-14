@@ -1,5 +1,5 @@
 ---
-title: ビネットエフェクト
+title: Vignette Effect
 template: usermanual-page.tmpl.html
 position: 6
 ---
@@ -16,8 +16,8 @@ position: 6
 
 ビルドインのビネットエフェクトには次の属性があります：
 
-* **Offset**: エフェクトのオフセットをコントロール。
-* **Darkness**: エフェクトの暗さをコントロール。
+* **Offset**: Controls the offset of the effect.
+* **Darkness**: Controls the darkness of the effect.
 
 [1]: http://en.wikipedia.org/wiki/Vignetting
 

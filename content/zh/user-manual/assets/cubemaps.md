@@ -1,15 +1,15 @@
 ---
-title: 立方体贴图
+title: Cubemap
 template: usermanual-page.tmpl.html
-position: 5
+position: 7
 ---
 
 立方体贴图是一种特殊类型的纹理资源。 立方体贴图由6个纹理资源组成，其中每个纹理表示立方体的一个面， 它们通常有两种用途：
 
-1.立方体贴图可以定义场景的天空盒。 天空盒包含您的场景的遥远视觉的图像，例如山丘，山脉，天空等。
-2.立方贴图可以向其它材料添加反射效果。 想象一下你的场景中有一个光泽的铬球轴承，球表面反映了周围的场景。 对于开放环境，通常将场景中天空的立方体贴图设置为物体材质上立方体贴图的反射内容。
+1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
+2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
-<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
 ## 导入立方体贴图
 
@@ -38,10 +38,10 @@ position: 5
 ![立方体贴图属性][3]
 
 ### Filtering
-此设置确定立方体像素的像素在放大时如何插值。 当纹素到屏幕像素的比率小于1时是放大。此值可以线性调整在视觉上最好的效果。
+This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
-### 各向异性
-各向异性是一个从1和16之间的值，它控制纹理采样的质量，从而让摄像机的视图矢量与纹理表面的排列变得更紧密。
+### Anisotropy
+Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
 
 ## 将纹理分配给立方体贴图
 
@@ -51,9 +51,9 @@ position: 5
 
 立方体贴图的面必须为:
 
-*方形(宽和高的分辨率相同)
-*宽为二的次幂(1x1,2x2,4x4,8x8,16x16,32x32等)
-*所有面都必须具有相同的分辨率
+* Square (the same resolution in width and height)
+* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
+* All faces must be the same resolution
 
 为了辅助你，编辑器试图找出如何智能地自动分配纹理到面中。 当您尝试通过将一个面贴图拖动到面插槽并按照常用的立方体贴图面的命名约定匹配时执行此操作，例如：
 
@@ -70,9 +70,9 @@ position: 5
 * face_posz.jpg
 * face_negz.jpg
 
-## 预过滤立方体贴图
+## Image Based Lighting
 
-立方体贴图检查器有一个Prefilter预过滤按钮，它生成一组低分辨率过滤的纹理，用于物理材质的环境贴图。 预先过滤立方体地图对于使用物理材质至关重要。
+This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
 
 ## 将立方体贴图分配给材质
 
@@ -89,4 +89,5 @@ position: 5
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
 [5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

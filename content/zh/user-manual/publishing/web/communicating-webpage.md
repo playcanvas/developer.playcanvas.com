@@ -1,5 +1,5 @@
 ---
-title: 网页通信
+title: Communication with web pages
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -58,12 +58,12 @@ app.fire("score:set", 10);
 在您的主页中
 
 ```html
-<iframe id="app-frame" src="http://playcanv.as/p/example">
+<iframe id="app-frame" src="https://playcanv.as/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
     score: 10,
-}, "http://playcanv.as");
+}, "https://playcanv.as");
 </script>
 ```
 

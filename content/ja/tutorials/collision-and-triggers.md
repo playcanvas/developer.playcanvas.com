@@ -1,5 +1,5 @@
 ---
-title: 当たり判定とトリガー
+title: Collision and Triggers
 template: tutorial-page.tmpl.html
 tags: collision, physics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
@@ -17,10 +17,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *コリジョン*コンポーネントで最も重要なプロパティは、その**タイプ**です。これは使用する当たり判定の形状を決定します。全部で四種類があります:
 
-* **Box** 箱型の形状です。
-* **Sphere** 球型の形状です。
-* **Capsule** 錠剤のような形をしたカプセル型の形状です。キャラクターのように背が高く細く、かつ尖っていなくて地面に一点で触れているようなものの当たり判定に使われます。
-* **Mesh** 任意形状のメッシュです。**注意** メッシュの当たり判定には制限があります。特に、*rigidbody*と組み合わせて使う場合は、そのrigidbodyは**Static**でなければなりません。
+* **Box** A simple box
+* **Sphere** A simple sphere
+* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
+* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### トリガーボリューム
 
@@ -42,17 +42,17 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 このデモで重要なプロパティは**Type**です。以下の三種類があります。
 
-* **Static** エンティティを固定し、動かなくします。
-* **Dynamic** エンティティは重力と外部から与えられた力に影響されて動くようになります。
-* **Kinematic** エンティティは力に反応しなくなりますが、位置と速度を直接指定して動かすことができるようになります。
+* **Static** this Entity will never move.
+* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
+* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
 ## 地面の設定
 
 チュートリアルのはじめの一歩として、地面となる緑色のブロックを作ります。
 
-![地面をあらわすエンティティ][6]
+<img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-属性パネル内に*model*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
+You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
 ## トリガーの設定
 
@@ -97,7 +97,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 地面は**Static**な剛体として設定します。さらに、落ちてくるオブジェクトを作成し、**Dynamic**として設定します。
 
-![ボックスエンティティ][9]
+<img src="/images/tutorials/collision/box_setup.png" width="300px">
 
 ボックスコンポーネント用の*rigidbody*と*collision*設定を行います。球とカプセルについても同様に設定します。
 
@@ -105,9 +105,9 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 *collision*コンポーネントには三種類のイベントが用意されています。
 
-* **contact** - 二つの剛体が互いに触れている時、すべての接触点について発生ます。
-* **collisionstart** - 二つの剛体が衝突し始めた時に発生します。
-* **collisionend** - 二つの剛体が離れた時に発生します。
+* **contact** - fires for every point of contact when two rigid bodies touch.
+* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
+* **collisionend** - fires when two rigid bodies separate.
 
 **contact**と**collisionstart**の違いはささいなことですが重要なものです。立方体が一定の角度で平面に落ちるとします。立方体の辺が平面に触ったとき、立方体の二つの頂点が同時に平面に当たります。この状態では、三つのイベントが発生します。二つの**contact**イベントがそれぞれの頂点向けに発生し、さらに一つの**collisionstart**イベントが発生します。そして立方体は平面上に静止するまで回転して落ち続けます。その間ずっと平面上と何らかの形で接触し続けるものとします。平面上に静止したとき、頂点が平面に触った時、さらに二つの**contact**イベントが発生します。しかし、立方体は平面に触れ続けているので、**collisionstart**が追加で発生することはありません。
 
@@ -128,7 +128,7 @@ Collider.prototype.onCollisionStart = function (result) {
 };
 ```
 
-```initialize```メソッドでイベントリスナが設定されています。そしてイベントハンドラの中では、衝突した相手のエンティティが**rigidbody**コンポーネントを持っているかを確認し(これはトリガーボリュームに入った際に効果音を鳴らさないためです)、そして"hit"サウンドエフェクトを鳴らします。このようにして、colliderスクリプトを持つエンティティが他の剛体と衝突すると、毎回衝突の効果音を鳴らしています。
+In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now, every time an Entity with the collider script attached collides with another rigid body, it will play the hit sound.
 
 これでPlayCanvasでの当たり判定とトリガーの扱い方の説明を終わります。
 
@@ -136,8 +136,8 @@ Collider.prototype.onCollisionStart = function (result) {
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
+[6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
-[9]: /images/tutorials/collision/box_setup.jpg
+[9]: /images/tutorials/collision/box_setup.png
 

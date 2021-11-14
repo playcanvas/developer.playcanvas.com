@@ -1,6 +1,6 @@
 ---
-title: エンティティを動かす／回転する／スケールする
-keywords: エンティティ, 動かす, 移す, 回転, 尺度, 変換
+title: Move / Rotate / Scale an Entity
+keywords: entity, move, translate, rotate, scale, transform
 ---
 
 ## エンティティを動かす／回転する／スケールするには？

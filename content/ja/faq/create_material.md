@@ -1,6 +1,6 @@
 ---
-title: 素材を作成
-keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュラ, 反射, フォン, pbr, 物理
+title: Create a material
+keywords: asset, material, create, color, surface, normal, specular, reflection, phong, pbr, physical
 ---
 
 ## 素材を作成するには？

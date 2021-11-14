@@ -1,5 +1,5 @@
 ---
-title: カメラ
+title: Cameras
 template: usermanual-page.tmpl.html
 position: 1
 ---

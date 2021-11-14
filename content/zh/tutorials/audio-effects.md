@@ -1,5 +1,5 @@
 ---
-title: 音效
+title: Audio Effects
 template: tutorial-page.tmpl.html
 tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
@@ -17,7 +17,7 @@ PlayCanvas允许您充分利用Web Audio API的强大功能为您的声音添加
 
 ## 设置
 
-你可以自己检查这个场景[这里] [1]。 该场景中的根实体具有[Sound] [2]组件，其具有播放简单循环语音音频样本的功能。 如果你不熟悉Sound Components的工作原理，请务必查看[基本教程] [3]。
+You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Component with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
 
 根实体还有一个具有两个脚本的[Script] [4]组件。 一个脚本负责用户界面，另一个是我们将要关注的脚本：<a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js </a>。
 
@@ -58,7 +58,7 @@ this.entity.sound.slot('speech').clearExternalNodes();
 
 [1]: https://playcanvas.com/editor/scene/440346
 [2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
+[3]: /tutorials/basic-audio/
 [4]: /user-manual/packs/components/script
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode

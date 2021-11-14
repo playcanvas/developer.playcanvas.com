@@ -1,7 +1,7 @@
 ---
-title: スクリプト
+title: Script
 template: usermanual-page.tmpl.html
-position: 9
+position: 16
 ---
 
 スクリプトコンポーネントは、ユーザー提供のスクリプトを実行するエンティティを有効にします。このように、ユーザは、エンティティがインスタンス化され、フレームごとに更新される際に実行されるスクリプト(JavaScript言語を使用)を書くことができます。

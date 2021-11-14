@@ -1,17 +1,17 @@
 ---
-title: ForceとImpulse
+title: Forces and Impulses
 template: tutorial-page.tmpl.html
 tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
+<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
-*インパルスを適用するにはカーソルキーを使用します。トルクを適用してキューブを回転させるには、WASDキーを使用します。Fを長押しすると一定の力を上向きに適用して重力の効果をキャンセルします。*
-* Rキーを押しすとキューブをリセットします。*
+*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
+*Press R to reset the cube.*
 
-*キューブを角で立たせ回転させてみましょう！*
-*使用されている完全なコードはこのページの下部に表示されています。*
+*Try to get the cube to balance and spin on one of its corners!*
+*The full code used is shown at the bottom of this page.*
 
 このチュートリアルでは、力を使用して動的なリジッドボディを制御し、上に示したデモを生成する方法を説明します。力、衝動、トルクの利用とリジッドボディコンポーネントUIを使用して動作をカスタマイズする方法を簡単に説明します。
 
@@ -25,7 +25,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ```
 
-ユーザが[`applyForce(x, y, z)`][1]を通してFキーを押したとき、グローバルy軸に沿った力がアクセスエンティティに適用されます。力ベクトルの適用時点を設定することもできます。詳細は[こちらのドキュメント][2] 。
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
 
 ### 衝動
 
@@ -35,7 +35,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-キューブには[`applyImpulse(x, y, z)`][3]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
+The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][2].
 
 ### トルク
 
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[トルク](https://en.wikipedia.org/wiki/Torque) (回転力) は [`applyTorque(x, y, z)`][4]からエンティティに適用されます。
+[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][3].
 
 ### TorqueImpulses
 
@@ -53,19 +53,19 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][5]を通して適用されます。これは、上記のデモのコードでは使用されていません。
+Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][4]. This was not used in the code for the above demo.
 
 ## 動的なリジッドボディの移動
 
 リジッドボディを移動させるためには、上記の方法でリニア力および回転力(トルク)を適用します。シミュレーションが上書きされ、オブジェクトが衝突する際などに不自然な効果をもたらすことを避けるため、通常はこのようにリジッドボディの位置や速度を直接変更することは避けるべきです。
 
-必要に応じて、新しい'[pc.Vec3][6]'値のセットを`entity.rigidbody.linearVelocity`または`entity.rigidbody.angularVelocity`に直接割り当てることによって、速度を上書きすることができます。
+However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][5]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
 
-リジッドボディタイプに関する商大は[コリジョン API ページ][8],  [pc namespace ページ][9], [fps-コントローラチュートリアル][11], [コリジョンチュートリアル][10]をご確認ください。
+For more information on rigidbody types, see [the collision API page][6], [the pc namespace page][7], [the fps-controller tutorial][8] and [the collision tutorial][9].
 
 ## 一般的な設定
 
-スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][12]。
+We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][10].
 
 ## 制限と制御
 
@@ -118,6 +118,10 @@ var DynamicBody = pc.createScript('dynamicBody');
 DynamicBody.prototype.initialize = function() {
     this.torque = 7;
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 DynamicBody.prototype.onKeyDown = function (event) {
@@ -179,16 +183,13 @@ DynamicBody.prototype.reset = function () {
 ```
 
 [1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[7]: /tutorials/beginner/manipulating-entities/
-[6]: /engine/api/stable/symbols/pc.Vec3.html
-[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
-[9]: /engine/api/stable/symbols/pc.html
-[10]: /tutorials/intermediate/collision-and-triggers/
-[11]: /tutorials/advanced/fps-controller/
-[12]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
+[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[5]: /engine/api/stable/symbols/pc.Vec3.html
+[6]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[7]: /engine/api/stable/symbols/pc.html
+[8]: /tutorials/first-person-movement/
+[9]: /tutorials/collision-and-triggers/
+[10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
 

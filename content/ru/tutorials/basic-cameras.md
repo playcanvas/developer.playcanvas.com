@@ -16,17 +16,17 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 Чтобы создать новую камеру Вы должны добавить [компонент][1] камеры к объекту.
 
-* Выберите корневой объект Вашей сцены в проводнике сущностей
-* Создайте новую сущность выбирая *New Entity* из меню *Entity*
-* Добавьте компонент выбирая  *New Component* из меню *Component*
-* Выберите *Camera* когда Вам будет предложено выбрать, какой тип компонента создать
+* Select the root Entity of your Scene in the Entity Explorer
+* Create a new Entity by selecting *New Entity* from the *Entity* menu.
+* Add a Component by selecting *New Component* from *Component* menu
+* Choose *Camera* when you are prompted to choose which type of Component to create
 
-Как сделать камеру в общем случае: в выпадающем меню выберите *New Entity* -> *New Camera*.
-Это эквивалентно созданию новой сущности и добавления компонента камеры к ней.
+As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
+This is equivalent to creating a new Entity and adding a Camera Component to it.
 
 ## Свойства камеры
 
-Как и все компоненты, компонент камеры имеет набор свойств, которые изменяют её поведение.
+Like all Components, the Camera Component has a set of properties which alter its behavior.
 
 ### `Enabled` (Включено)
 
@@ -72,7 +72,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 ### `Viewport` (порт вида)
 
-Порт вида представляет собой прямоугольную область буфера камеры. Есть 4 значения в следующем формате: Bottom Left X, Bottom Left Y, Width, Height. Эти значения - нормализованные координаты, где буфер отображения, независимо от значений считается для координат X и Y в диапазоне 0..1. Таким образом, чтобы ограничить рендеринг камеры снизу левым квадрантом, установите значения 'viewport' в 0, 0, 0.5, 0.5.
+The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalized coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
 
 [1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png

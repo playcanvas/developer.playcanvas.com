@@ -1,5 +1,5 @@
 ---
-title: 简介
+title: Introduction
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -28,7 +28,7 @@ PlayCanvas编辑器是一个可视化建筑工具，用于构建场景。 使用
 
 ![脚本][6]
 
-使用Web标准Javascript为您的实体附加自定义行为。 在任何规模上添加从简单的点击处理程序或轨道摄像机到完全大规模多玩家在线游戏的交互性。
+Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
 
 ### 发布你的应用
 
@@ -62,31 +62,31 @@ PlayCanvas为您的WebGL应用程序提供即时和无故障托管单击。 我�
 
 PlayCanvas 坚持设计为不需要任何插件在浏览器上原生运行的模式。用户运行时环境为 100% JavaScript 实现，全部通过符合 HTML5 及相关 API (如 WebGL)工作。为什么这样设计如此重要？
 
-* 移动/平板 设备无法提供插件安装的权限，但却在不断完善对 HTML5 规范的支持。
-* 不需要任何的安装和额外加载过程。
-* 运行在标准的[DOM][2]元素中(一个 Canvas 元素)，可以任意和其他页面元素融合并通过 CSS 添加样式
-* 不依赖可能会随着时间变化的第三方部分，仅仅依赖浏览器本身
+* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
+* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
+* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
+* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
 
 在撰写本文时，浏览器的要求如下：
 
 <table class="table table-striped table-bordered">
     <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
-    <tr><td style="text-align:center"><a href="http://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td><td style="text-align:center">11.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">IE</a></td><td style="text-align:center">11.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-gb/windows/microsoft-edge">Edge</a></td><td style="text-align:center">12.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/edge">Edge</a></td><td style="text-align:center">12.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
         <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
     </tr>
 </table>

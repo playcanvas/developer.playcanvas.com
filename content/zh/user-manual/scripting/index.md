@@ -1,12 +1,12 @@
 ---
-title: 脚本
+title: Scripting
 template: usermanual-page.tmpl.html
-position: 7
+position: 11
 ---
 
 用户可以通过脚本进行PlayCanvas应用交互。脚本使用“JavaScript”程序语言设计，应用在项目网页。
 
-用户可以想象一下应用程序被分割成两个独立的代码库。有PlayCanvas所提供的引擎，实现了通用功能譬如图形绘制，输入处理，音频，PlayCanvas工具的接口；应用程序的脚本或者可以显示有效行为的可重复使用块。
+You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviors.
 
 一般来说用户并不需要担心引擎代码，这只是包含在用户应用程序中的一个简单的JavaScript文件。如果用户重写引擎的部份代码将可能能不需要引擎代码引导至脚本。
 
@@ -26,10 +26,10 @@ Rotate.prototype.update = function (dt) {
 
 来让我们开始定义一些新的专业名词。
 
-* ***Script*** 一个脚本就相当于是一个Javascript文件包含了一个或多个脚本对象的定义。
-* ***Script Component*** 脚本组件由PlayCanvas引擎所定义，给予了游戏实体可以加载脚本以及创建脚本对象的功能。
-* ***ScriptType*** 脚本类型作为一个JavaScript对象通过`pc.createScript` 函数所创建。本质上当一个新的类添加到实体时就会被实例化。
-* ***Script Instance*** 一个脚本实例就是一个脚本类型的实例。一个脚本实例被创建用于所有附带脚本类型的脚本组件的实体。
+* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
+* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
+* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
 [1]: /user-manual/packs/components/script/
 

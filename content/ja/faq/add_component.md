@@ -1,5 +1,5 @@
 ---
-title: コンポーネントを追加
+title: Add a component
 keywords: entity, add, component, behaviour
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 标题
+title: Dashboard Header
 template: usermanual-page.tmpl.html
 position: 1
 ---

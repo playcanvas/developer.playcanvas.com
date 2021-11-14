@@ -1,5 +1,5 @@
 ---
-title: 阴影
+title: Shadows
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ PlayCanvas引擎去实现了阴影算法称为阴影贴图。这个是跨平台�
 
 ![Directional Light][5]
 
-默认情况下，在PlayCanvas中阴影效果是关闭的。用户需要手动将它开启。幸运的是，开始阴影是一件极其简便的事情。首先，识别在场景中哪种类型的灯光是可以制造阴影的。在层级树中选择灯光并且在检查器中修改属性。每个灯光都有“Cast Shadows”（制造阴影）属性。点击这个选项将会让灯光在场景中对图形对象造成阴影。
+By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
 ![Model Component][6]
 
@@ -52,7 +52,7 @@ The shadow distance is the distance from the viewpoint beyond which directional 
 
 通过在GPU中生成多次阴影贴图的样本来达到实现柔和阴影。该算法被称为Percentage Closest Filtering或者PCF for short。该算法从阴影中读取9个本地化的样本（3x3矩阵），而不是仅仅只有一个。
 
-阴影样本类型由每个材质所指定，因此用户可以在材质编辑器中找到相对应的选项。
+The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
 
 ##性能方面的考虑
 
@@ -66,7 +66,7 @@ The shadow distance is the distance from the viewpoint beyond which directional 
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
-[4]: /user-manual/graphics/lighting/lightmaps
+[4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
 

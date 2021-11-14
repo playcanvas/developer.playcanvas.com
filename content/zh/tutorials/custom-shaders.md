@@ -1,5 +1,5 @@
 ---
-title: 自定义着色器
+title: Custom Shaders
 template: tutorial-page.tmpl.html
 tags: shaders, materials
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
@@ -8,6 +8,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 <iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
 
 *本教程使用材质上的自定义着色器在GLSL中创建溶解效果*
+
+Complete project can be found [here][project].
 
 默认情况下，当您将3D模型导入PlayCanvas时，它们将默认使用[物理材质] [3]。 这是一种多功能的材料类型，可以覆盖很多渲染需求。
 
@@ -85,7 +87,7 @@ var shaderDefinition = {
 
 顶点着色器代码作为字符串提供在`vshader'属性中，片段着色器作为'fshader'属性中的字符串提供。
 
-上面是用于产生溶解效果的着色器定义。 注意，我们从两个资源中获取着色器代码。 这些资源由[script attributes] [2]提供，这使得从脚本访问资源变得更加容易。
+Above is the shader definition used to make the dissolving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
 
 除了属性，GLSL着色器中还有另外两种特殊类型的变量：`变化` 和`统一`
 
@@ -132,7 +134,8 @@ var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ```
 
-本教程中演示的效果使用高度贴图纹理实现。 我们使用上面的代码从资产注册表访问纹理。 在我们的脚本的顶部，我们已经声明了一个名为“maps”的脚本属性，它允许我们从PlayCanvas编辑器设置一个纹理：
+The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
+top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
 
 ```javascript
 CustomShader.attributes.add('vs', {
@@ -218,7 +221,6 @@ CustomShader.prototype.initialize = function() {
     this.time = 0;
 
     var app = this.app;
-    var model = this.entity.model.model;
     var gd = app.graphicsDevice;
 
     var diffuseTexture = this.diffuseMap.resource;
@@ -243,7 +245,7 @@ CustomShader.prototype.initialize = function() {
 
     // Create a new material and set the shader
     this.material = new pc.Material();
-    this.material.setShader(this.shader);
+    this.material.shader = this.shader;
 
     // Set the initial time parameter
     this.material.setParameter('uTime', 0);
@@ -255,7 +257,14 @@ CustomShader.prototype.initialize = function() {
     this.material.setParameter('uHeightMap', heightTexture);
 
     // Replace the material on the model with our new material
-    model.meshInstances[0].material = this.material;
+    var renders = this.entity.findComponents('render');
+
+    for (var i = 0; i < renders.length; ++i) {
+        var meshInstances = renders[i].meshInstances;
+        for (var j = 0; j < meshInstances.length; j++) {
+            meshInstances[j].material = this.material;
+        }
+    }
 };
 
 // update code called every frame
@@ -273,9 +282,10 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-这是完整的脚本。 记住你需要创建顶点着色器和片段着色器资源，以使它工作。 它留给作为一个练习读者实现一个着色器，对具有许多网格和材质的模型执行这种溶解效果。
+Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
 
-[1]: /engine/api/stable/symbols/pc.Shader.html
+[1]: /api/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
+[project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
 

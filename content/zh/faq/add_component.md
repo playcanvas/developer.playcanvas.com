@@ -1,6 +1,6 @@
 ---
-title: 添加组件
-keywords: 实体, 添加, 组件, 行为
+title: Add a component
+keywords: entity, add, component, behaviour
 ---
 
 ## 如何添加组件？

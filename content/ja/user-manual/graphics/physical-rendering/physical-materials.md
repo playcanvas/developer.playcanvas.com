@@ -1,7 +1,7 @@
 ---
-title: 物理的マテリアル
+title: Physical Materials
 template: usermanual-page.tmpl.html
-position: 2
+position: 1
 ---
 
 物理ベースのレンダリングをPlayCanvasで使うためには、物理的マテリアルをどのように設定するか、そして様々なプロパティを変更することによってどのような効果があるかを理解する必要があります。
@@ -10,16 +10,9 @@ position: 2
 
 ではまず最初に、キューブマップとワークフローについて説明します。
 
-## キューブマップ
+## イメージベースの照明
 
-多くの人はまず最初にエディタでマテリアルを作成した時、なぜ下のサンプルのように見えないのか困惑すると思いますので、まず最初にキューブマップとスカイボックスについて説明します。
-
-**物理的マテリアルをきれいに表示するには、キューブマップが必要です** キューブマップはマテリアルの反射光成分の大きな割合を占める要素として使われます。そのため、マテリアルに直接キューブマップを割り当てるか、あるいはEnvironmentセクションでシーン全体にスカイボックスとしてキューブマップを設定しない場合、マテリアルはきれいに表示されません。
-
-さらに、キューブマップに[HDR][2] (高ダイナミックレンジ) テクスチャを使うことで、よりマテリアルをきれいに表示することができます。
-
-<div class="alert-info">キューブマップを物理的マテリアルに適用するには、**キューブマップを事前にフィルタリングしなければいけないことに注意してください**。キューブマップの素材を設定したら、その真下にある"prefilter"ボタンを必ず押してください。
-</div>
+[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
 
 ## 金属質(metalness)とスペキュラを使った設定法
 
@@ -43,7 +36,7 @@ position: 2
 
 拡散色は**アルベド**や**ベースカラー**と呼ばれることもあります。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ?color"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
 
 インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
 
@@ -51,16 +44,16 @@ position: 2
 
 <table class="centered">
   <tr>
-  <th>素材</th><th>RGB</th>
+  <th>Material</th><th>RGB</th>
   </tr>
   <tr>
-  <td>金</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
   </tr>
   <tr>
-  <td>銀</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
   </tr>
   <tr>
-  <td>銅</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
   </tr>
 </table>
 
@@ -69,18 +62,18 @@ position: 2
 金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
 
 <div class="alert-info">
-金属質の値はほぼいつでも0か1かのいずれかを設定します。この間の値を設定する必要があることはまれです。
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
 </div>
 
 また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ?metal"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
 
 ## 光沢度(Glossiness)
 
 光沢度は**金属質*と**スペキュラ**を使う方法の両方で使われ、マテリアルの表面がどのくらいなめらかかを定義します。光沢度はマテリアルの表面で反射する光がぼやけるか鋭いか、あるいはスペキュラハイライトが広いか狭いかに影響します。光沢度は0から100の間の値か、あるいは光沢度マップとして与えることができます。
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
 
 いくつかの物理ベースレンダリングシステムでは、光沢度という用語の代わりに**粗さ (Roughness)**という用語を使います。粗さは光沢度の反対の意味です。光沢度と粗さを変換する際には、単純にその値を反転してください。
 
@@ -90,13 +83,14 @@ position: 2
 
 物理的マテリアルの仕組みでは、**拡散**、**金属質**、**光沢度**が重要な役割を果たします。下のデモを使って色々な組み合わせを試してみてください。
 
-マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
+There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 
-[1]: http://store.playcanvas.com
-[2]: /user-manual/glossary#hdr
+[1]: https://store.playcanvas.com
+[2]: /user-manual/glossary#high-dynamic-range
 [3]: /images/user-manual/graphics/physical-rendering/metals.jpg
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[5]: https://marmoset.co/posts/pbr-texture-conversion/
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

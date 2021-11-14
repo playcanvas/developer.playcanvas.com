@@ -1,6 +1,6 @@
 ---
-title: 移除组件
-keywords: 实体, 移除, 组件, 行为
+title: Remove a component
+keywords: entity, remove, component, behaviour
 ---
 
 ## 如何移除一个组件？

@@ -1,5 +1,5 @@
 ---
-title: 暗角
+title: Vignette Effect
 template: usermanual-page.tmpl.html
 position: 6
 ---
@@ -16,8 +16,8 @@ position: 6
 
 内置的暗角效果有以下属性:
 
-* **偏移量**: 控制效果的位置偏移。
-* **暗度**: 控制效果的变暗程度。
+* **Offset**: Controls the offset of the effect.
+* **Darkness**: Controls the darkness of the effect.
 
 [1]: http://en.wikipedia.org/wiki/Vignetting
 

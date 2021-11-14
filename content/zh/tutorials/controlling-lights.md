@@ -1,11 +1,11 @@
 ---
-title: 控制灯光
+title: Controlling Lights
 template: tutorial-page.tmpl.html
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/tiKpka9M"></iframe>
+<iframe src="https://playcanv.as/p/tiKpka9M/"></iframe>
 
 *按下1, 2 或 3 来分别使射灯、点光源和直射光启动/关闭。*
 
@@ -20,7 +20,7 @@ if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
 ```
-这段代码设置了实体上的射灯光源组件的开关功能。
+This line toggles on and off the light component of the 'spot' entity.
 
 ```javascript
 this.color1 = new pc.Color(1, 1, 1);
@@ -35,14 +35,14 @@ this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
 ```
-这段代码基于正弦波将值分配给r，g和b变量，然后通过 `color1.set(x, y, z)`将这些值赋给先前声明的颜色数组，然后添加到light属性中。 其强度也被设置为最大光强度值10最小强度为0的正弦变化。
+These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
 
-<div class="alert alert-warning">
-使用 `entity.light.color.r` 来赋值或改变灯光的红色值的做法并不会生效。只有灯光的 `color` 值的改变能被监听到, 因此你必须为要修改的属性分配一个 `pc.Color`的值，比如像是`entity.light.color = new pc.Color(1, 1, 1);`。
+<div class="alert-info">
+    Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
 </div>
 
-##通用设置
-除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问] [2]。
+##General setup
+We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
 
 The full code used for the above PlayCanvas app is as follows.
 ```javascript
@@ -69,13 +69,13 @@ LightHandler.prototype.update = function(dt) {
 
     this.pivot();
 
-    if (app.keyboard.wasPressed(pc.input.KEY_1)) {
+    if (app.keyboard.wasPressed(pc.KEY_1)) {
         this.spot.light.enabled = !this.spot.light.enabled;
     }
-    if (app.keyboard.wasPressed(pc.input.KEY_2)) {
+    if (app.keyboard.wasPressed(pc.KEY_2)) {
         this.point.light.enabled = !this.point.light.enabled;
     }
-    if (app.keyboard.wasPressed(pc.input.KEY_3)) {
+    if (app.keyboard.wasPressed(pc.KEY_3)) {
         this.directional.light.enabled = !this.directional.light.enabled;
     }
 

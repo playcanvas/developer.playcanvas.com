@@ -1,5 +1,5 @@
 ---
-title: プログラムでエンティティを作成
+title: Programmatically Creating Entities
 template: tutorial-page.tmpl.html
 tags: procedural, basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
@@ -12,9 +12,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 ## エンティティの作成
 
 ```js
-var entity = new pc.Entity(); // エンティティを作成
+var entity = new pc.Entity(); // Create an Entity
 
-// エンティティ階層に追加
+// Add it to the Entity hierarchy
 this.app.root.addChild(entity);
 ```
 
@@ -23,18 +23,18 @@ this.app.root.addChild(entity);
 ## コンポーネントの追加
 
 ```javascript
-// 新しいエンティティを作成
+// Create a new Entity
 var entity = new pc.Entity();
 
-// デフォルト値の新しいCamera Componentを追加
+// Add a new Camera Component with default values
 entity.addComponent("camera");
 
-// 新しいModel Componentを追加してエンティティに追加
-entity.addComponent("model", {
+// Add a new Model Component and add it to the Entity.
+entity.addComponent("render", {
     type: 'box',
 });
 
-// エンティティ階層に追加
+// Add it to the Entity hierarchy
 this.app.root.addChild(entity);
 ```
 
@@ -47,10 +47,10 @@ this.app.root.addChild(entity);
 ```javascript
 var entity = new pc.Entity();
 
-// デフォルト値のカメラコンポーネントを添付
+// Attach Camera Component with default values
 entity.addComponent("camera");
 
-// カメラコンポーネントの削除
+// Delete the Camera Component
 entity.removeComponent("camera");
 ```
 
@@ -59,21 +59,21 @@ entity.removeComponent("camera");
 ## エンティティの削除
 
 ```javascript
-// 新しいエンティティを作成
+// Create a new Entity
 var entity = new pc.Entity();
 
-// デフォルト値の新しいCamera Componentを作成
+// Create a new Camera Component with default values
 entity.addComponent("camera");
 
-// 新しいModel Componentを作成してエンティティに追加
-entity.addComponent("model", {
+// Create a new Model Component and add it to the Entity.
+entity.addComponent("render", {
     type: 'box',
 });
 
-// エンティティ階層に追加
+// Add it to the Entity hierarchy
 this.app.root.addChild(entity);
 
-// エンティティを削除して階層から取り除く
+// Delete the Entity and remove it from the hierarchy
 entity.destroy();
 ```
 
@@ -104,26 +104,26 @@ EntityCreator.attributes.add('maxCubes', {
     default: 10
 });
 
-// initializeコードがエンティティ毎に一度のみ呼ばれる
+// initialize code called once per entity
 EntityCreator.prototype.initialize = function() {
     this.entities = [];
 };
 
-// updateコードが毎フレーム呼ばれる
+// update code called every frame
 EntityCreator.prototype.update = function(dt) {
-    // maxCubes以下の場合、新しいキューブをスポーンする
+    // Spawn new cubes if there are less than maxCubes
     while (this.entities.length < this.maxCubes) {
         this.spawnCube();
     }
 
-    // エンティティの中をループして時間切れの際に削除する
+    // Loop through Entities and delete them when their time is up
     for (i = 0; i < this.entities.length; i++) {
         this.entities[i].timer -= dt;
         if (this.entities[i].timer < 0) {
-            // entity.destroy()は全てのコンポーネントを削除してエンティティを階層から取り除く
+            // entity.destroy() deletes all components and removes Entity from the hierarchy
             this.entities[i].entity.destroy();
 
-            // ローカルリストから除外
+            // Remove from the local list
             this.entities.splice(i, 1);
         }
     }
@@ -132,25 +132,25 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // 新しいModel Componentを追加してエンティティに追加
-    entity.addComponent("model", {
+    // Add a new Model Component and add it to the Entity.
+    entity.addComponent("render", {
         type: 'box'
     });
 
-    // 素材を設定
-    entity.model.material = this.material.resource;
+    // set material
+    entity.render.material = this.material.resource;
 
-    // ランダムな位置に移動
+    // Move to a random position
     entity.setLocalPosition(
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions)
     );
 
-    // 階層に追加
+    // Add to the Hierarchy
     this.app.root.addChild(entity);
 
-    // 削除前にランダムな期間、リストに保管
+    // Store in a list for some random duration before deleting
     this.entities.push({
         entity: entity,
         timer: pc.math.random(0, this.lifetime)

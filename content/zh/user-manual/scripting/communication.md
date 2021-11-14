@@ -1,7 +1,7 @@
 ---
-title: 通信
+title: Communication
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 事件是一种有效的方法来进行脚本和脚本之间的通信为了响应某些事件而不用检查每个帧。
@@ -65,12 +65,12 @@ PlayCanvas提供了一个方便而又强大的方法来对实体和实体之间�
 触发 `player:move` 事件。
 
 ```javascript
-var Player = pc.createScript("player");
+var Player = pc.createScript('player');
 
 Player.prototype.update = function (dt) {
     var x = 1;
     var y = 1;
-    this.app.fire("player:move", x, y);
+    this.app.fire('player:move', x, y);
 };
 ```
 
@@ -99,5 +99,5 @@ Display.prototype.initialize = function () {
 
 更多的消息请点击 [API Reference][1]
 
-[1]: http://developer.playcanvas.com/en/api/pc.events.html
+[1]: http://developer.playcanvas.com/en/api/pc.EventHandler.html
 

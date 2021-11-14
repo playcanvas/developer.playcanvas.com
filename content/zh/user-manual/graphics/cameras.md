@@ -1,5 +1,5 @@
 ---
-title: 摄像机
+title: Cameras
 template: usermanual-page.tmpl.html
 position: 1
 ---

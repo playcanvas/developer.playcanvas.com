@@ -1,5 +1,5 @@
 ---
-title: 桌面应用
+title: Desktop
 template: usermanual-page.tmpl.html
 position: 3
 ---

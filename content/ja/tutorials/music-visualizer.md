@@ -1,11 +1,11 @@
 ---
-title:音楽ビジュアライザの作成
+title: Creating a Music Visualizer
 template: tutorial-page.tmpl.html
 tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
 ---
 
-<iframe src="http://playcanv.as/p/BqhCi6oy"></iframe>
+<iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
 
 *[完成されたプロジェクト][1]をフォークして詳細をご確認ください。*
 
@@ -131,7 +131,7 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 
 ## その他のアイディア？
 
-音楽の視覚化の方法を一部紹介させていただきました。音楽に合わせて3Dバーのスケーリングや色や明るさの調整を行うこともできます。SoundCloudにビジュアライザを繋げてユーザに選択させる方法もあります。可能性はたくさんあります。
+This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
 
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext

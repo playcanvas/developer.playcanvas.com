@@ -1,7 +1,7 @@
 ---
-title: 指示板
+title: Dashboard
 template: usermanual-page.tmpl.html
-position: 3
+position: 7
 ---
 
 ![指示板][1]

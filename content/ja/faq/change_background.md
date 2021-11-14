@@ -1,6 +1,6 @@
 ---
-title: 背景の色を変更
-keywords: カメラ, 色, 背景, カラー, 空
+title: Change the background color
+keywords: camera, color, background, colour, sky
 ---
 
 ##背景色を変更するには？

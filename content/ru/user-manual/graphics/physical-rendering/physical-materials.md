@@ -1,7 +1,7 @@
 ---
 title: Physical Materials
 template: usermanual-page.tmpl.html
-position: 2
+position: 1
 ---
 
 To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
@@ -10,16 +10,9 @@ In this section we'll talk about the most useful properties of the material and 
 
 First a note about Cubemaps and Workflows
 
-## Cubemaps
+## Image Based Lighting
 
-First up cubemaps and skyboxes, because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below.
-
-**Physical Materials require a cubemap in order to look great!** Cubemaps are used to create a large portion of the reflected light component of the material. So if you don't have a cubemap either applied directly the material in the Environment section, or applied to the entire scene as a skybox, your materials won't look as good.
-
-In addition, for the best results, the cubemaps should be created from [High Dynamic Range][2] (HDR) textures.
-
-<div class="alert-info">For physical materials to use your cubemap it **must** be prefiltered. Once you have set up your cubemap asset, ensure you press the "prefilter" button just below it.
-</div>
+[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
 
 ## Metalness and Specular Workflow
 
@@ -43,7 +36,7 @@ The Diffuse Color is the base color of the material. This is an RGB color value.
 
 It can also be known as **albedo** or **base color**.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?color"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
 
 You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
@@ -74,13 +67,13 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?metal"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
 
 ## Glossiness
 
 Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ?gloss"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
 
 Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
@@ -90,13 +83,14 @@ Sometimes glossiness and roughness are referred to as the **microsurface** value
 
 These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occulusion, Emissive, Opacity, Normal and Height maps.
+There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
 
-<iframe src="http://playcanv.as/p/Q28EwTwQ"></iframe>
+<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 
-[1]: http://store.playcanvas.com
-[2]: /user-manual/glossary#hdr
+[1]: https://store.playcanvas.com
+[2]: /user-manual/glossary#high-dynamic-range
 [3]: /images/user-manual/graphics/physical-rendering/metals.jpg
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
-[5]: https://www.marmoset.co/toolbag/learn/pbr-conversion
+[5]: https://marmoset.co/posts/pbr-texture-conversion/
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

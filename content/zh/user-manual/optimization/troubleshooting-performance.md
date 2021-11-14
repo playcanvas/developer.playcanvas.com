@@ -1,7 +1,7 @@
 ---
-title: 性能故障排除
+title: Troubleshooting Performance
 template: usermanual-page.tmpl.html
-position: 1
+position: 8
 ---
 
 这里有一些技巧可以帮助你排查常见的性能问题。
@@ -26,9 +26,9 @@ Firefox包含一个黑名单的GPU(图形处理器)和显卡驱动程序，它�
 
 你可以在这里查看黑名单卡片: [https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-## PlayCanvas和其他WebGL应用程序在Windows上使用NVidia显卡的性能不如预期
+## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with Nvidia graphics cards
 
-许多Windows PC包含两个显卡，一个“集成”图形卡，一个低功耗的GPU内置在计算机的主板和一个额外的显卡。 NVidia卡配有一个控制面板，让PC所有者选择使用哪个显卡运行哪个应用程序。 默认情况下，许多PC设置为使用低功耗集成显卡运行Web浏览器，如谷歌浏览器。 为了在WebGL应用程序中获得最佳性能，重要的是确保使用更强大的图形卡加速Web浏览器。
+Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. Nvidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
 
 [1]: http://webglreport.com
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists

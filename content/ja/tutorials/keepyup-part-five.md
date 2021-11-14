@@ -1,11 +1,11 @@
 ---
-title:  シンプルなゲームを作る - その5
+title: Making a Simple Game - Part 5
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 * [完成されたプロジェクトはこちら][9]です。先に[その1][1], [その2][2], [その3][3], [その4][4]を読んでください。*
 
@@ -22,8 +22,8 @@ Keepy Upゲームには次の3つの音声エフェクトがあります：BGM�
 音楽やstingの同様の方法処理されます。主な違いは、音楽はループに設定されていることです。 `game.js`に、音声コンポーネントを持つエンティティにゲームスクリプトをリンクさせるスクリプト属性があるので、単純に正しいスロットを再生・停止することができます。
 
 ```javascript
-this.audio.sound.stop(); // 現在再生している音声を停止
-this.audio.sound.play("gameover") // 'gameover' スロットを再生
+this.audio.sound.stop(); // stop current sound playing
+this.audio.sound.play("gameover") // play the 'gameover' slot
 ```
 
 #### ボールをタップ
@@ -55,11 +55,11 @@ Particle EffectのエディタでLocal Velocityグラフを使用して、パー
 
 [その6][6]に進む。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
-[6]: /tutorials/beginner/keepyup-part-six
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-three/
+[4]: /tutorials/keepyup-part-four/
+[6]: /tutorials/keepyup-part-six/
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
 [9]: https://playcanvas.com/project/406050

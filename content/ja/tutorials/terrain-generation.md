@@ -1,13 +1,13 @@
 ---
-title: ハイトマップから地形生成
-tags: procedural
+title: Terrain Generation from Heightmap
 template: tutorial-page.tmpl.html
+tags: procedural
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
 
-このプロジェクトは[`pc.createMesh`][1] APIを使用して、手順に従い、ハイトマップテクスチャから転がる山腹の生成およびテクスチャ付けします。
+This project uses the [`pc.Mesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
 
 [チュートリアルプロジェクト[2]のEditorからお試しください。
 
@@ -54,15 +54,25 @@ Terrain.attributes.add('material', {
 // initialize code called once per entity
 Terrain.prototype.initialize = function() {
     var img = this.heightMap.resource.getSource();
-    var renderModel = this.createTerrainFromHeightMap(img, this.subdivisions);
-    var collisionModel = this.createTerrainFromHeightMap(img, this.subdivisions / 2);
+    var visualMesh = this.createTerrainFromHeightMap(img, this.subdivisions);
+    var collisionMesh = this.createTerrainFromHeightMap(img, this.subdivisions / 2);
 
-    this.entity.addComponent('model');
-    this.entity.model.model = renderModel;
+    this.entity.addComponent('render', {
+        meshInstances: [new pc.MeshInstance(visualMesh, this.material.resource)]
+    });
 
     this.entity.addComponent('collision', {
         type: 'mesh'
     });
+
+    // We still have to create a model resource to create a runtime
+    // collision mesh
+    var node = new pc.GraphNode();
+    var meshInstance = new pc.MeshInstance(node, collisionMesh, this.material.resource);
+    var collisionModel = new pc.Model();
+    collisionModel.graph = node;
+    collisionModel.meshInstances.push(meshInstance);
+
     this.entity.collision.model = collisionModel;
 
     this.entity.addComponent('rigidbody', {
@@ -142,25 +152,17 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
         bufferHeight: bufferHeight
     });
 
-    var node = new pc.GraphNode();
-    var material = this.material.resource;
+    var mesh = new pc.Mesh(this.app.graphicsDevice);
+    mesh.setPositions(vertexData.positions);
+    mesh.setNormals(vertexData.normals);
+    mesh.setUvs(0, vertexData.uvs);
+    mesh.setIndices(vertexData.indices);
+    mesh.update();
 
-    var mesh = pc.createMesh(this.app.graphicsDevice, vertexData.positions, {
-        normals: vertexData.normals,
-        uvs: vertexData.uvs,
-        indices: vertexData.indices
-    });
-
-    var meshInstance = new pc.MeshInstance(node, mesh, material);
-
-    var model = new pc.Model();
-    model.graph = node;
-    model.meshInstances.push(meshInstance);
-
-    return model;
+    return mesh;
 };
 ```
 
-[1]: http://developer.playcanvas.com/en/api/pc.html#createMesh
+[1]: https://developer.playcanvas.com/en/api/pc.Mesh.html
 [2]: https://playcanvas.com/project/406046
 

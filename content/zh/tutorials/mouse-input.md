@@ -1,15 +1,15 @@
 ---
-title: 基础鼠标输入
+title: Basic Mouse Input
 template: tutorial-page.tmpl.html
 tags: mouse, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/MHIdZgaj?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false"></iframe>
 
 *移动鼠标以移动立方体，按下鼠标按钮更改立方体的颜色*
 
-PlayCanvas引擎中的鼠标处理由`pc.Mouse`对象提供。 Mouse 对象提供了一个简单的用于在鼠标移动或按下鼠标按钮时进行检测的接口。 它还消除了处理鼠标坐标的一些跨浏览器不一致。
+Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistencies with handling mouse co-ordinates.
 
 看看[教学项目] [1]。 下面是来自mouse.js的代码：
 
@@ -60,17 +60,17 @@ Mouse.prototype.onMouseMove = function (event) {
 Mouse.prototype.onMouseDown = function (event) {
     // If the left mouse button is pressed, change the cube color to red
     if (event.button === pc.MOUSEBUTTON_LEFT) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // If the left mouse button is pressed, change the cube color to green
     if (event.button === pc.MOUSEBUTTON_MIDDLE) {
-        this.entity.model.meshInstances[0].material = this.greenMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.greenMaterial.resource;
     }
 
     // If the left mouse button is pressed, change the cube color to blue
     if (event.button === pc.MOUSEBUTTON_RIGHT) {
-        this.entity.model.meshInstances[0].material = this.blueMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
 ```
@@ -104,12 +104,12 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 `pc.Mouse`可用的事件有:
 
-*`pc.EVENT_MOUSEUP` - 当鼠标按钮释放时触发
-*`pc.EVENT_MOUSEDOWN` - 当按下鼠标按钮时触发
-*`pc.EVENT_MOUSEMOVE` - 当鼠标移动时触发
-*`pc.EVENT_MOUSEWHEEL` - 当鼠标滚轮旋转时触发。
+* `pc.EVENT_MOUSEUP` - fires when a mouse button is released
+* `pc.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
+* `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
+* `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
 
-浏览器中的鼠标输入通常通过监听页面中DOM元素的[DOM] [4]事件来实现。 问题是不同的浏览器实现事件的方式和提供的值略有不同。 为了简化您编写的代码，PlayCanvas引擎允许您将事件处理程序绑定到PlayCanvas鼠标处理程序，而不是直接的DOM元素。 当事件触发时，引擎提供一个`pc.MouseEvent`对象，它在所有浏览器中是一致的。 如果你需要使用原始的DOM事件，可以把它作为`pc.MouseEvent`中的`event`属性。
+Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistent across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
 
 ### 移动鼠标
 
@@ -134,5 +134,5 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 [2]: /user-manual/glossary#framework
 [3]: /user-manual/glossary#app
 [4]: /user-manual/glossary#dom
-[5]: https://playcanv.as/p/MHIdZgaj
+[5]: https://playcanv.as/p/MHIdZgaj/
 

@@ -1,10 +1,8 @@
 ---
-title: 画面の読み込み
+title: Loading Screen
 template: usermanual-page.tmpl.html
-position: 9
+position: 8
 ---
-
-<div class="alert alert-info">カスタムの読み込み画面はORGアカウントの機能です</div>
 
 カスタムの読み込み画面を作成するには [Scene Settings][1] に進み、*Loading Screen* セクションの**Create Default**をクリックします。すでに有効な読み込み画面のスクリプトがある場合は、読み込み画面パネルにドラッグ＆ドロップするか、**Select Existing**をクリックします：
 
@@ -21,11 +19,11 @@ pc.script.createLoadingScreen(function (app) {
         document.body.appendChild(splash);
 
         var logo = document.createElement('img');
-        // 自分のロゴで置き換えてください
+        // replace with your logo
         logo.src = 'http://static.playcanvas.com/images/logo/play.png';
         splash.appendChild(logo);
 
-        // 進行バー
+        // progress bar
         var container = document.createElement('div');
         container.id = 'progress-container';
         splash.appendChild(container);

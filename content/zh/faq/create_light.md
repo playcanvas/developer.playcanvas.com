@@ -1,6 +1,6 @@
 ---
-title: 创建灯光
-keywords: 组件, 灯光, 太阳, 阴影, 方向光, 聚光灯, 点光源
+title: Create a light
+keywords: component, light, sun, shadows, directional, spot, point
 ---
 
 ## 如何创建灯光？

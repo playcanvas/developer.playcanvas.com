@@ -1,7 +1,7 @@
 ---
-title: 設定
+title: Settings
 template: usermanual-page.tmpl.html
-position: 8
+position: 7
 ---
 
 設定パネルでは、さまざまなプロパティを設定できます。Editor([ツールバー][1]の)の左下の「cog」ボタンを使用してアクセスします。
@@ -35,6 +35,11 @@ Editorシーンで表示されるグリッドの各部分の分割数とサイ�
 #### ローカルサーバ
 
 これは、Launch Localでアプリケーションを起動した場合、すべてのスクリプトが読み込まれるURLです。
+
+#### Locale
+
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## 物理の設定
 
@@ -76,14 +81,14 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 #### トーンマッピング
 
-トーンマッピングは、ハイダイナミックレンジ(HDR)の色を低ダイナミックレンジ(例：目に見えるモニタ出力値に)に圧縮する方法です。トーンマッピングには2つのオプションがあります。
+Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
-* **Linear：** HDRの色を暴露によってスケーリング。
-* **Filmic：** より複雑な曲線。過度に明るいスポットを軟化させながら、暗い色合いを保つことができる。
+* **Linear:** imply scales HDR colors by exposure.
+* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
 
-リニアトーンマッピングはデフォルトで有効になっていますが、それは単に(色*露出)です。明るさへの迅速な変更を行うために露出を調整することができます。入力はHDRの場合がありますので、Photoshopでの単純な明るさ調整とは異なります。 例：強度= 8のライトソースを使用している場合、暴露=0.5の後はまだかなり明るい(4)です。すべての目に見えるものは直線的にフェードアウトするだけではありません。
+Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
 
-Filmicトーンマッピングは、インテリア内の明るい光が壁/天井の近くに設置されたシーンや、明るい太陽に照らされたシーンなどのように、ハイコントラストな環境で使用するのに適しています。範囲外の非常に明るい値をより知覚的に現実的なもの(私たちの目やフィルムも同様にトーンマッピングを行っています。物理的にリニアな値は見えません)に再マップします。写真家の方に聞いたら分かりますが、非常に明るいスポットや真っ黒い点を写真に残すことは避けるべきです。Filmicトーンマッピングによって、そのようなスポットを取り除くことができます。
+Filmic tone mapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tone mapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tone mapping gives you nice abilities to get rid of such spots.
 
 #### 露出
 
@@ -103,10 +108,10 @@ Filmicトーンマッピングは、インテリア内の明るい光が壁/天�
 
 利用可能なタイプ：
 
-*None - 霧が無効になっています
-*Linear - 霧はFog StartとFog End距離の間で直線的にフェードインします
-*Exp - 霧は指数関数に応じて視点位置からフェードインします
-* Exp2 - 霧は指数乗の関数に応じて視点位置からフェードインします
+* None - Fog is disabled
+* Linear - Fog fades in linearly between a Fog Start and Fog End distance
+* Exp - Fog fades in from the view position according to an exponential function
+* Exp2 - Fog fades in from the view position according to an exponential squared function
 
 #### 色
 
@@ -128,16 +133,16 @@ Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、�
 
 アプリケーションの幅と高さを制御します。また、次のいずれかの値に解像度モードを設定することができます:
 
-* Auto - 解像度は必ずキャンバスと同じサイズになります。
-* Fixed - 解像度は必ず幅 x 高さピクセルになります。
+* Auto - The resolution will always be the same as the canvas size
+* Fixed - The resolution will always be width x height pixels.
 
 #### フィルモード
 
-Fill（塗りつぶし）モードは、キャンバスのサイズ変更挙動を制御します。次のいずれかの値を設定することができます：
+Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
 
-* None - キャンバスは、解像度の幅と高さのサイズになります。
-* Keep aspect Ratio - キャンバスは正しいアスペクト比率を維持しながら、画面の大きさに拡大します。
-* Fill window - キャンバスは画面の大きさまで完全に拡大されます。
+* None - The canvas will be the same size as the resolution width and height.
+* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
+* Fill window - The canvas will stretch to fill the window completely.
 
 #### デバイスピクセルの比率
 
@@ -150,6 +155,10 @@ Fill（塗りつぶし）モードは、キャンバスのサイズ変更挙動�
 #### 描画バッファを保持
 
 WebGLのコンテキストを作成する際にpreserveDrawingBufferオプションを使用します。
+
+## Layers
+
+Manage rendering layers and their render order. You can find out more about layers [here][10].
 
 ## オーディオ
 
@@ -167,9 +176,29 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 
 生成されたライトマップテクスチャで利用可能な最大テクスチャサイズ。
 
+## Batch Groups
+
+Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+
 ロード画面（ORGのユーザーのみ利用可能）
 
 ここでは、アプリケーションの読み込み画面を作成するスクリプトを設定することができます。新しい読み込み画面のスクリプトを作成するには、*Create Default*をクリックします。カスタムの読み込み画面の詳細は[こちら][6]。
+
+## External Scripts
+
+Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+
+## Input
+
+Here you can enable or disable various input devices for your application.
+
+## Localization
+
+Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+
+You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
+
+Read more about localization [here][11].
 
 ## アセットタスク
 
@@ -180,6 +209,10 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 #### テクスチャ POT (power-of-two)
 
 テクスチャをインポートする際、次の2の累乗にリサイズします。
+
+#### Create Atlases
+
+When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
 
 #### 関連アセットを検索
 
@@ -205,6 +238,11 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 [2]: /images/user-manual/cog.jpg
 [3]: /user-manual/assets/cubemaps
 [4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
+[11]: /user-manual/user-interface/localization
 

@@ -5,7 +5,7 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *You can find the [full project here][16]. If you haven't seen [Part 1][1] read it first.*
 
@@ -65,7 +65,7 @@ The backdrop material is much simpler, we have only one texture map.
 
 ![Emissive][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emmissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
 
 In this case, we don't want the background to be lit, it is just a static scene. So we use the emissive map to do that.
 
@@ -79,7 +79,7 @@ The overlay material is even simpler than the backdrop. In this case all we are 
 
 Continue on to [Part 3][15].
 
-[1]: /tutorials/beginner/keepyup-part-one
+[1]: /tutorials/keepyup-part-one/
 [2]: http://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
@@ -93,6 +93,6 @@ Continue on to [Part 3][15].
 [12]: /images/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
-[15]: /tutorials/beginner/keepyup-part-three
+[15]: /tutorials/keepyup-part-three/
 [16]: https://playcanvas.com/project/406050
 

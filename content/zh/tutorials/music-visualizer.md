@@ -1,11 +1,11 @@
 ---
-title: 创建音乐可视化工具
+title: Creating a Music Visualizer
 template: tutorial-page.tmpl.html
 tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
 ---
 
-<iframe src="http://playcanv.as/p/BqhCi6oy"></iframe>
+<iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
 
 *更多的细节可以参考[完整的工程][1]。*
 
@@ -131,7 +131,7 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 
 ## 更多想法?
 
-这只是教你如何将你的音乐可视化的一个尝试。为什么不尝试在音乐播放时缩放3D拉条，改变颜色和亮度?勾选可视化工具，让用户选择云音乐的轨道？有很多的可能性。
+This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
 
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext

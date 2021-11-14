@@ -1,5 +1,5 @@
 ---
-title: ライト Cookie
+title: Light Cookies
 template: tutorial-page.tmpl.html
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
@@ -11,8 +11,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4097
 
 劇場などでは、形状マスクを使用してシーン全体に影を落として、ステージ上で視覚効果を作成するのが一般的です。これらのマスクは、「cucoloris」または「cookie」と呼ばれています。PlayCanvasでWebGLにライトクッキーを作成するには、ライトコンポーネントに適用されるテクスチャやキューブマップを使用します。ライトクッキーはスポットライトやポイントライトに適用可能です。
 
-![グリッド Cookie][2]
-**シンプルなグリッドクッキーは窓のような印象です**
+![Grid Cookie][2]
+**A simple grid cookie gives the impression of a window**
 
 ## Cookie テクスチャ
 

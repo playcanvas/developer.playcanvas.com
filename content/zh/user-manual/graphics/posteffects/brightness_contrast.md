@@ -1,5 +1,5 @@
 ---
-title: 亮度对比度调整
+title: Brightness-Contrast Effect
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ position: 2
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_brightness_contrast.png"></img>
 
-内置的亮度与对比度调整有如下属性:
-* **亮度**: 图片的亮度。 范围从 -1 到 1 (-1 完全变黑, 0 没有变化, 1 纯白色)。
-* **对比度**: 图片的对比度。范围从 -1 到1 (-1 完全的灰色, 0 没有变化, 1 最大对比度)。
+The built-in brightness-contrast effect has the following attributes:
+* **Brightness**: The brightness of the image. Ranges from -1 to 1 (-1 is solid black, 0 no change, 1 solid white).
+* **Contrast**: The contrast of the image. Ranges from -1 to 1 (-1 is solid gray, 0 no change, 1 maximum contrast).
 

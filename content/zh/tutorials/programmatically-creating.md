@@ -1,5 +1,5 @@
 ---
-title: 以编程方式创建实体
+title: Programmatically Creating Entities
 template: tutorial-page.tmpl.html
 tags: procedural, basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
@@ -30,7 +30,7 @@ var entity = new pc.Entity();
 entity.addComponent("camera");
 
 // Add a new Model Component and add it to the Entity.
-entity.addComponent("model", {
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -66,7 +66,7 @@ var entity = new pc.Entity();
 entity.addComponent("camera");
 
 // Create a new Model Component and add it to the Entity.
-entity.addComponent("model", {
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -133,12 +133,12 @@ EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
     // Add a new Model Component and add it to the Entity.
-    entity.addComponent("model", {
+    entity.addComponent("render", {
         type: 'box'
     });
 
     // set material
-    entity.model.material = this.material.resource;
+    entity.render.material = this.material.resource;
 
     // Move to a random position
     entity.setLocalPosition(

@@ -1,6 +1,6 @@
 ---
-title: キューブマップの作成
-keywords: アセット, キューブマップ, 作成, スカイボックス, テクスチャー, pbr, 物理
+title: Create a cubemap
+keywords: asset, cubemap, create, skybox, texture, pbr, physical
 ---
 
 ## キューブマップを作成するには？

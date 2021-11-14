@@ -1,7 +1,7 @@
 ---
 title: Light
 template: usermanual-page.tmpl.html
-position: 5
+position: 10
 ---
 
 The Light component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.
@@ -38,7 +38,7 @@ The Light component can be enabled or disabled using the toggle in the top right
     <tr><td>Shadows</td><td>If checked, the light will cause shadow casting models to cast shadows.</td></tr>
     <tr><td>Update Mode</td><td>Determines when the shadowmap for this light is updated. Can be:
         <ul>
-            <li>Once: generated once and never again. Useful if casters, recievers and light are static.</li>
+            <li>Once: generated once and never again. Useful if casters, receivers and light are static.</li>
             <li>Realtime: updated every frame.</li>
         </ul>
     </td></tr>

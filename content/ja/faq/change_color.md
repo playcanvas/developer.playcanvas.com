@@ -1,6 +1,6 @@
 ---
-title: モデルの色を変更
-keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュラー
+title: Change the color of a model
+keywords: asset, material, create, color, surface, normal, specular
 ---
 
 ## モデルの色を変更するには？

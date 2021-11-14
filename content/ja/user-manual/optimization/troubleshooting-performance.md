@@ -1,7 +1,7 @@
 ---
-title: パフォーマンスのトラブルシューティング
+title: Troubleshooting Performance
 template: usermanual-page.tmpl.html
-position: 1
+position: 8
 ---
 
 一般的なパフォーマンスの問題を解決するためのヒントをいくつか紹介します
@@ -26,9 +26,9 @@ Firefoxには、GPU(グラフィックスプロセッサ)とグラフィック�
 
 ブラックリストに載っているカードはこちらからご確認できます：[https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
 
-## PlayCanvasとその他のWebGLアプリケーションはNVidiaグラフィックスカードを搭載したWindowsで期待どおりに機能しません
+## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with Nvidia graphics cards
 
-多くのWindows PCには、コンピュータのマザーボード上に構築された低消費電力のGPUである「統合型」グラフィックスカードと、追加のグラフィックスカードが含まれています。NVidiaカードにはコントロールパネルがインストールされており、PC所有者はどのアプリケーションを実行するためにどのグラフィックカードを使用するかを選択できます。デフォルトでは、多くのPCが低電力内蔵グラフィックスカードを使用してGoogle ChromeのようなWebブラウザを実行するように設定されています。WebGLアプリケーションから最高のパフォーマンスを引き出すには、より強力なグラフィックスカードを使用してWebブラウザを高速化することが重要です。
+Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. Nvidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
 
 [1]: http://webglreport.com
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists

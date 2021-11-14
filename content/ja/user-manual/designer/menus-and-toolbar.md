@@ -1,5 +1,5 @@
 ---
-title: メニューとツールバー
+title: Menu and Toolbar
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -16,6 +16,6 @@ position: 1
 
 ツールバーには簡単にアクセスできる一般的なコマンドが設置されています。最も便利なのはLaunchボタンです。Launchボタンは別のブラウザタブでゲームインスタンスを開始して、シーンを読み込みます。これで、即時にプレイテストが行えます。Attribute Editorのセクションから、ゲームで実行しているライブインスタンスの値を編集する方法についてご確認ください。
 
-[1]: /images/user-manual/menu.jpg "メニューバーには全てのコマンドが含まれています！"
-[2]: /images/user-manual/toolbar.jpg "ツールバーには便利なコマンドが含まれています！"
+[1]: /images/user-manual/menu.jpg "The menu bar contains all the commands!"
+[2]: /images/user-manual/toolbar.jpg "The toolbar contains useful commands!"
 

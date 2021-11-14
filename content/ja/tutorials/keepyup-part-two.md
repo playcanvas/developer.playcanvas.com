@@ -1,11 +1,11 @@
 ---
-title: シンプルなゲームを作る - その2
+title: Making a Simple Game - Part 2
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *[完成されたプロジェクトはこちら][16]です。先に[その1][1]を読んでください。*
 
@@ -65,7 +65,7 @@ Backdrop素材はより単純です。テキスチャーマップは一つのみ
 
 ![Emissive（発光）][12]
 
-emissiveマップは、表面の色を設定して、まるでその色の光を発光しているかのように見せます。つまり、シーン内の照明はemissiveの表面の明るさに影響を与えません。emissive素材はシーン内の他のオブジェクトには影響しませんが、実際に光は発光されません。
+The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
 
 この場合、静的なシーンなので背景が点灯されないようにします。そのためには、emissiveマップを使用します。
 
@@ -79,7 +79,7 @@ emissiveマップは、表面の色を設定して、まるでその色の光を
 
 [その3][15]に進む。
 
-[1]: /tutorials/beginner/keepyup-part-one
+[1]: /tutorials/keepyup-part-one/
 [2]: http://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
@@ -93,6 +93,6 @@ emissiveマップは、表面の色を設定して、まるでその色の光を
 [12]: /images/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
-[15]: /tutorials/beginner/keepyup-part-three
+[15]: /tutorials/keepyup-part-three/
 [16]: https://playcanvas.com/project/406050
 

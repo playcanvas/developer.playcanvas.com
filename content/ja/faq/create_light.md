@@ -1,6 +1,6 @@
 ---
-title: ライトの作成
-keywords: コンポーネント, ライト, 太陽, 影, 指向性, スポット, ポイント
+title: Create a light
+keywords: component, light, sun, shadows, directional, spot, point
 ---
 
 ## ライトを作成するには？

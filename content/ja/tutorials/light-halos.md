@@ -1,5 +1,5 @@
 ---
-title: ライトハロー
+title: Light Halos
 template: tutorial-page.tmpl.html
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
@@ -46,7 +46,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-次に、ハローは`unidirectional`としてマークされ(露出したスクリプトの属性で)、ハローがカメラに背を向けた際に表示されないように不透明度を変更します。カメラに背を向けるほどより透明なるように、設定します。
+Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowly modify the opacity so that it gets more transparent the more it points away from the camera.
 
 ```javascript
 // If enabled, unidirectional means the glow fades off as it turns away from the camera
@@ -81,10 +81,10 @@ Halo.tmp = new pc.Vec3();
 // initialize code called once per entity
 Halo.prototype.initialize = function() {
     // Get the Entity with the plane model on it
-    this.plane = this.entity.getChildren()[0];
+    this.plane = this.entity.children[0];
 
     // Get the parent entity which is used for direction
-    this.parent = this.entity.getParent();
+    this.parent = this.entity.parent;
 };
 
 // update code called every frame
@@ -94,7 +94,7 @@ Halo.prototype.update = function(dt) {
     // Store the vector the parent is facing (note forwards is negative z)
     tmp.copy(this.parent.forward).scale(-1);
 
-    var meshes = this.plane.model.meshInstances;
+    var meshes = this.plane.render.meshInstances;
 
     if (this.camera) {
 

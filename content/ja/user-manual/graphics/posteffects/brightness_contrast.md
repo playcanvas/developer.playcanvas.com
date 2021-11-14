@@ -1,5 +1,5 @@
 ---
-title: 輝度とコントラストエフェクト
+title: Brightness-Contrast Effect
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ position: 2
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_brightness_contrast.png"></img>
 
-ビルトインの輝度とコントラストエフェクトは以下の様な属性値が設定されています:
-* **輝度**: 画像の輝度です。-1から1の範囲の値をとります。(-1は黒で塗りつぶされた状態、0は変化なし、1は白で塗りつぶされた状態となります)
-* **コントラスト**: 画像のコントラストです。-1から1の範囲の値をとります。(-1は灰色で塗りつぶした状態、0は変化なし、1は最大のコントラストとなります)
+The built-in brightness-contrast effect has the following attributes:
+* **Brightness**: The brightness of the image. Ranges from -1 to 1 (-1 is solid black, 0 no change, 1 solid white).
+* **Contrast**: The contrast of the image. Ranges from -1 to 1 (-1 is solid gray, 0 no change, 1 maximum contrast).
 

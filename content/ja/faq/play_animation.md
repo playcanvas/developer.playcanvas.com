@@ -1,6 +1,6 @@
 ---
-title: アニメーションを再生
-keywords: コンポーネント, アニメーション, モデル, 3d, fbx
+title: Play an animation
+keywords: component, animation, model, 3d, fbx
 ---
 
 ## アニメーションを再生するには？

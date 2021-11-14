@@ -12,7 +12,7 @@ The viewport shows your scene as currently rendered. You can freely move around 
 
 ## Cameras
 
-Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras. The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perpspective. Useful for fine-tuning positions.
+Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras. The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perspective. Useful for fine-tuning positions.
 
 You can also use the camera menu to select any of the camera Entities in your scene. This way you can position your in-game camera exactly as required.
 

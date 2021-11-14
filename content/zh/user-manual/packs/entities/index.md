@@ -1,10 +1,10 @@
 ---
-title: 实体
+title: Entities
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-所有游戏中的对象都是实体，不过从实体的本质来说，它不过只是一个空间中的位置和朝向而已。为了让实体拥有行为，我们必须给它加上组件。PlayCanvas 引擎包含了一系列的内置组件以提供实体行为，如渲染一个3D模型或者播放一段音频等。使用脚本组件运行由 Javascript 写成的行为特征。
+Every object in your game is an Entity, but on its own, an Entity is nothing more than a position and orientation in space. In order to give an Entity a behavior you must add Components. The PlayCanvas Engine contains built-in Components which add lots of useful behavior such as rendering a 3D model or playing audio. Using the Script Component custom behavior can be written in Javascript.
 
 实体使用 PlayCanvas 编辑器编辑。实体层级树显示在层级树面板中。
 

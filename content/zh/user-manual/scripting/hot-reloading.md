@@ -1,7 +1,7 @@
 ---
-title: 热加载
+title: Hot Reloading
 template: usermanual-page.tmpl.html
-position: 6
+position: 7
 ---
 
 当用户对一个复杂的项目进行迭代时，每一次用户更改脚本都需要刷新整个页面。特别是如果当用户正在测试代码时需要比较长的时间去完成，这就是为什么需要用到代码的热加载。
@@ -55,6 +55,6 @@ Rotator.prototype.swap = function (old) {
 };
 ```
 
-尝试更改“update”逻辑并保存代码。启动应用程序将会自动交换脚本实例“rotator”和新的实例，用户的应用程序将会以新的逻辑保持工作。
-“swap”函数在任何情况下都会响应脚本实例的运行状态，如果交换函数因为出错被关闭，这这个过程中将会重新开启。
+Try changing logic within `update` method and save the code. Launched application will automatically swap script instances `rotator` with new ones and your application will keep working with new logic.  
+`swap` method is called regardless of running state of a script instance, so if it was disabled due to an error it can be re-enabled during swap method.
 

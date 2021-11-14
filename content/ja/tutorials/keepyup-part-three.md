@@ -1,11 +1,11 @@
 ---
-title: 制作一个简单的游戏 - Part 2
+title: Making a Simple Game - Part 3
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *[完成されたプロジェクトはこちら][4]です。先に[その1][1]と[その2][2] を読んでください。*
 
@@ -27,7 +27,7 @@ Game.STATE_MENU = 'menu';
 Game.STATE_INGAME = 'ingame';
 Game.STATE_GAMEOVER = 'gameover';
 
-// initializeコードが各エンティティで一度のみ呼ばれる
+// initialize code called once per entity
 Game.prototype.initialize = function() {
     this._state = Game.STATE_MENU;
     this._score = 0;
@@ -36,16 +36,16 @@ Game.prototype.initialize = function() {
 
     window.addEventListener("resize", this.setResolution.bind(this));
 
-    // UIからイベントをリッスン
+    // listen to events from the UI
     this.app.on("ui:start", this.start, this);
     this.app.on("ui:reset", this.reset, this);
 };
 
 Game.prototype.setResolution = function () {
-    // 画面の幅が640未満の場合
-    // 画面全体を埋める
-    // その他の場合
-    // デフォルト設定を使用
+    // if the screen width is less than 640
+    // fill the whole window
+    // otherwise
+    // use the default setting
 
     var w = window.screen.width;
     var h = window.screen.height;
@@ -56,7 +56,7 @@ Game.prototype.setResolution = function () {
     }
 };
 
-// MENUからINGAMEに移行するにはこれを呼ぶ
+// Call this to move from MENU to INGAME
 Game.prototype.start = function () {
     this._state = Game.STATE_INGAME;
     this.app.fire("game:start");
@@ -66,7 +66,7 @@ Game.prototype.start = function () {
     this.audio.sound.play("music");
 };
 
-// INGAMEからGAMEOVERに移行するにはこれを呼ぶ
+// Call this to move from INGAME to GAMEOVER
 Game.prototype.gameOver = function () {
     this._state = Game.STATE_GAMEOVER;
     this.app.fire("game:gameover");
@@ -77,7 +77,7 @@ Game.prototype.gameOver = function () {
     this.audio.sound.play("gameover");
 };
 
-// GAMEOVERからMENUに移行するにはこれを呼ぶ
+// Call this to move from GAMEOVER to MENU
 Game.prototype.reset = function () {
     this.app.fire("game:reset");
     this.resetScore();
@@ -88,18 +88,18 @@ Game.prototype.reset = function () {
     this.audio.sound.stop();
 };
 
-// 現在のスコアを返す
+// return the current score
 Game.prototype.getScore = function () {
     return this._score;
 };
 
-// スコアに値を追加
+// add a value to the score
 Game.prototype.addScore = function (v) {
     this._score += v;
     this.app.fire("game:score", this._score);
 };
 
-// スコアをリセット
+// reset the score
 Game.prototype.resetScore = function () {
     this._score = 0;
     this.app.fire("game:score", this._score);
@@ -130,7 +130,7 @@ this.app.fire("game:start")
 
 ```javascript
 this.app.on("game:start", function () {
-    console.log("game:startイベントが発動");
+    console.log("game:start event was fired");
 }, this)
 ```
 
@@ -155,14 +155,14 @@ Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
 
 Input.worldPos = new pc.Vec3();
 
-// エンティティ毎に一度呼び出されるコードのinitialize
+// initialize code called once per entity
 Input.prototype.initialize = function() {
 
     var self = this;
 
     this._paused = true;
 
-    // 入力に応答するべきか分かるよう、ゲームイベントにリッスンする
+    // Listen for game events so we know whether to respond to input
     this.app.on("game:start", function () {
         self._paused = false;
     });
@@ -170,12 +170,12 @@ Input.prototype.initialize = function() {
         self._paused = true;
     });
 
-    // 可能であればタッチイベントを設定する
+    // set up touch events if available
     if (this.app.touch) {
         this.app.touch.on("touchstart", this._onTouchStart, this);
     }
 
-    // マウスイベントを設定
+    // set up mouse events
     this.app.mouse.on("mousedown", this._onMouseDown, this);
 };
 
@@ -184,16 +184,16 @@ Input.prototype._onTap = function (x, y) {
     var camPos = this.camera.getPosition();
     var worldPos = Input.worldPos;
 
-    // タッチまたはクリックの3Dワールドで位置を取得
-    // worldPos変数で保管。
-    // この位置はボールと同じだけカメラから離れています
+    // Get the position in the 3D world of the touch or click
+    // Store the in worldPos variable.
+    // This position is at the same distance away from the camera as the ball
     this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
-    // ボールへのタッチ／クリックの距離を取得
+    // get the distance of the touch/click to the ball
     var dx = (p.x - worldPos.x);
     var dy = (p.y - worldPos.y);
 
-    // クリックがボールの中の場合、ボールをタップします
+    // If the click is inside the ball, tap the ball
     var lenSqr = dx*dx + dy*dy;
     if (lenSqr < this.ballRadius*this.ballRadius) {
         this.ball.script.ball.tap(dx, dy);
@@ -205,11 +205,11 @@ Input.prototype._onTouchStart = function (e) {
         return;
     }
 
-    // イベントに反応
+    // respond to event
     var touch = e.changedTouches[0];
     this._onTap(touch.x, touch.y);
 
-    // マウスイベントが発動するのも止めます
+    // stop mouse events firing as well
     e.event.preventDefault();
 };
 
@@ -218,7 +218,7 @@ Input.prototype._onMouseDown = function (e) {
         return;
     }
 
-    // イベントに反応
+    // respond to event
     this._onTap(e.x, e.y);
 };
 ```
@@ -243,28 +243,28 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
 具体的には、この関数は画面座標を(x, y)を使用してカメラに要求を出し、画面上のその位置の下に3Dの点が来るよう変換します。これを行うには、この3Dの点の画面からの距離を深さで指定する必要があります。このケースでは、ボールの位置と同じ深さに3Dの点があります。
 
-ベクター`Input.worldPos`も渡します。PlayCanvasアプリケーションでは、更新ループ内で新しいオブジェクトを作成することを回避するべきです。例えば、新しいベクターを作成するために`new pc.Vec3()` を呼び出す場合です。メモリ割り当てが増えると(`new`を呼ぶことで)、割り当てをクリアするためにブラウザはより多くのGarbage Collectionを行う必要があります。Garbage Collectionはオペレーション(比較的遅い)で、頻繁に行うとゲームやアプリケーションの動作に支障をもたらします。
+We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparatively slow) operation and will cause your game or application to stutter if it happens often.
 
 ほとんどの場合、PlayCanvasは事前にオブジェクトの割り当てや再利用ができるようにベクターまたは類似のオプションを渡すオプションを提供します。
 
 ```javascript
-// タッチ／クリックからボールへの距離を取得
+// get the distance of the touch/click to the ball
 var dx = (p.x - worldPos.x);
 var dy = (p.y - worldPos.y);
 
-// クリックがボールの中の場合、ボールをタップ
+// If the click is inside the ball, tap the ball
 var lenSqr = dx*dx + dy*dy;
 if (lenSqr < this.ballRadius*this.ballRadius) {
     this.ball.script.ball.tap(dx, dy);
 }
 ```
 
-タップした位置の3D点を取したら、それがボールと重なっているかどうかをテストします。ここでは、二乗半径を、タップとボールの間の距離の二乗値に対してテストします。これにより、テストするたびに時間のかかる平方根オペレーションを行わずにすみます。
+Once we have the the 3D point where we've just tapped, we test to see if it is overlapping with the ball. You'll see here we are testing the radius squared against the distance between the tap and the ball squared. This prevents us doing a slow Square Root operation every time we test.
 
 タップがボールに当たると、タップが発生した場所のボールからの距離を渡し、ボールスクリプトで`tap(dx, dy)` 関数を呼び出します。これは[パート4][3]で使用します。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
 

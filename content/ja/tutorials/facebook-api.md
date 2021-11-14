@@ -6,7 +6,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 ---
 
 <iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
-*facebookでログインして写真を3D彫刻で表示*
+*Log in with facebook to see your photos in a 3D sculpture*
 
 PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築するために適しています。Facebookはゲームのユーザにアピールする絶好の場所です。一方、PlayCanvasでは、ウェブ用に最適化された高速かつ高性能なゲームを作成することができます。
 
@@ -117,7 +117,7 @@ FbUi.prototype.hideLogout = function () {
 このコードのinitializeステップでは、Facebookプラグインから`fb:init` イベントをリッスンします。これが発信されると、Facebook SDKが読み込まれ、利用可能であることが分かります。三つのFacebook SDK関数を使用しています。`FB.getLoginStatus()`はユーザが既にFacebookにログインしているかどうかをアプリケーションを通して報告します。`FB.login()` はユーザのためのログインダイアログをポップアップ表示します。`FB.logout()`はユーザをアプリケーションとFacebookからログアウトさせます。
 
 <div class="alert alert-info">
-ここで重要なのは`FB.login()` がユーザの動作に対して呼ぶ必要があるということです。例えば、ボタンのクリックなどです。そうしないと警告が表示されます。
+It is important to notice here is that `FB.login()` must be called in response to a user action like clicking on a button, otherwise the user will see a pop-up warning.
 </div>
 
 `loginChangeFn`関数はログイン状態の変更に応答するために使用するコールバックです。四つの表示/非表示関数を使用して、状態に応じて正しいダイアログボックスを表示させます。

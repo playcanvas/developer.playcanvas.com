@@ -1,7 +1,7 @@
 ---
-title: ホットリローディング
+title: Hot Reloading
 template: usermanual-page.tmpl.html
-position: 6
+position: 7
 ---
 
 複雑なプロジェクトで反復する場合、スクリプトに変更を加えるたびにページのリフレッシュを行うのが手間になることがあります。特に、テストしているコードに到達するのに時間が掛かる場合は不便です。このような場合、コードスワップが有用です。
@@ -55,6 +55,6 @@ Rotator.prototype.swap = function (old) {
 };
 ```
 
-`update`メソッド内のロジックを変更してコードを保存します。起動したアプリケーションは、自動的に`スクリプトインスタンス`rotator`を新しいものとスワップして、アプリケーションは新しいロジックを使って動作し続けます。
-`swap`メソッドはスクリプトインスタンスの実行状態にかかわらず呼ばれるので、エラーにより無効にされた場合には、スワップメソッドの間に再び有効にすることができます。
+Try changing logic within `update` method and save the code. Launched application will automatically swap script instances `rotator` with new ones and your application will keep working with new logic.  
+`swap` method is called regardless of running state of a script instance, so if it was disabled due to an error it can be re-enabled during swap method.
 

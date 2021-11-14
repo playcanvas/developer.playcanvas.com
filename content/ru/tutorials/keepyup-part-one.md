@@ -5,7 +5,8 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+
 *You can find the [full project here][3]*
 
 In this series of tutorials we're going to show you how a complete game is made using PlayCanvas. We've made a simple "Keepy Up" game where the object is to click or tap on the soccer ball to keep it in the air.
@@ -51,7 +52,7 @@ The model component is used to attach a 3D model asset to an Entity. When you ha
 
 #### Script Component
 
-The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behaviour of the Entity. We'll go into more detail about the script on the football in Part 3.
+The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behavior of the Entity. We'll go into more detail about the script on the football in Part 3.
 
 ### Background
 
@@ -63,7 +64,7 @@ The Impact Effect Entity is a particle effect that plays when the ball is bounce
 
 ### Audio
 
-The Audio Entity has more sound components attached to it. This Entity is for playing the music and the gameover sound.
+The Audio Entity has more sound components attached to it. This Entity is for playing the music and the game over sound.
 
 ### UI (User Interface)
 
@@ -72,6 +73,6 @@ The UI Entity is the parent of several other Entities, one for each screen that 
 [Part 2][2] covers the main game script.
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[2]: /tutorials/keepyup-part-two/
 [3]: https://playcanvas.com/project/406050
 

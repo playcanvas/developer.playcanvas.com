@@ -1,11 +1,11 @@
 ---
-title: 制作一个简单的游戏 - Part 4
+title: Making a Simple Game - Part 4
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *你可以在这里找到[完整项目] [6]。 如果你没有看过[第1部分] [1]，[第2部分] [2]和[第3部分] [3]请先阅读它们。
 
@@ -167,7 +167,7 @@ Ball.prototype.reset = function () {
 
 首先，它允许您对具有不同值的许多不同实体使用相同的脚本。 例如，您可以具有设置颜色的脚本属性，并且在编辑器中通过修改脚本属性来创建红色，蓝色和绿色版本的实体。
 
-其次，您可以快速轻松地调整脚本的行为。 当您修改脚本属性(或者来自编辑器的任何属性)时，系统会对从编辑器启动的对应游戏实例立即进行更改。 因此举个例子，对我们所定义的 `ballMinimum` 属性，你可以启动游戏，并直接测试 `ballMinimum` 为了达到允许球从屏幕的底部掉落的合适的值，而不必重新加载 游戏。 测试游戏，修改值，测试游戏。
+Second, you can quickly and easily tune the behavior of scripts. When you modify a script attribute (or indeed any property from the editor) the changes are made instantly to any instance of the game that you have launched from the editor. So for example in the case of the `ballMinimum` property we define here, you can launch the game and test what the value of `ballMinimum` should be to allow the ball to drop off the bottom of the screen without ever having to reload the game. Test the game, modify the value, test the game.
 
 这被称为“迭代速度”。 你修改和测试你的游戏的速度越快，你就可以使它越快被开发出来！
 
@@ -183,9 +183,9 @@ Ball.prototype.reset = function () {
 
 您可以通过三种方式之一改变对象的位置。
 
-* **改变加速度**，这对于在一段时间内施加力是有用的，比如球上的重力
-* **更改速度**，这是瞬时变化。 就像一个球撞击地板弹跳
-* **改变位置**，像传送，这并不是一个现实现象的模拟！
+* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
+* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
+* **Change the position**, like teleportation, there isn't a real world equivalent!
 
 在我们的模拟中，由于重力我们的球有一个恒定的加速度，当你点击球时球的速度被进行了瞬间变化，当你重置游戏，我们传送球回到它的起始位置。
 
@@ -226,16 +226,16 @@ this.entity.setLocalPosition(p);
 
 你可能还记得在[第2部分] [2]中的`input.js'脚本检查了一个输入是否已经击中了球，如果击中了，则调用`tap()` 方法。 上面定义的`tap()` 方法直接改变了球的速度和角速度。 我们定义了几个我们的脚本属性`this.speedMult`和`this.angMult`来复制接收新的速度和角速度，以符合我们对游戏效果的期望。
 
-我们还使用tap方法在撞击点触发颗粒尘云并播放声音效果。 我们将在[第4部分] [4]中讨论粒子和声音。
+We also use the tap method to trigger a particle dust cloud at the point of impact and play a sound effect. We'll talk about particle and sounds in [Part 5][4].
 
 ## 小结
 
 球的脚本运行了一些简单的物理模拟效果以使球在重力影响下下坠并响应点击的效果。它还监听游戏事件从而知道何时暂停和重置。 最后，它还与一些其他系统进行交互以显示粒子效果和播放声音。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-three/
+[4]: /tutorials/keepyup-part-five/
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
 

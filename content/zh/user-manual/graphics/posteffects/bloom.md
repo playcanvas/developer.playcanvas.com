@@ -1,5 +1,5 @@
 ---
-title: 屏幕泛花
+title: Bloom Effect
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -14,10 +14,10 @@ position: 1
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_bloom.png"></img>
 
-内置的泛花效果有以下属性:
-* **泛花强度**: 效果的强度
-* **泛花阈值**: 只有亮度超过这个阈值的像素会被处理。范围从0到1。
-* **模糊量**: 控制模糊的程度
+The built-in bloom effect has the following attributes:
+* **Bloom Intensity**: The intensity of the effect
+* **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
+* **Blur Amount**: Controls the amount of blurring.
 
 [1]: http://en.wikipedia.org/wiki/Bloom_(shader_effect)
 

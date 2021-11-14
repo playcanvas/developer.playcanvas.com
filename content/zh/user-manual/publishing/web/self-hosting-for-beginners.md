@@ -1,5 +1,5 @@
 ---
-title: 为初学者打造的自托管系统
+title: Self-hosting for beginners
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -65,7 +65,7 @@ title.innerHTML = "This is the new title";
 
 ## 静态内容
 
-你的web应用中的一部分是非动态并不需要被改变的。举个例子，图片、音频文件，文本文件以及如果是PlayCanvas应用还包括其中的3D模型和贴图文件。你可以认为这有些像是从本地磁盘读取文件，除了通过网络获取的确速度会有点慢这点。提供静态内容由Web服务器来完成，同服务器端的可运行代码非常像，并且某些时候它们会在同一台机器上。因为这部分内容中不会产生交互，这里也就不会对请求的所有部分进行处理。Web服务器会直接把被请求的文件返回。
+Some parts of your web application are not dynamic and do not need to change. For example, images, audio files, text files and in the case of PlayCanvas applications 3D models and textures. You can think of this a bit like loading files of a local disk, except that of course it comes over the internet so it's a bit slower. Serving static content is done by a web server, very much like server-side code and in some cases it will be the same machine. As there is no interactivity, there is no processing done to fulfill the request. The web server just sends back the requested file.
 
 对于静态内容而言最重要的是要确认它被下载到客户端的速度要足够的快。
 

@@ -1,5 +1,5 @@
 ---
-title: 新しいスクリプトの作成
+title: Creating new scripts
 template: usermanual-page.tmpl.html
 position: 1
 ---

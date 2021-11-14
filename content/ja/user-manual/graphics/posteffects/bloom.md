@@ -1,5 +1,5 @@
 ---
-title: ブルームエフェクト
+title: Bloom Effect
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -14,10 +14,10 @@ position: 1
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_bloom.png"></img>
 
-ビルトインのブルームエフェクトは以下のパラメータを持ちます:
-* **Bloom Intensity**: エフェクトの強度
-* **Bloom Threshold**: この閾値より明るいピクセルのみがエフェクトの対象となります。0から1の間の値を取ります。
-* **Blur Amount**: ぼかしの量を設定します。
+The built-in bloom effect has the following attributes:
+* **Bloom Intensity**: The intensity of the effect
+* **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
+* **Blur Amount**: Controls the amount of blurring.
 
 [1]: http://en.wikipedia.org/wiki/Bloom_(shader_effect)
 

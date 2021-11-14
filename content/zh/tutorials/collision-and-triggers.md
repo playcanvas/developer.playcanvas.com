@@ -1,5 +1,5 @@
 ---
-title: 碰撞体和触发器
+title: Collision and Triggers
 template: tutorial-page.tmpl.html
 tags: collision, physics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
@@ -17,11 +17,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 一个*collision* 组建的最重要的属性是它的**Type**，这决决定了将会用到的触发器的形状。这里有四种选项:
 
-* **Box** 一个基本的立方体
-* **Sphere** 一个基本的球体
-* **Capsule** 丸形胶囊。 常用于角色上，因为它可以被定成又高又瘦的形状，并保留一个很好的圆底与单个的接触点。
-* **Mesh** 用任意网格体的形状作为触发器形状。
- **Note** 使用网格碰撞有一些限制，特别是当它与* rigidbody *组件一起使用时，它们必须是** Static **的。
+* **Box** A simple box
+* **Sphere** A simple sphere
+* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
+* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### 触发器
 
@@ -43,17 +42,17 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 对于此案例，最重要的属性是**类型**。 您可以选择以下三个选项之一：
 
-* **静态**这个实体永远不会移动
-* **动态**此实体将在重力和您应用于它的任何其他力量下移动
-* **运动**这个实体不会响应力，但如果你直接设置它的位置或速度会使它移动。
+* **Static** this Entity will never move.
+* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
+* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
 ## 设置背景
 
 在本教程中，我们需要设置的第一个实体是形成地面的绿色块。
 
-![地面实体][6]
+<img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-你可以在属性面板中看到它有* model *，* collision *和* rigidbody *组件。 我们已经增加了Entity和* collision * 的box框属性，使它变得又大又漂亮。 我们还大大提高了摩擦和恢复性能。 这意味着表面比默认值稍微粗糙和凹凸。
+You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
 ## 设置触发器
 
@@ -98,7 +97,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 我们将地面设置为** 静态**的，现在我们将创建下落的对象，并确保它们是**动态**的。
 
-![立方体实体][9]
+<img src="/images/tutorials/collision/box_setup.png" width="300px">
 
 这是立方体的*刚体*组件和*碰撞体*组件，球体和胶囊体的设置方式是同样的。
 
@@ -106,9 +105,9 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 在*碰撞体*组件上有三个事件是被响应的:
 
-* **接触** - 当两个刚体接触时的每帧触发。
-* **碰撞开始** - 当两个刚体刚刚接触时触发。
-* **碰撞结束** - 当两个刚体分开时触发。
+* **contact** - fires for every point of contact when two rigid bodies touch.
+* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
+* **collisionend** - fires when two rigid bodies separate.
 
 **contact** 和 **collisionstart ** 的区别比较微妙但很重要。 想象一个立方体在一个平面上以一个角度着陆。 当立方体的边缘碰到表面时，立方体的两个角将在同一时刻产生撞击。 三个事件将触发，立方体的两个角的**接触**事件，和一个** 碰撞开始**事件。 然后立方体将旋转并继续下降，直到它被摆平，同时保持与表面接触。 当它保持平面状态时，两个**接触**事件将被激发，因为立方体的边缘与表面相接触。 由于立方体此后所有时间内都保持与表面接触，没有更多** collisionstart **事件被触发。
 
@@ -129,7 +128,7 @@ Collider.prototype.onCollisionStart = function (result) {
 };
 ```
 
-在```initialize```方法中，我们设置事件监听器，然后在事件处理程序中检查其他实体是否有一个** rigidbody **组件(这是为了避免在我们进入时播放声音 一个触发音量)，然后我们播放“命中”的声音效果。 所以现在每个具有碰撞脚本附件的实体与另一个刚体碰撞，它都将发出命中的声音。
+In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now, every time an Entity with the collider script attached collides with another rigid body, it will play the hit sound.
 
 这就是在PlayCanvas中处理碰撞和触发的所有步骤。
 
@@ -137,8 +136,8 @@ Collider.prototype.onCollisionStart = function (result) {
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
+[6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
-[9]: /images/tutorials/collision/box_setup.jpg
+[9]: /images/tutorials/collision/box_setup.png
 

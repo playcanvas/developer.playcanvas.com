@@ -1,6 +1,6 @@
 ---
-title: Создание света
-keywords: компонент, свет, солнце, тени, направленный, прожектор, рассеянный
+title: Create a light
+keywords: component, light, sun, shadows, directional, spot, point
 ---
 
 ## Как создать свет?

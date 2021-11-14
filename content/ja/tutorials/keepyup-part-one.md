@@ -1,23 +1,24 @@
 ---
-title: シンプルなゲームを作る - その1
+title: Making a Simple Game - Part 1
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
-*[完成されたプロジェクトはこちら][3]です*
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+
+*You can find the [full project here][3]*
 
 このチュートリアルでは、PlayCanvasを使って一本の完全なゲームを作る流れを説明します。"Keepy Up"という、ボールをタッチかクリックし続けることでボールを滞空させ続けるゲームを作りましたのでそれを、題材として説明します。
 
 以下の項目について説明していきます:
 
-1. **シーンと階層構造**
-1. マテリアルの設定
-1. ゲームスクリプト
-1. ボールの物理シミュレーションと入力
-1. 効果音とエフェクト
-1. ユーザインタフェース
+1. **The Scene and Hierarchy**
+1. Material Setup
+1. The Game Script
+1. Ball Physics and Input
+1. Audio & Effects
+1. User Interface
 
 このチュートリアルは手順を一つ一つ説明するガイドではありません。その代わり、ゲームを構成するすべてのスクリプト要素について、それらがどのように機能するかを説明していきます。チュートリアルを読むにあたって、このゲームプロジェクトをフォークし、自分のアカウント上で見ながら進めることをおすすめします。
 
@@ -51,7 +52,7 @@ Keepy Upのシーンの階層構造には、7つのエンティティが最上�
 
 #### スクリプトコンポーネント
 
-スクリプトコンポーネントを使うと、JavaScriptをエンティティにつけることができます。それぞれのエンティティは、エンティティの動作をカスタマイズできるよう、JavaScriptファイルの中のスクリプトのインスタンスを生成します。スクリプトの詳細についてはチュートリアルのその3で詳しく説明します。
+The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behavior of the Entity. We'll go into more detail about the script on the football in Part 3.
 
 ### Backgroundエンティティ
 
@@ -63,7 +64,7 @@ Impact Effect Entityはボールがバウンスする時に再生されるパー
 
 ### Audioエンティティ
 
-Audioエンティティにはいくつかのサウンドコンポーネントがついています。このエンティティは音楽とゲームオーバー時の効果音を鳴らすためのエンティティです。
+The Audio Entity has more sound components attached to it. This Entity is for playing the music and the game over sound.
 
 ### UI (ユーザインタフェース)
 
@@ -72,6 +73,6 @@ UIエンティティはいくつかのエンティティの親エンティティ
 [チュートリアルその2][2]ではメインのゲームスクリプトについて説明します。
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[2]: /tutorials/keepyup-part-two/
 [3]: https://playcanvas.com/project/406050
 

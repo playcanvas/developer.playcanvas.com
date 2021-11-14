@@ -1,7 +1,7 @@
 ---
-title: 分析器
+title: Profiler
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 PlayCanvas提供了一个协助诊断性能问题的实时分析器。
@@ -26,11 +26,9 @@ PlayCanvas提供了一个协助诊断性能问题的实时分析器。
 
 右侧面板是分析器的时间线。这显示了用户app运行期间关键事件的数量：
 
-* **dom** (DOM interactive)：当浏览器停止解析html文档时的事件，将允许渲染页面的第一帧到屏幕上。
+* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
 * **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
-* **preload**: 当PlayCanvas初始化所有组件的预加载时所要求的事件。
 * **start**: event when PlayCanvas begins the main application loop and rendering begins.
-* **start**: 当PlayCanvas开始主要应用程序循环和渲染的事件。
 
 绿色横杠显示了单独的异步资源加载。橙色横杠为阻断着色器的事件。
 

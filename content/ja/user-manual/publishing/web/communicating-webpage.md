@@ -1,5 +1,5 @@
 ---
-title: ウェブページとの通信
+title: Communication with web pages
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -58,25 +58,25 @@ iframe内にPlayCanvasアプリケーションを埋め込むのは、PlayCanvas
 ホストページにて
 
 ```html
-<iframe id="app-frame" src="http://playcanv.as/p/example">
+<iframe id="app-frame" src="https://playcanv.as/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
     score: 10,
-}, "http://playcanv.as");
+}, "https://playcanv.as");
 </script>
 ```
 
-アプリケーションで
+In your application
 ```javascript
 window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // メッセージが自身のウェブサイトから来ていることを必ず確認してください
+    if (event.origin === "http://example.com") { // always check message came from your website
         var score = event.data.score;
 
-        // APIメソッド１を呼ぶ:
+        // call API method one:
         window.setScore(score);
 
-        // APIメソッド２を呼ぶ:
+        // call API method two:
         var app = pc.Application.getApplication();
         app.fire("score:set", score);
     }
@@ -94,7 +94,7 @@ window.addEventListener("message", function (event) {
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>アプリケーションタイトル</title>
+    <title>Application Title</title>
     <script src="playcanvas-stable.min.js"></script>
     <script>
         SCENE_PATH = "12346.json";
@@ -142,10 +142,10 @@ window.addEventListener("message", function (event) {
     <script>
     var app = pc.Application.getApplication();
     app.on("start", function () {
-        // シーンのルートを取得
+        // get the root of the scene.
         var hierarchy = app.root.getChildren()[0];
 
-        // 他はここで行う
+        // do other stuff here
     });
     </script>
 </body>

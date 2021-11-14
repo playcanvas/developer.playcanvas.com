@@ -1,20 +1,20 @@
 ---
-title: その他のカメラ
+title: More Cameras
 template: tutorial-page.tmpl.html
 tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>
+<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
 
 *クリックでフォーカス、`space`でズームイン及びアウト、`左arrow`と `右arrow`で左右のカメラに切り替えるます*
 
-[基本的なカメラ] [1]チュートリアルでは、カメラのエンティティを作成してシーンに追加する手順を説明します。単一の静止カメラの場合、スクリプトは必要ありません。しかし、より動的でインタラクティブなカメラやより高度な利用のためには、スクリプトコンポーネントを追加してカメラの動作を自分でプログラムする必要があります。
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behavior yourself.
 
 ## 属性の変更
 
-実行時にカメラを変更する最初の方法は、カメラのコンポーネントの属性の値を変更することです。これは他のコンポーネントの属性を設定するのと同じように
-ComponentSystemの`set()` と `get()`メソッドを使用して行います。
+The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
+methods on the ComponentSystem.
 
 ```javascript
 var Zoom = pc.createScript('zoom');
@@ -58,12 +58,12 @@ Zoom.prototype.update = function(dt) {
 
 `this.app.keyboard.wasPressed()`でキー入力を検出し、ターゲットFOVの値を切り替えます。
 
-ネストされた最後の二つの`if(){}`コンストラクトで徐々にfov値を変更してズームイン／ズームアウト効果を作成します。
+With the final two nested `if(){}` constructs we gradually change the fov values to create the zoom in/ zoom out effect.
 
 新しい行`this.entity.camera.fov= fov`でfovカメラ属性を新しい値に `set()`します。
 
-ズームアウトされている時、上部と下部のキューブが画面の端にあります。これは[PlayCanvas Editorシーン][3]でカメラ[視野円錐][2]の上下端の横にキューブが
-置かれている位置と一致しています。
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
+top and bottom sides of the camera [frustum][2]
 
 ## 現在のカメラ
 
@@ -75,7 +75,11 @@ var CameraManager = pc.createScript('cameraManager');
 // initialize code called once per entity
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
-    this.app.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -96,11 +100,11 @@ CameraManager.prototype.setCamera = function (cameraName) {
 CameraManager.prototype.update = function(dt) {
     var app = this.app;
 
-    if (app.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+    if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
         this.setCamera('Center');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
         this.setCamera('Left');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
         this.setCamera('Right');
     }
 };
@@ -114,7 +118,7 @@ CameraManager.prototype.update = function(dt) {
 
 次に、キーをループして、そのうちの一つが押されるとエンティティを名前から探し、以前にスクリプトで定義した、現在のアクティブなカメラを無効にして有効にする次のカメラを探す`setCamera()` 関数を使用して現在のカメラに設定します。
 
-[1]: /tutorials/beginner/basic-cameras/
+[1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
 

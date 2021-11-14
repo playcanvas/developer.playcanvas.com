@@ -17,7 +17,7 @@ PlayCanvas allows you to fully leverage the power of the Web Audio API to add po
 
 ## The setup
 
-You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Componenent with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
+You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Component with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
 
 The Root Entity also has a [Script][4] Component with two scripts. One script is responsible for the user interface and the other is the script we're going to focus on: <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>.
 
@@ -58,7 +58,7 @@ You can find out more about the Sound Component API [here][8].
 
 [1]: https://playcanvas.com/editor/scene/440346
 [2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
+[3]: /tutorials/basic-audio/
 [4]: /user-manual/packs/components/script
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode

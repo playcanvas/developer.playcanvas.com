@@ -1,15 +1,17 @@
 ---
-title: 基础键盘输入
+title: Basic Keyboard Input
 template: tutorial-page.tmpl.html
 tags: input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
 
 *点击以聚焦, 然后按下 `左箭头`, `右箭头` 以及`空格键` 来旋转方块。 按下或抬起按键 'a' 来改变颜色。*
 
-PlayCanvas引擎中的键盘处理由`pc.Keyboard`对象提供。Keyboard 为常见的键盘操作，比如检查键是被敲击还是按住，提供了一个简单的接口。它还消除了处理关键代码和字符码的各种跨浏览器问题。
+Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
+for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
+handling keycodes and charcodes.
 
 在[教程项目][1]中看一看键盘输入场景。以下是该教程所用的代码:
 
@@ -73,7 +75,7 @@ KeyboardHandler.prototype.update = function(dt) {
 KeyboardHandler.prototype.onKeyDown = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.redMaterial) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // When the space bar is pressed this scrolls the window.
@@ -87,7 +89,7 @@ KeyboardHandler.prototype.onKeyDown = function (event) {
 KeyboardHandler.prototype.onKeyUp = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.whiteMaterial) {
-        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
 ```
@@ -96,7 +98,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## `isPressed` 与 `wasPressed`
 
-在下方的案例中你可以看到`isPressed()` 与 `wasPressed()`的表现的不同处。
+In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
 
 当你按下并保持按住左箭头或右箭头按键时，方块会旋转5&deg;。这是因为`wasPressed()` 只在键被按下后立即返回true。
 
@@ -123,7 +125,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## 键盘编码
 
-分辨哪一个键被按下时就要使用按键编码。它们是与键盘上的键所匹配的数值。 例如，pc.KEY_A是`A`键，pc.LEFT是左箭头键。
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
 
 注意，你应该总是使用枚举`pc.KEY_ *`，而不是使用数值。 因为这些常数的实际值可能会在将来进行更改。
 
@@ -132,6 +134,6 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 在[这里] [2]进行全屏尝试或在页面顶部尝试。 比较轻敲并按住箭头键，然后点击并按住空格键。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
-[2]: https://playcanv.as/p/rFZGQWCi
+[2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
 

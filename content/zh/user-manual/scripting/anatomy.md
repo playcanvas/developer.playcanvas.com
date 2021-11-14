@@ -1,5 +1,5 @@
 ---
-title: 脚本解析
+title: Anatomy of a script
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -42,7 +42,7 @@ Rotate.prototype.swap = function(old) {
 var Rotate = pc.createScript('rotate');
 ```
 
-这行代码创建了一个新的脚本类型名为“rotate”。脚本的名称用以识别在脚本组件中各个脚本。在程序中每个脚本类型都必须有它们专属的名称。返回函数“Rotate”是一个将已有属性进行扩展的Javascript函数。类似于类继承。
+This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
 
 ## 脚本特性
 
@@ -50,8 +50,8 @@ var Rotate = pc.createScript('rotate');
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-这行代码定义了脚本的属性。脚本属性是一个脚本实例的特性用户可以在编辑器UI中找到这个。允许用户在 编辑器中对单个实体进行自定义。在上面代码的情况中，属性称之为“speed”在代码中也可以使用“this.speed”。默认数字为“10”。
-属性在代码热交换过程中自动继承到新的脚本实例。
+This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
+Attributes are automatically inherited to new script instance during code hot-swap.
 
 ## 初始化
 
@@ -63,7 +63,7 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
-当脚本附加实体时候，初始化函数被调用。在应用程序加载之后初始化函数将会被响应，但在第一次上传循环或者帧渲染之前实体层次结构已被构造。初始化函数将仅仅只会对每个实体响应一次。用户可以使用初始化函数定义或者初始化脚本实例的数字变量。当应用程序开始如果一个实体或者脚本被关闭，初始化函数被响应，在第一时间实体将会被开启。
+The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only ever called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
 
 当使用 `entity.clone` 克隆一个实体时，只有克隆实体被添加到场景层次结构并且实体和脚本都是启用状态时，才会调用脚本上的“初始化”方法。
 

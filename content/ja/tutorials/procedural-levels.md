@@ -1,5 +1,5 @@
 ---
-title: プロシージャルレベル
+title: Procedural Levels
 template: tutorial-page.tmpl.html
 tags: procedural
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg
@@ -17,39 +17,39 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
-type: 'number',
-default: 10
+    type: 'number',
+    default: 10
 });
 
 Generate.attributes.add('numTilesY', {
-type: 'number',
-default: 10
+    type: 'number',
+    default: 10
 });
 
-// initializeコードがエンティティ毎に一度呼ばれる
+// initialize code called once per entity
 Generate.prototype.initialize = function() {
-    // ワールドタイルのテンプレートをいくつか作成しました
-    // テンプレートが表示されないよう、Editor階層で
-    // 無効にしました。生成されたワールドのみ
-    // 表示されるようにします。
+    // We've created a couple of templates that are our world tiles
+    // In the Editor hierarchy, we have disabled the templates because
+    // we don't want them to be visible. We just want our generated
+    // world to be visible
     var templates = this.app.root.findByName('Templates');
     var grass = templates.findByName('Grass');
     var house = templates.findByName('House');
 
     for (var y = 0; y < this.numTilesY; y++) {
         for (var x = 0; x < this.numTilesX; x++) {
-            // ランダムにタイルを選びます。家より草の可能性が高いです。
+            // Pick a tile at random, with grass more likely than a house
             var tile = (Math.random() > 0.8) ? house : grass;
 
-            // タイルをクローンします
+            // Clone the tile
             var e = tile.clone();
 
-            // クローンされたタイルのワールド位置を設定します。タイルはX,Z寸法で
-            // 10x10なので、位置を10で
-            // 掛けます。
+            // Set the world position of the cloned tile. Note that because
+            // our tiles are 10x10 in X,Z dimensions, we have to multiply
+            // the position by 10
             e.setPosition((x - this.numTilesX / 2) * 10, 0, (y - this.numTilesX / 2) * 10);
 
-            // シーンの階層にタイルを追加します。
+            // Add the tile to the scene's hierarchy
             this.app.root.addChild(e);
         }
     }

@@ -1,12 +1,12 @@
 ---
-title: スクリプティング
+title: Scripting
 template: usermanual-page.tmpl.html
-position: 7
+position: 11
 ---
 
 ゲームをインタラクティブにするにはスクリプトを使います。スクリプトは**JavaScript**で書きます。これはあらゆるウェブページで使用されているプログラミング言語です。
 
-アプリケーションは二つの個別のコードベースに分かれているものと考えてください。一つはPlayCanvasが提供するエンジンです。これは、グラフィックレンダリング、入力処理、オーディオ、PlayCanvasツールのインターフェイスなどを含む基本的な機能を実装します。もう一つはスクリプトです。これは多くの場合、便利な挙動を提供する再利用可能なブロックか、アプリケーション特有のものです。
+You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviors.
 
 基本的に、エンジンコードはアプリケーションに含まれる単一のJavaScriptファイルなので、気にかける必要はありません。エンジンの一部を書き換える場合、スクリプティングに関するこの導入は必要ないです。
 
@@ -26,10 +26,10 @@ Rotate.prototype.update = function (dt) {
 
 いくつかの用語を定義しましょう。
 
-* ***Script*** スクリプトとはスクリプトオブジェクトの定義を一つ以上含む単一のJavaScriptファイルです。
-* ***Script Component*** スクリプトコンポーネントはPlayCanvasエンジンで定義され、ゲームエンティティにスクリプトを読み込みスクリプトオブジェクトを作成する機能を与えます。
-* ***ScriptType*** スクリプトタイプとは`pc.create Script`関数を使用して作成されるJavaScriptオブジェクトです。これは、エンティティに追加されたときにインスタンス化される新しいクラスです。
-* ***Script Instance*** スクリプトインスタンスは、ScriptTypeのインスタンスです。スクリプトコンポーネントにScriptTypeが添付されている各エンティティに対して一つのスクリプトインスタンスが作成されます。
+* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
+* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
+* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
 [1]: /user-manual/packs/components/script/
 

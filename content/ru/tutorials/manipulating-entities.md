@@ -20,7 +20,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*Мировые и локальные координатные системы*
+*World and Local co-ordinate systems*
 <br />
 
 ### Иерархия
@@ -32,10 +32,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 Получение позиции сущности
 
 ```javascript
-// Получаем позицию сущности, относительно координатной системы родителя
+// Get the entity's position relative to the coordinate system of the entity's parent
 var lp = entity.getLocalPosition();
 
-// Получаем позицию в мировом пространстве
+// Get the entity's position in world space
 var wp = entity.getPosition();
 ```
 
@@ -44,10 +44,10 @@ var wp = entity.getPosition();
 Установка положения сущности.
 
 ```javascript
-// Устанавливаем позицию, относительного координатной системы родителя
+// Set the entity's position relative to the coordinate system of the entity's parent
 entity.setLocalPosition(x, y, z);
 
-// Устанавливаем позицию в мировом пространтсве
+// Set the entity's position in world space
 entity.setPosition(x, y, z);
 ```
 
@@ -56,10 +56,10 @@ entity.setPosition(x, y, z);
 Чтобы передвигать сущность, Вы можете прибавить к позиции значение, или используйте вспомогательные функции и 'translateLocal'.
 
 ```javascript
-// Переместить сущность на 1 единицу по оси X в мировом пространстве
+// Translate the entity 1 unit down the positive x axis of world space
 entity.translate(1, 0, 0);
 
-// Сместить объект на 1 единицу по оси Z локально
+// Translate the entity 1 unit down the entity's local z axis
 entity.translateLocal(0, 0, 1);
 ```
 
@@ -69,41 +69,40 @@ entity.translateLocal(0, 0, 1);
 
 Установка абсолютного значения поворота может быть достигнута использованием либо [углов Эйлера][1], либо [кватернионов][2]. Объяснения в Википедии этих двух математических представлений поворота немного трудны для понимания, однако основные пункты просты. Вот важные факты:
 
-**Углы Эйлера**
+**Euler Angles**
 
-* Углы Эйлера это набор трёх углов вокруг осей X, Y и Z в координатной системе в *определённом порядке*.
-* Если смотреть вниз оси координат , положительный угол Эйлера приведет к вращению против часовой стрелки вокруг этой оси.
-* Углы Эйлера легки в понимании, так как Вы можете визуализировать этот эффект в голове.
+* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
+* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
+* Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
-**Кватернионы**
+**Quaternions**
 
-* Кватернионы хранятся как 4 числа и представляют любую ориентацию в 3D пространстве.
-* Их сложно задавать напрямую, но можно установить через углы Эйлера, матрицы поворота или через представление ось-угол.
-*  Несмотря на то, что их трудно визуализировать, они полезны, так как являются надежными и могут быть быстро интерполированны (при анимации вращения).
+* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
+* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
+* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
 
 При программировании сущностей наиболее вероятно, что Вы захотите использовать поворот объекта используя углы Эйлера. Например:
 
 ```javascript
-// Поворот на 30 градусов против часовой стрелки вокруг оси X родительской
-// координатной системы, на 45 градусов вокруг её оси Y и, наконец, на 60 градусов
-//вокруг оси Z
+// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
+// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
 entity.setLocalEulerAngles(30, 45, 60);
 
-// Поворот на 30 градусов против часовой стрелки вокруг оси X мировой системы
-// координат, на 45 градусов вокруг Y и наконец, 60 градусов вокруг мировой оси Z
+// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
+// around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ```
-Тем не менее, если Вы хотите, чтобы установить вращение сущности в форме кватернионов, можете использовать следующие функции:
+However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ```javascript
-// Создаём переменную для поворота
+// Create an identity rotation
 var q = new pc.Quat();
-// Устанавливаем сущности тот же поворот, что и у родителя, эквивалент:
+// Set the entity to have the same rotation as its parent - equivalent to
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);
 
-// Устанавливаем сущности отсутствие вращения в мировой координатной системе
-// эквивалент: entity.setEulerAngles(0, 0, 0)
+// Set the entity to have no rotation with respect to the world space coordinate
+// system  - equivalent to entity.setEulerAngles(0, 0, 0)
 entity.setRotation(q);
 ```
 
@@ -126,14 +125,14 @@ entity.rotateLocal(90, 0, 0);
 Чтобы масштабировать сущность Вы просто должны вызвать следующую функцию:
 
 ```javascript
-// Масштабировать сущность по оси Y в 2 раза
+// Scale the entity by a factor of 2 in the local Y axis
 entity.setLocalScale(1, 2, 1);
 ```
 
 И здесь немного более интересный пример:
 
 ```javascript
-// Масштабирование сущности используя функцию синуса
+// Scale the entity using a sine function over time
 this.timer += deltaTime;
 var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);

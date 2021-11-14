@@ -1,6 +1,6 @@
 ---
-title: スカイボックスを作成
-keywords: スカイボックス, キューブマップ, 作成, アセット, pbr, 物理的
+title: Create a skybox
+keywords: skybox, cubemap, create, asset, pbr, physical
 ---
 
 ## スカイボックスを作成するには？

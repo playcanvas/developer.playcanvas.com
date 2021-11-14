@@ -1,7 +1,7 @@
 ---
-title: アセットライブラリ
+title: Asset Library
 template: usermanual-page.tmpl.html
-position: 7
+position: 6
 ---
 
 ## ストア

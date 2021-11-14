@@ -1,19 +1,20 @@
 ---
-title: 更多的摄像机
+title: More Cameras
 template: tutorial-page.tmpl.html
 tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>
+<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
 
 *点击屏幕以聚焦, 然后按`空格`来拉近或推远镜头, 按下`左箭头`和 `右箭头`来选择切换成左边或右边的摄像机*
 
-[基础摄像机][1] 教程中引导了我们创建一个摄像机的实体并把它加入到你的场景中。对于一个单独的静态的摄像机而言,不需要配置任何脚本。但是对于一个动态的可互动或包含更高级的应用的相机，你可能要为其附加一个脚本组件，并为相机的行为进行编程。
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behavior yourself.
 
 ## 更改属性
 
-你能够在运行时修改摄像机的第一种方法，是改变摄像机组件上的值。你可以像编辑其它组建一样通过组件系统中的`set()` 和 `get()`方法做到这点。
+The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
+methods on the ComponentSystem.
 
 ```javascript
 var Zoom = pc.createScript('zoom');
@@ -57,11 +58,12 @@ Zoom.prototype.update = function(dt) {
 
 通过 `app.keyboard.wasPressed()` 我们检测按键并在目标fov的值之间切换。
 
-使用最后两个嵌套的 `if(){}` 构造，我们逐渐改变fov值来创建放大/缩小效果。
+With the final two nested `if(){}` constructs we gradually change the fov values to create the zoom in/ zoom out effect.
 
 使用 `this.entity.camera.fov = fov`我们将`set()` 摄像机的fov属性设置为新的值。
 
-请注意，当缩小时，顶部和底部的多维数据集位于屏幕的边缘，这与我们对[PlayCanvas 编辑器场景] [3]的期望相符，其中立方体位于相机[视角椎体边缘] [2]的顶部和底部。
+Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
+top and bottom sides of the camera [frustum][2]
 
 ## 当前相机
 
@@ -73,7 +75,11 @@ var CameraManager = pc.createScript('cameraManager');
 // initialize code called once per entity
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
-    this.app.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -94,11 +100,11 @@ CameraManager.prototype.setCamera = function (cameraName) {
 CameraManager.prototype.update = function(dt) {
     var app = this.app;
 
-    if (app.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+    if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
         this.setCamera('Center');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
         this.setCamera('Left');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
         this.setCamera('Right');
     }
 };
@@ -112,7 +118,7 @@ CameraManager.prototype.update = function(dt) {
 
 接下来，我们循环遍历键，如果一个被按下，我们通过它的名称找到对应的实体，我们使用我们在脚本中早期定义的`setCamera()` 函数设置它为当前相机，禁用当前活动的摄像头， 然后找到要激活的新相机。
 
-[1]: /tutorials/beginner/basic-cameras/
+[1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
 

@@ -1,11 +1,11 @@
 ---
-title: 制作一个简单的游戏 - Part 2
+title: Making a Simple Game - Part 2
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *你可以在这里找到[完整项目] [16]。 如果你还没有看过[第1部分] [1]请先阅读它。
 
@@ -65,7 +65,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ![自发光][12]
 
-自发光贴图设置表面处的颜色自行发出对应光，就好像它默认就是那种颜色。 这意味着场景中的灯光不会影响发光表面的亮度。 注意，发光材料不会影响场景中的任何其他对象，实际上没有发射光。
+The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
 
 在本案例中下，我们不希望背景被点亮，它只是一个静态场景。 所以我们使用自发光贴图来做到这一点。
 
@@ -79,7 +79,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 继续前往 [第 3 部分][15].
 
-[1]: /tutorials/beginner/keepyup-part-one
+[1]: /tutorials/keepyup-part-one/
 [2]: http://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
@@ -93,6 +93,6 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 [12]: /images/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
-[15]: /tutorials/beginner/keepyup-part-three
+[15]: /tutorials/keepyup-part-three/
 [16]: https://playcanvas.com/project/406050
 

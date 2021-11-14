@@ -1,5 +1,5 @@
 ---
-title: 复古风格
+title: Sepia Effect
 template: usermanual-page.tmpl.html
 position: 5
 ---

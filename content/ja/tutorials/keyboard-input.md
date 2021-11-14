@@ -1,15 +1,17 @@
 ---
-title: 基本的なキーボード入力
+title: Basic Keyboard Input
 template: tutorial-page.tmpl.html
 tags: input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
 
 *クリックでフォーカスして、左矢印、右矢印、空白バーを押してキューブを回転します。aキーを押して離すことで色を変更します。*
 
-PlayCanvasエンジンのキーボード処理はpc.Keyboardオブジェクトにより提供されます。Keyboardオブジェクトは一般的なキーボード操作のシンプルなインターフェイスを提供します。また、keycodeやcharcodeの処理に伴うクロスブラウザの問題を取り除きます。
+Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
+for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
+handling keycodes and charcodes.
 
 [チュートリアルプロジェクト][1]のキーボード入力シーンをご確認ください。チュートリアルのコードはこちらです：
 
@@ -73,7 +75,7 @@ KeyboardHandler.prototype.update = function(dt) {
 KeyboardHandler.prototype.onKeyDown = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.redMaterial) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // When the space bar is pressed this scrolls the window.
@@ -87,7 +89,7 @@ KeyboardHandler.prototype.onKeyDown = function (event) {
 KeyboardHandler.prototype.onKeyUp = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.whiteMaterial) {
-        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
 ```
@@ -96,7 +98,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## `isPressed` vs `wasPressed`
 
-上記デモで、isPressed()とwasPressed()の挙動の違いを確認できます。
+In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
 
 左右どちらかのキーを押さえるとキューブは5&deg;回転しますが、回転するのは一度のみです。wasPressed()はキーが押された直後のフレームにのみtrueを返すからです。
 
@@ -123,7 +125,7 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 
 ## キーコード
 
-キーコードを使用してどのキーが押されたかを識別します。これらはキーボードのキーと一致する数値です。例えば、pc.KEY_Aは`A` キー、pc.LEFTは矢印キーです。
+Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
 
 数値を使用するのではなく、常に`pc.KEY_*`列挙を使用してください。後にこれらの不変数の実績値は変わる可能性があるからです。
 
@@ -132,6 +134,6 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 [こちら][2] またはページの上部からお試しください。矢印キーやスペースバーを叩いたり押さえたりして比べて見てください。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
-[2]: https://playcanv.as/p/rFZGQWCi
+[2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
 

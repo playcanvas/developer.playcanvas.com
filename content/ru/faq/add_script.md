@@ -1,13 +1,13 @@
 ---
-title: Добавление скрипта
-keywords: скрипт, код, создать, javascript, поведение
+title: Add a script
+keywords: script, code, create, javascript, behaviour
 ---
 
 ## Как добавить скрипт?
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif"/>
 
-Вы можете использовать javascript чтобы контролировать поведение сущностей. Добавьте компонент скрипта или создайте новый.
+You can use javascript to control the behavior of entities. Add a script component, and create a new script.
 
 <a class="docs" href="http://developer.playcanvas.com/en/user-manual/scripting/creating-new/" target="_blank">Посмотреть руководство пользователя</a>
 

@@ -1,5 +1,5 @@
 ---
-title: 問題が発生しました
+title: Oh No!
 template: error.tmpl.html
 ---
 

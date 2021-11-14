@@ -1,5 +1,5 @@
 ---
-title: ダッシュボードのヘッダ
+title: Dashboard Header
 template: usermanual-page.tmpl.html
 position: 1
 ---

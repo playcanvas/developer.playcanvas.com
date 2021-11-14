@@ -1,6 +1,6 @@
 ---
-title: 删除实体
-keywords: 实体, 删除, 销毁, 移除
+title: Delete an Entity
+keywords: entity, delete, destroy, remove
 ---
 
 ## 如何删除一个实体？
