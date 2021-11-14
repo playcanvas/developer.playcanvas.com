@@ -1,5 +1,5 @@
 ---
-title: Creating an Account
+title: アカウントの作成
 template: usermanual-page.tmpl.html
 position: 3
 ---

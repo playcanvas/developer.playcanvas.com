@@ -1,6 +1,6 @@
 ---
-title: Create an Entity
-keywords: entity, new, create
+title: 创建实体
+keywords: 实体, new, 创建
 ---
 
 如何创建一个实体？

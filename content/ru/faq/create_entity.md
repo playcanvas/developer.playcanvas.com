@@ -1,6 +1,6 @@
 ---
-title: Create an Entity
-keywords: entity, new, create
+title: Создание сущности
+keywords: сущность, новая, создать
 ---
 
 ## Как создать сущность?

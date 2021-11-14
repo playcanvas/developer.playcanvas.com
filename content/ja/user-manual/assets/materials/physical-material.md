@@ -1,12 +1,12 @@
 ---
-title: Physical Material
+title: 物理的マテリアル
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The Physical Material represents the most advanced and highest quality shading model available in PlayCanvas. We recommend you use the Physical shading model.
+Physical Material（物理素材）はPlayCanvasで利用可能な最も先進的でクオリティの高いシェーディングモデルを表しています。物理的なシェーディングモデルを使用することを推奨します。
 
-### Offset & Tiling
+### オフセット & タイリング
 
 <img src="/images/user-manual/material-inspector/offset-tiling.jpg" style="width: 300px;" />
 
@@ -16,9 +16,9 @@ The Physical Material represents the most advanced and highest quality shading m
     <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by maps in this material.</td></tr>
 </table>
 
-### Ambient
+### アンビエント
 
-Ambient properties determine how the material appears in ambient light.
+アンビエントプロパティは、素材が周囲光の中でどのように表示されるかを決定します。
 
 <img src="/images/user-manual/material-inspector/ambient.jpg" style="width: 300px;" />
 
@@ -29,9 +29,9 @@ Ambient properties determine how the material appears in ambient light.
     <tr><td>AO Texture</td><td>An ambient occlusion map containing pre-baked ambient occlusion.</td></tr>
 </table>
 
-### Diffuse
+### 拡散
 
-Diffuse properties define the how a material reflects diffuse light emitted by dynamic light sources in the scene.
+拡散プロパティは、シーン内の動的ライトソースによって発せられた拡散光を、素材がどのように反映するかを定義します。
 
 <img src="/images/user-manual/material-inspector/diffuse.jpg" style="width: 300px;" />
 
@@ -42,9 +42,9 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
     <tr><td>Color</td><td>If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map.</td></tr>
 </table>
 
-### Specular
+### スペキュラ
 
-Specular properties defines the color of the specular highlights. i.e. the shininess
+スペキュラのプロパティは、スペキュラハイライトのカラーを定義します。例：光沢
 
 <img src="/images/user-manual/material-inspector/specular.jpg" style="width: 300px;" />
 
@@ -59,9 +59,9 @@ Specular properties defines the color of the specular highlights. i.e. the shini
     <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny).</td></tr>
 </table>
 
-### Emissive
+### Emissive（発光）
 
-Emissive properties control how the material emits light (as opposed to reflecting light).
+発光プロパティは、素材が発光する方法を制御します(光反射とは対照的に)。
 
 <img src="/images/user-manual/material-inspector/emissive.jpg" style="width: 300px;" />
 
@@ -75,7 +75,7 @@ Emissive properties control how the material emits light (as opposed to reflecti
 
 ### Opacity
 
-Opacity sets the transparency level.
+Opacityは、透明度のレベルを設定します。
 
 <img src="/images/user-manual/material-inspector/opacity.jpg" style="width: 300px;" />
 
@@ -85,9 +85,9 @@ Opacity sets the transparency level.
     <tr><td>Intensity</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1.</td></tr>
 </table>
 
-### Normals
+### Normal
 
-Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
+法線マップを指定するために使用します(これらはがたつきを定義。PlayCanvasではハイトマップではなく法線マップを使用する必要があります)。
 
 <img src="/images/user-manual/material-inspector/normals.jpg" style="width: 300px;" />
 
@@ -99,7 +99,7 @@ Use this to specify normal maps (these determine bumpiness - note you have to us
 
 ### Parallax
 
-A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
+視差マップは、表面に深さの錯覚を与えることによって、法線マップにさらにリアルな感覚を加えます。視差のオプションは素材に法線マップを設定している場合のみ有効です。
 
 <img src="/images/user-manual/material-inspector/parallax.jpg" style="width: 300px;" />
 
@@ -109,9 +109,9 @@ A parallax map gives further realism to a normal map by giving the illusion of d
     <tr><td>Strength</td><td>The strength of a parallax effect (a value between 0 and 2, defaulting to 1).</td></tr>
 </table>
 
-### Environment
+### 環境
 
-Environment properties determine how a material reflects the environment.
+環境プロパティは、素材がどのように環境を反映するかを定義します。
 
 <img src="/images/user-manual/material-inspector/environment.jpg" style="width: 300px;" />
 
@@ -124,9 +124,9 @@ Environment properties determine how a material reflects the environment.
     <tr><td>Index of refraction</td><td>Determines the amount of distortion of light passing through the material.</td></tr>
 </table>
 
-### Light Map
+### ライトマップ
 
-Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
+ライトマップは、プリベークされた拡散ライトを含みます。ライトマップの使用は、実行時に行われる動的なライトの計算を事前に計算できる最適化と考えられています。
 
 <img src="/images/user-manual/material-inspector/lightmap.jpg" style="width: 300px;" />
 
@@ -135,9 +135,9 @@ Light maps contain pre-baked diffuse lighting. Using light maps is considered an
     <tr><td>Texture</td><td>The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs.</td></tr>
 </table>
 
-### Other Render States
+### その他のレンダリング状態
 
-Other Render States gives additional controls over how a mesh is rendered with the specified material.
+その他のレンダリング状態を使用して、指定された素材にメッシュをレンダリングする方法を追加で制御できます。
 
 <img src="/images/user-manual/material-inspector/other.jpg" style="width: 300px;" />
 

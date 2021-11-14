@@ -1,6 +1,6 @@
 ---
-title: Create an Entity
-keywords: entity, new, create
+title: エンティティを作成
+keywords: エンティティ, 新規, 作成
 ---
 
 ## エンティティを作成するには？

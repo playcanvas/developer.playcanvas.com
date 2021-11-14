@@ -1,12 +1,12 @@
 ---
-title: Physical Material
+title: 物理材质
 template: usermanual-page.tmpl.html
 position: 1
 ---
 
-The Physical Material represents the most advanced and highest quality shading model available in PlayCanvas. We recommend you use the Physical shading model.
+物理材质代表PlayCanvas可提供的最先进，最优质的材质模型。我们建议您使用物理着色模型。
 
-### Offset & Tiling
+### 偏移量& 平铺
 
 <img src="/images/user-manual/material-inspector/offset-tiling.jpg" style="width: 300px;" />
 
@@ -16,9 +16,9 @@ The Physical Material represents the most advanced and highest quality shading m
     <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by maps in this material.</td></tr>
 </table>
 
-### Ambient
+### 环境
 
-Ambient properties determine how the material appears in ambient light.
+环境属性决定了材质该如何出现在环境光中。
 
 <img src="/images/user-manual/material-inspector/ambient.jpg" style="width: 300px;" />
 
@@ -29,9 +29,9 @@ Ambient properties determine how the material appears in ambient light.
     <tr><td>AO Texture</td><td>An ambient occlusion map containing pre-baked ambient occlusion.</td></tr>
 </table>
 
-### Diffuse
+### 漫反射
 
-Diffuse properties define the how a material reflects diffuse light emitted by dynamic light sources in the scene.
+漫反射属性定义了该材质如何反射从场景中的动态光源中发出的漫射光。
 
 <img src="/images/user-manual/material-inspector/diffuse.jpg" style="width: 300px;" />
 
@@ -42,9 +42,9 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
     <tr><td>Color</td><td>If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map.</td></tr>
 </table>
 
-### Specular
+### 高光
 
-Specular properties defines the color of the specular highlights. i.e. the shininess
+高光属性决定了材质的高光颜色。也就是耀斑的颜色。
 
 <img src="/images/user-manual/material-inspector/specular.jpg" style="width: 300px;" />
 
@@ -59,9 +59,9 @@ Specular properties defines the color of the specular highlights. i.e. the shini
     <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny).</td></tr>
 </table>
 
-### Emissive
+### 自发光
 
-Emissive properties control how the material emits light (as opposed to reflecting light).
+自发光属性可以控制材质如何发光(相对于反射光)。
 
 <img src="/images/user-manual/material-inspector/emissive.jpg" style="width: 300px;" />
 
@@ -73,9 +73,9 @@ Emissive properties control how the material emits light (as opposed to reflecti
     <tr><td>Intensity</td><td>A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials.</td></tr>
 </table>
 
-### Opacity
+### 不透明度
 
-Opacity sets the transparency level.
+不透明度属性设置了不透明度等级。
 
 <img src="/images/user-manual/material-inspector/opacity.jpg" style="width: 300px;" />
 
@@ -85,9 +85,9 @@ Opacity sets the transparency level.
     <tr><td>Intensity</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1.</td></tr>
 </table>
 
-### Normals
+### 法线
 
-Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
+使用这个来指定法线贴图(本贴图决定材质的凹凸感 - 请注意，你在PlayCanvas中必须使用法线贴图，而不是高度图)
 
 <img src="/images/user-manual/material-inspector/normals.jpg" style="width: 300px;" />
 
@@ -97,9 +97,9 @@ Use this to specify normal maps (these determine bumpiness - note you have to us
     <tr><td>Texture</td><td>The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
 </table>
 
-### Parallax
+### 视觉差
 
-A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
+视觉差贴图通过给予平面深度的错觉将法线贴图的映射效果进一步写实化。 请注意视觉差贴图只有在你已经设置了法线贴图到材质上时才会有效。
 
 <img src="/images/user-manual/material-inspector/parallax.jpg" style="width: 300px;" />
 
@@ -109,9 +109,9 @@ A parallax map gives further realism to a normal map by giving the illusion of d
     <tr><td>Strength</td><td>The strength of a parallax effect (a value between 0 and 2, defaulting to 1).</td></tr>
 </table>
 
-### Environment
+### 环境
 
-Environment properties determine how a material reflects the environment.
+环境属性决定了这个材质将对环境产生怎样的影响。
 
 <img src="/images/user-manual/material-inspector/environment.jpg" style="width: 300px;" />
 
@@ -124,9 +124,9 @@ Environment properties determine how a material reflects the environment.
     <tr><td>Index of refraction</td><td>Determines the amount of distortion of light passing through the material.</td></tr>
 </table>
 
-### Light Map
+### 光照贴图
 
-Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
+光照贴图包含了预烘焙的漫反射光。使用光照贴图被认为是为了在运行时避免动态光照计算和烘焙的优化。
 
 <img src="/images/user-manual/material-inspector/lightmap.jpg" style="width: 300px;" />
 
@@ -135,9 +135,9 @@ Light maps contain pre-baked diffuse lighting. Using light maps is considered an
     <tr><td>Texture</td><td>The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs.</td></tr>
 </table>
 
-### Other Render States
+### 其他渲染状态
 
-Other Render States gives additional controls over how a mesh is rendered with the specified material.
+其他渲染状态给出了对一个网状物如何呈现指定的材料的额外的控制。
 
 <img src="/images/user-manual/material-inspector/other.jpg" style="width: 300px;" />
 

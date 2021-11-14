@@ -1,5 +1,5 @@
 ---
-title: Oh No!
+title: О нет!
 template: error.tmpl.html
 ---
 

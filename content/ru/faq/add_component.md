@@ -1,6 +1,6 @@
 ---
-title: Add a component
-keywords: entity, add, component, behaviour
+title: Добавление компонента
+keywords: сущность, добавить, компонент, поведение
 ---
 
 ## Как добавить компонент?

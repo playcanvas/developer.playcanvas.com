@@ -1,6 +1,6 @@
 ---
-title: Add a script
-keywords: script, code, create, javascript, behaviour
+title: スクリプトを追加
+keywords: スクリプト, コード, 作成, javascript, 挙動
 ---
 
 ## スクリプトを追加するには？
