@@ -35,7 +35,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][2].
+立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][2]给出速度的瞬时变化。
 
 ### 扭矩
 
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][3].
+[扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][3]施加到实体上。
 
 ### 扭矩冲量
 
@@ -53,19 +53,19 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][4]. This was not used in the code for the above demo.
+角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][4]来表示。 这在上面的演示的代码中没有被使用。
 
 ## 移动动态刚体
 
 为了移动刚体，使用上述方法应用线性力和旋转力(扭矩)。 通常你应该尽量避免直接修改刚体的位置或速度，因为这将会变得不真实，它可能导致奇怪的效果，特别是当物体之间产生碰撞时。
 
-However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][5]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
+然而，如果你需要，你可以通过直接赋给`entity.rigidbody.linear Velocity`或`entity.rigidbody.angularVelocity`一个新的'[pc.Vec3][5]'值来更新速度。
 
-For more information on rigidbody types, see [the collision API page][6], [the pc namespace page][7], [the fps-controller tutorial][8] and [the collision tutorial][9].
+有关刚体类型的更多信息，请参见[碰撞体API页面][6]，[pc命名空间页][7]，[fps控制器教程][8]和[碰撞教程][9]。
 
 ## 常用设置
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][10].
+我们使用聚光灯，立方体(具有模型，刚体，碰撞和脚本组件的实体)和地板(具有模型，刚体和碰撞组件)来设置基本场景。 立方体的刚体设置为动态，而地板的刚体设置为静态。 我们为每个盒子创建了一些材料，并改变漫反射的颜色只是为了更容易在眼睛。 我们还在SpotLight和DynamicBody实体上激活了“投射阴影”选项。 这个PlayCanvas应用程序'usesForces'的完整的场景和代码可以在[这里][10]找到。
 
 ## 限制和控制
 

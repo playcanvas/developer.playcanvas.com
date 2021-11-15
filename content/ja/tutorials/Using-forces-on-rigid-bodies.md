@@ -35,7 +35,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][2].
+キューブには[`applyImpulse(x, y, z)`][2]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
 
 ### トルク
 
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][3].
+[トルク](https://en.wikipedia.org/wiki/Torque) (回転力) は [`applyTorque(x, y, z)`][3]からエンティティに適用されます。
 
 ### TorqueImpulses
 
@@ -53,19 +53,19 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][4]. This was not used in the code for the above demo.
+角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][4]を通して適用されます。これは、上記のデモのコードでは使用されていません。
 
 ## 動的なリジッドボディの移動
 
 リジッドボディを移動させるためには、上記の方法でリニア力および回転力(トルク)を適用します。シミュレーションが上書きされ、オブジェクトが衝突する際などに不自然な効果をもたらすことを避けるため、通常はこのようにリジッドボディの位置や速度を直接変更することは避けるべきです。
 
-However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][5]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
+必要に応じて、新しい'[pc.Vec3][5]'値のセットを`entity.rigidbody.linearVelocity`または`entity.rigidbody.angularVelocity`に直接割り当てることによって、速度を上書きすることができます。
 
-For more information on rigidbody types, see [the collision API page][6], [the pc namespace page][7], [the fps-controller tutorial][8] and [the collision tutorial][9].
+リジッドボディタイプに関する商大は[コリジョン API ページ][6],  [pc namespace ページ][7], [fps-コントローラチュートリアル][8], [コリジョンチュートリアル][9]をご確認ください。
 
 ## 一般的な設定
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][10].
+スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][10]。
 
 ## 制限と制御
 
