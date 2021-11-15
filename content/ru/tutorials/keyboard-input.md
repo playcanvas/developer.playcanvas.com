@@ -97,7 +97,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## `isPressed` против `wasPressed`
 
-In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
+В демо выше Вы можете видеть разницу в поведении между `isPressed()` и `wasPressed()`.
 
 Когда вы нажимаете и удерживаете левую или правую стрелку мыши, куб вращается на 5&deg; один раз. Всё потому, что `wasPressed()` возвращает истину для кадра сразу после того, как клавиша была нажата.
 
@@ -124,7 +124,7 @@ In the demo above you can see the difference in behavior between `isPressed()` a
 
 ## Коды клавиш
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
+Идентификация того, какая клавиша нажата выполняется использованием кодов клавиш. Это числовые значения, которые соответствуют клавишам на клавиатуре. Например, pc.KEY_A это  кнопка `A` , pc.KEY_LEFT - это стрелка влево.
 
 Обратите внимание, что Вы всегда должны использовать перечисления `pc.KEY_*` вместо использования числовых значений. Настоящее значение этих констант может измениться в будущем.
 

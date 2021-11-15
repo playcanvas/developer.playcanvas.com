@@ -96,7 +96,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## `isPressed` vs `wasPressed`
 
-In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
+上記デモで、isPressed()とwasPressed()の挙動の違いを確認できます。
 
 左右どちらかのキーを押さえるとキューブは5&deg;回転しますが、回転するのは一度のみです。wasPressed()はキーが押された直後のフレームにのみtrueを返すからです。
 
@@ -123,7 +123,7 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 
 ## キーコード
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
+キーコードを使用してどのキーが押されたかを識別します。これらはキーボードのキーと一致する数値です。例えば、pc.KEY_Aは`A` キー、pc.KEY_LEFTは矢印キーです。
 
 数値を使用するのではなく、常に`pc.KEY_*`列挙を使用してください。後にこれらの不変数の実績値は変わる可能性があるからです。
 

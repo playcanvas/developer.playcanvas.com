@@ -96,7 +96,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## `isPressed` 与 `wasPressed`
 
-In the demo above you can see the difference in behavior between `isPressed()` and `wasPressed()`.
+在下方的案例中你可以看到`isPressed()` 与 `wasPressed()`的表现的不同处。
 
 当你按下并保持按住左箭头或右箭头按键时，方块会旋转5&deg;。这是因为`wasPressed()` 只在键被按下后立即返回true。
 
@@ -123,7 +123,7 @@ In the demo above you can see the difference in behavior between `isPressed()` a
 
 ## 键盘编码
 
-Identifying which key is pressed is done using key codes. These are numerical values which match up to a key on the keyboard. For example, pc.KEY_A is the `A` key, pc.KEY_LEFT is the left arrow key.
+分辨哪一个键被按下时就要使用按键编码。它们是与键盘上的键所匹配的数值。 例如，pc.KEY_A是`A`键，pc.KEY_LEFT是左箭头键。
 
 注意，你应该总是使用枚举`pc.KEY_ *`，而不是使用数值。 因为这些常数的实际值可能会在将来进行更改。
 

@@ -65,7 +65,7 @@ Backdrop素材はより単純です。テキスチャーマップは一つのみ
 
 ![Emissive（発光）][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+emissiveマップは、表面の色を設定して、まるでその色の光を発光しているかのように見せます。つまり、シーン内の照明はemissiveの表面の明るさに影響を与えません。emissive素材はシーン内の他のオブジェクトには影響しませんが、実際に光は発光されません。
 
 この場合、静的なシーンなので背景が点灯されないようにします。そのためには、emissiveマップを使用します。
 

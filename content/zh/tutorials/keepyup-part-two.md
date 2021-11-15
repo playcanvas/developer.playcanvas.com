@@ -65,7 +65,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ![自发光][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+自发光贴图设置表面处的颜色自行发出对应光，就好像它默认就是那种颜色。 这意味着场景中的灯光不会影响发光表面的亮度。 注意，发光材料不会影响场景中的任何其他对象，实际上没有发射光。
 
 在本案例中下，我们不希望背景被点亮，它只是一个静态场景。 所以我们使用自发光贴图来做到这一点。
 
