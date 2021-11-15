@@ -87,7 +87,7 @@ var shaderDefinition = {
 
 顶点着色器代码作为字符串提供在`vshader'属性中，片段着色器作为'fshader'属性中的字符串提供。
 
-Above is the shader definition used to make the dissolving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
+上面是用于产生溶解效果的着色器定义。 注意，我们从两个资源中获取着色器代码。 这些资源由[script attributes] [2]提供，这使得从脚本访问资源变得更加容易。
 
 除了属性，GLSL着色器中还有另外两种特殊类型的变量：`变化` 和`统一`
 

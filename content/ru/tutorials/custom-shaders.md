@@ -87,7 +87,7 @@ var shaderDefinition = {
 
 Код вершинного шейдера отправляется как строка в свойство `vshader`, а фрагментный шейдер в свойство `fshader`.
 
-Above is the shader definition used to make the dissolving effect. Notice that we're getting the shader code from two assets. These assets are supplied using [script attributes][2] which make it easy to access assets from a script.
+Выше - объявление шейдера, который делает эффект растворения. Заметьте, что мы получаем код шейдеров из двух ресурсов. Эти ресурсы подставляются через [атрибуты скрипта][2], которые упрощают доступ к ресурсам из скрипта.
 
 Поодаль от атрибутов, мы видим два специальных типа переменных в GLSL шейдере: `varying` и `uniform`
 
