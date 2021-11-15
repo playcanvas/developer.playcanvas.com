@@ -6,9 +6,9 @@ position: 2
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modeling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
 
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modeling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此，一般来说，如果您的建模应用程序支持FBX，PlayCanvas也支持它。 因此，使用PlayCanvas导入模型时，您不必使用任何特殊的艺术工具插件，并且没有必须遵循的PlayCanvas特定的工作流程。
 
-Some modeling and animation programs to consider:
+一些可被考虑使用的建模和动画程序：
 
 *免费选项：Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
 *低成本付费选项：3D-Coat, NVIL, Hexagon
@@ -21,11 +21,11 @@ Some modeling and animation programs to consider:
 * 免费选项: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
 * 付费选项: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
-Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+注意许多上面列出的用于建模的程序也允许纹理绘画。 如果你想要更多的选择，这个页面[external wiki][1]可以帮助你。 请注意，某些信息可能已过期。
 
 ## 网格构造的一般注意事项
 
-Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+无论您使用哪个建模应用程序，在构建用于PlayCanvas的3D场景时需要注意一些事情。
 
 *网格可以蒙皮到256骨骼上
 * NURBS网格将转换为三角形网格，进而转换为PlayCanvas所适应的格式。
@@ -36,7 +36,7 @@ Regardless which modeling application you are using, there a number of things to
 
 ![Blender图标][3]
 
-[Blender][4] is a fantastic free tool for 3D modeling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender] [4]是一个用于3D建模的神奇的免费工具，非常适合为PlayCanvas生成3D资源。
 
 Blender支持将文件导出为COLLADA和FBX格式，但是内置的导出器确实有一些局限性。
 

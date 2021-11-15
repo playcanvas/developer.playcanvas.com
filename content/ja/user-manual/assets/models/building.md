@@ -4,11 +4,11 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Building art and animations for PlayCanvas can be done using almost any of the many 3D modeling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
+PlayCanvasではアートやアニメーションの構築は、ほとんど全ての利用可能な3Dモデリングプログラムを使用して行うことができます。例：Blender、SketchUp、Autodesk 3D Studio Max、Autodesk Maya。
 
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modeling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+PlayCanvasは相互変換のためのFBXフォーマットから最も正確にコンテンツをインポートするよう設計されています。そのため、ご使用のモデリングアプリケーションがFBXに対応していれば、PlayCanvasはそのツールに対応していることになります。そのようになっているため、PlayCanvasをターゲットとして素材を作るために特別なプラグインやツール、PlayCanvas専用のワークフローを準備する必要はありません。
 
-Some modeling and animation programs to consider:
+モデリングおよびアニメーションプログラムの提案：
 
 * 無料オプション: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
 * 低価格の有用オプション: 3D-Coat, NVIL, Hexagon。
@@ -21,11 +21,11 @@ Some modeling and animation programs to consider:
 * 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint。
 * 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus。
 
-Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+モデリングについて上記に記載されているプログラムの多くはテクスチャペイントを可能にします。より多くのオプションをご希望の場合、この[外部wiki][1]ページをご確認ください。一部には古い情報もありますのでご注意ください。
 
 ## メッシュ作成に関する一般的な注意点
 
-Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+どのようなモデリングアプリケーションを使っているかにかかわらず、PlayCanvasで使用する3Dシーンを作成する際に注意しておくべきことがいくつかあります。
 
 *メッシュは256のボーンにまでスキンすることができます。
 * NURBSメッシュはPlayCanvasネイティブフォーマットへの変換時に三角形に変換されます。
@@ -36,7 +36,7 @@ Regardless which modeling application you are using, there a number of things to
 
 ![Blender ロゴ][3]
 
-[Blender][4] is a fantastic free tool for 3D modeling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender][4]は素晴らしいフリーの3Dモデリングツールで、PlayCanvas用の3Dアセットを作るために最適です。
 
 BlenderはCOLLADAとFBXのエクスポートの両方に対応しています。ただしビルトインのエクスポーターはいくつか制限があります。
 
