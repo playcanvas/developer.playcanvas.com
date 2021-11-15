@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
-*You can find the [full project here][3]*
+*你可以在 [这里][3]找到完整的工程*
 
 在本系列教程中，我们将向您展示如何使用PlayCanvas完成一个完整的游戏。 我们做了一个简单的“保持住”的游戏，其玩法是点击或选择足球以使它保持在空中。
 

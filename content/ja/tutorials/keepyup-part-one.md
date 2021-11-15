@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
-*You can find the [full project here][3]*
+*[完成されたプロジェクトはこちら][3]です*
 
 このチュートリアルでは、PlayCanvasを使って一本の完全なゲームを作る流れを説明します。"Keepy Up"という、ボールをタッチかクリックし続けることでボールを滞空させ続けるゲームを作りましたのでそれを、題材として説明します。
 
