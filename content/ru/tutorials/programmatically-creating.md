@@ -12,9 +12,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 ## Создание сущности
 
 ```js
-var entity = new pc.Entity(); // Create an Entity
+var entity = new pc.Entity(); // Создание сущности
 
-// Add it to the Entity hierarchy
+// Добавление сущности в иерархию
 this.app.root.addChild(entity);
 ```
 
@@ -23,20 +23,20 @@ this.app.root.addChild(entity);
 ## Добавление компонентов
 
 ```javascript
-// Create a new Entity
+// Создание новой сущности
 var entity = new pc.Entity();
 
-// Add a new Camera Component with default values
+// Добавление камеры со стандартными настройками
 entity.addComponent("camera");
 
-// Add a new Model Component and add it to the Entity.
+// Создание новой модели и добавление ее к сущности
 entity.addComponent("render", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// Добавляем сущность к иерархии
 this.app.root.addChild(entity);
-```
+~~~
 
 Сущность, как она есть, не имеет смысла, поэтому вам необходимо добавить компоненты, чтобы добиться результата. Вы можете использовать метод `Добавить компонент` сущности чтобы создать и добавить компонент.
 
@@ -47,10 +47,10 @@ this.app.root.addChild(entity);
 ```javascript
 var entity = new pc.Entity();
 
-// Attach Camera Component with default values
+// Добавляем камеру со стандартными свойствами
 entity.addComponent("camera");
 
-// Delete the Camera Component
+// Удаляем камеру
 entity.removeComponent("camera");
 ```
 
@@ -59,21 +59,21 @@ entity.removeComponent("camera");
 ## Удаление сущностей
 
 ```javascript
-// Create a new Entity
+// Создание сущности
 var entity = new pc.Entity();
 
-// Create a new Camera Component with default values
+// Создание камеры со стандартными значениями
 entity.addComponent("camera");
 
-// Create a new Model Component and add it to the Entity.
+// Создание модели куба и добавление его к сущности
 entity.addComponent("render", {
     type: 'box',
 });
 
-// Add it to the Entity hierarchy
+// Добавление модели к иерархии
 this.app.root.addChild(entity);
 
-// Delete the Entity and remove it from the hierarchy
+// Удаление сущности и удаление ее из иерархии
 entity.destroy();
 ```
 
@@ -104,26 +104,26 @@ EntityCreator.attributes.add('maxCubes', {
     default: 10
 });
 
-// initialize code called once per entity
+// Код, который вызывается единожды
 EntityCreator.prototype.initialize = function() {
     this.entities = [];
 };
 
-// update code called every frame
+// Обновление каждый кадр
 EntityCreator.prototype.update = function(dt) {
-    // Spawn new cubes if there are less than maxCubes
+    // Спауним кубы, если их количество меньше, чем максимальное
     while (this.entities.length < this.maxCubes) {
         this.spawnCube();
     }
 
-    // Loop through Entities and delete them when their time is up
+    // Цикл по всем сущностям. Удаляем их, если их время вышло
     for (i = 0; i < this.entities.length; i++) {
         this.entities[i].timer -= dt;
         if (this.entities[i].timer < 0) {
-            // entity.destroy() deletes all components and removes Entity from the hierarchy
+            // entity.destroy() удаляет все компоненты и сущность из иерархии
             this.entities[i].entity.destroy();
 
-            // Remove from the local list
+            // Удаление из местного списка
             this.entities.splice(i, 1);
         }
     }
@@ -132,25 +132,25 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // Add a new Model Component and add it to the Entity.
+    // Создание модели кубика и добавление ее к сущности.
     entity.addComponent("render", {
         type: 'box'
     });
 
-    // set material
+    // Установка материала
     entity.render.material = this.material.resource;
 
-    // Move to a random position
+    // Перемещение в случайное место
     entity.setLocalPosition(
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions)
     );
 
-    // Add to the Hierarchy
+    // Добавление модели к иерархии
     this.app.root.addChild(entity);
 
-    // Store in a list for some random duration before deleting
+    // Добавление в лист со случайным временем жизни
     this.entities.push({
         entity: entity,
         timer: pc.math.random(0, this.lifetime)
