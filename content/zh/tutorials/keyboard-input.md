@@ -1,5 +1,5 @@
 ---
-title: Basic Keyboard Input
+title: 基础键盘输入
 template: tutorial-page.tmpl.html
 tags: input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
@@ -9,9 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *点击以聚焦, 然后按下 `左箭头`, `右箭头` 以及`空格键` 来旋转方块。 按下或抬起按键 'a' 来改变颜色。*
 
-Keyboard handling in the PlayCanvas engine is provided by the `pc.Keyboard` object. The Keyboard object provides a simple interface
-for common keyboard operations like checking if a key is pressed or held down. It also takes away the various cross-browser problems with
-handling keycodes and charcodes.
+PlayCanvas引擎中的键盘处理由`pc.Keyboard`对象提供。Keyboard 为常见的键盘操作，比如检查键是被敲击还是按住，提供了一个简单的接口。它还消除了处理关键代码和字符码的各种跨浏览器问题。
 
 在[教程项目][1]中看一看键盘输入场景。以下是该教程所用的代码:
 

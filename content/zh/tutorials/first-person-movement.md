@@ -1,5 +1,5 @@
 ---
-title: First Person Movement
+title: 第一人称移动
 template: tutorial-page.tmpl.html
 tags: input, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
@@ -15,9 +15,9 @@ See the full scene setup in the [Tutorial Project][1].
 
 下面的脚本执行以下功能：
 
-* Listen for mouse and keyboard input
-* Update a camera entity from the mouse input
-* Apply forces to move the player entity around the scene
+*监听鼠标和键盘输入
+*从鼠标输入更新相机实体
+*应用力将玩家实体移动到场景周围
 
 Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
 

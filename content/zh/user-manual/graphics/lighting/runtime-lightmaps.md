@@ -5,15 +5,15 @@ position: 5
 ---
 
 ![Sponza][10]
-*All the lighting in this scene is provided by lightmap textures*
+*在场景中的所有光照贴图都需通过光照贴图纹理设置*
 
 Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied on materials. This is an efficient way of lighting a scene if much of the light sources and geometry are static or environmental. And produces realistic results.
 
 ## Runtime LightMap Generation
 
-PlayCanvas offers a very convenient solution to generating lightmaps. Using the standard light components in the Editor you choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. Lights that are set to bake are then used when the application starts to generate lightmaps which are used to light the scene.
+PlayCanvas对于生成光照贴图有着十分便利的解决方式。使用在编辑器中的标准灯光组件，选择哪种光源被用来照亮光照贴图，哪种光源用于在在场景运行时的动态灯光。
 
-The advantages are so:
+它的优点有这些：
 
 * Lighting is not performed at **runtime**
 * It is possible to use hundreds of static lights to light your scene
@@ -31,11 +31,11 @@ The disadvantage of using runtime lightmap generation is that currently we do no
 
 ## Setting up lights for baking
 
-Each Light Component contains settings for enabling lightmap baking. By default a new light is set to Dynamic.
+每个光源组件都含有进行光照贴图烘焙的设置。默认情况下一个新的光源会被设置为动态的。
 
 ![Light Component Settings][2]
 
-By enabling the **Lightmap: Bake** setting the light will bake lightmaps for any lightmapped model that is in range.
+通过启用 **光照贴图: 烘焙** 选项这个光源会为在范围内的任意可接收光照贴图的模型烘焙出光照贴图。
 
 **Direction** option specifies if light contribute to light direction information baking. This affects the specularity results if **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
 
@@ -47,11 +47,11 @@ Note, that a light cannot have **Lightmap** true and **Affect Baked** true, as t
 
 ![Light Component Shadow Settings][3]
 
-The shadows setting for lightmap lights is the same as for dynamic lights, except in this case the shadow calculations are done once when generating the lightmaps so it is much cheaper to enable shadows on lightmap lights. See the section on [Shadows][4].
+光照贴图的光源的阴影效果的设置与动态光源相同，除了在这种情况下阴影的计算只在 产生的光照贴图时完成一次，因此启用光照贴图灯光的阴影是一种非常节约性能的做法。详情参见[阴影]部分[4]。
 
 ## Setting up models for baking
 
-Each Model Component has to have lightmapping enabled on it for it to receive lightmaps. Lightmapping is enabled in the properties of the Model Component by checking the **Lightmapped** option.
+每个模型组建都有是否接收光照贴图影响的选项。模型组件是否接受光照贴图通过**Lightmapped** 选项进行设置。
 
 ![Model Component Settings][5]
 
@@ -59,7 +59,7 @@ The **Shadows: Cast Lightmap** option determines if the model is casting shadows
 
 ## Common Light Settings
 
-As you see there several combinations of light settings that can be used. These combinations all have a use-case and by using lights with different combinations you can balance high-quality visuals with performance.
+如你所见这里列举了几个常见的可用的光照设置。这些组合均有实现案例，通过使用不同的组合你可以获得性能与高品质平衡的视觉效果。
 
 <table>
 <tr>
@@ -95,17 +95,17 @@ On example of plane which is 1x1 unit (meter) in size. If Global Size Multiplier
 
 Lightmaps are always applied using the second set of UV co-ordinates (UV1) on the model asset. For best results we recommend that you add a second UV set in your 3D content tool to your model before you upload it to PlayCanvas. You can [read on some recommendations for lightmap friendly UV's][9].
 
-For convenience, if your model hasn't got a UV1 set the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+为了使用方便，若你的模型并没有第二层的UV1集设置，PlayCanvas引擎会为它自动解析并生成UV1坐标。
 
 ![Model Component: UV1 Missing][7]
 
-If a model is missing a UV1 map you will see a warning in the model component when you enable lightmapping.
+若一个模型丢失了UV1贴图，当你启用光照贴图功能时会在模型组件上看到一个警告。
 
 ![Model Asset: Auto Unwrap Pipeline][8]
 
 To fix the warning select the model asset and open the **Pipeline** section. Click the **Auto-unwrap** button and wait for the progress bar to complete. Running auto-unwrap edits the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the precomputed UV1's will be lost, and if uploaded model has no UV1's, then you will need to auto-unwrap model again.
 
-The **padding** section determines the space between sections when the unwrapping occurs. If you see *"light bleeding"*, where light appears in the lightmaps that shouldn't be there, you can increase the padding to reduce the bleeding.
+ **填充**选项决定了当延展发生时面之间的距离。如果你看见了*"光照渗色"*，即光照贴图上出现了本不该出现的光线，可以增加填充系数，以减少渗漏。
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
 [2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png

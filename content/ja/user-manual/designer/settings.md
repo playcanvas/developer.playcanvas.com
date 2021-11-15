@@ -83,8 +83,8 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
-* **Linear:** imply scales HDR colors by exposure.
-* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+* **Linear：** HDRの色を暴露によってスケーリング。
+* **Filmic：** より複雑な曲線。過度に明るいスポットを軟化させながら、暗い色合いを保つことができる。
 
 Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
 
@@ -108,10 +108,10 @@ Filmic tone mapping is a good choice in high-contrast environments, like scenes 
 
 利用可能なタイプ：
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
-* Exp2 - Fog fades in from the view position according to an exponential squared function
+*None - 霧が無効になっています
+*Linear - 霧はFog StartとFog End距離の間で直線的にフェードインします
+*Exp - 霧は指数関数に応じて視点位置からフェードインします
+* Exp2 - 霧は指数乗の関数に応じて視点位置からフェードインします
 
 #### 色
 
@@ -133,16 +133,16 @@ Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、�
 
 アプリケーションの幅と高さを制御します。また、次のいずれかの値に解像度モードを設定することができます:
 
-* Auto - The resolution will always be the same as the canvas size
-* Fixed - The resolution will always be width x height pixels.
+* Auto - 解像度は必ずキャンバスと同じサイズになります。
+* Fixed - 解像度は必ず幅 x 高さピクセルになります。
 
 #### フィルモード
 
 Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
-* Fill window - The canvas will stretch to fill the window completely.
+* None - キャンバスは、解像度の幅と高さのサイズになります。
+* Keep aspect Ratio - キャンバスは正しいアスペクト比率を維持しながら、画面の大きさに拡大します。
+* Fill window - キャンバスは画面の大きさまで完全に拡大されます。
 
 #### デバイスピクセルの比率
 
@@ -188,7 +188,7 @@ Here you can create and manage Batch Groups for the Project. You can assign [Mod
 
 Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
 
-## Input
+## 入力
 
 Here you can enable or disable various input devices for your application.
 

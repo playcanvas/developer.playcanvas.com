@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 5
+title:  シンプルなゲームを作る - その5
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -22,8 +22,8 @@ Keepy Upゲームには次の3つの音声エフェクトがあります：BGM�
 音楽やstingの同様の方法処理されます。主な違いは、音楽はループに設定されていることです。 `game.js`に、音声コンポーネントを持つエンティティにゲームスクリプトをリンクさせるスクリプト属性があるので、単純に正しいスロットを再生・停止することができます。
 
 ```javascript
-this.audio.sound.stop(); // stop current sound playing
-this.audio.sound.play("gameover") // play the 'gameover' slot
+this.audio.sound.stop(); // 現在再生している音声を停止
+this.audio.sound.play("gameover") // 'gameover' スロットを再生
 ```
 
 #### ボールをタップ

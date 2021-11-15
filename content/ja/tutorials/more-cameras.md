@@ -1,5 +1,5 @@
 ---
-title: More Cameras
+title: その他のカメラ
 template: tutorial-page.tmpl.html
 tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
@@ -13,8 +13,8 @@ The [Basic Cameras][1] tutorial walks you through creating a camera Entity and a
 
 ## 属性の変更
 
-The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
-methods on the ComponentSystem.
+実行時にカメラを変更する最初の方法は、カメラのコンポーネントの属性の値を変更することです。これは他のコンポーネントの属性を設定するのと同じように
+ComponentSystemの`set()` と `get()`メソッドを使用して行います。
 
 ```javascript
 var Zoom = pc.createScript('zoom');
@@ -62,8 +62,8 @@ With the final two nested `if(){}` constructs we gradually change the fov values
 
 新しい行`this.entity.camera.fov= fov`でfovカメラ属性を新しい値に `set()`します。
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
-top and bottom sides of the camera [frustum][2]
+ズームアウトされている時、上部と下部のキューブが画面の端にあります。これは[PlayCanvas Editorシーン][3]でカメラ[視野円錐][2]の上下端の横にキューブが
+置かれている位置と一致しています。
 
 ## 現在のカメラ
 

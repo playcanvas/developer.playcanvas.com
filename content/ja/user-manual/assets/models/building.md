@@ -10,16 +10,16 @@ PlayCanvas is designed to import content most faithfully via the FBX interchange
 
 Some modeling and animation programs to consider:
 
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+* 無料オプション: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
+* 低価格の有用オプション: 3D-Coat, NVIL, Hexagon。
+* 高価格の有用オプション: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
 
 \* *このプログラムはアニメーションも作成できます*
 
 テクスチャの生成にお勧めのプログラム：
 
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+* 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint。
+* 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus。
 
 Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
 
@@ -27,8 +27,8 @@ Note many of the programs listed above for modeling also allow texture painting.
 
 Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
 
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+*メッシュは256のボーンにまでスキンすることができます。
+* NURBSメッシュはPlayCanvasネイティブフォーマットへの変換時に三角形に変換されます。
 
 ---
 
@@ -55,7 +55,7 @@ Blender 2.71リリースは、Blenderからの直接の複数埋め込みテク�
 あるいは、[Autodesk FBX Converter][5]を使ってBlenderからエクスポートしたファイルをメディアを埋め込んだファイルに変換することもできます。FBX Converterでファイルを開き、*Embedded Media*チェックボックスをチェックしてセーブしなおしてください。
 
 <div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+備考：Blenderに発光プロパティが設定されていないにもかかわらず、Blender 2.71のFBXエクスポートが放射率を生成する問題が発生しているです。これはPlayCanvasエンジンの問題ではありません。Blender内からこれを回避するには、素材のDiffuse色設定を0に設定します(Properties EditorのMaterialタブ)。または、PlayCanvas Editor内から放射率を減少させます。
 </div>
 
 ### **アニメーション**

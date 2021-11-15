@@ -36,7 +36,7 @@ To read more about the direct PlayCanvas API for WebXR, please refer to the [Use
 
 ## XR Input Types
 
-The level of fidelity for input devices can be broken into the following groups (DOF == Degrees of Freedom):
+入力デバイスの忠実度のレベルは、次のグループ(DOF == Degrees of Freedom)に分けられます。
 
 * **Gaze** - The default type which has no position and orientation of its own, and is based on the orientation of the head mounted display. Simply put - it is always facing forwards in the direction the user is facing. These include mobile-based VR devices such as Google Cardboard™ and Samsung Gear VR™.
 * **Screen** - Touch based input source, which is possible in AR. For example, on mobile devices with touch screens.

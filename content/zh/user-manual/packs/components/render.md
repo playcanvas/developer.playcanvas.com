@@ -10,7 +10,7 @@ The render component can be enabled or disabled using the toggle in the top righ
 
 ![Render component][1]
 
-## Properties
+## 属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -41,7 +41,7 @@ The render component can be enabled or disabled using the toggle in the top righ
     <tr><td>Materials</td><td>The material assets that will be used to render the mesh instances of this component. Each material corresponds to the respective mesh instance.</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
 You can control a render component's properties using a [script component][2]. The render component's scripting interface is [here][3].
 

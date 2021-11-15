@@ -1,5 +1,5 @@
 ---
-title: Custom Shaders
+title: カスタムシェーダー
 template: tutorial-page.tmpl.html
 tags: shaders, materials
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
@@ -135,8 +135,8 @@ var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ```
 
-The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
-top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
+このチュートリアルで紹介されているエフェクトは高さマップテクスチャーを使用して行われます。上記のコードを使用してアセットレジストリからテクスチャーにアクセスします。
+スクリプトの先頭で、PlayCanvas Editorからテクスチャーを設定することができる'maps'というスクリプト属性を宣言しています：
 
 ```javascript
 CustomShader.attributes.add('vs', {

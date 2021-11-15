@@ -48,13 +48,13 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 **RegExp** - 正規表現を使用して検索することもできます。検索フィールドの先頭に `*` を追加し、後ろにregexpクエリを入力してください。すべてのアセットを検索するには `*.`(任意の文字の)正規表現クエリを使用します。
 
-**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
-Here are some examples:
+**Tags** - タグとその組み合わせから検索するには、大括弧`[ ]`にタグを入力します。単純なクエリ演算子：AND, ORはクエリを文字列の配列、または文字列を持つ他の配列として表現することによって可能になります。クエリのロジックは、 `AssetsRegistry`の[`findByTag`][7]と同じです。
+いくつかの例を示します：
 
-`[ level-1 ]` - returns all assets that are tagged by `level-1`.
-`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
-`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
-`[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
+`[ level-1 ]` - `level-1`によってタグ付けされたすべてのアセットを返します。
+`[ level-1, level-2 ]` -  `level-1 OR level-2`によってタグ付けされたすべてのアセットを返します。
+`[ [ level-1, monster ] ]` - `level-1 AND monster`によってタグ付けされたすべてのアセットを返します。 角括弧の数に注意してください。
+`[ [ level-1, monster ], [ level-2, monster ] ]` -  `(level-1 AND monster) OR (level-2 AND monster)`によってタグ付けされたすべてのアセットを返します。
 
 ## ドラッグ＆ドロップ
 
@@ -64,9 +64,9 @@ You can also drag Assets from the Asset Panel to highlighted slots in the [Inspe
 
 モデル、素材、キューブマップなどのアセットを直接 [ビューポート][3]にドラッグすることもできます。
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+* ビューポートにモデルアセットをドラッグすると、モデルアセットが割り当てられたモデルコンポーネントを有する新しいエンティティが作成されます。ビューポートのカメラは自動的に新しく作成されたエンティティにズームします。
+* ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
+* ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
 
 ## Copy and Paste between Projects
 
@@ -107,7 +107,7 @@ Note that copy and pasting assets does not overwrite existing assets with the sa
 ![参照されていないアセット][5]
 
 <div class="alert alert-info">
-Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+Editorはコードで作成されたアセットの参照を検出できません。アセットを削除する際は注意が必要です。
 </div>
 
 アセットに参照がある場合は、Referencesコンテンツメニュー項目を使用して参照することができます。

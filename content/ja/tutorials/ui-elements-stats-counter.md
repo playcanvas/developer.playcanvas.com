@@ -1,5 +1,5 @@
 ---
-title: User Interface - Stats Counter
+title: ユーザインターフェイス - 統計カウンタ
 template: tutorial-page.tmpl.html
 tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
@@ -47,12 +47,12 @@ Boost統計のみを調べます - 他は全く同じです。`stats-boost`エ�
 
 グループには次の子要素があります：
 
-* `text-title`: A Text Element for the title of the group - anchored to the top of the group.
-* `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
-* `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
-* `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
-    * `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
-    * `text`: The Text Element that displays our stats. Anchored to the center of the `progress-bar` Element.
+* `text-title`: グループのタイトルのテキスト要素。グループの上部に固定されています。
+* `btn-minus`: 子テキスト要素を持つ画像要素。これはマイナスボタンで、グループの左下に固定されています。
+* `btn-plus`: 子テキスト要素を持つ画像要素。これはプラスボタンで、グループの右下に固定されています。
+* `progress-bar`: プログレスバーは、グループの下部に固定されています。これはプログレスバーの背景の画像要素で、2つの子要素を持ちます：
+    * `image-progress`: 実際に進行状況を表示するサイズ変更可能な画像要素。`progress-bar`要素の左に固定されます。
+    * `text`: 統計情報を表示するテキスト要素。`progress-bar`要素の中心に固定されます。
 
 ## スクリプト
 
@@ -64,33 +64,33 @@ Boost統計のみを調べます - 他は全く同じです。`stats-boost`エ�
 var UiStats = pc.createScript('uiStats');
 
 UiStats.prototype.initialize = function() {
-    // find our widgets
+    // ウィジェットを検索
     this.btnPlus = this.entity.findByName('btn-plus');
     this.btnMinus = this.entity.findByName('btn-minus');
     this.progressBar = this.entity.findByName('progress-bar');
     this.progressText = this.progressBar.findByName('text');
 
-    // initialize value to 0
+    // 値を0に初期化
     this.setValue(0);
 
-    // increase value with plus button
+    // プラスボタンで値を増やす
     this.btnPlus.element.on('click', function (evt) {
         this.setValue(this.value + 1);
     }, this);
 
-    // decrease value with minus button
+    // マイナスボタンで値を減らす
     this.btnMinus.element.on('click', function (evt) {
         this.setValue(this.value - 1);
     }, this);
 };
 
-// Sets the stat value
+// 統計値を設定
 UiStats.prototype.setValue = function (value) {
-    // clamp between min and max
+    // minとmaxの間をクランプ
     this.value = pc.math.clamp(value, 0, 10);
-    // set progress
+    // 進行を設定
     this.progressBar.script.progressBar.setProgress(this.value / 10);
-    // update progress text
+    // 進行テキストを更新
     this.progressText.element.text = this.value + ' / ' + 10;
 };
 ```

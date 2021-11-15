@@ -8,12 +8,12 @@ Lightコンポーネントはエンティティに動的ライトソースを添
 
 Lightコンポーネントはコンポーネントパネルの右上のトグルで有効と無効を切り替えることができます。有効にした場合、ライトはシーンを照らします。
 
-#### Directional
-![Light component (Directional)][1]
+#### 指向性
+![Light コンポーネント (指向性)][1]
 #### Point
-![Light component (Point)][2]
+![Light コンポーネント(ポイント)][2]
 #### Spot
-![Light component (Spot)][3]
+![Light コンポーネント (スポット)][3]
 
 ## プロパティ
 

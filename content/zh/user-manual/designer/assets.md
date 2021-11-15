@@ -64,9 +64,9 @@ You can also drag Assets from the Asset Panel to highlighted slots in the [Inspe
 
 此外还可以拖动模型，材质以及 cubemap 资源直接到[视口][3] 中进行应用。
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+* 如果拖动模型资源到视口中，编辑器将会创建一个新的实体并添加模型组件同时将模型资源添加至模型组件引用。视口摄影机将会自动缩放至呈现新创建实体的位置。
+* 如果拖动材质至视口中的模型实体上时，材质将会实时替换掉模型上的材质 (用于预览)。如果确定需要替换材质，则松开鼠标完成拖放即可。
+* 如果拖放 Cubemap 到视口中的场景背景上，Cubemap 会被做为场景的天空盒使用。在[场景设置][4]中也有对应的参数可以修改。
 
 ## Copy and Paste between Projects
 
@@ -107,7 +107,7 @@ Note that copy and pasting assets does not overwrite existing assets with the sa
 ![未引用的资源][5]
 
 <div class="alert alert-info">
-Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+请注意，编辑器无法检测对代码中生成的资产的引用。 因此，在根据此指标删除资产之前，请仔细考虑！
 </div>
 
 如果资源被引用了，您可以通过引用内容菜单项检查它们：

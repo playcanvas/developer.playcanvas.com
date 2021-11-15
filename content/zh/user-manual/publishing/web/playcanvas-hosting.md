@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas Hosting
+title: PlayCanvas 托管
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -8,15 +8,15 @@ position: 1
 
 在PlayCanvas中发布包含了一下两个步骤：
 
-1. Publish a new **Build**
-2. Set the build as the **Primary Build**
+1. 发布一个新的 **版本**
+2. 将其设置为 **首要版本**
 
 为了能顺利发布游戏，用户需要在程序中添加至少一个场景。
 
 ## 发布一个新的版本
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* 前往您的工程并打开编辑器。
+* 点击在工具条左手边的<span class="pc-icon" style="font-size">&#57911;</span>按钮或者点击在左上角目录中的发布按钮。
 
 ![Publish Button][1]
 
@@ -62,7 +62,7 @@ You can also set the Primary Build for your project, by clicking on the banner i
 It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
 
 <div class="alert alert-info">
-If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
+如果用户分享一个链接到游戏中，请使用首要工程链接。这表明当用户知道这个链接不会因为重新发布而改变。
 </div>
 
 The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.

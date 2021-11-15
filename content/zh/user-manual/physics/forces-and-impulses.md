@@ -19,7 +19,7 @@ MyScript.prototype.update = function(dt) {
 };
 ```
 
-If you want to fire a cannonball from a cannon, you would apply a single impulse:
+你过你想要通过炮口发射一个炮弹，你需要应用一个冲量:
 
 ```javascript
 MyScript.prototype.update = function(dt) {

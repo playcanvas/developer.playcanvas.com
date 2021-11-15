@@ -97,7 +97,7 @@ Below is a table of some common use cases each light source shape and light type
 
 x = no common use cases - but still can be used for application/game specific lighting effects.
 
-## Performance Considerations
+## パフォーマンスについて
 
 Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
 

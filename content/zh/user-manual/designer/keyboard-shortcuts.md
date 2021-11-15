@@ -9,27 +9,27 @@ position: 11
 编辑器的摄影机通过鼠标和键盘进行控制
 
 <table class="head-column">
-    <tr>
-        <td>Orbit camera</td><td>Left Mouse Button (LMB)</td>
-    </tr>
-    <tr>
-        <td>Pan camera</td><td>Middle Mouse Button (MMB)</td>
-    </tr>
-    <tr>
-        <td>Look camera</td><td>Right Mouse Button (RMB)</td>
-    </tr>
-    <tr>
-        <td>Pan camera</td><td>Shift + LMB</td>
-    </tr>
-    <tr>
-        <td>Zoom / Dolly camera</td><td>Mouse Wheel</td>
-    </tr>
-    <tr>
-        <td>Move Camera</td><td>W-A-S-D</td>
-    </tr>
-    <tr>
-        <td>Move Camera Fast</td><td>Shift + W-A-S-D</td>
-    </tr>
+<tr>
+<td>环绕摄影机</td><td>鼠标左键 (LMB)</td>
+</tr>
+<tr>
+<td>平移摄影机</td><td>鼠标中键 (MMB)</td>
+</tr>
+<tr>
+<td>观察摄影机</td><td>鼠标右键 (RMB)</td>
+</tr>
+<tr>
+<td>平移摄影机</td><td>Shift + LMB</td>
+</tr>
+<tr>
+<td>缩放摄影机</td><td>Mouse Wheel</td>
+</tr>
+<tr>
+<td>移动摄影机</td><td>W-A-S-D</td>
+</tr>
+<tr>
+<td>快速移动摄影机</td><td>Shift + W-A-S-D</td>
+</tr>
 </table>
 
 ## 常用鼠标控制

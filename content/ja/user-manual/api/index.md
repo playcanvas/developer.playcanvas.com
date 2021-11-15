@@ -5,7 +5,7 @@ position: 22
 ---
 
 <div class="alert alert-info">
-    The REST API is currently in beta. This means we may change certain endpoints and API responses.
+    REST APIは現在ベータ版です。特定のエンドポイントやAPIのレスポンスを変更できます。
 </div>
 
 ## 認証
@@ -97,10 +97,10 @@ APIの各呼び出しの応答形式に対して、REST APIは一般的なガイ
 ご覧の通り、この場合の応答にはページネーションのデータも含まれます。応答のページネーションを制御するには以下のURLパラメータを渡すことができます：
 
 <div class="params">
-<div class="parameter"><span class="param">limit</span><p>The maximum number of items to include in the response.</p></div>
-<div class="parameter"><span class="param">skip</span><p>The number of items to skip from the original result set.</p></div>
-<div class="parameter"><span class="param">sort</span><p>The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here.</p></div>
-<div class="parameter"><span class="param">order</span><p>If you want results in ascending order pass 1 otherwise pass -1 for descending order.</p></div>
+<div class="parameter"><span class="param">limit</span><p>レスポンスに含まれるべきアイテムの最大数。</p></div>
+<div class="parameter"><span class="param">skip</span><p>元の結果セットからスキップするアイテム数。</p></div>
+<div class="parameter"><span class="param">sort</span><p>結果セットをソートするために使用するフィールドの名前。ここで許可される値を確認するために、各リクエストのドキュメントを参照してください。</p></div>
+<div class="parameter"><span class="param">order</span><p>昇順で結果を取得したい場合は1を渡します。降順の場合は-1を渡します。</p></div>
 </div>
 
 例えば、最初の16項目の後に32項目を取得するには、この要求を送信します：
@@ -125,15 +125,15 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 REST APIへの呼び出しにはレート制限があります。リクエストに応じて、異なるレート制限があります。
 
-* **normal:** The normal rate limit allows 120 requests per minute.
-* **strict:** The strict rate limit allows 5 requests per minute.
+* **normal:** normalのレート制限は毎分120の要求を許可します。
+* **strict:** strictなレート制限は毎分5の要求を許可します。
 
 応答には、APIを呼び出す頻度を調整するために次のヘッダーが含まれています：
 
 <div class="params">
-<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>The number of requests allowed in a minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>The remaining number of requests that you are allowed to make this minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>The time at which the current rate limit window resets in <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC epoch seconds</a>.</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>一分で許可されるリクエストの数。</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>この一分間の間に許可される残りのリクエスト数。</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Reset</span><p> <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTCのエポック秒</a>で現在のレートリミットウィンドウがリセットされる時間。</p></div>
 </div>
 
 レート制限を超えると、`429 Too Many Requests`ステータスコードを取得します。要求の作成を継続するには、現在のウィンドウがリセットするのを待つ必要があります。

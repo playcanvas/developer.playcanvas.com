@@ -1,5 +1,5 @@
 ---
-title: Animation Blending
+title: 混合动画
 template: tutorial-page.tmpl.html
 tags: animation
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
@@ -23,9 +23,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 在图像中，您可以在编辑器中看到动画组件。 有2个动画资源被分配：一个“空闲”周期和一个“拳击”周期。 使用以这种方式配置的动画组件，其默认行为是播放第一个动画(空闲周期)，并且因为循环选项被设置，它将继续无限制地动画。 但是，我们想要实现一些更有趣的东西：
 
-* Play a looping idle animation.
-* Blend to a looping punch animation on a key press.
-* Blend back to idle on key release.
+* 播放循环空闲动画。
+* 按键时混合到一个循环拳击动画。
+* 在按键释放时混合回空闲动画。
 
 所以这种功能超出了不起眼的动画组件的能力。 我们需要一个脚本组件来管理此附加行为。 你可以在上面截图中的编辑器中看到角色实体的脚本组件，它引用了一个名为animation_blending.js的JS文件。 此文件的内容是：
 

@@ -1,5 +1,5 @@
 ---
-title: Using the Tween library
+title: トゥイーンライブラリ
 template: tutorial-page.tmpl.html
 tags: animation, scripts
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg

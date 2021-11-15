@@ -1,5 +1,5 @@
 ---
-title: Ambient Occlusion
+title: アンビエントオクルージョン
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -8,8 +8,8 @@ position: 4
 
 PlayCanvasでは、アンビエントライティングは拡散とスペキュラの両方のAOマップで乗算されます。
 
-![Ambient Occlusion comparison: without/with][4]
-*Left: without AO; Right: with Global AO*
+![アンビエントオクルージョン比較：使用/不使用][4]
+*左：AOなし; 右：グローバルAO使用*
 
 AOマップは、異なるスケールの場合があります。例えば、モデルの異なる部分の大きなシャドーイング効果を伴う表面の裂け目またはワールドスケールのAOを示すテクスチャ詳細AO。スケールの大きいAOは、より多くのエフェクトをもたらし、通常はUV1のライトマップと一致し、より重要です。
 
@@ -42,7 +42,7 @@ Simply upload texture in Editor and apply it on Ambient Occlusion slot on materi
 You can [explore example][6] that uses global Ambient Occlusion described above and its [project][7].
 
 [![PlayCanvas Lightmapping][8]][6]
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+*このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
 
 [0]: /user-manual/graphics/lighting/lightmapping/
 [1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png

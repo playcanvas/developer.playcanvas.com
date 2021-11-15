@@ -10,7 +10,7 @@ See the [Layout Groups][0] section for more details.
 
 ![LayoutGroup component][1]
 
-## Properties
+## 属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -27,7 +27,7 @@ See the [Layout Groups][0] section for more details.
     <tr><td>Wrap</td><td>Whether or not to wrap children onto a new row/column when the size of the container is exceeded</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
 You can control an LayoutGroup component's properties using a [script component][2]. The LayoutGroup component's scripting interface is [here][3].
 

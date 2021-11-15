@@ -23,7 +23,7 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas
 ## パラメータ
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>The id of the job.</p></div>
+<div class="parameter"><span class="param">id</span><p>ジョブのid。</p></div>
 </div>
 
 ## 応答のスキーマ
@@ -46,10 +46,10 @@ Status: 200
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Job not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>非認証</p></div>
+<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
+<div class="parameter"><span class="param">404</span><p>ジョブが見つかりません</p></div>
+<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
 ## レート制限

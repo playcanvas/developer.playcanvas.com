@@ -10,7 +10,7 @@ See the [Layout Groups][0] section for more details.
 
 ![LayoutChild component][1]
 
-## Properties
+## 属性
 
 <table class="table table-striped">
     <col class="property-name"></col>
@@ -25,7 +25,7 @@ See the [Layout Groups][0] section for more details.
     <tr><td>Exclude from layout</td><td>Completely ignore this element when calculating the layout.</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
 You can control an LayoutChild component's properties using a [script component][2]. The LayoutChild component's scripting interface is [here][3].
 

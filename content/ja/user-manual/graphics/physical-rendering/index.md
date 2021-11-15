@@ -5,7 +5,7 @@ position: 3
 ---
 
 ![Star-Lord][1]
-*Star-Lord Model by [Joachim Coppens][2]*
+*Star-Lordモデル [Joachim Coppens][2]*
 
 物理ベースレンダリング(PBR)では、一貫性のあるグラフィクスレンダリングが、アーティストによる素材作成、計測された物理的プロパティとマテリアルシェーダの組み合わせによって実現されます。光源と物体表面との関係をあらわす物理原則を適応することで、どのような照明環境でも特別な処理をすることなく自然な描画を行うことができます。
 
@@ -20,7 +20,7 @@ Diffuse and Specular (or reflected) light are the two terms that describe two ma
 ## エネルギーの保存
 
 ![Energy Conservation][3]
-*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
+*なめらかな表面には鋭く明るいハイライトがあらわれ、粗い表面には広くぼんやりとしたハイライトがあらわれます。*
 
 One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
 
@@ -29,7 +29,7 @@ One of the key features of physically correct rendering is that of Energy Conser
 ## 金属と非金属
 
 ![Metals & Non-metals][4]
-*Metals and Non-metals*
+*金属と非金属*
 
 One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine its behavior. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
 

@@ -1,5 +1,5 @@
 ---
-title: Code Editor
+title: コードエディタ
 template: usermanual-page.tmpl.html
 position: 2
 ---

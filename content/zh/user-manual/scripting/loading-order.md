@@ -1,5 +1,5 @@
 ---
-title: Loading Order
+title: 加载顺序
 template: usermanual-page.tmpl.html
 position: 6
 ---
@@ -18,8 +18,7 @@ position: 6
 
 ## 预加载
 
-Like other assets in PlayCanvas by default a script asset is marked as `preload`. This means that it will be loaded before the application starts. If you disable preloading on a script it will not be loaded under normal circumstances. This way you can include a script in your project but prevent it from loading by unchecking `preload`. You can trigger a non-preloading script to load dynamically by using the regular asset API. e.g. `this.app.assets.load(asset);`  
-It is possible to subscribe to dynamic changes to script registry:
+就像在默认情况下PlayCanvas的其他资源，脚本资源被标记为'预加载`的。这意味着它会在程序开始运行之前被加载。如果你选择禁用脚本预加载，它不会在正常情况下加载。这样你就可以在项目中包含一个脚本，并通过取消'预加载`选项防止它加载。你可以通过使用常规的资源API传递一个未加载的脚本到动态加载中。例如，使用`this.app.assets.load(asset);` 它能够订阅动态变化的脚本注册表:
 ```javascript
 this.app.scripts.on('add', function(name, scriptType) {
     console.log('script', name, 'has been loaded');

@@ -1,5 +1,5 @@
 ---
-title: Physical Materials
+title: 物理素材
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -44,16 +44,16 @@ position: 1
 
 <table class="centered">
   <tr>
-  <th>Material</th><th>RGB</th>
+  <th>素材</th><th>RGB</th>
   </tr>
   <tr>
-  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
+  <td>金</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
   </tr>
   <tr>
-  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
+  <td>銀</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
   </tr>
   <tr>
-  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
+  <td>銅</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
   </tr>
 </table>
 
@@ -62,7 +62,7 @@ position: 1
 金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
 
 <div class="alert-info">
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+金属質の値はほぼいつでも0か1かのいずれかを設定します。この間の値を設定する必要があることはまれです。
 </div>
 
 また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。

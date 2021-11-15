@@ -4,13 +4,13 @@ template: usermanual-page.tmpl.html
 position: 10
 ---
 
-## Route URL
+## 传输链接
 
 ```none
 PUT https://playcanvas.com/api/assets/:assetId
 ```
 
-## Description
+## 描述
 
 Update an existing asset's file.
 
@@ -20,20 +20,20 @@ Update an existing asset's file.
 
 **Unlike other REST API endpoints. The Update Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' https://playcanvas.com/api/assets/{assetId}
 ```
 
-## Parameters
+## 参数
 
 <div class="params">
 <div class="parameter"><span class="param">branchId: string</span><p></p>The id of the branch</div>
 <div class="parameter"><span class="param">file: file</span><p></p>Data to update asset file with</div>
 </div>
 
-## Response Schema
+## 响应模式
 
 ```none
 Status: 200
@@ -68,7 +68,7 @@ Status: 200
 }
 ```
 
-## Errors
+## 报错
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -77,9 +77,9 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## Rate Limiting
+## 速率限制
 
-This route uses a [strict][1] rate limit.
+此路由使用[严格的][1] 速率限制。
 
 [1]: /user-manual/api#rate-limiting
 

@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 4
+title: シンプルなゲームを作る - その4
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -21,64 +21,64 @@ var Ball = pc.createScript('ball');
 Ball.attributes.add('gravity', {
     type: 'number',
     default: -9.8,
-    description: 'The value of gravity to use'
+    description: '使用する引力の値'
 });
 
 Ball.attributes.add('defaultTap', {
     type: 'number',
     default: 5,
-    description: 'Speed to set the ball to when it is tapped'
+    description: 'ボールをタップした際に設定する速度'
 });
 
 Ball.attributes.add('impactEffect', {
     type: 'entity',
-    description: 'The particle effect to trigger when the ball is tapped'
+    description: 'ボールをタップした際にトリガーするパーティクル効果'
 });
 
 Ball.attributes.add('ballMinimum', {
     type: 'number',
     default: -6,
-    description: 'When ball goes below minimum y value game over is triggered'
+    description: 'ボールが最低のy値を下回るとゲームオーバーがトリガーされる'
 });
 
 Ball.attributes.add('speedMult', {
     type: 'number',
     default: 4,
-    description: 'Multiplier to apply to X speed when tap is off center'
+    description: 'タップが中心から外れた場合にX速度に適用する乗数'
 });
 
 Ball.attributes.add('angMult', {
     type: 'number',
     default: -6,
-    description: 'Multiplier to apply to angular speed when tap is off center'
+    description: 'タップが中心から外れた場合に角速度に適用する乗数'
 });
 
 Ball.tmp = new pc.Vec3();
 
-// initialize code called once per entity
+// initializeコードが各エンティティで一度のみ呼ばれる
 Ball.prototype.initialize = function() {
     this.paused = true;
 
-    // Get the "Game" Entity and start listening for events
+    // "Game" エンティティを使用してイベントのリッスンを開始
     this.game = this.app.root.findByName("Game");
 
     this.app.on("game:start", this.unpause, this);
     this.app.on("game:gameover", this.pause, this);
     this.app.on("game:reset", this.reset, this);
 
-    // Initialize properties
+    // Initializeのプロパティ
     this._vel = new pc.Vec3(0, 0, 0);
     this._acc = new pc.Vec3(0, this.gravity, 0);
     this._angSpeed = 0;
 
-    // Store the initial position and rotation for reseting
+    // リセットのために初期の位置と回転を保管
     this._origin = this.entity.getLocalPosition().clone();
     this._rotation = this.entity.getLocalRotation().clone();
 };
 
-// update code called every frame
+// 毎フレームで更新コードを呼ぶ
 Ball.prototype.update = function(dt) {
-    // Don't update when paused
+    // 一時停止の場合は更新しない
     if (this.paused) {
         this.entity.rotate(0, 30*dt, 0);
         return;
@@ -87,69 +87,69 @@ Ball.prototype.update = function(dt) {
     var p = this.entity.getLocalPosition();
     var tmp = Ball.tmp;
 
-    // integrate the velocity in a temporary variable
+    // 一時的な変数で速度を統合
     tmp.copy(this._acc).scale(dt);
     this._vel.add(tmp);
 
-    // integrate the position in a temporary variable
+    // 一時的な変数で位置を統合
     tmp.copy(this._vel).scale(dt);
     p.add(tmp);
 
-    // update position
+    // 位置を更新
     this.entity.setLocalPosition(p);
 
-    // rotate by angular speed
+    // 各速度を回転
     this.entity.rotate(0, 0, this._angSpeed);
 
-    // check for game over condition
+    // ゲームオーバー状態を確認
     if (p.y < this.ballMinimum) {
         this.game.script.game.gameOver();
     }
 };
 
 /*
- * Called by the input handler to tap the ball up in the air
- * dx is the tap distance from centre of ball in x
- * dy is the tap distance from centre of ball in y
+ * 空気中のボールをタップするために入力ハンドラによって呼び出される
+ * dxはxで表すボールの中心からタップの距離
+ * dyはyで表すボールの中心からタップの距離
  */
 Ball.prototype.tap = function (dx, dy) {
-    // Update velocity and spin based on position of tap
+    // タップの位置に基づいて速度と回転を更新
     this._vel.set(this.speedMult * dx, this.defaultTap, 0);
     this._angSpeed += this.angMult * dx;
 
-    // calculate the position of the tap in world space
+    // ワールド空間でタップの位置を計算
     var tmp = Ball.tmp;
     tmp.copy(this.entity.getLocalPosition());
     tmp.x -= dx;
     tmp.y -= dy;
 
-    // trigger particle effect to tap position, facing away from the center of the ball
+    // ボールの中心の外に向けて、位置をタップするパーティクルエフェクトをトリガー
     this.impactEffect.setLocalPosition(tmp);
     this.impactEffect.particlesystem.reset();
     this.impactEffect.particlesystem.play();
     this.impactEffect.lookAt(this.entity.getPosition());
 
-    // play audio
+    // 音声を再生
     this.entity.sound.play("bounce");
 
-    // increment the score by 1
+    // スコアを1でインクリメント
     this.game.script.game.addScore(1);
 };
 
-// Pause the ball update when not playing the game
+// ゲームをプレイしていない時ボールを一時停止
 Ball.prototype.unpause = function () {
     this.paused = false;
 
-    // start game with a tap
+    // タップしてゲームを開始
     this.tap(0, 0);
 };
 
-// Resume ball updating
+// ボールの更新を再開
 Ball.prototype.pause = function () {
     this.paused = true;
 };
 
-// Reset the ball to initial values
+// ボールを初期値にリセット
 Ball.prototype.reset = function () {
     this.entity.setLocalPosition(this._origin);
     this.entity.setLocalRotation(this._rotation);
@@ -183,9 +183,9 @@ Second, you can quickly and easily tune the behavior of scripts. When you modify
 
 オブジェクトの位置は3つの方法で変更できます。
 
-* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
-* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
-* **Change the position**, like teleportation, there isn't a real world equivalent!
+* **加速度の変更**, これは重力のように、ボールに一定の期間力を適用する場合に便利です。
+* **速度の変更**, これは瞬間的な変化です。床から跳ね返るボールなど。
+* **位置の変更**, テレポーテーションのように、現実の世界では存在しないもの！
 
 シミュレーションでは、重力による一定の加速度があります。ボールをタップすると速度に瞬時の変化を適用して、ゲームをリセットすると開始位置にボールをテレポートさせて戻します。
 
@@ -206,15 +206,15 @@ Second, you can quickly and easily tune the behavior of scripts. When you modify
 ```javascript
 var p = this.entity.getLocalPosition();
 
-// integrate the velocity in a temporary variable
+// 速度を一時的な値で統合
 tmp.copy(this._acc).scale(dt);
 this._vel.add(tmp);
 
-// integrate the position in a temporary variable
+// 位置を一時的な値で統合
 tmp.copy(this._vel).scale(dt);
 p.add(tmp);
 
-// update position
+// 位置の更新
 this.entity.setLocalPosition(p);
 ```
 

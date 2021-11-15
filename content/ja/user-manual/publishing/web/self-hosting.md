@@ -1,13 +1,13 @@
 ---
-title: Self-hosting
+title: セルフホスティング
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
 自身のドメインでPlayCanvasをセルフホスティングする方法は二つあります。
 
-1. Embed a PlayCanvas hosted game using an [iframe][1].
-2. Download your game from the Editor and upload the files to your own site.
+1. [iframe][1]を使用してPlayCanvasでホスティングしたゲームを埋め込む。
+2. Editorからゲームをダウンロードして自身のサイトにファイルをアップロード。
 
 ## iframe の埋め込み
 
@@ -28,8 +28,8 @@ position: 2
 
 PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* プロジェクトに移行してEditorを開く。
+* 左側のツールバーの<span class="pc-icon" style="font-size">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
 ![Publish Button][3]
 

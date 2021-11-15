@@ -62,10 +62,10 @@ PlayCanvas provides instant and trouble free hosting for your WebGL application 
 
 PlayCanvas изначально задумывался так, чтобы запускаться в браузере без использования каких-либо плагинов. Программный код клиента на 100% состоит из JavaScript и построен на базе HTML5 и связанных API (таких как WebGL). Почему это было важно?
 
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
+* Мобильные телефоны и планшеты не позволяют установку плагинов, а поддержка HTML5 в них все лучше и лучше.
+* Веб-приложения, написанные на PlayCanvas, запускаются без необходимости установки или загрузки плагина.
+* Веб-приложения, написанные на PlayCanvas, запускаются внутри стандартного [DOM][2]-элемента (canvas), так что вы можете разместить их на странице и трансформировать при помощи CSS.
+* Отсутствие зависимости на стороннюю технологию плагина, которая может измениться со временем. Единственная зависимость — сам браузер.
 
 At the time of writing, the browser requirements are currently as follows:
 

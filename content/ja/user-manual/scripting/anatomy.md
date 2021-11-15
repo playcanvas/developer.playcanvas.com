@@ -1,5 +1,5 @@
 ---
-title: Anatomy of a script
+title: スクリプトの構造
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -50,8 +50,9 @@ This line creates a new ScriptType called 'rotate'. The name of the script is us
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
-Attributes are automatically inherited to new script instance during code hot-swap.
+この行は、スクリプトの属性を宣言します。スクリプト属性は、スクリプトインスタンスのプロパティであり、Editor UIに露出されています。エディタで個々のエンティティをカスタマイズすることができます。この場合、属性は「speed」と呼ばれ、`this.speed`としてスクリプトコードでアクセスできます。数値であり、デフォルトでは10に初期設定されています。
+
+属性は、自動的にコードのホットスワップ中に、新しいスクリプトインスタンスに継承されています。
 
 ## 初期化
 

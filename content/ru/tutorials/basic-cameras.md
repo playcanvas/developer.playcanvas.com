@@ -16,13 +16,13 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 Чтобы создать новую камеру Вы должны добавить [компонент][1] камеры к объекту.
 
-* Select the root Entity of your Scene in the Entity Explorer
-* Create a new Entity by selecting *New Entity* from the *Entity* menu.
-* Add a Component by selecting *New Component* from *Component* menu
-* Choose *Camera* when you are prompted to choose which type of Component to create
+* Выберите корневой объект Вашей сцены в проводнике сущностей
+* Создайте новую сущность выбирая *New Entity* из меню *Entity*
+* Добавьте компонент выбирая  *New Component* из меню *Component*
+* Выберите *Camera* когда Вам будет предложено выбрать, какой тип компонента создать
 
-As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
-This is equivalent to creating a new Entity and adding a Camera Component to it.
+Как сделать камеру в общем случае: в выпадающем меню выберите *New Entity* -> *New Camera*.
+Это эквивалентно созданию новой сущности и добавления компонента камеры к ней.
 
 ## Свойства камеры
 

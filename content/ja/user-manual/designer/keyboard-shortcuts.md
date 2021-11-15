@@ -1,5 +1,5 @@
 ---
-title: Keyboard Shortcuts
+title: キーボードショートカット
 template: usermanual-page.tmpl.html
 position: 11
 ---
@@ -10,25 +10,25 @@ position: 11
 
 <table class="head-column">
     <tr>
-        <td>Orbit camera</td><td>Left Mouse Button (LMB)</td>
+        <td>ある点を中心にしたカメラの回転移動</td><td>左マウスボタン</td>
     </tr>
     <tr>
-        <td>Pan camera</td><td>Middle Mouse Button (MMB)</td>
+        <td>カメラの平行移動</td><td>中マウスボタン</td>
     </tr>
     <tr>
-        <td>Look camera</td><td>Right Mouse Button (RMB)</td>
+        <td>カメラの回転</td><td>右マウスボタン</td>
     </tr>
     <tr>
-        <td>Pan camera</td><td>Shift + LMB</td>
+        <td>パン</td><td>シフト+左マウスボタン</td>
     </tr>
     <tr>
-        <td>Zoom / Dolly camera</td><td>Mouse Wheel</td>
+        <td>ズーム</td><td>マウスホイール</td>
     </tr>
     <tr>
-        <td>Move Camera</td><td>W-A-S-D</td>
+        <td>カメラの移動</td><td>W-A-S-Dキー</td>
     </tr>
     <tr>
-        <td>Move Camera Fast</td><td>Shift + W-A-S-D</td>
+        <td>カメラの高速移動</td><td>シフト + W-A-S-Dキー</td>
     </tr>
 </table>
 

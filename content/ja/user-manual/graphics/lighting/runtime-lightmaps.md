@@ -1,11 +1,10 @@
 ---
-title: Runtime Lightmaps
+title: ランタイムライトマップ
 template: usermanual-page.tmpl.html
 position: 5
 ---
 
-![Sponza][10]
-*All the lighting in this scene is provided by lightmap textures*
+![Sponza][10]*このシーン内のすべての照明はライトマップテクスチャによって提供されています* 
 
 ライトマップ生成は静的シーンの照明情報を事前に計算し、素材に適用されるテクスチャに格納する処理です。ライトソースや形状の多くが静的または環境に使用されている場合にシーンを照らす効率的な方法です。
 
@@ -15,13 +14,13 @@ PlayCanvasにはライトマップを生成する非常に便利な方法があ�
 
 利点は次の通りです： 
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of static lights to light your scene
-* Rendering lightmaps at runtime is, in many cases, faster than downloading many lightmap textures
-* It is possible to mix static and dynamic lights in the Editor
-* Rebaking can be performed at runtime
-* Lightmaps are **HDR**
-* Not only **Color** but **Direction** data can be baked as well, enabling some specularity on baked surfaces.
+*照明は実行時に実行されません
+*数百の静的ライトを使用してシーンを点灯することができます
+*多くの場合、複数のライトマップテクスチャをダウンロードするよりも実行時にライトマップをレンダリングする方が速いです
+*Editorで静的および動的ライトを混合することができます
+*再ベークは、実行時に行うことができます
+*ライトマップはHDRです
+***Color**だけでなく、**Direction**データもベークすることができ、ベークした表面に鏡面性が得られます。
 
 実行時のライトマップ生成を使用する欠点は、グローバルイルミネーション、アンビエントオクルージョンやその他の特殊なベーキングツールの高度な機能のをベーキングに現在対応していないということです。 
 
@@ -63,19 +62,19 @@ There are two other options that modify the lights behavior. These decide which 
 
 <table>
 <tr>
-    <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
+    <th>ベーク</th><th>非ベークに影響</th><th>ベークに影響</th><th style="width: 50%;">説明</th>
 </tr>
 <tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>これがデフォルトの動的ライトです。ライトマップされていない全てのモデルに影響します。</td>
 </tr>
 <tr>
-    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting.</td>
+    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>このライトは、ライトマップされたモデルのライトマップを生成し実行時に軽い負荷で使用できます。ほとんどの静的環境ライトはこの設定を使用することができます。</td>
 </tr>
 <tr>
-    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
+    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>このライトはライトマップを生成しますが、ライトマップされていないモデルにも影響を与えます。このライトで点灯する必要のある動的/移動するエンティティがある場合に便利です。例えば、プレイヤキャラクタにも影響を与える環境照明。</td>
 </tr>
 <tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models.</td>
+    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>このライトは、ライトマップされたモデルセルとライトマップされていないモデルの両方に影響を与える動的ライトです。</td>
 </tr>
 </table>
 

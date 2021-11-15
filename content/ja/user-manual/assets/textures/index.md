@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 15
 ---
 
-A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
+テクスチャとは[素材][1]に割り当てて図形要素に適用される画像です。
 
-## Importing Textures
+## テクスチャのインポート
 
-There are 3 ways you can import texture assets into PlayCanvas:
+PlayCanvasにテクスチャアセットをインポートする方法は3つあります:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
-3. Import an FBX file that embeds textures.
+1. アセットパネルに画像をドラッグ＆ドロップ。
+2. アセットパネルのコンテキストメニューからアップロードを選択してファイルブラウザを使用して画像を選択。
+3. テクスチャを埋め込むFBXファイルをインポート。
 
-Supported image formats are:
+次の画像形式に対応しています：
 
 * JPG
 * PNG
@@ -25,39 +25,39 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG and PNG files remain in their original format.
+インポートだれたJPGとPNGファイルは元の形式のまま保たれます。
 
-GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
+GIF、TGA、BMP、TIFFの画像形式は、インポート時にJPGまたはPNGに変換されます。取り込んだ画像が透明性を有する場合、PNGに変換されます。それ以外の場合は、JPGに変換されます。
 
-HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format.
+HDRやEXRは、[高ダイナミックレンジ形式][2]です。これらの形式の画像は、インポート時にPNGに変換され、RGBM形式で格納されるものとしてマークされます。RGBMは、本質的にPNGのアルファチャンネルでRGB値の乗数を格納して、低ダイナミックレンジ形式へのHDR形式の圧縮を可能にします。
 
 By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 
-## Texture Properties
+## テクスチャプロパティ
 
-Selecting a texture's thumbnail in the Assets panel will load it into the Inspector panel. Note that you can multi-select textures and edit the whole selection simultaneously in the Inspector.
+アセットパネルでテクスチャのサムネイルを選択すると、インスペクタパネルにそれを読み込みします。テクスチャを複数選択し、インスペクタで同時に選択全体を編集できることができます。
 
-A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
+テクスチャは標準的なアセットプロパティ(ID, 名前, タグなど)を共有します。また、いくつかのテクスチャ固有の特性を有しています。
 
-![Texture Properties][3]
+![テクスチャプロパティ][3]
 
-### Texture Filtering
+### テクスチャのフィルタリング
 
 Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbors. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
 
-### Anisotropy
+### 異方性
 
-When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
+テクスチャが斜めの角度で表面に表示されると、品質を損ない、ぼやけて表示されることがあります。この問題を解決するには、異方性（anisotropy）の値を設定することができます。異方性の値がどのようにテクスチャの外観に影響を与えるかをご確認ください：
 
-![Anisotropy][4]
+![異方性][4]
 
-Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
+異方性が上がると、GPU上でテクスチャをサンプリングする際の負荷も増大します。
 
-### Texture Addressing
+### テクスチャの指定
 
-The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
+テクスチャ指定プロパティを使用すると、0から1の範囲外のテクスチャ座標に対してテクスチャがどのようにサンプリングされるかをコントロールできるようになります。各モードが、スプライトにどのように影響するかを参照してください：
 
-![Addressing][5]
+![指定][5]
 
 ## Max Texture Size
 

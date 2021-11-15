@@ -30,13 +30,13 @@ position: 6
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Type</td><td>The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
-    <tr><td>Half Extents</td><td>Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth.</td></tr>
-    <tr><td>Axis</td><td>Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity.</td></tr>
-    <tr><td>Height</td><td>Capsule only. The tip-to-tip height of the capsule.</td></tr>
-    <tr><td>Radius</td><td>Sphere and Capsule only. The radius of the sphere or capsule body.</td></tr>
-    <tr><td>Asset</td><td>Mesh only. The model asset that will be used as a source for the triangle-based collision mesh.</td></tr>
+    <tr><th>属性</th><th>描述</th></tr>
+    <tr><td>Type</td><td>原型碰撞器的类型。可以为：<ul><li>立方体</li><li>球体</li><li>胶囊</li><li>网格</li></ul></td></tr>
+    <tr><td>Half Extents</td><td>立方体限定。 这是一个3D向量：原始空间宽度，高度，深度的一半</td></tr>
+    <tr><td>Axis</td><td>胶囊限定. 将胶囊与实体的局部空间X,Y或Z轴对齐。</td></tr>
+    <tr><td>Height</td><td>胶囊限定. 胶囊两端顶部之间的距离。</td></tr>
+    <tr><td>Radius</td><td>球体和胶囊限定。球体或者胶囊体的半径。</td></tr>
+    <tr><td>Asset</td><td>网格限定。模型将被用作于三角形为基础的碰撞网格的来源。</td></tr>
 </table>
 
 ## 脚本接口

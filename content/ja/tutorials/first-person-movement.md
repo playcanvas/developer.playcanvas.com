@@ -1,5 +1,5 @@
 ---
-title: First Person Movement
+title: 一人称カメラを使った操作と移動
 template: tutorial-page.tmpl.html
 tags: input, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
@@ -15,9 +15,9 @@ See the full scene setup in the [Tutorial Project][1].
 
 下のスクリプトは次のような機能があります:
 
-* Listen for mouse and keyboard input
-* Update a camera entity from the mouse input
-* Apply forces to move the player entity around the scene
+* マウスとキーボードの入力を読み取る
+* カメラエンティティをマウス入力に基づいて動かす
+* プレイヤーエンティティがシーン内を動き回れるよう、物理的な力を加える
 
 Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
 

@@ -1,5 +1,5 @@
 ---
-title: User Interface Basics
+title: ユーザインターフェイスの基本
 template: usermanual-page.tmpl.html
 position: 1
 ---

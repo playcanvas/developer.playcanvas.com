@@ -16,7 +16,7 @@
     "Material Inspector": "",
     "Node Inspector": "",
     "Textures": "纹理",
-    "Workflow": "",
+    "Workflow": "工作流",
     "Overview": "总览",
     "File Handling": "",
     "Materials": "材质",

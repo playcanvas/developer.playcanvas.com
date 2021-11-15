@@ -8,11 +8,11 @@ position: 10
 
 使用灯光面板右上角的切换键可以开启或关闭灯光。在启用状态下，灯光将会照亮场景。
 
-#### Directional
+#### 定向光
 ![Light component (Directional)][1]
-#### Point
+#### 点光灯
 ![Light component (Point)][2]
-#### Spot
+#### 聚光灯
 ![Light component (Spot)][3]
 
 ## 属性

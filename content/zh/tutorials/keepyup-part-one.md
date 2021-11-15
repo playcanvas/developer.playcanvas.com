@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 1
+title: 制作一个简单的游戏 - Part1
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -13,12 +13,12 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 我们将介绍以下内容:
 
-1. **The Scene and Hierarchy**
-1. Material Setup
-1. The Game Script
-1. Ball Physics and Input
-1. Audio & Effects
-1. User Interface
+1. **场景和层级树**
+1. 材质设置
+1. 游戏脚本
+1. 球体的物理和输入
+1. 音频 & 特效
+1. 用户界面
 
 这并不是一个手把手的引导，但是我们会详细讲解脚本的所有部分并尝试向你解释每一块脚本是如何工作的。我们建议你将游戏工程复刻到你自己的账号下并跟随我们的讲解。
 

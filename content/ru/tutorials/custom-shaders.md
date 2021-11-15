@@ -1,5 +1,5 @@
 ---
-title: Custom Shaders
+title: Пользовательские шейдеры
 template: tutorial-page.tmpl.html
 tags: shaders, materials
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
@@ -67,12 +67,12 @@ void main(void)
 ```javascript
 var vertexShader = this.vs.resource;
 
-// dynamically set the precision depending on device.
+// Динамически указываем точность, в зависимости от устройства
 var fragmentShader = "precision " + gd.precision + " float;\n";
 fragmentShader = fragmentShader + this.fs.resource;
 
 
-// A shader definition used to create a new shader.
+// Объявление шейдера, для создания нового
 var shaderDefinition = {
     attributes: {
         aPosition: pc.gfx.SEMANTIC_POSITION,
@@ -134,8 +134,7 @@ var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ```
 
-The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
-top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
+Эффект, демонстрируемый в этом уроке, достигается использованием карты висок. Мы получаем доступ к текстуре через ресурс, используя код выше. В верху нашего скрипта мы объявили атрибут скрипта 'карты', который дает нам возможность установить текстуру из редактора PlayCanvas.
 
 ```javascript
 CustomShader.attributes.add('vs', {

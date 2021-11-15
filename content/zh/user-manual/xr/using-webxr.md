@@ -90,7 +90,7 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 
 When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
 
-![Camera Offset][1]
+![Camera 偏移量][1]
 
 Input source ray, as well as position and rotation of grip and hands, provided in world space.
 

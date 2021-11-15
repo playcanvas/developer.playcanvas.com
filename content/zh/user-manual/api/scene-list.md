@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 14
 ---
 
-## Route URL
+## 传输链接
 
 ```none
 GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 ```
 
-## Description
+## 描述
 
 Get a list of all scenes for a project
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
@@ -26,14 +26,14 @@ GET https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## 参数
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list scenes from</p></div>
 <div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the master branch will be used.</p></div>
 </div>
 
-## Response Schema
+## 响应模式
 
 ```none
 Status: 200
@@ -51,16 +51,16 @@ Status: 200
 }
 ```
 
-## Errors
+## 报错
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止访问</p></div>
+<div class="parameter"><span class="param">404</span><p>项目未找到</p></div>
+<div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## Rate Limiting
+## 速率限制
 
 This route uses a [normal][1] rate limit.
 

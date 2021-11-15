@@ -1,5 +1,5 @@
 ---
-title: Controlling Lights
+title: 控制灯光
 template: tutorial-page.tmpl.html
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
@@ -41,8 +41,8 @@ These lines assign values to r, g and b variables based on a sin wave and then a
     Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
 </div>
 
-##General setup
-We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
+##通用设置
+除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问] [2]。
 
 The full code used for the above PlayCanvas app is as follows.
 ```javascript

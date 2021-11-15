@@ -65,12 +65,12 @@ PlayCanvas提供了一个方便而又强大的方法来对实体和实体之间�
 触发 `player:move` 事件。
 
 ```javascript
-var Player = pc.createScript('player');
+var Player = pc.createScript("player");
 
 Player.prototype.update = function (dt) {
     var x = 1;
     var y = 1;
-    this.app.fire('player:move', x, y);
+    this.app.fire("player:move", x, y);
 };
 ```
 

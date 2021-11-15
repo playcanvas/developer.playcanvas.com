@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 3
+title: 制作一个简单的游戏 - Part 2
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -27,7 +27,7 @@ Game.STATE_MENU = 'menu';
 Game.STATE_INGAME = 'ingame';
 Game.STATE_GAMEOVER = 'gameover';
 
-// initialize code called once per entity
+// initializeコードが各エンティティで一度のみ呼ばれる
 Game.prototype.initialize = function() {
     this._state = Game.STATE_MENU;
     this._score = 0;
@@ -36,16 +36,16 @@ Game.prototype.initialize = function() {
 
     window.addEventListener("resize", this.setResolution.bind(this));
 
-    // listen to events from the UI
+    // UIからイベントをリッスン
     this.app.on("ui:start", this.start, this);
     this.app.on("ui:reset", this.reset, this);
 };
 
 Game.prototype.setResolution = function () {
-    // if the screen width is less than 640
-    // fill the whole window
-    // otherwise
-    // use the default setting
+    // 画面の幅が640未満の場合
+    // 画面全体を埋める
+    // その他の場合
+    // デフォルト設定を使用
 
     var w = window.screen.width;
     var h = window.screen.height;
@@ -56,7 +56,7 @@ Game.prototype.setResolution = function () {
     }
 };
 
-// Call this to move from MENU to INGAME
+// MENUからINGAMEに移行するにはこれを呼ぶ
 Game.prototype.start = function () {
     this._state = Game.STATE_INGAME;
     this.app.fire("game:start");
@@ -66,7 +66,7 @@ Game.prototype.start = function () {
     this.audio.sound.play("music");
 };
 
-// Call this to move from INGAME to GAMEOVER
+// INGAMEからGAMEOVERに移行するにはこれを呼ぶ
 Game.prototype.gameOver = function () {
     this._state = Game.STATE_GAMEOVER;
     this.app.fire("game:gameover");
@@ -77,7 +77,7 @@ Game.prototype.gameOver = function () {
     this.audio.sound.play("gameover");
 };
 
-// Call this to move from GAMEOVER to MENU
+// GAMEOVERからMENUに移行するにはこれを呼ぶ
 Game.prototype.reset = function () {
     this.app.fire("game:reset");
     this.resetScore();
@@ -88,18 +88,18 @@ Game.prototype.reset = function () {
     this.audio.sound.stop();
 };
 
-// return the current score
+// 現在のスコアを返す
 Game.prototype.getScore = function () {
     return this._score;
 };
 
-// add a value to the score
+// スコアに値を追加
 Game.prototype.addScore = function (v) {
     this._score += v;
     this.app.fire("game:score", this._score);
 };
 
-// reset the score
+// スコアをリセット
 Game.prototype.resetScore = function () {
     this._score = 0;
     this.app.fire("game:score", this._score);
@@ -130,7 +130,7 @@ this.app.fire("game:start")
 
 ```javascript
 this.app.on("game:start", function () {
-    console.log("game:start event was fired");
+    console.log("game:startイベントが発動");
 }, this)
 ```
 
@@ -155,14 +155,14 @@ Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
 
 Input.worldPos = new pc.Vec3();
 
-// initialize code called once per entity
+// エンティティ毎に一度呼び出されるコードのinitialize
 Input.prototype.initialize = function() {
 
     var self = this;
 
     this._paused = true;
 
-    // Listen for game events so we know whether to respond to input
+    // 入力に応答するべきか分かるよう、ゲームイベントにリッスンする
     this.app.on("game:start", function () {
         self._paused = false;
     });
@@ -170,12 +170,12 @@ Input.prototype.initialize = function() {
         self._paused = true;
     });
 
-    // set up touch events if available
+    // 可能であればタッチイベントを設定する
     if (this.app.touch) {
         this.app.touch.on("touchstart", this._onTouchStart, this);
     }
 
-    // set up mouse events
+    // マウスイベントを設定
     this.app.mouse.on("mousedown", this._onMouseDown, this);
 };
 
@@ -184,16 +184,16 @@ Input.prototype._onTap = function (x, y) {
     var camPos = this.camera.getPosition();
     var worldPos = Input.worldPos;
 
-    // Get the position in the 3D world of the touch or click
-    // Store the in worldPos variable.
-    // This position is at the same distance away from the camera as the ball
+    // タッチまたはクリックの3Dワールドで位置を取得
+    // worldPos変数で保管。
+    // この位置はボールと同じだけカメラから離れています
     this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
-    // get the distance of the touch/click to the ball
+    // ボールへのタッチ／クリックの距離を取得
     var dx = (p.x - worldPos.x);
     var dy = (p.y - worldPos.y);
 
-    // If the click is inside the ball, tap the ball
+    // クリックがボールの中の場合、ボールをタップします
     var lenSqr = dx*dx + dy*dy;
     if (lenSqr < this.ballRadius*this.ballRadius) {
         this.ball.script.ball.tap(dx, dy);
@@ -205,11 +205,11 @@ Input.prototype._onTouchStart = function (e) {
         return;
     }
 
-    // respond to event
+    // イベントに反応
     var touch = e.changedTouches[0];
     this._onTap(touch.x, touch.y);
 
-    // stop mouse events firing as well
+    // マウスイベントが発動するのも止めます
     e.event.preventDefault();
 };
 
@@ -218,7 +218,7 @@ Input.prototype._onMouseDown = function (e) {
         return;
     }
 
-    // respond to event
+    // イベントに反応
     this._onTap(e.x, e.y);
 };
 ```
@@ -248,11 +248,11 @@ We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applicat
 ほとんどの場合、PlayCanvasは事前にオブジェクトの割り当てや再利用ができるようにベクターまたは類似のオプションを渡すオプションを提供します。
 
 ```javascript
-// get the distance of the touch/click to the ball
+// タッチ／クリックからボールへの距離を取得
 var dx = (p.x - worldPos.x);
 var dy = (p.y - worldPos.y);
 
-// If the click is inside the ball, tap the ball
+// クリックがボールの中の場合、ボールをタップ
 var lenSqr = dx*dx + dy*dy;
 if (lenSqr < this.ballRadius*this.ballRadius) {
     this.ball.script.ball.tap(dx, dy);

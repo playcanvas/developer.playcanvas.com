@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 1
+title: シンプルなゲームを作る - その1
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -13,12 +13,12 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 以下の項目について説明していきます:
 
-1. **The Scene and Hierarchy**
-1. Material Setup
-1. The Game Script
-1. Ball Physics and Input
-1. Audio & Effects
-1. User Interface
+1. **シーンと階層構造**
+1. マテリアルの設定
+1. ゲームスクリプト
+1. ボールの物理シミュレーションと入力
+1. 効果音とエフェクト
+1. ユーザインタフェース
 
 このチュートリアルは手順を一つ一つ説明するガイドではありません。その代わり、ゲームを構成するすべてのスクリプト要素について、それらがどのように機能するかを説明していきます。チュートリアルを読むにあたって、このゲームプロジェクトをフォークし、自分のアカウント上で見ながら進めることをおすすめします。
 

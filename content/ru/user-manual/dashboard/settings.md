@@ -30,7 +30,7 @@ Only users with premium accounts can access private projects
 
 Here you can add or remove other users to your Project and change their permissions.
 
-## Delete Project
+## Удалить проект
 
 Pless the DELETE button to permanently delete your project. Note that this action cannot be undone.
 

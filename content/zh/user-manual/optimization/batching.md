@@ -78,7 +78,7 @@ You can see in the animation each draw call as it is made. In this environment t
 
 In this animation we have created 4 batch groups for the buildings, the cacti, the road and the ground. Notice, that the road and the ground are not combined into single draw calls because the meshes are larger than the Max AABB Size defined on the batch group.
 
-## Terminology
+## 专业名词
 
 * **Batch Group** - A named group, created in the Editor, that defines some hints on how mesh instances should be combined. Components are assigned to a batch group
 * **Batch** - An engine object created at runtime which is the set of mesh instances that are rendered in a single draw call. A batch group may result in multiple batches depending on the properties of the mesh instances that are added to the batch group.

@@ -4,8 +4,8 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-![Star-Lord][1]
-*Star-Lord Model by [Joachim Coppens][2]*
+![星际骑士][1]
+*星际骑士 模型，作者： [Joachim Coppens][2]*
 
 基于物理的渲染(PBR)是一个艺术工作流程的组合，使在图形渲染时一同工作的物理性能和材质着色器获得协调和一致。
 
@@ -19,8 +19,8 @@ Diffuse and Specular (or reflected) light are the two terms that describe two ma
 
 ## 节约性能
 
-![Energy Conservation][3]
-*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
+![节约性能][3]
+*越光滑表面反射光光斑越小越亮, 越粗糙的表面反射光光斑越大越暗 *
 
 One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
 
@@ -28,8 +28,8 @@ PBR让人欣喜的地方在于性能的节约全部包含在了着色器内，�
 
 ## 金属 & 非金属
 
-![Metals & Non-metals][4]
-*Metals and Non-metals*
+![金属 & 废金属][4]
+*金属和非金属*
 
 One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine its behavior. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
 

@@ -1,5 +1,5 @@
 ---
-title: Basic Cameras
+title: 基础摄像机
 template: tutorial-page.tmpl.html
 position: 3
 tags: camera
@@ -16,13 +16,13 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 要创建新的相机实体，您需要向实体添加一个相机[组件] [1]。
 
-* Select the root Entity of your Scene in the Entity Explorer
-* Create a new Entity by selecting *New Entity* from the *Entity* menu.
-* Add a Component by selecting *New Component* from *Component* menu
-* Choose *Camera* when you are prompted to choose which type of Component to create
+*在实例管理器*中选择场景的根节点
+*通过从*Entity*菜单中选择*新实体*创建一个新实体
+*通过从* Component *菜单项中选择* New Component *添加组件
+*当提示您选择要创建的组件类型时，请选择*Camera*
 
-As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
-This is equivalent to creating a new Entity and adding a Camera Component to it.
+由于制作相机实体是一项常见任务，因此有一个快捷方式：在*实体*菜单中选择*新实体* - > *新建相机*。
+这相当于创建一个新实体并向其中添加一个相机组件。
 
 ## 摄像机属性
 

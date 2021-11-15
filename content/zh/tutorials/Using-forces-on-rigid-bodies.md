@@ -1,5 +1,5 @@
 ---
-title: Forces and Impulses
+title: 力和冲量
 template: tutorial-page.tmpl.html
 tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
@@ -7,11 +7,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 <iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
-*Press R to reset the cube.*
+*使用按键来表示冲量，使用WASD键应用扭矩并旋转立方体。 按住F可应用恒定的向上力以消除重力效应
+*按R重置立方体*
 
-*Try to get the cube to balance and spin on one of its corners!*
-*The full code used is shown at the bottom of this page.*
+*尝试让立方体平衡在恒定的一个角落并旋转！*
+*使用到的完整代码显示在本页的底部。*
 
 在本教程中，我们将向您展示如何使用力来控制动态刚体并生成上述演示的内容。 我们将简要地显示力，冲量，扭矩的使用和刚体组件UI的使用以定制行为。
 

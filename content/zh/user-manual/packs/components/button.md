@@ -50,7 +50,7 @@ The Button Component can be used in two Transition Modes. *Sprite Swap*, which u
     <tr><td>Fade Duration</td><td>The time in milliseconds to blend between the different state colors</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
 You can control the properties of a Button component using a [script component][5]. The scripting interface for the Button component is [here][6].
 

@@ -1,5 +1,5 @@
 ---
-title: Screens
+title: スクリーン
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -49,13 +49,13 @@ Screenコンポーネントの* Reference Resolution *プロパティを「理�
 これらの例では、Scale Blendプロパティの変更による、PortraitからLandscapeへの変更に対するインターフェイスの応答への影響を確認できます
 
 ![Scale Blend 0][8]
-With a value of 0 the increase in horizontal resolution makes the button too large
+値が0の場合、水平解像度が高くなるとボタンが大きくなりすぎます。
 
 ![Scale Blend 1][10]
-With a value of 1 the decrease in vertical resolution makes the button too small
+値が1の場合、垂直解像度が低下するとボタンが小さくなりすぎます
 
 ![Scale Blend 0.5][9]
-With a value of 0.5 the two changes are balanced and the button stays the same size
+値が0.5の場合、2つの変更が均衡し、ボタンは同じサイズのままになります
 
 [1]: /user-manual/packs/components/screen
 [2]: /images/user-manual/user-interface/screens/screen-space-viewport.png

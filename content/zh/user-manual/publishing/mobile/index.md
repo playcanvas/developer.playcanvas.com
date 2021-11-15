@@ -1,5 +1,5 @@
 ---
-title: Mobile
+title: 移动端
 template: usermanual-page.tmpl.html
 position: 2
 ---

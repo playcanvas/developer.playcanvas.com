@@ -104,10 +104,10 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 События доступные для `pc.Mouse`:
 
-* `pc.EVENT_MOUSEUP` - fires when a mouse button is released
-* `pc.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
-* `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
-* `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
+* `pc.EVENT_MOUSEUP` - срабатывает при отпускании кнопки мыши
+* `pc.EVENT_MOUSEDOWN` - срабатывает при нажатии кнопки мыши
+* `pc.EVENT_MOUSEMOVE` - срабатывает на движение мыши
+* `pc.EVENT_MOUSEWHEEL` - срабатывает на прокрутку колеса мыши.
 
 Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistent across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
 

@@ -1,5 +1,5 @@
 ---
-title: Post Effects
+title: ポストエフェクト
 template: usermanual-page.tmpl.html
 position: 6
 ---

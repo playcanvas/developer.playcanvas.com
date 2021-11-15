@@ -1,5 +1,5 @@
 ---
-title: Particles
+title: パーティクル
 template: usermanual-page.tmpl.html
 position: 5
 ---

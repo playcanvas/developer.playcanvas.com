@@ -1,5 +1,5 @@
 ---
-title: Entities
+title: エンティティ
 template: usermanual-page.tmpl.html
 position: 1
 ---

@@ -1,5 +1,5 @@
 ---
-title: Light Cookies
+title: 灯光烘焙
 template: tutorial-page.tmpl.html
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
@@ -12,7 +12,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4097
 在戏剧中，通常通过使用形状蒙板在场景上投射阴影来在舞台上创建视觉效果。 这些蒙版被称为"cucoloris"或"cookies"。 使用PlayCanvas在WebGL中创建一个light cookie是通过使用Light组件的纹理或cubemap来实现的。 Light Cookies适用于聚光灯和点光源。
 
 ![Grid Cookie][2]
-**A simple grid cookie gives the impression of a window**
+**一个简单的给人一个窗口印象的网格cookie**
 
 ## Cookie 纹理
 

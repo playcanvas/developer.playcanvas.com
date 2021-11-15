@@ -4,29 +4,29 @@ template: usermanual-page.tmpl.html
 position: 12
 ---
 
-## Route URL
+## 传输链接
 
 ```none
 GET https://playcanvas.com/api/jobs/:id
 ```
 
-## Description
+## 描述
 
-Gets a Job by id.
+通过ID寻找作业。
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/jobs/99999
 ```
 
-## Parameters
+## 参数
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>The id of the job.</p></div>
+<div class="parameter"><span class="param">id</span><p>作业的ID。</p></div>
 </div>
 
-## Response Schema
+## 响应模式
 
 ```none
 Status: 200
@@ -43,16 +43,16 @@ Status: 200
 }
 ```
 
-## Errors
+## 报错
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Job not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止访问</p></div>
+<div class="parameter"><span class="param">404</span><p>作业未找到</p></div>
+<div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## Rate Limiting
+## 速率限制
 
 This route uses a [normal][1] rate limit.
 

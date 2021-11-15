@@ -37,7 +37,7 @@ Simply upload texture in Editor and apply it on Ambient Occlusion slot on materi
 
 ![Editor Ambient Occlusion Map][5]
 
-## Example
+## 案例
 
 You can [explore example][6] that uses global Ambient Occlusion described above and its [project][7].
 

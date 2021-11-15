@@ -1,5 +1,5 @@
 ---
-title: Lighting
+title: ライティング
 template: usermanual-page.tmpl.html
 position: 2
 ---

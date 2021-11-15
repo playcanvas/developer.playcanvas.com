@@ -1,5 +1,5 @@
 ---
-title: Components
+title: 组件
 template: usermanual-page.tmpl.html
 position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: Input
+title: 入力
 template: usermanual-page.tmpl.html
 position: 8
 ---

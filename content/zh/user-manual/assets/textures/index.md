@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 15
 ---
 
-A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
+纹理是可以被分配到 [材质][1] 表面并应用到图元的图片。
 
-## Importing Textures
+## 导入材质
 
-There are 3 ways you can import texture assets into PlayCanvas:
+你有3种方式将纹理资源导入PlayCanvas:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
-3. Import an FBX file that embeds textures.
+1. 将图像拖放到“资源”面板中
+2. 从“资源”面板的上下文菜单中选择“上传”，然后使用文件浏览器选择一个图像
+3. 导入嵌入纹理的FBX文件。
 
-Supported image formats are:
+支持的图片格式有：
 
 * JPG
 * PNG
@@ -25,39 +25,39 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG and PNG files remain in their original format.
+导入的JPG和PNG文件保持原始格式。
 
-GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
+GIF，TGA，BMP和TIF图片类型将在导入时转换为JPG或PNG。 如果导入的图像具有透明度，则会将其转换为PNG。 否则，它将转换为JPG。
 
-HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format.
+HDR和EXR是[高动态范围格式] [2]格式。 这些类型的图像在导入时转换为PNG，并标记为以RGBM格式存储。 RGBM本质上在PNG的alpha通道中存储用于RGB值的乘法器，使得能够将HDR格式压缩为低动态范围格式。
 
 By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 
-## Texture Properties
+## 纹理属性
 
-Selecting a texture's thumbnail in the Assets panel will load it into the Inspector panel. Note that you can multi-select textures and edit the whole selection simultaneously in the Inspector.
+在资源面板中选择纹理的缩略图，可以将其加载到“检查器”面板中。 请注意，您可以在检查器中同时多次选择纹理并编辑所有选项。
 
-A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
+纹理与材质共享了一部分的基础属性的设置 (ID, name, tags 以及一些其他的)。但它依旧有一些纹理独享的属性。
 
-![Texture Properties][3]
+![纹理属性][3]
 
-### Texture Filtering
+### 纹理过滤
 
 Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbors. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
 
-### Anisotropy
+### 各向异性
 
-When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
+当纹理表面被从一个倾斜的角度看时,他们的质量会下降并显得模糊。为了解决这个问题,你可以设置一个叫做各向异性的值。我们来看看不同的各向异性值会怎样影响纹理的外观:
 
-![Anisotropy][4]
+![各向异性][4]
 
-Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
+注意,随着各向异性增加,在GPU上抽样纹理的成本也增加了。
 
-### Texture Addressing
+### 纹理寻址
 
-The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
+纹理寻址属性让你能够在控制一个纹理如何采样范围0到1以外的纹理坐标。看看不同的模式如何影响下面的精灵的显示:
 
-![Addressing][5]
+![寻址][5]
 
 ## Max Texture Size
 

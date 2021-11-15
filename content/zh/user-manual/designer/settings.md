@@ -83,8 +83,8 @@ have enabled Localization for Text Elements and when you use Localized Assets.
 
 Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
-* **Linear:** imply scales HDR colors by exposure.
-* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+* **线性：** 根据曝光值缩放 HDR 色彩。
+* **胶片：** 更复杂的曲线，在高光位置更加柔和，同时暗部的细节也有更多保留。
 
 Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
 
@@ -108,10 +108,10 @@ Filmic tone mapping is a good choice in high-contrast environments, like scenes 
 
 雾有如下的种类：
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
-* Exp2 - Fog fades in from the view position according to an exponential squared function
+* None - 没有雾
+* Linear - 雾的浓度会线性增加从雾的开始距离到截止距离
+* Exp - 雾从视野位置开始指数增加
+* Exp2 - 雾从视野位置开始指数平方增加
 
 #### 颜色
 
@@ -133,16 +133,16 @@ Filmic tone mapping is a good choice in high-contrast environments, like scenes 
 
 控制应用的宽度和高度。可以选择如下的分辨率模式：
 
-* Auto - The resolution will always be the same as the canvas size
-* Fixed - The resolution will always be width x height pixels.
+* 自动 - 分辨率将会始终和画布保持一致
+* 固定 - 分辨率将会示众固定于 宽度 x 高度 像素
 
 #### 填充模式
 
 Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
-* Fill window - The canvas will stretch to fill the window completely.
+* None - 画布将会和分辨率的宽高设定保持一致。
+* Keep aspect Ratio - 画布将会扩展填充窗口以保持正确的宽高比。
+* Fill window - 画布将会拉伸填满整个窗口。
 
 #### 设备像素比例
 

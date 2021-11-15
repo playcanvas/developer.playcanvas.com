@@ -10,7 +10,7 @@ See the [User Interface][0] section for more details.
 
 ![Screen Component][1]
 
-## Component Properties
+## 组件属性
 
 <table class="table table-striped">
     <col class="property-name"></col>

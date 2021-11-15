@@ -1,5 +1,5 @@
 ---
-title: Building Models
+title: 创建模型
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -10,16 +10,16 @@ PlayCanvas is designed to import content most faithfully via the FBX interchange
 
 Some modeling and animation programs to consider:
 
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+*免费选项：Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
+*低成本付费选项：3D-Coat, NVIL, Hexagon
+*高成本付费选项： ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
 
 \* *这个程序也能够创建动画。*
 
 为了生成纹理，请考虑这些程序:
 
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+* 免费选项: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* 付费选项: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
 
@@ -27,8 +27,8 @@ Note many of the programs listed above for modeling also allow texture painting.
 
 Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
 
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+*网格可以蒙皮到256骨骼上
+* NURBS网格将转换为三角形网格，进而转换为PlayCanvas所适应的格式。
 
 ---
 
@@ -55,7 +55,7 @@ Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实�
 或者，使用[Autodesk FBX Converter] [5]将来自Blender的导出转换为带有嵌入式媒体的导出。 只需在FBX Converter中打开该文件，然后使用* Embedded Media *复选框进行重新保存。
 
 <div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+注意: 这里似乎存在一个问题，尽管用户没有在Blender中设置自发光属性，Blender 2.71的FBX导出依旧会生成自发光， - 这不是一个PlayCanvas引擎所需要的项。 为了避免这种情况，在Blender中，您可以将材质的Diffuse颜色设置更改为0(在“属性编辑器”中的“材质”选项卡下)。 或者直接降低PlayCanvas编辑器内的自发光率。
 </div>
 
 ### **动画**

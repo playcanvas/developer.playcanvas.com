@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 4
+title: 制作一个简单的游戏 - Part 4
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -183,9 +183,9 @@ Second, you can quickly and easily tune the behavior of scripts. When you modify
 
 您可以通过三种方式之一改变对象的位置。
 
-* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
-* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
-* **Change the position**, like teleportation, there isn't a real world equivalent!
+* **改变加速度**，这对于在一段时间内施加力是有用的，比如球上的重力
+* **更改速度**，这是瞬时变化。 就像一个球撞击地板弹跳
+* **改变位置**，像传送，这并不是一个现实现象的模拟！
 
 在我们的模拟中，由于重力我们的球有一个恒定的加速度，当你点击球时球的速度被进行了瞬间变化，当你重置游戏，我们传送球回到它的起始位置。
 

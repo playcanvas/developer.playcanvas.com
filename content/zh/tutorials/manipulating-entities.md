@@ -1,5 +1,5 @@
 ---
-title: Manipulating Entities
+title: 操纵实体
 template: tutorial-page.tmpl.html
 tags: basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
@@ -20,7 +20,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*World and Local co-ordinate systems*
+*世界坐标系和自身坐标系*
 <br />
 
 ### 层级树
@@ -71,15 +71,15 @@ entity.translateLocal(0, 0, 1);
 
 **Euler Angles**
 
-* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
-* Euler angles are easy to understand because you can visualize the effect they will have in your head.
+*欧拉角是以*坐标系*的X，Y和Z轴为中心的三个以度为单位的旋转量组成的
+*如果俯视坐标系轴，正欧拉角将导致围绕该轴的逆时针旋转
+*欧拉角很容易理解，因为你可以在脑中想象他们所产生的影响。
 
 **Quaternions**
 
-* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
-* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
-* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
+*四元数被存储为4个数字，并能够表示3D空间中的任何方向
+*它们难以直接设置，但可以从欧拉角，旋转矩阵或轴角度转换成
+*虽然它们难以可视化，但它们非常有用，因为它们的功能是强大的，并可以快速进行插值(当进行动态旋转时)。
 
 当使用脚本操作一个实体时，你更可能愿意通过欧拉角来设置实体的方向。举个例子：
 

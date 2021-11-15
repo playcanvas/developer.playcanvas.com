@@ -16,7 +16,7 @@
     "Material Inspector": "",
     "Node Inspector": "",
     "Textures": "テクスチャー",
-    "Workflow": "",
+    "Workflow": "ワークフロー",
     "Overview": "概要",
     "File Handling": "",
     "Materials": "素材",

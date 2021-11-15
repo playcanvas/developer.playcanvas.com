@@ -1,5 +1,5 @@
 ---
-title: Group Elements
+title: グループ要素
 template: usermanual-page.tmpl.html
 position: 4
 ---

@@ -1,5 +1,5 @@
 ---
-title: User Interface - Leaderboard
+title: ユーザインターフェイス - リーダーボード
 template: tutorial-page.tmpl.html
 tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
@@ -86,11 +86,11 @@ JSONアセットを読み込みリーダーボードを塗りつぶす `leaderbo
 ```javascript
 var Leaderboard = pc.createScript('leaderboard');
 
-// the text entry template to clone
+// 複製するテキスト入力テンプレート
 Leaderboard.attributes.add("template", {type: "entity"});
-// the parent leaderboard for the personal score
+// 個人スコアの親リーダーボード
 Leaderboard.attributes.add("personal", {type: "entity"});
-// the parent leaderboard for the top ten
+// 上位10位の親リーダーボード
 Leaderboard.attributes.add("leaderboard", {type: "entity"});
 
 Leaderboard.prototype.initialize = function() {
@@ -101,11 +101,11 @@ Leaderboard.prototype.initialize = function() {
     this.load(function (data) {
         self.clear();
 
-        // add the personal entry
+        // 個人用エントリを追加する
         var y = -75;
         self.addEntry(self.personal, y, data.personal.position, data.personal.name, data.personal.score);
 
-        // add the top ten
+        // トップ10を追加
         y = -60;
         for (var i = 0; i < Math.min(data.leaderboard.length, 10); i++) {
             self.addEntry(self.leaderboard, y, i+1, data.leaderboard[i].name, data.leaderboard[i].score);
@@ -114,7 +114,7 @@ Leaderboard.prototype.initialize = function() {
     });
 };
 
-// clear all leaderboard entries
+// すべてのリーダーボードエントリをクリアする
 Leaderboard.prototype.clear = function () {
     for (var i = 0; i < this.entries.length; i++) {
         this.entries[i].destroy();
@@ -123,7 +123,7 @@ Leaderboard.prototype.clear = function () {
     this.entries = [];
 };
 
-// add a new entry into the leaderboard
+// リーダーボードに新しいエントリを追加する
 Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
     var entry = this.template.clone();
     entry.enabled = true;
@@ -138,8 +138,8 @@ Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
     entry.translateLocal(0, y, 0);
 };
 
-// Mock loading leaderboard data, for this demo we just get the data from a JSON file in the project
-// For your project you could download this from a server backend
+// リーダーボードのデータの読み込み模擬。このデモでは、プロジェクトのJSONファイルからデータを取得します
+// あなたのプロジェクトでは、サーバのバックエンドからダウンロードできます
 Leaderboard.prototype.load = function (callback) {
     var asset = this.app.assets.find("leaderboard-data.json");
     asset.ready(function () {

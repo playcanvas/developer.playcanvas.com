@@ -1,5 +1,5 @@
 ---
-title: Basic Mouse Input
+title: 基本的なマウス入力
 template: tutorial-page.tmpl.html
 tags: mouse, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
@@ -104,10 +104,10 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 `pc.Mouse`で利用可能なイベント：
 
-* `pc.EVENT_MOUSEUP` - fires when a mouse button is released
-* `pc.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
-* `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
-* `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
+* `pc.EVENT_MOUSEUP` - マウスボタンが開放されると発動
+* `pc.EVENT_MOUSEDOWN` - マウスボタンが押されると発動
+* `pc.EVENT_MOUSEMOVE` - マウスが動かされると発動
+* `pc.EVENT_MOUSEWHEEL` - マウスホイールが動かされると発動
 
 Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistent across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
 

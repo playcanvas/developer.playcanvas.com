@@ -12,8 +12,8 @@ PlayCanvasで物理ベースレンダリングを使用する際に最良の結�
 
 Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tone mapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
 
-![HDR vs LDR CubeMap for Image Based Rendering][9]
-*Notice how bright parts in texture are clamped using LDR*
+![画像ベースレンダリングのためのHDR対LDR CubeMap][9]
+*テクスチャの明るい部分がLDRを使用してクランプされていることに注意してください*
 
 ## エネルギーの保全
 
@@ -43,9 +43,9 @@ CubeMap is made of 6 faces, each representing square side of a cube, simply put:
 
 ## IBLの適用
 
-This can be done using two methods:
-1. Use CubeMap as Skybox in Scene Settings.
-2. Use CubeMap as environment map on the Material directly.
+これには2つの方法があります：
+1. CubeMapをシーン設定のSkyboxとして使用します。
+2.素材の環境マップとしてCubeMapを直接使用します。
 
 ## ボックスのプロジェクションマッピング
 
@@ -57,8 +57,8 @@ This can be done using two methods:
 
 Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
 
-[![Environment Box Projection Mapping][5]][7]
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+[![環境ボックスプロジェクションマッピング][5]][7]
+*このシーンのライティングは、ライトマップとAOテクスチャとボックス投影IBL(反射)*を使用して実装されます
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction

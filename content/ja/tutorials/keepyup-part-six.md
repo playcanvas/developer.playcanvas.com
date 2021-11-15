@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 6
+title: シンプルなゲームを作る - その6
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
@@ -38,7 +38,7 @@ var UiMenu = pc.createScript('uiMenu');
 
 UiMenu.attributes.add("overlay", {type: "entity"});
 
-// initialize code called once per entity
+// エンティティ毎に一度呼び出される初期化コード
 UiMenu.prototype.initialize = function() {
     this.on('enable', this.onEnable, this);    
     this.on('disable', this.onDisable, this);
@@ -47,7 +47,7 @@ UiMenu.prototype.initialize = function() {
 };
 
 UiMenu.prototype.onEnable = function () {
-    // Listen for clicks on the background    
+    // 背景のクリックをリッスンする    
     
     this.overlay.enabled = true;
     this.overlay.element.on("click", this.start, this);
@@ -59,17 +59,17 @@ UiMenu.prototype.onEnable = function () {
 
 UiMenu.prototype.onDisable = function () {
     this.overlay.enabled = false;
-    // Stop listening to events
+    // イベントのリッスンをやめる
     this.overlay.element.off("click", this.start, this);
 };
 
 UiMenu.prototype.start = function (e) {
     this.app.fire("ui:start");
-    // prevent touch and mouse events
+    // タッチやマウスイベントを防ぐ
     e.stopPropagation();
 };
 ```
-First we have set up an attribute with a reference to the overlay element. The overlay element is a full screen element which tints the screen green. We also use this to detect input as we only care about the user clicking on the full screen.
+オーバレイ要素は、画面を緑色にするフルスクリーン要素です。また、ユーザがフルスクリーンをクリックすることが重要なので、入力を検出するためにも使用します。
 
 エンティティを有効にした場合、フルスクリーンオーバーレイを有効にして表示し、次にクリックイベントのリッスンを開始します。エンティティが無効になると、イベントのリッスンを停止し、オーバーレイを非表示にします。イベントがトリガーされると、メインゲームのスクリプトがリッスンしているゲームの状態の変化をトリガーする"ui:start" イベントが発生します。
 

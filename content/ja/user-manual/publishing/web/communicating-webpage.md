@@ -1,5 +1,5 @@
 ---
-title: Communication with web pages
+title: ウェブページとの通信
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -67,16 +67,16 @@ iframe.contentWindow.postMessage({
 </script>
 ```
 
-In your application
+アプリケーションで
 ```javascript
 window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // always check message came from your website
+    if (event.origin === "http://example.com") { // メッセージが自身のウェブサイトから来ていることを必ず確認してください
         var score = event.data.score;
 
-        // call API method one:
+        // APIメソッド１を呼ぶ:
         window.setScore(score);
 
-        // call API method two:
+        // APIメソッド２を呼ぶ:
         var app = pc.Application.getApplication();
         app.fire("score:set", score);
     }
@@ -94,7 +94,7 @@ window.addEventListener("message", function (event) {
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
+    <title>アプリケーションタイトル</title>
     <script src="playcanvas-stable.min.js"></script>
     <script>
         SCENE_PATH = "12346.json";
@@ -142,10 +142,10 @@ window.addEventListener("message", function (event) {
     <script>
     var app = pc.Application.getApplication();
     app.on("start", function () {
-        // get the root of the scene.
+        // シーンのルートを取得
         var hierarchy = app.root.getChildren()[0];
 
-        // do other stuff here
+        // 他はここで行う
     });
     </script>
 </body>

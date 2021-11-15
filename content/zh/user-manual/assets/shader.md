@@ -1,5 +1,5 @@
 ---
-title: Shader
+title: 着色器
 template: usermanual-page.tmpl.html
 position: 12
 ---

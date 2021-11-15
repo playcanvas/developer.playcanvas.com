@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-Texture data is stored in a device's video memory (or VRAM). It is important to ensure that your application does not exhaust VRAM as this can cause undesirable things like browser tab crashes.
+纹理数据存储在设备的视频存储器(或VRAM)中。 重要的是要确保您的应用程序不会耗尽VRAM，因为这可能会导致浏览器标签崩溃等不良现象。
 
 The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used using Basis.
 
 [Basis][1] is a 'super-compressed' texture format. It's a platform independent lossy block compression format that can be transcoded to the natively supported hardware compression format at runtime. Supported transcode formats are ASTC, DXT, ETC2, ETC, PVR and ATC (selected in that order where available).
 
-Consider this texture asset:
+就比如这个纹理资源:
 
 <img src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" style="width: 256px; height: 256px;"/>
 
-It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
+这是一个大小为202KB的512x512 JPG。 然而，JPG是一种压缩格式，当传递到图形引擎时，它被扩展为占用1.05MB VRAM(包括mipmap级别)的未压缩RGB8格式。
 
 Enabling texture compression achieves the following results:
 
@@ -69,9 +69,9 @@ We strongly recommend using Basis compression where possible as it requires a si
 
 The Legacy Texture schemes are:
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
-* ETC: Typically supported by Android devices.
+* DXT：通常由桌面设备支持
+* PVR：通常由iOS设备支持
+* ETC：通常由Android设备支持。
 
 To use the Legacy Texture Compression options, select the texture and scroll down in the inspector to find the Compression section.
 

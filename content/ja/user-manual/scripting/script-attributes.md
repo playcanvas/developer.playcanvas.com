@@ -1,5 +1,5 @@
 ---
-title: Script Attributes
+title: スクリプト属性
 template: usermanual-page.tmpl.html
 position: 4
 ---

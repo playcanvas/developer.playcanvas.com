@@ -1,13 +1,13 @@
 ---
-title: Self-hosting
+title: 自托管
 template: usermanual-page.tmpl.html
 position: 2
 ---
 
 我们为自托管提供了以下两个选项：
 
-1. Embed a PlayCanvas hosted game using an [iframe][1].
-2. Download your game from the Editor and upload the files to your own site.
+1. 通过使用[iframe][1]嵌入PlayCanvas游戏。
+2. 从编辑器中下载游戏，在用户自己的页面中上传游戏文件。
 
 ## iframe 嵌入
 
@@ -28,8 +28,8 @@ position: 2
 
 为了能从PlayCanvas中独立地控制您的游戏，按一下步骤进行操作：
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* 前往您的工程并打开编辑器。
+* 点击在工具条左手边的<span class="pc-icon" style="font-size">&#57911;</span>按钮或者点击在左上角目录中的发布按钮。
 
 ![Publish Button][3]
 

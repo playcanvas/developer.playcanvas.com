@@ -62,10 +62,10 @@ PlayCanvas为您的WebGL应用程序提供即时和无故障托管单击。 我�
 
 PlayCanvas 坚持设计为不需要任何插件在浏览器上原生运行的模式。用户运行时环境为 100% JavaScript 实现，全部通过符合 HTML5 及相关 API (如 WebGL)工作。为什么这样设计如此重要？
 
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
+* 移动/平板 设备无法提供插件安装的权限，但却在不断完善对 HTML5 规范的支持。
+* 不需要任何的安装和额外加载过程。
+* 运行在标准的[DOM][2]元素中(一个 Canvas 元素)，可以任意和其他页面元素融合并通过 CSS 添加样式
+* 不依赖可能会随着时间变化的第三方部分，仅仅依赖浏览器本身
 
 在撰写本文时，浏览器的要求如下：
 

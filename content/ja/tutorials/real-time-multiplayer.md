@@ -1,12 +1,12 @@
 ---
-title: Real Time Multiplayer
+title: リアルタイム マルチプレイヤー
 template: tutorial-page.tmpl.html
 tags: multiplayer, networking
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/XFp1Ty3X/" ></iframe>
-*Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
+WASDを使用してプレイヤーを移動させます。カプセルが一つしか表示されない場合はこのページを別のタブまたは別のコンピュータで開いてみてください。* 
 
 In this tutorial we’ll cover how to setup a basic multiplayer project using Node.js and Socket.io. We’ll focus on implementing it in PlayCanvas. By the end you should have a project similar to the one above. You can find the [tutorial project here][2].
 
@@ -316,9 +316,9 @@ When you're testing this, note that the server currently does not account for di
 
 ## まとめ
 
-That's about it! If you'd like, try adding some of these ideas on your own:
-* Players are removed when they close the game.
-* Adding respawning functionality for when players fall off the edge.
+以上です！ご希望でしたら、次のいくつかを自身で追加してみてください：
+* ゲームを閉じた際にプレイヤーが削除される。
+* プレイヤーが端から落ちたときのための復活機能を追加。
 
 Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritative server, instead of handling all the game logic on the client. You can read a more in depth tutorial about [how Socket.io works and how to develop multiplayer in Javascript here][1].
 

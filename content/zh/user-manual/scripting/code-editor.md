@@ -1,5 +1,5 @@
 ---
-title: Code Editor
+title: 代码编辑器
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ You can open the Code Editor from inside the [PlayCanvas Editor][2] by pressing 
 
 Alternatively you can double click on a text-based asset like a Script to open the Code Editor focused on that asset.
 
-## Interface
+## 界面
 
 ![Code Editor][3]
 
@@ -114,7 +114,7 @@ The editor supports various shortcuts to help you when editing code. You can fin
 </tr>
 </table>
 
-## Searching
+## 搜索
 
 You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac). This will open up the Find panel on the top right:
 

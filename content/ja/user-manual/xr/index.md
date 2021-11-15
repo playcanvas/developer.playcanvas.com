@@ -8,7 +8,7 @@ position: 20
 
 PlayCanvas lets you create Virtual Reality (VR) and Augmented Reality (AR) applications for a variety of devices based on the new WebXR API. WebXR is an evolution of the WebVR API and is being added to modern browsers, providing access to virtual reality headsets, controllers and AR features.
 
-## Platforms
+## プラットフォーム
 
 WebXR is a new API and it is being rolled out gradually to all major platforms. Up to date support can be checked on [caniuse.com][3].
 

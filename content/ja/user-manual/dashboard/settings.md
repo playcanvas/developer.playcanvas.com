@@ -23,7 +23,7 @@ position: 3
 プライベートプロジェクトは読み込み、書き込み、adminアクセスを明示的に与えられたユーザーにしか表示されません。
 
 <div class="alert alert-info">
-Only users with premium accounts can access private projects
+Premiumアカウントのユーザーしかプライベートプロジェクトにアクセスできません。
 </div>
 
 ## チーム

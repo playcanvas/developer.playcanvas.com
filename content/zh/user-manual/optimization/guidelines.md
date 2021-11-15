@@ -1,5 +1,5 @@
 ---
-title: Optimization Guidelines
+title: 优化指南
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -28,8 +28,8 @@ position: 1
 
 ## Physics
 
-* Collision meshes do not need to be the same level of detail as the renderable mesh. It is recommended that you set a lower resolution mesh for collision.
-* Keep the number of dynamic rigid bodies in your scene to a minimum, particularly on mobile.
+* 碰撞网格不需要被设置成和可渲染网格同等等级的细节。建议您为碰撞体设置低像素的网格。
+* 在场景中保持尽量少的动态光源物体的数量，特别是在移动手机中。
 
 [1]: /user-manual/optimization/batching
 [2]: /user-manual/optimization/runtime-devicepixelratio

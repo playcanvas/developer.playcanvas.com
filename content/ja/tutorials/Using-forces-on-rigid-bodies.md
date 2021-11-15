@@ -1,5 +1,5 @@
 ---
-title: Forces and Impulses
+title: ForceとImpulse
 template: tutorial-page.tmpl.html
 tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
@@ -7,11 +7,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 <iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
-*Press R to reset the cube.*
+*インパルスを適用するにはカーソルキーを使用します。トルクを適用してキューブを回転させるには、WASDキーを使用します。Fを長押しすると一定の力を上向きに適用して重力の効果をキャンセルします。*
+* Rキーを押しすとキューブをリセットします。*
 
-*Try to get the cube to balance and spin on one of its corners!*
-*The full code used is shown at the bottom of this page.*
+*キューブを角で立たせ回転させてみましょう！*
+*使用されている完全なコードはこのページの下部に表示されています。*
 
 このチュートリアルでは、力を使用して動的なリジッドボディを制御し、上に示したデモを生成する方法を説明します。力、衝動、トルクの利用とリジッドボディコンポーネントUIを使用して動作をカスタマイズする方法を簡単に説明します。
 

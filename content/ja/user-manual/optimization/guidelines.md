@@ -1,5 +1,5 @@
 ---
-title: Optimization Guidelines
+title: 最適化のガイドライン
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -28,8 +28,8 @@ PlayCanvasアプリで最適なパフォーマンスを得るためのヒント�
 
 ## 物理
 
-* Collision meshes do not need to be the same level of detail as the renderable mesh. It is recommended that you set a lower resolution mesh for collision.
-* Keep the number of dynamic rigid bodies in your scene to a minimum, particularly on mobile.
+*衝突メッシュはレンダリング可能なメッシュと同じ精密レベルである必要はありません。コリジョンの解像度メッシュを低く設定することをお勧めします。
+*シーンの動的リジッドボディの数は最小限にしてください（特にモバイルで）。
 
 [1]: /user-manual/optimization/batching
 [2]: /user-manual/optimization/runtime-devicepixelratio

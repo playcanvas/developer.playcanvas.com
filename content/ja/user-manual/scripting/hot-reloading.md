@@ -55,6 +55,6 @@ Rotator.prototype.swap = function (old) {
 };
 ```
 
-Try changing logic within `update` method and save the code. Launched application will automatically swap script instances `rotator` with new ones and your application will keep working with new logic.  
-`swap` method is called regardless of running state of a script instance, so if it was disabled due to an error it can be re-enabled during swap method.
+`update`メソッド内のロジックを変更してコードを保存します。起動したアプリケーションは、自動的に`スクリプトインスタンス`rotator`を新しいものとスワップして、アプリケーションは新しいロジックを使って動作し続けます。
+`swap`メソッドはスクリプトインスタンスの実行状態にかかわらず呼ばれるので、エラーにより無効にされた場合には、スワップメソッドの間に再び有効にすることができます。
 

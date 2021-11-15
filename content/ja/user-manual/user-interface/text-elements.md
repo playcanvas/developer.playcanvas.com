@@ -1,5 +1,5 @@
 ---
-title: Text Elements
+title: テキスト要素
 template: usermanual-page.tmpl.html
 position: 6
 ---
@@ -41,10 +41,10 @@ By default a Text Element is set to automatically adjust its width and height to
 font sizeプロパティは、Screenコンポーネントピクセルでフォントのレンダリングサイズを設定します。テキストに改行文字が含まれている場合、行の高さは下に移動する距離をScreen Componentピクセルで設定します。
 
 ![Font Size Line Equal][6]
-**Equal Font Size and Line Height is the default**
+**同等のフォントサイズとデフォルトの行の高さ**
 
 ![Font Size Line Spaced][7]
-**Increase Line Height to increase line spacing**
+**ラインの高さを上げてラインの間隔を広げる**
 
 ## スペーシング
 

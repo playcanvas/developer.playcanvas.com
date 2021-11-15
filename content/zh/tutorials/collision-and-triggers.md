@@ -1,5 +1,5 @@
 ---
-title: Collision and Triggers
+title: 碰撞体和触发器
 template: tutorial-page.tmpl.html
 tags: collision, physics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
@@ -42,9 +42,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 对于此案例，最重要的属性是**类型**。 您可以选择以下三个选项之一：
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
-* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
+* **静态**这个实体永远不会移动
+* **动态**此实体将在重力和您应用于它的任何其他力量下移动
+* **运动**这个实体不会响应力，但如果你直接设置它的位置或速度会使它移动。
 
 ## 设置背景
 
@@ -105,9 +105,9 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 在*碰撞体*组件上有三个事件是被响应的:
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
-* **collisionend** - fires when two rigid bodies separate.
+* **接触** - 当两个刚体接触时的每帧触发。
+* **碰撞开始** - 当两个刚体刚刚接触时触发。
+* **碰撞结束** - 当两个刚体分开时触发。
 
 **contact** 和 **collisionstart ** 的区别比较微妙但很重要。 想象一个立方体在一个平面上以一个角度着陆。 当立方体的边缘碰到表面时，立方体的两个角将在同一时刻产生撞击。 三个事件将触发，立方体的两个角的**接触**事件，和一个** 碰撞开始**事件。 然后立方体将旋转并继续下降，直到它被摆平，同时保持与表面接触。 当它保持平面状态时，两个**接触**事件将被激发，因为立方体的边缘与表面相接触。 由于立方体此后所有时间内都保持与表面接触，没有更多** collisionstart **事件被触发。
 

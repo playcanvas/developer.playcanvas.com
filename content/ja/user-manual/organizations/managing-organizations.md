@@ -32,8 +32,8 @@ The Owner of the organization does not need to occupy a seat if they are not act
 
 Organization（組織）の所有者はここから組織を削除することができます。これによりアカウントとその全てのプロジェクトを削除します。この動作は取り消せません。
 
-[1]: /images/user-manual/organizations/permissions.png "Permissions"
-[2]: /images/user-manual/organizations/seats.png "Seats"
-[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
-[4]: /images/user-manual/organizations/delete.png "Delete"
+[1]: /images/user-manual/organizations/permissions.png "許可"
+[2]: /images/user-manual/organizations/seats.png "Seat"
+[3]: /images/user-manual/organizations/upgrade.png "アップグレード"
+[4]: /images/user-manual/organizations/delete.png "削除"
 

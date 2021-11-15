@@ -10,7 +10,7 @@ See the [User Interface][2] section for more details.
 
 ![Scrollbar Component][3]
 
-## Component Properties
+## 组件属性
 
 <table class="table table-striped">
     <col class="property-name"></col>

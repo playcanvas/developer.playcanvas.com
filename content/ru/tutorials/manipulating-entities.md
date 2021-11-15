@@ -20,7 +20,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*World and Local co-ordinate systems*
+*Мировые и локальные координатные системы*
 <br />
 
 ### Иерархия
@@ -71,15 +71,15 @@ entity.translateLocal(0, 0, 1);
 
 **Euler Angles**
 
-* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
-* Euler angles are easy to understand because you can visualize the effect they will have in your head.
+* Углы Эйлера это набор трёх углов вокруг осей X, Y и Z в координатной системе в *определённом порядке*.
+* Если смотреть вниз оси координат , положительный угол Эйлера приведет к вращению против часовой стрелки вокруг этой оси.
+* Углы Эйлера легки в понимании, так как Вы можете визуализировать этот эффект в голове.
 
 **Quaternions**
 
-* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
-* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
-* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
+* Кватернионы хранятся как 4 числа и представляют любую ориентацию в 3D пространстве.
+* Их сложно задавать напрямую, но можно установить через углы Эйлера, матрицы поворота или через представление ось-угол.
+*  Несмотря на то, что их трудно визуализировать, они полезны, так как являются надежными и могут быть быстро интерполированны (при анимации вращения).
 
 При программировании сущностей наиболее вероятно, что Вы захотите использовать поворот объекта используя углы Эйлера. Например:
 

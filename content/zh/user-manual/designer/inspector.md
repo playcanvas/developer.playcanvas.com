@@ -1,5 +1,5 @@
 ---
-title: Inspector
+title: 检查器
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -8,11 +8,11 @@ position: 3
 
 检查器面板会显示当前选定对象的属性值。
 
-Depending on what you have selected, you will see different inspector panels. Some available selections are:
-* **Entity/Component Inspector**
-* **Texture Inspector**
-* **Material Inspector**
-* **Cubemap Inspector**
+根据选择的不同，会现实不同的检查器面板。目前有
+* **实体/组件检查器**
+* **纹理检查器**
+* **材质检查器**
+* **Cubemap检查器**
 
 修改这些数值用以特制化[实体][2]的行为。譬如可以设置 Model 组件所渲染的模型，或灯光的颜色等灯。
 

@@ -1,5 +1,5 @@
 ---
-title: Entity Picking
+title: エンティティの選択
 template: tutorial-page.tmpl.html
 tags: raycast
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg

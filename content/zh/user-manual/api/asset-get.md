@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 8
 ---
 
-## Route URL
+## 传输链接
 
 ```none
 GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 ```
 
-## Description
+## 描述
 
 Get the details of a single asset
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
@@ -26,13 +26,13 @@ GET https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## 参数
 
 <div class="params">
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch.</p></div>
 </div>
 
-## Response Schema
+## 响应模式
 
 ```none
 Status: 200
@@ -64,7 +64,7 @@ Status: 200
 }
 ```
 
-## Errors
+## 报错
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -73,7 +73,7 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## Rate Limiting
+## 速率限制
 
 This route uses a [normal][1] rate limit.
 

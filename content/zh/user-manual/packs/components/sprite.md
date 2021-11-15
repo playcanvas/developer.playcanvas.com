@@ -68,7 +68,7 @@ Animated Sprite Components have multiple Sprite Animation Clips attached which c
     <tr><td>Sprite</td><td>The Sprite Asset which is used to play this clip.</td></tr>
 </table>
 
-## Scripting Interface
+## 脚本接口
 
 You can control the properties of a Sprite component using a [script component][4]. The scripting interface for the Sprite component is [here][5].
 

@@ -19,11 +19,11 @@ pc.script.createLoadingScreen(function (app) {
         document.body.appendChild(splash);
 
         var logo = document.createElement('img');
-        // replace with your logo
+        // 自分のロゴで置き換えてください
         logo.src = 'http://static.playcanvas.com/images/logo/play.png';
         splash.appendChild(logo);
 
-        // progress bar
+        // 進行バー
         var container = document.createElement('div');
         container.id = 'progress-container';
         splash.appendChild(container);

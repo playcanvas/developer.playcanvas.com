@@ -35,7 +35,7 @@ position: 1
 将你的用户账户转换为组织账户意味着你再也不能用此账户进行登录了。因此，你需要指定新组织的所有者。
 
 <div class="alert alert-info">
-Make sure you can log in with the new owner's account.
+请确保您可以使用新的所有者的帐户登录。
 </div>
 
 如果你已经开通了支付计划，除非你选择至少订阅一个弹出框所提供的组织计划，计划才会被取消。座位购买的数量将根据用户在现有的私人项目的数量自动为您计算。
@@ -45,5 +45,5 @@ Make sure you can log in with the new owner's account.
 [1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
 [2]: /user-manual/profile
 [3]: /user-manual/profile/account
-[4]: /images/user-manual/organizations/organizations.jpg "Organizations"
+[4]: /images/user-manual/organizations/organizations.jpg "组织"
 

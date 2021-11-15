@@ -1,5 +1,5 @@
 ---
-title: Controlling Lights
+title: ライトの操作
 template: tutorial-page.tmpl.html
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
@@ -41,8 +41,8 @@ These lines assign values to r, g and b variables based on a sin wave and then a
     Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
 </div>
 
-##General setup
-We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
+##一般的な設定
+全ての新規シーンに作成されるデフォルトの指向性ライトに加え、スポットライト(基本的なたいまつモデルの親アセンブリに添付)と、親球体モデルに添付されたポイントライトをついかしました。制御スクリプトはルートエンティティに添付しています。球体とたいまつは、回転しやすくするため、シーンの中心にある空のエンティティの子として作成しています。controllingLightsシーンで[完全なEditorシーンやスクリプトにアクセス][2]。
 
 The full code used for the above PlayCanvas app is as follows.
 ```javascript

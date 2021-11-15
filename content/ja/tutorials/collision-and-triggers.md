@@ -1,5 +1,5 @@
 ---
-title: Collision and Triggers
+title: 当たり判定とトリガー
 template: tutorial-page.tmpl.html
 tags: collision, physics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
@@ -42,9 +42,9 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 このデモで重要なプロパティは**Type**です。以下の三種類があります。
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
-* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
+* **Static** エンティティを固定し、動かなくします。
+* **Dynamic** エンティティは重力と外部から与えられた力に影響されて動くようになります。
+* **Kinematic** エンティティは力に反応しなくなりますが、位置と速度を直接指定して動かすことができるようになります。
 
 ## 地面の設定
 
@@ -105,9 +105,9 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 *collision*コンポーネントには三種類のイベントが用意されています。
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
-* **collisionend** - fires when two rigid bodies separate.
+* **contact** - 二つの剛体が互いに触れている時、すべての接触点について発生ます。
+* **collisionstart** - 二つの剛体が衝突し始めた時に発生します。
+* **collisionend** - 二つの剛体が離れた時に発生します。
 
 **contact**と**collisionstart**の違いはささいなことですが重要なものです。立方体が一定の角度で平面に落ちるとします。立方体の辺が平面に触ったとき、立方体の二つの頂点が同時に平面に当たります。この状態では、三つのイベントが発生します。二つの**contact**イベントがそれぞれの頂点向けに発生し、さらに一つの**collisionstart**イベントが発生します。そして立方体は平面上に静止するまで回転して落ち続けます。その間ずっと平面上と何らかの形で接触し続けるものとします。平面上に静止したとき、頂点が平面に触った時、さらに二つの**contact**イベントが発生します。しかし、立方体は平面に触れ続けているので、**collisionstart**が追加で発生することはありません。
 

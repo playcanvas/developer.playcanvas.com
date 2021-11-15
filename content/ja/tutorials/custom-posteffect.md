@@ -1,7 +1,7 @@
 ---
-title: Custom Post Effects
+title: カスタムポストエフェクト
 template: tutorial-page.tmpl.html
-tags: posteffects
+tags posteffects
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
 ---
 

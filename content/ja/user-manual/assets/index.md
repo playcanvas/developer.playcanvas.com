@@ -12,10 +12,10 @@ position: 10
 
 PlayCanvasは幅広いコンテンツタイプのインポートに対応しています：
 
-* Models e.g. FBX, COLLADA, obj
-* 3D Animations
-* Images for textures e.g. jpg, png
-* Audio e.g. mp3, ogg
+* モデル 例：FBX, COLLADA, obj
+* 3Dアニメーション
+* テクスチャー用の画像　例：jpg, png
+* オーディオ 例： mp3, ogg
 
 新しいファイルをアップロードするとアセットタイプは自動的にアップロードしたファイルのタイプから設定されます。例えば、PNG ファイルをアップロードすると、作成されたアセットは*テクスチャー*タイプになります。
 

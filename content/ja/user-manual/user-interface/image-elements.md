@@ -1,5 +1,5 @@
 ---
-title: Image Elements
+title: 画像要素
 template: usermanual-page.tmpl.html
 position: 5
 ---

@@ -4,13 +4,13 @@ template: usermanual-page.tmpl.html
 position: 5
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 POST https://playcanvas.com/api/assets
 ```
 
-## Description
+## 説明
 
 Create a new asset.
 
@@ -20,7 +20,7 @@ Create a new asset.
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'file=@./script.js'  https://playcanvas.com/api/assets
@@ -66,7 +66,7 @@ Content-Type: application/javascript
 <div class="parameter"><span class="param">file [optional]: file</span><p></p>Data to store as the asset file.</div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 201
@@ -101,18 +101,18 @@ Status: 201
 }
 ```
 
-## Errors
+## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>非認証</p></div>
+<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
+<div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
+<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
-This route uses a [strict][1] rate limit.
+このルートは[strict][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
 

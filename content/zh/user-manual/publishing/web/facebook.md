@@ -25,7 +25,7 @@ position: 6
 ![网址][5]
 
 <div class="alert alert-info">
-Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
+添加这个URL地址作为你的游戏网址是必须的， 因为PlayCanvas按照这个方式托管游戏才能让实现Facebook 的安全性要求，以允许访问其API。我们正在努力修复PlayCanvas的这一方面，以便你只需要设置安全窗口URL。
 </div>
 
 **6.** 最后, 设置你游戏所需要的所有的图片和图标。

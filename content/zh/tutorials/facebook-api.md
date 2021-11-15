@@ -6,7 +6,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 ---
 
 <iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
-*Log in with facebook to see your photos in a 3D sculpture*
+*使用facebook登陆以在3D 雕塑中查看你的相册*
 
 PlayCanvas是一个非常优秀的创建WebGL的facebook游戏和应用的工具，Facebook 是一个用于为游戏寻找大量用户的很好的平台，并且PlayCanvas让你能够迅速创建发表并优化web游戏。
 
@@ -117,7 +117,7 @@ FbUi.prototype.hideLogout = function () {
 在这段代码的初始化步骤中我们监听Facebook插件上的`fb:init` 事件。一旦这个时间被触发我们就之道Facebook SDK已经被加载完毕并能够使用了。我们使用三个 Facebook SDK的方法。`FB.getLoginStatus()` 会在用户已经登陆了Facebook的时候返回给你的应用，`FB.login()`会为用户推送一个登陆请求，然后`FB.logout()`会让用户从应用和Facebook上均登出。
 
 <div class="alert alert-info">
-It is important to notice here is that `FB.login()` must be called in response to a user action like clicking on a button, otherwise the user will see a pop-up warning.
+这里有一个很重要的需要注意的地方 `FB.login()` 必须在用户动作，例如点击了一个按钮，的响应中被调用, 否则用户会看到一个弹出的警告。
 </div>
 
 方法`loginChangeFn`是一个回掉函数，它被用于响应登录状态的变化，并使用四种显示/隐藏功能，让我们按照状态显示正确的对话框。

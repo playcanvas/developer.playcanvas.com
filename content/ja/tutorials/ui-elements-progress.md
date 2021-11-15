@@ -1,5 +1,5 @@
 ---
-title: User Interface - Progress Bar
+title: ユーザインターフェイス - プログレスバー
 template: tutorial-page.tmpl.html
 tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg
@@ -46,41 +46,41 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 ```javascript
 var ProgressBar = pc.createScript('progressBar');
 
-// The entity that shows the fill image
+// 塗りつぶし画像を表示するエンティティ
 ProgressBar.attributes.add('progressImage', {type: 'entity'});
-// The maximum width of the fill image
+// 塗りつぶし画像の最大幅
 ProgressBar.attributes.add('progressImageMaxWidth', {type: 'number'});
 
 ProgressBar.prototype.initialize = function() {
-    // initialize progress to 0
+    // 進行を0に初期化
     this.setProgress(0);
-    // if true the progress bar will increase
-    // otherwise it will decrease in update
+    // trueの場合、プログレスバーが増加します
+    // それ以外の場合は更新時に減少します
     this.increase = true;
 };
 
-// Set progress - value is between 0 and 1
+// 進行状況を設定する - 値は0と1の間
 ProgressBar.prototype.setProgress = function (value) {
-    // clamp value between 0 and 1
+    // 0と1の間のクランプ値
     value = pc.math.clamp(value, 0, 1);
 
     this.progress = value;
 
-    // find the desired width of our progress fill image
+    // プログレスの塗りつぶし画像の希望の幅を見つける
     var width = pc.math.lerp(0, this.progressImageMaxWidth, value);
-    // set the width of the fill image element
+    // 塗りつぶし画像要素の幅を設定
     this.progressImage.element.width = width;
 
-    // Set the width of the element's rect (rect.z) to be the same
-    // value as our 0-1 progress.
-    // This is so that the fill image will only show the portion
-    // of the texture that is visible
+    // 要素のrect(rect.z)の幅を0-1の進行と
+    // 同じ値に設定してください。
+    // これは、塗りつぶし画像が表示されるテクスチャ部分のみを
+    // 表示するようにするためです
     this.progressImage.element.rect.z = value;
-    // force rect update
+    // rectの更新を強制
     this.progressImage.element.rect = this.progressImage.element.rect;
 };
 
-// Increase or decrease the progress automatically
+// 進行状況を自動的に増減
 ProgressBar.prototype.update = function(dt) {
     var diff = this.increase ? dt : -dt;
     this.setProgress(this.progress + diff);

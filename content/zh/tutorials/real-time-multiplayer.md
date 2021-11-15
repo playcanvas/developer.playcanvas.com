@@ -1,5 +1,5 @@
 ---
-title: Real Time Multiplayer
+title: 实时多人游戏
 template: tutorial-page.tmpl.html
 tags: multiplayer, networking
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
@@ -316,9 +316,9 @@ When you're testing this, note that the server currently does not account for di
 
 ## 总结
 
-That's about it! If you'd like, try adding some of these ideas on your own:
-* Players are removed when they close the game.
-* Adding respawning functionality for when players fall off the edge.
+就是这样！ 如果你愿意，可以尝试自己添加一些别的想法:
+*玩家在关闭游戏时能够被移除
+*添加当玩家脱离边缘时的复位功能。
 
 Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritative server, instead of handling all the game logic on the client. You can read a more in depth tutorial about [how Socket.io works and how to develop multiplayer in Javascript here][1].
 

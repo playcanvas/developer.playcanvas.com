@@ -1,5 +1,5 @@
 ---
-title: Video Textures
+title: 视频纹理
 template: tutorial-page.tmpl.html
 tags: video, textures
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg
@@ -13,10 +13,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 该脚本执行以下功能：
 
-* Create new Texture
-* Create an HTML Video element and play the video
-* Apply the new texture to the material on the TV model
-* Update the texture with video data every frame
+*创建新的纹理
+*创建一个HTML视频元素并播放视频短片
+*将新纹理应用于电视模型上的材质
+*每帧更新带有视频数据的纹理
 
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');

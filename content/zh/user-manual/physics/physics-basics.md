@@ -20,17 +20,17 @@ This will import the default build of ammo.js provided by PlayCanvas. However pl
 
 For details on migrating legacy projects to the latest ammo.js see [this page][10].
 
-## Gravity
+## 重力
 
 In the same Settings panel, you can set global gravity of the physics simulation. Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero.
 
-## Units of Measurement
+## 度量单位
 
-By default, the PlayCanvas physics engine interprets 1 unit as 1 meter. Therefore, for objects to fall at a rate that appears to be physically accurate, you should ensure that your scenes size objects appropriately.
+通常情况下，PlayCanvas的物理引擎定义一个单位为1米。因此，为了使物品按照精确的速率落到物理上，你应该确保你的场景大小与对象大小是合适的。
 
-For example, if your game features a character that is 1.8m tall, he should be 1.8 units high in the Editor's 3D view.
+举个例子，如果你的游戏设置一个角色的身高位1.8m，那么他在编辑器的3D视图中应该有1.8个单位高。
 
-## Rigid Bodies
+## 刚体
 
 You can make any entity in your scene participate in the physics simulation. Just add a rigidbody component and a collision component. The rigidbody component specifies a type:
 

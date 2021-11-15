@@ -35,15 +35,15 @@ Organization（組織）を作成する方法にユーザアカウントを変�
 自分のユーザーアカウントを組織に変換すると、そのユーザーアカウントでログインすることができなくなります。そのため、新しい組織の所有者を指定する必要があります。
 
 <div class="alert alert-info">
-Make sure you can log in with the new owner's account.
+新しい所有者のアカウントでログインできることを確認してください。
 </div>
 
 有料プランに加入している場合は、ポップアップで提案されるOrganization（組織）プランに加入しない限り、そのプランはキャンセルされます。購入するseatの数は、既存のプライベートプロジェクトのユーザー数に基づいて自動的に計算されます。
 
 アカウントを変換した後、ログアウトされます。次に、新しい所有者のアカウントで再度ログインすると、変換後のアカウントとそのすべてのプロジェクトにアクセスできるようになります。
 
-[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
+[1]: /images/user-manual/organizations/dropdown.png "新しい企業のメニューオプション"
 [2]: /user-manual/profile
 [3]: /user-manual/profile/account
-[4]: /images/user-manual/organizations/organizations.jpg "Organizations"
+[4]: /images/user-manual/organizations/organizations.jpg "企業"
 

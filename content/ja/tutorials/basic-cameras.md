@@ -1,5 +1,5 @@
 ---
-title: Basic Cameras
+title: 基本的なカメラ
 template: tutorial-page.tmpl.html
 position: 3
 tags: camera
@@ -16,13 +16,13 @@ PlayCanvas エディタからシーンを実行するには、最低でも一つ
 
 新しいカメラエンティティを作成するには、エンティティにカメラ [Component][1] を追加する必要があります。
 
-* Select the root Entity of your Scene in the Entity Explorer
-* Create a new Entity by selecting *New Entity* from the *Entity* menu.
-* Add a Component by selecting *New Component* from *Component* menu
-* Choose *Camera* when you are prompted to choose which type of Component to create
+* Entity Explorerでシーンのルートエンティティを選択
+* *Entity*メニューから*New Entity*を選択して新しいエンティティを作成
+* *Component*メニューから*New Component*を選択してコンポーネントを追加
+* 作成するコンポーネントタイプを選ぶ際、*Camera*を選択
 
-As making a Camera Entity is a common task there is a shortcut: Select *New Entity* -> *New Camera* in the *Entity* menu.
-This is equivalent to creating a new Entity and adding a Camera Component to it.
+カメラエンティティの作成は一般的な操作なのでショートカットが存在します：*Entity*メニューの*New Entity* -> *New Camera*を選択してください。
+これで新しいエンティティが作成されてカメラコンポーネントが追加されます。
 
 ## カメラ・プロパティ
 

@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 <iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
 
-*Click on screen to focus, then press the 'p' key to blend to a punch animation*
+*点击屏幕进行对焦，然后按'p'键变化到一个拳击动画。*
 
 This tutorial illustrates the basics of animation blending.
 Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.

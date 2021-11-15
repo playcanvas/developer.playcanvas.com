@@ -1,5 +1,5 @@
 ---
-title: Self-hosting for beginners
+title: 为初学者打造的自托管系统
 template: usermanual-page.tmpl.html
 position: 3
 ---

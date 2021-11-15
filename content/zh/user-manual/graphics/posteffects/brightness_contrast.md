@@ -1,5 +1,5 @@
 ---
-title: Brightness-Contrast Effect
+title: 亮度对比度调整
 template: usermanual-page.tmpl.html
 position: 2
 ---

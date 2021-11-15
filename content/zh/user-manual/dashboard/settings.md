@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: 设置
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -23,14 +23,14 @@ The settings dashboard lets you set up Project settings.
 隐私设置只允许管理员授予了权限的用户进行操作。
 
 <div class="alert alert-info">
-Only users with premium accounts can access private projects
+只有高级版用户才可以将项目设置为私有
 </div>
 
 ## Team
 
 Here you can add or remove other users to your Project and change their permissions.
 
-## Delete Project
+## 删除项目
 
 Pless the DELETE button to permanently delete your project. Note that this action cannot be undone.
 

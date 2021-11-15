@@ -1,5 +1,5 @@
 ---
-title: Making a Simple Game - Part 3
+title: 制作一个简单的游戏 - Part 3
 template: tutorial-page.tmpl.html
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg

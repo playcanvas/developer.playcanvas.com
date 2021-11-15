@@ -1,5 +1,5 @@
 ---
-title: Anatomy of a script
+title: 脚本解析
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -50,8 +50,8 @@ This line creates a new ScriptType called 'rotate'. The name of the script is us
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed into the Editor UI. Allowing you to customize individual entities in the Editor. In this case the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
-Attributes are automatically inherited to new script instance during code hot-swap.
+这行代码定义了脚本的属性。脚本属性是一个脚本实例的特性用户可以在编辑器UI中找到这个。允许用户在 编辑器中对单个实体进行自定义。在上面代码的情况中，属性称之为“speed”在代码中也可以使用“this.speed”。默认数字为“10”。
+属性在代码热交换过程中自动继承到新的脚本实例。
 
 ## 初始化
 

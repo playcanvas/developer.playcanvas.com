@@ -4,13 +4,13 @@ template: usermanual-page.tmpl.html
 position: 5
 ---
 
-## Route URL
+## 传输链接
 
 ```none
 POST https://playcanvas.com/api/assets
 ```
 
-## Description
+## 描述
 
 Create a new asset.
 
@@ -20,7 +20,7 @@ Create a new asset.
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'file=@./script.js'  https://playcanvas.com/api/assets
@@ -66,7 +66,7 @@ Content-Type: application/javascript
 <div class="parameter"><span class="param">file [optional]: file</span><p></p>Data to store as the asset file.</div>
 </div>
 
-## Response Schema
+## 响应模式
 
 ```none
 Status: 201
@@ -101,18 +101,18 @@ Status: 201
 }
 ```
 
-## Errors
+## 报错
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止访问</p></div>
+<div class="parameter"><span class="param">404</span><p>项目未找到</p></div>
+<div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## Rate Limiting
+## 速率限制
 
-This route uses a [strict][1] rate limit.
+此路由使用[严格的][1] 速率限制。
 
 [1]: /user-manual/api#rate-limiting
 

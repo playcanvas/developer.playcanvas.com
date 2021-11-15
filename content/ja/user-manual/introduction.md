@@ -62,10 +62,10 @@ PlayCanvasはWebGLアプリケーションのホスティングをワンクリ�
 
 PlayCanvasは常にプラグイン不要で、ブラウザでネイティブに実行するよう設計されています。クライアント側のコードベースは100% JavaScriptでHTML5と関連API (WebGLなど)上に構築されています。この重要性を説明します。
 
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
+* モバイル/タブレット端末はプラグインのインストールを許可していません。HTML5の対応を改良し続けています。
+* PlayCanvasウェブappはプラグインインストールやプラグイン読み込み無しでシームレスに読み込まれます。
+* PlayCanvasウェブappはスタンダードな[DOM][2] エレメント(キャンバス)で実行されます。ぺー上での合成またはCSSでの変換が可能です。
+* いずれ変更される可能性のある外部パーティーのプラグイン技術に依存していません。ブラウザにのみ依存しています。
 
 現時点でのブラウザ要件は次のとおりです：
 

@@ -13,7 +13,7 @@ This simple effect is great for adding atmosphere to your scene. Add a glow to a
 
 It works like this: We create an entity with a plane primitive attached which has a glowing halo material on it. We attach a script to entity which makes the plane always face the camera (billboarding). For added fun, we're fading the halo out if it faces away from the camera to simulate a directional light.
 
-## Assets
+## Ассеты
 
 ### Texture
 

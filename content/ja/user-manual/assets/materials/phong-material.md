@@ -11,9 +11,9 @@ position: 2
 <img src="/images/user-manual/material-inspector/offset-tiling.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><td>Apply to all Maps</td><td>Uncheck this to apply offset and tiling values to individual maps.</td></tr>
-    <tr><td>Offset</td><td>The offset in U and V to apply to the first UV channel referenced by maps in this material.</td></tr>
-    <tr><td>Tiling</td><td>The scale in U and V to apply to the first UV channel referenced by maps in this material.</td></tr>
+    <tr><td>全てのマップに適用</td><td>個別のマップにオフセットとタイリング値を適用するには、このチェックを外します。</td></tr>
+    <tr><td>Offset</td><td>この素材のマップが参照する最初のUVチャンネルに適用する、UとVのオフセット。</td></tr>
+    <tr><td>Tiling</td><td>この素材のマップが参照する最初のUVチャンネルに適用する、UとVのスケール。</td></tr>
 </table>
 
 ### アンビエント
@@ -23,10 +23,10 @@ position: 2
 <img src="/images/user-manual/material-inspector/ambient.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Tint</td><td>Check this to multiply the scene's global ambient color with a material specific color.</td></tr>
-    <tr><td>Color</td><td>The tint color to multiply the scene's global ambient color.</td></tr>
-    <tr><td>AO Texture</td><td>An ambient occlusion map containing pre-baked ambient occlusion.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Tint</td><td>チェックをいれると、素材特有の色と、シーンのグローバルアンビエントカラーが乗算されます。</td></tr>
+    <tr><td>Color</td><td>シーンのグローバルアンビエントカラーを乗算するティントカラー。</td></tr>
+    <tr><td>AO Texture</td><td>プリベークされたアンビエントオクルージョンを含む、アンビエントオクルージョンマップ。</td></tr>
 </table>
 
 ### 拡散
@@ -36,10 +36,10 @@ position: 2
 <img src="/images/user-manual/material-inspector/diffuse.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Texture</td><td>The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead.</td></tr>
-    <tr><td>Tint</td><td>Check this to modulate the material's diffuse map with a material specific diffuse color.</td></tr>
-    <tr><td>Color</td><td>If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Texture</td><td>ピクセル単位の拡散素材の色を指定する拡散マップ。拡散マップが設定されていない場合、拡散色が代わりに使用されます。</td></tr>
+    <tr><td>Tint</td><td>チェックを入れると、素材の拡散マップを素材固有の拡散色で調節します。</td></tr>
+    <tr><td>Color</td><td>拡散マップが設定されていない場合、これが素材の拡散色になります。拡散マップが設定されていてtintが有効になっている場合、この色が素材の拡散マップを変調します。</td></tr>
 </table>
 
 ### スペキュラ
@@ -64,11 +64,11 @@ position: 2
 <img src="/images/user-manual/material-inspector/emissive.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Texture</td><td>The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead.</td></tr>
-    <tr><td>Tint</td><td>Check this to modulate the material's emissive map with a material specific emissive color.</td></tr>
-    <tr><td>Color</td><td>If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map.</td></tr>
-    <tr><td>Intensity</td><td>A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Texture</td><td>ピクセル単位の発光色を指定する発光マップ。発光マップが設定されていない場合、発光色が代わりに使用されます。</td></tr>
+    <tr><td>Tint</td><td>チェックをすると、素材の発光マップを素材固有の発光色で変調します。</td></tr>
+    <tr><td>Color</td><td>発光マップが設定されていない場合、素材の発光色となります。発光マップが設定されていてtintが有効になっている場合、この色は素材の発光マップを調節します。</td></tr>
+    <tr><td>Intensity</td><td>非常に明るい発光素材に過剰に明るい効果を加えることができる発光色の乗数。</td></tr>
 </table>
 
 ### Opacity
@@ -102,9 +102,9 @@ Opacityは、透明度のレベルを設定します。
 <img src="/images/user-manual/material-inspector/parallax.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Height Map</td><td>The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height.</td></tr>
-    <tr><td>Strength</td><td>The strength of a parallax effect (a value between 0 and 2, defaulting to 1).</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Height Map</td><td>視差効果のピクセルごとの強度を指定する高さマップ。白は最高の高さで、黒は高さゼロです。</td></tr>
+    <tr><td>Strength</td><td>視差効果の強さ（0と2の間の値、デフォルト設定は1）。</td></tr>
 </table>
 
 ### 環境
@@ -129,8 +129,8 @@ Opacityは、透明度のレベルを設定します。
 <img src="/images/user-manual/material-inspector/lightmap.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Texture</td><td>The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Texture</td><td>プリベークされた拡散ライトを含むライトマップテクスチャ。ライトマップは、2つのUVセットを持つメッシュに素材が適用されていることを必須とします。ライトマップは、第2つ目のセットのUVを使用します。</td></tr>
 </table>
 
 ### その他のレンダリング状態
@@ -140,32 +140,38 @@ Opacityは、透明度のレベルを設定します。
 <img src="/images/user-manual/material-inspector/other.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Depth Test</td><td>If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on.</td></tr>
-    <tr><td>Depth Write</td><td>If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Depth Test</td><td>チェックすると、素材とメッシュがレンダリングされるときに、ピクセルごとのチェックが行われ、エンジンのデプステストにピクセルが合格するかどうかを判断します。デフォルトでは、ピクセルが深度バッファに既にあるZ深度以下であることをテストで確認します。つまり、メッシュはその前に何もない場合にのみ表示されます。オフにした場合、深度バッファに何が入っていても、メッシュはレンダリングされます。デフォルトはオンです。
+</td></tr>
+    <tr><td>Depth Write</td><td>If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on.
+
+チェックすると、素材とメッシュがレンダリングされるときに、その深さ情報が深度バッファに書き込まれます。これにより、後続のメッシュがレンダリングされた時にこの素材にレンダリングされるメッシュに対して、正常に深度テストが行われることが保証されます。デフォルトはオンです。</td></tr>
     <tr><td>Cull</td>
-        <td>Options are:
+        <td>オプションは次の通り：
             <ul>
-                <li>None: Both front faces and back faces are rendered.</li>
-                <li>Front Faces: front faces are rendered and back faces are not.</li>
-                <li>Back Faces: back faces are rendered and front faces are not. This is the default.</li>
+                <li>None: 前面と後面の両方がレンダリングされる。</li>
+                <li>Front Faces: 前面はレンダリングされ、後面はされない。</li>
+                <li>Back Faces: 後面はレンダリングされ、前面はされない。これがデフォルトです。</li>
             </ul>
         PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels.
+
+PlayCanvasは、反時計回りの頂点巻線が正面の三角形を指定するよう指示します。背面ピクセルは上書きされ（複雑なメッシュの場合）、ピクセルの過剰な補充を招くことが多いので、バックフェースカリングはパフォーマンスの向上に繋がります。
         </td>
     </tr>
     <tr><td>Blend Type</td>
-        <td>Options are:
+        <td>オプションは次の通り：
             <ul>
-                <li>None: The mesh is opaque. This is the default.</li>
-                <li>Normal: The mesh is transparent, like stained glass.</li>
-                <li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li>
-                <li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li>
-                <li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li>
+                <li>None: メッシュは不透明。これがデフォルトです。</li>
+                <li>Normal: メッシュは、ステンドグラスのように透明。</li>
+                <li>Additive: 既にフレームバッファにレンダリングされているものに、メッシュの色が追加される。</li>
+                <li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.
+'Normal'ブレンドと似ているが、この素材にレンダリングされるメッシュの色がすでにそのアルファ値によって変調されている。</li>
+                <li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.レンダリングすると、メッシュの色は既にフレームバッファにレンダリングされている物と乗算される。</li>
             </ul>
         </td>
     </tr>
     <tr><td>Shadow Sampling</td>
-        <td>Options are:
+        <td>オプションは次の通り：
             <ul>
                 <li>Hard</li>
                 <li>PCF 3x3</li>

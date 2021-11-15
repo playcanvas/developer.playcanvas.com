@@ -12,7 +12,7 @@ Here are the properties that you can edit for a Font asset in the Editor:
 
 ![Font Asset][2]
 
-## Properties
+## 属性
 
 ### Intensity
 

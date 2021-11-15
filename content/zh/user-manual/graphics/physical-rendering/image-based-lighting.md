@@ -15,7 +15,7 @@ Image data can be stored in LDR or HDR (High Dynamic Range) color space, which a
 ![HDR vs LDR CubeMap for Image Based Rendering][9]
 *Notice how bright parts in texture are clamped using LDR*
 
-## Energy Conservation
+## 节约性能
 
 The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
 
@@ -53,7 +53,7 @@ This technique changes the projection of environment map which allows to specify
 
 ![Material CubeMap Box Projection][4]
 
-## Example
+## 案例
 
 Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
 

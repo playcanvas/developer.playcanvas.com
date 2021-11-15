@@ -1,5 +1,5 @@
 ---
-title: Creating new scripts
+title: 创建新脚本
 template: usermanual-page.tmpl.html
 position: 1
 ---

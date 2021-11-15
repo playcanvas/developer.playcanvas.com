@@ -23,7 +23,7 @@ Chrome, Firefox以及其它的浏览器都直接集成开发者工具到浏览�
 浏览器上有详细说明如何调试JavaScript。用户可以通过以下页面进行了解：[Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
 <div class="alert alert-info">
-Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
+请注意，当运行的应用程序在调试器的断点处暂停时，用于启动该应用程序的其他浏览器窗口/标签(包含PlayCanvas代码编辑器或编辑器等)也可能会暂停。
 </div>
 
 ### Debugging on Mobile Devices

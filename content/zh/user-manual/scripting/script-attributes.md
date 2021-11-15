@@ -1,5 +1,5 @@
 ---
-title: Script Attributes
+title: 脚本属性
 template: usermanual-page.tmpl.html
 position: 4
 ---

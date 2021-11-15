@@ -6,8 +6,7 @@ position: 7
 
 キューブマップは特別なテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：
 
-1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
+1. キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルが含まれます。 2. キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
 
 <iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
@@ -38,10 +37,10 @@ PlayCanvas Editorインターフェイスから直接キューブマップアセ
 ![キューブマップのプロパティ][3]
 
 ### Filtering
-This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+この設定では、キューブマップが拡大される際にピクセルが補間される方法を定義します。拡大とは、テクセル対画面のピクセル比が1より少ない状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
 
 ### Anisotropy
-Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
+Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面により密接に合わせられるにつれて、テクスチャサンプリングの品質を制御できる1と16の間の値です。
 
 ## キューブマップにテクスチャを割り当てる
 

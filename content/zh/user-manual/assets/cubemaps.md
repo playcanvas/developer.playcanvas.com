@@ -6,8 +6,8 @@ position: 7
 
 立方体贴图是一种特殊类型的纹理资源。 立方体贴图由6个纹理资源组成，其中每个纹理表示立方体的一个面， 它们通常有两种用途：
 
-1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
+1.立方体贴图可以定义场景的天空盒。 天空盒包含您的场景的遥远视觉的图像，例如山丘，山脉，天空等。
+2.立方贴图可以向其它材料添加反射效果。 想象一下你的场景中有一个光泽的铬球轴承，球表面反映了周围的场景。 对于开放环境，通常将场景中天空的立方体贴图设置为物体材质上立方体贴图的反射内容。
 
 <iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
@@ -38,10 +38,10 @@ position: 7
 ![立方体贴图属性][3]
 
 ### Filtering
-This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+此设置确定立方体像素的像素在放大时如何插值。 当纹素到屏幕像素的比率小于1时是放大。此值可以线性调整在视觉上最好的效果。
 
-### Anisotropy
-Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
+### 各向异性
+各向异性是一个从1和16之间的值，它控制纹理采样的质量，从而让摄像机的视图矢量与纹理表面的排列变得更紧密。
 
 ## 将纹理分配给立方体贴图
 

@@ -4,17 +4,17 @@ template: usermanual-page.tmpl.html
 position: 6
 ---
 
-## Route URL
+## 传输链接
 
 ```none
 GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 ```
 
-## Description
+## 描述
 
 Permanently delete an asset from a branch of your project. **Warning** deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
 
-## Example
+## 案例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
@@ -26,20 +26,20 @@ DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## 参数
 
 <div class="params">
 <div class="parameter"><span class="param">assetId: number</span><p>The id of the asset to delete</p></div>
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch to delete the asset from</p></div>
 </div>
 
-## Response Schema
+## 响应模式
 
 ```none
 Status: 200
 ```
 
-## Errors
+## 报错
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -48,7 +48,7 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## Rate Limiting
+## 速率限制
 
 This route uses a [normal][1] rate limit.
 

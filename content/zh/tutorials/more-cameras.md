@@ -1,5 +1,5 @@
 ---
-title: More Cameras
+title: 更多的摄像机
 template: tutorial-page.tmpl.html
 tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
@@ -13,8 +13,7 @@ The [Basic Cameras][1] tutorial walks you through creating a camera Entity and a
 
 ## 更改属性
 
-The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
-methods on the ComponentSystem.
+你能够在运行时修改摄像机的第一种方法，是改变摄像机组件上的值。你可以像编辑其它组建一样通过组件系统中的`set()` 和 `get()`方法做到这点。
 
 ```javascript
 var Zoom = pc.createScript('zoom');
@@ -62,8 +61,7 @@ With the final two nested `if(){}` constructs we gradually change the fov values
 
 使用 `this.entity.camera.fov = fov`我们将`set()` 摄像机的fov属性设置为新的值。
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
-top and bottom sides of the camera [frustum][2]
+请注意，当缩小时，顶部和底部的多维数据集位于屏幕的边缘，这与我们对[PlayCanvas 编辑器场景] [3]的期望相符，其中立方体位于相机[视角椎体边缘] [2]的顶部和底部。
 
 ## 当前相机
 

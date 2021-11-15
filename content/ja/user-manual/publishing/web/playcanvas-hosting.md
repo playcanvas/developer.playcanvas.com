@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas Hosting
+title: PlayCanvas ホスティング
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -8,15 +8,15 @@ position: 1
 
 2つの簡単なステップでPlayCanvasに公開できます：
 
-1. Publish a new **Build**
-2. Set the build as the **Primary Build**
+1.新規 **ビルド**の公開
+2. ビルドを**プライマリビルド**に設定
 
 公開するにはプロジェクトに最低ひとつのシーンが必要です。
 
 ## 新規ビルドの公開
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* プロジェクトに移行してEditorを開く。
+* 左側のツールバーの<span class="pc-icon" style="font-size">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
 ![Publish ボタン][1]
 
@@ -62,7 +62,7 @@ You can also set the Primary Build for your project, by clicking on the banner i
 It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
 
 <div class="alert alert-info">
-If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
+ゲームへのリンクをシェアする場合は、Primary Buildリンクを使用するべきです。これにより、再公開する際にリンクが変更される心配がなくなります。
 </div>
 
 The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.

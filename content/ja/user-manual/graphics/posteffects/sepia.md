@@ -1,5 +1,5 @@
 ---
-title: Sepia Effect
+title: セピアエフェクト
 template: usermanual-page.tmpl.html
 position: 5
 ---

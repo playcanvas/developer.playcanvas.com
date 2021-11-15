@@ -1,5 +1,5 @@
 ---
-title: Manipulating Entities
+title: エンティティの操作
 template: tutorial-page.tmpl.html
 tags: basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
@@ -20,7 +20,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
-*World and Local co-ordinate systems*
+*ワールドとローカルの座標系*
 <br />
 
 ### 階層
@@ -71,15 +71,15 @@ entity.translateLocal(0, 0, 1);
 
 **Euler Angles**
 
-* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
-* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
-* Euler angles are easy to understand because you can visualize the effect they will have in your head.
+*オイラー角は、座標系のX,Y, Z軸を中心として（その順番通り）度単位の3つの回転です。
+*座標系の軸を下に見ていくと、正のオイラー角は、その軸を中心とした反時計回りの回転となります。
+*オイラー角は、その効果を思い浮かべることができるので、理解しやすいです。
 
 **Quaternions**
 
-* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
-* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
-* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
+*クォータニオンは4つの数字として格納され、3D空間内の任意の方向を表します。
+*これらは、直接設定することは困難ですが、オイラー角、回転マトリックスまたは軸角表現から設定することができます。
+*視覚化するのは難しいですが、堅牢であり、速やかに補間することができるので、(回転をアニメーション化する場合)便利です。
 
 エンティティをスクリプトする場合、オイラー角を使用してエンティティの回転を設定する可能性が高いです。 例えば：
 

@@ -1,5 +1,5 @@
 ---
-title: Post Effects
+title: 后期效果
 template: usermanual-page.tmpl.html
 position: 6
 ---

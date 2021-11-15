@@ -1,5 +1,5 @@
 ---
-title: Custom Shaders
+title: 自定义着色器
 template: tutorial-page.tmpl.html
 tags: shaders, materials
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
@@ -134,8 +134,7 @@ var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
 this.material.setParameter('uDiffuseMap', diffuseTexture);
 ```
 
-The effect demonstrated in this tutorial is achieved using a height map texture. We access the texture from the asset registry using the code above. At the
-top of our script we have declared a script attribute called 'maps' which allows us to set a texture from the PlayCanvas Editor:
+本教程中演示的效果使用高度贴图纹理实现。 我们使用上面的代码从资产注册表访问纹理。 在我们的脚本的顶部，我们已经声明了一个名为“maps”的脚本属性，它允许我们从PlayCanvas编辑器设置一个纹理：
 
 ```javascript
 CustomShader.attributes.add('vs', {

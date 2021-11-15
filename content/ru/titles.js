@@ -16,7 +16,7 @@
     "Material Inspector": "",
     "Node Inspector": "",
     "Textures": "Текстуры",
-    "Workflow": "",
+    "Workflow": "Рабочий процесс",
     "Overview": "Обзор",
     "File Handling": "",
     "Materials": "Материалы",
