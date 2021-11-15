@@ -1,5 +1,5 @@
 ---
-title: Profile
+title: 信息页
 template: usermanual-page.tmpl.html
 position: 5
 ---

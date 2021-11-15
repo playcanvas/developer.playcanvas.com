@@ -1,5 +1,5 @@
 ---
-title: Home
+title: 主页
 template: usermanual-page.tmpl.html
 position: 1
 ---

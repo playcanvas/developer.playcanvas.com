@@ -1,5 +1,5 @@
 ---
-title: Account
+title: Учетная запись
 template: usermanual-page.tmpl.html
 position: 3
 ---

@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Главная
 template: usermanual-page.tmpl.html
 position: 1
 ---

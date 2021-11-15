@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: プロジェクト
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ position: 2
 
 ## プロジェクトの削除
 
-Click on the arrow next to a project and select Delete to permanently delete it from your account.
+プロジェクトの横の矢印をクリックしてDeleteを選択するとアカウントから完全に削除することができます。
 
 ## プロジェクトをアンロック
 

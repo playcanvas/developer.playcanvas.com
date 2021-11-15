@@ -1,5 +1,5 @@
 ---
-title: Profile
+title: プロフィール
 template: usermanual-page.tmpl.html
 position: 5
 ---

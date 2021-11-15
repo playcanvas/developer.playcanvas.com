@@ -1,5 +1,5 @@
 ---
-title: Account
+title: アカウント
 template: usermanual-page.tmpl.html
 position: 3
 ---

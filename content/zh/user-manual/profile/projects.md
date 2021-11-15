@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: 项目
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ position: 2
 
 ## 删除项目
 
-Click on the arrow next to a project and select Delete to permanently delete it from your account.
+点击项目右侧的向下箭头展开菜单，选择移除项目选项。
 
 ## 解锁项目
 

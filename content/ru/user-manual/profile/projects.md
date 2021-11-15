@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Проекты
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -14,7 +14,7 @@ position: 2
 
 ## Удалить проект
 
-Click on the arrow next to a project and select Delete to permanently delete it from your account.
+Нажмите на стрелку рядом с названием проекта и выберите «Удалить», чтобы перманентно удалить его из вашей учетной записи.
 
 ## Unlock Project
 

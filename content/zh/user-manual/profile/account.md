@@ -1,5 +1,5 @@
 ---
-title: Account
+title: 用户资料
 template: usermanual-page.tmpl.html
 position: 3
 ---
