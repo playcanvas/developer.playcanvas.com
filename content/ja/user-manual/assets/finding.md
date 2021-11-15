@@ -1,5 +1,5 @@
 ---
-title: Finding Assets
+title: アセットの検索
 template: usermanual-page.tmpl.html
 position: 18
 ---
@@ -15,7 +15,7 @@ position: 18
 アセットマーケットプレイスとはダウンロードしてPlayCanvasゲームに追加できる、無料または有料コンテンツのオンラインライブラリです。
 
 <table class="table table-striped table-bordered">
-    <tr><th>Provider</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
+    <tr><th>提供者</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
     <tr><td><a href="http://www.3dmodels-textures.com/">3D Models Textures</a></td><td></td><td>&#x2713;</td><td>&#x2713;</td></tr>
     <tr><td><a href="http://www.blendswap.com/">BlendSwap</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="http://www.cgtrader.com/">CGTrader</a></td><td></td><td>&#x2713;</td><td></td></tr>

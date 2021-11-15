@@ -1,5 +1,5 @@
 ---
-title: Finding Assets
+title: 获取资源
 template: usermanual-page.tmpl.html
 position: 18
 ---
