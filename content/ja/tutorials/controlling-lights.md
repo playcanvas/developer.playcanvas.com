@@ -13,19 +13,22 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 変動するライトプロパティには異なる制限があります。例えば、赤、緑、青の値は0と10に間で設定されますが強度は0から10まで上がることがあります。また、いくつかのライトには特有のプロパティがあります。例：スポットライトのコーン角度。
 
-##ライティングコマンド
+## ライティングコマンド
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
 ```
-This line toggles on and off the light component of the 'spot' entity.
+
+Spotエンティティのライトコンポーネントをトグルでオン・オフ。
 
 ```javascript
 this.color1 = new pc.Color(1, 1, 1);
 ```
-A new color array is declared, the first three values affect red, green and blue values respectively.
+
+新しいカラー配列が宣言され、最初の3つの値は赤、緑、青のそれぞれに影響します。
+
 ```javascript
 var s = Math.abs(Math.sin(1 + this.timer));
 var r = 1-s/2;
@@ -35,16 +38,19 @@ this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
 ```
-These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
+
+これらの行は正弦波に基づいてr, g, b変数に値を割り当て、これらの値を `color1.set(x, y, z)` から以前に宣言されたカラー配列に割り当て、ライトプロパティに指定します。強度の正弦は異なるように設定されているので、最高のライト強度値は10、最低は0です。
 
 <div class="alert-info">
-    Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
+    entity.light.color.rを使用してライトの赤の値を変更することができません。ライトプロパティのcolorプロパティへの変更のみ検知されます。プロパティには完全なpc.Colorを割り当てる必要があります。例：entity.light.color = new pc.Color(1, 1, 1);。
 </div>
 
-##一般的な設定
+## 一般的な設定
+
 全ての新規シーンに作成されるデフォルトの指向性ライトに加え、スポットライト(基本的なたいまつモデルの親アセンブリに添付)と、親球体モデルに添付されたポイントライトをついかしました。制御スクリプトはルートエンティティに添付しています。球体とたいまつは、回転しやすくするため、シーンの中心にある空のエンティティの子として作成しています。controllingLightsシーンで[完全なEditorシーンやスクリプトにアクセス][2]。
 
-The full code used for the above PlayCanvas app is as follows.
+PlayCanvas appで使用される完全なコードは次の通り：
+
 ```javascript
 var LightHandler = pc.createScript('lightHandler');
 
@@ -82,8 +88,8 @@ LightHandler.prototype.update = function(dt) {
     // a counter that is used as input to sin the functions determining light properties for all lights.
     this.timer += dt;
 
-    //these 3 code blocks assign color and intensity values that vary according to a sin function
-    //all sin inputs are in radians
+    // these 3 code blocks assign color and intensity values that vary according to a sin function
+    // all sin inputs are in radians
     var s = Math.abs(Math.sin(1 + this.timer));
     var r = 1-s/2;
     var g = s-0.2;
