@@ -17,7 +17,7 @@ PlayCanvasではWeb Audio APIを活用して音声に協力な効果を追加す
 
 ## 設定
 
-You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Component with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
+[こちら][1]からシーンを確認できます。このシーンのルートエンティティには、ひとつのスロットで会話音声サンプルをループで再生する[Sound][2]コンポーネントがあります。Soundコンポーネントの仕組みにはこちらの[ベーシックチュートリアル][3]をご確認ください。
 
 ルートエンティティには、2つのスクリプトを持つ[スクリプト][4]コンポーネントがあります。一つのスクリプトはユーザーインターフェイスを担当します。次の、もう一方のスクリプトについて説明します： <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>
 

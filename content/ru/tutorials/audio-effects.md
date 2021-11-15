@@ -17,7 +17,7 @@ PlayCanvas позволяет вам полностью использовать
 
 ## Настройка
 
-You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Component with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
+Вы можете проверить эту сцену собственноручно [здесь][1]. Корневая сущность этой сцены имеет [звуковой] компонент с одним слотом, который проигрывает зацикленный звуковой семпл. Если вы не чувствуете себя уверенно при работе со звуковыми компонентами, убедитесь, что знакомы с [основами][3].
 
 Корневая сущность так же имеет компонент [скрипт] с добавленными двумя скриптами. Первый из них отвечает за пользовательский интерфейс, а на второй мы обратим наше внимание в <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>.
 

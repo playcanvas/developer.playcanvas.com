@@ -1,5 +1,5 @@
 ---
-title: Graphics
+title: グラフィック
 template: usermanual-page.tmpl.html
 position: 14
 ---
