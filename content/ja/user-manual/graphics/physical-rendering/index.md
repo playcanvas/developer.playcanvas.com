@@ -1,5 +1,5 @@
 ---
-title: Physically Based Rendering
+title: 物理ベースレンダリング
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -15,14 +15,14 @@ position: 3
 
 ## 拡散(Diffuse)とスペキュラ(Specular)
 
-Diffuse and Specular (or reflected) light are the two terms that describe two main types of interaction between light and a material. Specular light refers to light which has bounced off the surface. On a smooth surface this light will reflect all the in same direction and the surface will appear mirror-like. Diffuse light is light that has been absorbed, scattered in the material and re-emerged. This light tends to be uniform in direction unlike specular light. During this absorbing and re-emerging some light wavelengths will be absorbed. The wavelengths that are not absorbed give the material its color. For example, if all blue and green wavelengths are absorbed, the material will appear red. In rendering terms, diffuse color is sometimes known as "albedo" or "base color".
+拡散と反射(あるいはスペキュラ)は光源とマテリアル間の関係をあらわす二つの主要な要素を表現するための用語です。反射光は物体表面で反射した光をあらわします。なめらかな表面では反射した光はすべて同じ方向に進み、表面は鏡のように見えます。拡散光は物体に一旦吸収され、物体内で反射されて再び放出される光です。この光は反射光とは違い、すべての方向に同じように放出されます。また、吸収と再放出が行われる際に、特定の波長の光は吸収されます。物体に吸収されなかった波長の光はその物体の色となります。例えば、青と緑の波長の光が吸収された場合にはその物体は赤く見えます。レンダリング用語では、拡散色は"アルベド"や"ベースカラー"と呼ばれます。
 
 ## エネルギーの保存
 
 ![Energy Conservation][3]
 *なめらかな表面には鋭く明るいハイライトがあらわれ、粗い表面には広くぼんやりとしたハイライトがあらわれます。*
 
-One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+物理的に正しいレンダリングの重要な要素は、エネルギーの保存です。拡散光と反射光がどちらも物体表面に投射される光から発生していることから考えると、拡散光と反射光を足しあわせた総量は、物体表面に投射された光の総量を上回ることはできません。この法則が現実世界で意味することは、物体表面の反射率が高ければ拡散光は非常に小さくなり、反対に拡散光が大きければ反射はあまり起こらないということになります。
 
 物理ベースのレンダリングの利点は、このエネルギー保存則がシェーダに内包されているということです。アーティストは法則を考えなくても物理ベースのレンダリングを行うことができます。
 
@@ -31,7 +31,7 @@ One of the key features of physically correct rendering is that of Energy Conser
 ![Metals & Non-metals][4]
 *金属と非金属*
 
-One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine its behavior. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
+物理ベースのレンダリングとこれまでのシェーディングモデルの違いの一つは、マテリアルの振る舞いを、物体がどのようなものでできているか、ということを考慮して決めることです。ここで考慮する主な要素は、その物体が伝導体(通常は金属)であるか、あるいは絶縁体(通常は非金属)であるかということです。
 
 この要素はマテリアルがどのように光に反応するかということの多くを決定する重要なものです。例えば、金属は一般的に光を反射します。(60%から90%ほど) 一方で非金属は光をあまり反射しません。(0%から20%ほど) つぎに、非金属の反射光は通常白色光ですが、金属の反射光は拡散光と同じ色になります。
 

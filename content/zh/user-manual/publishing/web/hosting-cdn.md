@@ -1,5 +1,5 @@
 ---
-title: Hosting using a CDN
+title: 使用CDN进行托管
 template: usermanual-page.tmpl.html
 position: 5
 ---

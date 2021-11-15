@@ -59,7 +59,7 @@ position: 1
 
 You can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button on the project's home page.
 
-It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
+常にゲームの最新版を参照する単一のリンクがあると便利です。古いビルドを削除することによりリンクが壊れる心配がなくなります。このために各プロジェクトにPrimary Buildリンクが用意されています。これは、常に次の形式になります： `https://playcanv.as/p/PROJECT_ID/`
 
 <div class="alert alert-info">
 ゲームへのリンクをシェアする場合は、Primary Buildリンクを使用するべきです。これにより、再公開する際にリンクが変更される心配がなくなります。

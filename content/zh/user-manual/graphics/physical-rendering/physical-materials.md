@@ -1,5 +1,5 @@
 ---
-title: Physical Materials
+title: 物理材质
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -83,7 +83,7 @@ PBR常常被分为创建资源或工作流程的两个不同的方法。这两�
 
 这三个属性 **漫反射**, **金属性** 和 **光滑度** 是物理材质系统的核心。你可以在下面的场景中试试演示不同的组合。
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
+还有许多其他的可以进行探讨的附加属性，它们可以用来制造非常优秀的材质，如环境光遮蔽，自发光，不透明度，正常的和显示高度的贴图。
 
 <iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 

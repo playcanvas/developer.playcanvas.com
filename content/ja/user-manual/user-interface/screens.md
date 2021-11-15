@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-The [Screen Component][1] defines the area that the User Interface is built inside. Its primary responsibility is to determine how the contents of the Screen (child Entities with Element components) are rendered.
+[Screen Component][1]は、ユーザインターフェイスが構築される領域を定義します。主な用途は、Screen(Elementコンポーネントを持つ子エンティティ)の内容がどのようにレンダリングされるかを判断することです。
 
 ## スクリーン空間またはワールド空間
 

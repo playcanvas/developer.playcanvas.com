@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 3
 ---
 
-Elements are the individual pieces that make up a user interface screen. A user interface element is added by attaching an Element component to an entity and adding that entity as a child or descendent of the Screen entity. An element that is part of a Screen differs from a regular entity in the way that its transform is calculated and hence the way that it is positioned on screen.
+要素は、ユーザインターフェイス画面を構成する個々の要素です。エンティティにElementコンポーネントを添付し、そのエンティティをScreenエンティティの子または子孫として追加することによって、ユーザインターフェイス要素が追加されます。スクリーンの一部である要素は、トランスフォームが計算される方法、したがってスクリーン上に配置される方法において、通常のエンティティと異なります。
 
 Elementコンポーネントは、親に対するエンティティの位置を計算するために使用されるローカル位置、回転、およびスケールに加えて、アンカー、ピボット、およびマージンの各プロパティを使用してローカル位置を測定する必要がある場所、正方形要素があるべき場所、正方形要素の端とアンカーの間の距離などを決定します。
 

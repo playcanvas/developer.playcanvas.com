@@ -1,5 +1,5 @@
 ---
-title: Physics Basics
+title: 物理の基本
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -34,9 +34,9 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 
 シーン内の任意のエンティティを物理シミュレーションに参加させることができます。リジッドボディコンポーネントとコリジョンコンポーネントを追加するだけです。リジッドボディコンポーネントはタイプを指定します：
 
-* Static - A physical object that never moves
-* Dynamic - A physical object that will move in response to an applied force
-* Kinematic - A physical object that can only be positioned explicitly via the API
+* 静的 - 移動しない物理オブジェクト
+* 動的 - 適用された力に応じて移動する物理オブジェクト
+* キネマティック - APIを介して明示的にのみ配置できる物理オブジェクト
 
 また、質量、摩擦、反発などの物理的プロパティも指定されます（本質的に「弾力性」の計測）。
 
@@ -68,7 +68,7 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 
 ## キネマティックボディの作成
 
-Sometimes, it can be useful to be able to explicitly control the motion of physical objects in your scene and have these objects exert an irresistible force on other physical objects. For example, imagine a moving platform that can carry the player across a level. To achieve this, you can set a rigid body's type to Kinematic. Let's create a kinematic box:
+場合によっては、シーン内の物理オブジェクトの動きを明示的に制御し、これらのオブジェクトが他の物理オブジェクトに対して抵抗できない力を発揮できるようにするべきです。たとえば、プレイヤーを別の階に運ぶための動くプラットフォームを作るとします。これを実現するためには、リジッドボディのタイプをキネマティックに設定します。それでは、キネマティックボックスを作成してみましょう。
 
 ![キネマティックボックス][8]
 
@@ -77,12 +77,12 @@ Sometimes, it can be useful to be able to explicitly control the motion of physi
 ```javascript
 var Movement = pc.createScript('movement');
 
-// initialize code called once per entity
+// エンティティごとに1回呼び出されるコードを初期化
 Movement.prototype.initialize = function() {
     
 };
 
-// update code called every frame
+// すべてのフレームで呼ばれるコードを更新
 Movement.prototype.update = function(dt) {
     this.entity.setPosition(Math.sin(Date.now() / 1000), 0.5, 0);
 };

@@ -42,7 +42,7 @@ Rotate.prototype.swap = function(old) {
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
+この行は、「rotate」という新しいScriptTypeを作成します。スクリプトの名前は、スクリプトコンポーネントでスクリプトを識別するために使用されます。プロジェクト内で宣言された各ScriptTypeには固有の名前が必要です。返される関数の`Rotate`は、メソッドの標準セットでそのプロトタイプを拡張できるjavascript関数です。クラス継承のようなものです。
 
 ### スクリプトの属性
 
@@ -64,7 +64,7 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
-The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only ever called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
+`initialize`メソッドは、スクリプトが接続されている各エンティティで呼び出されます。アプリケーションのロードが完了し、エンティティ階層が構築された後、最初の更新ループまたはフレームのレンダリングされる前に呼び出されます。`initialize`メソッドは、各エンティティで一度のみ呼び出されます。スクリプトインスタンスのメンバー変数を定義し、初期化するために使用することができます。アプリケーションの起動時にエンティティまたはスクリプトが無効になっている場合、initializeメソッドは、エンティティが最初に有効になった時に呼ばれます。
 
 エンティティが `entity.clone`メソッドを使用してクローンされると、エンティティとスクリプトの両方が有効になっている限り、クローンされたエンティティがシーン階層に追加された際にのみ、スクリプトの` initialize`メソッドが呼び出されます。
 

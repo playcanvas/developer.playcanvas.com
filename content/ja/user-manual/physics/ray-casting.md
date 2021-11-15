@@ -1,5 +1,5 @@
 ---
-title: Ray Casting
+title: レイキャスティング
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -11,17 +11,17 @@ PlayCanvas物理エンジンを使用すると、レイキャストを実行で�
 ```javascript
 var Raycast = pc.createScript('raycast');
 
-// initialize code called once per entity
+// エンティティごとに1回呼び出される初期化コード
 Raycast.prototype.initialize = function() {
     if (!this.entity.camera) {
         console.error('This script must be applied to an entity with a camera component.');
         return;
     }
 
-    // Add a mousedown event handler
+    // mousedownイベントハンドラーを追加
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.mouseDown, this);
     
-    // Add touch event only if touch is available
+    // タッチが使用可能な場合にのみタッチイベントを追加
     if (this.app.touch) {
         this.app.touch.on(pc.EVENT_TOUCHSTART, this.touchStart, this);
     }
@@ -32,7 +32,7 @@ Raycast.prototype.mouseDown = function (e) {
 };
 
 Raycast.prototype.touchStart = function (e) {
-    // Only perform the raycast if there is one finger on the screen
+    // 画面に1本の指触れている場合にのみレイキャストを実行
     if (e.touches.length === 1) {
         this.doRaycast(e.touches[0].x, e.touches[0].y);
     }
@@ -40,20 +40,20 @@ Raycast.prototype.touchStart = function (e) {
 };
 
 Raycast.prototype.doRaycast = function (screenX, screenY) {
-    // The pc.Vec3 to raycast from (the position of the camera)
+    // （カメラの位置）からレイキャストするpc.Vec3
     var from = this.entity.getPosition();
 
-    // The pc.Vec3 to raycast to (the click position projected onto the camera's far clip plane)
+    // レイキャストするpc.Vec3（カメラのファークリッププレーンに投影されるクリック位置）
     var to = this.entity.camera.screenToWorld(screenX, screenY, this.entity.camera.farClip);
 
-    // Raycast between the two points and return the closest hit result
+    // 2点間のレイキャストおよび最も近いヒット結果を返す
     var result = this.app.systems.rigidbody.raycastFirst(from, to);
     
-    // If there was a hit, store the entity
+    // ヒットした場合は、エンティティを保存
     if (result) {
         var hitEntity = result.entity;
         console.log('You selected ' + hitEntity.name);
-    }    
+    }
 };
 ```
 

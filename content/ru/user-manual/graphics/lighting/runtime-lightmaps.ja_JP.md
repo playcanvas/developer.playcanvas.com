@@ -38,7 +38,7 @@ PlayCanvasにはライトマップを生成する非常に便利な方法があ�
 
 **Direction**オプションは、ライトがライト方向情報のベーキングに寄与するかどうかを指定します。シーン設定で**Color and Direction***ライトマップモードが選択されている場合、これは鏡面反射の結果に影響を与えます。
 
-There are two other options that modify the lights behavior. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
+ライトの動作を変更する方法は他に二つあり、ライトが実行時に影響を与えるモデルを決定します。いずれかをtrueにするとライトは実行時に動作し、実行時の負荷に影響を与えます。 
 
 **Affect Non-Baked** ボックスがtrueの場合、このライトはライトマップ**されていない**全てのモデルに影響を与えます。**Affect Baked** ボックスがtrueの場合、このライトはライトマップ**されている**全てのモデルに影響を与えます。 
 

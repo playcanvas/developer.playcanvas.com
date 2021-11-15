@@ -14,7 +14,7 @@ PlayCanvas引擎去实现了阴影算法称为阴影贴图。这个是跨平台�
 
 ![Directional Light][5]
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+默认情况下，在PlayCanvas中阴影效果是关闭的。用户需要手动将它开启。幸运的是，开始阴影是一件极其简便的事情。首先，识别在场景中哪种类型的灯光是可以制造阴影的。在层级树中选择灯光并且在检查器中修改属性。每个灯光都有“Cast Shadows”（制造阴影）属性。点击这个选项将会让灯光在场景中对图形对象造成阴影。
 
 ![Model Component][6]
 
@@ -28,7 +28,7 @@ By default, shadow casting is disabled in PlayCanvas. You have to explicitly ena
 
 ### 阴影距离
 
-The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
+影子距离是视点与超过它的定向光阴影不再呈现的位置的距离。此值越小，阴影就消失得约快。问题是，这样观看者在周围的场景移动时将会看到的阴影突然出现。因此，你应该根据玩家能看到多远和一般情况下什么好看来平衡这个值。
 
 ### 阴影分辨率
 

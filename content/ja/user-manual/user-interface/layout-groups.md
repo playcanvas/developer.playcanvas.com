@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 7
 ---
 
-The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all its direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
+レイアウトグループコンポーネントは、子エレメントの位置とサイズの自動設定に使用します。子エレメントを縦横の列やグリッドに揃えるのにも使用できます。このコンポーネントでは直接の子全てにレイアウトルールが適用されるため、1つのレイアウト子コンポネント上でレイアウトグループルールを上書きできます。
 
 レイアウトグループコンポーネントは、[グリッド][10]、[縦列][11]または [横列][12]の固定幅等、一般的なレイアウトの生成に使用できます。
 
@@ -44,15 +44,15 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 値が **Stretch** の場合、以下の手段を用いて子を引き延ばし、コンテナの幅や高さを埋めます。
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
-* If there is space remaining in the container, distribute it to each child based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the maxWidth/maxHeight of each child.
+* それぞれの子のfitWidthProportion/fitHeightProportionの値を合計して標準化します。すべての値の合計は1です。
+* それぞれの子に合わせた幅・高さを適用します。
+* コンテナにスペースが残っている場合、標準化したfitWidthProportion/fitHeightProportion 値に基づいてそれぞれの子に割り当てます。ただし、子のmaxWidth/maxHeightを超えることはありません。
 
 値が **Shrink** の場合、以下の手段を用いて子を縮め、コンテナに合うようにします。
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
-* If the new total width/height of all children exceeds the available space of the container, reduce each child's width/height proportionally based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the minWidth/minHeight of each child.
+* それぞれの子のfitWidthProportion/fitHeightProportionの値を合計して標準化します。すべての値の合計は1です。
+* それぞれの子に合わせた幅・高さを適用します。
+* 全ての子の幅・高さの新しい合計値がコンテナのスペースを超えた場合、各子の幅・高さを標準化したfitWidthProportion/fitHeightProportion値に基づいて部分的に減らします。ただし、子のminWidth/minHeightを超えることはありません。
 
 値が **Both** の場合、 **Stretch** and **Shrink** の両方が適用されます。
 
@@ -62,7 +62,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 ## 子レイアウト
 
-A Layout Group applies its rules to all of its direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
+レイアウトグループは、そのグループのルールを直接の子に適用します。これらのルールについて特定の子に上書きする場合は、上書きする子にLayoutChildコンポーネントを追加して行います。
 
 ![Layout Child][8]
 

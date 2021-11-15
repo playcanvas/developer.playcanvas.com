@@ -28,7 +28,7 @@ PlayCanvas Editorは、シーンを構築するために使用される視覚的
 
 ![スクリプト][6]
 
-Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+ウェブ標準のJavascriptを使用して、カスタムの挙動をエンティティに添付できます。簡単なクリックハンドラや軌道カメラから大規模なマルチプレイヤーオンラインゲームまで、あらゆる規模のインタラクティブ機能を追加できます。
 
 ### アプリケーションを公開
 

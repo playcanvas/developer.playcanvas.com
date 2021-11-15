@@ -1,5 +1,5 @@
 ---
-title: User Interface
+title: ユーザインターフェイス
 template: usermanual-page.tmpl.html
 position: 18
 ---

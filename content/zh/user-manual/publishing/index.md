@@ -1,5 +1,5 @@
 ---
-title: Publishing
+title: 发布
 template: usermanual-page.tmpl.html
 position: 21
 ---
@@ -8,9 +8,9 @@ position: 21
 
 ## 在哪里我可以上传我的游戏？
 
-* [Web][1]
-* [Mobile][2]
-* [Desktop][3]
+* [网页][1]
+* [手机][2]
+* [桌面电脑][3]
 * [Playable Ads][4]
 
 [1]: /user-manual/publishing/web

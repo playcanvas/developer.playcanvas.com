@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 8
 ---
 
-The LayoutChild component enables an element that is controlled by a LayoutGroup component to override the default behavior of the Layout Group.
+LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネントによって制御される要素が、レイアウトグループのデフォルトの動作をオーバーライドできるようになります。
 
 詳細は [Layout グループ][0] をご確認ください。
 
@@ -15,14 +15,14 @@ The LayoutChild component enables an element that is controlled by a LayoutGroup
 <table class="table table-striped">
     <col class="property-name"></col>
     <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Min Width</td><td>Set the minimum width that the element can be rendered at.</td></tr>
-    <tr><td>Min Height</td><td>Set the minimum height that the element can be rendered at.</td></tr>
-    <tr><td>Max Width</td><td>Set the maximum width that the element can be rendered at.</td></tr>
-    <tr><td>Max Height</td><td>Set the maximum height that the element can be rendered at.</td></tr>
-    <tr><td>Fit Width Proportion</td><td>The proportion of additional space that the element will take up if the layout group is set to stretch or shrink.</td></tr>
-    <tr><td>Fit Height Proportion</td><td>The proportion of additional space that the element will take up if the layout group is set to stretch or shrink.</td></tr>
-    <tr><td>Exclude from layout</td><td>Completely ignore this element when calculating the layout.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>最小幅</td><td>要素をレンダリングできる最小幅を設定</td></tr>
+    <tr><td>最小高</td><td>要素をレンダリングできる最小の高さを設定</td></tr>
+    <tr>最大幅</td><td>要素をレンダリングできる最大幅を設定</td></tr>
+    <tr><td>最大高</td><td>要素をレンダリングできる最大幅を設定</td></tr>
+    <tr><td>固定幅の比率</td><td></td>レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率</tr>
+    <tr><td>固定高の比率</td><td>レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率</td></tr>
+    <tr><td>レイアウトから除外</td><td>レイアウトを計算するとき、この要素を完全に無視します。</td></tr>
 </table>
 
 ## スクリプトインターフェイス

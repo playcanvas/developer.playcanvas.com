@@ -1,5 +1,5 @@
 ---
-title: Creating Organizations
+title: 创建组织
 template: usermanual-page.tmpl.html
 position: 1
 ---

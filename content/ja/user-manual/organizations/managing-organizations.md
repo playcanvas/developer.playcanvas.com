@@ -1,5 +1,5 @@
 ---
-title: Managing Organizations
+title: 組織の管理
 template: usermanual-page.tmpl.html
 position: 2
 ---

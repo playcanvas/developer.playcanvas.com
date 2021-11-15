@@ -40,7 +40,7 @@ Here you can actually edit the contents of your assets. The editor uses [Monaco]
 
 さらに、エディタは自動完成に対応しています。文字を入力するかCtrl +スペースを押すと、自動補完候補のリストが表示されます。
 
-The editor will also lint your JavaScript code. This means that while you type your code the editor will scan your code for possible errors or suspicious usage. This is done with the help of [JSHint][13], which also supports special comments which control its behavior. For a list of these special comments check out the [docs][14].
+エディタは、JavaScriptコードを使用します。つまり、コードを入力している間、エディタはエラーや疑わしい使用を探すためにコードをスキャンします。これは[JSHint][13]を使用して行われ、その動作を制御する特別なコメントにも対応しています。これらの特別なコメントのリストについては、[docs][14]を参照してください。
 
 ### コラボレータ
 
@@ -128,7 +128,7 @@ You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac
 
 すべてのアセットを検索することで用語を見つけることもできます。これを行うには、Ctrl + Shift + Fキーを押して、下部にあるファイルで検索パネルを表示します。検索語を入力してEnterキーを押します。検索結果が表示する新しいタブが開きます：
 
-On the left side of the input fields there are various search options. These allow you to search using a regular expression, do a case-sensitive search or search for whole words. If you would like to learn and experiment more with regex, then [RegExr][10] is great site with cheat sheets, examples and an online editor for testing regex expressions.
+入力フィールドの左側には、さまざまな検索オプションがあります。これらを使用すると、正規表現から検索したり、大文字小文字を区別して検索、また、単語全体を検索することができます。regexについて学ぶには、[RegExr][10]をご確認ください。正規表現をテストするためのチートシート、サンプル、オンラインエディタを備えた素晴らしいサイトです。
 
 ![ファイルで検索][6]
 

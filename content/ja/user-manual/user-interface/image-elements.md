@@ -8,7 +8,7 @@ position: 5
 
 ## 着色
 
-Each image Element has a color property. If no texture is applied, the image element will simply be a colored rectangle. If a texture is applied, this color will be used to tint the texture. This let's you create color variations using only a single grayscale texture.
+各画像要素にはカラープロパティがあります。テクスチャが適用されていない場合、画像要素は単に色のついた長方形になります。テクスチャが適用されている場合、この色はテクスチャの着色に使用されます。これにより、１つのグレースケールテクスチャだけを使ってカラーバリエーションを作成することができます。
 
 ![着色][1]
 

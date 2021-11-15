@@ -8,11 +8,11 @@ PlayCanvasではユーザインタフェースは2つの要素から構築され
 
 ## レイアウトと配置
 
-One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to its parent and the `pivot` property determines where the center point of the element is. Read more on the [Element][3] page.
+Elementコンポーネントをスクリーンの一部として使用するエンティティと通常のエンティティの大きな違いの1つは、それらが親に対して配置される方法です。Elementコンポーネントには、最終的な位置が計算される方法を変更する２つのプロパティがあります。`anchor`プロパティは子が親に対してどのように配置されるかを決定し、` pivot`プロパティはelementの中心点がどこにあるかを決定します。詳細は[Element][3]ページでご確認ください。
 
 ## 描画の順序
 
-The graphical portions of the user interface, Image and Text Elements, are drawn in the order that they appear in the hierarchy, i.e. the first child is drawn first, its child is drawn next. A child that is draw later will appear on top of one that is draw earlier.
+ユーザインターフェースの画像部分である画像要素およびテキスト要素は、階層内に現れる順序で描画されます。例えば、最初の子が最初に描画され、その子が次に描画されます。後で描かれた子は、先に描かれた子の上に表示されます。
 
 描画順序を変更するには、Editor階層でエンティティを並べ替えるだけです。`entity.reparent(...)`を呼び出すことで、要素をプログラムで並べ替えることができます。 これは、Screenコンポーネント全体で描画順序を強制的に再計算することを意味しますのでご注意ください。
 

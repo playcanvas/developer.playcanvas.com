@@ -65,7 +65,7 @@ title.innerHTML = "This is the new title";
 
 ## 静的コンテンツ
 
-Some parts of your web application are not dynamic and do not need to change. For example, images, audio files, text files and in the case of PlayCanvas applications 3D models and textures. You can think of this a bit like loading files of a local disk, except that of course it comes over the internet so it's a bit slower. Serving static content is done by a web server, very much like server-side code and in some cases it will be the same machine. As there is no interactivity, there is no processing done to fulfill the request. The web server just sends back the requested file.
+ウェブアプリケーションの一部は、動的ではなく、変更する必要がありません。例えば、画像、オーディオファイル、テキストファイル、また、PlayCanvasアプリケーションの場合は3Dモデルやテクスチャです。これは、ローカルディスクのファイルを読み込むようなものですが、インターネット上なので少し遅くなります。静的コンテンツの提供はサーバサイドコードのようにウェブサーバによって実行され、場合によっては、同じマシンになります。インタラクティブな要素がないため、要求を満たすための処理は行われません。ウェブサーバは単に要求されたファイルを返送します。
 
 静的コンテンツにおいて重要なのは、できるだけ速くクライアントにダウンロードすることです。
 

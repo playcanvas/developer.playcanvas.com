@@ -1,5 +1,5 @@
 ---
-title: Trigger Volumes
+title: トリガーボリューム
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -15,7 +15,7 @@ position: 3
 ```javascript
 var TriggerVolume = pc.createScript('triggerVolume');
 
-// initialize code called once per entity
+// エンティティごとに1回呼び出される初期コード
 TriggerVolume.prototype.initialize = function() {
     this.entity.collision.on('triggerenter', function (entity) {
         console.log(entity.name + ' has entered trigger volume.');

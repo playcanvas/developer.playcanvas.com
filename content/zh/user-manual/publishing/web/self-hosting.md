@@ -48,13 +48,13 @@ position: 2
 
 ## Running a Downloaded Build
 
-You cannot load your game by opening the `index.html` file in a browser or from a `file://` url. You must use a local webserver to load the `index.html` file using `http://` or `https://`.
+用户不可以通过在浏览器中打开index.html文件加载游戏或者一个**file://**超级链接。用户必须使用本地网络服务器加载index.html文件。
 
 有许多选项可以运行网络服务，以下举例了一些例子：
 
-* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your game's index.html. Then point your browser to http://localhost:8000
-* *Intermediate:* Install [XAMPP][7]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
-* *Advanced:* Install [Apache][8] or [nginx][9] as a standalone service.
+* *Easy:*安装[Python][6] 并且在和游戏的index.html文件夹的相同目录下运行语句*python -m SimpleHTTPServer*。然后将您的浏览器指向http://localhost:8000
+* *Intermediate:* 安装[XAMPP][7]。尽管这是一个全PHP开发环境，但是这个包括了一个易于配置的Apache服务器。
+* *Advanced:* 安装[Apache][8] 或者 [nginx][9]作为独立的服务。
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting

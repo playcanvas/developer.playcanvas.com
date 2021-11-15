@@ -1,5 +1,5 @@
 ---
-title: Hue-Saturation Effect
+title: 色相饱和度调整
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -14,7 +14,7 @@ position: 4
 
 <img alt="Image with effect" src="/images/platform/posteffects/with_hue_saturation.png"></img>
 
-The built-in hue-saturation effect has the following attributes:
-* **Hue**: The hue of the image. Ranges from -1 to 1 (-1 is 180 degrees in the negative direction, 0 no change, 1 is 180 degrees in the positive direction).
-* **Saturation**: The saturation of the image. Ranges from -1 to 1 (-1 is solid gray, 0 no change, 1 maximum saturation).
+色相饱和度调整有如下属性:
+* **色相**: 图像的色调。范围从 -1 到 1 (-1 是 180的反向变化, 0没有变化, 1 是 180的正向变化)。
+* **饱和度**: 图像的饱和度。范围从 -1 到 1 (-1 完全的灰调,  0没有变化, 1 最大饱和度)。
 

@@ -1,5 +1,5 @@
 ---
-title: Organizations
+title: Organizations（組織）
 template: usermanual-page.tmpl.html
 position: 6
 ---

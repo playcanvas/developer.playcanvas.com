@@ -1,5 +1,5 @@
 ---
-title: FXAA Effect
+title: 抗锯齿效果
 template: usermanual-page.tmpl.html
 position: 3
 ---

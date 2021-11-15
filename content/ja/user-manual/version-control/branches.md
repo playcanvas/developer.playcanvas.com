@@ -38,13 +38,13 @@ position: 2
 
 If you have completed work on a branch, you can close it which will remove it from the open branches list.
 
-To close a branch, open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note that you cannot close your current branch or the master branch. Switch to a different branch first if you wish to close your current branch.
+ブランチをクローズするにはバージョンコントロールパネルを開き、クローズするブランチを選択してドロップダウンメニューから「Close branch」オプションを選びます。現在のブランチやマスターブランチはクローズできない点に留意してください。現在のブランチの場合はまず別のブランチに切り替えてからクローズします。
 
 ![Close branch dialog][5]
 
-You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here.
+ブランチのクローズを承認します。最後にチェックポイントを取得したときから行われた変更をキャンセルするオプションがあります。デフォルトで、PlayCanvasはブランチのクローズ前にこれらの変更を別のチェックポイントに保存します。変更をキャンセル種る場合は個々のオプションで行えます。
 
-**Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
+**注意：このチェックボックスを有効にすると、最後のチェックポイント以降ブランチに対して行った作業をすべて失うことになります。**
 
 ## Deleting a branch
 

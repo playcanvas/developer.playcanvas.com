@@ -1,5 +1,5 @@
 ---
-title: Hosting using a CDN
+title: CDNを使用してホスティング
 template: usermanual-page.tmpl.html
 position: 5
 ---

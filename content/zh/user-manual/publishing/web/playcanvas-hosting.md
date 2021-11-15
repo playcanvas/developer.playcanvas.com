@@ -59,7 +59,7 @@ Builds are given permanent link in the form `https://playcanv.as/b/BUILD_ID/`. T
 
 You can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button on the project's home page.
 
-It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
+保存一个单一的链接用于指向游戏的最新版本是非常有用的。这就不需要去担心当我们删除一个旧项目时我们会破坏链接。这就是为什么每个工程都有一个首要项目链接。这将会存在于`https://playcanv.as/p/PROJECT_ID`
 
 <div class="alert alert-info">
 如果用户分享一个链接到游戏中，请使用首要工程链接。这表明当用户知道这个链接不会因为重新发布而改变。

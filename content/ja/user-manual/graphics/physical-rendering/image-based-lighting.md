@@ -1,5 +1,5 @@
 ---
-title: Image Based Lighting
+title: イメージベースの照明
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -10,16 +10,16 @@ PlayCanvasで物理ベースレンダリングを使用する際に最良の結�
 
 ## HDR
 
-Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tone mapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
+画像データはLDRまたはHDR(高ダイナミックレンジ)色空間に保存することができ、単一チャンネルで0.0〜1.0(256階調)以上の保存が可能です。HDRでは、ガンマ補正、トーンマッピング、露光などの環境要因の組み合わせにより、1.0以上の(白色と見なされます)を保存できます。これにより、より詳細な光の詳細を含めることができ、光の品質などのアーティストが望む結果を得られるようコントロールできます 。
 
 ![画像ベースレンダリングのためのHDR対LDR CubeMap][9]
 *テクスチャの明るい部分がLDRを使用してクランプされていることに注意してください*
 
 ## エネルギーの保全
 
-The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+この概念は、拡散光および反射光が全て素材に当たる光から来るという事実から得られ、拡散光および反射光の合計は、素材に当たる総光量より大きくすることはできません。実際には、表面が非常に反射的である場合、表示される拡散色が非常に少ないことを意味します。逆に、素材が明るい拡散色を有する場合、あまり反映しません。
 
-In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. PlayCanvas simulates this behavior with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
+自然界では、滑らかな表面はより鮮明な反射を有し、粗い表面はぼやけます。その理由は、基本的に粗い表面はより大きく、より顕著なマイクロファセットを有するため光を多くの方向に反射し、滑らかな表面は主に一方向に反射する傾向があるからです。異なる視点から来る光が小さな視点の中で平均化されると、結果はぼやけて見え、省エネルギーのおかげで比較的明るくなりません。PlayCanvasは照明のために自動的に動作する光沢パラメータでこの動作をシミュレートしますが、IBLの場合は事前に正確なぼかし応答を事前に計算する必要があります。これはプレフィルターボタンの機能です。
 
 **Prefilter**ボタンはインスペクターのCubeMapアセットで使用できますが、CubeMapを使用して物理的マテリアルでIBLを有効にする必要があります。
 
@@ -33,7 +33,7 @@ CubeMapsはCGIでレンダリングしたり、写真から組み立てたり、
 
 ## CubeMapのレンダリング
 
-CubeMap is made of 6 faces, each representing square side of a cube, simply put: it can be rendered using square viewport camera, by rotating it in different 90 degrees directions with 90 degrees field of view.
+CubeMapは6面で構成され、各面は立方体の正方形の面を表します。正方形のビューポートカメラを使用して、90度の視野で異なる90度の方向に回転させてレンダリングすることができます。
 
 ![CubeMapの面][13]
 
@@ -55,7 +55,7 @@ CubeMap is made of 6 faces, each representing square side of a cube, simply put:
 
 ## 例
 
-Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
+CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト][8]です。窓に映る木の床の反射と天井に映る僅かな反射や、右の壁の金属のPlayCanvasロゴに映る部屋の反射をご確認ください。これは動的なエフェクトであり、非常に現実的な反射を作成し、アーティストが部屋の環境をどのように映し出すか制御することを可能にします。
 
 [![環境ボックスプロジェクションマッピング][5]][7]
 *このシーンのライティングは、ライトマップとAOテクスチャとボックス投影IBL(反射)*を使用して実装されます

@@ -8,20 +8,20 @@ position: 3
 
 ## 2つのブランチをマージする
 
-In PlayCanvas a merge takes two checkpoints from two different branches, calculates the changes that have occurred since their last shared ancestor checkpoint, combines these changes together (sometimes asking for help to resolve conflicting changes) and finally creates a new checkpoint containing the result of the merging of the two checkpoints.
+PlayCanvasでは、マージの際に2つのブランチから、チェックポイントを2つとり、前回のチェックポイントから生じた変更を計算し、これらの変更を1つに組み合わせ（時には競合する変更を解消するため助けを求め）、最終的に新しい2つのチェックポイントをマージした結果のチェックポイントを作成します。
 
 まず、大切なことはPlayCanvasでマージを行う際、実際に2つのブランチをマージするわけではないことを頭に置くことです。実際に行うのは、2つのチェックポイントのマージです。2つのブランチのどちらかに、最新のチェックポイントよりも後に行われた変更がある可能性があるので、重要です。そのような場合PlayCanvasが自動的にチェックポイントを作成して変更を見落とさないようにします。
 
 ### マージの例
 
 ![Merging checkpoints][6]
-*Changes Y & Z are not included in merge result C and **are lost**.*
+*変更点YおよびZはマージ結果Cに含まれず、**紛失**されました。*
 
 ![Merging checkpoints][7]
-*By default PlayCanvas creates a new checkpoint in the destination branch of a merge, so changes Y are included*
+*デフォルトでは、PlayCanvasがマージ先のブランチに新しいチェックポイントを作成するため、変更点Yも含まれます。*
 
 ![Merging checkpoints][8]
-*If changes Z are required, create a checkpoint in the source branch before starting the merge.*
+*変更点Zが必要な場合、マージを開始する前に元のブランチにチェックポイントを作成します。*
 
 ## マージを開始する
 
@@ -49,7 +49,7 @@ In PlayCanvas a merge takes two checkpoints from two different branches, calcula
 
 ![Resolved Conflicts][5]
 
-While the conflict manager and the merge is in progress your current branch is locked to further edits from other users. This prevents changes being overwritten by your merge when you finish resolving the conflicts. If another user has blocked a branch you need with a merge, you can forcibly end their merge from the editor.
+コンフリクトマネージャーがマージ作業を行っている間、現在のブランチはロックされ、他のユーザーが編集できないようにします。競合の解消が完了したときに、変更が上書きされるのを防ぐためです。マージするのに必要なブランチを他のユーザーがブロックしている場合、エディタから強制終了することができます。
 
 [1]: /user-manual/version-control/branches
 

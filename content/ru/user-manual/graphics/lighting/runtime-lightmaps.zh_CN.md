@@ -9,7 +9,7 @@ position: 5
 
 Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied on materials. This is an efficient way of lighting a scene if much of the light sources and geometry are static or environmental. And produces realistic results.
 
-## Runtime LightMap Generation
+## 运行时生成光照贴图
 
 PlayCanvas对于生成光照贴图有着十分便利的解决方式。使用在编辑器中的标准灯光组件，选择哪种光源被用来照亮光照贴图，哪种光源用于在在场景运行时的动态灯光。
 
@@ -39,7 +39,7 @@ The disadvantage of using runtime lightmap generation is that currently we do no
 
 **Direction** option specifies if light contribute to light direction information baking. This affects the specularity results if **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
 
-There are two other options that modify the lights behavior. These decide which models the light will affect at runtime. If either of these are true, then the light is operating at runtime and is therefore incurring the runtime cost.
+这里有两外两个选项用于修改光照的效果。这些决定了哪些模型会在运行时被光照影响。如果它们都没有被启用，光照会在运行时进行渲染，因此增加运行消耗。
 
 If the **Affect Non-Baked** box is true, then this light will affect any model that is **not** lightmapped. If the **Affect Baked** box is true, then this light will also affect any model that **is** lightmapped.
 
@@ -49,7 +49,7 @@ Note, that a light cannot have **Lightmap** true and **Affect Baked** true, as t
 
 光照贴图的光源的阴影效果的设置与动态光源相同，除了在这种情况下阴影的计算只在 产生的光照贴图时完成一次，因此启用光照贴图灯光的阴影是一种非常节约性能的做法。详情参见[阴影]部分[4]。
 
-## Setting up models for baking
+#### 设置模型烘焙
 
 每个模型组建都有是否接收光照贴图影响的选项。模型组件是否接受光照贴图通过**Lightmapped** 选项进行设置。
 
@@ -57,7 +57,7 @@ Note, that a light cannot have **Lightmap** true and **Affect Baked** true, as t
 
 The **Shadows: Cast Lightmap** option determines if the model is casting shadows in the lightmap. In addition you can see the resolution of the lightmap texture generated and there is an option to apply a multiplier to area of UV1 to affect its size. Lightmap size multipliers are discussed below.
 
-## Common Light Settings
+## 常见的光照设置
 
 如你所见这里列举了几个常见的可用的光照设置。这些组合均有实现案例，通过使用不同的组合你可以获得性能与高品质平衡的视觉效果。
 
@@ -91,7 +91,7 @@ On example of plane which is 1x1 unit (meter) in size. If Global Size Multiplier
 
 ![Global Lightmapping Settings][6]
 
-## Auto-unwrapping and UV1 generation
+## 自动解压和创建法线组UV1
 
 Lightmaps are always applied using the second set of UV co-ordinates (UV1) on the model asset. For best results we recommend that you add a second UV set in your 3D content tool to your model before you upload it to PlayCanvas. You can [read on some recommendations for lightmap friendly UV's][9].
 

@@ -12,7 +12,7 @@ position: 1
 
 ## イメージベースの照明
 
-[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
+Editorに入り素材を作成しても、素材が下のサンプルと異なる理由を説明するために[IBL][6]から始めます。**HDRでプレフィルタリングされたCubeMapを使用した物理的素材は素晴らしいです！**
 
 ## 金属質(metalness)とスペキュラを使った設定法
 
@@ -83,7 +83,7 @@ position: 1
 
 物理的マテリアルの仕組みでは、**拡散**、**金属質**、**光沢度**が重要な役割を果たします。下のデモを使って色々な組み合わせを試してみてください。
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
+マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
 
 <iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
 

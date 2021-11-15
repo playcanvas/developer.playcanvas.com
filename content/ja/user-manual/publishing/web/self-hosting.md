@@ -37,7 +37,7 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 
 ![パブリッシュ][4]
 
-* Click the DOWNLOAD .ZIP button
+* DOWNLOAD .ZIP ボタンをクリック
 
 ![Download][5]
 
@@ -48,13 +48,13 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 
 ## Running a Downloaded Build
 
-You cannot load your game by opening the `index.html` file in a browser or from a `file://` url. You must use a local webserver to load the `index.html` file using `http://` or `https://`.
+`file://` urlや、ブラウザから `index.html` ファイルを開くことでゲームを読み込むことはできません。ローカルのウェブサーバを使用して `index.html` ファイルを読み込む必要があります。
 
 ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your game's index.html. Then point your browser to http://localhost:8000
-* *Intermediate:* Install [XAMPP][7]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
-* *Advanced:* Install [Apache][8] or [nginx][9] as a standalone service.
+* *初級：* [Python][6]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを http://localhost:8000 にポイントします。
+* *中級：* [XAMPP][7]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
+* *上級：* [Apache][8] または [nginx][9]をスタンドアローンサービスとしてインストールします。
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting

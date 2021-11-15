@@ -33,13 +33,13 @@ AO Textureは非常に詳細な情報を格納する必要はなく、視覚的�
 
 ## Editorにアップロード
 
-Simply upload texture in Editor and apply it on Ambient Occlusion slot on materials.
+Editorでテクスチャをアップロードし、素材のAmbient Occlusionスロットに適用するだけです。
 
 ![Editorのアンビエントオクルージョンマップ][5]
 
 ## 例
 
-You can [explore example][6] that uses global Ambient Occlusion described above and its [project][7].
+上で説明したグローバルアンビエントオクルージョンを使用する[例][6]やその[project] [7]をご確認ください。
 
 [![PlayCanvas Lightmapping][8]][6]
 *このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*

@@ -1,5 +1,5 @@
 ---
-title: Publishing
+title: パブリッシング
 template: usermanual-page.tmpl.html
 position: 21
 ---
@@ -8,9 +8,9 @@ position: 21
 
 ## PlayCanvasゲームはどこで公開できますか？
 
-* [Web][1]
-* [Mobile][2]
-* [Desktop][3]
+* [ウェブ][1]
+* [モバイル][2]
+* [デスクトップ][3]
 * [Playable Ads][4]
 
 [1]: /user-manual/publishing/web

@@ -20,7 +20,7 @@ Read more about localization [here][11].
 
 ## 自動サイズ
 
-By default a Text Element is set to automatically adjust its width and height to match the text string. You can disable this and specify the height and width of the element directly in the Editor panel.
+デフォルトで、Text Elementは、テキスト文字列と一致するように幅と高さを自動的に調整するように設定されています。これを無効にして、要素の高さと幅をEditorパネルで直接指定することができます。
 
 ![自動サイズ][2]
 

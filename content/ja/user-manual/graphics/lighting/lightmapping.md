@@ -54,8 +54,8 @@ PlayCanvasでは、シーン内でライトマップを使用する２つの方�
 
 ![ライトマッピングのヒント：一貫したUVのテクセルサイズ][5]
 
-### **Non-overlapping UV**
-Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store its own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
+### **重ならないUV **
+UVの三角形は重なり合わないようにして、各ピクセルがジオメトリ上の3D空間内で独特の位置を持ち、独自の照明情報を適切に格納するべきです。ライトマップのUV空間はクランプされます。つまり、UVは0.0〜1.0の間に含まれ、外側には出ません。
 
 ![ライトマッピングのヒント：重ならないUV][6]
 
@@ -93,9 +93,9 @@ Triangles in UV should not overlap to ensure each pixel has a unique position in
 
 ## 最後に
 
-Gamma correction, tone mapping and exposure - are good settings that you will want to play with to get the desired look and color for your scene.
+ガンマ補正、トーンマッピング、露出 は、シーンに必要な特徴と色を加えることのできる良い設定です。
 
-You can [explore the example][13] that uses the techniques described above and also its [project][14].
+上記のテクニックを使った[例][13]や、[プロジェクト][14]を使うことができます。
 
 [0]: /user-manual/graphics/lighting/runtime-lightmaps/
 [1]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg

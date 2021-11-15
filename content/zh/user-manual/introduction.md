@@ -28,7 +28,7 @@ PlayCanvas编辑器是一个可视化建筑工具，用于构建场景。 使用
 
 ![脚本][6]
 
-Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+使用Web标准Javascript为您的实体附加自定义行为。 在任何规模上添加从简单的点击处理程序或轨道摄像机到完全大规模多玩家在线游戏的交互性。
 
 ### 发布你的应用
 

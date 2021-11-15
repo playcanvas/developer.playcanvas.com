@@ -26,7 +26,7 @@ New Checkpointを押すと、チェックポイントを作成する入力フォ
 
 前のチェックポイントからプロジェクトの状態を復元は、バージョンコントロールパネルで行います。パネルを開き、復元するチェックポイントを見つけ、チェックポイントのドロップダウンメニューから「Restore checkpoint」を選択します。エディタがそのチェックポイント時点でのプロジェクトをリロードします。
 
-**Note, restoring a checkpoint brings the changes from the checkpoint into your current branch, but PlayCanvas does not allow branching unless you have explicitly created a branch. So if you restore a checkpoint and then create a new checkpoint it will be a child of the latest checkpoint in the branch.**
+**チェックポイントを復元するとチェックポイントからの変更を現在のブランチにもたらすことになります。ただし、PlayCanvasは明示的にブランチを作成していない限り、ブランチを切ることを許可していません。チェックポイントを復元して新しく作成する場合は、新しく作成されたものはブランチ内の最新チェックポイントの子となる点に留意してください。**
 
 ![Restore checkpoint applied][5]
 

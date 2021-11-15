@@ -14,7 +14,7 @@ PlayCanvasにはシャドウマッピングという影を生成するアルゴ�
 
 ![指向性ライト][5]
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+PlayCanvasでは、デフォルトで影の生成は無効になっています。ですので、明示的に影生成を有効にする必要があります。影生成を有効にするのは簡単です。まず、シーンの中のどの光源で影を生成したいかを指定します。光源をツリー表示から選択し、インスペクタパネルからプロパティを編集してください。光源には'Cast Shadows'オプションがありますので、それをチェックすればその光源はシーンに存在するオブジェクトに対して影を生成するようになります。
 
 ![モデルコンポーネント][6]
 
