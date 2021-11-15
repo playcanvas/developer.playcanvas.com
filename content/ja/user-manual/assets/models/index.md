@@ -1,5 +1,5 @@
 ---
-title: Model
+title: モデル
 template: usermanual-page.tmpl.html
 position: 11
 ---

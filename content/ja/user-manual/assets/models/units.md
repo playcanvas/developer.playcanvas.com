@@ -1,5 +1,5 @@
 ---
-title: Units
+title: 単位
 template: usermanual-page.tmpl.html
 position: 1
 ---

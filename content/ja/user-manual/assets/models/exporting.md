@@ -1,5 +1,5 @@
 ---
-title: Exporting Assets
+title: アセットのエクスポート
 template: usermanual-page.tmpl.html
 position: 3
 ---
@@ -8,8 +8,8 @@ PlayCanvasでは次の3つの形式で3Dコンテンツをインポートでき�
 
 FBXファイル形式にエクスポートする際のヒントです：
 
-* Ensure you have the latest available FBX exporter for your modelling application installed.
-* Only export what you need from your scene to FBX. For example, if your scene contains a red car and a blue car but you only want to import the red car, export only the red car to FBX. Your modelling application should have an 'Export Selected' option.
-* Select the 'Embed Media' option in the FBX exporter panel. This packages the scene's textures in the exported FBX. This preserves material to textures links during import into PlayCanvas. Otherwise, you must upload all scene textures separately and relink all textures to materials.
-* Select the 'Binary' file format option in the FBX exporter panel. This reduces FBX file size considerably.
+* モデリングアプリケーションのためにFBXエクスポータがインストールされていることを確認してください。
+* 必要な物のみシーンからFBXにエクスポートしてください。例えば、シーンに赤い車と青い車が含まれていて、赤い車のみインポートしたい場合、FBXには赤い車のみエクスポートしてください。モデリングアプリケーションには'Export Selected'オプションがあるはずです。
+* FBXエクスポータパネルでEmbed Mediaオプションにチェックを入れてください。これにより、PlayCanvasへのインポートの際、素材がテクスチャリンクに保管されます。オフの場合、シーンテクスチャを全て個別にアップロードして、全てのテクスチャを素材に再リンクする必要があります。
+* FBXエクスポータパネルのBinaryファイル形式オプションを選択します。これにより、FBXファイルのサイズを大幅に減らします。
 
