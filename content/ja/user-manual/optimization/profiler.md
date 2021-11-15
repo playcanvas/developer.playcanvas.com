@@ -1,5 +1,5 @@
 ---
-title: Profiler
+title: プロファイラ
 template: usermanual-page.tmpl.html
 position: 2
 ---

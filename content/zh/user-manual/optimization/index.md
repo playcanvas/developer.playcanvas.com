@@ -1,5 +1,5 @@
 ---
-title: Performance
+title: 性能
 template: usermanual-page.tmpl.html
 position: 19
 ---

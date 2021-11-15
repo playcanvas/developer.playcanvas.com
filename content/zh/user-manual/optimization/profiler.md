@@ -1,5 +1,5 @@
 ---
-title: Profiler
+title: 分析器
 template: usermanual-page.tmpl.html
 position: 2
 ---

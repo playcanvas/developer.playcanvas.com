@@ -1,5 +1,5 @@
 ---
-title: Batching
+title: バッチング
 template: usermanual-page.tmpl.html
 position: 4
 ---
@@ -10,8 +10,8 @@ Batching is the process of combining multiple mesh instances together into a sin
 
 一般的なバッチングの使用例は以下のとおりです：
 
-* Combine together static geometry -- e.g. environments -- into a single mesh instance or multiple large instances to reduce draw calls, but still support camera culling.
-* Combine together dynamic geometry -- e.g. a set of moving objects -- into a single mesh instance with dynamic properties that are applied on the GPU.
+*  静的幾何学（たとえば環境）を1つのメッシュインスタンス、または複数の大きなインスタンスに結合させてドローコールを減らします。ただし、カメラカリングは依然としてサポートされます。
+* 動的幾何学（たとえば、移動オブジェクトのセット）を、GPUで適用された動的プロパティとともに1つのメッシュインスタンスに結合します。
 
 <div class="alert-info">
     The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">runtime lightmaps</a> due to each lightmapped object requiring its own unique lightmap texture.
@@ -26,9 +26,10 @@ Batching is the process of combining multiple mesh instances together into a sin
 
 ### バッチグループのプロパティ
 
-* **Name**: Used to differentiate different batch groups, ideally it would describe the kinds of objects that this batch group will have. This name is available at runtime to retrieve the group.
-* **Dynamic**: If enabled then objects inside the batch group can still move/rotate/scale. You can use this for objects that are similar to each other and use the same materials e.g. bullets. Static groups use less runtime resources so you should disable Dynamic if the contents of batch group will not move.
-* **Max AABB size**: The maximum size of any one side of the bounding box that contains all objects in the batch group at the time when the batches are created. If the set of meshes are larger than the maximum size it will create multiple batches to be rendered. A larger bounding box will render in less draw calls, but will work less well with camera culling.
+* **Name**: 異なるバッチグループを区別するために使用されます。このバッチグループが保有するオブジェクトの種類を説明するような名前を設定することが理想的です。この名前は実行時に利用可能で、グループを取得できます。
+* **Dynamic**: 有効化された場合でも、バッチグループ内のオブジェクトは依然として移動/回転/拡張できます。この機能は、たとえば銃弾など互いに類似して、同じマテリアルを使用するオブジェクトに使用可能です。静的なグループは、より少ないランタイムリソースを使用するため、バッチグループのコンテンツが移動しない場合にはDynamicを非有効化する必要があります。
+* **Max AABB size**: 
+バッチが作成された時点でのバッチグループ内のすべてのオブジェクトを含む、バウンディングボックスの任意の側面の最大サイズ。メッシュのセットのサイズが、最大サイズよりも大きい場合にはレンダリング用に複数バッチが作成されます。より大きなバウンディングボックスの場合には、より少ないドローセルでレンダリングされます。ただし、この場合にはカメラカリングとの連携度合が減少します。
 
 ## バッチグループにコンポーネントを追加
 
@@ -40,13 +41,13 @@ Batching is the process of combining multiple mesh instances together into a sin
 
 エンジンがメッシュインスタンスを結合できるかのルールは非常に複雑ですが、簡潔にいえば1つのバッチに属するすべてのメッシュインスタンスは、以下に従う必要があります：
 
-* Have the same Batch Group ID
-* Have the same material
-* Have the same shader parameters
-* Be within a bounding box with no side larger than the Max AABB Size
-* Be in the same layer
-* Each batch has a maximum vertex count of 65535
-* For dynamic batches there is a maximum number of movable mesh instances. This hardware dependent but has a maximum of 1024.
+* 同じバッチグループIDを持つ
+* 同じマテリアルを持つ
+* 同じシェーダーパラメータを持つ
+* 側面のサイズが、Max AABBサイズ以下のバウンディングボックス内にある
+* 同じレイヤー内にある
+* 各バッチの最大頂点カウントは65535
+* 動的バッチには、移動可能なメッシュインスタンスの最大数があります。これはハードウェアに依存していますが、最大は1024です。
 
 バッチグループにすべてのルールにしたがうわけではないコンポーネントまたはメッシュインスタンスが含まれる場合、バッチグループは複数のバッチを作成し、すべてのルールにしたがうメッシュインスタンスを含む個別のバッチが複数作成されます。
 
@@ -81,9 +82,9 @@ if (element.batchGroupId)
 
 ## 用語集
 
-* **Batch Group** - A named group, created in the Editor, that defines some hints on how mesh instances should be combined. Components are assigned to a batch group
-* **Batch** - An engine object created at runtime which is the set of mesh instances that are rendered in a single draw call. A batch group may result in multiple batches depending on the properties of the mesh instances that are added to the batch group.
-* **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][8].
+* **バッチグループ** - エディターで作成され、名前の付いたグループ。メッシュインスタンスを結合する方法を示すヒントを定義します。コンポーネントはバッチグループに割り当てられます。
+* **バッチ** - ランタイム時に作成されるエンジンオブジェクトで、1つのドローコール内でレンダリングされる一連のメッシュインスタンス。バッチグループは、バッチグループに追加されたメッシュインスタンスのプロパティに応じてバッチグループをもたらします。
+* **バッチマネージャー** - ランタイム時にバッチを作成およびアップデートするプログラムインターフェース。 [API ドキュメント][8]を参照してください。
 
 [1]: /images/user-manual/optimization/batching/batch-groups.jpg
 [2]: /images/user-manual/optimization/batching/model-component.jpg
