@@ -1,7 +1,7 @@
 ---
-title: 动画
+title: Animation
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 动画组件将会对实体上模型组件所指定的模型加入特定的动画。

@@ -79,7 +79,7 @@ Blenderの使い方については様々な資料がweb上にあります。私�
 
 Max内では標準マテリアルタイプを使用してください。あるいは、標準マテリアルを参照している限りは、Multi/Subオブジェクトマテリアルタイプを使うこともできます。以下のスクリーンショットでハイライトされている領域が、PlayCanvasにエクスポートされる際に考慮される部分をあらわしています:
 
-![スフィアマップ][7]
+![Max material editor][7]
 
 ### 対応しているマップスロット
 
@@ -145,17 +145,17 @@ PlayCanvasは3DS Maxのマテリアルマップタイプの一部だけしかエ
 
 Mayaを使う場合には、lambert, blinnあるいはphongの標準マテリアルタイプを使用してください。以下のスクリーン・ショットでハイライトされている部分は、PlayCanvasにエクスポートする際に考慮されるマテリアル設定です。
 
-![スフィアマップ][11]
+![Maya material editor][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
-[2]: http://cgcookie.com/blender/
-[3]: /images/Blender-Logo.jpg
+[2]: https://cgcookie.com/learn-blender
+[3]: /images/user-manual/assets/models/building/blender-logo.jpg
 [4]: http://blender.org
-[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
+[5]: https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives
 [6]: http://www.blenderguru.com/
-[7]: /images/artist_guide/max_material_editor.jpg
-[8]: /images/artist_guide/wall_norm.jpg
-[9]: /images/artist_guide/wall_norm_yflip.jpg
-[10]: /images/artist_guide/mountains_sphere.jpg
-[11]: /images/artist_guide/maya_material_editor.jpg
+[7]: /images/user-manual/assets/models/building/max-material-editor.jpg
+[8]: /images/user-manual/assets/models/building/wall-norm.jpg
+[9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
+[10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
+[11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
 

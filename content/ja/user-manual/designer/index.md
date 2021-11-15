@@ -1,7 +1,7 @@
 ---
 title: Editor
 template: usermanual-page.tmpl.html
-position: 4
+position: 8
 ---
 
 PlayCanvas エディタはゲームを構成する[シーン][1]や[エンティティ][2]を作成および編集するために使用する視覚的な編集ツールです。

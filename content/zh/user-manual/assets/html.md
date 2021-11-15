@@ -1,7 +1,7 @@
 ---
 title: HTML
 template: usermanual-page.tmpl.html
-position: 10
+position: 9
 ---
 
 HTML资源包含了HTML代码。代码可以是全HTML也可以是部分HTML。用户将可以在编辑器中或者上传一个带有.html后缀的文件来创建一个新的HTML资源。

@@ -2,6 +2,7 @@
 title: PlayCanvas Developer Resources
 template: intro.tmpl.html
 ---
+
 # Getting Started
 
 The [User Manual][1] is our complete guide to PlayCanvas. It will help you to use the many features of the platform including the [Editor][2], [Scripting system][3] and [Version Control][4].

@@ -4,29 +4,30 @@ template: usermanual-page.tmpl.html
 position: 6
 ---
 
-PlayCanvas内置了对后期效果的支持。后期效果可以修改程序最终渲染出的图像，并提供一个简单的方法让你可以把一些视觉耀斑添加到您的应用程序中。
+PlayCanvas supports the adding post-processing effects to your projects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
 
-我们已经把实施好了的后期效果设置为了你可以添加到有[相机][1] 组建的实例上的外部脚本。为了简单地添加内置后期效果到相机上，只要右键层级树中的相机实体并选择弹出列表中的后期效果选项:
+We have implemented post effects as scripts that you can add to an Entity that has a [Camera][1] component attached. To add post effects to a camera, do the following:
 
-<img alt="Adding built-in post effects" src="/images/platform/builtin_posteffects.jpg"></img>
+1. Visit the [Asset Store][2] and add the required scripts to your project. The post effects available in the Asset Store include:
+  * [Bloom][3]
+  * [Brightness-Contrast][4]
+  * [Hue-Saturation][5]
+  * [FXAA][6]
+  * [Sepia][7]
+  * [Vignette][8]
+2. Add a [Script][9] component to the Entity representing your camera.
+3. Assign the desired post effect scripts to the camera entity's Script component. Note that the order in which the post effect script are listed in the Script component determine the order in which they are applied.
 
-你也可以创建你自己的后期效果 - 你可以前往 [GitHub][2] 来查看内置后期效果的案例。
-
-内置后期效果包括:
-
-* [屏幕泛花][3]
-* [亮度对比度调整][4]
-* [色相饱和度调整][5]
-* [快速抗锯齿][6]
-* [复古风格][7]
-* [暗角][8]
+You can also create your own post effects. You can find the source for the above post effects (plus some additional ones) on [GitHub][10].
 
 [1]: /user-manual/packs/components/camera
-[2]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
+[2]: https://store.playcanvas.com/?tags=script
 [3]: /user-manual/graphics/posteffects/bloom
 [4]: /user-manual/graphics/posteffects/brightness_contrast
 [5]: /user-manual/graphics/posteffects/hue_saturation
 [6]: /user-manual/graphics/posteffects/fxaa
 [7]: /user-manual/graphics/posteffects/sepia
 [8]: /user-manual/graphics/posteffects/vignette
+[9]: /user-manual/packs/components/script
+[10]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 

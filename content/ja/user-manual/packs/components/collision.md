@@ -1,7 +1,7 @@
 ---
-title: コリジョン
+title: Collision
 template: usermanual-page.tmpl.html
-position: 4
+position: 6
 ---
 
 コリジョンコンポーネントはエンティティにコリジョンボリュームを割り当てます。コンポーネントインターフェイスはType属性に基づいて動的に様々な属性を表示させます。 
@@ -9,15 +9,19 @@ position: 4
 Collisionコンポーネントはコンポーネントパネルの右上のトグルで有効・無効を切り替えることができます。有効にした場合、また、コンポーネントがトリガーボリュームの場合(兄弟rigidbodyコンポーネントを持っていないため)、トリガーボリュームが有効になります。同様に、コンポーネントに兄弟rigidbodyコンポーネントがある場合、rigidbodyが有効になります。
 
 #### Box
-![コリジョンコンポーネント(Box)][1]
-#### Sphere
-![コリジョンコンポーネント (Sphere)][2]
+![Collision component (Box)][1]
 #### Capsule
-![コリジョンコンポーネント (Capsule)][3]
+![Collision component (Capsule)][2]
+#### Compound
+![Collision component (Compound)][3]
+#### Cone
+![Collision component (Cone)][4]
 #### Cylinder
-![コリジョンコンポーネント (Cylinder)][4]
+![Collision component (Cylinder)][5]
 #### Mesh
-![コリジョンコンポーネント (Mesh)][5]
+![Collision component (Mesh)][6]
+#### Sphere
+![Collision component (Sphere)][7]
 
 エンティティがrigidbodyコンポーネントを持つ場合、コリジョンコンポーネントはリジッドボディの形を定めます。Rigidbodyコンポーネントが存在する場合、コリジョンコンポーネントはトリガーボリュームとして扱われます。トリガーボリュームはシーン内の他のリジッドボディのシミュレーションに影響を与えることができません。かわりに、スクリプトコンポーネントを追加してトリガーイベントに反応するスクリプトを添付することができます。例えば、rigidbodyコンポーネントを持つ他のエンティティがトリガーに出入りする際に、スクリプトに通知が行くように設定できます。
 
@@ -37,13 +41,15 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 
 ## スクリプティングインターフェイス
 
-Collisionコンポーネントのプロパティは[スクリプトコンポーネント][6]を使ってコントロールできます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][7]。
+Collisionコンポーネントのプロパティは[スクリプトコンポーネント][8]を使ってコントロールできます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][9]。
 
 [1]: /images/user-manual/scenes/components/component-collision-box.png
-[2]: /images/user-manual/scenes/components/component-collision-sphere.png
-[3]: /images/user-manual/scenes/components/component-collision-capsule.png
-[4]: /images/user-manual/scenes/components/component-collision-cylinder.png
-[5]: /images/user-manual/scenes/components/component-collision-mesh.png
-[6]: /user-manual/packs/components/script
-[7]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[2]: /images/user-manual/scenes/components/component-collision-capsule.png
+[3]: /images/user-manual/scenes/components/component-collision-compound.png
+[4]: /images/user-manual/scenes/components/component-collision-cone.png
+[5]: /images/user-manual/scenes/components/component-collision-cylinder.png
+[6]: /images/user-manual/scenes/components/component-collision-mesh.png
+[7]: /images/user-manual/scenes/components/component-collision-sphere.png
+[8]: /user-manual/packs/components/script
+[9]: /engine/api/stable/symbols/pc.CollisionComponent.html
 

@@ -22,23 +22,44 @@ position: 2
 
 Organizationアカウントの場合、上限に達することがなくなるまでseatを購入することでプロジェクトをアンロックすることもできます。
 
-## プロジェクトのエキスポート
+## プロジェクトアーカイブのエクスポート
 
-ORGプランの場合、プロジェクトの.zipアーカイブをエキスポートすることができます。後にその.zipアーカイブを新規プロジェクトとしてインポートすることができます。この仕組みを使用して、マシンにプロジェクトのバックアップを保存することができます。
+![export-archive][2]
+
+You can export a .zip archive of your project to keep an offline backup. You can later choose to import that .zip archive as a new project.
 
 プロジェクトをエキスポートするには、プロジェクトの横の矢印をクリックしてExportを選択します。
 
-## プロジェクトのインポート
+## プロジェクトアーカイブのインポート
 
-ORGプランの場合、エキスポートプロジェクトを含む.zipアーカイブをインポートすることができます。.zipファイルは上記で説明したエキスポート方法で作成されている必要があります。
+![import-archive][3]
+
+You can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
 
 Projectsページの左側にあるImport Projectをクリックし、zipファイルを選択してインポートします。
 
 ## プロジェクトの所有権を転移
 
-プロジェクトの所有権を他に譲渡する場合、プロジェクトの横の矢印をクリックして、Transfer Ownershipをクリックします。ポップアップが表示されて所有権を転送したいユーザーまたは組織のユーザ名を入力するように求められます。ユーザー名を入力し、FINDをクリックするかEnterキーを押します。次に、Transferをクリックします。
+If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
 
-他のユーザはプロジェクトを譲渡するためにリクエストを承認する必要があります。そのユーザのプロジェクトリストの最上部に転送リクエストが表示されます。ユーザがリクエストを承認すると、転送が完了し、新しい所有者以外のすべてのチームメンバーはプロジェクトから削除されます。
+![transfer-ownership-menu][4]
+
+A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to.
+
+![transfer-ownership-dialog][5]
+
+Enter the username and click FIND or press Enter. Then click TRANSFER.
+
+The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list.
+
+![transfer-ownership-accept][6]
+
+If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
 
 [1]: /images/user-manual/profile/profile.png "Projects"
+[2]: /images/user-manual/profile/projects/export-archive-button.jpg
+[3]: /images/user-manual/profile/projects/import-archive-button.jpg
+[4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
+[5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
+[6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
 

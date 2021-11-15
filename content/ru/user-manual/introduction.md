@@ -28,7 +28,7 @@ The PlayCanvas Editor is a visual building tool which is used to construct scene
 
 ![script][6]
 
-Using web standard Javascript attach custom behaviours to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
 
 ### Publish your application
 
@@ -71,22 +71,22 @@ At the time of writing, the browser requirements are currently as follows:
 
 <table class="table table-striped table-bordered">
     <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
-    <tr><td style="text-align:center"><a href="http://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td><td style="text-align:center">11.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">IE</a></td><td style="text-align:center">11.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-gb/windows/microsoft-edge">Edge</a></td><td style="text-align:center">12.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.microsoft.com/edge">Edge</a></td><td style="text-align:center">12.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
         <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
     </tr>
-    <tr><td style="text-align:center"><a href="http://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
+    <tr><td style="text-align:center"><a href="https://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
         <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
     </tr>
 </table>

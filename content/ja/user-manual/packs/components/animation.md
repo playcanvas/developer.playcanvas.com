@@ -1,7 +1,7 @@
 ---
-title: アニメーション
+title: Animation
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 Animationコンポーネントを使用すれば、エンティティはModelコンポーネントに割り当てられているモデルに適用することのできるアニメーションを指定できます。

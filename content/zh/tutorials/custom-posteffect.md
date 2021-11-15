@@ -148,11 +148,11 @@ PosteffectExample.prototype.initialize = function() {
 
 在这里参见[自定义后期特效项目] [7]。
 
-[1]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
+[1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 [2]: /api/pc.Shader.html
 [4]: /api/pc.PostEffect.html
 [3]: /user-manual/packs/components/camera
-[6]: /tutorials/advanced/custom-shaders
+[6]: /tutorials/custom-shaders/
 [5]: /api/pc.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045
 

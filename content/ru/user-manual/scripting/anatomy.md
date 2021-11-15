@@ -42,7 +42,7 @@ We'll break down each section of the script
 var Rotate = pc.createScript('rotate');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have it's prototype extended with a standard set of methods. Somewhat like class inheritance.
+This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
 
 ## Script Attributes
 
@@ -63,7 +63,7 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
-The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only ever called once for each entity. You can use it to define and initalize member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
+The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only ever called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts the initialize method is called the first time the entity is enabled.
 
 When an entity is cloned using the `entity.clone` method, the `initialize` method on the scripts is only called when the cloned entity is added to the scene hierarchy as long as both the entity and script are enabled as well.
 

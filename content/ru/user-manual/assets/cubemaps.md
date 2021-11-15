@@ -1,7 +1,7 @@
 ---
-title: Cubemaps
+title: Cubemap
 template: usermanual-page.tmpl.html
-position: 5
+position: 7
 ---
 
 Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
@@ -9,7 +9,7 @@ Cubemaps are a special type of texture asset. They are formed from 6 texture ass
 1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
 2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
 
-<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
 ## Importing Cubemap Textures
 
@@ -51,7 +51,7 @@ The cubemap Preview panel displays the six faces of a cubemap flattened into the
 
 Cubemap faces must be:
 
-* Square (the same resultion in width and height)
+* Square (the same resolution in width and height)
 * Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
 * All faces must be the same resolution
 
@@ -70,9 +70,9 @@ An example of a texture set that would match is:
 * face_posz.jpg
 * face_negz.jpg
 
-## Prefiltering Cubemaps
+## Image Based Lighting
 
-The cubemap inspector has a Prefilter button which generates a set of low-resolution filtered textures which are used in the environment map of the Physical material. Prefiltering the cubemap is essential for using the Physical material.
+This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
 
 ## Assigning Cubemaps to Materials
 
@@ -89,4 +89,5 @@ Note: a Physical material will use the scene's skybox as a default environment m
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
 [5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

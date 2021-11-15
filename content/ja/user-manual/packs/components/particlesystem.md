@@ -1,7 +1,7 @@
 ---
-title: パーティクルシステム
+title: Particle System
 template: usermanual-page.tmpl.html
-position: 7
+position: 12
 ---
 
 Particle System コンポーネントは3D空間のパーティクルエミッタを指定します。

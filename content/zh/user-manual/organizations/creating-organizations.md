@@ -1,7 +1,7 @@
 ---
 title: 创建组织
 template: usermanual-page.tmpl.html
-position: 2
+position: 1
 ---
 
 创建组织有好几种方式。你所加入了的任何组织都会在您的个人资料临近你的名字的地方出现，就像这样：

@@ -11,59 +11,76 @@ PlayCanvas 引擎定义了多种不同的组件。你可以通过 PlayCanvas 编
 <table class="table table-striped">
     <tbody>
         <tr>
-            <th>组件</th>
-            <th>描述</th>
+            <th>Component</th>
+            <th>Description</th>
         </tr>
     <tr>
-        <td>[动画][1]</td>
-        <td>被实体的模型组件指定可以在模型上运行的动画资源。</td>
+        <td><a href="/user-manual/packs/components/anim">Anim</a></td>
+        <td>Specifies the anim state graph and animation assets that can run on the model specified by the entity's render component.</td>
     </tr>
     <tr>
-        <td>[音频侦听器][2]</td>
-        <td>指定3D空间中音频回放的侦听器位置。</td>
+        <td><a href="/user-manual/packs/components/animation">Animation</a></td>
+        <td>Specifies the animation assets that can run on the model specified by the entity's model component.</td>
     </tr>
     <tr>
-        <td>[摄像机][3]</td>
-        <td>从实体所在的位置渲染场景</td>
+        <td><a href="/user-manual/packs/components/audiolistener">Audio Listener</a></td>
+        <td>Specifies the location of the listener for 3D audio playback.</td>
     </tr>
     <tr>
-        <td>[碰撞体][4]</td>
-        <td>为实体赋予碰撞体积。</td>
+        <td><a href="/user-manual/packs/components/button">Button</a></td>
+        <td>Create a user interface button.</td>
     </tr>
     <tr>
-        <td>[灯光][5]</td>
-        <td>在实体所在的位置附加一个物理光源</td>
+        <td><a href="/user-manual/packs/components/camera">Camera</a></td>
+        <td>Renders the scene from the location of the entity.</td>
     </tr>
     <tr>
-        <td>[模型][6]</td>
-        <td>在实体所在的位置渲染的一套3D模型。</td>
+        <td><a href="/user-manual/packs/components/collision">Collision</a></td>
+        <td>Assigns a collision volume to the entity.</td>
     </tr>
     <tr>
-        <td>[粒子系统][7]</td>
-        <td>在实体所在位置附加一套粒子系统。</td>
+        <td><a href="/user-manual/packs/components/element">Element</a></td>
+        <td>Defines a user interface element.</td>
     </tr>
     <tr>
-        <td>[刚体][8]</td>
-        <td>将实体加入到场景的物理仿真中。</td>
+        <td><a href="/user-manual/packs/components/layout-group">Layout Group</a></td>
+        <td>Automatically set position and scale of child user interface elements.</td>
     </tr>
     <tr>
-        <td>[脚本][9]</td>
-        <td>允许 JavaScript 脚本实现自定义的行为</td>
+        <td><a href="/user-manual/packs/components/layout-child">Layout Child</a></td>
+        <td>Override default Layout Group properties for one element.</td>
     </tr>
     <tr>
-        <td>[音频][10]</td>
-        <td>播放音频资源。</td>
+        <td><a href="/user-manual/packs/components/light">Light</a></td>
+        <td>Attach a dynamic light source to the Entity.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/model">Model</a></td>
+        <td>Renders a 3D model at the location of the entity.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/particlesystem">Particle System</a></td>
+        <td>Attach a particle system to the Entity.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/rigidbody">Rigid Body</a></td>
+        <td>Adds the entity to the scene's physical simulation.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/screen">Screen</a></td>
+        <td>Defines the area and rendering of a user interface.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/script">Script</a></td>
+        <td>Allows the entity to run JavaScript fragments to implement custom behavior.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/sound">Sound</a></td>
+        <td>Plays audio assets.</td>
+    </tr>
+    <tr>
+        <td><a href="/user-manual/packs/components/sprite">Sprite</a></td>
+        <td>Render 2D graphics at the location of the entity.</td>
     </tr>
 </tbody></table>
-
-[1]: /user-manual/packs/components/animation
-[2]: /user-manual/packs/components/audiolistener
-[3]: /user-manual/packs/components/camera
-[4]: /user-manual/packs/components/collision
-[5]: /user-manual/packs/components/light
-[6]: /user-manual/packs/components/model
-[7]: /user-manual/packs/components/particlesystem
-[8]: /user-manual/packs/components/rigidbody
-[9]: /user-manual/packs/components/script
-[10]: /user-manual/packs/components/sound
 

@@ -5,7 +5,7 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *[完成されたプロジェクトはこちら][16]です。先に[その1][1]を読んでください。*
 
@@ -79,7 +79,7 @@ emissiveマップは、表面の色を設定して、まるでその色の光を
 
 [その3][15]に進む。
 
-[1]: /tutorials/beginner/keepyup-part-one
+[1]: /tutorials/keepyup-part-one/
 [2]: http://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
@@ -93,6 +93,6 @@ emissiveマップは、表面の色を設定して、まるでその色の光を
 [12]: /images/tutorials/beginner/keepyup-part-two/backdrop-emissive.jpg
 [13]: /images/tutorials/beginner/keepyup-part-two/overlay-material.jpg
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
-[15]: /tutorials/beginner/keepyup-part-three
+[15]: /tutorials/keepyup-part-three/
 [16]: https://playcanvas.com/project/406050
 

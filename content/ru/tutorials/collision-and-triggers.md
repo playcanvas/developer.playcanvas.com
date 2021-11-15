@@ -20,7 +20,7 @@ The most important property of a *collision* component is it's **Type**, this de
 * **Box** A simple box
 * **Sphere** A simple sphere
 * **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### Trigger Volumes
 
@@ -50,9 +50,9 @@ For this demo, the important property is the **Type**. You can pick one of three
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-![Ground Entity][6]
+<img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-You can see in the attribute panel, that it has *model*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slighly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
+You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
 ## Setting up the trigger
 
@@ -97,7 +97,7 @@ In this case, when the trigger is fired, we reset the penetrating Entity back up
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-![Box Entity][9]
+<img src="/images/tutorials/collision/box_setup.png" width="300px">
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 
@@ -128,7 +128,7 @@ Collider.prototype.onCollisionStart = function (result) {
 };
 ```
 
-In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now everytime an Entity with the collider script attached collides with another rigid body it will play the hit sound.
+In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now, every time an Entity with the collider script attached collides with another rigid body, it will play the hit sound.
 
 And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
@@ -136,8 +136,8 @@ And that's all there is to handling Collisions and Triggers in PlayCanvas.
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
+[6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
-[9]: /images/tutorials/collision/box_setup.jpg
+[9]: /images/tutorials/collision/box_setup.png
 

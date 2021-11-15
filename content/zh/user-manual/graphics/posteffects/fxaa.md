@@ -1,7 +1,7 @@
 ---
 title: 抗锯齿效果
 template: usermanual-page.tmpl.html
-position: 4
+position: 3
 ---
 
 快速抗锯齿 (FXAA) 是 NVIDIA所创造的一种快速算法。它提供了一种快速、简单的途径来为场景提供抗锯齿效果。

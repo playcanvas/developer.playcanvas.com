@@ -12,64 +12,27 @@ PlayCanvasアプリで最適なパフォーマンスを得るためのヒント�
 
 ## 画像
 
-*テクスチャ異方性の値が大きくなると、視覚的な改善は得られますがパフォーマンスは低下します。
-
-パフォーマンスとビジュアルのバランスをとるようにしてください。
-*単一の画像に複数のテクスチャをパックするように心がけてください。例えば、拡散マップのアルフ
-
-ァチャンネルに不透明度マップのグレースケールを保存することができます。または鏡面マップのアル
-
-ファチャンネルにグレースケール光沢マップを保存することができます。これにより、VRAMの使用量が
-
-減少します。
-* シーン内のダイナミックライトの数に注意してください。最小限にするべきです。
-* 動的ライトのシャドウキャスティングを有効にすると負荷が掛かります。特にポイントライトの影は
-
-負荷が高いです。影を落とす各ポイントライトに対して、シーンを6回シャドウマップにレンダリング
-
-する必要があります。
-* PlayCanvasでは、メッシュインスタンスは、ドローコールです(個々のグラフィカルプリミティブを
-
-描画するコマンド)。各ドローコールでWebGLに派遣する際、CPU上に負担が掛かります。したがって、
-
-ドローコールの数を低く保つことをお勧めします（モバイルでは特に）。モデルアセットを選択し、イ
-
-ンスペクタでそれを表示させることで、特定のモデルのドローコールのリストを確認することができま
-
-す。ローエンドのモバイル端末の場合、ドローコールの目安は100-200です。一方、ハイエンドのデス
-
-クトップマシンの場合、毎フレームで何千ものドローコールを処理しても60fpsを維持することができ
-
-ます。
-* プロジェクトの設定で'Use Device Pixel Ratio'を有効にする際は注意が必要です。PlayCanvasアプ
-
-リはデバイスのネイティブ解像度を利用してピクセレーションを減少させますが、より多くのピクセル
-
-が充填される場合があり、フレームレートの大幅な低下が発生する可能性があります。
-* シーン内のブレンドされたメッシュインスタンスの数を最小限にしてください。ブレンドされたメッ
-
-シュはすべての不透明なメッシュインスタンスが派遣されるまで延期され、カメラ深度に対して後ろか
-
-ら前の順序に提出されます。結果、ピクセルは何度も充填され、ブレンドされたメッシュは素材別にソ
-
-ートできないので、レンダリング状態の変更回数が増えます。
-* アプリによって生成されるシェーダの数を最小限に保つようにしてください。シェーダはコンパイル
-
-され、要求に応じてリンクする必要があり、この操作には負荷が掛かるためアプリの起動の遅延やフレ
-
-ームレートのグリッチを引き起こします。素材Aには発光マップがあり、素材Bには無い場合、二つのシ
-
-ェーダが生成されます。素材Bに黒い発光マップを設定した場合、素材は同じシェーダを共有すること
-
-ができます。シーン内の素材の数を減らすと、生成されたシェーダの数も減ります。
-* ポストエフェクトには負荷がかかるので、有効にする際は注意が必要です。ピクセルフィルは負担が
-
-かかります。
-* 可視性の計算と比較してパフォーマンスに負担が掛からない場合のみ、カメラコンポーネントの錐台カリングを有効にします。すべてのメッシュのインスタンスが常に表示されるシーンをレンダリングしている場合は、このオプションを無効にするべきです。
-* 素材のバックフェースカリングを有効にするより、無効にするほうが負荷がかかります。基本的に、バックフェースカリングはGPUが埋めるピクセルの数を減らします。これは、新しく作成された素材のデフォルト設定です。
+* As the value for texture anisotropy increases, visual improve but performance decreases. Be careful to balance visuals against performance.
+* Look for opportunities to pack multiple textures into single images. For example, a grayscale opacity map can be stored in the alpha channel of a diffuse map. Or a grayscale gloss map can be stored in the alpha channel of a specular map. This results in lower VRAM usage.
+* Be mindful of the number of dynamic lights in your scene. Keep them to a minimum.
+* Enabling shadow casting on dynamic lights is expensive. Point light shadows are particularly expensive. For each point light that casts shadow, the scene must be rendered 6 times into a shadow map.
+* In PlayCanvas, a mesh instance is a draw call (a command to draw an individual graphical primitive). Each draw call requires some effort on the CPU to dispatch to WebGL. Therefore, keeping the number of draw calls low is advisable, particularly on mobile. You can see a list of the draw calls for a particular Model by selecting the model asset and viewing it in the Inspector. 100-200 draw calls is a rough target for low end mobile devices. High end desktop machines on the other hand can process thousands every frame and still maintain 60fps.
+* Use [Batching][1] to reduce draw calls. By creating Batch Groups in your Project and assigning them to Model and Element components, the engine will try to merge them in as few mesh instances as possible, reducing draw calls and increasing performance.
+* Be careful when enabling 'Use Device Pixel Ratio' in your project settings. This will cause your PlayCanvas app to utilize the native resolution of a device reducing pixelation but can result in many more pixels being filled, which can cause a significant drop in frame rate. This can be adjusted at runtime after assessing the user's device capabilities. Read more at [Adjusting Device Pixel Ratio][2].
+* Keep the number of blended mesh instances in your scene to a minimum. Blended meshes are deferred until all opaque mesh instances have been dispatched and are then submitted in back to front camera depth order. This results in pixels being filled multiple times and can result in a lot of render state changes since blended meshes cannot be sorted by material.
+* Try to keep the number of shaders generated by your app as low as possible. Shaders have to be compiled and linked on demand and this operation is expensive, causing delay in app startup and glitches in frame rate. If material A has an emissive map but material B doesn't, two shaders will be generated. If you set a black emissive map on material B, the materials can share the same shader. Reducing the number of materials in your scene should also reduce the number of generated shaders.
+* Post effects can be expensive so think carefully before you enable them. They can cost a lot in terms of pixel fill.
+* Only enable frustum culling on a camera component if, on balance, it is likely to save more performance than it costs to calculate visibility. If you are rendering a scene where all mesh instances are always visible, definitely disable this option.
+* Enabling backface culling on a material will be cheaper than disabling it. Generally speaking, backface culling reduces the number of pixels that the GPU has to fill. This is the default setting for newly created materials.
+* For applications where there is little visual change over a period such as product configurators, there is a specialist property to reduce CPU and GPU usage. [`pc.Application#autoRender`][3] can be set to `false` so that frames are rendered on demand via [`pc.Application#renderNextFrame`][4] when there is a visual change such as the user moving the camera or adding a part to the product.
 
 ## 物理
 
 *衝突メッシュはレンダリング可能なメッシュと同じ精密レベルである必要はありません。コリジョンの解像度メッシュを低く設定することをお勧めします。
 *シーンの動的リジッドボディの数は最小限にしてください（特にモバイルで）。
+
+[1]: /user-manual/optimization/batching
+[2]: /user-manual/optimization/runtime-devicepixelratio
+[3]: /api/pc.Application.html#autoRender
+[4]: /api/pc.Application.html#renderNextFrame
 

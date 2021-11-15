@@ -1,7 +1,7 @@
 ---
 title: 使用CDN进行托管
 template: usermanual-page.tmpl.html
-position: 8
+position: 5
 ---
 
 在部署用于自承载的PlayCanvas应用程序时，通常需要将应用程序所提供的位置(index.html)与应用程序加载的资产分开。 例如，内容传送网络(CDN)用于确保资产从地理上靠近用户计算机的服务器传送。 这使您的应用程序加载更快。 本指南将向您介绍如何配置您的PlayCanvas应用程序，以便为资源指定单独的存放位置。

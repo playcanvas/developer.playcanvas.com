@@ -21,6 +21,17 @@ MyScript.attributes.add('speed', {
 
 在这个例子中我们声明了一个叫作“speed”的属性，这个属性为数值型，默认值为80:
 
+If you need an array of attributes set `array: true` like so:
+
+```javascript
+var MyScript = pc.createScript('myScript');
+
+MyScript.attributes.add('names', {
+    type: 'string',
+    array: true
+});
+```
+
 编辑器中的属性
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
@@ -39,7 +50,7 @@ MyScript.prototype.update = function (dt) {
 
 ## 更新属性
 
-当用户在编辑器中对一个属性进行修改时，修改的参数将会发送至从这个编辑器启动的应用程序的所有复制。这意味着用户可以在线编辑脚本属性而并不需要再次加载应用程序。如果用户需要当属性更改时提交特殊行为，通过使用`attr` 和 `attr:[name]` 事件响应更改。
+When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
 
 ```javascript
 MyScript.prototype.initialize = function () {
@@ -73,7 +84,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-资源属性使得用户可以在脚本中引用一个程序资源。资源属性同样支持数组属性，允许用户指定一个资源列表，资源类型属性限制了属性对应的资源类型，比如“texture”, “material”, “model”。
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
 资源属性的实时运行类型为“pc.Asset”。用户可以在实时运行时引用资源属性的资源：
 
@@ -108,7 +119,7 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curve
 
 ### 枚举属性
 
-最后一个特殊属性参数为枚举
+The Enumeration attribute allows you to choose one of the available options:
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -122,6 +133,45 @@ MyScript.attributes.add('value', {
 ```
 
 枚举类型可以为您可能用到的参数定义一个列表。属性是一个数组类型的对象，其中每个对象都是一个以`key`为标题，`value`为属性值的选项。该属性可以被用于各种属性类型，例如`number`数值型，`string`字符串型，`vec3`向量型。
+
+### JSON attribute
+
+The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+
+```javascript
+MyScript.attributes.add('gameConfig', {
+    type: 'json',
+    schema: [{
+        name: 'numEnemies',
+        type: 'number',
+        default: 10
+    }, {
+        name: 'enemyModels',
+        type: 'asset',
+        assetType: 'model',
+        array: true
+    }, {
+        name: 'godMode',
+        type: 'boolean',
+        default: false
+    }]
+});
+```
+
+You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+
+Here's an example of accessing the above attributes in a script:
+```javascript
+MyScript.prototype.update = function (dt) {
+    if (this.gameConfig.godMode) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
+        }
+    }
+};
+```
+
+*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
 

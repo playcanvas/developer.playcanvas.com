@@ -1,7 +1,7 @@
 ---
 title: 资源
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 资源面板管理了所有的项目中的可用资源。从这个面板可以创建，上传，删除，查看和编辑任何资源。
@@ -44,7 +44,17 @@ position: 6
 
 在搜索框中可以对工程中的资源进行全局搜索。简单的在搜索框中输入关键字，编辑器会实时进行资源搜索。
 
-搜索框支持通配符。 例如， *. 将列出项目中的所有资源。
+**ID** - Specific asset can be found by its unique ID, by simply typing ID in search field it will recognize exact match and only show one asset with that ID.
+
+**RegExp** - It is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
+
+**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
+Here are some examples:
+
+`[ level-1 ]` - returns all assets that are tagged by `level-1`.
+`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
+`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
+`[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
 ## 拖放
 
@@ -57,6 +67,38 @@ position: 6
 * 如果拖动模型资源到视口中，编辑器将会创建一个新的实体并添加模型组件同时将模型资源添加至模型组件引用。视口摄影机将会自动缩放至呈现新创建实体的位置。
 * 如果拖动材质至视口中的模型实体上时，材质将会实时替换掉模型上的材质 (用于预览)。如果确定需要替换材质，则松开鼠标完成拖放即可。
 * 如果拖放 Cubemap 到视口中的场景背景上，Cubemap 会被做为场景的天空盒使用。在[场景设置][4]中也有对应的参数可以修改。
+
+## Copy and Paste between Projects
+
+To copy an asset or a selection of assets between projects, select the asset(s) and right-click to bring up the context menu to select 'Copy'. You can also use the hotkey Ctrl/Cmd + C instead if the context menu is not available due to being a read-only project.
+
+<img src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500"/>
+
+In the project that you want to copy the asset(s) to, right click in the assets panel and select 'Paste'. Ctrl/Cmd + V hotkey can be used instead.
+
+<img src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500"/>
+
+Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
+
+<img src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%"/>
+
+If you copy and paste just the model asset into a different project, those asset dependencies are copied too.
+
+<img src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%"/>
+
+By default, it is pasted as a flat hierarchy. If you want keep the folder structure, hold Shift when the context menu is opened and an option will appear called 'Paste (keep folders)'. This will attempt to keep the folder structure using the folder you are pasting into as the root folder.
+
+<img src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500"/>
+
+Will result in the following where the folder structure is preserved:
+
+<img src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%"/>
+
+We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
+
+<div class="alert alert-info">
+Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+</div>
 
 ## 检查引用
 
@@ -80,4 +122,5 @@ position: 6
 [4]: /user-manual/designer/settings
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
+[7]: /api/pc.AssetRegistry.html#findByTag
 

@@ -3,40 +3,62 @@ title: PlayCanvas 开发者资源
 template: intro.tmpl.html
 ---
 
-我们推荐从 [用户手册][1] 开始阅读, 用户手册包含了 PlayCanvas 的完整指南，可以系统的了解每个细节。随后, 可以深入 [教程][3] 和 [视频][12]，进一步深入了解 PlayCanvas 的特定功能。最后，[API 参考][4] 提供了完整的 PlayCanvas 引擎参考。
+# Getting Started
 
-还有，可以没事儿就去 [试玩页][8] 看看那些完整的项目是怎么设计和构建的。
+The [User Manual][1] is our complete guide to PlayCanvas. It will help you to use the many features of the platform including the [Editor][2], [Scripting system][3] and [Version Control][4].
 
-<hr />
+We have a [growing section][5] of more tutorials and code samples to learn and use.
 
-## 引擎用户
+|   | Tutorial Section   |
+|---|---|
+| ![Keepy Up Tutorial Thumbnail][6] | Start making your first game with our [Keepy Up][7] tutorial series. It covers all the major features including [Scene Setup][8], [processing user Input][9] and [creating the User Interface][10]. |
+| ![Physics Tutorial Thumbnail][11] | Experiment with physics with [Collisions, Triggers][12] and [Forces][13].|
+| ![Input Tutorial Thumbnail][14] | Detect input from [Keyboard][15], [Mouse][16] and [Touch screens][17]. |
+| ![User Interface Tutorial Thumbnail][18] | Create wonderful menus and HUDs with the [User Interface][19] system. |
+| ![Audio Tutorial Thumbnail][20] | Immerse the user with [Positional Audio][21] |
 
-[Engine][9] - 如果仅仅使用引擎而不使用编辑器的话，这里将提供所需要的引导。
+For the complete PlayCanvas Engine reference, refer to our [API Reference][22] section.
 
-[GitHub][5] - 查看我们的 GitHub 页面了解如何在项目中渲染精灵 [2D images][6] 和 字体 [text][7]。
+Want to see how whole projects have been designed and built? The [Explore Section][23] lists our community's public projects which you can learn from.
 
 <hr />
 
 # 获得帮助
 
-## 一起聊聊？
+Our [PlayCanvas Forum][24] is the best place to ask for help, talk about your game, show off your latest project, seek out new team members or offer your assistance to others.
 
-来聊聊你的游戏，展示你最近的项目，寻找新的团队伙伴或者为别人贡献你的帮助都是极好的。来玩我们的 [论坛][10] 参与讨论。
+We have an active community of users and the PlayCanvas team is always on hand to help.
 
-## 有问题了？
+<hr />
 
-如果遇到了关于 PlayCanvas 的技术方面问题，譬如 API 或平台方面的，试着使用问答平台 [PlayCanvas Answers][11] 获取帮助。
+# Feature Requests and Reporting Bugs
+
+Want a new feature or seeing something that isn't behaving as it should? Add it to our [Editor][25] or [Engine][26] issue trackers and we will get to it as soon as we can.
 
 [1]: /user-manual
-[2]: /getting-started
-[3]: /tutorials
-[4]: /en/api/
-[5]: https://github.com/playcanvas
-[6]: https://github.com/playcanvas/sprites
-[7]: https://github.com/playcanvas/fonts
-[8]: https://playcanvas.com/play
-[9]: /engine
-[10]: http://forum.playcanvas.com/
-[11]: http://answers.playcanvas.com/
-[12]: /tutorials/video
+[2]: /user-manual/designer/
+[3]: /user-manual/scripting/
+[4]: /user-manual/version-control/
+[5]: /tutorials/
+[6]: /images/user-manual/frontpage/keepy_up_tutorial_thumb.png
+[7]: /tutorials/keepyup-part-one/
+[8]: /tutorials/keepyup-part-one/
+[9]: /tutorials/keepyup-part-four/
+[10]: /tutorials/keepyup-part-six/
+[11]: /images/user-manual/frontpage/physics_tutorial_thumb.png
+[12]: /tutorials/collision-and-triggers/
+[13]: /tutorials/Using-forces-on-rigid-bodies/
+[14]: /images/user-manual/frontpage/input_tutorial_thumb.png
+[15]: /tutorials/keyboard-input/
+[16]: /tutorials/mouse-input/
+[17]: /tutorials/basic-touch-input/
+[18]: /images/user-manual/frontpage/ui_tutorial_thumb.png
+[19]: /tutorials/ui-elements-buttons/
+[20]: /images/user-manual/frontpage/audio_tutorial_thumb.png
+[21]: /tutorials/basic-audio/
+[22]: /en/api/
+[23]: https://playcanvas.com/explore/plays
+[24]: https://forum.playcanvas.com/
+[25]: https://github.com/playcanvas/editor/issues
+[26]: https://github.com/playcanvas/engine/issues
 

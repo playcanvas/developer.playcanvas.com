@@ -7,22 +7,22 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
 
-*单击以进行对焦，按空格键在两个A和B型号之间切换。 按'L'加载C模型。 按'C'显示C模型。*
+*Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
 
 对于简单的游戏和产品而言，您将在编辑器中设置所有的资源，它们需要在应用程序启动之前预先加载，您的应用程序才能工作。
 
 对于更高级的产品，您可能希望通过代码访问您的资源，更改引用，修改属性以及流式传输数据，以便应用程序可以更快地加载。 以及仅在需要时加载资源。 要做到这一点，你可以使用[`资源注册表`] [1]。
 
-在本教程中，我们将构建一个小型场景，您可以通过按键来交换模型组件上的模型。 我们还将动态加载未预加载的第三个模型。 你可以在这里看到[已完成的项目] [3]。
+In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
 ## 设置
 
 *该项目设置如下*
 
-*上传了三个模型资源：**A**是字母A的模型，**B**是字母B的模型，**C**是字母C的模型。
-* **C**模型资产设置*不*预加载
-*将模型实体添加到场景中，并将模型**A**分配给模型组件
-*脚本组件被添加到模型实体，并创建一个名为`update_asset.js`的新脚本。
+* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
+* The **C** render asset is set up *not* to be preloaded.
+* A render Entity is added to the scene and the model **A** is assigned to the render component.
+* A script component is added to the render Entity and a new script is created called `update_asset.js`.
 
 下载[A模型] [5]，[B模型] [6]和[C模型] [7]并将它们上传到你的项目。 确保文件名为A.dae，B.dae和C.dae，因为这将影响资源名称。
 
@@ -35,41 +35,51 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 ## 使用预加载的资源
 
 ```javascript
-if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-    if (this.entity.model.model !== this.b.resource) {
-        // update the model component to the new model
-        this.entity.model.model = this.b.resource;
+    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+        if (this.entity.render.asset !== this.b.id) {
+            // update the render component to the new Render Asset
+            console.log('Changed to B Render Asset');
+            this.entity.render.asset = this.b;
+        }
+    } else {
+        // ...
+            if (this.entity.render.asset !== this.a.id) {
+                // restore original Render Asset
+                console.log('Changed to A Render Asset');
+                this.entity.render.asset = this.a;
+            }
+        // ...
     }
-} else {
-    if (this.entity.model.model !== this.a.resource) {
-        // restore original model
-        this.entity.model.model = this.a.resource;
-    }
-    //...
-}
 ```
 
-在此项目中，**A**和**B**资源被标记为** preload **。 这意味着在加载屏幕期间，这些资源被下载。 一旦您的应用程序启动，他们就可以使用。 加载资源时，加载的资源可用为`asset.resource`。 如果`asset.resource`是`null`，那么不会加载资源。
+The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
 
-因此， `A`和`B`模型是预加载的，这意味着我们知道当我们运行应用程序时，它们将准备就绪。 此代码检查是否按下空格键，如果是，我们将模型组件上的模型更改为资源的属性。 在这种情况下，`asset.resource` 将是一个`pc.Model`对象。 对于每种不同的资源类型(音频，纹理等)，`asset.resource` 属性也会表明相关类型。
+<img src='/images/tutorials/using_assets/using-assets-a-preload.png' width=360px>
+
+So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
 ## 运行过程中加载资源
 
 ```javascript
-if (this.app.keyboard.isPressed(pc.KEY_C)) {
-    if (this.c.resource) {
-        if (this.entity.model.model !== this.c.resource) {
-            this.entity.model.model = this.c.resource;
+if (app.keyboard.isPressed(pc.KEY_C)) {
+    if (this.c.loaded) {
+        if (this.entity.render.asset !== this.c.id) {
+            console.log('Changed to C Render Asset');
+            this.entity.render.asset = this.c;
         }
     }
 } else {
-    if (this.entity.model.model !== this.a.resource) {
-        this.entity.model.model = this.a.resource;
+    if (this.entity.render.asset !== this.a.id) {
+        // restore original Render Asset
+        console.log('Changed to A Render Asset');
+        this.entity.render.asset = this.a;
     }
 }
 ```
 
-**C**模型未标记为* preload *，因此在上面的代码中，您可以看到我们在使用资源之前检查资源是否已加载。 如果`asset.resource`为空，那么资源不会被加载，我们不能改变模型组件。 如果加载了**C**模型，那么`this.c.resource`将是`pc.Model`的类型，我们可以赋值它。
+The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
+
+<img src='/images/tutorials/using_assets/using-assets-c-preload.png' width=360px>
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -77,9 +87,9 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 }
 ```
 
-当你按下`L`键时，我们加载**C**模型。 为此，我们将卸载的资源传递给`this.app.assets.load()`。 如果资源已加载，此方法将不会执行任何操作。
+当你按下`L`键时，我们加载** C **模型。 为此，我们将卸载的资源传递给`this.app.assets.load()`。 如果资源已加载，此方法将不会执行任何操作。
 
-一旦资源被加载，asset.resource将是一个`pc.Model`实例，我们可以通过按下`C`键来对其进行赋值。
+Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
 
 ## 完整的代码
 
@@ -88,17 +98,17 @@ var UpdateAsset = pc.createScript('updateAsset');
 
 UpdateAsset.attributes.add('a', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 UpdateAsset.attributes.add('b', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 UpdateAsset.attributes.add('c', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 // initialize code called once per entity
@@ -111,31 +121,27 @@ UpdateAsset.prototype.update = function(dt) {
     var app = this.app;
 
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-        if (this.entity.model.model !== this.b.resource) {
-            // update the model component to the new model
-            this.entity.model.model = this.b.resource;
+        if (this.entity.render.asset !== this.b.id) {
+            // update the render component to the new Render Asset
+            console.log('Changed to B Render Asset');
+            this.entity.render.asset = this.b;
         }
     } else {
-        if (this.entity.model.model !== this.a.resource) {
-            // restore original model
-            this.entity.model.model = this.a.resource;
-        }
-
         if (app.keyboard.isPressed(pc.KEY_C)) {
-            if (this.c.resource) {
-                if (this.entity.model.model !== this.c.resource) {
-                    this.entity.model.model = this.c.resource;
+            if (this.c.loaded) {
+                if (this.entity.render.asset !== this.c.id) {
+                    console.log('Changed to C Render Asset');
+                    this.entity.render.asset = this.c;
                 }
             }
         } else {
-            if (this.entity.model.model !== this.a.resource) {
-                this.entity.model.model = this.a.resource;
+            if (this.entity.render.asset !== this.a.id) {
+                // restore original Render Asset
+                console.log('Changed to A Render Asset');
+                this.entity.render.asset = this.a;
             }
         }
-
-
     }
-
 
     if (app.keyboard.isPressed(pc.KEY_L)) {
         app.assets.load(this.c);
@@ -148,7 +154,7 @@ UpdateAsset.prototype.update = function(dt) {
 我们在这个例子中没有展示的一件事是如何知道何时加载资产。 为此，我们使用`pc.AssetRegistry` 事件，如 `"load"` 事件。 以下是一些示例代码：
 
 ```javascript
-// find the asset in the registry
+// find the asset by name in the registry
 var asset = this.app.assets.find("A");
 // set up a one-off event listener for the load event
 this.app.assets.once("load", function (asset) {
@@ -173,7 +179,7 @@ this.app.assets.once("load:" + asset.id, function (asset) {
 
 ```javascript
 var asset = this.app.assets.find("A");
-if (!asset.resource) {
+if (!asset.loaded) {
     this.app.assets.once("load:" + asset.id, function (asset) {
         // do something with asset.resource
     });
@@ -200,4 +206,5 @@ this.app.assets.load(asset);
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
+[8]: /en/api/pc.RenderComponent.html#asset
 

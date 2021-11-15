@@ -1,22 +1,32 @@
 ---
 title: REST API
 template: usermanual-page.tmpl.html
-position: 12
+position: 22
 ---
 
 <div class="alert alert-info">
     The REST API is currently in beta. This means we may change certain endpoints and API responses.
 </div>
 
-PlayCanvas offers a REST API for developers with [Organization Accounts][1]. You can use the API to programmatically access your Projects, publish or download Apps and more. Here is a [tutorial][2] about using REST APIs.
-
 ## Authorization
 
-You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page. In the API Tokens section click on Generate Token. Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
+You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
+
+![Account Tab][4]
+
+In the API Tokens section click on Generate Token.
+
+![Generate Token][1]
+
+Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
 
 Make sure you note that down because you will not be able to see the token once you close this window. This token is meant to be kept secret so do not share it with anyone other than your team (for example do not post this on forums).
 
+![New Token][2]
+
 From your Account page you can also Revoke all the tokens you have generated or a specific one. You can also edit the name of a token.
+
+![Remove Token][3]
 
 When you make calls to the API you must set the 'Authorization' header in your HTTP request to this value:
 
@@ -35,6 +45,26 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 ## Parameters
 
 Various routes accept a number of parameters. For GET requests if the parameter is not part of the URL, you can pass it as an HTTP query string parameter. For POST, PUT and DELETE requests parameters not included in the URL should be encoded as JSON with a Content-Type of 'application/json'.
+
+There are several common parameters that are used in each endpoint:
+
+### project_id
+
+This can be found in the URL on the project overview page.
+
+![Project ID][6]
+
+### scenes
+
+When opening a scene in the Editor, the scene id is in the URL.
+
+![Scene ID][7]
+
+### branch_id
+
+This is found in the [version control][5] panel and can be selected and copied.
+
+![Branch ID][8]
 
 ## Response Format
 
@@ -108,6 +138,12 @@ The response will contain the following headers to help you regulate how often y
 
 If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
 
-[1]: /user-manual/organizations
-[2]: https://www.codecademy.com/courses/javascript-beginner-en-EID4t/0/1?curriculum_id=5122e3cbb5827b93e2000865
+[1]: /images/user-manual/api/generate-token.png
+[2]: /images/user-manual/api/new-token.png
+[3]: /images/user-manual/api/remove-token.png
+[4]: /images/user-manual/api/account-tab.png
+[5]: user-manual/version-control/
+[6]: /images/user-manual/api/project-id.png
+[7]: /images/user-manual/api/scene-id.png
+[8]: /images/user-manual/api/branch-id.png
 

@@ -1,7 +1,7 @@
 ---
 title: 色相饱和度调整
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 色相饱和度调整让你能够对图像被渲染后的整体色相和色彩饱和度进行调整。

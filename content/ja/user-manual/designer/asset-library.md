@@ -1,7 +1,7 @@
 ---
 title: アセットライブラリ
 template: usermanual-page.tmpl.html
-position: 7
+position: 6
 ---
 
 ## ストア

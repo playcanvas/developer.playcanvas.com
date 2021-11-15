@@ -1,7 +1,7 @@
 ---
-title: 音频侦听器
+title: Audio Listener
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 音频侦听器组件用于指定侦听器在3D空间中的位置。所有的3D音频效果都和侦听器所在的位置有关。
@@ -14,7 +14,7 @@ position: 2
 
 可以通过[脚本组件][2]来修改音频侦听器组件的属性。音频侦听器组件的脚本接口在[这里][3]。
 
-[1]: /images/user-manual/scenes/components/component-audio-listener.png
+[1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
 [3]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
 

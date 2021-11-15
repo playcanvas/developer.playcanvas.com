@@ -1,7 +1,7 @@
 ---
 title: 物理ベースレンダリング
 template: usermanual-page.tmpl.html
-position: 4
+position: 3
 ---
 
 ![Star-Lord][1]

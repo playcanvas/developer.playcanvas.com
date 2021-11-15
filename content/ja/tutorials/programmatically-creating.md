@@ -29,8 +29,8 @@ var entity = new pc.Entity();
 // デフォルト値の新しいCamera Componentを追加
 entity.addComponent("camera");
 
-// 新しいModel Componentを追加してエンティティに追加
-entity.addComponent("model", {
+// 新しいRender Componentを追加してエンティティに追加
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -65,8 +65,8 @@ var entity = new pc.Entity();
 // デフォルト値の新しいCamera Componentを作成
 entity.addComponent("camera");
 
-// 新しいModel Componentを作成してエンティティに追加
-entity.addComponent("model", {
+// 新しいRender Componentを作成してエンティティに追加
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -132,13 +132,13 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // 新しいModel Componentを追加してエンティティに追加
-    entity.addComponent("model", {
+    // 新しいRender Componentを追加してエンティティに追加
+    entity.addComponent("render", {
         type: 'box'
     });
 
     // 素材を設定
-    entity.model.material = this.material.resource;
+    entity.render.material = this.material.resource;
 
     // ランダムな位置に移動
     entity.setLocalPosition(

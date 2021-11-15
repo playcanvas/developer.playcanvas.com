@@ -5,11 +5,11 @@ tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>
+<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
-The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behaviour yourself.
+The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behavior yourself.
 
 ## Altering Attributes
 
@@ -58,7 +58,7 @@ In this sample pressing the spacebar triggers a change in field of view. With th
 
 With `this.app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
 
-With the final two nested `if(){}` constucts we gradually change the fov values to create the zoom in/ zoom out effect.
+With the final two nested `if(){}` constructs we gradually change the fov values to create the zoom in/ zoom out effect.
 
 With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
 
@@ -75,7 +75,11 @@ var CameraManager = pc.createScript('cameraManager');
 // initialize code called once per entity
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
-    this.app.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -96,11 +100,11 @@ CameraManager.prototype.setCamera = function (cameraName) {
 CameraManager.prototype.update = function(dt) {
     var app = this.app;
 
-    if (app.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+    if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
         this.setCamera('Center');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
         this.setCamera('Left');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
         this.setCamera('Right');
     }
 };
@@ -114,7 +118,7 @@ We set up an object containing the names of the camera Entities that correspond 
 
 Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
 
-[1]: /tutorials/beginner/basic-cameras/
+[1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
 

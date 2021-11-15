@@ -1,14 +1,14 @@
 ---
 title: キューブマップ
 template: usermanual-page.tmpl.html
-position: 5
+position: 7
 ---
 
 キューブマップは特別なテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：
 
 1. キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルが含まれます。 2. キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
 
-<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
 ## キューブマップテクスチャーのインポート
 
@@ -69,9 +69,9 @@ Editorは面に自動的にテクスチャを割り当てる方法を見つけ�
 * face_posz.jpg
 * face_negz.jpg
 
-## キューブマップのプレフィルタ
+## イメージベースの照明
 
-キューブマップインスペクタには、低解像度のフィルタリングされたテクスチャーのセットを生成するプレフィルタのボタンがあります。これらは物理的素材の環境マップで使用されます。物理的な素材を使用する際、キューブマップのプレフィルタリングは不可欠です。
+この手法により、CubeMapなどの環境マップを使用して物理に基づいたアンビエント照明や素材による反射をシミュレーションできます。これがどのように動作するか、また、IBL用にCubeMapを作成する方法については[こちら][6]をご確認ください。
 
 ## 素材にキューブマップを割り当てる
 
@@ -88,4 +88,5 @@ Emptyスロットをクリックしてキューブマップを選択するか、
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
 [5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

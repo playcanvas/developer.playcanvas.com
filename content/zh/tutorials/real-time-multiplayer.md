@@ -5,93 +5,103 @@ tags: multiplayer, networking
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
-<iframe src="http://playcanv.as/p/XFp1Ty3X/" ></iframe>
-*使用WASD移动角色。 如果您只看到一个胶囊体，请尝试在另一个选项卡或另一台计算机上打开此页面。*
+<iframe src="https://playcanv.as/p/XFp1Ty3X/" ></iframe>
+*Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
 
-在本教程中，我们将介绍如何使用Node.js和Socket.io设置基本多人项目。 它还将涵盖向/从服务器发送和接收消息的基础知识。 在演示的结尾，你应该可以看到一个类似于上面的项目。
+In this tutorial we’ll cover how to setup a basic multiplayer project using Node.js and Socket.io. We’ll focus on implementing it in PlayCanvas. By the end you should have a project similar to the one above. You can find the [tutorial project here][2].
 
 ## 设置服务器
 
-在你可以处理任何多人相关的游戏之前，你需要一个服务器来处理游戏的数据。 对于本教程，我们将使用我们自己的计算机，但在将来，你可能需要使用服务器主机，如[Amazon] [5]或[OpenShift] [6]。
+We'll be implementing a client-server model (as opposed to peer-to-peer). This will be a basic server that will receive data from all clients (which are our PlayCanvas instances) and broadcast it back.
 
-转到nodejs.org并下载并安装推荐的Node.js.
-
-打开命令提示符窗口(Mac终端)，输入：
-
-```
-npm install socket.io
-```
-
-它应该需要几秒钟。 完成后，您应该在您的计算机上安装了Node.js和Socket.io。
-
-![安装Socket][1]
-
-接下来，我们需要创建一个服务器文件。 打开文本编辑器，然后键入以下内容:
+[Glitch][3] provides a really convenient way to write and deploy backend apps for free completely in your browser! You can use it without an account but creating one will let you easily find your work. [Create a new Node app][4] and replace the contents of `server.js` with this:
 
 ```javascript
 var server = require('http').createServer();
-var io = require(‘socket.io')(server);
+var options = {
+  cors: true
+}
+
+var io = require('socket.io')(server, options);
 
 io.sockets.on('connection', function(socket) {
+    console.log("Client has connected!");
 });
 
 console.log ('Server started.');
 server.listen(3000);
 ```
 
-请注意，服务器正在侦听端口3000。现在我们返回，将其作为'server.js'保存在您的主文件夹中。 确保它被保存为Javascript文件而不是Server.js.txt。 要启动服务器，请打开命令提示符窗口并输入：
+Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button on the left side of the screen to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
 
-```
-node server.js
-```
+![Opening the log][5]
 
-您应该看到‘Server started.’提示 。恭喜，您现在正在运行自己的服务器。
+To include a package, go to `package.json` and click on the `Add Package` button on the top. Search for `socket.io`.
 
-![启动服务器][2]
+![Adding a package][6]
+
+Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
+
+You can find the domain your server is deployed at by clicking in the top left (where it says `thundering-polo` for me). This is where you can also rename the project.
+
+This server will simply log a message every time someone connects. This should be enough to start working on our client and confirm that it connects to the server.
 
 ## 设置项目
 
-打开PlayCanvas并创建一个新项目。 首先，您需要创建一个名为“socket.js”的脚本。
+Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script.
 
-打开脚本并使用[这个] [4]替换文件的内容。
+Go to project settings.
+![Project settings][12]
 
-现在我们需要创建一个新的脚本来处理网络逻辑。 创建一个名为“Network.js”的脚本。 我们首先需要创建一个到服务器的连接，这可以通过在initialize方法中添加这一行来实现：
+Find and open 'External Scripts'.
+![External scripts settings][13]
 
-```javascript
-this.socket = io.connect(‘http://localhost:3000/');
+Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
+![Project settings][14]
+
+```
+https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
 ```
 
-‘http://localhost' 是您的本地服务器的地址， ‘3000’ 是端口。 因为我们连接到我们自己的计算机，我们使用localhost。 如果你想在别处托管，请确保您用于连接的端口与在服务器文件中设置的端口相同。 该项目现在设置为向/从服务器发送和接收消息。
+Now we need to create a new script to handle the network logic. Create a new script called `Network.js`. We first need to create a connection to the server. We can do this by adding this line in the initialize method:
+
+```javascript
+this.socket = io.connect('https://thundering-polo.glitch.me');
+```
+
+Replace `https://thundering-polo.glitch.me` with the address of your own server.
+
+To confirm that this works, attach this network script to the `Root` entity, and then launch the game. Keep your eye on the server log at Glitch. If everything worked, the server should log `Client has connected!`. The project is now setup to send and receive messages to & from the server.
 
 ## 服务器与客户端通讯
 
-在客户端和服务器之间发送数据的方式是使用我们之前创建的套接字连接。 要从客户端发送数据，我们需要使用emit函数。 这里有一个例子:
+The way you can send data between the client and server is with the socket connection we made earlier. To send data from the client (in Network.js on PlayCanvas), we use the emit function. Here’s an example:
 
 ```javascript
-this.socket.emit (‘playerJoined’, ‘John’);
+this.socket.emit ('playerJoined', 'John');
 ```
 
-这会发送一个名为 ‘playerJoined’，数据为‘John’的消息。 为了服务器能够接收消息，我们需要在服务器文件中写入:
+This emits a message called `playerJoined`, with the data `John`. For the server to receive the message, we need to write in the server file (in server.js on Glitch):
 
 ```javascript
-socket.on (‘playerJoined’, function (name) {
-	console.log (name);
+socket.on ('playerJoined', function (name) {
+    console.log (name);
 });
 ```
 
-这将记录发送‘playerJoined’ 时发送到服务器的任何数据。
+This will log whatever data is sent to the server when `playerJoined` is emitted.
 
-对于这个演示，我们的目标是让玩家实时地与他人一起移动，所以我们需要创建一个环境。 首先创建一个实体作为地面，然后添加一个碰撞盒和静态刚体。
+For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
 
-![地面实体][7]
+<img src='/images/tutorials/multiplayer/ground_entity.png' width=360px>
 
-接下来，我们需要一个可以控制的玩家。 我们创建一个新的作为 ‘Player’的胶囊体，为其添加一个动态刚体和碰撞盒，并更改刚体设置以匹配下面的图片。
+Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
 
-![玩家实体][8]
+<img src='/images/tutorials/multiplayer/player_entity.png' width=360px>
 
-复制玩家实体，并将其重命名为 'Other'。 这是我们将用来模拟游戏中其他玩家的实体。
+Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
 
-将脚本组件添加到玩家实体上，并附加一个名为“Movement.js”的脚本:
+Add a script component to your player, and attach a new script called `Movement.js`:
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -146,279 +156,18 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-当你启动游戏后，你就能够使用WASD来移动你的player。 如果不行，您可能错过了一个步骤，或者没有为实体设置正确的属性。 (尝试改变移动脚本上的速度属性)
-对于实时多人游戏，我们需要跟踪游戏中的所有玩家。 将当前服务器代码替换为：
+When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or did not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
+For the game to work in real time multiplayer, we need to keep track of all players in the game. Replace the current server code with this:
 
 ```javascript
 var server = require('http').createServer();
-var io = require('socket.io')(server);
-
-var players = [];
-
-function Player (id) {
-	this.id = id;
-	this.x = 0;
-	this.y = 0;
-	this.z = 0;
-	this.entity = null;
+var options = {
+  cors: true
 }
 
-io.sockets.on('connection', function(socket) {
-	socket.on (‘initialize’, function () {
-		var idNum = players.length;
-		var newPlayer = new Player (idNum);
-		// Creates a new player object with a unique ID number.
+var io = require('socket.io')(server, options);
 
-		players.push (newPlayer);
-		// Adds the newly created player to the array.
-
-		socket.emit (‘playerData’, {id: idNum, players: players});
-		// Sends the connecting client his unique ID, and data about the other players already connected.
-
-		socket.broadcast.emit (‘playerJoined’, newPlayer);
-		// Sends everyone except the connecting player data about the new player.
-	});
-});
-
-console.log ('Server started.');
-server.listen(3000);
-```
-
-在上面的代码中，当玩家发送消息“初始化”时，我们向他发送他在游戏中其他玩家的唯一ID和数据。 它也告诉别人一个新的播放器已经连接。 让我们将这个逻辑添加到我们的网络脚本中。
-
-```javascript
-initialize: function () {
-	socket = io.connect('http://localhost:3000/');
-	socket.emit ('initialize');
-
-	this.player = this.app.root.findByName ('Player');
-	this.other = this.app.root.findByName ('Other');
-
-	var self = this;
-	socket.on ('playerData', function (data) {
-		self.initializePlayers (data);
-	});
-
-	socket.on ('playerJoined', function (data) {
-		self.addPlayer (data);
-	});
-},
-
-initializePlayers: function (data) {
-	self.players = data.players;
-	// Create a player array and populate it with the currently connected players.
-
-	this.id = data.id
-	// Keep track of what ID number you are.
-
-	for (i = 0; i < this.players.length; i++) {
-		if (i !== this.id) {
-			this.players[i].entity = this.createPlayerEntity (data.players[i]);
-		}
-	}
-	// For every player already connected, create a new capsule entity.
-
-	this.initialized = true;
-	// Mark that the client has received data from the server.
-}
-
-createPlayerEntity: function (data) {
-	var newPlayer = this.other.clone ();
-	// Create a new player entity.
-
-	newPlayer.enabled = true;
-	// Enable the newly created player.
-
-	this.other.getParent ().addChild (newPlayer);
-	// Add the entity to the entity hierarchy.
-
-	if (data)
-		newPlayer.rigidbody.teleport (data.x, data.y, data.z);
-	// If a location was given, teleport the new entity to the position of the connected player.
-
-	return newPlayer;
-	// Return the new entity.
-},
-
-addPlayer: function (data) {
-	this.players.push (data);
-	this.players[this.players.length - 1].entity = this.createPlayerEntity ();
-}
-```
-
-现在我们加入游戏，客户端告诉了我们已经连接的服务器，服务器向我们发送了一个具有位置的玩家列表。 然后游戏为每个连接的玩家创建一个新实体，并将它们移动到当前位置。 唯一的问题是，服务器不知道所有玩家的位置。 我们需要向服务器发送我们每一帧的当前位置。 将此代码添加到您的Network.js脚本中：
-
-```javascript
-initialize: function () {
-	socket = io.connect('http://localhost:3000/');
-	socket.emit ('initialize');
-
-	this.player = this.app.root.findByName ('Player');
-	this.other = this.app.root.findByName ('Other');
-
-	var self = this;
-	socket.on ('playerData', function (data) {
-		self.initializePlayers (data);
-	});
-
-	socket.on ('playerJoined', function (data) {
-		self.addPlayer (data);
-	});
-
-	socket.on ('playerMoved', function (data) {
-		self.movePlayer (data);
-	});
-},
-
-movePlayer: function (data) {
-	if (this.initialized)
-		this.players[data.id].entity.rigidbody.teleport (data.x, data.y, data.z);
-},
-
-update: function (dt) {
-	this.updatePosition ();
-},
-
-updatePosition: function () {
-	if (this.initialized) {
-		var pos = this.player.getPosition ();
-		socket.emit ('positionUpdate', {id: id, x: pos.x, y: pos.y, z: pos.z});
-	}
-}
-```
-
-回到服务器这边，我们需要考虑当玩家向我们发送他们的位置时会发生什么。
-
-```javascript
-socket.on ('positionUpdate', function (data) {
-	players[data.id].x = data.x;
-	players[data.id].y = data.y;
-	players[data.id].z = data.z;
-
-	socket.broadcast.emit ('playerMoved', data);
-});
-```
-
-## 总结
-
-就是这样！ 如果你愿意，可以尝试自己添加一些别的想法:
-*玩家在关闭游戏时能够被移除
-*添加当玩家脱离边缘时的复位功能。
-
-有很多关于创建多人游戏的信息，你可以一一阅览。 记住这只是一个非常基本的多人游戏的实现。 实际上，当创建更大的多人游戏时，您需要考虑使用授权服务器，而不是处理客户端上的所有游戏逻辑。 您可能还想查看一个更永久的服务器主机，如[Amazon] [5]，[OpenShift] [6]或[Azure] [9]。
-
-以下是整段的客户端联网代码:
-
-```javascript
-var Network = pc.createScript('network');
-
-// static variables
-Network.id = null;
-Network.socket = null;
-
-// initialize code called once per entity
-Network.prototype.initialize = function() {
-    this.player = this.app.root.findByName('Player');
-    this.other = this.app.root.findByName('Other');
-
-    var socket = io.connect('http://40.76.222.228/'); // playcanvas hosted server
-    Network.socket = socket;
-
-    socket.emit ('initialize');
-
-    var self = this;
-    socket.on ('playerData', function (data) {
-        console.log('Connected.');
-        self.initializePlayers (data);
-    });
-
-    socket.on ('playerJoined', function (data) {
-        self.addPlayer(data);
-    });
-
-    socket.on ('playerMoved', function (data) {
-        self.movePlayer(data);
-    });
-
-    socket.on ('killPlayer', function (data) {
-        self.removePlayer(data);
-    });
-
-    setInterval (function () {
-        if (self.initialized) {
-            socket.emit('ping', Network.id);
-            console.log('pinged as #' + Network.id);
-        }
-    }, 1000);
-};
-
-Network.prototype.initializePlayers = function (data) {
-    this.players = data.players;
-    Network.id = data.id;
-
-    for (i = 0; i < this.players.length; i++) {
-        if (i !== Network.id && !this.players[i].deleted) {
-            this.players[i].entity = this.createPlayerEntity(data.players[i]);
-            console.log('Found player.');
-        }
-        console.log(data);
-    }
-
-    this.initialized = true;
-    console.log('initialized');
-};
-
-Network.prototype.addPlayer = function (data) {
-    this.players.push(data);
-    this.players[this.players.length - 1].entity = this.createPlayerEntity();
-};
-
-Network.prototype.movePlayer = function (data) {
-    if (this.initialized && !this.players[data.id].deleted) {
-        this.players[data.id].entity.rigidbody.teleport(data.x, data.y, data.z);
-    }
-};
-
-Network.prototype.removePlayer = function (data) {
-    if (this.players[data].entity) {
-        this.players[data].entity.destroy ();
-        this.players[data].deleted = true;
-    }
-};
-
-Network.prototype.createPlayerEntity = function (data) {
-    var newPlayer = this.other.clone();
-    newPlayer.enabled = true;
-
-    this.other.getParent().addChild(newPlayer);
-
-    if (data)
-        newPlayer.rigidbody.teleport(data.x, data.y, data.z);
-
-    return newPlayer;
-};
-
-// update code called every frame
-Network.prototype.update = function(dt) {
-    this.updatePosition();
-};
-
-Network.prototype.updatePosition = function () {
-    if (this.initialized) {
-        var pos = this.player.getPosition();
-        Network.socket.emit('positionUpdate', {id: Network.id, x: pos.x, y: pos.y, z: pos.z});
-    }
-};
-
-```
-
-以下是整段的服务器代码:
-
-```javascript
-var server = require('http').createServer();
-var io = require('socket.io')(server);
-
-var players = [];
+var players = {};
 
 function Player (id) {
     this.id = id;
@@ -429,35 +178,162 @@ function Player (id) {
 }
 
 io.sockets.on('connection', function(socket) {
-	socket.on ('initialize', function () {
-	        var idNum = players.length;
-	        var newPlayer = new Player (idNum);
-	        players.push (newPlayer);
+    socket.on ('initialize', function () {
+        var id = socket.id;
+        var newPlayer = new Player (id);
+        // Creates a new player object with a unique ID number.
 
-	        socket.emit ('playerData', {id: idNum, players: players});
-	        socket.broadcast.emit ('playerJoined', newPlayer);
-	});
+        players[id] = newPlayer;
+        // Adds the newly created player to the array.
 
-	socket.on ('positionUpdate', function (data) {
-	        players[data.id].x = data.x;
-	        players[data.id].y = data.y;
-	        players[data.id].z = data.z;
+        socket.emit ('playerData', {id: id, players: players});
+        // Sends the connecting client his unique ID, and data about the other players already connected.
 
-		socket.broadcast.emit ('playerMoved', data);
-	});
+        socket.broadcast.emit ('playerJoined', newPlayer);
+        // Sends everyone except the connecting player data about the new player.
+    });
 });
 
 console.log ('Server started.');
 server.listen(3000);
 ```
 
-[1]: /images/tutorials/multiplayer/socket_installed.png
-[2]: /images/tutorials/multiplayer/server_started.png
-[3]: /images/tutorials/multiplayer/script_priority.png
-[4]: http://raw.githubusercontent.com/socketio/socket.io-client/master/socket.io.js
-[5]: http://aws.amazon.com/ec2/
-[6]: https://www.openshift.com/
-[7]: /images/tutorials/multiplayer/ground_entity.png
-[8]: /images/tutorials/multiplayer/player_entity.png
-[9]: https://azure.microsoft.com/en-gb/
+In the code above, when a player sends the message `initialize`, we send him his unique ID and data about other players in the game. It also tells others that a new player has connected. Let’s add that logic into our Network script.
+
+Add this code in the `initialize`:
+
+```javascript
+// Your io.connect function call should be up here
+
+this.socket.emit ('initialize');
+var socket = this.socket;
+
+this.player = this.app.root.findByName ('Player');
+this.other = this.app.root.findByName ('Other');
+
+var self = this;
+socket.on ('playerData', function (data) {
+    self.initializePlayers (data);
+});
+
+socket.on ('playerJoined', function (data) {
+    self.addPlayer (data);
+});
+```
+
+And then declare these new functions inside Network.js:
+
+```javascript
+Network.prototype.initializePlayers = function (data) {
+    this.players = data.players;
+    // Create a player array and populate it with the currently connected players.
+
+    this.id = data.id;
+    // Keep track of what ID number you are.
+
+    for(var id in this.players){
+        if(id != Network.id){
+            this.players[id].entity = this.createPlayerEntity(this.players[id]);
+        }
+    }
+    // For every player already connected, create a new capsule entity.
+
+    this.initialized = true;
+    // Mark that the client has received data from the server.
+};
+
+Network.prototype.createPlayerEntity = function (data) {
+    var newPlayer = this.other.clone ();
+    // Create a new player entity.
+
+    newPlayer.enabled = true;
+    // Enable the newly created player.
+
+    this.other.getParent ().addChild (newPlayer);
+    // Add the entity to the entity hierarchy.
+
+    if (data)
+        newPlayer.rigidbody.teleport (data.x, data.y, data.z);
+    // If a location was given, teleport the new entity to the position of the connected player.
+
+    return newPlayer;
+    // Return the new entity.
+};
+
+Network.prototype.addPlayer = function (data) {
+    this.players[data.id] = data;
+    this.players[data.id].entity = this.createPlayerEntity(data);
+};
+```
+
+Now when we join the game, the client tells the server we've connected, and the server sends us a list of players with their positions. The game then creates a new entity for each player connected, and moves them to their current position. The only problem is, the server doesn't know the positions of all players. We need to send the server our current position every frame.
+
+Add this code into the `initialize` of your Network.js script:
+
+```javascript
+socket.on ('playerMoved', function (data) {
+    self.movePlayer (data);
+});
+```
+
+Replace your `update` with this:
+
+```javascript
+Network.prototype.update = function (dt) {
+    this.updatePosition ();
+};
+```
+
+And then declare these new functions inside Network.js:
+
+```javascript
+Network.prototype.movePlayer = function (data) {
+    if (this.initialized)
+        this.players[data.id].entity.rigidbody.teleport (data.x, data.y, data.z);
+};
+
+Network.prototype.updatePosition = function () {
+    if (this.initialized) {
+        var pos = this.player.getPosition ();
+        this.socket.emit ('positionUpdate', {id: this.id, x: pos.x, y: pos.y, z: pos.z});
+    }
+};
+```
+
+Back on the server, we need to account for what happens when the player sends us their position. On the server, we need to add a new event:
+
+```javascript
+socket.on ('positionUpdate', function (data) {
+    players[data.id].x = data.x;
+    players[data.id].y = data.y;
+    players[data.id].z = data.z;
+
+    socket.broadcast.emit ('playerMoved', data);
+});
+```
+
+When you're testing this, note that the server currently does not account for disconnects. To properly restart, you'll have to close all clients, restart the server (by typing in Glitch) then relaunching the clients.
+
+## 总结
+
+就是这样！ 如果你愿意，可以尝试自己添加一些别的想法:
+*玩家在关闭游戏时能够被移除
+*添加当玩家脱离边缘时的复位功能。
+
+Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritative server, instead of handling all the game logic on the client. You can read a more in depth tutorial about [how Socket.io works and how to develop multiplayer in Javascript here][1].
+
+You can find the [full server code on Glitch here][10], where you can also fork it and extend it.
+
+[1]: https://code.tutsplus.com/tutorials/create-a-multiplayer-pirate-shooter-game-in-your-browser--cms-23311
+[2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer
+[3]: https://glitch.com/
+[4]: https://glitch.com/edit/#!/new-project
+[5]: /images/tutorials/multiplayer/glitch_error.png
+[6]: /images/tutorials/multiplayer/glitch_add_package.png
+[7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
+[10]: https://glitch.com/edit/#!/sore-bloom-beech
+[11]: https://cdnjs.com/libraries/socket.io
+[12]: /images/tutorials/multiplayer/project_settings.png
+[13]: /images/tutorials/multiplayer/external_scripts_settings.png
+[14]: /images/tutorials/multiplayer/added_socket_io_library.png
 

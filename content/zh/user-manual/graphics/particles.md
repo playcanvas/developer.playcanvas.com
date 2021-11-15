@@ -22,7 +22,7 @@ PlayCanvas为创建和编辑粒子系统提供了全面的支持。
 
 ![粒子系统创建][2]
 
-请注意现在你的粒子系统不会立刻在编辑器的3D场景中播放。为了看见你的粒子动画，你必须点击运行按钮使你的游戏运行起来。一个新创建的，使用默认设置的粒子系统看上去会是这个样子的:
+A newly created particle system with the default settings looks like this:
 
 ![默认粒子系统][3]
 

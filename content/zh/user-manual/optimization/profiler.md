@@ -1,7 +1,7 @@
 ---
 title: 分析器
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 PlayCanvas提供了一个协助诊断性能问题的实时分析器。

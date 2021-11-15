@@ -30,13 +30,13 @@ var entity = new pc.Entity();
 entity.addComponent("camera");
 
 // Создание новой модели и добавление ее к сущности
-entity.addComponent("model", {
+entity.addComponent("render", {
     type: 'box',
 });
 
 // Добавляем сущность к иерархии
 this.app.root.addChild(entity);
-```
+~~~
 
 Сущность, как она есть, не имеет смысла, поэтому вам необходимо добавить компоненты, чтобы добиться результата. Вы можете использовать метод `Добавить компонент` сущности чтобы создать и добавить компонент.
 
@@ -66,7 +66,7 @@ var entity = new pc.Entity();
 entity.addComponent("camera");
 
 // Создание модели куба и добавление его к сущности
-entity.addComponent("model", {
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -133,12 +133,12 @@ EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
     // Создание модели кубика и добавление ее к сущности.
-    entity.addComponent("model", {
+    entity.addComponent("render", {
         type: 'box'
     });
 
     // Установка материала
-    entity.model.material = this.material.resource;
+    entity.render.material = this.material.resource;
 
     // Перемещение в случайное место
     entity.setLocalPosition(

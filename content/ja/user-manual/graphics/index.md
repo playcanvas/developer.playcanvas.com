@@ -1,7 +1,7 @@
 ---
 title: グラフィック
 template: usermanual-page.tmpl.html
-position: 8
+position: 14
 ---
 
 PlayCanvasは高度なグラフィックスエンジンを搭載しています。画面にグラフィカルなプリミティブを描画するためにWebGLのAPIを内部で使用しています。

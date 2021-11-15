@@ -1,7 +1,7 @@
 ---
 title: 资源
 template: usermanual-page.tmpl.html
-position: 6
+position: 10
 ---
 
 资源可以在游戏工程中被使用。资源可以是多种多样的，譬如3D模型或者音乐文件。它们有着两种不同的表现形式：源和目标。

@@ -1,7 +1,7 @@
 ---
-title: 粒子系统
+title: Particle System
 template: usermanual-page.tmpl.html
-position: 7
+position: 12
 ---
 
 粒子系统组件定义了在3D空间中的粒子发射器。

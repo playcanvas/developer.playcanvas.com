@@ -5,7 +5,7 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *[完成されたプロジェクトはこちら][4]です。先に[その1][1]と[その2][2] を読んでください。*
 
@@ -263,8 +263,8 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 
 タップがボールに当たると、タップが発生した場所のボールからの距離を渡し、ボールスクリプトで`tap(dx, dy)` 関数を呼び出します。これは[パート4][3]で使用します。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
 

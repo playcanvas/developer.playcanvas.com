@@ -1,7 +1,7 @@
 ---
 title: プロフィール
 template: usermanual-page.tmpl.html
-position: 2
+position: 5
 ---
 
 プロフィールページはあなたのPlayCanvasゲームをアピールする公共の場です。

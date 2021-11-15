@@ -9,6 +9,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *このチュートリアルでは素材にカスタムシェーダを使用してGLSLでdissolveエフェクトを作成します*
 
+Complete project can be found [here][project].
+
 PlayCanvasに3Dモデルをインポートすると、デフォルトで[Physical Material][3]を使用します。これは、多くのレンダリングニーズをカバーすることができる汎用性の高い素材タイプです。
 
 素材に対して特別なエフェクトや特殊な例が必要になることも多くあります。そのためには、カスタムシェーダを作成する必要があります。
@@ -220,7 +222,6 @@ CustomShader.prototype.initialize = function() {
     this.time = 0;
 
     var app = this.app;
-    var model = this.entity.model.model;
     var gd = app.graphicsDevice;
 
     var diffuseTexture = this.diffuseMap.resource;
@@ -245,7 +246,7 @@ CustomShader.prototype.initialize = function() {
 
     // Create a new material and set the shader
     this.material = new pc.Material();
-    this.material.setShader(this.shader);
+    this.material.shader = this.shader;
 
     // Set the initial time parameter
     this.material.setParameter('uTime', 0);
@@ -257,7 +258,14 @@ CustomShader.prototype.initialize = function() {
     this.material.setParameter('uHeightMap', heightTexture);
 
     // Replace the material on the model with our new material
-    model.meshInstances[0].material = this.material;
+    var renders = this.entity.findComponents('render');
+
+    for (var i = 0; i < renders.length; ++i) {
+        var meshInstances = renders[i].meshInstances;
+        for (var j = 0; j < meshInstances.length; j++) {
+            meshInstances[j].material = this.material;
+        }
+    }
 };
 
 // update code called every frame
@@ -275,9 +283,10 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-完全なスクリプトです。動作させるためには、頂点シェーダーとフラグメントシェーダーのアセットを作成する必要があります。沢山のメッシュと素材を持つモデルにdissolveエフェクトを適用するシェーダーの実施はリーダーへの課題として残されます。
+Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
 
-[1]: /engine/api/stable/symbols/pc.Shader.html
+[1]: /api/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
+[project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
 

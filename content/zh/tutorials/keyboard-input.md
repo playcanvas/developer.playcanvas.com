@@ -5,7 +5,7 @@ tags: input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
 
 *点击以聚焦, 然后按下 `左箭头`, `右箭头` 以及`空格键` 来旋转方块。 按下或抬起按键 'a' 来改变颜色。*
 
@@ -73,7 +73,7 @@ KeyboardHandler.prototype.update = function(dt) {
 KeyboardHandler.prototype.onKeyDown = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.redMaterial) {
-        this.entity.model.meshInstances[0].material = this.redMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // When the space bar is pressed this scrolls the window.
@@ -87,7 +87,7 @@ KeyboardHandler.prototype.onKeyDown = function (event) {
 KeyboardHandler.prototype.onKeyUp = function (event) {
     // Check event.key to detect which key has been pressed
     if (event.key === pc.KEY_A && this.whiteMaterial) {
-        this.entity.model.meshInstances[0].material = this.whiteMaterial.resource;
+        this.entity.render.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
 ```
@@ -123,7 +123,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## 键盘编码
 
-分辨哪一个键被按下时就要使用按键编码。它们是与键盘上的键所匹配的数值。 例如，pc.KEY_A是`A`键，pc.LEFT是左箭头键。
+分辨哪一个键被按下时就要使用按键编码。它们是与键盘上的键所匹配的数值。 例如，pc.KEY_A是`A`键，pc.KEY_LEFT是左箭头键。
 
 注意，你应该总是使用枚举`pc.KEY_ *`，而不是使用数值。 因为这些常数的实际值可能会在将来进行更改。
 
@@ -132,6 +132,6 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 在[这里] [2]进行全屏尝试或在页面顶部尝试。 比较轻敲并按住箭头键，然后点击并按住空格键。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
-[2]: https://playcanv.as/p/rFZGQWCi
+[2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
 

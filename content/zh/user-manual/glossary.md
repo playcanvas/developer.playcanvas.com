@@ -1,82 +1,115 @@
 ---
-title: 词汇表
+title: Glossary
 template: usermanual-page.tmpl.html
-position: 50
+position: 25
 ---
 
 以下是我们用来描述PlayCanvas引擎和工具的一些专业用词的总述。
 
-<h2 id="app">应用程序</h2>
-`pc.Application`类储存了运行用户的应用程序来说所有有用的引擎部件。包括了：场景图形层级结构，组件系统，键盘和鼠标处理程序。应用程序从`pc.script.create`通过传输初始化回调被用在所有用户脚本。
+## Application
+The `Application` class is where all the useful engine stuff that your application needs to run is stored. It manages:
 
-<h2 id="asset">资源</h2>
-一个资源就是一个数据的单位，通常来说资源从例如Blender或者3DStudio Max等应用程序中被创建导入到PlayCanvas中。资源可以是3D模型，动画，音频样本或者一个图像。资源可以被分配到某个[组件][1]的属性。比如，可以将一个模型资源分配到模型组件的’model’属性。查看更多请移步 [Source Assets][2] 和 [Target Assets][3].
+* The `Scene` which includes the scene hierarchy and scene settings
+* The `ComponentSystem`s
+* The input devices (keyboard, mouse, touch and gamepad)
 
-<h2 id="asset_pipeline">资源通道</h2>
-资源通道是一个运行在PlayCanvas服务器中转换一个上传了的[源资源][4]的过程。比如：一个FBX场景文件用于一个或多个[目标资源][5]可以为一个模型文件，一个材质和一些纹理。通道被设计为将上传文件转化到准备应用在游戏中的优化版本。将一个资源通过通道进行处理，从PlayCanvas编辑器或者控制面板中上传这个资源到PlayCanvas中。
+The Application is accessible from any script function (`initialize`, `update` and so on) as `this.app`.
 
-<h2 id="attribute">属性</h2>
-属性是一个[组件][6]的特性。属性通过界面控件（选择器、复选框、滑块）等呈现在PlayCanvas编辑器界面中。属性可以通过这些组件进行调整，当你通过点击编辑器的“play”按钮来运行游戏，更新的数据将会实时对游戏进行更新。
+## Asset
+An asset is a unit of data that is typically imported into PlayCanvas from a content creation application (such as Blender or 3D Studio Max). It can represent a 3D model, an animation, an audio sample or an image. Assets can be assigned to certain attributes of [Components][5]. For example, it is possible to assign a model asset to the 'model' attribute of a model component. Also see [Source Assets][18] and [Target Assets][19].
 
-<h2 id="component">组件</h2>
-组件描述了[实体][7]的属性和功能。在PlayCanvas引擎中，对比使用长链的继承类定义对象，而是作为一个实体和组件的集合。
+## Asset Pipeline
+The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset][18] e.g. an FBX scene file into one or more [Target Assets][19] e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Editor.
+
+## Attribute
+An attribute is a property of a [Component][5]. Attributes are represented in the PlayCanvas Editor interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Editor's 'Launch' button, the updates are live-streamed to the connected game in real time.
+
+## Component
+Components describe the properties and functionality of an [Entity][8]. In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.
 
 组件通过在PlayCanvas编辑器的组件按钮被添加到实体中，或者通过`ComponentSystem`对象在实时运行时添加。
 
-<h2 id="dom">DOM</h2>
-DOM(Document Object Model)是一种HTML文档展示的形式。Web浏览器提供了一个查询和修改DOM的界面。
+## DOM
+The DOM (Document Object Model) is a way of representing an HTML document. Web browsers make an interface available for querying and modifying the DOM that makes up the HTML page that
+is displayed in the users browser.
 
-<h2 id="entity">实体</h2>
-实体是在[PlayCanvas Engine][8]中创建你的应用程序的重要一部分。通常一个实体将会作为一个单独对象存在在游戏或者应用程序中，即使一个单独对象可能由多个实体组成。
+## Entity
+An Entity is the one of the building blocks of your application in the [PlayCanvas Engine][14]. Often an Entity will represent a single object in your game or application, though a single object may also be made of multiple Entities.
 
-所有实体都拥有一个变换矩阵来提供它们的位置和方向；实体都有一个父节点，从这个父节点中实体继承了变形，或者也存在子节点来支持对实体的变形。
+All Entities have a position, rotation and scale. They have a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.
 
-<h2 id="framework">框架</h2>
-在PlayCanvas中，框架位于抽象的上层。框架由各种高级高级要素组成比如实体组件系统和PlayCanvas编辑器的交互接口。点击[API Reference][9]查看更多。
+## Framework
+The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Editor. See the [API Reference][50] for more details.
 
-<h2 id="gizmo">小工具</h2>
-一个小工具就是一个控制器，可以拖动鼠标来编辑实体的属性，通常用于对变换矩阵的编辑。一个小工具由三个颜色代码部分组成，每个部分都是三维空间中的一个轴。红色是X轴，绿色是Y轴，蓝色是Z轴。有时候也会有一个操作需要用多个轴的情况。比如：the translate gizmo features clickable plane icons to allow translation in two dimensions at once, on the X and Y, Y and Z, Z and X planes.
+## Gizmo
+A Gizmo is a control that can be dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of
+three color-coded parts, one for each axis in 3D space. Red is the X-axis, green is the Y-axis and blue is the Z-axis. Sometimes there will also be controls for manipulating
+more than one axis at once, e.g. the translate gizmo features clickable plane icons to allow translation in two dimensions at once, on the X and Y, Y and Z, Z and X planes.
 
-<h2 id="material">材质</h2>
-一个材质就是一个资源类型，定义了在3D模型模型表面的属性。材质由一组属性组成比如漫反射、高光色和对纹理资产的引用比如漫反射贴图和高光贴图。在PlayCanvas编辑器中，编辑一个材质可以通过选择一个模型，在3D视角中点击这个模型的材质。
+## High Dynamic Range
+High Dynamic Range or HDR refers to color information that is outside of the usual 0-1 range. In the standard range, 0 is black and 1 is the brightest color that the display device can show. In the real world there is no such limitations for example, the sun can be many times brighter than sky that surrounds it.
 
-<h2 id="scene">场景</h2>
-一个场景是实体数据、艺术数据、代码数据的集合，可以作为一个单位被加载。一个场景可能为你的整个游戏，或者仅仅只是一个等级或者一部分你的游戏。
+## Material
+A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Editor, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
 
-<h2 id="editor">PlayCanvas 编辑器</h2>
-PlayCanvas编辑器是一个可视化编辑工具，可以被开发团队成员使用用于编辑[场景][11].PlayCanvas编辑器被用于操作[实体][12]。
+## PlayCanvas Editor
+The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Scenes][11]. The PlayCanvas Editor is used to manipulate [Entities][8]
 
-<h2 id="engine">PlayCanvas 引擎</h2>
-PlayCanvas引擎室一个JavaScript库，提供了所有用户在创建交互3D应用程序或者游戏时所需要的函数。通过PlayCanvas引擎创建的程序将可以直接在模型web浏览器上运行，不需要使用第三方插件。
+## PlayCanvas Engine
+The PlayCanvas Engine is a JavaScript library which provides all the functionality you will need to create an interactive 3D application or game.
+Programs created using the PlayCanvas Engine will run directly in a modern web browser with no need for third-party plugins.
 
-<h2 id="project">项目</h2>
-一个项目是实体、资源以及代码的集合归属于一个单一用户。通常一个单一的项目将仅仅包含一个单一应用程序的资源，但用户可以从单个项目开发多个应用程序。
+## Project
+A Project is a collection of [Scenes][16] and [Assets][2] that belongs to a single user. Usually a single Project will only contain resources for a single application, though you can export multiple applications from a single Project.
 
-<h2 id="source_asset">源资源</h2>
-源资源是一个已经被上传到PlayCanvas中的原始文件。作为PlayCanvas资源通道的输入数据，源资源创建了[目标资源][13].
+## Scene
+A Scene is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Scene may represent your entire game, or just a single level or part of your game.
 
-<h2 id="target_asset">目标资源</h2>
-目标资源是一种可以在实时运行时候被加载到游戏中的文件。在进入引擎时，将会被转换成合适的格式。目标资源通常为[源资源][14]被上传和通过资源管道输入而产生的产物。
+## Script
+A Script is an [Asset][2]. It is assigned to a Script [Component][5] on an [Entity][8]. Scripts are written in JavaScript. They have several predefined functions that can be overridden:
 
-<h2 id="transform">变换矩阵</h2>
-变换矩阵是一个表示一组线性变换的数学矩阵。特别在平移，旋转和尺寸方面。这表示一个变换矩阵可以被用来表现位置，方向以及在对象的大小在3D空间中。在PlayCanvas引擎中每个[实体][15]都有一个变换矩阵可以通过`getLocalTransform()`加载。
+* `initialize` - called once on instantiation
+* `postInitialize` - called once after all script `initialize` functions have been called
+* `update` - called every frame
+* `postUpdate` - called every frame after all script `update` functions have been called
+* `swap` - called when a script is 'hot reloaded' (due to a save event in the Code Editor)
 
-<h2 id="hdr">高清动态范围</h2>
-高清动态范围或HDR指出颜色信息在通常0-1范围之外。在标准范围内，0表示黑色1表示显示设备能表现的最亮的颜色。在真实环境中并没有这样的局限性，太阳可以是周围天空几倍的亮度。
+## Source Asset
+A source asset is the original file that has been uploaded into PlayCanvas. Source Assets are the input for the PlayCanvas asset pipeline which creates [Target Assets][19].
 
-[1]: #component
-[2]: #source_asset
-[3]: #target_asset
-[4]: #source_asset
-[5]: #target_asset
-[6]: #component
-[7]: #entity
-[8]: #engine
-[9]: /en/api/
-[10]: #explorer
-[11]: #scene
-[12]: #entity
-[13]: #target_asset
-[14]: #source_asset
-[15]: #entity
+## Target Asset
+A target asset is a file that can be loaded into your game at runtime. It will be in a format ready to use in the Engine. Target Assets are usually the product of a [Source Asset][18] being uploaded and imported through the asset pipeline.
+
+## Template
+A Template is an [Asset][2] that contains a piece of an [Entity][8] hierarchy. It has a root Entity and can have any number of children. A Template is a reusable Entity that you can instantiate dynamically at runtime or place multiple instances of it in your [Scene][16]. When you change the Template Asset all instances of the Template will also change.
+
+## Texture
+A Texture is an [Asset][2]. Typically, it contains image data that can be mapped onto 2D or 3D geometry. Textures can also be used to store other types of generic numeric data for processing on the GPU. PlayCanvas can load textures from standard web format images (JPG, PNG and GIF). The engine can also read super-compressed Basis textures that can be transcoded to natively supported GPU formats on load.
+
+## Transformation Matrix
+A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular: translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity][8] has a transformation matrix accessible via the `getLocalTransform()` method.
+
+[1]: #application
+[2]: #asset
+[3]: #asset-pipeline
+[4]: #attribute
+[5]: #component
+[7]: #dom
+[8]: #entity
+[9]: #framework
+[10]: #gizmo
+[11]: #high-dynamic-range
+[12]: #material
+[13]: #playcanvas-editor
+[14]: #playcanvas-engine
+[15]: #project
+[16]: #scene
+[17]: #script
+[18]: #source-asset
+[19]: #target-asset
+[20]: #template
+[20]: #texture
+[22]: #transformation-matrix
+
+[50]: /en/api/
 

@@ -1,7 +1,7 @@
 ---
 title: 組織の作成
 template: usermanual-page.tmpl.html
-position: 2
+position: 1
 ---
 
 組織の作成方法は複数あります。参加している組織は次のようにプロフィール上で名前の横に表示されます：

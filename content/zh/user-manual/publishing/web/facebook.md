@@ -1,7 +1,7 @@
 ---
 title: Facebook
 template: usermanual-page.tmpl.html
-position: 7
+position: 6
 ---
 
 [Facebook][1]是一个面向广大受众的很好的发布PlayCanvas游戏的地方。 从PlayCanvas发布游戏到Facebook是很直接了当的。
@@ -20,7 +20,7 @@ position: 7
 
 ![安全窗口][4]
 
-**5.** 在应用程序设置部分添加网页的URL ，它会看上去像是这样的: 'https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html'.。为了找到这个URL地址，直接使用你的`playcanv.as`游戏链接，比如`https://playcanv.as/p/JtL2iqIH` 并在 `e/` 之前添加  `p/` 字符，就像这样 `https://playcanv.as/e/p/JtL2iqIH`.。 使用这个网址会使你的浏览器重定向到你要发布的游戏地址。
+**5.** In the Application Settings section add the Website URL so that it looks like this: `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`. To find this URL take your `playcanv.as` game link e.g. `https://playcanv.as/p/JtL2iqIH/` and add an `e/` before the `p/` e.g. `https://playcanv.as/e/p/JtL2iqIH/`. This will redirect in your browser, use this URL for the Website URL
 
 ![网址][5]
 

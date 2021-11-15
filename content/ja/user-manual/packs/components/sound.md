@@ -1,7 +1,7 @@
 ---
-title: 音声
+title: Sound
 template: usermanual-page.tmpl.html
-position: 10
+position: 19
 ---
 
 サウンドコンポーネントは、オーディオサンプルのプレイバックを制御します。

@@ -1,7 +1,7 @@
 ---
 title: アセット
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査が行えます。
@@ -44,7 +44,17 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 検索ボックスを使用して、プロジェクト内のアセットのグローバル検索を実行することができます。ボックスに入力し始めると、Editorは一致する結果を動的にアセットパネルで表示します。
 
-検索ボックスはワイルドカードに対応しています。 例えば、*.はプロジェクト内のすべてのアセットを一覧表示します。
+**ID** - 特定のアセットを固有のIDで検索することができます。検索フィールドにIDを入力するだけで正確な一致が認識され、そのIDを持つひとつのアセットが表示されます。
+
+**RegExp** - 正規表現を使用して検索することもできます。検索フィールドの先頭に `*` を追加し、後ろにregexpクエリを入力してください。すべてのアセットを検索するには `*.`(任意の文字の)正規表現クエリを使用します。
+
+**Tags** - タグとその組み合わせから検索するには、大括弧`[ ]`にタグを入力します。単純なクエリ演算子：AND, ORはクエリを文字列の配列、または文字列を持つ他の配列として表現することによって可能になります。クエリのロジックは、 `AssetsRegistry`の[`findByTag`][7]と同じです。
+いくつかの例を示します：
+
+`[ level-1 ]` - `level-1`によってタグ付けされたすべてのアセットを返します。
+`[ level-1, level-2 ]` -  `level-1 OR level-2`によってタグ付けされたすべてのアセットを返します。
+`[ [ level-1, monster ] ]` - `level-1 AND monster`によってタグ付けされたすべてのアセットを返します。 角括弧の数に注意してください。
+`[ [ level-1, monster ], [ level-2, monster ] ]` -  `(level-1 AND monster) OR (level-2 AND monster)`によってタグ付けされたすべてのアセットを返します。
 
 ## ドラッグ＆ドロップ
 
@@ -57,6 +67,38 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 * ビューポートにモデルアセットをドラッグすると、モデルアセットが割り当てられたモデルコンポーネントを有する新しいエンティティが作成されます。ビューポートのカメラは自動的に新しく作成されたエンティティにズームします。
 * ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
 * ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
+
+## Copy and Paste between Projects
+
+To copy an asset or a selection of assets between projects, select the asset(s) and right-click to bring up the context menu to select 'Copy'. You can also use the hotkey Ctrl/Cmd + C instead if the context menu is not available due to being a read-only project.
+
+<img src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500"/>
+
+In the project that you want to copy the asset(s) to, right click in the assets panel and select 'Paste'. Ctrl/Cmd + V hotkey can be used instead.
+
+<img src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500"/>
+
+Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
+
+<img src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%"/>
+
+If you copy and paste just the model asset into a different project, those asset dependencies are copied too.
+
+<img src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%"/>
+
+By default, it is pasted as a flat hierarchy. If you want keep the folder structure, hold Shift when the context menu is opened and an option will appear called 'Paste (keep folders)'. This will attempt to keep the folder structure using the folder you are pasting into as the root folder.
+
+<img src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500"/>
+
+Will result in the following where the folder structure is preserved:
+
+<img src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%"/>
+
+We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
+
+<div class="alert alert-info">
+Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+</div>
 
 ## 参照の確認
 
@@ -80,4 +122,5 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 [4]: /user-manual/designer/settings
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
+[7]: /api/pc.AssetRegistry.html#findByTag
 

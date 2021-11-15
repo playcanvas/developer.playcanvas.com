@@ -1,10 +1,8 @@
 ---
 title: 加载屏
 template: usermanual-page.tmpl.html
-position: 9
+position: 8
 ---
-
-<div class="alert alert-info">自定义加载屏仅限 ORG 账户使用。</div>
 
 如果希望创建一个自定义的加载屏，你可以进入[场景设置][1] 然后在 *Loading Screen* 部分点击 **Create Default**。如果你已经有了一个合适的加载屏脚本，就可以把它拖放到加载屏上或者点击 **Select Existing** 了：
 

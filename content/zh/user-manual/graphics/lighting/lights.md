@@ -4,15 +4,19 @@ template: usermanual-page.tmpl.html
 position: 1
 ---
 
-在现实世界中，我们周边的坏境被许多光源照亮。太阳，路灯，电视屏幕等等。在PlayCanvas场景中，用户可以设置许多不同类型的光源模拟在现实生活中的真实光源。
+In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
+
+Descriptions of each light type and light source shape are below and examples of different combinations of light types and given in [table](#use-cases) below.
+
+## Light Types
 
 PlayCanvas拥有三种不同的光源：
 
-* 定向灯
-* 点光源
-* 聚光灯
+* Directional lights
+* Omni lights
+* Spot lights
 
-## 定向光
+### 定向光
 
 定向光是和太阳光及其相似的一种光源。因为太阳距离地球十分的遥远，阳光照射到地球表面相当于向一个方向照射。在PlayCanvas中，这个类型的光源被称为定向光。
 
@@ -26,27 +30,23 @@ PlayCanvas拥有三种不同的光源：
 
 ![Directional light][2]
 
-在性能方面引擎处理定向光是最快的。
+### Omni Lights
 
-## 点光源
+Omni lights are light sources that emit light in all directions. An example of this type of light source is a candle and other examples can be seen in the [table](#use-cases) below.
 
-点光源是从一个中心点向空间内所有范围都发射灯光的一种光源。这个类型的灯光例子是一种无罩灯泡或者蜡烛。
+When unselected, a omni light is represented by the following icon in the Editor's 3D view:
 
-当未被选中时，点光源在编辑器的3D视角中呈现如下图标：
-
-![Point light icon][3]
+![Omni light icon][3]
 
 在层级树和检查器中点击这个图标选择灯光。
 
-点光源如何照亮一个对象：
+An omni light lights an object like this:
 
-![Point light][4]
+![Omni light][4]
 
-点光源对比定向光需要更多时间处理，但是比聚光灯快。
+### Spot Lights
 
-## 聚光灯
-
-聚光灯，和点光源一样，光源来自空间中的一个点。然而，聚光灯的光源被一个圆锥型外罩所包裹。聚光灯的例子将会是一个火炬或者从灯塔发射的一束灯光。
+Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
 
 当未被选中时，聚光灯在编辑器3D视角中呈现如下图标：
 
@@ -58,7 +58,48 @@ PlayCanvas拥有三种不同的光源：
 
 ![Spot light][6]
 
-聚光灯是内存消耗最大的光源类型，所以需要谨慎使用。
+## Light Shapes
+
+There are four light source shapes:
+
+* Punctual
+* Rectangle
+* Disk
+* Sphere
+
+### Punctual
+
+The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct lighting and specular reflections.
+
+### Rectangle
+
+The rectangle light source shape is a flat 4 sided shape with a specified width and height.
+
+### Disk
+
+The disk light source shape is a round and flat light shape with a specified radius.
+
+### Sphere
+
+The sphere light source shape is ball shaped with a specified radius.
+
+![Shapes][7]
+
+## Use Cases
+
+Below is a table of some common use cases each light source shape and light type:
+
+| Shape/Type    | Punctual      | Rectangle               | Disk                  | Sphere              |
+| ------------- |---------------| ------------------------| ----------------------| --------------------|
+| Directional   | sun           | x                       | sun or moon           | sun or moon         |
+| Omni          | unshaded bulb | x                       | x                     | unshaded round bulb |
+| Spot          | torch         | tv screen               | shaded bulb           | shaded round bulb   |
+
+x = no common use cases - but still can be used for application/game specific lighting effects.
+
+##性能方面的考虑
+
+Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
 
 [1]: /images/user-manual/graphics/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lights/directional.jpg
@@ -66,4 +107,5 @@ PlayCanvas拥有三种不同的光源：
 [4]: /images/user-manual/graphics/lights/point.jpg
 [5]: /images/user-manual/graphics/lights/spot_icon.jpg
 [6]: /images/user-manual/graphics/lights/spot.jpg
+[7]: /images/user-manual/graphics/lights/shapes.jpg
 

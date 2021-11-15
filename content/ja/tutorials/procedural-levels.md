@@ -17,13 +17,13 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 var Generate = pc.createScript('generate');
 
 Generate.attributes.add('numTilesX', {
-type: 'number',
-default: 10
+    type: 'number',
+    default: 10
 });
 
 Generate.attributes.add('numTilesY', {
-type: 'number',
-default: 10
+    type: 'number',
+    default: 10
 });
 
 // initializeコードがエンティティ毎に一度呼ばれる

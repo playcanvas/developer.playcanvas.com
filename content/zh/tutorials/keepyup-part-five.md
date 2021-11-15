@@ -5,7 +5,7 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *你可以找到[完整项目在这里] [9]。 如果你没有看过[第1部分] [1]，[第2部分] [2]，[第3部分] [3]和[第4部分] [4]请先阅读它们。*
 
@@ -55,11 +55,11 @@ this.impactEffect.lookAt(this.entity.getPosition());
 
 在[第 6 部分][6]继续。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
-[6]: /tutorials/beginner/keepyup-part-six
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-three/
+[4]: /tutorials/keepyup-part-four/
+[6]: /tutorials/keepyup-part-six/
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
 [9]: https://playcanvas.com/project/406050

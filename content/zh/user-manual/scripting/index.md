@@ -1,7 +1,7 @@
 ---
 title: 脚本
 template: usermanual-page.tmpl.html
-position: 7
+position: 11
 ---
 
 用户可以通过脚本进行PlayCanvas应用交互。脚本使用“JavaScript”程序语言设计，应用在项目网页。

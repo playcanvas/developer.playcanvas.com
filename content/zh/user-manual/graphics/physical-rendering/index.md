@@ -1,7 +1,7 @@
 ---
 title: 基于物理渲染
 template: usermanual-page.tmpl.html
-position: 4
+position: 3
 ---
 
 ![星际骑士][1]

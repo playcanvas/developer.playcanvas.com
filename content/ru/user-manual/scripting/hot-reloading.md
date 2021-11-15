@@ -1,7 +1,7 @@
 ---
 title: Hot Reloading
 template: usermanual-page.tmpl.html
-position: 6
+position: 7
 ---
 
 When you are iterating on a complex project it can be frustrating to have to do a full page refresh every time you make a change to a script. Especially if it takes you a long time to get to the point where you are testing your code. That is where hot-swapping of code comes in.

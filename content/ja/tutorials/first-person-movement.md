@@ -5,11 +5,13 @@ tags: input, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/HzOzlZOC"></iframe>
+<iframe src="https://playcanv.as/p/HzOzlZOC/"></iframe>
 
 ここでは一人称視点でキャラクターを移動させるアプリケーションを紹介します。
 
-キャラクターにはrigidbody(剛体)コンポーネントとcollision(衝突判定)コンポーネントを、スクリプトに加えて設定する必要があるため、このコントローラのためのシーン設定は注意して行ってください。さらに、このスクリプトはカメラエンティティが存在しない場合、新たにカメラエンティティをPlayerの子として設定します。以下が[チュートリアルプロジェクト][1] の中の全シーン設定のコードですので、参考にしてください。
+The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player and manually set in the inspector. If no camera entity is present a new entity is created.
+
+See the full scene setup in the [Tutorial Project][1].
 
 下のスクリプトは次のような機能があります:
 
@@ -17,28 +19,37 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 * カメラエンティティをマウス入力に基づいて動かす
 * プレイヤーエンティティがシーン内を動き回れるよう、物理的な力を加える
 
-プレイヤーの速度を直接設定することはなく、物理的な力を与えることでプレイヤーを動かしていることに注意してください。最高速度を制限するために、線形で速度が減衰するようrigidbodyコンポーネントに設定がしてあります。
+Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
+
+On the rigidbody component, we also have the following values set in the Editor Inspector:
+* To limit the maximum velocity, we have linear damping applied that stops the player from sliding after the player has released input keys.
+* To stop the player from rolling over, we also reduced the angular Factor to 0 on all axes.
+
+![Rigidbody Attributes][2]
 
 ```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');
 
-// optional, assign a camera entity, otherwise one is created
 FirstPersonMovement.attributes.add('camera', {
-    type: 'entity'
+    type: 'entity',
+    description: 'Optional, assign a camera entity, otherwise one is created'
 });
 
 FirstPersonMovement.attributes.add('power', {
-    type: 'number'
+    type: 'number',
+    default: 2500,
+    description: 'Adjusts the speed of player movement'
 });
 
 FirstPersonMovement.attributes.add('lookSpeed', {
-    type: 'number'
+    type: 'number',
+    default: 0.25,
+    description: 'Adjusts the sensitivity of looking'
 });
 
 // initialize code called once per entity
 FirstPersonMovement.prototype.initialize = function() {
     this.force = new pc.Vec3();
-    this.camera = null;
     this.eulers = new pc.Vec3();
 
     var app = this.app;
@@ -132,4 +143,6 @@ FirstPersonMovement.prototype._createCamera = function () {
 ```
 
 [1]: https://playcanvas.com/project/405842
+[2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg
+[3]: https://developer.playcanvas.com/en/api/pc.RigidBodyComponent.html#applyForce
 

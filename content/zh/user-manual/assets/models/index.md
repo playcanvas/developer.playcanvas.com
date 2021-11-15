@@ -1,7 +1,7 @@
 ---
 title: 模型
 template: usermanual-page.tmpl.html
-position: 3
+position: 11
 ---
 
 用户可以通过从3D建模应用上传场景文件将3D模型和动画导入到PlayCanvas工作平台中。[3D建模应用][1]譬如[Blender][2],3D Studio Max or Maya。
@@ -17,9 +17,9 @@ PlayCanvas支持多种多样的类型，比如FBX，Collada以及obj。为了达
 * [Exporting Models][6]
 
 [1]: /user-manual/assets/models/building
-[2]: http://blender.org/
-[3]: /user-manual/glossary#source_asset
-[4]: /user-manual/glossary/#target_asset
+[2]: https://www.blender.org/
+[3]: /user-manual/glossary#source-asset
+[4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
 
