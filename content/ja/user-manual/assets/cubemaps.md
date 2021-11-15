@@ -1,5 +1,5 @@
 ---
-title: Cubemap
+title: キューブマップ
 template: usermanual-page.tmpl.html
 position: 7
 ---
@@ -50,9 +50,9 @@ Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面�
 
 キューブマップの面は次の通りです：
 
-* Square (the same resolution in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
-* All faces must be the same resolution
+*正方形(幅と高さが同じ解像度)
+*次元の2乗(1x1, 2x2, 4x4, 8x8, 16x16, 32x32など)
+*すべての面は同じ解像度でなければなりません
 
 Editorは面に自動的にテクスチャを割り当てる方法を見つけようとします。これは、キューブマップの面によく使用される命名規則を一致させることによって、最初の面をスロットにドラッグするときに実行されます。例えば：
 

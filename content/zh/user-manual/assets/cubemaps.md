@@ -1,5 +1,5 @@
 ---
-title: Cubemap
+title: 立方体贴图
 template: usermanual-page.tmpl.html
 position: 7
 ---
@@ -51,9 +51,9 @@ position: 7
 
 立方体贴图的面必须为:
 
-* Square (the same resolution in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
-* All faces must be the same resolution
+*方形(宽和高的分辨率相同)
+*宽为二的次幂(1x1,2x2,4x4,8x8,16x16,32x32等)
+*所有面都必须具有相同的分辨率
 
 为了辅助你，编辑器试图找出如何智能地自动分配纹理到面中。 当您尝试通过将一个面贴图拖动到面插槽并按照常用的立方体贴图面的命名约定匹配时执行此操作，例如：
 
