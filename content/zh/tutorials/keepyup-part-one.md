@@ -52,7 +52,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 #### 脚本组件
 
-The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behavior of the Entity. We'll go into more detail about the script on the football in Part 3.
+脚本组件允许您将JavaScript文件附加到实体。 每个实体将在javascript文件内创建一个脚本实例，以便您可以自定义实体的行为。 我们将在第3部分详细介绍足球上的脚本。
 
 ### 背景
 
@@ -64,7 +64,7 @@ The script component lets you attach javascript files to an Entity. Each entity 
 
 ### 音频
 
-The Audio Entity has more sound components attached to it. This Entity is for playing the music and the game over sound.
+音频实体中关联了更多的音频组件。这是一个用于播放背景音乐和游戏结束声效的实体。
 
 ### UI (用户界面)
 

@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## 用户界面
 
-The user interface of a game is the first thing you see and often it's the last thing people think about when making a game. But a good user interface will not only give your game a great style. It can actively affect the number of people who can play your game.
+游戏的用户界面是你第一个能在游戏中看到的东西，通常情况下它会是游戏开发者制作游戏时最后才会想到的部分。然而一个优秀的用户界面不仅仅可以给予你的游戏一个好的样式。它可以即刻地影响你的游戏的潜在玩家人数。
 
 User Interfaces are built in PlayCanvas using the [Screen Component][7] and the [Element Component][8]. There is more details in the [user manual][6]
 
@@ -73,7 +73,7 @@ First we have set up an attribute with a reference to the overlay element. The o
 
 When the Entity is enabled we display the full screen overlay by enabling it and then we start listening for the click event. When the Entity is disabled we stop listening for the event and we hide the overlay. When an event is triggered we fire a "ui:start" event which the main game script is listening for and that triggers a change of game state.
 
-We repeat similar behavior in the other two UI scripts where we listen for game events and fire ui events.
+我们在另外两个UI界面的脚本中重复近似的工作，即我们监听游戏事件并发送ui的事件。
 
 ## 游戏结束
 

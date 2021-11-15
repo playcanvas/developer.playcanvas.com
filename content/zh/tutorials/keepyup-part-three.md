@@ -243,7 +243,7 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
 详细地，该函数采用屏幕坐标 (x, y) ，并要求相机将它们转换成屏幕上该点下的3D空间中的位置。 为了做到这一点，我们需要提供一个深度，就像你想要的3D点距离屏幕有多远。 本案例中，我们需要得到一个与球的深度相同的3D点。
 
-We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparatively slow) operation and will cause your game or application to stutter if it happens often.
+我们还传入一个向量`Input.worldPos`。 在PlayCanvas应用程序中，避免创建新对象是很重要的，例如在更新循环中调用`new pc.Vec3()` 创建一个新向量。 你这样做的次数越多内存分配就越多(通过调用`new`)，浏览器就需要做更多的垃圾收集来清除你的分配。 垃圾收集是一个(比较慢)的操作，这将导致您的游戏或应用程序经常发生卡顿。
 
 在大多数情况下，PlayCanvas将提供一个传入向量或类似的选项，以便您可以预分配和重新使用对象。
 
@@ -259,7 +259,7 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 }
 ```
 
-Once we have the the 3D point where we've just tapped, we test to see if it is overlapping with the ball. You'll see here we are testing the radius squared against the distance between the tap and the ball squared. This prevents us doing a slow Square Root operation every time we test.
+一旦我们获得了我们刚刚点击的3D点，我们测试看它是否与球重叠。 你会看到在这里我们正在测试的敲击点与球的半径平方之间的距离。 这样可以避免我们每次测试时进行速度较慢的平方根操作。
 
 如果点击动作击中了球，我们调用球的代码中的 `tap(dx, dy)` 方法并传入我们的点击点到球之间的距离。 我们将在[第4部分] [3]中使用。
 

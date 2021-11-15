@@ -52,7 +52,7 @@ Keepy Upのシーンの階層構造には、7つのエンティティが最上�
 
 #### スクリプトコンポーネント
 
-The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behavior of the Entity. We'll go into more detail about the script on the football in Part 3.
+スクリプトコンポーネントを使うと、JavaScriptをエンティティにつけることができます。それぞれのエンティティは、エンティティの動作をカスタマイズできるよう、JavaScriptファイルの中のスクリプトのインスタンスを生成します。スクリプトの詳細についてはチュートリアルのその3で詳しく説明します。
 
 ### Backgroundエンティティ
 
@@ -64,7 +64,7 @@ Impact Effect Entityはボールがバウンスする時に再生されるパー
 
 ### Audioエンティティ
 
-The Audio Entity has more sound components attached to it. This Entity is for playing the music and the game over sound.
+Audioエンティティにはいくつかのサウンドコンポーネントがついています。このエンティティは音楽とゲームオーバー時の効果音を鳴らすためのエンティティです。
 
 ### UI (ユーザインタフェース)
 
