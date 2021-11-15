@@ -26,7 +26,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 ## 摄像机属性
 
-Like all Components, the Camera Component has a set of properties which alter its behavior.
+像所有组件一样，相机组件具有一组改变其行为的属性。
 
 ### `Enabled`启用
 
@@ -72,7 +72,7 @@ Like all Components, the Camera Component has a set of properties which alter it
 
 ### `视口`
 
-The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalized coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
+视口表示相机渲染缓冲区上的一个矩形区域。 有以下格式的4个值：左下X，左下Y，宽度，高度。 这些值是归一化坐标，其中渲染缓冲区，不管维度，被认为在X和Y中映射到0..1。 因此，为了限制摄像机在屏幕的左下象限渲染，将视口设置为0,0,0.5,0.5。
 
 [1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png

@@ -26,7 +26,7 @@ PlayCanvas エディタからシーンを実行するには、最低でも一つ
 
 ## カメラ・プロパティ
 
-Like all Components, the Camera Component has a set of properties which alter its behavior.
+他のコンポーネントのように、カメラコンポーネントにはどの挙動を操作するプロパティのセットがあります。
 
 ### Enabled（有効化）
 
@@ -72,7 +72,7 @@ Like all Components, the Camera Component has a set of properties which alter it
 
 ### Viewport（ビューポート）
 
-The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalized coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
+ビューポートはカメラのレンダリングバッファにある四角形のエリアです。 次の形式の4つの値があります：左下 X, 左下 Y, 横, 縦。これらの値は正規座標であり、レンダリングバッファは寸法に関わらず0..1でXとYにマップされます。つまり、カメラが画面の左下部分のみをレンダリングするよう制限したい場合は、ビューポートを0, 0, 0.5, 0.5に設定します。
 
 [1]: /user-manual/glossary#component
 [2]: /images/platform/field_of_view.png
