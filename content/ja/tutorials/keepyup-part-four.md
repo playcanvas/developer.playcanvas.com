@@ -167,7 +167,7 @@ Ball.prototype.reset = function () {
 
 まず、異なる値を持つ異なるエンティティに対して同じスクリプトを使用することができます。たとえば、色を設定するスクリプトの属性の場合、エディタでスクリプトの属性を変更するだけでエンティティの赤、青、緑のバージョンを作成できます。
 
-Second, you can quickly and easily tune the behavior of scripts. When you modify a script attribute (or indeed any property from the editor) the changes are made instantly to any instance of the game that you have launched from the editor. So for example in the case of the `ballMinimum` property we define here, you can launch the game and test what the value of `ballMinimum` should be to allow the ball to drop off the bottom of the screen without ever having to reload the game. Test the game, modify the value, test the game.
+二つ目は、迅速かつ容易にスクリプトの動作を調整することができるという理由です。スクリプト属性を変更すると(またはエディタから任意のプロパティ)エディタから起動しているゲームのインスタンスに対して即時に変更が加えられます。ここで定義する`ballMinimum`プロパティの場合、ゲームを起動して、再読み込みすることなくボールを画面の下部から落下させるために必要な`ballMinimum`の値をテストすることができます。ゲームをテストし、値を変更し、再びゲームをテストします。
 
 これは、「反復速度」と呼ばれます。より速くゲームを修正してテストするほど、速く開発することができます！
 

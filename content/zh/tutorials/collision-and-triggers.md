@@ -17,10 +17,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 一个*collision* 组建的最重要的属性是它的**Type**，这决决定了将会用到的触发器的形状。这里有四种选项:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+* **Box** 一个基本的立方体
+* **Sphere** 一个基本的球体
+* **Capsule** 丸形胶囊。 常用于角色上，因为它可以被定成又高又瘦的形状，并保留一个很好的圆底与单个的接触点。
+* **Mesh** 用任意网格体的形状作为触发器形状。
+ **Note** 使用网格碰撞有一些限制，特别是当它与* rigidbody *组件一起使用时，它们必须是** Static **的。
 
 ### 触发器
 
@@ -52,7 +53,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 <img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
+你可以在属性面板中看到它有 *render*， *collision* 和 *rigidbody* 组件。 我们已经增加了Entity和 *collision* 的box框属性，使它变得又大又漂亮。 我们还大大提高了摩擦和恢复性能。 这意味着表面比默认值稍微粗糙和凹凸。
 
 ## 设置触发器
 
@@ -128,7 +129,7 @@ Collider.prototype.onCollisionStart = function (result) {
 };
 ```
 
-In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now, every time an Entity with the collider script attached collides with another rigid body, it will play the hit sound.
+在```initialize```方法中，我们设置事件监听器，然后在事件处理程序中检查其他实体是否有一个** rigidbody **组件(这是为了避免在我们进入时播放声音 一个触发音量)，然后我们播放“命中”的声音效果。 所以现在每个具有碰撞脚本附件的实体与另一个刚体碰撞，它都将发出命中的声音。
 
 这就是在PlayCanvas中处理碰撞和触发的所有步骤。
 

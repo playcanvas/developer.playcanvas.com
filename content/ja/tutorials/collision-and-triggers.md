@@ -17,10 +17,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *コリジョン*コンポーネントで最も重要なプロパティは、その**タイプ**です。これは使用する当たり判定の形状を決定します。全部で四種類があります:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+* **Box** 箱型の形状です。
+* **Sphere** 球型の形状です。
+* **Capsule** 錠剤のような形をしたカプセル型の形状です。キャラクターのように背が高く細く、かつ尖っていなくて地面に一点で触れているようなものの当たり判定に使われます。
+* **Mesh** 任意形状のメッシュです。**注意** メッシュの当たり判定には制限があります。特に、*rigidbody*と組み合わせて使う場合は、そのrigidbodyは**Static**でなければなりません。
 
 ### トリガーボリューム
 
@@ -52,7 +52,7 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 <img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
+属性パネル内に*render*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
 
 ## トリガーの設定
 
@@ -128,7 +128,7 @@ Collider.prototype.onCollisionStart = function (result) {
 };
 ```
 
-In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now, every time an Entity with the collider script attached collides with another rigid body, it will play the hit sound.
+```initialize```メソッドでイベントリスナが設定されています。そしてイベントハンドラの中では、衝突した相手のエンティティが**rigidbody**コンポーネントを持っているかを確認し(これはトリガーボリュームに入った際に効果音を鳴らさないためです)、そして"hit"サウンドエフェクトを鳴らします。このようにして、colliderスクリプトを持つエンティティが他の剛体と衝突すると、毎回衝突の効果音を鳴らしています。
 
 これでPlayCanvasでの当たり判定とトリガーの扱い方の説明を終わります。
 
