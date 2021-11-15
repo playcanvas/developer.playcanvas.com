@@ -77,7 +77,7 @@
             display: inline-block;
 
             img {
-                padding: 24px 0px;
+                padding: 24px 0px 0px 0px;
                 padding-right: 8px;
                 vertical-align: middle;
             }
@@ -90,6 +90,21 @@
             }
         }
 
+        .social-menu {
+            .links {
+                float: right;
+                clear: both;
+                margin-top: 10px;
+                margin-right: 25px;
+                a {
+                    img {
+                        width: 35px;
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+
         nav {
             @include font-regular();
             margin: auto;
@@ -99,7 +114,7 @@
         ul {
             float: right;
             list-style-type: none;
-            margin: 22px 0px;
+            margin: 22px 0px 0px 0px;
             padding: 0;
 
             li {
@@ -796,6 +811,12 @@
                 }
             }
         }
+
+        .social-menu {
+            .links {
+                margin-right: 0px;
+            }
+        }
     }
 
 
@@ -914,6 +935,12 @@
                 > li {
                     margin: auto 30px;
                 }
+            }
+        }
+
+        .social-menu {
+            .links {
+                margin-right: 25px;
             }
         }
     }

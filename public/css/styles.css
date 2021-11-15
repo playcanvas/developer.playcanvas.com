@@ -157,7 +157,7 @@
     display: inline-block;
   }
   header .header-title img {
-    padding: 24px 0px;
+    padding: 24px 0px 0px 0px;
     padding-right: 8px;
     vertical-align: middle;
   }
@@ -169,6 +169,16 @@
     display: inline;
     vertical-align: middle;
   }
+  header .social-menu .links {
+    float: right;
+    clear: both;
+    margin-top: 10px;
+    margin-right: 25px;
+  }
+  header .social-menu .links a img {
+    width: 35px;
+    padding-left: 20px;
+  }
   header nav {
     font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -179,7 +189,7 @@
   header ul {
     float: right;
     list-style-type: none;
-    margin: 22px 0px;
+    margin: 22px 0px 0px 0px;
     padding: 0;
   }
   header ul li {
@@ -798,6 +808,9 @@
   header > nav > ul > li {
     margin: auto 5px;
   }
+  header .social-menu .links {
+    margin-right: 0px;
+  }
 
   .content-width {
     width: calc(100% - 60px);
@@ -889,6 +902,9 @@
 @media (min-width: 992px) {
   header > nav > ul > li {
     margin: auto 30px;
+  }
+  header .social-menu .links {
+    margin-right: 25px;
   }
 
   .content-width {
