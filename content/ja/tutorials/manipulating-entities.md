@@ -32,10 +32,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 エンティティの位置を取得するのは簡単です
 
 ```javascript
-// Get the entity's position relative to the coordinate system of the entity's parent
+// エンティティの親の座標系に関連したエンティティの位置を取得
 var lp = entity.getLocalPosition();
 
-// Get the entity's position in world space
+// ワールド空間でエンティティの位置を取得
 var wp = entity.getPosition();
 ```
 
@@ -44,10 +44,10 @@ var wp = entity.getPosition();
 エンティティの位置の設定は同じように簡単です。
 
 ```javascript
-// Set the entity's position relative to the coordinate system of the entity's parent
+// エンティティの親の座標系に関連させて、エンティティの位置を設定します
 entity.setLocalPosition(x, y, z);
 
-// Set the entity's position in world space
+// ワールド空間内にエンティティの位置を設定します
 entity.setPosition(x, y, z);
 ```
 
@@ -56,10 +56,10 @@ entity.setPosition(x, y, z);
 エンティティを移動するには、エンティティの位置を追加するか、translate と translateLocalのヘルパー関数を使用します。
 
 ```javascript
-// Translate the entity 1 unit down the positive x axis of world space
+// エンティティをワールド空間の正のX軸から1単位下に移す
 entity.translate(1, 0, 0);
 
-// Translate the entity 1 unit down the entity's local z axis
+// エンティティをエンティティのローカルz軸から1単位下に移す
 entity.translateLocal(0, 0, 1);
 ```
 
@@ -69,13 +69,13 @@ entity.translateLocal(0, 0, 1);
 
 絶対的な回転の設定は、 [Euler angles][1] または [quaternions][2]を使用して行うことができます。これら二つの数学的表現に対するWikipediaの説明は少し難しいですが、基本は簡単です。重要事項は次のとおりです：
 
-**Euler Angles**
+**オイラー角**
 
 *オイラー角は、座標系のX,Y, Z軸を中心として（その順番通り）度単位の3つの回転です。
 *座標系の軸を下に見ていくと、正のオイラー角は、その軸を中心とした反時計回りの回転となります。
 *オイラー角は、その効果を思い浮かべることができるので、理解しやすいです。
 
-**Quaternions**
+**4元数**
 
 *クォータニオンは4つの数字として格納され、3D空間内の任意の方向を表します。
 *これらは、直接設定することは困難ですが、オイラー角、回転マトリックスまたは軸角表現から設定することができます。
@@ -84,20 +84,20 @@ entity.translateLocal(0, 0, 1);
 エンティティをスクリプトする場合、オイラー角を使用してエンティティの回転を設定する可能性が高いです。 例えば：
 
 ```javascript
-// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
-// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
+// 親エンティティの座標系のX軸を中心に反時計回りに30度回転してから
+// Y軸を中心に45度回転して、最後に、Z軸を中心に60度回転します。
 entity.setLocalEulerAngles(30, 45, 60);
 
-// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
-// around the world space y axis and lastly 60 degrees around the world space z axis
+// ワールド空間のX軸を中心に反時計回りに30度回転してから
+// ワールド空間のY軸を中心に45度回転して、最後に、ワールド空間のZ軸を中心に60度回転します。
 entity.setEulerAngles(30, 45, 60);
 ```
-However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
+しかし、エンティティの回転を四元形式で設定したい場合、次の何れかの関数を利用できます：
 
 ```javascript
-// Create an identity rotation
+// アイデンティティ回転を作成
 var q = new pc.Quat();
-// Set the entity to have the same rotation as its parent - equivalent to
+// エンティティをその親と同じ回転を持つよう設定する。
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);
 
@@ -125,14 +125,14 @@ entity.rotateLocal(90, 0, 0);
 エンティティを拡大縮小するには次の関数を呼び出します：
 
 ```javascript
-// Scale the entity by a factor of 2 in the local Y axis
+// ローカルY軸でエンティティを2の倍数でスケール
 entity.setLocalScale(1, 2, 1);
 ```
 
 もう少し興味深い例を紹介します：
 
 ```javascript
-// Scale the entity using a sine function over time
+// 時間上でsine関数を使用してエンティティをスケール
 this.timer += deltaTime;
 var s = Math.sin(this.timer) + 1;
 entity.setLocalScale(s, s, s);

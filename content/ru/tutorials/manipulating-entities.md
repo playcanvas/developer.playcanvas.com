@@ -32,10 +32,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 Получение позиции сущности
 
 ```javascript
-// Get the entity's position relative to the coordinate system of the entity's parent
+// Получаем позицию сущности, относительно координатной системы родителя
 var lp = entity.getLocalPosition();
 
-// Get the entity's position in world space
+// Получаем позицию в мировом пространстве
 var wp = entity.getPosition();
 ```
 
@@ -44,10 +44,10 @@ var wp = entity.getPosition();
 Установка положения сущности.
 
 ```javascript
-// Set the entity's position relative to the coordinate system of the entity's parent
+// Устанавливаем позицию, относительного координатной системы родителя
 entity.setLocalPosition(x, y, z);
 
-// Set the entity's position in world space
+// Устанавливаем позицию в мировом пространтсве
 entity.setPosition(x, y, z);
 ```
 
@@ -56,10 +56,10 @@ entity.setPosition(x, y, z);
 Чтобы передвигать сущность, Вы можете прибавить к позиции значение, или используйте вспомогательные функции и 'translateLocal'.
 
 ```javascript
-// Translate the entity 1 unit down the positive x axis of world space
+// Переместить сущность на 1 единицу по оси X в мировом пространстве
 entity.translate(1, 0, 0);
 
-// Translate the entity 1 unit down the entity's local z axis
+// Сместить объект на 1 единицу по оси Z локально
 entity.translateLocal(0, 0, 1);
 ```
 
@@ -69,13 +69,13 @@ entity.translateLocal(0, 0, 1);
 
 Установка абсолютного значения поворота может быть достигнута использованием либо [углов Эйлера][1], либо [кватернионов][2]. Объяснения в Википедии этих двух математических представлений поворота немного трудны для понимания, однако основные пункты просты. Вот важные факты:
 
-**Euler Angles**
+**Углы Эйлера**
 
 * Углы Эйлера это набор трёх углов вокруг осей X, Y и Z в координатной системе в *определённом порядке*.
 * Если смотреть вниз оси координат , положительный угол Эйлера приведет к вращению против часовой стрелки вокруг этой оси.
 * Углы Эйлера легки в понимании, так как Вы можете визуализировать этот эффект в голове.
 
-**Quaternions**
+**Кватернионы**
 
 * Кватернионы хранятся как 4 числа и представляют любую ориентацию в 3D пространстве.
 * Их сложно задавать напрямую, но можно установить через углы Эйлера, матрицы поворота или через представление ось-угол.
@@ -84,25 +84,26 @@ entity.translateLocal(0, 0, 1);
 При программировании сущностей наиболее вероятно, что Вы захотите использовать поворот объекта используя углы Эйлера. Например:
 
 ```javascript
-// Rotate 30 degrees anticlockwise around the x axis of the parent entity's coordinate
-// system and then 45 degrees around its y axis and lastly 60 degrees around its z axis
+// Поворот на 30 градусов против часовой стрелки вокруг оси X родительской 
+// координатной системы, на 45 градусов вокруг её оси Y и, наконец, на 60 градусов 
+//вокруг оси Z
 entity.setLocalEulerAngles(30, 45, 60);
 
-// Rotate 30 degrees anticlockwise around the world space x axis and then 45 degrees
-// around the world space y axis and lastly 60 degrees around the world space z axis
+// Поворот на 30 градусов против часовой стрелки вокруг оси X мировой системы 
+// координат, на 45 градусов вокруг Y и наконец, 60 градусов вокруг мировой оси Z
 entity.setEulerAngles(30, 45, 60);
 ```
-However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
+Тем не менее, если Вы хотите, чтобы установить вращение сущности в форме кватернионов, можете использовать следующие функции:
 
 ```javascript
-// Create an identity rotation
+// Создаём переменную для поворота
 var q = new pc.Quat();
-// Set the entity to have the same rotation as its parent - equivalent to
+// Устанавливаем сущности тот же поворот, что и у родителя, эквивалент:
 // entity.setLocalEulerAngles(0, 0, 0)
 entity.setLocalRotation(q);
 
-// Set the entity to have no rotation with respect to the world space coordinate
-// system  - equivalent to entity.setEulerAngles(0, 0, 0)
+// Устанавливаем сущности отсутствие вращения в мировой координатной системе
+// эквивалент: entity.setEulerAngles(0, 0, 0)
 entity.setRotation(q);
 ```
 
@@ -125,7 +126,7 @@ entity.rotateLocal(90, 0, 0);
 Чтобы масштабировать сущность Вы просто должны вызвать следующую функцию:
 
 ```javascript
-// Scale the entity by a factor of 2 in the local Y axis
+// Масштабировать сущность по оси Y в 2 раза
 entity.setLocalScale(1, 2, 1);
 ```
 

@@ -46,7 +46,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowly modify the opacity so that it gets more transparent the more it points away from the camera.
+第二，如果光晕被标记为“单向的”(具有我们暴露的脚本属性)，则我们修改不透明度，可以使得光晕在面向远离相机时不可见。 事实上，我们是在慢速修改不透明度，在它越远离相机时使它变得更透明。
 
 ```javascript
 // If enabled, unidirectional means the glow fades off as it turns away from the camera

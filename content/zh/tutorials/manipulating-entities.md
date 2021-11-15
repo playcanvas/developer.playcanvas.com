@@ -69,13 +69,13 @@ entity.translateLocal(0, 0, 1);
 
 设置绝对旋转可以使用[欧拉角] [1]或[四元数] [2]。 维基百科对这两个数学表示的旋转的解释有点难以理解，但这个理念的基础很容易理解。 以下是重要的部分:
 
-**Euler Angles**
+**欧拉角**
 
 *欧拉角是以*坐标系*的X，Y和Z轴为中心的三个以度为单位的旋转量组成的
 *如果俯视坐标系轴，正欧拉角将导致围绕该轴的逆时针旋转
 *欧拉角很容易理解，因为你可以在脑中想象他们所产生的影响。
 
-**Quaternions**
+**四元数**
 
 *四元数被存储为4个数字，并能够表示3D空间中的任何方向
 *它们难以直接设置，但可以从欧拉角，旋转矩阵或轴角度转换成
@@ -92,7 +92,7 @@ entity.setLocalEulerAngles(30, 45, 60);
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ```
-However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
+另一方面，如果您想要以四元数形式设置实体的旋转，则可以使用以下函数：
 
 ```javascript
 // Create an identity rotation

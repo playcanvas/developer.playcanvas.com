@@ -131,7 +131,7 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 
 ## その他のアイディア？
 
-This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
+音楽の視覚化の方法を一部紹介させていただきました。音楽に合わせて3Dバーのスケーリングや色や明るさの調整を行うこともできます。SoundCloudにビジュアライザを繋げてユーザに選択させる方法もあります。可能性はたくさんあります。
 
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext

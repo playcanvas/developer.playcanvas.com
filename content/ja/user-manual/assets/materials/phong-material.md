@@ -1,5 +1,5 @@
 ---
-title: Phong Material
+title: Phong 素材
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -49,12 +49,13 @@ position: 2
 <img src="/images/user-manual/material-inspector/specular.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Specular Map</td><td>The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead.</td></tr>
-    <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
-    <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
-    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property.</td></tr>
-    <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny).</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Specular Map</td><td>ピクセル単位のスペキュラ色を指定するスペキュラマップ。スペキュラマップが設定されていない場合は、スペキュラ色が代わりに使用されます。</td></tr>
+    <tr><td>Tint</td><td>チェックすると、素材固有のスペキュラ色で素材のスペキュラマップを調節します。</td></tr>
+    <tr><td>Color</td><td>スペキュラマップが設定されていない場合、素材のスペキュラ色になります。スペキュラマップが設定されていてtintが有効になっている場合、この色が素材のスペキュラマップを調節します。</td></tr>
+    <tr><td>Gloss Map</td><td>ピクセル単位の光沢値を指定するグロスマップ。グロスマップは光沢プロパティで変調されます。</td></tr>
+    <tr><td>Glossiness</td><td>表面の平滑性を決定する値。小さい光沢値にすると、表面はより粗く、スペキュラハイライトはより広範になります。 大きな光沢値にすると、表面はより滑らかで、スペキュラハイライトはより濃縮されます(表面が磨かれて光っているように)。
+</td></tr>
 </table>
 
 ### Emissive（発光）
@@ -78,9 +79,9 @@ Opacityは、透明度のレベルを設定します。
 <img src="/images/user-manual/material-inspector/opacity.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Texture</td><td>The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property.</td></tr>
-    <tr><td>Intensity</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Texture</td><td>ピクセルごとの不透明度を指定する不透明度マップ。不透明度マップは、'Amount'プロパティによって変調されます。</td></tr>
+    <tr><td>Intensity</td><td>素材の不透明度。これは、0(完全に透明)から1(完全に不透明）の間の値である。デフォルトは1です。</td></tr>
 </table>
 
 ### Normal
@@ -90,9 +91,9 @@ Opacityは、透明度のレベルを設定します。
 <img src="/images/user-manual/material-inspector/normals.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1.</td></tr>
-    <tr><td>Texture</td><td>The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Bumpiness</td><td>適用される法線マップの強さ。0(法線マップは影響を与えません)と2(法線マップは大きく影響)の間の値です。デフォルトは1です。</td></tr>
+    <tr><td>Texture</td><td>ピクセルごとの表面の法線を指定する法線マップ。法線マップは 'Bumpiness' プロパティによって変調します。</td></tr>
 </table>
 
 ### Parallax
@@ -114,12 +115,13 @@ Opacityは、透明度のレベルを設定します。
 <img src="/images/user-manual/material-inspector/environment.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Sphere Map</td><td>A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive).</td></tr>
-    <tr><td>Cube Map</td><td>A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive).</td></tr>
-    <tr><td>Reflectivity</td><td>A factor to determine what portion of light is reflected from the material. This value defaults to 1 (full reflectivity).</td></tr>
-    <tr><td>Refraction</td><td>A factor to determine what portion of light passes through the material</td></tr>
-    <tr><td>Index of refraction</td><td>Determines the amount of distortion of light passing through the material.</td></tr>
+    <tr><th>プロパティ</th><th>説明</th></tr>
+    <tr><td>Sphere Map</td><td>環境反射を近似するスフィアマップテクスチャアセット。スフィアマップが設定されている場合、キューブマッププロパティが非表示になります(これらのプロパティは相互に独占的であるため)。</td></tr>
+    <tr><td>Cube Map</td><td>環境反射を近似するキューブマップテクスチャアセット(スフィアマップよりも正確)。キューブマップが設定されている場合、スフィアマッププロパティが非表示になります(これらのプロパティは相互に独占的であるため)。</td></tr>
+    <tr><td>Reflectivity</td><td>素材からライトのどの部分が
+反射されるかを決定する要因。この値のデフォルトは1(完全に反射)です。</td></tr>
+    <tr><td>Refraction</td><td>光のどの部分が素材を通過するかを決定する要因。</td></tr>
+    <tr><td>Index of refraction</td><td>素材を通過する光の歪みの量を決定。</td></tr>
 </table>
 
 ### ライトマップ

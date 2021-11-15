@@ -1,5 +1,5 @@
 ---
-title: Phong Material
+title: 地形材质
 template: usermanual-page.tmpl.html
 position: 2
 ---
@@ -49,12 +49,12 @@ position: 2
 <img src="/images/user-manual/material-inspector/specular.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Specular Map</td><td>The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead.</td></tr>
-    <tr><td>Tint</td><td>Check this to modulate the material's specular map with a material specific specular color.</td></tr>
-    <tr><td>Color</td><td>If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map.</td></tr>
-    <tr><td>Gloss Map</td><td>The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property.</td></tr>
-    <tr><td>Glossiness</td><td>A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny).</td></tr>
+    <tr><th>属性</th><th>描述</th></tr>
+    <tr><td>高光贴图</td><td>高光贴图会指定光斑上每个像素的色彩。若没有设置高光贴图，则高光颜色会被用于替代。</td></tr>
+    <tr><td>染色</td><td>勾选这个选项，材质的高光颜色会被混合到高光贴图上。</td></tr>
+    <tr><td>颜色</td><td>如果没有设置高光贴图，这个颜色就是材质的高光色彩。 若是高光贴图被设置了并且混色选项开启, 该颜色会被混合到高光贴图上。</td></tr>
+    <tr><td>光泽贴图</td><td>平滑度贴图会指定每个像素的平滑度。 平滑度贴图由材质的反光属性调制。</td></tr>
+    <tr><td>光泽度</td><td>一个用于确定面的平滑度的值。 反光度越小,这个平面的表面越粗糙并且高光范围越扩散。反光度越大,这个平面会约平滑并会表现出更亮的高光 (即这个平面会看上去更平滑更有光泽)。</td></tr>
 </table>
 
 ### 自发光
@@ -72,9 +72,9 @@ position: 2
 <img src="/images/user-manual/material-inspector/opacity.jpg" style="width: 300px;" />
 
 <table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Texture</td><td>The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property.</td></tr>
-    <tr><td>Intensity</td><td>The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1.</td></tr>
+    <tr><th>属性</th><th>描述</th></tr>
+    <tr><td>贴图</td><td>不透明度贴图记录了每个像素的不透明度值。 不透明贴图是由'数量'属性调制的。</td></tr>
+    <tr><td>强度</td><td>贴图的不透明强度。 这是一个在0 (完全透明) 到 1 (完全不透明的值。默认情况下它的值为 1。</td></tr>
 </table>
 
 ### 法线
@@ -83,11 +83,7 @@ position: 2
 
 <img src="/images/user-manual/material-inspector/normals.jpg" style="width: 300px;" />
 
-<table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Bumpiness</td><td>The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1.</td></tr>
-    <tr><td>Texture</td><td>The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property.</td></tr>
-</table>
+<table class="table table-striped table-bordered"> <tr><th>属性</th><th>描述</th></tr> <tr><td>Bumpiness</td><td>应用法线贴图的强度。这是一个在0 (法线贴图不产生影响) 到 2 (法线贴图的效果被放大)之间的值。默认情况下它的值为 1。</td></tr> <tr><td>Texture</td><td>法线贴图，指定每个像素的表面法线方向。 法线贴图是由“凹凸度”属性调制的。</td></tr> </table>
 
 ### 视觉差
 
@@ -103,14 +99,7 @@ position: 2
 
 <img src="/images/user-manual/material-inspector/environment.jpg" style="width: 300px;" />
 
-<table class="table table-striped table-bordered">
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Sphere Map</td><td>A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive).</td></tr>
-    <tr><td>Cube Map</td><td>A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive).</td></tr>
-    <tr><td>Reflectivity</td><td>A factor to determine what portion of light is reflected from the material. This value defaults to 1 (full reflectivity).</td></tr>
-    <tr><td>Refraction</td><td>A factor to determine what portion of light passes through the material</td></tr>
-    <tr><td>Index of refraction</td><td>Determines the amount of distortion of light passing through the material.</td></tr>
-</table>
+<table class="table table-striped table-bordered"> <tr><th>属性</th><th>描述</th></tr> <tr><td>Sphere Map</td><td>球形贴图资源近似于环境反射。如果设置了一个球星贴图, 那么环境中的立方体贴图将被隐藏 (因为这些性质是相互排斥的)。</td></tr> <tr><td>Cube Map</td><td>立方体贴图纹理资源近似于环境反射 (比使用球体地图用了更高的精度)。 若已经设置了一个立方体贴图， 球体映射属性将被隐藏 (因为这些性质是相互排斥的)。</td></tr> <tr><td>Reflectivity</td><td>一个用于决定裁制将反射光照的哪一部分的因素。 这个属性的默认值为1 (全反射)。</td></tr> <tr><td>Refraction</td><td>一个用于决定哪部分光会通过材质的因素。</td></tr> <tr><td>Index of refraction</td><td>确定通过该材料的光的失真量。</td></tr> </table>
 
 ### 光照贴图
 

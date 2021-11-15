@@ -9,7 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *Перемещайте мышь чтобы двигать куб вокруг, нажимайте кнопки мыши для смены цвета куба.
 
-Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistencies with handling mouse co-ordinates.
+Управление мышью в движке PlayCanvas предоставляется объектом  `pc.Mouse`. Объект мыши предоставляет простой интерфейс для обнаружения движения и нажатия кнопок. Он так же устраняет некоторые несоответствия между браузерами в обработке координат мыши.
 
 Взгляните на сцену 'Mouse Input' в [уроке][1]. Исходный код из файла mouse.js:
 
@@ -109,7 +109,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 * `pc.EVENT_MOUSEMOVE` - срабатывает на движение мыши
 * `pc.EVENT_MOUSEWHEEL` - срабатывает на прокрутку колеса мыши.
 
-Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistent across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
+Ввод с мыши в браузерах обычно реализуется прослушиванием [DOM][4] событий в элементах Вашей странице. Проблема в том, что в разных браузерах реализация событий немного различается и предоставляет разные данные. Для того, чтобы упростить код, который Вы пишете, движок PlayCanvas позволяет связать обработчик событий с обработчиком мыши вместо прямого использования DOM элемента. Движок поставляет объект `pc.MouseEvent`, когда срабатывает событие, совместимое со всеми браузерами. Если Вам нужно первоначальное событие DOM, оно доступно как свойство `event`  в `pc.MouseEvent`.
 
 ### Движение мыши
 

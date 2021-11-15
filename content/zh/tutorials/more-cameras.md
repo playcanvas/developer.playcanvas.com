@@ -9,7 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *点击屏幕以聚焦, 然后按`空格`来拉近或推远镜头, 按下`左箭头`和 `右箭头`来选择切换成左边或右边的摄像机*
 
-The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behavior yourself.
+[基础摄像机][1] 教程中引导了我们创建一个摄像机的实体并把它加入到你的场景中。对于一个单独的静态的摄像机而言,不需要配置任何脚本。但是对于一个动态的可互动或包含更高级的应用的相机，你可能要为其附加一个脚本组件，并为相机的行为进行编程。
 
 ## 更改属性
 
@@ -57,7 +57,7 @@ Zoom.prototype.update = function(dt) {
 
 通过 `app.keyboard.wasPressed()` 我们检测按键并在目标fov的值之间切换。
 
-With the final two nested `if(){}` constructs we gradually change the fov values to create the zoom in/ zoom out effect.
+使用最后两个嵌套的 `if(){}` 构造，我们逐渐改变fov值来创建放大/缩小效果。
 
 使用 `this.entity.camera.fov = fov`我们将`set()` 摄像机的fov属性设置为新的值。
 

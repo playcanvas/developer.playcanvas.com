@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
 
-This project uses the [`pc.Mesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
+このプロジェクトは[`pc.Mesh`][1] APIを使用して、手順に従い、ハイトマップテクスチャから転がる山腹の生成およびテクスチャ付けします。
 
 [チュートリアルプロジェクト[2]のEditorからお試しください。
 

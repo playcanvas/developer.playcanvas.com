@@ -9,7 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 *マウスを動かすとキューブが動きます。マウスのボタンを押すとキューブの色が変わります。*
 
-Mouse handling in the PlayCanvas engine is provided by the `pc.Mouse` object. The Mouse object provides a simple interface for detecting when the mouse is moved or when mouse buttons are pressed. It also removes some of the cross-browser inconsistencies with handling mouse co-ordinates.
+PlayCanvasエンジンでの処理マウスは`pc.Mouse`オブジェクトによって提供されます。マウスオブジェクトは、マウスが移動したときや、マウスボタンが押されたことを検出するための簡単なインターフェースを提供します。また、マウス座標の処理におけるクロスブラウザの不一致を一部改善します。
 
 [チュートリアルプロジェクト][1]をご確認ください。mouse.jsのコードは次の通りです：
 
@@ -109,7 +109,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 * `pc.EVENT_MOUSEMOVE` - マウスが動かされると発動
 * `pc.EVENT_MOUSEWHEEL` - マウスホイールが動かされると発動
 
-Mouse input in browsers is usually implemented by listening to [DOM][4] events on elements in your page's DOM. The problem is that different browsers implement the events slightly differently and supply different values. In order to simplify the code you write the PlayCanvas engine allows you to bind your event handlers to the PlayCanvas mouse handler instead of directly the DOM Element. The engine supplies a `pc.MouseEvent` object when the event fires which is consistent across all browsers. If you do need the original DOM event, it is available as the `event` property in `pc.MouseEvent`.
+ブラウザでのマウス入力は通常、ページのDOMの要素の[DOM][4]のイベントをリッスンすることで実装されます。問題は、異なるブラウザはそれぞれ少しずつ異なるイベントを実装し、別の値を提供していることです。書くコードをシンプルにするために、PlayCanvasエンジンはイベントハンドラを直接DOM要素にバインドするのではなく、PlayCanvasマウスハンドラにバインドすることを可能にします。エンジンはイベント発生時に、すべてのブラウザで一貫性がある`pc.MouseEvent`オブジェクトを提供します。オリジナルのDOMイベントが必要な場合は`pc.MouseEvent`の`event`プロパティとして利用可能です。
 
 ### マウスを動かす
 
