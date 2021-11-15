@@ -1,5 +1,5 @@
 ---
-title: Collision
+title: コリジョン
 template: usermanual-page.tmpl.html
 position: 6
 ---
@@ -41,7 +41,7 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 
 ## スクリプティングインターフェイス
 
-You can control a Collision component's properties using a [script component][8]. The Collision component's scripting interface is [here][9].
+Collisionコンポーネントのプロパティは[スクリプトコンポーネント][8]を使ってコントロールできます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][9]。
 
 [1]: /images/user-manual/scenes/components/component-collision-box.png
 [2]: /images/user-manual/scenes/components/component-collision-capsule.png

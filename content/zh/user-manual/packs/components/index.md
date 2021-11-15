@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Components define behaviors that are attached to Entities. An Entity is a container for Components.
+组件定义了附加了该组件的实体的实体行为。一个实体实际上是一个组件的容器。
 
 PlayCanvas 引擎定义了多种不同的组件。你可以通过 PlayCanvas 编辑器向实体添加组件。当选中一个实体时，组件的参数展示将会通过编辑器的属性编辑工具呈现出来。
 

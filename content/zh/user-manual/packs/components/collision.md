@@ -41,7 +41,7 @@ position: 6
 
 ## 脚本接口
 
-You can control a Collision component's properties using a [script component][8]. The Collision component's scripting interface is [here][9].
+可以通过[脚本组件][8]来修改碰撞体组件的属性。碰撞体组件的脚本接口在[这里][9]。
 
 [1]: /images/user-manual/scenes/components/component-collision-box.png
 [2]: /images/user-manual/scenes/components/component-collision-capsule.png

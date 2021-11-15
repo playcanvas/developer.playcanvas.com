@@ -4,7 +4,7 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Components define behaviors that are attached to Entities. An Entity is a container for Components.
+コンポーネントはエンティティに添付されている挙動を定義します。エンティティはコンポーネントのコンテナです。
 
 PlayCanvas Engineで定義されるコンポーネントは沢山あります。PlayCanvas Editorを使用してエンティティにコンポーネントを追加することができます。コンポーネントにより露出されるプロパティはエンティティ選択時にAttribute Editorでリスト表示されます。
 
