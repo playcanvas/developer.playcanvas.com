@@ -1,10 +1,10 @@
 ---
-title: Preloading and Streaming
+title: プレロード及びストリーミング
 template: usermanual-page.tmpl.html
 position: 3
 ---
 
-On the web, it's critical to get users into your application as soon as possible after they load the page. Presenting a loading bar and asking people to wait will lead to visitors leaving the page before your application has even got started. The PlayCanvas asset system implements a number of features to help you streamline the loading process and get your application running as fast as possible.
+ウェブ上では、ページをロードした後にできる限り早くアプリケーションを起動することが重要です。ローディングバーを表示して、ユーザを待たせてしまうとアプリケーションが始まる前にユーザが離れてしまう可能性があります。PlayCanvasアセットシステムに実装されている機能を使用すれば、ロードプロセスを合理化し速くアプリケーションを起動することができます。
 
 ## プレロード
 
@@ -26,9 +26,9 @@ On the web, it's critical to get users into your application as soon as possible
 
 特定のアセットがいつ読み込まれるかを確認するには、これらのルールに従ってください。
 
-* If `preload = true` the asset will be loaded before the application starts. Otherwise:
-* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
-* If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
+* `preload = true`の場合、アセットはアプリケーションが起動する前に読み込まれます。 若しくは：
+*シーン階層で有効になっているエンティティで有効になっているコンポーネントによってアセットが参照されていれば、アセットは読み込まれます。アセットは、エンティティまたはコンポーネントが有効になる際、またはアセットがコンポーネントに割り当てられる際に読み込まれます。エンティティがエディタで有効になっている場合、プレロードが完了し、アプリケーションが起動した直後に読み込まれます。コンポーネントは、コンポーネント自体が有効になっていて、その上の階層内のすべてのエンティティが有効になっている場合、有効と定義されます。
+*読み込まれている別のアセットによりアセットが参照されている場合、読み込まれます。例えば、モデルが読み込まれて素材を参照している場合、素材も読み込まれます。素材がテクスチャを参照している場合はテクスチャも読み込まれます。
 
 ## アセットタグ
 
