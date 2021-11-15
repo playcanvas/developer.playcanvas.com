@@ -1,5 +1,5 @@
 ---
-title: Lights
+title: ライト
 template: usermanual-page.tmpl.html
 position: 1
 ---
@@ -16,7 +16,7 @@ PlayCanvasには3種類のライトがあります：
 * Omni lights
 * Spot lights
 
-### Directional Lights
+### 指向性ライト
 
 最も身近な光源は太陽です。太陽は地球から非常に遠いので、地球の表面に当たる光は単一方向を向くよう近似することができます。PlayCanvasでは、このタイプのライトソースをDirectional（指向性）ライトと呼びます。
 

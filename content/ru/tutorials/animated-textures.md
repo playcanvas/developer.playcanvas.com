@@ -1,8 +1,8 @@
 ---
-title: Animated Textures
+title: Анимированные текстуры
 template: tutorial-page.tmpl.html
-tags: animation, textures
-thumb: http://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg
+tags: анимация, текстуры
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
 ---
 
 <iframe src="https://playcanv.as/p/BM93v05L/"></iframe>
@@ -35,7 +35,7 @@ ScrollingTexture.prototype.update = function(dt) {
 };
 ```
 
-We calculate the required offset into a temporary vector `tmp`. This is simply: `speed * timeStep`. Then we add this offset to the offset property for both the diffuse map and the normal map by modifying the `diffuseMapOffset` and `normalMapOffset` properties. These values are `pc.Vec2`s which shift the UV co-ordinates used to map the texture to the surface. If you are using other maps (e.g. emissive) you will also need to update these offset properties as well. Finally we call `material.update()` to propagate the changes into the shader.
+Мы рассчитываем необходимый отступ во временном векторе `tmp`. Это просто скорость умноженная на временный отступ. После этого, мы добавляем отступ к отступу карты нормалей и цвета изменяя параметры `diffuseMapOffset` и `normalMapOffset`. Эти значения являются `pc.Vec2`, которые и смещают UV-координаты, используемые на поверхности. Если вы используете другие карты (например, излучения), вам также надо обновлять и их отступ. Наконец, мы вызываем `material.update()` чтобы передать изменения в шейдер.
 
 Это простой метод модификации отступа материала и прокрутки текстуры. Этот метод имеет один существенный недостаток - если на вашей сцене несколько моделей использует один и тот же материал, они все будут подвержены смещению.
 

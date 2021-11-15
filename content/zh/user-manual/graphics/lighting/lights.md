@@ -16,7 +16,7 @@ PlayCanvas拥有三种不同的光源：
 * Omni lights
 * Spot lights
 
-### Directional Lights
+### 定向光
 
 定向光是和太阳光及其相似的一种光源。因为太阳距离地球十分的遥远，阳光照射到地球表面相当于向一个方向照射。在PlayCanvas中，这个类型的光源被称为定向光。
 
