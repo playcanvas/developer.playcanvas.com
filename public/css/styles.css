@@ -178,6 +178,13 @@
   header .social-menu .links a img {
     width: 35px;
     padding-left: 20px;
+    opacity: 0.75;
+  }
+  header .social-menu .links a img:hover {
+    opacity: 1;
+  }
+  header .social-menu .links:hover {
+    text-decoration: none;
   }
   header nav {
     font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
