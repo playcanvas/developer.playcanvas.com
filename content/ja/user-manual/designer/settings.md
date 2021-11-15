@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: 設定
 template: usermanual-page.tmpl.html
 position: 7
 ---
@@ -81,14 +81,14 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 #### トーンマッピング
 
-Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
+トーンマッピングは、ハイダイナミックレンジ(HDR)の色を低ダイナミックレンジ(例：目に見えるモニタ出力値に)に圧縮する方法です。トーンマッピングには2つのオプションがあります。
 
 * **Linear：** HDRの色を暴露によってスケーリング。
 * **Filmic：** より複雑な曲線。過度に明るいスポットを軟化させながら、暗い色合いを保つことができる。
 
-Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
+リニアトーンマッピングはデフォルトで有効になっていますが、それは単に(色*露出)です。明るさへの迅速な変更を行うために露出を調整することができます。入力はHDRの場合がありますので、Photoshopでの単純な明るさ調整とは異なります。 例：強度= 8のライトソースを使用している場合、暴露=0.5の後はまだかなり明るい(4)です。すべての目に見えるものは直線的にフェードアウトするだけではありません。
 
-Filmic tone mapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tone mapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tone mapping gives you nice abilities to get rid of such spots.
+Filmicトーンマッピングは、インテリア内の明るい光が壁/天井の近くに設置されたシーンや、明るい太陽に照らされたシーンなどのように、ハイコントラストな環境で使用するのに適しています。範囲外の非常に明るい値をより知覚的に現実的なもの(私たちの目やフィルムも同様にトーンマッピングを行っています。物理的にリニアな値は見えません)に再マップします。写真家の方に聞いたら分かりますが、非常に明るいスポットや真っ黒い点を写真に残すことは避けるべきです。Filmicトーンマッピングによって、そのようなスポットを取り除くことができます。
 
 #### 露出
 
@@ -138,7 +138,7 @@ Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、�
 
 #### フィルモード
 
-Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
+Fill（塗りつぶし）モードは、キャンバスのサイズ変更挙動を制御します。次のいずれかの値を設定することができます：
 
 * None - キャンバスは、解像度の幅と高さのサイズになります。
 * Keep aspect Ratio - キャンバスは正しいアスペクト比率を維持しながら、画面の大きさに拡大します。

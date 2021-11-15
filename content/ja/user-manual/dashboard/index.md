@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: ダッシュボード
 template: usermanual-page.tmpl.html
 position: 7
 ---

@@ -6,7 +6,7 @@ position: 16
 
 ![Texture Atlas][1]
 
-A Texture Atlas asset is a texture asset with additional data which describes 'Frames' inside the texture. Frames are regions defined in the texture as a rectangle with a 'pivot' point which sets the positional and rotational center of the frame.
+テクスチャアトラスアセットは、テクスチャ内の'フレーム'を記述する補足データをともなうテクスチャアセットです。フレームは、テクスチャ内で定義されたリージョンで'ピボット'ポイントのある長方形として表示されます。ピボットポイントはフレームの位置および回転の中心を設定します。
 
 テクスチャアトラスを作成するには、通常のテクスチャアセットで右クリックし、**Create Atlas**を選択します。またはデフォルトのアセット設定を変更し、 [Create Atlases][3]を有効化します。
 

@@ -1,5 +1,5 @@
 ---
-title: Loading Screen
+title: 画面の読み込み
 template: usermanual-page.tmpl.html
 position: 8
 ---

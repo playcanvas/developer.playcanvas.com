@@ -1,5 +1,5 @@
 ---
-title: Texture
+title: テクスチャー
 template: usermanual-page.tmpl.html
 position: 15
 ---
@@ -43,7 +43,7 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 ### テクスチャのフィルタリング
 
-Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbors. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
+テクスチャフィルタリングは、テクスチャマッピングされたピクセルの色がどのように計算されるかを制御できます。「Point」はフィルタリングを適用しません。「Linear」は、隣接しているものでテクセルの色を補間します。テクスチャが最小化され、より良い視覚的な結果が得られます(テクスチャが画面上でテクセルよりも少数のピクセルを有する)。
 
 ### 異方性
 

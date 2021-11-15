@@ -1,5 +1,5 @@
 ---
-title: Loading Screen
+title: 加载屏
 template: usermanual-page.tmpl.html
 position: 8
 ---

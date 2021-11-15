@@ -1,5 +1,5 @@
 ---
-title: Assets
+title: 资源
 template: usermanual-page.tmpl.html
 position: 5
 ---
@@ -18,7 +18,7 @@ position: 5
 
 在层级菜单中双击文件夹然后点击删除可以删除一个文件夹。同样也可以右键点击想删除的文件夹，然后在上下文菜单中选择 'Delete'。
 
-Folders can be drag and dropped into each other if you want to reorganize your folder structure.
+文件夹可以互相拖拽，可以使用这种方式重新组织目录结构。
 
 ## 创建和上传资源
 
@@ -60,7 +60,7 @@ Here are some examples:
 
 资源可以通过从主面板拖放到文件夹的树形结构来移动。资源支持多选，按 CTRL+A 可以选中当前目录下的全部资源。
 
-You can also drag Assets from the Asset Panel to highlighted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
+还可以通过拖放把资源从资源面板链接到[检查器][2]的高亮位置上。检查器上的高亮位置通常是组件的资源属性或者是资源类型的脚本属性。
 
 此外还可以拖动模型，材质以及 cubemap 资源直接到[视口][3] 中进行应用。
 

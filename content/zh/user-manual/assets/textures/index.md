@@ -1,5 +1,5 @@
 ---
-title: Texture
+title: 纹理
 template: usermanual-page.tmpl.html
 position: 15
 ---
@@ -43,7 +43,7 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 ### 纹理过滤
 
-Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbors. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
+纹理过滤给出了如何计算纹理映射像素的颜色的控制。“点”应用没有过滤而“线性”将插入相邻像素的颜色。这会产生更好的视觉效果,尤其是作为一个最小化了的纹理(纹理在屏幕上占用更少像素的纹素比)。
 
 ### 各向异性
 

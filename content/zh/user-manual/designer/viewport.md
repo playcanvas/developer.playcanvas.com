@@ -12,7 +12,7 @@ position: 4
 
 ## 摄影机
 
-Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras. The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perspective. Useful for fine-tuning positions.
+初始情况下，编辑器会采用 **透视** 摄影机。这种摄影机如同电影摄影机一般漂浮在场景之中。可以使用摄影机选择菜单选择场景中的不同摄影机。 **正交** 摄影机包含几个确定的机位：顶视图，底视图，前视图，后视图，左视图，右视图。通过这些机位可以无透视的观察场景，特别方便用来调整场景中的实体位置之类。
 
 在摄影机菜单中选择摄影机的同时，场景中的摄影机实体会被显示为高亮状态。可以利用这个特性精确的设置摄影机位置。
 

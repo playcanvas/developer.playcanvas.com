@@ -1,5 +1,5 @@
 ---
-title: Assets
+title: アセット
 template: usermanual-page.tmpl.html
 position: 5
 ---
@@ -18,7 +18,7 @@ position: 5
 
 フォルダを削除するには、階層でそれをダブルクリックしてdeleteを押します。また、削除したいフォルダを右クリックして、コンテキストメニューからDeleteを選択します。
 
-Folders can be drag and dropped into each other if you want to reorganize your folder structure.
+フォルダの構成を整理するにはフォルダを互いの中にドラッグすることができます。
 
 ## アセットの作成とアップロード
 
@@ -44,7 +44,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 検索ボックスを使用して、プロジェクト内のアセットのグローバル検索を実行することができます。ボックスに入力し始めると、Editorは一致する結果を動的にアセットパネルで表示します。
 
-**ID** - Specific asset can be found by its unique ID, by simply typing ID in search field it will recognize exact match and only show one asset with that ID.
+**ID** - 特定のアセットを固有のIDで検索することができます。検索フィールドにIDを入力するだけで正確な一致が認識され、そのIDを持つひとつのアセットが表示されます。
 
 **RegExp** - 正規表現を使用して検索することもできます。検索フィールドの先頭に `*` を追加し、後ろにregexpクエリを入力してください。すべてのアセットを検索するには `*.`(任意の文字の)正規表現クエリを使用します。
 
@@ -60,7 +60,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 アセットは、メインパネルからフォルダ階層内のフォルダにドラッグして別のフォルダに移動することができます。アセットは複数選択に対応しています。CTRL+ Aで、現在選択されているフォルダ内のすべてのアセットを選択します。
 
-You can also drag Assets from the Asset Panel to highlighted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
+アセットパネルから、[Inspector][2]でハイライトされたスロットにアセットをドラッグすることもできます。Inspectorのスロットは、コンポーネントのアセット属性またはアセットタイプのスクリプト属性のどちらかになります。
 
 モデル、素材、キューブマップなどのアセットを直接 [ビューポート][3]にドラッグすることもできます。
 

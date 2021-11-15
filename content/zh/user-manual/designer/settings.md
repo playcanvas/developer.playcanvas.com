@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: 设置
 template: usermanual-page.tmpl.html
 position: 7
 ---
@@ -81,14 +81,14 @@ have enabled Localization for Text Elements and when you use Localized Assets.
 
 #### 色调映射
 
-Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
+色调映射是一种压缩高动态范围色彩 (HDR) 至有限动态范围 (显示设备可呈现值) 的处理过程。有两种色调映射的方案。
 
 * **线性：** 根据曝光值缩放 HDR 色彩。
 * **胶片：** 更复杂的曲线，在高光位置更加柔和，同时暗部的细节也有更多保留。
 
-Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
+线性色调映射为默认开启，它计算简单 (颜色*曝光)。可以设置曝光值来快速的调节画面明暗。注意这个参数与 Photoshop 的 brightness 并不是一回事，请考虑做为输入的亮度数据可能是大动态范围的。譬如如果我们有一个灯光的强度设定为 8，那么当曝光系数设定为 0.5 时，其亮度仍然达到 4。因此并不会因为调整它而使得画面直接变暗。
 
-Filmic tone mapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tone mapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tone mapping gives you nice abilities to get rid of such spots.
+胶片色调映射通常适用于高对比度的环境中，譬如场景由阳光照明或室内场景中有明亮的灯光靠近墙壁或天花板这样的环境。它将会非常流畅的将超高亮度的部分调整到更加感官真实的状态 (我们的眼睛以及银盐胶片也会有色调映射，我们肉眼无法看到物理线性的亮度)。同时，每个摄影师都会告诉你：没人喜欢刺眼的亮斑和死黑的暗部出现在照片里。胶片色调映射能帮你把这些细节去掉。
 
 #### 曝光
 
@@ -138,7 +138,7 @@ Filmic tone mapping is a good choice in high-contrast environments, like scenes 
 
 #### 填充模式
 
-Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
+填充模式将会控制游戏画面随着画布变化的方式，有如下的几种模式：
 
 * None - 画布将会和分辨率的宽高设定保持一致。
 * Keep aspect Ratio - 画布将会扩展填充窗口以保持正确的宽高比。
