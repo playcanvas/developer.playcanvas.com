@@ -1,7 +1,7 @@
 ---
 title: HTML
 template: usermanual-page.tmpl.html
-position: 10
+position: 9
 ---
 
 HTMLアセットにはHTMLコードが含まれます。コードは、完成されたHTMLページ、または一部のHTMLとすることができます。新規のHTMLアセットはEditorから作成することができます。また、.css拡張子を持つファイルをアップロードして作成することも可能です。

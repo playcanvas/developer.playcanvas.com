@@ -30,7 +30,7 @@ var entity = new pc.Entity();
 entity.addComponent("camera");
 
 // Add a new Model Component and add it to the Entity.
-entity.addComponent("model", {
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -66,7 +66,7 @@ var entity = new pc.Entity();
 entity.addComponent("camera");
 
 // Create a new Model Component and add it to the Entity.
-entity.addComponent("model", {
+entity.addComponent("render", {
     type: 'box',
 });
 
@@ -133,12 +133,12 @@ EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
     // Add a new Model Component and add it to the Entity.
-    entity.addComponent("model", {
+    entity.addComponent("render", {
         type: 'box'
     });
 
     // set material
-    entity.model.material = this.material.resource;
+    entity.render.material = this.material.resource;
 
     // Move to a random position
     entity.setLocalPosition(

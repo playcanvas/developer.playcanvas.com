@@ -1,7 +1,7 @@
 ---
 title: Facebook Playable Ad
 template: usermanual-page.tmpl.html
-position: 3
+position: 1
 ---
 
 PlayCanvas supports the [Facebook Playable Ad][1] formats and requirements via an [official external tool on GitHub][2].

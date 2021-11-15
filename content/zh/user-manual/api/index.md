@@ -1,22 +1,32 @@
 ---
 title: REST API
 template: usermanual-page.tmpl.html
-position: 12
+position: 22
 ---
 
 <div class="alert alert-info">
     REST API 目前正在测试阶段。 这意味着我们可能会改变某些端口和API的响应。
 </div>
 
-PlayCanvas 为开发者们提供了[组织账户][1]与REST API。 您可以将这个 API 应用到通过编程方式访问您的项目，发表或下载应用等等。这里是一个关于使用REST API的[教程] [2]。
-
 ## 授权
 
-你只能通过https来使用这个 REST API 。 为了访问REST API 你需要一个授权。 您可以通过您组织的帐户页面生成一个访问令牌。在 API 令牌面板中点击创建令牌。 为你的标志起个名字并点击按钮创建你的新令牌。 会有一个显示你的新访问令牌的窗口弹出。
+You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
+
+![Account Tab][4]
+
+In the API Tokens section click on Generate Token.
+
+![Generate Token][1]
+
+Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
 
 请务必注意了，因为一旦你关闭此窗口，你将无法再看到令牌。 此令牌是私密的，所以不要向你的团队以外的任何人分享 (例如，不要把它张贴在论坛上)。
 
+![New Token][2]
+
 从你的帐户页面，您还可以撤销已生成的所有或指定的某一个令牌。你也可以编辑修改一个令牌的名字。
+
+![Remove Token][3]
 
 当你试图调用API时，你必须设置你的HTTP请求中的'授权'头为这个值:
 
@@ -35,6 +45,26 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 ## 参数
 
 API中有很多途径接收复数的参数。对于GET请求，如果参数不是URL的一部分，你可以把它作为HTTP查询字符串参数进行放行。对于POST，PUT和DELETE请求，不包含在URL内的参数应编码为包含内容为“应用/ JSON”的JSON格式字段。
+
+There are several common parameters that are used in each endpoint:
+
+### project_id
+
+This can be found in the URL on the project overview page.
+
+![Project ID][6]
+
+### scenes
+
+When opening a scene in the Editor, the scene id is in the URL.
+
+![Scene ID][7]
+
+### branch_id
+
+This is found in the [version control][5] panel and can be selected and copied.
+
+![Branch ID][8]
 
 ## 响应格式
 
@@ -108,6 +138,12 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 如果超过了速率限制，你会得到一个`429请求过多`的状态代码。你将不得不等待当前窗口复位以继续发出请求。
 
-[1]: /user-manual/organizations
-[2]: https://www.codecademy.com/courses/javascript-beginner-en-EID4t/0/1?curriculum_id=5122e3cbb5827b93e2000865
+[1]: /images/user-manual/api/generate-token.png
+[2]: /images/user-manual/api/new-token.png
+[3]: /images/user-manual/api/remove-token.png
+[4]: /images/user-manual/api/account-tab.png
+[5]: user-manual/version-control/
+[6]: /images/user-manual/api/project-id.png
+[7]: /images/user-manual/api/scene-id.png
+[8]: /images/user-manual/api/branch-id.png
 

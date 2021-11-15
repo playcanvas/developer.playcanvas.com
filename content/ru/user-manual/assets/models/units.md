@@ -20,6 +20,6 @@ To check or set working units in Maya, open the Preferences dialog:
 
 ![Maya units][2]
 
-[1]: /images/user-manual/assets/models/max-units.png
-[2]: /images/user-manual/assets/models/maya-units.png
+[1]: /images/user-manual/assets/models/units/max-units.png
+[2]: /images/user-manual/assets/models/units/maya-units.png
 

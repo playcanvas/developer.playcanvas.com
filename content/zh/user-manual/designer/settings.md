@@ -1,7 +1,7 @@
 ---
 title: 设置
 template: usermanual-page.tmpl.html
-position: 8
+position: 7
 ---
 
 设置面板可以调整项目的各项参数。点击编辑器左下角的齿轮按钮打开(在[工具栏][1]上)
@@ -35,6 +35,11 @@ position: 8
 #### 本地服务器
 
 这里指向的是代码的加载 URL，如果使用 Launch Local，游戏将从这里加载代码。
+
+#### Locale
+
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## 物理设置
 
@@ -151,6 +156,10 @@ position: 8
 
 在绘制 WebGL 内容时启用缓冲区保护，以方便和 HTML 元素混合呈现。
 
+## Layers
+
+Manage rendering layers and their render order. You can find out more about layers [here][10].
+
 ## 音频
 
 #### 使用传统音频
@@ -167,9 +176,29 @@ position: 8
 
 允许创建的最大光照图尺寸。
 
+## Batch Groups
+
+Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+
 ## 加载屏幕 (仅用于 ORG 用户)
 
 在这里你可以设定脚本创建独立的加载屏幕。点击 *Create Default* 创建新的加载屏。更相信的信息请阅读加载屏幕的相关文档。[点这里][6]
+
+## External Scripts
+
+Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+
+## Input
+
+Here you can enable or disable various input devices for your application.
+
+## Localization
+
+Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+
+You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
+
+Read more about localization [here][11].
 
 ## 资源任务
 
@@ -180,6 +209,10 @@ position: 8
 #### 纹理POT (二次方)
 
 当贴图上传后导入为最接近的2的整倍数尺寸。
+
+#### Create Atlases
+
+When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
 
 #### 搜索相关资源
 
@@ -205,6 +238,11 @@ position: 8
 [2]: /images/user-manual/cog.jpg
 [3]: /user-manual/assets/cubemaps
 [4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
+[11]: /user-manual/user-interface/localization
 

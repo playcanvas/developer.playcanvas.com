@@ -1,7 +1,7 @@
 ---
 title: Particle System
 template: usermanual-page.tmpl.html
-position: 7
+position: 12
 ---
 
 The Particle System component specifies a particle emitter in 3D space.

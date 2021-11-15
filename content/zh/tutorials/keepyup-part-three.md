@@ -5,7 +5,7 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
 *你可以在这里找到[完整项目] [4]。 如果你还没有看过[第1部分] [1]和[第2部分] [2]请先阅读它们。*
 
@@ -263,8 +263,8 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 
 如果点击动作击中了球，我们调用球的代码中的 `tap(dx, dy)` 方法并传入我们的点击点到球之间的距离。 我们将在[第4部分] [3]中使用。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
 

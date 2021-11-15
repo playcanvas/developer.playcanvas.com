@@ -36,7 +36,7 @@ Each open asset has a corresponding tab in the tab view. You can rearrange tabs 
 
 ### Text Editor
 
-Here you can actually edit the contents of your assets. The editor uses a modified version of [CodeMirror][4].
+Here you can actually edit the contents of your assets. The editor uses [Monaco][4] which is the same text editor library used by Visual Studio Code.
 
 In addition, the editor supports auto-complete. When you type a letter or hit Ctrl+Space you will see a list of auto-complete suggestions.
 
@@ -56,9 +56,15 @@ The code editor is collaborative which means that every user who has the documen
 
 If you have unsaved changes the Revert option in the File menu will cancel these changes and restore the document back to the saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
 
+## Command Palette
+
+All the text editing features can be found using the command palette via Ctrl + Shift + P (Windows) or Cmd + Shift + P (Mac).
+
+![][command-palette]
+
 ## Hot Keys
 
-The editor supports various shortcuts to help you when editing code. You can find all those options in the Menu. The most common can be found below:
+The editor supports various shortcuts to help you when editing code. You can find all those options in the Menu or the command palette. The most common can be found below:
 
 <table class="table table-striped table-bordered">
 <tr>
@@ -92,7 +98,7 @@ The editor supports various shortcuts to help you when editing code. You can fin
     <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
 </tr>
 <tr>
-    <td>Block Comment line or selection</td><td>Alt + Cmd + /</td><td>Shift + Ctrl + /</td>
+    <td>Block Comment line or selection</td><td>Alt + Shift + A</td><td>Alt + Shift + A</td>
 </tr>
 <tr>
     <td>Indent line or selection</td><td>Tab</td><td>Tab</td>
@@ -101,24 +107,18 @@ The editor supports various shortcuts to help you when editing code. You can fin
     <td>Un-Indent line or selection</td><td>Shift + Tab</td><td>Shift + Tab</td>
 </tr>
 <tr>
-    <td>Auto indent line or selection</td><td>Ctrl + I</td><td>Cmd + I</td>
+    <td>Jump to declaration</td><td>Ctrl + F12</td><td>Cmd + F12</td>
 </tr>
 <tr>
-    <td>Jump to declaration</td><td>Alt + .</td><td>Alt + .</td>
-</tr>
-<tr>
-    <td>Show autocomplete</td><td>Ctrl + Space</td><td>Ctrl + Space</td>
-</tr>
-<tr>
-    <td>Show documentation</td><td>Ctrl + O</td><td>Cmd + O</td>
+    <td>Show autocomplete</td><td>Ctrl + Space or Ctrl + I</td><td>Ctrl + Space or Cmd + I</td>
 </tr>
 </table>
 
 ## Searching
 
-You can search for text in a file by pressing Ctrl + F. This will open up the Find panel on the bottom:
+You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac). This will open up the Find panel on the top right:
 
-![Find Panel][5]
+![][monaco-find-panel]
 
 Enter your search term here and press Enter. You can navigate between matches by continuously hitting Enter (or Shift + Enter to go backwards).
 
@@ -156,21 +156,20 @@ Highlighting a word in the code editor will highlight all other matches in the f
 
 ### Multiple Selection Editing
 
-Holding down Ctrl (PC) or Cmd (Mac) and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
+Holding down Alt and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
 
-![Multple Selection Editing][8]
+![Multiple Selection Editing][8]
 
 ### Rectangular Selection
 
-Holding down Alt and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
+Holding down Alt + Shift and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
 
 ![Rectangular Selection][9]
 
 [1]: /images/user-manual/scripting/code-editor-toolbar.png
 [2]: /user-manual/designer/
 [3]: /images/user-manual/scripting/code-editor.png
-[4]: https://codemirror.net/
-[5]: /images/user-manual/scripting/find-panel.png
+[4]: https://github.com/Microsoft/monaco-editor
 [6]: /images/user-manual/scripting/find-in-files-results.png
 [7]: /images/user-manual/scripting/code-editor-quick-searching.gif
 [8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
@@ -180,3 +179,5 @@ Holding down Alt and dragging left mouse button will create a rectangular select
 [12]: /images/user-manual/scripting/preferences.png
 [13]: http://jshint.com/
 [14]: http://jshint.com/docs/
+[command-palette]: /images/user-manual/scripting/command-palette.png
+[monaco-find-panel]: /images/user-manual/scripting/monaco-find-panel.png

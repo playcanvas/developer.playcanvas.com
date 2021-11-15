@@ -5,9 +5,9 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
-*你可以在这里找到[完整项目] [6]。 如果你没有看过[第1部分] [1]，[第2部分] [2]和[第3部分] [3]请先阅读它们。
+*你可以在这里找到[完整项目][6]。 如果你没有看过[第1部分][1]，[第2部分][2]和[第3部分][3]请先阅读它们。
 
 ## 足球
 
@@ -224,18 +224,18 @@ this.entity.setLocalPosition(p);
 
 #### 响应输入
 
-你可能还记得在[第2部分] [2]中的`input.js'脚本检查了一个输入是否已经击中了球，如果击中了，则调用`tap()` 方法。 上面定义的`tap()` 方法直接改变了球的速度和角速度。 我们定义了几个我们的脚本属性`this.speedMult`和`this.angMult`来复制接收新的速度和角速度，以符合我们对游戏效果的期望。
+你可能还记得在[第2部分][2]中的`input.js'脚本检查了一个输入是否已经击中了球，如果击中了，则调用`tap()` 方法。 上面定义的`tap()` 方法直接改变了球的速度和角速度。 我们定义了几个我们的脚本属性`this.speedMult`和`this.angMult`来复制接收新的速度和角速度，以符合我们对游戏效果的期望。
 
-我们还使用tap方法在撞击点触发颗粒尘云并播放声音效果。 我们将在[第4部分] [4]中讨论粒子和声音。
+我们还使用tap方法在撞击点触发颗粒尘云并播放声音效果。 我们将在[第5部分][4]中讨论粒子和声音。
 
 ## 小结
 
 球的脚本运行了一些简单的物理模拟效果以使球在重力影响下下坠并响应点击的效果。它还监听游戏事件从而知道何时暂停和重置。 最后，它还与一些其他系统进行交互以显示粒子效果和播放声音。
 
-[1]: /tutorials/beginner/keepyup-part-one
-[2]: /tutorials/beginner/keepyup-part-two
-[3]: /tutorials/beginner/keepyup-part-three
-[4]: /tutorials/beginner/keepyup-part-four
+[1]: /tutorials/keepyup-part-one/
+[2]: /tutorials/keepyup-part-two/
+[3]: /tutorials/keepyup-part-three/
+[4]: /tutorials/keepyup-part-five/
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
 

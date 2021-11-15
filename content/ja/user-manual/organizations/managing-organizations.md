@@ -1,7 +1,7 @@
 ---
 title: 組織の管理
 template: usermanual-page.tmpl.html
-position: 3
+position: 2
 ---
 
 ### 許可
@@ -16,9 +16,13 @@ position: 3
 
 ### Seat
 
+To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
+
 ![seat][2]
 
 プライベートプロジェクトへのアクセス権を持っていてseatを使用することができるユーザを確認することができます。ここからユーザを削除してすべてのプロジェクトから取り除き、seatを空けることができます。
+
+The Owner of the organization does not need to occupy a seat if they are not actively working on any projects. It is recommended to have at least one user who will occupy a seat, to be an Admin of the Organization so that they can create new projects and manage existing projects.
 
 ![アップグレード][3]
 

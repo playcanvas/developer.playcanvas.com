@@ -1,7 +1,7 @@
 ---
 title: Keyboard Shortcuts
 template: usermanual-page.tmpl.html
-position: 12
+position: 11
 ---
 
 ## Camera Controls
@@ -41,8 +41,17 @@ The Editor's Camera is controlled with the Mouse and Keyboard
     <tr>
         <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
     </tr>
+
+</table>
+
+## General Modifier Keys
+
+<table class="head-column">
     <tr>
-        <td>Toggle Editor's Snap setting while operating gizmo</td><td>Shift click and drag</td>
+        <td>Toggle Editor's Snap setting while operating gizmo</td><td>Hold Shift while dragging the Entity</td>
+    </tr>
+    <tr>
+        <td>Do not preserve the Entity's transform when reparenting</td><td>Hold Ctrl when you reparent the Entity</td>
     </tr>
 </table>
 
@@ -68,6 +77,12 @@ Note that on a Mac, CMD should be used instead of CTRL.
     </tr>
     <tr>
         <td>Paste Entity</td><td>Paste an entity under the currently selected entity</td><td>CTRL + V</td>
+    </tr>
+    <tr>
+        <td>Copy Asset</td><td>Copy selected asset or assets in assets panel</td><td>CTRL + C</td>
+    </tr>
+    <tr>
+        <td>Paste Entity</td><td>In the assets panel, paste previously selected asset or assets</td><td>CTRL + V</td>
     </tr>
     <tr>
         <td>Delete</td><td>Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>

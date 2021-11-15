@@ -1,7 +1,7 @@
 ---
 title: Layout Group
 template: usermanual-page.tmpl.html
-position: 8
+position: 9
 ---
 
 The LayoutGroup component enables an entity to specify the size and position of child Element Components.

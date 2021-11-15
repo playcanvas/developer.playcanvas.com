@@ -16,11 +16,21 @@ position: 2
 
 ## 规划层级树
 
-实体在层级树中的陈列顺序是非重要的。场景是层级结构的，实体可以是另外一个实体的 *子节点* 也可以是其他节点的 *父节点*，子节点的实体将会继承父级的变换矩阵。如果移动或者旋转父级实体，所有的子节点实体都会跟着移动和旋转。这个功能非常方便简化复数实体的整体操作问题，不过同时需要注意，在一个层次非常深的节点有时会很难看出来父级是否有产生过偏移。
+The order in which Entities are listed in the tree view is important. As the Scene is a hierarchy, Entities can be *children* of another Entity -- their *parent* -- and the transform matrix of a parent Entity is applied to all of its children. If you move or rotate a parent Entity, all children will move or rotate underneath the parent. This is very useful for simplifying the manipulation of many Entities.
 
-用户可以通过拖拽的方式来对层级树的结构进行修改。简单地选择和拖动层级树中的任何实体，用户可以快速的对实体进行重新排序或者重新定义根目录。
+The structure of the Hierarchy can be edited via drag and drop. Simply select and drag any Entity in the Hierarchy. In this way, you can quickly reorder or reparent Entities. When you reparent an Entity in the Editor its transform will be preserved so you won't see the Entity move or rotate after you change its parent. If you do not want that behavior hold Ctrl (or Cmd on Mac).
 
 ## 搜索层级树
 
 靠近层级树面板顶部的部分是搜索框，在这里用户可以动态过滤实体树的内容。这个搜索是模糊的，这就意味着它将匹配通过所有字符串来匹配相似的名称而不是完全相同的。
+
+## Duplicating Entities
+
+You can duplicate Entities by selecting them and hitting Ctrl+D (or Cmd+D on Mac) or by right clicking and selecting Duplicate. A copy of each Entity will be created right next to its original.
+
+## Copying / Pasting Entities
+
+If you wish to paste Entities under a new parent you can select them and hit Ctrl+C (or Cmd+C on Mac) to copy them, then select the new parent and then Ctrl+V (or Cmd+V on Mac) to paste them under the selected parent. You can also use the Copy and Paste options when you right click on the selected Entities.
+
+You can also copy and paste Entities between different Scenes or even different Projects. Just follow the same steps to copy Entities and then go to the desired Scene, select the desired parent and paste the Entities. The Editor will try to match any Asset references on the pasted Entities by path in the new Project. For example, if you are copy-pasting an Entity with a Model component that references a Model Asset called `mymodel.fbx` then when you paste the Entity in the other Project, the Editor will try to find an Asset named `mymodel.fbx` in the same folder. If a matching Asset is not found it will be left as missing so that you can fix it manually.
 

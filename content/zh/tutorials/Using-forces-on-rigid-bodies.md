@@ -5,7 +5,7 @@ tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
+<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
 *使用按键来表示冲量，使用WASD键应用扭矩并旋转立方体。 按住F可应用恒定的向上力以消除重力效应
 *按R重置立方体*
@@ -25,7 +25,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ```
 
-这里，当用户通过 [`applyForce(x, y, z)`][1]按下F键时，沿着全局y轴的力被施加到被访问的实体。 也可以设置力矢量的施加点。 [参见文档] [2]了解更多信息。
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
 
 ### 冲量
 
@@ -35,7 +35,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][3]给出速度的瞬时变化。
+立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][2]给出速度的瞬时变化。
 
 ### 扭矩
 
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][4]施加到实体上。
+[扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][3]施加到实体上。
 
 ### 扭矩冲量
 
@@ -53,19 +53,19 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][5]来表示。 这在上面的演示的代码中没有被使用。
+角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][4]来表示。 这在上面的演示的代码中没有被使用。
 
 ## 移动动态刚体
 
 为了移动刚体，使用上述方法应用线性力和旋转力(扭矩)。 通常你应该尽量避免直接修改刚体的位置或速度，因为这将会变得不真实，它可能导致奇怪的效果，特别是当物体之间产生碰撞时。
 
-然而，如果你需要，你可以通过直接赋给`entity.rigidbody.linear Velocity`或`entity.rigidbody.angularVelocity`一个新的'[pc.Vec3] [6]'值来更新速度。
+然而，如果你需要，你可以通过直接赋给`entity.rigidbody.linear Velocity`或`entity.rigidbody.angularVelocity`一个新的'[pc.Vec3][5]'值来更新速度。
 
-有关刚体类型的更多信息，请参见[碰撞体API页面] [8]，[pc命名空间页] [9]，[fps控制器教程] [11]和[碰撞教程] [10]。
+有关刚体类型的更多信息，请参见[碰撞体API页面][6]，[pc命名空间页][7]，[fps控制器教程][8]和[碰撞教程][9]。
 
 ## 常用设置
 
-我们使用聚光灯，立方体(具有模型，刚体，碰撞和脚本组件的实体)和地板(具有模型，刚体和碰撞组件)来设置基本场景。 立方体的刚体设置为动态，而地板的刚体设置为静态。 我们为每个盒子创建了一些材料，并改变漫反射的颜色只是为了更容易在眼睛。 我们还在SpotLight和DynamicBody实体上激活了“投射阴影”选项。 这个PlayCanvas应用程序'usesForces'的完整的场景和代码可以在[这里] [12]找到。
+我们使用聚光灯，立方体(具有模型，刚体，碰撞和脚本组件的实体)和地板(具有模型，刚体和碰撞组件)来设置基本场景。 立方体的刚体设置为动态，而地板的刚体设置为静态。 我们为每个盒子创建了一些材料，并改变漫反射的颜色只是为了更容易在眼睛。 我们还在SpotLight和DynamicBody实体上激活了“投射阴影”选项。 这个PlayCanvas应用程序'usesForces'的完整的场景和代码可以在[这里][10]找到。
 
 ## 限制和控制
 
@@ -118,6 +118,10 @@ var DynamicBody = pc.createScript('dynamicBody');
 DynamicBody.prototype.initialize = function() {
     this.torque = 7;
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 DynamicBody.prototype.onKeyDown = function (event) {
@@ -179,16 +183,13 @@ DynamicBody.prototype.reset = function () {
 ```
 
 [1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[7]: /tutorials/beginner/manipulating-entities/
-[6]: /engine/api/stable/symbols/pc.Vec3.html
-[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
-[9]: /engine/api/stable/symbols/pc.html
-[10]: /tutorials/intermediate/collision-and-triggers/
-[11]: /tutorials/advanced/fps-controller/
-[12]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
+[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[5]: /engine/api/stable/symbols/pc.Vec3.html
+[6]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[7]: /engine/api/stable/symbols/pc.html
+[8]: /tutorials/first-person-movement/
+[9]: /tutorials/collision-and-triggers/
+[10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
 

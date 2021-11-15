@@ -58,7 +58,7 @@ this.entity.sound.slot('speech').clearExternalNodes();
 
 [1]: https://playcanvas.com/editor/scene/440346
 [2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
+[3]: /tutorials/basic-audio/
 [4]: /user-manual/packs/components/script
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode

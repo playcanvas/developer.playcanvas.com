@@ -1,7 +1,7 @@
 ---
 title: Editor API
 template: usermanual-page.tmpl.html
-position: 11
+position: 10
 ---
 
 <div class="alert alert-info">

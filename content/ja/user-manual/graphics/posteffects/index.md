@@ -4,29 +4,30 @@ template: usermanual-page.tmpl.html
 position: 6
 ---
 
-PlayCanvasには後処理エフェクトのビルドイン対応があります。後処理エフェクトはレンダリングされた最終的な画像を修正して、アプリケーションのビジュアルに変更を加えます。
+PlayCanvasは、プロジェクトへの追加のポストプロセスエフェクトをサポートしています。ポストエフェクトは最終レンダリングされた画像を修正して、アプリケーションにより効果的なビジュアルを追加する簡単な方法を提供します。
 
-後処理エフェクトはエフェクトに追加でき、[Camera][1] コンポーネントが添付された外部スクリプトして実装されています。カメラにビルドインの後処理エフェクトを簡単に追加するには、階層にあるカメラエフェクトを右クリックして次のリストから任意の後処理エフェクトを選択します：
+ポストエフェクトをスクリプトとして実装しました。このスクリプトは[カメラ][1]コンポーネントがアタッチされているエンティティに追加できます。カメラにポストエフェクトを追加するには、以下の手順を参照してください。
 
-<img alt="Adding built-in post effects" src="/images/platform/builtin_posteffects.jpg"></img>
+1. Visit the [Asset Store][2] and add the required scripts to your project. The post effects available in the Asset Store include:
+  * [Bloom][3]
+  * [Brightness-Contrast][4]
+  * [Hue-Saturation][5]
+  * [FXAA][6]
+  * [Sepia][7]
+  * [Vignette][8]
+2. Add a [Script][9] component to the Entity representing your camera.
+3. Assign the desired post effect scripts to the camera entity's Script component. Note that the order in which the post effect script are listed in the Script component determine the order in which they are applied.
 
-自身で後処理エフェクトを作成することもできます。[GitHub][2]のビルドインエフェクトにいくつかの例があります。
-
-ビルドインのポストエフェクトは次を含む：
-
-* [Bloom][3]
-* [明るさ-コントラスト][4]
-* [色相-彩度][5]
-* [FXAA][6]
-* [セピア][7]
-* [ビネット][8]
+自分のポストエフェクトを作成することもできます。上記のポストエフェクト（および追加のエフェクト）のソースは [GitHub][10]にあります。
 
 [1]: /user-manual/packs/components/camera
-[2]: https://github.com/playcanvas/engine/tree/master/extras/posteffects
+[2]: https://store.playcanvas.com/?tags=script
 [3]: /user-manual/graphics/posteffects/bloom
 [4]: /user-manual/graphics/posteffects/brightness_contrast
 [5]: /user-manual/graphics/posteffects/hue_saturation
 [6]: /user-manual/graphics/posteffects/fxaa
 [7]: /user-manual/graphics/posteffects/sepia
 [8]: /user-manual/graphics/posteffects/vignette
+[9]: /user-manual/packs/components/script
+[10]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 

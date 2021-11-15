@@ -51,9 +51,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 在本教程中，我们需要设置的第一个实体是形成地面的绿色块。
 
-![地面实体][6]
+<img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-你可以在属性面板中看到它有* model *，* collision *和* rigidbody *组件。 我们已经增加了Entity和* collision * 的box框属性，使它变得又大又漂亮。 我们还大大提高了摩擦和恢复性能。 这意味着表面比默认值稍微粗糙和凹凸。
+你可以在属性面板中看到它有 *render*， *collision* 和 *rigidbody* 组件。 我们已经增加了Entity和 *collision* 的box框属性，使它变得又大又漂亮。 我们还大大提高了摩擦和恢复性能。 这意味着表面比默认值稍微粗糙和凹凸。
 
 ## 设置触发器
 
@@ -98,7 +98,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 我们将地面设置为** 静态**的，现在我们将创建下落的对象，并确保它们是**动态**的。
 
-![立方体实体][9]
+<img src="/images/tutorials/collision/box_setup.png" width="300px">
 
 这是立方体的*刚体*组件和*碰撞体*组件，球体和胶囊体的设置方式是同样的。
 
@@ -137,8 +137,8 @@ Collider.prototype.onCollisionStart = function (result) {
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
+[6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
-[9]: /images/tutorials/collision/box_setup.jpg
+[9]: /images/tutorials/collision/box_setup.png
 

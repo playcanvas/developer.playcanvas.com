@@ -5,7 +5,8 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+
 *你可以在 [这里][3]找到完整的工程*
 
 在本系列教程中，我们将向您展示如何使用PlayCanvas完成一个完整的游戏。 我们做了一个简单的“保持住”的游戏，其玩法是点击或选择足球以使它保持在空中。
@@ -72,6 +73,6 @@ UI实体是其他几个屏幕实体的父级，每个屏幕均用于游戏的用
 [第2部分] [2]涵盖主要游戏脚本。
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[2]: /tutorials/keepyup-part-two/
 [3]: https://playcanvas.com/project/406050
 

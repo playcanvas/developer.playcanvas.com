@@ -1,7 +1,7 @@
 ---
-title: 通信
+title: 交流
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 事件是一种有效的方法来进行脚本和脚本之间的通信为了响应某些事件而不用检查每个帧。
@@ -99,5 +99,5 @@ Display.prototype.initialize = function () {
 
 更多的消息请点击 [API Reference][1]
 
-[1]: http://developer.playcanvas.com/en/api/pc.events.html
+[1]: http://developer.playcanvas.com/en/api/pc.EventHandler.html
 

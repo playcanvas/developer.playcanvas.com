@@ -14,7 +14,7 @@ PlayCanvasにはシャドウマッピングという影を生成するアルゴ�
 
 ![指向性ライト][5]
 
-デフォルトで、PlayCanvasではシャドウキャスティングが無効になっています。自身で明示的に有効にする必要があります。影を有効にするのは簡単です。まず第一に、影を落としたいシーンを決めます。Inspectorパネルで階層内のライトを選択してそのプロパティを編集します。すべてのライトには、「Cast Shadows」のオプションがあります。シーンのグラフィックオブジェクトの影を生成するには、このオプションにチェックを入れます。
+PlayCanvasでは、デフォルトで影の生成は無効になっています。ですので、明示的に影生成を有効にする必要があります。影生成を有効にするのは簡単です。まず、シーンの中のどの光源で影を生成したいかを指定します。光源をツリー表示から選択し、インスペクタパネルからプロパティを編集してください。光源には'Cast Shadows'オプションがありますので、それをチェックすればその光源はシーンに存在するオブジェクトに対して影を生成するようになります。
 
 ![モデルコンポーネント][6]
 
@@ -52,7 +52,7 @@ shadow distance（投影距離）はビューポイントから指向性ライ�
 
 柔らかい影はGPU上でシャドウマップのサンプルを複数実行することによって達成できます。使用されるアルゴリズムは、Percentage Closest Filtering または PCFと呼ばれています。このアルゴリズムは、9つのローカライズされたサンプル(3×3の行列)をシャドウマップから読み出します。硬い影の場合は1つのみです。
 
-影のサンプリングタイプは、素材ごとに指定されるので、オプションはOtherセクションのMaterial Editor内にあります。
+The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
 
 ## パフォーマンスの考慮事項
 
@@ -66,7 +66,7 @@ shadow distance（投影距離）はビューポイントから指向性ライ�
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
-[4]: /user-manual/graphics/lighting/lightmaps
+[4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
 

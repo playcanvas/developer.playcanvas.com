@@ -1,7 +1,7 @@
 ---
 title: Профиль
 template: usermanual-page.tmpl.html
-position: 2
+position: 5
 ---
 
 Страница вашего профиля — это публичное место для демонстрации созданных вами игр.

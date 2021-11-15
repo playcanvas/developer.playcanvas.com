@@ -1,7 +1,7 @@
 ---
 title: User Interface
 template: usermanual-page.tmpl.html
-position: 9
+position: 18
 ---
 
 User Interfaces present a unique challenge for graphical applications. There are several options for building User Interfaces in PlayCanvas. 

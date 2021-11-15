@@ -1,7 +1,7 @@
 ---
 title: Camera
 template: usermanual-page.tmpl.html
-position: 3
+position: 5
 ---
 
 The Camera component enables an entity to render a scene from a certain viewpoint.
@@ -35,7 +35,7 @@ The Camera component can be enabled or disabled using the toggle in the top righ
     <tr><td>Near Clip</td><td>The distance in camera space from the camera's eye point to the near clip plane.</td></tr>
     <tr><td>Far Clip</td><td>The distance in camera space from the camera's eye point to the far clip plane.</td></tr>
     <tr><td>Priority</td><td>A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first.</td></tr>
-    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalised coordinates (0 to 1) in the following format:
+    <tr><td>Viewport</td><td>A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalized coordinates (0 to 1) in the following format:
         <ul>
             <li>x: The lower left x coordinate</li>
             <li>y: The lower left y coordinate</li>

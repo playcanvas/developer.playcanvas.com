@@ -1,7 +1,7 @@
 ---
 title: 通信
 template: usermanual-page.tmpl.html
-position: 6
+position: 5
 ---
 
 イベントは、毎フレーム確認をせずに、発生する出来事に応答するためにスクリプト間で通信する便利な方法です。
@@ -99,5 +99,5 @@ Display.prototype.initialize = function () {
 
 イベントの詳細は [API Reference][1]からご確認ください
 
-[1]: http://developer.playcanvas.com/en/api/pc.events.html
+[1]: http://developer.playcanvas.com/en/api/pc.EventHandler.html
 

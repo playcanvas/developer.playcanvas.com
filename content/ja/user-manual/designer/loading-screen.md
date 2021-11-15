@@ -1,10 +1,8 @@
 ---
 title: 画面の読み込み
 template: usermanual-page.tmpl.html
-position: 9
+position: 8
 ---
-
-<div class="alert alert-info">カスタムの読み込み画面はORGアカウントの機能です</div>
 
 カスタムの読み込み画面を作成するには [Scene Settings][1] に進み、*Loading Screen* セクションの**Create Default**をクリックします。すでに有効な読み込み画面のスクリプトがある場合は、読み込み画面パネルにドラッグ＆ドロップするか、**Select Existing**をクリックします：
 

@@ -1,7 +1,7 @@
 ---
 title: Facebook
 template: usermanual-page.tmpl.html
-position: 7
+position: 6
 ---
 
 [Facebook][1]から大勢のユーザにPlayCanvasゲームを公開することができます。PlayCanvasからFacebookにゲームを公開するのは簡単です。
@@ -20,7 +20,7 @@ position: 7
 
 ![Secure Canvas][4]
 
-**5.** Application Settingsセクションで、次のようにウェブサイトのURLを追加します：`https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html` 。このURLを見つけるには、`playcanv.as` ゲームのリンク（例：`https://playcanv.as/p/JtL2iqIH`  ）`p/`の前に`e/`を追加します（例：`https://playcanv.as/e/p/JtL2iqIH` ）。ブラウザでリダイレクトします。ウェブサイトのURLにこのURLを使用します。
+**5.** Application Settingsセクションで、次のようにウェブサイトのURLを追加します：`https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`。このURLを見つけるには、`playcanv.as` ゲームのリンク（例：`https://playcanv.as/p/JtL2iqIH` ）の`p/`の前に`e/`を追加します（例：`https://playcanv.as/e/p/JtL2iqIH` ）。ブラウザでリダイレクトします。ウェブサイトのURLにこのURLを使用してください。
 
 ![ウェブサイトURL][5]
 

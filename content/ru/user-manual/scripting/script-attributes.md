@@ -21,6 +21,17 @@ MyScript.attributes.add('speed', {
 
 In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
 
+If you need an array of attributes set `array: true` like so:
+
+```javascript
+var MyScript = pc.createScript('myScript');
+
+MyScript.attributes.add('names', {
+    type: 'string',
+    array: true
+});
+```
+
 ## Getting Attributes into Editor
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
@@ -39,7 +50,7 @@ MyScript.prototype.update = function (dt) {
 
 ## Updating attributes
 
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behaviour when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
 
 ```javascript
 MyScript.prototype.initialize = function () {
@@ -73,7 +84,7 @@ The Entity type lets your reference another entity in your hierarchy. A great wa
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `array` property to let you specify a list of assets, and the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
 The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
 
@@ -108,7 +119,7 @@ The curve attribute is used to express a value that changes over a time period. 
 
 ### Enumeration attribute
 
-The last special attribute property is the Enumeration
+The Enumeration attribute allows you to choose one of the available options:
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -122,6 +133,45 @@ MyScript.attributes.add('value', {
 ```
 
 Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
+
+### JSON attribute
+
+The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+
+```javascript
+MyScript.attributes.add('gameConfig', {
+    type: 'json',
+    schema: [{
+        name: 'numEnemies',
+        type: 'number',
+        default: 10
+    }, {
+        name: 'enemyModels',
+        type: 'asset',
+        assetType: 'model',
+        array: true
+    }, {
+        name: 'godMode',
+        type: 'boolean',
+        default: false
+    }]
+});
+```
+
+You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+
+Here's an example of accessing the above attributes in a script:
+```javascript
+MyScript.prototype.update = function (dt) {
+    if (this.gameConfig.godMode) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
+        }
+    }
+};
+```
+
+*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
 

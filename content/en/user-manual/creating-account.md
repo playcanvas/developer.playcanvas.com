@@ -1,7 +1,7 @@
 ---
 title: Creating an Account
 template: usermanual-page.tmpl.html
-position: 1.7
+position: 3
 ---
 
 ## Sign Up

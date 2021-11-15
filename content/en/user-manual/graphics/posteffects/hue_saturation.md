@@ -1,7 +1,7 @@
 ---
 title: Hue-Saturation Effect
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 The hue-saturation effect allows you to modify the hue and saturation of the rendered image.

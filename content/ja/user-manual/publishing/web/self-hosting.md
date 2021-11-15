@@ -19,7 +19,7 @@ position: 2
         <title>My Great Game</title>
     </head>
     <body>
-        <iframe src="http://playcanv.as/p/PROJECT_ID"></iframe>
+        <iframe src="https://playcanv.as/p/PROJECT_ID/"></iframe>
     </body>
 </html>
 ```
@@ -29,41 +29,40 @@ position: 2
 PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
 * プロジェクトに移行してEditorを開く。
-* 左ツールバーの<span class="pc-icon" style="font-size">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
+* 左側のツールバーの<span class="pc-icon" style="font-size">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
-![Publish ボタン][5]
+![Publish Button][3]
 
 * Publishing Dialogが開きます。
 
 ![パブリッシュ][4]
 
-* DOWNLOAD ボタンをクリック
+* DOWNLOAD .ZIP ボタンをクリック
 
-![ダウンロード][6]
+![Download][5]
 
-* エクスポートのための名前を入力します。これが作成される.zipファイルの名前になります。
-* リストから、エクスポートに含むシーンを選択。Primary Scene(アクティブなバナーアイコンがあるシーン)がアプリ起動時に最初に読み込まれるシーンになります。
-* 下部の'WEB DOWNLOAD'ボタンをクリックしてデプロイ可能なプロジェクトのzipファイルをダウンロードします。
-* zipファイルのコンテンツを任意の場所に展開します。`index.html`でゲームが読み込まれます。
+* Enter a name for your export. This will be the name of the .zip file that will be created for you.
+* Select the Scenes you want to include in your export from the list. Notice that the Scene with the active banner icon will be the first scene loaded when your app is launched.
+* Click on the 'DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
+* Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your game.
 
-<div class="alert alert-warning">
-**file://** urlや、ブラウザからindex.htmlファイルを開くことでゲームを読み込むことはできません。ローカルのウェブサーバを使用してindex.htmlファイルを読み込む必要があります。
-</div>
+## Running a Downloaded Build
+
+`file://` urlや、ブラウザから `index.html` ファイルを開くことでゲームを読み込むことはできません。ローカルのウェブサーバを使用して `index.html` ファイルを読み込む必要があります。
 
 ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *初級：* [Python][7]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを http://localhost:8000 にポイントします。
-* *中級：* [XAMPP][8]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
-* *上級：* [Apache][9] または [nginx][10]をスタンドアローンサービスとしてインストールします。
+* *初級：* [Python][6]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを http://localhost:8000 にポイントします。
+* *中級：* [XAMPP][7]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
+* *上級：* [Apache][8] または [nginx][9]をスタンドアローンサービスとしてインストールします。
 
-[1]: https://developer.mozilla.org/en/docs/Web/HTML/Element/iframe
-[2]: /user-manual/publishing/playcanvas
-[3]: /images/publishing/selfhosting/bottombar.png
-[4]: /images/user-manual/editor/publishing.jpg
-[5]: /images/user-manual/editor/publishing-toolbar.jpg
-[6]: /images/user-manual/editor/publishing-download.jpg
-[7]: https://www.python.org/downloads/
-[8]: https://www.apachefriends.org/index.html
-[9]: http://httpd.apache.org/download.cgi
-[10]: http://nginx.org/
+[1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+[2]: /user-manual/publishing/web/playcanvas-hosting
+[3]: /images/user-manual/publishing/toolbar-publish.png
+[4]: /images/user-manual/publishing/dialog-publish.png
+[5]: /images/user-manual/publishing/dialog-publish-download.png
+[6]: https://www.python.org/
+[7]: https://www.apachefriends.org/index.html
+[8]: https://httpd.apache.org/
+[9]: https://www.nginx.com/
 

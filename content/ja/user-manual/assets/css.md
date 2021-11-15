@@ -1,7 +1,7 @@
 ---
 title: CSS
 template: usermanual-page.tmpl.html
-position: 11
+position: 6
 ---
 
 CSSアセットにはCSSコードが含まれます。新規のCSSアセットはEditorから作成することができます。また、.css拡張子を持つファイルをアップロードして作成することも可能です。

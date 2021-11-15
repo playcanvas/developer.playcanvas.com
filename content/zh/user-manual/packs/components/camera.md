@@ -1,7 +1,7 @@
 ---
-title: 摄像机
+title: Camera
 template: usermanual-page.tmpl.html
-position: 3
+position: 5
 ---
 
 摄像机组件允许一个实体从不同的视角渲染场景

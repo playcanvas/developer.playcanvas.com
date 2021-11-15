@@ -1,7 +1,7 @@
 ---
-title: オーディオリスナー
+title: Audio Listener
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 Audio Listenerコンポーネントは3D空間でのリスナーの位置を指定します。全ての3D オーディオプレイバックはこの位置に関連します。
@@ -14,7 +14,7 @@ Audio Listenerコンポーネントはコンポーネントパネルの右上の
 
 [Script component][2]を使用して、Audio Listenerコンポーネントのプロパティをコントロールできます。Audio Listenerコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
-[1]: /images/user-manual/scenes/components/component-audio-listener.png
+[1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
 [3]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
 

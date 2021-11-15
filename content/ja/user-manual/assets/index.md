@@ -1,7 +1,7 @@
 ---
 title: アセット
 template: usermanual-page.tmpl.html
-position: 6
+position: 10
 ---
 
 アセットとはゲームで使用することができるリソースです。アセットには3Dモデルや音声ファイルなどの様々な種類のコンテンツタイプがあります。形状はソースとターゲットの二つです。

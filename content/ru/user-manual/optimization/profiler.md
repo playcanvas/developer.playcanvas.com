@@ -1,7 +1,7 @@
 ---
 title: Profiler
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 PlayCanvas provides an real-time profiler to assist in diagnosing performance problems.

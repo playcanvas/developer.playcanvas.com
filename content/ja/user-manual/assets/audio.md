@@ -1,7 +1,7 @@
 ---
 title: オーディオ
 template: usermanual-page.tmpl.html
-position: 10
+position: 5
 ---
 
 オーディオアセットとはAudiosourceコンポーネントを使用してプレイバックできるサウンドファイルです。

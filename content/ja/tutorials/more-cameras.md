@@ -5,7 +5,7 @@ tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg" ></iframe>
+<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
 
 *クリックでフォーカス、`space`でズームイン及びアウト、`左arrow`と `右arrow`で左右のカメラに切り替えるます*
 
@@ -75,7 +75,11 @@ var CameraManager = pc.createScript('cameraManager');
 // initialize code called once per entity
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
-    this.app.keyboard.on(pc.input.EVENT_KEYDOWN, this.onKeyDown, this);
+    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 //prevents default browser actions, such as scrolling when pressing cursor keys
@@ -96,11 +100,11 @@ CameraManager.prototype.setCamera = function (cameraName) {
 CameraManager.prototype.update = function(dt) {
     var app = this.app;
 
-    if (app.keyboard.wasPressed(pc.input.KEY_SPACE) ) {
+    if (app.keyboard.wasPressed(pc.KEY_SPACE) ) {
         this.setCamera('Center');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_LEFT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_LEFT)) {
         this.setCamera('Left');
-    } else if (app.keyboard.wasPressed(pc.input.KEY_RIGHT)) {
+    } else if (app.keyboard.wasPressed(pc.KEY_RIGHT)) {
         this.setCamera('Right');
     }
 };
@@ -114,7 +118,7 @@ CameraManager.prototype.update = function(dt) {
 
 次に、キーをループして、そのうちの一つが押されるとエンティティを名前から探し、以前にスクリプトで定義した、現在のアクティブなカメラを無効にして有効にする次のカメラを探す`setCamera()` 関数を使用して現在のカメラに設定します。
 
-[1]: /tutorials/beginner/basic-cameras/
+[1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
 

@@ -1,7 +1,7 @@
 ---
 title: Audio Listener
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 The Audio Listener component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
@@ -14,7 +14,7 @@ The Audio Listener component can be enabled or disabled using the toggle in the 
 
 You can control an Audio Listener component's properties using a [script component][2]. The Audio Listener component's scripting interface is [here][3].
 
-[1]: /images/user-manual/scenes/components/component-audio-listener.png
+[1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
 [3]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
 

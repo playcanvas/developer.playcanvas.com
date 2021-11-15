@@ -5,7 +5,7 @@ tags: video, textures
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg
 ---
 
-<iframe src="http://playcanv.as/p/6wt5T87E"></iframe>
+<iframe src="https://playcanv.as/p/6wt5T87E/"></iframe>
 
 Try it from the Editor in the [tutorial project.][1]
 
@@ -19,62 +19,76 @@ This script performs the following functions:
 * Update the texture with video data every frame
 
 ```javascript
-var Videotexture = pc.createScript('videotexture');
+var VideoTexture = pc.createScript('videoTexture');
 
-Videotexture.attributes.add('materials', {
-    type: 'asset',
-    assetType: 'material',
-    array: true
+VideoTexture.attributes.add('video', {
+    title: 'Video',
+    description: 'MP4 video asset to play back on this video texture.',
+    type: 'asset'
 });
-
-Videotexture.attributes.add('videoUrl', {
-    type: 'string'
+VideoTexture.attributes.add('playEvent', {
+    title: 'Play Event',
+    description: 'Event that is fired as soon as the video texture is ready to play.',
+    type: 'string',
+    default: ''
 });
 
 // initialize code called once per entity
-Videotexture.prototype.initialize = function() {
+VideoTexture.prototype.initialize = function() {
     var app = this.app;
-
-    // Create a texture to hold the video frame data
-    var videoTexture = new pc.Texture(app.graphicsDevice, {
-        format: pc.PIXELFORMAT_R5_G6_B5,
-        autoMipmap: false
-    });
-    videoTexture.minFilter = pc.FILTER_LINEAR;
-    videoTexture.magFilter = pc.FILTER_LINEAR;
-    videoTexture.addressU = pc.ADDRESS_CLAMP_TO_EDGE;
-    videoTexture.addressV = pc.ADDRESS_CLAMP_TO_EDGE;
 
     // Create HTML Video Element to play the video
     var video = document.createElement('video');
-    video.addEventListener('canplay', function (e) {
-        videoTexture.setSource(video);
-    });
-    video.src = this.videoUrl;
-    video.crossOrigin = 'anonymous';
     video.loop = true;
-    video.play();
 
-    // Get the material that we want to play the video on and assign the new video
-    // texture to it.
-    for (var i = 0; i < this.materials.length; i++) {
-        var material = this.materials[i].resource;
-        material.emissiveMap = videoTexture;
-        material.update();
-    }
+    // muted attribute is required for videos to autoplay
+    video.muted = true;
 
-    this.videoTexture = videoTexture;
+    // critical for iOS or the video won't initially play, and will go fullscreen when playing
+    video.playsInline = true;
 
-    this.upload = true;
+    // needed because the video is being hosted on a different server url
+    video.crossOrigin = "anonymous";
+
+    // iOS video texture playback requires that you add the video to the DOMParser
+    // with at least 1x1 as the video's dimensions
+    var style = video.style;
+    style.width = '1px';
+    style.height = '1px';
+    style.position = 'absolute';
+    style.opacity = '0';
+    style.zIndex = '-1000';
+    style.pointerEvents = 'none';
+
+    document.body.appendChild(video);
+
+    // Create a texture to hold the video frame data
+    this.videoTexture = new pc.Texture(app.graphicsDevice, {
+        format: pc.PIXELFORMAT_R8_G8_B8,
+        minFilter: pc.FILTER_LINEAR_MIPMAP_LINEAR,
+        magFilter: pc.FILTER_LINEAR,
+        addressU: pc.ADDRESS_CLAMP_TO_EDGE,
+        addressV: pc.ADDRESS_CLAMP_TO_EDGE,
+        mipmaps: true
+    });
+    this.videoTexture.setSource(video);
+
+    video.addEventListener('canplaythrough', function (e) {
+        app.fire(this.playEvent, this.videoTexture);
+        video.play();
+    }.bind(this));
+
+    // set video source
+    video.src = this.video ? this.video.getFileUrl() : this.videoUrl;
+
+    document.body.appendChild(video);
+    video.load();
 };
 
 // update code called every frame
-Videotexture.prototype.update = function(dt) {
-    // Upload the video data to the texture every other frame
-    this.upload = !this.upload;
-    if (this.upload) {
-        this.videoTexture.upload();
-    }
+VideoTexture.prototype.update = function(dt) {
+    // Transfer the latest video frame to the video texture
+    this.videoTexture.upload();
 };
 ```
 

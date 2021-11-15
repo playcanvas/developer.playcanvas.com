@@ -1,7 +1,7 @@
 ---
 title: スクリプティング
 template: usermanual-page.tmpl.html
-position: 7
+position: 11
 ---
 
 ゲームをインタラクティブにするにはスクリプトを使います。スクリプトは**JavaScript**で書きます。これはあらゆるウェブページで使用されているプログラミング言語です。

@@ -9,6 +9,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *本教程使用材质上的自定义着色器在GLSL中创建溶解效果*
 
+Complete project can be found [here][project].
+
 默认情况下，当您将3D模型导入PlayCanvas时，它们将默认使用[物理材质] [3]。 这是一种多功能的材料类型，可以覆盖很多渲染需求。
 
 但是，您通常需要为您的材料执行特殊效果或特殊情况。 要做到这一点，你需要写一个自定义着色器。
@@ -218,7 +220,6 @@ CustomShader.prototype.initialize = function() {
     this.time = 0;
 
     var app = this.app;
-    var model = this.entity.model.model;
     var gd = app.graphicsDevice;
 
     var diffuseTexture = this.diffuseMap.resource;
@@ -243,7 +244,7 @@ CustomShader.prototype.initialize = function() {
 
     // Create a new material and set the shader
     this.material = new pc.Material();
-    this.material.setShader(this.shader);
+    this.material.shader = this.shader;
 
     // Set the initial time parameter
     this.material.setParameter('uTime', 0);
@@ -255,7 +256,14 @@ CustomShader.prototype.initialize = function() {
     this.material.setParameter('uHeightMap', heightTexture);
 
     // Replace the material on the model with our new material
-    model.meshInstances[0].material = this.material;
+    var renders = this.entity.findComponents('render');
+
+    for (var i = 0; i < renders.length; ++i) {
+        var meshInstances = renders[i].meshInstances;
+        for (var j = 0; j < meshInstances.length; j++) {
+            meshInstances[j].material = this.material;
+        }
+    }
 };
 
 // update code called every frame
@@ -273,9 +281,10 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-这是完整的脚本。 记住你需要创建顶点着色器和片段着色器资源，以使它工作。 它留给作为一个练习读者实现一个着色器，对具有许多网格和材质的模型执行这种溶解效果。
+Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
 
-[1]: /engine/api/stable/symbols/pc.Shader.html
+[1]: /api/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
+[project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
 

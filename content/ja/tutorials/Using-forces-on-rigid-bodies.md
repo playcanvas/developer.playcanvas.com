@@ -5,7 +5,7 @@ tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F"></iframe>
+<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
 
 *インパルスを適用するにはカーソルキーを使用します。トルクを適用してキューブを回転させるには、WASDキーを使用します。Fを長押しすると一定の力を上向きに適用して重力の効果をキャンセルします。*
 * Rキーを押しすとキューブをリセットします。*
@@ -25,7 +25,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ```
 
-ユーザが[`applyForce(x, y, z)`][1]を通してFキーを押したとき、グローバルy軸に沿った力がアクセスエンティティに適用されます。力ベクトルの適用時点を設定することもできます。詳細は[こちらのドキュメント][2] 。
+Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
 
 ### 衝動
 
@@ -35,7 +35,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-キューブには[`applyImpulse(x, y, z)`][3]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
+キューブには[`applyImpulse(x, y, z)`][2]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
 
 ### トルク
 
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[トルク](https://en.wikipedia.org/wiki/Torque) (回転力) は [`applyTorque(x, y, z)`][4]からエンティティに適用されます。
+[トルク](https://en.wikipedia.org/wiki/Torque) (回転力) は [`applyTorque(x, y, z)`][3]からエンティティに適用されます。
 
 ### TorqueImpulses
 
@@ -53,19 +53,19 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][5]を通して適用されます。これは、上記のデモのコードでは使用されていません。
+角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][4]を通して適用されます。これは、上記のデモのコードでは使用されていません。
 
 ## 動的なリジッドボディの移動
 
 リジッドボディを移動させるためには、上記の方法でリニア力および回転力(トルク)を適用します。シミュレーションが上書きされ、オブジェクトが衝突する際などに不自然な効果をもたらすことを避けるため、通常はこのようにリジッドボディの位置や速度を直接変更することは避けるべきです。
 
-必要に応じて、新しい'[pc.Vec3][6]'値のセットを`entity.rigidbody.linearVelocity`または`entity.rigidbody.angularVelocity`に直接割り当てることによって、速度を上書きすることができます。
+必要に応じて、新しい'[pc.Vec3][5]'値のセットを`entity.rigidbody.linearVelocity`または`entity.rigidbody.angularVelocity`に直接割り当てることによって、速度を上書きすることができます。
 
-リジッドボディタイプに関する商大は[コリジョン API ページ][8],  [pc namespace ページ][9], [fps-コントローラチュートリアル][11], [コリジョンチュートリアル][10]をご確認ください。
+リジッドボディタイプに関する商大は[コリジョン API ページ][6],  [pc namespace ページ][7], [fps-コントローラチュートリアル][8], [コリジョンチュートリアル][9]をご確認ください。
 
 ## 一般的な設定
 
-スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][12]。
+スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][10]。
 
 ## 制限と制御
 
@@ -118,6 +118,10 @@ var DynamicBody = pc.createScript('dynamicBody');
 DynamicBody.prototype.initialize = function() {
     this.torque = 7;
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+
+    this.on('destroy', function() {
+        this.app.keyboard.off(pc.EVENT_KEYDOWN, this.onKeyDown, this);
+    }, this);
 };
 
 DynamicBody.prototype.onKeyDown = function (event) {
@@ -179,16 +183,13 @@ DynamicBody.prototype.reset = function () {
 ```
 
 [1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[5]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[7]: /tutorials/beginner/manipulating-entities/
-[6]: /engine/api/stable/symbols/pc.Vec3.html
-[7]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#syncEntityToBody
-[8]: /engine/api/stable/symbols/pc.CollisionComponent.html
-[9]: /engine/api/stable/symbols/pc.html
-[10]: /tutorials/intermediate/collision-and-triggers/
-[11]: /tutorials/advanced/fps-controller/
-[12]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
+[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
+[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
+[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
+[5]: /engine/api/stable/symbols/pc.Vec3.html
+[6]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[7]: /engine/api/stable/symbols/pc.html
+[8]: /tutorials/first-person-movement/
+[9]: /tutorials/collision-and-triggers/
+[10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
 

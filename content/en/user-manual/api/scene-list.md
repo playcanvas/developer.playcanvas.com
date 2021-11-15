@@ -1,7 +1,7 @@
 ---
 title: Scenes - List scenes
 template: usermanual-page.tmpl.html
-position: 20
+position: 14
 ---
 
 ## Route URL

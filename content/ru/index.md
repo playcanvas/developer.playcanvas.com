@@ -3,40 +3,62 @@ title: Ресурсы разработчика PlayCanvas
 template: intro.tmpl.html
 ---
 
-Мы предлагаем вам начать с [Руководства пользователя][1]. Это полное описание PlayCanvas, прочитав которое вы узнаете все, что вам может потребоваться. Далее, погрузитесь в [Обучение][3] и [Видеоуроки][12], шаг за шагом описывающие особенности PlayCanvas. И наконец, [описание API][4] содержит полную справочную информацию о PlayCanvas Engine.
+# Getting Started
 
-Также помните, что Вы всегда можете взглянуть на [игровую страницу][8], чтобы увидеть все созданные и законченные проекты.
+The [User Manual][1] is our complete guide to PlayCanvas. It will help you to use the many features of the platform including the [Editor][2], [Scripting system][3] and [Version Control][4].
 
-<hr />
+We have a [growing section][5] of more tutorials and code samples to learn and use.
 
-## Использование движка без редактора
+|   | Tutorial Section   |
+|---|---|
+| ![Keepy Up Tutorial Thumbnail][6] | Start making your first game with our [Keepy Up][7] tutorial series. It covers all the major features including [Scene Setup][8], [processing user Input][9] and [creating the User Interface][10]. |
+| ![Physics Tutorial Thumbnail][11] | Experiment with physics with [Collisions, Triggers][12] and [Forces][13].|
+| ![Input Tutorial Thumbnail][14] | Detect input from [Keyboard][15], [Mouse][16] and [Touch screens][17]. |
+| ![User Interface Tutorial Thumbnail][18] | Create wonderful menus and HUDs with the [User Interface][19] system. |
+| ![Audio Tutorial Thumbnail][20] | Immerse the user with [Positional Audio][21] |
 
-[Движок][9] - это руководство поможет Вам использовать движок, если вы хотите использовать его отдельно от редактора PlayCanvas.
+For the complete PlayCanvas Engine reference, refer to our [API Reference][22] section.
 
-[GitHub][5] - загляните на нашу GitHub страницу для инструкций по отображению [2D спрайтов][6] и [текста][7] в Ваших проектах.
+Want to see how whole projects have been designed and built? The [Explore Section][23] lists our community's public projects which you can learn from.
 
 <hr />
 
 # Получить помощь
 
-## Хотите поговорить?
+Our [PlayCanvas Forum][24] is the best place to ask for help, talk about your game, show off your latest project, seek out new team members or offer your assistance to others.
 
-Обсуждайте ваши игры, делитесь последними проектами, ищите новых членов для команды или предложите сотрудничество. Присоединяйтесь к нашему [форуму][10]
+We have an active community of users and the PlayCanvas team is always on hand to help.
 
-## Вопросы?
+<hr />
 
-Если у Вас есть технический вопрос по использованию PlayCanvas, по API или любой другой части платформы, можете использовать [ответы на вопросы][11] для получения консультации. 
+# Feature Requests and Reporting Bugs
+
+Want a new feature or seeing something that isn't behaving as it should? Add it to our [Editor][25] or [Engine][26] issue trackers and we will get to it as soon as we can.
 
 [1]: /user-manual
-[2]: /getting-started
-[3]: /tutorials
-[4]: /en/api/
-[5]: https://github.com/playcanvas
-[6]: https://github.com/playcanvas/sprites
-[7]: https://github.com/playcanvas/fonts
-[8]: https://playcanvas.com/play
-[9]: /engine
-[10]: http://forum.playcanvas.com/
-[11]: http://answers.playcanvas.com/
-[12]: /tutorials/video
+[2]: /user-manual/designer/
+[3]: /user-manual/scripting/
+[4]: /user-manual/version-control/
+[5]: /tutorials/
+[6]: /images/user-manual/frontpage/keepy_up_tutorial_thumb.png
+[7]: /tutorials/keepyup-part-one/
+[8]: /tutorials/keepyup-part-one/
+[9]: /tutorials/keepyup-part-four/
+[10]: /tutorials/keepyup-part-six/
+[11]: /images/user-manual/frontpage/physics_tutorial_thumb.png
+[12]: /tutorials/collision-and-triggers/
+[13]: /tutorials/Using-forces-on-rigid-bodies/
+[14]: /images/user-manual/frontpage/input_tutorial_thumb.png
+[15]: /tutorials/keyboard-input/
+[16]: /tutorials/mouse-input/
+[17]: /tutorials/basic-touch-input/
+[18]: /images/user-manual/frontpage/ui_tutorial_thumb.png
+[19]: /tutorials/ui-elements-buttons/
+[20]: /images/user-manual/frontpage/audio_tutorial_thumb.png
+[21]: /tutorials/basic-audio/
+[22]: /en/api/
+[23]: https://playcanvas.com/explore/plays
+[24]: https://forum.playcanvas.com/
+[25]: https://github.com/playcanvas/editor/issues
+[26]: https://github.com/playcanvas/engine/issues
 

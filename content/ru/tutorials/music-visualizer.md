@@ -5,7 +5,7 @@ tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
 ---
 
-<iframe src="http://playcanv.as/p/BqhCi6oy"></iframe>
+<iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
 
 *Find out more by forking the [full project][1].*
 
@@ -131,7 +131,7 @@ In our update loop we render the graphs for both the Frequency Data and the Time
 
 ## More ideas?
 
-This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to soundcloud and let users pick tracks? There are loads of possibilities.
+This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
 
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext

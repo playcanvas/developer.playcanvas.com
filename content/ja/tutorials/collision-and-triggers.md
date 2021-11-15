@@ -50,9 +50,9 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 チュートリアルのはじめの一歩として、地面となる緑色のブロックを作ります。
 
-![地面をあらわすエンティティ][6]
+<img src="/images/tutorials/collision/ground_setup.png" width="300px">
 
-属性パネル内に*model*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
+属性パネル内に*render*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
 
 ## トリガーの設定
 
@@ -97,7 +97,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 地面は**Static**な剛体として設定します。さらに、落ちてくるオブジェクトを作成し、**Dynamic**として設定します。
 
-![ボックスエンティティ][9]
+<img src="/images/tutorials/collision/box_setup.png" width="300px">
 
 ボックスコンポーネント用の*rigidbody*と*collision*設定を行います。球とカプセルについても同様に設定します。
 
@@ -136,8 +136,8 @@ Collider.prototype.onCollisionStart = function (result) {
 [3]: /images/tutorials/collision/collision_and_triggers.jpg
 [4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/packs/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.jpg
+[6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /engine/api/stable/symbols/pc.Entity.html
-[9]: /images/tutorials/collision/box_setup.jpg
+[9]: /images/tutorials/collision/box_setup.png
 

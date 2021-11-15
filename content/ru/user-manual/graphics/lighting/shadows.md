@@ -14,7 +14,7 @@ The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It
 
 ![Directional Light][5]
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, indentify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
 ![Model Component][6]
 
@@ -52,7 +52,7 @@ The outline of a shadow is called the penumbra. This is a transition from dark t
 
 Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
 
-The shadow sampling type is specified per material and so the option can be found in the Material Editor in the Other section.
+The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
 
 ## Performance Considerations
 
@@ -66,7 +66,7 @@ Enabling shadows has performance implications:
 [1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
-[4]: /user-manual/graphics/lighting/lightmaps
+[4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
 

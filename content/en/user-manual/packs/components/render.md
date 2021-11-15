@@ -1,7 +1,7 @@
 ---
 title: Render
 template: usermanual-page.tmpl.html
-position: 12
+position: 13
 ---
 
 The render component enables an entity to render a primitive shape or a render asset.

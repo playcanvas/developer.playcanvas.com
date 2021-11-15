@@ -1,7 +1,7 @@
 ---
-title: 编辑器
+title: Editor
 template: usermanual-page.tmpl.html
-position: 4
+position: 8
 ---
 
 PlayCanvas 编辑器是一款可视化的编辑器，通过创建和编辑[场景][1]和[实体][2]来制作游戏。

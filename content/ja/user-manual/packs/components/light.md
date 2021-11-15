@@ -1,7 +1,7 @@
 ---
 title: Light
 template: usermanual-page.tmpl.html
-position: 5
+position: 10
 ---
 
 Lightコンポーネントはエンティティに動的ライトソースを添付します。Typeプロパティは添付されるライトの種類や利用可能な他のプロパティを定めます。

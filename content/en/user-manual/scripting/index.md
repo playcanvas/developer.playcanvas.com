@@ -1,7 +1,7 @@
 ---
 title: Scripting
 template: usermanual-page.tmpl.html
-position: 7
+position: 11
 ---
 
 Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programming language that is used to program web pages.

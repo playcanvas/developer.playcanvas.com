@@ -1,6 +1,7 @@
 ---
-title: 预加载和流媒体
+title: 预加载和流式传输
 template: usermanual-page.tmpl.html
+position: 3
 ---
 
 当用户加载网页之后就能立刻进入到网页的应用程序这是在网页开发中十分重要的一步。在应用程序开始之前出现进度条以及告知用户需要等待将会导致用户的流失。PlayCanvas资源系统实现了多个功能帮助用户将加载过程简单化，将应用程序运行更快速更顺畅。
@@ -20,6 +21,14 @@ template: usermanual-page.tmpl.html
 如果在场景中存在一个实体并且这个实体引用了一个资源，当这个实体被启用时，加载请求将会被开启。如果实体在场景中被启用，那么当应用开启时加载请求将会立刻启动。
 
 所有组件将会妥善处理动态加载的资源，并且当资源加载完成时开始正常运行。当一个流动资源被动态加载时，用户将会经常看见弹出框。当被加载模型就会出现，即便这个模型并没有包含材质和纹理。
+
+## When are assets loaded?
+
+You can determine when a particular asset will be loaded you can follow these rules.
+
+* If `preload = true` the asset will be loaded before the application starts. Otherwise:
+* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
+* If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
 
 ## 资源标签
 

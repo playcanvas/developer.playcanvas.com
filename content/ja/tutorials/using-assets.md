@@ -7,22 +7,22 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
 
-*クリックしてフォーカス。SpaceキーでAとBの2つのモデルを切り替えることができます。'L'でCモデルを読み込みます。'C'でCモデルを表示します。
+*Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
 
 簡単なゲームや製品の場合、Editor内のすべてのアセットを設定します。アプリケーションが起動する前にプリロードされ、アプリは正常に動作します。
 
 より高度な製品の場合、コード内でアセットにアクセスし、参照を変更、プロパティを修正、データのストリーミングを行いアプリケーションをより迅速に読み込むこともできます。必要に応じてアセットを読み込みます。これを行うには[`AssetRegistry`][1]を使用します。
 
-このチュートリアルでは、キーを押して、モデルコンポーネントのモデルを入れ替えることのできる小さなシーンを構築します。また、プリロードされていない3つ目のモデルを動的に読み込みます。完了したプロジェクトは[ここで][3]を見ることができます。
+In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
 ## 設定
 
 *プロジェクトは次のように設定されます*
 
-*3つのモデルアセットがアップロードされています：**A**はAという文字のモデル、**B**はBという文字のモデル、**C**はCという文字のモデルです。
-* ** C**モデルアセットはプリロード*されない*ように設定されています。
-*モデルエンティティはシーンに追加され、モデル**A**はモデルコンポーネントに割り当てられています。
-*スクリプトコンポーネントはモデルエンティティに追加され、`update_asset.js`という新たなスクリプトが作成されます。
+* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
+* The **C** render asset is set up *not* to be preloaded.
+* A render Entity is added to the scene and the model **A** is assigned to the render component.
+* A script component is added to the render Entity and a new script is created called `update_asset.js`.
 
  [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
 
@@ -35,41 +35,51 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 ## プレロードされたアセットを使用
 
 ```javascript
-if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-    if (this.entity.model.model !== this.b.resource) {
-        // update the model component to the new model
-        this.entity.model.model = this.b.resource;
+    if (app.keyboard.isPressed(pc.KEY_SPACE)) {
+        if (this.entity.render.asset !== this.b.id) {
+            // update the render component to the new Render Asset
+            console.log('Changed to B Render Asset');
+            this.entity.render.asset = this.b;
+        }
+    } else {
+        // ...
+            if (this.entity.render.asset !== this.a.id) {
+                // restore original Render Asset
+                console.log('Changed to A Render Asset');
+                this.entity.render.asset = this.a;
+            }
+        // ...
     }
-} else {
-    if (this.entity.model.model !== this.a.resource) {
-        // restore original model
-        this.entity.model.model = this.a.resource;
-    }
-    //...
-}
 ```
 
-このプロジェクトでは、**A**と**B**のアセットは**プリロード**としてマークされています。読み込み画面中に、これらのアセットがダウンロードされることを意味します。アプリケーションの起動と同時に使用できるようになります。アセットが読み込まれると、読み込まれたリソースは`asset.resource`として利用可能です。`asset.resource`が` null`の場合、アセットは読み込まれません。
+The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
 
-'A'と'B'モデルがプリロードされるので、アプリケーション実行時に利用可能になります。このコードは、スペースバーが押されていることを確認します。押されている場合、モデルコンポーネントのモデルをアセットのリソースプロパティになるよう変更します。この場合、`asset.resource`は` pc.Model`オブジェクトになります。`asset.resource`プロパティがそれぞれの異なるアセットタイプ(オーディオ、テクスチャ、など)の関連するタイプになります。
+<img src='/images/tutorials/using_assets/using-assets-a-preload.png' width=360px>
+
+So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
 ## 実行時にアセットを読み込む
 
 ```javascript
-if (this.app.keyboard.isPressed(pc.KEY_C)) {
-    if (this.c.resource) {
-        if (this.entity.model.model !== this.c.resource) {
-            this.entity.model.model = this.c.resource;
+if (app.keyboard.isPressed(pc.KEY_C)) {
+    if (this.c.loaded) {
+        if (this.entity.render.asset !== this.c.id) {
+            console.log('Changed to C Render Asset');
+            this.entity.render.asset = this.c;
         }
     }
 } else {
-    if (this.entity.model.model !== this.a.resource) {
-        this.entity.model.model = this.a.resource;
+    if (this.entity.render.asset !== this.a.id) {
+        // restore original Render Asset
+        console.log('Changed to A Render Asset');
+        this.entity.render.asset = this.a;
     }
 }
 ```
 
-**Cは**モデルは、*プリロード*としてマークされていないので、上記のコードでは使用する前にリソースが読み込まれていることを確認します。`asset.resource`が空の場合、リソースは読み込まれていないので、モデルコンポーネントを変更することができません。 **C**モデルが読み込まれている場合、`this.c.resource`は`pc.Model`プロパティとなり、割り当てることができます。
+The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
+
+<img src='/images/tutorials/using_assets/using-assets-c-preload.png' width=360px>
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -79,7 +89,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 `L`キーを押すと、** C**モデルを読み込みます。これを行うには`this.app.assets.load()`にアンロードされたアセットを渡します。アセットがすでに読み込まれている場合、このメソッドは何も行いません。
 
-アセットが読み込まれると`asset.resource`は`pc.Model`のインスタンスになり、`C`キーを押してそれを割り当てることができます。
+Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
 
 ## 完全なスクリプト
 
@@ -88,17 +98,17 @@ var UpdateAsset = pc.createScript('updateAsset');
 
 UpdateAsset.attributes.add('a', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 UpdateAsset.attributes.add('b', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 UpdateAsset.attributes.add('c', {
     type: 'asset',
-    assetType: 'model'
+    assetType: 'render'
 });
 
 // initialize code called once per entity
@@ -111,31 +121,27 @@ UpdateAsset.prototype.update = function(dt) {
     var app = this.app;
 
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
-        if (this.entity.model.model !== this.b.resource) {
-            // update the model component to the new model
-            this.entity.model.model = this.b.resource;
+        if (this.entity.render.asset !== this.b.id) {
+            // update the render component to the new Render Asset
+            console.log('Changed to B Render Asset');
+            this.entity.render.asset = this.b;
         }
     } else {
-        if (this.entity.model.model !== this.a.resource) {
-            // restore original model
-            this.entity.model.model = this.a.resource;
-        }
-
         if (app.keyboard.isPressed(pc.KEY_C)) {
-            if (this.c.resource) {
-                if (this.entity.model.model !== this.c.resource) {
-                    this.entity.model.model = this.c.resource;
+            if (this.c.loaded) {
+                if (this.entity.render.asset !== this.c.id) {
+                    console.log('Changed to C Render Asset');
+                    this.entity.render.asset = this.c;
                 }
             }
         } else {
-            if (this.entity.model.model !== this.a.resource) {
-                this.entity.model.model = this.a.resource;
+            if (this.entity.render.asset !== this.a.id) {
+                // restore original Render Asset
+                console.log('Changed to A Render Asset');
+                this.entity.render.asset = this.a;
             }
         }
-
-
     }
-
 
     if (app.keyboard.isPressed(pc.KEY_L)) {
         app.assets.load(this.c);
@@ -148,7 +154,7 @@ UpdateAsset.prototype.update = function(dt) {
 この例では示していないのは、アセットが読み込まれたことを知る方法です。これを行うには、"load"イベントのような`pc.AssetRegistry`イベントを使用します。サンプルコードです：
 
 ```javascript
-// find the asset in the registry
+// find the asset by name in the registry
 var asset = this.app.assets.find("A");
 // set up a one-off event listener for the load event
 this.app.assets.once("load", function (asset) {
@@ -173,7 +179,7 @@ this.app.assets.once("load:" + asset.id, function (asset) {
 
 ```javascript
 var asset = this.app.assets.find("A");
-if (!asset.resource) {
+if (!asset.loaded) {
     this.app.assets.once("load:" + asset.id, function (asset) {
         // do something with asset.resource
     });
@@ -200,4 +206,5 @@ this.app.assets.load(asset);
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
+[8]: /en/api/pc.RenderComponent.html#asset
 

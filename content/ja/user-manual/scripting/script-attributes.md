@@ -21,6 +21,17 @@ MyScript.attributes.add('speed', {
 
 この例では、`speed`プロパティをデフォルト値`80`を持つ`number`(数値)として宣言しています:
 
+If you need an array of attributes set `array: true` like so:
+
+```javascript
+var MyScript = pc.createScript('myScript');
+
+MyScript.attributes.add('names', {
+    type: 'string',
+    array: true
+});
+```
+
 ## アトリビュートをエディタ上で使う
 
 <img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
@@ -39,7 +50,7 @@ MyScript.prototype.update = function (dt) {
 
 ## 属性の更新
 
-Editorで属性を変更すると、変更はEditorから起動したアプリケーションのすべてのコピーに送信されます。これは、アプリケーションをリロードすることなく、属性をライブで編集生きることができることを意味します。属性が変更されたときに特殊な動作を適用する必要がある場合、`attr` と `attr:[name]`のイベントを使用して変化に対応します。
+When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
 
 ```javascript
 MyScript.prototype.initialize = function () {
@@ -73,7 +84,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-アセット属性により、スクリプトの中でプロジェクトアセットを参照できます。アセット属性は、アセットのリストと、特定のタイプのアセットに属性を制限する` assetType`プロパティ`array`プロパティに対応しています。例：「テクスチャ」、「素材」、「モデル」。
+The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
 
 アセット属性の実行時のタイプは`pc.Asset`です。次のように、実行時にアセット属性のリソースを参照することができます：
 
@@ -108,7 +119,7 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curve
 
 ### 列挙の属性
 
-最後の属性プロパティはEnumeration（列挙）です。
+The Enumeration attribute allows you to choose one of the available options:
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -122,6 +133,45 @@ MyScript.attributes.add('value', {
 ```
 
 列挙のために可能な値のリストを宣言するためにenumプロパティを使用します。プロパティは、各オブジェクトがオプションとなるオブジェクトの配列です。`key`はオプションのタイトル、`value`は属性の値です。このプロパティは、さまざまな属性タイプで使用することができます。例：`number`,`sting`,`vec3`。
+
+### JSON attribute
+
+The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+
+```javascript
+MyScript.attributes.add('gameConfig', {
+    type: 'json',
+    schema: [{
+        name: 'numEnemies',
+        type: 'number',
+        default: 10
+    }, {
+        name: 'enemyModels',
+        type: 'asset',
+        assetType: 'model',
+        array: true
+    }, {
+        name: 'godMode',
+        type: 'boolean',
+        default: false
+    }]
+});
+```
+
+You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+
+Here's an example of accessing the above attributes in a script:
+```javascript
+MyScript.prototype.update = function (dt) {
+    if (this.gameConfig.godMode) {
+        for (var i = 0; i < this.gameConfig.numEnemies; i++) {
+            // ...
+        }
+    }
+};
+```
+
+*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
 

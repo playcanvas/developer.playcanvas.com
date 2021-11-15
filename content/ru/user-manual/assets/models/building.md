@@ -4,11 +4,11 @@ template: usermanual-page.tmpl.html
 position: 2
 ---
 
-Building art and animations for PlayCanvas can be done using almost any of the many 3D modelling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
+Building art and animations for PlayCanvas can be done using almost any of the many 3D modeling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
 
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modelling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modeling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
-Some modelling and animation programs to consider:
+Some modeling and animation programs to consider:
 
 * Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
 * Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
@@ -21,11 +21,11 @@ For generating textures, consider these programs:
 * Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
 * Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
-Note many of the programs listed above for modelling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
 
 ## General Considerations for Mesh Construction
 
-Regardless which modelling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
 
 * Meshes can be skinned to up to 256 bones.
 * NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
@@ -36,7 +36,7 @@ Regardless which modelling application you are using, there a number of things t
 
 ![Blender Logo][3]
 
-[Blender][4] is a fantastic free tool for 3D modelling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender][4] is a fantastic free tool for 3D modeling and it is perfect for generating 3D assets for PlayCanvas.
 
 Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
 
@@ -79,7 +79,7 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
-![Sphere map][7]
+![Max material editor][7]
 
 ### Supported Map Slots
 
@@ -145,17 +145,17 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
-![Sphere map][11]
+![Maya material editor][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
-[2]: http://cgcookie.com/blender/
-[3]: /images/Blender-Logo.jpg
+[2]: https://cgcookie.com/learn-blender
+[3]: /images/user-manual/assets/models/building/blender-logo.jpg
 [4]: http://blender.org
-[5]: http://usa.autodesk.com/adsk/servlet/pc/item?id=10775855&siteID=123112
+[5]: https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives
 [6]: http://www.blenderguru.com/
-[7]: /images/artist_guide/max_material_editor.jpg
-[8]: /images/artist_guide/wall_norm.jpg
-[9]: /images/artist_guide/wall_norm_yflip.jpg
-[10]: /images/artist_guide/mountains_sphere.jpg
-[11]: /images/artist_guide/maya_material_editor.jpg
+[7]: /images/user-manual/assets/models/building/max-material-editor.jpg
+[8]: /images/user-manual/assets/models/building/wall-norm.jpg
+[9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
+[10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
+[11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
 

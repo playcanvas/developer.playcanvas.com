@@ -1,7 +1,7 @@
 ---
 title: 設定
 template: usermanual-page.tmpl.html
-position: 8
+position: 7
 ---
 
 設定パネルでは、さまざまなプロパティを設定できます。Editor([ツールバー][1]の)の左下の「cog」ボタンを使用してアクセスします。
@@ -35,6 +35,11 @@ Editorシーンで表示されるグリッドの各部分の分割数とサイ�
 #### ローカルサーバ
 
 これは、Launch Localでアプリケーションを起動した場合、すべてのスクリプトが読み込まれるURLです。
+
+#### Locale
+
+The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
+have enabled Localization for Text Elements and when you use Localized Assets.
 
 ## 物理の設定
 
@@ -151,6 +156,10 @@ Fill（塗りつぶし）モードは、キャンバスのサイズ変更挙動�
 
 WebGLのコンテキストを作成する際にpreserveDrawingBufferオプションを使用します。
 
+## Layers
+
+Manage rendering layers and their render order. You can find out more about layers [here][10].
+
 ## オーディオ
 
 #### レガシオーディオを使用
@@ -167,9 +176,29 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 
 生成されたライトマップテクスチャで利用可能な最大テクスチャサイズ。
 
+## Batch Groups
+
+Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+
 ロード画面（ORGのユーザーのみ利用可能）
 
 ここでは、アプリケーションの読み込み画面を作成するスクリプトを設定することができます。新しい読み込み画面のスクリプトを作成するには、*Create Default*をクリックします。カスタムの読み込み画面の詳細は[こちら][6]。
+
+## External Scripts
+
+Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+
+## 入力
+
+Here you can enable or disable various input devices for your application.
+
+## Localization
+
+Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+
+You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
+
+Read more about localization [here][11].
 
 ## アセットタスク
 
@@ -180,6 +209,10 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 #### テクスチャ POT (power-of-two)
 
 テクスチャをインポートする際、次の2の累乗にリサイズします。
+
+#### Create Atlases
+
+When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
 
 #### 関連アセットを検索
 
@@ -205,6 +238,11 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 [2]: /images/user-manual/cog.jpg
 [3]: /user-manual/assets/cubemaps
 [4]: /images/user-manual/gamma-correction.jpg
-[5]: http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html
+[5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
+[7]: /user-manual/packs/components/model
+[8]: /user-manual/packs/components/element
+[9]: /user-manual/optimization/batching
+[10]: /user-manual/graphics/layers/
+[11]: /user-manual/user-interface/localization
 

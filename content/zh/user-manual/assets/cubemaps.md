@@ -1,7 +1,7 @@
 ---
 title: 立方体贴图
 template: usermanual-page.tmpl.html
-position: 5
+position: 7
 ---
 
 立方体贴图是一种特殊类型的纹理资源。 立方体贴图由6个纹理资源组成，其中每个纹理表示立方体的一个面， 它们通常有两种用途：
@@ -9,7 +9,7 @@ position: 5
 1.立方体贴图可以定义场景的天空盒。 天空盒包含您的场景的遥远视觉的图像，例如山丘，山脉，天空等。
 2.立方贴图可以向其它材料添加反射效果。 想象一下你的场景中有一个光泽的铬球轴承，球表面反映了周围的场景。 对于开放环境，通常将场景中天空的立方体贴图设置为物体材质上立方体贴图的反射内容。
 
-<iframe width="640" height="480" src="http://playcanv.as/b/xp7v1oFB" allowfullscreen></iframe>
+<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
 
 ## 导入立方体贴图
 
@@ -70,9 +70,9 @@ position: 5
 * face_posz.jpg
 * face_negz.jpg
 
-## 预过滤立方体贴图
+## Image Based Lighting
 
-立方体贴图检查器有一个Prefilter预过滤按钮，它生成一组低分辨率过滤的纹理，用于物理材质的环境贴图。 预先过滤立方体地图对于使用物理材质至关重要。
+This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
 
 ## 将立方体贴图分配给材质
 
@@ -89,4 +89,5 @@ position: 5
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
 [5]: /images/user-manual/assets/cubemaps/cubemap-material.png
+[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
 

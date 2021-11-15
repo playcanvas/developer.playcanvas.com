@@ -1,7 +1,7 @@
 ---
 title: Debugging
 template: usermanual-page.tmpl.html
-position: 7
+position: 8
 ---
 
 In order to create scripts for PlayCanvas, it is vital that you know how to access and use your browser's development tools.

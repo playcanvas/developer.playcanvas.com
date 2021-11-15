@@ -1,7 +1,7 @@
 ---
 title: ダッシュボード
 template: usermanual-page.tmpl.html
-position: 3
+position: 7
 ---
 
 ![ダッシュボード][1]

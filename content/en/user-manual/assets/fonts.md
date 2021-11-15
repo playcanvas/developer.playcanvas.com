@@ -1,7 +1,7 @@
 ---
-title: Fonts
+title: Font
 template: usermanual-page.tmpl.html
-position: 13
+position: 8
 ---
 
 A Font asset contains an image with all the characters of the font that the user chose to include, and data related to how each character should be displayed. Font assets are used to render text using an [Element][1] component of type Text. To render text, add an Element component to an Entity set its type to Text and drag and drop the Font asset to the Font slot of the Element component.

@@ -7,58 +7,58 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
 
-*Click on the various buttons to try out different sound effects.*
+*Щелкните на разные кнопки чтобы ощутить разные звуковые эффекты*
 
-<div class="alert alert-info">This tutorial requires Web Audio API support.</div>
+<div class="alert alert-info">Для этого урока необходима поддержка браузером Web Audio API</div>
 
-## Using The Web Audio API
+## Использование Web Audio API
 
-PlayCanvas allows you to fully leverage the power of the Web Audio API to add powerful effects to your sounds. This tutorial demonstrates how to add various effects to an audio sample.
+PlayCanvas позволяет вам полностью использовать потенциал Web Audio API чтобы добавить потрясающие эффекты для вашего звукового сопровождения. Этот урок демонстрирует как добавить разные эффекты к аудио дорожке.
 
-## The setup
+## Настройка
 
-You can check out this Scene for yourself [here][1]. The Root Entity in this Scene has a [Sound][2] Componenent with one slot that plays a simple looping speech audio sample. If you're not familiar with how Sound Components work make sure to check out this [Basic Tutorial][3].
+Вы можете проверить эту сцену собственноручно [здесь][1]. Корневая сущность этой сцены имеет [звуковой] компонент с одним слотом, который проигрывает зацикленный звуковой семпл. Если вы не чувствуете себя уверенно при работе со звуковыми компонентами, убедитесь, что знакомы с [основами][3].
 
-The Root Entity also has a [Script][4] Component with two scripts. One script is responsible for the user interface and the other is the script we're going to focus on: <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>.
+Корневая сущность так же имеет компонент [скрипт] с добавленными двумя скриптами. Первый из них отвечает за пользовательский интерфейс, а на второй мы обратим наше внимание в <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>.
 
-This script manages the sound effects of the application.
+Этот скрипт управляет звуковыми эффектами приложения.
 
-## Using AudioNodes
+## Использование AudioNodes
 
-The Web Audio API allows you to create various audio nodes which can be connected together to form an audio routing graph. When an audio sample is played it gets processes by each node and eventually reaches the destination usually your speakers. You can find out more details [here][5].
+Web Audio API дает вам возможность создать разные звуковые устройства - node, которые вы можете соединять вместе, формируя последовательный граф. Когда звуковая дорожка проигрывается, она проходит через каждое устройство и в конце выводит на устройство вывода звука - например, ваши динамики. Вы можете узнать более подробно об этом [здесь][5]
 
-In this example we are using a [Convolver node][6]. In our application script we are creating that node like so:
+В этом примере мы используем  [Convolver node][6]. В скрипте нашего приложения мы создаем следующие устройства:
 
 ```javascript
 this.convolver = this.app.systems.sound.context.createConvolver();
 ```
 
-We then use a bunch of audio samples as impulse responses for the convolver as explained [here][7]. Each audio sample is an audio asset and depending on which button you press we use that asset and assign its internal buffer to the convolver buffer like so:
+Теперь мы используем насколько аудио дорожек как импульс, исходящий от конвольвера как объяснено [здесь][7]. Каждая аудио дорожка это аудио-ресурс, и в зависимости от того. какую кнопку вы нажмете, мы будем использовать нужный ресурс и назначим буфер этого ресурса на конвольвер следующим образом:
 
 ```javascript
 var asset = this[assetName];
 this.convolver.buffer = asset.resource.buffer;
 ```
 
-We then connect the convolver to our sound slot like so:
+Затем мы подключаем конвольвер к нашему звуковому слоту следующим образом:
 
 ```javascript
 this.entity.sound.slot('speech').setExternalNodes(this.convolver);
 ```
 
-If you click on the button called 'None' we clear all the effects which basically means calling ```clearExternalNodes``` on the slot:
+Если вы кликните на кнопке 'None' вы очистите все звуковые эффекты, что на самом деле вызывает ```clearExternalNodes``` слота:
 
 ```javascript
 this.entity.sound.slot('speech').clearExternalNodes();
 ```
 
-If you have a bigger graph of Audio Nodes and you want to connect it to a slot you need to supply the first node and the last node of the graph in ```setExternalNodes```. That way PlayCanvas can correctly connect the last node to the speakers.
+Если у вас большой граф аудио устройств и вы хотите присоединить его к слоту, вам нужно поставить первое и последние устройства графа в  ```setExternalNodes```. Таким образом, PlayCanvas корректно присоединит последнее устройство к динамикам.
 
-You can find out more about the Sound Component API [here][8].
+Вы можете найти больше информации о Sound Component API [здесь][8]
 
 [1]: https://playcanvas.com/editor/scene/440346
 [2]: /user-manual/packs/components/sound
-[3]: /tutorials/beginner/basic-audio
+[3]: /tutorials/basic-audio/
 [4]: /user-manual/packs/components/script
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode

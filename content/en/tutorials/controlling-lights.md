@@ -13,19 +13,22 @@ In this tutorial we will show you how to enable/disable lights in PlayCanvas and
 
 It is also important to be aware of the different limits for differing light properties, for example red, green and blue values are set between 0 and 1, but intensity reaches from 0 up to 10. Also some lights have properties unique to them, such as the cone angles for the spot light.
 
-##The lighting commands
+## The lighting commands
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
     this.spot.light.enabled = !this.spot.light.enabled;
 }
 ```
+
 This line toggles on and off the light component of the 'spot' entity.
 
 ```javascript
 this.color1 = new pc.Color(1, 1, 1);
 ```
+
 A new color array is declared, the first three values affect red, green and blue values respectively.
+
 ```javascript
 var s = Math.abs(Math.sin(1 + this.timer));
 var r = 1-s/2;
@@ -35,18 +38,19 @@ this.color1.set(r, g, b);
 this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
 ```
+
 These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
 
 <div class="alert-info">
     Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
 </div>
 
-##General setup
+## General setup
+
 We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
 
-
-
 The full code used for the above PlayCanvas app is as follows.
+
 ```javascript
 var LightHandler = pc.createScript('lightHandler');
 
@@ -84,8 +88,8 @@ LightHandler.prototype.update = function(dt) {
     // a counter that is used as input to sin the functions determining light properties for all lights.
     this.timer += dt;
 
-    //these 3 code blocks assign color and intensity values that vary according to a sin function
-    //all sin inputs are in radians
+    // these 3 code blocks assign color and intensity values that vary according to a sin function
+    // all sin inputs are in radians
     var s = Math.abs(Math.sin(1 + this.timer));
     var r = 1-s/2;
     var g = s-0.2;

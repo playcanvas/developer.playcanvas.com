@@ -1,7 +1,7 @@
 ---
 title: Audio Listener
 template: usermanual-page.tmpl.html
-position: 2
+position: 3
 ---
 
 The Audio Listener component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.

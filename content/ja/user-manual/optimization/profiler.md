@@ -1,7 +1,7 @@
 ---
 title: プロファイラ
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 PlayCanvasは、パフォーマンスの問題の診断を支援するためのリアルタイムプロファイラを提供しています。

@@ -1,7 +1,7 @@
 ---
 title: 色調とサチュレーションエフェクト
 template: usermanual-page.tmpl.html
-position: 3
+position: 4
 ---
 
 色調とサチュレーションエフェクトは、レンダリング後の画像の色調とサチュレーションを調整します。

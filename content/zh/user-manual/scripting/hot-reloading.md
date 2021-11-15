@@ -1,7 +1,7 @@
 ---
 title: 热加载
 template: usermanual-page.tmpl.html
-position: 6
+position: 7
 ---
 
 当用户对一个复杂的项目进行迭代时，每一次用户更改脚本都需要刷新整个页面。特别是如果当用户正在测试代码时需要比较长的时间去完成，这就是为什么需要用到代码的热加载。

@@ -11,7 +11,6 @@ var permalinks  = require("metalsmith-permalinks");
 var templates   = require("metalsmith-templates");
 var static      = require("metalsmith-static");
 var metadata    = require("metalsmith-metadata");
-var metallic    = require("metalsmith-metallic");
 var navbuilder  = require("./lib/nav-builder-plugin/index");
 var locale      = require("./lib/locale/index");
 var i18n        = require("./lib/i18n/index");
@@ -19,8 +18,6 @@ var i18nout     = require("./lib/i18n-out/index");
 var contents    = require("./lib/contents-json/index");
 var tutorialBuilder = require('./lib/tutorials/index');
 var headingsidentifier = require("metalsmith-headings-identifier");
-
-const { render } = require("sass");
 
 var env = null;
 var args = process.argv.slice(2);

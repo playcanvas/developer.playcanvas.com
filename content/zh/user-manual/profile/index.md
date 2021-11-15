@@ -1,7 +1,7 @@
 ---
 title: 信息页
 template: usermanual-page.tmpl.html
-position: 2
+position: 5
 ---
 
 个人信息页是展示你的 PlayCanvas 作品的公共空间

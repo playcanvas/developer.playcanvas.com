@@ -1,7 +1,7 @@
 ---
-title: リジッドボディ
+title: Rigid Body
 template: usermanual-page.tmpl.html
-position: 8
+position: 14
 ---
 
 Rigid Bodyコンポーネントはエンティティがシーンの物理シミュレーションに参加できるようにします。これにより、エンティティの動きを写実的にシミュレーションできます。コンポーネントインターフェイスは、Type属性に基づいて動的に異なる属性を表示します。
@@ -42,5 +42,5 @@ Rigidbodyコンポーネントのプロパティは[スクリプトコンポー�
 [3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
 [4]: /user-manual/packs/components/collision/
 [5]: /user-manual/packs/components/script
-[6]: /engine/api/stable/symbols/pc.RigidBodyComponent.html
+[6]: /api/pc.RigidBodyComponent.html
 

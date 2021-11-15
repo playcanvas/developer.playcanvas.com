@@ -1,7 +1,7 @@
 ---
-title: カメラ
+title: Camera
 template: usermanual-page.tmpl.html
-position: 3
+position: 5
 ---
 
 カメラコンポーネントは、エンティティが特定の視点からシーンをレンダリングすることを可能にします。

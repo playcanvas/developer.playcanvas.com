@@ -1,7 +1,7 @@
 ---
 title: Anim Component
 template: usermanual-page.tmpl.html
-position: 4
+position: 1
 ---
 
 Click here to learn how to use the [Anim Component](/en/user-manual/packs/components/anim/).

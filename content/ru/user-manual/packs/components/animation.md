@@ -1,7 +1,7 @@
 ---
 title: Animation
 template: usermanual-page.tmpl.html
-position: 1
+position: 2
 ---
 
 The Animation component enables an entity to specify which animations can be applied to the model assigned to its Model component.

@@ -1,7 +1,7 @@
 ---
-title: 灯光
+title: Light
 template: usermanual-page.tmpl.html
-position: 5
+position: 10
 ---
 
 灯光组件为实体增加了一个动态的光源。“Type"属性决定了附加哪种类型的灯光，以及其他可用属性。

@@ -1,7 +1,7 @@
 ---
 title: Physics
 template: usermanual-page.tmpl.html
-position: 11
+position: 16
 ---
 
 Most video games you have ever played will have some form of physics. The player expects objects to fall under the influence of gravity. For objects to collide instead of pass through each other. For a sound to play if two objects collide. And so on.

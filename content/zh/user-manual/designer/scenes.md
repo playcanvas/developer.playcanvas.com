@@ -1,7 +1,7 @@
 ---
 title: 场景
 template: usermanual-page.tmpl.html
-position: 10
+position: 9
 ---
 
 ## 场景
@@ -20,7 +20,7 @@ position: 10
 
 ![Scenes][3]
 
-在这里可以点击 “ADD NEW SCENE" 创建新场景，也可以点击场景展开更多操作，可以点击场景右侧的场景复制按钮复制或者删除按钮删除。同样也可以点击左侧的横幅按钮来标记主场景。主场景是应用发布后最先被加载和执行的场景。你可以把它想象成是应用的第一个“关卡”。
+You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left to make it the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
 
 [1]: /images/user-manual/editor/scenes-menu.jpg
 [2]: /images/user-manual/editor/scenes-viewport.jpg

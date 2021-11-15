@@ -5,7 +5,8 @@ tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+
 *[完成されたプロジェクトはこちら][3]です*
 
 このチュートリアルでは、PlayCanvasを使って一本の完全なゲームを作る流れを説明します。"Keepy Up"という、ボールをタッチかクリックし続けることでボールを滞空させ続けるゲームを作りましたのでそれを、題材として説明します。
@@ -72,6 +73,6 @@ UIエンティティはいくつかのエンティティの親エンティティ
 [チュートリアルその2][2]ではメインのゲームスクリプトについて説明します。
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
-[2]: /tutorials/beginner/keepyup-part-two
+[2]: /tutorials/keepyup-part-two/
 [3]: https://playcanvas.com/project/406050
 
