@@ -1,5 +1,5 @@
 ---
-title: Debugging
+title: 调试
 template: usermanual-page.tmpl.html
 position: 8
 ---

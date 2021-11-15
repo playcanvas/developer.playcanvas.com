@@ -1,5 +1,5 @@
 ---
-title: Communication
+title: 通信
 template: usermanual-page.tmpl.html
 position: 5
 ---

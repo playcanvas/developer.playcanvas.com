@@ -1,5 +1,5 @@
 ---
-title: Hot Reloading
+title: ホットリローディング
 template: usermanual-page.tmpl.html
 position: 7
 ---
