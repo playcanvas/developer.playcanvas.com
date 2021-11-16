@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 对于简单的游戏和产品而言，您将在编辑器中设置所有的资源，它们需要在应用程序启动之前预先加载，您的应用程序才能工作。
 
-对于更高级的产品，您可能希望通过代码访问您的资源，更改引用，修改属性以及流式传输数据，以便应用程序可以更快地加载。 以及仅在需要时加载资源。 要做到这一点，你可以使用[`资源注册表`] [1]。
+对于更高级的产品，您可能希望通过代码访问您的资源，更改引用，修改属性以及流式传输数据，以便应用程序可以更快地加载。 以及仅在需要时加载资源。 要做到这一点，你可以使用[`资源注册表`][1]。
 
 In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
@@ -24,11 +24,11 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 * A render Entity is added to the scene and the model **A** is assigned to the render component.
 * A script component is added to the render Entity and a new script is created called `update_asset.js`.
 
-下载[A模型] [5]，[B模型] [6]和[C模型] [7]并将它们上传到你的项目。 确保文件名为A.dae，B.dae和C.dae，因为这将影响资源名称。
+下载[A模型][5]，[B模型][6]和[C模型][7]并将它们上传到你的项目。 确保文件名为A.dae，B.dae和C.dae，因为这将影响资源名称。
 
 ## 资源注册表
 
-[`pc.AssetRegistry`] [1]在所有脚本中都被用作为`this.app.assets`。 注册表将填充添加到项目中的所有运行时资产的详细信息，无论它们是否已加载。 使用资产注册表在应用程序中查找到你所需的资源。
+[`pc.AssetRegistry`][1]在所有脚本中都被用作为`this.app.assets`。 注册表将填充添加到项目中的所有运行时资产的详细信息，无论它们是否已加载。 使用资产注册表在应用程序中查找到你所需的资源。
 
 在这种情况下，我们声明了三个脚本属性“a”，“b”和“c”，它们在编辑器中被分配给对应资源。 然后它们会自动在我们的脚本中变为可用的。
 

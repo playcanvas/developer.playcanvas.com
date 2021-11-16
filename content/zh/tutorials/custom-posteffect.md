@@ -13,15 +13,15 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 您可以在PlayCanvas中通过一些Javascript和GLSL语句创建自己的后期效果。 后期效果是对来自相机的2D渲染图像进行操作的着色器。 您可以对图像应用多个后期效果 - 每个效果使用上一个效果的输出作为其输入。
 
-在接下来的段落中，我们将演示如何创建自己的后期效果。 你可以在[这里] [1]看到现有的后期特效的例子。
+在接下来的段落中，我们将演示如何创建自己的后期效果。 你可以在[这里][1]看到现有的后期特效的例子。
 
 ## 脚本
 
-首先，我们需要创建一个新的脚本。 这个脚本将包含我们的后期效果的[着色器定义] [2]，以及将后期效果添加到相机的代码。 此脚本需要使用附加到实体的[Camera组件] [3]。 我们将这个脚本命名为posteffect_example.js:
+首先，我们需要创建一个新的脚本。 这个脚本将包含我们的后期效果的[着色器定义][2]，以及将后期效果添加到相机的代码。 此脚本需要使用附加到实体的[Camera组件][3]。 我们将这个脚本命名为posteffect_example.js:
 
 ## 特效
 
-现在我们需要为我们的后效果创建一个新类。 这个类将派生自[pc.posteffect.PostEffect] [4]。 我们将在脚本定义之前的posteffect_example.js脚本中定义此类：
+现在我们需要为我们的后效果创建一个新类。 这个类将派生自[pc.posteffect.PostEffect][4]。 我们将在脚本定义之前的posteffect_example.js脚本中定义此类：
 
 ```javascript
 pc.extend(pc, function () {
@@ -65,7 +65,7 @@ pc.extend(pc, function () {
 
 ## 封装
 
-我们现在有我们的后效果的所有必需的组件。 我们需要做的是将上面定义的后期特效案例的实例添加到我们的相机的[后期效果队列] [5]中。 这里是完整的列表：
+我们现在有我们的后效果的所有必需的组件。 我们需要做的是将上面定义的后期特效案例的实例添加到我们的相机的[后期效果队列][5]中。 这里是完整的列表：
 
 ```javascript
 //--------------- POST EFFECT DEFINITION------------------------//
@@ -144,9 +144,9 @@ PosteffectExample.prototype.initialize = function() {
 };
 ```
 
-有关自定义着色器的更多教程，请参阅[here] [6]。
+有关自定义着色器的更多教程，请参阅[here][6]。
 
-在这里参见[自定义后期特效项目] [7]。
+在这里参见[自定义后期特效项目][7]。
 
 [1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 [2]: /api/pc.Shader.html

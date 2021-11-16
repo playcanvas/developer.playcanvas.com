@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
-*你可以在这里找到[完整项目] [4]。 如果你还没有看过[第1部分] [1]和[第2部分] [2]请先阅读它们。*
+*你可以在这里找到[完整项目][4]。 如果你还没有看过[第1部分][1]和[第2部分][2]请先阅读它们。*
 
 ## 游戏的脚本 & 输入
 
@@ -261,7 +261,7 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 
 一旦我们获得了我们刚刚点击的3D点，我们测试看它是否与球重叠。 你会看到在这里我们正在测试的敲击点与球的半径平方之间的距离。 这样可以避免我们每次测试时进行速度较慢的平方根操作。
 
-如果点击动作击中了球，我们调用球的代码中的 `tap(dx, dy)` 方法并传入我们的点击点到球之间的距离。 我们将在[第4部分] [3]中使用。
+如果点击动作击中了球，我们调用球的代码中的 `tap(dx, dy)` 方法并传入我们的点击点到球之间的距离。 我们将在[第4部分][3]中使用。
 
 [1]: /tutorials/keepyup-part-one/
 [2]: /tutorials/keepyup-part-two/

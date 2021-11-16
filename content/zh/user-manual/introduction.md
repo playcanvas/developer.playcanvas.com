@@ -44,7 +44,7 @@ PlayCanvas编辑器是一个让您在可记录的时间内构建场景的可视�
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" frameborder="0" allowfullscreen></iframe>
 
-你可以在[编辑器] [8]部分了解更多。
+你可以在[编辑器][8]部分了解更多。
 
 ### 资源
 

@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
-*你可以找到[完整项目在这里] [9]。 如果你没有看过[第1部分] [1]，[第2部分] [2]，[第3部分] [3]和[第4部分] [4]请先阅读它们。*
+*你可以找到[完整项目在这里][9]。 如果你没有看过[第1部分][1]，[第2部分][2]，[第3部分][3]和[第4部分][4]请先阅读它们。*
 
 ## 音频& 粒子系统
 

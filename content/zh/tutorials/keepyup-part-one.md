@@ -70,7 +70,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 UI实体是其他几个屏幕实体的父级，每个屏幕均用于游戏的用户界面。 我们将在第5部分介绍UI实体。
 
-[第2部分] [2]涵盖主要游戏脚本。
+[第2部分][2]涵盖主要游戏脚本。
 
 [1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
 [2]: /tutorials/keepyup-part-two/

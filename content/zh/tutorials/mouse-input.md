@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 PlayCanvas引擎中的鼠标处理由`pc.Mouse`对象提供。 Mouse 对象提供了一个简单的用于在鼠标移动或按下鼠标按钮时进行检测的接口。 它还消除了处理鼠标坐标的一些跨浏览器不一致。
 
-看看[教学项目] [1]。 下面是来自mouse.js的代码：
+看看[教学项目][1]。 下面是来自mouse.js的代码：
 
 ```javascript
 var Mouse = pc.createScript('mouse');
@@ -77,7 +77,7 @@ Mouse.prototype.onMouseDown = function (event) {
 
 ### 访问鼠标
 
-鼠标控制由`pc.Mouse`对象管理。 [框架] [2]在[应用程序] [3]上提供了一个这样的实例，它对所有脚本对象都是可用的：
+鼠标控制由`pc.Mouse`对象管理。 [框架][2]在[应用程序][3]上提供了一个这样的实例，它对所有脚本对象都是可用的：
 
 ```javascript
 this.app.mouse
@@ -109,7 +109,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 *`pc.EVENT_MOUSEMOVE` - 当鼠标移动时触发
 *`pc.EVENT_MOUSEWHEEL` - 当鼠标滚轮旋转时触发。
 
-浏览器中的鼠标输入通常通过监听页面中DOM元素的[DOM] [4]事件来实现。 问题是不同的浏览器实现事件的方式和提供的值略有不同。 为了简化您编写的代码，PlayCanvas引擎允许您将事件处理程序绑定到PlayCanvas鼠标处理程序，而不是直接的DOM元素。 当事件触发时，引擎提供一个`pc.MouseEvent`对象，它在所有浏览器中是一致的。 如果你需要使用原始的DOM事件，可以把它作为`pc.MouseEvent`中的`event`属性。
+浏览器中的鼠标输入通常通过监听页面中DOM元素的[DOM][4]事件来实现。 问题是不同的浏览器实现事件的方式和提供的值略有不同。 为了简化您编写的代码，PlayCanvas引擎允许您将事件处理程序绑定到PlayCanvas鼠标处理程序，而不是直接的DOM元素。 当事件触发时，引擎提供一个`pc.MouseEvent`对象，它在所有浏览器中是一致的。 如果你需要使用原始的DOM事件，可以把它作为`pc.MouseEvent`中的`event`属性。
 
 ### 移动鼠标
 
@@ -128,7 +128,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 ### 试试看
 
-在[这里] [5]进行全屏尝试或在页面顶部尝试教程。 移动鼠标移动立方体，然后单击左，中间和右鼠标按钮更改立方体的颜色。
+在[这里][5]进行全屏尝试或在页面顶部尝试教程。 移动鼠标移动立方体，然后单击左，中间和右鼠标按钮更改立方体的颜色。
 
 [1]: https://playcanvas.com/project/405819/overview/tutorial-basic-mouse-input
 [2]: /user-manual/glossary#framework
