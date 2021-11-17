@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 <iframe src="https://playcanv.as/p/cHnXIXoN/" ></iframe>
 
-[本项目] [1] 向我们展示了两种加载JSON数据的方式。第一种，从项目中的资源文件加载。 第二种，通过HTTP从远程服务器加载。
+[本项目][1] 向我们展示了两种加载JSON数据的方式。第一种，从项目中的资源文件加载。 第二种，通过HTTP从远程服务器加载。
 
 ## 从资源中读取JSON数据
 

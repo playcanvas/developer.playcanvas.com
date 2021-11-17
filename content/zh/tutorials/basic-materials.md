@@ -58,7 +58,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 尝试修改**平铺**和**偏移**属性，以影响纹理在多维数据集周围的方式。
 
-有关设置材料的更多详情，请参阅用户手册的[物理材料] [6]部分。
+有关设置材料的更多详情，请参阅用户手册的[物理材料][6]部分。
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg

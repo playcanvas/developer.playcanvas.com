@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
 
-这个项目使用[`pc.Mesh`] [1] API来从高度贴图纹理程序生成和纹理滚动的山坡。
+这个项目使用[`pc.Mesh`][1] API来从高度贴图纹理程序生成和纹理滚动的山坡。
 
 在[教学项目][2]中尝试一下。
 

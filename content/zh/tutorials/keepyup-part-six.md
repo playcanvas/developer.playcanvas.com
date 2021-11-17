@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 <iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
 
-*你可以在这里找到[完整项目] [11]。 如果你没有看过[第1部分] [1]，[第2部分] [2]，[第3部分] [3]，[第4部分] [4]和[第5部分] [5]请先阅读它们。*
+*你可以在这里找到[完整项目][11]。 如果你没有看过[第1部分][1]，[第2部分][2]，[第3部分][3]，[第4部分][4]和[第5部分][5]请先阅读它们。*
 
 ## 用户界面
 
@@ -77,7 +77,7 @@ When the Entity is enabled we display the full screen overlay by enabling it and
 
 ## 游戏结束
 
-恭喜您到达系列的结束！ 我们希望您已经了解了如何使用PlayCanvas构建和创建游戏。 如果您对本教程有任何反馈，请联系我们的[论坛] [8]。
+恭喜您到达系列的结束！ 我们希望您已经了解了如何使用PlayCanvas构建和创建游戏。 如果您对本教程有任何反馈，请联系我们的[论坛][8]。
 
 [1]: /tutorials/keepyup-part-one/
 [2]: /tutorials/keepyup-part-two/

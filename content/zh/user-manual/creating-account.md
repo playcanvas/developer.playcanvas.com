@@ -18,17 +18,17 @@ position: 3
 
 ![注册结尾][3]
 
-当您创建帐户时，我们将为您自动创建一个新的演示项目，以便您首先浏览[PlayCanvas Editor] [4]。 随时跳转到您的[profile] [5]页面开始创建自己的项目。
+当您创建帐户时，我们将为您自动创建一个新的演示项目，以便您首先浏览[PlayCanvas Editor][4]。 随时跳转到您的[profile][5]页面开始创建自己的项目。
 
 ## 登陆
 
-要登录您的帐户，请单击首页上的登录。 如果您已经登录，将自动转到您的[个人资料] [5]页面。 如果您使用电子邮件和密码注册，请确保在登录页面中输入这些字段。 否则，如果您已使用Google登录，请点击Google。
+要登录您的帐户，请单击首页上的登录。 如果您已经登录，将自动转到您的[个人资料][5]页面。 如果您使用电子邮件和密码注册，请确保在登录页面中输入这些字段。 否则，如果您已使用Google登录，请点击Google。
 
 ![登陆][7]
 
 ## Persona
 
-我们曾经支持Persona登录系统，但是[Mozilla决定在2016年11月30日关闭] [8]。如果您已经使用Persona登录，请单击[here] [6]为您的帐户设置密码 。
+我们曾经支持Persona登录系统，但是[Mozilla决定在2016年11月30日关闭][8]。如果您已经使用Persona登录，请单击[here][6]为您的帐户设置密码 。
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
