@@ -20,8 +20,13 @@
     "type": "git",
     "url": "https://github.com/playcanvas/developer.playcanvas.com.git"
   },
+  "eslintConfig": {
+    "extends": "@playcanvas/eslint-config"
+  },
   "devDependencies": {
+    "@playcanvas/eslint-config": "^1.0.13",
     "broken-link-checker": "0.7.8",
+    "eslint": "^8.1.0",
     "handlebars": "^4.7.7",
     "http-server": "^14.0.0",
     "marked": "^4.0.3",
@@ -38,11 +43,16 @@
     "watch": "1.0.2"
   },
   "scripts": {
+    "build": "node build.js",
+    "build:dev": "npm run faq-to-json -- --out editor_howdoi_dev.json && npm run faq && npm run build -- dev",
+    "build:prod": "npm run faq-to-json -- --out editor_howdoi.json && npm run faq && npm run build -- prod",
+    "faq": "node faq.js --dir content/en/faq --out content/en/user-manual/faq.md",
+    "faq-to-json": "node faq_to_json.js --dir content/en/faq --bucket code.playcanvas.com",
+    "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
+    "serve": "http-server build -a localhost -p 51000",
     "watch:osx": "watch 'npm run build' content --interval=3 --wait=5 --ignoreDotFiles --filter='watch-filter.js'",
     "watch:windows": "watch \"npm run build\" content --interval=3 --wait=5 --ignoreDotFiles --filter=\"watch-filter.js\"",
-    "build": "node build.js",
-    "serve": "http-server build -a localhost -p 51000",
     "test-links:en": "node test-links.js"
   }
 }
