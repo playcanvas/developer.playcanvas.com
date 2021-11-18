@@ -67,4 +67,4 @@ You can control a Particle System component's properties using a [script compone
 
 [1]: /images/user-manual/scenes/components/component-particle-system.png
 [2]: /user-manual/packs/components/script
-[3]: /engine/api/stable/symbols/pc.ParticleSystemComponent.html
+[3]: /api/pc.ParticleSystemComponent.html

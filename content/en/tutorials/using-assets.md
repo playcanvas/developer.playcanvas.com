@@ -202,9 +202,9 @@ this.app.assets.load(asset);
 
 The `asset.ready()` method will call it's callback as soon as the asset is loaded, if the asset is already loaded, it will call it straight away. `app.assets.load()` does nothing if the asset is already loaded.
 
-[1]: /en/api/pc.AssetRegistry.html
+[1]: /api/pc.AssetRegistry.html
 [3]: https://playcanvas.com/project/406036
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
-[8]: /en/api/pc.RenderComponent.html#asset
+[8]: /api/pc.RenderComponent.html#asset

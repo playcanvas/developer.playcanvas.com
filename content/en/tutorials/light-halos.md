@@ -126,4 +126,4 @@ That's it. A simple but pretty effect to add to your scene. Take a look at the [
 [2]: /images/tutorials/intermediate/light-halos/material.jpg
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
-[5]: http://developer.playcanvas.com/en/api/pc.MeshInstance.html
+[5]: /api/pc.MeshInstance.html

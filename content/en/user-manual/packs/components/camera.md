@@ -51,4 +51,4 @@ You can control a Camera component's properties using a [script component][2]. T
 
 [1]: /images/user-manual/scenes/components/component-camera.png
 [2]: /user-manual/packs/components/script
-[3]: /en/api/pc.CameraComponent.html
+[3]: /api/pc.CameraComponent.html

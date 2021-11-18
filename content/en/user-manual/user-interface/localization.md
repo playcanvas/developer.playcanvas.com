@@ -115,9 +115,9 @@ To retrieve the text from a key in script, use the APIs:
 For the complete engine API reference for localization see [this page][2].
 
 [1]: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-[2]: https://developer.playcanvas.com/en/api/pc.I18n.html
-[3]: https://developer.playcanvas.com/en/api/pc.I18n.html#getText
-[4]: https://developer.playcanvas.com/en/api/pc.I18n.html#getPluralText
+[2]: /api/pc.I18n.html
+[3]: /api/pc.I18n.html#getText
+[4]: /api/pc.I18n.html#getPluralText
 [5]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
 [6]: http://www.thai-language.com/ref/breaking-words
 [7]: https://en.wikipedia.org/wiki/Zero-width_space
