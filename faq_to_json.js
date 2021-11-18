@@ -89,7 +89,8 @@ m.build((err, results) => {
         let html = results[key].contents.toString('utf-8');
 
         // links clicked in the Editor should open a new tab
-        html = html.replace('<a href=', '<a target="_blank" href=');
+        const re = new RegExp('<a href=', 'g');
+        html = html.replace(re, '<a target="_blank" href=');
 
         // style buttons in the Editor
         html = html.replace('>Learn more<', ' class="docs">View User Manual<');
