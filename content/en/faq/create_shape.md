@@ -7,9 +7,8 @@ keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, pri
 
 <img src="https://playcanvas.com/static-assets/instructions/new_box.gif"/>
 
-You can add primitive shapes like boxes, spheres and others by adding a **Model Component** on an Entity and changing its type to the desired shape.
+You can add primitive shapes like boxes, spheres and others by adding a **Render Component** on an Entity and changing its type to the desired shape.
 
 You can also right click on an Entity and select New Entity/Box to add a box (similarly for other shapes).
 
-
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">View User Manual</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/render/)

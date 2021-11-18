@@ -1,6 +1,6 @@
 ---
 title: Remove a component
-keywords: entity, remove, component, behaviour
+keywords: entity, remove, component, behavior
 ---
 
 
