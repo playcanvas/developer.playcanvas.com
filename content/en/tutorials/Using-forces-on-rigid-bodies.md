@@ -183,13 +183,13 @@ DynamicBody.prototype.reset = function () {
 };
 ```
 
-[1]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyForce
-[2]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyImpulse
-[3]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorque
-[4]: /engine/api/stable/symbols/pc.RigidBodyComponent.html#applyTorqueImpulse
-[5]: /engine/api/stable/symbols/pc.Vec3.html
-[6]: /engine/api/stable/symbols/pc.CollisionComponent.html
-[7]: /engine/api/stable/symbols/pc.html
+[1]: /api/pc.RigidBodyComponent.html#applyForce
+[2]: /api/pc.RigidBodyComponent.html#applyImpulse
+[3]: /api/pc.RigidBodyComponent.html#applyTorque
+[4]: /api/pc.RigidBodyComponent.html#applyTorqueImpulse
+[5]: /api/pc.Vec3.html
+[6]: /api/pc.CollisionComponent.html
+[7]: /api/pc.html
 [8]: /tutorials/first-person-movement/
 [9]: /tutorials/collision-and-triggers/
 [10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
