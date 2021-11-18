@@ -17,56 +17,35 @@ When writing a link in a markdown file use the following format:
 Building the site requires `node` and `npm`
 
     cd developer.playcanvas.com
-    make
-
-On Windows:
-
-    cd developer.playcanvas.com
     npm install
-    node build.js
+    node run build
 
 ## How to serve
 
 To serve the site locally:
 
-    cd developer.playcanvas.com
     npm run serve
 
-On Windows:
-
-    cd developer.playcanvas.com
-    node node_modules/http-server/bin/http-server build
+Now visit http://localhost:51000 in your browser.
 
 ## Use 'watch' for quick iteration
 
 The watch build command will automatically build the site when changes are made in the `content` directory.
 
-    cd developer.playcanvas.com
-    npm install
     npm run watch:osx
 
 On Windows:
 
-    cd developer.playcanvas.com
-    npm install
     npm run watch:windows
 
 ## Update CSS from SCSS
 
 The site uses Sass to generate the CSS. To generate, run:
 
-    cd developer.playcanvas.com
-    npm install
     npm run sass
 
 ## Test for broken links
 
 Start the localhost server from [How to server](#how-to-serve) and in another terminal window, run:
 
-    cd developer.playcanvas.com
-    npm install
-    npm run test-links:en
-
-## How to deploy
-
-Deployment is made by pushing to stable branch
+    npm run test-link
