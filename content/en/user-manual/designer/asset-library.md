@@ -8,4 +8,4 @@ position: 6
 
 You can get free 3D models for you project in the [PlayCanvas Store][1]
 
-[1]: http://store.playcanvas.com/
+[1]: https://store.playcanvas.com/

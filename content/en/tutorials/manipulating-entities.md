@@ -140,5 +140,5 @@ entity.setLocalScale(s, s, s);
 
 Note that you cannot currently set the Entity's scale in world space.
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
-[2]: http://en.wikipedia.org/wiki/Quaternion
+[1]: https://en.wikipedia.org/wiki/Euler_angles
+[2]: https://en.wikipedia.org/wiki/Quaternion
