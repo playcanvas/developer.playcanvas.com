@@ -19,4 +19,4 @@ The built-in vignette effect has the following attributes:
 * **Offset**: Controls the offset of the effect.
 * **Darkness**: Controls the darkness of the effect.
 
-[1]: http://en.wikipedia.org/wiki/Vignetting
+[1]: https://en.wikipedia.org/wiki/Vignetting
