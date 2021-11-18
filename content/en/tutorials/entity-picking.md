@@ -60,7 +60,7 @@ The main disadvantage is that this uses the `readPixels` method which stalls the
 
 You are able modify the size of the buffer to be smaller to improve the performance at the cost of accuracy. In the example script below, the attribute `pickAreaScale` is used to do this where the lower the number, the faster and less accurate the picker becomes.
 
-let  also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
+It's also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
 
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
