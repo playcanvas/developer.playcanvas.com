@@ -92,4 +92,4 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [11]: https://playcanvas.com/project/406050
 [12]: /images/tutorials/beginner/keepyup-part-six/image-element.jpg
 [13]: /images/tutorials/beginner/keepyup-part-six/element-attr.jpg
-[14]: http://forum.playcanvas.com
+[14]: https://forum.playcanvas.com/

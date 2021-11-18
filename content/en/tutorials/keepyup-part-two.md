@@ -80,7 +80,7 @@ The overlay material is even simpler than the backdrop. In this case all we are 
 Continue on to [Part 3][15].
 
 [1]: /tutorials/keepyup-part-one/
-[2]: http://store.playcanvas.com/
+[2]: https://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
 [5]: /images/tutorials/beginner/keepyup-part-two/ball-spec.jpg
