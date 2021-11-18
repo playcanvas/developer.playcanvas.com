@@ -9,4 +9,4 @@ To play sounds you need to add a <a href="http://developer.playcanvas.com/en/use
 
 You can create Audio assets by dragging audio files from your computer into the Assets panel.
 
-<a class="docs" href="http://developer.playcanvas.com/en/tutorials/beginner/basic-audio/" target="_blank">View Tutorial</a>
+<a class="docs" href="https://developer.playcanvas.com/en/tutorials/basic-audio/" target="_blank">View Tutorial</a>

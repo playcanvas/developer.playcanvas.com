@@ -9,4 +9,4 @@ To give physical properties to an Entity you need to add a <a href="http://devel
 
 You can change the built-in <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#gravity" target="_blank">gravity</a> from the <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/" target="_blank">Scene Settings</a>.
 
-<a class="docs" href="http://developer.playcanvas.com/en/tutorials/intermediate/collision-and-triggers/" target="_blank">View Tutorial</a>
+<a class="docs" href="https://developer.playcanvas.com/en/tutorials/collision-and-triggers/" target="_blank">View Tutorial</a>
