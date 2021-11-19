@@ -44,11 +44,11 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 
 Start the localhost server (as described in the [How to serve](#how-to-serve) section) and in another terminal window run:
 
-    npm run test-link:en
+    npm run test-links:en
 
 Or to test against a live or staging server, pass the URL base as an argument:
 
-    npm run test-link:en "https://developer.playcanvas.com"
+    npm run test-links:en "https://developer.playcanvas.com"
 
 ## Style Guide
 
