@@ -9,7 +9,7 @@ position: 4
 ## Animation Import Settings
 
 <div class="alert alert-info">
-Note: This is an experimental feature. Please let us know your feedback in the <a href="http://forum.playcanvas.com/" target="_blank">forums</a>.
+Note: This is an experimental feature. Please let us know your feedback in the <a href="https://forum.playcanvas.com/" target="_blank">forums</a>.
 </div>
 
 When importing animations, there are settings that can be tweaked to adjust the animation quality against the file size.

@@ -7,9 +7,9 @@ keywords: компонент, модель, куб, сфера, цилиндр, 
 
 <img src="https://playcanvas.com/static-assets/instructions/new_box.gif"/>
 
-Вы можете добавить такие примитивы как кубы, сферы и добавив **Компонент модель** на Сущности и выбрав желаемый тип фигуры.
+You can add primitive shapes like boxes, spheres and others by adding a **Render Component** on an Entity and changing its type to the desired shape.
 
 Вы также можете сделать клик правой кнопкой мыши по Сущности и выбрать Новая сущность/Куб чтобы добавить куб (аналогично для других фигур)
 
-<a class="docs" href="http://developer.playcanvas.com/ru/user-manual/packs/components/model/" target="_blank">Посмотреть руководство пользователя</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/render/)
 

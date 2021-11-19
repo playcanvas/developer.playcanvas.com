@@ -51,5 +51,5 @@ Collisionコンポーネントのプロパティは[スクリプトコンポー�
 [6]: /images/user-manual/scenes/components/component-collision-mesh.png
 [7]: /images/user-manual/scenes/components/component-collision-sphere.png
 [8]: /user-manual/packs/components/script
-[9]: /engine/api/stable/symbols/pc.CollisionComponent.html
+[9]: /api/pc.CollisionComponent.html
 

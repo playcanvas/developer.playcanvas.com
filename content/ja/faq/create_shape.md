@@ -7,9 +7,9 @@ keywords: コンポーネント, モデル, ボックス, 球体, 円柱, コー
 
 <img src="https://playcanvas.com/static-assets/instructions/new_box.gif"/>
 
-エンティティに**モデルコンポーネント**を追加してタイプを任意の形に変更することで、ボックスや球体などのプリミティブな形を追加できます。
+You can add primitive shapes like boxes, spheres and others by adding a **Render Component** on an Entity and changing its type to the desired shape.
 
 エンティティを右クリックしてNew Entity/Boxを選択してボックスを追加することができます (他の形も)。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/packs/components/model/" target="_blank">ユーザーマニュアルを参照</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/render/)
 

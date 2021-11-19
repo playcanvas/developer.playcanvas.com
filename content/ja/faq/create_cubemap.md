@@ -11,5 +11,5 @@ keywords: アセット, キューブマップ, 作成, スカイボックス, �
 
 キューブマップを作成するにはアセットパネルの**<span class="font-icon">&#57632;</span> Add** ボタンをクリックして、**New Cubemap**を選択します。次にキューブマップインスペクタに6つのテクスチャーをドラッグします。物理ベースのレンダリングを活用するためには、6つのテクスチャーを設定した後に**Prefilter**をクリックしてください。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">ユーザーマニュアルを参照</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/)
 

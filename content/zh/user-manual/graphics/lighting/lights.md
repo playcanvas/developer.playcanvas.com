@@ -44,7 +44,7 @@ An omni light lights an object like this:
 
 ![Omni light][4]
 
-### Spot Lights
+### 聚光灯
 
 Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
 

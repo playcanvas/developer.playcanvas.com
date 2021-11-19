@@ -124,7 +124,7 @@ This script is attached to the button entities in the scene.
 
 The Button component has a [`click` event][click-event-api] against which a callback function can be registered that works for both mouse and touch input.
 
-```
+```javascript
 this.entity.button.on('click', function(event) {
     this.textEntity.element.text = this.description;
 }, this);

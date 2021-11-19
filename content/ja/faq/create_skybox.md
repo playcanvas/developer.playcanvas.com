@@ -5,7 +5,7 @@ keywords: スカイボックス, キューブマップ, 作成, アセット, pb
 
 ## スカイボックスを作成するには？
 
-スカイボックスを作成するには、まず<a href="http://developer.playcanvas.com/en/user-manual/assets/cubemaps/" target="_blank">Cubemap アセット</a>を作成する必要があります。次に、Cubemapを3Dビューポートにドラッグ＆ドロップするか、 <a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">Scene Settings</a> からCubemapをSkyboxフィールドにドラッグします。
+スカイボックスを作成するには、まず[Cubemap アセット](http://developer.playcanvas.com/en/user-manual/assets/cubemaps/)を作成する必要があります。次に、Cubemapを3Dビューポートにドラッグ＆ドロップするか、Scene SettingsからCubemapをSkyboxフィールドにドラッグします。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/designer/settings/#skybox" target="_blank">ユーザーマニュアルを参照</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/designer/settings/#skybox)
 

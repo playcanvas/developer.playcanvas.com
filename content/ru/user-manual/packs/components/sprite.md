@@ -76,6 +76,6 @@ You can control the properties of a Sprite component using a [script component][
 [2]: /images/user-manual/scenes/components/component-sprite-simple.png
 [3]: /images/user-manual/scenes/components/component-sprite-animated.png
 [4]: /user-manual/packs/components/script
-[5]: /en/api/pc.SpriteComponent.html
+[5]: /api/pc.SpriteComponent.html
 [6]: /user-manual/optimization/batching
 

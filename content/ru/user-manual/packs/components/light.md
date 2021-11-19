@@ -66,5 +66,5 @@ You can control a Light component's properties using a [script component][4]. Th
 [2]: /images/user-manual/scenes/components/component-light-point.png
 [3]: /images/user-manual/scenes/components/component-light-spot.png
 [4]: /user-manual/packs/components/script
-[5]: /engine/api/stable/symbols/pc.LightComponent.html
+[5]: /api/pc.LightComponent.html
 

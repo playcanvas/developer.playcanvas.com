@@ -7,5 +7,5 @@ keywords: ресурс, новый, создать, загрузить
 
 Чтобы загрузить ресурс, просто перетащите файлы с Вашего компьютера в панель ресурсов. Ваши файлы будут обработаны на сервере и появятся в панели ресурсов.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/" target="_blank">Руководство пользователя</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/importing/)
 

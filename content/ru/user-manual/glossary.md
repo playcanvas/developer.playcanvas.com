@@ -1,7 +1,7 @@
 ---
 title: Glossary
 template: usermanual-page.tmpl.html
-position: 25
+position: 26
 ---
 
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
@@ -111,5 +111,5 @@ A Transformation Matrix is a mathematical matrix that represents a set of linear
 [20]: #texture
 [22]: #transformation-matrix
 
-[50]: /en/api/
+[50]: /api/
 

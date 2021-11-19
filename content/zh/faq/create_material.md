@@ -9,5 +9,5 @@ keywords: 资源, 材质, 创建, 颜色, 表面, 法线, 高光, 反射, phong,
 
 在资源面板中点击 **<span class="font-icon">&#57632;</span> Add** 按钮然后选择 **New Material** 新建材质。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">查看用户手册</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 

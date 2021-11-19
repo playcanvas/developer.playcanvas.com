@@ -5,9 +5,9 @@ keywords: コンポーネント, 物理, コリジョン, コライダー, リ�
 
 ## 物理を使用するには？
 
-エンティティに物理的なプロパティを加えるには <a href="http://developer.playcanvas.com/en/user-manual/packs/components/collision/" target="_blank">Collision</a> コンポーネントと <a href="http://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/" target="_blank">RigidBody</a> コンポーネントを追加する必要があります。Collision コンポーネントはエンティティに物理的な形を与え、RigidBodyコンポーネントはエンティティを物理エンジンでシミュレートできるようにします。
+エンティティに物理的なプロパティを加えるには [Collision](https://developer.playcanvas.com/en/user-manual/packs/components/collision/) コンポーネントと [RigidBody](https://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/) コンポーネントを追加する必要があります。Collision コンポーネントはエンティティに物理的な形を与え、RigidBodyコンポーネントはエンティティを物理エンジンでシミュレートできるようにします。
 
-ビルドインの<a href="http://developer.playcanvas.com/en/user-manual/designer/settings/#gravity" target="_blank">gravity</a> じゃ<a href="http://developer.playcanvas.com/en/user-manual/designer/settings/" target="_blank">Scene Settings</a>から変更できます。
+You can change the default [gravity](https://developer.playcanvas.com/en/user-manual/designer/settings/#gravity) in the Scene Settings.
 
-<a class="docs" href="http://developer.playcanvas.com/en/tutorials/intermediate/collision-and-triggers/" target="_blank">チュートリアルを見る</a>
+[View tutorial](https://developer.playcanvas.com/en/tutorials/collision-and-triggers/)
 

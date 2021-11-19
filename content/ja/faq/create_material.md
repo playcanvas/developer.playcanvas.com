@@ -9,5 +9,5 @@ keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュ�
 
 素材を作成するにはアセットパネルの**<span class="font-icon">&#57632;</span> Add** ボタンをクリックして、**New Material**を選択します。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">ユーザーマニュアルを参照</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 

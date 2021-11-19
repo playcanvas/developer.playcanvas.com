@@ -7,7 +7,7 @@ keywords: 脚本, 代码, 创建, javascript, 行为
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif"/>
 
-可以使用 javascript 来控制实体的行为。增加一个脚本组件，然后创建一个新脚本。
+可以使用 JavaScript 来控制实体的行为。增加一个脚本组件，然后创建一个新脚本。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/scripting/creating-new/" target="_blank">查看用户手册</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/)
 

@@ -44,7 +44,7 @@ An omni light lights an object like this:
 
 ![Omni light][4]
 
-### Spot Lights
+### スポットライト
 
 Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
 
@@ -85,7 +85,7 @@ The sphere light source shape is ball shaped with a specified radius.
 
 ![Shapes][7]
 
-## Use Cases
+## ユースケース
 
 Below is a table of some common use cases each light source shape and light type:
 

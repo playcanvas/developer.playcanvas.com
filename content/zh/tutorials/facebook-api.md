@@ -284,7 +284,7 @@ FacePhoto.prototype.createPhoto = function(texture) {
 
 我们的游戏SWOOOP显示其中的一些在行动。 现在试试[Facebook][4]。
 
-[1]: http://github.com/playcanvas/playcanvas-facebook
+[1]: https://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api
 [3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/

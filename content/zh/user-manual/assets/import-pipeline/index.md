@@ -14,13 +14,13 @@ position: 2
 
 ![asset tasks][1]
 
-There are a variety of options available to tune the behavior of the import pipeline to suit your needs.
+为了满足用户的需求，这里提供了多种选项用以调整导入通道的行为。
 
 <img src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
 ### 搜索相关资源
 
-When you update an source asset by uploading a new version of the file. There are two possible behaviors for how we update the target assets that are created by the import pipeline.
+当你通过上传一个新版本的文件来更新一个源资源时，对于用户如何通过导入通道来更新目标资源，这里有两种可能的方式。
 
 如果**Search related assets**被开启，通道将会更新目标资源无论它们位于哪个文件夹。
 如果**Search related assets**被关闭，通道将只会寻找在于源资源在同一文件夹中的目标资源。
@@ -33,7 +33,7 @@ Newly created assets will automatically be set to [preload][2] or not depending 
 
 ## Texture Import Settings
 
-These options only affect the importing of images and textures.
+以下这些选项将只会影响图像和纹理的导入。
 
 ### Texture POT (Power of Two)
 
@@ -53,19 +53,19 @@ When a model file is updated or reimported, the Editor will try to preserve the 
 
 ### 覆盖模型
 
-When a model file is updated or reimported this option determines whether or not the target model file is overwritten. The default behavior is to overwrite with the new model.
+这个选项决定了当更新或者重新导入一个模型文件时，目标资源是否会被覆盖。在默认情况下，目标资源将会被一个新的模型所覆盖。
 
 ### 覆盖动画
 
-When a model file is updated or reimported this option determines whether or not a animations created from the model are overwritten. The default behavior is to overwrite with the new animations.
+这个选项决定了当更新或重新导入一个模型文件时，从模型创建的动画是否会被覆盖。在默认情况下，新动画将会覆盖。
 
 ### 覆盖材质
 
-When a model file is updated or reimported this option determines whether or not materials created from the model are overwritten. The default behavior is to leave existing materials.
+这个选项决定了当更新或重新导入一个模型文件时，从模型创建的材质是否会被覆盖。在默认情况下，将会使用新材质代替现有材质。
 
 ### 覆盖贴图
 
-When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behavior is to overwrite with the new textures.
+这个选项决定了当更新或重新导入一个模型文件时，从模型创建的贴图是否会被覆盖。在默认情况下。新贴图将会覆盖。
 
 ### Convert to GLB
 

@@ -23,5 +23,5 @@ position: 16
 スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]です。
 
 [1]: /images/user-manual/scenes/components/component-script.png
-[2]: /engine/api/stable/symbols/pc.ScriptComponent.html
+[2]: /api/pc.ScriptComponent.html
 

@@ -19,5 +19,5 @@ position: 1
 * **泛花阈值**: 只有亮度超过这个阈值的像素会被处理。范围从0到1。
 * **模糊量**: 控制模糊的程度
 
-[1]: http://en.wikipedia.org/wiki/Bloom_(shader_effect)
+[1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 

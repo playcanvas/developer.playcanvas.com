@@ -99,5 +99,5 @@ Display.prototype.initialize = function () {
 
 イベントの詳細は [API Reference][1]からご確認ください
 
-[1]: http://developer.playcanvas.com/en/api/pc.EventHandler.html
+[1]: /api/pc.EventHandler.html
 

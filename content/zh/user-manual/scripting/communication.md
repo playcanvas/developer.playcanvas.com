@@ -99,5 +99,5 @@ Display.prototype.initialize = function () {
 
 更多的消息请点击 [API Reference][1]
 
-[1]: http://developer.playcanvas.com/en/api/pc.EventHandler.html
+[1]: /api/pc.EventHandler.html
 

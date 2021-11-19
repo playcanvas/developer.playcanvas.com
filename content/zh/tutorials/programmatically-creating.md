@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## 创建一个实体
 
-```js
+```javascript
 var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy

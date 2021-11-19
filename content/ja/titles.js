@@ -44,7 +44,7 @@
     "Create an Entity": "エクスポートを作成",
     "Add a component": "コンポーネントを追加",
     "Create a material": "素材を作成",
-    "Change the color of a model": "モデルの色を変更",
+    "Change the material of a model": "",
     "Create a light": "ライトを作成",
     "Remove a component": "コンポーネントを取り除く",
     "Glossary": "用語集",

@@ -26,10 +26,6 @@ position: 3
 
 ![登陆][7]
 
-## Persona
-
-我们曾经支持Persona登录系统，但是[Mozilla决定在2016年11月30日关闭][8]。如果您已经使用Persona登录，请单击[here][6]为您的帐户设置密码 。
-
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
@@ -37,5 +33,4 @@ position: 3
 [5]: /user-manual/profile/
 [6]: https://login.playcanvas.com/persona_deprecated
 [7]: /images/user-manual/creating-account/login.png
-[8]: https://wiki.mozilla.org/Identity/Persona_Shutdown_Guidelines_for_Reliers
 

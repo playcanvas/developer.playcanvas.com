@@ -201,10 +201,10 @@ this.app.assets.load(asset);
 
 `asset.ready()` 方法将在资源加载后立即调用它的回调函数，如果它被使用时资源已经加载，则它会立即调用回调函数。如果资源已经加载，则 `app.assets.load()` 什么也不做。
 
-[1]: /en/api/pc.AssetRegistry.html
+[1]: /api/pc.AssetRegistry.html
 [3]: https://playcanvas.com/project/406036
 [5]: /downloads/tutorials/A.dae
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
-[8]: /en/api/pc.RenderComponent.html#asset
+[8]: /api/pc.RenderComponent.html#asset
 

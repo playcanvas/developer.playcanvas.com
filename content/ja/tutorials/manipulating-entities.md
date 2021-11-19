@@ -140,6 +140,6 @@ entity.setLocalScale(s, s, s);
 
 現在、ワールド空間でエンティティのスケールを設定することはできません。
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
-[2]: http://en.wikipedia.org/wiki/Quaternion
+[1]: https://en.wikipedia.org/wiki/Euler_angles
+[2]: https://en.wikipedia.org/wiki/Quaternion
 

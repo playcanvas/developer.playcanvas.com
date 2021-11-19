@@ -49,7 +49,7 @@ Modelコンポーネントはコンポーネントパネルの右上のトグル
 
 [1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/packs/components/script
-[3]: /engine/api/stable/symbols/pc.ModelComponent.html
+[3]: /api/pc.ModelComponent.html
 [4]: /user-manual/assets/materials/#assigning-materials
 [5]: /user-manual/optimization/batching
 

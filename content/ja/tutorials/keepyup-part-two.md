@@ -80,7 +80,7 @@ emissiveマップは、表面の色を設定して、まるでその色の光を
 [その3][15]に進む。
 
 [1]: /tutorials/keepyup-part-one/
-[2]: http://store.playcanvas.com/
+[2]: https://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
 [5]: /images/tutorials/beginner/keepyup-part-two/ball-spec.jpg

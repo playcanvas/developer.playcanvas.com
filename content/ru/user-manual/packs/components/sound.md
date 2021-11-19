@@ -52,5 +52,5 @@ You can control the properties of a Sound component using a [script component][2
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/packs/components/script
-[3]: /engine/api/stable/symbols/pc.SoundComponent.html
+[3]: /api/pc.SoundComponent.html
 

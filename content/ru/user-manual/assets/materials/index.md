@@ -104,6 +104,6 @@ Some map slots can be a flat color instead of a texture map. Some slots also sup
 
 Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
 
-[1]: /user-manual/assets/physical-material
-[2]: /user-manual/assets/phong-material
+[1]: /user-manual/assets/materials/physical-material
+[2]: /user-manual/assets/materials/phong-material
 

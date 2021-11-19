@@ -1,9 +1,9 @@
 ---
-title: モデルの色を変更
-keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュラー
+title: Change the material of a model
+keywords: asset, material, create, color, surface, normal, specular
 ---
 
-## モデルの色を変更するには？
+## How do I change the material of a model?
 
 <img src="https://playcanvas.com/static-assets/instructions/change_material.gif"/>
 
@@ -11,5 +11,5 @@ keywords: アセット, 素材, 作成, 色, 表面, ノーマル, スペキュ�
 
 新しい素材を作成してモデルにドラッグ＆ドロップするか、既存の素材を選択してInspectorでプロパティを編集することができます。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">ユーザーマニュアルを参照</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 

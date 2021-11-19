@@ -16,5 +16,5 @@ position: 3
 
 [1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
-[3]: /engine/api/stable/symbols/pc.AudioListenerComponent.html
+[3]: /api/pc.AudioListenerComponent.html
 

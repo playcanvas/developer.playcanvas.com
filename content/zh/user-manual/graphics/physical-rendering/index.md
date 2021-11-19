@@ -54,7 +54,7 @@ PBR让人欣喜的地方在于性能的节约全部包含在了着色器内，�
 *更多信息请参阅 Marmoset Toolbag 的 [PBR 理论][5] 文章 *。
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
-[2]: http://joachimcoppens.com/
+[2]: https://www.joachimcoppens.com/
 [3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
 [4]: /images/user-manual/graphics/physical-rendering/materials.jpg
 [5]: https://www.marmoset.co/toolbag/learn/pbr-theory

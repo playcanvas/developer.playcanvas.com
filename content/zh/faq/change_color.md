@@ -1,9 +1,9 @@
 ---
-title: 改变模型的颜色
-keywords: 资源, 材质, 创建, 颜色, 表面, 法线, 高光
+title: Change the material of a model
+keywords: asset, material, create, color, surface, normal, specular
 ---
 
-## 如何修改模型的颜色？
+## How do I change the material of a model?
 
 <img src="https://playcanvas.com/static-assets/instructions/change_material.gif"/>
 
@@ -11,5 +11,5 @@ keywords: 资源, 材质, 创建, 颜色, 表面, 法线, 高光
 
 可以通过创建一个新的材质然后拖放到模型上或者在模型的检查器中选择它的材质然后编辑材质属性。
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">查看用户手册</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 
