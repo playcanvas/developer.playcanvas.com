@@ -169,138 +169,6 @@ source_file = po/shader-editor/overview/graphs/sub-graphs.en-US.po
 source_lang = en
 type = PO
 
-[playcanvas-developer-site.po-faq-change_background]
-file_filter = po/faq/change_background.<lang>.po
-source_file = po/faq/change_background.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_material]
-file_filter = po/faq/create_material.<lang>.po
-source_file = po/faq/create_material.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-upload_asset]
-file_filter = po/faq/upload_asset.<lang>.po
-source_file = po/faq/upload_asset.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-use_physics]
-file_filter = po/faq/use_physics.<lang>.po
-source_file = po/faq/use_physics.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_shader]
-file_filter = po/faq/create_shader.<lang>.po
-source_file = po/faq/create_shader.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-change_color]
-file_filter = po/faq/change_color.<lang>.po
-source_file = po/faq/change_color.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-render_model]
-file_filter = po/faq/render_model.<lang>.po
-source_file = po/faq/render_model.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-use_shadows]
-file_filter = po/faq/use_shadows.<lang>.po
-source_file = po/faq/use_shadows.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_light]
-file_filter = po/faq/create_light.<lang>.po
-source_file = po/faq/create_light.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-play_sound]
-file_filter = po/faq/play_sound.<lang>.po
-source_file = po/faq/play_sound.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-transform_entity]
-file_filter = po/faq/transform_entity.<lang>.po
-source_file = po/faq/transform_entity.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-add_component]
-file_filter = po/faq/add_component.<lang>.po
-source_file = po/faq/add_component.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-delete_asset]
-file_filter = po/faq/delete_asset.<lang>.po
-source_file = po/faq/delete_asset.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_skybox]
-file_filter = po/faq/create_skybox.<lang>.po
-source_file = po/faq/create_skybox.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-duplicate_entity]
-file_filter = po/faq/duplicate_entity.<lang>.po
-source_file = po/faq/duplicate_entity.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-remove_component]
-file_filter = po/faq/remove_component.<lang>.po
-source_file = po/faq/remove_component.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-play_animation]
-file_filter = po/faq/play_animation.<lang>.po
-source_file = po/faq/play_animation.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-add_script]
-file_filter = po/faq/add_script.<lang>.po
-source_file = po/faq/add_script.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_cubemap]
-file_filter = po/faq/create_cubemap.<lang>.po
-source_file = po/faq/create_cubemap.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_shape]
-file_filter = po/faq/create_shape.<lang>.po
-source_file = po/faq/create_shape.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-create_entity]
-file_filter = po/faq/create_entity.<lang>.po
-source_file = po/faq/create_entity.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-faq-delete_entity]
-file_filter = po/faq/delete_entity.<lang>.po
-source_file = po/faq/delete_entity.en-US.po
-source_lang = en
-type = PO
-
 [playcanvas-developer-site.po-user-manual-made-with-playcanvas]
 file_filter = po/user-manual/made-with-playcanvas.<lang>.po
 source_file = po/user-manual/made-with-playcanvas.en-US.po
@@ -1714,6 +1582,12 @@ type = PO
 [playcanvas-developer-site.po-tutorials-custom-shaders]
 file_filter = po/tutorials/custom-shaders.<lang>.po
 source_file = po/tutorials/custom-shaders.en-US.po
+source_lang = en
+type = PO
+
+[playcanvas-developer-site.po-user-manual-faq]
+file_filter = po/user-manual/faq.<lang>.po
+source_file = po/user-manual/faq.en-US.po
 source_lang = en
 type = PO
 
