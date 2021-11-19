@@ -8,14 +8,14 @@ position: 18
 
 自身のアセットを作成するのも良いですが、作成に時間や費用がかかりすぎてしまう場合もあります。様々な種類の無料または有料のアセットを取得することができる場所のリンクを集めました。
 
-If you've got other suggestions for this page. Then let us know on the [forum][1].
+このページに関するご提案は[フォーラム][1]からご連絡ください。
 
 ## アセットマーケットプレイス
 
 アセットマーケットプレイスとはダウンロードしてPlayCanvasゲームに追加できる、無料または有料コンテンツのオンラインライブラリです。
 
 <table class="table table-striped table-bordered">
-    <tr><th>Provider</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
+    <tr><th>提供者</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
     <tr><td><a href="https://www.3dmodels-textures.com/">3D Models Textures</a></td><td></td><td>&#x2713;</td><td>&#x2713;</td></tr>
     <tr><td><a href="https://www.blendswap.com/">BlendSwap</a></td><td></td><td>&#x2713;</td><td></td></tr>
     <tr><td><a href="https://www.cgtrader.com/">CGTrader</a></td><td></td><td>&#x2713;</td><td></td></tr>

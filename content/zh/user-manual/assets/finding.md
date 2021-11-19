@@ -8,7 +8,7 @@ position: 18
 
 创建个人独有的资源是非常重要的，但有时完全定制一份资源需要太昂贵的价格或更多的时间。因此，我们整理并收集了一份资源链接的列表，你可以从这里得到免费或付费的各类资源。
 
-If you've got other suggestions for this page. Then let us know on the [forum][1].
+如果你有对本页更多的其它可行的建议。请在 [论坛][1]告诉我们。
 
 ## 资源交易市场
 
