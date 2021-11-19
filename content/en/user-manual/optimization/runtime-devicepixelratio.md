@@ -16,10 +16,9 @@ This can be problematic on devices such as low or mid-tier mobile devices where 
 
 Ideally, we want the best of both worlds where users on high-tier devices will render at the highest quality but users on lower-tier devices will reduce the ratio to maintain a playable frame rate.
 
-The Device pixel ratio can be changed at runtime via the property [`pc.GraphicsDevice#maxPixelRatio`][4].
+The Device pixel ratio can be changed at runtime via the property [`pc.GraphicsDevice#maxPixelRatio`][4]:
 
-e.g.
-```
+```javascript
 var device = pc.Application.getApplication().graphicsDevice;
 if (highTierDevice) {
     // Use the default device pixel ratio of the device
@@ -37,6 +36,7 @@ The challenge is working out the performance capabilities of the device and this
 To get information about the GPU, use the property `pc.GraphicsDevice#unmaskedRenderer`. This will contains a string with the information or an empty string if the browser does not support the property.
 
 The string will have something similar to the following:
+
 ```
 ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
 ```
@@ -45,7 +45,7 @@ Benchmarks for different GPU cards can be found on [Video Card Benchmark][5] and
 
 An example for mobile can be found below (correct at time of writing Thu 30 Jul 2020):
 
-```
+```javascript
 function isLowQualityGPU() {
     var renderer = pc.Application.getApplication().graphicsDevice.unmaskedRenderer;
 

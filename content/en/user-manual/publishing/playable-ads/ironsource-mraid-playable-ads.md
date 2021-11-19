@@ -49,7 +49,7 @@ Check that Testing mode and MRAID are both enabled on the page.
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
-```
+```json
     "one_page": {
         "patch_xhr_out": false,
         "inline_game_scripts": false,
@@ -71,7 +71,8 @@ Our recommended approach is to [host locally][host-locally] and use [ngrok][ngro
 This will give a unique URL for the endpoint that we need to add to the `index.html` where it is referencing external files.
 
 Modify the end of `index.html` from:
-```
+
+```html
 </style>
 
     <title>Cube Jump MRAID</title>
@@ -87,7 +88,8 @@ Modify the end of `index.html` from:
 ```
 
 To (where `XXXXXXX` is the unique subdomain from ngrok):
-```
+
+```html
 </style>
 
     <title>Cube Jump MRAID</title>
@@ -100,7 +102,6 @@ To (where `XXXXXXX` is the unique subdomain from ngrok):
     <script src="https://XXXXXXX.ngrok.io/assets/__start__.js"></script>
 </body>
 </html>
-
 ```
 
 Test locally on your PC by double clicking on the `index.html` to ensure that it plays correctly.
@@ -119,7 +120,7 @@ This is used to test on device using their app that is available on both Android
 
 When the ad is ready to be submitted for ironSource, upload the external assets to your server or CDN and add the URL in the options in `config.json` via the `external_url_prefix` property:
 
-```
+```json
     "one_page": {
         "patch_xhr_out": false,
         "inline_game_scripts": false,

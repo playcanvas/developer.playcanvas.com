@@ -11,7 +11,7 @@ Usually you will be creating Entities via the PlayCanvas Editor, building up col
 
 ## Creating an Entity
 
-```js
+```javascript
 var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy
