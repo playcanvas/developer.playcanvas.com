@@ -60,7 +60,7 @@ When inserting code into a Markdown file, use backticks. For example:
     console.log('Hello World!);
     ```
 
-Be sure to specify the relevant language. Valid values are: `javascript`, `html`, `css`, `json`, `php`.
+Be sure to specify the relevant language to enable syntax highlighting. Valid values are: `javascript`, `html`, `css`, `json`, `php`. If you don't want syntax highlighting, omit the language specifier.
 
 ### Hyperlinks
 
