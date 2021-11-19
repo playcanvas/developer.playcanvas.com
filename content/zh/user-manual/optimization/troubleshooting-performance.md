@@ -8,9 +8,9 @@ position: 8
 
 ## PlayCanvas 和其他的 WebGL 应用在 IE 11 中运行十分缓慢
 
-On some computer hardware Internet Explorer 11 is not able to use the GPU (graphics processors) to do graphics acceleration. In these cases it will fall back to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. Unfortunately, there are no workarounds to this as it is a hardware issue. The only solution is to update graphics drivers or hardware on the problem machine.
+在某些计算机中，硬件的Internet Explorer 11无法使用GPU(图形处理器)做图形加速。在这种情况下，它会使用软件渲染器CPU渲染WebGL的内容。这将明显比使用GPU时减慢运行速度。不幸的是，这是硬件问题，没有变通的方式。唯一的解决方案是更新问题机上的图形驱动程序或硬件。
 
-To confirm if you are running using the software renderer, visit [WebGL Report][1]. If IE 11 is using the software renderer you will see the row for **Major Performance Caveat** is set to **Yes**.
+请访问 [WebGL Report][1] 以确认你正在使用图形渲染软件。如果IE 11正在使用渲染组件你将会看到 **主要性能警告 **这行的设置为**Yes**。
 
 ## PlayCanvas 和其他的 WebGL 应用在Google Chrome浏览器中运行缓慢
 
@@ -18,7 +18,7 @@ Chrome包含一个黑名单的GPU(图形处理器)和显卡驱动程序，它会
 
 You can view the blacklisted cards [here][2].
 
-To confirm if you are running using the software renderer, visit [WebGL Report][1]. If Chrome is using the software renderer you will see the row for **Unmasked Renderer** reports **SwiftShader**.
+要确认是否使用软件渲染器运行，请访问 [WebGL Report][1] 。 如果Chrome使用软件渲染器，您将看到“取消屏蔽渲染器”报告** SwiftShader **的行。
 
 ## PlayCanvas和其他WebGL应用程序不会在Firefox中加载
 
