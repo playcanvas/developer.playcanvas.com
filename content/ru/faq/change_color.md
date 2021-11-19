@@ -1,9 +1,9 @@
 ---
-title: Изменение цвета модели
-keywords: набор, материал, создать, цвет, поверхность, нормаль, зеркало
+title: Change the material of a model
+keywords: asset, material, create, color, surface, normal, specular
 ---
 
-## Как изменить цвет модели??
+## How do I change the material of a model?
 
 <img src="https://playcanvas.com/static-assets/instructions/change_material.gif"/>
 
@@ -11,5 +11,5 @@ keywords: набор, материал, создать, цвет, поверхн
 
 Вы можете создать новый материал и перетащить его на вашу модель или выбрать существующий материал и изменить его свойства в Инспекторе
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/assets/materials/" target="_blank">Посмотреть руководство пользователя</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 

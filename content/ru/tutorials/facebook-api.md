@@ -284,7 +284,7 @@ This tutorial shows you how you can load the Facebook API and access Facebook da
 
 Our game SWOOOP shows some of these in action. Try it on [Facebook][4] now.
 
-[1]: http://github.com/playcanvas/playcanvas-facebook
+[1]: https://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api
 [3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/

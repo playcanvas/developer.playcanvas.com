@@ -30,5 +30,5 @@ MyScript.prototype.update = function(dt) {
 };
 ```
 
-[1]: https://developer.playcanvas.com/en/api/pc.RigidBodyComponent.html
+[1]: /api/pc.RigidBodyComponent.html
 

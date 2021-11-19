@@ -44,5 +44,5 @@ position: 5
 [2]: /images/user-manual/publishing/web/cdn-index.jpg
 [3]: /images/user-manual/publishing/web/cdn-more.jpg
 [4]: /images/user-manual/publishing/web/cdn-files.jpg
-[5]: http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
+[5]: https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html
 

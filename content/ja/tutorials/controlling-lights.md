@@ -122,6 +122,6 @@ LightHandler.prototype.pivot = function () {
 };
 ```
 
-[1]: /engine/api/stable/symbols/pc.LightComponent.html
+[1]: /api/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
 

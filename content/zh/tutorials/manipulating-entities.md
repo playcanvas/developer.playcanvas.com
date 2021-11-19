@@ -140,6 +140,6 @@ entity.setLocalScale(s, s, s);
 
 请注意，您目前无法在世界空间中设置实体的缩放比例。
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
-[2]: http://en.wikipedia.org/wiki/Quaternion
+[1]: https://en.wikipedia.org/wiki/Euler_angles
+[2]: https://en.wikipedia.org/wiki/Quaternion
 

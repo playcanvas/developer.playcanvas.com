@@ -11,10 +11,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## Создание сущности
 
-```js
-var entity = new pc.Entity(); // Создание сущности
+```javascript
+var entity = new pc.Entity(); // Create an Entity
 
-// Добавление сущности в иерархию
+// Add it to the Entity hierarchy
 this.app.root.addChild(entity);
 ```
 

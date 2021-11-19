@@ -19,5 +19,5 @@ The built-in bloom effect has the following attributes:
 * **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
 * **Blur Amount**: Controls the amount of blurring.
 
-[1]: http://en.wikipedia.org/wiki/Bloom_(shader_effect)
+[1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 

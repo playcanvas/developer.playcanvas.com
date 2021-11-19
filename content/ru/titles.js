@@ -44,7 +44,7 @@
     "Create an Entity": "Создать сущность",
     "Add a component": "Добавить компонент",
     "Create a material": "Создать материал",
-    "Change the color of a model": "Изменить цвет модели",
+    "Change the material of a model": "",
     "Create a light": "Создать свет",
     "Remove a component": "Удалить компонент",
     "Glossary": "Глоссарий",

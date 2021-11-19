@@ -52,7 +52,7 @@ Now let's set up the Camera entity. Select it in the HIERARCHY panel:
 
 Notice the little preview window that has appeared for the selected camera. Let's edit the camera's position and rotation to view the cube from directly in front. Edit the camera's position and rotation with the values below:
 
-![Camera Tranform][10]
+![Camera Transform][10]
 
 Next, let's make the sphere controllable with the arrow keys on the keyboard. To do this, we must create a script. Right click the Sphere entity and select `Add Component -> Script`.
 
@@ -60,7 +60,7 @@ Next, let's make the sphere controllable with the arrow keys on the keyboard. To
 
 A script component will appear in the Inspector on the Sphere entity. To create a script asset on the script component, enter the name `movement.js`.
 
-![Create Script Assset][12]
+![Create Script Asset][12]
 
 Hit Enter and your script will be created.
 
@@ -68,7 +68,7 @@ Hit Enter and your script will be created.
 
 Now hit EDIT to open the Code Editor. You'll see the following skeleton script:
 
-~~~javascript
+```javascript
 var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
@@ -80,11 +80,11 @@ Movement.prototype.initialize = function() {
 Movement.prototype.update = function(dt) {
     
 };
-~~~
+```
 
 To make the sphere controllable, let's add some code to the `update` function. Copy and paste the code below:
 
-~~~javascript
+```javascript
 var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
@@ -116,7 +116,7 @@ Movement.prototype.update = function(dt) {
         this.entity.translate(0, 0, dt);
     }
 };
-~~~
+```
 
 When the code is updated, save the script using CTRL+S (or CMD+S on Mac) and close the Code Editor tab.
 

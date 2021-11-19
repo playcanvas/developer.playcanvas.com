@@ -46,7 +46,7 @@ As Snapchat does not yet have an official tool to test with, we will have to do 
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
-```
+```json
     "one_page": {
         "patch_xhr_out": false,
         "inline_game_scripts": true,
@@ -76,7 +76,7 @@ Once this is setup, open Creative Preview app and create a new 'Display' ad with
 
 When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN URL prefix to the asset references in `index.html`. We can do this via the options in `config.json` via the `external_url_prefix` property:
 
-```
+```json
     "one_page": {
         "patch_xhr_out": false,
         "inline_game_scripts": true,

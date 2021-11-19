@@ -56,7 +56,7 @@ Want a new feature or seeing something that isn't behaving as it should? Add it 
 [19]: /tutorials/ui-elements-buttons/
 [20]: /images/user-manual/frontpage/audio_tutorial_thumb.png
 [21]: /tutorials/basic-audio/
-[22]: /en/api/
+[22]: /api/
 [23]: https://playcanvas.com/explore/plays
 [24]: https://forum.playcanvas.com/
 [25]: https://github.com/playcanvas/editor/issues

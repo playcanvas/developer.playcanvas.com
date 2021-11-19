@@ -44,14 +44,14 @@ The exception to this is if a script component is added to an entity in the temp
 
 How the Editor decides what is a new or removed mesh instance is done by the following:
 
-- If in the update, a mesh instance's name and it's parent mesh's instance name matches an existing mesh instance and it's parent, they are assumed to be the same mesh instance in the hierarchy and is updated.
+- If in the update, a mesh instance's name and its parent mesh's instance name matches an existing mesh instance and its parent, they are assumed to be the same mesh instance in the hierarchy and is updated.
 - If in the update, a mesh instance's name does not exist, it's assumed to be a new mesh instance and a new entity is added to the template.
 - If in the update, an existing entity of the template does not have a matching mesh instance given the rules above, it's assumed that this mesh instance has been removed and the entity will be removed from the template. The exception being mentioned above, if there was a script component added to it on the template, those entities are preserved on the root. If there were no script components added, those are deleted from the template.
 
 [edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
 [import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif
 [created_assets_img]: /images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png
-[material_asset]: /user-manual/assets/physical-material/
+[material_asset]: /user-manual/assets/materials/physical-material/
 [texture_asset]: /user-manual/assets/textures/
 [template_asset]: /user-manual/templates/
 [render_component]: /api/pc.RenderComponent.html

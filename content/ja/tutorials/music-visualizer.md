@@ -136,5 +136,5 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
-[4]: http://developer.playcanvas.com/en/api/pc.Application.html#renderLines
+[4]: /api/pc.Application.html#renderLines
 

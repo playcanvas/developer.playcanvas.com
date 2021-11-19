@@ -80,7 +80,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 继续前往 [第 3 部分][15].
 
 [1]: /tutorials/keepyup-part-one/
-[2]: http://store.playcanvas.com/
+[2]: https://store.playcanvas.com/
 [3]: /images/tutorials/beginner/keepyup-part-two/ball-material.jpg
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
 [5]: /images/tutorials/beginner/keepyup-part-two/ball-spec.jpg

@@ -150,9 +150,9 @@ Mayaを使う場合には、lambert, blinnあるいはphongの標準マテリア
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: https://cgcookie.com/learn-blender
 [3]: /images/user-manual/assets/models/building/blender-logo.jpg
-[4]: http://blender.org
+[4]: https://www.blender.org/
 [5]: https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives
-[6]: http://www.blenderguru.com/
+[6]: https://www.blenderguru.com/
 [7]: /images/user-manual/assets/models/building/max-material-editor.jpg
 [8]: /images/user-manual/assets/models/building/wall-norm.jpg
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg

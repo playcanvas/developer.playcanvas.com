@@ -44,7 +44,7 @@
     "Create an Entity": "创建实体",
     "Add a component": "添加组件",
     "Create a material": "创建材质",
-    "Change the color of a model": "修改模型颜色",
+    "Change the material of a model": "",
     "Create a light": "创建灯光",
     "Remove a component": "移除组件",
     "Glossary": "词汇表",

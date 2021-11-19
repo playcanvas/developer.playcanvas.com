@@ -19,5 +19,5 @@ position: 1
 * **Bloom Threshold**: この閾値より明るいピクセルのみがエフェクトの対象となります。0から1の間の値を取ります。
 * **Blur Amount**: ぼかしの量を設定します。
 
-[1]: http://en.wikipedia.org/wiki/Bloom_(shader_effect)
+[1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 

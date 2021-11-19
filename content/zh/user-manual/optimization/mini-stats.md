@@ -27,9 +27,9 @@ The CPU and GPU graphs display a breakdown of the update and render portion of t
 
 While the mini-stats panel is incorporated into the Editor's Launch page, you can also use it independent of the Editor. The source code can be found [here][2]. Simply build `playcanvas-extras.js`, include it in your project and call:
 
-~~~javascript
+```javascript
     const miniStats = new pcx.MiniStats(app);
-~~~
+```
 
 The ['Engine-only' examples][3] all do this.
 

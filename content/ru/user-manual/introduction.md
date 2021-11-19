@@ -95,7 +95,7 @@ At the time of writing, the browser requirements are currently as follows:
 
 [1]: /user-manual/publishing
 [2]: /user-manual/glossary/#dom
-[3]: http://get.webgl.org/
+[3]: https://get.webgl.org/
 [4]: /images/user-manual/introduction-assets.jpg
 [5]: /images/user-manual/introduction-scene.jpg
 [6]: /images/user-manual/introduction-script.jpg

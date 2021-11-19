@@ -28,5 +28,5 @@ position: 2
 
 [1]: /images/user-manual/scenes/components/component-animation.png
 [2]: /user-manual/packs/components/script
-[3]: /engine/api/stable/symbols/pc.AnimationComponent.html
+[3]: /api/pc.AnimationComponent.html
 

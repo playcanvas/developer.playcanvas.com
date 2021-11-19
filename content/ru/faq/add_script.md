@@ -7,7 +7,7 @@ keywords: скрипт, код, создать, javascript, поведение
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif"/>
 
-Вы можете использовать javascript чтобы контролировать поведение сущностей. Добавьте компонент скрипта или создайте новый.
+Вы можете использовать JavaScript чтобы контролировать поведение сущностей. Добавьте компонент скрипта или создайте новый.
 
-<a class="docs" href="http://developer.playcanvas.com/en/user-manual/scripting/creating-new/" target="_blank">Посмотреть руководство пользователя</a>
+[Learn more](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/)
 

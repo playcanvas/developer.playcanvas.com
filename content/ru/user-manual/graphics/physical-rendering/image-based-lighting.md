@@ -71,7 +71,7 @@ Here is an [example][7] and [project][8] of the scene using CubeMap Box Projecti
 [8]: https://playcanvas.com/project/446587/overview/archviz-example
 [9]: /images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg
 [10]: http://noemotionhdrs.net/
-[11]: http://www.openfootage.net/?tag=hdri
-[12]: http://www.pauldebevec.com/Probes/
+[11]: https://www.openfootage.net/?tag=hdri
+[12]: https://www.pauldebevec.com/Probes/
 [13]: /images/user-manual/graphics/physical-rendering/cubemap-faces.jpg
 

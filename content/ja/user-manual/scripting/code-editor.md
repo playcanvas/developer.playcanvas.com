@@ -174,11 +174,11 @@ Holding down Alt + Shift and dragging left mouse button will create a rectangula
 [7]: /images/user-manual/scripting/code-editor-quick-searching.gif
 [8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
 [9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
-[10]: http://regexr.com/
+[10]: https://regexr.com/
 [11]: /images/user-manual/scripting/go-to-anything.gif
 [12]: /images/user-manual/scripting/preferences.png
-[13]: http://jshint.com/
-[14]: http://jshint.com/docs/
+[13]: https://jshint.com/
+[14]: https://jshint.com/docs/
 [command-palette]: /images/user-manual/scripting/command-palette.png
 [monaco-find-panel]: /images/user-manual/scripting/monaco-find-panel.png
 
