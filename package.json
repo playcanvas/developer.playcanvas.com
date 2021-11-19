@@ -46,7 +46,7 @@
     "build": "node build.js",
     "build:dev": "npm run faq-to-json -- --out editor_howdoi_dev.json && npm run faq && npm run build -- dev",
     "build:prod": "npm run faq-to-json -- --out editor_howdoi.json && npm run faq && npm run build -- prod",
-    "faq": "node faq.js --dir content/en/faq --out content/en/user-manual/faq.md",
+    "faq": "node faq.js",
     "faq-to-json": "node faq_to_json.js --dir content/en/faq --bucket code.playcanvas.com",
     "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",

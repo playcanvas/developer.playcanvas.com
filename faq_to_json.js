@@ -3,6 +3,7 @@ const fs = require("fs");
 const metalsmith = require("metalsmith");
 const markdown = require("metalsmith-markdown");
 const exec = require('child_process').exec;
+const { createGzip } = require('zlib');
 
 const usage = 'Usage: node faq_to_json.js --dir content/en/faq --out file.json --bucket code.playcanvas.com';
 
@@ -35,30 +36,15 @@ if (ind === -1 || !args[ind + 1]) {
 }
 const s3Bucket = args[ind + 1];
 
-// end json
-const json = [];
-
-// write target json file
-const writeJson = (file, callback) => {
+// write gzipped target json file
+const writeJson = (file, json) => {
     console.log('Saving file...');
-    const stream = fs.createWriteStream(file);
-    stream.once('open', () => {
-        stream.write(JSON.stringify(json, null, 4));
-        stream.end();
+    const stream = fs.createWriteStream(`${file}.gz`);
 
-        if (callback)
-            callback();
-    });
-};
-
-const gzip = (file, callback) => {
-    console.log('Compressing...');
-    const cmd = `gzip -c ${file} > ${file}.gz`;
-    exec(cmd, (err) => {
-        if (err) throw err;
-
-        callback();
-    });
+    const gzip = createGzip();
+    gzip.pipe(stream);
+    gzip.write(json);
+    gzip.end();
 };
 
 const upload = (file) => {
@@ -70,7 +56,6 @@ const upload = (file) => {
     });
 };
 
-
 // init metalsmith
 const m = new metalsmith(__dirname);
 m.source(sourceDir).use(markdown());
@@ -80,6 +65,8 @@ m.build((err, results) => {
     if (err) {
         throw err;
     }
+
+    const json = [];
 
     // process results
     for (const key in results) {
@@ -107,10 +94,9 @@ m.build((err, results) => {
         });
     }
 
+    const jsonStr = JSON.stringify(json, null, 4);
+
     // save json and upload to S3
-    writeJson(outfile, () => {
-        gzip(outfile, () => {
-            upload(outfile);
-        });
-    });
+    writeJson(outfile, jsonStr);
+    upload(outfile);
 });
