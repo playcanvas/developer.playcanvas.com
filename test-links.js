@@ -1,12 +1,23 @@
-var { SiteChecker } = require("broken-link-checker");
-var fs = require('fs');
+const { SiteChecker } = require("broken-link-checker");
+const fs = require('fs');
 
-var brokenLinks = {};
-var pageErrors = [];
+let brokenLinks = {};
+let pageErrors = [];
+
+let excludedKeywords = [];
+
+// Use the URL that has been passed or default to the local served URL
+const args = process.argv.slice(2);
+const url = (args[0] || "http://localhost:51000") + "/en";
+
+// If we are scanning an external site, assume we that the API links are valid
+if (url.startsWith("http://localhost")) {
+    excludedKeywords.push("/api");
+}
 
 const siteChecker = new SiteChecker(
     {
-        excludedKeywords: ["/api" ]
+        excludedKeywords: excludedKeywords
     },
     {
         "error": (error) => {
@@ -78,4 +89,4 @@ const siteChecker = new SiteChecker(
     }
 );
 
-siteChecker.enqueue("http://localhost:51000/en");
+siteChecker.enqueue(url);

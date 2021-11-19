@@ -48,4 +48,8 @@ The site uses Sass to generate the CSS. To generate, run:
 
 Start the localhost server from [How to server](#how-to-serve) and in another terminal window, run:
 
-    npm run test-link
+    npm run test-link:en
+
+Or to test against a live or staging server, pass the URL base as an argument:
+
+    npm run test-link:en "https://developer.playcanvas.com"
