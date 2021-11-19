@@ -4,7 +4,6 @@ build
 node_modules
 po
 messages.json
-content/en/user-manual/faq.md
 content/_tutorial_contents.json
 content/_tutorial_contents_legacy.json
 content/_usermanual_contents.json
