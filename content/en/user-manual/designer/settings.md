@@ -6,7 +6,7 @@ position: 7
 
 The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
 
-<img src="/images/user-manual/cog.jpg" style="display: inline; vertical-align: middle;">
+<img src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
 
 ## Editor
 
@@ -235,9 +235,9 @@ When importing a scene (e.g. an FBX) this setting decides whether material files
 When importing a scene (e.g. an FBX) this setting decides whether texture files are overwritten with a new version imported from the scene.
 
 [1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/cog.jpg
+[2]: /images/user-manual/editor/settings/cog.jpg
 [3]: /user-manual/assets/cubemaps
-[4]: /images/user-manual/gamma-correction.jpg
+[4]: /images/user-manual/editor/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
 [7]: /user-manual/packs/components/model

@@ -12,10 +12,8 @@ The menu is available by clicking on the PLAYCANVAS icon and contains a complete
 
 ## Toolbar
 
-<img src="/images/user-manual/toolbar.jpg" style="padding-right: 20px; float: left;"></img>
+<img src="/images/user-manual/editor/menus-and-toolbar/toolbar.png" style="padding-right: 20px; float: left;" width="44"></img>
 
 The Toolbar features common commands for easy access, the most useful one of all is the Launch Button. The Launch Button starts a game instance in a separate browser tab and loads your Scene. You can then start play testing immediately. See the section on the Attribute Editor for how to edit values on a live running instance of your game.
 
-
-[1]: /images/user-manual/menu.jpg "The menu bar contains all the commands!"
-[2]: /images/user-manual/toolbar.jpg "The toolbar contains useful commands!"
+[1]: /images/user-manual/editor/menus-and-toolbar/menu.png

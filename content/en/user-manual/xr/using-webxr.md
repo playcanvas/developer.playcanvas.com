@@ -122,6 +122,6 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 });
 ```
 
-[1]: /images/user-manual/vr/using-webvr/camera-offset.jpg
+[1]: /images/user-manual/xr/using-webxr/camera-offset.jpg
 [2]: /api/pc.XrManager.html
 [3]: https://immersive-web.github.io/layers/
