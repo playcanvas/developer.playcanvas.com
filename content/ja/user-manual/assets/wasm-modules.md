@@ -18,13 +18,16 @@ Wasmモジュールは、3つの部分から成ります：
 ファイルがプロジェクトに追加されたら、wasmモジュールを選択してインスペクターパネルにプロパティを表示します：
 ![Wasm Module Properties][1]
 
-### Name
+### 名前
+
 名前は、グルーおよびフォールバックスクリプトで定義されたモジュール名と合致する必要があります。この名前はロード時にモジュールをインスタンス化するのに使用されます。
 
 ### Glue script
+
 これは、Wasmコードの実行に必要なJavaScriptグルーコードです。
 
 ### Fallback script
+
 これは、WebAssemblyがサポートされていない際に使用する、オプションのフォールバックasm.js スクリプトです。
 
 [1]: /images/user-manual/assets/wasm-module.png

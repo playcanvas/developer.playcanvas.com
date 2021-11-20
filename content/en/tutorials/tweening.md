@@ -23,11 +23,11 @@ To get the above we are doing:
 
 ```javascript
 this.entity
-.tween(this.entity.getLocalPosition())
-.to(new pc.Vec3(4, 0, 0), 1.0, pc.SineOut)
-.loop(true)
-.yoyo(true)
-.start();
+    .tween(this.entity.getLocalPosition())
+    .to(new pc.Vec3(4, 0, 0), 1.0, pc.SineOut)
+    .loop(true)
+    .yoyo(true)
+    .start();
 ```
 
 Here is an example on how to tween the local rotation of an Entity:
@@ -40,11 +40,11 @@ To get the above we can do:
 
 ```javascript
 this.entity
-.tween(this.entity.getLocalRotation())
-.rotate(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
-.loop(true)
-.yoyo(true)
-.start();
+    .tween(this.entity.getLocalRotation())
+    .rotate(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
+    .loop(true)
+    .yoyo(true)
+    .start();
 ```
 
 Here's how to tween the local scale of an Entity:
@@ -57,11 +57,11 @@ To get the above we can do:
 
 ```javascript
 this.entity
-.tween(this.entity.getLocalScale())
-.to(new pc.Vec3(3, 3, 3), 1.0, pc.SineOut)
-.loop(true)
-.yoyo(true)
-.start();
+    .tween(this.entity.getLocalScale())
+    .to(new pc.Vec3(3, 3, 3), 1.0, pc.SineOut)
+    .loop(true)
+    .yoyo(true)
+    .start();
 ```
 
 And finally here's a way to tween colors:
@@ -76,15 +76,15 @@ To get the above we can do:
 var color = new pc.Color(0, 0, 0);
 var material = this.entity.render.material;
 this.app
-.tween(color)
-.to(new pc.Color(1, 1, 1), 1.0, pc.Linear)
-.loop(true)
-.yoyo(true)
-.on('update', function () {
-    material.diffuse = color;
-    material.update();
-})
-.start();
+    .tween(color)
+    .to(new pc.Color(1, 1, 1), 1.0, pc.Linear)
+    .loop(true)
+    .yoyo(true)
+    .on('update', function () {
+        material.diffuse = color;
+        material.update();
+    })
+    .start();
 ```
 
 Again you can find the library at [https://github.com/playcanvas/playcanvas-tween][1].

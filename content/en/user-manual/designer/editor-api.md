@@ -14,7 +14,6 @@ The API is not yet considered stable and may change in the future as we continue
 
 Full documentation of the API can be found on [GitHub][github-api].
 
-
 ## Automation Example
 
 The API can be accessed via the browser's devtools console allowing for automation of repetitive tasks. In the example below, we are using the Editor to find all the Entities that have the tag 'red' and disabling them by running code in the browser console.

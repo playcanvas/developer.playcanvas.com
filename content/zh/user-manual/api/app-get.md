@@ -32,7 +32,7 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas
 Status: 200
 ```
 
-```none
+```json
 {
     "id": int,
     "project_id": int,

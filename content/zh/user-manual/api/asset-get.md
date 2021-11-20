@@ -21,7 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/
 ```
 
 HTTP Request
-```
+
+```text
 GET https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
@@ -38,12 +39,12 @@ Authorization: Bearer {accessToken}
 Status: 200
 ```
 
-```none
+```json
 {
     "id": int,
     "modifiedAt": date,
     "createdAt": date,
-    "state": "ready" or "processing" or "error",
+    "state": "ready" | "processing" | "error",
     "name": string,
     "type": string,
     "scope":{

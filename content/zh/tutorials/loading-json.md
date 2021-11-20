@@ -65,7 +65,6 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
     el = document.querySelector("#xhr-json");
     el.textContent = JSON.stringify(data, null, 4);
 });
-
 ```
 
 在此代码中，我们使用XMLHttpRequest对象(它是标准Web浏览器API的一部分)从URL，在本例中为Github API，链接请求JSON数据。

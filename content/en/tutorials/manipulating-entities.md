@@ -20,8 +20,8 @@ An important part of understanding how to move and manipulate Entities is unders
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
+
 *World and Local co-ordinate systems*
-<br />
 
 ### Hierarchy
 

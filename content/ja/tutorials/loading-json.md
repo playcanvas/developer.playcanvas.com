@@ -65,7 +65,6 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
     el = document.querySelector("#xhr-json");
     el.textContent = JSON.stringify(data, null, 4);
 });
-
 ```
 
 このコードでは、(通常のWEBブラウザのAPIである)　XMLHttpRequestオブジェクトをGitHub APIのURLからJSONデータをロードするために使用します。

@@ -21,7 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/project
 ```
 
 HTTP Request
-```
+
+```text
 GET https://playcanvas.com/api/projects/{projectId}/branches
 Authorization: Bearer {accessToken}
 ```
@@ -38,23 +39,23 @@ Authorization: Bearer {accessToken}
 Status: 200
 ```
 
-```none
+```json
 {
-    result: [    {
-      "id": string
+    "result": [    {
+      "id": string,
       "projectId": int,
       "name": "Branch Name",
-      "createdAt": data
+      "createdAt": data,
       "closed": bool,
-      "latestCheckpointId": string
+      "latestCheckpointId": string,
       "user": {
         "id": int,
-        "fullName": string
+        "fullName": string,
         "username": string
       }
     },, ...],
-    pagination: {
-        hasMore: bool
+    "pagination": {
+        "hasMore": bool
     }
 }
 ```

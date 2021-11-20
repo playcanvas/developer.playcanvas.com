@@ -27,7 +27,8 @@ curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'proje
 ```
 
 HTTP Request
-```
+
+```text
 POST https://playcanvas.com/api/assets
 Authorization: Bearer {accessToken}
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryTdsfsfT
@@ -72,12 +73,12 @@ Content-Type: application/javascript
 Status: 201
 ```
 
-```none
+```json
 {
     "id": int,
     "modifiedAt": date,
     "createdAt": date,
-    "state": "ready" or "processing" or "error",
+    "state": "ready" | "processing" | "error",
     "name": string,
     "type": string,
     "scope":{

@@ -20,8 +20,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
+
 *Мировые и локальные координатные системы*
-<br />
 
 ### Иерархия
 

@@ -19,6 +19,7 @@ Certain nodes have no input ports and others have no output ports. (Though all n
 ### Node Categories
 
 Based on this, we can identify three categories of nodes:
+
 - Input nodes - these have output ports, but no input ports.
 - Output nodes - these have input ports, but no output ports.
 - Transform nodes - these have both input ports and output ports.

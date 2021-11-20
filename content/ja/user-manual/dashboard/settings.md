@@ -32,5 +32,5 @@ Premiumアカウントのユーザーしかプライベートプロジェクト�
 
 ## プロジェクトの削除
 
-プロジェクトを完全に削除するにはDELETEボタンを押します。 この操作は取り消すことはできません。
+Press the DELETE button to permanently delete your project. Note that this action cannot be undone.
 

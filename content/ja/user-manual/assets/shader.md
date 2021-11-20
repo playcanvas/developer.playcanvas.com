@@ -8,7 +8,7 @@ position: 12
 
 シェーダーアセットを編集するには、エディタでそれを右クリックしEditを選択します。シェーダーアセットを使用してカスタム素材を作成する例です。
 
-```
+```javascript
 var vertexShader = this.app.assets.find('my_vertex_shader');
 var fragmentShader = this.app.assets.find('my_fragment_shader');
 var shaderDefinition = {

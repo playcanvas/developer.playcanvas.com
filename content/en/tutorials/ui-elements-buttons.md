@@ -62,15 +62,19 @@ The button has 3 components:
 - **Script component** - Listens for events on the Button component and handles the logic on what to do when clicked.
 
 The button Entity also has a Text Element as a child for showing text (this is optional depending on the style of your button).
+
 <img src="/images/tutorials/ui/buttons/text-element.png" width="300px">
 
 The Element's type is Image and it's anchored to the bottom of the screen.
+
 <img src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300px">
 
 After anchoring the button we give it an offset from the bottom by simply moving it up.
+
 <img src="/images/tutorials/ui/buttons/offset-position.png" width="300px">
 
 We also have Use Input enabled in order to interact with the button.
+
 <img src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
 
 ### Changing how the button looks on interaction
@@ -90,6 +94,7 @@ Tinting the button color in each state is the easiest method to add some user fe
 <img src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300px">
 
 With the following effect:
+
 <img src="/images/tutorials/ui/buttons/high-quality-button-effect.gif">
 
 #### Changing the Sprite
@@ -99,6 +104,7 @@ We can also change the sprite image of the button in the different states for ca
 <img src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300px">
 
 With the following effect:
+
 <img src="/images/tutorials/ui/buttons/low-quality-button-effect.gif">
 
 ### Button events
@@ -135,7 +141,6 @@ There are other events that can be listened to such as `mouseenter` and `mousele
 These events will only fire if Use Input is enabled on the Element component so make sure that has been ticked in the inspector.
 
 <img src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
-
 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/

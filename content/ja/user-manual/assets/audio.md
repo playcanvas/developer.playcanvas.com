@@ -4,9 +4,12 @@ template: usermanual-page.tmpl.html
 position: 5
 ---
 
-オーディオアセットとはAudiosourceコンポーネントを使用してプレイバックできるサウンドファイルです。
+オーディオアセットとは[Sound][sound-component]コンポーネントを使用してプレイバックできるサウンドファイルです。
 
 ウェブブラウザで対応されているオーディオ形式は全てPlayCanvasでも対応されています。インポート時に、オーディオファイルに対する処理は行われません。
 
-補足：全ての形式が全てのブラウザで対応されているとは限りません。書き込む際、最も幅広く対応されている形式はMP3ですが、Firefoxはこの形式が動作させるのにMP3プレイバックのOSレベルでの対応を必要とします。
+Note that not all formats are supported in all browsers. Currently, the most widely supported format is [MP3][mp3].
+
+[mp3]: https://caniuse.com/mp3
+[sound-component]: /user-manual/packs/components/sound/
 

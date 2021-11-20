@@ -41,6 +41,7 @@ Each event has the following modifiable properties:
 ### Event Listeners
 
 After creating an event for an animation asset, the event will be fired whenever that asset is played back by an anim component. You can therefore attach listeners to the anim component to handle the event. The following example shows how to attach event listeners to the anim component:
+
 ```javascript
 var AnimationEvents = pc.createScript('animationEvents');
 

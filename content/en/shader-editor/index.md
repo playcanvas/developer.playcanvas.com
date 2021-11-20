@@ -7,6 +7,7 @@ position: 0.5
 Welcome to the __Shader Editor__ User Manual.
 
 Here you will find:
+
 - An [introduction][1] to the tool.
 - A general [overview][3].
 - Information on the [window layout][2].

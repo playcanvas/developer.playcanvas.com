@@ -23,11 +23,11 @@ entity.tween(entity.getLocalPosition()).to({x: 10, y: 0, z: 0}, 1, pc.SineOut);
 
 ```javascript
 this.entity
-.tween(this.entity.getLocalPosition())
-.to(new pc.Vec3(4, 0, 0), 1.0, pc.SineOut)
-.loop(true)
-.yoyo(true)
-.start();
+    .tween(this.entity.getLocalPosition())
+    .to(new pc.Vec3(4, 0, 0), 1.0, pc.SineOut)
+    .loop(true)
+    .yoyo(true)
+    .start();
 ```
 
 エンティティのローカル回転をトゥイーンする方法の例です：
@@ -40,11 +40,11 @@ this.entity
 
 ```javascript
 this.entity
-.tween(this.entity.getLocalRotation())
-.rotate(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
-.loop(true)
-.yoyo(true)
-.start();
+    .tween(this.entity.getLocalRotation())
+    .rotate(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
+    .loop(true)
+    .yoyo(true)
+    .start();
 ```
 
 エンティティのローカルスケールをトゥイーンする方法は次のとおりです：
@@ -57,11 +57,11 @@ this.entity
 
 ```javascript
 this.entity
-.tween(this.entity.getLocalScale())
-.to(new pc.Vec3(3, 3, 3), 1.0, pc.SineOut)
-.loop(true)
-.yoyo(true)
-.start();
+    .tween(this.entity.getLocalScale())
+    .to(new pc.Vec3(3, 3, 3), 1.0, pc.SineOut)
+    .loop(true)
+    .yoyo(true)
+    .start();
 ```
 
 最後に、色をトゥイーンする方法です：
@@ -76,15 +76,15 @@ this.entity
 var color = new pc.Color(0, 0, 0);
 var material = this.entity.render.material;
 this.app
-.tween(color)
-.to(new pc.Color(1, 1, 1), 1.0, pc.Linear)
-.loop(true)
-.yoyo(true)
-.on('update', function () {
-    material.diffuse = color;
-    material.update();
-})
-.start();
+    .tween(color)
+    .to(new pc.Color(1, 1, 1), 1.0, pc.Linear)
+    .loop(true)
+    .yoyo(true)
+    .on('update', function () {
+        material.diffuse = color;
+        material.update();
+    })
+    .start();
 ```
 
 ライブラリは[https://github.com/playcanvas/playcanvas-tween][1]にあります。

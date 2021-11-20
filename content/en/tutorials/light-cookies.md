@@ -34,7 +34,6 @@ For a point light the cookie needs to be a cubemap so that it can be projected i
 
 ![Torch Light][4]
 
-
 [1]: https://playcanvas.com/project/409793/overview/example-light-cookies
 [2]: /images/tutorials/intermediate/light-cookies/window-cookie.jpg
 [3]: /images/tutorials/intermediate/light-cookies/cookie-setting.jpg

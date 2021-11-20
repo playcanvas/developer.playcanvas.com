@@ -163,6 +163,7 @@ By default, layers animate a model in the order that they’re created in the la
 ![Layer Blend][11]
 
 The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
+
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');
 

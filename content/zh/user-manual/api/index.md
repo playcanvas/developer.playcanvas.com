@@ -113,7 +113,7 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 当一个错误发生时你会收到一个这样格式的JSON对象:
 
-```none
+```json
 {
     "error": "This is the error message"
 }

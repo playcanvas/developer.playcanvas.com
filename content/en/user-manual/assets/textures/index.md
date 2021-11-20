@@ -59,8 +59,6 @@ The texture addressing properties give you control over how a texture is sampled
 
 ![Addressing][5]
 
-
-
 ## Max Texture Size
 
 Different devices can support different texture sizes. Using [WebGL report][7] on the device and browser, we can see the max size supported.

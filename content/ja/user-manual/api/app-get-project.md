@@ -32,9 +32,9 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas
 Status: 200
 ```
 
-```none
+```json
 {
-  result: [{
+  "result": [{
     "id": int,
     "project_id": int,
     "owner_id": int,
@@ -53,8 +53,8 @@ Status: 200
     "completed_at": date,
     "created_at": date,
     "modified_at": date
-  }, ... ]
-  pagination: {
+  }, ... ],
+  "pagination": {
      ...
   }
 }

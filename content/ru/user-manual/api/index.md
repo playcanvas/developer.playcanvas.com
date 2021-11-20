@@ -113,7 +113,7 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 When an error is raised you will get a JSON object with this format:
 
-```none
+```json
 {
     "error": "This is the error message"
 }

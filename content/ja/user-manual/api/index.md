@@ -113,7 +113,7 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 エラーが発生すると、次の形式でJSONオブジェクトを取得します：
 
-```none
+```json
 {
     "error": "This is the error message"
 }

@@ -21,7 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/project
 ```
 
 HTTP Request
-```
+
+```text
 GET https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
@@ -39,13 +40,13 @@ Authorization: Bearer {accessToken}
 Status: 200
 ```
 
-```none
+```json
 {
-    result: [{
-      "id": int
+    "result": [{
+      "id": int,
       "projectId": int,
       "name": string,
-      "created": date
+      "created": date,
       "modified": date
     }, ...]
 }

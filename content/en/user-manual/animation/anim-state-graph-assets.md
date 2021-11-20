@@ -28,7 +28,6 @@ There are four types of states present in state graphs. Animation states, along 
 
 Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
 
-
 <table class="table table-striped">
     <tbody>
         <tr>
@@ -164,6 +163,7 @@ By default, layers animate a model in the order that they’re created in the la
 ![Layer Blend][11]
 
 The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
+
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');
 
@@ -181,7 +181,6 @@ AnimationBlending.prototype.initialize = function() {
 If you [mask your layers][anim-layer-masking], you can set the `blend type` of your layers to `Additive` to blend in an animation which only controls part of your model's bones. Updating the `blend weight` in real time as described above can allow you to create smooth blends between animations on different layers. This is particularly useful when animation characters that need to carry out different actions using their upper and lower body. For example, you could have a `shooting` animation that is blended in and out on a characters upper body, while freeing up the lower body for various locomotion animations such as `walking` and `running`.
 
 Any layers that are set to `Overwrite` will completely replace the animation values of the model's bones that are animated in that layer. In these instances, previous layers will not be taken into consideration when producing the final animation.
-
 
 [1]: /images/user-manual/anim/state_graph_editor.png
 [2]: /images/user-manual/anim/layers.png
