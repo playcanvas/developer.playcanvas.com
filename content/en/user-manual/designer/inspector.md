@@ -20,5 +20,5 @@ Some attributes are simple text or numbers in which case a standard text field o
 
 When running both a game and the Editor simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Editor and the game tabs side by side and tweak values in the Editor as you watch and play the game.
 
-[1]: /user-manual/glossary#gizmo
-[2]: /user-manual/glossary#entity
+[1]: /user-manual/glossary#entity
+[2]: /user-manual/glossary#gizmo
