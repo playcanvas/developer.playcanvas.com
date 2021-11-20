@@ -27,5 +27,5 @@ This is the main interface to the PlayCanvas Editor. You can see labeled the mai
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#component
-[4]: /user-manual/glossary#assets
+[4]: /user-manual/glossary#asset
 

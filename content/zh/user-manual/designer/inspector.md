@@ -20,6 +20,6 @@ position: 3
 
 在应用和编辑器同时运行的情况下，对实体属性的修改将会传递到运行中的应用中。一个绝佳的迭代方式是在应用运行起来之后，并排打开编辑器和应用窗口，实时的对想要的调整的值进行修正。
 
-[1]: /user-manual/glossary#gizmo
-[2]: /user-manual/glossary#entity
+[1]: /user-manual/glossary#entity
+[2]: /user-manual/glossary#gizmo
 

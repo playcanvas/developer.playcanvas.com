@@ -27,5 +27,5 @@ PlayCanvas 编辑器是一款可视化的编辑器，通过创建和编辑[场�
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#component
-[4]: /user-manual/glossary#assets
+[4]: /user-manual/glossary#asset
 

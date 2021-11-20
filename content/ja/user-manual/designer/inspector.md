@@ -20,6 +20,6 @@ position: 3
 
 ゲームとエディタを同時に実行している場合、属性への変更は実行しているアプリケーションのエンティティに送信されます。値の反復処理を行う良い方法は、Playボタンからゲームを起動して、エディタとゲームタブを隣り合わせに設置し、ゲームをプレイしながらエディタで値を調整する方法です。
 
-[1]: /user-manual/glossary#gizmo
-[2]: /user-manual/glossary#entity
+[1]: /user-manual/glossary#entity
+[2]: /user-manual/glossary#gizmo
 
