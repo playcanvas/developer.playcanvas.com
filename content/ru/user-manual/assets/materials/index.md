@@ -18,13 +18,13 @@ Materials are imported automatically when you upload a 3D model (e.g. FBX or COL
 
 You can create new materials directly from the PlayCanvas Editor interface.
 
-<img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px;" />
+<img src="/images/user-manual/assets/materials/create-asset-menu.jpg" style="width: 300px;" />
 
 This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
 
 ## Selecting a Material
 
-<img src="/images/user-manual/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
 
 In order to edit a material, first you must select it. This will bring up the material inspector.
 
@@ -34,7 +34,7 @@ Generally, clicking on a material preview icon will take you to the material ins
 
 ## Assigning Materials
 
-<img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
 
@@ -42,7 +42,7 @@ When you select an Entity with a model component you will see two buttons - Asse
 
 <br style="clear:both;" />
 
-<img src="/images/user-manual/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
 
@@ -52,21 +52,21 @@ You can also drag and drop material Assets from the asset panel onto the materia
 
 Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
 
-<img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/select.png" style="max-width: 100%" />
 
 After selecting the mesh instance a new material picker will appear in the model component:
 
-<img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%" />
 
 Then you can select a different material for this particular Entity:
 
-<img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%" />
 
 <br style="clear:both;" />
 
 ## Editing a Material
 
-<img src="/images/user-manual/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 Once you have a material selected you can edit its properties.
 
@@ -86,7 +86,7 @@ The phong shading model is our legacy shading model. Use this for compatibility 
 
 ## Material Maps
 
-<img src="/images/user-manual/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
 

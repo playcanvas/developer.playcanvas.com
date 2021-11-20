@@ -63,9 +63,9 @@ The shadow sampling type is specified per light and so the option can be found i
 * 影を受ける素材のシャドウサンプルタイプとしてソフトシャドウ(PCF3x3)を選択すると、ハードシャドウのオプションを使用した場合よりも、GPUに負荷がかかります。
 * 影が環境の静的な部分から発生している場合は、[ライトマップ][4]を使用してテクスチャに影をbakeすることを検討してください。
 
-[1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
+[1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
-[3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
+[3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png

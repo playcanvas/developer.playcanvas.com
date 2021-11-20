@@ -12,7 +12,7 @@ position: 16
 
 创建一个新的组件，点击这里  <span class="font-icon" style="font-size: 18px">&#58468;</span>点击按钮选择创建新的脚本，然后在弹出的窗口中输入脚本的名称。
 
-<img src="/images/user-manual/new_script.jpg"/>
+<img src="/images/user-manual/scenes/components/new-script.jpg"/>
 
 你可以拖拽一个新的脚本到脚本组件或者你可以在脚本组件检查器中点击"Add Script"按钮再从资源面板中选择。
 

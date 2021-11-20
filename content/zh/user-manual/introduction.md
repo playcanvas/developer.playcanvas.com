@@ -96,10 +96,10 @@ PlayCanvas 坚持设计为不需要任何插件在浏览器上原生运行的模
 [1]: /user-manual/publishing
 [2]: /user-manual/glossary/#dom
 [3]: https://get.webgl.org/
-[4]: /images/user-manual/introduction-assets.jpg
-[5]: /images/user-manual/introduction-scene.jpg
-[6]: /images/user-manual/introduction-script.jpg
-[7]: /images/user-manual/introduction-published.jpg
+[4]: /images/user-manual/introduction/workflow-assets.jpg
+[5]: /images/user-manual/introduction/workflow-create-scene.jpg
+[6]: /images/user-manual/introduction/workflow-script.jpg
+[7]: /images/user-manual/introduction/workflow-publish.jpg
 [8]: /user-manual/designer
 [9]: /user-manual/assets
 

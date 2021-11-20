@@ -6,7 +6,7 @@ position: 7
 
 設定パネルでは、さまざまなプロパティを設定できます。Editor([ツールバー][1]の)の左下の「cog」ボタンを使用してアクセスします。
 
-<img src="/images/user-manual/cog.jpg" style="display: inline; vertical-align: middle;">
+<img src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
 
 ## Editor
 
@@ -235,9 +235,9 @@ When a new image is uploaded it will be created as a Texture Atlas instead of a 
 シーン(FBXなど)をインポートする際、この設定は、テクスチャファイルがシーンからインポートした新しいバージョンで上書きされるかどうかを決定します。
 
 [1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/cog.jpg
+[2]: /images/user-manual/editor/settings/cog.jpg
 [3]: /user-manual/assets/cubemaps
-[4]: /images/user-manual/gamma-correction.jpg
+[4]: /images/user-manual/editor/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
 [7]: /user-manual/packs/components/model

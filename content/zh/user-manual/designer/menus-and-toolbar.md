@@ -12,10 +12,9 @@ position: 1
 
 ## 工具栏
 
-<img src="/images/user-manual/toolbar.jpg" style="padding-right: 20px; float: left;"></img>
+<img src="/images/user-manual/editor/menus-and-toolbar/toolbar.png" style="padding-right: 20px; float: left;" width="44"></img>
 
 工具栏提供快捷访问的常用功能，其中包含最重要的运行按钮。运行按钮会在一个独立的浏览器窗口中启动游戏并且加载当前的场景，可以立即开始游戏测试。可以从属性编辑栏中看到运行中游戏的实时参数变化。
 
-[1]: /images/user-manual/menu.jpg "The menu bar contains all the commands!"
-[2]: /images/user-manual/toolbar.jpg "The toolbar contains useful commands!"
+[1]: /images/user-manual/editor/menus-and-toolbar/menu.png
 

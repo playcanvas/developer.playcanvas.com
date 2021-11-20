@@ -18,13 +18,13 @@ PlayCanvasでは、素材とはこれらのプロパティを収集するアセ�
 
 PlayCanvas Editorインターフェイスから直接新しい素材を作成することができます。
 
-<img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px;" />
+<img src="/images/user-manual/assets/materials/create-asset-menu.jpg" style="width: 300px;" />
 
 これにより、新素材のアセットを作成し、画面の右側に素材インスペクタを開きます。
 
 ## 素材の選択
 
-<img src="/images/user-manual/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
 
 素材を編集するには、まずそれを選択する必要があります。これで素材インスペクタが開きます。
 
@@ -34,7 +34,7 @@ PlayCanvas Editorインターフェイスから直接新しい素材を作成す
 
 ## 素材の指定
 
-<img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 モデルアセットのどこにどの素材が割り当てられるかを修正することができます。また、モデルコンポーネントを持つ特定のエンティティの素材をカスタマイズすることもできます。
 
@@ -42,7 +42,7 @@ PlayCanvas Editorインターフェイスから直接新しい素材を作成す
 
 <br style="clear:both;" />
 
-<img src="/images/user-manual/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 Asset Materialsをクリックすると、モデルのアセットが選択されます。また、アセットパネルからモデルアセットを選択することもできます。モデルインスペクタはモデルのメッシュと、それぞれに割り当てられる素材を表示します。Xボタンで素材をクリアし、空のスロットをクリックして新しい素材を割り当てます。
 
@@ -52,21 +52,21 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 エンティティマテリアルをクリックすると、まず、素材をカスタマイズしたいメッシュインスタンスを選択するように求められます：
 
-<img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/select.png" style="max-width: 100%" />
 
 メッシュインスタンスを選択した後、新しい素材ピッカーがモデルコンポーネントに表示されます。
 
-<img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%" />
 
 次にこの特定のエンティティ用に別の素材を選択することができます：
 
-<img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%" />
 
 <br style="clear:both;" />
 
 ## 素材の編集
 
-<img src="/images/user-manual/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 素材を選択すればそのプロパティを編集することができます。
 
@@ -86,7 +86,7 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 ## 素材マップ
 
-<img src="/images/user-manual/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 素材の編集の大部分は、上記のページで説明している様々なスロットに対してテクスチャーマップを作成および指定することです。
 

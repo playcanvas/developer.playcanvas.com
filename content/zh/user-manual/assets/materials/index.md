@@ -18,13 +18,13 @@ position: 10
 
 用户可以直接使用PlayCanvas编辑接口来创建新的材质。
 
-<img src="/images/user-manual/create-asset-menu.jpg" style="width: 300px;" />
+<img src="/images/user-manual/assets/materials/create-asset-menu.jpg" style="width: 300px;" />
 
 这将创建新的材质资源并且开启在屏幕右边的材质检查器。
 
 ## 选择一个材质
 
-<img src="/images/user-manual/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
 
 为了能够编辑一个材质，首先用户需要选中它，这个操作将会显示材料检查器。
 
@@ -34,7 +34,7 @@ position: 10
 
 ## 指定材质
 
-<img src="/images/user-manual/material_overrides/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 用户可以修改材质被分配到哪个模型资源或者用户可以打造包含模型组件的特定实体的材质。
 
@@ -42,7 +42,7 @@ position: 10
 
 <br style="clear:both;" />
 
-<img src="/images/user-manual/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 用户可以修改材质被分配到哪个模型资源或者用户可以打造包含模型组件的特定实体的材质。当用户选中一个有着模型组件的实体，用户将会看到两个按钮－资源材质和实体材质。点击资源材质将会选中模型资源。用户同样可以从资源面板中选择模型资源。模型检测器将会显示网格模型以及材质的分配。用户可以通过点击X按钮来清除材质，点击空白插槽来分配一个新的材质。
 
@@ -52,21 +52,21 @@ position: 10
 
 点击实体材质将会系统将会向通知用户为所创建的材质选择网格实例：
 
-<img src="/images/user-manual/material_overrides/select.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/select.png" style="max-width: 100%" />
 
 在选择网格实例之后，一个新的材质选择器将会出现在模型组件中：
 
-<img src="/images/user-manual/material_overrides/selected.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%" />
 
 之后用户就可以为特定实体选择不同的材质了：
 
-<img src="/images/user-manual/material_overrides/overriden.png" style="max-width: 100%" />
+<img src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%" />
 
 <br style="clear:both;" />
 
 ## 编辑材质
 
-<img src="/images/user-manual/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 当用户选中一个材质时就可以对材质的属性进行编辑。
 
@@ -86,7 +86,7 @@ Phong光照模型作为遗留的光照模型，在兼容性方面有着很重要
 
 ## 材质贴图
 
-<img src="/images/user-manual/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
 
 大量的编辑材质涉及了创建和分配纹理贴图到多个插槽在页面上进行详细说明。
 

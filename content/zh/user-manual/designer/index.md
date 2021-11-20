@@ -13,7 +13,7 @@ PlayCanvas 编辑器是一款可视化的编辑器，通过创建和编辑[场�
 
 ## 界面
 
-<img alt="Editor Interface" width="640" src="/images/user-manual/editor-annotated.jpg" />
+<img alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg" />
 
 这是 PlayCanvas 编辑器的主界面。可以在主要区域上看到标记。
 

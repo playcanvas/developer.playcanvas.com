@@ -37,7 +37,7 @@ button.element.on('click', function () {
 ```
 
 [1]: https://github.com/MozillaReality/WebXR-emulator-extension
-[2]: /images/user-manual/vr/vr-view.png
+[2]: /images/user-manual/xr/vr-view.png
 [3]: https://caniuse.com/#feat=webxr
 [4]: https://github.com/immersive-web/webxr-polyfill
 

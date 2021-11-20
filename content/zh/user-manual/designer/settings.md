@@ -6,7 +6,7 @@ position: 7
 
 设置面板可以调整项目的各项参数。点击编辑器左下角的齿轮按钮打开(在[工具栏][1]上)
 
-<img src="/images/user-manual/cog.jpg" style="display: inline; vertical-align: middle;">
+<img src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
 
 ## 编辑器
 
@@ -235,9 +235,9 @@ When a new image is uploaded it will be created as a Texture Atlas instead of a 
 当倒入新的场景 (譬如一个FBX) 时，该选项决定场景中的贴图是否被覆盖为新版。
 
 [1]: /user-manual/designer/menus-and-toolbar
-[2]: /images/user-manual/cog.jpg
+[2]: /images/user-manual/editor/settings/cog.jpg
 [3]: /user-manual/assets/cubemaps
-[4]: /images/user-manual/gamma-correction.jpg
+[4]: /images/user-manual/editor/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/designer/loading-screen
 [7]: /user-manual/packs/components/model
