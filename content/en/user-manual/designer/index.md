@@ -13,7 +13,7 @@ The PlayCanvas Editor is a visual editing tool which you use to create and edit 
 
 ## Interface
 
-<img alt="Editor Interface" width="640" src="/images/user-manual/editor-annotated.jpg" />
+<img alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg" />
 
 This is the main interface to the PlayCanvas Editor. You can see labeled the main areas
 

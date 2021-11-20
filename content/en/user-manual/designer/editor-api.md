@@ -22,7 +22,8 @@ The API can be accessed via the browser's devtools console allowing for automati
 ![][disable-red-boxes-gif]
 
 Editor API code:
-```
+
+```javascript
 (function(){
     const entities = editor.entities.root.listByTag('red');
     for (const entity of entities) {
@@ -30,7 +31,6 @@ Editor API code:
     }
 })();
 ```
-
 
 ## Extending Editor Functionality
 
@@ -47,7 +47,8 @@ The PlayCanvas team are currently using the [Violentmonkey][violentmonkey] open 
 Once the browser extension has been installed, adding your own or another developer's user script is very straightforward. Steps can be found in [Violentmonkey's documentation][violentmonkey-docs].
 
 The code for the above user script is:
-```
+
+```javascript
 // ==UserScript==
 // @name        Example Script
 // @namespace   Violentmonkey Scripts
@@ -123,7 +124,8 @@ The code for the above user script is:
 Let's break down the important areas of the script:
 
 At the top is the informational header about the script if you do share the script with other users. The important line is the `@match` attribute which controls which URLs the script is loaded on. In this case, it is set to load on any PlayCanvas scene. More information on how to change this can be found in [Violentmonkey's documentation][violentmonkey-matching].
-```
+
+```javascript
 // ==UserScript==
 // @name        Example Script
 // @namespace   Violentmonkey Scripts
@@ -136,13 +138,15 @@ At the top is the informational header about the script if you do share the scri
 ```
 
 This is private Editor API to wait for an event when the Editor has fully loaded. Using the event ensures that the Editor API is accessible before the code to extend Editor features is ran.
-```
+
+```javascript
     // Wait until the Editor is available before adding the button
     editor.once('load', () => createButton());
 ```
 
 The button created is from the [PCUI][pcui] framework library that the Editor is also using. Again, there is some private API use to get the Viewport DOM to attach the button to.
-```
+
+```javascript
     function createButton() {
         const btn = new pcui.Button({ text: 'Generate Boxes' });
         btn.style.position = 'absolute';
