@@ -185,7 +185,7 @@
   header ul li {
     display: inline;
     padding: 10px 0px;
-    margin: auto 30px;
+    margin: auto 10px;
   }
   header ul li.active {
     border-bottom: 2px solid rgba(255, 255, 255, 0.75);
@@ -888,7 +888,7 @@
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   header > nav > ul > li {
-    margin: auto 30px;
+    margin: auto 10px;
   }
 
   .content-width {
