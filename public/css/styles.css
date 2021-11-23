@@ -157,7 +157,7 @@
     display: inline-block;
   }
   header .header-title img {
-    padding: 24px 0px 0px 0px;
+    padding: 24px 0px;
     padding-right: 8px;
     vertical-align: middle;
   }
@@ -179,7 +179,7 @@
   header ul {
     float: right;
     list-style-type: none;
-    margin: 22px 0px 0px 0px;
+    margin: 22px 0px;
     padding: 0;
   }
   header ul li {
