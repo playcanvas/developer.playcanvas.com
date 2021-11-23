@@ -169,23 +169,6 @@
     display: inline;
     vertical-align: middle;
   }
-  header .social-menu .links {
-    float: right;
-    clear: both;
-    margin-top: 10px;
-    margin-right: 25px;
-  }
-  header .social-menu .links a img {
-    width: 20px;
-    padding-left: 20px;
-    opacity: 0.75;
-  }
-  header .social-menu .links a img:hover {
-    opacity: 1;
-  }
-  header .social-menu .links:hover {
-    text-decoration: none;
-  }
   header nav {
     font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -202,7 +185,14 @@
   header ul li {
     display: inline;
     padding: 10px 0px;
-    margin: auto 30px;
+    margin: auto 5px;
+  }
+  header ul li img {
+    height: 20px;
+    opacity: 0.75;
+  }
+  header ul li img:hover {
+    opacity: 1;
   }
   header ul li.active {
     border-bottom: 2px solid rgba(255, 255, 255, 0.75);
@@ -815,9 +805,6 @@
   header > nav > ul > li {
     margin: auto 5px;
   }
-  header .social-menu .links {
-    margin-right: 0px;
-  }
 
   .content-width {
     width: calc(100% - 60px);
@@ -908,10 +895,7 @@
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   header > nav > ul > li {
-    margin: auto 30px;
-  }
-  header .social-menu .links {
-    margin-right: 25px;
+    margin: auto 5px;
   }
 
   .content-width {

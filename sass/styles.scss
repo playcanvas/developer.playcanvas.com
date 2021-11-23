@@ -90,30 +90,6 @@
             }
         }
 
-        .social-menu {
-            .links {
-                float: right;
-                clear: both;
-                margin-top: 10px;
-                margin-right: 25px;
-                a {
-                    img {
-                        width: 20px;
-                        padding-left: 20px;
-                        opacity: 0.75;
-                    }
-
-                    img:hover {
-                        opacity: 1;
-                    }
-                }
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-
         nav {
             @include font-regular();
             margin: auto;
@@ -129,7 +105,16 @@
             li {
                 display: inline;
                 padding: 10px 0px;
-                margin: auto 30px;
+                margin: auto 5px;
+
+                img {
+                    height: 20px;
+                    opacity: 0.75;
+                }
+
+                img:hover {
+                    opacity: 1;
+                }
             }
 
             li.active {
@@ -820,12 +805,6 @@
                 }
             }
         }
-
-        .social-menu {
-            .links {
-                margin-right: 0px;
-            }
-        }
     }
 
 
@@ -942,14 +921,8 @@
         > nav {
             > ul {
                 > li {
-                    margin: auto 30px;
+                    margin: auto 5px;
                 }
-            }
-        }
-
-        .social-menu {
-            .links {
-                margin-right: 25px;
             }
         }
     }
