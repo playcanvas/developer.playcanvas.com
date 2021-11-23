@@ -105,16 +105,7 @@
             li {
                 display: inline;
                 padding: 10px 0px;
-                margin: auto 5px;
-
-                img {
-                    height: 20px;
-                    opacity: 0.75;
-                }
-
-                img:hover {
-                    opacity: 1;
-                }
+                margin: auto 10px;
             }
 
             li.active {
@@ -921,7 +912,7 @@
         > nav {
             > ul {
                 > li {
-                    margin: auto 5px;
+                    margin: auto 10px;
                 }
             }
         }
