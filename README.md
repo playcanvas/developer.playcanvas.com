@@ -8,7 +8,7 @@ Building the site requires `node` and `npm`.
 
     cd developer.playcanvas.com
     npm install
-    node run build
+    npm run build
 
 ## How to serve
 
