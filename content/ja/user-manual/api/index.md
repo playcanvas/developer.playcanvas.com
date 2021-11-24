@@ -113,7 +113,7 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 エラーが発生すると、次の形式でJSONオブジェクトを取得します：
 
-```none
+```json
 {
     "error": "This is the error message"
 }
@@ -142,7 +142,7 @@ REST APIへの呼び出しにはレート制限があります。リクエスト
 [2]: /images/user-manual/api/new-token.png
 [3]: /images/user-manual/api/remove-token.png
 [4]: /images/user-manual/api/account-tab.png
-[5]: user-manual/version-control/
+[5]: /user-manual/version-control/
 [6]: /images/user-manual/api/project-id.png
 [7]: /images/user-manual/api/scene-id.png
 [8]: /images/user-manual/api/branch-id.png

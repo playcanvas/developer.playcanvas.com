@@ -26,10 +26,6 @@ PlayCanvasの使用を開始するには、新しいアカウントを作成す�
 
 ![ログイン][7]
 
-## Persona
-
-Personaログインシステムに対応していましたが、2016年11月30日に[Mozillaにより停止することが決まりました][8]。ログインにPersonaを使用していた場合は、[こちら][6]をクリックしてアカウントのパスワードを設定してください。
-
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
@@ -37,5 +33,4 @@ Personaログインシステムに対応していましたが、2016年11月30�
 [5]: /user-manual/profile/
 [6]: https://login.playcanvas.com/persona_deprecated
 [7]: /images/user-manual/creating-account/login.png
-[8]: https://wiki.mozilla.org/Identity/Persona_Shutdown_Guidelines_for_Reliers
 

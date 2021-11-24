@@ -4,11 +4,11 @@ template: usermanual-page.tmpl.html
 position: 4
 ---
 
-<img alt="Viewport" width="640" height="480" src="/images/user-manual/viewport.jpg" />
+<img alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg" />
 
 视口展示了当前场景的可视化状态。你可以通过移动摄影机在场景中自由漫游。
 
-<img alt="Cameras dropdown" src="/images/user-manual/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;"/>
+<img alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;"/>
 
 ## 摄影机
 
@@ -18,15 +18,11 @@ position: 4
 
 ## 小工具
 
-<img src="/images/user-manual/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
 
 在截图中看到的三色轴向玩意儿叫[小工具][1]。用来修改选中实体的变换矩阵。有三种不同类型的小工具：平移（箭头末端）；旋转（三色环）和缩放（方形末端）。
-
-## 实体上下文菜单
-
-右键点击3D视口中的实体将会呈现出实体上下文菜单。
 
 [1]: /user-manual/glossary#gizmo
 

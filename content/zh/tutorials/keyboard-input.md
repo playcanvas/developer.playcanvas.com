@@ -117,7 +117,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 * `pc.EVENT_KEYDOWN`
 * `pc.EVENT_KEYUP`
 
-[DOM] [3]键盘事件在不同的浏览器上的实现不同，所以PlayCanvas引擎在`pc.Keyboard`对象上提供事件，所以你可以在任何地方使用相同的代码。 当键盘事件被触发时，一个包含被释放的按键的键代码的`pc.KeyboardEvent`对象被传递给事件处理程序。
+[DOM][3]键盘事件在不同的浏览器上的实现不同，所以PlayCanvas引擎在`pc.Keyboard`对象上提供事件，所以你可以在任何地方使用相同的代码。 当键盘事件被触发时，一个包含被释放的按键的键代码的`pc.KeyboardEvent`对象被传递给事件处理程序。
 
 注意我们也传递一个第三个参数给on()，这是`this`或者脚本实例本身。 on()的第三个参数在事件回调中用作于`this`，所以我们需要在这里传递它，否则它不会被设置为正确的对象。
 
@@ -129,7 +129,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ## 试试看
 
-在[这里] [2]进行全屏尝试或在页面顶部尝试。 比较轻敲并按住箭头键，然后点击并按住空格键。
+在[这里][2]进行全屏尝试或在页面顶部尝试。 比较轻敲并按住箭头键，然后点击并按住空格键。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
 [2]: https://playcanv.as/p/rFZGQWCi/

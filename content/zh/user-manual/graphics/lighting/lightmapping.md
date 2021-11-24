@@ -98,16 +98,16 @@ Gamma correction, tone mapping and exposure - are good settings that you will wa
 You can [explore the example][13] that uses the techniques described above and also its [project][14].
 
 [0]: /user-manual/graphics/lighting/runtime-lightmaps/
-[1]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
-[2]: /images/user-manual/lighting/lightmaps/3ds-max-preferences.png
-[3]: /images/user-manual/lighting/lightmaps/3ds-max-render-settings-color-mapping.png
-[4]: /images/user-manual/lighting/lightmaps/uv-geometry.jpg
-[5]: /images/user-manual/lighting/lightmaps/uv-consistency.jpg
-[6]: /images/user-manual/lighting/lightmaps/uv-overlapping.jpg
-[7]: /images/user-manual/lighting/lightmaps/3ds-max-render-to-texture-window.png
-[8]: /images/user-manual/lighting/lightmaps/lightmapping-light-leak.jpg
-[9]: /images/user-manual/lighting/lightmaps/lightmapping-surface-blur.jpg
-[10]: /images/user-manual/lighting/lightmaps/lightmapping-material-slot.png
+[1]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg
+[2]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-preferences.png
+[3]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-render-settings-color-mapping.png
+[4]: /images/user-manual/graphics/lighting/lightmapping/uv-geometry.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/uv-consistency.jpg
+[6]: /images/user-manual/graphics/lighting/lightmapping/uv-overlapping.jpg
+[7]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-render-to-texture-window.png
+[8]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-light-leak.jpg
+[9]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-surface-blur.jpg
+[10]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-material-slot.png
 [11]: /user-manual/graphics/physical-rendering/image-based-lighting/
 [12]: /user-manual/graphics/lighting/ambient-occlusion/
 [13]: https://playcanv.as/p/zdkARz26/

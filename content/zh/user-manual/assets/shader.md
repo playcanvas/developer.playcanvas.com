@@ -8,7 +8,7 @@ position: 12
 
 编辑一个着色器资源，左键点击编辑器选择编辑。以下是一个例子通过使用着色器来创建一个自定义材料。
 
-```
+```javascript
 var vertexShader = this.app.assets.find('my_vertex_shader');
 var fragmentShader = this.app.assets.find('my_fragment_shader');
 var shaderDefinition = {

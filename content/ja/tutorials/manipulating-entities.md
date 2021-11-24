@@ -20,8 +20,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
+
 *ワールドとローカルの座標系*
-<br />
 
 ### 階層
 
@@ -140,6 +140,6 @@ entity.setLocalScale(s, s, s);
 
 現在、ワールド空間でエンティティのスケールを設定することはできません。
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
-[2]: http://en.wikipedia.org/wiki/Quaternion
+[1]: https://en.wikipedia.org/wiki/Euler_angles
+[2]: https://en.wikipedia.org/wiki/Quaternion
 

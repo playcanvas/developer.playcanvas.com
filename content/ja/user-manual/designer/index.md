@@ -13,7 +13,7 @@ PlayCanvas エディタはゲームを構成する[シーン][1]や[エンティ
 
 ## インターフェイス
 
-<img alt="Editor Interface" width="640" src="/images/user-manual/editor-annotated.jpg" />
+<img alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg" />
 
 これはPlayCanvas Editorのメインインターフェイスです。メインエリアにラベルを付けています。
 
@@ -27,5 +27,5 @@ PlayCanvas エディタはゲームを構成する[シーン][1]や[エンティ
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#component
-[4]: /user-manual/glossary#assets
+[4]: /user-manual/glossary#asset
 

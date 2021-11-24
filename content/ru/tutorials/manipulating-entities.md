@@ -20,8 +20,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
+
 *Мировые и локальные координатные системы*
-<br />
 
 ### Иерархия
 
@@ -141,6 +141,6 @@ entity.setLocalScale(s, s, s);
 
 Обратите внимание, что Вы  не можете устанавливать масштаб сущности в мировом пространстве.
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
-[2]: http://en.wikipedia.org/wiki/Quaternion
+[1]: https://en.wikipedia.org/wiki/Euler_angles
+[2]: https://en.wikipedia.org/wiki/Quaternion
 

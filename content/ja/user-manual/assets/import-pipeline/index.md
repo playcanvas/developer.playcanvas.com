@@ -14,13 +14,13 @@ position: 2
 
 ![アセットのタスク][1]
 
-There are a variety of options available to tune the behavior of the import pipeline to suit your needs.
+ニーズに合わせてインポートパイプラインの挙動をチューニングするために利用できるオプションが複数あります。
 
 <img src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
 ### 検索関連のアセット
 
-When you update an source asset by uploading a new version of the file. There are two possible behaviors for how we update the target assets that are created by the import pipeline.
+新しいバージョンのファイルでソースアセットを更新する際、インポートパイプラインにより作成されるターゲットアセットを更新する方法が二つあります。
 
 ***Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
 ***Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
@@ -33,7 +33,7 @@ Newly created assets will automatically be set to [preload][2] or not depending 
 
 ## Texture Import Settings
 
-These options only affect the importing of images and textures.
+これらのオプションは、画像やテクスチャのインポートにのみ影響を与えます。
 
 ### テクスチャ POT (Power of Two)
 
@@ -53,19 +53,19 @@ When a model file is updated or reimported, the Editor will try to preserve the 
 
 ### モデルの上書き
 
-When a model file is updated or reimported this option determines whether or not the target model file is overwritten. The default behavior is to overwrite with the new model.
+モデルファイルが更新または再インポートされる際、このオプションは、ターゲットモデルのファイルが上書きされるか否かを定義します。デフォルトでは、新しいモデルで上書きします。
 
 ### アニメーションの上書き
 
-When a model file is updated or reimported this option determines whether or not a animations created from the model are overwritten. The default behavior is to overwrite with the new animations.
+モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたアニメーションが上書きされるか否かを定義します。デフォルトでは、新しいアニメーションで上書きします。
 
 ### 素材の上書き
 
-When a model file is updated or reimported this option determines whether or not materials created from the model are overwritten. The default behavior is to leave existing materials.
+モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成された素材が上書きされるか否かを定義します。デフォルトでは、既存の素材を維持します。
 
 ### テクスチャの上書き
 
-When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behavior is to overwrite with the new textures.
+モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたテクスチャが上書きされるか否かを定義します。デフォルトでは、新しいテクスチャで上書きします。
 
 ### Convert to GLB
 

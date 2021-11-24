@@ -54,7 +54,7 @@ position: 3
 *さらに詳しい説明は、Marmoset Toolbagの[PBR Theory][5]という素晴らしい記事を参照してください。*
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
-[2]: http://joachimcoppens.com/
+[2]: https://www.joachimcoppens.com/
 [3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
 [4]: /images/user-manual/graphics/physical-rendering/materials.jpg
 [5]: https://www.marmoset.co/toolbag/learn/pbr-theory

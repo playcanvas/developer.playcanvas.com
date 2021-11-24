@@ -39,12 +39,12 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' http
 Status: 200
 ```
 
-```none
+```json
 {
     "id": int,
     "modifiedAt": date,
     "createdAt": date,
-    "state": "ready" or "processing" or "error",
+    "state": "ready" | "processing" | "error",
     "name": string,
     "type": string,
     "scope":{
@@ -55,7 +55,7 @@ Status: 200
     "sourceId": bool,
     "tags": list of strings,
     "preload": bool,
-    data: {
+    "data": {
         ... asset data
     },
     "file": {

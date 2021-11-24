@@ -55,7 +55,7 @@ Some PBR systems use Roughness, some use Glossiness, they are the same thing. Ro
 
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
-[2]: http://joachimcoppens.com/
+[2]: https://www.joachimcoppens.com/
 [3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
 [4]: /images/user-manual/graphics/physical-rendering/materials.jpg
 [5]: https://www.marmoset.co/toolbag/learn/pbr-theory

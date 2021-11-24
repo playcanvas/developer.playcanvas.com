@@ -6,7 +6,6 @@ position: 3
 
 Here is a basic script. We can learn about the structure of a PlayCanvas script from it.
 
-
 ```javascript
 var Rotate = pc.createScript('rotate');
 

@@ -147,9 +147,7 @@ Leaderboard.prototype.load = function (callback) {
     });
     this.app.assets.load(asset);
 };
-
 ```
-
 
 [1]: https://playcanvas.com/editor/scene/547907
 [2]: /user-manual/user-interface/elements/

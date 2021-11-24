@@ -28,7 +28,7 @@ Each dynamic light has a per-frame runtime cost. The more lights have you the hi
 
 过度绘制指的是被接近摄像机的其他几何体遮挡的几何体覆盖了多少像素。 过多的绘制显示您正在浪费GPU处理，试图对不可见的像素进行绘制。
 
-使用[WebGL Insight] [2]这样的扩展可以帮助您可视化过度绘制的情况。
+使用[WebGL Insight][2]这样的扩展可以帮助您可视化过度绘制的情况。
 
 ### 垃圾回收机制
 
@@ -36,11 +36,11 @@ Web浏览器有对不再使用的Javascript对象进行垃圾回收的功能。 
 
 ### 分析工具
 
-PlayCanvas自带一个内置的分析工具。 在编辑器中使用Launch Profiler按钮运行具有分析活动的应用程序。 [阅读更多关于profiler的信息] [3]。
+PlayCanvas自带一个内置的分析工具。 在编辑器中使用Launch Profiler按钮运行具有分析活动的应用程序。 [阅读更多关于profiler的信息][3]。
 
 ### 一般的优化提示
 
-可用的[更多优化准则] [4]。
+可用的[更多优化准则][4]。
 
 [1]: /user-manual/graphics/lighting/runtime-lightmaps/
 [2]: https://github.com/3Dparallax/insight

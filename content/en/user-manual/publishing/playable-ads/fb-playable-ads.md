@@ -42,7 +42,7 @@ Follow the [setup steps][7] from the readme in the GitHub repo.
 
 Set the following options in the `config.json` as shown below. This will produce a single HTML file in the output directory.
 
-```
+```json
     "one_page": {
         "patch_xhr_out": true,
         "inline_game_scripts": true,
@@ -54,7 +54,7 @@ Set the following options in the `config.json` as shown below. This will produce
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
-```
+```json
     "one_page": {
         "patch_xhr_out": true,
         "inline_game_scripts": true,

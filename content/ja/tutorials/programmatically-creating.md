@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## エンティティの作成
 
-```js
+```javascript
 var entity = new pc.Entity(); // エンティティを作成
 
 // エンティティ階層に追加

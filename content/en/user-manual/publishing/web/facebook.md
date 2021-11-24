@@ -36,7 +36,7 @@ Adding this URL as your website URL is required because of the way PlayCanvas ho
 
 ![App URL][7]
 
-[1]: http://facebook.com
+[1]: https://facebook.com
 [2]: https://developers.facebook.com/
 [3]: /images/user-manual/publishing/web/facebook/choose-platform.jpg
 [4]: /images/user-manual/publishing/web/facebook/secure-canvas-url.jpg

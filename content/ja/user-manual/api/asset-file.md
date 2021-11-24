@@ -21,7 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/
 ```
 
 HTTP Request
-```
+
+```text
 GET https://playcanvas.com/api/assets/{assetId}/file?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```

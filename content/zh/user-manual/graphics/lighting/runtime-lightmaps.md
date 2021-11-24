@@ -108,14 +108,14 @@ To fix the warning select the model asset and open the **Pipeline** section. Cli
  **填充**选项决定了当延展发生时面之间的距离。如果你看见了*"光照渗色"*，即光照贴图上出现了本不该出现的光线，可以增加填充系数，以减少渗漏。
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
-[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
-[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
+[2]: /images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png
+[3]: /images/user-manual/graphics/lighting/lightmapping/editor-light-shadows.png
 [4]: /user-manual/graphics/lighting/shadows
-[5]: /images/user-manual/lighting/lightmaps/model-settings.png
-[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
-[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
-[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/model-settings.png
+[6]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-settings.png
+[7]: /images/user-manual/graphics/lighting/lightmapping/model-uv1-missing.png
+[8]: /images/user-manual/graphics/lighting/lightmapping/auto-unwrap.jpg
 [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
-[10]: /images/user-manual/lighting/lightmaps/sponza.jpg
+[10]: /images/user-manual/graphics/lighting/lightmapping/sponza.jpg
 [11]: /user-manual/optimization/batching
 

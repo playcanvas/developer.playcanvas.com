@@ -12,10 +12,9 @@ position: 1
 
 ## ツールバー
 
-<img src="/images/user-manual/toolbar.jpg" style="padding-right: 20px; float: left;"></img>
+<img src="/images/user-manual/editor/menus-and-toolbar/toolbar.png" style="padding-right: 20px; float: left;" width="44"></img>
 
 ツールバーには簡単にアクセスできる一般的なコマンドが設置されています。最も便利なのはLaunchボタンです。Launchボタンは別のブラウザタブでゲームインスタンスを開始して、シーンを読み込みます。これで、即時にプレイテストが行えます。Attribute Editorのセクションから、ゲームで実行しているライブインスタンスの値を編集する方法についてご確認ください。
 
-[1]: /images/user-manual/menu.jpg "メニューバーには全てのコマンドが含まれています！"
-[2]: /images/user-manual/toolbar.jpg "ツールバーには便利なコマンドが含まれています！"
+[1]: /images/user-manual/editor/menus-and-toolbar/menu.png
 

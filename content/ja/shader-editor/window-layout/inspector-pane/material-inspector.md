@@ -33,6 +33,6 @@ There are three sections: Basic, Render States and Parameters.
 The parameters section lists the parameter nodes placed on the graph. The names and types are taken from the graph nodes themselves.
 
 [1]: /shader-editor/window-layout/assets-pane
-[2]: https://developer.playcanvas.com/en/api/pc.Material.html#blendType
+[2]: /api/pc.Material.html#blendType
 [3]: /images/shader-editor/inspector-pane-material.png
 

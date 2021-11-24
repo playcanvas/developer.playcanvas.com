@@ -44,7 +44,7 @@ PlayCanvas编辑器是一个让您在可记录的时间内构建场景的可视�
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" frameborder="0" allowfullscreen></iframe>
 
-你可以在[编辑器] [8]部分了解更多。
+你可以在[编辑器][8]部分了解更多。
 
 ### 资源
 
@@ -95,11 +95,11 @@ PlayCanvas 坚持设计为不需要任何插件在浏览器上原生运行的模
 
 [1]: /user-manual/publishing
 [2]: /user-manual/glossary/#dom
-[3]: http://get.webgl.org/
-[4]: /images/user-manual/introduction-assets.jpg
-[5]: /images/user-manual/introduction-scene.jpg
-[6]: /images/user-manual/introduction-script.jpg
-[7]: /images/user-manual/introduction-published.jpg
+[3]: https://get.webgl.org/
+[4]: /images/user-manual/introduction/workflow-assets.jpg
+[5]: /images/user-manual/introduction/workflow-create-scene.jpg
+[6]: /images/user-manual/introduction/workflow-script.jpg
+[7]: /images/user-manual/introduction/workflow-publish.jpg
 [8]: /user-manual/designer
 [9]: /user-manual/assets
 

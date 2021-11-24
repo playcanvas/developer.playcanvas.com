@@ -96,7 +96,7 @@ The script has 2 attributes - the Entity that shows the fill image and the max w
 
 The `update` method essentially loops progress between 0 and 1. The important thing to note in this script is how we need to change the `width` and the `rect` of the fill image in order to properly resize our progress bar.
 
-Changing the `width` makes the fill image larger and changing the `rect` makes sure that we only show the portion of the texture that is visible, so that we avoid stretching the visible texture. Here is the API reference for `rect` https://developer.playcanvas.com/en/api/pc.ElementComponent.html#rect.
+Changing the `width` makes the fill image larger and changing the `rect` makes sure that we only show the portion of the texture that is visible, so that we avoid stretching the visible texture. [Here][8] is the API reference for `rect`.
 
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/
@@ -105,4 +105,5 @@ Changing the `width` makes the fill image larger and changing the `rect` makes s
 [5]: /images/tutorials/ui/progressbar/screen.png
 [6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
 [7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
+[8]: /api/pc.ElementComponent.html#rect
 

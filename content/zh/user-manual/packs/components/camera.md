@@ -51,5 +51,5 @@ position: 5
 
 [1]: /images/user-manual/scenes/components/component-camera.png
 [2]: /user-manual/packs/components/script
-[3]: /en/api/pc.CameraComponent.html
+[3]: /api/pc.CameraComponent.html
 

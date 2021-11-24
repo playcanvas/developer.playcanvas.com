@@ -96,7 +96,7 @@ ProgressBar.prototype.update = function(dt) {
 
 `update`メソッドは基本的に0と1の間の進行をループします。このスクリプトで重要なことは、プログレスバーのサイズを適切に変更するために、塗りつぶし画像の`width`と `rect`をどのように変更するかです。
 
-`width`を変更すると塗りつぶし画像が大きくなり、`rect`を変更するとテクスチャの表示されている部分のみが表示され、可視テクスチャを伸ばすことを防ぎます。以下は、`rect` https://developer.playcanvas.com/en/api/pc.ElementComponent.html#rect のAPIリファレンスです。
+Changing the `width` makes the fill image larger and changing the `rect` makes sure that we only show the portion of the texture that is visible, so that we avoid stretching the visible texture. [Here][8] is the API reference for `rect`.
 
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/
@@ -105,4 +105,5 @@ ProgressBar.prototype.update = function(dt) {
 [5]: /images/tutorials/ui/progressbar/screen.png
 [6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
 [7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
+[8]: /api/pc.ElementComponent.html#rect
 

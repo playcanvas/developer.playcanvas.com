@@ -12,7 +12,7 @@ position: 16
 
 新しいスクリプトを作成するには、アセットパネルの<span class="font-icon" style="font-size: 18px">&#58468;</span>ボタンを押し、New Scriptを選択してください。そして、ポップアップウィンドウにスクリプトの名前を入力してEnterを押してください。
 
-<img src="/images/user-manual/new_script.jpg"/>
+<img src="/images/user-manual/scenes/components/new-script.jpg"/>
 
 新しいスクリプトはスクリプトコンポーネント上にドラッグすることができます。また、スクリプトコンポーネントのインスペクタにあるAdd Scriptボタンを押して、アセットパネルからスクリプトを選択することもできます。
 
@@ -23,5 +23,5 @@ position: 16
 スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]です。
 
 [1]: /images/user-manual/scenes/components/component-script.png
-[2]: /engine/api/stable/symbols/pc.ScriptComponent.html
+[2]: /api/pc.ScriptComponent.html
 

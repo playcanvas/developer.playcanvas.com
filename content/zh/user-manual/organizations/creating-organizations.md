@@ -24,7 +24,7 @@ position: 1
 
 ### 将用户帐户转换为组织账户
 
-另一个创建组织的方式是将你的用户账户转换为组织账户。你可以通过点击您的[帐户] [3]页中的转换按键“CONVERT”进行此操作。
+另一个创建组织的方式是将你的用户账户转换为组织账户。你可以通过点击您的[帐户][3]页中的转换按键“CONVERT”进行此操作。
 
 <img src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
 

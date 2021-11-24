@@ -128,7 +128,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 ### 試してみよう
 
-フルスクリーンでのチュートリアルはページ上部または[こちらから] [5]お試しください。マウスの移動でキューブを動かし、左、中、右マウスボタンをクリックしてキューブの色を変更します。
+フルスクリーンでのチュートリアルはページ上部または[こちらから][5]お試しください。マウスの移動でキューブを動かし、左、中、右マウスボタンをクリックしてキューブの色を変更します。
 
 [1]: https://playcanvas.com/project/405819/overview/tutorial-basic-mouse-input
 [2]: /user-manual/glossary#framework

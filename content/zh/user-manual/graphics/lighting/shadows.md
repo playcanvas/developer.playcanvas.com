@@ -63,9 +63,9 @@ The shadow sampling type is specified per light and so the option can be found i
 * Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
 * If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
 
-[1]: /images/user-manual/graphics/shadows/doom3_shadows.jpg
+[1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
-[3]: /images/user-manual/graphics/shadows/hard_vs_soft.jpg
+[3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png

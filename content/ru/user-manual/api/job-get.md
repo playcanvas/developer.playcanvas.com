@@ -32,12 +32,12 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas
 Status: 200
 ```
 
-```none
+```json
 {
     "id": int,
     "created_at": date,
     "modified_at": date,
-    "status": "running" or "complete" or "error",
+    "status": "running" | "complete" | "error",
     "messages": list of strings,
     "data": object - contents depend on the job
 }

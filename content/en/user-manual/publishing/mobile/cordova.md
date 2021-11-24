@@ -69,7 +69,7 @@ Ensure that the version is `6.0.0` or higher. This is because version `6.0.0` up
 
 By default, if you attempt to run a Cordova-based PlayCanvas app, you will encounter several errors/exceptions related to cross-origin HTTP requests. To fix this, add the following to your project's `config.xml`:
 
-```
+```html
     <platform name="ios">
         <!-- Add these two lines... -->
         <preference name="scheme" value="app" />

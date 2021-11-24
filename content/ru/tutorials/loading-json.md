@@ -65,7 +65,6 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
     el = document.querySelector("#xhr-json");
     el.textContent = JSON.stringify(data, null, 4);
 });
-
 ```
 
 In this code we are using the XMLHttpRequest object (which is part of the standard web browser API) to request JSON data from a URL, in this case the Github API.

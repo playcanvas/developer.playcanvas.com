@@ -34,15 +34,15 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 Status: 201 Created
 ```
 
-```none
+```json
 {
     "id": int,
     "created_at": date,
     "modified_at": date,
-    "status": "running" or "complete" or "error",
-    "messages": list of strings,
+    "status": "running" | "complete" | "error",
+    "messages": [ list of strings ],
     "data": {
-      'project': {
+      "project": {
          'id': int
       },
       "url": string

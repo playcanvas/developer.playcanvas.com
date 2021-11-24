@@ -11,7 +11,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## 创建一个实体
 
-```js
+```javascript
 var entity = new pc.Entity(); // Create an Entity
 
 // Add it to the Entity hierarchy
@@ -40,7 +40,7 @@ this.app.root.addChild(entity);
 
 一个实体本身没有太多功能，所以为了添加功能到您的实体您将需要添加组件。 您可以使用Entity的`addComponent`方法创建一个新的组件并添加到实体中。
 
-每个组件类型都具有可以在数据对象上传递的不同属性，有关可用属性的更多详细信息，请参见[组件文档] [1]。 `data`参数可以省略，并使用默认值。
+每个组件类型都具有可以在数据对象上传递的不同属性，有关可用属性的更多详细信息，请参见[组件文档][1]。 `data`参数可以省略，并使用默认值。
 
 ## 移除组建
 

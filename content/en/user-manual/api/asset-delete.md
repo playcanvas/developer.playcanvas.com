@@ -21,7 +21,8 @@ curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/a
 ```
 
 HTTP Request
-```
+
+```text
 DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```

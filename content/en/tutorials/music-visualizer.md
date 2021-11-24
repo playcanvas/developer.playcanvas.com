@@ -133,8 +133,7 @@ In our update loop we render the graphs for both the Frequency Data and the Time
 
 This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
 
-
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
-[4]: http://developer.playcanvas.com/en/api/pc.Application.html#renderLines
+[4]: /api/pc.Application.html#renderLines

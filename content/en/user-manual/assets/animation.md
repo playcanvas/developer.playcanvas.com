@@ -9,7 +9,7 @@ An Animation asset is used to play a single animation on a 3D model. Animations 
 ## Animation Import Settings
 
 <div class="alert alert-info">
-Note: This is an experimental feature. Please let us know your feedback in the <a href="http://forum.playcanvas.com/" target="_blank">forums</a>.
+Note: This is an experimental feature. Please let us know your feedback in the <a href="https://forum.playcanvas.com/" target="_blank">forums</a>.
 </div>
 
 When importing animations, there are settings that can be tweaked to adjust the animation quality against the file size.
@@ -47,3 +47,4 @@ If enabling this option, it is recommended that Sample Rate is disabled and Curv
 [animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
 
  [1]: https://www.mixamo.com/
+ 

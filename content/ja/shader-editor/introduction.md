@@ -19,7 +19,8 @@ The effect is made up of various graphs, including the following one. This graph
 ![sample graph][2]
 
 __Shader Editor__ will convert this graph into a shader program, which is executed on a GPU at runtime:
-```glsl
+
+```
 void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
     float var_ = float(2);
     vec3 var_0 = vec3(var_,var_,var_);

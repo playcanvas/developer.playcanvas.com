@@ -19,5 +19,5 @@ position: 6
 * **偏移量**: 控制效果的位置偏移。
 * **暗度**: 控制效果的变暗程度。
 
-[1]: http://en.wikipedia.org/wiki/Vignetting
+[1]: https://en.wikipedia.org/wiki/Vignetting
 

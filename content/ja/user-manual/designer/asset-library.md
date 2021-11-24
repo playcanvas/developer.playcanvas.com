@@ -8,5 +8,5 @@ position: 6
 
  [PlayCanvas Store][1]からプロジェクトで使用できる無料の3Dモデルを取得できます。
 
-[1]: http://store.playcanvas.com/
+[1]: https://store.playcanvas.com/
 

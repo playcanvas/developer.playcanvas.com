@@ -10,26 +10,26 @@ position: 8
 
 一部のコンピュータハードウェアでは、Internet Explorer 11はGPU(グラフィックスプロセッサ)を使用してグラフィックスアクセラレーションを実行できません。このような場合、WebGLコンテンツをレンダリングするためにソフトウェアレンダラを使用します。これは、GPUを使用するよりも大幅に遅くなります。残念ながら、これはハードウェアの問題であるため、回避する方法はありません。唯一の解決策は、問題のマシンのグラフィックドライバまたはハードウェアを更新することです。
 
-ソフトウェアレンダラを使用して実行しているかどうかを確認するには、[http://webglreport.com][1] を参照してください。IE 11がソフトウェアレンダラを使用している場合、**Major Performance Caveat**の行は**Yes**に設定されています。
+ソフトウェアレンダラを使用して実行しているかどうかを確認するには、[WebGL Report][1] を参照してください。IE 11がソフトウェアレンダラを使用している場合、**Major Performance Caveat**の行は**Yes**に設定されています。
 
 ## PlayCanvasとその他のWebGLアプリケーションはGoogle Chromeで非常に遅く動作します
 
 Chromeには、GPU(グラフィックスプロセッサ)とグラフィックカードドライバのブラックリストが含まれており、WebGLコンテンツの実行をブロックします。このような場合、Chromeはソフトウェアレンダラを使用してWebGLコンテンツをレンダリングします。これは、GPUを使用するよりも大幅に遅くなります。グラフィックスカードドライバをアップグレードすると、パフォーマンスが向上する可能性があります。
 
-ブラックリストに載っているカードはこちらからご確認できます：[https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
+You can view the blacklisted cards [here][2].
 
-ソフトウェアレンダラを使用して実行しているかどうかを確認するには、[http://webglreport.com][1] を参照してください。Chromeがソフトウェアレンダラを使用している場合、**Unmasked Renderer**の行は**SwiftShader**と報告します。
+ソフトウェアレンダラを使用して実行しているかどうかを確認するには、[WebGL Report][1] を参照してください。Chromeがソフトウェアレンダラを使用している場合、**Unmasked Renderer**の行は**SwiftShader**と報告します。
 
 ## PlayCanvasとその他のWebGLアプリケーションはFirefoxで実行できません
 
 Firefoxには、GPU(グラフィックスプロセッサ)とグラフィックカードドライバのブラックリストが含まれており、それらのWebGLコンテンツの実行をブロックします。このような場合、FirefoxはアプリケーションのWebGLコンテキスト作成を許可せず、PlayCanvasアプリケーションは起動されません。グラフィックスカードドライバをアップグレードすると、アプリケーションが実行できる可能性があります。
 
-ブラックリストに載っているカードはこちらからご確認できます：[https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists][2]
+You can view the blacklisted cards [here][2].
 
 ## PlayCanvasとその他のWebGLアプリケーションはNvidiaグラフィックスカードを搭載したWindowsで期待どおりに機能しません
 
 多くのWindows PCには、コンピュータのマザーボード上に構築された低消費電力のGPUである「統合型」グラフィックスカードと、追加のグラフィックスカードが含まれています。Nvidiaカードにはコントロールパネルがインストールされており、PC所有者はどのアプリケーションを実行するためにどのグラフィックカードを使用するかを選択できます。デフォルトでは、多くのPCが低電力内蔵グラフィックスカードを使用してGoogle ChromeのようなWebブラウザを実行するように設定されています。WebGLアプリケーションから最高のパフォーマンスを引き出すには、より強力なグラフィックスカードを使用してWebブラウザを高速化することが重要です。
 
-[1]: http://webglreport.com
+[1]: https://webglreport.com/
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists
 

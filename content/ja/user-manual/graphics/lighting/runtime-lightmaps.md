@@ -107,14 +107,14 @@ PlayCanvasにはライトマップを生成する非常に便利な方法があ�
 **Padding**セクションでは、アンラップが発生した際のセクション間のスペースを決定します。ライトマップ上の不適切な場所にライトが表示されてしまう*"light bleeding"*が発生している場合、paddingを増やして軽減することができます。 
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
-[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
-[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
+[2]: /images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png
+[3]: /images/user-manual/graphics/lighting/lightmapping/editor-light-shadows.png
 [4]: /user-manual/graphics/lighting/shadows
-[5]: /images/user-manual/lighting/lightmaps/model-settings.png
-[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
-[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
-[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/model-settings.png
+[6]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-settings.png
+[7]: /images/user-manual/graphics/lighting/lightmapping/model-uv1-missing.png
+[8]: /images/user-manual/graphics/lighting/lightmapping/auto-unwrap.jpg
 [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
-[10]: /images/user-manual/lighting/lightmaps/sponza.jpg
+[10]: /images/user-manual/graphics/lighting/lightmapping/sponza.jpg
 [11]: /user-manual/optimization/batching
 

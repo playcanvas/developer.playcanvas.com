@@ -36,7 +36,7 @@ PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此�
 
 ![Blender图标][3]
 
-[Blender] [4]是一个用于3D建模的神奇的免费工具，非常适合为PlayCanvas生成3D资源。
+[Blender][4]是一个用于3D建模的神奇的免费工具，非常适合为PlayCanvas生成3D资源。
 
 Blender支持将文件导出为COLLADA和FBX格式，但是内置的导出器确实有一些局限性。
 
@@ -52,7 +52,7 @@ Blender 的COLLADA导出器不能将纹理嵌入到导出的模型文件中。
 
 Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实现多种嵌入纹理。 首先确保对象在Blender中正确呈现。 导出到FBX时，将“路径模式”设置为复制并选中“嵌入纹理”框。
 
-或者，使用[Autodesk FBX Converter] [5]将来自Blender的导出转换为带有嵌入式媒体的导出。 只需在FBX Converter中打开该文件，然后使用* Embedded Media *复选框进行重新保存。
+或者，使用[Autodesk FBX Converter][5]将来自Blender的导出转换为带有嵌入式媒体的导出。 只需在FBX Converter中打开该文件，然后使用* Embedded Media *复选框进行重新保存。
 
 <div class="alert alert-warning">
 注意: 这里似乎存在一个问题，尽管用户没有在Blender中设置自发光属性，Blender 2.71的FBX导出依旧会生成自发光， - 这不是一个PlayCanvas引擎所需要的项。 为了避免这种情况，在Blender中，您可以将材质的Diffuse颜色设置更改为0(在“属性编辑器”中的“材质”选项卡下)。 或者直接降低PlayCanvas编辑器内的自发光率。
@@ -150,9 +150,9 @@ PlayCanvas解释导出时3DS Max材质贴图类型的一个子集。 请注意�
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: https://cgcookie.com/learn-blender
 [3]: /images/user-manual/assets/models/building/blender-logo.jpg
-[4]: http://blender.org
+[4]: https://www.blender.org/
 [5]: https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives
-[6]: http://www.blenderguru.com/
+[6]: https://www.blenderguru.com/
 [7]: /images/user-manual/assets/models/building/max-material-editor.jpg
 [8]: /images/user-manual/assets/models/building/wall-norm.jpg
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg

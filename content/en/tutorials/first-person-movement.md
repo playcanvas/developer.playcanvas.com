@@ -144,4 +144,4 @@ FirstPersonMovement.prototype._createCamera = function () {
 
 [1]: https://playcanvas.com/project/405842
 [2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg
-[3]: https://developer.playcanvas.com/en/api/pc.RigidBodyComponent.html#applyForce
+[3]: /api/pc.RigidBodyComponent.html#applyForce

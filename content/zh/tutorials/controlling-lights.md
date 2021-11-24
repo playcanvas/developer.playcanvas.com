@@ -47,7 +47,7 @@ this.spot.light.intensity = 10*s;
 
 ## 常用设置
 
-除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问] [2]。
+除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问][2]。
 
 The full code used for the above PlayCanvas app is as follows.
 
@@ -122,6 +122,6 @@ LightHandler.prototype.pivot = function () {
 };
 ```
 
-[1]: /engine/api/stable/symbols/pc.LightComponent.html
+[1]: /api/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
 

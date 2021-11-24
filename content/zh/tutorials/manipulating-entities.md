@@ -20,8 +20,8 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 <img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
 <img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
 <div style="clear:both" />
+
 *世界坐标系和自身坐标系*
-<br />
 
 ### 层级树
 
@@ -67,7 +67,7 @@ entity.translateLocal(0, 0, 1);
 
 你可以通过设置绝对的旋转量, 或者应用一个旋转增量来改变实体的方向。
 
-设置绝对旋转可以使用[欧拉角] [1]或[四元数] [2]。 维基百科对这两个数学表示的旋转的解释有点难以理解，但这个理念的基础很容易理解。 以下是重要的部分:
+设置绝对旋转可以使用[欧拉角][1]或[四元数][2]。 维基百科对这两个数学表示的旋转的解释有点难以理解，但这个理念的基础很容易理解。 以下是重要的部分:
 
 **欧拉角**
 
@@ -140,6 +140,6 @@ entity.setLocalScale(s, s, s);
 
 请注意，您目前无法在世界空间中设置实体的缩放比例。
 
-[1]: http://en.wikipedia.org/wiki/Euler_angles
-[2]: http://en.wikipedia.org/wiki/Quaternion
+[1]: https://en.wikipedia.org/wiki/Euler_angles
+[2]: https://en.wikipedia.org/wiki/Quaternion
 

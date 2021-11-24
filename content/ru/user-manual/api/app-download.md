@@ -42,9 +42,9 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 Status: 201 Created
 ```
 
-```none
+```json
 {
-    "status": "running" or "complete" or "error",
+    "status": "running" | "complete" | "error",
     "messages": list of strings,
     "created_at": date,
     "modified_at": date,

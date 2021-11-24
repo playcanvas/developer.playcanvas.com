@@ -61,7 +61,6 @@ The **Shadows: Cast Lightmap** option determines if the model is casting shadows
 
 As you see there several combinations of light settings that can be used. These combinations all have a use-case and by using lights with different combinations you can balance high-quality visuals with performance.
 
-
 <table>
 <tr>
     <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
@@ -108,15 +107,14 @@ To fix the warning select the model asset and open the **Pipeline** section. Cli
 
 The **padding** section determines the space between sections when the unwrapping occurs. If you see *"light bleeding"*, where light appears in the lightmaps that shouldn't be there, you can increase the padding to reduce the bleeding.
 
-
 [1]: /images/user-manual/material-inspector/lightmap.jpg
-[2]: /images/user-manual/lighting/lightmaps/editor-lightmap-bake.png
-[3]: /images/user-manual/lighting/lightmaps/editor-light-shadows.png
+[2]: /images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png
+[3]: /images/user-manual/graphics/lighting/lightmapping/editor-light-shadows.png
 [4]: /user-manual/graphics/lighting/shadows
-[5]: /images/user-manual/lighting/lightmaps/model-settings.png
-[6]: /images/user-manual/lighting/lightmaps/lightmapping-settings.png
-[7]: /images/user-manual/lighting/lightmaps/model-uv1-missing.png
-[8]: /images/user-manual/lighting/lightmaps/auto-unwrap.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/model-settings.png
+[6]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-settings.png
+[7]: /images/user-manual/graphics/lighting/lightmapping/model-uv1-missing.png
+[8]: /images/user-manual/graphics/lighting/lightmapping/auto-unwrap.jpg
 [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
-[10]: /images/user-manual/lighting/lightmaps/sponza.jpg
+[10]: /images/user-manual/graphics/lighting/lightmapping/sponza.jpg
 [11]: /user-manual/optimization/batching

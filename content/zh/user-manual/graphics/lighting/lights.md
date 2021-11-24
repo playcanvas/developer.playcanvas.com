@@ -44,7 +44,7 @@ An omni light lights an object like this:
 
 ![Omni light][4]
 
-### Spot Lights
+### 聚光灯
 
 Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
 
@@ -101,11 +101,11 @@ x = no common use cases - but still can be used for application/game specific li
 
 Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
 
-[1]: /images/user-manual/graphics/lights/directional_icon.jpg
-[2]: /images/user-manual/graphics/lights/directional.jpg
-[3]: /images/user-manual/graphics/lights/point_icon.jpg
-[4]: /images/user-manual/graphics/lights/point.jpg
-[5]: /images/user-manual/graphics/lights/spot_icon.jpg
-[6]: /images/user-manual/graphics/lights/spot.jpg
-[7]: /images/user-manual/graphics/lights/shapes.jpg
+[1]: /images/user-manual/graphics/lighting/lights/directional_icon.jpg
+[2]: /images/user-manual/graphics/lighting/lights/directional.jpg
+[3]: /images/user-manual/graphics/lighting/lights/point_icon.jpg
+[4]: /images/user-manual/graphics/lighting/lights/point.jpg
+[5]: /images/user-manual/graphics/lighting/lights/spot_icon.jpg
+[6]: /images/user-manual/graphics/lighting/lights/spot.jpg
+[7]: /images/user-manual/graphics/lighting/lights/shapes.jpg
 

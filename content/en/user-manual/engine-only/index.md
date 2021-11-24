@@ -11,4 +11,4 @@ To get started with the engine, visit the [GitHub repository][1].
 The repo contains many [examples][2] that demonstrate the wide variety of engine features.
 
 [1]: https://github.com/playcanvas/engine
-[2]: http://playcanvas.github.io
+[2]: https://playcanvas.github.io
