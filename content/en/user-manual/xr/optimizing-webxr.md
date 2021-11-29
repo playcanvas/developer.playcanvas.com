@@ -8,7 +8,7 @@ position: 3
 
 A high and consistent framerate is critical for making and enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early in development and maintain the target framerate throughout development.
 
-Rendering WebXR is expensive due to the fact that the scene must be rendered once for each view (eye). PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't not duplicate too much effort, but stereo rendering is still more expensive that mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR, whilst it doesn't have the high frame rates, may have another issue which is the lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
+Rendering WebXR is expensive due to the fact that the scene must be rendered once for each view (eye). PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't duplicate too much effort, but stereo rendering is still more expensive that mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR, whilst it doesn't have the high frame rates, may have another issue which is the lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
 
 But, all is not lost. PlayCanvas includes a number of features specifically designed to let your application do more in less time.
 
