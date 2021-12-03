@@ -32,15 +32,6 @@ Rotator.prototype.initialize = function () {
     this.ySpeed = 0;
 };
 
-Rotator.prototype.update = function (dt) {
-    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
-};
-
-Rotator.prototype._onEnable = function () {
-    // when enabled randomize the speed
-    this.ySpeed = pc.math.random(0, 10);
-};
-
 Rotator.prototype.swap = function (old) {
     // xSpeed is an attribute and so is automatically copied
 
@@ -48,9 +39,18 @@ Rotator.prototype.swap = function (old) {
     this.ySpeed = old.ySpeed;
 
     // remove the old event listener
-    old.off('enable', this._onEnable);
+    old.off('enable', old._onEnable);
     // add a new event listener
     this.on('enable', this._onEnable);
+};
+
+Rotator.prototype._onEnable = function () {
+    // when enabled randomize the speed
+    this.ySpeed = pc.math.random(0, 10);
+}
+
+Rotator.prototype.update = function (dt) {
+    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
 };
 ```
 
