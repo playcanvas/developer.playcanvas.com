@@ -32,7 +32,7 @@ For example, use "Initialize" instead of "Initialise", and "color" instead of "c
 
 ### Pages
 
-Each page on [developer.playcanvas.com](developer.playcanvas.com) is generated from a markdown file in [`content`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/content). English (en) will always be the first version and PlayCanvas has external services to translate to other languages.
+Each page on [developer.playcanvas.com](https://developer.playcanvas.com) is generated from a Markdown file in [`content`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/content). English (en) will always be the first version and PlayCanvas has external services to translate to other languages.
 
 The content layout for the User Manual mirrors the folder layout in [`content/en/user-manual`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/content/en/user-manual).
 
