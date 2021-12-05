@@ -64,4 +64,4 @@ Usually tutorials require a PlayCanvas project. Please transfer ownership of any
 
 ### Code examples
 
-Please refer to the [Engine contribution guidelines](https://github.com/playcanvas/engine/blob/master/.github/CONTRIBUTING.md) for code styling. Use Javascript ES5 as the code is intended to be ran directly in the browser.
+Please refer to the [Engine contribution guidelines](https://github.com/playcanvas/engine/blob/master/.github/CONTRIBUTING.md) for code styling. Use JavaScript ES5 as the code is intended to be run directly in the browser.
