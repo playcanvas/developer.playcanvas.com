@@ -50,7 +50,8 @@ This line creates a new ScriptType called 'rotate'. The name of the script is us
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed to the Editor UI; this allows you to customize individual entities in the Editor. In the above example, the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.  
+This line declares a script attribute. A script attribute is a property of the script instance and it is exposed to the Editor UI. This allows you to customize individual entities in the Editor. In the above example, the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
+
 Attributes are automatically inherited from a new script instance during code hot-swap.
 
 ## Initialize
