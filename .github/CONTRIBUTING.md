@@ -22,7 +22,7 @@ Try to keep PR focused on a single subject or tutorial. Small PRs are easier to 
 
 ### General
 
-Keep in mind of your target audience and assume that they are completely new to subject or PlayCanvas. Refer them to other pages or tutorials if you need prior knowledge to better understand the current content. For example, an FPS tutorial can refer to Basic Keyboard and Mouse input as tutorials to complete before continuing.
+Keep your target audience in mind and assume that they are completely new to the subject or PlayCanvas. Refer them to other pages or tutorials if you need prior knowledge to better understand the current content. For example, an FPS tutorial can refer to Basic Keyboard and Mouse Input as tutorials to complete before continuing.
 
 Avoid using acronyms unless they are already defined on the page.
 
