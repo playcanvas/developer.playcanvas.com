@@ -60,7 +60,7 @@ Other files such as assets, zips can be placed in [`public downloads`](https://g
 
 ### External projects
 
-Usually tutorials require a PlayCanvas project. Please transfer ownership of any related projects to user `playcanvas`. Steps to transfer projects can be [found here in the documentation](https://developer.playcanvas.com/en/user-manual/profile/projects/#transfer-project-ownership).
+Usually, tutorials require a PlayCanvas project. Please transfer ownership of any related projects to user `playcanvas`. Steps to transfer projects can be [found here in the documentation](https://developer.playcanvas.com/en/user-manual/profile/projects/#transfer-project-ownership).
 
 ### Code examples
 
