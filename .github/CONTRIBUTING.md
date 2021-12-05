@@ -48,7 +48,7 @@ Refer to existing pages to see examples of prior use.
 
 ### Images
 
-Images should be placed in the [`public/images`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/public/images) folder. The folder structure should mirror the same structure as the folder for the markdown files mentioned in [Pages section](#Pages).
+Images should be placed in the [`public/images`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/public/images) folder. The folder structure should mirror the same structure as the folder for the Markdown files mentioned in the [Pages section](#Pages).
 
 Please use PNG for anything Editor UI based and JPEG for anything else such as a game screenshot.
 
