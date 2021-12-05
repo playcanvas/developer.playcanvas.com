@@ -5,7 +5,7 @@
 1. Looking for ideas? Check out ["good first PR"](https://github.com/playcanvas/developer.playcanvas.com/labels/good%20first%20PR) label.
 2. Or start a conversation in [Issues](https://github.com/playcanvas/developer/issues) to get help and advice from community on PR ideas.
 3. Read the writing standards below.
-4. Keep PR simple and focused - one PR per feature with a screenshot of the changes on the site. [Example PR][https://github.com/playcanvas/developer.playcanvas.com/pull/250].
+4. Keep PRs simple and focused - one PR per feature with a screenshot of the changes on the site. [Example PR][https://github.com/playcanvas/developer.playcanvas.com/pull/250].
 5. Make a Pull Request.
 6. Complete the [Contributor License Agreement](https://docs.google.com/a/playcanvas.com/forms/d/1Ih69zQfJG-QDLIEpHr6CsaAs6fPORNOVnMv5nuo0cjk/viewform).
 7. Happy Days! 🎉
