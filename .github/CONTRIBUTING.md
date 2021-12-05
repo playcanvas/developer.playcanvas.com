@@ -14,7 +14,7 @@
 
 Feel free to contribute documentation fixes and new tutorials as a pull request.
 
-If you are looking for ideas what to work on, head to [Issues](https://github.com/playcanvas/developers/issues) and checkout out open tickets or start a conversation. It is best to start conversation if you are going to create a larger tutorial or refactor a section of the user manual. [Forum](http://forum.playcanvas.com/) is good place to have a chat with community as well.
+If you are looking for ideas what to work on, head to [Issues](https://github.com/playcanvas/developers/issues) and check out open tickets or start a conversation. It is best to start conversation if you are going to create a larger tutorial or refactor a section of the user manual. The [Forum](http://forum.playcanvas.com/) is good place to have a chat with the community as well.
 
 Try to keep PR focused on a single subject or tutorial. Small PRs are easier to review and will get merged faster.
 
