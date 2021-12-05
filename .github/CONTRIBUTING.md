@@ -56,7 +56,7 @@ GIFs can be used but please keep the file size as low as possible. No larger tha
 
 ### Other files
 
-Other files such as assets, zips can be placed in [`public downloads`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/public/downloads). As this is used very rarely, there is no folder structure to maintain.
+Other files such as assets and zips can be placed in [`public downloads`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/public/downloads). As this is used very rarely, there is no folder structure to maintain.
 
 ### External projects
 
