@@ -20,7 +20,7 @@ stream.once('open', () => {
     const processFile = (content) => {
         let processed = content.replace(/font-icon/g, 'pc-icon');
         processed = processed.replace(/^---[\s\S]*?[\s\S]---/, '');
-    
+
         processed = processed.replace(/^\n*/, '');
         return processed + '\n';
     };
