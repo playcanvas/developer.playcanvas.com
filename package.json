@@ -38,7 +38,7 @@
     "metalsmith-permalinks": "2.2.0",
     "metalsmith-static": "0.0.5",
     "metalsmith-templates": "0.7.0",
-    "node-fetch": "^3.1.1",
+    "node-fetch": "^2.6.6",
     "sass": "^1.48.0",
     "watch": "1.0.2"
   },
