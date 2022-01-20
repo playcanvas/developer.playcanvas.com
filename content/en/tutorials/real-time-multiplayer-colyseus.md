@@ -18,7 +18,7 @@ thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 ## Materials
 
 - [PlayCanvas Project (Client-side)](https://playcanvas.com/project/859259/overview/colyseus-demo)
-- [Colyseus TypeScript Project (Server-side)](https://github.com/lpsandaruwan/colyseus-playcanvas-server/)
+- [Colyseus TypeScript Project (Server-side)](https://github.com/colyseus/tutorial-playcanvas-server)
 
 # Before you start
 
