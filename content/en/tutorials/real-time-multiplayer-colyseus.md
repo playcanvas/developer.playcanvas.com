@@ -79,7 +79,7 @@ From the Settings panel, expand on **"External Scripts"**, and increase the numb
 In the new **"URL"** field, let's include the Colyseus JavaScript SDK, from a CDN:
 
 ```
-https://unpkg.com/colyseus.js@^0.15.0/dist/colyseus.js
+https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 ```
 
 This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/colyseus/getting-started/javascript-client/) available for our PlayCanvas scripts.
