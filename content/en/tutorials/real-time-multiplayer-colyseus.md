@@ -18,7 +18,7 @@ thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 ## Materials
 
 - [PlayCanvas Project (Client-side)](https://playcanvas.com/project/859259/overview/colyseus-demo)
-- [Colyseus TypeScript Project (Server-side)](https://github.com/lpsandaruwan/colyseus-playcanvas-server/) ([Glitch Server](https://glitch.com/edit/#!/tutorial-playcanvas-server))
+- [Colyseus TypeScript Project (Server-side)](https://github.com/lpsandaruwan/colyseus-playcanvas-server/)
 
 # Before you start
 
@@ -35,7 +35,7 @@ thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 
 # Creating the Server
 
-We will be making a basic server for keeping player states. Changes will be synchronized with clients accordingly.
+We will be making a basic server, hosted locally on your computer for keeping player states. Changes will be synchronized with clients accordingly.
 
 To create a fresh new Colyseus server, run the following from your command-line:
 
@@ -79,7 +79,7 @@ From the Settings panel, expand on **"External Scripts"**, and increase the numb
 In the new **"URL"** field, let's include the Colyseus JavaScript SDK, from a CDN:
 
 ```
-https://unpkg.com/colyseus.js@^0.14.0/dist/colyseus.js
+https://unpkg.com/colyseus.js@^0.15.0/dist/colyseus.js
 ```
 
 This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/colyseus/getting-started/javascript-client/) available for our PlayCanvas scripts.
@@ -88,12 +88,12 @@ This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/c
 
 Now, from a new PlayCanvas Script, let's instantiate our `Colyseus.Client` instance. ([see "Creating new scripts"](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/))
 
-You can attach this script to any object in your scene, such as the Camera.
+You can attach this script to a new empty entity called "NetworkManager".
 
 ```javascript
-var MainMenu = pc.createScript('mainMenu');
+var NetworkManager = pc.createScript('networkManager');
 
-MainMenu.prototype.initialize = function () {
+NetworkManager.prototype.initialize = function () {
   //
   // instantiate the SDK
   // (no connection is established at this point)
@@ -108,13 +108,13 @@ MainMenu.prototype.initialize = function () {
 }
 ```
 
-> Note that we're using the local `ws://localhost:2567` endpoint here. You need to [deploy your server](https://docs.colyseus.io/arena/getting-started/create-application/) to the public internet in order to play with others online.
+> Note that we're using the local `ws://localhost:2567` endpoint here. You need to [deploy your server](https://docs.colyseus.io/arena/getting-started/create-application/) to the public internet in order to play with others online. You can also use [Glitch](https://glitch.com/edit/#!/tutorial-playcanvas-server) to host your server publicly.
 
 When you **"Launch"** your PlayCanvas project now, your client is going to establish a connection with the server, and the server is going to create the room `my_room` on demand for you.
 
 Notice that `my_room` is the default room identifier set by the barebones Colyseus server. You can and should change this identifier in the `arena.config.ts` file.
 
-You must be seeing the following message in your server logs, which means a client successfully joined the room!
+You will be seeing the following message in your server logs, which means a client successfully joined the room!
 
 ```
 19U8WkmoK joined!
@@ -122,17 +122,19 @@ You must be seeing the following message in your server logs, which means a clie
 
 # Room State and Schema
 
-In Colyseus, we define shared data through the `Schema` structures.
+In Colyseus, we define shared data through its `Schema` structures.
+
+> `Schema` is a special data type from Colyseus that is capable of encoding its changes/mutations _incrementally_. The encoding and decoding process happens internally by the framework and its SDK.
 
 The state synchronization loop looks like this:
 
-1. State mutations are synchronized automatically from Server → Clients
+1. State changes (mutations) are synchronized automatically from Server → Clients
 2. Clients, by attaching callbacks to their local _read-only_ `Schema` structures, can observe for state mutations and react to it.
 3. Clients can send arbitrary messages to the server - which decides what to do with it - and may mutate the state (Go back to step **1.**)
 
 ---
 
-So, let's define our Room State in the Server.
+Let's go back to editing the Server code, and define our Room State in the Server.
 
 We need to handle multiple `Player` instances, and each `Player` will have `x`, `y` and `z` coordinates:
 
@@ -165,9 +167,10 @@ Now, still in the server-side, let's modify our `onJoin()` method to create a `P
         const player = new Player();
 
         // place Player at a random position
-        player.x = Math.random() * 7.2 - 3.6;
+        const FLOOR_SIZE = 4;
+        player.x = -(FLOOR_SIZE/2) + (Math.random() * FLOOR_SIZE);
         player.y = 1.031;
-        player.z = Math.random() * 7.2 - 3.6;
+        player.z = -(FLOOR_SIZE/2) + (Math.random() * FLOOR_SIZE);
 
         // place player in the map of players by its sessionId
         // (client.sessionId is unique per connection!)
@@ -236,7 +239,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 
 When playing the Scene, you should see a message in the browser's console whenever a new client joins the room.
 
-Now, for the visual representation, we need to clone the "Player" object, and keep a local reference to the cloned object based on their `sessionId`, so we can operate on them later:
+For the visual representation, we need to clone the "Player" object, and keep a local reference to the cloned object based on their `sessionId`, so we can operate on them later:
 
 ```typescript
 // ...
@@ -400,4 +403,4 @@ You can see and interact with all spawned rooms and active client connections th
 
 # More
 
-We hope you found this tutorial useful, if you'd like to learn more about Colyseus please have a look at the [Colyseus documentation](https://docs.colyseus.io/), and join the [Discord community](https://discord.gg/RY8rRS7).
+We hope you found this tutorial useful, if you'd like to learn more about Colyseus please have a look at the [Colyseus documentation](https://docs.colyseus.io/), and join the [Colyseus Discord community](https://discord.gg/RY8rRS7).
