@@ -258,7 +258,7 @@ this.room.state.players.onAdd((player, sessionId) => {
   entity.enabled = true;
 
   // set position based on server data
-  entity.setPosition(new pc.Vec3(player.x, player.y, player.z));
+  entity.setPosition(player.x, player.y, player.z);
 
   // add clone to the Scene
   playerEntityToClone.getParent().addChild(entity);
