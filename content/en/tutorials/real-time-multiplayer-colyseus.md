@@ -375,8 +375,7 @@ We are going to use `.onChange()` since we need all the new coordinates at once,
 this.room.state.players.onAdd((player, sessionId) => {
   // ...
   player.onChange(() => {
-    const newPosition = new pc.Vec3(player.x, player.y, player.z);
-    this.playerEntities[sessionId].setPosition(newPosition);
+    this.playerEntities[sessionId].setPosition(player.x, player.y, player.z);
   });
 
   // Alternative, listening to individual properties:
