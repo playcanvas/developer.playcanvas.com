@@ -261,7 +261,7 @@ this.room.state.players.onAdd((player, sessionId) => {
   entity.setPosition(player.x, player.y, player.z);
 
   // add clone to the Scene
-  playerEntityToClone.getParent().addChild(entity);
+  playerEntityToClone.parent.addChild(entity);
 
   // assign visual representation by their `sessionId`
   this.playerEntities[sessionId] = entity;
