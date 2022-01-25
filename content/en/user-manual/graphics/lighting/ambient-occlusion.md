@@ -45,11 +45,11 @@ You can [explore example][6] that uses global Ambient Occlusion described above 
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
 [0]: /user-manual/graphics/lighting/lightmapping/
-[1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png
-[2]: /images/user-manual/lighting/lightmaps/3ds-max-vray-override-mtl.png
+[1]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-ao-rendering.png
+[2]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-vray-override-mtl.png
 [3]: /user-manual/graphics/lighting/lightmapping#render-to-texture
-[4]: /images/user-manual/lighting/lightmaps/model-ao-comparison.jpg
-[5]: /images/user-manual/lighting/lightmaps/editor-ao-map.png
+[4]: /images/user-manual/graphics/lighting/lightmapping/model-ao-comparison.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/editor-ao-map.png
 [6]: https://playcanv.as/p/zdkARz26/
 [7]: https://playcanvas.com/project/446587/overview/archviz-example
-[8]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
+[8]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg
