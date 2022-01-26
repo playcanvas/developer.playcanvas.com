@@ -5,7 +5,7 @@ tags: multiplayer, networking
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
-<div class="alert alert-info">We recommend using the multiplayer Colyseus service instead of building your own server as shown below. We have a <a href="/tutorials/real-time-multiplayer-colyseus.md">Colyseus with PlayCanvas tutorial here.</a></div>
+<div class="alert alert-info">This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a multiplayer service like <a href="https://www.colyseus.io/" target="_blank">Colyseus</a>, we have a <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus with PlayCanvas tutorial here.</a></div>
 
 <iframe src="https://playcanv.as/p/XFp1Ty3X/" ></iframe>
 *Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
