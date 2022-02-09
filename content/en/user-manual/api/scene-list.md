@@ -17,7 +17,7 @@ Get a list of all scenes for a project
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
 ```
 
 HTTP Request

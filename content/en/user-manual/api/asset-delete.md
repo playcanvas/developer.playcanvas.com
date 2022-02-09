@@ -17,7 +17,7 @@ Permanently delete an asset from a branch of your project. **Warning** deleting 
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" -X DELETE "https://playcanvas.com/api/assets/{assetId}?branchId={branchId}"
 ```
 
 HTTP Request

@@ -17,7 +17,7 @@ Get the details of all assets in a project for a specific branch
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}"
 ```
 
 HTTP Request
