@@ -6,7 +6,7 @@ const handlebars  = require("handlebars");
 
 const marked      = require('marked');
 const Metalsmith  = require("metalsmith");
-const markdown    = require("metalsmith-markdown");
+const markdown    = require("@metalsmith/markdown");
 const permalinks  = require("metalsmith-permalinks");
 const templates   = require("metalsmith-templates");
 const msStatic    = require("metalsmith-static");
