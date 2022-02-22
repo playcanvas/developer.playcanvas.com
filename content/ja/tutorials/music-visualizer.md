@@ -1,5 +1,5 @@
 ---
-title:音楽ビジュアライザの作成
+title: 音楽ビジュアライザの作成
 template: tutorial-page.tmpl.html
 tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
