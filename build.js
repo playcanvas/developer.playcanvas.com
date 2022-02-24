@@ -59,9 +59,11 @@ handlebars.registerHelper("lang-selector-close", (lang) => {
 });
 
 // Convert relativeURL with a locale like en/manual to a full url with the
-// desired locale e.g. http://developer.playcanvas.com/ja/manual
+// desired locale e.g. https://developer.playcanvas.com/ja/user-manual
 handlebars.registerHelper('locale-url', (locale, relativeUrl) => {
-    return url.resolve('http://developer.playcanvas.com', path.join(locale, relativeUrl.substring(2)));
+    relativeUrl = path.join(locale, relativeUrl.substring(2));
+    const url = new URL(relativeUrl, 'https://developer.playcanvas.com/');
+    return url.href;
 });
 
 // store strings requested
