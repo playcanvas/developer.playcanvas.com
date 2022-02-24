@@ -4,8 +4,6 @@
  */
 
 const ignoreList = [
-    'content/_tutorial_contents_legacy.json',
-    'content/_tutorial_contents.json',
     'content/_usermanual_contents.json',
     'content/_shadereditor_contents.json'
 ];
