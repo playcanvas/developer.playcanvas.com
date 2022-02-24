@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const metalsmith = require("metalsmith");
-const markdown = require("metalsmith-markdown");
+const markdown = require("@metalsmith/markdown");
 const exec = require('child_process').exec;
 const { createGzip } = require('zlib');
 
