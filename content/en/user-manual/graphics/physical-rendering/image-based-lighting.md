@@ -65,7 +65,7 @@ Here is an [example][7] and [project][8] of the scene using CubeMap Box Projecti
 [2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
 [3]: /user-manual/assets/cubemaps/
 [4]: /images/user-manual/graphics/physical-rendering/cubemap-box-projection.png
-[5]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg
 [6]: http://www.hdrlabs.com/sibl/archive.html
 [7]: https://playcanv.as/p/zdkARz26/
 [8]: https://playcanvas.com/project/446587/overview/archviz-example
