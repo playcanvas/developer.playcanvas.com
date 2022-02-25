@@ -82,7 +82,7 @@ The color of an edge helps to easily identify its direction, because it always m
 
 The color of each branch remains the same whenever you open the Graph View and does not depend on which branch was selected to launch it.
 
-The Graph View supports zooming in and out with the scroll wheel and panning click and drag.
+The Graph View supports zooming in and out with the scroll wheel and panning via click and drag.
 
 [overview-image]: /images/user-manual/version-control/graph-view/overview.png
 [closed-branches-image]: /images/user-manual/version-control/graph-view/closed-branches.png
