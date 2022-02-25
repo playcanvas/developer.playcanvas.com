@@ -32,7 +32,7 @@ A graph node will contain the following information:
 
 ![][context-menu-image]
 
-Clicking on a node will open up the context menu for the some or all following options depending on the node and access permissions:
+Clicking on a node will open up the context menu for some or all following options depending on the node and access permissions:
 
 - **View Changes** - Launch a Diff View between this
 checkpoint and its immediate predecessor. ([More details][view-changes])
