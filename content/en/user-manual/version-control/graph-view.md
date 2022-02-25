@@ -38,8 +38,7 @@ Clicking on a node will open up the context menu for some or all following optio
 
 - **Select for Compare** - Select the first checkpoint of a pair to be compared.
 
-- **Compare with Selected** - Launch a Diff View between the
-current node and a node marked via 'Select for Compare'.
+- **Compare with Selected** - Launch a Diff View between the current node and a node marked via 'Select for Compare'.
 
 ![][compare-checkpoints-example]
 
