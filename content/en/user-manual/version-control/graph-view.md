@@ -46,8 +46,7 @@ Clicking on a node will open up the context menu for some or all following optio
 
 - **Copy Data** - Copies full (non-truncated) checkpoint data in JSON format to the clipboard such as the checkpoint GUID, the branch id, checkpoint message etc.
 
-- **Restore** (only available for the current Editor branch) -
-  Restore the branch state to that of the selected checkpoint. ([More details][restore-checkpoint])
+- **Restore** (only available for the current Editor branch) - Restore the branch state to that of the selected checkpoint. ([More details][restore-checkpoint])
 
 - **Hard Reset** (only available for the current Editor branch) -
 Perform a Hard Reset to the selected checkpoint. ([More details][hard-reset])
