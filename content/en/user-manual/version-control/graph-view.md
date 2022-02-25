@@ -56,7 +56,7 @@ Clicking on a node will open up the context menu for some or all following optio
 
 Initially the Graph View displays up to 20 checkpoints from each branch, and up to 60 checkpoints total.
 
-A triangle in the top right corner of a node means that it has yet incoming or outgoing edges (such as branches and merges), and can be expanded via the 'Expand Node' context menu entry.
+A triangle in the top right corner of a node means that it has yet more incoming or outgoing edges (such as branches and merges), and can be expanded via the 'Expand Node' context menu entry.
 
 ![][node-expand-example]
 
