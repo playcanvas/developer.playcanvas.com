@@ -8,7 +8,7 @@ position: 10
 
 The Version Control Graph allows to easily track progress and merge history of the branches of a PlayCanvas project.
 
-While the Version Control Panel displays a simple list of the latest checkpoints of the selected branch, the Graph View shows a much larger (and expandable) view of the entire version control graph, including, checkpoints, branches and merges:
+While the Version Control Panel displays a simple list of the latest checkpoints of the selected branch, the Graph View shows a much larger (and expandable) view of the entire version control graph, including checkpoints, branches and merges:
 
 ![][overview-image]
 
