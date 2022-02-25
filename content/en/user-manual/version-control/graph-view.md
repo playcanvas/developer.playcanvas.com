@@ -14,7 +14,7 @@ While the Version Control Panel displays a simple list of the latest checkpoints
 
 ## Launching the Graph View
 
-To access the Graph View, either click the Graph button in the top menu of the Version Control panel (for the current Editor branch), or the 'Version Control Graph' entry in a branch menu dropdown.
+To access the Graph View, either click the Graph button in the top menu of the Version Control panel (for the current Editor branch), or the 'Version Control Graph' entry in the branch menu dropdown.
 
 ![][access-buttons-image]
 
