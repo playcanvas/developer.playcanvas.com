@@ -46,8 +46,7 @@ current node and a node marked via 'Select for Compare'.
 
 - **New Branch** - Create a new branch from the selected checkpoint. ([More details][new-branch])
 
-- **Copy Data** - Copies full (non truncated) checkpoint data in JSON
-format to the clipboard such as the checkpoint GUID, the branch id, checkpoint message etc.
+- **Copy Data** - Copies full (non-truncated) checkpoint data in JSON format to the clipboard such as the checkpoint GUID, the branch id, checkpoint message etc.
 
 - **Restore** (only available for the current Editor branch) -
   Restore the branch state to that of the selected checkpoint. ([More details][restore-checkpoint])
