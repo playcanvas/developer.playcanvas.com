@@ -24,22 +24,22 @@
     "extends": "@playcanvas/eslint-config"
   },
   "devDependencies": {
+    "@metalsmith/layouts": "2.4.0",
+    "@metalsmith/markdown": "1.4.0",
+    "@metalsmith/permalinks": "2.4.0",
     "@playcanvas/eslint-config": "^1.0.16",
     "broken-link-checker": "0.7.8",
-    "eslint": "^8.9.0",
+    "eslint": "^8.10.0",
     "handlebars": "^4.7.7",
     "http-server": "^14.1.0",
     "jstransformer-handlebars": "^1.2.0",
     "marked": "^4.0.12",
     "metalsmith": "^2.4.2",
-    "@metalsmith/layouts": "2.4.0",
-    "@metalsmith/markdown": "1.4.0",
-    "@metalsmith/permalinks": "2.4.0",
     "metalsmith-headings-identifier": "0.0.11",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-static": "0.0.5",
     "node-fetch": "^2.6.6",
-    "sass": "^1.49.8",
+    "sass": "^1.49.9",
     "watch": "1.0.2"
   },
   "scripts": {
