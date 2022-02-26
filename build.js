@@ -8,7 +8,6 @@ const layouts    = require('@metalsmith/layouts');
 const markdown   = require('@metalsmith/markdown');
 const permalinks = require('@metalsmith/permalinks');
 const headings   = require('metalsmith-headings-identifier');
-const metadata   = require('metalsmith-metadata');
 const msStatic   = require('metalsmith-static');
 const navbuilder = require('./lib/nav-builder-plugin/index');
 const locale     = require('./lib/locale/index');
@@ -80,10 +79,11 @@ renderer.link = (href, title, text) => {
     return out;
 };
 
-const m = new Metalsmith(__dirname);
-
-m.source('content')
-    .concurrency(10)
+Metalsmith(__dirname)
+    .source('content')
+    .metadata({
+        prod: env === 'prod'
+    })
     .use(msStatic({
         src: 'public',
         dest: '.'
@@ -101,23 +101,16 @@ m.source('content')
     .use(permalinks({
         pattern: ':filename'
     }))
-    .use(metadata());
-
-// set environment
-m.metadata().local = (env === 'local');
-m.metadata().prod = (env === 'prod');
-m.metadata().dev = (env === 'dev');
-
-m.use(i18n()({
-    locales: [{
-        file: 'content/ja/messages.json', locale: 'ja'
-    }, {
-        file: 'content/ru/messages.json', locale: 'ru'
-    }, {
-        file: 'content/zh/messages.json', locale: 'zh'
-    }],
-    output: localization
-}))
+    .use(i18n()({
+        locales: [{
+            file: 'content/ja/messages.json', locale: 'ja'
+        }, {
+            file: 'content/ru/messages.json', locale: 'ru'
+        }, {
+            file: 'content/zh/messages.json', locale: 'zh'
+        }],
+        output: localization
+    }))
     .use(navbuilder('en')({
         engine: handlebars,
         template: path.join(__dirname, 'layouts/partials/navigation.hbs'),
@@ -135,10 +128,7 @@ m.use(i18n()({
     .use(locale()())
     .use(i18nout()({
         data: localization
-    }));
-
-m.build((err, files) => {
-    if (err) {
-        console.error(err);
-    }
-});
+    }))
+    .build(function (err) {
+        if (err) throw err;
+    });
