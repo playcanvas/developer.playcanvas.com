@@ -41,7 +41,7 @@ const partials = [
 ];
 
 partials.forEach((partialName) => {
-    const partialPath = path.join(__dirname, 'templates', 'partials', `${partialName}.hbs`);
+    const partialPath = path.join(__dirname, 'layouts', 'partials', `${partialName}.hbs`);
     const partialText = fs.readFileSync(partialPath, {
         encoding: 'utf8'
     });
@@ -120,20 +120,18 @@ m.use(i18n()({
 }))
     .use(navbuilder('en')({
         engine: handlebars,
-        template: path.join(__dirname, 'templates/partials/navigation.hbs'),
+        template: path.join(__dirname, 'layouts/partials/navigation.hbs'),
         contentPath: 'content/_usermanual_contents.json',
         partialName: 'user-manual-navigation'
     }))
     .use(navbuilder('en')({
         engine: handlebars,
-        template: path.join(__dirname, 'templates/partials/navigation.hbs'),
+        template: path.join(__dirname, 'layouts/partials/navigation.hbs'),
         contentPath: 'content/_shadereditor_contents.json',
         partialName: 'shader-editor-navigation'
     }))
     .use(tutorials('tutorials')())
-    .use(layouts({
-        directory: 'templates'
-    }))
+    .use(layouts())
     .use(locale()())
     .use(i18nout()({
         data: localization
