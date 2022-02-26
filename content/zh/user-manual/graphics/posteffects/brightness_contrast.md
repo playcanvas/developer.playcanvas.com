@@ -1,6 +1,6 @@
 ---
 title: 亮度对比度调整
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 2
 ---
 

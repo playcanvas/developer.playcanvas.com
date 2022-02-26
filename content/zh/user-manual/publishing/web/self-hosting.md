@@ -1,6 +1,6 @@
 ---
 title: 自托管
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 2
 ---
 

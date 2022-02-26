@@ -1,6 +1,6 @@
 ---
 title: 载入JSON 数据
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: loading
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg
 ---

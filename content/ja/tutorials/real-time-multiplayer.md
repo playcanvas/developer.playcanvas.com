@@ -1,6 +1,6 @@
 ---
 title: リアルタイム マルチプレイヤー
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: multiplayer, networking
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 title: 上传并导入
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 1
 ---
 

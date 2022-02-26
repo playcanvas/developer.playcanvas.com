@@ -1,6 +1,6 @@
 ---
 title: プログラムでエンティティを作成
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: procedural, basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
 ---

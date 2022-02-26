@@ -1,6 +1,6 @@
 ---
 title: ユーザインターフェイス - リーダーボード
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 title: PlayCanvas 开发者资源
-template: intro.tmpl.html
+layout: intro.hbs
 ---
 
 # Getting Started

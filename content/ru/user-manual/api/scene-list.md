@@ -1,6 +1,6 @@
 ---
 title: Scenes - List scenes
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 14
 ---
 

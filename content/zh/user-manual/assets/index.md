@@ -1,6 +1,6 @@
 ---
 title: 资源
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 10
 ---
 

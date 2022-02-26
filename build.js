@@ -1,23 +1,21 @@
-const path        = require("path");
-const fs          = require("fs");
-const url         = require("url");
+const fs   = require('fs');
+const path = require('path');
 
-const handlebars  = require("handlebars");
-
-const marked      = require('marked');
-const Metalsmith  = require("metalsmith");
-const markdown    = require("@metalsmith/markdown");
-const permalinks  = require("@metalsmith/permalinks");
-const templates   = require("metalsmith-templates");
-const msStatic    = require("metalsmith-static");
-const metadata    = require("metalsmith-metadata");
-const navbuilder  = require("./lib/nav-builder-plugin/index");
-const locale      = require("./lib/locale/index");
-const i18n        = require("./lib/i18n/index");
-const i18nout     = require("./lib/i18n-out/index");
-const contents    = require("./lib/contents-json/index");
-const tutorialBuilder = require('./lib/tutorials/index');
-const headingsidentifier = require("metalsmith-headings-identifier");
+const handlebars = require('handlebars');
+const marked     = require('marked');
+const Metalsmith = require('metalsmith');
+const layouts    = require('@metalsmith/layouts');
+const markdown   = require('@metalsmith/markdown');
+const permalinks = require('@metalsmith/permalinks');
+const headings   = require('metalsmith-headings-identifier');
+const metadata   = require('metalsmith-metadata');
+const msStatic   = require('metalsmith-static');
+const navbuilder = require('./lib/nav-builder-plugin/index');
+const locale     = require('./lib/locale/index');
+const i18n       = require('./lib/i18n/index');
+const i18nout    = require('./lib/i18n-out/index');
+const contents   = require('./lib/contents-json/index');
+const tutorials  = require('./lib/tutorials/index');
 
 let env = null;
 const args = process.argv.slice(2);
@@ -43,19 +41,19 @@ const partials = [
 ];
 
 partials.forEach((partialName) => {
-    const partialPath = path.join(__dirname, 'templates', 'partials', `${partialName}.tmpl.html`);
+    const partialPath = path.join(__dirname, 'templates', 'partials', `${partialName}.hbs`);
     const partialText = fs.readFileSync(partialPath, {
         encoding: 'utf8'
     });
     handlebars.registerPartial(partialName, partialText);
 });
 
-handlebars.registerHelper("lang-selector", (lang) => {
+handlebars.registerHelper('lang-selector', (lang) => {
     return `{{#if ${lang}}}`;
 });
 
-handlebars.registerHelper("lang-selector-close", (lang) => {
-    return "{{/if}}";
+handlebars.registerHelper('lang-selector-close', (lang) => {
+    return '{{/if}}';
 });
 
 // Convert relativeURL with a locale like en/manual to a full url with the
@@ -84,31 +82,31 @@ renderer.link = (href, title, text) => {
 
 const m = new Metalsmith(__dirname);
 
-m.source("content")
+m.source('content')
     .concurrency(10)
     .use(msStatic({
-        src: "public",
-        dest: "."
+        src: 'public',
+        dest: '.'
     }))
     .use(markdown({
         gfm: true,
         renderer: renderer
     }))
-    .use(headingsidentifier({
-        selector: "h2,h3,h4,h5,h6",
+    .use(headings({
+        selector: 'h2,h3,h4,h5,h6',
         linkTemplate: " <a class='header-anchor font-icon' href='#%s'>&#58216;</a>",
-        position: "right"
+        position: 'right'
     }))
     .use(contents()())
     .use(permalinks({
-        pattern: ":filename"
+        pattern: ':filename'
     }))
     .use(metadata());
 
 // set environment
-m.metadata().local = (env === "local");
-m.metadata().prod = (env === "prod");
-m.metadata().dev = (env === "dev");
+m.metadata().local = (env === 'local');
+m.metadata().prod = (env === 'prod');
+m.metadata().dev = (env === 'dev');
 
 m.use(i18n()({
     locales: [{
@@ -120,22 +118,21 @@ m.use(i18n()({
     }],
     output: localization
 }))
-    .use(navbuilder("en")({
+    .use(navbuilder('en')({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
-        contentPath: "content/_usermanual_contents.json",
-        partialName: "user-manual-navigation"
+        template: path.join(__dirname, 'templates/partials/navigation.hbs'),
+        contentPath: 'content/_usermanual_contents.json',
+        partialName: 'user-manual-navigation'
     }))
-    .use(navbuilder("en")({
+    .use(navbuilder('en')({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
-        contentPath: "content/_shadereditor_contents.json",
-        partialName: "shader-editor-navigation"
+        template: path.join(__dirname, 'templates/partials/navigation.hbs'),
+        contentPath: 'content/_shadereditor_contents.json',
+        partialName: 'shader-editor-navigation'
     }))
-    .use(tutorialBuilder("tutorials")())
-    .use(templates({
-        engine: "handlebars",
-        directory: "templates"
+    .use(tutorials('tutorials')())
+    .use(layouts({
+        directory: 'templates'
     }))
     .use(locale()())
     .use(i18nout()({

@@ -1,6 +1,6 @@
 ---
 title: 物理的マテリアル
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 1
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Textures
-template: shader-editor-page.tmpl.html
+layout: shader-editor-page.hbs
 position: 4
 ---
 

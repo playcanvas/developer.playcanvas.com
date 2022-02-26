@@ -1,6 +1,6 @@
 ---
 title: 問題が発生しました
-template: error.tmpl.html
+layout: error.hbs
 ---
 
 ### ページが見つかりません

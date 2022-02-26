@@ -1,6 +1,6 @@
 ---
 title: カスタムシェーダー
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: shaders, materials
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
 ---

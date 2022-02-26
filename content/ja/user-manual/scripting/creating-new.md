@@ -1,6 +1,6 @@
 ---
 title: 新しいスクリプトの作成
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 1
 ---
 

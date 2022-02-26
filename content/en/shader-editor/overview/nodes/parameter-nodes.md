@@ -1,6 +1,6 @@
 ---
 title: Parameter Nodes
-template: shader-editor-page.tmpl.html
+layout: shader-editor-page.hbs
 position: 1
 ---
 

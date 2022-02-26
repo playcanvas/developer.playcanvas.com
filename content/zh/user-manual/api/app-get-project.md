@@ -1,6 +1,6 @@
 ---
 title: Apps - Get project apps
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 3
 ---
 

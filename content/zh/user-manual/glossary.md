@@ -1,6 +1,6 @@
 ---
 title: 词汇表
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 26
 ---
 

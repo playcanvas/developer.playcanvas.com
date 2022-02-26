@@ -1,6 +1,6 @@
 ---
 title: 分析器
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 2
 ---
 
