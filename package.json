@@ -53,6 +53,6 @@
     "serve": "http-server build -a localhost -p 51000",
     "watch:osx": "watch 'npm run build' content --interval=3 --wait=5 --ignoreDotFiles --filter='watch-filter.js'",
     "watch:windows": "watch \"npm run build\" content --interval=3 --wait=5 --ignoreDotFiles --filter=\"watch-filter.js\"",
-    "test": "linkinator en/ --server-root build/ --recurse --skip '/^api' --verbosity error"
+    "test": "linkinator en --server-root build --recurse --skip '/^api' --verbosity error"
   }
 }
