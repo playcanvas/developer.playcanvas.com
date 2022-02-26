@@ -42,13 +42,9 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 
 ## Test for broken links
 
-Start the localhost server (as described in the [How to serve](#how-to-serve) section) and in another terminal window run:
+Simply run:
 
-    npm run test-links:en
-
-Or to test against a live or staging server, pass the URL base as an argument:
-
-    npm run test-links:en "https://developer.playcanvas.com"
+    npm test
 
 ## Style Guide
 
