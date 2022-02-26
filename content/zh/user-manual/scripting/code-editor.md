@@ -1,6 +1,6 @@
 ---
 title: 代码编辑器
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 2
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 交流
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 5
 ---
 

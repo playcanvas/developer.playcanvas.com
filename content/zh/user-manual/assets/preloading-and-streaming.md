@@ -1,6 +1,6 @@
 ---
 title: 预加载和流式传输
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 3
 ---
 

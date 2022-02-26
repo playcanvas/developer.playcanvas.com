@@ -13,7 +13,7 @@ stream.once('open', () => {
     // write header
     stream.write('---\n');
     stream.write('title: Common Questions\n');
-    stream.write('template: usermanual-page.tmpl.html\n');
+    stream.write('layout: usermanual-page.hbs\n');
     stream.write('position: 25\n');
     stream.write('---\n\n');
 

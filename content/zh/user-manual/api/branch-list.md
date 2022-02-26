@@ -1,6 +1,6 @@
 ---
 title: Branches - List branches
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 11
 ---
 

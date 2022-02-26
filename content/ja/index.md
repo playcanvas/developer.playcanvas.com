@@ -1,6 +1,6 @@
 ---
 title: PlayCanvasデベロッパー向けサイト
-template: intro.tmpl.html
+layout: intro.hbs
 ---
 
 # Getting Started

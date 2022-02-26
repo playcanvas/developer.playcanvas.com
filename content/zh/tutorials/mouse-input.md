@@ -1,6 +1,6 @@
 ---
 title: 基础鼠标输入
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: mouse, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
 ---

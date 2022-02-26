@@ -1,6 +1,6 @@
 ---
 title: 光照贴图
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 3
 ---
 

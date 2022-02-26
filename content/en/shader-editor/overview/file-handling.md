@@ -1,6 +1,6 @@
 ---
 title: File Handling
-template: shader-editor-page.tmpl.html
+layout: shader-editor-page.hbs
 position: 5
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Window Layout
-template: shader-editor-page.tmpl.html
+layout: shader-editor-page.hbs
 position: 1.2
 ---
 

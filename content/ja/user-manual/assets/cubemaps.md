@@ -1,6 +1,6 @@
 ---
 title: キューブマップ
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 7
 ---
 

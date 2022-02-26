@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Performance
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 8
 ---
 

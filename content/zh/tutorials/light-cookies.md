@@ -1,6 +1,6 @@
 ---
 title: 灯光烘焙
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 title: 画面の読み込み
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 8
 ---
 

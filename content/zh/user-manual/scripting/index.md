@@ -1,6 +1,6 @@
 ---
 title: 脚本
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 11
 ---
 

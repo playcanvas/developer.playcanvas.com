@@ -1,6 +1,6 @@
 ---
 title: パフォーマンス
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 19
 ---
 

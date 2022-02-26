@@ -1,6 +1,6 @@
 ---
 title: Making a Simple Game - Part 5
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---

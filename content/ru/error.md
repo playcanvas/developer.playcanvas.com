@@ -1,6 +1,6 @@
 ---
 title: О нет!
-template: error.tmpl.html
+layout: error.hbs
 ---
 
 ### Мы не можем найти эту страницу

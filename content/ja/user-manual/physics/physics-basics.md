@@ -1,6 +1,6 @@
 ---
 title: 物理の基本
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 1
 ---
 

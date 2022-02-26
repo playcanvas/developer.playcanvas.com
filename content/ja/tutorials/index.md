@@ -1,6 +1,6 @@
 ---
 title: チュートリアル
-template: tutorial-full-page.tmpl.html
+layout: tutorial-full-page.hbs
 ---
 
 これはタグクラウドで置き換えられます

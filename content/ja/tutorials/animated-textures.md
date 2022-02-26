@@ -1,6 +1,6 @@
 ---
 title: アニメ化されたテクスチャー
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: animation, textures
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/1C968A-image-75.jpg
 ---

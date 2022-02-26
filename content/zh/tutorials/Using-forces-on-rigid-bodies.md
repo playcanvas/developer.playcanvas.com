@@ -1,6 +1,6 @@
 ---
 title: 力和冲量
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: physics, collision
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---

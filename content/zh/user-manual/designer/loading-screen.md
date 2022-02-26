@@ -1,6 +1,6 @@
 ---
 title: 加载屏
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 8
 ---
 

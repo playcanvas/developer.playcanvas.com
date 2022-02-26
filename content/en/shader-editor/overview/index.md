@@ -1,6 +1,6 @@
 ---
 title: Overview
-template: shader-editor-page.tmpl.html
+layout: shader-editor-page.hbs
 position: 1.1
 ---
 

@@ -1,14 +1,13 @@
 const path        = require("path");
 const fs          = require("fs");
-const url         = require("url");
 
 const handlebars  = require("handlebars");
 
 const marked      = require('marked');
 const Metalsmith  = require("metalsmith");
+const layouts     = require("@metalsmith/layouts");
 const markdown    = require("@metalsmith/markdown");
 const permalinks  = require("@metalsmith/permalinks");
-const templates   = require("metalsmith-templates");
 const msStatic    = require("metalsmith-static");
 const metadata    = require("metalsmith-metadata");
 const navbuilder  = require("./lib/nav-builder-plugin/index");
@@ -43,7 +42,7 @@ const partials = [
 ];
 
 partials.forEach((partialName) => {
-    const partialPath = path.join(__dirname, 'templates', 'partials', `${partialName}.tmpl.html`);
+    const partialPath = path.join(__dirname, 'templates', 'partials', `${partialName}.hbs`);
     const partialText = fs.readFileSync(partialPath, {
         encoding: 'utf8'
     });
@@ -122,19 +121,18 @@ m.use(i18n()({
 }))
     .use(navbuilder("en")({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+        template: path.join(__dirname, "templates/partials/navigation.hbs"),
         contentPath: "content/_usermanual_contents.json",
         partialName: "user-manual-navigation"
     }))
     .use(navbuilder("en")({
         engine: handlebars,
-        template: path.join(__dirname, "templates/partials/navigation.tmpl.html"),
+        template: path.join(__dirname, "templates/partials/navigation.hbs"),
         contentPath: "content/_shadereditor_contents.json",
         partialName: "shader-editor-navigation"
     }))
     .use(tutorialBuilder("tutorials")())
-    .use(templates({
-        engine: "handlebars",
+    .use(layouts({
         directory: "templates"
     }))
     .use(locale()())

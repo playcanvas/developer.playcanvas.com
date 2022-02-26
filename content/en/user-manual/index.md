@@ -1,6 +1,6 @@
 ---
 title: User Manual
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 0.5
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 屏幕泛花
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 1
 ---
 

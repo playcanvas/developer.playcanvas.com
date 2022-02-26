@@ -1,6 +1,6 @@
 ---
 title: 基础材质
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: material
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---

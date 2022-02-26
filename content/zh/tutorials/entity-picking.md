@@ -1,6 +1,6 @@
 ---
 title: Entity Picking
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: raycast
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg
 ---

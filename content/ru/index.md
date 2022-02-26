@@ -1,6 +1,6 @@
 ---
 title: Ресурсы разработчика PlayCanvas
-template: intro.tmpl.html
+layout: intro.hbs
 ---
 
 # Getting Started

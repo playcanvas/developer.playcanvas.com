@@ -1,6 +1,6 @@
 ---
 title: 管理组织
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 2
 ---
 

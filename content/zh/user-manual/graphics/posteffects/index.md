@@ -1,6 +1,6 @@
 ---
 title: 后期效果
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 6
 ---
 

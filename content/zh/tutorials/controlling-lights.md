@@ -1,6 +1,6 @@
 ---
 title: 控制灯光
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
 ---

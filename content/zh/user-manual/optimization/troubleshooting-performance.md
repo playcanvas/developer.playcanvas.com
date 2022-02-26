@@ -1,6 +1,6 @@
 ---
 title: 性能故障排除
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 8
 ---
 
