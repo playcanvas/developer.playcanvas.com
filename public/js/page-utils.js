@@ -1,4 +1,3 @@
-<script>
 (function () {
     var _current = null;
 
@@ -373,4 +372,3 @@
         }
     }
 })();
-</script>

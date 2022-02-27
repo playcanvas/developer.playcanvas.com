@@ -29,7 +29,6 @@ const partials = [
     'head',
     'header',
     'navbar',
-    'scripts',
     'shader-editor-navbar',
     'shader-editor-contents',
     'title-banner',
