@@ -21,7 +21,10 @@
     "url": "https://github.com/playcanvas/developer.playcanvas.com.git"
   },
   "eslintConfig": {
-    "extends": "@playcanvas/eslint-config"
+    "extends": "@playcanvas/eslint-config",
+    "globals": {
+      "hljs": "readonly"
+    }
   },
   "devDependencies": {
     "@metalsmith/layouts": "2.4.0",
@@ -47,7 +50,7 @@
     "build:prod": "npm run faq-to-json -- --out editor_howdoi.json && npm run build -- prod",
     "faq": "node faq.js",
     "faq-to-json": "node faq_to_json.js --dir faq --bucket code.playcanvas.com",
-    "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib",
+    "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib public/js",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
     "serve": "http-server build -a localhost -p 51000",
     "watch:osx": "watch 'npm run build' content --interval=3 --wait=5 --ignoreDotFiles --filter='watch-filter.js'",

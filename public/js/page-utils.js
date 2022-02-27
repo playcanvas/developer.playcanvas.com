@@ -14,72 +14,6 @@
         return decodeURIComponent(m[1]);
     }
 
-    function ready(fn) {
-      if (document.readyState != 'loading'){
-        fn();
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-
-    ready(function () {
-        var url = window.location.pathname;
-
-        if (url.indexOf("/video/") >= 0) {
-            header.setActive("video");
-        } else if (url.indexOf("/tutorials/") >= 0) {
-            tutorials.attach();
-            header.setActive("tutorials")
-        } else if (url.indexOf("/user-manual/") >= 0) {
-            // usermanual
-            header.setActive("user-manual");
-
-            usermanual.buildMenu(url);
-            usermanual.setNextPrevButtons();
-        } else if (url.indexOf("/shader-editor/") >= 0) {
-            // shader editor
-            header.setActive("shader-editor");
-
-            usermanual.buildMenu(url);
-            usermanual.setNextPrevButtons();
-        }
-
-        // search
-        var search = document.getElementById("search");
-        if (search) {
-            search.addEventListener("keydown", function (e) {
-                if (e.which === 13 || e.keyCode === 13) {
-                    window.location.href = "/search/?q=" + e.target.value;
-                }
-            }, true);
-        }
-
-
-        // script highlighting
-        var codes = document.querySelectorAll("pre code");
-        for (var i = 0; i < codes.length; i++) {
-            if (codes[i].classList.contains("lang-javascript")) {
-                codes[i].classList.add("javascript");
-            }
-            hljs.highlightBlock(codes[i]);
-        }
-
-        // language buttons
-        var flags = document.querySelectorAll(".flags > a");
-        for (i = 0; i < flags.length; i++) {
-            flags[i].addEventListener("click", function (e) {
-                var url = window.location.pathname;
-                window.location.href = url.replace(/\/(en|ja|ru|zh)\//, "/" + e.currentTarget.dataset.lang + "/");
-                e.preventDefault();
-            });
-
-            var locale = window.location.pathname.slice(1,3);
-            if (flags[i].dataset.lang !== locale) {
-                flags[i].classList.add("inactive");
-            }
-        }
-    });
-
     var header = {
         setActive: function (_class) {
             var li = document.querySelector("li." + _class);
@@ -94,19 +28,18 @@
         buildMenu: function (url) {
             var els = document.querySelectorAll("nav.usermanual li");
             for (var i = 0; i < els.length; i++) {
-                var li = els[i]
+                var li = els[i];
                 var expander = li.firstElementChild;
                 if (li.querySelectorAll("ul li").length > 0) {
-                    if(expander.classList) {
+                    if (expander.classList) {
                         // closed by default
                         expander.classList.add("closed");
                         li.classList.add("closed");
 
                         // toggle on click
                         expander.addEventListener("click", function (e) {
-                            var li = e.currentTarget.parentNode;
                             usermanual.toggle(e.currentTarget);
-                            usermanual.toggle(li);
+                            usermanual.toggle(e.currentTarget.parentNode);
                             e.preventDefault();
                             return false;
                         }, true);
@@ -118,15 +51,16 @@
                 // Find the current page and expand all parents
                 var a = li.querySelector("a.page-link");
                 if (a) {
-                    var re = new RegExp("^" + a.getAttribute("href") + ".*");
+                    var re;
+                    re = new RegExp("^" + a.getAttribute("href") + ".*");
                     if (re.test(url)) {
-                        var li = a.parentNode;
-                        var expander = a.parentNode.firstElementChild;
+                        li = a.parentNode;
+                        expander = a.parentNode.firstElementChild;
                         usermanual.toggle(li);
                         usermanual.toggle(expander);
                     }
 
-                    var re = new RegExp("^" + a.getAttribute("href") + "/$");
+                    re = new RegExp("^" + a.getAttribute("href") + "/$");
                     if (re.test(url)) {
                         a.classList.add("current");
                         _current = a;
@@ -142,32 +76,32 @@
                     parent = parent.parentNode;
                 }
                 return parent;
-            }
+            };
 
             var next = document.getElementById("next");
             if (next) {
                 next.addEventListener("click", function (e) {
+                    var a;
                     var li = _current.parentNode;
                     if (li.nextElementSibling) {
-                        var a = li.nextElementSibling.querySelector("a.page-link");
+                        a = li.nextElementSibling.querySelector("a.page-link");
                         window.location.href = a.getAttribute("href");
                     } else {
                         li = search(li);
                         if (li.nextElementSibling) {
-                            var a = li.nextElementSibling.querySelector("a.page-link");
+                            a = li.nextElementSibling.querySelector("a.page-link");
                             window.location.href = a.getAttribute("href");
                         } else {
                             li = search(li);
                             if (li.nextElementSibling) {
-                                var a = li.nextElementSibling.querySelector("a.page-link");
+                                a = li.nextElementSibling.querySelector("a.page-link");
                                 window.location.href = a.getAttribute("href");
                             }
                         }
                     }
                 }, true);
-            };
+            }
         },
-
 
         // open/close a menu item
         toggle: function (e) {
@@ -190,7 +124,7 @@
 
     var tutorials = {
         tags: [],
-        attach: function() {
+        attach: function () {
             var checkboxes = document.querySelectorAll('.tutorial-checkbox');
             checkboxes.forEach(function (cb) {
                 if (cb.classList.contains('disabled')) return;
@@ -238,14 +172,14 @@
         },
 
         enableTag: function (tag) {
-            var checkbox = document.querySelector('.tutorial-checkbox[data-tag="'+tag+'"');
+            var checkbox = document.querySelector('.tutorial-checkbox[data-tag="' + tag + '"');
             if (checkbox) {
                 checkbox.classList.add('on');
             }
         },
 
         disableTag: function (tag) {
-            var checkbox = document.querySelector('.tutorial-checkbox[data-tag="'+tag+'"');
+            var checkbox = document.querySelector('.tutorial-checkbox[data-tag="' + tag + '"');
             if (checkbox) {
                 checkbox.classList.remove('on');
             }
@@ -278,7 +212,7 @@
             var demoEnabledCount = 0;
 
             if (!nopush) {
-                var search = "?tags="+tutorials.tags.join(',');
+                var search = "?tags=" + tutorials.tags.join(',');
                 var url = document.location.pathname + search;
                 window.history.pushState({}, document.title, url);
             }
@@ -288,7 +222,7 @@
                 var itemTags = item.dataset.tags.split(',');
 
                 var match = itemTags.filter(function (tag) {
-                    return (tutorials.tags.indexOf(tag) >= 0)
+                    return (tutorials.tags.indexOf(tag) >= 0);
                 });
 
                 if (match.length === tutorials.tags.length) {
@@ -352,8 +286,8 @@
             }
 
             // show the correct sidebar
-            var el = document.querySelector("ul." + level)
-            if(el) {
+            var el = document.querySelector("ul." + level);
+            if (el) {
                 el.style.display = "block";
             }
 
@@ -361,14 +295,80 @@
             var nav = document.querySelector("nav.tutorial");
             if (nav) {
                 var links = nav.querySelectorAll("a");
-                for(var i = 0; i < links.length; i++) {
+                for (var i = 0; i < links.length; i++) {
                     if (url.indexOf(links[i].getAttribute("href")) >= 0) {
-                        if(links[i].parentNode.classList) {
+                        if (links[i].parentNode.classList) {
                             links[i].parentNode.classList.add("active");
                         }
                     }
                 }
             }
         }
+    };
+
+    function ready(fn) {
+        if (document.readyState !== 'loading') {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
     }
+
+    ready(function () {
+        var i;
+        var url = window.location.pathname;
+
+        if (url.indexOf("/video/") >= 0) {
+            header.setActive("video");
+        } else if (url.indexOf("/tutorials/") >= 0) {
+            tutorials.attach();
+            header.setActive("tutorials");
+        } else if (url.indexOf("/user-manual/") >= 0) {
+            // usermanual
+            header.setActive("user-manual");
+
+            usermanual.buildMenu(url);
+            usermanual.setNextPrevButtons();
+        } else if (url.indexOf("/shader-editor/") >= 0) {
+            // shader editor
+            header.setActive("shader-editor");
+
+            usermanual.buildMenu(url);
+            usermanual.setNextPrevButtons();
+        }
+
+        // search
+        var search = document.getElementById("search");
+        if (search) {
+            search.addEventListener("keydown", function (e) {
+                if (e.which === 13 || e.keyCode === 13) {
+                    window.location.href = "/search/?q=" + e.target.value;
+                }
+            }, true);
+        }
+
+        // script highlighting
+        var codes = document.querySelectorAll("pre code");
+        for (i = 0; i < codes.length; i++) {
+            if (codes[i].classList.contains("lang-javascript")) {
+                codes[i].classList.add("javascript");
+            }
+            hljs.highlightBlock(codes[i]);
+        }
+
+        // language buttons
+        var flags = document.querySelectorAll(".flags > a");
+        for (i = 0; i < flags.length; i++) {
+            flags[i].addEventListener("click", function (e) {
+                var url = window.location.pathname;
+                window.location.href = url.replace(/\/(en|ja|ru|zh)\//, "/" + e.currentTarget.dataset.lang + "/");
+                e.preventDefault();
+            });
+
+            var locale = window.location.pathname.slice(1, 3);
+            if (flags[i].dataset.lang !== locale) {
+                flags[i].classList.add("inactive");
+            }
+        }
+    });
 })();
