@@ -20,7 +20,6 @@
             if (li && li.classList) {
                 li.classList.add("active");
             }
-
         }
     };
 
@@ -38,8 +37,9 @@
 
                         // toggle on click
                         expander.addEventListener("click", function (e) {
+                            var li = e.currentTarget.parentNode;
                             usermanual.toggle(e.currentTarget);
-                            usermanual.toggle(e.currentTarget.parentNode);
+                            usermanual.toggle(li);
                             e.preventDefault();
                             return false;
                         }, true);
@@ -120,7 +120,6 @@
 
         }
     };
-
 
     var tutorials = {
         tags: [],
@@ -307,7 +306,7 @@
     };
 
     function ready(fn) {
-        if (document.readyState !== 'loading') {
+        if (document.readyState != 'loading') {
             fn();
         } else {
             document.addEventListener('DOMContentLoaded', fn);
@@ -346,6 +345,7 @@
                 }
             }, true);
         }
+
 
         // script highlighting
         var codes = document.querySelectorAll("pre code");
