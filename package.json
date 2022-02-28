@@ -33,7 +33,6 @@
     "@playcanvas/eslint-config": "^1.0.16",
     "eslint": "^8.10.0",
     "handlebars": "^4.7.7",
-    "http-server": "^14.1.0",
     "jstransformer-handlebars": "^1.2.0",
     "linkinator": "^3.0.3",
     "marked": "^4.0.12",
@@ -42,6 +41,7 @@
     "metalsmith-static": "0.0.5",
     "node-fetch": "^2.6.6",
     "sass": "^1.49.9",
+    "serve": "^13.0.2",
     "watch": "1.0.2"
   },
   "scripts": {
@@ -52,7 +52,7 @@
     "faq-to-json": "node faq_to_json.js --dir faq --bucket code.playcanvas.com",
     "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib public/js",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
-    "serve": "http-server build -a localhost -p 51000",
+    "serve": "serve build -l 51000",
     "watch:osx": "watch 'npm run build' content --interval=3 --wait=5 --ignoreDotFiles --filter='watch-filter.js'",
     "watch:windows": "watch \"npm run build\" content --interval=3 --wait=5 --ignoreDotFiles --filter=\"watch-filter.js\"",
     "test": "linkinator en --server-root build --recurse --skip '/^api' --verbosity error"
