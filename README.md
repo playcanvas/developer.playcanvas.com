@@ -20,13 +20,9 @@ Now visit http://localhost:51000 in your browser.
 
 ## Use 'watch' for quick iteration
 
-The watch build command will automatically build the site when changes are made in the `content` directory. On macOS:
+The watch build command will automatically rebuild the site when changes are made in the `content` or `public` folders.
 
-    npm run watch:osx
-
-On Windows:
-
-    npm run watch:windows
+    npm run watch
 
 ## Update CSS from SCSS
 
