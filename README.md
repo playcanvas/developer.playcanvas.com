@@ -41,25 +41,3 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 Simply run:
 
     npm test
-
-## Style Guide
-
-### Code Blocks
-
-When inserting code into a Markdown file, use backticks. For example:
-
-    ```javascript
-    console.log('Hello World!);
-    ```
-
-Be sure to specify the relevant language to enable syntax highlighting. Valid values are: `javascript`, `html`, `css`, `json`, `php`. If you don't want syntax highlighting, omit the language specifier.
-
-### Hyperlinks
-
-When writing a link in a Markdown file use the following format:
-
-\[link text\]\[1\]
-
-\[1\]: https://example.com
-
-The only exception is writing FAQ Markdown files (located in the `faq` folder). For those, use the `\[link text\](url)` format.
