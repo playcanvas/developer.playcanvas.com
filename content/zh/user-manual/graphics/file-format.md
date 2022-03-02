@@ -1,6 +1,6 @@
 ---
 title: 文件格式
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 7
 ---
 

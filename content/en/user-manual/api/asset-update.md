@@ -1,6 +1,6 @@
 ---
 title: Assets - Update asset
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 10
 ---
 
@@ -23,7 +23,7 @@ Update an existing asset's file.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' https://playcanvas.com/api/assets/{assetId}
+curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
 ```
 
 ## Parameters

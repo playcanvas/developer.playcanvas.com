@@ -1,6 +1,6 @@
 ---
 title: 用户手册
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 0.5
 ---
 

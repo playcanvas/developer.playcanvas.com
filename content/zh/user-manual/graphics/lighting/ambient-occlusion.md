@@ -1,6 +1,6 @@
 ---
 title: Ambient Occlusion
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 4
 ---
 

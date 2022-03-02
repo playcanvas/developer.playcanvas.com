@@ -1,6 +1,6 @@
 ---
 title: More Cameras
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: basics, camera
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---

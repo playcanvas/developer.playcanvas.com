@@ -1,6 +1,6 @@
 ---
 title: 脚本属性
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 4
 ---
 

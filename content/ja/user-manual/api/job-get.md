@@ -1,6 +1,6 @@
 ---
 title: Jobs - Get job
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 12
 ---
 

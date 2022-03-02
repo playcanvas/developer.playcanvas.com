@@ -1,6 +1,6 @@
 ---
 title: 糟糕!
-template: error.tmpl.html
+layout: error.hbs
 ---
 
 ### 我们好像没有这个页面

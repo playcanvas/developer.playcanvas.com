@@ -1,6 +1,6 @@
 ---
 title: Assets - Delete asset
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 6
 ---
 
@@ -17,7 +17,7 @@ Permanently delete an asset from a branch of your project. **Warning** deleting 
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" -X DELETE "https://playcanvas.com/api/assets/{assetId}?branchId={branchId}"
 ```
 
 HTTP Request

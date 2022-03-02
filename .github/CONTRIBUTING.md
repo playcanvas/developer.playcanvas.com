@@ -54,6 +54,28 @@ Please use PNG for anything Editor UI based and JPEG for anything else such as a
 
 GIFs can be used but please keep the file size as low as possible. No larger than 2MB.
 
+### Code Blocks
+
+When inserting code into a Markdown file, use backticks. For example:
+
+    ```javascript
+    console.log('Hello World!);
+    ```
+
+Be sure to specify the relevant language to enable syntax highlighting. Valid values are: `javascript`, `html`, `css`, `json`, `php`. If you don't want syntax highlighting, omit the language specifier.
+
+For any JavaScript code, please refer to the [PlayCanvas style guide](https://github.com/playcanvas/engine/blob/master/.github/CONTRIBUTING.md).
+
+### Hyperlinks
+
+When writing a link in a Markdown file use the following format:
+
+\[link text\]\[1\]
+
+\[1\]: https://example.com
+
+The only exception is writing FAQ Markdown files (located in the `faq` folder). For those, use the `\[link text\](url)` format.
+
 ### Other files
 
 Other files such as assets and zips can be placed in [`public downloads`](https://github.com/playcanvas/developer.playcanvas.com/tree/master/public/downloads). As this is used very rarely, there is no folder structure to maintain.
@@ -62,6 +84,3 @@ Other files such as assets and zips can be placed in [`public downloads`](https:
 
 Usually, tutorials require a PlayCanvas project. Please transfer ownership of any related projects to user `playcanvas`. Steps to transfer projects can be [found here in the documentation](https://developer.playcanvas.com/en/user-manual/profile/projects/#transfer-project-ownership).
 
-### Code examples
-
-Please refer to the [Engine contribution guidelines](https://github.com/playcanvas/engine/blob/master/.github/CONTRIBUTING.md) for code styling. Use JavaScript ES5 as the code is intended to be run directly in the browser.

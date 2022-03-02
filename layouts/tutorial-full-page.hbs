@@ -3,16 +3,15 @@
     {{> head}}
 
     <body>
-        {{> header header-icon="" header-title="Error"}}
+        {{> header header-icon="&#57874;" header-title="Tutorials"}}
 
         <div class="container content-width">
-            <main class="full-width">
-                <h1>{{ title }}</h1>
-                {{{ contents }}}
+            {{> tutorials-navigation}}
+            <main>
+                {{> tutorials-list }}
             </main>
         </div>
 
-        {{> scripts}}
         {{> analytics}}
         {{> footer}}
     </body>

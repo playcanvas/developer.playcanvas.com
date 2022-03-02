@@ -1,7 +1,7 @@
 ---
 title: ハイトマップから地形生成
 tags: procedural
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
 ---
 

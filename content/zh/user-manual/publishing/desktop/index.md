@@ -1,6 +1,6 @@
 ---
 title: 桌面应用
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 3
 ---
 

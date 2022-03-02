@@ -1,6 +1,6 @@
 ---
 title: 基于物理渲染
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 3
 ---
 

@@ -20,13 +20,9 @@ Now visit http://localhost:51000 in your browser.
 
 ## Use 'watch' for quick iteration
 
-The watch build command will automatically build the site when changes are made in the `content` directory. On macOS:
+The watch build command will automatically rebuild the site when changes are made in the `content` or `public` folders.
 
-    npm run watch:osx
-
-On Windows:
-
-    npm run watch:windows
+    npm run watch
 
 ## Update CSS from SCSS
 
@@ -42,32 +38,6 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 
 ## Test for broken links
 
-Start the localhost server (as described in the [How to serve](#how-to-serve) section) and in another terminal window run:
+Simply run:
 
-    npm run test-links:en
-
-Or to test against a live or staging server, pass the URL base as an argument:
-
-    npm run test-links:en "https://developer.playcanvas.com"
-
-## Style Guide
-
-### Code Blocks
-
-When inserting code into a Markdown file, use backticks. For example:
-
-    ```javascript
-    console.log('Hello World!);
-    ```
-
-Be sure to specify the relevant language to enable syntax highlighting. Valid values are: `javascript`, `html`, `css`, `json`, `php`. If you don't want syntax highlighting, omit the language specifier.
-
-### Hyperlinks
-
-When writing a link in a Markdown file use the following format:
-
-\[link text\]\[1\]
-
-\[1\]: https://example.com
-
-The only exception is writing FAQ Markdown files (located in the `faq` folder). For those, use the `\[link text\](url)` format.
+    npm test

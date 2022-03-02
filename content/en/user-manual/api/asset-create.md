@@ -1,6 +1,6 @@
 ---
 title: Assets - Create asset
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 5
 ---
 
@@ -23,7 +23,7 @@ Create a new asset.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'file=@./script.js'  https://playcanvas.com/api/assets
+curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
 ```
 
 HTTP Request

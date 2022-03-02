@@ -1,6 +1,6 @@
 ---
 title: Branches - List branches
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 11
 ---
 
@@ -17,7 +17,7 @@ Get a list of all open branches for a project
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/branches
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/branches"
 ```
 
 HTTP Request

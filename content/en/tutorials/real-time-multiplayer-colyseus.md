@@ -1,6 +1,6 @@
 ---
 title: Real-time Multiplayer with Colyseus
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: multiplayer, networking
 thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 ---

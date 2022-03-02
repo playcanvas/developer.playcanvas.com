@@ -1,6 +1,6 @@
 ---
 title: Animated Textures
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: animation, textures
 thumb: http://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg
 ---

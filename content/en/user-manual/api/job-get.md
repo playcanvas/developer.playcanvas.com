@@ -1,6 +1,6 @@
 ---
 title: Jobs - Get job
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 12
 ---
 
@@ -17,7 +17,7 @@ Gets a Job by id.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/jobs/99999
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
 ```
 
 ## Parameters

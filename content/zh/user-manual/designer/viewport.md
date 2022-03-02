@@ -1,6 +1,6 @@
 ---
 title: 视口
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 4
 ---
 

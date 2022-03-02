@@ -1,6 +1,6 @@
 ---
 title: Уроки
-template: tutorial-full-page.tmpl.html
+layout: tutorial-full-page.hbs
 ---
 
 This is replaced with the tag cloud

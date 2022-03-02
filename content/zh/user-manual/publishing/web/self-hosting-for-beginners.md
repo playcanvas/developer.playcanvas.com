@@ -1,6 +1,6 @@
 ---
 title: 为初学者打造的自托管系统
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Shader Editor
-template: shader-editor-page.tmpl.html
+layout: shader-editor-page.hbs
 position: 0.5
 ---
 

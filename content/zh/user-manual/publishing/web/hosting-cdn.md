@@ -1,6 +1,6 @@
 ---
 title: 使用CDN进行托管
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 5
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 从高度图创建地形
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: procedural
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
 ---

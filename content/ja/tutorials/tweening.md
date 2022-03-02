@@ -1,6 +1,6 @@
 ---
 title: トゥイーンライブラリ
-template: tutorial-page.tmpl.html
+layout: tutorial-page.hbs
 tags: animation, scripts
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 title: Scenes - List scenes
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 14
 ---
 
@@ -17,7 +17,7 @@ Get a list of all scenes for a project
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
 ```
 
 HTTP Request

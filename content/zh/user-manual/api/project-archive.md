@@ -1,6 +1,6 @@
 ---
 title: Projects - Archive project
-template: usermanual-page.tmpl.html
+layout: usermanual-page.hbs
 position: 13
 ---
 
