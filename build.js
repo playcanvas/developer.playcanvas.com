@@ -64,7 +64,7 @@ handlebars.registerHelper('locale-url', (locale, relativeUrl) => {
 
 const renderer = new marked.Renderer();
 
-// make external links to open as new tabs
+// Make external links open in a new tab
 renderer.link = (href, title, text) => {
     const external = href.startsWith('http') && href.indexOf('developer.playcanvas.com') === -1;
     if (external) {
@@ -83,7 +83,7 @@ renderer.heading = (text, level) => {
     return `<h${level}>${text}</h${level}>`;
 }
 
-// store strings requested
+// Store strings requested
 const localization = {};
 
 Metalsmith(__dirname)
