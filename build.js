@@ -65,7 +65,7 @@ const renderer = new marked.Renderer();
 
 // Ensure external links open in a new tab
 renderer.link = (href, title, text) => {
-    const external = href.startsWith('http') && href.indexOf('developer.playcanvas.com') === -1;
+    const external = href.startsWith('http') && !href.includes('playcanvas.com');
     if (external) {
         return `<a href="${href}" target="_blank">${text}</a>`;
     }
