@@ -80,7 +80,7 @@ renderer.heading = (text, level) => {
         return `<h${level} id="${id}">${text} <a class='header-anchor font-icon' href='${href}'>&#xE368;</a></h${level}>`;
     }
     return `<h${level}>${text}</h${level}>`;
-}
+};
 
 // Store strings requested
 const localization = {};
