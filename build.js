@@ -14,7 +14,6 @@ const i18n       = require('./lib/i18n/index');
 const i18nout    = require('./lib/i18n-out/index');
 const contents   = require('./lib/contents-json/index');
 const tutorials  = require('./lib/tutorials/index');
-const { render } = require('sass');
 
 let env = null;
 const args = process.argv.slice(2);
