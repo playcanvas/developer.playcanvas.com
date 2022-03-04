@@ -7,7 +7,6 @@ const Metalsmith = require('metalsmith');
 const layouts    = require('@metalsmith/layouts');
 const markdown   = require('@metalsmith/markdown');
 const permalinks = require('@metalsmith/permalinks');
-const headings   = require('metalsmith-headings-identifier');
 const msStatic   = require('metalsmith-static');
 const navbuilder = require('./lib/nav-builder-plugin/index');
 const locale     = require('./lib/locale/index');
@@ -15,6 +14,7 @@ const i18n       = require('./lib/i18n/index');
 const i18nout    = require('./lib/i18n-out/index');
 const contents   = require('./lib/contents-json/index');
 const tutorials  = require('./lib/tutorials/index');
+const { render } = require('sass');
 
 let env = null;
 const args = process.argv.slice(2);
@@ -62,21 +62,29 @@ handlebars.registerHelper('locale-url', (locale, relativeUrl) => {
     return url.href;
 });
 
-// store strings requested
-const localization = {};
-
-// links markdown override
 const renderer = new marked.Renderer();
 
 // make external links to open as new tabs
 renderer.link = (href, title, text) => {
     const external = href.startsWith('http') && href.indexOf('developer.playcanvas.com') === -1;
-    let out = `<a href="${href}"`;
-    if (title) out += ` title="${title}"`;
-    if (external) out += ' target="_blank"';
-    out += `>${text}</a>`;
-    return out;
+    if (external) {
+        return `<a href="${href}" target="_blank">${text}</a>`;
+    }
+    return `<a href="${href}">${text}</a>`;
 };
+
+// Insert an anchor for headings h2 and smaller
+renderer.heading = (text, level) => {
+    const id = text.toLowerCase().replace(/\s/g, '-');
+    if (level >= 2) {
+        const href = `#${id}`;
+        return `<h${level} id="${id}">${text} <a class='header-anchor font-icon' href='${href}'>&#xE368;</a></h${level}>`;
+    }
+    return `<h${level}>${text}</h${level}>`;
+}
+
+// store strings requested
+const localization = {};
 
 Metalsmith(__dirname)
     .source('content')
@@ -90,11 +98,6 @@ Metalsmith(__dirname)
     .use(markdown({
         gfm: true,
         renderer: renderer
-    }))
-    .use(headings({
-        selector: 'h2,h3,h4,h5,h6',
-        linkTemplate: " <a class='header-anchor font-icon' href='#%s'>&#58216;</a>",
-        position: 'right'
     }))
     .use(contents()())
     .use(permalinks({
