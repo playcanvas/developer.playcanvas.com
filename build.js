@@ -63,7 +63,7 @@ handlebars.registerHelper('locale-url', (locale, relativeUrl) => {
 
 const renderer = new marked.Renderer();
 
-// Make external links open in a new tab
+// Ensure external links open in a new tab
 renderer.link = (href, title, text) => {
     const external = href.startsWith('http') && href.indexOf('developer.playcanvas.com') === -1;
     if (external) {
