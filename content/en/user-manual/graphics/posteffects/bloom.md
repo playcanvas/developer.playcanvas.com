@@ -8,11 +8,11 @@ Bloom is a post-processing effect used to reproduce an imaging artifact of real-
 
 Here is an image without bloom:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png">
 
 and the same image with bloom applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_bloom.png"></img>
+<img alt="Image with effect" src="/images/platform/posteffects/with_bloom.png">
 
 The built-in bloom effect has the following attributes:
 * **Bloom Intensity**: The intensity of the effect

@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 4
 ---
 
-<img src="/images/shader-editor/inspector-pane-texture.png" style="float: right; padding: 20px; padding-top: 0px;"></img>
+<img src="/images/shader-editor/inspector-pane-texture.png" style="float: right; padding: 20px; padding-top: 0px;">
 
 The Texture Inspector is where textures are configured.
 

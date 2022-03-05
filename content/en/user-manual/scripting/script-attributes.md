@@ -35,9 +35,9 @@ MyScript.attributes.add('names', {
 
 ## Getting Attributes into Editor
 
-<img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;"> button.
 
 ## Accessing attributes in your code
 

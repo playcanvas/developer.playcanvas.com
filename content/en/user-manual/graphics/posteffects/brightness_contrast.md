@@ -8,11 +8,11 @@ The brightness-contrast effect allows you to modify the brightness and contrast 
 
 Here is an image without the effect:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png">
 
 and the same image with the effect applied and changes to brightness and contrast:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_brightness_contrast.png"></img>
+<img alt="Image with effect" src="/images/platform/posteffects/with_brightness_contrast.png">
 
 The built-in brightness-contrast effect has the following attributes:
 * **Brightness**: The brightness of the image. Ranges from -1 to 1 (-1 is solid black, 0 no change, 1 solid white).
