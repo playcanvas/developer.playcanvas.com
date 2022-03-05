@@ -13,8 +13,8 @@ As it happens, there are several alternatives to ammo.js:
     <tr><td style="text-align:center"><a href="https://github.com/kripken/box2d.js">box2d.js</a></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td></td><td></td></tr>
     <tr><td style="text-align:center"><a href="https://github.com/liabru/matter-js">Matter.js</a></td><td style="text-align:center">&#x2713;</td><td></td><td style="text-align:center">&#x2713;</td><td></td><td></td></tr>
     <tr><td style="text-align:center"><a href="https://github.com/schteppe/p2.js">p2.js</a></td><td style="text-align:center">&#x2713;</td><td></td><td style="text-align:center">&#x2713;</td><td></td><td style="text-align:center"><a href="https://github.com/playcanvas/playcanvas-p2.js">Yes</a></td></tr>
-    <tr><td style="text-align:center"><a href="https://github.com/schteppe/cannon.js">cannon.js</a></td><td style="text-align:center">&#x2713;</td><td></td><td></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"><td></td></tr>
-    <tr><td style="text-align:center"><a href="https://github.com/lo-th/Oimo.js">Oimo.js</a></td><td style="text-align:center">&#x2713;</td><td></td><td></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"><td></td></tr>
+    <tr><td style="text-align:center"><a href="https://github.com/schteppe/cannon.js">cannon.js</a></td><td style="text-align:center">&#x2713;</td><td></td><td></td><td style="text-align:center">&#x2713;</td><td></td></tr>
+    <tr><td style="text-align:center"><a href="https://github.com/lo-th/Oimo.js">Oimo.js</a></td><td style="text-align:center">&#x2713;</td><td></td><td></td><td style="text-align:center">&#x2713;</td><td></td></tr>
 </table>
 
 While there is currently only one existing PlayCanvas integration for the p2.js engine, it should be straightforward to create additional integrations for the other engines listed using a similar approach.

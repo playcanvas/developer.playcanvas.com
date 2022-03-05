@@ -77,7 +77,7 @@ renderer.heading = (text, level) => {
     const id = text.toLowerCase().replace(/\s/g, '-');
     if (level >= 2) {
         const href = `#${id}`;
-        return `<h${level} id="${id}">${text} <a class='header-anchor font-icon' href='${href}'>&#xE368;</a></h${level}>`;
+        return `<h${level} id="${id}">${text} <a class="header-anchor font-icon" href="${href}">&#xE368;</a></h${level}>`;
     }
     return `<h${level}>${text}</h${level}>`;
 };

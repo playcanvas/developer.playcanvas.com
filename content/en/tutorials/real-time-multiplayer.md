@@ -97,11 +97,11 @@ This will log whatever data is sent to the server when `playerJoined` is emitted
 
 For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
 
-<img src='/images/tutorials/multiplayer/ground_entity.png' width=360px>
+<img src="/images/tutorials/multiplayer/ground_entity.png" width="360px">
 
 Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
 
-<img src='/images/tutorials/multiplayer/player_entity.png' width=360px>
+<img src="/images/tutorials/multiplayer/player_entity.png" width="360px">
 
 Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
 

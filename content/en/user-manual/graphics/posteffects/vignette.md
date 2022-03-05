@@ -8,11 +8,11 @@ In photography and optics, vignetting is a reduction of an image's brightness or
 
 Here is an image without the effect:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png">
 
 and the same image with the effect applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_vignette.png"></img>
+<img alt="Image with effect" src="/images/platform/posteffects/with_vignette.png">
 
 The built-in vignette effect has the following attributes:
 

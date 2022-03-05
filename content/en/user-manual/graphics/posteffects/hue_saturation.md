@@ -8,11 +8,11 @@ The hue-saturation effect allows you to modify the hue and saturation of the ren
 
 Here is an image without the effect:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png">
 
 and the same image with the effect applied and changes to hue and saturation:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_hue_saturation.png"></img>
+<img alt="Image with effect" src="/images/platform/posteffects/with_hue_saturation.png">
 
 The built-in hue-saturation effect has the following attributes:
 * **Hue**: The hue of the image. Ranges from -1 to 1 (-1 is 180 degrees in the negative direction, 0 no change, 1 is 180 degrees in the positive direction).

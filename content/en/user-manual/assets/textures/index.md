@@ -65,11 +65,11 @@ Different devices can support different texture sizes. Using [WebGL report][7] o
 
 For example, this is from a MacBook Pro 16 inch (2020) laptop with Chrome which shows support up to 16384x16384.
 
-<img src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" style="width: 600px;"/>
+<img src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" style="width: 600px;">
 
 Whereas on a Samsung S7 mobile device, only 4096x4096 is supported.
 
-<img src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" style="width: 600px;"/>
+<img src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" style="width: 600px;">
 
 If the engine attempts to utilize a texture that exceeds the max texture size reported by WebGL, it will resize it down to this maximum size at runtime. Note that this is only done for texture loaded from images (PNG, JPG, GIF). Compressed textures cannot be resized at runtime and will simply fail to render if they are too large for the device.
 
