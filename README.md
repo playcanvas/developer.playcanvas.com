@@ -36,8 +36,12 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 
     npm run faq
 
-## Test for broken links
+## Testing
 
-Simply run:
+To scan the generated HTML files in the `build` folder, run:
 
-    npm test
+    npm run test:html
+
+To scan for broken hyperlinks, run:
+
+    npm run test:links
