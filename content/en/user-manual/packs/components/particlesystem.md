@@ -16,7 +16,7 @@ The Particle System component can be enabled or disabled using the toggle in the
     <col class="property-name"></col>
     <col class="property-description"></col>
     <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Auto Play</td><td>If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script.</td>
+    <tr><td>Auto Play</td><td>If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script.</td></tr>
     <tr><td>Particle Count</td><td>The maximum number of particles managed by this particle system.</td></tr>
     <tr><td>Lifetime</td><td>The length of time in seconds between a particle's birth and its death.</td></tr>
     <tr><td>Emission Rate</td><td>The lower bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'.</td></tr>
