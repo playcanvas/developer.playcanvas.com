@@ -38,7 +38,7 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 
 ## Testing
 
-To scan the generated HTML files in the `build` folder, run:
+To validate the generated HTML files in the `build` folder, run:
 
     npm run test:html
 
