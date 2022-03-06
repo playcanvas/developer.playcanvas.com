@@ -15,28 +15,28 @@ Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas,
 
 ### Create and upload assets
 
-![assets][4]
+![assets][1]
 
 PlayCanvas supports a wide variety of industry standard asset formats. For example, upload images, 3D models, audio files or custom text or binary file formats.
 
 
 ### Construct your scene
 
-![scene][5]
+![scene][2]
 
 The PlayCanvas Editor is a visual building tool which is used to construct scenes. Build a hierarchy of entities using built in components like 3D models, collision, particle effects and more.
 
 
 ### Add interactivity
 
-![script][6]
+![script][3]
 
 Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
 
 
 ### Publish your application
 
-![publish][7]
+![publish][4]
 
 When you application is ready for sharing a simple one-click publish will get your application live on the internet hosted by PlayCanvas for free. Alternatively download your application for self-hosting on your own web server.
 
@@ -48,19 +48,19 @@ The PlayCanvas Editor is a visual editing tool that lets you build scenes, appli
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" frameborder="0" allowfullscreen></iframe>
 
-Find out more in the [editor][8] section.
+Find out more in the [editor][5] section.
 
 ### Assets
 
 PlayCanvas is used to create and manage all the assets you need for your interactive web application. PlayCanvas accepts all major 3D file formats, plus upload images, audio and any other asset types you need.
 
-Find out more in the [assets][9] section.
+Find out more in the [assets][6] section.
 
 ### Publishing
 
 PlayCanvas provides instant and trouble free hosting for your WebGL application with single click. We also support instant download of your complete project ready to host on your own web server.
 
-Find out more in the [publishing][1] section.
+Find out more in the [publishing][7] section.
 
 ## Supported Browsers
 
@@ -68,41 +68,34 @@ PlayCanvas was always designed to be plugin free, running natively in the browse
 
 * Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
 * PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][2] element (a canvas) and you can composite it on the page or transform it via CSS.
+* PlayCanvas web apps run in a standard [DOM][8] element (a canvas) and you can composite it on the page or transform it via CSS.
 * No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
 
 At the time of writing, the browser requirements are currently as follows:
 
-<table class="table table-striped table-bordered">
-    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
-    <tr><td style="text-align:center"><a href="https://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">IE</a></td><td style="text-align:center">11.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/edge">Edge</a></td><td style="text-align:center">12.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
-        <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
-    </tr>
-</table>
+| Browser       | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
+|---------------|---------|----------|----------|----------|-----------|----------|----------|
+| [Chrome][9]   | 9.0+    | &#x2713; | &#x2713; | &#x2713; | &#x2713;  | &#x2713; | &#x2713; |
+| [Safari][10]  | 8.0+    |          | &#x2713; |          |           |          | &#x2713; |
+| [Firefox][11] | 4.0+    | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; | &#x2713; |
+| [Edge][12]    | 12.0+   | &#x2713; |          |          |           |          |          |
+| [IE][13]      | 11.0+   | &#x2713; |          |          |           |          |          |
+| [Opera][14]   | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
 
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][3]. If you see a spinning cube, you are all set!
+If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][15]. If you see a spinning cube, you are all set!
 
-[1]: /user-manual/publishing
-[2]: /user-manual/glossary/#dom
-[3]: https://get.webgl.org/
-[4]: /images/user-manual/introduction/workflow-assets.jpg
-[5]: /images/user-manual/introduction/workflow-create-scene.jpg
-[6]: /images/user-manual/introduction/workflow-script.jpg
-[7]: /images/user-manual/introduction/workflow-publish.jpg
-[8]: /user-manual/designer
-[9]: /user-manual/assets
+[1]: /images/user-manual/introduction/workflow-assets.jpg
+[2]: /images/user-manual/introduction/workflow-create-scene.jpg
+[3]: /images/user-manual/introduction/workflow-script.jpg
+[4]: /images/user-manual/introduction/workflow-publish.jpg
+[5]: /user-manual/designer
+[6]: /user-manual/assets
+[7]: /user-manual/publishing
+[8]: /user-manual/glossary/#dom
+[9]: https://www.google.com/chrome/
+[10]: https://www.apple.com/safari/
+[11]: https://www.mozilla.org/firefox/
+[12]: https://www.microsoft.com/edge
+[13]: https://www.microsoft.com/en-us/download/internet-explorer.aspx
+[14]: https://www.opera.com/
+[15]: https://get.webgl.org/
