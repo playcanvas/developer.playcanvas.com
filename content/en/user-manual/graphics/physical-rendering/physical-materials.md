@@ -42,20 +42,11 @@ You can often find the charts of recorded values for diffuse/albedo values on th
 
 ![Metals][3]
 
-<table class="centered">
-  <tr>
-  <th>Material</th><th>RGB</th>
-  </tr>
-  <tr>
-  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
-  </tr>
-</table>
+| Material | RGB                                      |
+|----------|------------------------------------------|
+| Gold     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
+| Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
+| Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
 ## Metalness
 

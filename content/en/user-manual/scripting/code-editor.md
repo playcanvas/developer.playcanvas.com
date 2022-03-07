@@ -66,53 +66,22 @@ All the text editing features can be found using the command palette via Ctrl + 
 
 The editor supports various shortcuts to help you when editing code. You can find all those options in the Menu or the command palette. The most common can be found below:
 
-<table class="table table-striped table-bordered">
-<tr>
-    <th>Command</th><th>PC</th><th>Mac</th>
-</tr>
-<tr>
-    <td>Save</td><td>Ctrl + S</td><td>Cmd + S</td>
-</tr>
-<tr>
-    <td>Undo</td><td>Ctrl + Z</td><td>Cmd + Z</td>
-</tr>
-<tr>
-    <td>Redo</td><td>Ctrl + Y</td><td>Cmd + Shift + Z or Cmd + Y</td>
-</tr>
-<tr>
-    <td>Find in file</td><td>Ctrl + F</td><td>Cmd + F</td>
-</tr>
-<tr>
-    <td>Find next match</td><td>F3</td><td>Cmd + G</td>
-</tr>
-<tr>
-    <td>Find previous match</td><td>Shift + F3</td><td>Cmd + Shift + G</td>
-</tr>
-<tr>
-    <td>Replace</td><td>Ctrl + H</td><td>Cmd + Alt + F</td>
-</tr>
-<tr>
-    <td>Find in Files</td><td>Shift + Ctrl + F</td><td>Shift + Cmd + F</td>
-</tr>
-<tr>
-    <td>Comment line or selection</td><td>Ctrl + /</td><td>Cmd + /</td>
-</tr>
-<tr>
-    <td>Block Comment line or selection</td><td>Alt + Shift + A</td><td>Alt + Shift + A</td>
-</tr>
-<tr>
-    <td>Indent line or selection</td><td>Tab</td><td>Tab</td>
-</tr>
-<tr>
-    <td>Un-Indent line or selection</td><td>Shift + Tab</td><td>Shift + Tab</td>
-</tr>
-<tr>
-    <td>Jump to declaration</td><td>Ctrl + F12</td><td>Cmd + F12</td>
-</tr>
-<tr>
-    <td>Show autocomplete</td><td>Ctrl + Space or Ctrl + I</td><td>Ctrl + Space or Cmd + I</td>
-</tr>
-</table>
+| Command                         | PC                       | Mac                        |
+|---------------------------------|--------------------------|----------------------------|
+| Save                            | Ctrl + S                 | Cmd + S                    |
+| Undo                            | Ctrl + Z                 | Cmd + Z                    |
+| Redo                            | Ctrl + Y                 | Cmd + Shift + Z or Cmd + Y |
+| Find in file                    | Ctrl + F                 | Cmd + F                    |
+| Find next match                 | F3                       | Cmd + G                    |
+| Find previous match             | Shift + F3               | Cmd + Shift + G            |
+| Replace                         | Ctrl + H                 | Cmd + Alt + F              |
+| Find in Files                   | Ctrl + Shift + F         | Cmd + Shift + F            |
+| Comment line or selection       | Ctrl + /                 | Cmd + /                    |
+| Block Comment line or selection | Alt + Shift + A          | Alt + Shift + A            |
+| Indent line or selection        | Tab                      | Tab                        |
+| Un-Indent line or selection     | Shift + Tab              | Shift + Tab                |
+| Jump to declaration             | Ctrl + F12               | Cmd + F12                  |
+| Show autocomplete               | Ctrl + Space or Ctrl + I | Ctrl + Space or Cmd + I    |
 
 ## Searching
 
