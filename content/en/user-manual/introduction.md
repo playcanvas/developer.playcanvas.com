@@ -46,7 +46,7 @@ When you application is ready for sharing a simple one-click publish will get yo
 
 The PlayCanvas Editor is a visual editing tool that lets you build scenes, applications and games in record time. Use the Editor to manage your project assets, to add interactivity and to communicate and work with your team. The Editor is collaborative in real-time which means you can immediately see changes made by your team and you can build and test your application across all devices instantly
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" allowfullscreen></iframe>
 
 Find out more in the [editor][5] section.
 
