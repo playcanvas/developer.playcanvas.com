@@ -21,7 +21,7 @@ For the complete PlayCanvas Engine reference, refer to our [API Reference][22] s
 
 Want to see how whole projects have been designed and built? The [Explore Section][23] lists our community's public projects which you can learn from.
 
-<hr>
+---
 
 # Getting Help
 
@@ -29,7 +29,7 @@ Our [PlayCanvas Forum][24] is the best place to ask for help, talk about your ga
 
 We have an active community of users and the PlayCanvas team is always on hand to help.
 
-<hr>
+---
 
 # Feature Requests and Reporting Bugs
 
