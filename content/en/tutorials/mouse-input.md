@@ -5,7 +5,7 @@ tags: mouse, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false"></iframe>
+<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 
 *Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
 

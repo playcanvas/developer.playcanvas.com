@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 <div class="alert alert-info">This tutorial uses the deprecated Model and Animation components. Please refer to the <a href="/tutorials/anim-blending/">Anim State Graph Blending tutorial</a> instead.</div>
 
-<iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
+<iframe src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 
 *Click on screen to focus, then press the 'p' key to blend to a punch animation*
 

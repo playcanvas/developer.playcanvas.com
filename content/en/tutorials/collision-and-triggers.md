@@ -5,7 +5,7 @@ tags: collision, physics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
+<iframe src="https://playcanv.as/p/1Hj5fX2I/" title="Collision and Triggers"></iframe>
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 

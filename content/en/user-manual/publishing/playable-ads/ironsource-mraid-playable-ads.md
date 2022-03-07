@@ -17,7 +17,7 @@ There are some limitations to be aware of with the tool which can be found in th
 
 The [Cube Jump project][5] is ready to be exported to the ironSource MRAID Playable Ad format and the expected HTML output can be found [here][6].
 
-<iframe src="https://playcanv.as/e/p/AA9osNyV/"></iframe>
+<iframe src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
 
 
 ## File size tips

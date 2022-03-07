@@ -5,7 +5,7 @@ tags: loading, assets
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
+<iframe src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 
 *Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
 

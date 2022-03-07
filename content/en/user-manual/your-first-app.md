@@ -6,7 +6,7 @@ position: 4
 
 Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes learning the basics. We'll recreate the following simple 3D app:
 
-<iframe  src="https://playcanv.as/p/TnUtDXWp/" allowfullscreen></iframe>
+<iframe  src="https://playcanv.as/p/TnUtDXWp/" title="Simple PlayCanvas App"></iframe>
 
 *Use the arrow keys to move the red ball around.*
 
