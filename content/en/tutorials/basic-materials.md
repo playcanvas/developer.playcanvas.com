@@ -45,8 +45,8 @@ Changing the color of the material is a good start, but you'll quickly want more
 
 Download & save these sample textures:
 
-<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"></a>
-<a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"></a>
+<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px" alt="Sample diffuse map texture"></a>
+<a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px" alt="Sample normal map texture"></a>
 
 Then upload them to your project by dragging the files into the Editor.
 
