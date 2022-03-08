@@ -69,7 +69,7 @@ The available transition variables are:
 | Variable            | Description |
 |---------------------|-------------|
 | Duration            | The duration of the transition in seconds. |
-| Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state\'s duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
+| Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state's duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
 | Offset              | If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destination state's duration. Must be between 0 and 1. |
 | Interruption Source | Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so. |
 
