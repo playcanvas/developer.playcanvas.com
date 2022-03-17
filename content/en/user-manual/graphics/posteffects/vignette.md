@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-In photography and optics, vignetting is a reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame. <small>(from [Wikipedia][1])</small>
+In photography and optics, [vignetting][1] is the reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame.
 
 Here is an image without the effect:
 
 ![Image without effect][2]
 
-and the same image with the effect applied:
+And the same image with the effect applied:
 
 ![Image with effect][3]
 

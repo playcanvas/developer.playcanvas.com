@@ -10,7 +10,7 @@ Here is an image without the effect:
 
 ![Image without effect][1]
 
-and the same image with the effect applied:
+And the same image with the effect applied:
 
 ![Image with effect][2]
 
