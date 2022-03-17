@@ -85,7 +85,7 @@ We have a more [detailed page][1] about self-hosting a PlayCanvas application. B
 
 For a standard PlayCanvas application there is no server-side code required. However, you will still need to supply a web-server because you need to serve the static content including the `index.html` file that is found in your downloaded application. It is this file that the browser will request to load your application. There are two common web server application for Linux: Apache and Nginx and one common web server for Windows: IIS.
 
-### Static Content
+### Caching and Compression
 
 As described in **Server** you will be serving all your PlayCanvas content including the `index.html` file from your web server as static content.
 
@@ -93,6 +93,6 @@ To get good performance when serving the static content it is **critical** to en
 
 ### Client
 
-The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the index.html file it will start your PlayCanvas application and run all the client-side code that you have written.
+The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.
 
 [1]: /user-manual/publishing/web/self-hosting/
