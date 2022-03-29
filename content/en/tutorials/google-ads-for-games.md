@@ -203,7 +203,7 @@ this.interstitialAdButtonEntity.button.on('click', function(e) {
 Here, we check if the Google SDK is ready first before calling `adBreak` which is the function exposed by the Google SDK itself. More documentation and options can be found on [their site][adbreak-docs]. For the example, we will use:
 
 - `type` which has to be one on these types from the Google SDK documentation
-- `name` which can be any name we give and is used for reporting in AdSense
+- `name` which can be any name we want and is used for reporting in AdSense
 - `beforeAd` which is the callback to execute code before the ad is shown
 - `adBreakDone` which is the callback that is called after the ad is shown (even if the ad didn't show for some reason)
 
