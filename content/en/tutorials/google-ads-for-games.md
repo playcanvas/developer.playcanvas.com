@@ -1,5 +1,5 @@
 ---
-title: Google Ads to Monetize your Game
+title: H5 Games Ads Beta Monetization
 layout: tutorial-page.hbs
 tags: scripts, monetization, games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889095/DE8018-image-75.jpg
@@ -10,11 +10,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/8890
 Links for this tutorial:
 - [Flappy Bird Demo][flappy-bird-ads-demo]
 - [Tutorial template project][tutorial-template-start]
-- [Google AdSense Documentation][google-afg-docs]
+- [Google H5 Games Ads Documentation][google-afg-docs]
 
 ## Introduction
 
-This tutorial will show you how to integrate Ads from Google AdSense into your games for the purpose of monetization.
+This tutorial will show you how to integrate Ads from Google H5 Games Ads Beta into your games for the purpose of monetization.
 
 The Ads come in two main forms:
 
@@ -37,6 +37,10 @@ The end result will look like this where we can call the interstitial and reward
 <iframe src="https://playcanv.as/e/p/OkynewOO/" title="Finished Tutorial"></iframe>
 
 ## Setting up
+
+To use Google H5 Games Ads, you will need to create a [Google Adsense account][google-adsense] which will give you a [Publisher ID][google-publisher-id] for the ad integration.
+
+You will also need to review the Google H5 Games Ads [policies][google-afg-polcies] and sign up to the [beta here][google-afg-signup].
 
 Go to the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project dashboard page and click on 'fork' and let's take a look at the project.
 
@@ -83,11 +87,13 @@ Let's take a look inside:
 
 [`afg-intergration.js`][afg-intergration.js] adds Google's SDK to the page and also sets the time between ads being served to the user which we can change if need be. For the tutorial, we have also enabled test mode to show placeholders instead of real ads.
 
+`ca-pub-XXXXXXXXX` will need to be replaced with your own [Publisher ID][google-publisher-id] from Google Adsense.
+
 ```
 // https://developers.google.com/ad-placement/docs/example
 (function() {
     var script = document.createElement('script');
-    script.setAttribute('data-ad-client', 'ca-pub-2682356268914970');
+    script.setAttribute('data-ad-client', 'ca-pub-XXXXXXXXX');
 
     // Comment out to disable test mode
     script.setAttribute('data-adbreak-test', 'on');
@@ -203,7 +209,7 @@ this.interstitialAdButtonEntity.button.on('click', function(e) {
 Here, we check if the Google SDK is ready first before calling `adBreak` which is the function exposed by the Google SDK itself. More documentation and options can be found on [their site][adbreak-docs]. For the example, we will use:
 
 - `type` which has to be one on these types from the Google SDK documentation
-- `name` which can be any name we want and is used for reporting in AdSense
+- `name` which can be any name we want and is used for reporting in H5 Games Ads
 - `beforeAd` which is the callback to execute code before the ad is shown
 - `adBreakDone` which is the callback that is called after the ad is shown (even if the ad didn't show for some reason)
 
@@ -352,9 +358,9 @@ Let's see it in action:
 
 ## Wrapping up
 
-And that's it for the basics of integrating Google's AdSense for H5 games and apps!
+And that's it for the basics of integrating Google's H5 Games Ads for H5 games and apps!
 
-You can find the [completed project here][tutorial-template-finished] and further information about Google's AdSense SDK and API on [their site][google-afg-docs].
+You can find the [completed project here][tutorial-template-finished] and further information about Google's H5 Games Ads SDK and API on [their site][google-afg-docs].
 
 <div class="alert alert-info">Important: For the tutorial, we used test mode so we didn't show any actual ads. When you disable test mode to use for production, please ensure that you comply with any privacy/cookies policy for the countries you release in including GDPR. This usually means implementing some form of cookie consent.</div>
 
@@ -372,6 +378,11 @@ You can find the [completed project here][tutorial-template-finished] and furthe
 [google-afg-docs]: https://developers.google.com/ad-placement/
 [adbreak-docs]: https://developers.google.com/ad-placement/apis/adbreak
 [adbreakdone-docs]: https://developers.google.com/ad-placement/apis/adbreak#adbreakdone_and_placementinfo
+[google-afg-policies]: https://support.google.com/publisherpolicies/answer/11975916
+[google-afg-signup]: https://developers.google.com/ad-placement/docs/beta
+[google-adsense]: https://www.google.com/adsense/start/
+[google-afg-signup]: https://developers.google.com/ad-placement/docs/beta
+[google-publisher-id]: https://support.google.com/adsense/answer/105516?hl=en
 
 [afg-intergration.js]: https://playcanvas.com/editor/code/877568?tabs=67299908
 [afg-setup.js]: https://playcanvas.com/editor/code/877568?tabs=67301236
