@@ -40,7 +40,7 @@ The end result will look like this where we can call the interstitial and reward
 
 To use Google H5 Games Ads, you will need to create a [Google Adsense account][google-adsense] which will give you a [Publisher ID][google-publisher-id] for the ad integration.
 
-You will also need to review the Google H5 Games Ads [policies][google-afg-polcies] and sign up to the [beta here][google-afg-signup].
+You will also need to review the Google H5 Games Ads [policies][google-afg-policies] and sign up to the [beta here][google-afg-signup].
 
 Go to the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project dashboard page and click on 'fork' and let's take a look at the project.
 
