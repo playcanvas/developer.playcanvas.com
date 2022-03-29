@@ -30,7 +30,7 @@ In our example, we use rewarded ads to allow the user to continue after dying wh
 
 ![][flappy-bird-demo-rewarded-ad]
 
-For the tutorial we are going to fork the [Google H5 Ad Tutorial (Start)][tutorial-template-start] and add the ad SDK library and functionality  bit by bit.
+For the tutorial we are going to fork the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project and add the ad SDK library and functionality bit by bit.
 
 The end result will look like this where we can call the interstitial and rewarded ads via button clicks and the refresh button will be used to check if the rewarded ads can be shown (more on this later).
 
