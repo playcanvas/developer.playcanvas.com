@@ -209,7 +209,7 @@ Here, we check if the Google SDK is ready first before calling `adBreak` which i
 
 As you can see, we use our helper functions `onBeforeAd` and `onAfterAd` in the callbacks to handle the common areas to 'pause' the game before the ad 'resume' afterwards as covered before. You may want to add extra custom logic here for your own game if there are specific areas in your game that you would want to handle.
 
-Now lets see it in action
+Now lets see it in action!
 
 ![][tutorial-interstitial-ad]
 
