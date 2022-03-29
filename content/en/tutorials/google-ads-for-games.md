@@ -1,5 +1,5 @@
 ---
-title: Google Ads to monetize your Game
+title: Google Ads to Monetize your Game
 layout: tutorial-page.hbs
 tags: scripts, monetization, games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889095/DE8018-image-75.jpg
@@ -14,11 +14,11 @@ Links for this tutorial:
 
 ## Introduction
 
-This tutorial will show you how to integrate Ads from Google AdSense into your games and help monetize.
+This tutorial will show you how to integrate Ads from Google AdSense into your games for the purpose of monetization.
 
 The Ads come in two main forms:
 
-Interstitial Ads that can appear between sessions of play such as going from game over back to the main menu (think of them as the ad breaks on TV shows)
+Interstitial Ads that can appear between sessions of play such as going from 'game over' back to the main menu. Think of them as the ad breaks on TV shows.
 
 In our [Flappy Bird example][flappy-bird-ads-demo], we have the ads show after the player dies and return to the main menu to play again.
 
@@ -30,7 +30,7 @@ In our example, we use rewarded ads to allow the user to continue after dying wh
 
 ![][flappy-bird-demo-rewarded-ad]
 
-For the tutorial we are going to fork the [Google H5 Ad Tutorial (Start)][tutorial-template-start] and add the ad SDK library and functionality  bit by bit.
+For the tutorial we are going to fork the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project and add the ad SDK library and functionality bit by bit.
 
 The end result will look like this where we can call the interstitial and rewarded ads via button clicks and the refresh button will be used to check if the rewarded ads can be shown (more on this later).
 
@@ -40,7 +40,7 @@ The end result will look like this where we can call the interstitial and reward
 
 Go to the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project dashboard page and click on 'fork' and let's take a look at the project.
 
-This is a simple project where it's ready for us to add the button click callbacks to show the ads in the `ui-controller.js`
+This is a simple project where it's ready for us to add the button click callbacks to show the ads in the `ui-controller.js` script:
 
 ```
 // ...
@@ -71,7 +71,7 @@ UiController.prototype.initialize = function() {
 };
 ```
 
-First step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the [Flappy Bird project][flappy-bird-ads-demo].
+The first step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the [Flappy Bird project][flappy-bird-ads-demo].
 
 ![][copy-afg-folder]
 
@@ -203,13 +203,13 @@ this.interstitialAdButtonEntity.button.on('click', function(e) {
 Here, we check if the Google SDK is ready first before calling `adBreak` which is the function exposed by the Google SDK itself. More documentation and options can be found on [their site][adbreak-docs]. For the example, we will use:
 
 - `type` which has to be one on these types from the Google SDK documentation
-- `name` which can be any name we give and is used for reporting in AdSense
+- `name` which can be any name we want and is used for reporting in AdSense
 - `beforeAd` which is the callback to execute code before the ad is shown
-- `adBreakDone` which is the callback that is called after the ads is shown if even if the ad didn't show for any reason
+- `adBreakDone` which is the callback that is called after the ad is shown (even if the ad didn't show for some reason)
 
-As you can see we use our helper functions `onBeforeAd` and `onAfterAd` in the callbacks to handle the common areas to 'pause' the game before the ad 'resume' afterwards as covered before. You may want to add extra custom logic here for your own game if there are specific areas in your game that you would want to handle.
+As you can see, we use our helper functions `onBeforeAd` and `onAfterAd` in the callbacks to handle the common areas to 'pause' the game before the ad 'resume' afterwards as covered before. You may want to add extra custom logic here for your own game if there are specific areas in your game that you would want to handle.
 
-Now lets see it in action
+Now lets see it in action!
 
 ![][tutorial-interstitial-ad]
 
