@@ -205,7 +205,7 @@ Here, we check if the Google SDK is ready first before calling `adBreak` which i
 - `type` which has to be one on these types from the Google SDK documentation
 - `name` which can be any name we give and is used for reporting in AdSense
 - `beforeAd` which is the callback to execute code before the ad is shown
-- `adBreakDone` which is the callback that is called after the ads is shown if even if the ad didn't show for any reason
+- `adBreakDone` which is the callback that is called after the ad is shown (even if the ad didn't show for some reason)
 
 As you can see we use our helper functions `onBeforeAd` and `onAfterAd` in the callbacks to handle the common areas to 'pause' the game before the ad 'resume' afterwards as covered before. You may want to add extra custom logic here for your own game if there are specific areas in your game that you would want to handle.
 
