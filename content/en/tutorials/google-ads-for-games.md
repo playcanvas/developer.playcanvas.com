@@ -8,9 +8,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/8890
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K2WWSnfJk4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Links for this tutorial:
-- Flappy Bird Demo
-- Tutorial template project
-- Google AdSense Documentation
+- [Flappy Bird Demo][flappy-bird-ads-demo]
+- [Tutorial template project][tutorial-template-start]
+- [Google AdSense Documentation][google-afg-docs]
 
 ## Introduction
 
@@ -20,7 +20,7 @@ The Ads come in two main forms:
 
 Interstitial Ads that can appear between sessions of play such as going from game over back to the main menu (think of them as the ad breaks on TV shows)
 
-In our Flappy Bird example, we have the ads show after the player dies and return to the main menu to play again.
+In our [Flappy Bird example][flappy-bird-ads-demo], we have the ads show after the player dies and return to the main menu to play again.
 
 ![][flappy-bird-demo-interstitial-ad]
 
@@ -30,7 +30,7 @@ In our example, we use rewarded ads to allow the user to continue after dying wh
 
 ![][flappy-bird-demo-rewarded-ad]
 
-For the tutorial we are going to fork the Google H5 Ad Tutorial (Start) and add the ad SDK library and functionality  bit by bit.
+For the tutorial we are going to fork the [Google H5 Ad Tutorial (Start)][tutorial-template-start] and add the ad SDK library and functionality  bit by bit.
 
 The end result will look like this where we can call the interstitial and rewarded ads via button clicks and the refresh button will be used to check if the rewarded ads can be shown (more on this later).
 
@@ -38,7 +38,7 @@ The end result will look like this where we can call the interstitial and reward
 
 ## Setting up
 
-Go to the Google H5 Ad Tutorial (Start) project dashboard page and click on 'fork' and let's take a look at the project.
+Go to the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project dashboard page and click on 'fork' and let's take a look at the project.
 
 This is a simple project where it's ready for us to add the button click callbacks to show the ads in the `ui-controller.js`
 
@@ -71,7 +71,7 @@ UiController.prototype.initialize = function() {
 };
 ```
 
-First step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the Flappy Bird project.
+First step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the [Flappy Bird project][flappy-bird-ads-demo].
 
 ![][copy-afg-folder]
 
@@ -358,12 +358,12 @@ You can find the [completed project here][tutorial-template-finished] and furthe
 
 <div class="alert alert-info">Important: For the tutorial, we used test mode so we didn't show any actual ads. When you disable test mode to use for production, please ensure that you comply with any privacy/cookies policy for the countries you release in including GDPR. This usually means implementing some form of cookie consent.</div>
 
-[flappy-bird-demo-interstitial-ad]: /images/tutorials/google-afg/google-afg/flappy-bird-demo-interstitial-ad.gif
-[flappy-bird-demo-rewarded-ad]: /images/tutorials/google-afg/google-afg/flappy-bird-demo-rewarded-ad.gif
-[tutorial-interstitial-ad]: /images/tutorials/google-afg/google-afg/tutorial-interstitial-ad.gif
-[tutorial-rewarded-ad]: /images/tutorials/google-afg/google-afg/tutorial-rewarded-ad.gif
-[copy-afg-folder]: /images/tutorials/google-afg/google-afg/copy-afg-folder.gif
-[paste-afg-folder]: /images/tutorials/google-afg/google-afg/paste-afg-folder.gif
+[flappy-bird-demo-interstitial-ad]: /images/tutorials/google-afg/flappy-bird-demo-interstitial-ad.gif
+[flappy-bird-demo-rewarded-ad]: /images/tutorials/google-afg/flappy-bird-demo-rewarded-ad.gif
+[tutorial-interstitial-ad]: /images/tutorials/google-afg/tutorial-interstitial-ad.gif
+[tutorial-rewarded-ad]: /images/tutorials/google-afg/tutorial-rewarded-ad.gif
+[copy-afg-folder]: /images/tutorials/google-afg/copy-afg-folder.gif
+[paste-afg-folder]: /images/tutorials/google-afg/paste-afg-folder.gif
 
 [flappy-bird-ads-demo]: https://playcanvas.com/project/877568/overview/google-h5-ads-demo
 [tutorial-template-start]: https://playcanvas.com/project/889095/overview/google-h5-ad-tutorial-start
