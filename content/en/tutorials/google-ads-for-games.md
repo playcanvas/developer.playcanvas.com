@@ -14,7 +14,7 @@ Links for this tutorial:
 
 ## Introduction
 
-This tutorial will show you how to integrate Ads from Google AdSense into your games and help monetize.
+This tutorial will show you how to integrate Ads from Google AdSense into your games for the purpose of monetization.
 
 The Ads come in two main forms:
 
