@@ -1,5 +1,5 @@
 ---
-title: Google Ads to monetize your Game
+title: Google Ads to Monetize your Game
 layout: tutorial-page.hbs
 tags: scripts, monetization, games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889095/DE8018-image-75.jpg
