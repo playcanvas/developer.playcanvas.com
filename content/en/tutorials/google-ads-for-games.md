@@ -40,7 +40,7 @@ The end result will look like this where we can call the interstitial and reward
 
 Go to the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project dashboard page and click on 'fork' and let's take a look at the project.
 
-This is a simple project where it's ready for us to add the button click callbacks to show the ads in the `ui-controller.js`
+This is a simple project where it's ready for us to add the button click callbacks to show the ads in the `ui-controller.js` script:
 
 ```
 // ...
