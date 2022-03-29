@@ -71,7 +71,7 @@ UiController.prototype.initialize = function() {
 };
 ```
 
-First step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the [Flappy Bird project][flappy-bird-ads-demo].
+The first step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the [Flappy Bird project][flappy-bird-ads-demo].
 
 ![][copy-afg-folder]
 
