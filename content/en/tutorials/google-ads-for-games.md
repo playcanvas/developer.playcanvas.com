@@ -18,7 +18,7 @@ This tutorial will show you how to integrate Ads from Google AdSense into your g
 
 The Ads come in two main forms:
 
-Interstitial Ads that can appear between sessions of play such as going from game over back to the main menu (think of them as the ad breaks on TV shows)
+Interstitial Ads that can appear between sessions of play such as going from 'game over' back to the main menu. Think of them as the ad breaks on TV shows.
 
 In our [Flappy Bird example][flappy-bird-ads-demo], we have the ads show after the player dies and return to the main menu to play again.
 
