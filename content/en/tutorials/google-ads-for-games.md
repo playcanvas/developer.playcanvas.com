@@ -1,5 +1,5 @@
 ---
-title: H5 Games Ads Beta Monetization
+title: Google H5 Ads Beta Monetization
 layout: tutorial-page.hbs
 tags: scripts, monetization, games
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889095/DE8018-image-75.jpg
@@ -75,7 +75,7 @@ UiController.prototype.initialize = function() {
 };
 ```
 
-The first step is to add the Google SDK integration files which we can do by copying the folder 'Adsense for Games' from the [Flappy Bird project][flappy-bird-ads-demo].
+The first step is to add the Google SDK integration files which we can do by copying the folder 'Google H5 Games Ads' from the [Flappy Bird project][flappy-bird-ads-demo].
 
 ![][copy-afg-folder]
 
@@ -93,7 +93,7 @@ Let's take a look inside:
 // https://developers.google.com/ad-placement/docs/example
 (function() {
     var script = document.createElement('script');
-    script.setAttribute('data-ad-client', 'ca-pub-XXXXXXXXX');
+    script.setAttribute('crossorigin', 'anonymous');
 
     // Comment out to disable test mode
     script.setAttribute('data-adbreak-test', 'on');
@@ -106,7 +106,7 @@ Let's take a look inside:
     // https://developers.google.com/ad-placement/docs/advanced-reporting
     // script.setAttribute('data-ad-channel', 'XXXXXX');
 
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2682356268914970';
     document.head.appendChild(script);
 })();
 ```
