@@ -2,10 +2,8 @@
 title: Google H5 Ads Beta Monetization
 layout: tutorial-page.hbs
 tags: scripts, monetization, games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889095/DE8018-image-75.jpg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889020/CDC848-image-75.jpg
 ---
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K2WWSnfJk4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Links for this tutorial:
 - [Flappy Bird Demo][flappy-bird-ads-demo]
