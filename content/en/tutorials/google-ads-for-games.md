@@ -104,7 +104,7 @@ Let's take a look inside:
     // https://developers.google.com/ad-placement/docs/advanced-reporting
     // script.setAttribute('data-ad-channel', 'XXXXXX');
 
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2682356268914970';
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXX';
     document.head.appendChild(script);
 })();
 ```
