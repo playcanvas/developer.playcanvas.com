@@ -196,8 +196,8 @@ this.interstitialAdButtonEntity.button.on('click', function(e) {
         afg.adBreak({
             type: 'start',
             name: 'test-interstitial',
-            beforeAd: () => { afg.onBeforeAd(); },
-            adBreakDone: () => { afg.onAfterAd(); onRefresh(); }
+            beforeAd: function() { afg.onBeforeAd(); }.bind(this),
+            adBreakDone: function() { afg.onAfterAd(); onRefresh(); }.bind(this)
         });
     }
 }, this);
@@ -256,19 +256,19 @@ app.on('game:gameover', function () {
         afg.adBreak({
             type: 'reward',
             name: 'play-on',
-            beforeReward: (showAdFn) => {
+            beforeReward: function(showAdFn) {
                 this.showAdFn = showAdFn;
                 this.showAdButtonContainerEntity.enabled = true;
-            },
-            adViewed: () => {
+            }.bind(this),
+            adViewed: function() {
                 afg.onAfterAd();
                 app.fire('game:getready', this.score);
-            },
-            adDismissed: () => {
+            }.bind(this),
+            adDismissed: function() {
                 afg.onAfterAd();
                 app.fire('game:menu', true);
-            },
-            adBreakDone: (placementInfo) => { }
+            }.bind(this),
+            adBreakDone: function(placementInfo) { }.bind(this)
         });
     }
 
@@ -302,22 +302,22 @@ var onRefresh = function () {
         afg.adBreak({
             type: 'reward',
             name: 'test-reward',
-            beforeReward: (showAdFn) => {
+            beforeReward: function(showAdFn) {
                 this._showRewardAdFn = showAdFn;
                 this.rewardedAdButtonEntity.button.active = true;
-            },
-            adViewed: () => {
+            }.bind(this),
+            adViewed: function() {
                 afg.onAfterAd();
                 this.rewardedGivenPanelEntity.enabled = true;
                 this.rewardedAdButtonEntity.button.active = false;
                 this._showRewardAdFn = null;
-            },
-            adDismissed: () => {
+            }.bind(this),
+            adDismissed: function() {
                 afg.onAfterAd();
                 this.rewardedAdButtonEntity.button.active = false;
                 this._showRewardAdFn = null;
-            },
-            adBreakDone: (placementInfo) => { }
+            }.bind(this),
+            adBreakDone: function(placementInfo) { }.bind(this)
         });
     }
 }.bind(this);
@@ -353,6 +353,80 @@ First we check that we have the function from the SDK to show the ad first and i
 Let's see it in action:
 
 ![][tutorial-rewarded-ad]
+
+The completed `ui-controller.js` file should look like this:
+
+```
+var UiController = pc.createScript('uiController');
+UiController.attributes.add('refreshButtonEntity', {type: 'entity', title: 'Refresh Button Entity'});
+UiController.attributes.add('interstitialAdButtonEntity', {type: 'entity', title: 'Interstitial Ad Button Entity'});
+UiController.attributes.add('rewardedAdButtonEntity', {type: 'entity', title: 'Rewarded Ad Button Entity'});
+UiController.attributes.add('okRewardButtonEntity', {type: 'entity', title: 'OK Rewarded Button Entity'});
+UiController.attributes.add('rewardedGivenPanelEntity', {type: 'entity', title: 'Rewarded Given Entity'});
+
+
+// initialize code called once per entity
+UiController.prototype.initialize = function() {
+    this._showRewardAdFn = null;
+
+    this.rewardedGivenPanelEntity.enabled = false;
+    this.rewardedAdButtonEntity.button.active = false;
+
+    var onRefresh = function () {
+        this.rewardedAdButtonEntity.button.active = false;
+
+        // Check if rewarded ad is available to view
+        if (afg.ready) {
+            afg.adBreak({
+                type: 'reward',
+                name: 'test-reward',
+                beforeReward: function(showAdFn) {
+                    this._showRewardAdFn = showAdFn;
+                    this.rewardedAdButtonEntity.button.active = true;
+                }.bind(this),
+                adViewed: function() {
+                    afg.onAfterAd();
+                    this.rewardedGivenPanelEntity.enabled = true;
+                    this.rewardedAdButtonEntity.button.active = false;
+                    this._showRewardAdFn = null;
+                }.bind(this),
+                adDismissed: function() {
+                    afg.onAfterAd();
+                    this.rewardedAdButtonEntity.button.active = false;
+                    this._showRewardAdFn = null;
+                }.bind(this),
+                adBreakDone: function(placementInfo) { }.bind(this)
+            });
+        }
+    }.bind(this);
+
+    this.refreshButtonEntity.button.on('click', function (e) {
+        onRefresh();
+    }, this);
+
+    this.interstitialAdButtonEntity.button.on('click', function(e) {
+        if (afg.ready) {
+            afg.adBreak({
+                type: 'start',
+                name: 'test-interstitial',
+                beforeAd: function() { afg.onBeforeAd(); }.bind(this),
+                adBreakDone: function() { afg.onAfterAd(); onRefresh(); }.bind(this)
+            });
+        }
+    }, this);
+
+    this.rewardedAdButtonEntity.button.on('click', function (e) {
+        if (this._showRewardAdFn) {
+            afg.onBeforeAd();
+            this._showRewardAdFn();
+        }
+    }, this);
+
+    this.okRewardButtonEntity.button.on('click', function (e) {
+        this.rewardedGivenPanelEntity.enabled = false;
+    }, this);
+};
+```
 
 ## Wrapping up
 
