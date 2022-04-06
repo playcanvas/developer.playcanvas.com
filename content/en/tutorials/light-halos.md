@@ -5,7 +5,7 @@ tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
+<iframe src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
 
 Find out more by forking the [full project][4].
 

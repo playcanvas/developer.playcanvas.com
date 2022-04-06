@@ -75,7 +75,7 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 ## Autodesk 3D Studio Max
 
-### Materials
+### Max Materials
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
@@ -141,7 +141,7 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 ## Autodesk Maya
 
-### Materials
+### Maya Materials
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 

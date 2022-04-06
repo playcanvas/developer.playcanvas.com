@@ -14,28 +14,38 @@ If you've got other suggestions for this page. Then let us know on the [forum][1
 
 Asset marketplaces are online libraries of content that you can download, either for free or for a fee, and add to your PlayCanvas game.
 
-<table class="table table-striped table-bordered">
-    <tr><th>Provider</th><th>2D Art</th><th>3D Art</th><th>Audio</th></tr>
-    <tr><td><a href="https://www.3dmodels-textures.com/">3D Models Textures</a></td><td></td><td>&#x2713;</td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://www.blendswap.com/">BlendSwap</a></td><td></td><td>&#x2713;</td><td></td></tr>
-    <tr><td><a href="https://www.cgtrader.com/">CGTrader</a></td><td></td><td>&#x2713;</td><td></td></tr>
-    <tr><td><a href="https://www.gamedevmarket.net?ally=O0I9alFp">Game Dev Market</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://gamesounds.xyz/">GameSounds.xyz</a></td><td></td><td></td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://kenney.nl/">Kenney</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://www.mixamo.com/">Mixamo</a></td><td></td><td>&#x2713;</td><td></td></tr>
-    <tr><td><a href="https://www.playonloop.com/music-loops-category/videogame/">PlayOnLoop</a></td><td></td><td></td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://opengameart.org/">Open Game Art</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://soundbible.com/">Sound Bible</a></td><td></td><td></td><td>&#x2713;</td></tr>
-    <tr><td><a href="https://www.turbosquid.com/">Turbosquid</a></td><td>&#x2713;</td><td>&#x2713;</td><td>&#x2713;</td></tr>
-</table>
+| Provider                | 2D Art   | 3D Art   | Audio    |
+|-------------------------|----------|----------|----------|
+| [3D Models Textures][2] |          | &#x2713; | &#x2713; |
+| [BlendSwap][3]          |          | &#x2713; |          |
+| [CGTrader][4]           |          | &#x2713; |          |
+| [Game Dev Market][5]    | &#x2713; | &#x2713; | &#x2713; |
+| [GameSounds.xyz][6]     |          |          | &#x2713; |
+| [Kenney][7]             | &#x2713; | &#x2713; | &#x2713; |
+| [Mixamo][8]             |          | &#x2713; |          |
+| [PlayOnLoop][9]         |          |          | &#x2713; |
+| [Open Game Art][10]     | &#x2713; | &#x2713; | &#x2713; |
+| [Sound Bible][11]       |          |          | &#x2713; |
+| [Turbosquid][12]        | &#x2713; | &#x2713; | &#x2713; |
 
 ## Procedural Generation Tools
 
 There are tools available that can generate game assets procedurally. Here are some good examples:
 
-* [Sound FX Generator][2]
-* [Spacescape Skybox Generator][3]
+* [Sound FX Generator][13]
+* [Spacescape Skybox Generator][14]
 
 [1]: https://forum.playcanvas.com/
-[2]: https://www.bfxr.net/
-[3]: http://alexcpeterson.com/spacescape
+[2]: https://www.3dmodels-textures.com/
+[3]: https://www.blendswap.com/
+[4]: https://www.cgtrader.com/
+[5]: https://www.gamedevmarket.net?ally=O0I9alFp
+[6]: https://gamesounds.xyz/
+[7]: https://kenney.nl/
+[8]: https://www.mixamo.com/
+[9]: https://www.playonloop.com/music-loops-category/videogame/
+[10]: https://opengameart.org/
+[11]: https://soundbible.com/
+[12]: https://www.turbosquid.com/
+[13]: https://www.bfxr.net/
+[14]: http://alexcpeterson.com/spacescape

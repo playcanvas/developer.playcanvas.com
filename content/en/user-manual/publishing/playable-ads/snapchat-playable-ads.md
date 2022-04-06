@@ -12,13 +12,11 @@ The external assets will need to be in a folder that is uniquely named (which th
 
 There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
 
-
 ## Example project
 
 The [Cube Jump project][5] is ready to be exported to the Snapchat Playable Ad format and the expected HTML output can be found [here][6].
 
-<iframe src="https://playcanv.as/e/p/X1nwbUGA/"></iframe>
-
+<iframe src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
 
 ## File size tips
 
@@ -37,7 +35,6 @@ The Snapchat ad network requires the call to action function to be in the `index
 The tool wraps this logic in a global function: `snapchatCta();` that should be called in the playable ad project.
 
 * Have you called the function `snapchatCta();` as part of the call to action callback?
-
 
 ## How to export
 

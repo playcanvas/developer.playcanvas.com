@@ -61,23 +61,12 @@ The **Shadows: Cast Lightmap** option determines if the model is casting shadows
 
 As you see there several combinations of light settings that can be used. These combinations all have a use-case and by using lights with different combinations you can balance high-quality visuals with performance.
 
-<table>
-<tr>
-    <th>Bake</th><th>Affect Non-Baked</th><th>Affect Baked</th><th style="width: 50%;">Description</th>
-</tr>
-<tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">false</td><td>This is the default dynamic light. Affects all non-lightmapped models.</td>
-</tr>
-<tr>
-    <td class="centered">true</td><td class="centered">false</td><td class="centered">false</td><td>This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting.</td>
-</tr>
-<tr>
-    <td class="centered">true</td><td class="centered">true</td><td class="centered">false</td><td>This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character.</td>
-</tr>
-<tr>
-    <td class="centered">false</td><td class="centered">true</td><td class="centered">true</td><td>This light is a dynamic light which will affect both lightmapped and non-lightmapped models.</td>
-</tr>
-</table>
+| Bake  | Affect NonBaked | Affect Baked | Description |
+|-------|-----------------|--------------|-------------|
+| false | true            | false        | This is the default dynamic light. Affects all non-lightmapped models. |
+| true  | false           | false        | This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environmental lights could use this setting. |
+| true  | true            | false        | This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character. |
+| false | true            | true         | This light is a dynamic light which will affect both lightmapped and non-lightmapped models. |
 
 ## Lightmapping Settings
 

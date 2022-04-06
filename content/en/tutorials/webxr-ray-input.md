@@ -5,7 +5,7 @@ tags: vr, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg
 ---
 
-<iframe allow="xr-spatial-tracking" src="https://playcanv.as/p/TAYVQgU2/"></iframe>
+<iframe src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="xr-spatial-tracking"></iframe>
 
 *Click the VR/AR button if you have a VR/AR compatible device/headset.*
 

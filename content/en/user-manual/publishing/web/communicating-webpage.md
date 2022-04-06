@@ -91,7 +91,7 @@ When you download your PlayCanvas application for self-hosting. This is the inde
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>
@@ -123,7 +123,7 @@ For example:
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>

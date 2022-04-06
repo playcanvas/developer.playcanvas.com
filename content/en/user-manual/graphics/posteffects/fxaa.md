@@ -8,8 +8,11 @@ Fast Approximate Anti-Aliasing (FXAA) is an anti-aliasing algorithm created by N
 
 Here is an image without the effect:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+![Image without effect][1]
 
-and the same image with the effect applied:
+And the same image with the effect applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_fxaa.png"></img>
+![Image with effect][1]
+
+[1]: /images/platform/posteffects/without_effects.png
+[2]: /images/platform/posteffects/with_fxaa.png

@@ -12,18 +12,15 @@ See the [Layout Groups][0] section for more details.
 
 ## Properties
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>Property</th><th>Description</th></tr>
-    <tr><td>Min Width</td><td>Set the minimum width that the element can be rendered at.</td></tr>
-    <tr><td>Min Height</td><td>Set the minimum height that the element can be rendered at.</td></tr>
-    <tr><td>Max Width</td><td>Set the maximum width that the element can be rendered at.</td></tr>
-    <tr><td>Max Height</td><td>Set the maximum height that the element can be rendered at.</td></tr>
-    <tr><td>Fit Width Proportion</td><td>The proportion of additional space that the element will take up if the layout group is set to stretch or shrink.</td></tr>
-    <tr><td>Fit Height Proportion</td><td>The proportion of additional space that the element will take up if the layout group is set to stretch or shrink.</td></tr>
-    <tr><td>Exclude from layout</td><td>Completely ignore this element when calculating the layout.</td></tr>
-</table>
+| Property              | Description |
+|-----------------------|-------------|
+| Min Width             | Set the minimum width that the element can be rendered at. |
+| Min Height            | Set the minimum height that the element can be rendered at. |
+| Max Width             | Set the maximum width that the element can be rendered at. |
+| Max Height            | Set the maximum height that the element can be rendered at. |
+| Fit Width Proportion  | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
+| Fit Height Proportion | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
+| Exclude from Layout   | Completely ignore this element when calculating the layout. |
 
 ## Scripting Interface
 

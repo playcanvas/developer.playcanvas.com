@@ -12,7 +12,7 @@ Find more fantastic games and experiences made by our users in the [PlayCanvas A
 
 Links to the content showcased can be found on the [blog post][2021-blog-post].
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FrUUrVRpbzg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FrUUrVRpbzg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [awesome-playcanvas]: https://github.com/playcanvas/awesome-playcanvas
 [2021-blog-post]: https://blog.playcanvas.com/playcanvas-showcase-2021/

@@ -5,7 +5,7 @@ tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501973/ED1B35-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/jpRiV53D/"></iframe>
+<iframe src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons"></iframe>
 
 *Simple buttons using Element and Button components. See the [full scene][1].*
 

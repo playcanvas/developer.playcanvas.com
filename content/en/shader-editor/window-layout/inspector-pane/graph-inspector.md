@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 1
 ---
 
-<img src="/images/shader-editor/inspector-pane-graph.png" style="float: right; padding: 20px; padding-top: 0px;"></img>
+<img src="/images/shader-editor/inspector-pane-graph.png" style="float: right; padding: 20px; padding-top: 0px;">
 
 The Graph Inspector is where a graph's settings are configured.
 

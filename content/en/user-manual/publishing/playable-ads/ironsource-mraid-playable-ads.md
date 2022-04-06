@@ -17,7 +17,7 @@ There are some limitations to be aware of with the tool which can be found in th
 
 The [Cube Jump project][5] is ready to be exported to the ironSource MRAID Playable Ad format and the expected HTML output can be found [here][6].
 
-<iframe src="https://playcanv.as/e/p/AA9osNyV/"></iframe>
+<iframe src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
 
 
 ## File size tips
@@ -45,7 +45,7 @@ ironSource have a fantastic test tool [here][ironsource-test-tool] which can be 
 
 Check that Testing mode and MRAID are both enabled on the page.
 
-<img src='/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png' width='600px'>
+<img src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600px">
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
@@ -108,13 +108,13 @@ Test locally on your PC by double clicking on the `index.html` to ensure that it
 
 If it plays correctly on your PC, we can test on [ironSource's test tool][ironsource-test-tool] by copying the contents of `index.html` and pasting into MRAID tag area of the test tool.
 
-<img src='/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png' width='600px'>
+<img src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600px">
 
 Click on 'Test Ad' and once it renders, play the ad to reach a CTA button. After pressing the CTA button, the tool should show that all the tests have passed and give you an option to generate a code.
 
 This is used to test on device using their app that is available on both Android and iOS.
 
-<img src='/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png' width='400px'>
+<img src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400px">
 
 ### Final export for ironSource
 
