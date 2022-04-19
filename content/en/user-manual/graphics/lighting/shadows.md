@@ -40,7 +40,7 @@ A screenshot showing four shadow cascades.
 
 ### Distribution of cascades
 
-The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. Value of 0 represents a linear distribution, value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while lower value distributes it to more distant objects.
+The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
 
 ## Tuning Shadows
 
