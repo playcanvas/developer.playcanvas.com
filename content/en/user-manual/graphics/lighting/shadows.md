@@ -33,6 +33,7 @@ The following properties can be used to set up shadow cascades.
 Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
 
 A screenshot showing a single shadow cascade.
+
 ![One cascade][7]
 
 A screenshot showing four shadow cascades.
