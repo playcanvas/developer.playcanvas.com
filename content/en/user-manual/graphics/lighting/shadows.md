@@ -37,6 +37,7 @@ A screenshot showing a single shadow cascade.
 ![One cascade][7]
 
 A screenshot showing four shadow cascades.
+
 ![Four cascades][8]
 
 ### Distribution of cascades
