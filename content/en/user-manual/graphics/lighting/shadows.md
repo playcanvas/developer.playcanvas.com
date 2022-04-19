@@ -26,6 +26,8 @@ When a directional shadow is used over a large area, it often exhibits aliasing,
 
 Shadow cascades help to fix this problem by splitting the camera view frustum along the viewing direction, and a separate shadow map is used for each split. This gives nearby objects one shadow map, and another shadow map captures everything in the distance, and optionally additional shadow maps in between.
 
+Note that the number of shadow cascades has an effect on performance, as each shadow casting mesh might need to be rendered into more than a single shadow map.
+
 The following properties can be used to set up shadow cascades.
 
 ### Number of cascades
