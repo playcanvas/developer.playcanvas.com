@@ -32,9 +32,15 @@ The following properties can be used to set up shadow cascades.
 
 Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
 
+A screenshot showing a single shadow cascade.
+![One cascade][7]
+
+A screenshot showing four shadow cascades.
+![Four cascades][8]
+
 ### Distribution of cascades
 
-The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. Value of 0 represents a linear distribution, value of 1 represents a logarithmic distribution. Larger value increases the resolution of the shadows in the near distance.
+The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. Value of 0 represents a linear distribution, value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while lower value distributes it to more distant objects.
 
 ## Tuning Shadows
 
@@ -83,3 +89,5 @@ Enabling shadows has performance implications:
 [4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
+[7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
+[8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg
