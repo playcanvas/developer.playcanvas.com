@@ -52,6 +52,10 @@ ProgressBar.attributes.add('progressImage', {type: 'entity'});
 ProgressBar.attributes.add('progressImageMaxWidth', {type: 'number'});
 
 ProgressBar.prototype.initialize = function() {
+    // use our own rect object to set the size of 
+    // the progress bar
+    this.imageRect = this.progressImage.element.rect.clone();
+
     // initialize progress to 0
     this.setProgress(0);
     // if true the progress bar will increase
@@ -75,7 +79,8 @@ ProgressBar.prototype.setProgress = function (value) {
     // value as our 0-1 progress.
     // This is so that the fill image will only show the portion
     // of the texture that is visible
-    this.progressImage.element.rect.z = value;
+    this.imageRect.copy(this.progressImage.element.rect);
+    this.imageRect.z = value;
     // force rect update
     this.progressImage.element.rect = this.progressImage.element.rect;
 };
