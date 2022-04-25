@@ -95,13 +95,15 @@ this.entity.element.on('click', function (event) {
 Calling `stopPropagation` will also stop the event from being handled by the other input devices like `pc.Mouse` or `pc.TouchDevice`. So if for example you are handling mouse input using `app.mouse.wasPressed`, you can call `stopPropagation` on the `mousedown` event to prevent `app.mouse.wasPressed` from returning true. For example:
 
 ```javascript
-initialize: function () {
+var InputScript = pc.createScript('inputScript');
+
+InputScript.prototype.initialize = function () {
     this.entity.element.on('mousedown', function (evt) {
         evt.stopPropagation();
     }, this);
 },
 
-update: function (dt) {
+InputScript.prototype.update = function (dt) {
     if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
         // do something when the left button was pressed.
         // this will not be called if the button was pressed on the Element
