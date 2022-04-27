@@ -118,16 +118,16 @@ This includes:
 - disabling/enabling rendering
 
 ```
-(function() {
+(function () {
     var app = pc.Application.getApplication();
 
     window.adsbygoogle = window.adsbygoogle || [];
     var afg = {};
 
-    afg.adBreak = window.adConfig = function(o) {adsbygoogle.push(o);};
+    afg.adBreak = window.adConfig = function (o) { adsbygoogle.push(o); };
     afg.ready = false;
 
-    var onReady = function() {
+    var onReady = function () {
         afg.ready = true;
     };
 
@@ -147,6 +147,8 @@ This includes:
     var _beforeAdTimeScale = null;
     var _beforeAutoRender = null;
 
+    var beforeAdCalled = false;
+
     afg.onBeforeAd = function () {
         // Currently using private API for this. May need to be updated
         // if PlayCanvas engine is updated
@@ -164,19 +166,27 @@ This includes:
         app.systems.sound.volume = 0;
         app.timeScale = 0;
         app.autoRender = false;
+
+        beforeAdCalled = true;
     };
 
     afg.onAfterAd = function () {
-        app.mouse.attach(_mouseTargetElement);
-        app.keyboard.attach(_keyboardTargetElement);
+        // Protect against assigning a null element in case this is called
+        // without onBeforeAd being called
+        if (beforeAdCalled) {
+            app.mouse.attach(_mouseTargetElement);
+            app.keyboard.attach(_keyboardTargetElement);
 
-        if (app.touch) {
-            app.touch.attach(_touchTargetElement);
+            if (app.touch) {
+                app.touch.attach(_touchTargetElement);
+            }
+
+            app.systems.sound.volume = _beforeAdVolume;
+            app.timeScale = _beforeAdTimeScale;
+            app.autoRender = _beforeAutoRender;
         }
 
-        app.systems.sound.volume = _beforeAdVolume;
-        app.timeScale = _beforeAdTimeScale;
-        app.autoRender = _beforeAutoRender;
+        beforeAdCalled = false;
     };
 
     window.afg = afg;
