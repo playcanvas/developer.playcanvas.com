@@ -4,6 +4,8 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
+Find links to the post-processing effect script on the [parent page here][parent-page].
+
 In photography and optics, [vignetting][1] is the reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame.
 
 Here is an image without the effect:
@@ -22,3 +24,4 @@ The built-in vignette effect has the following attributes:
 [1]: https://en.wikipedia.org/wiki/Vignetting
 [2]: /images/platform/posteffects/without_effects.png
 [3]: /images/platform/posteffects/with_vignette.png
+[parent-page]: /user-manual/graphics/posteffects/

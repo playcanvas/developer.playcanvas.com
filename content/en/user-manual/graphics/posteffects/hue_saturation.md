@@ -4,6 +4,8 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
+Find links to the post-processing effect script on the [parent page here][parent-page].
+
 The hue-saturation effect allows you to modify the hue and saturation of the rendered image.
 
 Here is an image without the effect:
@@ -21,3 +23,4 @@ The built-in hue-saturation effect has the following attributes:
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_hue_saturation.png
+[parent-page]: /user-manual/graphics/posteffects/
