@@ -47,6 +47,8 @@ The collision component specifies the physical shape of the body. Note that a ri
 * Capsule
 * Cylinder
 * Mesh
+* Cone
+* [Compound][compound-shapes-doc]
 
 ## Creating a Static Ground
 
@@ -79,7 +81,7 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
@@ -107,3 +109,4 @@ Although you can use the standard entity transformation function with kinematic 
 [9]: /images/user-manual/physics/kinematic-box.gif
 [10]: /en/user-manual/physics/physics-migration/
 [11]: /en/user-manual/assets/wasm-modules/
+[compound-shapes-doc]: /user-manual/physics/compound-shapes/
