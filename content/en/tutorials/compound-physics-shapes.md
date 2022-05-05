@@ -8,5 +8,5 @@ Full documentation for Compound Physics Shapes is now in the [User Manual][docum
 
 <iframe src="https://playcanv.as/p/KXZ5Lsda/" title="Compound Physics Shapes"></iframe>
 
-[documentation-page]: https://playcanvas.com/project/405882
+[documentation-page]: /user-manual/physics/compound-shapes/
 
