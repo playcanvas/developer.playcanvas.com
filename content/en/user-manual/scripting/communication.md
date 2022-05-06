@@ -1,7 +1,7 @@
 ---
 title: Communication
 layout: usermanual-page.hbs
-position: 20
+position: 6
 ---
 
 Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.

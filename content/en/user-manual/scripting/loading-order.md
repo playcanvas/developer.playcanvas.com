@@ -1,7 +1,7 @@
 ---
 title: Loading Order
 layout: usermanual-page.hbs
-position: 30
+position: 7
 ---
 
 Generally all scripts are loaded at the beginning of your application. The loading order is determined by a setting in your project which you can access from the main Editor menu or Scene Settings
