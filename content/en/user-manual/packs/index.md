@@ -9,15 +9,34 @@ Scenes contain:
 * **Scene Hierarchy** which lists the order and structure of all Entities in your scene
 * **Scene Settings** which contains properties about the scene
 
+They are edited using the PlayCanvas Editor.
+
 ![][scene-list-png]
+
+## Scene Hierarchy
 
 The **Scene Hierarchy** is a graph of [Entities][entities] that can have [Components][components] to give these Entities behaviors such as having a mesh to render in the world or to play sound effects. They can also be given custom behavior with [scripts][scripts].
 
-![][scene-hierarchy-png]
+<img src="/images/user-manual/scenes/scene-hierarchy.png" width="400px">
+
+## Scene Settings
+**Scene Settings** contain global rendering and physics information and properties about the scene. These can be edited in the project [settings][project-settings] within the Editor.
+
+The full list of Scene Settings are:
+
+* Physics gravity (1)
+* Global ambient color (2)
+* Skybox (3)
+* Tonemapping (4)
+* Exposure (5)
+* Gamma Correction (6)
+* Fog (7)
+* Lightmap properties (8)
+
+<img src="/images/user-manual/scenes/scene-settings.png" width="500px">
 
 [entities]: /user-manual/packs/scene-hierarchy/entities/
 [components]: /user-manual/packs/scene-hierarchy/components/
 [scripts]: /user-manual/scripting/
-[scene-hierarchy-png]: /images/user-manual/scenes/scene-hierarchy/scene-hierarchy.png
-
 [scene-list-png]: /images/user-manual/scenes/scene-list.png
+[project-settings]: /user-manual/designer/settings/
