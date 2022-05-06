@@ -24,14 +24,14 @@ The **Scene Hierarchy** is a graph of [Entities][entities] that can have [Compon
 
 The full list of Scene Settings are:
 
-* Physics gravity (1)
-* Global ambient color (2)
-* Skybox (3)
-* Tonemapping (4)
-* Exposure (5)
-* Gamma Correction (6)
-* Fog (7)
-* Lightmap properties (8)
+* [Physics gravity][settings-gravity] (1)
+* [Global ambient color][settings-ambient] (2)
+* [Skybox][settings-skybox] (3)
+* [Tonemapping][settings-tonemapping] (4)
+* [Exposure][settings-exposure] (5)
+* [Gamma Correction][settings-gamma] (6)
+* [Fog][settings-fog] (7)
+* [Lightmap properties][settings-lightmap] (8)
 
 <img src="/images/user-manual/scenes/scene-settings.png" width="500px">
 
@@ -40,3 +40,11 @@ The full list of Scene Settings are:
 [scripts]: /user-manual/scripting/
 [scene-list-png]: /images/user-manual/scenes/scene-list.png
 [project-settings]: /user-manual/designer/settings/
+[settings-gravity]: /user-manual/designer/settings/#gravity
+[settings-ambient]: /user-manual/designer/settings/#ambient-color
+[settings-skybox]: /user-manual/designer/settings/#skybox
+[settings-tonemapping]: /user-manual/designer/settings/#tonemapping
+[settings-exposure]: /user-manual/designer/settings/#exposure
+[settings-gamma]: /user-manual/designer/settings/#gamma-correction
+[settings-fog]: /user-manual/designer/settings/#fog
+[settings-lightmap]: /user-manual/designer/settings/#lightmapping
