@@ -109,4 +109,4 @@ Although you can use the standard entity transformation function with kinematic 
 [9]: /images/user-manual/physics/kinematic-box.gif
 [10]: /en/user-manual/physics/physics-migration/
 [11]: /en/user-manual/assets/wasm-modules/
-[compound-shapes-doc]: /user-manual/physics/compound-shapes/
+[12]: /user-manual/physics/compound-shapes/
