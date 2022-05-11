@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-Find links to the post-processing effect script on the [parent page here][parent-page].
+Find links to the post-processing effect script on the [parent page here][3].
 
 The Sepia effect makes the image look like an old photograph.
 
@@ -22,4 +22,4 @@ The built-in sepia effect has the following attributes:
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_sepia.png
-[parent-page]: /user-manual/graphics/posteffects/
+[3]: /user-manual/graphics/posteffects/

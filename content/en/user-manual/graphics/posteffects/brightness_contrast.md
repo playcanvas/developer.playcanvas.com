@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-Find links to the post-processing effect script on the [parent page here][parent-page].
+Find links to the post-processing effect script on the [parent page here][3].
 
 The brightness-contrast effect allows you to modify the brightness and contrast of the rendered image.
 
@@ -23,4 +23,4 @@ The built-in brightness-contrast effect has the following attributes:
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_brightness_contrast.png
-[parent-page]: /user-manual/graphics/posteffects/
+[3]: /user-manual/graphics/posteffects/
