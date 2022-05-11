@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-Find links to the post-processing effect script on the [parent page here][3].
+Find the post-processing effect script on [GitHub repo here][3].
 
 The hue-saturation effect allows you to modify the hue and saturation of the rendered image.
 
@@ -23,4 +23,4 @@ The built-in hue-saturation effect has the following attributes:
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_hue_saturation.png
-[3]: /user-manual/graphics/posteffects/
+[3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-huesaturation.js

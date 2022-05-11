@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-Find links to the post-processing effect script on the [parent page here][4].
+Find the post-processing effect script on [GitHub repo here][4].
 
 [Bloom][1] is a post-processing effect used to reproduce an imaging artifact of real-world cameras. The effect produces fringes (or feathers) of light extending from the borders of bright areas in an image, contributing to the illusion of an extremely bright light overwhelming the camera capturing the scene.
 
@@ -26,4 +26,4 @@ The built-in bloom effect has the following attributes:
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 [2]: /images/platform/posteffects/without_effects.png
 [3]: /images/platform/posteffects/with_bloom.png
-[4]: /user-manual/graphics/posteffects/
+[4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-bloom.js
