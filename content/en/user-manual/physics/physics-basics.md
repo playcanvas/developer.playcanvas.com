@@ -48,7 +48,7 @@ The collision component specifies the physical shape of the body. Note that a ri
 * Cylinder
 * Mesh
 * Cone
-* [Compound][compound-shapes-doc]
+* [12][compound-shapes-doc]
 
 ## Creating a Static Ground
 
