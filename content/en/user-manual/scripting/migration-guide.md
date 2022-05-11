@@ -1,7 +1,7 @@
 ---
 title: Migration Guide
 layout: usermanual-page.hbs
-position: 90
+position: 11
 ---
 
 ## Migrating Legacy Script Projects

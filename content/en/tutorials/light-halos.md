@@ -25,9 +25,11 @@ This texture will form the basis of the glow.
 
 ### Material
 
-![material][2]
+<img src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
 
-The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot. This is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
+
+The **Blend Type** is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
 
 ## Entities
 
@@ -123,7 +125,7 @@ Halo.prototype.update = function(dt) {
 That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
-[2]: /images/tutorials/intermediate/light-halos/material.jpg
+[2]: /images/tutorials/intermediate/light-halos/material.png
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
 [5]: /api/pc.MeshInstance.html
