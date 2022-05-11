@@ -1,7 +1,7 @@
 ---
 title: Updating ammo.js
 layout: usermanual-page.hbs
-position: 6
+position: 7
 ---
 
 ### Introduction
