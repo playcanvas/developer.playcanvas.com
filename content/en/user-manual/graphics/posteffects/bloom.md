@@ -26,4 +26,4 @@ The built-in bloom effect has the following attributes:
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 [2]: /images/platform/posteffects/without_effects.png
 [3]: /images/platform/posteffects/with_bloom.png
-[parent-]: /user-manual/graphics/posteffects/
+[4]: /user-manual/graphics/posteffects/
