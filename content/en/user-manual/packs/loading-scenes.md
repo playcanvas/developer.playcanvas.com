@@ -248,7 +248,7 @@ More information with about asset tags and asset loading can be found on [this p
 
 [Example project][asset-load-for-scene-project] below that loads the assets when loading the scene and unloads when returning the main menu.
 
-<iframe src="https://playcanv.as/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
+<iframe src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes
