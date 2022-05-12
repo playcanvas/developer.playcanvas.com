@@ -68,11 +68,21 @@ For any JavaScript code, please refer to the [PlayCanvas style guide](https://gi
 
 ### Hyperlinks
 
-When writing a link in a Markdown file use the following format:
+When writing a link in a Markdown file use either of the following formats but please do not to mix the formats on the same page:
 
+```
 \[link text\]\[1\]
 
 \[1\]: https://example.com
+```
+
+Or
+
+```
+\[link text\]\[example-page\]
+
+\[example-page\]: https://example.com
+```
 
 The only exception is writing FAQ Markdown files (located in the `faq` folder). For those, use the `\[link text\](url)` format.
 

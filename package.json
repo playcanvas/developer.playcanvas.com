@@ -32,7 +32,7 @@
     "@metalsmith/permalinks": "2.4.0",
     "@playcanvas/eslint-config": "^1.1.1",
     "chokidar-cli": "^3.0.0",
-    "eslint": "^8.13.0",
+    "eslint": "^8.14.0",
     "handlebars": "^4.7.7",
     "html-validate": "^6.7.1",
     "jstransformer-handlebars": "^1.2.0",
@@ -41,7 +41,7 @@
     "metalsmith": "^2.4.2",
     "metalsmith-static": "0.0.5",
     "node-fetch": "^2.6.7",
-    "sass": "^1.50.1",
+    "sass": "^1.51.0",
     "serve": "^13.0.2"
   },
   "scripts": {

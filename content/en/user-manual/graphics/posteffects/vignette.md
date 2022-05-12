@@ -19,6 +19,9 @@ The built-in vignette effect has the following attributes:
 * **Offset**: Controls the offset of the effect.
 * **Darkness**: Controls the darkness of the effect.
 
+Find the post-processing effect script on [GitHub][4].
+
 [1]: https://en.wikipedia.org/wiki/Vignetting
 [2]: /images/platform/posteffects/without_effects.png
 [3]: /images/platform/posteffects/with_vignette.png
+[4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-vignette.js

@@ -20,6 +20,9 @@ The built-in bloom effect has the following attributes:
 * **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
 * **Blur Amount**: Controls the amount of blurring.
 
+Find the post-processing effect script on [GitHub][4].
+
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 [2]: /images/platform/posteffects/without_effects.png
 [3]: /images/platform/posteffects/with_bloom.png
+[4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-bloom.js

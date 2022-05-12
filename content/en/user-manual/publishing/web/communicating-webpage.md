@@ -55,10 +55,12 @@ Embedding a PlayCanvas application in an iframe is a quick and easy way to get y
 
 To communicate between a parent page and an iframe you will need to use the [postMessage][1] javascript API to send data between your page and the PlayCanvas application.
 
-In your host page
+In your host page, use the iframeless URL for the iframe. The default publish link has the build in an iframe to include the social sharing bar at the bottom. This can cause problems with [postMessage][1] as there are now two iframes to communicate through.
+
+If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
 
 ```html
-<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<iframe id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({

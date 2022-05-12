@@ -1,7 +1,7 @@
 ---
 title: Migration Guide
 layout: usermanual-page.hbs
-position: 10
+position: 11
 ---
 
 ## Migrating Legacy Script Projects
@@ -38,7 +38,7 @@ Download the scripts from your legacy script project via the Project Dashboard:
 
 If your legacy project is connected to a GitHub repo, download your scripts from there.
 
-You can now upload the legacy scripts to your new project. 
+You can now upload the legacy scripts to your new project.
 
 ### Step 4 - Update Scripts to Current Format
 
@@ -57,7 +57,7 @@ pc.script.create('myScript', function (app) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
         },
-        
+
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
         }
@@ -138,7 +138,7 @@ if (entities.length) {
     editor.call('selector:set', 'entity', entities);
 } else {
     editor.call('selector:clear');
-}  
+}
 ```
 
 You should see something like the following:

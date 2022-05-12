@@ -1,7 +1,7 @@
 ---
 title: Hot Reloading
 layout: usermanual-page.hbs
-position: 7
+position: 8
 ---
 
 When you are iterating on a complex project it can be frustrating to have to do a full page refresh every time you make a change to a script. Especially if it takes you a long time to get to the point where you are testing your code. That is where hot-swapping of code comes in.

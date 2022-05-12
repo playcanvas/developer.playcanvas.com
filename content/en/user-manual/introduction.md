@@ -73,16 +73,16 @@ PlayCanvas was always designed to be plugin free, running natively in the browse
 
 At the time of writing, the browser requirements are currently as follows:
 
-| Browser       | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
-|---------------|---------|----------|----------|----------|-----------|----------|----------|
-| [Chrome][9]   | 9.0+    | &#x2713; | &#x2713; | &#x2713; | &#x2713;  | &#x2713; | &#x2713; |
-| [Safari][10]  | 8.0+    |          | &#x2713; |          |           |          | &#x2713; |
-| [Firefox][11] | 4.0+    | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; | &#x2713; |
-| [Edge][12]    | 12.0+   | &#x2713; |          |          |           |          |          |
-| [IE][13]      | 11.0+   | &#x2713; |          |          |           |          |          |
-| [Opera][14]   | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
+| Browser                                     | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
+|---------------------------------------------|---------|----------|----------|----------|-----------|----------|----------|
+| [Chrome](https://www.google.com/chrome/)    | 9.0+    | &#x2713; | &#x2713; | &#x2713; | &#x2713;  | &#x2713; | &#x2713; |
+| [Safari](https://www.apple.com/safari/)     | 8.0+    |          | &#x2713; |          |           |          | &#x2713; |
+| [Firefox](https://www.mozilla.org/firefox/) | 4.0+    | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; | &#x2713; |
+| [Edge](https://www.microsoft.com/edge)      | 12.0+   | &#x2713; |          |          |           |          |          |
+| Internet Explorer                           | 11.0+   | &#x2713; |          |          |           |          |          |
+| [Opera](https://www.opera.com/)             | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
 
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][15]. If you see a spinning cube, you are all set!
+If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][9]. If you see a spinning cube, you are all set!
 
 [1]: /images/user-manual/introduction/workflow-assets.jpg
 [2]: /images/user-manual/introduction/workflow-create-scene.jpg
@@ -92,10 +92,4 @@ If you are in doubt as to whether your browser supports WebGL (required to run P
 [6]: /user-manual/assets
 [7]: /user-manual/publishing
 [8]: /user-manual/glossary/#dom
-[9]: https://www.google.com/chrome/
-[10]: https://www.apple.com/safari/
-[11]: https://www.mozilla.org/firefox/
-[12]: https://www.microsoft.com/edge
-[13]: https://www.microsoft.com/en-us/download/internet-explorer.aspx
-[14]: https://www.opera.com/
-[15]: https://get.webgl.org/
+[9]: https://get.webgl.org/
