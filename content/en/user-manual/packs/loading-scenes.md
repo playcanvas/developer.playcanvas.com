@@ -97,9 +97,9 @@ By default, `loadSceneHierarchy` will always load additively and it's up to the 
 
 There are several ways to approach this with pros and cons:
 
-### Destroying all children under the [application root node][application-root-api] before calling `loadSceneHierarchy`
+### Destroying all children under application root node first
 
-This approach has discrete steps of the steps that make it easier to manage where the current loaded scene is destroyed before loading and creation of the new scene.
+This approach has discrete steps that make it easier to manage where the current loaded scene is destroyed before loading and creation of the new scene.
 
 ```
 // Find the Scene Registry Item by the name of the scene
