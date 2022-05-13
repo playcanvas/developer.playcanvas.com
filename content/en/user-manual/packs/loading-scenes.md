@@ -43,7 +43,7 @@ Scenes are separate from [assets][assets] and have different properties and APIs
 Scenes are represented by [Scene Registry Items][sceneregistryitem-api] that are stored in the [Scene Registry][sceneregistry-api] which can be accessed through [Application][application-sceneregistry-api] object. Through the Scene Registry, you can find the Scene Registry Item by the name of the scene in the Editor and use it to load the scene hierarchy or settings.
 
 <div class="alert alert-info">
-The <a href="/api/pc.Application.html#scenes">application root node</a> is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
+The <a href="/api/pc.Application.html#root">application root node</a> is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
 </div>
 
 There are two APIs to load the scene hierarchy and settings:
@@ -265,5 +265,5 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [loadscenedata-api]: /api/pc.SceneRegistry.html#loadSceneData
 [unloadscenedata-api]: /api/pc.SceneRegistry.html#unloadSceneData
 [copy-and-paste-assets]: /user-manual/designer/assets/#copy-and-paste-between-projects
-[asset-tags-loading]: user-manual/assets/preloading-and-streaming/#asset-tag
+[asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tag
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
