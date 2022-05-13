@@ -20,6 +20,7 @@ The **Scene Hierarchy** is a graph of [Entities][entities] that can have [Compon
 <img src="/images/user-manual/scenes/scene-hierarchy.png" width="400px">
 
 ## Scene Settings
+
 **Scene Settings** contain global rendering and physics information and properties about the scene. These can be edited in the project [settings][project-settings] within the Editor.
 
 The full list of Scene Settings are:
