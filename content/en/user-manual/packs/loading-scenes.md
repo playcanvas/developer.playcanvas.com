@@ -90,7 +90,7 @@ Once the network request has been completed, the engine will do the following:
 
 `loadSceneSettings`
 - Applies the loaded scene settings to the application.
-- Calls the callback that was passed in the `loadSceneSettings` function.
+- Calls the [callback][loadsettingscallback-api] that was passed in the `loadSceneSettings` function.
 
 By default, `loadSceneHierarchy` will always load additively and it's up to the developer to remove/destroy the existing loaded scene to 'switch' scenes completely.
 
@@ -198,7 +198,7 @@ This script will expose a global function called `loadScene` that can be called 
 | options           | Object   | An object with the options of what to load from the scene data. |
 | options.hierarchy | boolean  | Default false. Set to true to load the scene hierarchy.         |
 | options.settings  | boolean  | Default false. Set to true to load the scene settings.          |
-| callback          | [LoadHierarchyCallback](/api/pc.LoadHierarchyCallback.html) | Optional. Callback function that is called if there are errors loading the scene and when the scene is loaded successfully.          |
+| callback          | [LoadHierarchyCallback](/api/pc.html#LoadHierarchyCallback) | Optional. Callback function that is called if there are errors loading the scene and when the scene is loaded successfully.          |
 | scope             | Object   | Optional. Object scope to call the callback with.               |
 
 The simplest example usage would be to call the function with the scene name and options on whether to load the scene hierarchy and/or settings:
@@ -259,7 +259,8 @@ More information with about asset tags and asset loading can be found on [this p
 [sceneregistryitem-api]: /api/pc.SceneRegistryItem.html
 [sceneregistry-api]: /api/pc.SceneRegistry.html
 [application-sceneregistry-api]: /api/pc.Application.html#scenes
-[loadhierarchycallback-api]: /api/pc.LoadHierarchyCallback.html
+[loadhierarchycallback-api]: /api/pc.html#LoadHierarchyCallback
+[loadsettingscallback-api]: /api/pc.html#LoadSettingsCallback
 [application-root-api]: /api/pc.Application.html#root
 [loadscenedata-api]: /api/pc.SceneRegistry.html#loadSceneData
 [unloadscenedata-api]: /api/pc.SceneRegistry.html#unloadSceneData
