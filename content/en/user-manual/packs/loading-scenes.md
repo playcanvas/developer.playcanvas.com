@@ -74,7 +74,6 @@ this.app.scenes.loadSceneSettings(sceneItem, function (err) {
         // Scene settings has successfully been loaded
     }
 });
-
 ```
 
 Both `loadSceneHierarchy` and `loadSceneSettings` have similar behavior in how they get the data needed to load the hierarchy or settings.
@@ -150,6 +149,7 @@ However, the old scene will be present in the hierarchy while the new scenes scr
 To help mitigate these potential issues, we have an API that allows separation of loading the scene data from the creation of the scene hierarchy to the scene, [`SceneRegistry.loadSceneData`][loadscenedata-api] and is part of our [recommended practices](#recommended-practices) below.
 
 ### Recommended practices
+
 [`SceneRegistry.loadSceneData`][loadscenedata-api] is an asynchronous function call to load from the network and store the scene data. Once the scene data is stored, `loadSceneHierarchy` and `loadSceneSettings` become synchronous function calls as they no longer need to wait for the scene data from the network.
 
 This allows you load the scene data and once that has been loaded from the network, destroy the old scene hierarchy and load the new scene hierarchy within the same frame. With this flow, you no longer have the potential issues mentioned above when using `loadSceneHierarchy` and `loadSceneSettings` directly.
@@ -198,7 +198,7 @@ This script will expose a global function called `loadScene` that can be called 
 | options           | Object   | An object with the options of what to load from the scene data. |
 | options.hierarchy | boolean  | Default false. Set to true to load the scene hierarchy.         |
 | options.settings  | boolean  | Default false. Set to true to load the scene settings.          |
-| callback          | [pc.callbacks.LoadHierarchy](/api/pc.LoadHierarchyCallback.html) | Optional. Callback function that is called if there are errors loading the scene and when the scene is loaded successfully.          |
+| callback          | [LoadHierarchyCallback](/api/pc.LoadHierarchyCallback.html) | Optional. Callback function that is called if there are errors loading the scene and when the scene is loaded successfully.          |
 | scope             | Object   | Optional. Object scope to call the callback with.               |
 
 The simplest example usage would be to call the function with the scene name and options on whether to load the scene hierarchy and/or settings:
