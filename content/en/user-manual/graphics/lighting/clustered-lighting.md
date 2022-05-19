@@ -7,19 +7,17 @@ position: 6
 Lights are a great way to add realism to your application. However, real time lights can also create significant runtime performance cost, especially when you have large numbers of lights that cast shadows.
 
 Part of the solution to reduce performance costs may involve limiting the amount of lights that affect individual meshes. This is often implemented by finding and using lights that are nearby each object. However, there are multiple disadvantages to this strategy:
+
 - Since each object can use different sets of lights, a custom shader must be compiled to handle them.
 - Large objects need to be split into smaller objects in order for this strategy to be effective.
 - Large numbers of shadow casting lights can cause the shader to run out of the available texture slots used by shadow maps.
 
 To address these issues, PlayCanvas uses the **Clustered Lighting** solution to provide a performant implementation of Omni Lights and Spot Lights. It stores information about the lights in textures and allows the GPU to easily use only the lights that are nearby the shaded fragment. There are multiple advantages to Clustered Lighting:
+
 - Shaders do not need to be recompiled when lights are added or removed from the scene, since the shader can handle multiple lights.
 - Large numbers of lights (including Shadows and Cookies) can be used in the scene, since only the lights nearby each pixel are evaluated.
 
 Note that Directional Lights affect all objects so they do not use the Clustered Lighting solution.
-
-<br/>
-
-
 
 ## Implementation Overview
 
@@ -35,10 +33,6 @@ The following steps provide a basic overview of the Clustered Lighting implement
 5. Shadow Maps and Cookie Textures are all rendered into an atlas, instead of being individual textures, so they are all accessible to the shader at the same time.
 6. During lighting evaluation in the fragment shader, a fragment world space position is used to access a cell of the 3D grid and evaluate the stored lights.
 
-<br/>
-
-
-
 ## Enabling Clustered Lighting
 
 <div class="alert alert-info">
@@ -52,10 +46,6 @@ To enable the Clustered Lighting solution, select the **Clustered Lighting** che
 If you deselect the Clustered Lighting checkbox while the application is running, it will have no effect and will not switch between clustered and non-clustered implementations. All other parameters can be adjusted at runtime and will take effect from the next rendered frame.
 
 To display a debug rendering of the 3D grid and visualize some of the settings, select the **Debug** checkbox.
-
-<br/>
-
-
 
 ## Tuning Clustered Lighting
 
@@ -95,18 +85,14 @@ To understand how an altas is manually split, take an array with two numbers: [2
 
 ![Manual Split][manual-split]
 
-<br/>
-
 The following image shows how the manual atlas split should be specified.
 
 ![Atlas Split 2][atlas-split-2]
 
-<br/>
-
 Other Examples:
+
 - [3, 2] – The first number splits the atlas into 3x3 (9 areas). The second number splits one of these areas into 2x2 (4 areas), for a total of 12 areas.
 - [4] – The atlas is split into 4x4 (16 areas).
-
 
 The main advantage of using manual subdivision is the level of detail that can be achieved. You can set up a fixed amount of sub-textures, which are assigned to the lights by order of their screen-space size. This allows lights that are larger on screen to receive a larger area of the atlas, while smaller lights in the distance use a smaller area of the atlas. If there are more lights than the number of available areas, the smallest screen-space lights will not cast any shadows.
 
@@ -114,17 +100,9 @@ The main advantage of using manual subdivision is the level of detail that can b
 
 All lights that cast shadows use the same shadow filtering technique. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
 
-<br/>
-
-
-
 ## Limitations
 
 Internally, a light index is stored using 8 bits, so the maximum number of visible lights at any frame is 254 (one index is reserved). In the future, there may be an additional option to use 16 bits to store the index and increase the limit.
-
-<br/>
-
-
 
 ## Performance Considerations
 
@@ -132,14 +110,10 @@ Internally, a light index is stored using 8 bits, so the maximum number of visib
 - The **Max Lights Per Cell** should be as small as possible, since this limits the size of the texture used to store the 3D grid, which needs to be updated every frame.
 - If an application using Clustered Lighting **runs slowly** on older mobile devices, consider globally turning off features like Shadows or Cookies.
 
-
-
 [3d-grid]: /images/user-manual/graphics/lighting/lights/3d_grid.png
 [3d-grid-config]: /images/user-manual/graphics/lighting/lights/3d_grid_config.png
 [atlas-split-0]: /images/user-manual/graphics/lighting/lights/atlas_split_0.png
 [atlas-split-2]: /images/user-manual/graphics/lighting/lights/atlas_split_2.png
 [manual-split]: /images/user-manual/graphics/lighting/lights/manual_split.png
 [clustered-lighting-ui]: /images/user-manual/graphics/lighting/lights/clustered_lighting_ui.png
-
 [shadows]: /en/user-manual/graphics/lighting/shadows/#soft-shadows-vs-hard-shadows
-
