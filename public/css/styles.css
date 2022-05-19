@@ -150,7 +150,7 @@
     color: rgba(255, 255, 255, 0.75);
   }
   header a:hover {
-    color: rgb(255, 255, 255);
+    color: white;
     text-decoration: none;
   }
   header .header-title {
@@ -191,7 +191,7 @@
     border-bottom: 2px solid rgba(255, 255, 255, 0.75);
   }
   header ul li.active a {
-    color: rgb(255, 255, 255);
+    color: white;
   }
   header .header-content {
     clear: both;
@@ -199,7 +199,7 @@
     padding: 20px 0px;
   }
   header .header-content h1 {
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 24px;
   }
   header .header-content img {
@@ -311,7 +311,7 @@
   }
   input.search:focus {
     outline: 0;
-    border-color: rgb(255, 255, 255);
+    border-color: white;
   }
 
   nav.regular {
@@ -601,6 +601,13 @@
   }
   .container main a:hover {
     text-decoration: underline;
+  }
+  .container main strong {
+    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   .container main img {
     display: block;
