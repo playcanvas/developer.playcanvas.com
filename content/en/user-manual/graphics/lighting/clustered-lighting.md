@@ -142,3 +142,4 @@ Internally, a light index is stored using 8 bits, so the maximum number of visib
 [clustered-lighting-ui]: /images/user-manual/graphics/lighting/lights/clustered_lighting_ui.png
 
 [shadows]: /en/user-manual/graphics/lighting/shadows/#soft-shadows-vs-hard-shadows
+
