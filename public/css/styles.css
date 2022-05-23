@@ -602,6 +602,13 @@
   .container main a:hover {
     text-decoration: underline;
   }
+  .container main strong {
+    font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   .container main img {
     display: block;
     margin: 0 auto;
