@@ -150,7 +150,7 @@
     color: rgba(255, 255, 255, 0.75);
   }
   header a:hover {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
   }
   header .header-title {
@@ -191,7 +191,7 @@
     border-bottom: 2px solid rgba(255, 255, 255, 0.75);
   }
   header ul li.active a {
-    color: white;
+    color: rgb(255, 255, 255);
   }
   header .header-content {
     clear: both;
@@ -199,7 +199,7 @@
     padding: 20px 0px;
   }
   header .header-content h1 {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 24px;
   }
   header .header-content img {
@@ -311,7 +311,7 @@
   }
   input.search:focus {
     outline: 0;
-    border-color: white;
+    border-color: rgb(255, 255, 255);
   }
 
   nav.regular {
