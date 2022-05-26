@@ -168,6 +168,8 @@ Enable the legacy audio components. Use this only for compatibility with old pro
 
 ## Lightmapping
 
+![Lightmapping Settings][12]
+
 #### Size Multiplier
 
 Scene-wide multiplier applied to all lightmap sizes.
@@ -175,6 +177,44 @@ Scene-wide multiplier applied to all lightmap sizes.
 #### Max Resolution
 
 The maximum texture size available for generated lightmap textures.
+
+#### Mode
+
+Scene-wide mode for lightmap baking, with the following options:
+- **Color Only** – Bakes a single lightmap containing HDR colors.
+- **Color and Direction** – Bakes a second lightmap containing the dominant light direction, allowing for specular lighting. The Color and Direction mode is not compatible with [Soft Directional Light][13] or [Environment Light][14] baking.
+
+#### Filter
+
+Enables bilateral filter on [Runtime Baked Lightmaps][15].
+
+#### Range
+
+A range parameter of the bilateral filter. Larger values apply more widespread blur.
+
+#### Smoothness
+
+A spatial parameter of the bilateral filter. Larger values blur colors that are less similar.
+
+#### Ambient Bake
+
+Enables baking of [Environment Light][14].
+
+#### Samples
+
+The number of samples that are used to bake the ambient light into the lightmap.
+
+#### Sphere Part
+
+The amount of the sphere that is used to bake environment light.
+
+#### Occlusion Brightness
+
+The brightness of the baked ambient occlusion.
+
+#### Occlusion Contrast
+
+The contrast of the baked ambient occlusion.
 
 ## Batch Groups
 
@@ -245,3 +285,7 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [9]: /user-manual/optimization/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
+[12]: /images/user-manual/editor/settings/lightmapping-settings.png
+[13]: /user-manual/graphics/lighting/runtime-lightmaps/#soft-directional-light
+[14]: /user-manual/graphics/lighting/runtime-lightmaps/#baking-an-environment-light
+[15]: /user-manual/graphics/lighting/runtime-lightmaps
