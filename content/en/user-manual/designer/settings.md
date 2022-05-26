@@ -289,3 +289,4 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [13]: /user-manual/graphics/lighting/runtime-lightmaps/#soft-directional-light
 [14]: /user-manual/graphics/lighting/runtime-lightmaps/#baking-an-environment-light
 [15]: /user-manual/graphics/lighting/runtime-lightmaps
+
