@@ -163,3 +163,4 @@ The **Padding** option determines the space between sections when unwrapping occ
 [20]: /images/user-manual/graphics/lighting/lightmapping/lightmap-100-samples.png
 [21]: /images/user-manual/graphics/lighting/lightmapping/lightmap-filtering.png
 [22]: /images/user-manual/graphics/lighting/lightmapping/render-settings.png
+
