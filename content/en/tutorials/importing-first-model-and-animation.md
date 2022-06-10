@@ -45,7 +45,7 @@ The template asset (known as prefabs in other game engines) contains the full En
 
 We can do this multiple ways:
 
-Dragging it into the 3D viewport will add it as a child of the current selected Entity.
+Dragging it into the 3D viewport will add it as a child of the currently selected Entity.
 
 ![][template-add-scene-view-image]
 
