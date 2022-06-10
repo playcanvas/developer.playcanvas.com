@@ -41,7 +41,7 @@ If you are importing FBXs into an existing project, please make sure you have th
 
 ## Adding the model Template to the scene
 
-The template asset (which are known as prefabs in other game engines) contains the full Entity hierarchy model and is used to add the model to the scene.
+The template asset (known as prefabs in other game engines) contains the full Entity hierarchy and is used to add the model to the scene.
 
 We can do this multiple ways:
 
