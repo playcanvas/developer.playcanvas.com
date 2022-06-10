@@ -53,7 +53,7 @@ Dragging it onto an Entity in the hierarchy view will add it as a child of that 
 
 ![][template-add-on-entity-image]
 
-Dragging it into the empty area of the hierarchy view will add it as child of the top most Entity in the scene.
+Dragging it into the empty area of the hierarchy view will add it as child of the topmost Entity in the scene.
 
 ![][template-add-scene-hierarchy-area-image]
 
