@@ -95,7 +95,7 @@ This will create a number of assets which includes the animations. As that's all
 
 ![][delete-animation-files-image]
 
-From here, we can preview the animation by selecting it in the assets panel and in the inspector. We will also need to select a preview asset to apply the animation to. In this case, it will be the template asset created for the model FBX import earlier.
+From here, we can preview the animation by selecting it in the assets panel and in the inspector. We will also need to select a preview asset to apply the animation to. In this case, it will be the template asset created for the model FBX imported earlier.
 
 ![][animation-preview-image]
 
