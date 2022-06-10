@@ -91,7 +91,7 @@ As mentioned earlier, the animations are in a separate FBX so let's import the r
 
 ![][importing-animation-fbx-image]
 
-This will create a number of assets which include the animations. As that's all we need, we can delete the other assets that were created.
+This will create a number of assets which includes the animations. As that's all we need, we can delete the other assets that were created.
 
 ![][delete-animation-files-image]
 
