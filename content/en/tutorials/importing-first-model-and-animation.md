@@ -63,7 +63,7 @@ And finally we have the Template context menu options when right clicking on an 
 
 Now that we have it in the scene, we can see it's untextured. In this case, the textures were not embedded into the FBX file and have been supplied separately.
 
-If they were embedded in the FBX, when we import it would also create texture assets and they would already be assigned to the materials.
+If they were embedded in the FBX, the import process would also create texture assets and assign them to the correct materials.
 
 You can see the texture assets being created here and also the materials with textures assigned to them.
 
