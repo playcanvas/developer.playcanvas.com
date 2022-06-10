@@ -61,7 +61,7 @@ And finally we have the Template context menu options when right clicking on an 
 
 ![][template-add-context-menu-image]
 
-Now that we have it in the scene we can see it's untextured. In this case the textures were not embedded into the FBX file and have been supplied separately.
+Now that we have it in the scene, we can see it's untextured. In this case, the textures were not embedded into the FBX file and have been supplied separately.
 
 If they were embedded in the FBX, when we import it would also create texture assets and they would already be assigned to the materials.
 
