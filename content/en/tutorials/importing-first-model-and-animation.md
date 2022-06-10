@@ -83,7 +83,7 @@ Or we can use the 'edit' button on the material slot and find it in the assets p
 
 ![][material-pick-texture-image]
 
-Fantastic! We now have a fully textured model in the scene, ready to be animated
+Fantastic! We now have a fully textured model in the scene, ready to be animated.
 
 ## Importing the animation FBX
 
