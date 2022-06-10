@@ -71,7 +71,7 @@ You can see the texture assets being created here and also the materials with te
 
 ## Adding the texture to the model
 
-Back to our Kenney Character, let's upload one of the textures from the skins folder and apply that to the material of the model.
+Back to our Kenney Character. Let's upload one of the textures from the skins folder and apply that to the material of the model.
 
 ![][importing-texture-image]
 
