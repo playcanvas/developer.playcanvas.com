@@ -31,7 +31,7 @@ We are interested in the model file to begin with.
 
 Let's open the model folder and drag the FBX file into our project assets panel.
 
-This will import the file into our project and PlayCanvas Editor will create materials, container, render assets, and most importantly a template asset.
+This will import the file into our project and the PlayCanvas Editor will create materials, container, render assets and most importantly, a template asset.
 
 ![][importing-model-fbx-image]
 
