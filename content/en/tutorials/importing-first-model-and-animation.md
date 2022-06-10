@@ -107,7 +107,7 @@ The Anim State Graph asset is created by right clicking in the assets panel and 
 
 ![][create-anim-state-graph-image]
 
-The graph asset can have multiple states, each of which an animation can be assigned and the flow between the states are controlled by transitions with conditions.
+The graph asset can have multiple states and each state can be assigned an animation. The flow between the states are controlled by transitions with conditions.
 
 ![][anim-state-graph-image]
 
