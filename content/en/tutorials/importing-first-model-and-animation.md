@@ -111,7 +111,7 @@ The graph asset can have multiple states and each state can be assigned an anima
 
 ![][anim-state-graph-image]
 
-For the purposes of this tutorial, we will just be focusing on a single state and single animation. More documentation and tutorials for animation can be [found here][animation-documentation].
+For the purposes of this tutorial, we will just be focusing on a single state and single animation. More documentation and tutorials for animation can be found [here][animation-documentation].
 
 To add the graph to our model, we select the template Entity instance in the scene and add an Anim Component in the inspector.
 
