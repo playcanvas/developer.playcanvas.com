@@ -44,6 +44,8 @@ Use [reference style links][https://www.markdownguide.org/basic-syntax/#referenc
 - `<img>` to adjust sizes of images
 - alert style boxes
 
+For `<iframe>` and `<img>`, use `loading="lazy"` attribute to reduce initial page load times and size.
+
 Refer to existing pages to see examples of prior use.
 
 ### Images
