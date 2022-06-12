@@ -60,7 +60,7 @@ In your host page, use the iframeless URL for the iframe. The default publish li
 If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
 
 ```html
-<iframe id="app-frame" src="https://playcanv.as/e/p/example/">
+<iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({

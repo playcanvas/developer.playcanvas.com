@@ -16,7 +16,7 @@ When a source asset is uploaded that needs to be imported. PlayCanvas starts an 
 
 There are a variety of options available to tune the behavior of the import pipeline to suit your needs.
 
-<img src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
 ### Search related assets
 

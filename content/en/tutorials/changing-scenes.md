@@ -7,6 +7,6 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4376
 
 Full documentation for Loading Scenes is now in the [User Manual][documentation-page].
 
-<iframe src="https://playcanv.as/e/p/IP7FtbDj/" title="Changing Scenes"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/IP7FtbDj/" title="Changing Scenes"></iframe>
 
 [documentation-page]: /user-manual/packs/loading-scenes/

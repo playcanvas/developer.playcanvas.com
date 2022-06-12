@@ -12,11 +12,11 @@ PlayCanvas supports importing models with their meshes as a hierarchy of entitie
 
 Open the 'Project Settings'
 
-<img src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
 
 Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
 
-<img src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
 
 ## Importing models
 

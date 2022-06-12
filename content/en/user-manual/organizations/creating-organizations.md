@@ -16,7 +16,7 @@ The first way is to click on NEW ORGANIZATION in the top-right dropdown menu:
 
 This will bring up the following popup:
 
-<img src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
+<img loading="lazy" src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
 
 Enter the name for the Organization and an Organization ID which is a string with only alphanumeric characters and dashes allowed. The default e-mail address is your own but you can change it to a different one.
 
@@ -26,11 +26,11 @@ Click CREATE and that will take you to the [profile][2] page of the Organization
 
 Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][3] page.
 
-<img src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
+<img loading="lazy" src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
 
 This will bring up the following popup:
 
-<img src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
+<img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
 
 Converting your user account into an Organization will mean that you will no longer be able to log in with this user account. For that reason you need to specify an owner for the new Organization.
 

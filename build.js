@@ -14,6 +14,7 @@ const i18n       = require('./lib/i18n/index');
 const i18nout    = require('./lib/i18n-out/index');
 const contents   = require('./lib/contents-json/index');
 const tutorials  = require('./lib/tutorials/index');
+const { render } = require('sass');
 
 let env = null;
 const args = process.argv.slice(2);
@@ -80,6 +81,11 @@ renderer.heading = (text, level) => {
         return `<h${level} id="${id}">${text} <a class="header-anchor font-icon" href="${href}">&#xE368;</a></h${level}>`;
     }
     return `<h${level}>${text}</h${level}>`;
+};
+
+// Add lazy loading attribute to images
+renderer.image = (href, title, text) => {
+    return `<img src="${href}" loading="lazy" alt="${text}">`;
 };
 
 // Store strings requested

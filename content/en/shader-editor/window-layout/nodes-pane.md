@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 2
 ---
 
-<img src="/images/shader-editor/nodes-pane.png" style="float: right; padding: 20px; padding-top: 0px;">
+<img loading="lazy" src="/images/shader-editor/nodes-pane.png" style="float: right; padding: 20px; padding-top: 0px;">
 
 The Nodes Pane lists the built-in nodes available for constructing graphs. Nodes are grouped into sub-sections by category.
 
