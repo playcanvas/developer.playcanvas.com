@@ -6,7 +6,7 @@ position: 1
 
 PlayCanvas supports the [Facebook Playable Ad][1] formats and requirements via an [official external tool on GitHub][2].
 
-<img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" width="185px" style="margin:0px 5px; display:inline;"> <img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" width="185px" style="margin:0px 5px; display:inline;"> <img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" width="185px" style="margin:0px 5px; display:inline;">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" width="185px" style="margin:0px 5px; display:inline;"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" width="185px" style="margin:0px 5px; display:inline;"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" width="185px" style="margin:0px 5px; display:inline;">
 
 The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (uncompressed) ZIP formats via the configuration options. Full specifications for Facebook Playable Ads can be found on their [help centre][3].
 
@@ -17,7 +17,7 @@ There are some limitations to be aware of with the tool which can be found in th
 
 The [Cube Jump project][5] is ready to be exported for the Facebook Playable Ad format and the expected [HTML output can be found here][6].
 
-<iframe src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
 
 
 ## File size tips
@@ -66,13 +66,13 @@ Set the following options in the `config.json` as shown below. This will produce
 
 Follow the steps [here][fb-ad-creation-guide] to create a Facebook ad and at the time where the files for the ad are uploaded, there is an opportunity to test within the manager.
 
-<img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg">
 
 Please ignore the warning about the source may contain an `XMLHttpRequest` as the code path has been removed by this tool.
 
 Facebook also allows testing on device via the ad manager but requires you to publish the ad first. This is a strange limitation by Facebook but is required at the moment.
 
-<img src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-preview-device.jpg">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-preview-device.jpg">
 
 [1]: https://www.facebook.com/business/ads/playable-ad-format
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file

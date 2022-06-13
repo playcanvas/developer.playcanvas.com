@@ -17,7 +17,7 @@ They are edited using the PlayCanvas Editor.
 
 The **Scene Hierarchy** is a graph of [Entities][entities] that can have [Components][components] to give these Entities behaviors such as having a mesh to render in the world or to play sound effects. They can also be given custom behavior with [scripts][scripts].
 
-<img src="/images/user-manual/scenes/scene-hierarchy.png" width="400px">
+<img loading="lazy" src="/images/user-manual/scenes/scene-hierarchy.png" width="400px">
 
 ## Scene Settings
 
@@ -34,7 +34,7 @@ The full list of Scene Settings are:
 * [Fog][settings-fog] (7)
 * [Lightmap properties][settings-lightmap] (8)
 
-<img src="/images/user-manual/scenes/scene-settings.png" width="500px">
+<img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500px">
 
 [entities]: /user-manual/packs/scene-hierarchy/entities/
 [components]: /user-manual/packs/scene-hierarchy/components/

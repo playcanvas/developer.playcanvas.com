@@ -5,7 +5,7 @@ tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
 
 *A progress bar using Element components. See the [full scene][1].*
 

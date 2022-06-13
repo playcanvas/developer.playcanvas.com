@@ -5,7 +5,7 @@ tags: animation,basics
 thumb: /images/tutorials/importing-first-model-and-animation/thumbnail.jpg
 ---
 
-<iframe src="https://www.youtube.com/embed/r0LYQw7laRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://www.youtube.com/embed/r0LYQw7laRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Overview
 

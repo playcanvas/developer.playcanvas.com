@@ -5,7 +5,7 @@ tags: audio
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
 
 *Click on the various buttons to try out different sound effects.*
 
