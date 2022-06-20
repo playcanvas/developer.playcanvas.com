@@ -63,12 +63,12 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to green
+    // If the middle mouse button is pressed, change the cube color to green
     if (event.button === pc.MOUSEBUTTON_MIDDLE) {
         this.entity.render.meshInstances[0].material = this.greenMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to blue
+    // If the right mouse button is pressed, change the cube color to blue
     if (event.button === pc.MOUSEBUTTON_RIGHT) {
         this.entity.render.meshInstances[0].material = this.blueMaterial.resource;
     }
