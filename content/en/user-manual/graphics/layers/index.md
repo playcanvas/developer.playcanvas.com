@@ -50,7 +50,7 @@ PlayCanvas applications are created with a set of default layers. You should lea
 
 ![Default Layers][1]
 
-1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
+1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
 1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][depth-layer].
 1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
 1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
