@@ -37,7 +37,13 @@ this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
 ```
 
+## Soft Particles
+
+Soft paricles are particles that are faded out near their intersections with scene geometry. If soft particles are enabled by using [```depthSoftening```][5], the camera which renders the particles needs to have a [Depth Map][6] rendering enabled.
+
 [1]: /images/user-manual/graphics/particles/particle_system_icon.png
 [2]: /images/user-manual/graphics/particles/particle_system_create.png
 [3]: /images/user-manual/graphics/particles/particle_system_default.gif
 [4]: /user-manual/packs/components/particlesystem
+[5]: /api/pc.ParticleSystemComponent.html#depthSoftening
+[6]: /user-manual/graphics/cameras/depth-layer
