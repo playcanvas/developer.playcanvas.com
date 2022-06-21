@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-Some rendering techniques require access to the depth or the color buffer of the scene for a specific camera. The Depth Layer is a special layer, which can be added to the `layers` property of a camera, to define at which point during the rendering, the depth or the color buffer is captured. The captured buffers can then be used in the following layers of the camera.
+Some rendering techniques require access to the depth or the color buffer of the scene for a specific camera. The Depth Layer is a special layer, which can be added to the `layers` property of a camera, to define at which point during the rendering the depth or the color buffer is captured. The captured buffers can then be used in the following layers of the camera.
 
-Typically, those buffers are captured after all opaque layers are rendered, and can be used in following transparent layers or post-processing.
+Typically, those buffers are captured after all opaque layers are rendered and can be used in following transparent layers or post-processing.
 
-Additionally, to capture these buffers, the capture needs to be enabled on a CameraComponent from the script:
+Additionally, to capture these buffers, the capture needs to be enabled on a CameraComponent from a script:
 
 - [```requestSceneColorMap```][0] to request a color map
 - [```requestSceneDepthMap```][1] to request a depth map
