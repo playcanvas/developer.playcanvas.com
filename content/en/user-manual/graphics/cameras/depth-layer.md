@@ -9,12 +9,14 @@ Some rendering techniques require access to the depth or the color buffer of the
 Typically, those buffers are captured after all opaque layers are rendered, and can be used in following transparent layers or post-processing.
 
 Additionally, to capture these buffers, the capture needs to be enabled on a CameraComponent from the script:
+
 - [```requestSceneColorMap```][0] to request a color map
 - [```requestSceneDepthMap```][1] to request a depth map
 
 ## Buffer access
 
 To access one of these buffers in the shader as a texture, these are the uniform names to be used:
+
 - for the color map: `uSceneColorMap`
 - for the depth map: `uSceneDepthMap`
 
