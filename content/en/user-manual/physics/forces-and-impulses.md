@@ -1,6 +1,7 @@
 ---
 title: Forces and Impulses
 layout: usermanual-page.hbs
+tags: physics,basics
 position: 2
 ---
 
