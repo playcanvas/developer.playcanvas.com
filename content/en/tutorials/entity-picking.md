@@ -1,7 +1,7 @@
 ---
 title: Entity Picking
 layout: tutorial-page.hbs
-tags: raycast
+tags: raycast,basics,physics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg
 ---
 
