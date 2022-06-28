@@ -5,7 +5,7 @@ tags: games,basics,physics,ui
 thumb: /images/tutorials/crash-course/crash-course-thumbnail.jpg
 ---
 
-<iframe loading="lazy" title="Content video" src="https://player.vimeo.com/video/699583177" width="640" height="360" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" id="vimeo-content-player"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <div class="alert alert-info">Phase 3 of this tutorial is still incomplete</div>
 
