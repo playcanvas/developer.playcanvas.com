@@ -21,8 +21,8 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 
 ## Timestamps
 
-| Time    | Description                                        |
-|---------|----------------------------------------------------|
+| Time      | Description                                        |
+|-----------|----------------------------------------------------|
 | `0:00:00` | Introduction                                       |
 | `0:04:44` | About PlayCanvas                                   |
 | `0:12:52` | Let's build something!                             |
