@@ -48,7 +48,7 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 
 * [Presentation slides PDF][presentation-pdf]
 * [Food Run - Complete PlayCanvas project][food-run-complete]
-* [Food Run - Starter PlayCanvas project][food-run-starter]
+* [Food Run - Starter Phase 1 PlayCanvas project][food-run-starter]
 * [Food Run - Starter Phase 2 PlayCanvas project][food-run-phase-2]
 * [Food Run - Starter Phase 3 PlayCanvas project][food-run-phase-3]
 
