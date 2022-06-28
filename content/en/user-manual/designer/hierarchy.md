@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-<img src="/images/user-manual/editor/hierarchy.png" style="float: right; padding: 20px; padding-top: 0px;">
+<img loading="lazy" src="/images/user-manual/editor/hierarchy.png" style="float: right; padding: 20px; padding-top: 0px;">
 
 The Hierarchy panel shows you a tree view of your entire Scene which is made up from a hierarchy of Entities. A Scene will always contain the Root Entity at the top of the tree. All the other Entities you see here on the right have been added by the developer.
 

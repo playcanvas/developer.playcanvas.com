@@ -16,7 +16,7 @@ This is the most common approach that developers take where each scene is a self
 
 [Here is an example][switch-scenes-completely-project] where the user can move to and from the title screen to other levels. (Please note that it's using the recommended practice below for loading scenes).
 
-<iframe src="https://playcanv.as/e/p/Q1gKd1ek/" title="Switching Scenes Completely"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/" title="Switching Scenes Completely"></iframe>
 
 ### Loading scenes additively
 
@@ -28,7 +28,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 [Below is a simplified example][additively-loading-scenes-project] of additively loading scenes where the UI in the top left is the 'main' scene and different scene hierarchies are loaded/destroyed.
 
-<iframe src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
 
 Please note that multiple instances of the scene hierarchy cannot be loaded at once. This is due to the entities having their unique GUIDs assigned in the Editor. When multiple instances of the same scene hierarchy are attempted to be loaded at once, there's a clash of GUIDs which are meant to be unique per entity.
 
@@ -188,7 +188,7 @@ To help make this simpler to work with, we have provided a helper script that ma
 
 In the project example above of [switching scenes][switch-scenes-completely-project], there is a script file called `load-scene-helper.js` which you can [copy and paste][copy-and-paste-assets] into to your own project.
 
-<img src="/images/user-manual/scenes/load-scene-helper-script.png">
+<img loading="lazy" src="/images/user-manual/scenes/load-scene-helper-script.png">
 
 This script will expose a global function called `loadScene` that can be called from any other script to load a scene and has the following API:
 
@@ -248,7 +248,7 @@ More information about asset tags and asset loading can be found on [this page][
 
 The [example project][asset-load-for-scene-project] below loads the assets when loading the scene and unloads when returning the main menu.
 
-<iframe src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes

@@ -5,7 +5,7 @@ tags: posteffects
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 
 *This tutorial uses a custom post effect to create an effect in GLSL*
 

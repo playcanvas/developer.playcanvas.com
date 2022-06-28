@@ -5,7 +5,7 @@ tags: audio,basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
 
 *The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
 

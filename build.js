@@ -82,6 +82,11 @@ renderer.heading = (text, level) => {
     return `<h${level}>${text}</h${level}>`;
 };
 
+// Add lazy loading attribute to images
+renderer.image = (href, title, text) => {
+    return `<img src="${href}" loading="lazy" alt="${text}">`;
+};
+
 // Store strings requested
 const localization = {};
 

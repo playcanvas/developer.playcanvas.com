@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 3
 ---
 
-<img src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;">
+<img loading="lazy" src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;">
 
 The Material Inspector is where a material's settings are configured.
 

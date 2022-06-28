@@ -5,7 +5,7 @@ tags: mouse, input
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 
 *Move the mouse to move the cube around, press the mouse buttons to change the color of the cube*
 
@@ -63,12 +63,12 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to green
+    // If the middle mouse button is pressed, change the cube color to green
     if (event.button === pc.MOUSEBUTTON_MIDDLE) {
         this.entity.render.meshInstances[0].material = this.greenMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to blue
+    // If the right mouse button is pressed, change the cube color to blue
     if (event.button === pc.MOUSEBUTTON_RIGHT) {
         this.entity.render.meshInstances[0].material = this.blueMaterial.resource;
     }

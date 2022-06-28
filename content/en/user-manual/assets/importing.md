@@ -30,14 +30,14 @@ For projects created prior to this date, they will still create JSON assets by d
 
 If you would like to migrate assets to the GLB format, please go to 'Project Settings'.
 
-<img src="/images/user-manual/assets/importing/project-settings.png" alt="Project settings" width="300">
+<img loading="lazy" src="/images/user-manual/assets/importing/project-settings.png" alt="Project settings" width="300">
 
 Open 'Asset Tasks' and tick 'Convert to GLB'.
 
-<img src="/images/user-manual/assets/importing/asset-tasks.png" alt="Asset tasks settings" width="400">
+<img loading="lazy" src="/images/user-manual/assets/importing/asset-tasks.png" alt="Asset tasks settings" width="400">
 
 And finally reimport the model and/or animation file (via drag and drop or the 'Upload' menu option) to create the GLB asset.
 
-<img src="/images/user-manual/assets/importing/drag-and-drop.gif" alt="Drag and drop file">
+<img loading="lazy" src="/images/user-manual/assets/importing/drag-and-drop.gif" alt="Drag and drop file">
 
 Once created, this can be referenced to Entities in place of the existing JSON asset.

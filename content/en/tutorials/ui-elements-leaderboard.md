@@ -5,7 +5,7 @@ tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
 
 *A leaderboard using Element components. See the [full scene][1].*
 

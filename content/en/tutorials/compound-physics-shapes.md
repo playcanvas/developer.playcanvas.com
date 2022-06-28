@@ -7,7 +7,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/6881
 
 Full documentation for Compound Physics Shapes is now in the [User Manual][documentation-page].
 
-<iframe src="https://playcanv.as/p/KXZ5Lsda/" title="Compound Physics Shapes"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KXZ5Lsda/" title="Compound Physics Shapes"></iframe>
 
 [documentation-page]: /user-manual/physics/compound-shapes/
 

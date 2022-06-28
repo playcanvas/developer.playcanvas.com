@@ -1,11 +1,11 @@
 ---
 title: Anim State Graph Blending
 layout: tutorial-page.hbs
-tags: animation
+tags: animation,basics
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
 
 *Click on screen to focus, then press the 'p' key to blend to a punch animation*
 

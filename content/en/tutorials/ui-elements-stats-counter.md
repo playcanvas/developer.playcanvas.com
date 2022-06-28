@@ -5,7 +5,7 @@ tags: ui
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
 
 *How to use buttons, progress bars and interact with elements. See the [full scene][1].*
 

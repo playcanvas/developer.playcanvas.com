@@ -5,7 +5,7 @@ tags: lighting
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
 ---
 
-<iframe src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
 
 Find out more by forking the [full project][4].
 
@@ -25,7 +25,7 @@ This texture will form the basis of the glow.
 
 ### Material
 
-<img src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
 
 The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
 
