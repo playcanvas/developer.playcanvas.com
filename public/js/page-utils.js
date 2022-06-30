@@ -241,12 +241,14 @@
             // Hide the Getting Started section if there's a filter in place
             var gettingStartedTitle = document.getElementById('getting-started-title');
             var gettingStartedContent = document.getElementById('getting-started-content');
-            if (tutorials.tags.length > 0) {
-                gettingStartedTitle.classList.add('hidden');
-                gettingStartedContent.classList.add('hidden');
-            } else {
-                gettingStartedTitle.classList.remove('hidden');
-                gettingStartedContent.classList.remove('hidden');
+            if (gettingStartedTitle && gettingStartedContent) {
+                if (tutorials.tags.length > 0) {
+                    gettingStartedTitle.classList.add('hidden');
+                    gettingStartedContent.classList.add('hidden');
+                } else {
+                    gettingStartedTitle.classList.remove('hidden');
+                    gettingStartedContent.classList.remove('hidden');
+                }
             }
 
             var noTutorialsMessage = document.getElementById('no-tutorials-message');
