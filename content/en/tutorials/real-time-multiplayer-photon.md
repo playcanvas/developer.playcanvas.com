@@ -75,7 +75,7 @@ Download the SDK from the dashboard.
 
 ![Unzip SDK][11]
 
-The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_v4-1-1-0` → `lib` → **`Photon-Javascript_Emscripten_SDK.min.js`**.
+The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_v4-1-1-4` → `lib` → **`Photon-Javascript_Emscripten_SDK.min.js`**.
 
 ## Importing SDK
 
