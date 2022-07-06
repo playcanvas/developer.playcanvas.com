@@ -7,30 +7,23 @@ thumb: https://www.photonengine.com/v2/img/nav-logo-photon.svg
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Real-time Multiplayer with Photon - including matchmaking"></iframe>
 
-*Mouse click to move*
+*Click on the floor to move*
 
 The complete project including matchmaking can be found [here][1].
 
-Photon, also known as PUN in Unity, is used in a variety of game titles, and a JavaScript SDK for Photon is also available for free for projects with up to 20 CCU
+Photon (also known as PUN) is used in many games and has a JavaScript SDK available for HTML5 games. 
+Photon is for free for projects with up to 20 online players (CCU). 
 
 ### In this tutorial, you will learn
 
-- How to use Photon SDK
-- Multiplayer implementation
-
-### Tutorial Project
-
-<iframe loading="lazy" src="https://playcanv.as/e/p/sLGr3Ql2/" title="Real-time Multiplayer with Photon - a simple project"></iframe>
-
-*Arrow keys to move.*
-
-You can find the [tutorial project here][2].
+- How to add Photon SDK to PlayCanvas
+- Multiplayer implementation with Photon
 
 # Setup
 
 ## PlayCanvas Project
 
-Use an empty PlayCanvas project.
+We start by forking the [tutorial project here][2].
 
 ![Empty Project][3]
 
@@ -99,17 +92,14 @@ Drag and drop the SDK to the assets in the editor.
 
 # Multiplayer implementation
 
-Multiplayer implementation is as follows
+The multiplayer implementation will do the following:
 
-1. use Photon class for real-time communication (LoadBalancing)
-2. connect to Photon master server
+1. Use Photon class for real-time communication and Load Balancing
+2. Connect to Photon master server
 3. Create or Join a room
-4. Synchronize other players
+4. Synchronize other players actions and movement
 
-The API reference and glossary are available here.
-
-- [API Reference][14]
-- [Photon Engine - glossary][15]
+The [API reference][14] and [glossary][15] are available on Photon's site.
 
 ## Using Photon with PlayCanvas
 
@@ -136,7 +126,7 @@ class LoadBalancing extends class LoadBalancing extends Photon.LoadBalancing.Loa
 
 ### 2. Instantiate classes from PlayCanvas to use Photon
 
-Create a **photon-loadbalancing-playcanvas.js** to the project to initialize Photon.
+Create a script asset named **photon-loadbalancing-playcanvas.js** to the project to initialize Photon.
 
 ```javascript
 // photon-loadbalancing-playcanvas.js
@@ -192,7 +182,7 @@ PhotonLoadBalancingPlayCanvas.attributes.add("region", {
 
 ### 3. Set Script for Root entity
 
-Create a new **photon-loadbalancing-playcanvas.js** and attach it to the root entity.
+Create a new script asset **photon-loadbalancing-playcanvas.js** and attach it to the Root entity in the Editor.
 
 ![Root Entity - Inspector][16]
 
@@ -494,13 +484,13 @@ pc.registerScript(Player);
 
 - **this.app.fire** [communication][22] between scripts.
 
-### If successful
+### Done!
 
-You can play multiplayer in Photon.
+You can now play multiplayer in Photon!
 
 ![Project][23]
 
-Now you can create a room using Photon and synchronize the location information of the characters.
+You can create a room using Photon and synchronize the positions of players with each other.
 
 Although this project was only a simple real-time communication between players, you can also create a project that includes matchmaking. For the full project, including room creation and room listings, please [click here][1] .
 
