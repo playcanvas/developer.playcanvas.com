@@ -487,7 +487,7 @@ You can create a room using Photon and synchronize the positions of players with
 Although this project was only a simple real-time communication between players, you can also create a project that includes matchmaking. For the full project, including room creation and room listings, please [click here][1] .
 
 [1]: https://playcanvas.com/project/926999/
-[2]: https://playcanvas.com/project/928285/
+[2]: https://playcanvas.com/project/954410/
 [3]: /images/tutorials/multiplayer-photon/1.png
 [4]: https://www.photonengine.com/
 [5]: /images/tutorials/multiplayer-photon/2.png
