@@ -67,7 +67,7 @@ Download the SDK from the dashboard.
 
 ![JavaScript SDK][9]
 
-### 3. Click download SDK
+### 3. Click Download SDK
 
 ![Download SDK][10]
 
@@ -98,7 +98,7 @@ The multiplayer implementation will do the following:
 1. Use Photon class for real-time communication and Load Balancing
 2. Connect to Photon master server
 3. Create or Join a room
-4. Synchronize other players actions and movement
+4. Synchronize other players' actions and movement
 
 The [API reference][14] and [glossary][15] are available on Photon's site.
 
@@ -166,12 +166,12 @@ this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.ws
 ```
 
 - **wss** Secure connection via WebSocket.
-- **appId** The value application identifier.
-- **appVersion** Used for versioning. different versions cannot be connected to each other.
+- **appId** The application identifier value.
+- **appVersion** Used for versioning. Different versions cannot be connected to each other.
 
 ## Connect to Photon's master server
 
-### 1. Connect to the master server using connectToRegionMaster
+### 1. Connect to the master server using `connectToRegionMaster`
 
 ```javascript
 PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
@@ -230,9 +230,9 @@ PhotonLoadBalancingPlayCanvas.prototype.onJoinRoom = function (createdByMe) {
 };
 ```
 
-- **onRoomList(rooms)** list of rooms in the lobby.
-- **joinRandomOrCreateRoom(options, createRoomName, createOptions)** join to a random room. If the room does not exist, a new room will be created.
-- **onJoinRoom** when you join a room, this is called
+- **onRoomList(rooms)** List of rooms in the lobby.
+- **joinRandomOrCreateRoom(options, createRoomName, createOptions)** Join to a random room. If the room does not exist, a new room will be created.
+- **onJoinRoom** When you join a room, this is called.
 
 ## Join and Leave
 
