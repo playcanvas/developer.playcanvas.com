@@ -1,0 +1,510 @@
+---
+title: Real-time Multiplayer with Photon
+layout: tutorial-page.hbs
+tags: multiplayer, networking
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/926999/90AE0A-image-75.jpg
+---
+
+<iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Real-time Multiplayer with Photon - including matchmaking"></iframe>
+
+_Click on the floor to move_
+
+The complete project including matchmaking can be found [here][1].
+
+Photon (also known as PUN) is used in many games and has a JavaScript SDK available for HTML5 games.
+
+Photon is for free for projects with up to 20 online players (CCU).
+
+### In this tutorial, you will learn
+
+- How to add Photon SDK to PlayCanvas
+- Multiplayer implementation with Photon
+
+# Setup
+
+## PlayCanvas Project
+
+We start by forking the [tutorial project here][2].
+
+![Empty Project][3]
+
+## Photon account
+
+Account registration is required to use the SDK and view documentation.
+
+Create your Photon account [here][4] - (Photon Engine).
+
+### 1. Create a new app
+
+Click **CREATE NEW APP** from the dashboard
+
+![Create New Application][5]
+
+### 2. Select Photon Type and Application name.
+
+Enter the following
+
+- Photon Type: RealTime
+- Name: PlayCanvas-Photon etc.
+
+![Create Real Time Project][6]
+
+### 3. Copy of AppID
+
+Please make a note of this AppId, as you will need it in the future.
+
+![App Id][7]
+
+## Download SDK
+
+Download the SDK from the dashboard.
+
+### 1. Click SDK from the dashboard
+
+![SDK][8]
+
+### 2. Select RealTime JavaScript
+
+![JavaScript SDK][9]
+
+### 3. Click Download SDK
+
+![Download SDK][10]
+
+### 4. Unzip the SDK
+
+![Unzip SDK][11]
+
+The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_v4-1-1-4` → `lib` → **`Photon-Javascript_Emscripten_SDK.min.js`**.
+
+## Importing SDK
+
+Import the SDK you have just downloaded into the PlayCanvas editor.
+
+### 1. Upload the SDK on the editor
+
+![Upload SDK][12]
+
+Drag and drop the SDK to the assets in the editor.
+
+### 2. Change Loading Type "Asset" to "Before Engine"
+
+![Change Loading Type][13]
+
+# Multiplayer implementation
+
+The multiplayer implementation will do the following:
+
+1. Use Photon class for real-time communication and Load Balancing
+2. Connect to Photon master server
+3. Create or Join a room
+4. Synchronize other players' actions and movement
+
+The [API reference][14] and [glossary][15] are available on Photon's site.
+
+## Using Photon with PlayCanvas
+
+### 1. Instantiate classes from PlayCanvas to use Photon
+
+Create a script asset named **photon-loadbalancing-playcanvas.js** to the project to initialize Photon.
+
+```javascript
+// photon-loadbalancing-playcanvas.js
+const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
+PhotonLoadBalancingPlayCanvas.attributes.add("appId", { type: "string" });
+PhotonLoadBalancingPlayCanvas.attributes.add("appVersion", { type: "string", default: "1.0" });
+PhotonLoadBalancingPlayCanvas.attributes.add("wss", { type: "boolean", default: true });
+PhotonLoadBalancingPlayCanvas.attributes.add("region", {
+    type: "string", default: "jp",
+    description: "Photon Cloud has servers in several regions, distributed across multiple hosting centers over the world.You can choose optimized region for you.",
+    enum: [
+        { "Select Region": "default" },
+        { "Asia, Singapore": "asia" },
+        { "Australia, Melbourne": "au" },
+        { "Canada, East Montreal": "cae" },
+        { "Chinese Mainland (See Instructions)	Shanghai": "cn" },
+        { "Europe, Amsterdam": "eu" },
+        { "India, Chennai": "in" },
+        { "Japan, Tokyo": "jp" },
+        { "Russia Moscow": "ru" },
+        { "Russia, East Khabarovsk": "rue" },
+        { "South Africa Johannesburg": "za" },
+        { "South America, Sao Paulo": "sa" },
+        { "South Korea, Seoul": "kr" },
+        { "Turkey Istanbul": "tr" },
+        { "USA, East Washington": "us" },
+        { "USA, West San José": "usw" },
+    ],
+});
+
+PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
+
+    // Photon Settings
+    this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient(this.wss ? 1 : 0, this.appId, this.appVersion);
+
+    // pc.Application
+    this.loadBalancingClient.app = this.app;
+};
+```
+- **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
+
+
+### 2. Set Script for Root entity
+
+Create a new script asset **photon-loadbalancing-playcanvas.js** and attach it to the Root entity in the Editor.
+
+![Root Entity - Inspector][16]
+
+### 3. Paste AppId into the script attribute.
+
+Enter AppId as a script attribute.
+
+![Script Attributes][17]
+
+```javascript
+this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.wss ? 1 : 0, this.appId, this.appVersion );
+```
+
+- **wss** Secure connection via WebSocket.
+- **appId** The application identifier value.
+- **appVersion** Used for versioning. Different versions cannot be connected to each other.
+
+## Connect to Photon's master server
+
+### 1. Connect to the master server using `connectToRegionMaster`
+
+```javascript
+PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
+
+    // Photon Settings
+    this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient(this.wss ? 1 : 0, this.appId, this.appVersion);
+
+    // pc.Application
+    this.loadBalancingClient.app = this.app;
+
+    // Connect to the master server
+    if (!this.loadBalancingClient.isInLobby()) {
+        this.loadBalancingClient.connectToRegionMaster(this.region);
+    }
+};
+```
+
+- **connectToRegionMaster** Connects to the master server in the specified region.
+- **this.region** Used to configure the region.
+
+If you successfully connect to the lobby by running connectToRegionMaster, JoinedLobby will be displayed in the log.
+
+![Console Log][18]
+
+## Create or Join a room
+
+**onRoomList** function is called when a connection is made to the lobby.
+
+**JoinRandomOrCreateRoom** to join a room if it exists, or randomly join a room if it does not exist.
+
+```javascript
+PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
+
+    // Photon Settings
+    this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient(this.wss ? 1 : 0, this.appId, this.appVersion);
+
+    // pc.Application
+    this.loadBalancingClient.app = this.app;
+
+    // Connect to the master server
+    if (!this.loadBalancingClient.isInLobby()) {
+        this.loadBalancingClient.connectToRegionMaster(this.region);
+    }
+
+    // Added
+    this.loadBalancingClient.onRoomList = this.onRoomList;
+    this.loadBalancingClient.onJoinRoom = this.onJoinRoom;
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onRoomList = function () {
+    this.joinRandomOrCreateRoom();
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onJoinRoom = function (createdByMe) {
+    console.log("Joined the room.");
+};
+```
+
+- **onRoomList(rooms)** List of rooms in the lobby.
+- **joinRandomOrCreateRoom(options, createRoomName, createOptions)** Join to a random room. If the room does not exist, a new room will be created.
+- **onJoinRoom** When you join a room, this is called.
+
+## Join and Leave
+
+When a player joins a room, it is synchronized with other players.
+Use **onActorJoin** and **onActorLeave**.
+
+```javascript
+PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
+
+    // Photon Settings
+    this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient(this.wss ? 1 : 0, this.appId, this.appVersion);
+
+    // pc.Application
+    this.loadBalancingClient.app = this.app;
+
+    // Connect to the master server
+    if (!this.loadBalancingClient.isInLobby()) {
+        this.loadBalancingClient.connectToRegionMaster(this.region);
+    }
+
+    this.loadBalancingClient.onRoomList = this.onRoomList;
+    this.loadBalancingClient.onJoinRoom = this.onJoinRoom;
+
+    // Added
+    this.loadBalancingClient.onActorJoin = this.onActorJoin;
+    this.loadBalancingClient.onActorLeave = this.onActorLeave;
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onRoomList = function () {
+    this.joinRandomOrCreateRoom();
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onJoinRoom = function (createdByMe) {
+    console.log("Joined the room.");
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onActorJoin = function (actor) {
+    const { actorNr } = actor;
+    if (actor.isLocal) return;
+    const otherPlayer = new pc.Entity();
+    otherPlayer.addComponent("render", { type: "capsule" });
+    otherPlayer.setLocalPosition(0, 1, 0);
+    otherPlayer.name = actorNr;
+    this.app.root.children[0].addChild(otherPlayer);
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
+    const { actorNr } = actor;
+    const otherPlayer = this.app.root.children[0].findByName(actorNr);
+    if (actor.isLocal || !otherPlayer) return;
+    otherPlayer.destroy();
+};
+```
+
+  ![Actor][19]
+- **actor** contains `name`, `actorNr`, `isLocal`, and `userId`.
+- **onActorJoin** when a new user connects, you can get the joined actor.
+- **onActorLeave** when a user is disconnected, you can get the disconnected actor.
+
+If successful, the entity is added when the player joins.
+![Console log - Actors ][20]
+
+### Player Movement
+
+Create a new **player.js** for character movement.
+
+```javascript
+const Player = pc.createScript("player");
+
+Player.prototype.update = function (dt) {
+    const pos = new pc.Vec3(0, 0, 0);
+    if (this.app.keyboard.isPressed(pc.KEY_LEFT)) {
+        pos.x = -dt;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_RIGHT)) {
+        pos.x = dt;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_UP)) {
+        pos.z = -dt;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_DOWN)) {
+        pos.z = dt;
+    }
+    if (!pos.equals(new pc.Vec3(0, 0, 0))) {
+        this.entity.translate(pos);
+    }
+};
+```
+
+- **this.app.keyboard.isPressed:** check if the keyboard is pressed
+
+## Synchronize other players
+
+Use **raiseEvent** and **onEvent** to synchronize the player's location.
+
+### 1. Position synchronisation using **raiseEvent**.
+
+```javascript
+const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
+PhotonLoadBalancingPlayCanvas.attributes.add("appId", { type: "string" });
+PhotonLoadBalancingPlayCanvas.attributes.add("appVersion", {
+    type: "string",
+    default: "1.0",
+});
+PhotonLoadBalancingPlayCanvas.attributes.add("wss", {
+    type: "boolean",
+    default: true,
+});
+PhotonLoadBalancingPlayCanvas.attributes.add("region", {
+    type: "string",
+    default: "jp",
+    description:
+        "Photon Cloud has servers in several regions, distributed across multiple hosting centers over the world.You can choose optimized region for you.",
+    enum: [
+        { "Select Region": "default" },
+        { "Asia, Singapore": "asia" },
+        { "Australia, Melbourne": "au" },
+        { "Canada, East Montreal": "cae" },
+        { "Chinese Mainland (See Instructions)	Shanghai": "cn" },
+        { "Europe, Amsterdam": "eu" },
+        { "India, Chennai": "in" },
+        { "Japan, Tokyo": "jp" },
+        { "Russia Moscow": "ru" },
+        { "Russia, East Khabarovsk": "rue" },
+        { "South Africa Johannesburg": "za" },
+        { "South America, Sao Paulo": "sa" },
+        { "South Korea, Seoul": "kr" },
+        { "Turkey Istanbul": "tr" },
+        { "USA, East Washington": "us" },
+        { "USA, West San José": "usw" },
+    ],
+});
+
+PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
+
+    // Photon Settings
+    this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient(this.wss ? 1 : 0, this.appId, this.appVersion);
+
+    // pc.Application
+    this.loadBalancingClient.app = this.app;
+
+    // Connect to the master server
+    if (!this.loadBalancingClient.isInLobby()) {
+        this.loadBalancingClient.connectToRegionMaster(this.region);
+    }
+    this.loadBalancingClient.onRoomList = this.onRoomList;
+    this.loadBalancingClient.onJoinRoom = this.onJoinRoom;
+    this.loadBalancingClient.onActorJoin = this.onActorJoin;
+    this.loadBalancingClient.onActorLeave = this.onActorLeave;
+
+    // Added
+    this.loadBalancingClient.onEvent = this.onEvent;
+    this.app.on("createOtherPlayerEntity", this.createOtherPlayerEntity, this);
+    this.app.on("loadbalancing:sendPlayerPosition", this.sendPlayerPosition, this);
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onRoomList = function () {
+    this.joinRandomOrCreateRoom();
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onJoinRoom = function (createdByMe) {
+    this.myRoomActorsArray().forEach((actor) => {
+        if (actor.isLocal) return;
+        this.app.fire("createOtherPlayerEntity", actor);
+    });
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onActorJoin = function (actor) {
+    if (actor.isLocal) return;
+    this.app.fire("createOtherPlayerEntity", actor);
+    const { x, y, z } = this.app.root.findByName("Player").getLocalPosition();
+    this.app.fire("loadbalancing:sendPlayerPosition", { x, y, z });
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
+    const { actorNr } = actor;
+    const otherPlayer = this.app.root.findByName(actorNr);
+    if (actor.isLocal || !otherPlayer) return;
+    otherPlayer.destroy();
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.createOtherPlayerEntity = function (actor) {
+    const { actorNr } = actor;
+    const entity = new pc.Entity();
+    entity.addComponent("render", { type: "capsule" });
+    entity.setLocalPosition(0, 1, 0);
+    entity.name = actorNr;
+    this.app.root.children[0].addChild(entity);
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.sendPlayerPosition = function (position) {
+    this.loadBalancingClient.raiseEvent(1, { position });
+};
+
+PhotonLoadBalancingPlayCanvas.prototype.onEvent = function (code, content, actorNr) {
+    switch (code) {
+        case 1: {
+            const otherPlayer = this.app.root.findByName(actorNr);
+            if (otherPlayer) {
+                const { x, y, z } = content.position;
+                otherPlayer.setLocalPosition(x, y, z);
+            }
+            break;
+        }
+        default:
+    }
+};
+```
+
+- **raiseEvent(eventCode,data, options)** send `eventCode` and `data`.
+- **onEvent(code, content, actorNr)** receive data. Includes `actorNr` and `eventCode`.
+
+### 2. Changed to fire events when player moves
+
+```javascript
+const Player = pc.createScript("player");
+
+Player.prototype.update = function (dt) {
+    const pos = new pc.Vec3(0, 0, 0);
+    if (this.app.keyboard.isPressed(pc.KEY_LEFT)) {
+        pos.x = -dt;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_RIGHT)) {
+        pos.x = dt;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_UP)) {
+        pos.z = -dt;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_DOWN)) {
+        pos.z = dt;
+    }
+    if (!pos.equals(new pc.Vec3(0, 0, 0))) {
+        this.entity.translate(pos);
+
+        // Added
+        const { x, y, z } = this.entity.getPosition();
+        this.app.fire("loadbalancing:sendPlayerPosition", { x, y, z });
+    }
+};
+```
+
+- **this.app.fire** [communication][22] between scripts.
+
+### Done!
+
+You can now play multiplayer in Photon!
+
+![Project][23]
+
+You can create a room using Photon and synchronize the positions of players with each other.
+
+Although this project was only a simple real-time communication between players, you can also create a project that includes matchmaking. For the full project, including room creation and room listings, please [click here][1] .
+
+[1]: https://playcanvas.com/project/926999/
+[2]: https://playcanvas.com/project/954410/
+[3]: /images/tutorials/multiplayer-photon/1.png
+[4]: https://www.photonengine.com/
+[5]: /images/tutorials/multiplayer-photon/2.png
+[6]: /images/tutorials/multiplayer-photon/3.png
+[7]: /images/tutorials/multiplayer-photon/4.png
+[8]: /images/tutorials/multiplayer-photon/5.png
+[9]: /images/tutorials/multiplayer-photon/6.png
+[10]: /images/tutorials/multiplayer-photon/7.png
+[11]: /images/tutorials/multiplayer-photon/8.png
+[12]: /images/tutorials/multiplayer-photon/9.png
+[13]: /images/tutorials/multiplayer-photon/10.png
+[14]: https://doc-api.photonengine.com/en/javascript/current/Photon.LoadBalancing.LoadBalancingClient.html
+[15]: https://doc.photonengine.com/ja-jp/quantum/v1/reference/glossary
+[16]: /images/tutorials/multiplayer-photon/11.png
+[17]: /images/tutorials/multiplayer-photon/12.png
+[18]: /images/tutorials/multiplayer-photon/13.png
+[19]: /images/tutorials/multiplayer-photon/14.png
+[20]: /images/tutorials/multiplayer-photon/15.png
+[22]: https://developer.playcanvas.com/en/user-manual/scripting/communication/
+[23]: /images/tutorials/multiplayer-photon/16.gif
