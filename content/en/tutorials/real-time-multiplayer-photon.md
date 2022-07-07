@@ -2,7 +2,7 @@
 title: Real-time Multiplayer with Photon
 layout: tutorial-page.hbs
 tags: multiplayer, networking
-thumb: https://www.photonengine.com/v2/img/nav-logo-photon.svg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/926999/90AE0A-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Real-time Multiplayer with Photon - including matchmaking"></iframe>
