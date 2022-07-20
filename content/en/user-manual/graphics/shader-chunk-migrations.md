@@ -4,13 +4,28 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-The PlayCanvas Engine's material shader chunks have undergone substantial changes.
+## Introduction
 
-In order to help users migrate their applications which contain overridden shader chunks, this page lists the changes made to chunks organized by engine release.
+The PlayCanvas Engine's material shader chunk system is undergoing substantial changes in order to support a more flexible material system. Please see [this page][1] for more context.
 
-## Engine v1.55
+In order to help users migrate their existing custom shader chunks, this page lists the changes made to chunks and organizes them by engine release (starting v1.51).
 
-This release can be found [here][1].
+## Chunk API Versions
+
+The debug version of the Engine will report any API changes to the console when it detects overridden chunks at runtime.
+
+Once an application's chunks have been updated to the latest API they must be flagged as such. For example, after updating a material's custom chunks to the latest engine release (say v1.55), specify this in the chunks object as follows:
+```javascript
+material.chunks.diffusePS = '...';
+material.chunks.APIVersion = pc.CHUNKAPI_1_55;
+```
+
+## Chunk changes
+
+The following tables break down the chunk changes by Engine release.
+
+---
+#### *Engine v1.55*
 
 | Chunk | Changes |
 | --- | --- |
@@ -34,4 +49,5 @@ This release can be found [here][1].
 | `startPS` | <ul><li>removed global declarations, generate them on demand instead</li></ul> |
 
 
-[1]: https://github.com/playcanvas/engine/releases/tag/v1.55.0
+[1]: https://github.com/playcanvas/engine/issues/4250
+[2]: https://github.com/playcanvas/engine/releases/tag/v1.55.0
