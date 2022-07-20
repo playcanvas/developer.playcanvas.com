@@ -22,7 +22,7 @@ material.chunks.diffusePS = '...';
 material.chunks.APIVersion = pc.CHUNKAPI_1_55;
 ```
 
-Doing this will remove the warning messages from the console.
+By doing this you will no longer see warning messages in the console.
 
 ## Chunk changes
 
