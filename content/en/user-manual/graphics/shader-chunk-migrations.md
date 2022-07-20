@@ -12,13 +12,17 @@ In order to help users migrate their existing custom shader chunks, this page li
 
 ## Chunk API Versions
 
-The debug version of the Engine will report any API changes to the console when it detects overridden chunks at runtime.
+The debug version of the Engine will report any API changes to the runtime console when it detects overridden chunks. For example:
+
+![Console output][2]
 
 Once an application's chunks have been updated to the latest API they must be flagged as such. For example, after updating a material's custom chunks to the latest engine release (say v1.55), specify this in the chunks object as follows:
 ```javascript
 material.chunks.diffusePS = '...';
 material.chunks.APIVersion = pc.CHUNKAPI_1_55;
 ```
+
+Doing this will remove the warning messages from the console.
 
 ## Chunk changes
 
@@ -50,4 +54,4 @@ The following tables break down the chunk changes by Engine release.
 
 
 [1]: https://github.com/playcanvas/engine/issues/4250
-[2]: https://github.com/playcanvas/engine/releases/tag/v1.55.0
+[2]: /images/user-manual/graphics/shader-chunk-migrations/console-warning.png
