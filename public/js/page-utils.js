@@ -386,7 +386,7 @@
 
         // add query strings to the search bar if we were searching
         // to save user from retyping a search
-        // Not: supported on IE
+        // Note: not supported on IE
         if (window.URLSearchParams) {
             var urlSearchParams = new URLSearchParams(window.location.search);
             if (urlSearchParams) {
