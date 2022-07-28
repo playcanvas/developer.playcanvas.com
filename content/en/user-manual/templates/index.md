@@ -89,6 +89,14 @@ this.app.root.addChild(instance);
 
 You can also use Script Attributes to pass Template Assets to your scripts instead of searching for them by ID.
 
+## When do I need to load Template Assets? 
+
+Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
+
+At runtime, the Template instance is not linked to the asset and you can reduce the download size by not preloading/loading the asset.
+
+You only need Template assets to be loaded if you are instantiating instances at runtime.
+
 [1]: /images/user-manual/templates/hierarchy.png
 [2]: /images/user-manual/templates/inspector.png
 [3]: /images/user-manual/templates/override.png
