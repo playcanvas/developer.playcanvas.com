@@ -91,6 +91,8 @@ Often you will find that different languages might require different fonts to be
 
 At runtime when the application switches to a different locale it will load the font Asset you defined for that locale.
 
+![Localized Fonts Inspector][9]
+
 ## Language Notes
 
 There are some languages that require specific workflows or considerations that are listed below.
@@ -122,3 +124,4 @@ For the complete engine API reference for localization see [this page][2].
 [6]: http://www.thai-language.com/ref/breaking-words
 [7]: https://en.wikipedia.org/wiki/Zero-width_space
 [8]: http://www.thai-language.com/?nav=zwsp
+[9]: /images/user-manual/user-interface/localization/localized-fonts-inspector.gif
