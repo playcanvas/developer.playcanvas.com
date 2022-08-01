@@ -24,9 +24,9 @@ Click CREATE and that will take you to the [profile][2] page of the Organization
 
 If you have existing projects (such as private projects on a Personal plan), you can transfer them to the Organization account by the following steps:
 
-* On your account with the Personal Plan, [transfer all projects ownership][6] to the Organization account.
+* On your user account, [transfer all projects ownership][6] to the Organization account.
 * On the Organization account, accept the project transfer requirements.
-* Cancel the Personal Plan to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
+* Cancel the Personal Plan (if you are on one) to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
 * [Add yourself to the projects as Admin][7] on the Organization account.
 
 All the projects will now be under the Organization account with your user account as Admin for the projects.
