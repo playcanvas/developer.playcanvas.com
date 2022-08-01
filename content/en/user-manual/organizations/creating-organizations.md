@@ -22,9 +22,8 @@ Enter the name for the Organization and an Organization ID which is a string wit
 
 Click CREATE and that will take you to the [profile][2] page of the Organization.
 
-#### Moving projects from a Personal Plan to the Organization
+If you have existing projects (such as private projects on a Personal plan), you can transfer them to the Organization account by the following steps:
 
-* [Create the organization account][5] and subscribe for at least one seat.
 * On your account with the Personal Plan, [transfer all projects ownership][6] to the Organization account.
 * On the Organization account, accept the project transfer requirements.
 * Cancel the Personal Plan to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
