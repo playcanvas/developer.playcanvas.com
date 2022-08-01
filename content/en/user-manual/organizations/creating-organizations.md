@@ -22,6 +22,16 @@ Enter the name for the Organization and an Organization ID which is a string wit
 
 Click CREATE and that will take you to the [profile][2] page of the Organization.
 
+#### Moving projects from a Personal Plan to the Organization
+
+* [Create the organization account][5] and subscribe for at least one seat.
+* On your account with the Personal Plan, [transfer all projects ownership][6] to the Organization account.
+* On the Organization account, accept the project transfer requirements.
+* Cancel the Personal Plan to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
+* [Add yourself to the projects as Admin][7] on the Organization account.
+
+All the projects will now be under the Organization account with your user account as Admin for the projects.
+
 ### Convert a user account into an Organization
 
 Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][3] page.
@@ -47,3 +57,6 @@ After you convert your account, you will be logged out. Then log back in with th
 [2]: /user-manual/profile
 [3]: /user-manual/profile/account
 [4]: /images/user-manual/organizations/organizations.jpg "Organizations"
+[5]: /user-manual/organizations/creating-organizations/
+[6]: /user-manual/profile/projects/#transfer-project-ownership
+[7]: /user-manual/organizations/managing-organizations/#projects
