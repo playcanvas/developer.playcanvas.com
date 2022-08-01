@@ -94,10 +94,12 @@ This can be done via [PlayCanvas Texture Tool][8], available in the browser.
 2. Select the loaded texture on the left.
 3. Under 'Reproject' section, change the 'source' to the format of texture. 
 4. Change 'target' to 'cube'.
-5. Change'encoding' to the desired format.
-6. Set the width to the desired size per face texture.
+5. Change 'encoding' to the desired format:
+    - 'rgbe' for exporting to 'HDR' 
+    - 'rgbm' for exporting to 'PNG'
+6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size. 
 7. Press 'Reproject' button to do the conversion to a cubemap. 
-8. Press 'Export to png' to download the 6 individual cubemap face textures that are ready to be uploaded to PlayCanvas.
+8. Press 'Export to PNG' or 'Export to HDR' to download the 6 individual cubemap face textures that are ready to be uploaded to PlayCanvas.
 
 ![PlayCanvas Texture Tool][12]
 
