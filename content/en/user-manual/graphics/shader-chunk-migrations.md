@@ -40,7 +40,7 @@ The following tables break down the chunk changes by Engine release.
 | `diffusePS` | <ul><li>fix gamma handling relative to albedo detail</li></ul> |
 | `diffuseDetailMapPS` | <ul><li>gamma correct detail map before combining with base albedo</li></ul> |
 | `endPS` | <ul><li>combine emissive with `dEmissive` instead of a call to `getEmission()`</li><li>`CLEARCOAT` macro is now `LIT_CLEARCOAT`.</li></ul> |
-| `emissivePS` | <ul><li>set `dEmissive` global instead of returning the value in order to bring it in line with the other frontend components</li></ul> 
+| `emissivePS` | <ul><li>set `dEmission` global instead of returning the value in order to bring it in line with the other frontend components</li></ul> 
 | `fresnelSchlickPS` | <ul><li>fresnel effect now reacts to index of refraction.</li><li>no longer changes specularity global, but returns value to be used per-light and for the environment</li></ul> |
 | `lightmapSingleVert.js` | <ul><li>removed (unused)</li></ul> |
 | `lightmapDirPS`, `lightmapSinglePS`| <ul><li>renamed the lightmap function to `getLightMap()` instead of `addLightMap()`</li><li>changed the implementation to write `dLightmap` and `dLightmapDir` global instead of updating `dDiffuseLight` and `dSpecularLight` directly</li><li>backend now handles combining lightmap in `lightmapAddPS` and `lightmapDirAddPS`</li></ul> |
