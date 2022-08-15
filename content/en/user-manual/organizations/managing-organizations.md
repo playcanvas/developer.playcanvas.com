@@ -32,7 +32,16 @@ Here you can increase or decrease the number of seats for your Organization. Thi
 
 The Owner of the Organization can delete the Organization from here. This will completely erase the account and all its projects. This action cannot be reversed.
 
-[1]: /images/user-manual/organizations/permissions.png "Permissions"
-[2]: /images/user-manual/organizations/seats.png "Seats"
-[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
-[4]: /images/user-manual/organizations/delete.png "Delete"
+### Projects 
+
+Administrators of the organization can add themselves to any project owned by the organization. On the account page, click on the drop down arrow on the right and then click on 'Add me as admin'.
+
+![add to project][5]
+
+From here, you can add other users to the project as usual.
+
+[1]: /images/user-manual/organizations/permissions.png
+[2]: /images/user-manual/organizations/seats.png
+[3]: /images/user-manual/organizations/upgrade.png
+[4]: /images/user-manual/organizations/delete.png
+[5]: /images/user-manual/organizations/add-to-project.png

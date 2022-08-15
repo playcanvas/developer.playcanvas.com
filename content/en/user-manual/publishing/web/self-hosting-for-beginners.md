@@ -91,6 +91,34 @@ As described in **Server** you will be serving all your PlayCanvas content inclu
 
 To get good performance when serving the static content it is **critical** to enable gzip compression and set the correct cache headers for the content. See your web server documentation for how to enable compression and caching headers on static content.
 
+### Content types
+
+Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server. 
+
+If you do get errors or warnings about assets not being served correctly in the browser, you may need to add these types.
+
+Here's a list of content types used in PlayCanvas applications:
+
+| File type | Content type             |
+| --------- | ------------------------ | 
+| AAC       | audio/aac                |
+| BASIS     | application/octet-stream | 
+| BIN       | application/octet-stream |
+| DDS       | image/dds                |
+| GLB       | model/gltf-binary        |
+| JPEG      | image/jpeg               |
+| JS        | application/javascript   |
+| JSON      | application/json         |
+| MP3       | audio/mpeg               |
+| MP4       | video/mp4                |
+| OGG       | audio/ogg                |
+| PNG       | image/png                |
+| TEXT      | text/plain               |
+| WASM      | application/wasm         |
+| WAV       | audio/x-wav              |
+| XML       | application/xml          |
+
+
 ### Client
 
 The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.

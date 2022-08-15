@@ -91,6 +91,8 @@ Often you will find that different languages might require different fonts to be
 
 At runtime when the application switches to a different locale it will load the font Asset you defined for that locale.
 
+![Localized Fonts Inspector][9]
+
 ## Language Notes
 
 There are some languages that require specific workflows or considerations that are listed below.
@@ -104,6 +106,18 @@ The Thai language has no spaces between words and the same run of glyphs can be 
 Being able to split Thai text correctly computationally is still an [unsolved problem][6] and usually done via a dictionary based approach which can be expensive to do at runtime.
 
 The [thai-language.com site also has a separate tool][8] to add the zero width characters between words using a dictionary based approach if you have existing text.
+
+### Right to left Languages
+
+Right to left languages will need extra scripts for support that can be found in this [example project][10].
+
+In the example project, there is a folder called 'Rtl Support' that needs to [copied and pasted][11] into your project.
+
+![][12]
+
+In the folder, there is Script Type called 'RtlElement' which should be added to any Entity with a text element component that would be used to show right to left text.
+
+![][13]
 
 ## Engine
 
@@ -122,3 +136,8 @@ For the complete engine API reference for localization see [this page][2].
 [6]: http://www.thai-language.com/ref/breaking-words
 [7]: https://en.wikipedia.org/wiki/Zero-width_space
 [8]: http://www.thai-language.com/?nav=zwsp
+[9]: /images/user-manual/user-interface/localization/localized-fonts-inspector.gif
+[10]: /tutorials/right-to-left-language-support/
+[11]: /user-manual/designer/assets/#copy-and-paste-between-projects
+[12]: /images/user-manual/user-interface/localization/rtl-asset-folder.png
+[13]: /images/user-manual/user-interface/localization/adding-rtl-script-type.png
