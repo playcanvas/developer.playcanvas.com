@@ -27,6 +27,22 @@ By doing this you will no longer see warning messages in the console.
 ## Chunk changes
 
 The following tables break down the chunk changes by Engine release.
+---
+#### *Engine v1.56*
+
+| Chunk | Changes |
+| ---   | ---     |
+| `combineXXXX` | <ul><li>all combine chunks except for `combinePS` have been deleted.</li><li>instead, combinePS is controlled with a handful of preprocessor defines.</li></ul> |
+| `refractionPS` | <ul><li>split into two new chunks, `refractionCubePS` and `refractionDynamicPS`.</ul></li> |
+| `refractionCubePS` | <ul><li>the old `refractionPS` is identical to this one, uses a cube map for refractions.</ul></li> |
+| `refractionDynamicPS` | <ul><li>new chunk which supports dynamic refractions by using the grab pass, needs `requestSceneColorMap(true);` to be set on the camera to work.</ul></li> |
+| `sheenPS` | <ul><li>new chunk to provide sheen (fabric) color.</ul></li> |
+| `sheenGlossPS` | <ul><li>new chunk to provide sheen (fabric) glossiness.</ul></li> |
+| `reflectionEnvHQPS` | <ul><li>new chunk to provide a high quality specular environment map for reflections and refractions.</ul></li> |
+| `thicknessPS` | <ul><li>new chunk to provide thickness which modifies attenuation color for transmissive (transparent/refractive) materials.</ul></li> |
+| `bakeDirLmEndPs` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul>
+| `bakeLmEndPS` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul>
+
 
 ---
 #### *Engine v1.55*
@@ -59,6 +75,7 @@ The following tables break down the chunk changes by Engine release.
 | `startPS` | <ul><li>removed global declarations, generate them on demand instead</li><li>`CLEARCOAT` macro replaced with `LIT_CLEARCOAT`.</li></ul> |
 | `specularPS` | <ul><li>only provides specular color, metalness modulation is now done in backend.</li></ul> |
 | `specularityFactorPS` | <ul><li>new chunk to control specular intensity for metalness workflow.</li></ul> |
+
 
 [1]: https://github.com/playcanvas/engine/issues/4250
 [2]: /images/user-manual/graphics/shader-chunk-migrations/console-warning.png
