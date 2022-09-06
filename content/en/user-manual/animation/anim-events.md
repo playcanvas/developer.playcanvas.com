@@ -34,7 +34,7 @@ AnimationEvents.prototype.initialize = function() {
         // get the foot bone from the event's string property, either right_foot or left_foot
         const footBone = this.entity.findByName(event.string);
         createDustCloudAtLocation(footBone.getPosition());
-    }), this);
+    }, this);
 };
 ```
 
