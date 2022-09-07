@@ -94,9 +94,9 @@ Other Examples:
 
 The main advantage of using manual subdivision is the level of detail that can be achieved. You can set up a fixed amount of sub-textures, which are assigned to the lights by order of their screen-space size. This allows lights that are larger on screen to receive a larger area of the atlas, while smaller lights in the distance use a smaller area of the atlas. If there are more lights than the number of available areas, the smallest screen-space lights will not cast any shadows.
 
-### Filtering Shadows
+### Shadows Type
 
-All lights that cast shadows use the same shadow filtering technique. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
+All lights that cast shadows use the same shadow type. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
 
 ## Limitations
 
