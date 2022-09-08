@@ -4,6 +4,10 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
+<div class="alert alert-info">
+    Clustered lighting is enabled by default from PlayCanvas Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
+</div>
+
 Lights are a great way to add realism to your application. However, real time lights can also create significant runtime performance cost, especially when you have large numbers of lights that cast shadows.
 
 Part of the solution to reduce performance costs may involve limiting the amount of lights that affect individual meshes. This is often implemented by finding and using lights that are nearby each object. However, there are multiple disadvantages to this strategy:
@@ -33,19 +37,13 @@ The following steps provide a basic overview of the Clustered Lighting implement
 5. Shadow Maps and Cookie Textures are all rendered into an atlas, instead of being individual textures, so they are all accessible to the shader at the same time.
 6. During lighting evaluation in the fragment shader, a fragment world space position is used to access a cell of the 3D grid and evaluate the stored lights.
 
-## Enabling Clustered Lighting
+## Editor Options
 
-<div class="alert alert-info">
-    The editor integration is currently in beta, provided by a <a href="https://playcanvas.com/project/915638/overview/cluster-lighting-script">custom script</a>, and is not in its final form. To use the integration, <a href="https://developer.playcanvas.com/en/user-manual/designer/assets/#copy-and-paste-between-projects">download the script</a> called "clustered-lighting.js" from the project and add it to the Root object of your scene.
-</div>
+Options for Clustered Lighting can be found in the Editor Settings under 'Rendering'.
 
-![Clustered Lighting Script][clustered-lighting-ui]
+![Clustered Lighting Editor UI][clustered-lighting-ui]
 
-To enable the Clustered Lighting solution, select the **Clustered Lighting** checkbox. When you execute the application, it will use Clustered Lighting.
-
-If you deselect the Clustered Lighting checkbox while the application is running, it will have no effect and will not switch between clustered and non-clustered implementations. All other parameters can be adjusted at runtime and will take effect from the next rendered frame.
-
-To display a debug rendering of the 3D grid and visualize some of the settings, select the **Debug** checkbox.
+This will allow you to disable Clustered Lighting (if you need to use the previous lighting system) and to [tune performance and features](#tuning-clustered-lighting) mentioned below.
 
 ## Tuning Clustered Lighting
 
@@ -96,9 +94,9 @@ Other Examples:
 
 The main advantage of using manual subdivision is the level of detail that can be achieved. You can set up a fixed amount of sub-textures, which are assigned to the lights by order of their screen-space size. This allows lights that are larger on screen to receive a larger area of the atlas, while smaller lights in the distance use a smaller area of the atlas. If there are more lights than the number of available areas, the smallest screen-space lights will not cast any shadows.
 
-### Filtering Shadows
+### Shadows Type
 
-All lights that cast shadows use the same shadow filtering technique. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
+All lights that cast shadows use the same shadow type. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
 
 ## Limitations
 
@@ -110,10 +108,28 @@ Internally, a light index is stored using 8 bits, so the maximum number of visib
 - The **Max Lights Per Cell** should be as small as possible, since this limits the size of the texture used to store the 3D grid, which needs to be updated every frame.
 - If an application using Clustered Lighting **runs slowly** on older mobile devices, consider globally turning off features like Shadows or Cookies.
 
+## Render Debug Grid
+
+To help with debugging and tuning performance with Clustered Lighting, you can assign the [Layer][pc-layer-api] ID to render to to the [debugLayer of LightingParams][pc-lighting-debug-layer-api]. e.g
+
+```
+// Assuming being in a script type
+this.app.scene.lighting.debugLayer = this.app.scene.layers.getLayerByName("World").id;
+```
+
+And to stop rendering, assign `undefined` to the `debugLayer` property:
+
+```
+// Assuming being in a script type
+this.app.scene.lighting.debugLayer = undefined;
+```
+
 [3d-grid]: /images/user-manual/graphics/lighting/lights/3d_grid.png
 [3d-grid-config]: /images/user-manual/graphics/lighting/lights/3d_grid_config.png
 [atlas-split-0]: /images/user-manual/graphics/lighting/lights/atlas_split_0.png
 [atlas-split-2]: /images/user-manual/graphics/lighting/lights/atlas_split_2.png
 [manual-split]: /images/user-manual/graphics/lighting/lights/manual_split.png
 [clustered-lighting-ui]: /images/user-manual/graphics/lighting/lights/clustered_lighting_ui.png
-[shadows]: /en/user-manual/graphics/lighting/shadows/#soft-shadows-vs-hard-shadows
+[shadows]: /user-manual/graphics/lighting/shadows/#soft-shadows-vs-hard-shadows
+[pc-layer-api]: /api/pc.Layer.html
+[pc-lighting-debug-layer-api]: /api/pc.LightingParams.html#debugLayer

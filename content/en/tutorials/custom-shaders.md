@@ -107,7 +107,7 @@ this.shader = new pc.Shader(gd, shaderDefinition);
 
 // Create a new material and set the shader
 this.material = new pc.Material();
-this.material.setShader(this.shader);
+this.material.shader = this.shader;
 
 // Set the initial time parameter
 this.material.setParameter('uTime', 0);
