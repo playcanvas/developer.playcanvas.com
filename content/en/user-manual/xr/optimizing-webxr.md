@@ -6,11 +6,13 @@ position: 3
 
 ## Introduction
 
-A high and consistent framerate is critical for making and enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early in development and maintain the target framerate throughout development.
+A high and consistent framerate is critical for making an enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early and maintain the target framerate throughout development.
 
-Rendering WebXR is expensive due to the fact that the scene must be rendered once for each view (eye). PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't duplicate too much effort, but stereo rendering is still more expensive that mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR, whilst it doesn't have the high frame rates, may have another issue which is the lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
+For AR experiences, framerates must be managed carefully as world, image and face tracking effects sometimes incur significant performance costs. This is in addition to the typically performance-constrained mobile hardware most users have access to.
 
-But, all is not lost. PlayCanvas includes a number of features specifically designed to let your application do more in less time.
+For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized  to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand high frame rates, like 75Hz or 90Hz, further increasing the need for highly efficient rendering. Mobile VR, whilst not requiring high framerates, suffer from the lack of native support for distortion effects, incurring additional overhead on a Javascript and WebGL layer.
+
+PlayCanvas, however, includes a number of features specifically designed to let your application do more in less time.
 
 ### Runtime lightmap generation
 
