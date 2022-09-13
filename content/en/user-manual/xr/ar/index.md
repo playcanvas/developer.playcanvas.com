@@ -38,12 +38,16 @@ Once the user is done, immersive-xr mode can be exited by calling:
 app.xr.end();
 ```
 
+Augmented Reality allows blending the real world with virtual imagery, either by composing a rendered buffer over the camera feed or with special projection of a rendered buffer on see-through glasses. Usually it is provided with spatial tracking relative to the real world environment.
+
+Suitable reference space: `pc.XRSPACE_VIEWER`.
+
 ## Starter Kits
 
 PlayCanvas provides a number of ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialogue the template that suits you best.
 
 [1]: /images/user-manual/xr/ar-view.png
 [2]: https://webkit.org/status/#specification-webxr
-[3]: https://www.8thwall.com/
-[4]: https://www.zappar.com/
+[3]: /user-manual/xr/ar/8th-wall-integration/
+[4]: /user-manual/xr/ar/zappar-integration/
 [5]: /images/user-manual/xr/ar/transparent-clear-color.png
