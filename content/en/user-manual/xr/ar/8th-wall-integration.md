@@ -27,12 +27,12 @@ Afterwards, head to **Settings -> Rendering**.
 After these steps, you should be able to use 8th Wall’s library without issue. To begin tracking an AR camera in your scene, simply call:
 
 ```javascript
-XR8.PlayCanvas.runXr( {pcCamera, pcApp}, [extraModules], config )
+XR8.PlayCanvas.runXr( {camera, app}, config )
 ```
 
 For further information, refer to 8th Wall’s [Getting Started with PlayCanvas][2] section.
 
 [1]: https://www.8thwall.com/
-[2]: https://cdn.8thwall.com/web/xrextras/xrextras.js
+[2]: https://www.8thwall.com/docs/web/#xr8playcanvas
 [3]: https://playcanvas.com/user/the8thwall
 [4]: /images/user-manual/xr/ar/8th-wall-external-scripts.png
