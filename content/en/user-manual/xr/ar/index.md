@@ -10,7 +10,7 @@ PlayCanvas lets you create Augmented Reality (AR) applications for mobile device
 
 ## Platforms
 
-AR capabilities are available using the mobile Chrome browser. iOS Safari support for WebXR is [in the works][2]. Additionally, frameworks such as [8th Wall][3] and [Zappar][4] allow users to experience AR content in most mobile browsers, including Safari.
+AR capabilities are available using the Android Chrome browser. iOS Safari support for WebXR is [in progress][2]. Additionally, frameworks such as [8th Wall][3] and [Zappar][4] allow users to experience AR content in most mobile browsers, including Safari.
 
 *The aforementioned frameworks are external, and have separate licensing, available on their respective websites.*
 
