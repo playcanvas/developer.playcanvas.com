@@ -14,7 +14,7 @@ WebXR is a new API and it is being rolled out gradually to all major platforms. 
 
 Additionally, support can be achieved with the [WebXR Polyfill][4].
 
-On **mobile**, PlayCanvas XR works on Android and iOS devices using Cardboard-style VR headsets and it is supported on the Samsung Gear VR. AR is also available. It works on stand-alone Android based VR devices, such as the Oculus Quest™.
+On **mobile**, PlayCanvas XR works on Android and iOS devices using Cardboard-style VR headsets and other devices. AR is also available. It works on stand-alone Android based VR devices, such as the Oculus Quest™.
 
 On **desktop**, PlayCanvas XR currently works in Chrome and Edge, and devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
 
