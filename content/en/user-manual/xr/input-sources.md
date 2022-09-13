@@ -154,4 +154,4 @@ PlayCanvas provides a number of [tutorials and samples][11] on the usage of WebX
 [8]: /api/pc.XrHand.html
 [9]: /api/pc.XrFinger.html
 [10]: /api/pc.XrJoint.html
-[11]: https://developer.playcanvas.com/en/tutorials/?tags=vr
+[11]: /tutorials/?tags=vr
