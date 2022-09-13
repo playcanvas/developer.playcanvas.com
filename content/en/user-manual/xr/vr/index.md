@@ -1,7 +1,7 @@
 ---
 title: VR
 layout: usermanual-page.hbs
-position: 1
+position: 3
 ---
 
 ![VR View][1]

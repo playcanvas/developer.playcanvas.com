@@ -1,7 +1,7 @@
 ---
 title: AR
 layout: usermanual-page.hbs
-position: 1
+position: 2
 ---
 
 ![AR View][1]
