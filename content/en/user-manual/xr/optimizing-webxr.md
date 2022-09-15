@@ -6,7 +6,7 @@ position: 5
 
 ## Introduction
 
-A high and consistent framerate is critical for making an enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early and maintain the target framerate throughout development.
+A high and consistent framerate is critical for making an enjoyable XR experience. When creating VR/AR content, it is more important than ever to test and optimize early and maintain the target framerate throughout development.
 
 For AR experiences, framerates must be managed carefully as world, image and face tracking effects sometimes incur significant performance costs. This is in addition to the typically performance-constrained mobile hardware most users have access to.
 
