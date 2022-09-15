@@ -21,7 +21,7 @@ Once there, add one of the Tracking Templates provided. Zappar provides:
 - Image Tracking
 - Instant Tracking
 
-Drag any of these into your scene, ensure there are no other cameras, and you are ready to go! If necessary, tweak the attributes of the script attached to the template camera:
+Drag any of these into your scene, ensure there are no other cameras and you are ready to go! If necessary, tweak the attributes of the script attached to the template camera:
 
 ![Zappar AR Camera Settings][6]
 
