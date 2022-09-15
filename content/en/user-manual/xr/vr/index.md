@@ -10,11 +10,11 @@ PlayCanvas also lets you create Virtual Reality (VR) applications for headsets a
 
 ## Platforms
 
-VR capabilities are available on the Chrome and Edge browsers. Devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
+VR capabilities are available in the Chrome and Edge browsers. Devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
 
 ## Getting started with WebXR VR
 
-To start a VR session, device support and availability should be checked first. Then, on user interaction, such as a button click or other input, a VR session can be started:
+To start a VR session, device support and availability should be checked first. Then, on user interaction such as a button click or other input, a VR session can be started:
 
 ```javascript
 button.element.on('click', function () {
@@ -26,7 +26,7 @@ button.element.on('click', function () {
 });
 ```
 
-Once the user is done, vr mode can be exited by calling:
+Once the user is done, VR mode can be exited by calling:
 
 ```javascript
 app.xr.end();
@@ -34,6 +34,6 @@ app.xr.end();
 
 ## Starter Kits
 
-PlayCanvas provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the dialogue.
+PlayCanvas provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the dialog.
 
 [1]: /images/user-manual/xr/vr-view.png

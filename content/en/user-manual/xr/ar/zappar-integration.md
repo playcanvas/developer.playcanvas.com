@@ -12,16 +12,17 @@ Zappar provides a [Getting Started with PlayCanvas][2] page, and they also provi
 
 ## Getting started with Zappar
 
-To get started with Zappar’s Universal AR SDK, first head to their [Zappar Universal AR Project][4], and fork it.
+To get started with Zappar’s Universal AR SDK, first head to their [Zappar Universal AR Project][4] and fork it.
 
 ![Zappar Universal AR][5]
 
 Once there, add one of the Tracking Templates provided. Zappar provides:
+
 - Face Tracking
 - Image Tracking
 - Instant Tracking
 
-Drag any of these into your scene, ensure there are no other cameras, and you are ready to go! If necessary, tweak the attributes of the script attached to the template camera:
+Drag any of these into your scene, ensure there are no other cameras and you are ready to go! If necessary, tweak the attributes of the script attached to the template camera:
 
 ![Zappar AR Camera Settings][6]
 
