@@ -10,7 +10,7 @@ PlayCanvas also lets you create Virtual Reality (VR) applications for headsets a
 
 ## Platforms
 
-VR capabilities are available on the Chrome and Edge browsers. Devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
+VR capabilities are available in the Chrome and Edge browsers. Devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
 
 ## Getting started with WebXR VR
 
