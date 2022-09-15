@@ -26,7 +26,7 @@ button.element.on('click', function () {
 });
 ```
 
-Once the user is done, vr mode can be exited by calling:
+Once the user is done, VR mode can be exited by calling:
 
 ```javascript
 app.xr.end();
