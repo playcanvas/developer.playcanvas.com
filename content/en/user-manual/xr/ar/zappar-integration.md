@@ -17,6 +17,7 @@ To get started with Zappar’s Universal AR SDK, first head to their [Zappar Uni
 ![Zappar Universal AR][5]
 
 Once there, add one of the Tracking Templates provided. Zappar provides:
+
 - Face Tracking
 - Image Tracking
 - Instant Tracking
