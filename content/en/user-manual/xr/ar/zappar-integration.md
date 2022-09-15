@@ -12,7 +12,7 @@ Zappar provides a [Getting Started with PlayCanvas][2] page, and they also provi
 
 ## Getting started with Zappar
 
-To get started with Zappar’s Universal AR SDK, first head to their [Zappar Universal AR Project][4], and fork it.
+To get started with Zappar’s Universal AR SDK, first head to their [Zappar Universal AR Project][4] and fork it.
 
 ![Zappar Universal AR][5]
 
