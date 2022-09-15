@@ -12,7 +12,7 @@ For AR experiences, framerates must be managed carefully as world, image and fac
 
 For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering. 
 
-In addition, devices like the Oculus Rift and HTC Vive demand high frame rates, like 75Hz or 90Hz, further increasing the need for highly efficient rendering. Mobile VR, whilst not requiring high framerates, suffer from the lack of native support for distortion effects, incurring additional overhead on a Javascript and WebGL layer.
+In addition, devices like the Oculus Rift and HTC Vive demand high frame rates, like 75Hz or 90Hz, further increasing the need for highly efficient rendering. Mobile VR, whilst not requiring high framerates, suffer from the lack of native support for distortion effects, incurring additional overhead on a JavaScript and WebGL layer.
 
 PlayCanvas, however, includes a number of features specifically designed to let your application do more in less time.
 
