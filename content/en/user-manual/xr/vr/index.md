@@ -34,6 +34,6 @@ app.xr.end();
 
 ## Starter Kits
 
-PlayCanvas provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the dialogue.
+PlayCanvas provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the dialog.
 
 [1]: /images/user-manual/xr/vr-view.png
