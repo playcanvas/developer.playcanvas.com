@@ -139,6 +139,10 @@ if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
 }
 ```
 
+## Tutorials
+
+PlayCanvas provides a number of [tutorials and samples][11] on the usage of WebXR functionality. Users are able to fork them and examine how code and components are structured to allow for XR to be used.
+
 
 [1]: /api/pc.XrInputSource.html
 [2]: /api/pc.XrInput.html
@@ -150,3 +154,4 @@ if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
 [8]: /api/pc.XrHand.html
 [9]: /api/pc.XrFinger.html
 [10]: /api/pc.XrJoint.html
+[11]: /tutorials/?tags=vr
