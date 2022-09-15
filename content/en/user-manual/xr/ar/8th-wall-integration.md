@@ -10,10 +10,6 @@ position: 2
 
 8th Wall’s documentation provides a [Getting Started with PlayCanvas][2] page, and they also provide a number of [Starter Projects][3] to help new users get started.
 
-## Getting started with 8th Wall
-
- 8th Wall provides an up-to-date guide on their website. Please visit their [Getting Started with PlayCanvas][2] page for guidance.
-
 [1]: https://www.8thwall.com/
 [2]: https://www.8thwall.com/docs/web/#xr8playcanvas
 [3]: https://playcanvas.com/user/the8thwall
