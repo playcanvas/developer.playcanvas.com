@@ -59,7 +59,6 @@ This is also supported in custom front-end chunks, given that your chunk piggyba
 * Remove the sampler uniform declaration from the chunk
 * Replace the sampler name with the `$SAMPLER` macro
 
-
 For example:
 
 ```glsl
