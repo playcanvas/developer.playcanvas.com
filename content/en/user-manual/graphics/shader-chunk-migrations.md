@@ -30,29 +30,31 @@ The following tables break down the chunk changes by Engine release.
 
 ---
 #### *Engine v1.57*
-In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. 
+In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
 
-| Chunk | Changes |
-| ---   | ---     |
-| `aoPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `clearCoatPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `clearCoatGlossPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `clearCoatNormalPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `diffusePS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `diffuseDetailMapPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `emissivePS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `metalnessPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `normalMapPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `normalDetailMapPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `opacityPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `parallaxPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `sheenPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `sheenGlossPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `specularPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `specularityFactorPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `thicknessPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
-| `transmissionPS` | <ul><li>sampler declaration removed and texture is sampled from the $SAMPLER identifier</li></ul> |
+| Chunk  |
+| --- |
+| `aoPS` |
+| `clearCoatPS` |
+| `clearCoatGlossPS` |
+| `clearCoatNormalPS` |
+| `diffusePS` |
+| `diffuseDetailMapPS` |
+| `emissivePS` |
+| `metalnessPS` |
+| `normalMapPS` |
+| `normalDetailMapPS` |
+| `opacityPS` |
+| `parallaxPS` |
+| `sheenPS` |
+| `sheenGlossPS` |
+| `specularPS` |
+| `specularityFactorPS` |
+| `thicknessPS` |
+| `transmissionPS` |
 
+To support this method in your custom chunks, what you'd need to do is:
+- 
 
 ---
 #### *Engine v1.56*
