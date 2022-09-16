@@ -17,6 +17,7 @@ The debug version of the Engine will report any API changes to the runtime conso
 ![Console output][2]
 
 Once an application's chunks have been updated to the latest API they must be flagged as such. For example, after updating a material's custom chunks to the latest engine release (say v1.55), specify this in the chunks object as follows:
+
 ```javascript
 material.chunks.diffusePS = '...';
 material.chunks.APIVersion = pc.CHUNKAPI_1_55;
@@ -30,6 +31,7 @@ The following tables break down the chunk changes by Engine release.
 
 ---
 #### *Engine v1.57*
+
 In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
 
 | Chunk  |
@@ -59,6 +61,7 @@ This is also supported in custom front-end chunks, given that your chunk piggyba
 
 
 For example:
+
 ```glsl
 uniform sampler2D texture_aoMap;
 void getAO() {
@@ -108,7 +111,6 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 | `bakeDirLmEndPs` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul>
 | `bakeLmEndPS` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul>
 
-
 ---
 #### *Engine v1.55*
 
@@ -140,7 +142,6 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 | `startPS` | <ul><li>removed global declarations, generate them on demand instead</li><li>`CLEARCOAT` macro replaced with `LIT_CLEARCOAT`.</li></ul> |
 | `specularPS` | <ul><li>only provides specular color, metalness modulation is now done in backend.</li></ul> |
 | `specularityFactorPS` | <ul><li>new chunk to control specular intensity for metalness workflow.</li></ul> |
-
 
 [1]: https://github.com/playcanvas/engine/issues/4250
 [2]: /images/user-manual/graphics/shader-chunk-migrations/console-warning.png
