@@ -53,9 +53,10 @@ In 1.57, almost all front-end chunks have been changed to minimize the amount of
 | `thicknessPS` |
 | `transmissionPS` |
 
-This is also supported in custom chunks, given that your chunk piggybacks on the pre-existing material samplers. To support this method in your custom chunks, what you'd need to do is:
+This is also supported in custom front-end chunks, given that your chunk piggybacks on the pre-existing material samplers. To support this method in your chunks, what you'd need to do is:
 * Remove the sampler uniform declaration from the chunk
-* Replace the sampler name with `$SAMPLER`
+* Replace the sampler name with the `$SAMPLER` macro
+
 
 For example:
 ```glsl
@@ -89,7 +90,7 @@ void getAO() {
 }
 ```
 
-This allows the engine to automatically pick the sampler uniform to use, thus potentially reducing the total number of samplers.
+This allows the engine to automatically pick the sampler uniform to use, thus potentially reducing the total number of samplers. But note, this is only supported for front-end chunks. 
 
 ---
 #### *Engine v1.56*
