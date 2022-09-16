@@ -56,6 +56,7 @@ In 1.57, almost all front-end chunks have been changed to minimize the amount of
 | `transmissionPS` |
 
 This is also supported in custom front-end chunks, given that your chunk piggybacks on the pre-existing material samplers. To support this method in your chunks, what you'd need to do is:
+
 * Remove the sampler uniform declaration from the chunk
 * Replace the sampler name with the `$SAMPLER` macro
 
