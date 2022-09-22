@@ -75,7 +75,7 @@ Download the SDK from the dashboard.
 
 ![Unzip SDK][11]
 
-The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_v4-1-1-4` → `lib` → **`Photon-Javascript_Emscripten_SDK.min.js`**.
+The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_vX-X-X-X` → `lib` → **`Photon-Javascript_SDK.min.js`**.
 
 ## Importing SDK
 
@@ -497,7 +497,7 @@ Although this project was only a simple real-time communication between players,
 [9]: /images/tutorials/multiplayer-photon/6.png
 [10]: /images/tutorials/multiplayer-photon/7.png
 [11]: /images/tutorials/multiplayer-photon/8.png
-[12]: /images/tutorials/multiplayer-photon/9.png
+[12]: /images/tutorials/multiplayer-photon/9.jpg
 [13]: /images/tutorials/multiplayer-photon/10.png
 [14]: https://doc-api.photonengine.com/en/javascript/current/Photon.LoadBalancing.LoadBalancingClient.html
 [15]: https://doc.photonengine.com/ja-jp/quantum/v1/reference/glossary
