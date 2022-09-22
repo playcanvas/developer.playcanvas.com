@@ -1,7 +1,7 @@
 ---
 title: Press Pack
 layout: usermanual-page.hbs
-position: 27
+position: 28
 ---
 
 We offer a press pack for people to use when promoting or advertising PlayCanvas within their materials.

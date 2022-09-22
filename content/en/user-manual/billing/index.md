@@ -1,7 +1,7 @@
 ---
 title: Billing
 layout: usermanual-page.hbs
-position: 24
+position: 25
 ---
 
 ## Auto-renewal of Subscriptions
