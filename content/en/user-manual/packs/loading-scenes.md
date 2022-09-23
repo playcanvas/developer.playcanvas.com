@@ -65,7 +65,7 @@ If you need multiple instances of an entity hierarchy, please use [Templates][te
 
 ## Understanding how scenes work
 
-To use scenes effectively, it is important to understand how they are loaded when used in a project. This section goes in depth about how scenes are structured and loaded.
+To use scenes effectively, it is important to understand how they are loaded when used in a project. This section goes into detail about how scenes are structured and loaded.
 
 Scenes are separate from [assets][assets] and have different properties and APIs to load them.
 
