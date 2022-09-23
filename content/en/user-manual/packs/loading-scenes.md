@@ -43,7 +43,7 @@ this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
 });
 ```
 
-To avoid the asynchronous network request for the new scene data at the point of calling `changeScene`, you can call [`SceneRegistry.loadSceneData`][loadscenedata-api] ahead of time and `changeScene` will become a synchronous call and immediately calls `loadSceneSettings` and `loadSceneHierarchy`.
+To avoid the asynchronous network request for the new scene data at the point of calling `changeScene`, you can call [`SceneRegistry.loadSceneData`][loadscenedata-api] ahead of time and `changeScene` will become a synchronous call that immediately calls `loadSceneSettings` and `loadSceneHierarchy`.
 
 Common use cases would include knowing that the user would load level 2 when level 1 is completed. In this case, you can load the scene data for level 2 when the user is in level 1. When they complete level 1, they won't have to wait for data to be loaded and immediately enter level 2.
 
