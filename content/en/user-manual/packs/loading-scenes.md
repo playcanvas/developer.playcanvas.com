@@ -18,7 +18,7 @@ This is the most common approach that developers take where each scene is a self
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/" title="Switching Scenes Completely"></iframe>
 
-This is down by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
+This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
 
 ```
 this.app.scenes.changeScene('Some Scene Name');
