@@ -36,7 +36,6 @@ VideoTexture.attributes.add('playEvent', {
 // initialize code called once per entity
 VideoTexture.prototype.initialize = function() {
     var app = this.app;
-    
     // Create HTML Video Element to play the video
     var video = document.createElement('video');
     video.loop = true;
