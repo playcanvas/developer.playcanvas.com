@@ -80,7 +80,6 @@ VideoTexture.prototype.initialize = function() {
         app.fire(this.playEvent, this.videoTexture);
         video.play();
     }.bind(this));
-        
     // set video source
     video.src = this.video ? this.video.getFileUrl() : this.videoUrl;    
     document.body.appendChild(video);
