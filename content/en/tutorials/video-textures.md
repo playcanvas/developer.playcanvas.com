@@ -45,7 +45,6 @@ VideoTexture.prototype.initialize = function() {
 
     // critical for iOS or the video won't initially play, and will go fullscreen when playing
     video.playsInline = true;
-    
     // needed because the video is being hosted on a different server url
     video.crossOrigin = "anonymous";
     
