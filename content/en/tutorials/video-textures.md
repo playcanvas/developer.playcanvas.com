@@ -83,7 +83,6 @@ VideoTexture.prototype.initialize = function() {
         
     // set video source
     video.src = this.video ? this.video.getFileUrl() : this.videoUrl;    
-    
     document.body.appendChild(video);
     video.load();
 
