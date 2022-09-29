@@ -64,7 +64,7 @@ VideoTexture.prototype.initialize = function() {
 
     document.body.appendChild(video);
 
-    // Create a texture to hold the video frame data            
+    // Create a texture to hold the video frame data
     this.videoTexture = new pc.Texture(app.graphicsDevice, {
         format: pc.PIXELFORMAT_R8_G8_B8,
         minFilter: pc.FILTER_LINEAR_MIPMAP_LINEAR,
