@@ -21,11 +21,18 @@ This script performs the following functions:
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');
 
-VideoTexture.attributes.add('video', {
-    title: 'Video',
+VideoTexture.attributes.add('videoAsset', {
+    title: 'Video Asset',
     description: 'MP4 video asset to play back on this video texture.',
     type: 'asset'
 });
+
+VideoTexture.attributes.add('videoUrl', {
+    title: 'Video Url',
+    description: 'URL to use if there is video asset selected',
+    type: 'string'
+});
+
 VideoTexture.attributes.add('playEvent', {
     title: 'Play Event',
     description: 'Event that is fired as soon as the video texture is ready to play.',
@@ -36,6 +43,7 @@ VideoTexture.attributes.add('playEvent', {
 // initialize code called once per entity
 VideoTexture.prototype.initialize = function() {
     var app = this.app;
+
     // Create HTML Video Element to play the video
     var video = document.createElement('video');
     video.loop = true;
@@ -45,9 +53,10 @@ VideoTexture.prototype.initialize = function() {
 
     // critical for iOS or the video won't initially play, and will go fullscreen when playing
     video.playsInline = true;
+
     // needed because the video is being hosted on a different server url
     video.crossOrigin = "anonymous";
-    
+
     // autoplay the video
     video.autoplay = true;
 
@@ -78,8 +87,10 @@ VideoTexture.prototype.initialize = function() {
         app.fire(this.playEvent, this.videoTexture);
         video.play();
     }.bind(this));
+
     // set video source
-    video.src = this.video ? this.video.getFileUrl() : this.videoUrl;    
+    video.src = this.videoAsset ? this.videoAsset.getFileUrl() : this.videoUrl;
+
     document.body.appendChild(video);
     video.load();
 
@@ -94,6 +105,7 @@ VideoTexture.prototype.update = function(dt) {
     // Transfer the latest video frame to the video texture
     this.videoTexture.upload();
 };
+
 ```
 
 [1]: https://playcanvas.com/project/405850
