@@ -8,17 +8,46 @@ position: 3
 
 This page will take you through loading scenes with code and also some different approaches of using scenes in projects.
 
-There are two main approaches in using scenes:
+There are two main approaches in using scenes: changing scenes completely and additively loading scenes.
 
-### Switching scenes completely
+## Changing scenes completely
 
 This is the most common approach that developers take where each scene is a self-contained part of the game. For example, one scene would be the title screen and then one scene per level.
 
-[Here is an example][switch-scenes-completely-project] where the user can move to and from the title screen to other levels. (Please note that it's using the recommended practice below for loading scenes).
+[Here is an example][switch-scenes-completely-project] where the user can move to and from the title screen to other levels.
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/" title="Switching Scenes Completely"></iframe>
 
-### Loading scenes additively
+This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
+
+```
+this.app.scenes.changeScene('Some Scene Name');
+```
+
+If the scene data is not already loaded, this function will:
+
+- Make the asynchronous network request for the new scene data.
+- When the scene data is loaded, it will delete all child entities from the application root node (destroying the existing scene hierarchy).
+- Call `loadSceneSettings` which is now synchronous as the scene data is loaded.
+- Call `loadSceneHierarchy` which is now synchronous as the scene data is loaded.
+
+If you want to know when the scene is loaded or if there are errors, you will need to provide a callback:
+
+```
+this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
+    if (err) {
+        console.error(err);
+    } else {
+        // Scene hierachary has successfully been loaded
+    }
+});
+```
+
+To avoid the asynchronous network request for the new scene data at the point of calling `changeScene`, you can call [`SceneRegistry.loadSceneData`][loadscenedata-api] ahead of time and `changeScene` will become a synchronous call that immediately calls `loadSceneSettings` and `loadSceneHierarchy`.
+
+Common use cases would include knowing that the user would load level 2 when level 1 is completed. In this case, you can load the scene data for level 2 when the user is in level 1. When they complete level 1, they won't have to wait for data to be loaded and immediately enter level 2.
+
+## Loading scenes additively
 
 It is possible to load multiple scene hierarchies in an additive manner rather than completely switching scenes. The common use cases for this are to split up a large world so that it can be loaded over time rather than loading it all at once at the start.
 
@@ -34,9 +63,9 @@ Please note that multiple instances of the scene hierarchy cannot be loaded at o
 
 If you need multiple instances of an entity hierarchy, please use [Templates][templates] instead as unique GUIDs are given on instantiation of the template instance.
 
-## How scenes are loaded
+## Understanding how scenes work
 
-To use scenes effectively, it is important to understand how they are loaded when used in a project. This section goes in depth about how scenes are structured and loaded but if you just want to easily switch scenes in your project, skip to [recommended practices](#recommended-practices). There is a helper script that makes switching scenes simple.
+To use scenes effectively, it is important to understand how they are loaded when used in a project. This section goes into detail about how scenes are structured and loaded.
 
 Scenes are separate from [assets][assets] and have different properties and APIs to load them.
 
@@ -92,7 +121,7 @@ Once the network request has been completed, the engine will do the following:
 - Applies the loaded scene settings to the application.
 - Calls the [callback][loadsettingscallback-api] that was passed into the `loadSceneSettings` function.
 
-By default, `loadSceneHierarchy` will always load additively and it's up to the developer to remove/destroy the existing loaded scene to 'switch' scenes completely.
+By default, `loadSceneHierarchy` will always load additively and it's up to the developer to remove/destroy the existing loaded scene to change scenes completely.
 
 There are several ways to approach this with pros and cons:
 
@@ -146,97 +175,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 
 However, the old scene will be present in the hierarchy while the new scene's scriptTypes call `initialize` and `postInitialize`. This can cause issues if there is some dependency or assumptions in the scripts that it's the only scene hierarchy that is loaded. Examples would be searching for an entity by name in `initialize` and there is also an entity with the same name in the old scene hierarchy. The script would then have a reference to the old scene hierarchy's entity instead of the new scene's which will cause unexpected behavior once the old scene's hierarchy is destroyed.
 
-To help mitigate these potential issues, we have an API that allows the separation of loading the scene data from the creation of the scene hierarchy in the scene, [`SceneRegistry.loadSceneData`][loadscenedata-api] and is part of our [recommended practices](#recommended-practices) below.
-
-### Recommended practices
-
-[`SceneRegistry.loadSceneData`][loadscenedata-api] is an asynchronous function call to load from the network and store the scene data. Once the scene data is stored, `loadSceneHierarchy` and `loadSceneSettings` become synchronous function calls as they no longer need to wait for the scene data from the network.
-
-This allows you to load the scene data and once that has been loaded from the network, destroy the old scene hierarchy and load the new scene hierarchy within the same frame. With this flow, you no longer have the potential issues mentioned above when using `loadSceneHierarchy` and `loadSceneSettings` directly.
-
-You can also optionally unload the data to free memory resources once the scene hierarchy and/or settings have been added/applied using the API [`SceneRegistry.unloadSceneData`][unloadscenedata-api].
-
-Example code:
-
-```
-// Find the Scene Registry Item by the name of the scene
-var sceneItem = this.app.scenes.find('Some Scene Name');
-
-// Load the scene data with a callback when it has finished
-this.app.scenes.loadSceneData(sceneItem, function (err, sceneItem) {
-    if (err) {
-        console.error(err);
-    } else {
-        // Destroy all children under application root to remove the current loaded scene hierarchy
-        var rootChildren = this.app.root.children;
-        while(rootChildren.length > 0) {
-            rootChildren[0].destroy();
-        }
-
-        // loadSceneHierarchy and loadSceneSettings is now a synchronous function call as
-        // the the scene data has been loaded
-        this.app.scenes.loadSceneHierarchy(sceneItem);
-        this.app.scenes.loadSceneSettings(sceneItem);
-
-        // Optional: unload the scene data to free resources
-        this.app.scenes.unloadSceneData(sceneItem);
-    }
-}.bind(this));
-```
-
-To help make this simpler to work with, we have provided a helper script that makes switching scenes a single function call.
-
-In the project example above of [switching scenes][switch-scenes-completely-project], there is a script file called `load-scene-helper.js` which you can [copy and paste][copy-and-paste-assets] into to your own project.
-
-<img loading="lazy" src="/images/user-manual/scenes/load-scene-helper-script.png">
-
-This script will expose a global function called `loadScene` that can be called from any other script to load a scene and has the following API:
-
-| Parameter         | Type     | Description                                                     |
-|-------------------|----------|-----------------------------------------------------------------|
-| sceneName         | string   | The name of the scene to load.                                  |
-| options           | Object   | An object with the options of what to load from the scene data. |
-| options.hierarchy | boolean  | Default false. Set to true to load the scene hierarchy.         |
-| options.settings  | boolean  | Default false. Set to true to load the scene settings.          |
-| callback          | [LoadHierarchyCallback](/api/pc.html#LoadHierarchyCallback) | Optional. Callback function that is called if there are errors loading the scene and when the scene is loaded successfully.          |
-| scope             | Object   | Optional. Object scope to call the callback with.               |
-
-The simplest example usage would be to call the function with the scene name and options on whether to load the scene hierarchy and/or settings:
-
-```
-loadScene('Some Scene Name', { hierarchy: true, settings: true });
-```
-
-If you just want to load the scene hierarchy, then you would use the following code:
-
-```
-loadScene('Some Scene Name', { hierarchy: true });
-```
-
-If the scene data is not already loaded, this function will:
-
-- Make the asynchronous network request for the new scene data.
-- When the scene data is loaded, it will delete all child entities from the application root node (destroying the existing scene hierarchy).
-- Call `loadSceneSettings` which is now synchronous as the scene data is loaded.
-- Call `loadSceneHierarchy` which is now synchronous as the scene data is loaded.
-- If the scene data was not loaded before `loadScene` was called, it will unload the scene data.
-
-If you want to know when the scene is loaded or if there are errors, you will need to provide a callback:
-
-```
-loadScene('Some Scene Name', { hierarchy: true, settings: true }, (err, loadedSceneRootEntity) {
-    if (err) {
-        console.error(err);
-    } else {
-        // Scene hierachary has successfully been loaded
-    }
-});
-
-```
-
-To avoid the asynchronous network request for the new scene data at the point of calling `loadScene`, you can call [`SceneRegistry.loadSceneData`][loadscenedata-api] ahead of time and `loadScene` will become a synchronous call and immediately calls `loadSceneSettings` and `loadSceneHierarchy`.
-
-Common use cases would include knowing that the user would load level 2 when level 1 is completed. In this case, you can load the scene data for level 2 when the user is in level 1. When they complete level 1, they won't have to wait for data to be loaded and immediately enter level 2.
+To help mitigate these potential issues, we have an API that allows the separation of loading the scene data from the creation of the scene hierarchy in the scene, [`SceneRegistry.loadSceneData`][loadscenedata-api].
 
 ## Managing assets in scenes
 
@@ -267,3 +206,4 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [copy-and-paste-assets]: /user-manual/designer/assets/#copy-and-paste-between-projects
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tag
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
+[changescene-api]: /api/pc.SceneRegistry.html#changeScene
