@@ -12,9 +12,9 @@ The Light component can be enabled or disabled using the toggle in the top right
 
 ![Light component (Directional)][1]
 
-#### Point
+#### Omni
 
-![Light component (Point)][2]
+![Light component (Omni)][2]
 
 #### Spot
 
@@ -24,11 +24,11 @@ The Light component can be enabled or disabled using the toggle in the top right
 
 | Property           | Description |
 |--------------------|-------------|
-| Type               | Can be: <ul><li>Directional: a light casting in a uniform direction</li><li>Point: a light casting in all directional around a point</li><li>Spot: a light casting from the apex of a cone</li></ul> |
+| Type               | Can be: <ul><li>Directional: a light casting in a uniform direction</li><li>Omni: a light casting in all directional around an omni</li><li>Spot: a light casting from the apex of a cone</li></ul> |
 | Color              | The color of the emitted light. |
 | Intensity          | The intensity of the light, this acts as a scalar value for the light's color. This value can exceed 1. |
-| Range              | Point and Spot only. The distance from the spotlight source at which its contribution falls to zero. |
-| Falloff Mode       | Point and spot only. Controls the rate at which a light attenuates from its position. |
+| Range              | Omni and Spot only. The distance from the spotlight source at which its contribution falls to zero. |
+| Falloff Mode       | Omni and spot only. Controls the rate at which a light attenuates from its position. |
 | Cone Angle         | Spot only. The inner and outer cone angles, measured from the spotlight's direction, at which light falls from its maximum to zero. |
 | Bake Lightmap      | Enable lightmap baking from this light. |
 | Affect             | Determines which types of objects are lit by this light. Can be any combination of dynamically lit or lightmapped objects. |
@@ -38,8 +38,8 @@ The Light component can be enabled or disabled using the toggle in the top right
 | Distance           | Directional lights only. The shadow distance is the maximum distance from the camera beyond which shadows that come from Directional Lights are no longer visible. Smaller values produce more detailed shadows. The closer the limit the less shadow data has to be mapped to, and represented by, any shadow map; shadow map pixels are mapped spatially and so the less distance the shadow map has to cover, the smaller the pixels and so the more resolution any shadow has. |
 | Shadow Type        | The shadow mapping algorithm to use. The selection will affect the appearance and performance of the shadows. Can be: <ul><li>Shadow Map: PCF (Percentage Closer Filtering) shadowmaps.</li><li>Variance Shadow Map (8bit): Low precision shadowmaps. VSM is generally softer than PCF shadows.</li><li>Variance Shadow Map (16bit): Medium precision shadowmaps. Uses twice as much VRAM as 8 bit VSM.</li><li>Variance Shadow Map (32bit): High precision shadowmaps. Uses twice as much VRAM as 16 bit VSM.</li></ul> |
 | Shadow Bias        | Bias values enable the tuning of shadows in order to eliminate rendering artifacts, namely 'shadow acne' and 'peter-panning'. The two values are a shadow bias and a normal offset bias. |
-| Cookie             | Point and spot only. A texture asset to be projected from the light. |
-| Cookie Intensity   | Point and spot only. Defines the strength of the cookie texture. |
+| Cookie             | Omni and spot only. A texture asset to be projected from the light. |
+| Cookie Intensity   | Omni and spot only. Defines the strength of the cookie texture. |
 | Cookie Falloff     | Spot only. Disable the spotlight falloff. |
 
 ## Scripting Interface
