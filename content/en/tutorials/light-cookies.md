@@ -22,7 +22,7 @@ A cookie texture is just a regular texture asset which is applied to a spot ligh
 
 ## Cookie Cubemap
 
-For a omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
+For an omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
 
 ## Use Cases
 
