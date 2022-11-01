@@ -9,7 +9,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4097
 
 Find out more by forking the [full project][1].
 
-In theatre it is common to create visual effects on stage by using shape masks to cast shadows across the scene. These masks are called "cucoloris" or "cookies". Creating a light cookie in WebGL using PlayCanvas is achieved using a texture or a cubemap that is applied to the Light Component. Light Cookies are applicable to spot lights and point lights.
+In theatre it is common to create visual effects on stage by using shape masks to cast shadows across the scene. These masks are called "cucoloris" or "cookies". Creating a light cookie in WebGL using PlayCanvas is achieved using a texture or a cubemap that is applied to the Light Component. Light Cookies are applicable to spot lights and omni lights.
 
 ![Grid Cookie][2]
 **A simple grid cookie gives the impression of a window**
@@ -22,7 +22,7 @@ A cookie texture is just a regular texture asset which is applied to a spot ligh
 
 ## Cookie Cubemap
 
-For a point light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
+For a omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
 
 ## Use Cases
 
