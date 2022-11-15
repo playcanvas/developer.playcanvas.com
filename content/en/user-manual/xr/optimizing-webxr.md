@@ -10,7 +10,7 @@ A high and consistent framerate is critical for making an enjoyable XR experienc
 
 For AR experiences, framerates must be managed carefully as world, image and face tracking effects sometimes incur significant performance costs. This is in addition to the typically performance-constrained mobile hardware most users have access to.
 
-For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering. 
+For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering.
 
 In addition, devices like the Oculus Rift and HTC Vive demand high frame rates, like 75Hz or 90Hz, further increasing the need for highly efficient rendering. Mobile VR, whilst not requiring high framerates, suffer from the lack of native support for distortion effects, incurring additional overhead on a JavaScript and WebGL layer.
 
@@ -24,7 +24,7 @@ Read more about using [runtime lightmap generation][1].
 
 ### Cautious use of real time shadows
 
-For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Point lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
+For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Omni lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
 
 ### Watch your fill rate and overdraw
 
