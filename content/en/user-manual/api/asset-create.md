@@ -23,7 +23,7 @@ Create a new asset.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
+curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
 ```
 
 HTTP Request
@@ -64,7 +64,8 @@ Content-Type: application/javascript
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
 <div class="parameter"><span class="param">parent [optional]: number</span><p>Parent asset's id</p></div>
 <div class="parameter"><span class="param">preload [optional]: boolean</span><p>Preload the asset (true | false)</p></div>
-<div class="parameter"><span class="param">file [optional]: file</span><p></p>Data to store as the asset file.</div>
+<div class="parameter"><span class="param">file [optional]: file</span><p>Data to store as the asset file.</p></div>
+<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to true. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
 ## Response Schema
