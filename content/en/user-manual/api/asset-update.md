@@ -31,7 +31,7 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 <div class="params">
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
 <div class="parameter"><span class="param">file: file</span><p>Data to update asset file with</p></div>
-<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to true. Resize the texture to power of two dimensions (true | false)</p></div>
+<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
 ## Response Schema
