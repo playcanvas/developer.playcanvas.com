@@ -48,9 +48,16 @@ AnimationBlending.prototype.initialize = function() {
     this.blendTime = 0.2;
 
     this.setState('idle');
+};
 
-    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
-    this.app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
+AnimationBlending.prototype.update = function(dt) {
+    if (this.app.keyboard.wasPressed(pc.KEY_P)) {
+        this.setState('punch');
+    }
+
+    if (this.app.keyboard.wasReleased(pc.KEY_P)) {
+        this.setState('idle');
+    }
 };
 
 AnimationBlending.prototype.setState = function (state) {
@@ -60,18 +67,6 @@ AnimationBlending.prototype.setState = function (state) {
     // Set the current animation, taking 0.2 seconds to blend from
     // the current animation state to the start of the target animation.
     this.entity.animation.play(states[state].animation, this.blendTime);
-};
-
-AnimationBlending.prototype.keyDown = function (e) {
-    if ((e.key === pc.KEY_P) && (this.state !== 'punch')) {
-        this.setState('punch');
-    }
-};
-
-AnimationBlending.prototype.keyUp = function (e) {
-    if ((e.key === pc.KEY_P) && (this.state === 'punch')) {
-        this.setState('idle');
-    }
 };
 ```
 
