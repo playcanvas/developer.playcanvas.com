@@ -79,15 +79,12 @@ KeyboardControls.prototype.initialize = function() {
     this.app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
 };
 
-
-KeyboardControls.prototype.keyDown = function (e) {
-    if ((e.key === pc.KEY_P) && (this.entity.anim.baseLayer.activeState !== 'Punch')) {
+KeyboardControls.prototype.update = function(dt) {
+    if (this.app.keyboard.wasPressed(pc.KEY_P) && (this.entity.anim.baseLayer.activeState !== 'Punch')) {
         this.entity.anim.setBoolean('punch', true);
     }
-};
 
-KeyboardControls.prototype.keyUp = function (e) {
-    if ((e.key === pc.KEY_P) && (this.entity.anim.baseLayer.activeState === 'Punch')) {
+    if (this.app.keyboard.wasReleased(pc.KEY_P) && (this.entity.anim.baseLayer.activeState === 'Punch')) {
         this.entity.anim.setBoolean('punch', false);
     }
 };
