@@ -25,7 +25,7 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: 
 ## Parameters
 
 <div class="params">
-<div class="parameter"><span class="param">branch_id [optional]</span><p>The id of the branch. If no id is specified the master branch will be used.</p></div>
+<div class="parameter"><span class="param">branch_id [optional]</span><p>The id of the branch. If no id is specified the main branch will be used.</p></div>
 </div>
 
 ## Response Schema
