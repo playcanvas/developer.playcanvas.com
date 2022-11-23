@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the master branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
+A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the main branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
 
-## Master branch
+## Main branch
 
-Every project has a branch called "master" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "master" branch will be used as a default if no other branch is specified. A common scenario is to treat the master branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the master branch as best suits your needs.
+Every project has a branch called "main" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "main" branch will be used as a default if no other branch is specified. A common scenario is to treat the main branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the main branch as best suits your needs.
 
 ## Current branch
 
@@ -38,7 +38,7 @@ The editor will reload with your current branch switched to the chosen branch.
 
 If you have completed work on a branch, you can close it which will remove it from the open branches list.
 
-To close a branch, open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note that you cannot close your current branch or the master branch. Switch to a different branch first if you wish to close your current branch.
+To close a branch, open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note that you cannot close your current branch or the main branch. Switch to a different branch first if you wish to close your current branch.
 
 ![Close branch dialog][5]
 

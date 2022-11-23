@@ -23,14 +23,15 @@ Update an existing asset's file.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
+curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
 ```
 
 ## Parameters
 
 <div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p></p>The id of the branch</div>
-<div class="parameter"><span class="param">file: file</span><p></p>Data to update asset file with</div>
+<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
+<div class="parameter"><span class="param">file: file</span><p>Data to update asset file with</p></div>
+<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
 ## Response Schema
