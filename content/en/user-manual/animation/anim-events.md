@@ -16,7 +16,7 @@ Each event has the following modifiable properties:
 
 | Variable | Description |
 |----------|-------------|
-| time     | Defines the specific time during the playback of the animation when the event should trigger. Given in normalized time based on the animation's duration. |
+| time     | Defines the specific time during the playback of the animation when the event should trigger. Given in seconds. |
 | name     | The name of the event is used to identify the event when attaching an event listener to the anim component. |
 | number   | An additional property which can be set to any number. Used to pass additional details to the event listener. |
 | string   | An additional property which can be set to any string. Used to pass additional details to the event listener. |
