@@ -15,6 +15,8 @@ This tutorial shares a Touchscreen Joypad library that can be installed and cust
 
 We recommend reading about the [PlayCanvas UI system][playcanvas-ui] if you are not familiar with it as it to render and position the controls.
 
+![][preview]
+
 ## How to install
 
 Open the [example project][project-link], right click on the folder 'touch-joypad' and click on 'Copy'.
@@ -25,16 +27,103 @@ Open your project, right click in the assets panel and click on 'Paste'
 
 ## Adding your joystick
 
+In the folder we've just pasted, open the 'templates' folder and there will be 4 preconfigured templates for the joysticks to cover the most common use cases.
+
+* **Left/Right Fixed Touch Joystick** - A fixed joystick that is anchored to the bottom left/right of the screen corners. Recommended for quick reaction games where an instant response is expected such as a retro platforming game.
+* **Left/Right Half Touch Joystick** - A joystick where the input area the left/right half of the screen and the joystick will move to where you touch in that area and them requires dragging for movement. Recommended for when 'pushing' or 'pulling' an object in the application.
+
+For this example, let's use the 'Left Half Touch Joystick' template.
+
+Create a 2D screen Entity and [add the template][add-template-docs] as a child of the screen Entity.
+
+![][adding-left-half-joystick]
+
+The joystick is made of three Entities:
+
+- Input area (outlined in red)
+- Base (outlined in blue)
+- Nub (outlined in blue)
+
+![][joystick-layout]
+
+The input area will listen for touch and mouse (for debugging purposes) events and also stops the propagation of the event.
+
+This means that any UI Elements under this and any [pc.Mouse][pc-app-mouse] or [pc.Touch][pc-app-touch] events will not be fired if this area is interacted with first.
+
+As the input area is an UI Element, it can be position, sized and anchored specifically for your needs via the [UI system layout][elements-manual].
+
+It also has the 'touchJoystick' which has all the logic and attributes for the joystick. Each attribute has tooltips describing what they are for with some more details below.
+
+![][joystick-script-attributes]
+
+The base and nub Entities are controlled by the script and are UI Elements. If you would like the joystick to be in a different place than where it is in the template, please position and anchor the base Entity to where you need them to be and not the input area.
+
 ### Behavior Types
 
+There are 3 behavior types for the joystick that are commonly found in touch screen games and applications.
+
+![][joystick-type]
+
+'Fixed in place' where the base of the joystick does not move from it's position:
+![][joystick-fixed]
+
+'Move to first touch and fixed' where the base of the joystick moves to where the user first touches in the input area and then stays fixed:
+![][joystick-relative-fixed]
+
+'Move to first touch and drags' where the base of the joystick moves to where the user first touches in the input area and then is dragged when the user drags pass the joystick range:
+![][joystick-relative-drag]
+
+This can be changed at runtime so it's possible to this as a user option in the application.
+
 ### Reading joystick values
+
+![][joystick-deadzone-range]
+
+The red circle is dead zone and if the nub position is within that circle, the value from the joystick will return 0 for both axes. The blue circle is the range and the nub cannot go outside that circle.
+
+The values are always normalized between -1 and 1 on both axes based on the where the nub is between the dead zone (red circle) and the range (blue circle).
+
+The size of the circles can be set in the Editor via the script attributes.
+
+Joystick values can accessed in code from a global Javascript object with the identifier. By default, the identifier is 'joystick0' but can be changed in the Editor on the script to be more specific.
+
+Example code:
+
+```
+// Get the joystick by the identifier from the global object
+var joystick = window.touchJoypad.sticks['joystick0];
+
+// Get the normalized values of both joystick axes and print
+// to console
+console.log('X: ' + joystick.x ', Y: ' + joystick.y);
+```
+
+[In the demo][project-link], the camera is controlled by the right joystick and you can see how it gets and uses the values in the [script here][orbit-camera-joypad-input-script].
+
 
 ## Adding your buttons
 
 // Make sure include joystick as buttons
 
+// Example code
+
+// Link to Code Demo
 
 [project-link]: https://playcanvas.com/project/1007506/overview/touchscreen-joypad-controls
 [playcanvas-ui]: /user-manual/user-interface/
 [copy-folder]: /images/tutorials/touchscreen-joypad-controls/copy-folder.gif
 [paste-folder]: /images/tutorials/touchscreen-joypad-controls/paste-folder.gif
+[preview]: /images/tutorials/touchscreen-joypad-controls/preview.gif
+[add-template-docs]: /user-manual/templates/#adding-templates-in-your-scene
+[adding-left-half-joystick]: /images/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif
+[joystick-layout]: /images/tutorials/touchscreen-joypad-controls/joystick-layout.png
+[pc-app-mouse-api]: /api/pc.Mouse.html
+[pc-app-touch-api]: /api/pc.Touch.html
+[elements-manual]: /user-manual/user-interface/elements/
+[joystick-script-attributes]: /images/tutorials/touchscreen-joypad-controls/joystick-script-attributes.gif
+[joystick-fixed]: /images/tutorials/touchscreen-joypad-controls/joystick-fixed.gif
+[joystick-relative-fixed]: /images/tutorials/touchscreen-joypad-controls/joystick-relative-fixed.gif
+[joystick-relative-drag]: /images/tutorials/touchscreen-joypad-controls/joystick-relative-drag.gif
+[joystick-type]: /images/tutorials/touchscreen-joypad-controls/joystick-type.png
+[joystick-deadzone-range]: /images/tutorials/touchscreen-joypad-controls/joystick-deadzone-range.png
+[orbit-camera-joypad-input-script]: https://playcanvas.com/editor/code/1007506?tabs=111433673
