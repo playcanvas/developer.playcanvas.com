@@ -73,7 +73,7 @@ There are 3 behavior types for the joystick that are commonly found in touch scr
 'Move to first touch and drags' where the base of the joystick moves to where the user first touches in the input area and then is dragged when the user drags pass the joystick range:
 ![][joystick-relative-drag]
 
-This can be changed at runtime so it's possible to this as a user option in the application.
+This can be changed at runtime so it's possible to add this as a user option in the application as part of the in-application settings.
 
 ### Reading joystick values
 
