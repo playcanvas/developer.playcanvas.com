@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1007
 
 This tutorial shares a Touchscreen Joypad library that can be installed and customized for any project that needs touch screen controls.
 
-We recommend reading about the [PlayCanvas UI system][playcanvas-ui] if you are not familiar with it as it to render and position the controls.
+We recommend reading about the [PlayCanvas UI system][playcanvas-ui] if you have not used it before as it is used to render and position the controls for this library.
 
 ![][preview]
 
