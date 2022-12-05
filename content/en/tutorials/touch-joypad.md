@@ -50,7 +50,7 @@ The input area will listen for touch and mouse (for debugging purposes) events a
 
 This means that any UI Elements under this and any [pc.Mouse][pc-app-mouse] or [pc.Touch][pc-app-touch] events will not be fired if this area is interacted with first.
 
-As the input area is an UI Element, it can be position, sized and anchored specifically for your needs via the [UI system layout][elements-manual].
+As the input area is an UI Element, it can be positioned, sized and anchored specifically for your needs via the [UI system layout][elements-manual].
 
 It also has the 'touchJoystick' which has all the logic and attributes for the joystick. Each attribute has tooltips describing what they are for with some more details below.
 
@@ -85,16 +85,15 @@ The values are always normalized between -1 and 1 on both axes based on the wher
 
 The size of the circles can be set in the Editor via the script attributes.
 
-Joystick values can accessed in code from a global Javascript object with the identifier. By default, the identifier is 'joystick0' but can be changed in the Editor on the script to be more specific.
+Joystick values can accessed in code from the global Javascript object `window.touchJoypad.sticks` with the identifier. By default, the identifier is 'joystick0' but can be changed in the Editor on the script to be more specific.
 
 Example code:
 
-```
+```javascript
 // Get the joystick by the identifier from the global object
-var joystick = window.touchJoypad.sticks['joystick0];
+var joystick = window.touchJoypad.sticks['joystick0'];
 
-// Get the normalized values of both joystick axes and print
-// to console
+// Get the normalized values of both joystick axes and print to console
 console.log('X: ' + joystick.x ', Y: ' + joystick.y);
 ```
 
@@ -103,11 +102,35 @@ console.log('X: ' + joystick.x ', Y: ' + joystick.y);
 
 ## Adding your buttons
 
-// Make sure include joystick as buttons
+Buttons are fixed position UI Elements on the screen. There is a template for button in the 'templates' folder and [should be added][add-template-docs] as a child of the screen Entity.
 
-// Example code
+![][adding-button]
 
-// Link to Code Demo
+As they are UI Elements, they can be positioned, sized and anchored specifically for your needs via the [UI system layout][elements-manual].
+
+Like the joysticks, they have an identifier so they can be accessed in code from the global Javascript object `window.touchJoypad.buttons` with the following API.
+
+| Function name | Description |
+|---------------|-------------|
+| isPressed     | Takes the button identifier and returns true if the button is currently being pressed. |
+| wasPressed    | Takes the button identifier and returns true if the button was pressed since the last frame.
+| wasReleased   | Takes the button identifier and returns true if the button was released since the last frame. |
+| wasTapped     | Takes the button identifier and returns true if the button was pressed and released within 200ms. i.e. A quick tap. |
+
+The joysticks are also buttons which gives extra flexibility in how they can be used. For example, using the `wasTapped` API with a joystick identifier can act like a L3/R3 input on a PlayStation controller.
+
+Example code:
+
+```javascript
+// Get the button global object
+var buttons = window.touchJoypad.buttons
+
+// Check if the button was pressed since the last frame
+console.log('Was pressed: ' + buttons.wasPressed('button0'));
+```
+
+[In the demo][project-link], the character is controlled by the left joystick and buttons. You can see how it gets and uses the buttons in the [script here][player-controller-script] to play attack animations.
+
 
 [project-link]: https://playcanvas.com/project/1007506/overview/touchscreen-joypad-controls
 [playcanvas-ui]: /user-manual/user-interface/
@@ -116,6 +139,7 @@ console.log('X: ' + joystick.x ', Y: ' + joystick.y);
 [preview]: /images/tutorials/touchscreen-joypad-controls/preview.gif
 [add-template-docs]: /user-manual/templates/#adding-templates-in-your-scene
 [adding-left-half-joystick]: /images/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif
+[adding-button]: /images/tutorials/touchscreen-joypad-controls/adding-button.gif
 [joystick-layout]: /images/tutorials/touchscreen-joypad-controls/joystick-layout.png
 [pc-app-mouse-api]: /api/pc.Mouse.html
 [pc-app-touch-api]: /api/pc.Touch.html
@@ -127,3 +151,4 @@ console.log('X: ' + joystick.x ', Y: ' + joystick.y);
 [joystick-type]: /images/tutorials/touchscreen-joypad-controls/joystick-type.png
 [joystick-deadzone-range]: /images/tutorials/touchscreen-joypad-controls/joystick-deadzone-range.png
 [orbit-camera-joypad-input-script]: https://playcanvas.com/editor/code/1007506?tabs=111433673
+[player-controller-script]: https://playcanvas.com/editor/code/1007506?tabs=111432679
