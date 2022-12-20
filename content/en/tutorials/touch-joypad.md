@@ -94,7 +94,7 @@ Example code:
 var joystick = window.touchJoypad.sticks['joystick0'];
 
 // Get the normalized values of both joystick axes and print to console
-console.log('X: ' + joystick.x ', Y: ' + joystick.y);
+console.log('X: ' + joystick.x + ', Y: ' + joystick.y);
 ```
 
 [In the demo][project-link], the camera is controlled by the right joystick and you can see how it gets and uses the values in the [script here][orbit-camera-joypad-input-script].
