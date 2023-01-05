@@ -114,7 +114,7 @@ FirstPersonMovement.prototype.update = function(dt) {
     }
 
     // use direction from keypresses to apply a force to the character
-    if (x !== 0 && z !== 0) {
+    if (x !== 0 || z !== 0) {
         force.set(x, 0, z).normalize().scale(this.power);
         this.entity.rigidbody.applyForce(force);
     }
