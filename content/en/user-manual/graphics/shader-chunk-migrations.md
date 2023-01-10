@@ -30,6 +30,14 @@ By doing this you will no longer see warning messages in the console.
 The following tables break down the chunk changes by Engine release.
 
 ---
+#### *Engine v1.60*
+| Chunk | Changes |
+| ---   | ---     |
+| `clearCoatGlossPS` | <ul><li>Renamed uniform `material_clearCoatGlossiness` to `material_clearCoatGloss`.</ul></li> |
+| `glossPS`          | <ul><li>Renamed uniform `material_glossiness` to `material_gloss`.</ul></li> |
+| `sheenGlossPS`     | <ul><li>Renamed uniform `material_sheenGlossiness` to `material_sheenGloss`.</ul></li> |
+
+---
 #### *Engine v1.57*
 
 In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
