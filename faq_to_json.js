@@ -49,7 +49,7 @@ const writeJson = (file, json) => {
 
 const upload = (file) => {
     console.log('Uploading to S3...');
-    const cmd = `aws s3 --content-encoding 'gzip' cp ${file}.gz s3://${s3Bucket}/${file}`;
+    const cmd = `aws s3 cp --content-encoding 'gzip' ${file}.gz s3://${s3Bucket}/${file}`;
     exec(cmd, (err) => {
         if (err)
             throw err;
