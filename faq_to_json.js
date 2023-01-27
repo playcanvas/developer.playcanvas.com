@@ -49,7 +49,7 @@ const writeJson = (file, json) => {
 
 const upload = (file) => {
     console.log('Uploading to S3...');
-    const cmd = `s3cmd -m application/json --add-header='Content-Encoding: gzip' --acl-public put ${file}.gz s3://${s3Bucket}/${file}`;
+    const cmd = `aws s3 cp --content-encoding 'gzip' ${file}.gz s3://${s3Bucket}/${file}`;
     exec(cmd, (err) => {
         if (err)
             throw err;
