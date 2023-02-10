@@ -28,6 +28,8 @@ More details can be found on the specific pages for [checkpoints][1], [branches]
 
 ## Storage Usage with Version Control
 
+Using Version Control will use more storage for checkpoints and branches.
+
 Every checkpoint created only stores the changes from the previous checkpoint. The amount of data used is dependent on the changes such as new assets, texture changes etc.
 
 Creating a branch from a checkpoint makes a copy of the project state at that checkpoint. This can increase storage usage significantly depending on the project.
