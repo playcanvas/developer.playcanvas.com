@@ -111,7 +111,7 @@ There are two more methods that are called by the engine on scripts if they are 
 
 Script instances fire a number of events that can be used to respond to specific circumstances.
 
-## state, enable, disable
+## state and enable/disable
 
 The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
 
@@ -155,7 +155,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## attr & attr:[name]
+## attr and attr:[name]
 
 The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
 

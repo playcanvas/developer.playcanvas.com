@@ -50,7 +50,7 @@ The Editor supports real-time collaborative editing by all users with permission
 
 Here you can see various helpful messages while you are interacting with the Code Editor.
 
-## Collaboration, Saving & Reverting
+## Saving and Reverting
 
 The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time.
 

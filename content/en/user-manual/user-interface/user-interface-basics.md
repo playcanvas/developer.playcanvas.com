@@ -16,9 +16,9 @@ The graphical portions of the user interface, Image and Text Elements, are drawn
 
 To change the draw order you simply re-order the entities in the Editor hierarchy. You can re-order elements programmatically by calling `entity.reparent(...)`. Though, note, that this forces the draw order to be recalculated for the entire Screen component.
 
-## 9-slicing
+## Element 9-slicing
 
-9-slices (or 9-patches) are a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
+9-slicing (or 9-patch) is a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
 
 ## Input
 
