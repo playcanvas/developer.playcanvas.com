@@ -87,6 +87,24 @@ renderer.image = (href, title, text) => {
     return `<img src="${href}" loading="lazy" alt="${text}">`;
 };
 
+// Ensure table header cells have scope="col" attribute (required for accessibility)
+renderer.tablecell = (content, flags) => {
+    const type = flags.header ? 'th' : 'td';
+    let openTag = `<${type}`;
+
+    if (flags.header) {
+        openTag += ' scope="col"';
+    }
+    if (flags.align) {
+        openTag += ` align="${flags.align}"`;
+    }
+    openTag += '>';
+
+    const closeTag = `</${type}>`;
+
+    return openTag + content + closeTag + '\n';
+};
+
 // Store strings requested
 const localization = {};
 
