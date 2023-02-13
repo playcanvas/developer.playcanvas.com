@@ -36,12 +36,12 @@
     "handlebars": "^4.7.7",
     "html-validate": "^7.13.2",
     "jstransformer-handlebars": "^1.2.0",
-    "linkinator": "^4.0.2",
+    "linkinator": "^4.1.2",
     "marked": "^4.2.12",
     "metalsmith": "^2.5.0",
     "metalsmith-static": "0.0.5",
     "node-fetch": "^2.6.7",
-    "sass": "^1.53.0",
+    "sass": "^1.58.0",
     "serve": "^14.2.0"
   },
   "scripts": {
