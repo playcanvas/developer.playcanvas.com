@@ -73,13 +73,13 @@ renderer.link = (href, title, text) => {
 };
 
 // Insert an anchor for headings h2 and smaller
-renderer.heading = (text, level) => {
-    const id = text.toLowerCase().replace(/\s/g, '-');
+renderer.heading = (text, level, raw, slugger) => {
     if (level >= 2) {
-        const href = `#${id}`;
-        return `<h${level} id="${id}">${text} <a class="header-anchor font-icon" href="${href}">&#xE368;</a></h${level}>`;
+        const id = slugger.slug(raw);
+        return `<h${level} id="${id}">${text}<a class="header-anchor font-icon" href="#${id}">&#xE368;</a></h${level}>\n`;
     }
-    return `<h${level}>${text}</h${level}>`;
+
+    return `<h${level}>${text}</h${level}>\n`;
 };
 
 // Add lazy loading attribute to images

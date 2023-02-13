@@ -30,15 +30,18 @@ By doing this you will no longer see warning messages in the console.
 The following tables break down the chunk changes by Engine release.
 
 ---
-#### *Engine v1.60*
+
+#### Engine v1.60
+
 | Chunk | Changes |
 | ---   | ---     |
-| `clearCoatGlossPS` | <ul><li>Renamed uniform `material_clearCoatGlossiness` to `material_clearCoatGloss`.</ul></li> |
-| `glossPS`          | <ul><li>Renamed uniform `material_glossiness` to `material_gloss`.</ul></li> |
-| `sheenGlossPS`     | <ul><li>Renamed uniform `material_sheenGlossiness` to `material_sheenGloss`.</ul></li> |
+| `clearCoatGlossPS` | <ul><li>Renamed uniform `material_clearCoatGlossiness` to `material_clearCoatGloss`.</li></ul> |
+| `glossPS`          | <ul><li>Renamed uniform `material_glossiness` to `material_gloss`.</li></ul> |
+| `sheenGlossPS`     | <ul><li>Renamed uniform `material_sheenGlossiness` to `material_sheenGloss`.</li></ul> |
 
 ---
-#### *Engine v1.57*
+
+#### Engine v1.57
 
 In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
 
@@ -104,23 +107,25 @@ void getAO() {
 This allows the engine to automatically pick the sampler uniform to use, thus potentially reducing the total number of samplers. But note, this is only supported for front-end chunks. 
 
 ---
-#### *Engine v1.56*
+
+#### Engine v1.56
 
 | Chunk | Changes |
 | ---   | ---     |
 | `combineXXXX` | <ul><li>all combine chunks except for `combinePS` have been deleted.</li><li>instead, combinePS is controlled with a handful of preprocessor defines.</li></ul> |
-| `refractionPS` | <ul><li>split into two new chunks, `refractionCubePS` and `refractionDynamicPS`.</ul></li> |
-| `refractionCubePS` | <ul><li>the old `refractionPS` is identical to this one, uses a cube map for refractions.</ul></li> |
-| `refractionDynamicPS` | <ul><li>new chunk which supports dynamic refractions by using the grab pass, needs `requestSceneColorMap(true);` to be set on the camera to work.</ul></li> |
-| `sheenPS` | <ul><li>new chunk to provide sheen (fabric) color.</ul></li> |
-| `sheenGlossPS` | <ul><li>new chunk to provide sheen (fabric) glossiness.</ul></li> |
-| `reflectionEnvHQPS` | <ul><li>new chunk to provide a high quality specular environment map for reflections and refractions.</ul></li> |
-| `thicknessPS` | <ul><li>new chunk to provide thickness which modifies attenuation color for transmissive (transparent/refractive) materials.</ul></li> |
-| `bakeDirLmEndPs` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul>
-| `bakeLmEndPS` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul>
+| `refractionPS` | <ul><li>split into two new chunks, `refractionCubePS` and `refractionDynamicPS`.</li></ul> |
+| `refractionCubePS` | <ul><li>the old `refractionPS` is identical to this one, uses a cube map for refractions.</li></ul> |
+| `refractionDynamicPS` | <ul><li>new chunk which supports dynamic refractions by using the grab pass, needs `requestSceneColorMap(true);` to be set on the camera to work.</li></ul> |
+| `sheenPS` | <ul><li>new chunk to provide sheen (fabric) color.</li></ul> |
+| `sheenGlossPS` | <ul><li>new chunk to provide sheen (fabric) glossiness.</li></ul> |
+| `reflectionEnvHQPS` | <ul><li>new chunk to provide a high quality specular environment map for reflections and refractions.</li></ul> |
+| `thicknessPS` | <ul><li>new chunk to provide thickness which modifies attenuation color for transmissive (transparent/refractive) materials.</li></ul> |
+| `bakeDirLmEndPs` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul> |
+| `bakeLmEndPS` | <ul><li>moved to `chunks-lightmapper.js`.</li></ul> |
 
 ---
-#### *Engine v1.55*
+
+#### Engine v1.55
 
 | Chunk | Changes |
 | --- | --- |
@@ -141,7 +146,7 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 | `ltcPS` | <ul><li>`CLEARCOAT` macro replaced with `LIT_CLEARCOAT`.</li></ul> |
 | `normalMapFastPS` | <ul><li>removed</li></ul> |
 | `normalMapPS` | <ul><li>added `MAPTEXTURE` #define like the other chunks</li><li>normalize final normal</li><li>when normal texture isn't defined, calculate normal from geometry normal instead</li></ul> |
-| `normalDetailMapPS` | <ul><li>remove two (mostly) unnecessary calls to `normalise` - final normal is normalized instead</li></ul> |
+| `normalDetailMapPS` | <ul><li>remove two (mostly) unnecessary calls to `normalize` - final normal is normalized instead</li></ul> |
 | `normalVertexPS` | <ul><li>removed chunk, moved functionality to `normalMapPS` frontend chunk</li></ul> |
 | `metalnessPS` | <ul><li>now controls metalness in front end and is not exclusive of `specularPS`</li></ul> |
 | `metalnessModulatePS` | <ul><li>new chunk to control how specular color is modulated based on specular color and albedo with regards to metalness</li></ul> |
