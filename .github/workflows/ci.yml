@@ -64,5 +64,7 @@ jobs:
       run: npm ci
     - name: Build
       run: npm run build
+    - name: Log
+      run: node log.js
     - name: Lint HTML
       run: npm run lint:html
