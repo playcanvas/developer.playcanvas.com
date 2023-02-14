@@ -2,7 +2,6 @@
     "extends": ["html-validate:recommended"],
     "rules": {
         "no-inline-style": "off",
-        "no-trailing-whitespace": "off",
         "wcag/h37": "off"
     }
 }

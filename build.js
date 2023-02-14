@@ -7,6 +7,7 @@ const Metalsmith = require('metalsmith');
 const layouts    = require('@metalsmith/layouts');
 const markdown   = require('@metalsmith/markdown');
 const permalinks = require('@metalsmith/permalinks');
+const beautify   = require('metalsmith-beautify');
 const msStatic   = require('metalsmith-static');
 const navbuilder = require('./lib/nav-builder-plugin/index');
 const locale     = require('./lib/locale/index');
@@ -155,6 +156,7 @@ Metalsmith(__dirname)
     .use(i18nout()({
         data: localization
     }))
+    .use(beautify())
     .build(function (err) {
         if (err) throw err;
         console.log('Build complete!');
