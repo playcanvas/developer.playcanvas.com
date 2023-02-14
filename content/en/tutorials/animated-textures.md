@@ -19,7 +19,7 @@ The square plane in the example uses the script `scrolling-texture.js` to consta
 ScrollingTexture.prototype.update = function(dt) {
     var velocity = ScrollingTexture.tmpVec2;
     var offset = ScrollingTexture.tmpOffset;
-    
+
     // Calculate how much to offset the texture
     // Speed * dt
     velocity.set(this.speed.x, this.speed.y);
@@ -28,7 +28,7 @@ ScrollingTexture.prototype.update = function(dt) {
     // Update the diffuse and normal map offset values
     offset.copy(this.material.diffuseMapOffset);
     offset.add(velocity);
-    
+
     this.material.diffuseMapOffset = offset;
     this.material.normalMapOffset = offset;
     this.material.update();

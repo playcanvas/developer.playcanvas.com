@@ -40,18 +40,18 @@ UiMenu.attributes.add("overlay", {type: "entity"});
 
 // initialize code called once per entity
 UiMenu.prototype.initialize = function() {
-    this.on('enable', this.onEnable, this);    
+    this.on('enable', this.onEnable, this);
     this.on('disable', this.onDisable, this);
-    
+
     this.onEnable();
 };
 
 UiMenu.prototype.onEnable = function () {
-    // Listen for clicks on the background    
-    
+    // Listen for clicks on the background
+
     this.overlay.enabled = true;
     this.overlay.element.on("click", this.start, this);
-    
+
     if (this.ball) {
         this.ball.model.meshInstances[0].material.depthTest = false;
     }
@@ -69,6 +69,7 @@ UiMenu.prototype.start = function (e) {
     e.stopPropagation();
 };
 ```
+
 First we have set up an attribute with a reference to the overlay element. The overlay element is a full screen element which tints the screen green. We also use this to detect input as we only care about the user clicking on the full screen.
 
 When the Entity is enabled we display the full screen overlay by enabling it and then we start listening for the click event. When the Entity is disabled we stop listening for the event and we hide the overlay. When an event is triggered we fire a "ui:start" event which the main game script is listening for and that triggers a change of game state.
