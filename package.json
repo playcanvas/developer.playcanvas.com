@@ -51,7 +51,7 @@
     "faq": "node faq.js",
     "faq-to-json": "node faq_to_json.js --dir faq --bucket code.playcanvas.com",
     "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib public/js",
-    "lint:html": "html-validate build/en/user-manual/user-interface/safe-area/index.html",
+    "lint:html": "html-validate build/en",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
     "serve": "serve build -l 51000",
     "test:links": "linkinator en --server-root build --recurse --skip '/^api' --verbosity error",
