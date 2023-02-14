@@ -148,7 +148,9 @@ Metalsmith(__dirname)
         partialName: 'shader-editor-navigation'
     }))
     .use(tutorials('tutorials')())
-    .use(layouts())
+    .use(layouts({
+        pattern: '**/*.html'
+    }))
     .use(locale()())
     .use(i18nout()({
         data: localization
