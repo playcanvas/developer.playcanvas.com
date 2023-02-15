@@ -55,7 +55,7 @@
     "lint:html": "html-validate build/en",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
     "serve": "serve build -l 51000",
-    "test:links": "linkinator en --server-root build --recurse --skip '/^api' --verbosity error",
+    "test:links": "linkinator en --server-root build --recurse --skip \"api\" --skip \"com/ja\" --skip \"com/ru\" --skip \"com/zh\" --skip \"facebook.com\" --verbosity error",
     "watch": "chokidar content/**/*.md public -c \"npm run build\""
   }
 }

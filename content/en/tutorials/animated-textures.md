@@ -2,7 +2,7 @@
 title: Animated Textures
 layout: tutorial-page.hbs
 tags: animation, textures
-thumb: http://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/BM93v05L/" title="Animated Textures"></iframe>
