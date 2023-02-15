@@ -40,7 +40,7 @@ The User Manual on the developer site has a FAQ page which can be found at `cont
 
 To validate the generated HTML files in the `build` folder, run:
 
-    npm run test:html
+    npm run lint:html
 
 To scan for broken hyperlinks, run:
 
