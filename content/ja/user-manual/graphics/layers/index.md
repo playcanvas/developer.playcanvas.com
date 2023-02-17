@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-## Layers Overview
+## レイヤー概要
 
 レイヤーによって、アプリケーションのレンダーループをカスタマイズできます。
 レイヤーを使用すると、高度なレンダリング機能を実装できます。たとえば：
 
-* modify the order in which your meshes are rendered
-* set cameras to render only some meshes
-* set which lights affect which meshes
+* メッシュがレンダリングされる順番を修正する
+* 一部のメッシュのみをレンダリングするようカメラを設定する
+* どのライトがどのメッシュに影響するのかを設定する
 
 PlayCanvasアプリケーションは、常に表示されているデフォルトの一連のレイヤーによって作成されています。独自のレイヤーを作成し、特定の要件に適合するよう再整理することが可能です。
 
 基本的なレベルにおいて、レイヤーはレンダリングをおこなうメッシュのリストです。各レイヤーは2つのサブレイヤーに分けられます：OpaqueとTransparentです。メッシュがレイヤーに追加されると、レイヤーはメッシュ上のマテリアルを透過してレンダリングするかどうかに応じてメッシュを2つのサブレイヤーのいずれかに保管します。これは、透過サブレイヤーは多くの場合、透過サブレイヤーとは異なる方法でソートされるためです。
 
-## Rendering Order
+## レンダリングの順番
 
 There are three factors that determine the order in which meshes are rendered.
 
@@ -29,41 +29,41 @@ Each camera also has a list of layers set up on it, which controls which layers 
 
 ![Camera Layers][6]
 
-### Layer Composition
+### レイヤー構成
 
 Next is order of layers in the application. Each application contains a `pc.LayerComposition` object which is available in your application as `this.app.scene.layers`. The layer composition determines the order of all sub-layers. The ordering is based on the sub-layer not on the layer so that you can, for example, render all the opaque sub-layers first, then all the transparent sub-layers afterwards.
 
 **注**: ワールドレイヤーの後にレンダリングされるレイヤー内にモデルコンポーネントを設置しても、ワールドレイヤー内のすべてに優先してモデルをレンダリング**するわけではありません！** モデルのレンダリングに使用されるスタンダードマテリアルには、`depthTest`というプロパティがあります。このプロパティがtrueの場合（デフォルト）、モデルの各ピクセルがレンダリングされる前に、このピクセルの前に何かないかGPUがテストして確認します。そのピクセルがそれよりも前の層深度の中に描かれても、テストは可視的なピクセルのみが描かれる点を確認します。メッシュをレンダリングする際にカメラからの距離を無視したい場合には、マテリアル内の `depthTest`を非有効化してください。
 
-### Sort Modes
+### ソートモード
 
 各サブレイヤーにはソートモードがあります。各フレームで、サブレイヤー内のメッシュはそのソートモードに応じてソートされます。これは、サブレイヤーがレンダリングされる際の、メッシュがレンダリングされる順序を決定します。
 
-* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - This is the default mode for opaque sub-layers. Mesh instances are sorted to minimize switching between materials and meshes to improve rendering performance.
-* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - This is the default mode for transparent sub-layers. Mesh instances are sorted back to front. This is the way to properly render many semi-transparent objects on different depth, one is blended on top of another.
-* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - Mesh instances are sorted front to back. Depending on GPU and the scene, this option may give better performance than `pc.SORTMODE_MATERIALMESH` due to reduced overdraw.
-* **Manual** (`pc.SORTMODE_MANUAL`) - This is the default mode for UI or 2D layers. Mesh instances are sorted based on `drawOrder` property. The Element Component and Sprite Component should be placed in layers with this sort mode.
-* **None** (`pc.SORTMODE_NONE`) - No sorting is applied. Mesh instances are rendered in the same order they were added to a layer.
+* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - これは不透過サブレイヤー向けのデフォルトモードです。レンダリングパフォーマンスを向上するため、メッシュインスタンスはマテリアルとメッシュの切替を最小化するようソートされます。
+* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - これは、透過サブレイヤー向けのデフォルトモードです。メッシュインスタンスは背面から全面にソートされます。さまざまな深度の半透明オブジェクトを多くレンダリングするのに適した方法です。これらの半透明オブジェクトは互いに混合されます。
+* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - メッシュインスタンスは前面から背面にソートされます。GPUとシーンによっては、オーバードローが減少するため、このオプションの方が`pc.SORTMODE_MATERIALMESH`よりも優れたパフォーマンスとなる可能性があります。
+* **Manual** (`pc.SORTMODE_MANUAL`) - これは、UIまたは2Dレイヤー向けのデフォルトモードです。メッシュインスタンスは `drawOrder` プロパティにもとづいてソートされます。エレメントコンポーネントとスプライトコンポーネントは、このソートモードでレイヤーに設置する必要があります。
+* **None** (`pc.SORTMODE_NONE`) - ソートは適用されません。メッシュインスタンスは、レイヤーに追加されたのと同じ順序でレンダリングされます。
 
-## Default Layers
+## デフォルトレイヤー
 
 PlayCanvasアプリケーションは、一連のデフォルトレイヤーによって作成されています。これらのレイヤーの場所は変更しないでください。正しい場所に存在しないと、エンジンの一部の機能が正常に作動しなくなります。デフォルトの順序は以下のとおりです：
 
 ![Default Layers][1]
 
-1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
+1. **World (Opaque)** - 透明でないコンポーネントのレンダリングに使用されます。多くの場合、不透明コンポーネントメッシュが該当します。
 1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][7].
-1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
-1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
-1. **Immediate (Opaque)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **Immediate (Transparent)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **UI (Transparent)** - Used to render Element components. All Element components are transparent, so the Opaque sub-layer is not used.
+1. **Skybox (Opaque)** - スカイボックスのレンダリングに使用します。オーバードローを減少させるため、スカイボックスはWorld (Opaque) の後にレンダリングされます。
+1. **World (Transparent)** - 透明なコンポーネントや、その他の透明なコンポーネントメッシュのレンダリングに使用します。
+1. **Immediate (Opaque)** - 即時モードメッシュのレンダリングに使用します（例： `app.renderLine()`）。
+1. **Immediate (Transparent)** - 即時モードメッシュのレンダリングに使用します（例：`app.renderLine()`）
+1. **UI (Transparent)** - エレメントコンポーネントのレンダリングに使用します。すべてのエレメントコンポーネントが透明なため、不透明サブレイヤーは使用されません。
 
-## Using Custom Layers
+## カスタムレイヤーの使用
 
 デフォルトのレイヤーには、エンジンの既存の機能が実装されています。ただし、独自のレイヤーを作成し、コンテンツをレンダリングする順序をカスタマイズしてこそ、エンジンを十分に活用することができます。
 
-### Create a layer
+### レイヤーの作成
 
 レイヤーの管理は、エディターの**Settings**セクション内**LAYERS**パネルからおこないます。
 
@@ -71,20 +71,20 @@ PlayCanvasアプリケーションは、一連のデフォルトレイヤーに�
 
 Layersセクションで、作成するレイヤーの名前を入力し**Add Layer**をクリックします。ボタンの下に利用可能なレイヤーのリストが表示され、新規作成したレイヤーも含まれています。
 
-### Setting the sort mode
+### ソートモードの設定
 
 ![Edit a layer][3]
 
 レイヤーリストで、各サブレレイヤーのソートモードを選択できます。
 レイヤーを拡張し、ドロップダウンメニューからソートモードを選択してください。
 
-### Choosing the layer order
+### レイヤー順序の選択
 
 ![Add layer][4]
 
 レイヤー構成にサブレイヤーを追加するには、**ADD SUBLAYER**を選び、追加するサブレイヤーを選択します。レイヤーがRender Orderリストに表示されたら、各サブレイヤーをドラッグすれば順序を変更できます。
 
-### Rendering entities in layers
+### レイヤー内のエンティティのレンダリング
 
 メッシュをレンダリングするコンポーネントにはすべて`layers`プロパティがあり、このプロパティはメッシュをどのレイヤーやサブレイヤーに追加するかの決定に使用されます。これらのコンポーネントには、モデル、エレメント、スプライト、パーティクルシステムなどがあります。カメラコンポーネントとライトコンポーネントにも`layers`プロパティがあり、それぞれどのレイヤーをレンダリングするか、または照らすかを決定します。
 

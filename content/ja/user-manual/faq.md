@@ -13,7 +13,7 @@ position: 25
 [Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/)
 
 
-## How do I add a script?
+## スクリプトを追加するには？
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif">
 
@@ -23,7 +23,7 @@ JavaScriptを使用してエンティティの挙動を制御できます。ス�
 
 
 
-## How do I change the background color?
+## 背景色を変更するには？
 
 シーンの背景色を変えるには、シーン内のカメラのClear Colorプロパティを変更してください。
 
@@ -33,7 +33,7 @@ You could also try and adding a [skybox](https://developer.playcanvas.com/en/use
 
 
 
-## How do I change the material of a model?
+## モデルの色を変更するには？
 
 <img src="https://playcanvas.com/static-assets/instructions/change_material.gif">
 
@@ -45,7 +45,7 @@ You could also try and adding a [skybox](https://developer.playcanvas.com/en/use
 
 
 
-## How do I create a cubemap?
+## キューブマップを作成するには？
 
 <img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif">
 
@@ -57,7 +57,7 @@ To create a cubemap click on the **<span class="pc-icon">&#57632;</span> Add** b
 
 
 
-## How do I create an Entity?
+## エンティティを作成するには？
 
 <img src="https://playcanvas.com/static-assets/instructions/new_entity.gif">
 
@@ -65,14 +65,14 @@ You can create a new Entity by clicking on the <span class="pc-icon">&#57632;</s
 
 
 
-## How do I create a light?
+## ライトを作成するには？
 
 You can create a light by adding a **Light** component to an Entity. You can also right click on an Entity and select New Entity / Directional Light to create a new directional light and similarly for spot lights and omni lights.
 
 [Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/light/)
 
 
-## How do I create a material?
+## 素材を作成するには？
 
 3Dモデルの全ての表面は**素材**を使ってレンダリングされます。素材は、その表面の色、光沢、平滑度などのプロパティを定義します。
 
@@ -82,7 +82,7 @@ To create a material click on the **<span class="pc-icon">&#57632;</span> Add** 
 
 
 
-## How do I create a new shader?
+## シェーダを新しく作るにはどうすればよいですか?
 
 Assetパネルから新しいシェーダを作ることができます。**Add Asset -> Shader**をクリックしてください。
 
@@ -90,7 +90,7 @@ Assetパネルから新しいシェーダを作ることができます。**Add 
 
 
 
-## How do I create a shape like a box or sphere?
+## ボックスや球体などのような形を作るには？
 
 <img src="https://playcanvas.com/static-assets/instructions/new_box.gif">
 
@@ -102,7 +102,7 @@ You can add primitive shapes like boxes, spheres and others by adding a **Render
 
 
 
-## How do I create a skybox?
+## スカイボックスを作成するには？
 
 スカイボックスを作成するには、まず[Cubemap アセット](http://developer.playcanvas.com/en/user-manual/assets/cubemaps/)を作成する必要があります。次に、Cubemapを3Dビューポートにドラッグ＆ドロップするか、Scene SettingsからCubemapをSkyboxフィールドにドラッグします。
 
@@ -110,18 +110,18 @@ You can add primitive shapes like boxes, spheres and others by adding a **Render
 
 
 
-## How do I delete an asset?
+## アセットを削除するには？
 
 アセットを削除するには、選択をしてから**Delete**を押すか、右クリックをしてDeleteを選択します。
 
 
-## How do I delete an Entity?
+## エンティティを削除するには？
 
 You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="pc-icon">&#57636;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
 
 
 
-## How do I duplicate an Entity?
+## エンティティを複製するには？
 
 To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate button in the Hierarchy panel or press **Ctrl+D**.
 
@@ -129,7 +129,7 @@ To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate b
 
 
 
-## How do I play an animation?
+## アニメーションを再生するには？
 
 3Dモデルのアニメーションを再生するには、 [モデルコンポーネント](https://developer.playcanvas.com/en/user-manual/packs/components/model/)と[アニメーションコンポーネント](https://developer.playcanvas.com/en/user-manual/packs/components/animation/)を持つエンティティを作成します。 **モデルコンポーネント**がモデルをレンダリングして、 **アニメーションコンポーネント**がアニメーションを再生します。
 
@@ -137,7 +137,7 @@ To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate b
 
 
 
-## How do I play a sound?
+## 音声を再生するには？
 
 サウンドを再生するには、[Sound](https://developer.playcanvas.com/en/user-manual/packs/components/sound/)コンポーネントをエンティティに追加する必要があります。その次に、[オーディオアセット](https://developer.playcanvas.com/en/user-manual/assets/audio/)を再生するためにスロットを追加してください。"Add Slot"をクリックして、オーディオアセットをAssetフィールドにドラッグするだけです。ゲーム再生されたサウンドを聞こえるようにするには、[AudioListener](https://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/)コンポーネントをエンティティに追加する必要があります。通常はカメラコンポーネントに追加します。
 
@@ -148,7 +148,7 @@ To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate b
 
 
 
-## How do I remove a component?
+## コンポーネントを除去するには？
 
 <img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg">
 
@@ -156,7 +156,7 @@ To remove a component, select the Entity and then click on the **<span class="pc
 
 
 
-## How do I render a 3D model?
+## 3Dモデルをレンダリングするには？
 
 <img src="https://playcanvas.com/static-assets/instructions/new_model.gif">
 
@@ -166,7 +166,7 @@ To remove a component, select the Entity and then click on the **<span class="pc
 
 
 
-## How do I move / rotate / scale an Entity?
+## エンティティを動かす／回転する／スケールするには？
 
 <img src="https://playcanvas.com/static-assets/instructions/transform.gif">
 
@@ -176,14 +176,14 @@ Translate / Rotate / Scale ツールは1 / 2 / 3を押すことで切り替え�
 
 
 
-## How do I upload assets?
+## アセットをアップロードするには？
 
 アセットをアップロードするには、コンピュータからアセットパネルにファイルをドラッグ＆ドロップします。ファイルはサーバにより処理され、少しするとアセットパネルに表示されます。
 
 [Learn more](https://developer.playcanvas.com/en/user-manual/assets/importing/)
 
 
-## How do I use physics?
+## 物理を使用するには？
 
 エンティティに物理的なプロパティを加えるには [Collision](https://developer.playcanvas.com/en/user-manual/packs/components/collision/) コンポーネントと [RigidBody](https://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/) コンポーネントを追加する必要があります。Collision コンポーネントはエンティティに物理的な形を与え、RigidBodyコンポーネントはエンティティを物理エンジンでシミュレートできるようにします。
 
@@ -193,7 +193,7 @@ You can change the default [gravity](https://developer.playcanvas.com/en/user-ma
 
 
 
-## How do I use real-time shadows?
+## リアルタイムシャドーを使用するには？
 
 リアルタイムシャドーは**Cast Shadows**を有効にしている各ライトソースでレンダリングされます。影を有効にするには、ライトコンポーネントを持つエンティティを選択してCast Shadowsを有効にします。シーン内のモデルコンポーネントのCast Shadowsも有効にする必要があります。
 
