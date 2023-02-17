@@ -10,7 +10,7 @@ position: 4
 
 ## Common Properties
 
-| Property        | Description |
+| Property        | 説明 |
 |-----------------|-------------|
 | Active          | When enabled the button will respond to and fire event. When disabled the button is set to the Inactive State. |
 | Image           | The Image Element Entity that is used to detect input events. |
@@ -22,7 +22,7 @@ position: 4
 
 ![Sprite Swap Button][3]
 
-| Property        | Description |
+| Property        | 説明 |
 |-----------------|-------------|
 | Hover Sprite    | The Sprite Asset used when the button is in the Hover State. |
 | Hover Frame     | The Sprite Frame to display when the button is in the Hover State. |
@@ -35,7 +35,7 @@ position: 4
 
 ![Tint Button][4]
 
-| Property      | Description |
+| Property      | 説明 |
 |---------------|-------------|
 | Hover Tint    | The color to tint the Image Element with when the button is in the Hover State. |
 | Pressed Tint  | The color to tint the Image Element with when the button is in the Pressed State. |

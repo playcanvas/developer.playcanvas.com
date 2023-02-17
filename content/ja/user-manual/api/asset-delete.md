@@ -10,11 +10,11 @@ position: 6
 GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 ```
 
-## Description
+## 説明
 
 Permanently delete an asset from a branch of your project. **Warning** deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X DELETE "https://playcanvas.com/api/assets/{assetId}?branchId={branchId}"
@@ -34,13 +34,13 @@ Authorization: Bearer {accessToken}
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch to delete the asset from</p></div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 200
 ```
 
-## Errors
+## エラー
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -49,7 +49,7 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
 このルートは[normal][1]なレート制限を使用します。
 

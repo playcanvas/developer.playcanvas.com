@@ -10,7 +10,7 @@ position: 2
 
 <img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300">
 
-| Property          | Description |
+| Property          | 説明 |
 |-------------------|-------------|
 | Apply to all Maps | Uncheck this to apply offset and tiling values to individual maps. |
 | Offset            | The offset in U and V to apply to the first UV channel referenced by maps in this material. |
@@ -22,19 +22,19 @@ position: 2
 
 <img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300">
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | Tint       | Check this to multiply the scene's global ambient color with a material specific color. |
 | Color      | The tint color to multiply the scene's global ambient color. |
 | AO Texture | An ambient occlusion map containing pre-baked ambient occlusion. |
 
-### Diffuse
+### 拡散マップ
 
 拡散プロパティは、シーン内の動的ライトソースによって発せられた拡散光を、素材がどのように反映するかを定義します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300">
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | テクスチャ    | The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead. |
 | Tint       | Check this to modulate the material's diffuse map with a material specific diffuse color. |
@@ -46,7 +46,7 @@ position: 2
 
 <img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300">
 
-| Property     | Description |
+| Property     | 説明 |
 |--------------|-------------|
 | Specular Map | The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead. |
 | Tint         | Check this to modulate the material's specular map with a material specific specular color. |
@@ -54,13 +54,13 @@ position: 2
 | Gloss Map    | The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property. |
 | Glossiness   | A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny). |
 
-### Emissive
+### Emissive（発光）
 
 発光プロパティは、素材が発光する方法を制御します(光反射とは対照的に)。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300">
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | テクスチャ    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
 | Tint       | Check this to modulate the material's emissive map with a material specific emissive color. |
@@ -73,7 +73,7 @@ Opacityは、透明度のレベルを設定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/opacity.jpg" width="300">
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | テクスチャ    | The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property. |
 | Intensity  | The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1. |
@@ -84,7 +84,7 @@ Opacityは、透明度のレベルを設定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300">
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | Bumpiness  | The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1. |
 | テクスチャ    | The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property. |
@@ -95,18 +95,18 @@ Opacityは、透明度のレベルを設定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300">
 
-| Property    | Description |
+| Property    | 説明 |
 |-------------|-------------|
 | Height Map  | The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height. |
 | Strength    | The strength of a parallax effect (a value between 0 and 2, defaulting to 1). |
 
-### Environment
+### 環境マップ
 
 環境プロパティは、素材がどのように環境を反映するかを定義します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300">
 
-| Property            | Description |
+| Property            | 説明 |
 |---------------------|-------------|
 | Sphere Map          | A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive). |
 | Cube Map            | A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive). |
@@ -120,7 +120,7 @@ Opacityは、透明度のレベルを設定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300">
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | テクスチャ    | The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs. |
 
@@ -130,7 +130,7 @@ Opacityは、透明度のレベルを設定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300">
 
-| Property        | Description |
+| Property        | 説明 |
 |-----------------|-------------|
 | Depth Test      | If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on. |
 | Depth Write     | If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on. |

@@ -16,7 +16,7 @@ position: 20
 
 ## Simple Sprite Component Properties
 
-| Property    | Description |
+| Property    | 説明 |
 |-------------|-------------|
 | Type        | Simple or Animated. |
 | Sprite      | The Sprite Asset to display. |
@@ -37,7 +37,7 @@ position: 20
 
 ## Animated Sprite Component Properties
 
-| Property   | Description |
+| Property   | 説明 |
 |------------|-------------|
 | Type       | Simple or Animated. |
 | Frame      | The frame index of the Sprite to display. |
@@ -52,9 +52,9 @@ position: 20
 
 ## Sprite Animation Clip Properties
 
-| Property | Description |
+| Property | 説明 |
 |----------|-------------|
-| Name     | The name of the Sprite Animation Clip. Used to reference an individual clip. |
+| 名前     | The name of the Sprite Animation Clip. Used to reference an individual clip. |
 | ループ     | If true the animation clip will loop back to the start when it reaches the end. |
 | FPS      | The speed at which the clip is played in Frames Per Second. |
 | Sprite   | The Sprite Asset which is used to play this clip. |

@@ -10,11 +10,11 @@ position: 12
 GET https://playcanvas.com/api/jobs/:id
 ```
 
-## Description
+## 説明
 
 idからジョブを取得。
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
@@ -26,7 +26,7 @@ curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanva
 <div class="parameter"><span class="param">id</span><p>ジョブのid。</p></div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 200
@@ -43,7 +43,7 @@ Status: 200
 }
 ```
 
-## Errors
+## エラー
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>非認証</p></div>
@@ -52,7 +52,7 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
 このルートは[normal][1]なレート制限を使用します。
 

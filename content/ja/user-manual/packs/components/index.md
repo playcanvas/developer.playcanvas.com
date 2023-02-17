@@ -8,7 +8,7 @@ position: 2
 
 PlayCanvas Engineで定義されるコンポーネントは沢山あります。PlayCanvas Editorを使用してエンティティにコンポーネントを追加することができます。コンポーネントにより露出されるプロパティはエンティティ選択時にAttribute Editorでリスト表示されます。
 
-| コンポーネント                                                       | Description |
+| コンポーネント                                                       | 説明 |
 |-----------------------------------------------------------------|-------------|
 | [Anim](/user-manual/packs/components/anim)                      | Specifies the anim state graph and animation assets that can run on the model specified by the entity's render component. |
 | [Animation](/user-manual/packs/components/animation)            | Specifies the animation assets that can run on the model specified by the entity's model component. |

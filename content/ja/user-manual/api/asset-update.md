@@ -10,7 +10,7 @@ position: 10
 PUT https://playcanvas.com/api/assets/:assetId
 ```
 
-## Description
+## 説明
 
 既存のアセットのファイルをアップデートします。
 
@@ -20,7 +20,7 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 *他のREST API エンドポイントとは異なり、Update Assetエンドポイントはデータが`multipart/form-data`に送信されることを予期します。**
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
@@ -34,7 +34,7 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 <div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 200
@@ -69,7 +69,7 @@ Status: 200
 }
 ```
 
-## Errors
+## エラー
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -78,7 +78,7 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
 このルートは[strict][1]なレート制限を使用します。
 

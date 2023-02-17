@@ -19,7 +19,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 ![階層][4]
 
-## Screen setup
+## スクリーン設定
 
 まず、新しい2D [Screen][3]を追加します。画面は次のようになります：
 

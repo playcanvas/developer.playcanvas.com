@@ -109,7 +109,7 @@ APIの各呼び出しの応答形式に対して、REST APIは一般的なガイ
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### Errors
+#### エラー
 
 エラーが発生すると、次の形式でJSONオブジェクトを取得します：
 
@@ -121,7 +121,7 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 また、レスポンスのステータスコードは、適切なHTTPエラーコードになります。
 
-## Rate Limiting
+## レート制限
 
 REST APIへの呼び出しにはレート制限があります。リクエストに応じて、異なるレート制限があります。
 

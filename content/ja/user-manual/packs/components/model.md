@@ -12,7 +12,7 @@ Modelコンポーネントはコンポーネントパネルの右上のトグル
 
 ## Properties
 
-| Property              | Description |
+| Property              | 説明 |
 |-----------------------|-------------|
 | Type                  | The type of the model to be rendered. Can be: <ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Cone</li><li>Cylinder</li><li>Plane</li><li>Sphere</li></ul> |
 | アセット                 | The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component. |

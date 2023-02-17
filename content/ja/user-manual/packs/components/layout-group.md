@@ -12,7 +12,7 @@ LayoutGroupコンポーネントを使用すると、エンティティは子要
 
 ## Properties
 
-| Property       | Description |
+| Property       | 説明 |
 |----------------|-------------|
 | Orientation    | Whether the layout should run horizontally or vertically. |
 | ReverseX       | Reverses the order of children along the x axis. |

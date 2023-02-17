@@ -10,11 +10,11 @@ position: 14
 GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 ```
 
-## Description
+## 説明
 
 プロジェクトのすべてのシーンのリストを取得します。
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
@@ -34,7 +34,7 @@ Authorization: Bearer {accessToken}
 <div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the main branch will be used.</p></div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 200
@@ -52,7 +52,7 @@ Status: 200
 }
 ```
 
-## Errors
+## エラー
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>非認証</p></div>
@@ -61,7 +61,7 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
 このルートは[normal][1]なレート制限を使用します。
 

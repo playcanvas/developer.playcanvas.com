@@ -17,7 +17,7 @@ position: 19
 
 ## Component Properties
 
-| Property        | Description |
+| Property        | 説明 |
 |-----------------|-------------|
 | 位置上      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
 | Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
@@ -29,9 +29,9 @@ position: 19
 
 ## Slot Properties
 
-| Property        | Description |
+| Property        | 説明 |
 |-----------------|-------------|
-| Name            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
+| 名前            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
 | アセット           | The audio asset to play. |
 | Range Start     | The starting point of the sound in the audio asset, in seconds. You can use this if you don't want to play the entire audio asset but just a portion of it instead. |
 | Range Duration  | The duration of the sound to play starting from Range Start, in seconds. E.g. you might have an audio asset with multiple sounds in it. To make this Slot play such a sound you can define its Start time and its Duration. |

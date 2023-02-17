@@ -21,7 +21,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 `Entry Template`と呼ばれる無効なエンティティがあります。これは、テンプレートの各行に使用するテンプレートです。そのテンプレートをJSONアセットに存在する各リーダボードエントリに対して複製し、それぞれのパネルの下に各クローンを追加します。
 
-## Screen setup
+## スクリーン設定
 
 [スクリーン][3]は次のように設定されています：
 
@@ -31,11 +31,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 画面エンティティには、`leaderboard`スクリプトを含むスクリプトコンポーネントもあります。以下でご確認いただけます。
 
-## Panel setup
+## パネル設定
 
 各パネルには、その背景を示す画像要素があります。パネルの下に、エントリテンプレートのクローンをプログラム的に追加します。パネルはスクリーンの中央に固定されます。
 
-## Entry Template setup
+## エントリテンプレートの設定
 
 階層内の各リーダーボード行のテンプレートは次のようになります：
 
@@ -51,29 +51,29 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 ![アンカーを分割][8]
 
-The horizontal anchors are not equal (they are 0 and 1) which means that the Element will expand automatically to fill the entire horizontal area if the Screen is resized. We also have a horizontal margin of 50 pixels to allow a small gap from the edges - the margin can only be set when anchors are split.
+水平アンカーは等しくない(0と1)ので、スクリーンがサイズ変更された場合、要素が自動的に拡大されて水平エリア全体を満たします。端からのわずかな隙間を許すために、50ピクセルの水平余白もあります。余白は、アンカーが分割されている場合にのみ設定できます。
 
 では、グループの子の残りの部分を見てみましょう。
 
-### Position
+### 位置
 
 位置は左に固定されています：
 
 ![位置][9]
 
-### Name
+### 名前
 
 名前は左に固定され、右に少し動かされています：
 
 ![名前][10]
 
-### Score
+### スコア
 
 スコアは右に固定されています
 
 ![スコア][11]
 
-### Points
+### ポイント
 
 ポイントは右に固定されています
 

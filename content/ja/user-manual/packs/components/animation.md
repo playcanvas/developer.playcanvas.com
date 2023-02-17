@@ -12,7 +12,7 @@ Animationコンポーネントはコンポーネントパネルの右上のチ�
 
 ## Properties
 
-| Property | Description |
+| Property | 説明 |
 |----------|-------------|
 | アセット   | The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control. |
 | Speed    | A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset. |

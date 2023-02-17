@@ -20,7 +20,7 @@ Please note that PlayCanvas Editor currently supports [Emscripten][2] compiled W
 ファイルがプロジェクトに追加されたら、wasmモジュールを選択してインスペクターパネルにプロパティを表示します：
 ![Wasm Module Properties][1]
 
-### Name
+### 名前
 
 名前は、グルーおよびフォールバックスクリプトで定義されたモジュール名と合致する必要があります。この名前はロード時にモジュールをインスタンス化するのに使用されます。
 

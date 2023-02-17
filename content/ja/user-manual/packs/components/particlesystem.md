@@ -12,7 +12,7 @@ Particle Systemコンポーネントはコンポーネントパネルの右上�
 
 ## Properties
 
-| Property        | Description |
+| Property        | 説明 |
 |-----------------|-------------|
 | オートプレイ       | If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script. |
 | Particle Count  | The maximum number of particles managed by this particle system. |

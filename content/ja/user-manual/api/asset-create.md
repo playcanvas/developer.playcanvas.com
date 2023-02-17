@@ -10,7 +10,7 @@ position: 5
 POST https://playcanvas.com/api/assets
 ```
 
-## Description
+## 説明
 
 Create a new asset.
 
@@ -20,7 +20,7 @@ Create a new asset.
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## Example
+## 例
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
@@ -68,7 +68,7 @@ Content-Type: application/javascript
 <div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
-## Response Schema
+## 応答のスキーマ
 
 ```none
 Status: 201
@@ -103,7 +103,7 @@ Status: 201
 }
 ```
 
-## Errors
+## エラー
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>非認証</p></div>
@@ -112,7 +112,7 @@ Status: 201
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## Rate Limiting
+## レート制限
 
 このルートは[strict][1]なレート制限を使用します。
 

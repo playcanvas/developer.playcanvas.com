@@ -15,7 +15,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 ![階層][4]
 
-## Screen setup
+## スクリーン設定
 
 スクリーンは次のように設定されています：
 

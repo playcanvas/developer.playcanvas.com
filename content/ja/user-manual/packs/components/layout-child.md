@@ -12,7 +12,7 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 
 ## Properties
 
-| Property              | Description |
+| Property              | 説明 |
 |-----------------------|-------------|
 | Min Width             | Set the minimum width that the element can be rendered at. |
 | Min Height            | Set the minimum height that the element can be rendered at. |
