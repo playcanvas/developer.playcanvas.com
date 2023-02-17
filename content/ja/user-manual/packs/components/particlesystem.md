@@ -14,14 +14,14 @@ Particle Systemコンポーネントはコンポーネントパネルの右上�
 
 | Property        | Description |
 |-----------------|-------------|
-| Auto Play       | If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script. |
+| オートプレイ       | If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script. |
 | Particle Count  | The maximum number of particles managed by this particle system. |
 | Lifetime        | The length of time in seconds between a particle's birth and its death. |
 | Emission Rate   | The lower bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'. |
 | Emission Rate2  | The upper bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'. |
 | Start Angle     | The lower bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'. |
 | Start Angle2    | The upper bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'. |
-| Loop            | If checked, the particle system will emit indefinitely. Otherwise, it will emit the number of particles specified by the 'Particle Count' property and then stop. |
+| ループ            | If checked, the particle system will emit indefinitely. Otherwise, it will emit the number of particles specified by the 'Particle Count' property and then stop. |
 | Pre Warm        | If enabled, the particle system will be initialized as though it had already completed a full cycle. This option is only available for looping particle systems. |
 | ライティング        | If checked, the particle will be lit by the directional and ambient light in the scene. In some circumstances, it may be advisable to set a normal map on the particle system in order to achieve more realistic lighting. |
 | Half-Lambert    | Enabling Half Lambert lighting avoids particles looking too flat when lights appear to be shining towards the back sides of the particles. It is a completely non-physical lighting model but can give more pleasing visual results. This option is only available when Lighting is enabled. |

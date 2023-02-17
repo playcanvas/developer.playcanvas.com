@@ -13,7 +13,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 変動するライトプロパティには異なる制限があります。例えば、赤、緑、青の値は0と10に間で設定されますが強度は0から10まで上がることがあります。また、いくつかのライトには特有のプロパティがあります。例：スポットライトのコーン角度。
 
-## The lighting commands
+## ライティングコマンド
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
@@ -45,9 +45,9 @@ this.spot.light.intensity = 10*s;
     entity.light.color.rを使用してライトの赤の値を変更することができません。ライトプロパティのcolorプロパティへの変更のみ検知されます。プロパティには完全なpc.Colorを割り当てる必要があります。例：entity.light.color = new pc.Color(1, 1, 1);。
 </div>
 
-## General setup
+## 一般的な設定
 
-We added a spot light (attached to a parent assembly of a basic torch model), an omni light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
+全ての新規シーンに作成されるデフォルトの指向性ライトに加え、スポットライト(基本的なたいまつモデルの親アセンブリに添付)と、親球体モデルに添付されたポイントライトをついかしました。制御スクリプトはルートエンティティに添付しています。球体とたいまつは、回転しやすくするため、シーンの中心にある空のエンティティの子として作成しています。controllingLightsシーンで[完全なEditorシーンやスクリプトにアクセス][2]。
 
 PlayCanvas appで使用される完全なコードは次の通り：
 

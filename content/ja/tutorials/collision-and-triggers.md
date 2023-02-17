@@ -11,18 +11,18 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 このチュートリアルでは剛体の物理、当たり判定とトリガーボリュームの基礎を紹介します。[チュートリアルプロジェクト][1]を参照してください。
 
-## The Collision Component
+## コリジョンコンポーネント
 
 *コリジョン - 当たり判定*コンポーネントは二つの用途に使うことができる形状を定義します。一つは他のエンティティが形状の中に入ってきたり出て行った時にイベントを発生させるトリガーボリュームと呼ばれる用途、もう一つは*rigidbody*コンポーネントと組み合わせて、エンティティに弾むボールや重い箱のような物理的な性質をゲーム内で与える用途です。
 
 *コリジョン*コンポーネントで最も重要なプロパティは、その**タイプ**です。これは使用する当たり判定の形状を決定します。全部で四種類があります:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+* **Box** 箱型の形状です。
+* **Sphere** 球型の形状です。
+* **Capsule** 錠剤のような形をしたカプセル型の形状です。キャラクターのように背が高く細く、かつ尖っていなくて地面に一点で触れているようなものの当たり判定に使われます。
+* **Mesh** 任意形状のメッシュです。**注意** メッシュの当たり判定には制限があります。特に、*rigidbody*と組み合わせて使う場合は、そのrigidbodyは**Static**でなければなりません。
 
-### Trigger Volumes
+### トリガーボリューム
 
 トリガーボリュームは、エンティティに*collision*コンポーネントを追加することで作ることができます。このチュートリアルでは大きな箱型のトリガーボリュームを坂道の下に置き、落ちてきた物体を検出して元の場所に戻すために使います。
 
@@ -30,11 +30,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 ブルーの枠線で表示されたトリガーボリュームが、坂道の下に表示されているのがわかります。
 
-### Rigid Bodies
+### リジッドボディ
 
 Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわします。重量や摩擦などの物理的な性質を設定することができ、自分以外の剛体を衝突したとき、現実的な反応をします。
 
-剛体をシーン内に作るには、エンティティを選択して*rigidbody*コンポーネントと*collision*コンポーネントを追加してください。デフォルトでは**static box**が作られます。**rigidbody**コンポーネントは物体の性質を調整するために様々な設定を行うことができます。
+剛体をシーン内に作るには、エンティティを選択して*rigidbody*コンポーネントと*collision*コンポーネントを追加してください。デフォルトでは**static box**が作られます。*rigidbody*コンポーネントは物体の性質を調整するために様々な設定を行うことができます。
 
 ![rigidbodyコンポーネント][4]
 
@@ -42,12 +42,12 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 このデモで重要なプロパティは**Type**です。以下の三種類があります。
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
-* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
+* **Static** エンティティを固定し、動かなくします。
+* **Dynamic** エンティティは重力と外部から与えられた力に影響されて動くようになります。
+* **Kinematic** エンティティは力に反応しなくなりますが、位置と速度を直接指定して動かすことができるようになります。
 
 
-## Setting up the ground
+## 地面の設定
 
 チュートリアルのはじめの一歩として、地面となる緑色のブロックを作ります。
 
@@ -55,7 +55,7 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 
 属性パネル内に*render*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
 
-## Setting up the trigger
+## トリガーの設定
 
 次にトリガーとなるエンティティを作成します。
 
@@ -94,7 +94,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 このサンプルでトリガーが発生した場合は、トリガーボリュームに侵入したエンティティを初期位置にリセットし、同時に速度もリセットしています。
 
-## The Rigid Bodies
+## Rigid Bodies - 剛体
 
 地面は**Static**な剛体として設定します。さらに、落ちてくるオブジェクトを作成し、**Dynamic**として設定します。
 
@@ -102,13 +102,13 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 ボックスコンポーネント用の*rigidbody*と*collision*設定を行います。球とカプセルについても同様に設定します。
 
-## Contact Events
+## 接触イベント
 
 *collision*コンポーネントには三種類のイベントが用意されています。
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
-* **collisionend** - fires when two rigid bodies separate.
+* **contact** - 二つの剛体が互いに触れている時、すべての接触点について発生ます。
+* **collisionstart** - 二つの剛体が衝突し始めた時に発生します。
+* **collisionend** - 二つの剛体が離れた時に発生します。
 
 **contact**と**collisionstart**の違いはささいなことですが重要なものです。立方体が一定の角度で平面に落ちるとします。立方体の辺が平面に触ったとき、立方体の二つの頂点が同時に平面に当たります。この状態では、三つのイベントが発生します。二つの**contact**イベントがそれぞれの頂点向けに発生し、さらに一つの**collisionstart**イベントが発生します。そして立方体は平面上に静止するまで回転して落ち続けます。その間ずっと平面上と何らかの形で接触し続けるものとします。平面上に静止したとき、頂点が平面に触った時、さらに二つの**contact**イベントが発生します。しかし、立方体は平面に触れ続けているので、**collisionstart**が追加で発生することはありません。
 

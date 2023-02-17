@@ -9,7 +9,7 @@ Material（素材）は3Dモデルの表面の外見を定義します。多角�
 
 このチュートリアルでは、Material（素材）の作成、基本的な形への割り当て、プロパティの編集について説明します。まず新しいシーンを作成してください。
 
-## Step 1 - Add a cube to your scene
+## Step 1 - シーンにキューブを追加
 
 シーンのルートエンティティを選択してください。初期の名前はRootです。Attribute Editorでエンティティの名前を"Material Tutorial"などの分かりやすい名前に変更してください。
 
@@ -17,7 +17,7 @@ HierarchyパネルのBoxエンティティで'New Entity' -> 'New Box' を選択
 
 ![新規ボックス][1]
 
-## Step 2 - Create a new Material
+## Step 2 - 新しい素材を作成
 
 PlayCanvas Editorインターフェイスから直接新しい素材を作ります。Assetパネルで+ボタンを押してNew Assetメニューを開きMaterialを選択してください。
 
@@ -25,11 +25,11 @@ PlayCanvas Editorインターフェイスから直接新しい素材を作りま
 
 これにより新規のMaterial Assetが作成され、画面の右側にMaterial Editorを開きます。Material Editorで、素材の名前をBox Materialに変えてください。
 
-## Step 3 - Assign the material to the cube
+## Step 3 - メッシュに素材を割り当てる
 
 Editorで新しいキューブを作成する場合、割り当てられている素材は無く、プレーンなデフォルトの素材を使用してレンダリングされます。シーン内のモデルに新しい素材を割り当てるには、モデルをアセットパネルからビューポートにドラッグして、割り当てるモデルにそれをドロップします。
 
-## Step 4 - Change the color of the material
+## Step 4 - 素材の色を変更
 
 素材の色を変えるには、素材のプロパティの*Diffuse*を編集します。
 
@@ -39,7 +39,7 @@ Editorで新しいキューブを作成する場合、割り当てられてい�
 
 右パネルの素材エディタでDiffuse設定パネルを展開する必要があります。カラープロパティをクリックして素材のdiffuse色を編集します。
 
-## Bonus - Add textures to the material
+## Bonus - 素材にテクスチャを追加
 
 素材の色の変更ができたので、次に テクスチャーマップを使用して均一でない色のつけかたを説明します。
 

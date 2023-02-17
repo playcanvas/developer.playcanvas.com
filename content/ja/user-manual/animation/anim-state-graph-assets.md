@@ -32,7 +32,7 @@ Animation states define a playable animation such as ‘Idle’, ‘Jump’ or �
 |----------|-------------|
 | Name     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
 | Speed    | The playback speed for animations that are linked to this state. |
-| Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
+| ループ     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
 
 ### START state
 

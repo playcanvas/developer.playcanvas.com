@@ -11,7 +11,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 It can be very useful to animate a material that has been applied to a surface. The example shown here is scrolling a texture to simulate some movement.
 
-## Scrolling a material with map offset
+## マップオフセットでマテリアルをスクロール
 
 例で示される正方形の平面は、常にフレーム毎でUVオフセットを移動するためのスクリプト `scrolling-texture.js` を使用しています。例えば、水の流れをシミュレートするために使用します。更新ループを下記に表示します。
 

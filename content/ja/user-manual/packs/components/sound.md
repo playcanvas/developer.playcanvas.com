@@ -19,7 +19,7 @@ position: 19
 
 | Property        | Description |
 |-----------------|-------------|
-| Positional      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
+| 位置上      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
 | Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
 | Pitch           | The pitch that will be multiplied with the pitch of each Slot when playing an audio asset. A value of 1 means the audio is played back at the original pitch. |
 | Ref Distance    | The reference distance for reducing volume as the sound source moves further from the listener. |
@@ -35,9 +35,9 @@ position: 19
 | アセット           | The audio asset to play. |
 | Range Start     | The starting point of the sound in the audio asset, in seconds. You can use this if you don't want to play the entire audio asset but just a portion of it instead. |
 | Range Duration  | The duration of the sound to play starting from Range Start, in seconds. E.g. you might have an audio asset with multiple sounds in it. To make this Slot play such a sound you can define its Start time and its Duration. |
-| Auto Play       | If checked, the Slot will be played on load. Otherwise, the Slot will need to be played using script. |
-| Overlap         | If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script. |
-| Loop            | If checked, the Slot will loop continuously. Otherwise, it will be played once to completion. |
+| オートプレイ       | If checked, the Slot will be played on load. Otherwise, the Slot will need to be played using script. |
+| オーバーラップ         | If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script. |
+| ループ            | If checked, the Slot will loop continuously. Otherwise, it will be played once to completion. |
 | Volume          | The volume of the audio asset played back by the slot. |
 | Pitch           | The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch. |
 

@@ -1,5 +1,5 @@
 ---
-title: Trigger Volumes
+title: トリガーボリューム
 layout: usermanual-page.hbs
 position: 3
 ---

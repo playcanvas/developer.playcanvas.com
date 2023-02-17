@@ -15,9 +15,9 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 このチュートリアルでは、力を使用して動的なリジッドボディを制御し、上に示したデモを生成する方法を説明します。力、衝動、トルクの利用とリジッドボディコンポーネントUIを使用して動作をカスタマイズする方法を簡単に説明します。
 
-## Scripting Forces
+## 力のスクリプティング
 
-### Applying a Constant Force
+### 定の力を適用
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_F) ) {
@@ -27,7 +27,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 
 Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
 
-### Impulses
+### 衝動
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
@@ -37,7 +37,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 
 キューブには[`applyImpulse(x, y, z)`][2]を通して速度を瞬時に変化を与えるために、x軸の衝撃が与えられています。
 
-### Torques
+### トルク
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_W) ) {
@@ -55,7 +55,7 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 角速度への瞬間的な変化は[`applyTorqueImpulse(x, y, z)`][4]を通して適用されます。これは、上記のデモのコードでは使用されていません。
 
-## Moving dynamic rigidbodies
+## 動的なリジッドボディの移動
 
 リジッドボディを移動させるためには、上記の方法でリニア力および回転力(トルク)を適用します。シミュレーションが上書きされ、オブジェクトが衝突する際などに不自然な効果をもたらすことを避けるため、通常はこのようにリジッドボディの位置や速度を直接変更することは避けるべきです。
 
@@ -63,17 +63,17 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 リジッドボディタイプに関する商大は[コリジョン API ページ][6],  [pc namespace ページ][7], [fps-コントローラチュートリアル][8], [コリジョンチュートリアル][9]をご確認ください。
 
-## General setup
+## 般的な設定
 
 スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][10]。
 
-## Limiting and control
+## 制限と制御
 
 アンバランスな力が適用され続けることを防ぐため(つまり、ボディが加速し続け制御不能になることを防ぐため)、いくつかの設定をEditorで行いました。キューブの属性エディタで角度減衰を有効にしました。また、キューブと床の両方で、摩擦を可能にしました。リニア減衰はここでは使用されていませんが、空気抵抗やシミュレートするために使用することができます。また、減速はコードで適用することができます。
 
 <img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings">
 
-## Teleporting a Body
+## ボディのテレポート
 
 新しい位置にボディを即座にテレポートするためにpc.EntityのAPIからsetPosition関数を使用することはできません。物理エンジンが、まだボディが古い場所にあると認識するからです。代わりにリジッドボディコンポーネントのテレポート機能を使用する必要があります。
 
@@ -92,7 +92,7 @@ if (this.playerPos.x > 9.0) {
 
 xの方向に表示領域を越えてキューブが移動した場合、テレポート機能が呼び出され、キューブエンティティが画面上をテレポートされます。`if()`宣言をアクティベートし続けないよう、エンティティは比較的極端でない右左の位置にテレポートされます。
 
-## Reset cube code
+## キューブのコードをリセット
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_R)) {
@@ -110,7 +110,7 @@ reset: function () {
 キューブを元の位置に戻し、上記のようにテレポートされたエンティティの位置にリジッドボディを同期させるリセット機能を用意しました。リセット機能の最後の2行はボディの線速度および角速度をゼロにリセットします。オブジェクトの向きもリセットすることができますが、このコードでは行われません。
 
 
-## Full code listing
+## 完全なコードのリスト
 
 ```javascript
 var DynamicBody = pc.createScript('dynamicBody');

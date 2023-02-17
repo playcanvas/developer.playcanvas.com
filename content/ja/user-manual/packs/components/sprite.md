@@ -48,14 +48,14 @@ position: 20
 | Speed      | Multiplier applied to the speed at which sprite animation clips on this sprite component are animated. |
 | Layers     | The Layers in which to render the sprite. |
 | Draw Order | The order in which this sprite is rendered. Lower numbers are rendered first. |
-| Auto Play  | The name of a sprite animation clip to play when the sprite is enabled. |
+| オートプレイ  | The name of a sprite animation clip to play when the sprite is enabled. |
 
 ## Sprite Animation Clip Properties
 
 | Property | Description |
 |----------|-------------|
 | Name     | The name of the Sprite Animation Clip. Used to reference an individual clip. |
-| Loop     | If true the animation clip will loop back to the start when it reaches the end. |
+| ループ     | If true the animation clip will loop back to the start when it reaches the end. |
 | FPS      | The speed at which the clip is played in Frames Per Second. |
 | Sprite   | The Sprite Asset which is used to play this clip. |
 

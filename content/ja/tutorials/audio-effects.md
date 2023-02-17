@@ -11,11 +11,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 <div class="alert alert-info">このチュートリアルはWeb Audio API への対応を必要とします。</div>
 
-## Using The Web Audio API
+## Web Audio APIの使用
 
 PlayCanvasではWeb Audio APIを活用して音声に協力な効果を追加することができます。このチュートリアルでは、オーディオサンプルに様々な効果を追加する方法を説明します。
 
-## The setup
+## 設定
 
 [こちら][1]からシーンを確認できます。このシーンのルートエンティティには、ひとつのスロットで会話音声サンプルをループで再生する[Sound][2]コンポーネントがあります。Soundコンポーネントの仕組みにはこちらの[ベーシックチュートリアル][3]をご確認ください。
 
@@ -23,7 +23,7 @@ PlayCanvasではWeb Audio APIを活用して音声に協力な効果を追加す
 
 このスクリプトはアプリケーションの効果音を管理します。
 
-## Using AudioNodes
+## AudioNodesの使用
 
 Web Audio APIを使用すると、様々なオーディオノードを作成して、それらを接続してオーディオルーティンググラフを形成することができます。オーディオサンプルが再生されると、各ノードによって処理され、最終的に目的地に到達します（通常はスピーカー）。詳細は[こちら][5]です。
 

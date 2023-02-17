@@ -17,7 +17,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 PlayCanvasを通してこれがどのように行われるかを確認しましょう…
 
-## The Animation Component
+## アニメーションコンポーネント
 
 モデルにアニメーションを適用するにはアニメーションコンポーネントをエンティティに追加します。下記はPlayCanvas Editorで表示されるスキンを加えたキャラクターの構成です。
 
@@ -25,9 +25,9 @@ PlayCanvasを通してこれがどのように行われるかを確認しまし�
 
 画像では、Inspectorの中のアニメーションコンポーネントを確認することができます。 2つのアニメーションアセットが割り当てられています：「idle（待機）」サイクルと「punch（パンチ）」サイクルです。このようにアニメーションコンポーネントを構成すると、最初のアニメーション(idleサイクル)にループオプションが設定されているので、無限に再生されます。それだけではつまらないので次のように行います：
 
-* Play a looping idle animation.
-* Blend to a looping punch animation on a key press.
-* Blend back to idle on key release.
+* ループしている待機アニメーションを再生。
+* キーを押してループしているパンチアニメーションにブレンド。
+* キーを離して待機にブレンドし戻す。
 
 このような機能はアニメーションコンポーネントの能力を超えてしまうので、スクリプトコンポーネントを使用して追加の挙動を設定する必要があります。上記は、Editor内のスキンを加えたキャラクターエンティティのスクリーンショットです。スクリプトコンポーネントを確認できます。 これはanimation_blending.jsをいうJSファイルを参照します。このファイルの内容：
 
@@ -72,7 +72,7 @@ AnimationBlending.prototype.setState = function (state) {
 
 ここからはアニメーションコンポーネントにより多くのアニメーションを追加することができ、より複雑なアニメーション状態チャートをスクリプトすることが可能になります。
 
- [フルシーンはこちら][2]
+[フルシーンはこちら][2]
 
 [1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/440156
