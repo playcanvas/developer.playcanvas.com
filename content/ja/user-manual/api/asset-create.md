@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-## ルートURL
+## Route URL
 
 ```none
 POST https://playcanvas.com/api/assets
 ```
 
-## 説明
+## Description
 
 Create a new asset.
 
@@ -20,10 +20,10 @@ Create a new asset.
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## 例
+## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'file=@./script.js'  https://playcanvas.com/api/assets
+curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
 ```
 
 HTTP Request
@@ -64,10 +64,11 @@ Content-Type: application/javascript
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
 <div class="parameter"><span class="param">parent [optional]: number</span><p>Parent asset's id</p></div>
 <div class="parameter"><span class="param">preload [optional]: boolean</span><p>Preload the asset (true | false)</p></div>
-<div class="parameter"><span class="param">file [optional]: file</span><p></p>Data to store as the asset file.</div>
+<div class="parameter"><span class="param">file [optional]: file</span><p>Data to store as the asset file.</p></div>
+<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
-## 応答のスキーマ
+## Response Schema
 
 ```none
 Status: 201
@@ -102,7 +103,7 @@ Status: 201
 }
 ```
 
-## エラー
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>非認証</p></div>
@@ -111,9 +112,8 @@ Status: 201
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## レート制限
+## Rate Limiting
 
 このルートは[strict][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-

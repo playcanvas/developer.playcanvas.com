@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-### 許可
+### Permissions
 
 アカウントページからOrganizationの許可設定を管理できます。
 
@@ -14,7 +14,7 @@ position: 2
 
 管理者は、組織の削除以外の、所有者と同様の操作を行うことができます。例：プロジェクトの作成や削除。
 
-### Seat
+### Seats
 
 To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
 
@@ -32,8 +32,16 @@ The Owner of the organization does not need to occupy a seat if they are not act
 
 Organization（組織）の所有者はここから組織を削除することができます。これによりアカウントとその全てのプロジェクトを削除します。この動作は取り消せません。
 
-[1]: /images/user-manual/organizations/permissions.png "許可"
-[2]: /images/user-manual/organizations/seats.png "Seat"
-[3]: /images/user-manual/organizations/upgrade.png "アップグレード"
-[4]: /images/user-manual/organizations/delete.png "削除"
+### Projects 
 
+Administrators of the organization can add themselves to any project owned by the organization. On the account page, click on the drop down arrow on the right and then click on 'Add me as admin'.
+
+![add to project][5]
+
+From here, you can add other users to the project as usual.
+
+[1]: /images/user-manual/organizations/permissions.png
+[2]: /images/user-manual/organizations/seats.png
+[3]: /images/user-manual/organizations/upgrade.png
+[4]: /images/user-manual/organizations/delete.png
+[5]: /images/user-manual/organizations/add-to-project.png

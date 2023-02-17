@@ -1,14 +1,14 @@
 ---
 title: スクリプト属性
 layout: usermanual-page.hbs
-position: 4
+position: 5
 ---
 
 スクリプトのアトリビュート機能は、スクリプト内で使用する変数をPlayCanvasエディタ内で編集することができるようにする便利な機能です。この機能を使うことで、一度コードを書いた後にエンティティごと作られるインスタンスにそれぞれ違うパラメータを設定する調整ができるようになります。これにより、アーティスト、デザイナーやその他のプログラマーではないチームメンバーがコードを書かずに値を変更できるにプロパティを露出させることができます。
 
-## スクリプトのアトリビュートを宣言する
+## Declaring Script Attributes
 
-スクリプトのアトリビュートは、スクリプトの先頭で以下のフォーマットにしたがって宣言します:
+スクリプトの属性は、スクリプトの先頭で以下のフォーマットで宣言します:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -19,7 +19,7 @@ MyScript.attributes.add('speed', {
 });
 ```
 
-この例では、`speed`プロパティをデフォルト値`80`を持つ`number`(数値)として宣言しています:
+この例では、`speed`プロパティをデフォルト値`80`を持つ`number`として宣言しています:
 
 If you need an array of attributes set `array: true` like so:
 
@@ -32,13 +32,14 @@ MyScript.attributes.add('names', {
 });
 ```
 
-## アトリビュートをエディタ上で使う
 
-<img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+## Getting Attributes into Editor
 
-属性を宣言したらEditorは、スクリプトの属性を露出させるためにコードをパースする必要があります。属性が変更された場合は、手動で属性を更新する必要があります。パースボタンをクリックすることができます <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" />。
+<img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-## コードで属性にアクセス
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;"> button.
+
+## Accessing attributes in your code
 
 スクリプト内で属性を宣言すると、スクリプトインスタンス上のメンバー変数として使用できるようになります。例えば、上記で宣言した`speed`プロパティは`this.speed`として利用可能です。
 
@@ -48,7 +49,7 @@ MyScript.prototype.update = function (dt) {
 }
 ```
 
-## 属性の更新
+## Updating attributes
 
 When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
 
@@ -66,11 +67,11 @@ MyScript.prototype.initialize = function () {
 }
 ```
 
-## 属性のタイプ
+## Attribute types
 
 属性を宣言する際、属性のタイプも宣言します。これにより、Editorは属性を編集するための関連コントロールを表示できるようになります。'boolean', 'number', 'string'のように、ほとんどのタイプは単純です。しかし、いくつかは、以下の例のように説明を必要とします。詳細については、[完全な属性の参照][1]を参照してください。
 
-### エンティティ属性
+### Entity attribute
 
 ```javascript
 MyScript.attributes.add('target', { type: 'entity' })
@@ -78,7 +79,8 @@ MyScript.attributes.add('target', { type: 'entity' })
 
 エンティティタイプにより、階層で他のエンティティを参照することができます。二つのエンティティをリンクする良い方法です。
 
-### アセットの属性
+
+### Asset attribute
 
 ```javascript
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
@@ -98,7 +100,8 @@ MyScript.prototype.initialize = function () {
 
 ```
 
-### 色の属性
+
+### Color attribute
 
 ```javascript
 MyScript.attributes.add('color', { type: 'rgba' });
@@ -106,7 +109,7 @@ MyScript.attributes.add('color', { type: 'rgba' });
 
 色属性は、エディタで露出されたときにカラーピッカーを示します。アルファチャンネルを公開するか否かに応じて、二つのオプション`rgb`と` rgba`があります。
 
-### 曲線の属性
+### Curve attribute
 
 ```javascript
 MyScript.attributes.add('wave', { type: 'curve' }); // one curve
@@ -117,7 +120,8 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curve
 
 曲線の属性は、時間にわたって変化する値を表現するために使用されます。1.0 - すべての曲線は0.0-1.0の期間上で定義されます。複数の曲線を定義することができます。例えば、曲線から3Dの位置を得る場合、`curves`プロパティを使用してx,y,zに3つの曲線を定義します。また、`color`プロパティを使用して色を変更するための特別なカーブエディタもあります。
 
-### 列挙の属性
+
+### Enumeration attribute
 
 The Enumeration attribute allows you to choose one of the available options:
 
@@ -133,6 +137,7 @@ MyScript.attributes.add('value', {
 ```
 
 列挙のために可能な値のリストを宣言するためにenumプロパティを使用します。プロパティは、各オブジェクトがオプションとなるオブジェクトの配列です。`key`はオプションのタイトル、`value`は属性の値です。このプロパティは、さまざまな属性タイプで使用することができます。例：`number`,`sting`,`vec3`。
+
 
 ### JSON attribute
 
@@ -174,4 +179,3 @@ MyScript.prototype.update = function (dt) {
 *NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
-

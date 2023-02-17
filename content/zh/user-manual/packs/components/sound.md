@@ -1,5 +1,5 @@
 ---
-title: Sound
+title: 声音
 layout: usermanual-page.hbs
 position: 19
 ---
@@ -14,43 +14,37 @@ position: 19
 
 使用音频面板右上角的切换键可以开启或关闭音频。在启用的状态下，组件将会播放被标记为自动播放的插槽。剩余的插槽将可以通过脚本进行播放。
 
-## 组件属性
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>属性</th><th>描述</th></tr>
-    <tr><td>Positional</td><td>选中之后，组件将会以实体在3D场景中的位置模拟播放后台音乐文件。</td></tr>
-    <tr><td>Volume</td><td>当播放一个音频资源时，各个插槽的音量将会使得音频的音量增加。 </td></tr>
-    <tr><td>Pitch</td><td>在播放一个音频资源时，各个插槽的音调将会使得音频的音调上升。当值为1时意味着播放的是原始音调。</td></tr>
-    <tr><td>Ref Distance</td><td>当音源远离侦听器时，参考距离将会显示降低的音量。</td></tr>
-    <tr><td>Max Distance</td><td>T最大距离为从音频侦听器开始到音频衰减停止。当超出最大距离时音量不再衰减，且没有必要标为0。</td></tr>
-    <tr><td>Distance Model</td><td>当声源远离侦听器时选择一种算法以计算减少的音量。可以为线性，逆向，指数型。</td></tr>
-    <tr><td>Roll-off Factor</td><td>音量衰减的发生率。</td></tr>
-</table>
+## Component Properties
 
-## 插槽属性
+| Property        | Description |
+|-----------------|-------------|
+| Positional      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
+| Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
+| Pitch           | The pitch that will be multiplied with the pitch of each Slot when playing an audio asset. A value of 1 means the audio is played back at the original pitch. |
+| Ref Distance    | The reference distance for reducing volume as the sound source moves further from the listener. |
+| Max Distance    | The maximum distance from the listener at which audio falloff stops. Note the volume of the audio is not necessarily 0 after this distance, but just doesn't fall off anymore. |
+| Distance Model  | Determines which algorithm to use to reduce the volume of the sound as it moves away from the listener. Can be one of Linear, Inverse or Exponential. |
+| Roll-off Factor | The rate at which volume fall-off occurs. |
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>属性</th><th>描述</th></tr>
-    <tr><td>Name</td><td>插槽的名称。这个名称将在代码中被用来引用这个插槽。</td></tr>
-    <tr><td>Asset</td><td>用以播放的音频资源。</td></tr>
-    <tr><td>Range Start</td><td>在音频资源中声音的起始点，用秒计算。你可以通过这项功能播放部分音频而不是整个音频文件。</td></tr>
-    <tr><td>Range Duration</td><td>声音开始播放的持续时间范围，以秒计算。比如，你可能会有一个多声源的音频资源，这个插槽你可以定义开始时间以及范围。</td></tr>
-    <tr><td>Auto Play</td><td>选项启用，这个插槽将会先加载并播放。选项未开启，插槽需要通过脚本进行播放。</td></tr>
-    <tr><td>Overlap</td><td>项启用, 这个被插槽播放的音乐将不会停止。循环音频只有用于需要被重复播放的单一音频。当实体被破坏时，音频循环也不会停止，只有当循环结束或者在脚本中手动停止音频才会停止循环。</td></tr>
-    <tr><td>Loop</td><td>选项启用，插槽将会不停的循环播放。否则，只会播放一次就停止。</td></tr>
-    <tr><td>Volume</td><td>通过插槽播放的音频的音量。</td></tr>
-    <tr><td>Pitch</td><td>当音频回放时的音调。当值为1时意味着回访音频的音调为初始音调。</td></tr>
-</table>
+## Slot Properties
 
-## 脚本接口
+| Property        | Description |
+|-----------------|-------------|
+| Name            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
+| Asset           | The audio asset to play. |
+| Range Start     | The starting point of the sound in the audio asset, in seconds. You can use this if you don't want to play the entire audio asset but just a portion of it instead. |
+| Range Duration  | The duration of the sound to play starting from Range Start, in seconds. E.g. you might have an audio asset with multiple sounds in it. To make this Slot play such a sound you can define its Start time and its Duration. |
+| Auto Play       | If checked, the Slot will be played on load. Otherwise, the Slot will need to be played using script. |
+| Overlap         | If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script. |
+| Loop            | If checked, the Slot will loop continuously. Otherwise, it will be played once to completion. |
+| Volume          | The volume of the audio asset played back by the slot. |
+| Pitch           | The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch. |
+
+## Scripting Interface
 
 可以通过[脚本组件][2]来修改音频组件的属性。 音频组件的脚本接口在 [这里][3].
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.SoundComponent.html
-

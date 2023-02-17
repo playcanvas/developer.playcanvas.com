@@ -1,23 +1,28 @@
 ---
-title: ブルームエフェクト
+title: Bloom エフェクト
 layout: usermanual-page.hbs
 position: 1
 ---
 
-ブルームは現実世界のカメラが現実には存在しないものを写しだしてしまうアーティファクトを再現するために使うポストプロセスエフェクトです。このエフェクトは画像の明るい領域のエッジから漏れ広がる光のふちを描画し、非常に明るい光がそのシーンを撮影しているカメラの露出限界を超えている様子を表現します。<small>([Wikipedia][1]より)</small>
+[Bloom][1] is a post-processing effect used to reproduce an imaging artifact of real-world cameras. The effect produces fringes (or feathers) of light extending from the borders of bright areas in an image, contributing to the illusion of an extremely bright light overwhelming the camera capturing the scene.
 
 下の画像がブルームエフェクトなしの画像です:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+![Image without effect][2]
 
-そして下の画像がブルームエフェクトを適応した画像です:
+And the same image with bloom applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_bloom.png"></img>
+![Image with effect][3]
 
-ビルトインのブルームエフェクトは以下のパラメータを持ちます:
-* **Bloom Intensity**: エフェクトの強度
-* **Bloom Threshold**: この閾値より明るいピクセルのみがエフェクトの対象となります。0から1の間の値を取ります。
-* **Blur Amount**: ぼかしの量を設定します。
+The built-in bloom effect has the following attributes:
+
+* **Bloom Intensity**: The intensity of the effect
+* **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
+* **Blur Amount**: Controls the amount of blurring.
+
+Find the post-processing effect script on [GitHub][4].
 
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
-
+[2]: /images/platform/posteffects/without_effects.png
+[3]: /images/platform/posteffects/with_bloom.png
+[4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-bloom.js

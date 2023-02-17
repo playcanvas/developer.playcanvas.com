@@ -12,9 +12,9 @@ position: 16
 
 2Dグラフィックをレンダリングするには、テクスチャアトラスと [スプライトアセット][4]を組み合わせて使用します。
 
-## プロパティ
+## Properties
 
-### フレーム
+### Frames
 
 テクスチャアトラスのフレームには、固有の値が入力されます。通常は整数文字列です。フレームのフォーマットは以下のとおりです：
 
@@ -26,7 +26,7 @@ position: 16
 }
 ```
 
-### テクスチャプロパティ
+### Texture Properties
 
 フレームデータに加え、テクスチャアトラスには[テクスチャアセット][2]としてのプロパティが含まれます。
 
@@ -34,4 +34,3 @@ position: 16
 [2]: /user-manual/assets/textures
 [3]: /user-manual/designer/settings#create-atlases
 [4]: /user-manual/assets/sprites
-

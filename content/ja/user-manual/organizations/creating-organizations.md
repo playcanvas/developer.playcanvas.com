@@ -8,7 +8,7 @@ position: 1
 
 ![profile_orgs][4]
 
-### ドロップダウンメニューから作成
+### Create from the dropdown menu
 
 一つ目の方法は右上のドロップダウンメニューでNEW ORGANIZATIONをクリック：
 
@@ -16,21 +16,30 @@ position: 1
 
 これにより次のポップアップが表示されます：
 
-<img src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
+<img loading="lazy" src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
 
 Organization（組織） と Organization IDを入力します。Organization IDは英数字とダッシュのみ許可される文字列です。自分のメールアドレスがデフォルトになっていますが別のものに変更することができます。
 
 CREATEをクリックするとOrganization（組織）の[profile][2]ページに移行します。 
 
-### ユーザアカウントをOrganization（組織）に変換
+If you have existing projects (such as private projects on a Personal plan), you can transfer them to the Organization account by the following steps:
+
+* On your user account, [transfer all projects ownership][5] to the Organization account.
+* On the Organization account, accept the project transfer requirements.
+* Cancel the Personal Plan (if you are on one) to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
+* [Add yourself to the projects as Admin][6] on the Organization account.
+
+All the projects will now be under the Organization account with your user account as Admin for the projects.
+
+### Convert a user account into an Organization
 
 Organization（組織）を作成する方法にユーザアカウントを変換する方法があります。[アカウント][3] ページでCONVERTをクリックすることを行うことができます。
 
-<img src="/images/user-manual/organizations/convert.png" alt="組織ポップアップ" style="border: 1px solid #ccc">
+<img loading="lazy" src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
 
 これにより次のポップアップが表示されます：
 
-<img src="/images/user-manual/organizations/convert-popup.png" alt="変換ポップアップ" style="border: 1px solid #ccc">
+<img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
 
 自分のユーザーアカウントを組織に変換すると、そのユーザーアカウントでログインすることができなくなります。そのため、新しい組織の所有者を指定する必要があります。
 
@@ -42,8 +51,10 @@ Organization（組織）を作成する方法にユーザアカウントを変�
 
 アカウントを変換した後、ログアウトされます。次に、新しい所有者のアカウントで再度ログインすると、変換後のアカウントとそのすべてのプロジェクトにアクセスできるようになります。
 
-[1]: /images/user-manual/organizations/dropdown.png "新しい企業のメニューオプション"
+
+[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
 [2]: /user-manual/profile
 [3]: /user-manual/profile/account
-[4]: /images/user-manual/organizations/organizations.jpg "企業"
-
+[4]: /images/user-manual/organizations/organizations.jpg "Organizations"
+[5]: /user-manual/profile/projects/#transfer-project-ownership
+[6]: /user-manual/organizations/managing-organizations/#projects

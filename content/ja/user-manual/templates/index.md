@@ -6,7 +6,7 @@ position: 12
 
 Templates (or prefabs) allow you to speed up your development by creating Entities that are reusable. You can place multiple instances of a Template in your Scene and if you make any changes and apply them to the Template Asset, all instances of that Template will be updated.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
 
 ## Creating Templates
 
@@ -51,7 +51,7 @@ If you hover over the colored label of the overridden field you can view more de
 
 ### Applying Overrides
 
-To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field.
+To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field. 
 
 To apply multiple overrides select the root of the Template Instance and click Apply All on the Entity Inspector. You can also right click on the root of the Template Instance and select Template &rarr; Apply To Template.
 
@@ -89,9 +89,16 @@ this.app.root.addChild(instance);
 
 You can also use Script Attributes to pass Template Assets to your scripts instead of searching for them by ID.
 
+## When do I need to load Template Assets? 
+
+Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
+
+At runtime, the Template instance is not linked to the asset and you can reduce the download size by not preloading/loading the asset.
+
+You only need Template assets to be loaded if you are instantiating instances at runtime.
+
 [1]: /images/user-manual/templates/hierarchy.png
 [2]: /images/user-manual/templates/inspector.png
 [3]: /images/user-manual/templates/override.png
 [4]: /user-manual/templates/diff
 [5]: /images/user-manual/templates/override-hover.png
-

@@ -1,5 +1,5 @@
 ---
-title: 抗锯齿效果
+title: FXAA 抗锯齿
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -8,9 +8,14 @@ position: 3
 
 这是一张没有经过处理的图片:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+![Image without effect][1]
 
-这是一张已经经过了处理的图片:
+And the same image with the effect applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_fxaa.png"></img>
+![Image with effect][1]
 
+Find the post-processing effect script on [GitHub][3].
+
+[1]: /images/platform/posteffects/without_effects.png
+[2]: /images/platform/posteffects/with_fxaa.png
+[3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-fxaa.js

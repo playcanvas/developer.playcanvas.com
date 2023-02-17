@@ -1,10 +1,10 @@
 ---
-title: Scenes
+title: Сцены
 layout: usermanual-page.hbs
 position: 9
 ---
 
-## Scenes
+## Сцены
 
 You can manage your scenes by opening the Scenes dialog.
 
@@ -25,4 +25,3 @@ You can create a new scene by clicking on "ADD NEW SCENE", you can click on a sc
 [1]: /images/user-manual/editor/scenes-menu.jpg
 [2]: /images/user-manual/editor/scenes-viewport.jpg
 [3]: /images/user-manual/editor/scenes.jpg
-

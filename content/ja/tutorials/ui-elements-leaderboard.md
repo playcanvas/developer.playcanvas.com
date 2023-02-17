@@ -2,10 +2,10 @@
 title: ユーザインターフェイス - リーダーボード
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/nbMbtAGH/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
 
 *Elementコンポーネントを使用しているリーダーボード。[フルシーン][1]を参照してください。*
 
@@ -21,7 +21,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 `Entry Template`と呼ばれる無効なエンティティがあります。これは、テンプレートの各行に使用するテンプレートです。そのテンプレートをJSONアセットに存在する各リーダボードエントリに対して複製し、それぞれのパネルの下に各クローンを追加します。
 
-## スクリーン設定
+## Screen setup
 
 [スクリーン][3]は次のように設定されています：
 
@@ -31,11 +31,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 画面エンティティには、`leaderboard`スクリプトを含むスクリプトコンポーネントもあります。以下でご確認いただけます。
 
-## パネル設定
+## Panel setup
 
 各パネルには、その背景を示す画像要素があります。パネルの下に、エントリテンプレートのクローンをプログラム的に追加します。パネルはスクリーンの中央に固定されます。
 
-## エントリテンプレートの設定
+## Entry Template setup
 
 階層内の各リーダーボード行のテンプレートは次のようになります：
 
@@ -55,25 +55,25 @@ The horizontal anchors are not equal (they are 0 and 1) which means that the Ele
 
 では、グループの子の残りの部分を見てみましょう。
 
-### 位置
+### Position
 
 位置は左に固定されています：
 
 ![位置][9]
 
-### 名前
+### Name
 
 名前は左に固定され、右に少し動かされています：
 
 ![名前][10]
 
-### スコア
+### Score
 
 スコアは右に固定されています
 
 ![スコア][11]
 
-### ポイント
+### Points
 
 ポイントは右に固定されています
 
@@ -161,4 +161,3 @@ Leaderboard.prototype.load = function (callback) {
 [10]: /images/tutorials/ui/leaderboard/name.png
 [11]: /images/tutorials/ui/leaderboard/score.png
 [12]: /images/tutorials/ui/leaderboard/pts.png
-

@@ -1,23 +1,24 @@
 ---
-title:  シンプルなゲームを作る - その5
+title: シンプルなゲームの作成 - パート5
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 5"></iframe>
 
 * [完成されたプロジェクトはこちら][9]です。先に[その1][1], [その2][2], [その3][3], [その4][4]を読んでください。*
 
-## 音声とパーティクル
+## Audio & Particles
 
-### Audio（音声）
+### オーディオ
 
 音声はゲームの重要な要素です。プレイヤーの入力に対するフィードバックを提供したり、気分や雰囲気を盛り上げる効果があります。
 
 Keepy Upゲームには次の3つの音声エフェクトがあります：BGM、ボールを打ったときのタップ音、負けたときの悲しげなトロンボーンの音です。それぞれの処理は少しずつ異なります。
 
-#### Music & Sting
+
+#### Music & Sting
 
 音楽やstingの同様の方法処理されます。主な違いは、音楽はループに設定されていることです。 `game.js`に、音声コンポーネントを持つエンティティにゲームスクリプトをリンクさせるスクリプト属性があるので、単純に正しいスロットを再生・停止することができます。
 
@@ -26,7 +27,7 @@ this.audio.sound.stop(); // 現在再生している音声を停止
 this.audio.sound.play("gameover") // 'gameover' スロットを再生
 ```
 
-#### ボールをタップ
+#### Ball tap
 
 ボールタップ音はボールエンティティに直接添付されています。短い、単発の音声です。タップがボールに当たるたびに再生されます。
 
@@ -63,4 +64,3 @@ Particle EffectのエディタでLocal Velocityグラフを使用して、パー
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
 [9]: https://playcanvas.com/project/406050
-

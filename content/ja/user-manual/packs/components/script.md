@@ -1,5 +1,5 @@
 ---
-title: Script
+title: スクリプト
 layout: usermanual-page.hbs
 position: 16
 ---
@@ -12,16 +12,15 @@ position: 16
 
 新しいスクリプトを作成するには、アセットパネルの<span class="font-icon" style="font-size: 18px">&#58468;</span>ボタンを押し、New Scriptを選択してください。そして、ポップアップウィンドウにスクリプトの名前を入力してEnterを押してください。
 
-<img src="/images/user-manual/scenes/components/new-script.jpg"/>
+<img loading="lazy" src="/images/user-manual/scenes/components/new-script.jpg">
 
 新しいスクリプトはスクリプトコンポーネント上にドラッグすることができます。また、スクリプトコンポーネントのインスペクタにあるAdd Scriptボタンを押して、アセットパネルからスクリプトを選択することもできます。
 
 スクリプトをPlayCanvasエディタで編集するには、スクリプト名のハイパーリンクをクリックするか、スクリプトをアセットパネルから選択してEditをクリックしてください。
 
-## スクリプティングインターフェイス
+## Scripting Interface
 
 スクリプトコンポーネントのスクリプティングインターフェイスは[こちら][2]です。
 
 [1]: /images/user-manual/scenes/components/component-script.png
 [2]: /api/pc.ScriptComponent.html
-

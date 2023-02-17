@@ -1,5 +1,5 @@
 ---
-title: Animation
+title: 动画
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -10,23 +10,19 @@ position: 2
 
 ![动画组件][1]
 
-## 属性
+## Properties
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>属性</th><th>描述</th></tr>
-    <tr><td>Assets</td><td>可以被实体利用的动画资源。可以使用拾取工具选取复数个动画资源。</td></tr>
-    <tr><td>Speed</td><td>动画回放速度的倍增系数。0表示动画静止，1表示动画的标准回放速度。</td></tr>
-    <tr><td>Activate</td><td>如果选中，组件会在动画加载后自动播放动画。</td></tr>
-    <tr><td>Loop</td><td>如果选中，动画将会自动在播放后回到开头。否则动画将会停止在最后一帧位置。</td></tr>
-</table>
+| Property | Description |
+|----------|-------------|
+| 资源   | The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control. |
+| Speed    | A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset. |
+| Activate | If checked, the component will start playing the animation on load. |
+| Loop     | If checked, the animation will continue to loop back to the start on completion. Otherwise, the animation will come to a stop on its final frame. |
 
-## 编程接口
+## Scripting Interface
 
 可以通过[脚本组件][2]来修改动画组件的属性。动画组件的脚本接口在[这里][3]。
 
 [1]: /images/user-manual/scenes/components/component-animation.png
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.AnimationComponent.html
-

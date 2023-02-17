@@ -14,7 +14,7 @@ The PlayCanvas Engine is designed to make creating 3D games and applications fas
 
 2D graphics are often known as **Sprites**. In PlayCanvas you can create [Sprite Assets][0] and [Sprite Components][1]. The Sprite Component is attached to Entities in order to display 2D graphics in your scene. Sprite Assets in PlayCanvas store multiple image frames from a Texture Atlas in sequence. So you can use a Sprite Asset to create flip-book style animated graphics in your games.
 
-## Texture Atlases
+## Texture Atlases
 
 ![Texture Atlas][6]
 
@@ -37,4 +37,3 @@ The [Sprite Editor][4] is the tool used to generate Texture Atlas frames and Spr
 [5]: /images/user-manual/2D/sprite.jpg
 [6]: /images/user-manual/2D/texture-atlas.jpg
 [7]: /images/user-manual/2D/sprite-editor.jpg
-

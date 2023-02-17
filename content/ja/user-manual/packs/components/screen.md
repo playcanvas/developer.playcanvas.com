@@ -1,5 +1,5 @@
 ---
-title: Screen
+title: 画面
 layout: usermanual-page.hbs
 position: 15
 ---
@@ -10,22 +10,16 @@ Screenコンポーネントは、ユーザインターフェイスの領域と�
 
 ![Screen コンポーネント][1]
 
-## コンポーネントプロパティ
+## Component Properties
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>Screen Space</td><td>有効にすると、スクリーンの内容が2Dでキャンバスのオーバーレイとしてレンダリングされます。</td></tr>
-    <tr><td>Resolution</td><td>Screen Spaceがfalseの場合、画面の解像度が調整されます。右や上に動かすにつれて画面の座標が上がります。Screen Spaceコンポーネントでは、解像度は常にキャンバスの解像度から定義されます。</td></tr>
-    <tr><td>Reference Resolution</td><td>Scale ModeがBlendの場合、スケールファクタを計算するために使用される解像度。</td></tr>
-    <tr><td>Scale Mode</td><td>ウィンドウのサイズが画面のサイズと一致しない場合、ユーザインターフェイスの変更方法を定義します。 
-    	<p>None. 何もスケールされていない</p>
-    	<p>Blend. Screenの内容は、参照解像度と実際の解像度との比率によって調整されます。Scale Blendプロパティを使用して、水平解像度と垂直解像度の間のスケールの重みを判断。</p>
-    </td></tr>
-    <tr><td>Scale Blend</td><td>水平(scale blend = 0)と垂直(Scale Blend = 1)の間のスケールの重みを判断。　</td></tr>
-</table>
+| Property             | Description |
+|----------------------|-------------|
+| Screen Space         | When enabled the contents of the screen are rendered in 2D as an overlay to the canvas. |
+| Resolution           | When Screen Space is false. The resolution of the screen co-ordinates. Screen co-ordinates go up as you move right and up. For Screen Space components the resolution is always determined from the resolution of the canvas. |
+| Reference Resolution | When Scale Mode is Blend. The resolution used to calculate the scale factor. |
+| Scale Mode           | Determine how the user interface changes when the window size does not match the screen size. Can be: <ul><li>None: Nothing is scaled.</li><li>Blend: Screen content is scaled by the ratio of the reference resolution to the actual resolution. Using the Scale Blend property to weight the scale between using the horizontal and vertical resolution.</li></ul> |
+| Scale Blend          | The weighting of the scaling between horizontal (Scale Blend = 0) and vertical (Scale Blend = 1). |
+| Priority             | Determines the order in which Screen components in the same layer are rendered (higher priority is rendered on top). Number must be an integer between 0 and 255. |
 
 [0]: /user-manual/user-interface
 [1]: /images/user-manual/scenes/components/component-screen.png
-

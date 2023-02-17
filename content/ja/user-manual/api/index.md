@@ -8,7 +8,7 @@ position: 22
     REST APIは現在ベータ版です。特定のエンドポイントやAPIのレスポンスを変更できます。
 </div>
 
-## 認証
+## Authorization
 
 You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
 
@@ -42,7 +42,7 @@ Bearer [access_token]
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## パラメータ
+## Parameters
 
 様々なルートが複数のパラメータを受け入れます。パラメータがURLの一部でない場合、GETリクエストでは、HTTPクエリ文字列パラメータとして渡すことができます。URLに含まれないPOST、PUT、DELETEリクエストパラメータは'application/json'のコンテンツタイプでJSONとしてエンコードされるべきです。
 
@@ -66,15 +66,15 @@ This is found in the [version control][5] panel and can be selected and copied.
 
 ![Branch ID][8]
 
-## 応答の形式
+## Response Format
 
 APIの各呼び出しの応答形式に対して、REST APIは一般的なガイドラインに従います。
 
-#### GET リソース
+#### GET resource
 
 単一のリソースをGETしようとしている場合、応答は要求したリソースを持つJSONオブジェクトになります。
 
-#### GET 複数のリソース
+#### GET multiple resources
 
 プロジェクトのアプリを一覧表示する場合等の複数のリソースをGETしようとしている場合、次の形式でJSONオブジェクトを取得します：
 
@@ -109,7 +109,7 @@ APIの各呼び出しの応答形式に対して、REST APIは一般的なガイ
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### エラー
+#### Errors
 
 エラーが発生すると、次の形式でJSONオブジェクトを取得します：
 
@@ -121,12 +121,12 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 また、レスポンスのステータスコードは、適切なHTTPエラーコードになります。
 
-## レート制限
+## Rate Limiting
 
 REST APIへの呼び出しにはレート制限があります。リクエストに応じて、異なるレート制限があります。
 
-* **normal:** normalのレート制限は毎分120の要求を許可します。
-* **strict:** strictなレート制限は毎分5の要求を許可します。
+* **normal:** The normal rate limit allows 120 requests per minute.
+* **strict:** The strict rate limit allows 5 requests per minute.
 
 応答には、APIを呼び出す頻度を調整するために次のヘッダーが含まれています：
 
@@ -146,4 +146,3 @@ REST APIへの呼び出しにはレート制限があります。リクエスト
 [6]: /images/user-manual/api/project-id.png
 [7]: /images/user-manual/api/scene-id.png
 [8]: /images/user-manual/api/branch-id.png
-

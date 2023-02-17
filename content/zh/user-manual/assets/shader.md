@@ -1,5 +1,5 @@
 ---
-title: 着色器
+title: Shader
 layout: usermanual-page.hbs
 position: 12
 ---
@@ -24,4 +24,3 @@ var shader = new pc.Shader(this.app.graphicsDevice, shaderDefinition);
 var material = new pc.Material();
 material.setShader(shader);
 ```
-

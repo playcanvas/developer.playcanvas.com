@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-## サインアップ
+## Sign Up
 
 PlayCanvasの使用を開始するには、新しいアカウントを作成する必要があります。最初に、フロントページでSign Upをクリックしてください。
 
@@ -20,7 +20,7 @@ PlayCanvasの使用を開始するには、新しいアカウントを作成す�
 
 アカウントを作成すると自動的に新しいデモプロジェクトが作成され、[PlayCanvas Editor][4]を確認できます。[プロフィール][5]ページに移動してプロジェクトを作成してください。
 
-## ログイン
+## Logging In
 
 アカウントにログインするには、フロントページのLog Inをクリックしてください。既にログインしている場合は、[プロフィール][5]ページに自動的に移動します。メールアドレスとパスワードを使用してサインアップした場合は、ログインページでこれらのフィールドに入力してください。Googleでログインした場合はGoogleをクリックしてください。
 
@@ -33,4 +33,3 @@ PlayCanvasの使用を開始するには、新しいアカウントを作成す�
 [5]: /user-manual/profile/
 [6]: https://login.playcanvas.com/persona_deprecated
 [7]: /images/user-manual/creating-account/login.png
-

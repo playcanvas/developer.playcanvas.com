@@ -1,12 +1,12 @@
 ---
-title: 加载屏
+title: 载入界面
 layout: usermanual-page.hbs
 position: 8
 ---
 
 如果希望创建一个自定义的加载屏，你可以进入[场景设置][1] 然后在 *Loading Screen* 部分点击 **Create Default**。如果你已经有了一个合适的加载屏脚本，就可以把它拖放到加载屏上或者点击 **Select Existing** 了：
 
-<img alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
+<img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png">
 
 点击 **Create Default** 将会创建一个新的脚本和一些默认的资源。你可以修改这些脚本如果你希望修改加载屏的话。这里有个修改演示：
 
@@ -124,4 +124,3 @@ pc.script.createLoadingScreen(function (app) {
 ```
 
 [1]: /user-manual/designer/settings
-

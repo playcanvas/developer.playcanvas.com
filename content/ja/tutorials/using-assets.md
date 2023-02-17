@@ -1,11 +1,11 @@
 ---
-title: アセットレジストリの使用
+title: アセットレジストリを使用
 layout: tutorial-page.hbs
-tags: loading, assets
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
+tags: loading, assets, basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 
 *Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
 
@@ -15,7 +15,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
-## 設定
+## Setup
 
 *プロジェクトは次のように設定されます*
 
@@ -26,13 +26,13 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
  [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
 
-## AssetRegistry
+## The AssetRegistry
 
  [`pc.AssetRegistry`][1] は`this.app.assets`.としてすべてのスクリプトで使用できます。レジストリには、それらが読み込まれているかどうかに関わらず、プロジェクトに追加されたすべてのランタイムアセットの詳細が入力されます。Asset Registryを使用してアプリケーションに必要なアセットを見つけてください。
 
 このケースでは3つのスクリプトを、 `a`、`b`、`c`として定義してEditorでアセットに割り当てます。その後、スクリプトで自動的に使用可能になります。
 
-## プレロードされたアセットを使用
+## Using preloaded assets
 
 ```javascript
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
@@ -54,11 +54,11 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
 
-<img src='/images/tutorials/using_assets/using-assets-a-preload.png' width=360px>
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360px">
 
 So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
-## 実行時にアセットを読み込む
+## Loading assets at runtime
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
@@ -79,7 +79,7 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 
 The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
 
-<img src='/images/tutorials/using_assets/using-assets-c-preload.png' width=360px>
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360px">
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -91,7 +91,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
 
-## 完全なスクリプト
+## The complete script
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');
@@ -149,7 +149,7 @@ UpdateAsset.prototype.update = function(dt) {
 };
 ```
 
-## アセットレジストリのイベント
+## AssetRegistry events
 
 この例では示していないのは、アセットが読み込まれたことを知る方法です。これを行うには、"load"イベントのような`pc.AssetRegistry`イベントを使用します。サンプルコードです：
 
@@ -191,6 +191,7 @@ if (!asset.loaded) {
 
 このコードは必要とされるアセットを読み込みますが、少し長いので代わりに`asset.ready()`メソッドを使用することができます。このコードは、上記と同じ機能を実行します。
 
+
 ```javascript
 var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
@@ -207,4 +208,3 @@ this.app.assets.load(asset);
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
 [8]: /api/pc.RenderComponent.html#asset
-

@@ -1,5 +1,5 @@
 ---
-title: Creating an Account
+title: Создание аккаунта
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -33,4 +33,3 @@ In order to log in to your Account click Log In on the front page. If you are al
 [5]: /user-manual/profile/
 [6]: https://login.playcanvas.com/persona_deprecated
 [7]: /images/user-manual/creating-account/login.png
-

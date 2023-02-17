@@ -6,7 +6,7 @@ position: 6
 
 [Facebook][1]是一个面向广大受众的很好的发布PlayCanvas游戏的地方。 从PlayCanvas发布游戏到Facebook是很直接了当的。
 
-## 怎样发布到Facebook
+## How to publish to Facebook
 
 **1.** 发布您的游戏到PlayCanvas。 (您也可以发布自托管的游戏到Facebook，这将是一个类似如下的过程)
 
@@ -43,4 +43,3 @@ position: 6
 [5]: /images/user-manual/publishing/web/facebook/website-url.jpg
 [6]: /images/user-manual/publishing/web/facebook/icons.jpg
 [7]: /images/user-manual/publishing/web/facebook/app-url.jpg
-

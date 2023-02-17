@@ -1,5 +1,5 @@
 ---
-title: Physics
+title: 物理
 layout: usermanual-page.hbs
 position: 16
 ---
@@ -13,4 +13,3 @@ position: 16
 PlayCanvasはとても強力な物理エンジンを提供し、すぐれた効果を多く実現しています。このセクションではリジッドボディ、コリジョン、フォース、インパルス、レイキャストなどの概念をご紹介します。
 
 [1]: /images/user-manual/physics/physics-constraints.gif
-

@@ -1,11 +1,11 @@
 ---
-title: シンプルなゲームを作る - その6
+title: シンプルなゲームの作成 - パート6
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 6"></iframe>
 
 *[完成されたプロジェクトはこちら][11]です。先に[その1][1], [その2][2], [その3][3], [その4][4], [その5][5]を読んでください。*
 
@@ -15,21 +15,21 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 PlayCanvasではユーザインタフェースは[Screen Component][7]と[Element Component][8]を使用して構築されます。詳細は [ユーザマニュアル][6]でご確認ください
 
-### ユーザインターフェースのエンティティ
+### User Interface Entities
 
 ![階層][9]
 
 ユーザインターフェイスをメニュー、ゲーム、ゲームオーバーの３つのゲーム状態に分けました。各状態には、状態が入力されたときにアクティブ化されるスクリーンエンティティがあります。 また、オーバーレイのためのスクリーンがあります。オーバーレイはメニューのボールの下に表示されるため、3Dスクリーンコンポーネントを使用して、ボールの後ろのワールドスペースにオーバーレイをレンダリングします。
 
-### イメージとテキスト
+### Images and Text
 
 ![イメージ要素][12]
 
-画像やテキストは要素コンポーネントを使用してユーザーインターフェイスに追加されます。このコンポーネントは、テクスチャアセットの形式または画像をフォントアセットの形式で表示することができます。
+Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset. 
 
 ![イメージの属性][13]
 
-### ユーザインターフェースのスクリプト
+### User Interface script
 
 メインメニューのスクリプトを見てみましょう。
 
@@ -38,20 +38,20 @@ var UiMenu = pc.createScript('uiMenu');
 
 UiMenu.attributes.add("overlay", {type: "entity"});
 
-// エンティティ毎に一度呼び出される初期化コード
+// initialize code called once per entity
 UiMenu.prototype.initialize = function() {
-    this.on('enable', this.onEnable, this);    
+    this.on('enable', this.onEnable, this);
     this.on('disable', this.onDisable, this);
-    
+
     this.onEnable();
 };
 
 UiMenu.prototype.onEnable = function () {
-    // 背景のクリックをリッスンする    
-    
+    // Listen for clicks on the background
+
     this.overlay.enabled = true;
     this.overlay.element.on("click", this.start, this);
-    
+
     if (this.ball) {
         this.ball.model.meshInstances[0].material.depthTest = false;
     }
@@ -59,23 +59,24 @@ UiMenu.prototype.onEnable = function () {
 
 UiMenu.prototype.onDisable = function () {
     this.overlay.enabled = false;
-    // イベントのリッスンをやめる
+    // Stop listening to events
     this.overlay.element.off("click", this.start, this);
 };
 
 UiMenu.prototype.start = function (e) {
     this.app.fire("ui:start");
-    // タッチやマウスイベントを防ぐ
+    // prevent touch and mouse events
     e.stopPropagation();
 };
 ```
-オーバレイ要素は、画面を緑色にするフルスクリーン要素です。また、ユーザがフルスクリーンをクリックすることが重要なので、入力を検出するためにも使用します。
+
+First we have set up an attribute with a reference to the overlay element. The overlay element is a full screen element which tints the screen green. We also use this to detect input as we only care about the user clicking on the full screen.
 
 エンティティを有効にした場合、フルスクリーンオーバーレイを有効にして表示し、次にクリックイベントのリッスンを開始します。エンティティが無効になると、イベントのリッスンを停止し、オーバーレイを非表示にします。イベントがトリガーされると、メインゲームのスクリプトがリッスンしているゲームの状態の変化をトリガーする"ui:start" イベントが発生します。
 
 ゲームのイベントにリッスンしたり、UIイベントを発動させる他の二つのUIスクリプトでも、同様の動作を繰り返します。
 
-## ゲーム完成
+## Game Complete
 
 シリーズの最後に到達しました！PlayCanvasを使用してゲームを構成および構築する方法について説明をしました。チュートリアルに関するご意見は[フォーラム][8]から連絡ください。
 
@@ -93,4 +94,3 @@ UiMenu.prototype.start = function (e) {
 [12]: /images/tutorials/beginner/keepyup-part-six/image-element.jpg
 [13]: /images/tutorials/beginner/keepyup-part-six/element-attr.jpg
 [14]: https://forum.playcanvas.com/
-

@@ -1,18 +1,18 @@
 ---
-title: Version Control
+title: バージョンの管理
 layout: usermanual-page.hbs
 position: 13
 ---
 
 シンプルなプロジェクトについて理解したら、バージョン管理がアプリケーション開発プロセスに重要だとわかるはずです。バージョン管理は、次の機能を実行するシステムの包括的用語です。
 
-* 以前のバージョンのコードとアセットに戻すことができる
-* プロジェクトに加えられてきた変更を確認できる
-* 他の開発者から隔離された場所で新しい変更を試用し、準備ができたら変更をマージすることができる
+* Allows you to turn back time to a previous version of your code and assets
+* Allows you to see changes that have been made to a project over time
+* Allows you to trial new changes in a safe place, isolated from other developers, and merge changes when ready
 
 PlayCanvasには、エディターに直接組み込まれたバージョン管理ツールがあります。このツールは3つの主な機能に分類できます。**チェックポイント**は、ある時点でのプロジェクトのスナップショットで、プロジェクトに加えられた変更のタイムラインを形成します。**ブランチ**は、1つの機能を作成するために加えられた変更、または1人の開発者による変更を表す単一の開発ラインです。一つのブランチのアセットを変更しても、別のブランチの変更には影響しません。**競合のマージと解決** マージはブランチを別のブランチに結合するプロセスです。両方のブランチが同じデータを編集するときに競合が発生します。競合を解決した後、目的ブランチには両方のブランチからの変更が含まれます。
 
-## PlayCanvasのバージョン管理
+## Version Control in PlayCanvas
 
 他のバージョン管理システム（VCS）に精通している場合は、この概要を読むことでPlayCanvasが他のバージョン管理システムと比較してどのように機能するかを理解できるはずです。
 
@@ -29,4 +29,3 @@ PlayCanvasの**ブランチ**は、他のシステムのブランチのように
 [1]: /user-manual/version-control/checkpoints
 [2]: /user-manual/version-control/branches
 [3]: /user-manual/version-control/merging
-

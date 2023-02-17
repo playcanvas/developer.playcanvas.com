@@ -4,20 +4,24 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-写真や視覚では、ビネットとは画像の中心に比べて、画像の明るさや彩度を減少させることです。フレームの中心に注意を引くために使用できます。<small>([Wikipediaから][1])</small>
+In photography and optics, [vignetting][1] is the reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame.
 
-エフェクト無しの画像：
+エフェクトをかけていない画像:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+![Image without effect][2]
 
-エフェクトを適用した同じ画像：
+And the same image with the effect applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_vignette.png"></img>
+![Image with effect][3]
 
 ビルドインのビネットエフェクトには次の属性があります：
 
-* **Offset**: エフェクトのオフセットをコントロール。
-* **Darkness**: エフェクトの暗さをコントロール。
+* **Offset**: Controls the offset of the effect.
+* **Darkness**: Controls the darkness of the effect.
+
+Find the post-processing effect script on [GitHub][4].
 
 [1]: https://en.wikipedia.org/wiki/Vignetting
-
+[2]: /images/platform/posteffects/without_effects.png
+[3]: /images/platform/posteffects/with_vignette.png
+[4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-vignette.js

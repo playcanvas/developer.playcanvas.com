@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: はじめに
 layout: shader-editor-page.hbs
 position: 1
 ---
@@ -42,4 +42,3 @@ Find out more about the window layout in the [Window Layout][4] section.
 [2]: /images/shader-editor/sample-graph.png
 [3]: /shader-editor/overview
 [4]: /shader-editor/window-layout
-

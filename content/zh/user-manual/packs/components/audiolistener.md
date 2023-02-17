@@ -1,5 +1,5 @@
 ---
-title: Audio Listener
+title: 音频侦听器
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -10,11 +10,10 @@ position: 3
 
 ![音频侦听器组件][1]
 
-## 脚本接口
+## Scripting Interface
 
 可以通过[脚本组件][2]来修改音频侦听器组件的属性。音频侦听器组件的脚本接口在[这里][3]。
 
 [1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.AudioListenerComponent.html
-

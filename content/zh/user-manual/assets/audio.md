@@ -12,4 +12,3 @@ Note that not all formats are supported in all browsers. Currently, the most wid
 
 [mp3]: https://caniuse.com/mp3
 [sound-component]: /user-manual/packs/components/sound/
-

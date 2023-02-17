@@ -16,11 +16,11 @@ position: 1
 
 スプライトエディタのビューポートには現在選択されているテクスチャアトラスが表示されています。フレームはグレーのボックスでテクスチャアトラスに表示されます。現在選択されているアセットは2組のハンドルで表示されます。緑のハンドルはフレームの幅と高さを修正し、青いハンドルはフレームのボーダープロパティを修正します。
 
-### テクスチャアトラスを編集する
+### Editing Texture Atlases
 
 ビューポート内で、マウスを使用しフレームのアウトラインをドラッグします。そして、緑と青のハンドルを使用してフレームの範囲とボーダーを修正します。
 
-#### フレーム
+#### Frames
 
 フレームは、テクスチャアトラスで定義されたリージョンです。フレームは名前、位置、ボーダーを持ちます。ボーダーは9スライスリージョンを定義するのに使用します。詳細は [9スライスドキュメント][7]を参照してください。
 
@@ -28,7 +28,7 @@ position: 1
 
 インスペクターパネルには、現在選択しているアイテムのプロパティが表示されます。インスペクターは選択しているアイテムがテクスチャアトラスなのか、フレーム、スプライトアセットなのかによって変わります。
 
-### テクスチャアトラスインスペクター
+### Texture Atlas Inspector
 
 ![テクスチャアトラスインスペクター][3]
 
@@ -47,7 +47,7 @@ position: 1
 
 設定をすべて選択したら、 **Generate Frames** ボタンをクリックしてフレームを生成します。
 
-### フレームインスペクター
+### Frame Inspector
 
 ![フレームインインスペクター][4]
 
@@ -55,7 +55,7 @@ position: 1
 
 インスペクターではフレームのポジション、サイズ、ボーダープロパティを修正できます。
 
-#### フレームインスペクターアクション
+#### Frame Inspector Actions
 
 **New Sprite From Selection**
 
@@ -66,7 +66,7 @@ position: 1
  * **Trim Selected Frames** - Reduce the size of the selected frames to remove any excess empty space around an image. [Keyboard Shortcut: T]
  * **Delete Selected Frames** - Delete the selected Frames [Keyboard Shortcut: Delete]
 
-### スプライトインスペクター
+### Sprite Inspector
 
 ![スプライトインスペクター][5]
 
@@ -76,15 +76,15 @@ position: 1
 
 スプライトインスペクターを使用して、スプライト内でフレームの順序をつけなおしたり、個々のフレームを削除したりできます。
 
-## フレームパネル
+## Frames Panel
 
 フレームパネルではテクスチャアトラスのフレームの選択・削除ができます。
 
-## アセットパネル
+## Asset Panel
 
 アセットパネルでは、現在のテクスチャアトラスから生成されたすべてのスプライトアセットが表示されています。このパネルからスプライトアセットを選択することもできます。
 
-* [PixelBoy](https://twitter.com/2pblog1)による作品* 
+*[PixelBoy](https://twitter.com/2pblog1)による作品*
 
 [1]: /images/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg
 [2]: /images/user-manual/2D/sprite-editor/viewport.jpg
@@ -93,4 +93,3 @@ position: 1
 [5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
 [6]: /user-manual/assets/sprites/
 [7]: /user-manual/2D/9-slicing/
-

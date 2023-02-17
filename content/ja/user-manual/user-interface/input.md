@@ -21,7 +21,7 @@ var app = new pc.Application(canvas, {
 });
 ```
 
-## イベント入力
+## Input Events
 
 Elementコンポーネントで入力を有効にすると、次のイベントが発生します：
 
@@ -69,7 +69,7 @@ Elementコンポーネントで入力を有効にすると、次のイベント�
 
 コンポーネント上でタッチがキャンセルされたときに発生します。
 
-## イベント処理
+## Event Handling
 
 入力イベントを処理するには、Elementコンポーネントでリッスンします。
 
@@ -79,7 +79,7 @@ this.entity.element.on('click', function (event) {
 }, this);
 ```
 
-## イベントバブリング
+## Event bubbling
 
 Elementコンポーネントで入力イベントが発生すると、 `event.stopPropagation()`を呼び出さない限り、親要素にバブルアップします。 例えば：
 
@@ -95,13 +95,15 @@ this.entity.element.on('click', function (event) {
 `stopPropagation`を呼び出すと、イベントが` pc.Mouse`や `pc.TouchDevice`のような他の入力デバイスによって処理されなくなります。たとえば、`app.mouse.wasPressed`を使ってマウス入力を処理している場合、`mousedown`イベントで `stopPropagation`を呼び出して`app.mouse.wasPressed`がtrueを返さないようにします。 例えば：
 
 ```javascript
-initialize: function () {
+var InputScript = pc.createScript('inputScript');
+
+InputScript.prototype.initialize = function () {
     this.entity.element.on('mousedown', function (evt) {
         evt.stopPropagation();
     }, this);
 },
 
-update: function (dt) {
+InputScript.prototype.update = function (dt) {
     if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
         // do something when the left button was pressed.
         // this will not be called if the button was pressed on the Element
@@ -135,4 +137,3 @@ TouchFix.prototype.initialize = function() {
 
 [1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/use-input.png
-

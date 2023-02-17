@@ -25,4 +25,3 @@ As can be seen above, the Material Node has a number of input ports. Each port c
 | ccNormal | XYZ | (0, 0, 1) | Clear coat normal. |
 
 [1]: /images/shader-editor/overview-graph-material.png
-

@@ -8,27 +8,27 @@ position: 1
 
 2つの簡単なステップでPlayCanvasに公開できます：
 
-1.新規 **ビルド**の公開
-2. ビルドを**プライマリビルド**に設定
+1. Publish a new **Build**
+2. Set the build as the **Primary Build**
 
 公開するにはプロジェクトに最低ひとつのシーンが必要です。
 
-## 新規ビルドの公開
+## Publishing a new Build
 
-* プロジェクトに移行してEditorを開く。
-* 左側のツールバーの<span class="pc-icon" style="font-size">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
+* Go to your Project and open the Editor.
+* Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
 
 ![Publish ボタン][1]
 
-* Publishingダイアログが開きます。ここから自己ホスティング用のビルドを公開したり、ビルドをダウンロードすることができます。
+* This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
 
 ![公開][2]
 
-* "Publish on PlayCanvas"の横のPUBLISHボタンをクリック。
+* Click the PUBLISH button next to "Publish on PlayCanvas".
 
 ![新しいビルドの公開][3]
 
-*次に、新しいビルドに関するいくつかの詳細を記入する必要があります。使用可能なフィールドは以下のとおりです：
+* You will then have to fill out some details about your new build. The available fields are:
 
   * *Image*: Click on the image to upload a different one if you want. This will be used when sharing the build on Social Media.
   * *Title*: The title of your build.
@@ -73,4 +73,3 @@ The first time you publish a build, it will automatically become the Primary Bui
 [4]: /images/user-manual/publishing/dialog-publish-build-scenes.png
 [5]: /images/user-manual/publishing/dialog-builds.png
 [6]: /user-manual/optimization/optimizing-scene-format
-

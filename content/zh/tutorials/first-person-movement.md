@@ -2,10 +2,10 @@
 title: 第一人称移动
 layout: tutorial-page.hbs
 tags: input, camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/HzOzlZOC/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
 
 这是一个实现第一人称角色运动的应用程序。
 
@@ -15,9 +15,9 @@ See the full scene setup in the [Tutorial Project][1].
 
 下面的脚本执行以下功能：
 
-*监听鼠标和键盘输入
-*从鼠标输入更新相机实体
-*应用力将玩家实体移动到场景周围
+* Listen for mouse and keyboard input
+* Update a camera entity from the mouse input
+* Apply forces to move the player entity around the scene
 
 Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
 
@@ -114,7 +114,7 @@ FirstPersonMovement.prototype.update = function(dt) {
     }
 
     // use direction from keypresses to apply a force to the character
-    if (x !== 0 && z !== 0) {
+    if (x !== 0 || z !== 0) {
         force.set(x, 0, z).normalize().scale(this.power);
         this.entity.rigidbody.applyForce(force);
     }
@@ -145,4 +145,3 @@ FirstPersonMovement.prototype._createCamera = function () {
 [1]: https://playcanvas.com/project/405842
 [2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg
 [3]: /api/pc.RigidBodyComponent.html#applyForce
-

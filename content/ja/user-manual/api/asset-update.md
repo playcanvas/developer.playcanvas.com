@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 10
 ---
 
-## ルートURL
+## Route URL
 
 ```none
 PUT https://playcanvas.com/api/assets/:assetId
 ```
 
-## 説明
+## Description
 
 既存のアセットのファイルをアップデートします。
 
@@ -20,20 +20,21 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 *他のREST API エンドポイントとは異なり、Update Assetエンドポイントはデータが`multipart/form-data`に送信されることを予期します。**
 
-## 例
+## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'file=@./script.js' https://playcanvas.com/api/assets/{assetId}
+curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
 ```
 
-## パラメータ
+## Parameters
 
 <div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p></p>The id of the branch</div>
-<div class="parameter"><span class="param">file: file</span><p></p>Data to update asset file with</div>
+<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
+<div class="parameter"><span class="param">file: file</span><p>Data to update asset file with</p></div>
+<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
 </div>
 
-## 応答のスキーマ
+## Response Schema
 
 ```none
 Status: 200
@@ -68,7 +69,7 @@ Status: 200
 }
 ```
 
-## エラー
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -77,9 +78,8 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## レート制限
+## Rate Limiting
 
 このルートは[strict][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-

@@ -1,19 +1,19 @@
 ---
-title: ammo.jsの更新
+title: Updating ammo.js
 layout: usermanual-page.hbs
-position: 6
+position: 7
 ---
 
 ### はじめに
 
 PlayCanvasはammo.jsの最新バージョンのサポートを追加しました。
 
-新しいバージョンには多くの利点があります。
-* 基礎となるBullet APIが追加で公開されました。
-* ammo.js wasmモジュールのサポートが追加されました。
-* wasmバージョンがより小さく、より高速に動作するようになりました。
+The new version has a number of benefits:
+* more of the underlying Bullet API has been exposed
+* support for ammo.js wasm module has been added
+* the wasm version is smaller and runs faster
 
-### 既存のプロジェクト
+### Existing projects
 
 wasmモジュールの導入前に作成されたプロジェクトは、デフォルトでammo.jsのレガシーバージョンを使用し続けます。プロジェクトの所有者次第が希望すれば、物理システムをammo.jsの最新バージョンに移行することができます。
 
@@ -25,15 +25,14 @@ wasmモジュールの導入前に作成されたプロジェクトは、デフ�
 
 「物理を有効にする」にチェックを付けると、ビルド時にammo.jsの旧バージョンがプロジェクトに追加されます。
 
-### 移行
+### Migration
 
 ammo.jsの最新バージョンを使用するには、「物理を有効にする」を無効にし、「ammoのインポート」をクリックします。PlayCanvasが提供するammo.jsの最新バージョンがアセットパネルにインポートされます。
 
 ammo.jsの更新によってプロジェクトに問題が発生する場合は、古いバージョンに戻す必要があります。そのためには、プロジェクトのammo.jsモジュールを削除（または無効化）し、物理チェックボックスを再度有効にします。
 
-### 備考
+### Note
 
 プロジェクトには、古い物理を含める（「物理を有効にする」チェックボックスで）か、プロジェクトにammo.jsモジュールを直接含める必要がありますが。しかし、両方を同時に含めることはできません！
 
 [1]: /images/user-manual/physics/physics-legacy-settings.png
-

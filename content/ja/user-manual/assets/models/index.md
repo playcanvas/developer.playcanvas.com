@@ -12,8 +12,8 @@ PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応して
 
 次についてもっと知る：
 
-* [モデルの構築][5]
-* [モデルのエキスポート][6]
+* [Building Models][5]
+* [Exporting Models][6]
 
 [1]: /user-manual/assets/models/building
 [2]: https://www.blender.org/
@@ -21,4 +21,3 @@ PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応して
 [4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
-

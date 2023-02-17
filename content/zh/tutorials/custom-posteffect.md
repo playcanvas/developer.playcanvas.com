@@ -1,11 +1,11 @@
 ---
-title: 自定义后期效果
+title: 自定义后期特效
 layout: tutorial-page.hbs
 tags: posteffects
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/3je0YP0q/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 
 *本教程使用自定义后期效果在GLSL中创建特效*
 
@@ -15,11 +15,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 在接下来的段落中，我们将演示如何创建自己的后期效果。 你可以在[这里][1]看到现有的后期特效的例子。
 
-## 脚本
+## The script
 
 首先，我们需要创建一个新的脚本。 这个脚本将包含我们的后期效果的[着色器定义][2]，以及将后期效果添加到相机的代码。 此脚本需要使用附加到实体的[Camera组件][3]。 我们将这个脚本命名为posteffect_example.js:
 
-## 特效
+## The effect
 
 现在我们需要为我们的后效果创建一个新类。 这个类将派生自[pc.posteffect.PostEffect][4]。 我们将在脚本定义之前的posteffect_example.js脚本中定义此类：
 
@@ -63,7 +63,7 @@ pc.extend(pc, function () {
 }());
 ```
 
-## 封装
+## Wrap up
 
 我们现在有我们的后效果的所有必需的组件。 我们需要做的是将上面定义的后期特效案例的实例添加到我们的相机的[后期效果队列][5]中。 这里是完整的列表：
 
@@ -155,4 +155,3 @@ PosteffectExample.prototype.initialize = function() {
 [6]: /tutorials/custom-shaders/
 [5]: /api/pc.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045
-

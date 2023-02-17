@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-### 权限
+### Permissions
 
 你可以在你的组织的账户界面管理该组织的权限。
 
@@ -14,7 +14,7 @@ position: 2
 
 管理员可以做一切所有者可以做的事情，如创建和删除的项目，除了删除该组织。
 
-### 席位
+### Seats
 
 To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
 
@@ -32,8 +32,16 @@ The Owner of the organization does not need to occupy a seat if they are not act
 
 组织的所有者可以从这里删除该组织。这将彻底删除帐户及其所有项目。这个操作不能逆转。
 
-[1]: /images/user-manual/organizations/permissions.png "Permissions"
-[2]: /images/user-manual/organizations/seats.png "Seats"
-[3]: /images/user-manual/organizations/upgrade.png "Upgrade"
-[4]: /images/user-manual/organizations/delete.png "Delete"
+### Projects 
 
+Administrators of the organization can add themselves to any project owned by the organization. On the account page, click on the drop down arrow on the right and then click on 'Add me as admin'.
+
+![add to project][5]
+
+From here, you can add other users to the project as usual.
+
+[1]: /images/user-manual/organizations/permissions.png
+[2]: /images/user-manual/organizations/seats.png
+[3]: /images/user-manual/organizations/upgrade.png
+[4]: /images/user-manual/organizations/delete.png
+[5]: /images/user-manual/organizations/add-to-project.png

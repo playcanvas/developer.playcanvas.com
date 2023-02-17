@@ -4,29 +4,29 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-## ルートURL
+## Route URL
 
 ```none
 GET https://playcanvas.com/api/projects/:project_id/app
 ```
 
-## 説明
+## Description
 
 プロジェクトのプライマリAppを取得。
 
-## 例
+## Example
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/app
 ```
 
-## パラメータ
+## Parameters
 
 <div class="params">
 <div class="parameter"><span class="param">project_id</span><p>プロジェクトのid。</p></div>
 </div>
 
-## 応答のスキーマ
+## Response Schema
 
 ```none
 Status: 200
@@ -55,7 +55,7 @@ Status: 200
 }
 ```
 
-## エラー
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>非認証</p></div>
@@ -66,9 +66,9 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
-## レート制限
+## Rate Limiting
 
 このルートは[normal][1]なレート制限を使用します。
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

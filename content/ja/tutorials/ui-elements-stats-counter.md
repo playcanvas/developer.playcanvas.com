@@ -1,17 +1,17 @@
 ---
-title: ユーザインターフェイス - 統計カウンタ
+title: ユーザインターフェイス - 統計カウンター
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/XVLr9TWc/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
 
 *ボタンやプログレスバーの使い方と要素とインタラクトする方法。[フルシーン][1]を参照してください。*
 
-このチュートリアルでは組み込みの[Element][2]を使用して、プラス/マイナスボタンをクリックすることで統計を増やす簡単なウィジェットを作成します。
+このチュートリアルでは組み込みの[Element][2]を使用して、プラス/マイナスボタンをクリックすることでカウンターを増やす簡単なウィジェットを作成します。
 
-各統計には、マイナスボタン、プラスボタン、プログレスバー、現在の統計値を表示するテキストが必要です。
+各カウンターには、マイナスボタン、プラスボタン、プログレスバー、現在のカウントを表示するテキストが必要です。
 
 ## 階層
 
@@ -19,23 +19,23 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 ![階層][4]
 
-## スクリーン設定
+## Screen setup
 
 まず、新しい2D [Screen][3]を追加します。画面は次のようになります：
 
 ![スクリーン][5]
 
-2Dのスクリーンなので、スクリーンスペースをチェックしました。リファレンス解像度は、目標とする解像度です。この場合は1080 x 1920です。ScaleモードのBlendを選択して、画面が解像度の変更に適応するようにし、Scale Blendを1に設定して、画面が高さの変化のみに適応するようにします。 
+2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
 
-## 統計の設定
+## Stats setup
 
-各統計用に異なるGroup Elementを作成します。これにより、グループのサブ要素をグループの端に固定することができ、各統計を個別のウィジェットとして扱うことができます。
+各カウンター用に異なるGroup Elementを作成します。これにより、グループのサブ要素をグループの端に固定することができ、各カウンターを個別のウィジェットとして扱うことができます。
 
-Boost統計のみを調べます - 他は全く同じです。`stats-boost`エンティティはビューポートで次のように表示されます：
+Boostカウンターを開きます - 他のエンティティも同じ構成です。`stats-boost`エンティティはビューポートで次のように表示されます：
 
 ![ブースト][6]
 
-その属性は以下です：
+`stats-boost`のインスペクター：
 
 ![ブーストの属性][7]
 
@@ -47,14 +47,14 @@ Boost統計のみを調べます - 他は全く同じです。`stats-boost`エ�
 
 グループには次の子要素があります：
 
-* `text-title`: グループのタイトルのテキスト要素。グループの上部に固定されています。
-* `btn-minus`: 子テキスト要素を持つ画像要素。これはマイナスボタンで、グループの左下に固定されています。
-* `btn-plus`: 子テキスト要素を持つ画像要素。これはプラスボタンで、グループの右下に固定されています。
-* `progress-bar`: プログレスバーは、グループの下部に固定されています。これはプログレスバーの背景の画像要素で、2つの子要素を持ちます：
-    * `image-progress`: 実際に進行状況を表示するサイズ変更可能な画像要素。`progress-bar`要素の左に固定されます。
-    * `text`: 統計情報を表示するテキスト要素。`progress-bar`要素の中心に固定されます。
+* `text-title`: A Text Element for the title of the group - anchored to the top of the group.
+* `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
+* `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
+* `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
+    * `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
+    * `text`: The Text Element that displays our stats. Anchored to the center of the `progress-bar` Element.
 
-## スクリプト
+## Scripts
 
 ホバーの状態に基づいてテクスチャを変更できるように、各ボタンにスクリプトがあります。これは[こちらのチュートリアル][9]にあるスクリプトに似ています。プログレスバーを処理するためのスクリプトも用意されています。プログレスバーに関する詳細は[こちらのチュートリアル][10]をご確認ください。
 
@@ -84,7 +84,7 @@ UiStats.prototype.initialize = function() {
     }, this);
 };
 
-// 統計値を設定
+// カウンターの値を設定
 UiStats.prototype.setValue = function (value) {
     // minとmaxの間をクランプ
     this.value = pc.math.clamp(value, 0, 10);
@@ -95,7 +95,7 @@ UiStats.prototype.setValue = function (value) {
 };
 ```
 
-このスクリプトでは子要素を見つけ、プラスまたはマイナスのボタンをクリックすることで統計を増減し、プログレスバーとそのテキストを更新します。
+このスクリプトでは子要素を見つけ、プラスまたはマイナスのボタンをクリックすることでカウントを増減し、プログレスバーとそのテキストを更新します。
 
 [1]: https://playcanvas.com/editor/scene/547905
 [2]: /user-manual/user-interface/elements/
@@ -107,4 +107,3 @@ UiStats.prototype.setValue = function (value) {
 [8]: /images/tutorials/ui/stats/boost-hierarchy.png
 [9]: /tutorials/ui-elements-buttons/
 [10]: /tutorials/ui-elements-progress/
-

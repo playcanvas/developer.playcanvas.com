@@ -2,17 +2,17 @@
 title: Facebook API
 layout: tutorial-page.hbs
 tags: facebook
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
-*facebookでログインして写真を3D彫刻で表示*
+<iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
+*Log in with facebook to see your photos in a 3D sculpture*
 
 PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築するために適しています。Facebookはゲームのユーザにアピールする絶好の場所です。一方、PlayCanvasでは、ウェブ用に最適化された高速かつ高性能なゲームを作成することができます。
 
 このチュートリアルでは、PlayCanvasアプリケーションにFacebookのAPIを統合する方法を説明します。Facebook APIにアクセスできるようにすれば、多くの可能性が開きます。例えば、Facebookにストーリーを投稿したり、友人とゲームを共有することができます。[チュートリアルプロジェクト][5]をご確認ください。
 
-## Facebook プラグイン
+## Facebook Plugin
 
 [github上][1]にFacebookの統合を可能にするプラグインがあります。これにより、FacebookのJavaScript SDKを読み込む作業を簡素化します。シーンのエンティティにプラグインスクリプト`lib/facebook-setup.js`を添付して、`fb:init` イベントをリッスンすればAPIの準備ができていることが確認できます。[githubページ][1]で詳しい手順をご確認ください。
 
@@ -23,7 +23,7 @@ PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築す
   }, this);`
 ```
 
-## Facebookにログイン
+## Login to Facebook
 
 この例では、アニメーション内でFacebookログインおよびログアウトできるユーザーインターフェイスを実装しました。これは、`fb-ui.js`のコードです。
 
@@ -124,7 +124,8 @@ FbUi.prototype.hideLogout = function () {
 
 独自のアプリケーションイベント`app:fblogin` と`app:fblogout` を発信してFacebookのステータスが変更されたことをアプリケーションの他の部分に通知しています。
 
-### Facebook APIにアクセス
+
+### Accessing the Facebook API
 
 `face-photo.js`ファイルはFacebook APIを使用して、ユーザからの写真のリストを取得して3Dの世界でそれらを表示しています。
 
@@ -278,7 +279,7 @@ FacePhoto.prototype.createPhoto = function(texture) {
 
 最後に、テクスチャアセットを読み込んだら、新しいフォトエンティティを作成して新たに読み込まれた写真のテクスチャで発光テクスチャを上書きします。
 
-### その他のアイディア
+### More ideas
 
 このチュートリアルでは、PlayCanvasアプリケーション内からFacebook APIとFacebookデータを読み込む方法を説明しています。Facebook APIを使用して試せることは沢山あります。例えば、新記録達成などのゲームイベントが発生したときにFacebookにストーリーとして共有できます。または、ユーザのフレンドリストを取得して友人に挑戦状を送ることもできます。
 
@@ -289,4 +290,3 @@ SWOOOPはゲームでこれらのいくつかを実践しています。[Faceboo
 [3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/
 [5]: https://playcanvas.com/project/405897
-

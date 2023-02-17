@@ -1,5 +1,5 @@
 ---
-title: Building Models
+title: モデルの構築
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -10,25 +10,25 @@ PlayCanvasは相互変換のためのFBXフォーマットから最も正確に�
 
 モデリングおよびアニメーションプログラムの提案：
 
-* 無料オプション: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
-* 低価格の有用オプション: 3D-Coat, NVIL, Hexagon。
-* 高価格の有用オプション: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
+* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
+* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
 \* *このプログラムはアニメーションも作成できます*
 
 テクスチャの生成にお勧めのプログラム：
 
-* 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint。
-* 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus。
+* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 モデリングについて上記に記載されているプログラムの多くはテクスチャペイントを可能にします。より多くのオプションをご希望の場合、この[外部wiki][1]ページをご確認ください。一部には古い情報もありますのでご注意ください。
 
-## メッシュ作成に関する一般的な注意点
+## General Considerations for Mesh Construction
 
 どのようなモデリングアプリケーションを使っているかにかかわらず、PlayCanvasで使用する3Dシーンを作成する際に注意しておくべきことがいくつかあります。
 
-*メッシュは256のボーンにまでスキンすることができます。
-* NURBSメッシュはPlayCanvasネイティブフォーマットへの変換時に三角形に変換されます。
+* Meshes can be skinned to up to 256 bones.
+* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
 ---
 
@@ -40,11 +40,11 @@ PlayCanvasは相互変換のためのFBXフォーマットから最も正確に�
 
 BlenderはCOLLADAとFBXのエクスポートの両方に対応しています。ただしビルトインのエクスポーターはいくつか制限があります。
 
-### **マップの種類**
+### **Map Types**
 
 Blender 2.71の場合、素材の拡散と通常のマップの両方は、FBXファイルにエクスポートされます。他のマップタイプがエクスポート時に失われた場合は、これらのマップをエディタ内のマテリアルエディタでセットアップする必要があります。
 
-### **テクスチャの埋め込み**
+### **Embedding Textures**
 
 埋め込みテクスチャによってインポートが簡単になります。
 
@@ -58,13 +58,13 @@ Blender 2.71リリースは、Blenderからの直接の複数埋め込みテク�
 備考：Blenderに発光プロパティが設定されていないにもかかわらず、Blender 2.71のFBXエクスポートが放射率を生成する問題が発生しているです。これはPlayCanvasエンジンの問題ではありません。Blender内からこれを回避するには、素材のDiffuse色設定を0に設定します(Properties EditorのMaterialタブ)。または、PlayCanvas Editor内から放射率を減少させます。
 </div>
 
-### **アニメーション**
+### **Animations**
 
 Blender 2.71の場合：
 
 blendファイルに含まれているアニメーションは、デフォルトのFBXエクスポーターの設定でエクスポート可能で、PlayCanvasのアセットインポートパイプラインと互換性があります。複数のアニメーションが一つのモデルの中にある場合は、複数のFBXファイルをアップロードしなければいけないことに注意してください。一つのアニメーションにつきひとつのファイルとなります。使用メモリを削減するために、モデルとテクスチャをblendファイルからあらかじめ削除してからエクスポートを行うか、FBXエクスポーターの設定からアーマチュアのみをエクスポートする設定をおこなうか、あるいはPlayCanvasのプロジェクトダッシュボードのアセットページから、重複したモデルのターゲットアセットを削除して対応できます。(ターゲットアセットを見るには、'target'をアセットページのドロップダウンメニューから選択してください)
 
-### **Blenderの使い方を学ぶには**
+### **Learning Blender**
 
 Blenderの使い方については様々な資料がweb上にあります。私達は以下の二つをおすすめします:
 
@@ -75,13 +75,13 @@ Blenderの使い方については様々な資料がweb上にあります。私�
 
 ## Autodesk 3D Studio Max
 
-### マテリアル
+### Max Materials
 
 Max内では標準マテリアルタイプを使用してください。あるいは、標準マテリアルを参照している限りは、Multi/Subオブジェクトマテリアルタイプを使うこともできます。以下のスクリーンショットでハイライトされている領域が、PlayCanvasにエクスポートされる際に考慮される部分をあらわしています:
 
 ![Max material editor][7]
 
-### 対応しているマップスロット
+### Supported Map Slots
 
 PlayCanvasは3DS Maxのマテリアルマップタイプの一部だけしかエクスポート時に扱えません。マップのフォーマットは3DS Maxがサポートするどのような種類でも対応しています。しかしもしマップのフォーマットがwebフォーマット(JPEG, GIFあるいはPNG)でない場合は、エクスポート時にそれらのフォーマットに変換されます。
 
@@ -141,7 +141,7 @@ PlayCanvasは3DS Maxのマテリアルマップタイプの一部だけしかエ
 
 ## Autodesk Maya
 
-### マテリアル
+### Maya Materials
 
 Mayaを使う場合には、lambert, blinnあるいはphongの標準マテリアルタイプを使用してください。以下のスクリーン・ショットでハイライトされている部分は、PlayCanvasにエクスポートする際に考慮されるマテリアル設定です。
 
@@ -158,4 +158,3 @@ Mayaを使う場合には、lambert, blinnあるいはphongの標準マテリア
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
 [10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
 [11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
-

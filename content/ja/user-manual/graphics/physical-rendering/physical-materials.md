@@ -14,7 +14,7 @@ position: 1
 
 Editorに入り素材を作成しても、素材が下のサンプルと異なる理由を説明するために[IBL][6]から始めます。**HDRでプレフィルタリングされたCubeMapを使用した物理的素材は素晴らしいです！**
 
-## 金属質(metalness)とスペキュラを使った設定法
+## Metalness and Specular Workflow
 
 ![Workflows][4]
 
@@ -28,64 +28,55 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 
 それではマテリアル設定に進んでいきましょう。
 
-# マテリアルのプロパティとマップ
+# Material Properties and Maps
 
-## 拡散(Diffuse)
+## Diffuse
 
 拡散色はマテリアルの下地の色で、RGB色の値を取ります。なめらかで純粋な物質(金属やプラスチックなど)の場合はひとつの値だけを取ることができますが、拡散マップテクスチャとして与えることもできます。拡散マップを使う場合には、照明の影響(影やハイライトなど)を含めないようにしてください。これらの効果は別のマップで適応することができるためです。
 
 拡散色は**アルベド**や**ベースカラー**と呼ばれることもあります。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
 
-インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
+You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
 ![Metals][3]
 
-<table class="centered">
-  <tr>
-  <th>素材</th><th>RGB</th>
-  </tr>
-  <tr>
-  <td>金</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>銀</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>銅</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
-  </tr>
-</table>
+| Material | RGB                                      |
+|----------|------------------------------------------|
+| Gold     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
+| Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
+| Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
-## 金属質(Metalness)
+## Metalness
 
-金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
+The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
 
 <div class="alert-info">
-金属質の値はほぼいつでも0か1かのいずれかを設定します。この間の値を設定する必要があることはまれです。
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
 </div>
 
-また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
+You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 
-## 光沢度(Glossiness)
+## Glossiness
 
 光沢度は**金属質*と**スペキュラ**を使う方法の両方で使われ、マテリアルの表面がどのくらいなめらかかを定義します。光沢度はマテリアルの表面で反射する光がぼやけるか鋭いか、あるいはスペキュラハイライトが広いか狭いかに影響します。光沢度は0から100の間の値か、あるいは光沢度マップとして与えることができます。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
 
-いくつかの物理ベースレンダリングシステムでは、光沢度という用語の代わりに**粗さ (Roughness)**という用語を使います。粗さは光沢度の反対の意味です。光沢度と粗さを変換する際には、単純にその値を反転してください。
+Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
-光沢度と粗さは、**microsurface値**という用語で呼ばれることもあります。
+Sometimes glossiness and roughness are referred to as the **microsurface** value.
 
-## まとめ
+## All together
 
-物理的マテリアルの仕組みでは、**拡散**、**金属質**、**光沢度**が重要な役割を果たします。下のデモを使って色々な組み合わせを試してみてください。
+These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
 
-マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
+There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
 
 [1]: https://store.playcanvas.com
 [2]: /user-manual/glossary#high-dynamic-range
@@ -93,4 +84,3 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
-

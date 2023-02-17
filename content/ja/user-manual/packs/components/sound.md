@@ -1,5 +1,5 @@
 ---
-title: Sound
+title: サウンド
 layout: usermanual-page.hbs
 position: 19
 ---
@@ -14,43 +14,37 @@ position: 19
 
 サウンドコンポーネントはコンポーネントパネルの右上のトグルで有効と無効を切り替えることができます。有効になった場合、コンポーネントはAuto Playとマークされたスロットを再生します。残りのスロットはスクリプトで再生されます。
 
-## コンポーネントプロパティ
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>Positional</td><td>有効にすると、コンポーネントは3D空間内でエンティティの位置から再生しているかのように、オーディオアセットを再生します。</td></tr>
-    <tr><td>Volume</td><td>オーディオアセットを再生する際、各スロットの音量に乗算される音量。</td></tr>
-    <tr><td>Pitch</td><td>オーディオアセットをプレイバックする際、各スロットのピッチと乗算されるピッチ。値を1にすると、オーディオはオリジナルのピッチでプレイバックされます。</td></tr>
-    <tr><td>Ref Distance</td><td>リスナからサウンドソースが離れるにつれ、音量を下げるための基準距離。</td></tr>
-    <tr><td>Max Distance</td><td>オーディオの減少が止まる、リスナからの最高距離。この距離を越えると音量はそれ以上は下がらなくなりますが、0になるとは限りません</td></tr>
-    <tr><td>Distance Model</td><td>サウンドがリスナから離れる際、音量を減少させるアルゴリズムを定義する。linear（リニア）、 inverse（逆数減衰）、exponential（指数減衰）のいずれかに設定できます。</td></tr>
-    <tr><td>Roll-off Factor</td><td>音量の減少速度。</td></tr>
-</table>
+## Component Properties
 
-## スロットプロパティ
+| Property        | Description |
+|-----------------|-------------|
+| Positional      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
+| Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
+| Pitch           | The pitch that will be multiplied with the pitch of each Slot when playing an audio asset. A value of 1 means the audio is played back at the original pitch. |
+| Ref Distance    | The reference distance for reducing volume as the sound source moves further from the listener. |
+| Max Distance    | The maximum distance from the listener at which audio falloff stops. Note the volume of the audio is not necessarily 0 after this distance, but just doesn't fall off anymore. |
+| Distance Model  | Determines which algorithm to use to reduce the volume of the sound as it moves away from the listener. Can be one of Linear, Inverse or Exponential. |
+| Roll-off Factor | The rate at which volume fall-off occurs. |
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>Name</td><td>スロットの名前。コード内でこのスロットを指す際の名前。</td></tr>
-    <tr><td>Asset</td><td>再生するオーディオアセット。</td></tr>
-    <tr><td>Range Start</td><td>オーディオアセットの音声の秒単位の開始点。オーディオアセット全体ではなく一部のみを再生したい場合に使用します。</td></tr>
-    <tr><td>Range Duration</td><td>Range Startで再生を始める音声の秒単位の持続時間。例：複数の音声を持つオーディオアセット。このスロットでそのような音声を再生させるには、その開始時刻と範囲を定義します。</td></tr>
-    <tr><td>Auto Play</td><td>オンにするとスロットは読み込み時に再生されます。オフの場合、スロットはスクリプトから再生する必要があります。</td></tr>
-    <tr><td>Overlap</td><td>オンにした場合、スロットは最初に停止することなく、その音声を再生します。Overlapは、繰り返す必要のない単発の音声を再生するために使用します。この音声はエンティティが破棄されても停止されず、再生し終わったときやスクリプトで手動で停止した場合にのみ停止されます。</td></tr>
-    <tr><td>Loop</td><td>チェックされていると、スロットは連続的にループされます。オフの場合は一度のみ再生されます。</td></tr>
-    <tr><td>Volume</td><td>スロットによりプレイバックされる、オーディオアセットの音量。</td></tr>
-    <tr><td>Pitch</td><td>オーディオが再生されるピッチ。値が1の場合、オーディオはオリジナルのピッチで再生されます。</td></tr>
-</table>
+## Slot Properties
 
-## スクリプトインターフェイス
+| Property        | Description |
+|-----------------|-------------|
+| Name            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
+| アセット           | The audio asset to play. |
+| Range Start     | The starting point of the sound in the audio asset, in seconds. You can use this if you don't want to play the entire audio asset but just a portion of it instead. |
+| Range Duration  | The duration of the sound to play starting from Range Start, in seconds. E.g. you might have an audio asset with multiple sounds in it. To make this Slot play such a sound you can define its Start time and its Duration. |
+| Auto Play       | If checked, the Slot will be played on load. Otherwise, the Slot will need to be played using script. |
+| Overlap         | If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script. |
+| Loop            | If checked, the Slot will loop continuously. Otherwise, it will be played once to completion. |
+| Volume          | The volume of the audio asset played back by the slot. |
+| Pitch           | The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch. |
+
+## Scripting Interface
 
 [Script component][2]を使用して、サウンドコンポーネントのプロパティを操作できます。サウンドコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.SoundComponent.html
-

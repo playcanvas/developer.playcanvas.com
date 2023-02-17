@@ -1,21 +1,21 @@
 ---
-title: オーディオ効果
+title: 音声エフェクト
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
 
 *それぞれのボタンをクリックしてサウンドエフェクトを試してください。*
 
 <div class="alert alert-info">このチュートリアルはWeb Audio API への対応を必要とします。</div>
 
-## Web Audio APIの使用
+## Using The Web Audio API
 
 PlayCanvasではWeb Audio APIを活用して音声に協力な効果を追加することができます。このチュートリアルでは、オーディオサンプルに様々な効果を追加する方法を説明します。
 
-## 設定
+## The setup
 
 [こちら][1]からシーンを確認できます。このシーンのルートエンティティには、ひとつのスロットで会話音声サンプルをループで再生する[Sound][2]コンポーネントがあります。Soundコンポーネントの仕組みにはこちらの[ベーシックチュートリアル][3]をご確認ください。
 
@@ -23,7 +23,7 @@ PlayCanvasではWeb Audio APIを活用して音声に協力な効果を追加す
 
 このスクリプトはアプリケーションの効果音を管理します。
 
-## AudioNodesの使用
+## Using AudioNodes
 
 Web Audio APIを使用すると、様々なオーディオノードを作成して、それらを接続してオーディオルーティンググラフを形成することができます。オーディオサンプルが再生されると、各ノードによって処理され、最終的に目的地に到達します（通常はスピーカー）。詳細は[こちら][5]です。
 
@@ -64,4 +64,3 @@ this.entity.sound.slot('speech').clearExternalNodes();
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
 [7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
 [8]: /api/pc.Sound.html
-

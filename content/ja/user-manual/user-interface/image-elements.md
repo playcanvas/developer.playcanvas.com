@@ -1,24 +1,24 @@
 ---
-title: 画像要素
+title: イメージ要素
 layout: usermanual-page.hbs
 position: 5
 ---
 
 画像要素は、テクスチャまたはソリッドカラーを表示するために使用されます。画像要素は、ボタンなどの複雑なユーザインターフェイスコンポーネントの基礎として使用することができます。
 
-## 着色
+## Tinting
 
 各画像要素にはカラープロパティがあります。テクスチャが適用されていない場合、画像要素は単に色のついた長方形になります。テクスチャが適用されている場合、この色はテクスチャの着色に使用されます。これにより、１つのグレースケールテクスチャだけを使ってカラーバリエーションを作成することができます。
 
 ![着色][1]
 
-## 透明性
+## Transparency
 
 カラープロパティと同様に、不透明度プロパティを使用して要素の透明度レベルを設定することができます。
 
 ![透明][2]
 
-## 上級素材
+## Advanced Materials
 
 テクスチャ、カラー、不透明度のプロパティを使用しても求めている結果を得ることができない場合は、素材プロパティを使用して独自の素材を画像エレメントに割り当てることができます。正しいレンダリングを行うには、画像要素に追加された素材の*Depth Writeを無効*にする必要があります。
 
@@ -32,4 +32,3 @@ If there is no texture asset assigned to an image Element used for masking the m
 
 [1]: /images/user-manual/user-interface/image-element/image-tinted.png
 [2]: /images/user-manual/user-interface/image-element/image-transparent.png
-

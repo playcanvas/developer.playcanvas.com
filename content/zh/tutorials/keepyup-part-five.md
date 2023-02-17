@@ -1,23 +1,24 @@
 ---
-title: 制作一个简单的游戏 - Part 5
+title: 制作轻量游戏 - Part 5
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 5"></iframe>
 
 *你可以找到[完整项目在这里][9]。 如果你没有看过[第1部分][1]，[第2部分][2]，[第3部分][3]和[第4部分][4]请先阅读它们。*
 
-## 音频& 粒子系统
+## Audio & Particles
 
-### 音频
+### 音频
 
 音频是你的游戏的一个关键部分。 它将向玩家提供有价值的反馈，比如他们的输入所具有的效果，此外它还可以改变心情和氛围。
 
 Keepy Up游戏中有3个音频效果:背景音乐轨道，当你击球时的敲击声和当你输了时的悲伤长号蜇。 他们的处理互相略有不同。
 
-#### 音乐& 蛰音
+
+#### Music & Sting
 
 音乐和蛰音以相似的方式处理。 主要区别是音乐被设置为循环。 我们有一个`game.js'脚本，它包含了链接到游戏实体中的声音组建的属性，我们只需控制正确的音频插槽播放和停止。
 
@@ -26,7 +27,7 @@ this.audio.sound.stop(); // stop current sound playing
 this.audio.sound.play("gameover") // play the 'gameover' slot
 ```
 
-#### 球点击
+#### Ball tap
 
 球的触击声直接附着在球实体上。 这是一个短且非循环的声音。 所以我们每次点击球时才让它播放。
 
@@ -63,4 +64,3 @@ this.impactEffect.lookAt(this.entity.getPosition());
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
 [9]: https://playcanvas.com/project/406050
-

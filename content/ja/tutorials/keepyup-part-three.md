@@ -1,15 +1,15 @@
 ---
-title: 制作一个简单的游戏 - Part 2
+title: シンプルなゲームの作成 - パート3
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 3"></iframe>
 
 *[完成されたプロジェクトはこちら][4]です。先に[その1][1]と[その2][2] を読んでください。*
 
-## ゲームスクリプトと入力
+## The Game script & Input
 
 これらの2つのスクリプト`game.js`と` input.js`は、「Game」と呼ばれるシーンのルートエンティティに添付されています。スクリプトは基本的に階層で遭遇される順に実行されるので、エンティティ特有でない任意のスクリプトを最初のエンティティに添付するのが最も簡単です。また、エンティティに添付せずに最初にスクリプトを読み込むために、エディタの設定パネルでのスクリプトの読み込み順を管理することができます。
 
@@ -106,7 +106,7 @@ Game.prototype.resetScore = function () {
 };
 ```
 
-### ゲームの状態
+### Game State
 
 ゲームスクリプトはゲームの状態の全体を管理します。ゲームの状態を変更するためにいくつかのメソッドを公開し、ゲームの状態が変更されたことを他のコードに知らせるためにイベントを発生させます。
 
@@ -114,7 +114,7 @@ Game.prototype.resetScore = function () {
 
 これらの状態の変更メソッドは、適切なトリガーイベントが発生した場合に他のスクリプトから呼び出されます。例えば、`gameOver()`メソッドはボールが画面下から出た時に `ball.js` によって呼び出されます。
 
-### アプリケーションイベント
+### Application Events
 
 ゲームスクリプトがどのようにアプリケーションでイベントを発生させるかを確認してみましょう。
 
@@ -134,11 +134,11 @@ this.app.on("game:start", function () {
 }, this)
 ```
 
-### スコア
+### Scoring
 
 ゲームスクリプトは現在のスコアも管理します。これは、スコアを変更するためのメソッドを公開し、スコアが変更したことを他のコードに知らせるためにイベントを発生させます。
 
-### 解像度
+### Resolution
 
 最後に、モバイルとデスクトップの両方でメインキャンバスが正しいサイズになることを確認するために、ゲームのスクリプトは解像度の初期の選択を処理します。モバイルでは(640ピクセル未満の画面)、ゲームが画面全体を埋めます。デスクトップでは、プロジェクト設定で設定した定義済みの解像度を使用します。
 
@@ -225,15 +225,15 @@ Input.prototype._onMouseDown = function (e) {
 
 まず、initializeでイベントのリスニングを設定します。ゲームが一時停止中(つまりメニューまたはゲームオーバー状態)であることを判断するために、アプリケーションのイベントはにリッスンします。入力が一時停止されている場合、タップに反応しません。次に、タッチイベント (`this.app.touch`が利用可能か確認する必要があります)とマウスイベントにリッスンします。
 
-### タッチイベント
+### Touch Events
 
 タッチイベントの場合、最初のタッチの画面座標を渡します。また、ブラウザが `click`イベントを生成することを防ぐためにブラウザで`preventDefault()` を呼びます。
 
-### マウスイベント
+### Mouse Events
 
 「マウスダウン」イベントではタップコードを介してスクリーン座標を渡します。 PlayCanvasはタッチとマウスイベントが同じ座標系を持っていることを保証します。これは通常のブラウザイベントとは異なります！
 
-### タップ
+### Taps
 
 `_onTap()` は画面座標(x, y)を使用してボールに当たっているかを判断し、当たっている場合はボールのコードにタップされたことを知らせます。
 
@@ -246,6 +246,7 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 ベクター`Input.worldPos`も渡します。PlayCanvasアプリケーションでは、更新ループ内で新しいオブジェクトを作成することを回避するべきです。例えば、新しいベクターを作成するために`new pc.Vec3()` を呼び出す場合です。メモリ割り当てが増えると(`new`を呼ぶことで)、割り当てをクリアするためにブラウザはより多くのGarbage Collectionを行う必要があります。Garbage Collectionはオペレーション(比較的遅い)で、頻繁に行うとゲームやアプリケーションの動作に支障をもたらします。
 
 ほとんどの場合、PlayCanvasは事前にオブジェクトの割り当てや再利用ができるようにベクターまたは類似のオプションを渡すオプションを提供します。
+
 
 ```javascript
 // タッチ／クリックからボールへの距離を取得
@@ -267,4 +268,3 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 [2]: /tutorials/keepyup-part-two/
 [3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
-

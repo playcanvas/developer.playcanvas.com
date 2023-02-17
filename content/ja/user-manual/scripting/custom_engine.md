@@ -1,7 +1,7 @@
 ---
 title: Using a Custom Engine
 layout: usermanual-page.hbs
-position: 9
+position: 10
 ---
 
 エディターからPlayCanvasアプリを開始すると、エンジンの最新の安定版ビルドが開きます。他のビルドでアプリを実行する場合もあるでしょう。例えば以下のような場合です。
@@ -12,7 +12,7 @@ position: 9
 
 これらの処理方法を見てみましょう。
 
-### Dev Engineで開始する
+### Launch with the Dev Engine
 
 エディターからアプリを開始すると、ローンチページという新しいタブが開きます。このページのURLは以下のような形です。
 
@@ -30,7 +30,7 @@ Debugモードを有効にして開始するには以下を使用します。
 
     https://launch.playcanvas.com/<scene_id>?debug=true&use_local_engine=https://code.playcanvas.com/playcanvas-latest.dbg.js
 
-### 前の安定版エンジンで開始する
+### Launch with a Previous Stable Engine
 
 PlayCanvasの前の安定版ビルドはcode.playcanvas.comにアーカイブされています。前のリリースはすべて [GitHub][2]にあります。エンジンは以下のルールで名づけられています。
 
@@ -48,7 +48,7 @@ PlayCanvasの前の安定版ビルドはcode.playcanvas.comにアーカイブさ
 
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.min.js
 
-### ローカルでビルドしたエンジンで開始する
+### Launch with a Locally Built Engine
 
 If you fork the engine repo on GitHub, you can build the engine yourself. To have the launch page launch your custom build, you need to start by serving it from localhost using port 51000. Verify you can see your engine source at the URL:
 
@@ -62,4 +62,3 @@ Note that you must edit the launch page to use http instead of https in order to
 
 [1]: https://github.com/playcanvas/engine
 [2]: https://github.com/playcanvas/engine/releases
-

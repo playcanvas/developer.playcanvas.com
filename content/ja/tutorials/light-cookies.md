@@ -1,30 +1,30 @@
 ---
-title: ライト Cookie
+title: ライトクッキー
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/AGtssoOU/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/AGtssoOU/" title="Light Cookies"></iframe>
 
 [完成されたプロジェクト][1]をフォークして詳細をご確認ください。
 
-劇場などでは、形状マスクを使用してシーン全体に影を落として、ステージ上で視覚効果を作成するのが一般的です。これらのマスクは、「cucoloris」または「cookie」と呼ばれています。PlayCanvasでWebGLにライトクッキーを作成するには、ライトコンポーネントに適用されるテクスチャやキューブマップを使用します。ライトクッキーはスポットライトやポイントライトに適用可能です。
+In theatre it is common to create visual effects on stage by using shape masks to cast shadows across the scene. These masks are called "cucoloris" or "cookies". Creating a light cookie in WebGL using PlayCanvas is achieved using a texture or a cubemap that is applied to the Light Component. Light Cookies are applicable to spot lights and omni lights.
 
 ![グリッド Cookie][2]
 **シンプルなグリッドクッキーは窓のような印象です**
 
-## Cookie テクスチャ
+## Cookie Texture
 
 クッキーテクスチャは、クッキーセクションでスポットライトコンポーネントに適用される普通のテクスチアセットです。クッキーが適用されると、使用するテクスチャのチャンネルを選択できます。例えば、単純なマスクをする場合、アルファチャンネルを使用することができます。または、ステンドグラスのような完全なカラー効果を希望する場合は完全なRGB値を使用することができます。
 
 ![ライト設定][3]
 
-## Cookie キューブマップ
+## Cookie Cubemap
 
-ポイントライトの場合、ライトの点を6つの方向で投影できるように、クッキーをキューブマップにする必要があります。
+For an omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
 
-## ユースケース
+## Use Cases
 
 **形状ライト** - クッキーを使用して、ライトソースをマスキングすることができます。たとえば、シーンに窓や蛍光ストリップライトがある場合、スポットライトを使用して丸みを帯びたライトの形状を作成することができます。ライトの形をマスキングして形状をシミュレートすることができます。
 
@@ -39,4 +39,3 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4097
 [3]: /images/tutorials/intermediate/light-cookies/cookie-setting.jpg
 [4]: /images/tutorials/intermediate/light-cookies/torch-cookie.jpg
 [5]: /images/tutorials/intermediate/light-cookies/square-cookie.jpg
-

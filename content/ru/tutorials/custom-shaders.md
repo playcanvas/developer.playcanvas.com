@@ -2,10 +2,10 @@
 title: Пользовательские шейдеры
 layout: tutorial-page.hbs
 tags: shaders, materials
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders"></iframe>
 
 *Этот урок использует пользовательские шейдеры на материале чтобы создать эффект растворения на GLSL*
 
@@ -15,11 +15,11 @@ Complete project can be found [here][project].
 
 Однако, вам часто может потребоваться добавить особые эффекты или особые действия к вашему материалу. Чтобы сделать это, вам нужно написать шейдер.
 
-## Шейдеры и их объявления
+## Shaders and Shader Definition
 
 WebGL использует язык GLSL для написания шейдеров, которые могут работать во всех браузерах. В PlayCanvas вы можете хранить код в ресурсе шейдера, а потом подключить его в [Объявлении шейдера][1], до того, как создать новый `pc.Shader`.
 
-## Вершинный шейдер
+### Vertex Shader
 
 ```
 attribute vec3 aPosition;
@@ -37,7 +37,7 @@ void main(void)
 }
 ```
 
-### Фрагментный (пиксельный) шейдер
+### Fragment Shader
 
 ```
 varying vec2 vUv0;
@@ -62,7 +62,7 @@ void main(void)
 
 Эти два шейдера выше описывают функционал нового материала. В вершинном шейдере мы трансформируем позиции вершин модели в пространство экрана. В фрагментном шейдере мы устанавливает цвет пикселей. Цвет пикселей выбирает на основе двух текстур, которые мы передаем через ресурсы. Если значение uTime меньше, чем цвет в карте высот, тогда мы не отображаем никаких пикселей (модель невидима). Если значение uTime больше, чем значение в карте высот, то мы получаем цвет из карты цвета, которую мы так же используем
 
-### Объявление шейдера
+### Shader Definition
 
 ```javascript
 var vertexShader = this.vs.resource;
@@ -91,15 +91,15 @@ var shaderDefinition = {
 
 Поодаль от атрибутов, мы видим два специальных типа переменных в GLSL шейдере: `varying` и `uniform`
 
-## GLSL переменные типа `varying` 
+## GLSL `varying` variables
 
 Переменные, которые объявлены как **varying** будут установлены в вершинный шейдер, но будут использоваться в фрагментном. Это способ передать дату из первой программы во вторую.
 
-## GLSL переменные типа `uniform` 
+## GLSL `uniform` variables
 
 Переменные, объявленые как **`uniform`** будут доступны в обоих шейдерах. Значение этих переменных передается в шейдер из основой программы. Например, позиция света в сцене.
 
-## Создание материалов
+## Creating Materials
 
 ```javascript
 // Create the shader from the definition
@@ -107,7 +107,7 @@ this.shader = new pc.Shader(gd, shaderDefinition);
 
 // Create a new material and set the shader
 this.material = new pc.Material();
-this.material.setShader(this.shader);
+this.material.shader = this.shader;
 
 // Set the initial time parameter
 this.material.setParameter('uTime', 0);
@@ -126,7 +126,7 @@ model.meshInstances[0].material = this.material;
 
 Вы можете (и должны) использовать один материал больше, чем на одной фигуре.
 
-## Использование текстуры в новом материале
+## Using a texture in a new Material
 
 ```javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
@@ -164,7 +164,7 @@ CustomShader.attributes.add('heightMap', {
 
 Когда карта текстур загружена, мы можем добавить переменную типа uniform, которая будет называться 'uHeightMap' к объекту 'pc.Texture'.
 
-## Обновление переменных uniform
+## Updating uniforms
 
 ```javascript
 // update code called every frame
@@ -186,7 +186,7 @@ CustomShader.prototype.update = function(dt) {
 
 В нашем шейдере, если значение карты высот на пикселе меньше, чем значения кремени, мы не показываем пиксель. Помимо этого, когда значение близко к порогу, мы показываем пиксель в синем цвете, чтобы показывать клевый эффект грани.
 
-## Полный код
+## Complete listing
 
 ```javascript
 var CustomShader = pc.createScript('customShader');
@@ -287,4 +287,3 @@ Here is the complete script. Remember you'll need to create vertex shader and fr
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
 [project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
-

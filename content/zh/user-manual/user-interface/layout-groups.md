@@ -70,6 +70,7 @@ In this example, the horizontal layout is using the **Stretch** width fitting to
 
 ![Layout Child Setup][9]
 
+
 ## Example Layouts
 
 ### Vertical Leaderboard

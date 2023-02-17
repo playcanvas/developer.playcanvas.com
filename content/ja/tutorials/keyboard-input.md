@@ -2,10 +2,10 @@
 title: 基本的なキーボード入力
 layout: tutorial-page.hbs
 tags: input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
 
 *クリックでフォーカスして、左矢印、右矢印、空白バーを押してキューブを回転します。aキーを押して離すことで色を変更します。*
 
@@ -110,7 +110,7 @@ sPressed(key)はkeyが現在押されているかを確認して、押されて�
 
 wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを確認します。wasPressed()は一度のキー押下に対して一度のみtrueを返します。
 
-## イベント
+## イベント
 
 キーの押下を処理する二つ目の方法は、イベントへのリッスンです。Keyboardデバイスでは二つのキーボードイベントが対応されています：
 
@@ -121,17 +121,16 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 
 `this`またはスクリプトインスタンス自体である3つ目の引数をon()に渡しています。on()に渡す3つ目の引数はイベントコールバックの`this`として使用されるので、この中で渡さないと、正しいオブジェクトに設定されません。
 
-## キーコード
+## Key Codes
 
 キーコードを使用してどのキーが押されたかを識別します。これらはキーボードのキーと一致する数値です。例えば、pc.KEY_Aは`A` キー、pc.KEY_LEFTは矢印キーです。
 
 数値を使用するのではなく、常に`pc.KEY_*`列挙を使用してください。後にこれらの不変数の実績値は変わる可能性があるからです。
 
-## 試してみよう
+## Try it out
 
 [こちら][2] またはページの上部からお試しください。矢印キーやスペースバーを叩いたり押さえたりして比べて見てください。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
 [2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
-

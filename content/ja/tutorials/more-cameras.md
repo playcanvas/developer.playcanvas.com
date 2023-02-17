@@ -2,16 +2,16 @@
 title: その他のカメラ
 layout: tutorial-page.hbs
 tags: basics, camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/5yUf1fvg/" title="More Cameras"></iframe>
 
-*クリックでフォーカス、`space`でズームイン及びアウト、`左arrow`と `右arrow`で左右のカメラに切り替えるます*
+*クリックでフォーカス、`space`でズームイン及びアウト、`左arrow`と `右arrow`で左右のカメラに切り替えます*
 
 [基本的なカメラ][1]チュートリアルでは、カメラのエンティティを作成してシーンに追加する手順を説明します。単一の静止カメラの場合、スクリプトは必要ありません。しかし、より動的でインタラクティブなカメラやより高度な利用のためには、スクリプトコンポーネントを追加してカメラの動作を自分でプログラムする必要があります。
 
-## 属性の変更
+## Altering Attributes
 
 実行時にカメラを変更する最初の方法は、カメラのコンポーネントの属性の値を変更することです。これは他のコンポーネントの属性を設定するのと同じように
 ComponentSystemの`set()` と `get()`メソッドを使用して行います。
@@ -65,7 +65,7 @@ Zoom.prototype.update = function(dt) {
 ズームアウトされている時、上部と下部のキューブが画面の端にあります。これは[PlayCanvas Editorシーン][3]でカメラ[視野円錐][2]の上下端の横にキューブが
 置かれている位置と一致しています。
 
-## 現在のカメラ
+## Current Camera
 
 カメラでインタラクティビティを作成する一つの方法は、複数のカメラを切り替えることです。シーンに複数のカメラエンティティを追加することで実現することができます。一つのみがアクティベートされるようにして、スクリプト内で、実行時のカメラを変更します。
 
@@ -121,4 +121,3 @@ CameraManager.prototype.update = function(dt) {
 [1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
-

@@ -8,11 +8,10 @@ position: 7
 
 Project Dashboardはプロジェクトのコントロールセンターです。ダッシュボードから次のことができます：
 
-*エディタにアクセス。
-*プロジェクトのプライマリアプリを実行。
-*プロジェクトの開発ログを表示。
-*プロジェクトのアクティビティを表示。
-*プロジェクトの設定を編集。
+* Access the Editor.
+* Run the project's primary app.
+* View the project's development log.
+* View the project's activity.
+* Edit your project's settings.
 
 [1]: /images/platform/dashboard.png
-

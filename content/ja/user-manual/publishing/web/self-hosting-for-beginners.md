@@ -1,16 +1,16 @@
 ---
-title: 初心者向けのセルフホスティング
+title: 初心者のためのセルフホスティング
 layout: usermanual-page.hbs
 position: 3
 ---
 
 このドキュメントは、Webプログラミングの初心者向けです。Webアプリケーションのさまざまな部分をどのように組み合わせてPlayCanvasアプリケーションを提供したり、ユーザのブラウザに他のウェブページを提供するかを説明します。
 
-# Web Stack
+# The Web Stack
 
 基本的に、ウェブアプリケーションを3つに分離することができます：サーバーサイド、クライアントサイド、静的コンテンツです。一部のみ非常にシンプルな場合や他のサービスにより処理される場合がありますが、ほとんどの場合、ウェブアプリケーションには3つとも含まれます。
 
-## サーバサイドのコード
+## Server-side Code
 
 ユーザーがウェブブラウザでリンクを開くと、ブラウザは、インターネット上のどこかでサーバに要求を送信してHTMLページを要求します。最もシンプルな形の場合、ウェブサーバ上のハードディスクに置かれるテキストのページで、インターネットを介してブラウザに戻り設定されます。
 
@@ -52,7 +52,7 @@ position: 3
 
 PlayCanvasのアプリケーションを作成する際、PlayCanvasで書くコードがサーバ側で実行されることはなく、プロジェクトのサーバサイドのコードは提供していません。
 
-## クライアントサイドコード
+## Client-side Code
 
 ウェブスタックでは、プログラミングを行いユーザー入力に応答するのはサーバだけではありません。クライアントサイドは、ブラウザ内で実行しているコードを指します。このコードは、ブラウザが実行される言語である、JavaScriptです。クライアントサイドのJavaScriptでさまざまな操作を実行することができます。最もシンプルなのは、サーバからダウンロードしたHTMLページの変更です。
 
@@ -63,13 +63,13 @@ title.innerHTML = "This is the new title";
 
 また、最も複雑なケースは、PlayCanvasを使用して完全な3D WebGLゲームを書くこと場合です。PlayCanvasを使用して書くものは全て、クライアントサイドのJavaScriptです。
 
-## 静的コンテンツ
+## Static Content
 
 ウェブアプリケーションの一部は、動的ではなく、変更する必要がありません。例えば、画像、オーディオファイル、テキストファイル、また、PlayCanvasアプリケーションの場合は3Dモデルやテクスチャです。これは、ローカルディスクのファイルを読み込むようなものですが、インターネット上なので少し遅くなります。静的コンテンツの提供はサーバサイドコードのようにウェブサーバによって実行され、場合によっては、同じマシンになります。インタラクティブな要素がないため、要求を満たすための処理は行われません。ウェブサーバは単に要求されたファイルを返送します。
 
 静的コンテンツにおいて重要なのは、できるだけ速くクライアントにダウンロードすることです。
 
-## PlayCanvas アプリケーションのホスティング
+## Hosting PlayCanvas Applications
 
 PlayCanvasアプリケーションを構築すると、クライアントサイドのJavaScriptコードを書いて、静的コンテンツであるアセットを作成します。PlayCanvasプロジェクトではサーバサイドのコードは一切ありません。
 
@@ -77,23 +77,50 @@ PlayCanvasを使用して公開すると、アプリケーションが提供さ�
 
 可能な限り迅速に、世界中のエンドユーザーにPlayCanvasアプリケーションを提供するため、PlayCanvasのホスティングを最適化しました。PlayCanvasアプリケーションをデプロイする最も簡単な方法は、公開ボタンをクリックして、 `playcanv.as` URLを送信することです。場合によっては、独自のアプリケーションをホストする必要があります。
 
-## PlayCanvas アプリケーションのセルフホスティング
+## Self-hosting PlayCanvas Applications
 
 PlayCanvasアプリケーションのセルフホスティングに関する[詳細ページ][1]があります。要約すると、セルフホスティングを行うには上記で説明したのウェブスタックの三つの部分を提供する必要があります。
 
-### サーバ
+### Server
 
 標準的なPlayCanvasアプリケーションの場合、サーバサイドのコードは必要ありません。しかし、ダウンロードしたアプリケーションに含まれる`index.html`ファイルなどの静的コンテンツを提供する必要があるので、ウェブサーバを指定する必要があります。Linuxで使用する2つの一般的なウェブサーバアプリケーションはApacheとNginxです。Windowsで使用する1つの一般的なウェブサーバはIISです。
 
-### 静的コンテンツ
+### Caching and Compression
 
 **Server**で説明した通り、静的なコンテンツとして、ウェブサーバの`index.html`ファイルを含むすべてPlayCanvasのコンテンツを提供します。
 
 静的コンテンツを提供する際、良好なパフォーマンスを得るためにはgzip圧縮を有効にして、コンテンツの正しいキャッシュ・ヘッダーを設定することが**重要**です。静的コンテンツでヘッダのキャッシングと圧縮を有効にする方法は、ウェブサーバーのドキュメントを参照してください。
 
-### クライアント
+### Content types
 
-クライアントサイドのコードは、PlayCanvasアプリケーションの一部として書かれている全てです。ブラウザがindex.htmlファイルを読み込む際、PlayCanvasアプリケーションを起動し、あなたが書いたすべてのクライアントサイドコードを実行します。
+Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server. 
+
+If you do get errors or warnings about assets not being served correctly in the browser, you may need to add these types.
+
+Here's a list of content types used in PlayCanvas applications:
+
+| File type | Content type             |
+| --------- | ------------------------ | 
+| AAC       | audio/aac                |
+| BASIS     | application/octet-stream | 
+| BIN       | application/octet-stream |
+| DDS       | image/dds                |
+| GLB       | model/gltf-binary        |
+| JPEG      | image/jpeg               |
+| JS        | application/javascript   |
+| JSON      | application/json         |
+| MP3       | audio/mpeg               |
+| MP4       | video/mp4                |
+| OGG       | audio/ogg                |
+| PNG       | image/png                |
+| TEXT      | text/plain               |
+| WASM      | application/wasm         |
+| WAV       | audio/x-wav              |
+| XML       | application/xml          |
+
+
+### Client
+
+The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.
 
 [1]: /user-manual/publishing/web/self-hosting/
-

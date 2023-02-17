@@ -4,17 +4,17 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-ブランチとは、開発の個別ラインです。すべてのチェックポイントはブランチに属しており、ブランチ内の一連のチェックポイントでアプリケーションやよく艇の機能の開発をトラッキングできます。PlayCanvasのプロジェクトには常に少なくともという1つのブランチがあります。それがマスターブランチで、場合により他のブランチも複数存在します。エディターのバージョンコントロールパネルで、ブランチを他のブランチにマージできます。
+A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the main branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
 
-## マスターブランチ
+## Main branch
 
-全てのプロジェクトには「マスター」と呼ばれるブランチがあり、これは常に存在するもので削除できません。ほとんどの点でその他のブランチと変わりありません。違う点は、他のブランチが指定されていないときなど「マスター」ブランチがデフォルトで使用されることです（REST APIなど）。よくあるのはアプリケーションの現在の開発ステートとしてマスターブランチを処理することです。そして他のブランチを安定リリースや機能開発用にします。マスターブランチを使用するかどうかは自由に決めることができます。
+Every project has a branch called "main" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "main" branch will be used as a default if no other branch is specified. A common scenario is to treat the main branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the main branch as best suits your needs.
 
-## 現在のブランチ
+## Current branch
 
 作業を行っている各プロジェクトには **現在のブランチ** に設定されたブランチがあります。これは作業中のブランチでエディターを開いたりコードファイルの編集を行った際に、現在のブランチに変更が適用されます。
 
-## 新しいブランチを作成する
+## Creating a new branch
 
 ![Create branch][1]
 
@@ -24,7 +24,7 @@ position: 2
 
 ブランチに名前を付けます。`fix-player-bug` や `refactor-sound-effects`など内容のわかりやすい名前を付けてください。ブランチを作成すると、自動的にそのブランチに切り替わります。
 
-## ブランチを切り替える
+## Switching to a branch
 
 ![Switch branch][3]
 
@@ -32,13 +32,13 @@ position: 2
 
 エディターが切り替えた現在のブランチを選択したものにリロードします。
 
-## ブランチを閉じる
+## Closing a branch
 
 ![Close branch][4]
 
 If you have completed work on a branch, you can close it which will remove it from the open branches list.
 
-ブランチをクローズするにはバージョンコントロールパネルを開き、クローズするブランチを選択してドロップダウンメニューから「Close branch」オプションを選びます。現在のブランチやマスターブランチはクローズできない点に留意してください。現在のブランチの場合はまず別のブランチに切り替えてからクローズします。
+To close a branch, open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note that you cannot close your current branch or the main branch. Switch to a different branch first if you wish to close your current branch.
 
 ![Close branch dialog][5]
 
@@ -70,4 +70,3 @@ You will be asked to confirm the deletion of the branch by typing the name of th
 [5]: /images/user-manual/version-control/close-branch-dialog.jpg
 [delete-branch]:  /images/user-manual/version-control/delete-branch.png
 [delete-branch-dialog]:  /images/user-manual/version-control/delete-branch-dialog.png
-

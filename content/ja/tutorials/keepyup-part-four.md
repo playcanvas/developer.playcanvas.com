@@ -1,15 +1,15 @@
 ---
-title: シンプルなゲームを作る - その4
+title: シンプルなゲームの作成 - パート4
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 4"></iframe>
 
 * [完成されたプロジェクトはこちら][6]です。先に[その1][1], [その2][2], [その3][3]を読んでください。*
 
-## サッカーボール
+## The Football
 
 Keepy Upゲームはサッカーボールを使用します。プレイヤーの入力や環境(つまり重力)に反応し、音声を再生します。ゲームの最も複雑な部分です。可能な限りシンプルに説明します。
 
@@ -159,7 +159,7 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### スクリプトのアトリビュート
+### スクリプト属性
 
 スクリプトの先頭には、定義したスクリプト属性のセットがあります。スクリプトの属性を定義することで、エディタにスクリプトから値を公開することができます。これを行う理由は3つあります。
 
@@ -175,7 +175,7 @@ Ball.prototype.reset = function () {
 
 最後に、スクリプト属性はエンティティまたはシーン内のアセットにスクリプトをリンクするための素晴らしい方法です。例えば、ボールのスクリプトをタップしたときにパーティクルエフェクトをトリガーする必要があります。パーティクルエフェクトは、シーンで別のエンティティに添付されています。`entity`タイプの` impactEffect`というスクリプト属性を定義し、エディタからパーティクルエフェクトを持つエンティティにリンクします。スクリプトはエンティティへの参照を持つようになり、コードを壊すことなくこのエンティティを変更したり、別のエンティティに変更することが可能になります。
 
-### 物理のシミュレーション
+### The Physics Simulation
 
 基本的なベクトル数学の知識があればボールの`update()`ループは簡単ですが、ここではビデオゲームでボールをシミュレートする方法について少し説明します。
 
@@ -183,23 +183,23 @@ Ball.prototype.reset = function () {
 
 オブジェクトの位置は3つの方法で変更できます。
 
-* **加速度の変更**, これは重力のように、ボールに一定の期間力を適用する場合に便利です。
-* **速度の変更**, これは瞬間的な変化です。床から跳ね返るボールなど。
-* **位置の変更**, テレポーテーションのように、現実の世界では存在しないもの！
+* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
+* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
+* **Change the position**, like teleportation, there isn't a real world equivalent!
 
 シミュレーションでは、重力による一定の加速度があります。ボールをタップすると速度に瞬時の変化を適用して、ゲームをリセットすると開始位置にボールをテレポートさせて戻します。
 
-#### シミュレーション
+#### Simulating
 
 更新ループは次のことを行います：
 
->_(速度の変更) = (加速) \* (最後のフレームから過ぎた時間)_
+>_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
 
->_(新しい速度) = (古い速度) + (速度の変更)_
+>_(New Velocity) = (Old Velocity) + (Change in Velocity)_
 
->_(位置の変更) = (新しい速度) \* (最後のフレームから過ぎた時間)_
+>_(Change in Position) = (New Velocity) \* (Time since last frame)_
 
->_(新しい位置) = (古い位置) + (位置の変更)_
+>_(New Position) = (Old Position) + (Change in Position)_
 
 コード内では次のようになります：
 
@@ -222,13 +222,13 @@ this.entity.setLocalPosition(p);
 
 最後に、良い効果を得るために`entity.rotate()`を使用して角速度値でボールに回転を追加します。これは物理的に正確ではありませんが、見た目が良いです。
 
-#### 入力に反応
+#### Responding to input
 
 [その2][2]で説明したとおり、 `input.js`スクリプトは入力がボールに当たったかどうかを確認して、当たった場合は`tap()`メソッドを呼び出します。上記で定義された`tap()`メソッドは、ボールの速度と角速度に直接変更を適用します。`this.speedMult` や `this.angMult`などのいくつかのスクリプト属性を使用して新しい速度および角速度を掛けて、ゲームプレイに合わせます。
 
 インパクトの点で埃のパーティクルと効果音の再生をトリガーするためにもタップメソッドを使用します。パーティクルと音声については[その5][4]で説明します。
 
-## まとめ
+## Summary
 
 ボールスクリプトは、重力下でのボールの落下や、タップへの反応を可能にするため、単純な物理シミュレーションを実行します。また、ゲームイベントにリッスンして、一時停止やリセットを行います。最後に、他のシステムと相互作用してパーティクルエフェクトの表示や音声の再生を行います。
 
@@ -238,4 +238,3 @@ this.entity.setLocalPosition(p);
 [4]: /tutorials/keepyup-part-five/
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
-

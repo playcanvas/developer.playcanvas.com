@@ -1,5 +1,5 @@
 ---
-title: Collision
+title: コリジョン
 layout: usermanual-page.hbs
 position: 6
 ---
@@ -25,21 +25,18 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 
 エンティティがrigidbodyコンポーネントを持つ場合、コリジョンコンポーネントはリジッドボディの形を定めます。Rigidbodyコンポーネントが存在する場合、コリジョンコンポーネントはトリガーボリュームとして扱われます。トリガーボリュームはシーン内の他のリジッドボディのシミュレーションに影響を与えることができません。かわりに、スクリプトコンポーネントを追加してトリガーイベントに反応するスクリプトを添付することができます。例えば、rigidbodyコンポーネントを持つ他のエンティティがトリガーに出入りする際に、スクリプトに通知が行くように設定できます。
 
-## プロパティ
+## Properties
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>Type</td><td>コリジョンプリミティブの種類。次を使用可能：<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
-    <tr><td>Half Extents</td><td>Boxのみ。コリジョンボックスの長さの半分。これは3次元のベクターです：ローカルスペースの幅の半分、高さの半分、奥行きの半分。</td></tr>
-    <tr><td>Axis</td><td>Capsuleのみ。CapsuleをエンティティのローカルスペースのX, Y または Z 軸に整列する。</td></tr>
-    <tr><td>Height</td><td>Capsuleのみ。Capsuleの先端から頂点までの高さ。</td></tr>
-    <tr><td>Radius</td><td>SphereとCapsuleのみ。SphereまたはCapsuleボディの半径。</td></tr>
-    <tr><td>Asset</td><td>Meshのみ。三角ベースのコリジョンメッシュのソースとして使用されるモデルアセット。</td></tr>
-</table>
+| Property     | Description |
+|--------------|-------------|
+| Type         | The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
+| Half Extents | Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth. |
+| Axis         | Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity. |
+| Height       | Capsule only. The tip-to-tip height of the capsule. |
+| Radius       | Sphere and Capsule only. The radius of the sphere or capsule body. |
+| アセット        | Mesh only. The model asset that will be used as a source for the triangle-based collision mesh. |
 
-## スクリプティングインターフェイス
+## Scripting Interface
 
 Collisionコンポーネントのプロパティは[スクリプトコンポーネント][8]を使ってコントロールできます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][9]。
 
@@ -52,4 +49,3 @@ Collisionコンポーネントのプロパティは[スクリプトコンポー�
 [7]: /images/user-manual/scenes/components/component-collision-sphere.png
 [8]: /user-manual/packs/components/script
 [9]: /api/pc.CollisionComponent.html
-

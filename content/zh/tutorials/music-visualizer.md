@@ -2,10 +2,10 @@
 title: 创建音乐可视化工具
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
 
 *更多的细节可以参考[完整的工程][1]。*
 
@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 我们的音乐可视化面板包含了两个脚本。分析仪，播放音频并通过一个分析器节点提取数据，分析器是高等级浏览器的Web 音频 API的一部分功能。可视化工具，将分析器分析出来的数据渲染成时髦的图像到屏幕上。
 
-## 分析仪
+## The Analyser
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -55,7 +55,7 @@ Analyser.prototype.update = function(dt) {
 
 然后在我们的更新循环中我们使用 `分析仪节点`的 `getFloatFrequencyData`和 `getFloatTimeDomainData` 功能将我们的数组填满数据。我们将在可视化脚本中使用这些数据。
 
-## 可视化工具
+## The Visualizer
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');
@@ -129,7 +129,7 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 
 在我们的更新循环中，我们同时渲染频率数据和时域数据的图形。
 
-## 更多想法?
+## More ideas?
 
 这只是教你如何将你的音乐可视化的一个尝试。为什么不尝试在音乐播放时缩放3D拉条，改变颜色和亮度?勾选可视化工具，让用户选择云音乐的轨道？有很多的可能性。
 
@@ -137,4 +137,3 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
 [4]: /api/pc.Application.html#renderLines
-

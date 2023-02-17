@@ -8,9 +8,9 @@ position: 2
 
 ![Characters with shadow casting][1]
 
-PlayCanvasにはシャドウマッピングという影を生成するアルゴリズムが実装されています。プラットフォーム間の互換性があり、モバイル端末とデスクトップ両方で動作することが保証されています。さらに、影の機能は無料で誰でも使うことができます。ゲームの見栄えをよくするためにProアカウントを作る必要はありません。
+The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
 
-## 影をつける
+## Enabling Shadows
 
 ![指向性ライト][5]
 
@@ -18,50 +18,74 @@ PlayCanvasでは、デフォルトで影の生成は無効になっています�
 
 ![モデルコンポーネント][6]
 
-シーン内で影を落とす又は受けるグラフィカルオブジェクトを指定する必要があります。デフォルトでは、すべてのモデルコンポーネントは影を受けるのみで、落としません。したがって、エンティティに影を落とさせるには、階層でエンティティを選択して、Inspectorでモデルコンポーネントを見つけて、「Cast Shadows」オプションにチェックを入れます。
+Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all render and model components cast and receive shadows. To modify these properties, select the entity in the Hierarchy, locate the render or model component in the Inspector and uncheck the 'Cast Shadows' or 'Receive Shadows' option as required.
 
-これで、Editorのビューポートに影が表示されるはずです。
+## Shadow Cascades
 
-## 影のチューニング
+When a directional shadow is used over a large area, it often exhibits aliasing, where a shadow near the camera has a low resolution. Capturing the shadow in a single shadow map requires very high and impractical resolution to improve this.
 
-PlayCanvasで使われているシャドウマッピングは有限の解像度しか持ちませんが、パラメータを調整することで見た目を良くすることができます。[Light Component][2] UIに次のプロパティがあります。
+Shadow cascades help to fix this problem by splitting the camera view frustum along the viewing direction, and a separate shadow map is used for each split. This gives nearby objects one shadow map, and another shadow map captures everything in the distance, and optionally additional shadow maps in between.
 
-### 投影距離のチューニング
+Note that the number of shadow cascades has an effect on performance, as each shadow casting mesh might need to be rendered into more than a single shadow map.
 
-shadow distance（投影距離）はビューポイントから指向性ライトの影が描画されなくなる距離を決めるパラメータです。この値が小さければ小さいほど、影は鮮明になります。この値を小さくしすぎると、シーン内で視点を動かした時に突然影が現れるかもしれません。プレイヤーがどれだけ遠くを見るかという要素と、影がおおむねきれいに見えるバランスを考えて値を決めてください。
+The following properties can be used to set up shadow cascades.
 
-### 影野解像度
+### Number of cascades
 
-すべての光源はシャドウマップを使用して影を投影します。シャドウマップは256x256, 512x512, 1024x1024, 2048x2048のいずれかの解像度を設定できます。この値はlightコンポーネントのインタフェースにも設定できます。この解像度が高ければ高いほど、影は鮮明になります。ただし、高い解像度の影はレンダリングに時間がかかるため、パフォーマンスの影のクオリティのバランスを考えて設定してください。
+Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
 
-### 影のバイアス
+A screenshot showing a single shadow cascade.
 
-シャドウマッピングは非常に目立つ不自然な描画をする場合があります。もし影の帯や斑点状のノイズを見つけたら、影のバイアスを調整することで解決する場合があります。
+![One cascade][7]
 
-### 法線方向のオフセットバイアス
+A screenshot showing four shadow cascades.
 
-'影の斑点'と呼ばれる不自然な表示は目立つ問題ですが、シャドウバイアスを調整して対処することができます。ただし、この調整をすると’ピーターパン現象'が発生し、影によって多少物体が浮いているように見えてしまうことがあります。
+![Four cascades][8]
 
-法線方向のオフセットバイアスによってこの問題に対処することができます。深さ方向のバイアスに加えて、シャドウマップの参照時に使われるUVマッピングをわずかに調整することで、影の斑点とピーターパン現象の二つを同時に避けることができます。フラグメントの位置を法線方向にずらす"法線方向のオフセット"はシャドウバイアスだけで問題に対処するよりも、大幅に見た目を改善します。
+### Distribution of cascades
 
-## Soft Shadow 対 Hard Shadow
+The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
 
-影の輪郭はpenumbra（半影）と呼ばれています。これは、影に柔らかい輪郭を与える、暗から明への移行です。PlayCanvasのデフォルトでは、影の輪郭は柔らかく設定されていますが、この設定を変更することで輪郭を鋭くすることもできます。柔らかい輪郭と鋭い輪郭の比較は以下を参照してください。
+## Tuning Shadows
 
-![Soft Shadow 対 Hard Shadow][3]
+PlayCanvasで使用されている車道マッピングアルゴリズムは有限の解像度を持ちます。ですので、影の見た目をできるだけよくするためにプロパティをチューニングする必要が出るかもしれません。以下のプロパティが[Light Component][2] UIの中にあります.
 
-柔らかい影はGPU上でシャドウマップのサンプルを複数実行することによって達成できます。使用されるアルゴリズムは、Percentage Closest Filtering または PCFと呼ばれています。このアルゴリズムは、9つのローカライズされたサンプル(3×3の行列)をシャドウマップから読み出します。硬い影の場合は1つのみです。
+### Shadow Distance
+
+シャドウディスタンスは視点からどれだけ離れると指向性光源からの影がレンダリングされなくなるかという距離です。この値が小さければ、影がきれいに表示されます。一方で、この値が小さいとビューポートを移動すると突然影が現れるように見えてしまうという問題があります。そのため、プレイヤーがどのくらい遠くを見ることができるかという要素と、どの程度きれいに影を表示したいかのバランスを考えてください。
+
+### Shadow Resolution
+
+すべての光源はシャドウマップを使用して影を生成します。このシャドウマップは256x256, 512x512, 1024x1024, 2048x2048いずれかの解像度を持つことができます。この値は光源コンポーネントのインタフェースから設定できます。解像度が高くなればなるほど、影がきれいに表示されます。しかし、高い解像度を設定すると描画が重くなります。ですのでパフォーマンスとクオリティのバランスに気を付けてください。
+
+### Shadow Bias
+
+シャドウマッピングは見た目の悪いノイズを描画してしまうことがあります。そのような帯状の影や斑点状の影が描画された場合には、シャドウバイアスの値を調整して問題の解決を試してみてください。
+
+### Normal Offset Bias
+
+'Shadow acne'と呼ばれるノイズ状の表示がされることがありますが、これはシャドウバイアスを調整することで効果的に取り除くことができます。しかしこれによって常に'Peter Panning'と呼ばれるオブジェクトが空中に浮いているように見える現象が発生してしまいます。
+
+法線オフセットバイアスはこの問題を解決することができます。デプスバイアスに加えて、シャドウマップの参照に使われるUV座標にちょっとした調整を加えることで、shadow acneとPeter Panningの両方を避けることができます。フラグメントの一はジオメトリの法線方向にオフセットがかけられます。この法線オフセットと呼ばれるテクニックは、定数のシャドウバイアスのみを使う場合に比べて大幅によい結果を得ることができます。
+
+## Soft Shadows vs Hard Shadows
+
+影の外周のことをpenumbra - 半影と呼びます。これは暗い領域から明るい領域へ変化する領域で、影にソフトな境界線を与えます。影のエッジはPlayCanvasではデフォルトでソフトなものになりますが、設定を変更してハードエッジの影を描画することもできます。以下でソフトエッジの影とハードエッジの影を比べてみます。
+
+![Hard vs soft shadows][3]
+
+ソフトシャドウはシャドウマップ上のサンプルをより多くGPUで取ることによって実現されています。使用されているアルゴリズムはPercentage Closest FilteringあるいはPCFと省略されて呼ばれています。このアルゴリズムはシャドウマップ内の一つのサンプルだけを読むのではなく、(3x3のマトリクスで)9個のサンプルを読み込んで使用します。
 
 The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
 
-## パフォーマンスの考慮事項
+## Performance Considerations
 
-影を有効にすると、パフォーマンスに影響があります：
+影を使用すると、パフォーマンスに以下のような影響があります:
 
-* 指向性またはスポットライトを落とすそれぞれの影のために、すべてのフレームで一度シーンをシャドウマップにレンダリングする必要があります。ポイントライトの場合はシーンがライトごとに6回レンダリングされるので(シャドウマップが6面のキューブマップとして保存される)、負荷が大きくなります。シャドウマップの中にシーンをレンダリングすると、CPUとGPUの両方に負荷を加えます。
-* シャドウマップの解像度を上げるとより鮮明な影を生成しますが、GPUはより多くのシャドウマップピクセルを埋める必要があり、フレームレートに影響を与える可能性があります。
-* 影を受ける素材のシャドウサンプルタイプとしてソフトシャドウ(PCF3x3)を選択すると、ハードシャドウのオプションを使用した場合よりも、GPUに負荷がかかります。
-* 影が環境の静的な部分から発生している場合は、[ライトマップ][4]を使用してテクスチャに影をbakeすることを検討してください。
+* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Omni light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
+* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
+* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
+* If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
 
 [1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
@@ -69,4 +93,5 @@ The shadow sampling type is specified per light and so the option can be found i
 [4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
-
+[7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
+[8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg

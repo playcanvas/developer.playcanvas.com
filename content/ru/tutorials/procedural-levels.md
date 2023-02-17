@@ -2,10 +2,10 @@
 title: Procedural Levels
 layout: tutorial-page.hbs
 tags: procedural
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/smskdMrk/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 
 This project uses [clone()][1] function on the Entity to randomly generate a level from Entities that have been created in the Editor.
 
@@ -58,4 +58,3 @@ Generate.prototype.initialize = function() {
 
 [1]: /api/pc.Entity.html#clone
 [2]: https://playcanvas.com/project/405864
-

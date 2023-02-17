@@ -1,25 +1,25 @@
 ---
-title: カスタムシェーダー
+title: カスタムのシェーダー
 layout: tutorial-page.hbs
 tags: shaders, materials
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders"></iframe>
 
 *このチュートリアルでは素材にカスタムシェーダを使用してGLSLでdissolveエフェクトを作成します*
 
-Complete project can be found [here][project].
+完全なプロジェクトは [こちら][project].
 
 PlayCanvasに3Dモデルをインポートすると、デフォルトで[Physical Material][3]を使用します。これは、多くのレンダリングニーズをカバーすることができる汎用性の高い素材タイプです。
 
 素材に対して特別なエフェクトや特殊な例が必要になることも多くあります。そのためには、カスタムシェーダを作成する必要があります。
 
-## シェーダーとシェーダーの定義
+## Shaders and Shader Definition
 
 WebGLは、GLSL言語を使用して全てのブラウザで実行することができるシェーダを書き込みます。PlayCanvasではこのコードをシェーダーアセットで作成して、それを使用して新しい `pc.Shader`を作成する前に[Shader Definition][1]にコードを割り当てます。
 
-### Vertex シェーダー
+### Vertex Shader
 
 ```
 attribute vec3 aPosition;
@@ -37,7 +37,7 @@ void main(void)
 }
 ```
 
-### フラグメントシェーダー
+### Fragment Shader
 
 ```
 varying vec2 vUv0;
@@ -62,7 +62,7 @@ void main(void)
 
 上記の2つのシェーダーは、新しい素材の機能を定義します。頂点シェーダーでは、画面空間にメッシュの頂点位置を変換します。フラグメントシェーダーでは、ピクセルの色を設定します。このピクセルの色は、このアセットに提供される2つのテクスチャーに基づいて選択されます。uTime値が高さマップの色より小さい場合、ピクセルはレンダリングされません(モデルは非表示)。uTimeの値が高さマップの値よりも大きい場合、提供するdiffuseマップテクスチャーから色を取得します。
 
-### シェーダー定義
+### Shader Definition
 
 ```javascript
 var vertexShader = this.vs.resource;
@@ -92,15 +92,15 @@ var shaderDefinition = {
 
 GLSLシェーダーには、属性とは別で、二つの特殊なタイプの変数があります：`varying`と` uniform`
 
-## GLSL `varying` 変数
+## GLSL `varying` variables
 
 **varying（変化する**と宣言された変数は頂点シェーダーで設定されますが、フラグメントシェーダーで使用されます。これは、最初のプログラムから2つ目のプログラムにデータを渡すための方法です。
 
-## GLSL `uniform` 変数
+## GLSL `uniform` variables
 
 **`uniform`**を定義された変数は頂点シェーダーとフラグメントシェーダーの両方で宣言されます。この変数の値はメインアプリケーションからシェーダーに渡す必要があります。例えば、シーン内のライトの位置です。
 
-## 素材の作成
+## Creating Materials
 
 ```javascript
 // Create the shader from the definition
@@ -108,7 +108,7 @@ this.shader = new pc.Shader(gd, shaderDefinition);
 
 // Create a new material and set the shader
 this.material = new pc.Material();
-this.material.setShader(this.shader);
+this.material.shader = this.shader;
 
 // Set the initial time parameter
 this.material.setParameter('uTime', 0);
@@ -127,7 +127,7 @@ model.meshInstances[0].material = this.material;
 
 *同じ素材をひとつ以上のメッシュに使用することができます(また、そうするべきです)*
 
-## 新しい素材でテクスチャーを使用
+## Using a texture in a new Material
 
 ```javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
@@ -166,7 +166,7 @@ CustomShader.attributes.add('heightMap', {
 
 高さマップが読み込まれるとuniform `uHeightMap` を `pc.Texture` オブジェクトに設定することができます。
 
-## uniformの更新
+## Updating uniforms
 
 ```javascript
 // update code called every frame
@@ -188,7 +188,7 @@ CustomShader.prototype.update = function(dt) {
 
 シェーダーで、ピクセルの高さマップの値がtime値より小さい場合、ピクセルを描画しません。また、閾値に近い値では、エフェクトに綺麗な「縁」を表示するためにピクセルを青で描画します。
 
-## 完全なリスト
+## Complete listing
 
 ```javascript
 var CustomShader = pc.createScript('customShader');
@@ -283,10 +283,9 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
+以上がそのスクリプトの全体です。このスクリプトを動作させるには、バーテックスシェーダとフラグメントシェーダのアセットを作成する必要があることを忘れないでください。
 
 [1]: /api/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
 [project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
-

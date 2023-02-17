@@ -8,15 +8,15 @@ position: 2
 
 ![projects_page][1]
 
-## 创建新项目
+## New Project
 
 点击右上角的 New 按钮创建一个新的项目
 
-## 删除项目
+## Delete Project
 
 点击项目右侧的向下箭头展开菜单，选择移除项目选项。
 
-## 解锁项目
+## Unlock Project
 
 点击项目旁边的箭头，并选择解锁以解锁锁定*项目*。解锁项目依赖于该项目所有者的订阅类型。如果用户将一个个人计划的项目锁定，解锁装置会把项目中其它的免费用户删除(因为个人计划要求所有用户都订阅)。否则解锁项目表示使其公开。
 
@@ -38,7 +38,7 @@ You can import a .zip archive that contains an export project. That .zip file mu
 
 点击项目右侧的向下箭头展开菜单，选择导入。
 
-## 转让工程所有权
+## Transfer Project Ownership
 
 If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
 
@@ -56,10 +56,10 @@ The other user will need to accept your request to transfer the Project. The tra
 
 If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
 
+
 [1]: /images/user-manual/profile/profile.png "Projects"
 [2]: /images/user-manual/profile/projects/export-archive-button.jpg
 [3]: /images/user-manual/profile/projects/import-archive-button.jpg
 [4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
 [5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
 [6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
-

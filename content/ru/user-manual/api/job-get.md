@@ -1,5 +1,5 @@
 ---
-title: Jobs - Get job
+title: Работа - получить работу
 layout: usermanual-page.hbs
 position: 12
 ---
@@ -17,7 +17,7 @@ Gets a Job by id.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/jobs/99999
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
 ```
 
 ## Parameters
@@ -56,5 +56,5 @@ Status: 200
 
 This route uses a [normal][1] rate limit.
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

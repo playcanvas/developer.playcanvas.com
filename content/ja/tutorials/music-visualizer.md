@@ -1,11 +1,11 @@
 ---
-title: 音楽ビジュアライザの作成
+title: 音楽ビジュアライザーの作成
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
 
 *[完成されたプロジェクト][1]をフォークして詳細をご確認ください。*
 
@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 音楽ビジュアライザは2つのスクリプトで構成されています。アナライザは、オーディオを再生し、アナライザノードを介してデータを抽出します。これは最新のブラウザに組み込まれているWeb Audio APIの一部です。ビジュアライザは、アナライザからデータを取得してグラフとして画面上にそれをレンダリングします。
 
-## アナライザ
+## The Analyser
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -55,7 +55,7 @@ Analyser.prototype.update = function(dt) {
 
 次に、更新ループで`AnalyserNode`メソッドの` getByteFrequencyData`と `getFloat TimeDomainData`を使用してデータで配列を埋めます。ビジュアライザスクリプトでこのデータを使用します。
 
-## ビジュアライザ
+## The Visualizer
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');
@@ -129,7 +129,7 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 
 更新ループでは、Frequency Dataおよび Time Domain Dataの両方のグラフを描画します。
 
-## その他のアイディア？
+## More ideas?
 
 音楽の視覚化の方法を一部紹介させていただきました。音楽に合わせて3Dバーのスケーリングや色や明るさの調整を行うこともできます。SoundCloudにビジュアライザを繋げてユーザに選択させる方法もあります。可能性はたくさんあります。
 
@@ -137,4 +137,3 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
 [4]: /api/pc.Application.html#renderLines
-

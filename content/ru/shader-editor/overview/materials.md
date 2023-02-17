@@ -1,5 +1,5 @@
 ---
-title: Materials
+title: Материалы
 layout: shader-editor-page.hbs
 position: 3
 ---
@@ -17,4 +17,3 @@ Multiple materials can be created, each with a different setting for the Vec3 Pa
 [1]: /images/shader-editor/overview-materials-graph.png
 [2]: /images/shader-editor/overview-materials-previews.png
 [3]: /shader-editor/window-layout/inspector-pane/material-inspector
-

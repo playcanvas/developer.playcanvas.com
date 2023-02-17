@@ -6,7 +6,7 @@ position: 6
 
 [Facebook][1]から大勢のユーザにPlayCanvasゲームを公開することができます。PlayCanvasからFacebookにゲームを公開するのは簡単です。
 
-## Facebookへの公開方法
+## How to publish to Facebook
 
 **1.** PlayCanvasにゲームを公開します。(また、セルフホスティングされたゲームをFacebookに公開することもできます。以下のようなプロセスになります。)
 
@@ -43,4 +43,3 @@ PlayCanvasのゲームのホスティング方法、また、FacebookがAPIへ�
 [5]: /images/user-manual/publishing/web/facebook/website-url.jpg
 [6]: /images/user-manual/publishing/web/facebook/icons.jpg
 [7]: /images/user-manual/publishing/web/facebook/app-url.jpg
-

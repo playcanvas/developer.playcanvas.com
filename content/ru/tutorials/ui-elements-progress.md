@@ -2,16 +2,16 @@
 title: User Interface - Progress Bar
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/FlebHmLs/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
 
 *A progress bar using Element components. See the [full scene][1].*
 
 We can easily create progress bars using the built-in [Elements][2]. In this tutorial we have a progress bar that loops from empty to full every few seconds.
 
-## Hierarchy
+## Иерархия
 
 This is what our UI looks like in the Hierarchy:
 
@@ -39,7 +39,7 @@ The fill image is the `Fill Image` entity in our example. It is a child of the `
 
 ![Fill Image][7]
 
-## Script
+## Сценарий
 
 The `Progress Bar` entity has a script to control how the progress bar is resized:
 
@@ -52,6 +52,10 @@ ProgressBar.attributes.add('progressImage', {type: 'entity'});
 ProgressBar.attributes.add('progressImageMaxWidth', {type: 'number'});
 
 ProgressBar.prototype.initialize = function() {
+    // use our own rect object to set the size of
+    // the progress bar
+    this.imageRect = this.progressImage.element.rect.clone();
+
     // initialize progress to 0
     this.setProgress(0);
     // if true the progress bar will increase
@@ -75,7 +79,8 @@ ProgressBar.prototype.setProgress = function (value) {
     // value as our 0-1 progress.
     // This is so that the fill image will only show the portion
     // of the texture that is visible
-    this.progressImage.element.rect.z = value;
+    this.imageRect.copy(this.progressImage.element.rect);
+    this.imageRect.z = value;
     // force rect update
     this.progressImage.element.rect = this.progressImage.element.rect;
 };
@@ -106,4 +111,3 @@ Changing the `width` makes the fill image larger and changing the `rect` makes s
 [6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
 [7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
 [8]: /api/pc.ElementComponent.html#rect
-

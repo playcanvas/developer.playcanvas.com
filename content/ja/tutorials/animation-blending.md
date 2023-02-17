@@ -1,11 +1,13 @@
 ---
-title: アニメーションブレンディング
+title: Animation Blending (Deprecated)
 layout: tutorial-page.hbs
 tags: animation
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
+<div class="alert alert-info">This tutorial uses the deprecated Model and Animation components. Please refer to the <a href="/tutorials/anim-blending/">Anim State Graph Blending tutorial</a> instead.</div>
+
+<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 
 *画面をクリックしてフォーカス。次にpキーを押してパンチアニメーションにブレンド*
 
@@ -15,7 +17,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 PlayCanvasを通してこれがどのように行われるかを確認しましょう…
 
-## アニメーションコンポーネント
+## The Animation Component
 
 モデルにアニメーションを適用するにはアニメーションコンポーネントをエンティティに追加します。下記はPlayCanvas Editorで表示されるスキンを加えたキャラクターの構成です。
 
@@ -23,9 +25,9 @@ PlayCanvasを通してこれがどのように行われるかを確認しまし�
 
 画像では、Inspectorの中のアニメーションコンポーネントを確認することができます。 2つのアニメーションアセットが割り当てられています：「idle（待機）」サイクルと「punch（パンチ）」サイクルです。このようにアニメーションコンポーネントを構成すると、最初のアニメーション(idleサイクル)にループオプションが設定されているので、無限に再生されます。それだけではつまらないので次のように行います：
 
-* ループしている待機アニメーションを再生。
-* キーを押してループしているパンチアニメーションにブレンド。
-* キーを離して待機にブレンドし戻す。
+* Play a looping idle animation.
+* Blend to a looping punch animation on a key press.
+* Blend back to idle on key release.
 
 このような機能はアニメーションコンポーネントの能力を超えてしまうので、スクリプトコンポーネントを使用して追加の挙動を設定する必要があります。上記は、Editor内のスキンを加えたキャラクターエンティティのスクリーンショットです。スクリプトコンポーネントを確認できます。 これはanimation_blending.jsをいうJSファイルを参照します。このファイルの内容：
 
@@ -46,9 +48,16 @@ AnimationBlending.prototype.initialize = function() {
     this.blendTime = 0.2;
 
     this.setState('idle');
+};
 
-    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
-    this.app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
+AnimationBlending.prototype.update = function(dt) {
+    if (this.app.keyboard.wasPressed(pc.KEY_P)) {
+        this.setState('punch');
+    }
+
+    if (this.app.keyboard.wasReleased(pc.KEY_P)) {
+        this.setState('idle');
+    }
 };
 
 AnimationBlending.prototype.setState = function (state) {
@@ -59,18 +68,6 @@ AnimationBlending.prototype.setState = function (state) {
     // the current animation state to the start of the target animation.
     this.entity.animation.play(states[state].animation, this.blendTime);
 };
-
-AnimationBlending.prototype.keyDown = function (e) {
-    if ((e.key === pc.KEY_P) && (this.state !== 'punch')) {
-        this.setState('punch');
-    }
-};
-
-AnimationBlending.prototype.keyUp = function (e) {
-    if ((e.key === pc.KEY_P) && (this.state === 'punch')) {
-        this.setState('idle');
-    }
-};
 ```
 
 ここからはアニメーションコンポーネントにより多くのアニメーションを追加することができ、より複雑なアニメーション状態チャートをスクリプトすることが可能になります。
@@ -79,4 +76,3 @@ AnimationBlending.prototype.keyUp = function (e) {
 
 [1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/440156
-

@@ -1,11 +1,11 @@
 ---
-title: カスタムポストエフェクト
+title: カスタムの後処理エフェクト
 layout: tutorial-page.hbs
 tags: posteffects
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/3je0YP0q/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 
 *このチュートリアルでは、カスタムポストエフェクトを使ってGLSLでエフェクトを作成する方法を説明します。*
 
@@ -15,11 +15,11 @@ JavascriptやGLSLを少し使って、PlayCanvas上でポストエフェクト�
 
 次のセクションでは、ポストエフェクトの作り方を説明します。既存のポストエフェクトの例は[こちら][1]からご確認ください。
 
-## スクリプト
+## The script
 
 最初に、新しくスクリプトを作成する必要があります。このスクリプトには、ポストエフェクトのための [Shader Definition][2] 、そしてカメラにポストエフェクトを追加するためのコードが含まれています。なお、このスクリプトは[Camera component][3]を持つエンティティに添付する必要があります。こちらのposteffect_example.jsを呼びます：
 
-## エフェクト
+## The effect
 
 次にポストエフェクトのための新しいクラスを作成する必要があります。このクラスは[pc.posteffect.PostEffect][4]から引き継がれます。posteffect_example.js 内の定義の前部分で、そのクラスの定義を行います。
 
@@ -63,7 +63,7 @@ pc.extend(pc, function () {
 }());
 ```
 
-## まとめ
+## Wrap up
 
 これでポストエフェクトに必要なすべてのコンポーネントが揃いました。後は、上位で定義したExamplePostEffectのインスタンスをカメラの[ポストエフェクトキュー][5]に追加するだけです。ここでは完全なリストは次のとおりです。完全なリスト：
 
@@ -155,4 +155,3 @@ PosteffectExample.prototype.initialize = function() {
 [6]: /tutorials/custom-shaders/
 [5]: /api/pc.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045
-

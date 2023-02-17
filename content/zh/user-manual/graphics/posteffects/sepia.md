@@ -1,5 +1,5 @@
 ---
-title: 复古风格
+title: Sepia 特效
 layout: usermanual-page.hbs
 position: 5
 ---
@@ -8,13 +8,18 @@ position: 5
 
 这是一张没有经过处理的图片:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+![Image without effect][1]
 
-这是一张已经经过了处理的图片:
+And the same image with the effect applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_sepia.png"></img>
+![Image with effect][2]
 
 内置的复古效果有以下的属性设置:
 
-* **程度**: 控制效果的显示强度。范围从0 到 1.
+* **Amount**: Controls the intensity of the effect. Ranges from 0 to 1.
 
+Find the post-processing effect script on [GitHub][3].
+
+[1]: /images/platform/posteffects/without_effects.png
+[2]: /images/platform/posteffects/with_sepia.png
+[3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-sepia.js

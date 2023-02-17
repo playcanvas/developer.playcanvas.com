@@ -1,5 +1,5 @@
 ---
-title: Organizations
+title: Организации
 layout: usermanual-page.hbs
 position: 6
 ---
@@ -22,4 +22,3 @@ You can also purchase an [Organization Plan][1] which includes:
 
 [1]: https://playcanvas.com/plans
 [2]: /user-manual/api
-

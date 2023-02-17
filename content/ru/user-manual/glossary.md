@@ -1,5 +1,5 @@
 ---
-title: Glossary
+title: Глоссарий
 layout: usermanual-page.hbs
 position: 26
 ---
@@ -60,11 +60,11 @@ High Dynamic Range or HDR refers to color information that is outside of the usu
 
 A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Editor, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
 
-## PlayCanvas Editor
+## Редактор PlayCanvas
 
 The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Scenes][scene]. The PlayCanvas Editor is used to manipulate [Entities][entity]
 
-## PlayCanvas Engine
+## Движок PlayCanvas
 
 The PlayCanvas Engine is a JavaScript library which provides all the functionality you will need to create an interactive 3D application or game.
 
@@ -78,7 +78,7 @@ A Project is a collection of [Scenes][scene] and [Assets][asset] that belongs to
 
 A Scene is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Scene may represent your entire game, or just a single level or part of your game.
 
-## Script
+## Сценарий
 
 A Script is an [Asset][asset]. It is assigned to a Script [Component][component] on an [Entity][entity]. Scripts are written in JavaScript. They have several predefined functions that can be overridden:
 
@@ -130,4 +130,3 @@ A Transformation Matrix is a mathematical matrix that represents a set of linear
 [template]: #template
 [texture]: #texture
 [transformation-matrix]: #transformation-matrix
-
