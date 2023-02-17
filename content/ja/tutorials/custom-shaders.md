@@ -19,7 +19,7 @@ PlayCanvasに3Dモデルをインポートすると、デフォルトで[Physica
 
 WebGLは、GLSL言語を使用して全てのブラウザで実行することができるシェーダを書き込みます。PlayCanvasではこのコードをシェーダーアセットで作成して、それを使用して新しい `pc.Shader`を作成する前に[Shader Definition][1]にコードを割り当てます。
 
-### Vertex Shader
+### Vertex シェーダー
 
 ```
 attribute vec3 aPosition;
@@ -92,11 +92,11 @@ var shaderDefinition = {
 
 GLSLシェーダーには、属性とは別で、二つの特殊なタイプの変数があります：`varying`と` uniform`
 
-## GLSL `varying` variables
+## GLSL `varying` 変数
 
 **varying（変化する**と宣言された変数は頂点シェーダーで設定されますが、フラグメントシェーダーで使用されます。これは、最初のプログラムから2つ目のプログラムにデータを渡すための方法です。
 
-## GLSL `uniform` variables
+## GLSL `uniform` 変数
 
 **`uniform`**を定義された変数は頂点シェーダーとフラグメントシェーダーの両方で宣言されます。この変数の値はメインアプリケーションからシェーダーに渡す必要があります。例えば、シーン内のライトの位置です。
 
