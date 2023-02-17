@@ -28,7 +28,7 @@ There are three sections: Basic, Render States and Parameters.
 - Opacity Fades Specular - (Not yet supported).
 - Use Fog - (Not yet supported).
 
-### Parameters
+### パラメータ
 
 The parameters section lists the parameter nodes placed on the graph. The names and types are taken from the graph nodes themselves.
 

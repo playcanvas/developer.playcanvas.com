@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 10
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 PUT https://playcanvas.com/api/assets/:assetId
@@ -26,7 +26,7 @@ PUT https://playcanvas.com/api/assets/:assetId
 curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>

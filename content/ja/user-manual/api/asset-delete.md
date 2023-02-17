@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
@@ -27,7 +27,7 @@ DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">assetId: number</span><p>The id of the asset to delete</p></div>

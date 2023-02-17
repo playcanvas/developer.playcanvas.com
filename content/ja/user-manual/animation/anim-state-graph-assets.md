@@ -75,7 +75,7 @@ The available transition variables are:
 
 It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
 
-### Parameters
+### パラメータ
 
 The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
 

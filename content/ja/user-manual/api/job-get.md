@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 12
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 GET https://playcanvas.com/api/jobs/:id
@@ -20,7 +20,7 @@ idからジョブを取得。
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">id</span><p>ジョブのid。</p></div>

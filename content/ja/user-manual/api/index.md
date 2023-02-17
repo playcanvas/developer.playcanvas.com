@@ -42,7 +42,7 @@ Bearer [access_token]
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## Parameters
+## パラメータ
 
 様々なルートが複数のパラメータを受け入れます。パラメータがURLの一部でない場合、GETリクエストでは、HTTPクエリ文字列パラメータとして渡すことができます。URLに含まれないPOST、PUT、DELETEリクエストパラメータは'application/json'のコンテンツタイプでJSONとしてエンコードされるべきです。
 

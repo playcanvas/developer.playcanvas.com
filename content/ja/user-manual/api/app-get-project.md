@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 GET https://playcanvas.com/api/projects/:project_id/apps
@@ -20,7 +20,7 @@ GET https://playcanvas.com/api/projects/:project_id/apps
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">project_id</span><p>プロジェクトのid。</p></div>

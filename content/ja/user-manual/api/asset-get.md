@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
@@ -27,7 +27,7 @@ GET https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch.</p></div>

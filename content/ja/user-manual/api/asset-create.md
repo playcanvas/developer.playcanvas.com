@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 POST https://playcanvas.com/api/assets
@@ -56,7 +56,7 @@ Content-Type: application/javascript
 {fileContent}
 ------WebKitFormBoundaryTdsfsfT--
 ```
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">name: string</span><p>Name of the asset</p></div>

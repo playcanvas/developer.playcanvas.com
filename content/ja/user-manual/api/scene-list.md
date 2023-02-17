@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 14
 ---
 
-## Route URL
+## ルートURL
 
 ```none
 GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
@@ -27,7 +27,7 @@ GET https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## パラメータ
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list scenes from</p></div>
