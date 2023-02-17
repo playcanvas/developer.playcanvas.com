@@ -1,5 +1,5 @@
 ---
-title: Cubemap
+title: キューブマップ
 layout: usermanual-page.hbs
 position: 7
 ---

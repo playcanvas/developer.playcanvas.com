@@ -40,7 +40,7 @@ Physical Material（物理素材）はPlayCanvasで利用可能な最も先進�
 | Tint       | Check this to modulate the material's diffuse map with a material specific diffuse color. |
 | Color      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
 
-### Specular
+### スペキュラマップ
 
 スペキュラのプロパティは、スペキュラハイライトのカラーを定義します。例：光沢
 

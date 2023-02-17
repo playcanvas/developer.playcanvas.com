@@ -12,7 +12,7 @@ PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築す
 
 このチュートリアルでは、PlayCanvasアプリケーションにFacebookのAPIを統合する方法を説明します。Facebook APIにアクセスできるようにすれば、多くの可能性が開きます。例えば、Facebookにストーリーを投稿したり、友人とゲームを共有することができます。[チュートリアルプロジェクト][5]をご確認ください。
 
-## Facebook Plugin
+## Facebook プラグイン
 
 [github上][1]にFacebookの統合を可能にするプラグインがあります。これにより、FacebookのJavaScript SDKを読み込む作業を簡素化します。シーンのエンティティにプラグインスクリプト`lib/facebook-setup.js`を添付して、`fb:init` イベントをリッスンすればAPIの準備ができていることが確認できます。[githubページ][1]で詳しい手順をご確認ください。
 
@@ -23,7 +23,7 @@ PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築す
   }, this);`
 ```
 
-## Login to Facebook
+## Facebookにログイン
 
 この例では、アニメーション内でFacebookログインおよびログアウトできるユーザーインターフェイスを実装しました。これは、`fb-ui.js`のコードです。
 
@@ -125,7 +125,7 @@ FbUi.prototype.hideLogout = function () {
 独自のアプリケーションイベント`app:fblogin` と`app:fblogout` を発信してFacebookのステータスが変更されたことをアプリケーションの他の部分に通知しています。
 
 
-### Accessing the Facebook API
+### Facebook APIにアクセス
 
 `face-photo.js`ファイルはFacebook APIを使用して、ユーザからの写真のリストを取得して3Dの世界でそれらを表示しています。
 
@@ -279,7 +279,7 @@ FacePhoto.prototype.createPhoto = function(texture) {
 
 最後に、テクスチャアセットを読み込んだら、新しいフォトエンティティを作成して新たに読み込まれた写真のテクスチャで発光テクスチャを上書きします。
 
-### More ideas
+### その他のアイディア
 
 このチュートリアルでは、PlayCanvasアプリケーション内からFacebook APIとFacebookデータを読み込む方法を説明しています。Facebook APIを使用して試せることは沢山あります。例えば、新記録達成などのゲームイベントが発生したときにFacebookにストーリーとして共有できます。または、ユーザのフレンドリストを取得して友人に挑戦状を送ることもできます。
 

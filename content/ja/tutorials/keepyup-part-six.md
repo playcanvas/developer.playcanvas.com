@@ -15,21 +15,21 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 PlayCanvasではユーザインタフェースは[Screen Component][7]と[Element Component][8]を使用して構築されます。詳細は [ユーザマニュアル][6]でご確認ください
 
-### User Interface Entities
+### ユーザインターフェースのエンティティ
 
 ![階層][9]
 
 ユーザインターフェイスをメニュー、ゲーム、ゲームオーバーの３つのゲーム状態に分けました。各状態には、状態が入力されたときにアクティブ化されるスクリーンエンティティがあります。 また、オーバーレイのためのスクリーンがあります。オーバーレイはメニューのボールの下に表示されるため、3Dスクリーンコンポーネントを使用して、ボールの後ろのワールドスペースにオーバーレイをレンダリングします。
 
-### Images and Text
+### イメージとテキスト
 
 ![イメージ要素][12]
 
-Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset. 
+画像やテキストは要素コンポーネントを使用してユーザーインターフェイスに追加されます。このコンポーネントは、テクスチャアセットの形式または画像をフォントアセットの形式で表示することができます。
 
 ![イメージの属性][13]
 
-### User Interface script
+### ユーザインターフェースのスクリプト
 
 メインメニューのスクリプトを見てみましょう。
 

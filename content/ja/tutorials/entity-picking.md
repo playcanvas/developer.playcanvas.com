@@ -21,7 +21,7 @@ Frame Buffer Picking - click to select a grey shape. The red shapes are set to b
 
 このチュートリアルでは、3Dシーンからエンティティを選択する方法（マウスのクリックなど）を説明します。
 
-## Collision Picking
+## コリジョンの選択
 
 コリジョンベースのピッキングは、選ぶする必要がある各エンティティに図形を追加するために、コリジョンコンポーネントを使用します。その後、リジッドボディシステムで[raycastFirst()][2]メソッドを使用して、マウスのクリック位置から画面に光線を発射し、それがコリジョンコンポーネントに当たるかどうかを確認します。当たる場合、そのエンティティは「選択」されています
 
@@ -49,7 +49,7 @@ PickerRaycast.prototype.onSelect = function (e) {
 };
 ```
 
-## Frame Buffer Picking
+## フレームバッファの選択
 
 Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method.
 

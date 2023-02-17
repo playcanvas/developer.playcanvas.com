@@ -9,7 +9,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 * [完成されたプロジェクトはこちら][9]です。先に[その1][1], [その2][2], [その3][3], [その4][4]を読んでください。*
 
-## Audio & Particles
+## 音声とパーティクル
 
 ### オーディオ
 
@@ -27,7 +27,7 @@ this.audio.sound.stop(); // 現在再生している音声を停止
 this.audio.sound.play("gameover") // 'gameover' スロットを再生
 ```
 
-#### Ball tap
+#### ボールをタップ
 
 ボールタップ音はボールエンティティに直接添付されています。短い、単発の音声です。タップがボールに当たるたびに再生されます。
 
