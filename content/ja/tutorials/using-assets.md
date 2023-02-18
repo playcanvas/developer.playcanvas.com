@@ -15,7 +15,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
-## Setup
+## 設定
 
 *プロジェクトは次のように設定されます*
 
@@ -32,7 +32,7 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 このケースでは3つのスクリプトを、 `a`、`b`、`c`として定義してEditorでアセットに割り当てます。その後、スクリプトで自動的に使用可能になります。
 
-## Using preloaded assets
+## プレロードされたアセットを使用
 
 ```javascript
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
@@ -58,7 +58,7 @@ The **A** and **B** assets are marked as **preload** in this project. This means
 
 So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
-## Loading assets at runtime
+## 実行時にアセットを読み込む
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
@@ -91,7 +91,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
 
-## The complete script
+## 完全なスクリプト
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');
@@ -149,7 +149,7 @@ UpdateAsset.prototype.update = function(dt) {
 };
 ```
 
-## AssetRegistry events
+## アセットレジストリのイベント
 
 この例では示していないのは、アセットが読み込まれたことを知る方法です。これを行うには、"load"イベントのような`pc.AssetRegistry`イベントを使用します。サンプルコードです：
 
@@ -190,7 +190,6 @@ if (!asset.loaded) {
 ```
 
 このコードは必要とされるアセットを読み込みますが、少し長いので代わりに`asset.ready()`メソッドを使用することができます。このコードは、上記と同じ機能を実行します。
-
 
 ```javascript
 var asset = this.app.assets.find("A");

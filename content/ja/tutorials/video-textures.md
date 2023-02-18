@@ -13,10 +13,10 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 スクリプトは次の機能を行います：
 
-* Create new Texture
-* Create an HTML Video element and play the video
-* Apply the new texture to the material on the TV model
-* Update the texture with video data every frame
+* 新しいテクスチャーを作成
+* HTML動画要素を作成して動画を再生
+* TVモデルの素材に新しいテクスチャーを適用
+* 毎フレームにて動画データでテクスチャーを更新
 
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');
@@ -105,7 +105,6 @@ VideoTexture.prototype.update = function(dt) {
     // Transfer the latest video frame to the video texture
     this.videoTexture.upload();
 };
-
 ```
 
 [1]: https://playcanvas.com/project/405850
