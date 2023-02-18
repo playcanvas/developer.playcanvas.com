@@ -4,21 +4,21 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-## Creating New Assets
+## 新しいアセットの作成
 
 PlayCanvasにアセットをアップロードするには、次の手順に従います：
 
-### In the Editor
+### Editor内
 
-* Drag and drop your asset file into the Asset panel in the Editor window.
-* A progress bar will appear along the bottom.
-* When the progress bar disappears, your new Asset will appear in the Asset panel.
+* Editor画面のAssetパネルにアセットファイルをドラッグ＆ドロップします。
+* 下部に表示されます。
+* 進行バーが消えるとAssetパネルに新しいアセットが表示されます。
 
 これで、アセットピッカーの属性コントロールからアセットを選択する際 (ModelコンポーネントやAnimationコンポーネントなどに)、アセットが割り当て可能になります。
 
 Note: There is a file size limit of 340MB.
 
-## Updating Existing Assets
+## 既存のアセットの更新
 
 アップロード済みのアセットを更新するには、既存のアップロードと同じファイル名を使用して、再度アセットをアップロードします。 PlayCanvasが既存のアセットを新しくアップロードしたアセットで更新します。
 

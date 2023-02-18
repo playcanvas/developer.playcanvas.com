@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 18
 ---
 
-## Where can I get 3D models/Sound FX/Music for PlayCanvas?
+## PlayCanvas用の3D モデル/Sound FX/Musicはどこで取得できますか？
 
 自身のアセットを作成するのも良いですが、作成に時間や費用がかかりすぎてしまう場合もあります。様々な種類の無料または有料のアセットを取得することができる場所のリンクを集めました。
 
 このページに関するご提案は[フォーラム][1]からご連絡ください。
 
-## Asset Marketplaces
+## アセットマーケットプレイス
 
 アセットマーケットプレイスとはダウンロードしてPlayCanvasゲームに追加できる、無料または有料コンテンツのオンラインライブラリです。
 
@@ -28,7 +28,7 @@ position: 18
 | [Sound Bible](https://soundbible.com/)                                   |          |          | &#x2713; |
 | [Turbosquid](https://www.turbosquid.com/)                                | &#x2713; | &#x2713; | &#x2713; |
 
-## Procedural Generation Tools
+## プロシージャル生成ツール
 
 ゲームアセットをプロシージャルに生成できるツールがあります。いくつかの例を紹介します：
 

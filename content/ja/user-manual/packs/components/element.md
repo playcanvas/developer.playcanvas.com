@@ -59,7 +59,7 @@ The text element renders a string of text using a [font asset][4].
 | Font Size   | The size in Screen component pixels to render the font at. |
 | Line Height | The size in Screen component pixels to move down for a new line. |
 | Spacing     | A multiplier to apply to the amount advanced between each character. |
-| Font        | The font asset. |
+| フォント        | The font asset. |
 | 色       | The color to tint the font. |
 | Opacity     | The transparency of the element. |
 | Wrap Lines  | Enable text wrapping. Any text that overflows the width of the text element will be wrapped to the next line. |

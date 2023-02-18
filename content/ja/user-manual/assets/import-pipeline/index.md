@@ -22,8 +22,8 @@ position: 2
 
 新しいバージョンのファイルでソースアセットを更新する際、インポートパイプラインにより作成されるターゲットアセットを更新する方法が二つあります。
 
-* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
-* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
+* **Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
+* **Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
 
 つまり、これを有効する場合、ソースとターゲットのアセットをフォルダで整理し、ソースアセットを更新すると、すべての関連アセットが更新されるように設定できます。
 
@@ -35,7 +35,7 @@ Newly created assets will automatically be set to [preload][2] or not depending 
 
 これらのオプションは、画像やテクスチャのインポートにのみ影響を与えます。
 
-### Texture POT (Power of Two)
+### テクスチャ POT (Power of Two)
 
 このオプションを有効にすると、2の乗数でないテクスチャはインポート時に最も近い2の乗数の解像度に変換されます。
 
@@ -51,19 +51,19 @@ Images that are uploaded will be imported as a texture atlas instead of a normal
 
 When a model file is updated or reimported, the Editor will try to preserve the material mappings that were set on it.
 
-### Overwrite Models
+### モデルの上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、ターゲットモデルのファイルが上書きされるか否かを定義します。デフォルトでは、新しいモデルで上書きします。
 
-### Overwrite Animations
+### アニメーションの上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたアニメーションが上書きされるか否かを定義します。デフォルトでは、新しいアニメーションで上書きします。
 
-### Overwrite Materials
+### 素材の上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成された素材が上書きされるか否かを定義します。デフォルトでは、既存の素材を維持します。
 
-### Overwrite Textures
+### テクスチャの上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたテクスチャが上書きされるか否かを定義します。デフォルトでは、新しいテクスチャで上書きします。
 
