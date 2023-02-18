@@ -109,7 +109,6 @@ reset: function () {
 
 We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
 
-
 ## Full code listing
 
 ```javascript
