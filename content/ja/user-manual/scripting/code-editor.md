@@ -14,7 +14,7 @@ Ctrl + Iを押して[PlayCanvasエディタ][2]の中からコードエディタ
 
 あるいは、スクリプトのようなテキストベースのアセットをダブルクリックして、そのアセットに焦点を当てたコードエディタを開くこともできます。
 
-## Interface
+## インターフェイス
 
 ![コードエディタ][3]
 
@@ -83,7 +83,7 @@ The editor supports various shortcuts to help you when editing code. You can fin
 | Jump to declaration             | Ctrl + F12               | Cmd + F12                  |
 | Show autocomplete               | Ctrl + Space or Ctrl + I | Ctrl + Space or Cmd + I    |
 
-## Searching
+## 検索
 
 You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac). This will open up the Find panel on the top right:
 

@@ -8,7 +8,7 @@ position: 5
 
 ![アセットパネル][1]
 
-## Folder Hierarchy
+## フォルダ階層
 
 フォルダパネルから、フォルダのツリーにアセットを整理することができます。
 
@@ -20,7 +20,7 @@ position: 5
 
 フォルダの構成を整理するにはフォルダを互いの中にドラッグすることができます。
 
-## Creating and Uploading Assets
+## アセットの作成とアップロード
 
 コンピューターのファイルシステムからアセットパネルにファイルをドラッグして新しいアセットを作成することができます。Editorがアセットをアップロード及びインポートします。
 
@@ -28,11 +28,11 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 アセットを選択してDelete Assetアイコンをクリックすると、削除できます。
 
-## Editing Assets
+## アセットの編集
 
 次の特定のテキストベースのアセットはPlayCanvas Script Editorで開いて編集することができます：text, json, shader, html, css, script asset。これを行うには、アセットのサムネイルをダブルクリックします。
 
-## Inspecting Assets
+## アセットの調査
 
 任意のアセットの詳細を確認するには、アセットパネルのサムネイルを選択します。アセットの詳細がInspectorに表示されます。
 
@@ -40,7 +40,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 フィルタドロップダウンから表示させるアセットの種類を選択して表示されているアセットをフィルタします。
 
-## Searching
+## 検索
 
 検索ボックスを使用して、プロジェクト内のアセットのグローバル検索を実行することができます。ボックスに入力し始めると、Editorは一致する結果を動的にアセットパネルで表示します。
 
@@ -56,7 +56,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 `[ [ level-1, monster ] ]` - `level-1 AND monster`によってタグ付けされたすべてのアセットを返します。 角括弧の数に注意してください。
 `[ [ level-1, monster ], [ level-2, monster ] ]` -  `(level-1 AND monster) OR (level-2 AND monster)`によってタグ付けされたすべてのアセットを返します。
 
-## Drag and Drop
+## ドラッグ＆ドロップ
 
 アセットは、メインパネルからフォルダ階層内のフォルダにドラッグして別のフォルダに移動することができます。アセットは複数選択に対応しています。CTRL+ Aで、現在選択されているフォルダ内のすべてのアセットを選択します。
 
@@ -64,9 +64,9 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 モデル、素材、キューブマップなどのアセットを直接 [ビューポート][3]にドラッグすることもできます。
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+* ビューポートにモデルアセットをドラッグすると、モデルアセットが割り当てられたモデルコンポーネントを有する新しいエンティティが作成されます。ビューポートのカメラは自動的に新しく作成されたエンティティにズームします。
+* ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
+* ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
 
 ## Copy and Paste between Projects
 
@@ -100,7 +100,7 @@ We generally recommend that if you will be using this feature for reusable libra
 Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
 </div>
 
-## Checking References
+## 参照の確認
 
 特定のシーン内でアセットが使用されている(または参照されている)場所を知ることが有用な場合もあります。Editorがアセットの参照を検出できない場合、サムネイルに小さい点が表示されます：
 

@@ -8,11 +8,12 @@ position: 3
 
 インスペクターパネルは現在選択されているアイテムの属性値を表示します。
 
-Depending on what you have selected, you will see different inspector panels. Some available selections are:
-* **Entity/Component Inspector**
-* **Texture Inspector**
-* **Material Inspector**
-* **Cubemap Inspector**
+選択したものによって異なるインスペクターパネルが表示されます。いくつかのインスペクターを紹介します：
+
+* **エンティティ／コンポーネント インスペクター**
+* **テクスチャー インスペクター**
+* **素材 インスペクター**
+* **キューブマップ インスペクター**
 
 これらの値を修正して[エンティティ][1]の挙動を指定します。例えば、モデルコンポーネントでレンダリングするモデルやライトの色を設定できます。
 
