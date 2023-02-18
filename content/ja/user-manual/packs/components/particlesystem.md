@@ -42,7 +42,7 @@ Particle Systemコンポーネントはコンポーネントパネルの右上�
 | Velocity        | A curve defining how each particle's velocity with respect to the world coordinate system changes over time. If two curves are specified in the curve editor, velocity will be a random lerp between both curves. |
 | Rotation Speed  | A curve defining how each particle's angular velocity changes over time. If two curves are specified in the curve editor, the angular velocity will be a random lerp between both curves. |
 | Scale           | A curve defining how each particle's scale changes over time. By default, a particle is 1 unit in width and height. If two curves are specified in the curve editor, the scale will be a random lerp between both curves. |
-| Color           | A curve defining how each particle's color changes over time. |
+| 色           | A curve defining how each particle's color changes over time. |
 | Lifetime        | A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves. |
 
 ## Scripting Interface

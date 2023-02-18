@@ -47,7 +47,7 @@ The text element renders a string of text using a [font asset][4].
 | Rect     | Define the area of the texture asset to display. |
 | Mask     | Switch Image Element into a mask. Masks do not render into the scene, but instead limit child elements to only be rendered where this element is rendered. |
 | テクスチャ  | The texture asset displayed. |
-| Color    | The color to tint the element. |
+| 色    | The color to tint the element. |
 | Opacity  | The transparency of the element. |
 
 ## Text Component Properties
@@ -60,7 +60,7 @@ The text element renders a string of text using a [font asset][4].
 | Line Height | The size in Screen component pixels to move down for a new line. |
 | Spacing     | A multiplier to apply to the amount advanced between each character. |
 | Font        | The font asset. |
-| Color       | The color to tint the font. |
+| 色       | The color to tint the font. |
 | Opacity     | The transparency of the element. |
 | Wrap Lines  | Enable text wrapping. Any text that overflows the width of the text element will be wrapped to the next line. |
 

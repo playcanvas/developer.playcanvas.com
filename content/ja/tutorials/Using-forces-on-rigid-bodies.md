@@ -17,7 +17,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 ## 力のスクリプティング
 
-### 定の力を適用
+### 一定の力を適用
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_F) ) {
@@ -63,7 +63,7 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 リジッドボディタイプに関する商大は[コリジョン API ページ][6],  [pc namespace ページ][7], [fps-コントローラチュートリアル][8], [コリジョンチュートリアル][9]をご確認ください。
 
-## 般的な設定
+## 一般的な設定
 
 スポットライト、キューブ(モデル、リジッドボディ、衝突、スクリプトコンポーネントを持つエンティティ)、床(モデル、リジッドボディ、衝突コンポーネントを持つ)を含む基本的なシーンを設定しました。キューブのリジッドボディは動的に設定され、床のリジッドボディは静的に設定されています。各ボックスの素材を作成し、目に優しくするために拡散色を変更しました。また、SpotLightとDynamicBodyエンティティの'cast shadows'オプションを有効にしてました。完全な'usingForces'シーンと、このPlayCanvasのアプリのコードは[こちら][10]。
 

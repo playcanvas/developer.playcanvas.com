@@ -25,7 +25,7 @@ Physical Material（物理素材）はPlayCanvasで利用可能な最も先進�
 | Property   | 説明 |
 |------------|-------------|
 | Tint       | Check this to multiply the scene's global ambient color with a material specific color. |
-| Color      | The tint color to multiply the scene's global ambient color. |
+| 色      | The tint color to multiply the scene's global ambient color. |
 | AO Texture | An ambient occlusion map containing pre-baked ambient occlusion. |
 
 ### 拡散マップ
@@ -38,7 +38,7 @@ Physical Material（物理素材）はPlayCanvasで利用可能な最も先進�
 |------------|-------------|
 | テクスチャ    | The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead. |
 | Tint       | Check this to modulate the material's diffuse map with a material specific diffuse color. |
-| Color      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
+| 色      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
 
 ### スペキュラマップ
 
@@ -51,7 +51,7 @@ Physical Material（物理素材）はPlayCanvasで利用可能な最も先進�
 | Use Metalness | Toggle between specular and metalness workflow. |
 | Specular Map  | The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead. |
 | Tint          | Check this to modulate the material's specular map with a material specific specular color. |
-| Color         | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
+| 色         | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
 | Metalness Map | [Only when using metalness] This map specifies per-pixel metalness values. A value of 1 is metal and a value of 0 is non-metal. |
 | Gloss Map     | The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property. |
 | Glossiness    | A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny). |
@@ -66,7 +66,7 @@ Physical Material（物理素材）はPlayCanvasで利用可能な最も先進�
 |------------|-------------|
 | テクスチャ    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
 | Tint       | Check this to modulate the material's emissive map with a material specific emissive color. |
-| Color      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
+| 色      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
 | Intensity  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
 
 ### Opacity

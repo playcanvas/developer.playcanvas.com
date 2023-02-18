@@ -25,7 +25,7 @@ Lightコンポーネントはコンポーネントパネルの右上のトグル
 | Property           | 説明 |
 |--------------------|-------------|
 | Type               | Can be: <ul><li>Directional: a light casting in a uniform direction</li><li>Omni: a light casting in all directional around an omni</li><li>Spot: a light casting from the apex of a cone</li></ul> |
-| Color              | The color of the emitted light. |
+| 色              | The color of the emitted light. |
 | Intensity          | The intensity of the light, this acts as a scalar value for the light's color. This value can exceed 1. |
 | Range              | Omni and Spot only. The distance from the spotlight source at which its contribution falls to zero. |
 | Falloff Mode       | Omni and spot only. Controls the rate at which a light attenuates from its position. |

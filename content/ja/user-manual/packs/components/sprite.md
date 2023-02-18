@@ -21,7 +21,7 @@ position: 20
 | Type        | Simple or Animated. |
 | Sprite      | The Sprite Asset to display. |
 | Frame       | The frame index of the Sprite to display. |
-| Color       | A color to apply as a tint to the sprite. |
+| 色       | A color to apply as a tint to the sprite. |
 | Opacity     | The transparency of the sprite. |
 | Flip X      | Flip the rendered sprite horizontally. |
 | Flip Y      | Flip the rendered sprite vertically. |
@@ -41,7 +41,7 @@ position: 20
 |------------|-------------|
 | Type       | Simple or Animated. |
 | Frame      | The frame index of the Sprite to display. |
-| Color      | A color to apply as a tint to the sprite. |
+| 色      | A color to apply as a tint to the sprite. |
 | Opacity    | The transparency of the sprite. |
 | Flip X     | Flip the rendered sprite horizontally. |
 | Flip Y     | Flip the rendered sprite vertically. |
