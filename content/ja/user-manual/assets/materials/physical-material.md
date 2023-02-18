@@ -67,7 +67,7 @@ Physical Material（物理素材）はPlayCanvasで利用可能な最も先進�
 | テクスチャ    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
 | Tint       | Check this to modulate the material's emissive map with a material specific emissive color. |
 | 色      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
-| Intensity  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
+| 強度  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
 
 ### Opacity
 
@@ -78,7 +78,7 @@ Opacityは、透明度のレベルを設定します。
 | Property   | 説明 |
 |------------|-------------|
 | テクスチャ    | The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property. |
-| Intensity  | The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1. |
+| 強度  | The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1. |
 
 ### Normals
 

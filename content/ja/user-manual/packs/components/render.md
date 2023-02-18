@@ -10,7 +10,7 @@ The render component can be enabled or disabled using the toggle in the top righ
 
 ![Render component][1]
 
-## Properties
+## プロパティ
 
 | Property              | 説明 |
 |-----------------------|-------------|

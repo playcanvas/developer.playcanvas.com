@@ -10,11 +10,11 @@ PlayCanvasでは、素材とはこれらのプロパティを収集するアセ�
 
 古いPhong素材タイプにも対応しています。
 
-## Importing Materials
+## 素材のインポート
 
 3Dモデルファイルを(例えばFBXやCOLLADA)PlayCanvasにアップロードすると素材は自動的にインポートされます。素材は、3Dモデリングツール内のものと同様のプロパティを使用して生成されます。埋め込まれたメディア(FBXのみ)を使用してアップロードする場合、関連するすべてのテクスチャマップが自動的に設定されます。
 
-## Creating New Materials
+## 新規素材の作成
 
 PlayCanvas Editorインターフェイスから直接新しい素材を作成することができます。
 
@@ -22,7 +22,7 @@ PlayCanvas Editorインターフェイスから直接新しい素材を作成す
 
 これにより、新素材のアセットを作成し、画面の右側に素材インスペクタを開きます。
 
-## Selecting a Material
+## 素材の選択
 
 <img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;">
 
@@ -32,7 +32,7 @@ PlayCanvas Editorインターフェイスから直接新しい素材を作成す
 
 基本的に、素材のプレビューアイコンをクリックすると、素材インスペクタに移行します。
 
-## Assigning Materials
+## 素材の指定
 
 <img loading="lazy" src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
@@ -64,7 +64,7 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 <br style="clear:both;">
 
-## Editing a Material
+## 素材の編集
 
 <img loading="lazy" src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
@@ -72,7 +72,7 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 エディタは、'Shading Model'の素材タイプに対応しています。素材インスペクタの上部にあるドロップダウンで定義されます。
 
-### Physical
+### 物理的
 
 物理的なシェーディングモデルは、最も先進的なシェーディングモデルです。これはPlayCanvasのPhysically Based Renderer (PBR)のモデルです。
 
@@ -84,7 +84,7 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 [Phong素材プロパティ][2]
 
-## Material Maps
+## 素材マップ
 
 <img loading="lazy" src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
@@ -92,15 +92,15 @@ Asset Materialsをクリックすると、モデルのアセットが選択さ�
 
 素材のほとんどのテクスチャマップスロットで利用可能なオプションがいくつかあります。
 
-### Texture Asset
+### テクスチャーアセット
 
 一つ目はテクスチャアセットです。PlayCanvasに画像をアップロードすると、テクスチャアセットが作成されます。素材のスロットにこれを割り当てることができます。
 
-### Color or Tint Color
+### カラーまたはティントカラー
 
 いくつかのマップスロットをテクスチャマップではなく単色にすることができます。テクスチャーが指定されているスロットがティントカラーにも対応している場合もあります。有効にした場合、ティントカラーはテクスチャマップスロットの中の色で乗算されます。
 
-### Channel
+### チャンネル
 
 一部のマップは、単一のグレースケール値を必要とします。例：0.0 - >1.0。この場合、使用するテクスチャのチャンネルを選択することが可能です。** RGB**は、3つすべてのチャネルが使用されることを意味します。**R**, **G** または **B**は、赤、緑、青のチャンネルのみが使用されることを意味します。
 

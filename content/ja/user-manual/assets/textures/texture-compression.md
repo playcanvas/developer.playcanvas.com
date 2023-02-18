@@ -69,9 +69,9 @@ We strongly recommend using Basis compression where possible as it requires a si
 
 The Legacy Texture schemes are:
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
-* ETC: Typically supported by Android devices.
+* DXT: 通常、デスクトップデバイスに対応されています。
+* PVR: 通常、iOSデバイスに対応されています。
+* ETC: 通常、Androidデバイスに対応されています。
 
 To use the Legacy Texture Compression options, select the texture and scroll down in the inspector to find the Compression section.
 

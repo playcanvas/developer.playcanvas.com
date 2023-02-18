@@ -10,7 +10,7 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 
 ![LayoutChild コンポーネント][1]
 
-## Properties
+## プロパティ
 
 | Property              | 説明 |
 |-----------------------|-------------|

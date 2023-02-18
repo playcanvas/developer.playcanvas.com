@@ -6,13 +6,13 @@ position: 15
 
 テクスチャとは[素材][1]に割り当てて図形要素に適用される画像です。
 
-## Importing Textures
+## テクスチャのインポート
 
 PlayCanvasにテクスチャアセットをインポートする方法は3つあります:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
-3. Import an FBX file that embeds textures.
+1. アセットパネルに画像をドラッグ＆ドロップ。
+2. アセットパネルのコンテキストメニューからアップロードを選択してファイルブラウザを使用して画像を選択。
+3. テクスチャを埋め込むFBXファイルをインポート。
 
 次の画像形式に対応しています：
 
@@ -33,7 +33,7 @@ HDRやEXRは、[高ダイナミックレンジ形式][2]です。これらの形
 
 By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 
-## Texture Properties
+## テクスチャプロパティ
 
 アセットパネルでテクスチャのサムネイルを選択すると、インスペクタパネルにそれを読み込みします。テクスチャを複数選択し、インスペクタで同時に選択全体を編集できることができます。
 
@@ -41,7 +41,7 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 ![テクスチャプロパティ][3]
 
-### Texture Filtering
+### テクスチャのフィルタリング
 
 テクスチャフィルタリングは、テクスチャマッピングされたピクセルの色がどのように計算されるかを制御できます。「Point」はフィルタリングを適用しません。「Linear」は、隣接しているものでテクセルの色を補間します。テクスチャが最小化され、より良い視覚的な結果が得られます(テクスチャが画面上でテクセルよりも少数のピクセルを有する)。
 
@@ -53,7 +53,7 @@ By default, imported images will be resized to the nearest power of two. For exa
 
 異方性が上がると、GPU上でテクスチャをサンプリングする際の負荷も増大します。
 
-### Texture Addressing
+### テクスチャの指定
 
 テクスチャ指定プロパティを使用すると、0から1の範囲外のテクスチャ座標に対してテクスチャがどのようにサンプリングされるかをコントロールできるようになります。各モードが、スプライトにどのように影響するかを参照してください：
 

@@ -1,5 +1,5 @@
 ---
-title: Texture Atlas
+title: テクスチャ アトラス
 layout: usermanual-page.hbs
 position: 16
 ---
@@ -12,7 +12,7 @@ position: 16
 
 2Dグラフィックをレンダリングするには、テクスチャアトラスと [スプライトアセット][4]を組み合わせて使用します。
 
-## Properties
+## プロパティ
 
 ### フレーム
 
@@ -26,7 +26,7 @@ position: 16
 }
 ```
 
-### Texture Properties
+### テクスチャプロパティ
 
 フレームデータに加え、テクスチャアトラスには[テクスチャアセット][2]としてのプロパティが含まれます。
 
