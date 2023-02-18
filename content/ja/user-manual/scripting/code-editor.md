@@ -62,7 +62,7 @@ All the text editing features can be found using the command palette via Ctrl + 
 
 ![][command-palette]
 
-## Hot Keys
+## ホットキー
 
 The editor supports various shortcuts to help you when editing code. You can find all those options in the Menu or the command palette. The most common can be found below:
 

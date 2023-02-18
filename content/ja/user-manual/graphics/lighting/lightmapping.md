@@ -6,7 +6,7 @@ position: 3
 
 [![PlayCanvas Lightmapping][1]][13]
 
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+*このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
 
 上の画像の結果を得るためにこれらのテクニックを使用する[最終シーン][13]と[プロジェクト][14]へのリンクです：外部HDRライトマップ(このページで説明します)、[アンビエントオクルージョン][12]、HDR Cubemapは、[Image Based Lighting][11]技法を使用したBox Projectionで適用され、現実的な反射を実現します。
 
@@ -24,7 +24,7 @@ PlayCanvasでは、シーン内でライトマップを使用する２つの方�
 
 外部ツールを使用してライトマップを作成したら、通常のテクスチャアセットとしてアップロードをして標準のPhysical Materialのライトマップスロットを使用して素材に添加することができます。 
 
-## Tools
+## ツール
 
 このページでは、3ds MaxとVRayを使用してライトマップを生成しますが、他の同様のモデリングツールでも同じ機能を実現できます。
 
@@ -41,41 +41,41 @@ PlayCanvasでは、シーン内でライトマップを使用する２つの方�
 
 ![3D's Max > レンダー設定][3]
 
-## UV Mapping
+## UV マッピング
 
 ジオメトリにライトマップテクスチャを適用するには、最初にアンラップする必要があります。 ライトマップに適したUVを得るのに役立ついくつかのプラクティスがあります。
 
-### **Simple Geometry**
+### **シンプルなジオメトリ**
 
-A smaller area of geomtry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
+ジオメトリの面積は小さい方が良いです。三角形の面積を最小限に抑え、見えない三角形を削除してください。面積が大きくなると、ライトマップの詳細を減らし、より大きなテクスチャを必要とし、時には複数のアセットを必要とします。
 
 ![ライトマッピングのヒント：シンプルなジオメトリ][4]
 
-### **Consistent Texel Size**
+### **一貫したテクセルサイズ**
 
-Keep texels in UV unstretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close or in the far distance as required by artistic and optimization decisions.
+同じジオメトリ内の他のテクセルと比較して、UVのテクセルを伸ばさずに一定に保ちます。これは、ライトマップテクスチャのディテールレベルがシーン内で一貫していることを保証するためです。テクスチャサイズのバリエーションは、ビジュアルおよび最適化の判断に応じてジオメトリを近づけたり、遠く離した場合に適用することができます。
 
 ![ライトマッピングのヒント：一貫したUVのテクセルサイズ][5]
 
-### **Non-overlapping UV**
+### **重ならないUV **
 
-Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store its own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
+UVの三角形は重なり合わないようにして、各ピクセルがジオメトリ上の3D空間内で独特の位置を持ち、独自の照明情報を適切に格納するべきです。ライトマップのUV空間はクランプされます。つまり、UVは0.0〜1.0の間に含まれ、外側には出ません。
 
 ![ライトマッピングのヒント：重ならないUV][6]
 
-## Other Tips
+## その他のヒント
 
 ライトマップの良い結果を得るには、レンダリング時にレンダリングがカメラの視点ではなく、光の伝播に関連するデータのみに基づいていることを確認してください。
 
-1. **Disable normal maps** on materials - micro surface details are too tiny to be relevant in lightmap textures.
-2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and complications for renderers, leading to visual artifacts. Generally lightmaps should contain only diffuse lighting and reflectivity should be implemented using some runtime technique.
-4. **Very dark materials won't produce good results** as they do not reflect light much and so will not assist Global Illumination.
-5. In the Render To Texture window (see below) set **Padding** to larger value.
-6. **Light can leak** from behind the geometry, add blocking geometry to prevent light.
+1. 素材の**ノーマルマップを無効にする** - マイクロサーフェスのディテールは、ライトマップのテクスチャに関連するには小さすぎます。
+2. 素材の** Reflectionを0 **に、**Gloss Mapsを無効**に設定する - 反射はレンダリングの問題に繋がり、視覚的なアーティファクトが発生する可能性があります。一般的に、ライトマップは拡散照明のみを含む必要があり、反射率はランタイム技術を使用して実装する必要があります。
+4. 非常に暗い材料は光をあまり反射せず、グローバルイルミネーションのプラスにならず、**良い結果を生みません**。
+5. Render To Textureウィンドウ(下記参照)で、**Padding**をより大きな値に設定します。
+6. **ライトはジオメトリの後ろからリークすることがある**ので、それを防ぐためにブロッキングジオメトリを追加します。
 
 ![ライトマッピング 光のリーク][8]
 
-## Render To Texture
+## テクスチャにレンダリング
 
 モデリングツールから照明データを取得するには、ライトデータをテクスチャにレンダリングします。 解像度とフォーマットを指定することができます。
 
@@ -83,7 +83,7 @@ Triangles in UV should not overlap to ensure each pixel has a unique position in
 
 ![テクスチャにレンダリング：PlayCanvasライトマッピング][7]
 
-## Noise
+## ノイズ
 
 状況によってはレンダリングの品質と時間に応じて、出力の照明データが完全ではなく、ノイズに悩まされる可能性があります。これは、テクスチャの端をぼかすことなく面の部分を滑らかにするよう、ぼかしを画像に適用することで簡単に解決できます。Photoshopでは、これはSurface Blurフィルタを使用して行います。
 
@@ -95,7 +95,7 @@ Triangles in UV should not overlap to ensure each pixel has a unique position in
 
 ![PlayCanvasエディタ：素材ライトマップのテクスチャスロット][10]
 
-## Final remarks
+## 最後に
 
 ガンマ補正、トーンマッピング、露出 は、シーンに必要な特徴と色を加えることのできる良い設定です。
 
