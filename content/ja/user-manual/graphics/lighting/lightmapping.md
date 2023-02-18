@@ -5,7 +5,8 @@ position: 3
 ---
 
 [![PlayCanvas Lightmapping][1]][13]
-*このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
+
+*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
 上の画像の結果を得るためにこれらのテクニックを使用する[最終シーン][13]と[プロジェクト][14]へのリンクです：外部HDRライトマップ(このページで説明します)、[アンビエントオクルージョン][12]、HDR Cubemapは、[Image Based Lighting][11]技法を使用したBox Projectionで適用され、現実的な反射を実現します。
 
@@ -17,7 +18,7 @@ PlayCanvasでは、シーン内でライトマップを使用する２つの方�
 
 このページでは、外部ツールからライトマップをレンダリングする際の詳細とベストプラクティスについて説明します。
 
-## External Lightmap Generation
+## 外部ライトマップ生成
 
 多くの3Dコンテンツツールには、ライトマップテクスチャを生成するための方法があります。たとえば、3DS Max、Maya、Blender、また、他のツールにはすべて、テクスチャにライトマップをベイクする方法があります。ライトマップ生成にオフラインツールを使用する利点は、グローバルイルミネーション、バウンスライティング、ソフトシャドウ、アンビエントオクルージョンなどの洗練された照明の計算ができるということです。主要な欠点は、3Dツール内でシーンを完全に描写する必要があるということです。PlayCanvasシーンがエディタ内に沢山のインスタンスを配置している場合、ライトマップツールの中にこれを再作成する必要があります。 
 
@@ -45,16 +46,19 @@ PlayCanvasでは、シーン内でライトマップを使用する２つの方�
 ジオメトリにライトマップテクスチャを適用するには、最初にアンラップする必要があります。 ライトマップに適したUVを得るのに役立ついくつかのプラクティスがあります。
 
 ### **Simple Geometry**
+
 A smaller area of geomtry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
 
 ![ライトマッピングのヒント：シンプルなジオメトリ][4]
 
 ### **Consistent Texel Size**
+
 Keep texels in UV unstretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close or in the far distance as required by artistic and optimization decisions.
 
 ![ライトマッピングのヒント：一貫したUVのテクセルサイズ][5]
 
 ### **Non-overlapping UV**
+
 Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store its own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
 
 ![ライトマッピングのヒント：重ならないUV][6]
@@ -85,7 +89,7 @@ Triangles in UV should not overlap to ensure each pixel has a unique position in
 
 ![ライトマッピング：Photoshop >表面のぼかし][9]
 
-## Upload to Editor
+## エディタにアップロード
 
 これで２つ目のUVチャンネル(UV1)とHDRライトマップテクスチャを使用したジオメトリができたので、それらをPlayCanvasシーンにアップロードして素材を設定します。これは、ファイルをドラッグアンドドロップするか、アセットパネルのアップロードボタンを使用して行います。ジオメトリをアップロードすると、自動的に素材が生成されます。ライトマップがレンダリングされる各素材に、ライトマップテクスチャを設定する必要があります。必要なすべての素材を選択し、ドラッグアンドドロップをするか、Lightmapスロットのライトマップテクスチャを選択します。
 

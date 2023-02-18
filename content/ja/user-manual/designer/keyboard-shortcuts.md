@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 11
 ---
 
-## Camera Controls
+## カメラコントロール
 
 エディタのカメラはマウスとキーボードでコントロールされます
 
@@ -34,7 +34,7 @@ position: 11
     </tbody>
 </table>
 
-## General Mouse Controls
+## 一般的なマウスコントロール
 
 <table class="head-column">
     <tbody>
@@ -60,7 +60,7 @@ position: 11
     </tbody>
 </table>
 
-## Hot Keys
+## ホットキー
 
 MacではCTRLの代わりにCMDを使用してください。
 
