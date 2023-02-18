@@ -89,7 +89,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 ![Horizontal Setup][5]
 
-### Grid
+### グリッド
 
 ![Grid][6]
 

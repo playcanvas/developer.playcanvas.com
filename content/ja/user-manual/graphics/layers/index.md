@@ -52,7 +52,7 @@ PlayCanvasアプリケーションは、一連のデフォルトレイヤーに�
 ![Default Layers][1]
 
 1. **World (Opaque)** - 透明でないコンポーネントのレンダリングに使用されます。多くの場合、不透明コンポーネントメッシュが該当します。
-1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][7].
+1. **Depth (Opaque)** - 深度レイヤーは、上級ユーザーのみが使用してください。
 1. **Skybox (Opaque)** - スカイボックスのレンダリングに使用します。オーバードローを減少させるため、スカイボックスはWorld (Opaque) の後にレンダリングされます。
 1. **World (Transparent)** - 透明なコンポーネントや、その他の透明なコンポーネントメッシュのレンダリングに使用します。
 1. **Immediate (Opaque)** - 即時モードメッシュのレンダリングに使用します（例： `app.renderLine()`）。

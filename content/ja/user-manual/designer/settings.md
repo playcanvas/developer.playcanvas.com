@@ -12,7 +12,7 @@ position: 7
 
 これらは、Editorのユーザによる設定です。
 
-#### Grid
+#### グリッド
 
 Editorシーンで表示されるグリッドの各部分の分割数とサイズを設定することができます。
 
@@ -20,19 +20,19 @@ Editorシーンで表示されるグリッドの各部分の分割数とサイ�
 
 これはスナップが有効になっている場合に使用されるスナップ増分です。
 
-#### Camera Clip
+#### カメラクリップ
 
 ここから、Editorのカメラの近クリップ面と遠クリップ面を設定することができます。
 
-#### Clear Color
+#### Clear Color（クリアカラー）
 
 これがEditorカメラのクリアカラーです。
 
-#### Icon Size
+#### アイコンサイズ
 
 これは、3Dビューポート内のさまざまなコンポーネント上に表示されるアイコンのサイズです。アイコンを表示したくない場合は0に設定します。
 
-#### Local Server
+#### ローカルサーバ
 
 これは、Launch Localでアプリケーションを起動した場合、すべてのスクリプトが読み込まれるURLです。
 
@@ -41,23 +41,23 @@ Editorシーンで表示されるグリッドの各部分の分割数とサイ�
 The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
 have enabled Localization for Text Elements and when you use Localized Assets.
 
-## Physics Settings
+## 物理の設定
 
 物理設定は、シーン内のすべてのリジッドボディのシミュレーションに影響を与えます。
 
-#### Enable
+#### 有効
 
 これを有効にすると、アプリケーションに3D物理学ライブラリが含まれます。
 
-#### Gravity
+#### 重力
 
 重力は、シーン内のすべてのリジッドボディに対してフレームごとに適用される加速度です。デフォルトでは毎秒あたり-9.8メートルに設定されています。これは地球の重力を近似します。宇宙を設定にしたゲームを作っている場合は0, 0, 0 (重力ゼロ)に設定すると良いかも知れません。
 
-## Rendering
+## レンダリング
 
 レンダリング設定は、グラフィックに関連する様々なプロパティに影響を与えます。
 
-#### Ambient Color
+#### アンビエントカラー
 
 シーンのライトソースの色。 PlayCanvasでは指向性ライト、ポイントライト、スポットライトを作成することができます。これらのライトが、オブジェクトに直接当たる光になります。現実世界では、光は環境内で反射をします。このような光を、間接光と呼びます。グローバルのアンビエントライトは、この粗近似値であり、すべての方向から照らすように見える光源を設定することができます。このグローバルのアンビエント色は、Phong素材のAmbientプロパティで乗算され、オブジェクトの最終的な色に追加されます。
 
@@ -71,7 +71,7 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 補足：プレフィルタされたキューブマップを使用している場合、すべての物理的な素材のデフォルトの環境マップとしてスカイボックスが使用されます。
 
-#### Skybox Intensity
+#### Skyboxの強度
 
 これは、スカイボックスの強さや明るさを制御するスライダーです。値の範囲は0から(完全に黒)32(最も明るい)です。
 
@@ -79,22 +79,22 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 プレフィルタリングされたスカイボックスを使用している場合、表示したいスカイボックスのmipを選択することができます。各MIPは、元のスカイボックスのよりぼやけたものです。アーティスティックな理由等で、元のスカイボックスのぼやけた/抽象的なバージョンを表示させたい場合に使用します。
 
-#### Tonemapping
+#### トーンマッピング
 
 トーンマッピングは、ハイダイナミックレンジ(HDR)の色を低ダイナミックレンジ(例：目に見えるモニタ出力値に)に圧縮する方法です。トーンマッピングには2つのオプションがあります。
 
-* **Linear:** imply scales HDR colors by exposure.
-* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+* **Linear：** HDRの色を暴露によってスケーリング。
+* **Filmic：** より複雑な曲線。過度に明るいスポットを軟化させながら、暗い色合いを保つことができる。
 
 リニアトーンマッピングはデフォルトで有効になっていますが、それは単に(色*露出)です。明るさへの迅速な変更を行うために露出を調整することができます。入力はHDRの場合がありますので、Photoshopでの単純な明るさ調整とは異なります。 例：強度= 8のライトソースを使用している場合、暴露=0.5の後はまだかなり明るい(4)です。すべての目に見えるものは直線的にフェードアウトするだけではありません。
 
 Filmicトーンマッピングは、インテリア内の明るい光が壁/天井の近くに設置されたシーンや、明るい太陽に照らされたシーンなどのように、ハイコントラストな環境で使用するのに適しています。範囲外の非常に明るい値をより知覚的に現実的なもの(私たちの目やフィルムも同様にトーンマッピングを行っています。物理的にリニアな値は見えません)に再マップします。写真家の方に聞いたら分かりますが、非常に明るいスポットや真っ黒い点を写真に残すことは避けるべきです。Filmicトーンマッピングによって、そのようなスポットを取り除くことができます。
 
-#### Exposure
+#### 露出
 
 露出値はシーン全体の明るさを微調整します。
 
-#### Gamma Correction
+#### ガンマの調整
 
 コンピュータの画面は物理的にリニアではないが、知覚的にリニア(sRGB)な信号を出力するように設定されています。しかし、ライティングの計算を実行するとき、正しく表示させるためにはカラーテクスチャを物理的にリニアな空間に変換して、完全に照らされた画像をsRGBのに再びフィットする必要があります。ガンマ補正を有効にしてレンダリングをすると、彩度を上げすぎた醜いハイライトを減らし、ライティング後に色をより良く保持するので、基本的には有効にすることをお勧めします。次の図では、球体が置かれたシンプルなシーンを示しています。左のシーンではガンマが修正されています。右のシーンは未修正です。
 
@@ -102,30 +102,30 @@ Filmicトーンマッピングは、インテリア内の明るい光が壁/天�
 
 ガンマ調整の詳細については [こちらのGPU Gems チャプター][5]をご確認ください。
 
-#### Fog
+#### Fog（霧）
 
 フォグタイプのプロパティは、シーンを取り巻く霧の近似値を制御するために使用します。霧を有効にする際の例：
 
 利用可能なタイプ：
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
-* Exp2 - Fog fades in from the view position according to an exponential squared function
+* None - 霧が無効になっています
+* Linear - 霧はFog StartとFog End距離の間で直線的にフェードインします
+* Exp - 霧は指数関数に応じて視点位置からフェードインします
+* Exp2 - 霧は指数乗の関数に応じて視点位置からフェードインします
 
-#### Color
+#### 色
 
 フォグ（霧）の色。霧がフェードインするにつれ、表面の色とブレンドされます。
 
-#### Start Distance
+#### 開始距離
 
 霧がフェードインし始める位置のビューポイントからの、シーン単位での距離。
 
-#### End Distance
+#### 終了距離
 
 霧が最大になる位置の視点からの、シーン単位での距離。この距離を越えたオブジェクトは、フォグの色でレンダリングされます。
 
-#### Fog Density
+#### フォグ（霧）の濃度
 
 Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、霧がフェードインする速度を制御します。値が大きいほど霧がより迅速にフェードインされます。霧の濃度は正の数でなければなりません。
 
@@ -133,26 +133,26 @@ Fog density（霧濃度）は、ExpとExp2のフォグタイプにおいて、�
 
 アプリケーションの幅と高さを制御します。また、次のいずれかの値に解像度モードを設定することができます:
 
-* Auto - The resolution will always be the same as the canvas size
-* Fixed - The resolution will always be width x height pixels.
+* Auto - 解像度は必ずキャンバスと同じサイズになります。
+* Fixed - 解像度は必ず幅 x 高さピクセルになります。
 
-#### Fill Mode
+#### フィルモード
 
 Fill（塗りつぶし）モードは、キャンバスのサイズ変更挙動を制御します。次のいずれかの値を設定することができます：
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
-* Fill window - The canvas will stretch to fill the window completely.
+* None - キャンバスは、解像度の幅と高さのサイズになります。
+* Keep aspect Ratio - キャンバスは正しいアスペクト比率を維持しながら、画面の大きさに拡大します。
+* Fill window - キャンバスは画面の大きさまで完全に拡大されます。
 
-#### Device Pixel Ratio
+#### デバイスピクセルの比率
 
 有効にするとキャンバスの解像度はデバイスのピクセル比を含めて計算されます。
 
-#### Transparent Canvas
+#### 透明なキャンバス
 
 メインキャンバス要素上のアルファブレンディングを有効にします。
 
-#### Preserve Drawing Buffer
+#### 描画バッファを保持
 
 WebGLのコンテキストを作成する際にpreserveDrawingBufferオプションを使用します。
 
@@ -162,7 +162,7 @@ Manage rendering layers and their render order. You can find out more about laye
 
 ## オーディオ
 
-#### Use Legacy Audio
+#### レガシオーディオを使用
 
 レガシー・オーディオコンポーネントを有効にします。これは非推奨となったので、古いプロジェクトとの互換性が必要な場合のみ使用してください。
 
@@ -170,11 +170,11 @@ Manage rendering layers and their render order. You can find out more about laye
 
 ![Lightmapping Settings][12]
 
-#### Size Multiplier
+#### サイズ乗数
 
 すべてのライトマップのサイズに適用されるシーン全体の乗算。
 
-#### Max Resolution
+#### 最高解像度
 
 生成されたライトマップテクスチャで利用可能な最大テクスチャサイズ。
 
@@ -220,7 +220,7 @@ The contrast of the baked ambient occlusion.
 
 Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
 
-## Loading Screen (Available for ORG users only)
+## ロード画面（ORGのユーザーのみ利用可能）
 
 ここでは、アプリケーションの読み込み画面を作成するスクリプトを設定することができます。新しい読み込み画面のスクリプトを作成するには、*Create Default*をクリックします。カスタムの読み込み画面の詳細は[こちら][6]。
 
@@ -240,13 +240,13 @@ You can click CREATE NEW ASSET to create a new localization asset. You can then 
 
 Read more about localization [here][11].
 
-## Asset Tasks
+## アセットのタスク
 
 #### Auto-run
 
 アセットをアップロードする際に自動的にアセットパイプラインを実行します。
 
-#### Textures POT (power-of-two)
+#### テクスチャ POT (power-of-two)
 
 テクスチャをインポートする際、次の2の累乗にリサイズします。
 
@@ -254,23 +254,23 @@ Read more about localization [here][11].
 
 When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
 
-#### Search related assets
+#### 関連アセットを検索
 
 アセットが新しいバージョンで更新された場合、アセットのフォルダ以外で、元のアセットから作成された関連アセット(素材やテクスチャなど)を検索します。それ以外の場合は、現在のフォルダで関連アセットを検索します。
 
-#### Overwrite Model
+#### モデルを上書き
 
 シーン(FBXなど)をインポートする際、この設定は、モデルファイルがシーンからインポートした新しいバージョンで上書きされるかどうかを決定します。
 
-#### Overwrite Animation
+#### アニメーションを上書き
 
 シーン(FBXなど)をインポートする際、この設定は、アプリケーションファイルがシーンからインポートした新しいバージョンで上書きされるかどうかを決定します。
 
-#### Overwrite Material
+#### 素材を上書き
 
 シーン(FBXなど)をインポートする際、この設定は、素材ファイルがシーンからインポートした新しいバージョンで上書きされるかどうかを決定します。
 
-#### Overwrite Texture
+#### テクスチャを上書き
 
 シーン(FBXなど)をインポートする際、この設定は、テクスチャファイルがシーンからインポートした新しいバージョンで上書きされるかどうかを決定します。
 

@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-## Menu
+## メニュー
 
 ![メニュー][1]
 
 メニューはPLAYCANVASアイコンをクリックして開きます。メニューには、シーンで行うことができる全てのコマンドのリストが含まれます。ボタンの位置が分からない場合や、hotkeyを忘れてしまった場合、メニュー内から必ずコマンドを確認することができます。
 
-## Toolbar
+## ツールバー
 
 <img loading="lazy" src="/images/user-manual/editor/menus-and-toolbar/toolbar.png" style="padding-right: 20px; float: left;" width="44">
 

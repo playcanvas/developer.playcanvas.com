@@ -16,7 +16,7 @@ The Preview Pane displays the currently selected graph or material and supports 
 | Preview custom model | Drag and drop a glTF/glb model on the preview pane. |
 | Preview custom environment | Drag and drop an equirectangle HDR image on the preview pane. |
 
-### Toolbar
+### ツールバー
 
 The toolbar offers control over the lighting environment and preview shape. The toolbar is shown below with the controls numbered and brief description of each.
 

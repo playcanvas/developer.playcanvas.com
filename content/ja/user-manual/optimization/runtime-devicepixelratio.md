@@ -1,5 +1,5 @@
 ---
-title: Device Pixel Ratio
+title: デバイスピクセルの比率
 layout: usermanual-page.hbs
 position: 6
 ---
