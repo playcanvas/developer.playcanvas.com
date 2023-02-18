@@ -9,7 +9,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 基本的に、エンティティはPlayCanvas Editorで作成され、ゲームを作成するためのコンポーネントやスクリプトを構築します。しかし、スクリプトからエンティティを作成する方が便利な場合もあります。このチュートリアルではその方法を説明します。
 
-## Creating an Entity
+## エンティティの作成
 
 ```javascript
 var entity = new pc.Entity(); // エンティティを作成
@@ -20,7 +20,7 @@ this.app.root.addChild(entity);
 
 まず、エンティティを作成する必要があります。これは簡単ですが、メインのエンティティ階層にエンティティを追加することが重要です。階層内のエンティティのみ、トランスフォーム、コンポーネントおよびスクリプトが更新されます。スクリプトに渡される`Application`オブジェクトからエンティティ階層のルートにアクセスすることができます。慣例により、これは通常`app`と名付けられ、階層ルートは`this.app.root`として提供されます。
 
-## Adding Components
+## コンポーネントの追加
 
 ```javascript
 // 新しいエンティティを作成
@@ -42,7 +42,7 @@ this.app.root.addChild(entity);
 
 各コンポーネントタイプにはデータオブジェクトでパスインできる異なるプロパティがあります。利用可能なプロパティの詳細は[コンポーネントドキュメント][1]からご確認ください。data引数を空にするとデフォルト値が使用されます。
 
-## Removing Components
+## コンポーネントの削除
 
 ```javascript
 var entity = new pc.Entity();
@@ -56,7 +56,7 @@ entity.removeComponent("camera");
 
 エンティティでremoveComponentメソッドを呼ぶことで、エンティティから個別にコンポーネントを削除することができます。
 
-## Deleting Entities
+## エンティティの削除
 
 ```javascript
 // 新しいエンティティを作成
@@ -79,7 +79,7 @@ entity.destroy();
 
 エンティティの使用が完了したら、エンティティのdestroyメソッドを呼ぶことができます。これで、全てのコンポーネントは削除され階層からエンティティが削除されます。同じように、全ての子エンティティも削除されます。
 
-## In Action
+## 作動中
 
 ```javascript
 var EntityCreator = pc.createScript('entityCreator');

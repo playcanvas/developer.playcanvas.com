@@ -14,7 +14,7 @@ LayoutGroupコンポーネントを使用すると、エンティティは子要
 
 | Property       | 説明 |
 |----------------|-------------|
-| Orientation    | Whether the layout should run horizontally or vertically. |
+| 方向付け    | Whether the layout should run horizontally or vertically. |
 | ReverseX       | Reverses the order of children along the x axis. |
 | ReverseY       | Reverses the order of children along the y axis. |
 | Alignment      | Specifies the horizontal and vertical alignment of child elements. Values range from 0 to 1 where [0, 0] is the bottom left and [1, 1] is the top right. |

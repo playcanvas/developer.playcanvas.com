@@ -14,17 +14,17 @@ In theatre it is common to create visual effects on stage by using shape masks t
 ![グリッド Cookie][2]
 **シンプルなグリッドクッキーは窓のような印象です**
 
-## Cookie Texture
+## Cookie テクスチャ
 
 クッキーテクスチャは、クッキーセクションでスポットライトコンポーネントに適用される普通のテクスチアセットです。クッキーが適用されると、使用するテクスチャのチャンネルを選択できます。例えば、単純なマスクをする場合、アルファチャンネルを使用することができます。または、ステンドグラスのような完全なカラー効果を希望する場合は完全なRGB値を使用することができます。
 
 ![ライト設定][3]
 
-## Cookie Cubemap
+## Cookie キューブマップ
 
 For an omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
 
-## Use Cases
+## ユースケース
 
 **形状ライト** - クッキーを使用して、ライトソースをマスキングすることができます。たとえば、シーンに窓や蛍光ストリップライトがある場合、スポットライトを使用して丸みを帯びたライトの形状を作成することができます。ライトの形をマスキングして形状をシミュレートすることができます。
 

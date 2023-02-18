@@ -75,7 +75,7 @@ Mouse.prototype.onMouseDown = function (event) {
 };
 ```
 
-### Accessing the mouse
+### マウスにアクセス
 
 マウスコントロールは`pc.Mouse`オブジェクトによって管理されます。  [フレームワーク][2]は、[アプリケーションapp][3]でこのインスタンスを提供します。これは次のように全てのスクリプトオブジェクトで利用可能です：
 
@@ -83,7 +83,7 @@ Mouse.prototype.onMouseDown = function (event) {
 this.app.mouse
 ```
 
-### Disabling the right-click menu
+### 右クリックメニューを無効化
 
 スクリプトオブジェクトのコンストラクタでは、右クリックメニューを無効にしているので、マウスの右ボタンをクリックしてもポップアップメニューは表示されません。
 
@@ -91,7 +91,7 @@ this.app.mouse
 this.app.mouse.disableContextMenu();
 ```
 
-### Binding to events
+### イベントにバインド
 
 `pc.Mouse`オブジェクトから、マウス操作に対応したさまざまなイベントを聞くことができます。チュートリアルでは、moveイベントに`onMouseMove`メソッドを、ボタンダウンイベントに`onMouseDown`をバインドします。
 
@@ -104,18 +104,18 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 `pc.Mouse`で利用可能なイベント：
 
-* `pc.EVENT_MOUSEUP` - fires when a mouse button is released
-* `pc.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
-* `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
-* `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
+* `pc.EVENT_MOUSEUP` - マウスボタンが開放されると発動
+* `pc.EVENT_MOUSEDOWN` - マウスボタンが押されると発動
+* `pc.EVENT_MOUSEMOVE` - マウスが動かされると発動
+* `pc.EVENT_MOUSEWHEEL` - マウスホイールが動かされると発動
 
 ブラウザでのマウス入力は通常、ページのDOMの要素の[DOM][4]のイベントをリッスンすることで実装されます。問題は、異なるブラウザはそれぞれ少しずつ異なるイベントを実装し、別の値を提供していることです。書くコードをシンプルにするために、PlayCanvasエンジンはイベントハンドラを直接DOM要素にバインドするのではなく、PlayCanvasマウスハンドラにバインドすることを可能にします。エンジンはイベント発生時に、すべてのブラウザで一貫性がある`pc.MouseEvent`オブジェクトを提供します。オリジナルのDOMイベントが必要な場合は`pc.MouseEvent`の`event`プロパティとして利用可能です。
 
-### Moving the mouse
+### マウスを動かす
 
 最初のイベントハンドラは`onMouseMove`です。これは、マウスが移動するたびに発動します。`EVENT_MOUSEMOVE`イベントの場合、` MouseEvent`オブジェクトには、現在のマウスの位置を`x`と`y`、最後のイベント以来の位置の変化を`dx`と`dy`で示します。チュートリアルでは、マウスの現在位置を使用して、カーソル位置にキューブを移動します。
 
-### Mouse buttons
+### マウスボタン
 
 二つ目のイベントハンドラは`onMouseDown`です。3つのマウスボタンのいずれかがクリックされると発動します。`EVENT_MOUSEDOWN`と` EVENT_MOUSEUP`イベントでは、`MouseEvent`オブジェクトに押下／開放されたボタンを含む` button`プロパティがあります。これは、次の値のいずれかになります：
 

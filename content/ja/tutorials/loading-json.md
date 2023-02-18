@@ -9,7 +9,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 [このプロジェクト][1] は、二種類のJSONデータのロードの仕方を説明します。一つ目はプロジェクトのアセットの中からロードする方法、もう一つはHTTPを使ってリモートのサーバからロードする方法です。
 
-## Loading JSON from an asset
+## アセットの中のJSONをロードする
 
 ```javascript
 Game.attributes.add('characterData', {
@@ -45,7 +45,7 @@ var names = this.parseCharacterData(characterData);
 
 一度JavaScriptオブジェクトを取得すれば、普通にデータにアクセスすることができます。例えば、プロパティを`parseCharacterData`を使ってループを使って走査するといったようなことです。
 
-## Loading JSON from a remote server
+## JSONデータをリモートサーバからロードする
 
 ```javascript
 Game.prototype.loadJsonFromRemote = function (url, callback) {

@@ -14,7 +14,7 @@ See the [User Interface][2] section for more details.
 
 | Property    | 説明 |
 |-------------|-------------|
-| Orientation | Controls whether the scrollbar moves horizontally or vertically. |
+| 方向付け | Controls whether the scrollbar moves horizontally or vertically. |
 | Value       | The current position value of the scrollbar, in the range 0 to 1. |
 | Handle      | The entity to be used as the scrollbar handle. This entity must have a Scrollbar component. |
 | Handle Size | The size of the handle relative to the size of the track, in the range 0 to 1. For a vertical scrollbar, a value of 1 means that the handle will take up the full height of the track. |

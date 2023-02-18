@@ -85,7 +85,7 @@ The sphere light source shape is ball shaped with a specified radius.
 
 ![Shapes][7]
 
-## Use Cases
+## ユースケース
 
 Below is a table of some common use cases each light source shape and light type:
 
