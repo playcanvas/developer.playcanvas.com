@@ -77,7 +77,7 @@ The rectangle light source shape is a flat 4 sided shape with a specified width 
 
 ### Disk
 
-The disk light source shape is a round and flat light shape with a specified radius. 
+The disk light source shape is a round and flat light shape with a specified radius.
 
 ### Sphere
 
