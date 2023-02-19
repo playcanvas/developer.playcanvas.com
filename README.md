@@ -45,3 +45,7 @@ To validate the generated HTML files in the `build` folder, run:
 To scan for broken hyperlinks, run:
 
     npm run test:links
+
+## Localization
+
+The Developer Site is translated via [Transifex](https://www.transifex.com/playcanvas/playcanvas-developer-site). When anything in `content/en` is updated, run `tx push`. Once translation acitivity on Transifex is complete, run `tx pull` and submit a PR with the updated language content. Intstructions on setting up the Transifex CLI tool `tx` can be found [here](https://developers.transifex.com/docs/cli#installation). Note that the first time you push with `tx`, you will need to enter the Transifex developer key (contact an Admin of the Transifex project to obtain this).
