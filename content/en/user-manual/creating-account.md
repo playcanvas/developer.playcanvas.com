@@ -24,12 +24,11 @@ When you create your account we will automatically create a new demo project for
 
 In order to log in to your Account click Log In on the front page. If you are already logged in you will be taken to your [profile][5] page automatically. If you have signed up using your email and password make sure you enter those fields in the login page. Otherwise if you have logged in with Google then click on Google instead.
 
-![login][7]
+![login][6]
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
 [4]: /user-manual/designer/
 [5]: /user-manual/profile/
-[6]: https://login.playcanvas.com/persona_deprecated
-[7]: /images/user-manual/creating-account/login.png
+[6]: /images/user-manual/creating-account/login.png

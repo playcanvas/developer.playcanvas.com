@@ -24,12 +24,11 @@ position: 3
 
 要登录您的帐户，请单击首页上的登录。 如果您已经登录，将自动转到您的[个人资料][5]页面。 如果您使用电子邮件和密码注册，请确保在登录页面中输入这些字段。 否则，如果您已使用Google登录，请点击Google。
 
-![登陆][7]
+![login][6]
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
 [4]: /user-manual/designer/
 [5]: /user-manual/profile/
-[6]: https://login.playcanvas.com/persona_deprecated
-[7]: /images/user-manual/creating-account/login.png
+[6]: /images/user-manual/creating-account/login.png
