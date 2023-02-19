@@ -21,7 +21,7 @@ var app = new pc.Application(canvas, {
 });
 ```
 
-## Input Events
+## イベント入力
 
 Elementコンポーネントで入力を有効にすると、次のイベントが発生します：
 
@@ -69,7 +69,7 @@ Elementコンポーネントで入力を有効にすると、次のイベント�
 
 コンポーネント上でタッチがキャンセルされたときに発生します。
 
-## Event Handling
+## イベント処理
 
 入力イベントを処理するには、Elementコンポーネントでリッスンします。
 
@@ -79,7 +79,7 @@ this.entity.element.on('click', function (event) {
 }, this);
 ```
 
-## Event bubbling
+## イベントバブリング
 
 Elementコンポーネントで入力イベントが発生すると、 `event.stopPropagation()`を呼び出さない限り、親要素にバブルアップします。 例えば：
 

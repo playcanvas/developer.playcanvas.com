@@ -33,7 +33,7 @@ Particle Systemコンポーネントはコンポーネントパネルの右上�
 | Stretch         | A value in world units that controls the amount by which particles are stretched based on their velocity. Particles are stretched from their center towards their previous position. |
 | Align To Motion | Orient particle in their direction of motion. |
 | Spawn Bounds    | The half extents of a local space bounding box within which particles are spawned at random positions. |
-| Wrap            | Enables wrap bounds. |
+| ラップ            | Enables wrap bounds. |
 | Wrap Bounds     | World space AABB volume centered on the owner entity's position. If a particle crosses the boundary of one side of the volume, it teleports to the opposite side. You can use this to make environmental effects like rain by moving a wrapped emitter's owner entity. |
 | Color Map       | The color map texture to apply to all particles in the system. If no texture asset is assigned, a default spot texture is used. |
 | Normal Map      | The normal map texture to apply to all particles in the system. Applying a normal map can make billboard particles appear more consistent with the scenes lighting. |

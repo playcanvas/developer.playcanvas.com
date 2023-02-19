@@ -8,35 +8,35 @@ position: 7
 
 レイアウトグループコンポーネントは、[グリッド][10]、[縦列][11]または [横列][12]の固定幅等、一般的なレイアウトの生成に使用できます。
 
-## Creating a Layout Group
+## レイアウトグループを作成する
 
 レイアウトグループコンポーネントを既存のエレメントエンティティに追加するとレイアウトグループが追加されます。
 
 ![Create Layout Group][1]
 
-## Layout Group Properties
+## レイアウトグループプロパティ
 
 #### 方向付け
 
  `オリエンテーション` を水平に設定するとレイアウトが「左から右」または「右から左」に並びます。「上から下」または「下から上」に並べるには垂直に設定します。
 
-#### Reverse
+#### リバース
 
 リバースXプロパティやリバースプロパティYはレイアウトグループがビルドされる方向を設定するのに使用します。デフォルトでは「左から右」かつ「上から下」になります。
 
-#### Alignment
+#### アラインメント
 
 アラインメントは子エレメントをレイアウトグループの端にそろえるのに使用します。`[0,0]`にすると左下に、`[1,1]`にすると右上にそろいます。
 
-#### Padding
+#### パディング
 
 パディングは、子をポジションイングする前のレイアウトグループの中にスペースを追加します。
 
-#### Spacing
+#### スペーシング
 
 スペーシングは子同士間のギャップを決定します。
 
-#### Fitting
+#### フィッティング
 
 WidthフィッティングプロパティとHeightフィッティングプロパティは子エレメントの幅または高さがレイアウトグループでどのように調整されるかを決定します。
 
@@ -44,23 +44,23 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 値が **Stretch** の場合、以下の手段を用いて子を引き延ばし、コンテナの幅や高さを埋めます。
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
-* If there is space remaining in the container, distribute it to each child based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the maxWidth/maxHeight of each child.
+* それぞれの子のfitWidthProportion/fitHeightProportionの値を合計して標準化します。すべての値の合計は1です。
+* それぞれの子に合わせた幅・高さを適用します。
+* 全ての子の幅・高さの新しい合計値がコンテナのスペースを超えた場合、各子の幅・高さを標準化したfitWidthProportion/fitHeightProportion値に基づいて部分的に減らします。ただし、子のminWidth/minHeightを超えることはありません。
 
 値が **Shrink** の場合、以下の手段を用いて子を縮め、コンテナに合うようにします。
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
-* If the new total width/height of all children exceeds the available space of the container, reduce each child's width/height proportionally based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the minWidth/minHeight of each child.
+* 全ての子要素の fitWidthProportion/fitHeightProportion 値を合計し、正規化して全ての値が合計で 1 になるようにします。
+* それぞれの子に合わせた幅・高さを適用します。
+* もし全ての子要素の新しい合計の幅/高さが、コンテナの利用可能なスペースを超える場合、normalized fitWidthProportion/fitHeightProportion値に基づいて、各子要素の幅/高さを比例縮小しますが、各子要素のminWidth/minHeightを超えないようにします。
 
 値が **Both** の場合、 **Stretch** and **Shrink** の両方が適用されます。
 
-#### Wrap
+#### ラップ
 
 ラッププロパティは、（垂直のグループの場合）幅を超えた子または（水平のグループの場合）高さを超えた子を新しい行や列に動かします。ラッププロパティを使用して、グリッドベースプロパティの作成ができます。
 
-## Layout Children
+## 子レイアウト
 
 レイアウトグループは、そのグループのルールを直接の子に適用します。これらのルールについて特定の子に上書きする場合は、上書きする子にLayoutChildコンポーネントを追加して行います。
 
@@ -71,9 +71,9 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 ![Layout Child Setup][9]
 
 
-## Example Layouts
+## レイアウトの例
 
-### Vertical Leaderboard
+### 垂直リーダーボード
 
 ![Leaderboard][2]
 
@@ -81,7 +81,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 ![Leaderboard Setup][3]
 
-### Horizontal Buttons
+### 水平ボタン
 
 ![Horizontal Buttons][4]
 

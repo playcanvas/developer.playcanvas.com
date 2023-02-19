@@ -6,7 +6,7 @@ position: 2
 
 コードエディタは、スクリプトアセットやJSON、HTML、CSSなどのその他のテキストベースのアセットを編集できるオンラインのリアルタイムなコラボレーティブエディタです。
 
-## Opening The Code Editor
+## コードエディタを開く
 
 Ctrl + Iを押して[PlayCanvasエディタ][2]の中からコードエディタを開くことができます。このツールバーのアイコンをクリックすることもできます：
 
@@ -22,7 +22,7 @@ Ctrl + Iを押して[PlayCanvasエディタ][2]の中からコードエディタ
 
 メニューには、キーボードショートカットと一緒に使用できるさまざまなツールとオプションがすべて含まれています。
 
-### Files
+### ファイル
 
 ここでは、コードエディタで編集できるすべてのアセットが確認できます。アセットをクリックして選択します。アセットを選択すると、テキストエディタで編集用にアセットが開きます。
 
@@ -30,11 +30,11 @@ Ctrl + Iを押して[PlayCanvasエディタ][2]の中からコードエディタ
 
 アセットを右クリックすると、さまざまなアセット関連のオプションが表示されたコンテキストメニューが開きます。アセットをフォルダにドラッグアンドドロップすることもできます。
 
-### Tabs
+### タブ
 
 開いている各アセットには、タブビューに対応するタブがあります。タブをドラッグアンドドロップして並べ替えることができます。タブ上にマウスカーソルを置くと表示されるXボタンをクリックして、タブを閉じることもできます。タブを右クリックすると、タブに関連するさまざまなオプションが表示されたタブコンテキストメニューが表示されます。
 
-### Text Editor
+### テキストエディタ
 
 Here you can actually edit the contents of your assets. The editor uses [Monaco][4] which is the same text editor library used by Visual Studio Code.
 
@@ -42,15 +42,15 @@ Here you can actually edit the contents of your assets. The editor uses [Monaco]
 
 エディタは、JavaScriptコードを使用します。つまり、コードを入力している間、エディタはエラーや疑わしい使用を探すためにコードをスキャンします。これは[JSHint][13]を使用して行われ、その動作を制御する特別なコメントにも対応しています。これらの特別なコメントのリストについては、[docs][14]を参照してください。
 
-### Collaborators
+### コラボレータ
 
 エディタは、コードを編集する権限を持つすべてのユーザによるリアルタイムの共同編集に対応しています。他のユーザのアバターが確認できます。
 
-### Status Bar
+### ステータスバー
 
 ここでは、コードエディタとインタラクトしている間に役立つさまざまなメッセージを見ることができます。
 
-## Saving and Reverting
+## コラボレーション、保存、復帰
 
 コードエディタでは共同作業が可能なので、エディタでドキュメントを開いているすべてのユーザが他の開発者によって加えられる変更を確認することができます。変更内容は自動的に保存されず、アプリケーションをエディタから実行すると保存されたバージョンが読み込まれます。つまり、どの時点で変更をコミットさせアプリケーションで使用するかを選択できます。すべてのユーザが任意の時点でドキュメントを保存することができます。
 
@@ -75,7 +75,7 @@ The editor supports various shortcuts to help you when editing code. You can fin
 | Find next match                 | F3                       | Cmd + G                    |
 | Find previous match             | Shift + F3               | Cmd + Shift + G            |
 | Replace                         | Ctrl + H                 | Cmd + Alt + F              |
-| Find in Files                   | Ctrl + Shift + F         | Cmd + Shift + F            |
+| ファイルで検索                   | Ctrl + Shift + F         | Cmd + Shift + F            |
 | Comment line or selection       | Ctrl + /                 | Cmd + /                    |
 | Block Comment line or selection | Alt + Shift + A          | Alt + Shift + A            |
 | Indent line or selection        | Tab                      | Tab                        |
@@ -93,7 +93,7 @@ You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac
 
 一致するテキストを置換する場合は、右の置換入力フィールドに置換するテキストを入力します。次にEnterキーを押して一致するものを置き換え、Enterキーを押し続けて後続の一致テキストを置き換えます(または、後方のものを置き換えるにはShift + Enterキーを押します)。
 
-### Find in Files
+### ファイルで検索
 
 すべてのアセットを検索することで用語を見つけることもできます。これを行うには、Ctrl + Shift + Fキーを押して、下部にあるファイルで検索パネルを表示します。検索語を入力してEnterキーを押します。検索結果が表示する新しいタブが開きます：
 
@@ -103,33 +103,33 @@ You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac
 
 検索結果の行をダブルクリックすると、その特定の行をアセットに移動できます。
 
-## Quick Open
+## クイックオープン
 
 Ctrl + P(Macの場合はCmd + P)を押すと、アセットを名前から検索できるパネルが開きます。アセットの名前の入力を開始すると、パネルは探しているアセットを見つけるためにファジー検索を実行します。選択したアセットを開くにはEnterキーを押します。
 
 ![任意の場所に移動][11]
 
-## Preferences
+## 設定
 
 Edit - > Preferencesをクリックして、環境設定を編集できます。テキストエディタのフォントサイズを変更したり、他のエディタ関連のオプションを編集することができます。
 
 ![設定][12]
 
-## Extra Tips
+## ヒント
 
-### Quick Searching
+### クイック検索
 
 コードエディタで単語をハイライトすると、ファイル内の他のすべてのマッチがハイライトされ、変数や関数の使用場所を簡単に確認できます。
 
 ![クイック検索][7]
 
-### Multiple Selection Editing
+### 複数の選択肢の編集
 
 Holding down Alt and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
 
 ![Multiple Selection Editing][8]
 
-### Rectangular Selection
+### 長方形の選択
 
 Holding down Alt + Shift and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
 

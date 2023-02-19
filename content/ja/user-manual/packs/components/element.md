@@ -32,10 +32,10 @@ The text element renders a string of text using a [font asset][4].
 |-------------|-------------|
 | Type        | The type of Element: Group, Image or Text. |
 | Preset      | Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value. |
-| Anchor      | Determine where the element calculates its position in relation to. See the [Elements#Anchor][6] section for more information. |
-| Pivot       | Determine where the pivot point of the Element is. (0, 0) is bottom left, (1, 1) is top right. See the [Elements#Pivot][7] section for more information. |
+| アンカー      | Determine where the element calculates its position in relation to. See the [Elements#Anchor][6] section for more information. |
+| ピボット       | Determine where the pivot point of the Element is. (0, 0) is bottom left, (1, 1) is top right. See the [Elements#Pivot][7] section for more information. |
 | Size        | The width and height of the Element. This may be automatically calculated depending on other settings. |
-| Margin      | The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis). |
+| マージン      | The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis). |
 | Use Input   | If enabled, this Element is added to the list of elements that check for input and fire input related events. |
 | Layers      | The Layers to render this element into. More on Layers [here][8]. |
 | Batch Group | The Batch Group that this model belongs to. More on Batching [here][9]. |
@@ -54,11 +54,11 @@ The text element renders a string of text using a [font asset][4].
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| Alignment   | Determine how the text is aligned with in the element. (0, 0) is bottom left, (1, 1) is top right. |
-| Text        | The text string to display. |
+| アラインメント   | Determine how the text is aligned with in the element. (0, 0) is bottom left, (1, 1) is top right. |
+| テキスト        | The text string to display. |
 | Font Size   | The size in Screen component pixels to render the font at. |
 | Line Height | The size in Screen component pixels to move down for a new line. |
-| Spacing     | A multiplier to apply to the amount advanced between each character. |
+| スペーシング     | A multiplier to apply to the amount advanced between each character. |
 | フォント        | The font asset. |
 | 色       | The color to tint the font. |
 | Opacity     | The transparency of the element. |

@@ -232,13 +232,13 @@ Here you can specify the URLs of external scripts you would like to include in y
 
 Here you can enable or disable various input devices for your application.
 
-## Localization
+## ローカライゼーション
 
 Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
 
 You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
 
-Read more about localization [here][11].
+ローカライゼーションについての詳細は[こちら][11]をご覧ください。
 
 ## アセットのタスク
 

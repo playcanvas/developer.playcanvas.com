@@ -16,17 +16,19 @@ position: 7
 
 スクリプトが最初に読み込まれると、それらはすぐに実行され、スクリプトは最初にそれらが読み込まれた順番で実行されることを意味します。しかし、スクリプトの読み込み順は、スクリプトコンポーネント内でのスクリプトメソッドの順番実行には影響しません。 例：同じエンティティ上のスクリプトの初期化方法は、読み込み順ではなく、それらがエンティティでリストされている順序で呼び出されます。
 
-## Preloading
+## プレロード
 
-Like other assets in PlayCanvas by default a script asset is marked as `preload`. This means that it will be loaded before the application starts. If you disable preloading on a script it will not be loaded under normal circumstances. This way you can include a script in your project but prevent it from loading by unchecking `preload`. You can trigger a non-preloading script to load dynamically by using the regular asset API. e.g. `this.app.assets.load(asset);`
-It is possible to subscribe to dynamic changes to script registry:
+PlayCanvasの他のアセットと同様に、スクリプトアセットはデフォルトで `preload` とマークされています。これはアプリケーションが開始される前に読み込まれることを意味します。スクリプトのプリロードを無効にすると、通常の状況では読み込まれません。このようにして、プロジェクトにスクリプトを含めつつ、 `preload` のチェックを外して読み込みを防止することができます。通常のアセットAPIを使用して、プリロードしないスクリプトを動的に読み込むことができます。例えば、 `this.app.assets.load(asset);` です。
+
+スクリプトレジストリへの動的な変更にサブスクライブすることができます：
+
 ```javascript
 this.app.scripts.on('add', function(name, scriptType) {
     console.log('script', name, 'has been loaded');
 });
 ```
 
-## Concatenation
+## 連結
 
 デフォルトで、アプリケーションを公開したり、エクスポートすると、すべてのプリロードされたスクリプトは、ひとつのスクリプトファイルに連結されます。これは、すべてのスクリプトを読み込むために必要とされるリクエストの数を減らすことで読み込みを最適化します。
 

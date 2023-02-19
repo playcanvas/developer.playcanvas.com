@@ -6,7 +6,7 @@ position: 8
 
 複雑なプロジェクトで反復する場合、スクリプトに変更を加えるたびにページのリフレッシュを行うのが手間になることがあります。特に、テストしているコードに到達するのに時間が掛かる場合は不便です。このような場合、コードスワップが有用です。
 
-## How to use hot-swapping
+## ホットスワップの使い方
 
 ホットスワップはスクリプト毎ベースで有効になっていて、スクリプトで`swap()`メソッドを実施して有効にします。
 
@@ -54,6 +54,6 @@ Rotator.prototype.update = function (dt) {
 };
 ```
 
-Try changing logic within the `update` method and save the code. The launched application will automatically swap `rotator` script instances with new ones and your application will keep working with the new logic.
+`update`メソッド内のロジックを変更してコードを保存します。起動したアプリケーションは、自動的にスクリプトインスタンス`rotator`を新しいものとスワップして、アプリケーションは新しいロジックを使って動作し続けます。
 
-The `swap` method is called regardless of the running state of a script instance, so if it was disabled due to an error it can be re-enabled in the `swap` method.
+`swap` メソッドは、スクリプト インスタンスの実行状態に関わらず呼び出されます。したがって、エラーのために無効になった場合でも、`swap` メソッド内で再度有効にすることができます。

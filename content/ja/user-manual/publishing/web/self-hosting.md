@@ -4,14 +4,14 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-There are two options for self-hosting a PlayCanvas application on your own domain.
+独自のドメインでPlayCanvasアプリケーションを自己ホストする方法には、2つのオプションがあります。
 
-1. Embed a PlayCanvas hosted application using an [iframe][1].
-2. Download your application from the Editor and upload the files to your own site.
+1. [iframe][1]を使用してPlayCanvasでホスティングしたゲームを埋め込む。
+2. Editorからゲームをダウンロードして自身のサイトにファイルをアップロード。
 
-## iframe Embedding
+## iframe の埋め込み
 
-When you [publish to playcanvas.com][2], your application is assigned a URL. To embed your application in another page. You can simply include this URL as the `src` property of an iframe.
+[playcanvas.comに公開][2]すると、アプリケーションにURLが割り当てられます。アプリケーションを他のページに埋め込むには、単にこのURLを`src`プロパティの値としてiframeに含めるだけでよいです。
 
 ```html
 <html>
@@ -24,30 +24,30 @@ When you [publish to playcanvas.com][2], your application is assigned a URL. To 
 </html>
 ```
 
-## Self-hosting on your own server
+## 自身のサーバでセルフホスティング
 
-In order to host your application independently of PlayCanvas' servers, do the following:
+PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
 * プロジェクトに移行してEditorを開く。
 * 左側のツールバーの<span class="pc-icon">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
 ![Publish Button][3]
 
-* This will open up the Publishing Dialog.
+* Publishing Dialogが開きます。
 
 ![パブリッシュ][4]
 
-* Click the DOWNLOAD .ZIP button
+* DOWNLOAD .ZIP ボタンをクリック
 
-![Download][5]
+![ダウンロード][5]
 
-* Enter a name for your export. This will be the name of the .zip file that will be created for you.
-* Select the Scenes you want to include in your export from the list. Notice that the Scene with the active banner icon will be the first scene loaded when your app is launched.
-* Click on the 'DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
-* Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your application.
+* エクスポートするファイルの名前を入力してください。これは、作成される .zip ファイルの名前になります。
+* 以下のリストからエクスポートに含めるシーンを選択してください。アクティブなバナーアイコンが付いているシーンが、アプリが起動されたときに最初にロードされるシーンになります。
+* 「DOWNLOAD」ボタンをクリックして、デプロイ用に準備されたプロジェクトのzipファイルをダウンロードしてください。
+* 以下の手順で、プロジェクトのzipファイルを展開し、任意の場所に保存します。そして、`index.html` ファイルを開くことでアプリケーションを起動できます。
 
 
-## Self-hosting on GitHub pages
+## GitHub Pages での自己ホスティング
 
 As a PlayCanvas application is static content, [GitHub Pages][github-pages] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).
 
@@ -55,15 +55,15 @@ You will also need to add an extra file named `.nojekyll` in the GitHub repo roo
 
 GitHub Pages Documentation can be found [here][github-nojekyll] about usage of the `.nojekyll` file.
 
-## Running a Downloaded Build
+## ダウンロードされたビルドを実行する
 
-You cannot load your application by opening the `index.html` file in a browser or from a `file://` url. You must use a local webserver to load the `index.html` file using `http://` or `https://`.
+`index.html`ファイルをブラウザで開いたり、`file://` url から読み込むことはできません。`index.html`ファイルを`http://`または`https://`を使用してロードするには、ローカルウェブサーバーを使用する必要があります。
 
 ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your application's index.html. Then point your browser to `http://localhost:8000`
-* *Intermediate:* Install [XAMPP][7]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
-* *Advanced:* Install [Apache][8] or [nginx][9] as a standalone service.
+* *初級：* [Python][6]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを `http://localhost:8000` にポイントします。
+* *中級：* [XAMPP][7]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
+* *上級：* [Apache][8] または [nginx][9]をスタンドアローンサービスとしてインストールします。
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting

@@ -1,5 +1,5 @@
 ---
-title: Localization
+title: ローカライゼーション
 layout: usermanual-page.hbs
 position: 9
 ---
