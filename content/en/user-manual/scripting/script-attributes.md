@@ -32,7 +32,6 @@ MyScript.attributes.add('names', {
 });
 ```
 
-
 ## Getting Attributes into Editor
 
 <img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
@@ -100,7 +99,6 @@ MyScript.prototype.initialize = function () {
 
 ```
 
-
 ### Color attribute
 
 ```javascript
@@ -120,7 +118,6 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curve
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
 
-
 ### Enumeration attribute
 
 The Enumeration attribute allows you to choose one of the available options:
@@ -137,7 +134,6 @@ MyScript.attributes.add('value', {
 ```
 
 Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
-
 
 ### JSON attribute
 
