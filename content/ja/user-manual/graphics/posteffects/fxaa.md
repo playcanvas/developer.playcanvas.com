@@ -10,7 +10,7 @@ Fast Approximateアンチエイリアシング(FXAA)はNVIDIAが考案したア�
 
 ![Image without effect][1]
 
-And the same image with the effect applied:
+エフェクトを適用した同じ画像：
 
 ![Image with effect][1]
 

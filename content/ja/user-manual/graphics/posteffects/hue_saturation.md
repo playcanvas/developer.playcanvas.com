@@ -10,14 +10,14 @@ position: 4
 
 ![Image without effect][1]
 
-And the same image with the effect applied and changes to hue and saturation:
+これがエフェクトをかけて色調とサチュレーションを調整した画像です:
 
 ![Image with effect][2]
 
-The built-in hue-saturation effect has the following attributes:
+ビルトインの色調とサチュレーションエフェクトは以下の様な属性値が設定されています:
 
-* **Hue**: The hue of the image. Ranges from -1 to 1 (-1 is 180 degrees in the negative direction, 0 no change, 1 is 180 degrees in the positive direction).
-* **Saturation**: The saturation of the image. Ranges from -1 to 1 (-1 is solid gray, 0 no change, 1 maximum saturation).
+* **色調**: 画像の色調です。-1から1の範囲の値をとります。(-1はマイナス180度、0は変化なし、1は180度となります)
+* **サチュレーション**: 画像のサチュレーションです。-1から1の範囲の値をとります。(-1は灰色で塗りつぶした状態、0は変化なし、1は最大のサチュレーションとなります)
 
 Find the post-processing effect script on [GitHub][3].
 

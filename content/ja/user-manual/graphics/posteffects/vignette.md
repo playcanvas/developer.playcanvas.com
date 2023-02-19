@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-In photography and optics, [vignetting][1] is the reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame.
+写真や視覚では、[ビネット][1]とは画像の中心に比べて、画像の明るさや彩度を減少させることです。フレームの中心に注意を引くために使用できます。
 
 エフェクトをかけていない画像:
 
 ![Image without effect][2]
 
-And the same image with the effect applied:
+エフェクトを適用した同じ画像：
 
 ![Image with effect][3]
 
 ビルドインのビネットエフェクトには次の属性があります：
 
-* **Offset**: Controls the offset of the effect.
-* **Darkness**: Controls the darkness of the effect.
+* **Offset**: エフェクトのオフセットをコントロール。
+* **Darkness**: エフェクトの暗さをコントロール。
 
 Find the post-processing effect script on [GitHub][4].
 

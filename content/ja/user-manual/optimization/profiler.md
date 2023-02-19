@@ -16,7 +16,7 @@ PlayCanvasは、パフォーマンスの問題の診断を支援するための�
 
 次のホットキーでプロファイラを切り替えることができます：CTRL (CMD) + ALT + T。
 
-## Profiler Overview
+## プロファイラの概要
 
 ![プロファイラの統計][3]
 
@@ -26,9 +26,9 @@ PlayCanvasは、パフォーマンスの問題の診断を支援するための�
 
 右側のパネルはプロファイラータイムラインです。アプリのライフのキーイベントを表示します：
 
-* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
-* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
-* **start**: event when PlayCanvas begins the main application loop and rendering begins.
+* **dom** (DOMインタラクティブ)：ブラウザがHTML文書を解析終了し、ページの最初のフレームを画面にレンダリングすることができるイベント。
+* **preload**: PlayCanvasが、アプリが起動する前に必要とされるすべてのアセットのプリロードを開始するイベント。
+* **start**: PlayCanvasが、メインアプリケーションのループを開始し、レンダリングを開始するイベント。
 
 緑のバーは、個々の非同期アセットの負荷を表します。オレンジのバーは、シェーダのコンパイルをブロックしています。
 

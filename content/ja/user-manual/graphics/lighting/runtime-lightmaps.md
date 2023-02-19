@@ -8,7 +8,7 @@ position: 5
 
 Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures, which are then applied on materials. This is an efficient and realistic way to light a scene if many of the light sources and geometry are static or environmental.
 
-## Runtime Lightmap Generation
+## ランタイムのライトマップ生成 
 
 PlayCanvas offers a convenient solution to generating lightmaps. Using the standard light components in the Editor, you can choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. The lights that you set to bake will be used when the application generates the lightmaps that light the scene.
 
@@ -28,9 +28,9 @@ However, a disadvantage of runtime lightmap generation is that currently we do n
     The use of <a href="/user-manual/optimization/batching">batching</a> is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
 </div>
 
-## Setting Up Lights for Baking
+## ベーキング用にライトを設定
 
-Each Light Component contains the following settings to enable lightmap baking. By default, new lights are set to Dynamic.
+各ライトコンポーネントには、ライトマップのベーキングを有効にするための設定が含まれています。新しいライトはデフォルトで動的に設定されています。 
 
 - **Bake Lightmap** – When enabled, the light will bake lightmaps for any lightmapped model that is in range.
 - **Bake Direction** – Specifies whether light contributes to light direction information baking. This affects specularity results if the **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
@@ -112,7 +112,7 @@ There several combinations of light settings that can be used. Each one has a us
 | true  | true            | false        | This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character. |
 | false | true            | true         | This light is a dynamic light which will affect both lightmapped and non-lightmapped models. |
 
-## Lightmapping Settings
+## ライトマッピングの設定
 
 The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
 

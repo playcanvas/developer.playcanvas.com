@@ -12,10 +12,11 @@ PlayCanvasで物理ベースレンダリングを使用する際に最良の結�
 
 画像データはLDRまたはHDR(高ダイナミックレンジ)色空間に保存することができ、単一チャンネルで0.0〜1.0(256階調)以上の保存が可能です。HDRでは、ガンマ補正、トーンマッピング、露光などの環境要因の組み合わせにより、1.0以上の(白色と見なされます)を保存できます。これにより、より詳細な光の詳細を含めることができ、光の品質などのアーティストが望む結果を得られるようコントロールできます 。
 
-![画像ベースレンダリングのためのHDR対LDR CubeMap][9]
-*テクスチャの明るい部分がLDRを使用してクランプされていることに注意してください*
+![HDR vs LDR CubeMap for Image Based Rendering][9]
 
-## Energy Conservation
+*Notice how bright parts in texture are clamped using LDR*
+
+## エネルギーの保全
 
 この概念は、拡散光および反射光が全て素材に当たる光から来るという事実から得られ、拡散光および反射光の合計は、素材に当たる総光量より大きくすることはできません。実際には、表面が非常に反射的である場合、表示される拡散色が非常に少ないことを意味します。逆に、素材が明るい拡散色を有する場合、あまり反映しません。
 
@@ -23,7 +24,7 @@ PlayCanvasで物理ベースレンダリングを使用する際に最良の結�
 
 **Prefilter**ボタンはインスペクターのCubeMapアセットで使用できますが、CubeMapを使用して物理的マテリアルでIBLを有効にする必要があります。
 
-## Authoring Environment Maps
+## 環境マップのオーサリング
 
 環境地図には、等角投影、CubeMap(面のリスト)、方位角など多くの異なる投影があります。WebGLとGPUは面のリストで動作します - キューブ - CubeMapの側面を表す6つのテクスチャのセット。環境マップが他の投影法の場合、6つのテクスチャに変換する必要があります。
 
@@ -31,7 +32,7 @@ PlayCanvasで物理ベースレンダリングを使用する際に最良の結�
 
 CubeMapsはCGIでレンダリングしたり、写真から組み立てたり、HDR環境マップをウェブサイトからダウンロード/購入することもできます。実験のための良い情報源には：[sIBL Archive][6]、[No Emotion HDR's][10]、[Open Footage][11]、[Paul Debevec][12]などがあります。環境マップは、上述のcmftStudioによって等角投影法とコンバーチブル法が可能です。
 
-## Rendering CubeMap
+## CubeMapのレンダリング
 
 CubeMapは6面で構成され、各面は立方体の正方形の面を表します。正方形のビューポートカメラを使用して、90度の視野で異なる90度の方向に回転させてレンダリングすることができます。
 
@@ -41,13 +42,14 @@ CubeMapは6面で構成され、各面は立方体の正方形の面を表しま
 
 [このような][2]3D Studio Maxのプラグインの１つを使って、VRay CubeMapの面をレンダリングして、PlayCanvas Editorにアップロードすることができます。
 
-## Applying IBL
+## IBLの適用
 
-This can be done using two methods:
-1. Use CubeMap as Skybox in Scene Settings.
-2. Use CubeMap as environment map on the Material directly.
+これには2つの方法があります：
 
-## Box Projection Mapping
+1. CubeMapをシーン設定のSkyboxとして使用します。
+2. 素材の環境マップとしてCubeMapを直接使用します。
+
+## ボックスのプロジェクションマッピング
 
 この技術は、環境マップの投影を変更して、CubeMapがその境界に対応するように空間内でボックスを指定できるようにします。最も一般的な用途は、ルームスケール環境内の表面上の反射をシミュレートすることです。
 
@@ -57,8 +59,9 @@ This can be done using two methods:
 
 CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト][8]です。窓に映る木の床の反射と天井に映る僅かな反射や、右の壁の金属のPlayCanvasロゴに映る部屋の反射をご確認ください。これは動的なエフェクトであり、非常に現実的な反射を作成し、アーティストが部屋の環境をどのように映し出すか制御することを可能にします。
 
-[![環境ボックスプロジェクションマッピング][5]][7]
-*このシーンのライティングは、ライトマップとAOテクスチャとボックス投影IBL(反射)*を使用して実装されます
+[![Environment Box Projection Mapping][5]][7]
+
+*このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction

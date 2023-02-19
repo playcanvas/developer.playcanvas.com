@@ -8,9 +8,9 @@ position: 2
 
 ![Characters with shadow casting][1]
 
-The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
+PlayCanvasエンジンはシャドウマッピングと呼ばれる影生成アルゴリズムを実装しています。これは完全なクロスプラットフォームな実装で、モバイルとデスクトップ両方で動くことが保証されています。
 
-## Enabling Shadows
+## 影を有効にする
 
 ![指向性ライト][5]
 
@@ -46,29 +46,29 @@ A screenshot showing four shadow cascades.
 
 The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
 
-## Tuning Shadows
+## 影のチューニング
 
 PlayCanvasで使用されている車道マッピングアルゴリズムは有限の解像度を持ちます。ですので、影の見た目をできるだけよくするためにプロパティをチューニングする必要が出るかもしれません。以下のプロパティが[Light Component][2] UIの中にあります.
 
-### Shadow Distance
+### シャドウディスタンス - Shadow Distance
 
 シャドウディスタンスは視点からどれだけ離れると指向性光源からの影がレンダリングされなくなるかという距離です。この値が小さければ、影がきれいに表示されます。一方で、この値が小さいとビューポートを移動すると突然影が現れるように見えてしまうという問題があります。そのため、プレイヤーがどのくらい遠くを見ることができるかという要素と、どの程度きれいに影を表示したいかのバランスを考えてください。
 
-### Shadow Resolution
+### 影の解像度 - Shadow Resolution
 
 すべての光源はシャドウマップを使用して影を生成します。このシャドウマップは256x256, 512x512, 1024x1024, 2048x2048いずれかの解像度を持つことができます。この値は光源コンポーネントのインタフェースから設定できます。解像度が高くなればなるほど、影がきれいに表示されます。しかし、高い解像度を設定すると描画が重くなります。ですのでパフォーマンスとクオリティのバランスに気を付けてください。
 
-### Shadow Bias
+### シャドウバイアス - Shadow Bias
 
 シャドウマッピングは見た目の悪いノイズを描画してしまうことがあります。そのような帯状の影や斑点状の影が描画された場合には、シャドウバイアスの値を調整して問題の解決を試してみてください。
 
-### Normal Offset Bias
+### 法線オフセットバイアス Normal Offset Bias
 
 'Shadow acne'と呼ばれるノイズ状の表示がされることがありますが、これはシャドウバイアスを調整することで効果的に取り除くことができます。しかしこれによって常に'Peter Panning'と呼ばれるオブジェクトが空中に浮いているように見える現象が発生してしまいます。
 
 法線オフセットバイアスはこの問題を解決することができます。デプスバイアスに加えて、シャドウマップの参照に使われるUV座標にちょっとした調整を加えることで、shadow acneとPeter Panningの両方を避けることができます。フラグメントの一はジオメトリの法線方向にオフセットがかけられます。この法線オフセットと呼ばれるテクニックは、定数のシャドウバイアスのみを使う場合に比べて大幅によい結果を得ることができます。
 
-## Soft Shadows vs Hard Shadows
+## ソフトシャドウとハードシャドウ
 
 影の外周のことをpenumbra - 半影と呼びます。これは暗い領域から明るい領域へ変化する領域で、影にソフトな境界線を与えます。影のエッジはPlayCanvasではデフォルトでソフトなものになりますが、設定を変更してハードエッジの影を描画することもできます。以下でソフトエッジの影とハードエッジの影を比べてみます。
 
@@ -78,14 +78,14 @@ PlayCanvasで使用されている車道マッピングアルゴリズムは有�
 
 The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
 
-## Performance Considerations
+## パフォーマンスについて
 
 影を使用すると、パフォーマンスに以下のような影響があります:
 
-* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Omni light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
-* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
-* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
-* If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
+* 指向性またはスポットライトを落とすそれぞれの影のために、すべてのフレームで一度シーンをシャドウマップにレンダリングする必要があります。ポイントライトの場合はシーンがライトごとに6回レンダリングされるので(シャドウマップが6面のキューブマップとして保存される)、負荷が大きくなります。シャドウマップの中にシーンをレンダリングすると、CPUとGPUの両方に負荷を加えます。
+* シャドウマップの解像度を上げるとより鮮明な影を生成しますが、GPUはより多くのシャドウマップピクセルを埋める必要があり、フレームレートに影響を与える可能性があります。
+* 影を受ける素材のシャドウサンプルタイプとしてソフトシャドウ(PCF3x3)を選択すると、ハードシャドウのオプションを使用した場合よりも、GPUに負荷がかかります。
+* 影が環境の静的な部分から発生している場合は、[ライトマップ][4]を使用してテクスチャに影をbakeすることを検討してください。
 
 [1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
