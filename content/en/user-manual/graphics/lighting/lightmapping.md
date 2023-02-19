@@ -5,7 +5,6 @@ position: 3
 ---
 
 [![PlayCanvas Lightmapping][1]][13]
-
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
 Here is the link to [final scene][13] and [project][14] that uses these techniques to achieve results in image above: External HDR Lightmaps (described in this page below), [Ambient Occlusion][12] and HDR Cubemap applied using Box Projection using [Image Based Lighting][11] technique to achieve realistic reflections.
