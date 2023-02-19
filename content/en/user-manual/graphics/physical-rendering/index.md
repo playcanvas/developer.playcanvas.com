@@ -20,7 +20,6 @@ Diffuse and Specular (or reflected) light are the two terms that describe two ma
 ## Energy Conservation
 
 ![Energy Conservation][3]
-
 *Smooth surfaces have small bright patches, rough surfaces have large dim patches*
 
 One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
