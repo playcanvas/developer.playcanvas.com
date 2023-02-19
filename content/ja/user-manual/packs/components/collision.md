@@ -29,12 +29,12 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 
 | プロパティ     | 説明 |
 |--------------|-------------|
-| Type         | The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
-| Half Extents | Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth. |
-| Axis         | Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity. |
-| Height       | Capsule only. The tip-to-tip height of the capsule. |
-| Radius       | Sphere and Capsule only. The radius of the sphere or capsule body. |
-| アセット        | Mesh only. The model asset that will be used as a source for the triangle-based collision mesh. |
+| Type         | コリジョンプリミティブの種類。次を使用可能：<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
+| Half Extents | Boxのみ。コリジョンボックスの長さの半分。これは3次元のベクターです：ローカルスペースの幅の半分、高さの半分、奥行きの半分。 |
+| Axis         | Capsuleのみ。CapsuleをエンティティのローカルスペースのX, Y または Z 軸に整列する。 |
+| Height       | Capsuleのみ。Capsuleの先端から頂点までの高さ。 |
+| Radius       | SphereとCapsuleのみ。SphereまたはCapsuleボディの半径。 |
+| アセット        | Meshのみ。三角ベースのコリジョンメッシュのソースとして使用されるモデルアセット。 |
 
 ## スクリプトのインターフェース
 

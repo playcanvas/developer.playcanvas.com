@@ -8,20 +8,20 @@ position: 20
 
 スプライトには、シンプルとアニメーションの2種類があります。
 
-## Simple Sprites
+## シンプルスプライト
 
 シンプルなスプライトコンポーネントは、アトラスから単一のフレームを表示します。
 
 ![シンプルスプライト][2]
 
-## Simple Sprite Component Properties
+## シンプルスプライトコンポーネントのプロパティ
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| Type        | Simple or Animated. |
+| Type        | 説明 |
 | Sprite      | The Sprite Asset to display. |
 | Frame       | The frame index of the Sprite to display. |
-| 色       | A color to apply as a tint to the sprite. |
+| 色       | スプライトの色合いとして適用する色 |
 | Opacity (不透明度)     | The transparency of the sprite. |
 | Flip X      | Flip the rendered sprite horizontally. |
 | Flip Y      | Flip the rendered sprite vertically. |
@@ -29,35 +29,35 @@ position: 20
 | 描画の順序  | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | Batch Group | The Batch Group that this model belongs to. More on Batching [here][6]. |
 
-## Animated Sprites
+## アニメーションスプライト
 
 アニメーションスプライトコンポーネントには、異なるスプライトアセットを再生できる複数のスプライトアニメーションクリップが添付されています。
 
 ![アニメーションスプライト][3]
 
-## Animated Sprite Component Properties
+## アニメーションスプライトコンポーネントのプロパティ
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Type       | Simple or Animated. |
-| Frame      | The frame index of the Sprite to display. |
-| 色      | A color to apply as a tint to the sprite. |
-| Opacity (不透明度)    | The transparency of the sprite. |
-| Flip X     | Flip the rendered sprite horizontally. |
-| Flip Y     | Flip the rendered sprite vertically. |
-| Speed      | Multiplier applied to the speed at which sprite animation clips on this sprite component are animated. |
-| Layers     | The Layers in which to render the sprite. |
-| 描画の順序 | The order in which this sprite is rendered. Lower numbers are rendered first. |
-| オートプレイ  | The name of a sprite animation clip to play when the sprite is enabled. |
+| Type       | シンプルまたはアニメーション |
+| Frame      | 表示するスプライトのフレームインデックス |
+| Color      | スプライトの色合いとして適用する色 |
+| Opacity    | スプライトの透明度 |
+| Flip X     | レンダリングされたスプライトを水平に反転 |
+| Flip Y     | レンダリングされたスプライトを垂直に反転 |
+| Speed      | このスプライトコンポーネントのスプライトアニメーションクリップがアニメーション化される速度に適用される乗数 |
+| Layers     | スプライトをレンダリングするレイヤー |
+| Draw Order | このスプライトがレンダリングされる順序。 小さい数字が最初にレンダリングされます。 |
+| Auto Play  | スプライトが有効なときに再生するスプライトアニメーションクリップの名前 |
 
-## Sprite Animation Clip Properties
+## スプライトアニメーションクリップのプロパティ
 
 | プロパティ | 説明 |
 |----------|-------------|
-| 名前     | The name of the Sprite Animation Clip. Used to reference an individual clip. |
-| ループ     | If true the animation clip will loop back to the start when it reaches the end. |
-| FPS      | The speed at which the clip is played in Frames Per Second. |
-| Sprite   | The Sprite Asset which is used to play this clip. |
+| Name     | スプライトアニメーションクリップの名前。 個々のクリップを参照するために使用されます。 |
+| Loop     | trueの場合、アニメーションクリップは最後まで再生すると、最初にループバックします |
+| FPS      | クリップが1秒あたりのフレーム数で再生される速度 |
+| Sprite   | このクリップの再生に使用されるスプライトアセット |
 
 ## スクリプトのインターフェース
 

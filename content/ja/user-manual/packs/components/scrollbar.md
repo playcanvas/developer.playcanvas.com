@@ -10,7 +10,7 @@ See the [User Interface][2] section for more details.
 
 ![Scrollbar Component][3]
 
-## Component Properties
+## コンポーネントプロパティ
 
 | プロパティ    | 説明 |
 |-------------|-------------|

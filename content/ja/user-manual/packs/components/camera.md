@@ -14,16 +14,16 @@ position: 5
 
 | プロパティ        | 説明 |
 |-----------------|-------------|
-| Clear Buffers   | Controls how the camera's render target is cleared before rendering each frame. The camera maintains two types of buffer: the color buffer which stores the visible image and a depth buffer that stores information about the distance of a rendered pixel in relation to the position of the camera. The buffers can be cleared independently: <ul><li>Color: If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</li><li>Depth: If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</li></ul> |
-| Clear Color（クリアカラー）     | The color used to clear the camera's render target.  This property is only displayed if 'Clear Color Buffer' is selected. |
-| Projection      | The projection type of the camera. Options are: <ul><li>Perspective</li><li>Orthographic</li></ul> |
-| Frustum Culling | If selected, the camera will only render mesh instances whose axis-aligned bounding boxes intersect with the camera's view frustum. Otherwise, the entire scene will be rendered regardless of visibility. |
-| Field of View   | The angle between top and bottom clip planes of a perspective camera. This property is only displayed if 'Projection' is set to 'Perspective'. |
-| Ortho Height    | The distance in world units between the top and bottom clip planes of an orthographic camera. This property is only displayed if 'Projection' is set to 'Orthographic'. |
-| Near Clip       | The distance in camera space from the camera's eye point to the near clip plane. |
-| Far Clip        | The distance in camera space from the camera's eye point to the far clip plane. |
-| Priority        | A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first. |
-| ビューポート        | A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalized coordinates (0 to 1) in the following format: <ul><li>x: The lower left x coordinate</li><li>y: The lower left y coordinate</li><li>w: The width of the rectangle</li><li>h: The height of the rectangle</li></ul> |
+| Clear Buffers   | カメラのレンダリングターゲットとなるバッファをどのように毎フレームクリアするかを設定します。カメラは二種類のバッファを使用します。ひとつはカラーバッファで、これは実際に見える画像を保持します。もう一つはデプスバッファで、描画されるそれぞれのピクセルのカメラ位置からの遠さを保持します。これらのバッファはそれぞれ独立にクリアすることができます。<ul><li>Color: これが選択された場合、シーンのレンダリングを行う前に、カメラはレンダリングターゲットを指定された色でクリアします。</li><li>Depth: これが選択された場合、シーンのレンダリングを行う前に、カメラはデプスバッファを明示的にクリアします。</li> </ul> |
+| Clear Color（クリアカラー）     | カメラのレンダリングターゲットをクリアする際に使用する色です。この項目は'Clear Color Buffer'が選択されたときのみ表示されます。 |
+| Projection      | カメラの投影方法を選択します。選択可能な方法は以下のとおりです:<ul><li>Perspective - 透視射影</li><li>Orthographic - 正射影</li></ul> |
+| Frustum Culling | これが選択された場合、カメラは軸に平行なバウンディングボックスがカメラの視野錐体に交差するものだけをレンダリングします。選択されていない場合には、見えるか見えないかにかかわらず全シーンがレンダリングされます。 |
+| Field of View   | 透視射影カメラの上部と下部のクリッピング平面の角度です。この項目は'Projection'が'Perspective'に設定された時だけ表示されます。 |
+| Ortho Height    | 正射影カメラの上部と下部のクリッピング平面の距離です。この項目は'Projection'が'Orthographic'に設定された時だけ表示されます。 |
+| Near Clip       | カメラ座標系における、カメラ位置からニアクリッピング平面までの距離です。 |
+| Far Clip        | カメラ座標系における、カメラ位置からファークリッピング平面までの距離です。 |
+| Priority        | どのカメラのビューが優先してレンダリングされるかを決める数字です。小さい数字が優先的にレンダリングされます。 |
+| Viewport        | ビューポートをカメラに割り当てられたレンダリングターゲットに割り当てる長方形を指定します。これを使うことで、分割スクリーンやピクチャインピクチャのような効果を実装することができます。この値は以下のような0から1の範囲の正規化された座標で指定されます:<ul><li>x: 左下頂点のx座標</li><li>y: 左下頂点のy座標</li><li>w: 長方形の幅</li><li>h: 長方形の高さ</li></ul> |
 
 ## スクリプトのインターフェース
 

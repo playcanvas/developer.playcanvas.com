@@ -14,13 +14,13 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 
 | プロパティ              | 説明 |
 |-----------------------|-------------|
-| Min Width             | Set the minimum width that the element can be rendered at. |
-| Min Height            | Set the minimum height that the element can be rendered at. |
-| Max Width             | Set the maximum width that the element can be rendered at. |
-| Max Height            | Set the maximum height that the element can be rendered at. |
-| Fit Width Proportion  | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
-| Fit Height Proportion | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
-| Exclude from Layout   | Completely ignore this element when calculating the layout. |
+| Min Width             | 要素をレンダリングできる最小幅を設定 |
+| Min Height            | 要素をレンダリングできる最小の高さを設定 |
+| Max Width             | 要素をレンダリングできる最大幅を設定 |
+| Max Height            | 要素をレンダリングできる最大幅を設定 |
+| Fit Width Proportion  | レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率 |
+| Fit Height Proportion | レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率 |
+| Exclude from Layout   | レイアウトを計算するとき、この要素を完全に無視します。 |
 
 ## スクリプトのインターフェース
 

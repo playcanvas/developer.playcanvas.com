@@ -14,10 +14,10 @@ Animationコンポーネントはコンポーネントパネルの右上のチ�
 
 | プロパティ | 説明 |
 |----------|-------------|
-| アセット   | The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control. |
-| Speed    | A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset. |
-| Activate | If checked, the component will start playing the animation on load. |
-| ループ     | If checked, the animation will continue to loop back to the start on completion. Otherwise, the animation will come to a stop on its final frame. |
+| Assets   | このエンティティで利用できるアニメーションアセット。ピッカーコントロールから複数のアニメーションを割り当てることが出来ます。 |
+| Speed    | アニメーションのプレイバック速度の乗数。0はアニメーションプレイバックをフリーズさせます。1はアセットの通常のプレイバック速度を意味します。 |
+| Activate | チェックが入っていると、コンポーネントは読み込み時にアニメーションを再生します。 |
+| Loop     | チェックが入っていると、アニメーションは終了した際に最初に戻ります。チェックが入っていない場合は、アニメーションは最終フレームで停止します。 |
 
 ## スクリプトのインターフェース
 

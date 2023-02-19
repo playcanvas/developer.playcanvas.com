@@ -15,7 +15,7 @@ Modelコンポーネントはコンポーネントパネルの右上のトグル
 | プロパティ              | 説明 |
 |-----------------------|-------------|
 | Type                  | The type of the model to be rendered. Can be: <ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Cone</li><li>Cylinder</li><li>Plane</li><li>Sphere</li></ul> |
-| アセット                 | The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component. |
+| Asset                 | The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component. |
 | Cast Shadows          | If enabled, the model rendered by this component will cast shadows onto other models in the scene. |
 | Cast Lightmap Shadows | If enabled, the model rendered by this component will cast shadows into lightmaps. |
 | Receive Shadows       | If enabled, the model rendered by this component will receive shadows cast by other models in the scene. |
@@ -27,7 +27,7 @@ Modelコンポーネントはコンポーネントパネルの右上のトグル
 
 [スクリプトコンポーネント][2]を使用して、Modelコンポーネントのプロパティを制御することができます。Modelコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 
-## Customizing Materials
+## 素材のカスタマイズ
 
 モデルのマテリアルをカスタマイズする方法については、[こちら][4]を参照してください。
 

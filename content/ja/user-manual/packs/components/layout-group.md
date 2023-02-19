@@ -14,15 +14,15 @@ LayoutGroupコンポーネントを使用すると、エンティティは子要
 
 | プロパティ       | 説明 |
 |----------------|-------------|
-| 方向付け    | Whether the layout should run horizontally or vertically. |
-| ReverseX       | Reverses the order of children along the x axis. |
-| ReverseY       | Reverses the order of children along the y axis. |
-| アラインメント      | Specifies the horizontal and vertical alignment of child elements. Values range from 0 to 1 where [0, 0] is the bottom left and [1, 1] is the top right. |
-| パディング        | Padding to be applied inside the container before positioning any children. Specified as left, bottom, right and top values. |
-| スペーシング        | Spacing to be applied between each child element. |
-| Width Fitting  | Fitting logic to be applied when positioning and scaling child elements. |
-| Height Fitting | Fitting logic to be applied when positioning and scaling child elements. |
-| ラップ           | Whether or not to wrap children onto a new row/column when the size of the container is exceeded. |
+| Orientation    | レイアウトを水平に実行するか垂直に実行するか |
+| ReverseX       | x軸に沿って子の順序を逆転させます。 |
+| ReverseY       | y軸に沿って子の順序を逆転させます。 |
+| Alignment      | 子要素の水平および垂直方向の配置を指定します。値の範囲は0〜1です。[0,0]は左下、[1,1]は右上です。 |
+| Padding        | 子を配置する前にコンテナ内に適用されるパディング。 left、bottom、right、topの値として指定。 |
+| Spacing        | 各子要素間に適用される間隔。 |
+| Width Fitting  | 子要素を配置およびスケーリングするときに適用されるフィットロジック。 |
+| Height Fitting | 子要素を配置およびスケーリングするときに適用されるフィットロジック。 |
+| Wrap           | コンテナのサイズを超えたときに新しい行/列に子をラップするかどうか。 |
 
 ## スクリプトのインターフェース
 
