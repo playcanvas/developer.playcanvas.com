@@ -1,32 +1,32 @@
 ---
-title: Branch Workflows
+title: ブランチワークフロー
 layout: usermanual-page.hbs
 position: 5
 ---
 
 プロジェクトのニーズに合うよう、ブランチは何通りもの方法で使用することができます。様々なタイプのプロジェクトに、よく使われるいくつかのメソッドを以下に記しました。
 
-## Feature-based branches
+## 機能ベースブランチ
 
 ![Feature branches][1]
 
-With a feature-based workflow each feature you are developing is started by creating a new branch out of the main branch. Then development work for the feature is done in your feature branch. When your feature is complete you merge any new changes from the main branch back into your branch. Perform a final test to make sure changes from master haven't affected your feature and then merge your feature branch into the main branch.
+機能ベースのワークフローでは、開発中の各機能はマスターブランチから新しいブランチを作成することにより開始します。そして、その機能の開発作業は機能ブランチで行われます。機能が完成したら、マスターブランチからのすべての変更を自分のブランチにマージします。最終テストを行ってマスターブランチからの変更が自分の機能に影響を与えていないことを確認し、機能ブランチをマスターブランチにマージします。
 
-## Release branches
+## リリースブランチ
 
 生産サイクルが、アプリケーションの出荷番号バージョンにフィーチャーしている場合、そして各バージョンにテスト期間を追加して行う可能性がある場合、リリースブランチワークフローを選択するといいでしょう。
 
 ![Release branches][2]
 
-With this workflow new features are merged into the main branch and each time you are ready to release a version you take a new branch named after the version you are releasing. A build is published from this release branch and any fixes needed for the release are added into the release branch. Once the release is ready to go, you can merge any fixes back into master and continue development on the next release.
+このワークフローでは、新しい機能はマスターブランチにマージされ、バージョンをリリースする準備が整うと、毎回リリースするバージョンにのっとって名付けられた新しいバージョンが与えられます。ビルドはこのリリースブランチからパブリッシュされ、修正があった場合もこちらに追加されます。リリースの準備が整ったら、マスターに修正をマージして、次のリリースへ向けて開発を続けます。
 
-## Continuous delivery
+## 継続的デリバリー
 
 アプリケーションが、定期的にアップデート（例えば毎週新しいリリースが出る）される長期間存在する製品の場合、継続的デリバリーワークフローが便利になるでしょう。
 
 ![Continuous Delivery][3]
 
-In a continuous delivery workflow rather than having branches for each release, several long-lived branches are used to prepare the application for release. For example, features are merged into the main branch and after every feature is merged the main branch is merged into a branch called "staging". A build is published from staging to a sample environment where testing can be performed. Any required fixes are made into master and then merged into staging again. When staging is deemed ready, it is merged into another branch called "prod" (production). A build is made from prod and this is published to the live environment.
+継続的デリバリーワークフローでは、各リリースにブランチを持たせるよりも、息の長いブランチをいくつか使用してアプリケーションのリリースに備えます。例えば、機能はマスターブランチにマージされ、すべての機能がマージされるとマスターブランチは「staging」と呼ばれるブランチにマージされます。ビルドはステージングからテストが行われるサンプル環境にパブリッシュされます。必要な修正がマスターにされると、再びステージングにマージされます。ステージングの準備が整うと、「prod（プロダクション）」と呼ばれる他のブランチにマージされます。本番からビルドが行われ、これが本番環境にパブリッシュされます。
 
 [1]: /images/user-manual/version-control/branch-workflows/feature-branches.png
 [2]: /images/user-manual/version-control/branch-workflows/release-branches.png

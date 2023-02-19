@@ -10,11 +10,11 @@ A branch is an isolated line of development. Every checkpoint created belongs to
 
 Every project has a branch called "main" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "main" branch will be used as a default if no other branch is specified. A common scenario is to treat the main branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the main branch as best suits your needs.
 
-## Current branch
+## 現在のブランチ
 
 作業を行っている各プロジェクトには **現在のブランチ** に設定されたブランチがあります。これは作業中のブランチでエディターを開いたりコードファイルの編集を行った際に、現在のブランチに変更が適用されます。
 
-## Creating a new branch
+## 新しいブランチを作成する
 
 ![Create branch][1]
 
@@ -24,7 +24,7 @@ Every project has a branch called "main" which is always present and cannot be d
 
 ブランチに名前を付けます。`fix-player-bug` や `refactor-sound-effects`など内容のわかりやすい名前を付けてください。ブランチを作成すると、自動的にそのブランチに切り替わります。
 
-## Switching to a branch
+## ブランチを切り替える
 
 ![Switch branch][3]
 
@@ -32,7 +32,7 @@ Every project has a branch called "main" which is always present and cannot be d
 
 エディターが切り替えた現在のブランチを選択したものにリロードします。
 
-## Closing a branch
+## ブランチを閉じる
 
 ![Close branch][4]
 

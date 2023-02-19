@@ -22,11 +22,11 @@ Each dynamic light has a per-frame runtime cost. The more lights have you the hi
 
 [ランタイムのライトマップ生成][1]についてはこちらをご確認ください。
 
-### Cautious use of real time shadows
+### リアルタイムシャドーの使用に関する注意
 
-For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Omni lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
+動的ライトと同様の理由から、動的シャドウにもフレームごとのランタイムコストがあります。ポイントライトは影を生成するためにシーンを6回レンダリングする必要があります。動的シャドウを作るライトの数は制限するべきです。
 
-### Watch your fill rate and overdraw
+### フィルレートとオーバードローを監視
 
 フィルレートとは、画面上の各ピクセルに適用されるシェーダオペレーションの数を示します。フラグメントシェーダの計算が高く(ライトや複雑な素材が多いなど)、高解像度(デバイスピクセル比率が高いモバイル端末など)の場合、アプリケーションはフレームレートを高く保つためにシーンのレンダリングに時間をかけすぎてしまいます。
 
@@ -34,15 +34,15 @@ For similar reasons to dynamic lights, dynamic shadows also have a per-frame run
 
 [WebGL Insight][2]のような拡張機能はオーバードローを視覚化するのに役立ちます
 
-### Garbage collection stalls
+### ガベージコレクションストール
 
 Webブラウザには、未使用のJavascriptオブジェクトの自動ガベージコレクションがあります。PlayCanvasエンジンはランタイムの割り当てを最小限に抑えるように設計されているのでコード内でも同じように注意するべきです。ベクターやその他のオブジェクトをあらかじめ割り当て、それらを再利用することで、フレーム毎にたくさんのオブジェクトが作成および破棄されることを防ぎます。
 
-### Profiling Tools
+### プロファイリングツール
 
 PlayCanvasにはプロファイラツールが組み込まれています。EditorのLaunch Profilerボタンを使用して、プロファイリングを有効にしてアプリケーションを実行します。[プロファイラの詳細はこちら][3]
 
-### General optimization tips
+### 最適化に関する基本的なアドバイス
 
 [最適化に関する詳細のガイドライン][4]はこちら。
 

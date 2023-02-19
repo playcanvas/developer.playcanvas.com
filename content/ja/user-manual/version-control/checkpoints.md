@@ -10,7 +10,7 @@ position: 1
 
 チェックポイントはプロジェクトの状態の永久記録で、ブランチやマージの変更に使用されるグラフの一部となります。そのため、一度作成したチェックポイントを削除することはできません。つまり、一度チェックポイントの一部として変更をコミットすると、プロジェクト履歴に永遠に保管されることになります。
 
-## Creating a checkpoint
+## チェックポイントを作成する
 
 バージョンコントロールパネルから作成します。
 
@@ -20,7 +20,7 @@ New Checkpointを押すと、チェックポイントを作成する入力フォ
 
 ![Create Checkpoint][3]
 
-## Restoring a checkpoint
+## チェックポイントを復元する
 
 ![Restore Checkpoint][4]
 
@@ -50,7 +50,6 @@ Type 'hard reset' in the text box to confirm that you wish to delete all checkpo
 ![][hard-reset-confirm]
 
 The editor will reload the project at the checkpoint.
-
 
 [1]: /images/user-manual/version-control/checkpoint.jpg
 [2]: /images/user-manual/version-control/vc-panel.jpg

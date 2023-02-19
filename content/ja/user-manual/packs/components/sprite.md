@@ -26,7 +26,7 @@ position: 20
 | Flip X      | Flip the rendered sprite horizontally. |
 | Flip Y      | Flip the rendered sprite vertically. |
 | Layers      | The Layers in which to render the sprite. |
-| Draw Order  | The order in which this sprite is rendered. Lower numbers are rendered first. |
+| 描画の順序  | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | Batch Group | The Batch Group that this model belongs to. More on Batching [here][6]. |
 
 ## Animated Sprites
@@ -47,7 +47,7 @@ position: 20
 | Flip Y     | Flip the rendered sprite vertically. |
 | Speed      | Multiplier applied to the speed at which sprite animation clips on this sprite component are animated. |
 | Layers     | The Layers in which to render the sprite. |
-| Draw Order | The order in which this sprite is rendered. Lower numbers are rendered first. |
+| 描画の順序 | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | オートプレイ  | The name of a sprite animation clip to play when the sprite is enabled. |
 
 ## Sprite Animation Clip Properties
