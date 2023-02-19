@@ -27,7 +27,7 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 
 ## プロパティ
 
-| Property     | 説明 |
+| プロパティ     | 説明 |
 |--------------|-------------|
 | Type         | The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
 | Half Extents | Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth. |
@@ -36,7 +36,7 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 | Radius       | Sphere and Capsule only. The radius of the sphere or capsule body. |
 | アセット        | Mesh only. The model asset that will be used as a source for the triangle-based collision mesh. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 Collisionコンポーネントのプロパティは[スクリプトコンポーネント][8]を使ってコントロールできます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][9]。
 

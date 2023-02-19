@@ -8,7 +8,7 @@ position: 1
 
 ![profile_orgs][4]
 
-### Create from the dropdown menu
+### ドロップダウンメニューから作成
 
 一つ目の方法は右上のドロップダウンメニューでNEW ORGANIZATIONをクリック：
 
@@ -31,7 +31,7 @@ If you have existing projects (such as private projects on a Personal plan), you
 
 All the projects will now be under the Organization account with your user account as Admin for the projects.
 
-### Convert a user account into an Organization
+### ユーザアカウントをOrganization（組織）に変換
 
 Organization（組織）を作成する方法にユーザアカウントを変換する方法があります。[アカウント][3] ページでCONVERTをクリックすることを行うことができます。
 

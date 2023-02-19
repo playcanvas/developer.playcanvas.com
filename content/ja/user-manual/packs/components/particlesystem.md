@@ -12,7 +12,7 @@ Particle Systemコンポーネントはコンポーネントパネルの右上�
 
 ## プロパティ
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | オートプレイ       | If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script. |
 | Particle Count  | The maximum number of particles managed by this particle system. |
@@ -45,7 +45,7 @@ Particle Systemコンポーネントはコンポーネントパネルの右上�
 | 色           | A curve defining how each particle's color changes over time. |
 | Lifetime        | A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 Particle Systemコンポーネントのプロパティは[script component][2]を使用して制御できます。Particle Systemコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 

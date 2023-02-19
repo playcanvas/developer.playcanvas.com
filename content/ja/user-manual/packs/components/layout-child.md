@@ -12,7 +12,7 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 
 ## プロパティ
 
-| Property              | 説明 |
+| プロパティ              | 説明 |
 |-----------------------|-------------|
 | Min Width             | Set the minimum width that the element can be rendered at. |
 | Min Height            | Set the minimum height that the element can be rendered at. |
@@ -22,7 +22,7 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 | Fit Height Proportion | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
 | Exclude from Layout   | Completely ignore this element when calculating the layout. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 [スクリプトコンポーネント][2]を使用してLayoutChildコンポーネントのプロパティを制御できます。LayoutChildコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 

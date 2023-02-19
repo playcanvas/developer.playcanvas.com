@@ -22,7 +22,7 @@ Lightコンポーネントはコンポーネントパネルの右上のトグル
 
 ## プロパティ
 
-| Property           | 説明 |
+| プロパティ           | 説明 |
 |--------------------|-------------|
 | Type               | Can be: <ul><li>Directional: a light casting in a uniform direction</li><li>Omni: a light casting in all directional around an omni</li><li>Spot: a light casting from the apex of a cone</li></ul> |
 | 色              | The color of the emitted light. |
@@ -42,7 +42,7 @@ Lightコンポーネントはコンポーネントパネルの右上のトグル
 | Cookie Intensity   | Omni and spot only. Defines the strength of the cookie texture. |
 | Cookie Falloff     | Spot only. Disable the spotlight falloff. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 [スクリプトコンポーネント][4]を使用してLightコンポーネントのプロパティをコントロールできます。Lightコンポーネントのスクリプティングインターフェイスは[こちら][5]。
 

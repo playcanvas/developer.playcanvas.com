@@ -6,12 +6,12 @@ position: 21
 
 ゲームの構築が完了したら、それを公開して皆にプレイしてもらいましょう！PlayCanvasでは、如何なるOSやappストアを容易にターゲットできます。
 
-## Where can I publish PlayCanvas games?
+## PlayCanvasゲームはどこで公開できますか？
 
-* [Web][1]
-* [Mobile][2]
-* [Desktop][3]
-* [Playable Ads][4]
+* [ウェブ][1]
+* [モバイル][2]
+* [デスクトップ][3]
+* [プレイアブル広告][4]
 
 [1]: /user-manual/publishing/web
 [2]: /user-manual/publishing/mobile

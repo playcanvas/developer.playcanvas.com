@@ -24,7 +24,7 @@ Rigid bodyの形を定義するには、同じエンティティに[コリジョ
 
 ## プロパティ
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | Type            | The type of the body: <ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul> |
 | Mass            | The mass of the body. If world units in your scene are meters, the unit for mass is kilograms. |
@@ -35,7 +35,7 @@ Rigid bodyの形を定義するには、同じエンティティに[コリジョ
 | Friction        | Controls how quickly a body loses velocity when in contact with other bodies. |
 | Restitution     | A measure of the bounciness of a body between 0 and 1. Warning: setting to 1 means a moving body will never come to a stop (unless  colliding with other bodies with restitutions below 1, or unless a stop is scripted). |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 Rigidbodyコンポーネントのプロパティは[スクリプトコンポーネント][5]を使用して制御できます。Rigidbodyコンポーネントのスクリプティングインターフェイスは[こちら][6]です。
 

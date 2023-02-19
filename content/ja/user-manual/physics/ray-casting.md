@@ -1,5 +1,5 @@
 ---
-title: Ray Casting
+title: レイキャスティング
 layout: usermanual-page.hbs
 position: 5
 ---

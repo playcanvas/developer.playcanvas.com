@@ -17,7 +17,7 @@ position: 19
 
 ## Component Properties
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | 位置上      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
 | Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
@@ -29,7 +29,7 @@ position: 19
 
 ## Slot Properties
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | 名前            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
 | アセット           | The audio asset to play. |
@@ -41,7 +41,7 @@ position: 19
 | Volume          | The volume of the audio asset played back by the slot. |
 | Pitch           | The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 [Script component][2]を使用して、サウンドコンポーネントのプロパティを操作できます。サウンドコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 

@@ -12,7 +12,7 @@ position: 5
 
 ## プロパティ
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | Clear Buffers   | Controls how the camera's render target is cleared before rendering each frame. The camera maintains two types of buffer: the color buffer which stores the visible image and a depth buffer that stores information about the distance of a rendered pixel in relation to the position of the camera. The buffers can be cleared independently: <ul><li>Color: If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</li><li>Depth: If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</li></ul> |
 | Clear Color（クリアカラー）     | The color used to clear the camera's render target.  This property is only displayed if 'Clear Color Buffer' is selected. |
@@ -25,7 +25,7 @@ position: 5
 | Priority        | A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first. |
 | ビューポート        | A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalized coordinates (0 to 1) in the following format: <ul><li>x: The lower left x coordinate</li><li>y: The lower left y coordinate</li><li>w: The width of the rectangle</li><li>h: The height of the rectangle</li></ul> |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 [スクリプトコンポーネント][2]を使用して、カメラのコンポーネントのプロパティを制御することができます。カメラコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 

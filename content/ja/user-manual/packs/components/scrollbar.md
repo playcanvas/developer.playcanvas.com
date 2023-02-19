@@ -12,7 +12,7 @@ See the [User Interface][2] section for more details.
 
 ## Component Properties
 
-| Property    | 説明 |
+| プロパティ    | 説明 |
 |-------------|-------------|
 | 方向付け | Controls whether the scrollbar moves horizontally or vertically. |
 | Value       | The current position value of the scrollbar, in the range 0 to 1. |

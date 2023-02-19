@@ -12,7 +12,7 @@ See the [User Interface][2] section for more details.
 
 ## Component Properties
 
-| Property                | 説明 |
+| プロパティ                | 説明 |
 |-------------------------|-------------|
 | Scroll Mode             | Specifies how the scroll view should behave when the user scrolls past the end of the content. Modes are defined as follows: <ul><li>Clamp: Content does not scroll any further than its bounds.</li><li>Bounce: Content scrolls past its bounds and then gently bounces back.</li><li>Infinite: Content can scroll forever.</li></ul> |
 | Bounce                  | Controls how far the content should move before bouncing back. |

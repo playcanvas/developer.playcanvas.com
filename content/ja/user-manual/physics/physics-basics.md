@@ -1,5 +1,5 @@
 ---
-title: Physics Basics
+title: 物理の基本
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -8,7 +8,7 @@ PlayCanvasには、[ammo.js][1]という非常に強力な物理エンジンが�
 
 PlayCanvasには、物理シミュレーションをセットアップするための[リジッドボディ][2] および[コリジョン][3] コンポーネントがあります。
 
-## Enabling Physics
+## 物理を有効化
 
 デフォルトでは、新しいPlayCanvasプロジェクトにはammo.jsモジュールは含まれません。これは、ammo.jsが数百キロバイトあり、アプリがこのライブラリを必要としない場合は読み込む必要がないためです。
 
@@ -24,7 +24,7 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 
 同じ設定パネルで、物理シミュレーションのグローバルな重力を設定できます。重力はシーン内のすべてのリジッドボディに適用される一定の力です。デフォルトでは、ワールドの負のY軸に-9.81に設定されています(つまり、直下)。このデフォルトは、地球の重力に近い値です。この値を増減することもできます。例えば、宇宙設定のゲームでは重力をゼロに設定することも可能です。
 
-## Units of Measurement
+## 測定の単位
 
 デフォルトでは、PlayCanvas物理エンジンは1メートルを1 unit（単位）としています。オブジェクトを物理的に正確な速度で落下させるには、シーンのオブジェクトサイズが適切であることを確認する必要があります。
 
@@ -34,9 +34,9 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 
 シーン内の任意のエンティティを物理シミュレーションに参加させることができます。リジッドボディコンポーネントとコリジョンコンポーネントを追加するだけです。リジッドボディコンポーネントはタイプを指定します：
 
-* Static - A physical object that never moves
-* Dynamic - A physical object that will move in response to an applied force
-* Kinematic - A physical object that can only be positioned explicitly via the API
+* 静的 - 移動しない物理オブジェクト
+* 動的 - 適用された力に応じて移動する物理オブジェクト
+* キネマティック - APIを介して明示的にのみ配置できる物理オブジェクト
 
 また、質量、摩擦、反発などの物理的プロパティも指定されます（本質的に「弾力性」の計測）。
 
@@ -50,7 +50,7 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 * Cone
 * [Compound][12]
 
-## Creating a Static Ground
+## 静的グラウンドの作成
 
 ほとんどの場合、何らかの静的な物理環境を作成する必要があります。たとえば、競馬場やサッカー場などです。最も単純な例は平面です。PlayCanvasは平面タイプのコリジョンプリミティブを公開しませんが、ボックスのプリミティブを提供します。静的なリジッドボディである1単位の高さの10x10ボックスを設定する方法は次のとおりです。
 
@@ -58,7 +58,7 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 
 より複雑なものが必要な場合は、コリジョンコンポーネントタイプをMeshに設定し、モデルアセットを割り当てることもできます。
 
-## Creating Dynamic Bodies
+## 動的ボディの作成
 
 物理は動きに関連するものです。動的なリジッドボディを作成するとより面白くなります。動的な1x1x1ボックスを作成してみましょう：
 
@@ -68,7 +68,7 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 
 ![落下するボックス][7]
 
-## Creating Kinematic Bodies
+## キネマティックボディの作成
 
 場合によっては、シーン内の物理オブジェクトの動きを明示的に制御し、これらのオブジェクトが他の物理オブジェクトに対して抵抗できない力を発揮できるようにするべきです。たとえば、プレイヤーを別の階に運ぶための動くプラットフォームを作るとします。これを実現するためには、リジッドボディのタイプをキネマティックに設定します。それでは、キネマティックボックスを作成してみましょう。
 
@@ -94,9 +94,9 @@ Movement.prototype.update = function(dt) {
 
 ![キネマティックボックス][9]
 
-## Teleporting Dynamic Bodies
+## 動的ボディのテレポート
 
-Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid body's position and/or orientation.
+キネマティックボディで標準エンティティ変換関数を使用することはできますが、ダイナミックボディでは許可されていません。動的リジッドボディを作成するとき、そのエンティティの位置と方向の設定は物理エンジンが行うようになります。つまり、pc.Entity APIを使用してスクリプト内のエンティティの位置または方向を更新しようとすると、関数の効果は無効になります。代わりに、リジッドボディのテレポート機能を呼び出して、リジッドボディの位置や方向を瞬間的に更新する物理エンジンに明示的に通知する必要があります。
 
 [1]: https://github.com/kripken/ammo.js
 [2]: /en/user-manual/packs/components/rigidbody/

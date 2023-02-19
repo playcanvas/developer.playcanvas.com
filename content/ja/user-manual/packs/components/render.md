@@ -12,7 +12,7 @@ The render component can be enabled or disabled using the toggle in the top righ
 
 ## プロパティ
 
-| Property              | 説明 |
+| プロパティ              | 説明 |
 |-----------------------|-------------|
 | Type                  | The type of the graphical object to be rendered. Can be: <ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Cone</li><li>Cylinder</li><li>Plane</li><li>Sphere</li></ul> |
 | アセット                 | The render asset to be rendered by this render component. Only applies the type property is set to 'Asset'. Only a single render asset can be assigned to a render component. |
@@ -25,7 +25,7 @@ The render component can be enabled or disabled using the toggle in the top righ
 | Batch Group           | The batch group that this component's mesh instances belong to. |
 | 素材             | The material assets that will be used to render the mesh instances of this component. Each material corresponds to the respective mesh instance. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 You can control a render component's properties using a [script component][2]. The render component's scripting interface is [here][3].
 

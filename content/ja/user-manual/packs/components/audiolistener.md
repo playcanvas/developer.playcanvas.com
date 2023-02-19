@@ -10,7 +10,7 @@ Audio Listenerコンポーネントはコンポーネントパネルの右上の
 
 ![Audio Listener コンポーネント][1]
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 [Script component][2]を使用して、Audio Listenerコンポーネントのプロパティをコントロールできます。Audio Listenerコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 

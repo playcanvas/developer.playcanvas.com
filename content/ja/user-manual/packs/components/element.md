@@ -28,7 +28,7 @@ The text element renders a string of text using a [font asset][4].
 
 ## Common Component Properties
 
-| Property    | 説明 |
+| プロパティ    | 説明 |
 |-------------|-------------|
 | Type        | The type of Element: Group, Image or Text. |
 | Preset      | Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value. |
@@ -42,7 +42,7 @@ The text element renders a string of text using a [font asset][4].
 
 ## Image Component Properties
 
-| Property | 説明 |
+| プロパティ | 説明 |
 |----------|-------------|
 | Rect     | Define the area of the texture asset to display. |
 | Mask     | Switch Image Element into a mask. Masks do not render into the scene, but instead limit child elements to only be rendered where this element is rendered. |
@@ -52,7 +52,7 @@ The text element renders a string of text using a [font asset][4].
 
 ## Text Component Properties
 
-| Property    | 説明 |
+| プロパティ    | 説明 |
 |-------------|-------------|
 | Alignment   | Determine how the text is aligned with in the element. (0, 0) is bottom left, (1, 1) is top right. |
 | Text        | The text string to display. |

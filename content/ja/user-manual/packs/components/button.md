@@ -8,9 +8,9 @@ position: 4
 
 ボタンコンポーネントは、2つのトランジションモードで使用できます。すなわち*Sprite Swap*と*Tint*です。*Sprite Swap*はそれぞれのボタンごとに異なるスプライトまたはフレームを使用し、 *Tint*は1つのスプライトをそれぞれの状態ごとに異なる色に着色します。
 
-## Common Properties
+## 共通プロパティ
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | Active          | When enabled the button will respond to and fire event. When disabled the button is set to the Inactive State. |
 | Image           | The Image Element Entity that is used to detect input events. |
@@ -18,11 +18,11 @@ position: 4
 | Transition Mode | The type of effect to use when transitioning between states. Either Sprite Swap or Tint. |
 
 
-## Sprite Swap Properties
+## スプライトスワップ・プロパティ
 
 ![Sprite Swap Button][3]
 
-| Property        | 説明 |
+| プロパティ        | 説明 |
 |-----------------|-------------|
 | Hover Sprite    | The Sprite Asset used when the button is in the Hover State. |
 | Hover Frame     | The Sprite Frame to display when the button is in the Hover State. |
@@ -31,18 +31,18 @@ position: 4
 | Inactive Sprite | The Sprite Asset used when the button is not active. |
 | Inactive Frame  | The Sprite Frame used when the button is not active. |
 
-## Tint Properties
+## ティントプロパティ
 
 ![Tint Button][4]
 
-| Property      | 説明 |
+| プロパティ      | 説明 |
 |---------------|-------------|
 | Hover Tint    | The color to tint the Image Element with when the button is in the Hover State. |
 | Pressed Tint  | The color to tint the Image Element with when the button is in the Pressed State. |
 | Inactive Tint | The color to tint the Image Element with when the button is in the Inactive State. |
 | Fade Duration | The time in milliseconds to blend between the different state colors. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 You can control the properties of a Button component using a [script component][5]. The scripting interface for the Button component is [here][6].
 

@@ -6,11 +6,11 @@ position: 3
 
 このドキュメントは、Webプログラミングの初心者向けです。Webアプリケーションのさまざまな部分をどのように組み合わせてPlayCanvasアプリケーションを提供したり、ユーザのブラウザに他のウェブページを提供するかを説明します。
 
-# The Web Stack
+# ウェブスタック
 
 基本的に、ウェブアプリケーションを3つに分離することができます：サーバーサイド、クライアントサイド、静的コンテンツです。一部のみ非常にシンプルな場合や他のサービスにより処理される場合がありますが、ほとんどの場合、ウェブアプリケーションには3つとも含まれます。
 
-## Server-side Code
+## サーバサイドのコード
 
 ユーザーがウェブブラウザでリンクを開くと、ブラウザは、インターネット上のどこかでサーバに要求を送信してHTMLページを要求します。最もシンプルな形の場合、ウェブサーバ上のハードディスクに置かれるテキストのページで、インターネットを介してブラウザに戻り設定されます。
 
@@ -52,7 +52,7 @@ position: 3
 
 PlayCanvasのアプリケーションを作成する際、PlayCanvasで書くコードがサーバ側で実行されることはなく、プロジェクトのサーバサイドのコードは提供していません。
 
-## Client-side Code
+## クライアントサイドコード
 
 ウェブスタックでは、プログラミングを行いユーザー入力に応答するのはサーバだけではありません。クライアントサイドは、ブラウザ内で実行しているコードを指します。このコードは、ブラウザが実行される言語である、JavaScriptです。クライアントサイドのJavaScriptでさまざまな操作を実行することができます。最もシンプルなのは、サーバからダウンロードしたHTMLページの変更です。
 
@@ -63,13 +63,13 @@ title.innerHTML = "This is the new title";
 
 また、最も複雑なケースは、PlayCanvasを使用して完全な3D WebGLゲームを書くこと場合です。PlayCanvasを使用して書くものは全て、クライアントサイドのJavaScriptです。
 
-## Static Content
+## 静的コンテンツ
 
 ウェブアプリケーションの一部は、動的ではなく、変更する必要がありません。例えば、画像、オーディオファイル、テキストファイル、また、PlayCanvasアプリケーションの場合は3Dモデルやテクスチャです。これは、ローカルディスクのファイルを読み込むようなものですが、インターネット上なので少し遅くなります。静的コンテンツの提供はサーバサイドコードのようにウェブサーバによって実行され、場合によっては、同じマシンになります。インタラクティブな要素がないため、要求を満たすための処理は行われません。ウェブサーバは単に要求されたファイルを返送します。
 
 静的コンテンツにおいて重要なのは、できるだけ速くクライアントにダウンロードすることです。
 
-## Hosting PlayCanvas Applications
+## PlayCanvas アプリケーションのホスティング
 
 PlayCanvasアプリケーションを構築すると、クライアントサイドのJavaScriptコードを書いて、静的コンテンツであるアセットを作成します。PlayCanvasプロジェクトではサーバサイドのコードは一切ありません。
 
@@ -77,29 +77,29 @@ PlayCanvasを使用して公開すると、アプリケーションが提供さ�
 
 可能な限り迅速に、世界中のエンドユーザーにPlayCanvasアプリケーションを提供するため、PlayCanvasのホスティングを最適化しました。PlayCanvasアプリケーションをデプロイする最も簡単な方法は、公開ボタンをクリックして、 `playcanv.as` URLを送信することです。場合によっては、独自のアプリケーションをホストする必要があります。
 
-## Self-hosting PlayCanvas Applications
+## PlayCanvas アプリケーションのセルフホスティング
 
 PlayCanvasアプリケーションのセルフホスティングに関する[詳細ページ][1]があります。要約すると、セルフホスティングを行うには上記で説明したのウェブスタックの三つの部分を提供する必要があります。
 
-### Server
+### サーバ
 
 標準的なPlayCanvasアプリケーションの場合、サーバサイドのコードは必要ありません。しかし、ダウンロードしたアプリケーションに含まれる`index.html`ファイルなどの静的コンテンツを提供する必要があるので、ウェブサーバを指定する必要があります。Linuxで使用する2つの一般的なウェブサーバアプリケーションはApacheとNginxです。Windowsで使用する1つの一般的なウェブサーバはIISです。
 
-### Caching and Compression
+### 静的コンテンツ
 
 **Server**で説明した通り、静的なコンテンツとして、ウェブサーバの`index.html`ファイルを含むすべてPlayCanvasのコンテンツを提供します。
 
 静的コンテンツを提供する際、良好なパフォーマンスを得るためにはgzip圧縮を有効にして、コンテンツの正しいキャッシュ・ヘッダーを設定することが**重要**です。静的コンテンツでヘッダのキャッシングと圧縮を有効にする方法は、ウェブサーバーのドキュメントを参照してください。
 
-### Content types
+### クライアント
 
-Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server. 
+以下のような理由で、PlayCanvasのよく使われるフォーマットに対するコンテンツタイプが設定されていないサーバーがあるため、サーバーからアプリケーションを読み込もうとするとエラーが発生する場合があります。
 
-If you do get errors or warnings about assets not being served correctly in the browser, you may need to add these types.
+もしブラウザーでアセットが正しく提供されていないというエラーや警告が出た場合は、これらのタイプを追加する必要があるかもしれません。
 
-Here's a list of content types used in PlayCanvas applications:
+以下は、PlayCanvasアプリケーションで使用されるコンテンツタイプのリストです：
 
-| File type | Content type             |
+| ファイルタイプ | クライアント             |
 | --------- | ------------------------ | 
 | AAC       | audio/aac                |
 | BASIS     | application/octet-stream | 
@@ -119,8 +119,8 @@ Here's a list of content types used in PlayCanvas applications:
 | XML       | application/xml          |
 
 
-### Client
+### クライアント
 
-The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.
+クライアントサイドのコードは、PlayCanvasアプリケーションの一部として書かれている全てです。ブラウザが`index.html`ファイルを読み込む際、PlayCanvasアプリケーションを起動し、あなたが書いたすべてのクライアントサイドコードを実行します。
 
 [1]: /user-manual/publishing/web/self-hosting/

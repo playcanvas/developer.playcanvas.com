@@ -8,7 +8,7 @@ position: 2
 
 ![projects_page][1]
 
-## New Project
+## 新規プロジェクト
 
 新規プロジェクトを作成するには右上のNEWボタンをクリックします。
 
@@ -16,13 +16,13 @@ position: 2
 
 プロジェクトの横の矢印をクリックしてDeleteを選択するとアカウントから完全に削除することができます。
 
-## Unlock Project
+## プロジェクトをアンロック
 
 プロジェクト横にある矢印をクリックしてUnlockを選択して*ロック*されたプロジェクトをアンロックする。プロジェクトのアンロックはプロジェクトの所有者のサブスクリプションの種類によって異なります。Personalプランの場合、プロジェクトから無料のユーザーを削除します(Personalプランは、すべてのユーザーがサブスクリプションを持っていることを必要とするため)。それ以外の場合は、プロジェクトをアンロックするとそれを公開することになります。
 
 Organizationアカウントの場合、上限に達することがなくなるまでseatを購入することでプロジェクトをアンロックすることもできます。
 
-## Export Project Archive
+## プロジェクトアーカイブのエクスポート
 
 ![export-archive][2]
 
@@ -30,7 +30,7 @@ You can export a .zip archive of your project to keep an offline backup. You can
 
 プロジェクトをエキスポートするには、プロジェクトの横の矢印をクリックしてExportを選択します。
 
-## Import Project Archive
+## プロジェクトアーカイブのインポート
 
 ![import-archive][3]
 
@@ -38,7 +38,7 @@ You can import a .zip archive that contains an export project. That .zip file mu
 
 Projectsページの左側にあるImport Projectをクリックし、zipファイルを選択してインポートします。
 
-## Transfer Project Ownership
+## プロジェクトの所有権を転移
 
 If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
 
@@ -55,7 +55,6 @@ The other user will need to accept your request to transfer the Project. The tra
 ![transfer-ownership-accept][6]
 
 If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
-
 
 [1]: /images/user-manual/profile/profile.png "Projects"
 [2]: /images/user-manual/profile/projects/export-archive-button.jpg

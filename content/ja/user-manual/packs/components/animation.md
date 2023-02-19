@@ -12,14 +12,14 @@ Animationコンポーネントはコンポーネントパネルの右上のチ�
 
 ## プロパティ
 
-| Property | 説明 |
+| プロパティ | 説明 |
 |----------|-------------|
 | アセット   | The animation assets that can be utilized by this entity. Multiple animations can be assigned via the picker control. |
 | Speed    | A multiplier for animation playback speed. 0 will freeze animation playback, and 1 represents the normal playback speed of the asset. |
 | Activate | If checked, the component will start playing the animation on load. |
 | ループ     | If checked, the animation will continue to loop back to the start on completion. Otherwise, the animation will come to a stop on its final frame. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 アニメーションコンポーネントのプロパティは[スクリプトコンポーネント][2]を使用して制御することができます。アニメーションコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 

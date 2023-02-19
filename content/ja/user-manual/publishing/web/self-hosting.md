@@ -28,8 +28,8 @@ When you [publish to playcanvas.com][2], your application is assigned a URL. To 
 
 In order to host your application independently of PlayCanvas' servers, do the following:
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* プロジェクトに移行してEditorを開く。
+* 左側のツールバーの<span class="pc-icon">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
 ![Publish Button][3]
 

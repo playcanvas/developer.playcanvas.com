@@ -12,7 +12,7 @@ Screenコンポーネントは、ユーザインターフェイスの領域と�
 
 ## Component Properties
 
-| Property             | 説明 |
+| プロパティ             | 説明 |
 |----------------------|-------------|
 | Screen Space         | When enabled the contents of the screen are rendered in 2D as an overlay to the canvas. |
 | 解像度           | When Screen Space is false. The resolution of the screen co-ordinates. Screen co-ordinates go up as you move right and up. For Screen Space components the resolution is always determined from the resolution of the canvas. |

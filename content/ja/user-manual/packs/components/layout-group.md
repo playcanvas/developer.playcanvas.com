@@ -12,7 +12,7 @@ LayoutGroupコンポーネントを使用すると、エンティティは子要
 
 ## プロパティ
 
-| Property       | 説明 |
+| プロパティ       | 説明 |
 |----------------|-------------|
 | 方向付け    | Whether the layout should run horizontally or vertically. |
 | ReverseX       | Reverses the order of children along the x axis. |
@@ -24,7 +24,7 @@ LayoutGroupコンポーネントを使用すると、エンティティは子要
 | Height Fitting | Fitting logic to be applied when positioning and scaling child elements. |
 | Wrap           | Whether or not to wrap children onto a new row/column when the size of the container is exceeded. |
 
-## Scripting Interface
+## スクリプトのインターフェース
 
 [スクリプトコンポーネント][2]を使用して、LayoutGroupコンポーネントのプロパティを制御できます。LayoutGroupコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 

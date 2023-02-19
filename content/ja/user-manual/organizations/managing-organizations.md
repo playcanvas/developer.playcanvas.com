@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-### Permissions
+### 許可
 
 アカウントページからOrganizationの許可設定を管理できます。
 
@@ -32,13 +32,13 @@ The Owner of the organization does not need to occupy a seat if they are not act
 
 Organization（組織）の所有者はここから組織を削除することができます。これによりアカウントとその全てのプロジェクトを削除します。この動作は取り消せません。
 
-### Projects 
+### プロジェクト
 
-Administrators of the organization can add themselves to any project owned by the organization. On the account page, click on the drop down arrow on the right and then click on 'Add me as admin'.
+組織の管理者は、組織が所有する任意のプロジェクトに自分自身を追加できます。アカウントページで、右側のドロップダウン矢印をクリックし、「Add me as admin」をクリックしてください。
 
 ![add to project][5]
 
-From here, you can add other users to the project as usual.
+ここからは、通常通り他のユーザーをプロジェクトに追加することができます。
 
 [1]: /images/user-manual/organizations/permissions.png
 [2]: /images/user-manual/organizations/seats.png
