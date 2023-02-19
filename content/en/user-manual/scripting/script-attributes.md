@@ -78,7 +78,6 @@ MyScript.attributes.add('target', { type: 'entity' })
 
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
 
-
 ### Asset attribute
 
 ```javascript
