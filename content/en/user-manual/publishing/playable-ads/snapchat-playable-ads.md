@@ -92,7 +92,6 @@ When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN 
 
 The ZIP can then be given to your Snapchat representative to upload to the ad network.
 
-
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/
 [5]: https://playcanvas.com/project/796932/overview/cube-jump-snapchat-ad
