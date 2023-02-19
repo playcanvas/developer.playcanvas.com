@@ -38,7 +38,7 @@ this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierachary has successfully been loaded
+        // Scene hierarchy has successfully been loaded
     }
 });
 ```
@@ -91,7 +91,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
     if (err) {
         console.error(err);
     } else {
-        // Scene hierachary has successfully been loaded
+        // Scene hierarchy has successfully been loaded
     }
 });
 
@@ -144,7 +144,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
     if (err) {
         console.error(err);
     } else {
-        // Scene hierachary has successfully been loaded
+        // Scene hierarchy has successfully been loaded
     }
 });
 ```
@@ -167,7 +167,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
     if (err) {
         console.error(err);
     } else {
-        // Scene hierachary has successfully been loaded
+        // Scene hierarchy has successfully been loaded
         oldSceneRootEntity.destroy();
     }
 });
