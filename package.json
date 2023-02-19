@@ -42,7 +42,7 @@
     "metalsmith-beautify": "^0.2.0",
     "metalsmith-static": "0.0.5",
     "node-fetch": "^2.6.7",
-    "sass": "^1.58.1",
+    "sass": "^1.58.3",
     "serve": "^14.2.0"
   },
   "scripts": {
