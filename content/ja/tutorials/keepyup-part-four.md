@@ -193,13 +193,13 @@ Ball.prototype.reset = function () {
 
 更新ループは次のことを行います：
 
->_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
+>_(速度の変更) = (加速) \* (最後のフレームから過ぎた時間)_
 
->_(New Velocity) = (Old Velocity) + (Change in Velocity)_
+>_(新しい速度) = (古い速度) + (速度の変更)_
 
->_(Change in Position) = (New Velocity) \* (Time since last frame)_
+>_(位置の変更) = (新しい速度) \* (最後のフレームから過ぎた時間)_
 
->_(New Position) = (Old Position) + (Change in Position)_
+>_(新しい位置) = (古い位置) + (位置の変更)_
 
 コード内では次のようになります：
 

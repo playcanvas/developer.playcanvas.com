@@ -28,11 +28,11 @@ There are four types of states present in state graphs. Animation states, along 
 
 Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
 
-| Variable | 説明 |
+| 変数 | 説明 |
 |----------|-------------|
-| 名前     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
+| Name     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
 | Speed    | The playback speed for animations that are linked to this state. |
-| ループ     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
+| Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
 
 ### START state
 
@@ -66,7 +66,7 @@ By setting the variables of a given transition you can also control how the anim
 
 The available transition variables are:
 
-| Variable            | 説明 |
+| 変数            | 説明 |
 |---------------------|-------------|
 | Duration            | The duration of the transition in seconds. |
 | Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state's duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
@@ -85,9 +85,9 @@ New parameters can be added to a state graph via the parameters panel on the lef
 
 Each parameter has three variables which can be set:
 
-| Variable      | 説明 |
+| 変数      | 説明 |
 |---------------|-------------|
-| 名前          | The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph. |
+| Name          | The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph. |
 | Type          | The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition. |
 | Default Value | The value of the parameters variable when the state graph launches. |
 

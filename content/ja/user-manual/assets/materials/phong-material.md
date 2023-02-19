@@ -6,17 +6,17 @@ position: 2
 
 フォン素材は、受け継がれてきたシェーディングモデルです。特定の理由がない限り、Physical Shadingモデルを使用することを推奨します。
 
-### Offset & Tiling
+### オフセット & タイリング
 
 <img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300">
 
 | プロパティ          | 説明 |
 |-------------------|-------------|
-| Apply to all Maps | Uncheck this to apply offset and tiling values to individual maps. |
-| Offset            | The offset in U and V to apply to the first UV channel referenced by maps in this material. |
-| Tiling            | The scale in U and V to apply to the first UV channel referenced by maps in this material. |
+| Apply to all Maps | 個別のマップにオフセットとタイリング値を適用するには、このチェックを外します。 |
+| Offset            | この素材のマップが参照する最初のUVチャンネルに適用する、UとVのオフセット。 |
+| Tiling            | この素材のマップが参照する最初のUVチャンネルに適用する、UとVのスケール。 |
 
-### Ambient
+### アンビエント
 
 アンビエントプロパティは、素材が周囲光の中でどのように表示されるかを決定します。
 
@@ -24,9 +24,9 @@ position: 2
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Tint       | Check this to multiply the scene's global ambient color with a material specific color. |
-| 色      | The tint color to multiply the scene's global ambient color. |
-| AO Texture | An ambient occlusion map containing pre-baked ambient occlusion. |
+| Tint       | チェックをいれると、素材特有の色と、シーンのグローバルアンビエントカラーが乗算されます。 |
+| 色      | シーンのグローバルアンビエントカラーを乗算するティントカラー。 |
+| AO Texture | プリベークされたアンビエントオクルージョンを含む、アンビエントオクルージョンマップ。 |
 
 ### 拡散マップ
 
@@ -36,9 +36,9 @@ position: 2
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| テクスチャ    | The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead. |
-| Tint       | Check this to modulate the material's diffuse map with a material specific diffuse color. |
-| 色      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
+| Texture    | ピクセル単位の拡散素材の色を指定する拡散マップ。拡散マップが設定されていない場合、拡散色が代わりに使用されます。 |
+| Tint       | チェックを入れると、素材の拡散マップを素材固有の拡散色で調節します。 |
+| Color      | 拡散マップが設定されていない場合、これが素材の拡散色になります。拡散マップが設定されていてtintが有効になっている場合、この色が素材の拡散マップを変調します。 |
 
 ### スペキュラマップ
 
@@ -48,11 +48,11 @@ position: 2
 
 | プロパティ     | 説明 |
 |--------------|-------------|
-| Specular Map | The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead. |
-| Tint         | Check this to modulate the material's specular map with a material specific specular color. |
-| 色        | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
-| Gloss Map    | The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property. |
-| Glossiness   | A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny). |
+| Specular Map | ピクセル単位のスペキュラ色を指定するスペキュラマップ。スペキュラマップが設定されていない場合は、スペキュラ色が代わりに使用されます。 |
+| Tint         | チェックすると、素材固有のスペキュラ色で素材のスペキュラマップを調節します。 |
+| Color        | スペキュラマップが設定されていない場合、素材のスペキュラ色になります。スペキュラマップが設定されていてtintが有効になっている場合、この色が素材のスペキュラマップを調節します。 |
+| Gloss Map    | ピクセル単位の光沢値を指定するグロスマップ。グロスマップは光沢プロパティで変調されます。 |
+| Glossiness   | 表面の平滑性を決定する値。小さい光沢値にすると、表面はより粗く、スペキュラハイライトはより広範になります。 大きな光沢値にすると、表面はより滑らかで、スペキュラハイライトはより濃縮されます(表面が磨かれて光っているように)。 |
 
 ### Emissive（発光）
 
@@ -62,12 +62,12 @@ position: 2
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| テクスチャ    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
-| Tint       | Check this to modulate the material's emissive map with a material specific emissive color. |
-| 色      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
-| 強度  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
+| Texture    | ピクセル単位の発光色を指定する発光マップ。発光マップが設定されていない場合、発光色が代わりに使用されます。 |
+| Tint       | チェックをすると、素材の発光マップを素材固有の発光色で変調します。 |
+| 色      | 発光マップが設定されていない場合、素材の発光色となります。発光マップが設定されていてtintが有効になっている場合、この色は素材の発光マップを調節します。 |
+| 強度  | 非常に明るい発光素材に過剰に明るい効果を加えることができる発光色の乗数。 |
 
-### Opacity
+### Opacity (不透明度)
 
 Opacityは、透明度のレベルを設定します。
 
@@ -75,8 +75,8 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| テクスチャ    | The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property. |
-| 強度  | The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1. |
+| Texture    | ピクセルごとの不透明度を指定する不透明度マップ。不透明度マップは、'Amount'プロパティによって変調されます。 |
+| Intensity  | 素材の不透明度。これは、0(完全に透明)から1(完全に不透明）の間の値である。デフォルトは1です。 |
 
 ### Normals
 
@@ -86,8 +86,8 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Bumpiness  | The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1. |
-| テクスチャ    | The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property. |
+| Bumpiness  | 適用される法線マップの強さ。0(法線マップは影響を与えません)と2(法線マップは大きく影響)の間の値です。デフォルトは1です。 |
+| Texture    | ピクセルごとの表面の法線を指定する法線マップ。法線マップは 'Bumpiness' プロパティによって変調します。 |
 
 ### Parallax
 
@@ -97,8 +97,8 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| Height Map  | The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height. |
-| Strength    | The strength of a parallax effect (a value between 0 and 2, defaulting to 1). |
+| Height Map  | 視差効果のピクセルごとの強度を指定する高さマップ。白は最高の高さで、黒は高さゼロです。 |
+| Strength    | 視差効果の強さ（0と2の間の値、デフォルト設定は1）。 |
 
 ### 環境マップ
 
@@ -108,11 +108,11 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ            | 説明 |
 |---------------------|-------------|
-| Sphere Map          | A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive). |
-| Cube Map            | A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive). |
-| Reflectivity        | A factor to determine what portion of light is reflected from the material. This value defaults to 1 (full reflectivity). |
-| Refraction          | A factor to determine what portion of light passes through the material. |
-| Index of Refraction | Determines the amount of distortion of light passing through the material. |
+| Sphere Map          | 環境反射を近似するスフィアマップテクスチャアセット。スフィアマップが設定されている場合、キューブマッププロパティが非表示になります(これらのプロパティは相互に独占的であるため)。 |
+| Cube Map            | 環境反射を近似するキューブマップテクスチャアセット(スフィアマップよりも正確)。キューブマップが設定されている場合、スフィアマッププロパティが非表示になります(これらのプロパティは相互に独占的であるため)。 |
+| Reflectivity        | 素材からライトのどの部分が反射されるかを決定する要因。この値のデフォルトは1(完全に反射)です。 |
+| Refraction          | 光のどの部分が素材を通過するかを決定する要因。 |
+| Index of Refraction | 素材を通過する光の歪みの量を決定。 |
 
 ### Light Map
 
@@ -122,9 +122,9 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| テクスチャ    | The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs. |
+| Texture    | プリベークされた拡散ライトを含むライトマップテクスチャ。ライトマップは、2つのUVセットを持つメッシュに素材が適用されていることを必須とします。ライトマップは、第2つ目のセットのUVを使用します。 |
 
-### Other Render States
+### その他のレンダリング状態
 
 その他のレンダリング状態を使用して、指定された素材にメッシュをレンダリングする方法を追加で制御できます。
 
@@ -132,7 +132,7 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ        | 説明 |
 |-----------------|-------------|
-| Depth Test      | If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on. |
+| Depth Test      | チェックすると、素材とメッシュがレンダリングされるときに、ピクセルごとのチェックが行われ、エンジンのデプステストにピクセルが合格するかどうかを判断します。デフォルトでは、ピクセルが深度バッファに既にあるZ深度以下であることをテストで確認します。つまり、メッシュはその前に何もない場合にのみ表示されます。オフにした場合、深度バッファに何が入っていても、メッシュはレンダリングされます。デフォルトはオンです。 |
 | Depth Write     | If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on. |
 | Cull            | Options are: <ul><li>None: Both front faces and back faces are rendered.</li><li>Front Faces: front faces are rendered and back faces are not.</li><li>Back Faces: back faces are rendered and front faces are not. This is the default.</li></ul> PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels. |
 | Blend Type      | Options are: <ul><li>None: The mesh is opaque. This is the default.</li><li>Normal: The mesh is transparent, like stained glass.</li><li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li><li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li><li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li></ul> |

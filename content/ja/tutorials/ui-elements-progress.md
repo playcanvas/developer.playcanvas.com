@@ -27,7 +27,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 スクリーンには、POWERテキストを表示する子Text Elementと、プログレスバーを示す`Progress Bar` というエンティティがあります。
 
-## Progress Bar setup
+## プログレスバーの設定
 
 プログレスバーは2つの要素で構成されています。背景画像と塗りつぶし画像です。
 
