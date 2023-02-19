@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality. 
+In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
 
 Descriptions of each light type and light source shape are below and examples of different combinations of light types and given in [table](#use-cases) below.
 
