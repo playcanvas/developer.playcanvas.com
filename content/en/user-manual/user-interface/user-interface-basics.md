@@ -28,7 +28,6 @@ There is an additional way of handling input for UI Elements. An instance of the
 
 PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
 
-
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements
 [3]: /user-manual/user-interface/elements
