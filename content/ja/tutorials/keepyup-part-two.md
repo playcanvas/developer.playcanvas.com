@@ -1,11 +1,11 @@
 ---
-title: シンプルなゲームを作る - その2
+title: シンプルなゲームの作成 - パート2
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 2"></iframe>
 
 *[完成されたプロジェクトはこちら][16]です。先に[その1][1]を読んでください。*
 
@@ -25,7 +25,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 キューブマップを設定するには、まずキューブマップアセットをNew Assetメニューから作成し、キューブマップの面に6枚のテクスチャを割り当てます。キューブマップの6面全てにテクスチャを割り当てたら、"Prefilter"ボタンをクリックしてください。**プレフィルタリングはキューブマップを正しく動作させるために必要な準備です。**
 
-## Footballマテリアル
+## Footballマテリアル
 
 ![サッカーボール][3]
 
@@ -43,7 +43,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 スペキュラマップの効果を説明するために必要なため、環境マップの説明を簡単にここでしておきます。環境マップの設定をしたい場合は、キューブマップをマテリアルのスロットにドラッグしてください。
 
-#### スペキュラマップ
+#### スペキュラマップ
 
 ![スペキュラマップ][5]
 
@@ -95,4 +95,3 @@ emissiveマップは、表面の色を設定して、まるでその色の光を
 [14]: /images/tutorials/beginner/keepyup-part-two/overlay-emissive.jpg
 [15]: /tutorials/keepyup-part-three/
 [16]: https://playcanvas.com/project/406050
-

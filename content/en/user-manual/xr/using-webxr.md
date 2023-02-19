@@ -14,7 +14,6 @@ if (app.xr.supported) {
 }
 ```
 
-
 ## Starting XR Session
 
 The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
@@ -43,7 +42,6 @@ entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
 });
 ```
 
-
 ## Ending XR Session
 
 Exiting XR can be triggered in various ways. You can trigger an exit of XR from code:
@@ -59,7 +57,6 @@ app.xr.on('end', function () {
     // XR session has ended
 });
 ```
-
 
 ## Types of XR
 
@@ -88,7 +85,6 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
     console.log('XR session VR type is now', available ? 'available' : 'unavailable');
 });
 ```
-
 
 ## Camera Position and Orientation in XR
 

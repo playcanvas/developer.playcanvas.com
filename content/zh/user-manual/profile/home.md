@@ -1,5 +1,5 @@
 ---
-title: 主页
+title: 首页
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -9,4 +9,3 @@ position: 1
 ![home_page][1]
 
 [1]: /images/platform/home.png "Home"
-

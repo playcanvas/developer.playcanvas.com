@@ -1,11 +1,11 @@
 ---
-title: シンプルなゲームを作る - その6
+title: シンプルなゲームの作成 - パート6
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 6"></iframe>
 
 *[完成されたプロジェクトはこちら][11]です。先に[その1][1], [その2][2], [その3][3], [その4][4], [その5][5]を読んでください。*
 
@@ -15,7 +15,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 PlayCanvasではユーザインタフェースは[Screen Component][7]と[Element Component][8]を使用して構築されます。詳細は [ユーザマニュアル][6]でご確認ください
 
-### ユーザインターフェースのエンティティ
+### ユーザインターフェースのエンティティ
 
 ![階層][9]
 
@@ -38,20 +38,20 @@ var UiMenu = pc.createScript('uiMenu');
 
 UiMenu.attributes.add("overlay", {type: "entity"});
 
-// エンティティ毎に一度呼び出される初期化コード
+// initialize code called once per entity
 UiMenu.prototype.initialize = function() {
-    this.on('enable', this.onEnable, this);    
+    this.on('enable', this.onEnable, this);
     this.on('disable', this.onDisable, this);
-    
+
     this.onEnable();
 };
 
 UiMenu.prototype.onEnable = function () {
-    // 背景のクリックをリッスンする    
-    
+    // Listen for clicks on the background
+
     this.overlay.enabled = true;
     this.overlay.element.on("click", this.start, this);
-    
+
     if (this.ball) {
         this.ball.model.meshInstances[0].material.depthTest = false;
     }
@@ -59,17 +59,18 @@ UiMenu.prototype.onEnable = function () {
 
 UiMenu.prototype.onDisable = function () {
     this.overlay.enabled = false;
-    // イベントのリッスンをやめる
+    // Stop listening to events
     this.overlay.element.off("click", this.start, this);
 };
 
 UiMenu.prototype.start = function (e) {
     this.app.fire("ui:start");
-    // タッチやマウスイベントを防ぐ
+    // prevent touch and mouse events
     e.stopPropagation();
 };
 ```
-オーバレイ要素は、画面を緑色にするフルスクリーン要素です。また、ユーザがフルスクリーンをクリックすることが重要なので、入力を検出するためにも使用します。
+
+最初に、オーバーレイエレメントへの参照を持つ属性を設定しました。オーバーレイエレメントは画面全体を覆い、画面を緑色に色付けするために使用されます。また、ユーザーが画面全体をクリックしたことを検出するためにも使用されます。
 
 エンティティを有効にした場合、フルスクリーンオーバーレイを有効にして表示し、次にクリックイベントのリッスンを開始します。エンティティが無効になると、イベントのリッスンを停止し、オーバーレイを非表示にします。イベントがトリガーされると、メインゲームのスクリプトがリッスンしているゲームの状態の変化をトリガーする"ui:start" イベントが発生します。
 
@@ -93,4 +94,3 @@ UiMenu.prototype.start = function (e) {
 [12]: /images/tutorials/beginner/keepyup-part-six/image-element.jpg
 [13]: /images/tutorials/beginner/keepyup-part-six/element-attr.jpg
 [14]: https://forum.playcanvas.com/
-

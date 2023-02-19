@@ -1,11 +1,11 @@
 ---
-title: More Cameras
+title: Больше о камерах
 layout: tutorial-page.hbs
 tags: basics, camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/5yUf1fvg/" title="More Cameras"></iframe>
 
 *Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
 
@@ -121,4 +121,3 @@ Next we loop through the keys and if one was pressed then we find the entity by 
 [1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
-

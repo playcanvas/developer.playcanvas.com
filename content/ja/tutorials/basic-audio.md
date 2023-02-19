@@ -1,11 +1,11 @@
 ---
 title: 基本的なオーディオ
 layout: tutorial-page.hbs
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
+tags: audio,basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
 
 *タンクは、ロボットの周りを移動しています。ゲーム上の任意の場所をクリックして撃つことができます。*
 
@@ -57,7 +57,7 @@ AttributeEditorでSoundプロパティが表示されるようになります。
 
 これがチェックされている場合、3D空間内で現在のAudioListener(ロボット)の位置を基準に再生されることを意味します。オフになっている場合、音は両方のスピーカーから2Dで再生されます。
 
-### Asset
+### アセット
 
 各スロットには、異なるスロットから異なるオーディオアセットを再生することができるアセットピッカーがあります。オーディオアセットのアップロード方法の詳細については、[アセットのインポート][4]を参照してください。
 
@@ -81,7 +81,7 @@ AttributeEditorでSoundプロパティが表示されるようになります。
 
 デフォルトで、オーディオサンプルは一度再生され、その後停止されます。継続的にサウンドをループしたい場合は（例えば、BGMのために）、*Loop*ボックスにチェックを入れてください。この例ではエンジンの音はループされていますが、発射音はループされていません。
 
-## リスナーの作成
+## リスナーの作成
 
 AudioListenerを作成するには、リスナーを代表するエンティティを選択します。多くの場合、これはプレイヤーの頭の位置となる、ゲーム内のカメラになります。今回のケースでは、AudioListenerはロボットに取り付けられています。
 
@@ -94,4 +94,3 @@ AudioListenerを作成するには、リスナーを代表するエンティテ�
 [3]: https://playcanvas.com/editor/scene/440098
 [4]: /user-manual/assets/importing
 [5]: /images/tutorials/audio/sound.jpg
-

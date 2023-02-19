@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: はじめに
 layout: shader-editor-page.hbs
 position: 1
 ---
@@ -10,7 +10,7 @@ __Shader Editor__ is a web-based visual programming tool for creating shader mat
 
 Instead of writing shader programs directly, in __Shader Editor__ you construct shader graphs. These graphs comprise a network of nodes connected together with edges. __Shader Editor__ will convert a completed graph to the equivalent shader program for use at runtime.
 
-### Example
+### 例
 
 For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
 ![sample effect][1]
@@ -42,4 +42,3 @@ Find out more about the window layout in the [Window Layout][4] section.
 [2]: /images/shader-editor/sample-graph.png
 [3]: /shader-editor/overview
 [4]: /shader-editor/window-layout
-

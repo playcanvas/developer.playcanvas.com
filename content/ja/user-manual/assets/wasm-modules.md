@@ -1,5 +1,5 @@
 ---
-title: Wasmモジュール
+title: Wasm Module
 layout: usermanual-page.hbs
 position: 17
 ---
@@ -7,11 +7,14 @@ position: 17
 wasmモジュール（WebAssemblyモジュールとしても知られています）は、ウェブ用のコンパイル済み実行可能コードを含んでいます。
 
 Wasmモジュールは、3つの部分から成ります：
+
 * バイナリ実行可能ファイル
 * JavaScriptグルーコードファイル
 * オプションのフォールバックasm.js
 
 これらのファイルをプロジェクトに追加するには、アセットパネルにファイルをドラッグアンドドロップするか、またはアセットパネルのコンテキストメニューで'Upload'を選択します。
+
+Please note that PlayCanvas Editor currently supports [Emscripten][2] compiled Wasm Modules only.
 
 ## wasmモジュールのプロパティ
 
@@ -31,4 +34,4 @@ Wasmモジュールは、3つの部分から成ります：
 これは、WebAssemblyがサポートされていない際に使用する、オプションのフォールバックasm.js スクリプトです。
 
 [1]: /images/user-manual/assets/wasm-module.png
-
+[2]: https://emscripten.org/

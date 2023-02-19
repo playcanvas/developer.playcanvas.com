@@ -2,10 +2,10 @@
 title: 基本的なキーボード入力
 layout: tutorial-page.hbs
 tags: input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
 
 *クリックでフォーカスして、左矢印、右矢印、空白バーを押してキューブを回転します。aキーを押して離すことで色を変更します。*
 
@@ -110,7 +110,7 @@ sPressed(key)はkeyが現在押されているかを確認して、押されて�
 
 wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを確認します。wasPressed()は一度のキー押下に対して一度のみtrueを返します。
 
-## イベント
+## イベント
 
 キーの押下を処理する二つ目の方法は、イベントへのリッスンです。Keyboardデバイスでは二つのキーボードイベントが対応されています：
 
@@ -134,4 +134,3 @@ wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
 [2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
-

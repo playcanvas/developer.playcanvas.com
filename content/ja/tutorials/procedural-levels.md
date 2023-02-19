@@ -2,10 +2,10 @@
 title: プロシージャルレベル
 layout: tutorial-page.hbs
 tags: procedural
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/smskdMrk/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 
 このプロジェクトは、エンティティの[clone()][1] 機能を使用してエディタで作成されたエンティティからレベルをランダムに生成します。
 
@@ -58,4 +58,3 @@ Generate.prototype.initialize = function() {
 
 [1]: /api/pc.Entity.html#clone
 [2]: https://playcanvas.com/project/405864
-

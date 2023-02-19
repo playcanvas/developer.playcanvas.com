@@ -1,7 +1,7 @@
 ---
-title: ホットリローディング
+title: Hot リロード
 layout: usermanual-page.hbs
-position: 7
+position: 8
 ---
 
 複雑なプロジェクトで反復する場合、スクリプトに変更を加えるたびにページのリフレッシュを行うのが手間になることがあります。特に、テストしているコードに到達するのに時間が掛かる場合は不便です。このような場合、コードスワップが有用です。
@@ -11,13 +11,12 @@ position: 7
 ホットスワップはスクリプト毎ベースで有効になっていて、スクリプトで`swap()`メソッドを実施して有効にします。
 
 ```javascript
-
 MyScript.prototype.swap = function(old) {
    // recover state here
 };
 ```
 
-スワップ機能を持つスクリプトがコードエディタで変更されると、任意の起動されたアプリケーションはスクリプトをリロードし、スクリプトのレジストリに追加します。次に、各インスタンスごとに、そのプロセスの間に`swap`メソッドを呼び出して、新しいスクリプトのインスタンスを作成して古いものを交換します。このスクリプトの`initialize`メソッドは再び呼び出されることはありません。代わりに、古いスクリプトインスタンスは`swap`メソッドに渡され、古いスクリプトの状態が新しいものにコピーされることを確認するのは開発者次第です。宣言されたスクリプトの属性は、自動的に新しいスクリプトインスタンスにコピーされます。古いインスタンスからイベントリスナーを削除し、新しいものにそれらを再アタッチすることも重要です。
+When a script with a `swap` function is changed in the code editor, any launched applications will reload the script and add it to script registry. Then it creates brand new script instances to swap with the old ones, calling the `swap` method during that process per each instance. The `initialize` method of the script is *not* called again. Instead, the old script instance is passed into the `swap` method and it is up to the developer to ensure that the state of the old script is copied into the new one. Declared script attributes are automatically copied over into the new script instance. It is also important to remove any event listeners from the old instance and re-attach them to the new one.
 
 例：
 
@@ -33,15 +32,6 @@ Rotator.prototype.initialize = function () {
     this.ySpeed = 0;
 };
 
-Rotator.prototype.update = function (dt) {
-    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
-};
-
-Rotator.prototype._onEnable = function () {
-    // when enabled randomize the speed
-    this.ySpeed = pc.math.random(0, 10);
-};
-
 Rotator.prototype.swap = function (old) {
     // xSpeed is an attribute and so is automatically copied
 
@@ -49,12 +39,21 @@ Rotator.prototype.swap = function (old) {
     this.ySpeed = old.ySpeed;
 
     // remove the old event listener
-    old.off('enable', this._onEnable);
+    old.off('enable', old._onEnable);
     // add a new event listener
     this.on('enable', this._onEnable);
 };
+
+Rotator.prototype._onEnable = function () {
+    // when enabled randomize the speed
+    this.ySpeed = pc.math.random(0, 10);
+}
+
+Rotator.prototype.update = function (dt) {
+    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
+};
 ```
 
-`update`メソッド内のロジックを変更してコードを保存します。起動したアプリケーションは、自動的に`スクリプトインスタンス`rotator`を新しいものとスワップして、アプリケーションは新しいロジックを使って動作し続けます。
-`swap`メソッドはスクリプトインスタンスの実行状態にかかわらず呼ばれるので、エラーにより無効にされた場合には、スワップメソッドの間に再び有効にすることができます。
+`update`メソッド内のロジックを変更してコードを保存します。起動したアプリケーションは、自動的にスクリプトインスタンス`rotator`を新しいものとスワップして、アプリケーションは新しいロジックを使って動作し続けます。
 
+`swap` メソッドは、スクリプト インスタンスの実行状態に関わらず呼び出されます。したがって、エラーのために無効になった場合でも、`swap` メソッド内で再度有効にすることができます。

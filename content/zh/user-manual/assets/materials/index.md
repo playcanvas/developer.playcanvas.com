@@ -10,21 +10,21 @@ position: 10
 
 我们同样也支持旧Phong材质类型。
 
-## 导入材质
+## Importing Materials
 
 当用户上传一个3D模型文件（譬如 FBX or COLLADA） 时，材质将会自动被导入到PlayCanvas引擎中。材质将会生成和现有的3D建模工具一样的属性。如果用户通过嵌入式媒体（FBX）上传所有相关联的纹理贴图系统将会自动为用户进行设置。
 
-## 创建新材质
+## Creating New Materials
 
 用户可以直接使用PlayCanvas编辑接口来创建新的材质。
 
-<img src="/images/user-manual/assets/materials/create-asset-menu.jpg" style="width: 300px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/create-asset-menu.jpg" width="300">
 
 这将创建新的材质资源并且开启在屏幕右边的材质检查器。
 
-## 选择一个材质
+## Selecting a Material
 
-<img src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;">
 
 为了能够编辑一个材质，首先用户需要选中它，这个操作将会显示材料检查器。
 
@@ -32,47 +32,47 @@ position: 10
 
 一般来说，点击一个材质预览图标将会带着用户进入材质检查器。
 
-## 指定材质
+## Assigning Materials
 
-<img src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 用户可以修改材质被分配到哪个模型资源或者用户可以打造包含模型组件的特定实体的材质。
 
 当用户选中一个有着模型组件的实体，用户将会看到两个按钮－资源材质和实体材质。
 
-<br style="clear:both;" />
+<br style="clear:both;">
 
-<img src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 用户可以修改材质被分配到哪个模型资源或者用户可以打造包含模型组件的特定实体的材质。当用户选中一个有着模型组件的实体，用户将会看到两个按钮－资源材质和实体材质。点击资源材质将会选中模型资源。用户同样可以从资源面板中选择模型资源。模型检测器将会显示网格模型以及材质的分配。用户可以通过点击X按钮来清除材质，点击空白插槽来分配一个新的材质。
 
 用户同样可以通过从资源面板拖拽材质素材到材质插槽。
 
-<br style="clear:both;" />
+<br style="clear:both;">
 
 点击实体材质将会系统将会向通知用户为所创建的材质选择网格实例：
 
-<img src="/images/user-manual/assets/materials/select.png" style="max-width: 100%" />
+<img loading="lazy" src="/images/user-manual/assets/materials/select.png" style="max-width: 100%">
 
 在选择网格实例之后，一个新的材质选择器将会出现在模型组件中：
 
-<img src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%" />
+<img loading="lazy" src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%">
 
 之后用户就可以为特定实体选择不同的材质了：
 
-<img src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%" />
+<img loading="lazy" src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%">
 
-<br style="clear:both;" />
+<br style="clear:both;">
 
-## 编辑材质
+## Editing a Material
 
-<img src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 当用户选中一个材质时就可以对材质的属性进行编辑。
 
 编辑器支持类型为“光照模型”的模型，这个属性在材质检查器顶部的下拉菜单中定义。
 
-### 物理
+### Physical
 
 物理光照模型为PlayCanvas中最前沿的光照模型。这个模型用于PlayCanvas的Physically Based Renderer(PBR)。
 
@@ -84,26 +84,25 @@ Phong光照模型作为遗留的光照模型，在兼容性方面有着很重要
 
 [Phong材质属性][2]
 
-## 材质贴图
+## Material Maps
 
-<img src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 大量的编辑材质涉及了创建和分配纹理贴图到多个插槽在页面上进行详细说明。
 
 这里有一些选项将出现在材质的大多数纹理贴图中。
 
-### 纹理资源
+### Texture Asset
 
 首先纹理资源，上传一个图像到PlayCanvas，我们将会为用户创建一个纹理资源。用户可以为这个纹理在材质中资源分配插槽。
 
-### 颜色或色调
+### Color or Tint Color
 
 Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
 
-### 通道
+### Channel
 
 有些贴图只要求一个简单的灰度值譬如0.0 -> 1.0。在这种情况中是有可能选择纹理的哪个通道被使用。**RGB**意味着所有通道都被使用。**R**, **G** or **B** 意味着只有红，绿或者蓝通道将会被使用。
 
 [1]: /user-manual/assets/materials/physical-material
 [2]: /user-manual/assets/materials/phong-material
-

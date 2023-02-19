@@ -12,13 +12,11 @@ The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (un
 
 There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
 
-
 ## Example project
 
 The [Cube Jump project][5] is ready to be exported for the Facebook Playable Ad format and the expected [HTML output can be found here][6].
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
-
 
 ## File size tips
 

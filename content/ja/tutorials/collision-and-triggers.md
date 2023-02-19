@@ -1,11 +1,11 @@
 ---
-title: 当たり判定とトリガー
+title: コリジョン及びトリガー
 layout: tutorial-page.hbs
 tags: collision, physics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1Hj5fX2I/" title="Collision and Triggers"></iframe>
 
 *剛体が互いに衝突すると音がなります。剛体がトリガーボリュームに当たると元の場所に戻ります。*
 
@@ -20,7 +20,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 * **Box** 箱型の形状です。
 * **Sphere** 球型の形状です。
 * **Capsule** 錠剤のような形をしたカプセル型の形状です。キャラクターのように背が高く細く、かつ尖っていなくて地面に一点で触れているようなものの当たり判定に使われます。
-* **Mesh** 任意形状のメッシュです。**注意** メッシュの当たり判定には制限があります。特に、*rigidbody*と組み合わせて使う場合は、そのrigidbodyは**Static**でなければなりません。
+* **Mesh** 任意形状のメッシュです。**注意** メッシュの当たり判定には制限があります。特に、*rigidbody*と組み合わせて使う場合は、そのrigidbodyは**Static**でなければなりません。
 
 ### トリガーボリューム
 
@@ -34,7 +34,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわします。重量や摩擦などの物理的な性質を設定することができ、自分以外の剛体を衝突したとき、現実的な反応をします。
 
-剛体をシーン内に作るには、エンティティを選択して*rigidbody*コンポーネントと*collision*コンポーネントを追加してください。デフォルトでは**static box**が作られます。**rigidbody**コンポーネントは物体の性質を調整するために様々な設定を行うことができます。
+剛体をシーン内に作るには、エンティティを選択して*rigidbody*コンポーネントと*collision*コンポーネントを追加してください。デフォルトでは**static box**が作られます。*rigidbody*コンポーネントは物体の性質を調整するために様々な設定を行うことができます。
 
 ![rigidbodyコンポーネント][4]
 
@@ -46,15 +46,16 @@ Rigid Body - 剛体はゲーム世界の中の物理的な存在をあらわし�
 * **Dynamic** エンティティは重力と外部から与えられた力に影響されて動くようになります。
 * **Kinematic** エンティティは力に反応しなくなりますが、位置と速度を直接指定して動かすことができるようになります。
 
+
 ## 地面の設定
 
 チュートリアルのはじめの一歩として、地面となる緑色のブロックを作ります。
 
-<img src="/images/tutorials/collision/ground_setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300px">
 
 属性パネル内に*render*、*collision*と*rigidbody*コンポーネントがあるのがわかります。ここではエンティティと*collision*ボックスのプロパティを変更し、十分に大きな箱にしています。また、摩擦と反射係数を少し増やしています。これにより、デフォルトの値より箱の表面は少し粗く、また弾みやすくなります。
 
-## トリガーの設定
+## トリガーの設定
 
 次にトリガーとなるエンティティを作成します。
 
@@ -97,7 +98,7 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 地面は**Static**な剛体として設定します。さらに、落ちてくるオブジェクトを作成し、**Dynamic**として設定します。
 
-<img src="/images/tutorials/collision/box_setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300px">
 
 ボックスコンポーネント用の*rigidbody*と*collision*設定を行います。球とカプセルについても同様に設定します。
 
@@ -140,4 +141,3 @@ Collider.prototype.onCollisionStart = function (result) {
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /api/pc.Entity.html
 [9]: /images/tutorials/collision/box_setup.png
-

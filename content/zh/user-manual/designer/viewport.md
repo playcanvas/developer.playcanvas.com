@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-<img alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg" />
+<img loading="lazy" alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg">
 
 视口展示了当前场景的可视化状态。你可以通过移动摄影机在场景中自由漫游。
 
-<img alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;"/>
+<img loading="lazy" alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;">
 
 ## 摄影机
 
@@ -16,13 +16,12 @@ position: 4
 
 在摄影机菜单中选择摄影机的同时，场景中的摄影机实体会被显示为高亮状态。可以利用这个特性精确的设置摄影机位置。
 
-## 小工具
+## Gizmos
 
-<img src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img loading="lazy" src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;">
+<img loading="lazy" src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;">
+<img loading="lazy" src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;">
 
 在截图中看到的三色轴向玩意儿叫[小工具][1]。用来修改选中实体的变换矩阵。有三种不同类型的小工具：平移（箭头末端）；旋转（三色环）和缩放（方形末端）。
 
 [1]: /user-manual/glossary#gizmo
-

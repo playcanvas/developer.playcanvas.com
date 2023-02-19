@@ -8,4 +8,3 @@ Windows, Mac OS X, Linuxなどの主要なデスクトップOSのそれぞれの
 
 [1]: https://nwjs.io/
 [2]: https://github.com/nwjs/nw.js/wiki/How-to-package-and-distribute-your-apps
-

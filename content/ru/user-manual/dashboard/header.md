@@ -1,5 +1,5 @@
 ---
-title: Dashboard Header
+title: Заголовок панели
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -19,4 +19,3 @@ By clicking on STAR you can star or like this project, providing motivation to t
 By clicking on the FORK button you can fork this project, which means that a clone of this project will be copied to your account.
 
 [1]: /images/platform/dashboard_header.jpg
-

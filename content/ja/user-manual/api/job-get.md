@@ -1,5 +1,5 @@
 ---
-title: Jobs - Get job
+title: Jobs - jobを取得
 layout: usermanual-page.hbs
 position: 12
 ---
@@ -17,7 +17,7 @@ idからジョブを取得。
 ## 例
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/jobs/99999
+curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
 ```
 
 ## パラメータ
@@ -56,5 +56,5 @@ Status: 200
 
 このルートは[normal][1]なレート制限を使用します。
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

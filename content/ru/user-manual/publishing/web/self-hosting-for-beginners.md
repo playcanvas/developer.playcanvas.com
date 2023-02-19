@@ -1,5 +1,5 @@
 ---
-title: Self-hosting for beginners
+title: Самостоятельный хостинг для начинающих
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -63,7 +63,7 @@ title.innerHTML = "This is the new title";
 
 Or in the most complex case, you can write a full 3D WebGL game using PlayCanvas. Because everything you write using PlayCanvas is client-side javascript.
 
-## Static Content
+## Static Content
 
 Some parts of your web application are not dynamic and do not need to change. For example, images, audio files, text files and in the case of PlayCanvas applications 3D models and textures. You can think of this a bit like loading files of a local disk, except that of course it comes over the internet so it's a bit slower. Serving static content is done by a web server, very much like server-side code and in some cases it will be the same machine. As there is no interactivity, there is no processing done to fulfill the request. The web server just sends back the requested file.
 
@@ -77,7 +77,7 @@ When you publish using PlayCanvas we handle the server-side by setting up a URL 
 
 We have designed the PlayCanvas hosting to be optimized for serving your PlayCanvas applications to end users throughout the world as quickly as possible. This is why the easiest way to deploy a PlayCanvas application is by clicking the publish button and sending out the `playcanv.as` URL. However, in some cases you may be required to host your own application.
 
-## Self-hosting PlayCanvas Applications
+## Self-hosting PlayCanvas Applications
 
 We have a more [detailed page][1] about self-hosting a PlayCanvas application. But in summary, to self-host you need to provide the three parts of the web stack described above.
 
@@ -85,15 +85,42 @@ We have a more [detailed page][1] about self-hosting a PlayCanvas application. B
 
 For a standard PlayCanvas application there is no server-side code required. However, you will still need to supply a web-server because you need to serve the static content including the `index.html` file that is found in your downloaded application. It is this file that the browser will request to load your application. There are two common web server application for Linux: Apache and Nginx and one common web server for Windows: IIS.
 
-### Static Content
+### Caching and Compression
 
 As described in **Server** you will be serving all your PlayCanvas content including the `index.html` file from your web server as static content.
 
 To get good performance when serving the static content it is **critical** to enable gzip compression and set the correct cache headers for the content. See your web server documentation for how to enable compression and caching headers on static content.
 
+### Content types
+
+Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server. 
+
+If you do get errors or warnings about assets not being served correctly in the browser, you may need to add these types.
+
+Here's a list of content types used in PlayCanvas applications:
+
+| File type | Content type             |
+| --------- | ------------------------ | 
+| AAC       | audio/aac                |
+| BASIS     | application/octet-stream | 
+| BIN       | application/octet-stream |
+| DDS       | image/dds                |
+| GLB       | model/gltf-binary        |
+| JPEG      | image/jpeg               |
+| JS        | application/javascript   |
+| JSON      | application/json         |
+| MP3       | audio/mpeg               |
+| MP4       | video/mp4                |
+| OGG       | audio/ogg                |
+| PNG       | image/png                |
+| TEXT      | text/plain               |
+| WASM      | application/wasm         |
+| WAV       | audio/x-wav              |
+| XML       | application/xml          |
+
+
 ### Client
 
-The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the index.html file it will start your PlayCanvas application and run all the client-side code that you have written.
+The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.
 
 [1]: /user-manual/publishing/web/self-hosting/
-

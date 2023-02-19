@@ -1,11 +1,11 @@
 ---
-title: 从高度图创建地形
+title: 从高程图创建地形
 layout: tutorial-page.hbs
 tags: procedural
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
 
 这个项目使用[`pc.Mesh`][1] API来从高度贴图纹理程序生成和纹理滚动的山坡。
 
@@ -165,4 +165,3 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 
 [1]: /api/pc.Mesh.html
 [2]: https://playcanvas.com/project/406046
-

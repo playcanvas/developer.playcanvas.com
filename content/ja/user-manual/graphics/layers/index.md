@@ -51,7 +51,7 @@ PlayCanvasアプリケーションは、一連のデフォルトレイヤーに�
 
 ![Default Layers][1]
 
-1. **World (Opaque)** - 透明でないコンポーネントのレンダリングに使用されます。多くの場合、不透明コンポーネントメッシュが該当します。
+1. **World (Opaque)** - 透明でないコンポーネントのレンダリングに使用されます。多くの場合、不透明コンポーネントメッシュが該当します。
 1. **Depth (Opaque)** - 深度レイヤーは、上級ユーザーのみが使用してください。
 1. **Skybox (Opaque)** - スカイボックスのレンダリングに使用します。オーバードローを減少させるため、スカイボックスはWorld (Opaque) の後にレンダリングされます。
 1. **World (Transparent)** - 透明なコンポーネントや、その他の透明なコンポーネントメッシュのレンダリングに使用します。
@@ -63,7 +63,7 @@ PlayCanvasアプリケーションは、一連のデフォルトレイヤーに�
 
 デフォルトのレイヤーには、エンジンの既存の機能が実装されています。ただし、独自のレイヤーを作成し、コンテンツをレンダリングする順序をカスタマイズしてこそ、エンジンを十分に活用することができます。
 
-### レイヤーの作成
+### レイヤーの作成
 
 レイヤーの管理は、エディターの**Settings**セクション内**LAYERS**パネルからおこないます。
 
@@ -78,7 +78,7 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 レイヤーリストで、各サブレレイヤーのソートモードを選択できます。
 レイヤーを拡張し、ドロップダウンメニューからソートモードを選択してください。
 
-### レイヤー順序の選択
+### レイヤー順序の選択
 
 ![Add layer][4]
 
@@ -96,7 +96,7 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 
 Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
 
-A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture.
+A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture. 
 
 When you add an additional camera, these are the recommended steps:
 1. Set the priority of new and existing cameras to control the order in which they render.
@@ -109,4 +109,4 @@ When you add an additional camera, these are the recommended steps:
 [4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
 [5]: /images/user-manual/graphics/layers/test-layer-components.jpg
 [6]: /images/user-manual/graphics/layers/camera-layers.jpg
-
+[7]: /user-manual/graphics/cameras/depth-layer

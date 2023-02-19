@@ -1,6 +1,7 @@
 ---
-title: Forces and Impulses
+title: 動力および衝撃
 layout: usermanual-page.hbs
+tags: physics,basics
 position: 2
 ---
 
@@ -31,4 +32,3 @@ MyScript.prototype.update = function(dt) {
 ```
 
 [1]: /api/pc.RigidBodyComponent.html
-

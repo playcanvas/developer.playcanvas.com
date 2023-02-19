@@ -1,5 +1,5 @@
 ---
-title: Animation
+title: アニメーション
 layout: usermanual-page.hbs
 position: 4
 ---
@@ -47,4 +47,3 @@ If enabling this option, it is recommended that Sample Rate is disabled and Curv
 [animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
 
  [1]: https://www.mixamo.com/
-

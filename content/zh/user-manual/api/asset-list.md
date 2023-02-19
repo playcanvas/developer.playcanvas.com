@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 9
 ---
 
-## 传输链接
+## Route URL
 
 ```none
 GET https://playcanvas.com/api/projects/:projectId/assets?branchId=:branchId
 ```
 
-## 描述
+## Description
 
 Get the details of all assets in a project for a specific branch
 
-## 案例
+## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}"
 ```
 
 HTTP Request
@@ -27,14 +27,14 @@ GET https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## 参数
+## Parameters
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list assets from</p></div>
 <div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
 </div>
 
-## 响应模式
+## Response Schema
 
 ```none
 Status: 200
@@ -73,7 +73,7 @@ Status: 200
 }
 ```
 
-## 报错
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
@@ -82,9 +82,8 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## 速率限制
+## Rate Limiting
 
 This route uses a [normal][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
-

@@ -27,4 +27,3 @@ asset.on('load', function() {
 // アップロードが読み込まれたことを確認
 app.assets.load(asset);
 ```
-

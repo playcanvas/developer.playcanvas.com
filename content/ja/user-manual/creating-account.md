@@ -33,4 +33,3 @@ PlayCanvasの使用を開始するには、新しいアカウントを作成す�
 [5]: /user-manual/profile/
 [6]: https://login.playcanvas.com/persona_deprecated
 [7]: /images/user-manual/creating-account/login.png
-

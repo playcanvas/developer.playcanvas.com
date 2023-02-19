@@ -1,10 +1,10 @@
 ---
 title: Updating ammo.js
 layout: usermanual-page.hbs
-position: 6
+position: 7
 ---
 
-### Introduction
+### 简介
 
 PlayCanvas has added support for the latest version of ammo.js.
 
@@ -35,4 +35,3 @@ If updating ammo.js causes issues with your project you may need to revert back 
 The project should either include legacy physics (using the 'Enable Physics' checkbox) or it should have the ammo.js modules included in the project directly, but it should not include both at the same time!
 
 [1]: /images/user-manual/physics/physics-legacy-settings.png
-

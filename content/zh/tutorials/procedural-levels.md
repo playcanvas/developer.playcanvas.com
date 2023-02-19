@@ -1,11 +1,11 @@
 ---
-title: 程序关卡
+title: 程序化关卡
 layout: tutorial-page.hbs
 tags: procedural
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/smskdMrk/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 
 该项目使用Entity上的[clone()][1]函数从编辑器中创建的实体中随机生成一个关卡节点。
 
@@ -58,4 +58,3 @@ Generate.prototype.initialize = function() {
 
 [1]: /api/pc.Entity.html#clone
 [2]: https://playcanvas.com/project/405864
-

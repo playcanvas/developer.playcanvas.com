@@ -105,7 +105,6 @@ VideoTexture.prototype.update = function(dt) {
     // Transfer the latest video frame to the video texture
     this.videoTexture.upload();
 };
-
 ```
 
 [1]: https://playcanvas.com/project/405850

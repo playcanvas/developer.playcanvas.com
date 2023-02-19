@@ -1,17 +1,17 @@
 ---
-title: 更多的摄像机
+title: 多摄影机位
 layout: tutorial-page.hbs
 tags: basics, camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/5yUf1fvg/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/5yUf1fvg/" title="More Cameras"></iframe>
 
 *点击屏幕以聚焦, 然后按`空格`来拉近或推远镜头, 按下`左箭头`和 `右箭头`来选择切换成左边或右边的摄像机*
 
 [基础摄像机][1] 教程中引导了我们创建一个摄像机的实体并把它加入到你的场景中。对于一个单独的静态的摄像机而言,不需要配置任何脚本。但是对于一个动态的可互动或包含更高级的应用的相机，你可能要为其附加一个脚本组件，并为相机的行为进行编程。
 
-## 更改属性
+## Altering Attributes
 
 你能够在运行时修改摄像机的第一种方法，是改变摄像机组件上的值。你可以像编辑其它组建一样通过组件系统中的`set()` 和 `get()`方法做到这点。
 
@@ -63,7 +63,7 @@ Zoom.prototype.update = function(dt) {
 
 请注意，当缩小时，顶部和底部的多维数据集位于屏幕的边缘，这与我们对[PlayCanvas 编辑器场景][3]的期望相符，其中立方体位于相机[视角椎体边缘][2]的顶部和底部。
 
-## 当前相机
+## Current Camera
 
 您可能想要与相机创建交互性的另一种方法是通过在多个相机之间切换。 你可以通过添加几个相机实体到你的场景来实现这一点; 确保只有一个被激活; 然后在运行时更改脚本中的当前相机
 
@@ -119,4 +119,3 @@ CameraManager.prototype.update = function(dt) {
 [1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum
 [3]: https://playcanvas.com/editor/scene/440116
-

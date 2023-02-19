@@ -1,5 +1,5 @@
 ---
-title: Учетная запись
+title: Аккаунт
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -8,5 +8,4 @@ position: 3
 
 ![account_page][1]
 
-[1]: /images/platform/account.png "Учетная запись"
-
+[1]: /images/platform/account.png "Account"

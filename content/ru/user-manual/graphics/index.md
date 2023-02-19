@@ -1,5 +1,5 @@
 ---
-title: Graphics
+title: Графика
 layout: usermanual-page.hbs
 position: 14
 ---
@@ -13,4 +13,3 @@ Some of its key features are as follows:
 * Static and skinned mesh rendering
 * GPU particle engine
 * Post effect library
-

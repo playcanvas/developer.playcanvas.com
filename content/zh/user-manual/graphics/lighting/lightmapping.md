@@ -112,4 +112,3 @@ You can [explore the example][13] that uses the techniques described above and a
 [12]: /user-manual/graphics/lighting/ambient-occlusion/
 [13]: https://playcanv.as/p/zdkARz26/
 [14]: https://playcanvas.com/project/446587/overview/archviz-example
-

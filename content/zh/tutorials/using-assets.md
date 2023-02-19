@@ -1,11 +1,11 @@
 ---
-title: 使用资源注册表
+title: 使用资源注册
 layout: tutorial-page.hbs
-tags: loading, assets
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
+tags: loading, assets, basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 
 *Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
 
@@ -15,7 +15,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
-## 设置
+## Setup
 
 *该项目设置如下*
 
@@ -26,13 +26,13 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 下载[A模型][5]，[B模型][6]和[C模型][7]并将它们上传到你的项目。 确保文件名为A.dae，B.dae和C.dae，因为这将影响资源名称。
 
-## 资源注册表
+## The AssetRegistry
 
 [`pc.AssetRegistry`][1]在所有脚本中都被用作为`this.app.assets`。 注册表将填充添加到项目中的所有运行时资产的详细信息，无论它们是否已加载。 使用资产注册表在应用程序中查找到你所需的资源。
 
 在这种情况下，我们声明了三个脚本属性“a”，“b”和“c”，它们在编辑器中被分配给对应资源。 然后它们会自动在我们的脚本中变为可用的。
 
-## 使用预加载的资源
+## Using preloaded assets
 
 ```javascript
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
@@ -54,11 +54,11 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
 
-<img src='/images/tutorials/using_assets/using-assets-a-preload.png' width=360px>
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360px">
 
 So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
-## 运行过程中加载资源
+## Loading assets at runtime
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
@@ -79,7 +79,7 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 
 The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
 
-<img src='/images/tutorials/using_assets/using-assets-c-preload.png' width=360px>
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360px">
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -91,7 +91,7 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 
 Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
 
-## 完整的代码
+## The complete script
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');
@@ -149,7 +149,7 @@ UpdateAsset.prototype.update = function(dt) {
 };
 ```
 
-## 资源注册表事件
+## AssetRegistry events
 
 我们在这个例子中没有展示的一件事是如何知道何时加载资产。 为此，我们使用`pc.AssetRegistry` 事件，如 `"load"` 事件。 以下是一些示例代码：
 
@@ -191,6 +191,7 @@ if (!asset.loaded) {
 
 此代码在需要时加载资源，但它有些垄长。 所以，你可以使用 `asset.ready()` 方法来作替代。 此代码执行与上述相同的功能。
 
+
 ```javascript
 var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
@@ -207,4 +208,3 @@ this.app.assets.load(asset);
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
 [8]: /api/pc.RenderComponent.html#asset
-

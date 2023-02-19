@@ -9,4 +9,3 @@ Parameter nodes are input nodes that allow values in the material to be configur
 To read more about editing parameters, see the [Inspector Pane][1] documentation.
 
 [1]: /shader-editor/window-layout/inspector-pane
-

@@ -14,29 +14,12 @@ To create a new event, select the animation asset in the asset panel which you'd
 
 Each event has the following modifiable properties:
 
-<table class="table table-striped">
-    <tbody>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-        </tr>
-    <tr>
-        <td>time</td>
-        <td>Defines the specific time during the playback of the animation when the event should trigger. Given in normalized time based on the animation's duration.</td>
-    </tr>
-    <tr>
-        <td>name</td>
-        <td>The name of the event is used to identify the event when attaching an event listener to the anim component.</td>
-    </tr>
-    <tr>
-        <td>number</td>
-        <td>An additional property which can be set to any number. Used to pass additional details to the event listener.</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>An additional property which can be set to any string. Used to pass additional details to the event listener.</td>
-    </tr>
-</tbody></table>
+| Variable | Description |
+|----------|-------------|
+| time     | Defines the specific time during the playback of the animation when the event should trigger. Given in seconds. |
+| name     | The name of the event is used to identify the event when attaching an event listener to the anim component. |
+| number   | An additional property which can be set to any number. Used to pass additional details to the event listener. |
+| string   | An additional property which can be set to any string. Used to pass additional details to the event listener. |
 
 ### Event Listeners
 
@@ -51,11 +34,10 @@ AnimationEvents.prototype.initialize = function() {
         // get the foot bone from the event's string property, either right_foot or left_foot
         const footBone = this.entity.findByName(event.string);
         createDustCloudAtLocation(footBone.getPosition());
-    }), this);
+    }, this);
 };
 ```
 
 Any number of animation events can be attached to a single animation asset and used by any number of anim components. Making use of the additional `number` and `string` properties of an event allows you to differentiate between events that are passed to the same event listener.
 
 [1]: /images/user-manual/anim/animation_asset_with_events.png
-

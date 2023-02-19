@@ -1,5 +1,5 @@
 ---
-title: 桌面应用
+title: 桌面
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -8,4 +8,3 @@ position: 3
 
 [1]: https://nwjs.io/
 [2]: https://github.com/nwjs/nw.js/wiki/How-to-package-and-distribute-your-apps
-

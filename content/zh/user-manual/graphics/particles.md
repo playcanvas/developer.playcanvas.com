@@ -6,13 +6,13 @@ position: 5
 
 PlayCanvas为创建和编辑粒子系统提供了全面的支持。
 
-## 什么是粒子系统?
+## What is a Particle System?
 
 粒子系统是管理多个独立运动的粒子的模拟器。 它们可以被用作于制作与雨，雪，烟雾，火焰等类似的效果。
 
 请注意，粒子并不是按物理效果被模拟的。它们不会互相影响和碰撞。且粒子们会直接穿过你场景中的面。
 
-## 创建一个粒子系统
+## Creating a Particle System
 
 在编辑器的3D视图中，一个没有设置过的粒子系统通过下列按钮创建:
 
@@ -28,7 +28,7 @@ A newly created particle system with the default settings looks like this:
 
 要通过粒子系统组建的面板配置粒子系统，可以参考 [这里][4].
 
-## 通过脚本来传递一个粒子系统
+## Triggering a Particle System in Script
 
 有些情况下，你可能想让让一个粒子系统再某些特定的事件触发时或是特定的时间段里播放。举个例子，一个爆炸效果应该在导弹触碰到它的目标时播放。为了达成它，请确认你已经为你的粒子系统禁用了自动播放选项。然后，添加一个脚本组件到您的粒子系统的实体上。下面两行代码可以启动(或重新播放)粒子系统:
 
@@ -37,8 +37,13 @@ this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
 ```
 
+## Soft Particles
+
+Soft paricles are particles that are faded out near their intersections with scene geometry. If soft particles are enabled by using [```depthSoftening```][5], the camera which renders the particles needs to have a [Depth Map][6] rendering enabled.
+
 [1]: /images/user-manual/graphics/particles/particle_system_icon.png
 [2]: /images/user-manual/graphics/particles/particle_system_create.png
 [3]: /images/user-manual/graphics/particles/particle_system_default.gif
 [4]: /user-manual/packs/components/particlesystem
-
+[5]: /api/pc.ParticleSystemComponent.html#depthSoftening
+[6]: /user-manual/graphics/cameras/depth-layer

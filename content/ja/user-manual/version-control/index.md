@@ -1,5 +1,5 @@
 ---
-title: Version Control
+title: バージョンの管理
 layout: usermanual-page.hbs
 position: 13
 ---
@@ -29,4 +29,3 @@ PlayCanvasの**ブランチ**は、他のシステムのブランチのように
 [1]: /user-manual/version-control/checkpoints
 [2]: /user-manual/version-control/branches
 [3]: /user-manual/version-control/merging
-

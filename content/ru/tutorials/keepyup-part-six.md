@@ -1,11 +1,11 @@
 ---
-title: Making a Simple Game - Part 6
+title: Создание простой игры - Часть 6
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 6"></iframe>
 
 *You can find the [full project here][11]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] and [Part 5][5] read them first.*
 
@@ -15,7 +15,7 @@ The user interface of a game is the first thing you see and often it's the last 
 
 User Interfaces are built in PlayCanvas using the [Screen Component][7] and the [Element Component][8]. There is more details in the [user manual][6]
 
-### User Interface Entities
+### User Interface Entities
 
 ![Hierarchy][9]
 
@@ -25,7 +25,7 @@ We have divided our user interface up into the three game states: Menu, In Game 
 
 ![Image Element][12]
 
-Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset.
+Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset. 
 
 ![Image Attriubtes][13]
 
@@ -40,18 +40,18 @@ UiMenu.attributes.add("overlay", {type: "entity"});
 
 // initialize code called once per entity
 UiMenu.prototype.initialize = function() {
-    this.on('enable', this.onEnable, this);    
+    this.on('enable', this.onEnable, this);
     this.on('disable', this.onDisable, this);
-    
+
     this.onEnable();
 };
 
 UiMenu.prototype.onEnable = function () {
-    // Listen for clicks on the background    
-    
+    // Listen for clicks on the background
+
     this.overlay.enabled = true;
     this.overlay.element.on("click", this.start, this);
-    
+
     if (this.ball) {
         this.ball.model.meshInstances[0].material.depthTest = false;
     }
@@ -69,6 +69,7 @@ UiMenu.prototype.start = function (e) {
     e.stopPropagation();
 };
 ```
+
 First we have set up an attribute with a reference to the overlay element. The overlay element is a full screen element which tints the screen green. We also use this to detect input as we only care about the user clicking on the full screen.
 
 When the Entity is enabled we display the full screen overlay by enabling it and then we start listening for the click event. When the Entity is disabled we stop listening for the event and we hide the overlay. When an event is triggered we fire a "ui:start" event which the main game script is listening for and that triggers a change of game state.
@@ -93,4 +94,3 @@ Congratulations on reaching the end of the series! We hope you've learn a lot ab
 [12]: /images/tutorials/beginner/keepyup-part-six/image-element.jpg
 [13]: /images/tutorials/beginner/keepyup-part-six/element-attr.jpg
 [14]: https://forum.playcanvas.com/
-

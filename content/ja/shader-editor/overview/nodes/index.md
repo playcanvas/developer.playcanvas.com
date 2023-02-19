@@ -25,4 +25,3 @@ Based on this, we can identify three categories of nodes:
 - Transform nodes - these have both input ports and output ports.
 
 [1]: /images/shader-editor/graph-editor-node.png
-

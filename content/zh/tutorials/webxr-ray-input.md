@@ -1,15 +1,15 @@
 ---
 title: WebXR UI Interaction
 layout: tutorial-page.hbs
-tags: vr, input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg
+tags: vr, ar, input, ui
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg"
 ---
 
-<iframe allow="xr-spatial-tracking" src="https://playcanv.as/p/TAYVQgU2/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="xr-spatial-tracking"></iframe>
 
 *Click the VR/AR button if you have a VR/AR compatible device/headset.*
 
-This is a WebXR experience that provides interaction between UI and XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Oculus Browser, Google Cardboard™, Google Daydream™, Samsung Gear VR™ and other VR/AR headsets.
+This is a WebXR experience that provides interaction between UI and XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Oculus Browser, Google CardboardTM, Google DaydreamTM, Samsung Gear VRTM and other VR/AR headsets.
 
 Let's have a look at the source of the [tutorial project][1].
 
@@ -34,13 +34,14 @@ In this project, we have `xr.js` which is added to the Root entity. It manages V
 
 To read more about the direct PlayCanvas API for WebXR, please refer to the [User Manual][2].
 
+
 ## XR Input Types
 
 The level of fidelity for input devices can be broken into the following groups (DOF == Degrees of Freedom):
 
-* **Gaze** - The default type which has no position and orientation of its own, and is based on the orientation of the head mounted display. Simply put - it is always facing forwards in the direction the user is facing. These include mobile-based VR devices such as Google Cardboard™ and Samsung Gear VR™.
+* **Gaze** - The default type which has no position and orientation of its own, and is based on the orientation of the head mounted display. Simply put - it is always facing forwards in the direction the user is facing. These include mobile-based VR devices such as Google CardboardTM and Samsung Gear VRTM.
 * **Screen** - Touch based input source, which is possible in AR. For example, on mobile devices with touch screens.
-* **Tracked Pointer** - Input source which has a tracked rotation and an optionally tracked position in space. This is usually a grippable device, and is associated with hands, either as hand controllers or tracked hands itself. This can be: Google Daydream™, Gear VR™ Controller, Oculus Touch™, Vive™ controllers and many others.
+* **Tracked Pointer** - Input source which has a tracked rotation and an optionally tracked position in space. This is usually a grippable device, and is associated with hands, either as hand controllers or tracked hands itself. This can be: Google DaydreamTM, Gear VRTM Controller, Oculus TouchTM, ViveTM controllers and many others.
 
 Every input source has a ray with an origin where it starts and a direction in which it is pointing. WebXR input source implementation in PlayCanvas supports all input source types without any extra work from a developer. If an input source is grippable, then we can render its model based on the provided position and rotation.
 
@@ -113,4 +114,3 @@ This UI interaction is agnostic to input source: either it originates from VR ha
 [8]: /api/pc.XrInputSource.html#getOrigin
 [9]: /api/pc.XrInputSource.html#getDirection
 [10]: /api/pc.ButtonComponent.html#event:click
-

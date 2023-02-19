@@ -29,7 +29,6 @@ The joy of PBR is that energy conservation is included in the shader, so as an a
 ## Metals & Non-metals
 
 ![Metals & Non-metals][4]
-*Metals and Non-metals*
 
 One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine its behavior. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
 
@@ -52,7 +51,6 @@ Some PBR systems use Roughness, some use Glossiness, they are the same thing. Ro
 [Next: Physical Materials][6]
 
 *More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
-
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
 [2]: https://www.joachimcoppens.com/

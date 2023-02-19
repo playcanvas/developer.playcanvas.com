@@ -1,5 +1,5 @@
 ---
-title: CSS
+title: Таблицы стилей CSS
 layout: usermanual-page.hbs
 position: 6
 ---
@@ -27,4 +27,3 @@ asset.on('load', function() {
 // make sure assets loads
 app.assets.load(asset);
 ```
-

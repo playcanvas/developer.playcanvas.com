@@ -1,15 +1,15 @@
 ---
-title: 制作一个简单的游戏 - Part 3
+title: 制作轻量游戏 - Part 3
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 3"></iframe>
 
 *你可以在这里找到[完整项目][4]。 如果你还没有看过[第1部分][1]和[第2部分][2]请先阅读它们。*
 
-## 游戏的脚本 & 输入
+## The Game script & Input
 
 这两个脚本`game.js`和`input.js`被附加在场景中的根实体上，称为“游戏”。 脚本通常按照它们在层次结构中遇到的顺序执行，因此在第一个节点的实体上附加任何非实体需求的脚本最容易。 您还可以在编辑器的“设置”面板中管理脚本的加载顺序，以在不将其附加到实体的情况下让其首先加载脚本。
 
@@ -106,7 +106,7 @@ Game.prototype.resetScore = function () {
 };
 ```
 
-### 游戏状态
+### Game State
 
 游戏脚本管理游戏的整体状态，其公开了一些以改变游戏状态并且触发事件以警告其他代码游戏状态已经改变的方法。
 
@@ -114,7 +114,7 @@ Game.prototype.resetScore = function () {
 
 当适当的触发事件发生时，将从其他脚本调用这些状态更改方法。 例如，当球从屏幕底部离开时，`gameOver()` 方法被`ball.js`调用。
 
-### 应用事件
+### Application Events
 
 让我们暂停一下，看看游戏脚本是如何触发应用程序上的事件的。
 
@@ -134,11 +134,11 @@ this.app.on("game:start", function () {
 }, this)
 ```
 
-### 记分
+### Scoring
 
 游戏脚本还管理当前分数。 它公开了用于修改分数的方法，并且触发事件以让其他代码知道分数已更改。
 
-### 分辨率
+### Resolution
 
 最后，游戏脚本处理分辨率为引擎的初始选择，以确保主画布在移动和桌面上都是正确的大小。 在移动设备上(由640像素小于宽的屏幕定义)，游戏只需填充整个屏幕。 在桌面上，我们使用在项目设置中设置的预置分辨率。
 
@@ -225,15 +225,15 @@ Input.prototype._onMouseDown = function (e) {
 
 首先，在初始化中我们设置事件监听。 我们监听应用程序事件，以确定游戏是否处于暂停状态(即在菜单或游戏结束状态)。 如果状态为暂停，我们不响应tap。 接下来我们监听touch事件(注意，你必须检查`this.app.touch`是否可用)和鼠标事件。
 
-### 触摸事件
+### Touch Events
 
 对于触摸事件，我们首先触摸并通过屏幕坐标。 我们也在浏览器事件上调用`preventDefault()` 生成一个`click`事件，除非浏览器停止工作它才不会调用。
 
-### 鼠标事件
+### Mouse Events
 
 在“mousedown”事件中，我们将屏幕坐标传递到敲击代码中。 注意，PlayCanvas确保触摸和鼠标事件具有相同的坐标系。 这与一般的浏览器事件的情况不一样！
 
-### 敲击
+### Taps
 
 `_onTap()`获取屏幕坐标(x, y) ，如果此时已经“击中”球，它会告诉球的代码它已经被点击。
 
@@ -246,6 +246,7 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 我们还传入一个向量`Input.worldPos`。 在PlayCanvas应用程序中，避免创建新对象是很重要的，例如在更新循环中调用`new pc.Vec3()` 创建一个新向量。 你这样做的次数越多内存分配就越多(通过调用`new`)，浏览器就需要做更多的垃圾收集来清除你的分配。 垃圾收集是一个(比较慢)的操作，这将导致您的游戏或应用程序经常发生卡顿。
 
 在大多数情况下，PlayCanvas将提供一个传入向量或类似的选项，以便您可以预分配和重新使用对象。
+
 
 ```javascript
 // get the distance of the touch/click to the ball
@@ -267,4 +268,3 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 [2]: /tutorials/keepyup-part-two/
 [3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
-

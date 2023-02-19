@@ -33,4 +33,3 @@ The billing events from May to October will be as follows:
 
 ## Cancelling your Plan
 You can cancel your plan at any time. Note that cancellation takes effect immediately and your account will switch to the free tier straight away. If you need to use your plan features up to the next billing date, we recommend that you set a reminder and cancel the day before.
-

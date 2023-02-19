@@ -1,5 +1,5 @@
 ---
-title: Version Control
+title: Контроль версии
 layout: usermanual-page.hbs
 position: 13
 ---
@@ -29,4 +29,3 @@ More details can be found on the specific pages for [checkpoints][1], [branches]
 [1]: /user-manual/version-control/checkpoints
 [2]: /user-manual/version-control/branches
 [3]: /user-manual/version-control/merging
-

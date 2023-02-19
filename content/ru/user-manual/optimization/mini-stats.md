@@ -8,11 +8,11 @@ Mini stats is a lightweight graphical display of an application's key performanc
 
 Editor users can enable the mini-stats panel via the Launch button menu:
 
-<img alt="Launch Menu" width="600" src="/images/user-manual/optimization/mini-stats/launch-menu-mini-stats.png" />
+<img loading="lazy" alt="Launch Menu" width="600" src="/images/user-manual/optimization/mini-stats/launch-menu-mini-stats.png">
 
 Clicking on the mini-stats will cycle through three supported sizes:
 
-<img alt="Mini Stats" width="411" src="/images/user-manual/optimization/mini-stats/mini-stats.gif" />
+<img loading="lazy" alt="Mini Stats" width="411" src="/images/user-manual/optimization/mini-stats/mini-stats.gif">
 
 The information displayed is as follows:
 
@@ -36,4 +36,3 @@ The ['Engine-only' examples][3] all do this.
 [1]: https://webglreport.com/
 [2]: https://github.com/playcanvas/engine/tree/master/extras/mini-stats
 [3]: https://playcanvas.github.io/
-

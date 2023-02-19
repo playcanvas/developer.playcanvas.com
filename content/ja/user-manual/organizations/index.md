@@ -1,5 +1,5 @@
 ---
-title: Organizations（組織）
+title: 組織
 layout: usermanual-page.hbs
 position: 6
 ---
@@ -22,4 +22,3 @@ Organization（組織）を利用すると企業や大きなプロジェクト�
 
 [1]: https://playcanvas.com/plans
 [2]: /user-manual/api
-

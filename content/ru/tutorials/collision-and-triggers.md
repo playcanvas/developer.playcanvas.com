@@ -1,11 +1,11 @@
 ---
-title: Collision and Triggers
+title: Столкновения и триггеры
 layout: tutorial-page.hbs
 tags: collision, physics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1Hj5fX2I/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1Hj5fX2I/" title="Collision and Triggers"></iframe>
 
 *Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
 
@@ -46,15 +46,16 @@ For this demo, the important property is the **Type**. You can pick one of three
 * **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
 * **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
+
 ## Setting up the ground
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-<img src="/images/tutorials/collision/ground_setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300px">
 
 You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
-## Setting up the trigger
+## Setting up the trigger
 
 The next Entity we'll need is the trigger.
 
@@ -97,11 +98,11 @@ In this case, when the trigger is fired, we reset the penetrating Entity back up
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-<img src="/images/tutorials/collision/box_setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300px">
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 
-## Contact Events
+## Contact Events
 
 There are three events available on the *collision* component:
 
@@ -140,4 +141,3 @@ And that's all there is to handling Collisions and Triggers in PlayCanvas.
 [7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: /api/pc.Entity.html
 [9]: /images/tutorials/collision/box_setup.png
-

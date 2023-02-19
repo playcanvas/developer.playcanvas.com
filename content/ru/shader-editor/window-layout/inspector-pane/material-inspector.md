@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 3
 ---
 
-<img src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;"></img>
+<img loading="lazy" src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;">
 
 The Material Inspector is where a material's settings are configured.
 
@@ -35,4 +35,3 @@ The parameters section lists the parameter nodes placed on the graph. The names 
 [1]: /shader-editor/window-layout/assets-pane
 [2]: /api/pc.Material.html#blendType
 [3]: /images/shader-editor/inspector-pane-material.png
-

@@ -1,7 +1,7 @@
 ---
 title: レイキャスティング
 layout: usermanual-page.hbs
-position: 4
+position: 5
 ---
 
 PlayCanvas物理エンジンを使用すると、レイキャストを実行できます。レイキャストは、2つの任意の3Dポイント間の直線がリジッドボディと交差するかどうかを判断するクエリです。
@@ -11,17 +11,17 @@ PlayCanvas物理エンジンを使用すると、レイキャストを実行で�
 ```javascript
 var Raycast = pc.createScript('raycast');
 
-// エンティティごとに1回呼び出される初期化コード
+// initialize code called once per entity
 Raycast.prototype.initialize = function() {
     if (!this.entity.camera) {
         console.error('This script must be applied to an entity with a camera component.');
         return;
     }
 
-    // mousedownイベントハンドラーを追加
+    // Add a mousedown event handler
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.mouseDown, this);
-    
-    // タッチが使用可能な場合にのみタッチイベントを追加
+
+    // Add touch event only if touch is available
     if (this.app.touch) {
         this.app.touch.on(pc.EVENT_TOUCHSTART, this.touchStart, this);
     }
@@ -32,7 +32,7 @@ Raycast.prototype.mouseDown = function (e) {
 };
 
 Raycast.prototype.touchStart = function (e) {
-    // 画面に1本の指触れている場合にのみレイキャストを実行
+    // Only perform the raycast if there is one finger on the screen
     if (e.touches.length === 1) {
         this.doRaycast(e.touches[0].x, e.touches[0].y);
     }
@@ -40,16 +40,16 @@ Raycast.prototype.touchStart = function (e) {
 };
 
 Raycast.prototype.doRaycast = function (screenX, screenY) {
-    // （カメラの位置）からレイキャストするpc.Vec3
+    // The pc.Vec3 to raycast from (the position of the camera)
     var from = this.entity.getPosition();
 
-    // レイキャストするpc.Vec3（カメラのファークリッププレーンに投影されるクリック位置）
+    // The pc.Vec3 to raycast to (the click position projected onto the camera's far clip plane)
     var to = this.entity.camera.screenToWorld(screenX, screenY, this.entity.camera.farClip);
 
-    // 2点間のレイキャストおよび最も近いヒット結果を返す
+    // Raycast between the two points and return the closest hit result
     var result = this.app.systems.rigidbody.raycastFirst(from, to);
-    
-    // ヒットした場合は、エンティティを保存
+
+    // If there was a hit, store the entity
     if (result) {
         var hitEntity = result.entity;
         console.log('You selected ' + hitEntity.name);
@@ -62,4 +62,3 @@ Raycast.prototype.doRaycast = function (screenX, screenY) {
 レイキャスティングには他の用途もあります。エンティティはレイキャストを発射することで環境を調査できます。たとえば、エンティティが地面に置かれていることを判断するために、エンティティを直接下方向に発射し、環境と交差するかどうかを確認できます。
 
 [1]: https://playcanvas.com/project/410547/overview/entity-picking-using-physics
-

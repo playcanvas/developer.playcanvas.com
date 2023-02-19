@@ -69,4 +69,3 @@ mat4 getModelMatrix() {
     return mat4(instance_line1, instance_line2, instance_line3, instance_line4);
 }
 ```
-

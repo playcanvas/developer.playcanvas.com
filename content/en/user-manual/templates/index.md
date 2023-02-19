@@ -51,7 +51,7 @@ If you hover over the colored label of the overridden field you can view more de
 
 ### Applying Overrides
 
-To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field. 
+To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field.
 
 To apply multiple overrides select the root of the Template Instance and click Apply All on the Entity Inspector. You can also right click on the root of the Template Instance and select Template &rarr; Apply To Template.
 

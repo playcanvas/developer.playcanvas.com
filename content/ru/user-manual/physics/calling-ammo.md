@@ -1,7 +1,7 @@
 ---
 title: Calling the ammo.js API
 layout: usermanual-page.hbs
-position: 5
+position: 6
 ---
 
 The PlayCanvas integration with ammo.js does not expose the full capability of the ammo.js API. However, it is possible to call the ammo.js API directly from your PlayCanvas scripts.
@@ -100,7 +100,7 @@ PointToPointConstraint.prototype.createConstraint = function() {
 
     var dynamicsWorld = this.app.systems.rigidbody.dynamicsWorld;
     dynamicsWorld.addConstraint(this.constraint, !this.enableCollision);
-    
+
     this.activate();
 };
 
@@ -147,16 +147,16 @@ You can enable CCD for any PlayCanvas rigid body using the following script:
 var Ccd = pc.createScript('ccd');
 
 Ccd.attributes.add('motionThreshold', {
-    type: 'number', 
-    default: 1, 
-    title: 'Motion Threshold', 
+    type: 'number',
+    default: 1,
+    title: 'Motion Threshold',
     description: 'Number of meters moved in one frame before CCD is enabled'
 });
 
 Ccd.attributes.add('sweptSphereRadius', {
-    type: 'number', 
-    default: 0.2, 
-    title: 'Swept Sphere Radius', 
+    type: 'number',
+    default: 0.2,
+    title: 'Swept Sphere Radius',
     description: 'This should be below the half extent of the collision volume. E.g For an object of dimensions 1 meter, try 0.2'
 });
 
@@ -193,4 +193,3 @@ These are just two examples of using the ammo.js API directly. You can also use 
 [3]: https://github.com/bulletphysics/bullet3/blob/master/docs/Bullet_User_Manual.pdf
 [4]: https://playcanvas.com/project/618829/overview/physics-constraints
 [5]: https://playcanvas.com/project/447023/overview/physics-with-ccd
-
