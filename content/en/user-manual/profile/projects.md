@@ -46,7 +46,7 @@ We recommend that users create periodic backups of projects to protect against a
 
 ## Forking a Project
 
-The simplest to create a backup of a project is to fork it. This creates a new project that is a copy of what is on the 'main' branch in the project.
+The simplest way to create a backup of a project is to fork it. This creates a new project that is a copy of what is on the 'main' branch in the project. No version control history is preserved in the newly created fork.
 
 You can find this option on the [project dashboard][7].
 
