@@ -34,7 +34,7 @@ Every checkpoint created only stores the changes from the previous checkpoint. T
 
 Creating a branch from a checkpoint makes a copy of the project state at that checkpoint. This can increase storage usage significantly depending on the project.
 
-Unfortunately, it is not possible to delete branches or checkpoints expect in these specific cases:
+Unfortunately, it is not possible to delete branches or checkpoints except in these specific cases:
 
 - [Hard reset to a checkpoint][4]
 - [Deleting a branch][5]
