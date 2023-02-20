@@ -6,7 +6,7 @@ position: 3
 
 # What is texture packing?
 
-It's common to find sprites or UI images in packs where they are separate images. Texture packing is combining those separate images into a single [texture atlas][texture-atlas].
+It's common to find sprites or UI images bundled as separate images. Texture packing is combining those separate images into a single [texture atlas][texture-atlas].
 
 This has several advantages including:
 
