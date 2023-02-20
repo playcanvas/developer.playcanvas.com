@@ -62,7 +62,7 @@ There are two methods to create an offline backup archive of a project:
 
 You can export a .zip archive of your project to keep an offline backup. You can later choose to import that .zip archive as a new project.
 
-To export a project click on the arrow next to a project and select 'Export Project'. This can only export the 'main' branch.
+To export a project, click on the arrow next to a project and select 'Export Project'. This can only export the 'main' branch.
 
 ### Using the REST API
 
