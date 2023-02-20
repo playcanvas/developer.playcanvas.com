@@ -1,11 +1,11 @@
 ---
-title: 動画テクスチャー
+title: ビデオテクスチャー
 layout: tutorial-page.hbs
 tags: video, textures
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/6wt5T87E/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/6wt5T87E/" title="Video Textures"></iframe>
 
 [チュートリアルプロジェクト][1]のEditorからお試しください。
 
@@ -21,11 +21,18 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');
 
-VideoTexture.attributes.add('video', {
-    title: 'Video',
+VideoTexture.attributes.add('videoAsset', {
+    title: 'Video Asset',
     description: 'MP4 video asset to play back on this video texture.',
     type: 'asset'
 });
+
+VideoTexture.attributes.add('videoUrl', {
+    title: 'Video Url',
+    description: 'URL to use if there is video asset selected',
+    type: 'string'
+});
+
 VideoTexture.attributes.add('playEvent', {
     title: 'Play Event',
     description: 'Event that is fired as soon as the video texture is ready to play.',
@@ -49,6 +56,9 @@ VideoTexture.prototype.initialize = function() {
 
     // needed because the video is being hosted on a different server url
     video.crossOrigin = "anonymous";
+
+    // autoplay the video
+    video.autoplay = true;
 
     // iOS video texture playback requires that you add the video to the DOMParser
     // with at least 1x1 as the video's dimensions
@@ -79,10 +89,15 @@ VideoTexture.prototype.initialize = function() {
     }.bind(this));
 
     // set video source
-    video.src = this.video ? this.video.getFileUrl() : this.videoUrl;
+    video.src = this.videoAsset ? this.videoAsset.getFileUrl() : this.videoUrl;
 
     document.body.appendChild(video);
     video.load();
+
+    this.on('destroy', function() {
+        this.videoTexture.destroy();
+        video.remove();
+    }, this);
 };
 
 // update code called every frame
@@ -93,4 +108,3 @@ VideoTexture.prototype.update = function(dt) {
 ```
 
 [1]: https://playcanvas.com/project/405850
-

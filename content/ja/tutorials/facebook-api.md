@@ -2,11 +2,11 @@
 title: Facebook API
 layout: tutorial-page.hbs
 tags: facebook
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
-*facebookでログインして写真を3D彫刻で表示*
+<iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
+*Log in with facebook to see your photos in a 3D sculpture*
 
 PlayCanvasはWebGLのFacebookのゲームやアプリケーションを構築するために適しています。Facebookはゲームのユーザにアピールする絶好の場所です。一方、PlayCanvasでは、ウェブ用に最適化された高速かつ高性能なゲームを作成することができます。
 
@@ -124,7 +124,8 @@ FbUi.prototype.hideLogout = function () {
 
 独自のアプリケーションイベント`app:fblogin` と`app:fblogout` を発信してFacebookのステータスが変更されたことをアプリケーションの他の部分に通知しています。
 
-### Facebook APIにアクセス
+
+### Facebook APIにアクセス
 
 `face-photo.js`ファイルはFacebook APIを使用して、ユーザからの写真のリストを取得して3Dの世界でそれらを表示しています。
 
@@ -289,4 +290,3 @@ SWOOOPはゲームでこれらのいくつかを実践しています。[Faceboo
 [3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/
 [5]: https://playcanvas.com/project/405897
-

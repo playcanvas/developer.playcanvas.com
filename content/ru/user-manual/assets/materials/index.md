@@ -18,13 +18,13 @@ Materials are imported automatically when you upload a 3D model (e.g. FBX or COL
 
 You can create new materials directly from the PlayCanvas Editor interface.
 
-<img src="/images/user-manual/assets/materials/create-asset-menu.jpg" style="width: 300px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/create-asset-menu.jpg" width="300">
 
 This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
 
 ## Selecting a Material
 
-<img src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;">
 
 In order to edit a material, first you must select it. This will bring up the material inspector.
 
@@ -34,39 +34,39 @@ Generally, clicking on a material preview icon will take you to the material ins
 
 ## Assigning Materials
 
-<img src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
 
 When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
 
-<br style="clear:both;" />
+<br style="clear:both;">
 
-<img src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
 
 You can also drag and drop material Assets from the asset panel onto the material slot.
 
-<br style="clear:both;" />
+<br style="clear:both;">
 
 Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
 
-<img src="/images/user-manual/assets/materials/select.png" style="max-width: 100%" />
+<img loading="lazy" src="/images/user-manual/assets/materials/select.png" style="max-width: 100%">
 
 After selecting the mesh instance a new material picker will appear in the model component:
 
-<img src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%" />
+<img loading="lazy" src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%">
 
 Then you can select a different material for this particular Entity:
 
-<img src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%" />
+<img loading="lazy" src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%">
 
-<br style="clear:both;" />
+<br style="clear:both;">
 
 ## Editing a Material
 
-<img src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 Once you have a material selected you can edit its properties.
 
@@ -86,13 +86,13 @@ The phong shading model is our legacy shading model. Use this for compatibility 
 
 ## Material Maps
 
-<img src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+<img loading="lazy" src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
 Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
 
 There are a few options that are available on most texture map slots for a material.
 
-### Texture Asset
+### Texture Asset
 
 First is the texture asset, upload an image to PlayCanvas and we'll create a texture asset for you. you can assign this to a slot on a material.
 
@@ -100,10 +100,9 @@ First is the texture asset, upload an image to PlayCanvas and we'll create a tex
 
 Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
 
-### Channel
+### Channel
 
 Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
 
 [1]: /user-manual/assets/materials/physical-material
 [2]: /user-manual/assets/materials/phong-material
-

@@ -1,11 +1,11 @@
 ---
-title: Light Halos
+title: Отблески света
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
 
 Find out more by forking the [full project][4].
 
@@ -13,7 +13,7 @@ This simple effect is great for adding atmosphere to your scene. Add a glow to a
 
 It works like this: We create an entity with a plane primitive attached which has a glowing halo material on it. We attach a script to entity which makes the plane always face the camera (billboarding). For added fun, we're fading the halo out if it faces away from the camera to simulate a directional light.
 
-## Ассеты
+## Ассеты
 
 ### Texture
 
@@ -25,17 +25,19 @@ This texture will form the basis of the glow.
 
 ### Material
 
-![material][2]
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
 
-The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot. This is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
 
-## Entities
+The **Blend Type** is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+
+## Сущности
 
 ![entities][3]
 
 The Entity setup for the glow is simple too. We have a parent Entity for the halo script and a child Entity which has the plane primitive attached to it. The reason we do this is to simplify the code so that we can use `entity.lookAt` to set the orientation of the glow. The Plane primitive faces upwards so we create a child entity and apply a rotation to this child so that the plane is correctly positioned facing the camera.
 
-## Code
+## Код
 
 The code for this project has two particularly interesting features.
 
@@ -123,8 +125,7 @@ Halo.prototype.update = function(dt) {
 That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
-[2]: /images/tutorials/intermediate/light-halos/material.jpg
+[2]: /images/tutorials/intermediate/light-halos/material.png
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
 [5]: /api/pc.MeshInstance.html
-

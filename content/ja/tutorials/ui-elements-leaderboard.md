@@ -2,10 +2,10 @@
 title: ユーザインターフェイス - リーダーボード
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/nbMbtAGH/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
 
 *Elementコンポーネントを使用しているリーダーボード。[フルシーン][1]を参照してください。*
 
@@ -51,7 +51,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 ![アンカーを分割][8]
 
-The horizontal anchors are not equal (they are 0 and 1) which means that the Element will expand automatically to fill the entire horizontal area if the Screen is resized. We also have a horizontal margin of 50 pixels to allow a small gap from the edges - the margin can only be set when anchors are split.
+水平アンカーは等しくない(0と1)ので、スクリーンがサイズ変更された場合、要素が自動的に拡大されて水平エリア全体を満たします。端からのわずかな隙間を許すために、50ピクセルの水平余白もあります。余白は、アンカーが分割されている場合にのみ設定できます。
 
 では、グループの子の残りの部分を見てみましょう。
 
@@ -161,4 +161,3 @@ Leaderboard.prototype.load = function (callback) {
 [10]: /images/tutorials/ui/leaderboard/name.png
 [11]: /images/tutorials/ui/leaderboard/score.png
 [12]: /images/tutorials/ui/leaderboard/pts.png
-

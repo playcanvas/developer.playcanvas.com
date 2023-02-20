@@ -1,11 +1,11 @@
 ---
-title: ハイトマップから地形生成
-tags: procedural
+title: ハイトマップから地形形成
 layout: tutorial-page.hbs
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
+tags: procedural
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
 
 このプロジェクトは[`pc.Mesh`][1] APIを使用して、手順に従い、ハイトマップテクスチャから転がる山腹の生成およびテクスチャ付けします。
 
@@ -165,4 +165,3 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 
 [1]: /api/pc.Mesh.html
 [2]: https://playcanvas.com/project/406046
-

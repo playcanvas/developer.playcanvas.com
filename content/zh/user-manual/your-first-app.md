@@ -6,7 +6,7 @@ position: 4
 
 Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes learning the basics. We'll recreate the following simple 3D app:
 
-<iframe  src="https://playcanv.as/p/TnUtDXWp/" allowfullscreen></iframe>
+<iframe loading="lazy"  src="https://playcanv.as/p/TnUtDXWp/" title="Simple PlayCanvas App"></iframe>
 
 *Use the arrow keys to move the red ball around.*
 
@@ -73,12 +73,12 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
 Movement.prototype.update = function(dt) {
-    
+
 };
 ```
 
@@ -89,7 +89,7 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
@@ -134,7 +134,7 @@ There is a 'Live Link' between the Editor and the Launch page. Any change you ma
 ![Editor Live Link][16]
 </div>
 
-The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar.
+The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar.
 
 ![Publish Button][17]
 
@@ -174,4 +174,3 @@ And so, that is the process from start to finish for building and publishing a P
 [18]: /images/user-manual/your-first-app/publish-dialog.png
 [19]: /images/user-manual/your-first-app/publish-options.png
 [20]: /images/user-manual/your-first-app/builds.png
-

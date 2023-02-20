@@ -1,7 +1,7 @@
 ---
 title: ammo.jsの更新
 layout: usermanual-page.hbs
-position: 6
+position: 7
 ---
 
 ### はじめに
@@ -36,4 +36,3 @@ ammo.jsの更新によってプロジェクトに問題が発生する場合は�
 プロジェクトには、古い物理を含める（「物理を有効にする」チェックボックスで）か、プロジェクトにammo.jsモジュールを直接含める必要がありますが。しかし、両方を同時に含めることはできません！
 
 [1]: /images/user-manual/physics/physics-legacy-settings.png
-

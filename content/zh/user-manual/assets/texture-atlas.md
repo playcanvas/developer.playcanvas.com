@@ -12,7 +12,7 @@ Texture Atlases are created by right-clicking on a regular Texture Asset and sel
 
 The Texture Atlas is used in combination with the [Sprite Asset][4] to render 2D graphics.
 
-## 属性
+## Properties
 
 ### Frames
 
@@ -34,4 +34,3 @@ In addition to frame data the Texture Atlas contains the properties as a [textur
 [2]: /user-manual/assets/textures
 [3]: /user-manual/designer/settings#create-atlases
 [4]: /user-manual/assets/sprites
-

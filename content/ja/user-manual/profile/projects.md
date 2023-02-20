@@ -62,4 +62,3 @@ If the user accepts the request then the transfer will be completed and all team
 [4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
 [5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
 [6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
-

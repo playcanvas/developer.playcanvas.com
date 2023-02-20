@@ -30,34 +30,25 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 
 # マテリアルのプロパティとマップ
 
-## 拡散(Diffuse)
+## 拡散マップ
 
 拡散色はマテリアルの下地の色で、RGB色の値を取ります。なめらかで純粋な物質(金属やプラスチックなど)の場合はひとつの値だけを取ることができますが、拡散マップテクスチャとして与えることもできます。拡散マップを使う場合には、照明の影響(影やハイライトなど)を含めないようにしてください。これらの効果は別のマップで適応することができるためです。
 
 拡散色は**アルベド**や**ベースカラー**と呼ばれることもあります。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
 
 インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
 
 ![Metals][3]
 
-<table class="centered">
-  <tr>
-  <th>素材</th><th>RGB</th>
-  </tr>
-  <tr>
-  <td>金</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>銀</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>銅</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
-  </tr>
-</table>
+| 素材 | RGB                                      |
+|----------|------------------------------------------|
+| 金     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
+| 銀   | (0.972, 0.960, 0.915) or [248, 245, 233] |
+| 銅   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
-## 金属質(Metalness)
+## 金属質(Metalness)
 
 金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
 
@@ -67,13 +58,13 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 
 また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 
-## 光沢度(Glossiness)
+## Glossiness
 
-光沢度は**金属質*と**スペキュラ**を使う方法の両方で使われ、マテリアルの表面がどのくらいなめらかかを定義します。光沢度はマテリアルの表面で反射する光がぼやけるか鋭いか、あるいはスペキュラハイライトが広いか狭いかに影響します。光沢度は0から100の間の値か、あるいは光沢度マップとして与えることができます。
+光沢度は**金属質**と**スペキュラ**を使う方法の両方で使われ、マテリアルの表面がどのくらいなめらかかを定義します。光沢度はマテリアルの表面で反射する光がぼやけるか鋭いか、あるいはスペキュラハイライトが広いか狭いかに影響します。光沢度は0から100の間の値か、あるいは光沢度マップとして与えることができます。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
 
 いくつかの物理ベースレンダリングシステムでは、光沢度という用語の代わりに**粗さ (Roughness)**という用語を使います。粗さは光沢度の反対の意味です。光沢度と粗さを変換する際には、単純にその値を反転してください。
 
@@ -85,7 +76,7 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 
 マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
 
 [1]: https://store.playcanvas.com
 [2]: /user-manual/glossary#high-dynamic-range
@@ -93,4 +84,3 @@ Editorに入り素材を作成しても、素材が下のサンプルと異な�
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
-

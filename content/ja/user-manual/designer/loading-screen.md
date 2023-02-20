@@ -6,7 +6,7 @@ position: 8
 
 カスタムの読み込み画面を作成するには [Scene Settings][1] に進み、*Loading Screen* セクションの**Create Default**をクリックします。すでに有効な読み込み画面のスクリプトがある場合は、読み込み画面パネルにドラッグ＆ドロップするか、**Select Existing**をクリックします：
 
-<img alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
+<img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png">
 
 **Create Default** をクリックすると、いくつかのデフォルトコンテンツをもつ新しいスクリプトが作成されます。読み込み画面を変更したい場合は、そのスクリプトを編集することができます。デフォルトのスクリプトの例：
 
@@ -124,4 +124,3 @@ pc.script.createLoadingScreen(function (app) {
 ```
 
 [1]: /user-manual/designer/settings
-

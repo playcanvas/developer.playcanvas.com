@@ -1,11 +1,11 @@
 ---
-title: Terrain Generation from Heightmap
+title: Генерация ландшафта из карты высот
 layout: tutorial-page.hbs
 tags: procedural
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/CmcIlmPb/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
 
 This project uses the [`pc.Mesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
 
@@ -165,4 +165,3 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 
 [1]: /api/pc.Mesh.html
 [2]: https://playcanvas.com/project/406046
-

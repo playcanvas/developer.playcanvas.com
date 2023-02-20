@@ -13,7 +13,7 @@ PlayCanvasでは、アンビエントライティングは拡散とスペキュ�
 
 AOマップは、異なるスケールの場合があります。例えば、モデルの異なる部分の大きなシャドーイング効果を伴う表面の裂け目またはワールドスケールのAOを示すテクスチャ詳細AO。スケールの大きいAOは、より多くのエフェクトをもたらし、通常はUV1のライトマップと一致し、より重要です。
 
-##レンダリンググローバルAO
+## レンダリンググローバルAO
 
 AOのレンダリングは、一般的な3Dモデリングとarchvizツールを使用して行うことができます。 [Lightmapping Section][0]に記述されているLightmapのレンダリングと事実上同じです。
 
@@ -31,7 +31,7 @@ VRayを使用した3D's Maxでは、**VRayDirt**タイプと**Ambient Occlusion*
 
 AO Textureは非常に詳細な情報を格納する必要はなく、視覚的にはテクスチャ圧縮アーティファクトの悪影響はあまりありません。そのため、JPEGは経済的で適切な形式です。
 
-## Editorにアップロード
+## エディタにアップロード
 
 Editorでテクスチャをアップロードし、素材のAmbient Occlusionスロットに適用するだけです。
 
@@ -45,12 +45,11 @@ Editorでテクスチャをアップロードし、素材のAmbient Occlusionス
 *このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
 
 [0]: /user-manual/graphics/lighting/lightmapping/
-[1]: /images/user-manual/lighting/lightmaps/3ds-max-ao-rendering.png
-[2]: /images/user-manual/lighting/lightmaps/3ds-max-vray-override-mtl.png
+[1]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-ao-rendering.png
+[2]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-vray-override-mtl.png
 [3]: /user-manual/graphics/lighting/lightmapping#render-to-texture
-[4]: /images/user-manual/lighting/lightmaps/model-ao-comparison.jpg
-[5]: /images/user-manual/lighting/lightmaps/editor-ao-map.png
+[4]: /images/user-manual/graphics/lighting/lightmapping/model-ao-comparison.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/editor-ao-map.png
 [6]: https://playcanv.as/p/zdkARz26/
 [7]: https://playcanvas.com/project/446587/overview/archviz-example
-[8]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
-
+[8]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg

@@ -92,6 +92,7 @@ entity.setLocalEulerAngles(30, 45, 60);
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ```
+
 However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ```javascript

@@ -2,10 +2,10 @@
 title: User Interface - Stats Counter
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/XVLr9TWc/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
 
 *How to use buttons, progress bars and interact with elements. See the [full scene][1].*
 
@@ -13,7 +13,7 @@ In this tutorial we are going to use the built-in [Elements][2] to create a few 
 
 For each stat we need a minus button, a plus button, a progress bar and some text to show the current stat value.
 
-## Hierarchy
+## Иерархия
 
 This is what our UI looks like in the Hierarchy:
 
@@ -107,4 +107,3 @@ In this script we find our child elements and when the plus or minus buttons are
 [8]: /images/tutorials/ui/stats/boost-hierarchy.png
 [9]: /tutorials/ui-elements-buttons/
 [10]: /tutorials/ui-elements-progress/
-

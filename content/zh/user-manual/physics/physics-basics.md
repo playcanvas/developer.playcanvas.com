@@ -20,17 +20,17 @@ This will import the default build of ammo.js provided by PlayCanvas. However pl
 
 For details on migrating legacy projects to the latest ammo.js see [this page][10].
 
-## 重力
+## Gravity
 
 In the same Settings panel, you can set global gravity of the physics simulation. Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero.
 
-## 度量单位
+## Units of Measurement
 
 通常情况下，PlayCanvas的物理引擎定义一个单位为1米。因此，为了使物品按照精确的速率落到物理上，你应该确保你的场景大小与对象大小是合适的。
 
 举个例子，如果你的游戏设置一个角色的身高位1.8m，那么他在编辑器的3D视图中应该有1.8个单位高。
 
-## 刚体
+## Rigid Bodies
 
 You can make any entity in your scene participate in the physics simulation. Just add a rigidbody component and a collision component. The rigidbody component specifies a type:
 
@@ -47,6 +47,8 @@ The collision component specifies the physical shape of the body. Note that a ri
 * Capsule
 * Cylinder
 * Mesh
+* Cone
+* [Compound][12]
 
 ## Creating a Static Ground
 
@@ -79,7 +81,7 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
@@ -94,7 +96,7 @@ This script simply animates the box along the world x-axis using a sine function
 
 ## Teleporting Dynamic Bodies
 
-Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid bodies position and/or orientation.
+Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid body's position and/or orientation.
 
 [1]: https://github.com/kripken/ammo.js
 [2]: /en/user-manual/packs/components/rigidbody/
@@ -107,4 +109,4 @@ Although you can use the standard entity transformation function with kinematic 
 [9]: /images/user-manual/physics/kinematic-box.gif
 [10]: /en/user-manual/physics/physics-migration/
 [11]: /en/user-manual/assets/wasm-modules/
-
+[12]: /user-manual/physics/compound-shapes/

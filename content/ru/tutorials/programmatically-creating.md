@@ -1,15 +1,15 @@
 ---
-title: Programmatically Creating Entities
+title: Программное создание сущностей
 layout: tutorial-page.hbs
 tags: procedural, basics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1VjdIY7v/" title="Programmatically Creating Entities"></iframe>
 
 Обычно, вы создавали сущности через редактор PlayCanvas, собирая коллекции компонентов и скриптов для созданий разных частей вашей игры. Однако, в некоторых случаях, вам необходимо создавать сущности в скрипте. В этом уроке узнаете, как это делать.
 
-## Создание сущности
+## Creating an Entity
 
 ```javascript
 var entity = new pc.Entity(); // Create an Entity
@@ -20,7 +20,7 @@ this.app.root.addChild(entity);
 
 Сперва вам нужно создать сущность. Это просто, но важно не забыть добавить сущность к главной иерархии сущностей. Только сущности в иерархии могут быть трансформированы, иметь компоненты и скрипты. В ваших скриптах вы можете обратиться к корню иерархии сущностей из объекта класса Application, который передан в ваш скрипт. Условно, он обычно называется "app" и иерархия доступна через "this.app.root".
 
-## Добавление компонентов
+## Adding Components
 
 ```javascript
 // Создание новой сущности
@@ -42,7 +42,7 @@ this.app.root.addChild(entity);
 
 Каждый тип компонентов имеет разные свойства, которые могут быть переданы в одном объекте, смотрите  [Документацию по компонентам][1] чтобы узнать о том, какими свойствами обладает данный тип. Аргумент `data` может быть пропущен и тогда компонент получит стандартные значения.
 
-## Удаление компонентов
+## Removing Components
 
 ```javascript
 var entity = new pc.Entity();
@@ -56,7 +56,7 @@ entity.removeComponent("camera");
 
 Компоненты сущности могут быть удалены по отдельности, по средством метода `removeComponent`.
 
-## Удаление сущностей
+## Deleting Entities
 
 ```javascript
 // Создание сущности
@@ -79,7 +79,7 @@ entity.destroy();
 
 Когда вы закончите работу с сущностью, вы можете вызвать метод `destroy`. Это удалит все компоненты и удалит сущность из иерархии. Это также удалит и все дочерние сущности.
 
-## В действии
+## In Action
 
 ```javascript
 var EntityCreator = pc.createScript('entityCreator');
@@ -164,4 +164,3 @@ EntityCreator.prototype.spawnCube = function () {
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341
-

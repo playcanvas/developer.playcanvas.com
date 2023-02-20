@@ -62,6 +62,14 @@ Set the following options in the `config.json` as shown below. This will produce
 
 The `folder_name` needs to be a unique string. For this purpose, you can use a random GUID from a [GUID generator][guid-generator] or your Snapchat representative may have a specific string that you should use.
 
+And run the command:
+
+```sh
+npm run one-page
+```
+
+Full details of options and commands can be found in the readme section for '[Converting a project into a single HTML file][2]'.
+
 To test the ad on a device, we can use the Android app [Creative Preview][creative-preview] but we need to host the ad on a https server.
 
 Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
@@ -91,7 +99,6 @@ When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN 
 ```
 
 The ZIP can then be given to your Snapchat representative to upload to the ad network.
-
 
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/

@@ -12,4 +12,3 @@ PlayCanvas用户手册是PlayCanvas整个平台深入彻底的参考资料。 �
 
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction
-

@@ -13,4 +13,3 @@ PlayCanvas采用了先进的图形引擎，内部采用了WebGL API绘制图形�
 * Static and skinned mesh rendering
 * GPU particle engine
 * Post effect library
-

@@ -1,5 +1,5 @@
 ---
-title: Building Models
+title: Построение моделей
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -44,7 +44,7 @@ Blender supports exporting to both COLLADA and FBX, but the built-in exporters d
 
 As of Blender 2.71, both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor.
 
-### **Embedding Textures**
+### **Embedding Textures**
 
 Embedded Textures make importing much easier.
 
@@ -75,7 +75,7 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 ## Autodesk 3D Studio Max
 
-### Materials
+### Max Materials
 
 You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
 
@@ -141,7 +141,7 @@ Sphere mapping is one of the cheapest, least 'convincing' forms of reflection ma
 
 ## Autodesk Maya
 
-### Materials
+### Maya Materials
 
 You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
 
@@ -158,4 +158,3 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
 [10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
 [11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
-

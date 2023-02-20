@@ -146,4 +146,3 @@ If you exceed the rate limit you will get a `429 Too Many Requests` status code.
 [6]: /images/user-manual/api/project-id.png
 [7]: /images/user-manual/api/scene-id.png
 [8]: /images/user-manual/api/branch-id.png
-

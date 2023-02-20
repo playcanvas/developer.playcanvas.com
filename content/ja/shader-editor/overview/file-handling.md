@@ -25,4 +25,3 @@ Shader packs don't contain the graphs and nodes from the project. Instead they c
 For more information on how to accomplish this, see [Inspector Pane][1] documentation.
 
 [1]: /shader-editor/window-layout/inspector-pane
-

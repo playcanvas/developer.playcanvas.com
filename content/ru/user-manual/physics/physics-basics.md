@@ -47,6 +47,8 @@ The collision component specifies the physical shape of the body. Note that a ri
 * Capsule
 * Cylinder
 * Mesh
+* Cone
+* [Compound][12]
 
 ## Creating a Static Ground
 
@@ -79,7 +81,7 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
@@ -94,7 +96,7 @@ This script simply animates the box along the world x-axis using a sine function
 
 ## Teleporting Dynamic Bodies
 
-Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid bodies position and/or orientation.
+Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid body's position and/or orientation.
 
 [1]: https://github.com/kripken/ammo.js
 [2]: /en/user-manual/packs/components/rigidbody/
@@ -107,4 +109,4 @@ Although you can use the standard entity transformation function with kinematic 
 [9]: /images/user-manual/physics/kinematic-box.gif
 [10]: /en/user-manual/physics/physics-migration/
 [11]: /en/user-manual/assets/wasm-modules/
-
+[12]: /user-manual/physics/compound-shapes/

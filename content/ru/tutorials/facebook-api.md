@@ -2,10 +2,10 @@
 title: Facebook API
 layout: tutorial-page.hbs
 tags: facebook
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
 *Log in with facebook to see your photos in a 3D sculpture*
 
 PlayCanvas is a perfect partner for building WebGL Facebook games and applications. Facebook is a great place to find a large audience for your games and PlayCanvas lets you create fast and performant games that are optimized for the web.
@@ -124,7 +124,8 @@ The function `loginChangeFn` is a callback which is used to respond to changes i
 
 Note, also we fire our own application events `app:fblogin` and `app:fblogout` to tell other parts of the application that the Facebook status has changed.
 
-### Accessing the Facebook API
+
+### Accessing the Facebook API
 
 The file `face-photo.js` uses the Facebook API to retrieve a list of photos from the user and display them in the 3D world.
 
@@ -289,4 +290,3 @@ Our game SWOOOP shows some of these in action. Try it on [Facebook][4] now.
 [3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/
 [5]: https://playcanvas.com/project/405897
-

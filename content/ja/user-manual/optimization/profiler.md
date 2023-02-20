@@ -1,5 +1,5 @@
 ---
-title: プロファイラ
+title: プロファイラー
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -36,4 +36,3 @@ PlayCanvasは、パフォーマンスの問題の診断を支援するための�
 [2]: /images/user-manual/optimization/profiler/profiler_launch.png
 [3]: /images/user-manual/optimization/profiler/profiler_stats.png
 [4]: /images/user-manual/optimization/profiler/profiler_timeline.png
-

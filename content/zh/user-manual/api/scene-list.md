@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 14
 ---
 
-## 传输链接
+## Route URL
 
 ```none
 GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 ```
 
-## 描述
+## Description
 
 Get a list of all scenes for a project
 
-## 案例
+## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
 ```
 
 HTTP Request
@@ -27,14 +27,14 @@ GET https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## 参数
+## Parameters
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list scenes from</p></div>
-<div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the master branch will be used.</p></div>
+<div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the main branch will be used.</p></div>
 </div>
 
-## 响应模式
+## Response Schema
 
 ```none
 Status: 200
@@ -52,7 +52,7 @@ Status: 200
 }
 ```
 
-## 报错
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
@@ -61,9 +61,8 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## 速率限制
+## Rate Limiting
 
 This route uses a [normal][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
-

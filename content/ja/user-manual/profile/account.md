@@ -8,5 +8,4 @@ position: 3
 
 ![account_page][1]
 
-[1]: /images/platform/account.png "アカウント"
-
+[1]: /images/platform/account.png "Account"

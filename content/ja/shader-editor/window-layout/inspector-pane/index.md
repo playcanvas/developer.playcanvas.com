@@ -18,4 +18,3 @@ There are inspectors for the following:
 [2]: /shader-editor/window-layout/inspector-pane/node-inspector
 [3]: /shader-editor/window-layout/inspector-pane/material-inspector
 [4]: /shader-editor/window-layout/inspector-pane/texture-inspector
-

@@ -58,4 +58,3 @@ The editor will reload the project at the checkpoint.
 [5]: /images/user-manual/version-control/restore-checkpoint-applied.png
 [hard-reset-confirm]: /images/user-manual/version-control/hard-reset-confirm.png
 [hard-reset]: /images/user-manual/version-control/hard-reset.png
-

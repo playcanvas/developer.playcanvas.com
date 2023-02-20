@@ -6,7 +6,7 @@ position: 1
 
 新しいスクリプトを作成するにはアセットパネルを使用してNew Scriptを選択します。当たらしスクリプトファイルに名前を入力するよう促されます。
 
-![新規スクリプト][0]
+![新しいスクリプト][0]
 
 パネルでスクリプトアセットをダブルクリックしてコードエディタで開く。
 
@@ -46,4 +46,3 @@ entity.script.destroy("rotate");
 [1]: /images/user-manual/scripting/code-editor.jpg
 [2]: /images/user-manual/scripting/select-script.jpg
 [3]: /api/pc.AssetRegistry.html#load
-

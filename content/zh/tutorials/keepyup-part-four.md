@@ -1,15 +1,15 @@
 ---
-title: 制作一个简单的游戏 - Part 4
+title: 制作轻量游戏 - Part 4
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 4"></iframe>
 
 *你可以在这里找到[完整项目][6]。 如果你没有看过[第1部分][1]，[第2部分][2]和[第3部分][3]请先阅读它们。
 
-## 足球
+## The Football
 
 足球是我们玩Keepy Up游戏时的注意中心。 它响应玩家的输入，它受到环境因素(重力)响应，它能够发出声音。 这可能是这个游戏里最复杂的部分。 幸运的是，我们将尽我们所能向您解释所有的部分。
 
@@ -159,7 +159,7 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### 脚本属性
+### 脚本特性
 
 首先你会注意到在脚本的顶部是我们定义的一组脚本属性。 通过定义脚本属性，可以将脚本中的值公开到编辑器中。 有三个非常好的理由这样做。
 
@@ -175,7 +175,7 @@ Ball.prototype.reset = function () {
 
 第三，添加脚本属性是将脚本链接到场景中的实体或资源的好方法。 例如，球脚本需要在轻敲时触发粒子特效。 粒子特效在我们场景中的另一个实体上。 我们定义一个名为`impactEffect`的类型为`entity`的脚本属性，在编辑器中我们将它链接到带有粒子效果的实体。 我们的脚本现在有一个对实体的引用，我们可以在不破坏我们的代码的情况下自由修改这个实体或改变其链接到另一个实体。
 
-### 物理模拟
+### The Physics Simulation
 
 对于有一些基本的矢量数学知识的你，一定能够轻松理解球的`update()` 循环。但对于其他人，我们对如何模拟一个视频游戏中的球解释得更多一点。
 
@@ -183,23 +183,23 @@ Ball.prototype.reset = function () {
 
 您可以通过三种方式之一改变对象的位置。
 
-* **改变加速度**，这对于在一段时间内施加力是有用的，比如球上的重力
-* **更改速度**，这是瞬时变化。 就像一个球撞击地板弹跳
-* **改变位置**，像传送，这并不是一个现实现象的模拟！
+* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
+* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
+* **Change the position**, like teleportation, there isn't a real world equivalent!
 
 在我们的模拟中，由于重力我们的球有一个恒定的加速度，当你点击球时球的速度被进行了瞬间变化，当你重置游戏，我们传送球回到它的起始位置。
 
-#### 模拟
+#### Simulating
 
 我们的循环部分做了这些事:
 
->_(速率改变) = (加速度) \* (自上一帧以来的时间)_
+>_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
 
->_(新的速度) = (旧的速度) + (速率的改变)_
+>_(New Velocity) = (Old Velocity) + (Change in Velocity)_
 
->_(位置上的改变量) = (新的速度) \* (自上一帧以来的时间)_
+>_(Change in Position) = (New Velocity) \* (Time since last frame)_
 
->_(新的位置) = (旧的位置) + (位置上的改变量)_
+>_(New Position) = (Old Position) + (Change in Position)_
 
 在代码中这些看起来是这样的:
 
@@ -222,13 +222,13 @@ this.entity.setLocalPosition(p);
 
 最后，为了获得更好的效果我们通过使用 `entity.rotate()`改变角速度为球添加一个旋转的效果。在物理上这不需要很精确，但能够让画面变得好看。
 
-#### 响应输入
+#### Responding to input
 
 你可能还记得在[第2部分][2]中的`input.js'脚本检查了一个输入是否已经击中了球，如果击中了，则调用`tap()` 方法。 上面定义的`tap()` 方法直接改变了球的速度和角速度。 我们定义了几个我们的脚本属性`this.speedMult`和`this.angMult`来复制接收新的速度和角速度，以符合我们对游戏效果的期望。
 
 我们还使用tap方法在撞击点触发颗粒尘云并播放声音效果。 我们将在[第5部分][4]中讨论粒子和声音。
 
-## 小结
+## Summary
 
 球的脚本运行了一些简单的物理模拟效果以使球在重力影响下下坠并响应点击的效果。它还监听游戏事件从而知道何时暂停和重置。 最后，它还与一些其他系统进行交互以显示粒子效果和播放声音。
 
@@ -238,4 +238,3 @@ this.entity.setLocalPosition(p);
 [4]: /tutorials/keepyup-part-five/
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
-

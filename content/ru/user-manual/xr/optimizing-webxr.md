@@ -1,16 +1,20 @@
 ---
 title: Optimizing WebXR applications
 layout: usermanual-page.hbs
-position: 3
+position: 5
 ---
 
-## Introduction
+## Введение
 
-A high and consistent framerate is critical for making and enjoyable XR experience. When creating VR/AR content it is more important than ever to test and optimize early in development and maintain the target framerate throughout development.
+A high and consistent framerate is critical for making an enjoyable XR experience. When creating VR/AR content, it is more important than ever to test and optimize early and maintain the target framerate throughout development.
 
-Rendering WebXR is expensive due to the fact that the scene must be rendered once for each view (eye). PlayCanvas engine contains many optimizations to ensure that VR rendering doesn't not duplicate too much effort, but stereo rendering is still more expensive that mono rendering. In addition, devices like the Oculus Rift and HTC Vive demand higher frame rates like, 75Hz or 90Hz, which means there is even less time to render a frame. Mobile VR, whilst it doesn't have the high frame rates, may have another issue which is the lack of native support for the distortion rendering means that this post-process stage is done in Javascript and WebGL adding additional overhead.
+For AR experiences, framerates must be managed carefully as world, image and face tracking effects sometimes incur significant performance costs. This is in addition to the typically performance-constrained mobile hardware most users have access to.
 
-But, all is not lost. PlayCanvas includes a number of features specifically designed to let your application do more in less time.
+For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering.
+
+In addition, devices like the Oculus Rift and HTC Vive demand high frame rates, like 75Hz or 90Hz, further increasing the need for highly efficient rendering. Mobile VR, whilst not requiring high framerates, suffer from the lack of native support for distortion effects, incurring additional overhead on a JavaScript and WebGL layer.
+
+PlayCanvas, however, includes a number of features specifically designed to let your application do more in less time.
 
 ### Runtime lightmap generation
 
@@ -18,9 +22,9 @@ Each dynamic light has a per-frame runtime cost. The more lights have you the hi
 
 Read more about using [runtime lightmap generation][1].
 
-### Cautious use of real time shadows
+### Cautious use of real time shadows
 
-For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Point lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
+For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Omni lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
 
 ### Watch your fill rate and overdraw
 
@@ -34,7 +38,7 @@ Using an extension like [WebGL Insight][2] can help you visualize overdraw
 
 Web browsers feature automatic garbage collection of unused Javascript objects. The PlayCanvas engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not lots of objects created and discarded every frame.
 
-### Profiling Tools
+### Profiling Tools
 
 PlayCanvas comes with a built in profiler tool. In the Editor use the Launch Profiler button to run your application with profiling active. [Read more about the profiler][3]
 
@@ -46,4 +50,3 @@ PlayCanvas comes with a built in profiler tool. In the Editor use the Launch Pro
 [2]: https://github.com/3Dparallax/insight
 [3]: /user-manual/optimization/profiler/
 [4]: /user-manual/optimization/guidelines/
-

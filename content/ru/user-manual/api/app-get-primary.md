@@ -1,5 +1,5 @@
 ---
-title: Apps - Get primary app
+title: Приложения - получить основное приложение
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -70,5 +70,5 @@ Status: 200
 
 This route uses a [normal][1] rate limit.
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

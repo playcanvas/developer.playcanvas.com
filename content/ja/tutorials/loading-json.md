@@ -1,11 +1,11 @@
 ---
-title: JSONデータをロードする
+title: JSONデータの読み込み
 layout: tutorial-page.hbs
 tags: loading
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/cHnXIXoN/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/cHnXIXoN/" title="Loading JSON Data"></iframe>
 
 [このプロジェクト][1] は、二種類のJSONデータのロードの仕方を説明します。一つ目はプロジェクトのアセットの中からロードする方法、もう一つはHTTPを使ってリモートのサーバからロードする方法です。
 
@@ -155,7 +155,6 @@ Game.prototype.loadJsonFromRemote = function (url, callback) {
 };
 ```
 
-[このプロジェクト][1] で自分で色々試してみてください。
+[このプロジェクト][1] からお試しください。
 
 [1]: https://playcanvas.com/project/405827
-

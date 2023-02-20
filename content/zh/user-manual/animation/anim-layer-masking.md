@@ -22,4 +22,3 @@ After creating masks, you can use [layer blending](/en/user-manual/animation/ani
 
 [1]: /images/user-manual/anim/anim_component_create_mask.png
 [2]: /images/user-manual/anim/anim_mask_inspector.png
-

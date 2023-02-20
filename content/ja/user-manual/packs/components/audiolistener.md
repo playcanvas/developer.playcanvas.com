@@ -1,5 +1,5 @@
 ---
-title: Audio Listener
+title: オーディオリスナー
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -10,11 +10,10 @@ Audio Listenerコンポーネントはコンポーネントパネルの右上の
 
 ![Audio Listener コンポーネント][1]
 
-## スクリプティングインターフェイス
+## スクリプトのインターフェース
 
 [Script component][2]を使用して、Audio Listenerコンポーネントのプロパティをコントロールできます。Audio Listenerコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.AudioListenerComponent.html
-

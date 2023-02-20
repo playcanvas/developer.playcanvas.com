@@ -1,11 +1,11 @@
 ---
-title: 基础键盘输入
+title: 键盘操作入门
 layout: tutorial-page.hbs
 tags: input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/rFZGQWCi/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
 
 *点击以聚焦, 然后按下 `左箭头`, `右箭头` 以及`空格键` 来旋转方块。 按下或抬起按键 'a' 来改变颜色。*
 
@@ -94,7 +94,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 有两种方式检测键盘输入。第一种是在你的脚本的update环节中更新。使用`isPressed()` 和 `wasPressed()` 检测一个按键当前是否被按下或之前已经被按下。第二种是当按键按下或抬起时通过事件来响应。
 
-## `isPressed` 与 `wasPressed`
+## `isPressed` vs `wasPressed`
 
 在下方的案例中你可以看到`isPressed()` 与 `wasPressed()`的表现的不同处。
 
@@ -110,7 +110,7 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 `wasPressed(key)` 从之前的最后一帧开始检查是否按下了“key”*。`wasPressed(key)`对于单个按键只返回true一次。
 
-## 事件
+## 事件
 
 第二种处理按键的方式是监听事件。键盘设备支持两种键盘事件:
 
@@ -121,17 +121,16 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 注意我们也传递一个第三个参数给on()，这是`this`或者脚本实例本身。 on()的第三个参数在事件回调中用作于`this`，所以我们需要在这里传递它，否则它不会被设置为正确的对象。
 
-## 键盘编码
+## Key Codes
 
 分辨哪一个键被按下时就要使用按键编码。它们是与键盘上的键所匹配的数值。 例如，pc.KEY_A是`A`键，pc.KEY_LEFT是左箭头键。
 
 注意，你应该总是使用枚举`pc.KEY_ *`，而不是使用数值。 因为这些常数的实际值可能会在将来进行更改。
 
-## 试试看
+## Try it out
 
 在[这里][2]进行全屏尝试或在页面顶部尝试。 比较轻敲并按住箭头键，然后点击并按住空格键。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
 [2]: https://playcanv.as/p/rFZGQWCi/
 [3]: /user-manual/glossary#dom
-

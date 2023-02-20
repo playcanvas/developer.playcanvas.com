@@ -1,5 +1,5 @@
 ---
-title: Collision
+title: コリジョン
 layout: usermanual-page.hbs
 position: 6
 ---
@@ -27,19 +27,16 @@ Collisionコンポーネントはコンポーネントパネルの右上のト�
 
 ## プロパティ
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>Type</td><td>コリジョンプリミティブの種類。次を使用可能：<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul></td></tr>
-    <tr><td>Half Extents</td><td>Boxのみ。コリジョンボックスの長さの半分。これは3次元のベクターです：ローカルスペースの幅の半分、高さの半分、奥行きの半分。</td></tr>
-    <tr><td>Axis</td><td>Capsuleのみ。CapsuleをエンティティのローカルスペースのX, Y または Z 軸に整列する。</td></tr>
-    <tr><td>Height</td><td>Capsuleのみ。Capsuleの先端から頂点までの高さ。</td></tr>
-    <tr><td>Radius</td><td>SphereとCapsuleのみ。SphereまたはCapsuleボディの半径。</td></tr>
-    <tr><td>Asset</td><td>Meshのみ。三角ベースのコリジョンメッシュのソースとして使用されるモデルアセット。</td></tr>
-</table>
+| プロパティ     | 説明 |
+|--------------|-------------|
+| Type         | コリジョンプリミティブの種類。次を使用可能：<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
+| Half Extents | Boxのみ。コリジョンボックスの長さの半分。これは3次元のベクターです：ローカルスペースの幅の半分、高さの半分、奥行きの半分。 |
+| Axis         | Capsuleのみ。CapsuleをエンティティのローカルスペースのX, Y または Z 軸に整列する。 |
+| Height       | Capsuleのみ。Capsuleの先端から頂点までの高さ。 |
+| Radius       | SphereとCapsuleのみ。SphereまたはCapsuleボディの半径。 |
+| アセット        | Meshのみ。三角ベースのコリジョンメッシュのソースとして使用されるモデルアセット。 |
 
-## スクリプティングインターフェイス
+## スクリプトのインターフェース
 
 Collisionコンポーネントのプロパティは[スクリプトコンポーネント][8]を使ってコントロールできます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][9]。
 
@@ -52,4 +49,3 @@ Collisionコンポーネントのプロパティは[スクリプトコンポー�
 [7]: /images/user-manual/scenes/components/component-collision-sphere.png
 [8]: /user-manual/packs/components/script
 [9]: /api/pc.CollisionComponent.html
-

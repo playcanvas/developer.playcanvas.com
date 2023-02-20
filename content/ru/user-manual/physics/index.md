@@ -1,5 +1,5 @@
 ---
-title: Physics
+title: Физика
 layout: usermanual-page.hbs
 position: 16
 ---
@@ -13,4 +13,3 @@ A physics engine attempts to reproduce our understanding of the natural world in
 PlayCanvas provides a very powerful physics engine that can be used to achieve a great many effects. This section introduces the concepts of rigid bodies, collision, forces, impulses, raycasting and more.
 
 [1]: /images/user-manual/physics/physics-constraints.gif
-

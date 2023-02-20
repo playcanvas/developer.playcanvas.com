@@ -12,13 +12,11 @@ The external assets will need to be uploaded to a server or CDN of your own for 
 
 There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
 
-
 ## Example project
 
 The [Cube Jump project][5] is ready to be exported to the ironSource MRAID Playable Ad format and the expected HTML output can be found [here][6].
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
-
 
 ## File size tips
 
@@ -33,7 +31,6 @@ Try to keep images as small as possible in dimensions and use tools like [TinyPN
 ## Playable ad checklist:
 
 * Have you added the function call `mraid.open` (for non-store URLs) or `mraid.openStoreUrl` (for store apps) as part of your call to action callback?
-
 
 ## How to export
 
@@ -61,6 +58,14 @@ Set the following options in the `config.json` as shown below. This will produce
         "mraid_support": true
     }
 ```
+
+And run the command:
+
+```sh
+npm run one-page
+```
+
+Full details of options and commands can be found in the readme section for '[Converting a project into a single HTML file][2]'.
 
 We will need to serve the files from a HTTPS endpoint to test with the ironSource's test tool.
 

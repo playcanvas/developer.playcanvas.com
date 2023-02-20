@@ -12,4 +12,3 @@ position: 0.5
 
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/introduction
-

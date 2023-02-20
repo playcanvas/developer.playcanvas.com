@@ -14,9 +14,9 @@ The main advantage is that you are able to have dynamic rigidbody collisions bet
 
 The shape of a compound physics object is defined by the children's collision shapes as shown below.
 
-[![][compound-shapes-chair-setup-png]][compound-shapes-chair-setup-png]
+[![Compound shapes setup][compound-shapes-chair-setup-png]][compound-shapes-chair-setup-png]
 
-![][compound-shapes-chair-gif]
+![Compound shapes chair][compound-shapes-chair-gif]
 
 The Chair entity (parent) has the [collision component][collision-component] with type set to 'Compound'.
 

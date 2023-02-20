@@ -2,10 +2,10 @@
 title: 基本的なマウス入力
 layout: tutorial-page.hbs
 tags: mouse, input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 
 *マウスを動かすとキューブが動きます。マウスのボタンを押すとキューブの色が変わります。*
 
@@ -63,12 +63,12 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to green
+    // If the middle mouse button is pressed, change the cube color to green
     if (event.button === pc.MOUSEBUTTON_MIDDLE) {
         this.entity.render.meshInstances[0].material = this.greenMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to blue
+    // If the right mouse button is pressed, change the cube color to blue
     if (event.button === pc.MOUSEBUTTON_RIGHT) {
         this.entity.render.meshInstances[0].material = this.blueMaterial.resource;
     }
@@ -135,4 +135,3 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 [3]: /user-manual/glossary#app
 [4]: /user-manual/glossary#dom
 [5]: https://playcanv.as/p/MHIdZgaj/
-

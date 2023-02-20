@@ -51,6 +51,7 @@ Type 'hard reset' in the text box to confirm that you wish to delete all checkpo
 
 The editor will reload the project at the checkpoint.
 
+
 [1]: /images/user-manual/version-control/checkpoint.jpg
 [2]: /images/user-manual/version-control/vc-panel.jpg
 [3]: /images/user-manual/version-control/create-checkpoint.jpg
@@ -58,4 +59,3 @@ The editor will reload the project at the checkpoint.
 [5]: /images/user-manual/version-control/restore-checkpoint-applied.png
 [hard-reset-confirm]: /images/user-manual/version-control/hard-reset-confirm.png
 [hard-reset]: /images/user-manual/version-control/hard-reset.png
-

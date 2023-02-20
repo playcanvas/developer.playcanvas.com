@@ -8,7 +8,7 @@ position: 5
 
 ![Assets Panel][1]
 
-## 层级文件夹
+## Folder Hierarchy
 
 文件夹面板帮助你以文件夹树的形式管理所有资源。
 
@@ -20,7 +20,7 @@ position: 5
 
 文件夹可以互相拖拽，可以使用这种方式重新组织目录结构。
 
-## 创建和上传资源
+## Creating and Uploading Assets
 
 可以通过拖放本地文件到资源面板来完成新的资源创建。编辑器会自动上传和转换文件为可用资源。
 
@@ -28,19 +28,19 @@ position: 5
 
 选择想要删除的资源然后点击垃圾桶按钮删除资源。
 
-## 编辑资源
+## Editing Assets
 
 特定的基于文本的资源可以通过 PlayCanvas 的脚本编辑器来打开和编辑。譬如文本，json，shader，html，css 以及脚本资源。双击这些资源图标就可以。
 
-## 检查资源
+## Inspecting Assets
 
 在资源面板中选择缩略图，检查器就会同步显示出资源的详细信息。
 
-## 过滤
+## Filtering
 
 在过滤器下来菜单中筛选类型以过滤其它非相关类型的资源。
 
-## 搜索
+## Searching
 
 在搜索框中可以对工程中的资源进行全局搜索。简单的在搜索框中输入关键字，编辑器会实时进行资源搜索。
 
@@ -56,7 +56,7 @@ Here are some examples:
 `[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
 `[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
-## 拖放
+## Drag and Drop
 
 资源可以通过从主面板拖放到文件夹的树形结构来移动。资源支持多选，按 CTRL+A 可以选中当前目录下的全部资源。
 
@@ -64,35 +64,35 @@ Here are some examples:
 
 此外还可以拖动模型，材质以及 cubemap 资源直接到[视口][3] 中进行应用。
 
-* 如果拖动模型资源到视口中，编辑器将会创建一个新的实体并添加模型组件同时将模型资源添加至模型组件引用。视口摄影机将会自动缩放至呈现新创建实体的位置。
-* 如果拖动材质至视口中的模型实体上时，材质将会实时替换掉模型上的材质 (用于预览)。如果确定需要替换材质，则松开鼠标完成拖放即可。
-* 如果拖放 Cubemap 到视口中的场景背景上，Cubemap 会被做为场景的天空盒使用。在[场景设置][4]中也有对应的参数可以修改。
+* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
+* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
+* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
 
 ## Copy and Paste between Projects
 
 To copy an asset or a selection of assets between projects, select the asset(s) and right-click to bring up the context menu to select 'Copy'. You can also use the hotkey Ctrl/Cmd + C instead if the context menu is not available due to being a read-only project.
 
-<img src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500"/>
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500">
 
 In the project that you want to copy the asset(s) to, right click in the assets panel and select 'Paste'. Ctrl/Cmd + V hotkey can be used instead.
 
-<img src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500"/>
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500">
 
 Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
 
-<img src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%"/>
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%">
 
 If you copy and paste just the model asset into a different project, those asset dependencies are copied too.
 
-<img src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%"/>
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%">
 
 By default, it is pasted as a flat hierarchy. If you want keep the folder structure, hold Shift when the context menu is opened and an option will appear called 'Paste (keep folders)'. This will attempt to keep the folder structure using the folder you are pasting into as the root folder.
 
-<img src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500"/>
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500">
 
 Will result in the following where the folder structure is preserved:
 
-<img src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%"/>
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%">
 
 We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
 
@@ -100,7 +100,7 @@ We generally recommend that if you will be using this feature for reusable libra
 Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
 </div>
 
-## 检查引用
+## Checking References
 
 有时，知道资产在特定场景中被使用(或引用)的位置是有用的。 如果编辑器无法检测到资源的任何引用，则会在其缩略图上显示一个小点：
 
@@ -123,4 +123,3 @@ Note that copy and pasting assets does not overwrite existing assets with the sa
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
 [7]: /api/pc.AssetRegistry.html#findByTag
-

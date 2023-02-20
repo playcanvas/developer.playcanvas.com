@@ -12,4 +12,3 @@ The repo contains many [examples][2] that demonstrate the wide variety of engine
 
 [1]: https://github.com/playcanvas/engine
 [2]: https://playcanvas.github.io
-

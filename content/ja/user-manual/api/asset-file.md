@@ -7,7 +7,7 @@ position: 7
 ## ルートURL
 
 ```none
-GET https://playcanvas.com/api/assets/:assetId/file?branchId=:branchId
+GET https://playcanvas.com/api/assets/:assetId/file/:filename?branchId=:branchId
 ```
 
 ## 説明
@@ -17,13 +17,13 @@ GET https://playcanvas.com/api/assets/:assetId/file?branchId=:branchId
 ## 例
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}/file?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/assets/{assetId}/file/{filename}?branchId={branchId}"
 ```
 
 HTTP Request
 
 ```text
-GET https://playcanvas.com/api/assets/{assetId}/file?branchId={branchId}
+GET https://playcanvas.com/api/assets/{assetId}/file/{filename}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
@@ -57,4 +57,3 @@ Status: 200
 このルートは[normal][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-

@@ -1,8 +1,8 @@
 ---
-title: 操纵实体
+title: 实体管理
 layout: tutorial-page.hbs
 tags: basics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg"
 ---
 
 在这个教程中，我们会向你展示如何改变一个实体的位置，面对方向和体积大小。
@@ -13,13 +13,13 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 您需要在实体上执行的最常见操作之一是更改其变换矩阵。 实体的局部变换属性决定了实体的位置，方向和比例，并能够影响所有子实体。 学习如何操作变换对于创建有趣和交互式应用程序至关重要。
 
-### 自身坐标系和世界坐标系
+### Local and World Co-ordinates
 
 理解如何移动和变换实体的很重要的一步是理解自身坐标系和世界坐标系系统。世界坐标系系统被向所有实体公开，并有着固定不变的原点`(0,0,0)`和固定的轴向，即 `(0,1,0)` 表示垂直向上。自身坐标系是依赖于实体自身的。因此自身坐标系原点即实体所处的位置，并且自身坐标系的轴向遵循实体当前的面向。
 
-<img src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates"/>
-<img src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates"/>
-<div style="clear:both" />
+<img loading="lazy" src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates">
+<img loading="lazy" src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates">
+<div style="clear:both"></div>
 
 *世界坐标系和自身坐标系*
 
@@ -27,7 +27,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 实体系统要理解的一个重要部分是实体图即层级树。 因为实体是一种图形节点，所以它们被一起收集在父图和子图的图或层级中。 每个实体可以有单个父级和多个子级。 子实体从它们的父母继承转换信息。 实体的世界变换矩阵将局部变换乘以父实体的世界变换。 因此，例如，如果子实体具有自身位置为`(1,0,0)`，并且其父类的自身位置为`(0,1,0)`，则子类的世界位置将是 `(1,1,0)`
 
-## 位置点
+## Position
 
 获取实体的位置是直截了当的
 
@@ -51,7 +51,7 @@ entity.setLocalPosition(x, y, z);
 entity.setPosition(x, y, z);
 ```
 
-### 移动实体
+### Moving the entity
 
 要移动实体，您可以直接把位置信息灌入实体，或者可以使用帮助函数translate和translateLocal进行操作。
 
@@ -63,7 +63,7 @@ entity.translate(1, 0, 0);
 entity.translateLocal(0, 0, 1);
 ```
 
-## 方向
+## Orientation
 
 你可以通过设置绝对的旋转量, 或者应用一个旋转增量来改变实体的方向。
 
@@ -71,15 +71,15 @@ entity.translateLocal(0, 0, 1);
 
 **欧拉角**
 
-*欧拉角是以*坐标系*的X，Y和Z轴为中心的三个以度为单位的旋转量组成的
-*如果俯视坐标系轴，正欧拉角将导致围绕该轴的逆时针旋转
-*欧拉角很容易理解，因为你可以在脑中想象他们所产生的影响。
+* Euler angles are three rotations in degrees about the X, Y and Z axes of a coordinate system *in that order*.
+* If looking down a coordinate system axis, a positive Euler angle will result in an anti-clockwise rotation around that axis.
+* Euler angles are easy to understand because you can visualize the effect they will have in your head.
 
 **四元数**
 
-*四元数被存储为4个数字，并能够表示3D空间中的任何方向
-*它们难以直接设置，但可以从欧拉角，旋转矩阵或轴角度转换成
-*虽然它们难以可视化，但它们非常有用，因为它们的功能是强大的，并可以快速进行插值(当进行动态旋转时)。
+* Quaternions are stored as 4 numbers and represent any orientation in 3D space.
+* They are difficult to set directly, but can be set from Euler angles, rotation matrices or an axis-angle representation.
+* Although they are hard to visualize, they are useful since they are robust and can be quickly interpolated (when animating rotation).
 
 当使用脚本操作一个实体时，你更可能愿意通过欧拉角来设置实体的方向。举个例子：
 
@@ -92,7 +92,7 @@ entity.setLocalEulerAngles(30, 45, 60);
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ```
-另一方面，如果您想要以四元数形式设置实体的旋转，则可以使用以下函数：
+However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ```javascript
 // Create an identity rotation
@@ -120,7 +120,7 @@ entity.rotate(0, 180, 0);
 entity.rotateLocal(90, 0, 0);
 ```
 
-## 缩放
+## Scale
 
 为了使一个实体缩放，你会需要调用到以下函数:
 
@@ -142,4 +142,3 @@ entity.setLocalScale(s, s, s);
 
 [1]: https://en.wikipedia.org/wiki/Euler_angles
 [2]: https://en.wikipedia.org/wiki/Quaternion
-

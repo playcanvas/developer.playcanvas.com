@@ -1,12 +1,12 @@
 ---
-title: Script Attributes
+title: Атрибуты сценария
 layout: usermanual-page.hbs
-position: 4
+position: 5
 ---
 
 Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
 
-## Declaring Script Attributes
+## Declaring Script Attributes
 
 Script Attributes are declared at the top of your script file using this format:
 
@@ -32,11 +32,12 @@ MyScript.attributes.add('names', {
 });
 ```
 
+
 ## Getting Attributes into Editor
 
-<img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;"> button.
 
 ## Accessing attributes in your code
 
@@ -66,7 +67,7 @@ MyScript.prototype.initialize = function () {
 }
 ```
 
-## Attribute types
+## Attribute types
 
 When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
 
@@ -77,6 +78,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 ```
 
 The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
+
 
 ### Asset attribute
 
@@ -98,6 +100,7 @@ MyScript.prototype.initialize = function () {
 
 ```
 
+
 ### Color attribute
 
 ```javascript
@@ -117,6 +120,7 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curve
 
 The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
 
+
 ### Enumeration attribute
 
 The Enumeration attribute allows you to choose one of the available options:
@@ -133,6 +137,7 @@ MyScript.attributes.add('value', {
 ```
 
 Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
+
 
 ### JSON attribute
 
@@ -174,4 +179,3 @@ MyScript.prototype.update = function (dt) {
 *NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
-

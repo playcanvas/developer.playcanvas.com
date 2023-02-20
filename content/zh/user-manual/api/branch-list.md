@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 11
 ---
 
-## 传输链接
+## Route URL
 
 ```none
 GET https://playcanvas.com/api/projects/:projectId/branches
 ```
 
-## 描述
+## Description
 
 Get a list of all open branches for a project
 
-## 案例
+## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/branches
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/branches"
 ```
 
 HTTP Request
@@ -27,13 +27,13 @@ GET https://playcanvas.com/api/projects/{projectId}/branches
 Authorization: Bearer {accessToken}
 ```
 
-## 参数
+## Parameters
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list branches from</p></div>
 </div>
 
-## 响应模式
+## Response Schema
 
 ```none
 Status: 200
@@ -62,7 +62,7 @@ Status: 200
 
 This endpoint uses a slightly different pagination method. If a response contains the value `hasMore: true` then additional results are available. Use `?skip=branchId` query parameter with the last received branch id to receive more branches in alphabetical order.
 
-## 报错
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
@@ -71,9 +71,8 @@ This endpoint uses a slightly different pagination method. If a response contain
 <div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## 速率限制
+## Rate Limiting
 
 This route uses a [normal][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
-

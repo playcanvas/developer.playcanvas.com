@@ -51,7 +51,6 @@ If you have subscribed for a paid plan, that plan will be cancelled unless you c
 
 After you convert your account, you will be logged out. Then log back in with the new owner's account and you will be able to access the converted account and all its projects.
 
-
 [1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
 [2]: /user-manual/profile
 [3]: /user-manual/profile/account

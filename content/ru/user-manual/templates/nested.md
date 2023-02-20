@@ -25,4 +25,3 @@ If you apply the override to the Branch Template then ALL branches everywhere wi
 Overrides are always relative to the selected Template Instance. So if you apply the override to the Tree Template and then select Tree/Branch 1, you will see that the Branch still has the override for the Apple, because we have not applied it to the Branch Template.
 
 [1]: /images/user-manual/templates/nested.png
-

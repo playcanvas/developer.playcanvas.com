@@ -1,5 +1,5 @@
 ---
-title: Preloading and Streaming
+title: Предзагрузка и стриминг
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -53,4 +53,3 @@ for (var i = 0; i < assets.length; i++) {
 
 [1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
 [2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif
-

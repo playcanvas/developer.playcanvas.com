@@ -1,5 +1,5 @@
 ---
-title: Device Pixel Ratio
+title: デバイスピクセルの比率
 layout: usermanual-page.hbs
 position: 6
 ---
@@ -79,4 +79,3 @@ We also recommend to have an option in the application for the user to be able t
 [4]: /api/pc.GraphicsDevice.html#maxPixelRatio
 [5]: https://www.videocardbenchmark.net/GPU_mega_page.html
 [6]: https://www.notebookcheck.net/Smartphone-Graphics-Cards-Benchmark-List.149363.0.html
-
