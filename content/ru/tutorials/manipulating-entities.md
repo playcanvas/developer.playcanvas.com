@@ -39,7 +39,7 @@ var lp = entity.getLocalPosition();
 var wp = entity.getPosition();
 ```
 
-Оба метода возвращают pc.Vec3`  (вектор, состоящий из массива [x,y,z]).
+Оба метода возвращают `pc.Vec3`  (вектор, состоящий из массива [x,y,z]).
 
 Установка положения сущности.
 
@@ -92,6 +92,7 @@ entity.setLocalEulerAngles(30, 45, 60);
 // around the world space y axis and lastly 60 degrees around the world space z axis
 entity.setEulerAngles(30, 45, 60);
 ```
+
 However, if you do want to set an Entity's rotation in quaternion form, you can use the following functions:
 
 ```javascript
