@@ -26,6 +26,24 @@ Merging works in a similar way to other VCSs. However, in PlayCanvas it's import
 
 More details can be found on the specific pages for [checkpoints][1], [branches][2], and [merging][3].
 
+## How Version Control Affects Your Storage
+
+Using Version Control will use more storage for checkpoints and branches.
+
+Every checkpoint created only stores the changes from the previous checkpoint. The amount of data used is dependent on the changes such as new assets, texture changes etc.
+
+Creating a branch from a checkpoint makes a copy of the project state at that checkpoint. This can increase storage usage significantly depending on the project.
+
+Unfortunately, it is not possible to delete branches or checkpoints except in these specific cases:
+
+- [Hard reset to a checkpoint][4]
+- [Deleting a branch][5]
+
+If you need more storage space, please email us at [support@playcanvas.com][6]. In most cases, we can increase your storage allowance with no extra charge.
+
 [1]: /user-manual/version-control/checkpoints
 [2]: /user-manual/version-control/branches
 [3]: /user-manual/version-control/merging
+[4]: /user-manual/version-control/checkpoints/#hard-reset-to-a-checkpoint
+[5]: /user-manual/version-control/branches/#deleting-a-branch
+[6]: mailto:support@playcanvas.com
