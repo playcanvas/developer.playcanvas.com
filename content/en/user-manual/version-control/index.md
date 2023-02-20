@@ -26,7 +26,7 @@ Merging works in a similar way to other VCSs. However, in PlayCanvas it's import
 
 More details can be found on the specific pages for [checkpoints][1], [branches][2], and [merging][3].
 
-## Storage Usage with Version Control
+## How Version Control Affects Your Storage
 
 Using Version Control will use more storage for checkpoints and branches.
 
