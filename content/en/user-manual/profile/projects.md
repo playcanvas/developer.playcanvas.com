@@ -70,7 +70,7 @@ Exporting an archive file can also be done with the [REST API][8] and can be aut
 
 It also allows you choose which branch to export via the parameters.
 
-We've written an [Node based open source tool][9] to make this process easier for users.
+We've written a [Node-based open source tool][9] to make this process easier for users.
 
 ## Restoring a Project from an Archive File
 
