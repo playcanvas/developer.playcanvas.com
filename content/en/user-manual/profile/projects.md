@@ -80,7 +80,6 @@ With an archive zip file created from one of the methods in '[Backing Up a Proje
 
 Click on 'Import Project' on the left hand side of the Projects page and select the zip file to import it.
 
-
 [1]: /images/user-manual/profile/profile.png "Projects"
 [2]: /images/user-manual/profile/projects/export-archive-button.jpg
 [3]: /images/user-manual/profile/projects/import-archive-button.jpg
@@ -90,4 +89,3 @@ Click on 'Import Project' on the left hand side of the Projects page and select 
 [7]: /user-manual/dashboard/header/
 [8]: /user-manual/api/project-archive/
 [9]: https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project
-
