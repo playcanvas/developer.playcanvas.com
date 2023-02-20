@@ -1,5 +1,5 @@
 ---
-title: 创建模型
+title: 制作模型
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -10,29 +10,29 @@ PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此�
 
 一些可被考虑使用的建模和动画程序：
 
-*免费选项：Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
-*低成本付费选项：3D-Coat, NVIL, Hexagon
-*高成本付费选项： ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
+* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
+* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
 \* *这个程序也能够创建动画。*
 
 为了生成纹理，请考虑这些程序:
 
-* 免费选项: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* 付费选项: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
 注意许多上面列出的用于建模的程序也允许纹理绘画。 如果你想要更多的选择，这个页面[external wiki][1]可以帮助你。 请注意，某些信息可能已过期。
 
-## 网格构造的一般注意事项
+## General Considerations for Mesh Construction
 
 无论您使用哪个建模应用程序，在构建用于PlayCanvas的3D场景时需要注意一些事情。
 
-*网格可以蒙皮到256骨骼上
-* NURBS网格将转换为三角形网格，进而转换为PlayCanvas所适应的格式。
+* Meshes can be skinned to up to 256 bones.
+* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
 
 ---
 
-## 混合器
+## Blender
 
 ![Blender图标][3]
 
@@ -40,11 +40,11 @@ PlayCanvas被设计得能够最完整地导入FBX交换格式的内容，因此�
 
 Blender支持将文件导出为COLLADA和FBX格式，但是内置的导出器确实有一些局限性。
 
-### **贴图类型**
+### **Map Types**
 
 从Blender 2.71开始，材质的漫反射和法线贴图将被导出到FBX文件。 如果导出时其他地图类型丢失，则必须在编辑器中的材质编辑器中设置这些地图。
 
-### **嵌入纹理**
+### **Embedding Textures**
 
 嵌入式纹理使模型导入变得更加容易。
 
@@ -58,13 +58,13 @@ Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实�
 注意: 这里似乎存在一个问题，尽管用户没有在Blender中设置自发光属性，Blender 2.71的FBX导出依旧会生成自发光， - 这不是一个PlayCanvas引擎所需要的项。 为了避免这种情况，在Blender中，您可以将材质的Diffuse颜色设置更改为0(在“属性编辑器”中的“材质”选项卡下)。 或者直接降低PlayCanvas编辑器内的自发光率。
 </div>
 
-### **动画**
+### **Animations**
 
 对于 Blender 2.71:
 
 包含在混合文件中的自动动画将使用默认的fbx导出器设置导出，并与PlayCanvas资源导入管道兼容。 请注意，对于同一模型的多个动画，您需要上传多个fbx文件 - 每个动画一个。 为了节省内存，您可以在导出之前从混合文件中删除模型和纹理，选择仅在fbx导出器设置中导出骨架，或者从项目仪表板的资产页面中删除重复的“模型”目标资源(选择“target” 从资源页面上的下拉菜单中查看目标资源)。
 
-### **学习Blender**
+### **Learning Blender**
 
 在网络上有大量的教授学习如何使用Blender的资源。 我们推荐的几个是：
 
@@ -75,13 +75,13 @@ Blender的2.71版本具有改进的FBX导出模块，可以直接从Blender实�
 
 ## Autodesk 3D Studio Max
 
-### 材质
+### Max Materials
 
 您应该使用Max中的标准材料类型，或Multi / Sub-Object材料类型，只要它所引用的材料是标准材料。 下面屏幕截图中突出显示的区域显示了导出到PlayCanvas时所遵循的设置:
 
 ![Max material editor][7]
 
-### 支持的贴图插槽
+### Supported Map Slots
 
 PlayCanvas解释导出时3DS Max材质贴图类型的一个子集。 请注意，地图可以是3DS Max支持的任何格式，但如果地图不是Web格式(即JPEG，GIF或PNG)，则它们将在导出时转换为这些格式。
 
@@ -141,7 +141,7 @@ PlayCanvas解释导出时3DS Max材质贴图类型的一个子集。 请注意�
 
 ## Autodesk Maya
 
-### 材质
+### Maya Materials
 
 您可以使用Maya中的标准材质类型：lambert，blinn和phong。 下面的屏幕截图中突出显示的区域显示导出到PlayCanvas时所遵循的材料设置：
 
@@ -158,4 +158,3 @@ PlayCanvas解释导出时3DS Max材质贴图类型的一个子集。 请注意�
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
 [10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
 [11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
-

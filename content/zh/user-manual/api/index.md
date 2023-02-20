@@ -8,7 +8,7 @@ position: 22
     REST API 目前正在测试阶段。 这意味着我们可能会改变某些端口和API的响应。
 </div>
 
-## 授权
+## Authorization
 
 You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
 
@@ -42,7 +42,7 @@ Bearer [access_token]
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## 参数
+## Parameters
 
 API中有很多途径接收复数的参数。对于GET请求，如果参数不是URL的一部分，你可以把它作为HTTP查询字符串参数进行放行。对于POST，PUT和DELETE请求，不包含在URL内的参数应编码为包含内容为“应用/ JSON”的JSON格式字段。
 
@@ -66,15 +66,15 @@ This is found in the [version control][5] panel and can be selected and copied.
 
 ![Branch ID][8]
 
-## 响应格式
+## Response Format
 
 当涉及到每个API调用的响应格式时，我们的REST API 是遵循以下的通用原则的。
 
-#### 获取资源
+#### GET resource
 
 当你尝试去获取单个资源，你所的到的回复会是一个包含你所请求的资源的JSON对象。
 
-#### 获取多个资源
+#### GET multiple resources
 
 当你尝试去获取像是已上市项目应用的一组资源，你所得到的回复会是这种格式的JSON对象：
 
@@ -109,7 +109,7 @@ This is found in the [version control][5] panel and can be selected and copied.
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### 错误
+#### Errors
 
 当一个错误发生时你会收到一个这样格式的JSON对象:
 
@@ -121,12 +121,12 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 并且响应的状态码会变为合适的HTTP错误代码。
 
-## 速率限制
+## Rate Limiting
 
 调用REST API具有速率限制。按照不同的请求，限制速率也会不同:
 
-* **normal:** 正常的速率限制允许每分钟120请求。
-* **strict:** 严格的速率限制允许每分钟5的请求。
+* **normal:** The normal rate limit allows 120 requests per minute.
+* **strict:** The strict rate limit allows 5 requests per minute.
 
 回复会包含以下头信息来帮助你调节多久调用一次API：
 
@@ -146,4 +146,3 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 [6]: /images/user-manual/api/project-id.png
 [7]: /images/user-manual/api/scene-id.png
 [8]: /images/user-manual/api/branch-id.png
-

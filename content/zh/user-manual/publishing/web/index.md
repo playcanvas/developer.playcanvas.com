@@ -13,4 +13,3 @@ PlayCanvas游戏也同样是网页，绝大部分的主目录在浏览器中。�
 [1]: /user-manual/publishing/web/playcanvas-hosting
 [2]: /user-manual/publishing/web/self-hosting
 [3]: /user-manual/publishing/web/facebook
-

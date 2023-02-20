@@ -1,5 +1,5 @@
 ---
-title: ダッシュボードのヘッダ
+title: ダッシュボードヘッダー
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -19,4 +19,3 @@ STARボタンをクリックするとプロジェクトをStarまたはLikeし�
 FORKボタンをクリックすることによって、そのプロジェクトをフォークすることができます。フォークすることで、あなたのアカウントに対象のプロジェクト全体をコピーすることができます。
 
 [1]: /images/platform/dashboard_header.jpg
-

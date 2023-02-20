@@ -1,5 +1,5 @@
 ---
-title: ユーザインターフェイス
+title: ユーザインターフェース
 layout: usermanual-page.hbs
 position: 18
 ---
@@ -12,7 +12,7 @@ position: 18
 
 PlayCanvasは、WebGLキャンバスの内部で直接実行されるユーザインターフェイスシステムのビルディングブロックを構成できる２つのコンポーネントを実装しています。 [スクリーンコンポーネント][2]はユーザインタフェースコンテナであり、[要素コンポーネント][3]はユーザインタフェースの要素を追加するために使用されます。主な利点は、ゲームの他の部分と同じコンテキストでユーザインターフェイスが存在することです。これにより、アプリケーションとユーザインターフェイス間のインタラクションが可能になります。
 
-## DOM, HTML & CSS
+## HTMLとCSS
 
 ウェブブラウザは、複雑なインタフェースをユーザにレンダリングする、効果的かつ最適化されたシステムを構築するために長年を費やしてきました。ユースケースによってはHTML、CSS、ブラウザDOMがユーザインターフェイスに適しています。
 
@@ -25,4 +25,3 @@ DOMを使用する主な欠点はパフォーマンスです。DOMは、高い�
 [1]: /images/user-manual/user-interface/user-interface-intro-sq.png
 [2]: /user-manual/packs/components/screen
 [3]: /user-manual/packs/components/element
-

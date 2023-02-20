@@ -1,11 +1,11 @@
 ---
-title: Forces and Impulses
+title: Силы и импульсы
 layout: tutorial-page.hbs
 tags: physics, collision
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses"></iframe>
 
 *Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
 *Press R to reset the cube.*
@@ -71,7 +71,7 @@ We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, 
 
 Some Editor settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube's attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
 
-<img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
+<img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings">
 
 ## Teleporting a Body
 
@@ -108,6 +108,7 @@ reset: function () {
 ```
 
 We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
+
 
 ## Full code listing
 
@@ -192,4 +193,3 @@ DynamicBody.prototype.reset = function () {
 [8]: /tutorials/first-person-movement/
 [9]: /tutorials/collision-and-triggers/
 [10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
-

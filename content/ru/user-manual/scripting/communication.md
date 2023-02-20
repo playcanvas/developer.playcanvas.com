@@ -1,7 +1,7 @@
 ---
-title: Communication
+title: Связь
 layout: usermanual-page.hbs
-position: 5
+position: 6
 ---
 
 Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.
@@ -43,10 +43,10 @@ Display.prototype.initialize = function () {
     var onPlayerMove = function(x, y) {
         console.log(x, y);
     };
-    
+
     // listen for the player move event
     this.playerEntity.script.player.on('move', onPlayerMove);
-    
+
     // remove player move event listeners when script destroyed
     this.playerEntity.script.player.on('destroy', function() {
         this.playerEntity.script.player.app.off('move', onPlayerMove);
@@ -84,10 +84,10 @@ Display.prototype.initialize = function () {
     var onPlayerMove = function(x, y) {
         console.log(x, y);
     };
-    
+
     // listen for the player:move event
     this.app.on('player:move', onPlayerMove);
-    
+
     // remove player:move event listeners when script destroyed
     this.on('destroy', function() {
         this.app.off('player:move', onPlayerMove);
@@ -100,4 +100,3 @@ As you can see this reduces set up code and makes for cleaner code.
 More details on events in the [API Reference][1]
 
 [1]: /api/pc.EventHandler.html
-

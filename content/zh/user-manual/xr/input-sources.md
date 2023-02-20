@@ -53,9 +53,9 @@ app.xr.input.on('select', function (inputSource) {
 
 Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed to world space. Some examples of input sources might be, but not limited to:
 
- * Gaze-based input, such as a mobile device which is inserted into a Google Cardboard™ style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
+ * Gaze-based input, such as a mobile device which is inserted into a Google CardboardTM style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
  * Screen-based input. This might be available on mobile devices in Augmented Reality session types, where the user can interact with the virtual world by touchscreen.
- * Handheld devices, like the Oculus Touch™, will have a ray originating from the tip of the handheld device and the direction is based on the rotation of device.
+ * Handheld devices, like the Oculus TouchTM, will have a ray originating from the tip of the handheld device and the direction is based on the rotation of device.
  * Tracked Hands have an emulated by PlayCanvas engine ray that originates from point between thumb and index tips, and pointing forward.
 
 Here is an example illustrating how to check whether a ray has intersected with the bounding-box of a mesh:
@@ -71,7 +71,7 @@ if (meshInstance.aabb.intersectsRay(ray)) {
 
 ## Grip
 
-Some input sources are associated with a physical handheld device, such as an Oculus Touch™, and can have position and rotation. Their position and rotation are provided in world space.
+Some input sources are associated with a physical handheld device, such as an Oculus TouchTM, and can have position and rotation. Their position and rotation are provided in world space.
 
 ```javascript
 if (inputSource.grip) {
@@ -135,9 +135,14 @@ Each input source might have a list of strings describing a type of input source
 
 ```javascript
 if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
-    // it is an Oculus Touch™ handheld device
+    // it is an Oculus TouchTM handheld device
 }
 ```
+
+## 教程
+
+PlayCanvas provides a number of [tutorials and samples][11] on the usage of WebXR functionality. Users are able to fork them and examine how code and components are structured to allow for XR to be used.
+
 
 [1]: /api/pc.XrInputSource.html
 [2]: /api/pc.XrInput.html
@@ -149,4 +154,4 @@ if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
 [8]: /api/pc.XrHand.html
 [9]: /api/pc.XrFinger.html
 [10]: /api/pc.XrJoint.html
-
+[11]: /tutorials/?tags=vr

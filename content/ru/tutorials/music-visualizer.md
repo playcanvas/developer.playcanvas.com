@@ -1,11 +1,11 @@
 ---
-title: Creating a Music Visualizer
+title: Создание музыкального визуализатора
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/BqhCi6oy/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
 
 *Find out more by forking the [full project][1].*
 
@@ -13,7 +13,7 @@ This tutorial teaches you how to create a Music Visualizer application in WebGL 
 
 Our music visualizer consists of two scripts. The analyser, plays the audio and extracts the data via an Analyser Node. Which is part of the Web Audio API built into modern browsers. The visualizer, takes the data from the analyser and renders it onto screen as a funky graph.
 
-## The Analyser
+## The Analyser
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -55,7 +55,7 @@ The final part of the setup is to use `setExternalNodes` from the PlayCanvas Sou
 
 Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData` and `getFloatTimeDomainData` to fill our arrays with data. We'll be using this data in our Visualizer script.
 
-## The Visualizer
+## The Visualizer
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');
@@ -137,4 +137,3 @@ This is just a taster of how you can visualize your music. Why not try scaling 3
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
 [4]: /api/pc.Application.html#renderLines
-

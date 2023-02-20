@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: Панель
 layout: usermanual-page.hbs
 position: 7
 ---
@@ -15,4 +15,3 @@ The Project Dashboard is the control centre for your project. From the dashboard
 * Edit your project's settings.
 
 [1]: /images/platform/dashboard.png
-

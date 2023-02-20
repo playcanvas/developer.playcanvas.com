@@ -1,5 +1,5 @@
 ---
-title: 网页通信
+title: 网页传输
 layout: usermanual-page.hbs
 position: 4
 ---
@@ -8,7 +8,7 @@ position: 4
 
 有两种方法用户可以将PlayCanvas应用程序和周边网页通信。首先，用户需要在网页中将标签嵌入一个应用程序，其次可能需要使用你自己的HTML网页加载PlayCanvas。这两种方法有着截然不同的方式来进行网页和应用程序的通信。
 
-## 定义API
+## Defining an API
 
 对于这两种方法，用户应该思考PlayCanvas的哪一种特性用户想展现在网页上。可能你会需要通过点击按钮或者滑块改变某个物体的颜色。或者你想要对应用程序进行文本的输入从而能渲染纹理。实现决定哪一类特性是你需要展现的，以及在PlayCanvas应用程序中写入一个明确的API或者编写一个函数，在页面中只能调用这个函数。
 
@@ -49,16 +49,18 @@ app.fire("score:set", 10);
 
 第一个方法定了一个全局函数，这个函数可以在页面中的任何地方进行调用从而进入到应用程序中。第二个方法定义了一个应用程序事件，在网页中可以对其进行激活这个事件。应用程序监听并且响应这个事件。这两个方法都是有效可行的。
 
-### 内嵌框架
+### Embedded in IFrame
 
 在内嵌框架中嵌入一个PlayCanvas应用程序是一种简单快捷的方式将您的PlayCanvas显示在网页中。这同样意味着可以确保优化托管以及不需要去考虑服务所有PlayCanvas内容。然后，坏处是用户并不能在PlayCanvas应用程序中直接从托管网页调用javascript函数，因为它们在不同的网页中运行。
 
 对父页面和内嵌框架进行通讯，用户需要使用[postMessage][1]javascript API来对页面和PlayCanvas应用程序之前发送数据。
 
-在您的主页中
+In your host page, use the iframeless URL for the iframe. The default publish link has the build in an iframe to include the social sharing bar at the bottom. This can cause problems with [postMessage][1] as there are now two iframes to communicate through.
+
+If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
 
 ```html
-<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
@@ -91,7 +93,7 @@ window.addEventListener("message", function (event) {
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>
@@ -123,7 +125,7 @@ window.addEventListener("message", function (event) {
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>
@@ -153,4 +155,3 @@ window.addEventListener("message", function (event) {
 ```
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-

@@ -1,11 +1,11 @@
 ---
-title: 制作一个简单的游戏 - Part 2
+title: シンプルなゲームの作成 - パート3
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 3"></iframe>
 
 *[完成されたプロジェクトはこちら][4]です。先に[その1][1]と[その2][2] を読んでください。*
 
@@ -233,7 +233,7 @@ Input.prototype._onMouseDown = function (e) {
 
 「マウスダウン」イベントではタップコードを介してスクリーン座標を渡します。 PlayCanvasはタッチとマウスイベントが同じ座標系を持っていることを保証します。これは通常のブラウザイベントとは異なります！
 
-### タップ
+### タップ
 
 `_onTap()` は画面座標(x, y)を使用してボールに当たっているかを判断し、当たっている場合はボールのコードにタップされたことを知らせます。
 
@@ -246,6 +246,7 @@ this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 ベクター`Input.worldPos`も渡します。PlayCanvasアプリケーションでは、更新ループ内で新しいオブジェクトを作成することを回避するべきです。例えば、新しいベクターを作成するために`new pc.Vec3()` を呼び出す場合です。メモリ割り当てが増えると(`new`を呼ぶことで)、割り当てをクリアするためにブラウザはより多くのGarbage Collectionを行う必要があります。Garbage Collectionはオペレーション(比較的遅い)で、頻繁に行うとゲームやアプリケーションの動作に支障をもたらします。
 
 ほとんどの場合、PlayCanvasは事前にオブジェクトの割り当てや再利用ができるようにベクターまたは類似のオプションを渡すオプションを提供します。
+
 
 ```javascript
 // タッチ／クリックからボールへの距離を取得
@@ -267,4 +268,3 @@ if (lenSqr < this.ballRadius*this.ballRadius) {
 [2]: /tutorials/keepyup-part-two/
 [3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
-

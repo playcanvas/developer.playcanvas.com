@@ -1,23 +1,27 @@
 ---
-title: 暗角
+title: 暗角特效
 layout: usermanual-page.hbs
 position: 6
 ---
 
-在摄影和光学角度来说，暗角指图像外围的亮度和饱和度比图像中心的图像亮度和饱和度小。你可以使用这个效果突出画面的中央。<small>(来自于[Wikipedia][1])</small>
+In photography and optics, [vignetting][1] is the reduction of an image's brightness or saturation at the periphery compared to the image center. You can use it to draw attention to the center of the frame.
 
 这是一张没有经过处理的图片:
 
-<img alt="Image without effect" src="/images/platform/posteffects/without_effects.png"></img>
+![Image without effect][2]
 
-这是一张已经经过了处理的图片:
+And the same image with the effect applied:
 
-<img alt="Image with effect" src="/images/platform/posteffects/with_vignette.png"></img>
+![Image with effect][3]
 
 内置的暗角效果有以下属性:
 
-* **偏移量**: 控制效果的位置偏移。
-* **暗度**: 控制效果的变暗程度。
+* **Offset**: Controls the offset of the effect.
+* **Darkness**: Controls the darkness of the effect.
+
+Find the post-processing effect script on [GitHub][4].
 
 [1]: https://en.wikipedia.org/wiki/Vignetting
-
+[2]: /images/platform/posteffects/without_effects.png
+[3]: /images/platform/posteffects/with_vignette.png
+[4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-vignette.js

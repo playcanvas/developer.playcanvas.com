@@ -25,10 +25,10 @@ Here are examples of it being used on desktop:
 
 And on mobile:
 
-<div class="centered"><video height="360" controls src="/images/tutorials/ui-text-input/mobile-preview.mp4"></div>
+<div class="centered"><video height="360" controls src="/images/tutorials/ui-text-input/mobile-preview.mp4"></video></div>
 
 <div class="alert alert-info">
-Note: This doesn't support 3D elements</a>.
+Note: This doesn't support 3D elements.
 </div>
 
 ## How to install

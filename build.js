@@ -7,6 +7,7 @@ const Metalsmith = require('metalsmith');
 const layouts    = require('@metalsmith/layouts');
 const markdown   = require('@metalsmith/markdown');
 const permalinks = require('@metalsmith/permalinks');
+const beautify   = require('metalsmith-beautify');
 const msStatic   = require('metalsmith-static');
 const navbuilder = require('./lib/nav-builder-plugin/index');
 const locale     = require('./lib/locale/index');
@@ -73,18 +74,36 @@ renderer.link = (href, title, text) => {
 };
 
 // Insert an anchor for headings h2 and smaller
-renderer.heading = (text, level) => {
-    const id = text.toLowerCase().replace(/\s/g, '-');
+renderer.heading = (text, level, raw, slugger) => {
     if (level >= 2) {
-        const href = `#${id}`;
-        return `<h${level} id="${id}">${text} <a class="header-anchor font-icon" href="${href}">&#xE368;</a></h${level}>`;
+        const id = slugger.slug(raw);
+        return `<h${level} id="${id}">${text}<a class="header-anchor font-icon" href="#${id}">&#xE368;</a></h${level}>\n`;
     }
-    return `<h${level}>${text}</h${level}>`;
+
+    return `<h${level}>${text}</h${level}>\n`;
 };
 
 // Add lazy loading attribute to images
 renderer.image = (href, title, text) => {
     return `<img src="${href}" loading="lazy" alt="${text}">`;
+};
+
+// Ensure table header cells have scope="col" attribute (required for accessibility)
+renderer.tablecell = (content, flags) => {
+    const type = flags.header ? 'th' : 'td';
+    let openTag = `<${type}`;
+
+    if (flags.header) {
+        openTag += ' scope="col"';
+    }
+    if (flags.align) {
+        openTag += ` align="${flags.align}"`;
+    }
+    openTag += '>';
+
+    const closeTag = `</${type}>`;
+
+    return openTag + content + closeTag + '\n';
 };
 
 // Store strings requested
@@ -130,11 +149,14 @@ Metalsmith(__dirname)
         partialName: 'shader-editor-navigation'
     }))
     .use(tutorials('tutorials')())
-    .use(layouts())
+    .use(layouts({
+        pattern: '**/*.html'
+    }))
     .use(locale()())
     .use(i18nout()({
         data: localization
     }))
+    .use(beautify())
     .build(function (err) {
         if (err) throw err;
         console.log('Build complete!');

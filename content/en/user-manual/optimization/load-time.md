@@ -23,7 +23,7 @@ Here are some tips to achieve super-fast load times:
 
 Beyond the above guidelines, it's possible to retain users by spacing the loading in multiple stages while giving the users something new to interact with or watch.
 
-Using [Virtual Voodoo from Miniclip][1] which was made with PlayCanvas, we can show the 'typical' sequence that most applications will use for browser experiences.
+Using [Virtual Voodoo][1] as an example, we can show the 'typical' sequence that most applications will use for browser experiences.
 
 The game has 3 phases:
 
@@ -53,5 +53,5 @@ An example below is using a silhouette of a character as the placeholder until i
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/character-load.gif" style="max-width: 360px;">
 
-[1]: https://www.miniclip.com/games/virtual-voodoo/en/
+[1]: https://playcanv.as/p/tRUfwVg1/
 [2]: /user-manual/templates/#when-do-i-need-to-load-template-assets?

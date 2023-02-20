@@ -16,7 +16,7 @@ position: 7
 
 ## レイアウトグループプロパティ
 
-#### オリエンテーション
+#### 方向付け
 
  `オリエンテーション` を水平に設定するとレイアウトが「左から右」または「右から左」に並びます。「上から下」または「下から上」に並べるには垂直に設定します。
 
@@ -46,13 +46,13 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 * それぞれの子のfitWidthProportion/fitHeightProportionの値を合計して標準化します。すべての値の合計は1です。
 * それぞれの子に合わせた幅・高さを適用します。
-* コンテナにスペースが残っている場合、標準化したfitWidthProportion/fitHeightProportion 値に基づいてそれぞれの子に割り当てます。ただし、子のmaxWidth/maxHeightを超えることはありません。
+* 全ての子の幅・高さの新しい合計値がコンテナのスペースを超えた場合、各子の幅・高さを標準化したfitWidthProportion/fitHeightProportion値に基づいて部分的に減らします。ただし、子のminWidth/minHeightを超えることはありません。
 
 値が **Shrink** の場合、以下の手段を用いて子を縮め、コンテナに合うようにします。
 
-* それぞれの子のfitWidthProportion/fitHeightProportionの値を合計して標準化します。すべての値の合計は1です。
+* 全ての子要素の fitWidthProportion/fitHeightProportion 値を合計し、正規化して全ての値が合計で 1 になるようにします。
 * それぞれの子に合わせた幅・高さを適用します。
-* 全ての子の幅・高さの新しい合計値がコンテナのスペースを超えた場合、各子の幅・高さを標準化したfitWidthProportion/fitHeightProportion値に基づいて部分的に減らします。ただし、子のminWidth/minHeightを超えることはありません。
+* もし全ての子要素の新しい合計の幅/高さが、コンテナの利用可能なスペースを超える場合、normalized fitWidthProportion/fitHeightProportion値に基づいて、各子要素の幅/高さを比例縮小しますが、各子要素のminWidth/minHeightを超えないようにします。
 
 値が **Both** の場合、 **Stretch** and **Shrink** の両方が適用されます。
 
@@ -69,6 +69,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 この例では、水平レイアウトが **Stretch** 幅フィッティングを使用して各ボタンを引き延ばし、平等にコンテナに収まるようにしています。中央のボタンにはLayout Childコンポーネントが `maxWidth` 64が設定されているため、引き延ばされません。
 
 ![Layout Child Setup][9]
+
 
 ## レイアウトの例
 

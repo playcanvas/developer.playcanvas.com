@@ -26,7 +26,7 @@ thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 
 - Basic PlayCanvas knowledge ([See PlayCanvas Developer Resources](https://developer.playcanvas.com/))
 - Basic JavaScript/TypeScript understanding ([See TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html))
-- Basic Node.js understanding ([See Introduction to Node.js](https://nodejs.dev/learn/))
+- Basic Node.js understanding ([See Introduction to Node.js](https://nodejs.dev/en/learn/))
 
 ## Software requirements
 
@@ -391,7 +391,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 
 Colyseus comes with an optional monitoring panel that can be helpful during the development of your game.
 
-To view the monitor panel from your local server, go to http://localhost:2567/colyseus.
+To view the monitor panel from your local server, go to `http://localhost:2567/colyseus`.
 
 ![monitor](/images/tutorials/multiplayer-colyseus/monitor.png)
 

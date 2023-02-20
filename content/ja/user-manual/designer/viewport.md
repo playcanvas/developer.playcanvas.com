@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-<img alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg" />
+<img loading="lazy" alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg">
 
 ビューポートは現在レンダリングされるシーンを表示します。エディタの現在のカメラを操作することで、自由にシーンを動かすことができます。
 
-<img alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;"/>
+<img loading="lazy" alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;">
 
 ## カメラ
 
@@ -16,13 +16,12 @@ position: 4
 
 カメラメニューを使用してシーンの如何なるカメラエンティティを選択することができます。ゲーム内のカメラを必要に応じて正確に配置できます。
 
-## Gizmo
+## Gizmos
 
-<img src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;"></img>
-<img src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;"></img>
+<img loading="lazy" src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;">
+<img loading="lazy" src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;">
+<img loading="lazy" src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;">
 
 上記スクリーンショットに表示されている3色の軸は[Gizmo][1]といいます。これは、選択されたエンティティの変換行列を操作するのに使います。Gizmoには3つの種類があります：Translate (軸の先に矢印); Rotate (3色のリングで構成される), Scale (軸の先にキューブ)。
 
 [1]: /user-manual/glossary#gizmo
-

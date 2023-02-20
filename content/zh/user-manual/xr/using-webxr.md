@@ -14,6 +14,7 @@ if (app.xr.supported) {
 }
 ```
 
+
 ## Starting XR Session
 
 The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
@@ -42,7 +43,8 @@ entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
 });
 ```
 
-## Ending XR Session
+
+## Ending XR Session
 
 Exiting XR can be triggered in various ways. You can trigger an exit of XR from code:
 
@@ -57,6 +59,7 @@ app.xr.on('end', function () {
     // XR session has ended
 });
 ```
+
 
 ## Types of XR
 
@@ -86,7 +89,8 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 });
 ```
 
-## Camera Position and Orientation in XR
+
+## Camera Position and Orientation in XR
 
 When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
 
@@ -121,4 +125,3 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 [1]: /images/user-manual/xr/using-webxr/camera-offset.jpg
 [2]: /api/pc.XrManager.html
 [3]: https://immersive-web.github.io/layers/
-

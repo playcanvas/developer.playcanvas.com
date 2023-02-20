@@ -1,11 +1,11 @@
 ---
-title: オーディオ効果
+title: 音声エフェクト
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
 
 *それぞれのボタンをクリックしてサウンドエフェクトを試してください。*
 
@@ -64,4 +64,3 @@ this.entity.sound.slot('speech').clearExternalNodes();
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
 [7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
 [8]: /api/pc.Sound.html
-

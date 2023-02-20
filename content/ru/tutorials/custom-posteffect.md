@@ -1,11 +1,11 @@
 ---
-title: Custom Post Effects
+title: Пользовательские пост-эффекты
 layout: tutorial-page.hbs
 tags: posteffects
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/3je0YP0q/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 
 *Этот урок использует пользовательские пост-эффекты для создания эффектов в GLSL*
 
@@ -15,11 +15,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 В следующих параграфах мы продемонстрируем как создавать свои собственные пост-эффекты. Вы можете посмотреть уже существующие эффекты [здесь][1].
 
-## Сценарий
+## The script
 
 Во-первых, мы должны создать новый сценарий. Он будет содержать [объявление шейдера][2] для нашего пост-эффекта а также код, который будет добавлен к камере. Сценарий должен быть прикреплён к сущности с [компонентом камеры][3]. Мы назовём сценарий posteffect_example.js: 
 
-## Эффект
+## The effect
 
 Теперь мы должны создать новый класс для нашего пост-эффекта. Этот класс должен происходить от [pc.posteffect.PostEffect][4]. Мы определим этот класс внутри нашего posteffect_example.js непосредственно перед определением сценария:
 
@@ -63,7 +63,7 @@ pc.extend(pc, function () {
 }());
 ```
 
-## Обертка
+## Wrap up
 
 Теперь у нас есть все необходимые компоненты для нашего пост-эффекта. Все, что нам нужно сделать, это добавить указатель на ExamplePostEffect, который мы объявили выше, к [очереди пост-эффектов][5] нашей камеры. Ниже полный код:
 
@@ -155,4 +155,3 @@ PosteffectExample.prototype.initialize = function() {
 [6]: /tutorials/custom-shaders/
 [5]: /api/pc.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045
-

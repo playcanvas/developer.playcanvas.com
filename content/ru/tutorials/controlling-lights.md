@@ -1,11 +1,11 @@
 ---
-title: Controlling Lights
+title: Контроль света
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/tiKpka9M/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
 
 *Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
 
@@ -47,7 +47,7 @@ These lines assign values to r, g and b variables based on a sin wave and then a
 
 ## General setup
 
-We added a spot light (attached to a parent assembly of a basic torch model), a point light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
+We added a spot light (attached to a parent assembly of a basic torch model), an omni light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
 
 The full code used for the above PlayCanvas app is as follows.
 
@@ -124,4 +124,3 @@ LightHandler.prototype.pivot = function () {
 
 [1]: /api/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
-

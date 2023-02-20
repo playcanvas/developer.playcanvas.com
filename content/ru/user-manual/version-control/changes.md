@@ -21,4 +21,3 @@ Changes are views in a similar interface to the Conflict Manager used when mergi
 [1]: /images/user-manual/version-control/vc-panel.jpg
 [2]: /images/user-manual/version-control/view-changes.jpg
 [3]: /images/user-manual/version-control/view-changes-dialog.jpg
-

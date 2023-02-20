@@ -1,10 +1,10 @@
 ---
-title: Inspector
+title: Инспектор
 layout: usermanual-page.hbs
 position: 3
 ---
 
-<img src="/images/user-manual/editor/inspector/inspector.png" style="float: right; padding: 20px; padding-top: 0px;" width="320"></img>
+<img loading="lazy" src="/images/user-manual/editor/inspector/inspector.png" style="float: right; padding: 20px; padding-top: 0px;" width="320">
 
 The Inspector panel shows attribute values for the currently selected item.
 
@@ -22,4 +22,3 @@ When running both a game and the Editor simultaneously changes to attributes wil
 
 [1]: /user-manual/glossary#entity
 [2]: /user-manual/glossary#gizmo
-

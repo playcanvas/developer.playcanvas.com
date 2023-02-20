@@ -47,6 +47,8 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 * Capsule
 * Cylinder
 * Mesh
+* Cone
+* [Compound][12]
 
 ## 静的グラウンドの作成
 
@@ -77,12 +79,12 @@ Scene Settingsパネルのインポートボタンを使用して、ammo.jsモ�
 ```javascript
 var Movement = pc.createScript('movement');
 
-// エンティティごとに1回呼び出されるコードを初期化
+// initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
-// すべてのフレームで呼ばれるコードを更新
+// update code called every frame
 Movement.prototype.update = function(dt) {
     this.entity.setPosition(Math.sin(Date.now() / 1000), 0.5, 0);
 };
@@ -107,4 +109,4 @@ Movement.prototype.update = function(dt) {
 [9]: /images/user-manual/physics/kinematic-box.gif
 [10]: /en/user-manual/physics/physics-migration/
 [11]: /en/user-manual/assets/wasm-modules/
-
+[12]: /user-manual/physics/compound-shapes/

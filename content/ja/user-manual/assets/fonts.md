@@ -1,5 +1,5 @@
 ---
-title: Font
+title: フォント
 layout: usermanual-page.hbs
 position: 8
 ---
@@ -38,4 +38,3 @@ Fontアセットに含める文字。 たとえば数字だけが必要な場合
 
 [1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/font.png
-

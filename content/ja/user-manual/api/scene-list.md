@@ -17,7 +17,7 @@ GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 ## 例
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
 ```
 
 HTTP Request
@@ -31,7 +31,7 @@ Authorization: Bearer {accessToken}
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list scenes from</p></div>
-<div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the master branch will be used.</p></div>
+<div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the main branch will be used.</p></div>
 </div>
 
 ## 応答のスキーマ
@@ -66,4 +66,3 @@ Status: 200
 このルートは[normal][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-

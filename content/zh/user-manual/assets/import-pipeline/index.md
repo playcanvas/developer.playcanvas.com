@@ -1,5 +1,5 @@
 ---
-title: 资源导入通道
+title: 资源导入流程
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -8,7 +8,7 @@ position: 2
 
 有些资源在被使用之前没有必要被导入。比如，PNG图像可以立刻作为纹理被运用到游戏设计当中。
 
-## 资源任务
+## Asset Tasks
 
 当一个需要被导入的源资源被上传时。PlayCanvas启动一个资源任务在服务器上执行导入过程。你将可以在资源面板中查看最近运行的资源任务。
 
@@ -16,14 +16,14 @@ position: 2
 
 为了满足用户的需求，这里提供了多种选项用以调整导入通道的行为。
 
-<img src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
-### 搜索相关资源
+### Search related assets
 
 当你通过上传一个新版本的文件来更新一个源资源时，对于用户如何通过导入通道来更新目标资源，这里有两种可能的方式。
 
-如果**Search related assets**被开启，通道将会更新目标资源无论它们位于哪个文件夹。
-如果**Search related assets**被关闭，通道将只会寻找在于源资源在同一文件夹中的目标资源。
+* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
+* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
 
 因此，如果你将这个选项设置为开启，用户将可以添加文件资源以及目标资源到文件夹中，确保当更新源资源时，所有相关资源将会被更新。
 
@@ -31,11 +31,11 @@ position: 2
 
 Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
 
-## Texture Import Settings
+## Texture Import Settings
 
 以下这些选项将只会影响图像和纹理的导入。
 
-### Texture POT (Power of Two)
+### Texture POT (Power of Two)
 
 当这个选项被开启，在贴图被导入时贴图尺寸将不会成为2的整倍数，而是将会被转换成最接近的2的整倍数的分辨率。
 
@@ -51,19 +51,19 @@ Images that are uploaded will be imported as a texture atlas instead of a normal
 
 When a model file is updated or reimported, the Editor will try to preserve the material mappings that were set on it.
 
-### 覆盖模型
+### Overwrite Models
 
 这个选项决定了当更新或者重新导入一个模型文件时，目标资源是否会被覆盖。在默认情况下，目标资源将会被一个新的模型所覆盖。
 
-### 覆盖动画
+### Overwrite Animations
 
 这个选项决定了当更新或重新导入一个模型文件时，从模型创建的动画是否会被覆盖。在默认情况下，新动画将会覆盖。
 
-### 覆盖材质
+### Overwrite Materials
 
 这个选项决定了当更新或重新导入一个模型文件时，从模型创建的材质是否会被覆盖。在默认情况下，将会使用新材质代替现有材质。
 
-### 覆盖贴图
+### Overwrite Textures
 
 这个选项决定了当更新或重新导入一个模型文件时，从模型创建的贴图是否会被覆盖。在默认情况下。新贴图将会覆盖。
 
@@ -83,4 +83,3 @@ Please refer to the [Animation section][4] for more details.
 [2]: /user-manual/assets/preloading-and-streaming/
 [3]: /user-manual/assets/import-pipeline/import-hierarchy/
 [4]: /user-manual/assets/animation/
-

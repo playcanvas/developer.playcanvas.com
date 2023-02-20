@@ -1,11 +1,11 @@
 ---
-title: ForceとImpulse
+title: 動力および衝撃
 layout: tutorial-page.hbs
 tags: physics, collision
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses"></iframe>
 
 *インパルスを適用するにはカーソルキーを使用します。トルクを適用してキューブを回転させるには、WASDキーを使用します。Fを長押しすると一定の力を上向きに適用して重力の効果をキャンセルします。*
 * Rキーを押しすとキューブをリセットします。*
@@ -71,7 +71,7 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 アンバランスな力が適用され続けることを防ぐため(つまり、ボディが加速し続け制御不能になることを防ぐため)、いくつかの設定をEditorで行いました。キューブの属性エディタで角度減衰を有効にしました。また、キューブと床の両方で、摩擦を可能にしました。リニア減衰はここでは使用されていませんが、空気抵抗やシミュレートするために使用することができます。また、減速はコードで適用することができます。
 
-<img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
+<img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings">
 
 ## ボディのテレポート
 
@@ -108,6 +108,7 @@ reset: function () {
 ```
 
 キューブを元の位置に戻し、上記のようにテレポートされたエンティティの位置にリジッドボディを同期させるリセット機能を用意しました。リセット機能の最後の2行はボディの線速度および角速度をゼロにリセットします。オブジェクトの向きもリセットすることができますが、このコードでは行われません。
+
 
 ## 完全なコードのリスト
 
@@ -192,4 +193,3 @@ DynamicBody.prototype.reset = function () {
 [8]: /tutorials/first-person-movement/
 [9]: /tutorials/collision-and-triggers/
 [10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
-

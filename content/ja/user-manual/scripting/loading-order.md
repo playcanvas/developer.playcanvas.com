@@ -1,7 +1,7 @@
 ---
 title: 読み込みの順番
 layout: usermanual-page.hbs
-position: 6
+position: 7
 ---
 
 基本的に、すべてのスクリプトは、アプリケーションの開始時に読み込まれます。読み込みの順番は、メインのEditorメニューやScene Settingsシからアクセスすることができる、プロジェクト内の設定によって決定されます。
@@ -18,11 +18,13 @@ position: 6
 
 ## プレロード
 
-PlayCanvasの他のアセットと同様、デフォルトでスクリプトアセットは`preload`としてマークされます。スクリプトのプリロードを無効にすると、アプリケーションの起動前に読み込まれます。こうすることにより、プロジェクトにスクリプトを含みながら、`preload`をオフにして読み込まれるのを防ぐことができます。通常のアセットAPIを使用して、非プリロードスクリプトを動的に読み込むようにトリガすることができます。 例：`this.app.assets.load(アセット);`
+PlayCanvasの他のアセットと同様に、スクリプトアセットはデフォルトで `preload` とマークされています。これはアプリケーションが開始される前に読み込まれることを意味します。スクリプトのプリロードを無効にすると、通常の状況では読み込まれません。このようにして、プロジェクトにスクリプトを含めつつ、 `preload` のチェックを外して読み込みを防止することができます。通常のアセットAPIを使用して、プリロードしないスクリプトを動的に読み込むことができます。例えば、 `this.app.assets.load(asset);` です。
+
 スクリプトレジストリへの動的な変更にサブスクライブすることができます：
+
 ```javascript
 this.app.scripts.on('add', function(name, scriptType) {
-console.log('script', name, 'has been loaded');
+    console.log('script', name, 'has been loaded');
 });
 ```
 
@@ -32,4 +34,3 @@ console.log('script', name, 'has been loaded');
 
 [1]: /images/user-manual/scripting/script-loading-order.jpg
 [2]: /images/user-manual/scripting/loading-order-list.jpg
-

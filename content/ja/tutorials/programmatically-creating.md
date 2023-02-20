@@ -1,11 +1,11 @@
 ---
-title: プログラムでエンティティを作成
+title: プログラムでエフェクトを作成
 layout: tutorial-page.hbs
 tags: procedural, basics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1VjdIY7v/" title="Programmatically Creating Entities"></iframe>
 
 基本的に、エンティティはPlayCanvas Editorで作成され、ゲームを作成するためのコンポーネントやスクリプトを構築します。しかし、スクリプトからエンティティを作成する方が便利な場合もあります。このチュートリアルではその方法を説明します。
 
@@ -164,4 +164,3 @@ EntityCreator.prototype.spawnCube = function () {
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341
-

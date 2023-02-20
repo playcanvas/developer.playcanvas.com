@@ -191,7 +191,6 @@ if (!asset.loaded) {
 
 This code loads an asset when it is needed, but it's a bit long winded. So, instead, you can use the `asset.ready()` method. This code performs the same function as above
 
-
 ```javascript
 var asset = this.app.assets.find("A");
 asset.ready(function (asset) {

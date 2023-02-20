@@ -12,7 +12,7 @@ Sub Graphs don't contain Material Nodes, but instead pass data in and out using 
 
 Note that it is not valid (or possible) to connect Sub Graphs together in way that would introduce cyclic references. For example if graph A references graph B which in turn references graph C, then graph C can not reference back to A or B.
 
-#### 案例
+#### Example
 
 For example, this is a simple Sub Graph which adds two floats together:
 
@@ -31,4 +31,3 @@ For more information on how to edit graphs see the [Graph Editor][1] documentati
 [1]: /images/shader-editor/overview-graph-sub-graph.png
 [2]: /images/shader-editor/overview-graph-sub-graph-icon.png
 [3]: /images/shader-editor/overview-graph-place-sub-graph.gif
-

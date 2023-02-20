@@ -15,11 +15,12 @@ The loaded CSS asset resource is just a string. You can use the string as you li
 var asset = app.assets.get(32);
 
 // create element
-var style = pc.createStyle(asset.resource || '');
+var style = document.createElement('style');
+style.type = "text/css";
+style.textContent = asset.resource || '';
 document.head.appendChild(style);
 
-// when asset resource loads/changes,
-// update html of element
+// update the style when the asset's resource loads/changes
 asset.on('load', function() {
     style.innerHTML = asset.resource;
 });

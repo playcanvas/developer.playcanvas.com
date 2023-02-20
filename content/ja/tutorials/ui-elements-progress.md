@@ -1,11 +1,11 @@
 ---
-title: ユーザインターフェイス - プログレスバー
+title: ユーザインターフェイス - 進行バー
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/FlebHmLs/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
 
 *Elementコンポーネントを使用するプログレスバー。[フルシーン][1]を参照してください*
 
@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 ## 階層
 
-階層内でUIは次のようになります：
+階層内のUIは次のようになります：
 
 ![階層][4]
 
@@ -23,7 +23,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 ![スクリーン][5]
 
-2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。
+2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
 
 スクリーンには、POWERテキストを表示する子Text Elementと、プログレスバーを示す`Progress Bar` というエンティティがあります。
 
@@ -46,41 +46,46 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 ```javascript
 var ProgressBar = pc.createScript('progressBar');
 
-// 塗りつぶし画像を表示するエンティティ
+// The entity that shows the fill image
 ProgressBar.attributes.add('progressImage', {type: 'entity'});
-// 塗りつぶし画像の最大幅
+// The maximum width of the fill image
 ProgressBar.attributes.add('progressImageMaxWidth', {type: 'number'});
 
 ProgressBar.prototype.initialize = function() {
-    // 進行を0に初期化
+    // use our own rect object to set the size of
+    // the progress bar
+    this.imageRect = this.progressImage.element.rect.clone();
+
+    // initialize progress to 0
     this.setProgress(0);
-    // trueの場合、プログレスバーが増加します
-    // それ以外の場合は更新時に減少します
+    // if true the progress bar will increase
+    // otherwise it will decrease in update
     this.increase = true;
 };
 
-// 進行状況を設定する - 値は0と1の間
+// Set progress - value is between 0 and 1
 ProgressBar.prototype.setProgress = function (value) {
-    // 0と1の間のクランプ値
+    // clamp value between 0 and 1
     value = pc.math.clamp(value, 0, 1);
 
     this.progress = value;
 
-    // プログレスの塗りつぶし画像の希望の幅を見つける
+    // find the desired width of our progress fill image
     var width = pc.math.lerp(0, this.progressImageMaxWidth, value);
-    // 塗りつぶし画像要素の幅を設定
+    // set the width of the fill image element
     this.progressImage.element.width = width;
 
-    // 要素のrect(rect.z)の幅を0-1の進行と
-    // 同じ値に設定してください。
-    // これは、塗りつぶし画像が表示されるテクスチャ部分のみを
-    // 表示するようにするためです
-    this.progressImage.element.rect.z = value;
-    // rectの更新を強制
+    // Set the width of the element's rect (rect.z) to be the same
+    // value as our 0-1 progress.
+    // This is so that the fill image will only show the portion
+    // of the texture that is visible
+    this.imageRect.copy(this.progressImage.element.rect);
+    this.imageRect.z = value;
+    // force rect update
     this.progressImage.element.rect = this.progressImage.element.rect;
 };
 
-// 進行状況を自動的に増減
+// Increase or decrease the progress automatically
 ProgressBar.prototype.update = function(dt) {
     var diff = this.increase ? dt : -dt;
     this.setProgress(this.progress + diff);
@@ -106,4 +111,3 @@ Changing the `width` makes the fill image larger and changing the `rect` makes s
 [6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
 [7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
 [8]: /api/pc.ElementComponent.html#rect
-

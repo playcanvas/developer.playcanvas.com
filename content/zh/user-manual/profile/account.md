@@ -1,5 +1,5 @@
 ---
-title: 用户资料
+title: 账户
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -9,4 +9,3 @@ position: 3
 ![account_page][1]
 
 [1]: /images/platform/account.png "Account"
-

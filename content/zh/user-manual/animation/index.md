@@ -1,5 +1,5 @@
 ---
-title: Animation
+title: 动画
 layout: usermanual-page.hbs
 position: 15
 ---
@@ -21,4 +21,3 @@ These three animations can be organized into a single animation system to create
 The anim component is then used to assign an animstategraph asset to a particular entity in your scene. Once an entity has been assigned an animstategraph asset, each state in the graph can have an actual animation asset assigned to it. Once all states have been assigned animations, the anim component will become playable. At this point the animation system is complete and the defined animation behavior will be viewable in the PlayCanvas launcher.
 
 [1]: /images/user-manual/anim/animations.gif
-

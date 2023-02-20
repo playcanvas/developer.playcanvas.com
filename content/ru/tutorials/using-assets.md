@@ -1,11 +1,11 @@
 ---
-title: Using the Asset Registry
+title: Использование реестра ассетов
 layout: tutorial-page.hbs
-tags: loading, assets
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
+tags: loading, assets, basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/QwDM4qaF/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 
 *Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
 
@@ -15,7 +15,7 @@ For more advanced products you may wish to access your assets in code, change re
 
 In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
-## Setup
+## Setup
 
 *The project is set up as follows*
 
@@ -26,7 +26,7 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
 
-## The AssetRegistry
+## The AssetRegistry
 
 The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
 
@@ -54,7 +54,7 @@ In this case we've declared three script attributes `a`, `b` and `c` which are a
 
 The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
 
-<img src='/images/tutorials/using_assets/using-assets-a-preload.png' width=360px>
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360px">
 
 So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
 
@@ -79,7 +79,7 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
 
 The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
 
-<img src='/images/tutorials/using_assets/using-assets-c-preload.png' width=360px>
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360px">
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -191,6 +191,7 @@ if (!asset.loaded) {
 
 This code loads an asset when it is needed, but it's a bit long winded. So, instead, you can use the `asset.ready()` method. This code performs the same function as above
 
+
 ```javascript
 var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
@@ -207,4 +208,3 @@ The `asset.ready()` method will call it's callback as soon as the asset is loade
 [6]: /downloads/tutorials/B.dae
 [7]: /downloads/tutorials/C.dae
 [8]: /api/pc.RenderComponent.html#asset
-

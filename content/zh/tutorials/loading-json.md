@@ -1,15 +1,15 @@
 ---
-title: 载入JSON 数据
+title: 读取 JSON 数据
 layout: tutorial-page.hbs
 tags: loading
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/cHnXIXoN/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/cHnXIXoN/" title="Loading JSON Data"></iframe>
 
 [本项目][1] 向我们展示了两种加载JSON数据的方式。第一种，从项目中的资源文件加载。 第二种，通过HTTP从远程服务器加载。
 
-## 从资源中读取JSON数据
+## Loading JSON from an asset
 
 ```javascript
 Game.attributes.add('characterData', {
@@ -45,7 +45,7 @@ var names = this.parseCharacterData(characterData);
 
 一旦你有了javascript对象，你就可以正常地访问其数据了。 例如示例中的循环遍历属性`parseCharacterData`。
 
-## 从远程服务器加载JSON
+## Loading JSON from a remote server
 
 ```javascript
 Game.prototype.loadJsonFromRemote = function (url, callback) {
@@ -158,4 +158,3 @@ Game.prototype.loadJsonFromRemote = function (url, callback) {
 请自行在 [工程][1]中进行尝试。
 
 [1]: https://playcanvas.com/project/405827
-

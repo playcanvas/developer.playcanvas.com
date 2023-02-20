@@ -22,4 +22,3 @@ position: 6
 
 [1]: https://playcanvas.com/plans
 [2]: /user-manual/api
-

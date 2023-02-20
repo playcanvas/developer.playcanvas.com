@@ -1,11 +1,11 @@
 ---
-title: ライトハロー
+title: ライト Halo
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
 
 [完成されたプロジェクト][4]をフォークして詳細をご確認ください。
 
@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 次のように動作します：輝くハロー素材を有する、平面プリミティブを添付したエンティティを作成します。エンティティに、面を常にカメラに向けさせるスクリプトを添付します(ビルボーディング)。さらに、指向性のライトをシミュレートするために、カメラに背を向けた際はハローをフェードアウトさせます。
 
-## アセット
+## アセット
 
 ### テクスチャ
 
@@ -23,11 +23,13 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 このテクスチャは、輝きの基礎を形成します。
 
-### 素材
+### マテリアル
 
-![素材][2]
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
 
-ライトハローの素材は、emissiveスロット内のblobテクスチャを使用します。ハローの色を設定する**tint**プロパティを使用します。また、Opacityスロットでブレンディングを有効にしています。これは、**Additive Alpha**に設定されています。*Additive**の部分は、素材の色がその下の背景色に追加されることを意味します。つまり、ハローは背景に対して光ります。**Alpha**の部分は、`opacity`の値を使用して素材の透明度を設定することを意味します。
+The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
+
+The **Blend Type** is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
 
 ## エンティティ
 
@@ -123,8 +125,7 @@ Halo.prototype.update = function(dt) {
 以上です。シーンに追加するシンプルで綺麗な効果です。詳細は[プロジェクト][4]でご確認ください。
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
-[2]: /images/tutorials/intermediate/light-halos/material.jpg
+[2]: /images/tutorials/intermediate/light-halos/material.png
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
 [5]: /api/pc.MeshInstance.html
-

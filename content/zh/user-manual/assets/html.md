@@ -28,4 +28,3 @@ asset.on('load', function() {
 // make sure assets loads
 app.assets.load(asset);
 ```
-

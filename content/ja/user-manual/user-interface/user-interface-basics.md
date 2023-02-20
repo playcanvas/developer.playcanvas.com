@@ -16,15 +16,15 @@ Elementコンポーネントをスクリーンの一部として使用するエ�
 
 描画順序を変更するには、Editor階層でエンティティを並べ替えるだけです。`entity.reparent(...)`を呼び出すことで、要素をプログラムで並べ替えることができます。 これは、Screenコンポーネント全体で描画順序を強制的に再計算することを意味しますのでご注意ください。
 
-## 9-slicing
+## 要素の9スライス化
 
-9-slices (or 9-patches) are a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
+9スライス（または9パッチ）は、ビットマップグラフィックスから拡張可能なユーザーインターフェイス要素を作成するためのグラフィカルなテクニックです。テクスチャアトラスとスプライトアセットを使用して9スライスを設定できます。[こちら][5]を読んでください。
 
 ## 入力
 
 UI要素の入力を処理する別の方法があります。`pc.ElementInput`のインスタンスは、通常は` this.app.elementInput`としてアクセス可能なApplicationオブジェクトで提供されます。これにより、elementコンポーネント上で直接入力をリッスンすることができます。例：`this.entity.element.on('click', ...)`。詳細は[Input][4]ページでご確認ください。
 
-## Localization
+## ローカライゼーション
 
 PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
 
@@ -34,4 +34,3 @@ PlayCanvas has a built-in localization system which supports localized Text Elem
 [4]: /user-manual/user-interface/input
 [5]: /user-manual/2D/9-slicing
 [6]: /user-manual/user-interface/localization
-

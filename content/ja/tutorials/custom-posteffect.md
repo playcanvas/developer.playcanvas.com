@@ -1,11 +1,11 @@
 ---
-title: カスタムポストエフェクト
+title: カスタムの後処理エフェクト
 layout: tutorial-page.hbs
 tags: posteffects
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/3je0YP0q/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 
 *このチュートリアルでは、カスタムポストエフェクトを使ってGLSLでエフェクトを作成する方法を説明します。*
 
@@ -155,4 +155,3 @@ PosteffectExample.prototype.initialize = function() {
 [6]: /tutorials/custom-shaders/
 [5]: /api/pc.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045
-

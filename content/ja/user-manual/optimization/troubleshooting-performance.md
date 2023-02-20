@@ -1,5 +1,5 @@
 ---
-title: パフォーマンスのトラブルシューティング
+title: トラブルシューティングのパフォーマンス
 layout: usermanual-page.hbs
 position: 8
 ---
@@ -30,6 +30,6 @@ You can view the blacklisted cards [here][2].
 
 多くのWindows PCには、コンピュータのマザーボード上に構築された低消費電力のGPUである「統合型」グラフィックスカードと、追加のグラフィックスカードが含まれています。Nvidiaカードにはコントロールパネルがインストールされており、PC所有者はどのアプリケーションを実行するためにどのグラフィックカードを使用するかを選択できます。デフォルトでは、多くのPCが低電力内蔵グラフィックスカードを使用してGoogle ChromeのようなWebブラウザを実行するように設定されています。WebGLアプリケーションから最高のパフォーマンスを引き出すには、より強力なグラフィックスカードを使用してWebブラウザを高速化することが重要です。
 
+
 [1]: https://webglreport.com/
 [2]: https://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists
-

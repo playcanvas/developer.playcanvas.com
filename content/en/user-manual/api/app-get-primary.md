@@ -70,5 +70,4 @@ Status: 200
 
 This route uses a [normal][1] rate limit.
 
-
 [1]: /user-manual/api#rate-limiting

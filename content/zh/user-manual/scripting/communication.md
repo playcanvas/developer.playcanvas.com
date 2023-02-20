@@ -1,22 +1,22 @@
 ---
-title: 交流
+title: 通信交互
 layout: usermanual-page.hbs
-position: 5
+position: 6
 ---
 
 事件是一种有效的方法来进行脚本和脚本之间的通信为了响应某些事件而不用检查每个帧。
 
-PlayCanvas引擎包含了一个简单的方法添加事件到任意对象：
+PlayCanvas引擎包含一种向任何对象添加事件处理的简单方法：
 
 ```javascript
 pc.events.attach(object);
 ```
 
-这将会添加以下几种方法到对象： `on()`, `off()`, `fire()` and `hasEvent()` 。这就意味着用户可以响应对象所触发的事件。
+这将向对象添加方法: `on()`, `off()`, `fire()` 和`hasEvent()` 。这意味着你可以监听由该对象触发的对应事件。
 
-默认情况下，所有脚本实例都可以触发事件用户不必通过手动方式触发。
+默认情况下，所有脚本实例都可以触发事件，您不需要手动调用触发事件。
 
-## 使用事件
+## Using events
 
 通过`fire()`来触发一个事件。在这个例子中，名为player的脚本在每个帧都触发了`move` 事件，X和Y值作为参数传递。
 
@@ -43,10 +43,10 @@ Display.prototype.initialize = function () {
     var onPlayerMove = function(x, y) {
         console.log(x, y);
     };
-    
+
     // listen for the player move event
     this.playerEntity.script.player.on('move', onPlayerMove);
-    
+
     // remove player move event listeners when script destroyed
     this.playerEntity.script.player.on('destroy', function() {
         this.playerEntity.script.player.app.off('move', onPlayerMove);
@@ -54,7 +54,7 @@ Display.prototype.initialize = function () {
 };
 ```
 
-## 应用事件
+## Application Events
 
 PlayCanvas提供了一个方便而又强大的方法来对实体和实体之间进行通信，我们称之为“应用事件”。就像上面的例子，在特定的实体监听事件将会带来一些设置成本。譬如，监听器必须引用正在触发事件的特定实体，这将发生在某些情况下，但是对于一般情况下，我们发现它更适合使用主要应用(`this.app`) 作为中心枢纽来触发事件。这意味着为了使用事件用户不必每次都引用实体。
 
@@ -84,10 +84,10 @@ Display.prototype.initialize = function () {
     var onPlayerMove = function(x, y) {
         console.log(x, y);
     };
-    
+
     // listen for the player:move event
     this.app.on('player:move', onPlayerMove);
-    
+
     // remove player:move event listeners when script destroyed
     this.on('destroy', function() {
         this.app.off('player:move', onPlayerMove);
@@ -95,9 +95,8 @@ Display.prototype.initialize = function () {
 };
 ```
 
-就如您所见，这有效的减少了代码设置帮助代码看起来更清晰。
+如您所见，这有效的减少了代码设置帮助代码看起来更清晰。
 
 更多的消息请点击 [API Reference][1]
 
 [1]: /api/pc.EventHandler.html
-

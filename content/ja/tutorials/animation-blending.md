@@ -1,11 +1,13 @@
 ---
-title: アニメーションブレンディング
+title: Animation Blending (Deprecated)
 layout: tutorial-page.hbs
 tags: animation
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
+<div class="alert alert-info">This tutorial uses the deprecated Model and Animation components. Please refer to the <a href="/tutorials/anim-blending/">Anim State Graph Blending tutorial</a> instead.</div>
+
+<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 
 *画面をクリックしてフォーカス。次にpキーを押してパンチアニメーションにブレンド*
 
@@ -46,9 +48,16 @@ AnimationBlending.prototype.initialize = function() {
     this.blendTime = 0.2;
 
     this.setState('idle');
+};
 
-    this.app.keyboard.on(pc.EVENT_KEYDOWN, this.keyDown, this);
-    this.app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
+AnimationBlending.prototype.update = function(dt) {
+    if (this.app.keyboard.wasPressed(pc.KEY_P)) {
+        this.setState('punch');
+    }
+
+    if (this.app.keyboard.wasReleased(pc.KEY_P)) {
+        this.setState('idle');
+    }
 };
 
 AnimationBlending.prototype.setState = function (state) {
@@ -59,24 +68,11 @@ AnimationBlending.prototype.setState = function (state) {
     // the current animation state to the start of the target animation.
     this.entity.animation.play(states[state].animation, this.blendTime);
 };
-
-AnimationBlending.prototype.keyDown = function (e) {
-    if ((e.key === pc.KEY_P) && (this.state !== 'punch')) {
-        this.setState('punch');
-    }
-};
-
-AnimationBlending.prototype.keyUp = function (e) {
-    if ((e.key === pc.KEY_P) && (this.state === 'punch')) {
-        this.setState('idle');
-    }
-};
 ```
 
 ここからはアニメーションコンポーネントにより多くのアニメーションを追加することができ、より複雑なアニメーション状態チャートをスクリプトすることが可能になります。
 
- [フルシーンはこちら][2]
+[フルシーンはこちら][2]
 
 [1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/440156
-

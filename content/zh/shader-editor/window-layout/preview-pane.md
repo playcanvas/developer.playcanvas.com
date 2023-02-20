@@ -44,4 +44,3 @@ To use a custom shape, drag and drop a glTF or glb model file onto the Preview P
 
 [1]: /images/shader-editor/preview-pane.png
 [2]: /images/shader-editor/preview-pane-toolbar.png
-

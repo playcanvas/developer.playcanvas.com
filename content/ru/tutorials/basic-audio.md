@@ -1,11 +1,11 @@
 ---
-title: Basic Audio
+title: Основы об аудио
 layout: tutorial-page.hbs
-tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
+tags: audio,basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/XqMw92Zl/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
 
 *The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
 
@@ -81,7 +81,7 @@ If however you want to play a sound repeatedly without stopping every time the s
 
 By default, the audio sample will be played once, and then stop. If you want the sound to loop continuously, e.g. for background music, then you can check the *Loop* box. Our engine is a looping sound in the example but the shooting sound is not.
 
-## Creating Listeners
+## Creating Listeners
 
 To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
 
@@ -94,4 +94,3 @@ To create an AudioListener, select the Entity you wish to represent the listener
 [3]: https://playcanvas.com/editor/scene/440098
 [4]: /user-manual/assets/importing
 [5]: /images/tutorials/audio/sound.jpg
-

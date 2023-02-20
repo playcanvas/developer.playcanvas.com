@@ -1,1593 +1,2004 @@
 [main]
 host = https://www.transifex.com
 
-[playcanvas-developer-site.po-messages-json]
-file_filter = po/messages.json.<lang>.po
-source_file = po/messages.json.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-search]
-file_filter = po/search.<lang>.po
-source_file = po/search.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-index]
-file_filter = po/index.<lang>.po
-source_file = po/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-titles-js]
-file_filter = po/titles.js.<lang>.po
-source_file = po/titles.js.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-error]
-file_filter = po/error.<lang>.po
-source_file = po/error.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-index]
-file_filter = po/shader-editor/index.<lang>.po
-source_file = po/shader-editor/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-introduction]
-file_filter = po/shader-editor/introduction.<lang>.po
-source_file = po/shader-editor/introduction.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-preview-pane]
-file_filter = po/shader-editor/window-layout/preview-pane.<lang>.po
-source_file = po/shader-editor/window-layout/preview-pane.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-index]
-file_filter = po/shader-editor/window-layout/index.<lang>.po
-source_file = po/shader-editor/window-layout/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-assets-pane]
-file_filter = po/shader-editor/window-layout/assets-pane.<lang>.po
-source_file = po/shader-editor/window-layout/assets-pane.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-info-pane]
-file_filter = po/shader-editor/window-layout/info-pane.<lang>.po
-source_file = po/shader-editor/window-layout/info-pane.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-nodes-pane]
-file_filter = po/shader-editor/window-layout/nodes-pane.<lang>.po
-source_file = po/shader-editor/window-layout/nodes-pane.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-graph-editor]
-file_filter = po/shader-editor/window-layout/graph-editor.<lang>.po
-source_file = po/shader-editor/window-layout/graph-editor.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-inspector-pane-node-inspector]
-file_filter = po/shader-editor/window-layout/inspector-pane/node-inspector.<lang>.po
-source_file = po/shader-editor/window-layout/inspector-pane/node-inspector.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-inspector-pane-material-inspector]
-file_filter = po/shader-editor/window-layout/inspector-pane/material-inspector.<lang>.po
-source_file = po/shader-editor/window-layout/inspector-pane/material-inspector.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-inspector-pane-texture-inspector]
-file_filter = po/shader-editor/window-layout/inspector-pane/texture-inspector.<lang>.po
-source_file = po/shader-editor/window-layout/inspector-pane/texture-inspector.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-inspector-pane-graph-inspector]
-file_filter = po/shader-editor/window-layout/inspector-pane/graph-inspector.<lang>.po
-source_file = po/shader-editor/window-layout/inspector-pane/graph-inspector.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-window-layout-inspector-pane-index]
-file_filter = po/shader-editor/window-layout/inspector-pane/index.<lang>.po
-source_file = po/shader-editor/window-layout/inspector-pane/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-workflow]
-file_filter = po/shader-editor/overview/workflow.<lang>.po
-source_file = po/shader-editor/overview/workflow.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-textures]
-file_filter = po/shader-editor/overview/textures.<lang>.po
-source_file = po/shader-editor/overview/textures.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-index]
-file_filter = po/shader-editor/overview/index.<lang>.po
-source_file = po/shader-editor/overview/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-materials]
-file_filter = po/shader-editor/overview/materials.<lang>.po
-source_file = po/shader-editor/overview/materials.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-file-handling]
-file_filter = po/shader-editor/overview/file-handling.<lang>.po
-source_file = po/shader-editor/overview/file-handling.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-nodes-parameter-nodes]
-file_filter = po/shader-editor/overview/nodes/parameter-nodes.<lang>.po
-source_file = po/shader-editor/overview/nodes/parameter-nodes.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-nodes-index]
-file_filter = po/shader-editor/overview/nodes/index.<lang>.po
-source_file = po/shader-editor/overview/nodes/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-graphs-index]
-file_filter = po/shader-editor/overview/graphs/index.<lang>.po
-source_file = po/shader-editor/overview/graphs/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-graphs-material-graphs]
-file_filter = po/shader-editor/overview/graphs/material-graphs.<lang>.po
-source_file = po/shader-editor/overview/graphs/material-graphs.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-shader-editor-overview-graphs-sub-graphs]
-file_filter = po/shader-editor/overview/graphs/sub-graphs.<lang>.po
-source_file = po/shader-editor/overview/graphs/sub-graphs.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-made-with-playcanvas]
-file_filter = po/user-manual/made-with-playcanvas.<lang>.po
-source_file = po/user-manual/made-with-playcanvas.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-glossary]
-file_filter = po/user-manual/glossary.<lang>.po
-source_file = po/user-manual/glossary.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-index]
-file_filter = po/user-manual/index.<lang>.po
-source_file = po/user-manual/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-your-first-app]
-file_filter = po/user-manual/your-first-app.<lang>.po
-source_file = po/user-manual/your-first-app.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-creating-account]
-file_filter = po/user-manual/creating-account.<lang>.po
-source_file = po/user-manual/creating-account.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-introduction]
-file_filter = po/user-manual/introduction.<lang>.po
-source_file = po/user-manual/introduction.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-organizations-creating-organizations]
-file_filter = po/user-manual/organizations/creating-organizations.<lang>.po
-source_file = po/user-manual/organizations/creating-organizations.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-organizations-index]
-file_filter = po/user-manual/organizations/index.<lang>.po
-source_file = po/user-manual/organizations/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-organizations-managing-organizations]
-file_filter = po/user-manual/organizations/managing-organizations.<lang>.po
-source_file = po/user-manual/organizations/managing-organizations.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-index]
-file_filter = po/user-manual/publishing/index.<lang>.po
-source_file = po/user-manual/publishing/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-hosting-cdn]
-file_filter = po/user-manual/publishing/web/hosting-cdn.<lang>.po
-source_file = po/user-manual/publishing/web/hosting-cdn.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-communicating-webpage]
-file_filter = po/user-manual/publishing/web/communicating-webpage.<lang>.po
-source_file = po/user-manual/publishing/web/communicating-webpage.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-playcanvas-hosting]
-file_filter = po/user-manual/publishing/web/playcanvas-hosting.<lang>.po
-source_file = po/user-manual/publishing/web/playcanvas-hosting.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-index]
-file_filter = po/user-manual/publishing/web/index.<lang>.po
-source_file = po/user-manual/publishing/web/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-self-hosting]
-file_filter = po/user-manual/publishing/web/self-hosting.<lang>.po
-source_file = po/user-manual/publishing/web/self-hosting.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-self-hosting-for-beginners]
-file_filter = po/user-manual/publishing/web/self-hosting-for-beginners.<lang>.po
-source_file = po/user-manual/publishing/web/self-hosting-for-beginners.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-web-facebook]
-file_filter = po/user-manual/publishing/web/facebook.<lang>.po
-source_file = po/user-manual/publishing/web/facebook.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-desktop-index]
-file_filter = po/user-manual/publishing/desktop/index.<lang>.po
-source_file = po/user-manual/publishing/desktop/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-mobile-cordova]
-file_filter = po/user-manual/publishing/mobile/cordova.<lang>.po
-source_file = po/user-manual/publishing/mobile/cordova.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-mobile-index]
-file_filter = po/user-manual/publishing/mobile/index.<lang>.po
-source_file = po/user-manual/publishing/mobile/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-playable-ads-snapchat-playable-ads]
-file_filter = po/user-manual/publishing/playable-ads/snapchat-playable-ads.<lang>.po
-source_file = po/user-manual/publishing/playable-ads/snapchat-playable-ads.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-playable-ads-fb-playable-ads]
-file_filter = po/user-manual/publishing/playable-ads/fb-playable-ads.<lang>.po
-source_file = po/user-manual/publishing/playable-ads/fb-playable-ads.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-playable-ads-ironsource-mraid-playable-ads]
-file_filter = po/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.<lang>.po
-source_file = po/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-publishing-playable-ads-index]
-file_filter = po/user-manual/publishing/playable-ads/index.<lang>.po
-source_file = po/user-manual/publishing/playable-ads/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-engine-only-index]
-file_filter = po/user-manual/engine-only/index.<lang>.po
-source_file = po/user-manual/engine-only/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-hot-reloading]
-file_filter = po/user-manual/scripting/hot-reloading.<lang>.po
-source_file = po/user-manual/scripting/hot-reloading.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-communication]
-file_filter = po/user-manual/scripting/communication.<lang>.po
-source_file = po/user-manual/scripting/communication.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-code-editor]
-file_filter = po/user-manual/scripting/code-editor.<lang>.po
-source_file = po/user-manual/scripting/code-editor.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-anatomy]
-file_filter = po/user-manual/scripting/anatomy.<lang>.po
-source_file = po/user-manual/scripting/anatomy.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-index]
-file_filter = po/user-manual/scripting/index.<lang>.po
-source_file = po/user-manual/scripting/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-custom_engine]
-file_filter = po/user-manual/scripting/custom_engine.<lang>.po
-source_file = po/user-manual/scripting/custom_engine.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-debugging]
-file_filter = po/user-manual/scripting/debugging.<lang>.po
-source_file = po/user-manual/scripting/debugging.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-migration-guide]
-file_filter = po/user-manual/scripting/migration-guide.<lang>.po
-source_file = po/user-manual/scripting/migration-guide.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-creating-new]
-file_filter = po/user-manual/scripting/creating-new.<lang>.po
-source_file = po/user-manual/scripting/creating-new.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-script-attributes]
-file_filter = po/user-manual/scripting/script-attributes.<lang>.po
-source_file = po/user-manual/scripting/script-attributes.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-scripting-loading-order]
-file_filter = po/user-manual/scripting/loading-order.<lang>.po
-source_file = po/user-manual/scripting/loading-order.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-batching]
-file_filter = po/user-manual/optimization/batching.<lang>.po
-source_file = po/user-manual/optimization/batching.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-mini-stats]
-file_filter = po/user-manual/optimization/mini-stats.<lang>.po
-source_file = po/user-manual/optimization/mini-stats.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-load-time]
-file_filter = po/user-manual/optimization/load-time.<lang>.po
-source_file = po/user-manual/optimization/load-time.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-runtime-devicepixelratio]
-file_filter = po/user-manual/optimization/runtime-devicepixelratio.<lang>.po
-source_file = po/user-manual/optimization/runtime-devicepixelratio.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-index]
-file_filter = po/user-manual/optimization/index.<lang>.po
-source_file = po/user-manual/optimization/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-guidelines]
-file_filter = po/user-manual/optimization/guidelines.<lang>.po
-source_file = po/user-manual/optimization/guidelines.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-optimizing-scene-format]
-file_filter = po/user-manual/optimization/optimizing-scene-format.<lang>.po
-source_file = po/user-manual/optimization/optimizing-scene-format.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-troubleshooting-performance]
-file_filter = po/user-manual/optimization/troubleshooting-performance.<lang>.po
-source_file = po/user-manual/optimization/troubleshooting-performance.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-hardware-instancing]
-file_filter = po/user-manual/optimization/hardware-instancing.<lang>.po
-source_file = po/user-manual/optimization/hardware-instancing.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-optimization-profiler]
-file_filter = po/user-manual/optimization/profiler.<lang>.po
-source_file = po/user-manual/optimization/profiler.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-version-control-merging]
-file_filter = po/user-manual/version-control/merging.<lang>.po
-source_file = po/user-manual/version-control/merging.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-version-control-checkpoints]
-file_filter = po/user-manual/version-control/checkpoints.<lang>.po
-source_file = po/user-manual/version-control/checkpoints.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-version-control-branch-workflows]
-file_filter = po/user-manual/version-control/branch-workflows.<lang>.po
-source_file = po/user-manual/version-control/branch-workflows.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-version-control-index]
-file_filter = po/user-manual/version-control/index.<lang>.po
-source_file = po/user-manual/version-control/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-version-control-changes]
-file_filter = po/user-manual/version-control/changes.<lang>.po
-source_file = po/user-manual/version-control/changes.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-version-control-branches]
-file_filter = po/user-manual/version-control/branches.<lang>.po
-source_file = po/user-manual/version-control/branches.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-animation-anim-events]
-file_filter = po/user-manual/animation/anim-events.<lang>.po
-source_file = po/user-manual/animation/anim-events.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-animation-anim-animation-assets]
-file_filter = po/user-manual/animation/anim-animation-assets.<lang>.po
-source_file = po/user-manual/animation/anim-animation-assets.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-animation-index]
-file_filter = po/user-manual/animation/index.<lang>.po
-source_file = po/user-manual/animation/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-animation-anim-layer-masking]
-file_filter = po/user-manual/animation/anim-layer-masking.<lang>.po
-source_file = po/user-manual/animation/anim-layer-masking.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-animation-anim-state-graph-assets]
-file_filter = po/user-manual/animation/anim-state-graph-assets.<lang>.po
-source_file = po/user-manual/animation/anim-state-graph-assets.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-animation-anim-component]
-file_filter = po/user-manual/animation/anim-component.<lang>.po
-source_file = po/user-manual/animation/anim-component.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-xr-types-of-xr]
-file_filter = po/user-manual/xr/types-of-xr.<lang>.po
-source_file = po/user-manual/xr/types-of-xr.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-xr-optimizing-webxr]
-file_filter = po/user-manual/xr/optimizing-webxr.<lang>.po
-source_file = po/user-manual/xr/optimizing-webxr.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-xr-index]
-file_filter = po/user-manual/xr/index.<lang>.po
-source_file = po/user-manual/xr/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-xr-using-webxr]
-file_filter = po/user-manual/xr/using-webxr.<lang>.po
-source_file = po/user-manual/xr/using-webxr.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-xr-input-sources]
-file_filter = po/user-manual/xr/input-sources.<lang>.po
-source_file = po/user-manual/xr/input-sources.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-layout-groups]
-file_filter = po/user-manual/user-interface/layout-groups.<lang>.po
-source_file = po/user-manual/user-interface/layout-groups.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-screens]
-file_filter = po/user-manual/user-interface/screens.<lang>.po
-source_file = po/user-manual/user-interface/screens.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-image-elements]
-file_filter = po/user-manual/user-interface/image-elements.<lang>.po
-source_file = po/user-manual/user-interface/image-elements.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-input]
-file_filter = po/user-manual/user-interface/input.<lang>.po
-source_file = po/user-manual/user-interface/input.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-safe-area]
-file_filter = po/user-manual/user-interface/safe-area.<lang>.po
-source_file = po/user-manual/user-interface/safe-area.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-user-interface-basics]
-file_filter = po/user-manual/user-interface/user-interface-basics.<lang>.po
-source_file = po/user-manual/user-interface/user-interface-basics.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-index]
-file_filter = po/user-manual/user-interface/index.<lang>.po
-source_file = po/user-manual/user-interface/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-elements]
-file_filter = po/user-manual/user-interface/elements.<lang>.po
-source_file = po/user-manual/user-interface/elements.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-localization]
-file_filter = po/user-manual/user-interface/localization.<lang>.po
-source_file = po/user-manual/user-interface/localization.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-group-elements]
-file_filter = po/user-manual/user-interface/group-elements.<lang>.po
-source_file = po/user-manual/user-interface/group-elements.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-user-interface-text-elements]
-file_filter = po/user-manual/user-interface/text-elements.<lang>.po
-source_file = po/user-manual/user-interface/text-elements.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-index]
-file_filter = po/user-manual/packs/index.<lang>.po
-source_file = po/user-manual/packs/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-light]
-file_filter = po/user-manual/packs/components/light.<lang>.po
-source_file = po/user-manual/packs/components/light.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-audiolistener]
-file_filter = po/user-manual/packs/components/audiolistener.<lang>.po
-source_file = po/user-manual/packs/components/audiolistener.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-particlesystem]
-file_filter = po/user-manual/packs/components/particlesystem.<lang>.po
-source_file = po/user-manual/packs/components/particlesystem.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-sound]
-file_filter = po/user-manual/packs/components/sound.<lang>.po
-source_file = po/user-manual/packs/components/sound.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-button]
-file_filter = po/user-manual/packs/components/button.<lang>.po
-source_file = po/user-manual/packs/components/button.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-layout-group]
-file_filter = po/user-manual/packs/components/layout-group.<lang>.po
-source_file = po/user-manual/packs/components/layout-group.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-scrollview]
-file_filter = po/user-manual/packs/components/scrollview.<lang>.po
-source_file = po/user-manual/packs/components/scrollview.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-element]
-file_filter = po/user-manual/packs/components/element.<lang>.po
-source_file = po/user-manual/packs/components/element.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-render]
-file_filter = po/user-manual/packs/components/render.<lang>.po
-source_file = po/user-manual/packs/components/render.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-layout-child]
-file_filter = po/user-manual/packs/components/layout-child.<lang>.po
-source_file = po/user-manual/packs/components/layout-child.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-index]
-file_filter = po/user-manual/packs/components/index.<lang>.po
-source_file = po/user-manual/packs/components/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-scrollbar]
-file_filter = po/user-manual/packs/components/scrollbar.<lang>.po
-source_file = po/user-manual/packs/components/scrollbar.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-anim]
-file_filter = po/user-manual/packs/components/anim.<lang>.po
-source_file = po/user-manual/packs/components/anim.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-camera]
-file_filter = po/user-manual/packs/components/camera.<lang>.po
-source_file = po/user-manual/packs/components/camera.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-script]
-file_filter = po/user-manual/packs/components/script.<lang>.po
-source_file = po/user-manual/packs/components/script.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-sprite]
-file_filter = po/user-manual/packs/components/sprite.<lang>.po
-source_file = po/user-manual/packs/components/sprite.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-rigidbody]
-file_filter = po/user-manual/packs/components/rigidbody.<lang>.po
-source_file = po/user-manual/packs/components/rigidbody.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-animation]
-file_filter = po/user-manual/packs/components/animation.<lang>.po
-source_file = po/user-manual/packs/components/animation.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-model]
-file_filter = po/user-manual/packs/components/model.<lang>.po
-source_file = po/user-manual/packs/components/model.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-collision]
-file_filter = po/user-manual/packs/components/collision.<lang>.po
-source_file = po/user-manual/packs/components/collision.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-components-screen]
-file_filter = po/user-manual/packs/components/screen.<lang>.po
-source_file = po/user-manual/packs/components/screen.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-packs-entities-index]
-file_filter = po/user-manual/packs/entities/index.<lang>.po
-source_file = po/user-manual/packs/entities/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-dashboard-settings]
-file_filter = po/user-manual/dashboard/settings.<lang>.po
-source_file = po/user-manual/dashboard/settings.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-dashboard-index]
-file_filter = po/user-manual/dashboard/index.<lang>.po
-source_file = po/user-manual/dashboard/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-dashboard-overview]
-file_filter = po/user-manual/dashboard/overview.<lang>.po
-source_file = po/user-manual/dashboard/overview.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-dashboard-header]
-file_filter = po/user-manual/dashboard/header.<lang>.po
-source_file = po/user-manual/dashboard/header.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-profile-home]
-file_filter = po/user-manual/profile/home.<lang>.po
-source_file = po/user-manual/profile/home.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-profile-projects]
-file_filter = po/user-manual/profile/projects.<lang>.po
-source_file = po/user-manual/profile/projects.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-profile-account]
-file_filter = po/user-manual/profile/account.<lang>.po
-source_file = po/user-manual/profile/account.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-profile-index]
-file_filter = po/user-manual/profile/index.<lang>.po
-source_file = po/user-manual/profile/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-settings]
-file_filter = po/user-manual/designer/settings.<lang>.po
-source_file = po/user-manual/designer/settings.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-scenes]
-file_filter = po/user-manual/designer/scenes.<lang>.po
-source_file = po/user-manual/designer/scenes.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-keyboard-shortcuts]
-file_filter = po/user-manual/designer/keyboard-shortcuts.<lang>.po
-source_file = po/user-manual/designer/keyboard-shortcuts.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-menus-and-toolbar]
-file_filter = po/user-manual/designer/menus-and-toolbar.<lang>.po
-source_file = po/user-manual/designer/menus-and-toolbar.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-inspector]
-file_filter = po/user-manual/designer/inspector.<lang>.po
-source_file = po/user-manual/designer/inspector.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-editor-api]
-file_filter = po/user-manual/designer/editor-api.<lang>.po
-source_file = po/user-manual/designer/editor-api.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-index]
-file_filter = po/user-manual/designer/index.<lang>.po
-source_file = po/user-manual/designer/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-hierarchy]
-file_filter = po/user-manual/designer/hierarchy.<lang>.po
-source_file = po/user-manual/designer/hierarchy.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-asset-library]
-file_filter = po/user-manual/designer/asset-library.<lang>.po
-source_file = po/user-manual/designer/asset-library.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-loading-screen]
-file_filter = po/user-manual/designer/loading-screen.<lang>.po
-source_file = po/user-manual/designer/loading-screen.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-assets]
-file_filter = po/user-manual/designer/assets.<lang>.po
-source_file = po/user-manual/designer/assets.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-designer-viewport]
-file_filter = po/user-manual/designer/viewport.<lang>.po
-source_file = po/user-manual/designer/viewport.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-app-download]
-file_filter = po/user-manual/api/app-download.<lang>.po
-source_file = po/user-manual/api/app-download.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-branch-list]
-file_filter = po/user-manual/api/branch-list.<lang>.po
-source_file = po/user-manual/api/branch-list.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-asset-update]
-file_filter = po/user-manual/api/asset-update.<lang>.po
-source_file = po/user-manual/api/asset-update.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-asset-get]
-file_filter = po/user-manual/api/asset-get.<lang>.po
-source_file = po/user-manual/api/asset-get.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-asset-list]
-file_filter = po/user-manual/api/asset-list.<lang>.po
-source_file = po/user-manual/api/asset-list.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-asset-create]
-file_filter = po/user-manual/api/asset-create.<lang>.po
-source_file = po/user-manual/api/asset-create.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-app-get-project]
-file_filter = po/user-manual/api/app-get-project.<lang>.po
-source_file = po/user-manual/api/app-get-project.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-asset-delete]
-file_filter = po/user-manual/api/asset-delete.<lang>.po
-source_file = po/user-manual/api/asset-delete.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-scene-list]
-file_filter = po/user-manual/api/scene-list.<lang>.po
-source_file = po/user-manual/api/scene-list.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-index]
-file_filter = po/user-manual/api/index.<lang>.po
-source_file = po/user-manual/api/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-asset-file]
-file_filter = po/user-manual/api/asset-file.<lang>.po
-source_file = po/user-manual/api/asset-file.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-app-get]
-file_filter = po/user-manual/api/app-get.<lang>.po
-source_file = po/user-manual/api/app-get.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-app-get-primary]
-file_filter = po/user-manual/api/app-get-primary.<lang>.po
-source_file = po/user-manual/api/app-get-primary.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-project-archive]
-file_filter = po/user-manual/api/project-archive.<lang>.po
-source_file = po/user-manual/api/project-archive.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-api-job-get]
-file_filter = po/user-manual/api/job-get.<lang>.po
-source_file = po/user-manual/api/job-get.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-templates-diff]
-file_filter = po/user-manual/templates/diff.<lang>.po
-source_file = po/user-manual/templates/diff.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-templates-index]
-file_filter = po/user-manual/templates/index.<lang>.po
-source_file = po/user-manual/templates/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-templates-nested]
-file_filter = po/user-manual/templates/nested.<lang>.po
-source_file = po/user-manual/templates/nested.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-trigger-volumes]
-file_filter = po/user-manual/physics/trigger-volumes.<lang>.po
-source_file = po/user-manual/physics/trigger-volumes.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-physics-basics]
-file_filter = po/user-manual/physics/physics-basics.<lang>.po
-source_file = po/user-manual/physics/physics-basics.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-ammo-alternatives]
-file_filter = po/user-manual/physics/ammo-alternatives.<lang>.po
-source_file = po/user-manual/physics/ammo-alternatives.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-calling-ammo]
-file_filter = po/user-manual/physics/calling-ammo.<lang>.po
-source_file = po/user-manual/physics/calling-ammo.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-physics-migration]
-file_filter = po/user-manual/physics/physics-migration.<lang>.po
-source_file = po/user-manual/physics/physics-migration.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-index]
-file_filter = po/user-manual/physics/index.<lang>.po
-source_file = po/user-manual/physics/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-ray-casting]
-file_filter = po/user-manual/physics/ray-casting.<lang>.po
-source_file = po/user-manual/physics/ray-casting.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-physics-forces-and-impulses]
-file_filter = po/user-manual/physics/forces-and-impulses.<lang>.po
-source_file = po/user-manual/physics/forces-and-impulses.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-particles]
-file_filter = po/user-manual/graphics/particles.<lang>.po
-source_file = po/user-manual/graphics/particles.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-cameras]
-file_filter = po/user-manual/graphics/cameras.<lang>.po
-source_file = po/user-manual/graphics/cameras.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-index]
-file_filter = po/user-manual/graphics/index.<lang>.po
-source_file = po/user-manual/graphics/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-file-format]
-file_filter = po/user-manual/graphics/file-format.<lang>.po
-source_file = po/user-manual/graphics/file-format.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-layers-index]
-file_filter = po/user-manual/graphics/layers/index.<lang>.po
-source_file = po/user-manual/graphics/layers/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-physical-rendering-physical-materials]
-file_filter = po/user-manual/graphics/physical-rendering/physical-materials.<lang>.po
-source_file = po/user-manual/graphics/physical-rendering/physical-materials.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-physical-rendering-image-based-lighting]
-file_filter = po/user-manual/graphics/physical-rendering/image-based-lighting.<lang>.po
-source_file = po/user-manual/graphics/physical-rendering/image-based-lighting.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-physical-rendering-index]
-file_filter = po/user-manual/graphics/physical-rendering/index.<lang>.po
-source_file = po/user-manual/graphics/physical-rendering/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-lighting-runtime-lightmaps]
-file_filter = po/user-manual/graphics/lighting/runtime-lightmaps.<lang>.po
-source_file = po/user-manual/graphics/lighting/runtime-lightmaps.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-lighting-shadows]
-file_filter = po/user-manual/graphics/lighting/shadows.<lang>.po
-source_file = po/user-manual/graphics/lighting/shadows.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-lighting-lightmapping]
-file_filter = po/user-manual/graphics/lighting/lightmapping.<lang>.po
-source_file = po/user-manual/graphics/lighting/lightmapping.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-lighting-index]
-file_filter = po/user-manual/graphics/lighting/index.<lang>.po
-source_file = po/user-manual/graphics/lighting/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-lighting-lights]
-file_filter = po/user-manual/graphics/lighting/lights.<lang>.po
-source_file = po/user-manual/graphics/lighting/lights.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-lighting-ambient-occlusion]
-file_filter = po/user-manual/graphics/lighting/ambient-occlusion.<lang>.po
-source_file = po/user-manual/graphics/lighting/ambient-occlusion.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-brightness_contrast]
-file_filter = po/user-manual/graphics/posteffects/brightness_contrast.<lang>.po
-source_file = po/user-manual/graphics/posteffects/brightness_contrast.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-bloom]
-file_filter = po/user-manual/graphics/posteffects/bloom.<lang>.po
-source_file = po/user-manual/graphics/posteffects/bloom.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-hue_saturation]
-file_filter = po/user-manual/graphics/posteffects/hue_saturation.<lang>.po
-source_file = po/user-manual/graphics/posteffects/hue_saturation.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-index]
-file_filter = po/user-manual/graphics/posteffects/index.<lang>.po
-source_file = po/user-manual/graphics/posteffects/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-vignette]
-file_filter = po/user-manual/graphics/posteffects/vignette.<lang>.po
-source_file = po/user-manual/graphics/posteffects/vignette.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-sepia]
-file_filter = po/user-manual/graphics/posteffects/sepia.<lang>.po
-source_file = po/user-manual/graphics/posteffects/sepia.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-graphics-posteffects-fxaa]
-file_filter = po/user-manual/graphics/posteffects/fxaa.<lang>.po
-source_file = po/user-manual/graphics/posteffects/fxaa.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-wasm-modules]
-file_filter = po/user-manual/assets/wasm-modules.<lang>.po
-source_file = po/user-manual/assets/wasm-modules.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-finding]
-file_filter = po/user-manual/assets/finding.<lang>.po
-source_file = po/user-manual/assets/finding.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-importing]
-file_filter = po/user-manual/assets/importing.<lang>.po
-source_file = po/user-manual/assets/importing.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-css]
-file_filter = po/user-manual/assets/css.<lang>.po
-source_file = po/user-manual/assets/css.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-audio]
-file_filter = po/user-manual/assets/audio.<lang>.po
-source_file = po/user-manual/assets/audio.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-texture-atlas]
-file_filter = po/user-manual/assets/texture-atlas.<lang>.po
-source_file = po/user-manual/assets/texture-atlas.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-fonts]
-file_filter = po/user-manual/assets/fonts.<lang>.po
-source_file = po/user-manual/assets/fonts.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-cubemaps]
-file_filter = po/user-manual/assets/cubemaps.<lang>.po
-source_file = po/user-manual/assets/cubemaps.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-html]
-file_filter = po/user-manual/assets/html.<lang>.po
-source_file = po/user-manual/assets/html.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-sprites]
-file_filter = po/user-manual/assets/sprites.<lang>.po
-source_file = po/user-manual/assets/sprites.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-index]
-file_filter = po/user-manual/assets/index.<lang>.po
-source_file = po/user-manual/assets/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-shader]
-file_filter = po/user-manual/assets/shader.<lang>.po
-source_file = po/user-manual/assets/shader.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-animation]
-file_filter = po/user-manual/assets/animation.<lang>.po
-source_file = po/user-manual/assets/animation.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-preloading-and-streaming]
-file_filter = po/user-manual/assets/preloading-and-streaming.<lang>.po
-source_file = po/user-manual/assets/preloading-and-streaming.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-templates]
-file_filter = po/user-manual/assets/templates.<lang>.po
-source_file = po/user-manual/assets/templates.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-textures-texture-compression]
-file_filter = po/user-manual/assets/textures/texture-compression.<lang>.po
-source_file = po/user-manual/assets/textures/texture-compression.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-textures-index]
-file_filter = po/user-manual/assets/textures/index.<lang>.po
-source_file = po/user-manual/assets/textures/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-materials-physical-material]
-file_filter = po/user-manual/assets/materials/physical-material.<lang>.po
-source_file = po/user-manual/assets/materials/physical-material.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-materials-index]
-file_filter = po/user-manual/assets/materials/index.<lang>.po
-source_file = po/user-manual/assets/materials/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-materials-phong-material]
-file_filter = po/user-manual/assets/materials/phong-material.<lang>.po
-source_file = po/user-manual/assets/materials/phong-material.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-models-index]
-file_filter = po/user-manual/assets/models/index.<lang>.po
-source_file = po/user-manual/assets/models/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-models-exporting]
-file_filter = po/user-manual/assets/models/exporting.<lang>.po
-source_file = po/user-manual/assets/models/exporting.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-models-building]
-file_filter = po/user-manual/assets/models/building.<lang>.po
-source_file = po/user-manual/assets/models/building.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-models-units]
-file_filter = po/user-manual/assets/models/units.<lang>.po
-source_file = po/user-manual/assets/models/units.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-import-pipeline-index]
-file_filter = po/user-manual/assets/import-pipeline/index.<lang>.po
-source_file = po/user-manual/assets/import-pipeline/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-assets-import-pipeline-import-hierarchy]
-file_filter = po/user-manual/assets/import-pipeline/import-hierarchy.<lang>.po
-source_file = po/user-manual/assets/import-pipeline/import-hierarchy.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-2D-sprite-editor]
-file_filter = po/user-manual/2D/sprite-editor.<lang>.po
-source_file = po/user-manual/2D/sprite-editor.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-2D-index]
-file_filter = po/user-manual/2D/index.<lang>.po
-source_file = po/user-manual/2D/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-2D-9-slicing]
-file_filter = po/user-manual/2D/9-slicing.<lang>.po
-source_file = po/user-manual/2D/9-slicing.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-billing-index]
-file_filter = po/user-manual/billing/index.<lang>.po
-source_file = po/user-manual/billing/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-Using-forces-on-rigid-bodies]
-file_filter = po/tutorials/Using-forces-on-rigid-bodies.<lang>.po
-source_file = po/tutorials/Using-forces-on-rigid-bodies.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-collision-and-triggers]
-file_filter = po/tutorials/collision-and-triggers.<lang>.po
-source_file = po/tutorials/collision-and-triggers.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keyboard-input]
-file_filter = po/tutorials/keyboard-input.<lang>.po
-source_file = po/tutorials/keyboard-input.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-first-person-movement]
-file_filter = po/tutorials/first-person-movement.<lang>.po
-source_file = po/tutorials/first-person-movement.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-webxr-ray-input]
-file_filter = po/tutorials/webxr-ray-input.<lang>.po
-source_file = po/tutorials/webxr-ray-input.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-manipulating-entities]
-file_filter = po/tutorials/manipulating-entities.<lang>.po
-source_file = po/tutorials/manipulating-entities.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-entity-picking]
-file_filter = po/tutorials/entity-picking.<lang>.po
-source_file = po/tutorials/entity-picking.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keepyup-part-one]
-file_filter = po/tutorials/keepyup-part-one.<lang>.po
-source_file = po/tutorials/keepyup-part-one.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-basic-materials]
-file_filter = po/tutorials/basic-materials.<lang>.po
-source_file = po/tutorials/basic-materials.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-ui-elements-progress]
-file_filter = po/tutorials/ui-elements-progress.<lang>.po
-source_file = po/tutorials/ui-elements-progress.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-facebook-api]
-file_filter = po/tutorials/facebook-api.<lang>.po
-source_file = po/tutorials/facebook-api.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keepyup-part-two]
-file_filter = po/tutorials/keepyup-part-two.<lang>.po
-source_file = po/tutorials/keepyup-part-two.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-tweening]
-file_filter = po/tutorials/tweening.<lang>.po
-source_file = po/tutorials/tweening.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-animation-blending]
-file_filter = po/tutorials/animation-blending.<lang>.po
-source_file = po/tutorials/animation-blending.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keepyup-part-four]
-file_filter = po/tutorials/keepyup-part-four.<lang>.po
-source_file = po/tutorials/keepyup-part-four.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-basic-audio]
-file_filter = po/tutorials/basic-audio.<lang>.po
-source_file = po/tutorials/basic-audio.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-loading-json]
-file_filter = po/tutorials/loading-json.<lang>.po
-source_file = po/tutorials/loading-json.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-custom-posteffect]
-file_filter = po/tutorials/custom-posteffect.<lang>.po
-source_file = po/tutorials/custom-posteffect.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-real-time-multiplayer]
-file_filter = po/tutorials/real-time-multiplayer.<lang>.po
-source_file = po/tutorials/real-time-multiplayer.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-ui-elements-stats-counter]
-file_filter = po/tutorials/ui-elements-stats-counter.<lang>.po
-source_file = po/tutorials/ui-elements-stats-counter.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-controlling-lights]
-file_filter = po/tutorials/controlling-lights.<lang>.po
-source_file = po/tutorials/controlling-lights.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-ui-elements-leaderboard]
-file_filter = po/tutorials/ui-elements-leaderboard.<lang>.po
-source_file = po/tutorials/ui-elements-leaderboard.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-anim-blending]
-file_filter = po/tutorials/anim-blending.<lang>.po
-source_file = po/tutorials/anim-blending.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-video-textures]
-file_filter = po/tutorials/video-textures.<lang>.po
-source_file = po/tutorials/video-textures.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-light-halos]
-file_filter = po/tutorials/light-halos.<lang>.po
-source_file = po/tutorials/light-halos.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-terrain-generation]
-file_filter = po/tutorials/terrain-generation.<lang>.po
-source_file = po/tutorials/terrain-generation.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-index]
-file_filter = po/tutorials/index.<lang>.po
-source_file = po/tutorials/index.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-more-cameras]
-file_filter = po/tutorials/more-cameras.<lang>.po
-source_file = po/tutorials/more-cameras.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keepyup-part-six]
-file_filter = po/tutorials/keepyup-part-six.<lang>.po
-source_file = po/tutorials/keepyup-part-six.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-mouse-input]
-file_filter = po/tutorials/mouse-input.<lang>.po
-source_file = po/tutorials/mouse-input.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keepyup-part-three]
-file_filter = po/tutorials/keepyup-part-three.<lang>.po
-source_file = po/tutorials/keepyup-part-three.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-programmatically-creating]
-file_filter = po/tutorials/programmatically-creating.<lang>.po
-source_file = po/tutorials/programmatically-creating.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-procedural-levels]
-file_filter = po/tutorials/procedural-levels.<lang>.po
-source_file = po/tutorials/procedural-levels.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-light-cookies]
-file_filter = po/tutorials/light-cookies.<lang>.po
-source_file = po/tutorials/light-cookies.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-audio-effects]
-file_filter = po/tutorials/audio-effects.<lang>.po
-source_file = po/tutorials/audio-effects.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-keepyup-part-five]
-file_filter = po/tutorials/keepyup-part-five.<lang>.po
-source_file = po/tutorials/keepyup-part-five.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-music-visualizer]
-file_filter = po/tutorials/music-visualizer.<lang>.po
-source_file = po/tutorials/music-visualizer.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-animated-textures]
-file_filter = po/tutorials/animated-textures.<lang>.po
-source_file = po/tutorials/animated-textures.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-using-assets]
-file_filter = po/tutorials/using-assets.<lang>.po
-source_file = po/tutorials/using-assets.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-basic-cameras]
-file_filter = po/tutorials/basic-cameras.<lang>.po
-source_file = po/tutorials/basic-cameras.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-ui-elements-buttons]
-file_filter = po/tutorials/ui-elements-buttons.<lang>.po
-source_file = po/tutorials/ui-elements-buttons.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-tutorials-custom-shaders]
-file_filter = po/tutorials/custom-shaders.<lang>.po
-source_file = po/tutorials/custom-shaders.en-US.po
-source_lang = en
-type = PO
-
-[playcanvas-developer-site.po-user-manual-faq]
-file_filter = po/user-manual/faq.<lang>.po
-source_file = po/user-manual/faq.en-US.po
-source_lang = en
-type = PO
-
+[o:playcanvas:p:playcanvas-developer-site:r:error]
+file_filter   = content/<lang>/error.md
+source_file   = content/en/error.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/error.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:index]
+file_filter   = content/<lang>/index.md
+source_file   = content/en/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:search]
+file_filter   = content/<lang>/search.md
+source_file   = content/en/search.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/search.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-index]
+file_filter   = content/<lang>/shader-editor/index.md
+source_file   = content/en/shader-editor/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-introduction]
+file_filter   = content/<lang>/shader-editor/introduction.md
+source_file   = content/en/shader-editor/introduction.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/introduction.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-file-handling]
+file_filter   = content/<lang>/shader-editor/overview/file-handling.md
+source_file   = content/en/shader-editor/overview/file-handling.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/file-handling.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-graphs-index]
+file_filter   = content/<lang>/shader-editor/overview/graphs/index.md
+source_file   = content/en/shader-editor/overview/graphs/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/graphs/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-graphs-material-graphs]
+file_filter   = content/<lang>/shader-editor/overview/graphs/material-graphs.md
+source_file   = content/en/shader-editor/overview/graphs/material-graphs.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/graphs/material-graphs.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-graphs-sub-graphs]
+file_filter   = content/<lang>/shader-editor/overview/graphs/sub-graphs.md
+source_file   = content/en/shader-editor/overview/graphs/sub-graphs.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/graphs/sub-graphs.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-index]
+file_filter   = content/<lang>/shader-editor/overview/index.md
+source_file   = content/en/shader-editor/overview/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-materials]
+file_filter   = content/<lang>/shader-editor/overview/materials.md
+source_file   = content/en/shader-editor/overview/materials.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/materials.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-nodes-index]
+file_filter   = content/<lang>/shader-editor/overview/nodes/index.md
+source_file   = content/en/shader-editor/overview/nodes/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/nodes/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-nodes-parameter-nodes]
+file_filter   = content/<lang>/shader-editor/overview/nodes/parameter-nodes.md
+source_file   = content/en/shader-editor/overview/nodes/parameter-nodes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/nodes/parameter-nodes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-textures]
+file_filter   = content/<lang>/shader-editor/overview/textures.md
+source_file   = content/en/shader-editor/overview/textures.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/textures.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-overview-workflow]
+file_filter   = content/<lang>/shader-editor/overview/workflow.md
+source_file   = content/en/shader-editor/overview/workflow.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/overview/workflow.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-assets-pane]
+file_filter   = content/<lang>/shader-editor/window-layout/assets-pane.md
+source_file   = content/en/shader-editor/window-layout/assets-pane.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/assets-pane.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-graph-editor]
+file_filter   = content/<lang>/shader-editor/window-layout/graph-editor.md
+source_file   = content/en/shader-editor/window-layout/graph-editor.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/graph-editor.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-index]
+file_filter   = content/<lang>/shader-editor/window-layout/index.md
+source_file   = content/en/shader-editor/window-layout/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-info-pane]
+file_filter   = content/<lang>/shader-editor/window-layout/info-pane.md
+source_file   = content/en/shader-editor/window-layout/info-pane.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/info-pane.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-inspector-pane-graph-inspector]
+file_filter   = content/<lang>/shader-editor/window-layout/inspector-pane/graph-inspector.md
+source_file   = content/en/shader-editor/window-layout/inspector-pane/graph-inspector.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/inspector-pane/graph-inspector.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-inspector-pane-index]
+file_filter   = content/<lang>/shader-editor/window-layout/inspector-pane/index.md
+source_file   = content/en/shader-editor/window-layout/inspector-pane/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/inspector-pane/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-inspector-pane-material-inspector]
+file_filter   = content/<lang>/shader-editor/window-layout/inspector-pane/material-inspector.md
+source_file   = content/en/shader-editor/window-layout/inspector-pane/material-inspector.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/inspector-pane/material-inspector.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-inspector-pane-node-inspector]
+file_filter   = content/<lang>/shader-editor/window-layout/inspector-pane/node-inspector.md
+source_file   = content/en/shader-editor/window-layout/inspector-pane/node-inspector.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/inspector-pane/node-inspector.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-inspector-pane-texture-inspector]
+file_filter   = content/<lang>/shader-editor/window-layout/inspector-pane/texture-inspector.md
+source_file   = content/en/shader-editor/window-layout/inspector-pane/texture-inspector.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/inspector-pane/texture-inspector.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-nodes-pane]
+file_filter   = content/<lang>/shader-editor/window-layout/nodes-pane.md
+source_file   = content/en/shader-editor/window-layout/nodes-pane.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/nodes-pane.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:shader-editor-window-layout-preview-pane]
+file_filter   = content/<lang>/shader-editor/window-layout/preview-pane.md
+source_file   = content/en/shader-editor/window-layout/preview-pane.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/shader-editor/window-layout/preview-pane.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-additive-loading-scenes]
+file_filter   = content/<lang>/tutorials/additive-loading-scenes.md
+source_file   = content/en/tutorials/additive-loading-scenes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/additive-loading-scenes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-anim-blending]
+file_filter   = content/<lang>/tutorials/anim-blending.md
+source_file   = content/en/tutorials/anim-blending.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/anim-blending.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-animated-textures]
+file_filter   = content/<lang>/tutorials/animated-textures.md
+source_file   = content/en/tutorials/animated-textures.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/animated-textures.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-animation-blending]
+file_filter   = content/<lang>/tutorials/animation-blending.md
+source_file   = content/en/tutorials/animation-blending.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/animation-blending.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-audio-effects]
+file_filter   = content/<lang>/tutorials/audio-effects.md
+source_file   = content/en/tutorials/audio-effects.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/audio-effects.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-basic-audio]
+file_filter   = content/<lang>/tutorials/basic-audio.md
+source_file   = content/en/tutorials/basic-audio.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/basic-audio.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-basic-cameras]
+file_filter   = content/<lang>/tutorials/basic-cameras.md
+source_file   = content/en/tutorials/basic-cameras.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/basic-cameras.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-basic-materials]
+file_filter   = content/<lang>/tutorials/basic-materials.md
+source_file   = content/en/tutorials/basic-materials.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/basic-materials.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-changing-scenes]
+file_filter   = content/<lang>/tutorials/changing-scenes.md
+source_file   = content/en/tutorials/changing-scenes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/changing-scenes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-collision-and-triggers]
+file_filter   = content/<lang>/tutorials/collision-and-triggers.md
+source_file   = content/en/tutorials/collision-and-triggers.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/collision-and-triggers.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-compound-physics-shapes]
+file_filter   = content/<lang>/tutorials/compound-physics-shapes.md
+source_file   = content/en/tutorials/compound-physics-shapes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/compound-physics-shapes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-controlling-lights]
+file_filter   = content/<lang>/tutorials/controlling-lights.md
+source_file   = content/en/tutorials/controlling-lights.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/controlling-lights.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-crash-course]
+file_filter   = content/<lang>/tutorials/crash-course.md
+source_file   = content/en/tutorials/crash-course.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/crash-course.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-custom-posteffect]
+file_filter   = content/<lang>/tutorials/custom-posteffect.md
+source_file   = content/en/tutorials/custom-posteffect.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/custom-posteffect.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-custom-shaders]
+file_filter   = content/<lang>/tutorials/custom-shaders.md
+source_file   = content/en/tutorials/custom-shaders.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/custom-shaders.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-entity-picking]
+file_filter   = content/<lang>/tutorials/entity-picking.md
+source_file   = content/en/tutorials/entity-picking.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/entity-picking.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-facebook-api]
+file_filter   = content/<lang>/tutorials/facebook-api.md
+source_file   = content/en/tutorials/facebook-api.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/facebook-api.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-first-person-movement]
+file_filter   = content/<lang>/tutorials/first-person-movement.md
+source_file   = content/en/tutorials/first-person-movement.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/first-person-movement.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-google-ads-for-games]
+file_filter   = content/<lang>/tutorials/google-ads-for-games.md
+source_file   = content/en/tutorials/google-ads-for-games.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/google-ads-for-games.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-importing-first-model-and-animation]
+file_filter   = content/<lang>/tutorials/importing-first-model-and-animation.md
+source_file   = content/en/tutorials/importing-first-model-and-animation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/importing-first-model-and-animation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-index]
+file_filter   = content/<lang>/tutorials/index.md
+source_file   = content/en/tutorials/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keepyup-part-five]
+file_filter   = content/<lang>/tutorials/keepyup-part-five.md
+source_file   = content/en/tutorials/keepyup-part-five.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keepyup-part-five.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keepyup-part-four]
+file_filter   = content/<lang>/tutorials/keepyup-part-four.md
+source_file   = content/en/tutorials/keepyup-part-four.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keepyup-part-four.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keepyup-part-one]
+file_filter   = content/<lang>/tutorials/keepyup-part-one.md
+source_file   = content/en/tutorials/keepyup-part-one.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keepyup-part-one.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keepyup-part-six]
+file_filter   = content/<lang>/tutorials/keepyup-part-six.md
+source_file   = content/en/tutorials/keepyup-part-six.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keepyup-part-six.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keepyup-part-three]
+file_filter   = content/<lang>/tutorials/keepyup-part-three.md
+source_file   = content/en/tutorials/keepyup-part-three.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keepyup-part-three.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keepyup-part-two]
+file_filter   = content/<lang>/tutorials/keepyup-part-two.md
+source_file   = content/en/tutorials/keepyup-part-two.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keepyup-part-two.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-keyboard-input]
+file_filter   = content/<lang>/tutorials/keyboard-input.md
+source_file   = content/en/tutorials/keyboard-input.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/keyboard-input.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-light-cookies]
+file_filter   = content/<lang>/tutorials/light-cookies.md
+source_file   = content/en/tutorials/light-cookies.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/light-cookies.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-light-halos]
+file_filter   = content/<lang>/tutorials/light-halos.md
+source_file   = content/en/tutorials/light-halos.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/light-halos.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-loading-json]
+file_filter   = content/<lang>/tutorials/loading-json.md
+source_file   = content/en/tutorials/loading-json.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/loading-json.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-manipulating-entities]
+file_filter   = content/<lang>/tutorials/manipulating-entities.md
+source_file   = content/en/tutorials/manipulating-entities.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/manipulating-entities.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-more-cameras]
+file_filter   = content/<lang>/tutorials/more-cameras.md
+source_file   = content/en/tutorials/more-cameras.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/more-cameras.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-mouse-input]
+file_filter   = content/<lang>/tutorials/mouse-input.md
+source_file   = content/en/tutorials/mouse-input.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/mouse-input.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-music-visualizer]
+file_filter   = content/<lang>/tutorials/music-visualizer.md
+source_file   = content/en/tutorials/music-visualizer.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/music-visualizer.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-procedural-levels]
+file_filter   = content/<lang>/tutorials/procedural-levels.md
+source_file   = content/en/tutorials/procedural-levels.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/procedural-levels.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-programmatically-creating]
+file_filter   = content/<lang>/tutorials/programmatically-creating.md
+source_file   = content/en/tutorials/programmatically-creating.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/programmatically-creating.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-real-time-multiplayer-colyseus]
+file_filter   = content/<lang>/tutorials/real-time-multiplayer-colyseus.md
+source_file   = content/en/tutorials/real-time-multiplayer-colyseus.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/real-time-multiplayer-colyseus.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-real-time-multiplayer-photon]
+file_filter   = content/<lang>/tutorials/real-time-multiplayer-photon.md
+source_file   = content/en/tutorials/real-time-multiplayer-photon.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/real-time-multiplayer-photon.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-real-time-multiplayer]
+file_filter   = content/<lang>/tutorials/real-time-multiplayer.md
+source_file   = content/en/tutorials/real-time-multiplayer.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/real-time-multiplayer.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-switch-full-scene]
+file_filter   = content/<lang>/tutorials/switch-full-scene.md
+source_file   = content/en/tutorials/switch-full-scene.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/switch-full-scene.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-terrain-generation]
+file_filter   = content/<lang>/tutorials/terrain-generation.md
+source_file   = content/en/tutorials/terrain-generation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/terrain-generation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-touch-joypad]
+file_filter   = content/<lang>/tutorials/touch-joypad.md
+source_file   = content/en/tutorials/touch-joypad.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/touch-joypad.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-tweening]
+file_filter   = content/<lang>/tutorials/tweening.md
+source_file   = content/en/tutorials/tweening.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/tweening.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-ui-elements-buttons]
+file_filter   = content/<lang>/tutorials/ui-elements-buttons.md
+source_file   = content/en/tutorials/ui-elements-buttons.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/ui-elements-buttons.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-ui-elements-leaderboard]
+file_filter   = content/<lang>/tutorials/ui-elements-leaderboard.md
+source_file   = content/en/tutorials/ui-elements-leaderboard.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/ui-elements-leaderboard.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-ui-elements-progress]
+file_filter   = content/<lang>/tutorials/ui-elements-progress.md
+source_file   = content/en/tutorials/ui-elements-progress.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/ui-elements-progress.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-ui-elements-stats-counter]
+file_filter   = content/<lang>/tutorials/ui-elements-stats-counter.md
+source_file   = content/en/tutorials/ui-elements-stats-counter.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/ui-elements-stats-counter.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-ui-text-input]
+file_filter   = content/<lang>/tutorials/ui-text-input.md
+source_file   = content/en/tutorials/ui-text-input.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/ui-text-input.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-using-assets]
+file_filter   = content/<lang>/tutorials/using-assets.md
+source_file   = content/en/tutorials/using-assets.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/using-assets.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-using-forces-on-rigid-bodies]
+file_filter   = content/<lang>/tutorials/Using-forces-on-rigid-bodies.md
+source_file   = content/en/tutorials/Using-forces-on-rigid-bodies.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/Using-forces-on-rigid-bodies.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-video-textures]
+file_filter   = content/<lang>/tutorials/video-textures.md
+source_file   = content/en/tutorials/video-textures.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/video-textures.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:tutorials-webxr-ray-input]
+file_filter   = content/<lang>/tutorials/webxr-ray-input.md
+source_file   = content/en/tutorials/webxr-ray-input.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/tutorials/webxr-ray-input.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-2d-9-slicing]
+file_filter   = content/<lang>/user-manual/2D/9-slicing.md
+source_file   = content/en/user-manual/2D/9-slicing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/2D/9-slicing.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-2d-index]
+file_filter   = content/<lang>/user-manual/2D/index.md
+source_file   = content/en/user-manual/2D/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/2D/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-2d-sprite-editor]
+file_filter   = content/<lang>/user-manual/2D/sprite-editor.md
+source_file   = content/en/user-manual/2D/sprite-editor.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/2D/sprite-editor.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-anim-animation-assets]
+file_filter   = content/<lang>/user-manual/animation/anim-animation-assets.md
+source_file   = content/en/user-manual/animation/anim-animation-assets.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/animation/anim-animation-assets.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-anim-component]
+file_filter   = content/<lang>/user-manual/animation/anim-component.md
+source_file   = content/en/user-manual/animation/anim-component.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/animation/anim-component.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-anim-events]
+file_filter   = content/<lang>/user-manual/animation/anim-events.md
+source_file   = content/en/user-manual/animation/anim-events.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/animation/anim-events.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-anim-layer-masking]
+file_filter   = content/<lang>/user-manual/animation/anim-layer-masking.md
+source_file   = content/en/user-manual/animation/anim-layer-masking.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/animation/anim-layer-masking.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-anim-state-graph-assets]
+file_filter   = content/<lang>/user-manual/animation/anim-state-graph-assets.md
+source_file   = content/en/user-manual/animation/anim-state-graph-assets.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/animation/anim-state-graph-assets.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-index]
+file_filter   = content/<lang>/user-manual/animation/index.md
+source_file   = content/en/user-manual/animation/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/animation/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-app-download]
+file_filter   = content/<lang>/user-manual/api/app-download.md
+source_file   = content/en/user-manual/api/app-download.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/app-download.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-app-get-primary]
+file_filter   = content/<lang>/user-manual/api/app-get-primary.md
+source_file   = content/en/user-manual/api/app-get-primary.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/app-get-primary.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-app-get-project]
+file_filter   = content/<lang>/user-manual/api/app-get-project.md
+source_file   = content/en/user-manual/api/app-get-project.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/app-get-project.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-app-get]
+file_filter   = content/<lang>/user-manual/api/app-get.md
+source_file   = content/en/user-manual/api/app-get.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/app-get.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-asset-create]
+file_filter   = content/<lang>/user-manual/api/asset-create.md
+source_file   = content/en/user-manual/api/asset-create.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/asset-create.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-asset-delete]
+file_filter   = content/<lang>/user-manual/api/asset-delete.md
+source_file   = content/en/user-manual/api/asset-delete.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/asset-delete.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-asset-file]
+file_filter   = content/<lang>/user-manual/api/asset-file.md
+source_file   = content/en/user-manual/api/asset-file.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/asset-file.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-asset-get]
+file_filter   = content/<lang>/user-manual/api/asset-get.md
+source_file   = content/en/user-manual/api/asset-get.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/asset-get.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-asset-list]
+file_filter   = content/<lang>/user-manual/api/asset-list.md
+source_file   = content/en/user-manual/api/asset-list.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/asset-list.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-asset-update]
+file_filter   = content/<lang>/user-manual/api/asset-update.md
+source_file   = content/en/user-manual/api/asset-update.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/asset-update.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-branch-list]
+file_filter   = content/<lang>/user-manual/api/branch-list.md
+source_file   = content/en/user-manual/api/branch-list.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/branch-list.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-index]
+file_filter   = content/<lang>/user-manual/api/index.md
+source_file   = content/en/user-manual/api/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-job-get]
+file_filter   = content/<lang>/user-manual/api/job-get.md
+source_file   = content/en/user-manual/api/job-get.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/job-get.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-project-archive]
+file_filter   = content/<lang>/user-manual/api/project-archive.md
+source_file   = content/en/user-manual/api/project-archive.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/project-archive.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-api-scene-list]
+file_filter   = content/<lang>/user-manual/api/scene-list.md
+source_file   = content/en/user-manual/api/scene-list.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/api/scene-list.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-animation]
+file_filter   = content/<lang>/user-manual/assets/animation.md
+source_file   = content/en/user-manual/assets/animation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/animation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-audio]
+file_filter   = content/<lang>/user-manual/assets/audio.md
+source_file   = content/en/user-manual/assets/audio.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/audio.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-css]
+file_filter   = content/<lang>/user-manual/assets/css.md
+source_file   = content/en/user-manual/assets/css.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/css.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-cubemaps]
+file_filter   = content/<lang>/user-manual/assets/cubemaps.md
+source_file   = content/en/user-manual/assets/cubemaps.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/cubemaps.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-finding]
+file_filter   = content/<lang>/user-manual/assets/finding.md
+source_file   = content/en/user-manual/assets/finding.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/finding.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-fonts]
+file_filter   = content/<lang>/user-manual/assets/fonts.md
+source_file   = content/en/user-manual/assets/fonts.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/fonts.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-html]
+file_filter   = content/<lang>/user-manual/assets/html.md
+source_file   = content/en/user-manual/assets/html.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/html.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-import-pipeline-import-hierarchy]
+file_filter   = content/<lang>/user-manual/assets/import-pipeline/import-hierarchy.md
+source_file   = content/en/user-manual/assets/import-pipeline/import-hierarchy.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/import-pipeline/import-hierarchy.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-import-pipeline-index]
+file_filter   = content/<lang>/user-manual/assets/import-pipeline/index.md
+source_file   = content/en/user-manual/assets/import-pipeline/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/import-pipeline/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-importing]
+file_filter   = content/<lang>/user-manual/assets/importing.md
+source_file   = content/en/user-manual/assets/importing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/importing.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-index]
+file_filter   = content/<lang>/user-manual/assets/index.md
+source_file   = content/en/user-manual/assets/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-materials-index]
+file_filter   = content/<lang>/user-manual/assets/materials/index.md
+source_file   = content/en/user-manual/assets/materials/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/materials/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-materials-phong-material]
+file_filter   = content/<lang>/user-manual/assets/materials/phong-material.md
+source_file   = content/en/user-manual/assets/materials/phong-material.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/materials/phong-material.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-materials-physical-material]
+file_filter   = content/<lang>/user-manual/assets/materials/physical-material.md
+source_file   = content/en/user-manual/assets/materials/physical-material.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/materials/physical-material.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-models-building]
+file_filter   = content/<lang>/user-manual/assets/models/building.md
+source_file   = content/en/user-manual/assets/models/building.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/models/building.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-models-exporting]
+file_filter   = content/<lang>/user-manual/assets/models/exporting.md
+source_file   = content/en/user-manual/assets/models/exporting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/models/exporting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-models-index]
+file_filter   = content/<lang>/user-manual/assets/models/index.md
+source_file   = content/en/user-manual/assets/models/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/models/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-models-units]
+file_filter   = content/<lang>/user-manual/assets/models/units.md
+source_file   = content/en/user-manual/assets/models/units.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/models/units.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-preloading-and-streaming]
+file_filter   = content/<lang>/user-manual/assets/preloading-and-streaming.md
+source_file   = content/en/user-manual/assets/preloading-and-streaming.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/preloading-and-streaming.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-shader]
+file_filter   = content/<lang>/user-manual/assets/shader.md
+source_file   = content/en/user-manual/assets/shader.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/shader.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-sprites]
+file_filter   = content/<lang>/user-manual/assets/sprites.md
+source_file   = content/en/user-manual/assets/sprites.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/sprites.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-templates]
+file_filter   = content/<lang>/user-manual/assets/templates.md
+source_file   = content/en/user-manual/assets/templates.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/templates.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-texture-atlas]
+file_filter   = content/<lang>/user-manual/assets/texture-atlas.md
+source_file   = content/en/user-manual/assets/texture-atlas.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/texture-atlas.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-textures-index]
+file_filter   = content/<lang>/user-manual/assets/textures/index.md
+source_file   = content/en/user-manual/assets/textures/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/textures/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-textures-texture-compression]
+file_filter   = content/<lang>/user-manual/assets/textures/texture-compression.md
+source_file   = content/en/user-manual/assets/textures/texture-compression.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/textures/texture-compression.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-wasm-modules]
+file_filter   = content/<lang>/user-manual/assets/wasm-modules.md
+source_file   = content/en/user-manual/assets/wasm-modules.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/wasm-modules.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-billing-index]
+file_filter   = content/<lang>/user-manual/billing/index.md
+source_file   = content/en/user-manual/billing/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/billing/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-creating-account]
+file_filter   = content/<lang>/user-manual/creating-account.md
+source_file   = content/en/user-manual/creating-account.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/creating-account.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-dashboard-header]
+file_filter   = content/<lang>/user-manual/dashboard/header.md
+source_file   = content/en/user-manual/dashboard/header.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/dashboard/header.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-dashboard-index]
+file_filter   = content/<lang>/user-manual/dashboard/index.md
+source_file   = content/en/user-manual/dashboard/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/dashboard/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-dashboard-overview]
+file_filter   = content/<lang>/user-manual/dashboard/overview.md
+source_file   = content/en/user-manual/dashboard/overview.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/dashboard/overview.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-dashboard-settings]
+file_filter   = content/<lang>/user-manual/dashboard/settings.md
+source_file   = content/en/user-manual/dashboard/settings.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/dashboard/settings.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-asset-library]
+file_filter   = content/<lang>/user-manual/designer/asset-library.md
+source_file   = content/en/user-manual/designer/asset-library.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/asset-library.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-assets]
+file_filter   = content/<lang>/user-manual/designer/assets.md
+source_file   = content/en/user-manual/designer/assets.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/assets.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-editor-api]
+file_filter   = content/<lang>/user-manual/designer/editor-api.md
+source_file   = content/en/user-manual/designer/editor-api.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/editor-api.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-hierarchy]
+file_filter   = content/<lang>/user-manual/designer/hierarchy.md
+source_file   = content/en/user-manual/designer/hierarchy.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/hierarchy.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-index]
+file_filter   = content/<lang>/user-manual/designer/index.md
+source_file   = content/en/user-manual/designer/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-inspector]
+file_filter   = content/<lang>/user-manual/designer/inspector.md
+source_file   = content/en/user-manual/designer/inspector.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/inspector.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-keyboard-shortcuts]
+file_filter   = content/<lang>/user-manual/designer/keyboard-shortcuts.md
+source_file   = content/en/user-manual/designer/keyboard-shortcuts.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/keyboard-shortcuts.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-loading-screen]
+file_filter   = content/<lang>/user-manual/designer/loading-screen.md
+source_file   = content/en/user-manual/designer/loading-screen.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/loading-screen.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-menus-and-toolbar]
+file_filter   = content/<lang>/user-manual/designer/menus-and-toolbar.md
+source_file   = content/en/user-manual/designer/menus-and-toolbar.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/menus-and-toolbar.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-scenes]
+file_filter   = content/<lang>/user-manual/designer/scenes.md
+source_file   = content/en/user-manual/designer/scenes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/scenes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-settings]
+file_filter   = content/<lang>/user-manual/designer/settings.md
+source_file   = content/en/user-manual/designer/settings.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/settings.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-viewport]
+file_filter   = content/<lang>/user-manual/designer/viewport.md
+source_file   = content/en/user-manual/designer/viewport.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/designer/viewport.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-only-index]
+file_filter   = content/<lang>/user-manual/engine-only/index.md
+source_file   = content/en/user-manual/engine-only/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/engine-only/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-faq]
+file_filter   = content/<lang>/user-manual/faq.md
+source_file   = content/en/user-manual/faq.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/faq.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-glossary]
+file_filter   = content/<lang>/user-manual/glossary.md
+source_file   = content/en/user-manual/glossary.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/glossary.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-cameras-depth-layer]
+file_filter   = content/<lang>/user-manual/graphics/cameras/depth-layer.md
+source_file   = content/en/user-manual/graphics/cameras/depth-layer.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/cameras/depth-layer.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-cameras-index]
+file_filter   = content/<lang>/user-manual/graphics/cameras/index.md
+source_file   = content/en/user-manual/graphics/cameras/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/cameras/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-index]
+file_filter   = content/<lang>/user-manual/graphics/index.md
+source_file   = content/en/user-manual/graphics/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-layers-index]
+file_filter   = content/<lang>/user-manual/graphics/layers/index.md
+source_file   = content/en/user-manual/graphics/layers/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/layers/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-ambient-occlusion]
+file_filter   = content/<lang>/user-manual/graphics/lighting/ambient-occlusion.md
+source_file   = content/en/user-manual/graphics/lighting/ambient-occlusion.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/ambient-occlusion.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-clustered-lighting]
+file_filter   = content/<lang>/user-manual/graphics/lighting/clustered-lighting.md
+source_file   = content/en/user-manual/graphics/lighting/clustered-lighting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/clustered-lighting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-index]
+file_filter   = content/<lang>/user-manual/graphics/lighting/index.md
+source_file   = content/en/user-manual/graphics/lighting/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-lightmapping]
+file_filter   = content/<lang>/user-manual/graphics/lighting/lightmapping.md
+source_file   = content/en/user-manual/graphics/lighting/lightmapping.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/lightmapping.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-lights]
+file_filter   = content/<lang>/user-manual/graphics/lighting/lights.md
+source_file   = content/en/user-manual/graphics/lighting/lights.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/lights.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-runtime-lightmaps]
+file_filter   = content/<lang>/user-manual/graphics/lighting/runtime-lightmaps.md
+source_file   = content/en/user-manual/graphics/lighting/runtime-lightmaps.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/runtime-lightmaps.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-lighting-shadows]
+file_filter   = content/<lang>/user-manual/graphics/lighting/shadows.md
+source_file   = content/en/user-manual/graphics/lighting/shadows.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/lighting/shadows.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-particles]
+file_filter   = content/<lang>/user-manual/graphics/particles.md
+source_file   = content/en/user-manual/graphics/particles.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/particles.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-physical-rendering-image-based-lighting]
+file_filter   = content/<lang>/user-manual/graphics/physical-rendering/image-based-lighting.md
+source_file   = content/en/user-manual/graphics/physical-rendering/image-based-lighting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/physical-rendering/image-based-lighting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-physical-rendering-index]
+file_filter   = content/<lang>/user-manual/graphics/physical-rendering/index.md
+source_file   = content/en/user-manual/graphics/physical-rendering/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/physical-rendering/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-physical-rendering-physical-materials]
+file_filter   = content/<lang>/user-manual/graphics/physical-rendering/physical-materials.md
+source_file   = content/en/user-manual/graphics/physical-rendering/physical-materials.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/physical-rendering/physical-materials.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-bloom]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/bloom.md
+source_file   = content/en/user-manual/graphics/posteffects/bloom.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/bloom.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-brightness_contrast]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/brightness_contrast.md
+source_file   = content/en/user-manual/graphics/posteffects/brightness_contrast.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/brightness_contrast.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-fxaa]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/fxaa.md
+source_file   = content/en/user-manual/graphics/posteffects/fxaa.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/fxaa.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-hue_saturation]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/hue_saturation.md
+source_file   = content/en/user-manual/graphics/posteffects/hue_saturation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/hue_saturation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-index]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/index.md
+source_file   = content/en/user-manual/graphics/posteffects/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-sepia]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/sepia.md
+source_file   = content/en/user-manual/graphics/posteffects/sepia.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/sepia.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-posteffects-vignette]
+file_filter   = content/<lang>/user-manual/graphics/posteffects/vignette.md
+source_file   = content/en/user-manual/graphics/posteffects/vignette.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/posteffects/vignette.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-shader-chunk-migrations]
+file_filter   = content/<lang>/user-manual/graphics/shader-chunk-migrations.md
+source_file   = content/en/user-manual/graphics/shader-chunk-migrations.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/shader-chunk-migrations.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-index]
+file_filter   = content/<lang>/user-manual/index.md
+source_file   = content/en/user-manual/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-introduction]
+file_filter   = content/<lang>/user-manual/introduction.md
+source_file   = content/en/user-manual/introduction.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/introduction.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-made-with-playcanvas]
+file_filter   = content/<lang>/user-manual/made-with-playcanvas.md
+source_file   = content/en/user-manual/made-with-playcanvas.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/made-with-playcanvas.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-batching]
+file_filter   = content/<lang>/user-manual/optimization/batching.md
+source_file   = content/en/user-manual/optimization/batching.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/batching.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-guidelines]
+file_filter   = content/<lang>/user-manual/optimization/guidelines.md
+source_file   = content/en/user-manual/optimization/guidelines.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/guidelines.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-hardware-instancing]
+file_filter   = content/<lang>/user-manual/optimization/hardware-instancing.md
+source_file   = content/en/user-manual/optimization/hardware-instancing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/hardware-instancing.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-index]
+file_filter   = content/<lang>/user-manual/optimization/index.md
+source_file   = content/en/user-manual/optimization/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-load-time]
+file_filter   = content/<lang>/user-manual/optimization/load-time.md
+source_file   = content/en/user-manual/optimization/load-time.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/load-time.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-mini-stats]
+file_filter   = content/<lang>/user-manual/optimization/mini-stats.md
+source_file   = content/en/user-manual/optimization/mini-stats.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/mini-stats.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-optimizing-scene-format]
+file_filter   = content/<lang>/user-manual/optimization/optimizing-scene-format.md
+source_file   = content/en/user-manual/optimization/optimizing-scene-format.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/optimizing-scene-format.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-profiler]
+file_filter   = content/<lang>/user-manual/optimization/profiler.md
+source_file   = content/en/user-manual/optimization/profiler.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/profiler.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-runtime-devicepixelratio]
+file_filter   = content/<lang>/user-manual/optimization/runtime-devicepixelratio.md
+source_file   = content/en/user-manual/optimization/runtime-devicepixelratio.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/runtime-devicepixelratio.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-troubleshooting-performance]
+file_filter   = content/<lang>/user-manual/optimization/troubleshooting-performance.md
+source_file   = content/en/user-manual/optimization/troubleshooting-performance.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/troubleshooting-performance.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-organizations-creating-organizations]
+file_filter   = content/<lang>/user-manual/organizations/creating-organizations.md
+source_file   = content/en/user-manual/organizations/creating-organizations.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/organizations/creating-organizations.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-organizations-index]
+file_filter   = content/<lang>/user-manual/organizations/index.md
+source_file   = content/en/user-manual/organizations/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/organizations/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-organizations-managing-organizations]
+file_filter   = content/<lang>/user-manual/organizations/managing-organizations.md
+source_file   = content/en/user-manual/organizations/managing-organizations.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/organizations/managing-organizations.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-anim]
+file_filter   = content/<lang>/user-manual/packs/components/anim.md
+source_file   = content/en/user-manual/packs/components/anim.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/anim.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-animation]
+file_filter   = content/<lang>/user-manual/packs/components/animation.md
+source_file   = content/en/user-manual/packs/components/animation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/animation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-audiolistener]
+file_filter   = content/<lang>/user-manual/packs/components/audiolistener.md
+source_file   = content/en/user-manual/packs/components/audiolistener.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/audiolistener.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-button]
+file_filter   = content/<lang>/user-manual/packs/components/button.md
+source_file   = content/en/user-manual/packs/components/button.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/button.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-camera]
+file_filter   = content/<lang>/user-manual/packs/components/camera.md
+source_file   = content/en/user-manual/packs/components/camera.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/camera.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-collision]
+file_filter   = content/<lang>/user-manual/packs/components/collision.md
+source_file   = content/en/user-manual/packs/components/collision.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/collision.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-element]
+file_filter   = content/<lang>/user-manual/packs/components/element.md
+source_file   = content/en/user-manual/packs/components/element.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/element.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-index]
+file_filter   = content/<lang>/user-manual/packs/components/index.md
+source_file   = content/en/user-manual/packs/components/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-layout-child]
+file_filter   = content/<lang>/user-manual/packs/components/layout-child.md
+source_file   = content/en/user-manual/packs/components/layout-child.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/layout-child.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-layout-group]
+file_filter   = content/<lang>/user-manual/packs/components/layout-group.md
+source_file   = content/en/user-manual/packs/components/layout-group.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/layout-group.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-light]
+file_filter   = content/<lang>/user-manual/packs/components/light.md
+source_file   = content/en/user-manual/packs/components/light.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/light.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-model]
+file_filter   = content/<lang>/user-manual/packs/components/model.md
+source_file   = content/en/user-manual/packs/components/model.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/model.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-particlesystem]
+file_filter   = content/<lang>/user-manual/packs/components/particlesystem.md
+source_file   = content/en/user-manual/packs/components/particlesystem.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/particlesystem.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-render]
+file_filter   = content/<lang>/user-manual/packs/components/render.md
+source_file   = content/en/user-manual/packs/components/render.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/render.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-rigidbody]
+file_filter   = content/<lang>/user-manual/packs/components/rigidbody.md
+source_file   = content/en/user-manual/packs/components/rigidbody.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/rigidbody.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-screen]
+file_filter   = content/<lang>/user-manual/packs/components/screen.md
+source_file   = content/en/user-manual/packs/components/screen.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/screen.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-script]
+file_filter   = content/<lang>/user-manual/packs/components/script.md
+source_file   = content/en/user-manual/packs/components/script.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/script.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-scrollbar]
+file_filter   = content/<lang>/user-manual/packs/components/scrollbar.md
+source_file   = content/en/user-manual/packs/components/scrollbar.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/scrollbar.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-scrollview]
+file_filter   = content/<lang>/user-manual/packs/components/scrollview.md
+source_file   = content/en/user-manual/packs/components/scrollview.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/scrollview.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-sound]
+file_filter   = content/<lang>/user-manual/packs/components/sound.md
+source_file   = content/en/user-manual/packs/components/sound.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/sound.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-sprite]
+file_filter   = content/<lang>/user-manual/packs/components/sprite.md
+source_file   = content/en/user-manual/packs/components/sprite.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/components/sprite.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-entities-index]
+file_filter   = content/<lang>/user-manual/packs/entities/index.md
+source_file   = content/en/user-manual/packs/entities/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/entities/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-index]
+file_filter   = content/<lang>/user-manual/packs/index.md
+source_file   = content/en/user-manual/packs/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-loading-scenes]
+file_filter   = content/<lang>/user-manual/packs/loading-scenes.md
+source_file   = content/en/user-manual/packs/loading-scenes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/packs/loading-scenes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-ammo-alternatives]
+file_filter   = content/<lang>/user-manual/physics/ammo-alternatives.md
+source_file   = content/en/user-manual/physics/ammo-alternatives.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/ammo-alternatives.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-calling-ammo]
+file_filter   = content/<lang>/user-manual/physics/calling-ammo.md
+source_file   = content/en/user-manual/physics/calling-ammo.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/calling-ammo.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-compound-shapes]
+file_filter   = content/<lang>/user-manual/physics/compound-shapes.md
+source_file   = content/en/user-manual/physics/compound-shapes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/compound-shapes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-forces-and-impulses]
+file_filter   = content/<lang>/user-manual/physics/forces-and-impulses.md
+source_file   = content/en/user-manual/physics/forces-and-impulses.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/forces-and-impulses.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-index]
+file_filter   = content/<lang>/user-manual/physics/index.md
+source_file   = content/en/user-manual/physics/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-physics-basics]
+file_filter   = content/<lang>/user-manual/physics/physics-basics.md
+source_file   = content/en/user-manual/physics/physics-basics.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/physics-basics.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-physics-migration]
+file_filter   = content/<lang>/user-manual/physics/physics-migration.md
+source_file   = content/en/user-manual/physics/physics-migration.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/physics-migration.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-ray-casting]
+file_filter   = content/<lang>/user-manual/physics/ray-casting.md
+source_file   = content/en/user-manual/physics/ray-casting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/ray-casting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-trigger-volumes]
+file_filter   = content/<lang>/user-manual/physics/trigger-volumes.md
+source_file   = content/en/user-manual/physics/trigger-volumes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/physics/trigger-volumes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-press-pack]
+file_filter   = content/<lang>/user-manual/press-pack.md
+source_file   = content/en/user-manual/press-pack.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/press-pack.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-profile-account]
+file_filter   = content/<lang>/user-manual/profile/account.md
+source_file   = content/en/user-manual/profile/account.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/profile/account.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-profile-home]
+file_filter   = content/<lang>/user-manual/profile/home.md
+source_file   = content/en/user-manual/profile/home.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/profile/home.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-profile-index]
+file_filter   = content/<lang>/user-manual/profile/index.md
+source_file   = content/en/user-manual/profile/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/profile/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-profile-projects]
+file_filter   = content/<lang>/user-manual/profile/projects.md
+source_file   = content/en/user-manual/profile/projects.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/profile/projects.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-desktop-index]
+file_filter   = content/<lang>/user-manual/publishing/desktop/index.md
+source_file   = content/en/user-manual/publishing/desktop/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/desktop/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-index]
+file_filter   = content/<lang>/user-manual/publishing/index.md
+source_file   = content/en/user-manual/publishing/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-mobile-cordova]
+file_filter   = content/<lang>/user-manual/publishing/mobile/cordova.md
+source_file   = content/en/user-manual/publishing/mobile/cordova.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/mobile/cordova.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-mobile-gonative]
+file_filter   = content/<lang>/user-manual/publishing/mobile/gonative.md
+source_file   = content/en/user-manual/publishing/mobile/gonative.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/mobile/gonative.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-mobile-index]
+file_filter   = content/<lang>/user-manual/publishing/mobile/index.md
+source_file   = content/en/user-manual/publishing/mobile/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/mobile/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-playable-ads-fb-playable-ads]
+file_filter   = content/<lang>/user-manual/publishing/playable-ads/fb-playable-ads.md
+source_file   = content/en/user-manual/publishing/playable-ads/fb-playable-ads.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/playable-ads/fb-playable-ads.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-playable-ads-index]
+file_filter   = content/<lang>/user-manual/publishing/playable-ads/index.md
+source_file   = content/en/user-manual/publishing/playable-ads/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/playable-ads/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-playable-ads-ironsource-mraid-playable-ads]
+file_filter   = content/<lang>/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.md
+source_file   = content/en/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/playable-ads/ironsource-mraid-playable-ads.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-playable-ads-snapchat-playable-ads]
+file_filter   = content/<lang>/user-manual/publishing/playable-ads/snapchat-playable-ads.md
+source_file   = content/en/user-manual/publishing/playable-ads/snapchat-playable-ads.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/playable-ads/snapchat-playable-ads.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-communicating-webpage]
+file_filter   = content/<lang>/user-manual/publishing/web/communicating-webpage.md
+source_file   = content/en/user-manual/publishing/web/communicating-webpage.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/communicating-webpage.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-facebook]
+file_filter   = content/<lang>/user-manual/publishing/web/facebook.md
+source_file   = content/en/user-manual/publishing/web/facebook.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/facebook.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-hosting-cdn]
+file_filter   = content/<lang>/user-manual/publishing/web/hosting-cdn.md
+source_file   = content/en/user-manual/publishing/web/hosting-cdn.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/hosting-cdn.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-index]
+file_filter   = content/<lang>/user-manual/publishing/web/index.md
+source_file   = content/en/user-manual/publishing/web/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-playcanvas-hosting]
+file_filter   = content/<lang>/user-manual/publishing/web/playcanvas-hosting.md
+source_file   = content/en/user-manual/publishing/web/playcanvas-hosting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/playcanvas-hosting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-self-hosting-for-beginners]
+file_filter   = content/<lang>/user-manual/publishing/web/self-hosting-for-beginners.md
+source_file   = content/en/user-manual/publishing/web/self-hosting-for-beginners.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/self-hosting-for-beginners.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-publishing-web-self-hosting]
+file_filter   = content/<lang>/user-manual/publishing/web/self-hosting.md
+source_file   = content/en/user-manual/publishing/web/self-hosting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/publishing/web/self-hosting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-anatomy]
+file_filter   = content/<lang>/user-manual/scripting/anatomy.md
+source_file   = content/en/user-manual/scripting/anatomy.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/anatomy.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-application-lifecyle]
+file_filter   = content/<lang>/user-manual/scripting/application-lifecyle.md
+source_file   = content/en/user-manual/scripting/application-lifecyle.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/application-lifecyle.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-code-editor]
+file_filter   = content/<lang>/user-manual/scripting/code-editor.md
+source_file   = content/en/user-manual/scripting/code-editor.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/code-editor.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-communication]
+file_filter   = content/<lang>/user-manual/scripting/communication.md
+source_file   = content/en/user-manual/scripting/communication.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/communication.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-creating-new]
+file_filter   = content/<lang>/user-manual/scripting/creating-new.md
+source_file   = content/en/user-manual/scripting/creating-new.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/creating-new.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-custom_engine]
+file_filter   = content/<lang>/user-manual/scripting/custom_engine.md
+source_file   = content/en/user-manual/scripting/custom_engine.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/custom_engine.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-debugging]
+file_filter   = content/<lang>/user-manual/scripting/debugging.md
+source_file   = content/en/user-manual/scripting/debugging.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/debugging.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-hot-reloading]
+file_filter   = content/<lang>/user-manual/scripting/hot-reloading.md
+source_file   = content/en/user-manual/scripting/hot-reloading.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/hot-reloading.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-index]
+file_filter   = content/<lang>/user-manual/scripting/index.md
+source_file   = content/en/user-manual/scripting/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-loading-order]
+file_filter   = content/<lang>/user-manual/scripting/loading-order.md
+source_file   = content/en/user-manual/scripting/loading-order.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/loading-order.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-migration-guide]
+file_filter   = content/<lang>/user-manual/scripting/migration-guide.md
+source_file   = content/en/user-manual/scripting/migration-guide.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/migration-guide.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-script-attributes]
+file_filter   = content/<lang>/user-manual/scripting/script-attributes.md
+source_file   = content/en/user-manual/scripting/script-attributes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scripting/script-attributes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-templates-diff]
+file_filter   = content/<lang>/user-manual/templates/diff.md
+source_file   = content/en/user-manual/templates/diff.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/templates/diff.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-templates-index]
+file_filter   = content/<lang>/user-manual/templates/index.md
+source_file   = content/en/user-manual/templates/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/templates/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-templates-nested]
+file_filter   = content/<lang>/user-manual/templates/nested.md
+source_file   = content/en/user-manual/templates/nested.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/templates/nested.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-elements]
+file_filter   = content/<lang>/user-manual/user-interface/elements.md
+source_file   = content/en/user-manual/user-interface/elements.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/elements.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-group-elements]
+file_filter   = content/<lang>/user-manual/user-interface/group-elements.md
+source_file   = content/en/user-manual/user-interface/group-elements.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/group-elements.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-image-elements]
+file_filter   = content/<lang>/user-manual/user-interface/image-elements.md
+source_file   = content/en/user-manual/user-interface/image-elements.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/image-elements.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-index]
+file_filter   = content/<lang>/user-manual/user-interface/index.md
+source_file   = content/en/user-manual/user-interface/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-input]
+file_filter   = content/<lang>/user-manual/user-interface/input.md
+source_file   = content/en/user-manual/user-interface/input.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/input.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-layout-groups]
+file_filter   = content/<lang>/user-manual/user-interface/layout-groups.md
+source_file   = content/en/user-manual/user-interface/layout-groups.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/layout-groups.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-localization]
+file_filter   = content/<lang>/user-manual/user-interface/localization.md
+source_file   = content/en/user-manual/user-interface/localization.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/localization.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-safe-area]
+file_filter   = content/<lang>/user-manual/user-interface/safe-area.md
+source_file   = content/en/user-manual/user-interface/safe-area.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/safe-area.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-screens]
+file_filter   = content/<lang>/user-manual/user-interface/screens.md
+source_file   = content/en/user-manual/user-interface/screens.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/screens.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-text-elements]
+file_filter   = content/<lang>/user-manual/user-interface/text-elements.md
+source_file   = content/en/user-manual/user-interface/text-elements.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/text-elements.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-user-interface-user-interface-basics]
+file_filter   = content/<lang>/user-manual/user-interface/user-interface-basics.md
+source_file   = content/en/user-manual/user-interface/user-interface-basics.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/user-interface/user-interface-basics.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-branch-workflows]
+file_filter   = content/<lang>/user-manual/version-control/branch-workflows.md
+source_file   = content/en/user-manual/version-control/branch-workflows.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/branch-workflows.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-branches]
+file_filter   = content/<lang>/user-manual/version-control/branches.md
+source_file   = content/en/user-manual/version-control/branches.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/branches.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-changes]
+file_filter   = content/<lang>/user-manual/version-control/changes.md
+source_file   = content/en/user-manual/version-control/changes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/changes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-checkpoints]
+file_filter   = content/<lang>/user-manual/version-control/checkpoints.md
+source_file   = content/en/user-manual/version-control/checkpoints.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/checkpoints.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-graph-view]
+file_filter   = content/<lang>/user-manual/version-control/graph-view.md
+source_file   = content/en/user-manual/version-control/graph-view.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/graph-view.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-index]
+file_filter   = content/<lang>/user-manual/version-control/index.md
+source_file   = content/en/user-manual/version-control/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-merging]
+file_filter   = content/<lang>/user-manual/version-control/merging.md
+source_file   = content/en/user-manual/version-control/merging.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/merging.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-8th-wall-integration]
+file_filter   = content/<lang>/user-manual/xr/ar/8th-wall-integration.md
+source_file   = content/en/user-manual/xr/ar/8th-wall-integration.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/8th-wall-integration.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-index]
+file_filter   = content/<lang>/user-manual/xr/ar/index.md
+source_file   = content/en/user-manual/xr/ar/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-zappar-integration]
+file_filter   = content/<lang>/user-manual/xr/ar/zappar-integration.md
+source_file   = content/en/user-manual/xr/ar/zappar-integration.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/zappar-integration.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-index]
+file_filter   = content/<lang>/user-manual/xr/index.md
+source_file   = content/en/user-manual/xr/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-input-sources]
+file_filter   = content/<lang>/user-manual/xr/input-sources.md
+source_file   = content/en/user-manual/xr/input-sources.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/input-sources.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-optimizing-webxr]
+file_filter   = content/<lang>/user-manual/xr/optimizing-webxr.md
+source_file   = content/en/user-manual/xr/optimizing-webxr.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/optimizing-webxr.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-using-webxr]
+file_filter   = content/<lang>/user-manual/xr/using-webxr.md
+source_file   = content/en/user-manual/xr/using-webxr.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/using-webxr.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-vr-index]
+file_filter   = content/<lang>/user-manual/xr/vr/index.md
+source_file   = content/en/user-manual/xr/vr/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/vr/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-vr-types-of-vr]
+file_filter   = content/<lang>/user-manual/xr/vr/types-of-vr.md
+source_file   = content/en/user-manual/xr/vr/types-of-vr.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/vr/types-of-vr.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-your-first-app]
+file_filter   = content/<lang>/user-manual/your-first-app.md
+source_file   = content/en/user-manual/your-first-app.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/your-first-app.md

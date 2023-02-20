@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: 設定
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -33,4 +33,5 @@ Premiumアカウントのユーザーしかプライベートプロジェクト�
 ## プロジェクトの削除
 
 プロジェクトを完全に削除するにはDELETEボタンを押します。 この操作は取り消すことはできません。
+
 

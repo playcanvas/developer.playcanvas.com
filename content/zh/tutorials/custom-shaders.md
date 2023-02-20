@@ -1,11 +1,11 @@
 ---
-title: 自定义着色器
+title: 自定义 shader
 layout: tutorial-page.hbs
 tags: shaders, materials
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders"></iframe>
 
 *本教程使用材质上的自定义着色器在GLSL中创建溶解效果*
 
@@ -15,11 +15,11 @@ Complete project can be found [here][project].
 
 但是，您通常需要为您的材料执行特殊效果或特殊情况。 要做到这一点，你需要写一个自定义着色器。
 
-## 着色器和着色器定义
+## Shaders and Shader Definition
 
 WebGL使用GLSL语言来编写可以在所有浏览器上运行的着色器。 在PlayCanvas中，您在着色器资源中创建此代码，然后在使用此命令创建新的“pc.Shader”之前将该代码分配给[着色器定义][1]。
 
-### 顶点着色器
+### Vertex Shader
 
 ```
 attribute vec3 aPosition;
@@ -37,7 +37,7 @@ void main(void)
 }
 ```
 
-### 片段着色器
+### Fragment Shader
 
 ```
 varying vec2 vUv0;
@@ -62,7 +62,7 @@ void main(void)
 
 上面的两个着色器定义了新材质的功能。 在顶点着色器中，我们将网格的顶点位置转换为屏幕空间。 在片断着色器中，我们设置像素的颜色。 此像素颜色是基于提供到此资产的两个纹理选择的。 如果值uTime小于heightmap中的颜色，那么我们不渲染任何像素(模型是不可见的)。 如果uTime的值大于heightmap值，那么我们从我们提供的漫反射贴图中获取颜色
 
-### 着色器定义
+### Shader Definition
 
 ```javascript
 var vertexShader = this.vs.resource;
@@ -91,15 +91,15 @@ var shaderDefinition = {
 
 除了属性，GLSL着色器中还有另外两种特殊类型的变量：`变化` 和`统一`
 
-## GLSL `变化` 变量
+## GLSL `varying` variables
 
 被声明为** varying **的变量将在顶点着色器中设置，但在片段着色器中使用。 这是一种将数据从第一个程序传递到第二个程序的方式。
 
-## GLSL `uniform` 变量
+## GLSL `uniform` variables
 
 一个变量声明**`uniform` **将在顶点和片段着色器中被声明。 此变量的值必须从主应用程序传递到着色器中。 例如，场景中光的位置。
 
-## 创建材质
+## Creating Materials
 
 ```javascript
 // Create the shader from the definition
@@ -107,7 +107,7 @@ this.shader = new pc.Shader(gd, shaderDefinition);
 
 // Create a new material and set the shader
 this.material = new pc.Material();
-this.material.setShader(this.shader);
+this.material.shader = this.shader;
 
 // Set the initial time parameter
 this.material.setParameter('uTime', 0);
@@ -126,7 +126,7 @@ model.meshInstances[0].material = this.material;
 
 *你可以(也应该)在多个网格上使用相同的材料。*
 
-## 在新材质中使用贴图
+## Using a texture in a new Material
 
 ```javascript
 var diffuseTexture = this.app.assets.get(this.diffuseMap).resource;
@@ -164,7 +164,7 @@ CustomShader.attributes.add('heightMap', {
 
 当我们的高度贴图纹理加载时，我们可以设置统一的`uHeightMap`为`pc.Texture` 对象。
 
-## 更新全局
+## Updating uniforms
 
 ```javascript
 // update code called every frame
@@ -186,7 +186,7 @@ CustomShader.prototype.update = function(dt) {
 
 在我们的着色器中，如果像素上的高度图的值小于时间值，我们不会绘制像素。 除了接近阈值的值，我们绘制像素的蓝色，以显示一个很好的“边框”的效果。
 
-## 完整的代码段
+## Complete listing
 
 ```javascript
 var CustomShader = pc.createScript('customShader');
@@ -287,4 +287,3 @@ Here is the complete script. Remember you'll need to create vertex shader and fr
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
 [project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
-

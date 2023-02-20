@@ -28,4 +28,3 @@ asset.on('load', function() {
 // アセットが読み込まれることを確認
 app.assets.load(asset);
 ```
-

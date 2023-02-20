@@ -1,11 +1,11 @@
 ---
-title: ライトの操作
+title: ライトのコントロール
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/tiKpka9M/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
 
 *1, 2 または 3を押してスポット、ポイント、指向性ライトをそれぞれ有効／無効にします。*
 
@@ -124,4 +124,3 @@ LightHandler.prototype.pivot = function () {
 
 [1]: /api/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
-

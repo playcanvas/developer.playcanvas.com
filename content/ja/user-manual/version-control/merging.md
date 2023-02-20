@@ -12,7 +12,7 @@ PlayCanvasでは、マージの際に2つのブランチから、チェックポ
 
 まず、大切なことはPlayCanvasでマージを行う際、実際に2つのブランチをマージするわけではないことを頭に置くことです。実際に行うのは、2つのチェックポイントのマージです。2つのブランチのどちらかに、最新のチェックポイントよりも後に行われた変更がある可能性があるので、重要です。そのような場合PlayCanvasが自動的にチェックポイントを作成して変更を見落とさないようにします。
 
-### マージの例
+### マージの例
 
 ![Merging checkpoints][6]
 *変更点YおよびZはマージ結果Cに含まれず、**紛失**されました。*
@@ -52,12 +52,9 @@ PlayCanvasでは、マージの際に2つのブランチから、チェックポ
 コンフリクトマネージャーがマージ作業を行っている間、現在のブランチはロックされ、他のユーザーが編集できないようにします。競合の解消が完了したときに、変更が上書きされるのを防ぐためです。マージするのに必要なブランチを他のユーザーがブロックしている場合、エディタから強制終了することができます。
 
 [1]: /user-manual/version-control/branches
-
 [3]: /images/user-manual/version-control/start-merge.jpg
 [4]: /images/user-manual/version-control/conflict-manager.jpg
 [5]: /images/user-manual/version-control/conflicts-resolved.jpg
-
 [6]: /images/user-manual/version-control/merging-checkpoints-1.png
 [7]: /images/user-manual/version-control/merging-checkpoints-2.png
 [8]: /images/user-manual/version-control/merging-checkpoints-3.png
-

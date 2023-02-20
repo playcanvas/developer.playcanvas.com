@@ -12,11 +12,11 @@ position: 6
 
 *パフォーマンスに関する注意：*文字列内の各文字に対して1つのクワッドを使用して、テキスト要素が画面に表示されます。テキストプロパティを変更すると、要素のメッシュが再生成されます。これはパフォーマンスに影響しますが、フレームごとに合理的な数の要素にテキストコンテンツを変更することには問題はありません。
 
-## Localization
+## ローカライゼーション
 
-You can the Localized checkbox to localize the text of the Text Element. If this is enabled then instead of the Text you specify the localization Key for the Text Element which will be used to get the localized text from the Localization assets.
+Text Element のテキストをローカライズするには 'Localized' チェックボックスをオンにできます。この機能が有効になっている場合は、テキストの代わりに、ローカライズアセットからローカライズされたテキストを取得するために使用される Text Element のローカライズキーを指定する必要があります。
 
-Read more about localization [here][11].
+ローカライゼーションについての詳細は[こちら][11]をご覧ください。
 
 ## 自動サイズ
 
@@ -75,4 +75,3 @@ Opacityプロパティでは、文字列の透明度を設定できます
 [9]: /images/user-manual/user-interface/text-element/tinted.png
 [10]: /images/user-manual/user-interface/text-element/transparent.png
 [11]: /user-manual/user-interface/localization
-

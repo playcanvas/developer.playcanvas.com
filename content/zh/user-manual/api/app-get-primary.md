@@ -1,32 +1,32 @@
 ---
-title: Apps - Get primary app
+title: 应用- 得到私有应用
 layout: usermanual-page.hbs
 position: 2
 ---
 
-## 传输链接
+## Route URL
 
 ```none
 GET https://playcanvas.com/api/projects/:project_id/app
 ```
 
-## 描述
+## Description
 
 Gets the Primary App of a Project.
 
-## 案例
+## Example
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/app
 ```
 
-## 参数
+## Parameters
 
 <div class="params">
 <div class="parameter"><span class="param">project_id</span><p>项目的ID。</p></div>
 </div>
 
-## 响应模式
+## Response Schema
 
 ```none
 Status: 200
@@ -55,7 +55,7 @@ Status: 200
 }
 ```
 
-## 报错
+## Errors
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>未授权访问</p></div>
@@ -66,9 +66,9 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>请求过多</p></div>
 </div>
 
-## 速率限制
+## Rate Limiting
 
 This route uses a [normal][1] rate limit.
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

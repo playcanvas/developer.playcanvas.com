@@ -17,4 +17,3 @@ Click on the dot next to each override to see a dropdown menu to apply the overr
 Click on the dot next to each overrides and click Revert to revert the override.
 
 [1]: /images/user-manual/templates/diff.png
-

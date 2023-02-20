@@ -13,4 +13,3 @@ PlayCanvasゲームは実際はウェブページなので、ブラウザをホ�
 [1]: /user-manual/publishing/web/playcanvas-hosting
 [2]: /user-manual/publishing/web/self-hosting
 [3]: /user-manual/publishing/web/facebook
-

@@ -17,7 +17,7 @@ Get a list of all open branches for a project
 ## Example
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/branches
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/branches"
 ```
 
 HTTP Request
@@ -76,4 +76,3 @@ This endpoint uses a slightly different pagination method. If a response contain
 This route uses a [normal][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
-

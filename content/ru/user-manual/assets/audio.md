@@ -1,5 +1,5 @@
 ---
-title: Audio
+title: Аудио
 layout: usermanual-page.hbs
 position: 5
 ---
@@ -12,4 +12,3 @@ Note that not all formats are supported in all browsers. Currently, the most wid
 
 [mp3]: https://caniuse.com/mp3
 [sound-component]: /user-manual/packs/components/sound/
-

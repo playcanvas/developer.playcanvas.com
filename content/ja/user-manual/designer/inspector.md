@@ -1,18 +1,19 @@
 ---
-title: Inspector
+title: インスペクター
 layout: usermanual-page.hbs
 position: 3
 ---
 
-<img src="/images/user-manual/editor/inspector/inspector.png" style="float: right; padding: 20px; padding-top: 0px;" width="320"></img>
+<img loading="lazy" src="/images/user-manual/editor/inspector/inspector.png" style="float: right; padding: 20px; padding-top: 0px;" width="320">
 
 インスペクターパネルは現在選択されているアイテムの属性値を表示します。
 
 選択したものによって異なるインスペクターパネルが表示されます。いくつかのインスペクターを紹介します：
+
 * **エンティティ／コンポーネント インスペクター**
-* **テクスチャー インスペクター***
-* **素材 インスペクター***
-* **キューブマップ インスペクター***
+* **テクスチャー インスペクター**
+* **素材 インスペクター**
+* **キューブマップ インスペクター**
 
 これらの値を修正して[エンティティ][1]の挙動を指定します。例えば、モデルコンポーネントでレンダリングするモデルやライトの色を設定できます。
 
@@ -22,4 +23,3 @@ position: 3
 
 [1]: /user-manual/glossary#entity
 [2]: /user-manual/glossary#gizmo
-
