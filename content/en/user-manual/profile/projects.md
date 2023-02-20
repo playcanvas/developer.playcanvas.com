@@ -54,7 +54,7 @@ You can find this option on the [project dashboard][7].
 
 An archive file will contain all the data of the current project state in a branch. However, it does not contain an version control history.
 
-There are several methods to create an offline backup archive of a project:
+There are two methods to create an offline backup archive of a project:
 
 ### From the Projects List
 
