@@ -60,9 +60,17 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
+And run the command:
+
+```sh
+npm run one-page
+```
+
+Full details of options and commands can be found in the readme section for '[Converting a project into a single HTML file][9]'.
+
 ### How to test
 
-Follow the steps [here][fb-ad-creation-guide] to create a Facebook ad and at the time where the files for the ad are uploaded, there is an opportunity to test within the manager.
+Follow the steps [here][8] to create a Facebook ad and at the time where the files for the ad are uploaded, there is an opportunity to test within the manager.
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg">
 
@@ -79,4 +87,5 @@ Facebook also allows testing on device via the ad manager but requires you to pu
 [5]: https://playcanvas.com/project/354998/overview/cube-jump-playable-ad-for-fb
 [6]: /downloads/fb-playable-ad-cube-jump-html.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
-[fb-ad-creation-guide]: https://www.facebook.com/business/help/338940216641734
+[8]: https://www.facebook.com/business/help/338940216641734
+[9]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
