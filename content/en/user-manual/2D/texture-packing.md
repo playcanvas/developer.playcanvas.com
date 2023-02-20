@@ -35,7 +35,7 @@ A free browser tool that is able to do the basics of texture packing.
 
 ([Website][texture-packer-tool])
 
-TexturePacker is a paid tool for download that has many more features options to create texture atlases with. Including more control over the layout of the sprites/UI images and being able to set up [9 slicing][9-slicing].
+TexturePacker is a paid tool for download that has many more features and options for creating texture atlases. These include more control over the layout of the sprites/UI images and being able to set up [9 slicing][9-slicing].
 
 ![][texture-packer-tool-steps]
 
