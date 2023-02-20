@@ -15,7 +15,7 @@ This has several advantages including:
 
 # Tools
 
-Here are some tools that can be used for texture packing supports PlayCanvas.
+Here are some texture packing tools that are compatible with PlayCanvas.
 
 ## TexturePacker Online (free)
 
