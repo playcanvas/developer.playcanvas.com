@@ -4,21 +4,19 @@ layout: shader-editor-page.hbs
 position: 1
 ---
 
-## What is Shader Editor?
+## Что такое Shader Editor?
 
-__Shader Editor__ is a web-based visual programming tool for creating shader materials and effects.
+__Shader Editor__ - это визуальный инструмент программирования на веб-платформе, предназначенный для создания шейдерных материалов и эффектов.
 
-Instead of writing shader programs directly, in __Shader Editor__ you construct shader graphs. These graphs comprise a network of nodes connected together with edges. __Shader Editor__ will convert a completed graph to the equivalent shader program for use at runtime.
+Вместо непосредственного написания программ шейдеров, в __Shader Editor__  вы строите графы шейдеров. Эти графы представляют собой сеть узлов, соединенных линиями. __Shader Editor__ преобразует завершенный граф в эквивалентную программу шейдера, которую можно использовать во время выполнения.
 
-### Example
+### Пример
 
-For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
-![sample effect][1]
+Например, следующий эффект анимирует несколько карт нормалей поверхности и объединяет их с особенной эффектной подсветкой:![образец эффекта][1]
 
-The effect is made up of various graphs, including the following one. This graph takes care of unpacking the normals in a normal map:
-![sample graph][2]
+Эффект состоит из различных графов, включая следующий, который заботится о распаковке нормалей в карте нормалей :![образец графа][2]
 
-__Shader Editor__ will convert this graph into a shader program, which is executed on a GPU at runtime:
+__Shader Editor__преобразует этот граф в программу шейдера, которая выполняется на GPU во время выполнения:
 
 ```
 void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
@@ -32,7 +30,7 @@ void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
 }
 ```
 
-### Next steps
+### Следующие шаги
 
 Learn more about Shader Editor in general in the [Overview][3] section.
 

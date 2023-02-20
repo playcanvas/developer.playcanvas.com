@@ -4,74 +4,70 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-## What is PlayCanvas?
+## Что такое PlayCanvas?
 
-PlayCanvas is a visual development platform for interactive web content. Both the tools and the web apps you build are powered by HTML5. The platform is web hosted so there's nothing to install and you can access your work from any device that runs one of the supported web browsers.
+PlayCanvas - это визуальная платформа для разработки интерактивного веб-контента. Как инструменты, так и веб-приложения, которые вы создаете, работают на основе HTML5. Платформа находится на веб-хостинге, поэтому вам не нужно устанавливать ничего дополнительного, и вы можете получить доступ к своей работе с любого устройства, на котором работает один из поддерживаемых веб-браузеров.
 
-## The PlayCanvas Workflow
+## Рабочий процесс в PlayCanvas
 
-Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some Javascript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
+Создание 3D-веб-приложений с помощью PlayCanvas очень просто. Для получения наилучшего результата с помощью PlayCanvas вам нужно будет написать некоторый код (в частности, некоторый JavaScript - язык сети). Однако, набор инструментов PlayCanvas разработан таким образом, чтобы позволить вам визуально редактировать ваш проект и публиковать его с невероятной простотой.
 
-
-### Create and upload assets
+### Создание и загрузка ресурсов
 
 ![assets][1]
 
-PlayCanvas supports a wide variety of industry standard asset formats. For example, upload images, 3D models, audio files or custom text or binary file formats.
+PlayCanvas поддерживает широкий спектр стандартных форматов ресурсов. Например, вы можете загружать изображения, 3D-модели, аудиофайлы или пользовательские текстовые или бинарные форматы файлов.
 
-
-### Construct your scene
+### Создание сцены
 
 ![scene][2]
 
-The PlayCanvas Editor is a visual building tool which is used to construct scenes. Build a hierarchy of entities using built in components like 3D models, collision, particle effects and more.
+Редактор PlayCanvas - это визуальный инструмент для создания сцен. Создайте иерархию объектов, используя встроенные компоненты, такие как 3D-модели, коллизии, эффекты частиц и многое другое.
 
-
-### Add interactivity
+### Добавление интерактивности
 
 ![script][3]
 
-Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+С помощью стандартного для сети JavaScript можно добавлять пользовательские функции для взаимодействия с объектами. Добавляйте интерактивность на любом уровне, от простых обработчиков кликов до полноценных многопользовательских онлайн-игр.
 
-
-### Publish your application
+### Публикация приложения
 
 ![publish][4]
 
-When you application is ready for sharing a simple one-click publish will get your application live on the internet hosted by PlayCanvas for free. Alternatively download your application for self-hosting on your own web server.
+Когда ваше приложение готово к публикации, простым нажатием кнопки вы можете опубликовать его в Интернете на серверах PlayCanvas бесплатно. Также вы можете скачать свое приложение для самостоятельного размещения на вашем собственном веб-сервере
 
-## Key Features
+## Ключевые возможности
 
 ### Редактора
 
-The PlayCanvas Editor is a visual editing tool that lets you build scenes, applications and games in record time. Use the Editor to manage your project assets, to add interactivity and to communicate and work with your team. The Editor is collaborative in real-time which means you can immediately see changes made by your team and you can build and test your application across all devices instantly
+Редактор PlayCanvas - это инструмент визуального редактирования, который позволяет создавать сцены, приложения и игры за рекордно короткий период времени. Используйте Редактор для управления ресурсами вашего проекта, добавления интерактивности и коммуникации и работы с вашей командой. Редактор является коллаборативным в реальном времени, что означает, что вы можете немедленно видеть изменения, внесенные вашей командой, и вы можете создавать и тестировать ваше приложение на всех устройствах мгновенно.
 
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" title="PlayCanvas Editor Live Link" allowfullscreen></iframe>
 
-Find out more in the [editor][5] section.
+Узнайте больше в разделе [редактор][5].
 
 ### Ассеты
 
-PlayCanvas is used to create and manage all the assets you need for your interactive web application. PlayCanvas accepts all major 3D file formats, plus upload images, audio and any other asset types you need.
+PlayCanvas используется для создания и управления всеми ресурсами, необходимыми для вашего интерактивного веб-приложения. PlayCanvas принимает все основные форматы файлов 3D, а также загружает изображения, аудио и любые другие типы ресурсов, которые вам нужны.
 
-Find out more in the [assets][6] section.
+Узнайте больше в разделе [ресурсы][6].
 
 ### Публикация
 
-PlayCanvas provides instant and trouble free hosting for your WebGL application with single click. We also support instant download of your complete project ready to host on your own web server.
+PlayCanvas обеспечивает мгновенное и безопасное размещение вашего приложения WebGL с одним щелчком. Мы также поддерживаем мгновенную загрузку вашего полного проекта, готового к размещению на вашем собственном веб-сервере.
 
-Find out more in the [publishing][7] section.
+Узнайте больше в разделе [ресурсы][7].
 
-## Supported Browsers
+## Поддерживаемые браузеры
 
 PlayCanvas изначально задумывался так, чтобы запускаться в браузере без использования каких-либо плагинов. Программный код клиента на 100% состоит из JavaScript и построен на базе HTML5 и связанных API (таких как WebGL). Почему это было важно?
 
-* Mobile/tablet devices do not permit plugin installation and continue to improve support for HTML5.
-* PlayCanvas web apps load seamlessly without a plugin install or plugin load step.
-* PlayCanvas web apps run in a standard [DOM][8] element (a canvas) and you can composite it on the page or transform it via CSS.
-* No dependency on a third-party plugin technology which may change over time. The only dependency is on the browser itself.
+* Мобильные/планшетные устройства не позволяют устанавливать плагины и продолжают улучшать поддержку HTML5.
+* Веб-приложения PlayCanvas загружаются без установки плагина или этапа загрузки плагина.
+* Веб-приложения PlayCanvas работают в стандартном элементе [DOM][8] (холсте), и вы можете комбинировать его на странице или изменять его с помощью CSS.
+* Нет зависимости от сторонней технологии плагина, которая может измениться со временем. Единственной зависимостью является браузер.
 
-At the time of writing, the browser requirements are currently as follows:
+На момент написания, требования к браузеру в настоящее время следующие:
 
 | Browser                                     | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
 |---------------------------------------------|---------|----------|----------|----------|-----------|----------|----------|
@@ -82,7 +78,7 @@ At the time of writing, the browser requirements are currently as follows:
 | Internet Explorer                           | 11.0+   | &#x2713; |          |          |           |          |          |
 | [Opera](https://www.opera.com/)             | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
 
-If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][9]. If you see a spinning cube, you are all set!
+Если вы не уверены, поддерживает ли ваш браузер WebGL (необходимый для запуска PlayCanvas), посетите [эту страницу][9]. Если вы видите вращающийся куб, то все в порядке!
 
 [1]: /images/user-manual/introduction/workflow-assets.jpg
 [2]: /images/user-manual/introduction/workflow-create-scene.jpg
