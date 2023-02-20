@@ -1,5 +1,5 @@
 ---
-title: Physical Materials
+title: Физические материалы
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -36,28 +36,19 @@ The Diffuse Color is the base color of the material. This is an RGB color value.
 
 It can also be known as **albedo** or **base color**.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
 
 You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
 ![Metals][3]
 
-<table class="centered">
-  <tr>
-  <th>Material</th><th>RGB</th>
-  </tr>
-  <tr>
-  <td>Gold</td><td>(1.000, 0.766, 0.336) or [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>Silver</td><td>(0.972, 0.960, 0.915) or [248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>Copper</td><td>(0.955, 0.637, 0.538) or [244, 162, 137]</td>
-  </tr>
-</table>
+| Material | RGB                                      |
+|----------|------------------------------------------|
+| Gold     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
+| Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
+| Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
-## Metalness
+## Metalness
 
 The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
 
@@ -67,13 +58,13 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 
 ## Glossiness
 
 Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
 
 Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
@@ -85,7 +76,7 @@ These three properties **diffuse**, **metalness** and **glossiness** are the cor
 
 There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
 
 [1]: https://store.playcanvas.com
 [2]: /user-manual/glossary#high-dynamic-range
@@ -93,4 +84,3 @@ There are many other additional properties to investigate that can be used to ma
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
-

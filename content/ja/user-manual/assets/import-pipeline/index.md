@@ -1,5 +1,5 @@
 ---
-title: アセットのインポートパイプライン
+title: アセットインポートのパイプライン
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -16,14 +16,14 @@ position: 2
 
 ニーズに合わせてインポートパイプラインの挙動をチューニングするために利用できるオプションが複数あります。
 
-<img src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
-### 検索関連のアセット
+### 関連アセットを検索
 
 新しいバージョンのファイルでソースアセットを更新する際、インポートパイプラインにより作成されるターゲットアセットを更新する方法が二つあります。
 
-***Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
-***Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
+* **Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
+* **Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
 
 つまり、これを有効する場合、ソースとターゲットのアセットをフォルダで整理し、ソースアセットを更新すると、すべての関連アセットが更新されるように設定できます。
 
@@ -31,7 +31,7 @@ position: 2
 
 Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
 
-## Texture Import Settings
+## Texture Import Settings
 
 これらのオプションは、画像やテクスチャのインポートにのみ影響を与えます。
 
@@ -55,15 +55,15 @@ When a model file is updated or reimported, the Editor will try to preserve the 
 
 モデルファイルが更新または再インポートされる際、このオプションは、ターゲットモデルのファイルが上書きされるか否かを定義します。デフォルトでは、新しいモデルで上書きします。
 
-### アニメーションの上書き
+### アニメーションの上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたアニメーションが上書きされるか否かを定義します。デフォルトでは、新しいアニメーションで上書きします。
 
-### 素材の上書き
+### 素材の上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成された素材が上書きされるか否かを定義します。デフォルトでは、既存の素材を維持します。
 
-### テクスチャの上書き
+### テクスチャの上書き
 
 モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたテクスチャが上書きされるか否かを定義します。デフォルトでは、新しいテクスチャで上書きします。
 
@@ -83,4 +83,3 @@ Please refer to the [Animation section][4] for more details.
 [2]: /user-manual/assets/preloading-and-streaming/
 [3]: /user-manual/assets/import-pipeline/import-hierarchy/
 [4]: /user-manual/assets/animation/
-

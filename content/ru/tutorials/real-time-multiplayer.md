@@ -1,11 +1,14 @@
 ---
-title: Real Time Multiplayer
+title: Многопользовательская игра
 layout: tutorial-page.hbs
 tags: multiplayer, networking
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/XFp1Ty3X/" ></iframe>
+<div class="alert alert-info">This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> and <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.</div>
+
+<iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+
 *Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
 
 In this tutorial we’ll cover how to setup a basic multiplayer project using Node.js and Socket.io. We’ll focus on implementing it in PlayCanvas. By the end you should have a project similar to the one above. You can find the [tutorial project here][2].
@@ -40,6 +43,7 @@ To include a package, go to `package.json` and click on the `Add Package` button
 
 ![Adding a package][6]
 
+
 Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
 
 You can find the domain your server is deployed at by clicking in the top left (where it says `thundering-polo` for me). This is where you can also rename the project.
@@ -58,6 +62,7 @@ Find and open 'External Scripts'.
 
 Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
 ![Project settings][14]
+
 
 ```
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
@@ -93,11 +98,11 @@ This will log whatever data is sent to the server when `playerJoined` is emitted
 
 For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
 
-<img src='/images/tutorials/multiplayer/ground_entity.png' width=360px>
+<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360px">
 
 Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
 
-<img src='/images/tutorials/multiplayer/player_entity.png' width=360px>
+<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360px">
 
 Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
 
@@ -284,6 +289,7 @@ Network.prototype.update = function (dt) {
 };
 ```
 
+
 And then declare these new functions inside Network.js:
 
 ```javascript
@@ -336,4 +342,3 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [12]: /images/tutorials/multiplayer/project_settings.png
 [13]: /images/tutorials/multiplayer/external_scripts_settings.png
 [14]: /images/tutorials/multiplayer/added_socket_io_library.png
-

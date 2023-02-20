@@ -17,7 +17,7 @@ GET https://playcanvas.com/api/projects/:projectId/assets?branchId=:branchId
 ## 例
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}"
 ```
 
 HTTP Request
@@ -87,4 +87,3 @@ Status: 200
 このルートは[normal][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-

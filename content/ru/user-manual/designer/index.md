@@ -1,5 +1,5 @@
 ---
-title: Editor
+title: Редактора
 layout: usermanual-page.hbs
 position: 8
 ---
@@ -13,7 +13,7 @@ The PlayCanvas Editor is a visual editing tool which you use to create and edit 
 
 ## Interface
 
-<img alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg" />
+<img loading="lazy" alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg">
 
 This is the main interface to the PlayCanvas Editor. You can see labeled the main areas
 
@@ -28,4 +28,3 @@ This is the main interface to the PlayCanvas Editor. You can see labeled the mai
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#component
 [4]: /user-manual/glossary#asset
-

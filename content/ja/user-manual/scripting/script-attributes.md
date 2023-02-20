@@ -1,14 +1,14 @@
 ---
 title: スクリプト属性
 layout: usermanual-page.hbs
-position: 4
+position: 5
 ---
 
 スクリプトのアトリビュート機能は、スクリプト内で使用する変数をPlayCanvasエディタ内で編集することができるようにする便利な機能です。この機能を使うことで、一度コードを書いた後にエンティティごと作られるインスタンスにそれぞれ違うパラメータを設定する調整ができるようになります。これにより、アーティスト、デザイナーやその他のプログラマーではないチームメンバーがコードを書かずに値を変更できるにプロパティを露出させることができます。
 
-## スクリプトのアトリビュートを宣言する
+## スクリプトの属性を宣言する
 
-スクリプトのアトリビュートは、スクリプトの先頭で以下のフォーマットにしたがって宣言します:
+スクリプトの属性は、スクリプトの先頭で以下のフォーマットで宣言します:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -19,7 +19,7 @@ MyScript.attributes.add('speed', {
 });
 ```
 
-この例では、`speed`プロパティをデフォルト値`80`を持つ`number`(数値)として宣言しています:
+この例では、`speed`プロパティをデフォルト値`80`を持つ`number`として宣言しています:
 
 If you need an array of attributes set `array: true` like so:
 
@@ -32,11 +32,11 @@ MyScript.attributes.add('names', {
 });
 ```
 
-## アトリビュートをエディタ上で使う
+## 属性をエディタ上で使う
 
-<img src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;"/>
+<img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-属性を宣言したらEditorは、スクリプトの属性を露出させるためにコードをパースする必要があります。属性が変更された場合は、手動で属性を更新する必要があります。パースボタンをクリックすることができます <img src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" />。
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;"> button.
 
 ## コードで属性にアクセス
 
@@ -66,7 +66,7 @@ MyScript.prototype.initialize = function () {
 }
 ```
 
-## 属性のタイプ
+## 属性のタイプ
 
 属性を宣言する際、属性のタイプも宣言します。これにより、Editorは属性を編集するための関連コントロールを表示できるようになります。'boolean', 'number', 'string'のように、ほとんどのタイプは単純です。しかし、いくつかは、以下の例のように説明を必要とします。詳細については、[完全な属性の参照][1]を参照してください。
 
@@ -77,6 +77,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 ```
 
 エンティティタイプにより、階層で他のエンティティを参照することができます。二つのエンティティをリンクする良い方法です。
+
 
 ### アセットの属性
 
@@ -174,4 +175,3 @@ MyScript.prototype.update = function (dt) {
 *NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
 [1]: /api/pc.ScriptAttributes.html
-

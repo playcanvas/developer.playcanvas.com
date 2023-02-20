@@ -50,8 +50,8 @@ PlayCanvas applications are created with a set of default layers. You should lea
 
 ![Default Layers][1]
 
-1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
-1. **Depth (Opaque)** - The depth layer is for advanced users only.
+1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
+1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][7].
 1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
 1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
 1. **Immediate (Opaque)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
@@ -62,7 +62,7 @@ PlayCanvas applications are created with a set of default layers. You should lea
 
 The default layers are great for implementing the existing engine features but the real power comes from creating your own layers to customize the order in which your content is rendered.
 
-### Create a layer
+### Create a layer
 
 Layers are controlled from the **LAYERS** panel in the **Settings** section of the Editor.
 
@@ -76,7 +76,7 @@ In the Layers section, type in the name of the layer that you wish to create and
 
 You can choose the sort mode for each sub-layer in the layer list. Expand your layer and choose the sort mode from the dropdown menu.
 
-### Choosing the layer order
+### Choosing the layer order
 
 ![Add layer][4]
 
@@ -94,7 +94,7 @@ Components that render meshes all have a `layers` property which is used to dete
 
 Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
 
-A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture.
+A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture. 
 
 When you add an additional camera, these are the recommended steps:
 1. Set the priority of new and existing cameras to control the order in which they render.
@@ -107,4 +107,4 @@ When you add an additional camera, these are the recommended steps:
 [4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
 [5]: /images/user-manual/graphics/layers/test-layer-components.jpg
 [6]: /images/user-manual/graphics/layers/camera-layers.jpg
-
+[7]: /user-manual/graphics/cameras/depth-layer

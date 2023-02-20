@@ -1,5 +1,5 @@
 ---
-title: Главная
+title: Дом
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -8,5 +8,4 @@ position: 1
 
 ![home_page][1]
 
-[1]: /images/platform/home.png "Главная"
-
+[1]: /images/platform/home.png "Home"

@@ -1,11 +1,11 @@
 ---
-title: 光晕
+title: 光晕效果
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/rnIUbXws/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
 
 更多的细节可以参考[完整的工程][4]。
 
@@ -15,7 +15,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 ## 资源
 
-### 贴图
+### Texture
 
 首先，你需要一个光环纹理。 在这个例子中，我们使用了一个非常简单的模糊滤镜文理，它是在像Photoshop这样的艺术程序中创建的。
 
@@ -23,11 +23,13 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 这种纹理将形成辉光的基础。
 
-### 材质
+### Material
 
-![材质][2]
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
 
-光晕的材料使用光线槽中的斑点纹理。 使用 **着色** 属性设置光环的颜色。 我们还在不透明度插槽中启用了混合。 这项被设置为**Additive Alpha**。**Additive** 部分意味着材料的颜色被添加到其下面的背景颜色。 这意味着光晕发光也能够影响背景。**Alpha**部分意味着它使用`不透明度'的值来设置材质的透明度。
+The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
+
+The **Blend Type** is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
 
 ## 实体
 
@@ -123,8 +125,7 @@ Halo.prototype.update = function(dt) {
 这就是全部。 一个简单但漂亮的效果已经被添加到你的场景了。 有关更多信息，请参阅[工程项目][4]。
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
-[2]: /images/tutorials/intermediate/light-halos/material.jpg
+[2]: /images/tutorials/intermediate/light-halos/material.png
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
 [5]: /api/pc.MeshInstance.html
-

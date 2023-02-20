@@ -1,11 +1,11 @@
 ---
-title: 力和冲量
+title: 力与冲量
 layout: tutorial-page.hbs
 tags: physics, collision
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/8LTSuf4F/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses"></iframe>
 
 *使用按键来表示冲量，使用WASD键应用扭矩并旋转立方体。 按住F可应用恒定的向上力以消除重力效应
 *按R重置立方体*
@@ -15,9 +15,9 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 在本教程中，我们将向您展示如何使用力来控制动态刚体并生成上述演示的内容。 我们将简要地显示力，冲量，扭矩的使用和刚体组件UI的使用以定制行为。
 
-## 力度脚本
+## Scripting Forces
 
-### 施加一个恒定的力
+### Applying a Constant Force
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_F) ) {
@@ -27,7 +27,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 
 Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
 
-### 冲量
+### Impulses
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
@@ -37,7 +37,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 
 立方体被赋予x轴的冲量以通过[`applyImpulse(x, y, z)`][2]给出速度的瞬时变化。
 
-### 扭矩
+### Torques
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_W) ) {
@@ -47,7 +47,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 
 [扭矩](https://en.wikipedia.org/wiki/Torque) (旋转力) 通过 [`applyTorque(x, y, z)`][3]施加到实体上。
 
-### 扭矩冲量
+### TorqueImpulses
 
 ```javascript
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
@@ -55,7 +55,7 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 角速度的瞬时变化通过[`applyTorqueImpulse(x, y, z)`][4]来表示。 这在上面的演示的代码中没有被使用。
 
-## 移动动态刚体
+## Moving dynamic rigidbodies
 
 为了移动刚体，使用上述方法应用线性力和旋转力(扭矩)。 通常你应该尽量避免直接修改刚体的位置或速度，因为这将会变得不真实，它可能导致奇怪的效果，特别是当物体之间产生碰撞时。
 
@@ -63,17 +63,17 @@ this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 
 有关刚体类型的更多信息，请参见[碰撞体API页面][6]，[pc命名空间页][7]，[fps控制器教程][8]和[碰撞教程][9]。
 
-## 常用设置
+## General setup
 
 我们使用聚光灯，立方体(具有模型，刚体，碰撞和脚本组件的实体)和地板(具有模型，刚体和碰撞组件)来设置基本场景。 立方体的刚体设置为动态，而地板的刚体设置为静态。 我们为每个盒子创建了一些材料，并改变漫反射的颜色只是为了更容易在眼睛。 我们还在SpotLight和DynamicBody实体上激活了“投射阴影”选项。 这个PlayCanvas应用程序'usesForces'的完整的场景和代码可以在[这里][10]找到。
 
-## 限制和控制
+## Limiting and control
 
 一些编辑器设置被设置为防止不平衡力的持续应用(并且同时防止物体因不断加速而失去控制)。 我们在立方体的属性编辑器上启用了角度阻尼以及在立方体和地板上的摩擦。 这里不使用线性阻尼，但是它可以用于模拟空气阻力，当然可以根据需要通过代码应用减速。
 
-<img src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings"/>
+<img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings">
 
-## 传送一个物体
+## Teleporting a Body
 
 要立即将物体传送到新位置的话，您不能使用来自pc.Entity API的setPosition函数。 这是因为物理引擎仍然会认为身体在旧的位置。 相反，你必须使用刚体组件的teleport函数：
 
@@ -92,7 +92,7 @@ if (this.playerPos.x > 9.0) {
 
 如果立方体在x方向上移动超出可视区域，则调用传送功能，立方体实体在屏幕上传送。 实体被传送到离远点不太远的左/右位置，以便不连续激活`if()` 语句。
 
-## 重置立方体的代码
+## Reset cube code
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_R)) {
@@ -109,7 +109,8 @@ reset: function () {
 
 我们采用了使立方体回到其原始位置的复位功能，并且如上所述，将刚体的位置与传送的实体的位置同步。 复位功能中的最后两行将物体的线速度和角速度也复位为零。 对象的方向也可以重置，但不在此代码中执行。
 
-## 整段代码
+
+## Full code listing
 
 ```javascript
 var DynamicBody = pc.createScript('dynamicBody');
@@ -192,4 +193,3 @@ DynamicBody.prototype.reset = function () {
 [8]: /tutorials/first-person-movement/
 [9]: /tutorials/collision-and-triggers/
 [10]: https://playcanvas.com/project/405828/overview/tutorial-forces--impulses
-

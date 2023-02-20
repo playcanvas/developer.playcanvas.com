@@ -44,8 +44,9 @@ CubeMapは6面で構成され、各面は立方体の正方形の面を表しま
 ## IBLの適用
 
 これには2つの方法があります：
+
 1. CubeMapをシーン設定のSkyboxとして使用します。
-2.素材の環境マップとしてCubeMapを直接使用します。
+2. 素材の環境マップとしてCubeMapを直接使用します。
 
 ## ボックスのプロジェクションマッピング
 
@@ -57,15 +58,16 @@ CubeMapは6面で構成され、各面は立方体の正方形の面を表しま
 
 CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト][8]です。窓に映る木の床の反射と天井に映る僅かな反射や、右の壁の金属のPlayCanvasロゴに映る部屋の反射をご確認ください。これは動的なエフェクトであり、非常に現実的な反射を作成し、アーティストが部屋の環境をどのように映し出すか制御することを可能にします。
 
-[![環境ボックスプロジェクションマッピング][5]][7]
-*このシーンのライティングは、ライトマップとAOテクスチャとボックス投影IBL(反射)*を使用して実装されます
+[![Environment Box Projection Mapping][5]][7]
+
+*このシーンのライティングはライトマップとAOテクスチャとBox投影IBL(反射)を使用して実装されています*
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction
 [2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
 [3]: /user-manual/assets/cubemaps/
 [4]: /images/user-manual/graphics/physical-rendering/cubemap-box-projection.png
-[5]: /images/user-manual/lighting/lightmaps/playcanvas-lightmapping-scene.jpg
+[5]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg
 [6]: http://www.hdrlabs.com/sibl/archive.html
 [7]: https://playcanv.as/p/zdkARz26/
 [8]: https://playcanvas.com/project/446587/overview/archviz-example
@@ -74,4 +76,3 @@ CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト]
 [11]: https://www.openfootage.net/?tag=hdri
 [12]: https://www.pauldebevec.com/Probes/
 [13]: /images/user-manual/graphics/physical-rendering/cubemap-faces.jpg
-

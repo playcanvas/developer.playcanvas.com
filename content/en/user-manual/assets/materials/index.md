@@ -18,7 +18,7 @@ Materials are imported automatically when you upload a 3D model (e.g. FBX or COL
 
 You can create new materials directly from the PlayCanvas Editor interface.
 
-<img loading="lazy" src="/images/user-manual/assets/materials/create-asset-menu.jpg" style="width: 300px;">
+<img loading="lazy" src="/images/user-manual/assets/materials/create-asset-menu.jpg" width="300">
 
 This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
 

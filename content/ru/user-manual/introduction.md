@@ -6,100 +6,86 @@ position: 1
 
 ## Что такое PlayCanvas?
 
-PlayCanvas is a visual development platform for interactive web content. Both the tools and the web apps you build are powered by HTML5. The platform is web hosted so there's nothing to install and you can access your work from any device that runs one of the supported web browsers.
+PlayCanvas - это визуальная платформа для разработки интерактивного веб-контента. Как инструменты, так и веб-приложения, которые вы создаете, работают на основе HTML5. Платформа находится на веб-хостинге, поэтому вам не нужно устанавливать ничего дополнительного, и вы можете получить доступ к своей работе с любого устройства, на котором работает один из поддерживаемых веб-браузеров.
 
-## Процесс работы в PlayCanvas
+## Рабочий процесс в PlayCanvas
 
-Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some Javascript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
+Создание 3D-веб-приложений с помощью PlayCanvas очень просто. Для получения наилучшего результата с помощью PlayCanvas вам нужно будет написать некоторый код (в частности, некоторый JavaScript - язык сети). Однако, набор инструментов PlayCanvas разработан таким образом, чтобы позволить вам визуально редактировать ваш проект и публиковать его с невероятной простотой.
 
-### Create and upload assets
+### Создание и загрузка ресурсов
 
-![assets][4]
+![assets][1]
 
-PlayCanvas supports a wide variety of industry standard asset formats. For example, upload images, 3D models, audio files or custom text or binary file formats.
+PlayCanvas поддерживает широкий спектр стандартных форматов ресурсов. Например, вы можете загружать изображения, 3D-модели, аудиофайлы или пользовательские текстовые или бинарные форматы файлов.
 
-### Construct your scene
+### Создание сцены
 
-![scene][5]
+![scene][2]
 
-The PlayCanvas Editor is a visual building tool which is used to construct scenes. Build a hierarchy of entities using built in components like 3D models, collision, particle effects and more.
+Редактор PlayCanvas - это визуальный инструмент для создания сцен. Создайте иерархию объектов, используя встроенные компоненты, такие как 3D-модели, коллизии, эффекты частиц и многое другое.
 
-### Add interactivity
+### Добавление интерактивности
 
-![script][6]
+![script][3]
 
-Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
+С помощью стандартного для сети JavaScript можно добавлять пользовательские функции для взаимодействия с объектами. Добавляйте интерактивность на любом уровне, от простых обработчиков кликов до полноценных многопользовательских онлайн-игр.
 
-### Publish your application
+### Публикация приложения
 
-![publish][7]
+![publish][4]
 
-When you application is ready for sharing a simple one-click publish will get your application live on the internet hosted by PlayCanvas for free. Alternatively download your application for self-hosting on your own web server.
+Когда ваше приложение готово к публикации, простым нажатием кнопки вы можете опубликовать его в Интернете на серверах PlayCanvas бесплатно. Также вы можете скачать свое приложение для самостоятельного размещения на вашем собственном веб-сервере
 
-## Key Features
+## Ключевые возможности
 
-### Editor
+### Редактора
 
-The PlayCanvas Editor is a visual editing tool that lets you build scenes, applications and games in record time. Use the Editor to manage your project assets, to add interactivity and to communicate and work with your team. The Editor is collaborative in real-time which means you can immediately see changes made by your team and you can build and test your application across all devices instantly
+Редактор PlayCanvas - это инструмент визуального редактирования, который позволяет создавать сцены, приложения и игры за рекордно короткий период времени. Используйте Редактор для управления ресурсами вашего проекта, добавления интерактивности и коммуникации и работы с вашей командой. Редактор является коллаборативным в реальном времени, что означает, что вы можете немедленно видеть изменения, внесенные вашей командой, и вы можете создавать и тестировать ваше приложение на всех устройствах мгновенно.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" title="PlayCanvas Editor Live Link" allowfullscreen></iframe>
 
-Find out more in the [editor][8] section.
+Узнайте больше в разделе [редактор][5].
 
-### Assets
+### Ассеты
 
-PlayCanvas is used to create and manage all the assets you need for your interactive web application. PlayCanvas accepts all major 3D file formats, plus upload images, audio and any other asset types you need.
+PlayCanvas используется для создания и управления всеми ресурсами, необходимыми для вашего интерактивного веб-приложения. PlayCanvas принимает все основные форматы файлов 3D, а также загружает изображения, аудио и любые другие типы ресурсов, которые вам нужны.
 
-Find out more in the [assets][9] section.
+Узнайте больше в разделе [ресурсы][6].
 
-### Publishing
+### Публикация
 
-PlayCanvas provides instant and trouble free hosting for your WebGL application with single click. We also support instant download of your complete project ready to host on your own web server.
+PlayCanvas обеспечивает мгновенное и безопасное размещение вашего приложения WebGL с одним щелчком. Мы также поддерживаем мгновенную загрузку вашего полного проекта, готового к размещению на вашем собственном веб-сервере.
 
-Ознакомьтесь с деталями в секции [публикации][1].
+Узнайте больше в разделе [ресурсы][7].
 
 ## Поддерживаемые браузеры
 
 PlayCanvas изначально задумывался так, чтобы запускаться в браузере без использования каких-либо плагинов. Программный код клиента на 100% состоит из JavaScript и построен на базе HTML5 и связанных API (таких как WebGL). Почему это было важно?
 
-* Мобильные телефоны и планшеты не позволяют установку плагинов, а поддержка HTML5 в них все лучше и лучше.
-* Веб-приложения, написанные на PlayCanvas, запускаются без необходимости установки или загрузки плагина.
-* Веб-приложения, написанные на PlayCanvas, запускаются внутри стандартного [DOM][2]-элемента (canvas), так что вы можете разместить их на странице и трансформировать при помощи CSS.
-* Отсутствие зависимости на стороннюю технологию плагина, которая может измениться со временем. Единственная зависимость — сам браузер.
+* Мобильные/планшетные устройства не позволяют устанавливать плагины и продолжают улучшать поддержку HTML5.
+* Веб-приложения PlayCanvas загружаются без установки плагина или этапа загрузки плагина.
+* Веб-приложения PlayCanvas работают в стандартном элементе [DOM][8] (холсте), и вы можете комбинировать его на странице или изменять его с помощью CSS.
+* Нет зависимости от сторонней технологии плагина, которая может измениться со временем. Единственной зависимостью является браузер.
 
-At the time of writing, the browser requirements are currently as follows:
+На момент написания, требования к браузеру в настоящее время следующие:
 
-<table class="table table-striped table-bordered">
-    <tr><th>Browser</th><th>Version</th><th>Win</th><th>MacOS X</th><th>Linux</th><th>Chrome OS</th><th>Android</th><th>iOS</th></tr>
-    <tr><td style="text-align:center"><a href="https://www.google.com/chrome/">Chrome</a></td><td style="text-align:center">9.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.mozilla.org/firefox/">Firefox</a></td><td style="text-align:center">4.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">IE</a></td><td style="text-align:center">11.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.microsoft.com/edge">Edge</a></td><td style="text-align:center">12.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.apple.com/safari/">Safari</a></td><td style="text-align:center">8.0+</td>
-        <td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td>
-    </tr>
-    <tr><td style="text-align:center"><a href="https://www.opera.com/">Opera</a></td><td style="text-align:center">12.0+</td>
-        <td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td><td style="text-align:center">&#x2713;</td><td style="text-align:center"></td>
-    </tr>
-</table>
+| Browser                                     | Version | Win      | macOS    | Linux    | Chrome OS | Android  | iOS      |
+|---------------------------------------------|---------|----------|----------|----------|-----------|----------|----------|
+| [Chrome](https://www.google.com/chrome/)    | 9.0+    | &#x2713; | &#x2713; | &#x2713; | &#x2713;  | &#x2713; | &#x2713; |
+| [Safari](https://www.apple.com/safari/)     | 8.0+    |          | &#x2713; |          |           |          | &#x2713; |
+| [Firefox](https://www.mozilla.org/firefox/) | 4.0+    | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; | &#x2713; |
+| [Edge](https://www.microsoft.com/edge)      | 12.0+   | &#x2713; |          |          |           |          |          |
+| Internet Explorer                           | 11.0+   | &#x2713; |          |          |           |          |          |
+| [Opera](https://www.opera.com/)             | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
 
-Если вы сомневаетесь поддерживает ли ваш браузер WebGL (технология, необходимая для запуска PlayCanvas), посетите [эту страницу][3]. Если вы видите вращающийся куб — у вас все настроено!
+Если вы не уверены, поддерживает ли ваш браузер WebGL (необходимый для запуска PlayCanvas), посетите [эту страницу][9]. Если вы видите вращающийся куб, то все в порядке!
 
-[1]: /user-manual/publishing
-[2]: /user-manual/glossary/#dom
-[3]: https://get.webgl.org/
-[4]: /images/user-manual/introduction/workflow-assets.jpg
-[5]: /images/user-manual/introduction/workflow-create-scene.jpg
-[6]: /images/user-manual/introduction/workflow-script.jpg
-[7]: /images/user-manual/introduction/workflow-publish.jpg
-[8]: /user-manual/designer
-[9]: /user-manual/assets
-
+[1]: /images/user-manual/introduction/workflow-assets.jpg
+[2]: /images/user-manual/introduction/workflow-create-scene.jpg
+[3]: /images/user-manual/introduction/workflow-script.jpg
+[4]: /images/user-manual/introduction/workflow-publish.jpg
+[5]: /user-manual/designer
+[6]: /user-manual/assets
+[7]: /user-manual/publishing
+[8]: /user-manual/glossary/#dom
+[9]: https://get.webgl.org/

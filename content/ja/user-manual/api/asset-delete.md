@@ -17,7 +17,7 @@ Permanently delete an asset from a branch of your project. **Warning** deleting 
 ## 例
 
 ```none
-curl -H "Authorization: Bearer {accessToken}" -X DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
+curl -H "Authorization: Bearer {accessToken}" -X DELETE "https://playcanvas.com/api/assets/{assetId}?branchId={branchId}"
 ```
 
 HTTP Request
@@ -54,4 +54,3 @@ Status: 200
 このルートは[normal][1]なレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting
-

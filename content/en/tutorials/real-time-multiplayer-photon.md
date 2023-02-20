@@ -15,7 +15,7 @@ Photon (also known as PUN) is used in many games and has a JavaScript SDK availa
 
 Photon is for free for projects with up to 20 online players (CCU).
 
-### In this tutorial, you will learn
+### You will learn
 
 - How to add Photon SDK to PlayCanvas
 - Multiplayer implementation with Photon
@@ -34,13 +34,13 @@ Account registration is required to use the SDK and view documentation.
 
 Create your Photon account [here][4] - (Photon Engine).
 
-### 1. Create a new app
+### Create a new app
 
 Click **CREATE NEW APP** from the dashboard
 
 ![Create New Application][5]
 
-### 2. Select Photon Type and Application name.
+### Select Photon Type and Application name.
 
 Enter the following
 
@@ -49,7 +49,7 @@ Enter the following
 
 ![Create Real Time Project][6]
 
-### 3. Copy of AppID
+### Copy of AppID
 
 Please make a note of this AppId, as you will need it in the future.
 
@@ -59,19 +59,19 @@ Please make a note of this AppId, as you will need it in the future.
 
 Download the SDK from the dashboard.
 
-### 1. Click SDK from the dashboard
+### Click SDK from the dashboard
 
 ![SDK][8]
 
-### 2. Select RealTime JavaScript
+### Select RealTime JavaScript
 
 ![JavaScript SDK][9]
 
-### 3. Click Download SDK
+### Click Download SDK
 
 ![Download SDK][10]
 
-### 4. Unzip the SDK
+### Unzip the SDK
 
 ![Unzip SDK][11]
 
@@ -81,13 +81,13 @@ The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_vX-X-
 
 Import the SDK you have just downloaded into the PlayCanvas editor.
 
-### 1. Upload the SDK on the editor
+### Upload the SDK on the editor
 
 ![Upload SDK][12]
 
 Drag and drop the SDK to the assets in the editor.
 
-### 2. Change Loading Type "Asset" to "Before Engine"
+### Change Loading Type "Asset" to "Before Engine"
 
 ![Change Loading Type][13]
 
@@ -104,7 +104,7 @@ The [API reference][14] and [glossary][15] are available on Photon's site.
 
 ## Using Photon with PlayCanvas
 
-### 1. Instantiate classes from PlayCanvas to use Photon
+### Instantiate classes from PlayCanvas to use Photon
 
 Create a script asset named **photon-loadbalancing-playcanvas.js** to the project to initialize Photon.
 
@@ -149,13 +149,13 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 - **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
 
 
-### 2. Set Script for Root entity
+### Set Script for Root entity
 
 Create a new script asset **photon-loadbalancing-playcanvas.js** and attach it to the Root entity in the Editor.
 
 ![Root Entity - Inspector][16]
 
-### 3. Paste AppId into the script attribute.
+### Paste AppId into the script attribute.
 
 Enter AppId as a script attribute.
 
@@ -169,9 +169,9 @@ this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.ws
 - **appId** The application identifier value.
 - **appVersion** Used for versioning. Different versions cannot be connected to each other.
 
-## Connect to Photon's master server
+## Connect to the Photon master server
 
-### 1. Connect to the master server using `connectToRegionMaster`
+### Connect to the master server using `connectToRegionMaster`
 
 ```javascript
 PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
@@ -328,7 +328,7 @@ Player.prototype.update = function (dt) {
 
 Use **raiseEvent** and **onEvent** to synchronize the player's location.
 
-### 1. Position synchronisation using **raiseEvent**.
+### Position synchronization using **raiseEvent**.
 
 ```javascript
 const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
@@ -445,7 +445,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onEvent = function (code, content, actor
 - **raiseEvent(eventCode,data, options)** send `eventCode` and `data`.
 - **onEvent(code, content, actorNr)** receive data. Includes `actorNr` and `eventCode`.
 
-### 2. Changed to fire events when player moves
+### Changed to fire events when player moves
 
 ```javascript
 const Player = pc.createScript("player");

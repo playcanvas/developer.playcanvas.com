@@ -75,4 +75,3 @@ The Opacity property allows you to set the transparency of the string
 [9]: /images/user-manual/user-interface/text-element/tinted.png
 [10]: /images/user-manual/user-interface/text-element/transparent.png
 [11]: /user-manual/user-interface/localization
-

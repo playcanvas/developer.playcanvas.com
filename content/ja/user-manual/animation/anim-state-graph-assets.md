@@ -28,25 +28,11 @@ There are four types of states present in state graphs. Animation states, along 
 
 Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
 
-<table class="table table-striped">
-    <tbody>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-        </tr>
-    <tr>
-        <td>Name</td>
-        <td>The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer.</td>
-    </tr>
-    <tr>
-        <td>Speed</td>
-        <td>The playback speed for animations that are linked to this state.</td>
-    </tr>
-    <tr>
-        <td>Loop</td>
-        <td>Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited.</td>
-    </tr>
-</tbody></table>
+| 変数 | 説明 |
+|----------|-------------|
+| Name     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
+| Speed    | The playback speed for animations that are linked to this state. |
+| Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
 
 ### START state
 
@@ -80,33 +66,16 @@ By setting the variables of a given transition you can also control how the anim
 
 The available transition variables are:
 
-<table class="table table-striped">
-    <tbody>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-        </tr>
-    <tr>
-        <td>Duration</td>
-        <td>The duration of the animation in seconds.</td>
-    </tr>
-    <tr>
-        <td>Exit Time</td>
-        <td>If provided, this transition will only be active for the exact frame during which the source states progress passes the time specified. Given as a normalized value of the source state's duration. Values less than 1 will be checked every animation loop.</td>
-    </tr>
-    <tr>
-        <td>Offset</td>
-        <td>If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destination state's duration. Must be between 0 and 1.</td>
-    </tr>
-    <tr>
-        <td>Interruption Source</td>
-        <td>Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so.</td>
-    </tr>
-</tbody></table>
+| 変数            | 説明 |
+|---------------------|-------------|
+| Duration            | The duration of the transition in seconds. |
+| Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state's duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
+| Offset              | If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destination state's duration. Must be between 0 and 1. |
+| Interruption Source | Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so. |
 
 It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
 
-### Parameters
+### パラメータ
 
 The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
 
@@ -116,25 +85,11 @@ New parameters can be added to a state graph via the parameters panel on the lef
 
 Each parameter has three variables which can be set:
 
-<table class="table table-striped">
-    <tbody>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-        </tr>
-    <tr>
-        <td>Name</td>
-        <td>The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph.</td>
-    </tr>
-    <tr>
-        <td>Type</td>
-        <td>The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition.</td>
-    </tr>
-    <tr>
-        <td>Default Value</td>
-        <td>The value of the parameters variable when the state graph launches.</td>
-    </tr>
-</tbody></table>
+| 変数      | 説明 |
+|---------------|-------------|
+| Name          | The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph. |
+| Type          | The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition. |
+| Default Value | The value of the parameters variable when the state graph launches. |
 
 The way in which they control the state graph is through the use of transition conditions. Each transition in the graph can have a list of conditions which define when a transition is usable by the system. A state will not be able to pass to another state through a given transition unless all of its conditions are met.
 
@@ -194,4 +149,3 @@ Any layers that are set to `Overwrite` will completely replace the animation val
 [10]: /images/user-manual/anim/end_state.png
 [11]: /images/user-manual/anim/anim_layer_blend.png
 [anim-layer-masking]: /user-manual/animation/anim-layer-masking
-

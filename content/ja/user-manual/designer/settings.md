@@ -6,9 +6,9 @@ position: 7
 
 設定パネルでは、さまざまなプロパティを設定できます。Editor([ツールバー][1]の)の左下の「cog」ボタンを使用してアクセスします。
 
-<img src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
+<img loading="lazy" src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
 
-## Editor
+## エディタ
 
 これらは、Editorのユーザによる設定です。
 
@@ -63,7 +63,7 @@ have enabled Localization for Text Elements and when you use Localized Assets.
 
 補足：SkyboxとPhysical Materials（物理素材）を使用している場合、アンビエントカラーは効果がありません。
 
-#### Skybox
+#### Skybox
 
 Skyboxは、3Dシーンの裏でレンダリングされる[キューブマップ][3]アセットです。これにより、6つの2D画像を使用して、シーンの3Dモデルの先の遠くの世界を表示することができます。
 
@@ -79,7 +79,7 @@ Skyboxは、3Dシーンの裏でレンダリングされる[キューブマッ�
 
 プレフィルタリングされたスカイボックスを使用している場合、表示したいスカイボックスのmipを選択することができます。各MIPは、元のスカイボックスのよりぼやけたものです。アーティスティックな理由等で、元のスカイボックスのぼやけた/抽象的なバージョンを表示させたい場合に使用します。
 
-#### トーンマッピング
+#### トーンマッピング
 
 トーンマッピングは、ハイダイナミックレンジ(HDR)の色を低ダイナミックレンジ(例：目に見えるモニタ出力値に)に圧縮する方法です。トーンマッピングには2つのオプションがあります。
 
@@ -108,9 +108,9 @@ Filmicトーンマッピングは、インテリア内の明るい光が壁/天�
 
 利用可能なタイプ：
 
-*None - 霧が無効になっています
-*Linear - 霧はFog StartとFog End距離の間で直線的にフェードインします
-*Exp - 霧は指数関数に応じて視点位置からフェードインします
+* None - 霧が無効になっています
+* Linear - 霧はFog StartとFog End距離の間で直線的にフェードインします
+* Exp - 霧は指数関数に応じて視点位置からフェードインします
 * Exp2 - 霧は指数乗の関数に応じて視点位置からフェードインします
 
 #### 色
@@ -160,7 +160,7 @@ WebGLのコンテキストを作成する際にpreserveDrawingBufferオプショ
 
 Manage rendering layers and their render order. You can find out more about layers [here][10].
 
-## オーディオ
+## オーディオ
 
 #### レガシオーディオを使用
 
@@ -168,19 +168,59 @@ Manage rendering layers and their render order. You can find out more about laye
 
 ## ライトマッピング
 
-#### サイズ乗数
+![Lightmapping Settings][12]
+
+#### サイズ乗数
 
 すべてのライトマップのサイズに適用されるシーン全体の乗算。
 
-#### 最高解像度
+#### 最高解像度
 
 生成されたライトマップテクスチャで利用可能な最大テクスチャサイズ。
+
+#### Mode
+
+Scene-wide mode for lightmap baking, with the following options:
+- **Color Only** – Bakes a single lightmap containing HDR colors.
+- **Color and Direction** – Bakes a second lightmap containing the dominant light direction, allowing for specular lighting. The Color and Direction mode is not compatible with [Soft Directional Light][13] or [Environment Light][14] baking.
+
+#### Filter
+
+Enables bilateral filter on [Runtime Baked Lightmaps][15].
+
+#### Range
+
+A range parameter of the bilateral filter. Larger values apply more widespread blur.
+
+#### Smoothness
+
+A spatial parameter of the bilateral filter. Larger values blur colors that are less similar.
+
+#### Ambient Bake
+
+Enables baking of [Environment Light][14].
+
+#### Samples
+
+The number of samples that are used to bake the ambient light into the lightmap.
+
+#### Sphere Part
+
+The amount of the sphere that is used to bake environment light.
+
+#### Occlusion Brightness
+
+The brightness of the baked ambient occlusion.
+
+#### Occlusion Contrast
+
+The contrast of the baked ambient occlusion.
 
 ## Batch Groups
 
 Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
 
-ロード画面（ORGのユーザーのみ利用可能）
+## ロード画面（ORGのユーザーのみ利用可能）
 
 ここでは、アプリケーションの読み込み画面を作成するスクリプトを設定することができます。新しい読み込み画面のスクリプトを作成するには、*Create Default*をクリックします。カスタムの読み込み画面の詳細は[こちら][6]。
 
@@ -192,15 +232,15 @@ Here you can specify the URLs of external scripts you would like to include in y
 
 Here you can enable or disable various input devices for your application.
 
-## Localization
+## ローカライゼーション
 
 Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
 
 You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
 
-Read more about localization [here][11].
+ローカライゼーションについての詳細は[こちら][11]をご覧ください。
 
-## アセットタスク
+## アセットのタスク
 
 #### Auto-run
 
@@ -245,4 +285,8 @@ When a new image is uploaded it will be created as a Texture Atlas instead of a 
 [9]: /user-manual/optimization/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
+[12]: /images/user-manual/editor/settings/lightmapping-settings.png
+[13]: /user-manual/graphics/lighting/runtime-lightmaps/#soft-directional-light
+[14]: /user-manual/graphics/lighting/runtime-lightmaps/#baking-an-environment-light
+[15]: /user-manual/graphics/lighting/runtime-lightmaps
 

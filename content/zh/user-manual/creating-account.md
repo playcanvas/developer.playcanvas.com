@@ -1,10 +1,10 @@
 ---
-title: Creating an Account
+title: 创建帐户
 layout: usermanual-page.hbs
 position: 3
 ---
 
-## 注册
+## Sign Up
 
 为了开始使用PlayCanvas，你需要创建一个新的帐户，所以第一步是在首页上的任何地方点击注册。
 
@@ -20,17 +20,15 @@ position: 3
 
 当您创建帐户时，我们将为您自动创建一个新的演示项目，以便您首先浏览[PlayCanvas Editor][4]。 随时跳转到您的[profile][5]页面开始创建自己的项目。
 
-## 登陆
+## Logging In
 
 要登录您的帐户，请单击首页上的登录。 如果您已经登录，将自动转到您的[个人资料][5]页面。 如果您使用电子邮件和密码注册，请确保在登录页面中输入这些字段。 否则，如果您已使用Google登录，请点击Google。
 
-![登陆][7]
+![login][6]
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
 [4]: /user-manual/designer/
 [5]: /user-manual/profile/
-[6]: https://login.playcanvas.com/persona_deprecated
-[7]: /images/user-manual/creating-account/login.png
-
+[6]: /images/user-manual/creating-account/login.png

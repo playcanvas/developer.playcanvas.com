@@ -1,11 +1,11 @@
 ---
-title: 一人称カメラを使った操作と移動
+title: ファーストパーソンの動作
 layout: tutorial-page.hbs
 tags: input, camera
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/HzOzlZOC/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
 
 ここでは一人称視点でキャラクターを移動させるアプリケーションを紹介します。
 
@@ -114,7 +114,7 @@ FirstPersonMovement.prototype.update = function(dt) {
     }
 
     // use direction from keypresses to apply a force to the character
-    if (x !== 0 && z !== 0) {
+    if (x !== 0 || z !== 0) {
         force.set(x, 0, z).normalize().scale(this.power);
         this.entity.rigidbody.applyForce(force);
     }
@@ -145,4 +145,3 @@ FirstPersonMovement.prototype._createCamera = function () {
 [1]: https://playcanvas.com/project/405842
 [2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg
 [3]: /api/pc.RigidBodyComponent.html#applyForce
-

@@ -57,6 +57,7 @@ With a value of 1 the decrease in vertical resolution makes the button too small
 ![Scale Blend 0.5][9]
 With a value of 0.5 the two changes are balanced and the button stays the same size
 
+
 [1]: /user-manual/packs/components/screen
 [2]: /images/user-manual/user-interface/screens/screen-space-viewport.png
 [3]: /images/user-manual/user-interface/screens/world-space-viewport.png

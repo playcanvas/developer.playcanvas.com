@@ -1,11 +1,11 @@
 ---
-title: Making a Simple Game - Part 3
+title: Создание простой игры - Часть 3
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 3"></iframe>
 
 *You can find the [full project here][4]. If you haven't see [Part 1][1] and [Part 2][2] read them first.*
 
@@ -233,7 +233,7 @@ For touch events we take the first touch and pass through the screen co-ordinate
 
 On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same coordinate system. This is not the case with normal browser events!
 
-### Taps
+### Taps
 
 `_onTap()` takes a screen co-ordinate (x, y) works out if this has "hit" the ball and if so tells the ball code that it has been tapped.
 
@@ -246,6 +246,7 @@ In detail, this function takes the screen co-ordinates (x, y) and asks the camer
 We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparatively slow) operation and will cause your game or application to stutter if it happens often.
 
 In most cases, PlayCanvas will provide an option to pass in vector or similar option so that you can pre-allocate and re-use objects.
+
 
 ```javascript
 // get the distance of the touch/click to the ball
@@ -267,4 +268,3 @@ If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball scri
 [2]: /tutorials/keepyup-part-two/
 [3]: /tutorials/keepyup-part-four/
 [4]: https://playcanvas.com/project/406050
-

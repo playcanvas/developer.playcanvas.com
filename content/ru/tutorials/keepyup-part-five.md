@@ -1,23 +1,24 @@
 ---
-title: Making a Simple Game - Part 5
+title: Создание простой игры - Часть 5
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 5"></iframe>
 
 *You can find the [full project here][9]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3] and [Part 4][4] read them first.*
 
 ## Audio & Particles
 
-### Audio
+### Аудио
 
 Audio is a critical part of your game. It will provide valuable feedback to the player that their inputs are having and effect, plus it can create mood and atmosphere.
 
 The Keepy Up game has 3 audio effects: A background music track, a tap sound when you hit the ball and the sad trombone sting when you lose. Each of them is handled slightly differently.
 
-#### Music & Sting
+
+#### Music & Sting
 
 The music and sting are handle in a similar way. The main difference is that the music is set to loop. The `game.js` we have a script attribute which links the game script to the Entity with our sound component and we simply play and stop the correct slot.
 
@@ -34,7 +35,7 @@ The ball tap sound is attached directly to the ball Entity. It's a short, non-lo
 this.entity.sound.play("bounce");
 ```
 
-### Particles
+### Частицы
 
 ![Particles][7]
 
@@ -63,4 +64,3 @@ Continue on to [Part 6][6].
 [7]: /images/tutorials/beginner/keepyup-part-five/particle-bounce.gif
 [8]: /images/tutorials/beginner/keepyup-part-five/particle-velocity-curves.jpg
 [9]: https://playcanvas.com/project/406050
-

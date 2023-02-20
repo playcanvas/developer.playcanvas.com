@@ -1,5 +1,5 @@
 ---
-title: Scripting
+title: Написание сценариев
 layout: usermanual-page.hbs
 position: 11
 ---
@@ -32,4 +32,3 @@ Lets define a few pieces of terminology.
 * ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
 [1]: /user-manual/packs/components/script/
-

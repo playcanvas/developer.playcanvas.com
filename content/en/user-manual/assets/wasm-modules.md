@@ -7,6 +7,7 @@ position: 17
 Wasm Modules (also known was WebAssembly Modules) contain compiled executable code for the web.
 
 A Wasm module comprises three parts:
+
 * the binary executable file
 * the JavaScript glue code file
 * an optional fallback asm.js

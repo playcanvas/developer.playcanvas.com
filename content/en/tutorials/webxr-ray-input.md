@@ -34,7 +34,6 @@ In this project, we have `xr.js` which is added to the Root entity. It manages V
 
 To read more about the direct PlayCanvas API for WebXR, please refer to the [User Manual][2].
 
-
 ## XR Input Types
 
 The level of fidelity for input devices can be broken into the following groups (DOF == Degrees of Freedom):

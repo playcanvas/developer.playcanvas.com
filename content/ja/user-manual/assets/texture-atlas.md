@@ -1,5 +1,5 @@
 ---
-title: Texture Atlas
+title: テクスチャ アトラス
 layout: usermanual-page.hbs
 position: 16
 ---
@@ -34,4 +34,3 @@ position: 16
 [2]: /user-manual/assets/textures
 [3]: /user-manual/designer/settings#create-atlases
 [4]: /user-manual/assets/sprites
-

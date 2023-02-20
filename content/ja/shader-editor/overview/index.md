@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: 概要
 layout: shader-editor-page.hbs
 position: 1.1
 ---
@@ -16,4 +16,3 @@ In this section you can also read more about [File Handling][5] and some notes o
 [4]: /shader-editor/overview/textures
 [5]: /shader-editor/overview/file-handling
 [6]: /shader-editor/overview/workflow
-

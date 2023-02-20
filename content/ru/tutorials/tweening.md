@@ -2,7 +2,7 @@
 title: Using the Tween library
 layout: tutorial-page.hbs
 tags: animation, scripts
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg"
 ---
 
 Often we want to animate an Entity or some arbitrary value between two points. This is called tweening. We have created a tweening library for that exact purpose. You can find the library at [https://github.com/playcanvas/playcanvas-tween][1].
@@ -15,7 +15,7 @@ entity.tween(entity.getLocalPosition()).to({x: 10, y: 0, z: 0}, 1, pc.SineOut);
 
 Here is an example on how to tween the local position of an Entity:
 
-<iframe src="https://playcanv.as/b/wEftzstB/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Using the Tween library"></iframe>
 
 Here are links to the [Project][2] and the [Editor][3] for this example.
 
@@ -32,7 +32,7 @@ this.entity
 
 Here is an example on how to tween the local rotation of an Entity:
 
-<iframe src="https://playcanv.as/b/H8553dGa/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/b/H8553dGa/" title="Tween Local Rotation"></iframe>
 
 Here are links to the [Project][2] and the [Editor][4] for this example.
 
@@ -40,7 +40,7 @@ To get the above we can do:
 
 ```javascript
 this.entity
-    .tween(this.entity.getLocalRotation())
+    .tween(this.entity.getLocalEulerAngles())
     .rotate(new pc.Vec3(180, 0, 180), 1.0, pc.Linear)
     .loop(true)
     .yoyo(true)
@@ -49,7 +49,7 @@ this.entity
 
 Here's how to tween the local scale of an Entity:
 
-<iframe src="https://playcanv.as/b/ndTiHCpD/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/b/ndTiHCpD/" title="Tween Local Scale"></iframe>
 
 Here are links to the [Project][2] and the [Editor][5] for this example.
 
@@ -66,7 +66,7 @@ this.entity
 
 And finally here's a way to tween colors:
 
-<iframe src="https://playcanv.as/b/aoRYsYrc/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/b/aoRYsYrc/" title="Tween Material Color"></iframe>
 
 Here are links to the [Project][2] and the [Editor][6] for this example.
 
@@ -95,4 +95,3 @@ Again you can find the library at [https://github.com/playcanvas/playcanvas-twee
 [4]: https://playcanvas.com/editor/scene/491558
 [5]: https://playcanvas.com/editor/scene/491585
 [6]: https://playcanvas.com/editor/scene/491559
-

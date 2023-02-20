@@ -10,7 +10,7 @@ Descriptions of each light type and light source shape are below and examples of
 
 ## Light Types
 
-PlayCanvasには3種類のライトがあります：
+PlayCanvasには3つの種類のライトがあります：
 
 * Directional lights
 * Omni lights
@@ -18,13 +18,13 @@ PlayCanvasには3種類のライトがあります：
 
 ### 指向性ライト
 
-最も身近な光源は太陽です。太陽は地球から非常に遠いので、地球の表面に当たる光は単一方向を向くよう近似することができます。PlayCanvasでは、このタイプのライトソースをDirectional（指向性）ライトと呼びます。
+最も身近な光源は太陽です。太陽は地球から非常に遠いので、地球の表面に当たる光は単一方向を向くよう近似することができます。PlayCanvasでは、このタイプの光源を指向性ライトと呼びます。
 
-選択されていない場合、指向性ライトはエディタの3Dビュー内で次のアイコンで表されます。
+選択していない場合、指向性ライトはエディタの3Dビュー内で次のアイコンで表されます。
 
 ![指向性ライトアイコン][1]
 
-階層パネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
+HierarchyパネルとInspectorパネルでライトを選択するには、このアイコンをクリックします。
 
 指向性ライトは次のようにオブジェクトを照らします：
 
@@ -38,7 +38,7 @@ When unselected, a omni light is represented by the following icon in the Editor
 
 ![Omni light icon][3]
 
-階層パネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
+HierarchyパネルとInspectorパネルでライトを選択するには、このアイコンをクリックします。
 
 An omni light lights an object like this:
 
@@ -48,11 +48,11 @@ An omni light lights an object like this:
 
 Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
 
-選択されていない場合、スポットライトはエディタの3Dビュー内で次のアイコンで表されます。
+選択していない場合、スポットライトはエディタの3Dビュー内で次のアイコンで表されます
 
 ![スポットライトアイコン][5]
 
-階層パネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
+HierarchyパネルとInspectorパネルでライトを選択するには、このアイコンをクリックします。
 
 スポットライトは次のようにオブジェクトを照らします：
 
@@ -108,4 +108,3 @@ Light sources with Rectangle, Disk and Sphere shapes do cost more to render than
 [5]: /images/user-manual/graphics/lighting/lights/spot_icon.jpg
 [6]: /images/user-manual/graphics/lighting/lights/spot.jpg
 [7]: /images/user-manual/graphics/lighting/lights/shapes.jpg
-

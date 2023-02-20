@@ -3,7 +3,7 @@ title: Create a shape like a box, sphere etc.
 keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, primitive
 ---
 
-## How do I create a shape like a box, sphere etc?
+## How do I create a shape like a box or sphere?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_box.gif">
 

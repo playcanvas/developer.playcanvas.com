@@ -1,11 +1,11 @@
 ---
-title: 控制灯光
+title: 灯光管理
 layout: tutorial-page.hbs
 tags: lighting
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/tiKpka9M/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
 
 *按下1, 2 或 3 来分别使射灯、点光源和直射光启动/关闭。*
 
@@ -13,7 +13,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 同样重要的是注意不同的光的特性有不同限制，例如红色，绿色和蓝色值被设置在0和1之间，但是强度可以是从0到10。 同样的有些灯光还有他们独有的属性，比如聚光灯的夹角。
 
-## 照明命令
+## The lighting commands
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
@@ -45,9 +45,9 @@ this.spot.light.intensity = 10*s;
     使用 `entity.light.color.r` 来赋值或改变灯光的红色值的做法并不会生效。只有灯光的 `color` 值的改变能被监听到, 因此你必须为要修改的属性分配一个 `pc.Color`的值，比如像是`entity.light.color = new pc.Color(1, 1, 1);`。
 </div>
 
-## 常用设置
+## General setup
 
-除了为每个新场景创建的默认定向光之外，我们添加了聚光灯(附加到基本火炬模型的母组件)，附加到父球体模型的点光源。 控制脚本附加到根实体。 球和火炬是一个空白实体的孩子并被设置在场景的中心进行旋转。 在'controllingLights' 场景中的[完整的编辑器场景和脚本可以在这里访问][2]。
+We added a spot light (attached to a parent assembly of a basic torch model), an omni light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
 
 The full code used for the above PlayCanvas app is as follows.
 
@@ -124,4 +124,3 @@ LightHandler.prototype.pivot = function () {
 
 [1]: /api/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
-

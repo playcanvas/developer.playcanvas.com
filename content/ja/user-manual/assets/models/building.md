@@ -1,5 +1,5 @@
 ---
-title: Building Models
+title: モデルの構築
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -27,7 +27,7 @@ PlayCanvasは相互変換のためのFBXフォーマットから最も正確に�
 
 どのようなモデリングアプリケーションを使っているかにかかわらず、PlayCanvasで使用する3Dシーンを作成する際に注意しておくべきことがいくつかあります。
 
-*メッシュは256のボーンにまでスキンすることができます。
+* メッシュは256のボーンにまでスキンすることができます。
 * NURBSメッシュはPlayCanvasネイティブフォーマットへの変換時に三角形に変換されます。
 
 ---
@@ -44,7 +44,7 @@ BlenderはCOLLADAとFBXのエクスポートの両方に対応しています。
 
 Blender 2.71の場合、素材の拡散と通常のマップの両方は、FBXファイルにエクスポートされます。他のマップタイプがエクスポート時に失われた場合は、これらのマップをエディタ内のマテリアルエディタでセットアップする必要があります。
 
-### **テクスチャの埋め込み**
+### **テクスチャの埋め込み**
 
 埋め込みテクスチャによってインポートが簡単になります。
 
@@ -158,4 +158,3 @@ Mayaを使う場合には、lambert, blinnあるいはphongの標準マテリア
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
 [10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
 [11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
-

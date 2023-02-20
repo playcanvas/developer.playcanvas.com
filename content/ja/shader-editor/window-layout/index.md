@@ -24,4 +24,3 @@ Shader Editor comprises a number of sub-windows or panes. The panes are highligh
 [5]: /shader-editor/window-layout/assets-pane
 [6]: /shader-editor/window-layout/graph-editor
 [7]: /shader-editor/window-layout/preview-pane
-

@@ -16,7 +16,7 @@ There are some limitations to be aware of with the tool which can be found in th
 
 The [Cube Jump project][5] is ready to be exported to the Snapchat Playable Ad format and the expected HTML output can be found [here][6].
 
-<iframe src="https://playcanv.as/e/p/X1nwbUGA/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
 
 ## File size tips
 
@@ -66,11 +66,11 @@ To test the ad on a device, we can use the Android app [Creative Preview][creati
 
 Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
 
-<img src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/ngrok.png" width="600px">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/ngrok.png" width="600px">
 
 Once this is setup, open Creative Preview app and create a new 'Display' ad with the following settings:
 
-<img src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/creative-preview.png" width="300px">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/creative-preview.png" width="300px">
 
 ### Export for Snapchat
 
@@ -92,6 +92,7 @@ When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN 
 
 The ZIP can then be given to your Snapchat representative to upload to the ad network.
 
+
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/
 [5]: https://playcanvas.com/project/796932/overview/cube-jump-snapchat-ad
@@ -102,4 +103,3 @@ The ZIP can then be given to your Snapchat representative to upload to the ad ne
 [creative-preview]: https://play.google.com/store/apps/details?id=com.google.android.apps.audition&hl=en_GB&gl=US
 [host-locally]: /user-manual/publishing/web/self-hosting/#running-a-downloaded-build
 [ngrok]: https://ngrok.com/
-

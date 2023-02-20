@@ -1,17 +1,17 @@
 ---
-title: ユーザインターフェイス - 統計カウンタ
+title: ユーザインターフェイス - 統計カウンター
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/XVLr9TWc/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
 
 *ボタンやプログレスバーの使い方と要素とインタラクトする方法。[フルシーン][1]を参照してください。*
 
-このチュートリアルでは組み込みの[Element][2]を使用して、プラス/マイナスボタンをクリックすることで統計を増やす簡単なウィジェットを作成します。
+このチュートリアルでは組み込みの[Element][2]を使用して、プラス/マイナスボタンをクリックすることでカウンターを増やす簡単なウィジェットを作成します。
 
-各統計には、マイナスボタン、プラスボタン、プログレスバー、現在の統計値を表示するテキストが必要です。
+各カウンターには、マイナスボタン、プラスボタン、プログレスバー、現在のカウントを表示するテキストが必要です。
 
 ## 階層
 
@@ -25,17 +25,17 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/5019
 
 ![スクリーン][5]
 
-2Dのスクリーンなので、スクリーンスペースをチェックしました。リファレンス解像度は、目標とする解像度です。この場合は1080 x 1920です。ScaleモードのBlendを選択して、画面が解像度の変更に適応するようにし、Scale Blendを1に設定して、画面が高さの変化のみに適応するようにします。 
+2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
 
 ## 統計の設定
 
-各統計用に異なるGroup Elementを作成します。これにより、グループのサブ要素をグループの端に固定することができ、各統計を個別のウィジェットとして扱うことができます。
+各カウンター用に異なるGroup Elementを作成します。これにより、グループのサブ要素をグループの端に固定することができ、各カウンターを個別のウィジェットとして扱うことができます。
 
-Boost統計のみを調べます - 他は全く同じです。`stats-boost`エンティティはビューポートで次のように表示されます：
+Boostカウンターを開きます - 他のエンティティも同じ構成です。`stats-boost`エンティティはビューポートで次のように表示されます：
 
 ![ブースト][6]
 
-その属性は以下です：
+`stats-boost`のインスペクター：
 
 ![ブーストの属性][7]
 
@@ -84,7 +84,7 @@ UiStats.prototype.initialize = function() {
     }, this);
 };
 
-// 統計値を設定
+// カウンターの値を設定
 UiStats.prototype.setValue = function (value) {
     // minとmaxの間をクランプ
     this.value = pc.math.clamp(value, 0, 10);
@@ -95,7 +95,7 @@ UiStats.prototype.setValue = function (value) {
 };
 ```
 
-このスクリプトでは子要素を見つけ、プラスまたはマイナスのボタンをクリックすることで統計を増減し、プログレスバーとそのテキストを更新します。
+このスクリプトでは子要素を見つけ、プラスまたはマイナスのボタンをクリックすることでカウントを増減し、プログレスバーとそのテキストを更新します。
 
 [1]: https://playcanvas.com/editor/scene/547905
 [2]: /user-manual/user-interface/elements/
@@ -107,4 +107,3 @@ UiStats.prototype.setValue = function (value) {
 [8]: /images/tutorials/ui/stats/boost-hierarchy.png
 [9]: /tutorials/ui-elements-buttons/
 [10]: /tutorials/ui-elements-progress/
-

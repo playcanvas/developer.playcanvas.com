@@ -14,4 +14,3 @@ position: 5
 
 [1]: /images/user-manual/profile/profile.png
 [2]: /images/user-manual/profile/update-profile-image.jpg
-

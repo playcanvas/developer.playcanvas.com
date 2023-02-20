@@ -38,4 +38,3 @@ Click on the Process Font button after you make changes to the Font asset in ord
 
 [1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/font.png
-

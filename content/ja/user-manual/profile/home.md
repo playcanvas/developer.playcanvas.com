@@ -8,5 +8,4 @@ position: 1
 
 ![home_page][1]
 
-[1]: /images/platform/home.png "ホーム"
-
+[1]: /images/platform/home.png "Home"

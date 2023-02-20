@@ -1,11 +1,11 @@
 ---
-title: シンプルなゲームを作る - その4
+title: シンプルなゲームの作成 - パート4
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 4"></iframe>
 
 * [完成されたプロジェクトはこちら][6]です。先に[その1][1], [その2][2], [その3][3]を読んでください。*
 
@@ -159,7 +159,7 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### スクリプトのアトリビュート
+### スクリプト属性
 
 スクリプトの先頭には、定義したスクリプト属性のセットがあります。スクリプトの属性を定義することで、エディタにスクリプトから値を公開することができます。これを行う理由は3つあります。
 
@@ -238,4 +238,3 @@ this.entity.setLocalPosition(p);
 [4]: /tutorials/keepyup-part-five/
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
-

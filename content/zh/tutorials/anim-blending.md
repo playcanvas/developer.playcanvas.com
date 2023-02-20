@@ -1,15 +1,16 @@
 ---
 title: Anim State Graph Blending
 layout: tutorial-page.hbs
-tags: animation
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
+tags: animation,basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/HI8kniOx/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
 
 *点击屏幕进行对焦，然后按'p'键变化到一个拳击动画。*
 
-This tutorial illustrates the basics of animation blending.
+本教程介绍了动画混合的基本知识。
+
 Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.
 Let's examine how this is achieved via PlayCanvas...
 
@@ -78,15 +79,12 @@ KeyboardControls.prototype.initialize = function() {
     this.app.keyboard.on(pc.EVENT_KEYUP, this.keyUp, this);
 };
 
-
-KeyboardControls.prototype.keyDown = function (e) {
-    if ((e.key === pc.KEY_P) && (this.entity.anim.baseLayer.activeState !== 'Punch')) {
+KeyboardControls.prototype.update = function(dt) {
+    if (this.app.keyboard.wasPressed(pc.KEY_P) && (this.entity.anim.baseLayer.activeState !== 'Punch')) {
         this.entity.anim.setBoolean('punch', true);
     }
-};
 
-KeyboardControls.prototype.keyUp = function (e) {
-    if ((e.key === pc.KEY_P) && (this.entity.anim.baseLayer.activeState === 'Punch')) {
+    if (this.app.keyboard.wasReleased(pc.KEY_P) && (this.entity.anim.baseLayer.activeState === 'Punch')) {
         this.entity.anim.setBoolean('punch', false);
     }
 };
@@ -105,4 +103,3 @@ See the full Scene [here](https://playcanvas.com/editor/scene/1065029)
 [7]: /images/tutorials/anim_blending/new_anim_component.png
 [8]: /images/tutorials/anim_blending/complete_anim_component.png
 [9]: /images/tutorials/anim_blending/keyboard_input.png
-

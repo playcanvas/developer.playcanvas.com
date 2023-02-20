@@ -1,15 +1,15 @@
 ---
-title: 基础材质
+title: 材质入门
 layout: tutorial-page.hbs
-tags: material
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
+tags: material,basics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg"
 ---
 
 材料是定义3D模型的表面的外观的东西。 最简单的举例，一个材质设置了多边形的颜色，在其最复杂的情况下，一种材料可以模拟海洋的表面或光通过玻璃的效果。
 
 在本教程中，我们会逐步讲解如何创建一个材质，如何把它附给一个形状，以及如何编辑材质的各项属性。首先我们来创建一个新的空场景。
 
-## 第 1 步 - 在你的场景中添加一个方块
+## Step 1 - Add a cube to your scene
 
 选择场景中的根实体。在场景初建成时它会被称作位"Root"。在属性编辑器中将实体重命名使其有意义，如“材质教程”。
 
@@ -17,7 +17,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 ![新的立方体][1]
 
-## 第2步 - 创建一个新的材质
+## Step 2 - Create a new Material
 
 直接从PlayCanvas编辑器界面创建新材料。 在资源面板中，使用+按钮打开“新建资源”菜单，然后选择材质。
 
@@ -25,11 +25,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 这将创建一个新的材质资源，并在屏幕的右侧显示材质编辑器。 在材质编辑器中将材料重命名为"Box Material"。
 
-## 第3步 - 把材质赋给立方体
+## Step 3 - Assign the material to the cube
 
 当您在编辑器中创建新的多维数据集时，它没有被分配任何材料，并且将使用默认材质进行渲染。 要将新材质分配到场景中的模型，只需将模型从资源面板拖动到视口中，并将其拖放到要分配给它的模型。
 
-## 第 4 步 - 改变材质的颜色
+## Step 4 - Change the color of the material
 
 为了改变材质的颜色，我们需要编辑材质的 *默认*属性。
 
@@ -39,14 +39,14 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 
 您必须在右面板中的材质编辑器中展开“漫反射”设置面板。 单击颜色属性以编辑材料的漫反射颜色。
 
-## 优化 - 向材质添加贴图
+## Bonus - Add textures to the material
 
 能够改变材质的颜色是一个很好的开始，但是你会很快地想拥有更多的细节而不是单纯的颜色。这就是贴图所存在的意义。
 
 下载& 保存这些样板贴图:
 
-<a href="/downloads/proto_orange.png"><img style="float:left;" src="/downloads/proto_orange.png" width="128px"/></a>
-<a href="/downloads/proto_gray_n.png"><img style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px"/></a>
+<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" width="128px" alt="Sample diffuse map texture"></a>
+<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px" alt="Sample normal map texture"></a>
 
 然后通过将文件拖动到编辑器中将它们上传到您的项目。
 
@@ -66,4 +66,3 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/
 [4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
 [5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
 [6]: /user-manual/graphics/physical-rendering/physical-materials/
-

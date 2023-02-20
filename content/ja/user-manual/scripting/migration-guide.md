@@ -1,7 +1,7 @@
 ---
 title: Migration Guide
 layout: usermanual-page.hbs
-position: 10
+position: 11
 ---
 
 ## Migrating Legacy Script Projects
@@ -57,7 +57,7 @@ pc.script.create('myScript', function (app) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
         },
-        
+
         // Called every frame, dt is time in seconds since last update
         update: function (dt) {
         }
@@ -138,7 +138,7 @@ if (entities.length) {
     editor.call('selector:set', 'entity', entities);
 } else {
     editor.call('selector:clear');
-}  
+}
 ```
 
 You should see something like the following:
@@ -164,4 +164,3 @@ You should now be done with the migration.
 [5]: /images/user-manual/scripting/migration-guide/download-scripts.png
 [6]: /images/user-manual/scripting/migration-guide/select-script-entities.png
 [7]: /images/user-manual/scripting/migration-guide/delete-script-components.png
-

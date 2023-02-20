@@ -1,17 +1,19 @@
 ---
-title: Entity Picking
+title: Выбор сущностей
 layout: tutorial-page.hbs
-tags: raycast
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg
+tags: raycast,basics,physics
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg"
 ---
 
 Collision Picking - click to select a shape
-<iframe src="https://playcanv.as/b/Ps1tTzWn/"></iframe>
+
+<iframe loading="lazy" src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking"></iframe>
 
 ---
 
 Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
-<iframe src="https://playcanv.as/b/ZQVQqgGU/"></iframe>
+
+<iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
 
 ---
 
@@ -39,15 +41,15 @@ PickerRaycast.prototype.onSelect = function (e) {
     var from = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.nearClip);
     var to = this.entity.camera.screenToWorld(e.x, e.y, this.entity.camera.farClip);
 
-    this.app.systems.rigidbody.raycastFirst(from, to, function (result) {
+    var result = this.app.systems.rigidbody.raycastFirst(from, to);
+    if (result) {
         var pickedEntity = result.entity;
-
         pickedEntity.script.pulse.pulse();
-    });
+    }
 };
 ```
 
-## Frame Buffer Picking
+## Frame Buffer Picking
 
 Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method.
 
@@ -143,4 +145,3 @@ PickerFramebuffer.prototype.onSelect = function (event) {
 [1]: https://playcanvas.com/project/405856
 [2]: /api/pc.RigidBodyComponentSystem.html#raycastFirst
 [3]: /api/pc.Picker.html
-

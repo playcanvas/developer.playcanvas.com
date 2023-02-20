@@ -15,4 +15,3 @@ Here you will find:
 [1]: /shader-editor/introduction
 [2]: /shader-editor/window-layout
 [3]: /shader-editor/workflow
-

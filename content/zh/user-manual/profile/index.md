@@ -1,5 +1,5 @@
 ---
-title: 信息页
+title: 信息
 layout: usermanual-page.hbs
 position: 5
 ---
@@ -14,4 +14,3 @@ position: 5
 
 [1]: /images/user-manual/profile/profile.png
 [2]: /images/user-manual/profile/update-profile-image.jpg
-

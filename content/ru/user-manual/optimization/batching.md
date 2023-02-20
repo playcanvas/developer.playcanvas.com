@@ -84,6 +84,7 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 * **Batch** - An engine object created at runtime which is the set of mesh instances that are rendered in a single draw call. A batch group may result in multiple batches depending on the properties of the mesh instances that are added to the batch group.
 * **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][8].
 
+
 [1]: /images/user-manual/optimization/batching/batch-groups.jpg
 [2]: /images/user-manual/optimization/batching/model-component.jpg
 [3]: /images/user-manual/optimization/batching/western-scene.jpg
@@ -94,4 +95,3 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 [8]: /api/pc.BatchManager.html
 [9]: /user-manual/packs/components/sprite
 [10]: /user-manual/packs/components/element
-

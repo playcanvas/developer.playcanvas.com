@@ -1,5 +1,5 @@
 ---
-title: Apps - Get project apps
+title: Приложения - получить проекты приложений
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -73,5 +73,5 @@ Status: 200
 
 This route uses a [normal][1] rate limit.
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

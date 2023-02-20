@@ -30,11 +30,11 @@ More commonly used is the perspective projection. It more closely mimics how our
 
 By default, a camera will render to the full width and height of its render target. However, there are circumstances where you might want to change this behavior. For example, perhaps you are writing a game that has a local multiplayer mode that requires split-screen rendering to show each player's viewpoint.
 
-For 2-player horizontal splitscreen, you would create two cameras and configure their viewports as follows:
+For 2-player horizontal split screen, you would create two cameras and configure their viewports as follows:
 
 ![Horizontal splitscreen][5]
 
-And for vertical splitscreen, you would configure the viewports as follows:
+And for vertical split screen, you would configure the viewports as follows:
 
 ![Vertical splitscreen][6]
 

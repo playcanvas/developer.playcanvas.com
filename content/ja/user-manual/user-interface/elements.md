@@ -62,4 +62,3 @@ Elementの主な使用事例は、ユーザーインターフェースScreenコ�
 [4]: /images/user-manual/user-interface/elements/split-anchor.png
 [5]: /images/user-manual/user-interface/elements/gizmo-resize.png
 [6]: /images/user-manual/user-interface/elements/gizmo-resize-viewport.png
-

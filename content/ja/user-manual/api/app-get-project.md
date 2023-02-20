@@ -1,5 +1,5 @@
 ---
-title: Apps - プロジェクトappを取得
+title: Apps - プロジェクトappの取得
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -73,5 +73,5 @@ Status: 200
 
 このルートは[normal][1]なレート制限を使用します。
 
-[1]: /user-manual/api#rate-limiting
 
+[1]: /user-manual/api#rate-limiting

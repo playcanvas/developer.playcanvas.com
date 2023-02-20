@@ -1,14 +1,14 @@
 ---
 title: 调试
 layout: usermanual-page.hbs
-position: 8
+position: 9
 ---
 
 为了使PlayCanvas创建脚本，用户了解如何使用浏览器的开发工具是十分重要的。
 
 Chrome, Firefox以及其它的浏览器都直接集成开发者工具到浏览器中。用户可以通过在windows中按F12键或者在Mac系统中按ALT-CMD-I组合对其进行访问，或者使用浏览器的目录对开发者工具进行访问。
 
-### 调试脚本
+### Debugging Scripts
 
 为了调试脚本，在开发者工具（Chrome）中选择来源标签。通过点击在资源面板左上角的图标来打开”导航器”。用户可以看到如下界面：
 
@@ -18,7 +18,7 @@ Chrome, Firefox以及其它的浏览器都直接集成开发者工具到浏览�
 
 ![Firefox][2]
 
-导航器列出了当前在活动标签页中运行的所有脚本，包括所有用户编写的PlayCanvas脚本。在导航器中找到一个需要查看的脚本，点击可以查看脚本的源代码，现在用户就可以对代码进行断点和调试了。
+导航器列出当前在活动选项卡中运行的所有脚本，包括您编写的任何PlayCanvas脚本。 在导航器中查找您的一个脚本，并选择它来打开源代码。 您现在可以设置断点和调试。
 
 浏览器上有详细说明如何调试JavaScript。用户可以通过以下页面进行了解：[Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
@@ -39,13 +39,12 @@ In the situation where either it's not possible to connect to the web view direc
 
 [1]: /images/user-manual/scripting/debugging/chrome-debugger.jpg
 [2]: /images/user-manual/scripting/debugging/firefox-debugger.jpg
-[3]: https://developers.google.com/web/tools/chrome-devtools/javascript
+[3]: https://developer.chrome.com/docs/devtools/javascript/
 [4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
 [5]: https://developer.apple.com/safari/tools/
-[6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/debugger
+[6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/javascript/reference
 [7]: https://developer.chrome.com/docs/devtools/remote-debugging/
 [8]: https://webkit.org/web-inspector/enabling-web-inspector/
 [9]: https://remotejs.com/
 [10]: https://github.com/Tencent/vConsole
 [11]: https://github.com/liriliri/eruda
-
