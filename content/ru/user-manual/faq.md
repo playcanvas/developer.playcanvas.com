@@ -1,201 +1,201 @@
 ---
-title: Common Questions
+title: Часто задаваемые вопросы
 layout: usermanual-page.hbs
 position: 25
 ---
 
 
 
-## How do I add a component?
+## Как добавить компонент?
 
-Чтобы добавить **компонент** к сущности, выберите сущность и нажмите **Добавить компонент** в **Инспекторе**. Также, вы можете кликнуть по сущности правой кнопкой мыши и выбрать пункт "Добавить компонент" в контекстном меню.
+Чтобы добавить **компонент** в Entity, выберите Entity, затем щелкните **Add Component** в **Inspector** или щелкните правой кнопкой мыши на Entity и выберите компонент из контекстного меню Add Component.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/packs/components/)
 
 
-## How do I add a script?
+## Как добавить скрипт?
 
 <img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif">
 
-Вы можете использовать JavaScript чтобы контролировать поведение сущностей. Добавьте компонент скрипта или создайте новый.
+Вы можете использовать JavaScript для управления поведением Entity. Выберите любую Entity, добавьте компонент скрипта и создайте новый скриптовый ассет.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/)
-
-
-
-## How do I change the background color?
-
-Чтобы изменить фоновый цвет вашей сцены, вам необходимо изменить свойство "Clear Color" в настройках камеры.
-
-You could also try and adding a [skybox](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/) to your scene.
-
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/camera/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/)
 
 
 
-## How do I change the material of a model?
+## Как изменить цвет фона?
+
+Чтобы изменить цвет фона вашей сцены, вы должны обновить свойство Clear Color камеры в вашей сцене.
+
+Вы также можете попробовать добавить [skybox](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/) в вашу сцену.
+
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/packs/components/camera/)
+
+
+
+## Как изменить материал модели?
 
 <img src="https://playcanvas.com/static-assets/instructions/change_material.gif">
 
-Каждая поверхность в 3D-модели рендерится используя **материал**. Материал определяет свойства модели, такие как цвет, отражение, рельефность и другие.
+Каждая поверхность 3D-модели отображается с использованием **материала**. Материал определяет свойства этой поверхности, такие как цвет, блеск, рельефность и т. д.
 
-Вы можете создать новый материал и перетащить его на вашу модель или выбрать существующий материал и изменить его свойства в Инспекторе
+Вы можете создать новый материал и перетащить его на вашу модель, или вы можете выбрать существующие материалы и изменять их свойства в Inspector.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 
 
 
-## How do I create a cubemap?
+## Как создать cubemap?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif">
 
-Кубическая текстура - особый тип текстуры. Она состоит из шести текстур, каждая из которых представляет собой сторону куба.
+Cubemaps - это специальный тип ассета текстуры. Они формируются из 6 ассетов текстур, где каждая текстура представляет грань куба.
 
-To create a cubemap click on the **<span class="pc-icon">&#57632;</span> Add** button in the Assets panel and select **New Cubemap**. Then drag 6 textures in the cubemap inspector. To take advantage of Physically Based Rendering make sure you click **Prefilter** after setting the 6 textures.
+Чтобы создать cubemap, нажмите кнопку **<span class="pc-icon">&#57632;</span> Add** в панели Assets и выберите **New Cubemap**. Затем перетащите 6 текстур в инспектор кубмапа. Чтобы воспользоваться физически правильной отрисовкой, убедитесь, что вы нажали **Prefilter** после установки 6 текстур.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/)
 
 
 
-## How do I create an Entity?
+## Как создать Entity?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_entity.gif">
 
-You can create a new Entity by clicking on the <span class="pc-icon">&#57632;</span> Add button in the Hierarchy panel or right click on an Entity and use the **New Entity** menu item.
+Вы можете создать новый Entity, нажав на кнопку <span class="pc-icon">&#57632;</span> Add в панели Hierarchy или щелкнув правой кнопкой мыши на Entity и используя пункт меню **New Entity**.
 
 
 
-## How do I create a light?
+## Как создать источник света?
 
-You can create a light by adding a **Light** component to an Entity. You can also right click on an Entity and select New Entity / Directional Light to create a new directional light and similarly for spot lights and omni lights.
+Вы можете создать источник света, добавив к Entity компонент **Light**. Вы также можете щелкнуть правой кнопкой мыши на Entity и выбрать New Entity / Directional Light  для создания нового направленного света.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/light/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/packs/components/light/)
 
 
-## How do I create a material?
+## Как создать материал?
 
 Каждая поверхность в 3D-модели рендерится используя **материал**. Материал определяет свойства модели, такие как цвет, отражение, рельефность и другие.
 
-To create a material click on the **<span class="pc-icon">&#57632;</span> Add** button in the Assets panel and then select **New Material**.
+Чтобы добавить новый материал кликните по кнопке **<span class="pc-icon">&#57632;</span> Add** в панели ресурсов и выберите **New material**
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/assets/materials/)
-
-
-
-## How do I create a new shader?
-
-Вы можете создать шейдер из панели ресурсов. Кликните на **Добавить Ресурс -> Шейдер**
-
-[View tutorial](http://developer.playcanvas.com/en/tutorials/custom-shaders/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 
 
 
-## How do I create a shape like a box or sphere?
+## Как создать новый шейдер?
+
+Вы можете создать шейдер из панели ресурсов. Кликните на **Add Asset -> Shader**
+
+[Посмотреть пример](http://developer.playcanvas.com/en/tutorials/custom-shaders/)
+
+
+
+## Как создать куб или сферу?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_box.gif">
 
-You can add primitive shapes like boxes, spheres and others by adding a **Render Component** on an Entity and changing its type to the desired shape.
+Вы можете добавлять примитивные формы, такие как кубы, сферы и другие, добавляя **Render Component** на Entity и изменяя его тип на желаемую форму.
 
-Вы также можете сделать клик правой кнопкой мыши по Сущности и выбрать Новая сущность/Куб чтобы добавить куб (аналогично для других фигур)
+Также вы можете щелкнуть правой кнопкой мыши на Entity и выбрать New Entity/Box, чтобы добавить куб (аналогично для других форм).
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/render/)
-
-
-
-## How do I create a skybox?
-
-Чтобы создать скайбоск, вам нужно первоначально создать  [Кубическую текстуру](http://developer.playcanvas.com/en/user-manual/assets/cubemaps/). После вы можете перетащить кубическую текстуру на рабочую область или можете зайти в Настройки сцены и перетащить кубическую текстуру в поле скайбокса.
-
-[Learn more](https://developer.playcanvas.com/en/user-manual/designer/settings/#skybox)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/packs/components/render/)
 
 
 
-## How do I delete an asset?
+## Как создать skybox?
 
-Чтобы удалить ресурс, выделите его и нажмите **Удалить** или щелкните правой кнопкой мыши на нем и выберите соответствующий пункт
+Чтобы создать skybox для вашей сцены, вам сначала нужно создать [Cubemap asset](http://developer.playcanvas.com/en/user-manual/assets/cubemaps/). Затем вы можете перетащить и поместить Cubemap внутри трехмерного вида или перейти в Scene Settings и перетащить Cubemap в поле Skybox.
 
-
-## How do I delete an Entity?
-
-You can delete an Entity by selecting it and pressing **Delete**. Alternatively you can click on the <span class="pc-icon">&#57636;</span> Delete button in the Hierarchy panel or right click on the Entity and select Delete from the context menu.
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/designer/settings/#skybox)
 
 
 
-## How do I duplicate an Entity?
+## Как удалить asset?
 
-To duplicate an Entity use the <span class="pc-icon">&#57638;</span> Duplicate button in the Hierarchy panel or press **Ctrl+D**.
-
-Вы можете скопировать и вставить сущность. Для того, чтобы скопировать, нажмите **Ctrl+C** и затем **Ctrl+V** чтобы вставить.
+Чтобы удалить ресурс, выберите его и нажмите Delete или щелкните правой кнопкой мыши и выберите **Delete**.
 
 
+## Как удалить Entity?
 
-## How do I play an animation?
-
-Чтобы воспроизвести анимацию 3D-модели, Вам нужно создать сущность с [компонентом Модель](https://developer.playcanvas.com/en/user-manual/packs/components/model/) а также [компонентом Анимация](https://developer.playcanvas.com/en/user-manual/packs/components/animation/).  **Модель** будет отображать на экране вашу модель, а **Анимация** будет проигрывать анимации.
-
-Чтобы отобразить модель на экране, перетащите ее в соответствующее поле компонента Модель. Чтобы воспроизвести анимацию, перетащите ее в соответствующее поле Анимации.
+Вы можете удалить Entity, выбрав его и нажав **Delete**. В качестве альтернативы вы можете нажать кнопку удаления <span class="pc-icon">&#57636;</span> в панели иерархии или щелкнуть правой кнопкой мыши на Entity и выбрать Delete из контекстного меню.
 
 
 
-## How do I play a sound?
+## Как продублировать Entity?
 
-Для воспроизведения звука вам нужен компонент [Звук](https://developer.playcanvas.com/en/user-manual/packs/components/sound/)  добавленный к сущности. После этого вы можете создать слот для прикрепления звука. [Audio assets](https://developer.playcanvas.com/en/user-manual/assets/audio/). Просто нажмите "Добавить слот" и перетащите звуковой ресурс в поле. Для того, чтобы услышать звук, вам также потребуется компонент [Слушатель](https://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/). Обычно им является сущность камеры.
+Чтобы продублировать Entity, используйте кнопку <span class="pc-icon">&#57638;</span> Duplicate в панели иерархии или нажмите **Ctrl+D**.
 
-Вы можете создать звуковой ресурс перетащив файлы с Вашего компьютера на панель ресурсов.
-
-[View tutorial](https://developer.playcanvas.com/en/tutorials/basic-audio/)
+Вы также можете копировать и вставлять Entity. Чтобы скопировать, нажмите **Ctrl+C**, а для вставки **Ctrl+V**.
 
 
 
+## Как проиграть анимацию?
 
-## How do I remove a component?
+Чтобы воспроизвести анимацию 3D-модели, вам необходимо создать Entity с [Model Component](https://developer.playcanvas.com/en/user-manual/packs/components/model/)  и [Animation Component](https://developer.playcanvas.com/en/user-manual/packs/components/animation/). **Model Component** будет отображать вашу модель, а **Animation Component** будет проигрывать анимации.
+
+Для отображения модели перетащите модельный ресурс в поле ресурса Model Component. Чтобы проигрывать анимации, перетащите анимационный ресурс на поле ресурсов Animation Component.
+
+
+
+## Как воспроизвести звук?
+
+Для воспроизведения звуков необходимо добавить [Sound component](https://developer.playcanvas.com/en/user-manual/packs/components/sound/) к Entity. Затем можно создать слоты для воспроизведения [Audio assets](https://developer.playcanvas.com/en/user-manual/assets/audio/).. Просто нажмите "Добавить слот" и перетащите аудио-ассет в поле "Ассет". Чтобы услышать звуки, также необходимо добавить компонент  [AudioListener](https://developer.playcanvas.com/en/user-manual/packs/components/audiolistener/) к Entity - обычно к Entity Camera.
+
+Вы можете создавать аудио-ассеты, перетаскивая аудиофайлы с вашего компьютера в панель Ассетов.
+
+[Посмотреть пример](https://developer.playcanvas.com/en/tutorials/basic-audio/)
+
+
+
+
+## Как удалить компонент?
 
 <img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg">
 
-To remove a component, select the Entity and then click on the **<span class="pc-icon">&#57636;</span> Delete** button in the Inspector next the component’s title.
+Для удаления компонента выберите Entity и затем нажмите кнопку  **<span class="pc-icon">&#57636;</span> Delete** в инспекторе рядом с названием компонента.
 
 
 
-## How do I render a 3D model?
+## Как отрисовать 3D-модель?
 
 <img src="https://playcanvas.com/static-assets/instructions/new_model.gif">
 
-Чтобы отобразить 3D модель вам нужно добавить компонент **Модель** к сущности и перетащить ресурс **Модель** в соответствующее поле. Также вы можете перетащить ресурс модели прямо в 3D-пространство.
+Для отрисовки 3D-модели необходимо добавить **Model Component** к Entity и перетащить **Model Asset** в поле "Asset. Также можно перетащить Model Asset из панели Ассетов во 3D вьюпорт.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/model/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/packs/components/model/)
 
 
 
-## How do I move / rotate / scale an Entity?
+## Как переместить/повернуть/масштабировать Entity?
 
 <img src="https://playcanvas.com/static-assets/instructions/transform.gif">
 
-To move an Entity, select it and then move it using the **<span class="pc-icon">&#57617;</span> Translate tool**. To rotate it use the **<span class="pc-icon">&#57619;</span> Rotate tool** and to scale it use the **<span class="pc-icon">&#57618;</span> Scale tool**.
+Чтобы переместить Entity, выберите его и переместите, используя инструмент переноса **<span class="pc-icon">&#57617;</span> Translate tool**. Чтобы повернуть, используйте инструмент поворота **<span class="pc-icon">&#57619;</span> Rotate tool**. Для масштабирования используйте инструмент масштабирования **<span class="pc-icon">&#57618;</span> Scale tool**.
 
 Вы также можете переключаться между инструментами перемещения / вращения / масштабирования нажатием 1 / 2 / 3 на клавиатуре.
 
 
 
-## How do I upload assets?
+## Как загрузить ассеты?
 
-Чтобы загрузить ресурс, просто перетащите файлы с Вашего компьютера в панель ресурсов. Ваши файлы будут обработаны на сервере и появятся в панели ресурсов.
+Для загрузки ассетов просто перетащите файлы с вашего компьютера в панель Ассетов. Ваши файлы будут обработаны сервером и появятся в панели Ассетов через некоторое время.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/assets/importing/)
-
-
-## How do I use physics?
-
-Чтобы дать сущности физические свойства, вам необходимо добавить компонент [Столкновения](https://developer.playcanvas.com/en/user-manual/packs/components/collision/) к ней и компонент [Твердое Телпо](https://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/). Компонент столкновений дает физическую форму сущности, а твердое тело передает контроль над моделью физическому движку.
-
-You can change the default [gravity](https://developer.playcanvas.com/en/user-manual/designer/settings/#gravity) in the Scene Settings.
-
-[View tutorial](https://developer.playcanvas.com/en/tutorials/collision-and-triggers/)
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/assets/importing/)
 
 
+## Как использовать физику?
 
-## How do I use real-time shadows?
+Чтобы наделить Entity физическими свойствами, вам необходимо добавить к нему [Collision component](https://developer.playcanvas.com/en/user-manual/packs/components/collision/) и [RigidBody component](https://developer.playcanvas.com/en/user-manual/packs/components/rigidbody/). Collision компонент задает физическую форму Entity, а RigidBody компонент делает так, чтобы Entity имитировался физическим движком.
 
-Тени в реальном времени отображаются для каждого источника освещения на сцене, у которого включена опция **Отбрасывать тени**. Чтобы включить тени, выберите сущность с источником света и включите Отображать тени. Вам также потребуется включить Отбрасывание теней на каждой модели на Вашей сцене.
+Вы можете изменить  [гравитацию](https://developer.playcanvas.com/en/user-manual/designer/settings/#gravity) по умолчанию в настройках сцены.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/graphics/lighting/shadows/)
+[Посмотреть пример](https://developer.playcanvas.com/en/tutorials/collision-and-triggers/)
+
+
+
+## Как использовать динамические тени?
+
+Динамические тени отображаются для каждого источника света, для которого включена функция **Cast Shadows**. Чтобы включить тени, выберите Entity с Light компонентом и включите Cast Shadows. Вы также должны включить Cast Shadows на всех компонентах Model в вашей сцене.
+
+[Узнать больше](https://developer.playcanvas.com/en/user-manual/graphics/lighting/shadows/)
 
