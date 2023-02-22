@@ -4,32 +4,31 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-## Sign Up
+## Регистрация
 
-In order to start using PlayCanvas you need to create a new account so first step is to click Sign Up anywhere on the front page.
+Чтобы начать использовать PlayCanvas, вам необходимо создать новую учетную запись. Для этого щелкните "Sign Up" (Зарегистрироваться) где угодно на главной странице.
 
 ![signup][1]
 
-At the sign up page enter your email address and your password. If you want you can also sign up using your Google account by clicking on the Google button on the bottom.
+На странице регистрации введите свой адрес электронной почты и пароль. Если хотите, вы также можете зарегистрироваться, используя свою учетную запись Google, нажав на кнопку Google внизу.
 
 ![signup_details][2]
 
-In the next page enter you full name and your username. If you want toggle the skills that represent you the most. Finally, click on Create Account.
+На следующей странице введите свое полное имя и имя пользователя. Если хотите, выберите навыки, которые наиболее вас представляют. Наконец, нажмите кнопку "Create Account" (Создать учетную запись).
 
 ![signup_final][3]
 
-When you create your account we will automatically create a new demo project for you so that you get a first glance at the [PlayCanvas Editor][4]. Feel free to jump to your [profile][5] page at any time to start creating your own projects.
+После создания учетной записи мы автоматически создадим для вас новый демонстрационный проект, чтобы вы могли первым делом ознакомиться с [PlayCanvas Editor][4]. Не стесняйтесь переходить на свою [страницу профиля][5] в любое время, чтобы начать создавать свои собственные проекты.
 
-## Logging In
+## Вход в систему
 
-In order to log in to your Account click Log In on the front page. If you are already logged in you will be taken to your [profile][5] page automatically. If you have signed up using your email and password make sure you enter those fields in the login page. Otherwise if you have logged in with Google then click on Google instead.
+Чтобы войти в свою учетную запись, нажмите "Log In" (Войти в систему) на главной странице. Если вы уже вошли в систему, вы автоматически перейдете на свою страницу [профиля][5]. Если вы зарегистрировались с помощью своего адреса электронной почты и пароля, убедитесь, что введены соответствующие поля на странице входа в систему. В противном случае, если вы вошли в систему через Google, нажмите на кнопку "Google".
 
-![login][7]
+![login][6]
 
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
 [4]: /user-manual/designer/
 [5]: /user-manual/profile/
-[6]: https://login.playcanvas.com/persona_deprecated
-[7]: /images/user-manual/creating-account/login.png
+[6]: /images/user-manual/creating-account/login.png
