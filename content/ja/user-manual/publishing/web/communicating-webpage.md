@@ -8,7 +8,7 @@ position: 4
 
 PlayCanvasアプリケーションとそれを囲ウェブページを通信させるには二つの方法があります。最初の方法は、ページ内のiframe内にアプリケーションを埋め込むことです。二つ目の方法は、PlayCanvasページをロードする独自のHTMLページをサーブすることです。これらの2つの方法は、大きく異なる形でウェブページとアプリケーション間の通信を行います。
 
-## APIの定義
+## APIの定義
 
 どちらのホスティング方法でも、ウェブページに公開する必要があるPlayCanvasアプリケーションの機能について考える必要があります。ボタンのクリックやスライダーに基づいて何かの色を変更する必要があるかも知れません。または、テクスチャにレンダリングするためにアプリケーションにテキスト入力を送信する必要があるかも知れません。公開する必要がある機能を事前に決定して、PlayCanvasアプリケーションで明示的なAPIや、ウェブページが呼び出す唯一の関数のセットを書いてください。
 
@@ -49,16 +49,18 @@ app.fire("score:set", 10);
 
 方法1は、アプリケーションにアクセスするために、ページ内のどこでも呼び出すことができるグローバルな関数を定義します。方法2は、ページから発射することができるアプリケーションイベントを定義します。アプリケーションはこのイベントをリッスンし、イベントに応じてアクションを実行します。どちらもアプリケーションでAPIを定義する有効な方法です。
 
-### IFrameへの埋め込み
+### IFrameへの埋め込み
 
 iframe内にPlayCanvasアプリケーションを埋め込むのは、PlayCanvasのコンテンツをページ内に挿入する迅速かつ簡単な方法です。また、弊社の最適化されたホスティングを利用することができ、PlayCanvasのコンテンツのサーブの心配をする必要はありません。欠点は、JavaScript関数が別のページ上で実行されているので、ホスティングページから直接PlayCanvasアプリケーションのJavascript関数を呼び出すことができないことです。
 
 親ページとiframe間で通信するには[postMessage][1] javascript APIを使用して、ページとPlayCanvasアプリケーション間でデータを送信します。
 
-ホストページにて
+In your host page, use the iframeless URL for the iframe. The default publish link has the build in an iframe to include the social sharing bar at the bottom. This can cause problems with [postMessage][1] as there are now two iframes to communicate through.
+
+If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
 
 ```html
-<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
@@ -67,16 +69,16 @@ iframe.contentWindow.postMessage({
 </script>
 ```
 
-アプリケーションで
+In your application
 ```javascript
 window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // メッセージが自身のウェブサイトから来ていることを必ず確認してください
+    if (event.origin === "http://example.com") { // always check message came from your website
         var score = event.data.score;
 
-        // APIメソッド１を呼ぶ:
+        // call API method one:
         window.setScore(score);
 
-        // APIメソッド２を呼ぶ:
+        // call API method two:
         var app = pc.Application.getApplication();
         app.fire("score:set", score);
     }
@@ -91,10 +93,10 @@ window.addEventListener("message", function (event) {
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>アプリケーションタイトル</title>
+    <title>Application Title</title>
     <script src="playcanvas-stable.min.js"></script>
     <script>
         SCENE_PATH = "12346.json";
@@ -123,7 +125,7 @@ window.addEventListener("message", function (event) {
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>
@@ -142,10 +144,10 @@ window.addEventListener("message", function (event) {
     <script>
     var app = pc.Application.getApplication();
     app.on("start", function () {
-        // シーンのルートを取得
+        // get the root of the scene.
         var hierarchy = app.root.getChildren()[0];
 
-        // 他はここで行う
+        // do other stuff here
     });
     </script>
 </body>
@@ -153,4 +155,3 @@ window.addEventListener("message", function (event) {
 ```
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-

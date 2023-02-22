@@ -1,5 +1,5 @@
 ---
-title: Sprite Editor
+title: スプライトエディタ
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -84,7 +84,7 @@ position: 1
 
 アセットパネルでは、現在のテクスチャアトラスから生成されたすべてのスプライトアセットが表示されています。このパネルからスプライトアセットを選択することもできます。
 
-* [PixelBoy](https://twitter.com/2pblog1)による作品* 
+*[PixelBoy](https://twitter.com/2pblog1)による作品*
 
 [1]: /images/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg
 [2]: /images/user-manual/2D/sprite-editor/viewport.jpg
@@ -93,4 +93,3 @@ position: 1
 [5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
 [6]: /user-manual/assets/sprites/
 [7]: /user-manual/2D/9-slicing/
-

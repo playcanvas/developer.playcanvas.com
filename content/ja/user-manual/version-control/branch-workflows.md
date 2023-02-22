@@ -1,5 +1,5 @@
 ---
-title: Branch Workflows
+title: ブランチワークフロー
 layout: usermanual-page.hbs
 position: 5
 ---
@@ -31,4 +31,3 @@ position: 5
 [1]: /images/user-manual/version-control/branch-workflows/feature-branches.png
 [2]: /images/user-manual/version-control/branch-workflows/release-branches.png
 [3]: /images/user-manual/version-control/branch-workflows/continuous-delivery.png
-

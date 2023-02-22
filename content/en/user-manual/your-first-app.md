@@ -73,12 +73,12 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
 Movement.prototype.update = function(dt) {
-    
+
 };
 ```
 
@@ -89,7 +89,7 @@ var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame

@@ -1,95 +1,95 @@
 ---
-title: Your First App
+title: Ваше первое приложение
 layout: usermanual-page.hbs
 position: 4
 ---
 
-Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes learning the basics. We'll recreate the following simple 3D app:
+Разработка приложений в PlayCanvas легка и увлекательна. Давайте потратим несколько минут, чтобы изучить основы. Мы создадим следующее простое 3D-приложение:
 
-<iframe  src="https://playcanv.as/p/TnUtDXWp/" allowfullscreen></iframe>
+<iframe loading="lazy"  src="https://playcanv.as/p/TnUtDXWp/" title="Simple PlayCanvas App"></iframe>
 
-*Use the arrow keys to move the red ball around.*
+*Используйте стрелки клавиатуры, чтобы перемещать красный шар.*
 
-To begin, navigate to your PROJECTS page.
+Для начала перейдите на страницу PROJECTS.
 
 ![Projects Page][1]
 
-Select the NEW button to create a new project:
+Выберите кнопку NEW, чтобы создать новый проект:
 
 ![New Project][2]
 
-Enter `My First App` as the project name. The description is optional and can be filled out later. Hit CREATE.
+Введите `My First App` в качестве названия проекта. Описание не обязательно и может быть заполнено позже. Нажмите CREATE. 
 
-With your project created, we can dive right into the Editor - simply hit the EDITOR button:
+Создав проект, мы можем сразу перейти к редактору - просто нажмите кнопку EDITOR:
 
 ![Editor Button][3]
 
-When you first open the Editor, you should find that a minimal scene has been created for you:
+При первом открытии редактора вы увидите, что для вас была создана минимальная сцена:
 
 ![Editor][4]
 
-Specifically, you have a camera (to render the scene), a box sitting on a plane and a light (to illuminate the 3D objects).
+Конкретно, у вас есть камера (для рендеринга сцены), коробка, стоящая на плоскости, и свет (для освещения 3D-объектов).
 
-You can easily change the box to another shape, like a sphere. To do this, select the Box entity in the HIERARCHY panel. In the Inspector panel on the right, change the Type property of the MODEL component from Box to Sphere. To be complete, rename the Entity from Box to Sphere too!
+Вы можете легко изменить коробку на другую форму, например, на сферу. Для этого выберите сущность Box в панели ИЕРАРХИИ. В панели Инспектор справа измените свойство Type компонента MODEL с Box на Sphere. Для полноты переименуйте сущность из Box в Sphere тоже!
 
 ![Box To Sphere][5]
 
-But our sphere is a slightly boring gray color. Let's color it red! To do this, we must create a material by hitting the **+** icon in the ASSETS panel:
+Но наша сфера немного скучного серого цвета. Давайте окрасим ее в красный! Для этого нам нужно создать материал, нажав значок **+** в панели РЕСУРСЫ:
 
 ![Create Material][6]
 
-Select the material and its properties will appear in the Inspector panel to the right. Expand the DIFFUSE section and click on the color swatch to edit the color to red:
+Выберите материал, и его свойства появятся в панели Инспектор справа. Разверните раздел DIFFUSE и нажмите на палитру цветов, чтобы отредактировать цвет на красный:
 
 ![Red Material][7]
 
-Next, we must assign the material to the sphere. You can do this with a simple drag and drop operation:
+Затем мы должны назначить материал сфере. Вы можете сделать это с помощью простой операции перетаскивания:
 
-![Drag And Drop Material][8]
+![Перетащите материал][8]
 
-Now let's set up the Camera entity. Select it in the HIERARCHY panel:
+Теперь давайте настроим объект Camera. Выберите ее в панели ИЕРАРХИИ:
 
-![Editor Camera Selected][9]
+![Выбрана камера редактора][9]
 
-Notice the little preview window that has appeared for the selected camera. Let's edit the camera's position and rotation to view the cube from directly in front. Edit the camera's position and rotation with the values below:
+Обратите внимание на маленькое окно предварительного просмотра, которое появилось для выбранной камеры. Давайте изменим положение и поворот камеры, чтобы просмотреть куб напрямую спереди. Отредактируйте положение и поворот камеры со следующими значениями:
 
 ![Camera Transform][10]
 
-Next, let's make the sphere controllable with the arrow keys on the keyboard. To do this, we must create a script. Right click the Sphere entity and select `Add Component -> Script`.
+Затем давайте сделаем так, чтобы сфера была управляема стрелочными клавишами на клавиатуре. Для этого мы должны создать скрипт. Щелкните правой кнопкой мыши по объекту "Sphere" и выберите `Add Component -> Script`.
 
 ![Add Script Component][11]
 
-A script component will appear in the Inspector on the Sphere entity. To create a script asset on the script component, enter the name `movement.js`.
+На объекте "Sphere" во вкладке "Inspector" появится компонент "Script Component". Чтобы создать скрипт внутри этого компонента, введите название `movement.js`.
 
 ![Create Script Asset][12]
 
-Hit Enter and your script will be created.
+Нажмите клавишу "Enter", и ваш скрипт будет создан.
 
-![Edit Script][13]
+![Редактирование скрипта][13]
 
-Now hit EDIT to open the Code Editor. You'll see the following skeleton script:
+Теперь нажмите кнопку "EDIT", чтобы открыть редактор кода. Вы увидите следующий каркас скрипта:
 
 ```javascript
 var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
 Movement.prototype.update = function(dt) {
-    
+
 };
 ```
 
-To make the sphere controllable, let's add some code to the `update` function. Copy and paste the code below:
+Чтобы управлять сферой, давайте добавим некоторый код в функцию `update`. Скопируйте и вставьте следующий код:
 
 ```javascript
 var Movement = pc.createScript('movement');
 
 // initialize code called once per entity
 Movement.prototype.initialize = function() {
-    
+
 };
 
 // update code called every frame
@@ -118,41 +118,41 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-When the code is updated, save the script using CTRL+S (or CMD+S on Mac) and close the Code Editor tab.
+Когда код будет обновлен, сохраните скрипт, используя комбинацию клавиш CTRL+S (или CMD+S на Mac), и закройте вкладку редактора кода.
 
-You are now ready to preview your app by opening the Launch page. To do this, hit the Launch button in the top right of the Editor's 3D view.
+Теперь вы готовы предварительно просмотреть свое приложение, открыв страницу запуска. Для этого нажмите кнопку "Launch" в верхнем правом углу редактора.
 
-![Launch Button][14]
+![Кнопка Launch][14]
 
-The Launch page opens in a new tab. When it opens, try pressing the 4 arrow keys to move the sphere around.
+Страница запуска откроется в новой вкладке. Когда она откроется, попробуйте нажать 4 стрелочные клавиши, чтобы переместить сферу.
 
 ![Launch Page][15]
 
 <div class="alert alert-info">
-There is a 'Live Link' between the Editor and the Launch page. Any change you make in the Editor will be reflected in the Launch page in real time! It can be convenient to place the Launch page side by side with the Editor while you are working.
+Между редактором и страницей запуска установлена "Live Link". Любые изменения, внесенные в редактор, будут отображаться на странице запуска в режиме реального времени! Удобно разместить страницу запуска рядом с редактором, чтобы видеть изменения сразу.
 
 ![Editor Live Link][16]
 </div>
 
-The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar.
+The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar.
 
 ![Publish Button][17]
 
-This will open up the Publishing dialog. Here you can publish a build (or even download a build for self-hosting).
+Откроется диалоговое окно публикации. Здесь вы можете опубликовать билд (или даже загрузить билд для самостоятельного хостинга).
 
-![Publish][18]
+![Публикация][18]
 
-Click the PUBLISH TO PLAYCANVAS option. You can then configure your published app.
+Нажмите опцию PUBLISH TO PLAYCANVAS. Затем вы можете настроить ваше опубликованное приложение.
 
-![Publish New Build][19]
+![Опубликовать новый билд][19]
 
-Leave the defaults, scroll down and select PUBLISH NOW.
+Оставьте настройки по умолчанию, прокрутите вниз и выберите PUBLISH NOW.
 
 ![Builds][20]
 
-You now have a URL for your published build! Feel free to share it with the world on Twitter or Facebook!
+Теперь у вас есть URL для вашей опубликованной сборки! Не стесняйтесь делиться им с миром в Twitter или Facebook!
 
-And so, that is the process from start to finish for building and publishing a PlayCanvas application. In this quick introduction, we have touched on the basics. Now explore the rest of the User Manual to learn some more advanced topics. Good luck and have fun!
+Таким образом, это весь процесс создания и публикации приложения PlayCanvas. В этом быстром введении мы коснулись основ. Теперь изучайте остальную часть Руководства пользователя, чтобы изучить более продвинутые темы.  Good luck and have fun!
 
 [1]: /images/user-manual/your-first-app/projects-page.png
 [2]: /images/user-manual/your-first-app/new-project.png
@@ -174,4 +174,3 @@ And so, that is the process from start to finish for building and publishing a P
 [18]: /images/user-manual/your-first-app/publish-dialog.png
 [19]: /images/user-manual/your-first-app/publish-options.png
 [20]: /images/user-manual/your-first-app/builds.png
-

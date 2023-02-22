@@ -1,11 +1,11 @@
 ---
-title: Basic Mouse Input
+title: Основы управления мышью
 layout: tutorial-page.hbs
 tags: mouse, input
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/MHIdZgaj/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 
 *Перемещайте мышь чтобы двигать куб вокруг, нажимайте кнопки мыши для смены цвета куба.
 
@@ -63,19 +63,19 @@ Mouse.prototype.onMouseDown = function (event) {
         this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to green
+    // If the middle mouse button is pressed, change the cube color to green
     if (event.button === pc.MOUSEBUTTON_MIDDLE) {
         this.entity.render.meshInstances[0].material = this.greenMaterial.resource;
     }
 
-    // If the left mouse button is pressed, change the cube color to blue
+    // If the right mouse button is pressed, change the cube color to blue
     if (event.button === pc.MOUSEBUTTON_RIGHT) {
         this.entity.render.meshInstances[0].material = this.blueMaterial.resource;
     }
 };
 ```
 
-### Доступ к мыши
+### Accessing the mouse
 
 Управление мышью регулируется объектом  `pc.Mouse`. [Фреймворк][2] предоставляет экземпляр класса [приложение][3], который доступен для всех сценариев объектов как:
 
@@ -83,7 +83,7 @@ Mouse.prototype.onMouseDown = function (event) {
 this.app.mouse
 ```
 
-### Отключение меню правой кнопки мыши
+### Disabling the right-click menu
 
 В конструкторе нашего сценария для объекта мы отключаем меню, чтобы остановить его появление при нажатии правой кнопки мыши.
 
@@ -91,7 +91,7 @@ this.app.mouse
 this.app.mouse.disableContextMenu();
 ```
 
-### Привязка к событиям
+### Binding to events
 
 Объект  `pc.Mouse` позволяет прослушивать различные события, соответствующие действиям мыши. В этом уроке мы свяжем метод `onMouseMove` для события движения и  `onMouseDown` с событием нажатия кнопки.
 
@@ -104,18 +104,18 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 События доступные для `pc.Mouse`:
 
-* `pc.EVENT_MOUSEUP` - срабатывает при отпускании кнопки мыши
-* `pc.EVENT_MOUSEDOWN` - срабатывает при нажатии кнопки мыши
-* `pc.EVENT_MOUSEMOVE` - срабатывает на движение мыши
-* `pc.EVENT_MOUSEWHEEL` - срабатывает на прокрутку колеса мыши.
+* `pc.EVENT_MOUSEUP` - fires when a mouse button is released
+* `pc.EVENT_MOUSEDOWN` - fires when a mouse button is pressed
+* `pc.EVENT_MOUSEMOVE` - fires when the mouse is moved
+* `pc.EVENT_MOUSEWHEEL` - fires when the mouse wheel is rotated.
 
 Ввод с мыши в браузерах обычно реализуется прослушиванием [DOM][4] событий в элементах Вашей странице. Проблема в том, что в разных браузерах реализация событий немного различается и предоставляет разные данные. Для того, чтобы упростить код, который Вы пишете, движок PlayCanvas позволяет связать обработчик событий с обработчиком мыши вместо прямого использования DOM элемента. Движок поставляет объект `pc.MouseEvent`, когда срабатывает событие, совместимое со всеми браузерами. Если Вам нужно первоначальное событие DOM, оно доступно как свойство `event`  в `pc.MouseEvent`.
 
-### Движение мыши
+### Moving the mouse
 
 Первое событие обработчика - это `onMouseMove`. Оно срабатывает всякий раз, когда мышь перемещается. В событии `EVENT_MOUSEMOVE` объект `MouseEvent` будет иметь текущие координаты мыши  `x` и `y` и также изменение позиции с последнего события в `dx` и `dy`. В нашем уроке мы используем текущие координаты мыши и двигаем куб в позицию курсора.
 
-### Кнопки мыши
+### Mouse buttons
 
 Второе событие обработчика - `onMouseDown`. Оно срабатывает всегда, когда одна из трёх кнопок мыши нажата. В событиях `EVENT_MOUSEDOWN`  и `EVENT_MOUSEUP` объект `MouseEvent будет иметь свойство `button`, оно содержит кнопку, которая была нажата/отпущена. Может быть одно из следующих значений:
 
@@ -126,7 +126,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 
 В нашем уроке мы изменяем цвет куба в зависимости от нажатой кнопки.
 
-### Попробуйте
+### Try it out
 
 Попробуйте запустить урок в полноэкранном режиме [тут][5] или наверху этой страницы. Двигайте мышь чтобы смещать куб и нажимайте левую, среднюю и правую кнопки мыши для изменения цвета.
 
@@ -135,4 +135,3 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 [3]: /user-manual/glossary#app
 [4]: /user-manual/glossary#dom
 [5]: https://playcanv.as/p/MHIdZgaj/
-

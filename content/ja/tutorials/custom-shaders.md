@@ -1,15 +1,15 @@
 ---
-title: カスタムシェーダー
+title: カスタムのシェーダー
 layout: tutorial-page.hbs
 tags: shaders, materials
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406044/4J2JX2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/zwvhLoS9/" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/zwvhLoS9/" title="Custom Shaders"></iframe>
 
 *このチュートリアルでは素材にカスタムシェーダを使用してGLSLでdissolveエフェクトを作成します*
 
-Complete project can be found [here][project].
+完全なプロジェクトは [こちら][project].
 
 PlayCanvasに3Dモデルをインポートすると、デフォルトで[Physical Material][3]を使用します。これは、多くのレンダリングニーズをカバーすることができる汎用性の高い素材タイプです。
 
@@ -37,7 +37,7 @@ void main(void)
 }
 ```
 
-### フラグメントシェーダー
+### フラグメントシェーダー
 
 ```
 varying vec2 vUv0;
@@ -62,7 +62,7 @@ void main(void)
 
 上記の2つのシェーダーは、新しい素材の機能を定義します。頂点シェーダーでは、画面空間にメッシュの頂点位置を変換します。フラグメントシェーダーでは、ピクセルの色を設定します。このピクセルの色は、このアセットに提供される2つのテクスチャーに基づいて選択されます。uTime値が高さマップの色より小さい場合、ピクセルはレンダリングされません(モデルは非表示)。uTimeの値が高さマップの値よりも大きい場合、提供するdiffuseマップテクスチャーから色を取得します。
 
-### シェーダー定義
+### シェーダー定義
 
 ```javascript
 var vertexShader = this.vs.resource;
@@ -108,7 +108,7 @@ this.shader = new pc.Shader(gd, shaderDefinition);
 
 // Create a new material and set the shader
 this.material = new pc.Material();
-this.material.setShader(this.shader);
+this.material.shader = this.shader;
 
 // Set the initial time parameter
 this.material.setParameter('uTime', 0);
@@ -188,7 +188,7 @@ CustomShader.prototype.update = function(dt) {
 
 シェーダーで、ピクセルの高さマップの値がtime値より小さい場合、ピクセルを描画しません。また、閾値に近い値では、エフェクトに綺麗な「縁」を表示するためにピクセルを青で描画します。
 
-## 完全なリスト
+## 完全なソースコード
 
 ```javascript
 var CustomShader = pc.createScript('customShader');
@@ -283,10 +283,9 @@ CustomShader.prototype.update = function(dt) {
 };
 ```
 
-Here is the complete script. Remember you'll need to create vertex shader and fragment shader assets in order for it to work.
+以上がそのスクリプトの全体です。このスクリプトを動作させるには、バーテックスシェーダとフラグメントシェーダのアセットを作成する必要があることを忘れないでください。
 
 [1]: /api/pc.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
 [project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders
-

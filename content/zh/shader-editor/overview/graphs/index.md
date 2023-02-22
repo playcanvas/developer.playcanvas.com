@@ -13,4 +13,3 @@ To find out how to manage graphs see the [Graph Editor][1] documentation.
 [1]: /shader-editor/window-layout/graph-editor
 [2]: /shader-editor/overview/graphs/material-graphs
 [3]: /shader-editor/overview/graphs/sub-graphs
-

@@ -1,5 +1,5 @@
 ---
-title: Profiler
+title: Профилировщик
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -36,4 +36,3 @@ Green bars represent individual asynchronous asset loads. Orange bars are blocki
 [2]: /images/user-manual/optimization/profiler/profiler_launch.png
 [3]: /images/user-manual/optimization/profiler/profiler_stats.png
 [4]: /images/user-manual/optimization/profiler/profiler_timeline.png
-

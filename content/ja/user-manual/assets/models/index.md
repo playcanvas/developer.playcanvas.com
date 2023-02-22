@@ -21,4 +21,3 @@ PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応して
 [4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
-

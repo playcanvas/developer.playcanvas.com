@@ -93,7 +93,6 @@
     font-size: 16px;
     line-height: 30px;
   }
-
   h1 {
     font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -102,7 +101,6 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
   }
-
   h2 {
     font-family: "Proxima Nova Bold", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -111,35 +109,28 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
   }
-
   a {
     color: #324447;
     text-decoration: none;
   }
-
   pre {
     font-size: 12px;
     line-height: 1.5em;
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   }
-
   code {
     overflow: scroll;
   }
-
   .content-width {
     margin: auto;
     width: 100%;
   }
-
   .centered {
     text-align: center;
   }
-
   .header-anchor {
     font-weight: normal;
   }
-
   header {
     width: 100%;
     background-image: url(/images/common/BANNER_STRIPS1_Orange.png);
@@ -231,7 +222,6 @@
   header .header-front-page {
     text-align: center;
   }
-
   footer {
     height: 100px;
     width: 100%;
@@ -263,13 +253,11 @@
     padding-left: 0px;
     padding-right: 0px;
   }
-
   .localization-note {
     clear: both;
     margin-top: 25px;
     text-align: center;
   }
-
   .search-icon:before {
     font-size: 26px;
     position: relative;
@@ -277,7 +265,6 @@
     top: 3px;
     content: "\E333";
   }
-
   .alert-info {
     border: 1px solid #bce8f1;
     background-color: #d9edf7;
@@ -286,7 +273,6 @@
     font-size: 14px;
     line-height: 24px;
   }
-
   input.search {
     height: 24px;
     width: 30%;
@@ -313,7 +299,6 @@
     outline: 0;
     border-color: rgb(255, 255, 255);
   }
-
   nav.regular {
     background-color: #f1f1ef;
     border-top: 1px solid #f1f1ef;
@@ -350,7 +335,6 @@
   nav.regular usermanual-navbar {
     float: right;
   }
-
   nav.intro {
     background-color: #f1f1ef;
     border-top: 1px solid #f1f1ef;
@@ -426,7 +410,6 @@
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
-
   .container nav {
     line-height: 24px;
   }
@@ -771,7 +754,6 @@
     margin-bottom: 25px;
     text-align: center;
   }
-
   .search-container > main {
     font-family: "Proxima Nova Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -805,18 +787,15 @@
   header > nav > ul > li {
     margin: auto 5px;
   }
-
   .content-width {
     width: calc(100% - 60px);
   }
-
   nav.intro ul {
     width: 100%;
   }
   nav.intro ul li {
     width: calc(25% - 4px);
   }
-
   .container nav.usermanual {
     width: 180px;
   }
@@ -829,7 +808,6 @@
   .container main img {
     max-width: 100%;
   }
-
   pre.api {
     min-height: 2em;
     line-height: 2em;
@@ -838,7 +816,6 @@
     padding: 0.5em;
     font-size: 12px;
   }
-
   .params {
     margin: 1em 0;
     line-height: 2;
@@ -868,7 +845,6 @@
   .content-width {
     width: calc(100% - 60px);
   }
-
   nav.intro ul {
     width: 616px;
   }
@@ -878,7 +854,6 @@
   nav.intro ul li:last-child {
     border-right: 1px solid #e6e6e6;
   }
-
   .container nav.usermanual {
     width: 180px;
   }
@@ -897,18 +872,15 @@
   header > nav > ul > li {
     margin: auto 10px;
   }
-
   .content-width {
     width: calc(100% - 60px);
   }
-
   nav.intro ul {
     width: 816px;
   }
   nav.intro ul li {
     width: 200px;
   }
-
   .container nav.usermanual {
     width: 240px;
   }
@@ -927,14 +899,12 @@
   .content-width {
     width: 1070px;
   }
-
   nav.intro ul {
     width: 816px;
   }
   nav.intro ul li {
     width: 200px;
   }
-
   .container nav.usermanual {
     width: 240px;
   }

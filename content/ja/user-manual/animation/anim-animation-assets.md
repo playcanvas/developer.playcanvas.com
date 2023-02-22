@@ -14,4 +14,3 @@ The anim component currently supports animation assets that have been imported i
 
 [1]: /images/user-manual/anim/animation_assets.png
 [2]: /images/user-manual/anim/asset_tasks.png
-

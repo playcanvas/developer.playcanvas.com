@@ -20,4 +20,3 @@ The Assets Pane is where a project’s graphs, materials and textures appear.
 [1]: /images/shader-editor/assets-pane.png
 [2]: /shader-editor/window-layout/inspector-pane
 [3]: /shader-editor/window-layout/inspector-pane/graph-inspector
-

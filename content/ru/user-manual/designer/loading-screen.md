@@ -1,12 +1,12 @@
 ---
-title: Loading Screen
+title: Загрузочный экран
 layout: usermanual-page.hbs
 position: 8
 ---
 
 If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
 
-<img alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
+<img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png">
 
 Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
 
@@ -124,4 +124,3 @@ pc.script.createLoadingScreen(function (app) {
 ```
 
 [1]: /user-manual/designer/settings
-

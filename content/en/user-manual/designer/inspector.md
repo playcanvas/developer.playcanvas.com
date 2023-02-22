@@ -9,6 +9,7 @@ position: 3
 The Inspector panel shows attribute values for the currently selected item.
 
 Depending on what you have selected, you will see different inspector panels. Some available selections are:
+
 * **Entity/Component Inspector**
 * **Texture Inspector**
 * **Material Inspector**

@@ -36,8 +36,8 @@ The full list of Scene Settings are:
 
 <img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500px">
 
-[entities]: /user-manual/packs/scene-hierarchy/entities/
-[components]: /user-manual/packs/scene-hierarchy/components/
+[entities]: /user-manual/packs/entities/
+[components]: /user-manual/packs/components/
 [scripts]: /user-manual/scripting/
 [scene-list-png]: /images/user-manual/scenes/scene-list.png
 [project-settings]: /user-manual/designer/settings/

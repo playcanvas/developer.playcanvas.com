@@ -1,5 +1,5 @@
 ---
-title: 标题
+title: 指示板标题
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -19,4 +19,3 @@ position: 1
 点击 FORK 按钮为自己创建一个项目分支，这个操作将会生成一个属于你个人的克隆项目。
 
 [1]: /images/platform/dashboard_header.jpg
-

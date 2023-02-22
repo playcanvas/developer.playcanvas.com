@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas Hosting
+title: Хостинг PlayCanvas
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -13,10 +13,10 @@ Publishing to PlayCanvas consists of two simple steps:
 
 To publish you will need to have at least one scene in your project.
 
-## Publishing a new Build
+## Publishing a new Build
 
 * Go to your Project and open the Editor.
-* Click on the <span class="pc-icon" style="font-size">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
 
 ![Publish Button][1]
 
@@ -73,4 +73,3 @@ The first time you publish a build, it will automatically become the Primary Bui
 [4]: /images/user-manual/publishing/dialog-publish-build-scenes.png
 [5]: /images/user-manual/publishing/dialog-builds.png
 [6]: /user-manual/optimization/optimizing-scene-format
-

@@ -2,30 +2,37 @@
 title: 视频纹理
 layout: tutorial-page.hbs
 tags: video, textures
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/6wt5T87E/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/6wt5T87E/" title="Video Textures"></iframe>
 
-在[教学项目][1]中尝试一下。
+从[教程项目][1]中的编辑器尝试它。
 
 这个项目创建一个可在运行时改变的纹理，下载了可播放的视频文件，并渲染视频到纹理中。 然后将该纹理应用于模型并在场景中使用。
 
 该脚本执行以下功能：
 
-*创建新的纹理
-*创建一个HTML视频元素并播放视频短片
-*将新纹理应用于电视模型上的材质
-*每帧更新带有视频数据的纹理
+* Create new Texture
+* Create an HTML Video element and play the video
+* Apply the new texture to the material on the TV model
+* Update the texture with video data every frame
 
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');
 
-VideoTexture.attributes.add('video', {
-    title: 'Video',
+VideoTexture.attributes.add('videoAsset', {
+    title: 'Video Asset',
     description: 'MP4 video asset to play back on this video texture.',
     type: 'asset'
 });
+
+VideoTexture.attributes.add('videoUrl', {
+    title: 'Video Url',
+    description: 'URL to use if there is video asset selected',
+    type: 'string'
+});
+
 VideoTexture.attributes.add('playEvent', {
     title: 'Play Event',
     description: 'Event that is fired as soon as the video texture is ready to play.',
@@ -49,6 +56,9 @@ VideoTexture.prototype.initialize = function() {
 
     // needed because the video is being hosted on a different server url
     video.crossOrigin = "anonymous";
+
+    // autoplay the video
+    video.autoplay = true;
 
     // iOS video texture playback requires that you add the video to the DOMParser
     // with at least 1x1 as the video's dimensions
@@ -79,10 +89,15 @@ VideoTexture.prototype.initialize = function() {
     }.bind(this));
 
     // set video source
-    video.src = this.video ? this.video.getFileUrl() : this.videoUrl;
+    video.src = this.videoAsset ? this.videoAsset.getFileUrl() : this.videoUrl;
 
     document.body.appendChild(video);
     video.load();
+
+    this.on('destroy', function() {
+        this.videoTexture.destroy();
+        video.remove();
+    }, this);
 };
 
 // update code called every frame
@@ -90,7 +105,7 @@ VideoTexture.prototype.update = function(dt) {
     // Transfer the latest video frame to the video texture
     this.videoTexture.upload();
 };
+
 ```
 
 [1]: https://playcanvas.com/project/405850
-

@@ -1,5 +1,5 @@
 ---
-title: 脚本解析
+title: 脚本构造
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -34,9 +34,9 @@ Rotate.prototype.swap = function(old) {
 
 来让我们对脚本代码的每个部份来进行分析
 
-# 脚本方法
+# Script Methods
 
-## 脚本类型说明
+## Declaration of Script Type
 
 ```javascript
 var Rotate = pc.createScript('rotate');
@@ -44,16 +44,17 @@ var Rotate = pc.createScript('rotate');
 
 这行代码创建了一个新的脚本类型名为“rotate”。脚本的名称用以识别在脚本组件中各个脚本。在程序中每个脚本类型都必须有它们专属的名称。返回函数“Rotate”是一个将已有属性进行扩展的Javascript函数。类似于类继承。
 
-## 脚本特性
+## 脚本特性
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-这行代码定义了脚本的属性。脚本属性是一个脚本实例的特性用户可以在编辑器UI中找到这个。允许用户在 编辑器中对单个实体进行自定义。在上面代码的情况中，属性称之为“speed”在代码中也可以使用“this.speed”。默认数字为“10”。
-属性在代码热交换过程中自动继承到新的脚本实例。
+This line declares a script attribute. A script attribute is a property of the script instance and it is exposed to the Editor UI. This allows you to customize individual entities in the Editor. In the above example, the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
 
-## 初始化
+Attributes are automatically inherited from a new script instance during code hot-swap.
+
+## Initialize
 
 ```javascript
 // initialize code called once per entity
@@ -63,13 +64,13 @@ Rotate.prototype.initialize = function() {
 };
 ```
 
-当脚本附加实体时候，初始化函数被调用。在应用程序加载之后初始化函数将会被响应，但在第一次上传循环或者帧渲染之前实体层次结构已被构造。初始化函数将仅仅只会对每个实体响应一次。用户可以使用初始化函数定义或者初始化脚本实例的数字变量。当应用程序开始如果一个实体或者脚本被关闭，初始化函数被响应，在第一时间实体将会被开启。
+The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts, the initialize method will be called the first time the entity is enabled.
 
-当使用 `entity.clone` 克隆一个实体时，只有克隆实体被添加到场景层次结构并且实体和脚本都是启用状态时，才会调用脚本上的“初始化”方法。
+When an entity is cloned using the `entity.clone` method, the `initialize` method on the script is only called when the cloned entity is added to the scene hierarchy; as long as both the entity and script are enabled as well.
 
-如果一个脚本组件附加了有多个脚本，“初始化”将在组件中按照脚本的排序被响应。
+If a script component has multiple scripts attached to it, the `initialize` method is called in the order of the scripts on the component.
 
-## 上传
+## Update
 
 ```javascript
 // update code called every frame
@@ -82,11 +83,11 @@ Rotate.prototype.update = function(dt) {
 };
 ```
 
-在实体的每个框架中，每个实体都需要更新函数，脚本组件和脚本实例被启用。每个框架的“dt”属性将被当作参数传递。
+The update method is called for every frame; it is invoked within each entity that has an enabled script component and enabled script instance. Each frame is passed  the `dt` argument containing the time, in seconds, since the last frame.
 
 如果一个脚本组件附加了多个脚本，“更新”函数将在组件中按照脚本的排序被响应。
 
-## 交换
+## Swap
 
 ```javascript
 // swap method called for script hot-reloading
@@ -96,13 +97,13 @@ Rotate.prototype.swap = function(old) {
 };
 ```
 
-当有一个脚本类型被添加到注册表时交换函数将会响应。这个将会在编辑器中脚本在运行状态下被自动完成。这个函数允许用户在运行应用时支持“代码热加载”。对于用户来说这个是十分有帮助的，如果用户希望对代码进行迭代当运行App时。用户可以进行修改可以实时看到结果并不需要重新加载和设置。
+The `swap` method is called whenever a ScriptType with same is added to registry. This is done automatically during Launch when a script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
 
 旧的脚本实例作为参数被传递给交换函数，用户可以这个步骤将旧实例的状态复制给新的实例。还必须要确保事件的状态为‘unsubscribed’and‘re-subscribed’。
 
-如果用户不希望进行代码的热交换，用户可以删除交换函数，引擎将不会尝试更新脚本。
+If you do not wish to support hot-swapping of code, you can delete the swap method and the engine will not attempt to refresh the script.
 
-## 其它方法: postInitialize and postUpdate
+## Additional Methods: postInitialize and postUpdate
 
 ‘postInitialize’可以在所有脚本中被调用，并且在脚本被初始化之后进行实现。使用这个方法来执行可以认为所有脚本都被初始化。‘postUpdate’是一个更新函数，在所有脚本被更新之后响应。使用这个方法来执行可以认为所有脚本都被更新。譬如，摄像机在跟踪一个应该在’postUpdate‘中更新其位置的实体，与此同时另外一个实体已经在这个框架中完成了这个动作。
 
@@ -110,7 +111,7 @@ Rotate.prototype.swap = function(old) {
 
 脚本实例触发多个事件，可以用来对特定的情况做出响应。
 
-## state, 启用, 禁用
+## state and enable/disable
 
 当脚本实例改变运行状态从启用到禁用，或禁用到启用，‘state’事件被响应。脚本实例状态可以通过开启/禁用脚本来进行，组件和脚本也是其中一员，或者有脚本组件附加的实体。‘enable’事件仅仅只当状态从禁用到启用时被响应，‘disable’事件仅仅只当状态从启用到禁用时才被 响应。
 
@@ -154,7 +155,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## attr & attr:[name]
+## attr and attr:[name]
 
 当声明脚本属性值被更改时`attr` 和 `attr:[name]` 事件将被触发。这可能发生在运行过程中的应用程序，或者在通过编辑器进行更改模型的值的时候。`attr`事件当每个属性发生改变时被触发。`attr:[name]` 事件只当特定属性被改变时候被触发。譬如如果用户有一个'speed' 的属性 `attr:speed`事件为当speed被改变时才会触发。
 
@@ -165,4 +166,3 @@ Rotate.prototype.initialize = function () {
     });
 };
 ```
-

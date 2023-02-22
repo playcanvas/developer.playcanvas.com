@@ -11,4 +11,3 @@ To enable, on the publish screen, tick 'Optimize Scene Format' and publish.
 ![][1]
 
 [1]: /images/user-manual/optimization/optimizing-scene-format/optimize-scene-format-publish-dialog.png
-

@@ -1,5 +1,5 @@
 ---
-title: 画像要素
+title: イメージ要素
 layout: usermanual-page.hbs
 position: 5
 ---
@@ -32,4 +32,3 @@ If there is no texture asset assigned to an image Element used for masking the m
 
 [1]: /images/user-manual/user-interface/image-element/image-tinted.png
 [2]: /images/user-manual/user-interface/image-element/image-transparent.png
-

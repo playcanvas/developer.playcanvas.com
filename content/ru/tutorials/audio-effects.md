@@ -2,20 +2,20 @@
 title: Audio Effects
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
 
 *Щелкните на разные кнопки чтобы ощутить разные звуковые эффекты*
 
 <div class="alert alert-info">Для этого урока необходима поддержка браузером Web Audio API</div>
 
-## Использование Web Audio API
+## Using The Web Audio API
 
 PlayCanvas позволяет вам полностью использовать потенциал Web Audio API чтобы добавить потрясающие эффекты для вашего звукового сопровождения. Этот урок демонстрирует как добавить разные эффекты к аудио дорожке.
 
-## Настройка
+## The setup
 
 Вы можете проверить эту сцену собственноручно [здесь][1]. Корневая сущность этой сцены имеет [звуковой] компонент с одним слотом, который проигрывает зацикленный звуковой семпл. Если вы не чувствуете себя уверенно при работе со звуковыми компонентами, убедитесь, что знакомы с [основами][3].
 
@@ -23,7 +23,7 @@ PlayCanvas позволяет вам полностью использовать
 
 Этот скрипт управляет звуковыми эффектами приложения.
 
-## Использование AudioNodes
+## Using AudioNodes
 
 Web Audio API дает вам возможность создать разные звуковые устройства - node, которые вы можете соединять вместе, формируя последовательный граф. Когда звуковая дорожка проигрывается, она проходит через каждое устройство и в конце выводит на устройство вывода звука - например, ваши динамики. Вы можете узнать более подробно об этом [здесь][5]
 
@@ -64,4 +64,3 @@ this.entity.sound.slot('speech').clearExternalNodes();
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
 [7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
 [8]: /api/pc.Sound.html
-

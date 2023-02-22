@@ -52,7 +52,7 @@ ProgressBar.attributes.add('progressImage', {type: 'entity'});
 ProgressBar.attributes.add('progressImageMaxWidth', {type: 'number'});
 
 ProgressBar.prototype.initialize = function() {
-    // use our own rect object to set the size of 
+    // use our own rect object to set the size of
     // the progress bar
     this.imageRect = this.progressImage.element.rect.clone();
 

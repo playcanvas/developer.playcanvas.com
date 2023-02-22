@@ -1,5 +1,5 @@
 ---
-title: スクリーン
+title: 画面
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -67,4 +67,3 @@ Screenコンポーネントの* Reference Resolution *プロパティを「理�
 [8]: /images/user-manual/user-interface/screens/scale-blend-0.png
 [9]: /images/user-manual/user-interface/screens/scale-blend-0.5.png
 [10]: /images/user-manual/user-interface/screens/scale-blend-1.png
-

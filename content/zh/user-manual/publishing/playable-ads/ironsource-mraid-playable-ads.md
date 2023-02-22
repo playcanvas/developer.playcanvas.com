@@ -12,11 +12,13 @@ The external assets will need to be uploaded to a server or CDN of your own for 
 
 There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
 
+
 ## Example project
 
 The [Cube Jump project][5] is ready to be exported to the ironSource MRAID Playable Ad format and the expected HTML output can be found [here][6].
 
-<iframe src="https://playcanv.as/e/p/AA9osNyV/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
+
 
 ## File size tips
 
@@ -32,6 +34,7 @@ Try to keep images as small as possible in dimensions and use tools like [TinyPN
 
 * Have you added the function call `mraid.open` (for non-store URLs) or `mraid.openStoreUrl` (for store apps) as part of your call to action callback?
 
+
 ## How to export
 
 Follow the [setup steps][7] from the readme in the GitHub repo.
@@ -42,7 +45,7 @@ ironSource have a fantastic test tool [here][ironsource-test-tool] which can be 
 
 Check that Testing mode and MRAID are both enabled on the page.
 
-<img src='/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png' width='600px'>
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600px">
 
 Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
 
@@ -63,7 +66,7 @@ We will need to serve the files from a HTTPS endpoint to test with the ironSourc
 
 Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
 
-<img src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600px">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600px">
 
 This will give a unique URL for the endpoint that we need to add to the `index.html` where it is referencing external files.
 
@@ -105,13 +108,13 @@ Test locally on your PC by double clicking on the `index.html` to ensure that it
 
 If it plays correctly on your PC, we can test on [ironSource's test tool][ironsource-test-tool] by copying the contents of `index.html` and pasting into MRAID tag area of the test tool.
 
-<img src='/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png' width='600px'>
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600px">
 
 Click on 'Test Ad' and once it renders, play the ad to reach a CTA button. After pressing the CTA button, the tool should show that all the tests have passed and give you an option to generate a code.
 
 This is used to test on device using their app that is available on both Android and iOS.
 
-<img src='/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png' width='400px'>
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400px">
 
 ### Final export for ironSource
 
@@ -144,4 +147,3 @@ Follow the process on submitting the playable ad from [ironSource's documentatio
 [ngrok]: https://ngrok.com/
 [ironsource-test-tool]: https://demos.ironsrc.com/test-tool/?adUnitLoader=mraid&mode=testing
 [ironsource-documentation]: https://developers.ironsrc.com/ironsource-mobile/general/submit-playable-qa/
-

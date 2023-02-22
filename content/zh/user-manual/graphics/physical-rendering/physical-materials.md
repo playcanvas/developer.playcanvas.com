@@ -1,5 +1,5 @@
 ---
-title: 物理材质
+title: 物理学材质
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -14,7 +14,7 @@ position: 1
 
 [First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
 
-## 金属星和镜面的工作流程
+## Metalness and Specular Workflow
 
 ![工作流程][4]
 
@@ -28,64 +28,55 @@ PBR常常被分为创建资源或工作流程的两个不同的方法。这两�
 
 有关于材质方面...
 
-# 材质属性和材质贴图
+# Material Properties and Maps
 
-## 漫反射
+## Diffuse
 
 漫反射颜色是一个材质的基础色彩。它是一个RGB颜色格式的属性值。 在用于区分纯物质 (金属, 塑料) 时它可以是一个恒定值，但是它也可以被提供作为一个漫反射贴图纹理。请注意, 你需要经常避免把光照细节 (阴影与高光)包括到你的漫反射材质贴图，因为你的材质还需要被别的贴图影响。
 
 它也常被认作 **光反射率** 或 **基础颜色**.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?color"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
 
-你可以常常在互联网上看到记录了漫反射/反射率值的图表。
+You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
-![金属][3]
+![Metals][3]
 
-<table class="centered">
-  <tr>
-  <th>材质</th><th>RGB值</th>
-  </tr>
-  <tr>
-  <td>金</td><td>(1.000, 0.766, 0.336) 或 [255, 195, 86]</td>
-  </tr>
-  <tr>
-  <td>银</td><td>(0.972, 0.960, 0.915) 或[248, 245, 233]</td>
-  </tr>
-  <tr>
-  <td>铜</td><td>(0.955, 0.637, 0.538) 或[244, 162, 137]</td>
-  </tr>
-</table>
+| Material | RGB                                      |
+|----------|------------------------------------------|
+| Gold     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
+| Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
+| Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
-## 金属性
+## Metalness
 
-金属性属性值是**金属性**工作流中的一部分。 金属性值是一个在0-1之间的唯一值，它决定了一个材质是金属 (1) 还是非金属 (0).
+The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
 
 <div class="alert-info">
-金属性属性值应该是几乎一直被取值为不是0就是1。需要取一个介于这两者之间的值的情况是很罕见的。
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
 </div>
 
-你也可以设置一个金属性的贴图，这可以让你自主定义你的材料的特定区域为金属的或是非金属的。
+You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?metal"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 
-## 光滑度
+## Glossiness
 
 光滑度在 **金属性** 和 **镜面**工作流程中都会被用到，它定义了你的材质表面有多光滑。光滑度会影响材质上倒影的模糊或清晰感，或是高光点的宽或窄。光滑度被从一个介于0-100之间的属性值或是一个光滑度贴图提供。
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
 
-一些PBR系统会使用 **粗糙度** 来代替光滑度。 粗糙度是同光滑度相反的一个值。 如果你需要把一个粗糙的贴图转换为光滑的，只要简单地反转这个值就行。
+Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
-有些时候光滑度和粗糙度会被**微观面数** 属性值所替代。
+Sometimes glossiness and roughness are referred to as the **microsurface** value.
 
-## 全部应用到一起
+## All together
 
-这三个属性 **漫反射**, **金属性** 和 **光滑度** 是物理材质系统的核心。你可以在下面的场景中试试演示不同的组合。
+These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
 
-还有许多其他的可以进行探讨的附加属性，它们可以用来制造非常优秀的材质，如环境光遮蔽，自发光，不透明度，正常的和显示高度的贴图。
+There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
 
-<iframe src="https://playcanv.as/p/Q28EwTwQ/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
 
 [1]: https://store.playcanvas.com
 [2]: /user-manual/glossary#high-dynamic-range
@@ -93,4 +84,3 @@ PBR常常被分为创建资源或工作流程的两个不同的方法。这两�
 [4]: /images/user-manual/graphics/physical-rendering/workflows.jpg
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
-

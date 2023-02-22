@@ -61,7 +61,7 @@ You cannot load your application by opening the `index.html` file in a browser o
 
 There are many options for running a web server. Here are a few:
 
-* *Easy:* Install [Python][6] and run the command *python -m http.server* from the same folder as your application's index.html. Then point your browser to http://localhost:8000
+* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your application's index.html. Then point your browser to `http://localhost:8000`
 * *Intermediate:* Install [XAMPP][7]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
 * *Advanced:* Install [Apache][8] or [nginx][9] as a standalone service.
 

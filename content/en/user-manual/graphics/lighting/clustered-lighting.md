@@ -79,7 +79,7 @@ All of the Shadow Maps and Cookie Textures used by visible lights are stored in 
 
 ### Configuring Manual Atlas Split
 
-To understand how an altas is manually split, take an array with two numbers: [2, 2]. The first number in the array splits the atlas into 2x2, for a total of four areas. Any following numbers in the array would split these areas again. In this case, the second number in the array splits one of the existing areas into another 2x2 (e.g. four areas), for a combined total of 7 areas.
+To understand how an atlas is manually split, take an array with two numbers: [2, 2]. The first number in the array splits the atlas into 2x2, for a total of four areas. Any following numbers in the array would split these areas again. In this case, the second number in the array splits one of the existing areas into another 2x2 (e.g. four areas), for a combined total of 7 areas.
 
 ![Manual Split][manual-split]
 

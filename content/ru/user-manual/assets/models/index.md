@@ -1,5 +1,5 @@
 ---
-title: Model
+title: Модель
 layout: usermanual-page.hbs
 position: 11
 ---
@@ -21,4 +21,3 @@ Learn more about:
 [4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
-

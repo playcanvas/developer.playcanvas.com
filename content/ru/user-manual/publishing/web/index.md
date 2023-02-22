@@ -1,5 +1,5 @@
 ---
-title: Web
+title: Веб
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -13,4 +13,3 @@ PlayCanvas games are actually web pages and as such, are most at home in the bro
 [1]: /user-manual/publishing/web/playcanvas-hosting
 [2]: /user-manual/publishing/web/self-hosting
 [3]: /user-manual/publishing/web/facebook
-

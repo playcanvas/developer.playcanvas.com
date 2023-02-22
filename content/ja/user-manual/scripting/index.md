@@ -22,7 +22,7 @@ Rotate.prototype.update = function (dt) {
 
 スクリプトは作成されたときに指定された名前によって定義され、Editorまたはコードでエンティティにスクリプトコンポーネントを追加することで[スクリプトコンポーネント][1]に添付されます。
 
-## 用語
+## 用語集
 
 いくつかの用語を定義しましょう。
 
@@ -32,4 +32,3 @@ Rotate.prototype.update = function (dt) {
 * ***Script Instance*** スクリプトインスタンスは、ScriptTypeのインスタンスです。スクリプトコンポーネントにScriptTypeが添付されている各エンティティに対して一つのスクリプトインスタンスが作成されます。
 
 [1]: /user-manual/packs/components/script/
-

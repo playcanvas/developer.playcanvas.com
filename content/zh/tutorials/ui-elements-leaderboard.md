@@ -2,16 +2,16 @@
 title: User Interface - Leaderboard
 layout: tutorial-page.hbs
 tags: ui
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/nbMbtAGH/"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
 
 *A leaderboard using Element components. See the [full scene][1].*
 
 This tutorial demonstrates how to create a simple leaderboard using the built-in [Elements][2]. The leaderboard is filled programmatically with data that come from a JSON asset.
 
-## Hierarchy
+## 层级树
 
 This is what our UI looks like in the hierarchy:
 
@@ -79,7 +79,7 @@ Points are anchored to the right
 
 ![Pts][12]
 
-## Script
+## 脚本
 
 This is the `leaderboard` script that reads our JSON asset and fills the leaderboard:
 
@@ -161,4 +161,3 @@ Leaderboard.prototype.load = function (callback) {
 [10]: /images/tutorials/ui/leaderboard/name.png
 [11]: /images/tutorials/ui/leaderboard/score.png
 [12]: /images/tutorials/ui/leaderboard/pts.png
-

@@ -22,14 +22,13 @@ Rotate.prototype.update = function (dt) {
 
 脚本是由创建时给出的名称所定义的，它们通过编辑为 i附属于[脚本组件][1]或者在代码中将脚本组件添加进入实体。
 
-## 专业名词
+## Terminology
 
 来让我们开始定义一些新的专业名词。
 
-* ***Script*** 一个脚本就相当于是一个Javascript文件包含了一个或多个脚本对象的定义。
-* ***Script Component*** 脚本组件由PlayCanvas引擎所定义，给予了游戏实体可以加载脚本以及创建脚本对象的功能。
-* ***ScriptType*** 脚本类型作为一个JavaScript对象通过`pc.createScript` 函数所创建。本质上当一个新的类添加到实体时就会被实例化。
-* ***Script Instance*** 一个脚本实例就是一个脚本类型的实例。一个脚本实例被创建用于所有附带脚本类型的脚本组件的实体。
+* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
+* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
+* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
+* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
 
 [1]: /user-manual/packs/components/script/
-

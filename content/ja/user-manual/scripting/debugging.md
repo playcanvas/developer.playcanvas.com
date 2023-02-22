@@ -1,14 +1,14 @@
 ---
 title: デバッグ
 layout: usermanual-page.hbs
-position: 8
+position: 9
 ---
 
 PlayCanvasのスクリプトを作成するためには、ブラウザの開発ツールにアクセスして使用する方法を知っていることが重要です。
 
 Chrome、Firefoxや他のブラウザでは、ブラウザに直接組み込まれているDeveloper Toolがあります。通常、Mac上でALT-CMD-I、WindowsではF12キーを押すことでアクセスすることができます。またはブラウザのメニューを使用して開発者ツールにアクセスすることができます。
 
-### デバッグスクリプト
+### スクリプトのデバッグ
 
 スクリプトをデバッグするためには、Developer Tools (Chrome)でSourcesタブを選択します。Sourcesペインの左上隅にあるアイコンをクリックして 'navigator' を開きます。以下のようなものが表示されるはずです：
 
@@ -18,7 +18,7 @@ Firefoxでは次のようになります：
 
 ![Firefox][2]
 
-ナビゲーターには、自身で書いたPlayCanvasスクリプトを含む、現在アクティブなタブで実行している全てのスクリプトがリストされます。ナビゲーターからスクリプトを探し選択するとソースコードが開きます。これで、ブレイクポイントを設定してデバッグが行えます。
+ナビゲータには、自身で書いたPlayCanvasスクリプトを含む、現在アクティブなタブで実行している全てのスクリプトがリストされます。ナビゲーターからスクリプトを探し、選択するとソースコードが開きます。これで、ブレイクポイントを設定してデバッグが行えます。
 
 各ブラウザには、JavaScriptをデバッグする方法の手順が詳述されています。これらのドキュメントをお読みください：[Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6]。
 
@@ -37,13 +37,12 @@ In the situation where either it's not possible to connect to the web view direc
 
 [1]: /images/user-manual/scripting/debugging/chrome-debugger.jpg
 [2]: /images/user-manual/scripting/debugging/firefox-debugger.jpg
-[3]: https://developers.google.com/web/tools/chrome-devtools/javascript
+[3]: https://developer.chrome.com/docs/devtools/javascript/
 [4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
 [5]: https://developer.apple.com/safari/tools/
-[6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/debugger
+[6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/javascript/reference
 [7]: https://developer.chrome.com/docs/devtools/remote-debugging/
 [8]: https://webkit.org/web-inspector/enabling-web-inspector/
 [9]: https://remotejs.com/
 [10]: https://github.com/Tencent/vConsole
 [11]: https://github.com/liriliri/eruda
-

@@ -1,12 +1,12 @@
 ---
-title: 预加载和流式传输
+title: 预加载和流式加载
 layout: usermanual-page.hbs
 position: 3
 ---
 
 当用户加载网页之后就能立刻进入到网页的应用程序这是在网页开发中十分重要的一步。在应用程序开始之前出现进度条以及告知用户需要等待将会导致用户的流失。PlayCanvas资源系统实现了多个功能帮助用户将加载过程简单化，将应用程序运行更快速更顺畅。
 
-## 预加载
+## Preload
 
 ![Asset Properties][1]
 
@@ -14,7 +14,7 @@ position: 3
 
 使用预加载确保资源在应用程序被开启的第一时间内被呈现。这将预防任何资源在应用程序开始之后突然出现。
 
-## 流媒体
+## Streaming
 
 ![Streaming][2]
 
@@ -30,7 +30,7 @@ You can determine when a particular asset will be loaded you can follow these ru
 * If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
 * If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
 
-## 资源标签
+## Asset Tags
 
 在很多情况下，用户都不希望当资源被加载时资源被弹出。加载一组资源然后再集体显示它们，为了达到这个效果，用户可以使用资源标签创建一组资源，然后用户可以在使用资源之前集体加载有着相同标签的资源。
 
@@ -53,4 +53,3 @@ for (var i = 0; i < assets.length; i++) {
 
 [1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
 [2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif
-

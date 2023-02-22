@@ -10,7 +10,7 @@ To open the Sprite Editor, double-click on any Texture Atlas or Sprite asset in 
 
 ![Sprite Editor][1]
 
-## Viewport
+## 视口
 
 ![Viewport][2]
 
@@ -24,7 +24,7 @@ Within the viewport use the mouse to drag the outline of a Frame, then use the g
 
 Frames are a defined region on a Texture Atlas. A frame has a name, a position and size and a border. The border is used to define the edges of the 9-slicing region. See the [9-slicing documentation][7] for more information.
 
-## Inspector
+## 检查器
 
 The inspector panel shows the properties of the currently selected item. The inspector changes depending on whether the selected item is a Texture Atlas, Frame or Sprite Asset.
 
@@ -93,4 +93,3 @@ The Asset Panel shows you all the Sprite Assets that have been created from the 
 [5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
 [6]: /user-manual/assets/sprites/
 [7]: /user-manual/2D/9-slicing/
-

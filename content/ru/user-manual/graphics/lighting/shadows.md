@@ -1,5 +1,5 @@
 ---
-title: Shadows
+title: Тени
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -8,7 +8,7 @@ Shadows are a great way to add realism to your games. However, dynamic (realtime
 
 ![Characters with shadow casting][1]
 
-The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop. Furthermore, shadows are free for everybody to use - you don't need a Pro account to make your game look great.
+The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
 
 ## Enabling Shadows
 
@@ -18,9 +18,33 @@ By default, shadow casting is disabled in PlayCanvas. You have to explicitly ena
 
 ![Model Component][6]
 
-Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all model components receive shadows but do not cast them. Therefore, in order to see an entity cast shadows, select it in the Hierarchy, locate the model component in the Inspector and check the 'Cast Shadows' option.
+Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all render and model components cast and receive shadows. To modify these properties, select the entity in the Hierarchy, locate the render or model component in the Inspector and uncheck the 'Cast Shadows' or 'Receive Shadows' option as required.
 
-Shadows should now be visible in the Editor's Viewport.
+## Shadow Cascades
+
+When a directional shadow is used over a large area, it often exhibits aliasing, where a shadow near the camera has a low resolution. Capturing the shadow in a single shadow map requires very high and impractical resolution to improve this.
+
+Shadow cascades help to fix this problem by splitting the camera view frustum along the viewing direction, and a separate shadow map is used for each split. This gives nearby objects one shadow map, and another shadow map captures everything in the distance, and optionally additional shadow maps in between.
+
+Note that the number of shadow cascades has an effect on performance, as each shadow casting mesh might need to be rendered into more than a single shadow map.
+
+The following properties can be used to set up shadow cascades.
+
+### Number of cascades
+
+Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
+
+A screenshot showing a single shadow cascade.
+
+![One cascade][7]
+
+A screenshot showing four shadow cascades.
+
+![Four cascades][8]
+
+### Distribution of cascades
+
+The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
 
 ## Tuning Shadows
 
@@ -58,7 +82,7 @@ The shadow sampling type is specified per light and so the option can be found i
 
 Enabling shadows has performance implications:
 
-* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Point light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
+* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Omni light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
 * Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
 * Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
 * If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
@@ -69,4 +93,5 @@ Enabling shadows has performance implications:
 [4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/scenes/components/component-light-directional.png
 [6]: /images/user-manual/scenes/components/component-model.png
-
+[7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
+[8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg

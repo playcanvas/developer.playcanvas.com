@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas 托管
+title: PlayCanvas 服务
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -8,27 +8,27 @@ position: 1
 
 在PlayCanvas中发布包含了一下两个步骤：
 
-1. 发布一个新的 **版本**
-2. 将其设置为 **首要版本**
+1. Publish a new **Build**
+2. Set the build as the **Primary Build**
 
 为了能顺利发布游戏，用户需要在程序中添加至少一个场景。
 
-## 发布一个新的版本
+## Publishing a new Build
 
-* 前往您的工程并打开编辑器。
-* 点击在工具条左手边的<span class="pc-icon" style="font-size">&#57911;</span>按钮或者点击在左上角目录中的发布按钮。
+* Go to your Project and open the Editor.
+* Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
 
 ![Publish Button][1]
 
-* 这将打开“发布”对话框。 在这里，您可以发布构建或下载构建以供自托管。
+* This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
 
 ![Publish][2]
 
-* 点击“在PlayCanvas上发布”旁边的PUBLISH按钮。
+* Click the PUBLISH button next to "Publish on PlayCanvas".
 
 ![Publish New Build][3]
 
-* 用户将需要填写一些关于项目的如下细节内容：
+* You will then have to fill out some details about your new build. The available fields are:
 
   * *Image*: Click on the image to upload a different one if you want. This will be used when sharing the build on Social Media.
   * *Title*: The title of your build.
@@ -73,4 +73,3 @@ The first time you publish a build, it will automatically become the Primary Bui
 [4]: /images/user-manual/publishing/dialog-publish-build-scenes.png
 [5]: /images/user-manual/publishing/dialog-builds.png
 [6]: /user-manual/optimization/optimizing-scene-format
-

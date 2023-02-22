@@ -1,5 +1,5 @@
 ---
-title: Creating new scripts
+title: Создание новых скриптов
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -46,4 +46,3 @@ entity.script.destroy("rotate");
 [1]: /images/user-manual/scripting/code-editor.jpg
 [2]: /images/user-manual/scripting/select-script.jpg
 [3]: /api/pc.AssetRegistry.html#load
-

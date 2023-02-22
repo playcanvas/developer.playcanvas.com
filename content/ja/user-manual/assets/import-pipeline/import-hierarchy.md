@@ -12,11 +12,11 @@ PlayCanvas supports importing models with their meshes as a hierarchy of entitie
 
 Open the 'Project Settings'
 
-<img src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
 
 Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
 
-<img src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
 
 ## Importing models
 
@@ -26,7 +26,7 @@ Drag the model file into the 'Assets Panel':
 The following assets will be created when imported:
 ![Created Assets][created_assets_img]
 
-| Asset Type | Description |
+| Asset Type | 説明 |
 |------------|-------------|
 | **[Materials][material_asset]** | Materials used by the imported model, mapped to the mesh instance. |
 | **[Textures][texture_asset]** | Embedded textures in the model file (if any). These will automatically be mapped to the associated materials. |
@@ -56,4 +56,3 @@ How the Editor decides what is a new or removed mesh instance is done by the fol
 [template_asset]: /user-manual/templates/
 [render_component]: /api/pc.RenderComponent.html
 [collision_component]: /api/pc.CollisionComponent.html
-

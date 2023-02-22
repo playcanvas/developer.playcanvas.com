@@ -1,15 +1,15 @@
 ---
-title: 以编程方式创建实体
+title: 程序中创建实体
 layout: tutorial-page.hbs
 tags: procedural, basics
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1VjdIY7v/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1VjdIY7v/" title="Programmatically Creating Entities"></iframe>
 
 通常，您将通过PlayCanvas编辑器创建实体，构建组件和脚本的集合，以创建游戏的各个部分。 但是，在某些情况下，在脚本中创建实体很方便。 本教程将向您展示如何操作。
 
-## 创建一个实体
+## Creating an Entity
 
 ```javascript
 var entity = new pc.Entity(); // Create an Entity
@@ -20,7 +20,7 @@ this.app.root.addChild(entity);
 
 首先你需要创建一个Entity。 这很简单，但将Entity添加到主Entity层次结构这一步很重要。 只有在层次结构中的实体才具有变换块，组件和脚本更新。 在脚本中，您可以从传递到脚本中的`Application`对象访问Entity层次结构的根节点。 按照惯例，这通常命名为“app”，层次结构根可以作为`this.app.root`。
 
-## 添加组件
+## Adding Components
 
 ```javascript
 // Create a new Entity
@@ -42,7 +42,7 @@ this.app.root.addChild(entity);
 
 每个组件类型都具有可以在数据对象上传递的不同属性，有关可用属性的更多详细信息，请参见[组件文档][1]。 `data`参数可以省略，并使用默认值。
 
-## 移除组建
+## Removing Components
 
 ```javascript
 var entity = new pc.Entity();
@@ -56,7 +56,7 @@ entity.removeComponent("camera");
 
 组件可以通过调用Entity上的`removeComponent`方法从Entity中单独删除。
 
-## 删除实体
+## Deleting Entities
 
 ```javascript
 // Create a new Entity
@@ -79,7 +79,7 @@ entity.destroy();
 
 当你完成一个实体，你调用了实体上的`destroy`方法。 这将删除所有组件并从层次结构中删除实体。 它还将以相同的方式删除所有子实体。
 
-## 所有步骤
+## In Action
 
 ```javascript
 var EntityCreator = pc.createScript('entityCreator');
@@ -164,4 +164,3 @@ EntityCreator.prototype.spawnCube = function () {
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341
-

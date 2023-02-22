@@ -14,7 +14,7 @@ The Text Element contains a string field to enter the text that will be displaye
 
 ## Localization
 
-You can the Localized checkbox to localize the text of the Text Element. If this is enabled then instead of the Text you specify the localization Key for the Text Element which will be used to get the localized text from the Localization assets.
+You can check the 'Localized' checkbox to localize the text of the Text Element. If this is enabled then, instead of the text, you specify the localization key for the Text Element which will be used to get the localized text from the localization assets.
 
 Read more about localization [here][11].
 

@@ -12,13 +12,11 @@ PlayCanvas is a visual development platform for interactive web content. Both th
 
 Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some Javascript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
 
-
 ### Create and upload assets
 
 ![assets][1]
 
 PlayCanvas supports a wide variety of industry standard asset formats. For example, upload images, 3D models, audio files or custom text or binary file formats.
-
 
 ### Construct your scene
 
@@ -26,13 +24,11 @@ PlayCanvas supports a wide variety of industry standard asset formats. For examp
 
 The PlayCanvas Editor is a visual building tool which is used to construct scenes. Build a hierarchy of entities using built in components like 3D models, collision, particle effects and more.
 
-
 ### Add interactivity
 
 ![script][3]
 
 Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
-
 
 ### Publish your application
 

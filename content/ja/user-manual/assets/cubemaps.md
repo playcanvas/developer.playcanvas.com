@@ -6,9 +6,10 @@ position: 7
 
 キューブマップは特別なテクスチャーアセットです。各テクスチャーがキューブの面を表す、6つのテクスチャーアセットで構成されています。一般的に次の二つの用途があります：
 
-1. キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルが含まれます。 2. キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
+1. キューブマップでシーンのスカイボックスを定義することができます。スカイボックスには、丘、山や空のようなシーンの遠くにある風景のビジュアルが含まれます。
+2. キューブマップは、任意の材料に反射を追加することができます。シーン内に光沢のあるクロームのボールベアリングがあるとします。ボールは周囲のシーンを反映します。オープンな環境では、通常、反射物体の素材のキューブマップとしてシーンのスカイボックスのキューブマップを設定します。
 
-<iframe src="https://playcanv.as/b/xp7v1oFB/" allowfullscreen></iframe>
+<iframe loading="lazy" src="https://playcanv.as/b/xp7v1oFB/" title="Cubemap"></iframe>
 
 ## キューブマップテクスチャーのインポート
 
@@ -36,7 +37,7 @@ PlayCanvas Editorインターフェイスから直接キューブマップアセ
 
 ![キューブマップのプロパティ][3]
 
-### Filtering
+### フィルタリング
 この設定では、キューブマップが拡大される際にピクセルが補間される方法を定義します。拡大とは、テクセル対画面のピクセル比が1より少ない状態です。Linearが視覚的に最適です。次に適しているのはNearestです。
 
 ### Anisotropy
@@ -50,9 +51,9 @@ Anisotropyは、カメラの視線ベクトルがテクスチャを持つ平面�
 
 キューブマップの面は次の通りです：
 
-*正方形(幅と高さが同じ解像度)
-*次元の2乗(1x1, 2x2, 4x4, 8x8, 16x16, 32x32など)
-*すべての面は同じ解像度でなければなりません
+* 正方形(幅と高さが同じ解像度)
+* 次元の2乗(1x1, 2x2, 4x4, 8x8, 16x16, 32x32など)
+* すべての面は同じ解像度でなければなりません
 
 Editorは面に自動的にテクスチャを割り当てる方法を見つけようとします。これは、キューブマップの面によく使用される命名規則を一致させることによって、最初の面をスロットにドラッグするときに実行されます。例えば：
 
@@ -73,7 +74,7 @@ Editorは面に自動的にテクスチャを割り当てる方法を見つけ�
 
 この手法により、CubeMapなどの環境マップを使用して物理に基づいたアンビエント照明や素材による反射をシミュレーションできます。これがどのように動作するか、また、IBL用にCubeMapを作成する方法については[こちら][6]をご確認ください。
 
-## 素材にキューブマップを割り当てる
+## 素材にキューブマップを割り当てる
 
 デフォルトのフォンと物理素材の種類はどちらも反射プロパティを持ちます。Environmentプロパティセクションを展開すると、次が表示されます：
 
@@ -83,10 +84,40 @@ Emptyスロットをクリックしてキューブマップを選択するか、
 
 補足：物理素材が割り当てられ、プレフィルタされる場合は、デフォルトの環境マップとしてシーンのスカイボックスを使用します。
 
+## Converting Equirectangular or Octahedral HDRIs to Cubemaps
+
+Environment textures often are in a equirectangular or Octahedral format ([Poly Haven][7] for example) and will need to be converted to cubemaps before they can be used in PlayCanvas.
+
+This can be done via [PlayCanvas Texture Tool][8], available in the browser.
+
+1. Download the HDR version of environment texture and press 'Add Files' button in PlayCanvas Texture Tool to load the file. 
+2. Select the loaded texture on the left.
+3. Under 'Reproject' section, change the 'source' to the format of texture. 
+4. Change 'target' to 'cube'.
+5. Change 'encoding' to the desired format:
+    - 'rgbe' for exporting to 'HDR' 
+    - 'rgbm' for exporting to 'PNG'
+6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size. 
+7. Press 'Reproject' button to do the conversion to a cubemap. 
+8. Press 'Export to PNG' or 'Export to HDR' to download the 6 individual cubemap face textures that are ready to be uploaded to PlayCanvas.
+
+![PlayCanvas Texture Tool][12]
+
+Other tools that can also do this conversion include:
+
+* Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
+* [cmftStudio][10] (desktop) with [guide][11]
+
+
 [1]: /images/user-manual/assets/cubemaps/cubemap-create.png
 [2]: /images/user-manual/assets/cubemaps/cubemap-thumbnails.png
 [3]: /images/user-manual/assets/cubemaps/cubemap-properties.png
 [4]: /images/user-manual/assets/cubemaps/cubemap-preview.png
 [5]: /images/user-manual/assets/cubemaps/cubemap-material.png
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/
-
+[7]: https://polyhaven.com/hdris
+[8]: https://playcanvas.com/texture-tool
+[9]: https://matheowis.github.io/HDRI-to-CubeMap/
+[10]: https://github.com/dariomanesku/cmftStudio
+[11]: https://jamie-white.com/webgl/equirectangular-hdr-image-to-face-list/
+[12]: /images/user-manual/assets/cubemaps/playcanvas-texture-tool-convert.png

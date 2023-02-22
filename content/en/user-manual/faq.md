@@ -15,7 +15,7 @@ To add a **component** to an Entity, select the Entity and then click **Add Comp
 
 ## How do I add a script?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/add-new-script.gif">
+<img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif">
 
 You can use JavaScript to control the behavior of entities. Select any entity, add a script component and create a new script asset.
 
@@ -35,7 +35,7 @@ You could also try and adding a [skybox](https://developer.playcanvas.com/en/use
 
 ## How do I change the material of a model?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/change_material.gif">
+<img src="https://playcanvas.com/static-assets/instructions/change_material.gif">
 
 Every surface on a 3D model is rendered using a **material**. The material defines the properties of that surface, such as its color, shininess, bumpiness etc.
 
@@ -47,7 +47,7 @@ You can create a new material and drag and drop it on your model or you can sele
 
 ## How do I create a cubemap?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif">
 
 Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube.
 
@@ -59,7 +59,7 @@ To create a cubemap click on the **<span class="pc-icon">&#57632;</span> Add** b
 
 ## How do I create an Entity?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/new_entity.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_entity.gif">
 
 You can create a new Entity by clicking on the <span class="pc-icon">&#57632;</span> Add button in the Hierarchy panel or right click on an Entity and use the **New Entity** menu item.
 
@@ -90,9 +90,9 @@ You can create a new shader asset from the asset panel. Click **Add Asset -> Sha
 
 
 
-## How do I create a shape like a box, sphere etc?
+## How do I create a shape like a box or sphere?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/new_box.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_box.gif">
 
 You can add primitive shapes like boxes, spheres and others by adding a **Render Component** on an Entity and changing its type to the desired shape.
 
@@ -150,7 +150,7 @@ You can create Audio assets by dragging audio files from your computer into the 
 
 ## How do I remove a component?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/remove_component.jpg">
+<img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg">
 
 To remove a component, select the Entity and then click on the **<span class="pc-icon">&#57636;</span> Delete** button in the Inspector next the component’s title.
 
@@ -158,7 +158,7 @@ To remove a component, select the Entity and then click on the **<span class="pc
 
 ## How do I render a 3D model?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/new_model.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_model.gif">
 
 To render a 3D model you need to add a **Model Component** to an Entity and drag a **Model Asset** on the Asset field. Alternatively you can drag and drop a Model Asset from the Assets Panel into the 3D Viewport.
 
@@ -168,7 +168,7 @@ To render a 3D model you need to add a **Model Component** to an Entity and drag
 
 ## How do I move / rotate / scale an Entity?
 
-<img loading="lazy" src="https://playcanvas.com/static-assets/instructions/transform.gif">
+<img src="https://playcanvas.com/static-assets/instructions/transform.gif">
 
 To move an Entity, select it and then move it using the **<span class="pc-icon">&#57617;</span> Translate tool**. To rotate it use the **<span class="pc-icon">&#57619;</span> Rotate tool** and to scale it use the **<span class="pc-icon">&#57618;</span> Scale tool**.
 
@@ -198,4 +198,3 @@ You can change the default [gravity](https://developer.playcanvas.com/en/user-ma
 Real-time shadows are rendered for each light source that has **Cast Shadows** enabled. To enable shadows, select an Entity with a Light component and enable Cast Shadows. You also need to enable Cast Shadows on any Model components in your scene.
 
 [Learn more](https://developer.playcanvas.com/en/user-manual/graphics/lighting/shadows/)
-

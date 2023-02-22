@@ -70,7 +70,6 @@ In this example, the horizontal layout is using the **Stretch** width fitting to
 
 ![Layout Child Setup][9]
 
-
 ## Example Layouts
 
 ### Vertical Leaderboard
@@ -110,4 +109,3 @@ This row of buttons is laid out using a Layout Group with the Wrap setting enabl
 [10]: /user-manual/user-interface/layout-groups#grid
 [11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
 [12]: /user-manual/user-interface/layout-groups#horizontal-buttons
-

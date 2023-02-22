@@ -4,22 +4,22 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7], [Sprite][9] and [Element][10] components that lets you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
+バッチングとは、複数のメッシュインスタンスを1つのメッシュインスタンスに結合することで、すべてを1回のGPUドローコールでレンダリングできるようにするプロセスです。 PlayCanvasは、[Model][7]、[Sprite][9]、および[Element][10]コンポーネントに便利な機能を提供し、これらのコンポーネントをバッチグループに割り当てることができます。これにより、エンジンがメッシュを結合して総ドローコール数を減らす方法に関するヒントを与えることができます。
 
 メッシュインスタンスを組み合わせることができるか、エンジンが確認するためのルールが多数存在しています。最初のルールは、すべてのメッシュインスタンスが同じマテリアルを共有する必要があるというものです。
 
 一般的なバッチングの使用例は以下のとおりです：
 
-*  静的幾何学（たとえば環境）を1つのメッシュインスタンス、または複数の大きなインスタンスに結合させてドローコールを減らします。ただし、カメラカリングは依然としてサポートされます。
+* 静的幾何学（たとえば環境）を1つのメッシュインスタンス、または複数の大きなインスタンスに結合させてドローコールを減らします。ただし、カメラカリングは依然としてサポートされます。
 * 動的幾何学（たとえば、移動オブジェクトのセット）を、GPUで適用された動的プロパティとともに1つのメッシュインスタンスに結合します。
 
 <div class="alert-info">
-    The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">runtime lightmaps</a> due to each lightmapped object requiring its own unique lightmap texture.
+    現在、バッチングの使用は、各ライトマップ付きオブジェクトに独自のライトマップテクスチャが必要であるため、<a href="/user-manual/graphics/lighting/runtime-lightmaps/">ランタイムライトマップ</a>と互換性がありません。
 </div>
 
 ## バッチグループの作成
 
-![Creating Batch Groups][1]
+![バッチグループの作成][1]
 
 バッチグループは[シーン設定パネル][6]のバッチグループセクションから作成できます。
 各バッチグループには多くのプロパティがあり、これらのプロパティはこのバッチグループからバッチを作成する方法についてのヒントをエンジンに示すために使用されます。
@@ -28,8 +28,7 @@ Batching is the process of combining multiple mesh instances together into a sin
 
 * **Name**: 異なるバッチグループを区別するために使用されます。このバッチグループが保有するオブジェクトの種類を説明するような名前を設定することが理想的です。この名前は実行時に利用可能で、グループを取得できます。
 * **Dynamic**: 有効化された場合でも、バッチグループ内のオブジェクトは依然として移動/回転/拡張できます。この機能は、たとえば銃弾など互いに類似して、同じマテリアルを使用するオブジェクトに使用可能です。静的なグループは、より少ないランタイムリソースを使用するため、バッチグループのコンテンツが移動しない場合にはDynamicを非有効化する必要があります。
-* **Max AABB size**: 
-バッチが作成された時点でのバッチグループ内のすべてのオブジェクトを含む、バウンディングボックスの任意の側面の最大サイズ。メッシュのセットのサイズが、最大サイズよりも大きい場合にはレンダリング用に複数バッチが作成されます。より大きなバウンディングボックスの場合には、より少ないドローセルでレンダリングされます。ただし、この場合にはカメラカリングとの連携度合が減少します。
+* **Max AABB size**: バッチが作成された時点でのバッチグループ内のすべてのオブジェクトを含む、バウンディングボックスの任意の側面の最大サイズ。メッシュのセットのサイズが、最大サイズよりも大きい場合にはレンダリング用に複数バッチが作成されます。より大きなバウンディングボックスの場合には、より少ないドローセルでレンダリングされます。ただし、この場合にはカメラカリングとの連携度合が減少します。
 
 ## バッチグループにコンポーネントを追加
 
@@ -51,11 +50,11 @@ Batching is the process of combining multiple mesh instances together into a sin
 
 バッチグループにすべてのルールにしたがうわけではないコンポーネントまたはメッシュインスタンスが含まれる場合、バッチグループは複数のバッチを作成し、すべてのルールにしたがうメッシュインスタンスを含む個別のバッチが複数作成されます。
 
-## Trigger re-batching
+## トリガー再バッチング
 
-Based on Batch Groups the engine creates an optimized version of mesh instances. Further changes to many properties of the original mesh instances are not reflected in the optimized versions. To allow for good performance by using batching, while still allowing some further updates, you can request the engine to rebatch individual Batch Groups after you make changes to the original mesh instances. This is often useful with User Interface element components, where you might want to set up batching, but still need to do infrequent updates. Note that re-batching a group is a potentially expensive operation. In many cases, the impact of rebatching can be minimized by separating elements that need updating to separate Batch Group.
+バッチグループに基づいて、エンジンはメッシュインスタンスの最適化されたバージョンを作成します。オリジナルのメッシュインスタンスの多くのプロパティに対するさらなる変更は、最適化されたバージョンに反映されません。バッチングを使用して良好なパフォーマンスを実現する一方で、いくつかの更新を許可するために、オリジナルのメッシュインスタンスに変更を加えた後にエンジンに個々のバッチグループの再バッチングをリクエストすることができます。これは、ユーザーインターフェイス要素コンポーネントでよく使用され、バッチ処理を設定したいが、まれに更新が必要な場合に役立ちます。ただし、グループを再バッチングすることは、コストがかかる場合があります。多くの場合、更新が必要な要素を別々のバッチグループに分離することで、再バッチングの影響を最小限に抑えることができます。
 
-Here is an example of a simple script. The script updates `textureAsset` on an element, and marks the Batch Group as dirty.
+以下は単純なスクリプトの例です。このスクリプトは、要素の`textureAsset`を更新し、バッチグループを変更済みとしてマークします。
 
 ```javascript
 // change textureAsset on element
@@ -86,6 +85,7 @@ if (element.batchGroupId)
 * **バッチ** - ランタイム時に作成されるエンジンオブジェクトで、1つのドローコール内でレンダリングされる一連のメッシュインスタンス。バッチグループは、バッチグループに追加されたメッシュインスタンスのプロパティに応じてバッチグループをもたらします。
 * **バッチマネージャー** - ランタイム時にバッチを作成およびアップデートするプログラムインターフェース。 [API ドキュメント][8]を参照してください。
 
+
 [1]: /images/user-manual/optimization/batching/batch-groups.jpg
 [2]: /images/user-manual/optimization/batching/model-component.jpg
 [3]: /images/user-manual/optimization/batching/western-scene.jpg
@@ -96,4 +96,3 @@ if (element.batchGroupId)
 [8]: /api/pc.BatchManager.html
 [9]: /user-manual/packs/components/sprite
 [10]: /user-manual/packs/components/element
-

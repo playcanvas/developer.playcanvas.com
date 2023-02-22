@@ -178,4 +178,3 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
 [violentmonkey-matching]: https://violentmonkey.github.io/api/matching/
 [generate-boxes-gif]: /images/user-manual/editor/editor-api/generate-random-boxes.gif
 [pcui]: https://github.com/playcanvas/pcui
-

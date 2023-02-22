@@ -9,4 +9,3 @@ Click here to learn how to use the [Anim Component](/en/user-manual/packs/compon
 ![New Anim Component][1]
 
 [1]: /images/user-manual/anim/new_anim_component.png
-

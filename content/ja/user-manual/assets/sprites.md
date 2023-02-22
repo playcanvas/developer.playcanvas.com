@@ -29,4 +29,3 @@ PlayCanvasのシーンで、1Unitにマッピングするスプライト画像�
 [1]: /user-manual/assets/texture-atlas
 [2]: /user-manual/2D/9-slicing
 [3]: /images/user-manual/assets/sprites/sprites.jpg
-

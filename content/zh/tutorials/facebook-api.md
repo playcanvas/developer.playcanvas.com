@@ -1,18 +1,18 @@
 ---
-title: Facebook API
+title: Facebook API接口
 layout: tutorial-page.hbs
 tags: facebook
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/StXUSCXN/"></iframe>
-*使用facebook登陆以在3D 雕塑中查看你的相册*
+<iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
+*Log in with facebook to see your photos in a 3D sculpture*
 
 PlayCanvas是一个非常优秀的创建WebGL的facebook游戏和应用的工具，Facebook 是一个用于为游戏寻找大量用户的很好的平台，并且PlayCanvas让你能够迅速创建发表并优化web游戏。
 
 在这个教程中，我们将为你展示如何将Facebook API整合进你的PlayCanvas应用中。一旦你能够访问Facebook API，你将会获得很多的可能性。举个例子，你能够向朋友分享你的游戏，在Facebook上记录故事，以及更多功能。详情查阅[教学工程][5]。
 
-## Facebook 插件
+## Facebook Plugin
 
 [github][1]上有一个能够帮助你把Facebook整合到项目中并使之能使用的插件。这简化了加载Facebook 的JavaScript SDK的工作。你只要把插件的脚本`lib/facebook-setup.js`附着到场景中的一个实体上，然后监听 `fb:init` 事件，你就能知道API已经准备好了。更多的信息可以到 [github 页面][1]上参阅。
 
@@ -23,7 +23,7 @@ PlayCanvas是一个非常优秀的创建WebGL的facebook游戏和应用的工具
   }, this);`
 ```
 
-## 登陆到 Facebook
+## Login to Facebook
 
 在这个例子中我们在应用中实施了一个能够让你使用Facebook 账号登陆登出的用户接口。这就是代码段 `fb-ui.js` 。
 
@@ -124,7 +124,8 @@ FbUi.prototype.hideLogout = function () {
 
 注意，我们也启动我们自己的应用程序事件`app：fblogin`和`app：fblogout`来告诉应用程序的其他部分，Facebook的状态已经改变。
 
-### 访问 Facebook API
+
+### Accessing the Facebook API
 
 文件“face-photo.js”使用Facebook API从用户检索照片列表，并在3D世界中显示它们。
 
@@ -278,7 +279,7 @@ FacePhoto.prototype.createPhoto = function(texture) {
 
 最后，一旦我们加载了纹理资源，我们创建一个新的Photo实体，并用新加载的照片纹理覆盖发光纹理。
 
-### 更多的想法
+### More ideas
 
 本教程将向您展示如何加载Facebook API并从您的PlayCanvas应用程序中访问Facebook数据。 有更多的东西，你可以尝试使用Facebook API。 例如，当游戏事件发生时，尝试分享Facebook故事，如打破高分。 或者使用用户的朋友列表来让他们向朋友挑战游戏。
 
@@ -289,4 +290,3 @@ FacePhoto.prototype.createPhoto = function(texture) {
 [3]: https://developers.facebook.com/docs/javascript
 [4]: https://apps.facebook.com/swooop-playcanvas/
 [5]: https://playcanvas.com/project/405897
-

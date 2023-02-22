@@ -21,4 +21,3 @@ The Graph Editor displays the currently selected graph. This is where nodes are 
 [2]: /shader-editor/window-layout/nodes-pane
 [3]: /shader-editor/window-layout/assets-pane
 [4]: /shader-editor/window-layout/inspector-pane
-

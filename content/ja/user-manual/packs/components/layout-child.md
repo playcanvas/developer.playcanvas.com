@@ -12,20 +12,17 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 
 ## プロパティ
 
-<table class="table table-striped">
-    <col class="property-name"></col>
-    <col class="property-description"></col>
-    <tr><th>プロパティ</th><th>説明</th></tr>
-    <tr><td>最小幅</td><td>要素をレンダリングできる最小幅を設定</td></tr>
-    <tr><td>最小高</td><td>要素をレンダリングできる最小の高さを設定</td></tr>
-    <tr>最大幅</td><td>要素をレンダリングできる最大幅を設定</td></tr>
-    <tr><td>最大高</td><td>要素をレンダリングできる最大幅を設定</td></tr>
-    <tr><td>固定幅の比率</td><td></td>レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率</tr>
-    <tr><td>固定高の比率</td><td>レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率</td></tr>
-    <tr><td>レイアウトから除外</td><td>レイアウトを計算するとき、この要素を完全に無視します。</td></tr>
-</table>
+| プロパティ              | 説明 |
+|-----------------------|-------------|
+| Min Width             | 要素をレンダリングできる最小幅を設定 |
+| Min Height            | 要素をレンダリングできる最小の高さを設定 |
+| Max Width             | 要素をレンダリングできる最大幅を設定 |
+| Max Height            | 要素をレンダリングできる最大幅を設定 |
+| Fit Width Proportion  | レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率 |
+| Fit Height Proportion | レイアウトグループが伸縮するように設定されている場合に要素が占める追加のスペースの比率 |
+| Exclude from Layout   | レイアウトを計算するとき、この要素を完全に無視します。 |
 
-## スクリプトインターフェイス
+## スクリプトのインターフェース
 
 [スクリプトコンポーネント][2]を使用してLayoutChildコンポーネントのプロパティを制御できます。LayoutChildコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 
@@ -33,4 +30,3 @@ LayoutChildコンポーネントを使用すると、LayoutGroupコンポーネ�
 [1]: /images/user-manual/scenes/components/component-layoutchild.png
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.LayoutChildComponent.html
-

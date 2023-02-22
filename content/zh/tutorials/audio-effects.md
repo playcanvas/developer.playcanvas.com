@@ -1,21 +1,21 @@
 ---
-title: 音效
+title: 音频特效
 layout: tutorial-page.hbs
 tags: audio
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/1nS6AnC9/" ></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
 
 *点击各种按钮尝试不同的音效。*
 
 <div class="alert alert-info">本教程需要Web Audio API支持。</div>
 
-## 使用 Web Audio API
+## Using The Web Audio API
 
 PlayCanvas允许您充分利用Web Audio API的强大功能为您的声音添加强大的效果。 本教程演示如何向音频样本添加各种效果。
 
-## 设置
+## The setup
 
 你可以自己检查这个场景[这里][1]。 该场景中的根实体具有[Sound][2]组件，其具有播放简单循环语音音频样本的功能。 如果你不熟悉Sound Components的工作原理，请务必查看[基本教程][3]。
 
@@ -23,7 +23,7 @@ PlayCanvas允许您充分利用Web Audio API的强大功能为您的声音添加
 
 此脚本管理应用程序的声音效果。
 
-## 使用音频节点
+## Using AudioNodes
 
 Web Audio API允许您创建各种音频节点，它们可以连接在一起以形成音频路由图。 当播放音频样本时，它获得每个节点的处理，并最终到达目的地，通常是扬声器。 你可以找到更多的细节[这里][5]。
 
@@ -64,4 +64,3 @@ this.entity.sound.slot('speech').clearExternalNodes();
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
 [7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
 [8]: /api/pc.Sound.html
-

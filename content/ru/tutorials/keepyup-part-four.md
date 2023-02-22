@@ -1,11 +1,11 @@
 ---
-title: Making a Simple Game - Part 4
+title: Создание простой игры - Часть 4
 layout: tutorial-page.hbs
 tags: games
-thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
+thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe src="https://playcanv.as/p/KH37bnOk/?overlay=false"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 4"></iframe>
 
 *You can find the [full project here][6]. If you haven't see [Part 1][1], [Part 2][2] and [Part 3][3] read them first.*
 
@@ -159,7 +159,7 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### Script Attributes
+### Атрибуты сценария
 
 The first thing you'll notice at the top of the script are a set of script attributes that we've defined. Defining script attributes lets you expose values from your script into the editor. There are three very good reasons to do this.
 
@@ -238,4 +238,3 @@ The ball script runs a simply physical simulation to make the ball fall under gr
 [4]: /tutorials/keepyup-part-five/
 [5]: /images/tutorials/beginner/keepyup-part-four/ball-script-attributes.jpg
 [6]: https://playcanvas.com/project/406050
-

@@ -1,5 +1,5 @@
 ---
-title: Communication with web pages
+title: Связь с веб-страницами
 layout: usermanual-page.hbs
 position: 4
 ---
@@ -8,7 +8,7 @@ One the key advantages of using PlayCanvas and WebGL over other plugins or cross
 
 There are two ways you may find your PlayCanvas application communicating with the surrounding Web page. First, you may have embedded your application in a iframe in a page. Second you may be serving your own HTML page which loads an PlayCanvas page. These two methods require very different ways of communicating between web page and application.
 
-## Defining an API
+## Defining an API
 
 Common to both methods of hosting you should think about what features of your PlayCanvas application you need to expose to the web page. Perhaps you need to change the color of something based on a button click or a slider; or you might need to send some text input into the application to be rendered to a texture. Decide in advance what features you need to expose and in your PlayCanvas application write an explicit API or set of functions which are the only functions that your web page will call.
 
@@ -49,16 +49,18 @@ app.fire("score:set", 10);
 
 Method one defines a global function which can be called anywhere in your page to access your application. Method two defines an application event which you can fire from your page. The application listens for this event and performs actions in response to the event. Both are valid methods of defining an API with your application.
 
-### Embedded in IFrame
+### Embedded in IFrame
 
 Embedding a PlayCanvas application in an iframe is a quick and easy way to get your PlayCanvas content in a page. It also means that you can make use of our optimized hosting and don't need to worry about serving all the PlayCanvas content. However, the downside is that you can not call javascript functions in the PlayCanvas application directly from the hosting page because they are running on different pages.
 
 To communicate between a parent page and an iframe you will need to use the [postMessage][1] javascript API to send data between your page and the PlayCanvas application.
 
-In your host page
+In your host page, use the iframeless URL for the iframe. The default publish link has the build in an iframe to include the social sharing bar at the bottom. This can cause problems with [postMessage][1] as there are now two iframes to communicate through.
+
+If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
 
 ```html
-<iframe id="app-frame" src="https://playcanv.as/p/example/">
+<iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
 <script>
 var iframe = document.getElementById("app-frame");
 iframe.contentWindow.postMessage({
@@ -91,7 +93,7 @@ When you download your PlayCanvas application for self-hosting. This is the inde
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>
@@ -123,7 +125,7 @@ For example:
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Application Title</title>
@@ -153,4 +155,3 @@ For example:
 ```
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-
