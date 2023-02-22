@@ -4,58 +4,81 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-Во вкладке «Проекты» выводится список всех проектов, которые вы создали или к которым вы получили доступ.
+Вкладка "Проекты" содержит список всех проектов, которые вы создали или к которым у вас есть доступ.
 
 ![projects_page][1]
 
-## New Project
+## Новый проект
 
-Нажмите на кнопку «Создать», чтобы создать новый проект.
+Нажмите кнопку NEW в верхнем правом углу, чтобы создать новый проект.
 
-## Delete Project
+## Удаление проекта
 
-Нажмите на стрелку рядом с названием проекта и выберите «Удалить», чтобы перманентно удалить его из вашей учетной записи.
+Нажмите на стрелку рядом с проектом и выберите Delete, чтобы окончательно удалить его из вашей учетной записи.
 
-## Unlock Project
+## Разблокировать проект
 
-Click on the arrow next to a project and select Unlock to unlock a *locked* project. Unlocking a project depends on the project owner's subscription type. If the owner has a Personal plan then Unlocking means removing any Free users from the project (because Personal plans require all users to have a subscription). Otherwise unlocking a project means making it Public.
+Нажмите на стрелку рядом с проектом и выберите Unlock, чтобы разблокировать *заблокированный* проект. Разблокировка проекта зависит от типа подписки владельца проекта. Если у владельца есть личный план, то разблокировка означает удаление всех бесплатных пользователей из проекта (поскольку для личных планов требуется подписка для всех пользователей). В противном случае разблокировка проекта означает его сделать общедоступным.
 
-If you have an Organization account another way to unlock projects is by purchasing more seats until you are no longer hitting your seats limit.
+Если у вас есть учетная запись организации, то еще один способ разблокировки проектов - это покупка дополнительных мест, пока вы не достигнете предела своих мест.
 
-## Export Project Archive
+## Передача владения проектом
 
-![export-archive][2]
-
-You can export a .zip archive of your project to keep an offline backup. You can later choose to import that .zip archive as a new project.
-
-Чтобы экспортировать проект, нажмите на стрелку рядом с названием проекта и выберите «Экспортировать».
-
-## Import Project Archive
-
-![import-archive][3]
-
-You can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
-
-Нажмите на «Импортировать проект» (находится в левой части страницы) и выберите необходимый zip-файл.
-
-## Transfer Project Ownership
-
-If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
+Если вы хотите передать владение проектом другому пользователю, нажмите на стрелку рядом с проектом, а затем нажмите Transfer Ownership.
 
 ![transfer-ownership-menu][4]
 
-A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to.
+Появится всплывающее окно, в котором вам нужно ввести имя пользователя или организации, которым вы хотите передать владение.
 
 ![transfer-ownership-dialog][5]
 
-Enter the username and click FIND or press Enter. Then click TRANSFER.
+Введите имя пользователя и нажмите FIND или нажмите Enter. Затем нажмите TRANSFER.
 
-The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list.
+Другой пользователь должен будет принять ваш запрос на передачу проекта. Запрос на передачу появится в списке проектов другого пользователя.
 
 ![transfer-ownership-accept][6]
 
-If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+Если пользователь принимает запрос, то передача будет завершена, и все участники команды, кроме нового владельца, будут удалены из проекта.
 
+# Создание резервных копий и восстановление проектов
+
+Мы рекомендуем пользователям создавать периодические резервные копии проектов, чтобы защититься от случайного удаления или злонамеренных участников команды. Есть несколько способов это сделать, перечисленных ниже.
+
+## Форк проекта
+
+Самый простой способ создать резервную копию проекта - это сделать форк. Это создаст новый проект, который является копией того, что находится на ветке "main" в проекте. История контроля версий в созданном форке не сохраняется.
+
+Вы можете найти эту опцию на [странице управления проектами][7].
+
+## Создание архивного файла резервной копии проекта
+
+Архивный файл будет содержать все данные текущего состояния проекта на ветке. Однако, он не содержит историю контроля версий.
+
+Существует два способа создать архивную резервную копию проекта:
+
+### Из списка проектов
+
+![export-archive][2]
+
+Вы можете экспортировать архив .zip вашего проекта для создания офлайн-резервной копии. В дальнейшем вы сможете импортировать этот архив .zip как новый проект.
+
+Чтобы экспортировать проект, нажмите на стрелку рядом с проектом и выберите "Export Project". Это может экспортировать только ветку "main".
+
+### Использование REST API
+
+Экспортирование архивного файла также может быть выполнено с помощью [REST API][8] и может быть автоматизировано с помощью систем непрерывной интеграции для автоматического создания периодических резервных копий.
+
+Он также позволяет выбрать, какую ветку экспортировать через параметры.
+
+Мы написали [открытый инструмент на базе Node][9], чтобы упростить этот процесс для пользователей.
+
+## Восстановление проекта из архивного файла резервной копии
+
+![import-archive][3]
+
+С помощью архивного zip-файла, созданного одним из методов в разделе '[Создание архивного файла резервной копии проекта](#backing-up-a-project-to-an-archive-file)', вы можете импортировать его как новый проект в PlayCanvas.
+
+Нажмите на "Import Project" на левой стороне страницы проектов и выберите zip-файл для импорта.
 
 [1]: /images/user-manual/profile/profile.png "Projects"
 [2]: /images/user-manual/profile/projects/export-archive-button.jpg
@@ -63,3 +86,6 @@ If the user accepts the request then the transfer will be completed and all team
 [4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
 [5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
 [6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
+[7]: /user-manual/dashboard/header/
+[8]: /user-manual/api/project-archive/
+[9]: https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project

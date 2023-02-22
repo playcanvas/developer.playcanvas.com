@@ -59,6 +59,14 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
+And run the command:
+
+```sh
+npm run one-page
+```
+
+Full details of options and commands can be found in the readme section for '[Converting a project into a single HTML file][2]'.
+
 We will need to serve the files from a HTTPS endpoint to test with the ironSource's test tool.
 
 Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
