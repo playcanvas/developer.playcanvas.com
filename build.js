@@ -152,7 +152,7 @@ Metalsmith(__dirname)
     .use(layouts({
         pattern: '**/*.html'
     }))
-    .use(locale()())
+    .use(locale())
     .use(i18nout()({
         data: localization
     }))
