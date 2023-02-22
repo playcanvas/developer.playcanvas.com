@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-Страница вашего профиля — это публичное место для демонстрации созданных вами игр.
+Ваша страница профиля - это общедоступное место для демонстрации ваших игр на PlayCanvas.
 
 ![profile_page][1]
 
-You can update your profile image by clicking on the image and uploading a new image
+Вы можете обновить изображение профиля, нажав на изображение и загрузив новое изображение.
 
 ![profile image][2]
 
