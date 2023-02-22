@@ -49,11 +49,11 @@ In order to host your application independently of PlayCanvas' servers, do the f
 
 ## Self-hosting on GitHub pages
 
-As a PlayCanvas application is static content, [GitHub Pages][github-pages] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).
+As a PlayCanvas application is static content, [GitHub Pages][12] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).
 
 You will also need to add an extra file named `.nojekyll` in the GitHub repo root directory to ensure that all files are copied to the final site. This is because some PlayCanvas published files start with an underscore and will be ignored without this file being added.
 
-GitHub Pages Documentation can be found [here][github-nojekyll] about usage of the `.nojekyll` file.
+GitHub Pages Documentation can be found [here][13] about usage of the `.nojekyll` file.
 
 ## Running a Downloaded Build
 
@@ -61,7 +61,8 @@ You cannot load your application by opening the `index.html` file in a browser o
 
 There are many options for running a web server. Here are a few:
 
-* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your application's index.html. Then point your browser to `http://localhost:8000`
+* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your application's index.html. Then point your browser to `http://localhost:8000`.
+* *Intermediate:* Install [NPM][10] and [http-server][11] globally. Run the command *http-server -p 8000 --cors -c-1* from the same folder as your application's index.html. Then point your browser to `http://localhost:8000`.
 * *Intermediate:* Install [XAMPP][7]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
 * *Advanced:* Install [Apache][8] or [nginx][9] as a standalone service.
 
@@ -74,5 +75,7 @@ There are many options for running a web server. Here are a few:
 [7]: https://www.apachefriends.org/index.html
 [8]: https://httpd.apache.org/
 [9]: https://www.nginx.com/
-[github-pages]: https://pages.github.com/
-[github-nojekyll]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators
+[10]: https://www.npmjs.com/
+[11]: https://www.npmjs.com/package/http-server
+[12]: https://pages.github.com/
+[13]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators
