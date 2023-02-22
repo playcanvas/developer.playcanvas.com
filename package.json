@@ -46,12 +46,12 @@
     "serve": "^14.2.0"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.mjs",
     "build:dev": "npm run faq-to-json -- --out editor_howdoi_dev.json && npm run build -- dev",
     "build:prod": "npm run faq-to-json -- --out editor_howdoi.json && npm run build -- prod",
     "faq": "node faq.js",
     "faq-to-json": "node faq_to_json.js --dir faq --bucket code.playcanvas.com",
-    "lint": "eslint --ext .js build.js faq.js faq_to_json.js lib public/js",
+    "lint": "eslint --ext .js,.mjs build.mjs faq.js faq_to_json.js lib public/js utils",
     "lint:html": "html-validate build/en",
     "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
     "serve": "serve build -l 51000",
