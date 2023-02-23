@@ -4,53 +4,52 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-There are various ways to create an Organization. Any organizations you are part of will appear next to your name on your profile like so:
+Существует несколько способов создания организации. Любые организации, в которых вы состоите, будут отображаться рядом с вашим именем на вашем профиле, как показано ниже:
 
 ![profile_orgs][4]
 
-### Create from the dropdown menu
+### Создание из выпадающего меню
 
-The first way is to click on NEW ORGANIZATION in the top-right dropdown menu:
+Первый способ - нажать на NEW ORGANIZATION в выпадающем меню в правом верхнем углу:
 
 ![dropdown][1]
 
-This will bring up the following popup:
+Это приведет к появлению следующего всплывающего окна:
 
 <img loading="lazy" src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
 
-Enter the name for the Organization and an Organization ID which is a string with only alphanumeric characters and dashes allowed. The default e-mail address is your own but you can change it to a different one.
+Введите название организации и идентификатор организации, который является строкой с буквенно-цифровыми символами и дефисами. Адрес электронной почты по умолчанию - ваш собственный, но вы можете изменить его на другой.
 
-Click CREATE and that will take you to the [profile][2] page of the Organization.
+Нажмите CREATE  и это перенаправит вас на страницу [профиля][2] организации.создатьсоздатьсоздать
 
-If you have existing projects (such as private projects on a Personal plan), you can transfer them to the Organization account by the following steps:
+Если у вас уже есть проекты (например, личные проекты на Personal плане), вы можете перенести их на учетную запись организации, следуя этим шагам:
 
-* On your user account, [transfer all projects ownership][5] to the Organization account.
-* On the Organization account, accept the project transfer requirements.
-* Cancel the Personal Plan (if you are on one) to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
-* [Add yourself to the projects as Admin][6] on the Organization account.
+* На своей учетной записи пользователя [перенесите права по всем проектам][5] на учетную запись организации.
+* На учетной записи организации примите требования по передаче проекта.
+* Отмените Personal (персональный) план (если вы на нем находитесь), чтобы перейти на бесплатный план. Обратите внимание, что это произойдет немедленно, независимо от того, когда вы в последний раз платили.
+* [Добавьте себя в проекты в качестве администратора][6] на учетной записи организации.
 
-All the projects will now be under the Organization account with your user account as Admin for the projects.
+Все проекты теперь будут находиться на учетной записи организации, а ваша учетная запись пользователя будет являться администратором для проектов.
 
-### Convert a user account into an Organization
+### Преобразование учетной записи пользователя в организацию
 
-Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][3] page.
+Еще один способ создания организации - преобразовать вашу учетную запись пользователя. Вы можете сделать это, нажав на CONVERT на странице вашей [учетной записи][3].
 
 <img loading="lazy" src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
 
-This will bring up the following popup:
+Это приведет к появлению следующего всплывающего окна:
 
 <img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
 
-Converting your user account into an Organization will mean that you will no longer be able to log in with this user account. For that reason you need to specify an owner for the new Organization.
+Конвертация вашей учетной записи пользователя в организацию означает, что вы больше не сможете входить в систему с этой учетной записью пользователя. Поэтому вам необходимо указать владельца новой организации.
 
 <div class="alert alert-info">
-Make sure you can log in with the new owner's account.
+Убедитесь, что вы можете войти в систему с учетной записью нового владельца.
 </div>
 
-If you have subscribed for a paid plan, that plan will be cancelled unless you choose to subscribe to an Organization plan which is offered in the popup. The number of seats to purchase will be calculated for you automatically based on the number of users in your existing private projects.
+Если вы подписались на платный план, то этот план будет отменен, если вы не выберете план организации, который будет предложен во всплывающем окне. Количество мест для покупки будет автоматически рассчитано на основе количества пользователей в ваших существующих частных проектах.
 
-After you convert your account, you will be logged out. Then log back in with the new owner's account and you will be able to access the converted account and all its projects.
-
+После конвертации вашей учетной записи вы будете выведены из системы. Затем войдите в систему с учетной записью нового владельца и вы сможете получить доступ к конвертированной учетной записи и всем ее проектам.
 
 [1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
 [2]: /user-manual/profile

@@ -6,6 +6,6 @@ position: 2
 
 ![Overview][1]
 
-The overview page shows information about your project along with your project's dev log. You can see and manage your team and also post news or updates about your project.
+Страница обзора показывает информацию о вашем проекте вместе с журналом разработки. Вы можете просматривать и управлять своей командой, а также публиковать новости или обновления о вашем проекте.
 
 [1]: /images/platform/dashboard_overview.png

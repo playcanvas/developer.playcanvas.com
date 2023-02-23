@@ -6,19 +6,20 @@ position: 3
 
 <img loading="lazy" src="/images/user-manual/editor/inspector/inspector.png" style="float: right; padding: 20px; padding-top: 0px;" width="320">
 
-The Inspector panel shows attribute values for the currently selected item.
+Панель Inspector показывает значения атрибутов для выбранного элемента.
 
-Depending on what you have selected, you will see different inspector panels. Some available selections are:
-* **Entity/Component Inspector**
-* **Texture Inspector**
-* **Material Inspector**
-* **Cubemap Inspector**
+В зависимости от того, что вы выбрали, вы увидите разные панели инспектора. Некоторые доступные варианты выбора:
 
-Modifying these values is how you specify how your [Entity][1] behaves. For example, you can set which model to render for a Model Component, or what color a light is.
+* **Инспектор объекта/компонента**
+* **Инспектор текстуры**
+* **Инспектор материала**
+* **Инспектор кубической карты**
 
-Some attributes are simple text or numbers in which case a standard text field or slider control will be used. Other values may require a more specialized input method. For example, choosing an Asset highlights available Assets in the asset panel. Some values can be manipulated via the viewport, for example, the Translate, Rotate and Scale values can be edited by moving and Entity dragging the relevant [Gizmo][2] around in the viewport.
+Изменение этих значений - это способ определения поведения вашего [объекта][1]. Например, вы можете установить, какую модель отображать для Компонента Модели, или какой цвет источника света.
 
-When running both a game and the Editor simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Editor and the game tabs side by side and tweak values in the Editor as you watch and play the game.
+Некоторые атрибуты представляют собой простой текст или числа, в таком случае будет использовано стандартное текстовое поле или ползунок. Другие значения могут требовать более специализированного метода ввода. Например, выбор Ассета выделяет доступные Ассеты в панели Ассетов. Некоторые значения могут редактироваться через видовое окно, например, значения Перемещения, Поворота и Масштабирования могут быть отредактированы путем перемещения [Gizmo][2] во viewport.
+
+При одновременном запуске игры и Редактора изменения атрибутов будут передаваться на объекты в работающем приложении. Отличный способ итерации значений - это запустить игру, используя кнопку Play, затем разместить вкладки Редактора и игры рядом друг с другом и настраивать значения в Редакторе, смотря и играя в игру.
 
 [1]: /user-manual/glossary#entity
 [2]: /user-manual/glossary#gizmo
