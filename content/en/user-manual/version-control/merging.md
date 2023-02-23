@@ -29,7 +29,18 @@ First, it's important to note that when you perform a merge in PlayCanvas you ar
 
 To start a merge switch your current branch to the branch you wish to merge into. Then select the branch that you wish to merge from and choose "Merge into current branch" from the branch's drop-down menu.
 
-This will start the merge process.
+![Merge dialog][9]
+
+You have a few options before starting the merge.
+
+On the 'Merge from' branch, you can:
+
+- **Create checkpoint first** - Tick this option to create a checkpoint before the merge. This is useful if there are changes in the branch that have not yet been checkpointed and you want to include in the merge.
+- **Close branch after merging** - Tick this option to close the 'Merge from' branch after the merge is completed. This is commonly used for feature branches where the feature is completed and to keep the branch list clean from stale/old branches.
+
+On the 'Merge to' branch, you can:
+
+- **Create checkpoint first** - This is ticked by default. As merges are based on checkpoints (i.e. it merges one checkpoint to another), this ensures that any changes on the 'Merge to' branch that aren't checkpointed, will be included in the merge. Unticking this option will discard any changes that are not checkpointed. It is recommended to not untick this option.
 
 ### Automatic Merging
 
@@ -52,9 +63,10 @@ The conflict manager shows each resource that is in conflict on the left, and fo
 While the conflict manager and the merge is in progress your current branch is locked to further edits from other users. This prevents changes being overwritten by your merge when you finish resolving the conflicts. If another user has blocked a branch you need with a merge, you can forcibly end their merge from the editor.
 
 [1]: /user-manual/version-control/branches
-[3]: /images/user-manual/version-control/start-merge.jpg
-[4]: /images/user-manual/version-control/conflict-manager.jpg
-[5]: /images/user-manual/version-control/conflicts-resolved.jpg
-[6]: /images/user-manual/version-control/merging-checkpoints-1.png
-[7]: /images/user-manual/version-control/merging-checkpoints-2.png
-[8]: /images/user-manual/version-control/merging-checkpoints-3.png
+[3]: /images/user-manual/version-control/merging/start-merge.png
+[4]: /images/user-manual/version-control/merging/conflict-manager.jpg
+[5]: /images/user-manual/version-control/merging/conflicts-resolved.jpg
+[6]: /images/user-manual/version-control/merging/merging-checkpoints-1.png
+[7]: /images/user-manual/version-control/merging/merging-checkpoints-2.png
+[8]: /images/user-manual/version-control/merging/merging-checkpoints-3.png
+[9]: /images/user-manual/version-control/merging/merge-dialog.png
