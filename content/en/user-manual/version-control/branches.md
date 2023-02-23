@@ -39,6 +39,7 @@ You can filter branches between:
 Favoriting a branch can be done with the following options:
 
 ### Drop down menu
+
 ![Favorite a branch via menu][10]
 
 ### Selected branch button
