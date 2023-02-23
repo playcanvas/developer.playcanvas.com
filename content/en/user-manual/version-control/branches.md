@@ -24,6 +24,34 @@ To create a branch open the version control panel, select the checkpoint that yo
 
 You will be asked to name your branch. Try to give your branch a description name like `fix-player-bug` or `refactor-sound-effects`. After creating the branch you will automatically be switched to the new branch you just created.
 
+Branches created by you will automatically be favorited so you can quickly find them in the [branch filter](#filtering-branch-list) for favorites.
+
+## Filtering branch list
+
+![Branch filter][9]
+
+You can filter branches between:
+
+- Favorites - Branches that are favorited by you.
+- Open - All branches that are open.
+- Closed - All branches that are closed.
+
+Favoriting a branch can be done with the following options:
+
+### Drop down menu
+
+![Favorite a branch via menu][10]
+
+### Selected branch button
+
+![Favorite a branch via button][11]
+
+## Searching for a branch
+
+![Searching for a branch][8]
+
+To help find a branch in the current list filter, you can use the search bar at the top.
+
 ## Switching to a branch
 
 ![Switch branch][3]
@@ -42,9 +70,11 @@ To close a branch, open the version control panel, select the branch you wish to
 
 ![Close branch dialog][5]
 
-You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here.
+You will be asked to confirm the closing of the branch and you have an option to create a checkpoint before closing. This is enabled by default. If you wish to discard these changes you can untick the option here.
 
-**Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
+**Note: Unticking this checkbox will lose any work you have made in the branch since you last made a checkpoint**
+
+Closed branches can also be reopened at a later date.
 
 ## Deleting a branch
 
@@ -55,18 +85,22 @@ Deletion of branches are only supported if the following conditions are met:
 
 To delete a branch open the version control panel, select the branch you wish to delete and choose the "Delete this branch" option in the branch's drop-down menu.
 
-![][delete-branch]
+![Delete a branch][6]
 
 You will be asked to confirm the deletion of the branch by typing the name of the branch in the dialog box.
 
 **Note, deleted branches cannot be recovered after deletion! If in doubt, please close the branch instead.**
 
-![][delete-branch-dialog]
+![Delete a branch warning][7]
 
-[1]: /images/user-manual/version-control/new-branch.jpg
-[2]: /images/user-manual/version-control/new-branch-dialog.jpg
-[3]: /images/user-manual/version-control/switch-branch.jpg
-[4]: /images/user-manual/version-control/close-branch.jpg
-[5]: /images/user-manual/version-control/close-branch-dialog.jpg
-[delete-branch]:  /images/user-manual/version-control/delete-branch.png
-[delete-branch-dialog]:  /images/user-manual/version-control/delete-branch-dialog.png
+[1]: /images/user-manual/version-control/branches/new-branch.png
+[2]: /images/user-manual/version-control/branches/new-branch-dialog.png
+[3]: /images/user-manual/version-control/branches/switch-branch.png
+[4]: /images/user-manual/version-control/branches/close-branch.png
+[5]: /images/user-manual/version-control/branches/close-branch-dialog.png
+[6]: /images/user-manual/version-control/branches/delete-branch.png
+[7]: /images/user-manual/version-control/branches/delete-branch-dialog.png
+[8]: /images/user-manual/version-control/branches/search-for-a-branch.gif
+[9]: /images/user-manual/version-control/branches/filter-branches.gif
+[10]: /images/user-manual/version-control/branches/favorite-branch-via-dropdown.gif
+[11]: /images/user-manual/version-control/branches/favorite-branch-via-button.gif
