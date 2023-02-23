@@ -43,6 +43,7 @@ Favoriting a branch can be done with the following options:
 ![Favorite a branch via menu][10]
 
 ### Selected branch button
+
 ![Favorite a branch via button][11]
 
 ## Searching for a branch
