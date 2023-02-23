@@ -4,89 +4,89 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-The Assets Panel manages all of the Assets that are available in your project. From here, you can create, upload, delete, inspect and edit any Asset.
+Панель Ресурсов управляет всеми ресурсами, доступными в вашем проекте. Здесь вы можете создавать, загружать, удалять, проверять и редактировать любой ресурс.
 
 ![Assets Panel][1]
 
-## Folder Hierarchy
+## Иерархия папок
 
-The folder panel allows you to organize your assets into a tree of folders.
+Панель папок позволяет организовывать ваши ресурсы в древо папок.
 
-To create a new Folder, select the Add Asset (+) button and select 'Folder'. Alternatively, right click the folder where you would like a new folder to be created and select 'New Asset' > 'Folder'.
+Чтобы создать новую папку, выберите значок Add Asset (+) и выберите 'Folder'. В качестве альтернативы, щелкните правой кнопкой мыши папку, в которой вы хотите создать новую папку, и выберите 'New Asset' > 'Folder'.
 
-To rename a folder, double click it in the hierarchy panel and edit the Name field in the Inspector.
+Чтобы переименовать папку, дважды щелкните ее в панели иерархии и отредактируйте поле "Name" в инспекторе.
 
-To delete a folder, double click it in the hierarchy and hit delete. Alternatively, right click the folder you want to delete and select 'Delete' from the context menu.
+Чтобы удалить папку, дважды щелкните ее в иерархии и нажмите клавишу Delete. В качестве альтернативы, щелкните правой кнопкой мыши папку, которую вы хотите удалить, и выберите 'Delete' из контекстного меню.
 
-Folders can be drag and dropped into each other if you want to reorganize your folder structure.
+Папки могут быть перемещены друг в друга, если вы хотите изменить структуру своих папок.
 
-## Creating and Uploading Assets
+## Создание и загрузка ресурсов
 
-You can create new assets by dragging a file from you computer's file system into the Assets Panel. The Editor will upload and import the asset for you.
+Вы можете создавать новые ресурсы, перетаскивая файлы из файловой системы вашего компьютера в панель ресурсов. Редактор загрузит и импортирует ресурс для вас.
 
-You can also create certain assets types using the Add Asset (+) icon.
+Вы также можете создавать некоторые типы ресурсов с помощью значка Add Asset (+).
 
-You can delete assets by selecting them and clicking the Delete Asset icon.
+Вы можете удалить ресурсы, выбрав их и нажав значок Delete Asset.
 
-## Editing Assets
+## Редактирование ресурсов
 
-Certain text-based assets can be opened and edited in the PlayCanvas Script Editor: text, json, shader, html, css and script assets. To do this, simply double click on the asset's thumbnail.
+Некоторые текстовые ресурсы могут быть открыты и отредактированы в Редакторе скриптов PlayCanvas: текст, json, шейдеры, html, css и скрипты. Для этого просто дважды щелкните на эскизе ресурса.
 
-## Inspecting Assets
+## Проверка ресурсов
 
-To inspect the details of any given asset, select its thumbnail in the Assets Panel. The asset's details will be displayed in the Inspector.
+Чтобы проверить детали любого заданного ресурса, выберите его эскиз в панели ресурсов. Детали ресурса будут отображены в инспекторе.
 
-## Filtering
+## Фильтрация
 
-Filter which assets are visible using the filter drop down to select the type of asset to view.
+Фильтруйте видимые ресурсы с помощью выпадающего фильтра для выбора типа ресурса для просмотра.
 
-## Searching
+## Поиск
 
-You can perform a global search for assets in your project using the Search box. Simply start typing into the box and the Editor will show matching results dynamically in the Assets Panel.
+Вы можете выполнить глобальный поиск ресурсов в своем проекте, используя строку поиска. Просто начните вводить в поле, и редактор будет динамически показывать совпадающие результаты в панели ресурсов.
 
-**ID** - Specific asset can be found by its unique ID, by simply typing ID in search field it will recognize exact match and only show one asset with that ID.
+**ID** - Конкретный ресурс можно найти по его уникальному ID, просто наберите ID в поле поиска, и оно распознает точное совпадение и покажет только один ресурс с этим ID.
 
-**RegExp** - It is possible to search using regular expressions. Add `*` at the beginning of search field and type regexp query after. To search for all assets use `*.` (any character) regexp query.
+**RegExp** - Можно искать с помощью регулярных выражений. Добавьте `*` в начало поля поиска и наберите запрос regexp. Для поиска всех ресурсов используйте запрос `*` . (любой символ).
 
-**Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
-Here are some examples:
+**Tags** - Для поиска по тегам и их комбинациям введите теги в квадратных скобках `[ ]`. Простые операторы запросов: AND, OR допускаются, выражая запрос в виде массива строк или других массивов со строками. Логика запроса такая же, как у [`findByTag`][7] из `AssetsRegistry`.
+Вот несколько примеров:
 
-`[ level-1 ]` - returns all assets that are tagged by `level-1`.
-`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
-`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
-`[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
+`[ level-1 ]` - вернет все ресурсы, помеченные тегом `level-1`.
+`[ level-1, level-2 ]` - вернет все ресурсы, помеченные тегом `level-1 ИЛИ level-2`.
+`[ [ level-1, monster ] ]` - вернет все ресурсы, помеченные тегами `level-1 И monster`. Обратите внимание на дополнительные скобки.
+`[ [ level-1, monster ], [ level-2, monster ] ]` - вернет все ресурсы, помеченные тегами `(level-1 И monster) OR (level-2 AND monster)`.
 
-## Drag and Drop
+## Перетаскивание
 
-Assets can be moved to different folders by dragging them from the main panel to a folder in the folder hierarchy. Note that assets support multi-selection. Pressing CTRL+A will select all assets in the currently selected folder.
+Ресурсы можно перемещать между папками, перетаскивая их из основной панели в папку в иерархии папок. Обратите внимание, что ресурсы поддерживают множественный выбор. Нажатие CTRL+A выделит все ресурсы в выбранной папке.
 
-You can also drag Assets from the Asset Panel to highlighted slots in the [Inspector][2]. Slots in the Inspector will either be asset attributes of components or asset-type script attributes.
+Вы также можете перетаскивать ресурсы из панели ресурсов в выделенные слоты в [Инспекторе][2]. Слоты в Инспекторе могут быть либо атрибутами ресурсов компонентов, либо атрибутами скриптов типа ресурса.
 
-You can also drag model, material, and cubemap assets directly into the [Viewport][3]
+Вы также можете перетаскивать ресурсы моделей, материалов и кубических карт напрямую в [Viewport][3]:
 
-* If you drag a model asset into the Viewport, a new entity will be created with a model component with the model asset assigned. The viewport camera will automatically zoom to the newly created entity.
-* If you drag a material over a particular mesh instance in the Viewport, its material will be switched (as a preview) to the material being dragged. To make the material change stick, simply drop the material.
-* If you drag a cubemap over the background of a scene in the Viewport, the cubemap will be assigned as the skybox cubemap of the scene. This property can also be set from the [Scene Settings][4].
+* Если вы перетащите ресурс модели в видовое окно, будет создан новый объект с компонентом модели и назначенным модельным ресурсом. Камера видового окна автоматически масштабируется к вновь созданному объекту.
+* Если вы перетащите материал на определенный экземпляр объекта во Viewport, его материал будет изменен (в качестве предварительного просмотра) на перетаскиваемый материал. Чтобы изменение материала зафиксировалось, просто отпустите материал.
+* Если вы перетащите кубическую карту на фон сцены в видовом окне, кубическая карта будет назначена в качестве кубической карты неба сцены. Это свойство также может быть установлено в [Настройках сцены][4].
 
-## Copy and Paste between Projects
+## Копирование и вставка между проектами
 
-To copy an asset or a selection of assets between projects, select the asset(s) and right-click to bring up the context menu to select 'Copy'. You can also use the hotkey Ctrl/Cmd + C instead if the context menu is not available due to being a read-only project.
+Чтобы скопировать ресурс или выбор ресурсов между проектами, выберите ресурс(ы) и щелкните правой кнопкой мыши, чтобы вызвать контекстное меню и выбрать "Copy". Вы также можете использовать горячую клавишу Ctrl/Cmd + C, если контекстное меню недоступно из-за того, что проект доступен только для чтения.
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500">
 
-In the project that you want to copy the asset(s) to, right click in the assets panel and select 'Paste'. Ctrl/Cmd + V hotkey can be used instead.
+В проекте, в который вы хотите скопировать ресурс(ы), щелкните правой кнопкой мыши в панели ресурсов и выберите "Paste". Вы также можете использовать горячую клавишу Ctrl/Cmd + V.
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500">
 
-Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
+Копирование и вставка ассета также скопирует его зависимости. Например, у нас есть модель, которая ссылается на два материала, которые, в свою очередь, ссылается на набор текстур.
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%">
 
-If you copy and paste just the model asset into a different project, those asset dependencies are copied too.
+Если вы скопируете и вставите только ассет модели в другой проект, то эти зависимости будут скопированы.
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%">
 
-By default, it is pasted as a flat hierarchy. If you want keep the folder structure, hold Shift when the context menu is opened and an option will appear called 'Paste (keep folders)'. This will attempt to keep the folder structure using the folder you are pasting into as the root folder.
+По умолчанию ассет вставляется в виде плоской иерархии. Если вы хотите сохранить структуру папок, удерживайте клавишу Shift при открытии контекстного меню, и появится опция 'Paste (keep folders)'. Она попытается сохранить структуру папок, используя папку, в которую вы вставляете, как корневую папку.
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500">
 
@@ -94,27 +94,27 @@ Will result in the following where the folder structure is preserved:
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%">
 
-We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
+Мы рекомендуем использовать эту функцию для создания библиотек и переиспользуемых ассетов, чтобы хранить их в корневой папке, которую можно легко копировать и вставлять в другие проекты. Это позволит сохранять структуру папок проектов более простой и понятной.
 
 <div class="alert alert-info">
-Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+Обратите внимание, что копирование и вставка ассетов не перезаписывает существующие ассеты с тем же именем и создает новый ассет.
 </div>
 
-## Checking References
+## Проверка ссылок
 
-Sometimes it's useful to know where assets are being used (or referenced) within a particular scene. If the Editor cannot detect any references for an asset, a small dot will be displayed on its thumbnail:
+Иногда полезно знать, где используются ассеты (или на что они ссылается) в конкретной сцене. Если редактор не может обнаружить ссылки для ассета, на его миниатюре будет отображаться маленькая точка:
 
 ![Unreferenced Asset][5]
 
 <div class="alert alert-info">
-Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+Обратите внимание, что редактор не может обнаружить ссылки на ассеты, которые создаются в коде. Так что подумайте тщательно, прежде чем удалять ассет на основании этого индикатора!
 </div>
 
-If an asset does have references, you can check them via the References content menu item:
+Если у ресурса есть ссылки, вы можете проверить их через пункт меню "References":
 
 ![Asset References][6]
 
-Selecting a reference will load it into the Inspector panel.
+Выбор ссылки загрузит ее в панель инспектора.
 
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector

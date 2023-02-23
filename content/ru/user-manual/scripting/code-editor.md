@@ -18,7 +18,7 @@ Alternatively you can double click on a text-based asset like a Script to open t
 
 ![Code Editor][3]
 
-### Menu
+### Меню
 
 The menu contains all the different tools and options available along with their keyboard shortcuts.
 
@@ -83,7 +83,7 @@ The editor supports various shortcuts to help you when editing code. You can fin
 | Jump to declaration             | Ctrl + F12               | Cmd + F12                  |
 | Show autocomplete               | Ctrl + Space or Ctrl + I | Ctrl + Space or Cmd + I    |
 
-## Searching
+## Поиск
 
 You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac). This will open up the Find panel on the top right:
 
