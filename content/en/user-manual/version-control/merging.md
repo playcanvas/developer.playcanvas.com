@@ -35,7 +35,7 @@ You have a few options before starting the merge.
 
 On the 'Merge from' branch, you can:
 
-- **Create checkpoint first** - Tick this option to create a checkpoint before the merge. This is useful if there are changes in the branch that have not yet been checkpointed and you want to include in the merge.
+- **Create checkpoint first** - Tick this option to create a checkpoint before the merge. This is useful if there are changes in the branch that have not yet been checkpointed and you want to include them in the merge.
 - **Close branch after merging** - Tick this option to close the 'Merge from' branch after the merge is completed. This is commonly used for feature branches where the feature is completed and to keep the branch list clean from stale/old branches.
 
 On the 'Merge to' branch, you can:
