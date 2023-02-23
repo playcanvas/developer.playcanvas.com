@@ -6,7 +6,7 @@ position: 11
 
 Checkpoint history is available for every item in the project so you can easily view the changes in the Checkpoints.
 
-Due to the extra information that needs to be stored per checkpoints to support this feature, only checkpoints made after Mar 2, 2022 can be seen with Item History.
+Due to the extra information that needs to be stored per checkpoint to support this feature, only checkpoints made after Mar 2, 2022 can be seen with Item History.
 
 See it in action below for all supported items. The `[=]` in the top left of the node means that a Checkpoint has been made but with no changes to the item.
 
