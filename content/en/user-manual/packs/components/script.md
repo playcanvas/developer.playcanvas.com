@@ -10,7 +10,7 @@ The Script component can be enabled or disabled using the toggle in the top righ
 
 ![Script component][1]
 
-To create a new script, click on the <span class="font-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+To create a new script, click on the <span class="font-icon" style="font-size: 18">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
 
 <img loading="lazy" src="/images/user-manual/scenes/components/new-script.jpg">
 
