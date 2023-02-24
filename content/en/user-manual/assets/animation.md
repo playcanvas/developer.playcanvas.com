@@ -6,6 +6,17 @@ position: 4
 
 An Animation asset is used to play a single animation on a 3D model. Animations are imported by uploading 3D scenes (such as FBX files) which contain animation data. The animation data is extracted from the uploaded file by the [asset pipeline][asset_pipeline] and a [Target Asset][target_asset] is created to use in game.
 
+## Animation Preview
+
+The inspector has a viewer that can be used to preview the animation with any Template or Model asset. This is useful if you have a single animation that can be applied to different character rigs.
+
+![Asset Inspector Preview][inspector-preview-gif]
+
+There is also a viewer in the [Anim State Graph Editor][anim-state-graph-editor] when you select a state in the graph. It will show all Entities in the scene using the graph where you can select one to preview.
+
+![Anim State Graph Preview][anim-state-graph-preview-gif]
+
+
 ## Animation Import Settings
 
 <div class="alert alert-info">
@@ -22,7 +33,7 @@ They can be found in the Project Settings under Asset Tasks.
 
 Only available for GLB export format. When importing an animation, the generated asset name can either be set from the 'Take Name' in the animation file, or use the animation filename instead.
 
-This is useful with assets that are brought/taken from a store such as [Mixamo][1] where all the take names are 'mixamo.com' and using the filename as the asset name is clearer.
+This is useful with assets that are brought/taken from a store such as [Mixamo][mixamo] where all the take names are 'mixamo.com' and using the filename as the asset name is clearer.
 
 ### Sample rate
 
@@ -45,6 +56,7 @@ If enabling this option, it is recommended that Sample Rate is disabled and Curv
 [asset_pipeline]: /user-manual/glossary#asset-pipeline
 [target_asset]: /user-manual/glossary#target-asset
 [animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
-
- [1]: https://www.mixamo.com/
- 
+[mixamo]: https://www.mixamo.com/
+[anim-state-graph-editor]: /user-manual/animation/anim-state-graph-assets/
+[inspector-preview-gif]: /images/user-manual/assets/animation/inspector-preview.gif
+[anim-state-graph-preview-gif]: /images/user-manual/assets/animation/anim-state-graph-preview.gif
