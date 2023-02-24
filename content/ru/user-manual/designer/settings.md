@@ -1,278 +1,277 @@
 ---
-title: Настройки
+title: Settings (Настройки)
 layout: usermanual-page.hbs
 position: 7
 ---
 
-The Settings panel lets you set up various properties. It is accessed using the 'cog' button in the bottom left of the Editor (on the [Toolbar][1]).
+Панель настроек позволяет настроить различные свойства. Она открывается с помощью кнопки «шестеренка» в левом нижнем углу редактора (на [панели инструментов][1]).
 
 <img loading="lazy" src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
 
-## Редактора
+## Editor (Редактор)
 
-These are personal preferences for the Editor.
+Здесь можно настроить личные предпочтения для редактора.
 
-#### Grid
+#### Grid (Сетка)
 
-You can set the number of divisions and the size of each division for the Grid that appears in the Editor scene.
+Можно задать количество разделений и размер каждого разделения для сетки, которая появляется на сцене редактора.
 
-#### Snap
+#### Snap (Привязка)
 
-This is the snap increment used when snapping is enabled.
+Это шаг привязки, используемый при включенной привязке.
 
-#### Camera Clip
+#### Camera Clip (Плоскость камеры)
 
-Here you can set the near and far clip planes for the Editor cameras.
+Здесь можно задать ближнюю и дальнюю плоскости отсечения для камер редактора.
 
-#### Clear Color
+#### Clear Color (Цвет очистки экрана)
 
-This is the clear color of the Editor cameras.
+Это цвет очистки камер редактора.
 
-#### Icon Size
+#### Icon Size (Размер иконки)
 
-This is the size of the icons that appear over various components inside the 3D viewport. Set this to 0 if you don't want to see icons at all.
+Это размер иконок, которые появляются над различными компонентами внутри 3D-видовой области. Если вы не хотите видеть иконки вообще, установите это значение на 0.
 
-#### Local Server
+#### Local Server (Локальный сервер)
 
-This is the URL where all the scripts are going to be loaded from, when launching the Application with Launch Local.
+Это URL, откуда будут загружаться все скрипты при запуске приложения с помощью запуска локального сервера.
 
-#### Locale
+#### Locale (Локаль)
 
-The locale that you can preview in the Editor and when you Launch your application. This is only visible to you not other members of your team. This is used when you
-have enabled Localization for Text Elements and when you use Localized Assets.
+Локаль, которую можно просмотреть в редакторе и при запуске приложения. Она видна только вам, а не другим участникам вашей команды. Она используется, когда вы включаете локализацию для текстовых элементов и когда используете локализованные ресурсы.
 
-## Physics Settings
+## Physics Settings (Настройки физики)
 
-Physics settings affect the simulation of all the rigid body components in your scene.
+Настройки физики влияют на симуляцию всех компонентов твердого тела в вашей сцене.
 
-#### Enable
+#### Enable (Включить)
 
-If this is enabled then the 3D physics library will be included in your Application.
+Если это включено, то 3D-библиотека физики будет включена в ваше приложение.
 
-#### Gravity
+#### Gravity (Гравитация)
 
-Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g).
+Гравитация - это ускорение, применяемое на каждом кадре ко всем твердым телам в вашей сцене. По умолчанию она установлена на -9,8 метров в секунду в квадрате, что в основном приближает земную гравитацию. Если вы делаете игру в космосе, вы можете установить это значение на 0, 0, 0 (ноль г).
 
-## Rendering
+## Rendering (Рендеринг)
 
-Rendering settings affect various graphics related properties.
+Настройки рендеринга влияют на различные графические свойства.
 
-#### Ambient Color
+#### Ambient Color (Цвет фона)
 
-The color of the scene's ambient light source. PlayCanvas allows you to create directional, point and spot lights. These lights account for direct light that falls on objects. But in reality, light actually bounces around the environment and we call this indirect light. A global ambient light is a crude approximation of this and allows you to set a light source that appears to shine from all directions. The global ambient color is multiplied with the Ambient property of a Phong Material to add a contribution to the final color of an object.
+Цвет источника окружающего света в сцене. PlayCanvas позволяет создавать направленные, точечные и прожекторные источники света. Эти источники учитывают прямой свет, падающий на объекты. Но на самом деле свет отражается вокруг среды, и мы называем это косвенным светом. Глобальный окружающий свет - это грубое приближение этого и позволяет задать источник света, который кажется светить со всех направлений. Глобальный цвет окружающего света умножается на свойство Ambient материала Phong, чтобы добавить вклад в конечный цвет объекта.
 
 Note, if you are using a Skybox and Physical Materials the Ambient Color has no effect.
 
 #### Skybox
 
-The Skybox is a [cubemap][3] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
+Skybox - это ресурс [cubemap][3], который рендерится за вашей 3D-сценой. Это позволяет использовать набор из 6 2D-изображений для отображения дальнего мира за 3D-моделями на вашей сцене.
 
-To add a skybox, create a cubemap asset and then assign it to the cubemap slot in the settings panel.
+Чтобы добавить skybox, создайте ресурс cubemap и затем назначьте его слоту cubemap в панели настроек.
 
-Note, if you are using a Prefiltered Cubemap, the skybox will be used as the default environment map for all Physical materials.
+Обратите внимание, что если вы используете Prefiltered Cubemap, skybox будет использоваться в качестве стандартной карты окружения для всех физических материалов.
 
-#### Skybox Intensity
+#### Skybox Intensity (Интенсивность Skybox)
 
-This is a slider that controls the intensity or brightness of the skybox. The value can range from 0 (totally black) to 32 (brightest).
+Это ползунок, который управляет интенсивностью или яркостью skybox. Значение может варьироваться от 0 (полностью черное) до 32 (самое яркое).
 
 #### Skybox Mip
 
-When using a Prefiltered Skybox, you can select the skybox mip that you want to display. Each mip is a more blurred version of the original Skybox. You can use this to show a more blurred / abstract version of your original Skybox for example for artistic purposes.
+При использовании Prefiltered Skybox вы можете выбрать mip skybox, который вы хотите отобразить. Каждый mip представляет собой более размытую версию оригинального Skybox. Вы можете использовать это, чтобы показать более размытую / абстрактную версию вашего оригинального Skybox, например, для художественных целей.
 
 #### Tonemapping
 
-Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
+Tonemapping - это процесс сжатия цветов High Dynamic Range (HDR) в ограниченный динамический диапазон (например, в значения видимого вывода монитора). Существует два варианта тоновой карты.
 
-* **Linear:** imply scales HDR colors by exposure.
-* **Filmic:** More sophisticated curve, good at softening overly bright spots, while preserving dark shades as well.
+* **Linear:** просто масштабирует цвета HDR на экспозицию.
+* **Filmic:** более изощренная кривая, хорошо смягчает слишком яркие точки, сохраняя темные оттенки.
 
-Linear tone mapping is active by default, it's simply (color * exposure). You can tweak exposure to make quick changes to brightness. Note that it's not just simple brightness à la Photoshop because your input can be HDR. e.g. If you have a light source with intensity = 8, it will still be quite bright (4) after exposure = 0.5. So, all visible things won't just fade out linearly.
+Линейное отображение тона активно по умолчанию, это просто (цвет * экспозиция). Вы можете настраивать экспозицию, чтобы быстро изменять яркость. Обратите внимание, что это не просто простая яркость, как в Photoshop, потому что ваш ввод может быть HDR. например, если у вас есть источник света с интенсивностью = 8, он все еще будет довольно ярким (4) после экспозиции = 0,5. Таким образом, все видимые объекты не будут просто линейно исчезать.
 
-Filmic tone mapping is a good choice in high-contrast environments, like scenes lit by bright Sun, or interiors with bright lights being close to walls/ceiling. It will nicely remap out-of-range super bright values to something more perceptually realistic (our eyes and film do tone mapping as well, we don't see physically linear values). Well, ask any photographer: nobody likes to leave extremely bright spots as well as pitch black spots on a photo. Filmic tone mapping gives you nice abilities to get rid of such spots.
+Тональный маппинг Filmic - хороший выбор в условиях высокого контраста, таких как сцены, освещенные ярким солнцем, или интерьеры с яркими огнями, находящимися близко к стенам/потолку. Он красиво переносит слишком яркие значения за пределы диапазона на что-то более воспринимаемо-реалистичное (наши глаза и фильм также производят тоновый маппинг, мы не видим физически линейных значений). Никто не любит оставлять на фото слишком яркие и слишком темные участки. Filmic tone mapping дает вам возможность избавиться от таких участков.
 
-#### Exposure
+#### Exposure (Экспозиция)
 
-The exposure value tweaks the overall brightness of the scene.
+Значение экспозиции корректирует общую яркость сцены.
 
-#### Gamma Correction
+#### Gamma Correction (Гамма-коррекция)
 
-Computer screens are set up to output not physically linear, but perceptually linear (sRGB) signal. However, for correct appearance when performing lighting calculations, color textures must be converted to physically linear space, and then the fully lit image must be fit again into sRGB. Rendering with gamma correction enabled reduces the number of ugly, overly saturated highlights and better preserves color after lighting, and it's generally recommended that this be enabled in your scene. The following image shows a simple scene with a sphere. On the left the scene has been gamma corrected while on the right, the scene is uncorrected.
+Экраны компьютеров настроены на вывод не физически линейного, а воспринимаемо линейного (sRGB) сигнала. Однако для правильного отображения при выполнении расчетов освещения цветовые текстуры должны быть преобразованы в физически линейное пространство, а затем полностью освещенное изображение должно снова быть вписано в sRGB. Рендеринг с включенной гамма-коррекцией уменьшает количество уродливых, слишком насыщенных мест и лучше сохраняет цвет после освещения. Обычно рекомендуется включать ее в вашей сцене. На следующем изображении показана простая сцена с фигурой. Слева сцена была подвергнута гамма-коррекции, а справа - нет.
 
 ![Gamma Correction][4]
 
-To find out more about gamma correction, read [this GPU Gems chapter][5].
+Чтобы узнать больше о гамма-коррекции, прочтите [эту главу GPU Gems][5].
 
-#### Fog
+#### Fog (Туман)
 
-The Fog Type property can be used to control an approximation of an ambient fog in your scene. Here is an example of fog being enabled:
+Свойство типа Fog может использоваться для управления приблизительной общей туманностью в вашей сцене. Вот пример использования тумана:
 
-The types available are as follows:
+Доступны следующие типы:
 
-* None - Fog is disabled
-* Linear - Fog fades in linearly between a Fog Start and Fog End distance
-* Exp - Fog fades in from the view position according to an exponential function
-* Exp2 - Fog fades in from the view position according to an exponential squared function
+* None - Туман отключен
+* Linear - Туман постепенно исчезает линейно между начальным и конечным расстоянием тумана
+* Exp - Туман исчезает от положения наблюдения в соответствии с экспоненциальной функцией
+* Exp2 - Туман появляется из позиции обзора в соответствии с квадратичной экспоненциальной функцией.
 
-#### Color
+#### Color (Цвет)
 
-The color of the fog. This color is blended with a surface's color more as the fog fades in.
+Цвет тумана. Этот цвет смешивается с цветом поверхности более тесно, по мере того как туман появляется.
 
-#### Start Distance
+#### Начальное расстояние
 
-The distance in scene units from the viewpoint from where the fog starts to fade in.
+Расстояние в единицах сцены от точки обзора, откуда начинает появляться туман.
 
-#### End Distance
+#### End Distance (Конечное расстояние)
 
-The distance in scene units from the viewpoint from where the fog reaches a maximum. Any objects beyond this distance will be rendered with the fog color.
+Расстояние в единицах сцены от точки обзора, где туман достигает максимальной плотности. Любые объекты за этим расстоянием будут отображаться с цветом тумана.
 
-#### Fog Density
+#### Fog Density (Плотность тумана)
 
-The fog density controls the rate at which fog fades in for Exp and Exp2 fog types. Larger values cause fog to fade in more quickly. Fog density must be a positive number.
+Плотность тумана контролирует скорость появления тумана для типов тумана Exp и Exp2. Большие значения вызывают более быстрое появление тумана. Плотность тумана должна быть положительным числом.
 
-#### Resolution
+#### Resolution (Разрешение)
 
-Control the width and height of your Application. You can also set the resolution mode to one of the following values:
+Управляет шириной и высотой вашего приложения. Вы также можете установить режим разрешения на одно из следующих значений:
 
-* Auto - The resolution will always be the same as the canvas size
-* Fixed - The resolution will always be width x height pixels.
+* Auto -  Разрешение всегда будет таким же, как размер холста.
+* Fixed - Разрешение всегда будет составлять width x height пикселей.
 
-#### Fill Mode
+#### Fill Mode (Режим заполнения)
 
-Fill mode controls the sizing behavior of the canvas. You can set one of the following values:
+Режим заполнения контролирует поведение масштабирования холста. Вы можете установить одно из следующих значений:
 
-* None - The canvas will be the same size as the resolution width and height.
-* Keep aspect Ratio - The canvas will expand to fill the window while maintaining the correct aspect ratio.
-* Fill window - The canvas will stretch to fill the window completely.
+* None - Холст будет иметь тот же размер, что и разрешение ширины и высоты.
+* Keep aspect Ratio - Сохранять соотношение сторон - Холст будет расширяться, чтобы заполнить окно, сохраняя правильное соотношение сторон.
+* Fill window - Холст будет растягиваться, чтобы полностью заполнить окно.
 
-#### Device Pixel Ratio
+#### Device Pixel Ratio (Коэффициент пикселей устройства)
 
-When enabled the canvas resolution will be calculated including the device pixel ratio.
+При включении разрешение холста будет рассчитываться с учетом коэффициента пикселей устройства.
 
-#### Transparent Canvas
+#### Transparent Canvas (Прозрачный холст)
 
-Enable alpha-blending on the main canvas element.
+Включение альфа-смешивания на главном элементе холста.
 
-#### Preserve Drawing Buffer
+#### Preserve Drawing Buffer (Сохранять буфер рисования)
 
-Use the preserveDrawingBuffer option when creating the WebGL context.
+Используйте параметр preserveDrawingBuffer при создании контекста WebGL.
 
-## Layers
+## Layers (Слои)
 
-Manage rendering layers and their render order. You can find out more about layers [here][10].
+Управление слоями рендеринга и их порядком рендеринга. Более подробную информацию о слоях можно найти [здесь][10].
 
-## Аудио
+## Audio
 
-#### Use Legacy Audio
+#### Использовать устаревшие компоненты звука
 
-Enable the legacy audio components. Use this only for compatibility with old projects as it has been deprecated.
+Включение устаревших компонентов звука. Используйте это только для совместимости со старыми проектами, так как они устарели.
 
-## Lightmapping
+## Lightmapping (Освещение)
 
 ![Lightmapping Settings][12]
 
-#### Size Multiplier
+#### Size Multiplier (Множитель размера)
 
-Scene-wide multiplier applied to all lightmap sizes.
+Множитель размера для всей сцены, применяемый ко всем размерам карт освещения.
 
-#### Max Resolution
+#### Max Resolution (Максимальное разрешение)
 
-The maximum texture size available for generated lightmap textures.
+Максимальный размер текстуры, доступный для создания карт освещения.
 
-#### Mode
+#### Mode (Режим)
 
-Scene-wide mode for lightmap baking, with the following options:
-- **Color Only** – Bakes a single lightmap containing HDR colors.
-- **Color and Direction** – Bakes a second lightmap containing the dominant light direction, allowing for specular lighting. The Color and Direction mode is not compatible with [Soft Directional Light][13] or [Environment Light][14] baking.
+Режим, применяемый ко всей сцене для создания карт освещения, с следующими параметрами:
+- **Color Only** – Создает одну карту освещения, содержащую цвета HDR.
+- **Color and Direction** – Создает вторую карту освещения, содержащую доминирующее направление освещения, что позволяет использовать зеркальное отражение. Режим "Цвет и направление" несовместим с [мягким направленным освещением][13] или [окружающим освещением][14].
 
-#### Filter
+#### Filter (Фильтр)
 
-Enables bilateral filter on [Runtime Baked Lightmaps][15].
+Включает двусторонний фильтр для [динамически создаваемых карт освещения][15].
 
-#### Range
+#### Range (Диапазон)
 
-A range parameter of the bilateral filter. Larger values apply more widespread blur.
+Параметр диапазона для двустороннего фильтра. Большие значения применяют размытие более широко.
 
-#### Smoothness
+#### Smoothness (Гладкость)
 
-A spatial parameter of the bilateral filter. Larger values blur colors that are less similar.
+Пространственный параметр для двустороннего фильтра. Большие значения применяют размытие к цветам, которые менее похожи.
 
-#### Ambient Bake
+#### Ambient Bake (Запекание окружения)
 
-Enables baking of [Environment Light][14].
+Включает создание [окружающего освещения][14].
 
 #### Samples
 
-The number of samples that are used to bake the ambient light into the lightmap.
+Количество сэмплов, используемых для просчета окружающего освещения в lightmap.
 
 #### Sphere Part
 
-The amount of the sphere that is used to bake environment light.
+Количество сфер, используемой для просчета окружающего освещения.
 
 #### Occlusion Brightness
 
-The brightness of the baked ambient occlusion.
+Яркость просчитанного окружающего освещения.
 
 #### Occlusion Contrast
 
-The contrast of the baked ambient occlusion.
+Контраст просчитанного окружающего освещения.
 
 ## Batch Groups
 
-Here you can create and manage Batch Groups for the Project. You can assign [Model][7] components and [Element][8] components to Batch Groups and the engine will attempt to reduce draw calls by merging the mesh instances of objects in the same group together. See more on Batching [here][9].
+Здесь вы можете создавать и управлять Batch Groups для проекта. Вы можете назначать компоненты [Model][7] и [Element][8] к группам пакетов, и движок будет пытаться уменьшить количество вызовов отрисовки, объединяя экземпляры сетки объектов в одной группе. Более подробно о пакетном рисовании можно прочитать [здесь][9].
 
-## Loading Screen (Available for ORG users only)
+## Экран загрузки (доступен только для пользователей организаций)
 
-Here you can set the script that creates the loading screen of you application. To create a new loading screen script click *Create Default*. See more information about custom loading screens [here][6].
+Здесь вы можете установить скрипт, создающий экран загрузки вашего приложения. Чтобы создать новый скрипт загрузки, нажмите *Create Default*. Более подробную информацию о настраиваемых экранах загрузки можно найти [здесь][6].
 
-## External Scripts
+## External Scripts (Внешние скрипты)
 
-Here you can specify the URLs of external scripts you would like to include in your application. These URLs are added as &lt;script&gt; tags in the main HTML page of the application before any other script is loaded.
+Здесь вы можете указать URL внешних скриптов, которые вы хотели бы включить в свое приложение. Эти URL-адреса добавляются в качестве тегов &lt;script&gt; на главной HTML-странице приложения перед загрузкой какого-либо другого скрипта.
 
-## Input
+## Input (Ввод)
 
-Here you can enable or disable various input devices for your application.
+Здесь вы можете включить или отключить различные устройства ввода для вашего приложения.
 
-## Localization
+## Localization (Локализация)
 
-Here you can specify JSON Assets that contain localization data. Assets in this list will automatically be parsed for localization data when loaded. These are used to localized your Text Elements.
+Здесь вы можете указать JSON-ассеты, содержащие данные для локализации. Эти ассеты автоматически парсятся при загрузке для поиска данных о локализации. Они используются для локализации ваших текстовых элементов.
 
-You can click CREATE NEW ASSET to create a new localization asset. You can then add data to that asset for the desired locale.
+Нажмите CREATE NEW ASSET, чтобы создать новый ассет локализации. Затем вы можете добавить данные в этот ассет для нужной локали.создать
 
-Read more about localization [here][11].
+Более подробно о локализации можно прочитать [здесь][11].
 
-## Asset Tasks
+## Asset Tasks (Задачи ассетов)
 
-#### Auto-run
+#### Auto-run (Автоматическое выполнение)
 
-Run the asset pipeline automatically when an asset is uploaded.
+Запускать процесс обработки ассетов автоматически после загрузки.
 
 #### Textures POT (power-of-two)
 
-When a texture is imported resize it to be the nearest power of two.
+При импорте текстуры измените ее размер до ближайшей степени двойки.
 
-#### Create Atlases
+#### Create Atlases (Создание атласов)
 
-When a new image is uploaded it will be created as a Texture Atlas instead of a Texture.
+При загрузке нового изображения оно будет создано как атлас текстур вместо текстуры.
 
-#### Search related assets
+#### Search related assets (Поиск связанных ресурсов)
 
-If an asset is updated with a new version, search for related assets (such as materials and textures) that were created from the original asset outside of the asset's folder. Otherwise, only check inside the current folder for related assets.
+Если ресурс обновлен новой версией, то ищите связанные ресурсы (например, материалы и текстуры), созданные из оригинального ресурса за пределами папки ресурса. В противном случае, проверяйте только внутри текущей папки на наличие связанных ресурсов.
 
-#### Overwrite Model
+#### Overwrite Model (Перезапись модели)
 
-When importing a scene (e.g. an FBX) this setting decides whether the model file is overwritten with a new version imported from the scene.
+При импорте сцены (например, FBX) этот параметр определяет, перезаписывается ли файл модели новой версией, импортированной из сцены.
 
-#### Overwrite Animation
+#### Overwrite Animation (Перезапись анимации)
 
-When importing a scene (e.g. an FBX) this setting decides whether animation files are overwritten with a new version imported from the scene.
+При импорте сцены (например, FBX) этот параметр определяет, перезаписываются ли файлы анимации новой версией, импортированной из сцены.
 
-#### Overwrite Material
+#### Overwrite Material (Перезапись материала)
 
-When importing a scene (e.g. an FBX) this setting decides whether material files are overwritten with a new version imported from the scene.
+При импорте сцены (например, FBX) этот параметр определяет, перезаписываются ли файлы материалов новой версией, импортированной из сцены.
 
-#### Overwrite Texture
+#### Overwrite Texture (Перезапись текстуры)
 
-When importing a scene (e.g. an FBX) this setting decides whether texture files are overwritten with a new version imported from the scene.
+При импорте сцены (например, FBX) этот параметр определяет, перезаписываются ли файлы текстур новой версией, импортированной из сцены.
 
 [1]: /user-manual/designer/menus-and-toolbar
 [2]: /images/user-manual/editor/settings/cog.jpg
