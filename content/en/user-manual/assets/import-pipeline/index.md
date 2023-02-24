@@ -10,13 +10,11 @@ Some assets don't need to be imported before they can be used. For example a PNG
 
 ## Asset Tasks
 
-When a source asset is uploaded that needs to be imported. PlayCanvas starts an Asset Task to perform this import process on our server. You can see the asset tasks that you are currently running in the Asset Panel.
-
-![asset tasks][1]
+When a source asset is uploaded that needs to be imported. PlayCanvas starts an Asset Task to perform this import process on our server.
 
 There are a variety of options available to tune the behavior of the import pipeline to suit your needs.
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="480px">
 
 ### Search related assets
 
@@ -75,11 +73,24 @@ Enabled by default on new projects, imported models and animations will create G
 
 Only available if using [Convert to GLB](#convert-to-glb) option. When a model file is imported, a template asset is created that contains the full hierarchy of the model as entities allowing to you to manipulate them directly in the Editor. See more information about this feature [here][3].
 
+### Mesh Compression
+
+Only available if using [Convert to GLB](#convert-to-glb) option. Setting this to a compression format will automatically compress mesh data when importing or re-importing model files. This can drastically reduce the size of GLB files at the cost of some runtime decompression cost.
+
+If using Draco compression, remember to import the Draco WASM module into the project otherwise the models will not load.
+
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/draco-import-button.png" width="480px">
+
+### Create FBX Folder
+
+When importing a model file (e.g a GLB or FBX), the Editor will create a folder for the assets created by the import such as render, template and material assets.
+
+If there is already a Model (Source) file in the current folder or a folder with the same name as the file being imported, it will overwrite the existing assets instead of creating a new folder.
+
 ## Animation Import Settings
 
 Please refer to the [Animation section][4] for more details.
 
-[1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
 [2]: /user-manual/assets/preloading-and-streaming/
 [3]: /user-manual/assets/import-pipeline/import-hierarchy/
 [4]: /user-manual/assets/animation/
