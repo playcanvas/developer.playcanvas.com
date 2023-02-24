@@ -1,5 +1,5 @@
 ---
-title: Layers
+title: Layers (Слои)
 layout: usermanual-page.hbs
 position: 4
 ---

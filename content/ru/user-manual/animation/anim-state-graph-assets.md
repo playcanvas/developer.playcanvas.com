@@ -99,7 +99,7 @@ Each condition consists of a conditional statement which compares the current va
 
 Can be used in the transition between the Idle and Jump animation states to ensure that a character only jumps when the ‘Jump’ parameter has been set to true via a script.
 
-### Layers
+### Layers (Слои)
 
 So far, animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behavior. An example could be animating a main character's movement and locomotion on a single layer, while animating its facial expressions on a separate layer that’s driven by its own state graph and parameters.
 

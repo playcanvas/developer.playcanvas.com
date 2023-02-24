@@ -138,7 +138,7 @@ this.app.on("game:start", function () {
 
 The game script also manages the current score. It exposes methods that are used to modify the score and also fires events to let other code know that the score has changed.
 
-### Resolution
+### Resolution (Разрешение)
 
 Finally the game script handles the initial choice of resolution to make sure the main canvas is the correct size on both mobile and desktop. On mobile (defined by a screen less than 640 pixels wide) the game simply fills the entire screen. On desktop we use the predefined resolution set in the project settings.
 

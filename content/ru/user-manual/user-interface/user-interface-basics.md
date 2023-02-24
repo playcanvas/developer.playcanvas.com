@@ -20,14 +20,13 @@ To change the draw order you simply re-order the entities in the Editor hierarch
 
 9-slicing (or 9-patch) is a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
 
-## Input
+## Input (Ввод)
 
 There is an additional way of handling input for UI Elements. An instance of the `pc.ElementInput` is provided on the Application object, usually accessible as `this.app.elementInput`. This allows you to listen for input directly on the element components, e.g. `this.entity.element.on('click', ...)`. Read more on the [Input][4] page.
 
-## Localization
+## Localization (Локализация)
 
 PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
-
 
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements

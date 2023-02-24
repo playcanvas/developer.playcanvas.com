@@ -1,5 +1,5 @@
 ---
-title: Device Pixel Ratio
+title: Коэффициент пикселей устройства
 layout: usermanual-page.hbs
 position: 6
 ---

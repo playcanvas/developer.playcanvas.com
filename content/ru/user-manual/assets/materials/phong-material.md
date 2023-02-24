@@ -25,7 +25,7 @@ Ambient properties determine how the material appears in ambient light.
 | Property   | Description |
 |------------|-------------|
 | Tint       | Check this to multiply the scene's global ambient color with a material specific color. |
-| Color      | The tint color to multiply the scene's global ambient color. |
+| Цвет      | The tint color to multiply the scene's global ambient color. |
 | AO Texture | An ambient occlusion map containing pre-baked ambient occlusion. |
 
 ### Diffuse
@@ -38,7 +38,7 @@ Diffuse properties define the how a material reflects diffuse light emitted by d
 |------------|-------------|
 | Texture    | The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead. |
 | Tint       | Check this to modulate the material's diffuse map with a material specific diffuse color. |
-| Color      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
+| Цвет      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
 
 ### Specular
 
@@ -50,7 +50,7 @@ Specular properties defines the color of the specular highlights. i.e. the shini
 |--------------|-------------|
 | Specular Map | The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead. |
 | Tint         | Check this to modulate the material's specular map with a material specific specular color. |
-| Color        | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
+| Цвет        | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
 | Gloss Map    | The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property. |
 | Glossiness   | A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny). |
 
@@ -64,7 +64,7 @@ Emissive properties control how the material emits light (as opposed to reflecti
 |------------|-------------|
 | Texture    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
 | Tint       | Check this to modulate the material's emissive map with a material specific emissive color. |
-| Color      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
+| Цвет      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
 | Intensity  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
 
 ### Opacity

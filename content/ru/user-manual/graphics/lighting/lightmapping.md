@@ -1,5 +1,5 @@
 ---
-title: Lightmapping
+title: Lightmapping (Освещение)
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -27,7 +27,7 @@ Once you have created lightmaps using an external tool you simply upload them as
 
 In this page we will use 3ds Max with VRay to generate lightmaps, but the same functionality is achievable with any other similar modeling tools.
 
-## Gamma Correction
+## Гамма-коррекция
 
 When rendering Lightmaps or CubeMaps they should be rendered in Linear Space to ensure color curves are not affected by gamma correction twice. The PlayCanvas Engine will apply gamma correction during real-time rendering.
 
@@ -45,16 +45,19 @@ Here is a screenshot of what options should be set to what values, click the "De
 In order to apply a lightmap texture on geometry we need to unwrap it first. Here are some practices that will help you to get good lightmap friendly UV's.
 
 ### **Simple Geometry**
+
 A smaller area of geomtry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
 
 ![Lighmapping Tips: Simple Geometry][4]
 
 ### **Consistent Texel Size**
+
 Keep texels in UV unstretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close or in the far distance as required by artistic and optimization decisions.
 
 ![Lighmapping Tips: UV Consistent Texel Size][5]
 
 ### **Non-overlapping UV**
+
 Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store its own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
 
 ![Lighmapping Tips: Non-overlapping UV][6]

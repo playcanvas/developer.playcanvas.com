@@ -21,11 +21,11 @@ Simple Sprite Components display a single frame from an atlas
 | Type        | Simple or Animated. |
 | Sprite      | The Sprite Asset to display. |
 | Frame       | The frame index of the Sprite to display. |
-| Color       | A color to apply as a tint to the sprite. |
+| Цвет       | A color to apply as a tint to the sprite. |
 | Opacity     | The transparency of the sprite. |
 | Flip X      | Flip the rendered sprite horizontally. |
 | Flip Y      | Flip the rendered sprite vertically. |
-| Layers      | The Layers in which to render the sprite. |
+| Layers (Слои)      | The Layers in which to render the sprite. |
 | Draw Order  | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | Batch Group | The Batch Group that this model belongs to. More on Batching [here][6]. |
 
@@ -41,12 +41,12 @@ Animated Sprite Components have multiple Sprite Animation Clips attached which c
 |------------|-------------|
 | Type       | Simple or Animated. |
 | Frame      | The frame index of the Sprite to display. |
-| Color      | A color to apply as a tint to the sprite. |
+| Цвет      | A color to apply as a tint to the sprite. |
 | Opacity    | The transparency of the sprite. |
 | Flip X     | Flip the rendered sprite horizontally. |
 | Flip Y     | Flip the rendered sprite vertically. |
 | Speed      | Multiplier applied to the speed at which sprite animation clips on this sprite component are animated. |
-| Layers     | The Layers in which to render the sprite. |
+| Layers (Слои)     | The Layers in which to render the sprite. |
 | Draw Order | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | Auto Play  | The name of a sprite animation clip to play when the sprite is enabled. |
 

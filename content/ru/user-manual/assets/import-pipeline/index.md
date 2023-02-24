@@ -8,7 +8,7 @@ Some assets are uploaded in source format and need to be converted into a "targe
 
 Some assets don't need to be imported before they can be used. For example a PNG image can be used as a texture immediately.
 
-## Asset Tasks
+## Asset Tasks (Задачи ассетов)
 
 When a source asset is uploaded that needs to be imported. PlayCanvas starts an Asset Task to perform this import process on our server. You can see the asset tasks that you are currently running in the Asset Panel.
 
@@ -18,7 +18,7 @@ There are a variety of options available to tune the behavior of the import pipe
 
 <img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
 
-### Search related assets
+### Search related assets (Поиск связанных ресурсов)
 
 When you update an source asset by uploading a new version of the file. There are two possible behaviors for how we update the target assets that are created by the import pipeline.
 
@@ -39,7 +39,7 @@ These options only affect the importing of images and textures.
 
 When this option is enabled textures that are not a power of two will be converted to the nearest power of two resolution when they are imported.
 
-### Create Atlases
+### Создание атласов
 
 Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is a useful time saver when uploading many spritesheets or UI assets.
 

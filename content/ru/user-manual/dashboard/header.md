@@ -6,16 +6,16 @@ position: 1
 
 ![Dashboard][1]
 
-The Dashboard Header provides various buttons to quickly perform common actions for a project.
+Заголовок панели инструментов предоставляет различные кнопки для быстрого выполнения общих действий для проекта.
 
-By clicking on the EDITOR button you can open up the PlayCanvas Editor.
+Нажав кнопку EDITOR, вы можете открыть редактор PlayCanvas.
 
-By clicking on the PLAY button you can play the Primary Build of this project.
+Нажав кнопку PLAY, вы можете запустить основную сборку этого проекта.
 
-By clicking on WATCH you can watch or follow this project, receiving updates for new posts about this project.
+Нажав кнопку WATCH, вы можете наблюдать или следить за этим проектом, получая обновления о новых сообщениях об этом проекте.
 
-By clicking on STAR you can star or like this project, providing motivation to the developer.
+Нажав кнопку STAR, вы можете отметить этот проект как понравившийся, что даст мотивацию разработчику.
 
-By clicking on the FORK button you can fork this project, which means that a clone of this project will be copied to your account.
+Нажав кнопку FORK, вы можете форкнуть этот проект, что означает, что клон этого проекта будет скопирован на ваш аккаунт.
 
 [1]: /images/platform/dashboard_header.jpg

@@ -1,5 +1,5 @@
 ---
-title: Input
+title: Input (Ввод)
 layout: usermanual-page.hbs
 position: 8
 ---

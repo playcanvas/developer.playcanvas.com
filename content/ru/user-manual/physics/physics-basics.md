@@ -20,7 +20,7 @@ This will import the default build of ammo.js provided by PlayCanvas. However pl
 
 For details on migrating legacy projects to the latest ammo.js see [this page][10].
 
-## Gravity
+## Гравитация
 
 In the same Settings panel, you can set global gravity of the physics simulation. Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero.
 
