@@ -37,7 +37,7 @@ Once you have a cubemap selected, you can edit its properties.
 
 ![Cubemap Properties][3]
 
-### Filtering
+### Фильтрация
 This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
 
 ### Anisotropy

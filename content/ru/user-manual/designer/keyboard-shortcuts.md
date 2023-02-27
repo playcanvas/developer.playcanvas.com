@@ -1,133 +1,60 @@
 ---
-title: Горячие клавиши
+title: Controls and Keyboard Shortcuts
 layout: usermanual-page.hbs
 position: 11
 ---
 
 ## Camera Controls
 
-The Editor's Camera is controlled with the Mouse and Keyboard
+The Editor's camera is controlled with the mouse and keyboard.
 
-<table class="head-column">
-    <tbody>
-        <tr>
-            <td>Orbit camera</td><td>Left Mouse Button (LMB)</td>
-        </tr>
-        <tr>
-            <td>Pan camera</td><td>Middle Mouse Button (MMB)</td>
-        </tr>
-        <tr>
-            <td>Look camera</td><td>Right Mouse Button (RMB)</td>
-        </tr>
-        <tr>
-            <td>Pan camera</td><td>Shift + LMB</td>
-        </tr>
-        <tr>
-            <td>Zoom / Dolly camera</td><td>Mouse Wheel</td>
-        </tr>
-        <tr>
-            <td>Move Camera</td><td>W-A-S-D</td>
-        </tr>
-        <tr>
-            <td>Move Camera Fast</td><td>Shift + W-A-S-D</td>
-        </tr>
-    </tbody>
-</table>
+| Operation    | Controls                                                       |
+| ------------ | -------------------------------------------------------------- |
+| Orbit        | Left Mouse Button + Drag                                       |
+| Pan          | Middle Mouse Button + Drag<br>SHIFT + Left Mouse Button + Drag |
+| Look Around  | Right Mouse Button + Drag                                      |
+| Zoom / Dolly | Mouse Wheel                                                    |
+| Move         | W-A-S-D                                                        |
+| Move (fast)  | SHIFT + W-A-S-D                                                |
 
 ## General Mouse Controls
 
-<table class="head-column">
-    <tbody>
-        <tr>
-            <td>Select entity</td><td>Click LMB</td>
-        </tr>
-        <tr>
-            <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
-        </tr>
-    </tbody>
-</table>
+| Operation                                              | Controls                  |
+| ------------------------------------------------------ | ------------------------- |
+| Select Entity                                          | Left Mouse Button         |
+| Translate / Rotate / Scale Entity (according to gizmo) | Left Mouse Button + Drag  |
 
 ## General Modifier Keys
 
-<table class="head-column">
-    <tbody>
-        <tr>
-            <td>Toggle Editor's Snap setting while operating gizmo</td><td>Hold Shift while dragging the Entity</td>
-        </tr>
-        <tr>
-            <td>Do not preserve the Entity's transform when reparenting</td><td>Hold Ctrl when you reparent the Entity</td>
-        </tr>
-    </tbody>
-</table>
+| Operation                                               | Controls                               |
+| ------------------------------------------------------- | -------------------------------------- |
+| Toggle Editor's Snap setting while operating gizmo      | Hold SHIFT while dragging the Entity   |
+| Do not preserve the Entity's transform when reparenting | Hold CTRL when you reparent the Entity |
 
-## Hot Keys
+## Горячие клавиши
 
 Note that on a Mac, CMD should be used instead of CTRL.
 
-<table class="three-column">
-    <tbody>
-        <tr>
-            <td>Launch</td><td>Launch the scene in a new tab</td><td>CTRL + ENTER</td>
-        </tr>
-        <tr>
-            <td>New Entity</td><td>Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
-        </tr>
-        <tr>
-            <td>Duplicate Entity</td><td>Duplicates the selected entity and all children</td><td>CTRL + D</td>
-        </tr>
-        <tr>
-            <td>Rename</td><td>Focuses on name field of selected entities or an asset</td><td>N or F2</td>
-        </tr>
-        <tr>
-            <td>Copy Entity</td><td>Copy a single selected entity</td><td>CTRL + C</td>
-        </tr>
-        <tr>
-            <td>Paste Entity</td><td>Paste an entity under the currently selected entity</td><td>CTRL + V</td>
-        </tr>
-        <tr>
-            <td>Copy Asset</td><td>Copy selected asset or assets in assets panel</td><td>CTRL + C</td>
-        </tr>
-        <tr>
-            <td>Paste Entity</td><td>In the assets panel, paste previously selected asset or assets</td><td>CTRL + V</td>
-        </tr>
-        <tr>
-            <td>Delete</td><td>Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
-        </tr>
-        <tr>
-            <td>Frame Selection</td><td>Focus on the entity selection</td><td>F</td>
-        </tr>
-        <tr>
-            <td>Translate</td><td>Change gizmo mode to translate</td><td>1</td>
-        </tr>
-        <tr>
-            <td>Rotate</td><td>Change gizmo mode to rotate</td><td>2</td>
-        </tr>
-        <tr>
-            <td>Scale</td><td>Change gizmo mode to scale</td><td>3</td>
-        </tr>
-        <tr>
-            <td>World / Local</td><td>Switch between local and world space gizmo</td><td>L</td>
-        </tr>
-        <tr>
-            <td>Toggle All Panels</td><td>Hides or shows all the panels</td><td>SPACE</td>
-        </tr>
-        <tr>
-            <td>Bake</td><td>Re-bake and recalculate lights</td><td>CTRL + B</td>
-        </tr>
-        <tr>
-            <td>Previous Selection</td><td>Select previously selected items</td><td>SHIFT + Z</td>
-        </tr>
-        <tr>
-            <td>Undo</td><td>Undo the last action performed by the user</td><td>CTRL + Z</td>
-        </tr>
-        <tr>
-            <td>Redo</td><td>Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
-        </tr>
-        <tr>
-            <td>How do I...?</td><td>Bring search toolbar for mini-tutorials</td><td>CTRL + SPACE</td>
-        </tr>
-        <tr>
-            <td>Show Controls</td><td>Display the Editor controls</td><td>SHIFT + ?</td>
-        </tr>
-    </tbody>
-</table>
+| Operation             | Description                                                          | Keyboard Shortcut            |
+| --------------------- | -------------------------------------------------------------------- | ---------------------------- |
+| Launch                | Launch the scene in a new tab                                        | CTRL + ENTER                 |
+| New Entity            | Creates a new entity as a child of the currently selected entity     | CTRL + E                     |
+| Duplicate Entity      | Duplicates the selected entity and all children                      | CTRL + D                     |
+| Rename Entity / Asset | Focuses on name field of the selected entity or asset                | N or F2                      |
+| Copy Entity / Asset   | Copy the current entity/asset selection                              | CTRL + C                     |
+| Paste Entity / Asset  | Paste copied entity/asset under the currently selected entity/folder | CTRL + P                     |
+| Delete                | Delete the current selection                                         | DELETE<br>CTRL + BACKSPACE   |
+| Frame Selection       | Focus on the current entity selection in the 3D view                 | F                            |
+| Translate             | Activate the translate gizmo in the 3D view                          | 1                            |
+| Rotate                | Activate the rotate gizmo in the 3D view                             | 2                            |
+| Scale                 | Activate the scale gizmo in the 3D view                              | 3                            |
+| World / Local         | Switch between local and world space gizmos                          | L                            |
+| Toggle All Panels     | Hides or shows all the panels to maximize the 3D view                | SPACE                        |
+| Bake                  | Re-bake lighting using the [Run-time Lightmapper][1]                 | CTRL + B                     |
+| Previous Selection    | Select previously selected items                                     | SHIFT + Z                    |
+| Undo                  | Undo the last action                                                 | CTRL + Z                     |
+| Redo                  | Redo the last action                                                 | CTRL + Y<br>CTRL + SHIFT + Z |
+| How do I...?          | Toggle search toolbar for mini-tutorials                             | CTRL + SPACE                 |
+| Show Controls         | Display the Editor controls                                          | SHIFT + ?                    |
+
+[1]: /user-manual/graphics/lighting/runtime-lightmaps

@@ -1,27 +1,27 @@
 ---
-title: Вид
+title: Viewport
 layout: usermanual-page.hbs
 position: 4
 ---
 
 <img loading="lazy" alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg">
 
-The viewport shows your scene as currently rendered. You can freely move around the scene by manipulating the Editor's current camera.
+Viewport отображает вашу сцену в её текущем состоянии. Вы можете свободно перемещаться по сцене, управляя текущей камерой редактора.
 
 <img loading="lazy" alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;">
 
-## Камыр
+## Камеры
 
-Initially the Editor is set to use the **Perspective** camera. This camera is as if a movie camera was floating in your scene. You can use the camera dropdown menu to view the scene using various other cameras. The **orthographic** cameras: Top, Bottom, Front, Back, Left, Right, let you view a version of the scene with no perspective. Useful for fine-tuning positions.
+По умолчанию редактор настроен на использование камеры  **Perspective**. Это камера, которая находится, будто бы киноаппарат, в вашей сцене. Вы можете использовать меню выбора камеры, чтобы просматривать сцену с помощью различных других камер. Камеры  **ортографического** типа: верхняя, нижняя, передняя, задняя, левая, правая, позволяют просмотреть версию сцены без перспективы. Они полезны для точной настройки позиций.
 
-You can also use the camera menu to select any of the camera Entities in your scene. This way you can position your in-game camera exactly as required.
+Вы также можете использовать меню камеры, чтобы выбрать любую из камер-объектов в вашей сцене. Таким образом, вы можете разместить камеру вашей игры точно так, как вам нужно.
 
-## Gizmos
+## Гизмо
 
 <img loading="lazy" src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;">
 <img loading="lazy" src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;">
 <img loading="lazy" src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;">
 
-The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][1]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Rotate (which is made up of three colored rings) and Scale (with cubes on the ends of the axes).
+Трёхцветная ось, которую вы видите на скриншоте выше, называется [Гизмо][1]. Он используется для управления матрицей преобразования выбранной сущности. Существуют три типа гизмо: Перемещение (со стрелками на концах осей); Поворот (который состоит из трёх цветных кругов) и Масштабирование (с кубами на концах осей).
 
 [1]: /user-manual/glossary#gizmo

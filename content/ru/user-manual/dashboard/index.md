@@ -1,17 +1,17 @@
 ---
-title: Панель
+title: Панель управления
 layout: usermanual-page.hbs
 position: 7
 ---
 
 ![Dashboard][1]
 
-The Project Dashboard is the control centre for your project. From the dashboard you can:
+Панель управления проекта - это центр управления вашим проектом. С помощью панели управления вы можете:
 
-* Access the Editor.
-* Run the project's primary app.
-* View the project's development log.
-* View the project's activity.
-* Edit your project's settings.
+* Получить доступ к редактору.
+* Запустить основное приложение проекта.
+* Просмотреть журнал разработки проекта.
+* Просмотреть активность проекта.
+* Изменить настройки вашего проекта.
 
 [1]: /images/platform/dashboard.png

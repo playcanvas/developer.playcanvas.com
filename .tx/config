@@ -575,6 +575,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/2D/sprite-editor.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-2d-texture-packing]
+file_filter   = content/<lang>/user-manual/2D/texture-packing.md
+source_file   = content/en/user-manual/2D/texture-packing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/2D/texture-packing.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-animation-anim-animation-assets]
 file_filter   = content/<lang>/user-manual/animation/anim-animation-assets.md
 source_file   = content/en/user-manual/animation/anim-animation-assets.md
@@ -1925,6 +1932,13 @@ source_file   = content/en/user-manual/version-control/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/version-control/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-item-history]
+file_filter   = content/<lang>/user-manual/version-control/item-history.md
+source_file   = content/en/user-manual/version-control/item-history.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/version-control/item-history.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-version-control-merging]
 file_filter   = content/<lang>/user-manual/version-control/merging.md

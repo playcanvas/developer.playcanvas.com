@@ -125,7 +125,7 @@ Metalsmith(__dirname)
         gfm: true,
         renderer: renderer
     }))
-    .use(contents()())
+    .use(contents())
     .use(permalinks({
         pattern: ':filename'
     }))

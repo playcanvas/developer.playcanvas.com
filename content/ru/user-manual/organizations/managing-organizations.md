@@ -4,41 +4,41 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-### Permissions
+### Права доступа
 
-You can manage permissions of your Organization from its account page.
+Вы можете управлять правами доступа к вашей организации со страницы ее аккаунта.
 
 ![permissions][1]
 
-Here you can see who is the Owner and the Administrators of the Organization. You can transfer ownership to a different user and add or remove Administrators.
+Здесь вы можете увидеть, кто является владельцем и администраторами организации. Вы можете передать владение другому пользователю и добавлять или удалять администраторов.
 
-Administrators can do everything the owner can do e.g. create and delete projects, except delete the Organization.
+Администраторы могут делать все то же, что и владелец, например, создавать и удалять проекты, за исключением удаления организации.
 
-### Seats
+### Места
 
-To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
+Чтобы дать пользователю место, добавьте его в любой частный проект, который принадлежит организации. Общедоступные проекты не требуют мест.
 
 ![seats][2]
 
-You can see which users have access to your private projects and occupy your available seats. From here you can remove users which will remove them from all your projects, freeing up seats.
+Вы можете увидеть, какие пользователи имеют доступ к вашим частным проектам и занимают доступные места. Отсюда вы можете удалить пользователей, что удалит их из всех ваших проектов, освободив места.
 
-The Owner of the organization does not need to occupy a seat if they are not actively working on any projects. It is recommended to have at least one user who will occupy a seat, to be an Admin of the Organization so that they can create new projects and manage existing projects.
+Владелец организации не нуждается в месте, если он не активно работает над какими-либо проектами. Рекомендуется иметь хотя бы одного пользователя, который будет администратором организации, чтобы управлять проектами.
 
 ![upgrade][3]
 
-Here you can increase or decrease the number of seats for your Organization. This view is available if you have subscribed for an Organization plan.
+Здесь вы можете увеличить или уменьшить количество мест для вашей организации. Этот вид доступен, если вы подписаны на план организации.
 
 ![delete][4]
 
-The Owner of the Organization can delete the Organization from here. This will completely erase the account and all its projects. This action cannot be reversed.
+Владелец организации может удалить организацию отсюда. Это полностью стирает учетную запись и все ее проекты. Это действие нельзя отменить.
 
-### Projects 
+### Проекты
 
-Administrators of the organization can add themselves to any project owned by the organization. On the account page, click on the drop down arrow on the right and then click on 'Add me as admin'.
+Администраторы организации могут добавлять себя в любой проект, принадлежащий организации. На странице аккаунта нажмите стрелку вниз справа и затем нажмите  'Add me as admin'.
 
 ![add to project][5]
 
-From here, you can add other users to the project as usual.
+Отсюда вы можете добавлять других пользователей в проект, как обычно.
 
 [1]: /images/user-manual/organizations/permissions.png
 [2]: /images/user-manual/organizations/seats.png

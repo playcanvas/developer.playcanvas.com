@@ -4,34 +4,34 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-The settings dashboard lets you set up Project settings.
+Панель настроек позволяет настроить настройки проекта.
 
-## Project Settings
+## Настройки проекта
 
-#### Name and Description
+#### Название и описание
 
-You can update the description of your project here. Currently it is not possible to change the name.
+Вы можете обновить описание своего проекта здесь. В настоящее время невозможно изменить название.
 
-#### Project Image
+#### Изображение проекта
 
-Assign a square 720x720 image to go along with your project. This image is also used to represent any published games from this project. And it will appear on social sites like Twitter and Facebook if users share your game.
+Назначьте изображение размером 720x720 пикселей для вашего проекта. Это изображение также используется для представления любых опубликованных игр из этого проекта. И оно будет появляться на социальных сайтах, таких как Twitter и Facebook, если пользователи будут делиться вашей игрой.
 
-If you want your project to be featured on playcanvas.com, you must add a project image.
+Если вы хотите, чтобы ваш проект был показан на playcanvas.com, вы должны добавить изображение проекта.
 
-#### Private
+#### Приватный
 
-Private projects are only visible to users who have been explicitly assigned read, write or admin access.
+Приватные проекты видны только пользователям, которым был явно назначен доступ для чтения, записи или администрирования.
 
 <div class="alert alert-info">
-Only users with premium accounts can access private projects
+Только пользователи с премиум-аккаунтами могут получить доступ к приватным проектам.
 </div>
 
-## Team
+## Команда
 
-Here you can add or remove other users to your Project and change their permissions.
+Здесь вы можете добавлять или удалять других пользователей в свой проект и изменять их разрешения.
 
 ## Удаление проекта
 
-Press the DELETE button to permanently delete your project. Note that this action cannot be undone.
+Нажмите кнопку DELETE, чтобы навсегда удалить ваш проект. Обратите внимание, что это действие нельзя отменить.
 
 
