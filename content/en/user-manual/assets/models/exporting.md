@@ -16,7 +16,7 @@ If GLB is not available, then please use FBX as it is a robust and well tested i
 
 * Only export what you need from your scene. For example, if your scene contains a red car and a blue car but you only want to import the red car, export only the red car. Your modelling application should have an 'Export Selected' or similar option.
 
-## Export to GLB file format tips
+## Tips for Exporting to GLB
 
 * Set the format to glTF Binary (GLB).
 * Ensure that materials and images are set to be exported and embedded in the GLB. Otherwise, you must upload all scene textures separately and relink all textures to materials and re-configure the materials parameters.
