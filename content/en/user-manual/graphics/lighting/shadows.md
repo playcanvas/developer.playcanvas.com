@@ -12,7 +12,7 @@ The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It
 
 ## Enabling Shadows
 
-![Directional Light][5]
+<img loading="lazy" src="/images/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480">
 
 By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
@@ -54,6 +54,12 @@ The shadow mapping technique used by PlayCanvas has only finite resolution. Ther
 
 The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
 
+### Shadow Intensity
+
+The intensity of the shadow, where 1 represents full intensity shadow cast by this light, and 0 represents no shadow.
+
+![Shadow Intensity][9]
+
 ### Shadow Resolution
 
 Every light casts shadows via a shadow map. This shadow map can have a resolution of 256x256, 512x512, 1024x1024 or 2048x2048 and this value is also set in the light component's interface. The higher the resolution, the crisper the shadows. However, higher resolution shadows are more expensive to render so be sure to balance performance against quality.
@@ -91,7 +97,8 @@ Enabling shadows has performance implications:
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
-[5]: /images/user-manual/scenes/components/component-light-directional.png
+[5]: /images/user-manual/graphics/lighting/shadows/light-shadow-options.png
 [6]: /images/user-manual/scenes/components/component-model.png
 [7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
 [8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg
+[9]: /images/user-manual/graphics/lighting/shadows/shadow-intensity.gif
