@@ -25,7 +25,7 @@ As such, to target PlayCanvas, you do not have to use any special art tool plugi
 
 (Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab][13] licensed under [CC BY 4.0][12]).
 
-PlayCanvas also supports importing of FBX mode which is another common interchange format. However, it doesn't retain material properties and you will need to configure them after import.
+PlayCanvas also supports the importing of FBX files which is another common interchange format. However, FBX materials are not imported as faithfully as glTF materials and might require some editing after import.
 
 We recommend using GLBs whenever possible for the best experience and highest compatibility.
 
