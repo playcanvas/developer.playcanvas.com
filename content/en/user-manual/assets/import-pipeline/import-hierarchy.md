@@ -27,9 +27,11 @@ Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
 A full tutorial on importing your first model and animation can be found [here][first_model_animation_import].
 
 As an overview, when you drag the model file into the 'Assets Panel':
+
 ![Drag Model into Assets Panel][import_model_gif]
 
 The following assets will be created when imported:
+
 ![Created Assets][created_assets_img]
 
 | Asset Type | Description |
