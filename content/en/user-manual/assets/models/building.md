@@ -6,7 +6,28 @@ position: 2
 
 Building art and animations for PlayCanvas can be done using almost any of the many 3D modeling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
 
-PlayCanvas is designed to import content most faithfully via the FBX interchange format so, in general, if your modeling application supports FBX, PlayCanvas supports it too. As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
+PlayCanvas is designed to import content most faithfully via the open source glTF binary (GLB) format so, in general, if your modeling application supports GLB, PlayCanvas supports it too.
+
+The import of GLBs supports the following glTF features for incredibly fast scene creation:
+
+- Node hierarchy
+- Standard material
+- Ratified material extensions
+- Animated skeletons and skinning data
+- Morph targets
+- Cameras
+- Draco compressed models
+- Punctual light support
+
+As such, to target PlayCanvas, you do not have to use any special art tool plugins and there are no PlayCanvas-specific workflows you must follow.
+
+![GLB Import Example][14]
+
+(Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab][13] licensed under [CC BY 4.0][12]).
+
+PlayCanvas also supports the importing of FBX files which is another common interchange format. However, FBX materials are not imported as faithfully as glTF materials and might require some editing after import.
+
+We recommend using GLBs whenever possible for the best experience and highest compatibility.
 
 Some modeling and animation programs to consider:
 
@@ -38,7 +59,7 @@ Regardless which modeling application you are using, there a number of things to
 
 [Blender][4] is a fantastic free tool for 3D modeling and it is perfect for generating 3D assets for PlayCanvas.
 
-Blender supports exporting to both COLLADA and FBX, but the built-in exporters do have some limitations.
+Blender supports exporting to GLB, FBX and COLLADA but the built-in exporters do have some limitations.
 
 ### **Map Types**
 
@@ -158,3 +179,6 @@ You should use the standard material types in Maya: lambert, blinn and phong. Th
 [9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
 [10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
 [11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
+[12]: https://creativecommons.org/licenses/by/4.0/
+[13]: https://sketchfab.com/3d-models/real-time-refraction-demo-mosquito-in-amber-37233d6ed84844fea1ebe88069ea58d1
+[14]: /images/user-manual/assets/models/building/glb-import.gif
