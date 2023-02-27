@@ -14,7 +14,7 @@ If GLB is not available, then please use FBX as it is a robust and well tested i
 
 ## General export tips
 
-* Only export what you need from your scene. For example, if your scene contains a red car and a blue car but you only want to import the red car, export only the red car. Your modelling application should have an 'Export Selected' or similar option.
+* Only export what you need from your scene. For example, if your scene contains a red car and a blue car but you only want to import the red car, export only the red car. Your modeling application should have an 'Export Selected' or similar option.
 
 ## Tips for Exporting to GLB
 
