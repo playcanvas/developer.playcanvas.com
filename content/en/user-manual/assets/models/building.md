@@ -17,7 +17,7 @@ The import of GLBs supports the following glTF features for incredibly fast scen
 - Morph targets
 - Cameras
 - Draco compressed models
-- Light punctual support
+- Punctual light support
 
 As such, to target PlayCanvas, you do not have to use any special art tools plugins and there are no PlayCanvas-specific workflows you must follow.
 
