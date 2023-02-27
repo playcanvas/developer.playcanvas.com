@@ -56,7 +56,7 @@ The shadow distance is the distance from the viewpoint beyond which directional 
 
 ### Shadow Intensity
 
-The intensity of the shadow darkening where 1 is the darkest it can be in the scene and 0 having no effect.
+The intensity of the shadow, where 1 represents full intensity shadow cast by this light, and 0 represents no shadow.
 
 ![Shadow Intensity][9]
 
