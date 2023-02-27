@@ -21,7 +21,7 @@ If GLB is not available, then please use FBX as it is a robust and well tested i
 * Set the format to glTF Binary (GLB).
 * Ensure that materials and images are set to be exported and embedded in the GLB. Otherwise, you must upload all scene textures separately and relink all textures to materials and re-configure the materials parameters.
 
-## Export to FBX file format tips
+## Tips for Exporting to FBX
 
 * Ensure you have the latest available FBX exporter for your modelling application installed.
 * Select the 'Embed Media' option in the FBX exporter panel. This packages the scene's textures in the exported FBX. This preserves material to textures links during import into PlayCanvas. Otherwise, you must upload all scene textures separately and relink all textures to materials.
