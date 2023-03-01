@@ -904,6 +904,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/assets/textures/texture-compression.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-viewers]
+file_filter   = content/<lang>/user-manual/assets/viewers.md
+source_file   = content/en/user-manual/assets/viewers.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/viewers.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-wasm-modules]
 file_filter   = content/<lang>/user-manual/assets/wasm-modules.md
 source_file   = content/en/user-manual/assets/wasm-modules.md
