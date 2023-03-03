@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+```
+<script>
+  var userLang = navigator.language || navigator.userLanguage;
+  if (/^en\b/.test(userLang)) {
+    window.location.href = "/en";
+  } if (/^ru\b/.test(userLang)) {
+    window.location.href = "/ru";
+  } if (/^ja\b/.test(userLang)) {
+    window.location.href = "/ja";
+  } if (/^zh\b/.test(userLang)) {
+    window.location.href = "/zh";
+  } else {
+    window.location.href = "/en";
+  }
+</script>
+```
+
+</body>
+</html>
