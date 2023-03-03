@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
+Если вы хотите создать пользовательский экран загрузки, вы можете перейти в [Настройки сцены][1] и нажать на**Create Default** в разделе *Loading Screen*. Если у вас уже есть действительный скрипт экрана загрузки, вы можете перетащить его на панель экрана загрузки или нажать на **Select Existing**:
 
 <img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png">
 
-Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
+Нажатие на кнопку **Create Default** создаст новый скрипт с некоторым содержимым по умолчанию. Вы можете изменить этот скрипт, если хотите изменить экран загрузки. Вот пример скрипта по умолчанию:
 
 ```
 pc.script.createLoadingScreen(function (app) {

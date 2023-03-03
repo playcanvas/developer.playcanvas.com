@@ -6,21 +6,21 @@ position: 9
 
 ## Сцены
 
-You can manage your scenes by opening the Scenes dialog.
+Вы можете управлять своими сценами, открыв диалоговое окно Scenes.
 
-You can open the Scenes dialog either by clicking on the 'Scenes' menu option in the menu:
+Вы можете открыть диалоговое окно Сцены, нажав на пункт меню 'Scenes' в меню:
 
 ![Scenes Menu][1]
 
-Or by clicking on the Scenes Menu button on the top left inside the 3D viewport:
+Или, нажав на кнопку Scenes Menu в левом верхнем углу внутри 3D viewport:
 
 ![Scenes Viewport][2]
 
-This will open up the Scenes dialog:
+Это откроет диалоговое окно Scenes:
 
 ![Scenes][3]
 
-You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left to make it the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
+Вы можете создать новую сцену, нажав на "ADD NEW SCENE", вы можете нажать на сцену, чтобы ее открыть, и вы можете нажать на кнопки справа от каждой сцены, чтобы продублировать или удалить сцену. Вы также можете нажать на значок баннера слева, чтобы сделать его первой сценой, загружаемой при публикации приложения или экспорте проекта. Подумайте об этом как о первом 'уровне' в вашем приложении.
 
 [1]: /images/user-manual/editor/scenes-menu.jpg
 [2]: /images/user-manual/editor/scenes-viewport.jpg
