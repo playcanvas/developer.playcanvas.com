@@ -41,7 +41,6 @@
     "marked": "^4.2.12",
     "metalsmith": "^2.5.1",
     "metalsmith-beautify": "^0.2.0",
-    "metalsmith-copy": "0.4.1",
     "metalsmith-static": "0.0.5",
     "node-fetch": "^2.6.7",
     "sass": "^1.58.3",
