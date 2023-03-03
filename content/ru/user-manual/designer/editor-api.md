@@ -5,22 +5,22 @@ position: 10
 ---
 
 <div class="alert alert-info">
-The Editor API is a beta feature. Please use caution when using on live projects.
+Editor API является функцией бета-версии. Пожалуйста, будьте осторожны при использовании на рабочих проектах.
 </div>
 
-The Editor has a user accessible API that is currently in beta which can be used to help automate and extend the base functionality.
+Редактор имеет API, который доступен для пользователя и в настоящее время находится в бета-версии, который можно использовать для автоматизации и расширения базовой функциональности.
 
-The API is not yet considered stable and may change in the future as we continue development. However, it is unlikely that API will change a lot from its current state.
+API еще не считается стабильным и может измениться в будущем в процессе разработки. Однако маловероятно, что API изменится сильно относительно его текущего состояния.
 
-Full documentation of the API can be found on [GitHub][github-api].
+Полная документация по API может быть найдена на [GitHub][github-api].
 
-## Automation Example
+## Пример автоматизации
 
-The API can be accessed via the browser's devtools console allowing for automation of repetitive tasks. In the example below, we are using the Editor to find all the Entities that have the tag 'red' and disabling them by running code in the browser console.
+API может быть получен через консоль инструментов разработчика браузера, позволяя автоматизировать повторяющиеся задачи. В приведенном ниже примере мы используем редактор, чтобы найти все сущности, которые имеют тег 'red', и отключаем их, выполняя код в консоли браузера.
 
 ![][disable-red-boxes-gif]
 
-Editor API code:
+Код API редактора:
 
 ```javascript
 (function(){
@@ -31,21 +31,21 @@ Editor API code:
 })();
 ```
 
-## Extending Editor Functionality
+## Расширение функциональности редактора
 
-It is possible to add extra functionality to the Editor and create custom interfaces such as adding buttons. This can be done via a number of ways such as browser extensions or [user scripts][user-scripts].
+Возможно добавить дополнительную функциональность в редактор и создать пользовательские интерфейсы, такие как добавление кнопок. Это можно сделать несколькими способами, такими как расширения браузера или [пользовательские скрипты][user-scripts].
 
-User scripts is the more accessible out of the two which allows you to run custom code on top of the Editor.
+Пользовательские скрипты являются более доступным из двух вариантов, что позволяет запускать пользовательский код поверх редактора.
 
-Below we have an example where a button has been added to the [Viewport][viewport] to generate and randomly place boxes into the scene.
+Ниже приведен пример, где кнопка была добавлена в [Viewport][viewport], чтобы генерировать и случайным образом размещать коробки в сцене.
 
 ![][generate-boxes-gif]
 
-The PlayCanvas team are currently using the [Violentmonkey][violentmonkey] open source browser extension to manage user scripts.
+Команда PlayCanvas в настоящее время использует расширение браузера с открытым исходным кодом [Violentmonkey][violentmonkey], чтобы управлять пользовательскими скриптами.
 
-Once the browser extension has been installed, adding your own or another developer's user script is very straightforward. Steps can be found in [Violentmonkey's documentation][violentmonkey-docs].
+После установки расширения браузера добавление собственного или скрипта другого разработчика очень просто. Шаги можно найти в [документации Violentmonkey][violentmonkey-docs].
 
-The code for the above user script is:
+Код для вышеуказанного пользовательского скрипта:
 
 ```javascript
 // ==UserScript==
@@ -120,9 +120,9 @@ The code for the above user script is:
 })();
 ```
 
-Let's break down the important areas of the script:
+Давайте разберем важные области скрипта:
 
-At the top is the informational header about the script if you do share the script with other users. The important line is the `@match` attribute which controls which URLs the script is loaded on. In this case, it is set to load on any PlayCanvas scene. More information on how to change this can be found in [Violentmonkey's documentation][violentmonkey-matching].
+Вверху находится информационный заголовок о скрипте, если вы решите поделиться скриптом с другими пользователями. Важная строка - это атрибут `@match`, который контролирует, на каких URL-адресах загружается скрипт. В данном случае он установлен для загрузки на любую сцену PlayCanvas. Более подробную информацию о том, как изменить это, можно найти в [документации Violentmonkey][violentmonkey-matching].
 
 ```javascript
 // ==UserScript==
@@ -136,14 +136,14 @@ At the top is the informational header about the script if you do share the scri
 // ==/UserScript==
 ```
 
-This is private Editor API to wait for an event when the Editor has fully loaded. Using the event ensures that the Editor API is accessible before the code to extend Editor features is ran.
+Это private API редактора, которое ожидает события, когда редактор полностью загружен. Использование события гарантирует, что API редактора будет доступно до запуска кода для расширения функций редактора.
 
 ```javascript
     // Wait until the Editor is available before adding the button
     editor.once('load', () => createButton());
 ```
 
-The button created is from the [PCUI][pcui] framework library that the Editor is also using. Again, there is some private API use to get the Viewport DOM to attach the button to.
+Кнопка создается из библиотеки [PCUI][pcui], которую также использует редактор. Опять же, используется некоторое частное API, чтобы получить DOM-элемент Viewport для прикрепления кнопки.
 
 ```javascript
     function createButton() {
