@@ -30,6 +30,7 @@
     "@metalsmith/layouts": "^2.6.0",
     "@metalsmith/markdown": "^1.9.1",
     "@metalsmith/permalinks": "2.4.1",
+    "@metalsmith/remove": "^1.3.0",
     "@playcanvas/eslint-config": "^1.3.0",
     "chokidar-cli": "^3.0.0",
     "eslint": "^8.35.0",
