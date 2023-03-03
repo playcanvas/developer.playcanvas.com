@@ -9,6 +9,7 @@ import markdown from '@metalsmith/markdown';
 import permalinks from '@metalsmith/permalinks';
 import beautify from 'metalsmith-beautify';
 import msStatic from 'metalsmith-static';
+import remove from '@metalsmith/remove';
 import navbuilder from './lib/nav-builder-plugin/index.mjs';
 import locale from './lib/locale/index.mjs';
 import i18n from './lib/i18n/index.mjs';
@@ -117,6 +118,11 @@ Metalsmith(__dirname)
     .metadata({
         prod: env === 'prod'
     })
+    .use(msStatic({
+        src: 'content/index.html',
+        dest: 'index.html'
+    }))
+    .use(remove('index.html'))
     .use(msStatic({
         src: 'public',
         dest: '.'
