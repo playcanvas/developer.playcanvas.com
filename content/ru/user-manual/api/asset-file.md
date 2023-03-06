@@ -10,11 +10,11 @@ position: 7
 GET https://playcanvas.com/api/assets/:assetId/file/:filename?branchId=:branchId
 ```
 
-## Description
+## Описание
 
 Get the details of a single asset
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/assets/{assetId}/file/{filename}?branchId={branchId}"

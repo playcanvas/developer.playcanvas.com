@@ -17,7 +17,7 @@ The Sound component can be enabled or disabled using the toggle in the top right
 
 ## Component Properties
 
-| Property        | Description |
+| Property        | Описание |
 |-----------------|-------------|
 | Positional      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
 | Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
@@ -29,7 +29,7 @@ The Sound component can be enabled or disabled using the toggle in the top right
 
 ## Slot Properties
 
-| Property        | Description |
+| Property        | Описание |
 |-----------------|-------------|
 | Name            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
 | Asset           | The audio asset to play. |

@@ -12,7 +12,7 @@ See the [Layout Groups][0] section for more details.
 
 ## Properties
 
-| Property       | Description |
+| Property       | Описание |
 |----------------|-------------|
 | Orientation    | Whether the layout should run horizontally or vertically. |
 | ReverseX       | Reverses the order of children along the x axis. |

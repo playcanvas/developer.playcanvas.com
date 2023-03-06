@@ -14,7 +14,7 @@ To create a new event, select the animation asset in the asset panel which you'd
 
 Each event has the following modifiable properties:
 
-| Variable | Description |
+| Variable | Описание |
 |----------|-------------|
 | time     | Defines the specific time during the playback of the animation when the event should trigger. Given in seconds. |
 | name     | The name of the event is used to identify the event when attaching an event listener to the anim component. |

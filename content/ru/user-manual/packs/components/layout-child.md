@@ -12,7 +12,7 @@ See the [Layout Groups][0] section for more details.
 
 ## Properties
 
-| Property              | Description |
+| Property              | Описание |
 |-----------------------|-------------|
 | Min Width             | Set the minimum width that the element can be rendered at. |
 | Min Height            | Set the minimum height that the element can be rendered at. |

@@ -10,11 +10,11 @@ position: 6
 GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 ```
 
-## Description
+## Описание
 
 Permanently delete an asset from a branch of your project. **Warning** deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X DELETE "https://playcanvas.com/api/assets/{assetId}?branchId={branchId}"

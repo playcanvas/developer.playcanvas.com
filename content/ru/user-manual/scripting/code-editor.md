@@ -69,8 +69,8 @@ The editor supports various shortcuts to help you when editing code. You can fin
 | Command                         | PC                       | Mac                        |
 |---------------------------------|--------------------------|----------------------------|
 | Save                            | Ctrl + S                 | Cmd + S                    |
-| Undo                            | Ctrl + Z                 | Cmd + Z                    |
-| Redo                            | Ctrl + Y                 | Cmd + Shift + Z or Cmd + Y |
+| Отмена                            | Ctrl + Z                 | Cmd + Z                    |
+| Повторить                            | Ctrl + Y                 | Cmd + Shift + Z or Cmd + Y |
 | Find in file                    | Ctrl + F                 | Cmd + F                    |
 | Find next match                 | F3                       | Cmd + G                    |
 | Find previous match             | Shift + F3               | Cmd + Shift + G            |

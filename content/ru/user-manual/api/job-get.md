@@ -10,11 +10,11 @@ position: 12
 GET https://playcanvas.com/api/jobs/:id
 ```
 
-## Description
+## Описание
 
 Gets a Job by id.
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
@@ -55,6 +55,5 @@ Status: 200
 ## Rate Limiting
 
 This route uses a [normal][1] rate limit.
-
 
 [1]: /user-manual/api#rate-limiting

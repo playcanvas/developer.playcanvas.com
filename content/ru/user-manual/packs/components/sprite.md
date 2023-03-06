@@ -16,16 +16,16 @@ Simple Sprite Components display a single frame from an atlas
 
 ## Simple Sprite Component Properties
 
-| Property    | Description |
+| Property    | Описание |
 |-------------|-------------|
 | Type        | Simple or Animated. |
 | Sprite      | The Sprite Asset to display. |
 | Frame       | The frame index of the Sprite to display. |
-| Color       | A color to apply as a tint to the sprite. |
+| Цвет       | A color to apply as a tint to the sprite. |
 | Opacity     | The transparency of the sprite. |
 | Flip X      | Flip the rendered sprite horizontally. |
 | Flip Y      | Flip the rendered sprite vertically. |
-| Layers      | The Layers in which to render the sprite. |
+| Layers (Слои)      | The Layers in which to render the sprite. |
 | Draw Order  | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | Batch Group | The Batch Group that this model belongs to. More on Batching [here][6]. |
 
@@ -37,22 +37,22 @@ Animated Sprite Components have multiple Sprite Animation Clips attached which c
 
 ## Animated Sprite Component Properties
 
-| Property   | Description |
+| Property   | Описание |
 |------------|-------------|
 | Type       | Simple or Animated. |
 | Frame      | The frame index of the Sprite to display. |
-| Color      | A color to apply as a tint to the sprite. |
+| Цвет      | A color to apply as a tint to the sprite. |
 | Opacity    | The transparency of the sprite. |
 | Flip X     | Flip the rendered sprite horizontally. |
 | Flip Y     | Flip the rendered sprite vertically. |
 | Speed      | Multiplier applied to the speed at which sprite animation clips on this sprite component are animated. |
-| Layers     | The Layers in which to render the sprite. |
+| Layers (Слои)     | The Layers in which to render the sprite. |
 | Draw Order | The order in which this sprite is rendered. Lower numbers are rendered first. |
 | Auto Play  | The name of a sprite animation clip to play when the sprite is enabled. |
 
 ## Sprite Animation Clip Properties
 
-| Property | Description |
+| Property | Описание |
 |----------|-------------|
 | Name     | The name of the Sprite Animation Clip. Used to reference an individual clip. |
 | Loop     | If true the animation clip will loop back to the start when it reaches the end. |

@@ -1,5 +1,5 @@
 ---
-title: Редактора
+title: Редактор
 layout: usermanual-page.hbs
 position: 8
 ---

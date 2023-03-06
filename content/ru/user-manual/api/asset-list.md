@@ -10,11 +10,11 @@ position: 9
 GET https://playcanvas.com/api/projects/:projectId/assets?branchId=:branchId
 ```
 
-## Description
+## Описание
 
 Get the details of all assets in a project for a specific branch
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}"

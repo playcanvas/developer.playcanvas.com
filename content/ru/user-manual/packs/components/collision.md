@@ -27,7 +27,7 @@ If the entity also has a rigidbody component, the collision component determines
 
 ## Properties
 
-| Property     | Description |
+| Property     | Описание |
 |--------------|-------------|
 | Type         | The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
 | Half Extents | Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth. |

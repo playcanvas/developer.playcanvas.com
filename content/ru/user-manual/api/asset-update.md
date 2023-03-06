@@ -10,7 +10,7 @@ position: 10
 PUT https://playcanvas.com/api/assets/:assetId
 ```
 
-## Description
+## Описание
 
 Update an existing asset's file.
 
@@ -20,7 +20,7 @@ Update an existing asset's file.
 
 **Unlike other REST API endpoints. The Update Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"

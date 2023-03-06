@@ -10,11 +10,11 @@ position: 1
 POST https://playcanvas.com/api/apps/download
 ```
 
-## Description
+## Описание
 
 This will allow you to download an app which you can self host on your own server. The request will start an export job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, its data will contain a URL to download the exported app.
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"project_id": 9999999, "scenes": [9999999], "name": "My App"}' "https://playcanvas.com/api/apps/download"

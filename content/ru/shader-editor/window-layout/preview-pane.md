@@ -22,7 +22,7 @@ The toolbar offers control over the lighting environment and preview shape. The 
 
 ![Preview Pane Toolbar][2]
 
-| Controls | |
+| Управление | |
 |---|---|
 | 1 | Play toggle. When enabled, the preview window updates continuously and steps engine time forward. Enable this when previewing animated effects.
 | 2 | Direct lighting toggle. |

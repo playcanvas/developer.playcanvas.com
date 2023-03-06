@@ -12,7 +12,7 @@ The Particle System component can be enabled or disabled using the toggle in the
 
 ## Properties
 
-| Property        | Description |
+| Property        | Описание |
 |-----------------|-------------|
 | Auto Play       | If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script. |
 | Particle Count  | The maximum number of particles managed by this particle system. |
@@ -41,8 +41,8 @@ The Particle System component can be enabled or disabled using the toggle in the
 | Local Velocity  | A curve defining how each particle's velocity with respect to the particle system's local coordinate system changes over time. If two curves are specified in the curve editor, local velocity will be a random lerp between both curves. |
 | Velocity        | A curve defining how each particle's velocity with respect to the world coordinate system changes over time. If two curves are specified in the curve editor, velocity will be a random lerp between both curves. |
 | Rotation Speed  | A curve defining how each particle's angular velocity changes over time. If two curves are specified in the curve editor, the angular velocity will be a random lerp between both curves. |
-| Scale           | A curve defining how each particle's scale changes over time. By default, a particle is 1 unit in width and height. If two curves are specified in the curve editor, the scale will be a random lerp between both curves. |
-| Color           | A curve defining how each particle's color changes over time. |
+| Масштабирование           | A curve defining how each particle's scale changes over time. By default, a particle is 1 unit in width and height. If two curves are specified in the curve editor, the scale will be a random lerp between both curves. |
+| Цвет           | A curve defining how each particle's color changes over time. |
 | Lifetime        | A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves. |
 
 ## Scripting Interface

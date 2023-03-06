@@ -106,7 +106,7 @@ The **Cast Lightmap Shadows** option determines if the model casts shadows in th
 
 There several combinations of light settings that can be used. Each one has a use case and by using lights with different combinations, you can balance high-quality visuals with performance.
 
-| Bake  | Affect Non-Baked | Affect Baked | Description |
+| Запекание  | Affect Non-Baked | Affect Baked | Описание |
 |-------|-----------------|--------------|-------------|
 | false | true            | false        | This is the default dynamic light. Affects all non-lightmapped models. |
 | true  | false           | false        | This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environment lights could use this setting. |

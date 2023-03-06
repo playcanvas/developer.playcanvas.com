@@ -10,23 +10,31 @@ PlayCanvas supports importing models with their meshes as a hierarchy of entitie
 
 ## How to enable
 
+<div class="alert alert-info">
+    This is now enabled by default for new projects.
+</div>
+
 Open the 'Project Settings'
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480">
 
 Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360">
 
 ## Importing models
 
-Drag the model file into the 'Assets Panel':
+A full tutorial on importing your first model and animation can be found [here][first_model_animation_import].
+
+As an overview, when you drag the model file into the 'Assets Panel':
+
 ![Drag Model into Assets Panel][import_model_gif]
 
 The following assets will be created when imported:
+
 ![Created Assets][created_assets_img]
 
-| Asset Type | Description |
+| Asset Type | Описание |
 |------------|-------------|
 | **[Materials][material_asset]** | Materials used by the imported model, mapped to the mesh instance. |
 | **[Textures][texture_asset]** | Embedded textures in the model file (if any). These will automatically be mapped to the associated materials. |
@@ -56,3 +64,4 @@ How the Editor decides what is a new or removed mesh instance is done by the fol
 [template_asset]: /user-manual/templates/
 [render_component]: /api/pc.RenderComponent.html
 [collision_component]: /api/pc.CollisionComponent.html
+[first_model_animation_import]: /tutorials/importing-first-model-and-animation/

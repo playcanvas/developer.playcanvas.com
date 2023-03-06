@@ -24,7 +24,7 @@ Note that you must add a [collision component][4] to the same entity in order to
 
 ## Properties
 
-| Property        | Description |
+| Property        | Описание |
 |-----------------|-------------|
 | Type            | The type of the body: <ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul> |
 | Mass            | The mass of the body. If world units in your scene are meters, the unit for mass is kilograms. |
