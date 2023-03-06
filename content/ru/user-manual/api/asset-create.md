@@ -10,7 +10,7 @@ position: 5
 POST https://playcanvas.com/api/assets
 ```
 
-## Description
+## Описание
 
 Create a new asset.
 
@@ -20,7 +20,7 @@ Create a new asset.
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"

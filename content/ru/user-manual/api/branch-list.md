@@ -10,11 +10,11 @@ position: 11
 GET https://playcanvas.com/api/projects/:projectId/branches
 ```
 
-## Description
+## Описание
 
 Get a list of all open branches for a project
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/branches"

@@ -12,7 +12,7 @@ The render component can be enabled or disabled using the toggle in the top righ
 
 ## Properties
 
-| Property              | Description |
+| Property              | Описание |
 |-----------------------|-------------|
 | Type                  | The type of the graphical object to be rendered. Can be: <ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Cone</li><li>Cylinder</li><li>Plane</li><li>Sphere</li></ul> |
 | Asset                 | The render asset to be rendered by this render component. Only applies the type property is set to 'Asset'. Only a single render asset can be assigned to a render component. |

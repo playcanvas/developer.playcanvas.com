@@ -12,7 +12,7 @@ The Model component can be enabled or disabled using the toggle in the top right
 
 ## Properties
 
-| Property              | Description |
+| Property              | Описание |
 |-----------------------|-------------|
 | Type                  | The type of the model to be rendered. Can be: <ul><li>Asset</li><li>Box</li><li>Capsule</li><li>Cone</li><li>Cylinder</li><li>Plane</li><li>Sphere</li></ul> |
 | Asset                 | The model asset rendered by this model component. Only applies to models of type 'asset'. Only a single model can be rendered per model component. |

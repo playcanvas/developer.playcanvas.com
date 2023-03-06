@@ -28,7 +28,7 @@ The text element renders a string of text using a [font asset][4].
 
 ## Common Component Properties
 
-| Property    | Description |
+| Property    | Описание |
 |-------------|-------------|
 | Type        | The type of Element: Group, Image or Text. |
 | Preset      | Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value. |
@@ -37,22 +37,22 @@ The text element renders a string of text using a [font asset][4].
 | Size        | The width and height of the Element. This may be automatically calculated depending on other settings. |
 | Margin      | The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis). |
 | Use Input   | If enabled, this Element is added to the list of elements that check for input and fire input related events. |
-| Layers      | The Layers to render this element into. More on Layers [here][8]. |
+| Layers (Слои)      | The Layers to render this element into. More on Layers [here][8]. |
 | Batch Group | The Batch Group that this model belongs to. More on Batching [here][9]. |
 
 ## Image Component Properties
 
-| Property | Description |
+| Property | Описание |
 |----------|-------------|
 | Rect     | Define the area of the texture asset to display. |
 | Mask     | Switch Image Element into a mask. Masks do not render into the scene, but instead limit child elements to only be rendered where this element is rendered. |
 | Texture  | The texture asset displayed. |
-| Color    | The color to tint the element. |
+| Цвет    | The color to tint the element. |
 | Opacity  | The transparency of the element. |
 
 ## Text Component Properties
 
-| Property    | Description |
+| Property    | Описание |
 |-------------|-------------|
 | Alignment   | Determine how the text is aligned with in the element. (0, 0) is bottom left, (1, 1) is top right. |
 | Text        | The text string to display. |
@@ -60,7 +60,7 @@ The text element renders a string of text using a [font asset][4].
 | Line Height | The size in Screen component pixels to move down for a new line. |
 | Spacing     | A multiplier to apply to the amount advanced between each character. |
 | Font        | The font asset. |
-| Color       | The color to tint the font. |
+| Цвет       | The color to tint the font. |
 | Opacity     | The transparency of the element. |
 | Wrap Lines  | Enable text wrapping. Any text that overflows the width of the text element will be wrapped to the next line. |
 

@@ -10,11 +10,11 @@ position: 3
 GET https://playcanvas.com/api/projects/:project_id/apps
 ```
 
-## Description
+## Описание
 
 Lists all the published Apps of a Project.
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps
@@ -72,6 +72,5 @@ Status: 200
 ## Rate Limiting
 
 This route uses a [normal][1] rate limit.
-
 
 [1]: /user-manual/api#rate-limiting

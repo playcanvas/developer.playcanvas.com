@@ -10,11 +10,11 @@ position: 14
 GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 ```
 
-## Description
+## Описание
 
 Get a list of all scenes for a project
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"

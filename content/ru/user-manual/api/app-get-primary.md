@@ -10,11 +10,11 @@ position: 2
 GET https://playcanvas.com/api/projects/:project_id/app
 ```
 
-## Description
+## Описание
 
 Gets the Primary App of a Project.
 
-## Example
+## Пример
 
 ```none
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/app
@@ -69,6 +69,5 @@ Status: 200
 ## Rate Limiting
 
 This route uses a [normal][1] rate limit.
-
 
 [1]: /user-manual/api#rate-limiting

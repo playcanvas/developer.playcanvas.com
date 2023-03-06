@@ -1,60 +1,60 @@
 ---
-title: Controls and Keyboard Shortcuts
+title: Элементы управления и горячие клавиши
 layout: usermanual-page.hbs
 position: 11
 ---
 
-## Camera Controls
+## Управление камерой
 
 The Editor's camera is controlled with the mouse and keyboard.
 
-| Operation    | Controls                                                       |
+| Операция    | Управление                                                       |
 | ------------ | -------------------------------------------------------------- |
-| Orbit        | Left Mouse Button + Drag                                       |
-| Pan          | Middle Mouse Button + Drag<br>SHIFT + Left Mouse Button + Drag |
-| Look Around  | Right Mouse Button + Drag                                      |
-| Zoom / Dolly | Mouse Wheel                                                    |
-| Move         | W-A-S-D                                                        |
-| Move (fast)  | SHIFT + W-A-S-D                                                |
+| Орбита        | Левая кнопка мыши + перетаскивание                                       |
+| Панорамирование          | Средняя кнопка мыши + перетаскивание<br>SHIFT + Левая кнопка мыши + перетаскивание |
+| Обзор  | Правая кнопка мыши + перетаскивание                                      |
+| Зум / Долли | Колесо мыши                                                     |
+| Перемещение         | W-A-S-D                                                        |
+| Перемещение (быстро)  | SHIFT + W-A-S-D                                                |
 
-## General Mouse Controls
+## Общие элементы управления мышью
 
-| Operation                                              | Controls                  |
+| Операция                                              | Управление                  |
 | ------------------------------------------------------ | ------------------------- |
-| Select Entity                                          | Left Mouse Button         |
-| Translate / Rotate / Scale Entity (according to gizmo) | Left Mouse Button + Drag  |
+| Выбор объекта                                          | Левая кнопка мыши          |
+| Перемещение / вращение / масштабирование объекта | Левая кнопка мыши + перетаскивание  |
 
-## General Modifier Keys
+## Общие клавиши-модификаторы
 
-| Operation                                               | Controls                               |
+| Операция                                               | Управление                               |
 | ------------------------------------------------------- | -------------------------------------- |
-| Toggle Editor's Snap setting while operating gizmo      | Hold SHIFT while dragging the Entity   |
-| Do not preserve the Entity's transform when reparenting | Hold CTRL when you reparent the Entity |
+| Включение / отключение привязки к сетке при использовании Гизмо      | Удерживайте клавишу SHIFT во время перетаскивания объекта   |
+| Не сохранять трансформацию объекта при изменении родительского объекта | Удерживайте клавишу CTRL при изменении родительского объекта |
 
 ## Горячие клавиши
 
-Note that on a Mac, CMD should be used instead of CTRL.
+Обратите внимание, что на Mac вместо CTRL следует использовать CMD.
 
-| Operation             | Description                                                          | Keyboard Shortcut            |
+| Операция             | Описание                                                          | Горячие клавиши            |
 | --------------------- | -------------------------------------------------------------------- | ---------------------------- |
-| Launch                | Launch the scene in a new tab                                        | CTRL + ENTER                 |
-| New Entity            | Creates a new entity as a child of the currently selected entity     | CTRL + E                     |
-| Duplicate Entity      | Duplicates the selected entity and all children                      | CTRL + D                     |
-| Rename Entity / Asset | Focuses on name field of the selected entity or asset                | N or F2                      |
-| Copy Entity / Asset   | Copy the current entity/asset selection                              | CTRL + C                     |
-| Paste Entity / Asset  | Paste copied entity/asset under the currently selected entity/folder | CTRL + P                     |
-| Delete                | Delete the current selection                                         | DELETE<br>CTRL + BACKSPACE   |
-| Frame Selection       | Focus on the current entity selection in the 3D view                 | F                            |
-| Translate             | Activate the translate gizmo in the 3D view                          | 1                            |
-| Rotate                | Activate the rotate gizmo in the 3D view                             | 2                            |
-| Scale                 | Activate the scale gizmo in the 3D view                              | 3                            |
-| World / Local         | Switch between local and world space gizmos                          | L                            |
-| Toggle All Panels     | Hides or shows all the panels to maximize the 3D view                | SPACE                        |
-| Bake                  | Re-bake lighting using the [Run-time Lightmapper][1]                 | CTRL + B                     |
-| Previous Selection    | Select previously selected items                                     | SHIFT + Z                    |
-| Undo                  | Undo the last action                                                 | CTRL + Z                     |
-| Redo                  | Redo the last action                                                 | CTRL + Y<br>CTRL + SHIFT + Z |
-| How do I...?          | Toggle search toolbar for mini-tutorials                             | CTRL + SPACE                 |
-| Show Controls         | Display the Editor controls                                          | SHIFT + ?                    |
+| Запуск                | Запуск сцены в новой вкладке                                        | CTRL + ENTER                 |
+| Новый объект            | Создание нового объекта как дочернего к текущему выбранному объекту     | CTRL + E                     |
+| Дублировать объект      | Дублирование выбранного объекта и всех дочерних объектов                      | CTRL + D                     |
+| Переименовать объект/ресурс | Фокусировка на поле имени выбранного объекта или ресурса                | N or F2                      |
+| Копировать объект/ресурс   | Копирование текущего выбора объекта/ресурса                              | CTRL + C                     |
+| Вставить объект/ресурс  | Вставка скопированной объекта/ресурса под текущим выбранным объектом/папкой | CTRL + P                     |
+| Удалить                | Удаление текущего выбора                                         | DELETE<br>CTRL + BACKSPACE   |
+| Выделить рамкой       | Фокусировка на текущем выборе объекта в 3D-просмотре                 | F                            |
+| Перемещение             | Активация инструмента перемещения в 3D-виде                           | 1                            |
+| Поворот                | Активация инструмента поворота в 3D-виде                             | 2                            |
+| Масштабирование                 | Активация инструмента масштабирования в 3D-виде                              | 3                            |
+| Мировые / Локальные координаты         | Переключение между мировыми и локальными инструментами                          | L                            |
+| Показать/Скрыть Панели     | Скрыть или показать все панели для максимизации 3D-вида                | SPACE                        |
+| Запекание                  | Перезапекание освещения с помощью [Run-time Lightmapper][1]                 | CTRL + B                     |
+| Предыдущий Выбор    | Выбор предыдущих выбранных элементов                                     | SHIFT + Z                    |
+| Отмена                  | Отмена последнего действия                                                 | CTRL + Z                     |
+| Повторить                  | Повторить последнее действие                                                  | CTRL + Y<br>CTRL + SHIFT + Z |
+| Как сделать...?          | Показать панель поиска для мини-обучения                             | CTRL + SPACE                 |
+| Show Controls         | Отобразить элементы управления                                          | SHIFT + ?                    |
 
 [1]: /user-manual/graphics/lighting/runtime-lightmaps

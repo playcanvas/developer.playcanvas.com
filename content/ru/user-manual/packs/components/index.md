@@ -8,7 +8,7 @@ Components define behaviors that are attached to Entities. An Entity is a contai
 
 There are many different Components defined in the PlayCanvas Engine. You can add a Component to an Entity using the PlayCanvas Editor. The properties exposed by Components are listed in the Attribute Editor when you select an Entity.
 
-| Component                                                       | Description |
+| Component                                                       | Описание |
 |-----------------------------------------------------------------|-------------|
 | [Anim](/user-manual/packs/components/anim)                      | Specifies the anim state graph and animation assets that can run on the model specified by the entity's render component. |
 | [Animation](/user-manual/packs/components/animation)            | Specifies the animation assets that can run on the model specified by the entity's model component. |
