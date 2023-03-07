@@ -1,9 +1,9 @@
 ---
-title: Сущности
+title: Объекты
 layout: usermanual-page.hbs
 position: 1
 ---
 
-Every object in your game is an Entity, but on its own, an Entity is nothing more than a position and orientation in space. In order to give an Entity a behavior you must add Components. The PlayCanvas Engine contains built-in Components which add lots of useful behavior such as rendering a 3D model or playing audio. Using the Script Component custom behavior can be written in Javascript.
+Каждый объект в вашей игре является Entity, но сама по себе, Entity представляет собой не более чем позицию и ориентацию в пространстве. Чтобы наделить Entity поведением, необходимо добавить Components (компоненты). В PlayCanvas Engine содержатся встроенные компоненты, которые добавляют множество полезных функций, таких как рендеринг 3D-моделей или проигрывание аудио. Используя компонент Script (скрипт), можно написать свое собственное поведение на языке Javascript.
 
-Entities are edited in the PlayCanvas Editor. The Entity hierarchy is displayed in the Hierarchy panel.
+Entity редактируются в редакторе PlayCanvas. Иерархия Entity (объектов) отображается в панели Hierarchy (иерархия).
