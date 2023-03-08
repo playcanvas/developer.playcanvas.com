@@ -4,19 +4,19 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-The anim component is used to connect an animstategraph asset and all of its required animation assets to a single entity.
+Компонент anim используется для соединения ресурса animstategraph и всех требуемых анимационных ресурсов с одним объектом.
 
-Below you can see the anim component after it has been added to a component. It shows an available slot for an animstategraph asset to be selected.
+Ниже вы можете увидеть компонент anim после его добавления в компонент. Он показывает доступный слот для выбора ресурса animstategraph.
 
-![New Anim Component][1]
+![Новый компонент anim][1]
 
-After selecting an animstategraph asset, the anim component will display a list of animation asset slots. There will be one slot for each animation state in every layer of the state graph asset. This is where actual animation data is connected to the previously created state graph. Multiple anim components can use the same animstategraph asset, each with their own set of animation assets.
+После выбора ресурса animstategraph, компонент anim будет отображать список слотов для анимационных ресурсов. Будет один слот для каждого состояния анимации в каждом слое ресурса графа состояний. Здесь фактические данные анимации связываются с ранее созданным графом состояний. Несколько компонентов anim могут использовать один и тот же ресурс animstategraph, каждый с собственным набором анимационных ресурсов.
 
-![Anim Component With Graph][2]
+![Компонент anim с графом][2]
 
-After all animation state slots have been filled, the anim component will become playable. At this point the anim component can either be played via script by calling `entity.anim.play()` or if the `Activate` option is selected, it will play automatically upon the launch of the PlayCanvas project.
+После заполнения всех слотов состояния анимации, компонент anim становится играбельным. На этом этапе компонент anim может быть воспроизведен через скрипт, вызвав `entity.anim.play()`, или если выбрана опция `Activate`, он будет автоматически воспроизводиться при запуске проекта PlayCanvas.
 
-The anim component also offers the option to alter the speed of the animation playback. This speed will affect every animation within the state graph. 
+Компонент anim также предлагает опцию изменения скорости воспроизведения анимации. Эта скорость повлияет на каждую анимацию в графе состояний.
 
 [1]: /images/user-manual/anim/new_anim_component.png
 [2]: /images/user-manual/anim/anim_component_with_graph.png
