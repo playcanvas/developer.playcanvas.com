@@ -4,47 +4,47 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-The Button Component is a convenient shortcut for creating User Interface buttons for use with [Screen][1] and [Element][2] Components.
+Компонент "Button" представляет собой удобный инструмент для создания кнопок пользовательского интерфейса для использования с компонентами [Screen][1] и [Element][2].
 
-The Button Component can be used in two Transition Modes. *Sprite Swap*, which uses a different sprite or frame for each button state or *Tint*, which tints a single sprite with a different color for each state.
+Компонент Button может быть использован в двух режимах перехода: *Sprite Swap*, который использует разные спрайты или кадры для каждого состояния кнопки, и *Tint*, который окрашивает один спрайт в разные цвета для каждого состояния.
 
-## Common Properties
+## Общие свойства
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Active          | When enabled the button will respond to and fire event. When disabled the button is set to the Inactive State. |
-| Image           | The Image Element Entity that is used to detect input events. |
-| Hit Padding     | Additional space around the Image Element that will be included when testing for input events. |
-| Transition Mode | The type of effect to use when transitioning between states. Either Sprite Swap or Tint. |
+| Active          | Если включено, кнопка будет реагировать на события и вызывать события. Если отключено, кнопка установлена в состояние неактивности. |
+| Image           | Элемент изображения, используемый для обнаружения событий ввода. |
+| Hit Padding     | Дополнительное пространство вокруг элемента изображения, которое будет включено при тестировании событий ввода. |
+| Transition Mode | Тип эффекта, используемый при переходе между состояниями. Может быть "Sprite Swap" или "Tint". |
 
 
-## Sprite Swap Properties
+## Свойства Sprite Swap
 
 ![Sprite Swap Button][3]
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Hover Sprite    | The Sprite Asset used when the button is in the Hover State. |
-| Hover Frame     | The Sprite Frame to display when the button is in the Hover State. |
-| Pressed Sprite  | The Sprite Asset used when the button is in the Pressed State. |
-| Pressed Frame   | The Sprite Frame to display when the button is in the Pressed State. |
-| Inactive Sprite | The Sprite Asset used when the button is not active. |
-| Inactive Frame  | The Sprite Frame used when the button is not active. |
+| Hover Sprite    | Используемый спрайт при наведении на кнопку. |
+| Hover Frame     | Кадр спрайта, используемый при наведении на кнопку. |
+| Pressed Sprite  | Спрайт, используемый для кнопки в нажатом состоянии. |
+| Pressed Frame   | Кадр спрайта, который отображается, когда кнопка находится в нажатом состоянии. |
+| Inactive Sprite | Спрайт, используемый для кнопки в неактивном состоянии. |
+| Inactive Frame  | Кадр спрайта, используемый, когда кнопка неактивна. |
 
 ## Tint Properties
 
 ![Tint Button][4]
 
-| Property      | Описание |
+| Свойство      | Описание |
 |---------------|-------------|
-| Hover Tint    | The color to tint the Image Element with when the button is in the Hover State. |
-| Pressed Tint  | The color to tint the Image Element with when the button is in the Pressed State. |
-| Inactive Tint | The color to tint the Image Element with when the button is in the Inactive State. |
-| Fade Duration | The time in milliseconds to blend between the different state colors. |
+| Hover Tint    | Цвет, с которым оттеняется элемент изображения, когда кнопка находится в состоянии наведения. |
+| Pressed Tint  | Цвет, с которым оттеняется элемент изображения, когда кнопка находится в нажатом состоянии. |
+| Inactive Tint | Цвет, с которым оттеняется элемент изображения, когда кнопка находится в неактивном состоянии. |
+| Fade Duration | Время в миллисекундах для плавного перехода между различными цветами состояний. |
 
-## Scripting Interface
+## Интерфейс скриптования
 
-You can control the properties of a Button component using a [script component][5]. The scripting interface for the Button component is [here][6].
+Вы можете управлять свойствами компонента Button с помощью [скрипта][5]. Интерфейс скриптования для компонента Button находится [здесь][6].
 
 [1]: /user-manual/packs/components/screen
 [2]: /user-manual/packs/components/element
