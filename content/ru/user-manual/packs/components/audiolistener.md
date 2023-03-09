@@ -1,18 +1,18 @@
 ---
-title: Аудио слушатель
+title: Audio Listener
 layout: usermanual-page.hbs
 position: 3
 ---
 
-The Audio Listener component specifies the listener's position in 3D space. All 3D audio playback will be relative to this position.
+Компонент Audio Listener указывает позицию слушателя в 3D пространстве. Вся воспроизводимая аудиоинформация будет относительна этой позиции.
 
-The Audio Listener component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will act as the listener position for 3D sound effects.
+Компонент Audio Listener можно включить или отключить, используя переключатель в верхнем правом углу панели компонентов. Если он включен, то компонент будет действовать как позиция слушателя для звуковых эффектов в 3D.
 
 ![Audio Listener component][1]
 
-## Scripting Interface
+## Интерфейс скриптования
 
-You can control an Audio Listener component's properties using a [script component][2]. The Audio Listener component's scripting interface is [here][3].
+Вы можете управлять свойствами компонента Audio Listener с помощью [компонента скрипта][2]. Интерфейс скриптования компонента Audio Listener находится [здесь][3].
 
 [1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/packs/components/script
