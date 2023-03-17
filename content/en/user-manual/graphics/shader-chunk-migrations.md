@@ -31,7 +31,9 @@ The following tables break down the chunk changes by Engine release.
 
 #### *Engine v1.62*
 
-In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend. With 1.62, we are creating a clearer distinction between these two, such that the values passed to the backend are well defined and known in advance, not automatically generated. This allows for writing a fully custom shader that can interface with our lighting code just like how our native materials do. 
+In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend. 
+
+With 1.62, we are creating a clearer distinction between these two, such that the values passed to the backend are well defined and known in advance, not automatically generated. This allows for writing a fully custom shader that can interface with our lighting code just like how our native materials do. 
 
 As a result of that, almost all backend chunks have been changed to accomodate for the split. This means that any custom backend shader chunks must move away from using globals to using the arguments passed to them by the lighting backend. 
 
