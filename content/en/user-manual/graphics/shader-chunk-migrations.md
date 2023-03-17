@@ -97,23 +97,23 @@ struct SheenArgs
 
 | Chunk | Changes |
 | --- | --- |
-| `ambient(Constant/Env/SH)` | Accepts a vec3 for the world normal instead of using dNormalW
-| `aoDiffuseOcc` | Accepts a float value for the AO, instead of using dAO
-| `aoSpec(Occ/OccConst/OccConstSimple/OccSimple)` | Accepts float gloss, float ao and a vec3 world normal instead of using dGlossiness, dAo and dNormalW respectively
-| `combine` | Accepts vec3 for albedo, sheen specularity and a float for clearcoat specularity instead of using dAlbedo, sSpecularity and ccSpecularity
-| `end` | Passes albedo, sheen specularity and clearcoat specularity to combine using litShaderArgs, uses litShaderArgs.emission instead of relying on dEmission.
-| `fresnelSchlick` | Accepts gloss and IridescenceArgs instead of relying on dGlossiness, dIridescenceFresnel and dIridescence
-| `iridescenceDiffraction` | Accepts a float as iridescenceThickness instead of using dIridescenceThickness
-| `lightDiffuseLambert` | Accepts vec3 world normal instead of using dNormalW
-| `lightSheen` | Accepts vec3 world normal, float gloss instead of relying on dNormalW, dGlossiness.
-| `lightSpecular(AnisoGGX/Blinn/Phong)` | Accepts vec3 reflection direction, vec3 world normal and float gloss instead of relying on dGlossiness, dNormalW and dReflDirW
-| `lightmap(DirAdd/Add)` | Accepts a vec3 lightmap direction, vec3 lightmap value, vec3 world normal, float gloss, vec3 specularity and IridescenceArgs instead of relying on dLightMap, dLightmapDir, dNormalW and dSpecularity
-| `metalnessModulate` | Accepts a LitShaderArguments struct which is updated by the chunk. Removes the reliance on dSpecularity, dMetalness and dAlbedo
-| `output(Alpha/AlphaPremul)` | Uses litShaderArgs.opacity instead of dAlpha
-| `reflDir(Aniso)` | Accepts a vec3 world normal and a float value for gloss, instead of using dGlossiness and dNormalW
-| `reflection(CC/Cube/Env/EnvHQ/Sphere/SphereLow)` | Accepts a vec3 reflection direction and a float gloss value instead of using dReflDirW/ccReflDirW and dGlossiness
-| `reflectionSheen` | Accepts a vec3 world normal and a float gloss value instead of using dNormalW and sGlossiness
-| `refraction(Cube/Dynamic)` | Accepts a vec3 world normal, float thickness, float gloss, vec3 specularity, vec3 albedo, float transmission and IridescenceArgs instead of using dNormalW, dAlbedo, dTransmission, dThickness, dGlossiness, dSpecularity and passes the iridescence arguments to the fresnel function.
+| `ambient(Constant/Env/SH)` | <ul><li>Accepts a vec3 for the world normal instead of using `dNormalW`</li></ul>
+| `aoDiffuseOcc` | <ul><li>Accepts a float value for the AO, instead of using `dAO`</li></ul>
+| `aoSpec(Occ/OccConst/OccConstSimple/OccSimple)` | <ul><li>Accepts float gloss, float ao and a vec3 world normal instead of using `dGlossiness`, `dAo` and `dNormalW` respectively</li></ul>
+| `combine` | <ul><li>Accepts vec3 for albedo, sheen specularity and a float for clearcoat specularity instead of using `dAlbedo`, `sSpecularity` and `ccSpecularity`</li></ul>
+| `end` | <ul><li>Passes albedo, sheen specularity and clearcoat specularity to combine using `litShaderArgs`, uses `litShaderArgs.emission` instead of relying on `dEmission`</li></ul>
+| `fresnelSchlick` | <ul><li>Accepts gloss and `IridescenceArgs` instead of relying on `dGlossiness`, `dIridescenceFresnel` and `dIridescence`</li></ul>
+| `iridescenceDiffraction` | <ul><li>Accepts a float as iridescence thickness instead of using `dIridescenceThickness`</li></ul>
+| `lightDiffuseLambert` | <ul><li>Accepts vec3 world normal instead of using `dNormalW`</li></ul>
+| `lightSheen` | <ul><li>Accepts vec3 world normal, float gloss instead of relying on `dNormalW`, `dGlossiness`</li></ul>
+| `lightSpecular(AnisoGGX/Blinn/Phong)` | <ul><li>Accepts vec3 reflection direction, vec3 world normal and float gloss instead of relying on `dGlossiness`, `dNormalW` and `dReflDirW`</li></ul>
+| `lightmap(DirAdd/Add)` | <ul><li>Accepts a vec3 lightmap direction, vec3 lightmap value, vec3 world normal, float gloss, vec3 specularity and IridescenceArgs instead of relying on `dLightMap`, `dLightmapDir`, `dNormalW` and `dSpecularity`</li></ul>
+| `metalnessModulate` | <ul><li>Accepts a `LitShaderArguments` struct which is updated by the chunk. Removes the reliance on `dSpecularity`, `dMetalness` and `dAlbedo`</li></ul>
+| `output(Alpha/AlphaPremul)` | <ul><li>Uses `litShaderArgs.opacity` instead of `dAlpha`</li></ul>
+| `reflDir(Aniso)` | <ul><li>Accepts a vec3 world normal and a float value for gloss, instead of using `dGlossiness` and `dNormalW`</li></ul>
+| `reflection(CC/Cube/Env/EnvHQ/Sphere/SphereLow)` | <ul><li>Accepts a vec3 reflection direction and a float gloss value instead of using `dReflDirW`/`ccReflDirW` and `dGlossiness`
+| `reflectionSheen` | <ul><li>Accepts a vec3 world normal and a float gloss value instead of using `dNormalW` and `sGlossiness`</li></ul>
+| `refraction(Cube/Dynamic)` | <ul><li>Accepts a vec3 world normal, float thickness, float gloss, vec3 specularity, vec3 albedo, float transmission and `IridescenceArgs` instead of using `dNormalW`, `dAlbedo`, `dTransmission`, `dThickness`, `dGlossiness`, `dSpecularity` and passes the iridescence arguments to the fresnel function</li></ul>
 
 
 ---
