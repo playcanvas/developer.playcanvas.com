@@ -29,7 +29,7 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
-#### *Engine v1.62*
+### *Engine v1.62*
 
 In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend. 
 
@@ -122,7 +122,7 @@ struct SheenArgs
 
 ---
 
-#### Engine v1.60
+### Engine v1.60
 
 | Chunk | Changes |
 | ---   | ---     |
@@ -132,7 +132,7 @@ struct SheenArgs
 
 ---
 
-#### *Engine v1.57*
+### Engine v1.57
 
 In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
 
@@ -199,7 +199,7 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 
 ---
 
-#### Engine v1.56
+### Engine v1.56
 
 | Chunk | Changes |
 | ---   | ---     |
@@ -216,7 +216,7 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 
 ---
 
-#### Engine v1.55
+### Engine v1.55
 
 | Chunk | Changes |
 | --- | --- |
