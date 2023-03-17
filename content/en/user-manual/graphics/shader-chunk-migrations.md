@@ -29,6 +29,93 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+#### *Engine v1.62*
+
+In 1.62, almost all backend chunks have been changed to accomodate for the more explicit frontend-backend split of the shaders. This means that any custom backend shader chunks must move away from using globals to using the arguments passed to them by the shader backend. 
+
+This change also makes most of the backend shader chunks entirely generic, as in, we have removed most clearcoat specific chunks in favor of using just one, but passing different values based on if we evaluate clearcoat or base layer. 
+
+Where we previously had globals, in 1.62 they are packed into structs, these structs are the primary LitShaderArgs which looks like this:
+
+```c
+struct LitShaderArguments {
+    float opacity;
+
+    vec3 worldNormal;
+
+    vec3 albedo;
+
+    float transmission;
+    float thickness;
+
+    vec3 specularity;
+    float gloss;
+    float metalness;
+    float specularityFactor;
+
+    float ao;
+
+    vec3 emission;
+
+    vec3 lightmap;
+    vec3 lightmapDir;
+
+    IridescenceArgs iridescence;
+    ClearcoatArgs clearcoat;
+    SheenArgs sheen;
+};
+```
+
+The last three arguments are our shading extensions. IridescenceArgs is defined as such:
+```c
+struct IridescenceArgs
+{
+    vec3 fresnel;
+    float intensity;
+    float thickness;
+};
+```
+
+ClearcoatArgs:
+```c
+struct ClearcoatArgs
+{
+    float specularity;
+    float gloss;
+    vec3 worldNormal;
+};
+```
+
+SheenArgs:
+```c
+struct SheenArgs
+{
+    float gloss;
+    vec3 specularity;
+};
+```
+
+| Chunk | Changes |
+| --- | --- |
+| `ambient(Constant/Env/SH)` | Accepts a vec3 for the world normal instead of using dNormalW
+| `aoDiffuseOcc` | Accepts a float value for the AO, instead of using dAO
+| `aoSpec(Occ/OccConst/OccConstSimple/OccSimple)` | Accepts float gloss, float ao and a vec3 world normal instead of using dGlossiness, dAo and dNormalW respectively
+| `combine` | Accepts vec3 for albedo, sheen specularity and a float for clearcoat specularity instead of using dAlbedo, sSpecularity and ccSpecularity
+| `end` | Passes albedo, sheen specularity and clearcoat specularity to combine using litShaderArgs, uses litShaderArgs.emission instead of relying on dEmission.
+| `fresnelSchlick` | Accepts gloss and IridescenceArgs instead of relying on dGlossiness, dIridescenceFresnel and dIridescence
+| `iridescenceDiffraction` | Accepts a float as iridescenceThickness instead of using dIridescenceThickness
+| `lightDiffuseLambert` | Accepts vec3 world normal instead of using dNormalW
+| `lightSheen` | Accepts vec3 world normal, float gloss instead of relying on dNormalW, dGlossiness.
+| `lightSpecular(AnisoGGX/Blinn/Phong)` | Accepts vec3 reflection direction, vec3 world normal and float gloss instead of relying on dGlossiness, dNormalW and dReflDirW
+| `lightmap(DirAdd/Add)` | Accepts a vec3 lightmap direction, vec3 lightmap value, vec3 world normal, float gloss, vec3 specularity and IridescenceArgs instead of relying on dLightMap, dLightmapDir, dNormalW and dSpecularity
+| `metalnessModulate` | Accepts a LitShaderArguments struct which is updated by the chunk. Removes the reliance on dSpecularity, dMetalness and dAlbedo
+| `output(Alpha/AlphaPremul)` | Uses litShaderArgs.opacity instead of dAlpha
+| `reflDir(Aniso)` | Accepts a vec3 world normal and a float value for gloss, instead of using dGlossiness and dNormalW
+| `reflection(CC/Cube/Env/EnvHQ/Sphere/SphereLow)` | Accepts a vec3 reflection direction and a float gloss value instead of using dReflDirW/ccReflDirW and dGlossiness
+| `reflectionSheen` | Accepts a vec3 world normal and a float gloss value instead of using dNormalW and sGlossiness
+| `refraction(Cube/Dynamic)` | Accepts a vec3 world normal, float thickness, float gloss, vec3 specularity, vec3 albedo, float transmission and IridescenceArgs instead of using dNormalW, dAlbedo, dTransmission, dThickness, dGlossiness, dSpecularity and passes the iridescence arguments to the fresnel function.
+
+
 ---
 
 #### Engine v1.60
@@ -41,7 +128,7 @@ The following tables break down the chunk changes by Engine release.
 
 ---
 
-#### Engine v1.57
+#### *Engine v1.57*
 
 In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
 
