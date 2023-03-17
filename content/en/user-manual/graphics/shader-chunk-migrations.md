@@ -31,11 +31,13 @@ The following tables break down the chunk changes by Engine release.
 
 #### *Engine v1.62*
 
-In 1.62, almost all backend chunks have been changed to accomodate for the more explicit frontend-backend split of the shaders. This means that any custom backend shader chunks must move away from using globals to using the arguments passed to them by the shader backend. 
+In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend. With 1.62, we are creating a clearer distinction between these two, such that the values passed to the backend are well defined and known in advance, not automatically generated. This allows for writing a fully custom shader that can interface with our lighting code just like how our native materials do. 
 
-This change also makes most of the backend shader chunks entirely generic, as in, we have removed most clearcoat specific chunks in favor of using just one, but passing different values based on if we evaluate clearcoat or base layer. 
+As a result of that, almost all backend chunks have been changed to accomodate for the split. This means that any custom backend shader chunks must move away from using globals to using the arguments passed to them by the lighting backend. 
 
-Where we previously had globals, in 1.62 they are packed into structs, these structs are the primary LitShaderArgs which looks like this:
+This change also makes some chunks, such as the clearcoat specific ones, redundant, as their functions have become reusable when their no longer reliant on global values.
+
+Where we previously had globals, in 1.62 they are packed into structs, these structs are the primary LitShaderArgs which is defined as such:
 
 ```c
 struct LitShaderArguments {
