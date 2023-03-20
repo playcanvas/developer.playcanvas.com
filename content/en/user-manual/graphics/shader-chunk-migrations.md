@@ -105,6 +105,7 @@ struct SheenArgs
 | `aoDiffuseOcc` | <ul><li>Accepts a float value for the AO, instead of using `dAO`</li></ul>
 | `aoSpec(Occ/OccConst/OccConstSimple/OccSimple)` | <ul><li>Accepts float gloss, float ao and a vec3 world normal instead of using `dGlossiness`, `dAo` and `dNormalW` respectively</li></ul>
 | `combine` | <ul><li>Accepts vec3 for albedo, sheen specularity and a float for clearcoat specularity instead of using `dAlbedo`, `sSpecularity` and `ccSpecularity`</li></ul>
+| `clusteredLight` | <ul><li>Reliance on globals have been reduced to only use dReflDirW and ccReflDirW</li></ul>
 | `end` | <ul><li>Passes albedo, sheen specularity and clearcoat specularity to combine using `litShaderArgs`, uses `litShaderArgs.emission` instead of relying on `dEmission`</li></ul>
 | `fresnelSchlick` | <ul><li>Accepts gloss and `IridescenceArgs` instead of relying on `dGlossiness`, `dIridescenceFresnel` and `dIridescence`</li></ul>
 | `iridescenceDiffraction` | <ul><li>Accepts a float as iridescence thickness instead of using `dIridescenceThickness`</li></ul>
