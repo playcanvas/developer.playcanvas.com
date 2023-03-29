@@ -29,9 +29,141 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+### *Engine v1.62*
+
+In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend. 
+
+With 1.62, we are creating a clearer distinction between these two, such that the values passed to the backend are well defined and known in advance, not automatically generated. This allows for writing a fully custom shader that can interface with our lighting code just like how our native materials do. 
+
+As a result of that, almost all backend chunks have been changed to accomodate for the split. This means that any custom backend shader chunks must move away from using globals to using the arguments passed to them by the lighting backend. 
+
+This change also makes some chunks, such as the clearcoat specific ones, redundant, as their functions have become reusable when their no longer reliant on global values.
+
+Where we previously had globals, in 1.62 they are packed into structs, these structs are the primary LitShaderArgs which is defined as such:
+
+```c
+struct LitShaderArguments
+{
+    // Transparency
+    float opacity;
+
+    // Normal direction in world space
+    vec3 worldNormal;
+
+    // Surface albedo absorbance
+    vec3 albedo;
+
+    // Transmission factor (refraction), range [0..1]
+    float transmission;
+
+    // Uniform thickness of medium, used by transmission, range [0..inf]
+    float thickness;
+
+    // The f0 specularity factor
+    vec3 specularity;
+
+    // The microfacet glossiness factor, range [0..1]
+    float gloss;
+
+    // Surface metalness factor, range [0..1]
+    float metalness;
+
+    // Specularity intensity factor, range [0..1]
+    float specularityFactor;
+
+    // Ambient occlusion amount, range [0..1]
+    float ao;
+
+    // Emission color
+    vec3 emission;
+
+    // Light map color
+    vec3 lightmap;
+
+    // Light map direction
+    vec3 lightmapDir;
+
+    // Iridescence extension arguments
+    IridescenceArgs iridescence;
+
+    // Clearcoat extension arguments
+    ClearcoatArgs clearcoat;
+
+    // Sheen extension arguments
+    SheenArgs sheen;
+};
+```
+
+The last three arguments are our shading extensions. IridescenceArgs is defined as such:
+```c
+struct IridescenceArgs
+{
+    // Iridescence effect intensity, range [0..1]
+    float intensity;
+
+    // Thickness of the iridescent microfilm layer, value is in nanometers, range [0..1000]
+    float thickness;
+};
+```
+
+ClearcoatArgs:
+```c
+struct ClearcoatArgs
+{
+    // Intensity of the clearcoat layer, range [0..1]
+    float specularity;
+
+    // Glossiness of clearcoat layer, range [0..1]
+    float gloss;
+
+    // The normal used for the clearcoat layer
+    vec3 worldNormal;
+};
+```
+
+SheenArgs:
+```c
+struct SheenArgs
+{
+    // Glossiness of the sheen layer, range [0..1]
+    float gloss;
+
+    // The color of the f0 specularity factor for the sheen layer
+    vec3 specularity;
+};
+```
+
+| Chunk | Changes |
+| --- | --- |
+| `ambient(Constant/Env/SH)` | <ul><li>Accepts a vec3 for the world normal instead of using `dNormalW`</li></ul>
+| `aoDiffuseOcc` | <ul><li>Accepts a float value for the AO, instead of using `dAO`</li></ul>
+| `aoSpec(Occ/OccConst/OccConstSimple/OccSimple)` | <ul><li>Accepts float gloss, float ao, a vec3 world normal and a vec3 view direction instead of using `dGlossiness`, `dAo`, `dNormalW` and `dViewDirW`</li></ul>
+| `combine` | <ul><li>Accepts vec3 for albedo, sheen specularity and a float for clearcoat specularity instead of using `dAlbedo`, `sSpecularity` and `ccSpecularity`</li></ul>
+| `clusteredLight` | <ul><li>Reliance on globals have been reduced to only `dLightPosW`, `dLightDirW`, `dLightDirNormW` and `dShadowCoord` which is initialised per light</li></ul>
+| `clusteredLightShadow` | <ul><li>For omni lights, generates a local variable instad of relying on `dShadowCoord`. For spot lights, accepts the shadow coordinate instead of using `dShadowCoord` as before</li></ul>
+| `combine` | <ul><li>Accepts vec3 albedo, vec3 sheen specularity and float clearcoat specularity instead of using `dAlbedo`, `sSpecularity` and `ccSpecularity`</li></ul>
+| `end` | <ul><li>Passes albedo, sheen specularity and clearcoat specularity to combine using `litShaderArgs`, uses `litShaderArgs.emission` instead of relying on `dEmission`</li></ul>
+| `fallOff(InvSquared/Linear)` | <ul><li>Accepts a float light radius and a vec3 light direction instead of using `dLightDirW`</li></ul>
+| `fresnelSchlick` | <ul><li>Accepts gloss and `IridescenceArgs` instead of relying on `dGlossiness`, `dIridescenceFresnel` and `dIridescence`</li></ul>
+| `iridescenceDiffraction` | <ul><li>Accepts a float as iridescence thickness instead of using `dIridescenceThickness`</li></ul>
+| `lightDiffuseLambert` | <ul><li>Accepts vec3 world normal, a vec3 view direction, a vec3 light direction and a vec3 normalised light direciton instead of using `dNormalW`, `dViewDirW`, `dLightDirW` and `dLightDirNormW`</li></ul>
+| `lightSheen` | <ul><li>Accepts a vec3 half vector, a vec3 world normal, a vec3 view direction, a vec3 normalised light direction and a float gloss instead of relying on `dNormalW`, `dViewDirW`, `dLightDirNormW` and `dGlossiness`</li></ul>
+| `lightSpecular(AnisoGGX/Blinn/Phong)` | <ul><li>Accepts a vec3 half vector for the reflection, a vec3 reflection direction (used by Phong only), a vec3 world normal, a vec3 view dir, a float gloss value and a 3x3 matrix for the TBN, instead of relying on `dReflDirW`, `dNormalW`, `dViewDirW`, `dGlossiness/ccGlossiness` and `dTBN`</li></ul>
+| `lightmap(DirAdd/Add)` | <ul><li>Accepts a vec3 lightmap value, a vec3 lightmap direction, a vec3 world normal, a vec3 view direction, float gloss, vec3 specularity, a read-write vec3 normalised light direction, a vec3 geometric normal and IridescenceArgs instead of relying on `dLightMap`, `dLightmapDir`, `dNormalW`, `dViewDirW`, `dGlossiness`, `dVertexNormalW` and `dSpecularity`</li></ul>
+| `ltc` | <ul><li>No longer uses `dViewDirW`, `dNormalW`, `dGlossiness`, `dSpecularity`, `ccGlossiness`, `ccSpecularity` and `dLightDirW`, but instead relies on their values being passed as arguments</li></ul>
+| `metalnessModulate` | <ul><li>Accepts a `LitShaderArguments` struct which is updated by the chunk. Removes the reliance on `dSpecularity`, `dMetalness` and `dAlbedo`</li></ul>
+| `output(Alpha/AlphaPremul)` | <ul><li>Uses `litShaderArgs.opacity` instead of `dAlpha`</li></ul>
+| `reflDir(Aniso)` | <ul><li>Accepts a vec3 world normal, a vec3 view direction, a float value for gloss and 3x3 matrix for the TBN, instead of using `dGlossiness`, `dViewDirW`, `dNormalW` and `dTBN`</li></ul>
+| `reflection(CC/Cube/Env/EnvHQ/Sphere/SphereLow)` | <ul><li>Accepts a vec3 reflection direction and a float gloss value instead of using `dReflDirW`/`ccReflDirW` and `dGlossiness`</li></ul>
+| `reflectionSheen` | <ul><li>Accepts a vec3 world normal, a vec3 view direction and a float gloss value instead of using `dNormalW`, `dViewDirW` and `sGlossiness`</li></ul>
+| `refraction(Cube/Dynamic)` | <ul><li>Accepts a vec3 world normal, float thickness, float gloss, vec3 specularity, vec3 albedo, float transmission and `IridescenceArgs` instead of using `dNormalW`, `dAlbedo`, `dTransmission`, `dThickness`, `dGlossiness`, `dSpecularity` and passes the iridescence arguments to the fresnel function</li></ul>
+| `shadow(Common/Coord/CoordPerspZBuffer` | <ul><li>Accepts a permutation of a vec3 light direction, a vec3 light position, a vec3 normalized light direction and a vec3 geometric normal instead of using `dLightDirW`, `dLightPosW`, `dLightDirNormW` and `dVertexNormalW` and instead accepts them as arguments. The permutation depends on the requirements for the different shadow coordinate functions</li></ul>
+| `shadow(EVSM/EVSMn/Standard/StandardGL2/VSM8)` | <ul><li>Accepts a vec3 shadow sample coordinate instead of using `dShadowCoord`</li></ul>
+| `spot` | <ul><li>Accepts a vec3 normalised light direction instead of using `dLightDirNormW`</li></ul>
+| `TBN(-/ObjectSpace/derivative/fast)` | <ul><li>Accepts a vec3 tangent, binormal and normal instead of using `dTangentW`, `dBinormalW` and `dNormalW`</li></ul>
 ---
 
-#### Engine v1.60
+### Engine v1.60
 
 | Chunk | Changes |
 | ---   | ---     |
@@ -41,7 +173,7 @@ The following tables break down the chunk changes by Engine release.
 
 ---
 
-#### Engine v1.57
+### Engine v1.57
 
 In 1.57, almost all front-end chunks have been changed to minimize the amount of samplers used by the shader. This is an optional feature, however it's recommended to follow the same coding style to reduce the amount of samplers used by the shader. The following chunks are affected by it:
 
@@ -108,7 +240,7 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 
 ---
 
-#### Engine v1.56
+### Engine v1.56
 
 | Chunk | Changes |
 | ---   | ---     |
@@ -125,7 +257,7 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 
 ---
 
-#### Engine v1.55
+### Engine v1.55
 
 | Chunk | Changes |
 | --- | --- |
