@@ -39,6 +39,28 @@ As a result of that, almost all backend chunks have been changed to accomodate f
 
 This change also makes some chunks, such as the clearcoat specific ones, redundant, as their functions have become reusable when their no longer reliant on global values.
 
+
+### Changes
+This release breaks most lit/frag chunks. Most of these chunks have had their signatures changed to accept the various values they need, instead of relying on globals. With that said, most globals are still set in the shader. An example of this change is:
+
+```glsl
+vec3 combineColor() {
+    vec3 ret = vec3(0);
+    ret = dAlbedo * dDiffuseLight;
+    ...
+}
+```
+
+Is now expressed: 
+
+```glsl
+vec3 combineColor(vec3 albedo, vec3 sheenSpecularity, float clearcoatSpecularity) {
+    vec3 ret = vec3(0);
+    ret = albedo * dDiffuseLight;
+    ...
+}
+```
+
 Where we previously had globals, in 1.62 they are packed into structs, these structs are the primary LitShaderArgs which is defined as such:
 
 ```c
