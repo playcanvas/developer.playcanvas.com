@@ -46,7 +46,7 @@ In order to apply a lightmap texture on geometry we need to unwrap it first. Her
 
 ### **Simple Geometry**
 
-A smaller area of geomtry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
+A smaller area of geometry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
 
 ![Lighmapping Tips: Simple Geometry][4]
 

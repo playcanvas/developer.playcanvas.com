@@ -18,7 +18,7 @@ There are three types of light in PlayCanvas:
 
 ### Directional Lights
 
-The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as travelling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
+The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as traveling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
 
 When unselected, a directional light is represented by the following icon in the Editor's 3D view:
 
