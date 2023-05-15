@@ -1,15 +1,15 @@
 ---
-title: Texture Inspector
+title: テクスチャインスペクター
 layout: shader-editor-page.hbs
 position: 4
 ---
 
 <img loading="lazy" src="/images/shader-editor/inspector-pane-texture.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Texture Inspector is where textures are configured.
+テクスチャインスペクターは、テクスチャが設定される場所です。
 
-To access a texture's details, select it in the [Assets Pane][7].
+テクスチャの詳細にアクセスするには、[アセットパネル][7]で選択してください。
 
-- Name - specify the texture's name.
+- Name - テクスチャの名前を指定します。
 
 [7]: /shader-editor/window-layout/assets-pane

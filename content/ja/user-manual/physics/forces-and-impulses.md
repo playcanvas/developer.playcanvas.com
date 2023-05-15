@@ -1,30 +1,30 @@
 ---
-title: 動力および衝撃
+title: 力と衝撃
 layout: usermanual-page.hbs
 tags: physics,basics
 position: 2
 ---
 
-リジッドボディは、動力と衝撃に反応して動きます。動力は一定の時間にわたってボディに適用され、衝撃は瞬時に適用される力です。
+ダイナミックなRigidBodyは力や衝撃に応答して移動します。力は一定の時間内にRigidBodyに加えられるのに対して、衝撃は瞬間的に加えられる力です。
 
-動力または衝撃をリジッドボディに適用するには、[pc.RigidBodyComponentスクリプトAPI][1]を使用する必要があります。
+RigidBodyに力や衝撃を加えるには、[pc.RigidBodyComponent scripting API][1] を使用する必要があります。
 
-いくつかの例を見てみましょう。重い物を押して動かす場合は、一定の時間をかけて継続的に力を加えます。
+以下にいくつかの例を考えてみましょう。重い重りを床の上を押しやるためには、時間内に力を加えます。
 
 ```javascript
 MyScript.prototype.update = function(dt) {
-    // While the right arrow key is pressed, apply a force to the right
+    // 右矢印キーが押されている場合、右に力を加える
     if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
         this.entity.rigidbody.applyForce(10, 0, 0);
     }
 };
 ```
 
-大砲を発射する場合などは、単一の衝撃を適用します。
+大砲から砲弾を発射するには、一回の衝撃を加えます。
 
 ```javascript
 MyScript.prototype.update = function(dt) {
-    // If the space bar was pressed, apply an impulse up and to the right
+    // スペースバーが押されたら、右上に衝撃を加える
     if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
         this.entity.rigidbody.applyImpulse(10, 10, 0);
     }

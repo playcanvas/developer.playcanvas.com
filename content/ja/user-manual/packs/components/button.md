@@ -4,47 +4,47 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-ボタンコンポーネントは、[スクリーン][1] コンポーネントと [エレメント][2] コンポーネントで使用するユーザーインターフェースボタンを作成する、便利なショートカットです。
+Buttonコンポーネントは、[Screen][1]コンポーネントと[Element][2]コンポーネントで使用するユーザーインターフェイスボタンを作成するための便利なショートカットです。
 
-ボタンコンポーネントは、2つのトランジションモードで使用できます。すなわち*Sprite Swap*と*Tint*です。*Sprite Swap*はそれぞれのボタンごとに異なるスプライトまたはフレームを使用し、 *Tint*は1つのスプライトをそれぞれの状態ごとに異なる色に着色します。
+Buttonコンポーネントは、2つのトランジションモードで使用できます。*Sprite Swap* では、各ボタンの状態に異なるスプライトまたはフレームを使用します。*Tint* では、単一のスプライトを各状態で異なる色で着色します。
 
 ## 共通プロパティ
 
 | プロパティ        | 説明 |
 |-----------------|-------------|
-| Active          | When enabled the button will respond to and fire event. When disabled the button is set to the Inactive State. |
-| Image           | The Image Element Entity that is used to detect input events. |
-| Hit Padding     | Additional space around the Image Element that will be included when testing for input events. |
-| Transition Mode | The type of effect to use when transitioning between states. Either Sprite Swap or Tint. |
+| Active          | 有効にすると、ボタンが反応してイベントを発生させ、無効にするとボタンは非アクティブ状態に設定されます。 |
+| Image           | 入力イベントを検出に使用されるImage Elementエンティティ。 |
+| Hit Padding     | 入力イベントをテストする際に含まれるImage Element周囲の追加スペース。 |
+| Transition Mode | トランジションに使用するエフェクトのタイプ。Sprite SwapまたはTint。 |
 
 
-## スプライトスワップ・プロパティ
+## スプライトスワップ (Sprite Swap)・プロパティ
 
 ![Sprite Swap Button][3]
 
 | プロパティ        | 説明 |
 |-----------------|-------------|
-| Hover Sprite    | The Sprite Asset used when the button is in the Hover State. |
-| Hover Frame     | The Sprite Frame to display when the button is in the Hover State. |
-| Pressed Sprite  | The Sprite Asset used when the button is in the Pressed State. |
-| Pressed Frame   | The Sprite Frame to display when the button is in the Pressed State. |
-| Inactive Sprite | The Sprite Asset used when the button is not active. |
-| Inactive Frame  | The Sprite Frame used when the button is not active. |
+| Hover Sprite    | ボタンがホバー状態にあるときに使用されるSpriteアセット。 |
+| Hover Frame     | ボタンがホバー状態にあるときに表示されるスプライトフレーム。 |
+| Pressed Sprite  | ボタンがプレス状態にあるときに使用されるSpriteアセット。 |
+| Pressed Frame   | ボタンがプレス状態にあるときに表示されるスプライトフレーム。 |
+| Inactive Sprite | ボタンがアクティブでないときに使用されるSpriteアセット。 |
+| Inactive Frame  | ボタンがアクティブでないときに使用されるスプライトフレーム。 |
 
-## ティントプロパティ
+## ティントプロパティ (Tint Properties)
 
 ![Tint Button][4]
 
 | プロパティ      | 説明 |
 |---------------|-------------|
-| Hover Tint    | The color to tint the Image Element with when the button is in the Hover State. |
-| Pressed Tint  | The color to tint the Image Element with when the button is in the Pressed State. |
-| Inactive Tint | The color to tint the Image Element with when the button is in the Inactive State. |
-| Fade Duration | The time in milliseconds to blend between the different state colors. |
+| Hover Tint    | ボタンがホバー状態されたときにImage Elementを調整する色。 |
+| Pressed Tint  | ボタンがプレス状態されたときにImage Elementを調整する色。 |
+| Inactive Tint | ボタンがアクティブでないときにImage Elementを調整する色。 |
+| Fade Duration | 状態間の色を合成する時間（ミリ秒単位） |
 
 ## スクリプトのインターフェース
 
-You can control the properties of a Button component using a [script component][5]. The scripting interface for the Button component is [here][6].
+Buttonコンポーネントのプロパティは、[Scriptコンポーネント][5]を使用して制御できます。 Buttonコンポーネントのスクリプティングインターフェースは[こちら][6]です。
 
 [1]: /user-manual/packs/components/screen
 [2]: /user-manual/packs/components/element

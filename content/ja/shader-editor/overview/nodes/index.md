@@ -1,27 +1,27 @@
 ---
-title: Nodes
+title: ノード
 layout: shader-editor-page.hbs
 position: 2
 ---
 
-Shader Editor supports many types of nodes, but they all have the following structure:
+Shader Editorではさまざまなタイプのノードがサポートされていますが、すべてのノードは以下の構造を持っています。
 
 ![Graph Editor Node][1]
 
-| Node structure | |
+| ノードの構造 | |
 |---|---|
-| 1 | Node type. |
-| 2 | Input Ports. |
-| 3 | Output Ports. |
+| 1 | ノードの種類 |
+| 2 | 入力ポート |
+| 3 | 出力ポート |
 
-Certain nodes have no input ports and others have no output ports. (Though all nodes have at least one port).
+特定のノードには入力ポートがなく、他のノードには出力ポートがありません。（ただし、すべてのノードに少なくとも1つのポートがあります）。
 
-### Node Categories
+### ノードのカテゴリー
 
-Based on this, we can identify three categories of nodes:
+これに基づいて、ノードの3つのカテゴリーを特定できます。
 
-- Input nodes - these have output ports, but no input ports.
-- Output nodes - these have input ports, but no output ports.
-- Transform nodes - these have both input ports and output ports.
+- 入力ノード - これらは出力ポートがありますが、入力ポートはありません。
+- 出力ノード - これらは入力ポートがありますが、出力ポートはありません。
+- 変換ノード - これらは入力ポートと出力ポートの両方があります。
 
 [1]: /images/shader-editor/graph-editor-node.png

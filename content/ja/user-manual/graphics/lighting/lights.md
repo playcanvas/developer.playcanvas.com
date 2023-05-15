@@ -4,102 +4,102 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
+現実世界では、周囲の環境は多くの光源から照らされています。太陽、街灯、テレビ画面などです。PlayCanvasのシーンでは、現実に見られるさまざまなタイプの光を近似するために、さまざまなタイプの光源と光源の形状を設定する能力を持っています。
 
-Descriptions of each light type and light source shape are below and examples of different combinations of light types and given in [table](#use-cases) below.
+各種ライトタイプと光源形状の説明は以下の通りです。さらに、異なるライトタイプの組み合わせの例は、下記の[表](#use-cases)に示します。
 
-## Light Types
+## ライトの種類
 
-PlayCanvasには3つの種類のライトがあります：
+PlayCanvasには3つの種類の光源があります。
 
-* Directional lights
-* Omni lights
-* Spot lights
+* ディレクショナルライト (Directional Lights)
+* オムニライト (Omni Lights)
+* スポットライト (Spot Lights)
 
-### 指向性ライト
+### ディレクショナルライト (Directional Lights)
 
-最も身近な光源は太陽です。太陽は地球から非常に遠いので、地球の表面に当たる光は単一方向を向くよう近似することができます。PlayCanvasでは、このタイプの光源を指向性ライトと呼びます。
+The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as traveling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
 
-選択していない場合、指向性ライトはエディタの3Dビュー内で次のアイコンで表されます。
+非選択時、方向光は以下のアイコンでエディタの3Dビューに表示されます。
 
-![指向性ライトアイコン][1]
+![Directional light icon][1]
 
-HierarchyパネルとInspectorパネルでライトを選択するには、このアイコンをクリックします。
+このアイコンをクリックして、階層とインスペクターパネルで光を選択します。
 
-指向性ライトは次のようにオブジェクトを照らします：
+方向光は以下のようにオブジェクトを照らします。
 
-![指向性ライト][2]
+![Directional light][2]
 
-### Omni Lights
+### オムニライト (Omni Lights)
 
-Omni lights are light sources that emit light in all directions. An example of this type of light source is a candle and other examples can be seen in the [table](#use-cases) below.
+オムニライトは、すべての方向に光を発する光源です。このタイプの光源の例として、キャンドルやその他の例が以下の[table](#use-cases)に示されています。
 
-When unselected, a omni light is represented by the following icon in the Editor's 3D view:
+非選択時、オムニライトは以下のアイコンでエディタの3Dビューに表示されます。
 
-![Omni light icon][3]
+![オムニライトアイコン][3]
 
-HierarchyパネルとInspectorパネルでライトを選択するには、このアイコンをクリックします。
+このアイコンをクリックして、階層とインスペクターパネルで光を選択します。
 
-An omni light lights an object like this:
+オムニライトは以下のようにオブジェクトを照らします。
 
-![Omni light][4]
+![オムニライト][4]
 
-### スポットライト
+### スポットライト (Spot Lights)
 
-Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
+スポットライトもオムニライトと同様に、すべての方向に光を発します。ただし、スポットライトからの光は円錐形に制限されます。
 
-選択していない場合、スポットライトはエディタの3Dビュー内で次のアイコンで表されます
+非選択時、スポットライトは以下のアイコンでエディタの3Dビューに表示されます。
 
 ![スポットライトアイコン][5]
 
-HierarchyパネルとInspectorパネルでライトを選択するには、このアイコンをクリックします。
+このアイコンをクリックして、階層とインスペクターパネルで光を選択します。
 
-スポットライトは次のようにオブジェクトを照らします：
+スポットライトは以下のようにオブジェクトを照らします。
 
 ![スポットライト][6]
 
-## Light Shapes
+## 光源の形状
 
-There are four light source shapes:
+光源の形状には4つのタイプがあります。
 
-* Punctual
-* Rectangle
-* Disk
-* Sphere
+* 点光源 (Punctual)
+* 長方形 (Rectangle)
+* 円盤 (Disk)
+* 球体 (Sphere)
 
-### Punctual
+### 点光源 (Punctual)
 
-The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct lighting and specular reflections.
+点光源の形状は極めて小さな点です。これはデフォルトの光源形状であり、物理的には正確ではありませんが、比較的低コストで光源を近似しています。他の光源形状は描画により高いコストがかかりますが、より正確な照明と鏡面反射を提供します。
 
-### Rectangle
+### 長方形 (Rectangle)
 
-The rectangle light source shape is a flat 4 sided shape with a specified width and height.
+長方形の光源形状は、指定された幅と高さを持つ平らな4つの辺からなります。
 
-### Disk
+### 円盤 (Disk)
 
-The disk light source shape is a round and flat light shape with a specified radius.
+円盤の光源形状は、指定された半径を持つ円形で平らな形状です。
 
-### Sphere
+### 球体 (Sphere)
 
-The sphere light source shape is ball shaped with a specified radius.
+球体の光源形状は、指定された半径を持つ球形です。
 
 ![Shapes][7]
 
-## ユースケース
+## 使用例
 
-Below is a table of some common use cases each light source shape and light type:
+以下の[table](#use-cases)に、各光源形状と光源タイプに対する一般的な使用例が示されています。
 
-| Shape/Type    | Punctual      | Rectangle               | Disk                  | Sphere              |
+| 形状/タイプ    | 点光源      | 長方形               | 円盤                  | 球状              |
 | ------------- |---------------| ------------------------| ----------------------| --------------------|
-| Directional   | sun           | x                       | sun or moon           | sun or moon         |
-| Omni          | unshaded bulb | x                       | x                     | unshaded round bulb |
-| Spot          | torch         | tv screen               | shaded bulb           | shaded round bulb   |
+| Directional   | 太陽           | x                       | 太陽または月           | 太陽または月         |
+| Omni          | 影のない電球 | x                       | x                     | 影のない丸い電球 |
+| Spot          | トーチ         | テレビ画面               | 影のある電球           | 影のある丸い電球   |
 
-x = no common use cases - but still can be used for application/game specific lighting effects.
+x = 一般的な使用例は無し - ただし、アプリケーション/ゲーム固有の照明効果には使用できます。
 
-## パフォーマンスについて
+## パフォーマンスに関する考慮事項
 
-Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
+長方形、円盤、球体の形状を持つ光源は、点光源に比べて描画により高いコストがかかります。そのため、比較的小さな光源を使用する場合や、点光源が明らかに不正確に見えるような反射面が存在しない場合には、点光源の形状を使用してください。
 
 [1]: /images/user-manual/graphics/lighting/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lighting/lights/directional.jpg

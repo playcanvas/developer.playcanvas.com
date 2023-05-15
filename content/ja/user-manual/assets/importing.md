@@ -6,38 +6,38 @@ position: 1
 
 ## 新しいアセットの作成
 
-PlayCanvasにアセットをアップロードするには、次の手順に従います：
+PlayCanvasにアセットをアップロードするには、以下の手順に従ってください。
 
-### Editor内
+### エディター内
 
-* Editor画面のAssetパネルにアセットファイルをドラッグ＆ドロップします。
-* 下部に表示されます。
-* 進行バーが消えるとAssetパネルに新しいアセットが表示されます。
+* エディタウィンドウのアセットパネルにアセットファイルをドラッグアンドドロップします。
+* プログレスバーが下部に表示されます。
+* プログレスバーが消えたら、新しいアセットがアセットパネルに表示されます。
 
-これで、アセットピッカーの属性コントロールからアセットを選択する際 (ModelコンポーネントやAnimationコンポーネントなどに)、アセットが割り当て可能になります。
+これで、ModelコンポーネントやAnimationコンポーネントのアセットピッカー属性コントロールを使用してアセットを選択しようとすると、アセットが割り当て可能になります。
 
-Note: There is a file size limit of 340MB.
+注意:ファイルサイズの制限は340MBです。
 
 ## 既存のアセットの更新
 
-アップロード済みのアセットを更新するには、既存のアップロードと同じファイル名を使用して、再度アセットをアップロードします。 PlayCanvasが既存のアセットを新しくアップロードしたアセットで更新します。
+既にアップロードしたアセットを更新するには、同じファイル名でアセットを再度アップロードしてください。PlayCanvasは新しいアップロードで既存のアセットを更新します。
 
-## Migrating from JSON to glTF GLB
+## JSONからglTF GLBへの移行
 
-As of Wed 14 Oct 2020, PlayCanvas will be creating GLBs for model and animation imports instead of JSON. This gives a large reduction in parsing times which means lower load times and more responsive applications.
+2020年10月14日(水)以降、PlayCanvasはモデルやアニメーションのインポートに対してJSONではなくGLBを作成するようになりました。これにより、パース時間が大幅に削減され、読み込み時間が短縮され、よりレスポンシブなアプリケーションになります。
 
-For projects created prior to this date, they will still create JSON assets by default for consistency.
+この日付以前に作成されたプロジェクトでは、一貫性を保つために引き続きJSONアセットが作成されます。
 
-If you would like to migrate assets to the GLB format, please go to 'Project Settings'.
+アセットをGLB形式に移行する場合は、 'Project Settings' に移動してください。
 
 <img loading="lazy" src="/images/user-manual/assets/importing/project-settings.png" alt="Project settings" width="300">
 
-Open 'Asset Tasks' and tick 'Convert to GLB'.
+'Asset Tasks' を開き、 'Convert to GLB' をチェックしてください。
 
 <img loading="lazy" src="/images/user-manual/assets/importing/asset-tasks.png" alt="Asset tasks settings" width="400">
 
-And finally reimport the model and/or animation file (via drag and drop or the 'Upload' menu option) to create the GLB asset.
+最後に、モデルおよび/またはアニメーションファイルを再インポートします。ドラッグアンドドロップまたは「アップロード」メニューオプションを使用して、GLBアセットを作成します。
 
 <img loading="lazy" src="/images/user-manual/assets/importing/drag-and-drop.gif" alt="Drag and drop file">
 
-Once created, this can be referenced to Entities in place of the existing JSON asset.
+作成されたGLBアセットは、既存のJSONアセットの代わりにエンティティに参照されることができます。

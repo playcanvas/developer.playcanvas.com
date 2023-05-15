@@ -1,5 +1,5 @@
 ---
-title: プロジェクト - プロジェクトのアーカイブ
+title: プロジェクト - Archive project
 layout: usermanual-page.hbs
 position: 13
 ---
@@ -12,9 +12,9 @@ POST https://playcanvas.com/api/projects/:id/export
 
 ## 説明
 
-This will allow you to download a zip archive of your entire project. You can import that archive from your Projects Dashboard to create a new Project from that archive. More about importing projects [here][3].
+これにより、プロジェクト全体のzipアーカイブをダウンロードできます。ダウンロード後、Projects Dashboardからそのアーカイブをインポートして、そのアーカイブから新しいプロジェクトを作成できます。プロジェクトのインポートに関する詳細は[こちら][3]をご覧ください。
 
-The request will start an archive job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, its data will contain a URL to download the project archive.
+リクエストはアーカイブジョブを開始し、ジョブの詳細がレスポンスで返されます。[idによってジョブの状態をポーリング][2]し、状態が「完了」または「エラー」になるまで待機することができます。ジョブが完了すると、そのデータにはプロジェクトアーカイブをダウンロードするURLが含まれます。
 
 ## 例
 
@@ -22,13 +22,13 @@ The request will start an archive job and the job details will be returned in th
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"branch_id": "99999999-9999-9999-9999-999999999999"}' "https://playcanvas.com/api/projects/99999999/export"
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">branch_id [optional]</span><p>The id of the branch. If no id is specified the main branch will be used.</p></div>
+<div class="parameter"><span class="param">branch_id [optional]</span><p>ブランチのid。IDが指定されていない場合はメインブランチが使用されます。</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
 Status: 201 Created
@@ -53,11 +53,11 @@ Status: 201 Created
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>認証されていない</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止された</p></div>
+<div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
+<div class="parameter"><span class="param">404</span><p>オーナーが見つかりません</p></div>
+<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
 ## レート制限

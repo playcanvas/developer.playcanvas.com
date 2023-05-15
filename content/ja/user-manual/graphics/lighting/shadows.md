@@ -1,82 +1,88 @@
 ---
-title: 影
+title: シャドウ
 layout: usermanual-page.hbs
 position: 2
 ---
 
-影を使用すればゲームにリアリティを加えることができます。しかし、動的な(リアルタイムな)影は、実行時のパフォーマンスに大きな負荷を加えてしまいます。パフォーマンスへの影響を少なく、シーンに静的な影を追加する方法については[Lightmaps][4]を参照してください。
+シャドウはゲームにリアリズムを追加する優れた方法です。しかし、ダイナミック(リアルタイム)シャドウは、高コストでランタイムパフォーマンスが低下する可能性があります。シーンに静的なシャドウを追加するよりも性能が高い方法については、[ライトマップ][4]をご覧ください。
 
-![Characters with shadow casting][1]
+![キャラクターにシャドウキャスト][1]
 
-PlayCanvasエンジンはシャドウマッピングと呼ばれる影生成アルゴリズムを実装しています。これは完全なクロスプラットフォームな実装で、モバイルとデスクトップ両方で動くことが保証されています。
+PlayCanvasエンジンは、シャドウマッピングと呼ばれるシャドウのアルゴリズムを実装しています。完全にクロスプラットフォームであり、モバイルおよびデスクトップの両方で動作することが保証されています。
 
-## 影を有効にする
+## シャドウの有効化
 
-![指向性ライト][5]
+<img loading="lazy" src="/images/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480">
 
-PlayCanvasでは、デフォルトで影の生成は無効になっています。ですので、明示的に影生成を有効にする必要があります。影生成を有効にするのは簡単です。まず、シーンの中のどの光源で影を生成したいかを指定します。光源をツリー表示から選択し、インスペクタパネルからプロパティを編集してください。光源には'Cast Shadows'オプションがありますので、それをチェックすればその光源はシーンに存在するオブジェクトに対して影を生成するようになります。
+デフォルトでは、PlayCanvasではシャドウキャストは無効になっています。自分で明示的に有効にする必要があります。幸いなことに、シャドウの有効化は簡単です。まず、シーンでシャドウをキャストするライトを特定します。 Hierarchyでライトを選択し、Inspectorパネルでプロパティを編集します。各ライトには「Cast Shadows」というオプションがあります。このオプションをチェックすると、シーン内のシャドウキャストグラフィカルオブジェクトにシャドウが生成されます。
 
-![モデルコンポーネント][6]
+![Model Component][6]
 
-Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all render and model components cast and receive shadows. To modify these properties, select the entity in the Hierarchy, locate the render or model component in the Inspector and uncheck the 'Cast Shadows' or 'Receive Shadows' option as required.
+次に、シーン内のどのグラフィカルオブジェクトがシャドウをキャストおよび受信するかを指定する必要があります。デフォルトでは、すべてのレンダリングおよびModelコンポーネントがシャドウをキャストおよび受信します。これらのプロパティを変更するには、Hierarchyでエンティティを選択し、InspectorでRenderコンポーネントまたはModelコンポーネントを検索し、「Cast Shadows」と「Receive Shadows」オプションを必要に応じてオフにします。
 
-## Shadow Cascades
+## シャドウカスケード
 
-When a directional shadow is used over a large area, it often exhibits aliasing, where a shadow near the camera has a low resolution. Capturing the shadow in a single shadow map requires very high and impractical resolution to improve this.
+大面積の方向性シャドウを使用すると、しばしばアンチエイリアシングが発生し、カメラの近くの影が低解像度になることがあります。単一のシャドウマップで影をキャプチャするには、この問題を改善するために非常に高い解像度が必要ですが、実用的ではありません。
 
-Shadow cascades help to fix this problem by splitting the camera view frustum along the viewing direction, and a separate shadow map is used for each split. This gives nearby objects one shadow map, and another shadow map captures everything in the distance, and optionally additional shadow maps in between.
+シャドウカスケードは、この問題を解決するために、ビュー方向を沿ってカメラビューフラスタムを分割し、各分割に別個のシャドウマップを使用する方法です。これにより、近くのオブジェクトには1つのシャドウマップが割り当てられ、遠くのオブジェクトは別のシャドウマップがキャプチャされます。オプションで、その間にさらにシャドウマップを追加します。
 
-Note that the number of shadow cascades has an effect on performance, as each shadow casting mesh might need to be rendered into more than a single shadow map.
+ただし、シャドウキャスティングメッシュの数に影響を与えるため、シャドウカスケードの数はパフォーマンスに影響を与えます。
 
-The following properties can be used to set up shadow cascades.
+次のプロパティを使用して、シャドウカスケードを設定できます。
 
-### Number of cascades
+### カスケード数
 
-Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
+カスケード数は、ビューフラスタムの分割数を表し、1、2、3、4の値が設定できます。既定値の1は、単一のシャドウマップを表します。
 
-A screenshot showing a single shadow cascade.
+単一のシャドウカスケードを示すスクリーンショット。
 
 ![One cascade][7]
 
-A screenshot showing four shadow cascades.
+4つのシャドウカスケードを示すスクリーンショット。
 
 ![Four cascades][8]
 
-### Distribution of cascades
+### カスケードの分布
 
-The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
+個々のシャドウカスケードのカメラフラスタムのサブディビジョンの分布。0から1の値を指定できます。値0は線形分布を表し、値1は対数分布を表します。ビジュアル的には、値が高いほど、前景オブジェクトにシャドウマップ解像度がより多く割り当てられ、値が低いほど、遠くのオブジェクトに割り当てられます。
 
-## 影のチューニング
+## シャドウの調整
 
-PlayCanvasで使用されている車道マッピングアルゴリズムは有限の解像度を持ちます。ですので、影の見た目をできるだけよくするためにプロパティをチューニングする必要が出るかもしれません。以下のプロパティが[Light Component][2] UIの中にあります.
+PlayCanvasが使用するシャドウマッピング技術には有限の解像度しかありません。そのため、できるだけ見栄え良くするために、いくつかの値を調整する必要があります。次のプロパティは、[Lightコンポーネント][2]のUIで見つけることができます。
 
-### シャドウディスタンス - Shadow Distance
+### シャドウ距離
 
-シャドウディスタンスは視点からどれだけ離れると指向性光源からの影がレンダリングされなくなるかという距離です。この値が小さければ、影がきれいに表示されます。一方で、この値が小さいとビューポートを移動すると突然影が現れるように見えてしまうという問題があります。そのため、プレイヤーがどのくらい遠くを見ることができるかという要素と、どの程度きれいに影を表示したいかのバランスを考えてください。
+シャドウ距離は、ビューポイントから遠くの方向性ライトのシャドウがレンダリングされなくなる距離です。この値が小さいほど、シャドウがより鮮明になります。問題は、ビューポイントがシーンを移動すると、見る人が影が突然現れるのを見ることができるということです。したがって、この値は、プレイヤーが遠くまで見ることができる距離と一般的にどちらが良いかに基づいてバランスを取る必要があります。
 
-### 影の解像度 - Shadow Resolution
+### シャドウ強度
 
-すべての光源はシャドウマップを使用して影を生成します。このシャドウマップは256x256, 512x512, 1024x1024, 2048x2048いずれかの解像度を持つことができます。この値は光源コンポーネントのインタフェースから設定できます。解像度が高くなればなるほど、影がきれいに表示されます。しかし、高い解像度を設定すると描画が重くなります。ですのでパフォーマンスとクオリティのバランスに気を付けてください。
+このライトによってキャストされる、1を完全な強度のシャドウ、0をシャドウのないものとするシャドウの強度。
 
-### シャドウバイアス - Shadow Bias
+![Shadow Intensity][9]
 
-シャドウマッピングは見た目の悪いノイズを描画してしまうことがあります。そのような帯状の影や斑点状の影が描画された場合には、シャドウバイアスの値を調整して問題の解決を試してみてください。
+### シャドウ解像度
 
-### 法線オフセットバイアス Normal Offset Bias
+すべてのライトは、シャドウマップを介してシャドウをキャストします。このシャドウマップは、256x256、512x512、1024x1024、または2048x2048の解像度になる場合があり、この値もLightコンポーネントのインターフェイスで設定されます。解像度が高いほど、シャドウがより鮮明になります。ただし、解像度が高いほど、シャドウをレンダリングするために負荷がかかり、フレームレートに影響を与える可能性があります。
 
-'Shadow acne'と呼ばれるノイズ状の表示がされることがありますが、これはシャドウバイアスを調整することで効果的に取り除くことができます。しかしこれによって常に'Peter Panning'と呼ばれるオブジェクトが空中に浮いているように見える現象が発生してしまいます。
+### シャドウバイアス
 
-法線オフセットバイアスはこの問題を解決することができます。デプスバイアスに加えて、シャドウマップの参照に使われるUV座標にちょっとした調整を加えることで、shadow acneとPeter Panningの両方を避けることができます。フラグメントの一はジオメトリの法線方向にオフセットがかけられます。この法線オフセットと呼ばれるテクニックは、定数のシャドウバイアスのみを使う場合に比べて大幅によい結果を得ることができます。
+シャドウマッピングは、非常に醜い外観のレンダリングアーティファクトが発生する可能性があります。影の帯や、期待しない場所に斑点状のパッチがある場合は、シャドウバイアスを調整して問題を解決する必要があります。
+
+### 法線オフセットバイアス
+
+「影鬱積」は大きな問題ですが、シャドウバイアスを使用することで効果的に解決できます。残念ながら、これにより常に「ピーターパン」現象が発生します。それは、影によってオブジェクトが空中に浮いているように見える現象です。
+
+法線オフセットバイアスは、この問題を解決します。深度バイアスを使用するだけでなく、シャドウマップルックアップに使用されるUV座標をわずかに調整することで、シャドウ鬱積とピーターパンを回避できます。フラグメントの位置は、そのジオメトリの法線に沿ってオフセットされます。この「法線オフセット」技術は、定数シャドウバイアスのみを使用するアプローチよりもはるかに優れた結果をもたらします。
 
 ## ソフトシャドウとハードシャドウ
 
-影の外周のことをpenumbra - 半影と呼びます。これは暗い領域から明るい領域へ変化する領域で、影にソフトな境界線を与えます。影のエッジはPlayCanvasではデフォルトでソフトなものになりますが、設定を変更してハードエッジの影を描画することもできます。以下でソフトエッジの影とハードエッジの影を比べてみます。
+シャドウのアウトラインをペナンブラと呼びます。これは、シャドウを柔らかいエッジで与えます。シ
 
 ![Hard vs soft shadows][3]
 
 ソフトシャドウはシャドウマップ上のサンプルをより多くGPUで取ることによって実現されています。使用されているアルゴリズムはPercentage Closest FilteringあるいはPCFと省略されて呼ばれています。このアルゴリズムはシャドウマップ内の一つのサンプルだけを読むのではなく、(3x3のマトリクスで)9個のサンプルを読み込んで使用します。
 
-The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
+シャドウサンプリングタイプは各ライトごとに指定されるため、そのオプションは「Light Inspector（ライトインスペクター）」で見つけることができます。
 
 ## パフォーマンスについて
 
@@ -91,7 +97,8 @@ The shadow sampling type is specified per light and so the option can be found i
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
-[5]: /images/user-manual/scenes/components/component-light-directional.png
+[5]: /images/user-manual/graphics/lighting/shadows/light-shadow-options.png
 [6]: /images/user-manual/scenes/components/component-model.png
 [7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
 [8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg
+[9]: /images/user-manual/graphics/lighting/shadows/shadow-intensity.gif

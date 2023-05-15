@@ -1,21 +1,21 @@
 ---
-title: Graph Editor
+title: グラフエディター
 layout: shader-editor-page.hbs
 position: 5
 ---
 
-The Graph Editor displays the currently selected graph. This is where nodes are created, arranged, connected and deleted.
+グラフエディターは、現在選択されているグラフを表示します。ノードの作成、配置、接続、削除がここで行われます。
 
-![Graph Editor][1]
+![グラフエディター][1]
 
-| How To | |
+| 使い方 | |
 |---|---|
-| Create a node | Drag an entry from the [Nodes Pane][2] and drop it on the Graph Editor work area.<br>Drag a sub-graph from the [Assets Pane][3] onto the Graph Editor work area. |
-| Select a node | Left click the node. |
-| Delete a node | Select the node and either press delete key or use the node context menu 'Delete' option. |
-| Move a node | Left click and drag the node. |
-| Modify a node | Select the node and modify its properties in the [Inspector Pane][4]. |
-| Connect two nodes | Left click the output port of the source node, drag and drop on the input port of the target node. |
+| ノードの新規作成 | [ノードパネル][2]から項目をドラッグし、グラフエディターの作業エリアにドロップします。<br>[アセットパネル][3]からサブグラフをドラッグして、グラフエディターの作業エリアにドロップします。 |
+| ノードの選択 | ノードを左クリックします。 |
+| ノードの削除 | ノードを選択し、deleteキーを押すか、ノードコンテキストメニューの「削除」オプションを使用します。 |
+| ノードの移動 | ノードを左クリックしてドラッグします。 |
+| ノードの変更 | ノードを選択し、[インスペクタパネル][4]でそのプロパティを変更します。 |
+| 2つのノードを接続 | ソースノードの出力ポートを左クリックし、ターゲットノードの入力ポートにドラッグしてドロップします。 |
 
 [1]: /images/shader-editor/graph-editor.png
 [2]: /shader-editor/window-layout/nodes-pane

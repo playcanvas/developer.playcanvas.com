@@ -4,10 +4,10 @@ layout: shader-editor-page.hbs
 position: 6
 ---
 
-The workflow currently supported by Shader Editor is rudimentary and will be improved in future releases. In particular, we plan to add native integration of the Shader Editor with the PlayCanvas Editor.
+現在、シェーダーエディターでサポートされているワークフローは基本的なものであり、今後のリリースで改善される予定です。特に、シェーダーエディターとPlayCanvasエディターとのネイティブな統合を追加する予定です。
 
-Nonetheless, the general workflow when creating materials is as follows:
+マテリアルを作成する際の一般的なワークフローは以下の通りです。
 
-- Create a set of related materials in a Shader Editor project
-- Export the materials to a *Shader Pack*
-- Use the Shader Pack in your runtime application
+- シェーダーエディターのプロジェクトでマテリアルのセットを作成
+- マテリアルを*シェーダーパック*にエクスポート
+- 実行アプリケーションでシェーダーパックを使用

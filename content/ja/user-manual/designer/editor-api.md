@@ -1,26 +1,26 @@
 ---
-title: Editor API
+title: エディタ API
 layout: usermanual-page.hbs
 position: 10
 ---
 
 <div class="alert alert-info">
-The Editor API is a beta feature. Please use caution when using on live projects.
+エディタ API はベータ機能です。ライブプロジェクトで使用する際は注意してください。
 </div>
 
-The Editor has a user accessible API that is currently in beta which can be used to help automate and extend the base functionality.
+現在ベータ版の「Editor API」をエディタからアクセスでき、基本機能を自動化および拡張するのに役立つAPIがあります。
 
-The API is not yet considered stable and may change in the future as we continue development. However, it is unlikely that API will change a lot from its current state.
+このAPIは、安定版ではなく将来的に変更される可能性がありますが、現在の状態から大きく変更されることはないでしょう。
 
-Full documentation of the API can be found on [GitHub][github-api].
+APIの詳細なドキュメントは[GitHub][github-api]で閲覧できます。
 
-## Automation Example
+## 自動化の例
 
-The API can be accessed via the browser's devtools console allowing for automation of repetitive tasks. In the example below, we are using the Editor to find all the Entities that have the tag 'red' and disabling them by running code in the browser console.
+APIはブラウザの開発者ツールコンソールを介してアクセスでき、繰り返しタスクを自動化することができます。以下の例では、エディタを使用して、タグ「red」を持つすべてのエンティティを検索し、ブラウザコンソールでコードを実行して無効にしています。
 
 ![][disable-red-boxes-gif]
 
-Editor API code:
+Editor API コード:
 
 ```javascript
 (function(){
@@ -31,21 +31,21 @@ Editor API code:
 })();
 ```
 
-## Extending Editor Functionality
+## エディタの機能の拡張
 
-It is possible to add extra functionality to the Editor and create custom interfaces such as adding buttons. This can be done via a number of ways such as browser extensions or [user scripts][user-scripts].
+エディターに追加の機能を追加し、カスタムインタフェース(ボタンの追加など)を作成することができます。これは、ブラウザー拡張または[ユーザースクリプト][user-scripts]などで実行することができます。
 
-User scripts is the more accessible out of the two which allows you to run custom code on top of the Editor.
+これら2つのうち、よりアクセスしやすいのはユーザースクリプトで、エディタの上にカスタムコードを実行することができます。
 
-Below we have an example where a button has been added to the [Viewport][viewport] to generate and randomly place boxes into the scene.
+以下には、[Viewport][viewport]にボタンが追加され、ボックスをシーンにランダムに配置する例があります。
 
 ![][generate-boxes-gif]
 
-The PlayCanvas team are currently using the [Violentmonkey][violentmonkey] open source browser extension to manage user scripts.
+PlayCanvas チームは現在、[Violentmonkey][violentmonkey]オープンソースブラウザーエクステンションを使用してユーザースクリプトを管理しています。
 
-Once the browser extension has been installed, adding your own or another developer's user script is very straightforward. Steps can be found in [Violentmonkey's documentation][violentmonkey-docs].
+ブラウザ拡張をインストールしたら、簡単にカスタムコードを追加できます。手順については、[Violentmonkeyのドキュメント][violentmonkey-docs]を参照してください。
 
-The code for the above user script is:
+上記のユーザースクリプトのコードは次のとおりです。
 
 ```javascript
 // ==UserScript==
@@ -120,9 +120,9 @@ The code for the above user script is:
 })();
 ```
 
-Let's break down the important areas of the script:
+スクリプトの重要な部分を解説します。
 
-At the top is the informational header about the script if you do share the script with other users. The important line is the `@match` attribute which controls which URLs the script is loaded on. In this case, it is set to load on any PlayCanvas scene. More information on how to change this can be found in [Violentmonkey's documentation][violentmonkey-matching].
+スクリプトの最上部には、他のユーザーとスクリプトを共有する場合の情報ヘッダーがあります。重要な行は、スクリプトがロードされるURLを制御する `@match` 属性です。このケースでは、任意のPlayCanvasシーンにロードされるように設定されています。これをどのように変更するかの詳細は、[Violentmonkeyのドキュメンテーション][violentmonkey-matching]で見つけることができます。
 
 ```javascript
 // ==UserScript==
@@ -136,14 +136,14 @@ At the top is the informational header about the script if you do share the scri
 // ==/UserScript==
 ```
 
-This is private Editor API to wait for an event when the Editor has fully loaded. Using the event ensures that the Editor API is accessible before the code to extend Editor features is ran.
+これは、エディターが完全にロードされたときのイベントを待つためのプライベートなエディターAPI (Editor API)です。このイベントを使用することで、エディター機能を拡張するためのコードが実行される前に、Editor APIが利用可能であることが確保されます。
 
 ```javascript
-    // Wait until the Editor is available before adding the button
+    // ボタンを追加する前に、エディタが利用可能になるまで待つ
     editor.once('load', () => createButton());
 ```
 
-The button created is from the [PCUI][pcui] framework library that the Editor is also using. Again, there is some private API use to get the Viewport DOM to attach the button to.
+作成されるボタンは、エディタも使用している[PCUI][pcui]フレームワークライブラリからのものです。また、ボタンをアタッチするためのビューポートDOMを取得するために、いくつかのプライベートAPIを使用しています。
 
 ```javascript
     function createButton() {

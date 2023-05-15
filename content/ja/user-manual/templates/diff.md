@@ -4,16 +4,16 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-The Override Diff View shows a detailed list of all the Template Overrides for a Template Instance. In here you can compare the overridden value to the value in the Template Asset and you can select which overrides to apply or revert.
+オーバーライド差分ビュー (Override Diff View) は、テンプレートインスタンスのすべてのテンプレートオーバーライドの詳細なリストを表示します。ここでは、オーバーライドされた値をTemplateアセットの値と比較し、適用または元に戻すオーバーライドを選択できます。
 
 ![Diff View][1]
 
-## Applying Overrides
+## オーバーライドの適用
 
-Click on the dot next to each override to see a dropdown menu to apply the override. If you have nested Templates then you will have the option to apply the change to any parent Template.
+オーバーライドの横にあるドットをクリックすると、オーバーライドを適用するためのドロップダウンメニューが表示されます。ネストされたテンプレートがある場合は、親テンプレートに変更を適用するオプションがあります。
 
-## Reverting Overrides
+## オーバーライドの元に戻す
 
-Click on the dot next to each overrides and click Revert to revert the override.
+各オーバーライドの横にあるドットをクリックし、Revertをクリックすると、オーバーライドを元に戻すことができます。
 
 [1]: /images/user-manual/templates/diff.png

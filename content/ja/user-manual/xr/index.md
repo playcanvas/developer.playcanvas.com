@@ -6,31 +6,31 @@ position: 20
 
 ![VR View][2]
 
-PlayCanvas lets you create Augmented Reality (AR) and Virtual Reality (VR) applications for a variety of devices based on the new WebXR API, as well as through external integrations. WebXR is an evolution of the WebVR API and is being added to modern browsers, providing access to virtual reality headsets, controllers and AR features.
+PlayCanvasでは、新たなWebXR APIをベースに、外部連携機能やAR(Augmented Reality/拡張現実)やVR(Virtual Reality/仮想現実)アプリケーションを多様なデバイス用に制作することができます。WebXRはWebVR APIの発展形であり、最新のブラウザに加え、VRヘッドセット、コントローラー、AR機能へのアクセスを提供しています。
 
-## Platforms
+## 対応プラットフォーム
 
-WebXR is a new API and it is being rolled out gradually to all major platforms. Up to date support can be checked on [caniuse.com][3].
+WebXRは新しいAPIであり、徐々にすべての主要なプラットフォームへ移行しています。最新のサポート状況は[caniuse.com][3]で確認できます。
 
-Additionally, support can be achieved with the [WebXR Polyfill][4].
+また、[WebXR Polyfill][4]を使用することでサポートを実現できます。
 
-On **mobile**, PlayCanvas XR works on Android and iOS devices using Cardboard-style VR headsets and other devices. AR is also available. It works on stand-alone Android based VR devices, such as the Oculus QuestTM.
+**モバイル**では、PlayCanvas XRはCardboardスタイルのVRヘッドセットやその他のデバイスを使用したAndroidおよびiOSデバイスで動作します。ARも利用できます。Oculus QuestTMなどのAndroidベースのVRスタンドアロンデバイスでも動作します。
 
-On **desktop**, PlayCanvas XR currently works in Chrome and Edge, and devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
+**デスクトップ**では、PlayCanvas XRは現在ChromeとEdgeで動作し、Windows Mixed Reality、OpenXRなどのさまざまなネイティブAPIを介してデバイスがリンクされます。これにより、デスクトップベースの大半のVRデバイスをカバーします。
 
-## Testing WebXR without XR device
+## XRデバイスなしでもWebXRをテストする方法
 
-To start developing with WebXR today, a browser [extension][1] can be used in Chrome or Firefox which emulates the WebXR API. This allows developers to interact with various head-mounted displays and controllers.
+今日からWebXRで開発を開始するには、[Chrome][1]または[Firefox][1]のブラウザ拡張機能を使用して、WebXR APIをエミュレートすることができます。これにより、さまざまなヘッドマウントディスプレイやコントローラーを操作できます。
 
-## Getting started with WebXR
+## WebXRの始め方
 
-To start an XR session, support and availability should be checked first. Then, on user interaction XR, a session can be started:
+まず、サポートと利用可能性を確認し、ユーザーが操作したときにXRセッションを開始します。
 
 ```javascript
 button.element.on('click', function () {
-    // check if XR is supported and VR is available
+    // XRがサポートされており、VRが利用可能かどうかを確認
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_VR)) {
-        // start VR using a camera component
+        // Cameraコンポーネントを使用してVRを開始
         entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });

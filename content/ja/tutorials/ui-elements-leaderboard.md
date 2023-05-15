@@ -1,96 +1,96 @@
 ---
-title: ユーザインターフェイス - リーダーボード
+title: UI - リーダーボード
 layout: tutorial-page.hbs
 tags: ui
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="ユーザーインターフェース - リーダーボード"></iframe>
 
-*Elementコンポーネントを使用しているリーダーボード。[フルシーン][1]を参照してください。*
+*Elementコンポーネントを使用したリーダーボード。[完全なシーン] [1]を参照してください。*
 
-このチュートリアルでは、組み込まれた[Elements][2]を使用して簡単なリーダーボードを作成する方法を示します。リーダーボードには、JSONアセットからデータがプログラム的に埋め込まれています。
+このチュートリアルでは、ビルトインの[Elements] [2]を使用して、シンプルなリーダーボードを作成する方法を説明します。リーダーボードは、JSONアセットから取得したデータでプログラムによって動的に埋められます。
 
-## 階層
+## ヒエラルキーの構造
 
-階層内のUIは次のようになります：
+ヒエラルキー上でUIはこのように見えます:
 
-![階層][4]
+![Hierarchy][4]
 
-ご覧のように、タイトルとサブタイトルを表示する２つの要素と、リーダーボードデータの背景やパネルとして使用される２つの画像要素を持つ2D [Screen][3]があります。`あなたのスコア` の下に、リーダーボードのプレーヤーのポジションを表示し、`リーダーボード の下に残りを表示します。
+画面には2つのElementがあり、タイトル、サブタイトルを表示する2つのElements、およびリーダーボードデータ用の背景とパネルとして使用される2つのImage Elementsがあります。 `Your Score`の下に、リーダーボード内のプレイヤーの位置を表示し、`Leaderboard`の下に残りのデータを表示します。
 
-`Entry Template`と呼ばれる無効なエンティティがあります。これは、テンプレートの各行に使用するテンプレートです。そのテンプレートをJSONアセットに存在する各リーダボードエントリに対して複製し、それぞれのパネルの下に各クローンを追加します。
+`Entry Template`という無効なEntityも見つかります。これは、JSONアセットに存在するリーダーボードのエントリごとに使用するテンプレートです。このテンプレートを複製して、各クローンを対応するパネルの下に追加します。
 
-## スクリーン設定
+## Screenの設定
 
-[スクリーン][3]は次のように設定されています：
+[screen][3]の設定は次のようになっています:
 
-![スクリーン][5]
+![Screen][5]
 
-2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
+2D画面なので、Screen Spaceにラベルが付けられています。Baseline解像度は、1080 x 1920を目標にしています。Scale ModeにはBlendを選択しているため、画面が変更された場合にその画面に適応されるようになります。Scale Blendは1に設定されているため、画面は高さのみに適応されます。
 
-画面エンティティには、`leaderboard`スクリプトを含むスクリプトコンポーネントもあります。以下でご確認いただけます。
+スクリーンエンティティには、後述するリーダーボードスクリプトを含むScriptコンポーネントが含まれています。
 
-## パネル設定
+## Panelの設定
 
-各パネルには、その背景を示す画像要素があります。パネルの下に、エントリテンプレートのクローンをプログラム的に追加します。パネルはスクリーンの中央に固定されます。
+各パネルには、その背景を表示するImage要素があります。パネルの下に、Entry Templateのクローンをプログラムで追加します。パネルは画面の中央にアンカーされています。
 
-## エントリテンプレートの設定
+## Entry Templateの設定
 
-階層内の各リーダーボード行のテンプレートは次のようになります：
+リーダーボードの1行ごとのテンプレートは、ヒエラルキー構造上で次のようになっています:
 
-![エントリテンプレート][6]
+![Entry Template][6]
 
-リーダーボード上の位置、プレイヤーの名前、プレーヤーのスコア、'PTS'というラベルを表示するための４つの子テキスト要素があります。
+プレーヤーのスコアと 'PTS'という名前のラベルを表示するための、リーダーボードの位置、プレイヤー名、プレイヤーのスコアを表示するための4つの子要素があります。
 
-`Entry Template`自体がグループ要素です：
+`Entry Template`自体はGroup Elementです。
 
-![エントリテンプレート属性][7]
+![Entry Template Attributes][7]
 
-グループ要素には分割された水平アンカーがあります。
+Group Elementには分割された水平アンカーがあることに注意してください:
 
-![アンカーを分割][8]
+![Split Anchors][8]
 
-水平アンカーは等しくない(0と1)ので、スクリーンがサイズ変更された場合、要素が自動的に拡大されて水平エリア全体を満たします。端からのわずかな隙間を許すために、50ピクセルの水平余白もあります。余白は、アンカーが分割されている場合にのみ設定できます。
+水平アンカーは等しくありません(0と1です)。これは、Screenがリサイズされた場合に自動的に水平エリア全体を埋めることができるということを意味します。左右に50ピクセルのマージンがありますが、マージンはアンカーが分割された場合にのみ設定できます。
 
-では、グループの子の残りの部分を見てみましょう。
+次は、Groupの子要素の残りの部分を見てみましょう。
 
-### 位置
+### Position
 
-位置は左に固定されています：
+位置は左にアンカーされています:
 
-![位置][9]
+![Position][9]
 
-### 名前
+### Name
 
-名前は左に固定され、右に少し動かされています：
+名前は左にヒモ付けされ、やや右に移動されます。
 
-![名前][10]
+![Name][10]
 
-### スコア
+### Score
 
-スコアは右に固定されています
+スコアは右にアンカーされています。
 
-![スコア][11]
+![Score][11]
 
-### ポイント
+### Points
 
-ポイントは右に固定されています
+ポイントは右にアンカーされています。
 
-![ポイント][12]
+![Pts][12]
 
 ## スクリプト
 
-JSONアセットを読み込みリーダーボードを塗りつぶす `leaderboard`スクリプトです：
+JSONアセットを読み取り、リーダーボードにデータを埋め込む`leaderboard`スクリプトは次のようになります。
 
 ```javascript
 var Leaderboard = pc.createScript('leaderboard');
 
-// 複製するテキスト入力テンプレート
+// the text entry template to clone
 Leaderboard.attributes.add("template", {type: "entity"});
-// 個人スコアの親リーダーボード
+// the parent leaderboard for the personal score
 Leaderboard.attributes.add("personal", {type: "entity"});
-// 上位10位の親リーダーボード
+// the parent leaderboard for the top ten
 Leaderboard.attributes.add("leaderboard", {type: "entity"});
 
 Leaderboard.prototype.initialize = function() {
@@ -101,11 +101,11 @@ Leaderboard.prototype.initialize = function() {
     this.load(function (data) {
         self.clear();
 
-        // 個人用エントリを追加する
+        // add the personal entry
         var y = -75;
         self.addEntry(self.personal, y, data.personal.position, data.personal.name, data.personal.score);
 
-        // トップ10を追加
+        // add the top ten
         y = -60;
         for (var i = 0; i < Math.min(data.leaderboard.length, 10); i++) {
             self.addEntry(self.leaderboard, y, i+1, data.leaderboard[i].name, data.leaderboard[i].score);
@@ -114,7 +114,7 @@ Leaderboard.prototype.initialize = function() {
     });
 };
 
-// すべてのリーダーボードエントリをクリアする
+// clear all leaderboard entries
 Leaderboard.prototype.clear = function () {
     for (var i = 0; i < this.entries.length; i++) {
         this.entries[i].destroy();
@@ -123,7 +123,7 @@ Leaderboard.prototype.clear = function () {
     this.entries = [];
 };
 
-// リーダーボードに新しいエントリを追加する
+// add a new entry into the leaderboard
 Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
     var entry = this.template.clone();
     entry.enabled = true;
@@ -138,8 +138,8 @@ Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
     entry.translateLocal(0, y, 0);
 };
 
-// リーダーボードのデータの読み込み模擬。このデモでは、プロジェクトのJSONファイルからデータを取得します
-// あなたのプロジェクトでは、サーバのバックエンドからダウンロードできます
+// Mock loading leaderboard data, for this demo we just get the data from a JSON file in the project
+// For your project you could download this from a server backend
 Leaderboard.prototype.load = function (callback) {
     var asset = this.app.assets.find("leaderboard-data.json");
     asset.ready(function () {

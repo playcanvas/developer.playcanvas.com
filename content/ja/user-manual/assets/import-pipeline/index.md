@@ -1,85 +1,96 @@
 ---
-title: アセットインポートのパイプライン
+title: アセットインポートパイプライン
 layout: usermanual-page.hbs
 position: 2
 ---
 
-一部のアセットは、ソースフォーマットでアップロードされ、実行時にゲーム内で使用する前にtargetフォーマットに変換する必要があります。この処理は*Importing*と呼ばれています。たとえば、3DモデルはFBXファイルとしてアップロードすることができますが、ゲーム内に読み込む前にPlayCanvasと互換性のあるモデルファイルに変換する必要があります。
+一部のアセットは、ランタイムでゲームで使用する前に、"ターゲット"フォーマットに変換する必要があります。このプロセスを*インポート*と呼びます。たとえば、3DモデルはFBXファイルとしてアップロードできますが、ゲームで読み込む前にPlayCanvas互換のモデルファイルに変換する必要があります。
 
-使用前のインポートが不要なアセットもあります。例えば、PNG画像は即座にテクスチャとして使用することができます。
+一部のアセットは、使用する前にインポートする必要はありません。たとえば、PNG画像はすぐにテクスチャとして使用できます。
 
-## アセットのタスク
+## アセットタスク
 
-ソースアセットをアップロードする際、それをインポートする必要があります。PlayCanvasは、サーバ上でアセットタスクを開始してこのインポート処理を実行します。現在実行しているアセットタスクはアセットパネルで確認することができます。
+ソースアセットがアップロードされると、PlayCanvasは当社のサーバー上でこのインポートプロセスを実行するアセットタスクを開始します。
 
-![アセットのタスク][1]
+インポートパイプラインの動作を調整するためのさまざまなオプションがあります。
 
-ニーズに合わせてインポートパイプラインの挙動をチューニングするために利用できるオプションが複数あります。
-
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="360px">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="480">
 
 ### 関連アセットを検索
 
-新しいバージョンのファイルでソースアセットを更新する際、インポートパイプラインにより作成されるターゲットアセットを更新する方法が二つあります。
+ファイルの新しいバージョンをアップロードしてソースアセットを更新する場合、インポートパイプラインによって作成されたターゲットアセットを更新する2つの可能性があります。
 
-* **Search related assets（検索関連のアセット）**が有効の場合、パイプラインはターゲットアセットが配置されているフォルダを問わず、それを更新します。
-* **Search related assets**が無効の場合、パイプラインはソースアセットと同じフォルダでのみターゲットアセットを探します。
+* **関連アセットの検索**が有効になっている場合、パイプラインはフォルダーに関係なくターゲットアセットを更新します。
+* **関連アセットの検索**が有効になっていない場合、パイプラインはターゲットアセットをソースアセットと同じフォルダーでのみ検索します。
 
-つまり、これを有効する場合、ソースとターゲットのアセットをフォルダで整理し、ソースアセットを更新すると、すべての関連アセットが更新されるように設定できます。
+つまり、これを有効にしておくと、ソースアセットとターゲットアセットをフォルダーに整理し、ソースアセットを更新したときに関連するすべてのアセットが更新されることが保証されます。
 
-### Assets default to preload
+### アセットのデフォルトをプリロードに設定
 
-Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
+新しく作成されたアセットは、このオプションが有効または無効かどうかに応じて、自動的に[プリロード][2]に設定されます。これにはJavaScriptのスクリプトファイルは含まれません。JavaScriptのスクリプトファイルは、作成されたときに常にプリロードされます。
 
-## Texture Import Settings
+## テクスチャインポート設定
 
-これらのオプションは、画像やテクスチャのインポートにのみ影響を与えます。
+これらのオプションは、画像とテクスチャのインポートにのみ影響を与えます。
 
-### テクスチャ POT (Power of Two)
+### テクスチャPOT(Power of Two)
 
-このオプションを有効にすると、2の乗数でないテクスチャはインポート時に最も近い2の乗数の解像度に変換されます。
+このオプションが有効になっている場合、2の累乗でないテクスチャは、インポート時に最も近い2の累乗解像度に変換されます。
 
-### Create Atlases
+### アトラスを作成
 
-Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is a useful time saver when uploading many spritesheets or UI assets.
+アップロードされた画像は、通常のTextureアセットではなく、テクスチャアトラスとしてインポートされます。これは、多くのスプライトシートやUIアセットをアップロードする場合に便利です。
 
-## Model Import Settings
+## モデルインポート設定
 
-これらのオプションは、モデルやシーンファイル (例：FBX, Collada, obj, 等)のインポートにのみ影響を与えます
+これらのオプションは、モデルまたはシーンファイル(FBX、Collada、objなど)のインポートにのみ影響を与えます。
 
-### Preserve material mappings
+### マテリアルマッピングを保持
 
-When a model file is updated or reimported, the Editor will try to preserve the material mappings that were set on it.
+モデルファイルが更新または再インポートされた場合、エディターはそれに設定されたマテリアルマッピングを保持しようとします。
 
-### モデルの上書き
+### モデルを上書き
 
-モデルファイルが更新または再インポートされる際、このオプションは、ターゲットモデルのファイルが上書きされるか否かを定義します。デフォルトでは、新しいモデルで上書きします。
+モデルファイルが更新または再インポートされた場合、このオプションによってターゲットモデルファイルが上書きされるかどうかが決まります。新しいモデルで上書きすることがデフォルトの動作です。
 
-### アニメーションの上書き
+### アニメーションを上書き
 
-モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたアニメーションが上書きされるか否かを定義します。デフォルトでは、新しいアニメーションで上書きします。
+モデルファイルが更新または再インポートされた場合、このオプションによってモデルから作成されたアニメーションが上書きされるかどうかが決まります。新しいアニメーションで上書きすることがデフォルトの動作です。
 
-### 素材の上書き
+### マテリアルを上書き
 
-モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成された素材が上書きされるか否かを定義します。デフォルトでは、既存の素材を維持します。
+モデルファイルが更新または再インポートされた場合、このオプションによってモデルから作成されたマテリアルが上書きされるかどうかが決まります。既存のマテリアルを残すことがデフォルトの動作です。
 
-### テクスチャの上書き
+### テクスチャを上書き
 
-モデルファイルが更新または再インポートされる際、このオプションは、モデルから作成されたテクスチャが上書きされるか否かを定義します。デフォルトでは、新しいテクスチャで上書きします。
+モデルファイルが更新または再インポートされた場合、このオプションによってモデルから作成されたテクスチャが上書きされるかどうかが決まります。既存のテクスチャを新しいテクスチャで上書きすることがデフォルトの動作です。
 
-### Convert to GLB
+### GLBに変換
 
-Enabled by default on new projects, imported models and animations will create GLB model and animation assets instead of the older, deprecated JSON format.
+新しいプロジェクトではデフォルトで有効になっています。インポートされたモデルとアニメーションは、古い非推奨のJSON形式ではなく、GLBモデルとアニメーションアセットが作成されます。
 
-### Import Hierarchy
+### ヒエラルキーをインポート
 
-Only available if using [Convert to GLB](#convert-to-glb) option. When a model file is imported, a template asset is created that contains the full hierarchy of the model as entities allowing to you to manipulate them directly in the Editor. See more information about this feature [here][3].
+[GLBに変換する](#GLBに変換する)オプションを使用している場合にのみ利用可能です。モデルファイルがインポートされると、エンティティとしてモデル全体のフルヒエラルキーを含むTemplateアセットが作成され、エディタで直接操作することができます。この機能についての詳細は、[こちら][3]を参照してください。
 
-## Animation Import Settings
+### メッシュ圧縮
 
-Please refer to the [Animation section][4] for more details.
+[GLBに変換する](#GLBに変換する)オプションを使用している場合にのみ利用可能です。このオプションを圧縮形式に設定すると、モデルファイルをインポートまたは再インポートするときに自動的にメッシュデータが圧縮されます。これにより、GLBファイルのサイズを大幅に縮小できますが、ランタイムの解凍コストがかかります。
 
-[1]: /images/user-manual/assets/import-pipeline/asset-tasks-full.jpg
+Draco圧縮を使用する場合は、プロジェクトにDraco WASMモジュールをインポートする必要があることに注意してください。さもなければ、モデルは読み込まれません。
+
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/draco-import-button.png" width="480">
+
+### FBXフォルダの作成
+
+モデルファイル(GLBまたはFBXなど)をインポートすると、エディタはレンダリング、テンプレート、マテリアルアセットなどのインポート時に作成されるアセットのフォルダーを作成します。
+
+現在のフォルダーにすでにモデル(ソース)ファイルがあるか、インポートされるファイルと同じ名前のフォルダーがある場合、新しいフォルダーを作成する代わりに既存のアセットが上書きされます。
+
+## アニメーションインポート設定
+
+詳細については、[アニメーションセクション][4]を参照してください。
+
 [2]: /user-manual/assets/preloading-and-streaming/
 [3]: /user-manual/assets/import-pipeline/import-hierarchy/
 [4]: /user-manual/assets/animation/

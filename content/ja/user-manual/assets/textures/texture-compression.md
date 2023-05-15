@@ -1,101 +1,101 @@
 ---
-title: Texture Compression
+title: テクスチャ圧縮
 layout: usermanual-page.hbs
 position: 1
 ---
 
-テクスチャデータは、デバイスのビデオメモリに記憶されます(またはVRAM)。ブラウザタブのクラッシュなどを引き起こす可能性があるので、アプリケーションがVRAMを排出しないように注意することが重要です。
+テクスチャデータは、デバイスのビデオメモリ(またはVRAM)に格納されます。ブラウザタブのクラッシュなど、望ましくないことが発生しないように、アプリケーションが VRAM を使い果たさないようにすることが重要です。
 
-The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used using Basis.
+エディタには、テクスチャに対して Basis を使用して、損失がある圧縮スキームを適用して VRAM 使用量を劇的に減らす機能があります。
 
-[Basis][1] is a 'super-compressed' texture format. It's a platform independent lossy block compression format that can be transcoded to the natively supported hardware compression format at runtime. Supported transcode formats are ASTC, DXT, ETC2, ETC, PVR and ATC (selected in that order where available).
+[Basis][1] は「超圧縮」されたテクスチャフォーマットです。これは、ランタイムでネイティブにサポートされているハードウェア圧縮フォーマットに変換できる、プラットフォーム非依存の損失のあるブロック圧縮フォーマットです。対応するトランスコードフォーマットは、可能な場合は ASTC、DXT、ETC2、ETC、PVR、ATC の順で選択されます。
 
-こちらのテクスチャアセットを考慮してください：
+次のようなTextureアセットがあるとします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="煉瓦のテクスチャ" width="256" height="256">
 
-202KBの512×512 JPGです。JPGは圧縮された形式で、グラフィックエンジンに渡すと、1.05MBのVRAMを有する非圧縮のRGB8形式に展開されます(ミップマップレベルを含む)。
+これは512x512のJPGでサイズは202KBです。しかし、JPGは圧縮された形式であり、グラフィックエンジンに渡されると解凍されたRGB8形式に拡張され、ミップマップレベルを含めると1.05MBのVRAMを占有します。
 
-Enabling texture compression achieves the following results:
+テクスチャ圧縮を有効にすると、以下のような結果が得られます。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis 圧縮の結果" width="400">
 
-The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 46KB using the Default quality setting and ETC Mode.
+圧縮により、VRAMの使用量が6倍に減少しました。さらに、この場合、圧縮によってダウンロードサイズも、デフォルト品質設定と ETC モードを使用して、202KBから46KBまで減少しています。
 
-Below is a side by side comparison of the brick texture on Mac with Chrome:
+以下は、MacとChromeで煉瓦のテクスチャを比較したものです。
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison"></a>
+<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="煉瓦のテクスチャの圧縮比較"></a>
 
-Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [without][3] on Mac with Chrome:
+以下は、MacとChromeで PlayCanvas のキューブを Basis (ETCモード)[2] で比較したものと、[圧縮していないもの][3]です。
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison"></a>
+<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvasのキューブの圧縮比較"></a>
 
-## Using Basis Texture Compression
+## Basis テクスチャ圧縮の使用
 
-Once the texture has been imported into the Editor, select it and scroll down in the inspector to find the Compression section.
+テクスチャをエディタにインポートしたら、そのテクスチャを選択し、インスペクタを下にスクロールして、Compression セクションを見つけます。
 
-1. Tick BASIS.
-2. Click on Import Basis to add the WASM module for the Basis runtime to the project (this only needs to be done once).
-3. Change mode from 'ETC (smaller size, lower quality)' to 'ASTC (larger size, higher quality)' if you need to reduce compression artifacts on this texture.
-4. Tick Normals if compressing a normal map.
-5. Change the quality setting to balance file size vs quality. Lower quality results in smaller file sizes.
-6. Click on Compress Basis.
+1. BASIS をチェックします。
+2. Import Basis をクリックして、プロジェクトに Basis ランタイムのWASMモジュールを追加します(これは1回だけ行う必要があります)。
+3. このテクスチャで圧縮アーティファクトを減らす必要がある場合は、モードを 'ETC (smaller size, lower quality)' から 'ASTC (larger size, higher quality)' に変更します。
+4. Normal Map を圧縮する場合は、Normals をチェックします。
+5. ファイルサイズと品質のバランスを取るために、品質設定を変更します。品質を下げると、より小さなファイルサイズになります。
+6. Compress Basis をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Basis テクスチャ圧縮の有効化" width="400">
 
-The Basis WASM module will add 253KB of extra gzipped data to the preload download size but that should be offset by the texture size savings compared to using the legacy texture compression format files ([see below][4]).
+Basis WASM モジュールは、プリロードのダウンロードサイズに253KBの追加のgzipデータを追加しますが、古くなったテクスチャ圧縮フォーマットファイルを使用する場合と比較して、テクスチャサイズの節約によってオフセットされるはずです(下記参照)。
 
-To remove Basis compression from a texture:
+テクスチャから Basis 圧縮を削除する方法は次のとおりです。
 
-1. Untick BASIS.
-2. Click on Compress Basis.
+1. BASIS のチェックを外します。
+2. Compress Basis をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Basis テクスチャ圧縮の無効化" width="400">
 
-If you would no longer want to use Basis, remove Basis compression from all textures and delete the Basis folder from the project.
+もう Basis を使用しない場合は、すべてのテクスチャから Basis 圧縮を削除し、プロジェクトから Basis フォルダを削除してください。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Basisライブラリの削除" width="400">
 
-## Basis Limitations
+## Basis の制限
 
-There are some limitations of Basis texture compression in PlayCanvas.
+PlayCanvas で Basis テクスチャ圧縮には、次の制限があります。
 
-1. The PVR format only supports textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. A Basis texture that is non-square or non-power of two cannot be transcoded to PVR format but will instead use a 16-bit 565 pixel format. It will still display correctly, although may occupy more VRAM.
-2. The maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
+1. PVR 形式は、幅と高さが同じ正方形で、2の累乗である(256、512、1024など)テクスチャのみサポートしています。A6 SoC 以下の古い iOS デバイス(iPhone 5や5Cなど)や、iOS バージョン13.7以下の古い iOS バージョンでは、PVR しかサポートしていません。正方形でも2の累乗でもない Basis テクスチャは、PVR 形式にトランスコードすることはできず、代わりに16ビットの565ピクセル形式が使用されます。これは正しく表示されますが、より多くのVRAMを占有する可能性があります。
+2. Basis 圧縮でサポートされる最大テクスチャサイズは、4096x4096です。これよりも大きいテクスチャは、異常な時間がかかるため、無効になっています。
 
-## Legacy Texture Compression
+## 旧来のテクスチャ圧縮
 
-We strongly recommend using Basis compression where possible as it requires a single texture file to cover all platforms and it is also a much smaller file compared to the legacy formats. Our tests show Basis to be ~50% smaller with minimal difference in quality.
+古いフォーマットの圧縮を使用することは、Basis 圧縮が可能な場合は、可能な限り避けることを強くお勧めします。私たちのテストでは、品質差はわずかで、半分程度小さなファイルになることがわかりました。
 
-The Legacy Texture schemes are:
+旧来のテクスチャ圧縮フォーマットは次の通りです。
 
-* DXT: 通常、デスクトップデバイスに対応されています。
-* PVR: 通常、iOSデバイスに対応されています。
-* ETC: 通常、Androidデバイスに対応されています。
+* DXT:通常、デスクトップデバイスでサポートされています。
+* PVR:通常、iOS デバイスでサポートされています。
+* ETC:通常、Android デバイスでサポートされています。
 
-To use the Legacy Texture Compression options, select the texture and scroll down in the inspector to find the Compression section.
+Legacy Texture Compression オプションを使用するには、テクスチャを選択して、インスペクタで圧縮セクションまでスクロールします。
 
-1. Tick LEGACY.
-2. Tick all the formats you wish to use.
-3. Click on Compress Legacy.
+1. LEGACY をチェックします。
+2. 使いたいすべてのフォーマットをチェックします。
+3. Compress Legacy をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Legacy テクスチャ圧縮の有効化" width="400">
 
-To remove a or several formats:
+フォーマットを1つまたは複数削除するには:
 
-1. Untick all the formats you wish to remove.
-2. Click on Compress Legacy.
+1. 削除したいすべてのフォーマットのチェックを外します。
+2. Compress Legacy をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Legacy テクスチャ圧縮の無効化" width="400">
 
-## Migrating from Legacy to Basis Texture Compression
+## Legacy テクスチャ圧縮から Basis テクスチャ圧縮への移行
 
-If you have a project that is already using the Legacy Texture Compression formats and wish to use Basis, do the following:
+既に Legacy Texture Compression フォーマットを使用しているプロジェクトを Basis を使うようにしたい場合は、次の手順を実行します。
 
-1. Remove all the legacy texture formats.
-2. Enable and use Basis.
+1. すべての Legacy テクスチャフォーマットを削除します。
+2. Basis を有効にして使用します。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400">
+<img loading="
 
 
 [1]: https://github.com/BinomialLLC/basis_universal

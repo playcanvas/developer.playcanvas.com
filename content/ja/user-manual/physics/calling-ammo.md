@@ -1,18 +1,19 @@
 ---
-title: Calling the ammo.js API
+title: ammo.js APIを呼び出す方法
 layout: usermanual-page.hbs
 position: 6
 ---
 
-The PlayCanvas integration with ammo.js does not expose the full capability of the ammo.js API. However, it is possible to call the ammo.js API directly from your PlayCanvas scripts.
+PlayCanvas の ammo.js 連携により、ammo.js API のすべての機能が公開されるわけではありません。ただし、PlayCanvas スクリプトから直接 ammo.js API を呼び出すことができます。
 
-PlayCanvas currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2]. Although there is no official documentation for ammo.js, you can refer to the [Bullet Physics User Guide][3] to learn more.
+現在、PlayCanvas は ammo.js の [このビルド][1] を使用しています。このビルドが公開する API は [こちら][2] で確認できます。ammo.js の公式ドキュメントはありませんが、[Bullet Physics User Guide][3] を参照してください。
 
 ## Joint Constraints
 
-There are currently no PlayCanvas components which implement physics constraints (sometimes known as physics joints). However, it is easy to leverage the ammo.js API to create scripts that implement constraints.
+現在、PlayCanvasには物理制約（物理ジョイントとも呼ばれる）を実装するコンポーネントはありません。ただし、ammo.jsのAPIを活用して、制約を実装するスクリプトを作成することは容易です。
 
-Here is the script for a point-to-point constraint (essentially a ball and socket joint):
+
+以下は、ポイント・トゥ・ポイント制約（基本的にはボールアンドソケットジョイント）のスクリプトです。
 
 ```javascript
 var PointToPointConstraint = pc.createScript('pointToPointConstraint');
@@ -135,13 +136,13 @@ PointToPointConstraint.prototype.update = function(dt) {
 };
 ```
 
-You can find a project that implements all of the constraint types from ammo.js [here][4].
+ammo.jsを使用したすべての制約タイプを実装したプロジェクトは、[こちら][4]で見つけることができます。
 
-## Continuous Collision Detection
+## 連続衝突検出 (Continuous Collision Detection)
 
-Sometimes, you might find that fast moving rigid bodies in your simulations pass through one another. To overcome this, ammo.js provides a concept called Continuous Collision Detection (or CCD for short). This enables additional checks for collisions by sweeping a sphere volume between the previous and current positions of a rigid body and looking for intersections with the volumes of other bodies.
+時には、シミュレーション内の高速移動する剛体同士が互いに通り抜けてしまうことがあります。これを克服するために、ammo.jsでは連続衝突検出（Continuous Collision Detection、略してCCD）という概念を提供しています。これにより、RigidBodyの前回と現在の位置の間に球体のボリュームをスイープし、他の物体のボリュームとの交差を検出することで、衝突の追加チェックが可能になります。
 
-You can enable CCD for any PlayCanvas rigid body using the following script:
+以下のスクリプトを使用することで、PlayCanvasの任意のRigidBodyにCCDを有効にすることができます。
 
 ```javascript
 var Ccd = pc.createScript('ccd');
@@ -179,9 +180,9 @@ Ccd.prototype.initialize = function() {
 };
 ```
 
-You can find a project that implements CCD [here][5].
+[こちら][5]でCCDを実装したプロジェクトを見つけることができます。
 
-These are just two examples of using the ammo.js API directly. You can also use it to implement additional things like:
+これらは、ammo.js APIを直接使用するための2つの例です。さらに以下のような追加の機能を実装するためにも使用することができます。
 
 * Compound collision shapes
 * Soft body simulation

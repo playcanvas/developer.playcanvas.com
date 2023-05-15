@@ -1,14 +1,14 @@
 ---
-title: Graphs
+title: グラフ
 layout: shader-editor-page.hbs
 position: 1
 ---
 
-Graphs are a central concept in Shader Editor. They are made up of nodes that do things, and edges that connect them together. Shader Editor uses the graphs to generate shader programs for rendering.
+グラフは、シェーダーエディターの中心的な概念です。ノードは処理を行い、エッジはノードを接続します。シェーダーエディターでは、グラフを利用してレンダリング用のシェーダプログラムを生成します。
 
-There are two distinct types of graphs in Shader Editor, namely [Material Graphs][2] and [Sub Graphs][3].
+シェーダーエディターには、[マテリアルグラフ][2]と[サブグラフ][3]の2種類のグラフが存在します。
 
-To find out how to manage graphs see the [Graph Editor][1] documentation.
+グラフの管理方法については、[グラフエディター][1]のドキュメントを参照してください。
 
 [1]: /shader-editor/window-layout/graph-editor
 [2]: /shader-editor/overview/graphs/material-graphs

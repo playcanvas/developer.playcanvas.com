@@ -1,72 +1,72 @@
 ---
-title: Your First App
+title: 初めてのPlayCasnvasアプリを作る
 layout: usermanual-page.hbs
 position: 4
 ---
 
-Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes learning the basics. We'll recreate the following simple 3D app:
+PlayCanvasでアプリを開発することは簡単で楽しいです。まずは基本を学びましょう。以下のシンプルな3Dアプリを再現します:
 
-<iframe loading="lazy"  src="https://playcanv.as/p/TnUtDXWp/" title="Simple PlayCanvas App"></iframe>
+<iframe loading="lazy"  src="https://playcanv.as/p/TnUtDXWp/" title="シンプルなPlayCanvasアプリ"></iframe>
 
-*Use the arrow keys to move the red ball around.*
+*矢印キーを使って赤いボールを動かしてください。*
 
-To begin, navigate to your PROJECTS page.
+まずPROJECTSページに移動してください。
 
-![Projects Page][1]
+![プロジェクトページ][1]
 
-Select the NEW button to create a new project:
+NEWボタンをクリックして、新しいプロジェクトを作成してください。
 
-![New Project][2]
+![新規プロジェクト][2]
 
-Enter `My First App` as the project name. The description is optional and can be filled out later. Hit CREATE.
+プロジェクト名に `My First App` と入力してください。説明は任意です。CREATEをクリックしてください。
 
-With your project created, we can dive right into the Editor - simply hit the EDITOR button:
+プロジェクトが作成されたら、すぐにエディタに入りましょう。 EDITORボタンをクリックしてください。
 
-![Editor Button][3]
+![エディタボタン][3]
 
-When you first open the Editor, you should find that a minimal scene has been created for you:
+エディタを初めて開くと、最小限のシーンが用意されているはずです。
 
-![Editor][4]
+![エディタ][4]
 
-Specifically, you have a camera (to render the scene), a box sitting on a plane and a light (to illuminate the 3D objects).
+具体的には、シーンをレンダリングするカメラ、平面上に置かれたボックス、3Dオブジェクトを照らす光があります。
 
-You can easily change the box to another shape, like a sphere. To do this, select the Box entity in the HIERARCHY panel. In the Inspector panel on the right, change the Type property of the MODEL component from Box to Sphere. To be complete, rename the Entity from Box to Sphere too!
+簡単にボックスを別の形状(たとえば球体)に変更できます。HIERARCHYパネルでBoxエンティティを選択し、右側のInspectorパネルで規格のModelコンポーネントのTypeプロパティをBoxからSphereに変更してください。完了するために、エンティティをBoxからSphereに改名してください!
 
-![Box To Sphere][5]
+![BoxからSphereに][5]
 
-But our sphere is a slightly boring gray color. Let's color it red! To do this, we must create a material by hitting the **+** icon in the ASSETS panel:
+しかし、私たちの球体は少し退屈なグレーの色です。これを赤色に変えましょう!これには、ASSETSパネルの**+**アイコンをクリックして材質を作成する必要があります。
 
-![Create Material][6]
+![マテリアルの作成][6]
 
-Select the material and its properties will appear in the Inspector panel to the right. Expand the DIFFUSE section and click on the color swatch to edit the color to red:
+材質を選択すると、そのプロパティが右側のInspectorパネルに表示されます。DIFFUSEセクションを展開し、赤色に編集するために色のスワッチをクリックしてください。
 
-![Red Material][7]
+![赤いマテリアル][7]
 
-Next, we must assign the material to the sphere. You can do this with a simple drag and drop operation:
+次に、マテリアルを球体に割り当てる必要があります。ドラッグアンドドロップ操作で簡単に行えます。
 
-![Drag And Drop Material][8]
+![マテリアルのドラッグアンドドロップ][8]
 
-Now let's set up the Camera entity. Select it in the HIERARCHY panel:
+次に、カメラエンティティを設定しましょう。HIERARCHYパネルでカメラを選択してください。
 
-![Editor Camera Selected][9]
+![エディタカメラ選択][9]
 
-Notice the little preview window that has appeared for the selected camera. Let's edit the camera's position and rotation to view the cube from directly in front. Edit the camera's position and rotation with the values below:
+選択したカメラに表示されたプレビューウィンドウに注目してください。カメラの位置と回転を編集して、直接向かって立方体を見るようにしましょう。以下の値でカメラの位置と回転を編集します。
 
-![Camera Transform][10]
+![カメラトランスフォーム][10]
 
-Next, let's make the sphere controllable with the arrow keys on the keyboard. To do this, we must create a script. Right click the Sphere entity and select `Add Component -> Script`.
+次に、キーボードの矢印キーで球体を操作できるようにしましょう。これにはスクリプトを作成する必要があります。Sphereエンティティを右クリックし、「Add Component -> Script」を選択してください。
 
-![Add Script Component][11]
+![Scriptコンポーネントの追加][11]
 
-A script component will appear in the Inspector on the Sphere entity. To create a script asset on the script component, enter the name `movement.js`.
+SphereエンティティのInspectorにScriptコンポーネントが表示されます。スクリプトアセットを作成するために、Scriptコンポーネントに `movement.js` という名前を入力してください。
 
-![Create Script Asset][12]
+![スクリプトアセットの作成][12]
 
-Hit Enter and your script will be created.
+Enterを押すと、スクリプトが作成されます。
 
-![Edit Script][13]
+![スクリプトの編集][13]
 
-Now hit EDIT to open the Code Editor. You'll see the following skeleton script:
+次に、コードエディタを開くためにEDITをクリックしてください。以下のスケルトンスクリプトが表示されます。
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -82,7 +82,7 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-To make the sphere controllable, let's add some code to the `update` function. Copy and paste the code below:
+球体を制御するには、`update`関数にいくつかのコードを追加します。以下のコードをコピーして貼り付けてください。
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -118,41 +118,41 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-When the code is updated, save the script using CTRL+S (or CMD+S on Mac) and close the Code Editor tab.
+コードが更新されたら、CTRL+S(またはMacのCMD+S)でスクリプトを保存して、Code Editorタブを閉じてください。
 
-You are now ready to preview your app by opening the Launch page. To do this, hit the Launch button in the top right of the Editor's 3D view.
+ローンチページを開いてアプリをプレビューする準備ができました。これには、エディタの3Dビューの右上にあるLaunchボタンをクリックしてください。
 
-![Launch Button][14]
+![ローンチボタン][14]
 
-The Launch page opens in a new tab. When it opens, try pressing the 4 arrow keys to move the sphere around.
+Launchページが新しいタブで開きます。開いたら、矢印キー4つを押して球体を動かしてみてください。
 
-![Launch Page][15]
+![Launchページ][15]
 
 <div class="alert alert-info">
-There is a 'Live Link' between the Editor and the Launch page. Any change you make in the Editor will be reflected in the Launch page in real time! It can be convenient to place the Launch page side by side with the Editor while you are working.
+エディタとLaunchページには「Live Link」と呼ばれるリアルタイムのリンクがあります。エディタで行った変更は、リアルタイムにLaunchページに反映されます!作業中はLaunchページをエディタの横に配置すると便利です。
 
-![Editor Live Link][16]
+![エディタのライブリンク][16]
 </div>
 
-The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar.
+最後のステップは、アプリを公開して他の人と共有することです。左側のツールバーにある <span class="pc-icon">&#57911;</span> ボタンをクリックしてください。
 
-![Publish Button][17]
+![公開ボタン][17]
 
-This will open up the Publishing dialog. Here you can publish a build (or even download a build for self-hosting).
+これにより、公開ダイアログが開きます。ここでビルドを公開(または自己ホスト用にビルドをダウンロード)できます。
 
-![Publish][18]
+![公開][18]
 
-Click the PUBLISH TO PLAYCANVAS option. You can then configure your published app.
+PUBLISH TO PLAYCANVASオプションをクリックしてください。公開されたアプリを設定できます。
 
-![Publish New Build][19]
+![新しいビルドの公開][19]
 
-Leave the defaults, scroll down and select PUBLISH NOW.
+デフォルトをそのままにして、下にスクロールしてPUBLISH NOWを選択してください。
 
-![Builds][20]
+![ビルド][20]
 
-You now have a URL for your published build! Feel free to share it with the world on Twitter or Facebook!
+これで、公開ビルドのURLが手に入りました!TwitterやFacebookで世界と共有してください!
 
-And so, that is the process from start to finish for building and publishing a PlayCanvas application. In this quick introduction, we have touched on the basics. Now explore the rest of the User Manual to learn some more advanced topics. Good luck and have fun!
+以上で、PlayCanvasアプリを構築して公開するプロセスが完了しました。このクイックガイドでは、基本的な部分に触れました。残りのユーザーマニュアルを読んで、より高度なトピックについて学んでください。幸運を祈り、楽しんでください!
 
 [1]: /images/user-manual/your-first-app/projects-page.png
 [2]: /images/user-manual/your-first-app/new-project.png

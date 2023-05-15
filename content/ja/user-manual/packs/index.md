@@ -4,26 +4,26 @@ layout: usermanual-page.hbs
 position: 9
 ---
 
-Scenes contain:
+シーンには以下が含まれます:
 
-* **Scene Hierarchy** which lists the order and structure of all Entities in your scene
-* **Scene Settings** which contains properties about the scene
+* **シーンヒエラルキー**:シーン内のすべてのエンティティの順序と構造を示すリスト
+* **シーン設定**:シーンに関するプロパティが含まれます
 
-They are edited using the PlayCanvas Editor.
+これらはPlayCanvas Editorで編集されます。
 
 ![][scene-list-png]
 
-## Scene Hierarchy
+## シーンヒエラルキー
 
-The **Scene Hierarchy** is a graph of [Entities][entities] that can have [Components][components] to give these Entities behaviors such as having a mesh to render in the world or to play sound effects. They can also be given custom behavior with [scripts][scripts].
+**シーンヒエラルキー** は、[エンティティ][entities]のグラフで、これらのエンティティには、世界にレンダリングするメッシュを持つか、サウンドエフェクトを再生するなどの振る舞いを付与する[コンポーネント][components]を持つことができます。また、[スクリプト][scripts]を使用してカスタムの振る舞いを付与することもできます。
 
-<img loading="lazy" src="/images/user-manual/scenes/scene-hierarchy.png" width="400px">
+<img loading="lazy" src="/images/user-manual/scenes/scene-hierarchy.png" width="400">
 
-## Scene Settings
+## シーン設定 (Scene Settings)
 
-**Scene Settings** contain global rendering and physics information and properties about the scene. These can be edited in the project [settings][project-settings] within the Editor.
+**シーン設定**には、シーンに関するグローバルなレンダリングや物理情報、およびシーンに関するプロパティなどが含まれます。これらは、Editor内の[プロジェクト設定][project-settings]で編集できます。
 
-The full list of Scene Settings are:
+シーン設定の一覧:
 
 * [Physics gravity][settings-gravity] (1)
 * [Global ambient color][settings-ambient] (2)
@@ -34,11 +34,11 @@ The full list of Scene Settings are:
 * [Fog][settings-fog] (7)
 * [Lightmap properties][settings-lightmap] (8)
 
-<img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500px">
+<img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500">
 
-[entities]: /user-manual/packs/entities/
-[components]: /user-manual/packs/components/
-[scripts]: /user-manual/scripting/
+[components]: /user-manual/packs/entities/
+[scripts]: /user-manual/packs/components/
+[entities]: /user-manual/scripting/
 [scene-list-png]: /images/user-manual/scenes/scene-list.png
 [project-settings]: /user-manual/designer/settings/
 [settings-gravity]: /user-manual/designer/settings/#gravity

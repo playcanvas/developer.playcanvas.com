@@ -4,70 +4,70 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-[Apache Cordova][1] is an open-source mobile development framework. It allows you to use standard web technologies - HTML5, CSS3, and JavaScript for cross-platform development. Applications execute within wrappers targeted to each platform, and rely on standards-compliant API bindings to access each device's capabilities such as sensors, data, network status, etc.
+[Apache Cordova][1]はオープンソースのモバイル開発フレームワークです。標準のウェブ技術であるHTML5、CSS3、JavaScriptを使用して、クロスプラットフォーム開発ができます。アプリケーションは、各プラットフォームに対してターゲットとされたラッパーで実行され、センサー、データ、ネットワークステータスなど、各デバイスの機能にアクセスするための標準準拠のAPIバインディングに依存します。
 
-You can use Cordova to natively wrap your PlayCanvas app. You can then publish it to the iOS App Store and Android's Google Play. Cordova can also generate executables compatible with macOS and Windows.
+Cordovaを使用してPlayCanvasアプリをネイティブにラッピングすることができます。その後、iOS App StoreやAndroidのGoogle Playに公開することができます。Cordovaは、macOSやWindowsと互換性がある実行可能ファイルを生成することもできます。
 
-## Installing Cordova
+## Cordovaのインストール
 
-To get started, follow the [instructions][2] for installing Cordova on your computer.
+はじめるには、コンピュータにCordovaを[インストールする手順][2]に従ってください。
 
-## Creating a Project
+## プロジェクトの作成
 
-To create a project, issue the following command:
+プロジェクトを作成するには、次のコマンドを入力します。
 
 ```
 cordova create hello com.example.hello HelloWorld
 ```
 
-`hello` is the folder in which the project is created. `com.example.hello` is the reverse domain-style identifier for your app. `HelloWorld` is the human readable title of your app (it is the name of the generated app icon, for example).
+`hello`はプロジェクトが作成されるフォルダーです。`com.example.hello`はアプリのリバースドメインスタイルの識別子です。`HelloWorld`はあなたのアプリの人間に読みやすいタイトルです(例えば、生成されたアプリアイコンの名前です)。
 
-So, for a game like [Master Archer][3], an appropriate command would be:
+したがって、[Master Archer] [3]のようなゲームの場合、適切なコマンドは次のとおりです。
 
 ```
 cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
 ```
 
-Once your project is created, you will find a file called `config.xml` in the project's root folder. Here you can configure or edit certain characteristics of your app. For example, you can optionally [set up custom icons][4] for your app, either globally or per-platform.
+プロジェクトが作成されると、プロジェクトのルートフォルダーに`config.xml`というファイルがあります。ここで、アプリの特定の特性を設定または編集することができます。たとえば、アプリのカスタムアイコンをグローバルにまたはプラットフォームごとに[設定する] [4]ことができます。
 
-## Adding your PlayCanvas App
+## PlayCanvasアプリの追加
 
-When you create a new Cordova project, it generates a skeleton web app in a folder called `www`. You can go ahead and delete everything in the `www` folder. Next, copy your PlayCanvas app files to this location.
+新しいCordovaプロジェクトを作成すると、`www`というフォルダーにスケルトンのWebアプリが生成されます。`www`フォルダーの中身をすべて削除し、次にPlayCanvasアプリのファイルをこの場所にコピーします。
 
-If you're building on the Engine without the Editor, copy your app files into `www` such that your `index.html` file is in the root.
+エンジンのエディターを使用してビルドしている場合は、`index.html`ファイルがルートにあるようにアプリファイルを`www`にコピーします。
 
 <div class="alert alert-info">
-    <div>Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.</div><br>
-    <div>We recommend using a tool like <a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a> or automating this via a script.</div>
+    <div>Audioアセットファイルは、正しくロードおよび再生するために、Base64形式である必要があります。これは、iOSがWebViewを介してローカルディスク経由で読み込まれる可能性があるファイルに関して制限的であるためです。</div><br>
+    <div><a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a>などのツールを使用することをお勧めします。</div>
 </div>
 
-If you have built your app in the PlayCanvas Editor, we have an official external tool that will build and prepare the project to be most compatible with Cordova. This includes automating tasks such as converting the audio files to Base64 so that they can be loaded on iOS.
+PlayCanvasエディターでアプリをビルドした場合、Cordovaと最も互換性があるようにプロジェクトをビルドおよび準備する公式の外部ツールがあります。これには、iOSで読み込むためにオーディオファイルをBase64に変換するという課題を自動化するなどのタスクが含まれます。
 
-The official external tool can be found on GitHub [here][rest-api-tools-readme].
+公式の外部ツールは、[こちら] [rest-api-tools-readme]のGitHubで見つけることができます。
 
-Follow the [setup steps][rest-api-tools-setup] from the readme in the GitHub repo.
+GitHubリポジトリのreadmeで[セットアップ手順] [rest-api-tools-setup]に従ってください。
 
-And run the command for the [Cordova Publish script][rest-api-tools-readme] as shown in the readme.
+そして、readmeに示されている[Cordova Publishスクリプト] [rest-api-tools-readme]のコマンドを実行します。
 
-This will create a ZIP of the project ready for Cordova. Extract its contents to the root of the `www` folder.
+これにより、Cordovaに準備が整ったプロジェクトのZIPが作成されます。その内容を`www`フォルダーのルートに展開します。
 
-## Building Executables
+## 実行可能ファイルのビルド
 
-You are now ready to build your app for any of the platforms supported by Cordova.
+これで、Cordovaでサポートされているプラットフォームのどれかのアプリをビルドする準備が整いました。
 
-### Building for iOS
+### iOS向けにビルドする
 
-Building for iOS is limited to macOS based computers. You must also ensure you have Xcode installed. You can install it from the [Mac App Store][9].
+iOS向けのビルドは、macOSベースのコンピュータに限定されます。Xcodeがインストールされていることも確認する必要があります。[Mac App Store] [9]からインストールできます。
 
-To build your app for iOS, add the Cordova iOS platform to your project. From the root of your project, issue the command:
+iOS向けにアプリをビルドするには、Cordova iOSプラットフォームをプロジェクトに追加します。プロジェクトのルートから、次のコマンドを入力してください。
 
 ```
 cordova platform add ios
 ```
 
-Ensure that the version is `6.0.0` or higher. This is because version `6.0.0` upgraded the wrapper to use WKWebView instead of UIWebView, which bring better performance. Read more on [Cordova's blog][10].
+バージョンが6.0.0以上であることを確認してください。これは、バージョン6.0.0でラッパーがUIWebViewからWKWebViewにアップグレードされ、パフォーマンスが向上するためです。[Cordovaのブログ][10]で詳細を読み取ってください。
 
-By default, if you attempt to run a Cordova-based PlayCanvas app, you will encounter several errors/exceptions related to cross-origin HTTP requests. To fix this, add the following to your project's `config.xml`:
+CordovaベースのPlayCanvasアプリを実行しようとすると、クロスオリジンHTTPリクエストに関するいくつかのエラー/例外に遭遇することがあります。これを修正するには、プロジェクトの`config.xml`に次の内容を追加します。
 
 ```html
     <platform name="ios">
@@ -79,32 +79,32 @@ By default, if you attempt to run a Cordova-based PlayCanvas app, you will encou
     </platform>
 ```
 
-### Testing for iOS
+### iOS向けのテスト
 
-You are now ready to test your app. For iOS, you can use Simulator or run on a physical iOS device. Simulator is installed as part the Xcode tools, runs on your Mac and simulates the various iOS based devices. To run your app in Simulator, issue the following command:
+これで、アプリをテストする準備が整いました。iOSの場合、シミュレータを使用するか、物理的なiOSデバイスで実行することができます。SimulatorはXcodeツールの一部としてインストールされ、さまざまなiOSベースのデバイスをシミュレートします。Simulatorでアプリを実行するには、次のコマンドを入力してください。
 
 ```
 cordova run ios
 ```
 
-Once the executable has been generated in the build process, Simulator will start and load it. You should see something like the following:
+実行可能ファイルがビルドプロセスで生成されると、Simulatorが開始され、それが読み込まれます。次のようなものが表示されます。
 
 ![Master Archer in Simulator][11]
 
-To run on a physical device:
+物理デバイスで実行するには:
 
-1. Connect your iOS device to your Mac via USB.
-2. Open `platforms/ios/<my-project-name>.xcworkspace` in Xcode.
-3. Navigate to the Signing & Capabilities settings for your project's Target and select a valid Team so that your app can be digitally signed before being deployed to your device.
-4. Select your iOS device in Xcode's Scheme drop-down list.
+1. USB経由でiOSデバイスをMacに接続します。
+2. Xcodeで`platforms/ios/<my-project-name>.xcworkspace`を開きます。
+3. プロジェクトのターゲットに対する署名と機能の設定に移動し、デジタル署名されたアプリを展開する前に有効なチームを選択します。
+4. XcodeのスキームドロップダウンリストでiOSデバイスを選択します。
 
 ![Xcode Scheme drop-down][12]
 
-5. Press the Run button to build, deploy and run the application on your device.
+5. Runボタンを押して、アプリケーションをビルド、展開、実行します。
 
 ![Xcode Run button][13]
 
-Once you are happy with your app, you can ship it to [App Store Connect][14].
+アプリに満足したら、[App Store Connect] [14]に出荷することができます。
 
 [1]: https://cordova.apache.org/
 [2]: https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli

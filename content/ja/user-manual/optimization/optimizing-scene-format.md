@@ -1,12 +1,12 @@
 ---
-title: Optimize Scene Format
+title: シーンフォーマットの最適化
 layout: usermanual-page.hbs
 position: 8
 ---
 
-This publish option that can reduce the size of the scenes files to approximately 30-50% after being gzipped on the server.
+Publishのオプションにより、サーバー上でgzippedされた後、シーンファイルのサイズを約30〜50%縮小することができます。
 
-To enable, on the publish screen, tick 'Optimize Scene Format' and publish.
+有効にするには、Publishの画面で 'Optimize Scene Format' にチェックを入れてから公開してください。
 
 ![][1]
 

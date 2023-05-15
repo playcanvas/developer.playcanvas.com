@@ -1,5 +1,5 @@
 ---
-title: アセットレジストリを使用
+title: アセットレジストリ
 layout: tutorial-page.hbs
 tags: loading, assets, basics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
@@ -7,44 +7,44 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 
-*Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
+*クリックしてフォーカスしてSPACEBARを押してAとBのモデルを切り替えます。"L"を押すとCモデルを読み込み、"C"を押すとCモデルが表示されます。*
 
-簡単なゲームや製品の場合、Editor内のすべてのアセットを設定します。アプリケーションが起動する前にプリロードされ、アプリは正常に動作します。
+簡単なゲームや製品の場合は、すべてのアセットをエディターでセットアップし、アプリケーションが開始する前にそれらがプリロードされ、あなたのアプリケーションはうまく動作します。
 
-より高度な製品の場合、コード内でアセットにアクセスし、参照を変更、プロパティを修正、データのストリーミングを行いアプリケーションをより迅速に読み込むこともできます。必要に応じてアセットを読み込みます。これを行うには[`AssetRegistry`][1]を使用します。
+より高度な製品の場合、アセットにアクセスし、参照を変更し、プロパティを変更し、アプリケーションがより速くロードできるようにストリームデータを動的に読み込むことができるようにしたい場合があります。必要なときにアセットをロードするだけです。そのために、[`AssetRegistry`][1]を使用します。
 
-In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
+このチュートリアルでは、レンダリングコンポーネント上のモデルをキーを押して切り替える小さなシーンを構築して、ロードされていない3番目のモデルを動的にロードします。完成した[プロジェクトはここにあります][3]。
 
-## 設定
+## セットアップ
 
-*プロジェクトは次のように設定されます*
+*プロジェクトのセットアップ*
 
-* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
-* The **C** render asset is set up *not* to be preloaded.
-* A render Entity is added to the scene and the model **A** is assigned to the render component.
-* A script component is added to the render Entity and a new script is created called `update_asset.js`.
+* 3つのモデルアセット **A** (文字Aのモデル)、 **B** (文字Bのモデル)、 **C** (文字Cのモデル)がアップロードされています。
+* **C**レンダーアセットは *プリロードされないよう* に設定されています。
+* シーンにレンダーエンティティが追加され、モデル**A**がRenderコンポーネントに割り当てられています。
+* レンダーエンティティにScriptコンポーネントが追加され、 `update_asset.js` という新しいスクリプトが作成されます。
 
- [A model][5], [B model][6], [C model][7]をダウンロードしてプロジェクトにアップロードします。ファイルがA.dae, B.dae, C.daeと命名されていることを確認します。これらはアセット名に影響します。
+[Aモデル][5]、[Bモデル][6]、[Cモデル][7]をダウンロードし、プロジェクトにアップロードしてください。ファイル名がA.dae、B.dae、C.daeになっていることを確認してください。アセット名に影響を与えるためです。
 
-## The AssetRegistry
+## アセットレジストリ
 
- [`pc.AssetRegistry`][1] は`this.app.assets`.としてすべてのスクリプトで使用できます。レジストリには、それらが読み込まれているかどうかに関わらず、プロジェクトに追加されたすべてのランタイムアセットの詳細が入力されます。Asset Registryを使用してアプリケーションに必要なアセットを見つけてください。
+[`pc.AssetRegistry`][1]はすべてのスクリプトで`this.app.assets`として利用できます。レジストリには、ロードされたかどうかに関係なく、プロジェクトに追加されたすべての実行時アセットの詳細が格納されます。アセットレジストリを使用して、アプリケーションで必要なアセットを検索します。
 
-このケースでは3つのスクリプトを、 `a`、`b`、`c`として定義してEditorでアセットに割り当てます。その後、スクリプトで自動的に使用可能になります。
+この場合、スクリプト属性`a`、`b`、`c`を宣言して、エディターでアセットに割り当てます。それらは自動的にスクリプトで利用可能になります。
 
-## プレロードされたアセットを使用
+## プリロードされたアセットの使用
 
 ```javascript
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
         if (this.entity.render.asset !== this.b.id) {
-            // update the render component to the new Render Asset
+            // 新しいRenderアセットにRenderコンポーネントを更新する
             console.log('Changed to B Render Asset');
             this.entity.render.asset = this.b;
         }
     } else {
         // ...
             if (this.entity.render.asset !== this.a.id) {
-                // restore original Render Asset
+                // オリジナルのRenderアセットに戻す
                 console.log('Changed to A Render Asset');
                 this.entity.render.asset = this.a;
             }
@@ -52,13 +52,13 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
     }
 ```
 
-The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
+このプロジェクトでは**A**と**B**のアセットが**プリロード**されています。つまり、ロード画面中にこれらのアセットがダウンロードされます。アプリケーションを開始してすぐに使用できるようになります。アセットがロードされると、ロードされたリソースには`asset.resource`という名前が付けられ、[Renderコンポーネントアセットプロパティ][8]にアセットを割り当てることができます。`asset.loaded`が`false`であれば、アセットはロードされていません。
 
-<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360px">
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360">
 
-So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
+ですから、`A`と`B`のモデルはプリロードされ、実行されるとすぐに使用できることがわかっています。このコードは、スペースバーが押されている場合は、Renderコンポーネントのレンダーアセットをリソースプロパティに変更します。この場合、`asset.resource`は`pc.Render`オブジェクトになります。各異なったアセットタイプ(オーディオ、テクスチャなど)について、`asset.resource`プロパティは関連するタイプになります。
 
-## 実行時にアセットを読み込む
+## ランタイムでアセットをロードする
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
@@ -70,16 +70,16 @@ if (app.keyboard.isPressed(pc.KEY_C)) {
     }
 } else {
     if (this.entity.render.asset !== this.a.id) {
-        // restore original Render Asset
+        // オリジナルのRenderアセットに戻す
         console.log('Changed to A Render Asset');
         this.entity.render.asset = this.a;
     }
 }
 ```
 
-The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
+**C** のレンダーアセットは *プリロード* されていないため、上記のコードでリソースがロードされてから使用するかどうかを確認しています。 `asset.loaded` がfalseであれば、リソースはロードされていません。 **C** のレンダーアセットがロードされている場合、 `this.c.resource` は `pc.Render` プロパティになり、 `asset.loaded` がtrueになります。そして私たちはそれを割り当てることができます。
 
-<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360px">
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360">
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -87,11 +87,11 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 }
 ```
 
-`L`キーを押すと、** C**モデルを読み込みます。これを行うには`this.app.assets.load()`にアンロードされたアセットを渡します。アセットがすでに読み込まれている場合、このメソッドは何も行いません。
+`L`を押すと、**C**モデルをロードします。これを行うには、ロードされていないアセットを`this.app.assets.load()`に渡します。アセットがすでにロードされている場合、このメソッドは何もしません。
 
-Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
+アセットがロードされたら、`asset.resource`は`pc.Render`インスタンスになり、`C`キーを押してRenderコンポーネントにアセットを割り当てることができます。
 
-## 完全なスクリプト
+## 完成したスクリプト
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');
@@ -122,7 +122,7 @@ UpdateAsset.prototype.update = function(dt) {
 
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
         if (this.entity.render.asset !== this.b.id) {
-            // update the render component to the new Render Asset
+            // Renderアセットを新しいRenderアセットに更新する
             console.log('Changed to B Render Asset');
             this.entity.render.asset = this.b;
         }
@@ -136,7 +136,7 @@ UpdateAsset.prototype.update = function(dt) {
             }
         } else {
             if (this.entity.render.asset !== this.a.id) {
-                // restore original Render Asset
+                // オリジナルのRenderアセットに戻す
                 console.log('Changed to A Render Asset');
                 this.entity.render.asset = this.a;
             }
@@ -149,43 +149,43 @@ UpdateAsset.prototype.update = function(dt) {
 };
 ```
 
-## アセットレジストリのイベント
+## AssetRegistryイベント
 
-この例では示していないのは、アセットが読み込まれたことを知る方法です。これを行うには、"load"イベントのような`pc.AssetRegistry`イベントを使用します。サンプルコードです：
+この例では、アセットがロードされたときにどのように知るかを示していません。これを行うには、 `pc.AssetRegistry` イベント、 `"load"` イベントなどを使用します。以下はサンプルコードです。
 
 ```javascript
-// find the asset by name in the registry
+// レジストリ内の名前でアセットを検索
 var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
+// loadイベントに一回だけのイベントリスナーを設定
 this.app.assets.once("load", function (asset) {
-    // asset.resource is now ready
+    // asset.resourceがロードされたときの処理
 }, this);
 ```
 
-`"load"`イベントは非常に幅広いです。読み込まれるすべてのアセットに発生するので、アセットが他の場所に読み込まれている場合、それがあなたのアセットか分かりません。代わりに、`"load:id"`イベントを使用して、イベントを絞り込むことができます。
+ `"load"` イベントはかなり広範囲です。ロードされたすべてのアセットに対して発生するため、他の場所でアセットがロードされた場合、これがあなたのアセットであるかどうかはわかりません。代わりに、 `"load:id"` イベントを使用してイベントを狭めることができます。
 
 ```javascript
-// find the asset in the registry
+// レジストリ内でアセットを検索
 var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
+// loadイベントに一回だけのイベントリスナーを設定
 this.app.assets.once("load:" + asset.id, function (asset) {
-    // asset.resource is now ready
+    // asset.resourceがロードされたときの処理
 }, this);
 ```
 
-上記のイベントは、その特定のアセットのためにのみ稼動します。とても便利です。
+上記のイベントは、特定のアセットに対してのみ発生します。はるかに便利です。
 
-最後に、良く発生する一つの特定のコーディングパターンがあります。それを行うための便利な方法を提供しています。
+最後に、しばしば発生する1つの特定のコーディングパターンがあります。実際には、非常に頻繁に発生するため、あなたがためらわずにそれを行う便利な方法を提供しています。
 
 ```javascript
 var asset = this.app.assets.find("A");
 if (!asset.loaded) {
     this.app.assets.once("load:" + asset.id, function (asset) {
-        // do something with asset.resource
+        // asset.resourceを使用する処理
     });
     this.app.assets.load(asset);
 } else {
-    // do something with asset.resource
+    // asset.resourceを使用する処理
 }
 ```
 
@@ -194,7 +194,7 @@ if (!asset.loaded) {
 ```javascript
 var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
-    // do something with asset.resource
+    // asset.resourceを使用する処理
 });
 this.app.assets.load(asset);
 ```

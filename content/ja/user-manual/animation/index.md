@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 15
 ---
 
-PlayCanvas provides a powerful state-based animation system which can be used to animate character models and other arbitrary scene object models. Users can work with any of their .FBX animation assets. These can be organized using animation state machines to easily control the animated behavior of scene models at runtime.
+PlayCanvasは、キャラクターモデルや他の任意のシーンオブジェクトモデルのアニメーションを作成するために使用できる、強力な状態ベースのアニメーションシステムを提供しています。ユーザーは、.FBXアニメーションアセットを使用できます。これらはアニメーションステートマシンを使用して整理し、シーンモデルのアニメーション動作を実行時に簡単に制御できます。
 
-# System Overview
+# システム概要
 
-The animation system touches on three main areas of the PlayCanvas platform. This section will walk through how these areas can be used together to create complex animation behavior for your models. The following sections of the animation user manual then will explore each area in more detail.
+アニメーションシステムは、PlayCanvasプラットフォームの3つの主要な領域に関連しています。このセクションでは、これらの領域を一緒に使用して、モデルの複雑なアニメーション動作を作成する方法について説明します。次のアニメーションユーザーマニュアルのセクションでは、各領域を詳しく説明します。
 
-### Animating in PlayCanvas
+### PlayCanvasでのアニメーション作成
 
-In order to begin animating a PlayCanvas entity, you must have a set of animation assets available and imported into your PlayCanvas project. These animation assets will drive the animation of a given model you wish to animate. For example a humanoid character may have a set of animations; Idle, Walk, Jump.
+PlayCanvasエンティティをアニメーション化するには、使用可能なアニメーションアセットのセットが必要で、PlayCanvasプロジェクトにインポートする必要があります。これらのアニメーションアセットは、アニメーションをアニメートするモデルのアニメーションを駆動します。たとえば、人型キャラクターは、Idle、Walk、Jumpのセットのアニメーションを持つ場合があります。
 
 ![Animations][1]
 
-These three animations can be organized into a single animation system to create a simple locomotion system for that character. The way this is achieved in PlayCanvas is through the use of an animstategraph asset. These assets can be thought of as state machines for an entity’s animation behavior. With each state in this asset relating to an animation, the state machine can be set up to define the complex animation behavior of an entity’s model. This includes defining when the system should stop one animation and start another and how the transition between these animations should be blended.
+これらの3つのアニメーションを単一のアニメーションシステムに編成して、そのキャラクターの簡単な移動システムを作成できます。PlayCanvasでこれを実現する方法は、Animstategraphアセットを使用することです。このアセットは、エンティティのアニメーション動作の状態マシンと考えることができます。このアセットの各状態がアニメーションに関連しているため、状態マシンは、エンティティのモデルの複雑なアニメーション動作を定義するために設定できます。これには、システムが1つのアニメーションを停止して別のアニメーションを開始するタイミングや、これらのアニメーションの遷移をどのようにブレンドするかの定義が含まれます。
 
-The anim component is then used to assign an animstategraph asset to a particular entity in your scene. Once an entity has been assigned an animstategraph asset, each state in the graph can have an actual animation asset assigned to it. Once all states have been assigned animations, the anim component will become playable. At this point the animation system is complete and the defined animation behavior will be viewable in the PlayCanvas launcher.
+次に、Animコンポーネントを使用して、特定のエンティティにAnimstategraphアセットを割り当てます。エンティティにAnimstategraphアセットが割り当てられると、グラフの各状態に実際のアニメーションアセットが割り当てられる場合があります。すべての状態にアニメーションが割り当てられたら、Animコンポーネントは再生可能になります。この時点で、アニメーションシステムが完了し、定義されたアニメーション動作がPlayCanvasランチャーで表示されます。
 
 [1]: /images/user-manual/anim/animations.gif

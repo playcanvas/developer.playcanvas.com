@@ -1,29 +1,29 @@
 ---
-title: エンティティの選択
+title: エンティティピッキング
 layout: tutorial-page.hbs
 tags: raycast,basics,physics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg"
 ---
 
-Collision Picking - click to select a shape
+Collision Picking - クリックしてシェイプを選択する
 
 <iframe loading="lazy" src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking"></iframe>
 
 ---
 
-Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
+Frame Buffer Picking - クリックしてグレーのシェイプを選択する。赤い形状はピックできないように設定されています。
 
 <iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
 
 ---
 
-[チュートリアルプロジェクト][1]のEditorからお試しください。
+[tutorial project][1]のエディタからお試しください。
 
-このチュートリアルでは、3Dシーンからエンティティを選択する方法（マウスのクリックなど）を説明します。
+このチュートリアルでは、マウスのクリックなどのアクションで3Dシーン内のエンティティを選択する方法について2つの方法を説明します。
 
-## コリジョンの選択
+## コリジョンピッキング
 
-コリジョンベースのピッキングは、選ぶする必要がある各エンティティに図形を追加するために、コリジョンコンポーネントを使用します。その後、リジッドボディシステムで[raycastFirst()][2]メソッドを使用して、マウスのクリック位置から画面に光線を発射し、それがコリジョンコンポーネントに当たるかどうかを確認します。当たる場合、そのエンティティは「選択」されています
+コリジョンベースのピックでは、Collisionコンポーネントを使用してピックする必要のある各エンティティにシェイプを追加します。それからマウスクリックの位置からスクリーンに向けてレイを発生させ、それがCollisionコンポーネントに当たるかどうかを見ます。当たった場合、そのエンティティが「選択されます」。
 
 ```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
@@ -49,20 +49,20 @@ PickerRaycast.prototype.onSelect = function (e) {
 };
 ```
 
-## フレームバッファの選択
+## フレームバッファーピッキング
 
-Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method.
+フレームバッファーベースのピックは[pc.Picker][3]を使用してシーンを内部バッファーにレンダリングします。マウスがクリックされた場合、マウスの位置のバッファーの色が使用され、どのメッシュインスタンスが選択されたかが決定されます。これは、コリジョンベースの方法と比べていくつかの利点と欠点があります。
 
-Advantages include:
+利点:
 
-* Able to use a rectangle to pick many items in a scene at once
-* Doesn't require the physics library to be included which reduces preload time.
+* 小さな長方形を使用して、同時に多くのアイテムをピックすることができます。
+* プリロード時間を短縮することができるため、物理ライブラリを含める必要がありません。
 
-The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly on mobile and GPU heavy applications.
+欠点は、これが`readPixels`メソッドを使用しているため、グラフィックパイプラインを停止します。これは、特にモバイルやGPU重いアプリケーションにとって深刻なレンダリング性能の影響を与える可能性があります。
 
-You are able modify the size of the buffer to be smaller to improve the performance at the cost of accuracy. In the example script below, the attribute `pickAreaScale` is used to do this where the lower the number, the faster and less accurate the picker becomes.
+バッファーのサイズを小さくして、パフォーマンスを向上させることができ、コストをかけずに精度を低下させます。下の例のスクリプトでは、属性`pickAreaScale`を使用して、数値が小さいほどピッカーが高速になりますが、精度が低下するため、最も正確で低速な1よりも0.01が最適です。0.25がデフォルトです。
 
-It's also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
+また、`layerNames`配列を使用してピックするレイヤーを制限することもできます。ピックするレイヤーの名前を追加することができます。これにより、必要なものだけを内部バッファーにレンダリングしてパフォーマンスを向上させることができます。
 
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');

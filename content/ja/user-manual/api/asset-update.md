@@ -1,5 +1,5 @@
 ---
-title: Assets - Update asset
+title: アセット - Update asset
 layout: usermanual-page.hbs
 position: 10
 ---
@@ -12,13 +12,13 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 ## 説明
 
-既存のアセットのファイルをアップデートします。
+既存のアセットのファイルを更新します。
 
 <div class="alert alert-info">
-    This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+    現在、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、`json` のタイプのアセットの更新のみをサポートしています。
 </div>
 
-*他のREST API エンドポイントとは異なり、Update Assetエンドポイントはデータが`multipart/form-data`に送信されることを予期します。**
+**他のREST APIエンドポイントとは異なり、アップデートアセットエンドポイントはデータを `multipart/form-data` で送信することが必要です。**
 
 ## 例
 
@@ -26,15 +26,15 @@ PUT https://playcanvas.com/api/assets/:assetId
 curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
-<div class="parameter"><span class="param">file: file</span><p>Data to update asset file with</p></div>
-<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
+<div class="parameter"><span class="param">branchId: 文字列</span><p>ブランチのID</p></div> 
+  <div class="parameter"><span class="param">file: ファイル</span><p>アセットファイルを更新するデータ</p></div> 
+  <div class="parameter"><span class="param">pow2 [オプション]: 真偽値</span><p>テクスチャにのみ使用され、デフォルトは falseです。テクスチャを2の累乗のピクセルにリサイズします(true | false)</p></div> 
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
 Status: 200
@@ -57,7 +57,7 @@ Status: 200
     "tags": list of strings,
     "preload": bool,
     "data": {
-        ... asset data
+        ... アセットデータ
     },
     "file": {
         "hash": string,

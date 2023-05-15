@@ -1,21 +1,21 @@
 ---
-title: Window Layout
+title: ウィンドウの配置
 layout: shader-editor-page.hbs
 position: 1.2
 ---
 
-Shader Editor comprises a number of sub-windows or panes. The panes are highlighted below and a brief description of each follows:
+シェーダーエディターはいくつかのサブウィンドウまたはパネルで構成されています。以下でパネルについてハイライトし、それぞれの簡単な説明をします。
 
-![window-layout][1]
+![ウィンドウの配置][1]
 
-| Pane | |
+| パネル | |
 |---|---|
-| [Info Pane][2] | Shows information for the UI element under the mouse cursor. |
-| [Nodes Pane][3] | Lists the built-in nodes available when constructing graphs. |
-| [Inspector Pane][4] | Shows details of the currently selected item. |
-| [Assets Pane][5] | Is where the project’s graphs, materials and textures appear. |
-| [Graph Editor][6] | Shows the selected graph and is where nodes and edges are edited. |
-| [Preview Pane][7] | Displays a preview of the currently selected graph or material. |
+| [インフォパネル][2] | マウスカーソルのあるUI要素の情報を表示します。 |
+| [ノードパネル][3] | グラフ作成時に使用可能な組み込みノードを一覧表示します。 |
+| [インスペクターパネル][4] | 現在選択されているアイテムの詳細を表示します。 |
+| [アセットパネル][5] | プロジェクトのグラフ、マテリアル、テクスチャが表示される場所です。 |
+| [グラフエディター][6] | 選択したグラフが表示され、ノードやエッジを編集できます。 |
+| [プレビューパネル][7] | 現在選択されているグラフやマテリアルのプレビューを表示します。 |
 
 [1]: /images/shader-editor/window-layout.png
 [2]: /shader-editor/window-layout/info-pane

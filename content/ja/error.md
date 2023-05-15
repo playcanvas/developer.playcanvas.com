@@ -1,5 +1,5 @@
 ---
-title: 問題が発生したら
+title: Oh No!
 layout: error.hbs
 ---
 

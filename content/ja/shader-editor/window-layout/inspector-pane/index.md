@@ -1,18 +1,18 @@
 ---
-title: Inspector Pane
+title: インスペクターパネル
 layout: shader-editor-page.hbs
 position: 3
 ---
 
-The Inspector Pane shows details of the currently selected item.
+インスペクターパネルでは、現在選択されているアイテムの詳細が表示されます。
 
-The information shown depends on the type of asset selected.
+表示される情報は、選択されたアセットの種類によって異なります。
 
-There are inspectors for the following:
-- [Graphs][1]
-- [Nodes][2]
-- [Materials][3]
-- [Textures][4]
+次のインスペクターがあります:
+- [グラフ][1]
+- [ノード][2]
+- [マテリアル][3]
+- [テクスチャ][4]
 
 [1]: /shader-editor/window-layout/inspector-pane/graph-inspector
 [2]: /shader-editor/window-layout/inspector-pane/node-inspector

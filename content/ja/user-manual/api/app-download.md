@@ -1,5 +1,5 @@
 ---
-title: Apps - appのダウンロード
+title: アプリ - Download app
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -12,7 +12,7 @@ POST https://playcanvas.com/api/apps/download
 
 ## 説明
 
-This will allow you to download an app which you can self host on your own server. The request will start an export job and the job details will be returned in the response. You can [poll the job by id][2] until its status is either 'complete' or 'error'. When the job is done, its data will contain a URL to download the exported app.
+自分自身のサーバーでセルフホストすることができるアプリをダウンロードできます。リクエストによりエクスポートジョブが開始され、ジョブの詳細がレスポンスで返されます。[idを指定してジョブをポール][2]して、そのステータスが「完了」または「エラー」になるまで待ちます。ジョブが完了すると、そのデータにはエクスポートされたアプリをダウンロードするためのURLが含まれます。
 
 ## 例
 
@@ -20,27 +20,27 @@ This will allow you to download an app which you can self host on your own serve
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" -H "Content-Type: application/json" -X POST -d '{"project_id": 9999999, "scenes": [9999999], "name": "My App"}' "https://playcanvas.com/api/apps/download"
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
-<div class="parameter"><span class="param">name</span><p>The name of the app. Must be less than 1000 characters</p></div>
-<div class="parameter"><span class="param">scenes</span><p>A list of scene ids to be included in the app. When you specify scenes then the first scene in the list will be used as the initial scene of the application.</p></div>
-<div class="parameter"><span class="param">branch_id [optional]</span><p>The id of the branch. If no id is specified the main branch will be used.</p></div>
-<div class="parameter"><span class="param">description [optional]</span><p>The description of the app. Must be less than 10,000 characters.</p></div>
-<div class="parameter"><span class="param">version [optional]</span><p>The version of the app. Can be a string up to 20 characters.</p></div>
-<div class="parameter"><span class="param">release_notes [optional]</span><p>Release notes for the app. Can be a string up to 10,000 characters.</p></div>
-<div class="parameter"><span class="param">scripts_concatenate [optional]</span><p>Boolean. Set it to true if you want scripts to be concatenated.</p></div>
-<div class="parameter"><span class="param">scripts_minify [optional]</span><p>Boolean. Set it to true if you want scripts to be minified. Defaults to true.</p></div>
-<div class="parameter"><span class="param">scripts_sourcemaps [optional]</span><p>Boolean. Set it to true if you want script sourcemaps to be generated. Defaults to false.</p></div>
-<div class="parameter"><span class="param">optimize_scene_format [optional]</span><p>Boolean. Set it to true if you want scenes to be in an optimized format (see <a href="/user-manual/optimization/optimizing-scene-format">Optimize Scene Format</a> for more information)</p></div>
-<div class="parameter"><span class="param">engine_version [optional]</span><p>String. Set it to a Engine version string (<a href="https://github.com/playcanvas/engine/releases" target="_blank">full list of releases</a>) if a specific version is needed for the app.</p></div>
+<div class="parameter"><span class="param">project_id</span><p>プロジェクトのID。</p></div>
+<div class="parameter"><span class="param">name</span><p>アプリの名前。1000文字未満でなければなりません。</p></div>
+<div class="parameter"><span class="param">scenes</span><p>アプリに含めるシーンIDの一覧。シーンを指定する場合、最初のシーンがアプリケーションの初期シーンとして使用されます。</p></div>
+<div class="parameter"><span class="param">branch_id [オプション]</span><p>ブランチのID。IDが指定されていない場合は、メインブランチが使用されます。</p></div>
+<div class="parameter"><span class="param">description [オプション]</span><p>アプリの説明。10,000文字未満でなければなりません。</p></div>
+<div class="parameter"><span class="param">version [オプション]</span><p>アプリのバージョン。20文字までの文字列が使用できます。</p></div>
+<div class="parameter"><span class="param">release_notes [オプション]</span><p>アプリのリリースノート。10,000文字未満の文字列が使用できます。</p></div>
+<div class="parameter"><span class="param">scripts_concatenate [オプション]</span><p>ブール値。スクリプトを連結する場合はtrueに設定します。</p></div>
+<div class="parameter"><span class="param">scripts_minify [オプション]</span><p>ブール値。スクリプトを圧縮する場合はtrueに設定します。デフォルトはtrueです。</p></div>
+<div class="parameter"><span class="param">scripts_sourcemaps [オプション]</span><p>ブール値。スクリプトのソースマップを生成する場合はtrueに設定します。デフォルトはfalseです。</p></div>
+<div class="parameter"><span class="param">optimize_scene_format [オプション]</span><p>ブール値。シーンを最適化された形式で表示する場合はtrueに設定します(詳細は<a href="/user-manual/optimization/optimizing-scene-format">シーン形式の最適化</a>を参照)。</p></div>
+<div class="parameter"><span class="param">engine_version [オプション]</span><p>文字列。アプリ用に特定のバージョンが必要な場合はエンジンバージョンの文字列(<a href="https://github.com/playcanvas/engine/releases" target="_blank">全リリースのリスト</a>)を設定します。</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
-Status: 201 Created
+ステータス:201 Created
 ```
 
 ```json
@@ -69,12 +69,12 @@ Status: 201 Created
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>非認証</p></div>
-<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
-<div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
-<div class="parameter"><span class="param">404</span><p>所有者が見つかりません</p></div>
-<div class="parameter"><span class="param">404</span><p>シーンが見つかりません</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
+<div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
+<div class="parameter"><span class="param">404</span><p>Scene not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限

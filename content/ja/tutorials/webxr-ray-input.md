@@ -1,5 +1,5 @@
 ---
-title: WebXR UI Interaction
+title: WebXR UI インタラクション
 layout: tutorial-page.hbs
 tags: vr, ar, input, ui
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg"
@@ -7,18 +7,18 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460
 
 <iframe loading="lazy" src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="xr-spatial-tracking"></iframe>
 
-*Click the VR/AR button if you have a VR/AR compatible device/headset.*
+*VR/AR対応のデバイスやヘッドセットがある場合は、VR/ARボタンをクリックしてください。*
 
-This is a WebXR experience that provides interaction between UI and XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Oculus Browser, Google CardboardTM, Google DaydreamTM, Samsung Gear VRTM and other VR/AR headsets.
+これはWebXR体験で、レーザーポインター、注視、タッチスクリーンなどのXR入力ソースとUIとの相互作用を提供します。デスクトップ、モバイル、Oculus Browser、Google CardboardTM、Google DaydreamTM、Samsung Gear VRTM、その他のVR/ARヘッドセットに対応しています。
 
-Let's have a look at the source of the [tutorial project][1].
+[チュートリアル][1]プロジェクトのソースを見てみましょう。
 
-## Entering VR/AR
+## VR/ARへの入り方
 
-Every WebXR experience on PlayCanvas will always have these two elements in some form:
+PlayCanvas上のすべてのWebXR体験には、次の2つの要素が必ず何らかの形であります。
 
-* Adding a user interaction for the user to enter VR/AR
-* Enabling VR/AR on the camera
+* ユーザーがVR/ARに入るためのユーザーインタラクションを追加する
+* カメラでVR/ARを有効にする
 
 ```javascript
 button.element.on('click', function() {
@@ -30,28 +30,27 @@ button.element.on('click', function() {
 });
 ```
 
-In this project, we have `xr.js` which is added to the Root entity. It manages VR and AR UI buttons, reacts to XR availability changes and XR session state changes.
+このプロジェクトでは、ルートエンティティに追加される `xr.js` があります。これは、VRとARのUIボタンを管理し、XR可用性の変更やXRセッション状態の変更に反応します。
 
-To read more about the direct PlayCanvas API for WebXR, please refer to the [User Manual][2].
+WebXRのPlayCanvas APIの詳細については、[ユーザーマニュアル][2]を参照してください。
 
+## XR入力タイプ
 
-## XR Input Types
+入力デバイスの精度レベルは、次のグループに分けることができます(DOF == Degrees of Freedom)。
 
-入力デバイスの忠実度のレベルは、次のグループ(DOF == Degrees of Freedom)に分けられます。
+* **Gaze** - 位置と姿勢が無い、ヘッドマウントディスプレイの方向に基づくデフォルトタイプ。つまり、常にユーザーが向いている方向に向かっています。これには、Google CardboardTMやSamsung Gear VRTMなどのモバイルベースのVRデバイスが含まれます。
+* **Screen** - ARで可能なタッチベースの入力ソース。例えば、タッチスクリーンを搭載したモバイルデバイス。
+* **Tracked Pointer** - 追跡された回転と、任意に追跡された空間内の位置を持つ入力ソース。これは通常、握ることができるデバイスであり、手に関連付けられる、コントローラーまたは追跡された手自体としています。これには、Google DaydreamTM、Gear VRTM Controller、Oculus TouchTM、ViveTMコントローラーなどがあります。
 
-* **Gaze** - The default type which has no position and orientation of its own, and is based on the orientation of the head mounted display. Simply put - it is always facing forwards in the direction the user is facing. These include mobile-based VR devices such as Google CardboardTM and Samsung Gear VRTM.
-* **Screen** - Touch based input source, which is possible in AR. For example, on mobile devices with touch screens.
-* **Tracked Pointer** - Input source which has a tracked rotation and an optionally tracked position in space. This is usually a grippable device, and is associated with hands, either as hand controllers or tracked hands itself. This can be: Google DaydreamTM, Gear VRTM Controller, Oculus TouchTM, ViveTM controllers and many others.
+すべての入力ソースには、開始点を示すオリジンを持つレイと、指し示す向きを持つレイがあります。PlayCanvasにおけるWebXR入力ソースの実装は、開発者が追加の作業なしにすべての入力ソースタイプをサポートします。入力ソースが握れる場合、提供された位置と回転に基づいてそのモデルをレンダリングすることができます。
 
-Every input source has a ray with an origin where it starts and a direction in which it is pointing. WebXR input source implementation in PlayCanvas supports all input source types without any extra work from a developer. If an input source is grippable, then we can render its model based on the provided position and rotation.
+### 入力ソース
 
-### Input Sources
-
-The system for the tracked input sources consists of two files:
+トラッキングされた入力ソースのシステムは、2つのファイルで構成されています。
 
 #### `controllers.js`
 
-This tracks added input sources using [XrInput][4] and makes instances of controller entities for them. For example:
+これは、[XrInput][4]を使用して追加された入力ソースを追跡し、それらのためのコントローラーエンティティのインスタンスを作成します。例:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
@@ -61,9 +60,9 @@ app.xr.input.on('add', function (inputSource) {
 
 #### `controller.js`
 
-This is attached to each entity that represents an input source and has the original [XrInputSource][5] associated with it. When an input source can be gripped, it will enable the child entity for the visual model for a controller.
+これは、それに関連付けられている元の[XrInputSource][5]を持つ各エンティティにアタッチされ、入力ソース自体と関連付けられています。入力ソースが握れる場合、コントローラーのビジュアルモデルの子エンティティを有効にします。
 
-On each update, it will position and rotate the entity based on the input source position and rotation:
+各更新では、入力ソースの位置と回転に基づいてエンティティを位置決めし、回転します。
 
 ```javascript
 if (inputSource.grip) {
@@ -74,11 +73,11 @@ if (inputSource.grip) {
 ```
 ## UI
 
-3D UI is created using [Button][6] and [Element][7] components. Using combination of both, we can create interactive buttons in 3D space.
+3D UIは、[Button][6]と[Element][7]コンポーネントを使用して作成されます。両方を組み合わせることで、3D空間でインタラクティブなボタンを作成することができます。
 
-Creating a 3D UI for an XR environment is exactly the same as creating a 3D UI for mouse/touch interaction in a non-XR environment. Read more on creating [User Interfaces][3].
+XR環境のための3D UIの作成方法は、ノンXR環境でのマウス/タッチのインタラクションの3D UIの作成方法とまったく同じです。[ユーザーインターフェース][3]の作成については、もっと読むことができます。
 
-By default, each XrInputSource has an `elementInput` property enabled. This means it will interact with Button components just like mouse or touch input, but using its associated 3D ray. Each input source has a ray that has an [origin][8] and a [direction][9]. In this tutorial, we visualize an input source's ray:
+デフォルトでは、各XrInputSourceには`elementInput`プロパティが有効になっています。これは、関連付けられた3Dレイを使用して、マウスまたはタッチ入力と同様にButtonコンポーネントと相互作用することを意味します。各入力ソースには、[origin][8]と[direction][9]を持つレイがあります。このチュートリアルでは、入力ソースのレイを可視化しています。
 
 ```javascript
 // set starting point of ray
@@ -90,9 +89,9 @@ vecB.scale(1000).add(vecA);
 app.renderLine(vecA, vecB, color);
 ```
 
-## UI Interaction
+## UIインタラクション
 
-In this tutorial, we have two types of buttons: Rotate (button-rotate.js) and Color (button-color.js) buttons. When rotate button is [clicked][10], it will set the rotation speed of a cube:
+このチュートリアルでは、Rotate(button-rotate.js)とColor(button-color.js)の2種類のボタンがあります。回転ボタンを[クリック][10]すると、キューブの回転速度が設定されます。
 
 ```javascript
 entity.button.on('click', function() {
@@ -100,9 +99,9 @@ entity.button.on('click', function() {
 });
 ```
 
-When the color button is clicked, we change the diffuse color of each mesh instance of a cube model.
+色のボタンをクリックすると、キューブモデルの各メッシュインスタンスの拡散色が変更されます。
 
-This UI interaction is agnostic to input source: either it originates from VR handheld devices; gaze input of mobile VR; on-screen touch in an AR environment; as well as classic mouse and touch. So creating truly multi-platform applications and testing is easy.
+このUIインタラクションは、入力ソースに対して不偏です。つまり、VRのハンドヘルドデバイス、モバイルVRのGaze入力、AR環境の画面上のタッチ、そしてクラシックなマウスとタッチのいずれからでも発生します。したがって、真にマルチプラットフォームアプリケーションを作成し、テストすることが容易です。
 
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
 [2]: /user-manual/xr/using-webxr/

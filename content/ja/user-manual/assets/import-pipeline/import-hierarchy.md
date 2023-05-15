@@ -1,52 +1,60 @@
 ---
-title: Import Hierarchy
+title: ヒエラルキーを含むモデルのインポート
 layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas supports importing models with their meshes as a hierarchy of entities in the scene. This allows you to edit the different meshes directly in the Editor. Components can be added, attach other entities, move/rotate/scale entities in the hierarchy etc.
+PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュを持つモデルをインポートすることができます。これにより、エディタで異なるメッシュを直接編集することができます。コンポーネントを追加したり、他のエンティティをアタッチしたり、エンティティ階層内のエンティティを移動/回転/スケールしたりすることができます。
 
 ![Edit model hierarchy in the Editor][edit_hierarchy_gif]
 
-## How to enable
+## 有効化の方法
 
-Open the 'Project Settings'
+<div class="alert alert-info">
+    新しいプロジェクトでは、これが既定で有効になっています。
+</div>
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480px">
+「プロジェクト設定」を開きます。
 
-Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480">
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360px">
+'Asset Tasks' までスクロールし、 'Import Hierarchy' を有効にします。
 
-## Importing models
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360">
 
-Drag the model file into the 'Assets Panel':
+## モデルのインポート
+
+最初のモデルとアニメーションのインポートについての完全なチュートリアルは[こちら][first_model_animation_import]で見つけることができます。
+
+概要として、モデルファイルを 'アセットパネル' にドラッグします。
+
 ![Drag Model into Assets Panel][import_model_gif]
 
-The following assets will be created when imported:
+インポート時に次のアセットが作成されます。
+
 ![Created Assets][created_assets_img]
 
-| Asset Type | 説明 |
+| アセットタイプ | 説明 |
 |------------|-------------|
-| **[Materials][material_asset]** | Materials used by the imported model, mapped to the mesh instance. |
-| **[Textures][texture_asset]** | Embedded textures in the model file (if any). These will automatically be mapped to the associated materials. |
-| **[Template][template_asset]** | The template stores the scene hierarchy of the model. Create an instance of the template to bring the model into the scene. |
-| **Container** | The GLB that stores all the meshes of the model. |
-| **Render** | Render assets reference a mesh in the container asset and are used by the [Render Component][render_component] to render the mesh in the scene. They can also be used with the [Collision Component][collision_component] as a mesh for physics. |
+| **[マテリアル][material_asset]** | インポートされたモデルで使用される、メッシュインスタンスにマップされたマテリアル。 |
+| **[テクスチャ][texture_asset]** | モデルファイルに埋め込まれたテクスチャ(ある場合)。これらは、関連するマテリアルに自動的にマップされます。 |
+| **[テンプレート][template_asset]** | モデルのシーン階層を保存するテンプレート。テンプレートのインスタンスを作成して、モデルをシーンに持ち込みます。 |
+| **コンテナ** | モデルのすべてのメッシュを保存するGLB。 |
+| **Render** | Renderアセットは、コンテナアセット内のメッシュを参照し、[Renderコンポーネント][render_component]でシーン内のメッシュをレンダリングするために使用されます。また、[Collisionコンポーネント][collision_component]として、物理用のメッシュとしても使用できます。 |
 
-## Updating models
+## モデルの更新
 
-As the hierarchy is created as part of a template, when a model is updated it may affect the template instances in the scenes.
+階層はテンプレートの一部として作成されるため、モデルが更新されると、それはシーンのテンプレートインスタンスに影響を与える可能性があります。
 
-Added components to entities in the template will be kept during the update unless the mesh instance that the entity represents no longer exists in the updated model.
+テンプレート内のエンティティに追加されたコンポーネントは、更新中にメッシュインスタンスがもう存在しない場合を除いて保持されます。
 
-The exception to this is if a script component is added to an entity in the template and the mesh instance it represents is no longer part of the updated model, it will be moved under the root entity in the template so there is no data loss. Any entities that were under it before the update will be kept as well.
+ただし、Scriptコンポーネントがテンプレート内のエンティティに追加され、それが更新されたモデルの一部ではなくなった場合、データの損失がないように、そのエンティティはテンプレート内のルート エンティティの下に移動されます。アップデート前にその下にあったエンティティも保持されます。
 
-How the Editor decides what is a new or removed mesh instance is done by the following:
+エディターが新しいメッシュインスタンス、または削除されたメッシュインスタンスをどのように判断するかは、以下のとおりです。
 
-- If in the update, a mesh instance's name and its parent mesh's instance name matches an existing mesh instance and its parent, they are assumed to be the same mesh instance in the hierarchy and is updated.
-- If in the update, a mesh instance's name does not exist, it's assumed to be a new mesh instance and a new entity is added to the template.
-- If in the update, an existing entity of the template does not have a matching mesh instance given the rules above, it's assumed that this mesh instance has been removed and the entity will be removed from the template. The exception being mentioned above, if there was a script component added to it on the template, those entities are preserved on the root. If there were no script components added, those are deleted from the template.
+- アップデート中に、メッシュインスタンスの名前とその親メッシュのインスタンスの名前が既存のメッシュインスタンスとその親と一致している場合、それらは階層内の同じメッシュインスタンスと見なされ、更新されます。
+- アップデート中に、メッシュインスタンスの名前が存在しない場合、新しいエンティティがテンプレートに追加されたものと見なされます。
+- アップデート中に、ルールに従って与えられた対応するメッシュインスタンスが存在しない場合、そのメッシュインスタンスが削除されたと見なされ、エンティティがテンプレートから削除されます。ただし、上述した例外があり、テンプレートにScriptコンポーネントが追加された場合、そのエンティティはルートに保持されます。Scriptコンポーネントが追加されなかった場合は、テンプレートから削除されます。
 
 [edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
 [import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif
@@ -56,3 +64,4 @@ How the Editor decides what is a new or removed mesh instance is done by the fol
 [template_asset]: /user-manual/templates/
 [render_component]: /api/pc.RenderComponent.html
 [collision_component]: /api/pc.CollisionComponent.html
+[first_model_animation_import]: /tutorials/importing-first-model-and-animation/

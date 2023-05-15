@@ -4,8 +4,8 @@ layout: usermanual-page.hbs
 position: 14
 ---
 
-A Template (also called a Prefab) is an Asset that contains a piece of an Entity hierarchy. It has a root Entity and can have any number of children. A Template is a reusable Entity that you can instantiate dynamically at runtime or place multiple instances of it in your Scene. When you change the Template Asset all instances of the Template will also change.
+テンプレート（またはプレハブ）は、エンティティの階層の一部を含むアセットです。ルートエンティティを持ち、任意の数の子エンティティを持つことができます。テンプレートは再利用可能なエンティティであり、実行時に動的にインスタンス化したり、シーン内に複数のインスタンスを配置したりすることができます。テンプレートアセットを変更すると、テンプレートのすべてのインスタンスも変更されます。
 
-For more information about working with Templates see [here][1].
+テンプレートの使用方法については、[こちら][1]を参照してください。
 
 [1]: /user-manual/templates/

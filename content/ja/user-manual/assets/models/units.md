@@ -1,24 +1,24 @@
 ---
-title: 単位
+title: 3Dモデルの大きさの単位
 layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvasのシーンは、基本的に1単位を1メートルとして扱います。
+一般的に、PlayCanvasのシーンでは1単位を1メートルとして扱います。
 
-PlayCanvasでアートワークを制作する際、希望するスケールで行うことが重要です。使用しているモデリングアプリケーションでシーンの作業単位を確認します。希望の作業単位を選択しますが、適切であることを確認してください。たとえば、1メートル角のキューブを作成する場合、作業単位をメートルに設定し、1x1x1のキューブを作成することができます。また、センチメートル単位で100x100x100のキューブを作成することも可能です。どちらのシーンもFBXにエクスポートしてPlayCanvasにインポートすると、1x1x1のキューブになります。
+PlayCanvasのアートワークを制作する際には、希望するスケールに合わせて作業を行うことが重要です。そのためには、選択したモデリングアプリケーションでシーンの作業単位を確認する必要があります。作業単位は自由に選ぶことができますが、それに従うことが重要です。例えば、1メートルの寸法を持つ立方体を作成するためには、作業単位をメートルに設定し、1x1x1の立方体を作成することができます。また、作業単位をセンチメートルに設定し、100x100x100の立方体を作成することもできます。どちらのシーンもFBXにエクスポートし、PlayCanvasにインポートすると、1x1x1の立方体が表示されます。
 
 ### Autodesk 3D Studio Max
 
-3D Studio Maxで作業単位を設定または確認するには、Units Setupウィンドウを開き、System Unit Setupボタンをクリックします：
+3D Studio Maxで作業単位を確認または設定するには、Units Setupダイアログを開き、System Unit Setupボタンをクリックします。
 
-![3DS Max の単位][1]
+![3DS Max units][1]
 
 ### Autodesk Maya
 
-Mayaで作業単位を設定または確認するには、Preferences ウィンドウを開きます：
+Mayaで作業単位を確認または設定するには、Preferencesダイアログを開いてください。
 
-![Maya の単位][2]
+![Maya units][2]
 
 [1]: /images/user-manual/assets/models/units/max-units.png
 [2]: /images/user-manual/assets/models/units/maya-units.png

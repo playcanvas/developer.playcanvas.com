@@ -1,5 +1,5 @@
 ---
-title: ユーザインターフェイス - ボタン
+title: UI - ボタン
 layout: tutorial-page.hbs
 tags: ui
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501973/ED1B35-image-75.jpg"
@@ -7,109 +7,109 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 <iframe loading="lazy" src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons"></iframe>
 
-*Simple buttons using Element and Button components. See the [full scene][1].*
+*ElementとButtonコンポーネントを使用したシンプルなボタン。[完全なシーン][1]を参照してください。*
 
-アプリケーションのUIを構築する際、通常はボタンを作成する必要があります。このチュートリアルでは、組み込みの[Element][2]を使用してそれを実現する方法を示します。
+アプリケーションのユーザーインターフェースを構築する場合、ほとんどの場合、ボタンを作成する必要があります。このチュートリアルでは、組み込みの[要素][2]を使用してそれを達成する方法を示します。
 
-この[シーン][1]では、階層内で次のような2D[Screen][3]を作成しました。
+この[シーン][1]では、次のように階層が設定された2D [スクリーン][3]を作成しました。
 
-![階層][4]
+![Hierarchy][4]
 
-## スクリーン設定
+## スクリーンの設定
 
-スクリーンは次のように設定されています：
+私たちのスクリーンは次のように設定されています。
 
-![スクリーン][5]
+![Screen][5]
 
-2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
+2Dスクリーンなので、Screen Spaceにチェックを入れました。Reference Resolutionは、対象としている解像度です。この場合、1080×1920です。解像度の変更に応じて画面を適応するようにScale ModeにBlendを選択し、Scale Blendを1に設定します。
 
-画面には、上部に表示されるロゴのImage Elementや'SELECT QUALITY'のテキストを示すText Elementと3つのボタンなどのさまざまな子があります。
+私たちのスクリーンには、最上部に表示されるロゴのためのImage Element、'SELECT QUALITY'を表示するText Element、3つのボタンなど、さまざまな子要素があります。
 
-## Adding a button to the UI
+## UIにボタンを追加する
 
-There are two ways to add a button to the scene.
+ボタンをシーンに追加する方法は2つあります。
 
-### Via the Hierarchy Panel
+### ヒエラルキーパネルを使用して
 
-This is the easiest way to add a button to the scene as it creates the necessary entities, components and preconfigures the properties.
+これは必要なエンティティ、コンポーネントを作成し、プロパティを事前設定するためにもっとも簡単な方法です。
 
 <img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif">
 
-### With an existing Element
+### 既存の要素を使用して
 
-If there is an existing Element that we would like to turn into a button, we can add Button component to it in the Inspector panel and configure it ourselves.
+ボタンに変えたい既存の要素がある場合は、インスペクターパネルでその要素にButtonコンポーネントを追加し、必要に応じて構成できます。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300">
 
-Remember to enable Use Input on the Element component so the user can interact with it:
+ユーザーがインタラクトできるように、ElementコンポーネントでUse Inputを有効にする必要があることを覚えてください。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
 
-And set the Image Entity property on the Button component to be same Entity that the Element component is on.
+ButtonコンポーネントのImage Entityプロパティを、Elementコンポーネントがある同じエンティティに設定する必要があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300">
 
-## Button setup
+## ボタン設定
 
-Let's take a closer look at the first button in the example project:
+サンプルプロジェクトの最初のボタンをもう少し詳しく見てみましょう。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300">
 
-The button has 3 components:
+ボタンには3つのコンポーネントがあります。
 
-- **Element component** - Positions the renders the button UI relative to it's parent Screen.
-- **Button component** - Handles how the button looks when the user is interacting with it.
-- **Script component** - Listens for events on the Button component and handles the logic on what to do when clicked.
+- **Elementコンポーネント** - 親スクリーンに対してボタンUIを配置します。
+- **Buttonコンポーネント** - ユーザーがインタラクトしたときにボタンがどのように見えるかを処理します。
+- **Scriptコンポーネント** - Buttonコンポーネントのイベントをリッスンして、クリックされたときに何をするかを処理します。
 
-The button Entity also has a Text Element as a child for showing text (this is optional depending on the style of your button).
+ボタンエンティティには、ボタンのスタイルによってオプションであるText Elementが子として含まれています。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300">
 
-The Element's type is Image and it's anchored to the bottom of the screen.
+ElementのタイプはImageで、画面の下部にアンカーが設定されています。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300">
 
-After anchoring the button we give it an offset from the bottom by simply moving it up.
+ボタンをアンカーし、それを下に移動するだけで、ボタンから下部までのオフセットを設定します。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300">
 
-We also have Use Input enabled in order to interact with the button.
+ボタンをインタラクト可能にするには、Use Inputが有効になっている必要があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
 
-### Changing how the button looks on interaction
+### インタラクト時のボタンの見え方を変える
 
-We can change how the button looks when the user interacts with the button for the following states:
+ユーザーがボタンをインタラクトしているときに、ボタンがどのように見えるかを以下の状態に応じて変更できます。
 
-- **Hover** - When the mouse cursor is over the button.
-- **Pressed** - When the user presses on the button.
-- **Inactive** - When the button is inactive.
+- **Hover** - マウスカーソルがボタン上にある場合
+- **Pressed** - ユーザーがボタンを押した場合
+- **Inactive** - ボタンが非アクティブな場合
 
-This can be done via two Transition Modes:
+これは2つのトランジションモードで行うことができます。
 
-#### Tinting the color
+#### 色を変更する
 
-Tinting the button color in each state is the easiest method to add some user feedback when they interact with it. In the project, the High Quality button has the following setup:
+各状態でボタンの色を変更することは、ボタンとインタラクトしたときにユーザーフィードバックを追加する最も簡単な方法です。プロジェクトでは、High Qualityボタンに以下の設定があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300">
 
-With the following effect:
+次のエフェクトがあります。
 
 <img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-effect.gif">
 
-#### Changing the Sprite
+#### スプライトを変更する
 
-We can also change the sprite image of the button in the different states for cases where you may want the button to change shape or want to give a look of the button being 'pressed' into the screen. The Low Quality button has the following setup:
+ボタンの形状を変更したり、ボタンが画面に「押し込まれた」見え方をしたりしたい場合は、異なる状態でボタンのスプライト画像を変更することができます。Low Quality には以下の設定があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300">
 
-With the following effect:
+次のエフェクトがあります。
 
 <img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-effect.gif">
 
-### Button events
+### ボタンイベント
 
-We have a script in the project that listens for when the user clicks on the button and updates the text in the UI to the quality setting that they've selected.
+プロジェクトには、ボタンをクリックしたときにテキストを更新するスクリプトがあります。
 
 ```javascript
 var ButtonLogic = pc.createScript('buttonLogic');
@@ -126,9 +126,11 @@ ButtonLogic.prototype.initialize = function() {
     }, this);
 };
 ```
-This script is attached to the button entities in the scene.
+このスクリプトは、シーン内のボタンエンティティにアタッチされています。
 
-The Button component has a [`click` event][click-event-api] against which a callback function can be registered that works for both mouse and touch input.
+ボタンコンポーネントには、マウスとタッチ入力の両方に対して機能するコールバック関数を登録できる[`クリックイベント`][click-event-api] があります。
+
+ 
 
 ```javascript
 this.entity.button.on('click', function(event) {
@@ -136,11 +138,11 @@ this.entity.button.on('click', function(event) {
 }, this);
 ```
 
-There are other events that can be listened to such as `mouseenter` and `mouseleave`. A full list can be found in the [API documentation][click-event-api].
+`mouseenter` と `mouseleave` など、他のリッスンできるイベントもあります。完全なリストは[APIドキュメント][click-event-api]にあります。
 
-These events will only fire if Use Input is enabled on the Element component so make sure that has been ticked in the inspector.
+これらのイベントは、ElementコンポーネントでUse Inputが有効になっている場合にのみ発生するため、インスペクタでそれがチェックされていることを確認してください。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/

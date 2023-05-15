@@ -1,18 +1,19 @@
 ---
-title: Hardware Instancing
+title: ハードウェアインスタンシング
 layout: usermanual-page.hbs
 position: 5
 ---
 
-Hardware instancing is a rendering technique which allows the GPU to render multiple identical meshes in a small number of draw calls. Each instance of the mesh can have a different limited amount of state (for example, position or color). It's a technique suitable to drawing objects such as trees or bullets, say.
+ハードウェアインスタンシング (Hardware instancing) は、GPUに複数の同一のメッシュを少数のドローコールでレンダリングする技術です。メッシュの各インスタンスは、異なる限定的な状態（例えば、位置や色）を持つことができます。木や弾丸などのオブジェクトを描画するのに適した技術です。
 
-For its support on a device, check `pc.GraphicsDevice.supportsInstancing`. In general, it is supported on all WebGL2 devices and also on the majority of WebGL1 devices using the ANGLE_instanced_arrays extension.
 
-Note that all instances are submitted for rendering by the GPU with no camera frustum culling taking place.
+デバイスでのサポート状況を確認するには、 `pc.GraphicsDevice.supportsInstancing`を確認します。一般的には、 WebGL2デバイスのすべてと、ANGLE_instanced_arrays拡張機能を使用してWebGL1デバイスの大部分でサポートされています。
 
-## How to use instancing
+また、すべてのインスタンスがレンダリング用にGPUに送信され、カメラフラスタムカリングは行われないことに注意してください。
 
-Enable instancing on a StandardMaterial that you use for rendering:
+## インスタンシングの使い方
+
+描画に使用するStandardMaterialでインスタンシングを有効にします。
 
 ```javascript 
 var material = new pc.StandardMaterial();
@@ -23,7 +24,7 @@ material.onUpdateShader = function(options) {
 material.update();
 ```
 
-Populate a vertex buffer with per instance matrices to provide their world matrices for rendering.
+頂点バッファにインスタンスごとの行列を埋め込んで、レンダリングのためのワールド行列を提供します。
 
 ```javascript
 // store matrices for individual instances into array
@@ -39,7 +40,9 @@ for (var i = 0; i < instanceCount; i++) {
 }
 ```
 
-Create a VertexBuffer which stores per-instance state and initialize it with the matrices. In the following example, we use `pc.VertexFormat.defaultInstancingFormat` which allows us to store a per-instance Mat4 matrix. Then we enable instancing on a MeshInstance, which contains the mesh geometry we want to instance.
+以下の例では、インスタンスごとの状態を保存するVertexBufferを作成し、それを行列で初期化します。この例では、`pc.VertexFormat.defaultInstancingFormat` を使用して、インスタンスごとのMat4行列を保存することができます。その後、インスタンス化したいメッシュジオメトリを含むMeshInstanceでインスタンス化を有効にします。
+ 
+ 
 
 ```javascript
 var instanceCount = 10;
@@ -48,16 +51,15 @@ var vertexBuffer = new pc.VertexBuffer(this.app.graphicsDevice, pc.VertexFormat.
 meshInst.setInstancing(vertexBuffer);
 ```
 
-Note, that you can create a dynamic vertex buffer using pc.BUFFER_DYNAMIC, and update the contents of it per-frame like this:
+注: pc.BUFFER_DYNAMICを使用して動的な頂点バッファを作成し、フレームごとにその内容を以下のように更新することができます。
 
 ```javascript
 vertexBuffer.setData(matrices);
 ```
 
-## Custom shader
+## カスタムシェーダー
 
-When you write custom shader that uses instancing, you need to read and use per-instance state from vertex attributes.
-In the following example, we read a mat4 using vertex attributes.
+インスタンス化を使用するカスタムシェーダーを書く際には、頂点属性からインスタンスごとの状態を読み取り、使用する必要があります。以下の例では、頂点属性を使用してmat4を読み取ります。
 
 ```
 attribute vec4 instance_line1;

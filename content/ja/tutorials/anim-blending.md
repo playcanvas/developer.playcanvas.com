@@ -1,74 +1,73 @@
 ---
-title: Anim State Graph Blending
+title: アニメーションステートグラフのブレンディング
 layout: tutorial-page.hbs
-tags: animation,basics
+tags: animation, basics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
 
-*画面をクリックしてフォーカス。次にpキーを押してパンチアニメーションにブレンド*
+*スクリーンをクリックしてフォーカスを合わせ、'p' キーを押すとパンチアニメーションへブレンドされます。*
 
-このチュートリアルではアニメーションブレンディングの基本を説明します。
+このチュートリアルではアニメーションのブレンドの基本を紹介します。
 
-Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.
-Let's examine how this is achieved via PlayCanvas...
+シーン内のオブジェクトはアニメーション化できます。例えば、機械やキャラクターなどは、アニメーション化したいものとして挙げられます。一般的に、3Dコンテンツが作成される際には、個々のアニメーションが作成され、これらのアニメーションは通常、サイクルと呼ばれます（ループするため）。例えば、人間キャラクターはアイドル、歩行、走行などのサイクルを持っているかもしれません。PlayCanvasの開発者として、これらのアニメーションをアニメーション化されたオブジェクトで再生する仕組みが必要です。さらに、これらのアニメーションを切り替えるときにポップアップしないようにしたいと考えています。それを解決するために、アニメーション ブレンディングを使用する必要があります。アニメーション ブレンディングを利用して、アニメーション間をスムーズに移行することができます。これにより、アニメーション化されたオブジェクトの視覚的な精度が大幅に向上します。PlayCanvasでこれをどのように実現するかを見てみましょう...
 
-## The Animstategraph Asset
+## Animstategraphアセット
 
-In order to add animations to a model, we must first create an animstategraph asset. These assets control multiple animations associated with a single entity, determine when each of those animations should play and how they should be blended together.
+モデルにアニメーションを追加するには、まず animstategraphアセットを作成する必要があります。これらのアセットは、単一のエンティティに関連する複数のアニメーションを制御し、それぞれのアニメーションがいつ再生され、どのようにブレンドされるかを決定します。
 
-When creating an animstategraph asset, you’ll be presented with its editor:
+animstategraphアセットを作成すると、エディタが表示されます。
 
 ![Initial Editor][1]
 
-By default, the animstategraph asset creates a single animation state called ‘Initial State’ which has a default transition from the START state to it. This means when the animstategraph first begins playing, it’ll immediately begin playing the Initial State. This can be renamed to Idle which is the name of the initial animation used in this tutorial. We can then right click the canvas and select `Add new state` to create another animation state in the graph. This state can be renamed to Punch:
+デフォルトでは、animstategraphアセットは’Initial State’と呼ばれる単一のアニメーション状態を作成し、開始状態からデフォルトのトランジションが作成されます。つまり、animstategraphが最初に再生されたときに、即座に初期状態を再生します。これをこのチュートリアルで使用する初期アニメーションであるIdleに変更できます。次に、キャンバス上で右クリックし、`Add new state`を選択してグラフに別のアニメーション状態を作成できます。この状態は、Punchと名前を変更できます。
 
 ![New State][2]
 
-Next we must tell the state graph how and when it should move between the Idle and Punch animation states. This is achieved by creating transitions. Right click the Idle animation and select `Add transition` from the context menu, then select the Punch animation state. This will create a transition moving from the Idle state to the Punch state.
+次に、アニメーション ステートグラフがIdleとPunchアニメーション ステート間をどのように移行するかというところを伝える必要があります。これはトランジションの作成で実現できます。Idleアニメーションを右クリックして、コンテキスト メニューから`Add transition`を選択し、次にPunch アニメーション ステートを選択します。これにより、Idleステートから Punchステートへトランジションするトランジションが作成されます。
 
 ![Add Transition][3]
 
-Selecting this transition will show the transition inspector in the panel to the right. Here the duration of the transition can be set, which will determine how long the blend between the two animations should last. We’ll set this to 0.2 seconds.
+このトランジションを選択すると、右側のパネルにトランジション インスペクターが表示されます。ここで、トランジションの期間を設定することができます。これにより、2 つのアニメーション間のブレンドの継続時間が決定されます。この期間を 0.2 秒に設定します。
 
-Next, we can set up a parameter which will determine when this transition can activate. First select the `+ parameter` on the parameters panel to the left. Then name this parameter `punch` and set it to the ‘Boolean’ type.
+次に、このトランジションをアクティブにするためのパラメータを設定することができます。左側のパラメーター パネルで`+ parameter`を選択して、このパラメータの名前を`punch`とし、タイプを ‘Boolean‘ に設定します。
 
 ![Add Parameter][4]
 
-This parameter can now be set as a condition for the transition we just created. Select this transition then select `New Condition` in the transition inspector.
+このパラメータは、新しく作成したトランジションの条件として設定できるようになります。このトランジションを選択し、次に`New Condition`をトランジション インスペクターで選択します。
 
-Set this transition to test against the newly created `punch` parameter and set the condition to ‘== true’ as follows:
+このトランジションを新しく作成された `punch` パラメータに対してテストするように設定し、条件を '== true' に設定します。
 
 ![Add Condition][5]
 
-This will ensure that the transition from the Idle state to the Punch state only occurs once the punch parameter has been set to true.
+これにより、アイドル ステートから Punch ステートへの移行は、パンチ パラメータが true に設定された後にのみ行われるようになります。
 
-Lastly, we need to create one more transition moving back from Punch to Idle as follows:
+最後に、以下のように Punch から Idle へ戻る別のトランジションを作成する必要があります。
 
 ![Complete State Graph][6]
 
-Here we have set it up with the same duration but its condition tests whether the punch parameter is no longer true.
+ここで、同じ期間を設定し、その条件は Punch パラメータが true でなくなったことをテストするように設定しました。
 
-Now with this complete animstategraph, we must connect it to animation assets and the chosen entity. This is where the anim component comes in.
+これで animstategraph を完成したら、アニメーション アセットと選択したエンティティに接続する必要があります。これは、anim コンポーネントが登場する場所です。
 
-## The Anim Component
+## Animコンポーネント
 
-First, we must add the anim component to our chosen entity.
+最初に、選択したエンティティに animコンポーネントを追加する必要があります。
 
 ![New Anim Component][7]
 
-Once created it’ll display a slot for the animstategraph asset we just created. Drag this in and it’ll display animation slots for each of the animation states present in it. In this case it’ll have slots for the Idle and Punch states. Fill these slots with the appropriate animation assets and the anim component will become playable:
+作成された animコンポーネントには、animstategraphアセットのスロットが表示されます。これをドラッグして、それぞれのアニメーション ステートに対して表示されるアニメーション スロットが生成されます。この場合、Idle と Punch ステートのスロットがあります。これらのスロットにそれぞれのアニメーション アセットを追加すると、animコンポーネントが再生できるようになります。
 
 ![Complete Anim Component][8]
 
-## Keyboard Input
+## キーボード入力
 
-With the animations fully set up, we now need to make it possible for users to interact with our system. This is where scripts come in! A script component is required to enable this behavior which will be written in the script `keyboard_controls.js`. You can see how it’s attached to the entity below:
+アニメーションが完全に設定されたら、ユーザーがシステムとやり取りできるようにする必要があります。これは、スクリプトが必要となります。この動作を有効にするために script コンポーネントを生成する必要があります。 このスクリプトは、 `keyboard_controls.js` という名前で書かれます。以下の図では、このスクリプトがエンティティにアタッチされている様子が見られます。
 
 ![Keyboard Input][9]
 
-Remember that parameter `punch` that we set up before? This script will simply toggle that parameter on and off depending on whether the ‘P’ key is currently pressed and whether the character is currently punching:
+以前設定した  `punch`  パラメータを覚えていますか？ このスクリプトは、現在 ‘P’ キーが押されているかどうかと、現在のキャラクターがパンチを行っているかどうかに応じて、このパラメータを切り替えるだけです
 
 ```javascript
 var KeyboardControls = pc.createScript('keyboardControls');
@@ -90,9 +89,9 @@ KeyboardControls.prototype.update = function(dt) {
 };
 ```
 
-From this point, you are able to add more and more animations to the animstategraph asset and start building much more complex animation state graphs!
+これ以降は、animstategraph アセットにさらに多くのアニメーションを追加し、複雑なアニメーション ステートグラフを構築することができます！
 
-See the full Scene [here](https://playcanvas.com/editor/scene/1065029)
+完全なシーンを[こちら](https://playcanvas.com/editor/scene/1065029)で見ることができます。
 
 [1]: /images/tutorials/anim_blending/initial_editor.png
 [2]: /images/tutorials/anim_blending/new_state.gif

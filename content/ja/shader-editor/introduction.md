@@ -1,24 +1,24 @@
 ---
-title: はじめに
+title: はじめに 
 layout: shader-editor-page.hbs
 position: 1
 ---
 
-## What is Shader Editor?
+## シェーダーエディターとは何ですか？
 
-__Shader Editor__ is a web-based visual programming tool for creating shader materials and effects.
+__シェーダーエディター__ は、シェーダーマテリアルとエフェクトを作成するためのWebベースのビジュアルプログラミングツールです。
 
-Instead of writing shader programs directly, in __Shader Editor__ you construct shader graphs. These graphs comprise a network of nodes connected together with edges. __Shader Editor__ will convert a completed graph to the equivalent shader program for use at runtime.
+__シェーダーエディター__ では、直接シェーダープログラムを記述する代わりに、シェーダーグラフを構築します。これらのグラフは、エッジでつながれたノードのネットワークで構成されています。__シェーダーエディター__ は、完成したグラフをランタイムで使用するための同等のシェーダープログラムに変換します。
 
 ### 例
 
-For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
-![sample effect][1]
+たとえば、次のエフェクトでは、複数のサーフェスノーマルマップをアニメーション化し、それらを特殊効果の照明と組み合わせます:
+![サンプルエフェクト][1]
 
-The effect is made up of various graphs, including the following one. This graph takes care of unpacking the normals in a normal map:
-![sample graph][2]
+このエフェクトは、以下のグラフを含むいくつかのグラフで構成されています。このグラフは、ノーマルマップのノーマルを展開する役割を担っています:
+![サンプルグラフ][2]
 
-__Shader Editor__ will convert this graph into a shader program, which is executed on a GPU at runtime:
+__シェーダーエディター__ は、このグラフをランタイムでGPU上で実行されるシェーダープログラムに変換します。
 
 ```
 void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
@@ -32,11 +32,11 @@ void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
 }
 ```
 
-### Next steps
+### 次のステップ
 
-Learn more about Shader Editor in general in the [Overview][3] section.
+[概要][3]セクションでシェーダーエディターについて一般的なことを学びましょう。
 
-Find out more about the window layout in the [Window Layout][4] section.
+[ウィンドウレイアウト][4]セクションで、ウィンドウレイアウトの詳細を確認してください。
 
 [1]: /images/shader-editor/sample-effect.gif
 [2]: /images/shader-editor/sample-graph.png

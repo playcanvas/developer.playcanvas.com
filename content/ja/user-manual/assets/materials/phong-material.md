@@ -1,73 +1,73 @@
 ---
-title: Phong素材
+title: Phongマテリアル
 layout: usermanual-page.hbs
 position: 2
 ---
 
-フォン素材は、受け継がれてきたシェーディングモデルです。特定の理由がない限り、Physical Shadingモデルを使用することを推奨します。
+Phongマテリアルは、レガシーなシェーディングモデルです。特別な理由がない限り、Physical Shadingモデルを使用することをお勧めします。
 
-### オフセット & タイリング
+### Offset & Tiling
 
 <img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300">
 
 | プロパティ          | 説明 |
 |-------------------|-------------|
-| Apply to all Maps | 個別のマップにオフセットとタイリング値を適用するには、このチェックを外します。 |
-| Offset            | この素材のマップが参照する最初のUVチャンネルに適用する、UとVのオフセット。 |
-| Tiling            | この素材のマップが参照する最初のUVチャンネルに適用する、UとVのスケール。 |
+| Apply to all Maps | オフセットとタイリングの値を個々のマップに適用するには、これをチェックを外します。 |
+| Offset            | このマテリアルのマップで参照される最初のUVチャネルに適用するUとVのオフセットです。 |
+| Tiling            | このマテリアルのマップで参照される最初のUVチャネルに適用するUとVのスケールです。 |
 
-### アンビエント
+### Ambient
 
-アンビエントプロパティは、素材が周囲光の中でどのように表示されるかを決定します。
+Ambientプロパティは、マテリアルが周囲光でどのように表示されるかを決定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300">
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Tint       | チェックをいれると、素材特有の色と、シーンのグローバルアンビエントカラーが乗算されます。 |
-| 色      | シーンのグローバルアンビエントカラーを乗算するティントカラー。 |
-| AO Texture | プリベークされたアンビエントオクルージョンを含む、アンビエントオクルージョンマップ。 |
+| Tint       | マテリアルカラーとシーンのグローバルのAmbientカラーを掛け合わせるには、これをチェックします。 |
+| Color      | シーンのグローバルのAmbientカラーを乗算するtintカラーです。 |
+| AO Texture | プリベイクされたAmbient Occlusionを含むAmbient Occlusionマップです。 |
 
-### 拡散マップ
+### Diffuse
 
-拡散プロパティは、シーン内の動的ライトソースによって発せられた拡散光を、素材がどのように反映するかを定義します。
+Diffuseプロパティは、マテリアルがシーン内の動的な光源から放射される拡散光をどのように反射するかを定義します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300">
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Texture    | ピクセル単位の拡散素材の色を指定する拡散マップ。拡散マップが設定されていない場合、拡散色が代わりに使用されます。 |
-| Tint       | チェックを入れると、素材の拡散マップを素材固有の拡散色で調節します。 |
-| Color      | 拡散マップが設定されていない場合、これが素材の拡散色になります。拡散マップが設定されていてtintが有効になっている場合、この色が素材の拡散マップを変調します。 |
+| Texture    | ピクセルごとのDiffuseマテリアルカラーを指定するDiffuseマップです。Diffuseマップが設定されていない場合、Diffuseカラーが代わりに使用されます。 |
+| Tint       | チェックを入れると、マテリアルのDiffuseマップをDiffuseカラーで調節できます。 |
+| Color      | Diffuseマップが設定されていない場合、これがマテリアルのDiffuseカラーとなります。Diffuseマップが設定されており、tintが有効になっている場合には、この設定された色でマテリアルのDiffuseマップを調整できます。 |
 
-### スペキュラマップ
+### Specular
 
-スペキュラのプロパティは、スペキュラハイライトのカラーを定義します。例：光沢
+Specularプロパティは、Specularハイライト（光沢）の色を定義します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300">
 
 | プロパティ     | 説明 |
 |--------------|-------------|
-| Specular Map | ピクセル単位のスペキュラ色を指定するスペキュラマップ。スペキュラマップが設定されていない場合は、スペキュラ色が代わりに使用されます。 |
-| Tint         | チェックすると、素材固有のスペキュラ色で素材のスペキュラマップを調節します。 |
-| Color        | スペキュラマップが設定されていない場合、素材のスペキュラ色になります。スペキュラマップが設定されていてtintが有効になっている場合、この色が素材のスペキュラマップを調節します。 |
-| Gloss Map    | ピクセル単位の光沢値を指定するグロスマップ。グロスマップは光沢プロパティで変調されます。 |
-| Glossiness   | 表面の平滑性を決定する値。小さい光沢値にすると、表面はより粗く、スペキュラハイライトはより広範になります。 大きな光沢値にすると、表面はより滑らかで、スペキュラハイライトはより濃縮されます(表面が磨かれて光っているように)。 |
+| Specularマップ | ピクセルごとのSpecularカラーを指定するSpecularマップです。Specularマップが設定されていない場合、Specularカラーが代わりに使用されます。 |
+| Tint         | チェックを入れると、マテリアルのSpecularマップをSpecularカラーで調節できます。 |
+| Color        | Specularマップが設定されていない場合、これがマテリアルのSpecularカラーです。Specularマップが設定され、tintが有効になっている場合、この色はマテリアルのSpecularマップを調節します。 |
+| Gloss Map    | ピクセルごとの光沢度値を指定するGlossマップです。GlossマップはShininessプロパティによって調節します。 |
+| Glossiness   | 表面の滑らかさを決定する値です。値が小さいほど、表面は荒く、Specularハイライトは広くなります。光沢度値が大きいほど、表面は滑らかで、表面が磨かれて光沢があるSpecularハイライトを示します。 |
 
-### Emissive（発光）
+### Emissive
 
-発光プロパティは、素材が発光する方法を制御します(光反射とは対照的に)。
+Emissiveプロパティは、マテリアルの発光を制御します。（反射する光とは異なります）
 
 <img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300">
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Texture    | ピクセル単位の発光色を指定する発光マップ。発光マップが設定されていない場合、発光色が代わりに使用されます。 |
-| Tint       | チェックをすると、素材の発光マップを素材固有の発光色で変調します。 |
-| 色      | 発光マップが設定されていない場合、素材の発光色となります。発光マップが設定されていてtintが有効になっている場合、この色は素材の発光マップを調節します。 |
-| 強度  | 非常に明るい発光素材に過剰に明るい効果を加えることができる発光色の乗数。 |
+| Texture    | ピクセルごとのEmissiveカラーを指定するEmissiveマップです。Emissiveマップが設定されていない場合、Emissiveカラーが代わりに使用されます。 |
+| Tint       | チェックを入れると、マテリアルのEmissiveマップをEmissiveカラーで調節できます。 |
+| Color      | Emissiveマップが設定されていない場合、これはマテリアルのEmissiveカラーとなります。Emissiveマップが設定され、tintが有効になっている場合、この設定された色でマテリアルのEmissiveマップを調整できます。 |
+| Intensity  | 特に明るいEmissiveマテリアルに対してさらに明るい効果を加えることができるEmissiveカラーの乗数です。 |
 
-### Opacity (不透明度)
+### Opacity
 
 Opacityは、透明度のレベルを設定します。
 
@@ -75,65 +75,67 @@ Opacityは、透明度のレベルを設定します。
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Texture    | ピクセルごとの不透明度を指定する不透明度マップ。不透明度マップは、'Amount'プロパティによって変調されます。 |
-| Intensity  | 素材の不透明度。これは、0(完全に透明)から1(完全に不透明）の間の値である。デフォルトは1です。 |
+| Texture    | ピクセルごとの不透明度を指定するOpacityマップです。Opacityマップは、'Amount'プロパティによって調整できます。 |
+| Intensity  | マテリアルの不透明度です。これは 0（完全に透明）から 1（完全に不透明）の値です。デフォルトは1です。 |
 
 ### Normals
 
-法線マップを指定するために使用します(これらはがたつきを定義。PlayCanvasでは高さマップではなく法線マップを使用する必要があります)。
+Normalマップを指定するためにこれを使用します（これらは凹凸性を決定します - PlayCanvasでは、HeightマップではなくNormalマップを使用する必要があります）。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300">
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Bumpiness  | 適用される法線マップの強さ。0(法線マップは影響を与えません)と2(法線マップは大きく影響)の間の値です。デフォルトは1です。 |
-| Texture    | ピクセルごとの表面の法線を指定する法線マップ。法線マップは 'Bumpiness' プロパティによって変調します。 |
+| Bumpiness  | 適用されるNormalマップの強度です。これは 0（Normalマップの影響がない）から 2（Normalマップは大きく影響）の値です。デフォルトは1です。 |
+| Texture    | ピクセルごとの表面のNormalを指定するNormalマップです。Normalマップは 'Bumpiness' プロパティで調整できます。 |
 
 ### Parallax
 
-視差マップは、表面に深さの錯覚を与えることによって、法線マップにさらにリアルな感覚を加えます。視差のオプションは素材に法線マップを設定している場合のみ有効です。
+Parallaxマップは、表面に視差を与えることでNormalマップにさらなるリアルな感覚を加えます。Parallaxオプションは、マテリアルにNormalマップを設定した場合にのみ有効になります。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300">
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| Height Map  | 視差効果のピクセルごとの強度を指定する高さマップ。白は最高の高さで、黒は高さゼロです。 |
-| Strength    | 視差効果の強さ（0と2の間の値、デフォルト設定は1）。 |
+| Height Map  | ピクセルごとのParallax効果を指定するHeightマップ。白は最高の高さで、黒はゼロです。  |
+| Strength    | Parallax効果の強度（0から2の間の値、デフォルトは1） |
 
-### 環境マップ
+### Environment
 
-環境プロパティは、素材がどのように環境を反映するかを定義します。
+Environmentプロパティは、マテリアルが環境をどのように反射するかを決定します。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300">
 
 | プロパティ            | 説明 |
 |---------------------|-------------|
-| Sphere Map          | 環境反射を近似するスフィアマップテクスチャアセット。スフィアマップが設定されている場合、キューブマッププロパティが非表示になります(これらのプロパティは相互に独占的であるため)。 |
-| Cube Map            | 環境反射を近似するキューブマップテクスチャアセット(スフィアマップよりも正確)。キューブマップが設定されている場合、スフィアマッププロパティが非表示になります(これらのプロパティは相互に独占的であるため)。 |
-| Reflectivity        | 素材からライトのどの部分が反射されるかを決定する要因。この値のデフォルトは1(完全に反射)です。 |
-| Refraction          | 光のどの部分が素材を通過するかを決定する要因。 |
-| Index of Refraction | 素材を通過する光の歪みの量を決定。 |
+| Sphere Map          | 環境反射を近似するSphere Mapテクスチャアセット。Sphere Mapが設定されている場合、Cube Mapプロパティは非表示になります（これらのプロパティは相互に排他的です）。 |
+| Cube Map            | 環境反射を近似するCube Mapテクスチャアセット（Sphereマップよりも高い精度）です。Cube Mapが設定されている場合、Sphere Mapプロパティは非表示になります（これらのプロパティは相互に排他的だからです）。 |
+| Reflectivity        | マテリアルから反射される光の部分を決定する要素。この値はデフォルトで1（全反射）になります。 |
+| Refraction          | マテリアルを通過する光の部分を決定する要素。 |
+| Index of Refraction | マテリアルを通過する光の歪みの量を決定します。 |
 
 ### Light Map
 
-ライトマップは、プリベークされた拡散ライトを含みます。ライトマップの使用は、実行時に行われる動的なライトの計算を事前に計算できる最適化と考えられています。
+Light Mapには事前にベイクされたDiffuse Lightingが含まれています。Light Mapの使用は、実行時に行われる動的なライトの計算を事前に計算できるため、最適化と考えられます。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300">
 
 | プロパティ   | 説明 |
 |------------|-------------|
-| Texture    | プリベークされた拡散ライトを含むライトマップテクスチャ。ライトマップは、2つのUVセットを持つメッシュに素材が適用されていることを必須とします。ライトマップは、第2つ目のセットのUVを使用します。 |
+| Texture    | プリベイクされたDiffuse Lightingを含むLight Mapテクスチャです。Light Mapを使用するには、2つのUVセットを持つメッシュにマテリアルを適用する必要があります。Light Mapは2番目のUVセットを使用します。 |
 
 ### その他のレンダリング状態
 
-その他のレンダリング状態を使用して、指定された素材にメッシュをレンダリングする方法を追加で制御できます。
+その他のレンダリング状態を使用して、マテリアルでメッシュをレンダリングする方法を追加で制御できます。
 
 <img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300">
 
 | プロパティ        | 説明 |
 |-----------------|-------------|
-| Depth Test      | チェックすると、素材とメッシュがレンダリングされるときに、ピクセルごとのチェックが行われ、エンジンのデプステストにピクセルが合格するかどうかを判断します。デフォルトでは、ピクセルが深度バッファに既にあるZ深度以下であることをテストで確認します。つまり、メッシュはその前に何もない場合にのみ表示されます。オフにした場合、深度バッファに何が入っていても、メッシュはレンダリングされます。デフォルトはオンです。 |
-| Depth Write     | If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on. |
-| Cull            | Options are: <ul><li>None: Both front faces and back faces are rendered.</li><li>Front Faces: front faces are rendered and back faces are not.</li><li>Back Faces: back faces are rendered and front faces are not. This is the default.</li></ul> PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels. |
-| Blend Type      | Options are: <ul><li>None: The mesh is opaque. This is the default.</li><li>Normal: The mesh is transparent, like stained glass.</li><li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li><li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li><li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li></ul> |
-| Shadow Sampling | Options are: <ul><li>Hard</li><li>PCF 3x3</li></ul> |
+| Depth Test      | チェックされている場合、マテリアルを持つメッシュがレンダリングされるとき、ピクセルごとにチェックが行われ、ピクセルがエンジンのDepth Testに合格するかどうかが決定されます。デフォルトでは、ピクセルは既にDepthバッファにあるものと同じかそれ以下のz深度を持たなければなりません。つまり、メッシュはそれが前に何もない場合にのみ表示されます。チェックが外されている場合、メッシュはDepthバッファにすでにあるものに関係なくレンダリングされます。デフォルトではオンです。 |
+| Depth Write     | チェックされた場合、マテリアルを含むメッシュがレンダリングされると、その深度情報はDepthバッファーに書き込まれます。これにより、後続のメッシュがレンダリングされると、このマテリアルでレンダリングされたメッシュに対してDepthテストされます。デフォルトはオンです。 |
+| Cull            | オプションは次のとおりです。<ul> <li>None: 前面と背面の両方がレンダリングされます。</li> <li>Front Faces: 前面がレンダリングされ、背面はレンダリングされません。</li> <li>Back Faces: 背面がレンダリングされ、前面はレンダリングされません。これがデフォルトです。</li> </ul> PlayCanvasでは、反時計回りの頂点の巻き方が前面の三角形を指定すると規定しています。背面のカリングは、背面のピクセルが頻繁に上書きされる（凸メッシュの場合）ため、パフォーマンス向上に役立つことが多いです。 |
+| Blend Type      | オプションは次のとおりです。<ul> <li>None: メッシュは不透明です。これがデフォルトです。</li> <li>Normal: メッシュは透明で、ステンドグラスのようです。</li> <li>Additive: メッシュの色がフレームバッファにすでにレンダリングされているものに加えられます。</li> <li>Pre-multiply: Normal'ブレンドと同様ですが、このマテリアルでレンダリングされるメッシュの色がすでにそのアルファ値で調整されていると想定されます。</li>
+<li>Multiply: レンダリング時に、メッシュの色がフレームバッファにすでにレンダリングされたものと乗算されます。</li>
+ </ul> |
+| Shadow Sampling | オプションは: <ul><li>Hard</li><li>PCF 3x3</li></ul> です。 |

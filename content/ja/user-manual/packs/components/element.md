@@ -1,68 +1,68 @@
 ---
-title: 要素
+title: Element
 layout: usermanual-page.hbs
 position: 7
 ---
 
-Screenコンポーネントの祖先を持つ階層にあるElementコンポーネントは、画像やテキストなどの2Dコンポーネントで構成されるユーザインターフェイスを構築するために使用されます。Elementにはアンカーやピボットポイントなどのレイアウトプロパティが用意されています。
+Screenコンポーネントの祖先にElementコンポーネントがある場合、Elementコンポーネントを使用して画像やテキストなどの2D要素で構成されたユーザーインターフェースを作成することができます。Elementは、アンカーや回転点などのレイアウトプロパティを提供します。
 
-詳細は[ユーザインターフェイス][1]セクションを参照してください。
+詳細については、[ユーザーインターフェース][1]セクションを参照してください。
 
-## グループ要素
+## Group Element(グループ要素)
 
-グループ要素は、Elementコンポーネントのレイアウトプロパティのみを提供します
+グループ要素は、Elementコンポーネントのレイアウトプロパティだけを提供します。
 
-![グループ要素][2]
+![Group Element(グループ要素)][2]
 
-## 画像要素
+## Image Element(画像要素)
 
-画像要素はテクスチャアセットまたはソリッドカラーを使用して画像を表示します。
+画像要素は、Textureアセットまたは単色を使用して画像を表示します。
 
-![画像要素][3]
+![Image Element(画像要素)][3]
 
-## テキスト要素
+## Text Element(テキスト要素)
 
-テキスト要素は[フォントアセット][4]を使用してテキストの文字列をレンダリングします。
+テキスト要素は、[フォントアセット][4]を使用してテキストを描画します。
 
-![テキスト要素][5]
+![Text Element(テキスト要素)][5]
 
-## 共通のコンポーネントプロパティ
+## 共通コンポーネントプロパティ
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| Type        | The type of Element: Group, Image or Text. |
-| Preset      | Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value. |
-| Anchor      | Determine where the element calculates its position in relation to. See the [Elements#Anchor][6] section for more information. |
-| Pivot       | Determine where the pivot point of the Element is. (0, 0) is bottom left, (1, 1) is top right. See the [Elements#Pivot][7] section for more information. |
-| Size        | The width and height of the Element. This may be automatically calculated depending on other settings. |
-| Margin      | The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis). |
-| Use Input   | If enabled, this Element is added to the list of elements that check for input and fire input related events. |
-| Layers      | The Layers to render this element into. More on Layers [here][8]. |
-| Batch Group | The Batch Group that this model belongs to. More on Batching [here][9]. |
+| Type        | Elementのタイプ:Group、Image、またはText。 |
+| Preset      | レイアウトプリセットを選択すると、アンカープロパティと回転プロパティがプリセット値に自動的に設定されます。 |
+| Anchor      | Elementが位置を計算する基準点を決定します。[Elements#Anchor][6]セクションを参照してください。 |
+| Pivot       | Elementの回転点を決定します。 (0、0) は左下で、 (1、1) は右上です。[Elements#Pivot][7]セクションを参照してください。 |
+| Size        | Elementの幅と高さ。他の設定によって自動的に計算される場合があります。 |
+| Margin      | アンカーが分割されている場合(1つの軸で等しくない場合)に、エレメントの端からアンカーまでの距離。 |
+| Use Input   | 有効にすると、この要素が入力をチェックし、入力に関連するイベントを発生させる要素リストに追加されます。 |
+| Layers      | この要素をレンダリングするレイヤー。レイヤーについては[こちら][8]を参照してください。 |
+| Batch Group | このモデルが属するバッチグループ。バッチングについてはこちらを参照してください。[here][9]. |
 
-## Image Component Properties
+## Image Component(画像コンポーネント)プロパティ
 
 | プロパティ | 説明 |
 |----------|-------------|
-| Rect     | Define the area of the texture asset to display. |
-| Mask     | Switch Image Element into a mask. Masks do not render into the scene, but instead limit child elements to only be rendered where this element is rendered. |
-| Texture  | The texture asset displayed. |
-| Color    | The color to tint the element. |
-| Opacity  | The transparency of the element. |
+| Rect     | 表示するTextureアセットの領域を定義します。 |
+| Mask     | Image Elementをマスクに切り替えます。マスクはシーンにレンダリングされず、代わりに、この要素がレンダリングされる場所に子要素を限定します。 |
+| Texture  | 表示されるTextureアセット。 |
+| Color    | 要素の色をティントします。 |
+| Opacity  | 要素の透明度。 |
 
-## Text Component Properties
+## Text Component(テキストコンポーネント)プロパティ
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| Alignment   | Determine how the text is aligned with in the element. (0, 0) is bottom left, (1, 1) is top right. |
-| Text        | The text string to display. |
-| Font Size   | The size in Screen component pixels to render the font at. |
-| Line Height | The size in Screen component pixels to move down for a new line. |
-| Spacing     | A multiplier to apply to the amount advanced between each character. |
-| Font        | The font asset. |
-| Color       | The color to tint the font. |
-| Opacity     | The transparency of the element. |
-| Wrap Lines  | Enable text wrapping. Any text that overflows the width of the text element will be wrapped to the next line. |
+| Alignment   | テキストの配置方法を決定します。 (0、0) は左下で (1、1) は右上です。 |
+| Text        | 表示するテキスト文字列。 |
+| Font Size   | フォントのサイズ。Screenコンポーネントのピクセル単位。 |
+| Line Height | 新しい行のために下に移動するScreenコンポーネントのピクセルサイズ。 |
+| Spacing     | 各文字間の進行量に対して乗算する値。 |
+| Font        | 使用するフォントアセット。 |
+| Color       | フォントをティントする色。 |
+| Opacity     | 要素の透明度。 |
+| Wrap Lines  | テキストを折り返すことを有効にします。テキスト要素の幅を超えるテキストは、次の行に折り返されます。 |
 
 [1]: /user-manual/user-interface
 [2]: /images/user-manual/scenes/components/component-element-group.png

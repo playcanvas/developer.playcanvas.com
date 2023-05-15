@@ -6,11 +6,11 @@ position: 1
 
 [ブルーム][1]は現実世界のカメラが現実には存在しないものを写しだしてしまうアーティファクトを再現するために使うポストプロセスエフェクトです。このエフェクトは画像の明るい領域のエッジから漏れ広がる光のふちを描画し、非常に明るい光がそのシーンを撮影しているカメラの露出限界を超えている様子を表現します。
 
-下の画像がブルームエフェクトなしの画像です:
+次は、ブルームを適用していないイメージです。
 
 ![Image without effect][2]
 
-そして下の画像がブルームエフェクトを適応した画像です:
+そして下の画像がブルームエフェクトを適応した画像です。
 
 ![Image with effect][3]
 
@@ -20,7 +20,7 @@ position: 1
 * **Bloom Threshold**: この閾値より明るいピクセルのみがエフェクトの対象となります。0から1の間の値を取ります。
 * **Blur Amount**: ぼかしの量を設定します。
 
-Find the post-processing effect script on [GitHub][4].
+ポストエフェクトスクリプトは[GitHub][4]で入手できます。
 
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 [2]: /images/platform/posteffects/without_effects.png

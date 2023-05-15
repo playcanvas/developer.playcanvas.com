@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 9
 ---
 
-This page describes how to localize your Text Elements to different languages.
+このページでは、テキスト要素を異なる言語にローカライズする方法について説明します。
 
-## Localization Files
+## ローカライゼーションファイル
 
-For each language you want to support you will need to add a JSON asset that contains the translated phrases for that language. PlayCanvas supports a specific format for the JSON asset. Open the Editor Settings and under LOCALIZATION click CREATE NEW ASSET to generate a new JSON asset in the expected format.
+サポートする各言語について、その言語の翻訳されたフレーズを含むJSONアセットを追加する必要があります。 PlayCanvasはJSONアセットの特定の形式をサポートしています。エディタ設定を開き、ローカリゼーションの下にあるCREATE NEW ASSETをクリックして、期待される形式での新しいJSONアセットを生成します。
 
-The JSON asset looks like so:
+JSONアセットは次のようになります。
 
 ```javascript
 {
@@ -23,10 +23,10 @@ The JSON asset looks like so:
                 "locale": "en-US"
             },
             "messages": {
-                "key": "Single key translation",
-                "key plural": [
-                    "One key translation",
-                    "Translation for {number} keys"
+                "key": "単一キー翻訳",
+                "key 複数形": [
+                    "1つのキー翻訳",
+                    "{number}つのキーの翻訳"
                 ]
             }
         }
@@ -34,47 +34,47 @@ The JSON asset looks like so:
 }
 ```
 
-You can specify a different locale in the `info` part of the JSON file. The `messages` section contains key - value pairs for each localized phrase. The key is the identifier for that phrase and the text is the translated text for that key.
+JSONファイルのinfo部分で異なるロケールを指定することができます。 `messages`セクションには、ローカライズされたフレーズごとにキーと値のペアが含まれています。キーは、そのフレーズの識別子であり、テキストはそのキーの翻訳されたテキストです。
 
-PlayCanvas also supports plural forms for each locale. To specify plural forms for each phrase you need to pass an array of strings for each plural form instead of a single string. Each language has different plural forms which you can find [here][1]. Each array element corresponds to a plural form for that language. For example for English:
+また、PlayCanvasは各ロケールの複数形もサポートしています。各フレーズの複数形を指定するには、単一の文字列の代わりに各複数形フォームの文字列の配列を渡す必要があります。各言語には異なる複数形があり、[ここ][1]で確認できます。各配列要素は、その言語の複数形フォームに対応します。例えば、英語の場合:
 
 ```javascript
-"key plural": [
-    "One item", // plural form ONE
-    "Not one" // plural form OTHER
+"key 複数形": [
+    "1つのアイテム", // 複数形形式ONE
+    "2つ以上のアイテム" // 複数形形式OTHER
 ]
 ```
 
-For Arabic:
+アラビア語の場合:
 
 ```javascript
-"key plural": [
-    "Zero items", // plural form ZERO
-    "One item", // plural form ONE
-    "Two items", // plural form TWO
-    "Few items", // plural form FEW
-    "Many items", // plural form MANY
-    "Rest", // plural form OTHER
+"key 複数形": [
+    "0個のアイテム", // 複数形形式ZERO
+    "1つのアイテム", // 複数形形式ONE
+    "2つのアイテム", // 複数形形式TWO
+    "数個のアイテム", // 複数形形式FEW
+    "多数のアイテム", // 複数形形式MANY
+    "その他" // 複数形形式OTHER
 ]
 ```
 
-Refer to the language tables [here][1] to determine the rules for each language.
+各言語のルールについては、[ここ][1]の言語表を参照してください。
 
-After you have created your localization JSON assets you need to add them to the Editor Settings under LOCALIZATION.
+ローカライズJSONアセットを作成したら、エディタ設定のローカライゼーションの下に追加する必要があります。
 
-## Localizing Text Elements
+## テキスト要素のローカライズ
 
-Enable the `Localized` checkbox for a Text Element in order to use the Localization Files to translate its text. The text you enter in the `Key` field of the Text Element should match the key in the localization file.
+テキスト要素でローカライズファイルを使用してテキストを翻訳するには、「Localized」のチェックボックスを有効にします。 テキスト要素の「Key」フィールドに入力するテキストはローカライゼーションファイル内のキーと一致する必要があります。
 
-To test your localization you can change the `Locale` field under the Editor Settings. That should update your Editor viewport to that locale and also this will update the locale used when you launch your application. This field is not used when you publish or download a build.
+ローカライズをテストするには、エディタ設定の「Locale」フィールドを変更できます。 これにより、エディタビューポートがそのロケールに更新され、アプリケーションの起動時に使用されるロケールも更新されます。 このフィールドは公開またはダウンロードビルド時に使用されません。
 
-## Localizing Numbers
+## 数字のローカライズ
 
-Different locales will have different rules on how numbers should be formatted. For example, English (UK and US) would format `1000000` as `1,000,000` and Dutch would format with a decimal instead `1.000.000`.
+異なるロケールによって、数字のフォーマット方法が異なる場合があります。 例えば、英語(英国および米国)では、「1000000」を「1,000,000」とフォーマットし、オランダ語では小数点を含めて「1.000.000」とフォーマットします。
 
-JavaScript provides a built in function to do this formatting based on the locale code, [`Number.protoype.toLocaleString()`][5].
+JavaScriptには、[`Number.protoype.toLocaleString()`][5]に基づいて、このフォーマットを行うための組み込み関数があります。
 
-An example of usage:
+使用例:
 
 ```javascript
 var numberOfItems = 1000;
@@ -82,51 +82,51 @@ var currentLocale = this.app.i18n.locale;
 var localeNumberString = numberOfItems.toLocaleString(currentLocale);
 
 console.log(localeNumberString);
-// expected output assuming currentLocale is en-US: "1,000"
+// currentLocaleがen-USであると想定された出力: "1,000"
 ```
 
-## Localized Fonts
+## ローカライズされたフォント
 
-Often you will find that different languages might require different fonts to be used. In order to define a different font for a specific language select the primary font Asset you are using for your Text Element and towards the bottom of the Asset Attributes you will find the Localization section for that font Asset. Type the desired locale and assign a new font Asset for that locale.
+異なる言語には、使用する必要がある異なるフォントがあることがよくあります。 特定の言語に対して別のフォントを定義するには、使用しているテキストの主要なフォントアセットを選択し、アセット属性の下部にそのフォントアセットのローカライゼーションセクションがあります。目的のロケールを入力して、そのローケール用の新しいフォントアセットを割り当てます。
 
-At runtime when the application switches to a different locale it will load the font Asset you defined for that locale.
+アプリケーションが別のロケールに切り替わると、そのロケールに定義されたフォントアセットが読み込まれます。
 
 ![Localized Fonts Inspector][9]
 
-## Language Notes
+## 言語ノート
 
-There are some languages that require specific workflows or considerations that are listed below.
+以下に、特定のワークフローや注意事項が必要な言語がいくつか挙げられています。
 
-### Thai
+### タイ語
 
-For word wrapping to work correctly in UI Text Elements with Thai text, [zero width characters (Unicode U+200B)][7] need be added between words by the translators.
+Thai textを持つUIテキスト要素のテキスト折り返しを正しく動作させるには、翻訳者が単語の間に[ゼロ幅文字(Unicode U+200B)][7]を追加する必要があります。
 
-The Thai language has no spaces between words and the same run of glyphs can be split into different combinations of words depending on the context of the sentence.
+タイ語には単語の間にスペースがなく、同じグリフのランが文の文脈によって異なる単語の組み合わせに分割される場合があります。
 
-Being able to split Thai text correctly computationally is still an [unsolved problem][6] and usually done via a dictionary based approach which can be expensive to do at runtime.
+Thai textを計算上正確に分割することはまだ[未解決の問題][6]であり、通常、実行時に高価なディクショナリベースのアプローチで行われます。
 
-The [thai-language.com site also has a separate tool][8] to add the zero width characters between words using a dictionary based approach if you have existing text.
+[thai-language.com][8]には、既存のテキストがある場合に、ディクショナリベースのアプローチを使用して単語の間にゼロ幅文字を追加する別のツールもあります。
 
-### Right to left Languages
+### 右から左の言語
 
-Right to left languages will need extra scripts for support that can be found in this [example project][10].
+右から左に書く言語には、[この例のプロジェクト][10]で見つけることができるサポートするための追加スクリプトが必要です。
 
-In the example project, there is a folder called 'Rtl Support' that needs to [copied and pasted][11] into your project.
+例のプロジェクトには、「Rtl Support」というフォルダがあり、プロジェクトに[コピーして貼り付ける][11]必要があります。
 
 ![][12]
 
-In the folder, there is Script Type called 'RtlElement' which should be added to any Entity with a text element component that would be used to show right to left text.
+フォルダには、「RtlElement」というスクリプトタイプがあり、その右から左にテキストを表示するためにテキスト要素コンポーネントが含まれるすべてのエンティティに追加する必要があります。
 
 ![][13]
 
-## Engine
+## エンジン
 
-To retrieve the text from a key in script, use the APIs:
+スクリプト内でキーからテキストを取得するには、次のAPIを使用します。
 
-* [pc.I18n#getText][3] To retrieve the a non-plural or first text string in a plural list
-* [pc.I18n#getPluralText][4] To retrieve a plural text string based on the number
+* [pc.I18n#getText][3] 複数形リスト内の非複数形または最初のテキスト文字列を取得するには
+* [pc.I18n#getPluralText][4] 数に基づいて複数形テキスト文字列を取得するには
 
-For the complete engine API reference for localization see [this page][2].
+ローカライゼーションの完全なエンジンAPIリファレンスについては、[このページ][2]を参照してください。
 
 [1]: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
 [2]: /api/pc.I18n.html

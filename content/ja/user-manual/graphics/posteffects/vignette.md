@@ -4,13 +4,13 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-写真や視覚では、[ビネット][1]とは画像の中心に比べて、画像の明るさや彩度を減少させることです。フレームの中心に注意を引くために使用できます。
+写真撮影や光学において、[ビネット効果][1]とは、中心部に比べて画像の周辺部の明るさや彩度が低下することです。この効果は、視聴者の目をフレームの中心に向けるために使用することができます。
 
-エフェクトをかけていない画像:
+これはエフェクトをかけていない画像です。
 
 ![Image without effect][2]
 
-エフェクトを適用した同じ画像：
+これがエフェクトを適用した同じ画像です。
 
 ![Image with effect][3]
 
@@ -19,7 +19,7 @@ position: 6
 * **Offset**: エフェクトのオフセットをコントロール。
 * **Darkness**: エフェクトの暗さをコントロール。
 
-Find the post-processing effect script on [GitHub][4].
+ポストエフェクトスクリプトは[GitHub][4]で入手できます。
 
 [1]: https://en.wikipedia.org/wiki/Vignetting
 [2]: /images/platform/posteffects/without_effects.png

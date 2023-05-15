@@ -7,11 +7,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 <iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 
-このプロジェクトは、エンティティの[clone()][1] 機能を使用してエディタで作成されたエンティティからレベルをランダムに生成します。
+このプロジェクトでは、エディタで作成された Entity からランダムにレベルを生成するために、Entity 上の [clone()][1] 関数を使用しています。
 
-[チュートリアルプロジェクト[2]のEditorからお試しください。
+チュートリアルプロジェクト内のエディタから試してみてください。
 
-下記のスクリプトは、非常に簡単なレベル生成プログラムです。エディタで設定された2つのエンティティ'Grass' と 'House'を、グリッドベースレベルのタイルのように使用します。ランダムにタイルを選択し、そのタイルをクローンして新しいエンティティを作成してから、正しいグリッド位置に新しいエンティティを配置することでレベルを作成します。
+以下のスクリプトは非常にシンプルなレベル生成プログラムです。エディタでセットアップされた2つの Entity 「Grass(草)」と「House(家)」を取ります。これらをグリッド・ベースのタイルとして使用して、レベルが作成されます。タイルの1つをランダムに選択して、タイルをクローンして新しい Entity を作成し、その新しい Entity を正しいグリッド上の位置に配置します。
 
 ```javascript
 var Generate = pc.createScript('generate');
@@ -26,27 +26,25 @@ Generate.attributes.add('numTilesY', {
     default: 10
 });
 
-// initializeコードがエンティティ毎に一度呼ばれる
+// initialize code called once per entity
 Generate.prototype.initialize = function() {
-    // ワールドタイルのテンプレートをいくつか作成しました
-    // テンプレートが表示されないよう、Editor階層で
-    // 無効にしました。生成されたワールドのみ
-    // 表示されるようにします。
+    // ワールドタイルとして使用する2つのテンプレートを作成しました
+    // エディタの階層構造では、テンプレートを非表示にしておきます。
+    // 私たちが生成したワールドは表示したくないからです。
     var templates = this.app.root.findByName('Templates');
     var grass = templates.findByName('Grass');
     var house = templates.findByName('House');
 
     for (var y = 0; y < this.numTilesY; y++) {
         for (var x = 0; x < this.numTilesX; x++) {
-            // ランダムにタイルを選びます。家より草の可能性が高いです。
+            // 草より家の方が大きい確率でタイルを選択
             var tile = (Math.random() > 0.8) ? house : grass;
 
-            // タイルをクローンします
+            // タイルをクローン
             var e = tile.clone();
 
-            // クローンされたタイルのワールド位置を設定します。タイルはX,Z寸法で
-            // 10x10なので、位置を10で
-            // 掛けます。
+            // クローンされたタイルのワールド座標を設定します。
+            // テンプレートのサイズが X 増後に 10x10 であるため、座標を 10 倍する必要があることに注意してください。
             e.setPosition((x - this.numTilesX / 2) * 10, 0, (y - this.numTilesX / 2) * 10);
 
             // シーンの階層にタイルを追加します。

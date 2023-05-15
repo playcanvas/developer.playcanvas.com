@@ -1,24 +1,25 @@
 ---
-title: 後処理エフェクト
+title: ポストエフェクト
 layout: usermanual-page.hbs
 position: 6
 ---
 
-PlayCanvasは、プロジェクトへの追加のポストプロセスエフェクトをサポートしています。ポストエフェクトは最終レンダリングされた画像を修正して、アプリケーションにより効果的なビジュアルを追加する簡単な方法を提供します。
+PlayCanvasでは、プロジェクトへのポストプロセッシングエフェクトを追加することができます。ポストエフェクトは最終的にレンダリングされるイメージを変更し、アプリケーションにビジュアル効果を簡単に追加する方法を提供します。
 
-ポストエフェクトをスクリプトとして実装しました。このスクリプトは[カメラ][1]コンポーネントがアタッチされているエンティティに追加できます。カメラにポストエフェクトを追加するには、以下の手順を参照してください。
+ポストエフェクトは、[Camera][1] コンポーネントがアタッチされた Entity に追加できるスクリプトとして実装されています。カメラにポストエフェクトを追加するには、以下の手順を実行します。
 
-1. Choose one of the effects below and get the script from the GitHub link.
-  * [Bloom][3]
-  * [Brightness-Contrast][4]
-  * [Hue-Saturation][5]
+1. 以下のエフェクトのうち、一つを選択し、GitHub リンクからスクリプトを取得します。
+  * [ブルーム][3]
+  * [ブライトネス・コントラスト][4]
+  * [色相・彩度][5]
   * [FXAA][6]
-  * [Sepia][7]
-  * [Vignette][8]
-2. Add a [Script][9] component to the Entity representing your camera.
-3. Assign the desired post effect scripts to the camera entity's Script component. Note that the order in which the post effect script are listed in the Script component determine the order in which they are applied.
+  * [セピア][7]
+  * [ビネット][8]
+2. カメラに [Script][9] コンポーネントを追加します。
+3. カメラの Script コンポーネントに、必要なポストエフェクトスクリプトを割り当てます。ポストエフェクトスクリプトが Scriptコンポーネント内でリストされる順序が、適用順序を決定することに注意してください。
 
-You can also create your own post effects. You can find some additional ones on [GitHub][2].
+また、カスタムポストエフェクトを作成することもできます。追加のポストエフェクトについては、[GitHub][2]で探すことができます。
+
 
 [1]: /user-manual/packs/components/camera
 [2]: https://github.com/playcanvas/engine/tree/main/scripts/posteffects

@@ -1,19 +1,19 @@
 ---
-title: Graph Inspector
+title: グラフインスペクター
 layout: shader-editor-page.hbs
 position: 1
 ---
 
 <img loading="lazy" src="/images/shader-editor/inspector-pane-graph.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Graph Inspector is where a graph's settings are configured.
+グラフインスペクターは、グラフの設定が構成される場所です。
 
-To access a graph's inspector, select it in the [Assets Pane][1].
+グラフのインスペクタにアクセスするには、[アセットパネル][1]で選択します。
 
-| Control | Use |
+| 項目 | 説明 |
 |---|---|
-| 名前 | The graph name.
-| Label | The graph descriptive text. |
-|\+ NEW MATERIAL | Create a new material from the current graph. |
+| Name | グラフの名前
+| Label | グラフの説明文 |
+|\+ NEW MATERIAL | 現在のグラフから新しいマテリアルを作成します。 |
 
 [1]: /shader-editor/window-layout/assets-pane

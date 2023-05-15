@@ -49,11 +49,11 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 
 ## GitHub Pages での自己ホスティング
 
-As a PlayCanvas application is static content, [GitHub Pages][github-pages] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).
+PlayCanvasアプリケーションは静的コンテンツであるため、[Self-hosting on your own server](#self-hosting-on-your-own-server)と同じ手順で[GitHub Pages][12]を使用してアプリケーションをホストすることができます。
 
-You will also need to add an extra file named `.nojekyll` in the GitHub repo root directory to ensure that all files are copied to the final site. This is because some PlayCanvas published files start with an underscore and will be ignored without this file being added.
+また、PlayCanvasが公開する一部のファイルはアンダースコアで始まるため、これらのファイルが無視されないように、GitHubリポジトリのルートディレクトリに`.nojekyll`という名前の追加ファイルを追加する必要があります。
 
-GitHub Pages Documentation can be found [here][github-nojekyll] about usage of the `.nojekyll` file.
+GitHub Pagesドキュメントは、[`.nojekyll`][13]ファイルの使用に関する情報を提供しています。
 
 ## ダウンロードされたビルドを実行する
 
@@ -61,9 +61,10 @@ GitHub Pages Documentation can be found [here][github-nojekyll] about usage of t
 
 ウェブサーバを実行するためのオプションは多数あります。いくつかを紹介します：
 
-* *初級：* [Python][6]をインストールしてゲームのindex.htmlと同じフォルダから*python -m SimpleHTTPServer* コマンドを実行。次に、ブラウザを `http://localhost:8000` にポイントします。
-* *中級：* [XAMPP][7]をインストール。これは完全なPHP開発環境ですが、簡単に構成できるApacheサーバを含みます。
-* *上級：* [Apache][8] または [nginx][9]をスタンドアローンサービスとしてインストールします。
+* *初級:* [Python][6]をインストールし、アプリケーションのindex.htmlと同じフォルダから*python -m SimpleHTTPServer*コマンドを実行します。その後、ブラウザを `http://localhost:8000` に向けます。
+* *中級:* [NPM][10]と[http-server][11]をグローバルにインストールします。アプリケーションのindex.htmlと同じフォルダから*http-server -p 8000 --cors -c-1*コマンドを実行します。その後、ブラウザを`http://localhost:8000`に向けます。
+* *中級:* [XAMPP][7]をインストールします。これは完全なPHP開発環境ですが、簡単に設定できるApacheサーバーが含まれています。
+* *上級:* スタンドアロンサービスとして[Apache][8]または[nginx][9]をインストールします。
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting
@@ -74,5 +75,7 @@ GitHub Pages Documentation can be found [here][github-nojekyll] about usage of t
 [7]: https://www.apachefriends.org/index.html
 [8]: https://httpd.apache.org/
 [9]: https://www.nginx.com/
-[github-pages]: https://pages.github.com/
-[github-nojekyll]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators
+[10]: https://www.npmjs.com/
+[11]: https://www.npmjs.com/package/http-server
+[12]: https://pages.github.com/
+[13]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators

@@ -4,43 +4,41 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas supports the [Facebook Playable Ad][1] formats and requirements via an [official external tool on GitHub][2].
+PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][1]フォーマットと要件をサポートしています。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" width="185px" style="margin:0px 5px; display:inline;"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" width="185px" style="margin:0px 5px; display:inline;"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" width="185px" style="margin:0px 5px; display:inline;">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" style="margin:0px 5px; display:inline;" width="185"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" style="margin:0px 5px; display:inline;" width="185"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" style="margin:0px 5px; display:inline;" width="185">
 
-The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (uncompressed) ZIP formats via the configuration options. Full specifications for Facebook Playable Ads can be found on their [help centre][3].
+ツールは、構成オプションを通じて、片方が2MB(無圧縮)HTMLファイル、もう片方が5MB(無圧縮)ZIPフォーマットの両方を作成できます。Facebook Playable Adの全仕様は、[ヘルプセンター][3]で見つけることができます。
 
-There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
+ツールにはいくつかの制限があります。これらの制限については、[GitHub][2]からのドキュメントを参照してください。
 
+## サンプルプロジェクト
 
-## Example project
-
-The [Cube Jump project][5] is ready to be exported for the Facebook Playable Ad format and the expected [HTML output can be found here][6].
+[Cube Jumpプロジェクト][5]は、Facebook Playable Adフォーマットにエクスポートする準備ができており、[HTML出力の期待される結果はこちら][6]にあります。
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
 
+## ファイルサイズのヒント
 
-## File size tips
+厳格なファイルサイズ制限があるため、広告のアセットの使用を計画し、予算を立てる必要があります。
 
-As there is a strict file size limit, you will have to plan and budget the usage of assets for the ad.
+ミニファイされたPlayCanvasエンジンのコードは、圧縮されていない場合は**~1.2MB**であり、アセットファイルをBase64文字列にエンコードする必要があるため、それぞれのアセットファイルのサイズに**~30%**加えられます。
 
-The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
+つまり、単一のHTMLフォーマットの場合、これはアセットに対して圧縮されていないとわかる\~500KBを残して、Base64文字列にエンコードされる前の状態です。ZIP フォーマットの場合は、圧縮されていない状態のアセットに対して約\~3MBが残っています。
 
-This means that for a single HTML format, this leaves \~500KB for assets before they are encoded into Base64 strings. For the ZIP format, this would be about \~3MB for assets before encoding.
+画像の寸法をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用して、ファイルサイズをさらに減らすようにしてください。
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
+## Playable adチェックリスト:
 
-## Playable ad checklist:
+* 「FbPlayableAd.onCTAClick( )」の関数呼び出しを呼び出しの一部として追加しましたか?
 
-* Have you added the function call `FbPlayableAd.onCTAClick()` as part of your call to action callback?
+## エクスポート方法
 
-## How to export
+GitHubリポジトリのREADMEから[セットアップ手順][7]に従ってください。
 
-Follow the [setup steps][7] from the readme in the GitHub repo.
+### 単独HTML
 
-### Single HTML
-
-Set the following options in the `config.json` as shown below. This will produce a single HTML file in the output directory.
+次のように `config.json`の以下のオプションを設定します。これにより、出力ディレクトリに単一のHTMLファイルが生成されます。
 
 ```json
     "one_page": {
@@ -50,9 +48,9 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-### ZIP file
+### ZIP ファイル
 
-Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
+`config.json`の以下のオプションを設定します。これにより、アセットデータとPlayCanvasエンジンコードが`index.html`とは別のファイルとしてZIPファイルで生成されます。
 
 ```json
     "one_page": {
@@ -62,15 +60,23 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-### How to test
+そして、次のコマンドを実行します。
 
-Follow the steps [here][fb-ad-creation-guide] to create a Facebook ad and at the time where the files for the ad are uploaded, there is an opportunity to test within the manager.
+```sh
+npm run one-page
+```
+
+詳しいオプションやコマンドの詳細は、'[プロジェクトを単一のHTMLファイルに変換する][9]'というセクションのREADMEで確認できます。
+
+### テスト方法
+
+Facebook広告を作成する手順[こちら][8]に従い、広告用のファイルがアップロードされるタイミングで、マネージャー内でテストすることができます。
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg">
 
-Please ignore the warning about the source may contain an `XMLHttpRequest` as the code path has been removed by this tool.
+このツールによってコードパスが削除されたため、ソースに `XMLHttpRequest` が含まれる可能性があるという警告は無視してください。
 
-Facebook also allows testing on device via the ad manager but requires you to publish the ad first. This is a strange limitation by Facebook but is required at the moment.
+Facebookはまた、デバイス上でのテストも管理者を介して許可していますが、最初に広告を公開する必要があります。これはFacebookの奇妙な制限ですが、現時点では必要です。
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-preview-device.jpg">
 
@@ -81,4 +87,5 @@ Facebook also allows testing on device via the ad manager but requires you to pu
 [5]: https://playcanvas.com/project/354998/overview/cube-jump-playable-ad-for-fb
 [6]: /downloads/fb-playable-ad-cube-jump-html.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
-[fb-ad-creation-guide]: https://www.facebook.com/business/help/338940216641734
+[8]: https://www.facebook.com/business/help/338940216641734
+[9]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file

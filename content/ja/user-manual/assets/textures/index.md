@@ -4,17 +4,17 @@ layout: usermanual-page.hbs
 position: 15
 ---
 
-テクスチャとは[素材][1]に割り当てて図形要素に適用される画像です。
+テクスチャとは、[マテリアル][1]に割り当てられ、グラフィカルなプリミティブに適用される画像のことです。
 
 ## テクスチャのインポート
 
-PlayCanvasにテクスチャアセットをインポートする方法は3つあります:
+PlayCanvasにTextureアセットをインポートする方法は3つあります。
 
-1. アセットパネルに画像をドラッグ＆ドロップ。
-2. アセットパネルのコンテキストメニューからアップロードを選択してファイルブラウザを使用して画像を選択。
-3. テクスチャを埋め込むFBXファイルをインポート。
+1. 画像をアセットパネルにドラッグアンドドロップする。
+2. アセットパネルのコンテキストメニューから「アップロード」を選び、ファイルブラウザを使って画像を選択する。
+3. テクスチャが埋め込まれたFBXファイルをインポートする。
 
-次の画像形式に対応しています：
+対応している画像フォーマットは以下の通りです。
 
 * JPG
 * PNG
@@ -25,55 +25,55 @@ PlayCanvasにテクスチャアセットをインポートする方法は3つあ
 * HDR
 * EXR
 
-インポートだれたJPGとPNGファイルは元の形式のまま保たれます。
+インポートされたJPGおよびPNGファイルは,元のフォーマットのままとなります。
 
-GIF、TGA、BMP、TIFFの画像形式は、インポート時にJPGまたはPNGに変換されます。取り込んだ画像が透明性を有する場合、PNGに変換されます。それ以外の場合は、JPGに変換されます。
+GIF、TGA、BMP、TIF画像タイプは、インポート時にJPGまたはPNGに変換されます。インポートされた画像に透過度がある場合は、PNGに、そうでない場合はJPGに変換されます。
 
-HDRやEXRは、[高ダイナミックレンジ形式][2]です。これらの形式の画像は、インポート時にPNGに変換され、RGBM形式で格納されるものとしてマークされます。RGBMは、本質的にPNGのアルファチャンネルでRGB値の乗数を格納して、低ダイナミックレンジ形式へのHDR形式の圧縮を可能にします。
+HDRおよびEXRは[高ダイナミックレンジフォーマット][2]です。これらのタイプの画像は、PNGに変換され、RGBM形式で格納されるとマークされます。RGBMは、PNGのアルファチャンネルにRGB値の乗数を格納し、HDR形式を低ダイナミックレンジ形式に圧縮することができます。
 
-By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
+デフォルトでは、インポートされる画像は2のべき乗に最も近いサイズにリサイズされます。たとえば、323x414の画像は、インポート時に256x512にリサイズされます。これは、グラフィックスエンジンが、2のべき乗でないテクスチャのミップマッピングを利用できないためです。ただし、これは、アセットタスクパネルで'テクスチャPOT'設定を無効にして、2のべき乗でないテクスチャをインポートする前にオーバーライドできます。
 
 ## テクスチャプロパティ
 
-アセットパネルでテクスチャのサムネイルを選択すると、インスペクタパネルにそれを読み込みします。テクスチャを複数選択し、インスペクタで同時に選択全体を編集できることができます。
+アセットパネルでテクスチャのサムネイルを選択すると、インスペクタパネルに読み込まれます。複数のテクスチャを選択して、インスペクタで全体の選択を編集することもできます。
 
-テクスチャは標準的なアセットプロパティ(ID, 名前, タグなど)を共有します。また、いくつかのテクスチャ固有の特性を有しています。
+テクスチャは、標準的なアセットプロパティ(ID、名前、タグなど)を共有しますが、テクスチャ固有のプロパティもあります。
 
-![テクスチャプロパティ][3]
+![texture_properties_jp][3]
 
-### テクスチャのフィルタリング
+### テクスチャのフィルタリング (Texture Filtering)
 
-テクスチャフィルタリングは、テクスチャマッピングされたピクセルの色がどのように計算されるかを制御できます。「Point」はフィルタリングを適用しません。「Linear」は、隣接しているものでテクセルの色を補間します。テクスチャが最小化され、より良い視覚的な結果が得られます(テクスチャが画面上でテクセルよりも少数のピクセルを有する)。
+テクスチャフィルタリングは、テクスチャマッピングされたピクセルの色がどのように計算されるかを制御する機能です。'Point'はフィルタリングを適用せず、'Linear'はテクセルの色を周囲のピクセルと補間します。これにより、特にテクスチャが最小化された場合（テクスチャのテクセル数よりも画面上のピクセルが少ない場合）に、より良い視覚的な結果が得られます。
 
-### 異方性
+### 異方性 (Anisotropy)
 
-テクスチャが斜めの角度で表面に表示されると、品質を損ない、ぼやけて表示されることがあります。この問題を解決するには、異方性（anisotropy）の値を設定することができます。異方性の値がどのようにテクスチャの外観に影響を与えるかをご確認ください：
+テクスチャが斜めの角度で表面上に表示される場合、品質が低下し、ぼやけたように見えることがあります。この問題を解決するために、Anisotropyの値を設定することができます。異なるAnisotropyの値がテクスチャの外観にどのような影響を与えるかを見てみましょう。
 
-![異方性][4]
+![Anisotropy_jp][4]
 
-異方性が上がると、GPU上でテクスチャをサンプリングする際の負荷も増大します。
+Anisotropyが増加するにつれて、GPUでテクスチャをサンプリングするコストも増加します。
 
-### テクスチャの指定
+### テクスチャアドレス
 
-テクスチャ指定プロパティを使用すると、0から1の範囲外のテクスチャ座標に対してテクスチャがどのようにサンプリングされるかをコントロールできるようになります。各モードが、スプライトにどのように影響するかを参照してください：
+テクスチャアドレスプロパティを使用すると、テクスチャ座標が範囲0から1以外の値でサンプリングされる方法を制御できます。さまざまなモードがスプライトにどのように影響するかを以下に示します。
 
-![指定][5]
+![texture_address_jp][5]
 
-## Max Texture Size
+## 最大テクスチャサイズ
 
-Different devices can support different texture sizes. Using [WebGL report][7] on the device and browser, we can see the max size supported.
+異なるデバイスは異なるテクスチャサイズをサポートしています。デバイスとブラウザの[WebGL report][7] を使用して、サポートされる最大サイズを確認できます。
 
-For example, this is from a MacBook Pro 16 inch (2020) laptop with Chrome which shows support up to 16384x16384.
+たとえば、2020年のMacBook Pro 16インチの場合、Chromeで最大16384x16384までサポートされていることがわかります。
 
 <img loading="lazy" src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" style="width: 600px;">
 
-Whereas on a Samsung S7 mobile device, only 4096x4096 is supported.
+一方、Samsung S7モバイルデバイスでは、4096x4096のみサポートされています。
 
 <img loading="lazy" src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" style="width: 600px;">
 
-If the engine attempts to utilize a texture that exceeds the max texture size reported by WebGL, it will resize it down to this maximum size at runtime. Note that this is only done for texture loaded from images (PNG, JPG, GIF). Compressed textures cannot be resized at runtime and will simply fail to render if they are too large for the device.
+エンジンがWebGLに報告された最大テクスチャサイズを超えるテクスチャを使用しようとした場合、実行時にそのテクスチャをこの最大サイズに縮小します。これは、画像(PNG、JPG、GIF)からロードされたテクスチャに対してのみ行われます。圧縮されたテクスチャは実行時にリサイズできず、デバイスのオーバーサイズな場合は描画に失敗します。
 
-If you would like to avoid downsizing at runtime, at the time of writing (Fri 23 Oct 2020), 4096x4096 is very widely supported with some developers even opting for 2048x2048 which is guaranteed to work everywhere.
+実行時にサイズを縮小しない場合は、2020年10月23日現在、4096x4096が非常に広範にサポートされていますし、一般的には2048x2048がどこでも動作保証されています。
 
 [1]: /user-manual/assets/materials
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
