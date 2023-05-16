@@ -7,7 +7,7 @@ position: 2
 ## Route URL
 
 ```none
-GET https://playcanvas.com/api/projects/:project_id/app
+GET https://playcanvas.com/api/projects/:projectId/app
 ```
 
 ## Description
@@ -17,13 +17,13 @@ Gets the Primary App of a Project.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/app
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/app
 ```
 
 ## Parameters
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>The id of the project.</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>The id of the project.</p></div>
 </div>
 
 ## Response Schema

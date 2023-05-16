@@ -17,13 +17,13 @@ Gets a published App by id.
 ## Example
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/apps/99999
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/apps/{id}
 ```
 
 ## Parameters
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>The id of the app.</p></div>
+<div class="parameter"><span class="param">id: number</span><p>The id of the app.</p></div>
 </div>
 
 ## Response Schema
