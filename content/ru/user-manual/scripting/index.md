@@ -1,16 +1,16 @@
 ---
-title: Написание сценариев
+title: Скриптинг
 layout: usermanual-page.hbs
 position: 11
 ---
 
-Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programming language that is used to program web pages.
+Скрипты - это то, как вы делаете свое приложение PlayCanvas интерактивным. Они написаны на обычном **JavaScript** - том же языке программирования, который используется для программирования веб-страниц.
 
-You can think of your application as divided into two separate code bases. The Engine, which is provided by PlayCanvas, implements general purpose functionality such as graphics rendering, input handling, audio, and the interface to the PlayCanvas tools; and Scripts which are often specific to your application or re-usable chunks that provide useful behaviors.
+Вы можете думать о своем приложении как о разделенном на две отдельные базы кода. Движок, предоставляемый PlayCanvas, реализует функциональность общего назначения, такую как графическая отрисовка, обработка ввода, аудио и интерфейс с инструментами PlayCanvas; и Скрипты, которые часто специфичны для вашего приложения или повторно используемые блоки, предоставляющие полезные поведения.
 
-Generally you won't have to worry about the engine code, it's a single JavaScript file included into your application. If you're rewriting parts of the engine you probably don't need this introduction to scripting.
+Обычно вам не придется беспокоиться о коде движка, это один файл JavaScript, включенный в ваше приложение. Если вы переписываете части движка, вам, вероятно, не нужно это введение в скриптинг.
 
-Here is an example of a simple script. It is called "rotate" and it rotates the entity that it is attached to by 10° every second.
+Вот пример простого скрипта. Он называется "rotate" и он вращает сущность (Entity), к которой он прикреплен, на 10° каждую секунду.
 
 ```javascript
 var Rotate = pc.createScript("rotate");
@@ -20,15 +20,15 @@ Rotate.prototype.update = function (dt) {
 };
 ```
 
-Scripts are defined by the name given when they are created and they are attached to [Script Component][1] via the Editor or by adding a script component to an Entity in your code.
+Скрипты определяются по имени, заданному при их создании, и они присоединяются к [Script Component][1] через редактор или добавлением компонента скрипта к Entity в вашем коде.
 
-## Terminology
+## Терминология
 
-Lets define a few pieces of terminology.
+Давайте определим несколько терминов.
 
-* ***Script*** A script is a Javascript file that contains one or more definitions of Script Objects.
-* ***Script Component*** The script Component is defined in the PlayCanvas engine and gives a game Entity the functionality that loads a script and creates a script object.
-* ***ScriptType*** A ScriptType is a JavaScript object created using the `pc.createScript` function. It is essentially a new class which will be instantiated when it is added to an Entity.
-* ***Script Instance*** A script instance is an instance of a ScriptType. One script instance is created for every Entity that has a ScriptType attached to a script component.
+* ***Скрипт*** Скрипт - это файл Javascript, содержащий одно или несколько определений объектов Script.
+* ***Script Component*** Компонент скрипта определен в движке PlayCanvas и предоставляет игровому Entity функциональность, которая загружает скрипт и создает объект скрипта.
+* ***ScriptType*** ScriptType - это объект JavaScript, созданный с помощью функции `pc.createScript`. По сути, это новый класс, который будет создан при добавлении его к Entity.
+* ***Script Instance*** Экземпляр скрипта - это экземпляр ScriptType. Для каждого Entity, у которого есть ScriptType, прикрепленный к компоненту скрипта, создается один экземпляр скрипта.
 
 [1]: /user-manual/packs/components/script/

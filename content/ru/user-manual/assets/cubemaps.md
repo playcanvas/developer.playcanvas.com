@@ -4,64 +4,64 @@ layout: usermanual-page.hbs
 position: 7
 ---
 
-Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:
+Cubemaps - это особый тип текстурных ассетов. Они состоят из 6 текстурных ассетов, где каждая текстура представляет грань куба. Обычно они имеют два применения:
 
-1. A cubemap can define your scene's sky box. A sky box contains imagery of the distant visuals of your scene such as hills, mountains, the sky and so on.
-2. A cubemap can add reflections to any material. Imagine a shiny, chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, you would normally set the scene's sky box cubemap as the cubemap on a reflective object's materials.
+1. Cubemap может определить небесную коробку вашей сцены. Небесная коробка содержит изображения далеких видов вашей сцены, таких как холмы, горы, небо и так далее.
+2. Cubemap может добавить отражения к любому материалу. Представьте себе блестящий, хромированный шарик в вашей сцене. Шар отражает окружающую сцену. Для открытых сред обычно устанавливают небесную коробку сцены в качестве кубической карты на отражающих объектах материалов.
 
 <iframe loading="lazy" src="https://playcanv.as/b/xp7v1oFB/" title="Cubemap"></iframe>
 
-## Importing Cubemap Textures
+## Импорт текстур Cubemap
 
-A cubemap is an asset that requires six texture assets as input. Therefore, in order to fully configure a new cubemap asset, you must first import 6 images into your project. To do this, simply drag 6 images from your file system into the Assets panel (or select the Asset panel's Upload option). Once uploaded and processed, the images will appear in the Assets panel where they are now ready to be assigned to a cubemap asset.
+Cubemap - это актив, который требует шести текстурных ассетов в качестве входных данных. Поэтому для полной настройки нового актива кубической карты сначала необходимо импортировать 6 изображений в ваш проект. Чтобы сделать это, просто перетащите 6 изображений из вашей файловой системы в панель ассетов (или выберите опцию Загрузить панели ассетов). После загрузки и обработки изображения появятся на панели ассетов, где они теперь готовы к назначению на актив кубической карты.
 
-## Creating Cubemaps
+## Создание Cubemaps
 
-You can create new cubemap assets directly from the PlayCanvas Editor interface. Use the Create Asset menu in the Asset panel.
+Вы можете создавать новые активы кубических карт прямо из интерфейса редактора PlayCanvas. Используйте меню Создать актив на панели ассетов.
 
 ![Cubemap Creation][1]
 
-This creates a new cubemap Asset and opens up the Cubemap Editor on the right-hand side of the screen.
+Это создает новый актив Cubemap и открывает редактор Cubemap в правой части экрана.
 
-## Selecting Cubemaps
+## Выбор Cubemaps
 
-To select a cubemap in order to edit it, select it in the Asset Panel. The easiest way to do this is to select the cubemap filter to narrow down the options for selection. Cubemaps are identified by cross-shaped thumbnails:
+Чтобы выбрать кубическую карту для редактирования, выберите ее на панели ассетов. Самый простой способ сделать это - выбрать фильтр кубической карты, чтобы сузить варианты выбора. Кубические карты определяются миниатюрами в форме креста:
 
 ![Cubemap Thumbnails][2]
 
-When a cubemap is selected, it will be loaded into the Inspector panel on the right of the Editor.
+При выборе кубической карты она будет загружена в панель инспектора справа от редактора.
 
-## Cubemap Properties
+## Свойства Cubemap
 
-Once you have a cubemap selected, you can edit its properties.
+После выбора кубической карты вы можете редактировать ее свойства.
 
 ![Cubemap Properties][3]
 
 ### Фильтрация
-This setting determines how the pixels of the cubemaps are interpolated as they are magnified. Magnification is when the texel to screen pixel ratio is less than one. Linear gives the best results visually, followed by Nearest.
+Этот параметр определяет, как пиксели кубических карт интерполируются при их увеличении. Увеличение происходит, когда соотношение текселя к пикселю экрана меньше единицы. Линейный дает наилучшие результаты визуально, за ним следует ближайший.
 
-### Anisotropy
-Anisotropy is a value between 1 and 16 that gives control over the quality of texture sampling as the camera's view vector becomes more closely aligned with the plane of a textured surface.
+### Анизотропия
+Анизотропия - это значение от 1 до 16, которое дает контроль над качеством выборки текстур, когда вектор обзора камеры становится более тесно выровненным с плоскостью текстурированной поверхности.
 
-## Assigning Textures to Cubemaps
+## Назначение текстур для Cubemaps
 
 ![Cubemap Preview][4]
 
-The cubemap Preview panel displays the six faces of a cubemap flattened into the shape of a cross. Imagine a cardboard box that has been unfolded to lay flat. To construct a cubemap, simply drag texture assets from the Assets panel to the face slots in the Preview panel. You can also select a cubemap face slot and then select a texture asset from the Assets panel.
+Панель предварительного просмотра кубической карты отображает шесть граней кубической карты, развернутых в форме креста. Представьте себе картонную коробку, которая была развернута, чтобы лежать плоско. Чтобы создать кубическую карту, просто перетащите текстурные активы из панели ассетов в слоты граней на панели предварительного просмотра. Вы также можете выбрать слот грани кубической карты, а затем выбрать текстурный актив из панели ассетов.
 
-Cubemap faces must be:
+Грани кубической карты должны быть:
 
-* Square (the same resolution in width and height)
-* Power of two in dimension (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 and so on)
-* All faces must be the same resolution
+* Квадратные (одинаковое разрешение в ширину и высоту)
+* Степень двойки по размеру (1x1, 2x2, 4x4, 8x8, 16x16, 32x32 и так далее)
+* Все грани должны иметь одинаковое разрешение
 
-To assist you, the Editor attempts to figure out how to auto-assign textures to faces intelligently. It does this when you drag the first face to a slot by trying to match commonly used naming conventions for cubemap faces, such as:
+Чтобы помочь вам, редактор пытается определить, как автоматически назначить текстуры на грани разумным образом. Он делает это, когда вы перетаскиваете первую грань в слот, пытаясь сопоставить общепринятые соглашения об именовании граней кубической карты, такие как:
 
 * negx, posx, negy, posy, negz, posz
 * left, right, top|up, bottom|down, front|forward, back|backward
 * 0-5|1-6
 
-An example of a texture set that would match is:
+Пример набора текстур, который будет соответствовать:
 
 * face_posx.jpg
 * face_negx.jpg
@@ -70,43 +70,43 @@ An example of a texture set that would match is:
 * face_posz.jpg
 * face_negz.jpg
 
-## Image Based Lighting
+## Освещение на основе изображений
 
-This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
+Эта техника позволяет использовать карту окружения, такую как CubeMap, для имитации физически обоснованного окружающего света и отражения на материалах. [Подробнее][6] о том, как это работает и как создавать CubeMaps для IBL.
 
-## Assigning Cubemaps to Materials
+## Назначение Cubemaps материалам
 
-The default Phong and Physical material types both have reflection properties. If you expand the Environment property section, you see the following:
+Типы материалов Phong и Physical по умолчанию имеют свойства отражения. Если вы развернете раздел свойств окружения, вы увидите следующее:
 
 ![Cubemap Material][5]
 
-You can click the Empty slot to select a cubemap or drag and drop a cubemap asset from the asset panel into the cubemap slot.
+Вы можете щелкнуть пустой слот, чтобы выбрать кубическую карту, или перетащить актив кубической карты из панели ассетов в слот кубической карты.
 
-Note: a Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
+Примечание: физический материал будет использовать сценический скибокс в качестве карты окружения по умолчанию, если он назначен и предварительно отфильтрован.
 
-## Converting Equirectangular or Octahedral HDRIs to Cubemaps
+## Конвертация Equirectangular или Octahedral HDRIs в Cubemaps
 
-Environment textures often are in a equirectangular or Octahedral format ([Poly Haven][7] for example) and will need to be converted to cubemaps before they can be used in PlayCanvas.
+Текстуры окружения часто имеют формат equirectangular или Octahedral ([Poly Haven][7], например) и должны быть преобразованы в кубические карты, прежде чем они смогут быть использованы в PlayCanvas.
 
-This can be done via [PlayCanvas Texture Tool][8], available in the browser.
+Это можно сделать через [PlayCanvas Texture Tool][8], доступный в браузере.
 
-1. Download the HDR version of environment texture and press 'Add Files' button in PlayCanvas Texture Tool to load the file. 
-2. Select the loaded texture on the left.
-3. Under 'Reproject' section, change the 'source' to the format of texture. 
-4. Change 'target' to 'cube'.
-5. Change 'encoding' to the desired format:
-    - 'rgbe' for exporting to 'HDR' 
-    - 'rgbm' for exporting to 'PNG'
-6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size. 
-7. Press 'Reproject' button to do the conversion to a cubemap. 
-8. Press 'Export to PNG' or 'Export to HDR' to download the 6 individual cubemap face textures that are ready to be uploaded to PlayCanvas.
+1. Загрузите версию HDR текстуры окружения и нажмите кнопку "Добавить файлы" в PlayCanvas Texture Tool, чтобы загрузить файл.
+2. Выберите загруженную текстуру слева.
+3. В разделе "Reproject" измените "источник" на формат текстуры.
+4. Измените "цель" на "куб".
+5. Измените "кодировку" на желаемый формат:
+    - "rgbe" для экспорта в "HDR"
+    - "rgbm" для экспорта в "PNG"
+6. Установите ширину на желаемый размер текстуры на каждую грань. 512 - хороший баланс между качеством и размером файла.
+7. Нажмите кнопку "Reproject" для выполнения конвертации в кубическую карту.
+8. Нажмите "Экспорт в PNG" или "Экспорт в HDR" для загрузки 6 отдельных текстур граней кубической карты, которые готовы к загрузке в PlayCanvas.
 
 ![PlayCanvas Texture Tool][12]
 
-Other tools that can also do this conversion include:
+Другие инструменты, которые также могут выполнить эту конвертацию, включают:
 
-* Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
-* [cmftStudio][10] (desktop) with [guide][11]
+* Инструмент [HDRI-to-CubeMap][9] Матеуша Вишниовского (браузер)
+* [cmftStudio][10] (рабочий стол) с [руководством][11]
 
 
 [1]: /images/user-manual/assets/cubemaps/cubemap-create.png

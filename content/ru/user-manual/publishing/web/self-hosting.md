@@ -1,22 +1,22 @@
 ---
-title: Свой хостинг
+title: Самостоятельный хостинг
 layout: usermanual-page.hbs
 position: 2
 ---
 
-There are two options for self-hosting a PlayCanvas application on your own domain.
+Существует два варианта самостоятельного размещения приложения PlayCanvas на вашем собственном домене.
 
-1. Embed a PlayCanvas hosted application using an [iframe][1].
-2. Download your application from the Editor and upload the files to your own site.
+1. Вставить приложение, размещенное на PlayCanvas, с помощью [iframe][1].
+2. Загрузить ваше приложение из редактора и загрузить файлы на ваш собственный сайт.
 
-## iframe Embedding
+## Встраивание с помощью iframe
 
-When you [publish to playcanvas.com][2], your application is assigned a URL. To embed your application in another page. You can simply include this URL as the `src` property of an iframe.
+Когда вы [публикуете на playcanvas.com][2], вашему приложению присваивается URL. Чтобы встроить ваше приложение в другую страницу, вы можете просто включить этот URL в качестве свойства `src` для iframe.
 
 ```html
 <html>
     <head>
-        <title>My Great Game</title>
+        <title>Моя отличная игра</title>
     </head>
     <body>
         <iframe loading="lazy" src="https://playcanv.as/p/PROJECT_ID/"></iframe>
@@ -24,46 +24,46 @@ When you [publish to playcanvas.com][2], your application is assigned a URL. To 
 </html>
 ```
 
-## Self-hosting on your own server
+## Размещение на собственном сервере
 
-In order to host your application independently of PlayCanvas' servers, do the following:
+Чтобы разместить ваше приложение независимо от серверов PlayCanvas, выполните следующие действия:
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* Перейдите в свой проект и откройте редактор.
+* Нажмите на кнопку <span class="pc-icon">&#57911;</span> на левой боковой панели инструментов или нажмите на пункт меню "Публикация" в верхнем левом углу
 
-![Publish Button][3]
+![Кнопка публикации][3]
 
-* This will open up the Publishing Dialog.
+* Это откроет диалоговое окно публикации.
 
-![Publish][4]
+![Публикация][4]
 
-* Click the DOWNLOAD .ZIP button
+* Нажмите кнопку DOWNLOAD .ZIP
 
-![Download][5]
+![Скачать][5]
 
-* Enter a name for your export. This will be the name of the .zip file that will be created for you.
-* Select the Scenes you want to include in your export from the list. Notice that the Scene with the active banner icon will be the first scene loaded when your app is launched.
-* Click on the 'DOWNLOAD' button on the bottom to download a zip file of your project ready for deployment.
-* Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your application.
+* Введите имя для вашего экспорта. Это будет название файла .zip, который будет создан для вас.
+* Выберите сцены, которые вы хотите включить в свой экспорт, из списка. Обратите внимание, что сцена с активным значком баннера будет первой загруженной сценой при запуске вашего приложения.
+* Нажмите кнопку "СКАЧАТЬ" внизу, чтобы скачать zip-файл вашего проекта, готового для развертывания.
+* Извлеките содержимое zip-файла в нужное место. Файл `index.html` загрузит ваше приложение.
 
+## Размещение на GitHub Pages
 
-## Self-hosting on GitHub pages
+Поскольку приложение PlayCanvas является статическим контентом, [GitHub Pages][12] может быть использован для размещения вашего приложения с использованием тех же шагов, что и [Размещение на собственном сервере](#self-hosting-on-your-own-server).
 
-As a PlayCanvas application is static content, [GitHub Pages][github-pages] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).
+Вам также нужно будет добавить дополнительный файл с именем `.nojekyll` в корневой каталог репозитория GitHub, чтобы гарантировать, что все файлы будут скопированы на окончательный сайт. Это связано с тем, что некоторые опубликованные файлы PlayCanvas начинаются с символа подчеркивания и будут проигнорированы без добавления этого файла.
 
-You will also need to add an extra file named `.nojekyll` in the GitHub repo root directory to ensure that all files are copied to the final site. This is because some PlayCanvas published files start with an underscore and will be ignored without this file being added.
+Документация по GitHub Pages можно найти [здесь][13] о использовании файла `.nojekyll`.
 
-GitHub Pages Documentation can be found [here][github-nojekyll] about usage of the `.nojekyll` file.
+## Запуск скачанной сборки
 
-## Running a Downloaded Build
+Вы не можете загрузить ваше приложение, открыв файл `index.html` в браузере или с URL-адреса `file://`. Вы должны использовать локальный веб-сервер для загрузки файла `index.html` с использованием `http://` или `https://`.
 
-You cannot load your application by opening the `index.html` file in a browser or from a `file://` url. You must use a local webserver to load the `index.html` file using `http://` or `https://`.
+Есть много вариантов для запуска веб-сервера. Вот несколько из них:
 
-There are many options for running a web server. Here are a few:
-
-* *Easy:* Install [Python][6] and run the command *python -m SimpleHTTPServer* from the same folder as your application's index.html. Then point your browser to `http://localhost:8000`
-* *Intermediate:* Install [XAMPP][7]. Although this is a full PHP development environment, it includes an easy to configure Apache server.
-* *Advanced:* Install [Apache][8] or [nginx][9] as a standalone service.
+* *Легко:* Установите [Python][6] и выполните команду *python -m SimpleHTTPServer* из той же папки, что и index.html вашего приложения. Затем перейдите в своем браузере по адресу `http://localhost:8000`.
+* *Средний уровень:* Установите [NPM][10] и [http-server][11] глобально. Выполните команду *http-server -p 8000 --cors -c-1* из той же папки, что и index.html вашего приложения. Затем перейдите в своем браузере по адресу `http://localhost:8000`.
+* *Средний уровень:* Установите [XAMPP][7]. Хотя это полноценная среда разработки PHP, она включает легко настраиваемый сервер Apache.
+* *Продвинутый:* Установите [Apache][8] или [nginx][9] в качестве отдельной службы.
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 [2]: /user-manual/publishing/web/playcanvas-hosting
@@ -74,5 +74,7 @@ There are many options for running a web server. Here are a few:
 [7]: https://www.apachefriends.org/index.html
 [8]: https://httpd.apache.org/
 [9]: https://www.nginx.com/
-[github-pages]: https://pages.github.com/
-[github-nojekyll]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators
+[10]: https://www.npmjs.com/
+[11]: https://www.npmjs.com/package/http-server
+[12]: https://pages.github.com/
+[13]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators

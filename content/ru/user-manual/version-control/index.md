@@ -1,31 +1,52 @@
 ---
-title: Контроль версии
+title: Контроль версий
 layout: usermanual-page.hbs
 position: 13
 ---
 
-Once you've moved beyond the simplest of projects, you will find that version control becomes an important part of your application development process. Version Control is a catch-all term for a system that performs the following functions
+Когда вы переходите от самых простых проектов, вы обнаружите, что контроль версий становится важной частью процесса разработки вашего приложения. Контроль версий - это обобщенное название для системы, которая выполняет следующие функции:
 
-* Allows you to turn back time to a previous version of your code and assets
-* Allows you to see changes that have been made to a project over time
-* Allows you to trial new changes in a safe place, isolated from other developers, and merge changes when ready
+* Позволяет вернуться к предыдущей версии вашего кода и ассетов
+* Позволяет видеть изменения, которые были внесены в проект со временем
+* Позволяет тестировать новые изменения в безопасном месте, изолированном от других разработчиков, и объединять изменения, когда они готовы
 
-PlayCanvas has version control tools built directly into the Editor which can be broken down into three main features. **Checkpoints** are a snapshot of your project at a single point in time, they form a timeline of changes to your project; **Branches** are a single line of development perhaps representing the changes required to create one feature or by one developer. Changes to assets in one branch will not affect changes in another branch; **Merging & Resolving conflicts**, merging is the process of combining one branch into another branch, conflicts occur when both branches edit the same data. After resolving conflicts the destination branch should contain the changes from both branches.
+В редакторе PlayCanvas встроены инструменты контроля версий, которые можно разделить на три основных функции. **Checkpoints** - это снимок вашего проекта в одной точке времени, они формируют временную шкалу изменений вашего проекта; **Branches** - это одна линия разработки, возможно, представляющая изменения, необходимые для создания одной функции или одного разработчика. Изменения ассетов в одной ветке не повлияют на изменения в другой ветке; **Merging & Resolving conflicts** - это процесс объединения одной ветки в другую ветку, конфликты возникают, когда обе ветки редактируют одни и те же данные. После разрешения конфликтов ветка назначения должна содержать изменения из обеих веток.
 
-## Version Control in PlayCanvas
+## Контроль версий в PlayCanvas
 
-You may be familiar with other version control systems (VCS), if so this summary will help you get familiar with how PlayCanvas works relative to other version control systems.
+Возможно, вы знакомы с другими системами контроля версий (VCS), если это так, то эта сводка поможет вам разобраться, как работает PlayCanvas по сравнению с другими системами контроля версий.
 
-You can think of a checkpoint like you would a **commit** in a VCS like Git or Mercurial. Each checkpoint is a point-in-time snapshot of project with an associated message that describes what changes were made in this checkpoint. While you are editing your project your current (un-checkpointed) changes are similar to the **working directory** i.e. you can think of these as your **local changes** (even though in PlayCanvas your local changes are shared with anyone else in the same branch as you).
+Вы можете думать о контрольной точке, как о **commit** в VCS, таких как Git или Mercurial. Каждая контрольная точка - это снимок проекта в определенный момент времени с соответствующим сообщением, которое описывает, какие изменения были внесены в этой контрольной точке. Во время редактирования вашего проекта ваши текущие (неотмеченные) изменения аналогичны **рабочему каталогу**, то есть вы можете думать об этом как о **локальных изменениях** (хотя в PlayCanvas ваши локальные изменения совместно используются с любым другим пользователем в той же ветке, что и вы).
 
-You cannot delete a checkpoint, but you can restore a previous checkpoint. Restoring a checkpoint works a little like a `git checkout <commit>` or `hg update -r <commit>`. However, in PlayCanvas we don't allow branches unless they have been explicitly created (no detached heads or similar). When you restore a previous checkpoint future changes will be children of the latest checkpoint in the branch.
+Вы не можете удалить контрольную точку, но можете восстановить предыдущую контрольную точку. Восстановление контрольной точки работает немного похоже на `git checkout <commit>` или `hg update -r <commit>`. Однако в PlayCanvas мы не разрешаем ветвление, если оно не было явно создано (нет отсоединенных голов или подобного). Когда вы восстанавливаете предыдущую контрольную точку, будущие изменения будут дочерними элементами последней контрольной точки в ветке.
 
-**Branches** in PlayCanvas work like branches in other systems. A branch forms an isolated line of development made up of checkpoints. All users who have set a branch as their current branch will see their changes in a real-time collaborative fashion. Branches cannot be deleted, but when you are finished working on a branch it can be *closed*.
+**Branches** в PlayCanvas работают как ветки в других системах. Ветка представляет собой изолированную линию разработки, состоящую из контрольных точек. Все пользователи, которые установили ветку в качестве своей текущей ветки, увидят свои изменения в режиме реального времени совместной работы. Ветки не могут быть удалены, но когда вы закончите работу над веткой, она может быть *закрыта*.
 
-Merging works in a similar way to other VCSs. However, in PlayCanvas it's important to note that merging occurs *between checkpoints* so any changes that you have not committed in a checkpoint will not be included in your merge. PlayCanvas automatically creates checkpoints in the destination branch of a merge to prevent you accidentally losing changes when merging.
+Слияние работает аналогично другим VCS. Однако в PlayCanvas важно отметить, что слияние происходит *между контрольными точками*, поэтому любые изменения, которые вы не зафиксировали в контрольной точке, не будут включены в ваше слияние. PlayCanvas автоматически создает контрольные точки в ветке назначения слияния, чтобы предотвратить случайную потерю изменений при слиянии.
 
-More details can be found on the specific pages for [checkpoints][1], [branches][2], and [merging][3].
+Более подробную информацию можно найти на специальных страницах для [checkpoints][1], [branches][2] и [merging][3].
+
+## Как контроль версий влияет на ваше хранилище
+
+Использование контроля версий потребует больше места для хранения контрольных точек и веток.
+
+Каждая созданная контрольная точка хранит только изменения от предыдущей контрольной точки. Объем используемых данных зависит от изменений, таких как новые активы, изменения текстур и т. д.
+
+Создание ветки из контрольной точки создает копию состояния проекта на этой контрольной точке. Это может значительно увеличить использование хранилища в зависимости от проекта.
+
+К сожалению, удалить ветки или контрольные точки невозможно, за исключением этих конкретных случаев:
+
+- [Жесткое сбросить до контрольной точки][4]
+- [Удаление ветки][5]
+
+Если вам нужно больше места для хранения, пожалуйста, напишите нам на [support@playcanvas.com][6]. В большинстве случаев мы можем увеличить вашу квоту на хранение без дополнительной оплаты.
 
 [1]: /user-manual/version-control/checkpoints
 [2]: /user-manual/version-control/branches
 [3]: /user-manual/version-control/merging
+[4]: /user-manual/version-control/checkpoints#hard-reset-to-a-checkpoint
+[5]: /user-manual/version-control/branches#deleting-a-branch
+[6]: mailto:support@playcanvas.com
+[4]: /user-manual/version-control/checkpoints/#hard-reset-to-a-checkpoint
+[5]: /user-manual/version-control/branches/#deleting-a-branch
+[6]: mailto:support@playcanvas.com

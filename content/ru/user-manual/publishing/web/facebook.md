@@ -4,35 +4,35 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-[Facebook][1] is an excellent place to publish PlayCanvas games in order to reach an enormous audience. Publishing games from PlayCanvas to Facebook is straightforward.
+[Facebook][1] - отличное место для публикации игр PlayCanvas, чтобы охватить огромную аудиторию. Публикация игр из PlayCanvas на Facebook проста.
 
-## How to publish to Facebook
+## Как опубликовать на Facebook
 
-**1.** Publish your game to PlayCanvas. (You can also publish self-hosted games to Facebook, it will be a similar process to below)
+**1.** Опубликуйте свою игру на PlayCanvas. (Вы также можете опубликовать игры, размещенные на собственном сервере, на Facebook, процесс будет аналогичным указанному ниже)
 
-**2.** Visit the [Facebook Developer Portal][2] and create a new Facebook App for your game.
+**2.** Посетите [Портал разработчика Facebook][2] и создайте новое приложение Facebook для вашей игры.
 
-**3.** When requested choose **Facebook Canvas** as the type of application
+**3.** При запросе выберите **Facebook Canvas** в качестве типа приложения
 
 ![Facebook Canvas][3]
 
-**4.** For the Secure Canvas URL enter the `playcanv.as` URL for your game
+**4.** Для безопасного URL-адреса холста введите URL-адрес `playcanv.as` для вашей игры
 
 ![Secure Canvas][4]
 
-**5.** In the Application Settings section add the Website URL so that it looks like this: `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`. To find this URL take your `playcanv.as` game link e.g. `https://playcanv.as/p/JtL2iqIH/` and add an `e/` before the `p/` e.g. `https://playcanv.as/e/p/JtL2iqIH/`. This will redirect in your browser, use this URL for the Website URL
+**5.** В разделе настроек приложения добавьте URL-адрес веб-сайта, чтобы он выглядел следующим образом: `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`. Чтобы найти этот URL, возьмите ссылку на вашу игру `playcanv.as`, например, `https://playcanv.as/p/JtL2iqIH/` и добавьте `e/` перед `p/`, например, `https://playcanv.as/e/p/JtL2iqIH/`. Это перенаправит в вашем браузере, используйте этот URL для URL веб-сайта
 
 ![Website URL][5]
 
 <div class="alert alert-info">
-Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
+Добавление этого URL-адреса в качестве URL-адреса вашего веб-сайта требуется из-за способа размещения игр в PlayCanvas и требований безопасности, которые Facebook реализует для доступа к своему API. Мы работаем над исправлением этого в PlayCanvas, чтобы вам нужно было только установить безопасный URL-адрес холста.
 </div>
 
-**6.** Finally, set up all the images and icons that are required for your game
+**6.** Наконец, настройте все изображения и значки, которые требуются для вашей игры
 
 ![Images][6]
 
-**7.** You can test your game by visiting the App URL listed in the Settings page
+**7.** Вы можете протестировать свою игру, посетив URL-адрес приложения, указанный на странице настроек
 
 ![App URL][7]
 

@@ -1,34 +1,34 @@
 ---
-title: Выбор объектов
+title: Выбор Entity
 layout: tutorial-page.hbs
 tags: raycast,basics,physics
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg
 ---
 
-Collision Picking - click to select a shape
+Выбор объекта столкновений - щелкните, чтобы выбрать форму
 
 <iframe loading="lazy" src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking"></iframe>
 
 ---
 
-Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
+Выбор Frame Buffer - щелкните, чтобы выбрать серую форму. Красные формы установлены как невыбираемые.
 
 <iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
 
 ---
 
-Try it from the Editor in the [tutorial project.][1]
+Попробуйте из редактора в [учебном проекте.][1]
 
-This tutorial describes to methods of selecting an Entity from the 3D scene, for example, on the click of the mouse.
+Это руководство описывает два метода выбора Entity из 3D-сцены, например, при щелчке мыши.
 
-## Collision Picking
+## Выбор столкновений
 
-Collision based picking uses the collision components to add a shape to each Entity that needs to be picked. Then we use the [raycastFirst()][2] method in the rigidbody system to fire a ray from the mouse click position into the screen to see if it hits a collision component. If it does, that Entity is "selected".
+Выбор на основе столкновений использует компоненты столкновений для добавления формы к каждому Entity, которое нужно выбрать. Затем мы используем метод [raycastFirst()][2] в системе твердого тела для запуска луча от позиции щелчка мыши в экран, чтобы увидеть, сталкивается ли он с компонентом столкновения. Если это происходит, то Entity "выбрано".
 
 ```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 PickerRaycast.prototype.initialize = function() {
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onSelect, this);
 
@@ -51,26 +51,26 @@ PickerRaycast.prototype.onSelect = function (e) {
 
 ## Frame Buffer Picking
 
-Frame buffer based picking uses the [pc.Picker][3] class to render the scene to a internal buffer. When the mouse is clicked the color of the buffer at the mouse location is used to determine which mesh instance was selected. This has some advantages and disadvantages over the collision based method.
+Выбор на основе буфера кадра использует класс [pc.Picker][3] для отображения сцены во внутренний буфер. При нажатии мыши цвет буфера в месте расположения мыши используется для определения выбранного экземпляра сетки. Этот метод имеет свои преимущества и недостатки по сравнению с методом на основе столкновений.
 
-Advantages include:
+Преимущества включают:
 
-* Able to use a rectangle to pick many items in a scene at once
-* Doesn't require the physics library to be included which reduces preload time.
+* Возможность использовать прямоугольник для выбора нескольких элементов сцены одновременно
+* Не требует включения библиотеки физики, что сокращает время предварительной загрузки.
 
-The main disadvantage is that this uses the `readPixels` method which stalls the graphics pipeline. This can have serious rendering performance implications particularly on mobile and GPU heavy applications.
+Основной недостаток заключается в использовании метода `readPixels`, который блокирует графический конвейер. Это может серьезно сказаться на производительности рендеринга, особенно на мобильных устройствах и в приложениях с интенсивным использованием GPU.
 
-You are able modify the size of the buffer to be smaller to improve the performance at the cost of accuracy. In the example script below, the attribute `pickAreaScale` is used to do this where the lower the number, the faster and less accurate the picker becomes.
+Вы можете изменить размер буфера, чтобы улучшить производительность за счет точности. В приведенном ниже примере скрипта для этого используется атрибут `pickAreaScale`, где чем меньше число, тем быстрее и менее точным становится выбор.
 
-It's also possible to restrict the layers to pick which the script supports via `layerNames` array. We can add the names of the layers that we want to pick from and also improves performance by rendering only what we need to the internal buffer.
+Также возможно ограничить слои для выбора, что поддерживается скриптом через массив `layerNames`. Мы можем добавить имена слоев, из которых хотим выбирать, и также улучшить производительность, отображая только то, что нам нужно, во внутренний буфер.
 
 ```javascript
 var PickerFramebuffer = pc.createScript('pickerFramebuffer');
 
 PickerFramebuffer.attributes.add('pickAreaScale', {
     type: 'number',
-    title: 'Pick Area Scale',
-    description: '1 is more accurate but worse performance. 0.01 is best performance but least accurate. 0.25 is the default.',
+    title: 'Масштаб области выбора',
+    description: '1 - более точно, но хуже производительность. 0.01 - лучшая производительность, но наименее точно. 0.25 - значение по умолчанию.',
     default: 0.25,
     min: 0.01,
     max: 1
@@ -78,15 +78,15 @@ PickerFramebuffer.attributes.add('pickAreaScale', {
 
 PickerFramebuffer.attributes.add('layerNames', {
     type: 'string',
-    title: 'Layers Names',
+    title: 'Названия слоев',
     array: true,
-    description: 'Layer names from which objects will be picked from.',
+    description: 'Названия слоев, из которых будут выбираться объекты.',
     default: ['World']
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 PickerFramebuffer.prototype.initialize = function() {
-    // Create a frame buffer picker with a scaled resolution
+    // Создаем frame buffer picker с масштабированным разрешением
     var canvas = this.app.graphicsDevice.canvas;
     var canvasWidth = parseInt(canvas.clientWidth, 10);
     var canvasHeight = parseInt(canvas.clientHeight, 10);
@@ -119,19 +119,19 @@ PickerFramebuffer.prototype.onSelect = function (event) {
     picker.resize(canvasWidth * this.pickAreaScale, canvasHeight * this.pickAreaScale);
     picker.prepare(camera, scene, this.layers);
 
-    // Map the mouse coordinates into picker coordinates and
-    // query the selection
+    // Преобразуем координаты мыши в координаты выбора и
+    // запрашиваем выбор
     var selected = picker.getSelection({
         x: Math.floor(event.x * (picker.width / canvasWidth)),
         y: picker.height - Math.floor(event.y * (picker.height / canvasHeight))
     });
 
     if (selected.length > 0) {
-        // Get the graph node used by the selected mesh instance
+        // Получаем графический узел, используемый выбранным экземпляром сетки
         var entity = selected[0].node;
 
-        // Bubble up the hierarchy until we find an actual Entity
-        // that has the script we are looking for
+        // Поднимаемся по иерархии, пока не найдем фактическую сущность
+        // которая имеет скрипт, который мы ищем
         while (entity !== null && !(entity instanceof pc.Entity) && (entity.script && entity.script.pulse)) {
             entity = entity.getParent();
         }

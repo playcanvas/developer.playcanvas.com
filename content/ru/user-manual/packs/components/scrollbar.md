@@ -1,23 +1,23 @@
 ---
-title: Scrollbar
+title: Полоса прокрутки
 layout: usermanual-page.hbs
 position: 17
 ---
 
-The Scrollbar component defines a scrolling control for a [Scrollview][1] component.
+Компонент Scrollbar определяет элемент управления прокрутки для компонента [Scrollview][1].
 
-See the [User Interface][2] section for more details.
+См. раздел [Пользовательский интерфейс][2] для получения дополнительной информации.
 
-![Scrollbar Component][3]
+![Компонент Scrollbar][3]
 
-## Component Properties
+## Свойства компонента
 
-| Property    | Описание |
+| Свойство    | Описание |
 |-------------|-------------|
-| Orientation | Controls whether the scrollbar moves horizontally or vertically. |
-| Value       | The current position value of the scrollbar, in the range 0 to 1. |
-| Handle      | The entity to be used as the scrollbar handle. This entity must have a Scrollbar component. |
-| Handle Size | The size of the handle relative to the size of the track, in the range 0 to 1. For a vertical scrollbar, a value of 1 means that the handle will take up the full height of the track. |
+| Ориентация | Управляет тем, движется ли полоса прокрутки горизонтально или вертикально. |
+| Значение       | Текущее значение положения полосы прокрутки в диапазоне от 0 до 1. |
+| Ручка      | Entity, который будет использоваться в качестве ручки полосы прокрутки. Этот Entity должен иметь компонент Scrollbar. |
+| Размер ручки | Размер ручки относительно размера дорожки в диапазоне от 0 до 1. Для вертикальной полосы прокрутки значение 1 означает, что ручка займет всю высоту дорожки. |
 
 [1]: /user-manual/packs/components/scrollview
 [2]: /user-manual/user-interface

@@ -1,7 +1,7 @@
 ---
-title: Group Elements
+title: Групповые элементы
 layout: usermanual-page.hbs
 position: 4
 ---
 
-A group Element is an empty Element component that can be used as a parent for other elements. You can set the size and position of this Element and any child Elements can be positioned relative to the group.
+Групповой элемент - это пустой компонент элемента, который может быть использован в качестве родителя для других элементов. Вы можете установить размер и положение этого элемента, и любые дочерние элементы могут быть расположены относительно группы.

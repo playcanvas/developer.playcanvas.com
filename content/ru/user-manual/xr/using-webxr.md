@@ -1,110 +1,106 @@
 ---
-title: Using WebXR in PlayCanvas
+title: Использование WebXR в PlayCanvas
 layout: usermanual-page.hbs
 position: 1
 ---
 
-## Support of WebXR
+## Поддержка WebXR
 
-Browser support for WebXR is not (yet) universal. It can be checked as follows:
+Поддержка WebXR в браузерах пока не является универсальной. Ее можно проверить следующим образом:
 
 ```javascript
 if (app.xr.supported) {
-    // WebXR is supported
+    // WebXR поддерживается
 }
 ```
 
+## Запуск XR сессии
 
-## Starting XR Session
-
-The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
+API для входа в XR находится на компоненте камеры или [XrManager][2] в приложении. Чтобы начать представление VR, вы должны использовать метод `startXr` на CameraComponent и указать тип XR сессии, ссылочное пространство и дополнительный объект с дополнительными аргументами:
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
 ```
 
-It is an asynchronous operation and is only possible to start on a user interaction, such as a button click, mouse click or touch. To know when a session is started, you can subscribe to the `start` event:
+Это асинхронная операция и возможно только начать ее при взаимодействии пользователя, таком как нажатие кнопки, клик мышью или касание. Чтобы узнать, когда сессия началась, вы можете подписаться на событие `start`:
 
 ```javascript
 app.xr.on('start', function () {
-    // XR session has started
+    // XR сессия началась
 });
 ```
 
-Session type or reference space might not be available on a particular platform, so it will fail to start the session, providing an error in a callback and firing the `error` event on XrManager:
+Тип сессии или пространство ссылок может быть недоступно на определенной платформе, поэтому сессия не сможет запуститься, вызывая ошибку в обратном вызове и запуская событие `error` на XrManager:
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
     callback: function(err) {
         if (err) {
-            // failed to start session
+            // не удалось запустить сессию
         }
     }
 });
 ```
 
+## Завершение сеанса XR
 
-## Ending XR Session
-
-Exiting XR can be triggered in various ways. You can trigger an exit of XR from code:
+Выход из XR может быть инициирован различными способами. Вы можете инициировать выход из XR с помощью кода:
 
 ```javascript
 app.xr.end();
 ```
 
-Also, the user might exit XR via some external process like the back button in the browser. [XrManager][2] will fire events associated with session `end`:
+Также пользователь может выйти из XR через какой-то внешний процесс, например, кнопку "назад" в браузере. [XrManager][2] запустит события, связанные с окончанием сессии `end`:
 
 ```javascript
 app.xr.on('end', function () {
-    // XR session has ended
+    // XR сессия завершилась
 });
 ```
 
+## Типы XR
 
-## Types of XR
+Каждая платформа может поддерживать разные типы сессий. Вот они:
 
-Each platform can support different types of sessions. These are:
+ * **VR** (Виртуальная реальность) - обеспечивает определенный уровень отслеживания зрителя и предоставляет исключительный доступ к устройству XR. Это означает, что приложение будет отображаться на буфере кадров устройства, а не на элементе HTML-холста.
+ * **AR** (Дополненная реальность) - этот тип сессии предоставляет исключительный доступ к устройству XR, и контент должен смешиваться с реальной окружающей средой. В этом режиме цвет камеры должен быть прозрачным.
 
- * **VR** (Virtual Reality) - Provides some level of viewer tracking and it provides exclusive access to XR Device. This means that the application will be rendered onto a device's frame buffer and not the HTML canvas element.
- * **AR** (Augmented Reality) - This type of session provides exclusive access to the XR Device and content is meant to be blended with the real-world environment. In this mode, the camera clear color should be transparent.
-
-The availability of a session type can change during an application's life-time, based on devices being plugged in or features on devices being enabled. To check if a session type is available do:
+Доступность типа сессии может меняться в течение жизненного цикла приложения, в зависимости от подключения устройств или включения функций на устройствах. Чтобы проверить доступность типа сессии, выполните:
 
 ```javascript
 if (app.xr.isAvailable(pc.XRTYPE_VR)) {
-    // VR is available
+    // VR доступен
 }
 ```
 
-And you can subscribe to availability change events too:
+И вы также можете подписаться на события изменения доступности:
 
 ```javascript
 app.xr.on('available', function (type, available) {
-    console.log('XR session', type, 'type is now', available ? 'available' : 'unavailable');
+    console.log('XR сессия', type, 'тип теперь', available ? 'доступна' : 'недоступна');
 });
 
-// or specific session type
+// или конкретный тип сессии
 app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
-    console.log('XR session VR type is now', available ? 'available' : 'unavailable');
+    console.log('XR сессия типа VR теперь', available ? 'доступна' : 'недоступна');
 });
 ```
 
+## Позиция и ориентация камеры в XR
 
-## Camera Position and Orientation in XR
-
-When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
+Когда вы используете XR, позиция и ориентация камеры перезаписываются данными из сеанса XR. Если вы хотите реализовать дополнительное движение и вращение камеры, вы должны добавить родительский объект Entity к вашей камере и применить ваши манипуляции к этому объекту.
 
 ![Camera Offset][1]
 
-Input source ray, as well as position and rotation of grip and hands, provided in world space.
+Луч источника ввода, а также позиция и вращение рукоятки и рук предоставляются в мировом пространстве.
 
-## Why can't I enable XR mode automatically?
+## Почему я не могу автоматически включить режим XR?
 
-Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason there is no way to enter XR immediately on loading a page.
+Вход в WebXR требуется браузерами для запуска *пользовательским действием*. Это означает, что это должно быть в ответ на нажатие клавиши, щелчок мыши или касание. По этой причине нет способа войти в XR сразу после загрузки страницы.
 
-## Experimental features
+## Экспериментальные функции
 
-WebXR API is constantly evolving and additional APIs get released extending XR feature set. While engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
+API WebXR постоянно развивается, и выпускаются дополнительные API, расширяющие набор функций XR. Хотя движок постоянно обновляется с интеграциями для API XR, некоторые функции могут появиться с задержкой. Разработчикам, желающим экспериментировать с новыми функциями, можно включить их, передав соответствующие флаги `optionalFeatures`. *Имейте в виду: доступ к внутренним не задокументированным API подвержен изменениям движка, которые не гарантируют обратную совместимость.* Вот пример включения экспериментального API для [WebXR Layers][3]:
 
 ```javascript
 app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
@@ -116,7 +112,7 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
         }
 
         if (app.xr.session.renderState.layers) {
-            // get access to WebXR Layers
+            // получить доступ к WebXR Layers
         }
     }
 });
@@ -125,3 +121,27 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 [1]: /images/user-manual/xr/using-webxr/camera-offset.jpg
 [2]: /api/pc.XrManager.html
 [3]: https://immersive-web.github.io/layers/
+
+# Issue Tracker
+
+## Tutorial Thumbnail
+
+### Entity
+
+#### Material Asset
+
+##### Material Inspector
+
+###### Shader Editor
+
+####### Node Inspector
+
+######## Texture Inspector
+
+######### Graph Inspector
+
+########## Asset
+
+########### Graph Editor
+
+############ Assets

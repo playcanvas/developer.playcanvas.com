@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-Audio assets are sound files which can be played back using the [Sound component][sound-component].
+Аудио-ассеты - это звуковые файлы, которые могут быть воспроизведены с использованием [компонента звука][sound-component].
 
-Any audio format that is supported by the web-browser is supported by PlayCanvas. No processing is done to the audio file on import.
+PlayCanvas поддерживает любой аудиоформат, поддерживаемый веб-браузером. При импорте к аудиофайлу не применяется никакой обработки.
 
-Note that not all formats are supported in all browsers. Currently, the most widely supported format is [MP3][mp3].
+Обратите внимание, что не все форматы поддерживаются во всех браузерах. В настоящее время наиболее широко поддерживаемым форматом является [MP3][mp3].
 
 [mp3]: https://caniuse.com/mp3
 [sound-component]: /user-manual/packs/components/sound/

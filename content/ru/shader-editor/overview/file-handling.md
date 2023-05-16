@@ -1,27 +1,27 @@
 ---
-title: File Handling
+title: Обработка файлов
 layout: shader-editor-page.hbs
 position: 5
 ---
 
-Shader Editor is a browser-based tool. However the graphs, materials and textures created are stored locally on the user's machine.
+Shader Editor - это инструмент на основе браузера. Однако графы, материалы и текстуры, созданные в нем, хранятся локально на компьютере пользователя.
 
-This section describes the various Shader Editor files.
+В этом разделе описываются различные файлы Shader Editor.
 
-### Project Files
+### Файлы проекта
 
-When working in Shader Editor, the graphs, materials, textures and preview assets created are grouped together into a set of project files. Project files are written to the browser's local IndexDB database.
+При работе в Shader Editor графы, материалы, текстуры и ассеты предварительного просмотра, созданные пользователем, группируются в набор файлов проекта. Файлы проекта записываются в локальную базу данных IndexDB браузера.
 
-This means that a project will remain consistent across page refreshes. Note that storing projects in the browser data also means that two different browsers on a local machine have different projects.
+Это означает, что проект будет оставаться последовательным после обновления страницы. Обратите внимание, что сохранение проектов в данных браузера также означает, что два разных браузера на одном компьютере будут иметь разные проекты.
 
-Projects can be saved to the local hard drive and loaded at a later time. For more information on this, see [Inspector Pane][1] documentation.
+Проекты можно сохранить на локальный жесткий диск и загрузить позже. Для получения дополнительной информации об этом см. документацию по [Inspector Pane][1].
 
 ### Shader Packs
 
-In order to use the materials created in Shader Editor, projects must be exported to Shader Packs.
+Для использования материалов, созданных в Shader Editor, проекты должны быть экспортированы в Shader Packs.
 
-Shader packs don't contain the graphs and nodes from the project. Instead they contain the generated shader code and parameter values required for rendering the effects at runtime.
+Shader Packs не содержат графы и узлы из проекта. Вместо этого они содержат сгенерированный код шейдеров и значения параметров, необходимые для рендеринга эффектов в режиме реального времени.
 
-For more information on how to accomplish this, see [Inspector Pane][1] documentation.
+Для получения дополнительной информации о том, как это сделать, см. документацию по [Inspector Pane][1].
 
 [1]: /shader-editor/window-layout/inspector-pane

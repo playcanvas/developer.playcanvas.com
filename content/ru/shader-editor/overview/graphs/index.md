@@ -1,14 +1,14 @@
 ---
-title: Graphs
+title: Графы
 layout: shader-editor-page.hbs
 position: 1
 ---
 
-Graphs are a central concept in Shader Editor. They are made up of nodes that do things, and edges that connect them together. Shader Editor uses the graphs to generate shader programs for rendering.
+Графы являются центральным понятием в Shader Editor. Они состоят из узлов, которые выполняют определенные функции, и ребер, которые их соединяют. Shader Editor использует графы для генерации шейдерных программ для рендеринга.
 
-There are two distinct types of graphs in Shader Editor, namely [Material Graphs][2] and [Sub Graphs][3].
+В Shader Editor есть два разных типа графов: [графы материалов][2] и [вложенные графы][3].
 
-To find out how to manage graphs see the [Graph Editor][1] documentation.
+Чтобы узнать, как управлять графами, ознакомьтесь с документацией [Graph Editor][1].
 
 [1]: /shader-editor/window-layout/graph-editor
 [2]: /shader-editor/overview/graphs/material-graphs

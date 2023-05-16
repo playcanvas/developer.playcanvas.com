@@ -1,56 +1,55 @@
 ---
-title: Checkpoints
+title: Контрольные точки
 layout: usermanual-page.hbs
 position: 1
 ---
 
-A checkpoint is a snapshot of your project at a point in time. It contains the complete set of data for your project so that you can restore this state at any point in the future. Checkpoints are similar to *commits* in other version control systems. Checkpoints are identified by a unique id number and a description that you enter at the time you create the checkpoint.
+Контрольная точка - это снимок вашего проекта на определенный момент времени. Она содержит полный набор данных для вашего проекта, чтобы вы могли восстановить это состояние в любой момент в будущем. Контрольные точки похожи на *коммиты* в других системах контроля версий. Контрольные точки идентифицируются уникальным номером и описанием, которое вы вводите в момент создания контрольной точки.
 
 ![Checkpoint][1]
 
-A checkpoint is a permanent record of the state of your project and forms part of the graph that is used for branches and merging changes. As such, once created checkpoints cannot be deleted. This means that once you have committed your changes as part of a checkpoint they are safe forever in your project history.
+Контрольная точка - это постоянная запись состояния вашего проекта и является частью графа, который используется для ветвей и слияния изменений. Таким образом, созданные контрольные точки не могут быть удалены. Это означает, что после того, как вы зафиксировали свои изменения в рамках контрольной точки, они навсегда сохраняются в истории вашего проекта.
 
-## Creating a checkpoint
+## Создание контрольной точки
 
-Checkpoints are created from the Version Control panel.
+Контрольные точки создаются из панели управления версиями.
 
 ![VC Panel][2]
 
-The New Checkpoint button opens the input form to create a checkpoint. You can also use the keyboard shortcut Ctrl+S (Cmd+S on OS X)
+Кнопка "New Checkpoint" открывает форму ввода для создания контрольной точки. Вы также можете использовать сочетание клавиш Ctrl+S (Cmd+S на OS X)
 
 ![Create Checkpoint][3]
 
-## Restoring a checkpoint
+## Восстановление контрольной точки
 
 ![Restore Checkpoint][4]
 
-If you'd like to restore the state of your project from a previous checkpoint you can do that from the version control panel. Open the panel, find the checkpoint that you'd like to restore to and choose "Restore checkpoint" from the checkpoint's drop down menu. The editor will reload the project at the checkpoint.
+Если вы хотите восстановить состояние вашего проекта из предыдущей контрольной точки, вы можете сделать это из панели управления версиями. Откройте панель, найдите контрольную точку, к которой вы хотите вернуться, и выберите "Restore checkpoint" из выпадающего меню контрольной точки. Редактор перезагрузит проект на контрольной точке.
 
-**Note, restoring a checkpoint brings the changes from the checkpoint into your current branch, but PlayCanvas does not allow branching unless you have explicitly created a branch. So if you restore a checkpoint and then create a new checkpoint it will be a child of the latest checkpoint in the branch.**
+**Обратите внимание, что восстановление контрольной точки вносит изменения из контрольной точки в вашу текущую ветку, но PlayCanvas не позволяет создавать ветки, если вы не создали ветку явно. Таким образом, если вы восстановите контрольную точку и затем создадите новую контрольную точку, она будет дочерней по отношению к последней контрольной точке в ветке.**
 
 ![Restore checkpoint applied][5]
 
-## Hard reset to a checkpoint
+## Жесткое сброс до контрольной точки
 
-Hard reset allows you to delete all checkpoints after a selected checkpoint. This is useful if you need to 'undo' a merge (perhaps a branch was accidentally merged or the merge needs to be done differently).
+Жесткое сброс позволяет удалить все контрольные точки после выбранной контрольной точки. Это полезно, если вам нужно "отменить" слияние (возможно, ветка была случайно объединена или слияние должно быть выполнено по-другому).
 
-Hard reset can only delete the checkpoints if the following conditions are met:
+Жесткое сброс может удалить контрольные точки только при выполнении следующих условий:
 
-- No branches have been created from the checkpoints being deleted
-- The checkpoints being deleted have not been created by a merge of branches
+- Не было создано веток из удаляемых контрольных точек
+- Удаляемые контрольные точки не были созданы в результате слияния веток
 
-**Note, deleted checkpoints cannot be recovered.**
+**Обратите внимание, что удаленные контрольные точки не могут быть восстановлены.**
 
-To hard reset, open the panel, find the checkpoint that you'd like to reset to and choose "Hard reset" from the checkpoint's drop down menu.
+Чтобы выполнить жесткое сброс, откройте панель, найдите контрольную точку, к которой вы хотите вернуться, и выберите "Hard reset" из выпадающего меню контрольной точки.
 
 ![][hard-reset]
 
-Type 'hard reset' in the text box to confirm that you wish to delete all checkpoints after the selected checkpoint.
+Введите "hard reset" в текстовое поле, чтобы подтвердить, что вы хотите удалить все контрольные точки после выбранной контрольной точки.
 
 ![][hard-reset-confirm]
 
-The editor will reload the project at the checkpoint.
-
+Редактор перезагрузит проект на контрольной точке.
 
 [1]: /images/user-manual/version-control/checkpoint.jpg
 [2]: /images/user-manual/version-control/vc-panel.jpg

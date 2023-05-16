@@ -4,29 +4,29 @@ layout: usermanual-page.hbs
 position: 18
 ---
 
-The Scrollview component defines a scrollable area in a user interface. A scrollview can be scrolled via [Scrollbar][1] components.
+Компонент Scrollview определяет прокручиваемую область в пользовательском интерфейсе. Scrollview можно прокручивать с помощью компонентов [Scrollbar][1].
 
-See the [User Interface][2] section for more details.
+См. раздел [User Interface][2] для получения дополнительной информации.
 
 ![Scrollview Component][3]
 
-## Component Properties
+## Свойства компонента
 
-| Property                | Описание |
+| Свойство                | Описание |
 |-------------------------|-------------|
-| Scroll Mode             | Specifies how the scroll view should behave when the user scrolls past the end of the content. Modes are defined as follows: <ul><li>Clamp: Content does not scroll any further than its bounds.</li><li>Bounce: Content scrolls past its bounds and then gently bounces back.</li><li>Infinite: Content can scroll forever.</li></ul> |
-| Bounce                  | Controls how far the content should move before bouncing back. |
-| Friction                | Controls how freely the content should move if thrown, i.e. By flicking on a phone or by flinging the scroll wheel on a mouse. A value of 1 means that content will stop immediately; 0 means that content will continue moving forever (or until the bounds of the content are reached, depending on the scroll mode). |
-| Use Mouse Wheel         | Whether to use mouse wheel for scrolling (horizontally and vertically) when mouse is within bounds. |
-| Mouse Wheel Sensitivity | Mouse wheel horizontal and vertical sensitivity. Only used if *Use Mouse Wheel* is set. Setting a direction to 0 will disable mouse wheel scrolling in that direction. 1 is a default sensitivity that is considered to feel good. The values can be set higher or lower than 1 to tune the sensitivity. Defaults to [1, 1]. |
-| Вид                | The entity to be used as the masked viewport area, within which the content will scroll. This entity must have an ElementGroup component. |
-| Content                 | The entity which contains the scrolling content itself. This entity must have an Element component. |
-| Horizontal              | Whether to enable horizontal scrolling. |
-| Scrollbar (horizontal)  | The entity to be used as the horizontal scrollbar. This entity must have a Scrollbar component. |
-| Visibility (horizontal) | Controls whether the horizontal scrollbar should be visible all the time, or only visible when the content exceeds the size of the viewport. |
-| Vertical                | Whether to enable vertical scrolling. |
-| Scrollbar (vertical)    | The entity to be used as the vertical scrollbar. This entity must have a Scrollbar component. |
-| Visibility (vertical)   | Controls whether the vertical scrollbar should be visible all the time, or only visible when the content exceeds the size of the viewport. |
+| Scroll Mode             | Определяет, как должен вести себя scroll view, когда пользователь прокручивает содержимое за пределы. Режимы определены следующим образом: <ul><li>Clamp: Содержимое не прокручивается дальше своих границ.</li><li>Bounce: Содержимое прокручивается за пределы и затем мягко отскакивает обратно.</li><li>Infinite: Содержимое может прокручиваться бесконечно.</li></ul> |
+| Bounce                  | Контролирует, насколько далеко должно перемещаться содержимое перед отскоком. |
+| Friction                | Контролирует, насколько свободно должно перемещаться содержимое при броске, например, при проведении пальцем по экрану телефона или при движении колесика мыши. Значение 1 означает, что содержимое остановится сразу; 0 означает, что содержимое будет двигаться бесконечно (или до достижения границ содержимого, в зависимости от режима прокрутки). |
+| Use Mouse Wheel         | Использовать колесо мыши для прокрутки (горизонтальной и вертикальной), когда указатель мыши находится в пределах границ. |
+| Mouse Wheel Sensitivity | Горизонтальная и вертикальная чувствительность колеса мыши. Используется только если установлено *Use Mouse Wheel*. Установка значения 0 для направления отключит прокрутку колесом мыши в этом направлении. Значение 1 является чувствительностью по умолчанию, которая считается удобной. Значения могут быть выше или ниже 1 для настройки чувствительности. По умолчанию равно [1, 1]. |
+| Viewport                | Entity, который будет использоваться в качестве маскированной области видимости, в пределах которой будет прокручиваться содержимое. Этот Entity должен иметь компонент ElementGroup. |
+| Content                 | Entity, содержащий само прокручиваемое содержимое. Этот Entity должен иметь компонент Element. |
+| Horizontal              | Включить горизонтальную прокрутку. |
+| Scrollbar (horizontal)  | Entity, который будет использоваться в качестве горизонтального ползунка. Этот Entity должен иметь компонент Scrollbar. |
+| Visibility (horizontal) | Контролирует, должна ли горизонтальная полоса прокрутки быть видимой всегда или видимой только тогда, когда содержимое превышает размер области видимости. |
+| Vertical                | Включить вертикальную прокрутку. |
+| Scrollbar (vertical)    | Entity, который будет использоваться в качестве вертикального ползунка. Этот Entity должен иметь компонент Scrollbar. |
+| Visibility (vertical)   | Контролирует, должна ли вертикальная полоса прокрутки быть видимой всегда или видимой только тогда, когда содержимое превышает размер области видимости. |
 
 [1]: /user-manual/packs/components/scrollbar
 [2]: /user-manual/user-interface

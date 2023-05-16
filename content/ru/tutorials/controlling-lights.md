@@ -1,19 +1,19 @@
 ---
-title: Контроль света
+title: Управление светом
 layout: tutorial-page.hbs
-tags: lighting
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg"
+tags: освещение
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Управление светом"></iframe>
 
-*Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
+*Нажмите 1, 2 или 3, чтобы включить/отключить прожектор, точечный и направленный свет соответственно.*
 
-In this tutorial we will show you how to enable/disable lights in PlayCanvas and to change light color and intensity. Note that there are many more controllable light features and properties, such as the light range. See the [API listing here][1] for more details.
+В этом уроке мы покажем вам, как включать/отключать свет в PlayCanvas и изменять цвет и интенсивность света. Обратите внимание, что есть еще много управляемых функций и свойств света, таких как диапазон света. Подробности см. в [списке API здесь][1].
 
-It is also important to be aware of the different limits for differing light properties, for example red, green and blue values are set between 0 and 1, but intensity reaches from 0 up to 10. Also some lights have properties unique to them, such as the cone angles for the spot light.
+Также важно знать о различных ограничениях для разных свойств света, например, значения красного, зеленого и синего устанавливаются между 0 и 1, но интенсивность достигает от 0 до 10. Кроме того, некоторые источники света имеют свойства, уникальные для них, например, углы конуса для прожектора.
 
-## The lighting commands
+## Команды освещения
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_1)) {
@@ -21,13 +21,13 @@ if (app.keyboard.wasPressed(pc.KEY_1)) {
 }
 ```
 
-This line toggles on and off the light component of the 'spot' entity.
+Эта строка включает и выключает компонент света в 'spot' Entity.
 
 ```javascript
 this.color1 = new pc.Color(1, 1, 1);
 ```
 
-A new color array is declared, the first three values affect red, green and blue values respectively.
+Объявлен новый массив цветов, первые три значения влияют на значения красного, зеленого и синего соответственно.
 
 ```javascript
 var s = Math.abs(Math.sin(1 + this.timer));
@@ -39,22 +39,22 @@ this.spot.light.color = this.color1;
 this.spot.light.intensity = 10*s;
 ```
 
-These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
+Эти строки назначают значения переменным r, g и b на основе синусоидальной волны, а затем назначают эти значения ранее объявленному массиву цветов через `color1.set(x, y, z)` и затем на свойство света. Интенсивность устанавливается так, чтобы варьироваться синусоидально от максимального значения интенсивности света 10 до 0.
 
 <div class="alert-info">
-    Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
+    Использование `entity.light.color.r` для доступа и изменения красного значения цвета света не сработает. Обнаруживаются только изменения свойства света `color`, поэтому вы должны назначить полный `pc.Color` для свойства, например, `entity.light.color = new pc.Color(1, 1, 1);`.
 </div>
 
-## General setup
+## Общая настройка
 
-We added a spot light (attached to a parent assembly of a basic torch model), an omni light attached to a parent sphere model, in addition to the default directional light that is created for every new Scene. The controlling script was attached to the root entity. The sphere and torch were made children of a blank entity residing in the centre of the scene to enable easy rotation. The [full Editor scene and scripts can be accessed here][2] in the 'controllingLights' Scene.
+Мы добавили прожектор (прикрепленный к родительской сборке базовой модели факела), всенаправленный свет, прикрепленный к родительской модели сферы, в дополнение к стандартному направленному свету, который создается для каждой новой сцены. Контролирующий скрипт был прикреплен к корневой сущности. Сфера и факел были сделаны дочерними элементами пустой сущности, находящейся в центре сцены, чтобы обеспечить легкое вращение. [Полная сцена редактора и скрипты доступны здесь][2] в сцене "controllingLights".
 
-The full code used for the above PlayCanvas app is as follows.
+Полный код, использованный для вышеуказанного приложения PlayCanvas, приведен ниже.
 
 ```javascript
 var LightHandler = pc.createScript('lightHandler');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 LightHandler.prototype.initialize = function() {
     var app = this.app;
 
@@ -69,7 +69,7 @@ LightHandler.prototype.initialize = function() {
     this.color3 = new pc.Color(1, 1, 1);
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 LightHandler.prototype.update = function(dt) {
     var app = this.app;
 
@@ -85,11 +85,11 @@ LightHandler.prototype.update = function(dt) {
         this.directional.light.enabled = !this.directional.light.enabled;
     }
 
-    // a counter that is used as input to sin the functions determining light properties for all lights.
+    // счетчик, который используется как вход для функций sin, определяющих свойства света для всех источников света.
     this.timer += dt;
 
-    // these 3 code blocks assign color and intensity values that vary according to a sin function
-    // all sin inputs are in radians
+    // эти 3 блока кода назначают цветовые и интенсивные значения, которые изменяются в соответствии с функцией sin
+    // все входы sin в радианах
     var s = Math.abs(Math.sin(1 + this.timer));
     var r = 1-s/2;
     var g = s-0.2;
@@ -115,7 +115,7 @@ LightHandler.prototype.update = function(dt) {
     this.directional.light.intensity = 3*(1-s);
 };
 
-// this function rotates all three lights about their parent entities (all at the centre of the scene) to easily create circular motion.
+// эта функция вращает все три источника света вокруг их родительских сущностей (все в центре сцены) для легкого создания кругового движения.
 LightHandler.prototype.pivot = function () {
     this.pivot1.rotate(0, 2, 0);
     this.pivot2.rotate(0, -3, 0);
@@ -124,3 +124,57 @@ LightHandler.prototype.pivot = function () {
 
 [1]: /api/pc.LightComponent.html
 [2]: https://playcanvas.com/project/405812/overview/tutorial-controlling-lights
+
+# Управление светом
+
+В этом руководстве вы узнаете, как управлять светом в вашей сцене.
+
+![Tutorial Thumbnail][2]
+
+## Создание источника света
+
+Сначала создайте источник света. Вам нужно создать новый Entity и добавить к нему компонент Light. Вы можете сделать это в редакторе, как показано ниже, или с помощью кода:
+
+```javascript
+var light = new pc.Entity();
+light.addComponent("light");
+app.root.addChild(light);
+```
+
+## Управление светом
+
+Теперь, когда у вас есть источник света, вы можете управлять его свойствами. Вот некоторые из свойств, которые вы можете изменить:
+
+- Тип света (направленный, точечный, прожектор)
+- Цвет света
+- Интенсивность света
+- Расстояние (для точечных и прожекторных источников света)
+- Угол (для прожекторных источников света)
+- Затухание (для точечных и прожекторных источников света)
+
+Вы можете управлять этими свойствами в редакторе, используя инспектор свойств, или с помощью кода:
+
+```javascript
+light.light.type = pc.LIGHTTYPE_DIRECTIONAL;
+light.light.color = new pc.Color(1, 0, 0);
+light.light.intensity = 2;
+light.light.range = 10;
+light.light.innerConeAngle = 30;
+light.light.outerConeAngle = 40;
+light.light.falloffMode = pc.LIGHTFALLOFF_LINEAR;
+```
+
+## Анимация света
+
+Вы также можете анимировать свет, изменяя его свойства во времени. Вот пример, как анимировать интенсивность света:
+
+```javascript
+app.on("update", function (dt) {
+    light.light.intensity = 1 + Math.sin(app.time) * 0.5;
+});
+```
+
+## Дополнительные материалы
+
+- [API-документация по компоненту Light][1]
+- [Пример проекта с управлением светом][2]

@@ -4,25 +4,25 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-The PlayCanvas Editor is a visual editing tool which you use to create and edit the [Scenes][1] and [Entities][2] that make up your game.
+Редактор PlayCanvas - это визуальный инструмент редактирования, который вы используете для создания и редактирования [Сцен][1] и [Entity][2], составляющих вашу игру.
 
-* Runs in your browser, so it's available wherever you are.
-* Uses the PlayCanvas Engine to render your scene. What you see is what you get.
-* One button press and you are playing your game in a new tab.
-* Live editing means that you can iterate on your game, even while it's running.
+* Работает в вашем браузере, поэтому доступен везде, где вы находитесь.
+* Использует PlayCanvas Engine для отображения вашей сцены. Что вы видите, то и получаете.
+* Одно нажатие кнопки, и вы играете в свою игру на новой вкладке.
+* Живое редактирование означает, что вы можете вносить изменения в свою игру, даже когда она работает.
 
-## Interface
+## Интерфейс
 
-<img loading="lazy" alt="Editor Interface" width="640" src="/images/user-manual/editor/editor-annotated.jpg">
+<img loading="lazy" alt="Интерфейс редактора" width="640" src="/images/user-manual/editor/editor-annotated.jpg">
 
-This is the main interface to the PlayCanvas Editor. You can see labeled the main areas
+Это основной интерфейс редактора PlayCanvas. Вы можете видеть подписанные основные области
 
-* **Menu** The menu contains all the commands available in the Editor. If you can't find the button or remember the hotkey, use the menu.
-* **Toolbar** Commonly used commands are available on the toolbar for quick access.
-* **Hierarchy** A hierarchical view of the Entities that make up the open Scene. Use this to select, delete and re-parent Entities.
-* **Inspector** Detailed properties of the selected [Entity][2], [Asset][4] or [Component][3].
-* **Viewport** A 3D view onto your scene, use this view to select, position and orientate Entities.
-* **Assets** A view of all the Assets in the current Project. You can search for assets by name, filter by type and also drag and drop assets to various slots or in the Design View.
+* **Меню** В меню содержатся все доступные команды в редакторе. Если вы не можете найти кнопку или не помните горячую клавишу, используйте меню.
+* **Панель инструментов** Часто используемые команды доступны на панели инструментов для быстрого доступа.
+* **Иерархия** Иерархический вид Entity, составляющих открытую сцену. Используйте это для выбора, удаления и изменения родительских связей Entity.
+* **Инспектор** Подробные свойства выбранного [Entity][2], [Asset][4] или [Component][3].
+* **Видовой экран** 3D-вид на вашу сцену, используйте этот вид для выбора, позиционирования и ориентации Entity.
+* **Assets** Вид на все Assets в текущем проекте. Вы можете искать активы по имени, фильтровать по типу и также перетаскивать активы в различные слоты или в Design View.
 
 [1]: /user-manual/glossary#scene
 [2]: /user-manual/glossary#entity

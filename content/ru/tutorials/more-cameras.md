@@ -1,30 +1,30 @@
 ---
-title: Больше о камерах
+title: Больше камер
 layout: tutorial-page.hbs
 tags: basics, camera
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/5yUf1fvg/" title="More Cameras"></iframe>
 
-*Click to focus, then press `space` to zoom in and out, press `left arrow` and `right arrow` to switch to the left and right cameras*
+*Нажмите, чтобы сфокусироваться, затем нажмите `пробел`, чтобы приблизиться и отдалиться, нажмите `стрелку влево` и `стрелку вправо`, чтобы переключиться на левую и правую камеры*
 
-The [Basic Cameras][1] tutorial walks you through creating a camera Entity and adding it to your Scene. For a single static camera, no scripting is required. But for a more dynamic and interactive camera or for more advanced usage you might want to attach a script Component and program the camera behavior yourself.
+Учебник [Основные камеры][1] проведет вас через создание камеры Entity и добавление ее в вашу сцену. Для одной статической камеры не требуется скриптование. Но для более динамичной и интерактивной камеры или для более продвинутого использования вы можете захотеть прикрепить компонент сценария и самостоятельно программировать поведение камеры.
 
-## Altering Attributes
+## Изменение атрибутов
 
-The first way you might want to modify a camera at runtime, is to change the values of attributes on camera Component. You do this the same way that you set attributes on any other Component, by using the `set()` and `get()`
-methods on the ComponentSystem.
+Первый способ, которым вы можете захотеть изменить камеру во время выполнения, - это изменить значения атрибутов на компоненте камеры. Вы делаете это таким же образом, как устанавливаете атрибуты на любом другом компоненте, используя методы `set()` и `get()`
+на ComponentSystem.
 
 ```javascript
 var Zoom = pc.createScript('zoom');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Zoom.prototype.initialize = function() {
     this.targetFov = 45;
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Zoom.prototype.update = function(dt) {
 
     if (this.app.keyboard.wasPressed(pc.KEY_SPACE) ) {
@@ -54,25 +54,24 @@ Zoom.prototype.update = function(dt) {
 
 ```
 
-In this sample pressing the spacebar triggers a change in field of view. With the line `var fov = this.entity.camera.fov` we `get()` the value of `fov` from the camera component of the entity that this script is attached to.
+В этом примере нажатие на пробел вызывает изменение поля зрения. С помощью строки `var fov = this.entity.camera.fov` мы `get()` значение `fov` из компонента камеры сущности, к которой прикреплен этот скрипт.
 
-With `this.app.keyboard.wasPressed()` we detect the keypress and toggle between the value of the target fov.
+С помощью `this.app.keyboard.wasPressed()` мы обнаруживаем нажатие клавиши и переключаемся между значением целевого поля зрения.
 
-With the final two nested `if(){}` constructs we gradually change the fov values to create the zoom in/ zoom out effect.
+С помощью последних двух вложенных конструкций `if(){}` мы постепенно изменяем значения поля зрения, чтобы создать эффект приближения/отдаления.
 
-With the line `this.entity.camera.fov = fov` we `set()` the fov camera attribute to the new value.
+С помощью строки `this.entity.camera.fov = fov` мы `set()` атрибут камеры fov на новое значение.
 
-Notice that when you are zoomed out the top and bottom cubes are at the edges of the screen, this matches our expectation from the [PlayCanvas Editor scene][3] where the cubes sit next to the
-top and bottom sides of the camera [frustum][2]
+Обратите внимание, что когда вы отдалены, верхний и нижний кубы находятся на краях экрана, это соответствует нашим ожиданиям от [сцены PlayCanvas Editor][3], где кубы расположены рядом с верхней и нижней сторонами камеры [frustum][2]
 
-## Current Camera
+## Текущая камера
 
-Another way you might want to create interactivity with cameras is by switching between multiple cameras. You can achieve this by adding several camera Entities to your Scene; ensure that only one is activated; and then alter which is the current camera at runtime in your script.
+Другой способ, которым вы можете создать взаимодействие с камерами, - это переключение между несколькими камерами. Вы можете сделать это, добавив несколько камер Entity в вашу сцену; убедитесь, что активирована только одна; а затем измените текущую камеру во время выполнения в вашем скрипте.
 
 ```javascript
 var CameraManager = pc.createScript('cameraManager');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 CameraManager.prototype.initialize = function() {
     this.activeCamera = this.entity.findByName('Center');
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
@@ -82,21 +81,21 @@ CameraManager.prototype.initialize = function() {
     }, this);
 };
 
-//prevents default browser actions, such as scrolling when pressing cursor keys
+// предотвращает выполнение стандартных действий браузера, таких как прокрутка при нажатии клавиш курсора
 CameraManager.prototype.onKeyDown = function (event) {
     event.event.preventDefault();
 };
 
 CameraManager.prototype.setCamera = function (cameraName) {
-    // Disable the currently active camera
+    // Отключаем текущую активную камеру
     this.activeCamera.enabled = false;
 
-    // Enable the newly specified camera
+    // Включаем только что указанную камеру
     this.activeCamera = this.entity.findByName(cameraName);
     this.activeCamera.enabled = true;
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 CameraManager.prototype.update = function(dt) {
     var app = this.app;
 
@@ -110,13 +109,13 @@ CameraManager.prototype.update = function(dt) {
 };
 ```
 
-In this sample, pressing the arrow keys sets the current camera to be a left or right camera Entity (from those that are in the currently loaded Scene) and the space key activates the central camera.
+В этом примере нажатие клавиш со стрелками устанавливает текущую камеру как левую или правую камеру Entity (из тех, которые находятся в текущей загруженной сцене), а клавиша пробела активирует центральную камеру.
 
-We initially  create a function to find the camera entity we want by name - with the `findByName()` function applied to the parent entity of this script (given that the cameras are located there, there is no need to use `this.app.root.findByName()` to search through all the entities in the Scene).
+Сначала мы создаем функцию для поиска нужной нам камеры по имени - с помощью функции `findByName()` применительно к родительской сущности этого скрипта (учитывая, что камеры находятся там, нет необходимости использовать `this.app.root.findByName()` для поиска всех сущностей в сцене).
 
-We set up an object containing the names of the camera Entities that correspond to the arrow and space keys [(see the Editor scene)][3].
+Мы настраиваем объект, содержащий имена камер Entity, соответствующих клавишам со стрелками и пробелу [(см. сцену редактора)][3].
 
-Next we loop through the keys and if one was pressed then we find the entity by its name, and we set it to be the current camera using the `setCamera()` function we defined early in the script which disables the current active camera, then finds the new camera to activate.
+Затем мы проходимся по клавишам, и если одна из них была нажата, то мы находим сущность по ее имени, и устанавливаем ее в качестве текущей камеры с помощью функции `setCamera()`, которую мы определили ранее в скрипте, которая отключает текущую активную камеру, а затем находит новую камеру для активации.
 
 [1]: /tutorials/basic-cameras/
 [2]: https://en.wikipedia.org/wiki/Frustum

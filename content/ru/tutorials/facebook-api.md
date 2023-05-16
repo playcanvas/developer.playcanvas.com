@@ -2,40 +2,40 @@
 title: Facebook API
 layout: tutorial-page.hbs
 tags: facebook
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
-*Log in with facebook to see your photos in a 3D sculpture*
+*Войдите через Facebook, чтобы увидеть свои фотографии в 3D-скульптуре*
 
-PlayCanvas is a perfect partner for building WebGL Facebook games and applications. Facebook is a great place to find a large audience for your games and PlayCanvas lets you create fast and performant games that are optimized for the web.
+PlayCanvas - идеальный партнер для создания WebGL-игр и приложений для Facebook. Facebook - отличное место для поиска большой аудитории для ваших игр, а PlayCanvas позволяет создавать быстрые и производительные игры, оптимизированные для веба.
 
-In this tutorial we'll show you how to integrate the Facebook API into your PlayCanvas application. Once you have access to the Facebook API there are many possibilities. For example, sharing games with friends, posting stories to Facebook and more. Check out the [tutorial project][5].
+В этом уроке мы покажем вам, как интегрировать API Facebook в ваше приложение PlayCanvas. Как только у вас будет доступ к API Facebook, возможностей будет множество. Например, делиться играми с друзьями, публиковать истории на Facebook и многое другое. Ознакомьтесь с [проектом учебника][5].
 
-## Facebook Plugin
+## Плагин Facebook
 
-There is a plugin to help you integrate Facebook available [on github][1]. This simplifies the work of loading the Facebook javascript SDK. Just attach the plugin script `lib/facebook-setup.js` to an entity in your scene and listen for the `fb:init` event and you'll know the API is ready. More instruction are available on the [github page][1].
+Плагин для интеграции Facebook доступен [на github][1]. Это упрощает работу с загрузкой JavaScript SDK Facebook. Просто прикрепите скрипт плагина `lib/facebook-setup.js` к объекту Entity в вашей сцене и слушайте событие `fb:init`, и вы узнаете, что API готов. Более подробные инструкции доступны на [странице github][1].
 
 ```javascript
   this.app.on("fb:init", function () {
-    // use API
+    // использовать API
     FB.login();
   }, this);`
 ```
 
-## Login to Facebook
+## Вход в Facebook
 
-In this example we've implemented a user interface to let you log in and log out of your Facebook account in the application. This is the code in `fb-ui.js`.
+В этом примере мы реализовали пользовательский интерфейс, который позволяет вам входить и выходить из своей учетной записи Facebook в приложении. Это код в `fb-ui.js`.
 
 ```javascript
 var FbUi = pc.createScript('fbUi');
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 FbUi.prototype.initialize = function() {
     var self = this;
     this._ready = false;
 
-    // When FB SDK is ready start by checking log in status
+    // Когда FB SDK готов, начните с проверки статуса входа
     this.app.on("fb:init", function () {
         this._ready = true;
         FB.getLoginStatus(self.loginChangeFn);
@@ -47,7 +47,7 @@ FbUi.prototype.initialize = function() {
     this.loginChangeFn = this.loginChangeFn.bind(this);
 };
 
-// This method is called when ever the log in status is checked or changed
+// Этот метод вызывается при проверке или изменении статуса входа
 FbUi.prototype.loginChangeFn = function (response) {
     if (response.status === "connected") {
         this.showLogout();
@@ -60,7 +60,7 @@ FbUi.prototype.loginChangeFn = function (response) {
     }
 };
 
-// Show the dialog with a login button
+// Показать диалог с кнопкой входа
 FbUi.prototype.showLogin = function () {
     var self = this;
 
@@ -68,7 +68,7 @@ FbUi.prototype.showLogin = function () {
     if (login) {
         login.style.display = "block";
         if (!this._loginHandler) {
-            // log in to FB when the buttons is clicked
+            // войти в FB при нажатии кнопки
             this._loginHandler = function () {
                 FB.login(self.loginChangeFn, {
                     scope: 'public_profile, user_photos'
@@ -80,7 +80,7 @@ FbUi.prototype.showLogin = function () {
     }
 };
 
-// Hide the dialog with a login button
+// Скрыть диалог с кнопкой входа
 FbUi.prototype.hideLogin = function () {
     var login = document.querySelector(".fb-login");
     if (login) {
@@ -88,13 +88,13 @@ FbUi.prototype.hideLogin = function () {
     }
 };
 
-// Show the dialog with a logout button
+// Показать диалог с кнопкой выхода
 FbUi.prototype.showLogout = function () {
     var self = this;
     var logout = document.querySelector(".fb-logout");
     if (logout) {
         logout.style.display = "block";
-        // log out of FB when the button is clicked
+        // выйти из FB при нажатии кнопки
         if (!this._logoutHandler) {
             this._logoutHandler = function () {
                 FB.logout(self.loginChangeFn);
@@ -105,7 +105,7 @@ FbUi.prototype.showLogout = function () {
     }
 };
 
-// Hide the dialog with a logout button
+// Скрыть диалог с кнопкой выхода
 FbUi.prototype.hideLogout = function () {
     var logout = document.querySelector(".fb-logout");
     if (logout) {
@@ -114,20 +114,19 @@ FbUi.prototype.hideLogout = function () {
 };
 ```
 
-In the initialize step of this code we're listening for the `fb:init` event from the Facebook plugin. Once this has been fired we know that the Facebook SDK has been loaded and is ready to be used. We use three Facebook SDK functions. `FB.getLoginStatus()` reports back whether the user has already logged into Facebook through your application, `FB.login()` pops up a login dialog for the user and `FB.logout()` logs the user out of your application and of Facebook.
+В этапе инициализации этого кода мы прослушиваем событие `fb:init` от плагина Facebook. Как только это событие произойдет, мы знаем, что SDK Facebook загружен и готов к использованию. Мы используем три функции SDK Facebook. `FB.getLoginStatus()` сообщает, вошел ли пользователь в Facebook через ваше приложение, `FB.login()` открывает диалоговое окно входа для пользователя, а `FB.logout()` выходит из вашего приложения и из Facebook.
 
 <div class="alert alert-info">
-It is important to notice here is that `FB.login()` must be called in response to a user action like clicking on a button, otherwise the user will see a pop-up warning.
+Важно заметить, что `FB.login()` должен вызываться в ответ на действие пользователя, например, при нажатии на кнопку, иначе пользователь увидит предупреждающее всплывающее окно.
 </div>
 
-The function `loginChangeFn` is a callback which is used to respond to changes in logged in state and using the four show/hide functions we show the correct dialog box depending on the state.
+Функция `loginChangeFn` - это обратный вызов, который используется для реагирования на изменения в состоянии входа в систему, и с помощью четырех функций показа/скрытия мы показываем соответствующее диалоговое окно в зависимости от состояния.
 
-Note, also we fire our own application events `app:fblogin` and `app:fblogout` to tell other parts of the application that the Facebook status has changed.
+Обратите внимание, что мы также запускаем собственные события приложения `app:fblogin` и `app:fblogout`, чтобы сообщить другим частям приложения о том, что статус Facebook изменился.
 
+### Доступ к API Facebook
 
-### Accessing the Facebook API
-
-The file `face-photo.js` uses the Facebook API to retrieve a list of photos from the user and display them in the 3D world.
+Файл `face-photo.js` использует API Facebook для получения списка фотографий пользователя и отображения их в 3D-мире.
 
 ```javascript
 var FacePhoto = pc.createScript('facePhoto');
@@ -136,14 +135,14 @@ FacePhoto.attributes.add('template', {
     type: 'entity'
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 FacePhoto.prototype.initialize = function() {
     this.textures = [];
 
-    // Set the texture loader up so that it can request cross-origin images
+    // Настройка загрузчика текстур для запроса кросс-доменных изображений
     this.app.loader.getHandler("texture").crossOrigin = "anonymous";
 
-     // listen for the event that signals we've been logged into facebook
+     // слушаем событие, которое сигнализирует о том, что мы вошли в Facebook
     this.app.on("app:fblogin", this.reset, this);
 };
 
@@ -159,17 +158,17 @@ FacePhoto.prototype.reset = function () {
         }
     };
 
-    // request the most recent photos from user's facebook account
+    // запрашиваем самые последние фотографии из аккаунта пользователя на Facebook
     FB.api(path, function (lists) {
         for (var i = 0; i < lists.data.length; i++) {
             count = lists.data.length;
             var photoId = lists.data[i].id;
             path = pc.string.format("/{0}?fields=images", photoId);
 
-            // request more information including source URL of the photos
+            // запрашиваем дополнительную информацию, включая исходный URL-адрес фотографий
             FB.api(path, function (photo) {
 
-                // create a texture asset using the image URL
+                // создаем текстурный ассет с использованием URL-адреса изображения
                 var asset = new pc.Asset(photo.id, "texture", {
                     url: photo.images[0].source
                 });
@@ -187,19 +186,19 @@ FacePhoto.prototype.reset = function () {
 };
 
 FacePhoto.prototype.createPhoto = function(texture) {
-    // clone the image template entity
+    // клонируем шаблон сущности изображения
     var e = this.template.clone();
     e.enabled = true;
     var mesh = e.model.meshInstances[0];
 
-    // override the emissive map on the mesh instance to display the photo texture
+    // переопределяем карту излучения на экземпляре сетки для отображения текстуры фотографии
     mesh.setParameter("texture_emissiveMap", texture);
 
     this.app.root.addChild(e);
     var MIN = -2.5;
     var MAX = 2.5;
 
-    // randomly position the photo and set the aspect ratio to the same as the texture
+    // случайным образом размещаем фотографию и устанавливаем соотношение сторон такое же, как у текстуры
     e.translate(pc.math.random(MIN, MAX), pc.math.random(MIN, MAX), pc.math.random(MIN, MAX));
     e.rotate(90, 0, 0);
 
@@ -208,32 +207,32 @@ FacePhoto.prototype.createPhoto = function(texture) {
 };
 ```
 
-Some key parts of this script.
+Некоторые ключевые части этого скрипта.
 
 ```javascript
-this.app.loader.getHandler("texture").crossOrigin = "anonymous";
+this.app.loader.getHandler("texture").crossOrigin = "анонимный";
 ```
 
-This line is required to ensure that the resource loader can load textures from a different origin (URL) than the location where the application is hosted (i.e. `playcanv.as).
+Эта строка необходима для того, чтобы загрузчик ресурсов мог загружать текстуры с другого источника (URL), чем местоположение, где размещено приложение (т.е. `playcanv.as).
 
 ```javascript
 this.app.on("fb:login", this.reset, this);
 ```
 
-This line listens for the login event from our `fb-ui.js` file. When the user logs in, we start the process of loading the photos.
+Эта строка прослушивает событие входа из нашего файла `fb-ui.js`. Когда пользователь входит в систему, мы начинаем процесс загрузки фотографий.
 
 ```javascript
-// request the most recent photos from user's facebook account
+// запросить самые последние фотографии из аккаунта пользователя на Facebook
 FB.api(path, function (lists) {
     for (var i = 0; i < lists.data.length; i++) {
         count = lists.data.length;
         var photoId = lists.data[i].id;
         path = pc.string.format("/{0}?fields=images", photoId);
 
-        // request more information including source URL of the photos
+        // запросить дополнительную информацию, включая исходный URL фотографий
         FB.api(path, function (photo) {
 
-            // create a texture asset using the image URL
+            // создать текстурный Asset с использованием URL изображения
             var asset = new pc.Asset(photo.id, "texture", {
                 url: photo.images[0].source
             });
@@ -250,25 +249,25 @@ FB.api(path, function (lists) {
 });
 ```
 
-In this section of code we are using the Facebook API to access their [Graph API][2]. In this case, we're loading a list of photos from the logged in user, and then querying each photo to get the URL of the image.
+В этом разделе кода мы используем API Facebook для доступа к их [Graph API][2]. В данном случае мы загружаем список фотографий от авторизованного пользователя, а затем запрашиваем каждую фотографию, чтобы получить URL изображения.
 
-Once we have the URL, we create a new `texture` asset and we load the image.
+После получения URL мы создаем новый актив `texture` и загружаем изображение.
 
 ```javascript
 FacePhoto.prototype.createPhoto = function(texture) {
-    // clone the image template entity
+    // клонировать шаблон сущности изображения
     var e = this.template.clone();
     e.enabled = true;
     var mesh = e.model.meshInstances[0];
 
-    // override the emissive map on the mesh instance to display the photo texture
+    // переопределить карту излучения на экземпляре сетки для отображения текстуры фотографии
     mesh.setParameter("texture_emissiveMap", texture);
 
     this.app.root.addChild(e);
     var MIN = -2.5;
     var MAX = 2.5;
 
-    // randomly position the photo and set the aspect ratio to the same as the texture
+    // случайным образом разместить фотографию и установить соотношение сторон такое же, как у текстуры
     e.translate(pc.math.random(MIN, MAX), pc.math.random(MIN, MAX), pc.math.random(MIN, MAX));
     e.rotate(90, 0, 0);
 
@@ -277,13 +276,13 @@ FacePhoto.prototype.createPhoto = function(texture) {
 };
 ```
 
-Finally, once we have loaded the texture asset, we create a new Photo entity and we override the emissive texture with our newly loaded photo texture.
+Наконец, после загрузки текстурного ассета, мы создаем новую сущность Photo и переопределяем эмиссионную текстуру нашей новой загруженной фототекстурой.
 
-### More ideas
+### Больше идей
 
-This tutorial shows you how you can load the Facebook API and access Facebook data from within your PlayCanvas application. There are loads more things for you to try using the Facebook API. For example, try sharing Facebook Stories when game events occur, like breaking a high score. Or use the user's friend list to get them to challenge their friends to a game.
+Это руководство показывает вам, как загрузить API Facebook и получить доступ к данным Facebook из вашего приложения PlayCanvas. Есть еще много вещей, которые вы можете попробовать с использованием API Facebook. Например, попробуйте делиться историями Facebook, когда происходят игровые события, например, побить рекорд. Или используйте список друзей пользователя, чтобы предложить им бросить вызов своим друзьям в игре.
 
-Our game SWOOOP shows some of these in action. Try it on [Facebook][4] now.
+Наша игра SWOOOP демонстрирует некоторые из этих возможностей. Попробуйте ее на [Facebook][4] сейчас.
 
 [1]: https://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api

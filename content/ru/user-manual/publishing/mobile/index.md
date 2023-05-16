@@ -1,15 +1,15 @@
 ---
-title: Мобильный
+title: Мобильные
 layout: usermanual-page.hbs
 position: 2
 ---
 
-PlayCanvas games are just web pages. An index.html file and a collection of resources (JavaScript files, JSON files, images and so on). They work great in web browsers, of course, but if you want to submit your game to a mobile app store such as Google Play or the Apple App Store, then you somehow need to convert your PlayCanvas game to a native app. There are a few products available to simplify the process for you:
+Игры PlayCanvas - это просто веб-страницы. Файл index.html и набор ресурсов (файлы JavaScript, файлы JSON, изображения и так далее). Они отлично работают в веб-браузерах, конечно, но если вы хотите отправить свою игру в мобильный магазин приложений, такой как Google Play или Apple App Store, вам нужно каким-то образом преобразовать вашу игру PlayCanvas в собственное приложение. Существует несколько продуктов, которые упрощают этот процесс для вас:
 
 * [Cordova][cordova]
 * [GoNative][gonative]
 
-Alternatively, another option is to create an Android or iOS app the consists of a single fullscreen WebView that loads your PlayCanvas app from local app resources.
+В качестве альтернативы, еще один вариант - создать приложение для Android или iOS, которое состоит из одного полноэкранного WebView, загружающего ваше приложение PlayCanvas из локальных ресурсов приложения.
 
 [cordova]: /user-manual/publishing/mobile/cordova
 [gonative]: /user-manual/publishing/mobile/gonative

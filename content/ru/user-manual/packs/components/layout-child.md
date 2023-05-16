@@ -4,27 +4,27 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-The LayoutChild component enables an element that is controlled by a LayoutGroup component to override the default behavior of the Layout Group.
+Компонент LayoutChild позволяет элементу, управляемому компонентом LayoutGroup, переопределить поведение Layout Group по умолчанию.
 
-See the [Layout Groups][0] section for more details.
+См. раздел [Layout Groups][0] для получения дополнительной информации.
 
-![LayoutChild component][1]
+![Компонент LayoutChild][1]
 
-## Properties
+## Свойства
 
-| Property              | Описание |
+| Свойство              | Описание |
 |-----------------------|-------------|
-| Min Width             | Set the minimum width that the element can be rendered at. |
-| Min Height            | Set the minimum height that the element can be rendered at. |
-| Max Width             | Set the maximum width that the element can be rendered at. |
-| Max Height            | Set the maximum height that the element can be rendered at. |
-| Fit Width Proportion  | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
-| Fit Height Proportion | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
-| Exclude from Layout   | Completely ignore this element when calculating the layout. |
+| Min Width             | Установите минимальную ширину, с которой может быть отображен элемент. |
+| Min Height            | Установите минимальную высоту, с которой может быть отображен элемент. |
+| Max Width             | Установите максимальную ширину, с которой может быть отображен элемент. |
+| Max Height            | Установите максимальную высоту, с которой может быть отображен элемент. |
+| Fit Width Proportion  | Пропорция дополнительного пространства, которое займет элемент, если группа компоновки настроена на растягивание или сжатие. |
+| Fit Height Proportion | Пропорция дополнительного пространства, которое займет элемент, если группа компоновки настроена на растягивание или сжатие. |
+| Exclude from Layout   | Полностью игнорировать этот элемент при расчете компоновки. |
 
-## Scripting Interface
+## Интерфейс сценариев
 
-You can control an LayoutChild component's properties using a [script component][2]. The LayoutChild component's scripting interface is [here][3].
+Вы можете управлять свойствами компонента LayoutChild с помощью [компонента сценария][2]. Интерфейс сценариев компонента LayoutChild находится [здесь][3].
 
 [0]: /user-manual/user-interface/layout-groups
 [1]: /images/user-manual/scenes/components/component-layoutchild.png

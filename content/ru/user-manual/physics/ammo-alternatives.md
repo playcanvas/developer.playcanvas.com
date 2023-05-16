@@ -1,24 +1,24 @@
 ---
-title: Alternatives to ammo.js
+title: Альтернативы ammo.js
 layout: usermanual-page.hbs
 position: 8
 ---
 
-ammo.js is perhaps the most popular and well known JavaScript physics engine. It is highly versatile and can generate high fidelity simulations. But it has quite high performance and memory requirements. Therefore, you should investigate whether it is indeed the best choice for your application. For example, if you are making a 2D game, a 2D physics engine might be more appropriate.
+ammo.js, возможно, самый популярный и известный движок физики на JavaScript. Он очень универсален и может создавать высококачественные симуляции. Однако у него довольно высокие требования к производительности и памяти. Поэтому вам следует выяснить, действительно ли он является лучшим выбором для вашего приложения. Например, если вы создаете 2D-игру, движок 2D-физики может быть более подходящим.
 
-As it happens, there are several alternatives to ammo.js:
+Как оказывается, существует несколько альтернатив ammo.js:
 
-| Physics Engine                                     | JS       | WASM     | 2D       | 3D       | PlayCanvas Integration                                |
+| Движок физики                                      | JS       | WASM     | 2D       | 3D       | Интеграция с PlayCanvas                               |
 |----------------------------------------------------|----------|----------|----------|----------|-------------------------------------------------------|
 | [box2d.js](https://github.com/kripken/box2d.js)    | &#x2713; | &#x2713; | &#x2713; |          |                                                       |
 | [Matter.js](https://github.com/liabru/matter-js)   | &#x2713; |          | &#x2713; |          |                                                       |
-| [p2.js](https://github.com/schteppe/p2.js)         | &#x2713; |          | &#x2713; |          | [Yes](https://github.com/playcanvas/playcanvas-p2.js) |
+| [p2.js](https://github.com/schteppe/p2.js)         | &#x2713; |          | &#x2713; |          | [Да](https://github.com/playcanvas/playcanvas-p2.js)  |
 | [cannon.js](https://github.com/schteppe/cannon.js) | &#x2713; |          |          | &#x2713; |                                                       |
 | [Oimo.js](https://github.com/lo-th/Oimo.js)        | &#x2713; |          |          | &#x2713; |                                                       |
 
-While there is currently only one existing PlayCanvas integration for the p2.js engine, it should be straightforward to create additional integrations for the other engines listed using a similar approach.
+Хотя на данный момент существует только одна интеграция PlayCanvas для движка p2.js, создание дополнительных интеграций для других перечисленных движков должно быть простым с использованием аналогичного подхода.
 
-In December 2018, Nvidia open sourced the [PhysX][1] physics engine. While there is no JS/WASM port of PhysX yet, it is perhaps the most competitive physics runtime compared to Bullet/ammo.js. When a web port becomes available, it will be added to the table above.
+В декабре 2018 года Nvidia открыла исходный код движка физики [PhysX][1]. Хотя на данный момент нет порта JS/WASM для PhysX, он, возможно, является самым конкурентоспособным движком физики по сравнению с Bullet/ammo.js. Когда веб-порт станет доступным, он будет добавлен в таблицу выше.
 
 [1]: https://github.com/NVIDIAGameWorks/PhysX
 

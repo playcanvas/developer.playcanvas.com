@@ -1,55 +1,54 @@
 ---
-title: Optimizing Load Time
+title: Оптимизация времени загрузки
 layout: usermanual-page.hbs
 position: 7
 ---
 
-Optimizing isn't just related to improving frame rate. Fast load times are also critical. The faster your app loads, the more likely your users will stick around to experience it. Aim to have your app load in less than 5 seconds to prevent users from churning.
+Оптимизация не только связана с улучшением частоты кадров. Быстрое время загрузки также критически важно. Чем быстрее загружается ваше приложение, тем больше вероятность, что пользователи останутся, чтобы испытать его. Стремитесь к тому, чтобы ваше приложение загружалось менее чем за 5 секунд, чтобы предотвратить уход пользователей.
 
-Here are some tips to achieve super-fast load times:
+Вот несколько советов для достижения сверхбыстрого времени загрузки:
 
-* In general, prefer JPG format for textures over PNG. Exceptions are when you require an alpha channel or when JPG compression produces noticeable artifacts (with normal maps or gloss maps, for example).
-* Look for opportunities to downsample certain texture images. For example, a 2048x2048 texture that is used on a small graphical object may look almost exactly the same at 1024x1024 or even 512x512.
-* Don't preload assets which can be loaded asynchronously. For example, it may not be necessary for your game music to play immediately at game start, so consider unchecking the Preload option for that asset in the Inspector panel.
-* If you have a prefiltered cubemap and are not displaying the top-level mipmap for the skybox, you can uncheck preload for all the 6 face images.
-* If you are not instantiating Templates at runtime, uncheck preload on the asset as they aren't needed. (See '[When do I need to load Template Assets?][2]' for more information).
-* Ensure that imported models only have the vertex attributes that you need. For example, if your model has a second set of UVs but doesn't use them or if it has all-white vertex colors, go back to the modeling application and delete those attributes.
-* Use the Networking panel in Chrome Dev Tools (or the equivalent in other browsers) to sort loaded assets by size and look for anything that stands out. Look for assets that are not used and could be deleted. Look for assets that are essentially duplicates and delete them.
-* Using PlayCanvas' built-in physics engine incurs an additional download cost of 379KB. If you are using the physics engine to solve very simple problems, consider rolling an alternative solution that doesn't incur the download penalty.
-* If you self-host your PlayCanvas app, be sure to configure your web server to serve files with GZIP compression. In particular, JSON and JS files.
+* В целом, предпочитайте формат JPG для текстур вместо PNG. Исключениями являются случаи, когда вам требуется альфа-канал или когда сжатие JPG создает заметные артефакты (например, с картами нормалей или глянцевыми картами).
+* Ищите возможности для уменьшения размера некоторых текстурных изображений. Например, текстура 2048x2048, используемая на небольшом графическом объекте, может выглядеть почти так же на 1024x1024 или даже 512x512.
+* Не предварительно загружайте активы, которые могут быть загружены асинхронно. Например, возможно, не требуется, чтобы ваша игровая музыка начинала играть сразу при запуске игры, поэтому рассмотрите возможность снятия галочки с опции Preload для этого актива в панели Inspector.
+* Если у вас есть предварительно отфильтрованная кубическая карта и вы не отображаете верхний уровень мип-карты для скибокса, вы можете снять галочку с предварительной загрузки для всех 6 изображений граней.
+* Если вы не создаете экземпляры шаблонов (Templates) во время выполнения, снимите галочку с предварительной загрузки ассетов, так как они не нужны. (См. '[Когда мне нужно загружать активы шаблонов?][2]' для получения дополнительной информации).
+* Убедитесь, что импортированные модели имеют только те вершинные атрибуты, которые вам нужны. Например, если ваша модель имеет второй набор UV-координат, но не использует их, или если она имеет вершинные цвета, полностью белые, вернитесь в приложение для моделирования и удалите эти атрибуты.
+* Используйте панель Networking в инструментах разработчика Chrome (или эквивалент в других браузерах) для сортировки загруженных ассетов по размеру и поиска чего-то необычного. Ищите активы, которые не используются и могут быть удалены. Ищите активы, которые являются по сути дубликатами, и удаляйте их.
+* Использование встроенного физического движка PlayCanvas обходится дополнительной стоимостью загрузки в 379 КБ. Если вы используете физический движок для решения очень простых задач, рассмотрите возможность создания альтернативного решения, которое не влечет за собой штраф за загрузку.
+* Если вы размещаете ваше приложение PlayCanvas на своем хостинге, обязательно настройте ваш веб-сервер на предоставление файлов с GZIP-сжатием. В частности, файлы JSON и JS.
 
+## Лучшие практики последовательности загрузки
 
-## Loading sequence best practices
+Помимо указанных выше рекомендаций, можно удержать пользователей, разделяя загрузку на несколько этапов и предоставляя пользователям что-то новое для взаимодействия или просмотра.
 
-Beyond the above guidelines, it's possible to retain users by spacing the loading in multiple stages while giving the users something new to interact with or watch.
+Используя [Virtual Voodoo][1] в качестве примера, мы можем показать 'типичную' последовательность, которую большинство приложений будет использовать для браузерных взаимодействий.
 
-Using [Virtual Voodoo][1] as an example, we can show the 'typical' sequence that most applications will use for browser experiences.
+Игра имеет 3 фазы:
 
-The game has 3 phases:
-
-1. Preloader
-2. Title Screen and Character Customization
-3. Main Game
+1. Предзагрузчик
+2. Заставка и настройка персонажа
+3. Основная игра
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/virtual-voodoo-phases.jpg" style="max-width: 100%;">
 
-The Preloader phase loads the assets that are needed for the first PlayCanvas scene which is the Title Screen and Character Customization. This would include assets for the UI, character model and assets.
+Фаза предзагрузчика загружает активы, необходимые для первой сцены PlayCanvas, которая является заставкой и настройкой персонажа. Это включает активы для пользовательского интерфейса, модели персонажа и активы.
 
-When the Title Screen is active, the game starts background loading the assets that are needed for the Main Game. During the transition to the Title Screen and possible interaction with the character customization, by the time the user presses the start button, the assets for the Main Game may have already finished loading.
+Когда активен экран заголовка, игра начинает фоновую загрузку ассетов, необходимых для основной игры. Во время перехода к экрану заголовка и возможного взаимодействия с настройкой персонажа, когда пользователь нажимает кнопку старт, активы для основной игры могут уже быть загружены.
 
-However, if the user presses the start button before the assets have finished loading, a progress bar will appear on the button instead. Once it reaches 100%, the game will automatically transition to the Main Game.
+Однако, если пользователь нажимает кнопку старт до того, как активы закончат загрузку, на кнопке появится индикатор прогресса. Как только он достигнет 100%, игра автоматически перейдет к основной игре.
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif" style="max-width: 480px;">
 
-With the assets being loaded in phases and giving something new for the user to interact with and/or look at periodically, the user stays engaged despite a long loading time.
+С загрузкой ассетов по фазам и предоставлением чего-то нового для взаимодействия пользователя и/или просмотра периодически, пользователь остается вовлеченным, несмотря на длительное время загрузки.
 
-### Further improvements
+### Дополнительные улучшения
 
-Some developers will go as far as to reduce the Preloader phase to only load the bare minimum and add an 'in-application' loading screen that allows the developer to populate with application related assets and text, use animation, etc. This engages the user as they are seeing something that is directly related to the application.
+Некоторые разработчики идут настолько далеко, что сокращают фазу предзагрузчика до минимума и добавляют 'внутриприложенческий' экран загрузки, который позволяет разработчику заполнять активами и текстом, связанными с приложением, использовать анимацию и т.д. Это вовлекает пользователя, так как они видят что-то, что напрямую связано с приложением.
 
-If the game allows, using common placeholders while the more detailed assets are loading can get the user interacting with the application sooner.
+Если игра позволяет, использование общих заполнителей во время загрузки более детализированных ассетов может позволить пользователю взаимодействовать с приложением быстрее.
 
-An example below is using a silhouette of a character as the placeholder until it has fully loaded. The silhouette placeholder is small in file size so it can be part of a preload sequence and also can be reused for other characters in the application.
+Пример ниже демонстрирует использование силуэта персонажа в качестве заполнителя до тех пор, пока он полностью не загрузится. Заполнитель силуэта имеет небольшой размер файла, поэтому он может быть частью предварительной загрузки и также может быть использован для других персонажей в приложении.
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/character-load.gif" style="max-width: 360px;">
 

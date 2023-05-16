@@ -1,36 +1,36 @@
 ---
-title: Профилировщик
+title: Профайлер
 layout: usermanual-page.hbs
 position: 2
 ---
 
-PlayCanvas provides an real-time profiler to assist in diagnosing performance problems.
+PlayCanvas предоставляет профайлер в реальном времени для помощи в диагностике проблем с производительностью.
 
 ![Profiler][1]
 
-The Profiler is a panel that overlays your app, displaying lots of useful timing information and performance stats. So whenever you’re wondering why your app isn’t hitting 60 frames per second, simply launch the Profiler and you should be able to figure out exactly what the problem is.
+Профайлер - это панель, которая накладывается на ваше приложение и отображает множество полезной информации о времени и статистики производительности. Так что, если вы задаетесь вопросом, почему ваше приложение не достигает 60 кадров в секунду, просто запустите Профайлер, и вы сможете точно определить, в чем проблема.
 
-To launch the Profiler, tick the Profiler checkbox from the sub-menu of the Launch button:
+Чтобы запустить Профайлер, установите флажок Profiler в подменю кнопки Launch:
 
 ![Profiler Launch][2]
 
-There is also a hot-key to toggle the Profiler: CTRL (CMD) + ALT + T.
+Также есть горячая клавиша для переключения Профайлера: CTRL (CMD) + ALT + T.
 
-## Profiler Overview
+## Обзор профайлера
 
 ![Profiler Stats][3]
 
-The left-hand panel of the Profiler displays statistics related to the currently rendered scene. It displays frame rate, the number of cameras enabled (you will normally want this to be 1), the number of shaders, materials, triangles and so on. Also, frame time is broken down into update (the time to run all component updates), physics (simulation time) and render time (the time to pass all of the graphics commands to WebGL). At a glance, you can quickly see where there might be problems.
+Левая панель Профайлера отображает статистику, связанную с текущей отображаемой сценой. Он отображает частоту кадров, количество включенных камер (обычно вы хотите, чтобы это было 1), количество шейдеров, материалов, треугольников и так далее. Кроме того, время кадра разбивается на обновление (время выполнения всех обновлений компонентов), физику (время симуляции) и время рендеринга (время передачи всех графических команд в WebGL). Вы сразу можете увидеть, где могут быть проблемы.
 
 ![Profiler Timeline][4]
 
-The right-hand panel is the Profiler Timeline. It displays a number of key events in your app’s life from launch:
+Правая панель - это хронология Профайлера. Он отображает ряд ключевых событий в жизни вашего приложения с момента запуска:
 
-* **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
-* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
-* **start**: event when PlayCanvas begins the main application loop and rendering begins.
+* **dom** (DOM interactive): событие, когда браузер завершает разбор html-документа и может отобразить первый кадр страницы на экране.
+* **preload**: событие, когда PlayCanvas инициирует предварительную загрузку всех ассетов, которые требуются перед запуском приложения.
+* **start**: событие, когда PlayCanvas начинает основной цикл приложения и начинается рендеринг.
 
-Green bars represent individual asynchronous asset loads. Orange bars are blocking shader compilations.
+Зеленые полосы представляют отдельные асинхронные загрузки ассетов. Оранжевые полосы - блокирующие компиляции шейдеров.
 
 [1]: /images/user-manual/optimization/profiler/profiler.png
 [2]: /images/user-manual/optimization/profiler/profiler_launch.png

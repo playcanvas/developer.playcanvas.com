@@ -1,60 +1,60 @@
 ---
-title: Import Hierarchy
+title: Импорт иерархии
 layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas supports importing models with their meshes as a hierarchy of entities in the scene. This allows you to edit the different meshes directly in the Editor. Components can be added, attach other entities, move/rotate/scale entities in the hierarchy etc.
+PlayCanvas поддерживает импорт моделей с их сетками в виде иерархии сущностей в сцене. Это позволяет редактировать различные сетки непосредственно в редакторе. Можно добавлять компоненты, присоединять другие сущности, перемещать/вращать/масштабировать сущности в иерархии и т.д.
 
-![Edit model hierarchy in the Editor][edit_hierarchy_gif]
+![Редактирование иерархии модели в редакторе][edit_hierarchy_gif]
 
-## How to enable
+## Как включить
 
 <div class="alert alert-info">
-    This is now enabled by default for new projects.
+    Теперь это включено по умолчанию для новых проектов.
 </div>
 
-Open the 'Project Settings'
+Откройте "Настройки проекта"
 
 <img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/project-settings.png" width="480">
 
-Scroll down to 'Asset Tasks' and enable 'Import Hierarchy':
+Прокрутите вниз до "Asset Tasks" и включите "Import Hierarchy":
 
 <img loading="lazy" src="/images/user-manual/assets/import-pipeline/import-hierarchy/asset-tasks.png" width="360">
 
-## Importing models
+## Импорт моделей
 
-A full tutorial on importing your first model and animation can be found [here][first_model_animation_import].
+Полное руководство по импорту вашей первой модели и анимации можно найти [здесь][first_model_animation_import].
 
-As an overview, when you drag the model file into the 'Assets Panel':
+В качестве обзора, когда вы перетаскиваете файл модели в "Assets Panel":
 
-![Drag Model into Assets Panel][import_model_gif]
+![Перетаскивание модели в панель Assets][import_model_gif]
 
-The following assets will be created when imported:
+При импорте будут созданы следующие активы:
 
-![Created Assets][created_assets_img]
+![Созданные активы][created_assets_img]
 
-| Asset Type | Описание |
+| Тип актива | Описание |
 |------------|-------------|
-| **[Materials][material_asset]** | Materials used by the imported model, mapped to the mesh instance. |
-| **[Textures][texture_asset]** | Embedded textures in the model file (if any). These will automatically be mapped to the associated materials. |
-| **[Template][template_asset]** | The template stores the scene hierarchy of the model. Create an instance of the template to bring the model into the scene. |
-| **Container** | The GLB that stores all the meshes of the model. |
-| **Render** | Render assets reference a mesh in the container asset and are used by the [Render Component][render_component] to render the mesh in the scene. They can also be used with the [Collision Component][collision_component] as a mesh for physics. |
+| **[Materials][material_asset]** | Материалы, используемые импортированной моделью, сопоставлены с экземпляром сетки. |
+| **[Textures][texture_asset]** | Встроенные текстуры в файле модели (если есть). Они автоматически будут сопоставлены с соответствующими материалами. |
+| **[Template][template_asset]** | Шаблон хранит иерархию сцены модели. Создайте экземпляр шаблона, чтобы добавить модель в сцену. |
+| **Container** | GLB, который хранит все сетки модели. |
+| **Render** | Render активы ссылаются на сетку в активе контейнера и используются [Render Component][render_component] для отображения сетки в сцене. Они также могут быть использованы с [Collision Component][collision_component] в качестве сетки для физики. |
 
-## Updating models
+## Обновление моделей
 
-As the hierarchy is created as part of a template, when a model is updated it may affect the template instances in the scenes.
+Поскольку иерархия создается в виде шаблона, при обновлении модели это может повлиять на экземпляры шаблона в сценах.
 
-Added components to entities in the template will be kept during the update unless the mesh instance that the entity represents no longer exists in the updated model.
+Добавленные компоненты к сущностям в шаблоне будут сохранены во время обновления, если только экземпляр сетки, который представляет сущность, больше не существует в обновленной модели.
 
-The exception to this is if a script component is added to an entity in the template and the mesh instance it represents is no longer part of the updated model, it will be moved under the root entity in the template so there is no data loss. Any entities that were under it before the update will be kept as well.
+Исключение составляют случаи, когда к сущности в шаблоне добавляется компонент скрипта, и экземпляр сетки, который он представляет, больше не является частью обновленной модели, он будет перемещен под корневую сущность в шаблоне, чтобы не было потери данных. Все сущности, которые были под ним до обновления, также будут сохранены.
 
-How the Editor decides what is a new or removed mesh instance is done by the following:
+Редактор определяет, что является новым или удаленным экземпляром сетки, следующим образом:
 
-- If in the update, a mesh instance's name and its parent mesh's instance name matches an existing mesh instance and its parent, they are assumed to be the same mesh instance in the hierarchy and is updated.
-- If in the update, a mesh instance's name does not exist, it's assumed to be a new mesh instance and a new entity is added to the template.
-- If in the update, an existing entity of the template does not have a matching mesh instance given the rules above, it's assumed that this mesh instance has been removed and the entity will be removed from the template. The exception being mentioned above, if there was a script component added to it on the template, those entities are preserved on the root. If there were no script components added, those are deleted from the template.
+- Если при обновлении имя экземпляра сетки и имя его родительского экземпляра сетки совпадают с существующим экземпляром сетки и его родителем, они считаются одним и тем же экземпляром сетки в иерархии и обновляются.
+- Если при обновлении имя экземпляра сетки отсутствует, считается, что это новый экземпляр сетки, и в шаблон добавляется новая сущность.
+- Если при обновлении существующая сущность шаблона не имеет соответствующего экземпляра сетки с учетом приведенных выше правил, считается, что этот экземпляр сетки был удален, и сущность будет удалена из шаблона. За исключением упомянутого выше случая, если к нему был добавлен компонент скрипта в шаблоне, такие сущности сохраняются на корневом уровне. Если компоненты скрипта не были добавлены, они удаляются из шаблона.
 
 [edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
 [import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif

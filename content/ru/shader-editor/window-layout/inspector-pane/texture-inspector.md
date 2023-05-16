@@ -1,15 +1,15 @@
 ---
-title: Texture Inspector
+title: Инспектор текстур
 layout: shader-editor-page.hbs
 position: 4
 ---
 
 <img loading="lazy" src="/images/shader-editor/inspector-pane-texture.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Texture Inspector is where textures are configured.
+Инспектор текстур - это место, где настраиваются текстуры.
 
-To access a texture's details, select it in the [Assets Pane][7].
+Чтобы получить доступ к деталям текстуры, выберите ее в [Панели Assets][7].
 
-- Name - specify the texture's name.
+- Имя - укажите имя текстуры.
 
 [7]: /shader-editor/window-layout/assets-pane

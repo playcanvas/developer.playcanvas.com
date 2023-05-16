@@ -1,33 +1,32 @@
 ---
-title: User Interface Basics
+title: Основы пользовательского интерфейса
 layout: usermanual-page.hbs
 position: 1
 ---
 
-User Interfaces are built from two elements in PlayCanvas. A [Screen Component][1] describes the area that contains all the user interfaces elements and then multiple entities with [Element Components][2] are attached below the Screen Entity in the hierarchy. The Screen defines the area of the User Interface and how it is rendered (in 2D space or in the 3D world). The Elements make up the images and text components of the interface.
+Пользовательские интерфейсы в PlayCanvas строятся из двух элементов. [Компонент экрана][1] описывает область, содержащую все элементы пользовательского интерфейса, а затем к нескольким объектам с [компонентами элементов][2] присоединяются ниже объекта Screen Entity в иерархии. Экран определяет область пользовательского интерфейса и способ его отображения (в 2D-пространстве или в 3D-мире). Элементы составляют изображения и текстовые компоненты интерфейса.
 
-## Layout and Positioning
+## Размещение и позиционирование
 
-One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to its parent and the `pivot` property determines where the center point of the element is. Read more on the [Element][3] page.
+Одно большое отличие между обычными объектами Entity и объектами Entity, использующими компонент Element в качестве части экрана, заключается в способе их позиционирования относительно их родителей. Компоненты элементов имеют два свойства, которые изменяют способ расчета их окончательного положения. Свойство `anchor` определяет, как дочерний элемент позиционируется относительно своего родителя, а свойство `pivot` определяет, где находится центральная точка элемента. Узнайте больше на странице [Element][3].
 
-## Draw Order
+## Порядок отрисовки
 
-The graphical portions of the user interface, Image and Text Elements, are drawn in the order that they appear in the hierarchy, i.e. the first child is drawn first, its child is drawn next. A child that is draw later will appear on top of one that is draw earlier.
+Графические части пользовательского интерфейса, элементы изображения и текста, отрисовываются в порядке, в котором они появляются в иерархии, т.е. первый дочерний элемент отрисовывается первым, его дочерний элемент отрисовывается следующим. Дочерний элемент, который отрисовывается позже, будет отображаться поверх того, который отрисовывается раньше.
 
-To change the draw order you simply re-order the entities in the Editor hierarchy. You can re-order elements programmatically by calling `entity.reparent(...)`. Though, note, that this forces the draw order to be recalculated for the entire Screen component.
+Чтобы изменить порядок отрисовки, просто измените порядок объектов в иерархии редактора. Вы можете изменить порядок элементов программно, вызвав `entity.reparent(...)`. Однако обратите внимание, что это заставляет порядок отрисовки пересчитываться для всего компонента экрана.
 
-## Element 9-slicing
+## 9-срезка элементов
 
-9-slicing (or 9-patch) is a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
+9-срезка (или 9-патч) - это графическая техника создания масштабируемых элементов пользовательского интерфейса из растровой графики. Вы можете настроить 9-срезку с использованием атласа текстур и спрайтовых ассетов. [Узнайте больше][5].
 
-## Input
+## Ввод
 
-There is an additional way of handling input for UI Elements. An instance of the `pc.ElementInput` is provided on the Application object, usually accessible as `this.app.elementInput`. This allows you to listen for input directly on the element components, e.g. `this.entity.element.on('click', ...)`. Read more on the [Input][4] page.
+Существует дополнительный способ обработки ввода для элементов пользовательского интерфейса. Экземпляр `pc.ElementInput` предоставляется в объекте приложения, обычно доступном как `this.app.elementInput`. Это позволяет вам прослушивать ввод непосредственно на компонентах элементов, например, `this.entity.element.on('click', ...)`. Узнайте больше на странице [Input][4].
 
-## Localization
+## Локализация
 
-PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
-
+PlayCanvas имеет встроенную систему локализации, которая поддерживает локализованные текстовые элементы. Узнайте больше [здесь][6].
 
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements

@@ -1,10 +1,10 @@
 ---
-title: Приложения - получить приложение
+title: Приложения - Получить приложение
 layout: usermanual-page.hbs
 position: 4
 ---
 
-## Route URL
+## URL маршрута
 
 ```none
 GET https://playcanvas.com/api/apps/:id
@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/apps/:id
 
 ## Описание
 
-Gets a published App by id.
+Получает опубликованное приложение по идентификатору.
 
 ## Пример
 
@@ -20,17 +20,50 @@ Gets a published App by id.
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/apps/99999
 ```
 
-## Parameters
+## Параметры
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>The id of the app.</p></div>
+<div class="parameter"><span class="param">id</span><p>ID приложения.</p></div>
 </div>
 
-## Response Schema
+## Схема ответа
 
 ```none
-Status: 200
+Статус: 200
 ```
+
+# Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в Issue Tracker.
+
+[Создать новый тикет](https://github.com/Unity-Technologies/Graphics/issues/new/choose)
+
+# Руководства
+
+- [Tutorial Thumbnail](Documentation~/TutorialThumbnail.md)
+- [Entity](Documentation~/Entity.md)
+- [Material Asset](Documentation~/MaterialAsset.md)
+- [Material Inspector](Documentation~/MaterialInspector.md)
+- [Shader Editor](Documentation~/ShaderEditor.md)
+- [Node Inspector](Documentation~/NodeInspector.md)
+- [Texture Inspector](Documentation~/TextureInspector.md)
+- [Graph Inspector](Documentation~/GraphInspector.md)
+- [Graph Editor](Documentation~/GraphEditor.md)
+
+# Ссылки на дополнительные ресурсы
+
+- [Asset Store](https://assetstore.unity.com/)
+- [Unity Forum](https://forum.unity.com/)
+- [Unity Answers](https://answers.unity.com/)
+- [Unity Learn](https://learn.unity.com/)
+- [Unity Documentation](https://docs.unity3d.com/Manual/index.html)
+- [Unity YouTube Channel](https://www.youtube.com/user/Unity3D)
+- [Unity Blog](https://blogs.unity3d.com/)
+
+# Assets
+
+- [Shader Graph](https://github.com/Unity-Technologies/Graphics/tree/master/com.unity.shadergraph)
+- [Visual Effect Graph](https://github.com/Unity-Technologies/Graphics/tree/master/com.unity.visualeffectgraph)
 
 ```json
 {
@@ -55,18 +88,18 @@ Status: 200
 }
 ```
 
-## Errors
+## Ошибки
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>App not found</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>Неавторизован</p></div>
+<div class="parameter"><span class="param">403</span><p>Запрещено</p></div>
+<div class="parameter"><span class="param">404</span><p>Приложение не найдено</p></div>
+<div class="parameter"><span class="param">404</span><p>Проект не найден</p></div>
+<div class="parameter"><span class="param">429</span><p>Слишком много запросов</p></div>
 </div>
 
-## Rate Limiting
+## Ограничение скорости
 
-This route uses a [normal][1] rate limit.
+Этот маршрут использует [обычное][1] ограничение скорости.
 
 [1]: /user-manual/api#rate-limiting

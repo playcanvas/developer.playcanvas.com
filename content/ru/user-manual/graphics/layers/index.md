@@ -1,105 +1,105 @@
 ---
-title: Layers
+title: Слои
 layout: usermanual-page.hbs
 position: 4
 ---
 
-## Layers Overview
+## Обзор слоев
 
-Layers allow you to customize the render loop for your application. Using layers you can implement some advanced rendering features. For example:
+Слои позволяют настраивать рендеринговый цикл для вашего приложения. Используя слои, вы можете реализовать некоторые продвинутые функции рендеринга. Например:
 
-* modify the order in which your meshes are rendered
-* set cameras to render only some meshes
-* set which lights affect which meshes
+* изменить порядок, в котором отображаются ваши сетки
+* установить камеры для отображения только некоторых сеток
+* установить, какие источники света влияют на какие сетки
 
-A PlayCanvas application is created with a default set of layers which are always present. You can create your own layers and re-order them to suit your particular requirements.
+При создании приложения PlayCanvas по умолчанию создается набор слоев, которые всегда присутствуют. Вы можете создавать свои собственные слои и изменять их порядок в соответствии с вашими конкретными требованиями.
 
-At a fundamental level a layer is list of meshes to render. Each layer is divided into two sub-layers: Opaque and Transparent. When a mesh is added to a layer the layer stores it in one of the two sub-layers, depending on whether the material on the mesh needs to render transparently or not. This is because transparent sub-layers are often sorted differently than opaque sub-layers.
+На фундаментальном уровне слой представляет собой список сеток для рендеринга. Каждый слой разделен на два подслоя: непрозрачный и прозрачный. Когда сетка добавляется в слой, слой сохраняет ее в одном из двух подслоев, в зависимости от того, требуется ли материал на сетке для прозрачного рендеринга или нет. Это связано с тем, что прозрачные подслои часто сортируются иначе, чем непрозрачные подслои.
 
-## Rendering Order
+## Порядок рендеринга
 
-There are three factors that determine the order in which meshes are rendered.
+Существует три фактора, которые определяют порядок, в котором отображаются сетки.
 
-### Camera Priority
+### Приоритет камеры
 
-Priority of the camera is the main factor that controls the order in which the meshes are rendered. Each camera has a priority assigned to it, and cameras with smaller values for priority are rendered first.
+Приоритет камеры - основной фактор, который контролирует порядок, в котором отображаются сетки. Каждая камера имеет приоритет, назначенный ей, и камеры с меньшими значениями приоритета отображаются первыми.
 
-Each camera also has a list of layers set up on it, which controls which layers the camera renders. Their order is described in the next section.
+У каждой камеры также настроен список слоев, который определяет, какие слои отображает камера. Их порядок описан в следующем разделе.
 
-![Camera Layers][6]
+![Слои камеры][6]
 
-### Layer Composition
+### Композиция слоя
 
-Next is order of layers in the application. Each application contains a `pc.LayerComposition` object which is available in your application as `this.app.scene.layers`. The layer composition determines the order of all sub-layers. The ordering is based on the sub-layer not on the layer so that you can, for example, render all the opaque sub-layers first, then all the transparent sub-layers afterwards.
+Далее идет порядок слоев в приложении. Каждое приложение содержит объект `pc.LayerComposition`, который доступен в вашем приложении как `this.app.scene.layers`. Композиция слоя определяет порядок всех подслоев. Упорядочение основано на подслое, а не на слое, чтобы вы могли, например, сначала отобразить все непрозрачные подслои, а затем все прозрачные подслои.
 
-**Note**: Putting a model component inside a layer that is rendered after the world layer **will not** make the model render on top of everything in the world layer! The Standard Material used to render models has a property called `depthTest`. When this is true (the default) before each pixel of the model is rendered the GPU will test to see if there is something else in front if this pixel. Even if that pixel was drawn in an earlier layer depth test ensures that only visible pixels are drawn. If you wish to ignore the distance from the camera when rendering a mesh, disable `depthTest` in your material.
+**Примечание**: Помещение компонента модели в слой, который отображается после слоя мира, **не** заставит модель отображаться поверх всего в слое мира! Стандартный материал, используемый для отображения моделей, имеет свойство `depthTest`. Когда это значение истинно (по умолчанию), перед отображением каждого пикселя модели GPU проверяет, есть ли что-то еще перед этим пикселем. Даже если этот пиксель был нарисован на более раннем слое, тест глубины гарантирует, что будут нарисованы только видимые пиксели. Если вы хотите игнорировать расстояние от камеры при отображении сетки, отключите `depthTest` в вашем материале.
 
-### Sort Modes
+### Режимы сортировки
 
-Each sub-layer has a sort mode. Every frame the meshes in a sub-layer are sorted according to its sort mode. This determines the order that the meshes are rendered in when the sub-layer is rendered.
+У каждого подслоя есть режим сортировки. В каждом кадре сетки в подслое сортируются в соответствии с его режимом сортировки. Это определяет порядок, в котором сетки отображаются при рендеринге подслоя.
 
-* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - This is the default mode for opaque sub-layers. Mesh instances are sorted to minimize switching between materials and meshes to improve rendering performance.
-* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - This is the default mode for transparent sub-layers. Mesh instances are sorted back to front. This is the way to properly render many semi-transparent objects on different depth, one is blended on top of another.
-* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - Mesh instances are sorted front to back. Depending on GPU and the scene, this option may give better performance than `pc.SORTMODE_MATERIALMESH` due to reduced overdraw.
-* **Manual** (`pc.SORTMODE_MANUAL`) - This is the default mode for UI or 2D layers. Mesh instances are sorted based on `drawOrder` property. The Element Component and Sprite Component should be placed in layers with this sort mode.
-* **None** (`pc.SORTMODE_NONE`) - No sorting is applied. Mesh instances are rendered in the same order they were added to a layer.
+* **Материал / Сетка** (`pc.SORTMODE_MATERIALMESH`) - Это режим по умолчанию для непрозрачных подслоев. Экземпляры сеток сортируются для минимизации переключения между материалами и сетками для улучшения производительности рендеринга.
+* **Сзади вперед** (`pc.SORTMODE_BACK2FRONT`) - Это режим по умолчанию для прозрачных подслоев. Экземпляры сеток сортируются сзади вперед. Это способ правильного отображения многих полупрозрачных объектов на разной глубине, один наложен поверх другого.
+* **Спереди назад** (`pc.SORTMODE_FRONT2BACK`) - Экземпляры сеток сортируются спереди назад. В зависимости от GPU и сцены, этот вариант может обеспечить лучшую производительность, чем `pc.SORTMODE_MATERIALMESH` из-за уменьшения перекрытия.
+* **Вручную** (`pc.SORTMODE_MANUAL`) - Это режим по умолчанию для пользовательского интерфейса или 2D-слоев. Экземпляры сеток сортируются на основе свойства `drawOrder`. Компонент элемента и компонент спрайта должны быть размещены в слоях с этим режимом сортировки.
+* **Нет** (`pc.SORTMODE_NONE`) - Сортировка не применяется. Экземпляры сеток отображаются в том же порядке, в котором они были добавлены в слой.
 
-## Default Layers
+## Слои по умолчанию
 
-PlayCanvas applications are created with a set of default layers. You should leave these layers in place as some engine features will not function correctly if they are not present. They default order is below:
+Приложения PlayCanvas создаются с набором слоев по умолчанию. Вы должны оставить эти слои на месте, так как некоторые функции движка не будут работать правильно, если их не будет. Порядок по умолчанию указан ниже:
 
-![Default Layers][1]
+![Слои по умолчанию][1]
 
-1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
-1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][7].
-1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
-1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
-1. **Immediate (Opaque)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **Immediate (Transparent)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **UI (Transparent)** - Used to render Element components. All Element components are transparent, so the Opaque sub-layer is not used.
+1. **Мир (непрозрачный)** - Используется для отображения компонентов, которые не являются прозрачными, и большинства непрозрачных компонентных сеток.
+1. **Depth (Opaque)** - Используется для захвата цвета или буфера глубины сцены, см. [Depth Layer][7].
+1. **Skybox (Opaque)** - Используется для отображения небесного куба. Он отображается после World (Opaque) для уменьшения перекрытия.
+1. **World (Transparent)** - Используется для отображения прозрачных компонентов и других прозрачных компонентных сеток.
+1. **Immediate (Opaque)** - Используется для отображения сеток в режиме немедленного режима. например, `app.renderLine()`.
+1. **Immediate (Transparent)** - Используется для отображения сеток в режиме немедленного режима. например, `app.renderLine()`.
+1. **UI (Transparent)** - Используется для отображения компонентов Element. Все компоненты Element прозрачны, поэтому подслой Opaque не используется.
 
-## Using Custom Layers
+## Использование пользовательских слоев
 
-The default layers are great for implementing the existing engine features but the real power comes from creating your own layers to customize the order in which your content is rendered.
+Слои по умолчанию отлично подходят для реализации существующих функций движка, но настоящая сила заключается в создании собственных слоев для настройки порядка отображения вашего контента.
 
-### Create a layer
+### Создание слоя
 
-Layers are controlled from the **LAYERS** panel in the **Settings** section of the Editor.
+Слои управляются из панели **LAYERS** в разделе **Settings** редактора.
 
-![Creating a layer][2]
+![Создание слоя][2]
 
-In the Layers section, type in the name of the layer that you wish to create and click **Add Layer**. Your new layer will appear in the list of available layers below the button.
+В разделе Слои введите имя слоя, который вы хотите создать, и нажмите **Add Layer**. Ваш новый слой появится в списке доступных слоев под кнопкой.
 
-### Setting the sort mode
+### Установка режима сортировки
 
-![Edit a layer][3]
+![Редактирование слоя][3]
 
-You can choose the sort mode for each sub-layer in the layer list. Expand your layer and choose the sort mode from the dropdown menu.
+Вы можете выбрать режим сортировки для каждого подслоя в списке слоев. Разверните свой слой и выберите режим сортировки из выпадающего меню.
 
-### Choosing the layer order
+### Выбор порядка слоев
 
-![Add layer][4]
+![Добавление слоя][4]
 
-Add a sub-layer to the layer composition by selecting **ADD SUBLAYER** and choosing which sub-layer you wish to add. Once your layer is in the Render Order list you can re-arrange the order by dragging each sub-layer up and down.
+Добавьте подслой в композицию слоев, выбрав **ADD SUBLAYER** и выбрав, какой подслой вы хотите добавить. После того, как ваш слой будет в списке Render Order, вы можете изменить порядок, перетаскивая каждый подслой вверх и вниз.
 
-### Rendering entities in layers
+### Отображение сущностей в слоях
 
-Components that render meshes all have a `layers` property which is used to determine which layer and sub-layer the mesh should be added to. These components include: Model, Element, Sprite, Particle System. The Camera and Light components also have a `layers` property to determine which layers they render and light respectively.
+Компоненты, которые отображают сетки, все имеют свойство `layers`, которое используется для определения того, в какой слой и подслой должна быть добавлена сетка. К таким компонентам относятся: Model, Element, Sprite, Particle System. Компоненты Camera и Light также имеют свойство `layers` для определения того, какие слои они отображают и освещают соответственно.
 
-![Layer Components][5]
+![Компоненты слоя][5]
 
-*Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in its layer list. In order for it to be lit, the light must include Test Layer in its layer list too.
+*Примечание:* Модель назначена на Test Layer. Чтобы она была отображена, камера должна включать Test Layer в свой список слоев. Чтобы она была освещена, свет должен включать Test Layer в свой список слоев.
 
-### Recommended setup
+### Рекомендуемая настройка
 
-Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
+Ваша сцена обычно содержит множество сущностей, которые отображают сетки. Рекомендуется, чтобы каждая из них была на одном слое. В большинстве случаев это будет слой World, но для большего контроля вы можете назначить их на слои, такие как Terrain, Buildings, Characters.
 
-A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture. 
+Новая сцена по умолчанию содержит одну камеру, и это все, что нужно во многих приложениях. Дополнительные камеры полезны для случаев, таких как переключение между разными камерами на сцене, или при отображении картинки в картинке или разделенного экрана, или при отображении сцены в текстуре.
 
-When you add an additional camera, these are the recommended steps:
-1. Set the priority of new and existing cameras to control the order in which they render.
-2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
-3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.
+Когда вы добавляете дополнительную камеру, рекомендуется выполнить следующие шаги:
+1. Установите приоритет новых и существующих камер для контроля порядка их отображения.
+2. Настройте слои новой камеры, чтобы указать, какие слои она отображает. Например, вы можете отображать камеру карты сверху вниз и хотите видеть только слои Terrain и Building, но не Characters.
+3. Если ваша камера отображает текстуру, используйте скрипт для назначения цели рендеринга свойству `renderTarget` камеры.
 
 [1]: /images/user-manual/graphics/layers/default-layers.jpg
 [2]: /images/user-manual/graphics/layers/new-layer.jpg

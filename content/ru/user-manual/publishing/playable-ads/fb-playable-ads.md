@@ -4,43 +4,41 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas supports the [Facebook Playable Ad][1] formats and requirements via an [official external tool on GitHub][2].
+PlayCanvas поддерживает форматы и требования [Facebook Playable Ad][1] через [официальный внешний инструмент на GitHub][2].
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" width="185px" style="margin:0px 5px; display:inline;"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" width="185px" style="margin:0px 5px; display:inline;"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" width="185px" style="margin:0px 5px; display:inline;">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/bitmoji-creator.gif" style="margin:0px 5px; display:inline;" width="185"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/cube-jump.gif" style="margin:0px 5px; display:inline;" width="185"> <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/flappy-bird.gif" style="margin:0px 5px; display:inline;" width="185">
 
-The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (uncompressed) ZIP formats via the configuration options. Full specifications for Facebook Playable Ads can be found on their [help centre][3].
+Инструмент может создавать как один 2МБ (несжатый) HTML-файл, так и форматы ZIP размером 5МБ (несжатые) через опции конфигурации. Полные спецификации для Facebook Playable Ads можно найти в их [центре помощи][3].
 
-There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
+Существуют некоторые ограничения, о которых следует знать при использовании инструмента, их можно найти в документации на [GitHub][2].
 
+## Пример проекта
 
-## Example project
-
-The [Cube Jump project][5] is ready to be exported for the Facebook Playable Ad format and the expected [HTML output can be found here][6].
+Проект [Cube Jump][5] готов к экспорту в формате Facebook Playable Ad, и ожидаемый [HTML-вывод можно найти здесь][6].
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
 
+## Советы по размеру файла
 
-## File size tips
+Из-за строгого ограничения на размер файла вам придется планировать и распределять использование ассетов для рекламы.
 
-As there is a strict file size limit, you will have to plan and budget the usage of assets for the ad.
+Минифицированный код движка PlayCanvas имеет размер **~1,2 МБ** в несжатом виде, и из-за необходимости кодировать файлы ассетов в строки Base64, это добавляет **~30%** к размеру каждого файла актива.
 
-The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
+Это означает, что для одного HTML-формата остается около 500 КБ для ассетов перед их кодированием в строки Base64. Для формата ZIP это будет около 3 МБ для ассетов перед кодированием.
 
-This means that for a single HTML format, this leaves \~500KB for assets before they are encoded into Base64 strings. For the ZIP format, this would be about \~3MB for assets before encoding.
+Постарайтесь сохранять изображения с наименьшими возможными размерами и используйте инструменты, такие как [TinyPNG][4], чтобы еще больше уменьшить размер файла.
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
+## Чек-лист для игровой рекламы:
 
-## Playable ad checklist:
+* Вы добавили вызов функции `FbPlayableAd.onCTAClick()` в качестве части вашего обратного вызова для действия?
 
-* Have you added the function call `FbPlayableAd.onCTAClick()` as part of your call to action callback?
+## Как экспортировать
 
-## How to export
+Следуйте [шагам настройки][7] из файла readme в репозитории GitHub.
 
-Follow the [setup steps][7] from the readme in the GitHub repo.
+### Один HTML
 
-### Single HTML
-
-Set the following options in the `config.json` as shown below. This will produce a single HTML file in the output directory.
+Установите следующие параметры в `config.json`, как показано ниже. Это создаст один HTML-файл в каталоге вывода.
 
 ```json
     "one_page": {
@@ -50,9 +48,87 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-### ZIP file
+# Issue Tracker
 
-Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
+## Ошибки
+
+- [ ] Ошибка 1
+- [ ] Ошибка 2
+- [ ] Ошибка 3
+
+## Улучшения
+
+- [ ] Улучшение 1
+- [ ] Улучшение 2
+- [ ] Улучшение 3
+
+# Tutorial Thumbnail
+
+![Tutorial Thumbnail](thumbnail.png)
+
+# Entity
+
+- [ ] Создать Entity
+- [ ] Удалить Entity
+- [ ] Изменить Entity
+
+# Material Asset
+
+- [ ] Создать Material Asset
+- [ ] Удалить Material Asset
+- [ ] Изменить Material Asset
+
+# Material Inspector
+
+- [ ] Открыть Material Inspector
+- [ ] Закрыть Material Inspector
+- [ ] Изменить параметры в Material Inspector
+
+# Shader Editor
+
+- [ ] Открыть Shader Editor
+- [ ] Закрыть Shader Editor
+- [ ] Изменить шейдеры в Shader Editor
+
+# Node Inspector
+
+- [ ] Открыть Node Inspector
+- [ ] Закрыть Node Inspector
+- [ ] Изменить параметры в Node Inspector
+
+# Texture Inspector
+
+- [ ] Открыть Texture Inspector
+- [ ] Закрыть Texture Inspector
+- [ ] Изменить текстуры в Texture Inspector
+
+# Graph Inspector
+
+- [ ] Открыть Graph Inspector
+- [ ] Закрыть Graph Inspector
+- [ ] Изменить параметры в Graph Inspector
+
+# Asset
+
+- [ ] Создать Asset
+- [ ] Удалить Asset
+- [ ] Изменить Asset
+
+# Graph Editor
+
+- [ ] Открыть Graph Editor
+- [ ] Закрыть Graph Editor
+- [ ] Изменить графы в Graph Editor
+
+# Assets
+
+- [ ] Создать Assets
+- [ ] Удалить Assets
+- [ ] Изменить Assets
+
+### ZIP-файл
+
+Установите следующие параметры в `config.json`, как показано ниже. Это создаст ZIP-файл с данными Asset и кодом PlayCanvas Engine в виде отдельных файлов от `index.html`.
 
 ```json
     "one_page": {
@@ -62,15 +138,103 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-### How to test
+# Issue Tracker
 
-Follow the steps [here][fb-ad-creation-guide] to create a Facebook ad and at the time where the files for the ad are uploaded, there is an opportunity to test within the manager.
+## Ошибки
+
+- [ ] Ошибка 1
+- [ ] Ошибка 2
+- [ ] Ошибка 3
+
+## Улучшения
+
+- [ ] Улучшение 1
+- [ ] Улучшение 2
+- [ ] Улучшение 3
+
+# Tutorial Thumbnail
+
+![Tutorial Thumbnail](https://example.com/tutorial-thumbnail.jpg)
+
+# Entity
+
+- Имя: Entity
+- Тип: 3D модель
+- Asset: Material Asset
+
+# Material Asset
+
+- Имя: Material Asset
+- Тип: Материал
+- Material Inspector: [Открыть Material Inspector](https://example.com/material-inspector)
+
+# Material Inspector
+
+- Shader Editor: [Открыть Shader Editor](https://example.com/shader-editor)
+- Node Inspector: [Открыть Node Inspector](https://example.com/node-inspector)
+- Texture Inspector: [Открыть Texture Inspector](https://example.com/texture-inspector)
+- Graph Inspector: [Открыть Graph Inspector](https://example.com/graph-inspector)
+
+# Shader Editor
+
+- Graph Editor: [Открыть Graph Editor](https://example.com/graph-editor)
+
+# Assets
+
+- Asset 1
+- Asset 2
+- Asset 3
+
+И выполните команду:
+
+```
+git clone https://github.com/OurMachinery/themachinery-public.git
+```
+
+## Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение, пожалуйста, сообщите нам через наш [Issue Tracker](https://github.com/OurMachinery/themachinery-public/issues).
+
+## Документация
+
+Документация доступна на нашем сайте: [The Machinery Documentation](https://ourmachinery.com/doc/).
+
+## Быстрый старт
+
+1. Запустите **The Machinery**.
+2. Выберите **New Project**.
+3. Введите имя проекта и выберите папку для сохранения.
+4. Нажмите **Create**.
+5. В окне **Assets** дважды щелкните по **Tutorial Thumbnail**.
+6. Выберите **Entity** и нажмите **Create**.
+7. В окне **Assets** дважды щелкните по **Material Asset**.
+8. В окне **Material Inspector** нажмите **Open Shader**.
+9. В окне **Shader Editor** нажмите **Open Graph**.
+10. В окне **Graph Editor** выберите узел и нажмите **Open Node**.
+11. В окне **Node Inspector** измените параметры узла.
+12. В окне **Texture Inspector** измените параметры текстуры.
+13. В окне **Graph Inspector** измените параметры графа.
+14. Сохраните свои изменения и наслаждайтесь результатом!
+
+## Лицензия
+
+Смотрите файл [LICENSE](LICENSE) для подробной информации о лицензии.
+
+```sh
+npm run one-page
+```
+
+Полные сведения об опциях и командах можно найти в разделе readme для "[Преобразование проекта в один HTML-файл][9]".
+
+### Как провести тестирование
+
+Следуйте шагам [здесь][8] для создания рекламы на Facebook, и в момент загрузки файлов для рекламы есть возможность провести тестирование в менеджере.
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-tester.jpg">
 
-Please ignore the warning about the source may contain an `XMLHttpRequest` as the code path has been removed by this tool.
+Пожалуйста, проигнорируйте предупреждение о том, что источник может содержать `XMLHttpRequest`, так как кодовый путь был удален этим инструментом.
 
-Facebook also allows testing on device via the ad manager but requires you to publish the ad first. This is a strange limitation by Facebook but is required at the moment.
+Facebook также позволяет проводить тестирование на устройстве через менеджер рекламы, но требует сначала опубликовать рекламу. Это странное ограничение со стороны Facebook, но в настоящее время оно необходимо.
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ad-preview-device.jpg">
 
@@ -81,4 +245,5 @@ Facebook also allows testing on device via the ad manager but requires you to pu
 [5]: https://playcanvas.com/project/354998/overview/cube-jump-playable-ad-for-fb
 [6]: /downloads/fb-playable-ad-cube-jump-html.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
-[fb-ad-creation-guide]: https://www.facebook.com/business/help/338940216641734
+[8]: https://www.facebook.com/business/help/338940216641734
+[9]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file

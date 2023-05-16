@@ -1,110 +1,112 @@
 ---
-title: Источники света
+title: Освещение
 layout: usermanual-page.hbs
 position: 1
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality. 
+В реальном мире окружающая среда освещается из множества источников. Солнце, уличные фонари, экраны телевизоров и так далее. В сцене PlayCanvas у вас есть возможность настроить несколько разных типов источников света и форму источника света для приближения к различным типам света, которые мы находим в реальности.
 
-Descriptions of each light type and light source shape are below and examples of different combinations of light types and given in [table](#use-cases) below.
+Описания каждого типа света и формы источника света приведены ниже, а примеры различных комбинаций типов света приведены в [таблице](#use-cases) ниже.
 
-## Light Types
+## Типы света
 
-There are three types of light in PlayCanvas:
+В PlayCanvas есть три типа света:
 
-* Directional lights
-* Omni lights
-* Spot lights
+* Направленные источники света
+* Омни-свет
+* Прожекторы
 
-### Directional Lights
+### Направленные источники света
 
-The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as travelling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
+Самым знакомым для нас источником света является Солнце. Поскольку Солнце находится на таком большом расстоянии от Земли, свет, попадающий на поверхность нашей планеты, можно аппроксимировать как движущийся в одном направлении. В PlayCanvas этот тип источника света называется направленным светом.
 
-When unselected, a directional light is represented by the following icon in the Editor's 3D view:
+Когда не выбран, направленный источник света представлен следующим значком в 3D-представлении редактора:
 
-![Directional light icon][1]
+![Значок направленного света][1]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+Нажмите на этот значок, чтобы выбрать свет в панелях Hierarchy и Inspector.
 
-A directional light lights an object like this:
+Направленный источник света освещает объект следующим образом:
 
-![Directional light][2]
+![Направленный свет][2]
 
-### Omni Lights
+### Омни-свет
 
-Omni lights are light sources that emit light in all directions. An example of this type of light source is a candle and other examples can be seen in the [table](#use-cases) below.
+Омни-свет - это источники света, которые излучают свет во всех направлениях. Примером такого типа источника света является свеча, другие примеры можно увидеть в [таблице](#use-cases) ниже.
 
-When unselected, a omni light is represented by the following icon in the Editor's 3D view:
+Когда не выбран, омни-свет представлен следующим значком в 3D-представлении редактора:
 
-![Omni light icon][3]
+![Значок омни-света][3]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+Нажмите на этот значок, чтобы выбрать свет в панелях Hierarchy и Inspector.
 
-An omni light lights an object like this:
+Омни-свет освещает объект следующим образом:
 
-![Omni light][4]
+![Омни-свет][4]
 
-### Spot Lights
+### Прожекторы
 
-Spot lights, like omni lights, emit light in all directions. However, the light from the spot light is constrained to a cone shape.
+Прожекторы, как и омни-свет, излучают свет во всех направлениях. Однако свет от прожектора ограничен формой конуса.
 
-When unselected, a spot light is represented by the following icon in the Editor's 3D view:
+Когда не выбран, прожектор представлен следующим значком в 3D-представлении редактора:
 
-![Spot light icon][5]
+![Значок прожектора][5]
 
-Click this icon to select the light in the Hierarchy and Inspector panels.
+Нажмите на этот значок, чтобы выбрать свет в панелях Hierarchy и Inspector.
 
-A spot light lights an object like this:
+Прожектор освещает объект следующим образом:
 
-![Spot light][6]
+![Прожектор][6]
 
-## Light Shapes
+## Формы источников света
 
-There are four light source shapes:
+Существует четыре формы источников света:
 
-* Punctual
-* Rectangle
-* Disk
-* Sphere
+* Точечный
+* Прямоугольник
+* Диск
+* Сфера
 
-### Punctual
+### Точечный
 
-The punctual light source shape is an infinitesimally small point. This is the default light source shape and is a less physically correct, but relatively low cost approximation of a light source. The other light source shapes are more costly to render but will give more correct lighting and specular reflections.
+Форма точечного источника света представляет собой бесконечно малую точку. Это форма источника света по умолчанию и является менее физически корректной, но относительно недорогой аппроксимацией источника света. Другие формы источников света более затратны для рендеринга, но обеспечивают более корректное освещение и зеркальные отражения.
 
-### Rectangle
+### Прямоугольник
 
-The rectangle light source shape is a flat 4 sided shape with a specified width and height.
+Форма источника света в виде прямоугольника представляет собой плоскую четырехугольную форму с заданной шириной и высотой.
 
-### Disk
+### Диск
 
-The disk light source shape is a round and flat light shape with a specified radius. 
+Форма источника света в виде диска представляет собой круглую и плоскую форму света с заданным радиусом.
 
-### Sphere
+### Сфера
 
-The sphere light source shape is ball shaped with a specified radius.
+Форма источника света в виде сферы имеет форму шара с заданным радиусом.
 
-![Shapes][7]
+![Формы][7]
 
-## Use Cases
+## Варианты использования
 
-Below is a table of some common use cases each light source shape and light type:
+Ниже приведена таблица некоторых распространенных вариантов использования каждой формы источника света и типа света:
 
-| Shape/Type    | Punctual      | Rectangle               | Disk                  | Sphere              |
+| Форма/Тип     | Точечный      | Прямоугольник           | Диск                  | Сфера              |
 | ------------- |---------------| ------------------------| ----------------------| --------------------|
-| Directional   | sun           | x                       | sun or moon           | sun or moon         |
-| Omni          | unshaded bulb | x                       | x                     | unshaded round bulb |
-| Spot          | torch         | tv screen               | shaded bulb           | shaded round bulb   |
+| Направленный  | солнце        | x                       | солнце или луна       | солнце или луна     |
+| Омни          | незатененная лампочка | x                       | x                     | незатененная круглая лампочка |
+| Прожектор     | фонарик       | экран телевизора        | затененная лампочка   | затененная круглая лампочка   |
 
-x = no common use cases - but still can be used for application/game specific lighting effects.
+x = нет распространенных вариантов использования - но все равно может использоваться для специфических для приложения/игры световых эффектов.
 
-## Performance Considerations
+## Вопросы производительности
 
-Light sources with Rectangle, Disk and Sphere shapes do cost more to render than Punctual lights, so use Punctual light source shapes if you have relatively small light sources or do not have reflective surfaces where Punctual lights would appear visibly incorrect.
+Источники света с формами Прямоугольник, Диск и Сфера обходятся дороже в рендеринге, чем Точечные источники света, поэтому используйте формы Точечных источников света, если у вас относительно небольшие источники света или нет отражающих поверхностей, где Точечные источники света будут выглядеть заметно неправильно.
 
 [1]: /images/user-manual/graphics/lighting/lights/directional_icon.jpg
 [2]: /images/user-manual/graphics/lighting/lights/directional.jpg
 [3]: /images/user-manual/graphics/lighting/lights/point_icon.jpg
 [4]: /images/user-manual/graphics/lighting/lights/point.jpg
 [5]: /images/user-manual/graphics/lighting/lights/spot_icon.jpg
+[6]: /images/user-manual/graphics/lighting/lights/spot.jpg
+[7]: /images/user-manual/graphics/lighting/lights/shapes.jpg
 [6]: /images/user-manual/graphics/lighting/lights/spot.jpg
 [7]: /images/user-manual/graphics/lighting/lights/shapes.jpg

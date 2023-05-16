@@ -1,24 +1,24 @@
 ---
-title: Постэффекты
+title: Пост-эффекты
 layout: usermanual-page.hbs
 position: 6
 ---
 
-PlayCanvas supports the adding post-processing effects to your projects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
+PlayCanvas поддерживает добавление пост-обработки эффектов в ваши проекты. Пост-эффекты изменяют окончательное отображаемое изображение и предоставляют простой способ добавления визуального блеска в ваше приложение.
 
-We have implemented post effects as scripts that you can add to an Entity that has a [Camera][1] component attached. To add post effects to a camera, do the following:
+Мы реализовали пост-эффекты в виде скриптов, которые вы можете добавить к Entity, к которому прикреплен компонент [Camera][1]. Чтобы добавить пост-эффекты к камере, выполните следующие действия:
 
-1. Choose one of the effects below and get the script from the GitHub link.
+1. Выберите один из эффектов ниже и получите скрипт по ссылке на GitHub.
   * [Bloom][3]
   * [Brightness-Contrast][4]
   * [Hue-Saturation][5]
   * [FXAA][6]
   * [Sepia][7]
   * [Vignette][8]
-2. Add a [Script][9] component to the Entity representing your camera.
-3. Assign the desired post effect scripts to the camera entity's Script component. Note that the order in which the post effect script are listed in the Script component determine the order in which they are applied.
+2. Добавьте компонент [Script][9] к Entity, представляющему вашу камеру.
+3. Назначьте желаемые скрипты пост-эффектов на компонент Script камеры Entity. Обратите внимание, что порядок, в котором скрипты пост-эффектов указаны в компоненте Script, определяет порядок их применения.
 
-You can also create your own post effects. You can find some additional ones on [GitHub][2].
+Вы также можете создавать собственные пост-эффекты. Вы можете найти дополнительные на [GitHub][2].
 
 [1]: /user-manual/packs/components/camera
 [2]: https://github.com/playcanvas/engine/tree/main/scripts/posteffects

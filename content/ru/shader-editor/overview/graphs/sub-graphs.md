@@ -1,32 +1,32 @@
 ---
-title: Sub Graphs
+title: Подграфы
 layout: shader-editor-page.hbs
 position: 2
 ---
 
-The second type of graph in Shader Editor are Sub Graphs.
+Второй тип графика в редакторе шейдеров - это подграфы.
 
-Sub Graphs don't directly define a material, but instead encapsulate some useful functionality which can then be used elsewhere.
+Подграфы не определяют материал напрямую, но вместо этого инкапсулируют некоторые полезные функции, которые затем могут использоваться в других местах.
 
-Sub Graphs don't contain Material Nodes, but instead pass data in and out using Input and Output Nodes. Sub Graphs can be used either in other Sub Graphs or directly in Material Graphs.
+Подграфы не содержат узлов материалов, а передают данные внутрь и вне с использованием узлов ввода и вывода. Подграфы могут быть использованы как в других подграфах, так и непосредственно в графах материалов.
 
-Note that it is not valid (or possible) to connect Sub Graphs together in way that would introduce cyclic references. For example if graph A references graph B which in turn references graph C, then graph C can not reference back to A or B.
+Обратите внимание, что не является допустимым (или возможным) соединение подграфов таким образом, чтобы добавить циклические ссылки. Например, если граф A ссылается на граф B, который в свою очередь ссылается на граф C, то граф C не может ссылаться обратно на A или B.
 
-#### Example
+#### Пример
 
-For example, this is a simple Sub Graph which adds two floats together:
+Например, это простой подграф, который складывает два числа с плавающей запятой:
 
-![Sub Graph Example][1]
+![Пример подграфа][1]
 
-If this Sub Graph were named "adder" it would appear in the Assets Pane as follows:
+Если этот подграф назвать "adder", он будет отображаться в панели "Assets" следующим образом:
 
-![Sub Graph Icon][2]
+![Иконка подграфа][2]:
 
-The adder Sub Graph can then be placed as a node itself in another graph:
+Подграф adder затем может быть размещен в качестве самого узла в другом графе:
 
-![Place Sub Graph][3]
+![Разместить подграф][3]
 
-For more information on how to edit graphs see the [Graph Editor][1] documentation.
+Для получения дополнительной информации о том, как редактировать графики, см. документацию по [редактору графов][1].
 
 [1]: /images/shader-editor/overview-graph-sub-graph.png
 [2]: /images/shader-editor/overview-graph-sub-graph-icon.png

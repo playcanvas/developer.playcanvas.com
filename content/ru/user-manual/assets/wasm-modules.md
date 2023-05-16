@@ -4,33 +4,34 @@ layout: usermanual-page.hbs
 position: 17
 ---
 
-Wasm Modules (also known was WebAssembly Modules) contain compiled executable code for the web.
+Wasm Modules (также известные как WebAssembly Modules) содержат скомпилированный исполняемый код для веба.
 
-A Wasm module comprises three parts:
-* the binary executable file
-* the JavaScript glue code file
-* an optional fallback asm.js
+Модуль Wasm состоит из трех частей:
 
-These files can be added to the project either by dragging and dropping the files into the Assets Panel or by selecting 'Upload' from the Assets Panel context menu.
+* двоичный исполняемый файл
+* файл JavaScript-кода клея
+* необязательный резервный asm.js
 
-Please note that PlayCanvas Editor currently supports [Emscripten][2] compiled Wasm Modules only.
+Эти файлы можно добавить в проект, перетащив их в панель Assets или выбрав «Загрузить» из контекстного меню панели Assets.
 
-## Wasm Module Properties
+Обратите внимание, что в настоящее время редактор PlayCanvas поддерживает только Wasm Modules, скомпилированные с помощью [Emscripten][2].
 
-Once the files have been added to the project, select the Wasm Module to display its properties in the Inspector Panel:
+## Свойства Wasm Module
+
+После добавления файлов в проект выберите Wasm Module, чтобы отобразить его свойства на панели Inspector:
 ![Wasm Module Properties][1]
 
-### Name
+### Имя
 
-Name must match the module name defined in the glue and fallback script. This name is used to instantiate the module at load time.
+Имя должно соответствовать имени модуля, определенному в скрипте клея и резервном скрипте. Это имя используется для создания экземпляра модуля при загрузке.
 
-### Glue script
+### Скрипт клея
 
-This is the JavaScript glue code required to execute Wasm code.
+Это JavaScript-код клея, необходимый для выполнения кода Wasm.
 
-### Fallback script
+### Резервный скрипт
 
-This is the optional fallback asm.js script to use when WebAssembly is not supported.
+Это необязательный резервный скрипт asm.js, который используется, когда WebAssembly не поддерживается.
 
 [1]: /images/user-manual/assets/wasm-module.png
 [2]: https://emscripten.org/

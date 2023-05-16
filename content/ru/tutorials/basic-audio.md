@@ -1,92 +1,92 @@
 ---
-title: Основы об аудио
+title: Основы аудио
 layout: tutorial-page.hbs
 tags: audio,basics
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
 
-*The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
+*Танк движется вокруг робота. Вы можете стрелять, щелкнув в любом месте игры.*
 
-## Sound sources and Listeners
+## Источники звука и слушатели
 
-In this tutorial we have placed a robot in the middle of the scene with a tank rotating around the robot. The sound playing from the tank's engine is heard relative to the ears of the robot. As the tank moves around the robot we can hear the sound shifting position from left to back to right to front.
+В этом уроке мы разместили робота в центре сцены с танком, вращающимся вокруг робота. Звук, исходящий от двигателя танка, слышен относительно ушей робота. Поскольку танк движется вокруг робота, мы слышим, как звук смещается с позиции слева на заднюю, справа на переднюю.
 
-The basic audio system in PlayCanvas centers on two Component types.
+Основная аудиосистема в PlayCanvas основана на двух типах компонентов.
 
-The [Sound][1] Component plays audio assets like Wave, MP3 or Ogg Vorbis files. Imagine Sound Components like loudspeakers in the scene. There can be many Sound Components in the scene each playing multiple sounds.
+Компонент [Sound][1] воспроизводит аудио-ассеты, такие как файлы Wave, MP3 или Ogg Vorbis. Представьте компоненты звука как громкоговорители на сцене. В сцене может быть много компонентов звука, каждый из которых воспроизводит несколько звуков.
 
-Each Sound component comprises of a number of slots. Each slot has a name and defines a specific sound to be played. You can have multiple slots on a Sound component each playing independently from each other.
+Каждый компонент звука состоит из нескольких слотов. Каждый слот имеет имя и определяет конкретный звук для воспроизведения. Вы можете иметь несколько слотов на компоненте звука, каждый из которых воспроизводится независимо от других.
 
-The [AudioListener][2] Component determines how a Sound is heard. Imagine AudioListener Components like a microphone in the scene. There can only be one active AudioListener at a time.
+Компонент [AudioListener][2] определяет, как слышен звук. Представьте компоненты AudioListener как микрофон на сцене. В любой момент времени может быть активен только один AudioListener.
 
-## Scene Setup
+## Настройка сцены
 
-You should look at the [Hierarchy][3] for this tutorial yourself in the Editor. These are the main Entities in the Scene:
+Вы должны посмотреть [Hierarchy][3] этого урока самостоятельно в редакторе. Вот основные объекты на сцене:
 
 ### Playbot
 
-Our robot. It has an AudioListener component so all sound is going to be heard relative to the position of the robot.
+Наш робот. У него есть компонент AudioListener, поэтому весь звук будет слышен относительно положения робота.
 
 ### Rotator
 
-An Entity used to rotate the tank. It has a Script component with a script that rotates the entity around the Y axis at a constant speed.
+Объект, используемый для вращения танка. У него есть компонент Script с сценарием, который вращает объект вокруг оси Y с постоянной скоростью.
 
 ### Tank
 
-Our tank. It is a child of the Rotator Entity, that way it rotates with it. It has a Sound component with 2 slots:
+Наш танк. Он является дочерним объектом Rotator, таким образом, он вращается вместе с ним. У него есть компонент звука с 2 слотами:
 
-The "engine" slot is responsible for playing the looping engine sound of the tank. It's set to Auto Play as soon as the scene is loaded.
+Слот "engine" отвечает за воспроизведение зацикленного звука двигателя танка. Он установлен на автоматическое воспроизведение сразу после загрузки сцены.
 
-The other slot is the "shoot" slot. That slot is played by script every time we click on the canvas to make the tank's turret shoot. The Overlap checkbox is true for this slot which means that we can shoot multiple times and a new sound will be created every time instead of using just a single sound that restarts every time.
+Другой слот - это слот "shoot". Этот слот воспроизводится сценарием каждый раз, когда мы нажимаем на холст, чтобы сделать выстрел из башни танка. Флажок Overlap установлен в true для этого слота, что означает, что мы можем стрелять несколько раз, и каждый раз будет создан новый звук, а не использоваться один и тот же звук, который перезапускается каждый раз.
 
-The tank also has a Script component which handles user input to make its turret shoot and also handles playing the shooting sound and other effects like a simple animation and a particle system.
+У танка также есть компонент Script, который обрабатывает пользовательский ввод для стрельбы из его башни, а также обрабатывает воспроизведение звука выстрела и другие эффекты, такие как простая анимация и система частиц.
 
-## Creating Sound sources
+## Создание источников звука
 
-To create a Sound source select the Entity you wish to add the Sound to and choose *New Component* from the *Entity* menu. Select *sound* from the list of Components and press the *Add* button.
+Чтобы создать источник звука, выберите объект, к которому вы хотите добавить звук, и выберите *New Component* из меню *Entity*. Выберите *sound* из списка компонентов и нажмите кнопку *Add*.
 
-Sound properties will now appear in the AttributeEditor.
+Свойства звука теперь появятся в AttributeEditor.
 
 ![Sound Component][5]
 
-Here is the Sound component of the tank Entity. Here's some information about some of the properties:
+Вот компонент звука объекта танка. Вот некоторая информация о некоторых свойствах:
 
 ### Positional
 
-If this is checked it means that the sound will be heard relative to the position of the current AudioListener (our robot) in 3D space. If this is unchecked then the sound will be heard in 2D by both speakers.
+Если этот флажок установлен, это означает, что звук будет слышен относительно положения текущего AudioListener (нашего робота) в 3D-пространстве. Если этот флажок снят, то звук будет слышен в 2D обоими динамиками.
 
 ### Asset
 
-Each slot has an Asset picker which allows you to play different audio assets from different slots. See [importing assets][4] for details on how to upload audio assets.
+Каждый слот имеет средство выбора ассетов, которое позволяет воспроизводить разные аудио-ассеты из разных слотов. См. [importing assets][4] для получения информации о том, как загружать аудио-ассеты.
 
 <div class="alert-info">
-    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
+    Не все аудиоформаты поддерживаются всеми браузерами. В настоящее время мы рекомендуем использовать MP3 (.mp3), который поддерживается большинством браузеров.
 </div>
 
-Once you have uploaded your assets, use the Asset Picker to select the audio asset for your slot.
+После загрузки ваших ассетов используйте Asset Picker для выбора аудио-ассета для вашего слота.
 
 ### Auto Play
 
-If you want a slot to start playing as soon as the scene is loaded then set this to true. Otherwise set this to false and play the slot using a script.
+Если вы хотите, чтобы слот начал воспроизведение сразу после загрузки сцены, установите значение true. В противном случае установите значение false и воспроизведите слот с помощью сценария.
 
 ### Overlap
 
-If this is unchecked then the slot will play its sound from the beginning every time you play it in script. If this doesn't matter to you for example if you are playing some background music or a sound that doesn't need to be repeated leave this unchecked.
+Если этот флажок снят, то слот будет воспроизводить свой звук с начала каждый раз, когда вы воспроизводите его в сценарии. Если это не имеет значения для вас, например, если вы воспроизводите фоновую музыку или звук, который не нужно повторять, оставьте этот флажок снятым.
 
-If however you want to play a sound repeatedly without stopping every time the sound is replayed, set this to true. Our shooting sound is set to overlap in this tutorial.
+Однако, если вы хотите воспроизводить звук многократно без остановки каждый раз при повторном воспроизведении, установите значение true. В этом учебнике наш звук выстрела настроен на перекрытие.
 
-### Loop
+### Цикл
 
-By default, the audio sample will be played once, and then stop. If you want the sound to loop continuously, e.g. for background music, then you can check the *Loop* box. Our engine is a looping sound in the example but the shooting sound is not.
+По умолчанию аудио-сэмпл будет воспроизведен один раз, а затем остановится. Если вы хотите, чтобы звук зацикливался непрерывно, например, для фоновой музыки, вы можете установить флажок *Loop*. В нашем примере звук двигателя зациклен, но звук выстрела - нет.
 
-## Creating Listeners
+## Создание слушателей
 
-To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
+Чтобы создать AudioListener, выберите Entity, которое вы хотите представить в качестве слушателя. Часто это будет игровая камера, так как это место, где находится "голова" игрока. В нашем случае AudioListener прикреплен к роботу.
 
 <div class="alert-info">
-    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+    Вы можете иметь только один AudioListener за раз. Последний созданный компонент AudioListener будет активным.
 </div>
 
 [1]: /user-manual/packs/components/sound

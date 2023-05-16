@@ -1,57 +1,55 @@
 ---
-title: Device Pixel Ratio
+title: Отношение пикселей устройства
 layout: usermanual-page.hbs
 position: 6
 ---
 
-Device pixel ratio is the the ratio between the physical pixels on a the hardware screen and the logical pixels (related to the physical size of the screen, also known as CSS resolution).
+Отношение пикселей устройства - это соотношение между физическими пикселями на аппаратном экране и логическими пикселями (связанными с физическим размером экрана, также известными как CSS разрешение).
 
-Enabling Device Pixel Ratio on the Project settings will render the application at the native resolution of the screen which will make it look very crisp. However, that comes at a performance cost as now there are more pixels to fill and render each frame.
-![Project setting][3]
+Включение Device Pixel Ratio в настройках проекта будет отображать приложение в родном разрешении экрана, что сделает его очень четким. Однако это идет в ущерб производительности, так как теперь нужно заполнить и отобразить больше пикселей для каждого кадра.
+![Настройка проекта][3]
 
-Below is an example of the Model Viewer Starter Kit with device pixel ratio enabled and disabled. Click on the thumbnail to see the full size.
+Ниже приведен пример Model Viewer Starter Kit с включенным и отключенным отношением пикселей устройства. Нажмите на миниатюру, чтобы увидеть полный размер.
 [![Device Pixel Ratio][1]][2]
 
-This can be problematic on devices such as low or mid-tier mobile devices where they have high resolution screens but low graphics capability. This would lead to low frame rates if device pixel ratio is enabled due to fill rate limitations of the hardware.
+Это может быть проблематично на таких устройствах, как мобильные устройства низкого или среднего уровня, где у них есть экраны высокого разрешения, но низкая графическая способность. Это приведет к низкой частоте кадров, если включено отношение пикселей устройства из-за ограничений заполнения аппаратного обеспечения.
 
-Ideally, we want the best of both worlds where users on high-tier devices will render at the highest quality but users on lower-tier devices will reduce the ratio to maintain a playable frame rate.
+В идеале мы хотим получить лучшее из обоих миров, где пользователи на устройствах высокого уровня будут отображать наивысшее качество, но пользователи на устройствах низкого уровня снизят соотношение для поддержания играбельной частоты кадров.
 
-The Device pixel ratio can be changed at runtime via the property [`pc.GraphicsDevice#maxPixelRatio`][4]:
+Отношение пикселей устройства можно изменить во время выполнения через свойство [`pc.GraphicsDevice#maxPixelRatio`][4]:
 
 ```javascript
 var device = pc.Application.getApplication().graphicsDevice;
 if (highTierDevice) {
-    // Use the default device pixel ratio of the device
+    // Используйте стандартное значение device pixel ratio для устройства
     device.maxPixelRatio = window.devicePixelRatio;
 } else {
-    // Use the CSS resolution device pixel ratio
+    // Используйте значение device pixel ratio разрешения CSS
     device.maxPixelRatio = 1;
 }
 ```
 
-The challenge is working out the performance capabilities of the device and this can be done in a couple of ways:
-* Using some form of benchmark on the start of the application and observing the frame rate
-* Querying the WebGL renderer data to get the name of the GPU and checking against a known list performance tiers
+Вызов заключается в определении производительности устройства, и это можно сделать несколькими способами:
+* Использование некоторого типа бенчмарка при запуске приложения и наблюдение за частотой кадров
+* Запрос данных WebGL-рендерера для получения имени GPU и проверка по известному списку уровней производительности
 
-To get information about the GPU, use the property `pc.GraphicsDevice#unmaskedRenderer`. This will contains a string with the information or an empty string if the browser does not support the property.
+Чтобы получить информацию о GPU, используйте свойство `pc.GraphicsDevice#unmaskedRenderer`. Оно будет содержать строку с информацией или пустую строку, если браузер не поддерживает данное свойство.
 
-The string will have something similar to the following:
+Строка будет содержать что-то похожее на следующее:
 
-```
 ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
-```
 
-Benchmarks for different GPU cards can be found on [Video Card Benchmark][5] and [Notebook Check Smartphone and Tablet list][6] to help gauge each GPU's capability. However, given the sheer number GPU cards available, this can extremely difficult to assess the device capabilities.
+Бенчмарки для разных видеокарт можно найти на [Video Card Benchmark][5] и [Notebook Check Smartphone and Tablet list][6], чтобы оценить возможности каждой GPU. Однако, учитывая огромное количество видеокарт, это может быть чрезвычайно сложно для определения возможностей устройства.
 
-An example for mobile can be found below (correct at time of writing Thu 30 Jul 2020):
+Пример для мобильных устройств можно найти ниже (актуально на момент написания Чт 30 июл 2020 г.):
 
 ```javascript
 function isLowQualityGPU() {
     var renderer = pc.Application.getApplication().graphicsDevice.unmaskedRenderer;
 
-    // Only check the GPU if we are on mobile
+    // Проверяем GPU только если мы на мобильном устройстве
     if (renderer && pc.platform.mobile) {
-        // low level GPU's
+        // низкоуровневые GPU
         if(renderer.search(/Adreno\D*3/) !== -1 ||
            renderer.search(/Adreno\D*4/) !== -1 ||
            renderer.search(/Adreno\D*505/) !== -1 ||
@@ -71,7 +69,7 @@ function isLowQualityGPU() {
 };
 ```
 
-We also recommend to have an option in the application for the user to be able to switch between quality levels. This allows them to choose the level that they are comfortable with and also be able to lower the quality in favor of using lower device resources and extending battery life.
+Мы также рекомендуем иметь опцию в приложении, чтобы пользователь мог переключаться между уровнями качества. Это позволяет им выбирать уровень, с которым они чувствуют себя комфортно, а также иметь возможность снизить качество в пользу использования меньших ресурсов устройства и продления срока службы аккумулятора.
 
 [1]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
 [2]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg

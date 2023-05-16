@@ -1,22 +1,22 @@
 ---
-title: Юниты
+title: Единицы
 layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas scenes generally treat 1 unit as 1 meter.
+Сцены PlayCanvas обычно рассматривают 1 единицу как 1 метр.
 
-When authoring artwork for PlayCanvas, it is important to ensure you do so to the desired scale. To do this, you should check the working units for your scene in your modelling application of choice. You can choose whatever working units you like, but just ensure you respect them. For example, to make a cube that is 1 meter in dimension, you could set your working units to meters and create a 1x1x1 cube. Alternatively, you could set working units to centimeters and create a 100x100x100 cube. Exporting either scene to FBX and importing it to PlayCanvas will result in a cube which is 1x1x1.
+При создании графических материалов для PlayCanvas важно убедиться, что вы делаете это в нужном масштабе. Чтобы сделать это, вам следует проверить рабочие единицы для вашей сцены в выбранном вами приложении для моделирования. Вы можете выбрать любые рабочие единицы на свой вкус, но просто убедитесь, что вы их соблюдаете. Например, чтобы создать куб размером 1 метр, вы можете установить рабочие единицы в метрах и создать куб 1x1x1. Или вы можете установить рабочие единицы в сантиметрах и создать куб 100x100x100. Экспорт любой сцены в FBX и импорт ее в PlayCanvas приведет к созданию куба размером 1x1x1.
 
 ### Autodesk 3D Studio Max
 
-To check or set working units in 3D Studio Max, open the Units Setup dialog and click the System Unit Setup button:
+Чтобы проверить или установить рабочие единицы в 3D Studio Max, откройте диалоговое окно настройки единиц и нажмите кнопку "System Unit Setup":
 
 ![3DS Max units][1]
 
 ### Autodesk Maya
 
-To check or set working units in Maya, open the Preferences dialog:
+Чтобы проверить или установить рабочие единицы в Maya, откройте диалоговое окно "Preferences":
 
 ![Maya units][2]
 

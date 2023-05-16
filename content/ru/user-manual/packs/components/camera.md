@@ -4,30 +4,30 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-The Camera component enables an entity to render a scene from a certain viewpoint.
+Компонент Camera позволяет объекту отображать сцену с определенной точки зрения.
 
-The Camera component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the camera will render the scene every frame.
+Компонент Camera можно включить или выключить с помощью переключателя в верхнем правом углу панели компонента. Если включено, камера будет отображать сцену каждый кадр.
 
-![Camera component][1]
+![Компонент камеры][1]
 
-## Properties
+## Свойства
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Clear Buffers   | Controls how the camera's render target is cleared before rendering each frame. The camera maintains two types of buffer: the color buffer which stores the visible image and a depth buffer that stores information about the distance of a rendered pixel in relation to the position of the camera. The buffers can be cleared independently: <ul><li>Color: If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</li><li>Depth: If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</li></ul> |
-| Цвет очистки экрана     | The color used to clear the camera's render target.  This property is only displayed if 'Clear Color Buffer' is selected. |
-| Projection      | The projection type of the camera. Options are: <ul><li>Perspective</li><li>Orthographic</li></ul> |
-| Frustum Culling | If selected, the camera will only render mesh instances whose axis-aligned bounding boxes intersect with the camera's view frustum. Otherwise, the entire scene will be rendered regardless of visibility. |
-| Field of View   | The angle between top and bottom clip planes of a perspective camera. This property is only displayed if 'Projection' is set to 'Perspective'. |
-| Ortho Height    | The distance in world units between the top and bottom clip planes of an orthographic camera. This property is only displayed if 'Projection' is set to 'Orthographic'. |
-| Near Clip       | The distance in camera space from the camera's eye point to the near clip plane. |
-| Far Clip        | The distance in camera space from the camera's eye point to the far clip plane. |
-| Priority        | A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first. |
-| Вид        | A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalized coordinates (0 to 1) in the following format: <ul><li>x: The lower left x coordinate</li><li>y: The lower left y coordinate</li><li>w: The width of the rectangle</li><li>h: The height of the rectangle</li></ul> |
+| Clear Buffers   | Управляет тем, как целевой буфер отрисовки камеры очищается перед отрисовкой каждого кадра. Камера поддерживает два типа буферов: буфер цвета, который хранит видимое изображение, и буфер глубины, который хранит информацию о расстоянии отрисованного пикселя относительно положения камеры. Буферы могут быть очищены независимо: <ul><li>Color: Если выбрано, камера будет явно очищать свой целевой буфер отрисовки до выбранного цвета перед отрисовкой сцены.</li><li>Depth: Если выбрано, камера будет явно очищать буфер глубины своего целевого буфера отрисовки перед отрисовкой сцены.</li></ul> |
+| Clear Color     | Цвет, используемый для очистки целевого буфера отрисовки камеры. Это свойство отображается только если выбрано 'Clear Color Buffer'. |
+| Projection      | Тип проекции камеры. Варианты: <ul><li>Perspective</li><li>Orthographic</li></ul> |
+| Frustum Culling | Если выбрано, камера будет отображать только те экземпляры сетки, ограниченные выровненными по осям ограничивающими рамками, которые пересекаются с видовым объемом камеры. В противном случае вся сцена будет отображаться независимо от видимости. |
+| Field of View   | Угол между верхней и нижней плоскостями отсечения перспективной камеры. Это свойство отображается только если 'Projection' установлено на 'Perspective'. |
+| Ortho Height    | Расстояние в мировых единицах между верхней и нижней плоскостями отсечения ортографической камеры. Это свойство отображается только если 'Projection' установлено на 'Orthographic'. |
+| Near Clip       | Расстояние в пространстве камеры от точки наблюдения камеры до ближней плоскости отсечения. |
+| Far Clip        | Расстояние в пространстве камеры от точки наблюдения камеры до дальней плоскости отсечения. |
+| Priority        | Число, определяющее порядок, в котором виды камеры отображаются движком. Меньшие числа отображаются первыми. |
+| Viewport        | Прямоугольник, который определяет область просмотра на прикрепленный целевой буфер отрисовки камеры. Это позволяет реализовать функции, такие как разделенный экран или картинка-в-картинке. Он определяется нормализованными координатами (от 0 до 1) в следующем формате: <ul><li>x: Нижняя левая координата x</li><li>y: Нижняя левая координата y</li><li>w: Ширина прямоугольника</li><li>h: Высота прямоугольника</li></ul> |
 
-## Scripting Interface
+## Интерфейс сценариев
 
-You can control a Camera component's properties using a [script component][2]. The Camera component's scripting interface is [here][3].
+Вы можете управлять свойствами компонента Camera с помощью [компонента сценария][2]. Интерфейс сценариев компонента Camera находится [здесь][3].
 
 [1]: /images/user-manual/scenes/components/component-camera.png
 [2]: /user-manual/packs/components/script

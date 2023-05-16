@@ -1,39 +1,39 @@
 ---
-title: Ресурсы разработчика PlayCanvas
+title: Ресурсы для разработчика PlayCanvas
 layout: intro.hbs
 ---
 
-# Для начала
+# Начало работы
 
-[Руководство пользователя][1] - это наше полное руководство по использованию PlayCanvas. Оно поможет вам использовать множество функций платформы, включая [Редактор][2], [Систему Скриптов][3] и [Систему Контроля Версий][4].
+[Руководство пользователя][1] - это наше полное руководство по PlayCanvas. Оно поможет вам использовать множество функций платформы, включая [редактор][2], [систему скриптов][3] и [контроль версий][4].
 
-У нас есть [раздел][5] с дополнительными примерами и образцами кода, которые можно изучать и использовать.
+У нас есть [растущий раздел][5] с большим количеством уроков и примеров кода для изучения и использования.
 
-|   | Раздел Примеров   |
+|   | Превью урока   |
 |---|---|
-| ![Keepy Up Tutorial Thumbnail](/images/user-manual/frontpage/keepy_up_tutorial_thumb.png) | Начните создавать свою первую игру с нашей серией примеров [Keepy Up](/tutorials/keepyup-part-one/). Она охватывает все основные функции, включая [Настройку Сцены](/tutorials/keepyup-part-one/), [обработку пользовательского ввода](/tutorials/keepyup-part-four/),  и [создание пользовательского интерфейса](/tutorials/keepyup-part-six/). |
-| ![Physics Tutorial Thumbnail](/images/user-manual/frontpage/physics_tutorial_thumb.png) | Экспериментируйте с физикой, используя [столкновения, триггеры и силы](/tutorials/collision-and-triggers/) and [Forces](/tutorials/Using-forces-on-rigid-bodies/).|
-| ![Input Tutorial Thumbnail](/images/user-manual/frontpage/input_tutorial_thumb.png) | Обрабатывайте пользовательский ввод с [клавиатуры](/tutorials/keyboard-input/), [мыши](/tutorials/mouse-input/)  и [сенсорных экранов](/tutorials/basic-touch-input/).. |
-| ![User Interface Tutorial Thumbnail](/images/user-manual/frontpage/ui_tutorial_thumb.png) | Создавайте прекрасные меню и интерфейсы с помощью системы [Пользовательского Интерфейса](/tutorials/ui-elements-buttons/) . |
-| ![Audio Tutorial Thumbnail](/images/user-manual/frontpage/audio_tutorial_thumb.png) | Погрузите пользователя в атмосферу игры с  [Позиционным Звуком](/tutorials/basic-audio/). |
+| ![Keepy Up Tutorial Thumbnail](/images/user-manual/frontpage/keepy_up_tutorial_thumb.png) | Начните создавать свою первую игру с нашей серией уроков [Keepy Up](/tutorials/keepyup-part-one/). Он охватывает все основные функции, включая [настройку сцены](/tutorials/keepyup-part-one/), [обработку пользовательского ввода](/tutorials/keepyup-part-four/) и [создание пользовательского интерфейса](/tutorials/keepyup-part-six/). |
+| ![Physics Tutorial Thumbnail](/images/user-manual/frontpage/physics_tutorial_thumb.png) | Экспериментируйте с физикой, используя [столкновения, триггеры и силы](/tutorials/collision-and-triggers/) и [Силами](/tutorials/Using-forces-on-rigid-bodies/).|
+| ![Input Tutorial Thumbnail](/images/user-manual/frontpage/input_tutorial_thumb.png) | Обрабатывайте ввод с [Клавиатуры](/tutorials/keyboard-input/), [Мыши](/tutorials/mouse-input/) и [сенсорных экранов](/tutorials/basic-touch-input/). |
+| ![User Interface Tutorial Thumbnail](/images/user-manual/frontpage/ui_tutorial_thumb.png) | Создавайте замечательные меню и интерфейсы с помощью системы [Пользовательский интерфейс](/tutorials/ui-elements-buttons/). |
+| ![Audio Tutorial Thumbnail](/images/user-manual/frontpage/audio_tutorial_thumb.png) | Погрузитесь в мир [позиционного звука](/tutorials/basic-audio/) |
 
-Для полной справки по PlayCanvas Engine обратитесь к разделу [API Reference][6].
+Для полного справочника по движку PlayCanvas обратитесь к нашему разделу [API Reference][6].
 
-Хотите увидеть, как создаются и проектируются целые проекты? В разделе [Обзор][7] перечислены общедоступные проекты нашего сообщества, по которым можно учиться.
+Хотите узнать, как проекты создавались и разрабатывались? В [разделе Explore][7] вы найдете списки общедоступных проектов нашего сообщества, из которых можно получить знания.
 
 ---
 
 # Получение помощи
 
-Наш [форум PlayCanvas][8] - лучшее место, где можно получить помощь, поговорить о своей игре, показать свой последний проект, найти новых участников команды или предложить помощь другим.
+Наш [форум PlayCanvas][8] - лучшее место для поиска помощи, обсуждения вашей игры, демонстрации своего последнего проекта, поиска новых участников команды или предложения своей помощи другим.
 
-У нас активное сообщество пользователей, и команда PlayCanvas всегда готова помочь.
+У нас действует активное сообщество пользователей, и команда PlayCanvas всегда готова помочь.
 
 ---
 
-# Запросы на новые возможности движка  и Сообщения об Ошибках
+# Запросы функций и сообщения об ошибках
 
-Хотите новую функцию или заметили что-то, что не работает должным образом? Добавьте это в наш Issue Tracker - [Editor][9] или [Engine][10], и мы позаботимся об этом как можно скорее.
+Хотите новую функцию или видите что-то, что ведет себя не так, как должно? Добавьте его в наши [Issue Tracker][9] для [редактора][10] или [движка][11], и мы постараемся разобраться с этим как можно скорее.
 
 [1]: /user-manual
 [2]: /user-manual/designer/
@@ -45,4 +45,3 @@ layout: intro.hbs
 [8]: https://forum.playcanvas.com/
 [9]: https://github.com/playcanvas/editor/issues
 [10]: https://github.com/playcanvas/engine/issues
-

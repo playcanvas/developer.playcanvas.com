@@ -1,5 +1,5 @@
 ---
-title: О нет!
+title: Ой!
 layout: error.hbs
 ---
 

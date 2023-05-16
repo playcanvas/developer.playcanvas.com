@@ -1,82 +1,82 @@
 ---
-title: WebXR Input Sources in PlayCanvas
+title: WebXR Входные источники в PlayCanvas
 layout: usermanual-page.hbs
 position: 4
 ---
 
-## Input Source
+## Входной источник
 
-An [XrInputSource][1] represents an input mechanism that allows the user to interact with a virtual world. Those include, but are not limited to: handheld controllers, optically tracked hands, gaze-based input methods and touch screens. But an input source is not explicitly associated with traditional gamepads, mice or keyboards.
+[XrInputSource][1] представляет собой механизм ввода, который позволяет пользователю взаимодействовать с виртуальным миром. К ним относятся, но не ограничиваются: портативные контроллеры, оптически отслеживаемые руки, методы ввода на основе взгляда и сенсорные экраны. Однако входной источник не связан непосредственно с традиционными геймпадами, мышами или клавиатурами.
 
-## Accessing Input Sources
+## Доступ к входным источникам
 
-A list of input sources is available on the [XrInput][2] manager which is created by the [XrManager][3]:
+Список входных источников доступен в менеджере [XrInput][2], который создается [XrManager][3]:
 
 ```javascript
 var inputSources = app.xr.input.inputSources;
 for (var i = 0; i < inputSources.length; i++) {
-    // iterate through each available input source
+    // перебираем каждый доступный источник ввода
 }
 ```
 
-Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices by underlying platform, and some input sources have a lifespan only during their primary action (for example, a touchscreen in an AR-type session on mobile). You can subscribe to `add` and `remove` events:
+Входные источники могут добавляться и удаляться динамически. Это можно сделать, подключив физические устройства или переключив входные устройства на базовой платформе, и некоторые входные источники имеют срок службы только во время их основного действия (например, сенсорный экран в сессии типа AR на мобильном устройстве). Вы можете подписаться на события `add` и `remove`:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
-    // input source been added
+    // источник ввода добавлен
 
     inputSource.once('remove', function () {
-        // know when input source has been removed
+        // знать, когда источник ввода был удален
     });
 });
 ```
 
-## Primary Action (select)
+## Основное действие (выбор)
 
-Each input source can have a primary action `select`. On gaze-based input sources, it is the touch of a screen/button. On handheld devices, it is the primary button/trigger. For tracked hands it is emulated by PlayCanvas engine when thumb and index tips are touching. There are also `selectstart` and `selectend` events which you can subscribe to as follows:
+Каждый источник ввода может иметь основное действие `select`. В случае источников ввода на основе взгляда это касание экрана/кнопки. На портативных устройствах это основная кнопка/спусковой крючок. Для отслеживаемых рук оно эмулируется движком PlayCanvas, когда кончики большого и указательного пальцев касаются друг друга. Также есть события `selectstart` и `selectend`, на которые вы можете подписаться следующим образом:
 
 ```javascript
 inputSource.on('select', function () {
-    // primary action
+    // основное действие
 });
 ```
 
-Or through the input manager:
+Или через диспетчер ввода:
 
 ```javascript
 app.xr.input.on('select', function (inputSource) {
-    // primary action
+    // основное действие
 });
 ```
 
-## Ray
+## Луч
 
-Each input source has a ray which has an origin where it points from, and a direction in which it is pointing. A ray is transformed to world space. Some examples of input sources might be, but not limited to:
+У каждого источника ввода есть луч, который имеет начало, откуда он указывает, и направление, в котором он указывает. Луч преобразуется в мировое пространство. Некоторые примеры источников ввода могут быть, но не ограничиваются:
 
- * Gaze-based input, such as a mobile device which is inserted into a Google CardboardTM style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
- * Screen-based input. This might be available on mobile devices in Augmented Reality session types, where the user can interact with the virtual world by touchscreen.
- * Handheld devices, like the Oculus TouchTM, will have a ray originating from the tip of the handheld device and the direction is based on the rotation of device.
- * Tracked Hands have an emulated by PlayCanvas engine ray that originates from point between thumb and index tips, and pointing forward.
+ * Ввод на основе взгляда, например, мобильное устройство, которое вставляется в устройство в стиле Google Cardboard™. У него будет источник ввода с `targetRayMode`, установленным на `pc.XRTARGETRAY_GAZE`, и будет исходить из позиции зрителя и указывать прямо туда, куда смотрит пользователь.
+ * Ввод на основе экрана. Такой ввод может быть доступен на мобильных устройствах в типах сеансов дополненной реальности, где пользователь может взаимодействовать с виртуальным миром с помощью сенсорного экрана.
+ * Ручные устройства, такие как Oculus Touch™, будут иметь луч, исходящий из кончика ручного устройства, а направление основано на вращении устройства.
+ * Отслеживаемые руки имеют эмулированный движком PlayCanvas луч, который исходит из точки между кончиками большого и указательного пальцев и указывает вперед.
 
-Here is an example illustrating how to check whether a ray has intersected with the bounding-box of a mesh:
+Вот пример, иллюстрирующий, как проверить, пересек ли луч ограничивающую рамку сетки:
 
 ```javascript
-// update ray with input source data
+// обновить луч с данными источника ввода
 ray.set(inputSource.getOrigin(), inputSource.getDirection());
-// check if mesh bounding box intersects with ray
+// проверить, пересекается ли ограничивающая рамка сетки с лучом
 if (meshInstance.aabb.intersectsRay(ray)) {
-    // input source is pointing on a mesh
+    // источник ввода указывает на сетку
 }
 ```
 
 ## Grip
 
-Some input sources are associated with a physical handheld device, such as an Oculus TouchTM, and can have position and rotation. Their position and rotation are provided in world space.
+Некоторые источники ввода связаны с физическим портативным устройством, таким как Oculus Touch™, и могут иметь положение и вращение. Их положение и вращение предоставляются в мировом пространстве.
 
 ```javascript
 if (inputSource.grip) {
-    // can render device model
-    // position and rotate associated entity with model
+    // может отображать модель устройства
+    // позиционировать и вращать связанный объект с моделью
     entity.setPosition(inputSource.getPosition());
     entity.setRotation(inputSource.getRotation());
 }
@@ -84,22 +84,22 @@ if (inputSource.grip) {
 
 ## GamePad
 
-If the platform supports the [WebXR Gamepads Module][4], then an input source might have an associated [GamePad][5] object with it, which can be accessed to get buttons, triggers, axes and other input hardware states:
+Если платформа поддерживает [WebXR Gamepads Module][4], то у источника ввода может быть связанный с ним объект [GamePad][5], который можно использовать для получения состояний кнопок, триггеров, осей и другого оборудования для ввода:
 
 ```javascript
 var gamepad = inputSource.gamepad;
 if (gamepad) {
     if (gamepad.buttons[0] && gamepad.buttons[0].pressed) {
-        // user pressed a button on a gamepad
+        // пользователь нажал кнопку на геймпаде
     }
 }
 ```
 
-## Hands
+## Руки
 
-If platform supports [WebXR Hand Input][7], then an input source might have an associated hand data, which is exposed as [XrHand][8], and provides convenient information in form of [XrFinger][9] and [XrJoint][10] for application developer to use, such as wrist, fingers, each joint, tips and events for detecting when hands loose/restore tracking.
+Если платформа поддерживает [WebXR Hand Input][7], то источник ввода может иметь связанные с ним данные о руке, которые представлены в виде [XrHand][8] и предоставляют удобную информацию в виде [XrFinger][9] и [XrJoint][10] для использования разработчиком приложения, такую как запястье, пальцы, каждый сустав, кончики и события для обнаружения потери/восстановления отслеживания рук.
 
-Creating basic hand model:
+Создание базовой модели руки:
 
 ```javascript
 var joints = [ ];
@@ -116,10 +116,10 @@ if (hand) {
 }
 ```
 
-And synchronising it on every update:
+И синхронизация при каждом обновлении:
 
 ```javascript
-for(var i = 0; i < joints.length; i++) {
+для (var i = 0; i < joints.length; i++) {
     var entity = joints[i];
     var joint = entity.joint;
     var radius = joint.radius * 2;
@@ -129,19 +129,19 @@ for(var i = 0; i < joints.length; i++) {
 }
 ```
 
-## Profiles
+## Профили
 
-Each input source might have a list of strings describing a type of input source, which is described in a [profile registry][6]. Based on this, you can figure out what type of model to render for handheld device or what capabilities it might have. Additionally, the profile registry lists gamepad mapping details, such as buttons and axes.
+Каждый источник ввода может иметь список строк, описывающих тип источника ввода, который описан в [реестре профилей][6]. Основываясь на этом, вы можете определить, какую модель отображать для портативного устройства или какие возможности оно может иметь. Кроме того, реестр профилей содержит информацию о сопоставлении кнопок и осей геймпада.
 
 ```javascript
 if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
-    // it is an Oculus TouchTM handheld device
+    // это портативное устройство Oculus Touch™
 }
 ```
 
-## Уроки
+## Учебные материалы
 
-PlayCanvas provides a number of [tutorials and samples][11] on the usage of WebXR functionality. Users are able to fork them and examine how code and components are structured to allow for XR to be used.
+PlayCanvas предоставляет ряд [учебных материалов и примеров][11] по использованию функциональности WebXR. Пользователи могут создать их копии и изучить, как код и компоненты структурированы, чтобы использовать XR.
 
 
 [1]: /api/pc.XrInputSource.html

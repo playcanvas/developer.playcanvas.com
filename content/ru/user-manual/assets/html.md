@@ -4,27 +4,48 @@ layout: usermanual-page.hbs
 position: 9
 ---
 
-An HTML asset contains HTML code. The code can either be a full HTML page or just partial HTML. You can create a new HTML asset in the Editor or by uploading a file with an .html extension.
+HTML-Asset содержит HTML-код. Код может быть как полной HTML-страницей, так и частичным HTML. Вы можете создать новый HTML-Asset в редакторе или загрузив файл с расширением .html.
 
-To edit an HTML asset, right click on it in the Editor and select Edit.
+Чтобы отредактировать HTML-Asset, щелкните правой кнопкой мыши на нем в редакторе и выберите "Редактировать".
 
-The loaded HTML asset is just a string. You can use that string as you like - a common way to add HTML to the document is the following
+Загруженный HTML-Asset представляет собой просто строку. Вы можете использовать эту строку как вам угодно - распространенный способ добавления HTML в документ выглядит следующим образом
 
 ```javascript
-// get asset from registry by id
+// получить Asset из реестра по id
 var asset = app.assets.get(32);
 
-// create element
+// создать элемент
 var div = document.createElement('div');
 div.innerHTML = asset.resource || '';
 document.body.appendChild(div);
 
-// when asset resource loads/changes,
-// update html of element
+// когда ресурс Asset загружается/изменяется,
+// обновить html элемента
 asset.on('load', function() {
     div.innerHTML = asset.resource;
 });
 
-// make sure assets loads
+// убедиться, что Asset загружается
 app.assets.load(asset);
 ```
+# Issue Tracker
+
+## Новые функции
+
+- Добавлен новый компонент "Tutorial Thumbnail"
+- Добавлена поддержка импорта и экспорта Entity
+- Добавлен новый тип Asset: Material Asset
+
+## Улучшения
+
+- Улучшен интерфейс Material Inspector
+- Улучшен Shader Editor
+- Улучшен Node Inspector
+- Улучшен Texture Inspector
+- Улучшен Graph Inspector
+
+## Исправления ошибок
+
+- Исправлены ошибки в Graph Editor
+- Исправлены ошибки при импорте Assets
+- Исправлены ошибки при экспорте Assets

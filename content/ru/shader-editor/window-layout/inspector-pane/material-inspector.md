@@ -6,31 +6,31 @@ position: 3
 
 <img loading="lazy" src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Material Inspector is where a material's settings are configured.
+Material Inspector - это место, где настраиваются параметры материала.
 
-To access a material's inspector, select it in the [Assets Pane][1].
+Чтобы получить доступ к инспектору материала, выберите его в [Assets Pane][1].
 
-There are three sections: Basic, Render States and Parameters.
+Существует три раздела: Basic, Render States и Parameters.
 
 ### Basic
 
-- MaterialID - Internal ID assigned to the material.
-- Name - Material Name.
-- Desc - Material Description.
+- MaterialID - Внутренний ID, присвоенный материалу.
+- Name - Название материала.
+- Desc - Описание материала.
 
 ### Render States
 
-- Blend Mode - The type of blend mode. See [here][2] for more details.
-- Alpha Test - (Not yet supported). Specify the alpha test value.
-- Cull Mode - Face culling mode.
-- Depth Test - Enable depth testing during rendering.
-- Depth Write - Write the surface depth during rendering.
-- Opacity Fades Specular - (Not yet supported).
-- Use Fog - (Not yet supported).
+- Blend Mode - Тип режима смешивания. Подробнее см. [здесь][2].
+- Alpha Test - (Пока не поддерживается). Укажите значение альфа-теста.
+- Cull Mode - Режим отсечения граней.
+- Depth Test - Включить тестирование глубины при рендеринге.
+- Depth Write - Записывать глубину поверхности при рендеринге.
+- Opacity Fades Specular - (Пока не поддерживается).
+- Use Fog - (Пока не поддерживается).
 
 ### Parameters
 
-The parameters section lists the parameter nodes placed on the graph. The names and types are taken from the graph nodes themselves.
+Раздел параметров содержит узлы параметров, размещенные на графе. Имена и типы берутся из самих узлов графа.
 
 [1]: /shader-editor/window-layout/assets-pane
 [2]: /api/pc.Material.html#blendType

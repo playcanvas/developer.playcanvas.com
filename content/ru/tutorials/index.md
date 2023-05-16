@@ -1,6 +1,6 @@
 ---
-title: Уроки
+title: Учебники
 layout: tutorial-full-page.hbs
 ---
 
-This is replaced with the tag cloud
+Это заменяется облаком тегов

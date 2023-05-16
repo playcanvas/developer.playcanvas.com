@@ -1,18 +1,18 @@
 ---
-title: Inspector Pane
+title: Панель инспектора
 layout: shader-editor-page.hbs
 position: 3
 ---
 
-The Inspector Pane shows details of the currently selected item.
+Панель инспектора показывает детали текущего выбранного элемента.
 
-The information shown depends on the type of asset selected.
+Отображаемая информация зависит от типа выбранного актива.
 
-There are inspectors for the following:
-- [Graphs][1]
-- [Nodes][2]
-- [Materials][3]
-- [Textures][4]
+Существуют инспекторы для следующих элементов:
+- [Графы][1]
+- [Узлы][2]
+- [Материалы][3]
+- [Текстуры][4]
 
 [1]: /shader-editor/window-layout/inspector-pane/graph-inspector
 [2]: /shader-editor/window-layout/inspector-pane/node-inspector

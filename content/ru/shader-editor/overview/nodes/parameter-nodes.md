@@ -1,11 +1,11 @@
 ---
-title: Parameter Nodes
+title: Узлы параметров
 layout: shader-editor-page.hbs
 position: 1
 ---
 
-Parameter nodes are input nodes that allow values in the material to be configurable at runtime. Parameter nodes added to a graph will appear in the Material Inspector Pane.
+Узлы параметров - это входные узлы, которые позволяют настраивать значения материала во время выполнения. Узлы параметров, добавленные в граф, появятся в окне просмотра материала.
 
-To read more about editing parameters, see the [Inspector Pane][1] documentation.
+Чтобы узнать больше о редактировании параметров, см. документацию [панель Inspector][1].
 
 [1]: /shader-editor/window-layout/inspector-pane

@@ -4,11 +4,11 @@ layout: shader-editor-page.hbs
 position: 1.1
 ---
 
-The effects created in Shader Editor are a combination of [Graphs][1] and their [Nodes][2], [Materials][3] and [Textures][4].
+Эффекты, созданные в Shader Editor, являются комбинацией [графов][1] и их [узлов][2], [материалов][3] и [текстур][4].
 
-Each of these is explained along with information on the relationship between them.
+Каждый из этих элементов объяснен вместе с информацией о взаимосвязи между ними.
 
-In this section you can also read more about [File Handling][5] and some notes on the general [Workflow][6].
+В этом разделе вы также можете узнать больше о [работе с файлами][5] и некоторых заметках о целом [рабочем процессе][6].
 
 [1]: /shader-editor/overview/graphs
 [2]: /shader-editor/overview/nodes

@@ -1,63 +1,72 @@
 ---
-title: Merging and resolving conflicts
+title: Слияние и разрешение конфликтов
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Merging is the process by which you combine work that has been performed in one branch with work that has been performed in another branch. Merging is a natural part of the branch based workflow described in the [branches documentation][1].
+Слияние - это процесс объединения работы, выполненной в одной ветке, с работой, выполненной в другой ветке. Слияние является естественной частью рабочего процесса на основе ветвей, описанного в [документации по ветвям][1].
 
-## Merging two branches
+## Слияние двух веток
 
-In PlayCanvas a merge takes two checkpoints from two different branches, calculates the changes that have occurred since their last shared ancestor checkpoint, combines these changes together (sometimes asking for help to resolve conflicting changes) and finally creates a new checkpoint containing the result of the merging of the two checkpoints.
+В PlayCanvas слияние объединяет две контрольные точки из двух разных веток, вычисляет изменения, которые произошли с момента их последней общей предковой контрольной точки, объединяет эти изменения вместе (иногда просит помощи для разрешения конфликтующих изменений) и, наконец, создает новую контрольную точку, содержащую результат слияния двух контрольных точек.
 
-First, it's important to note that when you perform a merge in PlayCanvas you are not actually merging two branches. You are, in fact, merging two checkpoints. This is relevant because you may have changes in one of the two branches that are more recent that the latest checkpoint. In the case of the branch you are merging into PlayCanvas will automatically create a checkpoint to ensure you do not lose any changes.
+Важно отметить, что когда вы выполняете слияние в PlayCanvas, вы на самом деле не объединяете две ветки. Вы, фактически, объединяете две контрольные точки. Это актуально, потому что у вас могут быть изменения в одной из двух веток, которые более новые, чем последняя контрольная точка. В случае ветки, в которую вы объединяете, PlayCanvas автоматически создаст контрольную точку, чтобы гарантировать, что вы не потеряете никаких изменений.
 
-### Example merges
+### Примеры слияний
 
-![Merging checkpoints][6]
-*Changes Y & Z are not included in merge result C and **are lost**.*
+![Слияние контрольных точек][6]
+*Изменения Y и Z не включены в результат слияния C и **теряются**.*
 
-![Merging checkpoints][7]
-*By default PlayCanvas creates a new checkpoint in the destination branch of a merge, so changes Y are included*
+![Слияние контрольных точек][7]
+*По умолчанию PlayCanvas создает новую контрольную точку в целевой ветке слияния, поэтому изменения Y включены*
 
-![Merging checkpoints][8]
-*If changes Z are required, create a checkpoint in the source branch before starting the merge.*
+![Слияние контрольных точек][8]
+*Если требуются изменения Z, создайте контрольную точку в исходной ветке перед началом слияния.*
 
+## Начало слияния
 
-## Starting a merge
+![Начать слияние][3]
 
-![Start merge][3]
+Чтобы начать слияние, переключите текущую ветку на ветку, в которую вы хотите объединить. Затем выберите ветку, из которой вы хотите объединить, и выберите "Слить с текущей веткой" из выпадающего меню ветки.
 
-To start a merge switch your current branch to the branch you wish to merge into. Then select the branch that you wish to merge from and choose "Merge into current branch" from the branch's drop-down menu.
+![Диалог слияния][9]
 
-This will start the merge process.
+У вас есть несколько вариантов перед началом слияния.
 
-### Automatic Merging
+В ветке "Слияние из" вы можете:
 
-When you merge two checkpoints PlayCanvas will try to automatically merge any changes from the two branches that don't conflict with each other. In many cases, two branches can be merged completely automatically. In an automatic merge once the merge is complete the Editor will reload with your merged changes in the current branch.
+- **Создать контрольную точку сначала** - Отметьте этот параметр, чтобы создать контрольную точку перед слиянием. Это полезно, если в ветке есть изменения, которые еще не были зафиксированы, и вы хотите включить их в слияние.
+- **Закрыть ветку после слияния** - Отметьте этот параметр, чтобы закрыть ветку "Слияние из" после завершения слияния. Это часто используется для веток функций, когда функция завершена и чтобы список веток был чистым от устаревших/старых веток.
 
-### Resolving Conflicts
+В ветке "Слияние в" вы можете:
 
-Sometimes the two branches have conflicting changes which cannot be automatically merged. An example of a conflicting change is if both branches have changed the position on the same entity. It's not possible for the system to make a choice between the two final positions.
+- **Создать контрольную точку сначала** - Этот параметр отмечен по умолчанию. Поскольку слияния основаны на контрольных точках (то есть они объединяют одну контрольную точку с другой), это гарантирует, что любые изменения в ветке "Слияние в", которые не зафиксированы, будут включены в слияние. Снятие этой опции приведет к отбрасыванию любых изменений, которые не зафиксированы. Рекомендуется не снимать эту опцию.
 
-If one or more conflicts exist when merging two branches the Editor will show the conflict manager and you must resolve each conflict before the merge can be completed.
+### Автоматическое слияние
 
-### Conflict Manager
+При слиянии двух контрольных точек PlayCanvas попытается автоматически объединить любые изменения из двух веток, которые не конфликтуют друг с другом. Во многих случаях две ветки могут быть объединены полностью автоматически. В автоматическом слиянии после завершения слияния редактор перезагрузится с вашими объединенными изменениями в текущей ветке.
 
-![Conflict Manager][4]
+### Разрешение конфликтов
 
-The conflict manager shows each resource that is in conflict on the left, and for each selected resource a comparison between the original version (the Base) and the version in each branch. For each conflicted property you can choose which version to accept. Once all properties for all resources have been resolved you click the "Complete Merge" button to finish the merge and create the new checkpoint.
+Иногда две ветки имеют конфликтующие изменения, которые невозможно автоматически объединить. Пример конфликтующего изменения - если обе ветки изменили положение одной и той же сущности. Системе невозможно сделать выбор между двумя конечными позициями.
 
-![Resolved Conflicts][5]
+Если при слиянии двух веток существует один или несколько конфликтов, редактор покажет менеджер конфликтов, и вы должны разрешить каждый конфликт, прежде чем слияние может быть завершено.
 
-While the conflict manager and the merge is in progress your current branch is locked to further edits from other users. This prevents changes being overwritten by your merge when you finish resolving the conflicts. If another user has blocked a branch you need with a merge, you can forcibly end their merge from the editor.
+### Менеджер конфликтов
+
+![Менеджер конфликтов][4]
+
+Менеджер конфликтов показывает каждый ресурс, который находится в конфликте, слева, и для каждого выбранного ресурса сравнение между оригинальной версией (База) и версией в каждой ветке. Для каждого конфликтующего свойства вы можете выбрать, какую версию принять. После того, как все свойства для всех ресурсов будут разрешены, нажмите кнопку "Завершить слияние" для завершения слияния и создания новой контрольной точки.
+
+![Разрешенные конфликты][5]
+
+Пока менеджер конфликтов и слияние выполняются, ваша текущая ветка заблокирована для дополнительных изменений от других пользователей. Это предотвращает перезапись изменений вашим слиянием, когда вы закончите разрешать конфликты. Если другой пользователь заблокировал ветку, которая вам нужна для слияния, вы можете принудительно завершить их слияние из редактора.
 
 [1]: /user-manual/version-control/branches
-
-[3]: /images/user-manual/version-control/start-merge.jpg
-[4]: /images/user-manual/version-control/conflict-manager.jpg
-[5]: /images/user-manual/version-control/conflicts-resolved.jpg
-
-[6]: /images/user-manual/version-control/merging-checkpoints-1.png
-[7]: /images/user-manual/version-control/merging-checkpoints-2.png
-[8]: /images/user-manual/version-control/merging-checkpoints-3.png
+[3]: /images/user-manual/version-control/merging/start-merge.png
+[4]: /images/user-manual/version-control/merging/conflict-manager.jpg
+[5]: /images/user-manual/version-control/merging/conflicts-resolved.jpg
+[6]: /images/user-manual/version-control/merging/merging-checkpoints-1.png
+[7]: /images/user-manual/version-control/merging/merging-checkpoints-2.png
+[8]: /images/user-manual/version-control/merging/merging-checkpoints-3.png
+[9]: /images/user-manual/version-control/merging/merge-dialog.png

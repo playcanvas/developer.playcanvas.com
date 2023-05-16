@@ -5,26 +5,26 @@ tags: physics,basics
 position: 2
 ---
 
-Dynamic rigid bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant.
+Динамические твердые тела движутся под действием сил и импульсов. Сила действует на тело в течение определенного времени, тогда как импульс - это сила, действующая мгновенно.
 
-To apply a force or an impulse to a rigid body, you must use the [pc.RigidBodyComponent scripting API][1].
+Чтобы применить силу или импульс к твердому телу, вы должны использовать [pc.RigidBodyComponent scripting API][1].
 
-Let's consider a couple of examples. If you want to push a heavy weight across the floor, you would apply a force over an amount of time:
+Рассмотрим несколько примеров. Если вы хотите толкнуть тяжелый груз по полу, вы должны приложить силу на определенное время:
 
 ```javascript
 MyScript.prototype.update = function(dt) {
-    // While the right arrow key is pressed, apply a force to the right
+    // Пока нажата клавиша стрелки вправо, применить силу вправо
     if (app.keyboard.isPressed(pc.KEY_RIGHT)) {
         this.entity.rigidbody.applyForce(10, 0, 0);
     }
 };
 ```
 
-If you want to fire a cannonball from a cannon, you would apply a single impulse:
+Если вы хотите выстрелить ядром из пушки, вы должны применить одиночный импульс:
 
 ```javascript
 MyScript.prototype.update = function(dt) {
-    // If the space bar was pressed, apply an impulse up and to the right
+    // Если была нажата пробел, применить импульс вверх и вправо
     if (app.keyboard.wasPressed(pc.KEY_SPACE)) {
         this.entity.rigidbody.applyImpulse(10, 10, 0);
     }

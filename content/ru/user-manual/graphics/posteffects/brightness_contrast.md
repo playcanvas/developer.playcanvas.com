@@ -1,25 +1,25 @@
 ---
-title: Эффект яркости-контрастности
+title: Эффект Яркость-Контраст
 layout: usermanual-page.hbs
 position: 2
 ---
 
-The brightness-contrast effect allows you to modify the brightness and contrast of the rendered image.
+Эффект яркости-контраста позволяет изменять яркость и контрастность отображаемого изображения.
 
-Here is an image without the effect:
+Вот изображение без эффекта:
 
-![Image without effect][1]
+![Изображение без эффекта][1]
 
-And the same image with the effect applied and changes to brightness and contrast:
+И то же изображение с примененным эффектом и изменениями яркости и контрастности:
 
-![Image with effect][2]
+![Изображение с эффектом][2]
 
-The built-in brightness-contrast effect has the following attributes:
+Встроенный эффект яркости-контраста имеет следующие атрибуты:
 
-* **Brightness**: The brightness of the image. Ranges from -1 to 1 (-1 is solid black, 0 no change, 1 solid white).
-* **Contrast**: The contrast of the image. Ranges from -1 to 1 (-1 is solid gray, 0 no change, 1 maximum contrast).
+* **Яркость**: Яркость изображения. Диапазон от -1 до 1 (-1 - полностью черный, 0 - без изменений, 1 - полностью белый).
+* **Контраст**: Контраст изображения. Диапазон от -1 до 1 (-1 - полностью серый, 0 - без изменений, 1 - максимальный контраст).
 
-Find the post-processing effect script on [GitHub][3].
+Найдите скрипт эффекта постобработки на [GitHub][3].
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_brightness_contrast.png

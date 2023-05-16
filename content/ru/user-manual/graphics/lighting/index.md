@@ -4,24 +4,24 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-Lighting a scene is the process of calculating the color or shading of a pixel render to the screen based on the material properties of the surface and the light sources that are applied to that material.
+Освещение сцены - это процесс расчета цвета или затенения пикселя, отображаемого на экране, на основе свойств материала поверхности и источников света, применяемых к этому материалу.
 
-In PlayCanvas, lighting can be broadly divided up into two basic categories: dynamic lights and lightmaps.
+В PlayCanvas освещение можно условно разделить на две основные категории: динамические источники света и карты освещения (lightmaps).
 
-## Dynamic Lights
+## Динамические источники света
 
-Lighting calculations that are performed at runtime are classed as dynamic. Every frame the engine calculates the amount of light falling on a surface from the type, position and properties of Light Entities and uses this to color the material.
+Расчеты освещения, выполняемые во время выполнения, классифицируются как динамические. Каждый кадр движок рассчитывает количество света, падающего на поверхность, из типа, положения и свойств Light Entities и использует это для окрашивания материала.
 
-## Карты теней
+## Карты освещения (Lightmaps)
 
-For lights and geometry that does not move, it is often preferable to determine the lighting information in advance. This information is then saved into lightmap textures which are applied to the surface materials. This method has a very low runtime cost at the expense of having static lighting which can not change and pre-computation times.
+Для источников света и геометрии, которые не двигаются, часто предпочтительнее определить информацию об освещении заранее. Эта информация затем сохраняется в текстурах карт освещения и применяется к материалам поверхности. Этот метод имеет очень низкую стоимость выполнения за счет наличия статического освещения, которое не может изменяться, и времени предварительного расчета.
 
-There are two methods of creating lightmaps:
+Существует два метода создания карт освещения:
 
-### External Lightmap Generation
+### Внешнее создание карт освещения
 
-Many 3D creation tools have lightmap generation included or available as an add-on, including 3DS Max, Maya and Blender. These tools generally generate lightmap textures which can be uploaded as regular assets and added to the Lightmap slot in the standard Physical Material.
+Многие инструменты создания 3D-моделей включают в себя генерацию карт освещения или предлагают ее в виде дополнения, включая 3DS Max, Maya и Blender. Эти инструменты обычно генерируют текстуры карт освещения, которые можно загрузить как обычные Asset и добавить в слот Lightmap стандартного физического материала.
 
-### PlayCanvas Runtime Lightmap Generation
+### Генерация карт освещения PlayCanvas во время выполнения
 
-The PlayCanvas Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
+Движок PlayCanvas имеет встроенную генерацию карт освещения. Этот метод можно использовать для автоматического создания карт освещения непосредственно перед запуском вашей игры. С этим методом вы можете использовать стандартные компоненты освещения, вносить изменения и предварительно просматривать вашу сцену прямо в редакторе.

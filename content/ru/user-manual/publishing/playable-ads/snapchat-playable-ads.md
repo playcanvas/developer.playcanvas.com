@@ -4,47 +4,47 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-PlayCanvas supports the Snapchat Playable Ad format and requirements via an [official external tool on GitHub][2].
+PlayCanvas поддерживает формат и требования Snapchat Playable Ad через [официальный внешний инструмент на GitHub][2].
 
-Snapchat playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
+Snapchat playable ads использует стандарт [MRAID 2.0 API][mraid-api] и требует, чтобы активы для рекламы были внешними относительно `index.html`, а не встроенными.
 
-The external assets will need to be in a folder that is uniquely named (which the tool handles for you) so that they can be uploaded to Snapchat's CDN servers.
+Внешние активы должны быть в папке с уникальным именем (что инструмент обрабатывает для вас), чтобы их можно было загрузить на серверы CDN Snapchat.
 
-There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
+Существуют некоторые ограничения, которые следует учитывать при использовании инструмента, их можно найти в документации на [GitHub][2].
 
-## Example project
+## Пример проекта
 
-The [Cube Jump project][5] is ready to be exported to the Snapchat Playable Ad format and the expected HTML output can be found [here][6].
+Проект [Cube Jump][5] готов к экспорту в формат Snapchat Playable Ad, и ожидаемый HTML-вывод можно найти [здесь][6].
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
 
-## File size tips
+## Советы по размеру файла
 
-As there is a soft limit of 5MB (uncompressed), you will have to plan and budget the usage of assets for the ad.
+Поскольку есть мягкий лимит в 5 МБ (несжатый), вам придется планировать и бюджетировать использование ассетов для рекламы.
 
-The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
+Минифицированный код движка PlayCanvas имеет размер **~1,2 МБ** в несжатом виде, и из-за необходимости кодировать файлы ассетов в строках Base64 это добавляет **~30%** к размеру каждого файла ассетов.
 
-This means that you would have about \~3MB for assets before the Base64 encoding.
+Это означает, что у вас будет около ~3 МБ для ассетов перед кодированием Base64.
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
+Постарайтесь сохранять изображения с наименьшими возможными размерами и используйте инструменты, такие как [TinyPNG][4], чтобы еще больше уменьшить размер файла.
 
-## Playable ad checklist:
+## Чек-лист для играбельной рекламы:
 
-The Snapchat ad network requires the call to action function to be in the `index.html` where the network can replace it with a unique tracking version when it is served to the user. The URL will be set in the Snapchat Ad campaign tool.
+Сеть рекламы Snapchat требует, чтобы функция вызова к действию была в `index.html`, где сеть может заменить ее уникальной отслеживающей версией при обслуживании пользователю. URL будет установлен в инструменте рекламной кампании Snapchat.
 
-The tool wraps this logic in a global function: `snapchatCta();` that should be called in the playable ad project.
+Инструмент оборачивает эту логику в глобальную функцию: `snapchatCta();`, которая должна быть вызвана в проекте играбельной рекламы.
 
-* Have you called the function `snapchatCta();` as part of the call to action callback?
+* Вы вызвали функцию `snapchatCta();` в качестве части обратного вызова к действию?
 
-## How to export
+## Как экспортировать
 
-Follow the [setup steps][7] from the readme in the GitHub repo.
+Следуйте [шагам настройки][7] из файла readme в репозитории GitHub.
 
-### Dry run test
+### Тест сухого прогона
 
-As Snapchat does not yet have an official tool to test with, we will have to do a dry run to test with first before exporting in a format that the Snapchat ad network expects.
+Поскольку у Snapchat еще нет официального инструмента для тестирования, сначала мы должны провести тест сухого прогона, прежде чем экспортировать в формат, который ожидает рекламная сеть Snapchat.
 
-Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
+Установите следующие параметры в `config.json`, как показано ниже. Это создаст ZIP-файл с данными ассетов и кодом движка PlayCanvas в виде отдельных файлов от `index.html`.
 
 ```json
     "one_page": {
@@ -60,21 +60,29 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-The `folder_name` needs to be a unique string. For this purpose, you can use a random GUID from a [GUID generator][guid-generator] or your Snapchat representative may have a specific string that you should use.
+`folder_name` должно быть уникальной строкой. Для этой цели вы можете использовать случайный GUID из [генератора GUID][guid-generator] или ваш представитель Snapchat может иметь определенную строку, которую вы должны использовать.
 
-To test the ad on a device, we can use the Android app [Creative Preview][creative-preview] but we need to host the ad on a https server.
+И выполните команду:
 
-Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
+```sh
+npm run one-page
+```
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/ngrok.png" width="600px">
+Полные сведения об опциях и командах можно найти в разделе readme для "[Преобразование проекта в один HTML-файл][2]".
 
-Once this is setup, open Creative Preview app and create a new 'Display' ad with the following settings:
+Для тестирования рекламы на устройстве можно использовать Android-приложение [Creative Preview][creative-preview], но нам нужно разместить рекламу на https-сервере.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/creative-preview.png" width="300px">
+Мы рекомендуем [разместить локально][host-locally] и использовать [ngrok][ngrok] для создания https-туннеля к вашему компьютеру, к которому может получить доступ приложение.
 
-### Export for Snapchat
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/ngrok.png" width="600">
 
-When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN URL prefix to the asset references in `index.html`. We can do this via the options in `config.json` via the `external_url_prefix` property:
+После настройки откройте приложение Creative Preview и создайте новую рекламу типа "Display" со следующими настройками:
+
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/creative-preview.png" width="300">
+
+### Экспорт для Snapchat
+
+Когда реклама готова к загрузке для Snapchat, нам нужно добавить префикс URL CDN Snapchat к ссылкам на ресурсы в `index.html`. Мы можем сделать это через опции в `config.json` через свойство `external_url_prefix`:
 
 ```json
     "one_page": {
@@ -90,8 +98,7 @@ When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN 
     }
 ```
 
-The ZIP can then be given to your Snapchat representative to upload to the ad network.
-
+ZIP-файл можно передать вашему представителю Snapchat для загрузки в рекламную сеть.
 
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/

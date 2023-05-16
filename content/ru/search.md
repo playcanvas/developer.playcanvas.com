@@ -1,4 +1,4 @@
 ---
-title: Поиск - ресурсы разработчика PlayCanvas
+title: Поиск - PlayCanvas Ресурсы для разработчиков
 layout: search-page.hbs
 ---

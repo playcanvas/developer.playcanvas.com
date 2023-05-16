@@ -1,58 +1,56 @@
 ---
-title: Отображение, основанное на физических свойствах
+title: Физически основанный рендеринг
 layout: usermanual-page.hbs
 position: 3
 ---
 
 ![Star-Lord][1]
-*Star-Lord Model by [Joachim Coppens][2]*
+*Модель Star-Lord от [Joachim Coppens][2]*
 
-Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
+Физически основанный рендеринг (PBR) - это сочетание рабочего процесса художника, измеренных физических свойств и шейдеров материалов, которые вместе придают порядок и согласованность графическому рендерингу. Используя основные физические принципы взаимодействия света и поверхностей, мы можем создавать предсказуемые визуальные образы, которые работают при всех условиях освещения без специальных случаев.
 
-# Fundamental Principles
+# Основные принципы
 
-Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in PlayCanvas.
+Ниже мы попытаемся кратко изложить основные принципы, на которых основаны физически основанные шейдеры при расчете освещения. В следующих разделах мы подробнее рассмотрим особенности использования физически основанного рендеринга в PlayCanvas.
 
-## Diffuse & Specular
+## Диффузное и зеркальное отражение
 
-Diffuse and Specular (or reflected) light are the two terms that describe two main types of interaction between light and a material. Specular light refers to light which has bounced off the surface. On a smooth surface this light will reflect all the in same direction and the surface will appear mirror-like. Diffuse light is light that has been absorbed, scattered in the material and re-emerged. This light tends to be uniform in direction unlike specular light. During this absorbing and re-emerging some light wavelengths will be absorbed. The wavelengths that are not absorbed give the material its color. For example, if all blue and green wavelengths are absorbed, the material will appear red. In rendering terms, diffuse color is sometimes known as "albedo" or "base color".
+Диффузное и зеркальное (или отраженное) световые потоки - это два термина, которые описывают два основных типа взаимодействия между светом и материалом. Зеркальное отражение относится к свету, который отразился от поверхности. На гладкой поверхности этот свет будет отражаться в одном направлении, и поверхность будет выглядеть зеркальной. Диффузное световое излучение - это свет, который был поглощен, рассеян в материале и снова вышел наружу. Этот свет, в отличие от зеркального, имеет равномерное направление. Во время поглощения и повторного выхода некоторые длины волн света будут поглощены. Длины волн, которые не поглощаются, придают материалу его цвет. Например, если все синие и зеленые длины волн поглощены, материал будет красным. В терминах рендеринга диффузный цвет иногда называется "альбедо" или "основным цветом".
 
-## Energy Conservation
+## Сохранение энергии
 
-![Energy Conservation][3]
-*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
+![Сохранение энергии][3]
+*Гладкие поверхности имеют маленькие яркие участки, шероховатые поверхности имеют большие тусклые участки*
 
-One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+Одна из ключевых особенностей физически корректного рендеринга - это сохранение энергии. Исходя из того, что диффузное световое излучение и отраженное световое излучение происходят от света, попадающего на материал, сумма диффузного и отраженного света не может быть больше общего количества света, попадающего на материал. На практике это означает, что если поверхность сильно отражает свет, она будет показывать очень мало диффузного цвета. И наоборот, если материал имеет яркий диффузный цвет, он не может сильно отражать свет.
 
-The joy of PBR is that energy conservation is included in the shader, so as an artist you don't have to think about it. It just works!
+Радость PBR заключается в том, что сохранение энергии включено в шейдер, поэтому вам, как художнику, не нужно думать об этом. Это просто работает!
 
-## Metals & Non-metals
+## Металлы и неметаллы
 
-![Metals & Non-metals][4]
-*Metals and Non-metals*
+![Металлы и неметаллы][4]
 
-One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine its behavior. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
+Одно из новых свойств PBR по сравнению со старыми моделями затенения - это определение материала, из которого сделан объект, чтобы определить его поведение. Главное, что мы здесь рассматриваем, - это является ли материал проводником (обычно металлом) или изолятором (неметаллом).
 
-The reason this is important is it determines many factors about how the material responds to light. For example, metals are generally reflective (between 60%-90%) where as non-metals are not (0%-20%). Secondly, reflections on non-metals are usually white where as metals will usually reflect the same color as the diffuse.
+Это важно, потому что определяет множество факторов, влияющих на то, как материал реагирует на свет. Например, металлы обычно отражают свет (от 60% до 90%), в то время как неметаллы - нет (от 0% до 20%). Во-вторых, отражения на неметаллах обычно белые, в то время как металлы обычно отражают тот же цвет, что и диффузный.
 
-Because of these differences one of the PBR workflows includes a **metalness** property which makes this stuff simple by defining a material as either a metal, or a non-metal. More on metalness workflow in the following sections.
+Из-за этих различий один из рабочих процессов PBR включает свойство **металличности**, которое упрощает определение материала как металла или неметалла. Более подробно о рабочем процессе металличности в следующих разделах.
 
-## Fresnel
+## Френель
 
-Fresnel is a term that you don't really have to know about to work with PBR in PlayCanvas, but it will give you a better view of how materials behave if you do.
+Френель - это термин, который вам не обязательно знать, чтобы работать с PBR в PlayCanvas, но если вы его знаете, у вас будет лучше представление о поведении материалов.
 
-All you need to know about Fresnel is it means that the angle at which you are viewing a surface influences how reflective that surface appears. If the surface is almost edge on to your view, it will be almost completely reflective.
+Все, что вам нужно знать о Френеле, - это то, что угол, под которым вы смотрите на поверхность, влияет на то, насколько отражательной кажется эта поверхность. Если поверхность почти перпендикулярна вашему взгляду, она будет почти полностью отражающей.
 
-## Microsurface
+## Микроповерхность
 
-Finally onto microsurface. Generally, 3D artists are familiar with the idea of normal maps. Textures that modify the direction of the surface they are applied to. Microsurface, otherwise known as roughness or glossiness, provides a similar thing, only on a much smaller scale. The microsurface of a material describes how rough or smooth a surface is. Compare glass (high glossiness, low roughness) to sandpaper (high roughness, low glossiness). We're not specifying the exact direction the surface faces, just the general idea of rough or smooth.
+Наконец, перейдем к микроповерхности. В целом, 3D-художники знакомы с идеей карт нормалей. Текстуры, которые изменяют направление поверхности, к которой они применяются. Микроповерхность, также известная как шероховатость или глянцевость, предоставляет нечто подобное, только в меньшем масштабе. Микроповерхность материала описывает, насколько шероховатой или гладкой является поверхность. Сравните стекло (высокая глянцевость, низкая шероховатость) с наждачной бумагой (высокая шероховатость, низкая глянцевость). Мы не указываем точное направление поверхности, просто общую идею о шероховатости или гладкости.
 
-Some PBR systems use Roughness, some use Glossiness, they are the same thing. Roughness is the inverse of Glossiness and vice versa. If you want to convert from one to the other, simply invert the texture or value.
+Некоторые PBR-системы используют шероховатость (Roughness), другие - глянцевость (Glossiness), но это одно и то же. Шероховатость является обратной величиной глянцевости и наоборот. Если вы хотите преобразовать одно значение в другое, просто инвертируйте текстуру или значение.
 
-[Next: Physical Materials][6]
+[Далее: Физические материалы][6]
 
-*More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
-
+*Больше информации можно найти в отличной статье Marmoset Toolbag's [PBR Theory][5].*
 
 [1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
 [2]: https://www.joachimcoppens.com/

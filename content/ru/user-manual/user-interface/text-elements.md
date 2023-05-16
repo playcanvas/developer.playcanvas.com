@@ -1,68 +1,68 @@
 ---
-title: Text Elements
+title: Текстовые элементы
 layout: usermanual-page.hbs
 position: 6
 ---
 
-The Text Element is used to display a string of text using a [font asset][1].
+Текстовый элемент используется для отображения строки текста с использованием [шрифтового ассета][1].
 
-## Text
+## Текст
 
-The Text Element contains a string field to enter the text that will be displayed. Use `Shift+Enter` to enter a new line character in the string field.
+Текстовый элемент содержит строковое поле для ввода текста, который будет отображаться. Используйте `Shift+Enter` для ввода символа новой строки в строковом поле.
 
-*Note about performance:* Text elements are rendered to the screen using a single quad for each character in the string. When you change the text property, we re-generate the mesh for the element. There is a performance implication for this, though there should be no problems changing text content for a reasonable number of Elements every frame.
+*Примечание о производительности:* Текстовые элементы отображаются на экране с использованием одного квадрата для каждого символа в строке. Когда вы изменяете свойство текста, мы генерируем заново сетку для элемента. Это имеет последствия для производительности, хотя не должно быть проблем с изменением текстового содержимого для разумного количества элементов в каждом кадре.
 
-## Localization
+## Локализация
 
-You can the Localized checkbox to localize the text of the Text Element. If this is enabled then instead of the Text you specify the localization Key for the Text Element which will be used to get the localized text from the Localization assets.
+Вы можете установить флажок "Локализовано" для локализации текста текстового элемента. Если это включено, то вместо текста вы указываете ключ локализации для текстового элемента, который будет использоваться для получения локализованного текста из локализационных ассетов.
 
-Read more about localization [here][11].
+Подробнее о локализации читайте [здесь][11].
 
-## Auto-size
+## Автоматический размер
 
-By default a Text Element is set to automatically adjust its width and height to match the text string. You can disable this and specify the height and width of the element directly in the Editor panel.
+По умолчанию текстовый элемент настроен на автоматическую корректировку своей ширины и высоты в соответствии с текстовой строкой. Вы можете отключить это и указать высоту и ширину элемента непосредственно в панели редактора.
 
-![Auto Size][2]
+![Автоматический размер][2]
 
-Note: The height of the character is determined by the largest character present in the font. It is the same for every character so as to avoid the string position changing depending on the contents of the string.
+Примечание: Высота символа определяется на основе наибольшего символа, присутствующего в шрифте. Она одинакова для каждого символа, чтобы избежать изменения позиции строки в зависимости от содержимого строки.
 
-## Alignment
+## Выравнивание
 
-Text Elements have an additional tool to help with positioning which is the alignment. You will be used to how this property works from tools like Word Processes. In this case, rather than presets we expose a variable that can be altered. The alignment consists of two values `[X, Y]` each between 0 and 1. `[0,0]` is bottom left alignment, `[0.5,0.5]` is centered and `[1,1]` is top right.
+Текстовые элементы имеют дополнительный инструмент для позиционирования, который является выравниванием. Вы должны быть знакомы с тем, как работает это свойство, из таких инструментов, как текстовые процессоры. В данном случае, вместо предустановок мы предоставляем переменную, которую можно изменить. Выравнивание состоит из двух значений `[X, Y]`, каждое между 0 и 1. `[0,0]` - это выравнивание внизу слева, `[0.5,0.5]` - по центру, а `[1,1]` - вверху справа.
 
-![Top Left][3]
+![Вверху слева][3]
 
-![Centered][4]
+![По центру][4]
 
-![Bottom Right][5]
+![Внизу справа][5]
 
-## Font Size & Line Height
+## Размер шрифта и высота строки
 
-The font size property sets the rendered size of the font in Screen Component pixels. The line height sets the distance in Screen Component pixels to move down when the text contains a new line character.
+Свойство размера шрифта устанавливает отображаемый размер шрифта в пикселях компонента экрана. Высота строки устанавливает расстояние в пикселях компонента экрана для перемещения вниз, когда текст содержит символ новой строки.
 
-![Font Size Line Equal][6]
-**Equal Font Size and Line Height is the default**
+![Размер шрифта и высота строки равны][6]
+**Равный размер шрифта и высота строки являются значениями по умолчанию**
 
-![Font Size Line Spaced][7]
-**Increase Line Height to increase line spacing**
+![Размер шрифта и высота строки с интервалом][7]
+**Увеличьте высоту строки, чтобы увеличить интервал между строками**
 
-## Spacing
+## Расстояние между символами
 
-The spacing property increase the distance between characters in a string. Fonts define the ideal distance to move the cursor forward for each character. The spacing property is a multiplier to this distance.
+Свойство расстояния увеличивает расстояние между символами в строке. Шрифты определяют идеальное расстояние для перемещения курсора вперед для каждого символа. Свойство расстояния является множителем для этого расстояния.
 
-![Spacing][8]
+![Расстояние][8]
 
-## Tinting
+## Тонирование
 
-The Color property allows you to tint the string to the color of your choice.
+Свойство цвета позволяет окрасить строку в выбранный вами цвет.
 
-![Tinted][9]
+![Тонированный][9]
 
-## Tranparency
+## Прозрачность
 
-The Opacity property allows you to set the transparency of the string
+Свойство прозрачности позволяет установить прозрачность строки
 
-![Transparent][10]
+![Прозрачный][10]
 
 [1]: /user-manual/assets/fonts
 [2]: /images/user-manual/user-interface/text-element/auto-size.png

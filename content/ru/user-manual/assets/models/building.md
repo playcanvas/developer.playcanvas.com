@@ -1,93 +1,93 @@
 ---
-title: Построение моделей
+title: Создание моделей
 layout: usermanual-page.hbs
 position: 2
 ---
 
-Building art and animations for PlayCanvas can be done using almost any of the many 3D modeling programs available. For example: Blender, SketchUp, Autodesk 3D Studio Max or Autodesk Maya.
+Создание графики и анимаций для PlayCanvas можно выполнить с помощью почти любой из множества доступных 3D-моделирующих программ. Например: Blender, SketchUp, Autodesk 3D Studio Max или Autodesk Maya.
 
-PlayCanvas is designed to import content most faithfully via the open source glTF binary (GLB) format so, in general, if your modeling application supports GLB, PlayCanvas supports it too.
+PlayCanvas разработан для импорта контента наиболее точно через открытый двоичный формат glTF (GLB), поэтому, в целом, если ваше приложение для моделирования поддерживает GLB, PlayCanvas также поддерживает его.
 
-The import of GLBs supports the following glTF features for incredibly fast scene creation:
+Импорт GLB поддерживает следующие функции glTF для невероятно быстрого создания сцены:
 
-- Node hierarchy
-- Standard material
-- Ratified material extensions
-- Animated skeletons and skinning data
-- Morph targets
+- Иерархия узлов
+- Стандартный материал
+- Ратифицированные расширения материалов
+- Анимированные скелеты и данные скиннинга
+- Целевые морфы
 - Камеры
-- Draco compressed models
-- Punctual light support
+- Модели с сжатием Draco
+- Поддержка точечного света
 
-As such, to target PlayCanvas, you do not have to use any special art tool plugins and there are no PlayCanvas-specific workflows you must follow.
+Таким образом, для работы с PlayCanvas вам не нужно использовать специальные плагины для инструментов искусства, и вам не нужно следовать специфическим для PlayCanvas рабочим процессам.
 
-![GLB Import Example][14]
+![Пример импорта GLB][14]
 
-(Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab][13] licensed under [CC BY 4.0][12]).
+(Модель от Loïc Norgeot и сканирование комара от Geoffrey Marchal для [Sketchfab][13] лицензировано по [CC BY 4.0][12]).
 
-PlayCanvas also supports the importing of FBX files which is another common interchange format. However, FBX materials are not imported as faithfully as glTF materials and might require some editing after import.
+PlayCanvas также поддерживает импорт файлов FBX, который является еще одним распространенным форматом обмена. Однако материалы FBX не импортируются так точно, как материалы glTF, и могут потребовать некоторой правки после импорта.
 
-We recommend using GLBs whenever possible for the best experience and highest compatibility.
+Мы рекомендуем использовать GLB, когда это возможно, для наилучшего опыта и наивысшей совместимости.
 
-Some modeling and animation programs to consider:
+Некоторые программы для моделирования и анимации, которые стоит рассмотреть:
 
-* Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-* Lower-cost paid options: 3D-Coat, NVIL, Hexagon.
-* Higher-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+* Бесплатные варианты: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
+* Платные варианты с низкой стоимостью: 3D-Coat, NVIL, Hexagon.
+* Платные варианты с высокой стоимостью: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
 
-\* *this program can create animations too.*
+\* *эта программа также может создавать анимации.*
 
-For generating textures, consider these programs:
+Для создания текстур рассмотрите следующие программы:
 
-* Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-* Paid: Substance Designer (as well as Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+* Бесплатные: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
+* Платные: Substance Designer (а также Substance Painter и Bitmap2Material), Photoshop, Quixel NDO и DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
 
-Note many of the programs listed above for modeling also allow texture painting. If you would like more options, this [external wiki][1] page can help. Please note that some of the information may be out-of-date.
+Обратите внимание, что многие из перечисленных выше программ для моделирования также позволяют рисовать текстуры. Если вы хотите больше вариантов, эта [внешняя вики-страница][1] может помочь. Обратите внимание, что некоторая информация может быть устаревшей.
 
-## General Considerations for Mesh Construction
+## Общие соображения по конструкции сетки
 
-Regardless which modeling application you are using, there a number of things to be aware of when building 3D scenes intended for PlayCanvas.
+Независимо от того, какое приложение для моделирования вы используете, при создании 3D-сцен для PlayCanvas следует учитывать ряд вещей.
 
-* Meshes can be skinned to up to 256 bones.
-* NURBS meshes will be converted to triangle meshes on conversion to the PlayCanvas native format.
+* Сетки могут быть привязаны к 256 костям.
+* NURBS-сетки будут преобразованы в треугольные сетки при преобразовании в собственный формат PlayCanvas.
 
 ---
 
 ## Blender
 
-![Blender Logo][3]
+![Логотип Blender][3]
 
-[Blender][4] is a fantastic free tool for 3D modeling and it is perfect for generating 3D assets for PlayCanvas.
+[Blender][4] - это фантастический бесплатный инструмент для 3D-моделирования, и он идеально подходит для создания 3D-ресурсов для PlayCanvas.
 
-Blender supports exporting to GLB, FBX and COLLADA but the built-in exporters do have some limitations.
+Blender поддерживает экспорт в GLB, FBX и COLLADA, но встроенные экспортеры имеют некоторые ограничения.
 
-### **Map Types**
+### **Типы карт**
 
-As of Blender 2.71, both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor.
+Начиная с Blender 2.71, как диффузные, так и нормальные карты вашего материала будут экспортироваться в файл FBX. Если другие типы карт теряются при экспорте, вам нужно настроить эти карты в редакторе материалов в редакторе.
 
-### **Embedding Textures**
+### **Встраивание текстур**
 
-Embedded Textures make importing much easier.
+Встроенные текстуры упрощают импорт.
 
-The Blender COLLADA exporter does not have the ability to embed textures into the exported model file.
+Экспортер COLLADA Blender не имеет возможности встраивать текстуры в экспортированный файл модели.
 
-The 2.71 release of Blender features a revamped FBX export module that enables multiple embedded textures directly from Blender. First make sure the object is rendered correctly within Blender. When exporting to FBX, set the 'Path Mode' to Copy and check the 'Embed Textures' box.
+Версия 2.71 Blender содержит обновленный модуль экспорта FBX, который позволяет встраивать несколько текстур непосредственно из Blender. Сначала убедитесь, что объект отображается правильно в Blender. При экспорте в FBX установите 'Path Mode' на Copy и установите флажок 'Embed Textures'.
 
-Alternatively, use the [Autodesk FBX Converter][5] to convert an export from Blender into one with embedded media. Just open the file in the FBX Converter and re-save with the *Embedded Media* checkbox set.
+В качестве альтернативы используйте [Autodesk FBX Converter][5] для преобразования экспорта из Blender в один с встроенными медиафайлами. Просто откройте файл в конвертере FBX и сохраните его с установленным флажком *Embedded Media*.
 
 <div class="alert alert-warning">
-Note: there seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+Примечание: похоже, что существует проблема с экспортом FBX Blender 2.71, генерирующим излучение, несмотря на то, что в Blender не установлены излучательные свойства - это не проблема движка PlayCanvas. Чтобы избежать этого из Blender, вы можете изменить настройку цвета диффузии материала на 0 (на вкладке «Материал» в «Редакторе свойств»). Или просто уменьшите излучение в редакторе PlayCanvas.
 </div>
 
-### **Animations**
+### **Анимации**
 
-As of Blender 2.71:
+Начиная с Blender 2.71:
 
-Animations included within the blend file are exported with the default fbx exporter settings and are compatible with the PlayCanvas asset import pipeline. Note that for multiple animations for the same model you will need to upload multiple fbx files - one for each animation. To save memory you can delete models and textures from the blend file before exporting, choose to export only armatures in the fbx exporter settings, or simply delete the duplicate 'model' target assets from the assets page on your project dashboard (select 'target' from the drop-down menu on the assets page to view target assets).
+Анимации, включенные в файл blend, экспортируются с настройками экспортера fbx по умолчанию и совместимы с конвейером импорта ассетов PlayCanvas. Обратите внимание, что для нескольких анимаций одной модели вам потребуется загрузить несколько файлов fbx - по одному для каждой анимации. Чтобы сэкономить память, вы можете удалить модели и текстуры из файла blend перед экспортом, выбрать экспорт только арматур в настройках экспортера fbx или просто удалить дублирующиеся активы "модели" из целевых ассетов на странице ассетов вашего проекта (выберите "цель" в выпадающем меню на странице ассетов, чтобы просмотреть целевые активы).
 
-### **Learning Blender**
+### **Изучение Blender**
 
-There are plenty of resources for learning how to use Blender on the web. A couple that we recommend are:
+В Интернете есть множество ресурсов для изучения работы с Blender. Несколько из них, которые мы рекомендуем:
 
 * [Blender Cookie][2]
 * [Blender Guru][6]
@@ -96,77 +96,77 @@ There are plenty of resources for learning how to use Blender on the web. A coup
 
 ## Autodesk 3D Studio Max
 
-### Max Materials
+### Материалы Max
 
-You should use the Standard material type in Max, or the Multi/Sub-Object material type providing the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when you export to PlayCanvas:
+Вы должны использовать тип материала Standard в Max или тип материала Multi/Sub-Object, при условии что материалы, на которые он ссылается, являются стандартными материалами. Выделенные области на следующем скриншоте показывают настройки, которые учитываются при экспорте в PlayCanvas:
 
-![Max material editor][7]
+![Редактор материалов Max][7]
 
-### Supported Map Slots
+### Поддерживаемые слоты карт
 
-PlayCanvas interprets a subset of the 3DS Max material map types on export. Note that maps can be in any format that 3DS Max supports, but if the maps are not in a web format (namely JPEG, GIF or PNG) then they will be converted to these formats on export.
+PlayCanvas интерпретирует подмножество типов карт материалов 3DS Max при экспорте. Обратите внимание, что карты могут быть в любом формате, поддерживаемом 3DS Max, но если карты не в веб-формате (а именно JPEG, GIF или PNG), то они будут преобразованы в эти форматы при экспорте.
 
 **Diffuse Color**
 
-Assigning a Bitmap map to this slot enables diffuse mapping on the PlayCanvas material. This essentially overrides whatever diffuse color has been set on the material (via the color picker). If the diffuse map has an alpha channel, it will be used as the per pixel alpha value in the PlayCanvas runtime.
+Назначение карты Bitmap на этот слот позволяет использовать отображение диффузии в материале PlayCanvas. Это, по сути, переопределяет установленный цвет диффузии на материале (через выбор цвета). Если у карты диффузии есть альфа-канал, он будет использоваться как значение альфа на пикселе во время выполнения PlayCanvas.
 
-Additionally, it is possible to assign an RGB Multiply map to the Diffuse Color slot. This has the effect of enabling lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap.
+Кроме того, можно назначить карту RGB Multiply на слот Diffuse Color. Это позволяет включить сопоставление освещения, где карта 1 является картой диффузии, а карта 2 - картой освещения.
 
 **Specular Color**
 
-Assigning a Bitmap map to this slot enables specular mapping in the PlayCanvas material. This essentially overrides whatever specular color has been set on the material (via the color picker). This allows you to mask out areas of specularity on a surface, or tinge specular highlights different colors in different areas. If the specular map has an alpha channel, it will be used to set per-pixel shininess.
+Назначение карты Bitmap на этот слот позволяет использовать отображение зеркального отражения в материале PlayCanvas. Это, по сути, переопределяет установленный цвет зеркального отражения на материале (через выбор цвета). Это позволяет закрыть области зеркального отражения на поверхности или окрасить зеркальные блики разными цветами в разных областях. Если у карты зеркального отражения есть альфа-канал, он будет использоваться для установки пиксельного блеска.
 
 **Specular Level**
 
-Assigning a Bitmap map to this slot activates per-pixel attenuation of the material's specular color. This essentially overrides whatever specular level has been set on the material.
+Назначение карты Bitmap на этот слот активирует пиксельное ослабление цвета зеркального отражения материала. Это, по сути, переопределяет установленный уровень зеркального отражения на материале.
 
 **Glossiness**
 
-Assigning a Bitmap map to this slot activates per-pixel glossiness on the material. This essentially overrides whatever glossiness has been set on the material.
+Назначение карты Bitmap на этот слот активирует пиксельную глянцевость на материале. Это, по сути, переопределяет установленную глянцевость на материале.
 
 **Self-Illumination**
 
-Assigning a Bitmap map to this slot enables emissive mapping in the PlayCanvas material. An emissive map can be full RGB (you are not limited to greyscale) and will essentially be added to the result of lighting a surface. So a black pixel in a emissive map will result add nothing to a pixel's value.  Anything else will increase a pixel's luminosity.
+Назначение карты Bitmap на этот слот позволяет использовать карту излучения в материале PlayCanvas. Карта излучения может быть полностью RGB (вам не ограничены только оттенками серого) и, по сути, будет добавлена к результату освещения поверхности. Таким образом, черный пиксель на карте излучения ничего не добавит к значению пикселя. Все остальное увеличит яркость пикселя.
 
 **Opacity**
 
-Assigning a Bitmap map to this slot enables opacity mapping on the PlayCanvas material. A black pixel in the opacity map will be fully transparent, a white pixel will be fully opaque and any grey pixel will correspond to some equivalent intermediate alpha value.
+Назначение карты Bitmap на этот слот позволяет использовать отображение прозрачности на материале PlayCanvas. Черный пиксель на карте прозрачности будет полностью прозрачным, белый пиксель будет полностью непрозрачным, а серый пиксель будет соответствовать некоторому промежуточному значению альфа.
 
-If the material has an opacity map, it will override any alpha channel that may have been set in the diffuse map. It is less efficient to use the opacity map slot over the alpha channel of the diffuse map since two textures are generated in the PlayCanvas runtime instead of one and the default shader must do a little more work. However, if performance is not a concern and it is convenient to use an opacity map, the functionality is supported.
+Если у материала есть карта прозрачности, она переопределит любой альфа-канал, который мог быть установлен в карте диффузии. Использование слота карты прозрачности менее эффективно, чем альфа-канал карты диффузии, так как во время выполнения PlayCanvas генерируются две текстуры вместо одной, и стандартный шейдер должен выполнить немного больше работы. Однако, если производительность не является проблемой и удобно использовать карту прозрачности, функциональность поддерживается.
 
 **Bump**
 
-Assigning a Normal Bump map to this slot enables normal mapping. Note that, by default, the 'Amount' value for the Bump slot is set to 30. PlayCanvas effectively ignores this value and treats it as if it were set to 100, so it is recommended that you set this to 100 in Max also in order to make a render match the real-time rendering more closely.
+Назначение карты Normal Bump на этот слот позволяет использовать нормальное отображение. Обратите внимание, что по умолчанию значение "Amount" для слота Bump установлено на 30. PlayCanvas фактически игнорирует это значение и обрабатывает его так, как если бы оно было установлено на 100, поэтому рекомендуется установить его на 100 в Max, чтобы рендер соответствовал реальному времени выполнения.
 
-There are different ways to author normal maps, the main two differing in the format of the green component. For example, by default, 3DS Max would expect a normal map for a brick wall to appear as follows:
+Существуют разные способы создания нормальных карт, два основных из которых отличаются форматом зеленого компонента. Например, по умолчанию 3DS Max ожидает, что нормальная карта для кирпичной стены будет выглядеть следующим образом:
 
-![Normal map][8]
+![Нормальная карта][8]
 
-Notice lighter areas at the bottom edge of raised areas. PlayCanvas expects the green component (or the Y component of each normal in the normal map) to be flipped. Loading the file into Photoshop, selecting the green channel and pressing Ctrl+I to invert the channel gives:
+Обратите внимание на более светлые области у нижнего края выступающих участков. PlayCanvas ожидает, что зеленый компонент (или компонент Y каждой нормали на нормальной карте) будет перевернут. Загрузив файл в Photoshop, выбрав зеленый канал и нажав Ctrl+I для инвертирования канала, получим:
 
-![Normal map with Y component flipped][9]
+![Нормальная карта с перевернутым компонентом Y][9]
 
-Now, lighting in PlayCanvas will be consistent.
+Теперь освещение в PlayCanvas будет согласованным.
 
-If the assigned normal map has an alpha channel, it will be treated as a parallax map with the alpha channel interpreted as a height map. Lighter areas of the height map are treated as 'higher' than the darker areas.
+Если назначенная нормальная карта имеет альфа-канал, он будет рассматриваться как карта параллакса, а альфа-канал будет интерпретироваться как карта высот. Более светлые области карты высот рассматриваются как "выше" темных областей.
 
-**Reflection**
+**Отражение**
 
-Assigning a Bitmap map to this slot enables sphere mapping in the PlayCanvas material. The bitmap would look something like this:
+Назначение Bitmap-карты на этот слот позволяет использовать сферическое отображение в материале PlayCanvas. Битмап будет выглядеть примерно так:
 
-![Sphere map][10]
+![Сферическая карта][10]
 
-Sphere mapping is one of the cheapest, least 'convincing' forms of reflection mapping, but in many scenarios it is sufficient to provide a pleasing glossy sheen to surfaces.
+Сферическое отображение - один из самых дешевых и наименее "убедительных" видов отображения отражений, но во многих сценариях это достаточно, чтобы обеспечить приятный глянцевый блеск поверхностям.
 
 ---
 
 ## Autodesk Maya
 
-### Maya Materials
+### Материалы Maya
 
-You should use the standard material types in Maya: lambert, blinn and phong. The highlighted areas in the screenshot below show the material settings that are respected when you export to PlayCanvas:
+Вы должны использовать стандартные типы материалов в Maya: ламберт, блит и фонг. Выделенные области на скриншоте ниже показывают настройки материала, которые учитываются при экспорте в PlayCanvas:
 
-![Maya material editor][11]
+![Редактор материалов Maya][11]
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: https://cgcookie.com/learn-blender

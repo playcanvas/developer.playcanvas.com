@@ -1,69 +1,68 @@
 ---
-title: WebXR UI Interaction
+title: Взаимодействие с WebXR UI
 layout: tutorial-page.hbs
 tags: vr, ar, input, ui
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460449/314C07-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/TAYVQgU2/" title="WebXR UI Interaction" allow="xr-spatial-tracking"></iframe>
 
-*Click the VR/AR button if you have a VR/AR compatible device/headset.*
+*Нажмите кнопку VR/AR, если у вас есть совместимое устройство/гарнитура VR/AR.*
 
-This is a WebXR experience that provides interaction between UI and XR input source, such as: laser pointer; gaze; touch screen. Supports desktop, mobile, Oculus Browser, Google CardboardTM, Google DaydreamTM, Samsung Gear VRTM and other VR/AR headsets.
+Это WebXR-приложение, которое обеспечивает взаимодействие между пользовательским интерфейсом и источником ввода XR, такими как: лазерный указатель; взгляд; сенсорный экран. Поддерживает настольные компьютеры, мобильные устройства, Oculus Browser, Google Cardboard™, Google Daydream™, Samsung Gear VR™ и другие гарнитуры VR/AR.
 
-Let's have a look at the source of the [tutorial project][1].
+Давайте посмотрим на исходный код [учебного проекта][1].
 
-## Entering VR/AR
+## Вход в VR/AR
 
-Every WebXR experience on PlayCanvas will always have these two elements in some form:
+Каждый WebXR-опыт на PlayCanvas всегда будет иметь эти два элемента в той или иной форме:
 
-* Adding a user interaction for the user to enter VR/AR
-* Enabling VR/AR on the camera
+* Добавление пользовательского взаимодействия для входа пользователя в VR/AR
+* Включение VR/AR на камере
 
 ```javascript
 button.element.on('click', function() {
-    // check support for VR
+    // проверка поддержки VR
     if (app.xr.isAvailable(pc.XRTYPE_VR)) {
-        // start VR session
+        // запуск сессии VR
         cameraEntity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });
 ```
 
-In this project, we have `xr.js` which is added to the Root entity. It manages VR and AR UI buttons, reacts to XR availability changes and XR session state changes.
+В этом проекте у нас есть `xr.js`, который добавлен к корневой сущности (Root Entity). Он управляет кнопками пользовательского интерфейса VR и AR, реагирует на изменения доступности XR и изменения состояния сеанса XR.
 
-To read more about the direct PlayCanvas API for WebXR, please refer to the [User Manual][2].
+Чтобы узнать больше о прямом API PlayCanvas для WebXR, пожалуйста, обратитесь к [Руководству пользователя][2].
 
+## Типы ввода XR
 
-## XR Input Types
+Уровень точности для устройств ввода можно разделить на следующие группы (DOF == степени свободы):
 
-The level of fidelity for input devices can be broken into the following groups (DOF == Degrees of Freedom):
+* **Gaze** - тип по умолчанию, который не имеет собственной позиции и ориентации и основан на ориентации головного дисплея. Проще говоря - он всегда направлен вперед в том направлении, в котором смотрит пользователь. К ним относятся мобильные устройства виртуальной реальности, такие как Google Cardboard™ и Samsung Gear VR™.
+* **Screen** - источник ввода на основе сенсорного экрана, который возможен в AR. Например, на мобильных устройствах с сенсорными экранами.
+* **Tracked Pointer** - источник ввода, который имеет отслеживаемый поворот и опционально отслеживаемую позицию в пространстве. Обычно это устройство, которое можно схватить, и оно связано с руками, либо в виде контроллеров для рук, либо в виде отслеживаемых рук. Это может быть: Google Daydream™, Gear VR™ Controller, Oculus Touch™, контроллеры Vive™ и многие другие.
 
-* **Gaze** - The default type which has no position and orientation of its own, and is based on the orientation of the head mounted display. Simply put - it is always facing forwards in the direction the user is facing. These include mobile-based VR devices such as Google CardboardTM and Samsung Gear VRTM.
-* **Screen** - Touch based input source, which is possible in AR. For example, on mobile devices with touch screens.
-* **Tracked Pointer** - Input source which has a tracked rotation and an optionally tracked position in space. This is usually a grippable device, and is associated with hands, either as hand controllers or tracked hands itself. This can be: Google DaydreamTM, Gear VRTM Controller, Oculus TouchTM, ViveTM controllers and many others.
+У каждого источника ввода есть луч с началом, откуда он начинается, и направлением, в котором он указывает. Реализация источника ввода WebXR в PlayCanvas поддерживает все типы источников ввода без дополнительной работы со стороны разработчика. Если источник ввода можно схватить, то мы можем отобразить его модель на основе предоставленной позиции и вращения.
 
-Every input source has a ray with an origin where it starts and a direction in which it is pointing. WebXR input source implementation in PlayCanvas supports all input source types without any extra work from a developer. If an input source is grippable, then we can render its model based on the provided position and rotation.
+### Источники ввода
 
-### Input Sources
-
-The system for the tracked input sources consists of two files:
+Система для отслеживаемых источников ввода состоит из двух файлов:
 
 #### `controllers.js`
 
-This tracks added input sources using [XrInput][4] and makes instances of controller entities for them. For example:
+Он отслеживает добавленные источники ввода с использованием [XrInput][4] и создает экземпляры сущностей контроллеров для них. Например:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
-    // new input source is added
+    // новый источник ввода добавлен
 });
 ```
 
 #### `controller.js`
 
-This is attached to each entity that represents an input source and has the original [XrInputSource][5] associated with it. When an input source can be gripped, it will enable the child entity for the visual model for a controller.
+Этот файл присоединен к каждой сущности, представляющей источник ввода, и имеет связанный с ним оригинальный [XrInputSource][5]. Когда источник ввода может быть схвачен, он активирует дочернюю сущность для визуальной модели контроллера.
 
-On each update, it will position and rotate the entity based on the input source position and rotation:
+При каждом обновлении он будет позиционировать и вращать сущность на основе позиции и вращения источника ввода:
 
 ```javascript
 if (inputSource.grip) {
@@ -74,25 +73,25 @@ if (inputSource.grip) {
 ```
 ## UI
 
-3D UI is created using [Button][6] and [Element][7] components. Using combination of both, we can create interactive buttons in 3D space.
+3D UI создается с использованием компонентов [Button][6] и [Element][7]. Используя их комбинацию, мы можем создавать интерактивные кнопки в 3D-пространстве.
 
-Creating a 3D UI for an XR environment is exactly the same as creating a 3D UI for mouse/touch interaction in a non-XR environment. Read more on creating [User Interfaces][3].
+Создание 3D-интерфейса для XR-окружения абсолютно такое же, как и создание 3D-интерфейса для взаимодействия с мышью/сенсорным экраном в не-XR-окружении. Узнайте больше о создании [User Interfaces][3].
 
-By default, each XrInputSource has an `elementInput` property enabled. This means it will interact with Button components just like mouse or touch input, but using its associated 3D ray. Each input source has a ray that has an [origin][8] and a [direction][9]. In this tutorial, we visualize an input source's ray:
+По умолчанию у каждого XrInputSource включено свойство `elementInput`. Это означает, что он будет взаимодействовать с компонентами Button так же, как и ввод мыши или касания, но с использованием связанного с ним 3D-луча. У каждого источника ввода есть луч, который имеет [начало][8] и [направление][9]. В этом уроке мы визуализируем луч источника ввода:
 
 ```javascript
-// set starting point of ray
+// установить начальную точку луча
 vecA.copy(inputSource.getOrigin());
-// set end point of ray
+// установить конечную точку луча
 vecB.copy(inputSource.getDirection());
 vecB.scale(1000).add(vecA);
-// render line between those two points
+// отобразить линию между этими двумя точками
 app.renderLine(vecA, vecB, color);
 ```
 
-## UI Interaction
+## Взаимодействие с пользовательским интерфейсом
 
-In this tutorial, we have two types of buttons: Rotate (button-rotate.js) and Color (button-color.js) buttons. When rotate button is [clicked][10], it will set the rotation speed of a cube:
+В этом уроке у нас есть два типа кнопок: кнопки Вращения (button-rotate.js) и Цвета (button-color.js). Когда нажимается кнопка вращения [clicked][10], она устанавливает скорость вращения куба:
 
 ```javascript
 entity.button.on('click', function() {
@@ -100,9 +99,27 @@ entity.button.on('click', function() {
 });
 ```
 
-When the color button is clicked, we change the diffuse color of each mesh instance of a cube model.
+# Issue Tracker
 
-This UI interaction is agnostic to input source: either it originates from VR handheld devices; gaze input of mobile VR; on-screen touch in an AR environment; as well as classic mouse and touch. So creating truly multi-platform applications and testing is easy.
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в нашем [Issue Tracker](https://github.com/playcanvas/engine/issues).
+
+# Руководства
+
+- [Tutorial Thumbnail](https://developer.playcanvas.com/en/tutorials/thumbnail/)
+- [Entity](https://developer.playcanvas.com/en/tutorials/entity/)
+- [Material Asset](https://developer.playcanvas.com/en/tutorials/material-asset/)
+- [Material Inspector](https://developer.playcanvas.com/en/tutorials/material-inspector/)
+- [Shader Editor](https://developer.playcanvas.com/en/tutorials/shader-editor/)
+- [Node Inspector](https://developer.playcanvas.com/en/tutorials/node-inspector/)
+- [Texture Inspector](https://developer.playcanvas.com/en/tutorials/texture-inspector/)
+- [Graph Inspector](https://developer.playcanvas.com/en/tutorials/graph-inspector/)
+- [Asset](https://developer.playcanvas.com/en/tutorials/asset/)
+- [Graph Editor](https://developer.playcanvas.com/en/tutorials/graph-editor/)
+- [Assets](https://developer.playcanvas.com/en/tutorials/assets/)
+
+Когда нажимается кнопка цвета, мы меняем диффузный цвет каждого экземпляра сетки модели куба.
+
+Это взаимодействие с пользовательским интерфейсом не зависит от источника ввода: будь то портативные устройства VR; ввод взгляда в мобильном VR; сенсорный экран в среде AR; а также классические мышь и сенсорный экран. Таким образом, создание и тестирование действительно мультиплатформенных приложений становится легким.
 
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
 [2]: /user-manual/xr/using-webxr/

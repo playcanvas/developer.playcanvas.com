@@ -1,38 +1,38 @@
 ---
-title: Запекание света
+title: Световые фильтры (Light Cookies)
 layout: tutorial-page.hbs
 tags: lighting
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/AGtssoOU/" title="Light Cookies"></iframe>
 
-Find out more by forking the [full project][1].
+Узнайте больше, создав копию [полного проекта][1].
 
-In theatre it is common to create visual effects on stage by using shape masks to cast shadows across the scene. These masks are called "cucoloris" or "cookies". Creating a light cookie in WebGL using PlayCanvas is achieved using a texture or a cubemap that is applied to the Light Component. Light Cookies are applicable to spot lights and omni lights.
+На театральной сцене часто создают визуальные эффекты, используя маски формы для создания теней на сцене. Эти маски называются "cucoloris" или "cookies". Создание светового фильтра в WebGL с использованием PlayCanvas достигается с помощью текстуры или кубической карты, которая применяется к компоненту Light. Световые фильтры применимы к прожекторам и всенаправленным источникам света.
 
 ![Grid Cookie][2]
-**A simple grid cookie gives the impression of a window**
+**Простой решетчатый фильтр создает впечатление окна**
 
-## Cookie Texture
+## Текстура фильтра
 
-A cookie texture is just a regular texture asset which is applied to a spot light component in the Cookie section. When a cookie is applied you can choose which channels of the texture to use. For example, if you are doing a simple mask, you can use just the Alpha channel. Or if you would like a full color effect like a stained glass window you can use the full RGB value.
+Текстура фильтра - это обычный текстурный Asset, который применяется к компоненту прожектора в разделе Cookie. При применении фильтра вы можете выбрать, какие каналы текстуры использовать. Например, если вы делаете простую маску, вы можете использовать только альфа-канал. Или, если вы хотите полноцветный эффект, например, витражное окно, вы можете использовать полное значение RGB.
 
-![Light Settings][3]
+![Настройки света][3]
 
-## Cookie Cubemap
+## Кубическая карта фильтра
 
-For an omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
+Для всенаправленного источника света фильтр должен быть кубической картой, чтобы он мог проецироваться в 6 направлениях вокруг точки света.
 
-## Use Cases
+## Варианты использования
 
-**Shaped Lights** - cookies are useful for masking the shape of a light source. For example, if you're scene contains a window or a fluorescent strip light using a spot light will create a light shape that is rounded. You can mask the shape of the light to be long and thin, or square in order to simulate the shape of the light.
+**Форма света** - фильтры полезны для маскировки формы источника света. Например, если ваша сцена содержит окно или люминесцентный светильник, использование прожектора создаст форму света, которая округлена. Вы можете изменить форму света на длинную и тонкую или квадратную, чтобы имитировать форму света.
 
-![Shaped Light][5]
+![Форма света][5]
 
-**Torches** - Torches and headlights don't light a surface evenly instead they have light and dark "caustic" areas. You can use a light cookie to create this effect.
+**Фонари** - Фонари и фары не освещают поверхность равномерно, вместо этого у них есть светлые и темные "каустические" области. Вы можете использовать световой фильтр для создания этого эффекта.
 
-![Torch Light][4]
+![Свет фонарика][4]
 
 [1]: https://playcanvas.com/project/409793/overview/example-light-cookies
 [2]: /images/tutorials/intermediate/light-cookies/window-cookie.jpg

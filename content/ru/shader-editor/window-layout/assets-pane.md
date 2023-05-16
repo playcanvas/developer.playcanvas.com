@@ -1,21 +1,21 @@
 ---
-title: Assets Pane
+title: Панель ассетов
 layout: shader-editor-page.hbs
 position: 4
 ---
 
-The Assets Pane is where a project’s graphs, materials and textures appear.
+Панель ассетов - это место, где отображаются графы, материалы и текстуры проекта.
 
-![Assets Pane][1]
+![Панель ассетов][1]
 
-| How to | |
+| Как выполнить | |
 |---|---|
-| Select an item | Click an item. Its properties in the [Inspector Pane][2]. |
-| Delete an item | Select the item and press the delete button or access the item's context menu and select 'Delete'. |
-| Filter the list of items | Enter text into the filter entry box. |
-| Create a Graph | Click the '+ NEW GRAPH' button. |
-| Create a Material | Select the base graph and on its [Graph Inspector][3] click the '+ NEW MATERIAL' button. |
-| Create a Texture | Drag a supported texture file onto the Assets Pane. |
+| Выбрать элемент | Щелкните по элементу. Его свойства в [Инспекторе][2]. |
+| Удалить элемент | Выберите элемент и нажмите кнопку удаления или откройте контекстное меню элемента и выберите «Delete». |
+| Отфильтровать список элементов | Введите текст в поле для фильтрации. |
+| Создать граф | Нажмите кнопку '+ NEW GRAPH'. |
+| Создать материал | Выберите базовый граф и в его [Инспекторе графа][3] нажмите кнопку '+ NEW MATERIAL'. |
+| Создать текстуру | Перетащите поддерживаемый текстурный файл на Панель ассетов. |
 
 [1]: /images/shader-editor/assets-pane.png
 [2]: /shader-editor/window-layout/inspector-pane

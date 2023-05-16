@@ -1,108 +1,108 @@
 ---
-title: Material
+title: Материал
 layout: usermanual-page.hbs
 position: 10
 ---
 
-Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.
+Каждая поверхность 3D-модели отображается с использованием материала. Материал определяет свойства этой поверхности, такие как ее цвет, блеск, неровность.
 
-In PlayCanvas, a material is an Asset type which collects all these properties together. By default, it represents a Physical material. This exposes the fundamental properties that can be used to create many different types for visual effects, from smooth plastic, to rough wood, or scratched metal.
+В PlayCanvas материал представляет собой тип Asset, который собирает все эти свойства вместе. По умолчанию он представляет собой физический материал. Это позволяет использовать основные свойства для создания множества различных типов визуальных эффектов, от гладкого пластика до шероховатого дерева или поцарапанного металла.
 
-We also support our old Phong Material type.
+Мы также поддерживаем наш старый тип материала Phong.
 
-## Importing Materials
+## Импорт материалов
 
-Materials are imported automatically when you upload a 3D model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they exist in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
+Материалы автоматически импортируются при загрузке 3D-модели (например, FBX или COLLADA) в PlayCanvas. Материалы будут созданы с теми же свойствами, что и в вашем инструменте 3D-моделирования. Если вы загружаете с использованием встроенных медиа (только FBX), все соответствующие текстурные карты будут автоматически настроены для вас.
 
-## Creating New Materials
+## Создание новых материалов
 
-You can create new materials directly from the PlayCanvas Editor interface.
+Вы можете создавать новые материалы прямо из интерфейса редактора PlayCanvas.
 
 <img loading="lazy" src="/images/user-manual/assets/materials/create-asset-menu.jpg" width="300">
 
-This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
+Это создает новый материал Asset и открывает инспектор материалов в правой части экрана.
 
-## Selecting a Material
+## Выбор материала
 
 <img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;">
 
-In order to edit a material, first you must select it. This will bring up the material inspector.
+Чтобы изменить материал, сначала вы должны выбрать его. Это вызовет инспектор материалов.
 
-You can select a material in the asset panel. You can also select materials from the model inspector or from the model component.
+Вы можете выбрать материал в панели ассетов. Вы также можете выбирать материалы из инспектора моделей или из компонента модели.
 
-Generally, clicking on a material preview icon will take you to the material inspector.
+В целом, щелчок по значку предварительного просмотра материала откроет инспектор материалов.
 
-## Assigning Materials
+## Назначение материалов
 
 <img loading="lazy" src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
+Вы можете изменить, какие материалы назначены на какую модель ассетов, или настроить материалы конкретной Entity с компонентом модели.
 
-When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
+Когда вы выбираете Entity с компонентом модели, вы увидите две кнопки - Asset Materials и Entity Materials.
 
 <br style="clear:both;">
 
 <img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
+Нажатие на Asset Materials выберет актив модели. Вы также можете выбрать актив модели из панели ассетов. Инспектор модели будет показывать сетки модели и какой материал назначен на каждую. Вы можете очистить материал, используя кнопку X, и нажать на пустой слот, чтобы назначить новый материал.
 
-You can also drag and drop material Assets from the asset panel onto the material slot.
+Вы также можете перетаскивать материалы Asset из панели ассетов на слот материала.
 
 <br style="clear:both;">
 
-Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
+Нажатие на Entity Materials сначала попросит вас выбрать экземпляр сетки, для которого вы хотите настроить материал:
 
 <img loading="lazy" src="/images/user-manual/assets/materials/select.png" style="max-width: 100%">
 
-After selecting the mesh instance a new material picker will appear in the model component:
+После выбора экземпляра сетки в компоненте модели появится новый выбор материала:
 
 <img loading="lazy" src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%">
 
-Then you can select a different material for this particular Entity:
+Затем вы можете выбрать другой материал для этой конкретной Entity:
 
 <img loading="lazy" src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%">
 
 <br style="clear:both;">
 
-## Editing a Material
+## Редактирование материала
 
 <img loading="lazy" src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Once you have a material selected you can edit its properties.
+После выбора материала вы можете изменить его свойства.
 
-The Editor supports to types of material 'Shading Model', this is defined in a drop-down at the top of the material inspector.
+Редактор поддерживает два типа материала 'Shading Model', которые определяются в выпадающем списке в верхней части инспектора материалов.
 
-### Physical
+### Физический
 
-The physical shading model is our most advanced shading model. This is the model for PlayCanvas's Physically Based Renderer (PBR).
+Физическая модель затенения - это наша самая продвинутая модель затенения. Это модель для физически основанного рендерера (PBR) PlayCanvas.
 
-[Physical Material Properties][1]
+[Свойства физического материала][1]
 
 ### Phong
 
-The phong shading model is our legacy shading model. Use this for compatibility reasons.
+Модель затенения Phong - это наша устаревшая модель затенения. Используйте это для обеспечения совместимости.
 
-[Phong Material Properties][2]
+[Свойства материала Phong][2]
 
-## Material Maps
+## Карты материалов
 
 <img loading="lazy" src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
+Большая часть редактирования материала связана с созданием и назначением текстурных карт для различных слотов, подробно описанных на страницах выше.
 
-There are a few options that are available on most texture map slots for a material.
+Существует несколько параметров, доступных для большинства слотов текстурных карт материала.
 
 ### Texture Asset
 
-First is the texture asset, upload an image to PlayCanvas and we'll create a texture asset for you. you can assign this to a slot on a material.
+Во-первых, это текстурный актив, загрузите изображение в PlayCanvas, и мы создадим для вас текстурный актив. Вы можете назначить его на слот материала.
 
-### Color or Tint Color
+### Цвет или цвет тонирования
 
-Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
+Некоторые слоты карт могут быть однотонными, а не текстурными картами. Некоторые слоты также поддерживают цвет тонирования, если также назначена текстура. Если включено, цвет тонирования умножается на цвет в слоте текстурной карты.
 
-### Channel
+### Канал
 
-Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
+Некоторым картам требуется только одно значение серого масштаба, например, от 0,0 до 1,0. В этом случае можно выбрать, какой канал текстуры использовать. **RGB** означает, что используются все три канала. **R**, **G** или **B** означает, что будет использоваться только красный, зеленый или синий канал.
 
 [1]: /user-manual/assets/materials/physical-material
 [2]: /user-manual/assets/materials/phong-material

@@ -1,71 +1,71 @@
 ---
-title: Хостинг PlayCanvas
+title: Размещение PlayCanvas
 layout: usermanual-page.hbs
 position: 1
 ---
 
-The fastest, easiest, most convenient way to publish your game is to publish it to playcanvas.com.
+Самый быстрый, простой и удобный способ опубликовать вашу игру - опубликовать ее на playcanvas.com.
 
-Publishing to PlayCanvas consists of two simple steps:
+Публикация на PlayCanvas состоит из двух простых шагов:
 
-1. Publish a new **Build**
-2. Set the build as the **Primary Build**
+1. Опубликовать новую **Сборку**
+2. Установить сборку как **Основную сборку**
 
-To publish you will need to have at least one scene in your project.
+Для публикации вам потребуется иметь хотя бы одну сцену в вашем проекте.
 
-## Publishing a new Build
+## Публикация новой сборки
 
-* Go to your Project and open the Editor.
-* Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
+* Перейдите к вашему проекту и откройте редактор.
+* Нажмите на кнопку <span class="pc-icon">&#57911;</span> на левой боковой панели инструментов или нажмите Публикация в верхнем левом меню
 
-![Publish Button][1]
+![Кнопка публикации][1]
 
-* This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
+* Это откроет диалоговое окно публикации. Здесь вы можете опубликовать сборку или скачать сборку для самостоятельного размещения.
 
-![Publish][2]
+![Публикация][2]
 
-* Click the PUBLISH button next to "Publish on PlayCanvas".
+* Нажмите кнопку ОПУБЛИКОВАТЬ рядом с "Опубликовать на PlayCanvas".
 
-![Publish New Build][3]
+![Опубликовать новую сборку][3]
 
-* You will then have to fill out some details about your new build. The available fields are:
+* Затем вам нужно будет заполнить некоторые данные о вашей новой сборке. Доступные поля:
 
-  * *Image*: Click on the image to upload a different one if you want. This will be used when sharing the build on Social Media.
-  * *Title*: The title of your build.
-  * *Description*: The description of your build. This will be used when sharing the link of your build on Social Media.
-  * *Version*: The version is there to help you distinguish one build from another. Use a value that makes sense to you.
-  * *Release Notes*: Enter any new changes you made for this build. Again like the Version, this will only be shown to you so that you keep better track of your builds.
-  * *Concatenate Scripts*: Check this to combine all of your PlayCanvas scripts into a single JavaScript file.
-  * *Minify Scripts*: Check this to minify your PlayCanvas scripts to reduce the file size.
-  * *Generate Source Map*: Include Source Maps with the build. This can be useful for debugging but is generally disabled when publishing a production version of your app.
-  * *Optimize Scene Format*: Compresses the scene JSON up to 50%. Read more [here][6].
+  * *Изображение*: Нажмите на изображение, чтобы загрузить другое, если хотите. Оно будет использоваться при публикации сборки в социальных сетях.
+  * *Название*: Название вашей сборки.
+  * *Описание*: Описание вашей сборки. Оно будет использоваться при публикации ссылки на вашу сборку в социальных сетях.
+  * *Версия*: Версия помогает вам различать одну сборку от другой. Используйте значение, которое имеет смысл для вас.
+  * *Примечания к выпуску*: Введите все новые изменения, которые вы сделали для этой сборки. Как и версия, это будет показано только вам, чтобы вы лучше отслеживали свои сборки.
+  * *Склеить скрипты*: Отметьте это, чтобы объединить все ваши скрипты PlayCanvas в один файл JavaScript.
+  * *Минифицировать скрипты*: Отметьте это, чтобы минифицировать ваши скрипты PlayCanvas и уменьшить размер файла.
+  * *Создать карту исходников*: Включить карты исходников в сборку. Это может быть полезно для отладки, но обычно отключается при публикации продакшн-версии вашего приложения.
+  * *Оптимизировать формат сцены*: Сжимает JSON сцены до 50%. Подробнее [здесь][6].
 
-![Select scenes][4]
+![Выбор сцен][4]
 
-* Select the Scenes you want to include in your build from the list. Notice that the Scene with the active banner icon will be loaded first when your build is launched if you include it in the build.
-* Click 'PUBLISH NOW'
-* You will see a new build created in the BUILDS tab. Wait until it finishes processing.
-* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+* Выберите сцены, которые вы хотите включить в вашу сборку, из списка. Обратите внимание, что сцена с активным значком баннера будет загружена первой при запуске вашей сборки, если вы включите ее в сборку.
+* Нажмите 'ОПУБЛИКОВАТЬ СЕЙЧАС'
+* Вы увидите новую сборку, созданную на вкладке СБОРКИ. Подождите, пока она закончит обработку.
+* Ваше веб-приложение теперь в сети! Не стесняйтесь твитнуть его и поделиться в Facebook прямо с опубликованного URL.
 
-Builds are given permanent link in the form `https://playcanv.as/b/BUILD_ID/`. This link will be valid until you delete the build. If you want to share a link to your game, you should probably use the published project link explained below.
+Сборкам присваивается постоянная ссылка в форме `https://playcanv.as/b/BUILD_ID/`. Эта ссылка будет действительна до тех пор, пока вы не удалите сборку. Если вы хотите поделиться ссылкой на вашу игру, вам, вероятно, следует использовать опубликованную ссылку на проект, объясненную ниже.
 
-## Selecting a Primary Build
+## Выбор основной сборки
 
-Click Builds on the same popup.
+Нажмите Сборки на том же всплывающем окне.
 
-![Builds][5]
+![Сборки][5]
 
-Here you can see a list of existing published builds.
+Здесь вы можете увидеть список существующих опубликованных сборок.
 
-You can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button on the project's home page.
+Вы также можете установить основную сборку для вашего проекта, нажав на значок баннера слева от каждой сборки. Это будет сборка, которую пользователи будут играть, когда нажимают на кнопку ВОСПРОИЗВЕДЕНИЕ на домашней странице проекта.
 
-It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
+Полезно иметь одну ссылку, которая всегда будет ссылаться на последнюю версию вашей игры. Таким образом, вам не придется беспокоиться о неработающих ссылках, когда вы удаляете старые сборки. Вот почему каждый проект имеет ссылку на основную сборку. Она всегда будет иметь форму `https://playcanv.as/p/PROJECT_ID/`
 
 <div class="alert alert-info">
-If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
+Если вы делитесь ссылкой на вашу игру, вам следует использовать ссылку на основную сборку. Это означает, что вы знаете, что она не изменится при повторной публикации.
 </div>
 
-The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.
+В первый раз, когда вы публикуете сборку, она автоматически становится основной сборкой. Для любой последующей сборки вы можете выбрать, когда назначить ее основной сборкой. Это означает, что вы можете публиковать сборки и тестировать их, прежде чем окончательно публиковать их для вашей аудитории.
 
 [1]: /images/user-manual/publishing/toolbar-publish.png
 [2]: /images/user-manual/publishing/dialog-publish.png

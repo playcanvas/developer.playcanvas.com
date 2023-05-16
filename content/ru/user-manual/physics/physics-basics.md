@@ -1,102 +1,186 @@
 ---
-title: Physics Basics
+title: Основы физики
 layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas incorporates a very powerful physics engine called [ammo.js][1]. This is a browser port of the open source C++ Bullet physics engine.
+PlayCanvas включает в себя очень мощный физический движок под названием [ammo.js][1]. Это порт браузера с открытым исходным кодом C++ физического движка Bullet.
 
-PlayCanvas provides the [rigidbody][2] and [collision][3] components to set up physics simulations.
+PlayCanvas предоставляет компоненты [rigidbody][2] и [collision][3] для настройки физических симуляций.
 
-## Enabling Physics
+## Включение физики
 
-By default, a new PlayCanvas project does not include ammo.js modules. This is because ammo.js weighs in at several hundred kilobytes and your app should not have to load this library if it is not needed.
+По умолчанию новый проект PlayCanvas не включает модули ammo.js. Это связано с тем, что ammo.js имеет размер в несколько сотен килобайт, и вашему приложению не нужно загружать эту библиотеку, если она не требуется.
 
-You can import ammo.js modules into your project using the import button on the Scene Settings panel:
+Вы можете импортировать модули ammo.js в ваш проект с помощью кнопки импорта на панели настроек сцены:
 
-![Physics Settings][4]
+![Настройки физики][4]
 
-This will import the default build of ammo.js provided by PlayCanvas. However please note it is possible to compile your own version of ammo.js and add it to your project instead. For more information see [this page][11].
+Это импортирует стандартную сборку ammo.js, предоставляемую PlayCanvas. Однако, обратите внимание, что возможно скомпилировать вашу собственную версию ammo.js и добавить ее в ваш проект вместо этого. Для получения дополнительной информации см. [эту страницу][11].
 
-For details on migrating legacy projects to the latest ammo.js see [this page][10].
+Для получения информации о миграции устаревших проектов на последнюю версию ammo.js см. [эту страницу][10].
 
-## Gravity
+## Гравитация
 
-In the same Settings panel, you can set global gravity of the physics simulation. Gravity is a constant force applied to all rigid bodies in your scene. By default, this is set to -9.81 in the world's negative Y axis (straight down, in other words). This default approximates Earth gravity. But you may want to increase or decrease this value. For example, for a game set in space, you will probably want to set gravity to zero.
+В той же панели настроек вы можете установить глобальную гравитацию физической симуляции. Гравитация - это постоянная сила, действующая на все твердые тела в вашей сцене. По умолчанию это значение равно -9,81 по отрицательной оси Y мира (то есть прямо вниз). Это значение по умолчанию приближает гравитацию Земли. Но вы можете увеличить или уменьшить это значение. Например, для игры, разворачивающейся в космосе, вы, вероятно, захотите установить гравитацию равной нулю.
 
-## Units of Measurement
+## Единицы измерения
 
-By default, the PlayCanvas physics engine interprets 1 unit as 1 meter. Therefore, for objects to fall at a rate that appears to be physically accurate, you should ensure that your scenes size objects appropriately.
+По умолчанию физический движок PlayCanvas интерпретирует 1 единицу как 1 метр. Поэтому, чтобы объекты падали с физически точной скоростью, вы должны убедиться, что объекты ваших сцен имеют соответствующий размер.
 
-For example, if your game features a character that is 1.8m tall, he should be 1.8 units high in the Editor's 3D view.
+Например, если ваша игра содержит персонажа, который имеет высоту 1,8 м, его высота в редакторе 3D должна составлять 1,8 единицы.
 
-## Rigid Bodies
+## Твердые тела
 
-You can make any entity in your scene participate in the physics simulation. Just add a rigidbody component and a collision component. The rigidbody component specifies a type:
+Вы можете сделать любую сущность в вашей сцене участником физической симуляции. Просто добавьте компонент твердого тела (rigidbody) и компонент столкновения (collision). Компонент твердого тела определяет тип:
 
-* Static - A physical object that never moves
-* Dynamic - A physical object that will move in response to an applied force
-* Kinematic - A physical object that can only be positioned explicitly via the API
+* Статический - физический объект, который никогда не двигается
+* Динамический - физический объект, который будет двигаться под действием приложенной силы
+* Кинематический - физический объект, который можно позиционировать только явно через API
 
-It also specifies physical properties like mass, friction and restitution (essentially a measure of 'bounciness').
+Он также определяет физические свойства, такие как масса, трение и восстановление (в основном мера "упругости").
 
-The collision component specifies the physical shape of the body. Note that a rigid body's physical shape does not have to match its graphical shape. It is typical for physical representations of objects to be much simpler than the graphical. The available collision component types are:
+Компонент столкновения определяет физическую форму тела. Обратите внимание, что физическая форма твердого тела не обязательно должна совпадать с его графической формой. Типично для физических представлений объектов быть намного проще, чем графических. Доступные типы компонентов столкновения:
 
-* Box
-* Sphere
-* Capsule
-* Cylinder
-* Mesh
-* Cone
-* [Compound][12]
+* Коробка
+* Сфера
+* Капсула
+* Цилиндр
+* Сетка
+* Конус
+* [Составной][12]
 
-## Creating a Static Ground
+## Создание статического грунта
 
-Most of the time, you will want to create some kind of static physical environment. For example, a race track or a football pitch. The simplest example is a flat plane. PlayCanvas doesn't expose a plane-type collision primitive but it does provide a box primitive. Here is how to configure a 1 unit high 10x10 box that is a static rigid body:
+В большинстве случаев вам захочется создать какую-то статическую физическую среду. Например, гоночную трассу или футбольное поле. Простейший пример - плоская поверхность. PlayCanvas не предоставляет примитива столкновения плоскости, но предоставляет примитив коробки. Вот как настроить коробку размером 10x10 и высотой 1 единицу, которая является статическим твердым телом:
 
-![Static Ground][5]
+![Статический грунт][5]
 
-You could also set the collision component type to Mesh and assign a model asset if you want something more complex.
+Вы также можете установить тип компонента столкновения на Mesh и назначить актив модели, если хотите что-то более сложное.
 
-## Creating Dynamic Bodies
+## Создание динамических тел
 
-Physics is all about movement so things get interesting when we create dynamic rigid bodies. Let's create a dynamic 1x1x1 box:
+Физика связана с движением, поэтому вещи становятся интересными, когда мы создаем динамические твердые тела. Давайте создадим динамическую коробку размером 1x1x1:
 
-![Dynamic Box][6]
+![Динамическая коробка][6]
 
-The box has been rotated so that when it collides with the static ground, it will bounce in an interesting way:
+Коробка была повернута так, что при столкновении с статическим грунтом она будет отскакивать интересным образом:
 
-![Falling Box][7]
+![Падающая коробка][7]
 
-## Creating Kinematic Bodies
+## Создание кинематических тел
 
-Sometimes, it can be useful to be able to explicitly control the motion of physical objects in your scene and have these objects exert an irresistible force on other physical objects. For example, imagine a moving platform that can carry the player across a level. To achieve this, you can set a rigid body's type to Kinematic. Let's create a kinematic box:
+Иногда может быть полезно иметь возможность явно контролировать движение физических объектов в вашей сцене и заставлять эти объекты оказывать неотразимую силу на другие физические объекты. Например, представьте себе движущуюся платформу, которая может перевозить игрока по уровню. Чтобы достичь этого, вы можете установить тип твердого тела на кинематический. Давайте создадим кинематическую коробку:
 
-![Kinematic Box][8]
+![Кинематическая коробка][8]
 
-The responsibility for animating kinematic bodies is on you, the developer. You will notice that the kinematic box shown above also has a script component with a script called movement.js assigned:
+Ответственность за анимацию кинематических тел лежит на вас, разработчике. Вы заметите, что на кинематической коробке, показанной выше, также есть компонент сценария со сценарием под названием movement.js:
 
 ```javascript
 var Movement = pc.createScript('movement');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Movement.prototype.initialize = function() {
 
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Movement.prototype.update = function(dt) {
     this.entity.setPosition(Math.sin(Date.now() / 1000), 0.5, 0);
 };
 ```
 
-This script simply animates the box along the world x-axis using a sine function. You move kinematic bodies using the standard transformation functions on the entity like ```setPosition```, ```setRotation``` and ```setEulerAngles```. Now when we run the scene, the dynamic box falls on the kinematic box and is carried along on top of it:
+Этот скрипт просто анимирует коробку вдоль мировой оси x с использованием синусоидальной функции. Вы перемещаете кинематические тела с помощью стандартных функций трансформации на объекте Entity, таких как```setPosition```# Issue Tracker
 
-![Kinematic Box][9]
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/Unity-Technologies/Graphics/issues).
 
-## Teleporting Dynamic Bodies
+# Учебные материалы
 
-Although you can use the standard entity transformation function with kinematic bodies, this is not allowed for dynamic bodies. When creating a dynamic rigid body, you pass the responsibility for setting the position and orientation of that entity to the physics engine. This means that if you try to update the position or orientation of an entity in a script using the pc.Entity API, the functions will not have an effect. Instead, you must call the teleport function on the rigid body component which explicitly notifies the physics engine you want to momentarily update a rigid body's position and/or orientation.
+- [Tutorial Thumbnail](Documentation~/images/TutorialThumbnail.png)
+
+# Содержание
+
+- [Entity](Documentation~/Entity.md)
+- [Material Asset](Documentation~/MaterialAsset.md)
+- [Material Inspector](Documentation~/MaterialInspector.md)
+- [Shader Editor](Documentation~/ShaderEditor.md)
+- [Node Inspector](Documentation~/NodeInspector.md)
+- [Texture Inspector](Documentation~/TextureInspector.md)
+- [Graph Inspector](Documentation~/GraphInspector.md)
+- [Graph Editor](Documentation~/GraphEditor.md)
+- [Assets](Documentation~/Assets.md)```setRotation```# Issue Tracker
+
+## Новая функция: Tutorial Thumbnail
+
+### Описание
+
+Добавить возможность загрузки изображения-миниатюры для каждого урока.
+
+### Задачи
+
+- [ ] Добавить поле для загрузки изображения в форму создания/редактирования урока
+- [ ] Отображать миниатюру урока в списке уроков
+
+## Исправление ошибки: Entity не сохраняется
+
+### Описание
+
+При создании новой Entity, она не сохраняется в базе данных.
+
+### Задачи
+
+- [ ] Исправить ошибку сохранения Entity
+- [ ] Добавить тесты для проверки сохранения Entity
+
+## Улучшение: Material Asset
+
+### Описание
+
+Добавить возможность просмотра и редактирования Material Asset в Material Inspector.
+
+### Задачи
+
+- [ ] Добавить вкладку Material Asset в Material Inspector
+- [ ] Реализовать функционал редактирования Material Asset
+
+## Улучшение: Shader Editor
+
+### Описание
+
+Добавить возможность просмотра и редактирования шейдеров в Shader Editor.
+
+### Задачи
+
+- [ ] Добавить вкладку Shader Editor в Node Inspector
+- [ ] Реализовать функционал редактирования шейдеров
+
+## Улучшение: Texture Inspector
+
+### Описание
+
+Добавить возможность просмотра и редактирования текстур в Texture Inspector.
+
+### Задачи
+
+- [ ] Добавить вкладку Texture Inspector в Graph Inspector
+- [ ] Реализовать функционал редактирования текстур
+
+## Улучшение: Graph Editor
+
+### Описание
+
+Добавить возможность просмотра и редактирования графов в Graph Editor.
+
+### Задачи
+
+- [ ] Добавить вкладку Graph Editor в Assets
+- [ ] Реализовать функционал редактирования графов```setEulerAngles```. Теперь, когда мы запускаем сцену, динамический ящик падает на кинематический ящик и перемещается сверху по нему:
+
+![Кинематический ящик][9]
+
+## Телепортация динамических тел
+
+Хотя для кинематических тел можно использовать стандартную функцию трансформации сущности, для динамических тел это не разрешено. Создавая динамическое твердое тело, вы передаете ответственность за установку позиции и ориентации этой сущности движку физики. Это означает, что если вы попытаетесь обновить позицию или ориентацию сущности в сценарии с использованием API pc.Entity, функции не будут иметь эффекта. Вместо этого вы должны вызвать функцию телепортации на компоненте твердого тела, которая явно уведомляет движок физики о том, что вы хотите на мгновение обновить позицию и/или ориентацию твердого тела.
 
 [1]: https://github.com/kripken/ammo.js
 [2]: /en/user-manual/packs/components/rigidbody/

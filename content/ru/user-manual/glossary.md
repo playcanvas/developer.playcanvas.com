@@ -4,109 +4,109 @@ layout: usermanual-page.hbs
 position: 26
 ---
 
-Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.
+Вот обзор некоторых терминов, которые мы используем для описания движка и инструментов PlayCanvas.
 
-## Application
+## Приложение
 
-The `Application` class is where all the useful engine stuff that your application needs to run is stored. It manages:
+Класс `Application` содержит все полезные вещи движка, необходимые для работы вашего приложения. Он управляет:
 
-* The `Scene` which includes the scene hierarchy and scene settings
-* The `ComponentSystem`s
-* The input devices (keyboard, mouse, touch and gamepad)
+* `Scene`, которая включает иерархию сцены и настройки сцены
+* `ComponentSystem`ы
+* Устройства ввода (клавиатура, мышь, сенсорный экран и геймпад)
 
-The Application is accessible from any script function (`initialize`, `update` and so on) as `this.app`.
+Приложение доступно из любой функции скрипта (`initialize`, `update` и так далее) как `this.app`.
 
 ## Asset
 
-An asset is a unit of data that is typically imported into PlayCanvas from a content creation application (such as Blender or 3D Studio Max). It can represent a 3D model, an animation, an audio sample or an image. Assets can be assigned to certain attributes of [Components][component]. For example, it is possible to assign a model asset to the 'model' attribute of a model component. Also see [Source Assets][source-asset] and [Target Assets][target-asset].
+Asset - это единица данных, которая обычно импортируется в PlayCanvas из приложения для создания контента (например, Blender или 3D Studio Max). Это может быть 3D-модель, анимация, аудио-образец или изображение. Assets могут быть назначены определенным атрибутам [Components][component]. Например, можно назначить модель Asset на атрибут 'model' компонента модели. См. также [Source Assets][source-asset] и [Target Assets][target-asset].
 
 ## Asset Pipeline
 
-The asset pipeline is a process run on the PlayCanvas servers which converts an uploaded [Source Asset][source-asset] e.g. an FBX scene file into one or more [Target Assets][target-asset] e.g. a model file, a material and some textures. The pipeline is designed to convert uploaded files into optimized versions ready to use in your game. To process an asset through the pipeline simply upload it to PlayCanvas from the dashboard or the PlayCanvas Editor.
+Asset Pipeline - это процесс, выполняемый на серверах PlayCanvas, который преобразует загруженный [Source Asset][source-asset], например, файл сцены FBX, в один или несколько [Target Assets][target-asset], например, файл модели, материал и некоторые текстуры. Pipeline предназначен для преобразования загруженных файлов в оптимизированные версии, готовые к использованию в вашей игре. Чтобы обработать Asset через Pipeline, просто загрузите его в PlayCanvas с помощью панели инструментов или редактора PlayCanvas.
 
 ## Attribute
 
-An attribute is a property of a [Component][component]. Attributes are represented in the PlayCanvas Editor interface via user interface controls (pickers, check boxes, sliders, etc). Attributes can be tweaked via these controls and, once you have launched your game from the Editor's 'Launch' button, the updates are live-streamed to the connected game in real time.
+Атрибут - это свойство [Component][component]. Атрибуты представлены в интерфейсе редактора PlayCanvas с помощью элементов пользовательского интерфейса (выборщики, флажки, ползунки и т. д.). Атрибуты можно настраивать с помощью этих элементов управления, и после запуска вашей игры с помощью кнопки "Запуск" редактора обновления в реальном времени транслируются в подключенную игру.
 
 ## Component
 
-Components describe the properties and functionality of an [Entity][entity]. In the PlayCanvas Engine, rather than defining game objects using a long chain of inherited classes, game objects are defined as an Entity and then a collection of Components.
+Компоненты описывают свойства и функциональность [Entity][entity]. В движке PlayCanvas, вместо определения игровых объектов с помощью длинной цепочки унаследованных классов, игровые объекты определяются как Entity и затем набор компонентов.
 
-Components are added to Entities via the Component menu in the PlayCanvas Editor, or they can be added at runtime via their respective `ComponentSystem` object.
+Компоненты добавляются к сущностям через меню компонентов в редакторе PlayCanvas, или они могут быть добавлены во время выполнения через соответствующий объект `ComponentSystem`.
 
 ## DOM
 
-The DOM (Document Object Model) is a way of representing an HTML document. Web browsers make an interface available for querying and modifying the DOM that makes up the HTML page that is displayed in the users browser.
+DOM (Document Object Model) - это способ представления HTML-документа. Веб-браузеры предоставляют интерфейс для запроса и изменения DOM, составляющего HTML-страницу, отображаемую в браузере пользователя.
 
 ## Entity
 
-An Entity is the one of the building blocks of your application in the [PlayCanvas Engine][playcanvas-engine]. Often an Entity will represent a single object in your game or application, though a single object may also be made of multiple Entities.
+Entity - это один из строительных блоков вашего приложения в [PlayCanvas Engine][playcanvas-engine]. Часто Entity будет представлять собой один объект в вашей игре или приложении, хотя один объект также может состоять из нескольких сущностей.
 
-All Entities have a position, rotation and scale. They have a parent node from which they inherit a transform, and they may have child nodes to which they supply their transform.
+Все сущности имеют положение, вращение и масштаб. У них есть родительский узел, от которого они наследуют преобразование, и они могут иметь дочерние узлы, которым они предоставляют свое преобразование.
 
 ## Framework
 
-The Framework is the upper layer of abstraction in the PlayCanvas Engine. It consists of high-level features such as the Entity-Component System and the interface with the PlayCanvas Editor. See the [API Reference][api-reference] for more details.
+Framework - это верхний слой абстракции в движке PlayCanvas. Он состоит из высокоуровневых функций, таких как система Entity-Component и интерфейс с редактором PlayCanvas. См. [API Reference][api-reference] для получения дополнительной информации.
 
 ## Gizmo
 
-A Gizmo is a control that can be dragged around with the mouse in order to edit the attributes of an Entity, it is usually used to edit the transform matrix. A Gizmo consists of three color-coded parts, one for each axis in 3D space. Red is the X-axis, green is the Y-axis and blue is the Z-axis. Sometimes there will also be controls for manipulating more than one axis at once, e.g. the translate gizmo features clickable plane icons to allow translation in two dimensions at once, on the X and Y, Y and Z, Z and X planes.
+Gizmo - это элемент управления, который можно перетаскивать мышью для редактирования атрибутов Entity, обычно используется для редактирования матрицы преобразования. Gizmo состоит из трех частей, окрашенных в цвета осей в 3D-пространстве. Красный - это ось X, зеленый - ось Y, а синий - ось Z. Иногда также будут элементы управления для манипулирования более чем одной осью одновременно, например, переводной Gizmo содержит кликабельные значки плоскостей для перевода в двух измерениях одновременно, на плоскостях X и Y, Y и Z, Z и X.
 
 ## High Dynamic Range
 
-High Dynamic Range or HDR refers to color information that is outside of the usual 0-1 range. In the standard range, 0 is black and 1 is the brightest color that the display device can show. In the real world there is no such limitations for example, the sun can be many times brighter than sky that surrounds it.
+High Dynamic Range или HDR относится к информации о цвете, которая находится вне обычного диапазона 0-1. В стандартном диапазоне 0 - это черный, а 1 - самый яркий цвет, который может показать устройство отображения. В реальном мире таких ограничений нет, например, солнце может быть во много раз ярче, чем окружающее его небо.
 
-## Material
+## Материал
 
-A Material is an Asset type which defines the properties of a surface on a 3D model. A Material is made up of groups of properties such as the diffuse color and specular color and references to texture assets such as the diffuse map and specular map. In the PlayCanvas Editor, Materials can be edited by selecting a model and then clicking on the Material on the model in the 3D view.
+Материал - это тип Asset, который определяет свойства поверхности на 3D-модели. Материал состоит из групп свойств, таких как диффузный цвет и зеркальный цвет, а также ссылок на текстурные активы, такие как диффузная карта и зеркальная карта. В редакторе PlayCanvas материалы можно редактировать, выбрав модель и затем щелкнув по материалу на модели в 3D-виде.
 
 ## Редактор PlayCanvas
 
-The PlayCanvas Editor is a visual editing tool which can be used by members of your development team to edit [Scenes][scene]. The PlayCanvas Editor is used to manipulate [Entities][entity]
+Редактор PlayCanvas - это визуальный инструмент редактирования, который могут использовать члены вашей команды разработчиков для редактирования [Сцен][scene]. Редактор PlayCanvas используется для управления [Entity][entity].
 
 ## Движок PlayCanvas
 
-The PlayCanvas Engine is a JavaScript library which provides all the functionality you will need to create an interactive 3D application or game.
+Движок PlayCanvas - это библиотека JavaScript, которая предоставляет все функции, необходимые для создания интерактивного 3D-приложения или игры.
 
-Programs created using the PlayCanvas Engine will run directly in a modern web browser with no need for third-party plugins.
+Программы, созданные с использованием движка PlayCanvas, будут работать непосредственно в современном веб-браузере без необходимости сторонних плагинов.
 
-## Project
+## Проект
 
-A Project is a collection of [Scenes][scene] and [Assets][asset] that belongs to a single user. Usually a single Project will only contain resources for a single application, though you can export multiple applications from a single Project.
+Проект - это коллекция [Сцен][scene] и [Assets][asset], принадлежащих одному пользователю. Обычно один проект будет содержать ресурсы только для одного приложения, хотя вы можете экспортировать несколько приложений из одного проекта.
 
-## Scene
+## Сцена
 
-A Scene is a collection of Entity data, Art data and Code data which can be loaded as a unit. A Scene may represent your entire game, or just a single level or part of your game.
+Сцена - это набор данных Entity, данных искусства и кодовых данных, которые могут быть загружены как единое целое. Сцена может представлять вашу всю игру или только один уровень или часть вашей игры.
 
-## Сценарий
+## Скрипт
 
-A Script is an [Asset][asset]. It is assigned to a Script [Component][component] on an [Entity][entity]. Scripts are written in JavaScript. They have several predefined functions that can be overridden:
+Скрипт - это [Asset][asset]. Он назначается на компонент Script [Component][component] на [Entity][entity]. Скрипты написаны на JavaScript. У них есть несколько предопределенных функций, которые могут быть переопределены:
 
-* `initialize` - called once on instantiation
-* `postInitialize` - called once after all script `initialize` functions have been called
-* `update` - called every frame
-* `postUpdate` - called every frame after all script `update` functions have been called
-* `swap` - called when a script is 'hot reloaded' (due to a save event in the Code Editor)
+* `initialize` - вызывается один раз при создании экземпляра
+* `postInitialize` - вызывается один раз после вызова всех функций `initialize` скрипта
+* `update` - вызывается каждый кадр
+* `postUpdate` - вызывается каждый кадр после вызова всех функций `update` скрипта
+* `swap` - вызывается при "горячей перезагрузке" скрипта (из-за события сохранения в редакторе кода)
 
-## Source Asset
+## Исходный Asset
 
-A source asset is the original file that has been uploaded into PlayCanvas. Source Assets are the input for the PlayCanvas asset pipeline which creates [Target Assets][target-asset].
+Исходный Asset - это оригинальный файл, который был загружен в PlayCanvas. Исходные Asset являются входными данными для конвейера ассетов PlayCanvas, который создает [Целевые активы][target-asset].
 
-## Target Asset
+## Целевой Asset
 
-A target asset is a file that can be loaded into your game at runtime. It will be in a format ready to use in the Engine. Target Assets are usually the product of a [Source Asset][source-asset] being uploaded and imported through the asset pipeline.
+Целевой Asset - это файл, который может быть загружен в вашу игру во время выполнения. Он будет в формате, готовом к использованию в движке. Целевые активы обычно являются продуктом загрузки и импорта [Исходного актива][source-asset] через конвейер ассетов.
 
-## Template
+## Шаблон
 
-A Template is an [Asset][asset] that contains a piece of an [Entity][entity] hierarchy. It has a root Entity and can have any number of children. A Template is a reusable Entity that you can instantiate dynamically at runtime or place multiple instances of it in your [Scene][scene]. When you change the Template Asset all instances of the Template will also change.
+Шаблон - это [Asset][asset], который содержит часть иерархии [Entity][entity]. У него есть корневая сущность и может иметь любое количество дочерних элементов. Шаблон - это повторно используемая сущность, которую можно динамически создавать во время выполнения или размещать несколько экземпляров в вашей [Сцене][scene]. Когда вы изменяете Asset шаблона, все экземпляры шаблона также изменятся.
 
-## Texture
+## Текстура
 
-A Texture is an [Asset][asset]. Typically, it contains image data that can be mapped onto 2D or 3D geometry. Textures can also be used to store other types of generic numeric data for processing on the GPU. PlayCanvas can load textures from standard web format images (JPG, PNG and GIF). The engine can also read super-compressed Basis textures that can be transcoded to natively supported GPU formats on load.
+Текстура - это [Asset][asset]. Обычно он содержит данные изображения, которые могут быть сопоставлены с 2D или 3D-геометрией. Текстуры также могут использоваться для хранения других типов обобщенных числовых данных для обработки на GPU. PlayCanvas может загружать текстуры из стандартных веб-форматов изображений (JPG, PNG и GIF). Движок также может читать сверхсжатые текстуры Basis, которые могут быть транскодированы в поддерживаемые форматы GPU при загрузке.
 
-## Transformation Matrix
+## Матрица преобразования
 
-A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular: translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity][entity] has a transformation matrix accessible via the `getLocalTransform()` method.
+Матрица преобразования - это математическая матрица, которая представляет набор линейных преобразований. В частности: перевод, вращение и масштабирование. Это означает, что матрица преобразования может быть использована для представления положения, ориентации и размера объекта в 3D-пространстве. В движке PlayCanvas каждая [Entity][entity] имеет матрицу преобразования, доступную через метод `getLocalTransform()`.
 
 [api-reference]: /api/
 [application]: #application

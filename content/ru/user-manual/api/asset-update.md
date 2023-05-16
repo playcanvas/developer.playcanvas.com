@@ -1,10 +1,46 @@
----
-title: Assets - Update asset
-layout: usermanual-page.hbs
-position: 10
----
+```
+PUT /api/v1/assets/:id
+```
 
-## Route URL
+## Описание
+
+Обновляет существующий Asset.
+
+## Параметры
+
+- `id` (обязательный) - идентификатор Asset, который нужно обновить.
+
+## Тело запроса
+
+- `name` (необязательный) - новое имя Asset.
+- `description` (необязательный) - новое описание Asset.
+- `tags` (необязательный) - новые теги для Asset.
+- `type` (необязательный) - новый тип Asset. Допустимые значения: "Issue Tracker", "Tutorial Thumbnail", "Entity", "Material Asset", "Material Inspector", "Shader Editor", "Node Inspector", "Texture Inspector", "Graph Inspector", "Graph Editor".
+
+## Пример запроса
+
+```json
+{
+  "name": "New Asset Name",
+  "description": "New Asset Description",
+  "tags": ["tag1", "tag2"],
+  "type": "Material Asset"
+}
+```
+
+## Пример ответа
+
+```json
+{
+  "id": "5f8d4f8c8e0e4b3d8f7ce173",
+  "name": "New Asset Name",
+  "description": "New Asset Description",
+  "tags": ["tag1", "tag2"],
+  "type": "Material Asset",
+  "createdAt": "2020-10-19T14:35:08.000Z",
+  "updatedAt": "2020-10-19T14:35:08.000Z"
+}
+```
 
 ```none
 PUT https://playcanvas.com/api/assets/:assetId
@@ -12,13 +48,13 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 ## Описание
 
-Update an existing asset's file.
+Обновите файл существующего актива.
 
 <div class="alert alert-info">
-    This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+    В настоящее время этот конечный пункт поддерживает обновление ассетов типа `script`, `html`, `css`, `text`, `shader` и `json`.
 </div>
 
-**Unlike other REST API endpoints. The Update Asset endpoint expects data to be sent in `multipart/form-data`**
+**В отличие от других конечных точек REST API. Конечная точка обновления актива ожидает отправки данных в формате `multipart/form-data`**
 
 ## Пример
 
@@ -26,19 +62,78 @@ Update an existing asset's file.
 curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets/{assetId}"
 ```
 
-## Parameters
+## Параметры
 
 <div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
-<div class="parameter"><span class="param">file: file</span><p>Data to update asset file with</p></div>
-<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
+<div class="parameter"><span class="param">branchId: string</span><p>ID ветки</p></div>
+<div class="parameter"><span class="param">file: file</span><p>Данные для обновления файла Asset</p></div>
+<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Используется только для текстур и по умолчанию равно false. Изменить размер текстуры на степень двойки (true | false)</p></div>
 </div>
 
-## Response Schema
+## Схема ответа
 
 ```none
-Status: 200
+Статус: 200
 ```
+
+# Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в Issue Tracker.
+
+[Создать новый тикет](https://github.com/Unity-Technologies/ShaderGraph/issues/new)
+
+# Содержание
+
+- [Tutorial Thumbnail](#tutorial-thumbnail)
+- [Entity](#entity)
+- [Material Asset](#material-asset)
+- [Material Inspector](#material-inspector)
+- [Shader Editor](#shader-editor)
+- [Node Inspector](#node-inspector)
+- [Texture Inspector](#texture-inspector)
+- [Graph Inspector](#graph-inspector)
+- [Graph Editor](#graph-editor)
+- [Assets](#assets)
+
+## Tutorial Thumbnail
+
+Туториал по созданию миниатюр для уроков.
+
+## Entity
+
+Описание сущности и ее свойств.
+
+## Material Asset
+
+Описание материала и его свойств.
+
+## Material Inspector
+
+Инспектор материалов позволяет настраивать свойства материалов.
+
+## Shader Editor
+
+Редактор шейдеров позволяет создавать и редактировать шейдеры.
+
+## Node Inspector
+
+Инспектор узлов позволяет настраивать свойства узлов.
+
+## Texture Inspector
+
+Инспектор текстур позволяет настраивать свойства текстур.
+
+## Graph Inspector
+
+Инспектор графов позволяет настраивать свойства графов.
+
+## Graph Editor
+
+Редактор графов позволяет создавать и редактировать графы.
+
+## Assets
+
+Описание ресурсов и их свойств.
 
 ```json
 {
@@ -54,10 +149,10 @@ Status: 200
     },
     "source": bool,
     "sourceId": bool,
-    "tags": list of strings,
+    "tags": список строк,
     "preload": bool,
     "data": {
-        ... asset data
+        ... данные ассетов
     },
     "file": {
         "hash": string,
@@ -69,17 +164,17 @@ Status: 200
 }
 ```
 
-## Errors
+## Ошибки
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>Неавторизованный</p></div>
+<div class="parameter"><span class="param">403</span><p>Запрещено</p></div>
+<div class="parameter"><span class="param">404</span><p>Проект или Asset не найден</p></div>
+<div class="parameter"><span class="param">429</span><p>Слишком много запросов</p></div>
 </div>
 
-## Rate Limiting
+## Ограничение скорости
 
-This route uses a [strict][1] rate limit.
+Этот маршрут использует [строгое][1] ограничение скорости.
 
 [1]: /user-manual/api#rate-limiting

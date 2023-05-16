@@ -2,63 +2,63 @@
 title: Основы материалов
 layout: tutorial-page.hbs
 tags: material,basics
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---
 
-Materials are what define the appearance of the surfaces of a 3D Model. At its very simplest a Material sets the color of the polygons, at its most complex a material can simulate the surface of an ocean or the way that light passes through glass.
+Материалы определяют внешний вид поверхностей 3D-модели. В самом простом случае материал задает цвет полигонов, в самом сложном - материал может имитировать поверхность океана или способ, которым свет проходит через стекло.
 
-In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. First create a new and empty scene.
+В этом уроке мы рассмотрим, как создать материал, назначить его примитивной форме и изменить свойства материала. Сначала создайте новую и пустую сцену.
 
-## Step 1 - Add a cube to your scene
+## Шаг 1 - Добавьте куб на вашу сцену
 
-Select the root Entity of your Scene. At the start this will be called "Root". In the Attribute Editor rename the Entity to something meaningful, like "Material Tutorial".
+Выберите корневую сущность вашей сцены. В начале это будет называться "Root". В редакторе атрибутов переименуйте сущность во что-то значимое, например, "Material Tutorial".
 
-Select 'New Entity' -> 'Box' menu in the Hierarchy panel. This creates a new Box Entity in the Hierarchy.
+Выберите 'New Entity' -> 'Box' в панели иерархии. Это создает новую сущность Box в иерархии.
 
 ![New Box][1]
 
-## Step 2 - Create a new Material
+## Шаг 2 - Создайте новый материал
 
-Create new material directly from the PlayCanvas Editor interface. In the Asset panel use the + button to open the New Asset menu and select Material.
+Создайте новый материал непосредственно из интерфейса редактора PlayCanvas. В панели Asset используйте кнопку +, чтобы открыть меню New Asset и выберите Material.
 
 ![Add Material][2]
 
-This creates a new Material Asset and brings up the Material Editor on the right-hand side of the screen. In the Material Editor rename the Material to "Box Material".
+Это создает новый материал ассет и открывает редактор материалов в правой части экрана. В редакторе материалов переименуйте материал в "Box Material".
 
-## Step 3 - Assign the material to the cube
+## Шаг 3 - Назначьте материал кубу
 
-When you create a new cube in the Editor it will have no material assigned and will be rendered using a plain default material. To assign your new material to a model in the scene simply drag the model from the asset panel into the viewport and drop it on to the model you want to assign it to.
+Когда вы создаете новый куб в редакторе, у него не будет назначен материал, и он будет отображаться с использованием простого материала по умолчанию. Чтобы назначить ваш новый материал модели на сцене, просто перетащите модель из панели ассетов в окно просмотра и поместите ее на модель, которой вы хотите назначить ее.
 
-## Step 4 - Change the color of the material
+## Шаг 4 - Измените цвет материала
 
-To change the color of the Material we will want to edit the *Diffuse* property of the material.
+Чтобы изменить цвет материала, нам нужно будет изменить свойство *Diffuse* материала.
 
-Select the material either by clicking on it in the asset panel. Or by selecting it from the property inspector when you select the box.
+Выберите материал, щелкнув по нему в панели ассетов. Или выбрав его из инспектора свойств, когда вы выбираете коробку.
 
 ![Diffuse Color][4]
 
-You'll have to expand the Diffuse settings panel in the material editor in the right panel. Click on the color property to edit the diffuse color of the material.
+Вам придется развернуть панель настроек Diffuse в редакторе материалов в правой панели. Щелкните по свойству цвета, чтобы изменить диффузный цвет материала.
 
-## Bonus - Add textures to the material
+## Бонус - Добавьте текстуры к материалу
 
-Changing the color of the material is a good start, but you'll quickly want more detail than a flat color. That is where texture maps come in.
+Изменение цвета материала - это хорошее начало, но вы быстро захотите больше деталей, чем просто цвет. Вот где вступают в игру текстурные карты.
 
-Download & save these sample textures:
+Скачайте и сохраните эти образцы текстур:
 
-<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" width="128px" alt="Sample diffuse map texture"></a>
-<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px" alt="Sample normal map texture"></a>
+<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" alt="Sample diffuse map texture" width="128"></a>
+<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" alt="Sample normal map texture" width="128"></a>
 
-Then upload them to your project by dragging the files into the Editor.
+Затем загрузите их в свой проект, перетащив файлы в редактор.
 
-Once they're uploaded it's time to assign them to texture slots on the Material. Select the Material as before and open up the Diffuse section. Drag the `proto_orange` texture from the asset panel into the empty diffuse slot. Then open the Normals section and drag the `proto_gray_n` texture into the normal map slot.
+После загрузки пришло время назначить их на слоты текстур материала. Выберите материал, как и раньше, и откройте раздел Diffuse. Перетащите текстуру `proto_orange` из панели ассетов в пустой слот диффузии. Затем откройте раздел Normals и перетащите текстуру `proto_gray_n` в слот нормальной карты.
 
-You'll see something that looks a little like this:
+Вы увидите что-то вроде этого:
 
 ![Cube][5]
 
-Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
+Попробуйте изменить свойства **Tiling** и **Offset**, чтобы повлиять на то, как текстура обертывается вокруг куба.
 
-Take a look at the user manual section on [Physical Materials][6] for more depth on setting up materials.
+Ознакомьтесь с разделом руководства пользователя о [Physical Materials][6] для более подробной информации о настройке материалов.
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg

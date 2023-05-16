@@ -1,32 +1,32 @@
 ---
-title: Layout Group
+title: Группа компоновки
 layout: usermanual-page.hbs
 position: 9
 ---
 
-The LayoutGroup component enables an entity to specify the size and position of child Element Components.
+Компонент LayoutGroup позволяет сущности определять размер и положение дочерних компонентов элементов.
 
-See the [Layout Groups][0] section for more details.
+См. раздел [Группы компоновки][0] для получения дополнительной информации.
 
-![LayoutGroup component][1]
+![Компонент LayoutGroup][1]
 
-## Properties
+## Свойства
 
-| Property       | Описание |
+| Свойство       | Описание |
 |----------------|-------------|
-| Orientation    | Whether the layout should run horizontally or vertically. |
-| ReverseX       | Reverses the order of children along the x axis. |
-| ReverseY       | Reverses the order of children along the y axis. |
-| Alignment      | Specifies the horizontal and vertical alignment of child elements. Values range from 0 to 1 where [0, 0] is the bottom left and [1, 1] is the top right. |
-| Padding        | Padding to be applied inside the container before positioning any children. Specified as left, bottom, right and top values. |
-| Spacing        | Spacing to be applied between each child element. |
-| Width Fitting  | Fitting logic to be applied when positioning and scaling child elements. |
-| Height Fitting | Fitting logic to be applied when positioning and scaling child elements. |
-| Wrap           | Whether or not to wrap children onto a new row/column when the size of the container is exceeded. |
+| Ориентация     | Определяет, должна ли компоновка идти горизонтально или вертикально. |
+| Обратный Х     | Меняет порядок дочерних элементов вдоль оси x. |
+| Обратный Y     | Меняет порядок дочерних элементов вдоль оси y. |
+| Выравнивание   | Определяет горизонтальное и вертикальное выравнивание дочерних элементов. Значения варьируются от 0 до 1, где [0, 0] - это нижний левый угол, а [1, 1] - верхний правый угол. |
+| Отступ         | Отступ, который должен быть применен внутри контейнера перед позиционированием любых дочерних элементов. Задается как значения слева, снизу, справа и сверху. |
+| Расстояние      | Расстояние, которое должно быть применено между каждым дочерним элементом. |
+| Подгонка ширины  | Логика подгонки, которая должна быть применена при позиционировании и масштабировании дочерних элементов. |
+| Подгонка высоты | Логика подгонки, которая должна быть применена при позиционировании и масштабировании дочерних элементов. |
+| Перенос        | Определяет, следует ли переносить дочерние элементы на новую строку/столбец, когда размер контейнера превышен. |
 
-## Scripting Interface
+## Интерфейс сценариев
 
-You can control an LayoutGroup component's properties using a [script component][2]. The LayoutGroup component's scripting interface is [here][3].
+Вы можете управлять свойствами компонента LayoutGroup с помощью [компонента сценария][2]. Интерфейс сценариев компонента LayoutGroup находится [здесь][3].
 
 [0]: /user-manual/user-interface/layout-groups
 [1]: /images/user-manual/scenes/components/component-layoutgroup.png

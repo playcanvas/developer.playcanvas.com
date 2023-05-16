@@ -1,72 +1,71 @@
 ---
-title: Столкновения и триггеры
+title: Столкновения и Триггеры
 layout: tutorial-page.hbs
 tags: collision, physics
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/1Hj5fX2I/" title="Collision and Triggers"></iframe>
 
-*Rigidbodies collide with each other, a sound is played on a collision and a trigger volume resets the shapes.*
+*Твердые тела сталкиваются друг с другом, звук воспроизводится при столкновении, а объем триггера сбрасывает формы.*
 
-This tutorial introduces the basics of rigid-body physics, collision detection and trigger volumes. Have a look at the [tutorial project][1].
+В этом уроке представлены основы физики твердых тел, обнаружение столкновений и объемы триггеров. Посмотрите [проект урока][1].
 
-## The Collision Component
+## Компонент Collision
 
-The *collision* component defines a shape which can be used either to trigger events if another Entity enters or exits it -- we call this a Trigger Volume -- or it can be used together with the *rigidbody* component to give an Entity physical properties in your game -- like a bouncing ball or a heavy crate.
+Компонент *collision* определяет форму, которая может использоваться либо для вызова событий, если другая Entity входит или выходит из нее - мы называем это объемом триггера - либо он может использоваться вместе с компонентом *rigidbody* для придания Entity физических свойств в вашей игре - например, отскакивающий мяч или тяжелый ящик.
 
-The most important property of a *collision* component is it's **Type**, this determines the shape of the volume that will be used. There are four options:
+Самое важное свойство компонента *collision* - это его **Type**, оно определяет форму используемого объема. Есть четыре варианта:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+* **Box** Простой параллелепипед
+* **Sphere** Простая сфера
+* **Capsule** Капсула в форме таблетки. Подходит для персонажей, так как может быть высокой и тонкой, но имеет хорошую округлую основу с одной точкой контакта.
+* **Mesh** Используйте любую произвольную форму сетки для объема. **Примечание** Существуют некоторые ограничения для столкновений сетки, в частности, при использовании с компонентом *rigidbody*, они должны быть **Static**.
 
-### Trigger Volumes
+### Объемы триггеров
 
-To create a Trigger Volume all we need to do is add a *collision* component to an Entity. In this tutorial we're adding a large box-shaped Trigger Volume underneath the slope to catch the falling bodies and reset their position.
+Чтобы создать объем триггера, достаточно добавить компонент *collision* к Entity. В этом уроке мы добавляем большой объем триггера в форме параллелепипеда под склоном, чтобы сбросить падающие тела и сбросить их положение.
 
-![Collisions & Triggers][3]
+![Столкновения и Триггеры][3]
 
-You can see the trigger volume underneath the ramp displayed as a blue outline.
+Вы можете увидеть объем триггера под рампой, отображаемый синим контуром.
 
-### Rigid Bodies
+### Твердые тела
 
-A rigid body is a physical presence in your game world. You can set it up with real physics properties like Mass and Friction; it will collide with other rigid bodies and respond in a realistic manner.
+Твердое тело - это физическое присутствие в вашем игровом мире. Вы можете настроить его с реальными физическими свойствами, такими как масса и трение; оно будет сталкиваться с другими твердыми телами и реагировать реалистичным образом.
 
-To create a rigid body in your Scene, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
+Чтобы создать твердое тело в вашей сцене, выберите Entity и добавьте компонент *rigidbody* и компонент *collision*. По умолчанию вы создадите **static box**. Компонент *rigidbody* имеет множество параметров, которые вы можете использовать для настройки свойств вашего объекта.
 
-![rigidbody component][4]
+![компонент rigidbody][4]
 
-For details on each property take a look at the [*rigidbody* documentation][5].
+Для получения информации о каждом свойстве ознакомьтесь с [документацией по *rigidbody*][5].
 
-For this demo, the important property is the **Type**. You can pick one of three options:
+Для этой демонстрации важным свойством является **Type**. Вы можете выбрать один из трех вариантов:
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
-* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
+* **Static** это Entity никогда не будет двигаться.
+* **Dynamic** это Entity будет двигаться под действием гравитации и любых других сил, которые вы на него примените.
+* **Kinematic** это Entity не будет реагировать на силы, но будет двигаться, если вы напрямую установите его положение или скорость.
 
+## Настройка земли
 
-## Setting up the ground
+Первой Entity, которую нам нужно в этом уроке, является зеленый блок, который образует землю.
 
-The first Entity we need in this tutorial is the green block that forms the ground.
+<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300">
 
-<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300px">
+Вы можете видеть в панели атрибутов, что у него есть компоненты *render*, *collision* и *rigidbody*. Мы увеличили Entity и свойства *collision* box, чтобы оно было хорошо и большим. И мы также немного увеличили свойства трения и восстановления. Это означает, что поверхность немного шероховатее и немного упругее, чем значения по умолчанию.
 
-You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
+## Настройка триггера
 
-## Setting up the trigger
+Следующей Entity, которую нам понадобится, является триггер.
 
-The next Entity we'll need is the trigger.
+![Триггер Entity][7]
 
-![Trigger Entity][7]
-
-With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
+У этой Entity есть компонент *collision*, но нет *rigidbody*, поэтому он действует как триггер. Триггер Entity также имеет компонент *script* с прикрепленным кодом. Триггеры полезны только в том случае, если что-то происходит, когда они активированы, поэтому нам нужно добавить некоторый код для вызова и прослушивания событий, когда триггер активирован.
 
 ```javascript
 var Trigger = pc.createScript('trigger');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Trigger.prototype.initialize = function() {
     this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 };
@@ -74,50 +73,70 @@ Trigger.prototype.initialize = function() {
 Trigger.prototype.onTriggerEnter = function(entity) {
     entity.rigidbody.linearVelocity = pc.Vec3.ZERO;
     entity.rigidbody.angularVelocity = pc.Vec3.ZERO;
-    // Reset back to roughly the position the entity started in.
+    // Возврат к примерной начальной позиции сущности.
     var position = entity.getPosition();
     entity.rigidbody.teleport(position.x, 10, 0);
 };
 ```
 
-There two significant parts to the code above.
+Есть две значительные части кода выше.
 
-First in the ```initialize``` method we start listening to the **triggerenter** event. This event fires once when a rigid body enters a trigger volume (where a trigger volume is an entity that has a collision component but no rigidbody component). The companion event is **triggerleave** which is fired once the penetrating rigid body leaves the trigger.
+Во-первых, в```initialize```метод мы начинаем прослушивать событие **triggerenter**. Это событие срабатывает один раз, когда твердое тело входит в объем триггера (где объем триггера - это сущность, имеющая компонент столкновения, но не имеющая компонента твердого тела). Сопутствующее событие - **triggerleave**, которое срабатывает один раз, когда проникающее твердое тело покидает триггер.
 
 ```javascript
 this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 ```
 
-Notice, the third argument, ```this```, which is the 'scope' that will be used in the event listener. Usually, you'll want to add the current Script Object as the third argument so that the value of ```this``` in the event listener is that same Script Object.
+Обратите внимание, на третий аргумент,```this```в слушателе событий является тем же объектом Script.
 
-The second part of this code is the function which handles the event, ```onTriggerEnter```. When the trigger is entered, this function is called and passed the [```Entity```][8] object entering the trigger volume.
+Вторая часть этого кода - функция, которая обрабатывает событие,```onTriggerEnter```Когда триггер активируется, эта функция вызывается и передает [Entity](Entity.md) объект, который вошел в триггер. 
 
-In this case, when the trigger is fired, we reset the penetrating Entity back up to the position it started in, and reset its velocities.
+Пример:
 
-## The Rigid Bodies
+```lua
+function Script:Start()
+  self.entity:Connect("OnTriggerEnter", self, "OnTriggerEnter")
+end
 
-We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
+function Script:OnTriggerEnter(entity)
+  Log:Write("Entity " .. entity:GetKeyValue("name") .. " entered the trigger")
+end
+```
 
-<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300px">
+![Tutorial Thumbnail](Images/TutorialThumbnail.png)
 
-This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
+Смотрите также:
 
-## Contact Events
+- [Entity.OnTriggerExit](Entity.OnTriggerExit.md)
+- [Entity.OnTriggerStay](Entity.OnTriggerStay.md)
+- [Issue Tracker](https://github.com/Leadwerks/Documentation/issues)```Entity```][8] объект, входящий в объем триггера.
 
-There are three events available on the *collision* component:
+В этом случае, когда триггер срабатывает, мы сбрасываем проникающий Entity обратно в начальное положение и сбрасываем его скорости.
 
-* **contact** - fires for every point of contact when two rigid bodies touch.
-* **collisionstart** - fires at the start of a collision when two rigid bodies touch.
-* **collisionend** - fires when two rigid bodies separate.
+## Твердые тела
 
-The difference between **contact** and **collisionstart** is subtle but important. Imagine a cube landing at an angle on a flat surface. When the edge of the cube hits the surface the two corners of the cube will strike at the same moment. Three events will fire, two **contact** events for each corner of the cube, and one **collisionstart** event. Then the cube will rotate and continue to fall until it lies flat, all the while remaining in contact with the surface. When it lands flat, two more **contact** events will fire as the edge of the cube hits the surface. As the cube remained in contact with the surface all that time, no more **collisionstart** events are fired.
+Мы установили землю на **Static**, теперь создадим падающие объекты и убедимся, что они **Dynamic**.
 
-Both events are useful, but in this demo we'll use the **collisionstart** event to trigger a sound effect that plays when the objects hit the ground. Here's the code:
+<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300">
+
+Это настройка *rigidbody* и *collision* для компонента коробки, сфера и капсула настроены таким же образом.
+
+## События контакта
+
+В компоненте *collision* доступно три события:
+
+* **contact** - срабатывает для каждой точки контакта, когда два твердых тела касаются друг друга.
+* **collisionstart** - срабатывает в начале столкновения, когда два твердых тела касаются друг друга.
+* **collisionend** - срабатывает, когда два твердых тела разделяются.
+
+Разница между **contact** и **collisionstart** тонкая, но важная. Представьте куб, приземляющийся под углом на плоскую поверхность. Когда край куба ударяется о поверхность, два угла куба ударятся одновременно. Сработают три события: два события **contact** для каждого угла куба и одно событие **collisionstart**. Затем куб будет вращаться и продолжать падать, пока не ляжет плоско, все это время оставаясь в контакте с поверхностью. Когда он приземлится плоско, еще два события **contact** сработают, когда край куба ударится о поверхность. Поскольку куб все это время оставался в контакте с поверхностью, больше событий **collisionstart** не срабатывает.
+
+Оба события полезны, но в этой демонстрации мы будем использовать событие **collisionstart** для запуска звукового эффекта, который воспроизводится, когда объекты ударяются о землю. Вот код:
 
 ```javascript
 var Collider = pc.createScript('collider');
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Collider.prototype.initialize = function () {
     this.entity.collision.on('collisionstart', this.onCollisionStart, this);
 };
@@ -129,9 +148,23 @@ Collider.prototype.onCollisionStart = function (result) {
 };
 ```
 
-In the ```initialize``` method we set up the event listener, and then in the event handler we check to see if the other entity has a **rigidbody** component (this is to avoid playing a sound when we enter a trigger volume) and then we play the "hit" sound effect. So now, every time an Entity with the collider script attached collides with another rigid body, it will play the hit sound.
+В этом выпуске Issue Tracker:
 
-And that's all there is to handling Collisions and Triggers in PlayCanvas.
+- Добавлен новый учебник: "Tutorial Thumbnail"
+- Исправлены ошибки в Entity и Material Asset
+- Улучшен интерфейс Material Inspector
+- Обновлен Shader Editor
+- Добавлены новые функции в Node Inspector
+- Улучшен Texture Inspector
+- Исправлены ошибки в Graph Inspector
+
+В следующем выпуске:
+
+- Новые функции для Graph Editor
+- Улучшенный интерфейс для Assets
+- Дополнительные опции для Asset```initialize```В этом методе мы настраиваем прослушиватель событий, а затем в обработчике событий проверяем, есть ли у другой сущности компонент **rigidbody** (это нужно, чтобы избежать воспроизведения звука при входе в объем триггера), и затем воспроизводим звуковой эффект "удар". Теперь каждый раз, когда Entity с прикрепленным скриптом коллайдера сталкивается с другим твердым телом, будет воспроизводиться звук удара.
+
+И это все, что нужно знать о работе с коллизиями и триггерами в PlayCanvas.
 
 [1]: https://playcanvas.com/project/405871
 [3]: /images/tutorials/collision/collision_and_triggers.jpg

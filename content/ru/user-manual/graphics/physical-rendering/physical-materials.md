@@ -4,77 +4,77 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
+Чтобы использовать физически основанный рендеринг в PlayCanvas, вам нужно понять, как настроен физический материал и как изменение различных параметров повлияет на его свойства.
 
-In this section we'll talk about the most useful properties of the material and you can see in the live demos how altering them affects the appearance of a material.
+В этом разделе мы поговорим о наиболее полезных свойствах материала, и вы можете увидеть в живых демонстрациях, как изменение их влияет на внешний вид материала.
 
-First a note about Cubemaps and Workflows
+Сначала заметка о кубических картах и рабочих процессах
 
-## Image Based Lighting
+## Освещение на основе изображений
 
-[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
+[Сначала IBL][6], потому что неизбежно вы окажетесь в редакторе и создадите материалы, и будете интересоваться, почему ваши материалы не выглядят так, как образцы ниже. **Физические материалы с предварительно отфильтрованным HDR CubeMap выглядят замечательно!**
 
-## Metalness and Specular Workflow
+## Металличность и спекулярный рабочий процесс
 
 ![Workflows][4]
 
-PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At PlayCanvas we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
+PBR часто разделяется на два разных метода создания ассетов или рабочих процессов. Эти два рабочих процесса эквивалентны и дают одинаковые результаты. Вам решать, какой из них выбрать. В PlayCanvas мы обычно выбираем рабочий процесс "металличность", так как мы считаем, что карта металличности проще создавать, и так как она имеет только один канал, она обычно более эффективна.
 
-The **metalness** workflow involves setting a metalness value or creating a metalness map which determines which areas of the material are metal or non-metal. Usually this is a simple binary choice. 1 for metal, 0 for non-metal. It is not often that you have a value between the two.
+Рабочий процесс **металличность** включает установку значения металличности или создание карты металличности, которая определяет, какие области материала являются металлическими или неметаллическими. Обычно это простой двоичный выбор. 1 для металла, 0 для неметалла. Редко бывает значение между двумя.
 
-The **specular** workflow involves setting a specular value or creating a specular map which determines the color and intensity of the reflected light for your material.
+Рабочий процесс **спекуляр** включает установку спекулярного значения или создание спекулярной карты, которая определяет цвет и интенсивность отраженного света для вашего материала.
 
-There is a good explanation of the differences on the [Marmoset Toolbag blog][5].
+Хорошее объяснение различий можно найти в [блоге Marmoset Toolbag][5].
 
-On to materials...
+Переходим к материалам...
 
-# Material Properties and Maps
+# Свойства материалов и карты
 
-## Diffuse
+## Диффузия
 
-The Diffuse Color is the base color of the material. This is an RGB color value. For clean pure (metal, plastic) substances this can be a constant value but it can also be supplied as a diffuse map texture. Note, you should usually avoid including lighting detail (shadows or highlights) in your diffuse map as this can be applied in other maps.
+Цвет диффузии - это базовый цвет материала. Это значение цвета RGB. Для чистых чистых (металл, пластик) веществ это может быть постоянным значением, но также может быть предоставлено в виде текстуры карты диффузии. Обратите внимание, что обычно следует избегать включения деталей освещения (теней или светлых участков) на вашей карте диффузии, так как это может быть применено на других картах.
 
-It can also be known as **albedo** or **base color**.
+Он также может быть известен как **альбедо** или **базовый цвет**.
 
 <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
 
-You can often find the charts of recorded values for diffuse/albedo values on the internet.
+Часто можно найти диаграммы записанных значений для диффузных/альбедо значений в интернете.
 
 ![Metals][3]
 
-| Material | RGB                                      |
+| Материал | RGB                                      |
 |----------|------------------------------------------|
-| Gold     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
-| Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
-| Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
+| Золото   | (1.000, 0.766, 0.336) или [255, 195, 86]  |
+| Серебро  | (0.972, 0.960, 0.915) или [248, 245, 233] |
+| Медь     | (0.955, 0.637, 0.538) или [244, 162, 137] |
 
-## Metalness
+## Металличность
 
-The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
+Значение металличности является частью рабочего процесса **металличность**. Металличность - это одно значение от 0 до 1, которое определяет, является ли материал металлом (1) или неметаллом (0).
 
 <div class="alert-info">
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+Значение металличности почти всегда должно быть 0 или 1. Редко вам понадобится значение где-то между этими двумя.
 </div>
 
-You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
+Вы также можете предоставить карту металличности, которая позволяет определить конкретные области вашего материала как металлические или неметаллические.
 
-<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 
-## Glossiness
+## Глянцевость
 
-Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
+Глянцевость используется в рабочих процессах **металличность** и **спекуляр** и определяет, насколько гладкой является поверхность вашего материала. Глянцевость будет влиять на то, насколько размытыми или четкими будут отражения на материале или насколько широкими или узкими будут спекулярные блики. Глянцевость предоставляется в виде одного значения от 0 до 100 или карты глянцевости.
 
 <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
 
-Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
+Некоторые системы PBR используют **шероховатость** вместо глянцевости. Шероховатость является обратной глянцевости. Если вам нужно преобразовать карту шероховатости в карту глянцевости, просто инвертируйте ее.
 
-Sometimes glossiness and roughness are referred to as the **microsurface** value.
+Иногда глянцевость и шероховатость называют значением **микроповерхности**.
 
-## All together
+## Все вместе
 
-These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
+Эти три свойства **диффузия**, **металличность** и **глянцевость** являются основой системы физических материалов. Вы можете попробовать разные комбинации в живой демонстрации ниже.
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
+Существует множество других дополнительных свойств, которые можно изучить и использовать для создания отличных материалов, таких как Ambient Occlusion, Emissive, Opacity, Normal и Height maps.
 
 <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
 

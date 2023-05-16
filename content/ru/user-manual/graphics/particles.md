@@ -4,42 +4,60 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-PlayCanvas provides comprehensive support for creating and editing particle systems.
+PlayCanvas предоставляет всеобъемлющую поддержку для создания и редактирования систем частиц.
 
-## What is a Particle System?
+## Что такое система частиц?
 
-A particle system is a simulation that manages many independently moving particles. They can be used to approximate a huge number of effects such as rain, snow, smoke, fire and so on.
+Система частиц - это симуляция, которая управляет множеством независимо движущихся частиц. Они могут использоваться для приближения огромного количества эффектов, таких как дождь, снег, дым, огонь и так далее.
 
-Note that particles are not physically simulated. They do not interact or collide with each other. They will pass through surfaces in your scene.
+Обратите внимание, что частицы не симулируются физически. Они не взаимодействуют и не сталкиваются друг с другом. Они будут проходить сквозь поверхности в вашей сцене.
 
-## Creating a Particle System
+## Создание системы частиц
 
-In the Editor's 3D View, an unselected particle system is represented with the following icon:
+В 3D-просмотре редактора не выбранная система частиц представлена следующим значком:
 
-![Particle system icon][1]
+![Значок системы частиц][1]
 
-To create a new particle system, simply create a new entity and add a particle system component to it. For convenience, the Editor menu has an item that does this in a single step:
+Чтобы создать новую систему частиц, просто создайте новую сущность и добавьте в нее компонент системы частиц. Для удобства меню редактора есть элемент, который делает это в один шаг:
 
-![Particle system creation][2]
+![Создание системы частиц][2]
 
-A newly created particle system with the default settings looks like this:
+Новая созданная система частиц с настройками по умолчанию выглядит так:
 
-![Default particle system][3]
+![Система частиц по умолчанию][3]
 
-To configure the particle system via the particle system component interface, consult the reference [here][4].
+Чтобы настроить систему частиц через интерфейс компонента системы частиц, обратитесь к справочнику [здесь][4].
 
-## Triggering a Particle System in Script
+## Запуск системы частиц в скрипте
 
-Sometimes, you might want a particle system to play in response to some event or at a particular time. For example, an explosion should play when a missile reaches its target. To do this, ensure that the Autoplay option is disabled for your particle system. Then, attach a script component to your particle system entity. The following two lines will start (or restart) a particle system:
+Иногда вам может понадобиться, чтобы система частиц воспроизводилась в ответ на какое-то событие или в определенное время. Например, взрыв должен проигрываться, когда ракета достигает своей цели. Чтобы сделать это, убедитесь, что для вашей системы частиц отключена опция Autoplay. Затем прикрепите компонент скрипта к сущности вашей системы частиц. Следующие две строки запустят (или перезапустят) систему частиц:
 
 ```javascript
 this.entity.particlesystem.reset();
 this.entity.particlesystem.play();
 ```
 
-## Soft Particles
+# Issue Tracker
 
-Soft paricles are particles that are faded out near their intersections with scene geometry. If soft particles are enabled by using [```depthSoftening```][5], the camera which renders the particles needs to have a [Depth Map][6] rendering enabled.
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/playcanvas/engine/issues).
+
+# Учебники
+
+- [Tutorial Thumbnail](https://developer.playcanvas.com/en/tutorials/thumbnail/)
+- [Entity](https://developer.playcanvas.com/en/tutorials/entity/)
+- [Material Asset](https://developer.playcanvas.com/en/tutorials/material-asset/)
+- [Material Inspector](https://developer.playcanvas.com/en/tutorials/material-inspector/)
+- [Shader Editor](https://developer.playcanvas.com/en/tutorials/shader-editor/)
+- [Node Inspector](https://developer.playcanvas.com/en/tutorials/node-inspector/)
+- [Texture Inspector](https://developer.playcanvas.com/en/tutorials/texture-inspector/)
+- [Graph Inspector](https://developer.playcanvas.com/en/tutorials/graph-inspector/)
+- [Asset](https://developer.playcanvas.com/en/tutorials/asset/)
+- [Graph Editor](https://developer.playcanvas.com/en/tutorials/graph-editor/)
+- [Assets](https://developer.playcanvas.com/en/tutorials/assets/)
+
+## Мягкие частицы
+
+Мягкие частицы - это частицы, которые затухают около своих пересечений с геометрией сцены. Если мягкие частицы включены с использованием [```depthSoftening```][5], камера, которая отображает частицы, должна иметь включенную функцию [Depth Map][6].
 
 [1]: /images/user-manual/graphics/particles/particle_system_icon.png
 [2]: /images/user-manual/graphics/particles/particle_system_create.png

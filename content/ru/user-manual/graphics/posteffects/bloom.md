@@ -1,26 +1,26 @@
 ---
-title: Bloom эффект
+title: Эффект Bloom
 layout: usermanual-page.hbs
 position: 1
 ---
 
-[Bloom][1] is a post-processing effect used to reproduce an imaging artifact of real-world cameras. The effect produces fringes (or feathers) of light extending from the borders of bright areas in an image, contributing to the illusion of an extremely bright light overwhelming the camera capturing the scene.
+[Bloom][1] - это эффект постобработки, используемый для воспроизведения артефакта изображения реальных камер. Эффект создает бахрому (или перья) света, исходящую от границ ярких областей на изображении, что способствует созданию иллюзии чрезвычайно яркого света, ослепляющего камеру, захватывающую сцену.
 
-Here is an image without bloom:
+Вот изображение без эффекта Bloom:
 
-![Image without effect][2]
+![Изображение без эффекта][2]
 
-And the same image with bloom applied:
+И то же изображение с примененным эффектом Bloom:
 
-![Image with effect][3]
+![Изображение с эффектом][3]
 
-The built-in bloom effect has the following attributes:
+Встроенный эффект Bloom имеет следующие атрибуты:
 
-* **Bloom Intensity**: The intensity of the effect
-* **Bloom Threshold**: Only pixels brighter than this threshold will be processed. Ranges from 0 to 1.
-* **Blur Amount**: Controls the amount of blurring.
+* **Bloom Intensity**: Интенсивность эффекта
+* **Bloom Threshold**: Будут обрабатываться только пиксели, ярче этого порога. Диапазон от 0 до 1.
+* **Blur Amount**: Регулирует степень размытия.
 
-Find the post-processing effect script on [GitHub][4].
+Найдите скрипт эффекта постобработки на [GitHub][4].
 
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
 [2]: /images/platform/posteffects/without_effects.png

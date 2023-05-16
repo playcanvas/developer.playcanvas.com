@@ -4,136 +4,136 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-The Code Editor is an online real-time collaborative editor that allows you to edit your Script assets and also all the other text based assets like JSON, HTML, CSS etc.
+Редактор кода - это онлайн-редактор с возможностью реального времени совместного редактирования, который позволяет редактировать ваши Script assets, а также все другие текстовые активы, такие как JSON, HTML, CSS и т.д.
 
-## Opening The Code Editor
+## Открытие редактора кода
 
-You can open the Code Editor from inside the [PlayCanvas Editor][2] by pressing Ctrl + I. You can also click on this toolbar icon:
+Вы можете открыть редактор кода из [PlayCanvas Editor][2], нажав Ctrl + I. Вы также можете щелкнуть на этот значок панели инструментов:
 
 ![Code Editor Toolbar][1]
 
-Alternatively you can double click on a text-based asset like a Script to open the Code Editor focused on that asset.
+Кроме того, вы можете дважды щелкнуть по текстовому активу, например, по сценарию, чтобы открыть редактор кода, сфокусированный на этом активе.
 
-## Interface
+## Интерфейс
 
 ![Code Editor][3]
 
 ### Меню
 
-The menu contains all the different tools and options available along with their keyboard shortcuts.
+В меню содержатся все различные инструменты и доступные опции, а также их сочетания клавиш.
 
-### Files
+### Файлы
 
-Here you can see all the assets that can be edited by the Code Editor. Click on an asset to select it. Selecting an asset will open it in the Text Editor for editing.
+Здесь вы можете увидеть все активы, которые могут быть отредактированы с помощью редактора кода. Щелкните по активу, чтобы выбрать его. Выбор актива откроет его в текстовом редакторе для редактирования.
 
-Single clicking an asset will open it in Preview Mode. This means that if you open another asset it will be shown in the same Tab. If you want to open an asset permanently double click on the asset or start editing it.
+Однократное нажатие на актив откроет его в режиме предварительного просмотра. Это означает, что если вы откроете другой актив, он будет показан на той же вкладке. Если вы хотите открыть актив постоянно, дважды щелкните по активу или начните его редактировать.
 
-By right clicking on an asset you will see the context menu with various asset-related options. You can also drag and drop assets into folders.
+Щелкнув правой кнопкой мыши по активу, вы увидите контекстное меню с различными опциями, связанными с активом. Вы также можете перетаскивать активы в папки.
 
-### Tabs
+### Вкладки
 
-Each open asset has a corresponding tab in the tab view. You can rearrange tabs by dragging and dropping them and you can also close tabs by clicking on the X button that appears when you put your mouse cursor on a tab. If you right click on a tab you will see the tab context menu with various tab-related options.
+Каждый открытый актив имеет соответствующую вкладку в представлении вкладок. Вы можете изменить порядок вкладок, перетаскивая их, а также закрывать вкладки, щелкая на кнопке X, которая появляется, когда вы наводите указатель мыши на вкладку. Если вы щелкнете правой кнопкой мыши по вкладке, вы увидите контекстное меню вкладки с различными опциями, связанными с вкладкой.
 
-### Text Editor
+### Текстовый редактор
 
-Here you can actually edit the contents of your assets. The editor uses [Monaco][4] which is the same text editor library used by Visual Studio Code.
+Здесь вы можете редактировать содержимое своих ассетов. Редактор использует [Monaco][4], который является той же библиотекой текстового редактора, что и Visual Studio Code.
 
-In addition, the editor supports auto-complete. When you type a letter or hit Ctrl+Space you will see a list of auto-complete suggestions.
+Кроме того, редактор поддерживает автозавершение. Когда вы набираете букву или нажимаете Ctrl+Space, вы увидите список предложений автозавершения.
 
-The editor will also lint your JavaScript code. This means that while you type your code the editor will scan your code for possible errors or suspicious usage. This is done with the help of [JSHint][13], which also supports special comments which control its behavior. For a list of these special comments check out the [docs][14].
+Редактор также будет проверять ваш JavaScript-код. Это означает, что во время набора кода редактор будет сканировать ваш код на возможные ошибки или подозрительное использование. Это делается с помощью [JSHint][13], который также поддерживает специальные комментарии, контролирующие его поведение. Для получения списка этих специальных комментариев ознакомьтесь с [документацией][14].
 
-### Collaborators
+### Соавторы
 
-The Editor supports real-time collaborative editing by all users with permission to edit the code. You will see other user's avatars here.
+Редактор поддерживает совместное редактирование в реальном времени всеми пользователями с разрешением на редактирование кода. Здесь вы увидите аватары других пользователей.
 
-### Status Bar
+### Строка состояния
 
-Here you can see various helpful messages while you are interacting with the Code Editor.
+Здесь вы можете увидеть различные полезные сообщения, когда взаимодействуете с редактором кода.
 
-## Saving and Reverting
+## Сохранение и откат
 
-The code editor is collaborative which means that every user who has the document open in the editor will see changes as they are made by other developers. However, changes are not saved automatically and when the application is run from the Editor the saved version is loaded. This means you can choose at which point to commit your change to be used by the application. Any user can save the document at any time.
+Редактор кода является совместным, что означает, что каждый пользователь, у которого документ открыт в редакторе, будет видеть изменения, сделанные другими разработчиками. Однако изменения не сохраняются автоматически, и когда приложение запускается из редактора, загружается сохраненная версия. Это означает, что вы можете выбрать, в какой момент сохранить свои изменения, чтобы они были использованы приложением. Любой пользователь может сохранить документ в любое время.
 
-If you have unsaved changes the Revert option in the File menu will cancel these changes and restore the document back to the saved version. If all users exit the document before saving the unsaved changes will be preserved for a short time before the document is automatically reverted to the saved version. So you should save your work before exiting the document.
+Если у вас есть несохраненные изменения, опция "Откат" в меню "Файл" отменит эти изменения и вернет документ к сохраненной версии. Если все пользователи выйдут из документа перед сохранением, несохраненные изменения будут сохранены в течение короткого времени, прежде чем документ автоматически вернется к сохраненной версии. Поэтому перед выходом из документа сохраните свою работу.
 
-## Command Palette
+## Палитра команд
 
-All the text editing features can be found using the command palette via Ctrl + Shift + P (Windows) or Cmd + Shift + P (Mac).
+Все функции редактирования текста можно найти с помощью палитры команд через Ctrl + Shift + P (Windows) или Cmd + Shift + P (Mac).
 
 ![][command-palette]
 
-## Hot Keys
+## Горячие клавиши
 
-The editor supports various shortcuts to help you when editing code. You can find all those options in the Menu or the command palette. The most common can be found below:
+Редактор поддерживает различные сочетания клавиш для упрощения редактирования кода. Вы можете найти все эти опции в меню или палитре команд. Наиболее распространенные можно найти ниже:
 
-| Command                         | PC                       | Mac                        |
+| Команда                         | PC                       | Mac                        |
 |---------------------------------|--------------------------|----------------------------|
-| Save                            | Ctrl + S                 | Cmd + S                    |
-| Отмена                            | Ctrl + Z                 | Cmd + Z                    |
-| Повторить                            | Ctrl + Y                 | Cmd + Shift + Z or Cmd + Y |
-| Find in file                    | Ctrl + F                 | Cmd + F                    |
-| Find next match                 | F3                       | Cmd + G                    |
-| Find previous match             | Shift + F3               | Cmd + Shift + G            |
-| Replace                         | Ctrl + H                 | Cmd + Alt + F              |
-| Find in Files                   | Ctrl + Shift + F         | Cmd + Shift + F            |
-| Comment line or selection       | Ctrl + /                 | Cmd + /                    |
-| Block Comment line or selection | Alt + Shift + A          | Alt + Shift + A            |
-| Indent line or selection        | Tab                      | Tab                        |
-| Un-Indent line or selection     | Shift + Tab              | Shift + Tab                |
-| Jump to declaration             | Ctrl + F12               | Cmd + F12                  |
-| Show autocomplete               | Ctrl + Space or Ctrl + I | Ctrl + Space or Cmd + I    |
+| Сохранить                       | Ctrl + S                 | Cmd + S                    |
+| Отменить                        | Ctrl + Z                 | Cmd + Z                    |
+| Вернуть                         | Ctrl + Y                 | Cmd + Shift + Z или Cmd + Y |
+| Найти в файле                   | Ctrl + F                 | Cmd + F                    |
+| Найти следующее совпадение       | F3                       | Cmd + G                    |
+| Найти предыдущее совпадение       | Shift + F3               | Cmd + Shift + G            |
+| Заменить                          | Ctrl + H                 | Cmd + Alt + F              |
+| Найти в файлах                    | Ctrl + Shift + F         | Cmd + Shift + F            |
+| Закомментировать строку или выделение | Ctrl + /                 | Cmd + /                    |
+| Закомментировать блок строк или выделение | Alt + Shift + A          | Alt + Shift + A            |
+| Отступ строки или выделения       | Tab                      | Tab                        |
+| Убрать отступ строки или выделения | Shift + Tab              | Shift + Tab                |
+| Перейти к объявлению              | Ctrl + F12               | Cmd + F12                  |
+| Показать автозаполнение           | Ctrl + Space или Ctrl + I | Ctrl + Space или Cmd + I    |
 
 ## Поиск
 
-You can search for text in a file by pressing Ctrl + F (Windows) or Cmd + F (Mac). This will open up the Find panel on the top right:
+Вы можете искать текст в файле, нажав Ctrl + F (Windows) или Cmd + F (Mac). Это откроет панель "Найти" в верхнем правом углу:
 
 ![][monaco-find-panel]
 
-Enter your search term here and press Enter. You can navigate between matches by continuously hitting Enter (or Shift + Enter to go backwards).
+Введите искомое слово здесь и нажмите Enter. Вы можете перемещаться между совпадениями, непрерывно нажимая Enter (или Shift + Enter, чтобы вернуться назад).
 
-If you want to replace a match enter the text you want to replace it with in the Replace input field on the right. Then hit Enter to replace the match and keep hitting Enter to replace each subsequent match (or Shift + Enter to replace backwards).
+Если вы хотите заменить совпадение, введите текст, на который вы хотите заменить его, в поле ввода "Заменить" справа. Затем нажмите Enter, чтобы заменить совпадение, и продолжайте нажимать Enter, чтобы заменить каждое последующее совпадение (или Shift + Enter, чтобы заменить назад).
 
-### Find in Files
+### Найти в файлах
 
-You can also find a term by searching in all your assets. To do this hit Ctrl + Shift + F to bring up the Find in Files panel on the bottom. Like before enter your search term and hit Enter. This will open up a new tab where the search results will be displayed:
+Вы также можете найти слово, ища его во всех ваших файлах. Для этого нажмите Ctrl + Shift + F, чтобы открыть панель "Найти в файлах" внизу. Как и раньше, введите искомое слово и нажмите Enter. Это откроет новую вкладку, где будут отображаться результаты поиска:
 
-On the left side of the input fields there are various search options. These allow you to search using a regular expression, do a case-sensitive search or search for whole words. If you would like to learn and experiment more with regex, then [RegExr][10] is great site with cheat sheets, examples and an online editor for testing regex expressions.
+Слева от полей ввода есть различные параметры поиска. Они позволяют искать с использованием регулярных выражений, выполнять поиск с учетом регистра или искать целые слова. Если вы хотите узнать больше о regex и поэкспериментировать с ним, то [RegExr][10] - отличный сайт с шпаргалками, примерами и онлайн-редактором для тестирования выражений regex.
 
-![Find in Files][6]
+![Найти в файлах][6]
 
-You can double click on a line in the search results to go that particular line in the asset.
+Вы можете дважды щелкнуть по строке в результатах поиска, чтобы перейти к этой конкретной строке в файле.
 
-## Quick Open
+## Быстрое открытие
 
-You can quickly open an asset by hitting Ctrl + P (or Cmd + P on Mac) which will open a panel where you can search for the asset by its name. Start typing the name of the asset and the panel will perform a fuzzy search to find the asset you are looking for. Hit Enter to open the selected asset.
+Вы можете быстро открыть файл, нажав Ctrl + P (или Cmd + P на Mac), что откроет панель, где вы можете искать файл по его имени. Начните вводить имя файла, и панель выполнит нечеткий поиск, чтобы найти нужный файл. Нажмите Enter, чтобы открыть выбранный файл.
 
-![Go to Anything][11]
+![Перейти к чему-либо][11]
 
-## Preferences
+## Настройки
 
-You can edit your preferences by clicking on Edit -> Preferences. Here you can change the font size for the text editor and also edit other editor related options.
+Вы можете изменить свои настройки, нажав на Правка -> Настройки. Здесь вы можете изменить размер шрифта для текстового редактора и изменить другие параметры редактора.
 
-![Preferences][12]
+![Настройки][12]
 
-## Extra Tips
+## Дополнительные советы
 
-### Quick Searching
+### Быстрый поиск
 
-Highlighting a word in the code editor will highlight all other matches in the file which makes it easier to check where a variable or function is being used.
+Выделение слова в редакторе кода выделит все другие совпадения в файле, что упрощает проверку использования переменной или функции.
 
-![Quick Searching][7]
+![Быстрый поиск][7]
 
-### Multiple Selection Editing
+### Редактирование с несколькими выделениями
 
-Holding down Alt and clicking left mouse button will add another cursor to the editor. This allows you to quickly make the same changes in multiple areas of the file.
+Удерживая клавишу Alt и щелкая левой кнопкой мыши, вы добавите еще один курсор в редактор. Это позволяет быстро вносить одинаковые изменения в несколько областей файла.
 
-![Multiple Selection Editing][8]
+![Редактирование с несколькими выделениями][8]
 
-### Rectangular Selection
+### Прямоугольное выделение
 
-Holding down Alt + Shift and dragging left mouse button will create a rectangular selection which is useful for selecting and editing columns of text.
+Удерживая клавиши Alt + Shift и перетаскивая левую кнопку мыши, вы создадите прямоугольное выделение, которое полезно для выделения и редактирования столбцов текста.
 
-![Rectangular Selection][9]
+![Прямоугольное выделение][9]
 
 [1]: /images/user-manual/scripting/code-editor-toolbar.png
 [2]: /user-manual/designer/

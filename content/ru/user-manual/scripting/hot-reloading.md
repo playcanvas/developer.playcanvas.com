@@ -4,21 +4,21 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-When you are iterating on a complex project it can be frustrating to have to do a full page refresh every time you make a change to a script. Especially if it takes you a long time to get to the point where you are testing your code. That is where hot-swapping of code comes in.
+Когда вы работаете над сложным проектом, может быть раздражающим каждый раз выполнять полное обновление страницы после внесения изменений в сценарий. Особенно если вам требуется много времени, чтобы добраться до точки, где вы тестируете свой код. Вот тут и приходит на помощь горячая замена кода.
 
-## How to use hot-swapping
+## Как использовать горячую замену
 
-Hot-swapping is enabled on a per-script basis and to enable it all you need to do is implement the `swap()` method in your script.
+Горячая замена включается для каждого сценария отдельно, и чтобы ее включить, все, что вам нужно сделать, это реализовать метод `swap()` в вашем сценарии.
 
 ```javascript
 MyScript.prototype.swap = function(old) {
-   // recover state here
+   // восстановить состояние здесь
 };
 ```
 
-When a script with a `swap` function is changed in the code editor, any launched applications will reload the script and add it to script registry. Then it creates brand new script instances to swap with the old ones, calling the `swap` method during that process per each instance. The `initialize` method of the script is *not* called again. Instead, the old script instance is passed into the `swap` method and it is up to the developer to ensure that the state of the old script is copied into the new one. Declared script attributes are automatically copied over into the new script instance. It is also important to remove any event listeners from the old instance and re-attach them to the new one.
+Когда скрипт с функцией `swap` изменяется в редакторе кода, все запущенные приложения перезагружают скрипт и добавляют его в реестр скриптов. Затем он создает совершенно новые экземпляры скрипта для замены старых, вызывая метод `swap` во время этого процесса для каждого экземпляра. Метод `initialize` скрипта снова *не* вызывается. Вместо этого старый экземпляр скрипта передается в метод `swap`, и на разработчике лежит ответственность за то, чтобы состояние старого скрипта было скопировано в новый. Объявленные атрибуты скрипта автоматически копируются в новый экземпляр скрипта. Также важно удалить все слушатели событий из старого экземпляра и повторно присоединить их к новому.
 
-For example:
+Например:
 
 ```javascript
 var Rotator = pc.createScript('rotator');
@@ -26,26 +26,26 @@ var Rotator = pc.createScript('rotator');
 Rotator.attributes.add('xSpeed', { type: 'number', default: 10 });
 
 Rotator.prototype.initialize = function () {
-    // listen for enable event and call method
+    // слушаем событие enable и вызываем метод
     this.on('enable', this._onEnable);
 
     this.ySpeed = 0;
 };
 
 Rotator.prototype.swap = function (old) {
-    // xSpeed is an attribute and so is automatically copied
+    // xSpeed является атрибутом и автоматически копируется
 
-    // copy the ySpeed property from the old script instance to the new one
+    // копируем свойство ySpeed из старого экземпляра скрипта в новый
     this.ySpeed = old.ySpeed;
 
-    // remove the old event listener
+    // удаляем старый обработчик событий
     old.off('enable', old._onEnable);
-    // add a new event listener
+    // добавляем новый обработчик событий
     this.on('enable', this._onEnable);
 };
 
 Rotator.prototype._onEnable = function () {
-    // when enabled randomize the speed
+    // при включении случайным образом меняем скорость
     this.ySpeed = pc.math.random(0, 10);
 }
 
@@ -54,6 +54,6 @@ Rotator.prototype.update = function (dt) {
 };
 ```
 
-Try changing logic within the `update` method and save the code. The launched application will automatically swap `rotator` script instances with new ones and your application will keep working with the new logic.
+Попробуйте изменить логику внутри метода `update` и сохраните код. Запущенное приложение автоматически заменит экземпляры скрипта `rotator` на новые, и ваше приложение будет продолжать работать с новой логикой.
 
-The `swap` method is called regardless of the running state of a script instance, so if it was disabled due to an error it can be re-enabled in the `swap` method.
+Метод `swap` вызывается независимо от состояния выполнения экземпляра скрипта, поэтому, если он был отключен из-за ошибки, его можно снова включить в методе `swap`.

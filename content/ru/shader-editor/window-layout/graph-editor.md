@@ -1,21 +1,21 @@
 ---
-title: Graph Editor
+title: Графический редактор
 layout: shader-editor-page.hbs
 position: 5
 ---
 
-The Graph Editor displays the currently selected graph. This is where nodes are created, arranged, connected and deleted.
+Графический редактор отображает выбранный в данный момент граф. Здесь создаются, упорядочиваются, соединяются и удаляются узлы.
 
-![Graph Editor][1]
+![Графический редактор][1]
 
-| How To | |
+| Как сделать | |
 |---|---|
-| Create a node | Drag an entry from the [Nodes Pane][2] and drop it on the Graph Editor work area.<br>Drag a sub-graph from the [Assets Pane][3] onto the Graph Editor work area. |
-| Select a node | Left click the node. |
-| Delete a node | Select the node and either press delete key or use the node context menu 'Delete' option. |
-| Move a node | Left click and drag the node. |
-| Modify a node | Select the node and modify its properties in the [Inspector Pane][4]. |
-| Connect two nodes | Left click the output port of the source node, drag and drop on the input port of the target node. |
+| Создать узел | Перетащите элемент с [Панели узлов][2] и поместите его на рабочей области Графического редактора.<br>Перетащите подграф с [Панели ассетов][3] на рабочую область Графического редактора. |
+| Выбрать узел | Щелкните левой кнопкой мыши по узлу. |
+| Удалить узел | Выберите узел и нажмите клавишу удаления или используйте опцию 'Удалить' контекстного меню узла. |
+| Переместить узел | Щелкните на узле левой кнопкой мыши и перетащите его. |
+| Изменить узел | Выберите узел и измените его свойства в [Панели инспектора][4]. |
+| Соединить два узла | Щелкните левой кнопкой мыши по порту вывода исходного узла, перетащите и поместите на порт ввода целевого узла. |
 
 [1]: /images/shader-editor/graph-editor.png
 [2]: /shader-editor/window-layout/nodes-pane

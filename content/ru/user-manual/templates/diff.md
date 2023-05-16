@@ -1,19 +1,19 @@
 ---
-title: Override Diff View
+title: Переопределение Diff View
 layout: usermanual-page.hbs
 position: 1
 ---
 
-The Override Diff View shows a detailed list of all the Template Overrides for a Template Instance. In here you can compare the overridden value to the value in the Template Asset and you can select which overrides to apply or revert.
+Представление Override Diff View показывает подробный список всех переопределений шаблонов для экземпляра шаблона. Здесь вы можете сравнить переопределенное значение со значением в шаблоне Asset, и вы можете выбрать, какие переопределения применить или отменить.
 
 ![Diff View][1]
 
-## Applying Overrides
+## Применение переопределений
 
-Click on the dot next to each override to see a dropdown menu to apply the override. If you have nested Templates then you will have the option to apply the change to any parent Template.
+Нажмите на точку рядом с каждым переопределением, чтобы увидеть выпадающее меню для применения переопределения. Если у вас есть вложенные шаблоны, то у вас будет возможность применить изменение к любому родительскому шаблону.
 
-## Reverting Overrides
+## Отмена переопределений
 
-Click on the dot next to each overrides and click Revert to revert the override.
+Нажмите на точку рядом с каждым переопределением и нажмите Отменить, чтобы отменить переопределение.
 
 [1]: /images/user-manual/templates/diff.png

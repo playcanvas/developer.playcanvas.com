@@ -1,16 +1,16 @@
 ---
-title: Localization
+title: Локализация
 layout: usermanual-page.hbs
 position: 9
 ---
 
-This page describes how to localize your Text Elements to different languages.
+На этой странице описывается, как локализовать ваши текстовые элементы на разные языки.
 
-## Localization Files
+## Файлы локализации
 
-For each language you want to support you will need to add a JSON asset that contains the translated phrases for that language. PlayCanvas supports a specific format for the JSON asset. Open the Editor Settings and under LOCALIZATION click CREATE NEW ASSET to generate a new JSON asset in the expected format.
+Для каждого языка, который вы хотите поддерживать, вам нужно добавить JSON-ресурс, содержащий переведенные фразы для этого языка. PlayCanvas поддерживает определенный формат для JSON-ресурса. Откройте настройки редактора, и в разделе ЛОКАЛИЗАЦИЯ нажмите Создать новый ресурс, чтобы создать новый JSON-ресурс в ожидаемом формате.
 
-The JSON asset looks like so:
+JSON-ресурс выглядит следующим образом:
 
 ```javascript
 {
@@ -20,13 +20,13 @@ The JSON asset looks like so:
     "data": [
         {
             "info": {
-                "locale": "en-US"
+                "locale": "ru-RU"
             },
             "messages": {
-                "key": "Single key translation",
+                "key": "Перевод одного ключа",
                 "key plural": [
-                    "One key translation",
-                    "Translation for {number} keys"
+                    "Перевод одного ключа",
+                    "Перевод для {number} ключей"
                 ]
             }
         }
@@ -34,47 +34,97 @@ The JSON asset looks like so:
 }
 ```
 
-You can specify a different locale in the `info` part of the JSON file. The `messages` section contains key - value pairs for each localized phrase. The key is the identifier for that phrase and the text is the translated text for that key.
+Вы можете указать другой язык в разделе `info` JSON-файла. Раздел `messages` содержит пары ключ-значение для каждой локализованной фразы. Ключ является идентификатором этой фразы, а текст - переведенным текстом для этого ключа.
 
-PlayCanvas also supports plural forms for each locale. To specify plural forms for each phrase you need to pass an array of strings for each plural form instead of a single string. Each language has different plural forms which you can find [here][1]. Each array element corresponds to a plural form for that language. For example for English:
+PlayCanvas также поддерживает множественные формы для каждого языка. Чтобы указать множественные формы для каждой фразы, вам нужно передать массив строк для каждой множественной формы вместо одной строки. У каждого языка есть разные множественные формы, которые вы можете найти [здесь][1]. Каждый элемент массива соответствует множественной форме для этого языка. Например, для английского:
 
 ```javascript
-"key plural": [
-    "One item", // plural form ONE
-    "Not one" // plural form OTHER
+"ключ множественного числа": [
+    "Один элемент", // форма множественного числа ONE
+    "Не один" // форма множественного числа OTHER
 ]
 ```
 
-For Arabic:
+Для русского:
+
+# Создание материала с использованием Shader Editor
+
+В этом руководстве вы узнаете, как создать материал с использованием Shader Editor.
+
+## Начало работы
+
+1. Откройте проект в Unity.
+2. В окне "Project" перейдите в папку "Assets".
+3. Создайте новый материал: щелкните правой кнопкой мыши в папке "Assets" и выберите "Create > Material Asset".
+
+![Tutorial Thumbnail](images/tutorial_thumbnail.png)
+
+## Открытие Shader Editor
+
+1. Выберите созданный материал в окне "Assets".
+2. В окне "Material Inspector" выберите "Open Shader Editor".
+
+![Shader Editor](images/shader_editor.png)
+
+## Редактирование материала
+
+1. В окне "Graph Editor" добавьте новый узел: щелкните правой кнопкой мыши и выберите "Create Node > Entity".
+2. Выберите созданный узел и в окне "Node Inspector" измените его параметры.
+3. Соедините узлы в окне "Graph Editor" для создания материала.
+
+![Graph Editor](images/graph_editor.png)
+
+## Назначение текстуры
+
+1. В окне "Texture Inspector" выберите текстуру для материала.
+2. Перетащите текстуру на соответствующий узел в окне "Graph Editor".
+
+![Texture Inspector](images/texture_inspector.png)
+
+## Просмотр изменений
+
+1. В окне "Graph Inspector" нажмите кнопку "Apply" для применения изменений к материалу.
+2. В окне "Material Inspector" проверьте результат.
+
+![Graph Inspector](images/graph_inspector.png)
+
+## Завершение работы
+
+1. Сохраните материал: в окне "Shader Editor" выберите "File > Save".
+2. Закройте Shader Editor.
+
+Теперь вы создали материал с использованием Shader Editor! Если у вас возникли проблемы или вопросы, пожалуйста, обратитесь к Issue Tracker.
+
+![Issue Tracker](images/issue_tracker.png)
 
 ```javascript
 "key plural": [
-    "Zero items", // plural form ZERO
-    "One item", // plural form ONE
-    "Two items", // plural form TWO
-    "Few items", // plural form FEW
-    "Many items", // plural form MANY
-    "Rest", // plural form OTHER
+    "Ноль элементов", // plural form ZERO
+    "Один элемент", // plural form ONE
+    "Два элемента", // plural form TWO
+    "Несколько элементов", // plural form FEW
+    "Много элементов", // plural form MANY
+    "Остальные", // plural form OTHER
 ]
 ```
 
-Refer to the language tables [here][1] to determine the rules for each language.
+Обратитесь к таблицам языков [здесь][1], чтобы определить правила для каждого языка.
 
-After you have created your localization JSON assets you need to add them to the Editor Settings under LOCALIZATION.
+После создания ваших локализационных JSON-файлов вам нужно добавить их в настройки редактора в разделе LOCALIZATION.
 
-## Localizing Text Elements
+## Локализация текстовых элементов
 
-Enable the `Localized` checkbox for a Text Element in order to use the Localization Files to translate its text. The text you enter in the `Key` field of the Text Element should match the key in the localization file.
+Включите флажок `Localized` для текстового элемента, чтобы использовать файлы локализации для перевода его текста. Текст, который вы вводите в поле `Key` текстового элемента, должен соответствовать ключу в файле локализации.
 
-To test your localization you can change the `Locale` field under the Editor Settings. That should update your Editor viewport to that locale and also this will update the locale used when you launch your application. This field is not used when you publish or download a build.
+Для проверки вашей локализации вы можете изменить поле `Locale` в настройках редактора. Это должно обновить область просмотра вашего редактора на этот язык, а также обновить используемый язык при запуске вашего приложения. Это поле не используется при публикации или загрузке сборки.
 
-## Localizing Numbers
+## Локализация чисел
 
-Different locales will have different rules on how numbers should be formatted. For example, English (UK and US) would format `1000000` as `1,000,000` and Dutch would format with a decimal instead `1.000.000`.
+Разные языки имеют разные правила форматирования чисел. Например, английский (Великобритания и США) отформатирует `1000000` как `1,000,000`, а голландский - с десятичной точкой `1.000.000`.
 
-JavaScript provides a built in function to do this formatting based on the locale code, [`Number.protoype.toLocaleString()`][5].
+JavaScript предоставляет встроенную функцию для форматирования на основе кода языка, [`Number.protoype.toLocaleString()`][5].
 
-An example of usage:
+Пример использования:
 
 ```javascript
 var numberOfItems = 1000;
@@ -82,51 +132,51 @@ var currentLocale = this.app.i18n.locale;
 var localeNumberString = numberOfItems.toLocaleString(currentLocale);
 
 console.log(localeNumberString);
-// expected output assuming currentLocale is en-US: "1,000"
+// ожидаемый вывод, предполагая что currentLocale это en-US: "1,000"
 ```
 
-## Localized Fonts
+## Локализованные шрифты
 
-Often you will find that different languages might require different fonts to be used. In order to define a different font for a specific language select the primary font Asset you are using for your Text Element and towards the bottom of the Asset Attributes you will find the Localization section for that font Asset. Type the desired locale and assign a new font Asset for that locale.
+Часто вы можете обнаружить, что для разных языков могут потребоваться разные шрифты. Чтобы определить другой шрифт для определенного языка, выберите основной шрифт Asset, который вы используете для вашего текстового элемента, и в нижней части атрибутов Asset вы найдете раздел локализации для этого шрифта Asset. Введите желаемую локаль и назначьте новый шрифт Asset для этой локали.
 
-At runtime when the application switches to a different locale it will load the font Asset you defined for that locale.
+Во время выполнения, когда приложение переключается на другую локаль, оно загрузит шрифт Asset, который вы определили для этой локали.
 
 ![Localized Fonts Inspector][9]
 
-## Language Notes
+## Языковые заметки
 
-There are some languages that require specific workflows or considerations that are listed below.
+Некоторые языки требуют специфических рабочих процессов или учета, которые перечислены ниже.
 
-### Thai
+### Тайский
 
-For word wrapping to work correctly in UI Text Elements with Thai text, [zero width characters (Unicode U+200B)][7] need be added between words by the translators.
+Для корректной работы переноса слов в текстовых элементах пользовательского интерфейса с тайским текстом переводчикам необходимо добавлять [нулевые ширинные символы (Unicode U+200B)][7] между словами.
 
-The Thai language has no spaces between words and the same run of glyphs can be split into different combinations of words depending on the context of the sentence.
+В тайском языке между словами нет пробелов, и одна и та же последовательность глифов может быть разделена на разные комбинации слов в зависимости от контекста предложения.
 
-Being able to split Thai text correctly computationally is still an [unsolved problem][6] and usually done via a dictionary based approach which can be expensive to do at runtime.
+Корректное разделение тайского текста на компьютере до сих пор остается [нерешенной проблемой][6] и обычно выполняется на основе словарного подхода, который может быть дорогостоящим во время выполнения.
 
-The [thai-language.com site also has a separate tool][8] to add the zero width characters between words using a dictionary based approach if you have existing text.
+[На сайте thai-language.com также есть отдельный инструмент][8] для добавления нулевых ширинных символов между словами с использованием словарного подхода, если у вас уже есть текст.
 
-### Right to left Languages
+### Языки справа налево
 
-Right to left languages will need extra scripts for support that can be found in this [example project][10].
+Для поддержки языков с направлением письма справа налево потребуются дополнительные скрипты, которые можно найти в [этом примере проекта][10].
 
-In the example project, there is a folder called 'Rtl Support' that needs to [copied and pasted][11] into your project.
+В примере проекта есть папка с названием "Rtl Support", которую нужно [скопировать и вставить][11] в ваш проект.
 
 ![][12]
 
-In the folder, there is Script Type called 'RtlElement' which should be added to any Entity with a text element component that would be used to show right to left text.
+В папке есть тип скрипта под названием "RtlElement", который должен быть добавлен к любому Entity с компонентом текстового элемента, который будет использоваться для отображения текста справа налево.
 
 ![][13]
 
-## Engine
+## Движок
 
-To retrieve the text from a key in script, use the APIs:
+Чтобы получить текст из ключа в скрипте, используйте API:
 
-* [pc.I18n#getText][3] To retrieve the a non-plural or first text string in a plural list
-* [pc.I18n#getPluralText][4] To retrieve a plural text string based on the number
+* [pc.I18n#getText][3] Чтобы получить не множественную или первую текстовую строку в списке множественных чисел
+* [pc.I18n#getPluralText][4] Чтобы получить множественную текстовую строку на основе числа
 
-For the complete engine API reference for localization see [this page][2].
+Для полного справочника API движка по локализации см. [эту страницу][2].
 
 [1]: https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
 [2]: /api/pc.I18n.html

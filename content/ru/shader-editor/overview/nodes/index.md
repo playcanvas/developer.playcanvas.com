@@ -1,27 +1,27 @@
 ---
-title: Nodes
+title: Узлы
 layout: shader-editor-page.hbs
 position: 2
 ---
 
-Shader Editor supports many types of nodes, but they all have the following structure:
+Shader Editor поддерживает множество типов узлов, но все они имеют следующую структуру:
 
 ![Graph Editor Node][1]
 
-| Node structure | |
+| Структура узла | |
 |---|---|
-| 1 | Node type. |
-| 2 | Input Ports. |
-| 3 | Output Ports. |
+| 1 | Тип узла. |
+| 2 | Входные порты. |
+| 3 | Выходные порты. |
 
-Certain nodes have no input ports and others have no output ports. (Though all nodes have at least one port).
+Некоторые узлы не имеют входных портов, а другие не имеют выходных портов. (Хотя у всех узлов есть хотя бы один порт).
 
-### Node Categories
+### Категории узлов
 
-Based on this, we can identify three categories of nodes:
+На основе этого мы можем выделить три категории узлов:
 
-- Input nodes - these have output ports, but no input ports.
-- Output nodes - these have input ports, but no output ports.
-- Transform nodes - these have both input ports and output ports.
+- Входные узлы - они имеют выходные порты, но не имеют входных портов.
+- Выходные узлы - они имеют входные порты, но не имеют выходных портов.
+- Узлы преобразования - они имеют и входные порты, и выходные порты.
 
 [1]: /images/shader-editor/graph-editor-node.png

@@ -1,48 +1,48 @@
 ---
-title: Ambient Occlusion
+title: Окружающая Окклюзия
 layout: usermanual-page.hbs
 position: 4
 ---
 
-Ambient Occlusion is a technique to approximate how much light gets onto the surface based on its occlusion by the environment.
+Окружающая окклюзия - это техника приближения того, сколько света попадает на поверхность, основанная на ее закрытии окружающей средой.
 
-In PlayCanvas, ambient lighting is multiplied by the AO map, both diffuse and specular.
+В PlayCanvas окружающее освещение умножается на карту AO, как диффузное, так и зеркальное.
 
-![Ambient Occlusion comparison: without/with][4]
-*Left: without AO; Right: with Global AO*
+![Сравнение окружающей окклюзии: без/с][4]
+*Слева: без AO; Справа: с глобальным AO*
 
-AO map can be of different scale. E.g. a texture detail AO, showing surface crevices or a world-scale AO with large shadowing effect of different parts of the model. Large-scale AO will give more effect, it usually matches lightmaps on UV1, and is more important.
+Карта AO может быть разного масштаба. Например, детальная текстура AO, показывающая трещины на поверхности, или мировая карта AO с большим теневым эффектом разных частей модели. Большая карта AO будет иметь больше эффекта, она обычно соответствует картам освещения на UV1 и является более важной.
 
-## Rendering Global AO
+## Рендеринг глобального AO
 
-Rendering AO can be done using popular 3D modelling and archviz tools. It is practically same as rendering Lightmap that is described in [Lightmapping Section][0].
+Рендеринг AO может быть выполнен с использованием популярных инструментов 3D-моделирования и архитектурной визуализации. Это практически то же самое, что и рендеринг Lightmap, который описан в [разделе Lightmapping][0].
 
-With few small differences where special material is applied on all geometry that will paint it so it looks like AO, and different settings during rendering into texture.
+С небольшими различиями, где специальный материал применяется ко всей геометрии, который будет окрашивать его так, чтобы он выглядел как AO, и разные настройки во время рендеринга в текстуру.
 
-In 3D's Max with VRay it is done by creating a material of **VRayDirt** type and **Ambient Occlusion** mode, where **radius** can be changed to get desirable results.
+В 3D's Max с VRay это делается путем создания материала типа **VRayDirt** и режима **Ambient Occlusion**, где **radius** можно изменить для получения желаемых результатов.
 
-![3D's Max: Ambient Occlusion VRay Material][1]
+![3D's Max: Материал окружающей окклюзии VRay][1]
 
-This material should be applied on all static geometry that have to be in ambient occlusion map. In 3D's Max this can be done either by manually applying it on individual objects or by using VRay Render Settings, using **Override mtl** property. This way individual materials are preserved and it makes life easier.
+Этот материал должен быть применен ко всей статической геометрии, которая должна быть на карте окружающей окклюзии. В 3D's Max это можно сделать либо вручную, применяя его к отдельным объектам, либо с помощью настроек рендеринга VRay, используя свойство **Override mtl**. Таким образом, сохраняются индивидуальные материалы, и это облегчает жизнь.
 
-![3D's Max VRay Render Settings: Override mtl][2]
+![3D's Max Настройки рендеринга VRay: Override mtl][2]
 
-Then we need to get this data out into the texture. In 3D's Max this is done by using [Render To Texture][3], same as during Lightmapping rendering, except **output** option should be using **VRayCompleteMap**.
+Затем нам нужно получить эти данные в текстуру. В 3D's Max это делается с помощью [Render To Texture][3], так же, как и во время рендеринга Lightmapping, за исключением опции **output**, которая должна использовать **VRayCompleteMap**.
 
-AO Texture does not need to store very detailed information, and visually does not suffers from texture compression artifacts much. So JPEG is economical and is suitable format for it.
+Текстура AO не нуждается в хранении очень подробной информации и визуально не страдает от артефактов сжатия текстур. Поэтому JPEG является экономичным и подходящим форматом для этого.
 
-## Upload to Editor
+## Загрузка в редактор
 
-Simply upload texture in Editor and apply it on Ambient Occlusion slot on materials.
+Просто загрузите текстуру в редактор и примените ее на слот Ambient Occlusion на материалах.
 
-![Editor Ambient Occlusion Map][5]
+![Редактор карты окружающей окклюзии][5]
 
-## Example
+## Пример
 
-You can [explore example][6] that uses global Ambient Occlusion described above and its [project][7].
+Вы можете [изучить пример][6], который использует глобальную окружающую окклюзию, описанную выше, и его [проект][7].
 
 [![PlayCanvas Lightmapping][8]][6]
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+*Освещение в этой сцене реализовано с использованием текстур Lightmap и AO и Box Projected IBL (отражения)*
 
 [0]: /user-manual/graphics/lighting/lightmapping/
 [1]: /images/user-manual/graphics/lighting/lightmapping/3ds-max-ao-rendering.png

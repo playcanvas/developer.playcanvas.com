@@ -2,18 +2,18 @@
 title: Создание музыкального визуализатора
 layout: tutorial-page.hbs
 tags: audio
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Создание музыкального визуализатора"></iframe>
 
-*Find out more by forking the [full project][1].*
+*Узнайте больше, создав копию [полного проекта][1].*
 
-This tutorial teaches you how to create a Music Visualizer application in WebGL using PlayCanvas. We're going to take an audio stream extra frequency data and then render that data into a PlayCanvas canvas.
+В этом уроке вы научитесь создавать приложение музыкального визуализатора на WebGL с использованием PlayCanvas. Мы собираемся взять аудиопоток, извлечь данные о частоте и затем отобразить эти данные на холсте PlayCanvas.
 
-Our music visualizer consists of two scripts. The analyser, plays the audio and extracts the data via an Analyser Node. Which is part of the Web Audio API built into modern browsers. The visualizer, takes the data from the analyser and renders it onto screen as a funky graph.
+Наш музыкальный визуализатор состоит из двух скриптов. Анализатор воспроизводит аудио и извлекает данные с помощью анализатора узлов. Что является частью Web Audio API, встроенного в современные браузеры. Визуализатор берет данные из анализатора и отображает их на экране в виде стильного графика.
 
-## The Analyser
+## Анализатор
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -22,11 +22,11 @@ Analyser.attributes.add('fftsize', {
     type: 'number'
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Analyser.prototype.initialize = function() {
     var context = this.app.systems.sound.context;
 
-    // create analyser node and set up
+    // создание узла анализатора и настройка
     this.analyser = context.createAnalyser();
     this.analyser.smoothingTimeConstant = 0.6;
     this.analyser.fftSize = this.fftsize;
@@ -38,24 +38,24 @@ Analyser.prototype.initialize = function() {
     slot.setExternalNodes(this.analyser);
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Analyser.prototype.update = function(dt) {
     this.analyser.getFloatFrequencyData(this.freqData);
     this.analyser.getFloatTimeDomainData(this.timeData);
 };
 ```
 
-Let's take a closer look at the code here.
+Давайте более внимательно рассмотрим код здесь.
 
-First we get hold of the `context`. This is the applications instance of an [`AudioContext`][2]. We use this to create a new [`AnalyserNode`][3] which is part of the Web Audio API the standard across all modern browsers. The `AnalyserNode` let's us access the raw data of the audio every frame as an array of values. It has a couple of properties `smoothingTimeConstant` determines whether the data sampling is smoothed over time. `0` means no smoothing, `1` means super-smooth. And `fftSize` this determines how many samples the analyser node will generate. It must be a power of two, the higher it is the more detailed and the more expensive for your CPU.
+Сначала мы получаем `context`. Это экземпляр приложения [`AudioContext`][2]. Мы используем его для создания нового [`AnalyserNode`][3], который является частью Web Audio API, стандарта для всех современных браузеров. `AnalyserNode` позволяет нам получать доступ к необработанным данным аудио каждый кадр в виде массива значений. У него есть несколько свойств: `smoothingTimeConstant` определяет, сглаживается ли выборка данных со временем. `0` означает отсутствие сглаживания, `1` означает сверхсглаживание. И `fftSize` определяет, сколько образцов будет генерировать узел анализатора. Он должен быть степенью двойки, чем выше это значение, тем более детальным и тем более дорогостоящим для вашего процессора оно будет.
 
-You can access the data from the `AnalyserNode` as integers, in a `Uint8Array` or as floats, in a `Float32Array`. In this demo we use floats, so we allocate two `Float32Arrays` each one needs to be half as big as `fftSize`.
+Вы можете получить доступ к данным из `AnalyserNode` в виде целых чисел, в `Uint8Array` или в виде чисел с плавающей запятой, в `Float32Array`. В этом демо мы используем числа с плавающей запятой, поэтому мы выделяем два `Float32Arrays`, каждый из которых должен быть вдвое меньше, чем `fftSize`.
 
-The final part of the setup is to use `setExternalNodes` from the PlayCanvas SoundSlot API to insert this new node into the node chain in the Sound Component.
+Последняя часть настройки заключается в использовании `setExternalNodes` из API PlayCanvas SoundSlot для вставки этого нового узла в цепочку узлов в Sound Component.
 
-Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData` and `getFloatTimeDomainData` to fill our arrays with data. We'll be using this data in our Visualizer script.
+Затем, в нашем цикле обновления, мы используем методы `AnalyserNode` `getFloatFrequencyData` и `getFloatTimeDomainData` для заполнения наших массивов данными. Мы будем использовать эти данные в нашем скрипте визуализатора.
 
-## The Visualizer
+## Визуализатор
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');
@@ -77,7 +77,7 @@ Visualizer.attributes.add('heightScale', {
     default: 1
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Visualizer.prototype.initialize = function() {
     this.lines = [];
     var count = this.analyser.script.analyser.fftsize;
@@ -94,7 +94,7 @@ Visualizer.prototype.initialize = function() {
     this.freqOffset = this.minDb;
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Visualizer.prototype.update = function(dt) {
     this.freqScale = 1 / (this.maxDb - this.minDb);
     this.freqOffset = this.minDb;
@@ -121,19 +121,19 @@ Visualizer.prototype.renderData = function (data, color, scale, offset) {
 };
 ```
 
-The visualizer script takes all the data from the analyser and renders it as line graph using the [`this.app.renderLines`][4] API.
+Скрипт визуализатора берет все данные из анализатора и отображает их в виде линейного графика с использованием API [`this.app.renderLines`][4].
 
-In our setup we are allocating a load of vectors to use in for the lines. We need 2 for every point of data (for the start and end of the lines). Then we are setting up some scale factors to make sure the lines all appear on the screen. The `AnalyserNode` contains a min and max value of decibels that the data can contain. I've found this isn't particular accurate (I definitely got values outside of this range) but it forms a good basis for normalizing the data.
+В нашей конфигурации мы выделяем множество векторов для использования в линиях. Нам нужно 2 для каждой точки данных (для начала и конца линий). Затем мы настраиваем некоторые масштабные коэффициенты, чтобы убедиться, что все линии отображаются на экране. `AnalyserNode` содержит минимальное и максимальное значение децибел, которые могут содержать данные. Я обнаружил, что это не совсем точно (я определенно получил значения за пределами этого диапазона), но это служит хорошей основой для нормализации данных.
 
-The `renderData` function loops through all the data and sets one of our pre-allocated vectors to be the start at the current point and finish at the next point.
+Функция `renderData` проходит через все данные и устанавливает один из наших предварительно выделенных векторов, чтобы начать с текущей точки и закончить на следующей точке.
 
-In our update loop we render the graphs for both the Frequency Data and the Time Domain Data.
+В нашем цикле обновления мы отображаем графики для данных частоты и данных временной области.
 
-## More ideas?
+## Еще идеи?
 
-This is just a taster of how you can visualize your music. Why not try scaling 3D bars, adjusting colors and brightness in time to the music? Hook up the visualizer to SoundCloud and let users pick tracks? There are loads of possibilities.
+Это всего лишь небольшой пример того, как вы можете визуализировать свою музыку. Почему бы не попробовать масштабировать 3D-бары, настраивать цвета и яркость в соответствии с музыкой? Подключите визуализатор к SoundCloud и позвольте пользователям выбирать треки? Возможностей множество.
 
 [1]: https://playcanvas.com/project/405891
-[2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
+[2]: https://developer.mozilla.org/ru/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
 [4]: /api/pc.Application.html#renderLines

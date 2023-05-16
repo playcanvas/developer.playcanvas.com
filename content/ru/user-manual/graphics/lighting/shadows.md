@@ -4,94 +4,101 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-Shadows are a great way to add realism to your games. However, dynamic (realtime) shadows, can come with a significant runtime performance cost. For a more performant way of adding static shadows to your scene. See [Lightmaps][4].
+Тени - отличный способ добавить реализм в ваши игры. Однако динамические (в реальном времени) тени могут обходиться довольно дорого с точки зрения производительности. Для более производительного способа добавления статических теней на вашу сцену см. [Lightmaps][4].
 
-![Characters with shadow casting][1]
+![Персонажи с отбрасыванием теней][1]
 
-The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
+Движок PlayCanvas реализует алгоритм теней, называемый отображением теней. Он полностью кросс-платформенный и гарантированно работает как на мобильных устройствах, так и на настольных компьютерах.
 
-## Enabling Shadows
+## Включение теней
 
-![Directional Light][5]
+<img loading="lazy" src="/images/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480">
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+По умолчанию отбрасывание теней отключено в PlayCanvas. Вам нужно явно включить его самостоятельно. К счастью, включение теней легко. Во-первых, определите, какие источники света на вашей сцене должны отбрасывать тени. Выберите источники света в иерархии, чтобы изменить их свойства в панели инспектора. У каждого источника света есть опция "Cast Shadows". Просто установите эту опцию для источника света, чтобы генерировать тени для графических объектов, отбрасывающих тени на вашей сцене.
 
 ![Model Component][6]
 
-Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all render and model components cast and receive shadows. To modify these properties, select the entity in the Hierarchy, locate the render or model component in the Inspector and uncheck the 'Cast Shadows' or 'Receive Shadows' option as required.
+Теперь вам нужно указать, какие графические объекты на вашей сцене отбрасывают и принимают тени. По умолчанию все компоненты рендера и модели отбрасывают и принимают тени. Чтобы изменить эти свойства, выберите сущность в иерархии, найдите компонент рендера или модели в инспекторе и снимите флажок "Cast Shadows" или "Receive Shadows" по мере необходимости.
 
-## Shadow Cascades
+## Каскады теней
 
-When a directional shadow is used over a large area, it often exhibits aliasing, where a shadow near the camera has a low resolution. Capturing the shadow in a single shadow map requires very high and impractical resolution to improve this.
+Когда направленная тень используется на большой площади, она часто проявляет алиасинг, когда тень возле камеры имеет низкое разрешение. Захват тени в одной карте теней требует очень высокого и непрактичного разрешения для улучшения этого.
 
-Shadow cascades help to fix this problem by splitting the camera view frustum along the viewing direction, and a separate shadow map is used for each split. This gives nearby objects one shadow map, and another shadow map captures everything in the distance, and optionally additional shadow maps in between.
+Каскады теней помогают исправить эту проблему, разделяя видовой пирамиду камеры вдоль направления просмотра, и для каждого разделения используется отдельная карта теней. Это дает ближайшим объектам одну карту теней, а другая карта теней захватывает все на расстоянии, и при необходимости дополнительные карты теней между ними.
 
-Note that the number of shadow cascades has an effect on performance, as each shadow casting mesh might need to be rendered into more than a single shadow map.
+Обратите внимание, что количество каскадов теней влияет на производительность, так как каждая теневая сетка может потребоваться для отображения более чем на одной карте теней.
 
-The following properties can be used to set up shadow cascades.
+Следующие свойства можно использовать для настройки каскадов теней.
 
-### Number of cascades
+### Количество каскадов
 
-Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
+Количество каскадов представляет собой количество разделений видовой пирамиды камеры и может быть 1, 2, 3 или 4. Значение по умолчанию 1 представляет одну карту теней.
 
-A screenshot showing a single shadow cascade.
+Скриншот, показывающий один каскад теней.
 
-![One cascade][7]
+![Один каскад][7]
 
-A screenshot showing four shadow cascades.
+Скриншот, показывающий четыре каскада теней.
 
-![Four cascades][8]
+![Четыре каскада][8]
 
-### Distribution of cascades
+### Распределение каскадов
 
-The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
+Распределение разделения видовой пирамиды камеры для отдельных каскадов теней. Может быть указано значение в диапазоне от 0 до 1. Значение 0 представляет линейное распределение, а значение 1 - логарифмическое распределение. Визуально большее значение распределяет больше разрешения карты теней на передние объекты, а меньшее значение - на более далекие объекты.
 
-## Tuning Shadows
+## Настройка теней
 
-The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
+Техника отображения теней, используемая PlayCanvas, имеет только конечное разрешение. Поэтому вам может потребоваться настроить некоторые значения, чтобы они выглядели наилучшим образом. Следующие свойства можно найти в пользовательском интерфейсе [Light Component][2].
 
-### Shadow Distance
+### Дистанция тени
 
-The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
+Дистанция тени - это расстояние от точки обзора, за которым тени направленного света больше не отображаются. Чем меньше это значение, тем четче будут ваши тени. Проблема в том, что зритель сможет видеть, как тени внезапно появляются, когда точка обзора перемещается по сцене. Поэтому вы должны сбалансировать это значение на основе того, как далеко игрок может видеть на расстоянии и, в целом, что выглядит хорошо.
 
-### Shadow Resolution
+### Интенсивность тени
 
-Every light casts shadows via a shadow map. This shadow map can have a resolution of 256x256, 512x512, 1024x1024 or 2048x2048 and this value is also set in the light component's interface. The higher the resolution, the crisper the shadows. However, higher resolution shadows are more expensive to render so be sure to balance performance against quality.
+Интенсивность тени, где 1 представляет полную интенсивность тени, создаваемой этим источником света, а 0 представляет отсутствие тени.
 
-### Shadow Bias
+![Интенсивность тени][9]
 
-Shadow mapping can be prone to rendering artifacts that can look very ugly. If you notice bands of shadow or speckled patches where you do not expect, you should try tuning the shadow bias to resolve the problem.
+### Разрешение тени
 
-### Normal Offset Bias
+Каждый источник света отбрасывает тени с помощью карты теней. Эта карта теней может иметь разрешение 256x256, 512x512, 1024x1024 или 2048x2048, и это значение также устанавливается в интерфейсе компонента света. Чем выше разрешение, тем четче тени. Однако тени с более высоким разрешением дороже в рендеринге, поэтому обязательно сбалансируйте производительность и качество.
 
-'Shadow acne' artifacts are a big problem and the shadow bias can eliminate them quite effectively. Unfortunately, this always introduces some level of 'Peter Panning', the phenomenon where shadows make a object appear to be floating in mid-air.
+### Смещение тени
 
-The Normal Offset Bias solves this problem. In addition to using the depth bias, we can avoid both shadow acne and Peter Panning by making small tweaks to the UV coordinates used in the shadow map look-up. A fragment's position is offset along its geometric normal. This "Normal Offset" technique yields vastly superior results to a constant shadow bias only approach.
+Теневое отображение может быть склонно к артефактам рендеринга, которые могут выглядеть очень некрасиво. Если вы заметите полосы тени или пятна, где этого не ожидаете, вам следует попробовать настроить смещение тени, чтобы решить проблему.
 
-## Soft Shadows vs Hard Shadows
+### Смещение по нормали
 
-The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in PlayCanvas but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
+Артефакты "теневых прыщей" являются большой проблемой, и смещение тени может эффективно их устранить. К сожалению, это всегда вводит некоторый уровень "Питер Пэнинга", явление, когда тени заставляют объект казаться парящим в воздухе.
 
-![Hard vs soft shadows][3]
+Смещение по нормали решает эту проблему. В дополнение к использованию смещения глубины, мы можем избежать как теневых прыщей, так и Питер Пэнинга, внося небольшие корректировки в координаты UV, используемые при поиске теневой карты. Позиция фрагмента смещается вдоль его геометрической нормали. Этот метод "смещения по нормали" дает гораздо лучшие результаты по сравнению с подходом только с постоянным смещением тени.
 
-Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
+## Мягкие тени против жестких теней
 
-The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
+Контур тени называется полутенью. Это переход от темного к светлому, который придает теням мягкий край. Смягчение краев тени является настройкой по умолчанию в PlayCanvas, но вы можете изменить эту настройку, если хотите получить жесткие тени. Ниже приведено сравнение мягких и жестких теней:
 
-## Performance Considerations
+![Жесткие и мягкие тени][3]
 
-Enabling shadows has performance implications:
+Мягкие тени достигаются за счет выполнения большего количества выборок теневой карты на GPU. Используемый алгоритм называется Percentage Closest Filtering или PCF. Этот алгоритм считывает 9 локализованных выборок (матрица 3 на 3) из теневой карты вместо одной, как используется для жестких теней.
 
-* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Omni light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
-* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
-* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
-* If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
+Тип выборки тени указывается для каждого света, поэтому параметр можно найти в инспекторе света.
+
+## Вопросы производительности
+
+Включение теней имеет последствия для производительности:
+
+* Для каждого направленного или прожекторного света, создающего тени, сцена должна быть отрендерена один раз в теневую карту каждый кадр. Тени от всенаправленных источников света гораздо дороже, так как сцена отображается шесть раз для каждого источника света (теневая карта хранится в виде кубической карты с 6 сторонами). Рендеринг сцены в теневые карты нагружает как ЦП, так и ГП.
+* Использование большего разрешения теневой карты сгенерирует более четкие тени, но ГП должен заполнить больше пикселей теневой карты, и это может повлиять на частоту кадров.
+* Выбор мягких теней (PCF3x3) для типа выборки тени на материале, получающем тень, более затратен на ГП по сравнению с опцией жестких теней.
+* Если ваши тени исходят от статических частей окружения, рассмотрите возможность использования [карт освещения][4] для записи теней в текстуры.
 
 [1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
 [2]: /user-manual/packs/components/light
 [3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
-[5]: /images/user-manual/scenes/components/component-light-directional.png
+[5]: /images/user-manual/graphics/lighting/shadows/light-shadow-options.png
 [6]: /images/user-manual/scenes/components/component-model.png
 [7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
 [8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg
+[9]: /images/user-manual/graphics/lighting/shadows/shadow-intensity.gif
