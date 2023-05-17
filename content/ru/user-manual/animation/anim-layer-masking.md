@@ -1,24 +1,24 @@
 ---
-title: Anim Layer Masks
+title: Маски слоя анимации
 layout: usermanual-page.hbs
 position: 4
 ---
 
-When creating complex animation behavior for your game objects, it is often necessary to isolate the playback of certain animations to specific bones in each object's model. This is particularly useful when animating characters that need to carry out multiple actions at the same time. This can be achieved in PlayCanvas by creating an a mask for a given [animation layer](/en/user-manual/animation/anim-state-graph-assets/#layers/) in your anim component.
+При создании сложного анимационного поведения для объектов вашей игры часто требуется изолировать воспроизведение определенных анимаций для определенных костей в модели каждого объекта. Это особенно полезно при анимации персонажей, которым необходимо выполнять несколько действий одновременно. Это можно достичь в PlayCanvas, создав маску для данного [слоя анимации](/en/user-manual/animation/anim-state-graph-assets/#layers/) в вашем компоненте анимации.
 
-### Creating a mask
+### Создание маски
 
-After creating an Anim State Graph asset and attaching it to an anim component, you'll be presented with a list of layers contained in your graph. You can create a mask for any of these layers by clicking the **Create Mask** button under each layer panel:
+После создания ресурса Anim State Graph и присоединения его к компоненту анимации, вам будет представлен список слоев, содержащихся в вашем графе. Вы можете создать маску для любого из этих слоев, нажав кнопку **Создать маску** под каждой панелью слоя:
 
-![Anim Component Create Mask][1]
+![Создание маски компонента анимации][1]
 
- This will open up the mask inspector for that layer which is shown below:
+Это откроет инспектор маски для этого слоя, который показан ниже:
 
-![Mask Inspector][2]
+![Инспектор маски][2]
 
-The mask inspector displays the full hierarchy which the anim component is driving, starting at the `root bone` specified in the anim component. Each bone in the hierarchy can be selected to be included in the mask. You can also right-click specific bones to include or exclude whole sections of the hierarchy. Any bones which are not selected in this mask will not be driven by any of the animations which play in this mask's layer.
+Инспектор маски отображает полную иерархию, которую управляет компонент анимации, начиная с указанного `root bone` в компоненте анимации. Каждая кость в иерархии может быть выбрана для включения в маску. Вы также можете щелкнуть правой кнопкой мыши по определенным костям, чтобы включить или исключить целые разделы иерархии. Любые кости, которые не выбраны в этой маске, не будут управляться ни одной из анимаций, которые проигрываются в слое этой маски.
 
-After creating masks, you can use [layer blending](/en/user-manual/animation/anim-state-graph-assets/#layer-blending) to smoothly blend the masked animations of multiple layers together.
+После создания масок вы можете использовать [смешивание слоев](/en/user-manual/animation/anim-state-graph-assets/#layer-blending) для плавного смешивания маскированных анимаций нескольких слоев вместе.
 
 [1]: /images/user-manual/anim/anim_component_create_mask.png
 [2]: /images/user-manual/anim/anim_mask_inspector.png

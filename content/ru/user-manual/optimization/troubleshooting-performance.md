@@ -1,34 +1,34 @@
 ---
-title: Проблемы с производительностью
+title: Устранение проблем с производительностью
 layout: usermanual-page.hbs
 position: 8
 ---
 
-Here are some tips to help you uncover common performance problems
+Вот несколько советов, которые помогут вам выявить распространенные проблемы с производительностью
 
-## PlayCanvas and other WebGL applications run very slowly in IE 11
+## PlayCanvas и другие приложения WebGL работают очень медленно в IE 11
 
-On some computer hardware Internet Explorer 11 is not able to use the GPU (graphics processors) to do graphics acceleration. In these cases it will fall back to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. Unfortunately, there are no workarounds to this as it is a hardware issue. The only solution is to update graphics drivers or hardware on the problem machine.
+На некотором компьютерном оборудовании Internet Explorer 11 не может использовать GPU (графические процессоры) для аппаратного ускорения графики. В этих случаях он переходит на использование программного рендерера для отображения контента WebGL. Это будет значительно медленнее, чем использование GPU. К сожалению, нет никаких обходных путей для этого, так как это проблема оборудования. Единственное решение - обновить драйверы графики или оборудование на проблемной машине.
 
-To confirm if you are running using the software renderer, visit [WebGL Report][1]. If IE 11 is using the software renderer you will see the row for **Major Performance Caveat** is set to **Yes**.
+Чтобы убедиться, что вы используете программный рендерер, посетите [WebGL Report][1]. Если IE 11 использует программный рендерер, вы увидите, что строка для **Major Performance Caveat** установлена на **Yes**.
 
-## PlayCanvas and other WebGL applications run very slowly in Google Chrome
+## PlayCanvas и другие приложения WebGL работают очень медленно в Google Chrome
 
-Chrome contains a blacklist of GPUs (graphics processors) and graphics card drivers which it will block from running WebGL content. In these cases Chrome will revert to using a software renderer to render WebGL content. This will be significantly slower than using the GPU. It is possible that upgrading graphics card drivers will improve performance.
+Chrome содержит черный список GPU (графических процессоров) и драйверов видеокарт, которые он блокирует от запуска контента WebGL. В этих случаях Chrome вернется к использованию программного рендерера для отображения контента WebGL. Это будет значительно медленнее, чем использование GPU. Возможно, обновление драйверов видеокарты улучшит производительность.
 
-You can view the blacklisted cards [here][2].
+Вы можете просмотреть заблокированные карты [здесь][2].
 
-To confirm if you are running using the software renderer, visit [WebGL Report][1]. If Chrome is using the software renderer you will see the row for **Unmasked Renderer** reports **SwiftShader**.
+Чтобы убедиться, что вы используете программный рендерер, посетите [WebGL Report][1]. Если Chrome использует программный рендерер, вы увидите, что строка для **Unmasked Renderer** сообщает **SwiftShader**.
 
-## PlayCanvas and other WebGL applications do not load in Firefox
+## PlayCanvas и другие приложения WebGL не загружаются в Firefox
 
-Firefox contains a blacklist of GPUs (graphics processors) and graphics card drivers which it will block from running WebGL content. In these cases Firefox not allow the application to create a WebGL context and the PlayCanvas application cannot start. It is possible that upgrading your graphics card drivers will enable the application to run.
+Firefox содержит черный список GPU (графических процессоров) и драйверов видеокарт, которые он блокирует от запуска контента WebGL. В этих случаях Firefox не позволит приложению создать контекст WebGL, и приложение PlayCanvas не сможет запуститься. Возможно, обновление драйверов вашей видеокарты позволит приложению работать.
 
-You can view the blacklisted cards [here][2].
+Вы можете просмотреть заблокированные карты [здесь][2].
 
-## PlayCanvas and other WebGL applications does not perform as well as expected on Windows with Nvidia graphics cards
+## PlayCanvas и другие приложения WebGL не работают так хорошо, как ожидалось, на Windows с видеокартами Nvidia
 
-Many Windows PCs contain two graphics cards, an "Integrated" graphics card which is a lower powered GPU built onto the motherboard of the computer and an additional graphics card. Nvidia cards come with a control panel installed that lets the PC owner choose which graphics card is used to run which application. By default many PCs are set up to use the lower powered integrated graphics card to run web browsers like Google Chrome. In order to get the best performance out of WebGL applications it is important to ensure that the web browser is accelerated using the more powerful graphics card.
+Многие компьютеры с Windows содержат две видеокарты: "интегрированную" видеокарту, которая представляет собой менее мощный GPU, встроенный в материнскую плату компьютера, и дополнительную видеокарту. Видеокарты Nvidia поставляются с установленной панелью управления, которая позволяет владельцу ПК выбирать, какая видеокарта используется для запуска того или иного приложения. По умолчанию многие компьютеры настроены на использование менее мощной интегрированной видеокарты для запуска веб-браузеров, таких как Google Chrome. Чтобы получить максимальную производительность от приложений WebGL, важно убедиться, что веб-браузер ускоряется с использованием более мощной видеокарты.
 
 
 [1]: https://webglreport.com/

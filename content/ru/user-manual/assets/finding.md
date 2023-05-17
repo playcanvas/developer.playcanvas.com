@@ -4,17 +4,17 @@ layout: usermanual-page.hbs
 position: 18
 ---
 
-## Where can I get 3D models/Sound FX/Music for PlayCanvas?
+## Где я могу найти 3D-модели/звуковые эффекты/музыку для PlayCanvas?
 
-Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types.
+Иногда важно создать свои собственные уникальные ассеты, но иногда полностью индивидуальный ассет слишком дорог или затратен в производстве. Поэтому мы собрали список ссылок и ресурсов, где вы можете получить бесплатные или платные ассеты всех типов.
 
-If you've got other suggestions for this page. Then let us know on the [forum][1].
+Если у вас есть другие предложения для этой страницы. Тогда дайте нам знать на [форуме][1].
 
-## Asset Marketplaces
+## Маркетплейсы ассетов
 
-Asset marketplaces are online libraries of content that you can download, either for free or for a fee, and add to your PlayCanvas game.
+Маркетплейсы ассетов - это онлайн-библиотеки контента, который вы можете скачать бесплатно или за плату и добавить в свою игру PlayCanvas.
 
-| Provider                                                                 | 2D Art   | 3D Art   | Аудио    |
+| Поставщик                                                                 | 2D Art   | 3D Art   | Аудио    |
 |--------------------------------------------------------------------------|----------|----------|----------|
 | [3D Models Textures](https://www.3dmodels-textures.com/)                 |          | &#x2713; | &#x2713; |
 | [BlendSwap](https://www.blendswap.com/)                                  |          | &#x2713; |          |
@@ -28,12 +28,12 @@ Asset marketplaces are online libraries of content that you can download, either
 | [Sound Bible](https://soundbible.com/)                                   |          |          | &#x2713; |
 | [Turbosquid](https://www.turbosquid.com/)                                | &#x2713; | &#x2713; | &#x2713; |
 
-## Procedural Generation Tools
+## Инструменты процедурного генерирования
 
-There are tools available that can generate game assets procedurally. Here are some good examples:
+Существуют инструменты, которые могут генерировать игровые ассеты процедурно. Вот несколько хороших примеров:
 
-* [Sound FX Generator][2]
-* [Spacescape Skybox Generator][3]
+* [Генератор звуковых эффектов][2]
+* [Генератор Skybox Spacescape][3]
 
 [1]: https://forum.playcanvas.com/
 [2]: https://www.bfxr.net/

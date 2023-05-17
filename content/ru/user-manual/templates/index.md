@@ -1,85 +1,85 @@
 ---
-title: Templates
+title: Шаблоны
 layout: usermanual-page.hbs
 position: 12
 ---
 
-Templates (or prefabs) allow you to speed up your development by creating Entities that are reusable. You can place multiple instances of a Template in your Scene and if you make any changes and apply them to the Template Asset, all instances of that Template will be updated.
+Шаблоны (или префабы) позволяют ускорить вашу разработку, создавая повторно используемые объекты Entity. Вы можете разместить несколько экземпляров шаблона в вашей сцене, и если вы внесете какие-либо изменения и примените их к Asset шаблона, все экземпляры этого шаблона будут обновлены.
 
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
 
-## Creating Templates
+## Создание шаблонов
 
-To create a new Template Asset you can right-click on any Entity in your Scene and select Template &rarr; New Template. This will create a new Template Asset and add it to your currently selected folder in the Asset Panel. The Entity you right clicked will become an instance of that new Template Asset automatically.
+Чтобы создать новый Asset шаблона, вы можете щелкнуть правой кнопкой мыши на любом объекте Entity в вашей сцене и выбрать Template &rarr; New Template. Это создаст новый Asset шаблона и добавит его в вашу текущую выбранную папку в панели Asset. Объект Entity, на который вы щелкнули, автоматически станет экземпляром этого нового Asset шаблона.
 
-## Adding Templates in your Scene
+## Добавление шаблонов в вашу сцену
 
-You can drag & drop a Template Asset in your scene or right click under an Entity in the Hierarchy and select Template &rarr; Add Instance. Then you can select the Template Asset and that will an instance of it under the clicked Entity.
+Вы можете перетащить Asset шаблона в вашу сцену или щелкнуть правой кнопкой мыши на объекте Entity в иерархии и выбрать Template &rarr; Add Instance. Затем вы можете выбрать Asset шаблона, и это добавит экземпляр под щелкнутым объектом Entity.
 
-When an Entity is an instance of a Template it will have a slightly difference appearance in the Hierarchy:
+Когда объект Entity является экземпляром шаблона, он будет иметь несколько отличный вид в иерархии:
 
 ![Template Instance][1]
 
-The root Entity of the Template Instance and all its children will have a different icon showing that they are part of the same Template.
+Корневой объект Entity экземпляра шаблона и все его дочерние элементы будут иметь другой значок, показывающий, что они являются частью одного и того же шаблона.
 
-When you select the root of the Template Instance you will notice the following properties in the Entity Inspector:
+Когда вы выбираете корень экземпляра шаблона, вы заметите следующие свойства в Entity Inspector:
 
 ![Template Inspector][2]
 
-## Updating Templates
+## Обновление шаблонов
 
-In order to make changes to a Template Asset you first have to add an instance of it in the Editor. Then you can change the instance as you see fit and in the end apply the changes to the Template Asset.
+Чтобы внести изменения в Asset шаблона, сначала нужно добавить экземпляр этого шаблона в редактор. Затем вы можете изменить экземпляр по своему усмотрению и в конце применить изменения к Asset шаблона.
 
-### Template Overrides
+### Переопределение шаблонов
 
-When you make changes to a Template instance or its children this will generate Template Overrides. There are various types of overrides:
-* *Field override*: An override where the value of a field of the Entity or its Components differs to the one in the Template Asset.
-* *New Entity override*: An Entity that you have added as a child to the Template instance that does not exist in the Template Asset.
-* *Deleted Entity override*: An child Entity that you have deleted from the Template instance.
+Когда вы вносите изменения в экземпляр шаблона или его дочерние элементы, это генерирует переопределение шаблонов. Существует несколько типов переопределений:
+* *Переопределение поля*: переопределение, при котором значение поля объекта Entity или его компонентов отличается от значения в Asset шаблона.
+* *Новое переопределение объекта Entity*: объект Entity, который вы добавили в качестве дочернего элемента экземпляра шаблона, которого нет в Asset шаблона.
+* *Удаленное переопределение объекта Entity*: дочерний объект Entity, который вы удалили из экземпляра шаблона.
 
-When you apply overrides to the Template Asset then they stop being overrides and become part of the Template Asset.
+Когда вы применяете переопределения к Asset шаблона, они перестают быть переопределениями и становятся частью Asset шаблона.
 
-You can see the summary of the overrides by selecting the root of the Template Instance and looking at the Entity Inspector:
+Вы можете увидеть сводку переопределений, выбрав корень экземпляра шаблона и посмотрев на Entity Inspector:
 
 ![Overrides][3]
 
-Also notice the different color of the label of the field that has been overridden. You can also see a more detailed list of all the overrides by clicking View Diff. See [Overrides Diff View][4] for more information.
+Также обратите внимание на разный цвет метки поля, которое было переопределено. Вы также можете увидеть более подробный список всех переопределений, нажав View Diff. См. [Overrides Diff View][4] для получения дополнительной информации.
 
-If you hover over the colored label of the overridden field you can view more details about that specific override:
+Если вы наведете указатель мыши на цветную метку переопределенного поля, вы сможете увидеть подробную информацию об этом конкретном переопределении:
 
 ![Override Hover][5]
 
-### Applying Overrides
+### Применение переопределений
 
-To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field. 
+Чтобы применить переопределение, нажмите APPLY во всплывающей подсказке, которая отображается при наведении указателя мыши на переопределенное поле.
 
-To apply multiple overrides select the root of the Template Instance and click Apply All on the Entity Inspector. You can also right click on the root of the Template Instance and select Template &rarr; Apply To Template.
+Чтобы применить несколько переопределений, выберите корень экземпляра шаблона и нажмите Apply All в Entity Inspector. Вы также можете щелкнуть правой кнопкой мыши на корне экземпляра шаблона и выбрать Template &rarr; Apply To Template.
 
-Alternatively you can open the [Override Diff View][4] and apply overrides from there too.
+Кроме того, вы можете открыть [Override Diff View][4] и применить переопределения оттуда.
 
-Any overrides you apply to the Template Asset will propagate to other instances of the Template Asset in any scene that these might be.
+Любые переопределения, которые вы примените к Asset шаблона, будут распространяться на другие экземпляры Asset шаблона в любой сцене, где они могут быть.
 
-*Note: You cannot currently undo the action of applying overrides to a Template Asset.*
+*Примечание: В настоящее время вы не можете отменить действие применения переопределений к Asset шаблона.*
 
-### Reverting Overrides
+### Откат переопределений
 
-To revert a specific override, click REVERT in the tooltip shown when you hover over the overridden field.
+Чтобы отменить конкретное переопределение, нажмите REVERT во всплывающей подсказке, которая отображается при наведении указателя мыши на переопределенное поле.
 
-To revert all overrides select the root of the Template Instance and click Revert All on the Entity Inspector.
+Чтобы отменить все переопределения, выберите корень экземпляра шаблона и нажмите Revert All в Entity Inspector.
 
-Alternatively you can open the [Override Diff View][4] and revert overrides from there too.
+Кроме того, вы можете открыть [Override Diff View][4] и отменить переопределения оттуда.
 
-### More details on Overrides
+### Более подробно о переопределениях
 
-When you create an override then the property that it overrides gets protected from updates to the Template Asset. For example. say your Template Instance looks like so:
+Когда вы создаете переопределение, свойство, которое оно переопределяет, защищается от обновлений Asset шаблона. Например, предположим, что ваш экземпляр шаблона выглядит следующим образом:
 
-![Template Instance][1]
+![Экземпляр шаблона][1]
 
-You modify the position of Tree1/Sphere. This creates an override on the position of the Sphere entity. You then create another instance of the Template Asset and you change the position of the Sphere to something else. If you apply the override from the second instance then that will not update the position of the first instance since it is overridden and protected. In order for the first instance to pick up position changes for the Sphere Entity you have to revert the override first.
+Вы изменяете положение Tree1/Sphere. Это создает переопределение положения сущности Sphere. Затем вы создаете еще один экземпляр ассета шаблона и изменяете положение сферы на что-то другое. Если вы примените переопределение со второго экземпляра, то это не обновит положение первого экземпляра, так как оно переопределено и защищено. Чтобы первый экземпляр учел изменения положения сущности Sphere, сначала нужно отменить переопределение.
 
-## Instantiating At Runtime
+## Создание экземпляров во время выполнения
 
-You can instantiate Template Assets at runtime like so:
+Вы можете создавать экземпляры ассетов шаблона во время выполнения следующим образом:
 
 ```javascript
 var templateAsset = this.app.assets.get(templateAssetId);
@@ -87,15 +87,15 @@ var instance = templateAsset.resource.instantiate();
 this.app.root.addChild(instance);
 ```
 
-You can also use Script Attributes to pass Template Assets to your scripts instead of searching for them by ID.
+Вы также можете использовать атрибуты скриптов для передачи шаблонов Asset в ваши скрипты вместо поиска их по ID.
 
-## When do I need to load Template Assets? 
+## Когда мне нужно загружать шаблоны Asset?
 
-Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
+Шаблоны хранят иерархию и данные Entity, аналогично сценам. Когда экземпляр шаблона добавляется на сцену в редакторе, иерархия и данные Entity включаются в данные сцены.
 
-At runtime, the Template instance is not linked to the asset and you can reduce the download size by not preloading/loading the asset.
+Во время выполнения экземпляр шаблона не связан с Asset, и вы можете уменьшить размер загрузки, не предварительно загружая/загружая Asset.
 
-You only need Template assets to be loaded if you are instantiating instances at runtime.
+Вам нужно загружать шаблоны Asset только если вы создаете экземпляры во время выполнения.
 
 [1]: /images/user-manual/templates/hierarchy.png
 [2]: /images/user-manual/templates/inspector.png

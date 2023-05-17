@@ -1,20 +1,20 @@
 ---
-title: Hardware Instancing
+title: Аппаратное клонирование
 layout: usermanual-page.hbs
 position: 5
 ---
 
-Hardware instancing is a rendering technique which allows the GPU to render multiple identical meshes in a small number of draw calls. Each instance of the mesh can have a different limited amount of state (for example, position or color). It's a technique suitable to drawing objects such as trees or bullets, say.
+Аппаратное клонирование - это техника рендеринга, которая позволяет GPU рендерить несколько одинаковых сеток за небольшое количество вызовов рисования. Каждый экземпляр сетки может иметь разное ограниченное количество состояний (например, позицию или цвет). Это техника подходит для рисования объектов, таких как деревья или пули, например.
 
-For its support on a device, check `pc.GraphicsDevice.supportsInstancing`. In general, it is supported on all WebGL2 devices and also on the majority of WebGL1 devices using the ANGLE_instanced_arrays extension.
+Для поддержки на устройстве проверьте `pc.GraphicsDevice.supportsInstancing`. В целом, она поддерживается на всех устройствах WebGL2, а также на большинстве устройств WebGL1 с использованием расширения ANGLE_instanced_arrays.
 
-Note that all instances are submitted for rendering by the GPU with no camera frustum culling taking place.
+Обратите внимание, что все экземпляры отправляются на рендеринг GPU без отсечения камеры.
 
-## How to use instancing
+## Как использовать клонирование
 
-Enable instancing on a StandardMaterial that you use for rendering:
+Включите клонирование на StandardMaterial, который вы используете для рендеринга:
 
-```javascript 
+```javascript
 var material = new pc.StandardMaterial();
 material.onUpdateShader = function(options) {
     options.useInstancing = true;
@@ -23,23 +23,23 @@ material.onUpdateShader = function(options) {
 material.update();
 ```
 
-Populate a vertex buffer with per instance matrices to provide their world matrices for rendering.
+Заполните вершинный буфер матрицами для каждого экземпляра, чтобы предоставить их мировые матрицы для рендеринга.
 
 ```javascript
-// store matrices for individual instances into array
+// сохраняем матрицы для отдельных экземпляров в массив
 var matrices = new Float32Array(instanceCount * 16);
 var matrix = new pc.Mat4();
 var matrixIndex = 0;
 for (var i = 0; i < instanceCount; i++) {
     matrix.setTRS(pos, pc.Vec3.ZERO, pc.Vec3.ONE);
 
-    // copy matrix elements into array of floats
+    // копируем элементы матрицы в массив чисел с плавающей точкой
     for (var m = 0; m < 16; m++)
         matrices[matrixIndex++] = matrix.data[m];
 }
 ```
 
-Create a VertexBuffer which stores per-instance state and initialize it with the matrices. In the following example, we use `pc.VertexFormat.defaultInstancingFormat` which allows us to store a per-instance Mat4 matrix. Then we enable instancing on a MeshInstance, which contains the mesh geometry we want to instance.
+Создайте VertexBuffer, который хранит состояние для каждого экземпляра, и инициализируйте его матрицами. В следующем примере мы используем `pc.VertexFormat.defaultInstancingFormat`, что позволяет нам хранить матрицу Mat4 для каждого экземпляра. Затем мы включаем создание экземпляров на MeshInstance, который содержит геометрию сетки, которую мы хотим создать.
 
 ```javascript
 var instanceCount = 10;
@@ -48,16 +48,16 @@ var vertexBuffer = new pc.VertexBuffer(this.app.graphicsDevice, pc.VertexFormat.
 meshInst.setInstancing(vertexBuffer);
 ```
 
-Note, that you can create a dynamic vertex buffer using pc.BUFFER_DYNAMIC, and update the contents of it per-frame like this:
+Обратите внимание, что вы можете создать динамический вершинный буфер с использованием pc.BUFFER_DYNAMIC и обновлять его содержимое каждый кадр следующим образом:
 
 ```javascript
 vertexBuffer.setData(matrices);
 ```
 
-## Custom shader
+## Пользовательский шейдер
 
-When you write custom shader that uses instancing, you need to read and use per-instance state from vertex attributes.
-In the following example, we read a mat4 using vertex attributes.
+Когда вы создаете пользовательский шейдер, использующий инстансинг, вам нужно считывать и использовать состояние для каждого экземпляра из атрибутов вершины.
+В следующем примере мы считываем mat4, используя атрибуты вершины.
 
 ```
 attribute vec4 instance_line1;
@@ -69,3 +69,64 @@ mat4 getModelMatrix() {
     return mat4(instance_line1, instance_line2, instance_line3, instance_line4);
 }
 ```
+# Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/OurMachinery/themachinery-public/issues).
+
+# Содержание
+
+- [Введение](#introduction)
+- [Tutorial Thumbnail](#tutorial-thumbnail)
+- [Entity](#entity)
+- [Material Asset](#material-asset)
+- [Material Inspector](#material-inspector)
+- [Shader Editor](#shader-editor)
+- [Node Inspector](#node-inspector)
+- [Texture Inspector](#texture-inspector)
+- [Graph Inspector](#graph-inspector)
+- [Graph Editor](#graph-editor)
+- [Assets](#assets)
+
+## Введение
+
+Добро пожаловать в документацию по The Machinery! Здесь вы найдете информацию о том, как использовать и настраивать различные компоненты движка.
+
+## Tutorial Thumbnail
+
+Tutorial Thumbnail — это набор уроков, которые помогут вам освоить основы работы с The Machinery. Они представлены в виде небольших видеоуроков с пошаговыми инструкциями.
+
+## Entity
+
+Entity — это основной объект в сцене, который может содержать различные компоненты, такие как трансформация, меш, материалы и т. д. В этом разделе вы узнаете, как создавать и настраивать Entity.
+
+## Material Asset
+
+Material Asset — это ресурс, который определяет внешний вид объекта в сцене. Он содержит информацию о текстурах, шейдерах и других параметрах, которые определяют, как объект будет отображаться. В этом разделе вы узнаете, как создавать и настраивать Material Asset.
+
+## Material Inspector
+
+Material Inspector — это инструмент для настройки и редактирования Material Asset. С его помощью вы можете изменять текстуры, параметры шейдеров и другие свойства материала. В этом разделе вы узнаете, как использовать Material Inspector.
+
+## Shader Editor
+
+Shader Editor — это инструмент для создания и редактирования шейдеров. Он представляет собой графический редактор, в котором вы можете создавать и соединять различные узлы для определения внешнего вида объекта. В этом разделе вы узнаете, как использовать Shader Editor.
+
+## Node Inspector
+
+Node Inspector — это инструмент для настройки и редактирования узлов в Shader Editor. С его помощью вы можете изменять параметры узлов, такие как значения, текстуры и т. д. В этом разделе вы узнаете, как использовать Node Inspector.
+
+## Texture Inspector
+
+Texture Inspector — это инструмент для просмотра и редактирования текстур. В этом разделе вы узнаете, как использовать Texture Inspector для изменения свойств текстур, таких как разрешение, формат и т. д.
+
+## Graph Inspector
+
+Graph Inspector — это инструмент для настройки и редактирования графов в Graph Editor. В этом разделе вы узнаете, как использовать Graph Inspector для изменения свойств графов, таких как параметры, переменные и т. д.
+
+## Graph Editor
+
+Graph Editor — это инструмент для создания и редактирования графов, которые определяют логику и поведение объектов в сцене. В этом разделе вы узнаете, как использовать Graph Editor для создания и настройки графов.
+
+## Assets
+
+Assets — это ресурсы, которые используются в проекте, такие как текстуры, материалы, шейдеры, сцены и т. д. В этом разделе вы узнаете, как управлять Assets, импортировать их из других источников и настраивать их свойства.

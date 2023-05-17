@@ -4,29 +4,29 @@ layout: usermanual-page.hbs
 position: 17
 ---
 
-The PlayCanvas Engine is designed to make creating 3D games and applications fast and simple. However, we also support a number of great features for creating 2D games. With PlayCanvas' 2D features you get all the benefits of a powerful 3D engine but for 2D games.
+Движок PlayCanvas разработан для быстрого и простого создания 3D-игр и приложений. Однако мы также поддерживаем ряд отличных функций для создания 2D-игр. С 2D-функциями PlayCanvas вы получаете все преимущества мощного 3D-движка, но для 2D-игр.
 
-# Basic Features
+# Базовые функции
 
-## Sprites
+## Спрайты
 
 ![Sprite][5]
 
-2D graphics are often known as **Sprites**. In PlayCanvas you can create [Sprite Assets][0] and [Sprite Components][1]. The Sprite Component is attached to Entities in order to display 2D graphics in your scene. Sprite Assets in PlayCanvas store multiple image frames from a Texture Atlas in sequence. So you can use a Sprite Asset to create flip-book style animated graphics in your games.
+2D-графика часто называется **Спрайтами**. В PlayCanvas вы можете создавать [Sprite Assets][0] и [Sprite Components][1]. Компонент Sprite прикрепляется к Entity для отображения 2D-графики в вашей сцене. Sprite Assets в PlayCanvas хранят несколько кадров изображений из текстурного атласа последовательно. Таким образом, вы можете использовать Sprite Asset для создания анимированной графики в стиле flip-book в ваших играх.
 
-## Texture Atlases
+## Текстурные атласы
 
 ![Texture Atlas][6]
 
-A [Texture Atlas][2] is a enhanced version of the standard [Texture][3] asset. In addition to the regular texture features, a Texture Atlas includes the definitions of a set of "Frames". Each frame is a region of the texture which can be referenced in a Sprite Asset.
+[Texture Atlas][2] - это улучшенная версия стандартного [Texture][3] asset. В дополнение к обычным функциям текстуры, текстурный атлас включает определения набора "кадров". Каждый кадр - это область текстуры, которую можно ссылаться в Sprite Asset.
 
-## Sprite Editor
+## Редактор спрайтов
 
 ![Sprite Editor][7]
 
-The [Sprite Editor][4] is the tool used to generate Texture Atlas frames and Sprite Assets. You can open the Sprite Editor by double-clicking on any Texture Atlas or Sprite Asset. [Read More][4].
+[Sprite Editor][4] - это инструмент, используемый для создания кадров текстурного атласа и Sprite Assets. Вы можете открыть редактор спрайтов, дважды щелкнув по любому текстурному атласу или Sprite Asset. [Подробнее][4].
 
-*Artwork created by [PixelBoy](https://twitter.com/2pblog1)*
+*Арт создан [PixelBoy](https://twitter.com/2pblog1)*
 
 [0]: /user-manual/assets/sprites
 [1]: /user-manual/packs/components/sprite

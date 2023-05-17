@@ -1,30 +1,30 @@
 ---
-title: Sprite
+title: Спрайт
 layout: usermanual-page.hbs
 position: 13
 ---
 
-A Sprite is a 2D graphic that can be rendered into Scene. A Sprite Asset is a reference to a [Texture Atlas][1] and a sequence of frames from that atlas. In this way a sprite can either represent a single image (taken out of the atlas) or a flip-book style animation (multiple frames from the atlas).
+Спрайт - это 2D-графика, которая может быть отображена в сцене. Asset спрайта представляет собой ссылку на [атлас текстур][1] и последовательность кадров из этого атласа. Таким образом, спрайт может представлять собой одно изображение (взятое из атласа) или анимацию в стиле flip-book (несколько кадров из атласа).
 
-## Properties
+## Свойства
 
-![Sprites][3]
+![Спрайты][3]
 
-### Pixels Per Unit
+### Пиксели на единицу
 
-The number of pixels in the sprite image that maps to 1 Unit in the PlayCanvas scene. e.g If `pixelsPerUnit` is 1 and the sprite is 32x32. Then it will be 32 units across and high when rendered in the scene. By default a sprite with the *Simple* render mode is created with `pixelsPerUnit` set to 100. This means that a 100x100 sprite will be 1 unit wide/high in the scene.
+Количество пикселей на изображении спрайта, которое соответствует 1 единице в сцене PlayCanvas. Например, если `pixelsPerUnit` равно 1, и спрайт имеет размер 32x32, то при отображении на сцене его размеры будут составлять 32 единицы в ширину и высоту. По умолчанию спрайт с режимом отображения *Simple* создается со значением `pixelsPerUnit`, равным 100. Это означает, что спрайт размером 100x100 будет иметь ширину/высоту 1 единицы на сцене.
 
-If you create a *Sliced* sprite, by default it will be created with a `pixelsPerUnit` value of 1. Because these sprites are usually used as part of a Screen Component for building user interfaces, 1 sprite pixel should map to 1 screen pixel.
+Если вы создаете спрайт *Sliced*, по умолчанию он будет создан со значением `pixelsPerUnit`, равным 1. Поскольку такие спрайты обычно используются в качестве части компонента экрана для создания пользовательских интерфейсов, 1 пиксель спрайта должен соответствовать 1 пикселю экрана.
 
-### Render Mode
+### Режим отображения
 
-* Simple - the sprite does not use the border values
-* Sliced - the sprite uses the border values to perform [9-sliced][2] rendering by stretching.
-* Tiled - the sprite uses the border values to perform [9-sliced][2] rendering by tiling.
+* Simple - спрайт не использует значения границ
+* Sliced - спрайт использует значения границ для выполнения растягивания при отрисовке [9-sliced][2].
+* Tiled - спрайт использует значения границ для выполнения замощения при отрисовке [9-sliced][2].
 
-### Texture Atlas
+### Атлас текстур
 
-The Texture Atlas asset that the sprite references
+Атлас текстур, на который ссылается спрайт
 
 [1]: /user-manual/assets/texture-atlas
 [2]: /user-manual/2D/9-slicing

@@ -1,128 +1,149 @@
 ---
-title: Animstategraph Assets
+title: Ассеты Animstategraph
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Animstategraph assets are used to organize a set of different animation states, which are all the various ways in which a model might animate. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organized. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/en/user-manual/packs/components/anim/).
+Ассеты Animstategraph используются для организации набора различных состояний анимации, которые представляют собой все разнообразные способы, которыми может анимироваться модель. С их помощью можно определить каждое из этих состояний анимации, определить, когда каждое состояние должно проигрываться, а также как состояния переходят и, следовательно, смешиваются друг с другом. Ассеты Animstategraph не хранят и не связываются с реальными ассетами анимации, а скорее действуют как шаблон для организации активов анимации. Фактические ассеты анимации связываются с состояниями анимации animstategraph через [Anim Component](/en/user-manual/packs/components/anim/).
 
-The system was designed so that a single animstategraph can be used on many different entities, each with their own set of animation assets. An example being an animstategraph asset which manages the animations of humanoid character locomotion. This single asset could be used on a human entity, an elf entity and a dwarf entity. Each of these entities would be able to link their own character animation assets, all the while maintaining the same animation behavior as each other.
+Система была разработана таким образом, чтобы один animstategraph мог использоваться на множестве различных сущностей, каждая со своим набором ассетов анимации. Примером может служить ассет animstategraph, который управляет анимациями движения гуманоидных персонажей. Этот единый ассет может быть использован на сущности человека, сущности эльфа и сущности гнома. Каждая из этих сущностей сможет связать свои собственные ассеты анимации персонажей, сохраняя при этом одинаковое анимационное поведение друг с другом.
 
-These assets are therefore state machines for a model's animation behavior and they control the flow of animation sequences over the lifecycle of an entity. A simple animstategraph asset used to define the behavior of a wheel may define only two animation states; static and spinning. This asset can be defined to control when the wheel starts and stops spinning, for how long it will spin, the speed of the wheel spin and how sharply it starts / stops spinning. More advanced assets can be used to combine a multitude of animation states to create complex humanoid character animation behavior.
+Эти ассеты являются, таким образом, конечными автоматами для поведения анимации модели, и они контролируют поток анимационных последовательностей на протяжении жизненного цикла Entity. Простой ассет animstategraph, используемый для определения поведения колеса, может определять только два состояния анимации: статическое и вращающееся. Этот ассет может быть определен для контроля начала и остановки вращения колеса, продолжительности вращения, скорости вращения колеса и насколько резко оно начинает/останавливает вращение. Более продвинутые ассеты могут быть использованы для объединения множества состояний анимации для создания сложного поведения анимации гуманоидных персонажей.
 
-When selecting an animstategraph asset in the editors asset panel, you’ll open up the anim state graph editor view:
+При выборе ассета animstategraph в панели ассетов редактора, вы откроете вид редактора графа состояний анимации:
 
 ![Initial Editor][1]
 
-Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behavior.
+В этом виде вы можете редактировать граф состояний вашей анимации. В следующих разделах будет рассмотрено, как различные элементы ассета animstategraph могут быть использованы для определения конкретного поведения анимации.
 
-## States
+## Состояния
 
-In essence, states are used to specify which animations should play at a given point in time. An anim state graph can only be in one of these states at a given time.
+В сущности, состояния используются для указания, какие анимации должны проигрываться в данный момент времени. Граф состояний анимации может быть только в одном из этих состояний в данный момент времени.
 
-There are four types of states present in state graphs. Animation states, along with the START state, END state and ANY state. Only animation states can be created and deleted by the user and only these will be linked to animation assets. The other states are used to control the flow through the state machine.
+В графах состояний присутствуют четыре типа состояний. Состояния анимации, а также состояния START, END и ANY. Только состояния анимации могут быть созданы и удалены пользователем, и только они будут связаны с анимационными активами. Другие состояния используются для контроля потока через конечный автомат.
 
-### Animation States
+### Состояния анимации
 
 ![State][7]
 
-Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
+Состояния анимации определяют воспроизводимую анимацию, такую как «Idle», «Jump» или «Walk». Новые состояния анимации можно создать, щелкнув правой кнопкой мыши на пустом холсте за графом состояния и выбрав «Добавить новое состояние» из меню. Редактор будет нацелен на ваше новое состояние и покажет его панель инспектора с правой стороны. В этом инспекторе можно изменить следующие переменные состояния:
 
-| Variable | Описание |
-|----------|-------------|
-| Name     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
-| Speed    | The playback speed for animations that are linked to this state. |
-| Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
+| Переменная | Описание |
+|------------|-------------|
+| Имя        | Имя, которое должно быть присвоено этому состоянию. Оно используется для поиска, редактирования и воспроизведения состояний через скрипт. Имена должны быть уникальными для каждого слоя графа состояний. |
+| Скорость   | Скорость воспроизведения анимаций, связанных с этим состоянием. |
+| Loop     | Определяет, должны ли анимации, связанные с этим состоянием, зацикливаться во время воспроизведения. Если установлено значение false, анимация будет приостанавливаться на последнем ключевом кадре, пока это состояние не будет выходить. |
 
-### START state
+### Состояние START
 
 ![Start State][8]
 
-The START state is the entry point of every state graph. When an anim component begins playing its assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
+Состояние START является точкой входа каждого графа состояний. Когда компонент anim начинает воспроизводить свой назначенный граф состояний anim, он сначала входит в это состояние и переходит непосредственно в состояние анимации, к которому он подключен. Это состояние анимации называется состоянием по умолчанию, и его можно выбрать через панель слоев здесь:
 
 ![Layers][2]
 
-It is not possible to create any other transitions to or from the START state. It can only be entered again by transitioning to the END state.
+Невозможно создать какие-либо другие переходы к состоянию START или из него. В него можно вернуться только перейдя в состояние END.
 
-### END state
+### Состояние END
 
 ![End State][10]
 
-The end state marks an exit out of the current state graph. If your animation state is set up to transition to the END state, the system will move directly to the default animation state which is connected to the START state. This is useful to create cyclical flows through the graph while still laying out your graph in a linear fashion. It is not possible to create transitions from the END state to any other state. It will always transition directly to the START state.
+Состояние END обозначает выход из текущего графа состояний. Если ваше состояние анимации настроено на переход в состояние END, система непосредственно перейдет к состоянию анимации по умолчанию, которое подключено к состоянию START. Это полезно для создания циклических потоков через граф, сохраняя при этом линейное расположение графа. Невозможно создать переходы из состояния END в любое другое состояние. Оно всегда будет переходить непосредственно в состояние START.
 
-### ANY state
+### Состояние ANY
 
 ![Any State][9]
 
-This state is used to create transitions which can be activated while the system is currently in any of the other animation states. Any transitions that trigger from this state will blend as if they had been connected directly from the currently active animation state. You can create transitions from the ANY state but not to it.
+Это состояние используется для создания переходов, которые могут быть активированы, когда система находится в любом из других состояний анимации. Любые переходы, которые срабатывают из этого состояния, будут смешиваться так, как если бы они были напрямую подключены к текущему активному состоянию анимации. Вы можете создавать переходы из состояния ANY, но не в него.
 
-This is useful to set up transitions which you want to activate, no matter which state you’re currently in. For example you could have a jump state which should be reachable from both an idle and walk state. Instead of setting up transitions from both the idle and walk states to the jump state, a transition can be set up between the ANY state and the jump state.
+Это полезно для настройки переходов, которые вы хотите активировать, независимо от того, в каком состоянии вы сейчас находитесь. Например, у вас может быть состояние прыжка, которое должно быть доступно как из состояния покоя, так и из состояния ходьбы. Вместо настройки переходов из состояний покоя и ходьбы в состояние прыжка, можно настроить переход между состоянием ANY и состоянием прыжка.
 
-### Transitions
+### Переходы
 
-Transitions define how the anim state graph can move from one animation state to another. They can be created by right clicking an animation state and selecting `Add transition` from the context menu.
+Переходы определяют, как граф состояний анимации может переходить из одного состояния анимации в другое. Они могут быть созданы путем щелчка правой кнопкой мыши на состоянии анимации и выбора `Добавить переход` из контекстного меню.
 
-By setting the variables of a given transition you can also control how the animations of the transitioning states will blend together.
+Устанавливая переменные данного перехода, вы также можете контролировать, как анимации переходящих состояний будут смешиваться друг с другом.
 
-The available transition variables are:
+Доступные переменные перехода:
 
-| Variable            | Описание |
+| Переменная          | Описание |
 |---------------------|-------------|
-| Duration            | The duration of the transition in seconds. |
-| Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state's duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
-| Offset              | If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destination state's duration. Must be between 0 and 1. |
-| Interruption Source | Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so. |
+| Duration            | Длительность перехода в секундах. |
+| Exit Time           | Время выхода из исходного состояния и входа в конечное состояние. Задается в нормализованном времени на основе длительности исходного состояния. Непредоставление значения позволяет исходному состоянию выйти с этим переходом в любое время. Значение меньше 1 сделает переход доступным для выхода в это время во время каждого цикла исходного состояния. |
+| Offset              | Если указано, конечное состояние начнет воспроизводить свою анимацию в это время. Задается в нормализованном времени на основе длительности конечного состояния. Должно быть между 0 и 1. |
+| Interruption Source | Определяет, может ли другой переход прервать этот и какие переходы текущего или предыдущего состояния могут это сделать. |
 
-It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
+Возможно создание нескольких переходов между двумя состояниями анимации, которые имеют разные значения и условия. Приоритет этих переходов можно изменить в инспекторе переходов после выбора стрелки перехода на графе. Порядок приоритета определяет, какой переход будет использоваться графом состояний, если условия выполнены для нескольких переходов.
 
-### Parameters
+### Параметры
 
-The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
+Параметры графа состояний анимации - это переменные, которые используются для управления потоком анимаций во время выполнения. К этим переменным можно получить доступ через скрипты и установить для них новые значения в любое время. Таким образом, пользователи могут контролировать поведение анимации сущности в течение ее жизненного цикла.
 
-New parameters can be added to a state graph via the parameters panel on the left inspector:
+Новые параметры можно добавить в граф состояний через панель параметров в левом инспекторе:
 
 ![Parameters][3]
 
-Each parameter has three variables which can be set:
+У каждого параметра есть три переменные, которые можно установить:
 
-| Variable      | Описание |
-|---------------|-------------|
-| Name          | The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph. |
-| Type          | The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition. |
-| Default Value | The value of the parameters variable when the state graph launches. |
+| Переменная   | Описание |
+|--------------|----------|
+| Имя          | Имя, которое должен иметь этот параметр. Оно используется для поиска и установки параметра через скрипт. Имена должны быть уникальными для каждого графа состояний. |
+| Тип          | Тип переменной, которую содержит параметр. Один из: Boolean, Float, Integer или Trigger. Тип Trigger действует как Boolean, но с особенностью, что его значение устанавливается обратно на false после того, как оно было успешно использовано для активации перехода. |
+| Значение по умолчанию | Значение переменной параметра при запуске графа состояний. |
 
-The way in which they control the state graph is through the use of transition conditions. Each transition in the graph can have a list of conditions which define when a transition is usable by the system. A state will not be able to pass to another state through a given transition unless all of its conditions are met.
+Способ управления графом состояний основан на использовании условий перехода. Каждый переход в графе может иметь список условий, которые определяют, когда система может использовать переход. Состояние не сможет перейти в другое состояние через данный переход, если не выполнены все его условия.
 
-Each condition consists of a conditional statement which compares the current value of a parameters variable to the given value in the condition using the designated operator. For example, the following condition:
+Каждое условие состоит из условного выражения, которое сравнивает текущее значение переменной параметра с заданным значением в условии с использованием указанного оператора. Например, следующее условие:
 
 ![Condition][4]
 
-Can be used in the transition between the Idle and Jump animation states to ensure that a character only jumps when the ‘Jump’ parameter has been set to true via a script.
+Может быть использовано при переходе между состояниями анимации Idle и Jump, чтобы гарантировать, что персонаж прыгает только тогда, когда параметр «Jump» установлен в значение true с помощью скрипта.
 
-### Layers (Слои)
+### Слои
 
-So far, animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behavior. An example could be animating a main character's movement and locomotion on a single layer, while animating its facial expressions on a separate layer that’s driven by its own state graph and parameters.
+До сих пор ассеты animstategraph обсуждались в контексте редактирования одного графа состояний анимации. Однако иногда может потребоваться управление анимациями одной модели с помощью нескольких отдельных графов состояний, каждый из которых имеет свое определенное поведение. Примером может служить анимация движения и локомоции главного персонажа на одном слое, а анимация его мимики на отдельном слое, управляемом собственным графом состояний и параметрами.
 
-When an animstategraph is created, it comes with a single base layer. This layer is not deletable and for many scenarios will be the only one necessary. However if you wish to create another layer you can do so by selecting the new layer button on the layers panel to the left of the state graph view:
+Когда создается animstategraph, он поставляется с одним базовым слоем. Этот слой нельзя удалить, и для многих сценариев он будет единственным необходимым. Однако, если вы хотите создать другой слой, вы можете сделать это, выбрав кнопку нового слоя на панели слоев слева от представления графа состояний:
 
-![Layers][5]
+![Слои][5]
 
-It is then possible to switch to editing this layer by selecting it from the layer select dropdown which is present at the top right of the graph view:
+Затем можно переключиться на редактирование этого слоя, выбрав его из выпадающего списка выбора слоя, который находится в верхнем правом углу представления графа:
 
-![Select Layer][6]
+![Выбор слоя][6]
 
-### Layer Blending
+### Смешивание слоев
 
-By default, layers animate a model in the order that they’re created in the layers panel. Any animation values they set on a model's bones will be overwritten by subsequent layers. If instead you wish to blend the animation values of the layers together, you can set the `blend type` of your layers to `Additive` rather than the default `Override`:
+По умолчанию слои анимируют модель в порядке их создания на панели слоев. Любые значения анимации, которые они устанавливают для костей модели, будут перезаписаны последующими слоями. Если вместо этого вы хотите смешать значения анимации слоев, вы можете установить `тип смешивания` для ваших слоев на `Аддитивный` вместо значения по умолчанию `Переопределение`:
 
-![Layer Blend][11]
+![Смешивание слоев][11]
 
-The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
+Значение веса смешивания каждого слоя используется при смешивании нескольких слоев для определения того, насколько каждый слой должен вносить свой вклад в окончательную анимацию. Эти веса смешивания можно настроить во время выполнения в ваших игровых скриптах для обновления смешивания ваших слоев в реальном времени:
 
+# Issue Tracker
+
+## Новые функции
+
+- Добавлен новый компонент "Tutorial Thumbnail"
+- Добавлена поддержка импорта и экспорта Entity
+- Добавлен новый тип Asset: Material Asset
+
+## Улучшения
+
+- Улучшен интерфейс Material Inspector
+- Улучшен интерфейс Shader Editor
+- Улучшен интерфейс Node Inspector
+- Улучшен интерфейс Texture Inspector
+- Улучшен интерфейс Graph Inspector
+
+## Исправления ошибок
+
+- Исправлены ошибки в Graph Editor
+- Исправлены ошибки при работе с Assets
+- Исправлены ошибки при импорте и экспорте Entity
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 AnimationBlending.prototype.initialize = function() {
     this.entity.anim.on('smile_start', function (event) {
         this.entity.anim.findAnimationLayer('smile').weight = 1;
@@ -133,9 +154,9 @@ AnimationBlending.prototype.initialize = function() {
 };
 ```
 
-If you [mask your layers][anim-layer-masking], you can set the `blend type` of your layers to `Additive` to blend in an animation which only controls part of your model's bones. Updating the `blend weight` in real time as described above can allow you to create smooth blends between animations on different layers. This is particularly useful when animation characters that need to carry out different actions using their upper and lower body. For example, you could have a `shooting` animation that is blended in and out on a characters upper body, while freeing up the lower body for various locomotion animations such as `walking` and `running`.
+Если вы [маскируете свои слои][anim-layer-masking], вы можете установить `blend type` ваших слоев на `Additive`, чтобы смешать анимацию, которая контролирует только часть костей вашей модели. Обновление `blend weight` в реальном времени, как описано выше, позволит вам создавать плавные смешивания между анимациями на разных слоях. Это особенно полезно при анимации персонажей, которым нужно выполнять разные действия с использованием верхней и нижней части тела. Например, вы можете иметь анимацию `shooting`, которая смешивается в верхней части тела персонажа, освобождая нижнюю часть тела для различных анимаций перемещения, таких как `walking` и `running`.
 
-Any layers that are set to `Overwrite` will completely replace the animation values of the model's bones that are animated in that layer. In these instances, previous layers will not be taken into consideration when producing the final animation.
+Любые слои, установленные на `Overwrite`, полностью заменят значения анимации костей модели, которые анимированы на этом слое. В этих случаях предыдущие слои не будут учитываться при создании окончательной анимации.
 
 [1]: /images/user-manual/anim/state_graph_editor.png
 [2]: /images/user-manual/anim/layers.png

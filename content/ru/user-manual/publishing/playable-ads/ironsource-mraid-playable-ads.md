@@ -4,50 +4,47 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-PlayCanvas supports the ironSource MRAID Playable Ad format and requirements via an [official external tool on GitHub][2].
+PlayCanvas поддерживает формат и требования ironSource MRAID Playable Ad через [официальный внешний инструмент на GitHub][2].
 
-ironSource playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
+Рекламные объявления ironSource используют стандарт [MRAID 2.0 API][mraid-api] и требуют, чтобы ассеты для объявления были внешними относительно `index.html`, а не встроенными.
 
-The external assets will need to be uploaded to a server or CDN of your own for ironSource to serve the ad on their network.
+Внешние ассеты необходимо будет загрузить на свой сервер или CDN, чтобы ironSource мог разместить объявление в своей сети.
 
-There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
+Существуют некоторые ограничения, о которых следует знать при использовании инструмента, их можно найти в документации на [GitHub][2].
 
+## Пример проекта
 
-## Example project
-
-The [Cube Jump project][5] is ready to be exported to the ironSource MRAID Playable Ad format and the expected HTML output can be found [here][6].
+Проект [Cube Jump][5] готов к экспорту в формат ironSource MRAID Playable Ad, и ожидаемый HTML-вывод можно найти [здесь][6].
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
 
+## Советы по размеру файла
 
-## File size tips
+Поскольку есть ограничение в 5 МБ (несжатых), вам придется планировать и бюджетировать использование ассетов для объявления.
 
-As there is a limit of 5MB (uncompressed), you will have to plan and budget the usage of assets for the ad.
+Минифицированный код движка PlayCanvas имеет размер **~1,2 МБ** в несжатом виде, и из-за необходимости кодировать файлы ассетов в строках Base64, это добавляет **~30%** к размеру каждого файла ассетов.
 
-The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
+Это означает, что у вас будет около ~3 МБ для ассетов перед кодированием Base64.
 
-This means that you would have about \~3MB for assets before the Base64 encoding.
+Старайтесь сохранять изображения как можно меньше по размерам и используйте такие инструменты, как [TinyPNG][4], чтобы еще больше уменьшить размер файла.
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
+## Чек-лист для рекламных объявлений:
 
-## Playable ad checklist:
+* Вы добавили вызов функции `mraid.open` (для URL-адресов, не относящихся к магазину) или `mraid.openStoreUrl` (для приложений магазина) в качестве части вашего обратного вызова для действия?
 
-* Have you added the function call `mraid.open` (for non-store URLs) or `mraid.openStoreUrl` (for store apps) as part of your call to action callback?
+## Как экспортировать
 
+Следуйте [шагам настройки][7] из файла readme в репозитории GitHub.
 
-## How to export
+### Тестирование с помощью инструмента ironSource Playable Test Tool
 
-Follow the [setup steps][7] from the readme in the GitHub repo.
+ironSource предлагает отличный инструмент для тестирования [здесь][ironsource-test-tool], который можно использовать для проверки их списка требований к рекламным объявлениям.
 
-### Test with ironSource Playable Test Tool
+Убедитесь, что на странице включены режим тестирования и MRAID.
 
-ironSource have a fantastic test tool [here][ironsource-test-tool] which can be used to go through their checklist of requirements for playable ads.
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600">
 
-Check that Testing mode and MRAID are both enabled on the page.
-
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600px">
-
-Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
+Установите следующие параметры в `config.json`, как показано ниже. Это создаст ZIP-файл с данными ассетов и кодом движка PlayCanvas, отдельными от файла `index.html`.
 
 ```json
     "one_page": {
@@ -62,15 +59,23 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-We will need to serve the files from a HTTPS endpoint to test with the ironSource's test tool.
+И выполните команду:
 
-Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
+```sh
+npm run one-page
+```
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600px">
+Полные сведения об опциях и командах можно найти в разделе readme для "[Преобразование проекта в один HTML-файл][2]".
 
-This will give a unique URL for the endpoint that we need to add to the `index.html` where it is referencing external files.
+Нам нужно будет разместить файлы на конечной точке HTTPS для тестирования с помощью инструмента тестирования ironSource.
 
-Modify the end of `index.html` from:
+Мы рекомендуем [разместить локально][host-locally] и использовать [ngrok][ngrok] для создания https-туннеля к вашему компьютеру, к которому может получить доступ приложение.
+
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600">
+
+Это даст уникальный URL для конечной точки, который нам нужно добавить в `index.html`, где он ссылается на внешние файлы.
+
+Измените конец `index.html` с:
 
 ```html
 </style>
@@ -87,7 +92,7 @@ Modify the end of `index.html` from:
 </html>
 ```
 
-To (where `XXXXXXX` is the unique subdomain from ngrok):
+Для (где `XXXXXXX` - уникальный субдомен от ngrok):
 
 ```html
 </style>
@@ -104,21 +109,21 @@ To (where `XXXXXXX` is the unique subdomain from ngrok):
 </html>
 ```
 
-Test locally on your PC by double clicking on the `index.html` to ensure that it plays correctly.
+Тестируйте локально на своем ПК, дважды щелкнув по `index.html`, чтобы убедиться, что он корректно воспроизводится.
 
-If it plays correctly on your PC, we can test on [ironSource's test tool][ironsource-test-tool] by copying the contents of `index.html` and pasting into MRAID tag area of the test tool.
+Если он корректно воспроизводится на вашем ПК, мы можем протестировать его с помощью [инструмента тестирования ironSource][ironsource-test-tool], скопировав содержимое `index.html` и вставив его в область MRAID-тега инструмента.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600px">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600">
 
-Click on 'Test Ad' and once it renders, play the ad to reach a CTA button. After pressing the CTA button, the tool should show that all the tests have passed and give you an option to generate a code.
+Нажмите на 'Test Ad' и после отображения, воспроизведите рекламу, чтобы дойти до кнопки CTA. После нажатия на кнопку CTA инструмент должен показать, что все тесты пройдены, и предложить вам возможность сгенерировать код.
 
-This is used to test on device using their app that is available on both Android and iOS.
+Это используется для тестирования на устройстве с помощью их приложения, доступного как на Android, так и на iOS.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400px">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400">
 
-### Final export for ironSource
+### Финальный экспорт для ironSource
 
-When the ad is ready to be submitted for ironSource, upload the external assets to your server or CDN and add the URL in the options in `config.json` via the `external_url_prefix` property:
+Когда реклама готова к отправке в ironSource, загрузите внешние ресурсы на свой сервер или CDN и добавьте URL-адрес в параметры `config.json` через свойство `external_url_prefix`:
 
 ```json
     "one_page": {
@@ -133,7 +138,7 @@ When the ad is ready to be submitted for ironSource, upload the external assets 
     }
 ```
 
-Follow the process on submitting the playable ad from [ironSource's documentation][ironsource-documentation].
+Следуйте процессу отправки играбельного объявления из [документации ironSource][ironsource-documentation].
 
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/

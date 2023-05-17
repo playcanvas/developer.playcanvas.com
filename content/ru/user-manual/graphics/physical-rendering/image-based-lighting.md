@@ -1,64 +1,66 @@
 ---
-title: Image Based Lighting
+title: Освещение на основе изображений
 layout: usermanual-page.hbs
 position: 2
 ---
 
-To get best results with Physically Based Rendering in PlayCanvas you can use the technique called Image Based Lighting or IBL, it allows to use pre-rendered image data as source information for ambient and reflection light.
+Для достижения наилучших результатов с физически-основанным рендерингом в PlayCanvas вы можете использовать технику, называемую Image Based Lighting или IBL, которая позволяет использовать предварительно отрендеренные данные изображения в качестве источника информации для окружающего и отраженного света.
 
-This technique relies on [CubeMap][3] - the environment map that is made of 6 texture (faces) forming a cube to have full surround texture coverage.
+Эта техника основана на [CubeMap][3] - карте окружения, состоящей из 6 текстур (граней), образующих куб для полного покрытия текстурой.
 
 ## HDR
 
-Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tone mapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
+Данные изображения могут храниться в цветовом пространстве LDR или HDR (High Dynamic Range), что позволяет хранить более 0,0 до 1,0 (256 градаций) в одном канале. HDR позволяет хранить значения выше 1,0 (что считается "белым"), с комбинацией многих факторов окружения, таких как гамма-коррекция, тоновое отображение и экспозиция, это позволяет содержать больше деталей света и обеспечивает гораздо лучший контроль над качеством света и желаемыми результатами для художников.
 
-![HDR vs LDR CubeMap for Image Based Rendering][9]
-*Notice how bright parts in texture are clamped using LDR*
+![HDR vs LDR CubeMap для Image Based Rendering][9]
+*Обратите внимание, как яркие части текстуры обрезаются с использованием LDR*
 
-## Energy Conservation
+## Сохранение энергии
 
-The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+Концепция происходит от того факта, что диффузный свет и отраженный свет исходят от света, попадающего на материал, сумма диффузного и отраженного света не может быть больше общего света, попадающего на материал. На практике это означает, что если поверхность сильно отражает свет, она будет показывать очень мало диффузного цвета. И наоборот, если материал имеет яркий диффузный цвет, он не может сильно отражать.
 
-In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. PlayCanvas simulates this behavior with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
+В природе гладкие поверхности имеют более острые отражения, а более шероховатые - более размытые. Причина этого заключается в том, что более шероховатые поверхности имеют большие, более выраженные микрофасеты, отражающие свет во многих направлениях, в то время как гладкие поверхности, как правило, отражают его в основном в одном направлении. Когда свет, идущий из разных направлений, усредняется внутри крошечной видимой точки, результат выглядит размытым для нас и также менее ярким благодаря сохранению энергии. PlayCanvas симулирует это поведение с помощью параметра глянцевости, который автоматически работает для источников света, однако для IBL мы должны предварительно рассчитать правильный размытый ответ. Это то, что делает кнопка Prefilter.
 
-**Prefilter** button is available on CubeMap asset in the Inspector, it is mandatory to enable IBL on physical materials using a CubeMap.
+Кнопка **Prefilter** доступна на активе CubeMap в Inspector, ее обязательно нужно включить для IBL на физических материалах с использованием CubeMap.
 
-## Authoring Environment Maps
+## Создание карт окружения
 
-Environment Maps comes in different projections: equirectangular, CubeMap (face list), azimuthal and many others. WebGL and GPU works with face list - set of 6 textures representing sides of a cube - CubeMap. So environment map should be converted into 6 textures if it comes in any other projection.
+Карты окружения представлены в разных проекциях: эquirectangular, CubeMap (список граней), азимутальные и многие другие. WebGL и GPU работают со списком граней - набором из 6 текстур, представляющих стороны куба - CubeMap. Таким образом, карта окружения должна быть преобразована в 6 текстур, если она представлена в любой другой проекции.
 
-In order to convert between projections you can use various tools, one of them is cross-platform open-source CubeMap filtering tool: [cmftStudio][0].
+Для преобразования между проекциями можно использовать различные инструменты, одним из них является кросс-платформенный инструмент с открытым исходным кодом для фильтрации CubeMap: [cmftStudio][0].
 
-CubeMaps can be CGI rendered or assembled from photography, and there are websites to download/buy HDR environment maps. Some of good sources for experimenting can be: [sIBL Archive][6], [No Emotion HDR's][10], [Open Footage][11], [Paul Debevec][12]. Environment maps can come in equirectangular projection and convertible by cmftStudio mentioned above.
+CubeMaps могут быть отрендерены с использованием CGI или собраны из фотографий, и существуют сайты для загрузки/покупки HDR карт окружения. Некоторые хорошие источники для экспериментов могут быть: [sIBL Archive][6], [No Emotion HDR's][10], [Open Footage][11], [Paul Debevec][12]. Карты окружения могут быть представлены в проекции equirectangular и конвертированы с помощью вышеупомянутого cmftStudio.
 
-## Rendering CubeMap
+## Рендеринг CubeMap
 
-CubeMap is made of 6 faces, each representing square side of a cube, simply put: it can be rendered using square viewport camera, by rotating it in different 90 degrees directions with 90 degrees field of view.
+CubeMap состоит из 6 граней, каждая из которых представляет квадратную сторону куба, проще говоря: его можно отрендерить с использованием камеры с квадратным видовым экраном, поворачивая ее в разных направлениях на 90 градусов с углом обзора 90 градусов.
 
-![CubeMap Faces][13]
+![Грани CubeMap][13]
 
-You can use popular 3D modelling tools, or photography and 360 Imagery software. They should be rendered in linear gamma space and without color corrections that is described in [Lightmapping Gamma Correction section][1].
+Вы можете использовать популярные инструменты 3D-моделирования или программное обеспечение для фотографии и 360-градусных изображений. Они должны быть отрендерены в линейном гамма-пространстве и без цветовых коррекций, описанных в разделе [Гамма-коррекция Lightmapping][1].
 
-One of the plugins for 3D Studio Max such as [this][2] can be used to render VRay CubeMap Faces, ready to be uploaded into PlayCanvas Editor.
+Один из плагинов для 3D Studio Max, таких как [этот][2], может быть использован для рендеринга граней VRay CubeMap, готовых для загрузки в редактор PlayCanvas.
 
-## Applying IBL
+## Применение IBL
 
-This can be done using two methods:
-1. Use CubeMap as Skybox in Scene Settings.
-2. Use CubeMap as environment map on the Material directly.
+Это можно сделать двумя способами:
+
+1. Использовать CubeMap в качестве Skybox в настройках сцены.
+2. Использовать CubeMap в качестве карты окружения на материале напрямую.
 
 ## Box Projection Mapping
 
-This technique changes the projection of environment map which allows to specify box within the space so CubeMap corresponds to its bounds. The most common use is to simulate reflections on surfaces within room scale environment.
+Эта техника изменяет проекцию карты окружения, что позволяет указать коробку в пространстве, чтобы CubeMap соответствовал ее границам. Наиболее распространенное использование - имитация отражений на поверхностях в пределах комнаты.
 
 ![Material CubeMap Box Projection][4]
 
-## Example
+## Пример
 
-Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
+Здесь представлен [пример][7] и [проект][8] сцены с использованием CubeMap Box Projection. Обратите внимание на отражение от окон на деревянном полу и тонкое отражение на потолке, а также отражение комнаты на металлическом логотипе PlayCanvas на стене справа. Это динамический эффект и может обеспечить очень реалистичные отражения и контроль художника над тем, как поверхности отражают окружающую среду комнаты.
 
 [![Environment Box Projection Mapping][5]][7]
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+
+*Освещение на этой сцене реализовано с использованием текстур Lightmap и AO, а также Box Projected IBL (отражения)*
 
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction

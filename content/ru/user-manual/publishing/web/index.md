@@ -4,10 +4,10 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-PlayCanvas games are actually web pages and as such, are most at home in the browser. When publishing on the web, you have a number of options:
+Игры PlayCanvas на самом деле являются веб-страницами и, таким образом, наиболее удобными в браузере. При публикации в Интернете у вас есть несколько вариантов:
 
-* [PlayCanvas Hosting][1]
-* [Self-hosting][2]
+* [Хостинг PlayCanvas][1]
+* [Самостоятельный хостинг][2]
 * [Facebook][3]
 
 [1]: /user-manual/publishing/web/playcanvas-hosting

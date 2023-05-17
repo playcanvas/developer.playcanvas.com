@@ -1,27 +1,27 @@
 ---
-title: Nested Templates
+title: Вложенные шаблоны
 layout: usermanual-page.hbs
 position: 2
 ---
 
-PlayCanvas also supports Nested Templates. These are Templates that have instances of other Templates as children. For example imagine a Tree Template where each fruit is another Template.
+PlayCanvas также поддерживает вложенные шаблоны. Это шаблоны, которые имеют экземпляры других шаблонов в качестве дочерних элементов. Например, представьте шаблон дерева, где каждый плод является другим шаблоном.
 
-This allows you to structure complex Template hierarchies with a lot of versatility avoiding copy pasting Entities.
+Это позволяет вам структурировать сложные иерархии шаблонов с большой гибкостью, избегая копирования и вставки Entity.
 
-## Nested Overrides
+## Вложенные переопределения
 
-Let's use the following Template Instance as an example:
+Давайте возьмем следующий экземпляр шаблона в качестве примера:
 
-![Nested Example][1]
+![Пример вложенности][1]
 
-In this example Tree is a Template that consists of Branches which are instances of the Branch Template. Each Branch Template consists of instances of the Apple Template.
+В этом примере Tree - это шаблон, состоящий из Branches, которые являются экземплярами шаблона Branch. Каждый шаблон Branch состоит из экземпляров шаблона Apple.
 
-Let's say we modify the position of the Tree/Branch 1. This will create an override on the Tree Template.
+Допустим, мы изменим положение Tree/Branch 1. Это создаст переопределение в шаблоне Tree.
 
-Now let's say we modify the position of Tree/Branch 1/Apple. This will create an override on the Tree Template and another override on Tree/Branch 1.
+Теперь допустим, мы изменим положение Tree/Branch 1/Apple. Это создаст переопределение в шаблоне Tree и еще одно переопределение в Tree/Branch 1.
 
-If you apply the override to the Branch Template then ALL branches everywhere will pick up the update. If you apply the override to the Tree Template then other Branch Templates will remain unmodified but all Tree Templates will pick up the change.
+Если вы примените переопределение к шаблону Branch, то ВСЕ ветви везде примут обновление. Если вы примените переопределение к шаблону Tree, то другие шаблоны Branch останутся неизменными, но все шаблоны Tree примут изменение.
 
-Overrides are always relative to the selected Template Instance. So if you apply the override to the Tree Template and then select Tree/Branch 1, you will see that the Branch still has the override for the Apple, because we have not applied it to the Branch Template.
+Переопределения всегда относительны к выбранному экземпляру шаблона. Так что если вы примените переопределение к шаблону Tree, а затем выберете Tree/Branch 1, вы увидите, что у Branch все еще есть переопределение для Apple, потому что мы не применили его к шаблону Branch.
 
 [1]: /images/user-manual/templates/nested.png

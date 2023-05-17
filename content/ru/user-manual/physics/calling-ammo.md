@@ -1,70 +1,70 @@
 ---
-title: Calling the ammo.js API
+title: Вызов API ammo.js
 layout: usermanual-page.hbs
 position: 6
 ---
 
-The PlayCanvas integration with ammo.js does not expose the full capability of the ammo.js API. However, it is possible to call the ammo.js API directly from your PlayCanvas scripts.
+Интеграция PlayCanvas с ammo.js не раскрывает все возможности API ammo.js. Однако вы можете вызывать API ammo.js напрямую из ваших скриптов PlayCanvas.
 
-PlayCanvas currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2]. Although there is no official documentation for ammo.js, you can refer to the [Bullet Physics User Guide][3] to learn more.
+В настоящее время PlayCanvas использует [эту сборку][1] ammo.js. API, предоставляемый этой сборкой, можно найти [здесь][2]. Хотя официальной документации для ammo.js нет, вы можете обратиться к [Руководству пользователя Bullet Physics][3] для получения дополнительной информации.
 
-## Joint Constraints
+## Ограничения суставов
 
-There are currently no PlayCanvas components which implement physics constraints (sometimes known as physics joints). However, it is easy to leverage the ammo.js API to create scripts that implement constraints.
+В настоящее время в PlayCanvas нет компонентов, которые реализуют ограничения физики (иногда называемые суставами физики). Однако легко использовать API ammo.js для создания скриптов, реализующих ограничения.
 
-Here is the script for a point-to-point constraint (essentially a ball and socket joint):
+Вот скрипт для ограничения точка-точка (по сути, шарнирный сустав):
 
 ```javascript
 var PointToPointConstraint = pc.createScript('pointToPointConstraint');
 
 PointToPointConstraint.attributes.add('pivotA', {
-    title: 'Pivot',
-    description: 'Position of the constraint in the local space of this entity.',
+    title: 'Пивот',
+    description: 'Позиция ограничения в локальном пространстве этой сущности.',
     type: 'vec3',
     default: [0, 0, 0]
 });
 PointToPointConstraint.attributes.add('entityB', {
-    title: 'Connected Entity',
-    description: 'Optional second entity',
+    title: 'Подключенная сущность',
+    description: 'Необязательная вторая сущность',
     type: 'entity'
 });
 PointToPointConstraint.attributes.add('pivotB', {
-    title: 'Connected Pivot',
-    description: 'Position of the constraint in the local space of entity B (if specified).',
+    title: 'Подключенный пивот',
+    description: 'Позиция ограничения в локальном пространстве сущности B (если указано).',
     type: 'vec3',
     default: [0, 0, 0]
 });
 PointToPointConstraint.attributes.add('breakingThreshold', {
-    title: 'Break Threshold',
-    description: 'Maximum breaking impulse threshold required to break the constraint.',
+    title: 'Порог разрушения',
+    description: 'Максимальный порог разрушающего импульса, необходимый для разрушения ограничения.',
     type: 'number',
     default: 3.4e+38
 });
 PointToPointConstraint.attributes.add('enableCollision', {
-    title: 'Enable Collision',
-    description: 'Enable collision between linked rigid bodies.',
+    title: 'Включить столкновение',
+    description: 'Включить столкновение между связанными твердыми телами.',
     type: 'boolean',
     default: true
 });
 PointToPointConstraint.attributes.add('debugRender', {
-    title: 'Debug Render',
-    description: 'Enable to render a representation of the constraint.',
+    title: 'Отладочная отрисовка',
+    description: 'Включить отображение представления ограничения.',
     type: 'boolean',
     default: false
 });
 PointToPointConstraint.attributes.add('debugColor', {
-    title: 'Debug Color',
-    description: 'The color of the debug rendering of the constraint.',
+    title: 'Цвет отладки',
+    description: 'Цвет отладочной отрисовки ограничения.',
     type: 'rgb',
     default: [1, 0, 0]
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 PointToPointConstraint.prototype.initialize = function() {
     this.createConstraint();
 
     this.on('attr', function(name, value, prev) {
-        // If any constraint properties change, recreate the constraint
+        // Если какие-либо свойства ограничения изменяются, создайте заново ограничение
         if (name === 'pivotA' || name === 'entityB' || name === 'pivotB') {
             this.createConstraint();
         } else if (name === 'breakingThreshold') {
@@ -120,11 +120,11 @@ PointToPointConstraint.prototype.activate = function() {
     }
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 PointToPointConstraint.prototype.update = function(dt) {
     if (this.debugRender) {
-        // Note that it's generally bad to allocate new objects in an update function
-        // but this is just for debug rendering and will normally be disabled
+        // Обратите внимание, что в целом плохо выделять новые объекты в функции обновления
+        // но это только для отладочной отрисовки и обычно будет отключено
         var tempVecA = new pc.Vec3();
         this.entity.getWorldTransform().transformPoint(this.pivotA, tempVecA);
         this.app.renderLine(this.entity.getPosition(), tempVecA, this.debugColor);
@@ -135,13 +135,13 @@ PointToPointConstraint.prototype.update = function(dt) {
 };
 ```
 
-You can find a project that implements all of the constraint types from ammo.js [here][4].
+Вы можете найти проект, который реализует все типы ограничений из ammo.js [здесь][4].
 
-## Continuous Collision Detection
+## Непрерывное обнаружение столкновений
 
-Sometimes, you might find that fast moving rigid bodies in your simulations pass through one another. To overcome this, ammo.js provides a concept called Continuous Collision Detection (or CCD for short). This enables additional checks for collisions by sweeping a sphere volume between the previous and current positions of a rigid body and looking for intersections with the volumes of other bodies.
+Иногда вы можете обнаружить, что быстро движущиеся твердые тела в ваших симуляциях проходят друг через друга. Чтобы преодолеть это, ammo.js предоставляет концепцию, называемую непрерывным обнаружением столкновений (или сокращенно CCD). Это позволяет проводить дополнительные проверки на столкновения, просматривая сферический объем между предыдущим и текущим положениями твердого тела и ища пересечения с объемами других тел.
 
-You can enable CCD for any PlayCanvas rigid body using the following script:
+Вы можете включить CCD для любого твердого тела PlayCanvas с помощью следующего скрипта:
 
 ```javascript
 var Ccd = pc.createScript('ccd');
@@ -149,20 +149,20 @@ var Ccd = pc.createScript('ccd');
 Ccd.attributes.add('motionThreshold', {
     type: 'number',
     default: 1,
-    title: 'Motion Threshold',
-    description: 'Number of meters moved in one frame before CCD is enabled'
+    title: 'Порог движения',
+    description: 'Количество метров, пройденных за один кадр, прежде чем будет включен CCD'
 });
 
 Ccd.attributes.add('sweptSphereRadius', {
     type: 'number',
     default: 0.2,
-    title: 'Swept Sphere Radius',
-    description: 'This should be below the half extent of the collision volume. E.g For an object of dimensions 1 meter, try 0.2'
+    title: 'Радиус сферы Swept',
+    description: 'Это значение должно быть меньше половины размера объема столкновения. Например, для объекта размером 1 метр попробуйте 0.2'
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Ccd.prototype.initialize = function() {
-    var body; // Type btRigidBody
+    var body; // Тип btRigidBody
 
     body = this.entity.rigidbody.body;
     body.setCcdMotionThreshold(this.motionThreshold);
@@ -179,14 +179,14 @@ Ccd.prototype.initialize = function() {
 };
 ```
 
-You can find a project that implements CCD [here][5].
+Вы можете найти проект, который реализует CCD [здесь][5].
 
-These are just two examples of using the ammo.js API directly. You can also use it to implement additional things like:
+Это всего лишь два примера использования API ammo.js напрямую. Вы также можете использовать его для реализации дополнительных вещей, таких как:
 
-* Compound collision shapes
-* Soft body simulation
-* Cloth simulation
-* Vehicles
+* Составные формы столкновений
+* Симуляция мягкого тела
+* Симуляция ткани
+* Транспортные средства
 
 [1]: https://github.com/kripken/ammo.js/commit/dcab07bf0e7f2b4b64c01dc45da846344c8f50be
 [2]: https://github.com/kripken/ammo.js/blob/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/ammo.idl

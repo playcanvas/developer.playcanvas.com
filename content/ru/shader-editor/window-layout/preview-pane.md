@@ -1,46 +1,46 @@
 ---
-title: Preview Pane
+title: Панель предварительного просмотра
 layout: shader-editor-page.hbs
 position: 6
 ---
 
-The Preview Pane displays the currently selected graph or material and supports various lighting environments and shapes.
+Панель предварительного просмотра отображает текущий выбранный граф или материал и поддерживает различные среды освещения и формы.
 
-![Preview Pane][1]
+![Панель предварительного просмотра][1]
 
-| How To |  |
+| Как сделать |  |
 |---|---|
-| Rotate the view | Left click and drag. |
-| Zoom the view | Use the mouse scroll wheel. |
-| Pan the view | Right click and drag. |
-| Preview custom model | Drag and drop a glTF/glb model on the preview pane. |
-| Preview custom environment | Drag and drop an equirectangle HDR image on the preview pane. |
+| Повернуть вид | Щелкните левой кнопкой мыши и перетащите. |
+| Увеличить вид | Используйте колесо прокрутки мыши. |
+| Переместить вид | Щелкните правой кнопкой мыши и перетащите. |
+| Предварительный просмотр пользовательской модели | Перетащите модель glTF/glb на панель предварительного просмотра. |
+| Предварительный просмотр пользовательской среды | Перетащите изображение equirectangle HDR на панель предварительного просмотра. |
 
 ### Панель инструментов
 
-The toolbar offers control over the lighting environment and preview shape. The toolbar is shown below with the controls numbered and brief description of each.
+Панель инструментов предлагает управление средой освещения и формой предварительного просмотра. На панели инструментов, показанной ниже, контролы пронумерованы, и дано краткое описание каждого.
 
-![Preview Pane Toolbar][2]
+![Панель инструментов предварительного просмотра][2]
 
-| Управление | |
+| Контролы | |
 |---|---|
-| 1 | Play toggle. When enabled, the preview window updates continuously and steps engine time forward. Enable this when previewing animated effects.
-| 2 | Direct lighting toggle. |
-| 3 | Environment lighting toggle. |
-| 4 | Show environment background toggle. |
-| 5 | Fullscreen toggle. |
+| 1 | Переключатель воспроизведения. Когда включено, окно предварительного просмотра обновляется непрерывно и воспроизводит время движка. Включите это при просмотре анимированных эффектов. |
+| 2 | Переключатель прямого освещения. |
+| 3 | Переключатель освещения окружающей среды. |
+| 4 | Переключатель отображения фона среды. |
+| 5 | Переключатель полноэкранного режима. |
 
-### Custom environment lighting
+### Пользовательское освещение среды
 
-The Preview Pane comes with a set of lighting environments, however custom environments are also supported.
+Панель предварительного просмотра поставляется с набором сред освещения, однако также поддерживаются и пользовательские среды освещения.
 
-To use a custom lighting environment, drag and drop an HDR image file, in equirectangular format, onto the Preview Pane. The environment will be shown as an option in the toolbar environment selector.
+Для использования пользовательской среды освещения перетащите файл изображения HDR в формате евклидова прямоугольника на панель предварительного просмотра. Среда будет показана в качестве варианта в селекторе среды панели инструментов.
 
-### Custom shapes
+### Пользовательские формы
 
-The Preview Pane comes with a set of simple shapes on which to preview materials, however custom shapes are also supported.
+Панель предварительного просмотра поставляется с набором простых форм для предварительного просмотра материалов, однако также поддерживаются и пользовательские формы.
 
-To use a custom shape, drag and drop a glTF or glb model file onto the Preview Pane. The custom model will be an option in the toolbar shape selector.
+Для использования пользовательской формы перетащите файл модели glTF или glb на панель предварительного просмотра. Пользовательская модель будет вариантом в селекторе формы панели инструментов.
 
 [1]: /images/shader-editor/preview-pane.png
 [2]: /images/shader-editor/preview-pane-toolbar.png

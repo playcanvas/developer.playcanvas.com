@@ -1,26 +1,26 @@
 ---
-title: Сценарий
+title: Скрипт
 layout: usermanual-page.hbs
 position: 16
 ---
 
-The Script component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.
+Компонент Script позволяет сущности выполнять пользовательские скрипты. Таким образом, пользователь может написать скрипт (на языке JavaScript), который будет выполняться при создании сущности и обновляться на постоянной основе.
 
-The Script component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, all of the assigned scripts will have their update functions called every frame.
+Компонент Script можно включить или отключить с помощью переключателя в верхнем правом углу панели компонента. Если включено, все назначенные скрипты будут вызывать свои функции обновления каждый кадр.
 
-![Script component][1]
+![Компонент Script][1]
 
-To create a new script, click on the <span class="font-icon" style="font-size: 18px">&#58468;</span> button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+Чтобы создать новый скрипт, нажмите на кнопку <span class="font-icon" style="font-size: 18px">&#58468;</span> на панели Assets и выберите New Script. Затем введите имя скрипта во всплывающем окне и нажмите Enter.
 
 <img loading="lazy" src="/images/user-manual/scenes/components/new-script.jpg">
 
-You can then drag the new script on a script component or you can click the Add Script button in the script component Inspector and then select it from the Assets Panel.
+Затем вы можете перетащить новый скрипт на компонент скрипта, или вы можете нажать кнопку Add Script в инспекторе компонента скрипта и затем выбрать его на панели Assets.
 
-To edit the script in the PlayCanvas Code Editor you can either click on the hyperlinked script name, or you can select the script from the Assets Panel and click Edit.
+Чтобы отредактировать скрипт в редакторе кода PlayCanvas, вы можете либо нажать на гиперссылку с именем скрипта, либо выбрать скрипт на панели Assets и нажать Edit.
 
-## Scripting Interface
+## Интерфейс скриптования
 
-The Script component's scripting interface is [here][2].
+Интерфейс скриптования компонента Script находится [здесь][2].
 
 [1]: /images/user-manual/scenes/components/component-script.png
 [2]: /api/pc.ScriptComponent.html

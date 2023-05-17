@@ -4,4 +4,4 @@ layout: usermanual-page.hbs
 position: 19
 ---
 
-Your PlayCanvas apps are likely to run on a broad spectrum of device types. Anything from a high end desktop PC all the way down to a low end smartphone. To ensure that you achieve the best possible performance for your app, there are some guidelines to follow. PlayCanvas also provides tools to help your find and eliminate performance bottlenecks.
+Ваши приложения PlayCanvas, скорее всего, будут работать на широком спектре типов устройств. От высококлассного настольного ПК до низкоуровневого смартфона. Чтобы обеспечить наилучшую возможную производительность для вашего приложения, следует соблюдать некоторые рекомендации. PlayCanvas также предоставляет инструменты для поиска и устранения узких мест производительности.

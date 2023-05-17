@@ -1,68 +1,68 @@
 ---
-title: Element
+title: Элемент
 layout: usermanual-page.hbs
 position: 7
 ---
 
-An Element component when in a hierarchy with a Screen Component ancestor is used to build user interfaces made up of 2D components such as images and text. The Element provides layout properties such as anchors and a pivot point.
+Компонент Element в иерархии с предком Screen Component используется для создания пользовательских интерфейсов, состоящих из 2D-компонентов, таких как изображения и текст. Элемент предоставляет свойства компоновки, такие как якоря и точку опоры.
 
-See the [User Interface][1] section for more details.
+См. раздел [Пользовательский интерфейс][1] для получения дополнительной информации.
 
-## Group Element
+## Групповой элемент
 
-The group element provides just the layout properties of the Element component
+Групповой элемент предоставляет только свойства компоновки компонента Element
 
-![Group Element][2]
+![Групповой элемент][2]
 
-## Image Element
+## Изображение элемента
 
-The image element displays an image using a texture asset or a solid color.
+Элемент изображения отображает изображение с использованием текстурного ассета или сплошного цвета.
 
-![Image Element][3]
+![Изображение элемента][3]
 
-## Text Element
+## Текстовый элемент
 
-The text element renders a string of text using a [font asset][4].
+Текстовый элемент отображает строку текста с использованием [шрифтового ассета][4].
 
-![Text Element][5]
+![Текстовый элемент][5]
 
-## Common Component Properties
+## Общие свойства компонента
 
-| Property    | Описание |
+| Свойство    | Описание |
 |-------------|-------------|
-| Type        | The type of Element: Group, Image or Text. |
-| Preset      | Choosing a layout preset will automatically set the Anchor and Pivot properties to a preset value. |
-| Anchor      | Determine where the element calculates its position in relation to. See the [Elements#Anchor][6] section for more information. |
-| Pivot       | Determine where the pivot point of the Element is. (0, 0) is bottom left, (1, 1) is top right. See the [Elements#Pivot][7] section for more information. |
-| Size        | The width and height of the Element. This may be automatically calculated depending on other settings. |
-| Margin      | The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis). |
-| Use Input   | If enabled, this Element is added to the list of elements that check for input and fire input related events. |
-| Layers (Слои)      | The Layers to render this element into. More on Layers [here][8]. |
-| Batch Group | The Batch Group that this model belongs to. More on Batching [here][9]. |
+| Тип        | Тип элемента: Группа, Изображение или Текст. |
+| Предустановка      | Выбор предустановки компоновки автоматически устанавливает свойства Якорь и Опорная точка на предустановленное значение. |
+| Якорь      | Определите, относительно чего элемент рассчитывает свою позицию. См. раздел [Элементы#Якорь][6] для получения дополнительной информации. |
+| Опорная точка       | Определите, где находится опорная точка элемента. (0, 0) - нижний левый угол, (1, 1) - верхний правый угол. См. раздел [Элементы#Опорная точка][7] для получения дополнительной информации. |
+| Размер        | Ширина и высота элемента. Это может быть автоматически рассчитано в зависимости от других настроек. |
+| Отступ      | Расстояние от края элемента до якоря. Это доступно только при разделении якоря (неравное значение по одной оси). |
+| Использовать ввод   | Если включено, этот элемент добавляется в список элементов, которые проверяют ввод и запускают события, связанные с вводом. |
+| Слои      | Слои для отображения этого элемента. Подробнее о слоях [здесь][8]. |
+| Группа пакетов | Группа пакетов, к которой принадлежит эта модель. Подробнее о пакетировании [здесь][9]. |
 
-## Image Component Properties
+## Свойства компонента изображения
 
-| Property | Описание |
+| Свойство | Описание |
 |----------|-------------|
-| Rect     | Define the area of the texture asset to display. |
-| Mask     | Switch Image Element into a mask. Masks do not render into the scene, but instead limit child elements to only be rendered where this element is rendered. |
-| Texture  | The texture asset displayed. |
-| Цвет    | The color to tint the element. |
-| Opacity  | The transparency of the element. |
+| Rect     | Определите область текстурного ассета для отображения. |
+| Маска     | Переключите элемент изображения в маску. Маски не отображаются на сцене, но вместо этого ограничивают дочерние элементы только отображением там, где отображается этот элемент. |
+| Текстура  | Отображаемый текстурный ассет. |
+| Цвет    | Цвет для окрашивания элемента. |
+| Прозрачность  | Прозрачность элемента. |
 
-## Text Component Properties
+## Свойства компонента текста
 
-| Property    | Описание |
+| Свойство    | Описание |
 |-------------|-------------|
-| Alignment   | Determine how the text is aligned with in the element. (0, 0) is bottom left, (1, 1) is top right. |
-| Text        | The text string to display. |
-| Font Size   | The size in Screen component pixels to render the font at. |
-| Line Height | The size in Screen component pixels to move down for a new line. |
-| Spacing     | A multiplier to apply to the amount advanced between each character. |
-| Font        | The font asset. |
-| Цвет       | The color to tint the font. |
-| Opacity     | The transparency of the element. |
-| Wrap Lines  | Enable text wrapping. Any text that overflows the width of the text element will be wrapped to the next line. |
+| Выравнивание   | Определите, как текст выравнивается в элементе. (0, 0) - нижний левый угол, (1, 1) - верхний правый угол. |
+| Текст        | Отображаемая текстовая строка. |
+| Размер шрифта   | Размер в пикселях компонента экрана для отображения шрифта. |
+| Высота строки | Размер в пикселях компонента экрана для перехода на новую строку. |
+| Расстояние     | Множитель для применения к расстоянию между каждым символом. |
+| Шрифт        | Шрифтовый ассет. |
+| Цвет       | Цвет для окрашивания шрифта. |
+| Прозрачность     | Прозрачность элемента. |
+| Перенос строк  | Включить перенос текста. Любой текст, выходящий за ширину текстового элемента, будет перенесен на следующую строку. |
 
 [1]: /user-manual/user-interface
 [2]: /images/user-manual/scenes/components/component-element-group.png

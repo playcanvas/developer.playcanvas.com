@@ -1,22 +1,22 @@
 ---
-title: View Changes
+title: Просмотр изменений
 layout: usermanual-page.hbs
 position: 4
 ---
 
-It is possible to view the difference between two the current state of the project and a checkpoint using the View Changes options. A useful feature to run before starting a merge or taking a checkpoint. Or just to check on the state of the project since you last logged in.
+Возможно просмотреть разницу между текущим состоянием проекта и контрольной точкой с помощью опции Просмотр изменений. Это полезная функция, которую стоит запустить перед началом слияния или созданием контрольной точки. Или просто чтобы проверить состояние проекта с момента вашего последнего входа.
 
-The first way of viewing changes it to select the view changes button in the checkpoints view. This will show you the changes made in your branch since the most recent checkpoint.
+Первый способ просмотра изменений - выбрать кнопку просмотра изменений в представлении контрольных точек. Это покажет вам изменения, сделанные в вашей ветке с момента последней контрольной точки.
 
-![VC Panel][1]
+![Панель VC][1]
 
-The second way to view changes is in the drop-down menu for each checkpoint. This will show you the difference between your current state and they checkpoint that is selected. You can use this to view the difference between your branch and checkpoint in another branch.
+Второй способ просмотра изменений находится в выпадающем меню для каждой контрольной точки. Это покажет вам разницу между текущим состоянием и выбранной контрольной точкой. Вы можете использовать это, чтобы просмотреть разницу между вашей веткой и контрольной точкой в другой ветке.
 
-![View Changes][2]
+![Просмотр изменений][2]
 
-Changes are views in a similar interface to the Conflict Manager used when merging except that this interface is only for viewing and cannot be edited.
+Изменения отображаются в интерфейсе, аналогичном Conflict Manager, используемому при слиянии, за исключением того, что этот интерфейс предназначен только для просмотра и не может быть изменен.
 
-![View Changes Dialog][3]
+![Диалоговое окно просмотра изменений][3]
 
 [1]: /images/user-manual/version-control/vc-panel.jpg
 [2]: /images/user-manual/version-control/view-changes.jpg

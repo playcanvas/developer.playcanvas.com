@@ -2,34 +2,33 @@
 title: Создание простой игры - Часть 5
 layout: tutorial-page.hbs
 tags: games
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 5"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Создание простой игры - Часть 5"></iframe>
 
-*You can find the [full project here][9]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3] and [Part 4][4] read them first.*
+*Вы можете найти [полный проект здесь][9]. Если вы еще не видели [Часть 1][1], [Часть 2][2], [Часть 3][3] и [Часть 4][4], прочитайте их сначала.*
 
-## Audio & Particles
+## Аудио и частицы
 
-### Аудио
+### Аудио
 
-Audio is a critical part of your game. It will provide valuable feedback to the player that their inputs are having and effect, plus it can create mood and atmosphere.
+Аудио является критически важной частью вашей игры. Оно предоставит ценную обратную связь игроку о том, что их вводы оказывают эффект, а также может создать настроение и атмосферу.
 
-The Keepy Up game has 3 audio effects: A background music track, a tap sound when you hit the ball and the sad trombone sting when you lose. Each of them is handled slightly differently.
+В игре Keepy Up есть 3 аудиоэффекта: фоновая музыкальная дорожка, звук нажатия при ударе по мячу и грустный звук тромбона при проигрыше. Каждый из них обрабатывается несколько по-разному.
 
+#### Музыка и стинг
 
-#### Music & Sting
-
-The music and sting are handle in a similar way. The main difference is that the music is set to loop. The `game.js` we have a script attribute which links the game script to the Entity with our sound component and we simply play and stop the correct slot.
+Музыка и стинг обрабатываются аналогичным образом. Основное отличие состоит в том, что музыка установлена в режиме повтора. В `game.js` у нас есть атрибут скрипта, который связывает игровой скрипт с Entity с нашим звуковым компонентом, и мы просто воспроизводим и останавливаем правильный слот.
 
 ```javascript
-this.audio.sound.stop(); // stop current sound playing
-this.audio.sound.play("gameover") // play the 'gameover' slot
+this.audio.sound.stop(); // остановить текущий воспроизводимый звук
+this.audio.sound.play("gameover") // воспроизвести слот 'gameover'
 ```
 
-#### Ball tap
+#### Шарик тап
 
-The ball tap sound is attached directly to the ball Entity. It's a short, non-looping sound. So we play it every time the a tap hits the ball.
+Звук тапа шарика прямо прикреплен к шарику Entity. Это короткий, неповторяющийся звук. Поэтому мы воспроизводим его каждый раз, когда тап попадает на шарик.
 
 ```javascript
 this.entity.sound.play("bounce");
@@ -37,9 +36,9 @@ this.entity.sound.play("bounce");
 
 ### Частицы
 
-![Particles][7]
+![Частицы][7]
 
-We have one particle effect in Keepy Up. It's a dust cloud that is triggered whenever the ball is tapped. The dust cloud is a non-looping effect and it needs to be positioned and rotated so that the cloud moves away from the ball when it runs.
+В Keepy Up у нас есть один эффект частиц. Это облако пыли, которое срабатывает при каждом касании мяча. Облако пыли - это не зацикленный эффект, и его нужно позиционировать и вращать так, чтобы облако отходило от мяча при его движении.
 
 ```javascript
 this.impactEffect.setLocalPosition(tmp);
@@ -48,13 +47,13 @@ this.impactEffect.particlesystem.play();
 this.impactEffect.lookAt(this.entity.getPosition());
 ```
 
-In this code we restart the one shot particle effect by calling `reset()` and `play()` and we position and rotate it so that it points towards the center of the ball.
+В этом коде мы перезапускаем эффект однократной частицы, вызывая `reset()` и `play()`, и мы позиционируем и вращаем его так, чтобы он указывал на центр мяча.
 
 ![Curves][8]
 
-Using the Local Velocity graph in the Particle Effect editor, the particle effect is set up to fire away from the direction it is facing i.e. the particles move along the positive z axis.
+Используя график Local Velocity в редакторе эффектов частиц, эффект частиц настроен так, чтобы стрелять в противоположном направлении от того, в котором он находится, то есть частицы движутся вдоль положительной оси z.
 
-Continue on to [Part 6][6].
+Продолжайте в [Части 6][6].
 
 [1]: /tutorials/keepyup-part-one/
 [2]: /tutorials/keepyup-part-two/

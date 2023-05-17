@@ -4,21 +4,21 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-Organizations offer a way for businesses and large projects to manage many users. They can have multiple administrators and permissions can be handled on a per project basis.
+Организации предлагают способ управления множеством пользователей для бизнеса и крупных проектов. Они могут иметь несколько администраторов, и права доступа могут обрабатываться на основе каждого проекта.
 
-Free Organizations includes:
+Бесплатные организации включают:
 
-- Unlimited public projects
-- Unlimited public team members
-- Project-based permissions
-- Offline Archive & Restore
-- Ability to remove PlayCanvas branding
-- Access to [REST API][2]
+- Неограниченное количество публичных проектов
+- Неограниченное количество публичных членов команды
+- Разрешения на основе проекта
+- Офлайн архивирование и восстановление
+- Возможность удаления брендинга PlayCanvas
+- Доступ к [REST API][2]
 
-You can also purchase an [Organization Plan][1] which includes:
+Вы также можете приобрести [план организации][1], который включает:
 
-- Unlimited private projects
-- Additional storage space
+- Неограниченное количество частных проектов
+- Дополнительное место для хранения
 
 [1]: https://playcanvas.com/plans
 [2]: /user-manual/api

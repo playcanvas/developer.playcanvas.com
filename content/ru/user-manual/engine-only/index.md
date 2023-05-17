@@ -1,14 +1,14 @@
 ---
-title: Engine-Only Users
+title: Пользователи только движка
 layout: usermanual-page.hbs
 position: 23
 ---
 
-The vast majority of PlayCanvas developers build applications with the Editor. But it is also possible to build applications using just the PlayCanvas Engine, the open source JavaScript runtime which powers all PlayCanvas apps.
+Большинство разработчиков PlayCanvas создают приложения с помощью редактора. Но также возможно создавать приложения, используя только движок PlayCanvas, открытый исходный код JavaScript, который работает со всеми приложениями PlayCanvas.
 
-To get started with the engine, visit the [GitHub repository][1].
+Чтобы начать работу с движком, посетите [репозиторий GitHub][1].
 
-The repo contains many [examples][2] that demonstrate the wide variety of engine features.
+Репозиторий содержит множество [примеров][2], которые демонстрируют широкий спектр возможностей движка.
 
 [1]: https://github.com/playcanvas/engine
 [2]: https://playcanvas.github.io

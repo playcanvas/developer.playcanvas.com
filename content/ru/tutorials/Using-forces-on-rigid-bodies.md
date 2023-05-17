@@ -2,22 +2,22 @@
 title: Силы и импульсы
 layout: tutorial-page.hbs
 tags: physics, collision
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Силы и импульсы"></iframe>
 
-*Use the cursor keys to apply impulses, the WASD keys to apply torques and rotate the cube. Press and hold F to apply a constant upward force to cancel gravity effects.*
-*Press R to reset the cube.*
+*Используйте клавиши курсора для применения импульсов, клавиши WASD для применения крутящих моментов и вращения куба. Нажмите и удерживайте F, чтобы применить постоянную силу вверх и отменить эффекты гравитации.*
+*Нажмите R, чтобы сбросить куб.*
 
-*Try to get the cube to balance and spin on one of its corners!*
-*The full code used is shown at the bottom of this page.*
+*Попробуйте уравновесить куб и заставить его вращаться на одном из его углов!*
+*Полный код, использованный в этом примере, показан внизу этой страницы.*
 
-In this tutorial we will show you how to use forces to control a dynamic rigidbody and produce the demo shown above. We will briefly show the use of forces, impulses, torques and the use of rigidbody component UI to customize behavior.
+В этом уроке мы покажем вам, как использовать силы для управления динамическим твердотельным телом и создать демонстрацию, показанную выше. Мы кратко рассмотрим использование сил, импульсов, крутящих моментов и использование пользовательского интерфейса компонента твердотельного тела для настройки поведения.
 
-## Scripting Forces
+## Скриптование сил
 
-### Applying a Constant Force
+### Применение постоянной силы
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_F) ) {
@@ -25,9 +25,9 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 }
 ```
 
-Here a force along the global y-axis is applied to the accessed entity when the user presses the F key via [`applyForce(x, y, z)`][1]. The point of application of the force vector can also be set.
+Здесь сила вдоль глобальной оси Y применяется к доступной сущности, когда пользователь нажимает клавишу F с помощью [`applyForce(x, y, z)`][1]. Точка приложения вектора силы также может быть установлена.
 
-### Impulses
+### Импульсы
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
@@ -35,9 +35,9 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 }
 ```
 
-The cube is given an x-axis impulse to impart an instant change of velocity via [`applyImpulse(x, y, z)`][2].
+Кубу придается импульс по оси x для мгновенного изменения скорости с помощью [`applyImpulse(x, y, z)`][2].
 
-### Torques
+### Крутящие моменты
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_W) ) {
@@ -45,7 +45,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 }
 ```
 
-[Torques](https://en.wikipedia.org/wiki/Torque) (rotational forces) are applied to the entity via [`applyTorque(x, y, z)`][3].
+[Крутящие моменты](https://en.wikipedia.org/wiki/Torque) (вращательные силы) применяются к Entity с помощью [`applyTorque(x, y, z)`][3].
 
 ### TorqueImpulses
 
@@ -53,35 +53,35 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)
 ```
 
-Instantaneous changes in angular velocity are applied via [`applyTorqueImpulse(x, y, z)`][4]. This was not used in the code for the above demo.
+Мгновенные изменения угловой скорости применяются через [`applyTorqueImpulse(x, y, z)`][4]. Это не использовалось в коде для демонстрации выше.
 
-## Moving dynamic rigidbodies
+## Перемещение динамических твердых тел
 
-In order to move rigidbodies, you apply linear forces and rotational forces (torque) using the methods above. Usually you should try to avoid directly modifying the position or velocity of a rigidbody as this will override the simulation and it can lead to odd effects, especially when objects collide.
+Для перемещения твердых тел вы применяете линейные силы и вращательные силы (крутящий момент) с использованием приведенных выше методов. Обычно вам следует избегать прямого изменения положения или скорости твердого тела, так как это будет переопределять симуляцию, и это может привести к странным эффектам, особенно при столкновении объектов.
 
-However, if you need to, you can override the velocity by assigning a new '[pc.Vec3][5]' set of values directly to `entity.rigidbody.linearVelocity` or `entity.rigidbody.angularVelocity`.
+Однако, если вам нужно, вы можете переопределить скорость, назначив новый набор значений '[pc.Vec3][5]' напрямую на `entity.rigidbody.linearVelocity` или `entity.rigidbody.angularVelocity`.
 
-For more information on rigidbody types, see [the collision API page][6], [the pc namespace page][7], [the fps-controller tutorial][8] and [the collision tutorial][9].
+Для получения дополнительной информации о типах твердых тел см. [страницу API столкновений][6], [страницу пространства имен pc][7], [учебник по контроллеру fps][8] и [учебник по столкновениям][9].
 
-## General setup
+## Общая настройка
 
-We set up a basic scene with a spotlight, a cube (entity with model, rigidbody, collision and script components) and a floor (with model, rigidbody and collision components). The cube's rigidbody was set to dynamic while the floor's rigidbody was set to static. We created some materials for each box and changed the diffuse colors just to make it easier on the eye. We have also activated the 'cast shadows' option on both the SpotLight and DynamicBody entities. The full 'usingForces' Scene and code for [this PlayCanvas app can be found here][10].
+Мы настроили базовую сцену с прожектором, кубом (сущность с моделью, твердым телом, компонентами столкновения и сценариями) и полом (с моделью, твердым телом и компонентами столкновения). Твердое тело куба было установлено на динамическое, а твердое тело пола - на статическое. Мы создали некоторые материалы для каждого блока и изменили диффузные цвета, чтобы сделать его более приятным для глаз. Мы также активировали опцию "cast shadows" на обеих сущностях SpotLight и DynamicBody. Полная сцена "usingForces" и код для [этого приложения PlayCanvas можно найти здесь][10].
 
-## Limiting and control
+## Ограничение и контроль
 
-Some Editor settings were set to prevent the constant application of unbalanced forces (and so prevent a body from continuously accelerating and moving out of control). We enabled angular damping on the cube's attribute editor as well as friction on both the cube and floor. Linear damping is not used here, however it can be used to simulate air resistance, and of course decelerations can be applied as required via code.
+Некоторые настройки редактора были установлены для предотвращения постоянного применения несбалансированных сил (и, таким образом, предотвращения непрерывного ускорения и выхода тела из-под контроля). Мы включили угловое затухание в редакторе атрибутов куба, а также трение на кубе и полу. Здесь не используется линейное затухание, однако оно может быть использовано для моделирования сопротивления воздуха, и, конечно же, замедления могут быть применены по мере необходимости через код.
 
 <img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings">
 
-## Teleporting a Body
+## Телепортация тела
 
-To instantly teleport a body to a new position, you can't use the setPosition function from the pc.Entity API. This is because the physics engine would still think the body is in the old location. Instead, you have to use the rigidbody component's teleport function:
+Чтобы мгновенно переместить тело в новую позицию, вы не можете использовать функцию setPosition из API pc.Entity. Это связано с тем, что физический движок все еще будет считать, что тело находится в старом месте. Вместо этого вам нужно использовать функцию телепорта компонента твердого тела:
 
 ```javascript
-//code within the update function
+// код внутри функции update
 this.playerPos = this.entity.getLocalPosition();
 
-// Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
+// Удержание куба на экране - куб выходит за один край экрана, а затем появляется с противоположной стороны.
 if (this.playerPos.x < -9.0) {
     this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
 }
@@ -90,15 +90,75 @@ if (this.playerPos.x > 9.0) {
 }
 ```
 
-If the cube moves beyond the viewable area in the x-direction, the teleport function is called and the cube entity is teleported across the screen. The entity is teleported to a less extreme left/right position so as not to continuously activate the `if()` statement.
+Если куб перемещается за пределы видимой области в направлении x, вызывается функция телепортации, и куб Entity телепортируется через экран. Entity телепортируется в менее крайнее положение слева/справа, чтобы не активировать оператор `if()` непрерывно.
 
-## Reset cube code
+## Код сброса куба
 
 ```javascript
 if (app.keyboard.wasPressed(pc.KEY_R)) {
     this.reset();
 }
 ```
+# Issue Tracker
+
+## Новая функция: Tutorial Thumbnail
+
+### Описание
+
+Добавить возможность загрузки изображения-миниатюры для обучающих материалов.
+
+### Задачи
+
+- [ ] Разработать систему хранения изображений-миниатюр
+- [ ] Создать интерфейс для загрузки изображений-миниатюр
+- [ ] Интегрировать функцию в существующий процесс создания обучающих материалов
+
+## Исправление ошибки: Entity не сохраняет Material Asset
+
+### Описание
+
+При сохранении Entity, Material Asset не сохраняется вместе с ним.
+
+### Задачи
+
+- [ ] Исправить ошибку сохранения Material Asset
+- [ ] Протестировать исправление на разных платформах
+
+## Улучшение: Material Inspector
+
+### Описание
+
+Улучшить Material Inspector для более удобной работы с материалами.
+
+### Задачи
+
+- [ ] Добавить возможность предпросмотра материала
+- [ ] Улучшить навигацию по параметрам материала
+- [ ] Добавить поддержку пользовательских шейдеров через Shader Editor
+
+## Улучшение: Node Inspector
+
+### Описание
+
+Улучшить Node Inspector для более удобной работы с узлами графа.
+
+### Задачи
+
+- [ ] Добавить возможность предпросмотра текстур в Texture Inspector
+- [ ] Улучшить навигацию по параметрам узла
+- [ ] Добавить поддержку пользовательских графов через Graph Inspector
+
+## Улучшение: Assets
+
+### Описание
+
+Улучшить систему работы с Assets для более удобного управления ресурсами.
+
+### Задачи
+
+- [ ] Добавить функцию поиска Assets
+- [ ] Улучшить систему импорта и экспорта Assets
+- [ ] Добавить поддержку пользовательских категорий Assets
 ```javascript
 reset: function () {
     this.entity.rigidbody.teleport(0, 2, 0);
@@ -107,15 +167,14 @@ reset: function () {
 }
 ```
 
-We include a reset function that brings the cube to its original position and, as mentioned above, synchronizes the rigidbody's location to that of the teleported entity. The final two lines in the reset function reset the body's linear and angular velocities to zero. The object's orientation could also be reset, but is not carried out in this code.
+Мы включаем функцию сброса, которая возвращает куб в его исходное положение и, как упоминалось выше, синхронизирует местоположение твердого тела с местоположением телепортированной сущности. Последние две строки в функции сброса сбрасывают линейные и угловые скорости тела до нуля. Ориентация объекта также может быть сброшена, но это не выполняется в данном коде.
 
-
-## Full code listing
+## Полный список кода
 
 ```javascript
 var DynamicBody = pc.createScript('dynamicBody');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 DynamicBody.prototype.initialize = function() {
     this.torque = 7;
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
@@ -129,14 +188,14 @@ DynamicBody.prototype.onKeyDown = function (event) {
     event.event.preventDefault();
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 DynamicBody.prototype.update = function(dt) {
-    //update player's position
+    //обновление позиции игрока
     this.playerPos = this.entity.getLocalPosition();
 
     var app = this.app;
 
-    //keyboard controls and applying forces and moments.
+    //управление с клавиатуры и применение сил и моментов.
     if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
         this.entity.rigidbody.applyImpulse(-1, 0, 0);
     }
@@ -162,7 +221,7 @@ DynamicBody.prototype.update = function(dt) {
         this.entity.rigidbody.applyForce(0, 9.8, 0);
     }
 
-    // Keeping the cube on screen - cube moves off of one screen edge then appears from the opposite edge.
+    // Удержание куба на экране - куб перемещается с одного края экрана и появляется с противоположного края.
     if (this.playerPos.x < -9.0) {
         this.entity.rigidbody.teleport(8.8, this.playerPos.y, this.playerPos.z);
     }
@@ -170,7 +229,7 @@ DynamicBody.prototype.update = function(dt) {
         this.entity.rigidbody.teleport(-8.8, this.playerPos.y, this.playerPos.z);
     }
 
-    // cube reset control
+    // контроль сброса куба
     if (app.keyboard.wasPressed(pc.KEY_R) ) {
         this.reset();
     }

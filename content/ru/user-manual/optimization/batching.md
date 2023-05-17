@@ -1,89 +1,148 @@
 ---
-title: Batching
+title: Объединение (Batching)
 layout: usermanual-page.hbs
 position: 4
 ---
 
-Batching is the process of combining multiple mesh instances together into a single mesh instance, so that they can all be rendered in a single GPU draw call. PlayCanvas provides a handy feature on the [Model][7], [Sprite][9] and [Element][10] components that lets you assign these components to batch groups which give the engine hints on how to combine meshes to reduce the overall draw call count.
+Объединение (Batching) - это процесс объединения нескольких экземпляров сетки в один экземпляр сетки, чтобы все они могли быть отрендерены за один вызов GPU. PlayCanvas предоставляет удобную функцию на компонентах [Model][7], [Sprite][9] и [Element][10], которая позволяет назначать эти компоненты на группы объединения (batch groups), которые дают движку подсказки о том, как объединять сетки для сокращения общего количества вызовов отрисовки.
 
-There are a variety of rules which the engine will apply to see if mesh instances are able to be combined. The primary rule is that all mesh instances must share the same material.
+Движок применяет различные правила для определения возможности объединения экземпляров сетки. Основное правило заключается в том, что все экземпляры сетки должны использовать один и тот же материал.
 
-Common batching use cases are:
+Распространенные случаи использования объединения:
 
-* Combine together static geometry -- e.g. environments -- into a single mesh instance or multiple large instances to reduce draw calls, but still support camera culling.
-* Combine together dynamic geometry -- e.g. a set of moving objects -- into a single mesh instance with dynamic properties that are applied on the GPU.
+* Объединение статической геометрии - например, окружения - в один экземпляр сетки или несколько больших экземпляров для сокращения вызовов отрисовки, но при этом поддерживая отсечение камеры.
+* Объединение динамической геометрии - например, набор движущихся объектов - в один экземпляр сетки с динамическими свойствами, которые применяются на GPU.
 
 <div class="alert-info">
-    The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">runtime lightmaps</a> due to each lightmapped object requiring its own unique lightmap texture.
+Использование объединения в пакеты в настоящее время несовместимо с <a href="/user-manual/graphics/lighting/runtime-lightmaps/">световыми картами во время выполнения</a> из-за того, что каждый объект со световой картой требует своей собственной уникальной текстуры световой карты.
 </div>
 
-## Creating Batch Groups
+## Создание групп пакетов
 
-![Creating Batch Groups][1]
+![Создание групп пакетов][1]
 
-Batch Groups can be created from the Batch Groups section of the [scene settings panel][6]. Each batch group has a number of properties that are used to give the engine hints about how to create batches from this batch group.
+Группы пакетов могут быть созданы из раздела Группы пакетов на [панели настроек сцены][6]. Каждая группа пакетов имеет ряд свойств, которые используются для предоставления подсказок движку о том, как создавать пакеты из этой группы пакетов.
 
-### Batch Group Properties
+### Свойства группы пакетов
 
-* **Name**: Used to differentiate different batch groups, ideally it would describe the kinds of objects that this batch group will have. This name is available at runtime to retrieve the group.
-* **Dynamic**: If enabled then objects inside the batch group can still move/rotate/scale. You can use this for objects that are similar to each other and use the same materials e.g. bullets. Static groups use less runtime resources so you should disable Dynamic if the contents of batch group will not move.
-* **Max AABB size**: The maximum size of any one side of the bounding box that contains all objects in the batch group at the time when the batches are created. If the set of meshes are larger than the maximum size it will create multiple batches to be rendered. A larger bounding box will render in less draw calls, but will work less well with camera culling.
+* **Имя**: Используется для различения разных групп пакетов, в идеале оно должно описывать типы объектов, которые будут в этой группе пакетов. Это имя доступно во время выполнения для получения группы.
+* **Динамический**: Если включено, то объекты внутри группы пакетов могут перемещаться/вращаться/масштабироваться. Вы можете использовать это для объектов, которые похожи друг на друга и используют одни и те же материалы, например, пули. Статические группы используют меньше ресурсов во время выполнения, поэтому вы должны отключить динамический режим, если содержимое группы пакетов не будет перемещаться.
+* **Максимальный размер AABB**: Максимальный размер любой стороны ограничивающего прямоугольника, содержащего все объекты в группе пакетов на момент создания пакетов. Если набор сеток больше максимального размера, будут созданы несколько пакетов для рендеринга. Больший ограничивающий прямоугольник будет отображаться с меньшим количеством вызовов рисования, но будет работать хуже с отсечением камеры.
 
-## Adding a component to a Batch Group
+## Добавление компонента в группу пакетов
 
-![Selecting Batch Groups][2]
+![Выбор групп пакетов][2]
 
-The Model component has a Batch Group property to assign a model into a batch group.
+Компонент Model имеет свойство Batch Group для назначения модели в группу пакетов.
 
-## Rules for combining mesh instances
+## Правила объединения экземпляров сетки
 
-The rules for whether the engine can combine mesh instances are fairly complicated but a good summary is that all mesh instances that belong to a single batch must obey the following:
+Правила, определяющие, может ли движок объединять экземпляры сетки, довольно сложны, но хорошим обобщением является то, что все экземпляры сетки, принадлежащие одному пакету, должны соответствовать следующим условиям:
 
-* Have the same Batch Group ID
-* Have the same material
-* Have the same shader parameters
-* Be within a bounding box with no side larger than the Max AABB Size
-* Be in the same layer
-* Each batch has a maximum vertex count of 65535
-* For dynamic batches there is a maximum number of movable mesh instances. This hardware dependent but has a maximum of 1024.
+* Иметь одинаковый идентификатор группы пакетов (Batch Group ID)
+* Иметь одинаковый материал
+* Иметь одинаковые параметры шейдера
+* Быть внутри ограничивающего прямоугольника, у которого нет стороны, больше максимального размера AABB
+* Быть в одном слое
+* Каждый пакет имеет максимальное количество вершин 65535
+* Для динамических пакетов существует максимальное количество подвижных экземпляров сетки. Это зависит от оборудования, но максимум составляет 1024.
 
-If a batch group contains components or mesh instances that do not obey all of the rules the batch group will produce multiple batches such that each individual batch contains mesh instance that follow all the rules.
+Если группа пакетов содержит компоненты или экземпляры сетки, которые не соблюдают все правила, группа пакетов будет создавать несколько пакетов таким образом, чтобы каждый отдельный пакет содержал экземпляры сетки, которые следуют всем правилам.
 
-## Trigger re-batching
+## Запуск переупаковки
 
-Based on Batch Groups the engine creates an optimized version of mesh instances. Further changes to many properties of the original mesh instances are not reflected in the optimized versions. To allow for good performance by using batching, while still allowing some further updates, you can request the engine to rebatch individual Batch Groups after you make changes to the original mesh instances. This is often useful with User Interface element components, where you might want to set up batching, but still need to do infrequent updates. Note that re-batching a group is a potentially expensive operation. In many cases, the impact of rebatching can be minimized by separating elements that need updating to separate Batch Group.
+На основе групп пакетов движок создает оптимизированную версию экземпляров сетки. Дальнейшие изменения многих свойств исходных экземпляров сетки не отражаются в оптимизированных версиях. Чтобы обеспечить хорошую производительность с использованием пакетов, а также разрешить некоторые дополнительные обновления, вы можете запросить движок для переупаковки отдельных групп пакетов после внесения изменений в исходные экземпляры сетки. Это часто полезно для компонентов элементов пользовательского интерфейса, где вы можете настроить пакеты, но все еще нужно выполнять редкие обновления. Обратите внимание, что переупаковка группы - это потенциально дорогостоящая операция. Во многих случаях влияние переупаковки можно свести к минимуму, разделив элементы, которые нуждаются в обновлении, на отдельные группы пакетов.
 
-Here is an example of a simple script. The script updates `textureAsset` on an element, and marks the Batch Group as dirty.
+Вот пример простого скрипта. Скрипт обновляет `textureAsset` на элементе и помечает группу пакетов как грязную.
 
+# Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/Unity-Technologies/ShaderGraph/issues).
+
+# Учебные материалы
+
+- [Shader Graph Tutorials](https://www.youtube.com/playlist?list=PLV0qBSMhzPz4-x42ROwdY8kTnr2E5zYvt) - официальный плейлист с видеоуроками по Shader Graph на YouTube.
+- [Shader Graph Examples Library](https://github.com/Unity-Technologies/ShaderGraph_ExampleLibrary) - библиотека примеров для Shader Graph.
+
+# Содержание
+
+- [Создание и использование Shader Graph](#создание-и-использование-shader-graph)
+- [Редактор Shader Graph](#редактор-shader-graph)
+- [Узлы](#узлы)
+- [Инспекторы](#инспекторы)
+- [Создание узлов](#создание-узлов)
+- [Соединение узлов](#соединение-узлов)
+- [Работа с узлами](#работа-с-узлами)
+- [Сохранение и загрузка графов](#сохранение-и-загрузка-графов)
+
+## Создание и использование Shader Graph
+
+1. Создайте новый `Material Asset` в папке `Assets`.
+2. Выберите созданный `Material Asset` и откройте `Material Inspector`.
+3. В `Material Inspector` выберите `Shader` и нажмите кнопку `Create Shader Graph`.
+4. Созданный `Shader Graph` будет автоматически применен к выбранному `Material Asset`.
+5. Для редактирования `Shader Graph` дважды кликните по нему в папке `Assets`.
+
+## Редактор Shader Graph
+
+Редактор Shader Graph состоит из следующих частей:
+
+- `Graph Editor` - основная область, где вы создаете и редактируете графы.
+- `Node Inspector` - панель, где вы можете настроить параметры узлов.
+- `Texture Inspector` - панель, где вы можете просматривать и настраивать текстуры.
+- `Graph Inspector` - панель, где вы можете настроить параметры графа.
+
+## Узлы
+
+Узлы - это основные элементы графа, которые представляют различные операции и функции. Узлы могут быть соединены друг с другом для создания сложных эффектов и материалов.
+
+## Инспекторы
+
+Инспекторы позволяют настраивать параметры узлов, текстур и графов. Вы можете открыть инспектор, выбрав соответствующий элемент в редакторе Shader Graph.
+
+## Создание узлов
+
+Чтобы создать узел, щелкните правой кнопкой мыши в области `Graph Editor` и выберите нужный узел из контекстного меню.
+
+## Соединение узлов
+
+Чтобы соединить узлы, перетащите порт одного узла на порт другого узла. Порты совместимых типов будут подсвечены зеленым цветом.
+
+## Работа с узлами
+
+Вы можете перемещать, копировать, вставлять и удалять узлы, используя стандартные команды и сочетания клавиш.
+
+## Сохранение и загрузка графов
+
+Чтобы сохранить граф, нажмите `Ctrl+S` или выберите `File > Save` в меню. Чтобы загрузить граф, дважды кликните по нему в папке `Assets`.
 ```javascript
-// change textureAsset on element
+// изменить textureAsset на элементе
 element.textureAsset = this.hoverAsset;
 
-// if this element has Batch Group set, mark it dirty to rebuild the group in the next frame
+// если у этого элемента установлена группа Batch Group, отметьте ее как грязную, чтобы перестроить группу в следующем кадре
 if (element.batchGroupId)
     this.app.batcher.markGroupDirty(element.batchGroupId);
 ```
 
-## Example - Batching a static environment
+## Пример - Объединение статической среды
 
-![Western Scene][3]
+![Западная сцена][3]
 
-In this scene we have created a static environment from 7 separate model files, some of which are repeated in the scene. For example, the road tile is used to in 50 entities to create the long road through the center of the scene.
+В этой сцене мы создали статическую среду из 7 отдельных файлов моделей, некоторые из которых повторяются на сцене. Например, плитка дороги используется в 50 сущностях для создания длинной дороги по центру сцены.
 
-![Western Animation][4]
+![Западная анимация][4]
 
-You can see in the animation each draw call as it is made. In this environment the engine makes over 50 draw calls to draw each of the models individually. However, apart from the ground, all of these models use the same material and so they can be combined into batch groups.
+Вы можете увидеть на анимации каждый вызов рисования по мере его выполнения. В этой среде движок делает более 50 вызовов рисования для отрисовки каждой из моделей по отдельности. Однако, кроме земли, все эти модели используют один и тот же материал, и поэтому их можно объединить в группы пакетов.
 
-![Western Animation Batched][5]
+![Западная анимация с объединением][5]
 
-In this animation we have created 4 batch groups for the buildings, the cacti, the road and the ground. Notice, that the road and the ground are not combined into single draw calls because the meshes are larger than the Max AABB Size defined on the batch group.
+На этой анимации мы создали 4 группы пакетов для зданий, кактусов, дороги и земли. Обратите внимание, что дорога и земля не объединяются в единые вызовы рисования, потому что сетки больше, чем максимальный размер AABB, определенный для группы пакетов.
 
-## Terminology
+## Терминология
 
-* **Batch Group** - A named group, created in the Editor, that defines some hints on how mesh instances should be combined. Components are assigned to a batch group
-* **Batch** - An engine object created at runtime which is the set of mesh instances that are rendered in a single draw call. A batch group may result in multiple batches depending on the properties of the mesh instances that are added to the batch group.
-* **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][8].
-
+* **Группа пакетов (Batch Group)** - Именованная группа, созданная в редакторе, которая определяет некоторые подсказки о том, как должны объединяться экземпляры сеток. Компоненты назначаются группе пакетов
+* **Batch** - Объект движка, созданный во время выполнения, который представляет собой набор экземпляров сетки, отображаемых в одном вызове рисования. Группа пакетов может привести к созданию нескольких пакетов, в зависимости от свойств экземпляров сетки, добавленных в группу пакетов.
+* **Batch Manager** - Программный интерфейс для создания и обновления пакетов во время выполнения. См. [API документацию][8].
 
 [1]: /images/user-manual/optimization/batching/batch-groups.jpg
 [2]: /images/user-manual/optimization/batching/model-component.jpg

@@ -1,38 +1,38 @@
 ---
-title: Хостинг с использованием CDN
+title: Размещение с использованием CDN
 layout: usermanual-page.hbs
 position: 5
 ---
 
-When deploying your PlayCanvas application for self-hosting it is often necessary to separate the location your application is served from (the index.html) from the assets that the application loads. For example, a Content Delivery Network (CDN) is used to make sure that assets are delivered from a server that is geographically close to the user's computer. This makes your application load much more quickly. This guide will show you how to configure your PlayCanvas application to use a separate location for your assets.
+При развертывании вашего приложения PlayCanvas для самостоятельного хостинга часто необходимо разделить местоположение, с которого предоставляется ваше приложение (index.html), от ассетов, которые загружает приложение. Например, сеть доставки контента (CDN) используется для обеспечения доставки ассетов с сервера, который географически близок к компьютеру пользователя. Это значительно ускоряет загрузку вашего приложения. В этом руководстве показано, как настроить ваше приложение PlayCanvas для использования отдельного местоположения для ваших ассетов.
 
-The first step is to download a web build of your application following the steps in [the publishing guide][1]. Then we start by making changes to the `index.html` and `__settings__.js` files in the downloaded build.
+Первый шаг - загрузить веб-сборку вашего приложения, следуя инструкциям в [руководстве по публикации][1]. Затем мы начинаем с внесения изменений в файлы `index.html` и `__settings__.js` в загруженной сборке.
 
-## Serving Assets from another location
+## Размещение ассетов с другого местоположения
 
-The simplest change to make is to load all assets from a different location. This is done by setting the `ASSET_PREFIX` property in your `__settings__.js`.
+Самое простое изменение - загрузить все ассеты с другого местоположения. Это делается путем установки свойства `ASSET_PREFIX` в вашем `__settings__.js`.
 
 ![settings.js][2]
 
-The `ASSET_PREFIX` will be prepended to all request that are made for an asset (including a scene) both during the preload phase and during runtime. For example, you should set this to the root folder of your CDN asset store.  In the above example, previously an asset that would had a URL like `files/123456/1/texture.jpg` will now be loaded from `http://keepy-up-cdn.example.com/files/123456/1/texture.jpg`.
+`ASSET_PREFIX` будет добавлен ко всем запросам, которые делаются для ассета (включая сцену) как во время фазы предварительной загрузки, так и во время выполнения. Например, вы должны установить это значение в корневую папку вашего хранилища ассетов CDN. В приведенном выше примере ранее ассет, который имел URL-адрес вида `files/123456/1/texture.jpg`, теперь будет загружен из `http://keepy-up-cdn.example.com/files/123456/1/texture.jpg`.
 
-## Additional URLs
+## Дополнительные URL-адреса
 
-There are a few remaining files that are referenced directly by the `index.html`. In particular, the style sheet, the PlayCanvas javascript engine, the `__settings__.js`, `__loading__.js` and `__start__.js` application scripts. Update your index.html as seen below.
+Есть еще несколько файлов, на которые напрямую ссылается `index.html`. В частности, таблица стилей, движок javascript PlayCanvas, скрипты приложения `__settings__.js`, `__loading__.js` и `__start__.js`. Обновите ваш index.html, как показано ниже.
 
 ![index.html][3]
 
-In `__settings__.js`, the path to the application settings `config.json` would need to be changed as well. Update
+В `__settings__.js` путь к настройкам приложения `config.json` также необходимо изменить. Обновите
 
 ![settings.js][6]
 
-## Copy Files to CDN
+## Копирование файлов на CDN
 
-Next you should copy all the required files into the new location on your server. These files are loaded using the `ASSET_PREFIX`:
+Далее вы должны скопировать все необходимые файлы в новое местоположение на вашем сервере. Эти файлы загружаются с использованием `ASSET_PREFIX`:
 
-`__game_scripts.js`, scene json (e.g. `123456.json`), `config.json`, assets (everything inside the `files` folder) and `logo.png` the default loading screen logo.
+`__game_scripts.js`, json сцены (например, `123456.json`), `config.json`, ассеты (все, что находится в папке `files`) и `logo.png` - логотип экрана загрузки по умолчанию.
 
-And these files are referenced by the index.html:
+А эти файлы ссылается index.html:
 
 - `playcanvas-stable.min.js`,
 - `manifest.json`
@@ -43,13 +43,13 @@ And these files are referenced by the index.html:
 
 ![CDN files][4]
 
-You should copy all these files onto your CDN hosting service.
+Вы должны скопировать все эти файлы на свой хостинг-сервис CDN.
 
-## Setting up CORS
+## Настройка CORS
 
-Your application is now ready to load files from a separate server. The final step to tackle is to ensure your server is correctly set up to serve Cross-Origin Resource Sharing (CORS) headers. CORS is a security feature of the browser which means that by default a web page on `http://example.com` can't download files from a web page on `http://keepy-up-cdn.example.com/` because they have a different "origin". To get around this, you must set the server at `http://keepy-up-cdn.example.com/` to serve CORS headers that tell the browser that other pages are allowed to download the content.
+Теперь ваше приложение готово загружать файлы с другого сервера. Последний шаг, который нужно выполнить, - это убедиться, что ваш сервер правильно настроен для обслуживания заголовков Cross-Origin Resource Sharing (CORS). CORS - это функция безопасности браузера, которая означает, что по умолчанию веб-страница на `http://example.com` не может загружать файлы с веб-страницы на `http://keepy-up-cdn.example.com/`, потому что у них разный "источник". Чтобы обойти это, вы должны установить сервер на `http://keepy-up-cdn.example.com/` для обслуживания заголовков CORS, которые сообщают браузеру, что другие страницы могут загружать контент.
 
-Setting up CORS is different depending on which CDN or server you are using. You will need to check the documentation of your server or CDN provider to find out how to set up CORS header. For example, the page for Amazon Web Services CORS settings is [here][5]
+Настройка CORS зависит от того, какой CDN или сервер вы используете. Вам нужно будет проверить документацию вашего сервера или поставщика CDN, чтобы узнать, как настроить заголовок CORS. Например, страница настроек CORS для Amazon Web Services находится [здесь][5]
 
 [1]: /user-manual/publishing/web/self-hosting
 [2]: /images/user-manual/publishing/web/cdn-settings-assets-prefix.png

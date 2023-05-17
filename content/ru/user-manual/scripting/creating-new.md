@@ -4,25 +4,25 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file.
+Чтобы создать новый скрипт, используйте панель Asset и выберите New Script. Вам будет предложено ввести имя для вашего нового файла скрипта.
 
 ![New Script][0]
 
-Double-click the script asset in the panel to open it in the code editor.
+Дважды щелкните по скрипту в панели, чтобы открыть его в редакторе кода.
 
 ![Code Editor][1]
 
-## Attaching to a script component
+## Прикрепление к компоненту скрипта
 
-The script component is created in the same way as other components. Once you have a script component you can select a script from your asset list.
+Компонент скрипта создается так же, как и другие компоненты. Как только у вас появится компонент скрипта, вы можете выбрать скрипт из вашего списка ассетов.
 
 ![Select Script][2]
 
-Scripts are shown by their name, when you select a script to add it to a component, the script content is parsed and any attributes that have been declared are exposed in the interface.
+Скрипты отображаются по их имени, когда вы выбираете скрипт для добавления его в компонент, содержимое скрипта анализируется, и все объявленные атрибуты отображаются в интерфейсе.
 
-## Adding a script component at run time
+## Добавление компонента скрипта во время выполнения
 
-If you want to dynamically add scripts while your application is running you can do so from the script component
+Если вы хотите динамически добавлять скрипты во время работы вашего приложения, вы можете сделать это из компонента скрипта
 
 ```javascript
 var entity = new pc.Entity();
@@ -34,9 +34,9 @@ entity.script.create("rotate", {
 });
 ```
 
-Note, that the "rotate" script should already have been loaded at this point. You can load a script using the Asset Registry's [load()][3] method.
+Обратите внимание, что скрипт "rotate" должен быть загружен на этом этапе. Вы можете загрузить скрипт с помощью метода [load()][3] реестра Asset.
 
-To remove a script from a component use the `destroy` method
+Чтобы удалить скрипт из компонента, используйте метод `destroy`.
 
 ```javascript
 entity.script.destroy("rotate");
@@ -46,3 +46,45 @@ entity.script.destroy("rotate");
 [1]: /images/user-manual/scripting/code-editor.jpg
 [2]: /images/user-manual/scripting/select-script.jpg
 [3]: /api/pc.AssetRegistry.html#load
+
+# Создание и редактирование скриптов
+
+Создание нового скрипта осуществляется через панель Assets. Нажмите на кнопку **Add Asset** и выберите **Script**.
+
+![New Script][0]
+
+Это создаст новый скрипт и откроет его в редакторе кода.
+
+![Code Editor][1]
+
+## Присоединение скрипта к Entity
+
+Чтобы присоединить скрипт к Entity, выберите Entity в иерархии и добавьте компонент **Script**. Затем нажмите на кнопку **Add Script** и выберите нужный скрипт из списка.
+
+![Select Script][2]
+
+## Загрузка Asset'ов
+
+Чтобы загрузить Asset, используйте метод `load` из [Asset Registry][3]. Например, для загрузки текстуры:
+
+```javascript
+var asset = app.assets.find('My Texture');
+app.assets.load(asset);
+```
+
+## Редактирование других Asset'ов
+
+PlayCanvas предоставляет редакторы для различных типов Asset'ов:
+
+- [Issue Tracker](/user-manual/issue-tracker)
+- [Tutorial Thumbnail](/user-manual/tutorial-thumbnail)
+- [Entity](/user-manual/entity)
+- [Material Asset](/user-manual/material-asset)
+- [Material Inspector](/user-manual/material-inspector)
+- [Shader Editor](/user-manual/shader-editor)
+- [Node Inspector](/user-manual/node-inspector)
+- [Texture Inspector](/user-manual/texture-inspector)
+- [Graph Inspector](/user-manual/graph-inspector)
+- [Graph Editor](/user-manual/graph-editor)
+
+Для редактирования Asset'а дважды кликните по нему в панели Assets.

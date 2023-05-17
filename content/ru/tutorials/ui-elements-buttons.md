@@ -1,134 +1,136 @@
 ---
-title: User Interface - Buttons
+title: Пользовательский интерфейс - Кнопки
 layout: tutorial-page.hbs
 tags: ui
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501973/ED1B35-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501973/ED1B35-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/jpRiV53D/" title="Пользовательский интерфейс - Кнопки"></iframe>
 
-*Simple buttons using Element and Button components. See the [full scene][1].*
+*Простые кнопки с использованием компонентов Element и Button. Смотрите [полную сцену][1].*
 
-When building a UI for your application you will almost certainly need to create buttons. This tutorial demonstrates how you can achieve that using the built-in [Elements][2].
+При создании пользовательского интерфейса для вашего приложения вам почти наверняка потребуется создать кнопки. В этом учебнике показано, как это можно сделать с использованием встроенных [Elements][2].
 
-In this [scene][1] we have created a 2D [Screen][3] that looks like this in the hierarchy:
+В этой [сцене][1] мы создали 2D [Screen][3], который выглядит так в иерархии:
 
 ![Hierarchy][4]
 
-## Screen setup
+## Настройка экрана
 
-Our screen is set up like so:
+Наш экран настроен следующим образом:
 
 ![Screen][5]
 
-Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is the resolution that we are targeting - in this case it's 1080 x 1920. We choose Blend for Scale Mode so that our Screen adapts to resolution changes and we set Scale Blend to 1 so that the Screen will adapt only to height changes.
+Поскольку это 2D-экран, мы отметили Screen Space. Наша опорная разрешение - это разрешение, которое мы нацеливаем - в данном случае это 1080 x 1920. Мы выбираем Blend для режима масштабирования, чтобы наш экран адаптировался к изменениям разрешения, и устанавливаем Scale Blend на 1, чтобы экран адаптировался только к изменениям высоты.
 
-Our screen has various children like an Image Element for the logo that is displayed on the top, a Text Element for showing the 'SELECT QUALITY' text and 3 buttons.
+У нашего экрана есть разные дочерние элементы, такие как элемент изображения для отображаемого логотипа, текстовый элемент для отображения текста "SELECT QUALITY" и 3 кнопки.
 
-## Adding a button to the UI
+## Добавление кнопки в пользовательский интерфейс
 
-There are two ways to add a button to the scene.
+Есть два способа добавить кнопку на сцену.
 
-### Via the Hierarchy Panel
+### Через панель иерархии
 
-This is the easiest way to add a button to the scene as it creates the necessary entities, components and preconfigures the properties.
+Это самый простой способ добавить кнопку на сцену, так как он создает необходимые сущности, компоненты и предварительно настраивает свойства.
 
 <img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif">
 
-### With an existing Element
+### С существующим элементом
 
-If there is an existing Element that we would like to turn into a button, we can add Button component to it in the Inspector panel and configure it ourselves.
+Если есть существующий элемент, который мы хотели бы превратить в кнопку, мы можем добавить компонент Button к нему в панели Inspector и настроить его самостоятельно.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300">
 
-Remember to enable Use Input on the Element component so the user can interact with it:
+Не забудьте включить Use Input на компоненте Element, чтобы пользователь мог взаимодействовать с ним:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
 
-And set the Image Entity property on the Button component to be same Entity that the Element component is on.
+И установите свойство Image Entity на компоненте Button таким же, как и Entity, на котором находится компонент Element.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300">
 
-## Button setup
+## Настройка кнопки
 
-Let's take a closer look at the first button in the example project:
+Давайте подробнее рассмотрим первую кнопку в примере проекта:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300">
 
-The button has 3 components:
+Кнопка имеет 3 компонента:
 
-- **Element component** - Positions the renders the button UI relative to it's parent Screen.
-- **Button component** - Handles how the button looks when the user is interacting with it.
-- **Script component** - Listens for events on the Button component and handles the logic on what to do when clicked.
+- **Компонент Element** - Позиционирует отображение пользовательского интерфейса кнопки относительно его родительского экрана.
+- **Компонент Button** - Обрабатывает, как выглядит кнопка, когда пользователь взаимодействует с ней.
+- **Компонент Script** - Слушает события на компоненте Button и обрабатывает логику того, что делать при нажатии.
 
-The button Entity also has a Text Element as a child for showing text (this is optional depending on the style of your button).
+Сущность кнопки также имеет дочерний элемент Text для отображения текста (это необязательно, в зависимости от стиля вашей кнопки).
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300">
 
-The Element's type is Image and it's anchored to the bottom of the screen.
+Тип элемента - изображение, и он закреплен в нижней части экрана.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300">
 
-After anchoring the button we give it an offset from the bottom by simply moving it up.
+После закрепления кнопки мы задаем ей смещение от нижней части, просто перемещая ее вверх.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300">
 
-We also have Use Input enabled in order to interact with the button.
+Мы также включили Use Input, чтобы взаимодействовать с кнопкой.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
 
-### Changing how the button looks on interaction
+### Изменение внешнего вида кнопки при взаимодействии
 
-We can change how the button looks when the user interacts with the button for the following states:
+Мы можем изменить, как выглядит кнопка, когда пользователь взаимодействует с ней, для следующих состояний:
 
-- **Hover** - When the mouse cursor is over the button.
-- **Pressed** - When the user presses on the button.
-- **Inactive** - When the button is inactive.
+- **Hover** - Когда курсор мыши находится над кнопкой.
+- **Pressed** - Когда пользователь нажимает на кнопку.
+- **Inactive** - Когда кнопка неактивна.
 
-This can be done via two Transition Modes:
+Это можно сделать с помощью двух режимов перехода:
 
-#### Tinting the color
+#### Тонирование цвета
 
-Tinting the button color in each state is the easiest method to add some user feedback when they interact with it. In the project, the High Quality button has the following setup:
+Тонирование цвета кнопки в каждом состоянии - это самый простой способ добавить обратную связь пользователю при взаимодействии с ней. В проекте кнопка высокого качества имеет следующую настройку:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300">
 
-With the following effect:
+Следующий эффект:
 
 <img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-effect.gif">
 
-#### Changing the Sprite
+#### Изменение спрайта
 
-We can also change the sprite image of the button in the different states for cases where you may want the button to change shape or want to give a look of the button being 'pressed' into the screen. The Low Quality button has the following setup:
+Мы также можем изменить изображение спрайта кнопки в разных состояниях для случаев, когда вы хотите изменить форму кнопки или хотите создать вид кнопки, которая "нажимается" на экран. Кнопка Low Quality имеет следующую конфигурацию:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300px">
+<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300">
 
-With the following effect:
+Следующий эффект:
 
 <img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-effect.gif">
 
-### Button events
+### События кнопок
 
-We have a script in the project that listens for when the user clicks on the button and updates the text in the UI to the quality setting that they've selected.
+В проекте у нас есть скрипт, который следит за тем, когда пользователь нажимает на кнопку и обновляет текст в пользовательском интерфейсе с выбранным пользователем качеством настроек.
 
 ```javascript
 var ButtonLogic = pc.createScript('buttonLogic');
 ButtonLogic.attributes.add('textEntity', {
     type: 'entity',
-    description: 'The entity that we want to update when the button is clicked'
+    description: 'Сущность, которую мы хотим обновить при нажатии кнопки'
 });
 ButtonLogic.attributes.add('description', {type: 'string'});
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 ButtonLogic.prototype.initialize = function() {
     this.entity.button.on('click', function(event) {
         this.textEntity.element.text = this.description;
     }, this);
 };
 ```
-This script is attached to the button entities in the scene.
+Этот скрипт прикреплен к объектам кнопок в сцене.
 
-The Button component has a [`click` event][click-event-api] against which a callback function can be registered that works for both mouse and touch input.
+Компонент Button имеет [событие `click`][click-event-api], на которое можно зарегистрировать функцию обратного вызова, работающую как для ввода мыши, так и для касания.
+
+[click-event-api]: /api/pc.ButtonComponent#event:click
 
 ```javascript
 this.entity.button.on('click', function(event) {
@@ -136,11 +138,29 @@ this.entity.button.on('click', function(event) {
 }, this);
 ```
 
-There are other events that can be listened to such as `mouseenter` and `mouseleave`. A full list can be found in the [API documentation][click-event-api].
+# Issue Tracker
 
-These events will only fire if Use Input is enabled on the Element component so make sure that has been ticked in the inspector.
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/playcanvas/engine/issues).
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300px">
+# Руководства
+
+- [Tutorial Thumbnail](https://developer.playcanvas.com/en/tutorials/thumbnail/)
+- [Entity](https://developer.playcanvas.com/en/tutorials/entity/)
+- [Material Asset](https://developer.playcanvas.com/en/tutorials/material-asset/)
+- [Material Inspector](https://developer.playcanvas.com/en/tutorials/material-inspector/)
+- [Shader Editor](https://developer.playcanvas.com/en/tutorials/shader-editor/)
+- [Node Inspector](https://developer.playcanvas.com/en/tutorials/node-inspector/)
+- [Texture Inspector](https://developer.playcanvas.com/en/tutorials/texture-inspector/)
+- [Graph Inspector](https://developer.playcanvas.com/en/tutorials/graph-inspector/)
+- [Asset](https://developer.playcanvas.com/en/tutorials/asset/)
+- [Graph Editor](https://developer.playcanvas.com/en/tutorials/graph-editor/)
+- [Assets](https://developer.playcanvas.com/en/tutorials/assets/)
+
+Существуют и другие события, на которые можно подписаться, такие как `mouseenter` и `mouseleave`. Полный список можно найти в [документации API][click-event-api].
+
+Эти события сработают только если Use Input включен на компоненте Element, поэтому убедитесь, что он отмечен в инспекторе.
+
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/

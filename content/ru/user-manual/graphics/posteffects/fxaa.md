@@ -1,20 +1,20 @@
 ---
-title: FXAA сглаживание
+title: Эффект FXAA
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Fast Approximate Anti-Aliasing (FXAA) is an anti-aliasing algorithm created by NVIDIA. It provides an easy and fast way to add anti-aliasing to your scene.
+Быстрое приближенное сглаживание (FXAA) - это алгоритм сглаживания, созданный NVIDIA. Он предоставляет простой и быстрый способ добавления сглаживания в вашу сцену.
 
-Here is an image without the effect:
+Вот изображение без эффекта:
 
 ![Image without effect][1]
 
-And the same image with the effect applied:
+И то же изображение с примененным эффектом:
 
 ![Image with effect][1]
 
-Find the post-processing effect script on [GitHub][3].
+Найдите скрипт эффекта постобработки на [GitHub][3].
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_fxaa.png

@@ -4,38 +4,38 @@ layout: usermanual-page.hbs
 position: 9
 ---
 
-In order to create scripts for PlayCanvas, it is vital that you know how to access and use your browser's development tools.
+Для создания скриптов для PlayCanvas важно знать, как получить доступ и использовать инструменты разработчика вашего браузера.
 
-Chrome, Firefox and other browsers have Developer Tools integrated directly into the browser. You can usually access them by pressing F12 on Windows or ALT-CMD-I on Mac. Or use menu of a browser to access developer tools.
+Chrome, Firefox и другие браузеры имеют интегрированные инструменты разработчика. Обычно вы можете получить доступ к ним, нажав F12 на Windows или ALT-CMD-I на Mac. Или используйте меню браузера для доступа к инструментам разработчика.
 
-### Debugging Scripts
+### Отладка скриптов
 
-In order to debug your scripts, select the Sources tab in Developer Tools (Chrome). Open the 'navigator' by clicking the icon in the top left corner of the Sources pane. You should see something similar to what is shown below:
+Для отладки ваших скриптов выберите вкладку Sources в инструментах разработчика (Chrome). Откройте "навигатор", нажав на значок в верхнем левом углу панели Sources. Вы должны увидеть что-то похожее на то, что показано ниже:
 
 ![Debugger][1]
 
-In Firefox it looks like this:
+В Firefox это выглядит так:
 
 ![Firefox][2]
 
-The navigator lists all of the scripts currently running in the active tab, including any PlayCanvas scripts that you have written. Find one of your scripts in the navigator and select it to open the source code. You are now able to set breakpoints and debug.
+Навигатор показывает все скрипты, которые в данный момент выполняются на активной вкладке, включая любые скрипты PlayCanvas, которые вы написали. Найдите один из своих скриптов в навигаторе и выберите его, чтобы открыть исходный код. Теперь вы можете устанавливать точки останова и отлаживать.
 
-Each browser has detailed instructions on how to debug javascript. You should read through these documents: [Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
+Каждый браузер имеет подробные инструкции по отладке javascript. Вы должны прочитать эти документы: [Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
 <div class="alert alert-info">
-Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
+Обратите внимание, что когда выполняющееся приложение приостановлено на точке останова в отладчике, другие окна/вкладки браузера, используемые для запуска этого приложения (содержащие редактор кода PlayCanvas или редактор и т. д.), также могут быть приостановлены.
 </div>
 
-### Debugging on Mobile Devices
+### Отладка на мобильных устройствах
 
-On Android, it is possible to connect to the mobile Chrome browser via the desktop Chrome browser devtools and USB cable. [Google Developer documentation][7] has the detailed steps for the setup.
+На Android можно подключиться к мобильному браузеру Chrome через инструменты разработчика настольного браузера Chrome и USB-кабель. [Документация для разработчиков Google][7] содержит подробные шаги для настройки.
 
-iOS debugging requires access to a Mac and [Apple has outlined the steps][8] needed to enable developer options to start debugging.
+Отладка на iOS требует доступа к Mac, и [Apple описала шаги][8], необходимые для включения опций разработчика и начала отладки.
 
-In the situation where either it's not possible to connect to the web view directly from Chrome or Safari (e.g. a web view in another app) or don't have access to a Mac, the following libraries and services can help and are simple to add to projects:
+В случае, когда невозможно подключиться к веб-представлению напрямую из Chrome или Safari (например, веб-представление в другом приложении) или нет доступа к Mac, следующие библиотеки и сервисы могут помочь и легко добавиться в проекты:
 
-* [RemoteJS][9] - Allows developers to view the console output remotely in a desktop browser and also execute JS in the console which makes it very powerful. The console output can be delayed or slow though.
-* [vConsole][10] or [Eruda][11] - Adds a widget DOM object to the page that can be expanded to show console output, network requests, the page elements and more.
+* [RemoteJS][9] - позволяет разработчикам просматривать вывод консоли удаленно в настольном браузере и также выполнять JS в консоли, что делает его очень мощным. Вывод консоли может быть задержан или медленным.
+* [vConsole][10] или [Eruda][11] - добавляет виджет DOM-объекта на страницу, который можно развернуть для просмотра вывода консоли, сетевых запросов, элементов страницы и многого другого.
 
 [1]: /images/user-manual/scripting/debugging/chrome-debugger.jpg
 [2]: /images/user-manual/scripting/debugging/firefox-debugger.jpg

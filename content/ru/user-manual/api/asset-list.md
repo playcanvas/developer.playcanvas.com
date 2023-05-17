@@ -1,10 +1,10 @@
 ---
-title: Assets - List assets
+title: Assets - Список Assets
 layout: usermanual-page.hbs
 position: 9
 ---
 
-## Route URL
+## URL маршрута
 
 ```none
 GET https://playcanvas.com/api/projects/:projectId/assets?branchId=:branchId
@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/projects/:projectId/assets?branchId=:branchId
 
 ## Описание
 
-Get the details of all assets in a project for a specific branch
+Получите информацию обо всех ассетах в проекте для определенной ветки
 
 ## Пример
 
@@ -20,25 +20,73 @@ Get the details of all assets in a project for a specific branch
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}"
 ```
 
-HTTP Request
+HTTP-запрос
 
 ```text
 GET https://playcanvas.com/api/projects/{projectId}/assets?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## Parameters
+## Параметры
 
 <div class="params">
-<div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list assets from</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>ID проекта для вывода списка ассетов</p></div>
+<div class="parameter"><span class="param">branchId: string</span><p>ID ветки</p></div>
 </div>
 
-## Response Schema
+## Схема ответа
 
 ```none
-Status: 200
+Статус: 200
 ```
+
+# Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в Issue Tracker.
+
+[Issue Tracker](https://github.com/Unity-Technologies/ShaderGraph/issues)
+
+# Учебные материалы
+
+## Tutorial Thumbnail
+
+[![Tutorial Thumbnail](https://img.youtube.com/vi/U5N-VV5bm0U/0.jpg)](https://www.youtube.com/watch?v=U5N-VV5bm0U)
+
+## Создание Entity
+
+[![Entity](https://img.youtube.com/vi/4AVdU7J9v6Y/0.jpg)](https://www.youtube.com/watch?v=4AVdU7J9v6Y)
+
+## Создание Material Asset
+
+[![Material Asset](https://img.youtube.com/vi/raQ3iHhE_Kk/0.jpg)](https://www.youtube.com/watch?v=raQ3iHhE_Kk)
+
+## Использование Material Inspector
+
+[![Material Inspector](https://img.youtube.com/vi/6yUG6FZPj3I/0.jpg)](https://www.youtube.com/watch?v=6yUG6FZPj3I)
+
+## Создание Shader с помощью Shader Editor
+
+[![Shader Editor](https://img.youtube.com/vi/8LhcParuzpc/0.jpg)](https://www.youtube.com/watch?v=8LhcParuzpc)
+
+## Использование Node Inspector
+
+[![Node Inspector](https://img.youtube.com/vi/raQ3iHhE_Kk/0.jpg)](https://www.youtube.com/watch?v=raQ3iHhE_Kk)
+
+## Использование Texture Inspector
+
+[![Texture Inspector](https://img.youtube.com/vi/6yUG6FZPj3I/0.jpg)](https://www.youtube.com/watch?v=6yUG6FZPj3I)
+
+## Использование Graph Inspector
+
+[![Graph Inspector](https://img.youtube.com/vi/8LhcParuzpc/0.jpg)](https://www.youtube.com/watch?v=8LhcParuzpc)
+
+## Создание Asset с помощью Graph Editor
+
+[![Graph Editor](https://img.youtube.com/vi/U5N-VV5bm0U/0.jpg)](https://www.youtube.com/watch?v=U5N-VV5bm0U)
+
+## Управление Assets
+
+[![Assets](https://img.youtube.com/vi/4AVdU7J9v6Y/0.jpg)](https://www.youtube.com/watch?v=4AVdU7J9v6Y)
 
 ```json
 {
@@ -55,7 +103,7 @@ Status: 200
         },
         "source": bool,
         "sourceId": bool,
-        "tags": list of strings,
+        "tags": список строк,
         "preload": bool,
         "file": {
             "hash": string,
@@ -73,7 +121,7 @@ Status: 200
 }
 ```
 
-## Errors
+## Ошибки
 
 <div class="params">
 <div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
@@ -82,8 +130,8 @@ Status: 200
 <div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
-## Rate Limiting
+## Ограничение скорости
 
-This route uses a [normal][1] rate limit.
+Этот маршрут использует [нормальное][1] ограничение скорости.
 
 [1]: /user-manual/api#rate-limiting

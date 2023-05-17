@@ -1,101 +1,101 @@
 ---
-title: User Interface - Stats Counter
+title: Пользовательский интерфейс - Счетчик статистики
 layout: tutorial-page.hbs
 tags: ui
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
 
-*How to use buttons, progress bars and interact with elements. See the [full scene][1].*
+*Как использовать кнопки, индикаторы выполнения и взаимодействовать с элементами. Смотрите [полную сцену][1].*
 
-In this tutorial we are going to use the built-in [Elements][2] to create a few simple widgets that allow you to increase a stat by clicking on plus / minus buttons.
+В этом уроке мы собираемся использовать встроенные [Elements][2] для создания нескольких простых виджетов, которые позволяют увеличивать статистику, нажимая на кнопки плюс / минус.
 
-For each stat we need a minus button, a plus button, a progress bar and some text to show the current stat value.
+Для каждой статистики нам нужна кнопка минус, кнопка плюс, индикатор выполнения и текст, чтобы показать текущее значение статистики.
 
 ## Иерархия
 
-This is what our UI looks like in the Hierarchy:
+Вот как выглядит наш пользовательский интерфейс в иерархии:
 
 ![Hierarchy][4]
 
-## Screen setup
+## Настройка экрана
 
-First we start by adding a new 2D [Screen][3]. This is what our Screen looks like:
+Сначала мы добавляем новый 2D [Screen][3]. Вот как выглядит наш экран:
 
 ![Screen][5]
 
-Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is the resolution that we are targeting - in this case it's 1080 x 1920. We choose Blend for Scale Mode so that our Screen adapts to resolution changes and we set Scale Blend to 1 so that the Screen will adapt only to height changes.
+Поскольку это 2D-экран, мы отметили Screen Space. Наша опорная разрешение - это разрешение, которое мы нацеливаем - в данном случае это 1080 x 1920. Мы выбираем Blend для режима масштабирования, чтобы наш экран адаптировался к изменениям разрешения, и устанавливаем Scale Blend на 1, чтобы экран адаптировался только к изменениям высоты.
 
-## Stats setup
+## Настройка статистики
 
-For each stat we will create a different Group Element. This allows us to treat sub-elements of the Group to be anchored to the Group edges and allows us to treat each stat as a separate widget.
+Для каждой статистики мы создадим отдельный элемент группы. Это позволяет нам обрабатывать подэлементы группы, закрепленные за краями группы, и позволяет нам рассматривать каждую статистику как отдельный виджет.
 
-We will only examine the Boost stat - the others are exactly the same. This is that the `stats-boost` Entity looks like in the viewport:
+Мы рассмотрим только статистику Boost - остальные точно такие же. Вот как выглядит сущность `stats-boost` в окне просмотра:
 
 ![Boost][6]
 
-And these are its attributes:
+И это его атрибуты:
 
 ![Boost Attributes][7]
 
-As you can see it has a Group Element component with the appropriate size to contain all our elements and it's anchored to the bottom of the screen. It also has a Script Component with the script `uiStats` assigned to it. This script will allow us to handle interactions with the Elements of the group.
+Как видите, у него есть компонент Group Element с соответствующим размером для размещения всех наших элементов, и он закреплен в нижней части экрана. У него также есть компонент Script с назначенным ему скриптом `uiStats`. Этот скрипт позволит нам обрабатывать взаимодействия с элементами группы.
 
-This is what our group looks like in the Hierarchy:
+Вот как выглядит наша группа в иерархии:
 
 ![Boost Hierarchy][8]
 
-Our group has the following child Elements:
+Наша группа имеет следующие дочерние элементы:
 
-* `text-title`: A Text Element for the title of the group - anchored to the top of the group.
-* `btn-minus`: An Image Element that has a child Text Element. This is our minus button and it's anchored to the bottom left of the group.
-* `btn-plus`: An Image Element that has a child Text Element. This is our plus button and it's anchored to the bottom right of the group.
-* `progress-bar`: Our progress bar anchored to the bottom of the Group. This is an Image Element for the background of the progress bar and it has 2 child Elements:
-    * `image-progress`: The resizable Image Element that actually displays progress. Anchored to the left of the `progress-bar` Element.
-    * `text`: The Text Element that displays our stats. Anchored to the center of the `progress-bar` Element.
+* `text-title`: Текстовый элемент для заголовка группы - закреплен в верхней части группы.
+* `btn-minus`: Изображение элемента, которое имеет дочерний текстовый элемент. Это наша кнопка минус, и она закреплена в нижнем левом углу группы.
+* `btn-plus`: Изображение элемента, которое имеет дочерний текстовый элемент. Это наша кнопка плюс, и она закреплена в нижнем правом углу группы.
+* `progress-bar`: Наш индикатор выполнения, закрепленный в нижней части группы. Это элемент изображения для фона индикатора выполнения, и у него есть 2 дочерних элемента:
+    * `image-progress`: Изменяемый элемент изображения, который фактически отображает выполнение. Закреплен слева от элемента `progress-bar`.
+    * `text`: Текстовый элемент, который отображает нашу статистику. Закреплен в центре элемента `progress-bar`.
 
-## Scripts
+## Скрипты
 
-We have a script on each button to allow us to change their texture based on hover states. This is similar to the script found in [this tutorial][9]. We also have a script to handle our progress bar. There is more info on progress bars in [this tutorial][10].
+У нас есть скрипт на каждой кнопке, который позволяет нам изменять их текстуру на основе состояний наведения. Это похоже на скрипт, найденный в [этом учебнике][9]. У нас также есть скрипт для обработки нашего индикатора выполнения. Более подробная информация об индикаторах выполнения находится в [этом учебнике][10].
 
-The main script that handles the interactions for each stat is `uiStats`:
+Основной скрипт, который обрабатывает взаимодействия для каждой статистики, называется `uiStats`:
 
 ```javascript
 var UiStats = pc.createScript('uiStats');
 
 UiStats.prototype.initialize = function() {
-    // find our widgets
+    // найти наши виджеты
     this.btnPlus = this.entity.findByName('btn-plus');
     this.btnMinus = this.entity.findByName('btn-minus');
     this.progressBar = this.entity.findByName('progress-bar');
     this.progressText = this.progressBar.findByName('text');
 
-    // initialize value to 0
+    // инициализировать значение 0
     this.setValue(0);
 
-    // increase value with plus button
+    // увеличить значение с помощью кнопки плюс
     this.btnPlus.element.on('click', function (evt) {
         this.setValue(this.value + 1);
     }, this);
 
-    // decrease value with minus button
+    // уменьшить значение с помощью кнопки минус
     this.btnMinus.element.on('click', function (evt) {
         this.setValue(this.value - 1);
     }, this);
 };
 
-// Sets the stat value
+// Устанавливает значение статистики
 UiStats.prototype.setValue = function (value) {
-    // clamp between min and max
+    // зажать между минимумом и максимумом
     this.value = pc.math.clamp(value, 0, 10);
-    // set progress
+    // установить прогресс
     this.progressBar.script.progressBar.setProgress(this.value / 10);
-    // update progress text
+    // обновить текст прогресса
     this.progressText.element.text = this.value + ' / ' + 10;
 };
 ```
 
-In this script we find our child elements and when the plus or minus buttons are clicked we increase / decrease the stat and update the progress bar and its text.
+В этом скрипте мы находим наши дочерние элементы, и когда нажимаются кнопки плюс или минус, мы увеличиваем / уменьшаем статистику и обновляем индикатор выполнения и его текст.
 
 [1]: https://playcanvas.com/editor/scene/547905
 [2]: /user-manual/user-interface/elements/

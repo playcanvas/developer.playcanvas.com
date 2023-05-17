@@ -1,35 +1,35 @@
 ---
-title: Animation Blending (Deprecated)
+title: Смешивание анимации (устарело)
 layout: tutorial-page.hbs
 tags: animation
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
 ---
 
-<div class="alert alert-info">This tutorial uses the deprecated Model and Animation components. Please refer to the <a href="/tutorials/anim-blending/">Anim State Graph Blending tutorial</a> instead.</div>
+<div class="alert alert-info">Этот учебник использует устаревшие компоненты модели и анимации. Вместо этого обратитесь к <a href="/tutorials/anim-blending/">учебнику по смешиванию анимаций Anim State Graph</a>.</div>
 
-<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Смешивание анимации"></iframe>
 
-*Click on screen to focus, then press the 'p' key to blend to a punch animation*
+*Нажмите на экран, чтобы сфокусироваться, затем нажмите клавишу 'p', чтобы смешать анимацию удара*
 
-This tutorial illustrates the basics of animation blending.
+Этот учебник демонстрирует основы смешивания анимации.
 
-Objects in your scene may be animated; machines or characters are good examples of things that you might want to animate. Generally, when 3D content is created, individual animations are authored and these animations are typically referred to as cycles (because they loop). For example, a human character could have an idle cycle, a walk cycle, a run cycle and so on. As a PlayCanvas developer, you'll want a mechanism to play these animations back on your animated object. Additionally, you do not want these animations to 'pop' as one is switched for another. To remedy this, you should use animation blending which implements a smooth transition from one animation to another. This dramatically improves the visual fidelity of your animated object.
+Объекты в вашей сцене могут быть анимированы; машины или персонажи - хорошие примеры того, что вы можете захотеть анимировать. В целом, когда создается 3D-контент, создаются отдельные анимации, и эти анимации обычно называются циклами (потому что они зациклены). Например, у человеческого персонажа может быть цикл бездействия, цикл ходьбы, цикл бега и так далее. Как разработчик PlayCanvas, вы захотите механизм для воспроизведения этих анимаций на вашем анимированном объекте. Кроме того, вы не хотите, чтобы эти анимации "всплывали", когда одна заменяется другой. Чтобы исправить это, вы должны использовать смешивание анимации, которое реализует плавный переход от одной анимации к другой. Это значительно улучшает визуальную достоверность вашего анимированного объекта.
 
-Let's examine how this is achieved via PlayCanvas...
+Давайте рассмотрим, как это достигается с помощью PlayCanvas...
 
-## The Animation Component
+## Компонент анимации
 
-In order to apply an animation to a model, you add the animation component to your entity. Below is the configuration of the skinned character as displayed in PlayCanvas Editor.
+Чтобы применить анимацию к модели, вы добавляете компонент анимации к вашей сущности. Ниже приведена конфигурация скиннутого персонажа, отображаемого в редакторе PlayCanvas.
 
-![Animated Entity][1]
+![Анимированная сущность][1]
 
-In the image you can see the animation component in the Inspector. There are 2 animation assets assigned: an 'idle' cycle and a 'punch' cycle. With the animation component configured this way, the behavior is that the first animation (the idle cycle) is played and because the looping option is set, it will continue to animate ad infinitum. However, we would like to achieve something a little more interesting:
+На изображении вы можете увидеть компонент анимации в инспекторе. Назначены 2 анимационных ассета: цикл "бездействия" и цикл "удара". С такой настройкой компонента анимации поведение заключается в том, что воспроизводится первая анимация (цикл бездействия), и поскольку установлена опция зацикливания, она будет продолжать анимироваться до бесконечности. Однако мы хотели бы добиться чего-то более интересного:
 
-* Play a looping idle animation.
-* Blend to a looping punch animation on a key press.
-* Blend back to idle on key release.
+* Воспроизведение зацикленной анимации бездействия.
+* Смешать с зацикленной анимацией удара при нажатии клавиши.
+* Смешать обратно с бездействием при отпускании клавиши.
 
-So this kind of functionality goes beyond the abilities of the humble animation component. A script component is required to cook up this additional behavior. You can see the script component in the above screenshot of the skinned character entity in Editor and it refers to a JS file called animation_blending.js. The contents of this file is:
+Таким образом, такая функциональность выходит за рамки возможностей простого компонента анимации. Требуется компонент скрипта для создания этого дополнительного поведения. Вы можете увидеть компонент скрипта на вышеуказанном снимке экрана сущности скиннутого персонажа в редакторе, и он ссылается на файл JS с названием animation_blending.js. Содержимое этого файла:
 
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');
@@ -43,7 +43,7 @@ AnimationBlending.states = {
     }
 };
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 AnimationBlending.prototype.initialize = function() {
     this.blendTime = 0.2;
 
@@ -64,15 +64,15 @@ AnimationBlending.prototype.setState = function (state) {
     var states = AnimationBlending.states;
 
     this.state = state;
-    // Set the current animation, taking 0.2 seconds to blend from
-    // the current animation state to the start of the target animation.
+    // Установка текущей анимации, занимающей 0,2 секунды для смешивания от
+    // текущего состояния анимации до начала целевой анимации.
     this.entity.animation.play(states[state].animation, this.blendTime);
 };
 ```
 
-From this point, you are able to add more and more animations to the animation component and start scripting much more complex animation state charts.
+С этого момента вы можете добавлять все больше и больше анимаций в компонент анимации и начать создавать гораздо более сложные схемы состояний анимации.
 
-See [the full Scene here][2]
+Посмотрите [полную сцену здесь][2]
 
 [1]: /images/tutorials/animation_blending.jpg
 [2]: https://playcanvas.com/editor/scene/440156

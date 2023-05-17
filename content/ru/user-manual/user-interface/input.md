@@ -1,14 +1,14 @@
 ---
-title: Input
+title: Ввод
 layout: usermanual-page.hbs
 position: 8
 ---
 
-The user can interact with [Element][1] components, by enabling the `useInput` field on the Element component:
+Пользователь может взаимодействовать с компонентами [Element][1], включив поле `useInput` на компоненте Element:
 
 ![Use Input][2]
 
-Also in order for that to work there must be an initialized instance of `pc.ElementInput` for `pc.Application#elementInput`. This is created automatically for you if you are using the Editor. If you are using the Engine only make sure to create an instance *before* the other input devices like `pc.Mouse` or `pc.TouchDevice` like so:
+Также для того, чтобы это работало, должен быть инициализированный экземпляр `pc.ElementInput` для `pc.Application#elementInput`. Это создается автоматически для вас, если вы используете редактор. Если вы используете только движок, убедитесь, что создаете экземпляр *до* других устройств ввода, таких как `pc.Mouse` или `pc.TouchDevice`, следующим образом:
 
 ```javascript
 var app = new pc.Application(canvas, {
@@ -21,78 +21,78 @@ var app = new pc.Application(canvas, {
 });
 ```
 
-## Input Events
+## Ввод событий
 
-When you enable input on an Element component the following events will be fired:
+При включении ввода на компоненте Element будут вызываться следующие события:
 
 ### mousedown
 
-Fired when the mouse is pressed while the mouse cursor is on the component.
+Срабатывает при нажатии мыши, когда курсор мыши находится на компоненте.
 
 ### mouseup
 
-Fired when the mouse is released while the mouse cursor is on the component.
+Срабатывает при отпускании мыши, когда курсор мыши находится на компоненте.
 
 ### mouseenter
 
-Fired when the mouse cursor enters the component.
+Срабатывает, когда курсор мыши входит в компонент.
 
 ### mouseleave
 
-Fired when the mouse cursor leaves the component.
+Срабатывает, когда курсор мыши покидает компонент.
 
 ### mousemove
 
-Fired when the mouse cursor is moved on the component.
+Срабатывает, когда курсор мыши перемещается по компоненту.
 
 ### mousewheel
 
-Fired when the mouse wheel is scrolled on the component.
+Срабатывает при прокрутке колеса мыши на компоненте.
 
 ### click
 
-Fired when the mouse is pressed and released on the component or when a touch starts and ends on the component.
+Срабатывает при нажатии и отпускании мыши на компоненте или когда касание начинается и заканчивается на компоненте.
 
 ### touchstart
 
-Fired when a touch starts on the component.
+Срабатывает, когда касание начинается на компоненте.
 
 ### touchend
 
-Fired when a touch ends on the component.
+Срабатывает, когда касание заканчивается на компоненте.
 
 ### touchmove
 
-Fired when a touch moves after it started touching the component.
+Срабатывает, когда касание перемещается после начала касания компонента.
 
 ### touchcancel
 
-Fired when a touch is cancelled on the component.
+Срабатывает, когда касание отменяется на компоненте.
 
-## Event Handling
+## Обработка событий
 
-To handle an input event you can listen for it on the Element component:
+Чтобы обработать событие ввода, вы можете прослушать его на компоненте Element:
 
 ```javascript
 this.entity.element.on('click', function (event) {
-    console.log('The element ' + event.element.entity.name + ' was clicked.');
+    console.log('Элемент ' + event.element.entity.name + ' был нажат.');
 }, this);
 ```
 
-## Event bubbling
+## Всплытие событий
 
-When an input event is fired on an Element component it bubbles up to its parent Elements unless you call `event.stopPropagation()`. For example:
+Когда событие ввода вызывается на компоненте Element, оно всплывает к родительским элементам, если вы не вызываете `event.stopPropagation()`. Например:
 
 ```javascript
 this.entity.element.on('click', function (event) {
-    // stop bubbling
+    // остановить всплытие
     event.stopPropagation();
 
-    console.log('The element ' + event.element.entity.name + ' was clicked.');
+    console.log('Элемент ' + event.element.entity.name + ' был нажат.');
 }, this);
 ```
 
-Calling `stopPropagation` will also stop the event from being handled by the other input devices like `pc.Mouse` or `pc.TouchDevice`. So if for example you are handling mouse input using `app.mouse.wasPressed`, you can call `stopPropagation` on the `mousedown` event to prevent `app.mouse.wasPressed` from returning true. For example:
+Вызов `stopPropagation` также остановит обработку события другими устройствами ввода, такими как `pc.Mouse` или `pc.TouchDevice`. Таким образом, если, например, вы обрабатываете ввод мыши с помощью `app.mouse.wasPressed`, вы можете вызвать `stopPropagation` для события `mousedown`, чтобы предотвратить возврат `app.mouse.wasPressed` значения true. Например:
 
 ```javascript
 var InputScript = pc.createScript('inputScript');
@@ -105,30 +105,28 @@ InputScript.prototype.initialize = function () {
 
 InputScript.prototype.update = function (dt) {
     if (this.app.mouse.wasPressed(pc.MOUSEBUTTON_LEFT)) {
-        // do something when the left button was pressed.
-        // this will not be called if the button was pressed on the Element
-        // because we call stopPropagation
+        // сделать что-то, когда была нажата левая кнопка.
+        // это не будет вызвано, если кнопка была нажата на элементе
+        // потому что мы вызываем stopPropagation
     }
 }
 ```
-## Mouse and Touch event conflict on Google Chrome
+## Конфликт событий мыши и касания на Google Chrome
 
-Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behavior. For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
+Google Chrome имитирует события мыши также на устройствах с сенсорным экраном. Это может вызвать некоторое непредвиденное поведение. Например, если вы скрываете кнопку сразу после события клика, другой элемент пользовательского интерфейса, который находится за ним, также может получить нежелательное событие клика.
 
-To prevent this behavior you can call the ```preventDefault()``` method of the native event object on the ```pc.EVENT_TOUCHEND``` event:
+Чтобы предотвратить это поведение, вы можете вызвать```preventDefault()```метод объекта события на родном языке на```pc.EVENT_TOUCHEND```событие:
 
-Here is small script to include once in your scene:
-
- ```javascript
+Вот небольшой скрипт, который нужно добавить один раз в вашу сцену:```javascript
 var TouchFix = pc.createScript('touchFix');
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 TouchFix.prototype.initialize = function() {
-    // Only register touch events if the device supports touch
+    // Регистрируем события касания только если устройство поддерживает касание
     var touch = this.app.touch;
     if (touch) {
         touch.on(pc.EVENT_TOUCHEND, function(event) {
-            // This prevents that a mouse click event will be executed after a touch event.
+            // Это предотвращает выполнение события клика мышью после события касания.
             event.event.preventDefault();
         });
     }
@@ -137,3 +135,54 @@ TouchFix.prototype.initialize = function() {
 
 [1]: /user-manual/packs/components/element/
 [2]: /images/user-manual/assets/fonts/use-input.png
+
+# Руководство по использованию шрифтов
+
+Шрифты представляют собой ресурсы, которые используются для отображения текста на экране. В этом руководстве вы узнаете, как использовать шрифты в PlayCanvas.
+
+## Создание шрифта
+
+Чтобы создать шрифт, перейдите во вкладку **Assets** и нажмите кнопку **Add Asset**. Затем выберите **Font** из выпадающего списка.
+
+![Добавление шрифта](/images/user-manual/assets/fonts/add-font.png)
+
+## Загрузка шрифта
+
+После создания шрифта вам нужно загрузить файл шрифта. PlayCanvas поддерживает следующие форматы файлов шрифтов:
+
+- TTF (TrueType Font)
+- OTF (OpenType Font)
+- WOFF (Web Open Font Format)
+- WOFF2 (Web Open Font Format 2)
+
+Чтобы загрузить файл шрифта, перетащите его в панель **Assets** или нажмите на кнопку **Upload** и выберите файл шрифта.
+
+![Загрузка шрифта](/images/user-manual/assets/fonts/upload-font.png)
+
+## Использование шрифта
+
+Чтобы использовать шрифт, создайте [Element Component][1] и установите его тип на **Text**. Затем перетащите шрифт из панели **Assets** на поле **Font** в инспекторе компонента.
+
+![Использование шрифта][2]
+
+Теперь вы можете настроить различные параметры текста, такие как размер, цвет, выравнивание и т. д.
+
+## Создание шрифта с помощью CSS
+
+PlayCanvas также поддерживает использование шрифтов, определенных в CSS. Чтобы использовать CSS-шрифт, создайте **CSS-файл** во вкладке **Assets** и определите шрифт с помощью правила `@font-face`. Затем установите имя шрифта в поле **Font Family** в инспекторе компонента.
+
+Пример CSS-файла:
+
+```css
+@font-face {
+    font-family: 'MyFont';
+    src: url('path/to/font-file.woff') format('woff');
+}
+```
+
+![Использование CSS-шрифта](/images/user-manual/assets/fonts/use-css-font.png)
+
+## Дополнительные ресурсы
+
+- [Element Component][1] - подробное руководство по использованию компонента элемента для отображения текста и спрайтов.
+- [Text Rendering Best Practices](/user-manual/optimization/text-rendering-best-practices) - советы по оптимизации отображения текста в PlayCanvas.

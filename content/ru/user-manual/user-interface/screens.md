@@ -1,62 +1,61 @@
 ---
-title: Screens
+title: Экраны
 layout: usermanual-page.hbs
 position: 2
 ---
 
-The [Screen Component][1] defines the area that the User Interface is built inside. Its primary responsibility is to determine how the contents of the Screen (child Entities with Element components) are rendered.
+[Компонент экрана][1] определяет область, в которой создается пользовательский интерфейс. Его основная задача - определить, как содержимое экрана (дочерние объекты Entity с компонентами элементов) будет отображаться.
 
-## Screen space or world space
+## Экранное пространство или мировое пространство
 
-The primary choice in render mode for a screen is whether it is rendered in screen space or world space.
+Основной выбор режима отображения для экрана - это отображение в экранном пространстве или мировом пространстве.
 
-![Screen space][2]
+![Экранное пространство][2]
 
-A screen space Screen Component does not follow the normal transform hierarchy. Instead it is rendered as an overlay the camera. This is useful for creating 2D interfaces, HUDs or other game interfaces. There is an option to create a screen space screen in the menu by adding a *2D Screen*.
+Компонент экранного пространства не следует обычной иерархии трансформации. Вместо этого он отображается как наложение на камеру. Это полезно для создания 2D-интерфейсов, HUD или других игровых интерфейсов. В меню есть опция создания экрана в экранном пространстве, добавив *2D Screen*.
 
-![World Space][3]
+![Мировое пространство][3]
 
-If the screen space option is disabled, the Screen is instead rendered using the regular transform hierarchy. Elements are still positioned relative to the screens co-ordinate system, but the screen appears in the 3D world. There is an option to create a world space screen in the menu by adding a *3D Screen*.
+Если опция экранного пространства отключена, экран отображается с использованием обычной иерархии трансформации. Элементы все еще позиционируются относительно системы координат экрана, но экран появляется в 3D-мире. В меню есть опция создания экрана в мировом пространстве, добавив *3D Screen*.
 
-## Resolutions and scaling
+## Разрешения и масштабирование
 
-As PlayCanvas applications can be viewed on many devices and at many resolutions. For screen space components it's important to think about how your user interface will be viewed on different screen sizes.
+Поскольку приложения PlayCanvas могут просматриваться на разных устройствах и с разными разрешениями, важно подумать о том, как ваш пользовательский интерфейс будет отображаться на разных размерах экрана для компонентов экранного пространства.
 
-The simplest way to render the elements is with no scaling.
+Простейший способ отображения элементов - без масштабирования.
 
-![iPad No Scaling][4]
+![iPad без масштабирования][4]
 
-In this case, the user interface works well on an iPad resolution. However, what happens when we view this same scene on an iPhone.
+В этом случае пользовательский интерфейс хорошо работает на разрешении iPad. Однако что произойдет, если мы посмотрим на эту же сцену на iPhone.
 
-![iPhone No Scaling][6]
+![iPhone без масштабирования][6]
 
-Because of the smaller resolution of the phone, the user interface runs off the sides of the screen and is unusable.
+Из-за меньшего разрешения телефона пользовательский интерфейс выходит за пределы экрана и становится непригодным для использования.
 
-The Screen component features a Scaling Mode property which is available for screen space components. If this is set to *Blend*, then the screen scales the interface to fit the resolution of the screen that it is displayed on. Here is the same interface using blended scaling on the iPad:
+Компонент экрана имеет свойство Scaling Mode, доступное для компонентов экранного пространства. Если оно установлено в *Blend*, то экран масштабирует интерфейс так, чтобы он соответствовал разрешению экрана, на котором он отображается. Вот тот же интерфейс с использованием смешанного масштабирования на iPad:
 
-![iPad Scaling][5]
+![iPad с масштабированием][5]
 
-and on the iPhone
+и на iPhone
 
-![iPhone Scaling][7]
+![iPhone с масштабированием][7]
 
-You can see that the user interface now works at both resolutions.
+Как видите, теперь пользовательский интерфейс работает на обоих разрешениях.
 
-### How is the scale factor calculated?
+### Как рассчитывается коэффициент масштабирования?
 
-We use the *Reference Resolution* property of the Screen component as the "ideal" resolution. If your application is displayed at a large resolution that the reference, then it is scaled up. If it is displayed at a smaller resolution than the reference it is scaled down. Because applications may need to respond differently to horizontal or vertical changes we also expose the Scale Blend property which determines which axis to use. Scale Blend of 0 only uses the horizontal resolution, Scale Blend of 1 only uses the vertical resolution, Scale Blend of 0.5 uses both in equal quantities
+Мы используем свойство *Reference Resolution* компонента экрана в качестве "идеального" разрешения. Если ваше приложение отображается на большем разрешении, чем ссылка, то оно масштабируется вверх. Если оно отображается на меньшем разрешении, чем ссылка, оно масштабируется вниз. Поскольку приложения могут по-разному реагировать на горизонтальные или вертикальные изменения, мы также предоставляем свойство Scale Blend, которое определяет, какую ось использовать. Scale Blend равное 0 использует только горизонтальное разрешение, Scale Blend равное 1 использует только вертикальное разрешение, Scale Blend равное 0,5 использует оба в равных количествах.
 
-In these examples you can see how changing the Scale Blend property affects how the interface responds to rotating from Portrait to Landscape
+На этих примерах вы можете увидеть, как изменение свойства Scale Blend влияет на то, как интерфейс реагирует на поворот из портретного в альбомное положение.
 
 ![Scale Blend 0][8]
-With a value of 0 the increase in horizontal resolution makes the button too large
+Со значением 0 увеличение горизонтального разрешения делает кнопку слишком большой
 
 ![Scale Blend 1][10]
-With a value of 1 the decrease in vertical resolution makes the button too small
+Со значением 1 уменьшение вертикального разрешения делает кнопку слишком маленькой
 
 ![Scale Blend 0.5][9]
-With a value of 0.5 the two changes are balanced and the button stays the same size
-
+Со значением 0.5 оба изменения сбалансированы, и размер кнопки остается прежним
 
 [1]: /user-manual/packs/components/screen
 [2]: /images/user-manual/user-interface/screens/screen-space-viewport.png
@@ -68,4 +67,3 @@ With a value of 0.5 the two changes are balanced and the button stays the same s
 [8]: /images/user-manual/user-interface/screens/scale-blend-0.png
 [9]: /images/user-manual/user-interface/screens/scale-blend-0.5.png
 [10]: /images/user-manual/user-interface/screens/scale-blend-1.png
-

@@ -1,22 +1,22 @@
 ---
-title: Структура скрипта
+title: Анатомия скрипта
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Here is a basic script. We can learn about the structure of a PlayCanvas script from it.
+Вот базовый скрипт. Мы можем узнать о структуре скрипта PlayCanvas из него.
 
 ```javascript
 var Rotate = pc.createScript('rotate');
 
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Rotate.prototype.initialize = function() {
-    this.local = false; // choose local rotation or world rotation
+    this.local = false; // выберите локальное вращение или мировое вращение
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Rotate.prototype.update = function(dt) {
     if (this.local) {
         this.entity.rotateLocal(0, this.speed * dt, 0);
@@ -25,55 +25,55 @@ Rotate.prototype.update = function(dt) {
     }
 };
 
-// swap method called for script hot-reloading
-// inherit your script state here
+// метод swap вызывается для горячей перезагрузки скрипта
+// наследуйте состояние вашего скрипта здесь
 Rotate.prototype.swap = function(old) {
     this.local = old.local;
 };
 ```
 
-We'll break down each section of the script
+Мы разберем каждый раздел сценария
 
-# Script Methods
+# Методы сценария
 
-## Declaration of Script Type
+## Объявление типа сценария
 
 ```javascript
-var Rotate = pc.createScript('rotate');
+var Rotate = pc.createScript('поворот');
 ```
 
-This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
+Эта строка создает новый ScriptType с именем 'rotate'. Имя скрипта используется для идентификации скрипта в компонентах скрипта. Каждый ScriptType, объявленный в проекте, должен иметь уникальное имя. Возвращаемая функция `Rotate` - это функция javascript, которая готова к расширению своего прототипа стандартным набором методов. В некотором роде это похоже на наследование классов.
 
-## Атрибуты сценария
+## Атрибуты скрипта
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
 ```
 
-This line declares a script attribute. A script attribute is a property of the script instance and it is exposed to the Editor UI. This allows you to customize individual entities in the Editor. In the above example, the attribute is called 'speed' and would be accessible in the script code as `this.speed`. It is a number and by default is initialized to 10.
+Эта строка объявляет атрибут скрипта. Атрибут скрипта является свойством экземпляра скрипта и он доступен в пользовательском интерфейсе редактора. Это позволяет настраивать отдельные сущности в редакторе. В приведенном выше примере атрибут называется "speed" и будет доступен в коде скрипта как `this.speed`. Это число и по умолчанию инициализируется значением 10.
 
-Attributes are automatically inherited from a new script instance during code hot-swap.
+Атрибуты автоматически наследуются от нового экземпляра скрипта при горячей замене кода.
 
-## Initialize
+## Инициализация
 
 ```javascript
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Rotate.prototype.initialize = function() {
-    // local rotation or world rotation
+    // локальное вращение или мировое вращение
     this.local = false;
 };
 ```
 
-The `initialize` method is called on each entity that has the script attached to it. It is called after application loading is complete and the entity hierarchy has been constructed but before the first update loop or frame is rendered. The `initialize` method is only called once for each entity. You can use it to define and initialize member variables of the script instance. If an entity or script is disabled when the application starts, the initialize method will be called the first time the entity is enabled.
+Метод `initialize` вызывается для каждой сущности, к которой прикреплен сценарий. Он вызывается после завершения загрузки приложения и построения иерархии сущностей, но до первого цикла обновления или отрисовки кадра. Метод `initialize` вызывается только один раз для каждой сущности. Вы можете использовать его для определения и инициализации переменных-членов экземпляра сценария. Если сущность или сценарий отключены при запуске приложения, метод инициализации будет вызван в первый раз, когда сущность будет включена.
 
-When an entity is cloned using the `entity.clone` method, the `initialize` method on the script is only called when the cloned entity is added to the scene hierarchy; as long as both the entity and script are enabled as well.
+Когда сущность клонируется с использованием метода `entity.clone`, метод `initialize` в сценарии вызывается только тогда, когда клонированная сущность добавляется в иерархию сцены; при условии, что и сущность, и сценарий включены.
 
-If a script component has multiple scripts attached to it, the `initialize` method is called in the order of the scripts on the component.
+Если у компонента сценария есть несколько прикрепленных сценариев, метод `initialize` вызывается в порядке сценариев на компоненте.
 
-## Update
+## Обновление
 
 ```javascript
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Rotate.prototype.update = function(dt) {
     if (this.local) {
         this.entity.rotateLocal(0, this.speed * dt, 0);
@@ -83,42 +83,42 @@ Rotate.prototype.update = function(dt) {
 };
 ```
 
-The update method is called for every frame; it is invoked within each entity that has an enabled script component and enabled script instance. Each frame is passed  the `dt` argument containing the time, in seconds, since the last frame.
+Метод обновления вызывается для каждого кадра; он вызывается в каждой сущности, которая имеет включенный компонент сценария и включенный экземпляр сценария. Каждому кадру передается аргумент `dt`, содержащий время, в секундах, с момента последнего кадра.
 
-If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
+Если у компонента сценария есть несколько прикрепленных сценариев, `update` вызывается в порядке сценариев на компоненте.
 
-## Swap
+## Обмен
 
 ```javascript
-// swap method called for script hot-reloading
-// inherit your script state here
+// метод swap вызывается для горячей перезагрузки скрипта
+// наследуйте состояние вашего скрипта здесь
 Rotate.prototype.swap = function(old) {
     this.local = old.local;
 };
 ```
 
-The `swap` method is called whenever a ScriptType with same is added to registry. This is done automatically during Launch when a script is changed at runtime from the Editor. This method allows you to support "code hot reloading" whilst you continue to run your application. It is extremely useful if you wish to iterate on code that takes a while to reach while running your app. You can make changes and see them without having to reload and run through lots of set up or restoring the game state.
+Метод `swap` вызывается при добавлении ScriptType с тем же именем в реестр. Это происходит автоматически во время запуска, когда скрипт изменяется во время выполнения из редактора. Этот метод позволяет поддерживать "горячую перезагрузку кода" во время работы вашего приложения. Это очень полезно, если вы хотите итерировать код, который занимает некоторое время для достижения во время работы вашего приложения. Вы можете вносить изменения и видеть их, не перезагружая и не прогоняя множество настроек или восстанавливая состояние игры.
 
-The `swap` method is passed the old script instance as an argument and you can use this to copy the state from the old instance into the new one. You should also ensure that events are unsubscribed and re-subscribed to.
+Методу `swap` передается старый экземпляр скрипта в качестве аргумента, и вы можете использовать его для копирования состояния из старого экземпляра в новый. Вы также должны убедиться, что события отписываются и подписываются заново.
 
-If you do not wish to support hot-swapping of code, you can delete the swap method and the engine will not attempt to refresh the script.
+Если вы не хотите поддерживать горячую замену кода, вы можете удалить метод swap, и движок не будет пытаться обновить скрипт.
 
-## Additional Methods: postInitialize and postUpdate
+## Дополнительные методы: postInitialize и postUpdate
 
-There are two more methods that are called by the engine on scripts if they are present. `postInitialize` is called on all scripts that implement it after all scripts have been initialized. Use this method to perform functions that can assume all scripts are initialized. `postUpdate` is an update method that is called after all scripts have been updated. Use this to perform functions that can assume that all scripts have been updated. For example, a camera that is tracking another entity should update its position in `postUpdate` so that the other entity has completed its motion for the frame.
+Есть еще два метода, которые вызываются движком для скриптов, если они присутствуют. `postInitialize` вызывается для всех скриптов, которые его реализуют, после того как все скрипты были инициализированы. Используйте этот метод для выполнения функций, которые предполагают, что все скрипты инициализированы. `postUpdate` - это метод обновления, который вызывается после обновления всех скриптов. Используйте это для выполнения функций, которые предполагают, что все скрипты обновлены. Например, камера, которая отслеживает другую сущность, должна обновлять свою позицию в `postUpdate`, чтобы другая сущность завершила свое движение за кадр.
 
 # События
 
-Script instances fire a number of events that can be used to respond to specific circumstances.
+Экземпляры скриптов генерируют ряд событий, которые можно использовать для реагирования на определенные обстоятельства.
 
-## state and enable/disable
+## state и enable/disable
 
-The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
+Событие `state` срабатывает, когда состояние выполнения экземпляра скрипта изменяется с включенного на отключенный или наоборот. Состояние экземпляра скрипта может быть изменено путем включения/отключения самого скрипта, компонента, которому принадлежит скрипт, или сущности, к которой прикреплен компонент скрипта. Событие `enable` срабатывает только при изменении состояния с отключенного на включенный, а событие `disable` срабатывает только при изменении состояния с включенного на отключенный.
 
 ```javascript
 Rotate.prototype.initialize = function () {
     this.on("state", function (enabled) {
-        // play a sound effect when the entity is enabled or disabled
+        // воспроизвести звуковой эффект, когда Entity включается или отключается
         if (enabled) {
             this.entity.sound.play("bell");
         } else {
@@ -128,7 +128,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-or the equivalent using `enable` and `disable`
+или эквивалент с использованием `enable` и `disable`
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -142,27 +142,95 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## destroy
+## уничтожить
 
-The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method, or script component been removed from Entity, or because the Entity it was attached to was destroyed.
+Событие `destroy` возникает при уничтожении экземпляра скрипта. Это может произойти из-за удаления скрипта из компонента путем вызова метода `destroy()`, или из-за удаления компонента скрипта из Entity, или потому что Entity, к которому он был прикреплен, был уничтожен.
 
 ```javascript
 Rotate.prototype.initialize = function () {
     this.on("destroy", function () {
-        // remove a DOM event listener when the entity is destroyed
+        // удалить слушатель событий DOM при уничтожении объекта
         window.removeEventListener("resize", this._onResize);
     });
 };
 ```
 
-## attr and attr:[name]
+## attr и attr:[name]
 
-The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
+События `attr` и `attr:[name]` возникают при изменении значения объявленного атрибута скрипта. Это может произойти в процессе выполнения приложения или при изменении значения через редактор. Событие `attr` возникает для каждого измененного атрибута. Событие `attr:[name]` возникает только для определенного атрибута, например, если у вас есть атрибут с именем "speed", событие `attr:speed` будет вызвано при изменении скорости.
 
 ```javascript
 Rotate.prototype.initialize = function () {
     this.on("attr:speed", function (value, prev) {
-        // speed attribute has changed
+        // атрибут скорости изменился
     });
 };
 ```
+# Issue Tracker
+
+## Новая функция: Tutorial Thumbnail
+
+### Описание
+
+Добавить возможность загрузки изображения-превью для урока.
+
+### Задачи
+
+- [ ] Добавить поле для загрузки изображения в форму создания/редактирования урока
+- [ ] Отображать загруженное изображение на странице урока
+- [ ] Отображать изображение-превью в списке уроков
+
+## Исправление ошибки: Entity не сохраняется
+
+### Описание
+
+При создании новой Entity, она не сохраняется в базе данных.
+
+### Задачи
+
+- [ ] Исправить ошибку сохранения Entity
+- [ ] Добавить тесты для проверки сохранения Entity
+
+## Улучшение: Material Asset
+
+### Описание
+
+Добавить возможность просмотра и редактирования Material Asset в Material Inspector.
+
+### Задачи
+
+- [ ] Добавить вкладку Material Asset в Material Inspector
+- [ ] Реализовать функционал редактирования Material Asset
+
+## Улучшение: Shader Editor
+
+### Описание
+
+Добавить возможность просмотра и редактирования шейдеров в Shader Editor.
+
+### Задачи
+
+- [ ] Добавить вкладку Shader Editor в Node Inspector
+- [ ] Реализовать функционал редактирования шейдеров
+
+## Улучшение: Texture Inspector
+
+### Описание
+
+Добавить возможность просмотра и редактирования текстур в Texture Inspector.
+
+### Задачи
+
+- [ ] Добавить вкладку Texture Inspector в Graph Inspector
+- [ ] Реализовать функционал редактирования текстур
+
+## Улучшение: Graph Editor
+
+### Описание
+
+Добавить возможность просмотра и редактирования графов в Graph Editor.
+
+### Задачи
+
+- [ ] Добавить вкладку Graph Editor в Assets
+- [ ] Реализовать функционал редактирования графов

@@ -1,34 +1,34 @@
 ---
-title: Image Elements
+title: Элементы изображения
 layout: usermanual-page.hbs
 position: 5
 ---
 
-The image Element is used to display a texture or a solid color. Image Elements can be used as the basis for other more complex user interface components such as buttons.
+Элемент изображения используется для отображения текстуры или сплошного цвета. Элементы изображения могут быть использованы в качестве основы для других, более сложных компонентов пользовательского интерфейса, таких как кнопки.
 
-## Tinting
+## Тонирование
 
-Each image Element has a color property. If no texture is applied, the image element will simply be a colored rectangle. If a texture is applied, this color will be used to tint the texture. This let's you create color variations using only a single grayscale texture.
+У каждого элемента изображения есть свойство цвета. Если текстура не применена, элемент изображения будет просто цветным прямоугольником. Если текстура применена, этот цвет будет использоваться для тонирования текстуры. Это позволяет создавать вариации цвета с использованием только одной полутоновой текстуры.
 
-![Tinting][1]
+![Тонирование][1]
 
-## Transparency
+## Прозрачность
 
-As with the color property, the opacity property can be used to set the transparency level of an Element.
+Как и в случае со свойством цвета, свойство прозрачности может быть использовано для установки уровня прозрачности элемента.
 
-![Transparent][2]
+![Прозрачный][2]
 
-## Advanced Materials
+## Расширенные материалы
 
-If you can't achieve the results you are looking for using the texture, color and opacity properties. You can assign your own material to an image element using the material property. For correct rendering you should *disable Depth Write* on any material added to an image Element.
+Если вы не можете добиться желаемых результатов с использованием текстуры, цвета и свойств прозрачности, вы можете назначить свой собственный материал элементу изображения с помощью свойства материала. Для правильного отображения вы должны *отключить запись глубины* для любого материала, добавленного к элементу изображения.
 
-Note: Lighting will not function as expected for Screen Space elements. You will probably want to disable lighting and shadows for any material that is used in screen space.
+Примечание: Освещение не будет работать должным образом для элементов в пространстве экрана. Вероятно, вы захотите отключить освещение и тени для любого материала, используемого в пространстве экрана.
 
-## Masks and Masking
+## Маски и маскировка
 
-Image Elements can be used to mask or hide elements that are descendants. To enable this feature set the `mask` property of an image Element to true.
+Элементы изображения могут быть использованы для маскировки или скрытия элементов, которые являются потомками. Чтобы включить эту функцию, установите свойство `mask` элемента изображения в значение true.
 
-If there is no texture asset assigned to an image Element used for masking the mask will be a rectangle defined by the width and height. If the image Element has a texture assigned the alpha-channel of the texture is used as the mask. Note, an image mask is 1-bit, i.e. there is no fading out of the mask using the alpha-channel of the texture.
+Если нет назначенного ассета текстуры для элемента изображения, используемого для маскировки, маска будет прямоугольником, определенным шириной и высотой. Если у элемента изображения есть назначенная текстура, альфа-канал текстуры используется в качестве маски. Обратите внимание, что маска изображения имеет 1 бит, то есть нет затухания маски с использованием альфа-канала текстуры.
 
 [1]: /images/user-manual/user-interface/image-element/image-tinted.png
 [2]: /images/user-manual/user-interface/image-element/image-transparent.png

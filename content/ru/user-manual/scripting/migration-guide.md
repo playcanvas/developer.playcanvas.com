@@ -1,64 +1,64 @@
 ---
-title: Migration Guide
+title: Руководство по миграции
 layout: usermanual-page.hbs
 position: 11
 ---
 
-## Migrating Legacy Script Projects
+## Миграция проектов с устаревшими сценариями
 
-In July 2016, PlayCanvas adopted its [current scripting system][1] (sometimes known as Scripts 2.0). Legacy script projects continue to work as normal. However, it is no longer possible to fork or create new legacy script projects.
+В июле 2016 года PlayCanvas принял свою [текущую систему сценариев][1] (иногда называемую Scripts 2.0). Проекты с устаревшими сценариями продолжают работать как обычно. Однако больше нельзя создавать или копировать проекты с устаревшими сценариями.
 
-In December 2020, it was announced that legacy script projects would be made read-only in the near future. When you open one in the Editor, you will see the following message in the project dashboard:
+В декабре 2020 года было объявлено, что проекты с устаревшими сценариями станут доступны только для чтения в ближайшем будущем. Когда вы откроете один из них в редакторе, вы увидите следующее сообщение на панели управления проектом:
 
 ![Dashboard Legacy Script][2]
 
-And the following message in the Editor:
+И следующее сообщение в редакторе:
 
 ![Editor Legacy Script][3]
 
-If you want to continue to work on legacy script projects, we recommend that you migrate them to the current format. Unfortunately, there is no automated migration process for this. Instead, it is a manual process, but this guide will walk you through it.
+Если вы хотите продолжить работу над проектами с устаревшими сценариями, мы рекомендуем мигрировать их в текущий формат. К сожалению, для этого нет автоматического процесса миграции. Вместо этого это ручной процесс, но данное руководство поможет вам выполнить его.
 
-### Step 1 - Create a New Project
+### Шаг 1 - Создание нового проекта
 
-We will begin by creating a new, blank project to transfer assets and code into. Delete the four entities created by default below the scene root entity.
+Сначала создадим новый пустой проект для переноса ассетов и кода. Удалите четыре созданных по умолчанию объекта ниже корневого объекта сцены.
 
-### Step 2 - Transfer Assets
+### Шаг 2 - Перенос ассетов
 
-Next, copy all assets to your new project (minus scripts which in legacy projects are *not* true assets). It is possible to copy and paste assets from one project to another (using the right-click context menu).
+Затем скопируйте все ассеты в ваш новый проект (за исключением сценариев, которые в устаревших проектах *не* являются настоящими ассетами). Можно копировать и вставлять ассеты из одного проекта в другой (используя контекстное меню правой кнопки мыши).
 
 ![Copy Paste Assets][4]
 
-However, legacy script projects are quite old. Years ago, assets were imported without file extensions and some metadata might not be available to view in the Inspector panel. So you might want to consider downloading your source assets and uploading them to your new project.
+Однако проекты с устаревшими сценариями довольно старые. Много лет назад ассеты импортировались без расширений файлов, и некоторые метаданные могут быть недоступны для просмотра на панели инспектора. Поэтому вы можете рассмотреть возможность загрузки исходных ассетов и загрузки их в ваш новый проект.
 
-### Step 3 - Transfer Scripts
+### Шаг 3 - Перенос сценариев
 
-Download the scripts from your legacy script project via the Project Dashboard:
+Загрузите сценарии из вашего проекта с устаревшими сценариями через панель управления проектом:
 
 ![Download Scripts][5]
 
-If your legacy project is connected to a GitHub repo, download your scripts from there.
+Если ваш устаревший проект подключен к репозиторию GitHub, загрузите сценарии оттуда.
 
-You can now upload the legacy scripts to your new project.
+Теперь вы можете загрузить устаревшие сценарии в ваш новый проект.
 
-### Step 4 - Update Scripts to Current Format
+### Шаг 4 - Обновление сценариев до текущего формата
 
-The transferred scripts in your new project will now need to be updated to the current format. Here is an example, showing the legacy format:
+Перенесенные сценарии в вашем новом проекте теперь необходимо обновить до текущего формата. Вот пример, показывающий устаревший формат:
 
 ```javascript
 pc.script.attribute('speed', 'number', 10);
 
 pc.script.create('myScript', function (app) {
-    // Creates a new MyScript instance
+    // Создает новый экземпляр MyScript
     var MyScript = function (entity) {
         this.entity = entity;
     };
 
     MyScript.prototype = {
-        // Called once after all resources are loaded and before the first update
+        // Вызывается один раз после загрузки всех ресурсов и перед первым обновлением
         initialize: function () {
         },
 
-        // Called every frame, dt is time in seconds since last update
+        // Вызывается каждый кадр, dt - время в секундах с момента последнего обновления
         update: function (dt) {
         }
     };
@@ -67,32 +67,32 @@ pc.script.create('myScript', function (app) {
 });
 ```
 
-And here is the equivalent script in the current format:
+И вот эквивалентный скрипт в текущем формате:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
 
 MyScript.attributes.add('speed', { type: 'number', default: 10 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 MyScript.prototype.initialize = function() {
-    var app = this.app;       // application instance is available as this.app
-    var entity = this.entity; // entity property already set up
+    var app = this.app;       // экземпляр приложения доступен как this.app
+    var entity = this.entity; // свойство сущности уже настроено
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 MyScript.prototype.update = function(dt) {
 };
 ```
 
-Things to notice:
-* There is no constructor in the current script format. Constructor code must be moved to the `initialize` function.
-* `app` (the `pc.Application` instance of the script) becomes `this.app`.
-* `this.entity` is automatically made available to current format scripts.
+Вещи, на которые стоит обратить внимание:
+* В текущем формате сценария нет конструктора. Код конструктора должен быть перемещен в функцию `initialize`.
+* `app` (экземпляр `pc.Application` скрипта) становится `this.app`.
+* `this.entity` автоматически доступен для скриптов текущего формата.
 
-#### Migrating Script Events
+#### Миграция событий скрипта
 
-Legacy scripts handle events like `enable`, `disable` and `destroy` as follows:
+Устаревшие скрипты обрабатывают события, такие как `enable`, `disable` и `destroy`, следующим образом:
 
 ```javascript
 onEnable: function () {
@@ -108,7 +108,7 @@ onDestroy: function () {
 },
 ```
 
-To migrate these to the current script format, you would register event handlers in the script's `initialize` function:
+Для переноса их в текущий формат сценария вы должны зарегистрировать обработчики событий в функции `initialize` сценария:
 
 ```javascript
 MyScript.prototype.initialize = function() {
@@ -126,9 +126,9 @@ MyScript.prototype.initialize = function() {
 };
 ```
 
-### Step 5 - Transfer Scene Hierarchy
+### Шаг 5 - Перенос иерархии сцены
 
-Next, we will transfer the legacy project's scene hierarchy across. The PlayCanvas Editor supports a copy and paste operation between two Editor instances. However, this operation fails if legacy script components are in the selection. Therefore, you should first delete all script components from your legacy script project. To do this, select all entities with legacy script components. You can do this by running the following JavaScript in the browser's JavaScript console:
+Далее мы перенесем иерархию сцены из устаревшего проекта. Редактор PlayCanvas поддерживает операцию копирования и вставки между двумя экземплярами редактора. Однако эта операция не выполняется, если в выборке присутствуют компоненты устаревших сценариев. Поэтому сначала вам следует удалить все компоненты сценариев из вашего устаревшего проекта со сценариями. Чтобы сделать это, выберите все объекты с компонентами устаревших сценариев. Вы можете сделать это, выполнив следующий JavaScript в консоли JavaScript браузера:
 
 ```javascript
 var entities = editor.call('entities:list').filter(function(entity) {
@@ -141,21 +141,21 @@ if (entities.length) {
 }
 ```
 
-You should see something like the following:
+Вы должны увидеть что-то похожее на следующее:
 
-![Select Script Entities][6]
+![Выберите Script Entities][6]
 
-You can then hit the delete button in the Inspector:
+Затем вы можете нажать кнопку удаления в Инспекторе:
 
-![Delete Script Components][7]
+![Удалить компоненты сценария][7]
 
-Now you can successfully copy and paste your game's hierarchy from the read-only project to the new destination project.
+Теперь вы можете успешно скопировать и вставить иерархию вашей игры из проекта только для чтения в новый проект-приемник.
 
-With this done, you can hit CTRL+Z (CMD+Z on Mac) to undo the previous deletion of your legacy script components.
+С этим сделанным, вы можете нажать CTRL+Z (CMD+Z на Mac), чтобы отменить предыдущее удаление ваших устаревших компонентов сценария.
 
-Reselect all entities that have a script component. Create a script component on every corresponding entity in the new project and add the corresponding scripts to those components. Finally, iterate through every script attribute on every script on every script component and copy its value over to the new project.
+Повторно выберите все сущности, имеющие компонент сценария. Создайте компонент сценария на каждой соответствующей сущности в новом проекте и добавьте соответствующие сценарии к этим компонентам. Наконец, пройдитесь по каждому атрибуту сценария на каждом сценарии на каждом компоненте сценария и скопируйте его значение в новый проект.
 
-You should now be done with the migration.
+Теперь вы должны закончить миграцию.
 
 [1]: https://blog.playcanvas.com/playcanvas-scripts-2-0/
 [2]: /images/user-manual/scripting/migration-guide/dashboard-warning.png

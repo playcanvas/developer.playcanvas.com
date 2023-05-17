@@ -1,24 +1,24 @@
 ---
-title: Эффект сепия
+title: Эффект сепии
 layout: usermanual-page.hbs
 position: 5
 ---
 
-The Sepia effect makes the image look like an old photograph.
+Эффект сепии делает изображение похожим на старую фотографию.
 
-Here is an image without the effect:
+Вот изображение без эффекта:
 
 ![Image without effect][1]
 
-And the same image with the effect applied:
+И то же изображение с примененным эффектом:
 
 ![Image with effect][2]
 
-The built-in sepia effect has the following attributes:
+Встроенный эффект сепии имеет следующие атрибуты:
 
-* **Amount**: Controls the intensity of the effect. Ranges from 0 to 1.
+* **Amount**: Контролирует интенсивность эффекта. Диапазон от 0 до 1.
 
-Find the post-processing effect script on [GitHub][3].
+Найдите скрипт эффекта постобработки на [GitHub][3].
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_sepia.png

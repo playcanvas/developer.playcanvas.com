@@ -1,76 +1,76 @@
 ---
-title: Отблески света
+title: Световые ореолы
 layout: tutorial-page.hbs
-tags: lighting
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
+tags: освещение
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Световые ореолы"></iframe>
 
-Find out more by forking the [full project][4].
+Узнайте больше, создав форк [полного проекта][4].
 
-This simple effect is great for adding atmosphere to your scene. Add a glow to a light source or an emissive texture to give the effect of a dusty or foggy atmosphere or simulate the effect of looking at a bright light.
+Этот простой эффект отлично подходит для добавления атмосферы в вашу сцену. Добавьте свечение к источнику света или эмиссионной текстуре, чтобы создать эффект пыльной или туманной атмосферы или смоделировать эффект просмотра яркого света.
 
-It works like this: We create an entity with a plane primitive attached which has a glowing halo material on it. We attach a script to entity which makes the plane always face the camera (billboarding). For added fun, we're fading the halo out if it faces away from the camera to simulate a directional light.
+Он работает следующим образом: мы создаем сущность с прикрепленным примитивом плоскости, на котором находится материал светящегося ореола. К сущности мы прикрепляем скрипт, который заставляет плоскость всегда смотреть на камеру (billboarding). Для дополнительного удовольствия мы затушевываем ореол, если он направлен в сторону от камеры, чтобы имитировать направленный свет.
 
-## Ассеты
+## Assets
 
-### Texture
+### Текстура
 
-First you'll need a halo texture. In this example we've just used a very simple blurred blob that was created in a art program like Photoshop.
+Сначала вам понадобится текстура ореола. В этом примере мы просто использовали очень простую размытую кляксу, созданную в художественной программе, такой как Photoshop.
 
 ![blob][1]
 
-This texture will form the basis of the glow.
+Эта текстура будет основой свечения.
 
-### Material
+### Материал
 
-<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600">
 
-The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
+Материал для светового ореола использует текстуру кляксы в слоте эмиссии. Используйте свойство **tint** для установки цвета вашего ореола. Мы также включили смешивание в слоте прозрачности, и он также использует текстуру кляксы с **Color Channel** установленным на **R**.
 
-The **Blend Type** is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+**Blend Type** установлен на **Additive Alpha**. Часть **Additive** означает, что цвет материала добавляется к цвету фона под ним. Это означает, что ореол светится на фоне. Часть **Alpha** означает, что она использует значение `opacity` для установки прозрачности материала.
 
 ## Сущности
 
 ![entities][3]
 
-The Entity setup for the glow is simple too. We have a parent Entity for the halo script and a child Entity which has the plane primitive attached to it. The reason we do this is to simplify the code so that we can use `entity.lookAt` to set the orientation of the glow. The Plane primitive faces upwards so we create a child entity and apply a rotation to this child so that the plane is correctly positioned facing the camera.
+Настройка сущностей для свечения тоже проста. У нас есть родительская сущность для скрипта ореола и дочерняя сущность, к которой прикреплен примитив плоскости. Мы делаем это для упрощения кода, чтобы мы могли использовать `entity.lookAt` для установки ориентации свечения. Примитив плоскости обращен вверх, поэтому мы создаем дочернюю сущность и применяем к ней вращение, чтобы плоскость была правильно размещена перед камерой.
 
 ## Код
 
-The code for this project has two particularly interesting features.
+Код для этого проекта имеет две особенно интересные функции.
 
-First, we update the halo entity to face the camera every frame
+Во-первых, мы обновляем сущность ореола, чтобы она смотрела на камеру каждый кадр
 
 ```javascript
-// Set the glow to always face the camera
+// Установить свечение так, чтобы оно всегда было направлено на камеру
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-Second, if the halo is marked as `unidirectional` (with a script attribute that we've exposed), then we modify the opacity so that the halo is invisible when it is facing away from the camera. In fact we slowly modify the opacity so that it gets more transparent the more it points away from the camera.
+Во-вторых, если гало помечено как `unidirectional` (с атрибутом скрипта, который мы предоставили), то мы изменяем прозрачность так, чтобы гало было невидимым, когда оно направлено в противоположную сторону от камеры. На самом деле мы постепенно изменяем прозрачность так, чтобы она становилась более прозрачной, чем больше она указывает в противоположную сторону от камеры.
 
 ```javascript
-// If enabled, unidirectional means the glow fades off as it turns away from the camera
+// Если включено, однонаправленное означает, что свечение исчезает, когда оно отводится от камеры
 if (this.unidirectional) {
-    // Get the dot product of the parent direction and the camera direction
+    // Получить скалярное произведение направления родителя и направления камеры
     var dot = -1 * tmp.dot(this.camera.forward);
-    // If the dot product is less that 0 the glow is facing away from the camera
+    // Если скалярное произведение меньше 0, свечение направлено от камеры
     if (dot < 0) {
         dot = 0;
     }
 
-    // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
+    // Переопределить значение прозрачности на экземпляре сетки плоскости, чтобы уменьшить его до нуля, когда свечение отводится от камеры
     meshes[0].setParameter("material_opacity", dot);
 } else {
-    // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
+    // Необходимо установить значение по умолчанию из-за этой проблемы на данный момент: https://github.com/playcanvas/engine/issues/453
     meshes[0].setParameter("material_opacity", 1);
 }
 ```
 
-We're using the `setParameter` method on the [pc.MeshInstance][5] to set a value for the fragment shader to use. This is currently an undocumented feature in the engine (you won't find it on the link to the developer docs). The reason for this is because it relies on knowing exactly the name of the uniform variable in the shader. These values might change and this API might change in the future. But it's pretty useful, because it let's you override a single value in a shader just for that mesh instance. In this case, it's important because all the glows use the same material, but we will want a different value for the opacity for each instance of the glow.
+Мы используем метод `setParameter` на [pc.MeshInstance][5] для установки значения, которое будет использоваться фрагментным шейдером. В настоящее время это является недокументированной функцией в движке (вы не найдете ее по ссылке на документацию для разработчиков). Причина этого заключается в том, что она зависит от точного знания имени униформной переменной в шейдере. Эти значения могут измениться, и этот API может измениться в будущем. Но это довольно полезно, потому что позволяет переопределить одно значение в шейдере только для этого экземпляра сетки. В данном случае это важно, потому что все свечения используют один и тот же материал, но нам потребуется разное значение прозрачности для каждого экземпляра свечения.
 
-Here's the complete listing:
+Вот полный список:
 
 ```javascript
 var Halo = pc.createScript('halo');
@@ -80,49 +80,49 @@ Halo.attributes.add('unidirectional', {type: 'boolean', default: false});
 
 Halo.tmp = new pc.Vec3();
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Halo.prototype.initialize = function() {
-    // Get the Entity with the plane model on it
+    // Получить сущность с моделью плоскости на ней
     this.plane = this.entity.children[0];
 
-    // Get the parent entity which is used for direction
+    // Получить родительскую сущность, которая используется для указания направления
     this.parent = this.entity.parent;
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Halo.prototype.update = function(dt) {
     var tmp = Halo.tmp;
 
-    // Store the vector the parent is facing (note forwards is negative z)
+    // Сохранить вектор, в котором родитель смотрит (обратите внимание, что вперед - это отрицательное z)
     tmp.copy(this.parent.forward).scale(-1);
 
     var meshes = this.plane.render.meshInstances;
 
     if (this.camera) {
 
-        // Set the glow to always face the camera
+        // Установить свечение так, чтобы оно всегда было направлено на камеру
         this.entity.lookAt(this.camera.getPosition());
 
-        // If enabled, unidirectional means the glow fades off as it turns away from the camera
+        // Если включено, однонаправленное означает, что свечение исчезает, когда оно отклоняется от камеры
         if (this.unidirectional) {
-            // Get the dot product of the parent direction and the camera direction
+            // Получить скалярное произведение направления родителя и направления камеры
             var dot = -1 * tmp.dot(this.camera.forward);
-            // If the dot product is less that 0 the glow is facing away from the camera
+            // Если скалярное произведение меньше 0, свечение направлено от камеры
             if (dot < 0) {
                 dot = 0;
             }
 
-            // Override the opacity value on the planes mesh instance to fade to zero as the glow turns away from the camera
+            // Переопределить значение прозрачности на экземпляре сетки плоскости, чтобы оно исчезало до нуля, когда свечение отклоняется от камеры
             meshes[0].setParameter("material_opacity", dot);
         } else {
-            // Need to set a default value because of this issue for now: https://github.com/playcanvas/engine/issues/453
+            // Необходимо установить значение по умолчанию из-за этой проблемы на данный момент: https://github.com/playcanvas/engine/issues/453
             meshes[0].setParameter("material_opacity", 1);
         }
     }
 };
 ```
 
-That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
+Вот и все. Простой, но красивый эффект для добавления в вашу сцену. Посмотрите [проект][4] для получения дополнительной информации.
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
 [2]: /images/tutorials/intermediate/light-halos/material.png

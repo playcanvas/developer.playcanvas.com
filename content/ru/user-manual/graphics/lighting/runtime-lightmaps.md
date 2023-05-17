@@ -1,145 +1,145 @@
 ---
-title: Runtime Lightmaps
+title: Время выполнения световых карт
 layout: usermanual-page.hbs
 position: 5
 ---
 
 ![Sponza][10]
-*All the lighting in this scene is provided by lightmap textures*
+*Все освещение в этой сцене предоставляется текстурами световых карт*
 
-Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures, which are then applied on materials. This is an efficient and realistic way to light a scene if many of the light sources and geometry are static or environmental.
+Генерация световых карт - это процесс предварительного расчета информации об освещении для статической сцены и сохранения ее в текстурах, которые затем применяются к материалам. Это эффективный и реалистичный способ освещения сцены, если многие источники света и геометрия являются статическими или окружающими.
 
-## Runtime Lightmap Generation
+## Генерация световых карт во время выполнения
 
-PlayCanvas offers a convenient solution to generating lightmaps. Using the standard light components in the Editor, you can choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. The lights that you set to bake will be used when the application generates the lightmaps that light the scene.
+PlayCanvas предлагает удобное решение для генерации световых карт. Используя стандартные компоненты света в редакторе, вы можете выбрать, какие источники света используются для выпечки световых карт и какие используются для динамического освещения сцены во время выполнения. Источники света, которые вы устанавливаете для выпечки, будут использоваться при генерации световых карт, освещающих сцену.
 
-There are multiple advantages to runtime lightmap generation:
+Генерация световых карт во время выполнения имеет несколько преимуществ:
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of **static lights** to light your scene
-* In most cases, rendering lightmaps at runtime is **faster** than downloading many lightmap textures
-* It is possible to mix **static and dynamic lights** in the Editor
-* **Rebaking** can be performed at runtime
-* Lightmaps are **HDR**
-* Both **Color** and **Direction** data can be baked, enabling some specularity on baked surfaces
+* Освещение не выполняется во **время выполнения**
+* Можно использовать сотни **статических источников света** для освещения сцены
+* В большинстве случаев отрисовка световых карт во время выполнения **быстрее**, чем загрузка множества текстур световых карт
+* В редакторе можно смешивать **статические и динамические источники света**
+* **Перевыпечка** может быть выполнена во время выполнения
+* Световые карты имеют **HDR**
+* Можно выпекать как **цвет**, так и **направление** данных, что позволяет добавить некоторую зеркальность на выпеченные поверхности
 
-However, a disadvantage of runtime lightmap generation is that currently we do not support baking global illumination or some other advanced features of specialized baking tools.
+Однако недостатком генерации световых карт во время выполнения является то, что в настоящее время мы не поддерживаем выпечку глобального освещения или некоторых других продвинутых функций специализированных инструментов выпечки.
 
 <div class="alert-info">
-    The use of <a href="/user-manual/optimization/batching">batching</a> is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+    Использование <a href="/user-manual/optimization/batching">группировки</a> несовместимо с световыми картами во время выполнения, так как каждый объект с отображением световой карты требует своей собственной уникальной текстуры световой карты.
 </div>
 
-## Setting Up Lights for Baking
+## Настройка источников света для выпечки
 
-Each Light Component contains the following settings to enable lightmap baking. By default, new lights are set to Dynamic.
+Каждый компонент Light содержит следующие настройки для включения выпечки световых карт. По умолчанию новые источники света устанавливаются на динамический режим.
 
-- **Bake Lightmap** – When enabled, the light will bake lightmaps for any lightmapped model that is in range.
-- **Bake Direction** – Specifies whether light contributes to light direction information baking. This affects specularity results if the **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
+- **Bake Lightmap** – Если включено, источник света будет выпекать световые карты для любой модели с отображением световой карты, которая находится в диапазоне.
+- **Bake Direction** – Определяет, будет ли свет вносить вклад в выпечку информации о направлении света. Это влияет на результаты зеркальности, если в настройках сцены выбран режим отображения световой карты **Color and Direction**.
 
-![Light Component Settings][2]
+![Настройки компонента света][2]
 
-There are two other options that modify the lights behavior: Affect Dynamic and Affect Lightmapped. These determine which models the light will affect at runtime. If either of these options are enabled, the light will operate at runtime and incur runtime cost.
+Есть еще две опции, которые изменяют поведение источников света: Affect Dynamic и Affect Lightmapped. Они определяют, какие модели будет затрагивать источник света во время выполнения. Если одна из этих опций включена, источник света будет работать во время выполнения и увеличивать затраты на выполнение.
 
-- **Affect Dynamic** – If enabled, the light will affect any model that is **not lightmapped**.
-- **Affect Lightmapped** – If enabled, the light will also affect any model that **is lightmapped**.
+- **Affect Dynamic** – Если включено, источник света будет влиять на любую модель, которая **не имеет световой карты**.
+- **Affect Lightmapped** – Если включено, источник света также будет влиять на любую модель, которая **имеет световую карту**.
 
-Note that a light can't have both **Bake Lightmap** and **Affect Lightmapped** enabled, as this would generate a lightmap for a model while the light adds the same lighting at runtime (i.e. the same work is done twice).
+Обратите внимание, что у источника света не может быть одновременно включены опции **Bake Lightmap** и **Affect Lightmapped**, так как это приведет к генерации световой карты для модели, в то время как источник света добавляет то же освещение во время выполнения (то есть одна и та же работа выполняется дважды).
 
-![Light Component Shadow Settings][3]
+![Настройки теней компонента света][3]
 
-Lightmap lights use the same **Shadows** setting as dynamic lights, except the shadow calculations are done once, when generating the lightmaps. This way, it is much cheaper to enable shadows on lightmap lights. For more information, see the [Shadows][4] page. Note that the Shadow Cascade options are ignored for baking.
+Световые карты используют те же настройки **Shadows** (тени), что и динамические источники света, за исключением того, что расчеты теней выполняются один раз при генерации световых карт. Таким образом, включение теней на световых картах обходится дешевле. Дополнительную информацию см. на странице [Shadows][4]. Обратите внимание, что опции Shadow Cascade игнорируются при выпечке.
 
-### Soft Directional Light
+### Мягкий направленный свет
 
-By default, baked lights cast hard shadows. To improve the visual quality, a soft baked shadow is available for **Directional** lights when the **Bake Direction** option is not enabled. In this case, two additional options are available:
+По умолчанию выпеченные источники света создают жесткие тени. Чтобы улучшить визуальное качество, для **Directional** источников света доступна мягкая выпеченная тень, когда опция **Bake Direction** не включена. В этом случае доступны две дополнительные опции:
 
-- **Bake Samples** – Specifies the number of sampled used to bake the light into the lightmap. It defaults to 1 and has a maximum value of 255. The value affects the baking performance and should be set as low as possible (5-20).
-- **Bake Area** – Specifies the penumbra angle in degrees, allowing a soft shadow boundary.
+- **Bake Samples** – Определяет количество выборок, используемых для выпечки света в световую карту. По умолчанию равно 1 и имеет максимальное значение 255. Значение влияет на производительность выпечки и должно быть установлено как можно ниже (5-20).
+- **Bake Area** – Определяет угол полутени в градусах, позволяя создать мягкую границу тени.
 
-![Soft Directional Light Settings][12]
+![Настройки мягкого направленного света][12]
 
-The following images show the difference between hard shadows and soft shadows. The Bake Samples is 15 and the Area is 10.
+Следующие изображения показывают разницу между жесткими тенями и мягкими тенями. Значение Bake Samples равно 15, а значение Area равно 10.
 
-![Hard and Soft Shadow Examples][13]
+![Примеры жестких и мягких теней][13]
 
-## Baking an Environment Light
+## Выпечка света окружения
 
-PlayCanvas supports two types of environment lighting: [Ambient Color][14] and [Skybox][15]. By default, these are both applied at runtime.
+PlayCanvas поддерживает два типа освещения окружения: [Ambient Color][14] и [Skybox][15]. По умолчанию оба этих типа применяются во время выполнения.
 
-A limitation of runtime environment light application is the lack of **Ambient Occlusion**. As an alternative, the environment light can be baked into the lightmap, including Ambient Occlusion. This can be configured in the [Lightmapping][16] section of the global settings.
+Ограничение применения освещения окружения во время выполнения заключается в отсутствии **Ambient Occlusion**. В качестве альтернативы, освещение окружения может быть запечено в карту освещения, включая Ambient Occlusion. Это можно настроить в разделе [Lightmapping][16] глобальных настроек.
 
-If **Ambient Bake** is enabled, the contribution of the environment light will be baked to the lightmaps, including this Ambient Occlusion. Note that the **Samples** setting affects the baking performance and should be set as low as possible (5-20).
+Если включен **Ambient Bake**, вклад освещения окружения будет запечен в карты освещения, включая Ambient Occlusion. Обратите внимание, что настройка **Samples** влияет на производительность запекания и должна быть установлена как можно ниже (5-20).
 
 ![Lightmapping Settings][17]
 
-The following images show the effect of Ambient Color, with and without the Ambient Occlusion.
+На следующих изображениях показан эффект Ambient Color, с Ambient Occlusion и без него.
 
 ![Ambient Color Examples][18]
 
-## Lightmap Filtering
+## Фильтрация Lightmap
 
-For Soft Directional Light or Environment Light baking, a low number of samples is often used in order to improve the baking performance. This creates some banding artifacts, as you can see in the following image, which uses 15 samples.
+Для мягкого направленного света или запекания освещения окружения часто используется небольшое количество выборок для улучшения производительности запекания. Это создает артефакты полос, как видно на следующем изображении, на котором используется 15 выборок.
 
 ![Lightmap with 15 samples][19]
 
-To improve the quality of lightmaps, a higher number of sample can be used. This results in the best quality possible, as you can see in the following image, which uses 100 samples.
+Для улучшения качества карт освещения можно использовать большее количество выборок. Это дает наилучшее возможное качество, как видно на следующем изображении, на котором используется 100 выборок.
 
 ![Lightmap with 100 samples][20]
 
-As a more performant alternative, the lightmap can be filtered using a smart bilateral blur for acceptable quality with greater performance. This can be seen in the following image, which uses 15 samples and has filtering enabled.
+В качестве более производительной альтернативы, карту освещения можно отфильтровать с использованием умного двустороннего размытия для приемлемого качества с большей производительностью. Это видно на следующем изображении, на котором используется 15 выборок и включена фильтрация.
 
 ![Lightmap with 15 samples and filtering][21]
 
-Note that the filtering is done on the final baked lightmaps and can create some visible edges over the seams of unwrapped UVs, since the lightmap is not filtered across the seams. Therefore, filtering may not be suitable for every scene. To minimize the artifacts, you should have a good balance between a strong filter and a large number of samples.
+Обратите внимание, что фильтрация выполняется на окончательных запеченных картах освещения и может создать некоторые видимые края на швах развернутых UV, так как карта освещения не фильтруется по швам. Поэтому фильтрация может не подходить для каждой сцены. Чтобы свести к минимуму артефакты, вы должны иметь хороший баланс между сильным фильтром и большим количеством выборок.
 
-## Setting Up Models for Baking
+## Настройка моделей для запекания
 
-Each **Model** or **Render** component must have lightmapping enabled, in order for it to receive lightmaps. Lightmapping can be enabled in the component's properties, by checking the **Lightmapped** option.
+Каждый компонент **Model** или **Render** должен иметь включенное картографирование освещения, чтобы получать карты освещения. Картографирование освещения можно включить в свойствах компонента, установив флажок **Lightmapped**.
 
 ![Model Component Settings][5]
 
 ![Render Component Settings][22]
 
-The **Cast Lightmap Shadows** option determines if the model casts shadows in the lightmap. You can see the resolution of the lightmap texture generated and there is also an option to apply a multiplier to the area of UV1 to affect its size. Lightmap size multipliers are discussed below.
+Опция **Cast Lightmap Shadows** определяет, будет ли модель создавать тени на карте освещения. Вы можете увидеть разрешение текстуры карты освещения, созданной и есть также опция применения множителя к области UV1 для изменения его размера. Множители размера карты освещения обсуждаются ниже.
 
-## Common Light Settings
+## Общие настройки света
 
-There several combinations of light settings that can be used. Each one has a use case and by using lights with different combinations, you can balance high-quality visuals with performance.
+Существует несколько комбинаций настроек света, которые могут быть использованы. Каждый из них имеет свое применение, и используя свет с разными комбинациями, вы можете сбалансировать высококачественную визуализацию с производительностью.
 
-| Запекание  | Affect Non-Baked | Affect Baked | Описание |
+| Bake  | Affect Non-Baked | Affect Baked | Description |
 |-------|-----------------|--------------|-------------|
-| false | true            | false        | This is the default dynamic light. Affects all non-lightmapped models. |
-| true  | false           | false        | This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environment lights could use this setting. |
-| true  | true            | false        | This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character. |
-| false | true            | true         | This light is a dynamic light which will affect both lightmapped and non-lightmapped models. |
+| false | true            | false        | Это динамический свет по умолчанию. Влияет на все модели без карт освещения. |
+| true  | false           | false        | Этот свет генерирует карты освещения для моделей с картами освещения и не имеет затрат во время выполнения. Большинство статических светов окружения могут использовать эту настройку. |
+| true  | true            | false        | Этот свет генерирует карты освещения, но также влияет на модели без карт освещения. Это полезно, если у вас есть динамические/движущиеся объекты, которые должны быть освещены этим светом. Например, яркий свет окружения, который также должен влиять на игрового персонажа. |
+| false | true            | true         | Этот свет является динамическим светом, который будет влиять на модели с картами освещения и без них. |
 
-## Lightmapping Settings
+## Настройки Lightmapping
 
-The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
+Настройка **Size Multiplier** влияет на все компоненты Model и Render. PlayCanvas автоматически определяет, какое разрешение карт освещения требуется для модели. Он рассчитывает это значение на основе масштаба и размера области геометрии модели. Вы можете влиять на этот расчет, изменяя поле **Size Multiplier** в глобальных настройках компонента Model или Render.
 
-For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (1 sq/m * 16 * 2). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
+Например, рассмотрим плоскость размером 1x1 единица (метр). Если глобальный множитель размера равен 16, а множитель компонента модели равен 2, будет сгенерирован размер текстуры Lightmap 32x32 (1 кв/м * 16 * 2). У вас будет 32x32 пикселей на одном квадратном метре, что составляет около 3 см размер пикселя.
 
-**Max Resolution** sets the maximum resolution limit for the generated lightmaps, in order to conserve memory.
+**Max Resolution** устанавливает максимальный предел разрешения для создаваемых карт освещения с целью экономии памяти.
 
-**Mode** allows you to specify what data should be baked (e.g. Diffuse Color or Direction from pixel to light). Direction data is used to simulate simplistic specularity. Only a single direction can be baked, which leads to complexity when multiple lights overlap. Direction baking can be then set on individual lights as well.
+**Mode** позволяет указать, какие данные должны быть запечены (например, диффузный цвет или направление от пикселя к свету). Данные о направлении используются для имитации упрощенной зеркальности. Может быть запечено только одно направление, что приводит к сложности при перекрытии нескольких источников света. Затем на отдельных источниках света можно установить запекание направления.
 
 ![Global Lightmapping Settings][6]
 
-## Auto-Unwrapping and UV1 Generation
+## Автоматическое развертывание и генерация UV1
 
-Lightmaps are always applied using the second set of **UV coordinates (UV1)** on the model asset. For the best results, we recommend that you add a second UV set from the 3D content tool to your model, before you upload it to PlayCanvas. For more information about lightmap friendly UV's, see the [UV Mapping][9] section.
+Карты освещения всегда применяются с использованием второго набора **UV-координат (UV1)** на модели ассетов. Для достижения наилучших результатов мы рекомендуем добавить второй набор UV-координат из инструмента 3D-контента в вашу модель перед загрузкой ее в PlayCanvas. Дополнительную информацию о дружественных к картам освещения UV-координатах можно найти в разделе [UV Mapping][9].
 
-If your model doesn't have a UV1 set, the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+Если ваша модель не имеет набора UV1, редактор PlayCanvas может автоматически развернуть и сгенерировать UV1-координаты для модели.
 
 ![Model Component: UV1 Missing][7]
 
-If your model is missing a UV1 map, you will see a warning in the Model Component when you enable lightmapping.
+Если вашей модели не хватает карты UV1, вы увидите предупреждение в компоненте модели при включении карт освещения.
 
 ![Model Asset: Auto Unwrap Pipeline][8]
 
-To fix the warning, select the model asset and open the **Pipeline** section. Click the **Auto-Unwrap** button and wait for the progress bar to complete. Auto-unwrap will edit the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the precomputed UV1 will be lost. If the uploaded model has no UV1, you will need to auto-unwrap the model again.
+Чтобы исправить предупреждение, выберите ассет модели и откройте раздел **Pipeline**. Нажмите кнопку **Auto-Unwrap** и дождитесь завершения индикатора выполнения. Автоматическое развертывание изменит ассет модели, поэтому если вы повторно импортируете модель из источника (например, загрузите новый FBX), предварительно рассчитанный UV1 будет потерян. Если загруженная модель не имеет UV1, вам нужно будет снова выполнить автоматическое развертывание модели.
 
-The **Padding** option determines the space between sections when unwrapping occurs. If you see light bleeding (i.e. light that shouldn't be in the lightmap), you can increase the padding to reduce bleeding.
+Опция **Padding** определяет расстояние между секциями при развертывании. Если вы видите просачивание света (то есть свет, которого не должно быть на карте освещения), вы можете увеличить отступ для уменьшения просачивания.
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
 [2]: /images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png

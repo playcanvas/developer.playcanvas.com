@@ -1,22 +1,22 @@
 ---
-title: Nodes Pane
+title: Панель узлов
 layout: shader-editor-page.hbs
 position: 2
 ---
 
 <img loading="lazy" src="/images/shader-editor/nodes-pane.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Nodes Pane lists the built-in nodes available for constructing graphs. Nodes are grouped into sub-sections by category.
+Панель узлов содержит все встроенные узлы, доступные для построения графов. Узлы сгруппированы по категориям.
 
-At the top of the pane are controls for filtering the list of nodes:
+В верхней части панели находятся элементы управления для фильтрации списка узлов:
 
-| Control | Use |
+| Элемент управления | Использование |
 |---|---|
-| I | Toggle to show only input nodes. |
-| X | Toggle to show only transform nodes. |
-| O | Toggle to show only output nodes.
-| Filter Entry | Filter the list of nodes further by name. |
+| I | Переключатель для отображения только входных узлов. |
+| X | Переключатель для отображения только узлов трансформации. |
+| O | Переключатель для отображения только выходных узлов. |
+| Поле фильтра | Фильтровать список узлов по имени. |
 
-For more information on using the Nodes Pane to create nodes, see the [Graph Editor][1] documentation.
+Для получения дополнительной информации об использовании Панели узлов для создания узлов см. документацию [Редактор графа][1].
 
 [1]: /shader-editor/window-layout/graph-editor

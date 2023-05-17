@@ -1,51 +1,51 @@
 ---
-title: 9-slicing
+title: 9-слайсинг
 layout: usermanual-page.hbs
 position: 2
 ---
 
-9-slicing (sometimes called 9-patch) is a technique for 2D graphics that splits a single image into 9 areas which are scaled individually in order to prevent stretching when the image is displayed at different sizes and with different aspect ratios.
+9-слайсинг (иногда называемый 9-патч) - это техника для 2D-графики, которая разделяет одно изображение на 9 областей, которые масштабируются индивидуально, чтобы предотвратить растягивание при отображении изображения в разных размерах и с разными соотношениями сторон.
 
 ![9 Sliced Button][1]
 
-In the image above you can see the 9 areas that a defined using the Texture Atlas editing features of the [Sprite Editor][2]. When added to a scene using either a [Sprite Component][3] or an [Image Element Component][4], the image can be resized using the width and height properties of the component. Each area is scaled using the following rules:
+На изображении выше вы можете увидеть 9 областей, которые определены с использованием функций редактирования текстурного атласа [Sprite Editor][2]. При добавлении на сцену с использованием [Sprite Component][3] или [Image Element Component][4] изображение можно изменить с помощью свойств ширины и высоты компонента. Каждая область масштабируется с использованием следующих правил:
 
-* **Center** - stretch or tile both horizontally and vertically
-* **Top, Bottom** - stretch or tile horizontally only
-* **Left, Right** - stretch or tile vertically only
-* **TopLeft, TopRight, BottomLeft, BottomRight** - Do not stretch or tile
+* **Center** - растягивать или замостить как горизонтально, так и вертикально
+* **Top, Bottom** - растягивать или замостить только горизонтально
+* **Left, Right** - растягивать или замостить только вертикально
+* **TopLeft, TopRight, BottomLeft, BottomRight** - не растягивать и не замостить
 
 ![Button Resize Animation][5]
 
-## Setting up 9-slicing
+## Настройка 9-слайсинга
 
 ![Setup 9-slicing][6]
 
-To setup a 9-sliced sprite. Create a frame around the area that you wish to use 9-slicing on in the Sprite Editor. Then use the blue handles or the Border property in the Frame Inspector to set the borders to outline the center portion of the image that you wish to be the stretch part of your sprite.
+Чтобы настроить 9-слайсинг спрайта, создайте рамку вокруг области, на которой вы хотите использовать 9-слайсинг, в Sprite Editor. Затем используйте синие ручки или свойство Border в Frame Inspector, чтобы установить границы, обозначающие центральную часть изображения, которую вы хотите использовать как растягиваемую часть спрайта.
 
-Finally click the **New Sliced Sprite From Selection** to create a new Sprite with the render mode set to *Sliced*.
+Наконец, нажмите **New Sliced Sprite From Selection** чтобы создать новый спрайт с режимом отображения, установленным на *Sliced*.
 
-## Render Modes
+## Режимы отображения
 
-Sprite Assets can have one of three Render Modes.
+Sprite Assets могут иметь один из трех режимов отображения.
 
-### Simple Sprites
+### Простые спрайты
 
 ![Simple Render Mode][7]
 
-*Simple* Render Mode has no 9-slicing. Use this mode for regular sprites.
+Режим отображения *Simple* не имеет 9-слайсинга. Используйте этот режим для обычных спрайтов.
 
-### Sliced Sprites
+### Слайсинг спрайты
 
 ![Sliced Render Mode][8]
 
-*Sliced* Render Mode stretches portions of the image. The center stretches horizontally and vertically; the left and right sections stretch vertically; the top and bottom sections stretch horizontally and the corners do not stretch at all.
+Режим отображения *Sliced* растягивает части изображения. Центр растягивается горизонтально и вертикально; левые и правые секции растягиваются вертикально; верхние и нижние секции растягиваются горизонтально, а углы вообще не растягиваются.
 
-### Tiled Sprites
+### Замощенные спрайты
 
 ![Tiled Render Mode][9]
 
-*Tiled* Render Mode is similar to *Sliced* mode except instead of stretching the sections repeat in tiled manner. The center tiles horizontally and vertically; the left and right tile vertically; the top and bottom tile horizontally and the corners do not tile at all.
+Режим отображения *Tiled* аналогичен режиму *Sliced*, за исключением того, что вместо растягивания секции повторяются в виде плитки. Центр замощается горизонтально и вертикально; левые и правые замощаются вертикально; верхние и нижние замощаются горизонтально, а углы вообще не замощаются.
 
 [1]: /images/user-manual/2D/9-slicing/9-sliced-labelled.jpg
 [2]: /user-manual/2D/sprite-editor

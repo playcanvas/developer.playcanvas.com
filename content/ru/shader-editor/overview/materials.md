@@ -4,14 +4,14 @@ layout: shader-editor-page.hbs
 position: 3
 ---
 
-Materials combine Material Graphs, parameter values and [render states][3].
+Материалы объединяют графы материалов, значения параметров и [состояния рендеринга][3].
 
-This makes it possible to create multiple variations of a Material Graph, all sharing the same underlying shader program.
+Это позволяет создавать несколько вариантов графа материалов, все из которых используют одну и ту же программу шейдера.
 
-For example, given the following Material Shader:
+Например, имея следующий шейдер материала:
 ![Material Graph][1]
 
-Multiple materials can be created, each with a different setting for the Vec3 Parameters:
+Можно создать несколько материалов, каждый с разными значениями параметров Vec3:
 ![Material Previews][2]
 
 [1]: /images/shader-editor/overview-materials-graph.png

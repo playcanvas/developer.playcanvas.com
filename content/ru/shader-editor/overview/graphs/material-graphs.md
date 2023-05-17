@@ -1,27 +1,27 @@
 ---
-title: Material Graphs
+title: Материалы Графов
 layout: shader-editor-page.hbs
 position: 1
 ---
 
-Material Graphs define the look of a material and must contain (for now) a single Material Node.
+Материалы Графов определяют внешний вид материала и должны содержать (пока) один Узел Материала.
 
-For example, this is a simple Material Graph. The graph connects a constant color value to a Material Node's emissive field:
+Например, это простой график Материала. Граф соединяет постоянное цветовое значение с полем emissive Узла материала:
 
-![Material Graph Example][1]
+![Пример графика Материала][1]
 
-As can be seen above, the Material Node has a number of input ports. Each port controls an aspect of the runtime lighting environment. The port details are as follows:
+Как видно выше, у Узла Материала есть несколько входных портов. Каждый порт контролирует аспект освещения во время выполнения. Подробности портов следующие:
 
-| Port | Type | Default | Usage |
+| Порт | Тип | По умолчанию | Использование |
 |---|---|---|---|
-| emissive | RGB | (0, 0, 0) | Color is added directly to the other lighting components of the material. |
-| alpha | Number | 1 | The surface opacity. |
-| albedo | RGB | (0, 0, 0) | The surface diffuse color. |
-| gloss | Number | 0? | The smoothness / roughness of the surface. |
-| specular | RGB | (0, 0, 0) | Tints the specular color. |
-| normal | XYZ | (0, 0, 1) | The surface normal. |
-| ccGloss | Number | 0? | Clear coat gloss. |
-| ccSpecular | RGB | (0, 0, 0) | Clear coat specular. |
-| ccNormal | XYZ | (0, 0, 1) | Clear coat normal. |
+| emissive | RGB | (0, 0, 0) | Цвет добавляется напрямую к другим компонентам освещения материала. |
+| alpha | Число | 1 | Прозрачность поверхности. |
+| albedo | RGB | (0, 0, 0) | Диффузный цвет поверхности. |
+| gloss | Число | 0? | Гладкость / шероховатость поверхности. |
+| specular | RGB | (0, 0, 0) | Процветы цвета зеркального отражения. |
+| normal | XYZ | (0, 0, 1) | Нормаль поверхности. |
+| ccGloss | Число | 0? | Глянец прозрачного покрытия. |
+| ccSpecular | RGB | (0, 0, 0) | Зеркальное отражение прозрачного покрытия. |
+| ccNormal | XYZ | (0, 0, 1) | Нормаль прозрачного покрытия. |
 
 [1]: /images/shader-editor/overview-graph-material.png

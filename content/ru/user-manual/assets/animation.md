@@ -4,46 +4,58 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-An Animation asset is used to play a single animation on a 3D model. Animations are imported by uploading 3D scenes (such as FBX files) which contain animation data. The animation data is extracted from the uploaded file by the [asset pipeline][asset_pipeline] and a [Target Asset][target_asset] is created to use in game.
+Анимационный Asset используется для воспроизведения одной анимации на 3D-модели. Анимации импортируются путем загрузки 3D-сцен (например, файлов FBX), содержащих данные анимации. Данные анимации извлекаются из загруженного файла с помощью [asset pipeline][asset_pipeline], и создается [Target Asset][target_asset] для использования в игре.
 
-## Animation Import Settings
+## Предварительный просмотр анимации
+
+Инспектор имеет просмотрщик, который можно использовать для предварительного просмотра анимации с любым Template или Model asset. Это полезно, если у вас есть одна анимация, которую можно применить к разным ригам персонажей.
+
+![Asset Inspector Preview][inspector-preview-gif]
+
+Также есть просмотрщик в [Anim State Graph Editor][anim-state-graph-editor], когда вы выбираете состояние на графе. При выборе все Entity на сцене, использующие граф, будут отображаться в списке и могут быть выбраны для предварительного просмотра.
+
+![Anim State Graph Preview][anim-state-graph-preview-gif]
+
+## Настройки импорта анимации
 
 <div class="alert alert-info">
-Note: This is an experimental feature. Please let us know your feedback in the <a href="https://forum.playcanvas.com/" target="_blank">forums</a>.
+Примечание: Это экспериментальная функция. Пожалуйста, сообщите нам о своих отзывах на <a href="https://forum.playcanvas.com/" target="_blank">форуме</a>.
 </div>
 
-When importing animations, there are settings that can be tweaked to adjust the animation quality against the file size.
+При импорте анимаций есть настройки, которые можно настроить для корректировки качества анимации по сравнению с размером файла.
 
-They can be found in the Project Settings under Asset Tasks.
+Они находятся в настройках проекта в разделе Asset Tasks.
 
 ![Animation Import Settings][animation_import_settings]
 
-### Naming Strategy
+### Стратегия именования
 
-Only available for GLB export format. When importing an animation, the generated asset name can either be set from the 'Take Name' in the animation file, or use the animation filename instead.
+Доступно только для формата экспорта GLB. При импорте анимации сгенерированное имя asset может быть установлено из "Take Name" в файле анимации или использовать имя файла анимации.
 
-This is useful with assets that are brought/taken from a store such as [Mixamo][1] where all the take names are 'mixamo.com' and using the filename as the asset name is clearer.
+Это полезно для ассетов, которые принесены/взяты из магазина, такого как [Mixamo][mixamo], где все имена съемок - это "mixamo.com", и использование имени файла в качестве имени ассета яснее.
 
-### Sample rate
+### Частота дискретизации
 
-Available for both JSON and GLB export formats. The higher the rate, the higher detail and fidelity the animation at the cost of size. If you would like to keep the keyframes that have been set and defined in the original animation, select Disabled.
+Доступно для форматов экспорта JSON и GLB. Чем выше частота, тем выше детализация и точность анимации за счет размера. Если вы хотите сохранить ключевые кадры, которые были установлены и определены в исходной анимации, выберите Disabled.
 
-### Curve tolerance
+### Толерантность кривой
 
-Available for both JSON and GLB export formats. Curve tolerance controls a lossy compression setting of the animation import with the idea that a saving in file size can be made with little or no noticeable difference.
+Доступно для форматов экспорта JSON и GLB. Толерантность кривой контролирует потерю сжатия настроек импорта анимации с идеей того, что экономия размера файла может быть сделана с малой или никакой заметной разницы.
 
-This is a value between 0 and 100 where the higher number, the smaller the file size but at cost of losing information in the animation. 0 would be no compression and 100 would lose all information.
+Это значение между 0 и 100, где чем выше число, тем меньше размер файла, но за счет потери информации в анимации. 0 будет без сжатия, а 100 потеряет всю информацию.
 
-1 or 2 is considered to be good starting point.
+1 или 2 считается хорошей отправной точкой.
 
-### Cubic curves.
+### Кубические кривые.
 
-Only available for GLB export formats. Enable this option if you wish to keep the easing in the animation curves from the original animation. However, this will mean that the file will have extra information per keyframe and increase the size.
+Доступно только для форматов экспорта GLB. Включите эту опцию, если вы хотите сохранить сглаживание в кривых анимации из исходной анимации. Однако это будет означать, что файл будет содержать дополнительную информацию для каждого ключевого кадра и увеличит размер.
 
-If enabling this option, it is recommended that Sample Rate is disabled and Curve Tolerance is set to 0.
+Если включить эту опцию, рекомендуется отключить Sample Rate и установить Curve Tolerance на 0.
 
 [asset_pipeline]: /user-manual/glossary#asset-pipeline
 [target_asset]: /user-manual/glossary#target-asset
 [animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
-
- [1]: https://www.mixamo.com/
+[mixamo]: https://www.mixamo.com/
+[anim-state-graph-editor]: /user-manual/animation/anim-state-graph-assets/
+[inspector-preview-gif]: /images/user-manual/assets/animation/inspector-preview.gif
+[anim-state-graph-preview-gif]: /images/user-manual/assets/animation/anim-state-graph-preview.gif

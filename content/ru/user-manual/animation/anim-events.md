@@ -1,43 +1,43 @@
 ---
-title: Anim Events
+title: Анимационные события
 layout: usermanual-page.hbs
 position: 5
 ---
 
-Anim events can be used to trigger event listeners during the playback of an animation. Each event is associated with a specified frame of the animation asset it is attached to. When the playback of the animation reaches that frame, the event will fire and the associated event listener is called.
+Анимационные события могут использоваться для вызова слушателей событий во время воспроизведения анимации. Каждое событие связано с определенным кадром анимационного ассета, к которому оно прикреплено. Когда воспроизведение анимации достигает этого кадра, событие срабатывает, и вызывается соответствующий слушатель событий.
 
-### Creating Events
+### Создание событий
 
-To create a new event, select the animation asset in the asset panel which you'd like to create an event for. You should then see the `+ EVENT` button in the asset inspector as shown below:
+Чтобы создать новое событие, выберите анимационный ассет в панели ассетов, для которого вы хотите создать событие. Затем вы должны увидеть кнопку `+ EVENT` в инспекторе ассетов, как показано ниже:
 
-![Animation Asset With Event][1]
+![Анимационный ассет с событием][1]
 
-Each event has the following modifiable properties:
+У каждого события есть следующие изменяемые свойства:
 
-| Variable | Описание |
-|----------|-------------|
-| time     | Defines the specific time during the playback of the animation when the event should trigger. Given in seconds. |
-| name     | The name of the event is used to identify the event when attaching an event listener to the anim component. |
-| number   | An additional property which can be set to any number. Used to pass additional details to the event listener. |
-| string   | An additional property which can be set to any string. Used to pass additional details to the event listener. |
+| Переменная | Описание |
+|------------|-------------|
+| time       | Определяет конкретное время воспроизведения анимации, когда должно сработать событие. Задается в секундах. |
+| name       | Имя события используется для идентификации события при присоединении слушателя событий к анимационному компоненту. |
+| number     | Дополнительное свойство, которое может быть установлено на любое число. Используется для передачи дополнительных сведений слушателю событий. |
+| string     | Дополнительное свойство, которое может быть установлено на любую строку. Используется для передачи дополнительных сведений слушателю событий. |
 
-### Event Listeners
+### Слушатели событий
 
-After creating an event for an animation asset, the event will be fired whenever that asset is played back by an anim component. You can therefore attach listeners to the anim component to handle the event. The following example shows how to attach event listeners to the anim component:
+После создания события для анимационного ассета событие будет вызываться при воспроизведении этого ассета анимационным компонентом. Таким образом, вы можете присоединить слушателей к анимационному компоненту для обработки события. В следующем примере показано, как присоединить слушателей событий к анимационному компоненту:
 
 ```javascript
 var AnimationEvents = pc.createScript('animationEvents');
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 AnimationEvents.prototype.initialize = function() {
     this.entity.anim.on('plant_foot', function (event) {
-        // get the foot bone from the event's string property, either right_foot or left_foot
+        // получаем кость ноги из строкового свойства события, либо right_foot, либо left_foot
         const footBone = this.entity.findByName(event.string);
         createDustCloudAtLocation(footBone.getPosition());
     }, this);
 };
 ```
 
-Any number of animation events can be attached to a single animation asset and used by any number of anim components. Making use of the additional `number` and `string` properties of an event allows you to differentiate between events that are passed to the same event listener.
+В один анимационный ассет (animation asset) можно прикрепить любое количество анимационных событий, которые могут использоваться любым количеством компонентов anim. Использование дополнительных свойств `number` и `string` события позволяет различать события, передаваемые одному и тому же слушателю событий.
 
 [1]: /images/user-manual/anim/animation_asset_with_events.png

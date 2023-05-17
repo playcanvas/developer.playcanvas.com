@@ -1,67 +1,67 @@
 ---
-title: Видео-текстуры
+title: Видео текстуры
 layout: tutorial-page.hbs
 tags: video, textures
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/6wt5T87E/" title="Video Textures"></iframe>
 
-Try it from the Editor in the [tutorial project.][1]
+Попробуйте из редактора в [учебном проекте.][1]
 
-This project creates a texture and runtime, downloads and plays a video file and renders the video into the texture. This texture is then applied to a model and used in the scene.
+В этом проекте создается текстура во время выполнения, загружается и воспроизводится видеофайл, а затем видео рендерится в текстуру. Эта текстура затем применяется к модели и используется в сцене.
 
-This script performs the following functions:
+Этот скрипт выполняет следующие функции:
 
-* Create new Texture
-* Create an HTML Video element and play the video
-* Apply the new texture to the material on the TV model
-* Update the texture with video data every frame
+* Создание новой текстуры
+* Создание элемента HTML Video и воспроизведение видео
+* Применение новой текстуры к материалу на модели телевизора
+* Обновление текстуры с данными видео каждый кадр
 
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');
 
 VideoTexture.attributes.add('videoAsset', {
-    title: 'Video Asset',
-    description: 'MP4 video asset to play back on this video texture.',
+    title: 'Видео Asset',
+    description: 'MP4 видео asset для воспроизведения на этой видео текстуре.',
     type: 'asset'
 });
 
 VideoTexture.attributes.add('videoUrl', {
-    title: 'Video Url',
-    description: 'URL to use if there is video asset selected',
+    title: 'URL видео',
+    description: 'URL для использования, если не выбран видео asset',
     type: 'string'
 });
 
 VideoTexture.attributes.add('playEvent', {
-    title: 'Play Event',
-    description: 'Event that is fired as soon as the video texture is ready to play.',
+    title: 'Событие воспроизведения',
+    description: 'Событие, которое срабатывает, как только видео текстура готова к воспроизведению.',
     type: 'string',
     default: ''
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 VideoTexture.prototype.initialize = function() {
     var app = this.app;
 
-    // Create HTML Video Element to play the video
+    // Создание HTML Video Element для воспроизведения видео
     var video = document.createElement('video');
     video.loop = true;
 
-    // muted attribute is required for videos to autoplay
+    // атрибут muted необходим для автоматического воспроизведения видео
     video.muted = true;
 
-    // critical for iOS or the video won't initially play, and will go fullscreen when playing
+    // критично для iOS, иначе видео не будет воспроизводиться сразу, и будет отображаться на весь экран при воспроизведении
     video.playsInline = true;
 
-    // needed because the video is being hosted on a different server url
+    // необходимо, потому что видео размещается на другом сервере url
     video.crossOrigin = "anonymous";
 
-    // autoplay the video
+    // автоматическое воспроизведение видео
     video.autoplay = true;
 
-    // iOS video texture playback requires that you add the video to the DOMParser
-    // with at least 1x1 as the video's dimensions
+    // воспроизведение видео текстуры на iOS требует добавления видео в DOMParser
+    // с размерами видео не менее 1x1
     var style = video.style;
     style.width = '1px';
     style.height = '1px';
@@ -72,7 +72,7 @@ VideoTexture.prototype.initialize = function() {
 
     document.body.appendChild(video);
 
-    // Create a texture to hold the video frame data
+    // Создание текстуры для хранения данных кадров видео
     this.videoTexture = new pc.Texture(app.graphicsDevice, {
         format: pc.PIXELFORMAT_R8_G8_B8,
         minFilter: pc.FILTER_LINEAR_MIPMAP_LINEAR,
@@ -88,7 +88,7 @@ VideoTexture.prototype.initialize = function() {
         video.play();
     }.bind(this));
 
-    // set video source
+    // установка источника видео
     video.src = this.videoAsset ? this.videoAsset.getFileUrl() : this.videoUrl;
 
     document.body.appendChild(video);
@@ -100,12 +100,32 @@ VideoTexture.prototype.initialize = function() {
     }, this);
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 VideoTexture.prototype.update = function(dt) {
-    // Transfer the latest video frame to the video texture
+    // Передача последнего видео кадра в видео текстуру
     this.videoTexture.upload();
 };
-
 ```
 
 [1]: https://playcanvas.com/project/405850
+
+# Issue Tracker
+
+Если вы нашли ошибку или у вас есть предложение, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/playcanvas/engine/issues).
+
+# Руководства
+
+- [Tutorial Thumbnail](https://developer.playcanvas.com/en/tutorials/thumbnail/)
+- [Entity](https://developer.playcanvas.com/en/tutorials/entity/)
+- [Material Asset](https://developer.playcanvas.com/en/tutorials/material-asset/)
+- [Material Inspector](https://developer.playcanvas.com/en/tutorials/material-inspector/)
+- [Shader Editor](https://developer.playcanvas.com/en/tutorials/shader-editor/)
+- [Node Inspector](https://developer.playcanvas.com/en/tutorials/node-inspector/)
+- [Texture Inspector](https://developer.playcanvas.com/en/tutorials/texture-inspector/)
+- [Graph Inspector](https://developer.playcanvas.com/en/tutorials/graph-inspector/)
+
+# Редакторы
+
+- [Asset](https://developer.playcanvas.com/en/user-manual/assets/)
+- [Graph Editor](https://developer.playcanvas.com/en/user-manual/graphs/)
+- [Assets](https://developer.playcanvas.com/en/user-manual/assets/assets/)

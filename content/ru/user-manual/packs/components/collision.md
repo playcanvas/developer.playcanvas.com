@@ -4,41 +4,41 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-The Collision component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.
+Компонент Collision назначает объем столкновения сущности. Интерфейс компонента динамически отображает различные атрибуты на основе атрибута 'Type'.
 
-The Collision component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.
+Компонент Collision можно включить или отключить с помощью переключателя в верхнем правом углу панели компонента. Если он включен и является триггерным объемом (потому что у него нет соседнего компонента твердого тела), триггерный объем будет включен. Точно так же, если у компонента есть соседний компонент твердого тела, твердое тело будет включено.
 
 #### Box
-![Collision component (Box)][1]
+![Компонент столкновения (Box)][1]
 #### Capsule
-![Collision component (Capsule)][2]
+![Компонент столкновения (Capsule)][2]
 #### Compound
-![Collision component (Compound)][3]
+![Компонент столкновения (Compound)][3]
 #### Cone
-![Collision component (Cone)][4]
+![Компонент столкновения (Cone)][4]
 #### Cylinder
-![Collision component (Cylinder)][5]
+![Компонент столкновения (Cylinder)][5]
 #### Mesh
-![Collision component (Mesh)][6]
+![Компонент столкновения (Mesh)][6]
 #### Sphere
-![Collision component (Sphere)][7]
+![Компонент столкновения (Sphere)][7]
 
-If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
+Если у сущности также есть компонент твердого тела, компонент столкновения определяет форму твердого тела. Если компонента твердого тела нет, компонент столкновения рассматривается как триггерный объем. Триггерный объем не может влиять на симуляцию других твердых тел в сцене. Вместо этого вы можете добавить компонент сценария и прикрепить сценарий, который реагирует на события триггера. Например, если другая сущность, имеющая компонент твердого тела, входит или выходит из триггера, ваш сценарий может быть уведомлен.
 
-## Properties
+## Свойства
 
-| Property     | Описание |
+| Свойство     | Описание |
 |--------------|-------------|
-| Type         | The type of collision primitive. Can be:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
-| Half Extents | Box only. The half-extents of the collision box. This is a 3-dimensional vector: local space half-width, half-height, and half-depth. |
-| Axis         | Capsule only. Aligns the capsule with the local-space X, Y or Z axis of the entity. |
-| Height       | Capsule only. The tip-to-tip height of the capsule. |
-| Radius       | Sphere and Capsule only. The radius of the sphere or capsule body. |
-| Asset        | Mesh only. The model asset that will be used as a source for the triangle-based collision mesh. |
+| Type         | Тип примитива столкновения. Может быть:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
+| Half Extents | Только для Box. Половинные размеры столкновения с коробкой. Это 3-мерный вектор: полуширина, полувысота и полуглубина в локальном пространстве. |
+| Axis         | Только для Capsule. Выравнивает капсулу с локальной осью X, Y или Z сущности. |
+| Height       | Только для Capsule. Высота капсулы от кончика до кончика. |
+| Radius       | Только для Sphere и Capsule. Радиус сферы или тела капсулы. |
+| Asset        | Только для Mesh. Актив модели, который будет использоваться в качестве источника для треугольной сетки столкновений. |
 
-## Scripting Interface
+## Интерфейс сценариев
 
-You can control a Collision component's properties using a [script component][8]. The Collision component's scripting interface is [here][9].
+Вы можете управлять свойствами компонента Collision с помощью [компонента сценария][8]. Интерфейс сценариев компонента Collision находится [здесь][9].
 
 [1]: /images/user-manual/scenes/components/component-collision-box.png
 [2]: /images/user-manual/scenes/components/component-collision-capsule.png

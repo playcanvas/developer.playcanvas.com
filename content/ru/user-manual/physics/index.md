@@ -4,12 +4,12 @@ layout: usermanual-page.hbs
 position: 16
 ---
 
-Most video games you have ever played will have some form of physics. The player expects objects to fall under the influence of gravity. For objects to collide instead of pass through each other. For a sound to play if two objects collide. And so on.
+Большинство видеоигр, в которые вы когда-либо играли, имеют какую-то форму физики. От игрока ожидается, что объекты будут падать под воздействием гравитации. Что объекты сталкиваются, а не проходят друг через друга. Что звук воспроизводится при столкновении двух объектов. И так далее.
 
-A physics engine attempts to reproduce our understanding of the natural world in an artificial game world. It attempts to realistically animate objects in an expected and predictable way.
+Физический движок пытается воспроизвести наше понимание реального мира в искусственном игровом мире. Он пытается реалистично анимировать объекты ожидаемым и предсказуемым образом.
 
-![Physics Constraints][1]
+![Физические ограничения][1]
 
-PlayCanvas provides a very powerful physics engine that can be used to achieve a great many effects. This section introduces the concepts of rigid bodies, collision, forces, impulses, raycasting and more.
+PlayCanvas предоставляет очень мощный физический движок, который можно использовать для достижения множества эффектов. В этом разделе представлены концепции твердых тел, столкновений, сил, импульсов, трассировки лучей и многого другого.
 
 [1]: /images/user-manual/physics/physics-constraints.gif

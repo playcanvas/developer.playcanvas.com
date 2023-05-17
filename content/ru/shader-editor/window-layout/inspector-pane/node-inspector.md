@@ -6,10 +6,10 @@ position: 2
 
 <img loading="lazy" src="/images/shader-editor/inspector-pane-node.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Node Inspector is where a node's settings are configured.
+Node Inspector - это место, где настраиваются параметры узла.
 
-To access a node's details, select it in the [Graph Editor][6].
+Чтобы получить доступ к деталям узла, выберите его в [Graph Editor][6].
 
-The available controls depend on the type of node selected.
+Доступные элементы управления зависят от типа выбранного узла.
 
 [6]: /shader-editor/window-layout/graph-editor

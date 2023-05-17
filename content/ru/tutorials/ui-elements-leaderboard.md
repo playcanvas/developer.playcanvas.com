@@ -1,96 +1,96 @@
 ---
-title: User Interface - Leaderboard
+title: Пользовательский интерфейс - Таблица лидеров
 layout: tutorial-page.hbs
 tags: ui
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
 
-*A leaderboard using Element components. See the [full scene][1].*
+*Таблица лидеров с использованием компонентов Element. Смотрите [полную сцену][1].*
 
-This tutorial demonstrates how to create a simple leaderboard using the built-in [Elements][2]. The leaderboard is filled programmatically with data that come from a JSON asset.
+В этом уроке показано, как создать простую таблицу лидеров с использованием встроенных [Elements][2]. Таблица лидеров заполняется программно данными, которые поступают из JSON-ассета.
 
 ## Иерархия
 
-This is what our UI looks like in the hierarchy:
+Вот как выглядит наш пользовательский интерфейс в иерархии:
 
 ![Hierarchy][4]
 
-As you can see we have a 2D [Screen][3], two Elements to show the title and sub title and two Image Elements which are going to be used as the backgrounds and panels for our leaderboard data. Under `Your Score` we are going to show the player's position in the leaderboard and under `Leaderboard` we will show the rest.
+Как видите, у нас есть 2D [Screen][3], два элемента для отображения заголовка и подзаголовка, а также два элемента изображения, которые будут использоваться в качестве фонов и панелей для данных нашей таблицы лидеров. Под «Your Score» мы будем показывать позицию игрока в таблице лидеров, а под «Leaderboard» мы будем показывать остальные данные.
 
-You will also notice a disabled Entity called `Entry Template`. This is a template that we will use for each row of the template. We will clone that template for each leaderboard entry that exists in our JSON asset and add each clone under the respective panel.
+Вы также заметите отключенный объект Entity с названием «Entry Template». Это шаблон, который мы будем использовать для каждой строки таблицы. Мы будем клонировать этот шаблон для каждой записи в таблице лидеров, которая существует в нашем JSON-ассете, и добавлять каждый клон под соответствующую панель.
 
-## Screen setup
+## Настройка экрана
 
-Our [screen][3] is set up like so:
+Наш [screen][3] настроен следующим образом:
 
 ![Screen][5]
 
-Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is the resolution that we are targeting - in this case it's 1080 x 1920. We choose Blend for Scale Mode so that our Screen adapts to resolution changes and we set Scale Blend to 1 so that the Screen will adapt only to height changes.
+Поскольку это 2D-экран, мы установили флажок Screen Space. Наша опорная разрешение - это разрешение, которое мы нацеливаем - в данном случае это 1080 x 1920. Мы выбираем Blend для режима масштабирования, чтобы наш экран адаптировался к изменениям разрешения, и устанавливаем Scale Blend на 1, чтобы экран адаптировался только к изменениям высоты.
 
-The screen entity also has a script component that contains the `leaderboard` script that we will see below.
+Компонент экрана также содержит компонент сценария, который содержит сценарий «leaderboard», который мы рассмотрим ниже.
 
-## Panel setup
+## Настройка панели
 
-For each panel we have an Image element that shows its background. Under the panel we are going to programmatically add clones of the Entry Template. Our panels are anchored to the center of the screen.
+Для каждой панели у нас есть элемент изображения, который показывает его фон. Под панелью мы будем программно добавлять клонов шаблона Entry Template. Наши панели закреплены в центре экрана.
 
-## Entry Template setup
+## Настройка шаблона записи
 
-This is what our template for each leaderboard row looks like in the hierarchy:
+Вот как выглядит наш шаблон для каждой строки таблицы лидеров в иерархии:
 
 ![Entry Template][6]
 
-It has four child Text Elements for displaying the Position in the leaderboard, the name of the player, the player's score and a label that says 'PTS'.
+У него есть четыре дочерних текстовых элемента для отображения позиции в таблице лидеров, имени игрока, очков игрока и метки с надписью «PTS».
 
-The `Entry Template` itself is a Group Element:
+Сам «Entry Template» является элементом группы:
 
 ![Entry Template Attributes][7]
 
-Notice how the Group Element has split horizontal anchors:
+Обратите внимание, что у элемента группы есть разделенные горизонтальные якоря:
 
 ![Split Anchors][8]
 
-The horizontal anchors are not equal (they are 0 and 1) which means that the Element will expand automatically to fill the entire horizontal area if the Screen is resized. We also have a horizontal margin of 50 pixels to allow a small gap from the edges - the margin can only be set when anchors are split.
+Горизонтальные якоря не равны (они равны 0 и 1), что означает, что элемент будет автоматически расширяться, чтобы заполнить всю горизонтальную область, если экран изменит размер. У нас также есть горизонтальный отступ в 50 пикселей, чтобы оставить небольшой зазор от краев - отступ можно установить только при разделении якорей.
 
-Now let's look at the rest of the Group's children.
+Теперь давайте посмотрим на остальных детей группы.
 
-### Position
+### Позиция
 
-Position is anchored to the left:
+Позиция закреплена слева:
 
 ![Position][9]
 
-### Name
+### Имя
 
-Name is anchored to the left and moved a bit to the right:
+Имя закреплено слева и смещено немного вправо:
 
 ![Name][10]
 
-### Score
+### Очки
 
-Score is anchored to the right
+Очки закреплены справа
 
 ![Score][11]
 
-### Points
+### Очки
 
-Points are anchored to the right
+Очки закреплены справа
 
 ![Pts][12]
 
-## Сценарий
+## Скрипт
 
-This is the `leaderboard` script that reads our JSON asset and fills the leaderboard:
+Это скрипт «leaderboard», который считывает наш JSON-ассет и заполняет таблицу лидеров:
 
 ```javascript
 var Leaderboard = pc.createScript('leaderboard');
 
-// the text entry template to clone
+// шаблон текстовой записи для клонирования
 Leaderboard.attributes.add("template", {type: "entity"});
-// the parent leaderboard for the personal score
+// родительский Issue Tracker для персонального счета
 Leaderboard.attributes.add("personal", {type: "entity"});
-// the parent leaderboard for the top ten
+// родительский Issue Tracker для топ-10
 Leaderboard.attributes.add("leaderboard", {type: "entity"});
 
 Leaderboard.prototype.initialize = function() {
@@ -101,20 +101,20 @@ Leaderboard.prototype.initialize = function() {
     this.load(function (data) {
         self.clear();
 
-        // add the personal entry
+        // добавляем персональную запись
         var y = -75;
         self.addEntry(self.personal, y, data.personal.position, data.personal.name, data.personal.score);
 
-        // add the top ten
+        // добавляем топ-10
         y = -60;
         for (var i = 0; i < Math.min(data.leaderboard.length, 10); i++) {
             self.addEntry(self.leaderboard, y, i+1, data.leaderboard[i].name, data.leaderboard[i].score);
-            y -= 99; // offset each entry
+            y -= 99; // смещение каждой записи
         }
     });
 };
 
-// clear all leaderboard entries
+// очистить все записи в Issue Tracker
 Leaderboard.prototype.clear = function () {
     for (var i = 0; i < this.entries.length; i++) {
         this.entries[i].destroy();
@@ -123,7 +123,7 @@ Leaderboard.prototype.clear = function () {
     this.entries = [];
 };
 
-// add a new entry into the leaderboard
+// добавить новую запись в Issue Tracker
 Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
     var entry = this.template.clone();
     entry.enabled = true;
@@ -138,8 +138,8 @@ Leaderboard.prototype.addEntry = function (parent, y, position, name, score) {
     entry.translateLocal(0, y, 0);
 };
 
-// Mock loading leaderboard data, for this demo we just get the data from a JSON file in the project
-// For your project you could download this from a server backend
+// Моделирование загрузки данных Issue Tracker, для этой демонстрации мы просто получаем данные из JSON-файла в проекте
+// Для вашего проекта вы можете загрузить это с серверного бэкенда
 Leaderboard.prototype.load = function (callback) {
     var asset = this.app.assets.find("leaderboard-data.json");
     asset.ready(function () {

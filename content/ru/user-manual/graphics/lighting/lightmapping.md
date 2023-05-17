@@ -1,101 +1,104 @@
 ---
-title: Lightmapping
+title: Световые карты
 layout: usermanual-page.hbs
 position: 3
 ---
 
 [![PlayCanvas Lightmapping][1]][13]
-*The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
+*Освещение в этой сцене реализовано с использованием текстур Lightmap и AO, а также Box Projected IBL (отражения)*
 
-Here is the link to [final scene][13] and [project][14] that uses these techniques to achieve results in image above: External HDR Lightmaps (described in this page below), [Ambient Occlusion][12] and HDR Cubemap applied using Box Projection using [Image Based Lighting][11] technique to achieve realistic reflections.
+Здесь ссылка на [финальную сцену][13] и [проект][14], которые используют эти техники для достижения результатов на изображении выше: внешние HDR Lightmaps (описаны на этой странице ниже), [Ambient Occlusion][12] и HDR Cubemap, применяемые с использованием Box Projection с использованием техники [Image Based Lighting][11] для достижения реалистичных отражений.
 
 ## Обзор
 
-Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied on materials. This is an efficient way of lighting a scene if many of the light sources and geometry are static or environmental.
+Генерация световых карт - это процесс предварительного расчета информации об освещении для статической сцены и сохранение ее в текстурах, которые затем применяются на материалах. Это эффективный способ освещения сцены, если многие источники света и геометрия являются статическими или окружающими.
 
-PlayCanvas offers two ways to use lightmaps in your scene: **External lightmap generation** using a 3rd-party tool and [**Runtime Lightmapping**][0] that can be generated automatically by the Engine on loading or later while application is running.
+PlayCanvas предлагает два способа использования световых карт в вашей сцене: **Генерация внешних световых карт** с использованием стороннего инструмента и [**Runtime Lightmapping**][0], которые могут быть сгенерированы автоматически движком при загрузке или позже во время работы приложения.
 
-This page gives details and best practices on rendering lightmaps from external tools.
+На этой странице приведены подробности и лучшие практики по рендерингу световых карт из внешних инструментов.
 
-## External Lightmap Generation
+## Генерация внешних световых карт
 
-Many 3D content tools have ways to generate lightmap textures. For example, 3ds Max, Maya, Blender and other tools all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, ambient occlusion, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
+Многие инструменты для работы с 3D-контентом имеют возможность генерировать текстуры световых карт. Например, 3ds Max, Maya, Blender и другие инструменты имеют возможность выпекать световые карты в текстуры. Преимущества использования оффлайн-инструмента для генерации световых карт заключается в том, что вы можете использовать очень сложные расчеты освещения, такие как Global Illumination для отраженного света, мягкие тени, окружающее затенение и т. д. Основным недостатком является то, что вы должны иметь полное представление о вашей сцене внутри 3D-инструмента. Таким образом, если ваша сцена PlayCanvas состоит из множества экземпляров, размещенных в редакторе, вам нужно воссоздать это в вашем инструменте для создания световых карт.
 
-Once you have created lightmaps using an external tool you simply upload them as regular texture assets and they can be added to your materials using the lightmap slot in the standard Physical Material.
+После того, как вы создали световые карты с помощью внешнего инструмента, просто загрузите их в качестве обычных текстурных ассетов, и они могут быть добавлены к вашим материалам с использованием слота световых карт в стандартном физическом материале.
 
-## Tools
+## Инструменты
 
-In this page we will use 3ds Max with VRay to generate lightmaps, but the same functionality is achievable with any other similar modeling tools.
+На этой странице мы будем использовать 3ds Max с VRay для генерации световых карт, но те же функции можно достичь с помощью любых других аналогичных инструментов моделирования.
 
-## Gamma Correction
+## Гамма-коррекция
 
-When rendering Lightmaps or CubeMaps they should be rendered in Linear Space to ensure color curves are not affected by gamma correction twice. The PlayCanvas Engine will apply gamma correction during real-time rendering.
+При рендеринге световых карт или CubeMaps они должны быть отрендерены в линейном пространстве, чтобы гарантировать, что цветовые кривые не будут затронуты гамма-коррекцией дважды. Движок PlayCanvas применит гамма-коррекцию во время реального рендеринга.
 
-In 3ds Max this option (Enable Gamma/LUT Correction) should be disabled and can be found in Preference Settings (Customize > Preferences):
+В 3ds Max эту опцию (Enable Gamma/LUT Correction) следует отключить, она находится в настройках предпочтений (Customize > Preferences):
 
 ![3ds Max > Preferences > Linear Space][2]
 
-Then make sure Color Mapping is updated. It can be found in Render Settings (F10, or from Render to Texture window). Output should not be clamped, and not post-processed (Mode option), Linear Multiply should be used for linear color space.
-Here is a screenshot of what options should be set to what values, click the "Default" button to expand settings to "Expert":
+Затем убедитесь, что обновлено цветовое отображение. Оно находится в настройках рендера (F10 или из окна Render to Texture). Вывод не должен быть зажат и не обрабатываться после рендеринга (опция Mode), для линейного цветового пространства следует использовать Linear Multiply.
+Вот скриншот того, какие опции должны быть установлены на какие значения, нажмите кнопку "Default", чтобы раскрыть настройки на "Expert":
 
 ![3D's Max > Render Settings][3]
 
-## UV Mapping
+## UV-развертка
 
-In order to apply a lightmap texture on geometry we need to unwrap it first. Here are some practices that will help you to get good lightmap friendly UV's.
+Для того чтобы применить текстуру световой карты на геометрии, сначала нужно ее развернуть. Вот несколько практик, которые помогут вам получить хорошие UV-развертки, дружественные к световым картам.
 
-### **Simple Geometry**
-A smaller area of geomtry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
+### **Простая геометрия**
 
-![Lighmapping Tips: Simple Geometry][4]
+Меньшая площадь геометрии лучше. Постарайтесь минимизировать площадь треугольников и устранить невидимые треугольники. Большая площадь уменьшит детализацию световой карты, потребует больших текстур и иногда нескольких ассетов.
 
-### **Consistent Texel Size**
-Keep texels in UV unstretched and consistent in size with other texels within same geometry. This is to ensure that level of detail in lightmap texture is consistent within the scene. Some variations of texel size could be applied when geometry will be seen from up close or in the far distance as required by artistic and optimization decisions.
+![Советы по световым картам: простая геометрия][4]
 
-![Lighmapping Tips: UV Consistent Texel Size][5]
+### **Постоянный размер текселя**
 
-### **Non-overlapping UV**
-Triangles in UV should not overlap to ensure each pixel has a unique position in 3D space on geometry so it can store its own illumination information appropriately. UV space for lightmaps is clamped, meaning that UV will be contained between 0.0 and 1.0 and will not tile outside.
+Сохраняйте тексели в UV нерастянутыми и постоянными по размеру с другими текселями внутри одной и той же геометрии. Это гарантирует, что уровень детализации текстуры световой карты будет одинаковым в пределах сцены. Некоторые вариации размера текселя могут быть применены, когда геометрия будет видна с близкого расстояния или на большом расстоянии, как требуется художественными и оптимизационными решениями.
+
+![Советы по световым картам: UV постоянный размер текселя][5]
+
+### **Неперекрывающиеся UV**
+
+Треугольники в UV не должны перекрываться, чтобы гарантировать, что каждый пиксель имеет уникальное положение в 3D-пространстве на геометрии, и может хранить свою собственную информацию об освещении соответствующим образом. UV-пространство для световых карт ограничено, что означает, что UV будет содержаться между 0.0 и 1.0 и не будет повторяться за пределами.
 
 ![Lighmapping Tips: Non-overlapping UV][6]
 
-## Other Tips
+## Другие советы
 
-To get good lightmap results we need to ensure that rendering is based only on data that is relevant to light propagation and not to the point of view of camera during rendering.
+Чтобы получить хорошие результаты карты освещения, мы должны убедиться, что рендеринг основан только на данных, которые имеют отношение к распространению света, а не на точке зрения камеры во время рендеринга.
 
-1. **Disable normal maps** on materials - micro surface details are too tiny to be relevant in lightmap textures.
-2. Set **Reflection to 0** and **Disable Gloss Maps** on materials - reflection can lead to caustics and complications for renderers, leading to visual artifacts. Generally lightmaps should contain only diffuse lighting and reflectivity should be implemented using some runtime technique.
-4. **Very dark materials won't produce good results** as they do not reflect light much and so will not assist Global Illumination.
-5. In the Render To Texture window (see below) set **Padding** to larger value.
-6. **Light can leak** from behind the geometry, add blocking geometry to prevent light.
+1. **Отключите нормальные карты** на материалах - микродетали поверхности слишком малы, чтобы быть актуальными в текстурах карты освещения.
+2. Установите **Reflection на 0** и **Отключите Gloss Maps** на материалах - отражение может привести к каустике и сложностям для рендереров, что приводит к визуальным артефактам. В целом, карты освещения должны содержать только диффузное освещение, а отражательность должна быть реализована с использованием некоторой техники выполнения.
+4. **Очень темные материалы не дадут хороших результатов**, так как они не отражают свет и не помогут глобальной иллюминации.
+5. В окне Render To Texture (см. ниже) установите **Padding** на большее значение.
+6. **Свет может просачиваться** из-за геометрии, добавьте блокирующую геометрию, чтобы предотвратить свет.
 
 ![Lighmapping Light Leaking][8]
 
 ## Render To Texture
 
-To get illumination data out of the modeling tool we want to render the light data into a texture. We can specify resolution and format for it.
+Чтобы получить данные об освещении из инструмента моделирования, мы хотим отобразить данные о свете в текстуру. Мы можем указать разрешение и формат для этого.
 
-In 3ds Max this is done using the Render To Texture window. Where Padding needs to be set to larger value; selected 2nd UV Channel; and Output profile depending on your renderer, in screenshot below `VRayRawTotalLightingMap` is used.
+В 3ds Max это делается с помощью окна Render To Texture. Где Padding должен быть установлен на большее значение; выбран 2-й канал UV; и профиль вывода в зависимости от вашего рендерера, на скриншоте ниже используется `VRayRawTotalLightingMap`.
 
 ![Render To Texture: PlayCanvas Lightmapping][7]
 
-## Noise
+## Шум
 
-Depending on the quality and time of rendering in some situations the illumination data in the output might be not perfect and suffer from noise. This is easily solvable by applying some blur to the image that will not blur the edges in texture but will smoothen plain sections. In Photoshop this is done using Surface Blur filter:
+В зависимости от качества и времени рендеринга в некоторых ситуациях данные об освещении на выходе могут быть неидеальными и страдать от шума. Это легко решается путем применения некоторого размытия к изображению, которое не размоет края в текстуре, но сгладит плоские участки. В Photoshop это делается с помощью фильтра Surface Blur:
 
 ![Lightmapping: Photoshop > Surface Blur][9]
 
-## Upload to Editor
+## Загрузка в редактор
 
-At this stage you have your geometry with a second UV channel (UV1) and HDR lightmap textures and it is time to upload them to your PlayCanvas scene and setup the materials. This is done by drag 'n' dropping the files or using the upload button in assets panel. After you've uploaded your geometry it will auto-generate materials. For each material that a lightmap is rendered for you need to set the lightmap texture. Simply select all required materials and drag'n'drop or pick lightmap texture for the Lightmap slot.
+На этом этапе у вас есть геометрия со вторым каналом UV (UV1) и текстуры HDR карты освещения, и пришло время загрузить их в вашу сцену PlayCanvas и настроить материалы. Это делается путем перетаскивания файлов или с помощью кнопки загрузки в панели ассетов. После загрузки вашей геометрии она автоматически сгенерирует материалы. Для каждого материала, для которого отображается карта освещения, вам нужно установить текстуру карты освещения. Просто выберите все необходимые материалы и перетащите или выберите текстуру карты освещения для слота Lightmap.
 
 ![PlayCanvas Editor: Material Lightmap Texture Slot][10]
 
-## Final remarks
+## Заключительные замечания
 
-Gamma correction, tone mapping and exposure - are good settings that you will want to play with to get the desired look and color for your scene.
+Гамма-коррекция, тоновое отображение и экспозиция - хорошие настройки, с которыми вы захотите поиграть, чтобы получить желаемый вид и цвет для вашей сцены.
 
-You can [explore the example][13] that uses the techniques described above and also its [project][14].
+Вы можете [изучить пример][13], который использует описанные выше методы, а также его [проект][14].
 
 [0]: /user-manual/graphics/lighting/runtime-lightmaps/
 [1]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg

@@ -1,14 +1,14 @@
 ---
-title: Атрибуты сценария
+title: Атрибуты Скриптов
 layout: usermanual-page.hbs
 position: 5
 ---
 
-Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
+Атрибуты скриптов - это мощная функция, которая позволяет вам выставлять значения из ваших файлов скриптов, чтобы они отображались в редакторе PlayCanvas. Это означает, что вы можете написать код один раз, а затем настраивать значения на разных экземплярах Entity, чтобы дать им разные свойства. Это идеально подходит для выставления свойств для художников, дизайнеров или других участников команды, не являющихся программистами, чтобы они могли настраивать и изменять значения без написания кода.
 
-## Declaring Script Attributes
+## Объявление атрибутов скриптов
 
-Script Attributes are declared at the top of your script file using this format:
+Атрибуты скриптов объявляются в верхней части файла скрипта, используя этот формат:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -19,9 +19,9 @@ MyScript.attributes.add('speed', {
 });
 ```
 
-In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
+В этом примере мы объявляем свойство с именем `speed`, которое является `number` и имеет значение по умолчанию `80`:
 
-If you need an array of attributes set `array: true` like so:
+Если вам нужен массив атрибутов, установите `array: true` следующим образом:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -32,16 +32,15 @@ MyScript.attributes.add('names', {
 });
 ```
 
-
-## Getting Attributes into Editor
+## Получение атрибутов в редактор
 
 <img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;"> button.
+После объявления ваших атрибутов редактору необходимо проанализировать код, чтобы выделить атрибуты скрипта. Если атрибуты были изменены, вам нужно вручную обновить атрибуты, нажав кнопку анализа <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;">.
 
-## Accessing attributes in your code
+## Доступ к атрибутам в вашем коде
 
-When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
+Когда вы объявляете атрибут в своем скрипте, он будет доступен в виде переменной-члена на вашем экземпляре скрипта. Например, свойство `speed`, объявленное выше, доступно как `this.speed`.
 
 ```javascript
 MyScript.prototype.update = function (dt) {
@@ -49,81 +48,80 @@ MyScript.prototype.update = function (dt) {
 }
 ```
 
-## Updating attributes
+МойСкрипт.prototype.update = функция (dt) {
+    this.Entity.translate(this.speed * dt, 0, 0);
+}
 
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+## Обновление атрибутов
 
-```javascript
+Когда вы изменяете атрибут в редакторе, изменения отправляются на все копии приложения, запущенные из редактора. Это означает, что вы можете редактировать атрибуты в режиме реального времени без перезагрузки вашего приложения. Если вам нужно применить специальное поведение при изменении атрибута. Используйте события `attr` и `attr:[name]` для реагирования на изменения.
+
 MyScript.prototype.initialize = function () {
-    // fires only for `speed` attribute
+    // запускается только для атрибута `speed`
     this.on('attr:speed', function (value, prev) {
-        // new value for speed
+        // новое значение для скорости
     });
 
-    // fires for all attribute changes
+    // запускается для всех изменений атрибутов
     this.on('attr', function(name, value, prev) {
-        // new attribute value
+        // новое значение атрибута
     });
 }
-```
 
-## Attribute types
+## Типы атрибутов
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
+Когда вы объявляете атрибут, вы также объявляете тип атрибута. Это позволяет редактору показывать соответствующие элементы управления для редактирования атрибута. Большинство типов являются очевидными, например, 'boolean', 'number' или 'string'. Но некоторые требуют дополнительного объяснения в приведенных ниже примерах. Подробнее см. [полную справку по атрибутам][1].
 
-### Entity attribute
+### Атрибут Entity
 
 ```javascript
 MyScript.attributes.add('target', { type: 'entity' })
 ```
 
-The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
+Тип Entity позволяет ссылаться на другую сущность в вашей иерархии. Отличный способ связать две сущности вместе.
 
-
-### Asset attribute
+### Атрибут Asset
 
 ```javascript
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+Атрибут Asset позволяет вам ссылаться на ассет проекта в вашем скрипте. Атрибут ассета также поддерживает свойство `assetType`, которое ограничивает атрибут ассетами определенного типа, например, 'texture', 'material', 'model'.
 
-The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
+Тип выполнения атрибута Asset - это `pc.Asset`. Вы можете ссылаться на ресурс атрибута Asset во время выполнения следующим образом:
 
 ```javascript
 MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
 
 MyScript.prototype.initialize = function () {
-    console.log('This is the texture asset', this.texture);
-    console.log('This is the texture resource', this.texture.resource);
+    console.log('Это текстурный ассет', this.texture);
+    console.log('Это текстурный ресурс', this.texture.resource);
 };
 
 ```
 
-
-### Color attribute
+### Атрибут цвета
 
 ```javascript
 MyScript.attributes.add('color', { type: 'rgba' });
 ```
 
-The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
+Цветовой атрибут отображает выбор цвета при открытии в редакторе. Есть два варианта `rgb` и `rgba`, в зависимости от того, хотите ли вы открыть канал альфа также.
 
-### Curve attribute
+### Атрибут кривой
 
 ```javascript
-MyScript.attributes.add('wave', { type: 'curve' }); // one curve
-MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // three curves: x, y, z
-MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for red channel
-MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
+MyScript.attributes.add('wave', { type: 'curve' }); // одна кривая
+MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // три кривые: x, y, z
+MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // одна кривая для красного канала
+MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // четыре кривые для полного цвета, включая альфа
 ```
 
-The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
+Атрибут кривой используется для выражения значения, которое изменяется в течение определенного временного периода. Все кривые определены в интервале от 0,0 до 1,0. Вы можете определить несколько кривых, например, если вы хотите получить 3D-позицию из кривой, определите три кривые для x, y, z с использованием свойства `curves`. Также существует специальный редактор кривых для изменения цветов с использованием свойства `color`.
 
+### Атрибут перечисления
 
-### Enumeration attribute
-
-The Enumeration attribute allows you to choose one of the available options:
+Атрибут перечисления позволяет выбрать один из доступных вариантов:
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -136,12 +134,11 @@ MyScript.attributes.add('value', {
 });
 ```
 
-Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`, `vec3`.
+Используйте свойство enum для объявления списка возможных значений для вашего перечисления. Свойство представляет собой массив объектов, где каждый объект является вариантом, где `key` - это заголовок варианта, а `value` - значение для атрибута. Это свойство может использоваться для различных типов атрибутов, например, `number`, `string`, `vec3`.
 
+### JSON атрибут
 
-### JSON attribute
-
-The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+Атрибут JSON позволяет создавать вложенные атрибуты других типов атрибутов. Для каждого атрибута JSON вы должны указать схему для описания его свойств. Схема содержит другие обычные определения атрибутов сценария, как указано выше. Например:
 
 ```javascript
 MyScript.attributes.add('gameConfig', {
@@ -163,9 +160,9 @@ MyScript.attributes.add('gameConfig', {
 });
 ```
 
-You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+Вы также можете объявлять массивы атрибутов JSON, чтобы создавать массивы редактируемых объектов. Просто добавьте `array: true` при определении атрибута JSON, как вы делаете это для других типов атрибутов.
 
-Here's an example of accessing the above attributes in a script:
+Вот пример доступа к указанным выше атрибутам в скрипте:
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
@@ -176,6 +173,6 @@ MyScript.prototype.update = function (dt) {
 };
 ```
 
-*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
+*ПРИМЕЧАНИЕ: В настоящее время мы не поддерживаем определение атрибутов JSON в качестве дочерних элементов других атрибутов JSON. Вы можете определить атрибут JSON только на 1 уровень вложенности.*
 
 [1]: /api/pc.ScriptAttributes.html

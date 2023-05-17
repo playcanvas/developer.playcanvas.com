@@ -1,101 +1,101 @@
 ---
-title: Texture Compression
+title: Сжатие текстур
 layout: usermanual-page.hbs
 position: 1
 ---
 
-Texture data is stored in a device's video memory (or VRAM). It is important to ensure that your application does not exhaust VRAM as this can cause undesirable things like browser tab crashes.
+Данные текстур хранятся в видеопамяти (или VRAM) устройства. Важно следить за тем, чтобы ваше приложение не исчерпывало VRAM, так как это может вызвать нежелательные вещи, такие как сбои вкладок браузера.
 
-The Editor has the ability to apply lossy compression schemes to your textures to dramatically reduce the amount of VRAM used using Basis.
+Редактор имеет возможность применять схемы сжатия с потерями к вашим текстурам, чтобы значительно уменьшить использование VRAM с помощью Basis.
 
-[Basis][1] is a 'super-compressed' texture format. It's a platform independent lossy block compression format that can be transcoded to the natively supported hardware compression format at runtime. Supported transcode formats are ASTC, DXT, ETC2, ETC, PVR and ATC (selected in that order where available).
+[Basis][1] - это формат "суперсжатых" текстур. Это платформонезависимый формат сжатия с потерями, который может быть преобразован в поддерживаемый аппаратными средствами формат сжатия во время выполнения. Поддерживаемые форматы преобразования: ASTC, DXT, ETC2, ETC, PVR и ATC (выбираются в указанном порядке, если доступны).
 
-Consider this texture asset:
+Рассмотрим этот текстурный ассет:
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256">
 
-It's a 512x512 JPG that is 202KB in size. However, JPG is a compressed format and when passed to the graphics engine, it is expanded to an uncompressed RGB8 format that occupies 1.05MB of VRAM (including mipmap levels).
+Это изображение 512x512 в формате JPG размером 202 КБ. Однако JPG является сжатым форматом, и когда он передается графическому движку, он расширяется до несжатого формата RGB8, который занимает 1,05 МБ VRAM (включая уровни мип-карт).
 
-Enabling texture compression achieves the following results:
+Включение сжатия текстур дает следующие результаты:
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400">
 
-The compression has achieved a 6 times reduction in VRAM usage. Furthermore, in this case, compression has also reduced download size from 202KB to as little as 46KB using the Default quality setting and ETC Mode.
+Сжатие позволило уменьшить использование VRAM в 6 раз. Более того, в данном случае сжатие также уменьшило размер загрузки с 202 КБ до всего лишь 46 КБ, используя настройку качества Default и режим ETC.
 
-Below is a side by side comparison of the brick texture on Mac with Chrome:
+Ниже представлено сравнение текстуры кирпича на Mac с Chrome:
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison"></a>
+<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Сравнение сжатия текстуры кирпича"></a>
 
-Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [without][3] on Mac with Chrome:
+Вот еще один пример куба PlayCanvas [с Basis (режим ETC)][2] и [без него][3] на Mac с Chrome:
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison"></a>
+<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="Сравнение сжатия куба PlayCanvas"></a>
 
-## Using Basis Texture Compression
+## Использование сжатия текстур Basis
 
-Once the texture has been imported into the Editor, select it and scroll down in the inspector to find the Compression section.
+После того, как текстура импортирована в редактор, выберите ее и прокрутите вниз в инспекторе, чтобы найти раздел Compression.
 
-1. Tick BASIS.
-2. Click on Import Basis to add the WASM module for the Basis runtime to the project (this only needs to be done once).
-3. Change mode from 'ETC (smaller size, lower quality)' to 'ASTC (larger size, higher quality)' if you need to reduce compression artifacts on this texture.
-4. Tick Normals if compressing a normal map.
-5. Change the quality setting to balance file size vs quality. Lower quality results in smaller file sizes.
-6. Click on Compress Basis.
+1. Отметьте BASIS.
+2. Нажмите на Import Basis, чтобы добавить WASM-модуль для среды выполнения Basis в проект (это нужно сделать только один раз).
+3. Измените режим с 'ETC (меньший размер, ниже качество)' на 'ASTC (больший размер, выше качество)', если вам нужно уменьшить артефакты сжатия на этой текстуре.
+4. Отметьте Normals, если сжимаете нормальную карту.
+5. Измените настройку качества для балансировки размера файла и качества. Низкое качество дает меньшие размеры файлов.
+6. Нажмите на Compress Basis.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Включение сжатия текстур Basis" width="400">
 
-The Basis WASM module will add 253KB of extra gzipped data to the preload download size but that should be offset by the texture size savings compared to using the legacy texture compression format files ([see below][4]).
+WASM-модуль Basis добавит 253 КБ дополнительных сжатых данных к размеру предварительной загрузки, но это должно быть компенсировано экономией размера текстур по сравнению с использованием файлов формата сжатия текстур старого типа ([см. ниже][4]).
 
-To remove Basis compression from a texture:
+Чтобы удалить сжатие Basis из текстуры:
 
-1. Untick BASIS.
-2. Click on Compress Basis.
+1. Снимите галочку с BASIS.
+2. Нажмите на Compress Basis.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Отключение сжатия текстур Basis" width="400">
 
-If you would no longer want to use Basis, remove Basis compression from all textures and delete the Basis folder from the project.
+Если вы больше не хотите использовать Basis, удалите сжатие Basis со всех текстур и удалите папку Basis из проекта.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Удаление модуля Basis" width="400">
 
-## Basis Limitations
+## Ограничения Basis
 
-There are some limitations of Basis texture compression in PlayCanvas.
+В PlayCanvas есть некоторые ограничения сжатия текстур Basis.
 
-1. The PVR format only supports textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. A Basis texture that is non-square or non-power of two cannot be transcoded to PVR format but will instead use a 16-bit 565 pixel format. It will still display correctly, although may occupy more VRAM.
-2. The maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
+1. Формат PVR поддерживает только текстуры, размеры которых являются одновременно квадратными (одинаковая ширина и высота) и степенью двойки (например, 256, 512, 1024 и так далее). Старые устройства iOS (с SoC A6 или ниже, такие как iPhone 5 и 5C) и старые версии iOS (13.7 и ниже) поддерживают только PVR. Текстура Basis, которая не является квадратной или степенью двойки, не может быть преобразована в формат PVR, но вместо этого будет использовать 16-битный формат пикселей 565. Она все равно будет отображаться корректно, хотя может занимать больше VRAM.
+2. Максимальные размеры текстур, поддерживаемые для сжатия Basis, составляют 4096x4096. Текстуры большего размера займут чрезмерное количество времени для сжатия, поэтому это отключено.
 
-## Legacy Texture Compression
+## Сжатие текстур устаревшего типа
 
-We strongly recommend using Basis compression where possible as it requires a single texture file to cover all platforms and it is also a much smaller file compared to the legacy formats. Our tests show Basis to be ~50% smaller with minimal difference in quality.
+Мы настоятельно рекомендуем использовать сжатие Basis, где это возможно, так как для него требуется один файл текстуры для всех платформ, и он также имеет гораздо меньший размер по сравнению с устаревшими форматами. Наши тесты показывают, что Basis меньше примерно на 50% с минимальной разницей в качестве.
 
-The Legacy Texture schemes are:
+Схемы устаревших текстур:
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
-* ETC: Typically supported by Android devices.
+* DXT: Обычно поддерживается настольными устройствами.
+* PVR: Обычно поддерживается устройствами iOS.
+* ETC: Обычно поддерживается устройствами Android.
 
-To use the Legacy Texture Compression options, select the texture and scroll down in the inspector to find the Compression section.
+Чтобы использовать параметры сжатия устаревших текстур, выберите текстуру и прокрутите вниз в инспекторе, чтобы найти раздел Сжатие.
 
-1. Tick LEGACY.
-2. Tick all the formats you wish to use.
-3. Click on Compress Legacy.
+1. Установите флажок LEGACY.
+2. Установите флажки для всех форматов, которые вы хотите использовать.
+3. Нажмите на Compress Legacy.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Включение сжатия устаревших текстур" width="400">
 
-To remove a or several formats:
+Чтобы удалить один или несколько форматов:
 
-1. Untick all the formats you wish to remove.
-2. Click on Compress Legacy.
+1. Снимите флажки со всех форматов, которые вы хотите удалить.
+2. Нажмите на Compress Legacy.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Отключение сжатия устаревших текстур" width="400">
 
-## Migrating from Legacy to Basis Texture Compression
+## Миграция с устаревшего сжатия текстур на Basis
 
-If you have a project that is already using the Legacy Texture Compression formats and wish to use Basis, do the following:
+Если у вас есть проект, который уже использует форматы сжатия устаревших текстур и вы хотите использовать Basis, выполните следующие действия:
 
-1. Remove all the legacy texture formats.
-2. Enable and use Basis.
+1. Удалите все форматы устаревших текстур.
+2. Включите и используйте Basis.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Миграция с устаревшего на Basis" width="400">
 
 
 [1]: https://github.com/BinomialLLC/basis_universal

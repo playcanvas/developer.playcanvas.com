@@ -1,72 +1,106 @@
 ---
-title: Branches
+title: Ветки
 layout: usermanual-page.hbs
 position: 2
 ---
 
-A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the main branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
+Ветка - это изолированная линия разработки. Каждая контрольная точка принадлежит ветке, и серия контрольных точек в ветке может отслеживать разработку приложения или определенной функции. Проект PlayCanvas всегда будет иметь хотя бы одну ветку, основную ветку, и часто будет иметь несколько веток. Вы можете объединить изменения из одной ветки в любую другую ветку с помощью панели управления версиями в редакторе.
 
-## Main branch
+## Основная ветка
 
-Every project has a branch called "main" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "main" branch will be used as a default if no other branch is specified. A common scenario is to treat the main branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the main branch as best suits your needs.
+Каждый проект имеет ветку с названием "main", которая всегда присутствует и не может быть удалена. Во многих отношениях эта ветка ничем не отличается от любой другой ветки. Однако в некоторых случаях (например, REST API) ветка "main" будет использоваться по умолчанию, если не указана другая ветка. Распространенный сценарий заключается в том, чтобы рассматривать основную ветку как текущее состояние разработки вашего приложения; использовать другую ветку для стабильных выпусков и еще больше веток для разработки функций. Однако вы должны чувствовать себя свободно использовать или не использовать основную ветку так, как это лучше всего соответствует вашим потребностям.
 
-## Current branch
+## Текущая ветка
 
-For each project you work on you will always have a single branch set to be your **current branch**. This is the branch that you are actively working on and whenever you open the editor or edit a code file your changes will apply to your current branch.
+Для каждого проекта, над которым вы работаете, у вас всегда будет одна ветка, установленная как ваша **текущая ветка**. Это ветка, над которой вы активно работаете, и каждый раз, когда вы открываете редактор или редактируете файл кода, ваши изменения будут применяться к вашей текущей ветке.
 
-## Creating a new branch
+## Создание новой ветки
 
 ![Create branch][1]
 
-To create a branch open the version control panel, select the checkpoint that you wish to start the branch from and choose the "New Branch" option in the checkpoint's drop-down menu.
+Чтобы создать ветку, откройте панель управления версиями, выберите контрольную точку, с которой вы хотите начать ветку, и выберите опцию "New Branch" в выпадающем меню контрольной точки.
 
 ![New branch dialog][2]
 
-You will be asked to name your branch. Try to give your branch a description name like `fix-player-bug` or `refactor-sound-effects`. After creating the branch you will automatically be switched to the new branch you just created.
+Вам будет предложено дать имя вашей ветке. Постарайтесь дать вашей ветке описательное имя, например `fix-player-bug` или `refactor-sound-effects`. После создания ветки вы автоматически переключитесь на новую ветку, которую только что создали.
 
-## Switching to a branch
+Ветки, созданные вами, автоматически будут добавлены в избранное, чтобы вы могли быстро найти их в [фильтре веток](#filtering-branch-list) для избранных.
+
+## Фильтрация списка веток
+
+![Branch filter][9]
+
+Вы можете фильтровать ветки между:
+
+- Избранные - Ветки, добавленные вами в избранное.
+- Открытые - Все открытые ветки.
+- Закрытые - Все закрытые ветки.
+
+Добавление ветки в избранное можно сделать следующими способами:
+
+### Выпадающее меню
+
+![Favorite a branch via menu][10]
+
+### Кнопка выбранной ветки
+
+![Favorite a branch via button][11]
+
+## Поиск ветки
+
+![Searching for a branch][8]
+
+Чтобы найти ветку в текущем списке фильтров, вы можете использовать строку поиска сверху.
+
+## Переключение на ветку
 
 ![Switch branch][3]
 
-To switch branch open the version control panel, select the branch you wish to switch to and choose the "Switch to this branch" option in the branch's drop-down menu.
+Чтобы переключиться на другую ветку, откройте панель управления версиями, выберите ветку, на которую вы хотите переключиться, и выберите опцию "Switch to this branch" в выпадающем меню ветки.
 
-The editor will reload with your current branch switched to the chosen branch.
+Редактор перезагрузится с вашей текущей веткой, переключенной на выбранную ветку.
 
-## Closing a branch
+## Закрытие ветки
 
 ![Close branch][4]
 
-If you have completed work on a branch, you can close it which will remove it from the open branches list.
+Если вы завершили работу над веткой, вы можете закрыть ее, что уберет ее из списка открытых веток.
 
-To close a branch, open the version control panel, select the branch you wish to close and choose the "Close this branch" option in the branch's drop-down menu. Note that you cannot close your current branch or the main branch. Switch to a different branch first if you wish to close your current branch.
+Чтобы закрыть ветку, откройте панель управления версиями, выберите ветку, которую вы хотите закрыть, и выберите опцию "Close this branch" в выпадающем меню ветки. Обратите внимание, что вы не можете закрыть текущую ветку или основную ветку. Переключитесь на другую ветку сначала, если вы хотите закрыть текущую ветку.
 
 ![Close branch dialog][5]
 
-You will be asked to confirm the closing of the branch and you have an option to discard any changes that were made to your branch since you last took a checkpoint. By default, PlayCanvas will save your changes in an additional checkpoint before closing the branch. If you wish to discard these changes you can select the option here.
+Вам будет предложено подтвердить закрытие ветки, и у вас есть возможность создать контрольную точку перед закрытием. Эта опция включена по умолчанию. Если вы хотите отказаться от этих изменений, вы можете снять флажок здесь.
 
-**Note, enabling this checkbox will lose any work you have made in the branch since you last made a checkpoint**.
+**Примечание: снятие этого флажка приведет к потере всех работ, выполненных в ветке с момента создания последней контрольной точки**
 
-## Deleting a branch
+Закрытые ветки также могут быть повторно открыты в последующем.
 
-Deletion of branches are only supported if the following conditions are met:
+## Удаление ветки
 
-- The branch has not been merged into another branch
-- No branches have been created from this branch
+Удаление веток поддерживается только при выполнении следующих условий:
 
-To delete a branch open the version control panel, select the branch you wish to delete and choose the "Delete this branch" option in the branch's drop-down menu.
+- Ветка не была объединена с другой веткой
+- Из этой ветки не было создано никаких других веток
 
-![][delete-branch]
+Чтобы удалить ветку, откройте панель управления версиями, выберите ветку, которую вы хотите удалить, и выберите опцию "Delete this branch" в выпадающем меню ветки.
 
-You will be asked to confirm the deletion of the branch by typing the name of the branch in the dialog box.
+![Delete a branch][6]
 
-**Note, deleted branches cannot be recovered after deletion! If in doubt, please close the branch instead.**
+Вам будет предложено подтвердить удаление ветки, введя имя ветки в диалоговом окне.
 
-![][delete-branch-dialog]
+**Обратите внимание, удаленные ветки нельзя восстановить после удаления! Если сомневаетесь, лучше закройте ветку.**
 
-[1]: /images/user-manual/version-control/new-branch.jpg
-[2]: /images/user-manual/version-control/new-branch-dialog.jpg
-[3]: /images/user-manual/version-control/switch-branch.jpg
-[4]: /images/user-manual/version-control/close-branch.jpg
-[5]: /images/user-manual/version-control/close-branch-dialog.jpg
-[delete-branch]:  /images/user-manual/version-control/delete-branch.png
-[delete-branch-dialog]:  /images/user-manual/version-control/delete-branch-dialog.png
+![Предупреждение об удалении ветки][7]
+
+[1]: /images/user-manual/version-control/branches/new-branch.png
+[2]: /images/user-manual/version-control/branches/new-branch-dialog.png
+[3]: /images/user-manual/version-control/branches/switch-branch.png
+[4]: /images/user-manual/version-control/branches/close-branch.png
+[5]: /images/user-manual/version-control/branches/close-branch-dialog.png
+[6]: /images/user-manual/version-control/branches/delete-branch.png
+[7]: /images/user-manual/version-control/branches/delete-branch-dialog.png
+[8]: /images/user-manual/version-control/branches/search-for-a-branch.gif
+[9]: /images/user-manual/version-control/branches/filter-branches.gif
+[10]: /images/user-manual/version-control/branches/favorite-branch-via-dropdown.gif
+[11]: /images/user-manual/version-control/branches/favorite-branch-via-button.gif

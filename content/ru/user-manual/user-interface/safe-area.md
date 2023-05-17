@@ -1,50 +1,50 @@
 ---
-title: Safe Area
+title: Безопасная зона
 layout: usermanual-page.hbs
 position: 10
 ---
 
-With the trend of mobile devices having full device screens, a notch or cut out in the display is used to make room for the ear piece speaker and front facing camera (see below for the iPhone X).
+С учетом тенденции мобильных устройств с полноэкранными дисплеями, вырез или прорезь в дисплее используются для освобождения места для динамика разговорного устройства и фронтальной камеры (см. ниже для iPhone X).
 
 <img loading="lazy" src="/images/user-manual/user-interface/safe-area/iphone-notch.png">
 
-(Image Original: Rafael Fernandez, Modified version:PlayCanvas, [CC BY-SA 4.0][cc-by-sa-40], via Wikimedia Commons)
+(Оригинальное изображение: Rafael Fernandez, Измененная версия: PlayCanvas, [CC BY-SA 4.0][cc-by-sa-40], через Wikimedia Commons)
 
-Developers will need to be mindful of any essential information that is needed for the user which could be hidden by the notch during development.
+Разработчикам нужно будет учитывать любую важную информацию, которая может быть скрыта вырезом во время разработки.
 
-For example, the screenshot below looks fine on desktop in devtools mobile view.
+Например, снимок экрана ниже выглядит нормально на рабочем столе в мобильном виде devtools.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/desktop-view.png" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/desktop-view.png" width="500">
 
-However, when opened on a mobile device such as the iPhone X, the 'Left' text is rendered under the notch and the 'Bottom' text is rendered under the navigation bar.
+Однако, когда он открывается на мобильном устройстве, таком как iPhone X, текст "Left" отображается под вырезом, а текст "Bottom" отображается под панелью навигации.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-render-under-notch.png" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-render-under-notch.png" width="500">
 
-## Safe Area
+## Безопасная зона
 
-To help developers, browsers on the these devices do support [environment variables][env-mdn] in CSS to return values for positioning elements within an area that is occupied by the notch or navigation bar. This is known as a 'safe area'.
+Чтобы помочь разработчикам, браузеры на этих устройствах поддерживают [переменные окружения][env-mdn] в CSS для возврата значений позиционирования элементов в области, занятой вырезом или панелью навигации. Это называется "безопасная зона".
 
-We have a [project with a reusable script][safe-area-project] that takes those CSS values and applies them to an UI Group Element entity via resizing the margins.
+У нас есть [проект с многоразовым скриптом][safe-area-project], который берет эти значения CSS и применяет их к элементу группы UI через изменение размеров полей.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-safe-area.png" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-safe-area.png" width="500">
 
-The UI setup in the project has an Entity with a full screen Group Element named 'Safe Area'. This has the script 'mobileSafeArea' attached which contains the logic for fitting the Element within the safe area of the device.
+Настройка пользовательского интерфейса в проекте имеет сущность с полноэкранным элементом группы под названием "Safe Area". К нему прикреплен скрипт "mobileSafeArea", который содержит логику для подгонки элемента в безопасной зоне устройства.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-layout.png" width="420px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-layout.png" width="420">
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/safe-area-entity-setup.png" width="420px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/safe-area-entity-setup.png" width="420">
 
-Any essential UI Elements can be placed as a child of the Safe Area Entity to be anchored relative to it.
+Любые существенные элементы пользовательского интерфейса могут быть размещены в качестве дочернего элемента сущности Safe Area для привязки к нему.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-essential-elements.png" width="420px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-essential-elements.png" width="420">
 
-To help with development, a debug setting can be enabled to simulate a safe area to preview what a UI layout would look like without needing a device.
+Чтобы помочь в разработке, можно включить настройку отладки для имитации безопасной зоны и предварительного просмотра того, как будет выглядеть макет пользовательского интерфейса без необходимости использования устройства.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config.png" width="600px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config.png" width="600">
 
-The debug config can be edited with live updates in the launch tab too.
+Конфигурацию отладки можно редактировать с прямыми обновлениями на вкладке запуска.
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config-runtime.gif" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config-runtime.gif" width="500">
 
 [env-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/env()
 [safe-area-project]: https://playcanvas.com/project/828118/overview/mobile-ui-safe-areas

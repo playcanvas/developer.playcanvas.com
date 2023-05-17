@@ -1,16 +1,16 @@
 ---
-title: Shader Editor
+title: Редактор шейдеров
 layout: shader-editor-page.hbs
 position: 0.5
 ---
 
-Welcome to the __Shader Editor__ User Manual.
+Добро пожаловать в Руководство пользователя __Shader Editor__.
 
-Here you will find:
+Здесь вы найдете:
 
-- An [introduction][1] to the tool.
-- A general [overview][3].
-- Information on the [window layout][2].
+- [Введение][1] в инструмент.
+- Общий [обзор][3].
+- Информацию о [расположении окон][2].
 
 [1]: /shader-editor/introduction
 [2]: /shader-editor/window-layout

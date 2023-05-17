@@ -1,25 +1,25 @@
 ---
-title: Using the Tween library
+title: Использование библиотеки Tween
 layout: tutorial-page.hbs
-tags: animation, scripts
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg"
+tags: анимация, скрипты
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg
 ---
 
-Often we want to animate an Entity or some arbitrary value between two points. This is called tweening. We have created a tweening library for that exact purpose. You can find the library at [https://github.com/playcanvas/playcanvas-tween][1].
+Часто мы хотим анимировать Entity или некоторое произвольное значение между двумя точками. Это называется твинингом. Мы создали библиотеку твининга для этой конкретной цели. Вы можете найти библиотеку по адресу [https://github.com/playcanvas/playcanvas-tween][1].
 
-To use the library just upload the `tween.js` file to your project. This will allow you to tween Entity properties like position, rotation, scale etc like so:
+Чтобы использовать библиотеку, просто загрузите файл `tween.js` в ваш проект. Это позволит вам анимировать свойства Entity, такие как позиция, вращение, масштаб и т. д., следующим образом:
 
 ```javascript
 entity.tween(entity.getLocalPosition()).to({x: 10, y: 0, z: 0}, 1, pc.SineOut);
 ```
 
-Here is an example on how to tween the local position of an Entity:
+Вот пример того, как сделать плавное изменение локальной позиции Entity:
 
-<iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Using the Tween library"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Использование библиотеки Tween"></iframe>
 
-Here are links to the [Project][2] and the [Editor][3] for this example.
+Здесь ссылки на [Проект][2] и [Редактор][3] для этого примера.
 
-To get the above we are doing:
+Чтобы получить вышеуказанное, мы делаем:
 
 ```javascript
 this.entity
@@ -30,13 +30,13 @@ this.entity
     .start();
 ```
 
-Here is an example on how to tween the local rotation of an Entity:
+Вот пример того, как сделать плавное изменение локального вращения Entity:
 
 <iframe loading="lazy" src="https://playcanv.as/b/H8553dGa/" title="Tween Local Rotation"></iframe>
 
-Here are links to the [Project][2] and the [Editor][4] for this example.
+Здесь ссылки на [Проект][2] и [Редактор][4] для этого примера.
 
-To get the above we can do:
+Чтобы получить вышеуказанное, мы можем сделать:
 
 ```javascript
 this.entity
@@ -47,13 +47,13 @@ this.entity
     .start();
 ```
 
-Here's how to tween the local scale of an Entity:
+Вот как сделать плавное изменение локального масштаба Entity:
 
 <iframe loading="lazy" src="https://playcanv.as/b/ndTiHCpD/" title="Tween Local Scale"></iframe>
 
-Here are links to the [Project][2] and the [Editor][5] for this example.
+Здесь ссылки на [Проект][2] и [Редактор][5] для этого примера.
 
-To get the above we can do:
+Чтобы получить то, что выше, мы можем сделать:
 
 ```javascript
 this.entity
@@ -64,13 +64,13 @@ this.entity
     .start();
 ```
 
-And finally here's a way to tween colors:
+И, наконец, вот способ сделать плавный переход между цветами:
 
 <iframe loading="lazy" src="https://playcanv.as/b/aoRYsYrc/" title="Tween Material Color"></iframe>
 
-Here are links to the [Project][2] and the [Editor][6] for this example.
+Вот ссылки на [Проект][2] и [Редактор][6] для этого примера.
 
-To get the above we can do:
+Чтобы получить то, что выше, мы можем сделать:
 
 ```javascript
 var color = new pc.Color(0, 0, 0);
@@ -87,7 +87,7 @@ this.app
     .start();
 ```
 
-Again you can find the library at [https://github.com/playcanvas/playcanvas-tween][1].
+Снова вы можете найти библиотеку по адресу [https://github.com/playcanvas/playcanvas-tween][1].
 
 [1]: https://github.com/playcanvas/playcanvas-tween
 [2]: https://playcanvas.com/project/452634/overview/using-the-tween-library

@@ -1,85 +1,85 @@
 ---
 title: Использование реестра ассетов
 layout: tutorial-page.hbs
-tags: loading, assets, basics
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
+tags: загрузка, ассеты, основы
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
 ---
 
 <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 
-*Click to focus, hold and release SPACEBAR to switch between two A and B models. Press 'L' to load the C model. Hold 'C' to display the C model.*
+*Кликните, чтобы сфокусироваться, удерживайте и отпустите SPACEBAR, чтобы переключаться между двумя моделями A и B. Нажмите 'L', чтобы загрузить модель C. Удерживайте 'C', чтобы отобразить модель C.*
 
-For simple games and products you will set up all your assets in the Editor, they will be preloaded before you application starts, and your app will just work.
+Для простых игр и продуктов вы настроите все свои ассеты в редакторе, они будут предварительно загружены перед запуском вашего приложения, и ваше приложение будет просто работать.
 
-For more advanced products you may wish to access your assets in code, change references, modify properties and also stream data in so that your application can load more quickly. Only loading the assets as they are needed. To do this you'll use the [`AssetRegistry`][1].
+Для более продвинутых продуктов вы, возможно, захотите получить доступ к своим ассетам в коде, изменить ссылки, изменить свойства и также потоковые данные, чтобы ваше приложение могло загружаться быстрее. Загружая ассеты только по мере необходимости. Для этого вы будете использовать [`AssetRegistry`][1].
 
-In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
+В этом учебнике мы создадим небольшую сцену, которая позволяет вам менять модель на компоненте рендеринга, нажимая клавишу. Мы также динамически загрузим третью модель, которая не предварительно загружена. Вы можете увидеть завершенный [проект здесь][3].
 
-## Setup
+## Настройка
 
-*The project is set up as follows*
+*Проект настроен следующим образом*
 
-* Three model assets are uploaded: **A** is a model of the letter A, **B** is a model of the letter B and **C** is a model of the letter C.
-* The **C** render asset is set up *not* to be preloaded.
-* A render Entity is added to the scene and the model **A** is assigned to the render component.
-* A script component is added to the render Entity and a new script is created called `update_asset.js`.
+* Загружены три ассета модели: **A** - модель буквы A, **B** - модель буквы B и **C** - модель буквы C.
+* Актив рендеринга **C** настроен так, чтобы *не* предварительно загружаться.
+* В сцену добавляется сущность рендеринга, и модель **A** назначается на компонент рендеринга.
+* Компоненту сценария добавляется сущность рендеринга, и создается новый сценарий под названием `update_asset.js`.
 
-Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
+Загрузите [модель A][5], [модель B][6] и [модель C][7] и загрузите их в свой проект. Убедитесь, что файлы названы A.dae, B.dae и C.dae, так как это повлияет на имена ассетов.
 
-## The AssetRegistry
+## Реестр ассетов
 
-The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
+[`pc.AssetRegistry`][1] доступен во всех сценариях как `this.app.assets`. Реестр заполняется сведениями обо всех ассетах времени выполнения, добавленных в ваш проект, будут они загружены или нет. Используйте реестр ассетов, чтобы найти ассеты, необходимые в вашем приложении.
 
-In this case we've declared three script attributes `a`, `b` and `c` which are assigned to assets in the Editor. Then they are automatically available in our script.
+В данном случае мы объявили три атрибута сценария `a`, `b` и `c`, которые назначаются ассетам в редакторе. Затем они автоматически доступны в нашем сценарии.
 
-## Using preloaded assets
+## Использование предварительно загруженных ассетов
 
 ```javascript
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
         if (this.entity.render.asset !== this.b.id) {
-            // update the render component to the new Render Asset
-            console.log('Changed to B Render Asset');
+            // обновить компонент рендеринга для нового Render Asset
+            console.log('Изменено на B Render Asset');
             this.entity.render.asset = this.b;
         }
     } else {
         // ...
             if (this.entity.render.asset !== this.a.id) {
-                // restore original Render Asset
-                console.log('Changed to A Render Asset');
+                // восстановить исходный Render Asset
+                console.log('Изменено на A Render Asset');
                 this.entity.render.asset = this.a;
             }
         // ...
     }
 ```
 
-The **A** and **B** assets are marked as **preload** in this project. This means that during the loading screen, these assets are downloaded. They will be ready to use as soon as your application starts. When an asset is loaded, the loaded resource is available as `asset.resource` and we can assign the asset to the [render component asset property][8]. If `asset.loaded` is `false`, then the asset isn't loaded.
+Ассеты **A** и **B** помечены как **preload** в этом проекте. Это означает, что во время загрузочного экрана эти ассеты загружаются. Они будут готовы к использованию сразу после запуска вашего приложения. Когда ассет загружен, загруженный ресурс доступен как `asset.resource`, и мы можем назначить ассет для [свойства ассета компонента отображения][8]. Если `asset.loaded` равно `false`, то ассет не загружен.
 
-<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360px">
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-a-preload.png" width="360">
 
-So, the `A` and `B` models are preloaded, which means we know they will be ready when we are running the application. This code checks if the space bar is pressed, and if so we change the render asset on the render component to be the resource property of the asset. In this case `asset.resource` will be a `pc.Render` object. For each different asset type (audio, texture, etc), the `asset.resource` property will be the relevant type.
+Итак, модели `A` и `B` предварительно загружены, что означает, что мы знаем, что они будут готовы, когда мы запускаем приложение. Этот код проверяет, нажата ли пробел, и если да, то мы меняем ассет отображения на компоненте отображения на свойство ресурса ассета. В этом случае `asset.resource` будет объектом `pc.Render`. Для каждого разного типа ассетов (аудио, текстура и т. д.) свойство `asset.resource` будет соответствующим типом.
 
-## Loading assets at runtime
+## Загрузка ассетов во время выполнения
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_C)) {
     if (this.c.loaded) {
         if (this.entity.render.asset !== this.c.id) {
-            console.log('Changed to C Render Asset');
+            console.log('Изменено на C Render Asset');
             this.entity.render.asset = this.c;
         }
     }
 } else {
     if (this.entity.render.asset !== this.a.id) {
-        // restore original Render Asset
-        console.log('Changed to A Render Asset');
+        // восстановить исходный Render Asset
+        console.log('Изменено на A Render Asset');
         this.entity.render.asset = this.a;
     }
 }
 ```
 
-The **C** render asset is not marked as *preload*, so in the code above, you can see that we check if the resource is loaded before we use it. if `asset.loaded` is false, then the resource isn't loaded and we can't change the render component. If the **C** render asset is loaded then `this.c.resource` will be the `pc.Render` property and `asset.loaded` will be true, we'll be then able to assign it.
+**C** ресурс отрисовки не помечен как *preload*, поэтому в приведенном выше коде вы можете видеть, что мы проверяем, загружен ли ресурс, прежде чем использовать его. Если `asset.loaded` равно false, то ресурс не загружен, и мы не можем изменить компонент отрисовки. Если **C** ресурс отрисовки загружен, то `this.c.resource` будет свойством `pc.Render`, и `asset.loaded` будет равно true, тогда мы сможем назначить его.
 
-<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360px">
+<img loading="lazy" src="/images/tutorials/using_assets/using-assets-c-preload.png" width="360">
 
 ```javascript
 if (this.app.keyboard.isPressed(pc.KEY_L)) {
@@ -87,11 +87,11 @@ if (this.app.keyboard.isPressed(pc.KEY_L)) {
 }
 ```
 
-When you press the `L` key we load the **C** model. To do this we pass the unloaded asset into `this.app.assets.load()`. If the asset is already loaded, this method will do nothing.
+Когда вы нажимаете клавишу `L`, мы загружаем модель **C**. Чтобы сделать это, мы передаем незагруженный Asset в `this.app.assets.load()`. Если Asset уже загружен, этот метод ничего не сделает.
 
-Once the asset is loaded `asset.resource` will be a `pc.Render` instance and we can assign the asset to the render component by pressing the `C` key.
+После загрузки Asset`а, `asset.resource` будет экземпляром `pc.Render`, и мы можем назначить Asset на компонент рендеринга, нажав клавишу `C`.
 
-## The complete script
+## Полный скрипт
 
 ```javascript
 var UpdateAsset = pc.createScript('updateAsset');
@@ -111,33 +111,33 @@ UpdateAsset.attributes.add('c', {
     assetType: 'render'
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 UpdateAsset.prototype.initialize = function() {
     this.app.keyboard.preventDefault = true;
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 UpdateAsset.prototype.update = function(dt) {
     var app = this.app;
 
     if (app.keyboard.isPressed(pc.KEY_SPACE)) {
         if (this.entity.render.asset !== this.b.id) {
-            // update the render component to the new Render Asset
-            console.log('Changed to B Render Asset');
+            // обновление компонента рендеринга для нового Render Asset
+            console.log('Изменено на B Render Asset');
             this.entity.render.asset = this.b;
         }
     } else {
         if (app.keyboard.isPressed(pc.KEY_C)) {
             if (this.c.loaded) {
                 if (this.entity.render.asset !== this.c.id) {
-                    console.log('Changed to C Render Asset');
+                    console.log('Изменено на C Render Asset');
                     this.entity.render.asset = this.c;
                 }
             }
         } else {
             if (this.entity.render.asset !== this.a.id) {
-                // restore original Render Asset
-                console.log('Changed to A Render Asset');
+                // восстановление исходного Render Asset
+                console.log('Изменено на A Render Asset');
                 this.entity.render.asset = this.a;
             }
         }
@@ -149,58 +149,57 @@ UpdateAsset.prototype.update = function(dt) {
 };
 ```
 
-## AssetRegistry events
+## События AssetRegistry
 
-One thing we don't demonstrate in this example is how to know when an asset is loaded. To do this we use `pc.AssetRegistry` events like the `"load"` event. Here's some sample code:
+Одна вещь, которую мы не демонстрируем в этом примере, - это как узнать, когда загружен ассет. Для этого мы используем события `pc.AssetRegistry`, такие как событие `"load"`. Вот пример кода:
 
 ```javascript
-// find the asset by name in the registry
+// найти ассет по имени в реестре
 var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
+// установить одноразовый слушатель событий для события загрузки
 this.app.assets.once("load", function (asset) {
-    // asset.resource is now ready
+    // asset.resource теперь готов
 }, this);
 ```
 
-The `"load"` event is quite broad. It is fired for every asset that is loaded, so if assets are loaded elsewhere, you won't know that this is your asset. Instead you can narrow your event down by using the `"load:id"` event.
+Событие `"load"` довольно обширное. Оно срабатывает для каждого загруженного ассета, поэтому если ассеты загружаются где-то еще, вы не будете знать, что это ваш ассет. Вместо этого вы можете сузить ваше событие, используя событие `"load:id"`.
 
 ```javascript
-// find the asset in the registry
+// найти Asset в реестре
 var asset = this.app.assets.find("A");
-// set up a one-off event listener for the load event
+// установить одноразовый обработчик событий для события загрузки
 this.app.assets.once("load:" + asset.id, function (asset) {
-    // asset.resource is now ready
+    // asset.resource теперь готов
 }, this);
 ```
 
-The above event will only be fired for that specific asset. Much more useful.
+Вышеуказанное событие будет вызываться только для этого конкретного ассета. Гораздо более полезно.
 
-Finally, there is one specific coding pattern, that often occurs. So often, in fact, that we've provided a convenient method to do it for you.
+Наконец, есть один конкретный шаблон кодирования, который часто встречается. Настолько часто, на самом деле, что мы предоставили удобный метод для выполнения этого для вас.
 
 ```javascript
 var asset = this.app.assets.find("A");
 if (!asset.loaded) {
     this.app.assets.once("load:" + asset.id, function (asset) {
-        // do something with asset.resource
+        // сделать что-то с asset.resource
     });
     this.app.assets.load(asset);
 } else {
-    // do something with asset.resource
+    // сделать что-то с asset.resource
 }
 ```
 
-This code loads an asset when it is needed, but it's a bit long winded. So, instead, you can use the `asset.ready()` method. This code performs the same function as above
-
+Этот код загружает ассет, когда он нужен, но он немного многословен. Поэтому вместо этого вы можете использовать метод `asset.ready()`. Этот код выполняет ту же функцию, что и выше
 
 ```javascript
 var asset = this.app.assets.find("A");
 asset.ready(function (asset) {
-    // do something with asset.resource
+    // сделать что-то с asset.resource
 });
 this.app.assets.load(asset);
 ```
 
-The `asset.ready()` method will call it's callback as soon as the asset is loaded, if the asset is already loaded, it will call it straight away. `app.assets.load()` does nothing if the asset is already loaded.
+Метод `asset.ready()` вызовет свой обратный вызов, как только ресурс будет загружен, если ресурс уже загружен, он вызовет его сразу. `app.assets.load()` ничего не делает, если ресурс уже загружен.
 
 [1]: /api/pc.AssetRegistry.html
 [3]: https://playcanvas.com/project/406036

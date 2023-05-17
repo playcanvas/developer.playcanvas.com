@@ -1,20 +1,20 @@
 ---
-title: Texture
+title: Текстура
 layout: usermanual-page.hbs
 position: 15
 ---
 
-A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
+Текстура - это изображение, которое может быть назначено [материалу][1] и затем применено к графической примитиве.
 
-## Importing Textures
+## Импорт текстур
 
-There are 3 ways you can import texture assets into PlayCanvas:
+Существует 3 способа импорта текстурных ассетов в PlayCanvas:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
-3. Import an FBX file that embeds textures.
+1. Перетащите изображения в панель Assets.
+2. Выберите 'Загрузить' из контекстного меню в панели Assets и выберите изображение с помощью файлового менеджера.
+3. Импортируйте файл FBX, который встраивает текстуры.
 
-Supported image formats are:
+Поддерживаемые форматы изображений:
 
 * JPG
 * PNG
@@ -25,55 +25,55 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG and PNG files remain in their original format.
+Импортированные файлы JPG и PNG остаются в их исходном формате.
 
-GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
+Типы изображений GIF, TGA, BMP и TIF будут преобразованы в JPG или PNG при импорте. Если импортированное изображение имеет прозрачность, оно будет преобразовано в PNG. В противном случае оно будет преобразовано в JPG.
 
-HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format.
+HDR и EXR - это форматы [высокой динамической диапазона][2]. Изображения этих типов преобразуются в PNG при импорте и помечаются как хранящиеся в формате RGBM. RGBM по существу хранит множитель для значений RGB в альфа-канале PNG, что позволяет сжимать формат HDR в формат низкой динамической диапазона.
 
-By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
+По умолчанию импортированные изображения будут изменены до ближайшей степени двойки. Например, изображение размером 323x414 будет изменено до 256x512 при импорте. Это делается потому, что графический движок не может использовать мипмаппинг с текстурами, не являющимися степенью двойки. Однако это поведение можно переопределить, отключив настройку 'Textures POT' в панели Asset Tasks перед импортом текстуры, не являющейся степенью двойки.
 
-## Texture Properties
+## Свойства текстуры
 
-Selecting a texture's thumbnail in the Assets panel will load it into the Inspector panel. Note that you can multi-select textures and edit the whole selection simultaneously in the Inspector.
+Выбор миниатюры текстуры в панели Assets загрузит ее в панель Inspector. Обратите внимание, что вы можете выбрать несколько текстур и редактировать весь выбор одновременно в панели Inspector.
 
-A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
+Текстура имеет стандартный набор свойств ассетов (ID, имя, теги и т. д.). Но у нее также есть некоторые специфические для текстуры свойства.
 
-![Texture Properties][3]
+![Свойства текстуры][3]
 
-### Texture Filtering
+### Фильтрация текстур
 
-Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbors. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
+Фильтрация текстур позволяет контролировать, как рассчитывается цвет текстурированного пикселя. 'Point' не применяет фильтрации, тогда как 'Linear' будет интерполировать цвет текселя с соседними. Это дает лучшие визуальные результаты, особенно когда текстура минимизируется (когда текстура занимает меньше пикселей на экране, чем у нее текселей).
 
-### Anisotropy
+### Анизотропия
 
-When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
+Когда текстуры просматриваются на поверхностях под косым углом, качество может страдать, и они могут выглядеть размытыми. Чтобы исправить эту проблему, вы можете установить значение анизотропии. Посмотрите, как разные значения анизотропии могут влиять на внешний вид текстуры:
 
-![Anisotropy][4]
+![Анизотропия][4]
 
-Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
+Обратите внимание, что с увеличением анизотропии увеличивается и стоимость выборки текстуры на GPU.
 
-### Texture Addressing
+### Адресация текстур
 
-The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
+Свойства адресации текстур позволяют контролировать, как текстура выбирается для текстурных координат за пределами диапазона от 0 до 1. Посмотрите, как разные режимы влияют на спрайт ниже:
 
-![Addressing][5]
+![Адресация][5]
 
-## Max Texture Size
+## Максимальный размер текстуры
 
-Different devices can support different texture sizes. Using [WebGL report][7] on the device and browser, we can see the max size supported.
+Разные устройства могут поддерживать разные размеры текстур. Используя [отчет WebGL][7] на устройстве и браузере, мы можем увидеть максимально поддерживаемый размер.
 
-For example, this is from a MacBook Pro 16 inch (2020) laptop with Chrome which shows support up to 16384x16384.
+Например, это отчет с ноутбука MacBook Pro 16 дюймов (2020) с Chrome, который показывает поддержку до 16384x16384.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" style="width: 600px;">
+<img loading="lazy" src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Отчет WebGL MacBook Pro" style="width: 600px;">
 
-Whereas on a Samsung S7 mobile device, only 4096x4096 is supported.
+Тогда как на мобильном устройстве Samsung S7 поддерживается только 4096x4096.
 
-<img loading="lazy" src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" style="width: 600px;">
+<img loading="lazy" src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Отчет WebGL Samsung S7" style="width: 600px;">
 
-If the engine attempts to utilize a texture that exceeds the max texture size reported by WebGL, it will resize it down to this maximum size at runtime. Note that this is only done for texture loaded from images (PNG, JPG, GIF). Compressed textures cannot be resized at runtime and will simply fail to render if they are too large for the device.
+Если движок попытается использовать текстуру, превышающую максимальный размер текстуры, указанный WebGL, он изменит ее размер до этого максимального размера во время выполнения. Обратите внимание, что это делается только для текстур, загруженных из изображений (PNG, JPG, GIF). Сжатые текстуры не могут быть изменены в размере во время выполнения и просто не будут отображаться, если они слишком велики для устройства.
 
-If you would like to avoid downsizing at runtime, at the time of writing (Fri 23 Oct 2020), 4096x4096 is very widely supported with some developers even opting for 2048x2048 which is guaranteed to work everywhere.
+Если вы хотите избежать уменьшения размера во время выполнения, на момент написания (пятница, 23 октября 2020 г.), 4096x4096 очень широко поддерживается, некоторые разработчики даже выбирают 2048x2048, которые гарантированно будут работать везде.
 
 [1]: /user-manual/assets/materials
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging

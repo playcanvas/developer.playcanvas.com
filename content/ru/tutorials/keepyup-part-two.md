@@ -2,82 +2,82 @@
 title: Создание простой игры - Часть 2
 layout: tutorial-page.hbs
 tags: games
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 2"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Создание простой игры - Часть 2"></iframe>
 
-*You can find the [full project here][16]. If you haven't seen [Part 1][1] read it first.*
+*Вы можете найти [полный проект здесь][16]. Если вы не видели [Часть 1][1], прочитайте ее сначала.*
 
-## Material Setup
+## Настройка материалов
 
-We've kept the graphics very simple for this game so there isn't too much set up but will have to set up some Material assets for the ball, the background and the overlay.
+Мы сделали графику очень простой для этой игры, поэтому нам не нужно слишком много настроек, но нам придется настроить некоторые Material Asset для мяча, фона и наложения.
 
-### What is a material?
+### Что такое материал?
 
-A Material is a type of asset in PlayCanvas that describes the way that the surface of a 3D model looks when it is rendered to the screen. The material determines the color of the surface, but also the way the surface interacts with light. For example, you can set up a material to be a smooth metal, or a rough rubber. PlayCanvas has a built in material called a Physical Material which should cover 90% of your use cases for a material. When you get more advanced it is possible to create your own materials by using GLSL shader code to write your own.
+Material - это тип ассета в PlayCanvas, который описывает, как поверхность 3D-модели выглядит при отображении на экране. Материал определяет цвет поверхности, а также способ взаимодействия поверхности со светом. Например, вы можете настроить материал на гладкий металл или шероховатую резину. В PlayCanvas есть встроенный материал под названием Physical Material, который должен покрыть 90% ваших случаев использования материала. Когда вы станете более продвинутым, можно создать свои собственные материалы, используя код GLSL shader для написания своего собственного.
 
 ### Cubemap
 
-Before we jump into the materials, we're going to set up our cubemap asset. A cubemap is an asset that consists of 6 textures on the faces of a cube. You can think of this as the far off environment of your scene. The PlayCanvas Physical materials can use a cubemap to do Image Based Lighting. This uses the colors in the cubemap to light materials in the scene. For example in our scene the cubemap has a blue sky and a green grass surface. So our ball will be lit blue from above and green from below. [Read more][7] in our documentation.
+Прежде чем перейти к материалам, мы настроим наш Cubemap Asset. Cubemap - это ассет, состоящий из 6 текстур на гранях куба. Можно считать это средой вдалеке от вашей сцены. Физические материалы PlayCanvas могут использовать Cubemap для освещения на основе изображений. Это использует цвета в Cubemap для освещения материалов на сцене. Например, в нашей сцене Cubemap имеет синее небо и зеленую травянистую поверхность. Таким образом, наш мяч будет освещен синим светом сверху и зеленым снизу. [Подробнее][7] в нашей документации.
 
 ![Cubemap][8]
 
-To set up a cubemap, first create a Cubemap asset from the New Asset menu, assign 6 textures, one to each face of the cubemap. When your cubemap has all 6 faces assigned, press the "Prefilter" button. **Prefiltering in required for the cubemap to work correctly!**
+Чтобы настроить Cubemap, сначала создайте Cubemap Asset из меню New Asset, назначьте 6 текстур, по одной на каждую грань Cubemap. Когда у вашего Cubemap будут назначены все 6 граней, нажмите кнопку "Prefilter". **Предварительная фильтрация необходима для правильной работы Cubemap!**
 
-## Football Material
+## Материал футбольного мяча
 
 ![Football][3]
 
-The football is a 3D model that we imported from the [PlayCanvas Asset Library][2]. The football materials will mostly be set up for you but you may need to make some simple changes. Lets look at each map used by the football
+Футбольный мяч - это 3D-модель, которую мы импортировали из [библиотеки Asset PlayCanvas][2]. Материалы футбольного мяча в основном будут настроены для вас, но вам, возможно, придется внести некоторые простые изменения. Давайте посмотрим на каждую карту, используемую футбольным мячом.
 
 #### Diffuse
 
 ![Diffuse][4]
 
-The diffuse map defines the color of the surface. In this case it is the black and white pattern of the football.
+Карта Diffuse определяет цвет поверхности. В данном случае это черно-белый узор футбольного мяча.
 
 #### Environment
 
 ![Environment][9]
 
-We're going to jump quickly to the Environment section as this is needed to see the effects of the Specular changes. To set up the Environment drag the Cubemap asset on the the cubemap slot in the material.
+Мы быстро перейдем к разделу Environment, так как для этого нужно увидеть эффекты изменений Specular. Чтобы настроить Environment, перетащите Cubemap Asset на слот Cubemap в материале.
 
 #### Specular
 
 ![Specular][5]
 
-The specular section determines how the material interacts with lights. There are two "workflows" for specular, the "Metalness workflow" and the "Specular workflow", you can find more information in our [documentation][6]. For the football we are using Metalness, so be sure to check the "Use Metalness" box. Our football is not made of metal, so we slide the metalness slider all the way down to 0. Then we use the glossiness slider to set our rough/smooth the material should be. We've set this to about halfway which gives a nice shine to the ball, but not completely smooth.
+Раздел Specular определяет, как материал взаимодействует со светом. Существует два "рабочих процесса" для Specular: "Metalness workflow" и "Specular workflow", вы можете найти больше информации в нашей [документации][6]. Для футбольного мяча мы используем Metalness, поэтому обязательно установите флажок "Use Metalness". Наш футбольный мяч не сделан из металла, поэтому мы двигаем ползунок Metalness вниз до 0. Затем мы используем ползунок Glossiness, чтобы установить, насколько грубым/гладким должен быть материал. Мы установили это примерно на полпути, что придает мячу приятный блеск, но не совсем гладкий.
 
 #### Normal
 
 ![Normal][10]
 
-The final texture map we apply is the normal map. The normal map is used to add details to the model. In this case, the separate patches of the football are not modelled in the geometry (which is smooth sphere) but they are in the normal map. This means the ball will be correctly lit as if the patches were there, but without the overhead of lots of extra polygons.
+Последняя текстурная карта, которую мы применяем, - это карта нормалей. Карта нормалей используется для добавления деталей к модели. В данном случае отдельные патчи футбольного мяча не моделируются в геометрии (которая является гладкой сферой), но они есть на карте нормалей. Это означает, что мяч будет правильно освещен, как будто патчи были там, но без накладных расходов на много дополнительных полигонов.
 
-## Backdrop Material
+## Материал фона
 
 ![Backdrop][11]
 
-The backdrop material is much simpler, we have only one texture map.
+Материал фона намного проще, у нас есть только одна текстурная карта.
 
 #### Emissive
 
 ![Emissive][12]
 
-The emissive map sets the color at the surface as if it was emitting light of that color. This means that lights in the scene don't effect how bright an emissive surface is. Note, an emissive material doesn't affect any other objects in your scene, there is no light actually emitted.
+Карта Emissive устанавливает цвет на поверхности, как если бы он излучал свет этого цвета. Это означает, что света на сцене не влияют на яркость излучающей поверхности. Обратите внимание, что излучающий материал не влияет на другие объекты на вашей сцене, свет на самом деле не излучается.
 
-In this case, we don't want the background to be lit, it is just a static scene. So we use the emissive map to do that.
+В этом случае мы не хотим, чтобы фон был освещен, это просто статическая сцена. Поэтому мы используем карту излучения для этого.
 
-## Overlay Material
+## Материал наложения
 
 ![Overlay][13]
 
-The overlay material is even simpler than the backdrop. In this case all we are doing is setting the color off the emissive property
+Материал наложения еще проще, чем фон. В этом случае все, что мы делаем, - это устанавливаем цвет от свойства излучения
 
 ![Emissive][14]
 
-Continue on to [Part 3][15].
+Продолжайте к [Части 3][15].
 
 [1]: /tutorials/keepyup-part-one/
 [2]: https://store.playcanvas.com/

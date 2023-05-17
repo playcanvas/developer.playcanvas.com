@@ -2,16 +2,16 @@
 title: Создание простой игры - Часть 4
 layout: tutorial-page.hbs
 tags: games
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 4"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Создание простой игры - Часть 4"></iframe>
 
-*You can find the [full project here][6]. If you haven't see [Part 1][1], [Part 2][2] and [Part 3][3] read them first.*
+*Вы можете найти [полный проект здесь][6]. Если вы еще не видели [Часть 1][1], [Часть 2][2] и [Часть 3][3], прочитайте их сначала.*
 
-## The Football
+## Футбольный мяч
 
-The football is the center of attention in our Keepy Up game. It responds to player input, it responds to the environment (well, gravity), it makes sounds. It's probably the most complicated part of the game. Fortunately, we're going to explain all the bits to your as simply as we can.
+Футбольный мяч является центром внимания в нашей игре Keepy Up. Он реагирует на ввод пользователя, он реагирует на окружающую среду (ну, гравитацию), он издает звуки. Вероятно, это самая сложная часть игры. К счастью, мы объясним все части вам как можно проще.
 
 ## ball.js
 
@@ -21,64 +21,64 @@ var Ball = pc.createScript('ball');
 Ball.attributes.add('gravity', {
     type: 'number',
     default: -9.8,
-    description: 'The value of gravity to use'
+    description: 'Значение гравитации для использования'
 });
 
 Ball.attributes.add('defaultTap', {
     type: 'number',
     default: 5,
-    description: 'Speed to set the ball to when it is tapped'
+    description: 'Скорость, которую нужно установить для мяча при нажатии'
 });
 
 Ball.attributes.add('impactEffect', {
     type: 'entity',
-    description: 'The particle effect to trigger when the ball is tapped'
+    description: 'Эффект частиц, который срабатывает при нажатии на мяч'
 });
 
 Ball.attributes.add('ballMinimum', {
     type: 'number',
     default: -6,
-    description: 'When ball goes below minimum y value game over is triggered'
+    description: 'Когда мяч опускается ниже минимального значения y, срабатывает конец игры'
 });
 
 Ball.attributes.add('speedMult', {
     type: 'number',
     default: 4,
-    description: 'Multiplier to apply to X speed when tap is off center'
+    description: 'Множитель для применения к скорости X при нажатии вне центра'
 });
 
 Ball.attributes.add('angMult', {
     type: 'number',
     default: -6,
-    description: 'Multiplier to apply to angular speed when tap is off center'
+    description: 'Множитель для применения к угловой скорости при нажатии вне центра'
 });
 
 Ball.tmp = new pc.Vec3();
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Ball.prototype.initialize = function() {
     this.paused = true;
 
-    // Get the "Game" Entity and start listening for events
+    // Получить "Game" Entity и начать слушать события
     this.game = this.app.root.findByName("Game");
 
     this.app.on("game:start", this.unpause, this);
     this.app.on("game:gameover", this.pause, this);
     this.app.on("game:reset", this.reset, this);
 
-    // Initialize properties
+    // Инициализация свойств
     this._vel = new pc.Vec3(0, 0, 0);
     this._acc = new pc.Vec3(0, this.gravity, 0);
     this._angSpeed = 0;
 
-    // Store the initial position and rotation for reseting
+    // Сохранить начальную позицию и вращение для сброса
     this._origin = this.entity.getLocalPosition().clone();
     this._rotation = this.entity.getLocalRotation().clone();
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Ball.prototype.update = function(dt) {
-    // Don't update when paused
+    // Не обновлять при паузе
     if (this.paused) {
         this.entity.rotate(0, 30*dt, 0);
         return;
@@ -87,69 +87,69 @@ Ball.prototype.update = function(dt) {
     var p = this.entity.getLocalPosition();
     var tmp = Ball.tmp;
 
-    // integrate the velocity in a temporary variable
+    // интегрировать скорость во временной переменной
     tmp.copy(this._acc).scale(dt);
     this._vel.add(tmp);
 
-    // integrate the position in a temporary variable
+    // интегрировать позицию во временной переменной
     tmp.copy(this._vel).scale(dt);
     p.add(tmp);
 
-    // update position
+    // обновить позицию
     this.entity.setLocalPosition(p);
 
-    // rotate by angular speed
+    // вращать с угловой скоростью
     this.entity.rotate(0, 0, this._angSpeed);
 
-    // check for game over condition
+    // проверить условие окончания игры
     if (p.y < this.ballMinimum) {
         this.game.script.game.gameOver();
     }
 };
 
 /*
- * Called by the input handler to tap the ball up in the air
- * dx is the tap distance from centre of ball in x
- * dy is the tap distance from centre of ball in y
+ * Вызывается обработчиком ввода для тапа мяча в воздухе
+ * dx - расстояние нажатия от центра мяча по оси x
+ * dy - расстояние нажатия от центра мяча по оси y
  */
 Ball.prototype.tap = function (dx, dy) {
-    // Update velocity and spin based on position of tap
+    // Обновить скорость и вращение на основе позиции нажатия
     this._vel.set(this.speedMult * dx, this.defaultTap, 0);
     this._angSpeed += this.angMult * dx;
 
-    // calculate the position of the tap in world space
+    // рассчитать позицию нажатия в мировом пространстве
     var tmp = Ball.tmp;
     tmp.copy(this.entity.getLocalPosition());
     tmp.x -= dx;
     tmp.y -= dy;
 
-    // trigger particle effect to tap position, facing away from the center of the ball
+    // запустить эффект частиц на позицию нажатия, смотрящий в противоположную сторону от центра мяча
     this.impactEffect.setLocalPosition(tmp);
     this.impactEffect.particlesystem.reset();
     this.impactEffect.particlesystem.play();
     this.impactEffect.lookAt(this.entity.getPosition());
 
-    // play audio
+    // воспроизвести аудио
     this.entity.sound.play("bounce");
 
-    // increment the score by 1
+    // увеличить счет на 1
     this.game.script.game.addScore(1);
 };
 
-// Pause the ball update when not playing the game
+// Приостановить обновление мяча, когда игра не идет
 Ball.prototype.unpause = function () {
     this.paused = false;
 
-    // start game with a tap
+    // начать игру с нажатием
     this.tap(0, 0);
 };
 
-// Resume ball updating
+// Возобновить обновление мяча
 Ball.prototype.pause = function () {
     this.paused = true;
 };
 
-// Reset the ball to initial values
+// Сбросить мяч до начальных значений
 Ball.prototype.reset = function () {
     this.entity.setLocalPosition(this._origin);
     this.entity.setLocalRotation(this._rotation);
@@ -159,78 +159,78 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### Атрибуты сценария
+### Атрибуты скрипта
 
-The first thing you'll notice at the top of the script are a set of script attributes that we've defined. Defining script attributes lets you expose values from your script into the editor. There are three very good reasons to do this.
+Первое, что вы заметите в верхней части скрипта, - это набор атрибутов скрипта, которые мы определили. Определение атрибутов скрипта позволяет вам открывать значения из вашего скрипта в редакторе. Есть три очень хорошие причины для этого.
 
-![Script Attributes][5]
+![Атрибуты скрипта][5]
 
-First, it lets you use the same script for many different Entities with different values. For example, you could have a script attribute which sets a color, and in the editor create a red, blue and green version of a entity just by modifying the script attribute.
+Во-первых, это позволяет использовать один и тот же скрипт для множества разных Entity с разными значениями. Например, вы можете создать атрибут скрипта, который устанавливает цвет, и в редакторе создать красную, синюю и зеленую версии Entity, просто изменив атрибут скрипта.
 
-Second, you can quickly and easily tune the behavior of scripts. When you modify a script attribute (or indeed any property from the editor) the changes are made instantly to any instance of the game that you have launched from the editor. So for example in the case of the `ballMinimum` property we define here, you can launch the game and test what the value of `ballMinimum` should be to allow the ball to drop off the bottom of the screen without ever having to reload the game. Test the game, modify the value, test the game.
+Во-вторых, вы можете быстро и легко настроить поведение скриптов. Когда вы изменяете атрибут скрипта (или любое свойство из редактора), изменения мгновенно применяются к любому экземпляру игры, который вы запустили из редактора. Так, например, в случае со свойством `ballMinimum`, которое мы определяем здесь, вы можете запустить игру и проверить, какое значение `ballMinimum` должно быть, чтобы мяч мог упасть снизу экрана, не перезагружая игру. Тестируйте игру, изменяйте значение, тестируйте игру.
 
-This is known as "iteration speed". The faster you can modify and test your game, the quicker you can get it developed!
+Это называется "скорость итерации". Чем быстрее вы можете изменять и тестировать вашу игру, тем быстрее вы сможете ее разработать!
 
-For the ball, we define script attributes that let us tweak a number of game play properties like the gravity, the impulse applied when the ball is tapped. These attributes let us very quickly tune the game to our liking.
+Для мяча мы определяем атрибуты скрипта, которые позволяют нам настраивать ряд свойств игрового процесса, таких как гравитация, импульс, применяемый при нажатии на мяч. Эти атрибуты позволяют нам очень быстро настроить игру по своему вкусу.
 
-Third, the script attribute is a great way to link a script to an Entity or an Asset in your scene. For example, the ball script needs to trigger a particle effect when it is tapped. The particle effect is on another Entity in our scene. We define a script attribute called `impactEffect` of type `entity` and in the Editor we link this to the entity with our particle effect. Our script now has a reference to the entity and we are free to modify this entity or change to another entity without breaking our code.
+В-третьих, атрибут скрипта - отличный способ связать скрипт с Entity или Asset в вашей сцене. Например, скрипт мяча должен запускать эффект частиц при нажатии на него. Эффект частиц находится на другом Entity в нашей сцене. Мы определяем атрибут скрипта с именем `impactEffect` типа `entity`, и в редакторе мы связываем его с Entity, на котором находится наш эффект частиц. Теперь наш скрипт имеет ссылку на Entity, и мы можем свободно изменять этот Entity или переключаться на другой Entity без нарушения нашего кода.
 
-### The Physics Simulation
+### Физическая симуляция
 
-For those of you with some basic vector maths knowledge this `update()` loop of the ball should be simple, but for everyone else we'll explain a little about simulating a ball in a video game.
+Для тех из вас, кто знаком с основами векторной математики, этот `update()` цикл мяча должен быть простым, но для всех остальных мы объясним немного о симуляции мяча в видеоигре.
 
-A simple way to simulate something in video game is to give that object an acceleration, a velocity and a position. Every time step (or frame) the acceleration (which the rate of change velocity) changes the velocity and the velocity (which is the rate of change of position) changes the position. Then you draw your object at the new position.
+Простой способ симуляции чего-либо в видеоигре - это дать объекту ускорение, скорость и положение. На каждом временном шаге (или кадре) ускорение (которое является скоростью изменения скорости) изменяет скорость, а скорость (которая является скоростью изменения положения) изменяет положение. Затем вы рисуете свой объект в новом положении.
 
-You can influence the position of your object in one of three ways.
+Вы можете влиять на положение вашего объекта одним из трех способов.
 
-* **Change the acceleration**, this is useful for applying a force over a period of time, like gravity on the ball.
-* **Change the velocity**, this is an instantaneous change. Like a ball bouncing off the floor.
-* **Change the position**, like teleportation, there isn't a real world equivalent!
+* **Изменить ускорение**, это полезно для применения силы в течение определенного времени, например гравитации на мяч.
+* **Изменить скорость**, это мгновенное изменение. Как мяч, отскакивающий от пола.
+* **Изменить положение**, как телепортация, в реальном мире такого нет!
 
-In our simulation we have a constant acceleration due to gravity, when you tap the ball we apply an instant change in velocity and when you reset the game we teleport the ball back to it's starting position.
+В нашей симуляции у нас есть постоянное ускорение из-за гравитации, когда вы нажимаете на мяч, мы мгновенно меняем скорость, и когда вы сбрасываете игру, мы телепортируем мяч обратно в его начальное положение.
 
-#### Simulating
+#### Симуляция
 
-The update loop does this:
+Цикл обновления делает это:
 
->_(Change in Velocity) = (Acceleration) \* (Time since last frame)_
+>_(Изменение скорости) = (Ускорение) \* (Время с последнего кадра)_
 
->_(New Velocity) = (Old Velocity) + (Change in Velocity)_
+>_(Новая скорость) = (Старая скорость) + (Изменение скорости)_
 
->_(Change in Position) = (New Velocity) \* (Time since last frame)_
+>_(Изменение положения) = (Новая скорость) \* (Время с последнего кадра)_
 
->_(New Position) = (Old Position) + (Change in Position)_
+>_(Новое положение) = (Старое положение) + (Изменение положения)_
 
-In code this looks like this:
+В коде это выглядит так:
 
 ```javascript
 var p = this.entity.getLocalPosition();
 
-// integrate the velocity in a temporary variable
+// интегрируем скорость во временную переменную
 tmp.copy(this._acc).scale(dt);
 this._vel.add(tmp);
 
-// integrate the position in a temporary variable
+// интегрируем позицию во временную переменную
 tmp.copy(this._vel).scale(dt);
 p.add(tmp);
 
-// update position
+// обновляем позицию
 this.entity.setLocalPosition(p);
 ```
 
-You will note that we use temporary vector `tmp` to store intermediate values. It's important not to create a new vector every frame for this. Also notice that we have to call `setLocalPosition` to apply the updated position.
+Вы заметите, что мы используем временный вектор `tmp` для хранения промежуточных значений. Важно не создавать новый вектор каждый кадр для этого. Также обратите внимание, что нам нужно вызвать `setLocalPosition` для применения обновленной позиции.
 
-Finally, for a nice effect we add rotate the ball by the angular speed value using `entity.rotate()`. This isn't very physically accurate, but it looks nice.
+Наконец, для приятного эффекта, мы добавляем вращение мяча на значение угловой скорости с помощью `entity.rotate()`. Это не очень физически точно, но выглядит хорошо.
 
-#### Responding to input
+#### Реагирование на ввод
 
-You may remember from [Part 2][2] that the `input.js` script checked to see if an input has hit the ball and if so it calls the `tap()` method. The `tap()` method defined above applies a direct change to the velocity and the angular speed of the ball. We use a couple of our script attributes `this.speedMult` and `this.angMult` to multiple the new velocity and angular speed to match our expectations of the gameplay.
+Вы можете вспомнить из [Части 2][2], что скрипт `input.js` проверял, попал ли ввод в мяч, и если да, то вызывает метод `tap()`. Определенный выше метод `tap()` применяет прямое изменение скорости и угловой скорости мяча. Мы используем пару наших атрибутов скрипта `this.speedMult` и `this.angMult` для умножения новой скорости и угловой скорости, чтобы соответствовать нашим ожиданиям от игрового процесса.
 
-We also use the tap method to trigger a particle dust cloud at the point of impact and play a sound effect. We'll talk about particle and sounds in [Part 5][4].
+Мы также используем метод tap для запуска облака частиц пыли в точке удара и воспроизведения звукового эффекта. Мы поговорим о частицах и звуках в [Части 5][4].
 
-## Summary
+## Резюме
 
-The ball script runs a simply physical simulation to make the ball fall under gravity and respond to taps. It also listens for game events to know when to pause and reset. Finally, it interacts with some other systems to show particle effects and play sounds.
+Скрипт мяча запускает простую физическую симуляцию, чтобы заставить мяч падать под действием гравитации и реагировать на нажатия. Он также прослушивает игровые события, чтобы узнать, когда ставить на паузу и сбрасывать. Наконец, он взаимодействует с некоторыми другими системами для отображения эффектов частиц и воспроизведения звуков.
 
 [1]: /tutorials/keepyup-part-one/
 [2]: /tutorials/keepyup-part-two/

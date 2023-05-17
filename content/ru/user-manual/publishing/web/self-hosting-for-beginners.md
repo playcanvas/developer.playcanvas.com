@@ -4,102 +4,102 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-This document is aimed at people who are complete beginners to web programming and describes at high level how the different parts of a web application combine to serve PlayCanvas applications, or other web pages to a user's browser.
+Этот документ предназначен для людей, которые только начинают знакомиться с веб-программированием, и описывает на высоком уровне, как различные части веб-приложения объединяются для предоставления приложений PlayCanvas или других веб-страниц пользователю в браузере.
 
-# The Web Stack
+# Веб-стек
 
-In general you can separate a web application into 3 parts: Server-side, Client-side and Static content. In almost all cases you will have all three of these parts for your web application, though sometimes one or several parts will be either very simple or handled by another service.
+В общем случае, вы можете разделить веб-приложение на 3 части: серверную, клиентскую и статический контент. В почти всех случаях у вас будут все три части для вашего веб-приложения, хотя иногда одна или несколько частей будут либо очень простыми, либо обрабатываться другим сервисом.
 
-## Server-side Code
+## Серверный код
 
-When a user opens a link in their web browser the browser sends a request to a server somewhere on the internet asking for an HTML page. At its simplest this is a page of text that sits on a hard disk on the web server and is set back over the internet to the browser.
+Когда пользователь открывает ссылку в своем веб-браузере, браузер отправляет запрос на сервер где-то в интернете с просьбой предоставить HTML-страницу. В самом простом случае это страница текста, которая находится на жестком диске веб-сервера и отправляется обратно через интернет в браузер.
 
-For web pages which are documents for displaying text or images this works very well. But in order to provide a level of interactivity often a server will do some processing after receiving the request and then **render** a page of HTML including the results of that processing.
+Для веб-страниц, которые являются документами для отображения текста или изображений, это работает очень хорошо. Но для обеспечения определенного уровня интерактивности, часто сервер выполняет некоторую обработку после получения запроса, а затем **отображает** страницу HTML, включая результаты этой обработки.
 
-For example, in PHP you could show the current date and time, inside your page.
+Например, в PHP вы можете показать текущую дату и время внутри вашей страницы.
 
 ```php
 <html>
     <head>
-        <title>My Homepage</title>
+        <title>Моя домашняя страница</title>
     </head>
     <body>
-        <h1>The date is</h1>
+        <h1>Сегодняшняя дата</h1>
         <?php
             echo date(DATE_RFC2822);
         ?>
-        <p>Have a nice day</p>
+        <p>Хорошего дня</p>
     </body>
 </html>
 ```
 
-This PHP code creates an HTML page like below and send it to the browser to display.
+Этот PHP-код создает HTML-страницу, как показано ниже, и отправляет ее в браузер для отображения.
 
 ```html
 <html>
     <head>
-        <title>My Homepage</title>
+        <title>Моя домашняя страница</title>
     </head>
     <body>
-        <h1>The date is</h1>
-        Mon, 11 Apr 2016 06:54:14 -0400
-        <p>Have a nice day</p>
+        <h1>Сегодняшняя дата</h1>
+        Пн, 11 апр 2016 06:54:14 -0400
+        <p>Хорошего дня</p>
     </body>
 </html>
 ```
 
-There are many, many different languages and frameworks to choose from when writing server-side code. PHP, Python, Nodejs, Ruby are all popular choices. But ultimately they have the same outcome, they receive a request for an HTML page, they do some processing and then they return the HTML data.
+Существует множество различных языков и фреймворков для написания кода на стороне сервера. PHP, Python, Nodejs, Ruby - все это популярные варианты. Но в конечном итоге у них одна и та же цель: они получают запрос на HTML-страницу, выполняют некоторую обработку и затем возвращают данные HTML.
 
-When writing PlayCanvas applications, no code you write in PlayCanvas runs server-side and we don't provide any server-side code for your projects.
+При написании приложений PlayCanvas ни одна строка кода, написанная вами в PlayCanvas, не работает на стороне сервера, и мы не предоставляем кода на стороне сервера для ваших проектов.
 
-## Client-side Code
+## Код на стороне клиента
 
-In the web stack, the server is not the only place where we can do programming and respond to user input. Client-side refers to code running inside your browser. This code is always in Javascript, which is the language that browsers run. With client-side javascript you can perform many different operations. In the simplest case, you can modify the HTML page that was downloaded from the server
+В веб-стеке сервер - это не единственное место, где мы можем программировать и реагировать на пользовательский ввод. Код на стороне клиента относится к коду, работающему в вашем браузере. Этот код всегда написан на Javascript, который является языком, на котором работают браузеры. С помощью клиентского javascript вы можете выполнять множество различных операций. В самом простом случае вы можете изменить HTML-страницу, загруженную с сервера.
 
 ```javascript
 var title = document.getElementById("title");
-title.innerHTML = "This is the new title";
+title.innerHTML = "Это новый заголовок";
 ```
 
-Or in the most complex case, you can write a full 3D WebGL game using PlayCanvas. Because everything you write using PlayCanvas is client-side javascript.
+Или в самом сложном случае вы можете написать полноценную 3D WebGL игру с использованием PlayCanvas. Потому что все, что вы пишете с использованием PlayCanvas, является клиентским javascript.
 
-## Static Content
+## Статический контент
 
-Some parts of your web application are not dynamic and do not need to change. For example, images, audio files, text files and in the case of PlayCanvas applications 3D models and textures. You can think of this a bit like loading files of a local disk, except that of course it comes over the internet so it's a bit slower. Serving static content is done by a web server, very much like server-side code and in some cases it will be the same machine. As there is no interactivity, there is no processing done to fulfill the request. The web server just sends back the requested file.
+Некоторые части вашего веб-приложения не являются динамическими и не нуждаются в изменениях. Например, изображения, аудиофайлы, текстовые файлы и, в случае приложений PlayCanvas, 3D-модели и текстуры. Можно считать это немного похожим на загрузку файлов с локального диска, за исключением того, что, конечно, это происходит через интернет, поэтому это немного медленнее. Обслуживание статического контента осуществляется веб-сервером, очень похожим на серверный код, и в некоторых случаях это будет одна и та же машина. Так как нет интерактивности, для выполнения запроса не требуется обработка. Веб-сервер просто отправляет запрошенный файл.
 
-The important thing about static content is making sure it downloads to the client as fast as possible.
+Главное в статическом контенте - обеспечить его максимально быстрое скачивание клиентом.
 
-## Hosting PlayCanvas Applications
+## Размещение приложений PlayCanvas
 
-When you build a PlayCanvas application your are writing client-side javascript code and creating assets which are static content. In PlayCanvas projects you will have no server-side code at all.
+Когда вы создаете приложение PlayCanvas, вы пишете клиентский код на javascript и создаете ассеты, которые являются статическим контентом. В проектах PlayCanvas у вас вообще не будет серверного кода.
 
-When you publish using PlayCanvas we handle the server-side by setting up a URL where your application is served from sending back the HTML page that starts your client-side application. When the HTML page loads it runs the client-side javascript of your PlayCanvas application this will load all your assets from our static content servers.
+Когда вы публикуете с использованием PlayCanvas, мы обрабатываем серверную часть, настраивая URL, откуда ваше приложение будет загружаться, отправляя обратно HTML-страницу, которая запускает ваше клиентское приложение. Когда загружается HTML-страница, она запускает клиентский javascript вашего приложения PlayCanvas, который загружает все ваши ассеты с наших серверов статического контента.
 
-We have designed the PlayCanvas hosting to be optimized for serving your PlayCanvas applications to end users throughout the world as quickly as possible. This is why the easiest way to deploy a PlayCanvas application is by clicking the publish button and sending out the `playcanv.as` URL. However, in some cases you may be required to host your own application.
+Мы разработали хостинг PlayCanvas так, чтобы он был оптимизирован для быстрой доставки вашего приложения PlayCanvas конечным пользователям по всему миру. Вот почему самый простой способ развертывания приложения PlayCanvas - это нажать кнопку публикации и отправить URL `playcanv.as`. Однако в некоторых случаях вам может потребоваться разместить свое собственное приложение.
 
-## Self-hosting PlayCanvas Applications
+## Самостоятельное размещение приложений PlayCanvas
 
-We have a more [detailed page][1] about self-hosting a PlayCanvas application. But in summary, to self-host you need to provide the three parts of the web stack described above.
+У нас есть более [подробная страница][1] о самостоятельном размещении приложения PlayCanvas. Но вкратце, для самостоятельного размещения вам нужно предоставить три части веб-стека, описанные выше.
 
-### Server
+### Сервер
 
-For a standard PlayCanvas application there is no server-side code required. However, you will still need to supply a web-server because you need to serve the static content including the `index.html` file that is found in your downloaded application. It is this file that the browser will request to load your application. There are two common web server application for Linux: Apache and Nginx and one common web server for Windows: IIS.
+Для стандартного приложения PlayCanvas не требуется серверный код. Однако вам все равно нужно будет предоставить веб-сервер, потому что вам нужно обслуживать статический контент, включая файл `index.html`, который находится в вашем загруженном приложении. Именно этот файл будет запрашивать браузер для загрузки вашего приложения. Два распространенных веб-сервера для Linux: Apache и Nginx и один распространенный веб-сервер для Windows: IIS.
 
-### Caching and Compression
+### Кэширование и сжатие
 
-As described in **Server** you will be serving all your PlayCanvas content including the `index.html` file from your web server as static content.
+Как описано в разделе **Сервер**, вы будете обслуживать весь ваш контент PlayCanvas, включая файл `index.html`, с вашего веб-сервера в качестве статического контента.
 
-To get good performance when serving the static content it is **critical** to enable gzip compression and set the correct cache headers for the content. See your web server documentation for how to enable compression and caching headers on static content.
+Для достижения хорошей производительности при обслуживании статического контента критически важно включить сжатие gzip и установить правильные заголовки кэша для контента. См. документацию вашего веб-сервера о том, как включить сжатие и заголовки кэширования для статического контента.
 
-### Content types
+### Типы контента
 
-Not all servers have content types setup for common formats used in PlayCanvas and can give errors when attempting to load the application from the server. 
+Не все серверы имеют настроенные типы контента для распространенных форматов, используемых в PlayCanvas, и могут вызывать ошибки при попытке загрузить приложение с сервера.
 
-If you do get errors or warnings about assets not being served correctly in the browser, you may need to add these types.
+Если у вас возникают ошибки или предупреждения о том, что ассеты не обслуживаются правильно в браузере, вам, возможно, придется добавить эти типы.
 
-Here's a list of content types used in PlayCanvas applications:
+Вот список типов контента, используемых в приложениях PlayCanvas:
 
-| File type | Content type             |
+| Тип файла | Тип контента             |
 | --------- | ------------------------ | 
 | AAC       | audio/aac                |
 | BASIS     | application/octet-stream | 
@@ -118,9 +118,32 @@ Here's a list of content types used in PlayCanvas applications:
 | WAV       | audio/x-wav              |
 | XML       | application/xml          |
 
+### Клиент
 
-### Client
-
-The client-side code is everything you have written as part of your PlayCanvas application. When the browser loads the `index.html` file it will start your PlayCanvas application and run all the client-side code that you have written.
+Клиентский код - это все, что вы написали в рамках вашего приложения PlayCanvas. Когда браузер загружает файл `index.html`, он запускает ваше приложение PlayCanvas и выполняет весь клиентский код, который вы написали.
 
 [1]: /user-manual/publishing/web/self-hosting/
+
+# Issue Tracker
+
+## Новые функции
+
+- Добавлен новый компонент "Tutorial Thumbnail"
+- Улучшена производительность редактора Entity
+- Добавлен новый тип Asset: Material Asset
+
+## Исправления ошибок
+
+- Исправлены проблемы с отображением в Material Inspector
+- Исправлены ошибки в Shader Editor
+- Улучшена стабильность работы Node Inspector
+
+## Изменения
+
+- Обновлен интерфейс Texture Inspector
+- Улучшена навигация в Graph Inspector
+- Оптимизирован процесс импорта Assets в Graph Editor
+
+## Удалено
+
+- Удалена поддержка устаревших форматов файлов

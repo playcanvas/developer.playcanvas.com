@@ -4,12 +4,12 @@ layout: usermanual-page.hbs
 position: 14
 ---
 
-PlayCanvas incorporates an advanced graphics engine. Internally it uses the WebGL API to draw graphical primitives to the screen.
+PlayCanvas включает в себя передовой графический движок. Внутри он использует API WebGL для отрисовки графических примитивов на экране.
 
-Some of its key features are as follows:
+Некоторые из его ключевых особенностей следующие:
 
-* Physically based rendering (PBR)
-* Directional, point and spot lights (all of which can cast shadows)
-* Static and skinned mesh rendering
-* GPU particle engine
-* Post effect library
+* Физически основанный рендеринг (PBR)
+* Направленные, точечные и прожекторные источники света (все они могут создавать тени)
+* Отображение статических и скиннутых мешей
+* GPU-движок частиц
+* Библиотека пост-эффектов

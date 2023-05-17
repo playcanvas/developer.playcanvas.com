@@ -4,14 +4,14 @@ layout: usermanual-page.hbs
 position: 21
 ---
 
-Once you have built your game, you will no doubt want to publish it and allow people to enjoy its majesty! PlayCanvas makes things very easy for you to target just about any operating system or app store.
+После того, как вы создали свою игру, вы, без сомнения, захотите опубликовать ее и позволить людям насладиться ее великолепием! PlayCanvas очень упрощает вам задачу, позволяя нацелиться практически на любую операционную систему или магазин приложений.
 
-## Where can I publish PlayCanvas games?
+## Где я могу опубликовать игры PlayCanvas?
 
-* [Web][1]
-* [Mobile][2]
-* [Desktop][3]
-* [Playable Ads][4]
+* [Веб][1]
+* [Мобильные][2]
+* [Десктоп][3]
+* [Играбельные рекламы][4]
 
 [1]: /user-manual/publishing/web
 [2]: /user-manual/publishing/mobile

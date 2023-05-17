@@ -1,67 +1,67 @@
 ---
-title: Sprite
+title: Спрайт
 layout: usermanual-page.hbs
 position: 20
 ---
 
-The Sprite Component renders and animates [Sprite Assets][1] into the scene.
+Компонент Sprite отображает и анимирует [Sprite Assets][1] в сцене.
 
-There are two types of sprite Simple and Animated.
+Существует два типа спрайтов: простые и анимированные.
 
-## Simple Sprites
+## Простые спрайты
 
-Simple Sprite Components display a single frame from an atlas
+Простые компоненты спрайтов отображают один кадр из атласа
 
-![Simple Sprite][2]
+![Простой спрайт][2]
 
-## Simple Sprite Component Properties
+## Свойства простого компонента спрайта
 
-| Property    | Описание |
+| Свойство    | Описание |
 |-------------|-------------|
-| Type        | Simple or Animated. |
-| Sprite      | The Sprite Asset to display. |
-| Frame       | The frame index of the Sprite to display. |
-| Цвет       | A color to apply as a tint to the sprite. |
-| Opacity     | The transparency of the sprite. |
-| Flip X      | Flip the rendered sprite horizontally. |
-| Flip Y      | Flip the rendered sprite vertically. |
-| Layers (Слои)      | The Layers in which to render the sprite. |
-| Draw Order  | The order in which this sprite is rendered. Lower numbers are rendered first. |
-| Batch Group | The Batch Group that this model belongs to. More on Batching [here][6]. |
+| Тип        | Простой или анимированный. |
+| Спрайт      | Sprite Asset для отображения. |
+| Кадр       | Индекс кадра спрайта для отображения. |
+| Цвет       | Цвет, который будет применяться в качестве оттенка к спрайту. |
+| Прозрачность     | Прозрачность спрайта. |
+| Отразить по X      | Отразить отображаемый спрайт по горизонтали. |
+| Отразить по Y      | Отразить отображаемый спрайт по вертикали. |
+| Слои      | Слои, в которых будет отображаться спрайт. |
+| Порядок отрисовки  | Порядок, в котором этот спрайт будет отображаться. Наименьшие числа отображаются первыми. |
+| Группа пакетов | Группа пакетов, к которой принадлежит эта модель. Подробнее о пакетировании [здесь][6]. |
 
-## Animated Sprites
+## Анимированные спрайты
 
-Animated Sprite Components have multiple Sprite Animation Clips attached which can play back a different Sprite Asset.
+У анимированных компонентов спрайтов есть несколько прикрепленных анимационных клипов спрайтов, которые могут воспроизводить разные Sprite Asset.
 
-![Animated Sprite][3]
+![Анимированный спрайт][3]
 
-## Animated Sprite Component Properties
+## Свойства анимированного компонента спрайта
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Type       | Simple or Animated. |
-| Frame      | The frame index of the Sprite to display. |
-| Цвет      | A color to apply as a tint to the sprite. |
-| Opacity    | The transparency of the sprite. |
-| Flip X     | Flip the rendered sprite horizontally. |
-| Flip Y     | Flip the rendered sprite vertically. |
-| Speed      | Multiplier applied to the speed at which sprite animation clips on this sprite component are animated. |
-| Layers (Слои)     | The Layers in which to render the sprite. |
-| Draw Order | The order in which this sprite is rendered. Lower numbers are rendered first. |
-| Auto Play  | The name of a sprite animation clip to play when the sprite is enabled. |
+| Тип       | Простой или анимированный. |
+| Кадр      | Индекс кадра спрайта для отображения. |
+| Цвет      | Цвет, который будет применяться в качестве оттенка к спрайту. |
+| Прозрачность    | Прозрачность спрайта. |
+| Отразить по X     | Отразить отображаемый спрайт по горизонтали. |
+| Отразить по Y     | Отразить отображаемый спрайт по вертикали. |
+| Скорость      | Множитель, применяемый к скорости, с которой анимационные клипы спрайтов на этом компоненте спрайта анимируются. |
+| Слои     | Слои, в которых будет отображаться спрайт. |
+| Порядок отрисовки | Порядок, в котором этот спрайт будет отображаться. Наименьшие числа отображаются первыми. |
+| Автовоспроизведение  | Название анимационного клипа спрайта, который будет воспроизводиться при включении спрайта. |
 
-## Sprite Animation Clip Properties
+## Свойства анимационного клипа спрайта
 
-| Property | Описание |
+| Свойство | Описание |
 |----------|-------------|
-| Name     | The name of the Sprite Animation Clip. Used to reference an individual clip. |
-| Loop     | If true the animation clip will loop back to the start when it reaches the end. |
-| FPS      | The speed at which the clip is played in Frames Per Second. |
-| Sprite   | The Sprite Asset which is used to play this clip. |
+| Имя     | Имя анимационного клипа спрайта. Используется для ссылки на отдельный клип. |
+| Цикл     | Если значение true, анимационный клип будет зацикливаться с начала, когда достигнет конца. |
+| FPS      | Скорость воспроизведения клипа в кадрах в секунду. |
+| Спрайт   | Sprite Asset, который используется для воспроизведения этого клипа. |
 
-## Scripting Interface
+## Интерфейс сценария
 
-You can control the properties of a Sprite component using a [script component][4]. The scripting interface for the Sprite component is [here][5].
+Вы можете управлять свойствами компонента спрайта с помощью [компонента сценария][4]. Интерфейс сценария для компонента спрайта находится [здесь][5].
 
 
 [1]: /user-manual/assets/sprites

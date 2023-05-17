@@ -4,107 +4,107 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-[Apache Cordova][1] is an open-source mobile development framework. It allows you to use standard web technologies - HTML5, CSS3, and JavaScript for cross-platform development. Applications execute within wrappers targeted to each platform, and rely on standards-compliant API bindings to access each device's capabilities such as sensors, data, network status, etc.
+[Apache Cordova][1] - это фреймворк для разработки мобильных приложений с открытым исходным кодом. Он позволяет использовать стандартные веб-технологии - HTML5, CSS3 и JavaScript для кросс-платформенной разработки. Приложения выполняются внутри оболочек, нацеленных на каждую платформу, и полагаются на соответствующие стандартам привязки API для доступа к возможностям каждого устройства, таким как датчики, данные, сетевой статус и т. д.
 
-You can use Cordova to natively wrap your PlayCanvas app. You can then publish it to the iOS App Store and Android's Google Play. Cordova can also generate executables compatible with macOS and Windows.
+Вы можете использовать Cordova для нативной обертки вашего приложения PlayCanvas. Затем вы можете опубликовать его в магазине приложений iOS и Google Play для Android. Cordova также может создавать исполняемые файлы, совместимые с macOS и Windows.
 
-## Installing Cordova
+## Установка Cordova
 
-To get started, follow the [instructions][2] for installing Cordova on your computer.
+Чтобы начать, следуйте [инструкциям][2] по установке Cordova на ваш компьютер.
 
-## Creating a Project
+## Создание проекта
 
-To create a project, issue the following command:
+Чтобы создать проект, выполните следующую команду:
 
 ```
 cordova create hello com.example.hello HelloWorld
 ```
 
-`hello` is the folder in which the project is created. `com.example.hello` is the reverse domain-style identifier for your app. `HelloWorld` is the human readable title of your app (it is the name of the generated app icon, for example).
+`hello` - это папка, в которой создается проект. `com.example.hello` - идентификатор вашего приложения в стиле обратного домена. `HelloWorld` - это человекочитаемый заголовок вашего приложения (например, это имя сгенерированной иконки приложения).
 
-So, for a game like [Master Archer][3], an appropriate command would be:
+Таким образом, для игры типа [Master Archer][3] подходящей командой будет:
 
 ```
-cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
+cordova create masterarcher com.playcanvas.masterarcher "Мастер Лучник"
 ```
 
-Once your project is created, you will find a file called `config.xml` in the project's root folder. Here you can configure or edit certain characteristics of your app. For example, you can optionally [set up custom icons][4] for your app, either globally or per-platform.
+После создания вашего проекта вы найдете файл с именем `config.xml` в корневой папке проекта. Здесь вы можете настроить или изменить определенные характеристики вашего приложения. Например, вы можете опционально [установить пользовательские иконки][4] для вашего приложения, глобально или для каждой платформы.
 
-## Adding your PlayCanvas App
+## Добавление вашего приложения PlayCanvas
 
-When you create a new Cordova project, it generates a skeleton web app in a folder called `www`. You can go ahead and delete everything in the `www` folder. Next, copy your PlayCanvas app files to this location.
+При создании нового проекта Cordova он генерирует каркасное веб-приложение в папке с именем `www`. Вы можете удалить все содержимое папки `www`. Затем скопируйте файлы вашего приложения PlayCanvas в это место.
 
-If you're building on the Engine without the Editor, copy your app files into `www` such that your `index.html` file is in the root.
+Если вы создаете приложение на движке без редактора, скопируйте файлы вашего приложения в `www` так, чтобы ваш файл `index.html` находился в корне.
 
 <div class="alert alert-info">
-    <div>Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.</div><br>
-    <div>We recommend using a tool like <a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a> or automating this via a script.</div>
+    <div>Файлы аудио-ассетов должны быть в формате Base64 для корректной загрузки и воспроизведения. Это связано с тем, что iOS ограничивает загрузку файлов в WebView с локального диска.</div><br>
+    <div>Мы рекомендуем использовать инструменты вроде <a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a> или автоматизировать этот процесс с помощью скрипта.</div>
 </div>
 
-If you have built your app in the PlayCanvas Editor, we have an official external tool that will build and prepare the project to be most compatible with Cordova. This includes automating tasks such as converting the audio files to Base64 so that they can be loaded on iOS.
+Если вы создали свое приложение в редакторе PlayCanvas, у нас есть официальный внешний инструмент, который соберет и подготовит проект для наилучшей совместимости с Cordova. Это включает автоматизацию задач, таких как преобразование аудиофайлов в Base64, чтобы их можно было загрузить на iOS.
 
-The official external tool can be found on GitHub [here][rest-api-tools-readme].
+Официальный внешний инструмент можно найти на GitHub [здесь][rest-api-tools-readme].
 
-Follow the [setup steps][rest-api-tools-setup] from the readme in the GitHub repo.
+Следуйте [шагам по настройке][rest-api-tools-setup] из файла readme в репозитории GitHub.
 
-And run the command for the [Cordova Publish script][rest-api-tools-readme] as shown in the readme.
+И выполните команду для [скрипта публикации Cordova][rest-api-tools-readme], как показано в файле readme.
 
-This will create a ZIP of the project ready for Cordova. Extract its contents to the root of the `www` folder.
+Это создаст ZIP-архив проекта, готового для Cordova. Извлеките его содержимое в корень папки `www`.
 
-## Building Executables
+## Создание исполняемых файлов
 
-You are now ready to build your app for any of the platforms supported by Cordova.
+Теперь вы готовы собрать свое приложение для любой из платформ, поддерживаемых Cordova.
 
-### Building for iOS
+### Сборка для iOS
 
-Building for iOS is limited to macOS based computers. You must also ensure you have Xcode installed. You can install it from the [Mac App Store][9].
+Сборка для iOS ограничена компьютерами на базе macOS. Вы также должны убедиться, что у вас установлен Xcode. Вы можете установить его из [Mac App Store][9].
 
-To build your app for iOS, add the Cordova iOS platform to your project. From the root of your project, issue the command:
+Чтобы собрать ваше приложение для iOS, добавьте платформу Cordova iOS в ваш проект. Из корня вашего проекта выполните команду:
 
 ```
 cordova platform add ios
 ```
 
-Ensure that the version is `6.0.0` or higher. This is because version `6.0.0` upgraded the wrapper to use WKWebView instead of UIWebView, which bring better performance. Read more on [Cordova's blog][10].
+Убедитесь, что версия `6.0.0` или выше. Это связано с тем, что версия `6.0.0` обновила оболочку для использования WKWebView вместо UIWebView, что обеспечивает лучшую производительность. Подробнее читайте в [блоге Cordova][10].
 
-By default, if you attempt to run a Cordova-based PlayCanvas app, you will encounter several errors/exceptions related to cross-origin HTTP requests. To fix this, add the following to your project's `config.xml`:
+По умолчанию, если вы попытаетесь запустить приложение PlayCanvas на основе Cordova, вы столкнетесь с несколькими ошибками/исключениями, связанными с кросс-доменными HTTP-запросами. Чтобы исправить это, добавьте следующее в файл `config.xml` вашего проекта:
 
 ```html
     <platform name="ios">
-        <!-- Add these two lines... -->
+        <!-- Добавьте эти две строки... -->
         <preference name="scheme" value="app" />
         <preference name="hostname" value="localhost" />
 
-        <!-- ...alongside whatever already exists in this section -->
+        <!-- ...рядом с тем, что уже существует в этом разделе -->
     </platform>
 ```
 
-### Testing for iOS
+### Тестирование для iOS
 
-You are now ready to test your app. For iOS, you can use Simulator or run on a physical iOS device. Simulator is installed as part the Xcode tools, runs on your Mac and simulates the various iOS based devices. To run your app in Simulator, issue the following command:
+Теперь вы готовы протестировать свое приложение. Для iOS вы можете использовать Simulator или запустить на физическом устройстве iOS. Simulator устанавливается как часть инструментов Xcode, работает на вашем Mac и имитирует различные устройства на базе iOS. Чтобы запустить ваше приложение в Simulator, выполните следующую команду:
 
 ```
 cordova run ios
 ```
 
-Once the executable has been generated in the build process, Simulator will start and load it. You should see something like the following:
+После того как исполняемый файл был сгенерирован в процессе сборки, Simulator запустится и загрузит его. Вы должны увидеть что-то похожее на следующее:
 
 ![Master Archer in Simulator][11]
 
-To run on a physical device:
+Для запуска на физическом устройстве:
 
-1. Connect your iOS device to your Mac via USB.
-2. Open `platforms/ios/<my-project-name>.xcworkspace` in Xcode.
-3. Navigate to the Signing & Capabilities settings for your project's Target and select a valid Team so that your app can be digitally signed before being deployed to your device.
-4. Select your iOS device in Xcode's Scheme drop-down list.
+1. Подключите ваше iOS-устройство к вашему Mac через USB.
+2. Откройте `platforms/ios/<my-project-name>.xcworkspace` в Xcode.
+3. Перейдите к настройкам Signing & Capabilities для вашего проекта Target и выберите действительную команду, чтобы ваше приложение могло быть цифрово подписано перед развертыванием на вашем устройстве.
+4. Выберите ваше iOS-устройство в выпадающем списке Scheme в Xcode.
 
 ![Xcode Scheme drop-down][12]
 
-5. Press the Run button to build, deploy and run the application on your device.
+5. Нажмите кнопку Run, чтобы собрать, развернуть и запустить приложение на вашем устройстве.
 
 ![Xcode Run button][13]
 
-Once you are happy with your app, you can ship it to [App Store Connect][14].
+Когда вы будете довольны вашим приложением, вы можете отправить его в [App Store Connect][14].
 
 [1]: https://cordova.apache.org/
 [2]: https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli

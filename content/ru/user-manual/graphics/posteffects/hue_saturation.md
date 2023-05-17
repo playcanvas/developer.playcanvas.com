@@ -1,25 +1,25 @@
 ---
-title: Эффект тона-насыщенности
+title: Эффект насыщенности и оттенка
 layout: usermanual-page.hbs
 position: 4
 ---
 
-The hue-saturation effect allows you to modify the hue and saturation of the rendered image.
+Эффект насыщенности и оттенка позволяет изменять оттенок и насыщенность отображаемого изображения.
 
-Here is an image without the effect:
+Вот изображение без эффекта:
 
-![Image without effect][1]
+![Изображение без эффекта][1]
 
-And the same image with the effect applied and changes to hue and saturation:
+И то же изображение с примененным эффектом и изменениями оттенка и насыщенности:
 
-![Image with effect][2]
+![Изображение с эффектом][2]
 
-The built-in hue-saturation effect has the following attributes:
+Встроенный эффект насыщенности и оттенка имеет следующие атрибуты:
 
-* **Hue**: The hue of the image. Ranges from -1 to 1 (-1 is 180 degrees in the negative direction, 0 no change, 1 is 180 degrees in the positive direction).
-* **Saturation**: The saturation of the image. Ranges from -1 to 1 (-1 is solid gray, 0 no change, 1 maximum saturation).
+* **Hue**: Оттенок изображения. Диапазон от -1 до 1 (-1 - это 180 градусов в отрицательном направлении, 0 - без изменений, 1 - это 180 градусов в положительном направлении).
+* **Saturation**: Насыщенность изображения. Диапазон от -1 до 1 (-1 - это сплошной серый, 0 - без изменений, 1 - максимальная насыщенность).
 
-Find the post-processing effect script on [GitHub][3].
+Найдите скрипт эффекта постобработки на [GitHub][3].
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_hue_saturation.png

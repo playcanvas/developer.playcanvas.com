@@ -6,31 +6,31 @@ position: 20
 
 ![VR View][2]
 
-PlayCanvas lets you create Augmented Reality (AR) and Virtual Reality (VR) applications for a variety of devices based on the new WebXR API, as well as through external integrations. WebXR is an evolution of the WebVR API and is being added to modern browsers, providing access to virtual reality headsets, controllers and AR features.
+PlayCanvas позволяет создавать приложения для дополненной реальности (AR) и виртуальной реальности (VR) для различных устройств на основе нового API WebXR, а также через внешние интеграции. WebXR является развитием API WebVR и добавляется в современные браузеры, обеспечивая доступ к шлемам виртуальной реальности, контроллерам и функциям AR.
 
-## Platforms
+## Платформы
 
-WebXR is a new API and it is being rolled out gradually to all major platforms. Up to date support can be checked on [caniuse.com][3].
+WebXR - это новый API, и он постепенно внедряется на все основные платформы. Актуальную поддержку можно проверить на [caniuse.com][3].
 
-Additionally, support can be achieved with the [WebXR Polyfill][4].
+Кроме того, поддержка может быть достигнута с помощью [WebXR Polyfill][4].
 
-On **mobile**, PlayCanvas XR works on Android and iOS devices using Cardboard-style VR headsets and other devices. AR is also available. It works on stand-alone Android based VR devices, such as the Oculus QuestTM.
+На **мобильных** устройствах PlayCanvas XR работает на устройствах Android и iOS с использованием VR-шлемов типа Cardboard и других устройств. Также доступна AR. Он работает на автономных устройствах VR на базе Android, таких как Oculus Quest™.
 
-On **desktop**, PlayCanvas XR currently works in Chrome and Edge, and devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
+На **настольных** компьютерах PlayCanvas XR в настоящее время работает в Chrome и Edge, а устройства подключаются через различные собственные API, такие как Windows Mixed Reality, OpenXR и другие. Это охватывает большинство настольных устройств VR.
 
-## Testing WebXR without XR device
+## Тестирование WebXR без устройства XR
 
-To start developing with WebXR today, a browser [extension][1] can be used in Chrome or Firefox which emulates the WebXR API. This allows developers to interact with various head-mounted displays and controllers.
+Чтобы начать разработку с WebXR сегодня, можно использовать [расширение][1] для браузеров Chrome или Firefox, которое эмулирует API WebXR. Это позволяет разработчикам взаимодействовать с различными шлемами и контроллерами.
 
-## Getting started with WebXR
+## Начало работы с WebXR
 
-To start an XR session, support and availability should be checked first. Then, on user interaction XR, a session can be started:
+Чтобы начать сеанс XR, сначала следует проверить поддержку и доступность. Затем, при взаимодействии пользователя с XR, можно начать сеанс:
 
 ```javascript
 button.element.on('click', function () {
-    // check if XR is supported and VR is available
+    // проверяем, поддерживается ли XR и доступен ли VR
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_VR)) {
-        // start VR using a camera component
+        // запускаем VR с использованием компонента камеры
         entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });

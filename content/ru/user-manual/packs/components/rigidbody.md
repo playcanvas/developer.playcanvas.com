@@ -1,43 +1,43 @@
 ---
-title: Твёрдое тело
+title: Жесткое Тело
 layout: usermanual-page.hbs
 position: 14
 ---
 
-The Rigid Body component enables an entity to participate in the scene's physics simulation. This allows the movement of an entity to be simulated realistically. The component interface dynamically displays different attributes based on the 'Type' attribute.
+Компонент Rigid Body позволяет объекту участвовать в физической симуляции сцены. Это позволяет реалистично симулировать движение объекта. Интерфейс компонента динамически отображает различные атрибуты на основе атрибута 'Type'.
 
-The Rigid Body component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component has a sibling collision component, the rigid body will participate in the physics simulation.
+Компонент Rigid Body можно включить или отключить с помощью переключателя в верхнем правом углу панели компонента. Если он включен и если у компонента есть соседний компонент столкновения, жесткое тело будет участвовать в физической симуляции.
 
-#### Static
+#### Статический
 
-![Rigid Body component (Static)][1]
+![Компонент Жесткое Тело (Статический)][1]
 
-#### Dynamic (and Kinematic)
+#### Динамический (и Кинематический)
 
-![Rigid Body component (Dynamic)][2]
+![Компонент Жесткое Тело (Динамический)][2]
 
-#### Kinematic
+#### Кинематический
 
-![Rigid Body component (Kinematic)][3]
+![Компонент Жесткое Тело (Кинематический)][3]
 
-Note that you must add a [collision component][4] to the same entity in order to define the shape of the rigid body. Otherwise, the rigidbody component has no effect and will not participate in the physics simulation.
+Обратите внимание, что вы должны добавить [компонент столкновения][4] к тому же объекту, чтобы определить форму жесткого тела. В противном случае компонент жесткого тела не будет иметь эффекта и не будет участвовать в физической симуляции.
 
-## Properties
+## Свойства
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Type            | The type of the body: <ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul> |
-| Mass            | The mass of the body. If world units in your scene are meters, the unit for mass is kilograms. |
-| Linear Damping  | Specifies the proportion of linear velocity that is lost by the body every second. |
-| Angular Damping | Specifies the proportion of angular velocity that is lost by the body every second. |
-| Linear Factor   | Multiplier for a body's linear movement in each world axis. If set to 0 for any axis no movement will occur in this axis - useful for the creation of 2D games or 1D/2D movement. |
-| Angular Factor  | Multiplier for a body's angular (rotational) movement about each world axis. If set to 0 for any axis, no rotation will occur around this axis. |
-| Friction        | Controls how quickly a body loses velocity when in contact with other bodies. |
-| Restitution     | A measure of the bounciness of a body between 0 and 1. Warning: setting to 1 means a moving body will never come to a stop (unless  colliding with other bodies with restitutions below 1, or unless a stop is scripted). |
+| Тип            | Тип тела: <ul><li>Статический</li><li>Динамический</li><li>Кинематический</li></ul> |
+| Масса            | Масса тела. Если мировые единицы в вашей сцене измеряются в метрах, единица измерения массы - килограммы. |
+| Линейное Затухание  | Определяет долю линейной скорости, которая теряется телом каждую секунду. |
+| Угловое Затухание | Определяет долю угловой скорости, которая теряется телом каждую секунду. |
+| Линейный Фактор   | Множитель для линейного движения тела по каждой оси мира. Если установлено значение 0 для любой оси, движение не будет происходить по этой оси - полезно для создания 2D-игр или движения 1D/2D. |
+| Угловой Фактор  | Множитель для углового (вращательного) движения тела вокруг каждой оси мира. Если установлено значение 0 для любой оси, вращение не будет происходить вокруг этой оси. |
+| Трение        | Контролирует, как быстро тело теряет скорость при контакте с другими телами. |
+| Восстановление     | Мера упругости тела от 0 до 1. Предупреждение: установка значения 1 означает, что движущееся тело никогда не остановится (если только не сталкивается с другими телами с восстановлением ниже 1 или если остановка не запрограммирована). |
 
-## Scripting Interface
+## Интерфейс сценария
 
-You can control a Rigid Body component's properties using a [script component][5]. The Rigid Body component's scripting interface is [here][6].
+Вы можете управлять свойствами компонента Rigid Body с помощью [компонента сценария][5]. Интерфейс сценария компонента Rigid Body находится [здесь][6].
 
 [1]: /images/user-manual/scenes/components/component-rigid-body-static.png
 [2]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png

@@ -1,139 +1,139 @@
 ---
-title: Затенение по Фонгу
+title: Материал Phong
 layout: usermanual-page.hbs
 position: 2
 ---
 
-The Phong Material is our legacy shading model. We recommend you use the Physical Shading model unless you have specific reasons not to.
+Материал Phong - это наша устаревшая модель затенения. Мы рекомендуем использовать модель физического затенения, если у вас нет особых причин этого не делать.
 
-### Offset & Tiling
+### Смещение и повторение
 
 <img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300">
 
-| Property          | Описание |
+| Свойство          | Описание |
 |-------------------|-------------|
-| Apply to all Maps | Uncheck this to apply offset and tiling values to individual maps. |
-| Offset            | The offset in U and V to apply to the first UV channel referenced by maps in this material. |
-| Tiling            | The scale in U and V to apply to the first UV channel referenced by maps in this material. |
+| Применить ко всем картам | Снимите этот флажок, чтобы применить значения смещения и повторения к отдельным картам. |
+| Смещение            | Смещение по U и V, которое применяется к первому каналу UV, на который ссылаются карты в этом материале. |
+| Повторение            | Масштаб по U и V, который применяется к первому каналу UV, на который ссылаются карты в этом материале. |
 
-### Ambient
+### Амбиент
 
-Ambient properties determine how the material appears in ambient light.
+Свойства амбиента определяют, как материал выглядит в амбиентном свете.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300">
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Tint       | Check this to multiply the scene's global ambient color with a material specific color. |
-| Цвет      | The tint color to multiply the scene's global ambient color. |
-| AO Texture | An ambient occlusion map containing pre-baked ambient occlusion. |
+| Оттенок       | Установите этот флажок, чтобы умножить глобальный амбиентный цвет сцены на специфический для материала цвет. |
+| Цвет      | Цвет оттенка, на который умножается глобальный амбиентный цвет сцены. |
+| Текстура AO | Карта окружающей окклюзии, содержащая предварительно запеченную окружающую окклюзию. |
 
-### Diffuse
+### Диффузный
 
-Diffuse properties define the how a material reflects diffuse light emitted by dynamic light sources in the scene.
+Диффузные свойства определяют, как материал отражает диффузный свет, излучаемый динамическими источниками света на сцене.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300">
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Texture    | The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead. |
-| Tint       | Check this to modulate the material's diffuse map with a material specific diffuse color. |
-| Цвет      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
+| Текстура    | Диффузная карта, которая определяет диффузный цвет материала для каждого пикселя. Если диффузная карта не установлена, вместо нее используется диффузный цвет. |
+| Оттенок       | Установите этот флажок, чтобы модулировать диффузную карту материала с помощью специфического для материала диффузного цвета. |
+| Цвет      | Если диффузная карта не установлена, это диффузный цвет материала. Если установлена диффузная карта и включен оттенок, этот цвет модулирует диффузную карту материала. |
 
-### Specular
+### Спекулярный
 
-Specular properties defines the color of the specular highlights. i.e. the shininess
+Спекулярные свойства определяют цвет спекулярных бликов, т.е. блеск
 
 <img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300">
 
-| Property     | Описание |
+| Свойство     | Описание |
 |--------------|-------------|
-| Specular Map | The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead. |
-| Tint         | Check this to modulate the material's specular map with a material specific specular color. |
-| Цвет        | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
-| Gloss Map    | The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property. |
-| Glossiness   | A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny). |
+| Спекулярная карта | Спекулярная карта, которая определяет спекулярный цвет для каждого пикселя. Если спекулярная карта не установлена, вместо нее используется спекулярный цвет. |
+| Оттенок         | Установите этот флажок, чтобы модулировать спекулярную карту материала с помощью специфического для материала спекулярного цвета. |
+| Цвет        | Если спекулярная карта не установлена, это спекулярный цвет материала. Если установлена спекулярная карта и включен оттенок, этот цвет модулирует спекулярную карту материала. |
+| Глянцевая карта    | Глянцевая карта, которая определяет значение блеска для каждого пикселя. Глянцевая карта модулируется свойством блеска. |
+| Глянцевость   | Значение, определяющее гладкость поверхности. Для меньших значений блеска поверхность будет более шероховатой, а спекулярные блики - более широкими. Для больших значений блеска поверхность будет более гладкой и будет проявлять более концентрированные спекулярные блики (поскольку поверхность полирована и блестяща). |
 
-### Emissive
+### Излучение
 
-Emissive properties control how the material emits light (as opposed to reflecting light).
+Свойства излучения определяют, как материал излучает свет (в отличие от отражения света).
 
 <img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300">
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Texture    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
-| Tint       | Check this to modulate the material's emissive map with a material specific emissive color. |
-| Цвет      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
-| Intensity  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
+| Текстура    | Излучающая карта, которая определяет излучающий цвет для каждого пикселя. Если излучающая карта не установлена, вместо нее используется излучающий цвет. |
+| Оттенок       | Установите этот флажок, чтобы модулировать излучающую карту материала с помощью специфического для материала излучающего цвета. |
+| Цвет      | Если излучающая карта не установлена, это излучающий цвет материала. Если установлена излучающая карта и включен оттенок, этот цвет модулирует излучающую карту материала. |
+| Интенсивность  | Множитель для излучающего цвета, который может достигать эффектов сверхяркости для особенно ярких излучающих материалов. |
 
-### Opacity
+### Прозрачность
 
-Opacity sets the transparency level.
+Прозрачность устанавливает уровень прозрачности.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/opacity.jpg" width="300">
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Texture    | The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property. |
-| Intensity  | The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1. |
+| Текстура    | Карта прозрачности, которая определяет прозрачность каждого пикселя. Карта прозрачности модулируется свойством "Количество". |
+| Intensity  | Прозрачность материала. Это значение между 0 (полностью прозрачный) и 1 (полностью непрозрачный). По умолчанию равно 1. |
 
-### Normals
+### Нормали
 
-Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in PlayCanvas, not height maps).
+Используйте это для указания карт нормалей (они определяют шероховатость - обратите внимание, что в PlayCanvas нужно использовать карты нормалей, а не карты высот).
 
 <img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300">
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Bumpiness  | The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1. |
-| Texture    | The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property. |
+| Шероховатость  | Сила применяемой карты нормалей. Это значение между 0 (карта нормалей не оказывает влияния) и 2 (эффект карты нормалей преувеличен). По умолчанию равно 1. |
+| Текстура    | Карта нормалей, определяющая нормали поверхности на каждом пикселе. Карта нормалей модулируется свойством "Шероховатость". |
 
-### Parallax
+### Параллакс
 
-A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
+Карта параллакса придает дополнительный реализм карте нормалей, создавая иллюзию глубины поверхности. Обратите внимание, что параметры параллакса активируются только если вы установили карту нормалей на материал.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300">
 
-| Property    | Описание |
+| Свойство    | Описание |
 |-------------|-------------|
-| Height Map  | The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height. |
-| Strength    | The strength of a parallax effect (a value between 0 and 2, defaulting to 1). |
+| Карта высот  | Карта высот, определяющая силу параллакс-эффекта на каждом пикселе. Белый - полная высота, черный - нулевая высота. |
+| Сила    | Сила параллакс-эффекта (значение между 0 и 2, по умолчанию равно 1). |
 
-### Environment
+### Окружение
 
-Environment properties determine how a material reflects the environment.
+Свойства окружения определяют, как материал отражает окружающую среду.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300">
 
-| Property            | Описание |
+| Свойство            | Описание |
 |---------------------|-------------|
-| Sphere Map          | A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive). |
-| Cube Map            | A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive). |
-| Reflectivity        | A factor to determine what portion of light is reflected from the material. This value defaults to 1 (full reflectivity). |
-| Refraction          | A factor to determine what portion of light passes through the material. |
-| Index of Refraction | Determines the amount of distortion of light passing through the material. |
+| Сферическая карта          | Текстурный Asset сферической карты, который приближенно отражает окружение. Если установлена сферическая карта, свойство Cube Map будет скрыто (поскольку эти свойства взаимоисключающие). |
+| Кубическая карта            | Текстурный Asset кубической карты, который приближенно отражает окружение (с большей точностью, чем это возможно с сферической картой). Если установлена кубическая карта, свойство Сферическая карта будет скрыто (поскольку эти свойства взаимоисключающие). |
+| Отражательность        | Фактор, определяющий, какая часть света отражается от материала. Это значение по умолчанию равно 1 (полная отражательность). |
+| Преломление          | Фактор, определяющий, какая часть света проходит через материал. |
+| Индекс преломления | Определяет степень искажения света, проходящего через материал. |
 
-### Light Map
+### Карта освещения
 
-Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
+Карты освещения содержат предварительно запеченное диффузное освещение. Использование карт освещения считается оптимизацией, поскольку расчеты динамического освещения во время выполнения могут быть предварительно рассчитаны.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300">
 
-| Property   | Описание |
+| Свойство   | Описание |
 |------------|-------------|
-| Texture    | The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs. |
+| Текстура    | Текстура карты освещения, содержащая предварительно запеченное диффузное освещение. Карта освещения требует, чтобы материал был применен к сетке, имеющей два набора UV. Карта освещения использует второй набор UV. |
 
-### Other Render States
+### Другие состояния рендеринга
 
-Other Render States gives additional controls over how a mesh is rendered with the specified material.
+Другие состояния рендеринга дают дополнительный контроль над тем, как сетка отображается с указанным материалом.
 
 <img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300">
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Depth Test      | If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on. |
-| Depth Write     | If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on. |
-| Cull            | Options are: <ul><li>None: Both front faces and back faces are rendered.</li><li>Front Faces: front faces are rendered and back faces are not.</li><li>Back Faces: back faces are rendered and front faces are not. This is the default.</li></ul> PlayCanvas dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels. |
-| Blend Type      | Options are: <ul><li>None: The mesh is opaque. This is the default.</li><li>Normal: The mesh is transparent, like stained glass.</li><li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li><li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li><li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li></ul> |
-| Shadow Sampling | Options are: <ul><li>Hard</li><li>PCF 3x3</li></ul> |
+| Тест глубины      | Если установлено, при отображении сетки с материалом выполняется проверка на каждом пикселе, чтобы определить, проходит ли пиксель тест глубины движка. По умолчанию тест заключается в том, что пиксель должен иметь глубину z меньше или равную тому, что уже находится в буфере глубины. Другими словами, сетка видна только в том случае, если перед ней ничего нет. Если снять флажок, сетка будет отображаться независимо от того, что уже находится в буфере глубины. По умолчанию включено. |
+| Запись глубины     | Если установлено, при отображении сетки с материалом информация о глубине записывается в буфер глубины. Это обеспечивает успешное тестирование глубины для последующих сеток при их отображении относительно сеток, отображаемых с этим материалом. По умолчанию включено. |
+| Отсечение            | Варианты: <ul><li>Нет: Отображаются как передние, так и задние грани.</li><li>Передние грани: отображаются передние грани, задние грани не отображаются.</li><li>Задние грани: отображаются задние грани, передние грани не отображаются. Это значение по умолчанию.</li></ul> PlayCanvas определяет, что треугольник с противоположным направлением вершин указывает на переднюю грань. Обратите внимание, что отсечение задних граней часто полезно для производительности, поскольку пиксели задних граней часто перезаписываются (для выпуклых сеток), что может привести к избыточному заполнению пикселей. |
+| Тип смешивания      | Варианты: <ul><li>Нет: сетка непрозрачна. Это значение по умолчанию.</li><li>Нормальный: сетка прозрачна, как витражное стекло.</li><li>Аддитивный: цвет сетки добавляется к уже отрендеренному содержимому буфера кадра.</li><li>Предварительное умножение: как смешивание "Нормальное", но предполагается, что цвет сетки, отображаемой с этим материалом, уже был модулирован его альфа-значением.</li><li>Умножение: при отображении цвет сетки умножается на то, что уже было отрендерено в буфер кадра.</li></ul> |
+| Семплирование тени | Варианты: <ul><li>Жесткий</li><li>PCF 3x3</li></ul> |

@@ -1,40 +1,40 @@
 ---
-title: Предзагрузка и стриминг
+title: Предзагрузка и потоковая передача
 layout: usermanual-page.hbs
 position: 3
 ---
 
-On the web, it's critical to get users into your application as soon as possible after they load the page. Presenting a loading bar and asking people to wait will lead to visitors leaving the page before your application has even got started. The PlayCanvas asset system implements a number of features to help you streamline the loading process and get your application running as fast as possible.
+В Интернете критически важно, чтобы пользователи попали в ваше приложение как можно скорее после загрузки страницы. Показывая индикатор загрузки и просить людей ждать, приведет к тому, что посетители покинут страницу, прежде чем ваше приложение начнет работать. Система ассетов PlayCanvas реализует ряд функций, которые помогут вам оптимизировать процесс загрузки и запустить ваше приложение как можно быстрее.
 
-## Preload
+## Предзагрузка
 
 ![Asset Properties][1]
 
-Every asset in your project has a property called `preload`. By default this is set to true. If an asset is marked as preload it will be downloaded and created before the initialize phase of your application begins.
+У каждого ассета в вашем проекте есть свойство под названием `preload`. По умолчанию это значение установлено как true. Если ассет помечен как предзагрузка, он будет загружен и создан перед началом фазы инициализации вашего приложения.
 
-You should use preloading to make sure all the assets you need at the start of your application are present. This will prevent any assets from 'popping' in after the application begins.
+Вы должны использовать предзагрузку, чтобы убедиться, что все ассеты, необходимые в начале вашего приложения, присутствуют. Это предотвратит появление ассетов после начала работы приложения.
 
-## Streaming
+## Потоковая передача
 
 ![Streaming][2]
 
-If an Entity in your scene and references an asset, then a loading request will be initiated when the Entity is enabled. If the Entity is enabled in the scene, then this request is made as soon as the application starts.
+Если Entity в вашей сцене ссылается на ассет, то запрос на загрузку будет инициирован, когда Entity будет включен. Если Entity включен в сцене, то этот запрос будет выполнен сразу после запуска приложения.
 
-All components will gracefully handle dynamically loading assets and will start operating as normal, once the asset is loaded. When streaming assets in dynamically like this, you will often see "popup". As a model will appear as soon as it is loaded, even if it doesn't have materials or textures yet.
+Все компоненты будут корректно обрабатывать динамически загружаемые ассеты и начнут работать в штатном режиме, как только ассет будет загружен. При динамической потоковой передаче ассетов таким образом, вы часто увидите "всплывающие" окна. Поскольку модель появится, как только она будет загружена, даже если у нее еще нет материалов или текстур.
 
-## When are assets loaded?
+## Когда загружаются ассеты?
 
-You can determine when a particular asset will be loaded you can follow these rules.
+Вы можете определить, когда будет загружен определенный ассет, следуя этим правилам.
 
-* If `preload = true` the asset will be loaded before the application starts. Otherwise:
-* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
-* If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
+* Если `preload = true`, ассет будет загружен перед началом работы приложения. В противном случае:
+* Если ассет ссылается на компонент, который включен на сущности, которая включена и находится в иерархии сцены, то он будет загружен. Актив загружается в момент включения сущности или компонента или когда ассет назначается компоненту. Для сущностей, которые включены в редакторе, это произойдет сразу после запуска приложения, сразу после завершения предзагрузки. Компонент считается включенным, если он включен, и все сущности в иерархии над ним включены.
+* Если ассет ссылается на другой ассет, который загружен, то он будет загружен. Например, если загружена модель и ссылается на материал, материал будет загружен, если материал ссылается на текстуру, текстура будет загружена.
 
-## Asset Tags
+## Теги ассетов
 
-In many cases, you don't wish assets to "popup" as they load. It's preferable to load a set of assets and then display them. To do this, you can use Asset Tags to create groups of assets. Then you can load all assets with a particular tag before using them.
+Во многих случаях вы не хотите, чтобы ассеты "всплывали" при загрузке. Желательно загрузить набор ассетов и затем отобразить их. Для этого вы можете использовать теги ассетов для создания групп ассетов. Затем вы можете загрузить все ассеты с определенным тегом перед их использованием.
 
-Here is some example javascript which shows you how you might load a set of assets using a tag.
+Вот пример кода на JavaScript, который показывает, как вы можете загрузить набор ассетов с использованием тега.
 
 ```javascript
 var assets = this.app.assets.findByTag("level-1");
@@ -44,7 +44,7 @@ for (var i = 0; i < assets.length; i++) {
     assets[i].once("load", function () {
         count++;
         if (count === assets.length) {
-            // asset loading complete
+            // загрузка ассетов завершена
         }
     });
     this.app.assets.load(assets[i]);
@@ -53,3 +53,48 @@ for (var i = 0; i < assets.length; i++) {
 
 [1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
 [2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif
+
+# Руководство по использованию Issue Tracker
+
+## Обзор
+
+Issue Tracker - это инструмент для отслеживания и управления задачами, ошибками и запросами на улучшение в вашем проекте. В этом руководстве вы узнаете, как использовать Issue Tracker для создания, редактирования и управления задачами.
+
+## Создание задачи
+
+Чтобы создать новую задачу, выполните следующие шаги:
+
+1. Откройте Issue Tracker.
+2. Нажмите кнопку "Создать задачу".
+3. Введите название задачи и описание.
+4. Выберите тип задачи (ошибка, улучшение, запрос на функцию и т. д.).
+5. Назначьте задачу на участника команды.
+6. Установите приоритет задачи.
+7. Нажмите кнопку "Сохранить".
+
+## Редактирование задачи
+
+Чтобы отредактировать существующую задачу, выполните следующие шаги:
+
+1. Откройте Issue Tracker.
+2. Найдите задачу, которую вы хотите отредактировать, и нажмите на ее название.
+3. Внесите необходимые изменения в название, описание, тип, назначение, приоритет и другие параметры задачи.
+4. Нажмите кнопку "Сохранить".
+
+## Управление задачами
+
+Issue Tracker предоставляет несколько способов управления задачами:
+
+- Фильтрация задач по типу, приоритету, назначению и другим параметрам.
+- Сортировка задач по дате создания, обновления, приоритету и другим параметрам.
+- Просмотр подробной информации о задаче, включая историю изменений и комментарии.
+- Добавление комментариев к задачам для обсуждения и сотрудничества с командой.
+- Изменение статуса задачи (открыта, в работе, закрыта и т. д.).
+
+## Интеграция с другими инструментами
+
+Issue Tracker может быть интегрирован с другими инструментами и сервисами, такими как системы контроля версий, системы управления проектами, системы оповещений и т. д. Это позволяет автоматизировать процесс управления задачами и улучшить сотрудничество между участниками команды.
+
+## Заключение
+
+Issue Tracker - это мощный инструмент для управления задачами, который поможет вам и вашей команде эффективно отслеживать и решать ошибки, улучшения и запросы на функции. Воспользуйтесь этим руководством, чтобы начать использовать Issue Tracker и повысить производительность вашего проекта.

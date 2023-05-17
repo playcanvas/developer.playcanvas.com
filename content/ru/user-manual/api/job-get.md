@@ -1,10 +1,43 @@
----
-title: Работа - получить работу
-layout: usermanual-page.hbs
-position: 12
----
+```
+GET /api/v1/jobs/:id
+```
 
-## Route URL
+## Описание
+
+Получить информацию о задании по его идентификатору.
+
+## Параметры
+
+- `id` (обязательный) - идентификатор задания.
+
+## Пример ответа
+
+```json
+{
+  "id": "5c1a9e5f96e6d2000107c1f3",
+  "type": "thumbnail",
+  "status": "completed",
+  "createdAt": "2018-12-19T19:29:03.874Z",
+  "updatedAt": "2018-12-19T19:29:04.184Z",
+  "data": {
+    "thumbnailType": "tutorial",
+    "entityId": "5c1a9e5f96e6d2000107c1f2"
+  },
+  "result": {
+    "url": "https://cospac.es/edu/tutorials/5c1a9e5f96e6d2000107c1f2/thumbnail.png"
+  }
+}
+```
+
+## Поля ответа
+
+- `id` - идентификатор задания.
+- `type` - тип задания. Возможные значения: `thumbnail`, `tutorialThumbnail`, `entity`, `materialAsset`, `materialInspector`, `shaderEditor`, `nodeInspector`, `textureInspector`, `graphInspector`, `asset`, `graphEditor`, `assets`.
+- `status` - статус задания. Возможные значения: `queued`, `processing`, `completed`, `failed`.
+- `createdAt` - дата и время создания задания.
+- `updatedAt` - дата и время последнего обновления задания.
+- `data` - данные, связанные с заданием.
+- `result` - результат выполнения задания (появляется только после завершения задания).
 
 ```none
 GET https://playcanvas.com/api/jobs/:id
@@ -12,7 +45,7 @@ GET https://playcanvas.com/api/jobs/:id
 
 ## Описание
 
-Gets a Job by id.
+Получает работу по идентификатору.
 
 ## Пример
 
@@ -20,17 +53,39 @@ Gets a Job by id.
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
 ```
 
-## Parameters
+## Параметры
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>The id of the job.</p></div>
+<div class="parameter"><span class="param">id</span><p>ID задания.</p></div>
 </div>
 
-## Response Schema
+## Схема ответа
 
 ```none
-Status: 200
+Статус: 200
 ```
+
+# Issue Tracker
+
+## Новые функции
+
+- Добавлен новый Tutorial Thumbnail
+- Добавлена поддержка Entity
+- Добавлен новый Material Asset
+- Добавлен новый Material Inspector
+
+## Улучшения
+
+- Улучшен Shader Editor
+- Улучшен Node Inspector
+- Улучшен Texture Inspector
+- Улучшен Graph Inspector
+
+## Исправления ошибок
+
+- Исправлена ошибка при сохранении Asset
+- Исправлена ошибка при открытии Graph Editor
+- Исправлены проблемы с импортом Assets
 
 ```json
 {
@@ -38,22 +93,22 @@ Status: 200
     "created_at": date,
     "modified_at": date,
     "status": "running" | "complete" | "error",
-    "messages": list of strings,
-    "data": object - contents depend on the job
+    "messages": список строк,
+    "data": объект - содержимое зависит от задачи
 }
 ```
 
-## Errors
+## Ошибки
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Job not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>Неавторизован</p></div>
+<div class="parameter"><span class="param">403</span><p>Запрещено</p></div>
+<div class="parameter"><span class="param">404</span><p>Работа не найдена</p></div>
+<div class="parameter"><span class="param">429</span><p>Слишком много запросов</p></div>
 </div>
 
-## Rate Limiting
+## Ограничение скорости
 
-This route uses a [normal][1] rate limit.
+Этот маршрут использует [нормальное][1] ограничение скорости.
 
 [1]: /user-manual/api#rate-limiting

@@ -1,99 +1,98 @@
 ---
-title: Layout Groups
+title: Группы компоновки
 layout: usermanual-page.hbs
 position: 7
 ---
 
-The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all its direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
+Компонент Layout Group используется для автоматической установки позиции и размера дочерних элементов. Компонент Layout Group может использоваться для выравнивания дочерних элементов в вертикальные или горизонтальные столбцы или сетку. Компонент Layout Group применяет правила компоновки ко всем своим прямым детям, вы можете переопределить правила Layout Group для одного дочернего элемента с помощью компонента Layout Child.
 
-The Layout Group Component can be used to generate common layouts, for example, a [grid][10], a fixed width [vertical column][11], or [horizontal row][12].
+Компонент Layout Group может использоваться для создания общих макетов, например, [сетки][10], [вертикального столбца][11] фиксированной ширины или [горизонтального ряда][12].
 
-## Creating a Layout Group
+## Создание группы компоновки
 
-Add a Layout Group by adding the LayoutGroup Component to an existing Element Entity.
+Добавьте Layout Group, добавив компонент LayoutGroup к существующему элементу Entity.
 
-![Create Layout Group][1]
+![Создание группы компоновки][1]
 
-## Layout Group Properties
+## Свойства группы компоновки
 
-#### Orientation
+#### Ориентация
 
-Set the `Orientation` to Horizontal to organize your layout from left-to-right or right-to-left. Or Vertical to organize your layout top-to-bottom or bottom-to-top
+Установите `Orientation` на горизонтальную, чтобы организовать ваш макет слева направо или справа налево. Или вертикальную, чтобы организовать ваш макет сверху вниз или снизу вверх.
 
-#### Reverse
+#### Реверс
 
-ReverseX and ReverseY properties are used to set the direction the layout group is built out in. The default is left-to-right and bottom-to-top.
+Свойства ReverseX и ReverseY используются для установки направления, в котором строится группа компоновки. По умолчанию слева направо и снизу вверх.
 
-#### Alignment
+#### Выравнивание
 
-Alignment is used to align the child elements to the edges of the Layout Group. `[0,0]` aligns to the bottom left, `[1,1]` aligns to the top right.
+Выравнивание используется для выравнивания дочерних элементов по краям группы компоновки. `[0,0]` выравнивает по нижнему левому краю, `[1,1]` выравнивает по верхнему правому краю.
 
-#### Padding
+#### Отступы
 
-Padding adds a space to the inside of the Layout Group before positioning any children.
+Отступы добавляют пространство внутри группы компоновки перед позиционированием детей.
 
-#### Spacing
+#### Расстояние
 
-Spacing determines the gap between each child.
+Расстояние определяет зазор между каждым дочерним элементом.
 
-#### Fitting
+#### Подгонка
 
-The Width Fitting and Height Fitting properties determine how a child element's width or height will be adjusted by the Layout Group.
+Свойства Width Fitting и Height Fitting определяют, как ширина или высота дочернего элемента будет изменяться группой компоновки.
 
-A value of **None** will apply no fitting.
+Значение **None** не применяет подгонку.
 
-A value of **Stretch** will stretch the children to fill the width or height of the container using the following procedure:
+Значение **Stretch** растягивает детей, чтобы заполнить ширину или высоту контейнера следующим образом:
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
-* If there is space remaining in the container, distribute it to each child based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the maxWidth/maxHeight of each child.
+* Суммируйте значения fitWidthProportion/fitHeightProportion каждого ребенка и нормализуйте так, чтобы все значения суммировались до 1.
+* Примените естественную ширину/высоту для каждого ребенка.
+* Если в контейнере остается свободное место, распределите его между детьми на основе нормализованных значений fitWidthProportion/fitHeightProportion, но не превышайте maxWidth/maxHeight каждого ребенка.
 
-A value of **Shrink** will shrink the children to fit the container using the following procedure:
+Значение **Shrink** сжимает детей, чтобы они вписывались в контейнер следующим образом:
 
-* Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-* Apply the natural width/height for each child.
-* If the new total width/height of all children exceeds the available space of the container, reduce each child's width/height proportionally based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the minWidth/minHeight of each child.
+* Суммируйте значения fitWidthProportion/fitHeightProportion каждого ребенка и нормализуйте так, чтобы все значения суммировались до 1.
+* Примените естественную ширину/высоту для каждого ребенка.
+* Если новая общая ширина/высота всех детей превышает доступное пространство контейнера, уменьшите ширину/высоту каждого ребенка пропорционально на основе нормализованных значений fitWidthProportion/fitHeightProportion, но не превышайте minWidth/minHeight каждого ребенка.
 
-A value of **Both** will apply both **Stretch** and **Shrink**.
+Значение **Both** применяет и **Stretch**, и **Shrink**.
 
-#### Wrap
+#### Перенос
 
-The wrap property causes children that are outside of the width (for vertical groups) or height (for horizontal groups) to be moved to a new row or column. Using the wrap property you can create grid-based layouts.
+Свойство wrap перемещает детей, которые находятся за пределами ширины (для вертикальных групп) или высоты (для горизонтальных групп), на новую строку или столбец. Используя свойство wrap, вы можете создавать макеты на основе сетки.
 
-## Layout Children
+## Дочерние элементы компоновки
 
-A Layout Group applies its rules to all of its direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
+Группа компоновки применяет свои правила ко всем своим прямым детям. Если вы хотите переопределить эти правила для определенного дочернего элемента, вы можете сделать это, добавив компонент LayoutChild к этому дочернему элементу.
 
-![Layout Child][8]
+![Дочерний элемент компоновки][8]
 
-In this example, the horizontal layout is using the **Stretch** width fitting to stretch each button to fit evenly into the container. The center button has a Layout Child Component with a `maxWidth` value set to 64, so it will not be stretched.
+В этом примере горизонтальная компоновка использует подгонку ширины **Stretch** для растягивания каждой кнопки, чтобы они равномерно вписывались в контейнер. Центральная кнопка имеет компонент Layout Child с установленным значением `maxWidth` равным 64, поэтому она не будет растягиваться.
 
-![Layout Child Setup][9]
+![Настройка дочернего элемента компоновки][9]
 
+## Примеры макетов
 
-## Example Layouts
+### Вертикальный лидерборд
 
-### Vertical Leaderboard
+![Лидерборд][2]
 
-![Leaderboard][2]
+Этот лидерборд настроен как вертикальный столбец, выровненный по верхнему центру. Мы используем свойство Width Fitting для растягивания каждого элемента на полную ширину. И используем свойства Padding и Spacing для создания четких зазоров между ячейками.
 
-This Leaderboard is setup as vertical column aligned to the top center. We're using the Width Fitting property to stretch each item to be the full width. And using the Padding and Spacing properties to leave clear gaps between the cells.
+![Настройка лидерборда][3]
 
-![Leaderboard Setup][3]
+### Горизонтальные кнопки
 
-### Horizontal Buttons
+![Горизонтальные кнопки][4]
 
-![Horizontal Buttons][4]
+Этот ряд кнопок размещен с использованием горизонтальной группы компоновки с некоторыми настройками Spacing и Padding, чтобы кнопки имели правильную ширину. Подгонка ширины или высоты не используется.
 
-This row of buttons is laid out using a Horizontal Layout Group with some Spacing and Padding settings to make the buttons fit the correct width. No width or height fitting is used.
+![Горизонтальная настройка][5]
 
-![Horizontal Setup][5]
+### Сетка
 
-### Grid
+![Сетка][6]
 
-![Grid][6]
-
-This row of buttons is laid out using a Layout Group with the Wrap setting enabled to set up a grid. The Group Element the Layout Group is attached to is set to the correct width (button width + spacing) to force the wrap to generate a two column grid. The Horizontal layout means that the grid fills in rows not columns and the Alignment property is set to `[0.5, 1]` which means that any "loose" elements (a row with only one element) will be centered in the X axis.
+Этот ряд кнопок размещен с использованием группы компоновки с включенной настройкой Wrap для создания сетки. Элемент Group, к которому прикреплена группа компоновки, имеет правильную ширину (ширина кнопки + расстояние), чтобы заставить wrap генерировать сетку из двух столбцов. Горизонтальная компоновка означает, что сетка заполняется строками, а не столбцами, и свойство Alignment установлено на `[0.5, 1]`, что означает, что любые "свободные" элементы (строка с одним элементом) будут центрированы по оси X.
 
 ![Setup][7]
 
@@ -110,4 +109,3 @@ This row of buttons is laid out using a Layout Group with the Wrap setting enabl
 [10]: /user-manual/user-interface/layout-groups#grid
 [11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
 [12]: /user-manual/user-interface/layout-groups#horizontal-buttons
-

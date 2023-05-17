@@ -1,27 +1,27 @@
 ---
-title: Ray Casting
+title: Лучевое трассирование
 layout: usermanual-page.hbs
 position: 5
 ---
 
-The PlayCanvas physics engine allows you to perform ray casts. A ray cast is a query that determines if a straight line between two arbitrary 3D points intersects with a rigid body.
+Движок физики PlayCanvas позволяет выполнять лучевое трассирование. Лучевое трассирование - это запрос, который определяет, пересекает ли прямая линия между двумя произвольными 3D-точками твердое тело.
 
-One application of ray casting is picking, where the user can touch/click the screen and select an entity. Here is a script which performs a ray cast from the camera position into the scene through the screen touch/click position and returns the closest selected rigid body-enabled entity:
+Одно из применений лучевого трассирования - выбор объектов, когда пользователь может касаться/кликать по экрану и выбирать сущность. Вот скрипт, который выполняет лучевое трассирование от позиции камеры в сцену через позицию касания/клика по экрану и возвращает ближайшую выбранную сущность с включенным твердым телом:
 
 ```javascript
 var Raycast = pc.createScript('raycast');
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Raycast.prototype.initialize = function() {
     if (!this.entity.camera) {
-        console.error('This script must be applied to an entity with a camera component.');
+        console.error('Этот скрипт должен быть применен к сущности с компонентом камеры.');
         return;
     }
 
-    // Add a mousedown event handler
+    // Добавить обработчик событий нажатия кнопки мыши
     this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.mouseDown, this);
 
-    // Add touch event only if touch is available
+    // Добавить событие касания только если касание доступно
     if (this.app.touch) {
         this.app.touch.on(pc.EVENT_TOUCHSTART, this.touchStart, this);
     }
@@ -32,7 +32,7 @@ Raycast.prototype.mouseDown = function (e) {
 };
 
 Raycast.prototype.touchStart = function (e) {
-    // Only perform the raycast if there is one finger on the screen
+    // Выполнить лучевую проверку только если на экране один палец
     if (e.touches.length === 1) {
         this.doRaycast(e.touches[0].x, e.touches[0].y);
     }
@@ -40,25 +40,25 @@ Raycast.prototype.touchStart = function (e) {
 };
 
 Raycast.prototype.doRaycast = function (screenX, screenY) {
-    // The pc.Vec3 to raycast from (the position of the camera)
+    // pc.Vec3 для лучевой проверки (позиция камеры)
     var from = this.entity.getPosition();
 
-    // The pc.Vec3 to raycast to (the click position projected onto the camera's far clip plane)
+    // pc.Vec3 для лучевой проверки (проекция позиции клика на дальнюю плоскость отсечения камеры)
     var to = this.entity.camera.screenToWorld(screenX, screenY, this.entity.camera.farClip);
 
-    // Raycast between the two points and return the closest hit result
+    // Выполнить лучевую проверку между двумя точками и вернуть ближайший результат попадания
     var result = this.app.systems.rigidbody.raycastFirst(from, to);
 
-    // If there was a hit, store the entity
+    // Если было попадание, сохранить сущность
     if (result) {
         var hitEntity = result.entity;
-        console.log('You selected ' + hitEntity.name);
+        console.log('Вы выбрали ' + hitEntity.name);
     }
 };
 ```
 
-You can find a project that uses ray casting for entity selection [here][1].
+Вы можете найти проект, использующий лучевое преобразование для выбора объектов Entity [здесь][1].
 
-Ray casting has other applications too. An entity can probe the environment by firing ray casts. For example, to determine if an entity is on the ground, it can fire a ray cast directly downwards some distance and check if it intersects with the environment.
+Лучевое преобразование имеет и другие применения. Объект Entity может исследовать окружающую среду, отправляя лучевые преобразования. Например, чтобы определить, находится ли объект Entity на земле, он может отправить лучевое преобразование строго вниз на некоторое расстояние и проверить, пересекается ли оно с окружающей средой.
 
 [1]: https://playcanvas.com/project/410547/overview/entity-picking-using-physics

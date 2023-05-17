@@ -5,78 +5,78 @@ position: 22
 ---
 
 <div class="alert alert-info">
-    The REST API is currently in beta. This means we may change certain endpoints and API responses.
+    REST API в настоящее время находится в стадии бета-тестирования. Это означает, что мы можем изменить определенные конечные точки и ответы API.
 </div>
 
-## Authorization
+## Авторизация
 
-You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
+Вы можете получить доступ к REST API только через https. Для доступа к REST API вам нужно использовать токен доступа. Вы можете сгенерировать токен доступа, перейдя на страницу учетной записи вашей организации.
 
-![Account Tab][4]
+![Вкладка учетной записи][4]
 
-In the API Tokens section click on Generate Token.
+В разделе API Tokens нажмите на кнопку Generate Token.
 
-![Generate Token][1]
+![Создать токен][1]
 
-Give your token a name and click the button to create your new token. A new window will appear showing you your new access token.
+Дайте вашему токену имя и нажмите кнопку для создания вашего нового токена. В новом окне появится ваш новый токен доступа.
 
-Make sure you note that down because you will not be able to see the token once you close this window. This token is meant to be kept secret so do not share it with anyone other than your team (for example do not post this on forums).
+Обязательно запишите его, потому что вы не сможете увидеть токен после закрытия этого окна. Этот токен предназначен для сохранения в тайне, поэтому не делитесь им с кем-либо, кроме вашей команды (например, не публикуйте его на форумах).
 
-![New Token][2]
+![Новый токен][2]
 
-From your Account page you can also Revoke all the tokens you have generated or a specific one. You can also edit the name of a token.
+На странице вашей учетной записи вы также можете отозвать все сгенерированные вами токены или конкретный токен. Вы также можете изменить имя токена.
 
-![Remove Token][3]
+![Удалить токен][3]
 
-When you make calls to the API you must set the 'Authorization' header in your HTTP request to this value:
+При отправке запросов к API вы должны установить заголовок 'Authorization' в вашем HTTP-запросе на это значение:
 
 ```none
 Bearer [access_token]
 ```
 
-Replace `[access_token]` with an Access Token you generated in your Account page.
+Замените `[access_token]` на токен доступа, который вы сгенерировали на странице вашего аккаунта.
 
-For example:
+Например:
 
 ```none
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## Parameters
+## Параметры
 
-Various routes accept a number of parameters. For GET requests if the parameter is not part of the URL, you can pass it as an HTTP query string parameter. For POST, PUT and DELETE requests parameters not included in the URL should be encoded as JSON with a Content-Type of 'application/json'.
+Различные маршруты принимают ряд параметров. Для запросов GET, если параметр не является частью URL, вы можете передать его в виде параметра строки запроса HTTP. Для запросов POST, PUT и DELETE параметры, не включенные в URL, должны быть закодированы в формате JSON с Content-Type 'application/json'.
 
-There are several common parameters that are used in each endpoint:
+Есть несколько общих параметров, которые используются в каждой конечной точке:
 
 ### project_id
 
-This can be found in the URL on the project overview page.
+Этот параметр можно найти в URL на странице обзора проекта.
 
 ![Project ID][6]
 
 ### scenes
 
-When opening a scene in the Editor, the scene id is in the URL.
+При открытии сцены в редакторе идентификатор сцены находится в URL.
 
 ![Scene ID][7]
 
 ### branch_id
 
-This is found in the [version control][5] panel and can be selected and copied.
+Этот параметр можно найти в панели [version control][5] и его можно выбрать и скопировать.
 
 ![Branch ID][8]
 
-## Response Format
+## Формат ответа
 
-Our REST API is following some generic guidelines when it comes to the response format of each API call.
+Наш REST API следует некоторым общим рекомендациям по формату ответа каждого вызова API.
 
 #### GET resource
 
-If you are trying to GET a single resource the response will be a JSON object with the resource you requested.
+Если вы пытаетесь получить один ресурс с помощью GET, ответ будет объектом JSON с запрашиваемым ресурсом.
 
 #### GET multiple resources
 
-If you are trying to GET multiple resources like for example listing the Apps of a Project you will get a JSON object with this format:
+Если вы пытаетесь получить несколько ресурсов, например, перечисляя приложения проекта, вы получите объект JSON следующего формата:
 
 ```none
 {
@@ -87,56 +87,56 @@ If you are trying to GET multiple resources like for example listing the Apps of
         resource_N
     ],
     "pagination": {
-        "limit": number,
-        "skip": number,
-        "total": number
+        "limit": число,
+        "skip": число,
+        "total": число
     }
 }
 ```
 
-As you can notice the response in this case also contains pagination data. To control the pagination of the response you can pass the following URL parameters:
+Как вы можете заметить, ответ в этом случае также содержит данные о разбиении на страницы. Чтобы контролировать разбиение на страницы ответа, вы можете передать следующие параметры URL:
 
 <div class="params">
-<div class="parameter"><span class="param">limit</span><p>The maximum number of items to include in the response.</p></div>
-<div class="parameter"><span class="param">skip</span><p>The number of items to skip from the original result set.</p></div>
-<div class="parameter"><span class="param">sort</span><p>The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here.</p></div>
-<div class="parameter"><span class="param">order</span><p>If you want results in ascending order pass 1 otherwise pass -1 for descending order.</p></div>
+<div class="parameter"><span class="param">limit</span><p>Максимальное количество элементов, которые следует включить в ответ.</p></div>
+<div class="parameter"><span class="param">skip</span><p>Количество элементов, которые следует пропустить из исходного набора результатов.</p></div>
+<div class="parameter"><span class="param">sort</span><p>Название поля, которое следует использовать для сортировки набора результатов. См. документацию по каждому запросу, чтобы узнать, какие значения здесь допустимы.</p></div>
+<div class="parameter"><span class="param">order</span><p>Если вы хотите получить результаты в порядке возрастания, передайте 1, в противном случае передайте -1 для порядка убывания.</p></div>
 </div>
 
-So for example to get 32 items after the first 16 items you would send this request:
+Так что, например, чтобы получить 32 элемента после первых 16 элементов, вы должны отправить этот запрос:
 
 ```none
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### Errors
+#### Ошибки
 
-When an error is raised you will get a JSON object with this format:
+Когда возникает ошибка, вы получите объект JSON в таком формате:
 
 ```json
 {
-    "error": "This is the error message"
+    "error": "Это сообщение об ошибке"
 }
 ```
 
-Also the status code of the response will be the appropriate HTTP error code.
+Также код состояния ответа будет соответствующим кодом ошибки HTTP.
 
-## Rate Limiting
+## Ограничение скорости
 
-Calls to the REST API have a rate limit. There are different rate limits depending on the request:
+Запросы к REST API имеют ограничение скорости. Существуют разные ограничения скорости в зависимости от запроса:
 
-* **normal:** The normal rate limit allows 120 requests per minute.
-* **strict:** The strict rate limit allows 5 requests per minute.
+* **нормальный:** Нормальное ограничение скорости позволяет совершать 120 запросов в минуту.
+* **строгое:** Строгое ограничение скорости позволяет совершать 5 запросов в минуту.
 
-The response will contain the following headers to help you regulate how often you call the API:
+Ответ будет содержать следующие заголовки, чтобы помочь вам регулировать частоту вызова API:
 
 <div class="params">
-<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>The number of requests allowed in a minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>The remaining number of requests that you are allowed to make this minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>The time at which the current rate limit window resets in <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC epoch seconds</a>.</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>Количество разрешенных запросов в минуту.</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>Оставшееся количество запросов, которые вы можете сделать в эту минуту.</p></div>
+<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>Время, в которое текущее окно ограничения скорости сбрасывается в <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC эпохе секунд</a>.</p></div>
 </div>
 
-If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
+Если вы превысите ограничение скорости, вы получите код состояния `429 Too Many Requests`. Вам придется подождать сброса текущего окна, чтобы продолжить отправку запросов.
 
 [1]: /images/user-manual/api/generate-token.png
 [2]: /images/user-manual/api/new-token.png

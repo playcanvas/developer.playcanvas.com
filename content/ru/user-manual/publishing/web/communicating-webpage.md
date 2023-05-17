@@ -1,22 +1,22 @@
 ---
-title: Связь с веб-страницами
+title: Взаимодействие со веб-страницами
 layout: usermanual-page.hbs
 position: 4
 ---
 
-One the key advantages of using PlayCanvas and WebGL over other plugins or cross-compiled engines is the ability to interact directly between your application and the surrounding webpage. In this page we'll talk about some common ways of interfacing your PlayCanvas application with a web page or web application.
+Одно из ключевых преимуществ использования PlayCanvas и WebGL по сравнению с другими плагинами или кросс-компилируемыми движками заключается в возможности напрямую взаимодействовать между вашим приложением и окружающей веб-страницей. На этой странице мы расскажем о некоторых распространенных способах взаимодействия вашего приложения PlayCanvas с веб-страницей или веб-приложением.
 
-There are two ways you may find your PlayCanvas application communicating with the surrounding Web page. First, you may have embedded your application in a iframe in a page. Second you may be serving your own HTML page which loads an PlayCanvas page. These two methods require very different ways of communicating between web page and application.
+Существует два способа, с помощью которых ваше приложение PlayCanvas может взаимодействовать с окружающей веб-страницей. Во-первых, вы можете встроить ваше приложение в iframe на странице. Во-вторых, вы можете предоставлять свою собственную HTML-страницу, которая загружает страницу PlayCanvas. Эти два метода требуют очень разных способов взаимодействия между веб-страницей и приложением.
 
-## Defining an API
+## Определение API
 
-Common to both methods of hosting you should think about what features of your PlayCanvas application you need to expose to the web page. Perhaps you need to change the color of something based on a button click or a slider; or you might need to send some text input into the application to be rendered to a texture. Decide in advance what features you need to expose and in your PlayCanvas application write an explicit API or set of functions which are the only functions that your web page will call.
+Общим для обоих методов размещения является то, что вы должны подумать о том, какие функции вашего приложения PlayCanvas вам нужно предоставить веб-странице. Возможно, вам нужно изменить цвет чего-то на основе нажатия кнопки или ползунка; или вам может потребоваться отправить текстовый ввод в приложение для отображения на текстуре. Заранее определите, какие функции вам нужно предоставить, и в вашем приложении PlayCanvas напишите явный API или набор функций, которые будут единственными функциями, вызываемыми вашей веб-страницей.
 
-Here is a simple example where we show a couple of different ways of exposing an API from a PlayCanvas application to a web page.
+Вот простой пример, где мы показываем несколько разных способов предоставления API из приложения PlayCanvas на веб-страницу.
 
 ```javascript
 
-// method one: define a global function to set the score
+// метод один: определить глобальную функцию для установки счета
 window.setScore = function (score) {
     var app = pc.Application.getApplication();
     var entity = app.root.findByName("Score Keeper");
@@ -26,38 +26,38 @@ window.setScore = function (score) {
 var ScoreKeeper = pc.createScript("scoreKeeper");
 
 ScoreKeeper.prototype.initialize = function (entity) {
-    // method two: define an application event to set the score
+    // метод два: определить событие приложения для установки счета
     this.app.on("score:set", function (score) {
         this.setScore(score);
     }, this);
 };
 
 ScoreKeeper.prototype.setScore = function (score) {
-    // do the score setting here.
+    // выполнять установку счета здесь.
 };
 
-// how to use the API:
+// как использовать API:
 
-// method one:
+// метод один:
 window.setScore(10);
 
-// method two:
+// метод два:
 var app = pc.Application.getApplication();
 app.fire("score:set", 10);
 
 ```
 
-Method one defines a global function which can be called anywhere in your page to access your application. Method two defines an application event which you can fire from your page. The application listens for this event and performs actions in response to the event. Both are valid methods of defining an API with your application.
+Метод один определяет глобальную функцию, которую можно вызвать в любом месте вашей страницы для доступа к вашему приложению. Метод два определяет событие приложения, которое вы можете запустить со своей страницы. Приложение прослушивает это событие и выполняет действия в ответ на событие. Оба являются допустимыми методами определения API с вашим приложением.
 
-### Embedded in IFrame
+### Встроенный в IFrame
 
-Embedding a PlayCanvas application in an iframe is a quick and easy way to get your PlayCanvas content in a page. It also means that you can make use of our optimized hosting and don't need to worry about serving all the PlayCanvas content. However, the downside is that you can not call javascript functions in the PlayCanvas application directly from the hosting page because they are running on different pages.
+Встраивание приложения PlayCanvas в iframe - это быстрый и простой способ разместить ваш контент PlayCanvas на странице. Это также означает, что вы можете использовать наш оптимизированный хостинг и не нужно беспокоиться о предоставлении всего контента PlayCanvas. Однако недостатком является то, что вы не можете вызывать функции javascript в приложении PlayCanvas напрямую со страницы хостинга, потому что они работают на разных страницах.
 
-To communicate between a parent page and an iframe you will need to use the [postMessage][1] javascript API to send data between your page and the PlayCanvas application.
+Для общения между родительской страницей и iframe вам потребуется использовать API javascript [postMessage][1] для отправки данных между вашей страницей и приложением PlayCanvas.
 
-In your host page, use the iframeless URL for the iframe. The default publish link has the build in an iframe to include the social sharing bar at the bottom. This can cause problems with [postMessage][1] as there are now two iframes to communicate through.
+На вашей хост-странице используйте URL без iframe для iframe. Ссылка на публикацию по умолчанию имеет сборку в iframe, чтобы включить панель общего доступа внизу. Это может вызвать проблемы с [postMessage][1], так как теперь есть два iframe для общения.
 
-If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
+Если вы добавите `/e` после `https://playcanv.as` в URL, это даст вам версию сборки без iframe и панели общего доступа.
 
 ```html
 <iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
@@ -69,25 +69,25 @@ iframe.contentWindow.postMessage({
 </script>
 ```
 
-In your application
+В вашем приложении
 ```javascript
 window.addEventListener("message", function (event) {
-    if (event.origin === "http://example.com") { // always check message came from your website
+    if (event.origin === "http://example.com") { // всегда проверяйте, что сообщение пришло с вашего сайта
         var score = event.data.score;
 
-        // call API method one:
+        // вызов API метода один:
         window.setScore(score);
 
-        // call API method two:
+        // вызов API метода два:
         var app = pc.Application.getApplication();
         app.fire("score:set", score);
     }
 }, false);
 ```
 
-### Serve your own HTML
+### Размещение вашего собственного HTML
 
-When you download your PlayCanvas application for self-hosting. This is the index.html page that we include to run your application.
+Когда вы загружаете ваше приложение PlayCanvas для самостоятельного размещения. Это страница index.html, которую мы включаем для запуска вашего приложения.
 
 ```html
 <!doctype html>
@@ -96,7 +96,7 @@ When you download your PlayCanvas application for self-hosting. This is the inde
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
+    <title>Название приложения</title>
     <script src="playcanvas-stable.min.js"></script>
     <script>
         SCENE_PATH = "12346.json";
@@ -113,13 +113,13 @@ When you download your PlayCanvas application for self-hosting. This is the inde
 </html>
 ```
 
-It is absolutely possible and even recommended, that you modify start from this page as the basis of your web page and you can modify it to add any additional content that is required for you page.
+Это вполне возможно и даже рекомендуется, чтобы вы использовали эту страницу в качестве основы для вашей веб-страницы, и вы можете изменить ее, чтобы добавить любой дополнительный контент, который требуется для вашей страницы.
 
-When it comes to communicating with your PlayCanvas application, for example from a button push. You can call the APIs we defined above directly from your script. There is no need for the `postMessage` calls.
+Что касается общения с вашим приложением PlayCanvas, например, при нажатии кнопки. Вы можете вызывать определенные выше API-интерфейсы прямо из вашего скрипта. Нет необходимости в вызовах `postMessage`.
 
-Note, it is important that you run any custom code after the `__start__.js` scripts as this creates the PlayCanvas application. In many cases you may wish to wait until after all the asset loading has finished, but before the application starts. You can do this by responding to the `start` event.
+Обратите внимание, что важно запускать любой пользовательский код после скриптов `__start__.js`, так как это создает приложение PlayCanvas. Во многих случаях вы, возможно, захотите подождать, пока не завершится загрузка всех ассетов, но перед запуском приложения. Вы можете сделать это, отреагировав на событие `start`.
 
-For example:
+Например:
 
 ```html
 <!doctype html>
@@ -128,7 +128,7 @@ For example:
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Application Title</title>
+    <title>Название приложения</title>
     <script src="playcanvas-stable.min.js"></script>
     <script>
         SCENE_PATH = "12346.json";
@@ -144,14 +144,34 @@ For example:
     <script>
     var app = pc.Application.getApplication();
     app.on("start", function () {
-        // get the root of the scene.
+        // получить корень сцены.
         var hierarchy = app.root.getChildren()[0];
 
-        // do other stuff here
+        // делать другие вещи здесь
     });
     </script>
 </body>
 </html>
 ```
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+[1]: https://developer.mozilla.org/ru/docs/Web/API/Window/postMessage
+
+# Issue Tracker
+
+## Новая функция: Tutorial Thumbnail
+
+### Описание
+
+Добавить возможность создания Tutorial Thumbnail для каждого урока.
+
+### Задачи
+
+- [ ] Добавить новую сущность Entity для хранения информации о Tutorial Thumbnail
+- [ ] Создать новый Material Asset для отображения Tutorial Thumbnail
+- [ ] Реализовать Material Inspector для редактирования свойств Tutorial Thumbnail
+- [ ] Реализовать Shader Editor для создания и редактирования шейдеров Tutorial Thumbnail
+- [ ] Реализовать Node Inspector для редактирования свойств узлов Tutorial Thumbnail
+- [ ] Реализовать Texture Inspector для редактирования текстур Tutorial Thumbnail
+- [ ] Реализовать Graph Inspector для редактирования графа Tutorial Thumbnail
+- [ ] Реализовать Graph Editor для редактирования графа Tutorial Thumbnail
+- [ ] Добавить новый Asset для хранения Tutorial Thumbnail в списке Assets

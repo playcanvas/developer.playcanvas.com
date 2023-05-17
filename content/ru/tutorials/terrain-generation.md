@@ -1,17 +1,17 @@
 ---
 title: Генерация ландшафта из карты высот
 layout: tutorial-page.hbs
-tags: procedural
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg"
+tags: процедурный
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Генерация ландшафта из карты высот"></iframe>
 
-This project uses the [`pc.Mesh`][1] API to procedurally generate and texture a rolling hillside from a heightmap texture.
+В этом проекте используется API [`pc.Mesh`][1] для процедурной генерации и текстурирования холмистого склона из текстуры карты высот.
 
-Try it from the Editor in the [tutorial project.][2]
+Попробуйте его в редакторе в [учебном проекте.][2]
 
-The script below performs the terrain generation.
+Скрипт ниже выполняет генерацию ландшафта.
 
 ```javascript
 var Terrain = pc.createScript('terrain');
@@ -51,7 +51,7 @@ Terrain.attributes.add('material', {
     assetType: 'material'
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 Terrain.prototype.initialize = function() {
     var img = this.heightMap.resource.getSource();
     var visualMesh = this.createTerrainFromHeightMap(img, this.subdivisions);
@@ -65,8 +65,7 @@ Terrain.prototype.initialize = function() {
         type: 'mesh'
     });
 
-    // We still have to create a model resource to create a runtime
-    // collision mesh
+    // Нам все еще нужно создать ресурс модели для создания сетки столкновений во время выполнения
     var node = new pc.GraphNode();
     var meshInstance = new pc.MeshInstance(node, collisionMesh, this.material.resource);
     var collisionModel = new pc.Model();
@@ -165,3 +164,24 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 
 [1]: /api/pc.Mesh.html
 [2]: https://playcanvas.com/project/406046
+
+# Issue Tracker
+
+Если вы обнаружите ошибку или у вас возникнут вопросы, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/playcanvas/engine/issues).
+
+# Учебники
+
+- [Tutorial Thumbnail](https://playcanvas.com/project/406046)
+
+# Справочник по API
+
+- [Entity](/api/pc.Entity.html)
+- [Material Asset](/api/pc.MaterialAsset.html)
+- [Material Inspector](/api/pc.MaterialInspector.html)
+- [Shader Editor](/api/pc.ShaderEditor.html)
+- [Node Inspector](/api/pc.NodeInspector.html)
+- [Texture Inspector](/api/pc.TextureInspector.html)
+- [Graph Inspector](/api/pc.GraphInspector.html)
+- [Asset](/api/pc.Asset.html)
+- [Graph Editor](/api/pc.GraphEditor.html)
+- [Assets](/api/pc.Assets.html)

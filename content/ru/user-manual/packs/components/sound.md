@@ -4,46 +4,46 @@ layout: usermanual-page.hbs
 position: 19
 ---
 
-The Sound component controls playback of audio samples.
+Компонент Sound управляет воспроизведением аудиофрагментов.
 
-![Sound component][1]
+![Компонент звука][1]
 
-Each Sound component contains "Slots" that are responsible for playing sounds. Each Slot can be assigned a different audio Asset, and can be played independently from the other Slots.
+Каждый компонент Sound содержит "Слоты", которые отвечают за воспроизведение звуков. Каждому слоту можно назначить разный аудио Asset, и они могут воспроизводиться независимо друг от друга.
 
-You can add a new Slot by clicking on the "ADD SLOT" button. You can remove a Slot by clicking on the bin icon in the header of each slot.
+Вы можете добавить новый слот, нажав на кнопку "ADD SLOT". Вы можете удалить слот, нажав на значок корзины в заголовке каждого слота.
 
-The Sound component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play the Slots that are marked as Auto Play. The rest of the Slots can be played by scripts.
+Компонент Sound можно включить или отключить с помощью переключателя в верхнем правом углу панели компонента. Если компонент включен, он будет воспроизводить слоты, отмеченные как Auto Play. Остальные слоты могут быть воспроизведены с помощью скриптов.
 
 
-## Component Properties
+## Свойства компонента
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Positional      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
-| Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
-| Pitch           | The pitch that will be multiplied with the pitch of each Slot when playing an audio asset. A value of 1 means the audio is played back at the original pitch. |
-| Ref Distance    | The reference distance for reducing volume as the sound source moves further from the listener. |
-| Max Distance    | The maximum distance from the listener at which audio falloff stops. Note the volume of the audio is not necessarily 0 after this distance, but just doesn't fall off anymore. |
-| Distance Model  | Determines which algorithm to use to reduce the volume of the sound as it moves away from the listener. Can be one of Linear, Inverse or Exponential. |
-| Roll-off Factor | The rate at which volume fall-off occurs. |
+| Positional      | Если установлен флажок, компонент будет воспроизводить аудио-ассеты так, как если бы они воспроизводились с местоположения сущности в 3D-пространстве. |
+| Volume          | Громкость, которая будет умножаться на громкость каждого слота при воспроизведении аудио-ассета. |
+| Pitch           | Высота тона, которая будет умножаться на высоту тона каждого слота при воспроизведении аудио-ассета. Значение 1 означает, что аудио воспроизводится на исходной высоте тона. |
+| Ref Distance    | Ссылочное расстояние для уменьшения громкости по мере удаления источника звука от слушателя. |
+| Max Distance    | Максимальное расстояние от слушателя, на котором прекращается падение аудио. Обратите внимание, что громкость аудио не обязательно равна 0 после этого расстояния, но просто больше не падает. |
+| Distance Model  | Определяет, какой алгоритм использовать для уменьшения громкости звука при его удалении от слушателя. Может быть одним из Linear, Inverse или Exponential. |
+| Roll-off Factor | Скорость, с которой происходит падение громкости. |
 
-## Slot Properties
+## Свойства слота
 
-| Property        | Описание |
+| Свойство        | Описание |
 |-----------------|-------------|
-| Name            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
-| Asset           | The audio asset to play. |
-| Range Start     | The starting point of the sound in the audio asset, in seconds. You can use this if you don't want to play the entire audio asset but just a portion of it instead. |
-| Range Duration  | The duration of the sound to play starting from Range Start, in seconds. E.g. you might have an audio asset with multiple sounds in it. To make this Slot play such a sound you can define its Start time and its Duration. |
-| Auto Play       | If checked, the Slot will be played on load. Otherwise, the Slot will need to be played using script. |
-| Overlap         | If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script. |
-| Loop            | If checked, the Slot will loop continuously. Otherwise, it will be played once to completion. |
-| Volume          | The volume of the audio asset played back by the slot. |
-| Pitch           | The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch. |
+| Name            | Имя слота. Это имя, которое вы будете использовать для обращения к этому слоту в коде. |
+| Asset           | Аудио-ассет для воспроизведения. |
+| Range Start     | Начальная точка звука в аудио-ассете, в секундах. Вы можете использовать это, если не хотите воспроизводить весь аудио-ассет, а только его часть. |
+| Range Duration  | Продолжительность звука для воспроизведения, начиная с Range Start, в секундах. Например, у вас может быть аудио-ассет с несколькими звуками. Чтобы этот слот воспроизводил такой звук, вы можете определить его время начала и продолжительность. |
+| Auto Play       | Если установлен флажок, слот будет воспроизводиться при загрузке. В противном случае, слот должен быть воспроизведен с использованием скрипта. |
+| Overlap         | Если установлен флажок, этот слот будет воспроизводить свой звук без предварительной остановки. Overlap следует использовать для одноразовых звуков, которые нужно воспроизводить повторно. Перекрывающиеся звуки не останавливаются при уничтожении сущности, а только когда они заканчиваются или когда вы вручную останавливаете их в скрипте. |
+| Loop            | Если установлен флажок, слот будет зацикливаться непрерывно. В противном случае, он будет воспроизведен один раз до завершения. |
+| Volume          | Громкость аудио-ассета, воспроизводимого слотом. |
+| Pitch           | Высота тона, на которой воспроизводится аудио. Значение 1 означает, что аудио воспроизводится на исходной высоте тона. |
 
-## Scripting Interface
+## Интерфейс сценариев
 
-You can control the properties of a Sound component using a [script component][2]. The scripting interface for the Sound component is [here][3].
+Вы можете управлять свойствами компонента Sound с помощью [компонента сценария][2]. Интерфейс сценариев для компонента Sound находится [здесь][3].
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/packs/components/script

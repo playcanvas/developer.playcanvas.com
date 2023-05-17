@@ -1,14 +1,32 @@
 ---
-title: Экспорт ассетов
+title: Экспорт Assets
 layout: usermanual-page.hbs
 position: 3
 ---
 
-PlayCanvas can import 3D content in the following formats: FBX, OBJ, 3DS and COLLADA (DAE). We strongly recommend you use FBX since this the most robust and well tested interchange format.
+PlayCanvas может импортировать 3D-контент в следующих форматах: glTF binary (GLB), FBX, OBJ, 3DS и COLLADA (DAE). Мы настоятельно рекомендуем использовать GLB, так как это открытый индустриальный стандарт и очень хорошо поддерживается в редакторе.
 
-Here are some tips for exporting to the FBX file format:
+![Пример импорта GLB][glb-import-gif]
 
-* Ensure you have the latest available FBX exporter for your modelling application installed.
-* Only export what you need from your scene to FBX. For example, if your scene contains a red car and a blue car but you only want to import the red car, export only the red car to FBX. Your modelling application should have an 'Export Selected' option.
-* Select the 'Embed Media' option in the FBX exporter panel. This packages the scene's textures in the exported FBX. This preserves material to textures links during import into PlayCanvas. Otherwise, you must upload all scene textures separately and relink all textures to materials.
-* Select the 'Binary' file format option in the FBX exporter panel. This reduces FBX file size considerably.
+(Модель от Loïc Norgeot и сканирование комара от Geoffrey Marchal для [Sketchfab][mosquito] лицензировано под [CC BY 4.0][cc-40]).
+
+Если GLB недоступен, используйте FBX, так как это надежный и хорошо протестированный формат обмена в индустрии.
+
+## Общие советы по экспорту
+
+* Экспортируйте только то, что вам нужно из вашей сцены. Например, если ваша сцена содержит красную машину и синюю машину, но вы хотите импортировать только красную машину, экспортируйте только красную машину. Ваше приложение для моделирования должно иметь опцию "Экспорт выбранного" или что-то подобное.
+
+## Советы по экспорту в GLB
+
+* Установите формат на glTF Binary (GLB).
+* Убедитесь, что материалы и изображения настроены на экспорт и встраивание в GLB. В противном случае вам придется загрузить все текстуры сцены отдельно и пересвязать все текстуры с материалами и перенастроить параметры материалов.
+
+## Советы по экспорту в FBX
+
+* Убедитесь, что у вас установлен последний доступный экспортер FBX для вашего приложения для моделирования.
+* Выберите опцию "Embed Media" в панели экспортера FBX. Это упаковывает текстуры сцены в экспортированный FBX. Это сохраняет связи материалов с текстурами при импорте в PlayCanvas. В противном случае вам придется загрузить все текстуры сцены отдельно и пересвязать все текстуры с материалами.
+* Выберите опцию формата файла "Binary" в панели экспортера FBX. Это значительно уменьшает размер файла FBX.
+
+[glb-import-gif]: /images/user-manual/assets/models/building/glb-import.gif
+[cc-40]: https://creativecommons.org/licenses/by/4.0/
+[mosquito]: https://sketchfab.com/3d-models/

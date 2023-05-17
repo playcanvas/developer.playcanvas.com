@@ -2,43 +2,43 @@
 title: Создание простой игры - Часть 6
 layout: tutorial-page.hbs
 tags: games
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 6"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Создание простой игры - Часть 6"></iframe>
 
-*You can find the [full project here][11]. If you haven't see [Part 1][1], [Part 2][2], [Part 3][3], [Part 4][4] and [Part 5][5] read them first.*
+*Вы можете найти [полный проект здесь][11]. Если вы не видели [Часть 1][1], [Часть 2][2], [Часть 3][3], [Часть 4][4] и [Часть 5][5], прочитайте их сначала.*
 
-## User Interface
+## Пользовательский интерфейс
 
-The user interface of a game is the first thing you see and often it's the last thing people think about when making a game. But a good user interface will not only give your game a great style. It can actively affect the number of people who can play your game.
+Пользовательский интерфейс игры - это первое, что вы видите, и часто это последнее, о чем люди думают при создании игры. Но хороший пользовательский интерфейс не только придаст вашей игре отличный стиль. Он может активно влиять на количество людей, которые могут играть в вашу игру.
 
-User Interfaces are built in PlayCanvas using the [Screen Component][7] and the [Element Component][8]. There is more details in the [user manual][6]
+Пользовательские интерфейсы создаются в PlayCanvas с использованием [Screen Component][7] и [Element Component][8]. Подробнее описано в [руководстве пользователя][6]
 
-### User Interface Entities
+### Сущности пользовательского интерфейса
 
 ![Hierarchy][9]
 
-We have divided our user interface up into the three game states: Menu, In Game and Game Over. Each state has an Screen Entity which is activated when the state is entered. We also have a Screen especially for the overlay. Because the overlay displays underneath the ball in the menu, we use a 3D Screen component to render the overlay in world space behind the ball.
+Мы разделили наш пользовательский интерфейс на три состояния игры: Меню, В игре и Конец игры. Каждое состояние имеет активируемую Screen Entity при входе в состояние. У нас также есть экран специально для оверлея. Поскольку оверлей отображается под шариком в меню, мы используем компонент 3D Screen для отображения оверлея в мировом пространстве за шариком.
 
-### Images and Text
+### Изображения и текст
 
 ![Image Element][12]
 
-Images and Text are added to the user interface using the Element Component. This Component can display images in the form of a texture asset or text in the form a font asset. 
+Изображения и текст добавляются в пользовательский интерфейс с помощью компонента Element. Этот компонент может отображать изображения в виде текстурного активного элемента или текст в виде активного элемента шрифта.
 
 ![Image Attriubtes][13]
 
-### User Interface script
+### Скрипт пользовательского интерфейса
 
-Let's take a look at the script for the main menu.
+Давайте посмотрим на скрипт главного меню.
 
 ```javascript
 var UiMenu = pc.createScript('uiMenu');
 
 UiMenu.attributes.add("overlay", {type: "entity"});
 
-// initialize code called once per entity
+// инициализация кода, вызываемого один раз для каждой сущности
 UiMenu.prototype.initialize = function() {
     this.on('enable', this.onEnable, this);
     this.on('disable', this.onDisable, this);
@@ -47,7 +47,7 @@ UiMenu.prototype.initialize = function() {
 };
 
 UiMenu.prototype.onEnable = function () {
-    // Listen for clicks on the background
+    // Слушаем клики на фоне
 
     this.overlay.enabled = true;
     this.overlay.element.on("click", this.start, this);
@@ -59,26 +59,26 @@ UiMenu.prototype.onEnable = function () {
 
 UiMenu.prototype.onDisable = function () {
     this.overlay.enabled = false;
-    // Stop listening to events
+    // Прекращаем слушать события
     this.overlay.element.off("click", this.start, this);
 };
 
 UiMenu.prototype.start = function (e) {
     this.app.fire("ui:start");
-    // prevent touch and mouse events
+    // предотвращаем касания и события мыши
     e.stopPropagation();
 };
 ```
 
-First we have set up an attribute with a reference to the overlay element. The overlay element is a full screen element which tints the screen green. We also use this to detect input as we only care about the user clicking on the full screen.
+Сначала мы настроили атрибут с ссылкой на элемент наложения. Элемент наложения представляет собой полноэкранный элемент, который окрашивает экран в зеленый цвет. Мы также используем это для обнаружения ввода, так как нас интересует только нажатие пользователя на весь экран.
 
-When the Entity is enabled we display the full screen overlay by enabling it and then we start listening for the click event. When the Entity is disabled we stop listening for the event and we hide the overlay. When an event is triggered we fire a "ui:start" event which the main game script is listening for and that triggers a change of game state.
+Когда Entity активирован, мы отображаем полноэкранное наложение, включая его, а затем начинаем прослушивать событие клика. Когда Entity отключен, мы перестаем прослушивать событие и скрываем наложение. Когда событие срабатывает, мы запускаем событие "ui:start", которое слушает основной игровой скрипт, и это вызывает изменение состояния игры.
 
-We repeat similar behavior in the other two UI scripts where we listen for game events and fire ui events.
+Мы повторяем аналогичное поведение в других двух UI-скриптах, где мы прослушиваем игровые события и запускаем события пользовательского интерфейса.
 
-## Game Complete
+## Игра завершена
 
-Congratulations on reaching the end of the series! We hope you've learn a lot about how you can structure and build a game using PlayCanvas. If you have any feedback on the tutorial, please get in touch on our [forum][8].
+Поздравляем с завершением серии! Мы надеемся, что вы узнали много о том, как можно структурировать и создавать игру с помощью PlayCanvas. Если у вас есть отзывы о руководстве, пожалуйста, свяжитесь с нами на нашем [форуме][8].
 
 [1]: /tutorials/keepyup-part-one/
 [2]: /tutorials/keepyup-part-two/

@@ -1,95 +1,95 @@
 ---
-title: Процесс импорта ресурсов
+title: Конвейер импорта ассетов
 layout: usermanual-page.hbs
 position: 2
 ---
 
-Some assets are uploaded in source format and need to be converted into a "target" format before they can be used in a game at runtime. This process is called *Importing*. For example, a 3D model can be uploaded as an FBX file, but must be converted into a PlayCanvas compatible model file before it can be loaded in the game.
+Некоторые ассеты загружаются в исходном формате и должны быть преобразованы в "целевой" формат, прежде чем они смогут быть использованы в игре во время выполнения. Этот процесс называется *Импортирование*. Например, 3D-модель может быть загружена в виде файла FBX, но должна быть преобразована в совместимый с PlayCanvas файл модели, прежде чем она сможет быть загружена в игру.
 
-Some assets don't need to be imported before they can be used. For example a PNG image can be used as a texture immediately.
+Некоторые ассеты не нуждаются в импорте, прежде чем они смогут быть использованы. Например, изображение в формате PNG может быть использовано в качестве текстуры сразу.
 
-## Asset Tasks (Задачи ассетов)
+## Задачи ассетов
 
-When a source asset is uploaded, PlayCanvas starts an Asset Task to perform this import process on our server.
+Когда загружается исходный ассет, PlayCanvas запускает задачу ассетов для выполнения этого процесса импорта на нашем сервере.
 
-There are a variety of options available to tune the behavior of the import pipeline to suit your needs.
+Существует множество параметров, доступных для настройки поведения конвейера импорта в соответствии с вашими потребностями.
 
 <img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="480">
 
-### Search related assets (Поиск связанных ресурсов)
+### Поиск связанных ассетов
 
-When you update an source asset by uploading a new version of the file. There are two possible behaviors for how we update the target assets that are created by the import pipeline.
+Когда вы обновляете исходный ассет, загружая новую версию файла, существует два возможных поведения для обновления целевых ассетов, созданных конвейером импорта.
 
-* If **Search related assets** is enabled, the pipeline will update target assets no matter what folder they are located in.
-* If **Search related assets** is not enabled, the pipeline will only look for the target assets in the same folder as the source asset.
+* Если включен параметр **Поиск связанных ассетов**, конвейер будет обновлять целевые ассеты, независимо от того, в какой папке они находятся.
+* Если параметр **Поиск связанных ассетов** не включен, конвейер будет искать целевые ассеты только в той же папке, что и исходный ассет.
 
-So, if you leave this enabled, you are able to organize your source and target assets into folders and be sure that when you update a source assets it will update all related assets.
+Таким образом, если вы оставите этот параметр включенным, вы сможете организовать свои исходные и целевые ассеты в папках и быть уверенными, что при обновлении исходных ассетов будут обновлены все связанные ассеты.
 
-### Assets default to preload
+### Ассеты по умолчанию для предзагрузки
 
-Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
+Новые созданные ассеты автоматически будут установлены на [предзагрузку][2] или нет, в зависимости от того, включен ли этот параметр или нет. Исключение составляют файлы JavaScript-скриптов, которые всегда будут установлены на предзагрузку при создании.
 
-## Texture Import Settings
+## Настройки импорта текстур
 
-These options only affect the importing of images and textures.
+Эти параметры влияют только на импорт изображений и текстур.
 
-### Texture POT (Power of Two)
+### Текстура POT (степень двойки)
 
-When this option is enabled textures that are not a power of two will be converted to the nearest power of two resolution when they are imported.
+Когда этот параметр включен, текстуры, которые не являются степенью двойки, будут преобразованы в ближайшее разрешение степени двойки при импорте.
 
-### Create Atlases (Создание атласов)
+### Создание атласов
 
-Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is a useful time saver when uploading many spritesheets or UI assets.
+Загруженные изображения будут импортированы в виде атласа текстур, а не обычного ассета текстуры. Это полезный экономитель времени при загрузке множества спрайтов или пользовательских ассетов.
 
-## Model Import Settings
+## Настройки импорта моделей
 
-These options only affect the importing of model or scene files (e.g. FBX, Collada, obj, etc)
+Эти параметры влияют только на импорт файлов моделей или сцен (например, FBX, Collada, obj и т. д.)
 
-### Preserve material mappings
+### Сохранение сопоставлений материалов
 
-When a model file is updated or reimported, the Editor will try to preserve the material mappings that were set on it.
+Когда файл модели обновляется или повторно импортируется, редактор будет пытаться сохранить сопоставления материалов, установленные на нем.
 
-### Overwrite Models
+### Перезапись моделей
 
-When a model file is updated or reimported this option determines whether or not the target model file is overwritten. The default behavior is to overwrite with the new model.
+Когда файл модели обновляется или повторно импортируется, этот параметр определяет, будет ли перезаписан целевой файл модели или нет. Поведение по умолчанию - перезаписать новой моделью.
 
-### Overwrite Animations
+### Перезапись анимаций
 
-When a model file is updated or reimported this option determines whether or not a animations created from the model are overwritten. The default behavior is to overwrite with the new animations.
+Когда файл модели обновляется или повторно импортируется, этот параметр определяет, будут ли перезаписаны анимации, созданные из модели или нет. Поведение по умолчанию - перезаписать новыми анимациями.
 
-### Overwrite Materials
+### Перезапись материалов
 
-When a model file is updated or reimported this option determines whether or not materials created from the model are overwritten. The default behavior is to leave existing materials.
+Когда файл модели обновляется или повторно импортируется, этот параметр определяет, будут ли перезаписаны материалы, созданные из модели или нет. Поведение по умолчанию - оставить существующие материалы.
 
-### Overwrite Textures
+### Перезапись текстур
 
-When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behavior is to overwrite with the new textures.
+Когда файл модели обновляется или повторно импортируется, этот параметр определяет, будут ли перезаписаны текстуры, созданные из модели или нет. Поведение по умолчанию - перезаписать новыми текстурами.
 
-### Convert to GLB
+### Конвертировать в GLB
 
-Enabled by default on new projects, imported models and animations will create GLB model and animation assets instead of the older, deprecated JSON format.
+Включено по умолчанию для новых проектов, импортированные модели и анимации будут создавать ассеты моделей и анимаций GLB вместо устаревшего формата JSON.
 
-### Import Hierarchy
+### Импорт иерархии
 
-Only available if using [Convert to GLB](#convert-to-glb) option. When a model file is imported, a template asset is created that contains the full hierarchy of the model as entities allowing to you to manipulate them directly in the Editor. See more information about this feature [here][3].
+Доступно только при использовании опции [Конвертировать в GLB](#convert-to-glb). Когда файл модели импортируется, создается ассет шаблона, содержащий полную иерархию модели в виде сущностей, что позволяет вам манипулировать ими непосредственно в редакторе. Подробнее об этой функции см. [здесь][3].
 
-### Mesh Compression
+### Сжатие сетки
 
-Only available if using [Convert to GLB](#convert-to-glb) option. Setting this to a compression format will automatically compress mesh data when importing or re-importing model files. This can drastically reduce the size of GLB files at the cost of some runtime decompression cost.
+Доступно только при использовании опции [Конвертировать в GLB](#convert-to-glb). Установка этого параметра в формат сжатия автоматически сжимает данные сетки при импорте или повторном импорте файлов моделей. Это может значительно сократить размер файлов GLB за счет некоторых затрат на декомпрессию во время выполнения.
 
-If using Draco compression, remember to import the Draco WASM module into the project otherwise the models will not load.
+Если вы используете сжатие Draco, не забудьте импортировать модуль Draco WASM в проект, иначе модели не загрузятся.
 
 <img loading="lazy" src="/images/user-manual/assets/import-pipeline/draco-import-button.png" width="480">
 
-### Create FBX Folder
+### Создание папки FBX
 
-When importing a model file (e.g a GLB or FBX), the Editor will create a folder for the assets created by the import such as render, template and material assets.
+При импорте файла модели (например, GLB или FBX), редактор создаст папку для созданных при импорте ассетов, таких как ассеты отображения, шаблоны и материалы.
 
-If there is already a Model (Source) file in the current folder or a folder with the same name as the file being imported, it will overwrite the existing assets instead of creating a new folder.
+Если в текущей папке уже есть файл модели (источника) или папка с таким же именем, как у импортируемого файла, он перезапишет существующие ассеты, а не создаст новую папку.
 
-## Animation Import Settings
+## Настройки импорта анимации
 
-Please refer to the [Animation section][4] for more details.
+Пожалуйста, обратитесь к [разделу анимации][4] для получения дополнительной информации.
 
 [2]: /user-manual/assets/preloading-and-streaming/
 [3]: /user-manual/assets/import-pipeline/import-hierarchy/

@@ -1,91 +1,91 @@
 ---
-title: User Interface - Progress Bar
+title: Пользовательский интерфейс - Индикатор выполнения
 layout: tutorial-page.hbs
 tags: ui
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="Пользовательский интерфейс - Индикатор выполнения"></iframe>
 
-*A progress bar using Element components. See the [full scene][1].*
+*Индикатор выполнения с использованием компонентов Element. Смотрите [полную сцену][1].*
 
-We can easily create progress bars using the built-in [Elements][2]. In this tutorial we have a progress bar that loops from empty to full every few seconds.
+Мы можем легко создавать индикаторы выполнения с помощью встроенных [Elements][2]. В этом уроке у нас есть индикатор выполнения, который зацикливается от пустого до полного каждые несколько секунд.
 
 ## Иерархия
 
-This is what our UI looks like in the Hierarchy:
+Вот как выглядит наш пользовательский интерфейс в иерархии:
 
 ![Hierarchy][4]
 
-## Screen setup
+## Настройка экрана
 
-Our [screen][3] is set up like so:
+Наш [экран][3] настроен следующим образом:
 
 ![Screen][5]
 
-Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is the resolution that we are targeting - in this case it's 1080 x 1920. We choose Blend for Scale Mode so that our Screen adapts to resolution changes and we set Scale Blend to 1 so that the Screen will adapt only to height changes.
+Поскольку это 2D-экран, мы отметили Screen Space. Наша референсная разрешение - это разрешение, которое мы нацеливаем - в данном случае это 1080 x 1920. Мы выбираем Blend для режима масштабирования, чтобы наш экран адаптировался к изменениям разрешения, и устанавливаем Scale Blend на 1, чтобы экран адаптировался только к изменениям высоты.
 
-The screen has a child Text Element to show the POWER text and an Entity called `Progress Bar` which show our progress bar.
+На экране есть дочерний текстовый элемент для отображения текста POWER и объект Entity с именем `Progress Bar`, который показывает наш индикатор выполнения.
 
-## Progress Bar setup
+## Настройка индикатора выполнения
 
-The progress bar is made of 2 Elements. The background image and the fill image.
+Индикатор выполнения состоит из 2 элементов. Фоновое изображение и изображение заполнения.
 
-The background image is the `Progress Bar` entity in our example. It has an Image Element and it shows the background image of the progress bar:
+Фоновое изображение - это объект `Progress Bar` в нашем примере. Он имеет элемент изображения и показывает фоновое изображение индикатора выполнения:
 
 ![Background Image][6]
 
-The fill image is the `Fill Image` entity in our example. It is a child of the `Progress Bar` entity and it has an Image Element to show the fill of the progress bar. This image is anchored to the left of its parent background image. That allows us to change the width of the element in order to make the progress bar grow.
+Изображение заполнения - это объект `Fill Image` в нашем примере. Он является дочерним элементом объекта `Progress Bar` и имеет элемент изображения для отображения заполнения индикатора выполнения. Это изображение закреплено слева от его родительского фонового изображения. Это позволяет нам изменять ширину элемента, чтобы сделать индикатор выполнения больше.
 
 ![Fill Image][7]
 
-## Сценарий
+## Скрипт
 
-The `Progress Bar` entity has a script to control how the progress bar is resized:
+Объект `Progress Bar` имеет скрипт для управления изменением размера индикатора выполнения:
 
 ```javascript
 var ProgressBar = pc.createScript('progressBar');
 
-// The entity that shows the fill image
+// Сущность, которая показывает изображение заполнения
 ProgressBar.attributes.add('progressImage', {type: 'entity'});
-// The maximum width of the fill image
+// Максимальная ширина изображения заполнения
 ProgressBar.attributes.add('progressImageMaxWidth', {type: 'number'});
 
 ProgressBar.prototype.initialize = function() {
-    // use our own rect object to set the size of
-    // the progress bar
+    // используем наш собственный объект rect для установки размера
+    // индикатора выполнения
     this.imageRect = this.progressImage.element.rect.clone();
 
-    // initialize progress to 0
+    // инициализировать прогресс на 0
     this.setProgress(0);
-    // if true the progress bar will increase
-    // otherwise it will decrease in update
+    // если true, индикатор выполнения будет увеличиваться
+    // в противном случае он будет уменьшаться в update
     this.increase = true;
 };
 
-// Set progress - value is between 0 and 1
+// Установить прогресс - значение между 0 и 1
 ProgressBar.prototype.setProgress = function (value) {
-    // clamp value between 0 and 1
+    // ограничить значение между 0 и 1
     value = pc.math.clamp(value, 0, 1);
 
     this.progress = value;
 
-    // find the desired width of our progress fill image
+    // найти желаемую ширину нашего изображения заполнения прогресса
     var width = pc.math.lerp(0, this.progressImageMaxWidth, value);
-    // set the width of the fill image element
+    // установить ширину элемента изображения заполнения
     this.progressImage.element.width = width;
 
-    // Set the width of the element's rect (rect.z) to be the same
-    // value as our 0-1 progress.
-    // This is so that the fill image will only show the portion
-    // of the texture that is visible
+    // Установите ширину прямоугольника элемента (rect.z) на том же
+    // значение, что и наш прогресс от 0 до 1.
+    // Это для того, чтобы изображение заполнения показывало только ту часть
+    // текстуры, которая видима
     this.imageRect.copy(this.progressImage.element.rect);
     this.imageRect.z = value;
-    // force rect update
+    // принудительное обновление rect
     this.progressImage.element.rect = this.progressImage.element.rect;
 };
 
-// Increase or decrease the progress automatically
+// Увеличить или уменьшить прогресс автоматически
 ProgressBar.prototype.update = function(dt) {
     var diff = this.increase ? dt : -dt;
     this.setProgress(this.progress + diff);
@@ -97,11 +97,11 @@ ProgressBar.prototype.update = function(dt) {
 };
 ```
 
-The script has 2 attributes - the Entity that shows the fill image and the max width of that image. It has a `setProgress` function which sets the progress to a value between 0 and 1.
+Скрипт имеет 2 атрибута - Entity, которое показывает изображение заполнения, и максимальную ширину этого изображения. В нем есть функция `setProgress`, которая устанавливает прогресс на значение между 0 и 1.
 
-The `update` method essentially loops progress between 0 and 1. The important thing to note in this script is how we need to change the `width` and the `rect` of the fill image in order to properly resize our progress bar.
+Метод `update` по существу зацикливает прогресс между 0 и 1. Важно отметить в этом скрипте, как нам нужно изменить `width` и `rect` изображения заполнения, чтобы правильно изменить размер нашего индикатора выполнения.
 
-Changing the `width` makes the fill image larger and changing the `rect` makes sure that we only show the portion of the texture that is visible, so that we avoid stretching the visible texture. [Here][8] is the API reference for `rect`.
+Изменение `width` делает изображение заполнения больше, а изменение `rect` гарантирует, что мы показываем только видимую часть текстуры, чтобы избежать растягивания видимой текстуры. [Здесь][8] представлена ссылка на API для `rect`.
 
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/

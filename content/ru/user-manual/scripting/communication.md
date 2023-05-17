@@ -1,27 +1,27 @@
 ---
-title: Связь
+title: Общение
 layout: usermanual-page.hbs
 position: 6
 ---
 
-Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.
+События являются удобным способом общения между скриптами для реагирования на происходящие события без проверки каждого кадра.
 
-The PlayCanvas Engine contains a simple way to add event handling to any object:
+Движок PlayCanvas содержит простой способ добавления обработки событий к любому объекту:
 
 ```javascript
-pc.events.attach(object);
+pc.events.attach(объект);
 ```
 
-This will add the methods: `on()`, `off()`, `fire()` and `hasEvent()` to the object. Which means that you can listen for events fired by that object.
+Это добавит методы: `on()`, `off()`, `fire()` и `hasEvent()` к объекту. Это означает, что вы можете прослушивать события, вызванные этим объектом.
 
-By default all script instances can fire events you don't need to call this manually.
+По умолчанию все экземпляры скриптов могут вызывать события, вам не нужно вызывать это вручную.
 
-## Using events
+## Использование событий
 
-Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the x and y values passed as arguments.
+Запустите событие с помощью `fire()`. В этом примере скрипт игрока вызывает событие `move` каждый кадр с переданными значениями x и y в качестве аргументов.
 
 ```javascript
-var Player = pc.createScript('player');
+var Player = pc.createScript('игрок');
 
 Player.prototype.update = function (dt) {
     var x = 1;
@@ -30,42 +30,42 @@ Player.prototype.update = function (dt) {
 };
 ```
 
-Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
+Слушайте события, используя `on()` и `off()`. В этом примере скрипт отображения слушает событие `move` на игроке и выводит значения x и y.
 
 ```javascript
 var Display = pc.createScript('display');
 
-// set up an entity reference for the player entity
+// создать ссылку на сущность игрока
 Display.attributes.add('playerEntity', { type: 'entity' });
 
 Display.prototype.initialize = function () {
-    // method to call when player moves
+    // метод вызывается при перемещении игрока
     var onPlayerMove = function(x, y) {
         console.log(x, y);
     };
 
-    // listen for the player move event
+    // слушать событие перемещения игрока
     this.playerEntity.script.player.on('move', onPlayerMove);
 
-    // remove player move event listeners when script destroyed
+    // удалить слушателей событий перемещения игрока при уничтожении скрипта
     this.playerEntity.script.player.on('destroy', function() {
         this.playerEntity.script.player.app.off('move', onPlayerMove);
     });
 };
 ```
 
-## Application Events
+## События приложения
 
-There is a very convenient and powerful method of using events to communicate between entities that we call "Application Events". As you can see in the example above listening for events on specific entities incurs some set up cost. For instance, the listener must have a reference to the specific entity that is firing the event. This works with some cases, but for a more general case we find that it is more appropriate to use the main application (`this.app`) as a central hub for firing events. This means you don't have to keep references of entities around in order to use the events.
+Существует очень удобный и мощный метод использования событий для общения между объектами, который мы называем "События приложения" (Application Events). Как видно из примера выше, прослушивание событий на определенных объектах требует некоторых затрат на настройку. Например, прослушиватель должен иметь ссылку на конкретный объект, который инициирует событие. Это работает в некоторых случаях, но для более общего случая мы считаем, что более подходящим является использование основного приложения (`this.app`) в качестве центрального узла для инициирования событий. Это означает, что вам не нужно хранить ссылки на объекты, чтобы использовать события.
 
-This works by firing and listening to all events on `this.app`. By convention we use namespaces in event names in order to signal event scope and prevent clashes. For example, the `player:move` event is fired on the application instead of firing the `move` event on the player.
+Это работает путем инициирования и прослушивания всех событий на `this.app`. По соглашению мы используем пространства имен в названиях событий, чтобы указать область действия события и предотвратить конфликты. Например, событие `player:move` инициируется в приложении, а не в событии `move` на игроке.
 
-Let's try the same example using application events.
+Давайте попробуем тот же пример с использованием событий приложения.
 
-Firing the `player:move` event.
+Инициирование события `player:move`.
 
 ```javascript
-var Player = pc.createScript('player');
+var Player = pc.createScript('игрок');
 
 Player.prototype.update = function (dt) {
     var x = 1;
@@ -74,29 +74,29 @@ Player.prototype.update = function (dt) {
 };
 ```
 
-Listening for the `player:move` event.
+Слушаем событие `player:move`.
 
 ```javascript
 var Display = pc.createScript('display');
 
 Display.prototype.initialize = function () {
-    // method to call when player moves
+    // метод вызова при перемещении игрока
     var onPlayerMove = function(x, y) {
         console.log(x, y);
     };
 
-    // listen for the player:move event
+    // прослушивание события player:move
     this.app.on('player:move', onPlayerMove);
 
-    // remove player:move event listeners when script destroyed
+    // удаление слушателей событий player:move при уничтожении скрипта
     this.on('destroy', function() {
         this.app.off('player:move', onPlayerMove);
     });
 };
 ```
 
-As you can see this reduces set up code and makes for cleaner code.
+Как видите, это уменьшает объем кода для настройки и делает код более чистым.
 
-More details on events in the [API Reference][1]
+Более подробная информация о событиях в [API Reference][1]
 
 [1]: /api/pc.EventHandler.html

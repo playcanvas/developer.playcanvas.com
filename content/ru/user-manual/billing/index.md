@@ -1,35 +1,35 @@
 ---
-title: Billing
+title: Биллинг
 layout: usermanual-page.hbs
 position: 24
 ---
 
-## Auto-renewal of Subscriptions
-Once you subscribe to the Personal or Organization plan, payment will automatically be taken on a monthly basis, on the day of the month when you first subscribed.
+## Автоматическое продление подписок
+После того, как вы подпишетесь на план Personal или Organization, оплата будет автоматически списываться ежемесячно в тот день месяца, когда вы впервые подписались.
 
-## Invoices
-Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing <sales@playcanvas.com>.
+## Счета-фактуры
+Счета-фактуры за ежемесячные подписки отправляются по электронной почте владельцу подписанного аккаунта в день ежемесячного биллинга. Счета-фактуры нельзя скачать на самом сайте. Если счета-фактуры не приходят в ваш почтовый ящик, проверьте папку со спамом. Если у вас отсутствуют счета-фактуры в ваших записях, вы можете запросить их повторную отправку, написав на <sales@playcanvas.com>.
 
-## Organization Billing
-The day you subscribe to an Organization account is your monthly billing date. So if you subscribe on 10th July, you will be billed on that date with subsequent billing dates as 10th August, 10th September and so on.
+## Биллинг организации
+День, когда вы подписываетесь на аккаунт организации, является вашей ежемесячной датой биллинга. Таким образом, если вы подписались 10 июля, вам будет выставлен счет в этот день с последующими датами биллинга 10 августа, 10 сентября и так далее.
 
-The Organization plan allows you to add and remove seats at any time. When seats are added or removed, it is important to understand that this will increase or decrease the cost of your plan. However, this change in cost is not accounted for immediately when the number of seats is changed. Instead, it is accounted for at the next billing date.
+План организации позволяет добавлять и удалять места в любое время. Когда места добавляются или удаляются, важно понимать, что это увеличит или уменьшит стоимость вашего плана. Однако это изменение стоимости не учитывается сразу, когда изменяется количество мест. Вместо этого оно учитывается на следующей дате биллинга.
 
-### Example:
-Imagine the following sequence of events:
+### Пример:
+Представьте следующую последовательность событий:
 
-* A user signs up for a 1-seat Organization plan on 10th May.
-* The user then adds 1 seat on 20th June.
-* The user removes 1 seat on 20th August.
+* Пользователь регистрируется на 1-местный план организации 10 мая.
+* Затем пользователь добавляет 1 место 20 июня.
+* Пользователь удаляет 1 место 20 августа.
 
-The billing events from May to October will be as follows:
+События биллинга с мая по октябрь будут следующими:
 
-* 10th May: **$50**
-* 10th June: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
-* 10th July: $100 + $50 x 20/30 = **$133.33**. The user has two seats on this billing date so is charged 2 x $50 for the upcoming month. One of these seats was added on 20th June and the use of that seat between 20th June and 10th July must now be accounted for. Since this period is 20 days of the 30 days between the two billing dates, $50 x 20/30 is added to the bill. In other words, seats that are added or removed are accounted for ‘pro-rata’ on the next billing date.
-* 10th August: **$100**. The plan has 2 seats and no changes were made to the plan in the previous month.
-* 10th September: $50 - $50 x 21/31 = **$16.13**. The users has one seat on this billing date so is charged $50 for the upcoming month. A seat was removed on 20th August so it was only used for 10 of the 31 days between billing dates. Since the user paid $50 for that seat on the previous billing date, they are due a refund for the unused 21 days. So $50 x 21/31 is subtracted from the bill.
-* 10th October: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
+* 10 мая: **$50**
+* 10 июня: **$50**. В плане есть 1 место, и в предыдущем месяце не было изменений в плане.
+* 10 июля: $100 + $50 x 20/30 = **$133.33**. На эту дату биллинга у пользователя есть два места, поэтому он оплачивает 2 x $50 за предстоящий месяц. Одно из этих мест было добавлено 20 июня, и теперь необходимо учесть использование этого места с 20 июня по 10 июля. Поскольку этот период составляет 20 дней из 30 дней между двумя датами биллинга, к счету добавляется $50 x 20/30. Другими словами, добавленные или удаленные места учитываются "пропорционально" на следующей дате биллинга.
+* 10 августа: **$100**. В плане есть 2 места, и в предыдущем месяце не было изменений в плане.
+* 10 сентября: $50 - $50 x 21/31 = **$16.13**. На эту дату биллинга у пользователя есть одно место, поэтому он оплачивает $50 за предстоящий месяц. Место было удалено 20 августа, поэтому оно использовалось только 10 из 31 дня между датами биллинга. Поскольку пользователь заплатил $50 за это место на предыдущей дате биллинга, ему полагается возврат за неиспользованные 21 день. Таким образом, из счета вычитается $50 x 21/31.
+* 10 октября: **$50**. В плане есть 1 место, и в предыдущем месяце не было изменений в плане.
 
-## Cancelling your Plan
-You can cancel your plan at any time. Note that cancellation takes effect immediately and your account will switch to the free tier straight away. If you need to use your plan features up to the next billing date, we recommend that you set a reminder and cancel the day before.
+## Отмена вашего плана
+Вы можете отменить свой план в любое время. Обратите внимание, что отмена вступает в силу немедленно, и ваш аккаунт сразу же переключится на бесплатный тариф. Если вам нужно использовать функции вашего плана до следующей даты биллинга, мы рекомендуем установить напоминание и отменить за день до этого.

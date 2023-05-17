@@ -1,37 +1,37 @@
 ---
-title: Mini Stats
+title: Мини-статистика
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Mini stats is a lightweight graphical display of an application's key performance statistics. It shows draw call count, frame time, CPU load and (where supported) GPU load.
+Мини-статистика - это легкий графический индикатор ключевых показателей производительности приложения. Он показывает количество вызовов отрисовки, время кадра, загрузку ЦП и (где поддерживается) загрузку ГП.
 
-Editor users can enable the mini-stats panel via the Launch button menu:
+Пользователи редактора могут включить панель мини-статистики через меню кнопки Launch:
 
 <img loading="lazy" alt="Launch Menu" width="600" src="/images/user-manual/optimization/mini-stats/launch-menu-mini-stats.png">
 
-Clicking on the mini-stats will cycle through three supported sizes:
+Клик по мини-статистике будет переключать между тремя поддерживаемыми размерами:
 
 <img loading="lazy" alt="Mini Stats" width="411" src="/images/user-manual/optimization/mini-stats/mini-stats.gif">
 
-The information displayed is as follows:
+Отображаемая информация следующая:
 
-* **DrawCalls** - The number of rendered objects dispatched every frame. Each draw call has a cost on the CPU and GPU, so minimizing this number is sensible.
-* **Frame** - The total time in milliseconds for the browser to process each frame.
-* **GPU** - Shows the time in milliseconds to render each frame by the GPU. This stat is only shown if the underlying WebGL implementation supports the extension `EXT_disjoint_timer_query` (WebGL 1.0) or `EXT_disjoint_timer_query_webgl2` (WebGL 2.0). You can confirm whether your browser supports either of these extensions by visiting [WebGL Report][1].
-* **CPU** - Shows the time in milliseconds to render each frame by the CPU.
+* **DrawCalls** - Количество отрисованных объектов, отправляемых каждый кадр. Каждый вызов отрисовки имеет стоимость на ЦП и ГП, поэтому имеет смысл минимизировать это число.
+* **Frame** - Общее время в миллисекундах, которое требуется браузеру для обработки каждого кадра.
+* **GPU** - Показывает время в миллисекундах, за которое ГП отрисовывает каждый кадр. Эта статистика отображается только если базовая реализация WebGL поддерживает расширение `EXT_disjoint_timer_query` (WebGL 1.0) или `EXT_disjoint_timer_query_webgl2` (WebGL 2.0). Вы можете убедиться, что ваш браузер поддерживает одно из этих расширений, посетив [WebGL Report][1].
+* **CPU** - Показывает время в миллисекундах, за которое ЦП отрисовывает каждый кадр.
 
-The CPU and GPU graphs display a breakdown of the update and render portion of the frame using red and green respectively.
+Графики ЦП и ГП отображают разбивку обновления и отрисовки кадра с использованием красного и зеленого цветов соответственно.
 
-## Using Mini-Stats Outside of the Editor
+## Использование мини-статистики вне редактора
 
-While the mini-stats panel is incorporated into the Editor's Launch page, you can also use it independent of the Editor. The source code can be found [here][2]. Simply build `playcanvas-extras.js`, include it in your project and call:
+Хотя панель мини-статистики встроена в страницу Launch редактора, вы также можете использовать ее независимо от редактора. Исходный код можно найти [здесь][2]. Просто соберите `playcanvas-extras.js`, включите его в свой проект и вызовите:
 
 ```javascript
     const miniStats = new pcx.MiniStats(app);
 ```
 
-The ['Engine-only' examples][3] all do this.
+['Engine-only' примеры][3] все это делают.
 
 [1]: https://webglreport.com/
 [2]: https://github.com/playcanvas/engine/tree/master/extras/mini-stats

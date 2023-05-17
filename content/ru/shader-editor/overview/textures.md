@@ -4,8 +4,8 @@ layout: shader-editor-page.hbs
 position: 4
 ---
 
-Textures are relatively static assets within Shader Editor.
+Текстуры являются относительно статичными ресурсами в Shader Editor.
 
-To add a texture to the project, drag the file and drop it on the Assets Pane.
+Чтобы добавить текстуру в проект, перетащите файл и поместите его на панели ресурсов.
 
-Textures can be referenced in Graphs by dragging them from the Assets Pane and dropping on the Graph Editor workspace.
+Текстуры могут быть использованы в графах путем перетаскивания их с панели ресурсов на рабочую область редактора графов.

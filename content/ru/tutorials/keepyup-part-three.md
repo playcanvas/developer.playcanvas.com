@@ -2,16 +2,16 @@
 title: Создание простой игры - Часть 3
 layout: tutorial-page.hbs
 tags: games
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 3"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Создание простой игры - Часть 3"></iframe>
 
-*You can find the [full project here][4]. If you haven't see [Part 1][1] and [Part 2][2] read them first.*
+*Вы можете найти [полный проект здесь][4]. Если вы не видели [Часть 1][1] и [Часть 2][2], прочитайте их сначала.*
 
-## The Game script & Input
+## Скрипт игры и ввод
 
-These two scripts `game.js` and `input.js` are attached the root entity in the scene, called "Game". Scripts are generally executed in the order they are encountered in the hierarchy so it's easiest to attach any non-Entity specific scripts the first Entity. You can also manage the loading order of Scripts in the Settings panel of the Editor, to load scripts first without attaching them to an Entity.
+Эти два скрипта `game.js` и `input.js` прикреплены к корневой сущности в сцене, называемой "Game". Скрипты обычно выполняются в том порядке, в котором они встречаются в иерархии, поэтому проще всего прикрепить любые неспецифические для Entity скрипты к первой сущности. Вы также можете управлять порядком загрузки скриптов в панели настроек редактора, чтобы сначала загружать скрипты без их привязки к сущности.
 
 ## game.js
 
@@ -27,7 +27,7 @@ Game.STATE_MENU = 'menu';
 Game.STATE_INGAME = 'ingame';
 Game.STATE_GAMEOVER = 'gameover';
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Game.prototype.initialize = function() {
     this._state = Game.STATE_MENU;
     this._score = 0;
@@ -36,16 +36,16 @@ Game.prototype.initialize = function() {
 
     window.addEventListener("resize", this.setResolution.bind(this));
 
-    // listen to events from the UI
+    // слушаем события от пользовательского интерфейса
     this.app.on("ui:start", this.start, this);
     this.app.on("ui:reset", this.reset, this);
 };
 
 Game.prototype.setResolution = function () {
-    // if the screen width is less than 640
-    // fill the whole window
-    // otherwise
-    // use the default setting
+    // если ширина экрана меньше 640
+    // заполняем все окно
+    // в противном случае
+    // используем настройки по умолчанию
 
     var w = window.screen.width;
     var h = window.screen.height;
@@ -56,7 +56,7 @@ Game.prototype.setResolution = function () {
     }
 };
 
-// Call this to move from MENU to INGAME
+// Вызовите это, чтобы перейти от MENU к INGAME
 Game.prototype.start = function () {
     this._state = Game.STATE_INGAME;
     this.app.fire("game:start");
@@ -66,7 +66,7 @@ Game.prototype.start = function () {
     this.audio.sound.play("music");
 };
 
-// Call this to move from INGAME to GAMEOVER
+// Вызовите это, чтобы перейти от INGAME к GAMEOVER
 Game.prototype.gameOver = function () {
     this._state = Game.STATE_GAMEOVER;
     this.app.fire("game:gameover");
@@ -77,7 +77,7 @@ Game.prototype.gameOver = function () {
     this.audio.sound.play("gameover");
 };
 
-// Call this to move from GAMEOVER to MENU
+// Вызовите это, чтобы перейти от GAMEOVER к MENU
 Game.prototype.reset = function () {
     this.app.fire("game:reset");
     this.resetScore();
@@ -88,63 +88,63 @@ Game.prototype.reset = function () {
     this.audio.sound.stop();
 };
 
-// return the current score
+// вернуть текущий счет
 Game.prototype.getScore = function () {
     return this._score;
 };
 
-// add a value to the score
+// добавить значение к счету
 Game.prototype.addScore = function (v) {
     this._score += v;
     this.app.fire("game:score", this._score);
 };
 
-// reset the score
+// сбросить счет
 Game.prototype.resetScore = function () {
     this._score = 0;
     this.app.fire("game:score", this._score);
 };
 ```
 
-### Game State
+### Состояние игры
 
-The game script manages the overall state of the game, it exposes some methods to alter the game state and fires events to alert other code that the game state has changed.
+Скрипт игры управляет общим состоянием игры, он предоставляет некоторые методы для изменения состояния игры и запускает события для оповещения другого кода о том, что состояние игры изменилось.
 
-We've divided the game up into three main states: Menu, In Game and Game Over. The game script provides the methods to transition between each state, `start()`, `gameOver()` and `reset()`. Each one sets the `_state` variable to remember which state we're in; fires an application event to alert other scripts to state changes; switches user interface elements on and off; and manages the state of the music or game over sound effect.
+Мы разделили игру на три основных состояния: Меню, В игре и Конец игры. Скрипт игры предоставляет методы для перехода между каждым состоянием: `start()`, `gameOver()` и `reset()`. Каждый из них устанавливает переменную `_state`, чтобы запомнить, в каком состоянии мы находимся; запускает событие приложения, чтобы оповестить другие скрипты об изменении состояния; включает и выключает элементы пользовательского интерфейса; и управляет состоянием музыки или звукового эффекта конца игры.
 
-These state change methods will be called from other scripts when the appropriate trigger events occur. For example, the `gameOver()` method is called by `ball.js` when the ball goes off the bottom of the screen.
+Эти методы изменения состояния будут вызываться из других скриптов, когда происходят соответствующие триггерные события. Например, метод `gameOver()` вызывается из `ball.js`, когда мяч выходит за нижнюю границу экрана.
 
-### Application Events
+### События приложения
 
-Let's pause to take a look at the way the game script fires events on the application.
+Давайте остановимся и рассмотрим, как скрипт игры запускает события в приложении.
 
 ```javascript
 this.app.fire("game:start")
 ```
 
-Events are an extremely useful way to communicate form one script to many other scripts. The way an event works is that an object (in this case `this.app`) chooses to "fire" an event. Any other code that has access to the object can choose to listen to one or more events on this object and the code will be notified when the event is fired.
+События являются чрезвычайно полезным способом общения от одного скрипта к многим другим скриптам. Принцип работы события заключается в том, что объект (в данном случае `this.app`) выбирает "запустить" событие. Любой другой код, имеющий доступ к объекту, может выбрать прослушивание одного или нескольких событий на этом объекте, и код будет уведомлен, когда событие будет запущено.
 
-One of the issues with this is that the code needs access to the object in order to start listening to the event. This is why application events are so useful. Every script in PlayCanvas has access to `this.app`. That makes it useful to act as a central communications hub between any other scripts.
+Одна из проблем с этим заключается в том, что коду нужен доступ к объекту, чтобы начать прослушивание события. Вот почему события приложения настолько полезны. Каждый скрипт в PlayCanvas имеет доступ к `this.app`. Это делает его полезным для действия в качестве центрального коммуникационного узла между любыми другими скриптами.
 
-We have chosen to adopt a namespace pattern to make events clearer and avoid clashes. To listen for the `game:start` event from above. You would use this code:
+Мы решили использовать шаблон пространства имен, чтобы сделать события более понятными и избежать конфликтов. Чтобы прослушать событие `game:start` из примера выше, вы должны использовать этот код:
 
 ```javascript
 this.app.on("game:start", function () {
-    console.log("game:start event was fired");
+    console.log("событие game:start было вызвано");
 }, this)
 ```
 
-### Scoring
+### Счет
 
-The game script also manages the current score. It exposes methods that are used to modify the score and also fires events to let other code know that the score has changed.
+Игровой скрипт также управляет текущим счетом. Он предоставляет методы, которые используются для изменения счета, и также запускает события, чтобы другой код знал, что счет изменился.
 
-### Resolution
+### Разрешение
 
-Finally the game script handles the initial choice of resolution to make sure the main canvas is the correct size on both mobile and desktop. On mobile (defined by a screen less than 640 pixels wide) the game simply fills the entire screen. On desktop we use the predefined resolution set in the project settings.
+Наконец, игровой скрипт обрабатывает начальный выбор разрешения, чтобы убедиться, что основной холст имеет правильный размер как на мобильных устройствах, так и на настольных компьютерах. На мобильных устройствах (определяется экраном менее 640 пикселей в ширину) игра просто заполняет весь экран. На настольных компьютерах мы используем предопределенное разрешение, установленное в настройках проекта.
 
 ## input.js
 
-The input script listens for input from the mouse or touchscreen, normalizes the input from the two into a general purpose "tap" and communicates with the rest of the application that a tap has occurred.
+Скрипт ввода прослушивает ввод от мыши или сенсорного экрана, нормализует ввод от двух в общее назначение "tap" и сообщает остальной части приложения о том, что произошло нажатие.
 
 ```javascript
 var Input = pc.createScript('input');
@@ -155,14 +155,14 @@ Input.attributes.add('ballRadius', {type: 'number', default: 0.5});
 
 Input.worldPos = new pc.Vec3();
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Input.prototype.initialize = function() {
 
     var self = this;
 
     this._paused = true;
 
-    // Listen for game events so we know whether to respond to input
+    // Слушаем игровые события, чтобы знать, следует ли реагировать на ввод
     this.app.on("game:start", function () {
         self._paused = false;
     });
@@ -170,12 +170,12 @@ Input.prototype.initialize = function() {
         self._paused = true;
     });
 
-    // set up touch events if available
+    // настройка событий касания, если доступны
     if (this.app.touch) {
         this.app.touch.on("touchstart", this._onTouchStart, this);
     }
 
-    // set up mouse events
+    // настройка событий мыши
     this.app.mouse.on("mousedown", this._onMouseDown, this);
 };
 
@@ -184,16 +184,16 @@ Input.prototype._onTap = function (x, y) {
     var camPos = this.camera.getPosition();
     var worldPos = Input.worldPos;
 
-    // Get the position in the 3D world of the touch or click
-    // Store the in worldPos variable.
-    // This position is at the same distance away from the camera as the ball
+    // Получаем позицию в 3D-мире касания или клика
+    // Сохраняем в переменной worldPos.
+    // Эта позиция находится на том же расстоянии от камеры, что и мяч
     this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 
-    // get the distance of the touch/click to the ball
+    // получаем расстояние от касания/клика до мяча
     var dx = (p.x - worldPos.x);
     var dy = (p.y - worldPos.y);
 
-    // If the click is inside the ball, tap the ball
+    // Если клик внутри мяча, тапните по мячу
     var lenSqr = dx*dx + dy*dy;
     if (lenSqr < this.ballRadius*this.ballRadius) {
         this.ball.script.ball.tap(dx, dy);
@@ -205,11 +205,11 @@ Input.prototype._onTouchStart = function (e) {
         return;
     }
 
-    // respond to event
+    // реагировать на событие
     var touch = e.changedTouches[0];
     this._onTap(touch.x, touch.y);
 
-    // stop mouse events firing as well
+    // остановить срабатывание событий мыши
     e.event.preventDefault();
 };
 
@@ -218,51 +218,51 @@ Input.prototype._onMouseDown = function (e) {
         return;
     }
 
-    // respond to event
+    // реагировать на событие
     this._onTap(e.x, e.y);
 };
 ```
 
-First, in initialize we are setting up event listening. We listen for application events to determine if the game is in a paused state (that is in the menu or in the game over state). If the input is paused we don't respond to the taps. Next we listen for touch events (note, you must check if `this.app.touch` is available) and mouse events.
+Сначала в функции инициализации мы настраиваем прослушивание событий. Мы слушаем события приложения, чтобы определить, находится ли игра в состоянии паузы (то есть в меню или в состоянии окончания игры). Если ввод приостановлен, мы не реагируем на касания. Затем мы слушаем события касания (обратите внимание, что вы должны проверить наличие `this.app.touch`) и события мыши.
 
-### Touch Events
+### События касания
 
-For touch events we take the first touch and pass through the screen co-ordinates. We also call `preventDefault()` on the browser event to stop the browser also generating a `click` event which it will do otherwise.
+Для событий касания мы берем первое касание и передаем координаты экрана. Мы также вызываем `preventDefault()` на событии браузера, чтобы остановить генерацию события `click` браузером, которое он сделает в противном случае.
 
-### Mouse Events
+### События мыши
 
-On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same coordinate system. This is not the case with normal browser events!
+На событиях "mousedown" мы передаем координаты экрана в код касания. Обратите внимание, что PlayCanvas гарантирует, что события касания и мыши имеют одну и ту же систему координат. Это не так с обычными событиями браузера!
 
-### Taps
+### Касания
 
-`_onTap()` takes a screen co-ordinate (x, y) works out if this has "hit" the ball and if so tells the ball code that it has been tapped.
+`_onTap()` принимает координату экрана (x, y), определяет, "попала" ли она в мяч, и, если это так, сообщает коду мяча, что он был нажат.
 
 ```javascript
 this.camera.camera.screenToWorld(x, y, camPos.z - p.z, worldPos);
 ```
 
-In detail, this function takes the screen co-ordinates (x, y) and asks the camera to convert them into a position in 3D space under that point on the screen. To do this, we need to supply a depth, as in how far away from the screen do you want the 3D point. In this case we get the 3D point at the same depth as the ball is.
+Подробнее, эта функция принимает координаты экрана (x, y) и просит камеру преобразовать их в позицию в 3D-пространстве под этой точкой на экране. Чтобы сделать это, нам нужно указать глубину, то есть насколько далеко от экрана вы хотите получить 3D-точку. В данном случае мы получаем 3D-точку на той же глубине, что и мяч.
 
-We also pass in a vector `Input.worldPos`. It's important in PlayCanvas applications to avoid creating new objects, like calling `new pc.Vec3()` to create a new vector, in your update loops. The more memory allocations you do (by calling `new`) the more Garbage Collection the browser will have to do to clear up your allocations. Garbage Collection is a (comparatively slow) operation and will cause your game or application to stutter if it happens often.
+Мы также передаем вектор `Input.worldPos`. В приложениях PlayCanvas важно избегать создания новых объектов, например вызывая `new pc.Vec3()` для создания нового вектора, в ваших циклах обновления. Чем больше выделений памяти вы делаете (вызывая `new`), тем больше сбора мусора браузеру придется делать для очистки ваших выделений. Сбор мусора - это (сравнительно медленная) операция и вызовет заикание вашей игры или приложения, если она происходит часто.
 
-In most cases, PlayCanvas will provide an option to pass in vector or similar option so that you can pre-allocate and re-use objects.
+В большинстве случаев PlayCanvas предоставит возможность передать вектор или аналогичный параметр, чтобы вы могли предварительно выделить и повторно использовать объекты.
 
 
 ```javascript
-// get the distance of the touch/click to the ball
+// получить расстояние от касания/клика до мяча
 var dx = (p.x - worldPos.x);
 var dy = (p.y - worldPos.y);
 
-// If the click is inside the ball, tap the ball
+// Если клик внутри мяча, нажмите на мяч
 var lenSqr = dx*dx + dy*dy;
 if (lenSqr < this.ballRadius*this.ballRadius) {
     this.ball.script.ball.tap(dx, dy);
 }
 ```
 
-Once we have the the 3D point where we've just tapped, we test to see if it is overlapping with the ball. You'll see here we are testing the radius squared against the distance between the tap and the ball squared. This prevents us doing a slow Square Root operation every time we test.
+Как только у нас есть 3D-точка, по которой мы только что нажали, мы проверяем, пересекается ли она с мячом. Здесь вы увидите, что мы проверяем квадрат радиуса по сравнению с квадратом расстояния между нажатием и мячом. Это предотвращает медленное выполнение операции квадратного корня каждый раз при проверке.
 
-If the tap has hit the ball, we call the `tap(dx, dy)` function on the ball script we pass in the distance from the ball where the tap occurred. We'll use that in the [Part 4][3].
+Если нажатие попало по мячу, мы вызываем функцию `tap(dx, dy)` в сценарии мяча, и передаем расстояние от мяча, где произошло нажатие. Мы будем использовать это в [Части 4][3].
 
 [1]: /tutorials/keepyup-part-one/
 [2]: /tutorials/keepyup-part-two/

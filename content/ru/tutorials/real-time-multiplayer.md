@@ -1,23 +1,23 @@
 ---
-title: Многопользовательская игра
+title: Реальное время многопользовательской игры
 layout: tutorial-page.hbs
-tags: multiplayer, networking
-thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg"
+tags: многопользовательский, сетевой
+thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
-<div class="alert alert-info">This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> and <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.</div>
+<div class="alert alert-info">В этом уроке рассматривается, как начать создавать свой собственный многопользовательский проект с нуля. Если вы предпочитаете использовать хостинговый многопользовательский сервис, у нас есть уроки для <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> и <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.</div>
 
 <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
 
-*Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
+*Используйте WASD для перемещения игрока. Если вы видите только одну капсулу, попробуйте открыть эту страницу в другой вкладке или на другом компьютере.*
 
-In this tutorial we’ll cover how to setup a basic multiplayer project using Node.js and Socket.io. We’ll focus on implementing it in PlayCanvas. By the end you should have a project similar to the one above. You can find the [tutorial project here][2].
+В этом уроке мы рассмотрим, как настроить базовый многопользовательский проект с использованием Node.js и Socket.io. Мы сосредоточимся на его реализации в PlayCanvas. В конце у вас должен быть проект, похожий на тот, что выше. Вы можете найти [проект учебника здесь][2].
 
-## Setting up the Server
+## Настройка сервера
 
-We'll be implementing a client-server model (as opposed to peer-to-peer). This will be a basic server that will receive data from all clients (which are our PlayCanvas instances) and broadcast it back.
+Мы будем реализовывать модель клиент-сервер (в отличие от одноранговой). Это будет базовый сервер, который будет получать данные от всех клиентов (наших экземпляров PlayCanvas) и транслировать их обратно.
 
-[Glitch][3] provides a really convenient way to write and deploy backend apps for free completely in your browser! You can use it without an account but creating one will let you easily find your work. [Create a new Node app][4] and replace the contents of `server.js` with this:
+[Glitch][3] предоставляет действительно удобный способ бесплатно написать и развернуть серверные приложения прямо в вашем браузере! Вы можете использовать его без учетной записи, но создание учетной записи позволит вам легко найти свою работу. [Создайте новое приложение Node][4] и замените содержимое `server.js` на это:
 
 ```javascript
 var server = require('http').createServer();
@@ -28,65 +28,118 @@ var options = {
 var io = require('socket.io')(server, options);
 
 io.sockets.on('connection', function(socket) {
-    console.log("Client has connected!");
+    console.log("Клиент подключился!");
 });
 
-console.log ('Server started.');
+console.log ('Сервер запущен.');
 server.listen(3000);
 ```
 
-Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button on the left side of the screen to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
+Glitch автоматически перезапустит сервер каждый раз, когда вы закончите печатать. После того, как вы скопировали это, у вас должна возникнуть ошибка. Нажмите на кнопку `Logs` слева на экране, чтобы открыть консоль сервера. Здесь вы можете увидеть любой вывод сервера, а также ошибки. Вы должны увидеть `Error: Cannot find module 'socket.io'`.
 
-![Opening the log][5]
+![Открытие журнала][5]
 
-To include a package, go to `package.json` and click on the `Add Package` button on the top. Search for `socket.io`.
+Чтобы добавить пакет, перейдите в `package.json` и нажмите на кнопку `Add Package` сверху. Ищите `socket.io`.
 
-![Adding a package][6]
+![Добавление пакета][6]
 
+Теперь, если вы очистите журнал и добавите пробел в `server.js`, чтобы он снова запустился, вы должны увидеть `Server started.` в журнале. Вы успешно развернули сервер! Если вы нажмете кнопку `Show` сверху, вы на самом деле ничего не увидите. Это потому, что наш сервер не прослушивает http-запросы, а вместо этого прослушивает запросы через веб-сокеты.
 
-Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
+Вы можете найти домен, на котором развернут ваш сервер, нажав в левом верхнем углу (где у меня написано `thundering-polo`). Здесь вы также можете переименовать проект.
 
-You can find the domain your server is deployed at by clicking in the top left (where it says `thundering-polo` for me). This is where you can also rename the project.
+Этот сервер будет просто записывать сообщение каждый раз, когда кто-то подключается. Этого должно быть достаточно, чтобы начать работу над нашим клиентом и подтвердить, что он подключается к серверу.
 
-This server will simply log a message every time someone connects. This should be enough to start working on our client and confirm that it connects to the server.
+## Настройка проекта
 
-## Setting up the Project
+Создайте новый проект на PlayCanvas. Сначала нам нужно включить клиентскую библиотеку Socket.io JS в качестве внешнего скрипта.
 
-Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script.
+Перейдите к настройкам проекта.
+![Настройки проекта][12]
 
-Go to project settings.
-![Project settings][12]
+Найдите и откройте 'External Scripts'.
+![Настройки внешних скриптов][13]
 
-Find and open 'External Scripts'.
-![External scripts settings][13]
-
-Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
-![Project settings][14]
+Измените значение с 0 на 1 и добавьте URL-адрес CDN для библиотеки сокетов из их [сервера фреймворка][11]. В данном случае мы будем использовать версию 3.1.1, так как это последняя на момент написания:
+![Настройки проекта][14]
 
 
 ```
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
 ```
 
-Now we need to create a new script to handle the network logic. Create a new script called `Network.js`. We first need to create a connection to the server. We can do this by adding this line in the initialize method:
+Теперь нам нужно создать новый скрипт для обработки сетевой логики. Создайте новый скрипт с именем `Network.js`. Сначала нам нужно создать соединение с сервером. Мы можем сделать это, добавив эту строку в метод инициализации:
 
 ```javascript
 this.socket = io.connect('https://thundering-polo.glitch.me');
 ```
 
-Replace `https://thundering-polo.glitch.me` with the address of your own server.
+# Issue Tracker
 
-To confirm that this works, attach this network script to the `Root` entity, and then launch the game. Keep your eye on the server log at Glitch. If everything worked, the server should log `Client has connected!`. The project is now setup to send and receive messages to & from the server.
+- [ ] Перевести документацию
+- [ ] Создать русскоязычный раздел на сайте
+- [ ] Обновить Tutorial Thumbnail
 
-## Server and Client Communication
+# Entity
 
-The way you can send data between the client and server is with the socket connection we made earlier. To send data from the client (in Network.js on PlayCanvas), we use the emit function. Here’s an example:
+- [ ] Добавить поддержку русского языка
+- [ ] Перевести интерфейс пользователя
+- [ ] Перевести сообщения об ошибках
+
+# Material Asset
+
+- [ ] Перевести описание материалов
+- [ ] Перевести Material Inspector
+- [ ] Перевести Shader Editor
+
+# Node Inspector
+
+- [ ] Перевести интерфейс Node Inspector
+- [ ] Перевести подсказки для пользователей
+- [ ] Перевести сообщения об ошибках
+
+# Texture Inspector
+
+- [ ] Перевести интерфейс Texture Inspector
+- [ ] Перевести подсказки для пользователей
+- [ ] Перевести сообщения об ошибках
+
+# Graph Inspector
+
+- [ ] Перевести интерфейс Graph Inspector
+- [ ] Перевести подсказки для пользователей
+- [ ] Перевести сообщения об ошибках
+
+# Asset
+
+- [ ] Перевести описание Asset
+- [ ] Перевести интерфейс пользователя
+- [ ] Перевести сообщения об ошибках
+
+# Graph Editor
+
+- [ ] Перевести интерфейс Graph Editor
+- [ ] Перевести подсказки для пользователей
+- [ ] Перевести сообщения об ошибках
+
+# Assets
+
+- [ ] Перевести описание Assets
+- [ ] Перевести интерфейс пользователя
+- [ ] Перевести сообщения об ошибках
+
+Замените `https://thundering-polo.glitch.me` на адрес вашего собственного сервера.
+
+Чтобы убедиться, что это работает, прикрепите этот сетевой скрипт к `Root` Entity и затем запустите игру. Следите за журналом сервера на Glitch. Если все работает, сервер должен записать `Client has connected!`. Теперь проект настроен на отправку и получение сообщений от сервера и на сервер.
+
+## Общение сервера и клиента
+
+Способ отправки данных между клиентом и сервером осуществляется через сокетное соединение, которое мы создали ранее. Чтобы отправить данные с клиента (в Network.js на PlayCanvas), мы используем функцию emit. Вот пример:
 
 ```javascript
-this.socket.emit ('playerJoined', 'John');
+this.socket.emit ('playerJoined', 'Джон');
 ```
 
-This emits a message called `playerJoined`, with the data `John`. For the server to receive the message, we need to write in the server file (in server.js on Glitch):
+Это отправляет сообщение с названием `playerJoined` и данными `John`. Чтобы сервер получил сообщение, нам нужно написать в файле сервера (в server.js на Glitch):
 
 ```javascript
 socket.on ('playerJoined', function (name) {
@@ -94,19 +147,36 @@ socket.on ('playerJoined', function (name) {
 });
 ```
 
-This will log whatever data is sent to the server when `playerJoined` is emitted.
+# Issue Tracker
 
-For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
+Если вы нашли ошибку или у вас есть предложение по улучшению, пожалуйста, создайте новый тикет в [Issue Tracker](https://github.com/Unity-Technologies/ShaderGraph/issues).
 
-<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360px">
+# Содержание
 
-Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
+- [Tutorial Thumbnail](#tutorial-thumbnail)
+- [Entity](#entity)
+- [Material Asset](#material-asset)
+- [Material Inspector](#material-inspector)
+- [Shader Editor](#shader-editor)
+- [Node Inspector](#node-inspector)
+- [Texture Inspector](#texture-inspector)
+- [Graph Inspector](#graph-inspector)
+- [Graph Editor](#graph-editor)
+- [Assets](#assets)
 
-<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360px">
+Это будет записывать любые данные, отправленные на сервер, когда вызывается `playerJoined`.
 
-Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
+Для этой демонстрации мы стремимся к тому, чтобы игроки двигались вместе с другими в режиме реального времени, поэтому нам нужно создать среду. Начните с создания объекта Entity для использования в качестве земли и добавьте столкновение и статический твердотельный объект. Вот как должны выглядеть настройки объекта земли:
 
-Add a script component to your player, and attach a new script called `Movement.js`:
+<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360">
+
+Теперь нам нужен игрок для управления. Создайте новый капсул и назовите его `Player`. добавьте динамический твердотельный объект и столкновение, и измените настройки твердотельного объекта, чтобы они соответствовали картинке ниже.
+
+<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360">
+
+Дублируйте объект игрока и переименуйте его в "Other". Снимите флажок `Enabled` на этом новом объекте, чтобы он был отключен с самого начала. Это объект, который мы будем использовать для имитации других игроков в игре.
+
+Добавьте компонент сценария к вашему игроку и прикрепите новый сценарий под названием `Movement.js`:
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -114,15 +184,15 @@ var Movement = pc.createScript('movement');
 Movement.attributes.add('playerSpeed', {
     type: 'number',
     default: 30,
-    title: 'Player Speed'
+    title: 'Скорость игрока'
 });
 
-// initialize code called once per entity
+// инициализация кода, вызываемая один раз для каждой сущности
 Movement.prototype.initialize = function() {
     this.force = new pc.Vec3();
 };
 
-// update code called every frame
+// код обновления, вызываемый каждый кадр
 Movement.prototype.update = function(dt) {
     var forward = this.entity.forward;
     var right = this.entity.right;
@@ -161,8 +231,8 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or did not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
-For the game to work in real time multiplayer, we need to keep track of all players in the game. Replace the current server code with this:
+Когда вы запустите игру, вы должны иметь возможность использовать WASD для перемещения вашего игрока. Если нет, вы пропустили шаг или не установили правильные настройки для сущности (Entity). (Попробуйте изменить атрибут скорости в скрипте движения)
+Для работы игры в режиме многопользовательской игры в реальном времени нам нужно отслеживать всех игроков в игре. Замените текущий код сервера на этот:
 
 ```javascript
 var server = require('http').createServer();
@@ -186,29 +256,29 @@ io.sockets.on('connection', function(socket) {
     socket.on ('initialize', function () {
         var id = socket.id;
         var newPlayer = new Player (id);
-        // Creates a new player object with a unique ID number.
+        // Создает новый объект игрока с уникальным номером ID.
 
         players[id] = newPlayer;
-        // Adds the newly created player to the array.
+        // Добавляет нового созданного игрока в массив.
 
         socket.emit ('playerData', {id: id, players: players});
-        // Sends the connecting client his unique ID, and data about the other players already connected.
+        // Отправляет подключающемуся клиенту его уникальный ID и данные об уже подключенных других игроках.
 
         socket.broadcast.emit ('playerJoined', newPlayer);
-        // Sends everyone except the connecting player data about the new player.
+        // Отправляет всем, кроме подключающегося игрока, данные о новом игроке.
     });
 });
 
-console.log ('Server started.');
+console.log ('Сервер запущен.');
 server.listen(3000);
 ```
 
-In the code above, when a player sends the message `initialize`, we send him his unique ID and data about other players in the game. It also tells others that a new player has connected. Let’s add that logic into our Network script.
+В приведенном выше коде, когда игрок отправляет сообщение `initialize`, мы отправляем ему его уникальный ID и данные об других игроках в игре. Это также сообщает другим, что подключился новый игрок. Добавим эту логику в наш сетевой скрипт.
 
-Add this code in the `initialize`:
+Добавьте этот код в `initialize`:
 
 ```javascript
-// Your io.connect function call should be up here
+// Ваш вызов функции io.connect должен быть здесь
 
 this.socket.emit ('initialize');
 var socket = this.socket;
@@ -226,43 +296,43 @@ socket.on ('playerJoined', function (data) {
 });
 ```
 
-And then declare these new functions inside Network.js:
+А затем объявите эти новые функции внутри Network.js:
 
 ```javascript
 Network.prototype.initializePlayers = function (data) {
     this.players = data.players;
-    // Create a player array and populate it with the currently connected players.
+    // Создать массив игроков и заполнить его текущими подключенными игроками.
 
     this.id = data.id;
-    // Keep track of what ID number you are.
+    // Отслеживать номер вашего идентификатора.
 
     for(var id in this.players){
         if(id != Network.id){
             this.players[id].entity = this.createPlayerEntity(this.players[id]);
         }
     }
-    // For every player already connected, create a new capsule entity.
+    // Для каждого уже подключенного игрока создать новую капсульную сущность.
 
     this.initialized = true;
-    // Mark that the client has received data from the server.
+    // Отметить, что клиент получил данные от сервера.
 };
 
 Network.prototype.createPlayerEntity = function (data) {
     var newPlayer = this.other.clone ();
-    // Create a new player entity.
+    // Создать новую сущность игрока.
 
     newPlayer.enabled = true;
-    // Enable the newly created player.
+    // Включить нового созданного игрока.
 
     this.other.getParent ().addChild (newPlayer);
-    // Add the entity to the entity hierarchy.
+    // Добавить сущность в иерархию сущностей.
 
     if (data)
         newPlayer.rigidbody.teleport (data.x, data.y, data.z);
-    // If a location was given, teleport the new entity to the position of the connected player.
+    // Если было задано местоположение, переместить новую сущность в позицию подключенного игрока.
 
     return newPlayer;
-    // Return the new entity.
+    // Вернуть новую сущность.
 };
 
 Network.prototype.addPlayer = function (data) {
@@ -271,9 +341,9 @@ Network.prototype.addPlayer = function (data) {
 };
 ```
 
-Now when we join the game, the client tells the server we've connected, and the server sends us a list of players with their positions. The game then creates a new entity for each player connected, and moves them to their current position. The only problem is, the server doesn't know the positions of all players. We need to send the server our current position every frame.
+Теперь, когда мы присоединяемся к игре, клиент сообщает серверу, что мы подключились, и сервер отправляет нам список игроков с их позициями. Затем игра создает новую сущность для каждого подключенного игрока и перемещает их на текущую позицию. Единственная проблема в том, что сервер не знает позиций всех игроков. Нам нужно отправлять серверу нашу текущую позицию каждый кадр.
 
-Add this code into the `initialize` of your Network.js script:
+Добавьте этот код в `initialize` вашего скрипта Network.js:
 
 ```javascript
 socket.on ('playerMoved', function (data) {
@@ -281,7 +351,33 @@ socket.on ('playerMoved', function (data) {
 });
 ```
 
-Replace your `update` with this:
+Перевод Markdown файла с английского на русский:
+
+# Issue Tracker
+
+## Tutorial Thumbnail
+
+### Entity
+
+#### Material Asset
+
+##### Material Inspector
+
+###### Shader Editor
+
+####### Node Inspector
+
+######## Texture Inspector
+
+######### Graph Inspector
+
+########## Asset
+
+########### Graph Editor
+
+############ Assets
+
+Замените свой `update` на это:
 
 ```javascript
 Network.prototype.update = function (dt) {
@@ -289,8 +385,12 @@ Network.prototype.update = function (dt) {
 };
 ```
 
+Сеть.prototype.update = функция (dt) {
+    this.updatePosition ();
+};
 
-And then declare these new functions inside Network.js:
+
+И затем объявите эти новые функции внутри Network.js:
 
 ```javascript
 Network.prototype.movePlayer = function (data) {
@@ -306,7 +406,7 @@ Network.prototype.updatePosition = function () {
 };
 ```
 
-Back on the server, we need to account for what happens when the player sends us their position. On the server, we need to add a new event:
+Обратно на сервере нам нужно учесть, что происходит, когда игрок отправляет нам свою позицию. На сервере нам нужно добавить новое событие:
 
 ```javascript
 socket.on ('positionUpdate', function (data) {
@@ -318,17 +418,17 @@ socket.on ('positionUpdate', function (data) {
 });
 ```
 
-When you're testing this, note that the server currently does not account for disconnects. To properly restart, you'll have to close all clients, restart the server (by typing in Glitch) then relaunching the clients.
+При тестировании этого учтите, что сервер в настоящее время не учитывает отключения. Чтобы правильно перезапустить, вам нужно будет закрыть все клиенты, перезапустить сервер (набрав в Glitch), а затем снова запустить клиентов.
 
-## Conclusion
+## Заключение
 
-That's about it! If you'd like, try adding some of these ideas on your own:
-* Players are removed when they close the game.
-* Adding respawning functionality for when players fall off the edge.
+Вот и все! Если хотите, попробуйте добавить некоторые из этих идей самостоятельно:
+* Игроки удаляются при закрытии игры.
+* Добавление функциональности возрождения, когда игроки падают за край.
 
-Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritative server, instead of handling all the game logic on the client. You can read a more in depth tutorial about [how Socket.io works and how to develop multiplayer in Javascript here][1].
+Имейте в виду, что это только очень базовая реализация многопользовательской игры. В реальности, при создании больших многопользовательских игр, вы захотите рассмотреть использование авторитетного сервера, вместо обработки всей игровой логики на клиенте. Вы можете прочитать более подробное руководство о [том, как работает Socket.io и как разрабатывать многопользовательские игры на Javascript здесь][1].
 
-You can find the [full server code on Glitch here][10], where you can also fork it and extend it.
+Вы можете найти [полный код сервера на Glitch здесь][10], где также можете создать его форк и расширить его.
 
 [1]: https://code.tutsplus.com/tutorials/create-a-multiplayer-pirate-shooter-game-in-your-browser--cms-23311
 [2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer

@@ -1,11 +1,11 @@
 ---
-title: Template
+title: Шаблон
 layout: usermanual-page.hbs
 position: 14
 ---
 
-A Template (also called a Prefab) is an Asset that contains a piece of an Entity hierarchy. It has a root Entity and can have any number of children. A Template is a reusable Entity that you can instantiate dynamically at runtime or place multiple instances of it in your Scene. When you change the Template Asset all instances of the Template will also change.
+Шаблон (также называемый Prefab) - это Asset, содержащий часть иерархии Entity. У него есть корневой Entity и может иметь любое количество дочерних элементов. Шаблон - это многократно используемый Entity, который вы можете создавать динамически во время выполнения или размещать несколько экземпляров в вашей сцене. При изменении Asset шаблона все экземпляры шаблона также изменятся.
 
-For more information about working with Templates see [here][1].
+Для получения дополнительной информации о работе с шаблонами см. [здесь][1].
 
 [1]: /user-manual/templates/
