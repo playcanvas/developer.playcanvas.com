@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/assets/:assetId/file/:filename?branchId=:branchId
 
 ## Описание
 
-Получите информацию об одном активе
+Получите информацию об одном ассете
 
 ## Пример
 

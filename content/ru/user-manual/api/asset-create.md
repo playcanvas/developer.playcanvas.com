@@ -44,7 +44,7 @@ POST https://playcanvas.com/api/assets
 
 ## Описание
 
-Создать новый актив.
+Создать новый ассет.
 
 <div class="alert alert-info">
     В настоящее время этот конечный пункт поддерживает создание ассетов типа `script`, `html`, `css`, `text`, `shader` и `json`.
@@ -91,12 +91,12 @@ Content-Type: application/javascript
 ## Параметры
 
 <div class="params">
-<div class="parameter"><span class="param">name: string</span><p>Название актива</p></div>
-<div class="parameter"><span class="param">projectId: number</span><p>ID проекта для добавления актива</p></div>
+<div class="parameter"><span class="param">name: string</span><p>Название ассета</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>ID проекта для добавления ассета</p></div>
 <div class="parameter"><span class="param">branchId: string</span><p>ID ветки</p></div>
-<div class="parameter"><span class="param">parent [optional]: number</span><p>ID родительского актива</p></div>
-<div class="parameter"><span class="param">preload [optional]: boolean</span><p>Предзагрузка актива (true | false)</p></div>
-<div class="parameter"><span class="param">file [optional]: file</span><p>Данные для хранения в виде файла актива.</p></div>
+<div class="parameter"><span class="param">parent [optional]: number</span><p>ID родительского ассета</p></div>
+<div class="parameter"><span class="param">preload [optional]: boolean</span><p>Предзагрузка ассета (true | false)</p></div>
+<div class="parameter"><span class="param">file [optional]: file</span><p>Данные для хранения в виде файла ассета.</p></div>
 <div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Используется только для текстур и по умолчанию имеет значение false. Изменение размера текстуры на степень двойки (true | false)</p></div>
 </div>
 

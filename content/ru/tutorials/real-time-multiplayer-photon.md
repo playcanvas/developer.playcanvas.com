@@ -106,7 +106,7 @@ SDK будет загружен в формате ZIP, распакуйте ег
 
 ### Создание экземпляров классов из PlayCanvas для использования Photon
 
-Создайте скриптовый актив с именем **photon-loadbalancing-playcanvas.js** в проекте для инициализации Photon.
+Создайте скриптовый ассет с именем **photon-loadbalancing-playcanvas.js** в проекте для инициализации Photon.
 
 ```javascript
 // photon-loadbalancing-playcanvas.js
@@ -150,7 +150,7 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 ### Установить скрипт для корневой сущности
 
-Создайте новый актив скрипта **photon-loadbalancing-playcanvas.js** и прикрепите его к корневой сущности в редакторе.
+Создайте новый ассет скрипта **photon-loadbalancing-playcanvas.js** и прикрепите его к корневой сущности в редакторе.
 
 ![Root Entity - Inspector][16]
 

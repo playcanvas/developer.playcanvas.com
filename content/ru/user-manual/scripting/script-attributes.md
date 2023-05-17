@@ -86,7 +86,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-Атрибут Asset позволяет вам ссылаться на актив проекта в вашем скрипте. Атрибут актива также поддерживает свойство `assetType`, которое ограничивает атрибут активами определенного типа, например, 'texture', 'material', 'model'.
+Атрибут Asset позволяет вам ссылаться на ассет проекта в вашем скрипте. Атрибут ассета также поддерживает свойство `assetType`, которое ограничивает атрибут ассетами определенного типа, например, 'texture', 'material', 'model'.
 
 Тип выполнения атрибута Asset - это `pc.Asset`. Вы можете ссылаться на ресурс атрибута Asset во время выполнения следующим образом:
 
@@ -94,7 +94,7 @@ MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array
 MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
 
 MyScript.prototype.initialize = function () {
-    console.log('Это текстурный актив', this.texture);
+    console.log('Это текстурный ассет', this.texture);
     console.log('Это текстурный ресурс', this.texture.resource);
 };
 

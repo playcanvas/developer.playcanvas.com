@@ -1,90 +1,90 @@
 ---
-title: Sprite Editor
+title: Редактор Sprite
 layout: usermanual-page.hbs
 position: 1
 ---
 
-The Sprite Editor is used to edit both Texture Atlas assets and Sprite assets. It is also used to create Sprite Assets.
+Редактор спрайтов используется для редактирования как ассетов текстурных атласов, так и ассетов спрайтов. Он также используется для создания ассетов Sprite.
 
-To open the Sprite Editor, double-click on any Texture Atlas or Sprite asset in the Editor asset panel.
+Чтобы открыть редактор спрайтов, дважды щелкните по любому ассету текстурного атласа или Sprite в панели ассетов редактора.
 
-![Sprite Editor][1]
+![Редактор спрайтов][1]
 
 ## Viewport
 
 ![Viewport][2]
 
-The viewport in the Sprite Editor shows the currently selected Texture Atlas. Frames are shown as grey boxes on the texture atlas. The currently selected asset is shown with two sets of handles. green and blue. Green handles modify the frame's width and height, blue handles modify the frame's border property.
+Вьюпорт в редакторе Sprite показывает текущий выбранный текстурный атлас. Фреймы отображаются в виде серых прямоугольников на текстурном атласе. Текущий выбранный ассет отображается с двумя наборами маркеров: зелеными и синими. Зеленые маркеры изменяют ширину и высоту фрейма, синие маркеры изменяют свойство границы фрейма.
 
-### Editing Texture Atlases
+### Редактирование текстурных атласов
 
-Within the viewport use the mouse to drag the outline of a Frame, then use the green and blue handles to modify the frames extents and borders.
+Внутри вьюпорта используйте мышь для перетаскивания контура фрейма, затем используйте зеленые и синие маркеры для изменения размеров и границ фреймов.
 
-#### Frames
+#### Фреймы
 
-Frames are a defined region on a Texture Atlas. A frame has a name, a position and size and a border. The border is used to define the edges of the 9-slicing region. See the [9-slicing documentation][7] for more information.
+Фреймы - это определенная область на текстурном атласе. Фрейм имеет имя, позицию и размер, а также границу. Граница используется для определения краев области 9-среза. См. [документацию по 9-срезам][7] для получения дополнительной информации.
 
-## Inspector
+## Инспектор
 
-The inspector panel shows the properties of the currently selected item. The inspector changes depending on whether the selected item is a Texture Atlas, Frame or Sprite Asset.
+Панель инспектора показывает свойства выбранного элемента. Инспектор изменяется в зависимости от того, является ли выбранный элемент текстурным атласом, кадром или спрайтом ассетом.
 
-### Texture Atlas Inspector
+### Инспектор текстурного атласа
 
-![Texture Atlas Inspector][3]
+![Инспектор текстурного атласа][3]
 
-The Texture Atlas Inspector allows you to automatically slice a texture atlas into a fixed grid.
+Инспектор текстурного атласа позволяет автоматически разрезать текстурный атлас на фиксированную сетку.
 
-First choose what to do with existing frames. You can choose to *Delete Existing* frames or do not delete and *Only Append* frames.
+Сначала выберите, что делать с существующими кадрами. Вы можете выбрать *Удалить существующие* кадры или не удалять и *Только добавить* кадры.
 
-Then select the method of specifying the grid cells
+Затем выберите метод указания ячеек сетки:
 
-* Grid By Frame Count - Specify the number of grid cells horizontally and vertically to divide the texture into
-* Grid By Frame Size - Specify the size in pixels that each grid cell should be
+* Сетка по количеству кадров - Укажите количество ячеек сетки по горизонтали и вертикали для разделения текстуры
+* Сетка по размеру кадра - Укажите размер в пикселях, который должна иметь каждая ячейка сетки
 
-Then set the values for Offset and Spacing. Offset is the number of pixels to move in from the top left of the texture before starting the grid. Spacing is the number of pixels between each grid cell.
+Затем установите значения для смещения и расстояния между ячейками. Смещение - это количество пикселей, на которое нужно сместиться от верхнего левого угла текстуры перед началом сетки. Расстояние - это количество пикселей между каждой ячейкой сетки.
 
-Finally set the pivot for all newly generated frames, the pivot determines the position and rotation point of the sprite. It is specified as a proportion of the width and height.
+Наконец, установите центр вращения для всех вновь созданных кадров, центр вращения определяет положение и точку вращения спрайта. Он указывается в виде доли от ширины и высоты.
 
-Once all your settings are chose, click the **Generate Frames** button to create your frames.
+После выбора всех настроек нажмите кнопку **Generate Frames** для создания кадров.
 
-### Frame Inspector
+### Инспектор кадров
 
 ![Frame Inspector][4]
 
-The Frame Inspector lets you set the properties for an individual frame or group of frames. It is visible when you select one or more Frames. The Frame Inspector is also where you create a new Sprite from.
+Инспектор кадров позволяет устанавливать свойства для отдельного кадра или группы кадров. Он становится видимым при выборе одного или нескольких кадров. Инспектор кадров также используется для создания нового спрайта.
 
-The Inspector lets you modify the Position, Size and Border properties of the frame.
+Инспектор позволяет изменять свойства положения, размера и границ кадра.
 
-#### Frame Inspector Actions
+#### Действия инспектора кадров
 
 **New Sprite From Selection**
 
-Create a new Sprite Asset and assign the frames that you have selected to the Sprite, in the order that they were selected.
+Создайте новый ассет спрайта и назначьте выбранные кадры спрайту в порядке их выбора.
 
- * **New Sliced Sprite From Selection** - Create a new Sprite Asset and set its type to *Sliced*. Assign the frames that you have selected to the Sprite, in the order that they were selected.
- * **Focus on Selection** - Focus the viewport on the selected Frames. [Keyboard Shortcut: F]
- * **Trim Selected Frames** - Reduce the size of the selected frames to remove any excess empty space around an image. [Keyboard Shortcut: T]
- * **Delete Selected Frames** - Delete the selected Frames [Keyboard Shortcut: Delete]
+ * **New Sliced Sprite From Selection** - Создайте новый ассет спрайта и установите его тип на *Sliced*. Назначьте выбранные кадры спрайту в порядке их выбора.
+ * **Focus on Selection** - Сфокусировать вид на выбранных кадрах. [Сочетание клавиш: F]
+ * **Trim Selected Frames** - Уменьшить размер выбранных кадров, чтобы удалить лишнее пустое пространство вокруг изображения. [Сочетание клавиш: T]
+ * **Удалить выбранные кадры** - Удалить выбранные кадры [Клавиша быстрого доступа: Delete]
 
-### Sprite Inspector
+### Инспектор спрайта
 
-![Sprite Inspector][5]
+![Инспектор спрайта][5]
 
-The Sprite Inspector is visible when a Sprite Asset is selected. This inspector is used to edit the properties of one or more Sprites. See the [Sprite Asset][6] for more details on the properties.
+Инспектор Sprite виден при выборе Sprite Asset. Этот инспектор используется для редактирования свойств одного или нескольких Sprite. См. [Sprite Asset][6] для получения дополнительной информации о свойствах.
 
-Click the **Add Frames to Sprite Asset** button to enter the Sprite Edit Mode. In this mode, you can select multiple frames from the Frame Panel or Viewport and add them to the Sprite. Click the **Add Selected Frames** to add the frames to your Sprite.
+Нажмите кнопку **Добавить кадры в Sprite Asset** для входа в режим редактирования Sprite. В этом режиме вы можете выбрать несколько кадров из панели кадров или окна просмотра и добавить их в Sprite. Нажмите **Добавить выбранные кадры** для добавления кадров в ваш Sprite.
 
-Using the Sprite Inspector you can also re-order the Frames in your Sprite, or delete individual Frames.
+С помощью Инспектора Sprite вы также можете изменить порядок кадров в вашем Sprite или удалить отдельные кадры.
 
-## Frames Panel
+## Панель кадров
 
-The Frames Panel let's you select and delete Frames from the Texture Atlas
+Панель кадров позволяет выбирать и удалять кадры из текстурного атласа
 
-## Asset Panel
+## Панель Asset
 
-The Asset Panel shows you all the Sprite Assets that have been created from the current Texture Atlas. You can select Sprite Assets from this panel.
+Панель Asset показывает вам все Sprite Assets, созданные из текущего текстурного атласа. Вы можете выбирать Sprite Assets с этой панели.
 
-*Artwork created by [PixelBoy](https://twitter.com/2pblog1)*
+*Автор иллюстраций [PixelBoy](https://twitter.com/2pblog1)*
 
 [1]: /images/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg
 [2]: /images/user-manual/2D/sprite-editor/viewport.jpg

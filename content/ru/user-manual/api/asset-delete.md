@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 
 ## Описание
 
-Навсегда удалите актив из ветки вашего проекта. **Предупреждение** удаление актива является постоянным и необратимым, если вы не создали контрольную точку для него.
+Навсегда удалите ассет из ветки вашего проекта. **Предупреждение** удаление ассета является постоянным и необратимым, если вы не создали контрольную точку для него.
 
 ## Пример
 
@@ -30,8 +30,8 @@ Authorization: Bearer {accessToken}
 ## Параметры
 
 <div class="params">
-<div class="parameter"><span class="param">assetId: number</span><p>ID актива для удаления</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>ID ветки, из которой нужно удалить актив</p></div>
+<div class="parameter"><span class="param">assetId: number</span><p>ID ассета для удаления</p></div>
+<div class="parameter"><span class="param">branchId: string</span><p>ID ветки, из которой нужно удалить ассет</p></div>
 </div>
 
 ## Схема ответа
