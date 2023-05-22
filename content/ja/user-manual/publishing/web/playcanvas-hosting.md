@@ -4,12 +4,14 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-最も速く簡単で便利にゲームを公開できる方法はplaycanvas.comへのパブリッシュです。
+あなたのゲームを公開する最も速くて簡単な方法は、playcanvas.comに公開することです。
 
-2つの簡単なステップでPlayCanvasに公開できます：
 
-1. 新規 **ビルド**の公開
-2. ビルドを**プライマリビルド**に設定
+PlayCanvasに公開するには、2つの単純な手順が必要です。
+
+1. 新しい**ビルド(build)**を公開
+2. ビルドを**主ビルド(Primary Build)**に設定
+
 
 公開するにはプロジェクトに最低ひとつのシーンが必要です。
 
@@ -30,26 +32,26 @@ position: 1
 
 * 次に、新しいビルドに関するいくつかの詳細を記入する必要があります。使用可能なフィールドは以下のとおりです：
 
-  * *Image*: Click on the image to upload a different one if you want. This will be used when sharing the build on Social Media.
-  * *Title*: The title of your build.
-  * *Description*: The description of your build. This will be used when sharing the link of your build on Social Media.
-  * *Version*: The version is there to help you distinguish one build from another. Use a value that makes sense to you.
-  * *Release Notes*: Enter any new changes you made for this build. Again like the Version, this will only be shown to you so that you keep better track of your builds.
-  * *Concatenate Scripts*: Check this to combine all of your PlayCanvas scripts into a single JavaScript file.
-  * *Minify Scripts*: Check this to minify your PlayCanvas scripts to reduce the file size.
-  * *Generate Source Map*: Include Source Maps with the build. This can be useful for debugging but is generally disabled when publishing a production version of your app.
-  * *Optimize Scene Format*: Compresses the scene JSON up to 50%. Read more [here][6].
+  * *Image*: 必要に応じて異なる画像をアップロードするには、画像をクリックします。これは、ソーシャルメディアでビルドを共有する際に使用されます。
+  * *Title*: ビルドのタイトル
+  * *Description*: ビルドの説明。これはビルドのリンクをソーシャルメディアで共有する際に使用されます。
+  * *Version*: バージョンは、ビルドを区別するのに役立ちます。あなたにとって意味がある値を使用してください。
+  * *Release Notes*: このビルドで行われた新しい変更を入力します。バージョンと同様に、これはあなただけに表示されますので、ビルドの追跡がしやすくなります。
+  * *Concatenate Scripts*: PlayCanvasスクリプトを1つのJavaScriptファイルにまとめるには、これをチェックしてください。
+  * *Minify Scripts*: PlayCanvasスクリプトを最小化してファイルサイズを縮小するには、これをチェックしてください。
+  * *Generate Source Map*: ビルドにソースマップを含めます。これはデバッグに役立つことがありますが、通常はアプリの本番バージョンを公開する際に無効になります。
+  * *Optimize Scene Format*: シーンJSONを最大50％まで圧縮します。詳細は[こちら][6]で確認できます。
 
-![シーンの選択][4]
+![Select scenes][4]
 
-* Select the Scenes you want to include in your build from the list. Notice that the Scene with the active banner icon will be loaded first when your build is launched if you include it in the build.
-* Click 'PUBLISH NOW'
-* You will see a new build created in the BUILDS tab. Wait until it finishes processing.
-* Your web app is now live! Feel free to tweet it and share to Facebook right from the published URL.
+* ビルドに含めるシーンをリストから選択します。バナーアイコンが表示されているシーンがビルドに含まれている場合、ビルドが起動されるときは最初にそのシーンがロードされます。
+* 'PUBLISH NOW' をクリックします。
+* BUILDSタブに新しいビルドが作成されたことが確認できます。処理が完了するまでお待ちください。
+* あなたのWebアプリが公開されました！公開されたURLからツイートしたりFacebookで共有したりしてください。
 
 ビルドは次の形式で永久的リンクを与えられます： `https://playcanv.as/b/BUILD_ID/` 。このリンクはビルドを削除しない限り有効です。ゲームへのリンクを共有したい場合は、以下の公開されたプロジェクトリンクを使用することを推奨します。
 
-## Selecting a Primary Build
+## 主ビルド(Primary Build)の選択
 
 同じポップアップでビルドをクリック。
 
@@ -57,15 +59,16 @@ position: 1
 
 既存の公開ビルドのリストが表示されます。
 
-You can also set the Primary Build for your project, by clicking on the banner icon on the left of each build. This will be the build that users play when they click on the PLAY button on the project's home page.
+プロジェクトのホームページのPLAYボタンをクリックすると、ユーザーが再生するビルドは、各ビルドの左側にあるバナーアイコンをクリックして主ビルドに設定できます。
 
-常にゲームの最新版を参照する単一のリンクがあると便利です。古いビルドを削除することによりリンクが壊れる心配がなくなります。このために各プロジェクトにPrimary Buildリンクが用意されています。これは、常に次の形式になります： `https://playcanv.as/p/PROJECT_ID/`
+古いビルドを削除する際に壊れたリンクの心配をしなくて済むように、常に最新バージョンのゲームを参照する単一のリンクを持っていることは便利です。これが各プロジェクトに主ビルドリンクがある理由です。これは常に`https://playcanv.as/p/PROJECT_ID/`の形式になります。
+
 
 <div class="alert alert-info">
 ゲームへのリンクをシェアする場合は、Primary Buildリンクを使用するべきです。これにより、再公開する際にリンクが変更される心配がなくなります。
 </div>
 
-The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.
+ビルドを公開する際に初めて、自動的に主ビルドになります。その後のビルドについては、いつ主ビルドに割り当てるかを選択できます。これにより、ビルドを公開してテストし、最終的にオーディエンスに公開する前に確認できます。
 
 [1]: /images/user-manual/publishing/toolbar-publish.png
 [2]: /images/user-manual/publishing/dialog-publish.png

@@ -4,26 +4,27 @@ layout: usermanual-page.hbs
 position: 6
 ---
 
-CSSアセットにはCSSコードが含まれます。新規のCSSアセットはEditorから作成することができます。また、.css拡張子を持つファイルをアップロードして作成することも可能です。
+CSSアセットはCSSコードを含みます。エディタで新しいCSSアセットを作成するか、.css拡張子を持つファイルをアップロードして作成することができます。
 
-CSSアセットを編集するには、Editorでアセットを右クリックして、Editを選択します。
+CSSアセットを編集するには、エディターで右クリックしてEditを選択します。
 
-読み込まれたCSSアセットリソースは文字列です。文字列は自由に使用することができます。読み込まれたCSS文字列をドキュメントに追加するための一般的な方法は次の通りです：
+読み込まれたCSSアセットリソースは、文字列として存在します。この文字列を使いたいように利用できます。ロードされたCSS文字列をドキュメントに追加する一般的な方法は以下の通りです。
 
 ```javascript
-// レジストリからidでアセットを取得
+// IDでレジストリからアセットを取得
 var asset = app.assets.get(32);
 
-// エレメントの作成
-var style = pc.createStyle(asset.resource || '');
+// 要素を作成
+var style = document.createElement('style');
+style.type = "text/css";
+style.textContent = asset.resource || '';
 document.head.appendChild(style);
 
-// アセットリソースが読み込まれる／変更したら
-// エレメントのhtmlを更新
+// アセットのリソースがロード/変更されたときにスタイルを更新
 asset.on('load', function() {
     style.innerHTML = asset.resource;
 });
 
-// アップロードが読み込まれたことを確認
+// アセットがロードされるようにする
 app.assets.load(asset);
 ```

@@ -1,37 +1,37 @@
 ---
-title: Mini Stats
+title: ミニスタッツ
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Mini stats is a lightweight graphical display of an application's key performance statistics. It shows draw call count, frame time, CPU load and (where supported) GPU load.
+ミニスタッツは、アプリケーションの主要パフォーマンス統計情報を軽量グラフィカルで表示するものです。ドローコール数、フレーム時間、CPU負荷、そして(サポートされている場合)GPU負荷を表示します。
 
-Editor users can enable the mini-stats panel via the Launch button menu:
+エディタのユーザーは、ランチボタンメニューからミニスタッツパネルを有効にすることができます。
 
 <img loading="lazy" alt="Launch Menu" width="600" src="/images/user-manual/optimization/mini-stats/launch-menu-mini-stats.png">
 
-Clicking on the mini-stats will cycle through three supported sizes:
+ミニスタッツをクリックすると、3つのサポートされているサイズを切り替えることができます。
 
 <img loading="lazy" alt="Mini Stats" width="411" src="/images/user-manual/optimization/mini-stats/mini-stats.gif">
 
-The information displayed is as follows:
+表示される情報は以下の通りです。
 
-* **DrawCalls** - The number of rendered objects dispatched every frame. Each draw call has a cost on the CPU and GPU, so minimizing this number is sensible.
-* **Frame** - The total time in milliseconds for the browser to process each frame.
-* **GPU** - Shows the time in milliseconds to render each frame by the GPU. This stat is only shown if the underlying WebGL implementation supports the extension `EXT_disjoint_timer_query` (WebGL 1.0) or `EXT_disjoint_timer_query_webgl2` (WebGL 2.0). You can confirm whether your browser supports either of these extensions by visiting [WebGL Report][1].
-* **CPU** - Shows the time in milliseconds to render each frame by the CPU.
+* **DrawCalls** - 1フレームにディスパッチされる描画オブジェクトの数。各ドローコールにはCPUとGPUのコストがかかるため、この数を最小限に抑えることは合理的です。
+* **Frame** - ブラウザが各フレームを処理するための合計所要時間(ミリ秒)。
+* **GPU** - GPUによる各フレームのレンダリング時間(ミリ秒)を表示します。この統計情報は、下層のWebGL実装が `EXT_disjoint_timer_query`(WebGL 1.0)または `EXT_disjoint_timer_query_webgl2`(WebGL 2.0)をサポートしている場合のみ表示されます。これらの拡張機能をブラウザがサポートしているかどうかは、[WebGL Report][1]を訪問することで確認できます。
+* **CPU** - CPUによる各フレームのレンダリング時間(ミリ秒)を表示します。
 
-The CPU and GPU graphs display a breakdown of the update and render portion of the frame using red and green respectively.
+CPUおよびGPUグラフは、赤色と緑色を使用して、フレームのアップデートとレンダリング部分の詳細を表示します。
 
-## Using Mini-Stats Outside of the Editor
+## エディタの外部でミニスタッツを使用する
 
-While the mini-stats panel is incorporated into the Editor's Launch page, you can also use it independent of the Editor. The source code can be found [here][2]. Simply build `playcanvas-extras.js`, include it in your project and call:
+ミニスタッツパネルは、エディタのLaunchページに組み込まれていますが、エディタ外でも使用できます。ソースコードは[ここ][2]にあります。 `playcanvas-extras.js`をビルドし、プロジェクトに含め、次のように呼び出します。
 
 ```javascript
     const miniStats = new pcx.MiniStats(app);
 ```
 
-The ['Engine-only' examples][3] all do this.
+['Engine-only' examples][3]では、これをすべて実行しています。
 
 [1]: https://webglreport.com/
 [2]: https://github.com/playcanvas/engine/tree/master/extras/mini-stats

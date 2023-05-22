@@ -6,21 +6,21 @@ position: 9
 
 ## シーン
 
-シーンダイアログを開いてシーンを管理することができます。
+シーンダイアログを開いて、シーンを管理できます。
 
-シーンダイアログはメニューの'Scenes'オプションをクリックして開きます：
+以下のいずれかの方法で、シーンダイアログを開くことができます。
 
-![シーンメニュー][1]
+メニューの「シーン」オプションをクリックする。
 
-また、3Dビューポート内の左上にあるScenes Menuボタンをクリックして開くこともできます：
+3Dビューポート内の左上の「シーンメニュー」ボタンをクリックする。
 
-![シーンビューポイント][2]
+![Scenes Menu][1]
 
-シーンダイアログが開きます：
+![Scenes Viewport][2]
 
-![シーン][3]
+これにより、シーンダイアログが表示されます。
 
-You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left to make it the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
+![Scenes][3]
 
 [1]: /images/user-manual/editor/scenes-menu.jpg
 [2]: /images/user-manual/editor/scenes-viewport.jpg

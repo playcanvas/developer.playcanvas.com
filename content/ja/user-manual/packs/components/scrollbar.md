@@ -4,20 +4,20 @@ layout: usermanual-page.hbs
 position: 17
 ---
 
-The Scrollbar component defines a scrolling control for a [Scrollview][1] component.
+Scrollbarコンポーネントは、[Scrollview][1]コンポーネント用のスクロール制御を定義します。
 
-See the [User Interface][2] section for more details.
+詳細については、[ユーザーインターフェース][2]セクションを参照してください。
 
-![Scrollbar Component][3]
+![Scrollbarコンポーネント][3]
 
-## コンポーネントプロパティ
+## コンポーネントのプロパティ
 
 | プロパティ    | 説明 |
 |-------------|-------------|
-| 方向付け | Controls whether the scrollbar moves horizontally or vertically. |
-| Value       | The current position value of the scrollbar, in the range 0 to 1. |
-| Handle      | The entity to be used as the scrollbar handle. This entity must have a Scrollbar component. |
-| Handle Size | The size of the handle relative to the size of the track, in the range 0 to 1. For a vertical scrollbar, a value of 1 means that the handle will take up the full height of the track. |
+| Orientation | スクロールバーが水平方向に動くか、垂直方向に動くかを制御します。 |
+| Value       | スクロールバーの現在位置の値。値の範囲は0から1です。 |
+| Handle      | スクロールバーのハンドルとして使用されるエンティティ。このエンティティにはScrollbarコンポーネントが必要です。 |
+| Handle Size | ハンドルのサイズ。トラックのサイズに対する相対的なサイズ。値の範囲は0から1です。垂直スクロールバーの場合、値が1の場合、ハンドルはトラックの全高を占めます。 |
 
 [1]: /user-manual/packs/components/scrollview
 [2]: /user-manual/user-interface

@@ -1,14 +1,14 @@
 ---
-title: 画面の読み込み
+title: ローディングスクリーン
 layout: usermanual-page.hbs
 position: 8
 ---
 
-カスタムの読み込み画面を作成するには [Scene Settings][1] に進み、*Loading Screen* セクションの**Create Default**をクリックします。すでに有効な読み込み画面のスクリプトがある場合は、読み込み画面パネルにドラッグ＆ドロップするか、**Select Existing**をクリックします：
+カスタムローディング画面を作成する場合は、[Scene Settings][1] に移動して、*Loading Screen* セクションの**Create Default**をクリックします。有効なローディング画面スクリプトがすでにある場合は、ローディング画面パネルにドラッグアンドドロップするか、**Select Existing**をクリックして選択できます。
 
 <img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png">
 
-**Create Default** をクリックすると、いくつかのデフォルトコンテンツをもつ新しいスクリプトが作成されます。読み込み画面を変更したい場合は、そのスクリプトを編集することができます。デフォルトのスクリプトの例：
+**Create Default** をクリックすると、いくつかのデフォルトコンテンツを持つ新しいスクリプトが作成されます。ローディング画面を変更したい場合は、そのスクリプトを編集できます。以下はデフォルトスクリプトの例です。
 
 ```
 pc.script.createLoadingScreen(function (app) {

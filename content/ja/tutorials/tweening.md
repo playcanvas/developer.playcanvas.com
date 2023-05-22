@@ -1,25 +1,25 @@
 ---
-title: Tweenライブラリの使用
+title: Tweenライブラリの使用方法
 layout: tutorial-page.hbs
 tags: animation, scripts
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg"
 ---
 
-エンティティや、2点の間の任意の値をアニメートすることがよくあります。これはトゥイーンと呼ばれ、その目的のためにトゥイーンライブラリを作成しました。ライブラリは[https://github.com/playcanvas/playcanvas-tween][1]にあります。
+しばしば、Entityや任意の値を2つのポイント間でアニメーションさせたいことがあります。これはTweening(トゥイーニング)と呼ばれます。私たちはそのためにTweeningライブラリを作成しました。ライブラリはこちらの[https://github.com/playcanvas/playcanvas-tween][1]で見つけることができます。
 
-ライブラリを使うには `tween.js`ファイルをプロジェクトにアップロードしてください。これにより、位置、回転、スケールなどのエンティティプロパティをトゥイーンすることができます。
+ライブラリを使用するには、単に`tween.js`ファイルをあなたのプロジェクトにアップロードしてください。これにより、以下のようにEntityのプロパティ(位置、回転、スケールなど)をトゥイーンできるようになります。
 
 ```javascript
 entity.tween(entity.getLocalPosition()).to({x: 10, y: 0, z: 0}, 1, pc.SineOut);
 ```
 
-エンティティのローカル位置をトゥイーンする方法の例です：
+ここでは、Entityのローカル位置をトゥイーンする方法の例が示されています。
 
 <iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Using the Tween library"></iframe>
 
-Here are links to the [Project][2] and the [Editor][3] for this example.
+この例の[プロジェクト][2]と[エディタ][3]へのリンクを貼ります。
 
-To get the above we are doing:
+これを行うには、以下のようにします。
 
 ```javascript
 this.entity
@@ -30,13 +30,13 @@ this.entity
     .start();
 ```
 
-Here is an example on how to tween the local rotation of an Entity:
+次に、Entityのローカル回転をTweenする方法の例が示されています。
 
 <iframe loading="lazy" src="https://playcanv.as/b/H8553dGa/" title="Tween Local Rotation"></iframe>
 
-この例の[Project][2]と[Editor][4]へのリンクです。
+この例の[プロジェクト][2]と[エディタ][4]へのリンクを貼ります。
 
-上記を得るために以下を行うことができます：
+これを行うには、以下のようにします。
 
 ```javascript
 this.entity
@@ -47,13 +47,13 @@ this.entity
     .start();
 ```
 
-エンティティのローカルスケールをトゥイーンする方法は次のとおりです：
+次に、Entityのローカルスケールをトゥイーンする方法の例が示されています。
 
 <iframe loading="lazy" src="https://playcanv.as/b/ndTiHCpD/" title="Tween Local Scale"></iframe>
 
-Here are links to the [Project][2] and the [Editor][5] for this example.
+この例の[プロジェクト][2]と[エディタ][5]へのリンクを貼ります。
 
-To get the above we can do:
+これを行うには、以下のようにします。
 
 ```javascript
 this.entity
@@ -64,13 +64,13 @@ this.entity
     .start();
 ```
 
-And finally here's a way to tween colors:
+最後にカラーをトゥイーンする方法が示されています。
 
 <iframe loading="lazy" src="https://playcanv.as/b/aoRYsYrc/" title="Tween Material Color"></iframe>
 
-この例の[Project][2]と[Editor][6]へのリンクです。
+この例の[プロジェクト][2]と[エディタ][6]へのリンクを貼ります。
 
-上記を得るために以下を行うことができます：
+これを行うには、以下のようにします。
 
 ```javascript
 var color = new pc.Color(0, 0, 0);
@@ -87,7 +87,7 @@ this.app
     .start();
 ```
 
-ライブラリは[https://github.com/playcanvas/playcanvas-tween][1]にあります。
+ここでもう一度、Tweenライブラリは[https://github.com/playcanvas/playcanvas-tween][1]で利用できます。
 
 [1]: https://github.com/playcanvas/playcanvas-tween
 [2]: https://playcanvas.com/project/452634/overview/using-the-tween-library

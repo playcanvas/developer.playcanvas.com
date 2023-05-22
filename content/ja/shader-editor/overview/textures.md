@@ -1,11 +1,11 @@
 ---
-title: テクスチャー
+title: テクスチャ
 layout: shader-editor-page.hbs
 position: 4
 ---
 
-Textures are relatively static assets within Shader Editor.
+テクスチャは、シェーダーエディタ内で比較的静的なアセットです。
 
-To add a texture to the project, drag the file and drop it on the Assets Pane.
+プロジェクトにテクスチャを追加するには、ファイルをドラッグしてアセットパネルにドロップします。
 
-Textures can be referenced in Graphs by dragging them from the Assets Pane and dropping on the Graph Editor workspace.
+アセットパネルからグラフエディターのワークスペースにドラッグ＆ドロップすることで、テクスチャをグラフで参照できます。

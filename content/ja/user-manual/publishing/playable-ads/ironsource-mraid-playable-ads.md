@@ -1,53 +1,50 @@
 ---
-title: ironSource Playable Ad (MRAID)
+title: Playable Ad(MRAID)ironSource
 layout: usermanual-page.hbs
 position: 3
 ---
 
-PlayCanvas supports the ironSource MRAID Playable Ad format and requirements via an [official external tool on GitHub][2].
+PlayCanvasは、公式の外部ツールを介して、ironSource MRAID Playable Adフォーマットと要件をサポートしています[GitHub][2]。
 
-ironSource playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
+ironSourceの再生可能な広告は[MRAID 2.0 API][mraid-api]標準を使用し、広告のアセットは埋め込みではなく`index.html`の外部にある必要があります。
 
-The external assets will need to be uploaded to a server or CDN of your own for ironSource to serve the ad on their network.
+外部アセットは、ironSourceがネットワーク上で広告を提供するために、独自のサーバーまたはCDNにアップロードする必要があります。
 
-There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
+ツールには、[GitHub][2]のドキュメントで見つかるいくつかの制限があります。
 
+## サンプルプロジェクト
 
-## Example project
-
-The [Cube Jump project][5] is ready to be exported to the ironSource MRAID Playable Ad format and the expected HTML output can be found [here][6].
+[Cube Jump project][5]は、ironSource MRAID Playable Adフォーマットにエクスポートする準備が整っており、予想されるHTML出力は[こちら][6]で見つかります。
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
 
+## ファイルサイズのヒント
 
-## File size tips
+非圧縮で5MBの制限があるため、広告のアセットの使用を計画し予算を立てる必要があります。
 
-As there is a limit of 5MB (uncompressed), you will have to plan and budget the usage of assets for the ad.
+ミニファイされたPlayCanvasエンジンコードは、 **~ 1.2MB**非圧縮であり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに**~30%**追加されます。
 
-The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
+これは、Base64エンコード前にアセットに約~3MBの余裕があることを意味します。
 
-This means that you would have about \~3MB for assets before the Base64 encoding.
+画像は可能な限り小さく保ち、[TinyPNG][4]のようなツールを使用して、ファイルサイズをさらに縮小してください。
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
+## 再生可能な広告のチェックリスト:
 
-## Playable ad checklist:
+* 呼び出しアクションコールバックの一部として`mraid.open`(非ストアURL用)または`mraid.openStoreUrl`(ストアアプリ用)の関数コールが追加されていますか?
 
-* Have you added the function call `mraid.open` (for non-store URLs) or `mraid.openStoreUrl` (for store apps) as part of your call to action callback?
+## エクスポートの方法
 
+GitHubリポジトリのreadmeから[セットアップ手順][7]に従います。
 
-## How to export
+### ironSource Playable Test Toolでテストする
 
-Follow the [setup steps][7] from the readme in the GitHub repo.
+ironSourceには、再生可能な広告の要件のチェックリストを実行するために使用できる素晴らしいテストツールが[あります][ironsource-test-tool]。
 
-### Test with ironSource Playable Test Tool
+テストモードとMRAIDの両方がページで有効になっていることを確認してください。
 
-ironSource have a fantastic test tool [here][ironsource-test-tool] which can be used to go through their checklist of requirements for playable ads.
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600">
 
-Check that Testing mode and MRAID are both enabled on the page.
-
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600px">
-
-Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
+以下のオプションを`config.json`で示されるように設定します。これにより、アセットデータとPlayCanvas Engineコードが`index.html`から別々のファイルとしてZIPファイルが生成されます。
 
 ```json
     "one_page": {
@@ -62,15 +59,23 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-We will need to serve the files from a HTTPS endpoint to test with the ironSource's test tool.
+そして、コマンドを実行する:
 
-Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
+```sh
+npm run one-page
+```
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600px">
+オプションとコマンドの完全な詳細は、「[プロジェクトを単一のHTMLファイルに変換する][2]」のreadmeセクションで見つかります。
 
-This will give a unique URL for the endpoint that we need to add to the `index.html` where it is referencing external files.
+ironSourceのテストツールでテストするために、HTTPSエンドポイントからファイルを提供する必要があります。
 
-Modify the end of `index.html` from:
+推奨されるアプローチは、[ローカルホスト][host-locally]にホストし、[ngrok][ngrok]を使用して、コンピューターにHTTPSトンネルを作成してアプリにアクセスすることです。
+
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600">
+
+これにより、エンドポイントの一意のURLが提供され、外部ファイルを参照している`index.html`に追加する必要がある。
+
+`index.html`の終わりを以下のように変更します
 
 ```html
 </style>
@@ -87,7 +92,7 @@ Modify the end of `index.html` from:
 </html>
 ```
 
-To (where `XXXXXXX` is the unique subdomain from ngrok):
+(`XXXXXXX`はngrokからのユニークなサブドメインです)。
 
 ```html
 </style>
@@ -104,21 +109,23 @@ To (where `XXXXXXX` is the unique subdomain from ngrok):
 </html>
 ```
 
-Test locally on your PC by double clicking on the `index.html` to ensure that it plays correctly.
+`index.html` をダブルクリックして、ローカルのPC上でテストし、正しく再生されることを確認してください。
 
-If it plays correctly on your PC, we can test on [ironSource's test tool][ironsource-test-tool] by copying the contents of `index.html` and pasting into MRAID tag area of the test tool.
+もしPC上で正しく再生される場合は、[ironSourceのテストツール][ironsource-test-tool]でテストすることができます。`index.html` の内容をコピーして、テストツールのMRAIDタグの領域に貼り付けてください。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600px">
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-paste-mraid-tag.png" width="600">
 
-Click on 'Test Ad' and once it renders, play the ad to reach a CTA button. After pressing the CTA button, the tool should show that all the tests have passed and give you an option to generate a code.
+「広告をテストする」をクリックし、レンダリングが完了したら、CTAボタンに到達するために広告を再生してください。CTAボタンを押した後、ツールはすべてのテストが合格したことを示し、コードを生成するオプションを提供します。
 
-This is used to test on device using their app that is available on both Android and iOS.
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400px">
 
-### Final export for ironSource
+これは、AndroidとiOSの両方で利用可能な彼らのアプリを使用して、デバイス上でテストするために使用されます。
 
-When the ad is ready to be submitted for ironSource, upload the external assets to your server or CDN and add the URL in the options in `config.json` via the `external_url_prefix` property:
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-generate-code.png" width="400">
+
+### ironSourceの最終エクスポート
+
+広告がironSourceに提出する準備が整ったら、外部アセットを独自のサーバーまたはCDNにアップロードし、オプションの`external_url_prefix`プロパティを介して`config.json`にURLを追加します。
 
 ```json
     "one_page": {
@@ -133,7 +140,8 @@ When the ad is ready to be submitted for ironSource, upload the external assets 
     }
 ```
 
-Follow the process on submitting the playable ad from [ironSource's documentation][ironsource-documentation].
+提出可能な広告の手順については、[ironSourceのドキュメント][ironsource-documentation]をフォローしてください。
+
 
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/

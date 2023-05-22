@@ -1,5 +1,5 @@
 ---
-title: Jobs - jobを取得
+title: ジョブ - Get job
 layout: usermanual-page.hbs
 position: 12
 ---
@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/jobs/:id
 
 ## 説明
 
-idからジョブを取得。
+指定されたIDのジョブを取得します。
 
 ## 例
 
@@ -20,13 +20,13 @@ idからジョブを取得。
 curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" "https://playcanvas.com/api/jobs/99999"
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>ジョブのid。</p></div>
+<div class="parameter"><span class="param">id</span><p>ジョブのID。</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
 Status: 200
@@ -39,22 +39,21 @@ Status: 200
     "modified_at": date,
     "status": "running" | "complete" | "error",
     "messages": list of strings,
-    "data": object - contents depend on the job
+    "data": object
 }
 ```
 
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>非認証</p></div>
-<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
-<div class="parameter"><span class="param">404</span><p>ジョブが見つかりません</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Job not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限
 
-このルートは[normal][1]なレート制限を使用します。
-
+このルートは[通常][1]のレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting

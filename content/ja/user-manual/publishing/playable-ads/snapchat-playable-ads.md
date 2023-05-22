@@ -4,47 +4,47 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-PlayCanvas supports the Snapchat Playable Ad format and requirements via an [official external tool on GitHub][2].
+PlayCanvasは、[公式の外部ツール][2]を通じて、Snapchat Playable Adフォーマットと要件をサポートしています。
 
-Snapchat playable ads uses the [MRAID 2.0 API][mraid-api] standard and requires the assets for the ad to be external from the `index.html` rather than embedded.
+SnapchatのPlayable Adでは、[MRAID 2.0 API][mraid-api]標準が使用され、広告用のアセットは`index.html`に埋め込むのではなく、外部に置く必要があります。
 
-The external assets will need to be in a folder that is uniquely named (which the tool handles for you) so that they can be uploaded to Snapchat's CDN servers.
+外部アセットは、唯一の名前が付けられたフォルダに置かれる必要があります(このツールが対応しているため)。このため、SnapchatのCDNサーバーにアップロードされます。
 
-There are some limitations to be aware of with the tool which can be found in the documentation from [GitHub][2].
+このツールには[GitHub][2]のドキュメントにあるいくつかの制限があるため、注意してください。
 
-## Example project
+## サンプルプロジェクト
 
-The [Cube Jump project][5] is ready to be exported to the Snapchat Playable Ad format and the expected HTML output can be found [here][6].
+[Cube Jumpプロジェクト][5]は、Snapchat Playable Adフォーマットにエクスポートできる状態になっており、期待されるHTML出力は[こちら][6]からダウンロードできます。
 
 <iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
 
-## File size tips
+## ファイルサイズの補足
 
-As there is a soft limit of 5MB (uncompressed), you will have to plan and budget the usage of assets for the ad.
+5MB(未圧縮)までのソフトリミットがあるため、広告用のアセットの使用を計画し、予算編成する必要があります。
 
-The minified PlayCanvas Engine code is **\~1.2MB** uncompressed and due to the need to encode the asset files into Base64 strings, it adds **\~30%** to the size of each asset file.
+圧縮されていない最小化されたPlayCanvas Engineのコードは、\~1.2MBであり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに対して約30%追加されます。
 
-This means that you would have about \~3MB for assets before the Base64 encoding.
+これは、Base64エンコードの前に\~3MBのアセットが含まれることを意味します。
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][4] to reduce file size even further.
+画像をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## Playable ad checklist:
+## Playable Ad のチェックリスト:
 
-The Snapchat ad network requires the call to action function to be in the `index.html` where the network can replace it with a unique tracking version when it is served to the user. The URL will be set in the Snapchat Ad campaign tool.
+Snapchatの広告ネットワークは、ユーザーに提供するときに独自のトラッキングバージョンに置き換えることができる`index.html`内のコールトゥアクション関数が必要です。URLはSnapchat Ad campaignツールで設定されます。
 
-The tool wraps this logic in a global function: `snapchatCta();` that should be called in the playable ad project.
+このツールは、グローバル関数`snapchatCta();`でこのロジックをラップし、playable adプロジェクトで呼び出す必要があります。
 
-* Have you called the function `snapchatCta();` as part of the call to action callback?
+* コールトゥアクションのコールバックに`snapchatCta();`という関数を呼び出しましたか?
 
-## How to export
+## エクスポートの方法
 
-Follow the [setup steps][7] from the readme in the GitHub repo.
+GitHubリポジトリのREADMEにある[セットアップ手順][7]に従ってください。
 
-### Dry run test
+### ドライランテスト
 
-As Snapchat does not yet have an official tool to test with, we will have to do a dry run to test with first before exporting in a format that the Snapchat ad network expects.
+Snapchatにはまだ公式のテストツールがありませんので、Snapchat広告ネットワークが期待する形式にエクスポートする前に、まずドライランテストを行う必要があります。
 
-Set the following options in the `config.json` as shown below. This will produce a ZIP file with the asset data and PlayCanvas Engine code as separate files from the `index.html`.
+`config.json`の以下のオプションを設定すると、ZIPファイルが生成されます。ZIPファイルには、`index.html`からアセットデータとPlayCanvas Engineコードが別々のファイルとして含まれます。
 
 ```json
     "one_page": {
@@ -60,21 +60,29 @@ Set the following options in the `config.json` as shown below. This will produce
     }
 ```
 
-The `folder_name` needs to be a unique string. For this purpose, you can use a random GUID from a [GUID generator][guid-generator] or your Snapchat representative may have a specific string that you should use.
+`folder_name`はユニークな文字列でなければなりません。この目的のため、[GUIDジェネレータ][guid-generator]からランダムなGUIDを使用するか、Snapchatの代表者から使用する必要がある特定の文字列を受け取る必要があります。
 
-To test the ad on a device, we can use the Android app [Creative Preview][creative-preview] but we need to host the ad on a https server.
+そして、以下のコマンドを実行します。
 
-Our recommended approach is to [host locally][host-locally] and use [ngrok][ngrok] to create a https tunnel to your computer that the app can access.
+```sh
+npm run one-page
+```
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/ngrok.png" width="600px">
+詳細なオプションとコマンドの詳細は、'[プロジェクトを単一のHTMLファイルに変換する][2]'のReadmeセクションで確認できます。
 
-Once this is setup, open Creative Preview app and create a new 'Display' ad with the following settings:
+デバイス上で広告をテストするには、Androidアプリ[Creative Preview][creative-preview]を使用しますが、広告をhttpsサーバーにホストする必要があります。
 
-<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/creative-preview.png" width="300px">
+私たちのお勧めの方法は、[ローカルホスト][host-locally]をホストし、アプリがアクセスできるように[ngrok][ngrok]を使用することです。
 
-### Export for Snapchat
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/ngrok.png" width="600">
 
-When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN URL prefix to the asset references in `index.html`. We can do this via the options in `config.json` via the `external_url_prefix` property:
+これが設定されたら、Creative Previewアプリを開き、以下の設定で新しい「Display」広告を作成します。
+
+<img loading="lazy" src="/images/user-manual/publishing/playable-ads/snapchat-playable-ads/creative-preview.png" width="300">
+
+### Snapchatへのエクスポート
+
+広告をSnapchatにアップロードする準備ができたら、`index.html`内のアセット参照に、SnapchatのCDN URLプレフィックスを追加する必要があります。これは`config.json`のオプションを通じて、`external_url_prefix`プロパティを使用して行うことができます。
 
 ```json
     "one_page": {
@@ -90,8 +98,7 @@ When the ad is ready to be uploaded for Snapchat, we need to add Snapchat's CDN 
     }
 ```
 
-The ZIP can then be given to your Snapchat representative to upload to the ad network.
-
+その後、ZIPファイルをSnapchatの代表に渡して、広告ネットワークにアップロードすることができます。
 
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/

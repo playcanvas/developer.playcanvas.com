@@ -1,5 +1,5 @@
 ---
-title: Scenes - List scenes
+title: シーン - List scenes
 layout: usermanual-page.hbs
 position: 14
 ---
@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 
 ## 説明
 
-プロジェクトのすべてのシーンのリストを取得します。
+プロジェクト内の全てのシーンのリストを取得します。
 
 ## 例
 
@@ -20,21 +20,21 @@ GET https://playcanvas.com/api/projects/:projectId/scenes?branchId=:branchId
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}"
 ```
 
-HTTP Request
+HTTP リクエスト
 
 ```text
 GET https://playcanvas.com/api/projects/{projectId}/scenes?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list scenes from</p></div>
-<div class="parameter"><span class="param">branchId: string [optional]</span><p>The id of the branch. If no `branchId` is specified, the main branch will be used.</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>シーンの一覧を取得するプロジェクトのID</p></div>
+<div class="parameter"><span class="param">branchId: string [optional]</span><p>ブランチのID。省略された場合、メインブランチが使用されます。</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
 Status: 200
@@ -55,14 +55,14 @@ Status: 200
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>非認証</p></div>
-<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
+<div class="parameter"><span class="param">401</span><p>未承認</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止されています</p></div>
 <div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
 ## レート制限
 
-このルートは[normal][1]なレート制限を使用します。
+このルートでは[通常](/user-manual/api#rate-limiting)のレート制限が使用されます。
 
 [1]: /user-manual/api#rate-limiting

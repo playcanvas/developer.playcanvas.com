@@ -1,14 +1,14 @@
 ---
-title: Alternatives to ammo.js
+title: ammo.jsの以外の物理演算ライブラリ
 layout: usermanual-page.hbs
 position: 8
 ---
 
-ammo.js is perhaps the most popular and well known JavaScript physics engine. It is highly versatile and can generate high fidelity simulations. But it has quite high performance and memory requirements. Therefore, you should investigate whether it is indeed the best choice for your application. For example, if you are making a 2D game, a 2D physics engine might be more appropriate.
+ammo.jsはおそらく最も人気があり、よく知られたJavaScript物理エンジンです。高度に汎用性が高く、高精度シミュレーションを生成することができます。しかし、性能やメモリ要件が非常に高いため、アプリケーションに最適な選択肢かどうかを調査する必要があります。たとえば、2Dゲームを作成している場合、2D物理エンジンの方が適しているかもしれません。
 
-As it happens, there are several alternatives to ammo.js:
+実際、ammo.jsの代わりにはいくつかの選択肢があります。
 
-| Physics Engine                                     | JS       | WASM     | 2D       | 3D       | PlayCanvas Integration                                |
+| 物理エンジン                                     | JS       | WASM     | 2D       | 3D       | PlayCanvas Integration                                |
 |----------------------------------------------------|----------|----------|----------|----------|-------------------------------------------------------|
 | [box2d.js](https://github.com/kripken/box2d.js)    | &#x2713; | &#x2713; | &#x2713; |          |                                                       |
 | [Matter.js](https://github.com/liabru/matter-js)   | &#x2713; |          | &#x2713; |          |                                                       |
@@ -16,9 +16,9 @@ As it happens, there are several alternatives to ammo.js:
 | [cannon.js](https://github.com/schteppe/cannon.js) | &#x2713; |          |          | &#x2713; |                                                       |
 | [Oimo.js](https://github.com/lo-th/Oimo.js)        | &#x2713; |          |          | &#x2713; |                                                       |
 
-While there is currently only one existing PlayCanvas integration for the p2.js engine, it should be straightforward to create additional integrations for the other engines listed using a similar approach.
+現時点で、p2.jsエンジンのPlayCanvasインテグレーションが唯一存在しますが、同様の手法を使用して他のエンジン用の追加インテグレーションを簡単に作成できます。
 
-In December 2018, Nvidia open sourced the [PhysX][1] physics engine. While there is no JS/WASM port of PhysX yet, it is perhaps the most competitive physics runtime compared to Bullet/ammo.js. When a web port becomes available, it will be added to the table above.
+2018年12月、Nvidiaは[PhysX][1]物理エンジンをオープンソース化しました。現時点ではPhysXのJS/WASMポートはありませんが、Bullet/ammo.jsと比較して最も競争力がある物理ランタイムかもしれません。Webポートが利用可能になると、上記の表に追加されます。
 
 [1]: https://github.com/NVIDIAGameWorks/PhysX
 

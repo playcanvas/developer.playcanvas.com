@@ -1,11 +1,11 @@
 ---
-title: Parameter Nodes
+title: パラメーターノード
 layout: shader-editor-page.hbs
 position: 1
 ---
 
-Parameter nodes are input nodes that allow values in the material to be configurable at runtime. Parameter nodes added to a graph will appear in the Material Inspector Pane.
+パラメーターノードは、マテリアル内の値をランタイムで設定可能にする入力ノードです。グラフに追加されたパラメーターノードは、マテリアルインスペクターパネルに表示されます。
 
-To read more about editing parameters, see the [Inspector Pane][1] documentation.
+パラメータの編集の詳細については、[インスペクターパネル][1]のドキュメントを参照してください。
 
 [1]: /shader-editor/window-layout/inspector-pane

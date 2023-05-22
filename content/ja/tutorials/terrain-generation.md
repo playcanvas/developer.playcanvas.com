@@ -1,17 +1,17 @@
 ---
-title: ハイトマップから地形形成
+title: ハイトマップから地形生成
 layout: tutorial-page.hbs
 tags: procedural
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="高度マップから地形生成する方法"></iframe>
 
-このプロジェクトは[`pc.Mesh`][1] APIを使用して、手順に従い、ハイトマップテクスチャから転がる山腹の生成およびテクスチャ付けします。
+このプロジェクトでは[`pc.Mesh`][1] API を使用して、高度マップテクスチャから地形を手続き的に生成し、テクスチャを施しました。
 
-[チュートリアルプロジェクト[2]のEditorからお試しください。
+[tutorial project][2] でエディターからお試しください。
 
-地形生成は下記のスクリプトで行われます。
+下記のスクリプトは、地形生成を実行します。
 
 ```javascript
 var Terrain = pc.createScript('terrain');
@@ -65,8 +65,7 @@ Terrain.prototype.initialize = function() {
         type: 'mesh'
     });
 
-    // We still have to create a model resource to create a runtime
-    // collision mesh
+    //ランタイムの作成にはモデルリソースを作成する必要がある
     var node = new pc.GraphNode();
     var meshInstance = new pc.MeshInstance(node, collisionMesh, this.material.resource);
     var collisionModel = new pc.Model();

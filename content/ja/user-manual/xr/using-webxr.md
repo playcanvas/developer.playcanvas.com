@@ -1,110 +1,106 @@
 ---
-title: Using WebXR in PlayCanvas
+title: PlayCanvasでのWebXRの使用方法
 layout: usermanual-page.hbs
 position: 1
 ---
 
-## Support of WebXR
+## WebXRのサポート
 
-Browser support for WebXR is not (yet) universal. It can be checked as follows:
+WebXRのブラウザサポートはまだ完全ではありません。以下のようにチェックできます。
 
 ```javascript
 if (app.xr.supported) {
-    // WebXR is supported
+    //WebXRはサポートされています
 }
 ```
 
+## XRセッションの開始
 
-## Starting XR Session
-
-The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
+XRに入るAPIは、CameraコンポーネントまたはApplicationの[XrManager][2]にあります。VRの提供を開始するには、CameraComponentの `startXr` メソッドを使用し、XRセッションのタイプ、参照スペース、オプションの追加引数オブジェクトを指定する必要があります。
 
 ```javascript
-entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
+entity.camera.startXr(pc.XRTYPE_VR、pc.XRSPACE_LOCALFLOOR);
 ```
 
-It is an asynchronous operation and is only possible to start on a user interaction, such as a button click, mouse click or touch. To know when a session is started, you can subscribe to the `start` event:
+これは非同期操作であり、ボタンクリック、マウスクリック、またはタッチなどのユーザー操作でのみ開始できます。セッションが開始されたことを知るには、 `start` イベントに登録することができます。
 
 ```javascript
 app.xr.on('start', function () {
-    // XR session has started
+    // XRセッションが開始されました
 });
 ```
 
-Session type or reference space might not be available on a particular platform, so it will fail to start the session, providing an error in a callback and firing the `error` event on XrManager:
+セッションタイプや参照スペースが特定のプラットフォームで利用できない場合、セッションを開始できず、コールバックでエラーが提供され、XrManagerで`error` イベントが発生します。
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
     callback: function(err) {
         if (err) {
-            // failed to start session
+            //セッション開始に失敗しました。
         }
     }
 });
 ```
 
+## XRセッションの終了
 
-## Ending XR Session
-
-Exiting XR can be triggered in various ways. You can trigger an exit of XR from code:
+XRの終了はさまざまな方法でトリガーできます。コードからXRを終了することができます。
 
 ```javascript
 app.xr.end();
 ```
 
-Also, the user might exit XR via some external process like the back button in the browser. [XrManager][2] will fire events associated with session `end`:
+また、ユーザーはブラウザの戻るボタンなどの外部プロセスを介してXRを終了する場合があります。 [XrManager][2]は、セッション`end`に関連するイベントを発生させます。
 
 ```javascript
 app.xr.on('end', function () {
-    // XR session has ended
+    // XRセッションが終了しました。
 });
 ```
 
+## XRの種類
 
-## Types of XR
+それぞれのプラットフォームで、異なる種類のセッションがサポートされています。これらは以下の通りです。
 
-Each platform can support different types of sessions. These are:
+ * **VR**(仮想現実)-一定レベルのビューアートラッキングを提供し、XRデバイスに独占アクセスを提供します。これは、アプリケーションがデバイスのフレームバッファにレンダリングされ、HTMLキャンバス要素にはレンダリングされないことを意味します。
+ * **AR**(拡張現実)-このタイプのセッションはXRデバイスに独占アクセスを提供し、コンテンツは現実世界の環境と混合されることを意味します。このモードでは、カメラのクリアカラーは透明である必要があります。
 
- * **VR** (Virtual Reality) - Provides some level of viewer tracking and it provides exclusive access to XR Device. This means that the application will be rendered onto a device's frame buffer and not the HTML canvas element.
- * **AR** (Augmented Reality) - This type of session provides exclusive access to the XR Device and content is meant to be blended with the real-world environment. In this mode, the camera clear color should be transparent.
-
-The availability of a session type can change during an application's life-time, based on devices being plugged in or features on devices being enabled. To check if a session type is available do:
+セッションタイプの利用可能性は、プラグインされたデバイスやデバイス上の機能に基づいてアプリケーションの寿命中に変化する可能性があるため、チェックする必要があります。
 
 ```javascript
 if (app.xr.isAvailable(pc.XRTYPE_VR)) {
-    // VR is available
+    // VRは利用可能です
 }
 ```
 
-And you can subscribe to availability change events too:
+利用可能性の変更にもサブスクライブすることもできます。
 
 ```javascript
 app.xr.on('available', function (type, available) {
     console.log('XR session', type, 'type is now', available ? 'available' : 'unavailable');
 });
 
-// or specific session type
+//または特定のセッションタイプ
 app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
     console.log('XR session VR type is now', available ? 'available' : 'unavailable');
 });
 ```
 
+## XR中のカメラの位置と向き
 
-## Camera Position and Orientation in XR
+XRでプレゼンテーションしている場合、カメラの位置と向きはXRセッションのデータによって上書きされます。カメラの追加の移動と回転を実装する場合は、カメラに親エンティティを追加し、そのエンティティへの操作を適用する必要があります。
 
-When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
+![Camera Offset][1]
 
-![カメラのオフセット][1]
+ワールドスペースで提供される入力ソースレイ、およびグリップとハンドの位置と回転。
 
-Input source ray, as well as position and rotation of grip and hands, provided in world space.
+## なぜ自動的にXRモードを有効にできないのですか?
 
-## Why can't I enable XR mode automatically?
+WebXRに入るには、 *ユーザーアクション* によって呼び出す必要があります。つまり、キーの押下、マウスのクリック、またはタッチイベントに応答する必要があります。そのため、ページの読み込み時にすぐにXRに入る方法はありません。
 
-Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason there is no way to enter XR immediately on loading a page.
+## 実験的な機能
 
-## Experimental features
-
-WebXR API is constantly evolving and additional APIs get released extending XR feature set. While engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
+WebXR APIは常に進化しており、さまざまなXRの機能を拡張した追加APIがリリースされます。エンジンは常にXR APIの統合に更新されますが、一部の機能には遅延が伴う場合があります。新しい機能を実験してみたい開発者は、関連する `optionalFeatures` フラグを渡すことでそれらを有効にすることができます。 *注意:内部未公開APIへのアクセスはエンジン変更の対象であり、後方互換性が保証されているわけではありません*。[WebXR Layers][3]の実験的APIを有効にする例を以下に示します。
 
 ```javascript
 app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
@@ -116,7 +112,7 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
         }
 
         if (app.xr.session.renderState.layers) {
-            // get access to WebXR Layers
+            //WebXR Layersにアクセスします。
         }
     }
 });

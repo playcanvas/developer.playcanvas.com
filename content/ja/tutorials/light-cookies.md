@@ -7,32 +7,32 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409
 
 <iframe loading="lazy" src="https://playcanv.as/p/AGtssoOU/" title="Light Cookies"></iframe>
 
-[完成されたプロジェクト][1]をフォークして詳細をご確認ください。
+[フルプロジェクト][1]をフォークすることで詳細を確認できます。
 
-In theatre it is common to create visual effects on stage by using shape masks to cast shadows across the scene. These masks are called "cucoloris" or "cookies". Creating a light cookie in WebGL using PlayCanvas is achieved using a texture or a cubemap that is applied to the Light Component. Light Cookies are applicable to spot lights and omni lights.
+シアターでの視覚効果は、シーン全体に影を落とす形状のマスクを用いることで作り出すことがよくあります。これらのマスクを「クッカリス」または「クッキー」と呼びます。PlayCanvasを使用してWebGL上にライトクッキーを作成するには、Lightコンポーネントにテクスチャまたはキューブマップを適用します。ライトクッキーは、スポットライトおよびオムニライトに適用できます。
 
-![グリッド Cookie][2]
-**シンプルなグリッドクッキーは窓のような印象です**
+![Grid Cookie][2]
+**シンプルなグリッドクッキーは窓の印象を与えます**
 
-## Cookie テクスチャ
+## クッキーテクスチャ
 
-クッキーテクスチャは、クッキーセクションでスポットライトコンポーネントに適用される普通のテクスチアセットです。クッキーが適用されると、使用するテクスチャのチャンネルを選択できます。例えば、単純なマスクをする場合、アルファチャンネルを使用することができます。または、ステンドグラスのような完全なカラー効果を希望する場合は完全なRGB値を使用することができます。
+クッキーテクスチャは、スポットLightコンポーネントのクッキーセクションに適用される通常のテクスチャアセットです。クッキーが適用されると、使用するテクスチャのチャンネルを選択できます。たとえば、シンプルなマスクを実行する場合は、アルファチャンネルだけを使用できます。また、ステンドグラスのような完全なカラーエフェクトが必要な場合は、完全なRGB値を使用できます。
 
-![ライト設定][3]
+![Light Settings][3]
 
-## Cookie キューブマップ
+## クッキーキューブマップ
 
-For an omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
+オムニライトには、クッキーを点光源の周りの6方向に投影できるようにするキューブマップが必要です。
 
-## ユースケース
+## 使用例
 
-**形状ライト** - クッキーを使用して、ライトソースをマスキングすることができます。たとえば、シーンに窓や蛍光ストリップライトがある場合、スポットライトを使用して丸みを帯びたライトの形状を作成することができます。ライトの形をマスキングして形状をシミュレートすることができます。
+**形状のあるライト** - クッキーは、ライトソースの形状をマスキングするために有用です。たとえば、シーンに窓や蛍光灯が含まれる場合、スポットライトを使用すると丸いライトを提供します。ライトの形状を細長くするか、正方形にするために、ライトの形状をマスキングできます。
 
-![ライトの形][5]
+![Shaped Light][5]
 
-**たいまつ** - たいまつやヘッドライトは均等に表面を照らしません。代わりに、明るい"苛性"領域と暗い"苛性"領域があります。ライトクッキーを使用してこの効果を作成することができます。
+**トーチ** - トーチやヘッドライトは、表面を均等に照らすのではなく、明るさと暗さが「カウスティック」なエリアがあります。ライトクッキーを使用してこの効果を作成できます。
 
-![たいまつライト][4]
+![Torch Light][4]
 
 [1]: https://playcanvas.com/project/409793/overview/example-light-cookies
 [2]: /images/tutorials/intermediate/light-cookies/window-cookie.jpg

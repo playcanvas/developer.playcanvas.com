@@ -1,41 +1,41 @@
 ---
-title: ビデオテクスチャー
+title: ビデオテクスチャ
 layout: tutorial-page.hbs
 tags: video, textures
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/6wt5T87E/" title="Video Textures"></iframe>
+<iframe loading = "lazy" src="https://playcanv.as/p/6wt5T87E/" title="Video Textures"></iframe>
 
-[チュートリアルプロジェクト][1]のEditorからお試しください。
+[このチュートリアルのプロジェクト][1]をエディタから試すことができます。
 
-このプロジェクトは、テクスチャとランタイムを作成し、動画ファイルをダウンロード及び再生し、テクスチャーに動画をレンダリングします。このテクスチャはモデルに適用され、シーンで使用されます。
+このプロジェクトは、テクスチャとランタイムを作成し、ビデオファイルをダウンロードして再生し、ビデオをテクスチャにレンダリングします。このテクスチャは、モデルに適用され、シーンで使用されます。
 
-スクリプトは次の機能を行います：
+このスクリプトは次の機能を提供します:
 
-* 新しいテクスチャーを作成
-* HTML動画要素を作成して動画を再生
-* TVモデルの素材に新しいテクスチャーを適用
-* 毎フレームにて動画データでテクスチャーを更新
+* 新しいテクスチャを作成する
+* HTMLのビデオ要素を作成して再生する
+* TVモデルのマテリアルに新しいテクスチャを適用する
+* ビデオデータをフレームごとにテクスチャに更新する
 
 ```javascript
 var VideoTexture = pc.createScript('videoTexture');
 
 VideoTexture.attributes.add('videoAsset', {
-    title: 'Video Asset',
-    description: 'MP4 video asset to play back on this video texture.',
+    title: 'ビデオアセット',
+    description: 'このビデオテクスチャで再生するMP4ビデオアセットです。',
     type: 'asset'
 });
 
 VideoTexture.attributes.add('videoUrl', {
-    title: 'Video Url',
-    description: 'URL to use if there is video asset selected',
+    title: 'ビデオURL',
+    description: 'ビデオアセットが選択されていない場合に使用するURLです。',
     type: 'string'
 });
 
 VideoTexture.attributes.add('playEvent', {
-    title: 'Play Event',
-    description: 'Event that is fired as soon as the video texture is ready to play.',
+    title: '再生イベント',
+    description: 'ビデオテクスチャが再生可能になったら発生するイベントです。',
     type: 'string',
     default: ''
 });

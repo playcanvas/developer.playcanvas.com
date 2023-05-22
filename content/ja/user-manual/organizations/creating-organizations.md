@@ -1,56 +1,55 @@
 ---
-title: 組織の作成
+title: Organizationの作成
 layout: usermanual-page.hbs
 position: 1
 ---
 
-組織の作成方法は複数あります。参加している組織は次のようにプロフィール上で名前の横に表示されます：
+Organizationのを作成する方法はいくつかあります。あなたが所属しているOrganizationのは、以下のようにあなたのプロフィールの名前の隣に表示されます:
 
 ![profile_orgs][4]
 
-### ドロップダウンメニューから作成
+### ドロップダウンメニューから作成する
 
-一つ目の方法は右上のドロップダウンメニューでNEW ORGANIZATIONをクリック：
+1つ目の方法は、右上のドロップダウンメニューから NEW ORGANIZATION をクリックすることです:
 
-![ドロップダウン][1]
+![dropdown][1]
 
-これにより次のポップアップが表示されます：
+すると、以下のポップアップが表示されます:
 
 <img loading="lazy" src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
 
-Organization（組織） と Organization IDを入力します。Organization IDは英数字とダッシュのみ許可される文字列です。自分のメールアドレスがデフォルトになっていますが別のものに変更することができます。
+Organizationの名前と、半角英数字とダッシュのみが使用可能な文字列であるOrganizationのIDを入力してください。デフォルトのメールアドレスはあなた自身のものですが、別のものに変更することができます。
 
-CREATEをクリックするとOrganization（組織）の[profile][2]ページに移行します。 
+CREATE をクリックすると、[profile][2] ページに移動します。
 
-If you have existing projects (such as private projects on a Personal plan), you can transfer them to the Organization account by the following steps:
+既にプロジェクト(例えば、パーソナルプランでのプライベートプロジェクトなど)がある場合、以下の手順でOrganizationアカウントに移行できます:
 
-* On your user account, [transfer all projects ownership][5] to the Organization account.
-* On the Organization account, accept the project transfer requirements.
-* Cancel the Personal Plan (if you are on one) to downgrade to the Free plan. Please note, this will happen immediately, regardless of when you last paid.
-* [Add yourself to the projects as Admin][6] on the Organization account.
+* 自分のアカウントで、[すべてのプロジェクトの所有権を移管][5]します。
+* Organizationのアカウントで、プロジェクトの移管要件を承認します。
+* パーソナルプラン(利用中の場合)をキャンセルして、フリープランにダウングレードします。 ただし、これは最後に支払った日時にかかわらず、すぐに実行されます。
+* [Organizationのアカウントの管理者として自分をプロジェクトに追加][6]します。
 
-All the projects will now be under the Organization account with your user account as Admin for the projects.
+これで、すべてのプロジェクトがOrganizationのアカウントの下にあり、プロジェクトの管理者としてあなたのユーザーアカウントが登録されます。
 
-### ユーザアカウントをOrganization（組織）に変換
+### ユーザーアカウントをOrganizationのに変換する
 
-Organization（組織）を作成する方法にユーザアカウントを変換する方法があります。[アカウント][3] ページでCONVERTをクリックすることを行うことができます。
+もう1つの方法は、ユーザーアカウントをOrganizationのに変換することです。[アカウント][3]ページでCONVERTをクリックすることで、これを行うことができます。
 
 <img loading="lazy" src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
 
-これにより次のポップアップが表示されます：
+以下のポップアップが表示されます:
 
 <img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
 
-自分のユーザーアカウントを組織に変換すると、そのユーザーアカウントでログインすることができなくなります。そのため、新しい組織の所有者を指定する必要があります。
+ユーザーアカウントをOrganizationのに変換すると、このユーザーアカウントでログインできなくなります。そのため、新しいOrganizationのオーナー (Owner)を指定する必要があります。
 
 <div class="alert alert-info">
-新しい所有者のアカウントでログインできることを確認してください。
+新しいオーナー (Owner)のアカウントでログインできることを確認してください。
 </div>
 
-有料プランに加入している場合は、ポップアップで提案されるOrganization（組織）プランに加入しない限り、そのプランはキャンセルされます。購入するseatの数は、既存のプライベートプロジェクトのユーザー数に基づいて自動的に計算されます。
+有料プランに登録している場合、このプランはキャンセルされますが、ポップアップで提供されるOrganizationのプランに登録するかを選択できます。既存のプライベートプロジェクトのユーザー数を基に、自動的に購入するシート数が計算されます。
 
-アカウントを変換した後、ログアウトされます。次に、新しい所有者のアカウントで再度ログインすると、変換後のアカウントとそのすべてのプロジェクトにアクセスできるようになります。
-
+アカウントを変換したら、ログアウトします。次に、新しいオーナー (Owner)のアカウントでログインし、変換されたアカウントとそのすべてのプロジェクトにアクセスできます。
 
 [1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
 [2]: /user-manual/profile

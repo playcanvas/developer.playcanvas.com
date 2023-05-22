@@ -1,64 +1,64 @@
 ---
-title: 基本的な素材
+title: 基本的なマテリアル
 layout: tutorial-page.hbs
 tags: material,basics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg"
 ---
 
-Material（素材）は3Dモデルの表面の外見を定義します。多角形の色の変更などのシンプルな設定も可能ですし、海の表面やガラスを通り抜ける光の再現などの複雑な設定もできます。
+マテリアルは、3Dモデルの表面の外観を定義するものです。非常に単純には、マテリアルは多角形の色を設定し、最も複雑な場合には海面をシミュレートしたり、ガラスを通過する光の方法をシミュレートすることができます。
 
-このチュートリアルでは、Material（素材）の作成、基本的な形への割り当て、プロパティの編集について説明します。まず新しいシーンを作成してください。
+このチュートリアルでは、マテリアルの作成方法、プリミティブシェイプに割り当てる方法、マテリアルのプロパティを編集する方法を説明します。まず、新しい空のシーンを作成してください。
 
-## Step 1 - シーンにキューブを追加
+## ステップ1 - シーンにキューブを追加
 
-シーンのルートエンティティを選択してください。初期の名前はRootです。Attribute Editorでエンティティの名前を"Material Tutorial"などの分かりやすい名前に変更してください。
+シーンのルートエンティティを選択します。初期の名前は "Root" と呼ばれます。属性エディタで、エンティティの名前を "Material Tutorial" のような意味のある名前に変更します。
 
-HierarchyパネルのBoxエンティティで'New Entity' -> 'New Box' を選択してください。これでHierarchyに新規のBoxエンティティが作成されます。
+ヒエラルキーパネルで 'New Entity'-> 'Box' メニューを選択します。これにより、ヒエラルキーに新しいボックスエンティティが作成されます。
 
-![新規ボックス][1]
+![New Box][1]
 
-## Step 2 - 新しい素材を作成
+## ステップ2 - 新しいマテリアルを作成
 
-PlayCanvas Editorインターフェイスから直接新しい素材を作ります。Assetパネルで+ボタンを押してNew Assetメニューを開きMaterialを選択してください。
+PlayCanvasエディターのインターフェースから直接新しいマテリアルを作成します。アセットパネルで+ボタンを使用して、新しいアセットメニューを開き、マテリアルを選択します。
 
 ![Add Material][2]
 
-これにより新規のMaterial Assetが作成され、画面の右側にMaterial Editorを開きます。Material Editorで、素材の名前をBox Materialに変えてください。
+これにより、新しいマテリアルアセットが作成され、画面右側にマテリアルエディタが表示されます。マテリアルエディタで、マテリアルの名前を「Box Material」に変更します。
 
-## Step 3 - メッシュに素材を割り当てる
+## ステップ3 - キューブにマテリアルを割り当てる
 
-Editorで新しいキューブを作成する場合、割り当てられている素材は無く、プレーンなデフォルトの素材を使用してレンダリングされます。シーン内のモデルに新しい素材を割り当てるには、モデルをアセットパネルからビューポートにドラッグして、割り当てるモデルにそれをドロップします。
+エディタで新しいキューブを作成すると、マテリアルが割り当てられず、単純なデフォルトマテリアルを使用してレンダリングされます。シーンのモデルに新しいマテリアルを割り当てるには、アセットパネルからモデルをビューポートにドラッグして、割り当てたいモデルにドロップするだけです。
 
-## Step 4 - 素材の色を変更
+## ステップ4 - マテリアルの色を変更する
 
-素材の色を変えるには、素材のプロパティの*Diffuse*を編集します。
+マテリアルの色を変更するには、マテリアルの *Diffuse* プロパティを編集する必要があります。
 
-アセットパネルで素材をクリックするか、ボックスを選ぶ際にプロパティーインスペクタから選択します。
+マテリアルを選択して、アセットパネルでクリックするか、ボックスを選択するときにプロパティインスペクターから選択します。
 
 ![Diffuse Color][4]
 
-右パネルの素材エディタでDiffuse設定パネルを展開する必要があります。カラープロパティをクリックして素材のdiffuse色を編集します。
+マテリアルエディタの右側のDiffuse設定パネルを展開する必要があります。色のプロパティをクリックして、マテリアルの拡散色を編集します。
 
-## Bonus - 素材にテクスチャを追加
+## ボーナス - マテリアルにテクスチャを追加する
 
-素材の色の変更ができたので、次に テクスチャーマップを使用して均一でない色のつけかたを説明します。
+マテリアルの色の変更は良いスタートですが、フラットな色よりも詳細な情報をすぐに必要になります。そこで、テクスチャマップが登場するのです。
 
-こちらのサンプルテクスチャをダウンロード＆保存：
+こちらからサンプルのテクスチャをダウンロードして保存してください。
 
-<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" width="128px" alt="Sample diffuse map texture"></a>
-<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" width="128px" alt="Sample normal map texture"></a>
+<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" alt="Sample diffuse map texture" width="128"></a>
+<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" alt="Sample normal map texture" width="128"></a>
 
-次に、ファイルをEditorにドラッグしてプロジェクトにアップロードします。
+その後、エディタにドラッグしてファイルをアップロードします。
 
-アップロードが完了したら、次に素材のテクスチャースロットに割り当てます。以前と同様、素材を選択してDiffuseセクションを開きます。アセットパネルから空のdiffuseスロットに`proto_orange`テクスチャーをドラッグします。次に、Normalsセクションを開き、`proto_gray_n`テクスチャーを法線マップスロットにドラッグします。
+アップロードすると、マテリアルのテクスチャスロットにそれらを割り当てる時が来ました。前述のようにマテリアルを選択して、Diffuseセクションを開きます。アセットパネルから `proto_orange` テクスチャを空の拡散スロットにドラッグします。次にNormalsセクションを開き、 `proto_gray_n` テクスチャをノーマルマップスロットにドラッグします。
 
-次のようになります：
+以下のようなものが表示されます。
 
 ![Cube][5]
 
-**Tiling** と **Offset** プロパティを編集して、テクスチャーがどのようびキューブを覆うか確認してください。
+テクスチャがキューブに巻き付けられる方法を変更するには、 **Tiling** および **Offset** プロパティを変更してみてください。
 
-素材の設定に関する詳細はユーザマニュアルの[Physical Materials][6]セクションをご確認ください。
+マテリアルを設定するのにさらに深い知識が必要な場合は、ユーザーマニュアルの[物理マテリアル][6]セクションを参照してください。
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg

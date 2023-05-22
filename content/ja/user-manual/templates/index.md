@@ -1,85 +1,85 @@
 ---
-title: Templates
+title: テンプレート
 layout: usermanual-page.hbs
 position: 12
 ---
 
-Templates (or prefabs) allow you to speed up your development by creating Entities that are reusable. You can place multiple instances of a Template in your Scene and if you make any changes and apply them to the Template Asset, all instances of that Template will be updated.
+テンプレート(またはプレハブ)は再利用可能なエンティティを作成することにより、開発を迅速化することができます。シーン内に複数のテンプレートのインスタンスを配置することができ、テンプレート・アセットに変更を加えてそれを適用すると、そのテンプレートのすべてのインスタンスが更新されます。
 
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
 
-## Creating Templates
+## テンプレートの作成
 
-To create a new Template Asset you can right-click on any Entity in your Scene and select Template &rarr; New Template. This will create a new Template Asset and add it to your currently selected folder in the Asset Panel. The Entity you right clicked will become an instance of that new Template Asset automatically.
+新しいテンプレート・アセットを作成するには、シーン内の任意のエンティティを右クリックして「Template &rarr; New Template」を選択します。これにより、新しいテンプレート・アセットが作成され、アセット・パネルで現在選択されたフォルダに追加されます。そして、右クリックしたエンティティはその新しいテンプレート・アセットのインスタンスになります。
 
-## Adding Templates in your Scene
+## シーンにテンプレートの追加
 
-You can drag & drop a Template Asset in your scene or right click under an Entity in the Hierarchy and select Template &rarr; Add Instance. Then you can select the Template Asset and that will an instance of it under the clicked Entity.
+テンプレート・アセットをシーンにドラッグ&ドロップするか、ヒエラルキー内のエンティティの下に右クリックして、「Template &rarr; Add Instance」を選択します。それから、テンプレート・アセットを選択することによって、クリックされたエンティティのインスタンスが作成されます。
 
-When an Entity is an instance of a Template it will have a slightly difference appearance in the Hierarchy:
+エンティティがテンプレートのインスタンスであるとき、ヒエラルキーには少し異なる外観があります。
 
 ![Template Instance][1]
 
-The root Entity of the Template Instance and all its children will have a different icon showing that they are part of the same Template.
+テンプレート・インスタンスのルート・エンティティとその子供たちは、同じテンプレートの一部であることを示す異なるアイコンを持っています。
 
-When you select the root of the Template Instance you will notice the following properties in the Entity Inspector:
+テンプレート・インスタンスのルートを選択すると、エンティティ・インスペクタに次のプロパティが表示されることに注意してください。
 
 ![Template Inspector][2]
 
-## Updating Templates
+## テンプレートの更新
 
-In order to make changes to a Template Asset you first have to add an instance of it in the Editor. Then you can change the instance as you see fit and in the end apply the changes to the Template Asset.
+テンプレート・アセットに変更を加えるには、まずエディタにそのインスタンスを追加する必要があります。次に、インスタンスを自由に変更し、最後に変更内容をテンプレート・アセットに適用します。
 
-### Template Overrides
+### テンプレートのオーバーライド
 
-When you make changes to a Template instance or its children this will generate Template Overrides. There are various types of overrides:
-* *Field override*: An override where the value of a field of the Entity or its Components differs to the one in the Template Asset.
-* *New Entity override*: An Entity that you have added as a child to the Template instance that does not exist in the Template Asset.
-* *Deleted Entity override*: An child Entity that you have deleted from the Template instance.
+テンプレートのインスタンスまたはその子供に変更を加えると、テンプレート・オーバーライドが生成されます。いくつかの種類のオーバーライドがあります。
+* *field override*: エンティティまたはそのコンポーネントのフィールドの値が、テンプレート・アセット内のそれと異なるオーバーライド。
+* *New Entity override*: テンプレート・インスタンスの子として追加されたEntityで、テンプレート・アセットに存在しないもの。
+* *Deleted Entity override*: テンプレート・インスタンスから削除された子Entity。
 
-When you apply overrides to the Template Asset then they stop being overrides and become part of the Template Asset.
+オーバーライドをテンプレート・アセットに適用すると、それらはオーバーライドではなく、テンプレート・アセットの一部になります。
 
-You can see the summary of the overrides by selecting the root of the Template Instance and looking at the Entity Inspector:
+テンプレート・インスタンスのルートを選択し、エンティティ・インスペクタを確認することによって、オーバーライドの概要を確認できます。
 
 ![Overrides][3]
 
-Also notice the different color of the label of the field that has been overridden. You can also see a more detailed list of all the overrides by clicking View Diff. See [Overrides Diff View][4] for more information.
+また、オーバーライドされたフィールドのラベルの色が異なることにも注目してください。オーバーライドの詳細なリストを表示するには、[Overrides Diff View][4]をクリックしてください。
 
-If you hover over the colored label of the overridden field you can view more details about that specific override:
+オーバーライドされたフィールドのカラー・ラベルにマウスを重ねると、そのオーバーライドに関する詳細を表示することができます。
 
 ![Override Hover][5]
 
-### Applying Overrides
+### オーバーライドの適用
 
-To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field. 
+オーバーライドを適用するには、オーバーライドされたフィールドのツールチップに表示されるAPPLYをクリックします。
 
-To apply multiple overrides select the root of the Template Instance and click Apply All on the Entity Inspector. You can also right click on the root of the Template Instance and select Template &rarr; Apply To Template.
+複数のオーバーライドを適用するには、テンプレート・インスタンスのルートを選択し、エンティティ・インスペクタでApply Allをクリックします。また、テンプレート・インスタンスのルートを右クリックし、Template &rarr; Apply To Templateを選択することもできます。
 
-Alternatively you can open the [Override Diff View][4] and apply overrides from there too.
+また、[Overrides Diff View][4]を開いてそこでオーバーライドを適用することもできます。
 
-Any overrides you apply to the Template Asset will propagate to other instances of the Template Asset in any scene that these might be.
+テンプレート・アセットに適用するオーバーライドは、そのテンプレート・アセットの他のインスタンスにも反映されます。
 
-*Note: You cannot currently undo the action of applying overrides to a Template Asset.*
+*注:現時点では、テンプレート・アセットにオーバーライドを適用するアクションを取り消すことはできません。*
 
-### Reverting Overrides
+### オーバーライドの元に戻す
 
-To revert a specific override, click REVERT in the tooltip shown when you hover over the overridden field.
+特定のオーバーライドを元に戻すには、オーバーライドされたフィールドのツールチップに表示されるREVERTをクリックします。
 
-To revert all overrides select the root of the Template Instance and click Revert All on the Entity Inspector.
+すべてのオーバーライドを元に戻すには、テンプレート・インスタンスのルートを選択し、エンティティ・インスペクタでRevert Allをクリックします。
 
-Alternatively you can open the [Override Diff View][4] and revert overrides from there too.
+また、[Overrides Diff View][4]を開いて、そこからオーバーライドを元に戻すこともできます。
 
-### More details on Overrides
+### オーバーライドの詳細
 
-When you create an override then the property that it overrides gets protected from updates to the Template Asset. For example. say your Template Instance looks like so:
+オーバーライドを作成すると、それをオーバーライドするプロパティがテンプレート・アセットから更新されないように保護されます。たとえば、次のようなテンプレート・インスタンスがあるとします。
 
 ![Template Instance][1]
 
-You modify the position of Tree1/Sphere. This creates an override on the position of the Sphere entity. You then create another instance of the Template Asset and you change the position of the Sphere to something else. If you apply the override from the second instance then that will not update the position of the first instance since it is overridden and protected. In order for the first instance to pick up position changes for the Sphere Entity you have to revert the override first.
+Tree1/Sphereの位置を変更します。これにより、Sphereエンティティの位置にオーバーライドが作成されます。次に、別のテンプレート・アセットのインスタンスを作成し、Sphereの位置を別のものに変更します。第2のインスタンスからオーバーライドを適用すると、第1のインスタンスの位置が更新されないため、オーバーライドされて保護されます。Sphereエンティティの位置の変更を第1のインスタンスに反映させるには、まずオーバーライドを元に戻す必要があります。
 
-## Instantiating At Runtime
+## 実行時にインスタンス化
 
-You can instantiate Template Assets at runtime like so:
+次のように、実行時にテンプレート・アセットをインスタンス化することができます。
 
 ```javascript
 var templateAsset = this.app.assets.get(templateAssetId);
@@ -87,15 +87,15 @@ var instance = templateAsset.resource.instantiate();
 this.app.root.addChild(instance);
 ```
 
-You can also use Script Attributes to pass Template Assets to your scripts instead of searching for them by ID.
+スクリプト属性を使用して、IDで検索するのではなく、スクリプトにTemplate Assetsを渡すこともできます。
 
-## When do I need to load Template Assets? 
+## いつテンプレート・アセットを読み込む必要がありますか?
 
-Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
+テンプレートはエンティティの階層とデータを保存します。テンプレート・インスタンスがエディタのシーンに追加されると、エンティティの階層とデータがシーン・データに含まれます。
 
-At runtime, the Template instance is not linked to the asset and you can reduce the download size by not preloading/loading the asset.
+実行時に、テンプレート・インスタンスはアセットにリンクされていないため、アセットのプリロード/ロードを行わないことによりダウンロード・サイズを減らすことができます。 
 
-You only need Template assets to be loaded if you are instantiating instances at runtime.
+テンプレートのインスタンスを実行時にインスタンス化する場合にのみ、テンプレート・アセットをロードする必要があります。
 
 [1]: /images/user-manual/templates/hierarchy.png
 [2]: /images/user-manual/templates/inspector.png

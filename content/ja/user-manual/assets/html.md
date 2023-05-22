@@ -4,27 +4,26 @@ layout: usermanual-page.hbs
 position: 9
 ---
 
-HTMLアセットにはHTMLコードが含まれます。コードは、完成されたHTMLページ、または一部のHTMLとすることができます。新規のHTMLアセットはEditorから作成することができます。また、.css拡張子を持つファイルをアップロードして作成することも可能です。
+HTMLアセットにはHTMLコードが含まれます。コードは完全なHTMLページまたは部分的なHTMLである場合があります。新しいHTMLアセットをエディタで作成するか、拡張子が.htmlのファイルをアップロードして作成できます。
 
-HTMLアセットを編集するには、Editorでアセットを右クリックして、Editを選択します。
+HTMLアセットを編集するには、エディタで右クリックしてEditを選択します。
 
-読み込まれたHTMLアセットリソースは文字列です。文字列は自由に使用することができます。読み込まれたHTML文字列をドキュメントに追加するための一般的な方法は次の通りです：
+読み込まれたHTMLアセットは単なる文字列です。その文字列を好きなように使用できます。ドキュメントにHTMLを追加する一般的な方法は以下のとおりです。
 
 ```javascript
-// レジストリからidでアセットを取得
+// IDでレジストリからアセットを取得
 var asset = app.assets.get(32);
 
-// エレメントを作成
+// 要素を作成する
 var div = document.createElement('div');
 div.innerHTML = asset.resource || '';
 document.body.appendChild(div);
 
-// アセットリソースが読み込まれる／変更されたら
-// エレメントのhtmlを更新
+// アセットリソースのロード/変更時に、要素のHTMLを更新する
 asset.on('load', function() {
     div.innerHTML = asset.resource;
 });
 
-// アセットが読み込まれることを確認
+// アセットがロードされるようにする
 app.assets.load(asset);
 ```

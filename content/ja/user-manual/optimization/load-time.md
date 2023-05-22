@@ -1,55 +1,55 @@
 ---
-title: Optimizing Load Time
+title: 読み込み時間の最適化
 layout: usermanual-page.hbs
 position: 7
 ---
 
-Optimizing isn't just related to improving frame rate. Fast load times are also critical. The faster your app loads, the more likely your users will stick around to experience it. Aim to have your app load in less than 5 seconds to prevent users from churning.
+最適化によってフレームレートを向上させるのに限定されません。高速な読み込み時間も同様に重要です。アプリの読み込みが速ければ、ユーザーがそれを体験するために残留する可能性が高くなります。ユーザーの離脱を防ぐためにアプリが5秒以下で読み込まれるようにすることを目指してください。
 
-Here are some tips to achieve super-fast load times:
+以下は、高速な読み込み時間を実現するためのいくつかのヒントです。
 
-* In general, prefer JPG format for textures over PNG. Exceptions are when you require an alpha channel or when JPG compression produces noticeable artifacts (with normal maps or gloss maps, for example).
-* Look for opportunities to downsample certain texture images. For example, a 2048x2048 texture that is used on a small graphical object may look almost exactly the same at 1024x1024 or even 512x512.
-* Don't preload assets which can be loaded asynchronously. For example, it may not be necessary for your game music to play immediately at game start, so consider unchecking the Preload option for that asset in the Inspector panel.
-* If you have a prefiltered cubemap and are not displaying the top-level mipmap for the skybox, you can uncheck preload for all the 6 face images.
-* If you are not instantiating Templates at runtime, uncheck preload on the asset as they aren't needed. (See '[When do I need to load Template Assets?][2]' for more information).
-* Ensure that imported models only have the vertex attributes that you need. For example, if your model has a second set of UVs but doesn't use them or if it has all-white vertex colors, go back to the modeling application and delete those attributes.
-* Use the Networking panel in Chrome Dev Tools (or the equivalent in other browsers) to sort loaded assets by size and look for anything that stands out. Look for assets that are not used and could be deleted. Look for assets that are essentially duplicates and delete them.
-* Using PlayCanvas' built-in physics engine incurs an additional download cost of 379KB. If you are using the physics engine to solve very simple problems, consider rolling an alternative solution that doesn't incur the download penalty.
-* If you self-host your PlayCanvas app, be sure to configure your web server to serve files with GZIP compression. In particular, JSON and JS files.
+* 一般的に、アルファチャンネルが必要ない限り、PNG よりもテクスチャの JPG 形式を優先します。ただし、ノーマルマッピングやグロスマップなどで JPG 圧縮が目立つアーティファクトを生成する場合や、アルファチャンネルが必要な場合は例外です。
+* 特定のテクスチャイメージをダウンサンプリングする機会を探してください。例えば、小さいグラフィカルオブジェクトに使用される 2048x2048 のテクスチャは、1024x1024 または512x512 でほぼ同じように見える場合があります。
+* 非同期で読み込むことができるアセットを事前にロードしないでください。例えば、ゲームの開始時にすぐにゲームミュージックを再生する必要がない場合は、Inspector パネルでそのアセットの Preload オプションをオフにすることを検討してください。
+* プリフィルター (Prefiltered) されたキューブマップを持っていて、スカイボックスの最上位ミップマップを表示していない場合、6つの面画像の preload をすべてオフにすることができます。
+* テンプレートを実行時にインスタンス化しない場合、preload をオフにすることができます。 (詳細については、"[Templateアセットをいつロードする必要がありますか?][2]"を参照してください)
+* インポートされたモデルに必要な頂点属性のみを持たせるようにしてください。たとえば、モデルに第2 UV セットがあるが使用していない場合、またはすべてが白い頂点カラーしかない場合は、モデリングアプリケーションに戻ってそれらの属性を削除してください。
+* Google Chrome Dev Tools の Networking パネル (または他のブラウザのそれに相当するもの) を使用して、サイズでロードされたアセットをソートし、目立つものを見つけてください。使用されていないアセットまたは重複するアセットを削除することができます。
+* PlayCanvas の組み込み物理エンジンを使用すると、379KB の追加ダウンロードコストが発生します。非常に単純な問題を解決するために物理エンジンを使用している場合は、ダウンロードペナルティを被らない代替ソリューションを採用することを検討してください。
+* PlayCanvas アプリを自己ホストする場合は、GZIP 圧縮でファイルを提供するようにウェブサーバーを構成してください。特に JSON と JS ファイルについてはそれが必要です。
 
 
-## Loading sequence best practices
+## 読み込みシーケンスのベストプラクティス
 
-Beyond the above guidelines, it's possible to retain users by spacing the loading in multiple stages while giving the users something new to interact with or watch.
+上記のガイドラインを超えて、ユーザーが新しいものとやりとりできるように読み込みを複数の段階に分けることで、ユーザーを維持することができます。
 
-Using [Virtual Voodoo][1] as an example, we can show the 'typical' sequence that most applications will use for browser experiences.
+[Virtual Voodoo][1]を例にとると、ほとんどのアプリケーションがブラウザ体験のために使用する「典型的な」シーケンスを示すことができます。
 
-The game has 3 phases:
+ゲームには3つのフェーズがあります。
 
-1. Preloader
-2. Title Screen and Character Customization
-3. Main Game
+1. ローダー
+2. タイトルスクリーンとキャラクターカスタマイズ
+3. メインゲーム
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/virtual-voodoo-phases.jpg" style="max-width: 100%;">
 
-The Preloader phase loads the assets that are needed for the first PlayCanvas scene which is the Title Screen and Character Customization. This would include assets for the UI, character model and assets.
+ローダーフェーズは、最初の PlayCanvas シーンであるタイトルスクリーンとキャラクターカスタマイズに必要なアセットをロードします。これには、UI、キャラクターモデル、アセットなどが含まれます。
 
-When the Title Screen is active, the game starts background loading the assets that are needed for the Main Game. During the transition to the Title Screen and possible interaction with the character customization, by the time the user presses the start button, the assets for the Main Game may have already finished loading.
+タイトルスクリーンがアクティブになると、メインゲームに必要なアセットをバックグラウンドでロードし始めます。タイトルスクリーンに移行し、キャラクターカスタマイズとのやり取りが可能な場合、ユーザーがスタートボタンを押すまでにメインゲームのアセットがすでに読み込まれている場合があります。
 
-However, if the user presses the start button before the assets have finished loading, a progress bar will appear on the button instead. Once it reaches 100%, the game will automatically transition to the Main Game.
+ただし、ユーザーがアセットの読み込みが完了する前に開始ボタンを押した場合は、ボタンに進行状況バーが表示されます。バーが100%に達すると、ゲームは自動的にメインゲームに移行します。
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif" style="max-width: 480px;">
 
-With the assets being loaded in phases and giving something new for the user to interact with and/or look at periodically, the user stays engaged despite a long loading time.
+アセットを段階的にロードし、定期的にユーザーが新しいものとやりとりおよび/または見ることができるようにすることで、読み込み時間が長い場合でも、ユーザーは参加し続けることができます。
 
-### Further improvements
+### 追加の改善
 
-Some developers will go as far as to reduce the Preloader phase to only load the bare minimum and add an 'in-application' loading screen that allows the developer to populate with application related assets and text, use animation, etc. This engages the user as they are seeing something that is directly related to the application.
+一部の開発者は、プリローダーフェーズを最小限に抑え、アプリケーションに関連するアセットやテキストを埋め込んでアプリケーション内のローディング画面を追加することができます。これにより、ユーザーはアプリケーションと直接関連するものを見ることができるため、参加感が高まります。
 
-If the game allows, using common placeholders while the more detailed assets are loading can get the user interacting with the application sooner.
+ゲームが許す場合は、より詳細なアセットがロードされるまでの間、一般的なプレースホルダーを使用すると、ユーザーがアプリケーションとやり取りすることができるようになります。
 
-An example below is using a silhouette of a character as the placeholder until it has fully loaded. The silhouette placeholder is small in file size so it can be part of a preload sequence and also can be reused for other characters in the application.
+以下は、キャラクターの輪郭線を完全に読み込むまでのプレースホルダーとして、キャラクターのシルエットを使用する例です。シルエットのプレースホルダーはファイルサイズが小さいため、プリロードシーケンスの一部として使用できます。また、アプリケーション内の他のキャラクターでも再利用できます。
 
 <img loading="lazy" src="/images/user-manual/optimization/loading/character-load.gif" style="max-width: 360px;">
 

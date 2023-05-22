@@ -1,44 +1,44 @@
 ---
-title: 組織の管理
+title: Organizationの管理
 layout: usermanual-page.hbs
 position: 2
 ---
 
-### 許可
+### 権限 (Permissions)
 
-アカウントページからOrganizationの許可設定を管理できます。
+Organizationのアカウントページから、Organizationの権限を管理することができます。
 
-![許可][1]
+![permissions][1]
 
-ここでは、組織の所有者と管理者を確認することができます。別のユーザーに所有権を移転し、管理者を追加または削除することができます。
+Organizationのオーナー (Owner) および管理者を確認することができます。他のユーザーに所有権を移譲したり、管理者を追加/削除することができます。
 
-管理者は、組織の削除以外の、所有者と同様の操作を行うことができます。例：プロジェクトの作成や削除。
+管理者 (Admin) は、オーナーができることすべて、たとえばプロジェクトの作成や削除をすることができますが、Organizationの削除だけはできません。
 
-### Seats
+### シート (Seats)
 
-To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
+ユーザー (User) にシートを与えるには、Organizationが所有する任意のプライベートプロジェクトにユーザーを追加します。パブリックプロジェクトはシートを必要としません。
 
-![seat][2]
+![seats][2]
 
-プライベートプロジェクトへのアクセス権を持っていてseatを使用することができるユーザを確認することができます。ここからユーザを削除してすべてのプロジェクトから取り除き、seatを空けることができます。
+ここから、プライベートプロジェクトにアクセスできるユーザーと利用可能なシートを確認できます。ここから、ユーザーを削除して、すべてのプロジェクトから削除し、シートを空けることができます。
 
-The Owner of the organization does not need to occupy a seat if they are not actively working on any projects. It is recommended to have at least one user who will occupy a seat, to be an Admin of the Organization so that they can create new projects and manage existing projects.
+Organizationのオーナーは、いかなるプロジェクトにもアクセスしない場合、シートを占有する必要はありません。Organizationの管理者の一人が少なくとも一つのシートを占有していて、新しいプロジェクトを作成し、既存のプロジェクトを管理できるようにすることが望ましいです。
 
-![アップグレード][3]
+![upgrade][3]
 
-ここでは組織のseatの数を増減できます。このビューはOrganization（組織）プランに加入している場合利用できます。
+ここでは、Organizationのシートの数を増減することができます。このビューは、Organizationプランに登録した場合に利用可能です。
 
-![削除][4]
+![delete][4]
 
-Organization（組織）の所有者はここから組織を削除することができます。これによりアカウントとその全てのプロジェクトを削除します。この動作は取り消せません。
+Organizationのオーナーはここから、Organizationを完全に削除することができます。これにより、アカウントおよびすべてのプロジェクトが完全に削除されます。この操作は取り消すことはできません。
 
 ### プロジェクト
 
-組織の管理者は、組織が所有する任意のプロジェクトに自分自身を追加できます。アカウントページで、右側のドロップダウン矢印をクリックし、「Add me as admin」をクリックしてください。
+Organizationの管理者は、Organizationが所有する任意のプロジェクトに自分自身を追加することができます。アカウントページで、右側のドロップダウンアイコンをクリックし、 'Add me as admin' をクリックします。
 
 ![add to project][5]
 
-ここからは、通常通り他のユーザーをプロジェクトに追加することができます。
+ここから、他のユーザーを通常通りプロジェクトに追加することができます。
 
 [1]: /images/user-manual/organizations/permissions.png
 [2]: /images/user-manual/organizations/seats.png

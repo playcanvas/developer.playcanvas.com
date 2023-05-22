@@ -1,22 +1,22 @@
 ---
-title: デバイスピクセルの比率
+title: デバイスピクセル比率( (DPI)
 layout: usermanual-page.hbs
 position: 6
 ---
 
-Device pixel ratio is the the ratio between the physical pixels on a the hardware screen and the logical pixels (related to the physical size of the screen, also known as CSS resolution).
+デバイスピクセル比率(Device Pixel Ratio)は、ハードウェアスクリーン上の物理的なピクセルと、論理的なピクセル(スクリーンの物理的なサイズに関連した、CSSによる)の比率です。
 
-Enabling Device Pixel Ratio on the Project settings will render the application at the native resolution of the screen which will make it look very crisp. However, that comes at a performance cost as now there are more pixels to fill and render each frame.
+プロジェクト設定でDevice Pixel Ratio を有効にすることで、アプリケーションをスクリーンのネイティブ解像度でレンダリングし、非常に鮮明に見えるようになります。しかし、それはそれに対してパフォーマンスコストがかかります。つまり、毎フレームの描画に必要なピクセルが増えます。
 ![Project setting][3]
 
-Below is an example of the Model Viewer Starter Kit with device pixel ratio enabled and disabled. Click on the thumbnail to see the full size.
+Device Pixel Ratioが有効になっている場合、解像度が高いスクリーンを備えた低/中級モバイルデバイスなどでは問題が生じる可能性があります。ハードウェアのフィルレート制限のため、デバイスピクセル比率を有効にすると低いフレームレートが発生する可能性があります。
 [![Device Pixel Ratio][1]][2]
 
-This can be problematic on devices such as low or mid-tier mobile devices where they have high resolution screens but low graphics capability. This would lead to low frame rates if device pixel ratio is enabled due to fill rate limitations of the hardware.
+理想的には、高性能のデバイスのユーザーは最高品質でレンダリングし、低性能デバイスであってもプレイ可能なフレームレートを維持するために比率を減らせる、両方の利点を兼ね備えた状態にしたいものです。
 
-Ideally, we want the best of both worlds where users on high-tier devices will render at the highest quality but users on lower-tier devices will reduce the ratio to maintain a playable frame rate.
+理想的には、高性能デバイスのユーザーは最高品質でレンダリングし、低性能デバイスのユーザーはフレームレートを維持するために比率を下げるという、両方の良い点を得ることができます。
 
-The Device pixel ratio can be changed at runtime via the property [`pc.GraphicsDevice#maxPixelRatio`][4]:
+デバイスピクセル比は、プロパティ[`pc.GraphicsDevice#maxPixelRatio`][4]を使ってランタイムで変更することができます。
 
 ```javascript
 var device = pc.Application.getApplication().graphicsDevice;
@@ -29,21 +29,21 @@ if (highTierDevice) {
 }
 ```
 
-The challenge is working out the performance capabilities of the device and this can be done in a couple of ways:
-* Using some form of benchmark on the start of the application and observing the frame rate
-* Querying the WebGL renderer data to get the name of the GPU and checking against a known list performance tiers
+難しいのは、デバイスの性能能力を見極めることで、これは以下のいずれかの方法で行うことができます：
+* アプリケーションの開始時に何らかのベンチマークを使用し、フレームレートを観察する
+* WebGLレンダラーのデータを照会してGPUの名前を取得し、既知のパフォーマンス層のリストと照らし合わせる
 
-To get information about the GPU, use the property `pc.GraphicsDevice#unmaskedRenderer`. This will contains a string with the information or an empty string if the browser does not support the property.
+GPUについての情報を得るためには、プロパティ `pc.GraphicsDevice#unmaskedRenderer` を使用します。これは情報を含む文字列を含むか、ブラウザがプロパティをサポートしていない場合は空の文字列になります。
 
-The string will have something similar to the following:
+文字列には次のようなものが含まれます。
 
 ```
 ANGLE (NVIDIA GeForce GTX 1050 Direct3D11 vs_5_0 ps_5_0)
 ```
 
-Benchmarks for different GPU cards can be found on [Video Card Benchmark][5] and [Notebook Check Smartphone and Tablet list][6] to help gauge each GPU's capability. However, given the sheer number GPU cards available, this can extremely difficult to assess the device capabilities.
+異なるGPUカードのベンチマークは、[Video Card Benchmark][5]や[Notebook Check Smartphone and Tablet list][6]で見つけることができ、各GPUの能力を判断するのに役立ちます。しかし、利用可能なGPUカードの数が非常に多いため、デバイスの能力を評価するのは非常に難しいです。
 
-An example for mobile can be found below (correct at time of writing Thu 30 Jul 2020):
+モバイルの例は以下にあります（記述時点での情報、2020年7月30日（木））。
 
 ```javascript
 function isLowQualityGPU() {
@@ -71,7 +71,7 @@ function isLowQualityGPU() {
 };
 ```
 
-We also recommend to have an option in the application for the user to be able to switch between quality levels. This allows them to choose the level that they are comfortable with and also be able to lower the quality in favor of using lower device resources and extending battery life.
+また、ユーザーが品質レベルを切り替えることができるオプションをアプリケーションに設けることをお勧めします。これにより、ユーザーは自分が快適に感じるレベルを選択し、デバイスのリソースを節約しバッテリー寿命を延ばすために品質を下げることも可能になります。
 
 [1]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
 [2]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg

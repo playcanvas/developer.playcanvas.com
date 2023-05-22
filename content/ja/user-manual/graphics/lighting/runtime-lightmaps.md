@@ -4,141 +4,142 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-![Sponza][10]*このシーン内のすべての照明はライトマップテクスチャによって提供されています* 
+![Sponza][10]
+*このシーン内の照明は全てライトマップテクスチャによって提供されています*
 
-Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures, which are then applied on materials. This is an efficient and realistic way to light a scene if many of the light sources and geometry are static or environmental.
+ライトマップ生成は、静的シーンのライティング情報を事前に計算し、テクスチャに保存するプロセスであり、材料に適用されます。これは、多くの光源とジオメトリが静的または環境的である場合、シーンを照らす効率的で現実的な方法です。
 
-## ランタイムのライトマップ生成 
+## ランタイムライトマップ生成
 
-PlayCanvas offers a convenient solution to generating lightmaps. Using the standard light components in the Editor, you can choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. The lights that you set to bake will be used when the application generates the lightmaps that light the scene.
+PlayCanvasは、ライトマップの生成に便利なソリューションを提供しています。エディタ内の標準Lightコンポーネントを使用することで、どのライトをライトマップの生成に使用するか、どのライトをランタイムでシーンを動的に照らすために使用するかを選択できます。ベイクに設定したライトが、アプリケーションがライトマップを生成してシーンを照らす際に使用されます。
 
-There are multiple advantages to runtime lightmap generation:
+ランタイムライトマップの多くの利点があります。
 
-* Lighting is not performed at **runtime**
-* It is possible to use hundreds of **static lights** to light your scene
-* In most cases, rendering lightmaps at runtime is **faster** than downloading many lightmap textures
-* It is possible to mix **static and dynamic lights** in the Editor
-* **Rebaking** can be performed at runtime
-* Lightmaps are **HDR**
-* Both **Color** and **Direction** data can be baked, enabling some specularity on baked surfaces
+* ライティングは**ランタイムで行われない**。
+* **静的ライト**を何百個も使用してシーンの照明を行うことができる。
+* ほとんどの場合、ランタイムでライトマップをレンダリングする方が、多くのライトマップテクスチャをダウンロードするよりも**高速**です。
+* エディタで**静的ライト**と**動的ライト**を混合することができます。
+* ランタイムで**再ベイク**ができます。
+* ライトマップは**HDR**です。
+* **色**と**方向**の両方のデータをベイクすることができ、ベイクされた表面にスペキュラリティを設定できます。
 
-However, a disadvantage of runtime lightmap generation is that currently we do not support baking global illumination or some other advanced features of specialized baking tools.
+ただし、ランタイムライトマップの欠点は、現時点ではグローバル・イルミネーションや一部の特殊なベイキングツールの高度な機能をサポートしていないことです。
 
 <div class="alert-info">
-    The use of <a href="/user-manual/optimization/batching">batching</a> is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+    <a href="/user-manual/optimization/batching">バッチ処理</a>を使用している場合、ランタイムライトマップが適用されません。なぜなら、各ライトマップオブジェクトが独自のライトマップテクスチャを必要とするためです。
 </div>
 
-## ベーキング用にライトを設定
+## ベイクされるライトの設定
 
-各ライトコンポーネントには、ライトマップのベーキングを有効にするための設定が含まれています。新しいライトはデフォルトで動的に設定されています。 
+各Lightコンポーネントには、ライトマップをベイクするための次の設定が含まれています。デフォルトでは、新しいライトはダイナミックに設定されています。
 
-- **Bake Lightmap** – When enabled, the light will bake lightmaps for any lightmapped model that is in range.
-- **Bake Direction** – Specifies whether light contributes to light direction information baking. This affects specularity results if the **Color and Direction** Lightmapping Mode is chosen in Scene Setting.
+- **Bake Lightmap** – 有効にすると、ライトは範囲内にある任意のライトマップ付きモデルのライトマップをベイクします。
+- **Bake Direction** – ライトがライト方向情報ベイクに寄与するかどうかを指定します。これは、Scene Settingで**Color and Direction** Lightmapping Modeを選択した場合、スペキュラリティの結果に影響します。
 
-![ライトコンポーネントの設定][2]
+![Light Component Settings][2]
 
-There are two other options that modify the lights behavior: Affect Dynamic and Affect Lightmapped. These determine which models the light will affect at runtime. If either of these options are enabled, the light will operate at runtime and incur runtime cost.
+ライトの振る舞いを変更する2つの追加オプションがあります: Affect Dynamic と Affect Lightmapped です。これらは、ランタイムでライトがどのモデルに作用するかを決定します。これらのオプションのどちらかが有効になっている場合、ライトはランタイムで動作し、ランタイムコストが発生します。
 
-- **Affect Dynamic** – If enabled, the light will affect any model that is **not lightmapped**.
-- **Affect Lightmapped** – If enabled, the light will also affect any model that **is lightmapped**.
+- **Affect Dynamic** – 有効にすると、ライトは**ライトマップ付きでない**すべてのモデルに作用します。
+- **Affect Lightmapped** – 有効にすると、ライトは**ライトマップ付きの**すべてのモデルに作用します。
 
-Note that a light can't have both **Bake Lightmap** and **Affect Lightmapped** enabled, as this would generate a lightmap for a model while the light adds the same lighting at runtime (i.e. the same work is done twice).
+ライトは、**Bake Lightmap**と**Affect Lightmapped**の両方を有効にすることはできません。モデルのライトマップを作成するためにライトが同じランタイムライトを追加した場合、ライトはランタイムで同じように照明を追加し、同じ作業が二度行われることになります。
 
-![ライトコンポーネントの影の設定][3]
+![Light Component Shadow Settings][3]
 
-Lightmap lights use the same **Shadows** setting as dynamic lights, except the shadow calculations are done once, when generating the lightmaps. This way, it is much cheaper to enable shadows on lightmap lights. For more information, see the [Shadows][4] page. Note that the Shadow Cascade options are ignored for baking.
+ライトマップライトは、ダイナミックライトと同じ **Shadows** 設定を使用しますが、影の計算はライトマップの生成時に一度だけ行われます。このため、ライトマップライトで影が有効になっている場合、コストはずっと少なくなります。詳細は[Shadows][4]ページを参照してください。なお、ベイクについてはShadow Cascadeのオプションは無視されます。
 
-### Soft Directional Light
+### ソフトディレクショナルライト
 
-By default, baked lights cast hard shadows. To improve the visual quality, a soft baked shadow is available for **Directional** lights when the **Bake Direction** option is not enabled. In this case, two additional options are available:
+デフォルトでは、ベイクされたライトはハードシャドウをキャストします。視覚的な品質を向上させるには、ベイクされたシャドウに**Soft**オプションがあります。この場合、追加の2つのオプションが使用できます。
 
-- **Bake Samples** – Specifies the number of sampled used to bake the light into the lightmap. It defaults to 1 and has a maximum value of 255. The value affects the baking performance and should be set as low as possible (5-20).
-- **Bake Area** – Specifies the penumbra angle in degrees, allowing a soft shadow boundary.
+- **Bake Samples** – ライトをライトマップにパッキングするために使用するサンプルの数を指定します。デフォルトは1で、最大値は255です。この値はベイクのパフォーマンスに影響を与えます。値をできるだけ低く設定する必要があります(5〜20)。
+- **Bake Area** – ペヌンブラの角度を度数で指定します。Soft Shadow Boundaryを作成します。
 
 ![Soft Directional Light Settings][12]
 
-The following images show the difference between hard shadows and soft shadows. The Bake Samples is 15 and the Area is 10.
+次の画像は、サンプルが15でAreaが10の場合のハードシャドウとソフトシャドウの違いを示しています。
 
 ![Hard and Soft Shadow Examples][13]
 
-## Baking an Environment Light
+## 環境ライトのベイク
 
-PlayCanvas supports two types of environment lighting: [Ambient Color][14] and [Skybox][15]. By default, these are both applied at runtime.
+PlayCanvasは2種類の環境ライティングをサポートしています: [Ambient Color][14]と[Skybox][15]です。これらは、デフォルトではランタイムで両方とも適用されています。
 
-A limitation of runtime environment light application is the lack of **Ambient Occlusion**. As an alternative, the environment light can be baked into the lightmap, including Ambient Occlusion. This can be configured in the [Lightmapping][16] section of the global settings.
+ランタイム環境ライトの適用の制限事項は、**Ambient Occlusion**の欠如です。代替案として、環境ライトをライトマップにベイクすることができ、その際にAmbient Occlusionも含まれます。これは、グローバル設定の[Lightmapping][16]セクションで構成できます。
 
-If **Ambient Bake** is enabled, the contribution of the environment light will be baked to the lightmaps, including this Ambient Occlusion. Note that the **Samples** setting affects the baking performance and should be set as low as possible (5-20).
+**Ambient Bake**が有効になっている場合、環境ライトの貢献はAmbient Occlusionを含むライトマップにベイクされます。**Samples**設定は、ベイクのパフォーマンスに影響を与え、できるだけ低く設定する必要があります (5-20)。
 
 ![Lightmapping Settings][17]
 
-The following images show the effect of Ambient Color, with and without the Ambient Occlusion.
+次の画像は、Ambient Occlusionを含むAmbient Colorの効果を示しています。
 
 ![Ambient Color Examples][18]
 
-## Lightmap Filtering
+## ライトマップのフィルタリング
 
-For Soft Directional Light or Environment Light baking, a low number of samples is often used in order to improve the baking performance. This creates some banding artifacts, as you can see in the following image, which uses 15 samples.
+Soft Directional Lightや環境ライトのベイキングの場合、ベイクパフォーマンスを向上させるために低いサンプル数を使用することがあります。これにより、以下の画像のようなバンディングアーティファクトが作成されます(15サンプル使用)。
 
 ![Lightmap with 15 samples][19]
 
-To improve the quality of lightmaps, a higher number of sample can be used. This results in the best quality possible, as you can see in the following image, which uses 100 samples.
+ライトマップの品質を向上させるには、より多くのサンプルを使用できます。これは、100個のサンプルを使用する次の画像でわかるように、可能な限り最高の品質になります。
 
-![Lightmap with 100 samples][20]
+![100サンプル付きのライトマップ][20]
 
-As a more performant alternative, the lightmap can be filtered using a smart bilateral blur for acceptable quality with greater performance. This can be seen in the following image, which uses 15 samples and has filtering enabled.
+よりパフォーマンスのある代替品として、ライトマップは、パフォーマンスを向上させるために、許容できる品質のためにスマートの両側ぼけを使用してフィルタリングできます。これは、15のサンプルを使用し、フィルタリングを有効にする次の画像で見ることができます。
 
-![Lightmap with 15 samples and filtering][21]
+![15サンプルとフィルタリングを備えたライトマップ][21]
 
-Note that the filtering is done on the final baked lightmaps and can create some visible edges over the seams of unwrapped UVs, since the lightmap is not filtered across the seams. Therefore, filtering may not be suitable for every scene. To minimize the artifacts, you should have a good balance between a strong filter and a large number of samples.
+フィルタリングは最終的な焼きライトマップで行われ、ライトマップが縫い目全体にフィルタリングされていないため、包装されていないUVの縫い目に目に見えるエッジを作成できることに注意してください。したがって、フィルタリングはすべてのシーンに適していない場合があります。アーティファクトを最小限に抑えるには、強力なフィルターと多数のサンプルのバランスをとる必要があります。
 
-## Setting Up Models for Baking
+## ベーキングのモデルのセットアップ
 
-Each **Model** or **Render** component must have lightmapping enabled, in order for it to receive lightmaps. Lightmapping can be enabled in the component's properties, by checking the **Lightmapped** option.
+各**モデル**または**レンダリング**コンポーネントは、ライトマップを受信するために、ライトマッピングを有効にする必要があります。**LightMapped**オプションをチェックすることにより、コンポーネントのプロパティでライトマッピングを有効にできます。
 
-![モデルコンポーネントの設定][5]
+![モデルコンポーネント設定][5]
 
-![Render Component Settings][22]
+![コンポーネント設定をレンダリング][22]
 
-The **Cast Lightmap Shadows** option determines if the model casts shadows in the lightmap. You can see the resolution of the lightmap texture generated and there is also an option to apply a multiplier to the area of UV1 to affect its size. Lightmap size multipliers are discussed below.
+**キャストライトマップシャドウ**オプションは、モデルがライトマップにシャドウをキャストするかどうかを判断します。生成されたライトマップテクスチャの解像度を確認できます。また、UV1の領域に乗数を適用してそのサイズに影響を与えるオプションもあります。ライトマップサイズの乗数については、以下で説明します。
 
-## Common Light Settings
+## 一般的な光設定
 
-There several combinations of light settings that can be used. Each one has a use case and by using lights with different combinations, you can balance high-quality visuals with performance.
+使用できる光設定のいくつかの組み合わせがあります。それぞれにユースケースがあり、異なる組み合わせのあるライトを使用することにより、高品質のビジュアルとパフォーマンスのバランスをとることができます。
 
-| Bake  | Affect Non-Baked | Affect Baked | 説明 |
+| 焼く  | 非焼きに影響 | ベイクドに影響を与えます | 説明 |
 |-------|-----------------|--------------|-------------|
-| false | true            | false        | This is the default dynamic light. Affects all non-lightmapped models. |
-| true  | false           | false        | This light generates lightmaps for lightmapped models and has no cost at runtime. Most static environment lights could use this setting. |
-| true  | true            | false        | This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character. |
-| false | true            | true         | This light is a dynamic light which will affect both lightmapped and non-lightmapped models. |
+| false | true            | false        | これはデフォルトの動的ライトです。すべての非ライトマップモデルに影響します。 |
+| true  | false           | false        | このライトは、ライトマップモデルのライトマップを生成し、実行時には費用がかかりません。ほとんどの静的環境ライトは、この設定を使用できます。 |
+| true  | true            | false        | このライトはライトマップを生成しますが、非光マップモデルにも影響します。この光で照らされる必要がある動的/移動エンティティがある場合に役立ちます。たとえば、プレーヤーのキャラクターにも影響を与える顕著な環境光。 |
+| false | true            | true         | このライトは、ライトマップモデルと非ライトマップモデルの両方に影響する動的なライトです。 |
 
-## ライトマッピングの設定
+## ライトマッピング設定
 
-The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
+**サイズの乗数**設定は、すべてのモデルとレンダリングコンポーネントに影響します。PlayCanvasは、モデルに必要な解像度のライトマップを自動的に決定します。モデルのスケールとジオメトリの領域サイズに基づいて、この値を計算します。モデルの**サイズの乗数**フィールドを変更するか、コンポーネントのグローバル設定をレンダリングすることにより、この計算に影響を与えることができます。
 
-For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (1 sq/m * 16 * 2). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
+たとえば、サイズが1x1ユニット(メーター)の平面を検討してください。グローバルサイズの乗数が16で、モデルコンポーネント乗数が2の場合、32x32(1 sq/m * 16 * 2)のライトマップテクスチャサイズが生成されます。1平方メートルに32x32ピクセルがあり、これはピクセルサイズの約3cmです。
 
-**Max Resolution** sets the maximum resolution limit for the generated lightmaps, in order to conserve memory.
+**最大解像度**は、メモリを節約するために生成されたライトマップの最大解像度制限を設定します。
 
-**Mode** allows you to specify what data should be baked (e.g. Diffuse Color or Direction from pixel to light). Direction data is used to simulate simplistic specularity. Only a single direction can be baked, which leads to complexity when multiple lights overlap. Direction baking can be then set on individual lights as well.
+**モード**は、焼き付けるデータを指定できます(例:拡散色またはライトからピクセルへの方向)。方向データは、単純なスペキュラリティをシミュレートするために使用されます。1つの方向のみが焼き付けられるため、複数のライトが重なると複雑になります。方向の焼き付けは、個々のライトにも設定できます。
 
-![グローバルライトマッピングの設定][6]
+![グローバルライトマッピング設定][6]
 
-## Auto-Unwrapping and UV1 Generation
+## 自動アンラップとUV1の生成
 
-Lightmaps are always applied using the second set of **UV coordinates (UV1)** on the model asset. For the best results, we recommend that you add a second UV set from the 3D content tool to your model, before you upload it to PlayCanvas. For more information about lightmap friendly UV's, see the [UV Mapping][9] section.
+ライトマップは、Modelアセットの2番目の**UV座標(UV1)**を使用して常に適用されます。最良の結果を得るには、PlayCanvasにアップロードする前に3Dコンテンツツールからモデルに2番目のUVセットを追加することをお勧めします。ライトマップに適したUVについては、[UVマッピング][9]セクションを参照してください。
 
-If your model doesn't have a UV1 set, the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+モデルにUV1セットがない場合、PlayCanvasエディターは自動的にアンラップしてUV1座標を生成します。
 
-![モデルコンポーネント：UV1 無し][7]
+![Modelコンポーネント:UV1がない][7]
 
-If your model is missing a UV1 map, you will see a warning in the Model Component when you enable lightmapping.
+モデルにUV1マップがない場合、ライトマッピングを有効にすると、Modelコンポーネントで警告が表示されます。
 
-![モデルアセット：パイプラインを自動でアンラップ][8]
+![Modelアセット:自動アンラップパイプライン][8]
 
-To fix the warning, select the model asset and open the **Pipeline** section. Click the **Auto-Unwrap** button and wait for the progress bar to complete. Auto-unwrap will edit the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the precomputed UV1 will be lost. If the uploaded model has no UV1, you will need to auto-unwrap the model again.
+警告を修正するには、Modelアセットを選択して**パイプライン**セクションを開きます。**自動アンラップ**ボタンをクリックし、進行状況バーが完了するまで待ちます。自動アンラップは、Modelアセットを編集します。そのため、ソースからモデルを再インポートする場合(たとえば、新しいFBXをアップロードする場合)は、事前に計算されたUV1が失われます。アップロードされたモデルにUV1がない場合は、モデルを再度自動アンラップする必要があります。
 
-The **Padding** option determines the space between sections when unwrapping occurs. If you see light bleeding (i.e. light that shouldn't be in the lightmap), you can increase the padding to reduce bleeding.
+**パディング**オプションは、アンラップが発生するときのセクション間のスペースを決定します。ライトが存在してはいけない場所に光が見える場合は、パディングを増やしてライトブリーディングを減らすことができます。
 
 [1]: /images/user-manual/material-inspector/lightmap.jpg
 [2]: /images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png

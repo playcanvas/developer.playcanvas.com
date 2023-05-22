@@ -1,113 +1,113 @@
 ---
-title: Animstategraph Assets
+title: Animstategraphアセット
 layout: usermanual-page.hbs
 position: 3
 ---
 
-Animstategraph assets are used to organize a set of different animation states, which are all the various ways in which a model might animate. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organized. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/en/user-manual/packs/components/anim/).
+Animstategraphアセットは、モデルの多様なアニメーションをすべて組織するために使用されます。それぞれのアニメーション状態を定義し、それぞれの状態が再生されるタイミング、ステート間の移行とブレンドの方法を決定するために使用できます。Animstategraphアセット自体は実際のアニメーションアセットを格納またはリンクしないで、アニメーションアセットの組織のためのテンプレートとして機能します。実際のアニメーションアセットは、[Anim Component](/en/user-manual/packs/components/anim/)を介してanimstategraphのアニメーション状態にリンクされます。
 
-The system was designed so that a single animstategraph can be used on many different entities, each with their own set of animation assets. An example being an animstategraph asset which manages the animations of humanoid character locomotion. This single asset could be used on a human entity, an elf entity and a dwarf entity. Each of these entities would be able to link their own character animation assets, all the while maintaining the same animation behavior as each other.
+システムは、1つのanimstategraphが多数の異なるエンティティで使用できるように設計されています。たとえば、人間型キャラクターの移動アニメーションを管理するAnimstategraphアセットがある場合、この1つのアセットは人間エンティティ、エルフエンティティ、およびドワーフエンティティで使用できます。これらのエンティティのそれぞれは、独自のキャラクターアニメーションアセットをリンクでき、同じアニメーション動作を保持できます。
 
-These assets are therefore state machines for a model's animation behavior and they control the flow of animation sequences over the lifecycle of an entity. A simple animstategraph asset used to define the behavior of a wheel may define only two animation states; static and spinning. This asset can be defined to control when the wheel starts and stops spinning, for how long it will spin, the speed of the wheel spin and how sharply it starts / stops spinning. More advanced assets can be used to combine a multitude of animation states to create complex humanoid character animation behavior.
+したがって、これらのアセットは、モデルのアニメーション動作のステートマシンであり、エンティティのライフサイクルにわたってアニメーションシーケンスのフローを制御します。ホイールの動作を定義する単純なAnimstategraphアセットでは、静止状態と回転状態の2つのアニメーション状態のみを定義できます。このアセットは、ホイールがどの時点で回転を始め、停止するか、どのくらいの時間回転するか、ホイールの回転速度、および回転の開始/停止時の急激さを制御するように定義できます。より高度なアセットは、多数のアニメーション状態を組み合わせて複雑な人間型キャラクターアニメーション動作を作成するために使用できます。
 
-When selecting an animstategraph asset in the editors asset panel, you’ll open up the anim state graph editor view:
+エディターのアセットパネルでAnimstategraphアセットを選択すると、anim state graphエディタービューが表示されます:
 
 ![Initial Editor][1]
 
-Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behavior.
+このビューで、アニメーションステートグラフを編集できます。以下のセクションでは、Animstategraphアセットの異なる要素が特定のアニメーション動作を定義するためにどのように使用できるかを強調します。
 
-## States
+## ステート
 
-In essence, states are used to specify which animations should play at a given point in time. An anim state graph can only be in one of these states at a given time.
+基本的に、ステートは特定の時点で再生するアニメーションを指定するために使用されます。anim state graphは、特定の時点でこれらの状態のいずれかにしか存在できません。
 
-There are four types of states present in state graphs. Animation states, along with the START state, END state and ANY state. Only animation states can be created and deleted by the user and only these will be linked to animation assets. The other states are used to control the flow through the state machine.
+ステートグラフには、アニメーションステート、STARTステート、ENDステート、ANYステートの4種類のステートがあります。ユーザーによって作成および削除できるのはアニメーションステートのみであり、これらのみがアニメーションアセットにリンクされます。他のステートはステートマシンのフローを制御するために使用されます。
 
 ### Animation States
 
 ![State][7]
 
-Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
+アニメーションステートは、 'Idle'、 'Jump'、 'Walk'などの再生可能なアニメーションを定義します。新しいアニメーションステートは、ステートグラフの背後の空のキャンバスを右クリックして、メニューから '新しいステートを追加'を選択することで作成できます。エディターは新しく作成されたステートを対象とし、そのインスペクタパネルを右側に表示します。このインスペクタ内で、次のステート変数を変更できます。
 
 | 変数 | 説明 |
 |----------|-------------|
-| Name     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
-| Speed    | The playback speed for animations that are linked to this state. |
-| Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
+| 名前     | このステートの呼び出し方の名前。これはスクリプトを介してステートを検索、編集、および再生するために使用されます。名前はステートグラフレイヤーごとに一意である必要があります。 |
+| スピード    | このステートにリンクされたアニメーションの再生速度。 |
+| ループ     | このステートにリンクされたアニメーションが再生中にループするかどうか。falseに設定すると、アニメーションは最後のキーフレームで一時停止し、このステートから退出するまで再開されません。 |
 
-### START state
+### STARTステート
 
 ![Start State][8]
 
-The START state is the entry point of every state graph. When an anim component begins playing its assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
+STARTステートは、ステートグラフの入り口です。Animコンポーネントが割り当てられたanim state graphを再生し始めると、最初にこのステートに入り、直接接続されたアニメーションステートに遷移します。このアニメーションステートはデフォルトステートと呼ばれ、ここで選択できます:
 
 ![Layers][2]
 
-It is not possible to create any other transitions to or from the START state. It can only be entered again by transitioning to the END state.
+STARTステートから他のステートへの遷移を作成することはできません。それは、ENDステートに遷移して再び入ることができます。
 
-### END state
+### ENDステート
 
 ![End State][10]
 
-The end state marks an exit out of the current state graph. If your animation state is set up to transition to the END state, the system will move directly to the default animation state which is connected to the START state. This is useful to create cyclical flows through the graph while still laying out your graph in a linear fashion. It is not possible to create transitions from the END state to any other state. It will always transition directly to the START state.
+ENDステートは、現在のステートグラフからの出口を示します。アニメーションステートがENDステートに遷移するように設定されている場合、システムはSTARTステートに接続されたデフォルトアニメーションステートに直接移動します。これにより、グラフを線形にレイアウトしながら、グラフ内でサイクルフローを作成するのに役立ちます。ENDステートから他のステートへの遷移を作成することはできません。常にSTARTステートに直接遷移します。
 
-### ANY state
+### ANYステート
 
 ![Any State][9]
 
-This state is used to create transitions which can be activated while the system is currently in any of the other animation states. Any transitions that trigger from this state will blend as if they had been connected directly from the currently active animation state. You can create transitions from the ANY state but not to it.
+このステートは、システムが現在他のどのアニメーションステートにある場合でもアクティブになるトランジションを作成するために使用されます。このステートからトリガーされるすべてのトランジションは、現在有効なアニメーションステートから直接接続された場合と同様にブレンドされます。ANYステートからトランジションを作成できますが、それには戻ることはできません。
 
-This is useful to set up transitions which you want to activate, no matter which state you’re currently in. For example you could have a jump state which should be reachable from both an idle and walk state. Instead of setting up transitions from both the idle and walk states to the jump state, a transition can be set up between the ANY state and the jump state.
+現在のステートに関係なくアクティブにしたいトランジションを設定するために使用できます。たとえば、アイドル状態と歩行状態の両方から到達できるジャンプ状態を持つことができます。ジャンプステートへのトランジションをアイドルと歩行の両方から設定する代わりに、ANYステートとジャンプステートの間にトランジションを設定できます。
 
-### Transitions
+### トランジション
 
-Transitions define how the anim state graph can move from one animation state to another. They can be created by right clicking an animation state and selecting `Add transition` from the context menu.
+トランジションは、anim state graphが1つのアニメーションステートから別のアニメーションステートに移動する方法を定義します。アニメーションステートを右クリックし、 `Add transition` をクリックしてトランジションを作成できます。
 
-By setting the variables of a given transition you can also control how the animations of the transitioning states will blend together.
+トランジションの変数を設定することにより、トランジション中のステートのアニメーションがどのようにブレンドされるかも制御できグラフには、システムが使用可能な遷移を定義する条件のリストが含まれる場合があります。 すべての条件が満たされていない場合、状態は指定された遷移を介して別の状態に移行できません。
 
-The available transition variables are:
+各条件は、パラメータ変数の現在の値を、指定された演算子を使用して条件で与えられた値と比較する条件付きステートメントで構成されます。 たとえば、次の条件:
 
 | 変数            | 説明 |
 |---------------------|-------------|
 | Duration            | The duration of the transition in seconds. |
-| Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state's duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
-| Offset              | If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destination state's duration. Must be between 0 and 1. |
-| Interruption Source | Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so. |
+| Exit Time           | ソース状態を終了し、目的状態に遷移する時間です。これはソース状態の持続時間に基づいて正規化された時間で示されます。値を提供しないと、この遷移を使用してソース状態をいつでも終了できます。1未満の値は、ソース状態の各ループでその時間に遷移が利用可能になることを意味します。 |
+| Offset              | 提供された場合、目的状態はこの時間にアニメーションの再生を開始します。これは目的状態の持続時間に基づいて正規化された時間で示されます。0から1の間でなければなりません。 |
+| Interruption Source | 他の遷移がこの遷移を中断できるかどうか、そして現在の状態または前の状態の遷移のどちらがそれを行うことができるかを定義します。 |
 
-It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
+異なる値と条件を設定した2つのアニメーション状態間に複数の遷移を作成することが可能です。これらの遷移の優先順位は、グラフ内で遷移の矢印を選択した後、遷移インスペクタで並べ替えることができます。優先順位は、複数の遷移がその条件を満たしている場合に、状態グラフがどの遷移を使用するかを決定します。
 
-### パラメータ
+### Parameters
 
-The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
+アニメーションステートグラフのパラメータは、ランタイム時のアニメーションの流れを制御するために使用される変数です。これらの変数はスクリプト経由でアクセス可能で、いつでも新しい値に設定することができます。それらはユーザーがエンティティのアニメーションの動作をそのライフサイクル中に制御する手段となります。
 
-New parameters can be added to a state graph via the parameters panel on the left inspector:
+新しいパラメータは、左側のインスペクタのパラメータパネルを通じて状態グラフに追加することができます。
 
 ![Parameters][3]
 
-Each parameter has three variables which can be set:
+各パラメータは以下の3つの変数を設定することができます。
 
 | 変数      | 説明 |
 |---------------|-------------|
-| Name          | The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph. |
-| Type          | The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition. |
-| Default Value | The value of the parameters variable when the state graph launches. |
+| 名前          | このパラメータが呼び出されるべき名前。これはスクリプト経由でパラメータを見つけて設定するために使用されます。名前は状態グラフごとに一意でなければなりません。 |
+| Type          | パラメータが含む変数のタイプ。以下のいずれか: ブーリアン(Boolean)、浮動小数点数(Float)、整数(Integer)、またはトリガー(Trigger)。トリガータイプはブーリアンとして機能しますが、遷移を成功裏に有効化するために使用された後、その値がfalseに戻されるという特殊な性質を持っています。 |
+| Default Value | パラメータ変数の値は、ステートグラフが起動するときの値です。 |
 
-The way in which they control the state graph is through the use of transition conditions. Each transition in the graph can have a list of conditions which define when a transition is usable by the system. A state will not be able to pass to another state through a given transition unless all of its conditions are met.
+彼らが状態グラフを制御する方法は、遷移条件の使用を通じてです。グラフ内の各遷移には、システムが遷移を使用できるタイミングを定義する条件のリストを持つことができます。全ての条件が満たされていない限り、状態は指定の遷移を通じて別の状態に進むことはできません。
 
-Each condition consists of a conditional statement which compares the current value of a parameters variable to the given value in the condition using the designated operator. For example, the following condition:
+各条件は、指定された演算子を使用して条件で与えられた値とパラメータ変数の現在の値を比較する条件文から成ります。例えば、次の条件:
 
 ![Condition][4]
 
-Can be used in the transition between the Idle and Jump animation states to ensure that a character only jumps when the ‘Jump’ parameter has been set to true via a script.
+これは、IdleとJumpのアニメーション状態間の遷移で使用でき、スクリプトを通じて'Jump'パラメータがtrueに設定されたときにのみキャラクターがジャンプすることを保証します。
 
 ### Layers
 
-So far, animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behavior. An example could be animating a main character's movement and locomotion on a single layer, while animating its facial expressions on a separate layer that’s driven by its own state graph and parameters.
+これまでに、animstategraphアセットは単一のアニメーション状態グラフを編集する文脈で議論されてきました。しかし、時には、各々が独自の定義された動作を持つ複数の別々の状態グラフによって単一のモデルのアニメーションを制御することが必要となる場合があります。一例としては、主要キャラクターの動きや移動を単一のレイヤーでアニメーション化し、一方で顔の表情を独自の状態グラフとパラメータによって制御される別のレイヤーでアニメーション化する場合が挙げられます。
 
-When an animstategraph is created, it comes with a single base layer. This layer is not deletable and for many scenarios will be the only one necessary. However if you wish to create another layer you can do so by selecting the new layer button on the layers panel to the left of the state graph view:
+animstategraphが作成されると、それには一つの基本レイヤーが含まれます。このレイヤーは削除できず、多くのシナリオでは唯一必要なものとなります。しかし、別のレイヤーを作成したい場合は、状態グラフビューの左のレイヤーパネルで新しいレイヤーボタンを選択して作成することができます:
 
 ![Layers][5]
 
-It is then possible to switch to editing this layer by selecting it from the layer select dropdown which is present at the top right of the graph view:
+次に、グラフビューの右上にあるレイヤー選択ドロップダウンから選択することで、このレイヤーの編集に切り替えることが可能です:
 
 ![Select Layer][6]
 
@@ -117,7 +117,7 @@ By default, layers animate a model in the order that they’re created in the la
 
 ![Layer Blend][11]
 
-The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
+各レイヤーのブレンドウェイト値は、複数のレイヤーをブレンドする際に、各レイヤーが最終アニメーションにどれだけ寄与するかを決定するために使用されます。これらのブレンドウェイトは、ゲームスクリプトでランタイムで調整し、レイヤーのブレンドをリアルタイムで更新することができます。
 
 ```javascript
 var AnimationBlending = pc.createScript('animationBlending');
@@ -133,9 +133,9 @@ AnimationBlending.prototype.initialize = function() {
 };
 ```
 
-If you [mask your layers][anim-layer-masking], you can set the `blend type` of your layers to `Additive` to blend in an animation which only controls part of your model's bones. Updating the `blend weight` in real time as described above can allow you to create smooth blends between animations on different layers. This is particularly useful when animation characters that need to carry out different actions using their upper and lower body. For example, you could have a `shooting` animation that is blended in and out on a characters upper body, while freeing up the lower body for various locomotion animations such as `walking` and `running`.
+あなたが[レイヤーをマスクする][anim-layer-masking]場合、モデルの骨の一部のみを制御するアニメーションをブレンドするために、レイヤーの`blend type`を`Additive`に設定することができます。上記のようにリアルタイムで`blend weight`を更新することで、異なるレイヤーのアニメーション間でスムーズなブレンドを作成することができます。これは特に、上半身と下半身で異なるアクションを行う必要があるキャラクターのアニメーションに非常に役立ちます。例えば、キャラクターの上半身に`shooting`アニメーションをブレンドインとブレンドアウトさせる一方で、下半身を`walking`や`running`などのさまざまな移動アニメーションにフリーにすることができます。
 
-Any layers that are set to `Overwrite` will completely replace the animation values of the model's bones that are animated in that layer. In these instances, previous layers will not be taken into consideration when producing the final animation.
+`Overwrite`に設定されたレイヤーは、そのレイヤーでアニメーション化されるモデルの骨のアニメーション値を完全に置き換えます。これらの場合、最終的なアニメーションを生成する際には、以前のレイヤーは考慮されません。
 
 [1]: /images/user-manual/anim/state_graph_editor.png
 [2]: /images/user-manual/anim/layers.png

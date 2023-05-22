@@ -4,19 +4,19 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-The anim component is used to connect an animstategraph asset and all of its required animation assets to a single entity.
+Animコンポーネントは、Animstategraphアセットとその必要なアニメーションアセットを1つのエンティティに接続するために使用されます。
 
-Below you can see the anim component after it has been added to a component. It shows an available slot for an animstategraph asset to be selected.
+以下では、Animコンポーネントがコンポーネントに追加された後の様子が表示されます。Animstategraphアセットを選択するための利用可能なスロットが表示されます。
 
 ![New Anim Component][1]
 
-After selecting an animstategraph asset, the anim component will display a list of animation asset slots. There will be one slot for each animation state in every layer of the state graph asset. This is where actual animation data is connected to the previously created state graph. Multiple anim components can use the same animstategraph asset, each with their own set of animation assets.
+Animstategraphアセットを選択すると、Animコンポーネントにアニメーションアセットスロットのリストが表示されます。ステートグラフアセットの各レイヤーの各アニメーションステートに対応するスロットが1つずつあります。これにより、実際のアニメーションデータが以前に作成したステートグラフに接続されます。複数のAnimコンポーネントが同じAnimstategraphアセットを使用でき、それぞれが独自のアニメーションアセットを持つことができます。
 
 ![Anim Component With Graph][2]
 
-After all animation state slots have been filled, the anim component will become playable. At this point the anim component can either be played via script by calling `entity.anim.play()` or if the `Activate` option is selected, it will play automatically upon the launch of the PlayCanvas project.
+アニメーションステートスロットが満たされると、Animコンポーネントは再生可能になります。この時点で、Animコンポーネントは `entity.anim.play()` を呼び出してスクリプトから再生することができ、また `Activate` オプションが選択されている場合は、PlayCanvasプロジェクトが起動すると自動的に再生されます。
 
-The anim component also offers the option to alter the speed of the animation playback. This speed will affect every animation within the state graph. 
+Animコンポーネントには、アニメーション再生速度を変更するオプションも用意されています。この速度は、ステートグラフ内のすべてのアニメーションに影響します。
 
 [1]: /images/user-manual/anim/new_anim_component.png
 [2]: /images/user-manual/anim/anim_component_with_graph.png

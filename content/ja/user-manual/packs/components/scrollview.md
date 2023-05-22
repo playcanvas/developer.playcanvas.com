@@ -4,29 +4,29 @@ layout: usermanual-page.hbs
 position: 18
 ---
 
-The Scrollview component defines a scrollable area in a user interface. A scrollview can be scrolled via [Scrollbar][1] components.
+Scrollviewコンポーネントは、ユーザーインターフェース内のスクロール可能な領域を定義します。スクロールビューは、[Scrollbar][1]コンポーネントを介してスクロールすることができます。
 
-See the [User Interface][2] section for more details.
+詳細については、[ユーザーインターフェイス][2]のセクションを参照してください。
 
 ![Scrollview Component][3]
 
 ## コンポーネントプロパティ
 
-| プロパティ                | 説明 |
+| プロパティ名                | 説明 |
 |-------------------------|-------------|
-| Scroll Mode             | Specifies how the scroll view should behave when the user scrolls past the end of the content. Modes are defined as follows: <ul><li>Clamp: Content does not scroll any further than its bounds.</li><li>Bounce: Content scrolls past its bounds and then gently bounces back.</li><li>Infinite: Content can scroll forever.</li></ul> |
-| Bounce                  | Controls how far the content should move before bouncing back. |
-| Friction                | Controls how freely the content should move if thrown, i.e. By flicking on a phone or by flinging the scroll wheel on a mouse. A value of 1 means that content will stop immediately; 0 means that content will continue moving forever (or until the bounds of the content are reached, depending on the scroll mode). |
-| Use Mouse Wheel         | Whether to use mouse wheel for scrolling (horizontally and vertically) when mouse is within bounds. |
-| Mouse Wheel Sensitivity | Mouse wheel horizontal and vertical sensitivity. Only used if *Use Mouse Wheel* is set. Setting a direction to 0 will disable mouse wheel scrolling in that direction. 1 is a default sensitivity that is considered to feel good. The values can be set higher or lower than 1 to tune the sensitivity. Defaults to [1, 1]. |
-| ビューポート                | The entity to be used as the masked viewport area, within which the content will scroll. This entity must have an ElementGroup component. |
-| Content                 | The entity which contains the scrolling content itself. This entity must have an Element component. |
-| Horizontal              | Whether to enable horizontal scrolling. |
-| Scrollbar (horizontal)  | The entity to be used as the horizontal scrollbar. This entity must have a Scrollbar component. |
-| Visibility (horizontal) | Controls whether the horizontal scrollbar should be visible all the time, or only visible when the content exceeds the size of the viewport. |
-| Vertical                | Whether to enable vertical scrolling. |
-| Scrollbar (vertical)    | The entity to be used as the vertical scrollbar. This entity must have a Scrollbar component. |
-| Visibility (vertical)   | Controls whether the vertical scrollbar should be visible all the time, or only visible when the content exceeds the size of the viewport. |
+| Scroll Mode             | ユーザーがコンテンツの末尾をスクロールしたとき、スクロールビューの動作方法を指定します。モードは以下のように定義されます:<ul><li>Clamp: コンテンツはその境界を超えてスクロールしません。</li><li>Bounce: コンテンツは境界を超えてスクロールし、ゆっくりとバウンスします。</li><li>Infinite: コンテンツは無限にスクロールできます。</li></ul> |
+| Bounce                  | バウンスバックする前にコンテンツが移動する距離を制御します。 |
+| Friction                | スローン操作によって自由に動くコンテンツを制御します。 例えば、電話でフリックするか、マウスのスクロールホイールをフリングするかなどです。 1の値は、コンテンツがすぐに停止することを意味し、0の値はコンテンツが永遠に動き続けることを意味します(または、スクロールモードに応じて、コンテンツの境界に達するまで)。 |
+| Use Mouse Wheel         | マウスが境界内にある場合、水平方向と垂直方向のスクロールにマウスホイールを使用するかどうかを指定します。 |
+| Mouse Wheel Sensitivity | マウスホイールの水平方向と垂直方向の感度。 *マウスホイールを使用する*が設定されている場合にのみ使用されます。 方向を0に設定すると、その方向のマウスホイールスクロールが無効になります。 1は、よく感じられるデフォルトの感度です。 値は1より高く、低く設定して感度を調整できます。 デフォルトは[1、1]です。 |
+| Viewport                | コンテンツがスクロールするマスクされた表示エリアとして使用するエンティティ。 このエンティティにはElementGroupコンポーネントが必要です。 |
+| Content                 | スクロールするコンテンツ自体を含むエンティティ。 このエンティティにはElementコンポーネントが必要です。 |
+| Horizontal              | 水平スクロールを有効にするかどうかを指定します。 |
+| Scrollbar (horizontal)  | 水平スクロールバーとして使用するエンティティ。 このエンティティにはScrollbarコンポーネントが必要です。 |
+| Visibility (horizontal) | 水平スクロールバーを常時表示するか、コンテンツが表示エリアのサイズを超えた時にのみ表示するかを制御します。 |
+| Vertical                | 垂直スクロールを有効にするかどうかを指定します。 |
+| Scrollbar (vertical)    | 垂直スクロールバーとして使用するエンティティ。 このエンティティにはScrollbarコンポーネントが必要です。 |
+| Visibility (vertical)   | 垂直スクロールバーを常に表示するか、コンテンツが表示エリアのサイズを超えた時にのみ表示するかを制御します。 |
 
 [1]: /user-manual/packs/components/scrollbar
 [2]: /user-manual/user-interface

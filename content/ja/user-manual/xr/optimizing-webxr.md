@@ -1,50 +1,50 @@
 ---
-title: Optimizing WebXR applications
+title: WebXRアプリの最適化
 layout: usermanual-page.hbs
 position: 5
 ---
 
 ## はじめに
 
-A high and consistent framerate is critical for making an enjoyable XR experience. When creating VR/AR content, it is more important than ever to test and optimize early and maintain the target framerate throughout development.
+高く一貫したフレームレートは、楽しいXR体験をするために不可欠です。VR / ARコンテンツを作成する際には、早期にテストして最適化することが重要であり、開発の間ずっと目標フレームレートを維持することがさらに重要です。
 
-For AR experiences, framerates must be managed carefully as world, image and face tracking effects sometimes incur significant performance costs. This is in addition to the typically performance-constrained mobile hardware most users have access to.
+ARの場合、世界、画像、顔追跡エフェクトによって性能コストがかかるため、フレームレートは注意深く管理する必要があります。これは、ほとんどのユーザーがアクセスできる性能制限のあるモバイルハードウェアに追加されます。
 
-For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering.
+VRの場合、シーンを各ビュー(アイ)ごとに1回レンダリングする必要があるため、レンダリングは特に高価です。 PlayCanvasは、VRレンダリングが完全に重複しないように高度に最適化されていますが、ステレオレンダリングはモノクロームレンダリングよりも高価です。
 
-In addition, devices like the Oculus Rift and HTC Vive demand high frame rates, like 75Hz or 90Hz, further increasing the need for highly efficient rendering. Mobile VR, whilst not requiring high framerates, suffer from the lack of native support for distortion effects, incurring additional overhead on a JavaScript and WebGL layer.
+さらに、Oculus RiftやHTC Viveのようなデバイスは、75Hzまたは90Hzなど、高いフレームレートを要求します。モバイルVRは高いフレームレートを必要としないが、歪みエフェクトのネイティブサポートがないため、JavaScriptとWebGLレイヤーに追加のオーバーヘッドがかかる。
 
-PlayCanvas, however, includes a number of features specifically designed to let your application do more in less time.
+ただし、PlayCanvasには、アプリケーションがより短時間でより多くのことを行うために特別に設計された機能がいくつか含まれています。
 
-### Runtime lightmap generation
+### ランタイムライトマップの生成
 
-Each dynamic light has a per-frame runtime cost. The more lights have you the higher the costs and the slower your scene will render. By baking lights into lightmaps you can hugely reduce the cost of static lights to that of simply rendering a texture. Lightmaps can be generated offline using your favorite 3D modelling tool or you can use PlayCanvas's built in Runtime Lightmap Generation.
+各動的ライトにはフレームあたりの実行時コストがあります。ライトが多いほどコストが高く、シーンをレンダリングする速度が遅くなります。ライトをライトマップにベイクすることで、静的ライトのコストを単にテクスチャをレンダリングするコストに大幅に削減できます。ライトマップは、お気に入りの3Dモデリングツールを使用してオフラインで生成できるか、PlayCanvasの組み込みのランタイムライトマップ生成を使用できます。
 
-[ランタイムのライトマップ生成][1]についてはこちらをご確認ください。
+[ランタイムライトマップの生成について詳しく読む][1]。
 
-### リアルタイムシャドーの使用に関する注意
+### リアルタイムシャドウの注意深い使用
 
-動的ライトと同様の理由から、動的シャドウにもフレームごとのランタイムコストがあります。ポイントライトは影を生成するためにシーンを6回レンダリングする必要があります。動的シャドウを作るライトの数は制限するべきです。
+動的ライトと同様の理由で、動的シャドウにもフレームあたりの実行時コストがあります。特にオムニライトの場合、シーンを6回レンダリングしてシャドウを生成する必要があります。多くの光が動的シャドウを投影しないようにする必要があります。
 
-### フィルレートとオーバードローを監視
+### フィルレートとオーバードローに注意する
 
-フィルレートとは、画面上の各ピクセルに適用されるシェーダオペレーションの数を示します。フラグメントシェーダの計算が高く(ライトや複雑な素材が多いなど)、高解像度(デバイスピクセル比率が高いモバイル端末など)の場合、アプリケーションはフレームレートを高く保つためにシーンのレンダリングに時間をかけすぎてしまいます。
+フィルレートは、画面の各ピクセルに適用されるシェーダー操作の数を示します。高価なフラグメントシェーダーの計算(多数のライトと複雑なマテリアルなど)と高解像度(高いデバイスピクセル比を持つモバイル電話など)がある場合、アプリケーションは高いフレームレートを維持するためにシーンをレンダリングするのにあまりにも多くの時間を費やします。
 
-オーバードローとは、カメラに近い他のジオメトリによって隠されているジオメトリを描画することで上書きされるピクセルの数を示します。オーバードローが多い場合、表示されていないピクセルを描画するためにGPU処理を無駄にしていることがわかります。
+オーバードローとは、カメラに近い他のジオメトリによってオクルージョンされたジオメトリを描画することで上書きされるピクセルの数を示します。オーバードローが多すぎると、見えないピクセルを描画しようとしてGPU処理を無駄にしていることがわかります。
 
-[WebGL Insight][2]のような拡張機能はオーバードローを視覚化するのに役立ちます
+[WebGL Insight][2]のような拡張機能を使用すると、オーバードローを視覚化して確認できます。
 
-### ガベージコレクションストール
+### ガベージコレクションスタールの対策
 
-Webブラウザには、未使用のJavascriptオブジェクトの自動ガベージコレクションがあります。PlayCanvasエンジンはランタイムの割り当てを最小限に抑えるように設計されているのでコード内でも同じように注意するべきです。ベクターやその他のオブジェクトをあらかじめ割り当て、それらを再利用することで、フレーム毎にたくさんのオブジェクトが作成および破棄されることを防ぎます。
+Webブラウザには、使用されていないJavaScriptオブジェクトの自動ガベージコレクション機能があります。PlayCanvasエンジンは、ランタイムの割り当てを最小限に抑えるように設計されており、コードでも同じことを試みる必要があります。事前にベクトルやその他のオブジェクトを割り当てて再利用し、フレームごとに作成されたり破棄されたりするオブジェクトが多くならないようにする必要があります。
 
 ### プロファイリングツール
 
-PlayCanvasにはプロファイラツールが組み込まれています。EditorのLaunch Profilerボタンを使用して、プロファイリングを有効にしてアプリケーションを実行します。[プロファイラの詳細はこちら][3]
+PlayCanvasには組み込みのプロファイラツールがあります。エディタでLaunch Profilerボタンを使用して、プロファイリングが有効な状態でアプリケーションを実行できます。
 
-### 最適化に関する基本的なアドバイス
+### [プロファイラについて詳しく読む][3]
 
-[最適化に関する詳細のガイドライン][4]はこちら。
+一般的な最適化のヒント
 
 [1]: /user-manual/graphics/lighting/runtime-lightmaps/
 [2]: https://github.com/3Dparallax/insight

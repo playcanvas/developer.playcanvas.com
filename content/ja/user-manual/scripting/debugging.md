@@ -24,16 +24,16 @@ Firefoxでは次のようになります：
 
 <div class="alert alert-info"> 実行しているappがデバッガーのブレイクポイントで一時停止された場合、そのappを起動するのに使用される他のブラウザ内ウィンドウ／タブ (PlayCanvas Code EditorまたはEditorなどを含む) も一時停止される可能性があります。 </div>
 
-### Debugging on Mobile Devices
+### モバイルデバイスでのデバッグ
 
-On Android, it is possible to connect to the mobile Chrome browser via the desktop Chrome browser devtools and USB cable. [Google Developer documentation][7] has the detailed steps for the setup.
+Androidでは、デスクトップChromeブラウザのデベロッパーツールとUSBケーブルを介してモバイルChromeブラウザに接続することができます。[Google Developer documentation][7]には、セットアップの詳細な手順が記載されています。
 
-iOS debugging requires access to a Mac and [Apple has outlined the steps][8] needed to enable developer options to start debugging.
+iOSデバッグには、Macへのアクセスが必要であり、[Appleが必要な手順][8]を概説しています。
 
-In the situation where either it's not possible to connect to the web view directly from Chrome or Safari (e.g. a web view in another app) or don't have access to a Mac, the following libraries and services can help and are simple to add to projects:
+ChromeやSafariからWebビューに直接接続することができない状況（別のアプリ内のWebビューなど）や、Macにアクセスできない場合は、以下のライブラリとサービスをプロジェクトに追加することができます。
 
-* [RemoteJS][9] - Allows developers to view the console output remotely in a desktop browser and also execute JS in the console which makes it very powerful. The console output can be delayed or slow though.
-* [vConsole][10] or [Eruda][11] - Adds a widget DOM object to the page that can be expanded to show console output, network requests, the page elements and more.
+* [RemoteJS][9] - 開発者は、デスクトップブラウザでコンソール出力をリモートで表示し、JSをコンソールで実行することができ、非常に強力です。コンソール出力には遅延や遅延がある場合があります。
+* [vConsole][10] または [Eruda][11] - ページに展開してコンソール出力、ネットワーク要求、ページの要素などを表示できるウィジェットDOMオブジェクトを追加します。
 
 [1]: /images/user-manual/scripting/debugging/chrome-debugger.jpg
 [2]: /images/user-manual/scripting/debugging/firefox-debugger.jpg

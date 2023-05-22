@@ -1,5 +1,5 @@
 ---
-title: ユーザインターフェイス - 統計カウンター
+title: UI - カウンター
 layout: tutorial-page.hbs
 tags: ui
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg"
@@ -7,95 +7,95 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 <iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
 
-*ボタンやプログレスバーの使い方と要素とインタラクトする方法。[フルシーン][1]を参照してください。*
+*ボタンとプログレスバーの使い方、そして要素とやり取りする方法について。[フルシーン][1]を参照してください。*
 
-このチュートリアルでは組み込みの[Element][2]を使用して、プラス/マイナスボタンをクリックすることでカウンターを増やす簡単なウィジェットを作成します。
+このチュートリアルでは、統計値をプラス/マイナスのボタンをクリックして増減させるシンプルなウィジェットを、[Elements][2]を使って作成します。
 
-各カウンターには、マイナスボタン、プラスボタン、プログレスバー、現在のカウントを表示するテキストが必要です。
+各統計値にはマイナスボタン、プラスボタン、プログレスバー、および現在の統計値を表示するためのテキストが必要です。
 
 ## 階層
 
-階層内のUIは次のようになります：
+UIの構造は次のようになります。
 
-![階層][4]
+![Hierarchy][4]
 
-## スクリーン設定
+## 画面のセットアップ
 
-まず、新しい2D [Screen][3]を追加します。画面は次のようになります：
+まず、新しい2D [Screen][3]を追加します。これが私たちのScreenの外観です。
 
-![スクリーン][5]
+![Screen][5]
 
-2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
+2D Screenであるため、Screen Spaceにチェックを入れました。参照解像度は、ここでは1080 x 1920を対象としています。解像度の変更に合わせてScreenが順応するように、Scale ModeはBlendに設定し、Scale Blendは1に設定しました。
 
-## 統計の設定
+## 統計データのセットアップ
 
-各カウンター用に異なるGroup Elementを作成します。これにより、グループのサブ要素をグループの端に固定することができ、各カウンターを個別のウィジェットとして扱うことができます。
+各統計値には、異なるGroup Elementが必要です。これにより、Groupのサブ要素をGroupのエッジにアンカーすることができ、各統計値を別々のウィジェットとして扱うことができます。
 
-Boostカウンターを開きます - 他のエンティティも同じ構成です。`stats-boost`エンティティはビューポートで次のように表示されます：
+ここではBoost統計値のみを調べます。他のものはまったく同じです。以下は、 `stats-boost` EntityのViewport上の外観です。
 
-![ブースト][6]
+![Boost][6]
 
-`stats-boost`のインスペクター：
+そして、次がその属性です。
 
-![ブーストの属性][7]
+![Boost Attributes][7]
 
-ご覧のとおり、すべての要素を含む適切なサイズのGroup Elementコンポーネントがあり、画面の下部に固定されています。また、スクリプト `uiStats`が割り当てられているScript Component があります。このスクリプトを使用することで、グループの要素とのインタラクションを処理できます。
+Group Elementコンポーネントが必要で、すべての要素を含めるために適切なサイズがあり、画面の下部にアンカーされていることがわかります。また、Scriptコンポーネントにスクリプト `uiStats` が割り当てられています。このスクリプトにより、グループの要素のやり取りを処理できます。
 
-階層内でグループは次のように表示されます：
+次が、HierarchyにあるGroupの外観です。
 
-![ブーストの階層][8]
+![Boost Hierarchy][8]
 
-グループには次の子要素があります：
+Groupには、次の子要素があります。
 
-* `text-title`: グループのタイトルのテキスト要素。グループの上部に固定されています。
-* `btn-minus`: 子テキスト要素を持つ画像要素。これはマイナスボタンで、グループの左下に固定されています。
-* `btn-plus`: 子テキスト要素を持つ画像要素。これはプラスボタンで、グループの右下に固定されています。
-* `progress-bar`: プログレスバーは、グループの下部に固定されています。これはプログレスバーの背景の画像要素で、2つの子要素を持ちます：
-    * `image-progress`: 実際に進行状況を表示するサイズ変更可能な画像要素。`progress-bar`要素の左に固定されます。
-    * `text`: 統計情報を表示するテキスト要素。`progress-bar`要素の中心に固定されます。
+* `text-title`: グループのタイトル用のText Element - グループの上部にアンカーされています。
+* `btn-minus`: Image Elementで、子にText Elementが含まれています。これが私たちのマイナスボタンで、グループの左下にアンカーされています。
+* `btn-plus`: Image Elementで、子にText Elementが含まれています。これが私たちのプラスボタンで、グループの右下にアンカーされています。
+* `progress-bar`: グループの下部にアンカーされたプログレスバー。背景のImage Elementで、2つの子要素が含まれています:
+    * `image-progress`: 実際に進捗を表示するリサイズ可能なImage Element。 `progress-bar`要素の左にアンカーされています。
+    * `text`: 進捗状況を表示するText Element。`progress-bar`要素の中央にアンカーされています。
 
 ## スクリプト
 
-ホバーの状態に基づいてテクスチャを変更できるように、各ボタンにスクリプトがあります。これは[こちらのチュートリアル][9]にあるスクリプトに似ています。プログレスバーを処理するためのスクリプトも用意されています。プログレスバーに関する詳細は[こちらのチュートリアル][10]をご確認ください。
+各ボタンには、ホバー状態に基づいてテクスチャを変更できるようにするスクリプトがあります。これは、[このチュートリアル][9]で見つかるスクリプトに似ています。また、プログレスバーを処理するスクリプトがあります。プログレスバーに関する詳細は、[このチュートリアル][10]を参照してください。
 
-各統計のインタラクションを処理する主なスクリプトは`uiStats`です：
+各統計値のやり取りを処理するメインスクリプトは`uiStats`です。
 
 ```javascript
 var UiStats = pc.createScript('uiStats');
 
 UiStats.prototype.initialize = function() {
-    // ウィジェットを検索
+    // find our widgets
     this.btnPlus = this.entity.findByName('btn-plus');
     this.btnMinus = this.entity.findByName('btn-minus');
     this.progressBar = this.entity.findByName('progress-bar');
     this.progressText = this.progressBar.findByName('text');
 
-    // 値を0に初期化
+    // initialize value to 0
     this.setValue(0);
 
-    // プラスボタンで値を増やす
+    // increase value with plus button
     this.btnPlus.element.on('click', function (evt) {
         this.setValue(this.value + 1);
     }, this);
 
-    // マイナスボタンで値を減らす
+    // decrease value with minus button
     this.btnMinus.element.on('click', function (evt) {
         this.setValue(this.value - 1);
     }, this);
 };
 
-// カウンターの値を設定
+// Sets the stat value
 UiStats.prototype.setValue = function (value) {
-    // minとmaxの間をクランプ
+    // clamp between min and max
     this.value = pc.math.clamp(value, 0, 10);
-    // 進行を設定
+    // set progress
     this.progressBar.script.progressBar.setProgress(this.value / 10);
-    // 進行テキストを更新
+    // update progress text
     this.progressText.element.text = this.value + ' / ' + 10;
 };
 ```
 
-このスクリプトでは子要素を見つけ、プラスまたはマイナスのボタンをクリックすることでカウントを増減し、プログレスバーとそのテキストを更新します。
+このスクリプトでは、子要素を検索し、プラスまたはマイナスボタンがクリックされたときに統計値を増減させ、プログレスバーとそのテキストを更新するようになります。
 
 [1]: https://playcanvas.com/editor/scene/547905
 [2]: /user-manual/user-interface/elements/

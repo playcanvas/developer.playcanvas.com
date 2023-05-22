@@ -1,24 +1,24 @@
 ---
-title: 組織
+title: Organization
 layout: usermanual-page.hbs
 position: 6
 ---
 
-Organization（組織）を利用すると企業や大きなプロジェクトで多くのユーザを関することができます。複数の管理者を設定することができ、許可の設定はプロジェクト毎に管理できます。
+Organizationは、ビジネスや大規模プロジェクトで多数のユーザーを管理するための方法を提供します。複数の管理者を持ち、プロジェクトごとに権限を管理できます。
 
-無料Organization（組織）には次が含まれます：
+無料のOrganizationには以下が含まれます:
 
-- Unlimited public projects
-- Unlimited public team members
-- Project-based permissions
-- Offline Archive & Restore
-- Ability to remove PlayCanvas branding
-- Access to [REST API][2]
+- 無制限のパブリックプロジェクト
+- 無制限のパブリックチームメンバー
+- プロジェクトベースの権限
+- オフラインアーカイブおよび復元
+- PlayCanvasブランディングの削除機能
+- [REST API][2]へのアクセス
 
-次を含む[Organization（組織）プラン][1]を購入することもできます：
+また、[Organizationプラン][1]を購入することもできます。それには以下が含まれます:
 
-- Unlimited private projects
-- Additional storage space
+- 無制限のプライベートプロジェクト
+- 追加のストレージスペース
 
 [1]: https://playcanvas.com/plans
 [2]: /user-manual/api

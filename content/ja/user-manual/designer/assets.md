@@ -4,17 +4,17 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査が行えます。
+アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査、編集などが行えます。
 
-![アセットパネル][1]
+![Assets Panel][1]
 
-## フォルダ階層
+## フォルダの階層構造
 
-フォルダパネルから、フォルダのツリーにアセットを整理することができます。
+フォルダパネルを使用すると、アセットをフォルダのツリー形式で整理することができます。
 
-新しいフォルダを作成するには、Add Asset (+) ボタンをクリック、Folderを選択します。また、新しいフォルダを作成する場所を右クリックして、New Asset> Folderを選択します。
+新しいフォルダを作成するには、Add Asset (+) ボタンをクリック、 'Folder' を選択します。または、新しいフォルダを作成したいフォルダを右クリックし、 'New Asset' > 'Folder' を選択します。
 
-フォルダの名前を変更するには、階層パネルでそれをダブルクリックして、InspectorのName フィールドを編集します。
+フォルダの名前を変更するには、ヒエラルキーパネルでそれをダブルクリックして、InspectorのName フィールドを編集します。
 
 フォルダを削除するには、階層でそれをダブルクリックしてdeleteを押します。また、削除したいフォルダを右クリックして、コンテキストメニューからDeleteを選択します。
 
@@ -68,43 +68,43 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 * ビューポート内の特定のメッシュインスタンスの上に素材をドラッグすると、素材は(プレビューとして)ドラッグされる素材に切り替えられます。素材の変更を保持するには、素材をドロップします。
 * ビューポートでシーンの背景の上にキューブマップをドラッグすると、キューブマップはシーンのスカイボックスのキューブマップとして割り当てられます。プロパティは[Scene Settings][4]からも設定することができます。
 
-## Copy and Paste between Projects
+## プロジェクト間でのコピーと貼り付け
 
-To copy an asset or a selection of assets between projects, select the asset(s) and right-click to bring up the context menu to select 'Copy'. You can also use the hotkey Ctrl/Cmd + C instead if the context menu is not available due to being a read-only project.
+プロジェクト間でアセットまたは複数のアセットをコピーするには、アセットを選択し、右クリックしてコンテキストメニューを表示し、 'Copy' を選択します。読み取り専用のプロジェクトの場合、コンテキストメニューが使用できない場合は、代わりにホットキーCtrl/Cmd + Cを使用することもできます。
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500">
 
-In the project that you want to copy the asset(s) to, right click in the assets panel and select 'Paste'. Ctrl/Cmd + V hotkey can be used instead.
+アセットをコピーしたいプロジェクトで、アセットパネルを右クリックし、 'Paste' を選択します。Ctrl/Cmd + Vのホットキーを使用することもできます。これにより、アセットがコピー先のプロジェクトに貼り付けられます。
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500">
 
-Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
+アセットのコピーと貼り付けでは、アセットに関連する依存関係もコピーされます。例えば、モデルが2つのマテリアルを参照し、それらのマテリアルが一連のテクスチャを参照している場合、それらの依存関係もコピーされます。
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%">
 
-If you copy and paste just the model asset into a different project, those asset dependencies are copied too.
+別のプロジェクトにModelアセットをコピー＆ペーストする場合、そのアセットの依存関係も一緒にコピーされます。
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%">
 
-By default, it is pasted as a flat hierarchy. If you want keep the folder structure, hold Shift when the context menu is opened and an option will appear called 'Paste (keep folders)'. This will attempt to keep the folder structure using the folder you are pasting into as the root folder.
+デフォルトでは、フラットなヒエラルキーで貼り付けられます。もしフォルダ構造を維持したい場合は、コンテキストメニューが開かれたときにShiftキーを押し続けると、'Paste (keep folders)' というオプションが表示されます。これにより、貼り付け先のフォルダをルートフォルダとしてフォルダ構造を維持しようとします。
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500">
 
-Will result in the following where the folder structure is preserved:
+以下のように、フォルダ構造が保持された結果となります。
 
 <img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%">
 
-We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
+一般的には、再利用可能なライブラリやアセットにこの機能を使用する場合は、他のプロジェクトに簡単にコピー＆ペーストできるよう、ルートレベルのフォルダに収めることをおすすめします。これにより、プロジェクトのフォルダ構造がシンプルで整理された状態を保つことができます。
 
 <div class="alert alert-info">
-Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+注意点として、アセットのコピー＆ペーストは、同じ名前の既存のアセットを上書きせず、新しいアセットを作成します。
 </div>
 
 ## 参照の確認
 
-特定のシーン内でアセットが使用されている(または参照されている)場所を知ることが有用な場合もあります。Editorがアセットの参照を検出できない場合、サムネイルに小さい点が表示されます：
+特定のシーン内でアセットが使用されている(または参照されている)場所を知ることが有用な場合もあります。エディターがアセットの参照を検出できない場合、サムネイルに小さい点が表示されます。
 
-![参照されていないアセット][5]
+![Unreferenced Asset][5]
 
 <div class="alert alert-info">
 Editorはコードで作成されたアセットの参照を検出できません。アセットを削除する際は注意が必要です。
@@ -112,9 +112,9 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 
 アセットに参照がある場合は、Referencesコンテンツメニュー項目を使用して参照することができます。
 
-![アセットの参照][6]
+![Asset References][6]
 
-参照を選択するとInspectorパネルに読み込まれます。
+参照を選択するとインスペクターパネルに読み込まれます。
 
 [1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/designer/inspector

@@ -1,19 +1,21 @@
 ---
-title: モデル
+title: 3Dモデル
 layout: usermanual-page.hbs
 position: 11
 ---
 
-3Dのモデルやアニメーションは、[Blender][2], 3D Studio Max, Mayaなどの [3D モデリングアプリケーション][1] のシーンファイルをアップロードすることにより、PlayCanvasにインポートされます。
+3Dモデルとアニメーションは、[Blender][2]、3D Studio Max、Mayaなどの[3Dモデリングアプリケーション][1]からシーンファイルをアップロードすることで、PlayCanvasにインポートされます。
 
-PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応しています。最も良い結果を得るには、FBX 形式をお勧めします。
+PlayCanvasは多様な形式をサポートしており、GLB、FBX、COLLADA、objなどが含まれます。最高の結果を得るためには、GLB形式を使用することをお勧めします。
 
-これらの如何なるファイルをアップロードすると、sceneタイプの [Source Asset][3] が作成され、modelタイプの [Target Asset][4] が作成されます。modelターゲットをゲームで使用します。
+これらのファイルの中から1つをアップロードすると、タイプが「モデル」の[ソースアセット][3]が作成され、モデルの階層を持つ「[テンプレート]」[7]と「Render」アセットを含む複数の[ターゲットアセット][4]が生成されます。ゲーム内に「Template」のインスタンスを追加することができます。
 
-次についてもっと知る：
+詳しくは以下をご覧ください:
 
-* [モデルの構築][5]
-* [モデルのエキスポート][6]
+* [PlayCanvas用の3Dモデル作成][5]
+* [PlayCanvas用の3Dモデルのエクスポート][6]
+* [ヒエラルキーを含むモデルのインポート][8]
+* [テンプレートの使用][9]
 
 [1]: /user-manual/assets/models/building
 [2]: https://www.blender.org/
@@ -21,3 +23,6 @@ PlayCanvasはFBX, COLLADA, objsupportsを含む、幅広い形式に対応して
 [4]: /user-manual/glossary#target-asset
 [5]: /user-manual/assets/models/building
 [6]: /user-manual/assets/models/exporting
+[7]: /user-manual/assets/templates/
+[8]: /user-manual/assets/import-pipeline/import-hierarchy/
+[9]: /user-manual/templates/

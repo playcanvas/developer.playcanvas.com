@@ -1,46 +1,46 @@
 ---
-title: Preview Pane
+title: プレビューパネル
 layout: shader-editor-page.hbs
 position: 6
 ---
 
-The Preview Pane displays the currently selected graph or material and supports various lighting environments and shapes.
+プレビューパネルでは、現在選択されているグラフやマテリアルを表示するパネルであり、さまざまな照明環境や形状をサポートしています。
 
-![Preview Pane][1]
+![プレビューパネル][1]
 
-| How To |  |
+| 使い方 |  |
 |---|---|
-| Rotate the view | Left click and drag. |
-| Zoom the view | Use the mouse scroll wheel. |
-| Pan the view | Right click and drag. |
-| Preview custom model | Drag and drop a glTF/glb model on the preview pane. |
-| Preview custom environment | Drag and drop an equirectangle HDR image on the preview pane. |
+| 視点を回転 | 左クリックしてドラッグします。 |
+| 視点をズーム | マウスのスクロールホイールを使用します。 |
+| 視点を移動 | 右クリックしてドラッグします。 |
+| カスタムモデルのプレビュー | glTF/glbモデルをプレビューパネルにドラッグアンドドロップします。 |
+| カスタム環境のプレビュー | equirectangular HDRイメージをプレビューパネルにドラッグアンドドロップします。 |
 
 ### ツールバー
 
-The toolbar offers control over the lighting environment and preview shape. The toolbar is shown below with the controls numbered and brief description of each.
+ツールバーでは、照明環境やプレビューの形状を制御する機能が提供されています。ツールバーは以下に示すように、各コントロールの番号が記載された状態で表示され、それぞれの簡単な説明が付いています。
 
-![Preview Pane Toolbar][2]
+![プレビューパネルのツールバー][2]
 
-| Controls | |
+| コントロール | |
 |---|---|
-| 1 | Play toggle. When enabled, the preview window updates continuously and steps engine time forward. Enable this when previewing animated effects.
-| 2 | Direct lighting toggle. |
-| 3 | Environment lighting toggle. |
-| 4 | Show environment background toggle. |
-| 5 | Fullscreen toggle. |
+| 1 | 再生の切り替え、有効にすると、プレビューウィンドウが連続して更新され、エンジンの時間が進みます。アニメーション効果のプレビュー時にこれを有効にしてください。
+| 2 | 直接照明の切り替え |
+| 3 | 環境照明の切り替え |
+| 4 | 背景表示の切り替え |
+| 5 | フルスクリーンの切り替え |
 
-### Custom environment lighting
+### カスタム環境照明
 
-The Preview Pane comes with a set of lighting environments, however custom environments are also supported.
+プレビューパネルには、いくつかの照明環境が付属していますが、カスタム環境もサポートされています。
 
-To use a custom lighting environment, drag and drop an HDR image file, in equirectangular format, onto the Preview Pane. The environment will be shown as an option in the toolbar environment selector.
+カスタム照明環境を使用するには、equirectangularフォーマットのHDR画像ファイルをプレビューパネルにドラッグアンドドロップします。環境は、ツールバー環境選択器のオプションとして表示されます。
 
-### Custom shapes
+### カスタム形状
 
-The Preview Pane comes with a set of simple shapes on which to preview materials, however custom shapes are also supported.
+プレビューパネルには、マテリアルのプレビューに使用できるシンプルな形状がいくつか付属していますが、カスタム形状もサポートされています。
 
-To use a custom shape, drag and drop a glTF or glb model file onto the Preview Pane. The custom model will be an option in the toolbar shape selector.
+カスタム形状を使用するには、glTFまたはglbモデルファイルをプレビューパネルにドラッグアンドドロップします。カスタムモデルは、ツールバー形状セレクターのオプションとなります。
 
 [1]: /images/shader-editor/preview-pane.png
 [2]: /images/shader-editor/preview-pane-toolbar.png

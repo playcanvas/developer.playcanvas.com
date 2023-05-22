@@ -1,15 +1,15 @@
 ---
-title: Node Inspector
+title: ノードインスペクター
 layout: shader-editor-page.hbs
 position: 2
 ---
 
 <img loading="lazy" src="/images/shader-editor/inspector-pane-node.png" style="float: right; padding: 20px; padding-top: 0px;">
 
-The Node Inspector is where a node's settings are configured.
+ノードインスペクターは、ノードの設定が構成される場所です。
 
-To access a node's details, select it in the [Graph Editor][6].
+ノードの詳細にアクセスするには、[グラフエディターー][6]で選択してください。
 
-The available controls depend on the type of node selected.
+利用可能なコントロールは、選択されたノードのタイプによって異なります。
 
 [6]: /shader-editor/window-layout/graph-editor

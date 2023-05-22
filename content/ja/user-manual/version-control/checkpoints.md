@@ -1,55 +1,55 @@
 ---
-title: Checkpoints
+title: チェックポイント
 layout: usermanual-page.hbs
 position: 1
 ---
 
-チェックポイントとは、プロジェクトのある時点での状態を切り取ったスナップショットのことです。プロジェクトに必要な全てのデータを含むため、将来のどの時点でもこの状態を復元できます。他のバージョン管理システムでいうところの *コミット* に似ています。チェックポイントは一意のID番号と、作成時に入力した説明で識別されます。
+チェックポイントは、プロジェクトをある時点でのスナップショットです。プロジェクトの完全なデータを含んでおり、将来の任意の時点でこの状態を復元できます。チェックポイントは、他のバージョン管理システムのコミットに似ています。チェックポイントには、ユニークなID番号とチェックポイントを作成する際に入力する説明が含まれます。
 
 ![Checkpoint][1]
 
-チェックポイントはプロジェクトの状態の永久記録で、ブランチやマージの変更に使用されるグラフの一部となります。そのため、一度作成したチェックポイントを削除することはできません。つまり、一度チェックポイントの一部として変更をコミットすると、プロジェクト履歴に永遠に保管されることになります。
+チェックポイントは、プロジェクトの状態の永久的な記録であり、ブランチや変更のマージに使用されるグラフの一部を形成します。したがって、一度作成されたチェックポイントは削除できません。これは、一度チェックポイントとして変更をコミットした場合、プロジェクト履歴に永久に保存されることを意味します。
 
-## チェックポイントを作成する
+## チェックポイントの作成
 
-バージョンコントロールパネルから作成します。
+チェックポイントは、 バージョン管理パネルから作成されます。
 
 ![VC Panel][2]
 
-New Checkpointを押すと、チェックポイントを作成する入力フォームが開きます。キーボードショートカットでCtrl+S （OS XではCmd+S ）を押して開くこともできます。
+New Checkpointボタンをクリックすると、チェックポイントを作成するための入力フォームが開きます。また、キーボードショートカット Ctrl + S (OS Xの場合、Cmd + S) を使用することもできます。
 
 ![Create Checkpoint][3]
 
-## チェックポイントを復元する
+## チェックポイントの復元
 
 ![Restore Checkpoint][4]
 
-前のチェックポイントからプロジェクトの状態を復元は、バージョンコントロールパネルで行います。パネルを開き、復元するチェックポイントを見つけ、チェックポイントのドロップダウンメニューから「Restore checkpoint」を選択します。エディタがそのチェックポイント時点でのプロジェクトをリロードします。
+プロジェクトを以前のチェックポイントの状態に復元したい場合は、バージョン管理パネルから行うことができます。パネルを開き、復元したいチェックポイントを見つけ、チェックポイントのドロップダウンメニューから「チェックポイントを復元」を選択します。エディターは、チェックポイントでプロジェクトを再読み込みします。
 
-**チェックポイントを復元するとチェックポイントからの変更を現在のブランチにもたらすことになります。ただし、PlayCanvasは明示的にブランチを作成していない限り、ブランチを切ることを許可していません。チェックポイントを復元して新しく作成する場合は、新しく作成されたものはブランチ内の最新チェックポイントの子となる点に留意してください。**
+**注意:チェックポイントを復元すると、チェックポイントからの変更が現在のブランチに適用されますが、PlayCanvasではブランチを明示的に作成しない限り、ブランチを許可しません。したがって、チェックポイントを復元してから新しいチェックポイントを作成した場合、それはブランチ内の最新のチェックポイントの子となります。**
 
 ![Restore checkpoint applied][5]
 
-## Hard reset to a checkpoint
+## チェックポイントまでのハードリセット
 
-Hard reset allows you to delete all checkpoints after a selected checkpoint. This is useful if you need to 'undo' a merge (perhaps a branch was accidentally merged or the merge needs to be done differently).
+ハードリセットを使用すると、選択したチェックポイント以降のすべてのチェックポイントを削除できます。これは、マージを「元に戻す」必要がある場合に便利です(おそらくブランチが間違ってマージされたか、マージを別の方法で行う必要がある場合など)。
 
-Hard reset can only delete the checkpoints if the following conditions are met:
+ハードリセットは、次の条件が満たされている場合にのみチェックポイントを削除できます。
 
-- No branches have been created from the checkpoints being deleted
-- The checkpoints being deleted have not been created by a merge of branches
+- 削除されるチェックポイントからブランチが作成されていない
+- 削除されるチェックポイントがブランチのマージによって作成されていない
 
-**Note, deleted checkpoints cannot be recovered.**
+**注意:削除されたチェックポイントは復元できません。**
 
-To hard reset, open the panel, find the checkpoint that you'd like to reset to and choose "Hard reset" from the checkpoint's drop down menu.
+ハードリセットを行うには、パネルを開き、リセットしたいチェックポイントを見つけ、チェックポイントのドロップダウンメニューから「ハードリセット」を選択します。
 
 ![][hard-reset]
 
-Type 'hard reset' in the text box to confirm that you wish to delete all checkpoints after the selected checkpoint.
+テキストボックスに 'hard reset' と入力して、選択したチェックポイント以降のすべてのチェックポイントを削除することを確認します。
 
 ![][hard-reset-confirm]
 
-The editor will reload the project at the checkpoint.
+エディターは、チェックポイントでプロジェクトを再読み込みします。
 
 [1]: /images/user-manual/version-control/checkpoint.jpg
 [2]: /images/user-manual/version-control/vc-panel.jpg

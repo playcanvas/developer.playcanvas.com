@@ -46,7 +46,7 @@ PlayCanvasでは、シーン内でライトマップを使用する２つの方�
 
 ### **シンプルなジオメトリ**
 
-ジオメトリの面積は小さい方が良いです。三角形の面積を最小限に抑え、見えない三角形を削除してください。面積が大きくなると、ライトマップの詳細を減らし、より大きなテクスチャを必要とし、時には複数のアセットを必要とします。
+A smaller area of geometry is better. Try to minimize the area of triangles and eliminate non-visible triangles. A larger area will reduce lightmap detail, require larger textures and sometimes multiple assets.
 
 ![ライトマッピングのヒント：シンプルなジオメトリ][4]
 

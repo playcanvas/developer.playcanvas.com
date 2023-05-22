@@ -1,5 +1,5 @@
 ---
-title: ファーストパーソンの動作
+title: ファーストパーソン・ムーブメント
 layout: tutorial-page.hbs
 tags: input, camera
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg"
@@ -7,23 +7,23 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 <iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
 
-ここでは一人称視点でキャラクターを移動させるアプリケーションを紹介します。
+このアプリケーションは、ファーストパーソンでのキャラクター移動を実装しています。
 
-The scene setup for this controller is important as your character must have a rigidbody and collision component in addition to the script attached. In addition, the script supports adding a camera entity as a child of the Player and manually set in the inspector. If no camera entity is present a new entity is created.
+このコントローラのシーン設定は重要です。キャラクターは、スクリプトがアタッチされた上にRigidBodyとCollisionコンポーネントを持つ必要があります。また、このスクリプトは、カメラエンティティをプレイヤーの子としてインスペクタに手動で設定することもできます。カメラエンティティが存在しない場合、新しいエンティティが作成されます。
 
-See the full scene setup in the [Tutorial Project][1].
+[Tutorial Project][1]で全シーン設定を確認してください。
 
-下のスクリプトは次のような機能があります:
+以下のスクリプトは、以下の機能を実行します。
 
-* マウスとキーボードの入力を読み取る
-* カメラエンティティをマウス入力に基づいて動かす
-* プレイヤーエンティティがシーン内を動き回れるよう、物理的な力を加える
+* マウスとキーボードの入力を受け取る
+* マウスの入力からカメラエンティティを更新する
+* 重力を適用してプレイヤーエンティティをシーン内で移動する
 
-Note, the player's velocity is never set directly but it is moved by applying forces via the rigidbody's API function [`applyForce`][3].
+注意:プレーヤーの速度は直接設定されず、[`applyForce`][3]を使用して力を加えることで移動されます。
 
-On the rigidbody component, we also have the following values set in the Editor Inspector:
-* To limit the maximum velocity, we have linear damping applied that stops the player from sliding after the player has released input keys.
-* To stop the player from rolling over, we also reduced the angular Factor to 0 on all axes.
+rigidbodyコンポーネントでは、以下の値がエディタインスペクタに設定されています。
+* 最大速度を制限するには、プレイヤーが入力キーを離した後にプレイヤーがスライドしないように線形減衰を適用します。
+* プレイヤーが転がってしまうのを防ぐため、すべての軸の角度要素を0に減らしました。
 
 ![Rigidbody Attributes][2]
 

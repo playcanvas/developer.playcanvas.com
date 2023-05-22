@@ -1,5 +1,5 @@
 ---
-title: イメージベースの照明
+title: イメージベースドライティング (IBL)
 layout: usermanual-page.hbs
 position: 2
 ---

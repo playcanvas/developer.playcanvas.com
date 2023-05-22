@@ -1,24 +1,24 @@
 ---
-title: Anim Layer Masks
+title: アニメーションレイヤーマスク
 layout: usermanual-page.hbs
 position: 4
 ---
 
-When creating complex animation behavior for your game objects, it is often necessary to isolate the playback of certain animations to specific bones in each object's model. This is particularly useful when animating characters that need to carry out multiple actions at the same time. This can be achieved in PlayCanvas by creating an a mask for a given [animation layer](/en/user-manual/animation/anim-state-graph-assets/#layers/) in your anim component.
+ゲームオブジェクトの複雑なアニメーション動作を作成する場合、各オブジェクトのモデルの特定のボーンで特定のアニメーションの再生を分離する必要があることがよくあります。特に、同時に複数のアクションを実行する必要があるキャラクターをアニメーション化する場合に役立ちます。PlayCanvasでは、Animコンポーネント内の[アニメーションレイヤー](/en/user-manual/animation/anim-state-graph-assets/#layers/)に対してマスクを作成することでこれが実現できます。
 
-### Creating a mask
+### マスクの作成
 
-After creating an Anim State Graph asset and attaching it to an anim component, you'll be presented with a list of layers contained in your graph. You can create a mask for any of these layers by clicking the **Create Mask** button under each layer panel:
+animstategraphを作成し、Animコンポーネントにアタッチした後、グラフに含まれるレイヤーのリストが表示されます。各レイヤーパネルの下にある**Create Mask**ボタンをクリックして、それぞれのレイヤーにマスクを作成できます。
 
 ![Anim Component Create Mask][1]
 
- This will open up the mask inspector for that layer which is shown below:
+これにより、下記に示すレイヤーのマスクインスペクターが開きます。
 
 ![Mask Inspector][2]
 
-The mask inspector displays the full hierarchy which the anim component is driving, starting at the `root bone` specified in the anim component. Each bone in the hierarchy can be selected to be included in the mask. You can also right-click specific bones to include or exclude whole sections of the hierarchy. Any bones which are not selected in this mask will not be driven by any of the animations which play in this mask's layer.
+マスクインスペクターには、Animコンポーネントで指定された`root bone`から始まる、Animコンポーネントが駆動している全階層が表示されます。階層内の各ボーンはマスクに含めるために選択できます。また、特定のボーンを右クリックして、階層全体を含めるか除外することもできます。このマスクで選択されていないボーンは、このマスクのレイヤーで再生されるアニメーションによって駆動されません。
 
-After creating masks, you can use [layer blending](/en/user-manual/animation/anim-state-graph-assets/#layer-blending) to smoothly blend the masked animations of multiple layers together.
+マスクを作成した後、[レイヤーブレンディング](/en/user-manual/animation/anim-state-graph-assets/#layer-blending)を使用して、マスクされたアニメーションを複数のレイヤーでスムーズにブレンドできます。
 
 [1]: /images/user-manual/anim/anim_component_create_mask.png
 [2]: /images/user-manual/anim/anim_mask_inspector.png

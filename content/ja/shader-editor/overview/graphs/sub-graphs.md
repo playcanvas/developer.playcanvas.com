@@ -1,32 +1,32 @@
 ---
-title: Sub Graphs
+title: サブグラフ
 layout: shader-editor-page.hbs
 position: 2
 ---
 
-The second type of graph in Shader Editor are Sub Graphs.
+Shader Editorのグラフの2つ目のタイプは、サブグラフです。
 
-Sub Graphs don't directly define a material, but instead encapsulate some useful functionality which can then be used elsewhere.
+サブグラフは直接マテリアルを定義するのではなく、他の場所で使用できる便利な機能をカプセル化します。
 
-Sub Graphs don't contain Material Nodes, but instead pass data in and out using Input and Output Nodes. Sub Graphs can be used either in other Sub Graphs or directly in Material Graphs.
+サブグラフにはマテリアルノードは含まれず、代わりに入力ノードと出力ノードを使用してデータを入出力します。サブグラフは、他のサブグラフで使用することも、直接マテリアルグラフで使用することもできます。
 
-Note that it is not valid (or possible) to connect Sub Graphs together in way that would introduce cyclic references. For example if graph A references graph B which in turn references graph C, then graph C can not reference back to A or B.
+サブグラフを循環参照となる方法で接続することは有効ではなく（または可能ではありません）。例えば、グラフAがグラフBを参照し、グラフBがグラフCを参照している場合、グラフCはAまたはBに戻って参照することはできません。
 
 #### 例
 
-For example, this is a simple Sub Graph which adds two floats together:
+たとえば、これは 2つのfloatを加算する簡単なサブグラフです。
 
-![Sub Graph Example][1]
+![サブグラフの例][1]
 
-If this Sub Graph were named "adder" it would appear in the Assets Pane as follows:
+このサブグラフが「adder」という名前だった場合、資産パネルに次のように表示されます。
 
-![Sub Graph Icon][2]
+![サブグラフアイコン][2]
 
-The adder Sub Graph can then be placed as a node itself in another graph:
+その後、adderサブグラフは他のグラフでノード自体として配置することができます。
 
-![Place Sub Graph][3]
+![サブグラフの配置][3]
 
-For more information on how to edit graphs see the [Graph Editor][1] documentation.
+グラフの編集方法については、[グラフエディター][1]のドキュメントを参照してください。
 
 [1]: /images/shader-editor/overview-graph-sub-graph.png
 [2]: /images/shader-editor/overview-graph-sub-graph-icon.png

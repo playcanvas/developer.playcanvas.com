@@ -1,39 +1,39 @@
 ---
-title: PlayCanvas ディベロッパリソース
+title: PlayCanvas開発者リソース
 layout: intro.hbs
 ---
 
-# 始めてみよう
+# はじめに
 
-The [User Manual][1] is our complete guide to PlayCanvas. It will help you to use the many features of the platform including the [Editor][2], [Scripting system][3] and [Version Control][4].
+[ユーザーマニュアル][1]は、PlayCanvasの完全なガイドです。[エディター][2]、[スクリプティング][3]、[バージョン管理][4]などのプラットフォームの多くの機能を使用する方法を説明します。
 
-We have a [growing section][5] of more tutorials and code samples to learn and use.
+さらに学んで使用するためのチュートリアルやコードサンプルを[続々追加][5]しています。
 
-|   | Tutorial Section   |
+|   | チュートリアル・セクション   |
 |---|---|
-| ![Keepy Up Tutorial Thumbnail](/images/user-manual/frontpage/keepy_up_tutorial_thumb.png) | Start making your first game with our [Keepy Up](/tutorials/keepyup-part-one/) tutorial series. It covers all the major features including [Scene Setup](/tutorials/keepyup-part-one/), [processing user Input](/tutorials/keepyup-part-four/) and [creating the User Interface](/tutorials/keepyup-part-six/). |
-| ![Physics Tutorial Thumbnail](/images/user-manual/frontpage/physics_tutorial_thumb.png) | Experiment with physics with [Collisions, Triggers](/tutorials/collision-and-triggers/) and [Forces](/tutorials/Using-forces-on-rigid-bodies/).|
-| ![Input Tutorial Thumbnail](/images/user-manual/frontpage/input_tutorial_thumb.png) | Detect input from [Keyboard](/tutorials/keyboard-input/), [Mouse](/tutorials/mouse-input/) and [Touch screens](/tutorials/basic-touch-input/). |
-| ![User Interface Tutorial Thumbnail](/images/user-manual/frontpage/ui_tutorial_thumb.png) | Create wonderful menus and HUDs with the [User Interface](/tutorials/ui-elements-buttons/) system. |
-| ![Audio Tutorial Thumbnail](/images/user-manual/frontpage/audio_tutorial_thumb.png) | Immerse the user with [Positional Audio](/tutorials/basic-audio/) |
+| ![Keepy Up Tutorial Thumbnail](/images/user-manual/frontpage/keepy_up_tutorial_thumb.png) | [Keepy Up](/tutorials/keepyup-part-one/) チュートリアル・シリーズであなたの最初のゲームを制作し始めましょう。[シーン設定](/tutorials/keepyup-part-one/)、[ユーザー入力の処理](/tutorials/keepyup-part-four/)、[ユーザーインターフェースの作成](/tutorials/keepyup-part-six/)など、主要な機能をすべてカバーしています。 |
+| ![Physics Tutorial Thumbnail](/images/user-manual/frontpage/physics_tutorial_thumb.png) | [衝突、トリガー](/tutorials/collision-and-triggers/)や [力学](/tutorials/Using-forces-on-rigid-bodies/)関連の物理と実験してみましょう。|
+| ![Input Tutorial Thumbnail](/images/user-manual/frontpage/input_tutorial_thumb.png) | [キーボード](/tutorials/keyboard-input/)、[マウス](/tutorials/mouse-input/)、[タッチスクリーン](/tutorials/basic-touch-input/)からの入力を検出しましょう。 |
+| ![User Interface Tutorial Thumbnail](/images/user-manual/frontpage/ui_tutorial_thumb.png) | [ユーザーインターフェース](/tutorials/ui-elements-buttons/) システムで見事なメニューやHUDを作成しましょう。 |
+| ![Audio Tutorial Thumbnail](/images/user-manual/frontpage/audio_tutorial_thumb.png) | [位置オーディオ](/tutorials/basic-audio/)を使って、ユーザーに没入感を与えましょう。 |
 
-For the complete PlayCanvas Engine reference, refer to our [API Reference][6] section. 
+PlayCanvasエンジンの完全なリファレンスについては、[APIリファレンス][6]セクションを参照してください。
 
-Want to see how whole projects have been designed and built? The [Explore Section][7] lists our community's public projects which you can learn from.
-
----
-
-# 困ったときは？
-
-Our [PlayCanvas Forum][8] is the best place to ask for help, talk about your game, show off your latest project, seek out new team members or offer your assistance to others.
-
-We have an active community of users and the PlayCanvas team is always on hand to help.
+プロジェクト全体がどのように設計・構築されているかを知りたいですか?[Exploreセクション][7]では、コミュニティの公開プロジェクトを一覧表示しており、それらから学ぶことができます。
 
 ---
 
-# Feature Requests and Reporting Bugs
+# 助けを求める
 
-Want a new feature or seeing something that isn't behaving as it should? Add it to our [Editor][9] or [Engine][10] issue trackers and we will get to it as soon as we can.
+[PlayCanvasフォーラム][8]は、助けを求めたり、ゲームについて話したり、最新のプロジェクトを自慢したり、新しいチームメンバーを探したり、他の人にサポートを提供したりするのに最適な場所です。
+
+アクティブなユーザーコミュニティがあり、PlayCanvasチームも手助けを常に提供しています。
+
+---
+
+# 機能リクエストやバグ報告
+
+新しい機能がほしい、または何かが期待通りに動作していないと感じる場合は、[エディター][9]や[エンジン][10]のIssueトラッカーに追加してください。できるだけ早く対応いたします。
 
 [1]: /user-manual
 [2]: /user-manual/designer/

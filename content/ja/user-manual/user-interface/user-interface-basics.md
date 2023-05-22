@@ -26,7 +26,8 @@ UI要素の入力を処理する別の方法があります。`pc.ElementInput`�
 
 ## ローカライゼーション
 
-PlayCanvas has a built-in localization system which supports localized Text Elements. Read more [here][6].
+PlayCanvasには、ローカライズされたText Elementsをサポートする組み込みのローカライズシステムがあります。[こちら][6]をご覧ください。
+
 
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements

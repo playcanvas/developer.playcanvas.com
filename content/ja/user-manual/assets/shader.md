@@ -1,12 +1,12 @@
 ---
-title: シェーダー
+title: Shader
 layout: usermanual-page.hbs
 position: 12
 ---
 
-シェーダーアセットにはGLSLコードが含まれます。エディタのアセットパネルのNew Shaderをクリックするか、 ```.vert```, ```.frag```, ```.glsl```拡張子でファイルをアップロードすることで、新しいシェーダーアセットを作成することができます。
+ShaderアセットにはGLSLコードが含まれています。エディターのアセットパネルで [New Shader] をクリックするか、拡張子が ```.vert```、 ```.frag```、または ```.glsl``` のファイルをアップロードすることで、新しいShaderアセットを作成できます。
 
-シェーダーアセットを編集するには、エディタでそれを右クリックしEditを選択します。シェーダーアセットを使用してカスタム素材を作成する例です。
+Shaderアセットを編集するには、エディターでShaderアセットを右クリックし、Editを選択します。Shaderアセットを使用してカスタムマテリアルを作成する方法の例を以下に示します。
 
 ```javascript
 var vertexShader = this.app.assets.find('my_vertex_shader');

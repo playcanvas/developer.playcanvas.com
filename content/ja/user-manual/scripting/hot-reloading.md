@@ -1,24 +1,24 @@
 ---
-title: Hot リロード
+title: ホットリローディング
 layout: usermanual-page.hbs
 position: 8
 ---
 
-複雑なプロジェクトで反復する場合、スクリプトに変更を加えるたびにページのリフレッシュを行うのが手間になることがあります。特に、テストしているコードに到達するのに時間が掛かる場合は不便です。このような場合、コードスワップが有用です。
+複雑なプロジェクトで反復的な作業を行う場合、スクリプトを変更するたびにページ全体をリフレッシュする必要があると手間取ることもあります。特に、コードをテストするまでに時間がかかる場合は不便です。そこで、コードのホットスワップを利用することができます。
 
 ## ホットスワップの使い方
 
-ホットスワップはスクリプト毎ベースで有効になっていて、スクリプトで`swap()`メソッドを実施して有効にします。
+ホットスワップはスクリプトごとに有効になっており、使用するには `swap()` メソッドを実装する必要があります。
 
 ```javascript
 MyScript.prototype.swap = function(old) {
-   // recover state here
+// 状態の復元処理をここに書く
 };
 ```
 
-When a script with a `swap` function is changed in the code editor, any launched applications will reload the script and add it to script registry. Then it creates brand new script instances to swap with the old ones, calling the `swap` method during that process per each instance. The `initialize` method of the script is *not* called again. Instead, the old script instance is passed into the `swap` method and it is up to the developer to ensure that the state of the old script is copied into the new one. Declared script attributes are automatically copied over into the new script instance. It is also important to remove any event listeners from the old instance and re-attach them to the new one.
+`swap` 関数があるスクリプトがコードエディタで変更されると、起動しているすべてのアプリケーションはスクリプトをリロードし、スクリプトをスクリプトレジストリに追加します。その後、古いスクリプトと交換するために新しいスクリプトインスタンスを作成し、そのプロセスの間に各インスタンスで `swap` メソッドを呼び出します。スクリプトの `initialize` メソッドは*再度呼び出されません*。代わりに、古いスクリプトインスタンスが `swap` メソッドに渡され、開発者が古いスクリプトの状態を新しいスクリプトにコピーすることを確認する必要があります。宣言されたスクリプト属性は自動的に新しいスクリプトインスタンスにコピーされます。また、古いインスタンスからすべてのイベントリスナーを削除し、新しいインスタンスに再度設定することが重要です。
 
-例：
+以下に例を示します。
 
 ```javascript
 var Rotator = pc.createScript('rotator');
@@ -26,34 +26,34 @@ var Rotator = pc.createScript('rotator');
 Rotator.attributes.add('xSpeed', { type: 'number', default: 10 });
 
 Rotator.prototype.initialize = function () {
-    // listen for enable event and call method
-    this.on('enable', this._onEnable);
+// 有効化イベントをリッスンしてメソッドを呼び出す
+this.on('enable', this._onEnable);
 
-    this.ySpeed = 0;
+this.ySpeed = 0;
 };
 
 Rotator.prototype.swap = function (old) {
-    // xSpeed is an attribute and so is automatically copied
+// xSpeed は属性であり、自動的にコピーされます
 
-    // copy the ySpeed property from the old script instance to the new one
-    this.ySpeed = old.ySpeed;
+// 古いスクリプトインスタンスから ySpeed プロパティを新しいスクリプトインスタンスにコピーする
+this.ySpeed = old.ySpeed;
 
-    // remove the old event listener
-    old.off('enable', old._onEnable);
-    // add a new event listener
-    this.on('enable', this._onEnable);
+// 古いリスナーを削除する
+old.off('enable', old._onEnable);
+// 新しいリスナーを追加する
+this.on('enable', this._onEnable);
 };
 
 Rotator.prototype._onEnable = function () {
-    // when enabled randomize the speed
-    this.ySpeed = pc.math.random(0, 10);
+// 有効にされたとき、スピードをランダム化する
+this.ySpeed = pc.math.random(0, 10);
 }
 
 Rotator.prototype.update = function (dt) {
-    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
+this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
 };
 ```
 
-`update`メソッド内のロジックを変更してコードを保存します。起動したアプリケーションは、自動的にスクリプトインスタンス`rotator`を新しいものとスワップして、アプリケーションは新しいロジックを使って動作し続けます。
+`update` メソッド内のロジックを変更してコードを保存してみてください。起動中のアプリケーションは、新しい `rotator` スクリプトインスタンスと交換して、新しいロジックで作動し続けます。
 
-`swap` メソッドは、スクリプト インスタンスの実行状態に関わらず呼び出されます。したがって、エラーのために無効になった場合でも、`swap` メソッド内で再度有効にすることができます。
+`swap` メソッドはスクリプトインスタンスの実行状態にかかわらず、呼び出されるため、エラーによって無効になった場合でも、`swap` メソッドで再度有効にできます。
