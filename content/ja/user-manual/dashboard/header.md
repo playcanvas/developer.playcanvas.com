@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-![ダッシュボード][1]
+![Dashboard][1]
 
 ダッシュボードのヘッダにはプロジェクトの一般的な動作を速やかに行うための様々なボタンが配置されています。
 
-EDITORボタンをクリックすると、PlayCanvasエディタが開きます。
+EDITORボタンをクリックすると、PlayCanvasエディターが開きます。
 
 PLAYボタンを押すと、そのプロジェクトのプライマリビルドをプレイできます。
 

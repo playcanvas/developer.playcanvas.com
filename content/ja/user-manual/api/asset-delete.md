@@ -34,7 +34,7 @@ Authorization: Bearer {accessToken}
 <div class="parameter"><span class="param">branchId:string</span><p>アセットを削除するブランチのID</p></div>
 </div>
 
-## 応答スキーマ
+## レスポンススキーマ
 
 ```none
 Status: 200
@@ -43,10 +43,10 @@ Status: 200
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>認証に失敗しました</p></div>
-<div class="parameter"><span class="param">403</span><p>権限がありません</p></div>
-<div class="parameter"><span class="param">404</span><p>プロジェクトまたはアセットが見つかりません</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限

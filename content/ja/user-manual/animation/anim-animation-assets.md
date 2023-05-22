@@ -6,7 +6,7 @@ position: 2
 
 ![Animation Assets][1]
 
-Animationアセットは、PlayCanvasのモデルのアニメーションを駆動するために使用されるキーフレームデータです。エンティティのAnimコンポーネントを介してAnimstategraphアセットにリンクされています。
+Animationアセットは、PlayCanvasのモデルのアニメーションを動かすために使用されるキーフレームデータです。エンティティのAnimコンポーネントを介してAnimstategraphアセットにリンクされています。
 
 現在、Animコンポーネントは、`Convert to GLB` アセットタスク設定オプションを使用して、PlayCanvasプロジェクトに .FBX ファイルからインポートされたアニメーションアセットに対応しています。
 

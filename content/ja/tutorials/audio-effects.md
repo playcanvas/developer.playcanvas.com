@@ -13,7 +13,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 ## Web Audio APIを使用する
 
-PlayCanvasでは、Web Audio APIを完全に活用して音に強力なエフェクトを加えることができます。このチュートリアルでは、オーディオサンプルにさまざまなエフェクトを追加する方法を示します。
+PlayCanvasでは、Web Audio APIの機能をフルに活用して、音声に強力なエフェクトを追加することができます。このチュートリアルでは、さまざまなエフェクトをオーディオサンプルに追加する方法が説明されています。
 
 ## 設定
 
@@ -21,7 +21,7 @@ PlayCanvasでは、Web Audio APIを完全に活用して音に強力なエフェ
 
 ルートエンティティには、2つのスクリプトを持つ[Script][4]コンポーネントもあります。1つのスクリプトはユーザーインターフェイスを担当し、もう1つがフォーカスするスクリプトです: <a href="https://playcanvas.com/editor/asset/4472751" target="_blank">application.js</a>。
 
-このスクリプトは、アプリケーションの音響エフェクトを管理します。
+このスクリプトは、アプリケーションの効果音を管理します。
 
 ## オーディオノードの使用
 
@@ -33,14 +33,14 @@ Web Audio APIを使用すると、オーディオノードを作成し、オー�
 this.convolver = this.app.systems.sound.context.createConvolver();
 ```
 
-次に、[ここ][7]で説明されているように、多くの音声サンプルをインパルス応答としてコンボルバーに使用しています。各オーディオサンプルはオーディオアセットであり、どのボタンを押すかに応じて、そのアセットを使用し、内部バッファをコンボルバーバッファに割り当てます。
+次に、[ここ][7]で説明されているように、多くの音声サンプルをインパルス応答としてConvolverに使用しています。各オーディオサンプルはオーディオアセットであり、どのボタンを押すかに応じて、そのアセットを使用し、内部バッファをConvolverバッファに割り当てます。
 
 ```javascript
 var asset = this[assetName];
 this.convolver.buffer = asset.resource.buffer;
 ```
 
-その後、コンボルバーをサウンドスロットに接続します。
+その後、Convolverをサウンドスロットに接続します。
 
 ```javascript
 this.entity.sound.slot('speech').setExternalNodes(this.convolver);

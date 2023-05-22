@@ -15,7 +15,7 @@ POST https://playcanvas.com/api/assets
 新しいアセットを作成します。
 
 <div class="alert alert-info">
-    現在、このエンドポイントはスクリプト、HTML、CSS、テキスト、シェーダー、JSONタイプのアセットのみを作成することができます。
+    現時点では、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、および `json` のタイプのアセットの作成のみをサポートしています。
 </div>
 
 **他のREST APIエンドポイントと異なり、Create Assetエンドポイントはデータの送信に `multipart/form-data` を使用する必要があります。**
@@ -106,10 +106,10 @@ Status: 201
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>未承認</p></div>
-<div class="parameter"><span class="param">403</span><p>禁止</p></div>
-<div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限

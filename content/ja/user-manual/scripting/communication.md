@@ -1,5 +1,5 @@
 ---
-title: スクリプト間の通信
+title: スクリプト間の通信方法
 layout: usermanual-page.hbs
 position: 6
 ---

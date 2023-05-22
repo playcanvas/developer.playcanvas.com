@@ -1,5 +1,5 @@
 ---
-title: エンジンのみのユーザー
+title: PlayCanvasエンジン単体での利用
 layout: usermanual-page.hbs
 position: 23
 ---

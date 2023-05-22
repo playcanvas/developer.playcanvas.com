@@ -40,7 +40,7 @@ Buttonコンポーネントは、2つのトランジションモードで使用�
 | Hover Tint    | ボタンがホバー状態されたときにImage Elementを調整する色。 |
 | Pressed Tint  | ボタンがプレス状態されたときにImage Elementを調整する色。 |
 | Inactive Tint | ボタンがアクティブでないときにImage Elementを調整する色。 |
-| Fade Duration | 状態間の色を合成する時間（ミリ秒単位） |
+| Fade Duration | 異なる状態の色をブレンドするための時間（ミリ秒単位） |
 
 ## スクリプトのインターフェース
 

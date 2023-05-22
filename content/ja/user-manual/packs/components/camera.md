@@ -1,5 +1,5 @@
 ---
-title: カメラ
+title: Camera
 layout: usermanual-page.hbs
 position: 5
 ---

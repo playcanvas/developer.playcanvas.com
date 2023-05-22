@@ -1,5 +1,5 @@
 ---
-title: ファーストパーソン・ムーブメント
+title: 一人称視点での移動方法
 layout: tutorial-page.hbs
 tags: input, camera
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg"
@@ -21,7 +21,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 注意:プレーヤーの速度は直接設定されず、[`applyForce`][3]を使用して力を加えることで移動されます。
 
-rigidbodyコンポーネントでは、以下の値がエディタインスペクタに設定されています。
+RigidBodyコンポーネントでは、以下の値がエディタインスペクタに設定されています。
 * 最大速度を制限するには、プレイヤーが入力キーを離した後にプレイヤーがスライドしないように線形減衰を適用します。
 * プレイヤーが転がってしまうのを防ぐため、すべての軸の角度要素を0に減らしました。
 

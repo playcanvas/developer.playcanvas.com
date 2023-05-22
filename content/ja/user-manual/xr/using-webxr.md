@@ -6,7 +6,7 @@ position: 1
 
 ## WebXRのサポート
 
-WebXRのブラウザサポートはまだ完全ではありません。以下のようにチェックできます。
+WebXRのブラウザサポートはまだ全面的には実現されていません。以下のようにして確認できます。
 
 ```javascript
 if (app.xr.supported) {
@@ -112,7 +112,7 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
         }
 
         if (app.xr.session.renderState.layers) {
-            //WebXR Layersにアクセスします。
+            // get access to WebXR Layers
         }
     }
 });

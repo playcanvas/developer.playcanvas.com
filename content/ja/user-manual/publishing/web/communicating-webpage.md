@@ -57,7 +57,7 @@ PlayCanvasアプリケーションをiframeに埋め込むことは、すばや�
 
 ホストページでは、iframeレスのURLを使用してください。デフォルトのパブリッシュリンクには、ソーシャル共有バーを含めるためのiframeが組み込まれています。これは、[postMessage][1]の問題が発生する可能性があるためです
 
-iframeとソーシャル共有バーを含まないバージョンのビルドを取得するためには、URLの`https://playcanv.as`の後に`/e`を追加します。
+iframeとソーシャル共有バーを含まないバージョンのビルドを取得するためには、URLの `https://playcanv.as` の後に`/e`を追加します。
 
 ```html
 <iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">

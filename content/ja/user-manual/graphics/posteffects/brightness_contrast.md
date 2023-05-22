@@ -1,5 +1,5 @@
 ---
-title: ブライトネス-コントラスト エフェクト
+title: ブライトネス・コントラストエフェクト
 layout: usermanual-page.hbs
 position: 2
 ---

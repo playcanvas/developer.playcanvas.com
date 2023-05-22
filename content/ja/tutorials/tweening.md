@@ -5,7 +5,7 @@ tags: animation, scripts
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg"
 ---
 
-しばしば、Entityや任意の値を2つのポイント間でアニメーションさせたいことがあります。これはTweening(トゥイーニング)と呼ばれます。私たちはそのためにTweeningライブラリを作成しました。ライブラリはこちらの[https://github.com/playcanvas/playcanvas-tween][1]で見つけることができます。
+エンティティや、2点の間の任意の値をアニメートすることがよくあります。これはトゥイーンと呼ばれ、その目的のためにトゥイーンライブラリを作成しました。ライブラリは [https://github.com/playcanvas/playcanvas-tween][1] にあります。
 
 ライブラリを使用するには、単に`tween.js`ファイルをあなたのプロジェクトにアップロードしてください。これにより、以下のようにEntityのプロパティ(位置、回転、スケールなど)をトゥイーンできるようになります。
 
@@ -87,7 +87,7 @@ this.app
     .start();
 ```
 
-ここでもう一度、Tweenライブラリは[https://github.com/playcanvas/playcanvas-tween][1]で利用できます。
+ここでもう一度、Tweenライブラリは [https://github.com/playcanvas/playcanvas-tween][1] で利用できます。
 
 [1]: https://github.com/playcanvas/playcanvas-tween
 [2]: https://playcanvas.com/project/452634/overview/using-the-tween-library

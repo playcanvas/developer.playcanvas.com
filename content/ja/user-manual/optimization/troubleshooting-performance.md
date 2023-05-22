@@ -1,5 +1,5 @@
 ---
-title: パフォーマンストラブルシューティング
+title: パフォーマンスのトラブルシューティング
 layout: usermanual-page.hbs
 position: 8
 ---

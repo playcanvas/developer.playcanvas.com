@@ -1,5 +1,5 @@
 ---
-title: アセットのエクスポート
+title: PlayCanvas用の3Dモデルのエクスポート
 layout: usermanual-page.hbs
 position: 3
 ---

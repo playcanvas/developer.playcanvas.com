@@ -18,15 +18,15 @@ PlayCanvasには3つの種類の光源があります。
 
 ### ディレクショナルライト (Directional Lights)
 
-The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as traveling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
+私たちにとって最も身近な光源は太陽です。太陽は地球から遠いため、地球の表面に当たる光は一方向から来たかのように近似することができます。PlayCanvasでは、このタイプの光源を「方向性(ディレクショナル)光」と呼びます。
 
-非選択時、方向光は以下のアイコンでエディタの3Dビューに表示されます。
+非選択時、方向性光は以下のアイコンでエディタの3Dビューに表示されます。
 
 ![Directional light icon][1]
 
-このアイコンをクリックして、階層とインスペクターパネルで光を選択します。
+ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
-方向光は以下のようにオブジェクトを照らします。
+方向性光は以下のようにオブジェクトを照らします。
 
 ![Directional light][2]
 
@@ -38,7 +38,7 @@ The most familiar light source to us is the Sun. Because the Sun is so far from 
 
 ![オムニライトアイコン][3]
 
-このアイコンをクリックして、階層とインスペクターパネルで光を選択します。
+ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 オムニライトは以下のようにオブジェクトを照らします。
 
@@ -48,11 +48,11 @@ The most familiar light source to us is the Sun. Because the Sun is so far from 
 
 スポットライトもオムニライトと同様に、すべての方向に光を発します。ただし、スポットライトからの光は円錐形に制限されます。
 
-非選択時、スポットライトは以下のアイコンでエディタの3Dビューに表示されます。
+非選択時、スポットライトは以下のアイコンでエディターの3Dビューに表示されます。
 
 ![スポットライトアイコン][5]
 
-このアイコンをクリックして、階層とインスペクターパネルで光を選択します。
+ヒエラルキーパネルとインスペクターパネルでライトを選択するには、このアイコンをクリックします。
 
 スポットライトは以下のようにオブジェクトを照らします。
 
@@ -91,9 +91,9 @@ The most familiar light source to us is the Sun. Because the Sun is so far from 
 
 | 形状/タイプ    | 点光源      | 長方形               | 円盤                  | 球状              |
 | ------------- |---------------| ------------------------| ----------------------| --------------------|
-| Directional   | 太陽           | x                       | 太陽または月           | 太陽または月         |
+| 方向性   | 太陽           | x                       | 太陽または月           | 太陽または月         |
 | Omni          | 影のない電球 | x                       | x                     | 影のない丸い電球 |
-| Spot          | トーチ         | テレビ画面               | 影のある電球           | 影のある丸い電球   |
+| スポット          | トーチ         | テレビ画面               | 影のある電球           | 影のある丸い電球   |
 
 x = 一般的な使用例は無し - ただし、アプリケーション/ゲーム固有の照明効果には使用できます。
 

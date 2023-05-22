@@ -10,15 +10,15 @@ RigidBodyは、コンポーネントパネル右上のトグルを使用して�
 
 #### Static
 
-![RigidBody(静的)][1]
+![Rigid Body component (Static)][1]
 
-#### Dynamic
+#### Dynamic (and Kinematic)
 
-![RigidBody(動的)][2]
+![Rigid Body component (Dynamic)][2]
 
 #### Kinematic
 
-![RigidBody(キネマティック)][3]
+![Rigid Body component (Kinematic)][3]
 
 注意:RigidBodyの形状を定義するには、同じエンティティに[collision component][4]を追加する必要があります。そうでない場合、RigidBodyには効果がなく、物理シミュレーションに参加しません。
 
