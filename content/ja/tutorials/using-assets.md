@@ -1,5 +1,5 @@
 ---
-title: アセットレジストリ
+title: アセットレジストリの使用方法
 layout: tutorial-page.hbs
 tags: loading, assets, basics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
@@ -162,7 +162,7 @@ this.app.assets.once("load", function (asset) {
 }, this);
 ```
 
- `"load"` イベントはかなり広範囲です。ロードされたすべてのアセットに対して発生するため、他の場所でアセットがロードされた場合、これがあなたのアセットであるかどうかはわかりません。代わりに、 `"load:id"` イベントを使用してイベントを狭めることができます。
+`"load"`イベントは非常に広範です。このイベントはロードされたすべてのアセットに対して発火されるため、他の場所でアセットがロードされている場合、それが自分のアセットであることを特定することはできません。代わりに、`"load:id"`イベントを使用することでイベントをより絞り込むことができます。
 
 ```javascript
 // レジストリ内でアセットを検索

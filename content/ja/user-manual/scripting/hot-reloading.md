@@ -1,5 +1,5 @@
 ---
-title: ホットリローディング
+title: ホットリロード
 layout: usermanual-page.hbs
 position: 8
 ---
@@ -12,7 +12,7 @@ position: 8
 
 ```javascript
 MyScript.prototype.swap = function(old) {
-// 状態の復元処理をここに書く
+   // recover state here
 };
 ```
 
@@ -26,31 +26,31 @@ var Rotator = pc.createScript('rotator');
 Rotator.attributes.add('xSpeed', { type: 'number', default: 10 });
 
 Rotator.prototype.initialize = function () {
-// 有効化イベントをリッスンしてメソッドを呼び出す
-this.on('enable', this._onEnable);
+    // listen for enable event and call method
+    this.on('enable', this._onEnable);
 
-this.ySpeed = 0;
+    this.ySpeed = 0;
 };
 
 Rotator.prototype.swap = function (old) {
-// xSpeed は属性であり、自動的にコピーされます
+    // xSpeed is an attribute and so is automatically copied
 
-// 古いスクリプトインスタンスから ySpeed プロパティを新しいスクリプトインスタンスにコピーする
-this.ySpeed = old.ySpeed;
+    // copy the ySpeed property from the old script instance to the new one
+    this.ySpeed = old.ySpeed;
 
-// 古いリスナーを削除する
-old.off('enable', old._onEnable);
-// 新しいリスナーを追加する
-this.on('enable', this._onEnable);
+    // remove the old event listener
+    old.off('enable', old._onEnable);
+    // add a new event listener
+    this.on('enable', this._onEnable);
 };
 
 Rotator.prototype._onEnable = function () {
-// 有効にされたとき、スピードをランダム化する
-this.ySpeed = pc.math.random(0, 10);
+    // when enabled randomize the speed
+    this.ySpeed = pc.math.random(0, 10);
 }
 
 Rotator.prototype.update = function (dt) {
-this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
+    this.entity.rotate(this.xSpeed * dt, this.ySpeed * dt, 0);
 };
 ```
 

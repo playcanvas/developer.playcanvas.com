@@ -77,7 +77,7 @@ Mouse.prototype.onMouseDown = function (event) {
 
 ### マウスにアクセスする
 
-マウスの制御は、`pc.Mouse`オブジェクトによって管理されます。[フレームワーク][2]は、すべてのスクリプトオブジェクトに`this.app.mouse`という名称のオブジェクトを提供します。
+マウスの制御は`pc.Mouse`オブジェクトによって管理されます。[フレームワーク][2]は、[application app][3]上でこれのインスタンスを提供します。このインスタンスは、すべてのスクリプトオブジェクトで次のように利用できます：
 
 ```javascript
 this.app.mouse
@@ -95,40 +95,40 @@ this.app.mouse.disableContextMenu();
 
 `pc.Mouse`オブジェクトでは、マウスアクションに対応する異なるイベントをリッスンすることができます。チュートリアルでは、`onMouseMove`メソッドを移動イベントにバインドし、`onMouseDown`メソッドをボタンダウンイベントにバインドしています。
 
-イベントにバインドするには、on()メソッドを使用します。`mouse`オブジェクトでは、move、button down、up、scroll wheelに対してイベントをサポートしています。
-
-注意して欲しいのが、イベントにバインドする時にon()メソッドに`this`を渡すこともできる点です。渡された`this`は、イベントコールバックにおいて`this`として使用されます。
+私たちがイベントにバインドするためにon()メソッドに`this`を渡すことにも注目してください。この3つ目の引数は、イベントコールバック内で`this`として使われるオブジェクトです。
 
 ```javascript
 this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
 this.app.mouse.on(pc.EVENT_MOUSEDOWN, this.onMouseDown, this);
 ```
 
-* `pc.Mouse`で利用可能なイベントは以下の通りです。
-* `pc.EVENT_MOUSEUP` - マウスボタンがリリースされた時に発生する
-* `pc.EVENT_MOUSEDOWN` - マウスボタンが押されたときに発生する
+`pc.Mouse` で利用可能なイベントは以下の通りです。
+
+* `pc.EVENT_MOUSEUP` - マウスボタンが離されたときに発火します。
+* `pc.EVENT_MOUSEDOWN` - マウスボタンが押されたときに発火します。
+* `pc.EVENT_MOUSEMOVE` - マウスが動かされたときに発火します。
 * `pc.EVENT_MOUSEMOVE` - マウスが動いたときに発生する
 
-`pc.EVENT_MOUSEWHEEL` - マウスホイールが回転したときに発生する。
+ブラウザでのマウス入力は、通常、ページのDOM内の要素に対する[DOM][4]イベントをリスニングすることで実装されます。問題は、異なるブラウザがイベントを微妙に異なる方法で実装し、異なる値を提供することです。コードの記述を簡略化するために、PlayCanvasエンジンでは、イベントハンドラをDOM要素ではなくPlayCanvasのマウスハンドラにバインドすることができます。エンジンは、イベントが発火するときに、すべてのブラウザで一貫性のある`pc.MouseEvent`オブジェクトを提供します。もし元のDOMイベントが必要な場合は、`pc.MouseEvent`の`event`プロパティとして利用可能です。
 
-### ブラウザのマウス入力は、ページのDOM要素でDOMイベントをリッスンすることで通常実装されます。問題は、異なるブラウザでイベントをやや異なる方法で実装し、異なる値を提供する点です。PlayCanvasのエンジンでは、DOMエレメントではなくPlayCanvasマウスハンドラに直接イベントハンドラをバインドすることができるため、書くコードが簡素化されます。エンジンは、イベントが発生したときにコンスタントな`pc.MouseEvent`オブジェクトを提供します。もし元のDOMイベントが必要な場合は、`pc.MouseEvent`の`event`プロパティで取得することができます。
+### マウスの移動
 
-マウスを動かす
+最初のイベントハンドラは`onMouseMove`です。これはマウスが動くたびに発火します。`EVENT_MOUSEMOVE`イベントの場合、`MouseEvent`オブジェクトは現在のマウスの位置`x`と`y`、そして最後のイベントからの位置の変化`dx`と`dy`を持っています。当チュートリアルでは、マウスの現在の位置を使用し、キューブをカーソル位置に移動させています。
 
-### 最初のイベントハンドラは`onMouseMove`です。マウスが動くたびに呼び出されます。`EVENT_MOUSEMOVE`イベントにおいて、`MouseEvent`オブジェクトには、現在のマウスの位置`x`と`y`、および最後のイベントからの位置の変化量`dx`と`dy`が含まれています。このチュートリアルでは、現在のマウスの位置を使用して、キューブをカーソルの位置に移動しています。
+### マウスボタン
 
-マウスボタン
+2つ目のイベントハンドラは`onMouseDown`です。これはマウスの三つのボタンのいずれかがクリックされるたびに発火します。`EVENT_MOUSEDOWN`と`EVENT_MOUSEUP`イベントでは、`MouseEvent`オブジェクトは押された/解放されたボタンを含む`button`プロパティを持ちます。次のいずれかの値になります。
 
-* 2番目のイベントハンドラは`onMouseDown`です。3つのマウスボタンのうち1つがクリックされたときに呼び出されます。`EVENT_MOUSEDOWN`と`EVENT_MOUSEUP`イベントでは、`MouseEvent`オブジェクトに、押された/リリースされたボタンが含まれている`button`プロパティが含まれています。以下のいずれかの値である場合があります。
 * `pc.MOUSEBUTTON_NONE`
 * `pc.MOUSEBUTTON_LEFT`
 * `pc.MOUSEBUTTON_MIDDLE`
+* `pc.MOUSEBUTTON_RIGHT`
 
-`pc.MOUSEBUTTON_RIGHT`
+私たちのチュートリアルでは、押されたマウスボタンに応じてキューブの色を変更しています。
 
-### このチュートリアルでは、マウスボタンによってキューブの色を変更しています。
+### 試してみよう。
 
-試してみよう
+全画面でのチュートリアルは[こちら][5]から、またはページの上部からお試しください。マウスを動かしてキューブを移動させ、左、中央、右のマウスボタンをクリックしてキューブの色を変更してみてください。
 
 [1]: https://playcanvas.com/project/405819/overview/tutorial-basic-mouse-input
 [2]: /user-manual/glossary#framework

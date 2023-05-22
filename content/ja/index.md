@@ -5,25 +5,25 @@ layout: intro.hbs
 
 # はじめに
 
-[ユーザーマニュアル][1]は、PlayCanvasの完全なガイドです。[エディター][2]、[スクリプティング][3]、[バージョン管理][4]などのプラットフォームの多くの機能を使用する方法を説明します。
+[ユーザーマニュアル][1]は、PlayCanvasの完全なガイドです。[エディター][2]、[スクリプティング][3]、[バージョン管理][4]など、プラットフォームの多くの機能の使用方法が理解できます。
 
-さらに学んで使用するためのチュートリアルやコードサンプルを[続々追加][5]しています。
+さらに学び、利用するための[チュートリアルとコードサンプルのセクション][5]をご覧ください
 
-|   | チュートリアル・セクション   |
+|   | チュートリアルセクション   |
 |---|---|
-| ![Keepy Up Tutorial Thumbnail](/images/user-manual/frontpage/keepy_up_tutorial_thumb.png) | [Keepy Up](/tutorials/keepyup-part-one/) チュートリアル・シリーズであなたの最初のゲームを制作し始めましょう。[シーン設定](/tutorials/keepyup-part-one/)、[ユーザー入力の処理](/tutorials/keepyup-part-four/)、[ユーザーインターフェースの作成](/tutorials/keepyup-part-six/)など、主要な機能をすべてカバーしています。 |
-| ![Physics Tutorial Thumbnail](/images/user-manual/frontpage/physics_tutorial_thumb.png) | [衝突、トリガー](/tutorials/collision-and-triggers/)や [力学](/tutorials/Using-forces-on-rigid-bodies/)関連の物理と実験してみましょう。|
-| ![Input Tutorial Thumbnail](/images/user-manual/frontpage/input_tutorial_thumb.png) | [キーボード](/tutorials/keyboard-input/)、[マウス](/tutorials/mouse-input/)、[タッチスクリーン](/tutorials/basic-touch-input/)からの入力を検出しましょう。 |
-| ![User Interface Tutorial Thumbnail](/images/user-manual/frontpage/ui_tutorial_thumb.png) | [ユーザーインターフェース](/tutorials/ui-elements-buttons/) システムで見事なメニューやHUDを作成しましょう。 |
-| ![Audio Tutorial Thumbnail](/images/user-manual/frontpage/audio_tutorial_thumb.png) | [位置オーディオ](/tutorials/basic-audio/)を使って、ユーザーに没入感を与えましょう。 |
+| ![Keepy Up Tutorial Thumbnail](/images/user-manual/frontpage/keepy_up_tutorial_thumb.png) | [Keepy Up](/tutorials/keepyup-part-one/) チュートリアルシリーズを使って、あなたの最初のゲーム作りを始めてみてください。[シーンのセットアップ](/tutorials/keepyup-part-one/)、[ユーザー入力の処理](/tutorials/keepyup-part-four/)、[ユーザーインターフェースの作成](/tutorials/keepyup-part-six/)など、主要な機能全てがカバーされています。 |
+| ![Physics Tutorial Thumbnail](/images/user-manual/frontpage/physics_tutorial_thumb.png) | 物理シミュレーションを実験しましょう。[衝突、トリガー](/tutorials/collision-and-triggers/)や [力](/tutorials/Using-forces-on-rigid-bodies/)といった要素を用いて、リアリティのある挙動を追求してみてください。|
+| ![Input Tutorial Thumbnail](/images/user-manual/frontpage/input_tutorial_thumb.png) | [キーボード](/tutorials/keyboard-input/)、[マウス](/tutorials/mouse-input/)、[タッチスクリーン](/tutorials/basic-touch-input/)からの入力を検出する方法について学びましょう。 |
+| ![User Interface Tutorial Thumbnail](/images/user-manual/frontpage/ui_tutorial_thumb.png) | [ユーザーインターフェース (UI) ](/tutorials/ui-elements-buttons/) システムを使って、素晴らしいメニューやHUDを作成します。 |
+| ![Audio Tutorial Thumbnail](/images/user-manual/frontpage/audio_tutorial_thumb.png) | [立体的なオーディオ](/tutorials/basic-audio/)を使って、ユーザーに没入感を与えましょう。 |
 
 PlayCanvasエンジンの完全なリファレンスについては、[APIリファレンス][6]セクションを参照してください。
 
-プロジェクト全体がどのように設計・構築されているかを知りたいですか?[Exploreセクション][7]では、コミュニティの公開プロジェクトを一覧表示しており、それらから学ぶことができます。
+全体のプロジェクトがどのように設計され、作成されているかを見たいですか？その場合には、[エクスプローラーセクション][7]でコミュニティのパブリックプロジェクトの一覧が表示されており、そこから学ぶことができます。
 
 ---
 
-# 助けを求める
+# 困ったときは？
 
 [PlayCanvasフォーラム][8]は、助けを求めたり、ゲームについて話したり、最新のプロジェクトを自慢したり、新しいチームメンバーを探したり、他の人にサポートを提供したりするのに最適な場所です。
 

@@ -20,7 +20,7 @@ position: 6
 
 ![Secure Canvas][4]
 
-**5.** Application Settingsセクションで、次のようにウェブサイトのURLを追加します：`https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html`。このURLを見つけるには、`playcanv.as` ゲームのリンク（例：`https://playcanv.as/p/JtL2iqIH` ）の`p/`の前に`e/`を追加します（例：`https://playcanv.as/e/p/JtL2iqIH` ）。ブラウザでリダイレクトします。ウェブサイトのURLにこのURLを使用してください。
+**5.** アプリケーション設定セクションにウェブサイトURLを追加して、次のようになるようにします： `https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/[BUILD_HASH]/index.html` 。このURLを見つけるためには、`playcanv.as` のゲームリンク、例えば `https://playcanv.as/p/JtL2iqIH/` を取り、`p/`の前に`e/`を追加します。例えば `https://playcanv.as/e/p/JtL2iqIH/` とします。これはブラウザでリダイレクトします、このURLをウェブサイトURLに使用します。
 
 ![ウェブサイトURL][5]
 

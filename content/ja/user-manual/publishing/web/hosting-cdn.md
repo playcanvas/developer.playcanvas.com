@@ -1,5 +1,5 @@
 ---
-title: CDNを使用してホスティング
+title: CDNを使用したホスティング
 layout: usermanual-page.hbs
 position: 5
 ---

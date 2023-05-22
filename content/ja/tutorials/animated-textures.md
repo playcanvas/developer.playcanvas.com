@@ -1,5 +1,5 @@
 ---
-title: アニメーションテクスチャ
+title: アニメーションテクスチャの作成
 layout: tutorial-page.hbs
 tags: animation, textures
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg"
@@ -9,11 +9,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 *[フルプロジェクト][1]を見てください*
 
-サーフェスに適用されたマテリアルをアニメーション化することは非常に便利です。ここでは、移動をシミュレートするためにテクスチャをスクロールする例を示します。
+マテリアルをアニメーション化することは非常に有用です。ここで示されている例は、テクスチャをスクロールさせて動きをシミュレートするものです。
 
 ## マップオフセットでマテリアルをスクロール
 
-例で示される正方形の平面は、常にフレーム毎でUVオフセットを移動するためのスクリプト `scrolling-texture.js` を使用しています。例えば、水の流れをシミュレートするために使用します。更新ループを下記に表示します。
+例の四角形平面では、スクリプト `scrolling-texture.js` を使用してUVオフセットをフレームごとに常に移動させています。これは、流れる水をシミュレートするために使用することができます。以下に更新ループが表示されます。
 
 ```javascript
 ScrollingTexture.prototype.update = function(dt) {
@@ -25,7 +25,7 @@ ScrollingTexture.prototype.update = function(dt) {
     velocity.set(this.speed.x, this.speed.y);
     velocity.scale(dt);
 
-    // 現在のdiffuseおよびnormal mapのオフセット値を更新する
+    // 現在のdiffuseおよびnormalマップのオフセット値を更新する
     offset.copy(this.material.diffuseMapOffset);
     offset.add(velocity);
 
@@ -35,9 +35,9 @@ ScrollingTexture.prototype.update = function(dt) {
 };
 ```
 
-一時的なベクトル `tmp` に必要なオフセットを計算します。これは単に `speed * timeStep` になります。その後、 `diffuseMapOffset` と `normalMapOffset` プロパティを変更して、拡散マップと通常マップの両方のオフセットプロパティにこのオフセットを追加します。これらの値は `pc.Vec2` で、表面にテクスチャをマッピングするために使用されるUV座標をシフトします。他のマップを使用している場合も(例えば発光マップ)、同様にこれらのオフセットプロパティを更新する必要があります。最後に、 `material.update()` を呼んでシェーダに変更を適用します。
+オフセットを一時的なベクトル `tmp` に計算します。これは単純に `speed * timeStep` です。次に、このオフセットをDiffuseマップとNormalマップのoffsetプロパティに追加します。これは `diffuseMapOffset` と `normalMapOffset` プロパティを変更することによって行います。これらの値は `pc.Vec2` であり、テクスチャを表面にマッピングするために使用されるUV座標をシフトします。他のマップ（例：Emissive）を使用している場合は、これらのオフセットプロパティも更新する必要があります。最後に、変更をシェーダーに反映させるために `material.update()` を呼び出します。
 
-これは、マテリアルのオフセットを変更しテクスチャーをスクロールする簡単でシンプルな方法です。欠点は、このコードがマテリアルの実際のプロパティを変更することです。シーン内に同じマテリアルを使用する複数のモデルが存在する場合、全てに影響してしまいます。
+これは、マテリアルのオフセットを変更してテクスチャをスクロールさせるためのシンプルで直接的な方法です。ただし、このコードには1つの欠点があります。それは、実際のマテリアルのプロパティが変更されることです。したがって、同じマテリアルを使用してシーン内の複数のモデルがある場合、すべてが影響を受けます。
 
 [1]: https://playcanvas.com/project/405882
 [2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png

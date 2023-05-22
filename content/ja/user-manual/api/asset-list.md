@@ -76,10 +76,10 @@ Status: 200
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>認証されていない</p></div>
-<div class="parameter"><span class="param">403</span><p>禁止されている</p></div>
-<div class="parameter"><span class="param">404</span><p>プロジェクトが見つからない</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎる</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限

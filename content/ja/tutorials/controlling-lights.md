@@ -1,11 +1,11 @@
 ---
-title: ライトの制御
+title: ライトの制御方法
 layout: tutorial-page.hbs
 tags: lighting
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="ライトの制御"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
 
 *1、2、3を押すとそれぞれスポットライト、ポイントライト、ディレクショナルライトのON/OFFが切り替わります。*
 

@@ -1,12 +1,12 @@
 ---
-title: プロジェクトダッシュボード
+title: プロジェクトのダッシュボード
 layout: usermanual-page.hbs
 position: 7
 ---
 
-![ダッシュボード][1]
+![Dashboard][1]
 
-Project Dashboardはプロジェクトのコントロールセンターです。ダッシュボードから次のことができます：
+Project Dashboardはプロジェクトのコントロールセンターです。ダッシュボードから次のことができます。
 
 * エディタにアクセス。
 * プロジェクトのプライマリアプリを実行。

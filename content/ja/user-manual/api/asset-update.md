@@ -57,7 +57,7 @@ Status: 200
     "tags": list of strings,
     "preload": bool,
     "data": {
-        ... アセットデータ
+        ... asset data
     },
     "file": {
         "hash": string,

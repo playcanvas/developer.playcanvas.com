@@ -84,7 +84,7 @@ MyScript.attributes.add('target', { type: 'entity' })
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-Assetタイプを使用すると、スクリプト内でプロジェクトアセットに参照することができます。`assetType` プロパティを使用することもできます。これにより、属性が特定のタイプの資産に限定されます。例えば、'texture' 、'material' 、'model' などです。
+Assetタイプを使用すると、スクリプト内でプロジェクトアセットに参照することができます。`assetType` プロパティを使用することもできます。これにより、属性が特定のタイプのアセットに限定されます。例えば、'texture' 、'material' 、'model' などです。
 
 Asset属性のランタイムタイプは `pc.Asset` です。Asset属性のリソースを参照するには、以下のようにします。
 

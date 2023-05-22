@@ -1,5 +1,5 @@
 ---
-title: JSON データの読み込み
+title: JSONデータの読み込み
 layout: tutorial-page.hbs
 tags: loading
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg"
@@ -41,7 +41,7 @@ var characterData = this.characterData.resource;
 var names = this.parseCharacterData(characterData);
 ```
 
-上記のコードでは、プロジェクト内のアセットから JSON データを読み込むために、Script Attribute の `type` を `asset` にするか asset registry からアセットを取得し、`resource` プロパティにアクセスすれば良いことがわかります。`json` のアセットに対して `resource` をアクセスすることで、JSON データは既に Javascript オブジェクトにパースされていることに注目してください。
+上記のコードでは、プロジェクト内のアセットから JSON データを読み込むために、スクリプト属性のtypeを 'asset' にするか asset registry からアセットを取得し、`resource` プロパティにアクセスすれば良いことがわかります。`json` のアセットに対して `resource` をアクセスすることで、JSON データは既に Javascript オブジェクトにパースされていることに注目してください。
 
 Javascript オブジェクトを取得したら、通常通りデータにアクセスすることができます。例えば、`parseCharacterData` メソッドでプロパティをループすることができます。
 
@@ -67,9 +67,9 @@ this.loadJsonFromRemote("https://api.github.com/", function (data) {
 });
 ```
 
-このコードでは、リモートサーバーから JSON データを要求するために、標準の Web ブラウザ API の一部である XMLHttpRequest オブジェクトを使用しています。この例では Github API からデータを取得しています。
+このコードでは、XMLHttpRequestオブジェクト（標準のWebブラウザAPIの一部）を使用して、URLからJSONデータをリクエストしています。この場合、GitHub APIを使用しています。
 
-`"load"` イベントを受け取った後、標準の Web ブラウザ API の一部である `JSON.parse` を使って JSON データをパースして、`callback` 関数を介してデータを返しています。
+`"load"`イベントを受け取った後、`JSON.parse`を使用してJSONデータを解析します（これも標準のWebブラウザAPIの一部です）。そして、データを`callback`関数を介して返します。
 
 `loadJsonFromRemote` の呼び出しは、**非同期**であることに注意してください。
 
@@ -155,6 +155,6 @@ Game.prototype.loadJsonFromRemote = function (url, callback) {
 };
 ```
 
-[このプロジェクト][1] で実際に試してみてください。
+[このプロジェクト][1] からお試しください。
 
 [1]: https://playcanvas.com/project/405827

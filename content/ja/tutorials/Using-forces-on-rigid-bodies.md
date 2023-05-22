@@ -1,5 +1,5 @@
 ---
-title: 動力および衝撃
+title: 力と衝撃
 layout: tutorial-page.hbs
 tags: physics, collision
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg"
@@ -7,7 +7,8 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 <iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses"></iframe>
 
-*インパルスを適用するにはカーソルキーを使用します。トルクを適用してキューブを回転させるには、WASDキーを使用します。Fを長押しすると一定の力を上向きに適用して重力の効果をキャンセルします。** Rキーを押しすとキューブをリセットします。*
+*カーソルキーを使用してインパルスを適用し、WASDキーを使用してトルクを適用し、キューブを回転させることができます。Fキーを押し続けると、重力の影響をキャンセルするために一定の上向きの力が適用されます。*
+*Rキーを押すと、キューブがリセットされます。*
 
 *キューブを角で立たせ回転させてみましょう！**使用されている完全なコードはこのページの下部に表示されています。*
 
@@ -25,7 +26,7 @@ if (app.keyboard.isPressed(pc.KEY_F) ) {
 
 ユーザーがFキーを押すと、[`applyForce(x, y, z)`][1]を介して、グローバルy軸に沿った力がアクセスされたエンティティに適用されます。また、力ベクトルの適用ポイントも設定できます。
 
-### インパルス
+### インパルス (Impulses)
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
@@ -35,7 +36,7 @@ if (app.keyboard.isPressed(pc.KEY_LEFT) ) {
 
 [`applyImpulse(x, y, z)`][2]を介して、キューブにx軸のインパルスを与えて、瞬時の速度変化を与えます。
 
-### トルク
+### トルク (Torques)
 
 ```javascript
 if (app.keyboard.isPressed(pc.KEY_W) ) {
@@ -45,7 +46,7 @@ if (app.keyboard.isPressed(pc.KEY_W) ) {
 
 [トルク](https://en.wikipedia.org/wiki/Torque) (回転力)は、[`applyTorque(x, y, z)`][3]を介してエンティティに適用されます。
 
-### トルクインパルス
+### トルクインパルス (TorqueImpulses)
 
 ```javascript
 this.entity.rigidbody.applyTorqueImpulse(x, y, z)

@@ -31,7 +31,7 @@ Authorization: Bearer {accessToken}
 
 <div class="params">
 <div class="parameter"><span class="param">projectId: number</span><p>シーンの一覧を取得するプロジェクトのID</p></div>
-<div class="parameter"><span class="param">branchId: string [optional]</span><p>ブランチのID。省略された場合、メインブランチが使用されます。</p></div>
+<div class="parameter"><span class="param">branchId: string [optional]</span><p> `ブランチのIDです。`省略された場合、メインブランチが使用されます。</p></div>
 </div>
 
 ## レスポンススキーマ
@@ -55,14 +55,14 @@ Status: 200
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>未承認</p></div>
-<div class="parameter"><span class="param">403</span><p>禁止されています</p></div>
-<div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限
 
-このルートでは[通常](/user-manual/api#rate-limiting)のレート制限が使用されます。
+このルートは[通常][1]のレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting

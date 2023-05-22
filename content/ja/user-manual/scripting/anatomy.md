@@ -36,15 +36,15 @@ Rotate.prototype.swap = function(old) {
 
 # スクリプトメソッド
 
-## スクリプトタイプの宣言
+## スクリプトタイプ (Script Type) の宣言
 
 ```javascript
 var Rotate = pc.createScript('rotate');
 ```
 
-この行は、「rotate」という新しいScriptTypeを作成します。スクリプトの名前は、スクリプトコンポーネントでスクリプトを識別するために使用されます。プロジェクト内で宣言された各ScriptTypeには固有の名前が必要です。返される関数の`Rotate`は、メソッドの標準セットでそのプロトタイプを拡張できるjavascript関数です。クラス継承のようなものです。
+この行は、「rotate」という新しいScriptTypeを作成します。スクリプトの名前は、Scriptコンポーネントでスクリプトを識別するために使用されます。プロジェクト内で宣言された各ScriptTypeには固有の名前が必要です。返される関数の`Rotate`は、メソッドの標準セットでそのプロトタイプを拡張できるjavascript関数です。クラス継承のようなものです。
 
-## スクリプト属性
+## スクリプト属性 (Script Attributes)
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
@@ -54,7 +54,7 @@ Rotate.attributes.add('speed', { type: 'number', default: 10 });
 
 属性は、自動的にコードのホットスワップ中に、新しいスクリプトインスタンスに継承されています。
 
-## 初期化
+## 初期化 (Initialize)
 
 ```javascript
 // initialize code called once per entity
@@ -68,9 +68,9 @@ Rotate.prototype.initialize = function() {
 
 エンティティが `entity.clone`メソッドを使用してクローンされると、エンティティとスクリプトの両方が有効になっている限り、クローンされたエンティティがシーン階層に追加された際にのみ、スクリプトの` initialize`メソッドが呼び出されます。
 
-スクリプトコンポーネントに複数のスクリプトが添付されている場合、`initialize`はコンポーネント上のスクリプトの順序で呼び出されます。
+Scriptコンポーネントに複数のスクリプトが添付されている場合、`initialize`はコンポーネント上のスクリプトの順序で呼び出されます。
 
-## 更新
+## 更新 (Update)
 
 ```javascript
 // update code called every frame
@@ -83,11 +83,11 @@ Rotate.prototype.update = function(dt) {
 };
 ```
 
-毎フレームごとにupdateメソッドが呼ばれ、有効なスクリプトコンポーネントとスクリプトインスタンスを持つ各エンティティ内で呼び出されます。各フレームには、前のフレームからの経過時間（秒単位）が含まれる `dt` 引数が渡されます。
+毎フレームごとにupdateメソッドが呼ばれ、有効なScriptコンポーネントとスクリプトインスタンスを持つ各エンティティ内で呼び出されます。各フレームには、前のフレームからの経過時間（秒単位）が含まれる `dt` 引数が渡されます。
 
-スクリプトコンポーネントに複数のスクリプトが添付されている場合、`update`はコンポーネント上のスクリプトの順序で呼び出されます。
+Scriptコンポーネントに複数のスクリプトが添付されている場合、`update`はコンポーネント上のスクリプトの順序で呼び出されます。
 
-## スワップ
+## スワップ (Swap)
 
 ```javascript
 // swap method called for script hot-reloading
@@ -113,7 +113,7 @@ Rotate.prototype.swap = function(old) {
 
 ## state（状態）、enable（有効化）、disable（無効化）
 
-スクリプトインスタンスが実行状態を有効から無効、またはその逆に切り替える際に`state`イベントが発生します。スクリプトインスタンスの状態は、スクリプト自体、スクリプトが所属するコンポーネント、スクリプトコンポーネントが添付されているエンティティを有効／無効にすることで変更できます。`enable`イベントは、状態が無効から有効に変更された場合にのみ発生します。また、`disable`イベントは、、状態が有効から無効に変更された場合にのみ発生します。
+スクリプトインスタンスが実行状態を有効から無効、またはその逆に切り替える際に`state`イベントが発生します。スクリプトインスタンスの状態は、スクリプト自体、スクリプトが所属するコンポーネント、Scriptコンポーネントが添付されているエンティティを有効／無効にすることで変更できます。`enable`イベントは、状態が無効から有効に変更された場合にのみ発生します。また、`disable`イベントは、、状態が有効から無効に変更された場合にのみ発生します。
 
 ```javascript
 Rotate.prototype.initialize = function () {
@@ -144,7 +144,7 @@ Rotate.prototype.initialize = function () {
 
 ## destroy
 
-スクリプトインスタンスが破棄されると`destroy`イベントが発生します。`destroy()`メソッドの呼び出しによりコンポーネントからスクリプトが削除されたことが原因の場合もありますし、エンティティからスクリプトコンポーネントが削除された場合や、添付されているエンティティが破壊された場合もあります。
+スクリプトインスタンスが破棄されると`destroy`イベントが発生します。`destroy()`メソッドの呼び出しによりコンポーネントからスクリプトが削除されたことが原因の場合もありますし、エンティティからScriptコンポーネントが削除された場合や、添付されているエンティティが破壊された場合もあります。
 
 ```javascript
 Rotate.prototype.initialize = function () {

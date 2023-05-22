@@ -1,5 +1,5 @@
 ---
-title: アセットライブラリ
+title: アセットストア
 layout: usermanual-page.hbs
 position: 6
 ---

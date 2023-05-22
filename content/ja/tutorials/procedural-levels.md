@@ -1,5 +1,5 @@
 ---
-title: プロシージャルレベル
+title: プログラムでのステージの生成
 layout: tutorial-page.hbs
 tags: procedural
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg"
@@ -7,11 +7,11 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 <iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 
-このプロジェクトでは、エディタで作成された Entity からランダムにレベルを生成するために、Entity 上の [clone()][1] 関数を使用しています。
+このプロジェクトでは、エディターで作成されたエンティティを元に、[clone()][1] 関数を使用してステージ（レベル）をランダムに生成しています。
 
-チュートリアルプロジェクト内のエディタから試してみてください。
+[チュートリアルプロジェクト][2]のエディターからお試しください。
 
-以下のスクリプトは非常にシンプルなレベル生成プログラムです。エディタでセットアップされた2つの Entity 「Grass(草)」と「House(家)」を取ります。これらをグリッド・ベースのタイルとして使用して、レベルが作成されます。タイルの1つをランダムに選択して、タイルをクローンして新しい Entity を作成し、その新しい Entity を正しいグリッド上の位置に配置します。
+以下のスクリプトは非常にシンプルなステージ（レベル）生成プログラムです。エディタで設定された2つのエンティティ、「Grass（草）」と「House（家）」をタイルとして使用し、グリッドベースのレベルを作成します。レベルは、タイルの中からランダムに1つ選択し、そのタイルを複製して新しいエンティティを作成し、新しいエンティティを正しいグリッド位置に配置することで作成されます。
 
 ```javascript
 var Generate = pc.createScript('generate');

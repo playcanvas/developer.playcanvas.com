@@ -1,17 +1,17 @@
 ---
-title: 基本的なキーボード入力操作
+title: キーボード入力の基礎
 layout: tutorial-page.hbs
 tags: input
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="基本的なキーボード入力操作"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
 
 *フォーカスしてから`左矢印キー`、`右矢印キー`、`スペースバー`を押して立方体を回転させます。 'a' キーを押してリリースすると色が変わります。*
 
 PlayCanvasエンジンでのキーボード操作は`pc.Keyboard`オブジェクトで提供されます。Keyboardオブジェクトは、キーが押されているかどうかを確認するなど、一般的なキーボード操作のための単純なインタフェースを提供します。また、キーコードや文字コードの処理に関するさまざまなクロスブラウザー問題を解決します。
 
-[tutorials project][1]のキーボード・インプット Scene に目を向けましょう。以下は、そのチュートリアルのコードです。
+[チュートリアルプロジェクト][1]のキーボード入力シーンをご確認ください。チュートリアルのコードはこちらです。
 
 ```javascript
 var KeyboardHandler = pc.createScript('keyboardHandler');
@@ -106,11 +106,11 @@ KeyboardHandler.prototype.onKeyUp = function (event) {
 
 ### `isPressed(key)`
 
-`isPressed(key)`は、 `key` が現在押されているかどうかを確認し、それがそうである場合に `true` を返します。キーが押されている間は、各フレームに対してtrueが返されます。
+`isPressed(key)`は、 `key` が現在押されているかどうかを確認し、それがそうである場合に trueを返します。キーが押されている間は、各フレームに対してtrueが返されます。
 
 ### `wasPressed(key)`
 
-`wasPressed(key)`は、キーが最後のフレーム以降に押されたかどうかを確認します。`wasPressed()` は、単一のキー押下の場合にのみtrueを返します。
+`wasPressed(key)`は、`key`が *前のフレーム以降* に押されたかどうかをチェックします。`wasPressed()`は、単一のキー押下に対して一度だけtrueを返します。
 
 ## イベント
 
@@ -125,11 +125,11 @@ on()には第3引数があり、これはスクリプトインスタンス自体
 
 ## キーコード
 
-押されたキーを特定するには、キーコードを使用します。これらは、キーボードのキーと対応する数値値です。たとえば、`pc.KEY_A`は「A」キーであり、`pc.KEY_LEFT`は左矢印キーです。
+キーの識別は、キーコードを使用して行われます。キーコードは、キーボードのキーに対応する数値です。たとえば、pc.KEY_Aは `A`キーを表し、pc.KEY_LEFTは左矢印キーを表します。
 
 注意点として、将来的に定数の値が変更されることがあるため、数値を使用せず、常に列挙子 `pc.KEY_*` を使用する必要があります。
 
-## 実際に試してみる
+## 試してみよう。
 
 こちらの[こちら][2]でフルスクリーン表示して、矢印キーをタップしてホールドする際の挙動とスペースバーをタップしてホールドする際の挙動を比較してみてください。
 
