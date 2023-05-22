@@ -1,11 +1,11 @@
 ---
-title: Реальное время многопользовательской игры с Photon
+title: Многопользовательские игры в реальном времени с Photon
 layout: tutorial-page.hbs
 tags: многопользовательские, сетевые
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/926999/90AE0A-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Реальное время многопользовательской игры с Photon - включая матчмейкинг"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/e/p/dvJYXs1Y/" title="Многопользовательские игры в реальном времени с Photon - включая матчмейкинг"></iframe>
 
 _Кликните по полу, чтобы переместиться_
 

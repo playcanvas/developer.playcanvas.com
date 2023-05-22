@@ -1,5 +1,5 @@
 ---
-title: Реальное время многопользовательской игры с Colyseus
+title: Многопользовательские игры в реальном времени с Colyseus
 layout: tutorial-page.hbs
 tags: многопользовательский, сетевой
 thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
