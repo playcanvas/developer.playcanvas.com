@@ -1,5 +1,5 @@
 ---
-title: Snapchat Playable Ad
+title: Snapchatプレイアブル広告
 layout: usermanual-page.hbs
 position: 2
 ---
@@ -22,7 +22,7 @@ SnapchatのPlayable Adでは、[MRAID 2.0 API][mraid-api]標準が使用され�
 
 5MB(未圧縮)までのソフトリミットがあるため、広告用のアセットの使用を計画し、予算編成する必要があります。
 
-圧縮されていない最小化されたPlayCanvas Engineのコードは、\~1.2MBであり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに対して約30%追加されます。
+圧縮されていない最小化されたPlayCanvas Engineのコードは、 **\~1.2MB** であり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに対して約 **\~30%**  追加されます。
 
 これは、Base64エンコードの前に\~3MBのアセットが含まれることを意味します。
 

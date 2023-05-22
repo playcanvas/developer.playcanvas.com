@@ -1,5 +1,5 @@
 ---
-title: FXAA エフェクト
+title: FXAAエフェクト
 layout: usermanual-page.hbs
 position: 3
 ---

@@ -1,5 +1,5 @@
 ---
-title: ammo.js APIを呼び出す方法
+title: ammo.jsのAPIを呼び出す方法
 layout: usermanual-page.hbs
 position: 6
 ---

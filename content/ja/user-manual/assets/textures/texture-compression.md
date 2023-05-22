@@ -12,23 +12,23 @@ position: 1
 
 次のようなTextureアセットがあるとします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="煉瓦のテクスチャ" width="256" height="256">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/brick.jpg" alt="Brick Texture" width="256" height="256">
 
 これは512x512のJPGでサイズは202KBです。しかし、JPGは圧縮された形式であり、グラフィックエンジンに渡されると解凍されたRGB8形式に拡張され、ミップマップレベルを含めると1.05MBのVRAMを占有します。
 
 テクスチャ圧縮を有効にすると、以下のような結果が得られます。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis 圧縮の結果" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/compression-results.png" alt="Basis Compression results" width="400">
 
-圧縮により、VRAMの使用量が6倍に減少しました。さらに、この場合、圧縮によってダウンロードサイズも、デフォルト品質設定と ETC モードを使用して、202KBから46KBまで減少しています。
+圧縮により、VRAMの使用量が6分の1に減少しました。さらに、この場合、圧縮によりダウンロードサイズが202KBからDefault品質設定とETCモードを使用して最小46KBまで減少しました。
 
-以下は、MacとChromeで煉瓦のテクスチャを比較したものです。
+以下に、MacのChromeでのレンガテクスチャの並べて比較を示します。
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="煉瓦のテクスチャの圧縮比較"></a>
+<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison"></a>
 
 以下は、MacとChromeで PlayCanvas のキューブを Basis (ETCモード)[2] で比較したものと、[圧縮していないもの][3]です。
 
-<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvasのキューブの圧縮比較"></a>
+<a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison"></a>
 
 ## Basis テクスチャ圧縮の使用
 
@@ -41,31 +41,31 @@ position: 1
 5. ファイルサイズと品質のバランスを取るために、品質設定を変更します。品質を下げると、より小さなファイルサイズになります。
 6. Compress Basis をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Basis テクスチャ圧縮の有効化" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-basis-texture-compression.gif" alt="Enabling Basis Texture Compression" width="400">
 
-Basis WASM モジュールは、プリロードのダウンロードサイズに253KBの追加のgzipデータを追加しますが、古くなったテクスチャ圧縮フォーマットファイルを使用する場合と比較して、テクスチャサイズの節約によってオフセットされるはずです(下記参照)。
+BasisのWASMモジュールは、プリロードダウンロードサイズに追加で253KBのgzip圧縮データを追加しますが、それはレガシーのテクスチャ圧縮フォーマットのファイルを使用する場合と比較してテクスチャサイズの節約によって相殺されるはずです（[下記参照][4]）。
 
 テクスチャから Basis 圧縮を削除する方法は次のとおりです。
 
 1. BASIS のチェックを外します。
 2. Compress Basis をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Basis テクスチャ圧縮の無効化" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-basis-texture-compression.gif" alt="Disabling Basis Texture Compression" width="400">
 
 もう Basis を使用しない場合は、すべてのテクスチャから Basis 圧縮を削除し、プロジェクトから Basis フォルダを削除してください。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Basisライブラリの削除" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400">
 
 ## Basis の制限
 
 PlayCanvas で Basis テクスチャ圧縮には、次の制限があります。
 
-1. PVR 形式は、幅と高さが同じ正方形で、2の累乗である(256、512、1024など)テクスチャのみサポートしています。A6 SoC 以下の古い iOS デバイス(iPhone 5や5Cなど)や、iOS バージョン13.7以下の古い iOS バージョンでは、PVR しかサポートしていません。正方形でも2の累乗でもない Basis テクスチャは、PVR 形式にトランスコードすることはできず、代わりに16ビットの565ピクセル形式が使用されます。これは正しく表示されますが、より多くのVRAMを占有する可能性があります。
-2. Basis 圧縮でサポートされる最大テクスチャサイズは、4096x4096です。これよりも大きいテクスチャは、異常な時間がかかるため、無効になっています。
+1. PVR 形式は、幅と高さが同じ正方形で、2の累乗である(256、512、1024など)テクスチャのみサポートしています。旧型のiOSデバイス（iPhone 5や5CのようなA6 SoC以下のもの）や古いiOSバージョン（13.7以下）はPVRのみをサポートしています。正方形でない、または2の冪でないBasisテクスチャはPVRフォーマットにトランスコードできませんが、代わりに16ビット565ピクセルフォーマットを使用します。それでも正しく表示されますが、VRAMをより多く占める可能性があります。
+2. Basis圧縮でサポートされるテクスチャの最大寸法は4096x4096です。これより大きなテクスチャは圧縮に過度な時間を要するため、これは無効化されます。
 
 ## 旧来のテクスチャ圧縮
 
-古いフォーマットの圧縮を使用することは、Basis 圧縮が可能な場合は、可能な限り避けることを強くお勧めします。私たちのテストでは、品質差はわずかで、半分程度小さなファイルになることがわかりました。
+可能な場合はBasis圧縮を強く推奨します。これはすべてのプラットフォームをカバーするための単一のテクスチャファイルを必要とし、またレガシーフォーマットと比較してファイルサイズもはるかに小さいからです。私たちのテストでは、Basisは品質の違いがほとんどないまま、約 ~50％小さくなることを示しています。
 
 旧来のテクスチャ圧縮フォーマットは次の通りです。
 
@@ -79,14 +79,14 @@ Legacy Texture Compression オプションを使用するには、テクスチ�
 2. 使いたいすべてのフォーマットをチェックします。
 3. Compress Legacy をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Legacy テクスチャ圧縮の有効化" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/enable-legacy-texture-compression.gif" alt="Enabling Legacy Texture Compression" width="400">
 
 フォーマットを1つまたは複数削除するには:
 
 1. 削除したいすべてのフォーマットのチェックを外します。
 2. Compress Legacy をクリックします。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Legacy テクスチャ圧縮の無効化" width="400">
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400">
 
 ## Legacy テクスチャ圧縮から Basis テクスチャ圧縮への移行
 
@@ -95,7 +95,7 @@ Legacy Texture Compression オプションを使用するには、テクスチ�
 1. すべての Legacy テクスチャフォーマットを削除します。
 2. Basis を有効にして使用します。
 
-<img loading="
+<img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400">
 
 
 [1]: https://github.com/BinomialLLC/basis_universal

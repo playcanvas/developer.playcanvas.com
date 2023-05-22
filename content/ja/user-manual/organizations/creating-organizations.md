@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-Organizationのを作成する方法はいくつかあります。あなたが所属しているOrganizationのは、以下のようにあなたのプロフィールの名前の隣に表示されます:
+Organizationを作成する方法はいくつかあります。あなたが所属しているOrganizationのは、以下のようにあなたのプロフィールの名前の隣に表示されます:
 
 ![profile_orgs][4]
 
@@ -41,7 +41,7 @@ CREATE をクリックすると、[profile][2] ページに移動します。
 
 <img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
 
-ユーザーアカウントをOrganizationのに変換すると、このユーザーアカウントでログインできなくなります。そのため、新しいOrganizationのオーナー (Owner)を指定する必要があります。
+ユーザーアカウントをOrganizationに変換すると、このユーザーアカウントでログインできなくなります。そのため、新しいOrganizationのオーナー (Owner)を指定する必要があります。
 
 <div class="alert alert-info">
 新しいオーナー (Owner)のアカウントでログインできることを確認してください。

@@ -1,5 +1,5 @@
 ---
-title: パーティクルシステム
+title: Particle System
 layout: usermanual-page.hbs
 position: 12
 ---

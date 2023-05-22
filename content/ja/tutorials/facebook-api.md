@@ -8,13 +8,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 <iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
 *Facebookにログインしてあなたの写真を3D彫刻で表示しましょう*
 
-PlayCanvasはWebGLのFacebookゲームやアプリケーションを構築する際の完璧なパートナーです。Facebookはあなたのゲームの広範な観衆を見つけるための素晴らしい場所であり、PlayCanvasはWebに最適化された高速パフォーマンスの良いゲームを作成することができます。
+PlayCanvasは、WebGLベースのFacebookゲームやアプリケーションを構築するための理想的なパートナーです。Facebookは、ゲームに対して大規模なオーディエンスを見つけるのに最適な場所であり、PlayCanvasはWeb向けに最適化された高速でパフォーマンスの良いゲームを作成することができます。
 
-このチュートリアルでは、PlayCanvasアプリケーションにFacebook APIを統合する方法を説明します。Facebook APIにアクセスできるようになると、たくさんの可能性があります。例えば、友達とのゲームの共有、Facebookへのストーリーの投稿などです。[チュートリアルプロジェクト][5]を参照してください。
+このチュートリアルでは、Facebook APIをPlayCanvasアプリケーションに統合する方法を紹介します。Facebook APIにアクセスできるようになると、さまざまな可能性があります。例えば、友達とゲームを共有したり、Facebookにストーリーを投稿したりなどです。[チュートリアルプロジェクト][5]をご覧ください。
 
 ## Facebookプラグイン
 
-[integrate Facebook][1]というプラグインが利用可能です。これにより、FacebookのJavaScript SDKを簡単に読み込むことができます。シーン内のエンティティにプラグインスクリプト`lib/facebook-setup.js`をアタッチし、`fb:init`イベントをリッスンすれば、APIが準備完了です。詳細な手順は[githubページ][1]にあります。
+[GitHub上][1]で利用可能なFacebookの統合をサポートするプラグインがあります。これにより、FacebookのJavaScript SDKを読み込む作業が簡略化されます。シーン内のエンティティにプラグインスクリプト `lib/facebook-setup.js` をアタッチし、`fb:init` イベントをリッスンするだけで、APIが利用可能になります。詳しい手順は[GitHubのページ][1]でご確認ください。
 
 ```javascript
   this.app.on("fb:init", function () {
@@ -114,7 +114,7 @@ FbUi.prototype.hideLogout = function () {
 };
 ```
 
-このコードのinitializeステップでは、Facebookプラグインから`fb:init`イベントをリッスンしています。これが発生したら、Facebook SDKが読み込まれ、使用できる状態であることがわかります。`FB.getLoginStatus()`は、ユーザーがアプリケーションを通じてFacebookにログインしているかどうかを報告し、`FB.login()`はユーザーのためにログインダイアログをポップアップ表示し、`FB.logout()`はユーザーをアプリケーションからログアウトしてFacebookからログアウトします。
+このコードのinitializeステップでは、Facebookプラグインから`fb:init` イベントをリッスンします。これが発信されると、Facebook SDKが読み込まれ、利用可能であることが分かります。三つのFacebook SDK関数を使用しています。`FB.getLoginStatus()`はユーザが既にFacebookにログインしているかどうかをアプリケーションを通して報告します。`FB.login()` はユーザのためのログインダイアログをポップアップ表示します。`FB.logout()`はユーザをアプリケーションとFacebookからログアウトさせます。
 
 <div class="alert alert-info">
 ここで大切なことは、`FB.login()`はボタンなどのユーザーアクションに対して呼び出される必要があることです。そうしない場合、ユーザーにポップアップ警告が表示されます。
@@ -193,43 +193,33 @@ FacePhoto.prototype.createPhoto = function(texture) {
 
     // override the emissive map on the mesh instance to display the photo texture
     mesh.setParameter("texture_emissiveMap", texture);
-};
-
-``` 
-
-このコードのinitializeステップでは、Facebookプラグインから`app:fblogin`イベントをリッスンしています。これが発生したら、ユーザがログインしたとわかります。`FacePhoto.prototype.reset`関数を使用して、アプリがユーザーの写真を取得できるようになります。この方法を使用すると、ユーザーが最近撮影した最新の写真を取得できます。
-
-`FacePhoto.prototype.createPhoto`関数では、画像テンプレートエンティティをクローンし、それを表示するためにマテリアルのテクスチャを更新しています。最後に、すべての写真が完全に読み込まれた後にカメラの位置を変更する必要があるため、`done`関数を使用して、カメラの位置を再計算するようにしています。```javascript
-mesh.setParameter("texture_emissiveMap", texture);
 
     this.app.root.addChild(e);
     var MIN = -2.5;
     var MAX = 2.5;
 
-    // 画像をランダムに配置し、テクスチャのアスペクト比を設定する
+    // randomly position the photo and set the aspect ratio to the same as the texture
     e.translate(pc.math.random(MIN, MAX), pc.math.random(MIN, MAX), pc.math.random(MIN, MAX));
     e.rotate(90, 0, 0);
 
     var aspect = texture.width / texture.height;
     e.setLocalScale(aspect, 1, 1);
-
 };
-
 ```
 
-このスクリプトの重要な部分のいくつか。
+いくつかの主要なスクリプトの部分を紹介します。
 
 ```javascript
 this.app.loader.getHandler("texture").crossOrigin = "anonymous";
 ```
 
-この行は、リソースローダーが、アプリケーションがホストされている場所(つまり `playcanv.as`)とは異なるオリジン(URL)からテクスチャを読み込めるようにするために必要です。
+この行は、リソースローダーがアプリケーションがホストされている場所（ `playcanv.as など）とは異なるオリジン（URL）からテクスチャを読み込むことができるようにするために必要です。
 
 ```javascript
 this.app.on("fb:login", this.reset, this);
 ```
 
-この行は、`fb-ui.js` ファイルからのログインイベントを聴きます。ユーザーがログインすると、写真のロードプロセスを開始します。
+この行は、`fb-ui.js` ファイルからのログインイベントをリッスンします。ユーザーがログインすると、写真の読み込みプロセスが開始されます。
 
 ```javascript
 // request the most recent photos from user's facebook account
@@ -259,9 +249,9 @@ FB.api(path, function (lists) {
 });
 ```
 
-ここでは、Facebook API を使用して [Graph API][2] にアクセスしています。 この場合、ログインしたユーザーの写真のリストを読み込み、各写真をクエリし、イメージの URL を取得しています。
+このコードのこのセクションでは、Facebook APIを使用して彼らの[Graph API][2]にアクセスしています。この場合、ログインしたユーザーから写真のリストを読み込み、それぞれの写真に対してクエリを実行して画像のURLを取得しています。
 
-### URL を取得したら、新しい `texture` アセットを作成して、画像をロードします。
+URLを取得したら、新しい `texture` アセットを作成し、画像を読み込みます。
 
 ```javascript
 FacePhoto.prototype.createPhoto = function(texture) {
@@ -277,7 +267,7 @@ FacePhoto.prototype.createPhoto = function(texture) {
     var MIN = -2.5;
     var MAX = 2.5;
 
-    // 画像をランダムに配置し、テクスチャのアスペクト比を設定する
+    // randomly position the photo and set the aspect ratio to the same as the texture
     e.translate(pc.math.random(MIN, MAX), pc.math.random(MIN, MAX), pc.math.random(MIN, MAX));
     e.rotate(90, 0, 0);
 
@@ -286,7 +276,13 @@ FacePhoto.prototype.createPhoto = function(texture) {
 };
 ```
 
-最後に、texture アセットをロードしたら、新しい Photo エンティティを作成し、 emissive テクスチャを新しいロードした写真のテクスチャで上書きします。
+最後に、テクスチャアセットを読み込んだ後、新しい写真エンティティを作成し、Emissiveテクスチャを新しく読み込んだ写真テクスチャで上書きします。
+
+### その他のアイデア
+
+このチュートリアルでは、PlayCanvasアプリケーション内からFacebook APIを読み込み、Facebookのデータにアクセスする方法を紹介しています。Facebook APIを使用して試してみることはまだまだたくさんあります。例えば、ゲームイベントが発生したときにFacebookストーリーを共有するようにしてみたり、ユーザーの友達リストを使用して友達とのゲームに挑戦するように誘ったりすることができます。
+
+私たちのゲームSWOOOPでは、これらのいくつかを実際に表示しています。[Facebook][4]でぜひお試しください。
 
 [1]: https://github.com/playcanvas/playcanvas-facebook
 [2]: https://developers.facebook.com/docs/graph-api

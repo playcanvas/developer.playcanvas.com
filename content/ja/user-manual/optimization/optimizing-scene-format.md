@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-Publishのオプションにより、サーバー上でgzippedされた後、シーンファイルのサイズを約30〜50%縮小することができます。
+このパブリッシュオプションは、サーバー上でgzip圧縮された後、シーンファイルのサイズを約30-50%まで縮小することができます。
 
 有効にするには、Publishの画面で 'Optimize Scene Format' にチェックを入れてから公開してください。
 

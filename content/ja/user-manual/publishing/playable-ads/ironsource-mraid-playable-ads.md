@@ -1,5 +1,5 @@
 ---
-title: Playable Ad(MRAID)ironSource
+title: ironSourceプレイアブル広告（MRAID）
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -141,7 +141,6 @@ ironSourceのテストツールでテストするために、HTTPSエンドポ�
 ```
 
 提出可能な広告の手順については、[ironSourceのドキュメント][ironsource-documentation]をフォローしてください。
-
 
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/

@@ -1,5 +1,5 @@
 ---
-title: エンティティピッキング
+title: シーン上のエンティティの選択
 layout: tutorial-page.hbs
 tags: raycast,basics,physics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg"
@@ -23,7 +23,7 @@ Frame Buffer Picking - クリックしてグレーのシェイプを選択する
 
 ## コリジョンピッキング
 
-コリジョンベースのピックでは、Collisionコンポーネントを使用してピックする必要のある各エンティティにシェイプを追加します。それからマウスクリックの位置からスクリーンに向けてレイを発生させ、それがCollisionコンポーネントに当たるかどうかを見ます。当たった場合、そのエンティティが「選択されます」。
+コリジョンベースのピッキングでは、ピックする必要がある各エンティティに対して、Collisionコンポーネントにシェイプを追加します。次に、マウスクリック位置から画面内にレイを発射し、[raycastFirst()][2] メソッドを使用して、コリジョンコンポーネントに当たるかどうかを確認します。もし当たれば、そのエンティティが「選択された」とします。
 
 ```javascript
 var PickerRaycast = pc.createScript('pickerRaycast');

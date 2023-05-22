@@ -12,7 +12,7 @@ Chrome、Firefoxや他のブラウザでは、ブラウザに直接組み込ま�
 
 スクリプトをデバッグするためには、Developer Tools (Chrome)でSourcesタブを選択します。Sourcesペインの左上隅にあるアイコンをクリックして 'navigator' を開きます。以下のようなものが表示されるはずです：
 
-![デバッガ][1]
+![Debugger][1]
 
 Firefoxでは次のようになります：
 

@@ -10,7 +10,7 @@ position: 5
 
 画像をクリックして新しい画像をアップロードすることで、プロフィール画像を更新することができます
 
-![プロフィール画像][2]
+![profile image][2]
 
 [1]: /images/user-manual/profile/profile.png
 [2]: /images/user-manual/profile/update-profile-image.jpg

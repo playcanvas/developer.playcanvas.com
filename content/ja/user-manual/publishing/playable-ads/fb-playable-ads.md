@@ -1,5 +1,5 @@
 ---
-title: Facebook Playable Ad
+title: Facebookプレイアブル広告
 layout: usermanual-page.hbs
 position: 1
 ---
@@ -30,7 +30,7 @@ PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][
 
 ## Playable adチェックリスト:
 
-* 「FbPlayableAd.onCTAClick( )」の関数呼び出しを呼び出しの一部として追加しましたか?
+* `FbPlayableAd.onCTAClick( )` の関数呼び出しを呼び出しの一部として追加しましたか?
 
 ## エクスポート方法
 

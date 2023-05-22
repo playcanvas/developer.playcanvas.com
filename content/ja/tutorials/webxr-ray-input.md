@@ -9,7 +9,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/460
 
 *VR/AR対応のデバイスやヘッドセットがある場合は、VR/ARボタンをクリックしてください。*
 
-これはWebXR体験で、レーザーポインター、注視、タッチスクリーンなどのXR入力ソースとUIとの相互作用を提供します。デスクトップ、モバイル、Oculus Browser、Google CardboardTM、Google DaydreamTM、Samsung Gear VRTM、その他のVR/ARヘッドセットに対応しています。
+これは、レーザーポインターや視線、タッチスクリーンなどのUIとXR入力ソース (Input Source)との間のインタラクションを提供するWebXR体験です。デスクトップ、モバイル、Oculus Browser、Google CardboardTM、Google DaydreamTM、Samsung Gear VRTM、その他のVR/ARヘッドセットをサポートしています。
 
 [チュートリアル][1]プロジェクトのソースを見てみましょう。
 

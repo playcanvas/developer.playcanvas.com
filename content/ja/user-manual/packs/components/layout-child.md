@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 8
 ---
 
-LayoutChildコンポーネントは、LayoutGroupコンポーネントによって制御される要素が、Layout Groupのデフォルト動作を上書きすることができるようにします。
+LayoutChildコンポーネントは、LayoutGroupコンポーネントによって制御されるエレメント (Element) が、Layout Groupのデフォルト動作を上書きすることができるようにします。
 
 詳細については[Layout Groups][0]セクションをご覧ください。
 
@@ -14,13 +14,13 @@ LayoutChildコンポーネントは、LayoutGroupコンポーネントによっ�
 
 | Property              | Description |
 |-----------------------|-------------|
-| Min Width             | 要素が描画される最小幅を設定します。 |
-| Min Height            | 要素が描画される最小高さを設定します。 |
-| Max Width             | 要素が描画される最大幅を設定します。 |
-| Max Height            | 要素が描画される最大高さを設定します。 |
-| Fit Width Proportion  | レイアウトグループがストレッチまたはシュリンクに設定されている場合、要素が占有する追加スペースの割合を設定します。 |
-| Fit Height Proportion | レイアウトグループがストレッチまたはシュリンクに設定されている場合、要素が占有する追加スペースの割合を設定します。 |
-| Exclude from Layout   | レイアウトの計算時にこの要素を完全に無視します。 |
+| Min Width             | Elementが描画される最小幅を設定します。 |
+| Min Height            | Elementが描画される最小高さを設定します。 |
+| Max Width             | Elementが描画される最大幅を設定します。 |
+| Max Height            | Elementが描画される最大高さを設定します。 |
+| Fit Width Proportion  | レイアウトグループがストレッチまたはシュリンクに設定されている場合、Elementが占有する追加スペースの割合を設定します。 |
+| Fit Height Proportion | レイアウトグループがストレッチまたはシュリンクに設定されている場合、Elementが占有する追加スペースの割合を設定します。 |
+| Exclude from Layout   | レイアウトの計算時にこのElementを完全に無視します。 |
 
 ## Scripting Interface
 

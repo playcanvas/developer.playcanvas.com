@@ -6,8 +6,8 @@ position: 1
 
 PlayCanvasゲームは実際はウェブページなので、ブラウザをホームとします。 ウェブに公開する際にはいくつかの選択肢があります：
 
-* [PlayCanvas Hosting][1]
-* [Self-hosting][2]
+* [PlayCanvasホスティング][1]
+* [セルフホスティング][2]
 * [Facebook][3]
 
 [1]: /user-manual/publishing/web/playcanvas-hosting

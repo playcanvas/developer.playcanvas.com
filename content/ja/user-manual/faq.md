@@ -8,7 +8,7 @@ position: 25
 
 ## コンポーネントを追加するには?
 
-エンティティに**コンポーネント**を追加するには、エンティティを選択して、**インスペクタ**で **Add Component** をクリックするか、エンティティを右クリックし、Add Component コンテキストメニューからコンポーネントを選択してください。
+エンティティに**コンポーネント**を追加するには、エンティティを選択して、**インスペクター**で **Add Component** をクリックするか、エンティティを右クリックし、Add Component コンテキストメニューからコンポーネントを選択してください。
 
 [詳細を見る](https://developer.playcanvas.com/en/user-manual/packs/components/)
 
@@ -39,7 +39,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 3Dモデルのすべての表面は、**マテリアル**を使用してレンダリングされます。 マテリアルは、色、光沢、凸凹などのプロパティを定義します。
 
-新しいマテリアルを作成し、それをモデルにドラッグ&ドロップするか、既存のマテリアルを選択してインスペクタでプロパティを編集することができます。
+新しいマテリアルを作成し、それをモデルにドラッグ&ドロップするか、既存のマテリアルを選択してインスペクターでプロパティを編集することができます。
 
 [詳細を見る](https://developer.playcanvas.com/en/user-manual/assets/materials/)
 
@@ -51,7 +51,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 キューブマップは、6つのテクスチャアセットから構成される特殊なタイプのテクスチャアセットです。各テクスチャは、キューブの各面を表します。
 
-キューブマップを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして**New Cubemap**を選択し、キューブマップインスペクタに6つのテクスチャをドラッグします。物理ベースのレンダリングを活用するには、6つのテクスチャを設定した後に**Prefilter**をクリックする必要があります。
+キューブマップを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして**New Cubemap**を選択し、キューブマップインスペクターに6つのテクスチャをドラッグします。物理ベースのレンダリングを活用するには、6つのテクスチャを設定した後に**Prefilter**をクリックする必要があります。
 
 [詳細を見る](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/)
 
@@ -61,7 +61,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 <img src="https://playcanvas.com/static-assets/instructions/new_entity.gif">
 
-階層パネルの<span class="pc-icon">&#57632;</span> Addボタンをクリックするか、エンティティを右クリックして**New Entity**メニュー項目を使用することで、新しいエンティティを作成できます。
+ヒエラルキーパネルの<span class="pc-icon">&#57632;</span> Addボタンをクリックするか、エンティティを右クリックして**New Entity**メニュー項目を使用することで、新しいエンティティを作成できます。
 
 
 
@@ -74,7 +74,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## マテリアルを作成するには?
 
-3Dモデルのすべての表面は、マテリアルを使用してレンダリングされます。マテリアルは、表面の色、光沢、凹凸などのプロパティを定義します。
+3Dモデルのすべての表面は、**マテリアル**を使用してレンダリングされます。マテリアルは、表面の色、光沢、凹凸などのプロパティを定義します。
 
 マテリアルを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして、**New Material**を選択します。
 
@@ -117,13 +117,13 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## エンティティを削除するには?
 
-エンティティを選択し、**Delete**を押すか、階層パネルの<span class="pc-icon">&#57636;</span> Deleteボタンをクリックするか、エンティティを右クリックしてコンテキストメニューからDeleteを選択することで、エンティティを削除できます。
+エンティティを選択し、**Delete**を押すか、ヒエラルキーパネルの<span class="pc-icon">&#57636;</span> Deleteボタンをクリックするか、エンティティを右クリックしてコンテキストメニューからDeleteを選択することで、エンティティを削除できます。
 
 
 
 ## エンティティを複製するには?
 
-階層パネルの<span class="pc-icon">&#57638;</span> Duplicateボタンを使用するか、**Ctrl+D**を押してエンティティを複製できます。
+ヒエラルキーパネルの<span class="pc-icon">&#57638;</span> Duplicateボタンを使用するか、**Ctrl+D**を押してエンティティを複製できます。
 
 また、エンティティをコピーして貼り付けることもできます。コピーするには**Ctrl + C**、貼り付けるには**Ctrl + V**を押します。
 
@@ -160,7 +160,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 <img src="https://playcanvas.com/static-assets/instructions/new_model.gif">
 
-3Dモデルをレンダリングするには、Entityに **Model Component** を追加し、モデルアセットをAssetフィールドにドラッグアンドドロップします。または、AssetsパネルからModel Assetを3Dビューポートにドラッグアンドドロップすることもできます。
+3Dモデルをレンダリングするには、エンティティに**Modelコンポーネント**を追加し、アセットフィールドに**Modelアセット**をドラッグ＆ドロップする必要があります。または、アセットパネルからモデルアセットを3Dビューポートにドラッグ＆ドロップすることもできます。
 
 [詳細を見る](https://developer.playcanvas.com/ja/user-manual/packs/components/model/)
 
@@ -185,9 +185,9 @@ Translate / Rotate / Scaleツールを切り替えるには、それぞれ1/2/3�
 
 ## 物理を使用するには?
 
-Entityに物理特性を与えるには、[Collision component](https://developer.playcanvas.com/ja/user-manual/packs/components/collision/)と[RigidBody component](https://developer.playcanvas.com/ja/user-manual/packs/components/rigidbody/)を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
+Entityに物理特性を与えるには、 [Collision component](https://developer.playcanvas.com/ja/user-manual/packs/components/collision/) と [RigidBody component](https://developer.playcanvas.com/ja/user-manual/packs/components/rigidbody/) を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
 
-デフォルトの [gravity](https://developer.playcanvas.com/ja/user-manual/designer/settings/#gravity) を変更することができます。
+デフォルトの [gravity](https://developer.playcanvas.com/en/user-manual/designer/settings/#gravity) を変更することができます。
 
 [チュートリアルを見る](https://developer.playcanvas.com/ja/tutorials/collision-and-triggers/)
 
@@ -195,6 +195,6 @@ Entityに物理特性を与えるには、[Collision component](https://develope
 
 ## リアルタイムシャドウを使用するには?
 
-リアルタイムシャドウは、**Cast Shadows**が有効になっている各光源に対してレンダリングされます。シャドウを有効にするには、Light componentを持つEntityを選択して、Cast Shadowsを有効にします。また、シーン内の任意のModel componentでもCast Shadowsを有効にする必要があります。
+リアルタイムシャドウは、**Cast Shadows**が有効になっている各光源に対してレンダリングされます。シャドウを有効にするには、Lightコンポーネントを持つEntityを選択して、Cast Shadowsを有効にします。また、シーン内の任意のModelコンポーネントでもCast Shadowsを有効にする必要があります。
 
 [Learn more](https://developer.playcanvas.com/en/user-manual/graphics/lighting/shadows/)

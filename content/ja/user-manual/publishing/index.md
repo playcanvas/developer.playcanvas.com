@@ -1,5 +1,5 @@
 ---
-title: パブリッシング
+title: プロジェクトの公開方法
 layout: usermanual-page.hbs
 position: 21
 ---

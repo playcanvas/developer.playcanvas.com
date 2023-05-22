@@ -27,7 +27,7 @@ GET https://playcanvas.com/api/assets/{assetId}/file/{filename}?branchId={branch
 Authorization: Bearer {accessToken}
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
 <div class="parameter"><span class="param">branchId: string</span><p>ブランチのID。</p></div>
@@ -46,10 +46,10 @@ Authorization: Bearer {accessToken}
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>認証されていません。</p></div>
-<div class="parameter"><span class="param">403</span><p>禁止されています。</p></div>
-<div class="parameter"><span class="param">404</span><p>プロジェクトまたはアセットが見つかりません。</p></div>
-<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます。</p></div>
+<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
+<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
+<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
+<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
 </div>
 
 ## レート制限
