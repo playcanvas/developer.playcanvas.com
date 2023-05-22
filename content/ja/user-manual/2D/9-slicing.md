@@ -4,48 +4,48 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-9-slicing (sometimes called 9-patch) is a technique for 2D graphics that splits a single image into 9 areas which are scaled individually in order to prevent stretching when the image is displayed at different sizes and with different aspect ratios.
+9スライシング(時には9パッチとも呼ばれます)は、2Dグラフィックスにおいて、1つの画像を9つの領域に分割し、異なるサイズやアスペクト比で画像を表示する際に引き伸ばされるのを防ぐために、各領域を個別にスケーリングする技術です。
 
-![9 Sliced Button][1]
+![9スライシングしたボタン][1]
 
-In the image above you can see the 9 areas that a defined using the Texture Atlas editing features of the [Sprite Editor][2]. When added to a scene using either a [Sprite Component][3] or an [Image Element Component][4], the image can be resized using the width and height properties of the component. Each area is scaled using the following rules:
+上の画像では、[スプライトエディター][2]のテクスチャアトラスの編集機能を用いて定義される9つのエリアが表示されています。[Spriteコンポーネント][3]または[Image Elementコンポーネント][4]を使用してシーンに追加すると、コンポーネントの幅と高さプロパティを使用して画像のサイズを変更できます。各領域は以下の規則に従って拡大・縮小します。
 
-* **Center** - stretch or tile both horizontally and vertically
-* **Top, Bottom** - stretch or tile horizontally only
-* **Left, Right** - stretch or tile vertically only
-* **TopLeft, TopRight, BottomLeft, BottomRight** - Do not stretch or tile
+* **Center** - 水平・垂直どちらもストレッチまたはタイル表示
+* **Top, Bottom** - 水平方向のみストレッチまたはタイル表示
+* **Left, Right** - 垂直方向のみストレッチまたはタイル表示
+* **TopLeft, TopRight, BottomLeft, BottomRight** - 拡大または縮小しない
 
-![Button Resize Animation][5]
+![ボタンのリサイズアニメーション][5]
 
-## Setting up 9-slicing
+## 9スライシングの設定
 
-![Setup 9-slicing][6]
+![9スライシングの設定][6]
 
-To setup a 9-sliced sprite. Create a frame around the area that you wish to use 9-slicing on in the Sprite Editor. Then use the blue handles or the Border property in the Frame Inspector to set the borders to outline the center portion of the image that you wish to be the stretch part of your sprite.
+9スライス・スプライトを設定するには、スプライト・エディタで9スライシングを使用する画像の領域にフレームを作成します。 その後、フレーム・インスペクタの青いハンドルまたはボーダー・プロパティを使用して、スプライトのストレッチ部分を示す中央部分をアウトラインする境界線を設定します。
 
-Finally click the **New Sliced Sprite From Selection** to create a new Sprite with the render mode set to *Sliced*.
+最後に、**選択範囲からスライスされたスプライトを新規に作成**をクリックして、描画モードが*Sliced*に設定された新しいスプライトを作成します。
 
-## Render Modes
+## 描画モード
 
-Sprite Assets can have one of three Render Modes.
+スプライト・アセットには、次の3つの描画モードのいずれかを設定できます。
 
-### Simple Sprites
+### シンプル・スプライト
 
-![Simple Render Mode][7]
+![シンプル・スプライト][7]
 
-*Simple* Render Mode has no 9-slicing. Use this mode for regular sprites.
+*Simple*の描画モードには9スライシングはありません。通常のスプライトに使用します。
 
-### Sliced Sprites
+### スライスされたスプライト
 
-![Sliced Render Mode][8]
+![スライスされたスプライト][8]
 
-*Sliced* Render Mode stretches portions of the image. The center stretches horizontally and vertically; the left and right sections stretch vertically; the top and bottom sections stretch horizontally and the corners do not stretch at all.
+*Sliced*描画モードは、画像の一部を伸ばします。 中央部分は水平・垂直に伸び、左右の節は垂直に伸び、上下の節は水平に伸びます。 コーナーは全く伸びません。
 
-### Tiled Sprites
+### タイル表示されたスプライト
 
-![Tiled Render Mode][9]
+![タイル表示されたスプライト][9]
 
-*Tiled* Render Mode is similar to *Sliced* mode except instead of stretching the sections repeat in tiled manner. The center tiles horizontally and vertically; the left and right tile vertically; the top and bottom tile horizontally and the corners do not tile at all.
+*Tiled* Render Modeは、*Sliced* modeと似ていますが、セクションを伸ばす代わりにタイル表示を行います。 中央部は水平・垂直に並べられ、左右のセクションは垂直に並べられ、上下のセクションは水平に並べられ、コーナーは全くタイル表示されません。
 
 [1]: /images/user-manual/2D/9-slicing/9-sliced-labelled.jpg
 [2]: /user-manual/2D/sprite-editor

@@ -1,5 +1,5 @@
 ---
-title: 初心者のためのセルフホスティング
+title: 初心者向けセルフホスティング
 layout: usermanual-page.hbs
 position: 3
 ---
@@ -99,7 +99,7 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 
 以下は、PlayCanvasアプリケーションで使用されるコンテンツタイプのリストです：
 
-| ファイルタイプ | クライアント             |
+| ファイルタイプ | Content type             |
 | --------- | ------------------------ | 
 | AAC       | audio/aac                |
 | BASIS     | application/octet-stream | 
@@ -119,7 +119,7 @@ PlayCanvasアプリケーションのセルフホスティングに関する[詳
 | XML       | application/xml          |
 
 
-### クライアント
+### Client
 
 クライアントサイドのコードは、PlayCanvasアプリケーションの一部として書かれている全てです。ブラウザが`index.html`ファイルを読み込む際、PlayCanvasアプリケーションを起動し、あなたが書いたすべてのクライアントサイドコードを実行します。
 

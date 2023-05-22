@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-スクリプトのアトリビュート機能は、スクリプト内で使用する変数をPlayCanvasエディタ内で編集することができるようにする便利な機能です。この機能を使うことで、一度コードを書いた後にエンティティごと作られるインスタンスにそれぞれ違うパラメータを設定する調整ができるようになります。これにより、アーティスト、デザイナーやその他のプログラマーではないチームメンバーがコードを書かずに値を変更できるにプロパティを露出させることができます。
+スクリプト属性 (Script Attributes) は、スクリプトファイルの値をPlayCanvasエディターに表示して調整できるようにする強力な機能です。これにより、1度コードを書いて、エンティティ（Entity）のインスタンスごとに値を調整して異なるプロパティを付けることができます。これにより、アーティスト、デザイナー、または他の非プログラマのチームメンバーに値調整と変更をコーディングすることなく行わせることができます。
 
 ## スクリプトの属性を宣言する
 
-スクリプトの属性は、スクリプトの先頭で以下のフォーマットで宣言します:
+スクリプト属性は、次の形式でスクリプトファイルの先頭で宣言します。
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -19,9 +19,9 @@ MyScript.attributes.add('speed', {
 });
 ```
 
-この例では、`speed`プロパティをデフォルト値`80`を持つ`number`として宣言しています:
+上記の例で、`speed` というプロパティが宣言されています。type は `number` でデフォルト値は `80` です。
 
-If you need an array of attributes set `array: true` like so:
+もし属性の配列が必要な場合は、以下のように `array: true` を設定します。
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -32,15 +32,15 @@ MyScript.attributes.add('names', {
 });
 ```
 
-## 属性をエディタ上で使う
+## エディター上で属性を使用する
 
 <img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;"> button.
+属性を宣言したら、Editor がスクリプト属性を公開できるようにコードをPARSEする必要があります。属性が変更された場合、属性を手動で更新する場合はPARSEボタン<img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;">をクリックしてください。
 
-## コードで属性にアクセス
+## コード内で属性にアクセスする
 
-スクリプト内で属性を宣言すると、スクリプトインスタンス上のメンバー変数として使用できるようになります。例えば、上記で宣言した`speed`プロパティは`this.speed`として利用可能です。
+スクリプトで属性を宣言すると、属性がスクリプトインスタンスのメンバー変数として利用できるようになります。上記で宣言された `speed` プロパティは、`this.speed` として利用できます。
 
 ```javascript
 MyScript.prototype.update = function (dt) {
@@ -48,29 +48,29 @@ MyScript.prototype.update = function (dt) {
 }
 ```
 
-## 属性の更新
+## 属性を更新
 
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+エディターで属性を変更すると、エディターから起動されたアプリケーションのコピーに対して変更が送信されます。これにより、アプリケーションを再読み込みすることなく属性をライブで編集できます。そして、属性が変わった際の特別な動作が必要な場合は、`attr` と `attr:[name]` イベントを使用して、属性の変更に応答することができます。
 
 ```javascript
 MyScript.prototype.initialize = function () {
-    // fires only for `speed` attribute
+    // `speed` 属性の場合だけ発火
     this.on('attr:speed', function (value, prev) {
-        // new value for speed
+        // 新しいspeedの値
     });
 
-    // fires for all attribute changes
+    // 全ての属性変更で発火
     this.on('attr', function(name, value, prev) {
-        // new attribute value
+        // 新しい属性値
     });
 }
 ```
 
 ## 属性のタイプ
 
-属性を宣言する際、属性のタイプも宣言します。これにより、Editorは属性を編集するための関連コントロールを表示できるようになります。'boolean', 'number', 'string'のように、ほとんどのタイプは単純です。しかし、いくつかは、以下の例のように説明を必要とします。詳細については、[完全な属性の参照][1]を参照してください。
+属性を宣言する際は、その属性のタイプも指定する必要があります。これにより、エディターが属性を編集するための関連コントロールを表示できます。ほとんどのタイプは自己説明的ですが、例えば `boolean` 、 `number` 、`string`などです。以下にさらに詳しい説明が必要な属性例を示します。詳細については、[属性リファレンス][1] を参照してください。
 
-### エンティティ属性
+### Entity属性
 
 ```javascript
 MyScript.attributes.add('target', { type: 'entity' })
@@ -78,16 +78,15 @@ MyScript.attributes.add('target', { type: 'entity' })
 
 エンティティタイプにより、階層で他のエンティティを参照することができます。二つのエンティティをリンクする良い方法です。
 
-
-### アセットの属性
+### Asset属性
 
 ```javascript
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+Assetタイプを使用すると、スクリプト内でプロジェクトアセットに参照することができます。`assetType` プロパティを使用することもできます。これにより、属性が特定のタイプの資産に限定されます。例えば、'texture' 、'material' 、'model' などです。
 
-アセット属性の実行時のタイプは`pc.Asset`です。次のように、実行時にアセット属性のリソースを参照することができます：
+Asset属性のランタイムタイプは `pc.Asset` です。Asset属性のリソースを参照するには、以下のようにします。
 
 ```javascript
 MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
@@ -99,7 +98,7 @@ MyScript.prototype.initialize = function () {
 
 ```
 
-### 色の属性
+### Color属性
 
 ```javascript
 MyScript.attributes.add('color', { type: 'rgba' });
@@ -107,7 +106,7 @@ MyScript.attributes.add('color', { type: 'rgba' });
 
 色属性は、エディタで露出されたときにカラーピッカーを示します。アルファチャンネルを公開するか否かに応じて、二つのオプション`rgb`と` rgba`があります。
 
-### 曲線の属性
+### Curve属性
 
 ```javascript
 MyScript.attributes.add('wave', { type: 'curve' }); // one curve
@@ -116,11 +115,11 @@ MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for
 MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
 ```
 
-曲線の属性は、時間にわたって変化する値を表現するために使用されます。1.0 - すべての曲線は0.0-1.0の期間上で定義されます。複数の曲線を定義することができます。例えば、曲線から3Dの位置を得る場合、`curves`プロパティを使用してx,y,zに3つの曲線を定義します。また、`color`プロパティを使用して色を変更するための特別なカーブエディタもあります。
+Curve属性は、時間の経過に応じて値が変化する値を表現するために使用します。すべてのカーブは、期間0.0 - 1.0の間で定義されます。3D位置をカーブで表現する場合は、`curves` プロパティを使用して x、y、z それぞれの 3 つのカーブを定義できます。また、`color` プロパティを使用して特別なカーブエディターを利用してカラーを変更できるようにできます。
 
-### 列挙の属性
+### Enum属性
 
-The Enumeration attribute allows you to choose one of the available options:
+Enum属性を使用すると、使用可能なオプションの1つを選択できます。以下は、使用可能なオプションのリストを宣言する形式です。
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -133,11 +132,11 @@ MyScript.attributes.add('value', {
 });
 ```
 
-列挙のために可能な値のリストを宣言するためにenumプロパティを使用します。プロパティは、各オブジェクトがオプションとなるオブジェクトの配列です。`key`はオプションのタイトル、`value`は属性の値です。このプロパティは、さまざまな属性タイプで使用することができます。例：`number`,`sting`,`vec3`。
+属性に対する可能性のある値のリストを宣言するために、enumプロパティを使用します。プロパティはオプションを表す配列のオブジェクトです。`key` はオプションのタイトルで、 `value` は属性の値です。このプロパティは、`number`、`string`、`vec3`などの様々な属性タイプに使用できます。
 
-### JSON attribute
+### JSON属性
 
-The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+JSON属性を使用すると、他の属性の型を自由に入れ子にすることができます。JSON属性を作成するたびに、その要素を説明するスキーマを指定する必要があります。スキーマには上記と同様に、通常のスクリプト属性定義が含まれています。たとえば，
 
 ```javascript
 MyScript.attributes.add('gameConfig', {
@@ -159,9 +158,9 @@ MyScript.attributes.add('gameConfig', {
 });
 ```
 
-You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+また、編集可能なオブジェクトの配列を作成するために、JSON属性の配列を宣言することも可能です。他の属性タイプと同様に、JSON属性を定義する際に `array: true` を追加するだけです。
 
-Here's an example of accessing the above attributes in a script:
+以下は、スクリプト内で上記の属性にアクセスする例です。
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
@@ -172,6 +171,6 @@ MyScript.prototype.update = function (dt) {
 };
 ```
 
-*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
+*注意: 現在、JSON属性を他のJSON属性の子として定義することはサポートしていません。JSON属性を定義する際には1レベルの深さまでしか設定できません。*
 
 [1]: /api/pc.ScriptAttributes.html

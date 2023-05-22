@@ -1,17 +1,17 @@
 ---
-title: 基本的なキーボード入力
+title: 基本的なキーボード入力操作
 layout: tutorial-page.hbs
 tags: input
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="基本的なキーボード入力操作"></iframe>
 
-*クリックでフォーカスして、左矢印、右矢印、空白バーを押してキューブを回転します。aキーを押して離すことで色を変更します。*
+*フォーカスしてから`左矢印キー`、`右矢印キー`、`スペースバー`を押して立方体を回転させます。 'a' キーを押してリリースすると色が変わります。*
 
-PlayCanvasエンジンのキーボード処理はpc.Keyboardオブジェクトにより提供されます。Keyboardオブジェクトは一般的なキーボード操作のシンプルなインターフェイスを提供します。また、keycodeやcharcodeの処理に伴うクロスブラウザの問題を取り除きます。
+PlayCanvasエンジンでのキーボード操作は`pc.Keyboard`オブジェクトで提供されます。Keyboardオブジェクトは、キーが押されているかどうかを確認するなど、一般的なキーボード操作のための単純なインタフェースを提供します。また、キーコードや文字コードの処理に関するさまざまなクロスブラウザー問題を解決します。
 
-[チュートリアルプロジェクト][1]のキーボード入力シーンをご確認ください。チュートリアルのコードはこちらです：
+[tutorials project][1]のキーボード・インプット Scene に目を向けましょう。以下は、そのチュートリアルのコードです。
 
 ```javascript
 var KeyboardHandler = pc.createScript('keyboardHandler');
@@ -28,12 +28,11 @@ KeyboardHandler.attributes.add('whiteMaterial', {
 
 // initialize code called once per entity
 KeyboardHandler.prototype.initialize = function() {
-    // Use on() to listen for events on the keyboard device.
-    // Arguments are:
-    // 1) The event name to listen for
-    // 2) The callback function to call when the event fires
-    // 3) (optional) The value to use for 'this' in the callback function
-
+    //キーボードデバイスでいろいろなイベントを監視するためにon()を使います。
+    //引数は以下の通りです。
+    //1)監視するイベント名
+    //2)イベントが呼び出された際に呼び出されるコールバック関数
+    //3)(オプション)コールバック関数で使用する 'this' の値
     this.app.keyboard.on(pc.EVENT_KEYDOWN, this.onKeyDown, this);
     this.app.keyboard.on(pc.EVENT_KEYUP, this.onKeyUp, this);
 };
@@ -63,7 +62,7 @@ KeyboardHandler.prototype.update = function(dt) {
         angle = 1;
     }
 
-    // Update the spinning cube
+    //回転する立方体の更新
     this.entity.rotateLocal(0, angle, 0);
 };
 
@@ -72,12 +71,15 @@ KeyboardHandler.prototype.update = function(dt) {
 */
 KeyboardHandler.prototype.onKeyDown = function (event) {
     // Check event.key to detect which key has been pressed
+    //event.keyには押されたキーに対する識別子が入っています。
     if (event.key === pc.KEY_A && this.redMaterial) {
         this.entity.render.meshInstances[0].material = this.redMaterial.resource;
     }
 
     // When the space bar is pressed this scrolls the window.
     // Calling preventDefault() on the original browser event stops this.
+    //スペースバーを押すと、ウィンドウがスクロールします。
+    //preventDefault()をオリジナルのブラウザイベントに呼び出すことで、これが停止します。
     event.event.preventDefault();
 };
 
@@ -85,51 +87,51 @@ KeyboardHandler.prototype.onKeyDown = function (event) {
 * Event handler called when key is released
 */
 KeyboardHandler.prototype.onKeyUp = function (event) {
-    // Check event.key to detect which key has been pressed
+    //event.keyには押されたキーに対する識別子が入っています。
     if (event.key === pc.KEY_A && this.whiteMaterial) {
         this.entity.render.meshInstances[0].material = this.whiteMaterial.resource;
     }
 };
 ```
 
-キーボードの入力を探知する方法は二つあります。一つ目はスクリプトの更新メソッドで行われます。isPressed()とwasPressed()を使用してキーが現在押されているか、押されたばかりかを確認します。二つ目は、イベントを使用してキーの押下や開放の実行時に反応します。
+キーボード入力を検出する方法には2つの方法があります。1つ目は、スクリプトのupdateメソッドで行います。 `isPressed()`と`wasPressed()`を使用して、キーが現在押されているか、または押されたばかりかどうかを確認します。 2番目の方法は、イベントを使用してキーが押されたときまたは放されたときに応答することです。
 
 ## `isPressed` vs `wasPressed`
 
-上記デモで、isPressed()とwasPressed()の挙動の違いを確認できます。
+上記のデモでは、`isPressed()`と`wasPressed()`の振る舞いの違いが見られます。
 
-左右どちらかのキーを押さえるとキューブは5&deg;回転しますが、回転するのは一度のみです。wasPressed()はキーが押された直後のフレームにのみtrueを返すからです。
+左または右矢印キーを押してボタンを押したままにすると、キューブが5°回転しますが、回転は1回だけです。 これは、 `wasPressed()`がキーが最後に押されたフレームでのみ true を返すためです。
 
-スペースバーを押さえると、キューブはフレーム毎に繰り返し1&deg;回転します。isPressed()がキーが押される全てのフレームに対してtrueを返すためです。
+スペースバーを押しているときに立方体が1°ずつ連続的に回転することがわかります。これは、 `isPressed()`がキーが押されている間はすべてのフレームで true を返すためです。
 
 ### `isPressed(key)`
 
-sPressed(key)はkeyが現在押されているかを確認して、押されている場合はtrueを返します。キーが押されている間の全てのフレームにtrueを返します。
+`isPressed(key)`は、 `key` が現在押されているかどうかを確認し、それがそうである場合に `true` を返します。キーが押されている間は、各フレームに対してtrueが返されます。
 
 ### `wasPressed(key)`
 
-wasPressed(key)は*最後のフレーム以来*keyが押されたかどうかを確認します。wasPressed()は一度のキー押下に対して一度のみtrueを返します。
+`wasPressed(key)`は、キーが最後のフレーム以降に押されたかどうかを確認します。`wasPressed()` は、単一のキー押下の場合にのみtrueを返します。
 
 ## イベント
 
-キーの押下を処理する二つ目の方法は、イベントへのリッスンです。Keyboardデバイスでは二つのキーボードイベントが対応されています：
+キーを押したときに応答するキーボード-インプットの2番目の方法は、イベントをリッスンすることです。`Keyboard`デバイスには、次の2つのキーボードイベントがあります。
 
 * `pc.EVENT_KEYDOWN`
 * `pc.EVENT_KEYUP`
 
-[DOM][3] キーボードイベントは異なるブラウザで異なる形で実装されるので、PlayCanvas Engineは如何なる場所でも同じコードを使用できるよう、`pc.Keyboard`オブジェクトでイベントを提供します。キーボードイベントが発動すると、押下または開放されたキーのキーコードを含むpc.KeyboardEvent`オブジェクトがイベントハンドラに渡されます。
+[DOM][3]キーボードイベントは、さまざまなブラウザーで異なる方法で実装されているため、PlayCanvas Engineでは、すべての場所で同じコードを使用できるように、`pc.Keyboard`オブジェクト上のイベントを提供します。 キーボードイベントが発生すると、イベントハンドラーに`pc.KeyboardEvent`オブジェクトが渡され、そのオブジェクトには押されたキーのキーコードが含まれます。
 
-`this`またはスクリプトインスタンス自体である3つ目の引数をon()に渡しています。on()に渡す3つ目の引数はイベントコールバックの`this`として使用されるので、この中で渡さないと、正しいオブジェクトに設定されません。
+on()には第3引数があり、これはスクリプトインスタンス自体、つまり`this`です。 on()の第3引数は、イベントコールバック関数での `this` として使用されるため、ここで正しいオブジェクトに設定されていないといけません。
 
 ## キーコード
 
-キーコードを使用してどのキーが押されたかを識別します。これらはキーボードのキーと一致する数値です。例えば、pc.KEY_Aは`A` キー、pc.KEY_LEFTは矢印キーです。
+押されたキーを特定するには、キーコードを使用します。これらは、キーボードのキーと対応する数値値です。たとえば、`pc.KEY_A`は「A」キーであり、`pc.KEY_LEFT`は左矢印キーです。
 
-数値を使用するのではなく、常に`pc.KEY_*`列挙を使用してください。後にこれらの不変数の実績値は変わる可能性があるからです。
+注意点として、将来的に定数の値が変更されることがあるため、数値を使用せず、常に列挙子 `pc.KEY_*` を使用する必要があります。
 
-## 試してみよう
+## 実際に試してみる
 
-[こちら][2] またはページの上部からお試しください。矢印キーやスペースバーを叩いたり押さえたりして比べて見てください。
+こちらの[こちら][2]でフルスクリーン表示して、矢印キーをタップしてホールドする際の挙動とスペースバーをタップしてホールドする際の挙動を比較してみてください。
 
 [1]: https://playcanvas.com/project/405804/overview/tutorial-basic-keyboard-input
 [2]: https://playcanv.as/p/rFZGQWCi/

@@ -1,18 +1,18 @@
 ---
-title: ウェブページとの通信
+title: Webページとの通信
 layout: usermanual-page.hbs
 position: 4
 ---
 
-プラグインやクロスコンパイルエンジンの代わりにPlayCanvasとWebGLを使用する主な利点のひとつは、アプリケーションとそれを囲うウェブページ間で直接、相互作用できることです。このページでは、PlayCanvasアプリケーションをウェブページやウェブアプリケーションに対してインタフェースするためのいくつかの一般的な方法について説明します。
+PlayCanvasとWebGLを使う最大の利点の一つは、アプリケーションと周囲のWebページとの間に直接的にやり取りできることです。このページでは、PlayCanvasアプリケーションとWebページまたはWebアプリケーションを接続する一般的な方法について説明します。
 
-PlayCanvasアプリケーションとそれを囲ウェブページを通信させるには二つの方法があります。最初の方法は、ページ内のiframe内にアプリケーションを埋め込むことです。二つ目の方法は、PlayCanvasページをロードする独自のHTMLページをサーブすることです。これらの2つの方法は、大きく異なる形でウェブページとアプリケーション間の通信を行います。
+PlayCanvasアプリケーションが周囲のWebページと通信する方法には2つあります。1つ目は、ページ内のiframeにアプリケーションを埋め込む方法です。2つ目は、独自のHTMLページを提供し、PlayCanvasページを読み込む方法です。これら2つの方法には、Webページとアプリケーション間で通信するために異なる方法が必要です。
 
 ## APIの定義
 
-どちらのホスティング方法でも、ウェブページに公開する必要があるPlayCanvasアプリケーションの機能について考える必要があります。ボタンのクリックやスライダーに基づいて何かの色を変更する必要があるかも知れません。または、テクスチャにレンダリングするためにアプリケーションにテキスト入力を送信する必要があるかも知れません。公開する必要がある機能を事前に決定して、PlayCanvasアプリケーションで明示的なAPIや、ウェブページが呼び出す唯一の関数のセットを書いてください。
+両方のホスティング方法に共通することは、PlayCanvasアプリケーションでウェブページに公開する必要のある機能を考えることです。ボタンクリックやスライダーに基づいて何かの色を変更する必要があるかもしれません。または、アプリケーションにレンダリングされるテキスト入力を送信する必要があるかもしれません。公開する必要がある機能を事前に決定し、PlayCanvasアプリケーションに明示的なAPIまたは関数群を書いて、ウェブページから呼び出される唯一の関数を作成します。
 
-PlayCanvasアプリケーションからウェブページにAPIを露出させるいくつかの方法を示す簡単な例です。
+次に、PlayCanvasアプリケーションでAPIまたは関数を公開する一例を示します。
 
 ```javascript
 
@@ -49,15 +49,15 @@ app.fire("score:set", 10);
 
 方法1は、アプリケーションにアクセスするために、ページ内のどこでも呼び出すことができるグローバルな関数を定義します。方法2は、ページから発射することができるアプリケーションイベントを定義します。アプリケーションはこのイベントをリッスンし、イベントに応じてアクションを実行します。どちらもアプリケーションでAPIを定義する有効な方法です。
 
-### IFrameへの埋め込み
+### iframeに埋め込まれている場合
 
-iframe内にPlayCanvasアプリケーションを埋め込むのは、PlayCanvasのコンテンツをページ内に挿入する迅速かつ簡単な方法です。また、弊社の最適化されたホスティングを利用することができ、PlayCanvasのコンテンツのサーブの心配をする必要はありません。欠点は、JavaScript関数が別のページ上で実行されているので、ホスティングページから直接PlayCanvasアプリケーションのJavascript関数を呼び出すことができないことです。
+PlayCanvasアプリケーションをiframeに埋め込むことは、すばやく簡単にページにPlayCanvasコンテンツを取り込む方法です。また、最適化されたホスティングを利用できるため、すべてのPlayCanvasコンテンツを提供する必要がないことも意味します。ただし、欠点として、異なるページで実行されるため、ホスティングページからPlayCanvasアプリケーションのJavaScript関数を直接呼び出すことはできません。
 
-親ページとiframe間で通信するには[postMessage][1] javascript APIを使用して、ページとPlayCanvasアプリケーション間でデータを送信します。
+親ページとiframe間で通信するには、[postMessage][1]のJavaScript APIを使用して、ページとPlayCanvasアプリケーション間でデータを送信する必要があります。
 
-In your host page, use the iframeless URL for the iframe. The default publish link has the build in an iframe to include the social sharing bar at the bottom. This can cause problems with [postMessage][1] as there are now two iframes to communicate through.
+ホストページでは、iframeレスのURLを使用してください。デフォルトのパブリッシュリンクには、ソーシャル共有バーを含めるためのiframeが組み込まれています。これは、[postMessage][1]の問題が発生する可能性があるためです
 
-If you add `/e` after `https://playcanv.as` in the URL, this will give you a version of the build without the iframe and social sharing bar.
+iframeとソーシャル共有バーを含まないバージョンのビルドを取得するためには、URLの`https://playcanv.as`の後に`/e`を追加します。
 
 ```html
 <iframe loading="lazy" id="app-frame" src="https://playcanv.as/e/p/example/">
@@ -69,7 +69,7 @@ iframe.contentWindow.postMessage({
 </script>
 ```
 
-In your application
+アプリケーションで次のようにします。
 ```javascript
 window.addEventListener("message", function (event) {
     if (event.origin === "http://example.com") { // always check message came from your website
@@ -85,9 +85,9 @@ window.addEventListener("message", function (event) {
 }, false);
 ```
 
-### 自身のHTMLをサーブ
+### 独自のHTMLを提供する
 
-自己ホスティングのためにPlayCanvasアプリケーションをダウンロードしてください。これがアプリケーションを実行するために含まれるindex.htmlページです。
+PlayCanvasアプリケーションをセルフホストする場合、これがアプリケーションを実行するために含まれるindex.htmlページです。
 
 ```html
 <!doctype html>
@@ -113,7 +113,7 @@ window.addEventListener("message", function (event) {
 </html>
 ```
 
-ウェブページの基礎としてこのページから始めることをお勧めします。ページに必要な任意のコンテンツを追加するために、修正を加えることができます。
+これをベースにしてWebページの修正を行い、必要な追加のコンテンツを追加できます。たとえば、ボタンを押したときにPlayCanvasアプリケーションと通信する場合、前述のAPIをスクリプトから直接呼び出すことができます。また、`postMessage`を使用する必要はありません。
 
 ボタンの押下などでPlayCanvasアプリケーションと通信する場合、スクリプトから直接上で定義されたAPIを呼び出すことができます。`postMessage`を呼び出す必要はありません。
 

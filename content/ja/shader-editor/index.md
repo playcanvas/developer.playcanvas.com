@@ -4,13 +4,13 @@ layout: shader-editor-page.hbs
 position: 0.5
 ---
 
-Welcome to the __Shader Editor__ User Manual.
+__シェーダーエディター__ ユーザーマニュアルへようこそ。
 
-Here you will find:
+このマニュアルには、以下の内容が記載されています
 
-- An [introduction][1] to the tool.
-- A general [overview][3].
-- Information on the [window layout][2].
+- [はじめに][1]
+- [概要][3]
+- [ウィンドウの配置][2]
 
 [1]: /shader-editor/introduction
 [2]: /shader-editor/window-layout

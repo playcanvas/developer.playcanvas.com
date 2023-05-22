@@ -1,54 +1,54 @@
 ---
-title: ライト Halo
+title: ライトハロー
 layout: tutorial-page.hbs
 tags: lighting
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="ライトハロー"></iframe>
 
-[完成されたプロジェクト][4]をフォークして詳細をご確認ください。
+[フルプロジェクト][4]をフォークすることで、詳しく知ることができます。
 
-このシンプルなエフェクトはシーンに様々な効果を加えるのに適しています。照明に輝きを追加したり、発光テクスチャで埃や霧の効果を加えることができます。また、まぶしい光の効果をシミュレートすることもできます。
+このシンプルなエフェクトは、シーンに雰囲気を加えるのに最適です。光源に発光性テクスチャを追加するか、ホコリっぽい雰囲気や霧のような効果を与えるために散乱発光を追加するか、または明るい光を見たときの効果をシミュレートすることができます。
 
-次のように動作します：輝くハロー素材を有する、平面プリミティブを添付したエンティティを作成します。エンティティに、面を常にカメラに向けさせるスクリプトを添付します(ビルボーディング)。さらに、指向性のライトをシミュレートするために、カメラに背を向けた際はハローをフェードアウトさせます。
+作業方法は次のとおりです。発光するハローマテリアルの平面原子を備えた実体を作成します。実体にスクリプトを添付し、そのスクリプトにより、常にカメラの向きに平面が向くようにします。面白くするために、方向性光をシミュレートするために、平面がカメラから向かっていない場合にハローをフェードアウトさせています。
 
 ## アセット
 
 ### テクスチャ
 
-まずはハローテクスチャが必要になります。この例では、Photoshopのようなアートプログラムで作成された非常にシンプルな、ぼやけたblobを使用します。
+最初に、ハロー用のテクスチャが必要です。この例では、Photoshopなどのアートプログラムで作成された非常にシンプルなぼやけたブロブを使用しました。
 
 ![blob][1]
 
-このテクスチャは、輝きの基礎を形成します。
+このテクスチャはグローの基礎となります。
 
 ### マテリアル
 
-<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600px">
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600">
 
-The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
+ライトハローー用のマテリアルは、散乱発光スロットにblobテクスチャを使用します。**tint**プロパティを使用して、ハローの色を設定します。また、不透明度スロットでブレンディングを有効にし、**Color Channel** を **R** に設定して、blobテクスチャを使用しています。
 
-The **Blend Type** is set to **Additive Alpha**. The **Additive** part means that the color of the material is added to the color of background underneath it. This means the halo glows against the background. The **Alpha** part means it uses the value of the `opacity` to set how transparent the material is.
+**Blend Type** は **アディティブアルファ** に設定されています。**アディティブ**の部分は、マテリアルの色がその下の背景の色に追加されることを意味します。つまり、ハローが背景に対して発光することを意味します。 **アルファ**部分は、 `opacity` の値を使用して、マテリアルの透明度をどの程度設定するかを示します。
 
-## エンティティ
+## 実体
 
-![エンティティ][3]
+![entities][3]
 
-グローのためのエンティティの設定も簡単です。ハロースクリプトの親エンティティと、プリミティブな面が添付されている子エンティティがあります。これは、グローの向きを設定するために `entity.lookAt`を使用できるようにコードを簡素化するために行います。平面プリミティブは上を向いているので、子エンティティを作成して回転を適用し、平面が正しくカメラに向くようにします。
+ハローのエンティティ設定も簡単です。ハロースクリプト用の親のエンティティと、平面原子を添付した子のエンティティがあります。これを行う理由は、コードを単純化するためです。つまり、`entity.lookAt` を使用して、ハローの向きを設定できるようにします。平面原子は上向きに向いているため、子を作成し、この子に回転を適用して、平面がカメラに正しく向いている位置に置きます。
 
 ## コード
 
-このプロジェクトのコードには、2つの興味深い特徴があります。
+このプロジェクトのコードには、2つの特に興味深い機能があります。
 
-まず、毎フレームでカメラの方向を向くよう、haloエンティティを更新します。
+まず、私たちはハロー実体を、フレームごとにカメラに向けて更新します。
 
 ```javascript
 // Set the glow to always face the camera
 this.entity.lookAt(this.camera.getPosition());
 ```
 
-次に、ハローは`unidirectional`としてマークされ(露出したスクリプトの属性で)、ハローがカメラに背を向けた際に表示されないように不透明度を変更します。カメラに背を向けるほどより透明なるように、設定します。
+2つ目は、ハローが `unidirectional` としてマークされている場合(私たちが露出したスクリプト属性で)、ハローがカメラから離れている場合は透明になるように、不透明度を変更することです。実際、透明度をゆっくりと変更し、ハローがカメラからより離れたほど透明度が高くなるようにします。
 
 ```javascript
 // If enabled, unidirectional means the glow fades off as it turns away from the camera
@@ -68,9 +68,9 @@ if (this.unidirectional) {
 }
 ```
 
-フラグメントシェーダで使用する値を設定するために[pc.MeshInstance][5]で`setParameter`メソッドを使用します。これは、現在のエンジンでドキュメント化されていない機能です(開発者向けドキュメントには記載されていません)。シェーダーで均一化された変数の名前を正確に知ることに依存しているためです。これらの値は変更される可能性があり、このAPIも将来変更される可能性があります。しかし、特定のメッシュインスタンスに対してシェーダの単一の値を上書きすることができるので便利です。このケースでは、すべてのグローが同じ素材を使用していますが、グローの各インスタンスの不透明度に異なる値を設定する必要があるので、有用です。
+[pc.MeshInstance][5]上の`setParameter`メソッドを使用して、フラグメントシェーダーが使用する値を設定しています。これは現在、エンジンのドキュメントには記載されていない機能です。これは、シェーダー内の一意の変数の名前を正確に知る必要があるためです。これらの値は変更される可能性があり、このAPIは将来変更される可能性があります。ただし、単一のメッシュインスタンスのシェーダーで単一の値を上書きできるため、かなり有用です。この場合、すべてのハローが同じマテリアルを使用しているため、各ハローの不透明度に異なる値が必要になります。
 
-完全なリストはこちらです：
+以下は完全なリスティングです。
 
 ```javascript
 var Halo = pc.createScript('halo');
@@ -122,7 +122,7 @@ Halo.prototype.update = function(dt) {
 };
 ```
 
-以上です。シーンに追加するシンプルで綺麗な効果です。詳細は[プロジェクト][4]でご確認ください。
+以上です。シーンに追加するためのシンプルで美しいエフェクトです。詳細については、[プロジェクト][4]を確認してください。
 
 [1]: /images/tutorials/intermediate/light-halos/blob.jpg
 [2]: /images/tutorials/intermediate/light-halos/material.png

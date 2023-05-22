@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 5
 ---
 
-画像要素は、テクスチャまたはソリッドカラーを表示するために使用されます。画像要素は、ボタンなどの複雑なユーザインターフェイスコンポーネントの基礎として使用することができます。
+画像要素 (Image Element) は、テクスチャや単一の色を表示するために使用されます。画像要素は、ボタンなどのより複雑なユーザーインターフェイスコンポーネントの基盤として使用できます。
 
 ## 着色
 
@@ -24,11 +24,13 @@ position: 5
 
 備考：スクリーンスペース要素では、照明は予想どおりに機能しません。スクリーンスペースで使用されている素材については、照明や影を無効にすることをお勧めします。
 
-## Masks and Masking
+## マスクとマスキング
 
-Image Elements can be used to mask or hide elements that are descendants. To enable this feature set the `mask` property of an image Element to true.
+画像要素は、子要素をマスクまたは非表示にするために使用できます。この機能を有効にするには、画像要素の`mask` プロパティをtrueに設定します。
 
-If there is no texture asset assigned to an image Element used for masking the mask will be a rectangle defined by the width and height. If the image Element has a texture assigned the alpha-channel of the texture is used as the mask. Note, an image mask is 1-bit, i.e. there is no fading out of the mask using the alpha-channel of the texture.
+マスキングに使用される画像要素にTextureアセットが割り当てられていない場合、マスクは幅と高さで定義された長方形となります。
+画像要素にテクスチャが割り当てられている場合、テクスチャのアルファチャンネルがマスクとして使用されます。
+画像マスクは1ビットであるため、テクスチャのアルファチャンネルを使用してマスクをフェードアウトすることはできません。
 
 [1]: /images/user-manual/user-interface/image-element/image-tinted.png
 [2]: /images/user-manual/user-interface/image-element/image-transparent.png

@@ -1,27 +1,27 @@
 ---
-title: File Handling
+title: ファイルの取り扱い
 layout: shader-editor-page.hbs
 position: 5
 ---
 
-Shader Editor is a browser-based tool. However the graphs, materials and textures created are stored locally on the user's machine.
+Shader Editorはブラウザベースのツールですが、作成されたグラフ、マテリアル、テクスチャはユーザーのマシン上にローカルに保存されます。
 
-This section describes the various Shader Editor files.
+このセクションでは、さまざまなShader Editorのファイルについて説明します。
 
-### Project Files
+### プロジェクトファイル
 
-When working in Shader Editor, the graphs, materials, textures and preview assets created are grouped together into a set of project files. Project files are written to the browser's local IndexDB database.
+Shader Editorで作業しているとき、作成されたグラフ、マテリアル、テクスチャ、プレビューアセットは、プロジェクトファイルのセットにまとめられます。プロジェクトファイルは、ブラウザのローカルIndexDBデータベースに書き込まれます。
 
-This means that a project will remain consistent across page refreshes. Note that storing projects in the browser data also means that two different browsers on a local machine have different projects.
+これは、ページのリフレッシュをまたいでもプロジェクトが一貫して保持されることを意味します。ただし、プロジェクトをブラウザデータに保存することは、ローカルマシン上の2つの異なるブラウザが異なるプロジェクトを持つことを意味します。
 
-Projects can be saved to the local hard drive and loaded at a later time. For more information on this, see [Inspector Pane][1] documentation.
+プロジェクトはローカルのハードドライブに保存して、後で読み込むことができます。これについての詳細は、[インスペクターパネル][1]のドキュメントを参照してください。
 
-### Shader Packs
+### シェーダーパック
 
-In order to use the materials created in Shader Editor, projects must be exported to Shader Packs.
+Shader Editorで作成したマテリアルを使用するには、プロジェクトをシェーダーパックにエクスポートする必要があります。
 
-Shader packs don't contain the graphs and nodes from the project. Instead they contain the generated shader code and parameter values required for rendering the effects at runtime.
+シェーダーパックには、プロジェクトのグラフやノードは含まれていません。代わりに、ランタイムでエフェクトをレンダリングするために必要な生成されたシェーダーコードとパラメータ値が含まれています。
 
-For more information on how to accomplish this, see [Inspector Pane][1] documentation.
+これを実現する方法についての詳細は、[インスペクターパネル][1]のドキュメントを参照してください。
 
 [1]: /shader-editor/window-layout/inspector-pane

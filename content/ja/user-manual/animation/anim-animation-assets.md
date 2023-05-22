@@ -1,14 +1,14 @@
 ---
-title: Animation Assets 
+title: Animationアセット 
 layout: usermanual-page.hbs
 position: 2
 ---
 
 ![Animation Assets][1]
 
-Animation assets are the animation keyframe data that’s used to drive animations of a model in PlayCanvas. They are linked to an animstategraph asset via an entity's anim component.
+Animationアセットは、PlayCanvasのモデルのアニメーションを駆動するために使用されるキーフレームデータです。エンティティのAnimコンポーネントを介してAnimstategraphアセットにリンクされています。
 
-The anim component currently supports animation assets that have been imported into a PlayCanvas project from .FBX files using the `Convert to GLB` asset tasks settings option.
+現在、Animコンポーネントは、`Convert to GLB` アセットタスク設定オプションを使用して、PlayCanvasプロジェクトに .FBX ファイルからインポートされたアニメーションアセットに対応しています。
 
 ![Asset Tasks][2]
 

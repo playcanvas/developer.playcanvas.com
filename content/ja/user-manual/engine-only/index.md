@@ -1,14 +1,14 @@
 ---
-title: Engine-Only Users
+title: エンジンのみのユーザー
 layout: usermanual-page.hbs
 position: 23
 ---
 
-The vast majority of PlayCanvas developers build applications with the Editor. But it is also possible to build applications using just the PlayCanvas Engine, the open source JavaScript runtime which powers all PlayCanvas apps.
+PlayCanvasのほとんどの開発者はエディターを使用してアプリケーションを構築しています。しかし、すべてのPlayCanvasアプリを動かすオープンソースのJavaScriptランタイムであるPlayCanvasエンジンだけを使用してアプリケーションを構築することも可能です。
 
-To get started with the engine, visit the [GitHub repository][1].
+エンジンを始めるには、[GitHubリポジトリ][1]を訪問してください。
 
-The repo contains many [examples][2] that demonstrate the wide variety of engine features.
+このリポジトリには、エンジンの様々な機能を示す多くの[例][2]が含まれています。
 
 [1]: https://github.com/playcanvas/engine
 [2]: https://playcanvas.github.io

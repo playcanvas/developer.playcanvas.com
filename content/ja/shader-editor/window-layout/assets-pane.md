@@ -1,21 +1,21 @@
 ---
-title: Assets Pane
+title: アセットパネル
 layout: shader-editor-page.hbs
 position: 4
 ---
 
-The Assets Pane is where a project’s graphs, materials and textures appear.
+アセットパネルには、プロジェクトのグラフ、マテリアル、およびテクスチャが表示されます。
 
-![Assets Pane][1]
+![アセットパネル][1]
 
-| How to | |
+| 使い方 | |
 |---|---|
-| Select an item | Click an item. Its properties in the [Inspector Pane][2]. |
-| Delete an item | Select the item and press the delete button or access the item's context menu and select 'Delete'. |
-| Filter the list of items | Enter text into the filter entry box. |
-| Create a Graph | Click the '+ NEW GRAPH' button. |
-| Create a Material | Select the base graph and on its [Graph Inspector][3] click the '+ NEW MATERIAL' button. |
-| Create a Texture | Drag a supported texture file onto the Assets Pane. |
+| 選択 | アイテムをクリックしてください。 [インスペクターパネル][2]でそのプロパティが表示されます。 |
+| 削除 | アイテムを選択し、削除ボタンを押すか、アイテムのコンテキストメニューにアクセスし、「削除」を選択してください。 |
+| フィルター | フィルター入力ボックスにテキストを入力してください。 |
+| グラフの新規作成 | '+ NEW GRAPH' ボタンをクリックしてください。 |
+| マテリアルの新規作成 | ベースグラフを選択し、[グラフインスペクター][3]で '+ NEW MATERIAL' ボタンをクリックしてください。 |
+| テクスチャの新規作成 | 対応するテクスチャファイルをアセットパネルにドラッグしてください。 |
 
 [1]: /images/shader-editor/assets-pane.png
 [2]: /shader-editor/window-layout/inspector-pane

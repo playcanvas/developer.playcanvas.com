@@ -1,5 +1,5 @@
 ---
-title: ユーザインターフェイス - 進行バー
+title: UI - プログレスバー
 layout: tutorial-page.hbs
 tags: ui
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg"
@@ -7,41 +7,41 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 <iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
 
-*Elementコンポーネントを使用するプログレスバー。[フルシーン][1]を参照してください*
+*[Element][2]コンポーネントを使用したプログレスバー。[完全なシーン][1]を参照してください。*
 
-組み込みの[Elements][2]を使用してプログレスバーを簡単に作成することができます。このチュートリアルでは、数秒ごとに空から終了をループするプログレスバーがあります。
+ビルトイン[Elements][2]を使用してプログレスバーを簡単に作成できます。本チュートリアルでは、数秒ごとに空からいっぱいにループするプログレスバーを使用しています。
 
 ## 階層
 
-階層内のUIは次のようになります：
+次が、階層内で表示されるUIの例です:
 
-![階層][4]
+![Hierarchy][4]
 
 ## スクリーン設定
 
-[スクリーン][3]は次のように設定されています：
+次が、スクリーンの設定例です:
 
-![スクリーン][5]
+![Screen][5]
 
-2Dスクリーンなので、Screen Spaceをチェックしました。Reference Resolutionは、目標とする解像度です。この場合は1080 x 1920です。Scale ModeのBlendを選択して解像度の変更に適応し、Scale Blendを1に設定して、スクリーンが高さの変更に適応するようにします 。 
+2Dスクリーンにチェックを入れています。[Reference Resolution]は、故意に対象とする解像度です – ここでは1080 x 1920。解像度の変化に対応するために、[スケールモード]としてBlendを選択し、[スケールブレンド]を1に設定しています。
 
-スクリーンには、POWERテキストを表示する子Text Elementと、プログレスバーを示す`Progress Bar` というエンティティがあります。
+スクリーンには、POWERテキストを表示するための子テキストエレメントと、プログレスバーを表示するためのエンティティである`Progress Bar`が含まれています。
 
 ## プログレスバーの設定
 
-プログレスバーは2つの要素で構成されています。背景画像と塗りつぶし画像です。
+プログレスバーは2つのElementで構成されています。バックグラウンド画像とフィル画像です。
 
-この例では 背景画像は`Progress Bar`エンティティです。画像Elementがあり、プログレスバーの背景画像が表示されます：
+バックグラウンド画像は`Progress Bar`エンティティです。それには、プログレスバーの背景画像を表示する画像エレメントがあります。
 
-![背景画像][6]
+![Background Image][6]
 
-この例の塗りつぶし画像は、 `Fill Image`エンティティです。`Progress Bar` エンティティの子であり、プログレスバーの塗りつぶしを示すImage Elementを持ちます。この画像は親の背景画像の左に固定されています。これにより、プログレスバーが伸びるよう、要素の幅を変更することができます。
+フィル画像は、`Fill Image`エンティティです。それは`Progress Bar`エンティティの子要素であり、プログレスバーのフィルを表示するImage Elementがあります。このイメージは、親バックグラウンド画像の左にアンカーが設定されているため、要素の幅を変更してプログレスバーを拡大できます。
 
-![塗りつぶし画像][7]
+![Fill Image][7]
 
 ## スクリプト
 
-`Progress Bar`エンティティにはプログレスバーがどのようにリサイズされるかを制御するスクリプトがあります。
+`Progress Bar`エンティティには、プログレスバーのサイズ変更を制御するスクリプトが用意されています。
 
 ```javascript
 var ProgressBar = pc.createScript('progressBar');
@@ -97,11 +97,11 @@ ProgressBar.prototype.update = function(dt) {
 };
 ```
 
-スクリプトには2つの属性があります：塗りつぶし画像と、その画像の最大幅を示すエンティティです。進行を0と1の間の値に設定する`setProgress`関数があります。
+このスクリプトには、フィル画像を表示するエンティティとその画像の最大幅という2つの属性があります。関数`setProgress`は0から1までの値でプログレスを設定します。
 
-`update`メソッドは基本的に0と1の間の進行をループします。このスクリプトで重要なことは、プログレスバーのサイズを適切に変更するために、塗りつぶし画像の`width`と `rect`をどのように変更するかです。
+`update`メソッドは、実質的に0から1までの値でプログレスをループします。このスクリプトで重要なことは、プログレスバーを適切にサイズ変更するために、フィル画像の「幅」と「rect」を変更する必要がある点です。
 
-Changing the `width` makes the fill image larger and changing the `rect` makes sure that we only show the portion of the texture that is visible, so that we avoid stretching the visible texture. [Here][8] is the API reference for `rect`.
+「幅」を変更することで、フィル画像を大きくすることができます。また、「rect」を変更して、表示されているテクスチャの部分しか表示しないようにして、見えるテクスチャを伸ばすのを避けます。[こちら][8]が「rect」のAPIリファレンスです。
 
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/

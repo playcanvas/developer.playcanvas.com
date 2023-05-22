@@ -6,11 +6,11 @@ position: 5
 
 セピアエフェクトは画像を古い写真のような見え方にするエフェクトです。
 
-エフェクトをかけていない画像:
+これはエフェクトをかけていない画像です。
 
 ![Image without effect][1]
 
-エフェクトを適用した同じ画像：
+これがエフェクトを適用した同じ画像です。
 
 ![Image with effect][2]
 
@@ -18,7 +18,7 @@ position: 5
 
 * **Amount**: エフェクトの強度を設定します。0から1の間の値を取ります。
 
-Find the post-processing effect script on [GitHub][3].
+ポストエフェクトスクリプトは[GitHub][3]で入手できます。
 
 [1]: /images/platform/posteffects/without_effects.png
 [2]: /images/platform/posteffects/with_sepia.png

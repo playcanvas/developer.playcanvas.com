@@ -1,5 +1,5 @@
 ---
-title: Assets - Create asset
+title: アセット - Create asset
 layout: usermanual-page.hbs
 position: 5
 ---
@@ -12,13 +12,13 @@ POST https://playcanvas.com/api/assets
 
 ## 説明
 
-Create a new asset.
+新しいアセットを作成します。
 
 <div class="alert alert-info">
-    This endpoint currently only supports creating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+    現在、このエンドポイントはスクリプト、HTML、CSS、テキスト、シェーダー、JSONタイプのアセットのみを作成することができます。
 </div>
 
-**Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
+**他のREST APIエンドポイントと異なり、Create Assetエンドポイントはデータの送信に `multipart/form-data` を使用する必要があります。**
 
 ## 例
 
@@ -26,7 +26,7 @@ Create a new asset.
 curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
 ```
 
-HTTP Request
+HTTPリクエスト
 
 ```text
 POST https://playcanvas.com/api/assets
@@ -56,19 +56,19 @@ Content-Type: application/javascript
 {fileContent}
 ------WebKitFormBoundaryTdsfsfT--
 ```
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">name: string</span><p>Name of the asset</p></div>
-<div class="parameter"><span class="param">projectId: number</span><p>Project id to add the asset to</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
-<div class="parameter"><span class="param">parent [optional]: number</span><p>Parent asset's id</p></div>
-<div class="parameter"><span class="param">preload [optional]: boolean</span><p>Preload the asset (true | false)</p></div>
-<div class="parameter"><span class="param">file [optional]: file</span><p>Data to store as the asset file.</p></div>
-<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
+<div class="parameter"><span class="param">name: string</span><p>アセットの名前</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>アセットを追加するプロジェクトのID</p></div>
+<div class="parameter"><span class="param">branchId: string</span><p>ブランチのID</p></div>
+<div class="parameter"><span class="param">parent [オプション]: number</span><p>親アセットのID</p></div>
+<div class="parameter"><span class="param">preload [オプション]: boolean</span><p>アセットをプリロードする(true or false)</p></div>
+<div class="parameter"><span class="param">file [オプション]: file</span><p>アセットファイルとして保存するデータ。</p></div>
+<div class="parameter"><span class="param">pow2 [オプション]: boolean</span><p>テクスチャにのみ使用され、デフォルトはfalseです。 テクスチャサイズを2のべき乗にリサイズします(true または false)。</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
 Status: 201
@@ -106,8 +106,8 @@ Status: 201
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>非認証</p></div>
-<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
+<div class="parameter"><span class="param">401</span><p>未承認</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止</p></div>
 <div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>

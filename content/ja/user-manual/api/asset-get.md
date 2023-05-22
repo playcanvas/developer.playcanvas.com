@@ -1,5 +1,5 @@
 ---
-title: Assets - Get Asset
+title: アセット - Get Asset
 layout: usermanual-page.hbs
 position: 8
 ---
@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 
 ## 説明
 
-単独のアセットの詳細を取得します
+単一アセットの詳細を取得します。
 
 ## 例
 
@@ -20,23 +20,23 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 ```
 
-HTTP Request
+HTTPリクエスト
 
 ```text
 GET https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 Authorization: Bearer {accessToken}
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch.</p></div>
+<div class="parameter"><span class="param">branchId:string</span><p>ブランチのID。</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json
@@ -63,19 +63,20 @@ Status: 200
     },
     "parent": int
 }
+
 ```
 
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
+<div class="parameter"><span class="param">401</span><p>認証されていません</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止されています</p></div>
+<div class="parameter"><span class="param">404</span><p>プロジェクトまたはアセットが見つかりませんでした</p></div>
+<div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
 ## レート制限
 
-このルートは[normal][1]なレート制限を使用します。
+このルートは[通常][1]のレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting

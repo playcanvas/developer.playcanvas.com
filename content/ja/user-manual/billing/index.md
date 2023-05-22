@@ -1,35 +1,35 @@
 ---
-title: Billing
+title: 支払いに関して
 layout: usermanual-page.hbs
 position: 24
 ---
 
-## Auto-renewal of Subscriptions
-Once you subscribe to the Personal or Organization plan, payment will automatically be taken on a monthly basis, on the day of the month when you first subscribed.
+## サブスクリプションの自動更新
+パーソナルまたはOrganizationにサブスクライブすると、最初にサブスクライブした日の月次請求日に、支払いが自動的に行われます。
 
-## Invoices
-Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing <sales@playcanvas.com>.
+## 請求書 (Invoices)
+サブスクリプションの請求書は、サブスクライブしたアカウントのオーナーに月次請求日に電子メールで送信されます。請求書はウェブサイト自体でダウンロードできません。請求書が受信トレイに届かない場合は、迷惑メールフォルダを確認してください。記録から請求書が欠落している場合は、<support@playcanvas.jp>までメールで再送信を依頼できます。
 
-## Organization Billing
-The day you subscribe to an Organization account is your monthly billing date. So if you subscribe on 10th July, you will be billed on that date with subsequent billing dates as 10th August, 10th September and so on.
+## Organizationの支払いについて
+Organizationアカウントのサブスクライブ開始日が月次の請求日になります。つまり、7月10日にサブスクライブすると、その日に請求され、翌月の請求日は8月10日、9月10日と続きます。
 
-The Organization plan allows you to add and remove seats at any time. When seats are added or removed, it is important to understand that this will increase or decrease the cost of your plan. However, this change in cost is not accounted for immediately when the number of seats is changed. Instead, it is accounted for at the next billing date.
+Organizationプランでは、いつでもシートを追加または削除することができます。シートを追加または削除すると、プランの費用が増減することに注意してください。ただし、シート数の変更による費用の変化は、変更が行われた直後には即座に反映されません。代わりに、次回の請求日に反映されます。
 
-### Example:
-Imagine the following sequence of events:
+### 例
+次の条件での一連の手順を想像してみてください。
 
-* A user signs up for a 1-seat Organization plan on 10th May.
-* The user then adds 1 seat on 20th June.
-* The user removes 1 seat on 20th August.
+* 5月10日に1シートのOrganizationプランのサブスクリプション開始
+* その後、6月20日に1シートを追加
+* その後、8月20日に1シートを削除
 
-The billing events from May to October will be as follows:
+5月から10月までの請求イベントは次のようになります。
 
-* 10th May: **$50**
-* 10th June: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
-* 10th July: $100 + $50 x 20/30 = **$133.33**. The user has two seats on this billing date so is charged 2 x $50 for the upcoming month. One of these seats was added on 20th June and the use of that seat between 20th June and 10th July must now be accounted for. Since this period is 20 days of the 30 days between the two billing dates, $50 x 20/30 is added to the bill. In other words, seats that are added or removed are accounted for ‘pro-rata’ on the next billing date.
-* 10th August: **$100**. The plan has 2 seats and no changes were made to the plan in the previous month.
-* 10th September: $50 - $50 x 21/31 = **$16.13**. The users has one seat on this billing date so is charged $50 for the upcoming month. A seat was removed on 20th August so it was only used for 10 of the 31 days between billing dates. Since the user paid $50 for that seat on the previous billing date, they are due a refund for the unused 21 days. So $50 x 21/31 is subtracted from the bill.
-* 10th October: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
+* 5月10日: **$50**
+* 6月10日: **$50**。1シートとなり前月に変更はありません。
+* 7月10日：$100 + $50 x 20/30 = **$133.33**です。この請求日にはユーザーが2つのシートを持っているため、次の月には2つのシートに対して2 x $50の料金が請求されます。これらのシートのうち1つは6月20日に追加され、6月20日から7月10日までの利用期間を考慮する必要があります。この期間は2つの請求日の間の30日のうち20日間なので、請求書には$50 x 20/30が追加されます。言い換えると、追加されたシートや削除されたシートは次の請求日に「比例配分」されます。
+* 8月10日: **$100**。2シートとなり、前月にはプランに変更はありません。
+* 9月10日：$50 - $50 x 21/31 = **$16.13** です。この請求日にはユーザーが1シートを持っているため、次の月には$50の料金が請求されます。8月20日に1シートが削除されたため、シートは請求日間の31日のうち10日間しか使用されませんでした。ユーザーは前回の請求日にそのシートのために$50を支払ったため、未使用の21日間に対する返金があります。したがって、請求書から$50 x 21/31が差し引かれます。
+* 10月10日: **$50** 。このプランは1シートとなり、前月にプランの変更はありませんでした。
 
-## Cancelling your Plan
-You can cancel your plan at any time. Note that cancellation takes effect immediately and your account will switch to the free tier straight away. If you need to use your plan features up to the next billing date, we recommend that you set a reminder and cancel the day before.
+## プランのキャンセル
+いつでもプランをキャンセルすることができます。ただし、キャンセルはすぐに効果があり、アカウントはすぐに無料プランに切り替わります。次の請求日までプランの機能を使用する必要がある場合は、前日にリマインダーを設定してキャンセルすることをおすすめします。

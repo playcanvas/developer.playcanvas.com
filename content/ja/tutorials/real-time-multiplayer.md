@@ -5,19 +5,19 @@ tags: multiplayer, networking
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg"
 ---
 
-<div class="alert alert-info">This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> and <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.</div>
+<div class="alert alert-info">このチュートリアルでは、ゼロから自分自身のマルチプレイヤーを作成する方法について説明します。ホストされたマルチプレイヤーサービスを使用する場合は、<a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a>および<a href="/tutorials/real-time-multiplayer-photon">Photon</a>のチュートリアルがあります。</div>
 
 <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
 
-*Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
+*WASD キーを使用してプレイヤーを移動します。カプセルが 1 つしか表示されない場合は、別のタブまたは別のコンピューターでこのページを開いてみてください。*
 
-In this tutorial we’ll cover how to setup a basic multiplayer project using Node.js and Socket.io. We’ll focus on implementing it in PlayCanvas. By the end you should have a project similar to the one above. You can find the [tutorial project here][2].
+このチュートリアルでは、Node.js と Socket.io を使用した基本的なマルチプレイヤープロジェクトの設定方法について説明します。PlayCanvasで実装することに焦点を当てます。最終的には、上記のものに類似するプロジェクトができるはずです。[チュートリアルプロジェクトはこちら][2]から見つけることができます。
 
-## Setting up the Server
+## サーバーのセットアップ
 
-We'll be implementing a client-server model (as opposed to peer-to-peer). This will be a basic server that will receive data from all clients (which are our PlayCanvas instances) and broadcast it back.
+ピアツーピアではなく、クライアントとサーバーのモデルを実装します。これは、すべてのクライアント(PlayCanvasのインスタンス)からデータを受信し、ブロードキャストします。 
 
-[Glitch][3] provides a really convenient way to write and deploy backend apps for free completely in your browser! You can use it without an account but creating one will let you easily find your work. [Create a new Node app][4] and replace the contents of `server.js` with this:
+[Glitch][3] は、完全にブラウザー内で無料でバックエンドアプリを書いてデプロイする便利な方法を提供しています。アカウントなしで使用できますが、作成すると作業内容を簡単に見つけることができます。[新しいNodeアプリを作成][4]し、`server.js` の内容を以下のように置き換えます。
 
 ```javascript
 var server = require('http').createServer();
@@ -33,34 +33,37 @@ io.sockets.on('connection', function(socket) {
 
 console.log ('Server started.');
 server.listen(3000);
+
 ```
 
-Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button on the left side of the screen to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
+Glitchは、タイピングを終えると自動的にサーバーを再実行します。これをコピーした後、エラーが発生します。画面左側の `Logs` ボタンをクリックして、サーバーコンソールを開いてください。ここでは、サーバーの出力やエラーを見ることができます。 `Error: Cannot find module 'socket.io'` のエラーが表示されるはずです。
 
-![Opening the log][5]
+![ログを開く][5]
 
-To include a package, go to `package.json` and click on the `Add Package` button on the top. Search for `socket.io`.
+パッケージを含めるには、`package.json` に移動し、トップの `Add Package` ボタンをクリックします。 `socket.io` を検索します。
 
-![Adding a package][6]
+![パッケージを追加][6]
 
 
-Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
+これでログを消去し、`server.js` にスペースを追加して再実行すると、ログに `Server started.` が表示されます。サーバーのデプロイが成功しました!トップの `Show` ボタンをクリックしても、実際には何も表示されません。なぜなら、サーバーがhttpリクエストを受信するのではなく、websocketリクエストを待機しているからです。
 
-You can find the domain your server is deployed at by clicking in the top left (where it says `thundering-polo` for me). This is where you can also rename the project.
+左上にある(私の場合 `thundering-polo` と表示されている)をクリックすると、デプロイされたサーバーのドメインが表示されます。ここでプロジェクト名も変更できます。
 
-This server will simply log a message every time someone connects. This should be enough to start working on our client and confirm that it connects to the server.
+このサーバーは、誰かが接続するたびにメッセージをログに記録するだけです。これでクライアントが接続して、サーバーに接続したことを確認できます。
 
-## Setting up the Project
+## プロジェクトのセットアップ
 
-Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script.
+PlayCanvasで新しいプロジェクトを作成します。Socket.ioのクライアントJSライブラリを外部スクリプトとして含める必要があります。
 
-Go to project settings.
+プロジェクトの設定に移動します。
 ![Project settings][12]
 
-Find and open 'External Scripts'.
+[外部スクリプト]を見つけて開きます。
 ![External scripts settings][13]
 
-Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
+値を0から1に変更し、[フレームワークサーバー][11]からのソケットライブラリのCDN URLを追加します。この場合、書いている時点で最新のバージョンであるv3.1.1を使用します。
+
+設定は以下のようになるでしょう。
 ![Project settings][14]
 
 
@@ -68,25 +71,29 @@ Change the value from 0 to 1 and add the CDN URL for the socket library from the
 https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js
 ```
 
-Now we need to create a new script to handle the network logic. Create a new script called `Network.js`. We first need to create a connection to the server. We can do this by adding this line in the initialize method:
+次に、ネットワークロジックを処理する新しいスクリプトを作成する必要があります。 `Network.js`という新しいスクリプトを作成します。最初に、サーバーに接続する必要があります。これは、initializeメソッドに次の行を追加することで行うことができます。
+
 
 ```javascript
 this.socket = io.connect('https://thundering-polo.glitch.me');
 ```
 
-Replace `https://thundering-polo.glitch.me` with the address of your own server.
+`https://thundering-polo.glitch.me`を自分自身のサーバーアドレスに置き換えてください。
 
-To confirm that this works, attach this network script to the `Root` entity, and then launch the game. Keep your eye on the server log at Glitch. If everything worked, the server should log `Client has connected!`. The project is now setup to send and receive messages to & from the server.
+これが動作することを確認するには、ネットワークスクリプトを`Root`エンティティにアタッチし、ゲームを起動します。Glitchのサーバーログに目を向けてください。すべてがうまくいけば、サーバーは `Client has connected!` とログに記録されます。プロジェクトは、サーバーにメッセージを送信して受信するように設定されています。
 
-## Server and Client Communication
 
-The way you can send data between the client and server is with the socket connection we made earlier. To send data from the client (in Network.js on PlayCanvas), we use the emit function. Here’s an example:
+## サーバーとクライアントの通信
+
+
+クライアントとサーバー間でデータを送信する方法は、以前に作成したソケット接続を使用することです。クライアント（PlayCanvasのNetwork.jsで）からデータを送信するには、emit関数を使用します。例:
+
 
 ```javascript
 this.socket.emit ('playerJoined', 'John');
 ```
 
-This emits a message called `playerJoined`, with the data `John`. For the server to receive the message, we need to write in the server file (in server.js on Glitch):
+これは、`playerJoined`というメッセージを、データ`John`で送信します。サーバーがメッセージを受信するには、サーバーファイル（Glitchのserver.js）に書き込む必要があります。
 
 ```javascript
 socket.on ('playerJoined', function (name) {
@@ -94,19 +101,19 @@ socket.on ('playerJoined', function (name) {
 });
 ```
 
-This will log whatever data is sent to the server when `playerJoined` is emitted.
+これは、`playerJoined`が送信されたときにサーバーに送信されるデータをログに記録します。
 
-For this demo, we’re aiming to have players move around with others in real time, so we'll need to create an environment. Start by create an entity to use as a ground, and add a collision box and static rigidbody. Here is what the settings on the ground entity should look like:
+このデモでは、リアルタイムマルチプレイヤーでプレイヤーが移動するようにしたいため、環境を作成する必要があります。グラウンドとして使用するエンティティを作成し、Collision (ボックス形状) とStaticタイプのRigidBodyを追加します。以下は、グラウンドエンティティの設定です：
 
-<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360px">
+<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360">
 
-Next we’ll need a player to control. Create a new capsule and call it `Player`. add a dynamic rigidbody and collision box, and change the rigid body settings to match the picture below.
+次に、操作するプレイヤーを作成する必要があります。新しいカプセルを作成し、 `Player` と呼びます。ダイナミックなリジッドボディと衝突ボックスを追加し、リジッドボディの設定を以下の画像のように変更します。
 
-<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360px">
+<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360">
 
-Duplicate the player entity and rename it as 'Other'. Uncheck the `Enabled` box on this new entity so that it's disabled to begin with.  This is the entity we'll be using to simulate other players in the game.
+プレイヤーエンティティを複製し、 'Other' という名前に変更します。この新しいエンティティの `Enabled` ボックスをオフにして、最初は無効にします。これは、ゲーム内の他のプレイヤーをシミュレートするために使用するエンティティです。
 
-Add a script component to your player, and attach a new script called `Movement.js`:
+プレイヤーにスクリプトコンポーネントを追加し、 `Movement.js` という新しいスクリプトをアタッチします。
 
 ```javascript
 var Movement = pc.createScript('movement');
@@ -161,8 +168,8 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-When you launch the game you should be able to use WASD to move your player around. If not, you’ve missed a step or did not set the correct settings for the entity. (Try changing the speed attribute on the movement script)
-For the game to work in real time multiplayer, we need to keep track of all players in the game. Replace the current server code with this:
+ゲームを起動すると、WASDを使用してプレイヤーを移動できるはずです。そうでない場合は、手順を見落としたか、エンティティの正しい設定を行っていない可能性があります。（移動スクリプトの速度属性を変更してみてください）
+リアルタイムマルチプレイヤーでゲームを動作させるためには、ゲーム内のすべてのプレイヤーを追跡する必要があります。現在のサーバーコードを以下のコードに置き換えてください。
 
 ```javascript
 var server = require('http').createServer();
@@ -203,9 +210,9 @@ console.log ('Server started.');
 server.listen(3000);
 ```
 
-In the code above, when a player sends the message `initialize`, we send him his unique ID and data about other players in the game. It also tells others that a new player has connected. Let’s add that logic into our Network script.
+上記のコードでは、プレイヤーが `initialize` メッセージを送信すると、ユニークなIDとゲーム内の他のプレイヤーのデータを送信します。また、他のプレイヤーが接続したことを通知します。これらのロジックを Network スクリプトに追加しましょう。
 
-Add this code in the `initialize`:
+`initialize` に以下のコードを追加します。
 
 ```javascript
 // Your io.connect function call should be up here
@@ -271,9 +278,9 @@ Network.prototype.addPlayer = function (data) {
 };
 ```
 
-Now when we join the game, the client tells the server we've connected, and the server sends us a list of players with their positions. The game then creates a new entity for each player connected, and moves them to their current position. The only problem is, the server doesn't know the positions of all players. We need to send the server our current position every frame.
+ここでゲームに参加すると、クライアントがサーバーに接続したことを伝え、サーバーからプレイヤーのリストとその位置を受信します。その後、接続されている各プレイヤーに対して新しいエンティティを作成し、現在の位置に移動します。唯一の問題は、サーバーがすべてのプレイヤーの位置を把握していないことです。現在位置を1フレームごとにサーバーに送信する必要があります。
 
-Add this code into the `initialize` of your Network.js script:
+これらのコードを Network.js の `initialize` に追加します。
 
 ```javascript
 socket.on ('playerMoved', function (data) {
@@ -281,7 +288,7 @@ socket.on ('playerMoved', function (data) {
 });
 ```
 
-Replace your `update` with this:
+`update` を以下のコードで置き換えます。
 
 ```javascript
 Network.prototype.update = function (dt) {
@@ -290,7 +297,8 @@ Network.prototype.update = function (dt) {
 ```
 
 
-And then declare these new functions inside Network.js:
+そして、Network.js 内に以下の新しい関数を宣言します。
+
 
 ```javascript
 Network.prototype.movePlayer = function (data) {
@@ -306,7 +314,7 @@ Network.prototype.updatePosition = function () {
 };
 ```
 
-Back on the server, we need to account for what happens when the player sends us their position. On the server, we need to add a new event:
+サーバーに戻り、プレイヤーが自分の位置を送信した場合にどうなるかを考慮する必要があります。サーバーで新しいイベントを追加する必要があります。
 
 ```javascript
 socket.on ('positionUpdate', function (data) {
@@ -318,15 +326,15 @@ socket.on ('positionUpdate', function (data) {
 });
 ```
 
-When you're testing this, note that the server currently does not account for disconnects. To properly restart, you'll have to close all clients, restart the server (by typing in Glitch) then relaunching the clients.
+これをテストする際には、現在サーバーが切断を考慮していないことに注意してください。正しく再起動するには、すべてのクライアントを閉じ、サーバーを再起動（Glitchで入力して）してから、クライアントを再起動する必要があります。
 
-## Conclusion
+## 最後に
 
-That's about it! If you'd like, try adding some of these ideas on your own:
-* Players are removed when they close the game.
-* Adding respawning functionality for when players fall off the edge.
+以上です！お好みで、以下のアイデアを追加してみてください。
+* プレイヤーがゲームを終了したときに削除されるようにする
+* プレイヤーが端から落ちた場合の復帰機能を追加する
 
-Keep in mind this is only a very basic implementation of multiplayer. Realistically, when creating larger multiplayer games you'll want to consider using an authoritative server, instead of handling all the game logic on the client. You can read a more in depth tutorial about [how Socket.io works and how to develop multiplayer in Javascript here][1].
+これは非常に基本的なマルチプレイヤーの実装にすぎません。実際には、より大きなマルチプレイヤーゲームを作成する場合には、すべてのゲームロジックをクライアントで処理するのではなく、権威のあるサーバーを使用することを検討する必要があります。[こちら][1]で、Socket.ioがどのように動作するか、JavaScriptでマルチプレイヤーを開発する方法について、さらに詳細なチュートリアルを読むことができます。
 
 You can find the [full server code on Glitch here][10], where you can also fork it and extend it.
 

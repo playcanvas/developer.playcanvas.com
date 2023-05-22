@@ -1,5 +1,5 @@
 ---
-title: アニメーション化したテクスチャー
+title: アニメーションテクスチャ
 layout: tutorial-page.hbs
 tags: animation, textures
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg"
@@ -7,9 +7,9 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 <iframe loading="lazy" src="https://playcanv.as/p/BM93v05L/" title="Animated Textures"></iframe>
 
-*See the [full project][1].*
+*[フルプロジェクト][1]を見てください*
 
-It can be very useful to animate a material that has been applied to a surface. The example shown here is scrolling a texture to simulate some movement.
+サーフェスに適用されたマテリアルをアニメーション化することは非常に便利です。ここでは、移動をシミュレートするためにテクスチャをスクロールする例を示します。
 
 ## マップオフセットでマテリアルをスクロール
 
@@ -20,12 +20,12 @@ ScrollingTexture.prototype.update = function(dt) {
     var velocity = ScrollingTexture.tmpVec2;
     var offset = ScrollingTexture.tmpOffset;
 
-    // Calculate how much to offset the texture
+    // テクスチャのオフセット量を計算する
     // Speed * dt
     velocity.set(this.speed.x, this.speed.y);
     velocity.scale(dt);
 
-    // Update the diffuse and normal map offset values
+    // 現在のdiffuseおよびnormal mapのオフセット値を更新する
     offset.copy(this.material.diffuseMapOffset);
     offset.add(velocity);
 
@@ -35,7 +35,7 @@ ScrollingTexture.prototype.update = function(dt) {
 };
 ```
 
-一時的なベクトル`tmp`に必要なオフセットを計算します。これは単に`speed * timeStep`になります。その後、`diffuseMapOffset` と`normalMapOffset`プロパティを変更して、拡散マップと通常マップの両方のオフセットプロパティにこのオフセットを追加します。これらの値は`pc.Vec2`で、表面にテクスチャをマッピングするために使用されるUV座標をシフトします。他のマップを使用している場合も(例えば発光マップ)、同様にこれらのオフセットプロパティを更新する必要があります。最後に、`material.update()`を呼んで`シェーダに変更を適用します。
+一時的なベクトル `tmp` に必要なオフセットを計算します。これは単に `speed * timeStep` になります。その後、 `diffuseMapOffset` と `normalMapOffset` プロパティを変更して、拡散マップと通常マップの両方のオフセットプロパティにこのオフセットを追加します。これらの値は `pc.Vec2` で、表面にテクスチャをマッピングするために使用されるUV座標をシフトします。他のマップを使用している場合も(例えば発光マップ)、同様にこれらのオフセットプロパティを更新する必要があります。最後に、 `material.update()` を呼んでシェーダに変更を適用します。
 
 これは、マテリアルのオフセットを変更しテクスチャーをスクロールする簡単でシンプルな方法です。欠点は、このコードがマテリアルの実際のプロパティを変更することです。シーン内に同じマテリアルを使用する複数のモデルが存在する場合、全てに影響してしまいます。
 

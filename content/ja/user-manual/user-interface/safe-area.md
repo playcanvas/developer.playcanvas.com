@@ -1,50 +1,50 @@
 ---
-title: Safe Area
+title: セーフエリア
 layout: usermanual-page.hbs
 position: 10
 ---
 
-With the trend of mobile devices having full device screens, a notch or cut out in the display is used to make room for the ear piece speaker and front facing camera (see below for the iPhone X).
+モバイルデバイスがフルデバイススクリーンを持つ傾向にあるため、イヤースピーカーやフロントカメラ用のノッチやカットアウトがディスプレイに使用されるようになりました(iPhone Xの下を見てください)。
 
 <img loading="lazy" src="/images/user-manual/user-interface/safe-area/iphone-notch.png">
 
 (Image Original: Rafael Fernandez, Modified version:PlayCanvas, [CC BY-SA 4.0][cc-by-sa-40], via Wikimedia Commons)
 
-Developers will need to be mindful of any essential information that is needed for the user which could be hidden by the notch during development.
+開発中にノッチで隠れるかもしれないユーザーに必要な情報を考慮する必要があります。
 
-For example, the screenshot below looks fine on desktop in devtools mobile view.
+例えば、次のスクリーンショットはデスクトップ上の開発ツールのモバイルビューでは問題ありません。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/desktop-view.png" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/desktop-view.png" width="500">
 
-However, when opened on a mobile device such as the iPhone X, the 'Left' text is rendered under the notch and the 'Bottom' text is rendered under the navigation bar.
+しかし、iPhone Xなどのモバイルデバイスで開くと、「Left」テキストはノッチの下にレンダリングされ、「Bottom」テキストはナビゲーションバーの下にレンダリングされます。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-render-under-notch.png" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-render-under-notch.png" width="500">
 
-## Safe Area
+## セーフエリア
 
-To help developers, browsers on the these devices do support [environment variables][env-mdn] in CSS to return values for positioning elements within an area that is occupied by the notch or navigation bar. This is known as a 'safe area'.
+これらのデバイスのブラウザは、CSSで環境変数をサポートしており、ノッチやナビゲーションバーで占められる領域内の要素の位置を返すために使用されます。これを「セーフエリア」と呼びます。
 
-We have a [project with a reusable script][safe-area-project] that takes those CSS values and applies them to an UI Group Element entity via resizing the margins.
+当社は、そのCSS値を取り、UIグループエレメントのマージンをリサイズすることでその値を適用する再利用可能なスクリプトを持つ[プロジェクト][safe-area-project]を提供しています。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-safe-area.png" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/mobile-view-safe-area.png" width="500">
 
-The UI setup in the project has an Entity with a full screen Group Element named 'Safe Area'. This has the script 'mobileSafeArea' attached which contains the logic for fitting the Element within the safe area of the device.
+プロジェクト内のUIセットアップには、フルスクリーンのグループエレメントを持つエンティティ「Safe Area」があります。このエンティティには、デバイスのセーフエリア内に要素を適合させるためのロジックが含まれる「mobileSafeArea」というスクリプトが添付されています。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-layout.png" width="420px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-layout.png" width="420">
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/safe-area-entity-setup.png" width="420px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/safe-area-entity-setup.png" width="420">
 
-Any essential UI Elements can be placed as a child of the Safe Area Entity to be anchored relative to it.
+重要なUI要素は、セーフエリアエンティティの子エレメントとして配置され、それに相対的にアンカーされます。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-essential-elements.png" width="420px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/hierarchy-essential-elements.png" width="420">
 
-To help with development, a debug setting can be enabled to simulate a safe area to preview what a UI layout would look like without needing a device.
+開発を支援するために、デバイスを必要とせずにUIレイアウトのプレビューを表示するために、デバッグ設定を有効にすることができます。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config.png" width="600px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config.png" width="600">
 
-The debug config can be edited with live updates in the launch tab too.
+デバッグ設定は、起動タブでライブアップデートで編集できます。
 
-<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config-runtime.gif" width="500px">
+<img loading="lazy" src="/images/user-manual/user-interface/safe-area/debug-config-runtime.gif" width="500">
 
 [env-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/env()
 [safe-area-project]: https://playcanvas.com/project/828118/overview/mobile-ui-safe-areas

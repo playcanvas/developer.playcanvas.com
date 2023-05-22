@@ -4,26 +4,26 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-コンポーネントはエンティティに添付されている挙動を定義します。エンティティはコンポーネントのコンテナです。
+コンポーネントはエンティティにアタッチされる振る舞いを定義します。エンティティはコンポーネントのコンテナです。
 
-PlayCanvas Engineで定義されるコンポーネントは沢山あります。PlayCanvas Editorを使用してエンティティにコンポーネントを追加することができます。コンポーネントにより露出されるプロパティはエンティティ選択時にAttribute Editorでリスト表示されます。
+PlayCanvasエンジンには多くのコンポーネントが定義されています。PlayCanvasエディタを使用して、エンティティにコンポーネントを追加できます。コンポーネントが公開するプロパティは、エンティティを選択したときに属性エディタにリストされます。
 
-| コンポーネント                                                       | 説明 |
+| Component                                                       | Description |
 |-----------------------------------------------------------------|-------------|
-| [Anim](/user-manual/packs/components/anim)                      | Specifies the anim state graph and animation assets that can run on the model specified by the entity's render component. |
-| [Animation](/user-manual/packs/components/animation)            | Specifies the animation assets that can run on the model specified by the entity's model component. |
-| [Audio Listener](/user-manual/packs/components/audiolistener)   | Specifies the location of the listener for 3D audio playback. |
-| [Button](/user-manual/packs/components/button)                  | Create a user interface button. |
-| [Camera](/user-manual/packs/components/camera)                  | Renders the scene from the location of the entity. |
-| [Collision](/user-manual/packs/components/collision)            | Assigns a collision volume to the entity. |
-| [Element](/user-manual/packs/components/element)                | Defines a user interface element. |
-| [Layout Child](/user-manual/packs/components/layout-child)      | Override default Layout Group properties for one element. |
-| [Layout Group](/user-manual/packs/components/layout-group)      | Automatically set position and scale of child user interface elements. |
-| [Light](/user-manual/packs/components/light)                    | Attach a dynamic light source to the Entity. |
-| [Model](/user-manual/packs/components/model)                    | Renders a 3D model at the location of the entity. |
-| [Particle System](/user-manual/packs/components/particlesystem) | Attach a particle system to the Entity. |
-| [Rigid Body](/user-manual/packs/components/rigidbody)           | Adds the entity to the scene's physical simulation. |
-| [Screen](/user-manual/packs/components/screen)                  | Defines the area and rendering of a user interface. |
-| [Script](/user-manual/packs/components/script)                  | Allows the entity to run JavaScript fragments to implement custom behavior. |
-| [Sound](/user-manual/packs/components/sound)                    | Plays audio assets. |
-| [Sprite](/user-manual/packs/components/sprite)                  | Render 2D graphics at the location of the entity. |
+| [Anim](/user-manual/packs/components/anim)                      | エンティティのレンダリングコンポーネントで指定されたモデル上で実行されるアニメーションアセットとアニメステートグラフを指定します。 |
+| [Animation](/user-manual/packs/components/animation)            | エンティティのModelコンポーネントで指定されたモデル上で実行されるアニメーションアセットを指定します。 |
+| [Audio Listener](/user-manual/packs/components/audiolistener)   | 3Dオーディオ再生のためのリスナーの場所を指定します。 |
+| [Button](/user-manual/packs/components/button)                  | ユーザーインタフェースのボタンを作成します。 |
+| [Camera](/user-manual/packs/components/camera)                  | エンティティの位置からシーンをレンダリングします。 |
+| [Collision](/user-manual/packs/components/collision)            | エンティティに衝突ボリュームを割り当てます。 |
+| [Element](/user-manual/packs/components/element)                | ユーザーインタフェース要素を定義します。 |
+| [Layout Child](/user-manual/packs/components/layout-child)      | 1つの要素について、デフォルトのレイアウトグループプロパティを上書きします。 |
+| [Layout Group](/user-manual/packs/components/layout-group)      | 子ユーザーインターフェース要素の位置とスケールを自動的に設定します。 |
+| [Light](/user-manual/packs/components/light)                    | エンティティに動的な光源をアタッチします。 |
+| [Model](/user-manual/packs/components/model)                    | エンティティの位置に3Dモデルをレンダリングします。 |
+| [Particle System](/user-manual/packs/components/particlesystem) | エンティティにパーティクルシステムをアタッチします。 |
+| [Rigid Body](/user-manual/packs/components/rigidbody)           | エンティティをシーンの物理シミュレーションに追加します。 |
+| [Screen](/user-manual/packs/components/screen)                  | ユーザーインターフェースの領域とレンダリングを定義します。 |
+| [Script](/user-manual/packs/components/script)                  | エンティティがカスタムの振る舞いを実装するためのJavaScriptフラグメントを実行できるようにします。 |
+| [Sound](/user-manual/packs/components/sound)                    | Audioアセットを再生します。 |
+| [Sprite](/user-manual/packs/components/sprite)                  | エンティティの位置に2Dグラフィックをレンダリングします。 |

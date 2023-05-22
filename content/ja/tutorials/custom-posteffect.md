@@ -1,5 +1,5 @@
 ---
-title: カスタムの後処理エフェクト
+title: カスタムポストエフェクト
 layout: tutorial-page.hbs
 tags: posteffects
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg"
@@ -7,21 +7,21 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 <iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
 
-*このチュートリアルでは、カスタムポストエフェクトを使ってGLSLでエフェクトを作成する方法を説明します。*
+*このチュートリアルでは、GLSLのカスタムポストエフェクトを使用してエフェクトを作成します。*
 
 ## 概要
 
-JavascriptやGLSLを少し使って、PlayCanvas上でポストエフェクトを作成することができます。ポストエフェクトとは、カメラから2Dでレンダリングされた画像を扱うシェーダーです。画像に複数のポストエフェクトを適用することができますし、それぞれのエフェクトは前のエフェクトの結果を元に、エフェクトをかけることができます。
+PlayCanvasでは、JavascriptとGLSLを使用して独自のポストエフェクトを作成できます。ポストエフェクトは、カメラからの2Dレンダリングされたイメージに対して作用するシェーダーです。イメージに複数のポストエフェクトを適用でき、それぞれのエフェクトは前のエフェクトの出力を入力として使用します。
 
-次のセクションでは、ポストエフェクトの作り方を説明します。既存のポストエフェクトの例は[こちら][1]からご確認ください。
+以下の段落では、独自のポストエフェクトを作成する方法を説明します。既存のポストエフェクトの例は、[ここにあります][1]。
 
 ## スクリプト
 
-最初に、新しくスクリプトを作成する必要があります。このスクリプトには、ポストエフェクトのための [Shader Definition][2] 、そしてカメラにポストエフェクトを追加するためのコードが含まれています。なお、このスクリプトは[Camera component][3]を持つエンティティに添付する必要があります。こちらのposteffect_example.jsを呼びます：
+最初に新しいスクリプトを作成する必要があります。このスクリプトには、ポストエフェクトの[シェーダー定義][2]と、ポストエフェクトをカメラに追加するコードが含まれます。このスクリプトは、[Cameraコンポーネント][3]を持つエンティティにアタッチする必要があります。スクリプト名は「posteffect_example.js」とします。
 
 ## エフェクト
 
-次にポストエフェクトのための新しいクラスを作成する必要があります。このクラスは[pc.posteffect.PostEffect][4]から引き継がれます。posteffect_example.js 内の定義の前部分で、そのクラスの定義を行います。
+次に、ポストエフェクトの新しいクラスを作成する必要があります。このクラスは、[pc.posteffect.PostEffect][4]から派生します。このクラスは、上記のスクリプト定義の直前に定義します。
 
 ```javascript
 pc.extend(pc, function () {
@@ -63,9 +63,9 @@ pc.extend(pc, function () {
 }());
 ```
 
-## まとめ
+## 終了
 
-これでポストエフェクトに必要なすべてのコンポーネントが揃いました。後は、上位で定義したExamplePostEffectのインスタンスをカメラの[ポストエフェクトキュー][5]に追加するだけです。ここでは完全なリストは次のとおりです。完全なリスト：
+これで、ポストエフェクトに必要なすべてのコンポーネントが揃いました。定義したExamplePostEffectのインスタンスを、カメラの[post effect queue][5]に追加するだけです。以下が完全なリストです。
 
 ```javascript
 //--------------- POST EFFECT DEFINITION------------------------//
@@ -144,9 +144,9 @@ PosteffectExample.prototype.initialize = function() {
 };
 ```
 
-カスタムシェーダーのより詳しいチュートリアルは [こちら][6]。
+カスタムシェーダーの詳細については[こちら][6]を参照してください。
 
-[カスタムポストエフェクトのプロジェクト][7] はこちらです。
+[Custom Post Effects project here][7]はこちら。
 
 [1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 [2]: /api/pc.Shader.html

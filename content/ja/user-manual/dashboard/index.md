@@ -1,5 +1,5 @@
 ---
-title: ダッシュボード
+title: プロジェクトダッシュボード
 layout: usermanual-page.hbs
 position: 7
 ---

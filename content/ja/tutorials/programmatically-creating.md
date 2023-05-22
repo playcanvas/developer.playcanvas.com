@@ -1,5 +1,5 @@
 ---
-title: プログラムでエフェクトを作成
+title: プログラムでのエンティティ作成
 layout: tutorial-page.hbs
 tags: procedural, basics
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg"
@@ -7,79 +7,79 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 <iframe loading="lazy" src="https://playcanv.as/p/1VjdIY7v/" title="Programmatically Creating Entities"></iframe>
 
-基本的に、エンティティはPlayCanvas Editorで作成され、ゲームを作成するためのコンポーネントやスクリプトを構築します。しかし、スクリプトからエンティティを作成する方が便利な場合もあります。このチュートリアルではその方法を説明します。
+通常、PlayCanvas エディターを使用してエンティティを作成し、ゲームのさまざまなパーツを作成するためにコンポーネントやスクリプトのコレクションを作成することが多いです。しかし、スクリプトでエンティティを作成することもできます。このチュートリアルでは、その方法を説明します。
 
 ## エンティティの作成
 
 ```javascript
 var entity = new pc.Entity(); // エンティティを作成
 
-// エンティティ階層に追加
+// エンティティ階層に追加する
 this.app.root.addChild(entity);
 ```
 
-まず、エンティティを作成する必要があります。これは簡単ですが、メインのエンティティ階層にエンティティを追加することが重要です。階層内のエンティティのみ、トランスフォーム、コンポーネントおよびスクリプトが更新されます。スクリプトに渡される`Application`オブジェクトからエンティティ階層のルートにアクセスすることができます。慣例により、これは通常`app`と名付けられ、階層ルートは`this.app.root`として提供されます。
+まず、エンティティを作成する必要があります。これは簡単ですが、重要な点は、エンティティをメインのエンティティ階層に追加することです。変換、コンポーネント、スクリプトが更新されるのは、エンティティ階層にあるエンティティだけです。スクリプトでは、`this.app.root` として使用できる `Application` オブジェクトからエンティティ階層のルートにアクセスすることができます。これは通常、 `app` という名前になっていて、階層のルートは `this.app.root` として使用できます。
 
 ## コンポーネントの追加
 
 ```javascript
-// 新しいエンティティを作成
+// 新しいエンティティを作成する
 var entity = new pc.Entity();
 
-// デフォルト値の新しいCamera Componentを追加
+// デフォルトの値で新しいCameraコンポーネントを追加する
 entity.addComponent("camera");
 
-// 新しいRender Componentを追加してエンティティに追加
+// 新しいModelコンポーネントを作成してエンティティに追加する
 entity.addComponent("render", {
     type: 'box',
 });
 
-// エンティティ階層に追加
+// エンティティ階層に追加する
 this.app.root.addChild(entity);
 ```
 
-エンティティはそのままの状態では機能しないので、コンポーネントを追加して機能を加えます。エンティティのaddComponentメソッドを使用して新規コンポーネントを作成し、エンティティに追加します。
+エンティティそのものにはあまり機能が備わっていないため、エンティティに機能を追加するにはコンポーネントを追加する必要があります。 `addComponent` メソッドを使用して、エンティティに新しいコンポーネントを作成して追加することができます。
 
-各コンポーネントタイプにはデータオブジェクトでパスインできる異なるプロパティがあります。利用可能なプロパティの詳細は[コンポーネントドキュメント][1]からご確認ください。data引数を空にするとデフォルト値が使用されます。
+各コンポーネントタイプには、使えるプロパティが異なります。より詳細については、[コンポーネントのドキュメント][1]を参照してください。 `data` 引数は省略することができ、デフォルト値が使用されます。
 
 ## コンポーネントの削除
 
 ```javascript
 var entity = new pc.Entity();
 
-// デフォルト値のカメラコンポーネントを添付
+// デフォルトの値でCameraコンポーネントを追加する
 entity.addComponent("camera");
 
-// カメラコンポーネントの削除
+// Cameraコンポーネントを削除する
 entity.removeComponent("camera");
 ```
 
-エンティティでremoveComponentメソッドを呼ぶことで、エンティティから個別にコンポーネントを削除することができます。
+エンティティからコンポーネントを個別に削除するには、エンティティ上で `removeComponent` メソッドを呼び出します。
 
 ## エンティティの削除
 
 ```javascript
-// 新しいエンティティを作成
+// 新しいエンティティを作成する
 var entity = new pc.Entity();
 
-// デフォルト値の新しいCamera Componentを作成
+// デフォルトの値で新しいCameraコンポーネントを追加する
 entity.addComponent("camera");
 
-// 新しいRender Componentを作成してエンティティに追加
+// 新しいModelコンポーネントを作成してエンティティに追加する
 entity.addComponent("render", {
     type: 'box',
 });
 
-// エンティティ階層に追加
+// エンティティ階層に追加する
 this.app.root.addChild(entity);
 
-// エンティティを削除して階層から取り除く
+// エンティティを削除し階層から削除する
 entity.destroy();
 ```
 
-エンティティの使用が完了したら、エンティティのdestroyメソッドを呼ぶことができます。これで、全てのコンポーネントは削除され階層からエンティティが削除されます。同じように、全ての子エンティティも削除されます。
+エンティティを使い終わったら、エンティティ上の `destroy` メソッドを呼び出します。これにより、すべてのコンポーネントが削除され、エンティティが階層から削除されます。子エンティティも同じように削除されます。
 
-## 作動中
+## 実践
 
 ```javascript
 var EntityCreator = pc.createScript('entityCreator');
@@ -104,26 +104,26 @@ EntityCreator.attributes.add('maxCubes', {
     default: 10
 });
 
-// initializeコードがエンティティ毎に一度のみ呼ばれる
+// 初期化コード(エンティティごとに一度呼び出される)
 EntityCreator.prototype.initialize = function() {
     this.entities = [];
 };
 
-// updateコードが毎フレーム呼ばれる
+// 更新コード(フレーム毎に呼び出される)
 EntityCreator.prototype.update = function(dt) {
-    // maxCubes以下の場合、新しいキューブをスポーンする
+    // maxCubes 未満ならば新しいキューブを作成する
     while (this.entities.length < this.maxCubes) {
         this.spawnCube();
     }
 
-    // エンティティの中をループして時間切れの際に削除する
+    // エンティティをループして、その時間が過ぎたら削除する
     for (i = 0; i < this.entities.length; i++) {
         this.entities[i].timer -= dt;
         if (this.entities[i].timer < 0) {
-            // entity.destroy()は全てのコンポーネントを削除してエンティティを階層から取り除く
+            // entity.destroy() はすべてのコンポーネントを削除し、エンティティを階層から削除する
             this.entities[i].entity.destroy();
 
-            // ローカルリストから除外
+            // ローカルリストから削除する
             this.entities.splice(i, 1);
         }
     }
@@ -132,25 +132,25 @@ EntityCreator.prototype.update = function(dt) {
 EntityCreator.prototype.spawnCube = function () {
     var entity = new pc.Entity();
 
-    // 新しいRender Componentを追加してエンティティに追加
+    // 新しいModelコンポーネントを作成してエンティティに追加する
     entity.addComponent("render", {
         type: 'box'
     });
 
-    // 素材を設定
+    // マテリアルを設定する
     entity.render.material = this.material.resource;
 
-    // ランダムな位置に移動
+    // ランダムな位置に移動する
     entity.setLocalPosition(
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions),
         pc.math.random(-this.boxDimensions, this.boxDimensions)
     );
 
-    // 階層に追加
+    // 階層に追加する
     this.app.root.addChild(entity);
 
-    // 削除前にランダムな期間、リストに保管
+    // 削除するまでのランダムな期間をローカルリストに格納する
     this.entities.push({
         entity: entity,
         timer: pc.math.random(0, this.lifetime)
@@ -158,9 +158,9 @@ EntityCreator.prototype.spawnCube = function () {
 };
 ```
 
-これはチュートリアルの初めに作動している状態を確認できる、完全なエンティティスクリプトです。添付されたモデルコンポーネントを使用して、新規エンティティを繰り返し作成および削除します。
+これは完全なエンティティスクリプトであり、チュートリアルの先頭で動作を確認できます。それは常に、Model Component が添付された新しいエンティティを作成および破棄します。
 
-[フルシーンはこちらから][2].
+[ここをクリックして完全なシーンを表示][2]してください。
 
 [1]: /user-manual/packs/components/
 [2]: https://playcanvas.com/editor/scene/440341

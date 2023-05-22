@@ -1,133 +1,60 @@
 ---
-title: キーボードショートカット
+title: コントロールとキーボードショートカット
 layout: usermanual-page.hbs
 position: 11
 ---
 
 ## カメラコントロール
 
-エディタのカメラはマウスとキーボードでコントロールされます
+エディタのカメラはマウスとキーボードで制御されます。
 
-<table class="head-column">
-    <tbody>
-        <tr>
-            <td>Orbit camera</td><td>Left Mouse Button (LMB)</td>
-        </tr>
-        <tr>
-            <td>Pan camera</td><td>Middle Mouse Button (MMB)</td>
-        </tr>
-        <tr>
-            <td>Look camera</td><td>Right Mouse Button (RMB)</td>
-        </tr>
-        <tr>
-            <td>Pan camera</td><td>Shift + LMB</td>
-        </tr>
-        <tr>
-            <td>Zoom / Dolly camera</td><td>Mouse Wheel</td>
-        </tr>
-        <tr>
-            <td>Move Camera</td><td>W-A-S-D</td>
-        </tr>
-        <tr>
-            <td>Move Camera Fast</td><td>Shift + W-A-S-D</td>
-        </tr>
-    </tbody>
-</table>
+| 操作    | コントロール                                                       |
+| ------------ | -------------------------------------------------------------- |
+| 回転        | 左クリック+ドラッグ                                       |
+| パン          | 中央クリック+ドラッグ<br>SHIFT + 左クリック+ドラッグ |
+| 視点変更  | 右クリック+ドラッグ                                      |
+| ズーム / ドリー | マウスホイール                                                    |
+| 移動         | W-A-S-D                                                        |
+| 移動 (速め)  | SHIFT + W-A-S-D                                                |
 
-## 一般的なマウスコントロール
+## マウス操作
 
-<table class="head-column">
-    <tbody>
-        <tr>
-            <td>Select entity</td><td>Click LMB</td>
-        </tr>
-        <tr>
-            <td>Translate / Rotate / Scale Entity according to gizmo</td><td>Click and drag</td>
-        </tr>
-    </tbody>
-</table>
+| 操作                                              | コントロール                  |
+| ------------------------------------------------------ | ------------------------- |
+| エンティティの選択                                          | 左クリック         |
+| エンティティの移動 / 回転 / スケール (ギズモに応じたもの) | 左クリック+ドラッグ  |
 
-## General Modifier Keys
+## 修飾キー
 
-<table class="head-column">
-    <tbody>
-        <tr>
-            <td>Toggle Editor's Snap setting while operating gizmo</td><td>Hold Shift while dragging the Entity</td>
-        </tr>
-        <tr>
-            <td>Do not preserve the Entity's transform when reparenting</td><td>Hold Ctrl when you reparent the Entity</td>
-        </tr>
-    </tbody>
-</table>
+| 操作                                               | コントロール                               |
+| ------------------------------------------------------- | -------------------------------------- |
+| エンティティを移動する間、スナップ設定の変更      | エンティティをドラッグ中にSHIFTを押下   |
+| エンティティの変換を親に移動させる際に座標変換を維持 | エンティティを移動先に回収する際にCTRLを押下します。 |
 
-## ホットキー
+## キーボードショートカット
 
-MacではCTRLの代わりにCMDを使用してください。
+Macの場合、CTRLの代わりにCMDを使用する必要があります。
 
-<table class="three-column">
-    <tbody>
-        <tr>
-            <td>Launch</td><td>Launch the scene in a new tab</td><td>CTRL + ENTER</td>
-        </tr>
-        <tr>
-            <td>New Entity</td><td>Creates a new entity as a child of the currently selected entity</td><td>CTRL + E</td>
-        </tr>
-        <tr>
-            <td>Duplicate Entity</td><td>Duplicates the selected entity and all children</td><td>CTRL + D</td>
-        </tr>
-        <tr>
-            <td>Rename</td><td>Focuses on name field of selected entities or an asset</td><td>N or F2</td>
-        </tr>
-        <tr>
-            <td>Copy Entity</td><td>Copy a single selected entity</td><td>CTRL + C</td>
-        </tr>
-        <tr>
-            <td>Paste Entity</td><td>Paste an entity under the currently selected entity</td><td>CTRL + V</td>
-        </tr>
-        <tr>
-            <td>Copy Asset</td><td>Copy selected asset or assets in assets panel</td><td>CTRL + C</td>
-        </tr>
-        <tr>
-            <td>Paste Entity</td><td>In the assets panel, paste previously selected asset or assets</td><td>CTRL + V</td>
-        </tr>
-        <tr>
-            <td>Delete</td><td>Deletes the current selection</td><td>DELETE or CTRL + BACKSPACE</td>
-        </tr>
-        <tr>
-            <td>Frame Selection</td><td>Focus on the entity selection</td><td>F</td>
-        </tr>
-        <tr>
-            <td>Translate</td><td>Change gizmo mode to translate</td><td>1</td>
-        </tr>
-        <tr>
-            <td>Rotate</td><td>Change gizmo mode to rotate</td><td>2</td>
-        </tr>
-        <tr>
-            <td>Scale</td><td>Change gizmo mode to scale</td><td>3</td>
-        </tr>
-        <tr>
-            <td>World / Local</td><td>Switch between local and world space gizmo</td><td>L</td>
-        </tr>
-        <tr>
-            <td>Toggle All Panels</td><td>Hides or shows all the panels</td><td>SPACE</td>
-        </tr>
-        <tr>
-            <td>Bake</td><td>Re-bake and recalculate lights</td><td>CTRL + B</td>
-        </tr>
-        <tr>
-            <td>Previous Selection</td><td>Select previously selected items</td><td>SHIFT + Z</td>
-        </tr>
-        <tr>
-            <td>Undo</td><td>Undo the last action performed by the user</td><td>CTRL + Z</td>
-        </tr>
-        <tr>
-            <td>Redo</td><td>Redo the next action performed by the user</td><td>CTRL + SHIFT + Z or CTRL + Y</td>
-        </tr>
-        <tr>
-            <td>How do I...?</td><td>Bring search toolbar for mini-tutorials</td><td>CTRL + SPACE</td>
-        </tr>
-        <tr>
-            <td>Show Controls</td><td>Display the Editor controls</td><td>SHIFT + ?</td>
-        </tr>
-    </tbody>
-</table>
+| 操作             | 説明                                                          | キーボードショートカット            |
+| --------------------- | -------------------------------------------------------------------- | ---------------------------- |
+| 起動                | シーンを新規タブで起動する                                        | CTRL + ENTER                 |
+| 新規エンティティ            | フォーカスしているエンティティの子として新規エンティティを作成する     | CTRL + E                     |
+| エンティティを複製      | 選択されたエンティティとそのすべての子をコピーします。                      | CTRL + D                     |
+| エンティティ名 / アセット名の名前変更 | フォーカスしているエンティティまたはアセットの名前フィールドに入力できるようになります。                | NまたはF2                      |
+| エンティティ / アセットのコピー   | 現在のエンティティ/アセットの選択項目をコピーします。                              | CTRL + C                     |
+| エンティティ / アセットの貼り付け  | コピーしたエンティティ/アセットを現在選択されているエンティティ/フォルダの下に貼り付けます。 | CTRL + P                     |
+| 削除                | 現在の選択項目を削除します。                                         | 削除<br>CTRL + BACKSPACE   |
+| 選択をフレーム表示       | 3Dビューで現在のエンティティのフレーム表示をフォーカスします。                 | F                            |
+| 移動             | 3Dビューで移動ギズモをアクティブにします。                          | 1                            |
+| 回転                | 3Dビューで回転ギズモをアクティブにします。                             | 2                            |
+| スケール                 | 3Dビューで拡大縮小ギズモをアクティブにします。                              | 3                            |
+| World / Local         | ローカル座標系とグローバル座標系のギズモを切り替えます。                          | L                            |
+| パネル表示/非表示     | すべてのパネルを非表示にしたり表示したりして、3Dビューを最適化します。                | SPACE                        |
+| Bake                  | [ランタイムライトマッパー][1] を使用してライティングを再構築します。                 | CTRL + B                     |
+| 最後の選択項目    | 前に選択した項目を選択します。                                     | SHIFT + Z                    |
+| 元に戻す                  | 最後のアクションを元に戻します。                                                 | CTRL + Z                     |
+| やり直し                  | 最後の操作をやり直します。                                                 | CTRL + Y<br>CTRL + SHIFT + Z |
+| どうすれば...？          | ミニチュートリアルの検索ツールバーの切り替え                             | CTRL + SPACE                 |
+| コントロールを表示         | エディタのコントロールを表示します。                                          | SHIFT + ?                    |
+
+[1]: /user-manual/graphics/lighting/runtime-lightmaps

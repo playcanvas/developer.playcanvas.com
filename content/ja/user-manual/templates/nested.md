@@ -4,24 +4,24 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-PlayCanvas also supports Nested Templates. These are Templates that have instances of other Templates as children. For example imagine a Tree Template where each fruit is another Template.
+PlayCanvasは、Nested Templates(ネストされたテンプレート)をサポートしています。これは、他のテンプレートのインスタンスを子として持つテンプレートのことです。例えば、果物が別のテンプレートである Tree Template を想像してください。
 
-This allows you to structure complex Template hierarchies with a lot of versatility avoiding copy pasting Entities.
+これにより、Entityをコピー&ペーストすることなく、多様性に富んだ複雑なテンプレート階層を構造化することができます。
 
-## Nested Overrides
+## ネストされたオーバーライド
 
-Let's use the following Template Instance as an example:
+以下のテンプレートインスタンスを例にしてみましょう。
 
 ![Nested Example][1]
 
-In this example Tree is a Template that consists of Branches which are instances of the Branch Template. Each Branch Template consists of instances of the Apple Template.
+この例では、TreeはBranch TemplateのインスタンスであるBranchから構成されています。 そして、Branch TemplateはApple Templateのインスタンスから構成されています。
 
-Let's say we modify the position of the Tree/Branch 1. This will create an override on the Tree Template.
+ここで、Tree/Branch 1の位置を変更すると、Tree Templateでoverride(オーバーライド)が作成されます。
 
-Now let's say we modify the position of Tree/Branch 1/Apple. This will create an override on the Tree Template and another override on Tree/Branch 1.
+次に、Tree/Branch 1/Appleの位置を変更すると、Tree Templateでoverrideが作成され、Tree/Branch 1でもoverrideが作成されます。
 
-If you apply the override to the Branch Template then ALL branches everywhere will pick up the update. If you apply the override to the Tree Template then other Branch Templates will remain unmodified but all Tree Templates will pick up the change.
+オーバーライドは常に選択したテンプレートインスタンスに対して相対的に行われます。したがって、Branch Templateにオーバーライドを適用すると、どこでもすべてのBranchが同じ更新を適用します。Tree Templateにオーバーライドを適用すると、他のBranchとTree Templateは変更されないままですが、すべてのTree Templateで変更が適用されます。
 
-Overrides are always relative to the selected Template Instance. So if you apply the override to the Tree Template and then select Tree/Branch 1, you will see that the Branch still has the override for the Apple, because we have not applied it to the Branch Template.
+適用するオーバーライドは常に選択したテンプレートインスタンスを基準にします。つまり、Tree Templateにオーバーライドを適用した後にTree/Branch 1を選択すると、BranchにはまだAppleのオーバーライドがあるため、変更が適用されていないことがわかります。
 
 [1]: /images/user-manual/templates/nested.png

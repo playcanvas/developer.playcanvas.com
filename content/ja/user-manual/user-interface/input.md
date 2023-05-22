@@ -1,10 +1,10 @@
 ---
-title: 入力
+title: Input
 layout: usermanual-page.hbs
 position: 8
 ---
 
-ユーザは、Elementコンポーネントの `useInput`フィールドを有効にすることで、[Element][1]コンポーネントとインタラクトできます：
+ユーザは、Elementコンポーネントの `useInput`フィールドを有効にすることで、[Element][1]コンポーネントとインタラクトできます。
 
 ![入力の使用][2]
 
@@ -69,7 +69,7 @@ Elementコンポーネントで入力を有効にすると、次のイベント�
 
 コンポーネント上でタッチがキャンセルされたときに発生します。
 
-## イベント処理
+## Event Handling
 
 入力イベントを処理するには、Elementコンポーネントでリッスンします。
 
@@ -79,7 +79,7 @@ this.entity.element.on('click', function (event) {
 }, this);
 ```
 
-## イベントバブリング
+## Event bubbling
 
 Elementコンポーネントで入力イベントが発生すると、 `event.stopPropagation()`を呼び出さない限り、親要素にバブルアップします。 例えば：
 
@@ -111,13 +111,13 @@ InputScript.prototype.update = function (dt) {
     }
 }
 ```
-## Mouse and Touch event conflict on Google Chrome
+## Google Chromeのマウスとタッチイベントの競合
 
-Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behavior. For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
+Google Chromeは、タッチデバイスでもマウスイベントをシミュレートします。そのため、予期しない動作が発生する可能性があります。たとえば、クリックイベントの直後にボタンを非表示にすると、その後ろにある別のUI要素も望ましくないクリックイベントを受信する可能性があります。
 
-To prevent this behavior you can call the ```preventDefault()``` method of the native event object on the ```pc.EVENT_TOUCHEND``` event:
+この動作を防止するには、```pc.EVENT_TOUCHEND```イベントのネイティブイベントオブジェクトの```preventDefault()```メソッドを呼び出すことができます。
 
-Here is small script to include once in your scene:
+次に、シーンに一度含める小さなスクリプトです。
 
  ```javascript
 var TouchFix = pc.createScript('touchFix');

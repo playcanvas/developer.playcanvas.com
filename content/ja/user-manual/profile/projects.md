@@ -4,57 +4,81 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-プロジェクトタブには、過去に作成した全てのプロジェクトとアクセス可能な全てのプロジェクトがリストされています。
+プロジェクトタブには、作成したプロジェクトやアクセス権が与えられたプロジェクトがすべて表示されます。
 
 ![projects_page][1]
 
-## 新規プロジェクト
+## 新しいプロジェクト
 
-新規プロジェクトを作成するには右上のNEWボタンをクリックします。
+右上のNEWボタンをクリックして、新しいプロジェクトを作成します。
 
 ## プロジェクトの削除
 
-プロジェクトの横の矢印をクリックしてDeleteを選択するとアカウントから完全に削除することができます。
+プロジェクトの横にある矢印をクリックして、削除を選択すると、プロジェクトをアカウントから完全に削除することができます。
 
-## プロジェクトをアンロック
+## プロジェクトのロック解除
 
-プロジェクト横にある矢印をクリックしてUnlockを選択して*ロック*されたプロジェクトをアンロックする。プロジェクトのアンロックはプロジェクトの所有者のサブスクリプションの種類によって異なります。Personalプランの場合、プロジェクトから無料のユーザーを削除します(Personalプランは、すべてのユーザーがサブスクリプションを持っていることを必要とするため)。それ以外の場合は、プロジェクトをアンロックするとそれを公開することになります。
+プロジェクトの横にある矢印をクリックし、Unlockを選択して、*ロックされた*プロジェクトをロック解除します。プロジェクトのロック解除は、プロジェクトの所有者のサブスクリプションタイプによって異なります。所有者がパーソナルプランを持っている場合、ロック解除により、すべてのユーザーにサブスクリプションが必要なため、Freeユーザーがプロジェクトから削除されます。それ以外の場合、プロジェクトのロック解除は、それをパブリックにすることを意味します。
 
-Organizationアカウントの場合、上限に達することがなくなるまでseatを購入することでプロジェクトをアンロックすることもできます。
+Organizationアカウントを持っている場合、プロジェクトのロック解除の別の方法は、シートの制限に達しないように、さらにシートを購入することです。
 
-## プロジェクトアーカイブのエクスポート
+## プロジェクトの所有権移転
 
-![export-archive][2]
-
-You can export a .zip archive of your project to keep an offline backup. You can later choose to import that .zip archive as a new project.
-
-プロジェクトをエキスポートするには、プロジェクトの横の矢印をクリックしてExportを選択します。
-
-## プロジェクトアーカイブのインポート
-
-![import-archive][3]
-
-You can import a .zip archive that contains an export project. That .zip file must be created using the Export mechanism described above.
-
-Projectsページの左側にあるImport Projectをクリックし、zipファイルを選択してインポートします。
-
-## プロジェクトの所有権を転移
-
-If you wish to transfer the ownership of a project to another user click on the arrow next to a project and then click Transfer Ownership.
+プロジェクトの所有権を他のユーザーに移す場合は、プロジェクトの横にある矢印をクリックして、Transfer Ownershipをクリックします。
 
 ![transfer-ownership-menu][4]
 
-A pop up will appear asking you to enter the username of the user or organization you wish to transfer ownership to.
+ユーザー名または所有するOrganizationの名前を入力するように求めるポップアップが表示されます。
 
 ![transfer-ownership-dialog][5]
 
-Enter the username and click FIND or press Enter. Then click TRANSFER.
+ユーザー名を入力し、FINDをクリックするかEnterキーを押します。その後、TRANSFERをクリックしてください。
 
-The other user will need to accept your request to transfer the Project. The transfer request will appear on the top of the other user's project list.
+他のユーザーは、プロジェクトの移転を受け入れる必要があります。移転依頼は、他のユーザーのプロジェクトリストの一番上に表示されます。
 
 ![transfer-ownership-accept][6]
 
-If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
+ユーザーがリクエストを承認すると、移転が完了し、新しい所有者以外のすべてのチームメンバーがプロジェクトから削除されます。
+
+# #プロジェクトのバックアップとリストア
+
+ユーザーが誤って削除したり、悪意のあるチームメンバーによって保護するために、定期的にプロジェクトのバックアップを作成することをお勧めします。以下にいくつかの方法がリストされています。
+
+## プロジェクトのフォーク
+
+プロジェクトのバックアップを作成する最も簡単な方法は、フォークすることです。これにより、プロジェクトの 'main'ブランチのコピーである新しいプロジェクトが作成されます。新しく作成されたフォークにはバージョン管理の履歴は保存されません。
+
+このオプションは、[プロジェクトダッシュボード][7]で見つけることができます。
+
+## プロジェクトをアーカイブファイルにバックアップする
+
+アーカイブファイルには、現在のプロジェクトの状態のすべてのデータが含まれます。ただし、バージョン管理履歴は含まれません。
+
+プロジェクトのオフラインバックアップアーカイブを作成するための2つの方法があります。
+
+### プロジェクトリストから
+
+![export-archive][2]
+
+.zipアーカイブをエクスポートして、オフラインバックアップを取得できます。後でその.zipアーカイブを新しいプロジェクトとしてインポートできます。
+
+プロジェクトをエクスポートするには、プロジェクトの横にある矢印をクリックして、「プロジェクトをエクスポート」を選択します。これにより、 'main' ブランチのみをエクスポートできます。
+
+### REST APIを使用する
+
+バックアップされたアーカイブファイルをエクスポートすることも、[REST API][8]で行うことができ、自動的な定期バックアップのために継続的な統合システムで自動化することができます。
+
+パラメータを介してエクスポートするブランチを選択することもできます。
+
+当社は、このプロセスをユーザーにとってより簡単にする[Nodeベースのオープンソースツール][9]を作成しました。
+
+## アーカイブファイルからプロジェクトをリストアする
+
+![import-archive][3]
+
+'[プロジェクトをアーカイブファイルにバックアップする](#backing-up-a-project-to-an-archive-file)'に記載されている方法のいずれかで作成されたアーカイブzipファイルがあれば、それをPlayCanvas上の新しいプロジェクトとしてインポートできます。
+
+プロジェクトページの左側にある 'Import Project' をクリックして、zipファイルを選択してインポートしてください。
 
 [1]: /images/user-manual/profile/profile.png "Projects"
 [2]: /images/user-manual/profile/projects/export-archive-button.jpg
@@ -62,3 +86,6 @@ If the user accepts the request then the transfer will be completed and all team
 [4]: /images/user-manual/profile/projects/transfer-ownership-menu.png
 [5]: /images/user-manual/profile/projects/transfer-ownership-dialog.png
 [6]: /images/user-manual/profile/projects/transfer-ownership-accept.png
+[7]: /user-manual/dashboard/header/
+[8]: /user-manual/api/project-archive/
+[9]: https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project

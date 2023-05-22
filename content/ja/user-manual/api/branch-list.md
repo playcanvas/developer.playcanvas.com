@@ -1,5 +1,5 @@
 ---
-title: Branches - List branches
+title: ブランチ - List branches
 layout: usermanual-page.hbs
 position: 11
 ---
@@ -12,7 +12,7 @@ GET https://playcanvas.com/api/projects/:projectId/branches
 
 ## 説明
 
-プロジェクトのすべてのオープンなブランチのリストを取得します。
+プロジェクトの全てのオープンなブランチのリストを取得します。
 
 ## 例
 
@@ -20,20 +20,20 @@ GET https://playcanvas.com/api/projects/:projectId/branches
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/branches"
 ```
 
-HTTP Request
+HTTPリクエスト
 
 ```text
 GET https://playcanvas.com/api/projects/{projectId}/branches
 Authorization: Bearer {accessToken}
 ```
 
-## パラメータ
+## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list branches from</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>ブランチのリストを取得するプロジェクトのID</p></div>
 </div>
 
-## 応答のスキーマ
+## レスポンススキーマ
 
 ```none
 Status: 200
@@ -60,19 +60,19 @@ Status: 200
 }
 ```
 
-このエンドポイントは、若干異なるページネーションメソッドを使用します。応答が値`hasMore: true`を含む場合には、追加の結果を利用できます。`?skip=branchId`クエリパラメータを、最後に受信したブランチidと共に使用して、さらに多くのブランチをアルファベット順に受信してください。
+このエンドポイントは、若干異なるページネーション方法を使用しています。レスポンスが `hasMore: true` の場合、追加の結果が利用可能です。最後に受信したブランチIDとともに `?skip=branchId` クエリパラメーターを使用して、アルファベット順により多くのブランチを受信します。
 
 ## エラー
 
 <div class="params">
-<div class="parameter"><span class="param">401</span><p>非認証</p></div>
-<div class="parameter"><span class="param">403</span><p>許可されていません</p></div>
+<div class="parameter"><span class="param">401</span><p>認証されていません</p></div>
+<div class="parameter"><span class="param">403</span><p>禁止されています</p></div>
 <div class="parameter"><span class="param">404</span><p>プロジェクトが見つかりません</p></div>
 <div class="parameter"><span class="param">429</span><p>リクエストが多すぎます</p></div>
 </div>
 
 ## レート制限
 
-このルートは[normal][1]なレート制限を使用します。
+このルートは[通常][1]のレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting

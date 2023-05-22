@@ -1,63 +1,62 @@
 ---
-title: Layers
+title: レイヤー
 layout: usermanual-page.hbs
 position: 4
 ---
 
-## レイヤー概要
+## レイヤーの概要
 
-レイヤーによって、アプリケーションのレンダーループをカスタマイズできます。
-レイヤーを使用すると、高度なレンダリング機能を実装できます。たとえば：
+レイヤーを使用すると、アプリケーションのレンダーループをカスタマイズできます。レイヤーを使用すると、高度なレンダリング機能を実装できます。例えば:
 
-* メッシュがレンダリングされる順番を修正する
-* 一部のメッシュのみをレンダリングするようカメラを設定する
-* どのライトがどのメッシュに影響するのかを設定する
+* 描画されるメッシュの順序を変更する
+* カメラを設定して、一部のメッシュだけをレンダリングする
+* 各メッシュにどのライトが影響を与えるかを設定する
 
-PlayCanvasアプリケーションは、常に表示されているデフォルトの一連のレイヤーによって作成されています。独自のレイヤーを作成し、特定の要件に適合するよう再整理することが可能です。
+PlayCanvasアプリケーションは、常に存在するデフォルトのレイヤーのセットで作成されます。あなた自身のレイヤーを作成し、それらの順序を変更することで、あなた自身の独自の要件に合ったレイヤーを作成することができます。
 
-基本的なレベルにおいて、レイヤーはレンダリングをおこなうメッシュのリストです。各レイヤーは2つのサブレイヤーに分けられます：OpaqueとTransparentです。メッシュがレイヤーに追加されると、レイヤーはメッシュ上のマテリアルを透過してレンダリングするかどうかに応じてメッシュを2つのサブレイヤーのいずれかに保管します。これは、透過サブレイヤーは多くの場合、透過サブレイヤーとは異なる方法でソートされるためです。
+基本的なレベルでは、レイヤーは描画するメッシュのリストです。各レイヤーは、不透明と透明の2つのサブレイヤーに分割されます。メッシュがレイヤーに追加されると、そのレイヤーは、メッシュの上に描画される材質が透明に描画される必要があるかどうかに応じて、2つのサブレイヤーのうち1つに保存します。これは、透明なサブレイヤーが不透明なサブレイヤーよりもソート方法が異なるためです。
 
-## レンダリングの順番
+## レンダリング順序 (Rendering Order)
 
-There are three factors that determine the order in which meshes are rendered.
+メッシュをレンダリングする順序を決定する要素は3つあります。
 
-### Camera Priority
+### カメラの優先度 (Camera Priority)
 
-Priority of the camera is the main factor that controls the order in which the meshes are rendered. Each camera has a priority assigned to it, and cameras with smaller values for priority are rendered first.
+カメラの優先度が、メッシュがレンダリングされる順序を制御する主な要素です。各カメラには、優先度が割り当てられており、優先度の値が小さいカメラが最初にレンダリングされます。
 
-Each camera also has a list of layers set up on it, which controls which layers the camera renders. Their order is described in the next section.
+各カメラには、レンダリングするレイヤーのリストが設定されています。その順序は、次のセクションで説明します。
 
 ![Camera Layers][6]
 
-### レイヤー構成
+### レイヤー構成 (Layer Composition)
 
-Next is order of layers in the application. Each application contains a `pc.LayerComposition` object which is available in your application as `this.app.scene.layers`. The layer composition determines the order of all sub-layers. The ordering is based on the sub-layer not on the layer so that you can, for example, render all the opaque sub-layers first, then all the transparent sub-layers afterwards.
+次に、アプリケーションに含まれるレイヤーの順序があります。各アプリケーションには、`pc.LayerComposition` オブジェクトが含まれており、アプリケーションでは `this.app.scene.layers` として使用できます。レイヤーコンポジションは、すべてのサブレイヤーの順序を決定します。順序の基準はレイヤーではなく、サブレイヤーに基づいているため、たとえば、最初にすべての不透明なサブレイヤーをレンダリングし、その後すべての透明なサブレイヤーをレンダリングすることができます。
 
-**注**: ワールドレイヤーの後にレンダリングされるレイヤー内にモデルコンポーネントを設置しても、ワールドレイヤー内のすべてに優先してモデルをレンダリング**するわけではありません！** モデルのレンダリングに使用されるスタンダードマテリアルには、`depthTest`というプロパティがあります。このプロパティがtrueの場合（デフォルト）、モデルの各ピクセルがレンダリングされる前に、このピクセルの前に何かないかGPUがテストして確認します。そのピクセルがそれよりも前の層深度の中に描かれても、テストは可視的なピクセルのみが描かれる点を確認します。メッシュをレンダリングする際にカメラからの距離を無視したい場合には、マテリアル内の `depthTest`を非有効化してください。
+**注**: ワールドレイヤーの後にレンダリングされるレイヤー内にModelコンポーネントを設置しても、ワールドレイヤー内のすべてに優先してモデルをレンダリング**するわけではありません！** モデルのレンダリングに使用されるスタンダードマテリアルには、`depthTest`というプロパティがあります。このプロパティがtrueの場合（デフォルト）、モデルの各ピクセルがレンダリングされる前に、このピクセルの前に何かないかGPUがテストして確認します。たとえそのピクセルが以前のレイヤーに描画されたとしても、Depthテストにより、可視なピクセルのみが描画されます。メッシュの描画時にカメラからの距離を無視する場合は、マテリアルの `depthTest` を無効にしてください。
 
-### ソートモード
+### ソートモード (Sort Modes)
 
-各サブレイヤーにはソートモードがあります。各フレームで、サブレイヤー内のメッシュはそのソートモードに応じてソートされます。これは、サブレイヤーがレンダリングされる際の、メッシュがレンダリングされる順序を決定します。
+各サブレイヤーにはソートモードがあります。各フレームで、サブレイヤー内のメッシュがソートモードに基づいてソートされます。これにより、サブレイヤーがレンダリングされる際にメッシュがレンダリングされる順序が決定されます。
 
-* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - これは不透過サブレイヤー向けのデフォルトモードです。レンダリングパフォーマンスを向上するため、メッシュインスタンスはマテリアルとメッシュの切替を最小化するようソートされます。
-* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - これは、透過サブレイヤー向けのデフォルトモードです。メッシュインスタンスは背面から全面にソートされます。さまざまな深度の半透明オブジェクトを多くレンダリングするのに適した方法です。これらの半透明オブジェクトは互いに混合されます。
-* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - メッシュインスタンスは前面から背面にソートされます。GPUとシーンによっては、オーバードローが減少するため、このオプションの方が`pc.SORTMODE_MATERIALMESH`よりも優れたパフォーマンスとなる可能性があります。
-* **Manual** (`pc.SORTMODE_MANUAL`) - これは、UIまたは2Dレイヤー向けのデフォルトモードです。メッシュインスタンスは `drawOrder` プロパティにもとづいてソートされます。エレメントコンポーネントとスプライトコンポーネントは、このソートモードでレイヤーに設置する必要があります。
-* **None** (`pc.SORTMODE_NONE`) - ソートは適用されません。メッシュインスタンスは、レイヤーに追加されたのと同じ順序でレンダリングされます。
+* **Material / Mesh**(`pc.SORTMODE_MATERIALMESH`)- 不透明なサブレイヤーのデフォルトモードです。メッシュインスタンスは、レンダリングのパフォーマンスを向上させるために、マテリアルとメッシュの切り替えを最小限に抑えるようにソートされます。
+* **Back-to-front**(`pc.SORTMODE_BACK2FRONT`)- 透明なサブレイヤーのデフォルトモードです。メッシュインスタンスは、後ろから前にソートされます。これは、異なる深度を持つ多数の半透明オブジェクトを適切にレンダリングする方法です。
+* **Front-to-back**(`pc.SORTMODE_FRONT2BACK`)- メッシュインスタンスは前から後ろにソートされます。GPUとシーンによっては、このオプションが`pc.SORTMODE_MATERIALMESH`よりもパフォーマンスが向上する場合があります。
+* **Manual**(`pc.SORTMODE_MANUAL`)- UIや2Dレイヤーのデフォルトモードです。メッシュインスタンスは、`drawOrder` プロパティに基づいてソートされます。ElementコンポーネントとSpriteコンポーネントは、このソートモードを持つレイヤーに配置する必要があります。
+* **None**(`pc.SORTMODE_NONE`)- ソートは適用されません。メッシュインスタンスは、レイヤーに追加された順序で描画されます。
 
 ## デフォルトレイヤー
 
-PlayCanvasアプリケーションは、一連のデフォルトレイヤーによって作成されています。これらのレイヤーの場所は変更しないでください。正しい場所に存在しないと、エンジンの一部の機能が正常に作動しなくなります。デフォルトの順序は以下のとおりです：
+PlayCanvasアプリケーションは、デフォルトのレイヤーのセットで作成されます。これらのレイヤーを削除すると、一部のエンジン機能が正常に機能しなくなるため、これらのレイヤーはそのままにしておく必要があります。デフォルトの順序は次のとおりです:
 
 ![Default Layers][1]
 
-1. **World (Opaque)** - 透明でないコンポーネントのレンダリングに使用されます。多くの場合、不透明コンポーネントメッシュが該当します。
-1. **Depth (Opaque)** - 深度レイヤーは、上級ユーザーのみが使用してください。
-1. **Skybox (Opaque)** - スカイボックスのレンダリングに使用します。オーバードローを減少させるため、スカイボックスはWorld (Opaque) の後にレンダリングされます。
-1. **World (Transparent)** - 透明なコンポーネントや、その他の透明なコンポーネントメッシュのレンダリングに使用します。
-1. **Immediate (Opaque)** - 即時モードメッシュのレンダリングに使用します（例： `app.renderLine()`）。
-1. **Immediate (Transparent)** - 即時モードメッシュのレンダリングに使用します（例：`app.renderLine()`）
-1. **UI (Transparent)** - エレメントコンポーネントのレンダリングに使用します。すべてのエレメントコンポーネントが透明なため、不透明サブレイヤーは使用されません。
+1. **World (Opaque)** - 透明でないコンポーネントとほとんどの不透明なコンポーネントのメッシュをレンダリングするために使用されます。
+1. **Depth (Opaque)** - シーンのカラーまたはDepthバッファをキャプチャするために使用されます。[Depth Layer][7]を参照してください。
+1. **Skybox (Opaque)** - スカイボックスをレンダリングするために使用されます。World(Opaque)の後にレンダリングされるようになっており、オーバードローを減らすためです。
+1. **World (Transparent)** - 透明なコンポーネントと他の透明なコンポーネントメッシュをレンダリングするために使用されます。
+1. **Immediate (Opaque)** - インスタントモードメッシュをレンダリングするために使用されます。例:`app.renderLine()`。
+1. **Immediate (Transparent)** - インスタントモードメッシュをレンダリングするために使用されます。例:`app.renderLine()`。
+1. **UI (Transparent)** - Elementコンポーネントをレンダリングするために使用されます。すべてのElementコンポ
 
 ## カスタムレイヤーの使用
 
@@ -90,18 +89,18 @@ Layersセクションで、作成するレイヤーの名前を入力し**Add La
 
 ![Layer Components][5]
 
-*Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in its layer list. In order for it to be lit, the light must include Test Layer in its layer list too.
+*Note:* モデルはテストレイヤーに割り当てられています。これをレンダリングするためには、カメラはそのレイヤーリストにテストレイヤーを含める必要があります。これを照らすためには、ライトもまたそのレイヤーリストにテストレイヤーを含める必要があります。
 
-### Recommended setup
+### 推奨されるセットアップ 
 
-Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
+通常、シーンには多くのエンティティが含まれ、それらはメッシュをレンダリングします。これらのそれぞれが正確に1つのレイヤーに存在することが推奨されます。ほとんどの場合、これらはワールドレイヤーになりますが、よりコントロールを行うために、テレイン、ビルディング、キャラクターなどのレイヤーに割り当てることができます。 
 
-A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture. 
+新しいシーンにはデフォルトで一つのカメラが含まれており、多くのアプリケーションではこれだけで十分です。追加のカメラは、シーン内の異なるカメラ間でカットする場合や、ピクチャーインピクチャーや分割画面をレンダリングする場合、またはシーンをテクスチャにレンダリングする場合などに有用です。 
 
-When you add an additional camera, these are the recommended steps:
-1. Set the priority of new and existing cameras to control the order in which they render.
-2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
-3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.
+追加のカメラを追加するときには、以下の手順を推奨します。
+1. 新規および既存のカメラの優先度を設定し、それらがレンダリングする順序を制御します。 
+2. 新たに作成したカメラのレイヤーを設定し、それがレンダリングするレイヤーを指定します。例えば、上から見下ろすマップカメラをレンダリングし、その中にテレインとビルディングのレイヤーだけを含めたい場合、キャラクターは含めないようにするなどです。 
+3. カメラがテクスチャにレンダリングする場合は、スクリプトを使用してレンダーターゲットをカメラの `renderTarget` プロパティに割り当てます。
 
 [1]: /images/user-manual/graphics/layers/default-layers.jpg
 [2]: /images/user-manual/graphics/layers/new-layer.jpg
