@@ -8,7 +8,7 @@ The multiple render targets feature allows to simultaneously render to multiple 
 
 For its support on a device, check `pc.GraphicsDevice.supportsMrt`. In general, it is supported on all WebGL2 and WebGPU devices and also on WebGL1 devices that support the `WEBGL_draw_buffers` extension. Note that on WebGL1 devices, the support is very high apart from on Android, where it is very low.
 
-Additionally, you can detect the number of color attachments you can use by checking `pc.GraphicsDevice.maxColorAttachments`, and typically 8 attachments are supported.
+Additionally, you can detect the number of color attachments you can use by checking `pc.GraphicsDevice.maxColorAttachments`. Typically, 8 attachments are supported.
 
 Multiple render targets have the following restrictions:
 - All color attachments of a multiple render target must have the same width and height.
