@@ -6,7 +6,7 @@ position: 5
 
 The multiple render targets feature allows to simultaneously render to multiple textures. This manual page explores implementation, configuration, and an example use case of multiple render targets.
 
-For its support on a device, check `pc.GraphicsDevice.supportsMrt`. In general, it is supported on all WebGL2 and WebGPU devices and also on the  WebGL1 devices using the WEBGL_draw_buffers extension. Note that on WebGl1 devices the support is very high apart from Android platform, where it is very low.
+For its support on a device, check `pc.GraphicsDevice.supportsMrt`. In general, it is supported on all WebGL2 and WebGPU devices and also on WebGL1 devices that support the `WEBGL_draw_buffers` extension. Note that on WebGL1 devices, the support is very high apart from on Android, where it is very low.
 
 Additionally, you can detect the number of color attachments you can use by checking `pc.GraphicsDevice.maxColorAttachments`, and typically 8 attachments are supported.
 
