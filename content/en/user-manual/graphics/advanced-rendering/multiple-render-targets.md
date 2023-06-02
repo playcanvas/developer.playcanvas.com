@@ -69,4 +69,4 @@ materials.forEach((material) => {
 
 ### Custom Shaders
 
-When not using StandardMaterial for rendering and instead employing a fully custom fragment shader, you can directly output the desired values to pcFragColor0 .. pcFragColor7. If you only need to modify the rendering for a specific camera, utilize MYMRT_PASS define, which corresponds to the shader pass configured for that camera.
+When not using `StandardMaterial` for rendering and instead employing a fully custom fragment shader, you can directly output the desired values to `pcFragColor0...pcFragColor7`. If you only need to modify the rendering for a specific camera, utilize the `MYMRT_PASS` define, which corresponds to the shader pass configured for that camera.
