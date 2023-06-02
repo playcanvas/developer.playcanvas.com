@@ -23,7 +23,7 @@ Create a render target using multiple color textures:
 ```javascript 
 const colorBuffers = app.graphicsDevice.supportsMrt ? [texture0, texture1, texture2] : [texture0];
 const renderTarget = new pc.RenderTarget({
-    name: `MRT`,
+    name: 'MRT',
     colorBuffers: colorBuffers,
     depth: true
     samples: 2
