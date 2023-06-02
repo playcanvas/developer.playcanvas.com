@@ -33,8 +33,8 @@ const renderTarget = new pc.RenderTarget({
 Create a camera which will be used to render to MRT:
 
 ```javascript 
-const camera = new pc.Entity("MRTCamera");
-camera.addComponent("camera", {
+const camera = new pc.Entity('MRTCamera');
+camera.addComponent('camera', {
     // set its priority to make it render before the main camera each frame
     priority: -1,
 
