@@ -18,7 +18,7 @@ Multiple render targets have the following restrictions:
 
 ## How to use MRT
 
-Create render target using multiple color textures:
+Create a render target using multiple color textures:
 
 ```javascript 
 const colorBuffers = app.graphicsDevice.supportsMrt ? [texture0, texture1, texture2] : [texture0];
