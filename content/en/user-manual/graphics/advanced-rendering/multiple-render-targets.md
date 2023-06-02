@@ -14,7 +14,7 @@ Multiple render targets have the following restrictions:
 
 - All color attachments of a multiple render target must have the same width and height.
 - All color attachments are cleared to the same value, specified using `pc.CameraComponent.clearColor`.
-- All color attachments use the same writeMask and alpha blend mode, as specified using `pc.BlendState`.
+- All color attachments use the same write mask and alpha blend mode, as specified using `pc.BlendState`.
 
 ## How to use MRT
 
