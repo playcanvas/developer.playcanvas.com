@@ -43,7 +43,7 @@ camera.addComponent("camera", {
 });
 app.root.addChild(camera);
 
-// if MRT is supported, set the camera to use custom shader pass called MyMRT
+// if MRT is supported, set the camera to use a custom shader pass called MyMRT
 if (app.graphicsDevice.supportsMrt) {
     camera.camera.setShaderPass('MyMRT');
 }
