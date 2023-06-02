@@ -11,6 +11,7 @@ For its support on a device, check `pc.GraphicsDevice.supportsMrt`. In general, 
 Additionally, you can detect the number of color attachments you can use by checking `pc.GraphicsDevice.maxColorAttachments`. Typically, 8 attachments are supported.
 
 Multiple render targets have the following restrictions:
+
 - All color attachments of a multiple render target must have the same width and height.
 - All color attachments are cleared to the same value, specified using `pc.CameraComponent.clearColor`.
 - All color attachments use the same writeMask and alpha blend mode, as specified using `pc.BlendState`.
