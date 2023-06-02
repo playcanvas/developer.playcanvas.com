@@ -51,7 +51,7 @@ if (app.graphicsDevice.supportsMrt) {
 
 ### Standard Materials
 
-When rendering using StandardMaterial into Multiple Render Targets (MRT), it is necessary to override the output shader chunk to direct values to additional color buffers. It is important to note that the modification in this example does not affect gl_FragColor, which is used for the forward pass output in target 0. If you wish to override it as well, you can output values to pcFragColor0 as well.
+When rendering using `StandardMaterial` into Multiple Render Targets (MRT), it is necessary to override the output shader chunk to direct values to additional color buffers. It is important to note that the modification in this example does not affect `gl_FragColor`, which is used for the forward pass output in target 0. If you wish to override it as well, you can output values to `pcFragColor0` as well.
 
 ```javascript 
 materials.forEach((material) => {
