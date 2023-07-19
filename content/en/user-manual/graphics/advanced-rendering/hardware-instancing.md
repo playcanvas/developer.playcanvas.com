@@ -12,17 +12,6 @@ Note that all instances are submitted for rendering by the GPU with no camera fr
 
 ## How to use instancing
 
-Enable instancing on a StandardMaterial that you use for rendering:
-
-```javascript 
-var material = new pc.StandardMaterial();
-material.onUpdateShader = function(options) {
-    options.useInstancing = true;
-    return options;
-};
-material.update();
-```
-
 Populate a vertex buffer with per instance matrices to provide their world matrices for rendering.
 
 ```javascript
