@@ -5,17 +5,31 @@ position: 24
 ---
 
 ## Auto-renewal of Subscriptions
+
 Once you subscribe to the Personal or Organization plan, payment will automatically be taken on a monthly basis, on the day of the month when you first subscribed.
 
 ## Invoices
+
 Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing <sales@playcanvas.com>.
 
+### Updating Invoice Details
+
+You may want to edit certain details that appear on your invoices such as:
+
+* Billing Name
+* Billing Address
+* Tax ID
+
+To do this, visit the account page for your subscribed account (remembering that Organizations have their own account page). Navigate to the Billing Info section and hit the Edit link. Fill out the payment details form and hit 'PAY NOW'. Note that editing the details of an existing subscription will not trigger a payment straight away. But on your next scheduled billing date, the invoice will show the updated details.
+
 ## Organization Billing
+
 The day you subscribe to an Organization account is your monthly billing date. So if you subscribe on 10th July, you will be billed on that date with subsequent billing dates as 10th August, 10th September and so on.
 
 The Organization plan allows you to add and remove seats at any time. When seats are added or removed, it is important to understand that this will increase or decrease the cost of your plan. However, this change in cost is not accounted for immediately when the number of seats is changed. Instead, it is accounted for at the next billing date.
 
 ### Example:
+
 Imagine the following sequence of events:
 
 * A user signs up for a 1-seat Organization plan on 10th May.
@@ -32,4 +46,5 @@ The billing events from May to October will be as follows:
 * 10th October: **$50**. The plan has 1 seat and no changes were made to the plan in the previous month.
 
 ## Cancelling your Plan
+
 You can cancel your plan at any time. Note that cancellation takes effect immediately and your account will switch to the free tier straight away. If you need to use your plan features up to the next billing date, we recommend that you set a reminder and cancel the day before.
