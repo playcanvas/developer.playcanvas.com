@@ -14,7 +14,7 @@ After selecting an animstategraph asset, the anim component will display a list 
 
 ![Anim Component With Graph][2]
 
-After all animation state slots have been filled, the anim component will become playable. At this point the anim component can either be played via script by calling `entity.anim.play()` or if the `Activate` option is selected, it will play automatically upon the launch of the PlayCanvas project.
+After all animation state slots have been filled, the anim component will become playable. At this point the anim component can either be played via script by calling `entity.anim.playing = true` or if the `Activate` option is selected, it will play automatically upon the launch of the PlayCanvas project.
 
 The anim component also offers the option to alter the speed of the animation playback. This speed will affect every animation within the state graph.
 
