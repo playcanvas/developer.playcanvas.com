@@ -29,6 +29,89 @@ By doing this you will no longer see warning messages in the console.
 
 The following tables break down the chunk changes by Engine release.
 
+### *Engine v1.65*
+
+In 1.62, global variables used to pass the values between the front end back end chunks were grouped into structures LitShaderArguments, IridescenceArgs, ClearcoatArgs and SheenArgs. Those were causing multiple compatibility issues on Android devices, and so in 1.65, these are being converted back to global variables. For example `litShaderArgs.albedo` is now `litArgs_albedo`.
+
+These are the new global variables:
+
+```c
+// Surface albedo absorbance
+vec3 litArgs_albedo;
+
+// Transparency
+float litArgs_opacity;
+
+// Emission color
+vec3 litArgs_emission;
+
+// Normal direction in world space
+vec3 litArgs_worldNormal;
+
+// Ambient occlusion amount, range [0..1]
+float litArgs_ao;
+
+// Light map color
+vec3 litArgs_lightmap;
+
+// Light map direction
+vec3 litArgs_lightmapDir;
+
+// Surface metalness factor, range [0..1]
+float litArgs_metalness;
+
+// The f0 specularity factor
+vec3 litArgs_specularity;
+
+// Specularity intensity factor, range [0..1]
+float litArgs_specularityFactor;
+
+// The microfacet glossiness factor, range [0..1]
+float litArgs_gloss;
+
+// Glossiness of the sheen layer, range [0..1]
+float litArgs_sheen_gloss;
+
+// The color of the f0 specularity factor for the sheen layer
+vec3 litArgs_sheen_specularity;
+
+// Transmission factor (refraction), range [0..1]
+float litArgs_transmission;
+
+// Uniform thickness of medium, used by transmission, range [0..inf]
+float litArgs_thickness;
+
+// Index of refraction
+float litArgs_ior;
+
+// Iridescence effect intensity, range [0..1]
+float litArgs_iridescence_intensity;
+
+// Thickness of the iridescent microfilm layer, value is in nanometers, range [0..1000]
+float litArgs_iridescence_thickness;
+
+// The normal used for the clearcoat layer
+vec3 litArgs_clearcoat_worldNormal;
+
+// Intensity of the clearcoat layer, range [0..1]
+float litArgs_clearcoat_specularity;
+
+// Glossiness of clearcoat layer, range [0..1]
+float litArgs_clearcoat_gloss;
+```
+
+These are the chunk that had their signature changed to accept individual members, instead of the whole structures:
+- endPS
+- metalnessModulatePS
+- outputAlphaPS
+- outputAlphaPremulPS
+- fresnelSchlickPS
+- iridescenceDiffractionPS
+- lightmapAddPS
+- lightmapDirAddPS
+- refractionCubePS
+- refractionDynamicPS
+
 ### *Engine v1.62*
 
 In PlayCanvas, we have two sets of shader chunks, one set we refer to as the shader frontend, which provide values for the arguments passed to our lighting algorithm, also called the shader backend. 
