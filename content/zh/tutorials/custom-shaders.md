@@ -75,8 +75,8 @@ fragmentShader = fragmentShader + this.fs.resource;
 // A shader definition used to create a new shader.
 var shaderDefinition = {
     attributes: {
-        aPosition: pc.gfx.SEMANTIC_POSITION,
-        aUv0: pc.gfx.SEMANTIC_TEXCOORD0
+        aPosition: pc.SEMANTIC_POSITION,
+        aUv0: pc.SEMANTIC_TEXCOORD0
     },
     vshader: vertexShader,
     fshader: fragmentShader
