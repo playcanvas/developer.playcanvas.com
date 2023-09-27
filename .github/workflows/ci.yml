@@ -10,6 +10,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
@@ -34,6 +35,7 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
@@ -58,8 +60,9 @@ jobs:
   lint-html:
     name: Lint HTML
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      
     - name: Checkout repo
       uses: actions/checkout@v3
 
