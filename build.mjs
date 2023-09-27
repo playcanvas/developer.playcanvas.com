@@ -140,7 +140,6 @@ Metalsmith(__dirname)
     .use(tutorials('tutorials')())
     .use(permalinks({
         duplicates: 'error'
-        // pattern: ':filename'
     }))
     .use(i18n()({
         locales: [{
