@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { fileURLToPath } from 'url';
 import handlebars from 'handlebars';
 import { marked } from 'marked';
@@ -61,6 +61,11 @@ handlebars.registerHelper('lang-selector-close', (lang) => {
 // Convert relativeURL with a locale like en/manual to a full url with the
 // desired locale e.g. https://developer.playcanvas.com/ja/user-manual
 handlebars.registerHelper('locale-url', (locale, relativeUrl) => {
+    if (!relativeUrl) {
+        console.warn(`build.mjs : undefined relativeUrl passed to helper.`);
+        return '';
+    }
+
     relativeUrl = path.join(locale, relativeUrl.substring(2));
     const url = new URL(relativeUrl, 'https://developer.playcanvas.com/');
     return url.href;
@@ -132,8 +137,10 @@ Metalsmith(__dirname)
         renderer: renderer
     }))
     .use(contents())
+    .use(tutorials('tutorials')())
     .use(permalinks({
-        pattern: ':filename'
+        duplicates: 'error'
+        // pattern: ':filename'
     }))
     .use(i18n()({
         locales: [{
@@ -157,7 +164,6 @@ Metalsmith(__dirname)
         contentPath: 'content/_shadereditor_contents.json',
         partialName: 'shader-editor-navigation'
     }))
-    .use(tutorials('tutorials')())
     .use(layouts({
         pattern: '**/*.html'
     }))
