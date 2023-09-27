@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [ dev ]
 
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+    
 jobs:
   build:
     name: Build
