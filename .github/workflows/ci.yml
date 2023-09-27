@@ -13,18 +13,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [18.x, 20.x]
 
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
     - name: Install dependencies
       run: npm ci
+
     - name: Build Site
       run: npm run build
 
@@ -34,18 +37,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [18.x, 20.x]
 
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
     - name: Install dependencies
       run: npm ci
+
     - name: Lint JavaScript
       run: npm run lint
 
@@ -53,16 +59,21 @@ jobs:
     name: Lint HTML
     runs-on: ubuntu-latest
     steps:
+      
     - name: Checkout repo
       uses: actions/checkout@v3
+
     - name: Setup Node.js 18.x
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
         cache: 'npm'
+
     - name: Install dependencies
       run: npm ci
+
     - name: Build
       run: npm run build
+
     - name: Lint HTML
       run: npm run lint:html
