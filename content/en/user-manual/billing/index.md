@@ -10,7 +10,7 @@ Once you subscribe to the Personal or Organization plan, payment will automatica
 
 ## Invoices
 
-Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing <sales@playcanvas.com>.
+Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing <billing@playcanvas.com>.
 
 ### Updating Invoice Details
 
