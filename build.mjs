@@ -137,10 +137,6 @@ Metalsmith(__dirname)
         renderer: renderer
     }))
     .use(contents())
-    .use(tutorials('tutorials')())
-    .use(permalinks({
-        duplicates: 'error'
-    }))
     .use(i18n()({
         locales: [{
             file: 'content/ja/messages.json', locale: 'ja'
@@ -162,6 +158,10 @@ Metalsmith(__dirname)
         template: path.join(__dirname, 'layouts/partials/navigation.hbs'),
         contentPath: 'content/_shadereditor_contents.json',
         partialName: 'shader-editor-navigation'
+    }))
+    .use(tutorials('tutorials')())
+    .use(permalinks({
+        duplicates: 'error'
     }))
     .use(layouts({
         pattern: '**/*.html'
