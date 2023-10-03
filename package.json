@@ -35,7 +35,7 @@
     "chokidar-cli": "^3.0.0",
     "eslint": "^8.50.0",
     "handlebars": "^4.7.8",
-    "html-validate": "^8.4.1",
+    "html-validate": "^8.5.0",
     "jstransformer-handlebars": "^1.2.0",
     "linkinator": "^5.0.2",
     "marked": "^9.0.3",
