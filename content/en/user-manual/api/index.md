@@ -123,10 +123,12 @@ Also the status code of the response will be the appropriate HTTP error code.
 
 ## Rate Limiting
 
-Calls to the REST API have a rate limit. There are different rate limits depending on the request:
+Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits)
+There are different rate limits depending on the request:
 
-* **normal:** The normal rate limit allows 120 requests per minute.
-* **strict:** The strict rate limit allows 5 requests per minute.
+* **normal:** The normal rate limit allows 120-240 requests per minute.
+* **strict:** The strict rate limit allows 5-10 requests per minute.
+* **assets:** The strict rate limit allows 60-120 requests per minute.
 
 The response will contain the following headers to help you regulate how often you call the API:
 
