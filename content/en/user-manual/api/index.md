@@ -128,7 +128,7 @@ There are different rate limits depending on the request:
 
 * **normal:** The normal rate limit allows 120-240 requests per minute.
 * **strict:** The strict rate limit allows 5-10 requests per minute.
-* **assets:** The strict rate limit allows 60-120 requests per minute.
+* **assets:** The assets rate limit allows 60-120 requests per minute.
 
 The response will contain the following headers to help you regulate how often you call the API:
 
