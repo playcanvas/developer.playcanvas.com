@@ -80,6 +80,6 @@ Status: 200
 
 ## Rate Limiting
 
-This route uses a [assets][1] rate limit.
+This route uses an [assets][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting
