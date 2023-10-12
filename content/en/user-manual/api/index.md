@@ -128,9 +128,9 @@ There are different rate limits depending on the request:
 
 | Rate Limit Type | Description               | Limit for free accounts          | Limit for personal/org accounts   |
 |-----------------|---------------------------|-------------------------------|--------------------------------|
-| Normal          | The normal rate limit     | allows 120 requests/minute    | allows 240 requests/minute     |
-| Strict          | The strict rate limit     | allows 5 requests/minute      | allows 10 requests/minute      |
-| Assets          | The assets rate limit     | allows 60 requests/minute     | allows 120 requests/minute     |
+| Normal          | The normal rate limit     | 120 requests/minute    | 240 requests/minute     |
+| Strict          | The strict rate limit     | 5 requests/minute      | 10 requests/minute      |
+| Assets          | The assets rate limit     | 60 requests/minute     | 120 requests/minute     |
 
 
 The response will contain the following headers to help you regulate how often you call the API:
