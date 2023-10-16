@@ -8,7 +8,7 @@ Optimizing isn't just related to improving frame rate. Fast load times are also 
 
 Here are some tips to achieve super-fast load times:
 
-* In general, AVIF images produce smaller files than WEBP, JPG, or PNG for the same image quality. It also supports an alpha channels like WEBP and PNG. However [not all browsers currently support AVIF](https://caniuse.com/avif) so use it where it makes sense for your project. If you can't use AVIF, [WEBP has much wider support](https://caniuse.com/webp) and produces smaller files than JPEG or PNG with similar quality, but we encourage you to test with different formats.
+* In general, AVIF images produce smaller files than WebP, JPG, or PNG for the same image quality. It also supports an alpha channel like WebP and PNG. However [not all browsers currently support AVIF](https://caniuse.com/avif) so use it where it makes sense for your project. If you can't use AVIF, [WebP has much wider support](https://caniuse.com/webp) and produces smaller files than JPEG or PNG with similar quality, but we encourage you to test with different formats.
 * Look for opportunities to downsample certain texture images. For example, a 2048x2048 texture that is used on a small graphical object may look almost exactly the same at 1024x1024 or even 512x512.
 * Don't preload assets which can be loaded asynchronously. For example, it may not be necessary for your game music to play immediately at game start, so consider unchecking the Preload option for that asset in the Inspector panel.
 * If you have a prefiltered cubemap and are not displaying the top-level mipmap for the skybox, you can uncheck preload for all the 6 face images.
