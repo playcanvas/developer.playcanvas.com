@@ -175,6 +175,6 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 
 ## Ограничение скорости
 
-Этот маршрут использует [строгое][1] ограничение скорости.
+Этот маршрут использует ограничение скорости для [ассетов][1].
 
 [1]: /user-manual/api#rate-limiting
