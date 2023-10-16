@@ -27,7 +27,7 @@ Supported image formats are:
 * HDR
 * EXR
 
-Imported JPG, PNG, AVIF and WEBP files remain in their original format.
+Imported JPG, PNG, AVIF, WebP and GIF files remain in their original format.
 
 GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
 
