@@ -72,27 +72,27 @@ You can also drag model, material, and cubemap assets directly into the [Viewpor
 
 To copy an asset or a selection of assets between projects, select the asset(s) and right-click to bring up the context menu to select 'Copy'. You can also use the hotkey Ctrl/Cmd + C instead if the context menu is not available due to being a read-only project.
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500" />
 
 In the project that you want to copy the asset(s) to, right click in the assets panel and select 'Paste'. Ctrl/Cmd + V hotkey can be used instead.
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500" />
 
 Copy and pasting an asset will also copy its asset dependencies too. For example, here we have a model which references two materials and they reference a set of textures.
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%" />
 
 If you copy and paste just the model asset into a different project, those asset dependencies are copied too.
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%" />
 
 By default, it is pasted as a flat hierarchy. If you want keep the folder structure, hold Shift when the context menu is opened and an option will appear called 'Paste (keep folders)'. This will attempt to keep the folder structure using the folder you are pasting into as the root folder.
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500" />
 
 Will result in the following where the folder structure is preserved:
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%" />
 
 We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
 

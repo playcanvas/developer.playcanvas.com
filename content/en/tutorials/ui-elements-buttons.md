@@ -33,27 +33,27 @@ There are two ways to add a button to the scene.
 
 This is the easiest way to add a button to the scene as it creates the necessary entities, components and preconfigures the properties.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif">
+<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif" />
 
 ### With an existing Element
 
 If there is an existing Element that we would like to turn into a button, we can add Button component to it in the Inspector panel and configure it ourselves.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300" />
 
 Remember to enable Use Input on the Element component so the user can interact with it:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300" />
 
 And set the Image Entity property on the Button component to be same Entity that the Element component is on.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300" />
 
 ## Button setup
 
 Let's take a closer look at the first button in the example project:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300" />
 
 The button has 3 components:
 
@@ -63,19 +63,19 @@ The button has 3 components:
 
 The button Entity also has a Text Element as a child for showing text (this is optional depending on the style of your button).
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300" />
 
 The Element's type is Image and it's anchored to the bottom of the screen.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300" />
 
 After anchoring the button we give it an offset from the bottom by simply moving it up.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300" />
 
 We also have Use Input enabled in order to interact with the button.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300" />
 
 ### Changing how the button looks on interaction
 
@@ -91,21 +91,21 @@ This can be done via two Transition Modes:
 
 Tinting the button color in each state is the easiest method to add some user feedback when they interact with it. In the project, the High Quality button has the following setup:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300" />
 
 With the following effect:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-effect.gif">
+<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-effect.gif" />
 
 #### Changing the Sprite
 
 We can also change the sprite image of the button in the different states for cases where you may want the button to change shape or want to give a look of the button being 'pressed' into the screen. The Low Quality button has the following setup:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300" />
 
 With the following effect:
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-effect.gif">
+<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-effect.gif" />
 
 ### Button events
 
@@ -140,7 +140,7 @@ There are other events that can be listened to such as `mouseenter` and `mousele
 
 These events will only fire if Use Input is enabled on the Element component so make sure that has been ticked in the inspector.
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300" />
 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/

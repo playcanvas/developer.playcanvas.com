@@ -17,8 +17,8 @@ One of the most common operations you will need to perform on Entities is to cha
 
 An important part of understanding how to move and manipulate Entities is understanding local and world co-ordinate systems. The world co-ordinate systems is shared by all Entities, it has a fixed origin `(0,0,0)` and a fixed orientation - where `(0,1,0)` is up. The local co-ordinate system relative to the Entity itself. So the local origin is the Entity position, and the orientation follows the orientation of the Entity.
 
-<img loading="lazy" src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates">
-<img loading="lazy" src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates">
+<img loading="lazy" src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates" />
+<img loading="lazy" src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates" />
 <div style="clear:both"></div>
 
 *World and Local co-ordinate systems*

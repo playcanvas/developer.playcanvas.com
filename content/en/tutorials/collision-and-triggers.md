@@ -51,7 +51,7 @@ For this demo, the important property is the **Type**. You can pick one of three
 
 The first Entity we need in this tutorial is the green block that forms the ground.
 
-<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300" />
 
 You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
@@ -98,7 +98,7 @@ In this case, when the trigger is fired, we reset the penetrating Entity back up
 
 We've set the ground to **Static**, now we'll create the falling objects and make sure they are **Dynamic**.
 
-<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300" />
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 

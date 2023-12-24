@@ -4,11 +4,11 @@ layout: usermanual-page.hbs
 position: 4
 ---
 
-<img loading="lazy" alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg">
+<img loading="lazy" alt="Viewport" width="640" height="480" src="/images/user-manual/editor/viewport/viewport.jpg" />
 
 The viewport shows your scene as currently rendered. You can freely move around the scene by manipulating the Editor's current camera.
 
-<img loading="lazy" alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;">
+<img loading="lazy" alt="Cameras dropdown" src="/images/user-manual/editor/viewport/camera-dropdown.jpg" style="float:right; padding: 20px; padding-top: 0px;" />
 
 ## Cameras
 
@@ -18,9 +18,9 @@ You can also use the camera menu to select any of the camera Entities in your sc
 
 ## Gizmos
 
-<img loading="lazy" src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;">
-<img loading="lazy" src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;">
-<img loading="lazy" src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;">
+<img loading="lazy" src="/images/user-manual/editor/viewport/translate.jpg" style="width:210px; float: left; padding: 10px;" />
+<img loading="lazy" src="/images/user-manual/editor/viewport/rotate.jpg" style="width:210px; float: left; padding: 10px;" />
+<img loading="lazy" src="/images/user-manual/editor/viewport/scale.jpg" style="width:210px; float: left; padding: 10px;" />
 
 The 3-Colored Axis you can see in the screenshot above is called a [Gizmo][1]. This is used to manipulate the transform matrix of the selected Entity. There are three types of Gizmo: Translate (with arrows on the ends of the axes); Rotate (which is made up of three colored rings) and Scale (with cubes on the ends of the axes).
 

@@ -10,7 +10,7 @@ The Graph Editor displays the currently selected graph. This is where nodes are 
 
 | How To | |
 |---|---|
-| Create a node | Drag an entry from the [Nodes Pane][2] and drop it on the Graph Editor work area.<br>Drag a sub-graph from the [Assets Pane][3] onto the Graph Editor work area. |
+| Create a node | Drag an entry from the [Nodes Pane][2] and drop it on the Graph Editor work area.<br />Drag a sub-graph from the [Assets Pane][3] onto the Graph Editor work area. |
 | Select a node | Left click the node. |
 | Delete a node | Select the node and either press delete key or use the node context menu 'Delete' option. |
 | Move a node | Left click and drag the node. |
