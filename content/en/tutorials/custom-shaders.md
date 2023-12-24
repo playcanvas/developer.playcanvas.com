@@ -37,7 +37,7 @@ void main(void)
 }
 ```
 
-### Fragment Shader
+### Fragment Shader
 
 ```
 varying vec2 vUv0;
@@ -62,7 +62,7 @@ void main(void)
 
 The two shaders above define the functionality of the new Material. In the Vertex Shader we are transforming the vertex positions of the mesh into screen space. In the Fragment Shader we are setting the color of the pixel. This pixel color is chosen based on the two textures that are provided into this asset. If the value uTime is less than the color in the heightmap then we don't render any pixel (the model is invisible). If the value of uTime is greater than the heightmap value then we get the color from the diffuse map texture that we provide
 
-### Shader Definition
+### Shader Definition
 
 ```javascript
 var vertexShader = this.vs.resource;

@@ -60,7 +60,7 @@ To switch branch open the version control panel, select the branch you wish to s
 
 The editor will reload with your current branch switched to the chosen branch.
 
-## Closing a branch
+## Closing a branch
 
 ![Close branch][4]
 

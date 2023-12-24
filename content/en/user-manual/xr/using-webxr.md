@@ -42,7 +42,7 @@ entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
 });
 ```
 
-## Ending XR Session
+## Ending XR Session
 
 Exiting XR can be triggered in various ways. You can trigger an exit of XR from code:
 
@@ -86,7 +86,7 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 });
 ```
 
-## Camera Position and Orientation in XR
+## Camera Position and Orientation in XR
 
 When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
 

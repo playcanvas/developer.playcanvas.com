@@ -63,7 +63,7 @@ The color of the scene's ambient light source. PlayCanvas allows you to create d
 
 Note, if you are using a Skybox and Physical Materials the Ambient Color has no effect.
 
-#### Skybox
+#### Skybox
 
 The Skybox is a [cubemap][3] asset that is rendered behind your 3D scene. This lets your use a set of 6 2D images to display the distant world beyond the 3D models in your scene.
 
@@ -79,7 +79,7 @@ This is a slider that controls the intensity or brightness of the skybox. The va
 
 When using a Prefiltered Skybox, you can select the skybox mip that you want to display. Each mip is a more blurred version of the original Skybox. You can use this to show a more blurred / abstract version of your original Skybox for example for artistic purposes.
 
-#### Tonemapping
+#### Tonemapping
 
 Tonemapping is the process of compressing High Dynamic Range (HDR) colors into limited Low Dynamic Range (e.g. into visible monitor output values). There are two options for tone mapping.
 
@@ -170,11 +170,11 @@ Enable the legacy audio components. Use this only for compatibility with old pro
 
 ![Lightmapping Settings][12]
 
-#### Size Multiplier
+#### Size Multiplier
 
 Scene-wide multiplier applied to all lightmap sizes.
 
-#### Max Resolution
+#### Max Resolution
 
 The maximum texture size available for generated lightmap textures.
 

@@ -36,7 +36,7 @@ Using web standard Javascript attach custom behaviors to your entities. Add inte
 
 When you application is ready for sharing a simple one-click publish will get your application live on the internet hosted by PlayCanvas for free. Alternatively download your application for self-hosting on your own web server.
 
-## Key Features
+## Key Features
 
 ### Editor
 
@@ -46,13 +46,13 @@ The PlayCanvas Editor is a visual editing tool that lets you build scenes, appli
 
 Find out more in the [editor][5] section.
 
-### Assets
+### Assets
 
 PlayCanvas is used to create and manage all the assets you need for your interactive web application. PlayCanvas accepts all major 3D file formats, plus upload images, audio and any other asset types you need.
 
 Find out more in the [assets][6] section.
 
-### Publishing
+### Publishing
 
 PlayCanvas provides instant and trouble free hosting for your WebGL application with single click. We also support instant download of your complete project ready to host on your own web server.
 

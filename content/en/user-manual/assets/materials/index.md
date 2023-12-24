@@ -92,7 +92,7 @@ Much of editing a material involves creating and assigning textures maps to the 
 
 There are a few options that are available on most texture map slots for a material.
 
-### Texture Asset
+### Texture Asset
 
 First is the texture asset, upload an image to PlayCanvas and we'll create a texture asset for you. you can assign this to a slot on a material.
 
@@ -100,7 +100,7 @@ First is the texture asset, upload an image to PlayCanvas and we'll create a tex
 
 Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
 
-### Channel
+### Channel
 
 Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
 

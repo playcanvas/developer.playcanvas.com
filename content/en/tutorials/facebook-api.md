@@ -124,7 +124,7 @@ The function `loginChangeFn` is a callback which is used to respond to changes i
 
 Note, also we fire our own application events `app:fblogin` and `app:fblogout` to tell other parts of the application that the Facebook status has changed.
 
-### Accessing the Facebook API
+### Accessing the Facebook API
 
 The file `face-photo.js` uses the Facebook API to retrieve a list of photos from the user and display them in the 3D world.
 

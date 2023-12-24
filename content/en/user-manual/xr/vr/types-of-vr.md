@@ -12,7 +12,7 @@ Seated VR includes devices such as Google Cardboard, Samsung Gear VR and Oculus 
 
 Suitable reference spaces: `pc.XRSPACE_LOCAL`, `pc.XRSPACE_LOCALFLOOR`.
 
-## Room Scale VR
+## Room Scale VR
 
 Room Scale VR includes devices such as the Oculus Quest, HTC Vive and many others. Room scale experiences are designed to allow a small or large amount of movement away from the origin position of the scene.
 

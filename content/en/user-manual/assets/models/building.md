@@ -65,7 +65,7 @@ Blender supports exporting to GLB, FBX and COLLADA but the built-in exporters do
 
 As of Blender 2.71, both diffuse and normal maps of your material will be exported to the FBX file. If other map types are lost on export you have to set-up these maps in the Material Editor within the Editor.
 
-### **Embedding Textures**
+### **Embedding Textures**
 
 Embedded Textures make importing much easier.
 

@@ -48,7 +48,7 @@ You can often find the charts of recorded values for diffuse/albedo values on th
 | Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
 | Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
-## Metalness
+## Metalness
 
 The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
 
@@ -58,7 +58,7 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
+<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 
 ## Glossiness
 

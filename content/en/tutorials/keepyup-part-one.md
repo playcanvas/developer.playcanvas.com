@@ -34,7 +34,7 @@ In our Keepy Up scene we have 7 top level Entities in the hierarchy.
 
 A Camera is where your scene is viewed from while the application is running. In this game we only have one camera and it is stationary.
 
-### Directional Light Entity
+### Directional Light Entity
 
 Lights illuminate 3D models in the scene. The more lights you have active at once, the longer it will take to render a scene and this can effect the frame rate of your game. You should aim to have only a few lights active at once. In this game we have a single stationary Directional Light.
 
@@ -46,11 +46,11 @@ The football is the main dynamic Entity in the scene. The Football Entity has 3 
 
 The sound component lets you play back sound files. Each Sound component has a number of slots, one for each sound file. You can choose playback settings like, whether the sound will loop, the volume or the pitch. The football has a single slot for the sound made when the ball bounces.
 
-#### Model Component
+#### Model Component
 
 The model component is used to attach a 3D model asset to an Entity. When you have an enabled model component on an Entity the 3D model will be rendered at the Entity's position in the 3D space. In this case, we have attached the football model.
 
-#### Script Component
+#### Script Component
 
 The script component lets you attach javascript files to an Entity. Each entity will create an instance of the script inside the javascript file so that you can customize the behavior of the Entity. We'll go into more detail about the script on the football in Part 3.
 

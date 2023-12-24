@@ -15,7 +15,7 @@ The user interface of a game is the first thing you see and often it's the last 
 
 User Interfaces are built in PlayCanvas using the [Screen Component][7] and the [Element Component][8]. There is more details in the [user manual][6]
 
-### User Interface Entities
+### User Interface Entities
 
 ![Hierarchy][9]
 

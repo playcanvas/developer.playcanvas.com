@@ -112,7 +112,7 @@ If you press and hold the spacebar you will see that the cube rotates continuous
 
 `wasPressed(key)` checks to see if `key` was pressed *since the last frame*. `wasPressed()` will only return true once for a single key press.
 
-## Events
+## Events
 
 The second method of handling key presses is to listen for events. Two keyboard events are supported on the Keyboard device:
 

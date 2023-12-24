@@ -81,7 +81,7 @@ If however you want to play a sound repeatedly without stopping every time the s
 
 By default, the audio sample will be played once, and then stop. If you want the sound to loop continuously, e.g. for background music, then you can check the *Loop* box. Our engine is a looping sound in the example but the shooting sound is not.
 
-## Creating Listeners
+## Creating Listeners
 
 To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
 

@@ -12,7 +12,7 @@ In PlayCanvas a merge takes two checkpoints from two different branches, calcula
 
 First, it's important to note that when you perform a merge in PlayCanvas you are not actually merging two branches. You are, in fact, merging two checkpoints. This is relevant because you may have changes in one of the two branches that are more recent that the latest checkpoint. In the case of the branch you are merging into PlayCanvas will automatically create a checkpoint to ensure you do not lose any changes.
 
-### Example merges
+### Example merges
 
 ![Merging checkpoints][6]
 *Changes Y & Z are not included in merge result C and **are lost**.*

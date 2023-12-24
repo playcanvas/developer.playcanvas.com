@@ -9,7 +9,7 @@ Materials are what define the appearance of the surfaces of a 3D Model. At its v
 
 In this tutorial, we'll walk through how you create a Material, assign it to a primitive shape, and edit the Material's properties. First create a new and empty scene.
 
-## Step 1 - Add a cube to your scene
+## Step 1 - Add a cube to your scene
 
 Select the root Entity of your Scene. At the start this will be called "Root". In the Attribute Editor rename the Entity to something meaningful, like "Material Tutorial".
 
@@ -25,11 +25,11 @@ Create new material directly from the PlayCanvas Editor interface. In the Asset 
 
 This creates a new Material Asset and brings up the Material Editor on the right-hand side of the screen. In the Material Editor rename the Material to "Box Material".
 
-## Step 3 - Assign the material to the cube
+## Step 3 - Assign the material to the cube
 
 When you create a new cube in the Editor it will have no material assigned and will be rendered using a plain default material. To assign your new material to a model in the scene simply drag the model from the asset panel into the viewport and drop it on to the model you want to assign it to.
 
-## Step 4 - Change the color of the material
+## Step 4 - Change the color of the material
 
 To change the color of the Material we will want to edit the *Diffuse* property of the material.
 
@@ -39,7 +39,7 @@ Select the material either by clicking on it in the asset panel. Or by selecting
 
 You'll have to expand the Diffuse settings panel in the material editor in the right panel. Click on the color property to edit the diffuse color of the material.
 
-## Bonus - Add textures to the material
+## Bonus - Add textures to the material
 
 Changing the color of the material is a good start, but you'll quickly want more detail than a flat color. That is where texture maps come in.
 

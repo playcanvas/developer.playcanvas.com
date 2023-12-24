@@ -15,7 +15,7 @@ For more advanced products you may wish to access your assets in code, change re
 
 In this tutorial, we'll build a small scene which lets you swap the model on a render component by pressing a key. We'll also dynamically load a third model that is not preloaded. You can see the completed [project here][3].
 
-## Setup
+## Setup
 
 *The project is set up as follows*
 
@@ -26,7 +26,7 @@ In this tutorial, we'll build a small scene which lets you swap the model on a r
 
 Download the [A model][5], [B model][6] and [C model][7] and upload them to your project. Ensure that the files are named A.dae, B.dae and C.dae as this will influence the asset names.
 
-## The AssetRegistry
+## The AssetRegistry
 
 The [`pc.AssetRegistry`][1] is available in all scripts as `this.app.assets`. The registry is populated with the details of all the runtime assets added to your project whether they are loaded or not. Use the Asset Registry to find the assets you need in your application.
 

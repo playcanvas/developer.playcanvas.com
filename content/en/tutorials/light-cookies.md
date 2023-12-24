@@ -20,11 +20,11 @@ A cookie texture is just a regular texture asset which is applied to a spot ligh
 
 ![Light Settings][3]
 
-## Cookie Cubemap
+## Cookie Cubemap
 
 For an omni light the cookie needs to be a cubemap so that it can be projected in 6 directions around the point of the light.
 
-## Use Cases
+## Use Cases
 
 **Shaped Lights** - cookies are useful for masking the shape of a light source. For example, if you're scene contains a window or a fluorescent strip light using a spot light will create a light shape that is rounded. You can mask the shape of the light to be long and thin, or square in order to simulate the shape of the light.
 
