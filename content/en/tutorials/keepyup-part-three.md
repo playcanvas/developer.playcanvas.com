@@ -233,7 +233,7 @@ For touch events we take the first touch and pass through the screen co-ordinate
 
 On "mousedown" events we pass the screen co-ordinates through to the tap code. Note, that PlayCanvas ensures that touch and mouse events have the same coordinate system. This is not the case with normal browser events!
 
-### Taps
+### Taps
 
 `_onTap()` takes a screen co-ordinate (x, y) works out if this has "hit" the ball and if so tells the ball code that it has been tapped.
 

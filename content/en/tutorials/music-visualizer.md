@@ -13,7 +13,7 @@ This tutorial teaches you how to create a Music Visualizer application in WebGL 
 
 Our music visualizer consists of two scripts. The analyser, plays the audio and extracts the data via an Analyser Node. Which is part of the Web Audio API built into modern browsers. The visualizer, takes the data from the analyser and renders it onto screen as a funky graph.
 
-## The Analyser
+## The Analyser
 
 ```javascript
 var Analyser = pc.createScript('analyser');
@@ -55,7 +55,7 @@ The final part of the setup is to use `setExternalNodes` from the PlayCanvas Sou
 
 Then in our update loop we use the `AnalyserNode` methods `getFloatFrequencyData` and `getFloatTimeDomainData` to fill our arrays with data. We'll be using this data in our Visualizer script.
 
-## The Visualizer
+## The Visualizer
 
 ```javascript
 var Visualizer = pc.createScript('visualizer');

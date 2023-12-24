@@ -20,7 +20,7 @@ The image element displays an image using a texture asset or a solid color.
 
 ![Image Element][3]
 
-## Text Element
+## Text Element
 
 The text element renders a string of text using a [font asset][4].
 

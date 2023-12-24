@@ -44,7 +44,7 @@ var Rotate = pc.createScript('rotate');
 
 This line creates a new ScriptType called 'rotate'. The name of the script is used to identify the script in script components. Each ScriptType that is declared in a project must have a unique name. The returned function `Rotate` is a javascript function which is ready to have its prototype extended with a standard set of methods. Somewhat like class inheritance.
 
-## Script Attributes
+## Script Attributes
 
 ```javascript
 Rotate.attributes.add('speed', { type: 'number', default: 10 });
@@ -87,7 +87,7 @@ The update method is called for every frame; it is invoked within each entity th
 
 If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
 
-## Swap
+## Swap
 
 ```javascript
 // swap method called for script hot-reloading

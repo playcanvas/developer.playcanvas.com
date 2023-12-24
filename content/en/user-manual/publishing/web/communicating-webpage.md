@@ -8,7 +8,7 @@ One the key advantages of using PlayCanvas and WebGL over other plugins or cross
 
 There are two ways you may find your PlayCanvas application communicating with the surrounding Web page. First, you may have embedded your application in a iframe in a page. Second you may be serving your own HTML page which loads an PlayCanvas page. These two methods require very different ways of communicating between web page and application.
 
-## Defining an API
+## Defining an API
 
 Common to both methods of hosting you should think about what features of your PlayCanvas application you need to expose to the web page. Perhaps you need to change the color of something based on a button click or a slider; or you might need to send some text input into the application to be rendered to a texture. Decide in advance what features you need to expose and in your PlayCanvas application write an explicit API or set of functions which are the only functions that your web page will call.
 
@@ -49,7 +49,7 @@ app.fire("score:set", 10);
 
 Method one defines a global function which can be called anywhere in your page to access your application. Method two defines an application event which you can fire from your page. The application listens for this event and performs actions in response to the event. Both are valid methods of defining an API with your application.
 
-### Embedded in IFrame
+### Embedded in IFrame
 
 Embedding a PlayCanvas application in an iframe is a quick and easy way to get your PlayCanvas content in a page. It also means that you can make use of our optimized hosting and don't need to worry about serving all the PlayCanvas content. However, the downside is that you can not call javascript functions in the PlayCanvas application directly from the hosting page because they are running on different pages.
 

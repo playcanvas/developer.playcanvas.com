@@ -25,7 +25,7 @@ Before we jump into the materials, we're going to set up our cubemap asset. A cu
 
 To set up a cubemap, first create a Cubemap asset from the New Asset menu, assign 6 textures, one to each face of the cubemap. When your cubemap has all 6 faces assigned, press the "Prefilter" button. **Prefiltering in required for the cubemap to work correctly!**
 
-## Football Material
+## Football Material
 
 ![Football][3]
 
@@ -43,7 +43,7 @@ The diffuse map defines the color of the surface. In this case it is the black a
 
 We're going to jump quickly to the Environment section as this is needed to see the effects of the Specular changes. To set up the Environment drag the Cubemap asset on the the cubemap slot in the material.
 
-#### Specular
+#### Specular
 
 ![Specular][5]
 

@@ -29,11 +29,11 @@ So, if you leave this enabled, you are able to organize your source and target a
 
 Newly created assets will automatically be set to [preload][2] or not depending on whether this option is enabled or not. The exception to this are JavaScript script files which will always be set to preloaded when created.
 
-## Texture Import Settings
+## Texture Import Settings
 
 These options only affect the importing of images and textures.
 
-### Texture POT (Power of Two)
+### Texture POT (Power of Two)
 
 When this option is enabled textures that are not a power of two will be converted to the nearest power of two resolution when they are imported.
 
@@ -53,15 +53,15 @@ When a model file is updated or reimported, the Editor will try to preserve the 
 
 When a model file is updated or reimported this option determines whether or not the target model file is overwritten. The default behavior is to overwrite with the new model.
 
-### Overwrite Animations
+### Overwrite Animations
 
 When a model file is updated or reimported this option determines whether or not a animations created from the model are overwritten. The default behavior is to overwrite with the new animations.
 
-### Overwrite Materials
+### Overwrite Materials
 
 When a model file is updated or reimported this option determines whether or not materials created from the model are overwritten. The default behavior is to leave existing materials.
 
-### Overwrite Textures
+### Overwrite Textures
 
 When a model file is updated or reimported this option determines whether or not textures created from the model are overwritten. The default behavior is to overwrite with the new textures.
 

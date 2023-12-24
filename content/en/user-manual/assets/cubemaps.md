@@ -74,7 +74,7 @@ An example of a texture set that would match is:
 
 This technique allows to use Environment Map such as CubeMap in order to simulate physically based ambient light and reflection on materials. [Read more][6] on how it works and how to author CubeMaps for IBL.
 
-## Assigning Cubemaps to Materials
+## Assigning Cubemaps to Materials
 
 The default Phong and Physical material types both have reflection properties. If you expand the Environment property section, you see the following:
 

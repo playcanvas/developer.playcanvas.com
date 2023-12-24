@@ -22,7 +22,7 @@ Each dynamic light has a per-frame runtime cost. The more lights have you the hi
 
 Read more about using [runtime lightmap generation][1].
 
-### Cautious use of real time shadows
+### Cautious use of real time shadows
 
 For similar reasons to dynamic lights, dynamic shadows also have a per-frame runtime cost. Omni lights, in particular, have to render the scene 6 times to generate shadows. You should avoid having many lights casting dynamic shadows.
 
@@ -38,7 +38,7 @@ Using an extension like [WebGL Insight][2] can help you visualize overdraw
 
 Web browsers feature automatic garbage collection of unused Javascript objects. The PlayCanvas engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not lots of objects created and discarded every frame.
 
-### Profiling Tools
+### Profiling Tools
 
 PlayCanvas comes with a built in profiler tool. In the Editor use the Launch Profiler button to run your application with profiling active. [Read more about the profiler][3]
 

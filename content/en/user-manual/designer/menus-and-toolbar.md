@@ -10,7 +10,7 @@ position: 1
 
 The menu is available by clicking on the PLAYCANVAS icon and contains a complete list of all the commands that you can perform on your scene. If you can't find a button or remember a hotkey, the command will always be available in the menu.
 
-## Toolbar
+## Toolbar
 
 <img loading="lazy" src="/images/user-manual/editor/menus-and-toolbar/toolbar.png" style="padding-right: 20px; float: left;" width="44">
 

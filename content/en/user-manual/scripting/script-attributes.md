@@ -6,7 +6,7 @@ position: 5
 
 Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the PlayCanvas Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
 
-## Declaring Script Attributes
+## Declaring Script Attributes
 
 Script Attributes are declared at the top of your script file using this format:
 
@@ -66,7 +66,7 @@ MyScript.prototype.initialize = function () {
 }
 ```
 
-## Attribute types
+## Attribute types
 
 When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
 

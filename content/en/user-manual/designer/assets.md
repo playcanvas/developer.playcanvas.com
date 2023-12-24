@@ -36,7 +36,7 @@ Certain text-based assets can be opened and edited in the PlayCanvas Script Edit
 
 To inspect the details of any given asset, select its thumbnail in the Assets Panel. The asset's details will be displayed in the Inspector.
 
-## Filtering
+## Filtering
 
 Filter which assets are visible using the filter drop down to select the type of asset to view.
 

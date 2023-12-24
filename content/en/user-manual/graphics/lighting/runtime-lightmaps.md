@@ -92,7 +92,7 @@ As a more performant alternative, the lightmap can be filtered using a smart bil
 
 Note that the filtering is done on the final baked lightmaps and can create some visible edges over the seams of unwrapped UVs, since the lightmap is not filtered across the seams. Therefore, filtering may not be suitable for every scene. To minimize the artifacts, you should have a good balance between a strong filter and a large number of samples.
 
-## Setting Up Models for Baking
+## Setting Up Models for Baking
 
 Each **Model** or **Render** component must have lightmapping enabled, in order for it to receive lightmaps. Lightmapping can be enabled in the component's properties, by checking the **Lightmapped** option.
 

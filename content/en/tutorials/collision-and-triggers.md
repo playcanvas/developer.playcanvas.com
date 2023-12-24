@@ -55,7 +55,7 @@ The first Entity we need in this tutorial is the green block that forms the grou
 
 You can see in the attribute panel, that it has *render*, *collision* and *rigidbody* components. We've increased the Entity and the *collision* box properties so that it is nice and large. And we've also slightly increased the friction and restitution properties. This means that the surface is slightly rougher and slightly bouncier than the defaults.
 
-## Setting up the trigger
+## Setting up the trigger
 
 The next Entity we'll need is the trigger.
 
@@ -102,7 +102,7 @@ We've set the ground to **Static**, now we'll create the falling objects and mak
 
 This is the *rigidbody* and *collision* setup for the box component, the sphere and capsule are setup in the same way.
 
-## Contact Events
+## Contact Events
 
 There are three events available on the *collision* component:
 

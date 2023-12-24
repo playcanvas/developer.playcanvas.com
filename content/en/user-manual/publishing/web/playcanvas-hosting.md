@@ -13,7 +13,7 @@ Publishing to PlayCanvas consists of two simple steps:
 
 To publish you will need to have at least one scene in your project.
 
-## Publishing a new Build
+## Publishing a new Build
 
 * Go to your Project and open the Editor.
 * Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu

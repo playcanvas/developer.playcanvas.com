@@ -62,7 +62,7 @@ PlayCanvas applications are created with a set of default layers. You should lea
 
 The default layers are great for implementing the existing engine features but the real power comes from creating your own layers to customize the order in which your content is rendered.
 
-### Create a layer
+### Create a layer
 
 Layers are controlled from the **LAYERS** panel in the **Settings** section of the Editor.
 
@@ -76,7 +76,7 @@ In the Layers section, type in the name of the layer that you wish to create and
 
 You can choose the sort mode for each sub-layer in the layer list. Expand your layer and choose the sort mode from the dropdown menu.
 
-### Choosing the layer order
+### Choosing the layer order
 
 ![Add layer][4]
 

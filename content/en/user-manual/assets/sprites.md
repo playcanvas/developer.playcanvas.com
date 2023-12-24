@@ -22,7 +22,7 @@ If you create a *Sliced* sprite, by default it will be created with a `pixelsPer
 * Sliced - the sprite uses the border values to perform [9-sliced][2] rendering by stretching.
 * Tiled - the sprite uses the border values to perform [9-sliced][2] rendering by tiling.
 
-### Texture Atlas
+### Texture Atlas
 
 The Texture Atlas asset that the sprite references
 
