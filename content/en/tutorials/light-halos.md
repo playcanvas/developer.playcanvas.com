@@ -25,7 +25,7 @@ This texture will form the basis of the glow.
 
 ### Material
 
-<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600">
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600" />
 
 The material for the light halo uses the blob texture in the emissive slot. Use the **tint** property to set the color of your halo. We've also enabled blending in the Opacity slot and it also uses the blob texture with **Color Channel** set to **R**.
 

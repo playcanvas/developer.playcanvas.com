@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 2
 ---
 
-<img loading="lazy" src="/images/shader-editor/inspector-pane-node.png" style="float: right; padding: 20px; padding-top: 0px;">
+<img loading="lazy" src="/images/shader-editor/inspector-pane-node.png" style="float: right; padding: 20px; padding-top: 0px;" />
 
 The Node Inspector is where a node's settings are configured.
 
