@@ -5,7 +5,7 @@ keywords: component, model, box, sphere, cylinder, cone, cube, plane, shape, pri
 
 ## How do I create a shape like a box or sphere?
 
-<img src="https://playcanvas.com/static-assets/instructions/new_box.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_box.gif" />
 
 You can add primitive shapes like boxes, spheres and others by adding a **Render Component** on an Entity and changing its type to the desired shape.
 
