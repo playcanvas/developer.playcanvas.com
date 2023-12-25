@@ -4,12 +4,13 @@ layout: shader-editor-page.hbs
 position: 4
 ---
 
-<img loading="lazy" src="/images/shader-editor/inspector-pane-texture.png" style="float: right; padding: 20px; padding-top: 0px;" />
+![Texture Inspector][1]
 
 The Texture Inspector is where textures are configured.
 
-To access a texture's details, select it in the [Assets Pane][7].
+To access a texture's details, select it in the [Assets Pane][2].
 
 - Name - specify the texture's name.
 
-[7]: /shader-editor/window-layout/assets-pane
+[1]: /images/shader-editor/inspector-pane-texture.png
+[2]: /shader-editor/window-layout/assets-pane

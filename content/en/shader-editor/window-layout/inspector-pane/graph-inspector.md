@@ -4,16 +4,17 @@ layout: shader-editor-page.hbs
 position: 1
 ---
 
-<img loading="lazy" src="/images/shader-editor/inspector-pane-graph.png" style="float: right; padding: 20px; padding-top: 0px;" />
+![Graph Inspector][1]
 
 The Graph Inspector is where a graph's settings are configured.
 
-To access a graph's inspector, select it in the [Assets Pane][1].
+To access a graph's inspector, select it in the [Assets Pane][2].
 
-| Control | Use |
-|---|---|
-| Name | The graph name.
-| Label | The graph descriptive text. |
-|\+ NEW MATERIAL | Create a new material from the current graph. |
+| Control         | Use                                           |
+| --------------- |---------------------------------------------- |
+| Name            | The graph name.                               |
+| Label           | The graph descriptive text.                   |
+| \+ NEW MATERIAL | Create a new material from the current graph. |
 
-[1]: /shader-editor/window-layout/assets-pane
+[1]: /images/shader-editor/inspector-pane-graph.png
+[2]: /shader-editor/window-layout/assets-pane
