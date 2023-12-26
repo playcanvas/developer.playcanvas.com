@@ -51,10 +51,10 @@ You can perform a global search for assets in your project using the Search box.
 **Tags** - To search by tags and their combinations type tags in square brackets `[ ]`. Simple query operators: AND, OR are allowed by expressing query as array of strings or other arrays with strings. Logic of query is same as for [`findByTag`][7] from `AssetsRegistry`.
 Here are some examples:
 
-`[ level-1 ]` - returns all assets that are tagged by `level-1`.
-`[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
-`[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
-`[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
+- `[ level-1 ]` - returns all assets that are tagged by `level-1`.
+- `[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
+- `[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
+- `[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
 
 ## Drag and Drop
 

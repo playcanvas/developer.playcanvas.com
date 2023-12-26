@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 2
 ---
 
-<img loading="lazy" src="/images/user-manual/editor/hierarchy.png" style="float: right; padding: 20px; padding-top: 0px;" />
+![Hierarchy Panel][1]
 
 The Hierarchy panel shows you a tree view of your entire Scene which is made up from a hierarchy of Entities. A Scene will always contain the Root Entity at the top of the tree. All the other Entities you see here on the right have been added by the developer.
 
@@ -33,3 +33,5 @@ You can duplicate Entities by selecting them and hitting Ctrl+D (or Cmd+D on Mac
 If you wish to paste Entities under a new parent you can select them and hit Ctrl+C (or Cmd+C on Mac) to copy them, then select the new parent and then Ctrl+V (or Cmd+V on Mac) to paste them under the selected parent. You can also use the Copy and Paste options when you right click on the selected Entities.
 
 You can also copy and paste Entities between different Scenes or even different Projects. Just follow the same steps to copy Entities and then go to the desired Scene, select the desired parent and paste the Entities. The Editor will try to match any Asset references on the pasted Entities by path in the new Project. For example, if you are copy-pasting an Entity with a Model component that references a Model Asset called `mymodel.fbx` then when you paste the Entity in the other Project, the Editor will try to find an Asset named `mymodel.fbx` in the same folder. If a matching Asset is not found it will be left as missing so that you can fix it manually.
+
+[1]: /images/user-manual/editor/hierarchy.png
