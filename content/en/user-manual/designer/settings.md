@@ -282,7 +282,7 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [6]: /user-manual/designer/loading-screen
 [7]: /user-manual/packs/components/model
 [8]: /user-manual/packs/components/element
-[9]: /user-manual/optimization/batching
+[9]: /user-manual/graphics/advanced-rendering/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
 [12]: /images/user-manual/editor/settings/lightmapping-settings.png

@@ -151,7 +151,7 @@ The **Padding** option determines the space between sections when unwrapping occ
 [8]: /images/user-manual/graphics/lighting/lightmapping/auto-unwrap.jpg
 [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
 [10]: /images/user-manual/graphics/lighting/lightmapping/sponza.jpg
-[11]: /user-manual/optimization/batching
+[11]: /user-manual/graphics/advanced-rendering/batching
 [12]: /images/user-manual/graphics/lighting/lightmapping/editor-directional-light.png
 [13]: /images/user-manual/graphics/lighting/lightmapping/shadows-hard-soft.png
 [14]: /user-manual/designer/settings/#ambient-color

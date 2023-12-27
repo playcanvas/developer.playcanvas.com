@@ -72,4 +72,4 @@ The text element renders a string of text using a [font asset][4].
 [6]: /user-manual/user-interface/elements/#anchor
 [7]: /user-manual/user-interface/elements/#pivot
 [8]: /user-manual/graphics/layers
-[9]: /user-manual/optimization/batching
+[9]: /user-manual/graphics/advanced-rendering/batching

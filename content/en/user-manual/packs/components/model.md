@@ -35,4 +35,4 @@ You can learn how to customize the materials of your model [here][4].
 [2]: /user-manual/packs/components/script
 [3]: /api/pc.ModelComponent.html
 [4]: /user-manual/assets/materials/#assigning-materials
-[5]: /user-manual/optimization/batching
+[5]: /user-manual/graphics/advanced-rendering/batching

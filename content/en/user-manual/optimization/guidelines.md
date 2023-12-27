@@ -38,7 +38,7 @@ Here are some tips and hints on how to achieve good performance in your PlayCanv
 * Collision meshes do not need to be the same level of detail as the renderable mesh. It is recommended that you set a lower resolution mesh for collision.
 * Keep the number of dynamic rigid bodies in your scene to a minimum, particularly on mobile.
 
-[1]: /user-manual/optimization/batching
+[1]: /user-manual/graphics/advanced-rendering/batching
 [2]: /user-manual/optimization/runtime-devicepixelratio
 [3]: /api/pc.Application.html#autoRender
 [4]: /api/pc.Application.html#renderNextFrame
