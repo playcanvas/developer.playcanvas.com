@@ -75,8 +75,8 @@ fragmentShader = fragmentShader + this.fs.resource;
 // Объявление шейдера, для создания нового
 var shaderDefinition = {
     attributes: {
-        aPosition: pc.SEMANTIC_POSITION,
-        aUv0: pc.SEMANTIC_TEXCOORD0
+        aPosition: pc.gfx.SEMANTIC_POSITION,
+        aUv0: pc.gfx.SEMANTIC_TEXCOORD0
     },
     vshader: vertexShader,
     fshader: fragmentShader
@@ -232,8 +232,8 @@ CustomShader.prototype.initialize = function() {
     // A shader definition used to create a new shader.
     var shaderDefinition = {
         attributes: {
-            aPosition: pc.gfx.SEMANTIC_POSITION,
-            aUv0: pc.gfx.SEMANTIC_TEXCOORD0
+            aPosition: pc.SEMANTIC_POSITION,
+            aUv0: pc.SEMANTIC_TEXCOORD0
         },
         vshader: vertexShader,
         fshader: fragmentShader
