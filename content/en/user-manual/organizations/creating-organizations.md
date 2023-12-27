@@ -6,21 +6,21 @@ position: 1
 
 There are various ways to create an Organization. Any organizations you are part of will appear next to your name on your profile like so:
 
-![profile_orgs][4]
+![Profile Organizations][1]
 
 ### Create from the dropdown menu
 
 The first way is to click on NEW ORGANIZATION in the top-right dropdown menu:
 
-![dropdown][1]
+![Dropdown][2]
 
 This will bring up the following popup:
 
-<img loading="lazy" src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc" />
+![New Organization][3]
 
 Enter the name for the Organization and an Organization ID which is a string with only alphanumeric characters and dashes allowed. The default e-mail address is your own but you can change it to a different one.
 
-Click CREATE and that will take you to the [profile][2] page of the Organization.
+Click CREATE and that will take you to the [profile][4] page of the Organization.
 
 If you have existing projects (such as private projects on a Personal plan), you can transfer them to the Organization account by the following steps:
 
@@ -33,13 +33,13 @@ All the projects will now be under the Organization account with your user accou
 
 ### Convert a user account into an Organization
 
-Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][3] page.
+Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][7] page.
 
-<img loading="lazy" src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc" />
+![Convert Organization][8]
 
 This will bring up the following popup:
 
-<img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc" />
+![Convert Popup][9]
 
 Converting your user account into an Organization will mean that you will no longer be able to log in with this user account. For that reason you need to specify an owner for the new Organization.
 
@@ -51,9 +51,12 @@ If you have subscribed for a paid plan, that plan will be cancelled unless you c
 
 After you convert your account, you will be logged out. Then log back in with the new owner's account and you will be able to access the converted account and all its projects.
 
-[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
-[2]: /user-manual/profile
-[3]: /user-manual/profile/account
-[4]: /images/user-manual/organizations/organizations.jpg "Organizations"
+[1]: /images/user-manual/organizations/organizations.jpg
+[2]: /images/user-manual/organizations/dropdown.png
+[3]: /images/user-manual/organizations/new-organization.jpg
+[4]: /user-manual/profile
 [5]: /user-manual/profile/projects/#transfer-project-ownership
 [6]: /user-manual/organizations/managing-organizations/#projects
+[7]: /user-manual/profile/account
+[8]: /images/user-manual/organizations/convert.png
+[9]: /images/user-manual/organizations/convert-popup.png

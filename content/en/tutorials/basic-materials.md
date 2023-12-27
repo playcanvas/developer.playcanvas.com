@@ -45,8 +45,9 @@ Changing the color of the material is a good start, but you'll quickly want more
 
 Download & save these sample textures:
 
-<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" alt="Sample diffuse map texture" width="128" /></a>
-<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" alt="Sample normal map texture" width="128" /></a>
+[![Sample Diffuse Map][5]][5]
+
+[![Sample Normal Map][6]][6]
 
 Then upload them to your project by dragging the files into the Editor.
 
@@ -54,15 +55,17 @@ Once they're uploaded it's time to assign them to texture slots on the Material.
 
 You'll see something that looks a little like this:
 
-![Cube][5]
+![Cube][7]
 
 Try modifying the **Tiling** and **Offset** properties to effect the way the texture is wrapped around the cube.
 
-Take a look at the user manual section on [Physical Materials][6] for more depth on setting up materials.
+Take a look at the user manual section on [Physical Materials][8] for more depth on setting up materials.
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg
 [3]: /images/tutorials/beginner/basic-materials/box-material.jpg
 [4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
-[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
-[6]: /user-manual/graphics/physical-rendering/physical-materials/
+[5]: /images/tutorials/beginner/basic-materials/proto_orange.png
+[6]: /images/tutorials/beginner/basic-materials/proto_gray_n.png
+[7]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
+[8]: /user-manual/graphics/physical-rendering/physical-materials/

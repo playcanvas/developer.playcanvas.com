@@ -4,11 +4,11 @@ layout: shader-editor-page.hbs
 position: 3
 ---
 
-<img loading="lazy" src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;" />
+![Material Inspector][1]
 
 The Material Inspector is where a material's settings are configured.
 
-To access a material's inspector, select it in the [Assets Pane][1].
+To access a material's inspector, select it in the [Assets Pane][2].
 
 There are three sections: Basic, Render States and Parameters.
 
@@ -20,7 +20,7 @@ There are three sections: Basic, Render States and Parameters.
 
 ### Render States
 
-- Blend Mode - The type of blend mode. See [here][2] for more details.
+- Blend Mode - The type of blend mode. See [here][3] for more details.
 - Alpha Test - (Not yet supported). Specify the alpha test value.
 - Cull Mode - Face culling mode.
 - Depth Test - Enable depth testing during rendering.
@@ -32,6 +32,6 @@ There are three sections: Basic, Render States and Parameters.
 
 The parameters section lists the parameter nodes placed on the graph. The names and types are taken from the graph nodes themselves.
 
-[1]: /shader-editor/window-layout/assets-pane
-[2]: /api/pc.Material.html#blendType
-[3]: /images/shader-editor/inspector-pane-material.png
+[1]: /images/shader-editor/inspector-pane-material.png
+[2]: /shader-editor/window-layout/assets-pane
+[3]: /api/pc.Material.html#blendType

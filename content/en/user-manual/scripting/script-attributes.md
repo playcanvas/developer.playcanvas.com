@@ -34,9 +34,11 @@ MyScript.attributes.add('names', {
 
 ## Getting Attributes into Editor
 
-<img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;" />
+![Script Attributes][1]
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse <img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;" /> button.
+Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse button.
+
+![Parse Button][2]
 
 ## Accessing attributes in your code
 
@@ -68,7 +70,7 @@ MyScript.prototype.initialize = function () {
 
 ## Attribute types
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][1] for more details.
+When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][3] for more details.
 
 ### Entity attribute
 
@@ -161,6 +163,7 @@ MyScript.attributes.add('gameConfig', {
 You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
 
 Here's an example of accessing the above attributes in a script:
+
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
@@ -173,4 +176,6 @@ MyScript.prototype.update = function (dt) {
 
 *NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
 
-[1]: /api/pc.ScriptAttributes.html
+[1]: /images/user-manual/scripting/script-attributes.jpg
+[2]: /images/user-manual/scripting/parse-button.jpg
+[3]: /api/pc.ScriptAttributes.html
