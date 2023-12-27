@@ -506,5 +506,5 @@ Although this project was only a simple real-time communication between players,
 [18]: /images/tutorials/multiplayer-photon/13.png
 [19]: /images/tutorials/multiplayer-photon/14.png
 [20]: /images/tutorials/multiplayer-photon/15.png
-[22]: https://developer.playcanvas.com/en/user-manual/scripting/communication/
+[22]: /user-manual/scripting/communication/
 [23]: /images/tutorials/multiplayer-photon/16.gif

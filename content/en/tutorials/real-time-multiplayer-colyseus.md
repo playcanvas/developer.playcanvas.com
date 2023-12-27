@@ -10,6 +10,7 @@ thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 > *Select create game to open a new game. And click anywhere on the floor to move the object.*
 
 ## On this tutorial you will learn:
+
 - Setting up your Colyseus server
 - Synchronizing the state between server and client
 - Exchanging messages between client and server
@@ -86,7 +87,7 @@ This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/c
 
 # Establishing a Client-Server Connection
 
-Now, from a new PlayCanvas Script, let's instantiate our `Colyseus.Client` instance. ([see "Creating new scripts"](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/))
+Now, from a new PlayCanvas Script, let's instantiate our `Colyseus.Client` instance. ([see "Creating new scripts"](/user-manual/scripting/creating-new/))
 
 You can attach this script to a new empty entity called "NetworkManager".
 
@@ -304,7 +305,7 @@ this.room.state.players.onRemove((player, sessionId) => {
 
 ## Sending the new position to the server
 
-We are going to allow the "mouse down" event; use [ray cast](https://developer.playcanvas.com/en/user-manual/physics/ray-casting/) to determine the exact `Vec3` position the player should move towards, and then send it as a message to the server.
+We are going to allow the "mouse down" event; use [ray cast](/user-manual/physics/ray-casting/) to determine the exact `Vec3` position the player should move towards, and then send it as a message to the server.
 
 ```typescript
 // ...
@@ -398,7 +399,6 @@ To view the monitor panel from your local server, go to `http://localhost:2567/c
 You can see and interact with all spawned rooms and active client connections through this panel.
 
 > See [more information about the monitor panel](https://docs.colyseus.io/colyseus/tools/monitor/).
-
 
 # More
 
