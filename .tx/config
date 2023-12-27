@@ -1065,6 +1065,34 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/glossary.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-advanced-rendering-batching]
+file_filter   = content/<lang>/user-manual/graphics/advanced-rendering/batching.md
+source_file   = content/en/user-manual/graphics/advanced-rendering/batching.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/advanced-rendering/batching.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-advanced-rendering-hardware-instancing]
+file_filter   = content/<lang>/user-manual/graphics/advanced-rendering/hardware-instancing.md
+source_file   = content/en/user-manual/graphics/advanced-rendering/hardware-instancing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/advanced-rendering/hardware-instancing.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-advanced-rendering-index]
+file_filter   = content/<lang>/user-manual/graphics/advanced-rendering/index.md
+source_file   = content/en/user-manual/graphics/advanced-rendering/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/advanced-rendering/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-advanced-rendering-multiple-render-targets]
+file_filter   = content/<lang>/user-manual/graphics/advanced-rendering/multiple-render-targets.md
+source_file   = content/en/user-manual/graphics/advanced-rendering/multiple-render-targets.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/advanced-rendering/multiple-render-targets.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-cameras-depth-layer]
 file_filter   = content/<lang>/user-manual/graphics/cameras/depth-layer.md
 source_file   = content/en/user-manual/graphics/cameras/depth-layer.md
@@ -1247,26 +1275,12 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/made-with-playcanvas.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-batching]
-file_filter   = content/<lang>/user-manual/optimization/batching.md
-source_file   = content/en/user-manual/optimization/batching.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/optimization/batching.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-guidelines]
 file_filter   = content/<lang>/user-manual/optimization/guidelines.md
 source_file   = content/en/user-manual/optimization/guidelines.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/optimization/guidelines.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-hardware-instancing]
-file_filter   = content/<lang>/user-manual/optimization/hardware-instancing.md
-source_file   = content/en/user-manual/optimization/hardware-instancing.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/optimization/hardware-instancing.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-index]
 file_filter   = content/<lang>/user-manual/optimization/index.md
