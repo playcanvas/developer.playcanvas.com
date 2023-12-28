@@ -80,6 +80,6 @@ Status: 200
 
 ## レート制限
 
-このルートは[strict][1]なレート制限を使用します。
+This route uses an [assets][1] rate limit.
 
 [1]: /user-manual/api#rate-limiting

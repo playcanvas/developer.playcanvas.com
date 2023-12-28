@@ -1,11 +1,10 @@
 ---
 title: 力と衝撃
 layout: usermanual-page.hbs
-tags: physics,basics
 position: 2
 ---
 
-ダイナミックなRigidBodyは力や衝撃に応答して移動します。力は一定の時間内にRigidBodyに加えられるのに対して、衝撃は瞬間的に加えられる力です。
+ダイナミックなRigidBodyは力 (Force) や衝撃 (Impulse) に応答して移動します。力は一定の時間内にRigidBodyに加えられるのに対して、衝撃は瞬間的に加えられる力です。
 
 RigidBodyに力や衝撃を加えるには、[pc.RigidBodyComponent scripting API][1] を使用する必要があります。
 

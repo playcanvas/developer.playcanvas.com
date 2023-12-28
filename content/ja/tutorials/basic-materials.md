@@ -45,8 +45,9 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 こちらからサンプルのテクスチャをダウンロードして保存してください。
 
-<a href="/downloads/proto_orange.png"><img loading="lazy" style="float:left;" src="/downloads/proto_orange.png" alt="Sample diffuse map texture" width="128"></a>
-<a href="/downloads/proto_gray_n.png"><img loading="lazy" style="padding-left: 20px; margin: 0px" src="/downloads/proto_gray_n.png" alt="Sample normal map texture" width="128"></a>
+[![Sample Diffuse Map][5]][5]
+
+[![Sample Normal Map][6]][6]
 
 その後、エディタにドラッグしてファイルをアップロードします。
 
@@ -54,15 +55,17 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 以下のようなものが表示されます。
 
-![Cube][5]
+![Cube][7]
 
 テクスチャがキューブに巻き付けられる方法を変更するには、 **Tiling** および **Offset** プロパティを変更してみてください。
 
-マテリアルを設定するのにさらに深い知識が必要な場合は、ユーザーマニュアルの[物理マテリアル][6]セクションを参照してください。
+Take a look at the user manual section on [Physical Materials][8] for more depth on setting up materials.
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg
 [3]: /images/tutorials/beginner/basic-materials/box-material.jpg
 [4]: /images/tutorials/beginner/basic-materials/diffuse-panel.jpg
-[5]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
-[6]: /user-manual/graphics/physical-rendering/physical-materials/
+[5]: /images/tutorials/beginner/basic-materials/proto_orange.png
+[6]: /images/tutorials/beginner/basic-materials/proto_gray_n.png
+[7]: /images/tutorials/beginner/basic-materials/diffuse_normal_cube.jpg
+[8]: /user-manual/graphics/physical-rendering/physical-materials/

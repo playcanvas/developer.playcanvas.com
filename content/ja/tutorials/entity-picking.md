@@ -11,13 +11,13 @@ Collision Picking - クリックしてシェイプを選択する
 
 ---
 
-Frame Buffer Picking - クリックしてグレーのシェイプを選択する。赤い形状はピックできないように設定されています。
+Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
 
 <iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
 
 ---
 
-[tutorial project][1]のエディタからお試しください。
+[このチュートリアルのプロジェクト][1]をエディタから試すことができます。
 
 このチュートリアルでは、マウスのクリックなどのアクションで3Dシーン内のエンティティを選択する方法について2つの方法を説明します。
 

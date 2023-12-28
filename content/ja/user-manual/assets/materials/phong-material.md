@@ -8,7 +8,7 @@ Phongマテリアルは、レガシーなシェーディングモデルです。
 
 ### Offset & Tiling
 
-<img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/offset-tiling.jpg" width="300" />
 
 | プロパティ          | 説明 |
 |-------------------|-------------|
@@ -20,7 +20,7 @@ Phongマテリアルは、レガシーなシェーディングモデルです。
 
 Ambientプロパティは、マテリアルが周囲光でどのように表示されるかを決定します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/ambient.jpg" width="300" />
 
 | プロパティ   | 説明 |
 |------------|-------------|
@@ -32,7 +32,7 @@ Ambientプロパティは、マテリアルが周囲光でどのように表示�
 
 Diffuseプロパティは、マテリアルがシーン内の動的な光源から放射される拡散光をどのように反射するかを定義します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/diffuse.jpg" width="300" />
 
 | プロパティ   | 説明 |
 |------------|-------------|
@@ -44,7 +44,7 @@ Diffuseプロパティは、マテリアルがシーン内の動的な光源か�
 
 Specularプロパティは、Specularハイライト（光沢）の色を定義します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/specular.jpg" width="300" />
 
 | プロパティ     | 説明 |
 |--------------|-------------|
@@ -58,7 +58,7 @@ Specularプロパティは、Specularハイライト（光沢）の色を定義�
 
 Emissiveプロパティは、マテリアルの発光を制御します。（反射する光とは異なります）
 
-<img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/emissive.jpg" width="300" />
 
 | プロパティ   | 説明 |
 |------------|-------------|
@@ -71,7 +71,7 @@ Emissiveプロパティは、マテリアルの発光を制御します。（反
 
 Opacityは、透明度のレベルを設定します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/opacity.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/opacity.jpg" width="300" />
 
 | プロパティ   | 説明 |
 |------------|-------------|
@@ -82,7 +82,7 @@ Opacityは、透明度のレベルを設定します。
 
 Normalマップを指定するためにこれを使用します（これらは凹凸性を決定します - PlayCanvasでは、HeightマップではなくNormalマップを使用する必要があります）。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/normals.jpg" width="300" />
 
 | プロパティ   | 説明 |
 |------------|-------------|
@@ -93,7 +93,7 @@ Normalマップを指定するためにこれを使用します（これらは�
 
 Parallaxマップは、表面に視差を与えることでNormalマップにさらなるリアルな感覚を加えます。Parallaxオプションは、マテリアルにNormalマップを設定した場合にのみ有効になります。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/parallax.jpg" width="300" />
 
 | プロパティ    | 説明 |
 |-------------|-------------|
@@ -104,7 +104,7 @@ Parallaxマップは、表面に視差を与えることでNormalマップにさ
 
 Environmentプロパティは、マテリアルが環境をどのように反射するかを決定します。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/environment.jpg" width="300" />
 
 | プロパティ            | 説明 |
 |---------------------|-------------|
@@ -118,7 +118,7 @@ Environmentプロパティは、マテリアルが環境をどのように反射
 
 Light Mapには事前にベイクされたDiffuse Lightingが含まれています。Light Mapの使用は、実行時に行われる動的なライトの計算を事前に計算できるため、最適化と考えられます。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/lightmap.jpg" width="300" />
 
 | プロパティ   | 説明 |
 |------------|-------------|
@@ -128,14 +128,12 @@ Light Mapには事前にベイクされたDiffuse Lightingが含まれていま�
 
 その他のレンダリング状態を使用して、マテリアルでメッシュをレンダリングする方法を追加で制御できます。
 
-<img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300">
+<img loading="lazy" src="/images/user-manual/material-inspector/other.jpg" width="300" />
 
 | プロパティ        | 説明 |
 |-----------------|-------------|
 | Depth Test      | チェックされている場合、マテリアルを持つメッシュがレンダリングされるとき、ピクセルごとにチェックが行われ、ピクセルがエンジンのDepth Testに合格するかどうかが決定されます。デフォルトでは、ピクセルは既にDepthバッファにあるものと同じかそれ以下のz深度を持たなければなりません。つまり、メッシュはそれが前に何もない場合にのみ表示されます。チェックが外されている場合、メッシュはDepthバッファにすでにあるものに関係なくレンダリングされます。デフォルトではオンです。 |
 | Depth Write     | チェックされた場合、マテリアルを含むメッシュがレンダリングされると、その深度情報はDepthバッファーに書き込まれます。これにより、後続のメッシュがレンダリングされると、このマテリアルでレンダリングされたメッシュに対してDepthテストされます。デフォルトはオンです。 |
 | Cull            | オプションは次のとおりです。<ul> <li>None: 前面と背面の両方がレンダリングされます。</li> <li>Front Faces: 前面がレンダリングされ、背面はレンダリングされません。</li> <li>Back Faces: 背面がレンダリングされ、前面はレンダリングされません。これがデフォルトです。</li> </ul> PlayCanvasでは、反時計回りの頂点の巻き方が前面の三角形を指定すると規定しています。背面のカリングは、背面のピクセルが頻繁に上書きされる（凸メッシュの場合）ため、パフォーマンス向上に役立つことが多いです。 |
-| Blend Type      | オプションは次のとおりです。<ul> <li>None: メッシュは不透明です。これがデフォルトです。</li> <li>Normal: メッシュは透明で、ステンドグラスのようです。</li> <li>Additive: メッシュの色がフレームバッファにすでにレンダリングされているものに加えられます。</li> <li>Pre-multiply: Normal'ブレンドと同様ですが、このマテリアルでレンダリングされるメッシュの色がすでにそのアルファ値で調整されていると想定されます。</li>
-<li>Multiply: レンダリング時に、メッシュの色がフレームバッファにすでにレンダリングされたものと乗算されます。</li>
- </ul> |
-| Shadow Sampling | オプションは: <ul><li>Hard</li><li>PCF 3x3</li></ul> です。 |
+| Blend Type      | オプションは次のとおりです。<ul> <li>None: メッシュは不透明です。これがデフォルトです。</li> <li>Normal: メッシュは透明で、ステンドグラスのようです。</li> <li>Additive: メッシュの色がフレームバッファにすでにレンダリングされているものに加えられます。</li> <li>Pre-multiply: Normal'ブレンドと同様ですが、このマテリアルでレンダリングされるメッシュの色がすでにそのアルファ値で調整されていると想定されます。</li><li>Multiply: レンダリング時に、メッシュの色がフレームバッファにすでにレンダリングされたものと乗算されます。</li></ul> |
+| Shadow Sampling | オプションは: <ul><li>Hard</li><li>PCF 3x3</li></ul>  |

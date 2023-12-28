@@ -17,13 +17,13 @@ GET https://playcanvas.com/api/apps/:id
 ## 例
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/apps/99999
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/apps/{id}
 ```
 
 ## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">id</span><p>アプリのID</p></div>
+<div class="parameter"><span class="param">id: number</span><p>The id of the app.</p></div>
 </div>
 
 ## レスポンススキーマ

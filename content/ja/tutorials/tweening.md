@@ -17,9 +17,9 @@ entity.tween(entity.getLocalPosition()).to({x: 10, y: 0, z: 0}, 1, pc.SineOut);
 
 <iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Using the Tween library"></iframe>
 
-この例の[プロジェクト][2]と[エディタ][3]へのリンクを貼ります。
+この例の[Project][2]と[Editor][3]へのリンクです。
 
-これを行うには、以下のようにします。
+上記を得るために以下を行います：
 
 ```javascript
 this.entity
@@ -30,7 +30,7 @@ this.entity
     .start();
 ```
 
-次に、Entityのローカル回転をTweenする方法の例が示されています。
+エンティティのローカル回転をトゥイーンする方法の例です：
 
 <iframe loading="lazy" src="https://playcanv.as/b/H8553dGa/" title="Tween Local Rotation"></iframe>
 
@@ -51,7 +51,7 @@ this.entity
 
 <iframe loading="lazy" src="https://playcanv.as/b/ndTiHCpD/" title="Tween Local Scale"></iframe>
 
-この例の[プロジェクト][2]と[エディタ][5]へのリンクを貼ります。
+この例の[Project][2]と[Editor][5]へのリンクです。
 
 これを行うには、以下のようにします。
 
@@ -64,7 +64,7 @@ this.entity
     .start();
 ```
 
-最後にカラーをトゥイーンする方法が示されています。
+最後に、色をトゥイーンする方法です：
 
 <iframe loading="lazy" src="https://playcanv.as/b/aoRYsYrc/" title="Tween Material Color"></iframe>
 

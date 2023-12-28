@@ -18,13 +18,13 @@ PlayCanvasに3Dモデル(例:FBXまたはCOLLADA)ファイルをアップロー�
 
 PlayCanvas Editorインターフェイスから直接新しいマテリアルを作成できます。
 
-<img loading="lazy" src="/images/user-manual/assets/materials/create-asset-menu.jpg" width="300">
+![Create Material][1]
 
 これにより、新しいマテリアルアセットが作成され、画面の右側にマテリアルインスペクターが開きます。
 
 ## マテリアルの選択
 
-<img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-simple.jpg" style="width: 300px; float:right; padding: 20px; padding-top: 0px;">
+![Model Inspector][2]
 
 マテリアルを編集するには、まず選択する必要があります。これにより、マテリアルインスペクターが表示されます。
 
@@ -34,39 +34,33 @@ PlayCanvas Editorインターフェイスから直接新しいマテリアルを
 
 ## マテリアルの割り当て
 
-<img loading="lazy" src="/images/user-manual/assets/materials/model.png" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
+![Model Component][3]
 
 Modelアセットのどこにどのマテリアルを割り当てるかを変更することができます。また、Modelコンポーネントを持つ特定のEntityのマテリアルをカスタマイズすることもできます。
 
 Modelコンポーネントを持つEntityを選択すると、2つのボタンが表示されます - アセットマテリアルとEntityマテリアル。
 
-<br style="clear:both;">
-
-<img loading="lazy" src="/images/user-manual/assets/materials/model-inspector-free-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
+![Model Inspector Free Slot][4]
 
 Asset Materialsをクリックすると、Modelアセットが選択されます。アセットパネルからもModelアセットを選択できます。モデルインスペクターには、モデルのメッシュと各々に割り当てられたマテリアルが表示されます。Xボタンを使用してマテリアルをクリアでき、空きスロットをクリックして新しいマテリアルを割り当てることができます。
 
 アセットパネルからマテリアルアセットをドラッグアンドドロップして、マテリアルスロットにドロップすることもできます。
 
-<br style="clear:both;">
-
 エンティティマテリアルをクリックすると、まずカスタマイズするメッシュインスタンスを選択するよう求められます。
 
-<img loading="lazy" src="/images/user-manual/assets/materials/select.png" style="max-width: 100%">
+![Select Mesh Instance][5]
 
 メッシュインスタンスを選択した後、Modelコンポーネントに新しいマテリアルピッカーが表示されます。
 
-<img loading="lazy" src="/images/user-manual/assets/materials/selected.png" style="max-width: 100%">
+![Selected Mesh Instance][6]
 
 その後、この特定のエンティティに別のマテリアルを選択できます。
 
-<img loading="lazy" src="/images/user-manual/assets/materials/overridden.png" style="max-width: 100%">
-
-<br style="clear:both;">
+![Select Different Material][7]
 
 ## マテリアルの編集
 
-<img loading="lazy" src="/images/user-manual/assets/materials/material-inspector.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
+![Material Inspector][8]
 
 マテリアルを選択した後、そのプロパティを編集できます。
 
@@ -76,17 +70,17 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 物理的なシェーディングモデルは、最も高度なシェーディングモデルです。これは、PlayCanvasのPBR（物理ベースレンダラー）のモデルです。
 
-[Physical Material Properties][1]
+[Physical Material Properties][9]
 
 ### Phong
 
 フォンのシェーディングモデルは、レガシーシェーディングモデルです。互換性のために使用してください。
 
-[Phong Material Properties][2]
+[Phong Material Properties][10]
 
 ## マテリアルマップ 
 
-<img loading="lazy" src="/images/user-manual/assets/materials/material-map-slot.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
+![Material Map Slot][11]
 
 マテリアルの編集には、上記ページで詳細に説明されているさまざまなスロットにテクスチャマップを作成および割り当てることが多く含まれます。
 
@@ -104,5 +98,14 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 一部のマップでは、単一のグレースケール値、つまり0.0 -> 1.0が必要です。この場合、使用するテクスチャのチャンネルを選択できます。 **RGB** は、すべての3つのチャンネルを使用することを意味します。**R**、 **G**、または **B** は、赤、緑、または青チャンネルのみが使用されることを意味します。
 
-[1]: /user-manual/assets/materials/physical-material
-[2]: /user-manual/assets/materials/phong-material
+[1]: /images/user-manual/assets/materials/create-asset-menu.jpg
+[2]: /images/user-manual/assets/materials/model-inspector-simple.jpg
+[3]: /images/user-manual/assets/materials/model.png
+[4]: /images/user-manual/assets/materials/model-inspector-free-slot.jpg
+[5]: /images/user-manual/assets/materials/select.png
+[6]: /images/user-manual/assets/materials/selected.png
+[7]: /images/user-manual/assets/materials/overridden.png
+[8]: /images/user-manual/assets/materials/material-inspector.jpg
+[9]: /user-manual/assets/materials/physical-material
+[10]: /user-manual/assets/materials/phong-material
+[11]: /images/user-manual/assets/materials/material-map-slot.jpg

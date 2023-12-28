@@ -6,21 +6,21 @@ position: 1
 
 Organizationを作成する方法はいくつかあります。あなたが所属しているOrganizationのは、以下のようにあなたのプロフィールの名前の隣に表示されます:
 
-![profile_orgs][4]
+![Profile Organizations][1]
 
 ### ドロップダウンメニューから作成する
 
 1つ目の方法は、右上のドロップダウンメニューから NEW ORGANIZATION をクリックすることです:
 
-![dropdown][1]
+![Dropdown][2]
 
 すると、以下のポップアップが表示されます:
 
-<img loading="lazy" src="/images/user-manual/organizations/new-organization.jpg" alt="Organization popup" style="border: 1px solid #ccc">
+![New Organization][3]
 
 Organizationの名前と、半角英数字とダッシュのみが使用可能な文字列であるOrganizationのIDを入力してください。デフォルトのメールアドレスはあなた自身のものですが、別のものに変更することができます。
 
-CREATE をクリックすると、[profile][2] ページに移動します。
+Click CREATE and that will take you to the [profile][4] page of the Organization.
 
 既にプロジェクト(例えば、パーソナルプランでのプライベートプロジェクトなど)がある場合、以下の手順でOrganizationアカウントに移行できます:
 
@@ -33,13 +33,13 @@ CREATE をクリックすると、[profile][2] ページに移動します。
 
 ### ユーザーアカウントをOrganizationのに変換する
 
-もう1つの方法は、ユーザーアカウントをOrganizationのに変換することです。[アカウント][3]ページでCONVERTをクリックすることで、これを行うことができます。
+Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][7] page.
 
-<img loading="lazy" src="/images/user-manual/organizations/convert.png" alt="Organization popup" style="border: 1px solid #ccc">
+![Convert Organization][8]
 
 以下のポップアップが表示されます:
 
-<img loading="lazy" src="/images/user-manual/organizations/convert-popup.png" alt="Convert popup" style="border: 1px solid #ccc">
+![Convert Popup][9]
 
 ユーザーアカウントをOrganizationに変換すると、このユーザーアカウントでログインできなくなります。そのため、新しいOrganizationのオーナー (Owner)を指定する必要があります。
 
@@ -51,9 +51,12 @@ CREATE をクリックすると、[profile][2] ページに移動します。
 
 アカウントを変換したら、ログアウトします。次に、新しいオーナー (Owner)のアカウントでログインし、変換されたアカウントとそのすべてのプロジェクトにアクセスできます。
 
-[1]: /images/user-manual/organizations/dropdown.png "New Organization menu option"
-[2]: /user-manual/profile
-[3]: /user-manual/profile/account
-[4]: /images/user-manual/organizations/organizations.jpg "Organizations"
+[1]: /images/user-manual/organizations/organizations.jpg
+[2]: /images/user-manual/organizations/dropdown.png
+[3]: /images/user-manual/organizations/new-organization.jpg
+[4]: /user-manual/profile
 [5]: /user-manual/profile/projects/#transfer-project-ownership
 [6]: /user-manual/organizations/managing-organizations/#projects
+[7]: /user-manual/profile/account
+[8]: /images/user-manual/organizations/convert.png
+[9]: /images/user-manual/organizations/convert-popup.png

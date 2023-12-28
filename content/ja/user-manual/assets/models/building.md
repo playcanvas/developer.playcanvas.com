@@ -31,16 +31,16 @@ PlayCanvasは、FBXファイルのインポートもサポートしており、�
 
 検討すべき一部のモデリングおよびアニメーションプログラムは以下のとおりです。
 
-* 無料オプション: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*。
-* 低価格の有用オプション: 3D-Coat, NVIL, Hexagon。
-* 高価格の有用オプション: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*。
+* 無料: Blender \*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*
+* 有料(低価格) : 3D-Coat, NVIL, Hexagon
+* 有料(高価格): ZBrush, Autodesk 3D Studio Max \*, Autodesk Maya \*, Luxology Modo \*
 
 \* *このプログラムはアニメーションも作成できます*
 
 テクスチャの生成にお勧めのプログラム：
 
-* 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint。
-* 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus。
+* 無料: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint
+* 有料: Substance Designer (Substance Painter や Bitmap2Materialも含む), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus
 
 モデリングについて上記に記載されているプログラムの多くはテクスチャペイントを可能にします。より多くのオプションをご希望の場合、この[外部wiki][1]ページをご確認ください。一部には古い情報もありますのでご注意ください。
 

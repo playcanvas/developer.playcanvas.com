@@ -6,8 +6,8 @@ position: 9
 
 シーンには以下が含まれます:
 
-* **シーンヒエラルキー (Scene Hierarchy) **:シーン内のすべてのエンティティの順序と構造を示すリスト
-* **シーン設定 (Scene Settings) **:シーンに関するプロパティが含まれます
+* **シーンヒエラルキー (Scene Hierarchy) ** :シーン内のすべてのエンティティの順序と構造を示すリスト
+* **シーン設定 (Scene Settings) ** :シーンに関するプロパティが含まれます
 
 これらはPlayCanvasエディターで編集されます。
 
@@ -17,7 +17,7 @@ position: 9
 
 **シーンヒエラルキー** は、[エンティティ][entities]のグラフで、これらのエンティティには、世界にレンダリングするメッシュを持つか、サウンドエフェクトを再生するなどの振る舞いを付与する[コンポーネント][components]を持つことができます。また、[スクリプト][scripts]を使用してカスタムの振る舞いを付与することもできます。
 
-<img loading="lazy" src="/images/user-manual/scenes/scene-hierarchy.png" width="400">
+<img loading="lazy" src="/images/user-manual/scenes/scene-hierarchy.png" width="400" />
 
 ## シーン設定 (Scene Settings)
 
@@ -34,7 +34,7 @@ position: 9
 * [Fog][settings-fog] (7)
 * [Lightmap properties][settings-lightmap] (8)
 
-<img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500">
+<img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500" />
 
 [components]: /user-manual/packs/entities/
 [scripts]: /user-manual/packs/components/

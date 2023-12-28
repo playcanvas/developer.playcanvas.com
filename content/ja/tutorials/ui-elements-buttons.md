@@ -33,27 +33,27 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 これは必要なエンティティ、コンポーネントを作成し、プロパティを事前設定するためにもっとも簡単な方法です。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif">
+<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-hierarchy.gif" />
 
 ### 既存の要素を使用して
 
 ボタンに変えたい既存の要素がある場合は、インスペクターパネルでその要素にButtonコンポーネントを追加し、必要に応じて構成できます。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/adding-button-via-inspector.gif" width="300" />
 
 ユーザーがインタラクトできるように、ElementコンポーネントでUse Inputを有効にする必要があることを覚えてください。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300" />
 
 ButtonコンポーネントのImage Entityプロパティを、Elementコンポーネントがある同じエンティティに設定する必要があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/set-image-entity-button.png" width="300" />
 
 ## ボタン設定
 
 サンプルプロジェクトの最初のボタンをもう少し詳しく見てみましょう。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/button.png" width="300" />
 
 ボタンには3つのコンポーネントがあります。
 
@@ -63,19 +63,19 @@ ButtonコンポーネントのImage Entityプロパティを、Elementコンポ�
 
 ボタンエンティティには、ボタンのスタイルによってオプションであるText Elementが子として含まれています。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/text-element.png" width="300" />
 
 ElementのタイプはImageで、画面の下部にアンカーが設定されています。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/bottom-anchor-pivot.png" width="300" />
 
 ボタンをアンカーし、それを下に移動するだけで、ボタンから下部までのオフセットを設定します。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/offset-position.png" width="300" />
 
 ボタンをインタラクト可能にするには、Use Inputが有効になっている必要があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300" />
 
 ### インタラクト時のボタンの見え方を変える
 
@@ -91,21 +91,21 @@ ElementのタイプはImageで、画面の下部にアンカーが設定され�
 
 各状態でボタンの色を変更することは、ボタンとインタラクトしたときにユーザーフィードバックを追加する最も簡単な方法です。プロジェクトでは、High Qualityボタンに以下の設定があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-setup.png" width="300" />
 
 次のエフェクトがあります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-effect.gif">
+<img loading="lazy" src="/images/tutorials/ui/buttons/high-quality-button-effect.gif" />
 
 #### スプライトを変更する
 
 ボタンの形状を変更したり、ボタンが画面に「押し込まれた」見え方をしたりしたい場合は、異なる状態でボタンのスプライト画像を変更することができます。Low Quality には以下の設定があります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-setup.png" width="300" />
 
 次のエフェクトがあります。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-effect.gif">
+<img loading="lazy" src="/images/tutorials/ui/buttons/low-quality-button-effect.gif" />
 
 ### ボタンイベント
 
@@ -142,7 +142,7 @@ this.entity.button.on('click', function(event) {
 
 これらのイベントは、ElementコンポーネントでUse Inputが有効になっている場合にのみ発生するため、インスペクタでそれがチェックされていることを確認してください。
 
-<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300">
+<img loading="lazy" src="/images/tutorials/ui/buttons/use-input-element.png" width="300" />
 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/

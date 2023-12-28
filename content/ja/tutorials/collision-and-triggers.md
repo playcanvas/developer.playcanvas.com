@@ -35,13 +35,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 Rigid Body (剛体) は、ゲーム世界における物理的なオブジェクトを表します。質量や摩擦などの実際の物理特性を設定することができます。他の剛体と衝突し、物理法則に基づいて現実的な反応を示します。
 
-シーン内で剛体を作成するには、エンティティを選択し、*RrigidBody* コンポーネントと *Collision* コンポーネントを追加します。デフォルトでは、これにより**static box**の剛体が作成されます。*RigidBody* コンポーネントには、オブジェクトのプロパティを調整するために使用できるさまざまなオプションが提供されています。
+シーン内で剛体を作成するには、エンティティを選択し、 *RrigidBody* コンポーネントと *Collision* コンポーネントを追加します。デフォルトでは、これにより **static box** の剛体が作成されます。 *RigidBody*  コンポーネントには、オブジェクトのプロパティを調整するために使用できるさまざまなオプションが提供されています。
 
 ![rigidbody component][4]
 
 各プロパティの詳細については、[*RigidBody*のドキュメント][5]を参照してください。
 
-このデモでは、重要なプロパティは**Type**です。3つのオプションのうち1つを選択できます。
+このデモでは、重要なプロパティは **Type** です。3つのオプションのうち1つを選択できます。
 
 * **Static** このエンティティは移動しません。
 * **Dynamic** このエンティティは、それに適用する重力や他の力の下で移動します。
@@ -52,7 +52,7 @@ Rigid Body (剛体) は、ゲーム世界における物理的なオブジェク
 
 最初に必要なのは、地面を形成する緑色のブロックです。
 
-<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/collision/ground_setup.png" width="300" />
 
 属性パネルで、*render*、*collision*、*rigidbody*コンポーネントを持つのが見えます。エンティティと*collision*全体のプロパティを増やしています。また、摩擦力と反発力のプロパティもわずかに増加しています。これにより、表面がデフォルトよりもやや粗く、やや弾力性がある状態になります。
 
@@ -97,9 +97,9 @@ this.entity.collision.on('triggerenter', this.onTriggerEnter, this);
 
 ## RigidBody
 
-地面を**Static**に設定しました。次に、落下するオブジェクトを作成し、それらが**Dynamic**であることを確認します。
+地面を **Static** に設定しました。次に、落下するオブジェクトを作成し、それらが **Dynamic** であることを確認します。
 
-<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300">
+<img loading="lazy" src="/images/tutorials/collision/box_setup.png" width="300" />
 
 これは、ボックスの *rigidbody* と *collision* の設定です。球体とカプセルも同じように設定されています。
 

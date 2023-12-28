@@ -86,7 +86,7 @@ Scriptは[Asset][asset]です。それは、[Entity][entity]のScript [Component
 * `postInitialize`-すべてのスクリプトの`initialize`関数が呼び出された後に1回だけ呼び出されます。
 * `update`-毎フレーム呼び出されます。
 * `postUpdate`-すべてのスクリプトの`update`関数が呼び出された後、毎フレームごとに呼び出されます。
-* `swap`-'hot reload'(コードエディタでの保存イベントによる)された場合に呼び出されます。
+* `swap`-'hot reload'(コードエディターでの保存イベントによる)された場合に呼び出されます。
 
 ## ソースアセット (Source Asset)
 

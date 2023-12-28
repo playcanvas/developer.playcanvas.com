@@ -14,7 +14,7 @@ Animstategraphアセットを選択すると、Animコンポーネントにア�
 
 ![Anim Component With Graph][2]
 
-アニメーションステートスロットが満たされると、Animコンポーネントは再生可能になります。この時点で、Animコンポーネントは `entity.anim.play()` を呼び出してスクリプトから再生することができ、また `Activate` オプションが選択されている場合は、PlayCanvasプロジェクトが起動すると自動的に再生されます。
+After all animation state slots have been filled, the anim component will become playable. At this point the anim component can either be played via script by calling `entity.anim.playing = true` or if the `Activate` option is selected, it will play automatically upon the launch of the PlayCanvas project.
 
 Animコンポーネントには、アニメーション再生速度を変更するオプションも用意されています。この速度は、ステートグラフ内のすべてのアニメーションに影響します。
 

@@ -10,7 +10,7 @@ position: 5
 
 | 使い方 | |
 |---|---|
-| ノードの新規作成 | [ノードペイン][2]から項目をドラッグし、グラフエディターの作業エリアにドロップします。<br>[アセットペイン][3]からサブグラフをドラッグして、グラフエディターの作業エリアにドロップします。 |
+| ノードの新規作成 | Drag an entry from the [Nodes Pane][2] and drop it on the Graph Editor work area.<br />Drag a sub-graph from the [Assets Pane][3] onto the Graph Editor work area. |
 | ノードの選択 | ノードを左クリックします。 |
 | ノードの削除 | ノードを選択し、deleteキーを押すか、ノードコンテキストメニューの「削除」オプションを使用します。 |
 | ノードの移動 | ノードを左クリックしてドラッグします。 |

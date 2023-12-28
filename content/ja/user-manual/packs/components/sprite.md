@@ -69,4 +69,4 @@ Spriteコンポーネントは、[Spriteアセット][1]をシーンに表示さ
 [3]: /images/user-manual/scenes/components/component-sprite-animated.png
 [4]: /user-manual/packs/components/script
 [5]: /api/pc.SpriteComponent.html
-[6]: /user-manual/optimization/batching
+[6]: /user-manual/graphics/advanced-rendering/batching

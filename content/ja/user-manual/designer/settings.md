@@ -6,7 +6,7 @@ position: 7
 
 設定パネル (SETTINGS) を使用すると、さまざまなプロパティを設定できます。エディターの左下にある`cog`ボタン([ツールバー][1])を使用してアクセスできます。
 
-<img loading="lazy" src="/images/user-manual/editor/settings/cog.jpg" style="display: inline; vertical-align: middle;">
+![Cog][2]
 
 ## エディター (Editor)
 

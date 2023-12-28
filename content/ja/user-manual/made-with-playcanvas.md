@@ -12,14 +12,14 @@ PlayCanvasのユーザーによって作成された素晴らしいゲームや�
 
 紹介されたコンテンツへのリンクは、[ブログ投稿][2022-blog-post]で見つけることができます。
 
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/46f73gp1_TU" title="YouTubeビデオプレーヤー" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/46f73gp1_TU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## PlayCanvasショーケース2021
+## PlayCanvas Showcase 2021
 
-紹介されたコンテンツへのリンクは、[ブログ投稿][2021-blog-post]で見つけることができます。
+Links to the content showcased can be found on the [blog post][2021-blog-post].
 
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/FrUUrVRpbzg" title="YouTubeビデオプレーヤー" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/FrUUrVRpbzg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [awesome-playcanvas]: https://github.com/playcanvas/awesome-playcanvas
 [2022-blog-post]: https://blog.playcanvas.com/our-2022-developer-showreel-is-live/
