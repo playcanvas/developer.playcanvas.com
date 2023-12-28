@@ -4,11 +4,11 @@ layout: shader-editor-page.hbs
 position: 3
 ---
 
-![Material Inspector][1]
+![マテリアルインスペクター][1]
 
 マテリアルインスペクターは、マテリアルの設定が構成される場所です。
 
-To access a material's inspector, select it in the [Assets Pane][2].
+マテリアルのインスペクターにアクセスするには、[アセットペイン][2]で選択します。
 
 Basic、Render States、Parametersの3つのセクションがあります。
 
@@ -20,7 +20,7 @@ Basic、Render States、Parametersの3つのセクションがあります。
 
 ### Render States
 
-- Blend Mode - The type of blend mode. See [here][3] for more details.
+- Blend Mode - ブレンドモードのタイプ。詳細は[こちら][3]を参照してください。
 - Alpha Test - (まだサポートされていません)。アルファテストの値を指定します。
 - Cull Mode - フェイスカリングモード。
 - Depth Test - レンダリング時に深度テストを有効化します。

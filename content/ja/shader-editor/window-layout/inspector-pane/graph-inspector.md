@@ -4,11 +4,11 @@ layout: shader-editor-page.hbs
 position: 1
 ---
 
-![Graph Inspector][1]
+![グラフインスペクター][1]
 
 グラフインスペクターは、グラフの設定が構成される場所です。
 
-To access a graph's inspector, select it in the [Assets Pane][2].
+グラフのインスペクタにアクセスするには、[アセットペイン][2]で選択します。
 
 | 項目         | 説明                                           |
 | --------------- |---------------------------------------------- |

@@ -4,11 +4,11 @@ layout: shader-editor-page.hbs
 position: 4
 ---
 
-![Texture Inspector][1]
+![テクスチャインスペクター][1]
 
 テクスチャインスペクターは、テクスチャが設定される場所です。
 
-To access a texture's details, select it in the [Assets Pane][2].
+テクスチャの詳細にアクセスするには、[アセットパネル][2]で選択してください。
 
 - Name - テクスチャの名前を指定します。
 
