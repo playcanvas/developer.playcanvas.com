@@ -11,7 +11,7 @@ Collision Picking - クリックしてシェイプを選択する
 
 ---
 
-Frame Buffer Picking - click to select a grey shape. The red shapes are set to be not pickable.
+Frame Buffer Picking - クリックしてグレーのシェイプを選択する。赤い形状はピックできないように設定されています。
 
 <iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
 

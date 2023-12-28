@@ -50,7 +50,7 @@ pc.extend(pc, function () {
             // レンダリングされた画像であるinputTargetをシェーダに設定します
             scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
 
-            //全画面の四角形を描画(drawFullscreenQuad) します。出力ターゲット (outputTarget) はスクリーンです
+            // 全画面の四角形を描画(drawFullscreenQuad) します。出力ターゲット (outputTarget) はスクリーンです
             // 全画面の四角形を描画 (drawFullscreenQuad) すると、上で定義したシェーダが実行されます 
             pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
         }

@@ -51,10 +51,10 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 **Tags** - タグとその組み合わせから検索するには、大括弧`[ ]`にタグを入力します。単純なクエリ演算子：AND, ORはクエリを文字列の配列、または文字列を持つ他の配列として表現することによって可能になります。クエリのロジックは、 `AssetsRegistry`の[`findByTag`][7]と同じです。
 いくつかの例を示します：
 
-- `[ level-1 ]` - returns all assets that are tagged by `level-1`.
-- `[ level-1, level-2 ]` - returns all assets that are tagged by `level-1 OR level-2`.
-- `[ [ level-1, monster ] ]` - returns all assets that are tagged by `level-1 AND monster`. Notice extra brackets.
-- `[ [ level-1, monster ], [ level-2, monster ] ]` - returns all assets that are tagged by `(level-1 AND monster) OR (level-2 AND monster)`.
+- - `[ level-1 ]` - `level-1`によってタグ付けされたすべてのアセットを返します。
+- - `[ level-1, level-2 ]` - `level-1 OR level-2`によってタグ付けされたすべてのアセットを返します。
+- - `[ [ level-1, monster ] ]` - `level-1 AND monster`によってタグ付けされたすべてのアセットを返します。 角括弧の数に注意してください。
+- - `[ [ level-1, monster ], [ level-2, monster ] ]` - `(level-1 AND monster) OR (level-2 AND monster)`によってタグ付けされたすべてのアセットを返します。
 
 ## ドラッグ＆ドロップ
 

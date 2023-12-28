@@ -20,7 +20,7 @@ Organizationを作成する方法はいくつかあります。あなたが所�
 
 Organizationの名前と、半角英数字とダッシュのみが使用可能な文字列であるOrganizationのIDを入力してください。デフォルトのメールアドレスはあなた自身のものですが、別のものに変更することができます。
 
-Click CREATE and that will take you to the [profile][4] page of the Organization.
+CREATE をクリックすると、[profile][4] ページに移動します。
 
 既にプロジェクト(例えば、パーソナルプランでのプライベートプロジェクトなど)がある場合、以下の手順でOrganizationアカウントに移行できます:
 
@@ -33,7 +33,7 @@ Click CREATE and that will take you to the [profile][4] page of the Organization
 
 ### ユーザーアカウントをOrganizationのに変換する
 
-Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][7] page.
+もう1つの方法は、ユーザーアカウントをOrganizationのに変換することです。[アカウント][7]ページでCONVERTをクリックすることで、これを行うことができます。
 
 ![Convert Organization][8]
 

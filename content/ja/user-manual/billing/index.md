@@ -6,12 +6,12 @@ position: 24
 
 ## プランの自動更新
 
-以下はクレジットカードでお支払いいただく場合の説明となります。銀行振込でのお支払いをご希望する場合は、<support@playcanvas.jp>までご連絡ください。
+以下はクレジットカードでお支払いいただく場合の説明となります。銀行振込でのお支払いをご希望する場合は、[support@playcanvas.jp](support@playcanvas.jp)までご連絡ください。
 PersonalプランまたはOrganizationプランを購入した場合には最初に購入した日が月次請求日となり、支払いが自動的に行われます。
 
 ## 請求書 
 
-Invoices for monthly subscriptions are emailed to the owner of the subscribed account on the monthly billing date. Invoices are not available to download on the website itself. If invoices are not reaching your inbox, please check your spam folder. If you are missing invoices from your records, you may request for them to be resent by emailing [billing@playcanvas.com](mailto:billing@playcanvas.com).
+月額プランの請求書は、購入したアカウントのオーナー宛に月次請求日にメールで送信されます。請求書はウェブサイトからはダウンロードできません。請求書のメールが受信トレイに届かない場合は、迷惑メールフォルダを確認してください。請求書のメールが見当たらない場合には、[support@playcanvas.jp](support@playcanvas.jp)までメールの再送信をご依頼ください。
 
 ### Updating Invoice Details
 

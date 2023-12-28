@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 1
 ---
 
-Click here to learn how to use the [Anim Component][1].
+[Animコンポーネント][1]の使用方法についてはこちらをクリックしてください。
 
 ![New Anim Component][2]
 

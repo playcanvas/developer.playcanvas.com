@@ -59,7 +59,7 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 テクスチャがキューブに巻き付けられる方法を変更するには、 **Tiling** および **Offset** プロパティを変更してみてください。
 
-Take a look at the user manual section on [Physical Materials][8] for more depth on setting up materials.
+マテリアルを設定するのにさらに深い知識が必要な場合は、ユーザーマニュアルの[物理マテリアル][8]セクションを参照してください。
 
 [1]: /images/tutorials/beginner/basic-materials/new-box.jpg
 [2]: /images/tutorials/beginner/basic-materials/new-material.jpg

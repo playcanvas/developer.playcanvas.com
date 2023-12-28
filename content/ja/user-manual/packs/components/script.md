@@ -10,7 +10,7 @@ Scriptコンポーネントは、コンポーネントパネルの右上のト�
 
 ![Scriptコンポーネント][1]
 
-To create a new script, click on the **`+`** button in the Assets Panel and select New Script. Then type the name of the script in the popup and hit Enter.
+新しいスクリプトを作成するには、Assetsパネルの **`+`** ボタンをクリックし、New Scriptを選択します。次に、ポップアップでスクリプトの名前を入力してEnterキーを押します。
 
 <img loading="lazy" src="/images/user-manual/scenes/components/new-script.jpg" />
 

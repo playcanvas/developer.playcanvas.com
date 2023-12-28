@@ -4,7 +4,7 @@ layout: usermanual-page.hbs
 position: 3
 ---
 
-Animstategraph assets are used to organize a set of different animation states, which are all the various ways in which a model might animate. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organized. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/user-manual/packs/components/anim/).
+Animstategraphアセットは、さまざまなアニメーション状態を整理するために使用されます。アニメーション状態は、モデルがアニメーションするさまざまな方法を表します。これらのアニメーション状態を定義し、各状態が再生されるタイミングや状態間のトランジション、およびブレンド方法を決定するために使用することができます。AnimStateGraphアセット自体は、実際のアニメーションアセットを格納したりリンクしたりするものではありません。代わりに、アニメーションアセットの組織化方法のテンプレートとして機能します。実際のアニメーションアセットは、[Anim Component](/user-manual/packs/components/anim/)を介してanimstategraphのアニメーション状態にリンクされます。
 
 システムは、1つのanimstategraphが多数の異なるエンティティで使用できるように設計されています。たとえば、人間型キャラクターの移動アニメーションを管理するAnimstategraphアセットがある場合、この1つのアセットは人間エンティティ、エルフエンティティ、およびドワーフエンティティで使用できます。これらのエンティティのそれぞれは、独自のキャラクターアニメーションアセットをリンクでき、同じアニメーション動作を保持できます。
 

@@ -37,8 +37,8 @@ cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
 エンジンのエディターを使用してビルドしている場合は、`index.html`ファイルがルートにあるようにアプリファイルを`www`にコピーします。
 
 <div class="alert alert-info">
-    <div>Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.</div><br />
-    <div>We recommend using a tool like <a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a> or automating this via a script.</div>
+    <div>Audioアセットファイルは、正しくロードおよび再生するために、Base64形式である必要があります。これは、iOSがWebViewを介してローカルディスク経由で読み込まれる可能性があるファイルに関して制限的であるためです。</div><br />
+    <div><a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a>などのツールを使用することをお勧めします。</div>
 </div>
 
 PlayCanvasエディターでアプリをビルドした場合、Cordovaと最も互換性があるようにプロジェクトをビルドおよび準備する公式の外部ツールがあります。これには、iOSで読み込むためにオーディオファイルをBase64に変換するという課題を自動化するなどのタスクが含まれます。

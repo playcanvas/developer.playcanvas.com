@@ -10,7 +10,7 @@ position: 25
 
 エンティティに**コンポーネント**を追加するには、エンティティを選択して、**インスペクター**で **Add Component** をクリックするか、エンティティを右クリックし、Add Component コンテキストメニューからコンポーネントを選択してください。
 
-[Learn more](/user-manual/packs/components/)
+[詳細を見る](/user-manual/packs/components/)
 
 
 ## スクリプトを追加するには?
@@ -19,7 +19,7 @@ position: 25
 
 JavaScriptを使用してエンティティの動作を制御できます。 エンティティを選択し、スクリプトコンポーネントを追加し、新しいスクリプトアセットを作成してください。
 
-[Learn more](/user-manual/scripting/creating-new/)
+[詳細を見る](/user-manual/scripting/creating-new/)
 
 
 
@@ -27,9 +27,9 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 シーンの背景色を変更するには、シーンのカメラの Clear Color プロパティを更新する必要があります。
 
-You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your scene.
+または、シーンに[スカイボックス](/user-manual/assets/cubemaps/)を追加することもできます。
 
-[Learn more](/user-manual/packs/components/camera/)
+[詳細を見る](/user-manual/packs/components/camera/)
 
 
 
@@ -41,7 +41,7 @@ You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your 
 
 新しいマテリアルを作成し、それをモデルにドラッグ&ドロップするか、既存のマテリアルを選択してインスペクターでプロパティを編集することができます。
 
-[Learn more](/user-manual/assets/materials/)
+[詳細を見る](/user-manual/assets/materials/)
 
 
 
@@ -53,7 +53,7 @@ You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your 
 
 キューブマップを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして**New Cubemap**を選択し、キューブマップインスペクターに6つのテクスチャをドラッグします。物理ベースのレンダリングを活用するには、6つのテクスチャを設定した後に**Prefilter**をクリックする必要があります。
 
-[Learn more](/user-manual/assets/cubemaps/)
+[詳細を見る](/user-manual/assets/cubemaps/)
 
 
 
@@ -69,7 +69,7 @@ You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your 
 
 エンティティに**Light**コンポーネントを追加することで、ライトを作成できます。また、エンティティを右クリックしてNew Entity / Directional Lightを選択して、新しい方向性ライトを作成することもできます。
 
-[Learn more](/user-manual/packs/components/light/)
+[詳細を見る](/user-manual/packs/components/light/)
 
 
 ## マテリアルを作成するには?
@@ -78,7 +78,7 @@ You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your 
 
 マテリアルを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして、**New Material**を選択します。
 
-[Learn more](/user-manual/assets/materials/)
+[詳細を見る](/user-manual/assets/materials/)
 
 
 
@@ -98,15 +98,15 @@ You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your 
 
 他の形状についても同様に、エンティティを右クリックしてNew Entity/Boxを選択することができます。
 
-[Learn more](/user-manual/packs/components/render/)
+[詳細を見る](/user-manual/packs/components/render/)
 
 
 
 ## スカイボックスを作成するには?
 
-To create a skybox for your scene you first need to create a [Cubemap asset](/user-manual/assets/cubemaps/). Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the Scene Settings and drag the Cubemap in the Skybox field.
+シーンにスカイボックスを作成するには、まず[Cubemapアセット](/user-manual/assets/cubemaps/)を作成する必要があります。その後、Cubemapを3Dビューポートにドラッグアンドドロップするか、Scene Settingsに移動してSkyboxフィールドにCubemapをドラッグします。
 
-[Learn more](/user-manual/designer/settings/#skybox)
+[詳細を見る](/user-manual/designer/settings/#skybox)
 
 
 
@@ -131,7 +131,7 @@ To create a skybox for your scene you first need to create a [Cubemap asset](/us
 
 ## アニメーションを再生するには?
 
-To play an animation of a 3D model you need to create an Entity with a [Model Component](/user-manual/packs/components/model/) and an [Animation Component](/user-manual/packs/components/animation/). The **Model Component** will render your model and the **Animation Component** will play animations.
+3Dモデルのアニメーションを再生するには、 [モデルコンポーネント](/user-manual/packs/components/model/)と[アニメーションコンポーネント](/user-manual/packs/components/animation/)を持つエンティティを作成します。 **モデルコンポーネント**がモデルをレンダリングして、 **アニメーションコンポーネント**がアニメーションを再生します。
 
 モデルをレンダリングするには、モデルコンポーネントのAssetフィールドにモデルアセットをドラッグします。アニメーションを再生するには、アニメーションコンポーネントのAssetフィールドにアニメーションアセットをドラッグします。
 
@@ -139,11 +139,11 @@ To play an animation of a 3D model you need to create an Entity with a [Model Co
 
 ## サウンドを再生するにはどうすればよいですか?
 
-To play sounds you need to add a [Sound component](/user-manual/packs/components/sound/) to an Entity. Then you can create slots to play [Audio assets](/user-manual/assets/audio/). Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an [AudioListener component](/user-manual/packs/components/audiolistener/) to an Entity - usually to the Camera Entity.
+サウンドを再生するには、Entityに[Sound component](/user-manual/packs/components/sound/)を追加する必要があります。その後、[Audio assets](/user-manual/assets/audio/) を再生するスロットを作成することができます。スロットを追加して、オーディオアセットをアセットフィールドにドラッグアンドドロップします。サウンドを聞くためには、[AudioListener component](/user-manual/packs/components/audiolistener/)をEntityに追加する必要があります。通常はカメラEntityに追加します。
 
 オーディオアセットは、コンピュータからAssetsパネルにオーディオファイルをドラッグアンドドロップすることで作成できます。
 
-[View tutorial](/tutorials/basic-audio/)
+[チュートリアルを見る](/tutorials/basic-audio/)
 
 
 
@@ -162,7 +162,7 @@ To play sounds you need to add a [Sound component](/user-manual/packs/components
 
 3Dモデルをレンダリングするには、エンティティに**Modelコンポーネント**を追加し、アセットフィールドに**Modelアセット**をドラッグ＆ドロップする必要があります。または、アセットパネルからモデルアセットを3Dビューポートにドラッグ＆ドロップすることもできます。
 
-[Learn more](/user-manual/packs/components/model/)
+[詳細を見る](/user-manual/packs/components/model/)
 
 
 
@@ -180,16 +180,16 @@ Translate / Rotate / Scaleツールを切り替えるには、それぞれ1/2/3�
 
 アセットをアップロードするには、コンピュータからファイルをAssetsパネルにドラッグアンドドロップするだけです。ファイルはサーバーで処理され、Assetsパネルにすぐに表示されます。
 
-[Learn more](/user-manual/assets/importing/)
+[詳細を見る](/user-manual/assets/importing/)
 
 
 ## 物理を使用するには?
 
-To give physical properties to an Entity you need to add a [Collision component](/user-manual/packs/components/collision/) to it and a [RigidBody component](/user-manual/packs/components/rigidbody/). The Collision component gives a physical shape to the Entity and the RigidBody component makes the Entity be simulated by the physics engine.
+Entityに物理特性を与えるには、 [Collision component](/user-manual/packs/components/collision/) と [RigidBody component](/user-manual/packs/components/rigidbody/) を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
 
-You can change the default [gravity](/user-manual/designer/settings/#gravity) in the Scene Settings.
+デフォルトの [gravity](/user-manual/designer/settings/#gravity) を変更することができます。
 
-[View tutorial](/tutorials/collision-and-triggers/)
+[チュートリアルを見る](/tutorials/collision-and-triggers/)
 
 
 
@@ -197,5 +197,5 @@ You can change the default [gravity](/user-manual/designer/settings/#gravity) in
 
 リアルタイムシャドウは、**Cast Shadows**が有効になっている各光源に対してレンダリングされます。シャドウを有効にするには、Lightコンポーネントを持つEntityを選択して、Cast Shadowsを有効にします。また、シーン内の任意のModelコンポーネントでもCast Shadowsを有効にする必要があります。
 
-[Learn more](/user-manual/graphics/lighting/shadows/)
+[詳細を見る](/user-manual/graphics/lighting/shadows/)
 
