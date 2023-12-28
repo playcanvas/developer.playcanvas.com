@@ -34,9 +34,9 @@ MyScript.attributes.add('names', {
 
 ## エディター上で属性を使用する
 
-![Script Attributes][1]
+![スクリプト属性][1]
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse button.
+属性を宣言したらEditorは、スクリプトの属性を露出させるためにコードをパースする必要があります。属性が変更された場合は、手動で属性を更新する必要があります。パースボタンをクリックすることができます。
 
 ![Parse Button][2]
 
@@ -70,7 +70,7 @@ MyScript.prototype.initialize = function () {
 
 ## 属性のタイプ
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][3] for more details.
+属性を宣言する際は、その属性のタイプも指定する必要があります。これにより、エディターが属性を編集するための関連コントロールを表示できます。ほとんどのタイプは自己説明的ですが、例えば `boolean` 、 `number` 、`string`などです。以下にさらに詳しい説明が必要な属性例を示します。詳細については、[属性リファレンス][3] を参照してください。
 
 ### Entity属性
 

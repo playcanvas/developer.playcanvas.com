@@ -8,7 +8,7 @@ PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][
 
 ![Facebook Playable Ads][3]
 
-The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (uncompressed) ZIP formats via the configuration options. Full specifications for Facebook Playable Ads can be found on their [help centre][4].
+ツールは、構成オプションを通じて、片方が2MB(無圧縮)HTMLファイル、もう片方が5MB(無圧縮)ZIPフォーマットの両方を作成できます。Facebook Playable Adの全仕様は、[ヘルプセンター][4]で見つけることができます。
 
 ## サンプルプロジェクト
 
@@ -24,7 +24,7 @@ The tool can create both the single 2MB (uncompressed) HTML file and the 5MB (un
 
 つまり、単一のHTMLフォーマットの場合、これはアセットに対して圧縮されていないとわかる\~500KBを残して、Base64文字列にエンコードされる前の状態です。ZIP フォーマットの場合は、圧縮されていない状態のアセットに対して約\~3MBが残っています。
 
-Try to keep images as small as possible in dimensions and use tools like [TinyPNG][7] to reduce file size even further.
+画像をできるだけ小さく保ち、[TinyPNG][7]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
 ## Playable Ad のチェックリスト:
 
@@ -32,7 +32,7 @@ Try to keep images as small as possible in dimensions and use tools like [TinyPN
 
 ## エクスポートの方法
 
-Follow the [setup steps][8] from the readme in the GitHub repo.
+GitHubリポジトリのREADMEにある[セットアップ手順][8]に従ってください。
 
 ### 単独HTML
 
@@ -68,7 +68,7 @@ npm run one-page
 
 ### テスト方法
 
-Follow the steps [here][10] to create a Facebook ad and at the time where the files for the ad are uploaded, there is an opportunity to test within the manager.
+Facebook広告を作成する手順[こちら][10]に従い、広告用のファイルがアップロードされるタイミングで、マネージャー内でテストすることができます。
 
 ![Test Ad][11]
 
