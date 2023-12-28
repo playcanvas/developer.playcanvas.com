@@ -12,8 +12,9 @@ position: 1
 
 ## ツールバー
 
-<img loading="lazy" src="/images/user-manual/editor/menus-and-toolbar/toolbar.png" style="padding-right: 20px; float: left;" width="44">
+![Toolbar][2]
 
 ツールバーには、よく使われるコマンドが簡単にアクセスできるようになっています。中でも最も便利なのは「ランチボタン」です。「ランチボタン」をクリックすることで、別のブラウザタブにゲームインスタンスを開始し、シーンを読み込むことができます。その後、すぐにプレイテストを開始することができます。ライブ実行中のゲームインスタンスで値を編集する方法については、属性エディタのセクションを参照してください。
 
 [1]: /images/user-manual/editor/menus-and-toolbar/menu.png
+[2]: /images/user-manual/editor/menus-and-toolbar/toolbar.png

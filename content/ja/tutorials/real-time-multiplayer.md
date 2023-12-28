@@ -105,11 +105,11 @@ socket.on ('playerJoined', function (name) {
 
 このデモでは、リアルタイムマルチプレイヤーでプレイヤーが移動するようにしたいため、環境を作成する必要があります。グラウンドとして使用するエンティティを作成し、Collision (ボックス形状) とStaticタイプのRigidBodyを追加します。以下は、グラウンドエンティティの設定です：
 
-<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360">
+<img loading="lazy" src="/images/tutorials/multiplayer/ground_entity.png" width="360" />
 
 次に、操作するプレイヤーを作成する必要があります。新しいカプセルを作成し、 `Player` と呼びます。ダイナミックなリジッドボディと衝突ボックスを追加し、リジッドボディの設定を以下の画像のように変更します。
 
-<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360">
+<img loading="lazy" src="/images/tutorials/multiplayer/player_entity.png" width="360" />
 
 プレイヤーエンティティを複製し、 'Other' という名前に変更します。この新しいエンティティの `Enabled` ボックスをオフにして、最初は無効にします。これは、ゲーム内の他のプレイヤーをシミュレートするために使用するエンティティです。
 

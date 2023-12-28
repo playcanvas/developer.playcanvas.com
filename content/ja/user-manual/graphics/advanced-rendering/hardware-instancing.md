@@ -13,17 +13,6 @@ position: 5
 
 ## インスタンシングの使い方
 
-描画に使用するStandardMaterialでインスタンシングを有効にします。
-
-```javascript 
-var material = new pc.StandardMaterial();
-material.onUpdateShader = function(options) {
-    options.useInstancing = true;
-    return options;
-};
-material.update();
-```
-
 頂点バッファにインスタンスごとの行列を埋め込んで、レンダリングのためのワールド行列を提供します。
 
 ```javascript

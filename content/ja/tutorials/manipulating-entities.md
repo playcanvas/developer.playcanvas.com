@@ -17,9 +17,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186
 
 エンティティの移動や操作方法を理解する上で重要なのは、ローカル座標系とワールド座標系の理解です。ワールド座標系はすべてのエンティティで共有されており、固定された原点 `(0,0,0)` と固定された向きがあります。ワールド座標系では、`(0,1,0)` が上を向いています。ローカル座標系はエンティティ自体に対する相対的な座標系です。したがって、ローカル原点はエンティティの位置であり、向きはエンティティの向きに従います。
 
-<img loading="lazy" src="/images/tutorials/world.jpg" style="float:left;" alt="World co-ordinates">
-<img loading="lazy" src="/images/tutorials/local.jpg" style="float:right;" alt="Local co-ordinates">
-<div style="clear:both"></div>
+![World and Local Coordinate Systems](/images/tutorials/world-and-local.png)
 
 *ワールド座標系とローカル座標系*
 
@@ -27,7 +25,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186
 
 エンティティシステムを理解する上で重要な要素は、エンティティグラフまたはヒエラルキーです。エンティティはグラフノードの一種であり、親子関係を持ったグラフまたはヒエラルキーにまとめられます。各エンティティは1つの親を持ち、複数の子を持つことができます。子エンティティは親からの変換情報を継承します。エンティティのワールド変換行列は、ローカル変換を親エンティティのワールド変換行列と乗算することで計算されます。たとえば、子エンティティのローカル移動が`(1,0,0)`であり、親エンティティのローカル移動が`(0,1,0)`である場合、子エンティティのワールド位置は`(1,1,0)`になります。
 
-## 位置 (Position)
+## ポジション (Position)
 
 エンティティの位置を取得するには、下記のように書きます。
 
@@ -63,7 +61,7 @@ entity.translate(1, 0, 0);
 entity.translateLocal(0、0、1);
 ```
 
-## 向き (Orientation)
+## オリエンテーション (Orientation)
 
 エンティティの向きを設定するには、絶対回転を設定するか、増分回転を適用することができます。
 

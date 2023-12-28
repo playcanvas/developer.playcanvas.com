@@ -4,7 +4,7 @@ layout: shader-editor-page.hbs
 position: 2
 ---
 
-<img loading="lazy" src="/images/shader-editor/nodes-pane.png" style="float: right; padding: 20px; padding-top: 0px;">
+![ノードペイン][1]
 
 ノードペイン (Nodes Pane) は、グラフを構築するための組み込みノードをリスト表示します。ノードはカテゴリ別にサブセクションに分類されています。
 
@@ -17,6 +17,7 @@ position: 2
 | O | 出力ノードのみ表示
 | フィルター | ノードのリストを名前でさらに絞り込みます。 |
 
-ノードペインを使ってノードを作成する方法については、[グラフエディター][1]のドキュメントを参照してください。
+ノードペインを使ってノードを作成する方法については、[グラフエディター][2]のドキュメントを参照してください。
 
-[1]: /shader-editor/window-layout/graph-editor
+[1]: /images/shader-editor/nodes-pane.png
+[2]: /shader-editor/window-layout/graph-editor

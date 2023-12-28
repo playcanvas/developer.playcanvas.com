@@ -25,9 +25,9 @@ PlayCanvasでは、JavaScriptとGLSLを使用して独自のポストエフェ�
 
 ```javascript
 pc.extend(pc, function () {
-    // Constructor - Creates an instance of our post effect
+    // コンストラクタ (Constructor) - ポストエフェクトのインスタンスを作成
     var ExamplePostEffect = function (graphicsDevice, vs, fs) {
-        // this is the shader definition for our effect
+        // エフェクトのシェーダ定義
         this.shader = new pc.Shader(graphicsDevice, {
             attributes: {
                 aPosition: pc.SEMANTIC_POSITION
@@ -37,22 +37,21 @@ pc.extend(pc, function () {
         });
     };
 
-    // Our effect must derive from pc.PostEffect
+    // このエフェクトはpc.PostEffectから派生しなければなりません
     ExamplePostEffect = pc.inherits(ExamplePostEffect, pc.PostEffect);
 
     ExamplePostEffect.prototype = pc.extend(ExamplePostEffect.prototype, {
-        // Every post effect must implement the render method which
-        // sets any parameters that the shader might require and
-        // also renders the effect on the screen
+        // すべてのポストエフェクトはシェーダが必要とするパラメータを設定し、
+        // さらに画面上でエフェクトをレンダリングするrenderメソッドを実装する必要があります
         render: function (inputTarget, outputTarget, rect) {
             var device = this.device;
             var scope = device.scope;
 
-            // Set the input render target to the shader. This is the image rendered from our camera
+            // レンダリングされた画像であるinputTargetをシェーダに設定します
             scope.resolve("uColorBuffer").setValue(inputTarget.colorBuffer);
 
-            // Draw a full screen quad on the output target. In this case the output target is the screen.
-            // Drawing a full screen quad will run the shader that we defined above
+            // 全画面の四角形を描画(drawFullscreenQuad) します。出力ターゲット (outputTarget) はスクリーンです
+            // 全画面の四角形を描画 (drawFullscreenQuad) すると、上で定義したシェーダが実行されます 
             pc.drawFullscreenQuad(device, outputTarget, this.vertexBuffer, this.shader, rect);
         }
     });
@@ -63,7 +62,7 @@ pc.extend(pc, function () {
 }());
 ```
 
-## 終了
+## まとめ
 
 これで、ポストエフェクトに必要なすべてのコンポーネントが揃いました。定義したExamplePostEffectのインスタンスを、カメラの[post effect queue][5]に追加するだけです。以下が完全なリストです。
 
@@ -146,7 +145,7 @@ PosteffectExample.prototype.initialize = function() {
 
 カスタムシェーダーの詳細については[こちら][6]を参照してください。
 
-[Custom Post Effects project here][7]はこちら。
+Custom Post Effectsは[こちら][7]。
 
 [1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 [2]: /api/pc.Shader.html

@@ -7,7 +7,7 @@ position: 3
 ## ルートURL
 
 ```none
-GET https://playcanvas.com/api/projects/:project_id/apps
+GET https://playcanvas.com/api/projects/:projectId/apps
 ```
 
 ## 説明
@@ -17,13 +17,13 @@ GET https://playcanvas.com/api/projects/:project_id/apps
 ## 例
 
 ```none
-curl -H "Authorization: Bearer fdslkjlk32j2l3kj2lkj2lkj323rr" https://playcanvas.com/api/projects/99999/apps
+curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/projects/{projectId}/apps
 ```
 
 ## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">project_id</span><p>プロジェクトのID。</p></div>
+<div class="parameter"><span class="param">projectId: number</span><p>The id of the project.</p></div>
 </div>
 
 ## レスポンススキーマ

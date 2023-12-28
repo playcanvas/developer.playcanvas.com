@@ -38,7 +38,7 @@ PlayCanvasアプリで最適なパフォーマンスを得るためのヒント�
 * Collisionメッシュはレンダリング用メッシュと同じ詳細度である必要はありません。 衝突用に解像度が低いメッシュを設定することをお勧めします。
 * 特にモバイルにおいて、シーン内の動的なRigidBodyの数を最小限に保つようにしてください。
 
-[1]: /user-manual/optimization/batching
+[1]: /user-manual/graphics/advanced-rendering/batching
 [2]: /user-manual/optimization/runtime-devicepixelratio
 [3]: /api/pc.Application.html#autoRender
 [4]: /api/pc.Application.html#renderNextFrame

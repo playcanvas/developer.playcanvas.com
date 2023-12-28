@@ -15,15 +15,15 @@ PlayCanvasは、ソース (Source) アセットがアップロードされると
 利用可能な複数のオプションがあり、インポートパイプラインの動作を調整することができます。これにより、ニーズに合わせて設定を行うことができます。
 
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="480">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/asset-tasks.png" width="480" />
 
 ### 関連アセットの検索 (Search related assets)
 
 ソース (Source) アセットを更新する場合、新しいバージョンのファイルをアップロードすることで、インポートパイプラインによって作成されたターゲットアセットの更新方法には2つの可能性があります。
 
 
-* **関連アセットの検索 (Search related assets)**が有効になっている場合、パイプラインはフォルダーに関係なくターゲットアセットを更新します。
-* **関連アセットの検索 (Search related assets) **が有効になっていない場合、パイプラインはターゲットアセットをソースアセットと同じフォルダーでのみ検索します。
+* **関連アセットの検索 (Search related assets)** が有効になっている場合、パイプラインはフォルダーに関係なくターゲットアセットを更新します。
+* **関連アセットの検索 (Search related assets) ** が有効になっていない場合、パイプラインはターゲットアセットをソースアセットと同じフォルダーでのみ検索します。
 
 したがって、この機能を有効にしておくと、ソース (Source)アセットとターゲット (Target) アセットをフォルダに整理し、ソース (Source)アセットを更新すると関連するすべてのアセットが更新されることが保証されます。
 
@@ -82,7 +82,7 @@ PlayCanvasは、ソース (Source) アセットがアップロードされると
 
 Draco圧縮を使用する場合は、プロジェクトにDraco WASMモジュールをインポートする必要があることに注意してください。インポートしてない場合には、モデルは読み込まれません。
 
-<img loading="lazy" src="/images/user-manual/assets/import-pipeline/draco-import-button.png" width="480">
+<img loading="lazy" src="/images/user-manual/assets/import-pipeline/draco-import-button.png" width="480" />
 
 ### FBXフォルダの作成 (Create FBX Folder)
 

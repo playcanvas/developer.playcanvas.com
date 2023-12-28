@@ -8,10 +8,9 @@ PlayCanvas の ammo.js 連携により、ammo.js API のすべての機能が公
 
 現在、PlayCanvas は ammo.js の [このビルド][1] を使用しています。このビルドが公開する API は [こちら][2] で確認できます。ammo.js の公式ドキュメントはありませんが、[Bullet Physics User Guide][3] を参照してください。
 
-## Joint Constraints
+## ジョイント・コンストレイント (Joint Constraints)
 
-現在、PlayCanvasには物理制約（物理ジョイントとも呼ばれる）を実装するコンポーネントはありません。ただし、ammo.jsのAPIを活用して、制約を実装するスクリプトを作成することは容易です。
-
+現在、物理的制約（物理ジョイントとも呼ばれる）を実装するPlayCanvasのコンポーネントは存在しません。しかし、ammo.jsのAPIを利用して制約を実装するスクリプトを作成するのは容易です。
 
 以下は、ポイント・トゥ・ポイント制約（基本的にはボールアンドソケットジョイント）のスクリプトです。
 
@@ -182,7 +181,7 @@ Ccd.prototype.initialize = function() {
 
 [こちら][5]でCCDを実装したプロジェクトを見つけることができます。
 
-これらは、ammo.js APIを直接使用するための2つの例です。さらに以下のような追加の機能を実装するためにも使用することができます。
+これらは、ammo.js APIを直接使用する例のほんの一部です。これを利用すると、他の機能も実装することができます。
 
 * Compound collision shapes
 * Soft body simulation

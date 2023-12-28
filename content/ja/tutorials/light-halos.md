@@ -25,7 +25,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 ### マテリアル (Material)
 
-<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600">
+<img loading="lazy" src="/images/tutorials/intermediate/light-halos/material.png" height="600" />
 
 ライトハローのマテリアルでは、Emissiveスロットにblobテクスチャが使用されています。ハローの色を設定するには、**tint**プロパティを使用します。また、不透明度スロットでブレンディングを有効にし、**Color Channel**を**R**に設定してもblobテクスチャが使用されます。
 

@@ -6,7 +6,7 @@ position: 8
 
 カスタムローディング画面を作成する場合は、[Scene Settings][1] に移動して、*Loading Screen* セクションの**Create Default**をクリックします。有効なローディング画面スクリプトがすでにある場合は、ローディング画面パネルにドラッグアンドドロップするか、**Select Existing**をクリックして選択できます。
 
-<img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png">
+<img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
 
 **Create Default** をクリックすると、いくつかのデフォルトコンテンツを持つ新しいスクリプトが作成されます。ローディング画面を変更したい場合は、そのスクリプトを編集できます。以下はデフォルトスクリプトの例です。
 

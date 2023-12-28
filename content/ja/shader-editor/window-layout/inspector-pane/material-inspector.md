@@ -4,11 +4,11 @@ layout: shader-editor-page.hbs
 position: 3
 ---
 
-<img loading="lazy" src="/images/shader-editor/inspector-pane-material.png" style="float: right; padding: 20px; padding-top: 0px;">
+![マテリアルインスペクター][1]
 
 マテリアルインスペクターは、マテリアルの設定が構成される場所です。
 
-マテリアルのインスペクターにアクセスするには、[アセットペイン][1]で選択します。
+マテリアルのインスペクターにアクセスするには、[アセットペイン][2]で選択します。
 
 Basic、Render States、Parametersの3つのセクションがあります。
 
@@ -20,7 +20,7 @@ Basic、Render States、Parametersの3つのセクションがあります。
 
 ### Render States
 
-- Blend Mode - ブレンドモードのタイプ。詳細は[こちら][2]を参照してください。
+- Blend Mode - ブレンドモードのタイプ。詳細は[こちら][3]を参照してください。
 - Alpha Test - (まだサポートされていません)。アルファテストの値を指定します。
 - Cull Mode - フェイスカリングモード。
 - Depth Test - レンダリング時に深度テストを有効化します。
@@ -32,6 +32,6 @@ Basic、Render States、Parametersの3つのセクションがあります。
 
 パラメーターセクションには、グラフに配置されたパラメーターノードがリストされます。名前とタイプは、グラフノード自体から取得されます。
 
-[1]: /shader-editor/window-layout/assets-pane
-[2]: /api/pc.Material.html#blendType
-[3]: /images/shader-editor/inspector-pane-material.png
+[1]: /images/shader-editor/inspector-pane-material.png
+[2]: /shader-editor/window-layout/assets-pane
+[3]: /api/pc.Material.html#blendType

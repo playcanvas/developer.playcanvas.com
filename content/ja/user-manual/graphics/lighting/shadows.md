@@ -12,7 +12,7 @@ PlayCanvasエンジンは、シャドウマッピングと呼ばれるシャド�
 
 ## シャドウの有効化
 
-<img loading="lazy" src="/images/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480">
+<img loading="lazy" src="/images/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480" />
 
 デフォルトでは、PlayCanvasではシャドウキャストは無効になっています。自分で明示的に有効にする必要があります。幸いなことに、シャドウの有効化は簡単です。まず、シーンでシャドウをキャストするライトを特定します。 Hierarchyでライトを選択し、Inspectorパネルでプロパティを編集します。各ライトには「Cast Shadows」というオプションがあります。このオプションをチェックすると、シーン内のシャドウキャストグラフィカルオブジェクトにシャドウが生成されます。
 

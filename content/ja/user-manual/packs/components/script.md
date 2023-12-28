@@ -10,13 +10,13 @@ Scriptコンポーネントは、コンポーネントパネルの右上のト�
 
 ![Scriptコンポーネント][1]
 
-新しいスクリプトを作成するには、Assetsパネルの<span class="font-icon" style="font-size: 18px">&#58468;</span>ボタンをクリックし、New Scriptを選択します。次に、ポップアップでスクリプトの名前を入力してEnterキーを押します。
+新しいスクリプトを作成するには、Assetsパネルの **`+`** ボタンをクリックし、New Scriptを選択します。次に、ポップアップでスクリプトの名前を入力してEnterキーを押します。
 
-<img loading="lazy" src="/images/user-manual/scenes/components/new-script.jpg">
+<img loading="lazy" src="/images/user-manual/scenes/components/new-script.jpg" />
 
 その後、新しいスクリプトをScriptコンポーネントにドラッグ&ドロップするか、ScriptコンポーネントのインスペクタでーAdd ScriptボタンをクリックしてAssetsパネルから選択します。
 
-PlayCanvasコードエディタでスクリプトを編集するには、リンクされたスクリプト名をクリックするか、Assetsパネルからスクリプトを選択して Edit をクリックします。
+PlayCanvasコードエディターでスクリプトを編集するには、リンクされたスクリプト名をクリックするか、Assetsパネルからスクリプトを選択して Edit をクリックします。
 
 ## スクリプトインターフェース
 

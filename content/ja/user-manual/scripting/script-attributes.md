@@ -34,9 +34,11 @@ MyScript.attributes.add('names', {
 
 ## エディター上で属性を使用する
 
-<img loading="lazy" src="/images/user-manual/scripting/script-attributes.jpg" style="width: 300px; float: right; padding: 20px; padding-top: 0px;">
+![スクリプト属性][1]
 
-属性を宣言したら、Editor がスクリプト属性を公開できるようにコードをPARSEする必要があります。属性が変更された場合、属性を手動で更新する場合はPARSEボタン<img loading="lazy" src="/images/user-manual/scripting/parse-button.jpg" style="display: inline; vertical-align: middle;">をクリックしてください。
+属性を宣言したらEditorは、スクリプトの属性を露出させるためにコードをパースする必要があります。属性が変更された場合は、手動で属性を更新する必要があります。パースボタンをクリックすることができます。
+
+![Parse Button][2]
 
 ## コード内で属性にアクセスする
 
@@ -68,7 +70,7 @@ MyScript.prototype.initialize = function () {
 
 ## 属性のタイプ
 
-属性を宣言する際は、その属性のタイプも指定する必要があります。これにより、エディターが属性を編集するための関連コントロールを表示できます。ほとんどのタイプは自己説明的ですが、例えば `boolean` 、 `number` 、`string`などです。以下にさらに詳しい説明が必要な属性例を示します。詳細については、[属性リファレンス][1] を参照してください。
+属性を宣言する際は、その属性のタイプも指定する必要があります。これにより、エディターが属性を編集するための関連コントロールを表示できます。ほとんどのタイプは自己説明的ですが、例えば `boolean` 、 `number` 、`string`などです。以下にさらに詳しい説明が必要な属性例を示します。詳細については、[属性リファレンス][3] を参照してください。
 
 ### Entity属性
 
@@ -161,6 +163,7 @@ MyScript.attributes.add('gameConfig', {
 また、編集可能なオブジェクトの配列を作成するために、JSON属性の配列を宣言することも可能です。他の属性タイプと同様に、JSON属性を定義する際に `array: true` を追加するだけです。
 
 以下は、スクリプト内で上記の属性にアクセスする例です。
+
 ```javascript
 MyScript.prototype.update = function (dt) {
     if (this.gameConfig.godMode) {
@@ -173,4 +176,6 @@ MyScript.prototype.update = function (dt) {
 
 *注意: 現在、JSON属性を他のJSON属性の子として定義することはサポートしていません。JSON属性を定義する際には1レベルの深さまでしか設定できません。*
 
-[1]: /api/pc.ScriptAttributes.html
+[1]: /images/user-manual/scripting/script-attributes.jpg
+[2]: /images/user-manual/scripting/parse-button.jpg
+[3]: /api/pc.ScriptAttributes.html

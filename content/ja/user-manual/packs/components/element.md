@@ -72,4 +72,4 @@ Image Elementは、Textureアセットまたは単色を使用して画像を表
 [6]: /user-manual/user-interface/elements/#anchor
 [7]: /user-manual/user-interface/elements/#pivot
 [8]: /user-manual/graphics/layers
-[9]: /user-manual/optimization/batching
+[9]: /user-manual/graphics/advanced-rendering/batching

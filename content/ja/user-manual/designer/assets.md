@@ -51,10 +51,10 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 **Tags** - タグとその組み合わせから検索するには、大括弧`[ ]`にタグを入力します。単純なクエリ演算子：AND, ORはクエリを文字列の配列、または文字列を持つ他の配列として表現することによって可能になります。クエリのロジックは、 `AssetsRegistry`の[`findByTag`][7]と同じです。
 いくつかの例を示します：
 
-`[ level-1 ]` - `level-1`によってタグ付けされたすべてのアセットを返します。
-`[ level-1, level-2 ]` -  `level-1 OR level-2`によってタグ付けされたすべてのアセットを返します。
-`[ [ level-1, monster ] ]` - `level-1 AND monster`によってタグ付けされたすべてのアセットを返します。 角括弧の数に注意してください。
-`[ [ level-1, monster ], [ level-2, monster ] ]` -  `(level-1 AND monster) OR (level-2 AND monster)`によってタグ付けされたすべてのアセットを返します。
+- - `[ level-1 ]` - `level-1`によってタグ付けされたすべてのアセットを返します。
+- - `[ level-1, level-2 ]` - `level-1 OR level-2`によってタグ付けされたすべてのアセットを返します。
+- - `[ [ level-1, monster ] ]` - `level-1 AND monster`によってタグ付けされたすべてのアセットを返します。 角括弧の数に注意してください。
+- - `[ [ level-1, monster ], [ level-2, monster ] ]` - `(level-1 AND monster) OR (level-2 AND monster)`によってタグ付けされたすべてのアセットを返します。
 
 ## ドラッグ＆ドロップ
 
@@ -72,27 +72,27 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 プロジェクト間でアセットまたは複数のアセットをコピーするには、アセットを選択し、右クリックしてコンテキストメニューを表示し、 'Copy' を選択します。読み取り専用のプロジェクトの場合、コンテキストメニューが使用できない場合は、代わりにホットキーCtrl/Cmd + Cを使用することもできます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-copy.png" alt="Right click copy menu" width="500" />
 
 アセットをコピーしたいプロジェクトで、アセットパネルを右クリックし、 'Paste' を選択します。Ctrl/Cmd + Vのホットキーを使用することもできます。これにより、アセットがコピー先のプロジェクトに貼り付けられます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste.png" alt="Right click paste menu" width="500" />
 
 アセットのコピーと貼り付けでは、アセットに関連する依存関係もコピーされます。例えば、モデルが2つのマテリアルを参照し、それらのマテリアルが一連のテクスチャを参照している場合、それらの依存関係もコピーされます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/copy-and-paste-model-with-dependencies.png" alt="Model example" width="100%" />
 
 別のプロジェクトにModelアセットをコピー＆ペーストする場合、そのアセットの依存関係も一緒にコピーされます。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-reference-assets.png" alt="Pasted referenced assets" width="100%" />
 
 デフォルトでは、フラットなヒエラルキーで貼り付けられます。もしフォルダ構造を維持したい場合は、コンテキストメニューが開かれたときにShiftキーを押し続けると、'Paste (keep folders)' というオプションが表示されます。これにより、貼り付け先のフォルダをルートフォルダとしてフォルダ構造を維持しようとします。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/right-click-paste-keep-folders.png" alt="Right click paste (keep folders) menu" width="500" />
 
 以下のように、フォルダ構造が保持された結果となります。
 
-<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%">
+<img loading="lazy" src="/images/user-manual/editor/assets-panel/pasted-assets-keep-folders.png" alt="Pasted referenced assets with folders" width="100%" />
 
 一般的には、再利用可能なライブラリやアセットにこの機能を使用する場合は、他のプロジェクトに簡単にコピー＆ペーストできるよう、ルートレベルのフォルダに収めることをおすすめします。これにより、プロジェクトのフォルダ構造がシンプルで整理された状態を保つことができます。
 

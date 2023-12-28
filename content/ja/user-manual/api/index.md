@@ -123,10 +123,15 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 ## レート制限
 
-REST APIへの呼び出しにはレート制限があります。リクエストに応じてさまざまなレート制限があります。
+Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits).
+There are different rate limits depending on the request:
 
-* **通常:** 通常のレート制限では、1分あたり120リクエストが許可されます。
-* **strict:** strictのレート制限では、1分あたり5リクエストが許可されます。
+| Rate Limit Type | 説明               | Limit for free accounts          | Limit for personal/org accounts   |
+|-----------------|---------------------------|-------------------------------|--------------------------------|
+| 法線 (Normal)          | The normal rate limit     | 120 requests/minute    | 240 requests/minute     |
+| Strict          | The strict rate limit     | 5 requests/minute      | 10 requests/minute      |
+| アセット (Asset)          | The assets rate limit     | 60 requests/minute     | 120 requests/minute     |
+
 
 APIの呼び出し回数を調整するために、次のヘッダがレスポンスに含まれます。
 

@@ -10,16 +10,16 @@ position: 25
 
 エンティティに**コンポーネント**を追加するには、エンティティを選択して、**インスペクター**で **Add Component** をクリックするか、エンティティを右クリックし、Add Component コンテキストメニューからコンポーネントを選択してください。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/packs/components/)
+[詳細を見る](/user-manual/packs/components/)
 
 
 ## スクリプトを追加するには?
 
-<img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif">
+<img src="https://playcanvas.com/static-assets/instructions/add-new-script.gif" />
 
 JavaScriptを使用してエンティティの動作を制御できます。 エンティティを選択し、スクリプトコンポーネントを追加し、新しいスクリプトアセットを作成してください。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/scripting/creating-new/)
+[詳細を見る](/user-manual/scripting/creating-new/)
 
 
 
@@ -27,39 +27,39 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 シーンの背景色を変更するには、シーンのカメラの Clear Color プロパティを更新する必要があります。
 
-または、シーンに[スカイボックス](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/)を追加することもできます。
+または、シーンに[スカイボックス](/user-manual/assets/cubemaps/)を追加することもできます。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/packs/components/camera/)
+[詳細を見る](/user-manual/packs/components/camera/)
 
 
 
 ## モデルのマテリアルを変更するには?
 
-<img src="https://playcanvas.com/static-assets/instructions/change_material.gif">
+<img src="https://playcanvas.com/static-assets/instructions/change_material.gif" />
 
 3Dモデルのすべての表面は、**マテリアル**を使用してレンダリングされます。 マテリアルは、色、光沢、凸凹などのプロパティを定義します。
 
 新しいマテリアルを作成し、それをモデルにドラッグ&ドロップするか、既存のマテリアルを選択してインスペクターでプロパティを編集することができます。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/assets/materials/)
+[詳細を見る](/user-manual/assets/materials/)
 
 
 
 ## キューブマップを作成するには?
 
-<img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_cubemap.gif" />
 
 キューブマップは、6つのテクスチャアセットから構成される特殊なタイプのテクスチャアセットです。各テクスチャは、キューブの各面を表します。
 
 キューブマップを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして**New Cubemap**を選択し、キューブマップインスペクターに6つのテクスチャをドラッグします。物理ベースのレンダリングを活用するには、6つのテクスチャを設定した後に**Prefilter**をクリックする必要があります。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/)
+[詳細を見る](/user-manual/assets/cubemaps/)
 
 
 
 ## エンティティを作成するには?
 
-<img src="https://playcanvas.com/static-assets/instructions/new_entity.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_entity.gif" />
 
 ヒエラルキーパネルの<span class="pc-icon">&#57632;</span> Addボタンをクリックするか、エンティティを右クリックして**New Entity**メニュー項目を使用することで、新しいエンティティを作成できます。
 
@@ -69,7 +69,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 エンティティに**Light**コンポーネントを追加することで、ライトを作成できます。また、エンティティを右クリックしてNew Entity / Directional Lightを選択して、新しい方向性ライトを作成することもできます。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/packs/components/light/)
+[詳細を見る](/user-manual/packs/components/light/)
 
 
 ## マテリアルを作成するには?
@@ -78,7 +78,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 マテリアルを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして、**New Material**を選択します。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/assets/materials/)
+[詳細を見る](/user-manual/assets/materials/)
 
 
 
@@ -92,21 +92,21 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## ボックスや球体のような形状を作成するには?
 
-<img src="https://playcanvas.com/static-assets/instructions/new_box.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_box.gif" />
 
 エンティティに**Render Component**を追加し、そのタイプを望む形状に変更することで、ボックス、球体などの原始的な形状を追加できます。
 
 他の形状についても同様に、エンティティを右クリックしてNew Entity/Boxを選択することができます。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/packs/components/render/)
+[詳細を見る](/user-manual/packs/components/render/)
 
 
 
 ## スカイボックスを作成するには?
 
-シーンにスカイボックスを作成するには、まず[Cubemapアセット](http://developer.playcanvas.com/en/user-manual/assets/cubemaps/)を作成する必要があります。その後、Cubemapを3Dビューポートにドラッグアンドドロップするか、Scene Settingsに移動してSkyboxフィールドにCubemapをドラッグします。
+シーンにスカイボックスを作成するには、まず[Cubemapアセット](/user-manual/assets/cubemaps/)を作成する必要があります。その後、Cubemapを3Dビューポートにドラッグアンドドロップするか、Scene Settingsに移動してSkyboxフィールドにCubemapをドラッグします。
 
-[詳細を見る](https://developer.playcanvas.com/en/user-manual/designer/settings/#skybox)
+[詳細を見る](/user-manual/designer/settings/#skybox)
 
 
 
@@ -131,7 +131,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## アニメーションを再生するには?
 
-3Dモデルのアニメーションを再生するには、 [モデルコンポーネント](https://developer.playcanvas.com/en/user-manual/packs/components/model/)と[アニメーションコンポーネント](https://developer.playcanvas.com/en/user-manual/packs/components/animation/)を持つエンティティを作成します。 **モデルコンポーネント**がモデルをレンダリングして、 **アニメーションコンポーネント**がアニメーションを再生します。
+3Dモデルのアニメーションを再生するには、 [モデルコンポーネント](/user-manual/packs/components/model/)と[アニメーションコンポーネント](/user-manual/packs/components/animation/)を持つエンティティを作成します。 **モデルコンポーネント**がモデルをレンダリングして、 **アニメーションコンポーネント**がアニメーションを再生します。
 
 モデルをレンダリングするには、モデルコンポーネントのAssetフィールドにモデルアセットをドラッグします。アニメーションを再生するには、アニメーションコンポーネントのAssetフィールドにアニメーションアセットをドラッグします。
 
@@ -139,18 +139,18 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## サウンドを再生するにはどうすればよいですか?
 
-サウンドを再生するには、Entityに[Sound component](https://developer.playcanvas.com/ja/user-manual/packs/components/sound/)を追加する必要があります。その後、[Audio assets](https://developer.playcanvas.com/ja/user-manual/assets/audio/) を再生するスロットを作成することができます。スロットを追加して、オーディオアセットをアセットフィールドにドラッグアンドドロップします。サウンドを聞くためには、[AudioListener component](https://developer.playcanvas.com/ja/user-manual/packs/components/audiolistener/)をEntityに追加する必要があります。通常はカメラEntityに追加します。
+サウンドを再生するには、Entityに[Sound component](/user-manual/packs/components/sound/)を追加する必要があります。その後、[Audio assets](/user-manual/assets/audio/) を再生するスロットを作成することができます。スロットを追加して、オーディオアセットをアセットフィールドにドラッグアンドドロップします。サウンドを聞くためには、[AudioListener component](/user-manual/packs/components/audiolistener/)をEntityに追加する必要があります。通常はカメラEntityに追加します。
 
 オーディオアセットは、コンピュータからAssetsパネルにオーディオファイルをドラッグアンドドロップすることで作成できます。
 
-[チュートリアルを見る](https://developer.playcanvas.com/ja/tutorials/basic-audio/)
+[チュートリアルを見る](/tutorials/basic-audio/)
 
 
 
 
 ## コンポーネントを削除するにはどうすればよいですか?
 
-<img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg">
+<img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg" />
 
 コンポーネントを削除するには、Entityを選択して、Inspectorのコンポーネントのタイトルの横にある**<span class="pc-icon">&#57636;</span> Delete** ボタンをクリックします。
 
@@ -158,17 +158,17 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## 3Dモデルをレンダリングするには?
 
-<img src="https://playcanvas.com/static-assets/instructions/new_model.gif">
+<img src="https://playcanvas.com/static-assets/instructions/new_model.gif" />
 
 3Dモデルをレンダリングするには、エンティティに**Modelコンポーネント**を追加し、アセットフィールドに**Modelアセット**をドラッグ＆ドロップする必要があります。または、アセットパネルからモデルアセットを3Dビューポートにドラッグ＆ドロップすることもできます。
 
-[詳細を見る](https://developer.playcanvas.com/ja/user-manual/packs/components/model/)
+[詳細を見る](/user-manual/packs/components/model/)
 
 
 
 ## Entityを移動/回転/拡大縮小するにはどうすればよいですか?
 
-<img src="https://playcanvas.com/static-assets/instructions/transform.gif">
+<img src="https://playcanvas.com/static-assets/instructions/transform.gif" />
 
 Entityを移動するには、それを選択して、**<span class="pc-icon">&#57617;</span> Translate tool**を使用して移動します。回転させるには、**<span class="pc-icon">&#57619;</span> Rotate tool**を使用し、拡大縮小するには、**<span class="pc-icon">&#57618;</span> Scale tool**を使用します。
 
@@ -180,16 +180,16 @@ Translate / Rotate / Scaleツールを切り替えるには、それぞれ1/2/3�
 
 アセットをアップロードするには、コンピュータからファイルをAssetsパネルにドラッグアンドドロップするだけです。ファイルはサーバーで処理され、Assetsパネルにすぐに表示されます。
 
-[詳細を見る](https://developer.playcanvas.com/ja/user-manual/assets/importing/)
+[詳細を見る](/user-manual/assets/importing/)
 
 
 ## 物理を使用するには?
 
-Entityに物理特性を与えるには、 [Collision component](https://developer.playcanvas.com/ja/user-manual/packs/components/collision/) と [RigidBody component](https://developer.playcanvas.com/ja/user-manual/packs/components/rigidbody/) を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
+Entityに物理特性を与えるには、 [Collision component](/user-manual/packs/components/collision/) と [RigidBody component](/user-manual/packs/components/rigidbody/) を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
 
-デフォルトの [gravity](https://developer.playcanvas.com/en/user-manual/designer/settings/#gravity) を変更することができます。
+デフォルトの [gravity](/user-manual/designer/settings/#gravity) を変更することができます。
 
-[チュートリアルを見る](https://developer.playcanvas.com/ja/tutorials/collision-and-triggers/)
+[チュートリアルを見る](/tutorials/collision-and-triggers/)
 
 
 
@@ -197,4 +197,5 @@ Entityに物理特性を与えるには、 [Collision component](https://develop
 
 リアルタイムシャドウは、**Cast Shadows**が有効になっている各光源に対してレンダリングされます。シャドウを有効にするには、Lightコンポーネントを持つEntityを選択して、Cast Shadowsを有効にします。また、シーン内の任意のModelコンポーネントでもCast Shadowsを有効にする必要があります。
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/graphics/lighting/shadows/)
+[詳細を見る](/user-manual/graphics/lighting/shadows/)
+

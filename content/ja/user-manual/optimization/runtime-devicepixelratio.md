@@ -1,5 +1,5 @@
 ---
-title: デバイスピクセル比率( (DPI)
+title: デバイスピクセル比率 (DPI)
 layout: usermanual-page.hbs
 position: 6
 ---

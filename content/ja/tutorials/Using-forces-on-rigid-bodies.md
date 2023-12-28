@@ -70,7 +70,7 @@ RigidBodyの詳細については、[CollisionのAPIページ][6]、[pcの名前
 
 一定のバランスのとれていない力を継続的に適用することを防ぎ、(物体が継続的に加速して制御を失うことを防ぐために)エディタ設定を行いました。立方体の属性エディタで角速度減衰を有効にし、立方体とフロアの両方で摩擦を有効にしました。ここでは線形減衰は使用されていませんが、空気抵抗をシミュレートするために使用でき、必要に応じて減速をコードで適用できます。
 
-<img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings">
+<img loading="lazy" src="/images/tutorials/forces/rigidbody_settings.jpg" alt="rigidbody_settings" />
 
 ## RigidBodyのテレポート
 

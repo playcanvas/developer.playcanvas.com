@@ -18,6 +18,8 @@ PlayCanvasにTextureアセットをインポートする方法は3つありま�
 
 * JPG
 * PNG
+* AVIF
+* WEBP
 * GIF
 * TGA
 * BMP
@@ -25,7 +27,7 @@ PlayCanvasにTextureアセットをインポートする方法は3つありま�
 * HDR
 * EXR
 
-インポートされたJPGおよびPNGファイルは,元のフォーマットのままとなります。
+Imported JPG, PNG, AVIF, WebP and GIF files remain in their original format.
 
 GIF、TGA、BMP、TIF画像タイプは、インポート時にJPGまたはPNGに変換されます。インポートされた画像に透過度がある場合は、PNGに、そうでない場合はJPGに変換されます。
 
@@ -65,13 +67,13 @@ Anisotropyが増加するにつれて、GPUでテクスチャをサンプリン�
 
 たとえば、2020年のMacBook Pro 16インチの場合、Chromeで最大16384x16384までサポートされていることがわかります。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" style="width: 600px;">
+<img loading="lazy" src="/images/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" width="600" />
 
 一方、Samsung S7モバイルデバイスでは、4096x4096のみサポートされています。
 
-<img loading="lazy" src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" style="width: 600px;">
+<img loading="lazy" src="/images/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" width="600" />
 
-エンジンがWebGLに報告された最大テクスチャサイズを超えるテクスチャを使用しようとした場合、実行時にそのテクスチャをこの最大サイズに縮小します。これは、画像(PNG、JPG、GIF)からロードされたテクスチャに対してのみ行われます。圧縮されたテクスチャは実行時にリサイズできず、デバイスのオーバーサイズな場合は描画に失敗します。
+If the engine attempts to utilize a texture that exceeds the max texture size reported by WebGL, it will resize it down to this maximum size at runtime. Note that this is only done for texture loaded from images (PNG, JPG, AVIF, WebP, GIF). Compressed textures cannot be resized at runtime and will simply fail to render if they are too large for the device.
 
 実行時にサイズを縮小しない場合は、2020年10月23日現在、4096x4096が非常に広範にサポートされていますし、一般的には2048x2048がどこでも動作保証されています。
 
