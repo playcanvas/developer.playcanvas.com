@@ -64,7 +64,7 @@ const config = {
         title: 'Docs',
         logo: {
           alt: 'PlayCanvas Logo',
-          src: 'img/logo.svg',
+          src: 'img/playcanvas.png',
         },
         items: [
           {
