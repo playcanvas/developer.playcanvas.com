@@ -35,10 +35,13 @@ When you create a new Cordova project, it generates a skeleton web app in a fold
 
 If you're building on the Engine without the Editor, copy your app files into `www` such that your `index.html` file is in the root.
 
-<div class="alert alert-info">
-    <div>Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.</div><br />
-    <div>We recommend using a tool like <a href="https://base64.guru/converter/encode/audio" target="_blank">Base64 Guru</a> or automating this via a script.</div>
-</div>
+:::note
+
+Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.
+
+We recommend using a tool like [Base64 Guru](https://base64.guru/converter/encode/audio) or automating this via a script.
+
+:::
 
 If you have built your app in the PlayCanvas Editor, we have an official external tool that will build and prepare the project to be most compatible with Cordova. This includes automating tasks such as converting the audio files to Base64 so that they can be loaded on iOS.
 

@@ -9,9 +9,11 @@ PlayCanvas supports importing models with their meshes as a hierarchy of entitie
 
 ## How to enable
 
-<div class="alert alert-info">
-    This is now enabled by default for new projects.
-</div>
+:::note
+
+This is now enabled by default for new projects.
+
+:::
 
 Open the 'Project Settings'
 

@@ -8,7 +8,11 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4060
 
 *Click on the various buttons to try out different sound effects.*
 
-<div class="alert alert-info">This tutorial requires Web Audio API support.</div>
+:::note
+
+This tutorial requires Web Audio API support.
+
+:::
 
 ## Using The Web Audio API
 

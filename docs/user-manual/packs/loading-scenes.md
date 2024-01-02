@@ -70,9 +70,11 @@ Scenes are separate from [assets][assets] and have different properties and APIs
 
 Scenes are represented by [Scene Registry Items][sceneregistryitem-api] that are stored in the [Scene Registry][sceneregistry-api] which can be accessed through [Application][application-sceneregistry-api] object. Through the Scene Registry, you can find the Scene Registry Item by the name of the scene in the Editor and use it to load the scene hierarchy or settings.
 
-<div class="alert alert-info">
-The <a href="/api/pc.Application.html#root">application root node</a> is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
-</div>
+:::note
+
+The [application root node](/api/pc.Application.html#root) is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
+
+:::
 
 There are two APIs to load the scene hierarchy and settings:
 

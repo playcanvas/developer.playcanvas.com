@@ -4,7 +4,11 @@ tags: [multiplayer, networking]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
-<div class="alert alert-info">This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> and <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.</div>
+:::note
+
+This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for [Colyseus](/tutorials/real-time-multiplayer-colyseus) and [Photon](/tutorials/real-time-multiplayer-photon).
+
+:::
 
 <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
 
@@ -54,12 +58,15 @@ This server will simply log a message every time someone connects. This should b
 Create a new project on PlayCanvas. We first need to include the Socket.io client JS library, as an external script.
 
 Go to project settings.
+
 ![Project settings][12]
 
 Find and open 'External Scripts'.
+
 ![External scripts settings][13]
 
 Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
+
 ![Project settings][14]
 
 

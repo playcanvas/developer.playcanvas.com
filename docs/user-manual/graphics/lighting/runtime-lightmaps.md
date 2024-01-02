@@ -24,9 +24,11 @@ There are multiple advantages to runtime lightmap generation:
 
 However, a disadvantage of runtime lightmap generation is that currently we do not support baking global illumination or some other advanced features of specialized baking tools.
 
-<div class="alert-info">
-    The use of <a href="/user-manual/optimization/batching">batching</a> is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
-</div>
+:::note
+
+The use of [batching](/user-manual/optimization/batching) is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+
+:::
 
 ## Setting Up Lights for Baking
 
