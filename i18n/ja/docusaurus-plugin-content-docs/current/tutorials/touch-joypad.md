@@ -1,7 +1,7 @@
 ---
 title: ジョイスティック操作
 layout: tutorial-page.hbs
-tags: input,ui
+tags: [input,ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1007506/2F5E56-image-75.jpg"
 ---
 

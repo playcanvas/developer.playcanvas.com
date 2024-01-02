@@ -1,7 +1,7 @@
 ---
 title: UI - リーダーボード
 layout: tutorial-page.hbs
-tags: ui
+tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
 ---
 

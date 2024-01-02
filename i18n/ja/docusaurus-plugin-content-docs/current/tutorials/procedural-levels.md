@@ -1,7 +1,7 @@
 ---
 title: プログラムでのステージの生成
 layout: tutorial-page.hbs
-tags: procedural
+tags: [procedural]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg"
 ---
 

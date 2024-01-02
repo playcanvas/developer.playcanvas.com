@@ -1,7 +1,7 @@
 ---
 title: シーンの完全な切り替え
 layout: tutorial-page.hbs
-tags: loading,scenes
+tags: [loading,scenes]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/691996/707412-image-75.jpg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Colyseusを使ったリアルタイムマルチプレイヤー
 layout: tutorial-page.hbs
-tags: multiplayer, networking
+tags: [multiplayer, networking]
 thumb: "https://avatars.githubusercontent.com/u/28384334?s=300&v=4"
 ---
 

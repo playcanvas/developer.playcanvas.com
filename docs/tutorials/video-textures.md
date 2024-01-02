@@ -1,7 +1,7 @@
 ---
 title: Video Textures
 layout: tutorial-page.hbs
-tags: video, textures
+tags: [video, textures]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405850/WEKRBI-image-75.jpg
 ---
 

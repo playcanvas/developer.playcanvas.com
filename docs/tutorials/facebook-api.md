@@ -1,7 +1,7 @@
 ---
 title: Facebook API
 layout: tutorial-page.hbs
-tags: facebook
+tags: [facebook]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405897/26D1D2-image-75.jpg
 ---
 

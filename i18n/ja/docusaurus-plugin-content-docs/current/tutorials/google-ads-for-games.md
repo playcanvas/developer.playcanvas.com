@@ -1,7 +1,7 @@
 ---
 title: Google H5広告ベータ版の収益化
 layout: tutorial-page.hbs
-tags: scripts, monetization, games
+tags: [scripts, monetization, games]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889020/CDC848-image-75.jpg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: ライトクッキーの設定
 layout: tutorial-page.hbs
-tags: lighting
+tags: [lighting]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg"
 ---
 

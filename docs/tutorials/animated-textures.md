@@ -1,7 +1,7 @@
 ---
 title: Animated Textures
 layout: tutorial-page.hbs
-tags: animation, textures
+tags: [animation, textures]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg
 ---
 

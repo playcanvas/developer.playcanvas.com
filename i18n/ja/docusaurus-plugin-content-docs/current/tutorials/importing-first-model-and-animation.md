@@ -1,7 +1,7 @@
 ---
 title: 最初のモデルとアニメーションのインポート方法
 layout: tutorial-page.hbs
-tags: animation,basics
+tags: [animation,basics]
 thumb: /images/tutorials/importing-first-model-and-animation/thumbnail.jpg
 ---
 

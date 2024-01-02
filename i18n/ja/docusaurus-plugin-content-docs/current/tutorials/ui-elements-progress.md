@@ -1,7 +1,7 @@
 ---
 title: UI - プログレスバー
 layout: tutorial-page.hbs
-tags: ui
+tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: ライトハローの作成
 layout: tutorial-page.hbs
-tags: lighting
+tags: [lighting]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
 ---
 

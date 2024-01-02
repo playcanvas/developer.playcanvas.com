@@ -1,7 +1,7 @@
 ---
 title: オーディオエフェクト
 layout: tutorial-page.hbs
-tags: audio
+tags: [audio]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg"
 ---
 

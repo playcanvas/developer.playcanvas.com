@@ -1,7 +1,7 @@
 ---
 title: アセットレジストリの使用方法
 layout: tutorial-page.hbs
-tags: loading, assets, basics
+tags: [loading, assets, basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
 ---
 

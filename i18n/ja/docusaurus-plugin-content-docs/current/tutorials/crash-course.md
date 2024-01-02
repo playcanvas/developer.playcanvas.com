@@ -1,7 +1,7 @@
 ---
 title: クラッシュコース - ゲーム作成入門
 layout: tutorial-page.hbs
-tags: games,basics,physics,ui
+tags: [games,basics,physics,ui]
 thumb: /images/tutorials/crash-course/crash-course-thumbnail.jpg
 ---
 

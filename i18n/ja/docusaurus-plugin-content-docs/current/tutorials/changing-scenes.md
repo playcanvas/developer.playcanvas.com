@@ -1,7 +1,7 @@
 ---
 title: シーンの切り替え方法
 layout: tutorial-page.hbs
-tags: loading,scenes,basics
+tags: [loading,scenes,basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/437633/BCF404-image-75.jpg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Real-time Multiplayer with Photon
 layout: tutorial-page.hbs
-tags: multiplayer, networking
+tags: [multiplayer, networking]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/926999/90AE0A-image-75.jpg
 ---
 

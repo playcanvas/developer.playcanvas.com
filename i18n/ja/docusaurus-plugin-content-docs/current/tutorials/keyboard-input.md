@@ -1,7 +1,7 @@
 ---
 title: キーボード入力の基礎
 layout: tutorial-page.hbs
-tags: input
+tags: [input]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
