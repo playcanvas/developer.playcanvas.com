@@ -1,38 +1,32 @@
 # PlayCanvas Developer Site
 
-This is source repository for the [PlayCanvas Developer Site](https://developer.playcanvas.com/). It is made up of static web content generated from Markdown files using [Metalsmith](https://metalsmith.io).
+This is source repository for the [PlayCanvas Developer Site](https://developer.playcanvas.com/). It is made up of static web content generated from Markdown files using [Docusaurus](https://docusaurus.io).
 
 ## How to build
 
-Building the site requires `node` and `npm`.
+Building the site requires an install of Node.js 18+.
 
     cd developer.playcanvas.com
-    npm install
+    npm i
     npm run build
 
 ## How to serve
 
-To serve the site locally:
+To serve the built site locally:
 
     npm run serve
 
-Now visit http://localhost:51000 in your browser.
+This will automatically open the built site in your browser.
 
-## Use 'watch' for quick iteration
+## Use 'start' for quick iteration
 
-The watch build command will automatically rebuild the site when changes are made in the `content` or `public` folders.
+The `start` build command will automatically rebuild the site when changes are made in the `docs`, `src` or `static` folders.
 
-    npm run watch
-
-## Update CSS from SCSS
-
-The site uses Sass to generate the CSS. To generate, run:
-
-    npm run sass
+    npm run start
 
 ## Update FAQ
 
-The User Manual on the developer site has a FAQ page which can be found at `content/en/user-manual/faq.md`. This is the only Markdown file which is generated from other files (located in the `faq` directory). If you would like to add additional FAQs, check them in to the `faq` directory and to regenerate `content/en/user-manual/faq.md` run:
+The User Manual on the developer site has a FAQ page which can be found at `docs/user-manual/faq.md`. This is the only Markdown file which is generated from other files (located in the `faq` directory). If you would like to add additional FAQs, check them in to the `faq` directory and to regenerate `docs/user-manual/faq.md` run:
 
     npm run faq
 
@@ -48,4 +42,4 @@ To scan for broken hyperlinks, run:
 
 ## Localization
 
-The Developer Site is translated via [Transifex](https://www.transifex.com/playcanvas/playcanvas-developer-site). When anything in `content/en` is updated, run `tx push`. Once translation acitivity on Transifex is complete, run `tx pull` and submit a PR with the updated language content. Instructions on setting up the Transifex CLI tool `tx` can be found [here](https://developers.transifex.com/docs/cli#installation). Note that the first time you push with `tx`, you will need to enter the Transifex developer key (contact an Admin of the Transifex project to obtain this).
+The Developer Site is translated via [Transifex](https://www.transifex.com/playcanvas/playcanvas-developer-site). When anything in `docs` is updated, run `tx push --silent`. Once translation acitivity on Transifex is complete, run `tx pull --silent` and submit a PR with the updated language content. Instructions on setting up the Transifex CLI tool `tx` can be found [here](https://developers.transifex.com/docs/cli#installation). Note that the first time you push with `tx`, you will need to enter the Transifex developer key (contact an Admin of the Transifex project to obtain this).
