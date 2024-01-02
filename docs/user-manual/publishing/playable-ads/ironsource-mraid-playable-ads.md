@@ -1,6 +1,5 @@
 ---
 title: ironSource Playable Ad (MRAID)
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

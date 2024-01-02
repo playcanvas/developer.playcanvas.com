@@ -1,6 +1,5 @@
 ---
 title: Ray Casting
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

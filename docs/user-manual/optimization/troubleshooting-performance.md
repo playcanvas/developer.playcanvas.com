@@ -1,6 +1,5 @@
 ---
 title: Troubleshooting Performance
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

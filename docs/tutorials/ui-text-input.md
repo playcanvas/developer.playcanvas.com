@@ -1,6 +1,5 @@
 ---
 title: User Interface - Text Input
-layout: tutorial-page.hbs
 tags: [ui]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1005906/36C2AF-image-75.jpg
 ---

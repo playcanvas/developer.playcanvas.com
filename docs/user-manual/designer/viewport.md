@@ -1,6 +1,5 @@
 ---
 title: Viewport
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

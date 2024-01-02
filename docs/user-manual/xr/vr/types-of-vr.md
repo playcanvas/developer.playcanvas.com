@@ -1,6 +1,5 @@
 ---
 title: Types of VR experiences
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

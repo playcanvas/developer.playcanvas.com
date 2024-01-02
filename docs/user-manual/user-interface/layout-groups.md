@@ -1,6 +1,5 @@
 ---
 title: Layout Groups
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

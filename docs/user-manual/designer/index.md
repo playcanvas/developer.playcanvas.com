@@ -1,6 +1,5 @@
 ---
 title: Editor
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

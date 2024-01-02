@@ -1,6 +1,5 @@
 ---
 title: Publishing
-layout: usermanual-page.hbs
 sidebar_position: 21
 ---
 

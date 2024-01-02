@@ -1,6 +1,5 @@
 ---
 title: Asset Viewers
-layout: usermanual-page.hbs
 sidebar_position: 19
 ---
 

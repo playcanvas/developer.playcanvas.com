@@ -1,6 +1,5 @@
 ---
 title: Texture Compression
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

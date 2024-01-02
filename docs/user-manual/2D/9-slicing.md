@@ -1,6 +1,5 @@
 ---
 title: 9-slicing
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

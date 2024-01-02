@@ -1,6 +1,5 @@
 ---
 title: REST API
-layout: usermanual-page.hbs
 sidebar_position: 22
 ---
 

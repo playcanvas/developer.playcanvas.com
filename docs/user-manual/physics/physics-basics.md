@@ -1,6 +1,5 @@
 ---
 title: Physics Basics
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

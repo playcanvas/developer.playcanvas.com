@@ -1,6 +1,5 @@
 ---
 title: Input
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 2D
-layout: usermanual-page.hbs
 sidebar_position: 17
 ---
 

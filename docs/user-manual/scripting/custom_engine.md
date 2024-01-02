@@ -1,6 +1,5 @@
 ---
 title: Using a Custom Engine
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 

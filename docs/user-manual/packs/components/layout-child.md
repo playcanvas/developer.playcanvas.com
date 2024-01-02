@@ -1,6 +1,5 @@
 ---
 title: Layout Child
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

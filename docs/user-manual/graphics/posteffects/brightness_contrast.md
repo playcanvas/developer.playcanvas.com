@@ -1,6 +1,5 @@
 ---
 title: Brightness-Contrast Effect
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

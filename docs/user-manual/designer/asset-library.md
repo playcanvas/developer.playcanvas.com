@@ -1,6 +1,5 @@
 ---
 title: Asset Library
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 

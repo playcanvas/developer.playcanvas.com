@@ -1,6 +1,5 @@
 ---
 title: Communication with web pages
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

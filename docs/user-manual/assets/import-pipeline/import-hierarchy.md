@@ -1,6 +1,5 @@
 ---
 title: Import Hierarchy
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

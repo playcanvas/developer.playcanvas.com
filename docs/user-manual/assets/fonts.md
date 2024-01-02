@@ -1,6 +1,5 @@
 ---
 title: Font
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

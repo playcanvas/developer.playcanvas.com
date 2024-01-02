@@ -1,6 +1,5 @@
 ---
 title: Assets Pane
-layout: shader-editor-page.hbs
 sidebar_position: 4
 ---
 

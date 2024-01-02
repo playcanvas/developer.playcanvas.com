@@ -1,6 +1,5 @@
 ---
 title: Alternatives to ammo.js
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

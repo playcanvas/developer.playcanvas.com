@@ -1,6 +1,5 @@
 ---
 title: Assets - Update asset
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 

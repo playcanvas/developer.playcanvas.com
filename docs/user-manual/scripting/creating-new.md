@@ -1,6 +1,5 @@
 ---
 title: Creating new scripts
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

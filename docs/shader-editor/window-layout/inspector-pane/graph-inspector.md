@@ -1,6 +1,5 @@
 ---
 title: Graph Inspector
-layout: shader-editor-page.hbs
 sidebar_position: 1
 ---
 

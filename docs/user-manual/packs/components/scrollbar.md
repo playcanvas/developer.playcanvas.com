@@ -1,6 +1,5 @@
 ---
 title: Scrollbar
-layout: usermanual-page.hbs
 sidebar_position: 17
 ---
 

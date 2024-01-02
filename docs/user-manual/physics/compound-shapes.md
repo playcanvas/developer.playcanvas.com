@@ -1,6 +1,5 @@
 ---
 title: Compound Shapes
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

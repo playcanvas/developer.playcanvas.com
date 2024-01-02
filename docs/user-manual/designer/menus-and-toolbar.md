@@ -1,6 +1,5 @@
 ---
 title: Menu and Toolbar
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

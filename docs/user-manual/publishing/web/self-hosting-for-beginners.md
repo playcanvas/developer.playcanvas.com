@@ -1,6 +1,5 @@
 ---
 title: Self-hosting for beginners
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

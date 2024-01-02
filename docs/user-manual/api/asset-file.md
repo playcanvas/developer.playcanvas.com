@@ -1,6 +1,5 @@
 ---
 title: Assets - Get Asset File
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

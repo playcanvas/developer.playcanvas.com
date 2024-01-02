@@ -1,6 +1,5 @@
 ---
 title: Graphs
-layout: shader-editor-page.hbs
 sidebar_position: 1
 ---
 

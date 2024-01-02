@@ -1,6 +1,5 @@
 ---
 title: User Interface Basics
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

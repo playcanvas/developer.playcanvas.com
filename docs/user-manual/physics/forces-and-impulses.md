@@ -1,6 +1,5 @@
 ---
 title: Forces and Impulses
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Finding Assets
-layout: usermanual-page.hbs
 sidebar_position: 18
 ---
 

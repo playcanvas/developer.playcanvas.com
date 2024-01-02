@@ -1,6 +1,5 @@
 ---
 title: Dashboard Header
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

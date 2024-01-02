@@ -1,6 +1,5 @@
 ---
 title: Sprite Editor
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

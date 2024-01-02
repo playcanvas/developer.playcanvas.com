@@ -1,6 +1,5 @@
 ---
 title: Compound Physics Shapes
-layout: tutorial-page.hbs
 tags: [physics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/688146/E92618-image-75.jpg
 ---

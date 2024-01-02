@@ -1,6 +1,5 @@
 ---
 title: Branches
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

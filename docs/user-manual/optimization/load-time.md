@@ -1,6 +1,5 @@
 ---
 title: Optimizing Load Time
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

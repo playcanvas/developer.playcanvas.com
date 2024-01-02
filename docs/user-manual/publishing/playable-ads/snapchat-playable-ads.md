@@ -1,6 +1,5 @@
 ---
 title: Snapchat Playable Ad
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

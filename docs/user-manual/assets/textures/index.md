@@ -1,6 +1,5 @@
 ---
 title: Texture
-layout: usermanual-page.hbs
 sidebar_position: 15
 ---
 

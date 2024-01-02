@@ -1,6 +1,5 @@
 ---
 title: Scenes - List scenes
-layout: usermanual-page.hbs
 sidebar_position: 14
 ---
 

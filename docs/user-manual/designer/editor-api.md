@@ -1,6 +1,5 @@
 ---
 title: Editor API
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 

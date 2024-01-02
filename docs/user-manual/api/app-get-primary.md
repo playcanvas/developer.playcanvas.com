@@ -1,6 +1,5 @@
 ---
 title: Apps - Get primary app
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

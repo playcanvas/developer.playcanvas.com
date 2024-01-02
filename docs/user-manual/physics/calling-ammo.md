@@ -1,6 +1,5 @@
 ---
 title: Calling the ammo.js API
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 

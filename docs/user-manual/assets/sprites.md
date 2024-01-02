@@ -1,6 +1,5 @@
 ---
 title: Sprite
-layout: usermanual-page.hbs
 sidebar_position: 13
 ---
 

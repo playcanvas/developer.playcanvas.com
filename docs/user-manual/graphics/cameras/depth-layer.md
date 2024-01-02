@@ -1,6 +1,5 @@
 ---
 title: Depth Layer
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Importing your first Model and Animation
-layout: tutorial-page.hbs
 tags: [animation,basics]
 thumb: /images/tutorials/importing-first-model-and-animation/thumbnail.jpg
 ---

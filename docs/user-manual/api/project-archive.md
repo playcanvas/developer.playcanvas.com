@@ -1,6 +1,5 @@
 ---
 title: Projects - Archive project
-layout: usermanual-page.hbs
 sidebar_position: 13
 ---
 

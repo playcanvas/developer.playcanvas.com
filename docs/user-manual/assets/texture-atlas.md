@@ -1,6 +1,5 @@
 ---
 title: Texture Atlas
-layout: usermanual-page.hbs
 sidebar_position: 16
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Press Pack
-layout: usermanual-page.hbs
 sidebar_position: 27
 ---
 

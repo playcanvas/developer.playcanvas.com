@@ -1,6 +1,5 @@
 ---
 title: Assets - List assets
-layout: usermanual-page.hbs
 sidebar_position: 9
 ---
 

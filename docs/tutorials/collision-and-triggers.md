@@ -1,6 +1,5 @@
 ---
 title: Collision and Triggers
-layout: tutorial-page.hbs
 tags: [collision, physics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg
 ---

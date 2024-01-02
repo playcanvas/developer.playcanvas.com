@@ -1,6 +1,5 @@
 ---
 title: Engine-Only Users
-layout: usermanual-page.hbs
 sidebar_position: 23
 ---
 

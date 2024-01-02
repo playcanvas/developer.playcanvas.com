@@ -1,6 +1,5 @@
 ---
 title: Manipulating Entities
-layout: tutorial-page.hbs
 tags: [basics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg
 ---

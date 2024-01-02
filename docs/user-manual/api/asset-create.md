@@ -1,6 +1,5 @@
 ---
 title: Assets - Create asset
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

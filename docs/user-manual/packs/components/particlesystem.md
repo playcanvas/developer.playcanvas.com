@@ -1,6 +1,5 @@
 ---
 title: Particle System
-layout: usermanual-page.hbs
 sidebar_position: 12
 ---
 

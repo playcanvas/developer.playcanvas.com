@@ -1,6 +1,5 @@
 ---
 title: Cubemap
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

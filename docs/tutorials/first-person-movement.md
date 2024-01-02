@@ -1,6 +1,5 @@
 ---
 title: First Person Movement
-layout: tutorial-page.hbs
 tags: [input, camera]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg
 ---

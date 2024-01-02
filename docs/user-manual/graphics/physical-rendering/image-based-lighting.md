@@ -1,6 +1,5 @@
 ---
 title: Image Based Lighting
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

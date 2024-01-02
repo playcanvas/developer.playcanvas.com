@@ -1,6 +1,5 @@
 ---
 title: Version Control
-layout: usermanual-page.hbs
 sidebar_position: 13
 ---
 

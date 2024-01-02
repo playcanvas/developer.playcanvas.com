@@ -1,6 +1,5 @@
 ---
 title: Loading Order
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

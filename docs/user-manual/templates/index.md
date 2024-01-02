@@ -1,6 +1,5 @@
 ---
 title: Templates
-layout: usermanual-page.hbs
 sidebar_position: 12
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Application Lifecycle
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

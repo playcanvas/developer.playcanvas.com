@@ -1,6 +1,5 @@
 ---
 title: Dashboard
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

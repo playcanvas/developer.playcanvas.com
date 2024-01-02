@@ -1,6 +1,5 @@
 ---
 title: Assets - Delete asset
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 

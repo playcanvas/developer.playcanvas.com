@@ -1,6 +1,5 @@
 ---
 title: Code Editor
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

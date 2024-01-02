@@ -1,6 +1,5 @@
 ---
 title: Shader Editor
-layout: shader-editor-page.hbs
 sidebar_position: 0.5
 ---
 

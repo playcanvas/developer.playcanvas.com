@@ -1,6 +1,5 @@
 ---
 title: Apps - Get project apps
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Made with PlayCanvas
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

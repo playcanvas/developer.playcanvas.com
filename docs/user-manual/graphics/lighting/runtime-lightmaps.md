@@ -1,6 +1,5 @@
 ---
 title: Runtime Lightmaps
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

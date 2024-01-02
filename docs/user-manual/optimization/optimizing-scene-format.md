@@ -1,6 +1,5 @@
 ---
 title: Optimize Scene Format
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

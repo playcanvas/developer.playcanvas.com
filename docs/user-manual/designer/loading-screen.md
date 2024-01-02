@@ -1,6 +1,5 @@
 ---
 title: Loading Screen
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Your First App
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

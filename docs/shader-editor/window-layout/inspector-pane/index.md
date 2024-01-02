@@ -1,6 +1,5 @@
 ---
 title: Inspector Pane
-layout: shader-editor-page.hbs
 sidebar_position: 3
 ---
 

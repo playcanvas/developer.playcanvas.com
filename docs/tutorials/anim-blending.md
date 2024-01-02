@@ -1,6 +1,5 @@
 ---
 title: Anim State Graph Blending
-layout: tutorial-page.hbs
 tags: [animation,basics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg
 ---

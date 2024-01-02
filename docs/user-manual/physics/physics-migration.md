@@ -1,6 +1,5 @@
 ---
 title: Updating ammo.js
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

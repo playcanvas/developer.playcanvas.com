@@ -1,6 +1,5 @@
 ---
 title: Physically Based Rendering
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

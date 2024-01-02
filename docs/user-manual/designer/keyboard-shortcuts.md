@@ -1,6 +1,5 @@
 ---
 title: Controls and Keyboard Shortcuts
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 

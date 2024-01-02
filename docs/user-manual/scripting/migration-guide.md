@@ -1,6 +1,5 @@
 ---
 title: Migration Guide
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 

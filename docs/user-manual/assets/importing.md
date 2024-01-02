@@ -1,6 +1,5 @@
 ---
 title: Uploading and Importing
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

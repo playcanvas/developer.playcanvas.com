@@ -1,6 +1,5 @@
 ---
 title: Anim Events
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

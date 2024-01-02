@@ -1,6 +1,5 @@
 ---
 title: Camera
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

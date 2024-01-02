@@ -1,6 +1,5 @@
 ---
 title: 8th Wall Integration
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 
