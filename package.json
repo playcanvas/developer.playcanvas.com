@@ -30,7 +30,9 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "faq": "node faq.js",
+    "faq-to-json": "node faq_to_json.js --dir faq --bucket code.playcanvas.com"
   },
   "dependencies": {
     "@docusaurus/core": "3.0.1",
