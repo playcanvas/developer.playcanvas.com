@@ -75,6 +75,11 @@ const config = {
             path: '/user-manual',
           },
           {
+            to: '/tutorials/',  // This should match the route of your Tutorials page
+            label: 'Tutorials',
+            position: 'left', // or 'right', depending on where you want it in the navbar
+          },
+          {
             type: 'localeDropdown',
             position: 'right',
           },
