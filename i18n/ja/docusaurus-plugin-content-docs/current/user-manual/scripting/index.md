@@ -1,7 +1,7 @@
 ---
 title: スクリプティング
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 ゲームをインタラクティブにするにはスクリプトを使います。スクリプトは**JavaScript**で書きます。これはあらゆるウェブページで使用されているプログラミング言語です。

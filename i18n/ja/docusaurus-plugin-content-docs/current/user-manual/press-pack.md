@@ -1,7 +1,7 @@
 ---
 title: プレスパック
 layout: usermanual-page.hbs
-position: 27
+sidebar_position: 27
 ---
 
 PlayCanvasを宣伝や広告素材に使用する人々のためにプレスパックを提供しています。

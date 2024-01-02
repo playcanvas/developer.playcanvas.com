@@ -1,7 +1,7 @@
 ---
 title: 2D
 layout: usermanual-page.hbs
-position: 17
+sidebar_position: 17
 ---
 
 PlayCanvasエンジンは、3Dゲームやアプリを素早く簡単に作成するために設計されています。しかし、2Dゲームを作成するための多数の優れた機能もサポートしています。PlayCanvasの2D機能により、3Dエンジンの強力な利点を2Dゲームにも活用できます。

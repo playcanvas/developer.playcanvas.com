@@ -1,7 +1,7 @@
 ---
 title: Snapchat Playable Ad
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 PlayCanvas supports the Snapchat Playable Ad format and requirements via an [official external tool on GitHub][2].

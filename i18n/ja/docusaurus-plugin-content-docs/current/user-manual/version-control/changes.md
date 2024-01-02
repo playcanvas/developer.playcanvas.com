@@ -1,7 +1,7 @@
 ---
 title: View Changes
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 ビューの変更 (View Changes) では、現在のプロジェクトの状態とチェックポイントの間の差分を表示できます。マージを開始する前やチェックポイントを取る前に実行するのに便利な機能です。また、ログインしたとき以来のプロジェクトの状態を確認するのにも使えます。

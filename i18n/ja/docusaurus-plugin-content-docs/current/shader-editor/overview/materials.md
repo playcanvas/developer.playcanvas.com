@@ -1,7 +1,7 @@
 ---
 title: マテリアル
 layout: shader-editor-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 マテリアルは、マテリアルグラフ、パラメータの値、および[レンダリング状態][3]を組み合わせます。

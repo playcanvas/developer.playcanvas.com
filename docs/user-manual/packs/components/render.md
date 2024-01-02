@@ -1,7 +1,7 @@
 ---
 title: Render
 layout: usermanual-page.hbs
-position: 13
+sidebar_position: 13
 ---
 
 The render component enables an entity to render a primitive shape or a render asset.

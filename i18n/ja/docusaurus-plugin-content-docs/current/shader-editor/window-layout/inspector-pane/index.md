@@ -1,7 +1,7 @@
 ---
 title: インスペクターペイン
 layout: shader-editor-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 インスペクターペイン (Inspector Pane) では、現在選択されているアイテムの詳細が表示されます。

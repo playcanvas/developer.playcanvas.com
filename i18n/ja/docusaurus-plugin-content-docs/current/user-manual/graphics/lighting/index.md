@@ -1,7 +1,7 @@
 ---
 title: ライティング
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 シーンの照明は、表面のマテリアル特性と適用された光源に基づいて、画面にレンダリングされるピクセルの色やシェーディングを計算するプロセスです。

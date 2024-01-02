@@ -1,7 +1,7 @@
 ---
 title: Texture
 layout: usermanual-page.hbs
-position: 15
+sidebar_position: 15
 ---
 
 A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.

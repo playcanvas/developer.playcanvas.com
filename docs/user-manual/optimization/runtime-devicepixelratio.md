@@ -1,7 +1,7 @@
 ---
 title: Device Pixel Ratio
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 Device pixel ratio is the the ratio between the physical pixels on a the hardware screen and the logical pixels (related to the physical size of the screen, also known as CSS resolution).

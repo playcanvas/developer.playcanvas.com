@@ -1,7 +1,7 @@
 ---
 title: ユーザインターフェース
 layout: usermanual-page.hbs
-position: 18
+sidebar_position: 18
 ---
 
 ユーザインターフェイスは、グラフィカルアプリケーション固有の課題です。PlayCanvasにはユーザインタフェースを構築するためのいくつかのオプションがあります。

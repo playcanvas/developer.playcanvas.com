@@ -1,7 +1,7 @@
 ---
 title: 物理マテリアル
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 PlayCanvasの物理ベースレンダリングを使用するには、物理マテリアルの構成方法を理解し、さまざまなパラメータを変更するとどのような効果があるかを理解する必要があります。

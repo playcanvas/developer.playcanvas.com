@@ -1,7 +1,7 @@
 ---
 title: Graphs
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 Graphs are a central concept in Shader Editor. They are made up of nodes that do things, and edges that connect them together. Shader Editor uses the graphs to generate shader programs for rendering.

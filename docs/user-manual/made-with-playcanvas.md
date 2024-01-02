@@ -1,7 +1,7 @@
 ---
 title: Made with PlayCanvas
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Below is our showcase video of some of the best WebGL browser games and experiences made with PlayCanvas.

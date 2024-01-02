@@ -1,7 +1,7 @@
 ---
 title: Anim
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 The anim component is used to connect an animstategraph asset and all of its required animation assets to a single entity.

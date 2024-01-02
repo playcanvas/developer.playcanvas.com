@@ -1,7 +1,7 @@
 ---
 title: アカウント
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 アカウントタブからグローバルプロフィール設定を変更できます。アカウントや請求の情報を制御したり、クラウドストレージの使用状況を確認できます。

@@ -1,7 +1,7 @@
 ---
 title: 3Dモデルの大きさの単位
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 一般的に、PlayCanvasのシーンでは1単位を1メートルとして扱います。

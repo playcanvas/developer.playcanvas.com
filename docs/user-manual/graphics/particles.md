@@ -1,7 +1,7 @@
 ---
 title: Particles
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 PlayCanvas provides comprehensive support for creating and editing particle systems.

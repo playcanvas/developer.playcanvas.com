@@ -1,7 +1,7 @@
 ---
 title: Scripting
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 Scripts are how you make your PlayCanvas application interactive. They are written in regular **JavaScript** the same programming language that is used to program web pages.

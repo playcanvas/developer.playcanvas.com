@@ -1,7 +1,7 @@
 ---
 title: ローディングスクリーン
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 カスタムローディング画面を作成する場合は、[Scene Settings][1] に移動して、*Loading Screen* セクションの**Create Default**をクリックします。有効なローディング画面スクリプトがすでにある場合は、ローディング画面パネルにドラッグアンドドロップするか、**Select Existing**をクリックして選択できます。

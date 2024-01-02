@@ -1,7 +1,7 @@
 ---
 title: シーンフォーマットの最適化
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 このパブリッシュオプションは、サーバー上でgzip圧縮された後、シーンファイルのサイズを約30-50%まで縮小することができます。

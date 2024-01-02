@@ -1,7 +1,7 @@
 ---
 title: XR
 layout: usermanual-page.hbs
-position: 20
+sidebar_position: 20
 ---
 
 ![VR View][2]

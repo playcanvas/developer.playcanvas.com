@@ -1,7 +1,7 @@
 ---
 title: Wasmモジュール
 layout: usermanual-page.hbs
-position: 17
+sidebar_position: 17
 ---
 
 Wasmモジュール(WebAssemblyモジュールとも呼ばれます)には、Web向けにコンパイルされた実行可能コードが含まれています。

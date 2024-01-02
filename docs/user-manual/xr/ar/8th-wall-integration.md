@@ -1,7 +1,7 @@
 ---
 title: 8th Wall Integration
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ## Using 8th Wall with PlayCanvas

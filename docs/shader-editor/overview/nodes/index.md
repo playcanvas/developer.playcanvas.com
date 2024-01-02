@@ -1,7 +1,7 @@
 ---
 title: Nodes
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Shader Editor supports many types of nodes, but they all have the following structure:

@@ -1,7 +1,7 @@
 ---
 title: 初心者向けセルフホスティング
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 このドキュメントは、Webプログラミングの初心者向けです。Webアプリケーションのさまざまな部分をどのように組み合わせてPlayCanvasアプリケーションを提供したり、ユーザのブラウザに他のウェブページを提供するかを説明します。

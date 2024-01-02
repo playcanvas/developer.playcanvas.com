@@ -1,7 +1,7 @@
 ---
 title: 3Dモデル
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 3Dモデルとアニメーションは、[Blender][2]、3D Studio Max、Mayaなどの[3Dモデリングアプリケーション][1]からシーンファイルをアップロードすることで、PlayCanvasにインポートされます。

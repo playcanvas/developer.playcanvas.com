@@ -1,7 +1,7 @@
 ---
 title: Hue-Saturation Effect
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 The hue-saturation effect allows you to modify the hue and saturation of the rendered image.

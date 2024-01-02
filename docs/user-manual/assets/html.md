@@ -1,7 +1,7 @@
 ---
 title: HTML
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 An HTML asset contains HTML code. The code can either be a full HTML page or just partial HTML. You can create a new HTML asset in the Editor or by uploading a file with an .html extension.

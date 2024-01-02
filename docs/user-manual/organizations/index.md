@@ -1,7 +1,7 @@
 ---
 title: Organizations
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 Organizations offer a way for businesses and large projects to manage many users. They can have multiple administrators and permissions can be handled on a per project basis.

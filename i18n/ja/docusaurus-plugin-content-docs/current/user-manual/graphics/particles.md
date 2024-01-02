@@ -1,7 +1,7 @@
 ---
 title: パーティクル
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 PlayCanvasはパーティクルシステムの作成と編集のための包括的なサポートを提供します。

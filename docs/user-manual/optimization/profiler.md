@@ -1,7 +1,7 @@
 ---
 title: Profiler
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 PlayCanvas provides an real-time profiler to assist in diagnosing performance problems.

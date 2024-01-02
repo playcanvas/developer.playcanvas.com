@@ -1,7 +1,7 @@
 ---
 title: Safe Area
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 With the trend of mobile devices having full device screens, a notch or cut out in the display is used to make room for the ear piece speaker and front facing camera (see below for the iPhone X).

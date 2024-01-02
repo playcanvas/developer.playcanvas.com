@@ -1,7 +1,7 @@
 ---
 title: コードエディター
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 コードエディターは、スクリプトアセットやJSON、HTML、CSSなどのテキストベースのアセットを編集できる、オンラインリアルタイムコラボレーションエディタです。

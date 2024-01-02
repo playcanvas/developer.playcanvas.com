@@ -1,7 +1,7 @@
 ---
 title: エディター
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 PlayCanvasエディターは、あなたのゲームを構成する[Scene][1]と[Entity][2]を作成および編集するためのビジュアル編集ツールです。

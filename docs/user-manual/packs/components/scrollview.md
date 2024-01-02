@@ -1,7 +1,7 @@
 ---
 title: Scrollview
 layout: usermanual-page.hbs
-position: 18
+sidebar_position: 18
 ---
 
 The Scrollview component defines a scrollable area in a user interface. A scrollview can be scrolled via [Scrollbar][1] components.

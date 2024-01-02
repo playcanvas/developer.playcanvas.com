@@ -1,7 +1,7 @@
 ---
 title: ノードインスペクター
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ![ノードインスペクター][1]

@@ -1,7 +1,7 @@
 ---
 title: プロジェクト
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 プロジェクトタブには、作成したプロジェクトやアクセス権が与えられたプロジェクトがすべて表示されます。

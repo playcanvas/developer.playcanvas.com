@@ -1,7 +1,7 @@
 ---
 title: Animレイヤーマスク
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 ゲームオブジェクトに複雑なアニメーション動作を作成する際、特定のアニメーションの再生を各オブジェクトのモデルの特定のボーンに分離することがしばしば必要です。これは、同時に複数のアクションを行う必要があるキャラクターをアニメーション化する際に特に役立ちます。PlayCanvasでは、Animコンポーネントの[アニメーションレイヤー](/user-manual/animation/anim-state-graph-assets/#layers/)に対してマスクを作成することでこれを実現できます。

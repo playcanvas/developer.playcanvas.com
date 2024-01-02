@@ -1,7 +1,7 @@
 ---
 title: Multiple Render Targets
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 The multiple render targets feature allows to simultaneously render to multiple textures. This manual page explores implementation, configuration, and an example use case of multiple render targets.

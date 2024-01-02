@@ -1,7 +1,7 @@
 ---
 title: Image Elements
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 イメージエレメント (Image Element) は、テクスチャや単一の色を表示するために使用されます。イメージエレメントは、ボタンなどのより複雑なユーザーインターフェイスコンポーネントの基盤として使用できます。

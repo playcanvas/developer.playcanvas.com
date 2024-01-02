@@ -1,7 +1,7 @@
 ---
 title: Projects
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The Projects tab lists all the projects you have created or have been granted access to.

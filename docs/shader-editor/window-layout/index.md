@@ -1,7 +1,7 @@
 ---
 title: Window Layout
 layout: shader-editor-page.hbs
-position: 1.2
+sidebar_position: 1.2
 ---
 
 Shader Editor comprises a number of sub-windows or panes. The panes are highlighted below and a brief description of each follows:

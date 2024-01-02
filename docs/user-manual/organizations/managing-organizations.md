@@ -1,7 +1,7 @@
 ---
 title: Managing Organizations
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ### Permissions

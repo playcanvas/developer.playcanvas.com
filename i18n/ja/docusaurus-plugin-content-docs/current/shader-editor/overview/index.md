@@ -1,7 +1,7 @@
 ---
 title: 概要
 layout: shader-editor-page.hbs
-position: 1.1
+sidebar_position: 1.1
 ---
 
 シェーダーエディターで作成されるエフェクトは、[グラフ][1]とその[ノード][2]、[マテリアル][3]、および[テクスチャ][4]の組み合わせです。

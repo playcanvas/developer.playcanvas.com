@@ -1,7 +1,7 @@
 ---
 title: Button
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 The Button Component is a convenient shortcut for creating User Interface buttons for use with [Screen][1] and [Element][2] Components.

@@ -1,7 +1,7 @@
 ---
 title: インフォペイン
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ![インフォペイン][1]

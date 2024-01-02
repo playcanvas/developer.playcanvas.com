@@ -1,7 +1,7 @@
 ---
 title: ノード
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Shader Editorではさまざまなタイプのノードがサポートされていますが、すべてのノードは以下の構造を持っています。

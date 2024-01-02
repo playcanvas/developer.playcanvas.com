@@ -1,7 +1,7 @@
 ---
 title: 設定
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 設定ダッシュボードではプロジェクトの設定が行えます。

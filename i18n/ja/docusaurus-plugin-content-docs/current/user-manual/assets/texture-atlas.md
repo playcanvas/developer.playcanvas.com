@@ -1,7 +1,7 @@
 ---
 title: Texture Atlas
 layout: usermanual-page.hbs
-position: 16
+sidebar_position: 16
 ---
 
 ![テクスチャアトラス][1]

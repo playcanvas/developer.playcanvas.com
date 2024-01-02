@@ -1,7 +1,7 @@
 ---
 title: クラスタードライティング
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 <div class="alert alert-info">

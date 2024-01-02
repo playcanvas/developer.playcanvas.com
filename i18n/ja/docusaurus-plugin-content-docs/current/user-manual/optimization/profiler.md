@@ -1,7 +1,7 @@
 ---
 title: プロファイラー
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 PlayCanvasには、パフォーマンスの問題を診断するためのリアルタイムプロファイラが用意されています。

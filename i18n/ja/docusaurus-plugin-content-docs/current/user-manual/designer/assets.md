@@ -1,7 +1,7 @@
 ---
 title: アセット
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 アセットパネルは、プロジェクトで利用可能なすべてのアセットを管理します。ここから、アセットの作成、アップロード、削除、検査、編集などが行えます。

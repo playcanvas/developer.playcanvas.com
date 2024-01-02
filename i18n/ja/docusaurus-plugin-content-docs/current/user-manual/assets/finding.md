@@ -1,7 +1,7 @@
 ---
 title: アセットの探し方
 layout: usermanual-page.hbs
-position: 18
+sidebar_position: 18
 ---
 
 ## PlayCanvasで使用する3Dモデル、サウンドFX、音楽はどこで手に入れるのでしょうか?

@@ -1,7 +1,7 @@
 ---
 title: Code Editor
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The Code Editor is an online real-time collaborative editor that allows you to edit your Script assets and also all the other text based assets like JSON, HTML, CSS etc.

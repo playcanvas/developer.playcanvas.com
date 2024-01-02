@@ -1,7 +1,7 @@
 ---
 title: Element
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 Screenコンポーネント以下にElementコンポーネントがある場合、Elementコンポーネントを使用して画像やテキストなどの2D要素で構成されたユーザーインターフェースを作成することができます。Elementは、アンカーや回転点などのレイアウトプロパティを提供します。

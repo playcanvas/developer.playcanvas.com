@@ -1,7 +1,7 @@
 ---
 title: Scrollbar
 layout: usermanual-page.hbs
-position: 17
+sidebar_position: 17
 ---
 
 The Scrollbar component defines a scrolling control for a [Scrollview][1] component.

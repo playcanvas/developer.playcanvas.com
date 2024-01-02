@@ -1,7 +1,7 @@
 ---
 title: Sprite
 layout: usermanual-page.hbs
-position: 20
+sidebar_position: 20
 ---
 
 The Sprite Component renders and animates [Sprite Assets][1] into the scene.

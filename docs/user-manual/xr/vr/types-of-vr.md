@@ -1,7 +1,7 @@
 ---
 title: Types of VR experiences
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Different styles of VR experience might have different reference spaces, in which position and rotation of virtual objects relate to the real world. Refer to [pc.XRSPACE_*][1] for more information.

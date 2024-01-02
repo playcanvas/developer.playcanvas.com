@@ -1,7 +1,7 @@
 ---
 title: Using WebXR in PlayCanvas
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ## Support of WebXR

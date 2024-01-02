@@ -1,7 +1,7 @@
 ---
 title: Camera
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 Cameraコンポーネントは、特定の視点からシーンをレンダリングするための機能を提供します。

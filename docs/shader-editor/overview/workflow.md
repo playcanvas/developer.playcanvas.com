@@ -1,7 +1,7 @@
 ---
 title: Workflow
 layout: shader-editor-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 The workflow currently supported by Shader Editor is rudimentary and will be improved in future releases. In particular, we plan to add native integration of the Shader Editor with the PlayCanvas Editor.

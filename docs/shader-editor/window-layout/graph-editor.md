@@ -1,7 +1,7 @@
 ---
 title: Graph Editor
 layout: shader-editor-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 The Graph Editor displays the currently selected graph. This is where nodes are created, arranged, connected and deleted.

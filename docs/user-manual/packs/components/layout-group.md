@@ -1,7 +1,7 @@
 ---
 title: Layout Group
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 The LayoutGroup component enables an entity to specify the size and position of child Element Components.

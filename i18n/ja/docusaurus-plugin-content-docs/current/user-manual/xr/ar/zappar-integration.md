@@ -1,7 +1,7 @@
 ---
 title: Zappar
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ## Zapparの統合

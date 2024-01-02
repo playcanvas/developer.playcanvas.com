@@ -1,7 +1,7 @@
 ---
 title: Sprite
 layout: usermanual-page.hbs
-position: 20
+sidebar_position: 20
 ---
 
 Spriteコンポーネントは、[Spriteアセット][1]をシーンに表示させ、アニメーションさせるものです。

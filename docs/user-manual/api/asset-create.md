@@ -1,7 +1,7 @@
 ---
 title: Assets - Create asset
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 ## Route URL

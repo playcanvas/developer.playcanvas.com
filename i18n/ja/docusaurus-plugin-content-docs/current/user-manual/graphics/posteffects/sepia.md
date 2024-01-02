@@ -1,7 +1,7 @@
 ---
 title: セピアエフェクト
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 セピアエフェクトは画像を古い写真のような見え方にするエフェクトです。

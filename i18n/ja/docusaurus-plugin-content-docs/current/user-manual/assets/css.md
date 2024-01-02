@@ -1,7 +1,7 @@
 ---
 title: CSS
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 CSSアセットはCSSコードを含みます。エディタで新しいCSSアセットを作成するか、.css拡張子を持つファイルをアップロードして作成することができます。

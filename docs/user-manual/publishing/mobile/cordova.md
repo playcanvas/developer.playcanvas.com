@@ -1,7 +1,7 @@
 ---
 title: Apache Cordova
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 [Apache Cordova][1] is an open-source mobile development framework. It allows you to use standard web technologies - HTML5, CSS3, and JavaScript for cross-platform development. Applications execute within wrappers targeted to each platform, and rely on standards-compliant API bindings to access each device's capabilities such as sensors, data, network status, etc.

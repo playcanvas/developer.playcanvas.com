@@ -1,7 +1,7 @@
 ---
 title: Input
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 The user can interact with [Element][1] components, by enabling the `useInput` field on the Element component:

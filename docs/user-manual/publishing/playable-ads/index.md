@@ -1,7 +1,7 @@
 ---
 title: Playable Ads
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 We are currently supporting the following playable ad networks:

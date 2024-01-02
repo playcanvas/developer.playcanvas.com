@@ -1,7 +1,7 @@
 ---
 title: Image Elements
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 The image Element is used to display a texture or a solid color. Image Elements can be used as the basis for other more complex user interface components such as buttons.

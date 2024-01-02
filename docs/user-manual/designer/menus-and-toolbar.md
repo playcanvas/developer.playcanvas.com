@@ -1,7 +1,7 @@
 ---
 title: Menu and Toolbar
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ## Menu

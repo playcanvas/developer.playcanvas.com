@@ -1,7 +1,7 @@
 ---
 title: シーンのロード
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 ## はじめに

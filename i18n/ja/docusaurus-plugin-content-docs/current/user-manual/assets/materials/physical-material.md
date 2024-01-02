@@ -1,7 +1,7 @@
 ---
 title: 物理マテリアル
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 物理的なマテリアルは、PlayCanvasで利用可能な最も高度で高品質なシェーディングモデルを表します。私たちは、物理シェーディングモデルの使用をお勧めします。

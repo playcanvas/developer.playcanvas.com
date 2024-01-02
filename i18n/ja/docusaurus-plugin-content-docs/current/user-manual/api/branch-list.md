@@ -1,7 +1,7 @@
 ---
 title: ブランチ - List branches
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 ## ルートURL

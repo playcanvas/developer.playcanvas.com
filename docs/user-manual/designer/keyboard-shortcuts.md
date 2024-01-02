@@ -1,7 +1,7 @@
 ---
 title: Controls and Keyboard Shortcuts
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 ## Camera Controls

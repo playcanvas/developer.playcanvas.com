@@ -1,7 +1,7 @@
 ---
 title: ブライトネス・コントラストエフェクト
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ブライトネス (Brightness) とコントラスト (Contrast) エフェクトは、レンダリング後の画像の輝度とコントラストを調整します。

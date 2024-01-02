@@ -1,7 +1,7 @@
 ---
 title: Anim Component
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 Click here to learn how to use the [Anim Component][1].

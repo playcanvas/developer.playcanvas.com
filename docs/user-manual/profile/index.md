@@ -1,7 +1,7 @@
 ---
 title: Profile
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 Your profile page is the public place for showing off your PlayCanvas games.

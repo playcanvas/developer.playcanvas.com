@@ -1,7 +1,7 @@
 ---
 title: Dashboard
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 ![Dashboard][1]

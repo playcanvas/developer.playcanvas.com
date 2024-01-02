@@ -1,7 +1,7 @@
 ---
 title: Finding Assets
 layout: usermanual-page.hbs
-position: 18
+sidebar_position: 18
 ---
 
 ## Where can I get 3D models/Sound FX/Music for PlayCanvas?

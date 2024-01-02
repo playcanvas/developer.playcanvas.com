@@ -1,7 +1,7 @@
 ---
 title: Inspector Pane
 layout: shader-editor-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 The Inspector Pane shows details of the currently selected item.

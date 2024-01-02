@@ -1,7 +1,7 @@
 ---
 title: Glossary
 layout: usermanual-page.hbs
-position: 26
+sidebar_position: 26
 ---
 
 Here is an overview of some of the terms we use to describe the PlayCanvas Engine and Tools.

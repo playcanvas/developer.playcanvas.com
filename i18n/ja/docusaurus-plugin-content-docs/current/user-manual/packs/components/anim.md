@@ -1,7 +1,7 @@
 ---
 title: Anim
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 Animコンポーネントは、Animstategraphアセットとその必要なアニメーションアセットを1つのエンティティに接続するために使用されます。

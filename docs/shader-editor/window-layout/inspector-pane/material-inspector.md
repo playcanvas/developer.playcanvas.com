@@ -1,7 +1,7 @@
 ---
 title: Material Inspector
 layout: shader-editor-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 ![Material Inspector][1]

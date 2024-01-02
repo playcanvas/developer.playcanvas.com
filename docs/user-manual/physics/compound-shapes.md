@@ -1,7 +1,7 @@
 ---
 title: Compound Shapes
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 Compound shapes are custom collision shapes created out of multiple primitive shapes ([full list of shapes here][primitive-shapes-list]). This allows you to have more complex collision shapes without using a custom mesh model.

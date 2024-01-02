@@ -1,7 +1,7 @@
 ---
 title: GoNative
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 [GoNative][gonative] is a paid third party service that can take a URL and create a native mobile application that uses a native WebView to run on mobile in a few clicks.

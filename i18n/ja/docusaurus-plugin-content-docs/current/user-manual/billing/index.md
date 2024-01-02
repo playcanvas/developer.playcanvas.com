@@ -1,7 +1,7 @@
 ---
 title: お支払いについて
 layout: usermanual-page.hbs
-position: 24
+sidebar_position: 24
 ---
 
 ## プランの自動更新

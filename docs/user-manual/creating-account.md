@@ -1,7 +1,7 @@
 ---
 title: Creating an Account
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 ## Sign Up

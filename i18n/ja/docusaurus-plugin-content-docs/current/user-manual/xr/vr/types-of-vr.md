@@ -1,7 +1,7 @@
 ---
 title: VR体験の種類
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 異なるスタイルのVR体験はそれぞれ特有の基準空間を持つ可能性があります。この基準空間は、仮想オブジェクトの位置や回転が現実世界とどのように関連づけられるかを定義します。詳細は[pc.XRSPACE_*][1]を参照してください。

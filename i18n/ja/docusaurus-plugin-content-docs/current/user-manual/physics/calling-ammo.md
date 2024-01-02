@@ -1,7 +1,7 @@
 ---
 title: ammo.jsのAPIを呼び出す方法
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 PlayCanvas の ammo.js 連携により、ammo.js API のすべての機能が公開されるわけではありません。ただし、PlayCanvas スクリプトから直接 ammo.js API を呼び出すことができます。

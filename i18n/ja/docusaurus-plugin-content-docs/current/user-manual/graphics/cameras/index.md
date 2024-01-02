@@ -1,7 +1,7 @@
 ---
 title: カメラ
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 カメラは、シーンを画面にレンダリングする役割を担っています。何かを見るためには、シーンに少なくとも1つのカメラが必要です。PlayCanvasで新しいシーンを作成すると、1つのカメラ(および方向性のライト)が自動的に配置されます。

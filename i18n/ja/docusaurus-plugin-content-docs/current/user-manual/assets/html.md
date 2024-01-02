@@ -1,7 +1,7 @@
 ---
 title: HTML
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 HTMLアセットにはHTMLコードが含まれます。コードは完全なHTMLページまたは部分的なHTMLである場合があります。新しいHTMLアセットをエディタで作成するか、拡張子が.htmlのファイルをアップロードして作成できます。

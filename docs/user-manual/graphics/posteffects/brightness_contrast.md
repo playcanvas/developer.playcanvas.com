@@ -1,7 +1,7 @@
 ---
 title: Brightness-Contrast Effect
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The brightness-contrast effect allows you to modify the brightness and contrast of the rendered image.

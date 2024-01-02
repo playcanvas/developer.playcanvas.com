@@ -1,7 +1,7 @@
 ---
 title: Layout Groups
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all its direct children, you can override the Layout Group rules on a single child using a Layout Child Component.

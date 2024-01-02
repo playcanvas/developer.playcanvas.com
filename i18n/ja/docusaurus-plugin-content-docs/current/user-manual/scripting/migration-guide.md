@@ -1,7 +1,7 @@
 ---
 title: 移行ガイド
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 ## レガシースクリプトプロジェクトの移行方法

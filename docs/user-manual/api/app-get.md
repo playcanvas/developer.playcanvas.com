@@ -1,7 +1,7 @@
 ---
 title: Apps - Get app
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 ## Route URL

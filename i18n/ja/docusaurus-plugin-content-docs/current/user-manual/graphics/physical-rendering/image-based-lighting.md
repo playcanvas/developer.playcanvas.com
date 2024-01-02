@@ -1,7 +1,7 @@
 ---
 title: イメージベースドライティング(IBL)
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 PlayCanvasで物理ベースレンダリングを使用する際に最良の結果を得るには、イメージベースドライティングまたはIBLというテクニックを使用します。事前レンダリングされたイメージデータをアンビエントおよび反射光のソース情報として使用できます。

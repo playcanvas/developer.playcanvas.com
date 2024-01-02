@@ -1,7 +1,7 @@
 ---
 title: Assets Pane
 layout: shader-editor-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 The Assets Pane is where a project’s graphs, materials and textures appear.

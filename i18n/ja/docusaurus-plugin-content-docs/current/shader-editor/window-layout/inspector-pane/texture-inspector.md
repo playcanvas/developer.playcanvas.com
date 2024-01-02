@@ -1,7 +1,7 @@
 ---
 title: テクスチャインスペクター
 layout: shader-editor-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 ![テクスチャインスペクター][1]

@@ -1,7 +1,7 @@
 ---
 title: Model
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 3D models and animations are imported into PlayCanvas by uploading scene files from a [3D modeling application][1] such as [Blender][2], 3D Studio Max or Maya.

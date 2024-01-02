@@ -1,7 +1,7 @@
 ---
 title: ローカライゼーション
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 テキストエレメントを異なる言語にローカライズする方法について説明します。

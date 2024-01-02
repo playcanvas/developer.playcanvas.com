@@ -1,7 +1,7 @@
 ---
 title: 設定
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 設定パネル (SETTINGS) を使用すると、さまざまなプロパティを設定できます。エディターの左下にある`cog`ボタン([ツールバー][1])を使用してアクセスできます。

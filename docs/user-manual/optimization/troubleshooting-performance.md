@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Performance
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 Here are some tips to help you uncover common performance problems

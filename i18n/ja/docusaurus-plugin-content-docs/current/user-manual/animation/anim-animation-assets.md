@@ -1,7 +1,7 @@
 ---
 title: Animationアセット 
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ![Animation Assets][1]

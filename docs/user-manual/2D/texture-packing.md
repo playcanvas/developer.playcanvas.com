@@ -1,7 +1,7 @@
 ---
 title: Using Texture Packers
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 # What is texture packing?

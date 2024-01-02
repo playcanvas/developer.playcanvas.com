@@ -1,7 +1,7 @@
 ---
 title: テクスチャ
 layout: shader-editor-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 テクスチャは、シェーダーエディタ内で比較的静的なアセットです。

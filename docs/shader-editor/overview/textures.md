@@ -1,7 +1,7 @@
 ---
 title: Textures
 layout: shader-editor-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 Textures are relatively static assets within Shader Editor.

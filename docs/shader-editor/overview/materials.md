@@ -1,7 +1,7 @@
 ---
 title: Materials
 layout: shader-editor-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 Materials combine Material Graphs, parameter values and [render states][3].

@@ -1,7 +1,7 @@
 ---
 title: Material
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.

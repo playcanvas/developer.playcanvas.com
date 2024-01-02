@@ -1,7 +1,7 @@
 ---
 title: PlayCanvasエンジン単体での利用
 layout: usermanual-page.hbs
-position: 23
+sidebar_position: 23
 ---
 
 PlayCanvasのほとんどの開発者はエディターを使用してアプリケーションを構築しています。しかし、すべてのPlayCanvasアプリを動かすオープンソースのJavaScriptランタイムであるPlayCanvasエンジンだけを使用してアプリケーションを構築することも可能です。

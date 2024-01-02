@@ -1,7 +1,7 @@
 ---
 title: CSS
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 A CSS asset contains CSS code. You can create a new CSS asset in the Editor or by uploading a file with a .css extension.

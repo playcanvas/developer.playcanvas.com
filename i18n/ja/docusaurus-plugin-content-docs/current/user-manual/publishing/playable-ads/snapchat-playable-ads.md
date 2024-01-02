@@ -1,7 +1,7 @@
 ---
 title: Snapchatプレイアブル広告
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 PlayCanvasは、[公式の外部ツール][2]を通じて、Snapchat Playable Adフォーマットと要件をサポートしています。

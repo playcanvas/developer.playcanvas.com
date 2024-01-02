@@ -1,7 +1,7 @@
 ---
 title: Optimizing WebXR applications
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 ## Introduction

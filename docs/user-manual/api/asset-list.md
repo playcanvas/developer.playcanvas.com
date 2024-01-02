@@ -1,7 +1,7 @@
 ---
 title: Assets - List assets
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 ## Route URL

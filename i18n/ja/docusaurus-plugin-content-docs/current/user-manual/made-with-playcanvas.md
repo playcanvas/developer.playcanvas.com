@@ -1,7 +1,7 @@
 ---
 title: PlayCanvasの利用実績
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 以下は、PlayCanvasで作成されたWebGLブラウザゲームやエクスペリエンスの中から、最高のものをいくつか紹介したショーケースビデオです。

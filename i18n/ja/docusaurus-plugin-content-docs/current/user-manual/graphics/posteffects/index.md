@@ -1,7 +1,7 @@
 ---
 title: ポストエフェクト
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 PlayCanvasでは、プロジェクトへのポストプロセッシングエフェクトを追加することができます。ポストエフェクトは最終的にレンダリングされるイメージを変更し、アプリケーションにビジュアル効果を簡単に追加する方法を提供します。

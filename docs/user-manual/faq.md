@@ -1,7 +1,7 @@
 ---
 title: Common Questions
 layout: usermanual-page.hbs
-position: 25
+sidebar_position: 25
 ---
 
 

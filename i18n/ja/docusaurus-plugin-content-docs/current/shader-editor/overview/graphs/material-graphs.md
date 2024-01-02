@@ -1,7 +1,7 @@
 ---
 title: マテリアルグラフ
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 マテリアルグラフは、マテリアルの外観を定義し、(現時点では)1つのマテリアルノードを含む必要があります。

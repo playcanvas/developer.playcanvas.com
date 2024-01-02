@@ -1,7 +1,7 @@
 ---
 title: Sound
 layout: usermanual-page.hbs
-position: 19
+sidebar_position: 19
 ---
 
 The Sound component controls playback of audio samples.

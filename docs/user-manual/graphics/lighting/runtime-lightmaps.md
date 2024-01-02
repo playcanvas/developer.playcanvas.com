@@ -1,7 +1,7 @@
 ---
 title: Runtime Lightmaps
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 ![Sponza][10]

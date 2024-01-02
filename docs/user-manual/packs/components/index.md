@@ -1,7 +1,7 @@
 ---
 title: Components
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Components define behaviors that are attached to Entities. An Entity is a container for Components.

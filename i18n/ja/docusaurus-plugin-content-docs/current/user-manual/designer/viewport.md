@@ -1,7 +1,7 @@
 ---
 title: ビューポート
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 ![Viewport][1]

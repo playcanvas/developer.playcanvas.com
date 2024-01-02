@@ -1,7 +1,7 @@
 ---
 title: カスタムエンジンの使用
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 デフォルトでは、PlayCanvasアプリをエディターから起動すると、最新の安定版のエンジンが使用されます。しかし、以下のような理由で、アプリを異なるエンジンビルドで実行したい場合があります。

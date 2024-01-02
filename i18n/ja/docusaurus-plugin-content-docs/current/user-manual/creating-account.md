@@ -1,7 +1,7 @@
 ---
 title: アカウントの作成
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 ## サインアップ

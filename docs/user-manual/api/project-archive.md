@@ -1,7 +1,7 @@
 ---
 title: Projects - Archive project
 layout: usermanual-page.hbs
-position: 13
+sidebar_position: 13
 ---
 
 ## Route URL

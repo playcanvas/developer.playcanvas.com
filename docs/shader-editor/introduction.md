@@ -1,7 +1,7 @@
 ---
 title: Introduction
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ## What is Shader Editor?

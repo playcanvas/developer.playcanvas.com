@@ -1,7 +1,7 @@
 ---
 title: Phong Material
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The Phong Material is our legacy shading model. We recommend you use the Physical Shading model unless you have specific reasons not to.

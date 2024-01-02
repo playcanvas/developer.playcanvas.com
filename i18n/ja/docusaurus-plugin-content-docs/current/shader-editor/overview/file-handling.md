@@ -1,7 +1,7 @@
 ---
 title: ファイルの取り扱い
 layout: shader-editor-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 シェーダーエディターはブラウザベースのツールですが、作成されたグラフ、マテリアル、テクスチャはユーザーのマシン上にローカルに保存されます。

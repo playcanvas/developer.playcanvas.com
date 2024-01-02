@@ -1,7 +1,7 @@
 ---
 title: Button
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 Buttonコンポーネントは、[Screen][1]コンポーネントと[Element][2]コンポーネントで使用するユーザーインターフェイスボタンを作成するための便利なショートカットです。

@@ -1,7 +1,7 @@
 ---
 title: Animation
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The Animation component enables an entity to specify which animations can be applied to the model assigned to its Model component.

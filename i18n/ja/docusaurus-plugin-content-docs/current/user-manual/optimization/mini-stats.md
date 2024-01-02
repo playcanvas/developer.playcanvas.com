@@ -1,7 +1,7 @@
 ---
 title: Mini Stats
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 ミニスタッツ (Mini Stats) は、アプリケーションの主要パフォーマンス統計情報を軽量グラフィカルで表示するものです。ドローコール数、フレーム時間、CPU負荷、そして(サポートされている場合)GPU負荷を表示します。

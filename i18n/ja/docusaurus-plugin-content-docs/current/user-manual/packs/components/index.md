@@ -1,7 +1,7 @@
 ---
 title: コンポーネント
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 コンポーネントはエンティティにアタッチされる振る舞いを定義します。エンティティはコンポーネントのコンテナです。

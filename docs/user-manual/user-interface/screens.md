@@ -1,7 +1,7 @@
 ---
 title: Screens
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The [Screen Component][1] defines the area that the User Interface is built inside. Its primary responsibility is to determine how the contents of the Screen (child Entities with Element components) are rendered.

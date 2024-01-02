@@ -1,7 +1,7 @@
 ---
 title: Scenes - List scenes
 layout: usermanual-page.hbs
-position: 14
+sidebar_position: 14
 ---
 
 ## Route URL

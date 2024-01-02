@@ -1,7 +1,7 @@
 ---
 title: Physical Materials
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.

@@ -1,7 +1,7 @@
 ---
 title: Exporting Assets
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 PlayCanvas can import 3D content in the following formats: glTF binary (GLB), FBX, OBJ, 3DS and COLLADA (DAE). We strongly recommend you use GLB as it's an open source industry standard and very well supported in the Editor.

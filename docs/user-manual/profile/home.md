@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 The Home tab lists the latest posts of PlayCanvas users. Here you can also check out your recent activity.

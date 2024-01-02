@@ -1,7 +1,7 @@
 ---
 title: ウィンドウの配置
 layout: shader-editor-page.hbs
-position: 1.2
+sidebar_position: 1.2
 ---
 
 シェーダーエディターはいくつかのサブウィンドウまたはペインで構成されています。以下でペインについてハイライトし、それぞれの簡単な説明をします。

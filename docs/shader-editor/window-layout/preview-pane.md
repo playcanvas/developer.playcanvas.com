@@ -1,7 +1,7 @@
 ---
 title: Preview Pane
 layout: shader-editor-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 The Preview Pane displays the currently selected graph or material and supports various lighting environments and shapes.

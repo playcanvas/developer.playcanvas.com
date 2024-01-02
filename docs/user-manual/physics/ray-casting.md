@@ -1,7 +1,7 @@
 ---
 title: Ray Casting
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 The PlayCanvas physics engine allows you to perform ray casts. A ray cast is a query that determines if a straight line between two arbitrary 3D points intersects with a rigid body.

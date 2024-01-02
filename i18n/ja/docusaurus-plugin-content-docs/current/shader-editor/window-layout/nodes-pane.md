@@ -1,7 +1,7 @@
 ---
 title: ノードペイン
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ![ノードペイン][1]

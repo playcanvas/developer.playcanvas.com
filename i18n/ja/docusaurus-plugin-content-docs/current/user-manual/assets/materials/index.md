@@ -1,7 +1,7 @@
 ---
 title: マテリアル
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 3Dモデルのすべての表面は、マテリアルを使用してレンダリングされます。マテリアルは、色、光沢、凹凸など、表面の特性を定義します。

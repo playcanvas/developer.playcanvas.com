@@ -1,7 +1,7 @@
 ---
 title: Desktop
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 It is possible to convert your PlayCanvas app to a native executable for each of the major desktop operating systems: Windows, Mac OS X and Linux. To do this, we recommend using [NW.js][1]. Instructions for generating the executable can be found on the [NW.js Wiki][2].

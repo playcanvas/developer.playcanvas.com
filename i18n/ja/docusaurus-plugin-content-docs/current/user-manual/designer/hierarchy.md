@@ -1,7 +1,7 @@
 ---
 title: ヒエラルキー
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ![Hierarchy Panel][1]

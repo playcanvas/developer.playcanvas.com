@@ -1,7 +1,7 @@
 ---
 title: Organizationの管理
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ### 権限 (Permissions)

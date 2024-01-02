@@ -1,7 +1,7 @@
 ---
 title: Zappar Integration
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ## Zappar Integration

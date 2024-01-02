@@ -1,7 +1,7 @@
 ---
 title: 色相・彩度エフェクト
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 色相 (Hue) 彩度 (Saturation) エフェクトは、レンダリングされたイメージの色相と彩度を変更できます。

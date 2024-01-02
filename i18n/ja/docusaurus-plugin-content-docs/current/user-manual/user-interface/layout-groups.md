@@ -1,7 +1,7 @@
 ---
 title: Layout Groups
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 Layout Groupコンポーネントは、子エレメントの位置とサイズの自動設定に使用します。子エレメントを縦横の列やグリッドに揃えるのにも使用できます。このコンポーネントでは直接の子全てにレイアウトルールが適用されるため、1つのレイアウト子コンポネント上でレイアウトグループルールを上書きできます。

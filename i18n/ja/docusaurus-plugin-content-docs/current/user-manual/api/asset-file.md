@@ -1,7 +1,7 @@
 ---
 title: アセット - Get Asset File
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 ## ルートURL

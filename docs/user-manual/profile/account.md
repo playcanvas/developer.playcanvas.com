@@ -1,7 +1,7 @@
 ---
 title: Account
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 The Account tab lets you edit your global profile settings. From here you can control your account and billing info and see your cloud storage use.

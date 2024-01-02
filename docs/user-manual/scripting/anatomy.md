@@ -1,7 +1,7 @@
 ---
 title: Anatomy of a script
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 Here is a basic script. We can learn about the structure of a PlayCanvas script from it.

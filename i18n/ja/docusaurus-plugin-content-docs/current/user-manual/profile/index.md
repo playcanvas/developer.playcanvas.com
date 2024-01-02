@@ -1,7 +1,7 @@
 ---
 title: プロフィール
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 プロフィールページはあなたのPlayCanvasゲームをアピールする公共の場です。

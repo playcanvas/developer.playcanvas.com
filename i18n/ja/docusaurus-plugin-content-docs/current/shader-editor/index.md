@@ -1,7 +1,7 @@
 ---
 title: シェーダーエディター
 layout: shader-editor-page.hbs
-position: 0.5
+sidebar_position: 0.5
 ---
 
 __シェーダーエディター__ ユーザーマニュアルへようこそ。

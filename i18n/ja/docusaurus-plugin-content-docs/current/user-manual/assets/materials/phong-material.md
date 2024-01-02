@@ -1,7 +1,7 @@
 ---
 title: Phongマテリアル
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Phongマテリアルは、レガシーなシェーディングモデルです。特別な理由がない限り、Physical Shadingモデルを使用することをお勧めします。

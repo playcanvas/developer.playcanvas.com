@@ -1,7 +1,7 @@
 ---
 title: Model
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 Modelコンポーネントを使用すると、エンティティにプリミティブシェイプまたはModelアセットをレンダリングすることができます。

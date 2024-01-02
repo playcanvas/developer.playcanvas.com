@@ -1,7 +1,7 @@
 ---
 title: GoNative
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 [GoNative][gonative]は有料のサードパーティーサービスで、URLを取得して、数回のクリックでネイティブWebビューを使用するネイティブモバイルアプリを作成できます。

@@ -1,7 +1,7 @@
 ---
 title: Render
 layout: usermanual-page.hbs
-position: 13
+sidebar_position: 13
 ---
 
 Renderコンポーネントは、エンティティがプリミティブ形状またはRenderアセットをレンダリングするのを可能にします。

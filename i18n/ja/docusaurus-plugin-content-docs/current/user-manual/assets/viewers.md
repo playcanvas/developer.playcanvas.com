@@ -1,7 +1,7 @@
 ---
 title: アセットビューアー
 layout: usermanual-page.hbs
-position: 19
+sidebar_position: 19
 ---
 
 いくつかのアセットには、より詳細にチェックするためのビューアーツールがあります。これらで表示できるアセットは、インスペクターやコンテキストメニューに  'Open in Viewer' というオプションが表示されます。

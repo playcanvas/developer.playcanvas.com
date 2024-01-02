@@ -1,7 +1,7 @@
 ---
 title: Audio
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 Audioアセットは、[Soundコンポーネント][sound-component]を使用して再生できる音声ファイルです。

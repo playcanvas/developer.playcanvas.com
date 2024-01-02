@@ -1,7 +1,7 @@
 ---
 title: Camera
 layout: usermanual-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 The Camera component enables an entity to render a scene from a certain viewpoint.

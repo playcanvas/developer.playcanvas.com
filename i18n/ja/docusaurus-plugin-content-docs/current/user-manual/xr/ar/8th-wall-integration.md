@@ -1,7 +1,7 @@
 ---
 title: 8th Wall
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ## PlayCanvasで8th Wallを使用する

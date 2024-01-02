@@ -1,7 +1,7 @@
 ---
 title: セルフホスティング
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 独自のドメインでPlayCanvasアプリケーションを自己ホストする方法には、2つのオプションがあります。

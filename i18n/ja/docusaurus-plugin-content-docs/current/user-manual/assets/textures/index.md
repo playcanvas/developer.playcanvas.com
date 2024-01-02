@@ -1,7 +1,7 @@
 ---
 title: テクスチャ
 layout: usermanual-page.hbs
-position: 15
+sidebar_position: 15
 ---
 
 テクスチャとは、[マテリアル][1]に割り当てられ、グラフィカルなプリミティブに適用される画像のことです。

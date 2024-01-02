@@ -1,7 +1,7 @@
 ---
 title: Version Control
 layout: usermanual-page.hbs
-position: 13
+sidebar_position: 13
 ---
 
 Once you've moved beyond the simplest of projects, you will find that version control becomes an important part of your application development process. Version Control is a catch-all term for a system that performs the following functions

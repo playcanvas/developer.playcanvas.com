@@ -1,7 +1,7 @@
 ---
 title: パフォーマンスのトラブルシューティング
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 以下はよくあるパフォーマンスの問題を解決するためのヒントです。

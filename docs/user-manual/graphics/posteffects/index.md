@@ -1,7 +1,7 @@
 ---
 title: Post Effects
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 PlayCanvas supports the adding post-processing effects to your projects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.

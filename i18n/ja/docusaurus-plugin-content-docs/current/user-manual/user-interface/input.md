@@ -1,7 +1,7 @@
 ---
 title: Input
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 ユーザは、Elementコンポーネントの `useInput`フィールドを有効にすることで、[Element][1]コンポーネントとインタラクトできます。

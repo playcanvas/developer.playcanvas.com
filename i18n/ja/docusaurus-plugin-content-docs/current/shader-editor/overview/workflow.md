@@ -1,7 +1,7 @@
 ---
 title: ワークフロー
 layout: shader-editor-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 現在、シェーダーエディターでサポートされているワークフローは基本的なものであり、今後のリリースで改善される予定です。特に、シェーダーエディターとPlayCanvasエディターとのネイティブな統合を追加する予定です。

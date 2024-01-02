@@ -1,7 +1,7 @@
 ---
 title: シーン
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 シーンには以下が含まれます:

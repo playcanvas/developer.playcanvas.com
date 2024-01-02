@@ -1,7 +1,7 @@
 ---
 title: アンビエントオクルージョン(AO)
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 アンビエントオクルージョンは、環境によるオクルージョンに基づいて、どれくらいの光が表面に到達するかを予測する技法です。

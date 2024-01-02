@@ -1,7 +1,7 @@
 ---
 title: マテリアルインスペクター
 layout: shader-editor-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 ![マテリアルインスペクター][1]

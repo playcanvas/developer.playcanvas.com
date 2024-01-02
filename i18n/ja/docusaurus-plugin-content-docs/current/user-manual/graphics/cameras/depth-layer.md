@@ -1,7 +1,7 @@
 ---
 title: Depthレイヤー
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 一部のレンダリング技術では、特定のカメラのシーンのDepthバッファまたはColorバッファにアクセスする必要があります。Depth Layerは、カメラの `layers` プロパティに追加できる特別なレイヤーです。 レイヤーの [`order`] [4] は、レンダリング中にDepthバッファまたはColorバッファがキャプチャされるタイミングを定義します。キャプチャされたバッファは、カメラの後続のレイヤーで使用できます。

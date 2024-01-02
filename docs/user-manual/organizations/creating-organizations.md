@@ -1,7 +1,7 @@
 ---
 title: Creating Organizations
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 There are various ways to create an Organization. Any organizations you are part of will appear next to your name on your profile like so:

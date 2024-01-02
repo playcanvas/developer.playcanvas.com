@@ -1,7 +1,7 @@
 ---
 title: プロジェクトの公開方法
 layout: usermanual-page.hbs
-position: 21
+sidebar_position: 21
 ---
 
 ゲームの構築が完了したら、それを公開して皆にプレイしてもらいましょう！PlayCanvasでは、如何なるOSやappストアを容易にターゲットできます。

@@ -1,7 +1,7 @@
 ---
 title: アプリ - Download app
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ## ルートURL

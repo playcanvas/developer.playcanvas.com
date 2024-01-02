@@ -1,7 +1,7 @@
 ---
 title: File Handling
 layout: shader-editor-page.hbs
-position: 5
+sidebar_position: 5
 ---
 
 Shader Editor is a browser-based tool. However the graphs, materials and textures created are stored locally on the user's machine.

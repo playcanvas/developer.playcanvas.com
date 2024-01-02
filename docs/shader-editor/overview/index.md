@@ -1,7 +1,7 @@
 ---
 title: Overview
 layout: shader-editor-page.hbs
-position: 1.1
+sidebar_position: 1.1
 ---
 
 The effects created in Shader Editor are a combination of [Graphs][1] and their [Nodes][2], [Materials][3] and [Textures][4].

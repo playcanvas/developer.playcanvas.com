@@ -1,7 +1,7 @@
 ---
 title: Organizationの作成
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 Organizationを作成する方法はいくつかあります。あなたが所属しているOrganizationのは、以下のようにあなたのプロフィールの名前の隣に表示されます:

@@ -1,7 +1,7 @@
 ---
 title: ironSourceプレイアブル広告（MRAID）
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 PlayCanvasは、公式の外部ツールを介して、ironSource MRAID Playable Adフォーマットと要件をサポートしています[GitHub][2]。

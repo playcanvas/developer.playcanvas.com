@@ -1,7 +1,7 @@
 ---
 title: テクスチャ圧縮
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 テクスチャデータは、デバイスのビデオメモリ(またはVRAM)に格納されます。ブラウザタブのクラッシュなど、望ましくないことが発生しないように、アプリケーションが VRAM を使い果たさないようにすることが重要です。

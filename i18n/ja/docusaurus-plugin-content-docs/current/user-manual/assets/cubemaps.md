@@ -1,7 +1,7 @@
 ---
 title: Cubemap
 layout: usermanual-page.hbs
-position: 7
+sidebar_position: 7
 ---
 
 キューブマップ (Cubemap) はTextureアセットの一種で、1つのキューブのそれぞれの面を表す6つのTextureアセットから構成されます。通常は以下の2つの用途があります。

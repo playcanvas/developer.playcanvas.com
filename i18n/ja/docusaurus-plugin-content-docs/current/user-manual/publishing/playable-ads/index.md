@@ -1,7 +1,7 @@
 ---
 title: プレイアブル広告
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 現在、以下のプレイアブル広告ネットワークがサポートされています。

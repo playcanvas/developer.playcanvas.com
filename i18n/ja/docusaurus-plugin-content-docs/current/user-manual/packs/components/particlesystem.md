@@ -1,7 +1,7 @@
 ---
 title: Particle System
 layout: usermanual-page.hbs
-position: 12
+sidebar_position: 12
 ---
 
 Particle Systemコンポーネントは、3D空間内でパーティクルエミッターを指定します。

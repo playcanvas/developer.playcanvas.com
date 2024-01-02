@@ -1,7 +1,7 @@
 ---
 title: 新しいスクリプトの作成
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 新しいスクリプトを作成するにはアセットパネルを使用してNew Scriptを選択します。当たらしスクリプトファイルに名前を入力するよう促されます。

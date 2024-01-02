@@ -1,7 +1,7 @@
 ---
 title: Nodes Pane
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ![Nodes Pane][1]

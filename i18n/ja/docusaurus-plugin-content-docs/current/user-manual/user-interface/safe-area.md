@@ -1,7 +1,7 @@
 ---
 title: セーフエリア
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 モバイルデバイスがフルデバイススクリーンを持つ傾向にあるため、イヤースピーカーやフロントカメラ用のノッチやカットアウトがディスプレイに使用されるようになりました(iPhone Xの下を見てください)。

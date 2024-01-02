@@ -1,7 +1,7 @@
 ---
 title: Sound
 layout: usermanual-page.hbs
-position: 19
+sidebar_position: 19
 ---
 
 Soundコンポーネントは、オーディオサンプルの再生を制御します。

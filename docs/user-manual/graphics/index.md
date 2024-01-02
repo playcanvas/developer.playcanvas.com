@@ -1,7 +1,7 @@
 ---
 title: Graphics
 layout: usermanual-page.hbs
-position: 14
+sidebar_position: 14
 ---
 
 PlayCanvas incorporates an advanced graphics engine. Internally it uses the WebGL API to draw graphical primitives to the screen.

@@ -1,7 +1,7 @@
 ---
 title: Sprite
 layout: usermanual-page.hbs
-position: 13
+sidebar_position: 13
 ---
 
 スプライト (Sprite) は、シーンにレンダリングできる2Dグラフィックです。Spriteアセットは、 [Texture Atlas][1]への参照と、そのアトラスからのフレームのシーケンスです。このように、スプライトはアトラスから取り出した単一の画像を表すことができる他、フリップブックスタイルのアニメーション(アトラスから複数のフレーム)を表すこともできます。

@@ -1,7 +1,7 @@
 ---
 title: アセット - Update asset
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 ## ルートURL

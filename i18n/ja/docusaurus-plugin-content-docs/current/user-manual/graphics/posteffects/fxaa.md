@@ -1,7 +1,7 @@
 ---
 title: FXAAエフェクト
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 Fast Approximateアンチエイリアシング(FXAA)はNVIDIAが考案したアンチエイリアスの手法です。これによりシーンに簡単かつ高速なアンチエイリアシングを適応することができます。

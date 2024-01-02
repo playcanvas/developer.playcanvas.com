@@ -1,7 +1,7 @@
 ---
 title: PlayCanvas用の3Dモデルのエクスポート
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 PlayCanvasは、glTFバイナリ(GLB)、FBX、OBJ、3DS、COLLADA(DAE)の以下の形式の3Dコンテンツをインポートできます。 GLBはオープンソースの標準規格であり、エディターで非常によくサポートされているため、GLBの使用を強くお勧めします。

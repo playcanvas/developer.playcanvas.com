@@ -1,7 +1,7 @@
 ---
 title: プレビューペイン
 layout: shader-editor-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 プレビューペイン (Preview Pane) では、現在選択されているグラフやマテリアルを表示するペインであり、さまざまな照明環境や形状をサポートしています。

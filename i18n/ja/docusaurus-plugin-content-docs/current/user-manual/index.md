@@ -1,7 +1,7 @@
 ---
 title: ユーザーマニュアル
 layout: usermanual-page.hbs
-position: 0.5
+sidebar_position: 0.5
 ---
 
 PlayCanvasユーザーマニュアルは、PlayCanvasプラットフォームを使いこなすための詳細なガイドです。このマニュアルでは、JavaScriptを用いてエンジンにコーディングすることから始まり、PlayCanvasエディターを使用して[シーン][1]を構築し、ゲームをウェブやモバイルアプリストアに公開する方法までを紹介します。

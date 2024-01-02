@@ -1,7 +1,7 @@
 ---
 title: Layout Child
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 The LayoutChild component enables an element that is controlled by a LayoutGroup component to override the default behavior of the Layout Group.

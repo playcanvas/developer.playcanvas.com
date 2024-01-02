@@ -1,7 +1,7 @@
 ---
 title: View Changes
 layout: usermanual-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 It is possible to view the difference between two the current state of the project and a checkpoint using the View Changes options. A useful feature to run before starting a merge or taking a checkpoint. Or just to check on the state of the project since you last logged in.

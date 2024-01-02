@@ -1,7 +1,7 @@
 ---
 title: グラフインスペクター
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ![グラフインスペクター][1]

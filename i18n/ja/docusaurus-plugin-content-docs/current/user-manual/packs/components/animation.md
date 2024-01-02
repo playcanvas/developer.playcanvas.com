@@ -1,7 +1,7 @@
 ---
 title: Animation
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Animationコンポーネントを使用すれば、エンティティはModelコンポーネントに割り当てられているモデルに適用することのできるアニメーションを指定できます。

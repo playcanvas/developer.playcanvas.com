@@ -1,7 +1,7 @@
 ---
 title: Alternatives to ammo.js
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 ammo.js is perhaps the most popular and well known JavaScript physics engine. It is highly versatile and can generate high fidelity simulations. But it has quite high performance and memory requirements. Therefore, you should investigate whether it is indeed the best choice for your application. For example, if you are making a 2D game, a 2D physics engine might be more appropriate.

@@ -1,7 +1,7 @@
 ---
 title: Creating new scripts
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 To create a new script use the Asset Panel and select New Script. You will be asked to enter a name for for your new script file.

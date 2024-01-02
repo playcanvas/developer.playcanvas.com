@@ -1,7 +1,7 @@
 ---
 title: User Interface
 layout: usermanual-page.hbs
-position: 18
+sidebar_position: 18
 ---
 
 User Interfaces present a unique challenge for graphical applications. There are several options for building User Interfaces in PlayCanvas. 

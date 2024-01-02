@@ -1,7 +1,7 @@
 ---
 title: デバッグ
 layout: usermanual-page.hbs
-position: 9
+sidebar_position: 9
 ---
 
 PlayCanvasのスクリプトを作成するためには、ブラウザの開発ツールにアクセスして使用する方法を知っていることが重要です。

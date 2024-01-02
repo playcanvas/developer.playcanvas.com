@@ -1,7 +1,7 @@
 ---
 title: Collision
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 Collisionコンポーネントは、エンティティにコリジョンを割り当てます。 'Type'属性に基づいてコンポーネントのインターフェースは動的に異なる属性を表示します。

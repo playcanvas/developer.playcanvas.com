@@ -1,7 +1,7 @@
 ---
 title: Script
 layout: usermanual-page.hbs
-position: 16
+sidebar_position: 16
 ---
 
 Scriptコンポーネントは、エンティティがユーザーが提供したスクリプトを実行することを可能にします。このように、ユーザーはJavaScript言語を使用してスクリプトを書き、エンティティがインスタンス化され、フレームごとに更新されるときに実行することができます。

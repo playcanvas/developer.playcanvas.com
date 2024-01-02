@@ -1,7 +1,7 @@
 ---
 title: Sub Graphs
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 The second type of graph in Shader Editor are Sub Graphs.

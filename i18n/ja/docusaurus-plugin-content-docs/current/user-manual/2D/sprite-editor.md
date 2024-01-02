@@ -1,7 +1,7 @@
 ---
 title: スプライトエディター
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 スプライトエディターは、Texture AtlasアセットとSpriteアセットの作成、編集に使われます。

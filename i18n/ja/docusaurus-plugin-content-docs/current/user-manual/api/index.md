@@ -1,7 +1,7 @@
 ---
 title: REST API
 layout: usermanual-page.hbs
-position: 22
+sidebar_position: 22
 ---
 
 <div class="alert alert-info">

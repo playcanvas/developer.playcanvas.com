@@ -1,7 +1,7 @@
 ---
 title: エディターAPI
 layout: usermanual-page.hbs
-position: 10
+sidebar_position: 10
 ---
 
 <div class="alert alert-info">

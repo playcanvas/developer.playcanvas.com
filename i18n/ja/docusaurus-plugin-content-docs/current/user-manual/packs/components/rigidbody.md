@@ -1,7 +1,7 @@
 ---
 title: Rigid Body
 layout: usermanual-page.hbs
-position: 14
+sidebar_position: 14
 ---
 
 RigidBodyを使用すると、エンティティがシーンの物理シミュレーションに参加できるようになります。これにより、エンティティの移動を現実的にシミュレートできます。コンポーネントインターフェースは、 'Type'属性に基づいて異なる属性を動的に表示します。

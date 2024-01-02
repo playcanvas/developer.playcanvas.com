@@ -1,7 +1,7 @@
 ---
 title: プロジェクト内の履歴管理
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 プロジェクト内のすべてのアイテムについて、チェックポイントの履歴を表示して、変更を容易に確認できます。

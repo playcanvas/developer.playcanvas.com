@@ -1,7 +1,7 @@
 ---
 title: Info Pane
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ![Info Pane][1]

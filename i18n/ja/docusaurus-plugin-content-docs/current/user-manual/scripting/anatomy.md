@@ -1,7 +1,7 @@
 ---
 title: スクリプトの構造
 layout: usermanual-page.hbs
-position: 3
+sidebar_position: 3
 ---
 
 基本的なスクリプトです。PlayCanvasのスクリプトの構造を学ぶために使用できます。

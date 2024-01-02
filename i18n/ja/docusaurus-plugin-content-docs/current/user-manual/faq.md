@@ -1,7 +1,7 @@
 ---
 title: よくある質問
 layout: usermanual-page.hbs
-position: 25
+sidebar_position: 25
 ---
 
 

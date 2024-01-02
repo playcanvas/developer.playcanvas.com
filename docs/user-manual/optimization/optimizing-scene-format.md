@@ -1,7 +1,7 @@
 ---
 title: Optimize Scene Format
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 This publish option that can reduce the size of the scenes files to approximately 30-50% after being gzipped on the server.

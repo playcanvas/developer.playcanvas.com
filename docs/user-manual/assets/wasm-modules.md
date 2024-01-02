@@ -1,7 +1,7 @@
 ---
 title: Wasm Module
 layout: usermanual-page.hbs
-position: 17
+sidebar_position: 17
 ---
 
 Wasm Modules (also known was WebAssembly Modules) contain compiled executable code for the web.

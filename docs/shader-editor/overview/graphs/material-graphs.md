@@ -1,7 +1,7 @@
 ---
 title: Material Graphs
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 Material Graphs define the look of a material and must contain (for now) a single Material Node.

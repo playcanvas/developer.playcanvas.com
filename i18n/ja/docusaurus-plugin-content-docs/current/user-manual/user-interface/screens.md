@@ -1,7 +1,7 @@
 ---
 title: Screens
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 [Screenコンポーネント][1]は、ユーザーインターフェースが構築されるエリアを定義します。その主な役割は、スクリーンの内容（エレメントコンポーネントを持つ子エンティティ）がどのようにレンダリングされるかを決定することです。

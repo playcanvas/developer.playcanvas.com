@@ -1,7 +1,7 @@
 ---
 title: Forces and Impulses
 layout: usermanual-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 Dynamic rigid bodies move in response to forces and impulses. A force is applied to a body over a period of time whereas an impulse is a force that is applied in an instant.

@@ -1,7 +1,7 @@
 ---
 title: Graph Inspector
 layout: shader-editor-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ![Graph Inspector][1]

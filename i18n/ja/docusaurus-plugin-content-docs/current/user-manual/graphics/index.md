@@ -1,7 +1,7 @@
 ---
 title: グラフィック
 layout: usermanual-page.hbs
-position: 14
+sidebar_position: 14
 ---
 
 PlayCanvasは高度なグラフィックスエンジンを搭載しています。画面にグラフィカルなプリミティブを描画するためにWebGLのAPIを内部で使用しています。

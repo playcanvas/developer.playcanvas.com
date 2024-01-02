@@ -1,7 +1,7 @@
 ---
 title: Item History
 layout: usermanual-page.hbs
-position: 11
+sidebar_position: 11
 ---
 
 Checkpoint history is available for every item in the project so you can easily view the changes in the Checkpoints.

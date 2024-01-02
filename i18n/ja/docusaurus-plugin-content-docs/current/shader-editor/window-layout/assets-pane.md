@@ -1,7 +1,7 @@
 ---
 title: アセットペイン
 layout: shader-editor-page.hbs
-position: 4
+sidebar_position: 4
 ---
 
 アセットペイン (Asset Pane) には、プロジェクトのグラフ、マテリアル、およびテクスチャが表示されます。

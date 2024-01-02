@@ -1,7 +1,7 @@
 ---
 title: Shader Editor
 layout: shader-editor-page.hbs
-position: 0.5
+sidebar_position: 0.5
 ---
 
 Welcome to the __Shader Editor__ User Manual.

@@ -1,7 +1,7 @@
 ---
 title: デバイスピクセル比率 (DPI)
 layout: usermanual-page.hbs
-position: 6
+sidebar_position: 6
 ---
 
 デバイスピクセル比率(Device Pixel Ratio)は、ハードウェアスクリーン上の物理的なピクセルと、論理的なピクセル(スクリーンの物理的なサイズに関連した、CSSによる)の比率です。

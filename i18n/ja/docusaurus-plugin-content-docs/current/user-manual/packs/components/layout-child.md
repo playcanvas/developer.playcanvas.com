@@ -1,7 +1,7 @@
 ---
 title: Layout Child
 layout: usermanual-page.hbs
-position: 8
+sidebar_position: 8
 ---
 
 LayoutChildコンポーネントは、LayoutGroupコンポーネントによって制御されるエレメント (Element) が、Layout Groupのデフォルト動作を上書きすることができるようにします。

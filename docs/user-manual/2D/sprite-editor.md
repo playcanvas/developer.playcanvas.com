@@ -1,7 +1,7 @@
 ---
 title: Sprite Editor
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 The Sprite Editor is used to edit both Texture Atlas assets and Sprite assets. It is also used to create Sprite Assets.

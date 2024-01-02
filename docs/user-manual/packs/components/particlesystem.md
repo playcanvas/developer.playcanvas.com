@@ -1,7 +1,7 @@
 ---
 title: Particle System
 layout: usermanual-page.hbs
-position: 12
+sidebar_position: 12
 ---
 
 The Particle System component specifies a particle emitter in 3D space.

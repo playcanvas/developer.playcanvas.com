@@ -1,7 +1,7 @@
 ---
 title: ウェブ
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 PlayCanvasゲームは実際はウェブページなので、ブラウザをホームとします。 ウェブに公開する際にはいくつかの選択肢があります：

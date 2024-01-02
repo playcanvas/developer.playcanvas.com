@@ -1,7 +1,7 @@
 ---
 title: Animコンポーネント
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 [Animコンポーネント][1]の使用方法についてはこちらをクリックしてください。

@@ -1,7 +1,7 @@
 ---
 title: Node Inspector
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 ![Node Inspector][1]

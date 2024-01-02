@@ -1,7 +1,7 @@
 ---
 title: ダッシュボードヘッダー
 layout: usermanual-page.hbs
-position: 1
+sidebar_position: 1
 ---
 
 ![Dashboard][1]

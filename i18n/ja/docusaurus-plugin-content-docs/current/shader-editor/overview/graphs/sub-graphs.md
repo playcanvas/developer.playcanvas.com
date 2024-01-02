@@ -1,7 +1,7 @@
 ---
 title: サブグラフ
 layout: shader-editor-page.hbs
-position: 2
+sidebar_position: 2
 ---
 
 シェーダーエディターのグラフの2つ目のタイプは、サブグラフです。
