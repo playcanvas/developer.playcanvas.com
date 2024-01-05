@@ -5,7 +5,10 @@ sidebar_position: 12
 
 Templates (or prefabs) allow you to speed up your development by creating Entities that are reusable. You can place multiple instances of a Template in your Scene and if you make any changes and apply them to the Template Asset, all instances of that Template will be updated.
 
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
+</div>
+
 
 ## Creating Templates
 

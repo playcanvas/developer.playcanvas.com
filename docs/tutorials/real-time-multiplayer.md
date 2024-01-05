@@ -4,9 +4,13 @@ tags: [multiplayer, networking]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg
 ---
 
-<div class="alert alert-info">This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> and <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.</div>
+:::note
+This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for <a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a> and <a href="/tutorials/real-time-multiplayer-photon">Photon</a>.
+:::
 
-<iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+</div>
 
 *Use WASD to move the player around. If you only see one capsule, try opening this page in another tab or on another computer.*
 

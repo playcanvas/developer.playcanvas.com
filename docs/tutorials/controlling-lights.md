@@ -4,7 +4,9 @@ tags: [lighting]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+</div>
 
 *Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
 
@@ -40,9 +42,9 @@ this.spot.light.intensity = 10*s;
 
 These lines assign values to r, g and b variables based on a sin wave and then assign these values to the previously declared color array via `color1.set(x, y, z)` and then onto the light property. The intensity is set to vary sinusoidally from the max light intensity value of 10 down to 0.
 
-<div class="alert-info">
-    Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
-</div>
+:::warning
+Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
+warning
 
 ## General setup
 

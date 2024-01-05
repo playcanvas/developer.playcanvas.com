@@ -14,9 +14,9 @@ POST https://playcanvas.com/api/assets
 
 新しいアセットを作成します。
 
-<div class="alert alert-info">
-    現時点では、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、および `json` のタイプのアセットの作成のみをサポートしています。
-</div>
+:::warning
+現時点では、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、および `json` のタイプのアセットの作成のみをサポートしています。
+:::
 
 **他のREST APIエンドポイントと異なり、Create Assetエンドポイントはデータの送信に `multipart/form-data` を使用する必要があります。**
 

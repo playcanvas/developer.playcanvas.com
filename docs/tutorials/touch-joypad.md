@@ -3,8 +3,9 @@ title: Touchscreen Joypad Controls
 tags: [input,ui]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1007506/2F5E56-image-75.jpg
 ---
-
-<iframe loading="lazy" src="https://playcanv.as/p/kvE0iJWc/" title="Touchscreen Joypad Controls"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/kvE0iJWc/" title="Touchscreen Joypad Controls"></iframe>
+</div>
 
 [Click here to see the project][project-link].
 

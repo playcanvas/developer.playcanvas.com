@@ -3,8 +3,9 @@ title: Light Cookies
 tags: [lighting]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/409793/19BDEF-image-75.jpg
 ---
-
-<iframe loading="lazy" src="https://playcanv.as/p/AGtssoOU/" title="Light Cookies"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/AGtssoOU/" title="Light Cookies"></iframe>
+</div>
 
 Find out more by forking the [full project][1].
 

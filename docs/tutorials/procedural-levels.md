@@ -3,8 +3,9 @@ title: Procedural Levels
 tags: [procedural]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg
 ---
-
-<iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
+</div>
 
 This project uses [clone()][1] function on the Entity to randomly generate a level from Entities that have been created in the Editor.
 

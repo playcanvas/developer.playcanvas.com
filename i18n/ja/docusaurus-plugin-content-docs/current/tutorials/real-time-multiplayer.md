@@ -5,7 +5,9 @@ tags: [multiplayer, networking]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg"
 ---
 
-<div class="alert alert-info">このチュートリアルでは、ゼロから自分自身のマルチプレイヤーを作成する方法について説明します。ホストされたマルチプレイヤーサービスを使用する場合は、<a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a>および<a href="/tutorials/real-time-multiplayer-photon">Photon</a>のチュートリアルがあります。</div>
+:::note
+このチュートリアルでは、ゼロから自分自身のマルチプレイヤーを作成する方法について説明します。ホストされたマルチプレイヤーサービスを使用する場合は、<a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a>および<a href="/tutorials/real-time-multiplayer-photon">Photon</a>のチュートリアルがあります。
+:::
 
 <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
 

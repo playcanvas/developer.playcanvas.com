@@ -3,10 +3,13 @@ title: Crash Course - Make a Game
 tags: [games,basics,physics,ui]
 thumb: /images/tutorials/crash-course/crash-course-thumbnail.jpg
 ---
+<div className="iframe-container">
+    <iframe src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-<iframe src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<div class="alert alert-info">Phase 3 of this tutorial is still incomplete</div>
+:::note
+Phase 3 of this tutorial is still incomplete
+:::
 
 ## Overview
 
@@ -16,7 +19,9 @@ This was recorded for [JS GameDev Summit][js-gamedev-summit] and the video is ho
 
 Play below! Try to get as many food items as you can before the timer runs out! Use WASD for movement.
 
-<iframe loading="lazy" src="https://playcanv.as/p/dCoHvsRY/" title="Food Run - Full Project"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/dCoHvsRY/" title="Food Run - Full Project"></iframe>
+</div>
 
 ## Timestamps
 

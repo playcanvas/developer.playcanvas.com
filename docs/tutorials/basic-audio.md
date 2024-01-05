@@ -4,7 +4,9 @@ tags: [audio,basics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
+</div>
 
 *The tank is moving around the robot. You can shoot by clicking anywhere on the game.*
 
@@ -60,9 +62,9 @@ If this is checked it means that the sound will be heard relative to the positio
 
 Each slot has an Asset picker which allows you to play different audio assets from different slots. See [importing assets][4] for details on how to upload audio assets.
 
-<div class="alert-info">
-    Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
-</div>
+:::warning
+Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
+:::
 
 Once you have uploaded your assets, use the Asset Picker to select the audio asset for your slot.
 
@@ -84,9 +86,9 @@ By default, the audio sample will be played once, and then stop. If you want the
 
 To create an AudioListener, select the Entity you wish to represent the listener. Often, this will be the in-game camera as this is where the players 'head' is. In our case the AudioListener is attached to the robot.
 
-<div class="alert-info">
-    You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
-</div>
+:::note
+You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+:::
 
 [1]: /user-manual/packs/components/sound
 [2]: /user-manual/packs/components/audiolistener

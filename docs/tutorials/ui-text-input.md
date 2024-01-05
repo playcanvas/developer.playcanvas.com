@@ -3,8 +3,9 @@ title: User Interface - Text Input
 tags: [ui]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1005906/36C2AF-image-75.jpg
 ---
-
-<iframe loading="lazy" src="https://playcanv.as/p/8ZQaDGf8/" title="User Interface - Text Input"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/8ZQaDGf8/" title="User Interface - Text Input"></iframe>
+</div>
 
 [Click here to see the project][project-link].
 
@@ -26,9 +27,9 @@ And on mobile:
 
 <div class="centered"><video height="360" controls src="/images/tutorials/ui-text-input/mobile-preview.mp4"></video></div>
 
-<div class="alert alert-info">
-Note: This doesn't support 3D elements.
-</div>
+:::note
+This doesn't support 3D elements.
+:::
 
 ## How to install
 

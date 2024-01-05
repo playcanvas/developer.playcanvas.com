@@ -3,8 +3,9 @@ title: Programmatically Creating Entities
 tags: [procedural, basics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406042/4479BC-image-75.jpg
 ---
-
-<iframe loading="lazy" src="https://playcanv.as/p/1VjdIY7v/" title="Programmatically Creating Entities"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/1VjdIY7v/" title="Programmatically Creating Entities"></iframe>
+</div>
 
 Usually you will be creating Entities via the PlayCanvas Editor, building up collections of Components and scripts to create the various parts of your game. However, in some cases it is convenient to create Entities in your scripts. This tutorial shows you how.
 

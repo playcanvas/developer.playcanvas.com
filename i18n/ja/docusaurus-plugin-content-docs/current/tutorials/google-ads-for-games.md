@@ -443,7 +443,9 @@ UiController.prototype.initialize = function() {
 
 [完成したプロジェクトはこちら][tutorial-template-finished]で、GoogleのH5 Games Ads SDKとAPIの詳細情報は[こちらのサイト][google-afg-docs]で入手できます。
 
-<div class="alert alert-info">重要：チュートリアルではテストモードを使用していたため、実際の広告は表示されませんでした。製品用にテストモードを無効にするときは、リリースする国のプライバシー/クッキーポリシー、GDPRを含めて準拠していることを確認してください。通常、これは何らかの形でのクッキー同意の実装を意味します。</div>
+:::info
+重要：チュートリアルではテストモードを使用していたため、実際の広告は表示されませんでした。製品用にテストモードを無効にするときは、リリースする国のプライバシー/クッキーポリシー、GDPRを含めて準拠していることを確認してください。通常、これは何らかの形でのクッキー同意の実装を意味します。
+:::
 
 [flappy-bird-demo-interstitial-ad]: /images/tutorials/google-afg/flappy-bird-demo-interstitial-ad.gif
 [flappy-bird-demo-rewarded-ad]: /images/tutorials/google-afg/flappy-bird-demo-rewarded-ad.gif
