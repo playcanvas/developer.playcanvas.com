@@ -9,7 +9,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 *それぞれのボタンをクリックしてサウンドエフェクトを試してください。*
 
-このチュートリアルには、Web Audio APIが必要です。
+<div class="alert alert-info">このチュートリアルには、Web Audio APIが必要です。</div>
 
 ## Web Audio APIを使用する
 
