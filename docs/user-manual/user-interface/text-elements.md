@@ -23,7 +23,9 @@ By default a Text Element is set to automatically adjust its width and height to
 
 ![Auto Size][2]
 
-Note: The height of the character is determined by the largest character present in the font. It is the same for every character so as to avoid the string position changing depending on the contents of the string.
+:::note
+The height of the character is determined by the largest character present in the font. It is the same for every character so as to avoid the string position changing depending on the contents of the string.
+:::
 
 ## Alignment
 

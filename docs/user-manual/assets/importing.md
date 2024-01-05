@@ -15,7 +15,9 @@ To upload an asset to PlayCanvas, follow these steps:
 
 Now, when you attempt to choose an asset via the asset picker attribute control (for the Model component or the Animation component for example), your asset will be available for assignment.
 
-Note: There is a file size limit of 340MB.
+:::note
+There is a file size limit of 340MB.
+:::
 
 ## Updating Existing Assets
 

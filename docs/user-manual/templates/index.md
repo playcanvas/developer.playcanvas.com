@@ -58,7 +58,9 @@ Alternatively you can open the [Override Diff View][4] and apply overrides from 
 
 Any overrides you apply to the Template Asset will propagate to other instances of the Template Asset in any scene that these might be.
 
-*Note: You cannot currently undo the action of applying overrides to a Template Asset.*
+:::
+You cannot currently undo the action of applying overrides to a Template Asset.
+:::
 
 ### Reverting Overrides
 

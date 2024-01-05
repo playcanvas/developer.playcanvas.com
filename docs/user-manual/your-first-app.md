@@ -127,11 +127,11 @@ The Launch page opens in a new tab. When it opens, try pressing the 4 arrow keys
 
 ![Launch Page][15]
 
-<div class="alert alert-info">
+:::tip
 There is a 'Live Link' between the Editor and the Launch page. Any change you make in the Editor will be reflected in the Launch page in real time! It can be convenient to place the Launch page side by side with the Editor while you are working.
 
 ![Editor Live Link][16]
-</div>
+:::
 
 The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar.
 

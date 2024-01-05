@@ -3,9 +3,9 @@ title: Editor API
 sidebar_position: 10
 ---
 
-<div class="alert alert-info">
+:::warning
 The Editor API is a beta feature. Please use caution when using on live projects.
-</div>
+:::
 
 The Editor has a user accessible API that is currently in beta which can be used to help automate and extend the base functionality.
 

@@ -12,9 +12,9 @@ Common batching use cases are:
 * Combine together static geometry -- e.g. environments -- into a single mesh instance or multiple large instances to reduce draw calls, but still support camera culling.
 * Combine together dynamic geometry -- e.g. a set of moving objects -- into a single mesh instance with dynamic properties that are applied on the GPU.
 
-<div class="alert-info">
-    The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">runtime lightmaps</a> due to each lightmapped object requiring its own unique lightmap texture.
-</div>
+:::warning
+The use of batching is currently not compatible with <a href="/user-manual/graphics/lighting/runtime-lightmaps/">runtime lightmaps</a> due to each lightmapped object requiring its own unique lightmap texture.
+:::
 
 ## Creating Batch Groups
 

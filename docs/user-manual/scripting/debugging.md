@@ -21,9 +21,9 @@ The navigator lists all of the scripts currently running in the active tab, incl
 
 Each browser has detailed instructions on how to debug javascript. You should read through these documents: [Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6].
 
-<div class="alert alert-info">
-Note that when a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
-</div>
+:::tip
+When a running app is paused at a breakpoint in the debugger, other browser windows/tabs used to launch that app (containing the PlayCanvas Code Editor or Editor etc.) might also be paused.
+:::
 
 ### Debugging on Mobile Devices
 

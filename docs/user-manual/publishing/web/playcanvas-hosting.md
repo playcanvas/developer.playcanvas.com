@@ -60,9 +60,9 @@ You can also set the Primary Build for your project, by clicking on the banner i
 
 It's useful to have a single link that will always refer to the latest version of your game. That way you don't have to worry about broken links when you delete old builds. This is why each project has a Primary Build link. This will always be in the form `https://playcanv.as/p/PROJECT_ID/`
 
-<div class="alert alert-info">
+:::tip
 If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
-</div>
+:::
 
 The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.
 
