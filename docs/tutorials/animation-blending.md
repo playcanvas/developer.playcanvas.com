@@ -6,6 +6,10 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4058
 
 :::warning
 
+This tutorial uses the deprecated Model and Animation components. Please refer to the [Anim State Graph Blending tutorial](/tutorials/anim-blending/) instead.
+
+:::
+
 This tutorial uses the deprecated Model and Animation components. Please refer to the <a href="/tutorials/anim-blending/">Anim State Graph Blending tutorial</a> instead.
 
 :::

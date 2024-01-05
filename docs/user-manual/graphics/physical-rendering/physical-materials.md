@@ -53,9 +53,11 @@ You can often find the charts of recorded values for diffuse/albedo values on th
 
 The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
 
-<div class="alert-info">
+:::note
+
 The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
-</div>
+
+:::
 
 You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 

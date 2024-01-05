@@ -1,6 +1,5 @@
 ---
 title: User Manual
-layout: usermanual-page.hbs
 sidebar_position: 0.5
 ---
 

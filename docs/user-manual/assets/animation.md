@@ -15,12 +15,13 @@ There is also a viewer in the [Anim State Graph Editor][anim-state-graph-editor]
 
 ![Anim State Graph Preview][anim-state-graph-preview-gif]
 
-
 ## Animation Import Settings
 
-<div class="alert alert-info">
-Note: This is an experimental feature. Please let us know your feedback in the <a href="https://forum.playcanvas.com/" target="_blank">forums</a>.
-</div>
+:::warning
+
+This is an experimental feature. Please let us know your feedback in the [forums](https://forum.playcanvas.com/).
+
+:::
 
 When importing animations, there are settings that can be tweaked to adjust the animation quality against the file size.
 

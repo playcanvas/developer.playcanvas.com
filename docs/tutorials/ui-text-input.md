@@ -28,7 +28,9 @@ And on mobile:
 <div class="centered"><video height="360" controls src="/images/tutorials/ui-text-input/mobile-preview.mp4"></video></div>
 
 :::note
+
 This doesn't support 3D elements.
+
 :::
 
 ## How to install

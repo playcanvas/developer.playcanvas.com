@@ -445,8 +445,10 @@ And that's it for the basics of integrating Google's H5 Games Ads for H5 games a
 
 You can find the [completed project here][tutorial-template-finished] and further information about Google's H5 Games Ads SDK and API on [their site][google-afg-docs].
 
-:::info
-For the tutorial, we used test mode so we didn't show any actual ads. When you disable test mode to use for production, please ensure that you comply with any privacy/cookies policy for the countries you release in including GDPR. This usually means implementing some form of cookie consent.
+:::warning
+
+Important: For the tutorial, we used test mode so we didn't show any actual ads. When you disable test mode to use for production, please ensure that you comply with any privacy/cookies policy for the countries you release in including GDPR. This usually means implementing some form of cookie consent.
+
 :::
 
 [flappy-bird-demo-interstitial-ad]: /images/tutorials/google-afg/flappy-bird-demo-interstitial-ad.gif

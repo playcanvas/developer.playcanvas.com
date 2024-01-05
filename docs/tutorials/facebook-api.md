@@ -117,8 +117,10 @@ FbUi.prototype.hideLogout = function () {
 
 In the initialize step of this code we're listening for the `fb:init` event from the Facebook plugin. Once this has been fired we know that the Facebook SDK has been loaded and is ready to be used. We use three Facebook SDK functions. `FB.getLoginStatus()` reports back whether the user has already logged into Facebook through your application, `FB.login()` pops up a login dialog for the user and `FB.logout()` logs the user out of your application and of Facebook.
 
-:::tip
+:::warning
+
 It is important to notice here is that `FB.login()` must be called in response to a user action like clicking on a button, otherwise the user will see a pop-up warning.
+
 :::
 
 The function `loginChangeFn` is a callback which is used to respond to changes in logged in state and using the four show/hide functions we show the correct dialog box depending on the state.

@@ -13,9 +13,11 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 Update an existing asset's file.
 
-<div class="alert alert-info">
-    This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
-</div>
+:::note
+
+This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+
+:::
 
 **Unlike other REST API endpoints. The Update Asset endpoint expects data to be sent in `multipart/form-data`**
 

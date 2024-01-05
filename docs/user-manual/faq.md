@@ -1,6 +1,5 @@
 ---
 title: Common Questions
-layout: usermanual-page.hbs
 sidebar_position: 25
 ---
 

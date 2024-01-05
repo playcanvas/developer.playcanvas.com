@@ -21,9 +21,11 @@ If you want your project to be featured on playcanvas.com, you must add a projec
 
 Private projects are only visible to users who have been explicitly assigned read, write or admin access.
 
-<div class="alert alert-info">
+:::info
+
 Only users with premium accounts can access private projects
-</div>
+
+:::
 
 ## Team
 

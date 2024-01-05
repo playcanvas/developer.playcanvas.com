@@ -31,5 +31,5 @@ PlayCanvas has a built-in localization system which supports localized Text Elem
 [2]: /user-manual/user-interface/elements
 [3]: /user-manual/user-interface/elements
 [4]: /user-manual/user-interface/input
-[5]: /user-manual/2D/9-slicing
+[5]: /user-manual/2D/slicing
 [6]: /user-manual/user-interface/localization

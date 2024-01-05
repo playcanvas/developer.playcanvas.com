@@ -42,9 +42,11 @@ This will bring up the following popup:
 
 Converting your user account into an Organization will mean that you will no longer be able to log in with this user account. For that reason you need to specify an owner for the new Organization.
 
-<div class="alert alert-info">
+:::warning
+
 Make sure you can log in with the new owner's account.
-</div>
+
+:::
 
 If you have subscribed for a paid plan, that plan will be cancelled unless you choose to subscribe to an Organization plan which is offered in the popup. The number of seats to purchase will be calculated for you automatically based on the number of users in your existing private projects.
 
