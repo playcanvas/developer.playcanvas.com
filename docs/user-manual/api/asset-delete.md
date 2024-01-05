@@ -11,11 +11,7 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 
 ## Description
 
-Permanently delete an asset from a branch of your project. 
-
-:::warning 
-deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
-:::
+Permanently delete an asset from a branch of your project. **Warning** deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
 
 ## Example
 

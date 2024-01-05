@@ -81,9 +81,7 @@ The default Phong and Physical material types both have reflection properties. I
 
 You can click the Empty slot to select a cubemap or drag and drop a cubemap asset from the asset panel into the cubemap slot.
 
-:::note
-A Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
-:::
+Note: a Physical material will use the scene's skybox as a default environment map if it is assigned and  prefiltered.
 
 ## Converting Equirectangular or Octahedral HDRIs to Cubemaps
 

@@ -3,9 +3,9 @@ title: REST API
 sidebar_position: 22
 ---
 
-:::warning
-The REST API is currently in beta. This means we may change certain endpoints and API responses.
-:::
+<div class="alert alert-info">
+    The REST API is currently in beta. This means we may change certain endpoints and API responses.
+</div>
 
 ## Authorization
 

@@ -23,9 +23,9 @@ sidebar_position: 6
 
 ![Website URL][5]
 
-:::note
+<div class="alert alert-info">
 Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
-:::
+</div>
 
 **6.** Finally, set up all the images and icons that are required for your game
 

@@ -13,9 +13,9 @@ POST https://playcanvas.com/api/assets
 
 Create a new asset.
 
-:::warning
-This endpoint currently only supports creating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
-:::
+<div class="alert alert-info">
+    This endpoint currently only supports creating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+</div>
 
 **Unlike other REST API endpoints. The Create Asset endpoint expects data to be sent in `multipart/form-data`**
 

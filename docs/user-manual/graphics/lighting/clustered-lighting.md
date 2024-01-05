@@ -3,9 +3,9 @@ title: Clustered Lighting
 sidebar_position: 6
 ---
 
-:::warning
-Clustered lighting is enabled by default from PlayCanvas Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
-:::
+<div class="alert alert-info">
+    Clustered lighting is enabled by default from PlayCanvas Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
+</div>
 
 Lights are a great way to add realism to your application. However, real time lights can also create significant runtime performance cost, especially when you have large numbers of lights that cast shadows.
 

@@ -95,9 +95,9 @@ Will result in the following where the folder structure is preserved:
 
 We generally recommend that if you will be using this feature for reusable libraries and assets, to keep it contained to a root level folder that can be easily copied and pasted to other projects. This will keep the folder structure of projects simpler and cleaner.
 
-:::warning
-Copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
-:::
+<div class="alert alert-info">
+Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+</div>
 
 ## Checking References
 
@@ -105,9 +105,9 @@ Sometimes it's useful to know where assets are being used (or referenced) within
 
 ![Unreferenced Asset][5]
 
-:::note
-The Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
-:::
+<div class="alert alert-info">
+Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+</div>
 
 If an asset does have references, you can check them via the References content menu item:
 
