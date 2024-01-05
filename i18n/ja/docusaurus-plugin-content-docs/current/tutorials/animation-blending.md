@@ -5,9 +5,7 @@ tags: [animation]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
 ---
 
-:::warning
 このチュートリアルでは非推奨のModelおよびAnimationコンポーネントが使用されています。代わりに<a href="/tutorials/anim-blending/">アニメーションステートグラフのブレンディング</a>を参照してください。
-:::
 
 <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 

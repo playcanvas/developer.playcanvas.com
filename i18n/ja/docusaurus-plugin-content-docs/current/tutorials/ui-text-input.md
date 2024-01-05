@@ -27,9 +27,9 @@ HTML入力要素を使用することで、Webページ上でのユーザーが�
 
 <div class="centered"><video height="360" controls src="/images/tutorials/ui-text-input/mobile-preview.mp4"></video></div>
 
-:::note
-3D要素には対応していません。
-:::
+<div class="alert alert-info">
+Note: 3D要素には対応していません。
+</div>
 
 ## インストール方法
 

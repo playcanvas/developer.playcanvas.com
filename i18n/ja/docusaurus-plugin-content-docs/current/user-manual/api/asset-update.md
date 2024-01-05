@@ -14,9 +14,9 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 既存のアセットのファイルを更新します。
 
-:::note
-現在、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、`json` のタイプのアセットの更新のみをサポートしています。
-:::
+<div class="alert alert-info">
+    現在、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、`json` のタイプのアセットの更新のみをサポートしています。
+</div>
 
 **他のREST APIエンドポイントとは異なり、アップデートアセットエンドポイントはデータを `multipart/form-data` で送信することが必要です。**
 

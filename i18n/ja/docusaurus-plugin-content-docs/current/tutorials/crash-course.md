@@ -7,9 +7,7 @@ thumb: /images/tutorials/crash-course/crash-course-thumbnail.jpg
 
 <iframe src="https://www.youtube.com/embed/9zqHlbW9XWE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-:::note
 Phase 3 of this tutorial is still incomplete
-:::
 
 ## 概要
 
