@@ -15,6 +15,12 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* shadows */
+  --ring-offset-shadow: 0 0 #0000;
+  --ring-shadow: 0 0 #0000;
+  --shadow: 0 0 #0000;
+  --shadow-colored: 0 0 #0000;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,4 +33,28 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.shadow {
+  --shadow: 0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a;
+  --shadow-colored: 0 4px 6px -1px var(--shadow-color),0 2px 4px -2px var(--shadow-color);
+
+  box-shadow: var(--ring-offset-shadow,0 0 #0000),var(--ring-shadow,0 0 #0000),var(--shadow);
+}
+
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* for 16:9 aspect ratio */
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
