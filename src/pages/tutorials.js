@@ -2,15 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import data from './tutorial-data.json';
 import styles from './tutorials.module.scss';
-import allRoutes from '@generated/routes'
-import { usePluginData } from '@docusaurus/useGlobalData';
 import Link from '@docusaurus/Link';
-
-// From all the available routes, find the one that matches the path of the tutorials page
-// const tutorials = routes
-//   .find(r => r.path === '/' && Array.isArray(r.routes)).routes[0].routes
-//   .find(r => Array.isArray(r.routes)).routes
-//   .filter(r => r.path.startsWith('/tutorials/'))
 
 const Cross = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -37,9 +29,6 @@ export default function Tutorials() {
   const [activeTags, setActiveTags] = useState([]);
   // State for storing filtered tutorials
   const [filteredTutorials, setFilteredTutorials] = useState(tutorials);
-
-  // Collect all unique tags from the tutorial data
-  // const allTags = Array.from(new Set(data.result.flatMap(tutorial => tutorial.tags || [])));
 
   // Handle tag button click
   const toggleTag = (tag) => {
@@ -76,9 +65,9 @@ export default function Tutorials() {
       {/* Tutorials Grid */}
       <div className={styles.tutorialsGrid}>
         {filteredTutorials.map((tutorial, i) => (
-          <Link href={tutorial.filename} target='_blank' rel='noreferrer noopener' className={styles.tutorialTile} key={i}>
+          <Link href={tutorial.filename} className={styles.tutorialTile} key={i}>
             <div className={styles.tutorialTile}>
-              <img src={tutorial.thumb} alt={tutorial.title} className={`${styles.thumbnail} shadow`} />
+              <img src={tutorial.thumb} alt={tutorial.title} className={styles.thumbnail} />
               <div className={styles.title}>{tutorial.title}</div>
             </div>
           </Link>
