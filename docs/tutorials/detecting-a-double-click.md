@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4365
 ---
 
 Double click on the screen to move the camera
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/BSSXwNAj/" title="Detecting a double click" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
