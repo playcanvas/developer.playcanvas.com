@@ -3,6 +3,7 @@ title: Basic Mouse Input
 tags: [mouse, input]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
 </div>

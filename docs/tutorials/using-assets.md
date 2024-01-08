@@ -3,6 +3,7 @@ title: Using the Asset Registry
 tags: [loading, assets, basics]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
 </div>

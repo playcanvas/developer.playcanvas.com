@@ -3,6 +3,7 @@ title: Real-time Multiplayer with Colyseus
 tags: [multiplayer, networking]
 thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 ---
+
 <div className="iframe-container">
   <iframe loading="lazy" src="https://playcanv.as/p/1QoAsx7r/" title="Real-time Multiplayer with Colyseus"></iframe>
 </div>

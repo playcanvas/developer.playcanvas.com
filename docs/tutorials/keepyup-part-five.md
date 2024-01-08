@@ -3,6 +3,7 @@ title: Making a Simple Game - Part 5
 tags: [games]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 5"></iframe>
 </div>

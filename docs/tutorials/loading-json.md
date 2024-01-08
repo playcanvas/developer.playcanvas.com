@@ -3,6 +3,7 @@ title: Loading JSON Data
 tags: [loading]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405827/G8YF23-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/cHnXIXoN/" title="Loading JSON Data"></iframe>
 </div>

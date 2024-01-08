@@ -3,6 +3,7 @@ title: Procedural Levels
 tags: [procedural]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405864/A3MSWE-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/smskdMrk/" title="Procedural Levels"></iframe>
 </div>

@@ -3,6 +3,7 @@ title: Basic Keyboard Input
 tags: [input]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
 </div>

@@ -3,6 +3,7 @@ title: Creating a Music Visualizer
 tags: [audio]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
 </div>

@@ -3,6 +3,7 @@ title: User Interface - Leaderboard
 tags: [ui]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg
 ---
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
 </div>
