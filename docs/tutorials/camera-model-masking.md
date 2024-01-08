@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4367
 ---
 
 Sample showing to use render masking on the lights and models to enable lighting to only affect certain models and cameras to render certain models.
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/D4ZYtQrG/" title="Camera model masking" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>

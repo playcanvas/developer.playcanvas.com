@@ -10,10 +10,6 @@ This tutorial uses the deprecated Model and Animation components. Please refer t
 
 :::
 
-This tutorial uses the deprecated Model and Animation components. Please refer to the <a href="/tutorials/anim-blending/">Anim State Graph Blending tutorial</a> instead.
-
-:::
-
 <div class='iframe-container'>
     <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 </div>

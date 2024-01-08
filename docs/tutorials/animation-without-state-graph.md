@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/8417
 ---
 
 Example project on how to add and play animations without using a state graph
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/xrWromyG/" title="Animation without State Graph" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
