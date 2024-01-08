@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4408
 ---
 
 Shockwave ripple post effect
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/c16yO94k/" title="Shockwave" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>

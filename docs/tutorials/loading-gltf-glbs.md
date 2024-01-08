@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/7307
 ---
 
 How to load a GLB as a binary asset.
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/RIN6pM0I/" title="Loading glTF GLBs" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>

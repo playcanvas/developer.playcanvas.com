@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/4344
 ---
 
 360 Video with WebXR support
+
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/p/G0d8FneG/" title="WebXR 360 Video" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>

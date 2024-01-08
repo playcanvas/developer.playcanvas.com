@@ -42,6 +42,7 @@
   "tutorials": [
     {
       "title": "360 lookaround camera",
+      "id": "360-lookaround-camera",
       "tags": [
         "input",
         "camera",
@@ -141,7 +142,6 @@
     },
     {
       "title": "Basic Cameras",
-      "layout": "tutorial-page.hbs",
       "tags": [
         "camera",
         "basics"
