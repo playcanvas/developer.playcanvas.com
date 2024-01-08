@@ -1,5 +1,6 @@
 ---
-title: '360 lookaround camera'
+title: 360 lookaround camera
+id: 360-lookaround-camera
 tags: [input, camera, tutorial]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/438216/3B51C6-image-75.jpg
 ---
