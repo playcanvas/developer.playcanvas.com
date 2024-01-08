@@ -23,9 +23,7 @@
   },
   "scripts": {
     "docusaurus": "docusaurus",
-    "prestart" : "npm run generate-tutorial-data",
     "start": "docusaurus start",
-    "prebuild" : "npm run generate-tutorial-data",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
