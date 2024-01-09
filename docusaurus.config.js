@@ -102,38 +102,67 @@ const config = {
                 label: 'User Manual',
                 to: '/user-manual/',
               },
+              {
+                label: 'Tutorials',
+                to: '/tutorials/',
+              },
+              {
+                label: 'API Reference',
+                to: '/api/',
+              },
+            ],
+          },
+          {
+            title: 'Social',
+            items: [
+              {
+                label: 'Twitter / X',
+                href: 'https://twitter.com/playcanvas',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://www.facebook.com/playcanvas',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/playcanvas',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/playcanvas',
+                label: 'Forum',
+                href: 'https://forum.playcanvas.com',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/playcanvas',
+                href: 'https://discord.gg/RSaMRzg',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/playcanvas',
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/playcanvas',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Resources',
             items: [
               {
                 label: 'Blog',
-                to: 'https://blog.playcanvas.com',
+                href: 'https://blog.playcanvas.com',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/playcanvas',
               },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@playcanvas',
+              },
             ],
-          },
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} PlayCanvas Ltd.`,
       },
