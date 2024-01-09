@@ -31,7 +31,9 @@ For the tutorial we are going to fork the [Google H5 Ad Tutorial (Start)][tutori
 
 The end result will look like this where we can call the interstitial and rewarded ads via button clicks and the refresh button will be used to check if the rewarded ads can be shown (more on this later).
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/OkynewOO/" title="Finished Tutorial"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/OkynewOO/" title="Finished Tutorial"></iframe>
+</div>
 
 ## Setting up
 

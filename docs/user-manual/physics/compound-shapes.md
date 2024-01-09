@@ -7,7 +7,9 @@ Compound shapes are custom collision shapes created out of multiple primitive sh
 
 The main advantage is that you are able to have dynamic rigidbody collisions between compound shapes (shown below) which is not possible with mesh collision types.
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/KXZ5Lsda/" title="Compound Physic Shapes"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/KXZ5Lsda/" title="Compound Physic Shapes"></iframe>
+</div>
 
 [PlayCanvas project link][compound-shapes-project]
 

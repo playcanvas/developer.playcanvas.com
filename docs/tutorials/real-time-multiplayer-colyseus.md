@@ -4,7 +4,9 @@ tags: [multiplayer, networking]
 thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/1QoAsx7r/" title="Real-time Multiplayer with Colyseus"></iframe>
+<div className="iframe-container">
+  <iframe loading="lazy" src="https://playcanv.as/p/1QoAsx7r/" title="Real-time Multiplayer with Colyseus"></iframe>
+</div>
 
 > *Select create game to open a new game. And click anywhere on the floor to move the object.*
 

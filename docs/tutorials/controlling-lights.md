@@ -4,7 +4,9 @@ tags: [lighting]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+</div>
 
 *Press 1, 2 or 3 to enable/disable the spot, point and directional lights respectively.*
 

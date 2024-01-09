@@ -20,7 +20,9 @@ This was recorded for [JS GameDev Summit][js-gamedev-summit] and the video is ho
 
 Play below! Try to get as many food items as you can before the timer runs out! Use WASD for movement.
 
-<iframe loading="lazy" src="https://playcanv.as/p/dCoHvsRY/" title="Food Run - Full Project"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/dCoHvsRY/" title="Food Run - Full Project"></iframe>
+</div>
 
 ## Timestamps
 

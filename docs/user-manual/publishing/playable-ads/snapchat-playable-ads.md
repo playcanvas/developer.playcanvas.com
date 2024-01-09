@@ -15,7 +15,9 @@ There are some limitations to be aware of with the tool which can be found in th
 
 The [Cube Jump project][5] is ready to be exported to the Snapchat Playable Ad format and the expected HTML output can be found [here][6].
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
+</div>
 
 ## File size tips
 

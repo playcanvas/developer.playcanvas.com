@@ -4,7 +4,9 @@ tags: [audio]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
+</div>
 
 *Click on the various buttons to try out different sound effects.*
 
