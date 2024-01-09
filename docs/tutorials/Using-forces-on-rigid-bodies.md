@@ -4,7 +4,7 @@ tags: [physics, collision]
 thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg
 ---
 
-<div class='iframe-container'>
+<div className='iframe-container'>
     <iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses" />
 </div>
 
