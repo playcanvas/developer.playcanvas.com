@@ -10,7 +10,7 @@ This tutorial uses the deprecated Model and Animation components. Please refer t
 
 :::
 
-<div class='iframe-container'>
+<div className='iframe-container'>
     <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Animation Blending"></iframe>
 </div>
 
