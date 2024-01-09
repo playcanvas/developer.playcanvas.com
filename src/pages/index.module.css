@@ -9,6 +9,9 @@
   position: relative;
   overflow: hidden;
   background-image: url('/img/playcanvas-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 996px) {
