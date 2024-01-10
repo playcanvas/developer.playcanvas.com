@@ -3,14 +3,15 @@
   "author": "PlayCanvas <support@playcanvas.com>",
   "homepage": "https://developer.playcanvas.com",
   "description": "PlayCanvas developer site",
-  "version": "1.17.0",
+  "version": "2.0.0",
   "keywords": [
     "playcanvas",
     "game engine",
     "webgl",
     "webgl2",
     "3d",
-    "documentation"
+    "documentation",
+    "docusaurus"
   ],
   "license": "MIT",
   "bugs": {
@@ -20,43 +21,48 @@
     "type": "git",
     "url": "https://github.com/playcanvas/developer.playcanvas.com.git"
   },
-  "eslintConfig": {
-    "extends": "@playcanvas/eslint-config",
-    "globals": {
-      "hljs": "readonly"
-    }
-  },
-  "devDependencies": {
-    "@metalsmith/layouts": "^2.7.0",
-    "@metalsmith/markdown": "^1.10.0",
-    "@metalsmith/permalinks": "2.5.1",
-    "@metalsmith/remove": "^1.4.0",
-    "@playcanvas/eslint-config": "^1.7.1",
-    "chokidar-cli": "^3.0.0",
-    "eslint": "^8.50.0",
-    "handlebars": "^4.7.8",
-    "html-validate": "^8.5.0",
-    "jstransformer-handlebars": "^1.2.0",
-    "linkinator": "^5.0.2",
-    "marked": "^9.0.3",
-    "metalsmith": "^2.6.1",
-    "metalsmith-beautify": "^0.2.0",
-    "metalsmith-static": "0.0.5",
-    "node-fetch": "^3.3.2",
-    "sass": "^1.68.0",
-    "serve": "^14.2.1"
-  },
   "scripts": {
-    "build": "node build.mjs",
-    "build:dev": "npm run faq-to-json -- --out editor_howdoi_dev.json && npm run build -- dev",
-    "build:prod": "npm run faq-to-json -- --out editor_howdoi.json && npm run build -- prod",
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
     "faq": "node faq.js",
     "faq-to-json": "node faq_to_json.js --dir faq --bucket code.playcanvas.com",
-    "lint": "eslint --ext .js,.mjs build.mjs faq.js faq_to_json.js lib public/js utils",
-    "lint:html": "html-validate build/en",
-    "sass": "sass --no-source-map sass/styles.scss public/css/styles.css",
-    "serve": "serve build -l 51000",
-    "test:links": "linkinator en --server-root build --recurse --skip \"api\" --skip \"com/ja\" --skip \"com/ru\" --skip \"com/zh\" --skip \"facebook.com\" --verbosity error",
-    "watch": "chokidar content/**/*.md public -c \"npm run build\""
+    "generate-tutorial-data": "node utils/generate-tutorial-data.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.0.1",
+    "@docusaurus/preset-classic": "3.0.1",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sass": "^1.69.7"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.0.1",
+    "@docusaurus/types": "3.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }

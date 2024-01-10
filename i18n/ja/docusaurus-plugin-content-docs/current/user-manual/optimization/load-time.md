@@ -1,0 +1,59 @@
+---
+title: ロード時間の最適化
+layout: usermanual-page.hbs
+sidebar_position: 7
+---
+
+最適化によってフレームレートを向上させるのに限定されません。ロード時間も同様に重要です。アプリのロードが速ければ、ユーザーがそれを体験するために残留する可能性が高くなります。ユーザーの離脱を防ぐためにアプリが5秒以下で読み込まれるようにすることを目指してください。
+
+以下は、高速なロード時間を実現するためのいくつかのヒントです。
+
+* In general, AVIF images produce smaller files than WebP, JPG, or PNG for the same image quality. It also supports an alpha channel like WebP and PNG. However [not all browsers currently support AVIF](https://caniuse.com/avif) so use it where it makes sense for your project. If you can't use AVIF, [WebP has much wider support](https://caniuse.com/webp) and produces smaller files than JPEG or PNG with similar quality, but we encourage you to test with different formats.
+* 特定のテクスチャイメージをダウンサンプリングする機会を探してください。例えば、小さいグラフィカルオブジェクトに使用される 2048x2048 のテクスチャは、1024x1024 または512x512 でほぼ同じように見える場合があります。
+* 非同期で読み込むことができるアセットを事前にロードしないでください。例えば、ゲームの開始時にすぐにゲームミュージックを再生する必要がない場合は、Inspector パネルでそのアセットの Preload オプションをオフにすることを検討してください。
+* プリフィルター (Prefiltered) されたキューブマップを持っていて、スカイボックスの最上位ミップマップを表示していない場合、6つの面画像の preload をすべてオフにすることができます。
+* If you are not instantiating Templates at runtime, uncheck preload on the asset as they aren't needed. (See '[When do I need to load Template Assets?][1]' for more information).
+* インポートされたモデルに必要な頂点属性のみを持たせるようにしてください。たとえば、モデルに第2 UV セットがあるが使用していない場合、またはすべてが白い頂点カラーしかない場合は、モデリングアプリケーションに戻ってそれらの属性を削除してください。
+* Google Chrome Dev Tools の Networking パネル (または他のブラウザのそれに相当するもの) を使用して、サイズでロードされたアセットをソートし、目立つものを見つけてください。使用されていないアセットまたは重複するアセットを削除することができます。
+* PlayCanvas の組み込み物理エンジンを使用すると、379KB の追加ダウンロードコストが発生します。非常に単純な問題を解決するために物理エンジンを使用している場合は、ダウンロードペナルティを被らない代替ソリューションを採用することを検討してください。
+* PlayCanvas アプリをセルフホストする場合は、GZIP 圧縮でファイルを提供するようにウェブサーバーを構成してください。特に JSON と JS ファイルについてはそれが必要です。
+
+## ロードシーケンスのベストプラクティス
+
+上記のガイドラインを超えて、ユーザーが新しいものとやりとりできるようにロードを複数の段階に分けることで、ユーザーを維持することができます。
+
+Using [Virtual Voodoo][2] as an example, we can show the 'typical' sequence that most applications will use for browser experiences.
+
+ゲームには3つのフェーズがあります。
+
+1. ローダー
+2. タイトルスクリーンとキャラクターカスタマイズ
+3. メインゲーム
+
+![Virtual Voodoo Phases][3]
+
+ローダーフェーズは、最初の PlayCanvas シーンであるタイトルスクリーンとキャラクターカスタマイズに必要なアセットをロードします。これには、UI、キャラクターモデル、アセットなどが含まれます。
+
+タイトルスクリーンがアクティブになると、メインゲームに必要なアセットをバックグラウンドでロードし始めます。タイトルスクリーンに移行し、キャラクターカスタマイズとのやり取りが可能な場合、ユーザーがスタートボタンを押すまでにメインゲームのアセットがすでに読み込まれている場合があります。
+
+ただし、ユーザーがアセットのロードが完了する前に開始ボタンを押した場合は、ボタンに進行状況バーが表示されます。バーが100%に達すると、ゲームは自動的にメインゲームに移行します。
+
+![Virtual Voodoo Assets Not Ready][4]
+
+アセットを段階的にロードし、定期的にユーザーが新しいものとやりとりおよび/または見ることができるようにすることで、ロード時間が長い場合でも、ユーザーは参加し続けることができます。
+
+### 追加の改善
+
+一部の開発者は、プリローダーフェーズを最小限に抑え、アプリケーションに関連するアセットやテキストを埋め込んでアプリケーション内のローディング画面を追加することができます。これにより、ユーザーはアプリケーションと直接関連するものを見ることができるため、参加感が高まります。
+
+ゲームが許す場合は、より詳細なアセットがロードされるまでの間、一般的なプレースホルダーを使用すると、ユーザーがアプリケーションとやり取りすることができるようになります。
+
+以下は、キャラクターの輪郭線を完全に読み込むまでのプレースホルダーとして、キャラクターのシルエットを使用する例です。シルエットのプレースホルダーはファイルサイズが小さいため、プリロードシーケンスの一部として使用できます。また、アプリケーション内の他のキャラクターでも再利用できます。
+
+![Lazy Load Character][5]
+
+[1]: /user-manual/templates/#when-do-i-need-to-load-template-assets
+[2]: https://playcanv.as/p/tRUfwVg1/
+[3]: /images/user-manual/optimization/loading/virtual-voodoo-phases.jpg
+[4]: /images/user-manual/optimization/loading/virtual-voodoo-assets-not-ready.gif
+[5]: /images/user-manual/optimization/loading/character-load.gif
