@@ -21,10 +21,12 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'playcanvas', // Usually your GitHub org/user name.
-  projectName: 'engine', // Usually your repo name.
+  projectName: 'developer.playcanvas.com', // Usually your repo name.
+  deploymentBranch: 'stable',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: true,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
