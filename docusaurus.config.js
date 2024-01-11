@@ -16,13 +16,12 @@ const config = {
   url: 'https://developer.playcanvas.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/developer.playcanvas.com',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'playcanvas', // Usually your GitHub org/user name.
   projectName: 'developer.playcanvas.com', // Usually your repo name.
-  deploymentBranch: 'stable',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
