@@ -1,6 +1,5 @@
 ---
 title: スクリプトの読み込み順序
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

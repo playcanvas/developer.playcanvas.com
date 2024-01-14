@@ -1,10 +1,9 @@
 ---
 title: ammo.jsの更新
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 
-### はじめに
+### イントロダクション
 
 PlayCanvasはammo.jsの最新バージョンのサポートを追加しました。
 

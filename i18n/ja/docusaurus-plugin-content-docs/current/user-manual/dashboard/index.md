@@ -1,6 +1,5 @@
 ---
 title: プロジェクトのダッシュボード
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 

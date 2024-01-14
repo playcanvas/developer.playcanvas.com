@@ -1,6 +1,5 @@
 ---
 title: 色相・彩度エフェクト
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

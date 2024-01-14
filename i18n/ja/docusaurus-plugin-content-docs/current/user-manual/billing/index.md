@@ -1,6 +1,5 @@
 ---
 title: お支払いについて
-layout: usermanual-page.hbs
 sidebar_position: 24
 ---
 

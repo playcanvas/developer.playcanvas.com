@@ -1,6 +1,5 @@
 ---
 title: Layout Groups
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 
@@ -44,7 +43,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 値が **Stretch** の場合、以下の手段を用いて子を引き延ばし、コンテナの幅や高さを埋めます。
 
-* それぞれの子のfitWidthProportion/fitHeightProportionの値を合計して標準化します。すべての値の合計は1です。
+* 全ての子要素の fitWidthProportion/fitHeightProportion 値を合計し、正規化して全ての値が合計で 1 になるようにします。
 * それぞれの子に合わせた幅・高さを適用します。
 * 全ての子の幅・高さの新しい合計値がコンテナのスペースを超えた場合、各子の幅・高さを標準化したfitWidthProportion/fitHeightProportion値に基づいて部分的に減らします。ただし、子のminWidth/minHeightを超えることはありません。
 

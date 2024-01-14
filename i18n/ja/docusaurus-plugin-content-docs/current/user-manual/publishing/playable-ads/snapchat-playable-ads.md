@@ -1,6 +1,5 @@
 ---
 title: Snapchatプレイアブル広告
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 
@@ -16,7 +15,9 @@ SnapchatのPlayable Adでは、[MRAID 2.0 API][mraid-api]標準が使用され�
 
 [Cube Jumpプロジェクト][5]は、Snapchat Playable Adフォーマットにエクスポートできる状態になっており、期待されるHTML出力は[こちら][6]からダウンロードできます。
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/X1nwbUGA/" title="Cube Jump Playable Ad"></iframe>
+</div>
 
 ## ファイルサイズの補足
 
@@ -24,7 +25,7 @@ SnapchatのPlayable Adでは、[MRAID 2.0 API][mraid-api]標準が使用され�
 
 圧縮されていない最小化されたPlayCanvas Engineのコードは、 **\~1.2MB** であり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに対して約 **\~30%**  追加されます。
 
-これは、Base64エンコードの前に\~3MBのアセットが含まれることを意味します。
+これは、Base64エンコード前にアセットに約~3MBの余裕があることを意味します。
 
 画像をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 

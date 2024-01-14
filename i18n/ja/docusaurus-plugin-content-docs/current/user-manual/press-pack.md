@@ -1,6 +1,5 @@
 ---
 title: プレスパック
-layout: usermanual-page.hbs
 sidebar_position: 27
 ---
 

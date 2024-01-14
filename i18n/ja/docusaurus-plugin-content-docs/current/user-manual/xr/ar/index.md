@@ -1,6 +1,5 @@
 ---
 title: AR
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 
@@ -8,7 +7,7 @@ sidebar_position: 2
 
 PlayCanvasでは、WebXR APIを通じてモバイルデバイス向けの拡張現実(AR)アプリケーションの作成が可能です。また、人気のあるARフレームワークとの統合も行われています。
 
-## プラットフォーム
+## 対応プラットフォーム
 
 AR機能は、Android Chromeブラウザを使用して利用できます。iOS SafariのWebXRサポートは[進行中][2]です。さらに、[8th Wall][3]および[Zappar][4]などのフレームワークを使用すると、Safariを含むほとんどのモバイルブラウザでARコンテンツを体験することができます。
 

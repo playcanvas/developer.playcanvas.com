@@ -1,11 +1,12 @@
 ---
 title: 力と衝撃
-layout: tutorial-page.hbs
 tags: [physics, collision]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405828/95F429-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses"></iframe>
+<div className='iframe-container'>
+    <iframe loading="lazy" src="https://playcanv.as/p/8LTSuf4F/" title="Forces and Impulses" />
+</div>
 
 *カーソルキーを使用してインパルスを適用し、WASDキーを使用してトルクを適用し、キューブを回転させることができます。Fキーを押し続けると、重力の影響をキャンセルするために一定の上向きの力が適用されます。*
 *Rキーを押すと、キューブがリセットされます。*

@@ -1,11 +1,12 @@
 ---
 title: UI - ボタン
-layout: tutorial-page.hbs
 tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501973/ED1B35-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/jpRiV53D/" title="User Interface - Buttons"></iframe>
+</div>
 
 *ElementとButtonコンポーネントを使用したシンプルなボタン。[完全なシーン][1]を参照してください。*
 
@@ -21,7 +22,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 ![Screen][5]
 
-2Dスクリーンなので、Screen Spaceにチェックを入れました。Reference Resolutionは、対象としている解像度です。この場合、1080×1920です。解像度の変更に応じて画面を適応するようにScale ModeにBlendを選択し、Scale Blendを1に設定します。
+2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
 私たちのスクリーンには、最上部に表示されるロゴのためのImage Element、'SELECT QUALITY'を表示するText Element、3つのボタンなど、さまざまな子要素があります。
 

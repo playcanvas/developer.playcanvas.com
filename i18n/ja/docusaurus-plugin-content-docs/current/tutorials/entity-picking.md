@@ -1,19 +1,22 @@
 ---
 title: シーン上のエンティティの選択
-layout: tutorial-page.hbs
 tags: [raycast,basics,physics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405856/DS51PO-image-75.jpg"
 ---
 
 Collision Picking - クリックしてシェイプを選択する
 
-<iframe loading="lazy" src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/Ps1tTzWn/" title="Collision Picking"></iframe>
+</div>
 
 ---
 
 Frame Buffer Picking - クリックしてグレーのシェイプを選択する。赤い形状はピックできないように設定されています。
 
-<iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/ZQVQqgGU/" title="Frame Buffer Picking"></iframe>
+</div>
 
 ---
 

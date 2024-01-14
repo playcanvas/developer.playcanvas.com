@@ -1,6 +1,5 @@
 ---
 title: アセット
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 
@@ -36,7 +35,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 任意のアセットの詳細を確認するには、アセットパネルのサムネイルを選択します。アセットの詳細がInspectorに表示されます。
 
-## フィルタリング
+## フィルタリング (Filtering)
 
 フィルタドロップダウンから表示させるアセットの種類を選択して表示されているアセットをフィルタします。
 
@@ -96,9 +95,11 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 一般的には、再利用可能なライブラリやアセットにこの機能を使用する場合は、他のプロジェクトに簡単にコピー＆ペーストできるよう、ルートレベルのフォルダに収めることをおすすめします。これにより、プロジェクトのフォルダ構造がシンプルで整理された状態を保つことができます。
 
-<div class="alert alert-info">
-注意点として、アセットのコピー＆ペーストは、同じ名前の既存のアセットを上書きせず、新しいアセットを作成します。
-</div>
+:::note
+
+Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+
+:::
 
 ## 参照の確認
 
@@ -106,9 +107,11 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 ![Unreferenced Asset][5]
 
-<div class="alert alert-info">
-Editorはコードで作成されたアセットの参照を検出できません。アセットを削除する際は注意が必要です。
-</div>
+:::warning
+
+Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+
+:::
 
 アセットに参照がある場合は、Referencesコンテンツメニュー項目を使用して参照することができます。
 

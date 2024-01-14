@@ -1,6 +1,5 @@
 ---
 title: CDNを使用したホスティング
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

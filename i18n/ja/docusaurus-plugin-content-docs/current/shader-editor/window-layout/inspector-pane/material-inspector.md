@@ -1,6 +1,5 @@
 ---
 title: マテリアルインスペクター
-layout: shader-editor-page.hbs
 sidebar_position: 3
 ---
 
@@ -28,7 +27,7 @@ Basic、Render States、Parametersの3つのセクションがあります。
 - Opacity Fades Specular - (まだサポートされていません)。
 - Use Fog - (まだサポートされていません)。
 
-### Parameters
+### パラメーター
 
 パラメーターセクションには、グラフに配置されたパラメーターノードがリストされます。名前とタイプは、グラフノード自体から取得されます。
 

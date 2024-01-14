@@ -1,6 +1,5 @@
 ---
 title: プレイアブル広告
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

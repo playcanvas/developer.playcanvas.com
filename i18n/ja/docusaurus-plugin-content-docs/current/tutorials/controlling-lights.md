@@ -1,11 +1,12 @@
 ---
 title: ライトの制御方法
-layout: tutorial-page.hbs
 tags: [lighting]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405812/9D487A-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/tiKpka9M/" title="Controlling Lights"></iframe>
+</div>
 
 *1、2、3を押すとそれぞれスポットライト、ポイントライト、ディレクショナルライトのON/OFFが切り替わります。*
 
@@ -41,9 +42,11 @@ this.spot.light.intensity = 10*s;
 
 これらの行は、sin波に基づいてr、g、b変数に値を割り当て、`color1.set(x, y, z)`を使用して既に宣言された色配列にこれらの値を割り当て、光プロパティに割り当てます。強度は、最大光の強度値である10から0まで正弦波的に変化するように設定されています。
 
-<div class="alert-info">
-    光の色の赤の値をアクセスして変更するために`entity.light.color.r`を使用することはできません。光のプロパティ`color`の変更のみが検出されるため、プロパティに完全な`pc.Color`を割り当てる必要があります。例: `entity.light.color = new pc.Color(1, 1, 1);`。
-</div>
+:::note
+
+Using `entity.light.color.r` to access and change the red value of a light's color will not work. Only changes to the light property `color` are detected, so you must assign a complete `pc.Color` to the property e.g. `entity.light.color = new pc.Color(1, 1, 1);`.
+
+:::
 
 ## 一般的なセットアップ
 

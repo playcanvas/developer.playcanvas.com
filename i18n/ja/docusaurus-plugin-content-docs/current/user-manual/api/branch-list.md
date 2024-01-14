@@ -1,6 +1,5 @@
 ---
 title: ブランチ - List branches
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 
@@ -20,7 +19,7 @@ GET https://playcanvas.com/api/projects/:projectId/branches
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/projects/{projectId}/branches"
 ```
 
-HTTPリクエスト
+HTTP リクエスト
 
 ```text
 GET https://playcanvas.com/api/projects/{projectId}/branches
@@ -36,7 +35,7 @@ Authorization: Bearer {accessToken}
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json

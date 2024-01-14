@@ -1,6 +1,5 @@
 ---
 title: 力と衝撃
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

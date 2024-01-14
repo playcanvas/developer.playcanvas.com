@@ -1,6 +1,5 @@
 ---
 title: スクリプトの構造
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

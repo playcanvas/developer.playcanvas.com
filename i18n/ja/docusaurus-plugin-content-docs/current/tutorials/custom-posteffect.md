@@ -1,11 +1,12 @@
 ---
 title: カスタムポストエフェクト
-layout: tutorial-page.hbs
 tags: [posteffects]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406045/11D659-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/3je0YP0q/" title="Custom Post Effects"></iframe>
+</div>
 
 *このチュートリアルでは、GLSLのカスタムポストエフェクトを使用してエフェクトを作成します。*
 

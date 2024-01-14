@@ -1,6 +1,5 @@
 ---
 title: Collision
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 
@@ -25,16 +24,16 @@ Collisionコンポーネントは、コンポーネントパネルの右上に�
 
 エンティティにRigidBodyコンポーネントがある場合、Collisionコンポーネントはrigidbodyの形状を決定します。RigidBodyコンポーネントが存在しない場合、Collisionコンポーネントはトリガー体積として扱われます。トリガー体積は、シーン内の他のRigidBodyに影響を与えることはできません。代わりに、Scriptコンポーネントを追加し、トリガーイベントに応答するスクリプトをアタッチできます。たとえば、RigidBodyコンポーネントを持つ別のエンティティがトリガーに入るか出ると、スクリプトに通知できます。
 
-## プロパティ
+## Properties
 
-| プロパティ     | 説明 |
+| プロパティ名     | 説明 |
 |--------------|-------------|
-| Type         | プリミティブのタイプ。次のいずれかができます:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
+| タイプ         | プリミティブのタイプ。次のいずれかができます:<ul><li>Box</li><li>Sphere</li><li>Capsule</li><li>Mesh</li></ul> |
 | Half Extents | Boxのみ。コリジョンボックスの半径。これは3次元ベクトルで、ローカルスペースの半幅、半高度、および半深度です。 |
 | Axis         | Capsuleのみ。カプセルをエンティティのローカルスペースのX、Y、またはZ軸に整列させます。 |
 | Height       | Capsuleのみ。カプセルの先端から先端までの高さです。 |
 | Radius       | SphereとCapsuleのみ。球体またはカプセルの体の半径です。 |
-| Asset        | Meshのみ。三角形ベースのコリジョンメッシュのソースとして使用されるModelアセット。 |
+| アセット (Asset)        | Meshのみ。三角形ベースのコリジョンメッシュのソースとして使用されるModelアセット。 |
 
 ## スクリプトインターフェース
 

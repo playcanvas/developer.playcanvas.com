@@ -1,6 +1,5 @@
 ---
 title: 概要
-layout: shader-editor-page.hbs
 sidebar_position: 1.1
 ---
 

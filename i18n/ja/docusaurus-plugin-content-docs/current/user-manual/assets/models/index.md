@@ -1,6 +1,5 @@
 ---
 title: 3Dモデル
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 

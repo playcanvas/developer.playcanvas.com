@@ -1,6 +1,5 @@
 ---
 title: PlayCanvasでのWebXRの使用方法
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

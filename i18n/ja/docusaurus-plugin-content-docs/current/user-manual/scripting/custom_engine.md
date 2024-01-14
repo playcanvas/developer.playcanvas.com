@@ -1,6 +1,5 @@
 ---
 title: カスタムエンジンの使用
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 
@@ -64,7 +63,11 @@ PlayCanvasエンジンの前の安定したビルドはcode.playcanvas.comにア
     https://launch.playcanvas.com/<scene_id>?use_local_engine=https://code.playcanvas.com/playcanvas-0.225.0.min.js
 ```
 
-<div class="alert alert-info">エディタは公式には現行のエンジンリリースと前のマイナーバージョンのみをサポートしています。古いバージョンのエンジンを使用することが可能な場合もありますが、それは長期にわたってサポートされるワークフローではありません。ライブプロジェクトは現行のエンジンリリースで更新しておくことを強く推奨します。</div>
+:::tip
+
+The Editor only officially supports the current Engine release and the previous minor version. While it is sometimes possible to use an older version of the Engine, it is not a long-term supported workflow. We strongly recommend keeping live projects updated with the current Engine release.
+
+:::
 
 ### ローカルにビルドしたエンジンで起動
 

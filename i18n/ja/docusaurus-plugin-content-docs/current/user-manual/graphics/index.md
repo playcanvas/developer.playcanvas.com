@@ -1,6 +1,5 @@
 ---
 title: グラフィック
-layout: usermanual-page.hbs
 sidebar_position: 14
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: 一人称視点での移動方法
-layout: tutorial-page.hbs
 tags: [input, camera]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405842/JLWRE0-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/HzOzlZOC/" title="First Person Movement"></iframe>
+</div>
 
 このアプリケーションは、ファーストパーソンでのキャラクター移動を実装しています。
 

@@ -1,7 +1,5 @@
 ---
 title: カメラの基本操作
-layout: tutorial-page.hbs
-sidebar_position: 3
 tags: [camera,basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/186/KM6GIE-image-75.jpg"
 ---

@@ -1,15 +1,16 @@
 ---
 title: ハイトマップを利用した地形生成
-layout: tutorial-page.hbs
 tags: [procedural]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406046/W2AUF9-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/CmcIlmPb/" title="Terrain Generation from Heightmap"></iframe>
+</div>
 
 このプロジェクトでは[`pc.Mesh`][1] API を使用して、ハイトマップ (Height) テクスチャから地形を手続き的に生成し、テクスチャを施しました。
 
-[tutorial project][2] でエディターからお試しください。
+[チュートリアルプロジェクト][2]のエディターからお試しください。
 
 以下のスクリプトは、地形生成を行います。
 

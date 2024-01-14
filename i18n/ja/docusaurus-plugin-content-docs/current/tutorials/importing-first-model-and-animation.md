@@ -1,11 +1,12 @@
 ---
 title: 最初のモデルとアニメーションのインポート方法
-layout: tutorial-page.hbs
 tags: [animation,basics]
 thumb: /images/tutorials/importing-first-model-and-animation/thumbnail.jpg
 ---
 
-<iframe loading="lazy" src="https://www.youtube.com/embed/r0LYQw7laRA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://www.youtube.com/embed/r0LYQw7laRA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## 概要
 

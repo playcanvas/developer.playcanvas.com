@@ -1,6 +1,5 @@
 ---
 title: コードエディター
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 
@@ -14,7 +13,7 @@ sidebar_position: 2
 
 テキストベースのアセット(スクリプトなど)をダブルクリックすることでも、そのアセットに焦点を当てたコードエディターを開くことができます。
 
-## インターフェース
+## インターフェイス
 
 ![Code Editor][3]
 
@@ -75,7 +74,7 @@ sidebar_position: 2
 | 次の一致を検索                 | F3                       | Cmd + G                    |
 | 前の一致を検索             | Shift + F3               | Cmd + Shift + G            |
 | 置換                         | Ctrl + H                 | Cmd + Alt + F              |
-| ファイル内検索                   | Ctrl + Shift + F         | Cmd + Shift + F            |
+| ファイル内を検索                   | Ctrl + Shift + F         | Cmd + Shift + F            |
 | 行または選択のコメント       | Ctrl + /                 | Cmd + /                    |
 | ブロックコメント行または選択 | Alt + Shift + A          | Alt + Shift + A            |
 | 行または選択のインデント        | Tab                      | Tab                        |

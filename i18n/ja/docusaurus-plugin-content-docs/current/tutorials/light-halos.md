@@ -1,11 +1,12 @@
 ---
 title: ライトハローの作成
-layout: tutorial-page.hbs
 tags: [lighting]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406040/2TX0AO-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="ライトハロー"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/rnIUbXws/" title="Light Halos"></iframe>
+</div>
 
 [完成されたプロジェクト][4]をフォークして詳細をご確認ください。
 

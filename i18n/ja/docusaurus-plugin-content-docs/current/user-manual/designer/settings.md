@@ -1,6 +1,5 @@
 ---
 title: 設定
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 
@@ -8,7 +7,7 @@ sidebar_position: 7
 
 ![Cog][2]
 
-## エディター (Editor)
+## エディター
 
 これらは、エディターのユーザによる設定です。
 
@@ -112,7 +111,7 @@ Fog Type プロパティを使用して、シーンで環境フォグの近似�
 * Exp - フォグは、指数関数に従ってビューポジションからフェードインします。
 * Exp2 - フォグは、二乗の指数関数に従ってビューポジションからフェードインします。
 
-#### カラー (Color)
+#### Color
 
 フォグの色。この色は、フォグがフェードインするにつれて、表面の色に混ぜ込まれます。
 
@@ -128,7 +127,7 @@ Fog Type プロパティを使用して、シーンで環境フォグの近似�
 
 フォグ密度は、ExpおよびExp2フォグタイプに対してフォグがフェードインする速度を制御します。大きな値はフォグがより速くフェードインするようになります。フォグ密度は正の数でなければなりません。
 
-#### 解像度 (Resolution)
+#### Resolution
 
 アプリケーションの幅と高さを制御します。解像度モードを以下のいずれかの値に設定することもできます。
 
@@ -143,7 +142,7 @@ Fog Type プロパティを使用して、シーンで環境フォグの近似�
 * Keep aspect Ratio - キャンバスは正しいアスペクト比を保持しながらウィンドウを拡大します。
 * Fill window - キャンバスはウィンドウを完全にフィルするようにストレッチされます。
 
-#### デバイスピクセル比 (Device Pixel Ratio)
+#### デバイスピクセル比率 (DPI)
 
 キャンバスの解像度がデバイスピクセル比を含めて計算されるようになります。
 
@@ -155,7 +154,7 @@ Fog Type プロパティを使用して、シーンで環境フォグの近似�
 
 WebGLコンテキストを作成する際、preserveDrawingBufferオプションを使用します。
 
-## レイヤー (Layers)
+## レイヤーの一覧 (Layers)
 
 レンダリングレイヤーとその描画順序を管理します。レイヤーについての詳細は[こちら][10]を参照してください。
 
@@ -187,7 +186,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 [Runtime Baked Lightmaps][15]（ランタイムベイクドライトマップ）に対してバイラテラルフィルタを有効にします。
 
-#### 範囲 (Range)
+#### Range
 
 バイラテラルフィルタの範囲パラメータ。大きい値ほど広範囲のぼかしが適用されます。
 
@@ -227,7 +226,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 アプリケーションに含めたい外部スクリプトのURLを指定できます。これらのURLは、他のスクリプトがロードされる前にアプリケーションのメインHTMLページに&lt;script&gt;タグとして追加されます。
 
-## 入力 (Input)
+## Input
 
 アプリケーションで使用する入力デバイスを有効または無効にできます。
 
@@ -249,7 +248,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 テクスチャがインポートされると、最も近い2の累乗にリサイズします。
 
-#### アトラスの作成 (Create Atlases)
+#### アトラスを作成 (Create Atlases)
 
 新しい画像がアップロードされると、テクスチャの代わりにテクスチャアトラスが作成されます。
 
@@ -281,7 +280,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 [6]: /user-manual/designer/loading-screen
 [7]: /user-manual/packs/components/model
 [8]: /user-manual/packs/components/element
-[9]: /user-manual/optimization/batching
+[9]: /user-manual/graphics/advanced-rendering/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
 [12]: /images/user-manual/editor/settings/lightmapping-settings.png

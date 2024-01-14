@@ -1,6 +1,5 @@
 ---
 title: アプリ - Get project apps
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 
@@ -29,7 +28,7 @@ curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/project
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json
@@ -71,6 +70,6 @@ Status: 200
 
 ## レート制限
 
-このルートは [通常][1]のレート制限を使用します。
+このルートは[通常][1]のレート制限を使用します。
 
 [1]: /user-manual/api#rate-limiting

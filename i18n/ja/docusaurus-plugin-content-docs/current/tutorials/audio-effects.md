@@ -1,15 +1,20 @@
 ---
 title: オーディオエフェクト
-layout: tutorial-page.hbs
 tags: [audio]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406047/G0ZA35-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/1nS6AnC9/" title="Audio Effects"></iframe>
+</div>
 
 *それぞれのボタンをクリックしてサウンドエフェクトを試してください。*
 
-<div class="alert alert-info">このチュートリアルには、Web Audio APIが必要です。</div>
+:::note
+
+This tutorial requires Web Audio API support.
+
+:::
 
 ## Web Audio APIを使用する
 

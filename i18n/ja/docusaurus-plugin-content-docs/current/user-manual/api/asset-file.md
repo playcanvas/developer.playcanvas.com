@@ -1,6 +1,5 @@
 ---
 title: アセット - Get Asset File
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 
@@ -12,7 +11,7 @@ GET https://playcanvas.com/api/assets/:assetId/file/:filename?branchId=:branchId
 
 ## 説明
 
-単一のアセットの詳細を取得します。
+単一アセットの詳細を取得します。
 
 ## 例
 
@@ -20,7 +19,7 @@ GET https://playcanvas.com/api/assets/:assetId/file/:filename?branchId=:branchId
 curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/assets/{assetId}/file/{filename}?branchId={branchId}"
 ```
 
-HTTPリクエスト
+HTTP リクエスト
 
 ```text
 GET https://playcanvas.com/api/assets/{assetId}/file/{filename}?branchId={branchId}
@@ -30,7 +29,7 @@ Authorization: Bearer {accessToken}
 ## パラメーター
 
 <div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p>ブランチのID。</p></div>
+<div class="parameter"><span class="param">branchId:string</span><p>ブランチのID。</p></div>
 </div>
 
 ## レスポンススキーマ

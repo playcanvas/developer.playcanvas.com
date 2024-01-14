@@ -1,6 +1,5 @@
 ---
 title: アセット - List assets
-layout: usermanual-page.hbs
 sidebar_position: 9
 ---
 
@@ -39,7 +38,7 @@ Authorization: Bearer {accessToken}
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json

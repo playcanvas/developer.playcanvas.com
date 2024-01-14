@@ -1,6 +1,5 @@
 ---
 title: ランタイムライトマップ
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 
@@ -25,9 +24,11 @@ PlayCanvasは、ライトマップの生成に便利なソリューションを�
 
 ただし、ランタイムライトマップの欠点は、現時点ではグローバル・イルミネーションや一部の特殊なベイキングツールの高度な機能をサポートしていないことです。
 
-<div class="alert-info">
-    <a href="/user-manual/optimization/batching">バッチ処理</a>を使用している場合、ランタイムライトマップが適用されません。なぜなら、各ライトマップオブジェクトが独自のライトマップテクスチャを必要とするためです。
-</div>
+:::note
+
+The use of [batching](/user-manual/optimization/batching) is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+
+:::
 
 ## ベイクされるライトの設定
 

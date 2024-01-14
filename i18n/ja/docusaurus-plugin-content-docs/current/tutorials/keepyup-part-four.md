@@ -1,11 +1,12 @@
 ---
 title: シンプルなゲームの作成 - パート4
-layout: tutorial-page.hbs
 tags: [games]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="シンプルなゲームの作成 - パート4"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 4"></iframe>
+</div>
 
 * [完成されたプロジェクトはこちら][6]です。先に[その1][1], [その2][2], [その3][3]を読んでください。*
 
@@ -159,7 +160,7 @@ Ball.prototype.reset = function () {
 };
 ```
 
-### スクリプト属性
+### スクリプト属性 (Script Attributes)
 
 スクリプトの先頭には、定義したスクリプト属性のセットがあります。スクリプトの属性を定義することで、エディタにスクリプトから値を公開することができます。これを行う理由は3つあります。
 

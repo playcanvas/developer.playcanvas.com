@@ -1,6 +1,5 @@
 ---
 title: PlayCanvasにおけるWebXR Input Sources
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 

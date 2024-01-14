@@ -1,6 +1,5 @@
 ---
 title: ammo.jsの以外の物理演算ライブラリ
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 

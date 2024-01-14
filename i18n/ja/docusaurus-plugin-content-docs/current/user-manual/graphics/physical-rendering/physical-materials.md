@@ -1,6 +1,5 @@
 ---
 title: 物理マテリアル
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 
@@ -10,7 +9,7 @@ PlayCanvasの物理ベースレンダリングを使用するには、物理マ�
 
 ではまず最初に、キューブマップのワークフローについて説明します。
 
-## イメージベースドライティング (IBL)
+## イメージベースドライティング(IBL)
 
 Editorに入りマテリアルを作成しても、マテリアルが下のサンプルと異なる理由を説明するために [IBL] [6] から始めます。**HDRでプレフィルタリングされたCubeMapを使用した物理的マテリアルは素晴らしいです！**
 
@@ -37,7 +36,9 @@ Diffuseカラーはマテリアルのベースとなるカラーです。これ�
 
 Diffuseカラーは **アルベド** や **ベースカラー** と呼ばれることもあります。
 
-<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse"></iframe>
+</div>
 
 インターネット上を探すと、拡散色/アルベドの値と素材の対応表をすぐに見つけることができます。
 
@@ -53,19 +54,25 @@ Diffuseカラーは **アルベド** や **ベースカラー** と呼ばれる�
 
 金属質の値は、**金属質**を使ったマテリアル設定の方法の一部です。金属質は0から1の間の値を取り、そのマテリアルが金属か(1)、あるいは非金属か(0)を決定します。
 
-<div class="alert-info">
-金属質の値はほぼいつでも0か1かのいずれかを設定します。この間の値を設定する必要があることはまれです。
-</div>
+:::note
+
+The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+
+:::
 
 また、金属質マップを使うと、マテリアルの特定の部分を金属に、特定の部分を非金属に設定することができます。
 
-<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
+</div>
 
 ## 光沢度 (Glossiness)
 
 光沢度 (Glossiness) は **Metalness** と **Specular** を使う方法の両方で使われ、マテリアルの表面がどのくらいなめらかかを定義します。光沢度はマテリアルの表面で反射する光がぼやけるか鋭いか、あるいはSpecularハイライトが広いか狭いかに影響します。光沢度は0から100の間の値か、あるいはGlossinessマップとして与えることができます。
 
-<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness"></iframe>
+</div>
 
 いくつかの物理ベースレンダリングシステムでは、光沢度という用語の代わりに**粗さ (Roughness)**という用語を使います。粗さは光沢度の反対の意味です。光沢度と粗さを変換する際には、単純にその値を反転してください。
 
@@ -77,7 +84,9 @@ Diffuseカラーは **アルベド** や **ベースカラー** と呼ばれる�
 
 マテリアルの見た目をさらに良くするために、アンビエントオクルージョン、発光、透明度、法線マップとハイトマップといった様々なプロパティを使うことができます。
 
-<iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All"></iframe>
+</div>
 
 [1]: https://store.playcanvas.com
 [2]: /user-manual/glossary#high-dynamic-range

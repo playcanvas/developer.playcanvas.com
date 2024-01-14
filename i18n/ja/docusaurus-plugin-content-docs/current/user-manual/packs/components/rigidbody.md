@@ -1,6 +1,5 @@
 ---
 title: Rigid Body
-layout: usermanual-page.hbs
 sidebar_position: 14
 ---
 
@@ -22,11 +21,11 @@ RigidBodyは、コンポーネントパネル右上のトグルを使用して�
 
 注意:RigidBodyの形状を定義するには、同じエンティティに[collision component][4]を追加する必要があります。そうでない場合、RigidBodyには効果がなく、物理シミュレーションに参加しません。
 
-## プロパティ
+## Properties
 
-| プロパティ        | 説明 |
+| プロパティ名        | 説明 |
 |-----------------|-------------|
-| Type            | ボディのタイプ:<ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul> |
+| タイプ            | ボディのタイプ:<ul><li>Static</li><li>Dynamic</li><li>Kinematic</li></ul> |
 | Mass            | ボディの質量。シーンのワールドユニットがメートルの場合、質量の単位はキログラムです。 |
 | Linear Damping  | ボディが1秒あたり失う線形速度の割合を指定します。 |
 | Angular Damping | ボディが1秒あたり失う角速度の割合を指定します。 |

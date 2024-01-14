@@ -1,6 +1,5 @@
 ---
 title: デバイスピクセル比率 (DPI)
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 

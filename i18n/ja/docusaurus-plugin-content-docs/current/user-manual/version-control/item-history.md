@@ -1,6 +1,5 @@
 ---
 title: プロジェクト内の履歴管理
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 

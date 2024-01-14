@@ -1,6 +1,5 @@
 ---
 title: はじめに 
-layout: shader-editor-page.hbs
 sidebar_position: 1
 ---
 

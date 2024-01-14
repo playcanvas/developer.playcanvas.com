@@ -1,6 +1,5 @@
 ---
 title: Font
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 
@@ -12,7 +11,7 @@ Fontアセットには、ユーザーが含めることを選択したフォン�
 
 ![Font Asset][2]
 
-## プロパティ (Properties)
+## Properties
 
 ### インテンシティ (Intensity)
 
@@ -26,7 +25,7 @@ Fontアセットには、ユーザーが含めることを選択したフォン�
 
 Fontアセットに特定の文字範囲を含める場合は、範囲を16進数で入力し、プラスアイコンをクリックして文字を選択に追加します。
 
-## フォント
+## Font
 
 ### 文字 (Characters)
 

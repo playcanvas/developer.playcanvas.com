@@ -1,11 +1,12 @@
 ---
 title: シンプルなゲームの作成 - パート1
-layout: tutorial-page.hbs
 tags: [games]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="シンプルなゲームの作り方 - パート1"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 1"></iframe>
+</div>
 
 *[完成されたプロジェクトはこちら][3]です*
 
@@ -18,7 +19,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 1. ゲームスクリプト
 1. ボールの物理シミュレーションと入力
 1. 効果音とエフェクト
-1. ユーザーインターフェイス
+1. ユーザーインターフェース
 
 このチュートリアルは手順を一つ一つ説明するガイドではありません。その代わり、ゲームを構成するすべてのスクリプト要素について、それらがどのように機能するかを説明していきます。チュートリアルを読むにあたって、このゲームプロジェクトをフォークし、自分のアカウント上で見ながら進めることをおすすめします。
 
@@ -62,7 +63,7 @@ Backgroundエンティティにはもう一つのモデルコンポーネント�
 
 Impact Effect Entityはボールがバウンスする時に再生されるパーティクルエフェクトです。その4で詳細を説明します。
 
-### オーディオ
+### オーディオ (Audio)
 
 Audioエンティティにはいくつかのサウンドコンポーネントがついています。このエンティティは音楽とゲームオーバー時の効果音を鳴らすためのエンティティです。
 

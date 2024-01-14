@@ -1,6 +1,5 @@
 ---
 title: Facebookプレイアブル広告
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 
@@ -14,7 +13,9 @@ PlayCanvasは、[公式の外部ツール][2]を通じて[Facebook Playable Ad][
 
 [Cube Jumpプロジェクト][5]は、Facebook Playable Adフォーマットにエクスポートする準備ができており、[HTML出力の期待される結果はこちら][6]にあります。
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/Hywjl9Bh/" title="Cube Jump Playable Ad"></iframe>
+</div>
 
 ## ファイルサイズの補足
 

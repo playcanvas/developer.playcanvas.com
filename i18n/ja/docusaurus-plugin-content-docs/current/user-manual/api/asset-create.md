@@ -1,6 +1,5 @@
 ---
 title: アセット - Create asset
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 
@@ -14,9 +13,11 @@ POST https://playcanvas.com/api/assets
 
 新しいアセットを作成します。
 
-<div class="alert alert-info">
-    現時点では、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、および `json` のタイプのアセットの作成のみをサポートしています。
-</div>
+:::note
+
+This endpoint currently only supports creating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+
+:::
 
 **他のREST APIエンドポイントと異なり、Create Assetエンドポイントはデータの送信に `multipart/form-data` を使用する必要があります。**
 
@@ -26,7 +27,7 @@ POST https://playcanvas.com/api/assets
 curl -H "Authorization: Bearer {accessToken}" -X POST -F 'name={name}' -F 'projectId={projectId}' -F 'parent={parent}' -F 'preload={preload}' -F 'pow2={pow2}' -F 'file=@./script.js' "https://playcanvas.com/api/assets"
 ```
 
-HTTPリクエスト
+HTTP リクエスト
 
 ```text
 POST https://playcanvas.com/api/assets

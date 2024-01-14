@@ -1,6 +1,5 @@
 ---
 title: Audio Listener
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 
@@ -11,7 +10,7 @@ Audio Listenerコンポーネントは、コンポーネントパネルの右上
 
 ![Audio Listener コンポーネント][1]
 
-## スクリプトのインターフェース
+## スクリプトインターフェース
 
 [Script component][2]を使用して、Audio Listenerコンポーネントのプロパティをコントロールできます。Audio Listenerコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 

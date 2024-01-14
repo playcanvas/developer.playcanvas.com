@@ -1,6 +1,5 @@
 ---
 title: コンポーネント
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 
@@ -8,7 +7,7 @@ sidebar_position: 2
 
 PlayCanvasエンジンには多くのコンポーネントが定義されています。PlayCanvasエディターを使用して、エンティティにコンポーネントを追加できます。コンポーネントが公開するプロパティは、エンティティを選択したときに属性エディタにリストされます。
 
-| Component                                                       | Description |
+| コンポーネント (Component)                                                       | 説明 |
 |-----------------------------------------------------------------|-------------|
 | [Anim](/user-manual/packs/components/anim)                      | エンティティのレンダリングコンポーネントで指定されたモデル上で実行されるアニメーションアセットとアニメステートグラフを指定します。 |
 | [Animation](/user-manual/packs/components/animation)            | エンティティのModelコンポーネントで指定されたモデル上で実行されるアニメーションアセットを指定します。 |

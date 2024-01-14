@@ -1,6 +1,5 @@
 ---
 title: シーン - List scenes
-layout: usermanual-page.hbs
 sidebar_position: 14
 ---
 
@@ -37,7 +36,7 @@ Authorization: Bearer {accessToken}
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json

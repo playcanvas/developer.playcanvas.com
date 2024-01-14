@@ -1,6 +1,5 @@
 ---
 title: スクリプティング
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 

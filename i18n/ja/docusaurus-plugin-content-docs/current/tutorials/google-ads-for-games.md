@@ -1,7 +1,6 @@
 ---
 title: Google H5広告ベータ版の収益化
-layout: tutorial-page.hbs
-tags: [scripts, monetization, games]
+tags: [entities, monetization, games]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889020/CDC848-image-75.jpg"
 ---
 
@@ -10,7 +9,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889
 - [Tutorial template project][tutorial-template-start]
 - [Google H5 Games Ads Documentation][google-afg-docs]
 
-## はじめに
+## イントロダクション
 
 このチュートリアルでは、Google H5 Games Ads Beta の広告をゲームに統合して収益化する方法をご紹介します。
 
@@ -32,7 +31,9 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889
 
 最終的には、以下のようになり、ボタンのクリックでインタースティシャル広告とリワード広告を呼び出し、リフレッシュボタンでリワード広告が表示されるかどうかを確認できます(後述)。
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/OkynewOO/" title="Finished Tutorial"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/OkynewOO/" title="Finished Tutorial"></iframe>
+</div>
 
 ## 設定
 
@@ -443,7 +444,11 @@ UiController.prototype.initialize = function() {
 
 [完成したプロジェクトはこちら][tutorial-template-finished]で、GoogleのH5 Games Ads SDKとAPIの詳細情報は[こちらのサイト][google-afg-docs]で入手できます。
 
-<div class="alert alert-info">重要：チュートリアルではテストモードを使用していたため、実際の広告は表示されませんでした。製品用にテストモードを無効にするときは、リリースする国のプライバシー/クッキーポリシー、GDPRを含めて準拠していることを確認してください。通常、これは何らかの形でのクッキー同意の実装を意味します。</div>
+:::warning
+
+Important: For the tutorial, we used test mode so we didn't show any actual ads. When you disable test mode to use for production, please ensure that you comply with any privacy/cookies policy for the countries you release in including GDPR. This usually means implementing some form of cookie consent.
+
+:::
 
 [flappy-bird-demo-interstitial-ad]: /images/tutorials/google-afg/flappy-bird-demo-interstitial-ad.gif
 [flappy-bird-demo-rewarded-ad]: /images/tutorials/google-afg/flappy-bird-demo-rewarded-ad.gif

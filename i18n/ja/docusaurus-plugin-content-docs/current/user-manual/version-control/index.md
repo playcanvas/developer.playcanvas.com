@@ -1,6 +1,5 @@
 ---
 title: バージョン管理
-layout: usermanual-page.hbs
 sidebar_position: 13
 ---
 

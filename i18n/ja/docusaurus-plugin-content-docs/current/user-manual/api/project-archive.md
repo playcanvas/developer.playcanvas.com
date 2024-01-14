@@ -1,6 +1,5 @@
 ---
 title: プロジェクト - Archive project
-layout: usermanual-page.hbs
 sidebar_position: 13
 ---
 
@@ -32,7 +31,7 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 ## レスポンススキーマ
 
 ```none
-Status: 201 Created
+ステータス:201 Created
 ```
 
 ```json

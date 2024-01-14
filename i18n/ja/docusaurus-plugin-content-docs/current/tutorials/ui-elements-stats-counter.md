@@ -1,11 +1,12 @@
 ---
 title: UI - カウンター
-layout: tutorial-page.hbs
 tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501978/12B6CE-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/XVLr9TWc/" title="User Interface - Stats Counter"></iframe>
+</div>
 
 *ボタンやプログレスバーの使い方と要素とインタラクトする方法。[フルシーン][1]を参照してください。*
 
@@ -25,7 +26,7 @@ UIの構造は次のようになります。
 
 ![Screen][5]
 
-2D Screenであるため、Screen Spaceにチェックを入れました。参照解像度は、ここでは1080 x 1920を対象としています。解像度の変更に合わせてScreenが順応するように、Scale ModeはBlendに設定し、Scale Blendは1に設定しました。
+2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
 ## 統計データのセットアップ
 

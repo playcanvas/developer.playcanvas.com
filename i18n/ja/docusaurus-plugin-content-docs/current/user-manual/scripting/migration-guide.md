@@ -1,6 +1,5 @@
 ---
 title: 移行ガイド
-layout: usermanual-page.hbs
 sidebar_position: 11
 ---
 

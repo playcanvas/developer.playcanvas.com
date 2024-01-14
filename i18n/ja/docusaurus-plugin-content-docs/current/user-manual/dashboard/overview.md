@@ -1,6 +1,5 @@
 ---
 title: 概要
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

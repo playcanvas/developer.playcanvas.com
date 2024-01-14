@@ -1,11 +1,12 @@
 ---
 title: 基本的なオーディオの設定
-layout: tutorial-page.hbs
 tags: [audio,basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405821/V89N1G-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/XqMw92Zl/" title="Basic Audio"></iframe>
+</div>
 
 *タンクは、ロボットの周りを移動しています。ゲーム上の任意の場所をクリックして撃つことができます。*
 
@@ -61,7 +62,11 @@ PlayCanvasの基本的なオーディオシステムは二つのコンポーネ�
 
 各スロットには、異なるスロットから異なるAudioアセットを再生するためのアセットピッカーがあります。Audioアセットのアップロード方法については、[アセットのインポート][4]を参照してください。
 
-<div class="alert-info">すべてのブラウザですべてのオーディオ形式がサポートされているわけではありません。現時点では、ほとんどのブラウザでサポートされているMP3（.mp3）を使用することをおすすめします。</div>
+:::note
+
+Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
+
+:::
 
 アセットをアップロードしたら、アセットピッカーを使用してスロットに対応するオーディオアセットを選択します。
 
@@ -83,9 +88,11 @@ PlayCanvasの基本的なオーディオシステムは二つのコンポーネ�
 
 AudioListenerを作成するには、リスナーを表すエンティティを選択します。通常、これはゲーム内のカメラであり、プレイヤーの「頭」の位置になります。この例では、AudioListenerはロボットにアタッチされています。
 
-<div class="alert-info">
-    一度に使用できるAudioListenerは一つです。最後に作成されたAudioListenerコンポーネントが有効になります。
-</div>
+:::note
+
+You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+
+:::
 
 [1]: /user-manual/packs/components/sound
 [2]: /user-manual/packs/components/audiolistener

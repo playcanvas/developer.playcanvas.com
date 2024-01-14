@@ -1,6 +1,5 @@
 ---
 title: Texture Atlas
-layout: usermanual-page.hbs
 sidebar_position: 16
 ---
 
@@ -12,7 +11,7 @@ sidebar_position: 16
 
 テクスチャアトラスは、[Spriteアセット][4]と組み合わせて2Dグラフィックをレンダリングするために使用されます。
 
-## プロパティ
+## Properties
 
 ### フレーム (Frames)
 

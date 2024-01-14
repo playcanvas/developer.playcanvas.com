@@ -1,6 +1,5 @@
 ---
 title: アセット - Create asset
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 
@@ -20,7 +19,7 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 curl -H "Authorization: Bearer {accessToken}" -X DELETE "https://playcanvas.com/api/assets/{assetId}?branchId={branchId}"
 ```
 
-HTTPリクエスト
+HTTP リクエスト
 
 ```text
 DELETE https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
@@ -37,7 +36,7 @@ Authorization: Bearer {accessToken}
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ## エラー

@@ -1,6 +1,5 @@
 ---
 title: ジョブ - Get job
-layout: usermanual-page.hbs
 sidebar_position: 12
 ---
 
@@ -29,7 +28,7 @@ curl -H "Authorization: Bearer {accessToken}" "https://playcanvas.com/api/jobs/{
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json
