@@ -1,6 +1,5 @@
 ---
 title: はじめに
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 
@@ -42,7 +41,9 @@ PlayCanvasエディターは、シーンを作成するための視覚的なビ�
 
 PlayCanvasエディターは、ビジュアルエディターです。シーン、アプリケーション、ゲームを素早く構築できます。エディターを使ってプロジェクトのアセットを管理し、インタラクティブ要素を追加し、チームとのコミュニケーションや作業を行います。エディターはリアルタイムで協同作業が可能で、これによりチームの作業による変更を即座に確認でき、アプリケーションをすべてのデバイスで即時に作成し、テストすることができます。
 
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" title="PlayCanvas Editor Live Link" allowfullscreen></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PS4oMLPyYfI" title="PlayCanvas Editor Live Link" allowfullscreen></iframe>
+</div>
 
 詳細は[editor][5]セクションでご確認ください。
 
@@ -52,7 +53,7 @@ PlayCanvasは、インタラクティブ要素のあるウェブアプリケー�
 
 詳細は[アセット][6]セクションでご確認ください。
 
-### パブリッシング
+### プロジェクトの公開方法
 
 PlayCanvasは、WebGLアプリケーションをワンクリックでにホスティングすることができます。また、完成したプロジェクトはダウンロードもでき、自身のウェブサーバー上でホスティングすることができます。
 

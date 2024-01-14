@@ -1,6 +1,5 @@
 ---
 title: Webページとの通信
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 
@@ -119,7 +118,7 @@ PlayCanvasアプリケーションをセルフホストする場合、これが�
 
 `__start__.js`がPlayCanvasアプリケーションを作成するので、その後に全てのカスタムコードを実行してください。多くのケースでは、全てのアセットの読み込みが終わり、アプリケーションが起動する前まで待つべきです。これを行うには`start`イベントに応答します。
 
-例：
+以下に例を示します。
 
 ```html
 <!doctype html>

@@ -1,11 +1,12 @@
 ---
 title: キーボード入力の基礎
-layout: tutorial-page.hbs
 tags: [input]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405804/513097-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/rFZGQWCi/?overlay=false" title="Basic Keyboard Input"></iframe>
+</div>
 
 *フォーカスしてから`左矢印キー`、`右矢印キー`、`スペースバー`を押して立方体を回転させます。 'a' キーを押してリリースすると色が変わります。*
 

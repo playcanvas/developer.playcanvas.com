@@ -1,13 +1,18 @@
 ---
 title: リアルタイムマルチプレイヤー
-layout: tutorial-page.hbs
 tags: [multiplayer, networking]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406048/507186-image-75.jpg"
 ---
 
-<div class="alert alert-info">このチュートリアルでは、ゼロから自分自身のマルチプレイヤーを作成する方法について説明します。ホストされたマルチプレイヤーサービスを使用する場合は、<a href="/tutorials/real-time-multiplayer-colyseus">Colyseus</a>および<a href="/tutorials/real-time-multiplayer-photon">Photon</a>のチュートリアルがあります。</div>
+:::note
 
-<iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+このチュートリアルでは、ゼロから自分自身のマルチプレイヤーを作成する方法について説明します。ホストされたマルチプレイヤーサービスを使用する場合は、[Colyseus](/tutorials/real-time-multiplayer-colyseus)および[Photon](/tutorials/real-time-multiplayer-photon)のチュートリアルがあります。
+
+:::
+
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/XFp1Ty3X/" title="Real Time Multiplayer"></iframe>
+</div>
 
 *WASD キーを使用してプレイヤーを移動します。カプセルが 1 つしか表示されない場合は、別のタブまたは別のコンピューターでこのページを開いてみてください。*
 
@@ -56,14 +61,15 @@ Glitchは、タイピングを終えると自動的にサーバーを再実行�
 PlayCanvasで新しいプロジェクトを作成します。Socket.ioのクライアントJSライブラリを外部スクリプトとして含める必要があります。
 
 プロジェクトの設定に移動します。
+
 ![Project settings][12]
 
 'External Scripts'を見つけて開きます。
+
 ![External scripts settings][13]
 
 値を0から1に変更し、[フレームワークサーバー][11]からのソケットライブラリのCDN URLを追加します。この場合、書いている時点で最新のバージョンであるv3.1.1を使用します。
 
-設定は以下のようになるでしょう。
 ![Project settings][14]
 
 
@@ -233,7 +239,8 @@ socket.on ('playerJoined', function (data) {
 });
 ```
 
-And then declare these new functions inside Network.js:
+そして、Network.js 内に以下の新しい関数を宣言します。
+
 
 ```javascript
 Network.prototype.initializePlayers = function (data) {

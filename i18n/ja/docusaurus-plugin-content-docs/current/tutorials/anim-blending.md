@@ -1,11 +1,12 @@
 ---
 title: アニメーションステートグラフのブレンディング
-layout: tutorial-page.hbs
-tags: [animation, basics]
+tags: [animation,basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405874/A8B1FE-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
+<div className='iframe-container'>
+    <iframe loading="lazy" src="https://playcanv.as/p/HI8kniOx/" title="Anim State Graph Blending"></iframe>
+</div>
 
 *スクリーンをクリックしてフォーカスを合わせ、'p' キーを押すとパンチアニメーションへブレンドされます。*
 

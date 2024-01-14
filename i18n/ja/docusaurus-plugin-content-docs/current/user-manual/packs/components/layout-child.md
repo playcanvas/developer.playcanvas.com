@@ -1,18 +1,17 @@
 ---
 title: Layout Child
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 
 LayoutChildコンポーネントは、LayoutGroupコンポーネントによって制御されるエレメント (Element) が、Layout Groupのデフォルト動作を上書きすることができるようにします。
 
-詳細については[Layout Groups][0]セクションをご覧ください。
+詳細については[レイアウトグループ][0]のセクションを参照してください。
 
 ![LayoutChild component][1]
 
 ## Properties
 
-| Property              | Description |
+| プロパティ名              | 説明 |
 |-----------------------|-------------|
 | Min Width             | Elementが描画される最小幅を設定します。 |
 | Min Height            | Elementが描画される最小高さを設定します。 |
@@ -22,7 +21,7 @@ LayoutChildコンポーネントは、LayoutGroupコンポーネントによっ�
 | Fit Height Proportion | レイアウトグループがストレッチまたはシュリンクに設定されている場合、Elementが占有する追加スペースの割合を設定します。 |
 | Exclude from Layout   | レイアウトの計算時にこのElementを完全に無視します。 |
 
-## Scripting Interface
+## スクリプトインターフェース
 
 [Scriptコンポーネント][2]を使用して、LayoutChildコンポーネントのプロパティを制御できます。LayoutChildコンポーネントのスクリプトインターフェースは[こちら][3]です。
 

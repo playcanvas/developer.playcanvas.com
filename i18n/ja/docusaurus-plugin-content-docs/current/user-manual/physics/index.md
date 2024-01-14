@@ -1,6 +1,5 @@
 ---
 title: 物理演算
-layout: usermanual-page.hbs
 sidebar_position: 16
 ---
 

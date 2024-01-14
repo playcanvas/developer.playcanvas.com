@@ -1,12 +1,13 @@
 ---
 title: REST API
-layout: usermanual-page.hbs
 sidebar_position: 22
 ---
 
-<div class="alert alert-info">
-    現在REST APIはベータ版です。これは、特定のエンドポイントやAPIのレスポンスが変更される可能性があることを意味します。
-</div>
+:::warning
+
+現在REST APIはベータ版です。これは、特定のエンドポイントやAPIのレスポンスが変更される可能性があることを意味します。
+
+:::
 
 ## 認証
 
@@ -36,7 +37,7 @@ Bearer [access_token]
 
 `[access_token]`をaccountページで生成したアクセストークンに置き換えてください。
 
-たとえば:
+以下に例を示します。
 
 ```none
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...

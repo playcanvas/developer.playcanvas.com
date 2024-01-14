@@ -1,12 +1,14 @@
 ---
 title: テンプレート
-layout: usermanual-page.hbs
 sidebar_position: 12
 ---
 
 テンプレート(またはプレハブ)は再利用可能なエンティティを作成することにより、開発を迅速化することができます。シーン内に複数のテンプレートのインスタンスを配置することができ、Templateアセットに変更を加えてそれを適用すると、そのテンプレートのすべてのインスタンスが更新されます。
 
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/2HV8Ib6wYRc" title="Templates Overview" allowfullscreen></iframe>
+</div>
+
 
 ## テンプレートの作成
 

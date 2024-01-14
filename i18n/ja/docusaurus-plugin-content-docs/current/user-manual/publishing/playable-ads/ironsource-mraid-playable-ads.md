@@ -1,6 +1,5 @@
 ---
 title: ironSourceプレイアブル広告（MRAID）
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 
@@ -10,31 +9,33 @@ ironSourceの再生可能な広告は[MRAID 2.0 API][mraid-api]標準を使用�
 
 外部アセットは、ironSourceがネットワーク上で広告を提供するために、独自のサーバーまたはCDNにアップロードする必要があります。
 
-ツールには、[GitHub][2]のドキュメントで見つかるいくつかの制限があります。
+このツールには[GitHub][2]のドキュメントにあるいくつかの制限があるため、注意してください。
 
 ## サンプルプロジェクト
 
 [Cube Jump project][5]は、ironSource MRAID Playable Adフォーマットにエクスポートする準備が整っており、予想されるHTML出力は[こちら][6]で見つかります。
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/AA9osNyV/" title="Cube Jump Playable Ad"></iframe>
+</div>
 
-## ファイルサイズのヒント
+## ファイルサイズの補足
 
 非圧縮で5MBの制限があるため、広告のアセットの使用を計画し予算を立てる必要があります。
 
-ミニファイされたPlayCanvasエンジンコードは、 **~ 1.2MB**非圧縮であり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに**~30%**追加されます。
+圧縮されていない最小化されたPlayCanvas Engineのコードは、 **\~1.2MB** であり、アセットファイルをBase64文字列にエンコードする必要があるため、各アセットファイルのサイズに対して約 **\~30%**  追加されます。
 
 これは、Base64エンコード前にアセットに約~3MBの余裕があることを意味します。
 
-画像は可能な限り小さく保ち、[TinyPNG][4]のようなツールを使用して、ファイルサイズをさらに縮小してください。
+画像をできるだけ小さく保ち、[TinyPNG][4]のようなツールを使用してさらにファイルサイズを縮小するようにしましょう。
 
-## 再生可能な広告のチェックリスト:
+## Playable Ad のチェックリスト:
 
 * 呼び出しアクションコールバックの一部として`mraid.open`(非ストアURL用)または`mraid.openStoreUrl`(ストアアプリ用)の関数コールが追加されていますか?
 
 ## エクスポートの方法
 
-GitHubリポジトリのreadmeから[セットアップ手順][7]に従います。
+GitHubリポジトリのREADMEにある[セットアップ手順][7]に従ってください。
 
 ### ironSource Playable Test Toolでテストする
 
@@ -44,7 +45,7 @@ ironSourceには、再生可能な広告の要件のチェックリストを実�
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ironsource-tool-options.png" width="600" />
 
-以下のオプションを`config.json`で示されるように設定します。これにより、アセットデータとPlayCanvas Engineコードが`index.html`から別々のファイルとしてZIPファイルが生成されます。
+`config.json`の以下のオプションを設定すると、ZIPファイルが生成されます。ZIPファイルには、`index.html`からアセットデータとPlayCanvas Engineコードが別々のファイルとして含まれます。
 
 ```json
     "one_page": {
@@ -59,17 +60,17 @@ ironSourceには、再生可能な広告の要件のチェックリストを実�
     }
 ```
 
-そして、コマンドを実行する:
+そして、以下のコマンドを実行します。
 
 ```sh
 npm run one-page
 ```
 
-オプションとコマンドの完全な詳細は、「[プロジェクトを単一のHTMLファイルに変換する][2]」のreadmeセクションで見つかります。
+詳細なオプションとコマンドの詳細は、'[プロジェクトを単一のHTMLファイルに変換する][2]'のReadmeセクションで確認できます。
 
 ironSourceのテストツールでテストするために、HTTPSエンドポイントからファイルを提供する必要があります。
 
-推奨されるアプローチは、[ローカルホスト][host-locally]にホストし、[ngrok][ngrok]を使用して、コンピューターにHTTPSトンネルを作成してアプリにアクセスすることです。
+私たちのお勧めの方法は、[ローカルホスト][host-locally]をホストし、アプリがアクセスできるように[ngrok][ngrok]を使用することです。
 
 <img loading="lazy" src="/images/user-manual/publishing/playable-ads/ironsource-playable-ads/ngrok.png" width="600" />
 

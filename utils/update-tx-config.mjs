@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const contentSrc = './content/en';
+const contentSrc = './docs';
 const configFile = '.tx/config';
 
 let config = '[main]\nhost = https://www.transifex.com\n';
@@ -21,8 +21,8 @@ function scanFolder(folderPath) {
         } else {
             if (path.extname(fullPath) === '.md') {
                 const relativePath = path.relative(contentSrc, fullPath).replace(/\\/g, '/');
-                const fileFilter = `content/<lang>/${relativePath}`;
-                const sourceFile = `content/en/${relativePath}`;
+                const fileFilter = `i18n/<lang>/docusaurus-plugin-content-docs/current/${relativePath}`;
+                const sourceFile = `docs/${relativePath}`;
                 const resourceName = `content/en/${relativePath}`;
                 const slug = relativePath.replace('.md', '').replace(/\//g, '-').toLocaleLowerCase();
                 const fileEntry = `

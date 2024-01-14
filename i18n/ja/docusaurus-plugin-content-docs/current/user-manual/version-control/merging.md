@@ -1,6 +1,5 @@
 ---
 title: マージとコンフリクトの解決
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

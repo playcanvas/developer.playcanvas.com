@@ -1,11 +1,12 @@
 ---
 title: UI - テキストインプット
-layout: tutorial-page.hbs
 tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/1005906/36C2AF-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/8ZQaDGf8/" title="User Interface - Text Input"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/8ZQaDGf8/" title="User Interface - Text Input"></iframe>
+</div>
 
 [ここをクリックしてプロジェクトを見る][project-link].
 
@@ -27,9 +28,11 @@ HTML入力要素を使用することで、Webページ上でのユーザーが�
 
 <div class="centered"><video height="360" controls src="/images/tutorials/ui-text-input/mobile-preview.mp4"></video></div>
 
-<div class="alert alert-info">
-Note: 3D要素には対応していません。
-</div>
+:::note
+
+3D要素には対応していません。
+
+:::
 
 ## インストール方法
 

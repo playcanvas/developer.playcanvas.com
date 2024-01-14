@@ -1,6 +1,5 @@
 ---
 title: アセットビューアー
-layout: usermanual-page.hbs
 sidebar_position: 19
 ---
 
@@ -31,7 +30,7 @@ sidebar_position: 19
 
 以下のアセットタイプで[オープンソースのテクスチャツール][texture-tool-github]が利用できます:
 
-- Texture
+- テクスチャ (Texture)
 - Texture Atlas
 
 [open-in-viewer-option]: /images/user-manual/assets/viewers/open-in-viewer-option.jpg

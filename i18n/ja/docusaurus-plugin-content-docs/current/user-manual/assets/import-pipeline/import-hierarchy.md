@@ -1,6 +1,5 @@
 ---
 title: ヒエラルキーを含むモデルのインポート
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 
@@ -10,9 +9,11 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 
 ## 有効化の方法
 
-<div class="alert alert-info">
-    新しいプロジェクトでは、これが既定で有効になっています。
-</div>
+:::note
+
+新しいプロジェクトでは、これが既定で有効になっています。
+
+:::
 
 「プロジェクト設定」を開きます。
 

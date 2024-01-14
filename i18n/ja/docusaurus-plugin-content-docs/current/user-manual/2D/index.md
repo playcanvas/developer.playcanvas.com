@@ -1,6 +1,5 @@
 ---
 title: 2D
-layout: usermanual-page.hbs
 sidebar_position: 17
 ---
 
@@ -20,13 +19,13 @@ PlayCanvasエンジンは、3Dゲームやアプリを素早く簡単に作成�
 
 [テクスチャアトラス][2] (Texture Atlas) は、標準の[テクスチャ][3]アセット (Texture) の強化版です。通常のテクスチャ機能に加えて、テクスチャアトラスには一連の「フレーム」の定義が含まれています。各フレームは、スプライトアセットで参照できるテクスチャの領域です。
 
-## スプライトエディター (Sprite Editor)
+## スプライトエディター
 
 ![Sprite Editor][7]
 
 [スプライトエディター][4]は、テクスチャアトラスのフレームとスプライトアセットを生成するためのツールです。スプライトエディターは、任意のテクスチャアトラスまたはスプライトアセットをダブルクリックすることで開くことができます。[詳細はこちら][4]。
 
-*アートワーク [PixelBoy](https://twitter.com/2pblog1) によって作成されました。*
+*アートワークは[PixelBoy](https://twitter.com/2pblog1)によって作成されました。*
 
 [0]: /user-manual/assets/sprites
 [1]: /user-manual/packs/components/sprite

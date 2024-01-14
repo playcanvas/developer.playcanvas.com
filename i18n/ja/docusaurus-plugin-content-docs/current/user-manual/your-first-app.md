@@ -1,12 +1,13 @@
 ---
 title: 初めてのPlayCasnvasアプリを作る
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 
 PlayCanvasでのアプリケーション開発は簡単で楽しいものです。基本的なことを学ぶために次のシンプルな3Dアプリを作成しましょう。
 
-<iframe loading="lazy"  src="https://playcanv.as/p/TnUtDXWp/" title="Simple PlayCanvas App"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy"  src="https://playcanv.as/p/TnUtDXWp/" title="Simple PlayCanvas App"></iframe>
+</div>
 
 *矢印キーを使って赤いボールを動かします。*
 
@@ -128,11 +129,13 @@ Launchページは新しいタブで開きます。開いたら、4つの矢印�
 
 ![Launch Page][15]
 
-<div class="alert alert-info">
+:::tip
+
 エディタとLaunchページの間には'ライブリンク'があります。エディタで行った変更は、Launchページにリアルタイムで反映されます！作業中にエディタとLaunchページを並べて配置すると便利です。
 
 ![Editor Live Link][16]
-</div>
+
+:::
 
 最後のステップは、他の人と共有できるようにアプリを公開することです。これを行うには、左側のツールバーにある <span class="pc-icon">&#57911; </span>ボタンをクリックします。
 

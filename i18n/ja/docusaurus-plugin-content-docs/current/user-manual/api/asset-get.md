@@ -1,6 +1,5 @@
 ---
 title: アセット - Get Asset
-layout: usermanual-page.hbs
 sidebar_position: 8
 ---
 
@@ -20,7 +19,7 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 curl -H "Authorization: Bearer {accessToken}" https://playcanvas.com/api/assets/{assetId}?branchId={branchId}
 ```
 
-HTTPリクエスト
+HTTP リクエスト
 
 ```text
 GET https://playcanvas.com/api/assets/{assetId}?branchId={branchId}

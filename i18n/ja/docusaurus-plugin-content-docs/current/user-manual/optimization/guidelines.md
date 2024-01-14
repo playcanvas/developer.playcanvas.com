@@ -1,6 +1,5 @@
 ---
 title: 最適化のガイドライン
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: バッチング
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 
@@ -13,9 +12,11 @@ sidebar_position: 4
 * 静的ジオメトリを結合して、カメラ・カリングをサポートしたまま、描画呼び出しを削減するため、1つのメッシュインスタンスまたは複数の大きなインスタンスを作成する。
 * 動的ジオメトリを1つのメッシュインスタンスに結合し、GPUに適用される動的プロパティを持つようにする。
 
-<div class="alert-info">
-    現在、バッチングの使用は、各ライトマップ付きオブジェクトに独自のライトマップテクスチャが必要であるため、<a href="/user-manual/graphics/lighting/runtime-lightmaps/">ランタイムライトマップ</a>と互換性がありません。
-</div>
+:::note
+
+現在、バッチングの使用は、各ライトマップ付きオブジェクトに独自のライトマップテクスチャが必要であるため、[ランタイムライトマップ](/user-manual/graphics/lighting/runtime-lightmaps/)と互換性がありません。
+
+:::
 
 ## Batch Groupの作成
 

@@ -1,6 +1,5 @@
 ---
 title: プロジェクトの公開方法
-layout: usermanual-page.hbs
 sidebar_position: 21
 ---
 

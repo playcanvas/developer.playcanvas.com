@@ -1,6 +1,5 @@
 ---
 title: マテリアル
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: FXAAエフェクト
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: ブランチを利用したワークフロー
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

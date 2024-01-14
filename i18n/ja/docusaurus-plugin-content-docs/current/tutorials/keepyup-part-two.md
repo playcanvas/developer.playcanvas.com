@@ -1,11 +1,12 @@
 ---
 title: シンプルなゲームの作成 - パート2
-layout: tutorial-page.hbs
 tags: [games]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="シンプルなゲームの作り方 - パート2"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 2"></iframe>
+</div>
 
 *[完成されたプロジェクトはこちら][16]です。先に[その1][1]を読んでください。*
 
@@ -31,7 +32,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 サッカーボールは[PlayCanvasアセットライブラリ][2]からインポートした3Dモデルです。footballマテリアルはすでに設定済みですが、いくつか単純な調整が必要になるかもしれません。サッカーボールに使われているそれぞれのテクスチャを確認してみましょう。
 
-#### Diffuse
+#### ディフューズ (Diffuse)
 
 ![Diffuse][4]
 

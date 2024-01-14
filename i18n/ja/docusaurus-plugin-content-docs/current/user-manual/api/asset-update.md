@@ -1,6 +1,5 @@
 ---
 title: アセット - Update asset
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 
@@ -14,9 +13,11 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 既存のアセットのファイルを更新します。
 
-<div class="alert alert-info">
-    現在、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、`json` のタイプのアセットの更新のみをサポートしています。
-</div>
+:::note
+
+現在、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、`json` のタイプのアセットの更新のみをサポートしています。
+
+:::
 
 **他のREST APIエンドポイントとは異なり、アップデートアセットエンドポイントはデータを `multipart/form-data` で送信することが必要です。**
 
@@ -37,7 +38,7 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 ## レスポンススキーマ
 
 ```none
-Status: 200
+ステータス:200
 ```
 
 ```json

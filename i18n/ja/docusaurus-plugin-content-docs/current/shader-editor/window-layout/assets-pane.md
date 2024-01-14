@@ -1,6 +1,5 @@
 ---
 title: アセットペイン
-layout: shader-editor-page.hbs
 sidebar_position: 4
 ---
 

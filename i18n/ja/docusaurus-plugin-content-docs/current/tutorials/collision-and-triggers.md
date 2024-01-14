@@ -1,11 +1,12 @@
 ---
 title: 衝突とトリガーの処理
-layout: tutorial-page.hbs
 tags: [collision, physics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405871/0D7E2F-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/1Hj5fX2I/" title="Collision and Triggers"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/1Hj5fX2I/" title="Collision and Triggers"></iframe>
+</div>
 
 *RigidBodyが互いに衝突すると、衝突音が再生され、トリガーボリュームが形状をリセットします。*
 

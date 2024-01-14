@@ -1,6 +1,5 @@
 ---
 title: スクリプト属性
-layout: usermanual-page.hbs
 sidebar_position: 5
 ---
 

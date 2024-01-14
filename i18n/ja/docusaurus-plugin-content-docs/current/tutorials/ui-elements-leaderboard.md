@@ -1,17 +1,18 @@
 ---
 title: UI - リーダーボード
-layout: tutorial-page.hbs
 tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501980/2D16F7-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="ユーザーインターフェース - リーダーボード"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/nbMbtAGH/" title="User Interface - Leaderboard"></iframe>
+</div>
 
 *Elementコンポーネントを使用しているリーダーボード。[フルシーン][1]を参照してください。*
 
 このチュートリアルでは、ビルトインの[Elements] [2]を使用して、シンプルなリーダーボードを作成する方法を説明します。リーダーボードは、JSONアセットから取得したデータでプログラムによって動的に埋められます。
 
-## ヒエラルキーの構造
+## ヒエラルキー (Hierarchy)
 
 ヒエラルキー上でUIはこのように見えます:
 
@@ -21,9 +22,9 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 また、 `Entry Template` という無効化されたエンティティもあります。これは、テンプレートの各行に使用するものです。JSONアセット内に存在する各リーダーボードエントリに対して、そのテンプレートをクローンし、各クローンを対応するパネルの下に追加します。
 
-## Screenの設定
+## スクリーンの設定
 
-[screen][3]の設定は次のようになっています:
+[スクリーン][3]は次のように設定されています。
 
 ![Screen][5]
 
@@ -61,7 +62,7 @@ Group Elementには分割された水平アンカーがあることに注意し�
 
 ![Position][9]
 
-### 名前 (Name)
+### Name
 
 名前は左にヒモ付けされ、やや右に移動されます。
 
@@ -79,7 +80,7 @@ Group Elementには分割された水平アンカーがあることに注意し�
 
 ![Pts][12]
 
-## スクリプト
+## スクリプト (Script)
 
 JSONアセットを読み取り、リーダーボードにデータを埋め込む`leaderboard`スクリプトは次のようになります。
 

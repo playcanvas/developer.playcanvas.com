@@ -1,6 +1,5 @@
 ---
 title: 用語集
-layout: usermanual-page.hbs
 sidebar_position: 26
 ---
 

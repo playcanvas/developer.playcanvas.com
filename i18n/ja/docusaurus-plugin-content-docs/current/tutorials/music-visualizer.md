@@ -1,11 +1,12 @@
 ---
 title: オーディオビジュアライザーの作成
-layout: tutorial-page.hbs
 tags: [audio]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405891/L2JCV3-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="音楽ビジュアライザの作成"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/BqhCi6oy/" title="Creating a Music Visualizer"></iframe>
+</div>
 
 *[完成されたプロジェクト][1]をフォークして詳細をご確認ください。*
 

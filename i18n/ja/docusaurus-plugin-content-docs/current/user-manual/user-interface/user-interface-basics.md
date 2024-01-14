@@ -1,6 +1,5 @@
 ---
 title: ユーザーインターフェースの基礎
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 
@@ -10,7 +9,7 @@ PlayCanvasではユーザインタフェースは2つのエレメントから構
 
 Elementコンポーネントをスクリーンの一部として使用するエンティティと通常のエンティティの大きな違いの1つは、それらが親に対して配置される方法です。Elementコンポーネントには、最終的な位置が計算される方法を変更する２つのプロパティがあります。`anchor`プロパティは子が親に対してどのように配置されるかを決定し、` pivot`プロパティはelementの中心点がどこにあるかを決定します。詳細は[Element][3]ページでご確認ください。
 
-## 描画の順序
+## Draw Order
 
 ユーザインターフェースの画像部分であるイメージエレメントおよびテキストエレメントは、階層内に現れる順序で描画されます。例えば、最初の子が最初に描画され、その子が次に描画されます。後で描かれた子は、先に描かれた子の上に表示されます。
 
@@ -20,11 +19,11 @@ Elementコンポーネントをスクリーンの一部として使用するエ�
 
 9スライス（または9パッチ）は、ビットマップグラフィックスから拡張可能なユーザーインターフェイスエレメントを作成するためのグラフィカルなテクニックです。テクスチャアトラスとスプライトアセットを使用して9スライスを設定できます。[こちら][5]を読んでください。
 
-## 入力
+## Input
 
 UIエレメントの入力を処理する別の方法があります。`pc.ElementInput`のインスタンスは、通常は` this.app.elementInput`としてアクセス可能なApplicationオブジェクトで提供されます。これにより、elementコンポーネント上で直接入力をリッスンすることができます。例：`this.entity.element.on('click', ...)`。詳細は[Input][4]ページでご確認ください。
 
-## ローカライゼーション
+## ローカライゼーション (Localization)
 
 PlayCanvasには、ローカライズされたText Elementsをサポートする組み込みのローカライズシステムがあります。[こちら][6]をご覧ください。
 
@@ -32,5 +31,5 @@ PlayCanvasには、ローカライズされたText Elementsをサポートする
 [2]: /user-manual/user-interface/elements
 [3]: /user-manual/user-interface/elements
 [4]: /user-manual/user-interface/input
-[5]: /user-manual/2D/9-slicing
+[5]: /user-manual/2D/slicing
 [6]: /user-manual/user-interface/localization

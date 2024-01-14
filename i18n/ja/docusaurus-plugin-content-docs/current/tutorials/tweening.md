@@ -1,7 +1,6 @@
 ---
 title: Tweenライブラリの使用方法
-layout: tutorial-page.hbs
-tags: [animation, scripts]
+tags: [animation, entities]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/452634/BDFB7E-image-75.jpg"
 ---
 
@@ -15,7 +14,9 @@ entity.tween(entity.getLocalPosition()).to({x: 10, y: 0, z: 0}, 1, pc.SineOut);
 
 ここでは、Entityのローカル位置をトゥイーンする方法の例が示されています。
 
-<iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Using the Tween library"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/wEftzstB/" title="Using the Tween library"></iframe>
+</div>
 
 この例の[Project][2]と[Editor][3]へのリンクです。
 
@@ -32,7 +33,9 @@ this.entity
 
 エンティティのローカル回転をトゥイーンする方法の例です：
 
-<iframe loading="lazy" src="https://playcanv.as/b/H8553dGa/" title="Tween Local Rotation"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/H8553dGa/" title="Tween Local Rotation"></iframe>
+</div>
 
 この例の[プロジェクト][2]と[エディタ][4]へのリンクを貼ります。
 
@@ -49,7 +52,9 @@ this.entity
 
 次に、Entityのローカルスケールをトゥイーンする方法の例が示されています。
 
-<iframe loading="lazy" src="https://playcanv.as/b/ndTiHCpD/" title="Tween Local Scale"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/ndTiHCpD/" title="Tween Local Scale"></iframe>
+</div>
 
 この例の[Project][2]と[Editor][5]へのリンクです。
 
@@ -66,7 +71,9 @@ this.entity
 
 最後に、色をトゥイーンする方法です：
 
-<iframe loading="lazy" src="https://playcanv.as/b/aoRYsYrc/" title="Tween Material Color"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/aoRYsYrc/" title="Tween Material Color"></iframe>
+</div>
 
 この例の[プロジェクト][2]と[エディタ][6]へのリンクを貼ります。
 

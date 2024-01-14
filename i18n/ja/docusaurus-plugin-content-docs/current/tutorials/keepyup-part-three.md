@@ -1,11 +1,12 @@
 ---
 title: シンプルなゲームの作成 - パート3
-layout: tutorial-page.hbs
 tags: [games]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406050/LIJTDO-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="シンプルなゲームの作り方 - Part 3"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/KH37bnOk/?overlay=false" title="Making a Simple Game - Part 3"></iframe>
+</div>
 
 *[完成されたプロジェクトはこちら][4]です。先に[その1][1]と[その2][2] を読んでください。*
 

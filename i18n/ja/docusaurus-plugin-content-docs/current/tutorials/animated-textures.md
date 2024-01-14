@@ -1,11 +1,12 @@
 ---
 title: アニメーションテクスチャの作成
-layout: tutorial-page.hbs
 tags: [animation, textures]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405882/831708-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/BM93v05L/" title="Animated Textures"></iframe>
+<div className='iframe-container'>
+    <iframe loading="lazy" src="https://playcanv.as/p/BM93v05L/" title="Animated Textures"></iframe>
+</div>
 
 *[フルプロジェクト][1]を見てください*
 

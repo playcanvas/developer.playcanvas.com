@@ -1,11 +1,12 @@
 ---
 title: 基本的なマウス入力
-layout: tutorial-page.hbs
 tags: [mouse, input]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405819/2DF062-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/MHIdZgaj/?overlay=false" title="Basic Mouse Input"></iframe>
+</div>
 
 *マウスを動かしてキューブを動かし、マウスのボタンを押してキューブの色を変えることができます*
 

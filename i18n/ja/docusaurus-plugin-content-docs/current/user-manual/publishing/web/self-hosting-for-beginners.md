@@ -1,6 +1,5 @@
 ---
 title: 初心者向けセルフホスティング
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 

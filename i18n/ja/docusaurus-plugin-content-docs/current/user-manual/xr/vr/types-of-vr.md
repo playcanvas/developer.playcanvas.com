@@ -1,6 +1,5 @@
 ---
 title: VR体験の種類
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 

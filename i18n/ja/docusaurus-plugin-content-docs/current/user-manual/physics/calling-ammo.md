@@ -1,6 +1,5 @@
 ---
 title: ammo.jsのAPIを呼び出す方法
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 

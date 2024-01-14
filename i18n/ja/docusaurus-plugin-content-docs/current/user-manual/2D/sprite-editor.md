@@ -1,6 +1,5 @@
 ---
 title: スプライトエディター
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

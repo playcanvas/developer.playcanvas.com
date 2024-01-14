@@ -1,11 +1,12 @@
 ---
 title: カメラのさらなる活用
-layout: tutorial-page.hbs
 tags: [basics, camera]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405835/E7331A-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/5yUf1fvg/" title="More Cameras"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/5yUf1fvg/" title="More Cameras"></iframe>
+</div>
 
 *クリックしてフォーカスし、 `スペース` キーでズームインとズームアウトを行い、 `左矢印` キーと `右矢印` キーで左右のカメラに切り替えます*
 

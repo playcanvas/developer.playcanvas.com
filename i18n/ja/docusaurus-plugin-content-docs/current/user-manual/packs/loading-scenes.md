@@ -1,10 +1,9 @@
 ---
 title: シーンのロード
-layout: usermanual-page.hbs
 sidebar_position: 3
 ---
 
-## はじめに
+## イントロダクション
 
 このページでは、コードを使用してシーンを読み込む方法と、プロジェクトでシーンを使用する異なるアプローチについて説明します。
 
@@ -16,7 +15,9 @@ sidebar_position: 3
 
 [ここに][switch-scenes-completely-project]ユーザーがタイトル画面から他のレベルに移動できる例があります。
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/" title="Switching Scenes Completely"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/Q1gKd1ek/"  title="Switching Scenes Completely"></iframe>
+</div>
 
 This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
 
@@ -57,7 +58,9 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 [Below is a simplified example][additively-loading-scenes-project] of additively loading scenes where the UI in the top left is the 'main' scene and different scene hierarchies are loaded/destroyed.
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes"></iframe>
+</div>
 
 シーンヒエラルキーの複数のインスタンスを同時にロードすることはできません。これは、エンティティがエディタでユニークなGUIDが割り当てられているためです。同じシーンヒエラルキーの複数のインスタンスを同時にロードしようとすると、エンティティごとにユニークである必要があるGUIDが衝突するため、エラーが発生します。
 
@@ -71,9 +74,11 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 シーンは、[Scene Registry][sceneregistry-api]に格納される[Scene Registry Items][sceneregistryitem-api]によって表されます。Scene Registry は、[Application][application-sceneregistry-api]オブジェクトを介してアクセスできます。Scene Registry を介して、エディタ内のシーンの名前で Scene Registry Item を検索し、シーンのヒエラルキーや設定をロードすることができます。
 
-<div class="alert alert-info">
-<a href="/api/pc.Application.html#root">アプリケーションルートノード</a>は、エディタで見ることができるデフォルトで 'Root' と名前が付けられたシーンヒエラルキールートエンティティではありません。シーンヒエラルキールートエンティティは、アプリケーションルートノードの子になります。
-</div>
+:::note
+
+[アプリケーションルートノード](/api/pc.Application.html#root)は、エディタで見ることができるデフォルトで 'Root' と名前が付けられたシーンヒエラルキールートエンティティではありません。シーンヒエラルキールートエンティティは、アプリケーションルートノードの子になります。
+
+:::
 
 シーンのヒエラルキーや設定をロードするための2つのAPIがあります。
 
@@ -187,7 +192,9 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 
 下記の[サンプルプロジェクト][asset-load-for-scene-project]は、シーンのロード時にアセットをロードし、メインメニューに戻る際にアンロードするものです。
 
-<iframe loading="lazy" src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets"></iframe>
+</div>
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes

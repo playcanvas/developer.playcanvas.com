@@ -1,6 +1,5 @@
 ---
 title: アセットの探し方
-layout: usermanual-page.hbs
 sidebar_position: 18
 ---
 
@@ -14,7 +13,7 @@ sidebar_position: 18
 
 アセットマーケットプレイスとは、無料または有料でダウンロードできるコンテンツのオンラインライブラリで、PlayCanvasゲームに追加することができます。
 
-| プロバイダー                                                                 | 2Dアート   | 3Dアート   | オーディオ    |
+| プロバイダー                                                                 | 2Dアート   | 3Dアート   | オーディオ (Audio)    |
 |--------------------------------------------------------------------------|----------|----------|----------|
 | [3D Models Textures](https://www.3dmodels-textures.com/)                 |          | &#x2713; | &#x2713; |
 | [BlendSwap](https://www.blendswap.com/)                                  |          | &#x2713; |          |

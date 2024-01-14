@@ -1,12 +1,13 @@
 ---
 title: エディターAPI
-layout: usermanual-page.hbs
 sidebar_position: 10
 ---
 
-<div class="alert alert-info">
+:::warning
+
 エディターAPI はベータ機能です。ライブプロジェクトで使用する際は注意してください。
-</div>
+
+:::
 
 現在ベータ版の「Editor API」をエディターからアクセスでき、基本機能を自動化および拡張するのに役立つAPIがあります。
 

@@ -1,6 +1,5 @@
 ---
 title: PlayCanvasエンジン単体での利用
-layout: usermanual-page.hbs
 sidebar_position: 23
 ---
 

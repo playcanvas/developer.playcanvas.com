@@ -1,6 +1,5 @@
 ---
 title: Cubemap
-layout: usermanual-page.hbs
 sidebar_position: 7
 ---
 
@@ -9,7 +8,9 @@ sidebar_position: 7
 1. キューブマップは、シーンのスカイボックスを定義することができます。スカイボックスには、遠くにある風景の画像が含まれます。例えば、丘や山、空などです。
 2. キューブマップは、任意のマテリアルに反射を追加することができます。シーン内の光沢のあるクロムのボールベアリングを想像してみてください。そのボールは周囲のシーンを反射します。オープンな環境では、通常、シーンのスカイボックスキューブマップを反射オブジェクトのマテリアルのキューブマップとして設定します。
 
-<iframe loading="lazy" src="https://playcanv.as/b/xp7v1oFB/" title="Cubemap"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/b/xp7v1oFB/" title="Cubemap"></iframe>
+</div>
 
 ## キューブマップテクスチャのインポート
 
@@ -70,7 +71,7 @@ Cubemapの面は以下の条件を満たす必要があります。
 * face_posz.jpg
 * face_negz.jpg
 
-## Image Based Lighting
+## イメージベースドライティング(IBL)
 
 このテクニックは、Environmentマップ(例えばCubeMap)を使用して、物理ベースのアンビエントライト (Ambient Light)とマテリアルの反射をシミュレートすることができます。IBLに関する詳細は[こちら][6]をご覧ください。
 

@@ -1,6 +1,5 @@
 ---
 title: 3Dモデルの大きさの単位
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 

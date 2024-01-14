@@ -1,29 +1,30 @@
 ---
 title: UI - プログレスバー
-layout: tutorial-page.hbs
 tags: [ui]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501979/49D69A-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/FlebHmLs/" title="User Interface - Progress Bar"></iframe>
+</div>
 
 *Elementコンポーネントを使用するプログレスバー。[フルシーン][1]を参照してください*
 
 ビルトイン[Elements][2]を使用してプログレスバーを簡単に作成できます。本チュートリアルでは、数秒ごとに空からいっぱいにループするプログレスバーを使用しています。
 
-## 階層
+## ヒエラルキー (Hierarchy)
 
-次が、階層内で表示されるUIの例です:
+UIの構造は次のようになります。
 
 ![Hierarchy][4]
 
-## スクリーン設定
+## スクリーンの設定
 
 [スクリーン][3]は次のように設定されています。
 
 ![Screen][5]
 
-2Dスクリーンであるため、Screen Spaceのオプションを選択しています。Reference Resolutionは、ターゲットとしている解像度です。この場合は1080 x 1920です。Scale ModeではBlendを選択しており、これによりスクリーンが解像度の変更に適応するようになります。また、Scale Blendを1に設定しているため、スクリーンは高さの変更のみに適応するようになります。
+2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
 スクリーンには、POWERテキストを表示するための子テキストエレメントと、プログレスバーを表示するためのエンティティである`Progress Bar`が含まれています。
 
@@ -39,7 +40,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 ![Fill Image][7]
 
-## スクリプト
+## スクリプト (Script)
 
 `Progress Bar`エンティティには、プログレスバーのサイズ変更を制御するスクリプトが用意されています。
 

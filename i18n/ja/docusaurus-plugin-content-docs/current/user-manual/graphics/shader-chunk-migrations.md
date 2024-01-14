@@ -1,10 +1,9 @@
 ---
 title: Shader Chunk Migrations
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 
-## はじめに
+## イントロダクション
 
 PlayCanvas エンジンのマテリアルシェーダチャンクシステムは、より柔軟なマテリアルシステムをサポートするために、大幅な変更が加えられています。詳細については、[このページ][1]を参照してください。
 

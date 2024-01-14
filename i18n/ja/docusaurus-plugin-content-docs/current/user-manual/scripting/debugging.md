@@ -1,6 +1,5 @@
 ---
 title: デバッグ
-layout: usermanual-page.hbs
 sidebar_position: 9
 ---
 
@@ -22,7 +21,11 @@ Firefoxでは次のようになります：
 
 各ブラウザには、JavaScriptをデバッグする方法の手順が詳述されています。これらのドキュメントをお読みください：[Chrome][3], [Firefox][4], [Safari][5], [Edge / Internet Explorer][6]。
 
-<div class="alert alert-info"> 実行しているappがデバッガーのブレイクポイントで一時停止された場合、そのappを起動するのに使用される他のブラウザ内ウィンドウ／タブ (PlayCanvas Code EditorまたはEditorなどを含む) も一時停止される可能性があります。 </div>
+:::note
+
+実行しているappがデバッガーのブレイクポイントで一時停止された場合、そのappを起動するのに使用される他のブラウザ内ウィンドウ／タブ (PlayCanvas Code EditorまたはEditorなどを含む) も一時停止される可能性があります。
+
+:::
 
 ### モバイルデバイスでのデバッグ
 

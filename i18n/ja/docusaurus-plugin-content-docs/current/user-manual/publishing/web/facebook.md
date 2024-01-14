@@ -1,6 +1,5 @@
 ---
 title: Facebook
-layout: usermanual-page.hbs
 sidebar_position: 6
 ---
 
@@ -24,9 +23,11 @@ sidebar_position: 6
 
 ![ウェブサイトURL][5]
 
-<div class="alert alert-info">
+:::note
+
 PlayCanvasのゲームのホスティング方法、また、FacebookがAPIへのアクセスを許可するために実装するセキュリティ要件のため、ウェブサイトURLとしてこのURLを追加する必要があります。Secure Canvas URLのみの設定で済むよう、PlayCanvasで問題の解決に取り組んでいます。
-</div>
+
+:::
 
 **6.** 最後に、ゲームに必要な画像やアイコンを全て設定します。
 

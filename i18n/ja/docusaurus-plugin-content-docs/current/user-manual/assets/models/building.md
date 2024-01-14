@@ -1,6 +1,5 @@
 ---
 title: PlayCanvas用の3Dモデル作成
-layout: usermanual-page.hbs
 sidebar_position: 2
 ---
 
@@ -75,9 +74,11 @@ Blenderの2.71リリースでは、複数の埋め込みテクスチャを直接
 
 あるいは、[Autodesk FBX Converter][5]を使ってBlenderからエクスポートしたファイルをメディアを埋め込んだファイルに変換することもできます。FBX Converterでファイルを開き、*Embedded Media*チェックボックスをチェックしてセーブしなおしてください。
 
-<div class="alert alert-warning">
+:::warning
+
 注意：Blender 2.71のFBXエクスポートによって、BlenderでEmissiveプロパティが設定されていないにもかかわらずEmissiveが生成される問題があるようです。これはPlayCanvasエンジンの問題ではありません。これを回避するには、Blender内から、マテリアルのDiffuseカラー設定を0に変更するか（プロパティエディターの'Material'タブの下）、PlayCanvasエディター内でEmissiveを単純に減らすだけです。
-</div>
+
+:::
 
 ### **アニメーション**
 

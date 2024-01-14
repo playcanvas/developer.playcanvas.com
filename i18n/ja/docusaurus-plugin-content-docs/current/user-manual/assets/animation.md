@@ -1,6 +1,5 @@
 ---
 title: Animation
-layout: usermanual-page.hbs
 sidebar_position: 4
 ---
 
@@ -16,12 +15,13 @@ Animationアセットは、3Dモデルで単一のアニメーションを再生
 
 ![Anim State Graph Preview][anim-state-graph-preview-gif]
 
+## アニメーションインポート設定 (Animation Import Settings)
 
-## アニメーションインポート設定
+:::warning
 
-<div class="alert alert-info">
-注意:これは実験的な機能です。ご意見を<a href="https://forum.playcanvas.com/" target="_blank">フォーラム</a>でお知らせください。
-</div>
+注意:これは実験的な機能です。ご意見を[フォーラム](https://forum.playcanvas.com/)でお知らせください。
+
+:::
 
 アニメーションをインポートする際には、ファイルサイズに対してアニメーション品質を調整するために微調整できる設定があります。
 

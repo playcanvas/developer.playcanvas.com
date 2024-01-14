@@ -1,6 +1,5 @@
 ---
 title: アニメーション
-layout: usermanual-page.hbs
 sidebar_position: 15
 ---
 

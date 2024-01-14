@@ -1,11 +1,12 @@
 ---
 title: アセットレジストリの使用方法
-layout: tutorial-page.hbs
 tags: [loading, assets, basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406036/U2FYM6-image-75.jpg"
 ---
 
-<iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
+<div className="iframe-container">
+    <iframe loading="lazy" src="https://playcanv.as/p/QwDM4qaF/" title="Using the Asset Registry"></iframe>
+</div>
 
 *クリックしてフォーカスしてSPACEBARを押してAとBのモデルを切り替えます。"L"を押すとCモデルを読み込み、"C"を押すとCモデルが表示されます。*
 

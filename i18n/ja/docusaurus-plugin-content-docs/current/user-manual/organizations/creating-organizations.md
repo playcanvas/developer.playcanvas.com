@@ -1,6 +1,5 @@
 ---
 title: Organizationの作成
-layout: usermanual-page.hbs
 sidebar_position: 1
 ---
 
@@ -37,15 +36,17 @@ CREATE をクリックすると、[profile][4] ページに移動します。
 
 ![Convert Organization][8]
 
-以下のポップアップが表示されます:
+すると、以下のポップアップが表示されます:
 
 ![Convert Popup][9]
 
 ユーザーアカウントをOrganizationに変換すると、このユーザーアカウントでログインできなくなります。そのため、新しいOrganizationのオーナー (Owner)を指定する必要があります。
 
-<div class="alert alert-info">
+:::warning
+
 新しいオーナー (Owner)のアカウントでログインできることを確認してください。
-</div>
+
+:::
 
 有料プランに登録している場合、このプランはキャンセルされますが、ポップアップで提供されるOrganizationのプランに登録するかを選択できます。既存のプライベートプロジェクトのユーザー数を基に、自動的に購入するシート数が計算されます。
 
