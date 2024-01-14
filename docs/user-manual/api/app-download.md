@@ -21,20 +21,20 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 
 ## Parameters
 
-<div class="params">
-<div class="parameter"><span class="param">project_id: number</span><p>The id of the project.</p></div>
-<div class="parameter"><span class="param">name: string</span><p>The name of the app. Must be less than 1000 characters</p></div>
-<div class="parameter"><span class="param">scenes: [number]</span><p>A list of scene ids to be included in the app. When you specify scenes then the first scene in the list will be used as the initial scene of the application.</p></div>
-<div class="parameter"><span class="param">branch_id [optional]: string</span><p>The id of the branch. If no id is specified the main branch will be used.</p></div>
-<div class="parameter"><span class="param">description [optional]: string</span><p>The description of the app. Must be less than 10,000 characters.</p></div>
-<div class="parameter"><span class="param">version [optional]: string</span><p>The version of the app. Can be a string up to 20 characters.</p></div>
-<div class="parameter"><span class="param">release_notes [optional]: string</span><p>Release notes for the app. Can be a string up to 10,000 characters.</p></div>
-<div class="parameter"><span class="param">scripts_concatenate [optional]: boolean</span><p>Set it to true if you want scripts to be concatenated.</p></div>
-<div class="parameter"><span class="param">scripts_minify [optional]: boolean</span><p>Set it to true if you want scripts to be minified. Defaults to true.</p></div>
-<div class="parameter"><span class="param">scripts_sourcemaps [optional] boolean</span><p>Set it to true if you want script sourcemaps to be generated. Defaults to false.</p></div>
-<div class="parameter"><span class="param">optimize_scene_format [optional] boolean</span><p>Set it to true if you want scenes to be in an optimized format (see <a href="/user-manual/optimization/optimizing-scene-format">Optimize Scene Format</a> for more information)</p></div>
-<div class="parameter"><span class="param">engine_version [optional]: string</span><p>Set it to a Engine version string (<a href="https://github.com/playcanvas/engine/releases" target="_blank">full list of releases</a>) if a specific version is needed for the app.</p></div>
-</div>
+| Name                    | Type       | Required | Description                                                                                                                                                           |
+| ----------------------- | ---------- | :------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `project_id`            | `number`   | ✔️      | The id of the project.                                                                                                                                                |
+| `name`                  | `string`   | ✔️      | The name of the app. Must be less than 1000 characters.                                                                                                               |
+| `scenes`                | `number[]` | ✔️      | A list of scene ids to be included in the app. When you specify scenes then the first scene in the list will be used as the initial scene of the application.         |
+| `branch_id`             | `string`   |          | The id of the branch. If no id is specified the main branch will be used.                                                                                             |
+| `description`           | `string`   |          | The description of the app. Must be less than 10,000 characters.                                                                                                      |
+| `version`               | `string`   |          | The version of the app. Can be a string up to 20 characters.                                                                                                          |
+| `release_notes`         | `string`   |          | Release notes for the app. Can be a string up to 10,000 characters.                                                                                                   |
+| `scripts_concatenate`   | `boolean`  |          | Set it to true if you want scripts to be concatenated.                                                                                                                |
+| `scripts_minify`        | `boolean`  |          | Set it to true if you want scripts to be minified. Defaults to true.                                                                                                  |
+| `scripts_sourcemaps`    | `boolean`  |          | Set it to true if you want script sourcemaps to be generated. Defaults to false.                                                                                      |
+| `optimize_scene_format` | `boolean`  |          | Set it to true if you want scenes to be in an optimized format (see [Optimize Scene Format](/user-manual/optimization/optimizing-scene-format) for more information). |
+| `engine_version`        | `string`   |          | Set it to a Engine version string ([full list of releases](https://github.com/playcanvas/engine/releases)) if a specific version is needed for the app.               |
 
 ## Response Schema
 
@@ -67,14 +67,14 @@ Status: 201 Created
 
 ## Errors
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
-<div class="parameter"><span class="param">404</span><p>Scene not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| Code | Description       |
+| ---- | ----------------- |
+| 401  | Unauthorized      |
+| 403  | Forbidden         |
+| 404  | Project not found |
+| 404  | Owner not found   |
+| 404  | Scene not found   |
+| 429  | Too many requests |
 
 ## Rate Limiting
 

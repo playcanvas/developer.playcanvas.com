@@ -28,12 +28,12 @@ Authorization: Bearer {accessToken}
 
 ## Parameters
 
-<div class="params">
-<div class="parameter"><span class="param">projectId: number</span><p>The id of the project to list assets from.</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch.</p></div>
-<div class="parameter"><span class="param">skip [optional]: number</span><p>Number of assets to skip before listing. Used for pagination. Defaults to 0.</p></div>
-<div class="parameter"><span class="param">limit [optional]: number</span><p>Maximum number of assets to list. Defaults to 16. Maximum 100000.</p></div>
-</div>
+| Name        | Type       | Required | Description                                                                  |
+| ----------- | ---------- | :------: | ---------------------------------------------------------------------------- |
+| `projectId` | `number`   | ✔️      | The id of the project.                                                       |
+| `branchId`  | `string`   | ✔️      | The id of the branch.                                                        |
+| `skip`      | `number`   |          | Number of assets to skip before listing. Used for pagination. Defaults to 0. |
+| `limit`     | `number`   |          | Maximum number of assets to list. Defaults to 16. Maximum 100000.            |
 
 ## Response Schema
 
@@ -76,12 +76,12 @@ Status: 200
 
 ## Errors
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| Code | Description       |
+| ---- | ----------------- |
+| 401  | Unauthorized      |
+| 403  | Forbidden         |
+| 404  | Project not found |
+| 429  | Too many requests |
 
 ## Rate Limiting
 

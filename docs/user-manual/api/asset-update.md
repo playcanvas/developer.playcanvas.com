@@ -29,11 +29,11 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 
 ## Parameters
 
-<div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
-<div class="parameter"><span class="param">file: file</span><p>Data to update asset file with</p></div>
-<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
-</div>
+| Name       | Type      | Required | Description                                                                                                 |
+| ---------- | --------- | :------: | ----------------------------------------------------------------------------------------------------------- |
+| `assetId`  | `number`  | ✔️      | The id of the asset.                                                                                        |
+| `file`     | `file`    | ✔️      | Data to update asset file with.                                                                             |
+| `pow2`     | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false). |
 
 ## Response Schema
 
@@ -72,12 +72,12 @@ Status: 200
 
 ## Errors
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| Code | Description                |
+| ---- | -------------------------- |
+| 401  | Unauthorized               |
+| 403  | Forbidden                  |
+| 404  | Project or Asset not found |
+| 429  | Too many requests          |
 
 ## Rate Limiting
 

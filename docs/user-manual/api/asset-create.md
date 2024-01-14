@@ -59,15 +59,15 @@ Content-Type: application/javascript
 ```
 ## Parameters
 
-<div class="params">
-<div class="parameter"><span class="param">name: string</span><p>Name of the asset</p></div>
-<div class="parameter"><span class="param">projectId: number</span><p>Project id to add the asset to</p></div>
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch</p></div>
-<div class="parameter"><span class="param">parent [optional]: number</span><p>Parent asset's id</p></div>
-<div class="parameter"><span class="param">preload [optional]: boolean</span><p>Preload the asset (true | false)</p></div>
-<div class="parameter"><span class="param">file [optional]: file</span><p>Data to store as the asset file.</p></div>
-<div class="parameter"><span class="param">pow2 [optional]: boolean</span><p>Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false)</p></div>
-</div>
+| Name        | Type      | Required | Description                                                                                                 |
+| ----------- | --------- | :------: | ----------------------------------------------------------------------------------------------------------- |
+| `name`      | `string`  | ✔️      | The name of the asset.                                                                                      |
+| `projectId` | `number`  | ✔️      | The id of the project.                                                                                      |
+| `branchId`  | `string`  | ✔️      | The id of the branch.                                                                                       |
+| `parent`    | `number`  |          | Parent asset's id.                                                                                          |
+| `preload`   | `boolean` |          | Preload the asset (true | false).                                                                           |
+| `file`      | `file`    |          | Data to store as the asset file.                                                                            |
+| `pow2`      | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false). |
 
 ## Response Schema
 
@@ -106,12 +106,12 @@ Status: 201
 
 ## Errors
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| Code | Description       |
+| ---- | ----------------- |
+| 401  | Unauthorized      |
+| 403  | Forbidden         |
+| 404  | Project not found |
+| 429  | Too many requests |
 
 ## Rate Limiting
 
