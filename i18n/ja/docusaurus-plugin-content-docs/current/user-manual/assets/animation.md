@@ -19,7 +19,7 @@ Animationアセットは、3Dモデルで単一のアニメーションを再生
 
 :::warning
 
-This is an experimental feature. Please let us know your feedback in the [forums](https://forum.playcanvas.com/).
+注意:これは実験的な機能です。ご意見を[フォーラム](https://forum.playcanvas.com/)でお知らせください。
 
 :::
 

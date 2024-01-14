@@ -97,7 +97,7 @@ Add Asset (+) アイコンを使用して特定のアセットタイプを作成
 
 :::note
 
-Note that copy and pasting assets does not overwrite existing assets with the same name and will create a new asset.
+注意点として、アセットのコピー＆ペーストは、同じ名前の既存のアセットを上書きせず、新しいアセットを作成します。
 
 :::
 
@@ -109,7 +109,7 @@ Note that copy and pasting assets does not overwrite existing assets with the sa
 
 :::warning
 
-Note that the Editor cannot detect references to assets that are made in code. So think carefully before you delete an asset based on this indicator!
+Editorはコードで作成されたアセットの参照を検出できません。アセットを削除する際は注意が必要です。
 
 :::
 

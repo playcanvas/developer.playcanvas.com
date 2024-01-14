@@ -11,7 +11,7 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 
 :::note
 
-This is now enabled by default for new projects.
+新しいプロジェクトでは、これが既定で有効になっています。
 
 :::
 

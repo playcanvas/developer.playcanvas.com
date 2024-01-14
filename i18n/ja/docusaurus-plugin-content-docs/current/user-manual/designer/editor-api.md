@@ -5,7 +5,7 @@ sidebar_position: 10
 
 :::warning
 
-The Editor API is a beta feature. Please use caution when using on live projects.
+エディターAPI はベータ機能です。ライブプロジェクトで使用する際は注意してください。
 
 :::
 

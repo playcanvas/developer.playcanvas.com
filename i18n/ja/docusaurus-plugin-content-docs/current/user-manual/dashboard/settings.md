@@ -23,7 +23,7 @@ sidebar_position: 3
 
 :::info
 
-Only users with premium accounts can access private projects
+Premiumアカウントのユーザーしかプライベートプロジェクトにアクセスできません。
 
 :::
 

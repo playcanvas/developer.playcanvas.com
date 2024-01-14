@@ -15,7 +15,7 @@ PUT https://playcanvas.com/api/assets/:assetId
 
 :::note
 
-This endpoint currently only supports updating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+現在、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、`json` のタイプのアセットの更新のみをサポートしています。
 
 :::
 

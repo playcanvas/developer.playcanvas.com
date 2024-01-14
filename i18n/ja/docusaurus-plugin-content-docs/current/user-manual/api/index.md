@@ -5,7 +5,7 @@ sidebar_position: 22
 
 :::warning
 
-The REST API is currently in beta. This means we may change certain endpoints and API responses.
+現在REST APIはベータ版です。これは、特定のエンドポイントやAPIのレスポンスが変更される可能性があることを意味します。
 
 :::
 

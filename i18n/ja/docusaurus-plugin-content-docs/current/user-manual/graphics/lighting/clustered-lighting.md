@@ -5,7 +5,7 @@ sidebar_position: 6
 
 :::note
 
-Clustered lighting is enabled by default from PlayCanvas Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
+クラスタードライティングは、PlayCanvas Engine v1.56以降にデフォルトで有効になっています。古いライティングシステムは、しばらくの間Engineに残りますが、将来のマイナーリリースで廃止される予定です。
 
 :::
 

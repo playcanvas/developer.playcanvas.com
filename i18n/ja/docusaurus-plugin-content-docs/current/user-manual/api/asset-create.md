@@ -15,7 +15,7 @@ POST https://playcanvas.com/api/assets
 
 :::note
 
-This endpoint currently only supports creating `script`, `html`, `css`, `text`, `shader` and `json` type assets.
+現時点では、このエンドポイントは `script`、`html`、`css`、`text`、`shader`、および `json` のタイプのアセットの作成のみをサポートしています。
 
 :::
 

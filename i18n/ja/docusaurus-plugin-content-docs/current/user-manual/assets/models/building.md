@@ -76,7 +76,7 @@ Blenderの2.71リリースでは、複数の埋め込みテクスチャを直接
 
 :::warning
 
-There seems to be an issue with Blender 2.71's FBX export generating emissivity despite no emissive properties being set in Blender - this is not an issue with the PlayCanvas engine. To avoid this from within Blender, you can change the material's Diffuse color setting to 0 (under the 'Material' tab in the 'Properties Editor'). Or simply reduce emissivity from within the PlayCanvas Editor.
+注意：Blender 2.71のFBXエクスポートによって、BlenderでEmissiveプロパティが設定されていないにもかかわらずEmissiveが生成される問題があるようです。これはPlayCanvasエンジンの問題ではありません。これを回避するには、Blender内から、マテリアルのDiffuseカラー設定を0に変更するか（プロパティエディターの'Material'タブの下）、PlayCanvasエディター内でEmissiveを単純に減らすだけです。
 
 :::
 

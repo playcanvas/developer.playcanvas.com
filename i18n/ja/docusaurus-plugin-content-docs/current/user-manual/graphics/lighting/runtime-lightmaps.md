@@ -26,7 +26,7 @@ PlayCanvasは、ライトマップの生成に便利なソリューションを�
 
 :::note
 
-The use of [batching](/user-manual/optimization/batching) is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+[バッチ処理](/user-manual/optimization/batching)を使用している場合、ランタイムライトマップが適用されません。なぜなら、各ライトマップオブジェクトが独自のライトマップテクスチャを必要とするためです。
 
 :::
 

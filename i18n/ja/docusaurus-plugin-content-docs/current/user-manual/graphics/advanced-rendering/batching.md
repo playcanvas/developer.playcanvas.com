@@ -14,7 +14,7 @@ sidebar_position: 4
 
 :::note
 
-The use of batching is currently not compatible with [runtime lightmaps](/user-manual/graphics/lighting/runtime-lightmaps/) due to each lightmapped object requiring its own unique lightmap texture.
+現在、バッチングの使用は、各ライトマップ付きオブジェクトに独自のライトマップテクスチャが必要であるため、[ランタイムライトマップ](/user-manual/graphics/lighting/runtime-lightmaps/)と互換性がありません。
 
 :::
 

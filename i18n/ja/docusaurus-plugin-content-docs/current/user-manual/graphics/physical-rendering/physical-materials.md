@@ -56,7 +56,7 @@ Diffuseカラーは **アルベド** や **ベースカラー** と呼ばれる�
 
 :::note
 
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+金属質の値はほぼいつでも0か1かのいずれかを設定します。この間の値を設定する必要があることはまれです。
 
 :::
 
