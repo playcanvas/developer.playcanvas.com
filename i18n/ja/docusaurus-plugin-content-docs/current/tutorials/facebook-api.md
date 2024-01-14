@@ -8,7 +8,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
     <iframe loading="lazy" src="https://playcanv.as/p/StXUSCXN/" title="Facebook API"></iframe>
 </div>
 
-*Log in with facebook to see your photos in a 3D sculpture*
+*Facebookにログインしてあなたの写真を3D彫刻で表示しましょう*
 
 PlayCanvasは、WebGLベースのFacebookゲームやアプリケーションを構築するための理想的なパートナーです。Facebookは、ゲームに対して大規模なオーディエンスを見つけるのに最適な場所であり、PlayCanvasはWeb向けに最適化された高速でパフォーマンスの良いゲームを作成することができます。
 
@@ -120,7 +120,7 @@ FbUi.prototype.hideLogout = function () {
 
 :::warning
 
-It is important to notice here is that `FB.login()` must be called in response to a user action like clicking on a button, otherwise the user will see a pop-up warning.
+ここで大切なことは、`FB.login()`はボタンなどのユーザーアクションに対して呼び出される必要があることです。そうしない場合、ユーザーにポップアップ警告が表示されます。
 
 :::
 

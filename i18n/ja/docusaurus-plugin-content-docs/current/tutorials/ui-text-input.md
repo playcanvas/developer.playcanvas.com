@@ -30,7 +30,7 @@ HTML入力要素を使用することで、Webページ上でのユーザーが�
 
 :::note
 
-This doesn't support 3D elements.
+3D要素には対応していません。
 
 :::
 

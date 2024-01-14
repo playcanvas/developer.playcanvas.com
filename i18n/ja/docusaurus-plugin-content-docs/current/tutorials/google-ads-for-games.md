@@ -446,7 +446,7 @@ UiController.prototype.initialize = function() {
 
 :::warning
 
-Important: For the tutorial, we used test mode so we didn't show any actual ads. When you disable test mode to use for production, please ensure that you comply with any privacy/cookies policy for the countries you release in including GDPR. This usually means implementing some form of cookie consent.
+重要：チュートリアルではテストモードを使用していたため、実際の広告は表示されませんでした。製品用にテストモードを無効にするときは、リリースする国のプライバシー/クッキーポリシー、GDPRを含めて準拠していることを確認してください。通常、これは何らかの形でのクッキー同意の実装を意味します。
 
 :::
 

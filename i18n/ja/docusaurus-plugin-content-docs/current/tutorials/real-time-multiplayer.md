@@ -6,7 +6,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 :::note
 
-This tutorial covers how to start creating your own multiplayer from scratch. If you prefer to use a hosted multiplayer service, we have tutorials for [Colyseus](/tutorials/real-time-multiplayer-colyseus) and [Photon](/tutorials/real-time-multiplayer-photon).
+このチュートリアルでは、ゼロから自分自身のマルチプレイヤーを作成する方法について説明します。ホストされたマルチプレイヤーサービスを使用する場合は、[Colyseus](/tutorials/real-time-multiplayer-colyseus)および[Photon](/tutorials/real-time-multiplayer-photon)のチュートリアルがあります。
 
 :::
 
@@ -60,15 +60,15 @@ Glitchは、タイピングを終えると自動的にサーバーを再実行�
 
 PlayCanvasで新しいプロジェクトを作成します。Socket.ioのクライアントJSライブラリを外部スクリプトとして含める必要があります。
 
-Go to project settings.
+プロジェクトの設定に移動します。
 
 ![Project settings][12]
 
-Find and open 'External Scripts'.
+'External Scripts'を見つけて開きます。
 
 ![External scripts settings][13]
 
-Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
+値を0から1に変更し、[フレームワークサーバー][11]からのソケットライブラリのCDN URLを追加します。この場合、書いている時点で最新のバージョンであるv3.1.1を使用します。
 
 ![Project settings][14]
 

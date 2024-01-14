@@ -64,7 +64,7 @@ PlayCanvasの基本的なオーディオシステムは二つのコンポーネ�
 
 :::note
 
-Not all audio formats are supported across all browsers. At the moment we recommend using MP3 (.mp3) which is supported by most browsers.
+すべてのブラウザですべてのオーディオ形式がサポートされているわけではありません。現時点では、ほとんどのブラウザでサポートされているMP3（.mp3）を使用することをおすすめします。
 
 :::
 
@@ -90,7 +90,7 @@ AudioListenerを作成するには、リスナーを表すエンティティを�
 
 :::note
 
-You can only have one AudioListener at a time. The last AudioListener Component that is created will be the active one.
+一度に使用できるAudioListenerは一つです。最後に作成されたAudioListenerコンポーネントが有効になります。
 
 :::
 

@@ -12,7 +12,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/406
 
 :::note
 
-This tutorial requires Web Audio API support.
+このチュートリアルには、Web Audio APIが必要です。
 
 :::
 
