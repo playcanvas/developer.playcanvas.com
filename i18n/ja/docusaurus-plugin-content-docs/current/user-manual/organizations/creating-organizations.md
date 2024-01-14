@@ -44,7 +44,7 @@ CREATE をクリックすると、[profile][4] ページに移動します。
 
 :::warning
 
-Make sure you can log in with the new owner's account.
+新しいオーナー (Owner)のアカウントでログインできることを確認してください。
 
 :::
 

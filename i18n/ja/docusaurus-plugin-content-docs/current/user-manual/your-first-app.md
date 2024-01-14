@@ -131,7 +131,7 @@ Launchページは新しいタブで開きます。開いたら、4つの矢印�
 
 :::tip
 
-There is a 'Live Link' between the Editor and the Launch page. Any change you make in the Editor will be reflected in the Launch page in real time! It can be convenient to place the Launch page side by side with the Editor while you are working.
+エディタとLaunchページの間には'ライブリンク'があります。エディタで行った変更は、Launchページにリアルタイムで反映されます！作業中にエディタとLaunchページを並べて配置すると便利です。
 
 ![Editor Live Link][16]
 

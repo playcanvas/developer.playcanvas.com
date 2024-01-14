@@ -25,7 +25,7 @@ sidebar_position: 6
 
 :::note
 
-Adding this URL as your website URL is required because of the way PlayCanvas hosts games and the security requirements that Facebook implements to allow access to its API. We're working on a fix for this in PlayCanvas so that you only need to set the Secure Canvas URL.
+PlayCanvasのゲームのホスティング方法、また、FacebookがAPIへのアクセスを許可するために実装するセキュリティ要件のため、ウェブサイトURLとしてこのURLを追加する必要があります。Secure Canvas URLのみの設定で済むよう、PlayCanvasで問題の解決に取り組んでいます。
 
 :::
 

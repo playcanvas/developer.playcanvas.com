@@ -62,7 +62,7 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
 
 :::note
 
-If you are sharing a link to your game you should use the Primary Build link. That means you know it won't change when you re-publish.
+ゲームへのリンクをシェアする場合は、Primary Buildリンクを使用するべきです。これにより、再公開する際にリンクが変更される心配がなくなります。
 
 :::
 

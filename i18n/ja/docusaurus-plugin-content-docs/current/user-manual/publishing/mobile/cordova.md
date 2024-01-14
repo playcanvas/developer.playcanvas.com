@@ -37,9 +37,9 @@ cordova create masterarcher com.playcanvas.masterarcher "Master Archer"
 
 :::note
 
-Audio asset files will need to be in Base64 format to load and play correctly. This is due to iOS being restrictive about what files can be loaded in the WebView via local disk.
+Audioアセットファイルは、正しくロードおよび再生するために、Base64形式である必要があります。これは、iOSがWebViewを介してローカルディスク経由で読み込まれる可能性があるファイルに関して制限的であるためです。
 
-We recommend using a tool like [Base64 Guru](https://base64.guru/converter/encode/audio) or automating this via a script.
+[Base64 Guru](https://base64.guru/converter/encode/audio)などのツールを使用することをお勧めします。
 
 :::
 
