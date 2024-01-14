@@ -97,12 +97,12 @@ If you are trying to GET multiple resources like for example listing the Apps of
 
 As you can notice the response in this case also contains pagination data. To control the pagination of the response you can pass the following URL parameters:
 
-<div class="params">
-<div class="parameter"><span class="param">limit</span><p>The maximum number of items to include in the response.</p></div>
-<div class="parameter"><span class="param">skip</span><p>The number of items to skip from the original result set.</p></div>
-<div class="parameter"><span class="param">sort</span><p>The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here.</p></div>
-<div class="parameter"><span class="param">order</span><p>If you want results in ascending order pass 1 otherwise pass -1 for descending order.</p></div>
-</div>
+| Name    | Description                                                                                                                      |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `limit` | The maximum number of items to include in the response.                                                                          |
+| `skip`  | The number of items to skip from the original result set.                                                                        |
+| `sort`  | The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here. |
+| `order` | If you want results in ascending order pass 1 otherwise pass -1 for descending order.                                            |
 
 So for example to get 32 items after the first 16 items you would send this request:
 
@@ -124,23 +124,22 @@ Also the status code of the response will be the appropriate HTTP error code.
 
 ## Rate Limiting
 
-Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits).
-There are different rate limits depending on the request:
+Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits). There are different rate limits depending on the request:
 
-| Rate Limit Type | Description               | Limit for free accounts          | Limit for personal/org accounts   |
-|-----------------|---------------------------|-------------------------------|--------------------------------|
-| Normal          | The normal rate limit     | 120 requests/minute    | 240 requests/minute     |
-| Strict          | The strict rate limit     | 5 requests/minute      | 10 requests/minute      |
-| Assets          | The assets rate limit     | 60 requests/minute     | 120 requests/minute     |
+| Rate Limit Type | Description               | Limit for free accounts | Limit for personal/org accounts |
+| --------------- | ------------------------- | ----------------------- | ------------------------------- |
+| Normal          | The normal rate limit     | 120 requests/minute     | 240 requests/minute             |
+| Strict          | The strict rate limit     | 5 requests/minute       | 10 requests/minute              |
+| Assets          | The assets rate limit     | 60 requests/minute      | 120 requests/minute             |
 
 
 The response will contain the following headers to help you regulate how often you call the API:
 
-<div class="params">
-<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>The number of requests allowed in a minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>The remaining number of requests that you are allowed to make this minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>The time at which the current rate limit window resets in <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC epoch seconds</a>.</p></div>
-</div>
+| Name                    | Description                                                                                                             |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `X-RateLimit-Limit`     | The number of requests allowed in a minute.                                                                             |
+| `X-RateLimit-Remaining` | The remaining number of requests that you are allowed to make this minute.                                              |
+| `X-RateLimit-Reset`     | The time at which the current rate limit window resets in [UTC epoch seconds](https://en.wikipedia.org/wiki/Unix_time). |
 
 If you exceed the rate limit you will get a `429 Too Many Requests` status code. You will have to wait for the current window to reset in order to continue making requests.
 

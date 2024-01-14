@@ -28,9 +28,11 @@ Authorization: Bearer {accessToken}
 
 ## Parameters
 
-<div class="params">
-<div class="parameter"><span class="param">branchId: string</span><p>The id of the branch.</p></div>
-</div>
+| Name       | Type     | Required | Description                |
+| ---------- | -------- | :------: | -------------------------- |
+| `assetId`  | `number` | ✔️      | The id of the asset.       |
+| `branchId` | `string` | ✔️      | The id of the branch.      |
+| `filename` | `string` | ✔️      | The filename of the asset. |
 
 ## Response Schema
 
@@ -44,12 +46,12 @@ Status: 200
 
 ## Errors
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| Code | Description                |
+| ---- | -------------------------- |
+| 401  | Unauthorized               |
+| 403  | Forbidden                  |
+| 404  | Project or Asset not found |
+| 429  | Too many requests          |
 
 ## Rate Limiting
 
