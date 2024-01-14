@@ -6,7 +6,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 :::warning
 
-This tutorial uses the deprecated Model and Animation components. Please refer to the [Anim State Graph Blending tutorial](/tutorials/anim-blending/) instead.
+このチュートリアルでは非推奨のModelおよびAnimationコンポーネントが使用されています。代わりに[アニメーションステートグラフのブレンディング](/tutorials/anim-blending/)を参照してください。
 
 :::
 
