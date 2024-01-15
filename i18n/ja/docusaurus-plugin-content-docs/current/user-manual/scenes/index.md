@@ -1,5 +1,5 @@
 ---
-title: シーン
+title: Scenes
 sidebar_position: 9
 ---
 

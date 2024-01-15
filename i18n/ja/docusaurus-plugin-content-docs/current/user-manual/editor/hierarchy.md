@@ -1,5 +1,5 @@
 ---
-title: ヒエラルキー
+title: ヒエラルキー (Hierarchy)
 sidebar_position: 2
 ---
 
