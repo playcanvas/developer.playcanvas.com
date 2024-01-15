@@ -9,7 +9,7 @@ sidebar_position: 25
 
 エンティティに**コンポーネント**を追加するには、エンティティを選択して、**インスペクター**で **Add Component** をクリックするか、エンティティを右クリックし、Add Component コンテキストメニューからコンポーネントを選択してください。
 
-[詳細を見る](/user-manual/packs/components/)
+[Learn more](/user-manual/scenes/components/)
 
 
 ## スクリプトを追加するには?
@@ -28,7 +28,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 または、シーンに[スカイボックス](/user-manual/assets/cubemaps/)を追加することもできます。
 
-[詳細を見る](/user-manual/packs/components/camera/)
+[Learn more](/user-manual/scenes/components/camera/)
 
 
 
@@ -68,7 +68,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 エンティティに**Light**コンポーネントを追加することで、ライトを作成できます。また、エンティティを右クリックしてNew Entity / Directional Lightを選択して、新しい方向性ライトを作成することもできます。
 
-[詳細を見る](/user-manual/packs/components/light/)
+[Learn more](/user-manual/scenes/components/light/)
 
 
 ## マテリアルを作成するには?
@@ -97,7 +97,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 他の形状についても同様に、エンティティを右クリックしてNew Entity/Boxを選択することができます。
 
-[詳細を見る](/user-manual/packs/components/render/)
+[Learn more](/user-manual/scenes/components/render/)
 
 
 
@@ -105,7 +105,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 シーンにスカイボックスを作成するには、まず[Cubemapアセット](/user-manual/assets/cubemaps/)を作成する必要があります。その後、Cubemapを3Dビューポートにドラッグアンドドロップするか、Scene Settingsに移動してSkyboxフィールドにCubemapをドラッグします。
 
-[詳細を見る](/user-manual/designer/settings/#skybox)
+[Learn more](/user-manual/editor/settings/#skybox)
 
 
 
@@ -130,7 +130,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## アニメーションを再生するには?
 
-3Dモデルのアニメーションを再生するには、 [モデルコンポーネント](/user-manual/packs/components/model/)と[アニメーションコンポーネント](/user-manual/packs/components/animation/)を持つエンティティを作成します。 **モデルコンポーネント**がモデルをレンダリングして、 **アニメーションコンポーネント**がアニメーションを再生します。
+3Dモデルのアニメーションを再生するには、 [モデルコンポーネント](/user-manual/scenes/components/model/)と[アニメーションコンポーネント](/user-manual/scenes/components/animation/)を持つエンティティを作成します。 **モデルコンポーネント**がモデルをレンダリングして、 **アニメーションコンポーネント**がアニメーションを再生します。
 
 モデルをレンダリングするには、モデルコンポーネントのAssetフィールドにモデルアセットをドラッグします。アニメーションを再生するには、アニメーションコンポーネントのAssetフィールドにアニメーションアセットをドラッグします。
 
@@ -138,7 +138,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 ## サウンドを再生するにはどうすればよいですか?
 
-サウンドを再生するには、Entityに[Sound component](/user-manual/packs/components/sound/)を追加する必要があります。その後、[Audio assets](/user-manual/assets/audio/) を再生するスロットを作成することができます。スロットを追加して、オーディオアセットをアセットフィールドにドラッグアンドドロップします。サウンドを聞くためには、[AudioListener component](/user-manual/packs/components/audiolistener/)をEntityに追加する必要があります。通常はカメラEntityに追加します。
+サウンドを再生するには、Entityに[Sound component](/user-manual/scenes/components/sound/)を追加する必要があります。その後、[Audio assets](/user-manual/assets/audio/) を再生するスロットを作成することができます。スロットを追加して、オーディオアセットをアセットフィールドにドラッグアンドドロップします。サウンドを聞くためには、[AudioListener component](/user-manual/scenes/components/audiolistener/)をEntityに追加する必要があります。通常はカメラEntityに追加します。
 
 オーディオアセットは、コンピュータからAssetsパネルにオーディオファイルをドラッグアンドドロップすることで作成できます。
 
@@ -161,7 +161,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 3Dモデルをレンダリングするには、エンティティに**Modelコンポーネント**を追加し、アセットフィールドに**Modelアセット**をドラッグ＆ドロップする必要があります。または、アセットパネルからモデルアセットを3Dビューポートにドラッグ＆ドロップすることもできます。
 
-[詳細を見る](/user-manual/packs/components/model/)
+[Learn more](/user-manual/scenes/components/model/)
 
 
 
@@ -184,9 +184,9 @@ Translate / Rotate / Scaleツールを切り替えるには、それぞれ1/2/3�
 
 ## 物理を使用するには?
 
-Entityに物理特性を与えるには、 [Collision component](/user-manual/packs/components/collision/) と [RigidBody component](/user-manual/packs/components/rigidbody/) を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
+Entityに物理特性を与えるには、 [Collision component](/user-manual/scenes/components/collision/) と [RigidBody component](/user-manual/scenes/components/rigidbody/) を追加する必要があります。Collision componentはEntityに物理的な形状を与え、RigidBody componentはEntityを物理エンジンでシミュレーションします。
 
-デフォルトの [gravity](/user-manual/designer/settings/#gravity) を変更することができます。
+デフォルトの [gravity](/user-manual/editor/settings/#gravity) を変更することができます。
 
 [チュートリアルを見る](/tutorials/collision-and-triggers/)
 
