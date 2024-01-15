@@ -133,6 +133,6 @@ Try the tutorial in full screen [here][5] or at the top of the page. Move the mo
 
 [1]: https://playcanvas.com/project/405819/overview/tutorial-basic-mouse-input
 [2]: /user-manual/glossary#framework
-[3]: /user-manual/glossary#app
+[3]: /user-manual/glossary#application
 [4]: /user-manual/glossary#dom
 [5]: https://playcanv.as/p/MHIdZgaj/
