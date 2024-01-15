@@ -1,5 +1,5 @@
 ---
-title: ビューポート
+title: ビューポート (Viewport)
 sidebar_position: 4
 ---
 

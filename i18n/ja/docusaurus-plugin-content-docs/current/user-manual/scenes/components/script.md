@@ -1,5 +1,5 @@
 ---
-title: Script
+title: スクリプト (Script)
 sidebar_position: 16
 ---
 

@@ -1576,89 +1576,89 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/dashboard/settings.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-asset-library]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/asset-library.md
-source_file   = docs/user-manual/designer/asset-library.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-asset-library]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/asset-library.md
+source_file   = docs/user-manual/editor/asset-library.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/asset-library.md
+resource_name = content/en/user-manual/editor/asset-library.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-assets]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/assets.md
-source_file   = docs/user-manual/designer/assets.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-assets]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/assets.md
+source_file   = docs/user-manual/editor/assets.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/assets.md
+resource_name = content/en/user-manual/editor/assets.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-editor-api]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/editor-api.md
-source_file   = docs/user-manual/designer/editor-api.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-editor-api]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/editor-api.md
+source_file   = docs/user-manual/editor/editor-api.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/editor-api.md
+resource_name = content/en/user-manual/editor/editor-api.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-hierarchy]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/hierarchy.md
-source_file   = docs/user-manual/designer/hierarchy.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-hierarchy]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/hierarchy.md
+source_file   = docs/user-manual/editor/hierarchy.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/hierarchy.md
+resource_name = content/en/user-manual/editor/hierarchy.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-index]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/index.md
-source_file   = docs/user-manual/designer/index.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/index.md
+source_file   = docs/user-manual/editor/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/index.md
+resource_name = content/en/user-manual/editor/index.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-inspector]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/inspector.md
-source_file   = docs/user-manual/designer/inspector.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-inspector]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/inspector.md
+source_file   = docs/user-manual/editor/inspector.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/inspector.md
+resource_name = content/en/user-manual/editor/inspector.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-keyboard-shortcuts]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/keyboard-shortcuts.md
-source_file   = docs/user-manual/designer/keyboard-shortcuts.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-keyboard-shortcuts]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/keyboard-shortcuts.md
+source_file   = docs/user-manual/editor/keyboard-shortcuts.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/keyboard-shortcuts.md
+resource_name = content/en/user-manual/editor/keyboard-shortcuts.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-loading-screen]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/loading-screen.md
-source_file   = docs/user-manual/designer/loading-screen.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-loading-screen]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/loading-screen.md
+source_file   = docs/user-manual/editor/loading-screen.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/loading-screen.md
+resource_name = content/en/user-manual/editor/loading-screen.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-menus-and-toolbar]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/menus-and-toolbar.md
-source_file   = docs/user-manual/designer/menus-and-toolbar.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-menus-and-toolbar]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/menus-and-toolbar.md
+source_file   = docs/user-manual/editor/menus-and-toolbar.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/menus-and-toolbar.md
+resource_name = content/en/user-manual/editor/menus-and-toolbar.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-scenes]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/scenes.md
-source_file   = docs/user-manual/designer/scenes.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-scenes]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/scenes.md
+source_file   = docs/user-manual/editor/scenes.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/scenes.md
+resource_name = content/en/user-manual/editor/scenes.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-settings]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/settings.md
-source_file   = docs/user-manual/designer/settings.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-settings]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/settings.md
+source_file   = docs/user-manual/editor/settings.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/settings.md
+resource_name = content/en/user-manual/editor/settings.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-designer-viewport]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/designer/viewport.md
-source_file   = docs/user-manual/designer/viewport.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-viewport]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/viewport.md
+source_file   = docs/user-manual/editor/viewport.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/designer/viewport.md
+resource_name = content/en/user-manual/editor/viewport.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-only-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine-only/index.md
@@ -1968,174 +1968,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/organizations/managing-organizations.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-anim]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/anim.md
-source_file   = docs/user-manual/packs/components/anim.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/anim.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-animation]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/animation.md
-source_file   = docs/user-manual/packs/components/animation.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/animation.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-audiolistener]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/audiolistener.md
-source_file   = docs/user-manual/packs/components/audiolistener.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/audiolistener.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-button]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/button.md
-source_file   = docs/user-manual/packs/components/button.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/button.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-camera]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/camera.md
-source_file   = docs/user-manual/packs/components/camera.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/camera.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-collision]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/collision.md
-source_file   = docs/user-manual/packs/components/collision.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/collision.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-element]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/element.md
-source_file   = docs/user-manual/packs/components/element.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/element.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-index]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/index.md
-source_file   = docs/user-manual/packs/components/index.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/index.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-layout-child]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/layout-child.md
-source_file   = docs/user-manual/packs/components/layout-child.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/layout-child.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-layout-group]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/layout-group.md
-source_file   = docs/user-manual/packs/components/layout-group.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/layout-group.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-light]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/light.md
-source_file   = docs/user-manual/packs/components/light.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/light.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-model]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/model.md
-source_file   = docs/user-manual/packs/components/model.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/model.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-particlesystem]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/particlesystem.md
-source_file   = docs/user-manual/packs/components/particlesystem.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/particlesystem.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-render]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/render.md
-source_file   = docs/user-manual/packs/components/render.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/render.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-rigidbody]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/rigidbody.md
-source_file   = docs/user-manual/packs/components/rigidbody.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/rigidbody.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-screen]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/screen.md
-source_file   = docs/user-manual/packs/components/screen.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/screen.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-script]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/script.md
-source_file   = docs/user-manual/packs/components/script.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/script.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-scrollbar]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/scrollbar.md
-source_file   = docs/user-manual/packs/components/scrollbar.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/scrollbar.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-scrollview]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/scrollview.md
-source_file   = docs/user-manual/packs/components/scrollview.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/scrollview.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-sound]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/sound.md
-source_file   = docs/user-manual/packs/components/sound.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/sound.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-components-sprite]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/components/sprite.md
-source_file   = docs/user-manual/packs/components/sprite.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/components/sprite.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-entities-index]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/entities/index.md
-source_file   = docs/user-manual/packs/entities/index.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/entities/index.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-index]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/index.md
-source_file   = docs/user-manual/packs/index.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/index.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-packs-loading-scenes]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/packs/loading-scenes.md
-source_file   = docs/user-manual/packs/loading-scenes.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/packs/loading-scenes.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-physics-ammo-alternatives]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/physics/ammo-alternatives.md
 source_file   = docs/user-manual/physics/ammo-alternatives.md
@@ -2345,6 +2177,174 @@ source_file   = docs/user-manual/publishing/web/self-hosting.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/publishing/web/self-hosting.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-anim]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/anim.md
+source_file   = docs/user-manual/scenes/components/anim.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/anim.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-animation]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/animation.md
+source_file   = docs/user-manual/scenes/components/animation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/animation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-audiolistener]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/audiolistener.md
+source_file   = docs/user-manual/scenes/components/audiolistener.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/audiolistener.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-button]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/button.md
+source_file   = docs/user-manual/scenes/components/button.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/button.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-camera]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/camera.md
+source_file   = docs/user-manual/scenes/components/camera.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/camera.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-collision]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/collision.md
+source_file   = docs/user-manual/scenes/components/collision.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/collision.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-element]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/element.md
+source_file   = docs/user-manual/scenes/components/element.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/element.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/index.md
+source_file   = docs/user-manual/scenes/components/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-layout-child]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/layout-child.md
+source_file   = docs/user-manual/scenes/components/layout-child.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/layout-child.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-layout-group]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/layout-group.md
+source_file   = docs/user-manual/scenes/components/layout-group.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/layout-group.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-light]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/light.md
+source_file   = docs/user-manual/scenes/components/light.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/light.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-model]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/model.md
+source_file   = docs/user-manual/scenes/components/model.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/model.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-particlesystem]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/particlesystem.md
+source_file   = docs/user-manual/scenes/components/particlesystem.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/particlesystem.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-render]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/render.md
+source_file   = docs/user-manual/scenes/components/render.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/render.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-rigidbody]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/rigidbody.md
+source_file   = docs/user-manual/scenes/components/rigidbody.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/rigidbody.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-screen]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/screen.md
+source_file   = docs/user-manual/scenes/components/screen.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/screen.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-script]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/script.md
+source_file   = docs/user-manual/scenes/components/script.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/script.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-scrollbar]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/scrollbar.md
+source_file   = docs/user-manual/scenes/components/scrollbar.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/scrollbar.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-scrollview]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/scrollview.md
+source_file   = docs/user-manual/scenes/components/scrollview.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/scrollview.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-sound]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/sound.md
+source_file   = docs/user-manual/scenes/components/sound.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/sound.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-sprite]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/sprite.md
+source_file   = docs/user-manual/scenes/components/sprite.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/sprite.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-entities-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/entities/index.md
+source_file   = docs/user-manual/scenes/entities/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/entities/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/index.md
+source_file   = docs/user-manual/scenes/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-loading-scenes]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/loading-scenes.md
+source_file   = docs/user-manual/scenes/loading-scenes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/loading-scenes.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-anatomy]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scripting/anatomy.md

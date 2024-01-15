@@ -1,5 +1,5 @@
 ---
-title: アセット
+title: アセット (Asset)
 sidebar_position: 5
 ---
 

@@ -211,6 +211,6 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 [loadscenedata-api]: /api/pc.SceneRegistry.html#loadSceneData
 [unloadscenedata-api]: /api/pc.SceneRegistry.html#unloadSceneData
 [copy-and-paste-assets]: /user-manual/designer/assets/#copy-and-paste-between-projects
-[asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tag
+[asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
 [changescene-api]: /api/pc.SceneRegistry.html#changeScene
