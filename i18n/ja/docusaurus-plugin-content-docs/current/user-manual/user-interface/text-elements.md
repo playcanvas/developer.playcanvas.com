@@ -9,7 +9,37 @@ sidebar_position: 6
 
 テキストエレメントには、表示されるテキストを入力する文字列フィールドが含まれています。文字列フィールドに改行文字を入力するには、`Shift + Enter`を使います。
 
-*パフォーマンスに関する注意：*文字列内の各文字に対して1つのクワッドを使用して、テキスト要素が画面に表示されます。テキストプロパティを変更すると、要素のメッシュが再生成されます。これはパフォーマンスに影響しますが、フレームごとに合理的な数の要素にテキストコンテンツを変更することには問題はありません。
+:::tip
+
+文字列内の各文字に対して1つのクワッドを使用して、テキスト要素が画面に表示されます。テキストプロパティを変更すると、要素のメッシュが再生成されます。これはパフォーマンスに影響しますが、フレームごとに合理的な数の要素にテキストコンテンツを変更することには問題はありません。
+
+:::
+
+### Text Markup
+
+Text elements support a simple markup syntax that allows you to apply different colors to specific parts of the text. Consider this example:
+
+```
+[color="#ff0000"]Red[/color], [color="#00ff00"]green[/color] and [color="#0000ff"]blue[/color].
+```
+
+Assuming the base color of the text element is white, this will render as follows:
+
+![Text Markup][12]
+
+:::tip
+
+You must proactively enable support for the markup syntax on a text element. You can do this via the API:
+
+```javascript
+    entity.element.enableMarkup = true;
+```
+
+Or by enabling it in the Editor:
+
+![Enable Markup][13]
+
+:::
 
 ## ローカライゼーション (Localization)
 
@@ -39,11 +69,13 @@ sidebar_position: 6
 
 font sizeプロパティは、Screenコンポーネントピクセルでフォントのレンダリングサイズを設定します。テキストに改行文字が含まれている場合、行の高さは下に移動する距離をScreen Componentピクセルで設定します。
 
+同等のフォントサイズとデフォルトの行の高さ：
+
 ![Font Size Line Equal][6]
-**同等のフォントサイズとデフォルトの行の高さ**
+
+ラインの高さを上げてラインの間隔を広げる：
 
 ![Font Size Line Spaced][7]
-**ラインの高さを上げてラインの間隔を広げる**
 
 ## スペーシング (Spacing)
 
@@ -74,3 +106,5 @@ Opacityプロパティでは、文字列の透明度を設定できます
 [9]: /images/user-manual/user-interface/text-element/tinted.png
 [10]: /images/user-manual/user-interface/text-element/transparent.png
 [11]: /user-manual/user-interface/localization
+[12]: /images/user-manual/user-interface/text-element/text-markup.png
+[13]: /images/user-manual/user-interface/text-element/enable-markup.png

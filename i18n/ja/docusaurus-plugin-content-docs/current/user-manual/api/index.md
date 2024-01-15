@@ -97,12 +97,12 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 
 レスポンスにはページネーションデータも含まれています。レスポンスのページネーションを制御するには、次のURLパラメータを渡すことができます。
 
-<div class="params">
-<div class="parameter"><span class="param">limit</span><p>応答に含めるアイテムの最大数。</p></div>
-<div class="parameter"><span class="param">skip</span><p>元の結果セットからスキップする項目の数</p></div>
-<div class="parameter"><span class="param">sort</span><p>結果セットをソートするために使用するフィールドの名前。</p></div>
-<div class="parameter"><span class="param">order</span><p>昇順で結果を取得したい場合は1を渡し、降順にするには-1を渡します。</p></div>
-</div>
+| Name    | 説明                                                                                                                      |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `limit` | The maximum number of items to include in the response.                                                                          |
+| `skip`  | The number of items to skip from the original result set.                                                                        |
+| `sort`  | The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here. |
+| `order` | If you want results in ascending order pass 1 otherwise pass -1 for descending order.                                            |
 
 たとえば、最初の16件のアイテムをスキップして、32件のアイテムを取得するには、次のリクエストを送信します。
 
@@ -124,23 +124,22 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 ## レート制限
 
-Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits).
-There are different rate limits depending on the request:
+Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits). There are different rate limits depending on the request:
 
-| Rate Limit Type | 説明               | Limit for free accounts          | Limit for personal/org accounts   |
-|-----------------|---------------------------|-------------------------------|--------------------------------|
-| 法線 (Normal)          | The normal rate limit     | 120 requests/minute    | 240 requests/minute     |
-| Strict          | The strict rate limit     | 5 requests/minute      | 10 requests/minute      |
-| アセット (Asset)          | The assets rate limit     | 60 requests/minute     | 120 requests/minute     |
+| Rate Limit Type | 説明               | Limit for free accounts | Limit for personal/org accounts |
+| --------------- | ------------------------- | ----------------------- | ------------------------------- |
+| 法線 (Normal)          | The normal rate limit     | 120 requests/minute     | 240 requests/minute             |
+| Strict          | The strict rate limit     | 5 requests/minute       | 10 requests/minute              |
+| アセット (Asset)          | The assets rate limit     | 60 requests/minute      | 120 requests/minute             |
 
 
 APIの呼び出し回数を調整するために、次のヘッダがレスポンスに含まれます。
 
-<div class="params">
-<div class="parameter"><span class="param">X-RateLimit-Limit</span><p>The number of requests allowed in a minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Remaining</span><p>The remaining number of requests that you are allowed to make this minute.</p></div>
-<div class="parameter"><span class="param">X-RateLimit-Reset</span><p>The time at which the current rate limit window resets in <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">UTC epoch seconds</a>.</p></div>
-</div>
+| Name                    | 説明                                                                                                             |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `X-RateLimit-Limit`     | The number of requests allowed in a minute.                                                                             |
+| `X-RateLimit-Remaining` | The remaining number of requests that you are allowed to make this minute.                                              |
+| `X-RateLimit-Reset`     | The time at which the current rate limit window resets in [UTC epoch seconds](https://en.wikipedia.org/wiki/Unix_time). |
 
 レート制限を超過すると、 `429 Too Many Requests`ステータスコードを受け取ります。制限が解除されるまで、新しいリクエストを続けることはできません。
 

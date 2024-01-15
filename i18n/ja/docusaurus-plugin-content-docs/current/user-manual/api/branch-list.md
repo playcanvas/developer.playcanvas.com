@@ -28,9 +28,9 @@ Authorization: Bearer {accessToken}
 
 ## パラメーター
 
-<div class="params">
-<div class="parameter"><span class="param">projectId: number</span><p>ブランチのリストを取得するプロジェクトのID</p></div>
-</div>
+| Name        | タイプ     | 説明            |
+| ----------- | -------- | ---------------------- |
+| `projectId` | `number` | The id of the project. |
 
 ## レスポンススキーマ
 
@@ -63,12 +63,12 @@ Authorization: Bearer {accessToken}
 
 ## エラー
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| コード | 説明       |
+| ---- | ----------------- |
+| 401  | Unauthorized      |
+| 403  | Forbidden         |
+| 404  | Project not found |
+| 429  | Too many requests |
 
 ## レート制限
 
