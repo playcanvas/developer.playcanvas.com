@@ -36,7 +36,9 @@ The User Manual on the developer site has a FAQ page which can be found at `docs
 
 ## Localization
 
-The Developer Site is translated via [Transifex](https://www.transifex.com/playcanvas/playcanvas-developer-site). When anything in `docs` is updated, run:
+The Developer Site is translated via [Transifex](https://www.transifex.com/playcanvas/playcanvas-developer-site). To exchange data with Transifex, you will need the `tx` CLI tool. Instructions on setting up the `tx` tool can be found [here](https://developers.transifex.com/docs/cli#installation). Note that the first time you push with `tx`, you will need to enter the Transifex developer key (contact an Admin of the Transifex project to obtain this).
+
+When anything in `docs` is updated, run:
 
     tx push --silent
     
@@ -44,4 +46,4 @@ Once translation acitivity on Transifex is complete, run:
 
     tx pull -l ja --silent
 
-Then submit a PR with the updated language content. Instructions on setting up the Transifex CLI tool `tx` can be found [here](https://developers.transifex.com/docs/cli#installation). Note that the first time you push with `tx`, you will need to enter the Transifex developer key (contact an Admin of the Transifex project to obtain this).
+Then submit a PR with the updated language content.
