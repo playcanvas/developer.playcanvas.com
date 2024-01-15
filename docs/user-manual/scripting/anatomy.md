@@ -33,8 +33,6 @@ Rotate.prototype.swap = function(old) {
 
 We'll break down each section of the script
 
-# Script Methods
-
 ## Declaration of Script Type
 
 ```javascript
@@ -53,7 +51,9 @@ This line declares a script attribute. A script attribute is a property of the s
 
 Attributes are automatically inherited from a new script instance during code hot-swap.
 
-## Initialize
+## Script Methods
+
+### Initialize
 
 ```javascript
 // initialize code called once per entity
@@ -69,7 +69,7 @@ When an entity is cloned using the `entity.clone` method, the `initialize` metho
 
 If a script component has multiple scripts attached to it, the `initialize` method is called in the order of the scripts on the component.
 
-## Update
+### Update
 
 ```javascript
 // update code called every frame
@@ -86,7 +86,7 @@ The update method is called for every frame; it is invoked within each entity th
 
 If a script component has multiple scripts attached to it, `update` is called in the order of the scripts on the component.
 
-## Swap
+### Swap
 
 ```javascript
 // swap method called for script hot-reloading
@@ -102,15 +102,15 @@ The `swap` method is passed the old script instance as an argument and you can u
 
 If you do not wish to support hot-swapping of code, you can delete the swap method and the engine will not attempt to refresh the script.
 
-## Additional Methods: postInitialize and postUpdate
+### Additional Methods: postInitialize and postUpdate
 
 There are two more methods that are called by the engine on scripts if they are present. `postInitialize` is called on all scripts that implement it after all scripts have been initialized. Use this method to perform functions that can assume all scripts are initialized. `postUpdate` is an update method that is called after all scripts have been updated. Use this to perform functions that can assume that all scripts have been updated. For example, a camera that is tracking another entity should update its position in `postUpdate` so that the other entity has completed its motion for the frame.
 
-# Events
+## Events
 
 Script instances fire a number of events that can be used to respond to specific circumstances.
 
-## state and enable/disable
+### state and enable/disable
 
 The `state` event is fired when the script instance changes running state from enabled to disabled or vice versa. The script instance state can be changed by enabling/disabling the script itself, the component the script is a member of, or the entity that the script component is attached to. The `enable` event fires only when the state changes from disabled to enabled, and the `disable` event fires only when the state changes from enabled to disabled.
 
@@ -141,7 +141,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## destroy
+### destroy
 
 The `destroy` event is fired when the script instance is destroyed. This could be because the script was removed from the component by calling the `destroy()` method, or script component been removed from Entity, or because the Entity it was attached to was destroyed.
 
@@ -154,7 +154,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## attr and attr:[name]
+### attr and attr:[name]
 
 The `attr` and `attr:[name]` events are fired when a declared script attribute value is changed. This could be in the course of running the application or it could be when changes are made to the value via the Editor. The `attr` is fired for every attribute changed. The `attr:[name]` is fired only for a specific attribute e.g. if you have an attribute called 'speed' the event `attr:speed` would be fired when the speed is changed.
 

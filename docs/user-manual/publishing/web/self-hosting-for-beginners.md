@@ -5,11 +5,11 @@ sidebar_position: 3
 
 This document is aimed at people who are complete beginners to web programming and describes at high level how the different parts of a web application combine to serve PlayCanvas applications, or other web pages to a user's browser.
 
-# The Web Stack
+## The Web Stack
 
 In general you can separate a web application into 3 parts: Server-side, Client-side and Static content. In almost all cases you will have all three of these parts for your web application, though sometimes one or several parts will be either very simple or handled by another service.
 
-## Server-side Code
+### Server-side Code
 
 When a user opens a link in their web browser the browser sends a request to a server somewhere on the internet asking for an HTML page. At its simplest this is a page of text that sits on a hard disk on the web server and is set back over the internet to the browser.
 
@@ -51,7 +51,7 @@ There are many, many different languages and frameworks to choose from when writ
 
 When writing PlayCanvas applications, no code you write in PlayCanvas runs server-side and we don't provide any server-side code for your projects.
 
-## Client-side Code
+### Client-side Code
 
 In the web stack, the server is not the only place where we can do programming and respond to user input. Client-side refers to code running inside your browser. This code is always in Javascript, which is the language that browsers run. With client-side javascript you can perform many different operations. In the simplest case, you can modify the HTML page that was downloaded from the server
 
@@ -62,7 +62,7 @@ title.innerHTML = "This is the new title";
 
 Or in the most complex case, you can write a full 3D WebGL game using PlayCanvas. Because everything you write using PlayCanvas is client-side javascript.
 
-## Static Content
+### Static Content
 
 Some parts of your web application are not dynamic and do not need to change. For example, images, audio files, text files and in the case of PlayCanvas applications 3D models and textures. You can think of this a bit like loading files of a local disk, except that of course it comes over the internet so it's a bit slower. Serving static content is done by a web server, very much like server-side code and in some cases it will be the same machine. As there is no interactivity, there is no processing done to fulfill the request. The web server just sends back the requested file.
 

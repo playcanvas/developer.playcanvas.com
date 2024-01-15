@@ -16,32 +16,32 @@ Photon (also known as PUN) is used in many games and has a JavaScript SDK availa
 
 Photon is for free for projects with up to 20 online players (CCU).
 
-### You will learn
+## You will learn
 
 - How to add Photon SDK to PlayCanvas
 - Multiplayer implementation with Photon
 
-# Setup
+## Setup
 
-## PlayCanvas Project
+### PlayCanvas Project
 
 We start by forking the [tutorial project here][2].
 
 ![Empty Project][3]
 
-## Photon account
+### Photon account
 
 Account registration is required to use the SDK and view documentation.
 
 Create your Photon account [here][4] - (Photon Engine).
 
-### Create a new app
+#### Create a new app
 
 Click **CREATE NEW APP** from the dashboard
 
 ![Create New Application][5]
 
-### Select Photon Type and Application name.
+#### Select Photon Type and Application name.
 
 Enter the following
 
@@ -50,49 +50,49 @@ Enter the following
 
 ![Create Real Time Project][6]
 
-### Copy of AppID
+#### Copy of AppID
 
 Please make a note of this AppId, as you will need it in the future.
 
 ![App Id][7]
 
-## Download SDK
+### Download SDK
 
 Download the SDK from the dashboard.
 
-### Click SDK from the dashboard
+#### Click SDK from the dashboard
 
 ![SDK][8]
 
-### Select RealTime JavaScript
+#### Select RealTime JavaScript
 
 ![JavaScript SDK][9]
 
-### Click Download SDK
+#### Click Download SDK
 
 ![Download SDK][10]
 
-### Unzip the SDK
+#### Unzip the SDK
 
 ![Unzip SDK][11]
 
 The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_vX-X-X-X` → `lib` → **`Photon-Javascript_SDK.min.js`**.
 
-## Importing SDK
+### Importing SDK
 
 Import the SDK you have just downloaded into the PlayCanvas editor.
 
-### Upload the SDK on the editor
+#### Upload the SDK on the editor
 
 ![Upload SDK][12]
 
 Drag and drop the SDK to the assets in the editor.
 
-### Change Loading Type "Asset" to "Before Engine"
+#### Change Loading Type "Asset" to "Before Engine"
 
 ![Change Loading Type][13]
 
-# Multiplayer implementation
+## Multiplayer implementation
 
 The multiplayer implementation will do the following:
 
@@ -103,9 +103,9 @@ The multiplayer implementation will do the following:
 
 The [API reference][14] and [glossary][15] are available on Photon's site.
 
-## Using Photon with PlayCanvas
+### Using Photon with PlayCanvas
 
-### Instantiate classes from PlayCanvas to use Photon
+#### Instantiate classes from PlayCanvas to use Photon
 
 Create a script asset named **photon-loadbalancing-playcanvas.js** to the project to initialize Photon.
 
@@ -150,13 +150,13 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 - **Photon.LoadBalancing.LoadBalancingClient**  This class contains many of the features of the Photon SDK for real-time communication.
 
 
-### Set Script for Root entity
+#### Set Script for Root entity
 
 Create a new script asset **photon-loadbalancing-playcanvas.js** and attach it to the Root entity in the Editor.
 
 ![Root Entity - Inspector][16]
 
-### Paste AppId into the script attribute.
+#### Paste AppId into the script attribute.
 
 Enter AppId as a script attribute.
 
@@ -170,9 +170,9 @@ this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.ws
 - **appId** The application identifier value.
 - **appVersion** Used for versioning. Different versions cannot be connected to each other.
 
-## Connect to the Photon master server
+### Connect to the Photon master server
 
-### Connect to the master server using `connectToRegionMaster`
+#### Connect to the master server using `connectToRegionMaster`
 
 ```javascript
 PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
@@ -197,7 +197,7 @@ If you successfully connect to the lobby by running connectToRegionMaster, Joine
 
 ![Console Log][18]
 
-## Create or Join a room
+### Create or Join a room
 
 **onRoomList** function is called when a connection is made to the lobby.
 
@@ -235,7 +235,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onJoinRoom = function (createdByMe) {
 - **joinRandomOrCreateRoom(options, createRoomName, createOptions)** Join to a random room. If the room does not exist, a new room will be created.
 - **onJoinRoom** When you join a room, this is called.
 
-## Join and Leave
+### Join and Leave
 
 When a player joins a room, it is synchronized with other players.
 Use **onActorJoin** and **onActorLeave**.
@@ -296,7 +296,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 If successful, the entity is added when the player joins.
 ![Console log - Actors ][20]
 
-### Player Movement
+#### Player Movement
 
 Create a new **player.js** for character movement.
 
@@ -325,11 +325,11 @@ Player.prototype.update = function (dt) {
 
 - **this.app.keyboard.isPressed:** check if the keyboard is pressed
 
-## Synchronize other players
+### Synchronize other players
 
 Use **raiseEvent** and **onEvent** to synchronize the player's location.
 
-### Position synchronization using **raiseEvent**.
+#### Position synchronization using **raiseEvent**.
 
 ```javascript
 const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
@@ -446,7 +446,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onEvent = function (code, content, actor
 - **raiseEvent(eventCode,data, options)** send `eventCode` and `data`.
 - **onEvent(code, content, actorNr)** receive data. Includes `actorNr` and `eventCode`.
 
-### Changed to fire events when player moves
+#### Changed to fire events when player moves
 
 ```javascript
 const Player = pc.createScript("player");
