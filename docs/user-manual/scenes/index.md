@@ -35,16 +35,16 @@ The full list of Scene Settings are:
 
 <img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500" />
 
-[entities]: /user-manual/packs/entities/
-[components]: /user-manual/packs/components/
+[entities]: /user-manual/scenes/entities/
+[components]: /user-manual/scenes/components/
 [scripts]: /user-manual/scripting/
 [scene-list-png]: /images/user-manual/scenes/scene-list.png
-[project-settings]: /user-manual/designer/settings/
-[settings-gravity]: /user-manual/designer/settings/#gravity
-[settings-ambient]: /user-manual/designer/settings/#ambient-color
-[settings-skybox]: /user-manual/designer/settings/#skybox
-[settings-tonemapping]: /user-manual/designer/settings/#tonemapping
-[settings-exposure]: /user-manual/designer/settings/#exposure
-[settings-gamma]: /user-manual/designer/settings/#gamma-correction
-[settings-fog]: /user-manual/designer/settings/#fog
-[settings-lightmap]: /user-manual/designer/settings/#lightmapping
+[project-settings]: /user-manual/editor/settings/
+[settings-gravity]: /user-manual/editor/settings/#gravity
+[settings-ambient]: /user-manual/editor/settings/#ambient-color
+[settings-skybox]: /user-manual/editor/settings/#skybox
+[settings-tonemapping]: /user-manual/editor/settings/#tonemapping
+[settings-exposure]: /user-manual/editor/settings/#exposure
+[settings-gamma]: /user-manual/editor/settings/#gamma-correction
+[settings-fog]: /user-manual/editor/settings/#fog
+[settings-lightmap]: /user-manual/editor/settings/#lightmapping

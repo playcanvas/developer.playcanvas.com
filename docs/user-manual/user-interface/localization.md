@@ -137,6 +137,6 @@ For the complete engine API reference for localization see [this page][2].
 [8]: http://www.thai-language.com/?nav=zwsp
 [9]: /images/user-manual/user-interface/localization/localized-fonts-inspector.gif
 [10]: /tutorials/right-to-left-language-support/
-[11]: /user-manual/designer/assets/#copy-and-paste-between-projects
+[11]: /user-manual/editor/assets/#copy-and-paste-between-projects
 [12]: /images/user-manual/user-interface/localization/rtl-asset-folder.png
 [13]: /images/user-manual/user-interface/localization/adding-rtl-script-type.png

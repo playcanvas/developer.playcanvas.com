@@ -9,7 +9,7 @@ sidebar_position: 25
 
 To add a **component** to an Entity, select the Entity and then click **Add Component** in the **Inspector** or right click on the Entity and select a component from the Add Component context menu.
 
-[Learn more](/user-manual/packs/components/)
+[Learn more](/user-manual/scenes/components/)
 
 
 ## How do I add a script?
@@ -28,7 +28,7 @@ To change the background color of your scene, you should update the Clear Color 
 
 You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your scene.
 
-[Learn more](/user-manual/packs/components/camera/)
+[Learn more](/user-manual/scenes/components/camera/)
 
 
 
@@ -68,7 +68,7 @@ You can create a new Entity by clicking on the <span class="pc-icon">&#57632;</s
 
 You can create a light by adding a **Light** component to an Entity. You can also right click on an Entity and select New Entity / Directional Light to create a new directional light and similarly for spot lights and omni lights.
 
-[Learn more](/user-manual/packs/components/light/)
+[Learn more](/user-manual/scenes/components/light/)
 
 
 ## How do I create a material?
@@ -97,7 +97,7 @@ You can add primitive shapes like boxes, spheres and others by adding a **Render
 
 You can also right click on an Entity and select New Entity/Box to add a box (similarly for other shapes).
 
-[Learn more](/user-manual/packs/components/render/)
+[Learn more](/user-manual/scenes/components/render/)
 
 
 
@@ -105,7 +105,7 @@ You can also right click on an Entity and select New Entity/Box to add a box (si
 
 To create a skybox for your scene you first need to create a [Cubemap asset](/user-manual/assets/cubemaps/). Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the Scene Settings and drag the Cubemap in the Skybox field.
 
-[Learn more](/user-manual/designer/settings/#skybox)
+[Learn more](/user-manual/editor/settings/#skybox)
 
 
 
@@ -130,7 +130,7 @@ You can also copy and paste an Entity. To copy press **Ctrl+C** and to paste **C
 
 ## How do I play an animation?
 
-To play an animation of a 3D model you need to create an Entity with a [Model Component](/user-manual/packs/components/model/) and an [Animation Component](/user-manual/packs/components/animation/). The **Model Component** will render your model and the **Animation Component** will play animations.
+To play an animation of a 3D model you need to create an Entity with a [Model Component](/user-manual/scenes/components/model/) and an [Animation Component](/user-manual/scenes/components/animation/). The **Model Component** will render your model and the **Animation Component** will play animations.
 
 To render the model drag a model Asset in the Asset field of the Model Component. To play animations drag Animation Assets on the Assets field of the Animation Component.
 
@@ -138,7 +138,7 @@ To render the model drag a model Asset in the Asset field of the Model Component
 
 ## How do I play a sound?
 
-To play sounds you need to add a [Sound component](/user-manual/packs/components/sound/) to an Entity. Then you can create slots to play [Audio assets](/user-manual/assets/audio/). Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an [AudioListener component](/user-manual/packs/components/audiolistener/) to an Entity - usually to the Camera Entity.
+To play sounds you need to add a [Sound component](/user-manual/scenes/components/sound/) to an Entity. Then you can create slots to play [Audio assets](/user-manual/assets/audio/). Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an [AudioListener component](/user-manual/scenes/components/audiolistener/) to an Entity - usually to the Camera Entity.
 
 You can create Audio assets by dragging audio files from your computer into the Assets panel.
 
@@ -161,7 +161,7 @@ To remove a component, select the Entity and then click on the **<span class="pc
 
 To render a 3D model you need to add a **Model Component** to an Entity and drag a **Model Asset** on the Asset field. Alternatively you can drag and drop a Model Asset from the Assets Panel into the 3D Viewport.
 
-[Learn more](/user-manual/packs/components/model/)
+[Learn more](/user-manual/scenes/components/model/)
 
 
 
@@ -184,9 +184,9 @@ To upload Assets simply drag and drop files from your computer into the Assets p
 
 ## How do I use physics?
 
-To give physical properties to an Entity you need to add a [Collision component](/user-manual/packs/components/collision/) to it and a [RigidBody component](/user-manual/packs/components/rigidbody/). The Collision component gives a physical shape to the Entity and the RigidBody component makes the Entity be simulated by the physics engine.
+To give physical properties to an Entity you need to add a [Collision component](/user-manual/scenes/components/collision/) to it and a [RigidBody component](/user-manual/scenes/components/rigidbody/). The Collision component gives a physical shape to the Entity and the RigidBody component makes the Entity be simulated by the physics engine.
 
-You can change the default [gravity](/user-manual/designer/settings/#gravity) in the Scene Settings.
+You can change the default [gravity](/user-manual/editor/settings/#gravity) in the Scene Settings.
 
 [View tutorial](/tutorials/collision-and-triggers/)
 

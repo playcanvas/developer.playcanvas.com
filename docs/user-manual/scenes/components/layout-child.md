@@ -27,5 +27,5 @@ You can control an LayoutChild component's properties using a [script component]
 
 [0]: /user-manual/user-interface/layout-groups
 [1]: /images/user-manual/scenes/components/component-layoutchild.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.LayoutChildComponent.html

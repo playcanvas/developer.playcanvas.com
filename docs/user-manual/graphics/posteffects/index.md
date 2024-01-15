@@ -19,7 +19,7 @@ We have implemented post effects as scripts that you can add to an Entity that h
 
 You can also create your own post effects. You can find some additional ones on [GitHub][2].
 
-[1]: /user-manual/packs/components/camera
+[1]: /user-manual/scenes/components/camera
 [2]: https://github.com/playcanvas/engine/tree/main/scripts/posteffects
 [3]: /user-manual/graphics/posteffects/bloom
 [4]: /user-manual/graphics/posteffects/brightness_contrast
@@ -27,4 +27,4 @@ You can also create your own post effects. You can find some additional ones on 
 [6]: /user-manual/graphics/posteffects/fxaa
 [7]: /user-manual/graphics/posteffects/sepia
 [8]: /user-manual/graphics/posteffects/vignette
-[9]: /user-manual/packs/components/script
+[9]: /user-manual/scenes/components/script

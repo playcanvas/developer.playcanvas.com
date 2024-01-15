@@ -48,8 +48,8 @@ Sprite Assets can have one of three Render Modes.
 
 [1]: /images/user-manual/2D/9-slicing/9-sliced-labelled.jpg
 [2]: /user-manual/2D/sprite-editor
-[3]: /user-manual/packs/components/sprite
-[4]: /user-manual/packs/components/element
+[3]: /user-manual/scenes/components/sprite
+[4]: /user-manual/scenes/components/element
 [5]: /images/user-manual/2D/9-slicing/button-resize.gif
 [6]: /images/user-manual/2D/9-slicing/9-slice-setup.jpg
 [7]: /images/user-manual/2D/9-slicing/simple-resize.gif

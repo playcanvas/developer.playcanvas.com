@@ -29,5 +29,5 @@ The render component can be enabled or disabled using the toggle in the top righ
 You can control a render component's properties using a [script component][2]. The render component's scripting interface is [here][3].
 
 [1]: /images/user-manual/scenes/components/component-render.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.RenderComponent.html

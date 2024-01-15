@@ -35,5 +35,5 @@ The characters that should be included in the Font asset. If you only need numbe
 
 Click on the Process Font button after you make changes to the Font asset in order to generate a new version.
 
-[1]: /user-manual/packs/components/element/
+[1]: /user-manual/scenes/components/element/
 [2]: /images/user-manual/assets/fonts/font.png

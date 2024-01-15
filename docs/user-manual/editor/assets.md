@@ -120,9 +120,9 @@ If an asset does have references, you can check them via the References content 
 Selecting a reference will load it into the Inspector panel.
 
 [1]: /images/user-manual/editor/assets-panel.png
-[2]: /user-manual/designer/inspector
-[3]: /user-manual/designer/viewport
-[4]: /user-manual/designer/settings
+[2]: /user-manual/editor/inspector
+[3]: /user-manual/editor/viewport
+[4]: /user-manual/editor/settings
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
 [7]: /api/pc.AssetRegistry.html#findByTag

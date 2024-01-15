@@ -152,7 +152,7 @@ See the [Custom Post Effects project here][7].
 [1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
 [2]: /api/pc.Shader.html
 [4]: /api/pc.PostEffect.html
-[3]: /user-manual/packs/components/camera
+[3]: /user-manual/scenes/components/camera
 [6]: /tutorials/custom-shaders/
 [5]: /api/pc.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045

@@ -93,7 +93,7 @@ Enabling shadows has performance implications:
 * If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
 
 [1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
-[2]: /user-manual/packs/components/light
+[2]: /user-manual/scenes/components/light
 [3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
 [5]: /images/user-manual/graphics/lighting/shadows/light-shadow-options.png

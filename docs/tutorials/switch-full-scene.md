@@ -10,4 +10,4 @@ Full documentation for Loading Scenes is now in the [User Manual][documentation-
     <iframe loading="lazy" src="https://playcanv.as/e/p/zsQcbehI/" title="Switch Full Scene"></iframe>
 </div>
 
-[documentation-page]: /user-manual/packs/loading-scenes/
+[documentation-page]: /user-manual/scenes/loading-scenes/

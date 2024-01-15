@@ -122,4 +122,4 @@ pc.script.createLoadingScreen(function (app) {
 });
 ```
 
-[1]: /user-manual/designer/settings
+[1]: /user-manual/editor/settings

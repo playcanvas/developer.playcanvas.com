@@ -28,6 +28,6 @@ In order to log in to your Account click Log In on the front page. If you are al
 [1]: /images/user-manual/creating-account/signup.png
 [2]: /images/user-manual/creating-account/signup_details.png
 [3]: /images/user-manual/creating-account/signup_final.png
-[4]: /user-manual/designer/
+[4]: /user-manual/editor/
 [5]: /user-manual/profile/
 [6]: /images/user-manual/creating-account/login.png
