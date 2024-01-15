@@ -22,20 +22,20 @@ thumb: "https://avatars.githubusercontent.com/u/28384334?s=300&v=4"
 - [PlayCanvasプロジェクト (クライアントサイド)](https://playcanvas.com/project/859259/overview/colyseus-demo)
 - [Colyseus TypeScriptプロジェクト (サーバーサイド)](https://github.com/colyseus/tutorial-playcanvas-server)
 
-# 開始する前に
+## 開始する前に
 
-## 前提知識
+### 前提知識
 
 - 基本的なPlayCanvasの知識 ([PlayCanvas開発者リソースを参照してください](https://developer.playcanvas.com/))
 - 基本的なJavaScript/TypeScriptの理解 ([TypeScript Handbookを参照してください](https://www.typescriptlang.org/docs/handbook/intro.html))
 - 基本的なNode.jsの理解 ([Introduction to Node.jsを参照してください](https://nodejs.dev/en/learn/))
 
-## ソフトウェア要件
+### ソフトウェア要件
 
 - [Node.js LTS](https://nodejs.org/en/download/)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
-# サーバーの作成
+## サーバーの作成
 
 プレイヤーの状態を保持するために、基本的なサーバーをローカルに作成します。変更はクライアントと自動的に同期されます。
 
@@ -64,7 +64,7 @@ npm start
 ⚔️ Listening on ws://localhost:2567
 ```
 
-# Colyseus JavaScript SDKのインポート
+## Colyseus JavaScript SDKのインポート
 
 PlayCanvasにColyseus JavaScript SDKを追加する必要があります。
 
@@ -86,9 +86,9 @@ https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 
 これにより、PlayCanvasスクリプトの `Colyseus` [JavaScript SDK](https://docs.colyseus.io/colyseus/getting-started/javascript-client/) を使用できます。
 
-# クライアント - サーバー接続の確立
+## クライアント - サーバー接続の確立
 
-Now, from a new PlayCanvas Script, let's instantiate our `Colyseus.Client` instance. ([see "Creating new scripts"](/user-manual/scripting/creating-new/))
+新しいPlayCanvasスクリプトから、`Colyseus.Client` インスタンスを作成しましょう([「新しいスクリプトの作成方法」](/user-manual/scripting/creating-new/)を参照してください)。
 
 このスクリプトは、「NetworkManager」という新しい空のエンティティにアタッチできます。
 
@@ -122,7 +122,7 @@ PlayCanvasプロジェクトを**「起動」**すると、クライアントは
 19U8WkmoK joined!
 ```
 
-# ルーム状態とスキーマ
+## ルーム状態とスキーマ
 
 Colyseusでは、共有データを `Schema` 構造を使用して定義します。
 
@@ -197,20 +197,20 @@ export class MyRoomState extends Schema {
 
 サーバーサイドで行った状態変化は、クライアントサイドで **観察できます** 。次のセクションでやることです。
 
-# 同期のためのシーンのセットアップ
+## 同期のためのシーンのセットアップ
 
 このデモ用に、シーンに2つのオブジェクトを作成する必要があります。
 
 - 床を表す Plane
 - プレイヤーを表す Capsule。新しいプレイヤーがルームに参加するたびに複製します。
 
-## Planeの作成
+### Planeの作成
 
 スケール`8`のPlaneを作成しましょう。
 
 ![Plane](/images/tutorials/multiplayer-colyseus/plane.jpg)
 
-## Playerの作成
+### Playerの作成
 
 スケール`1`のPlayerカプセルを作成しましょう。
 
@@ -218,11 +218,11 @@ export class MyRoomState extends Schema {
 
 ![Player](/images/tutorials/multiplayer-colyseus/player.png)
 
-# Stateの変更を監視
+## Stateの変更を監視
 
 ルームとの接続が確立した後、クライアント側はStateの変更を監視し、サーバー上のデータの視覚的な表現を作成できます。
 
-## Playerの追加
+### Playerの追加
 
 [Room State and Schema](#room-state-and-schema)セクションによると、サーバーが新しい接続を受け入れると、 `onJoin()` メソッドがState内に新しいPlayerインスタンスを作成します。
 
@@ -270,7 +270,7 @@ this.playerEntities[sessionId] = entity;
 // ...
 ```
 
-## 現在のプレイヤー
+### 現在のプレイヤー
 
 `sessionId`を接続された`room.sessionId`と照合して、現在のプレイヤーオブジェクトに対する特別な参照を保持することができます。
 
@@ -285,7 +285,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 });
 ```
 
-## 接続が切断されたプレイヤーの削除
+### 接続が切断されたプレイヤーの削除
 
 プレイヤーがStateから削除された場合（サーバーサイドで `onLeave()` が呼び出された場合）、その視覚的な表現も削除する必要があります。
 
@@ -301,9 +301,9 @@ this.room.state.players.onRemove((player, sessionId) => {
 // ...
 ```
 
-# プレイヤーの移動
+## プレイヤーの移動
 
-## 新しい位置をサーバーに送信する
+### 新しい位置をサーバーに送信する
 
 We are going to allow the "mouse down" event; use [ray cast](/user-manual/physics/ray-casting/) to determine the exact `Vec3` position the player should move towards, and then send it as a message to the server.
 
@@ -342,7 +342,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
 });
 ```
 
-## サーバーからのメッセージの受信
+### サーバーからのメッセージの受信
 
 サーバーから `"updatePosition"` メッセージを受信するたびに、メッセージを送信したプレイヤーをその`sessionId`を通じて変更します。
 
@@ -364,7 +364,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
 // ...
 ```
 
-## プレイヤーの視覚表現の更新
+### プレイヤーの視覚表現の更新
 
 サーバーでの変更を持っているため、クライアント側では、`player.onChange()`または`player.listen()`を介して変更を検出できます。
 
@@ -391,7 +391,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 
 > [スキーマコールバックについてもっと読む](https://docs.colyseus.io/colyseus/state/schema/#client-side)
 
-# 追加: ルームと接続のモニタリング
+## 追加: ルームと接続のモニタリング
 
 Colyseusには、ゲーム開発中に役立つオプションのモニタリングパネルが付属しています。
 
@@ -403,6 +403,6 @@ Colyseusには、ゲーム開発中に役立つオプションのモニタリン
 
 > [モニタリングパネルの詳細についてはこちらをご覧ください。](https://docs.colyseus.io/colyseus/tools/monitor/)
 
-# さらに詳しく
+## さらに詳しく
 
 このチュートリアルが役立ったことを願っています。Colyseusについてもっと学びたい場合は、[Colyseusドキュメント](https://docs.colyseus.io/)を参照して、[Colyseus Discordコミュニティ](https://discord.gg/RY8rRS7)に参加してください。

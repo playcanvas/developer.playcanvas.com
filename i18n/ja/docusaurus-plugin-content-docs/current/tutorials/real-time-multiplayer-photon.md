@@ -16,32 +16,32 @@ Photon(PUNとしても知られる)は多くのゲームで使用され、HTML5�
 
 最大20人のオンラインプレイヤー(CCU)を対象とするプロジェクトでは無料で使えます。
 
-### 学習内容
+## 学習内容
 
 - Photon SDKをPlayCanvasに追加する方法
 - Photonを用いたマルチプレイヤー実装
 
-# セットアップ
+## セットアップ
 
-## PlayCanvasプロジェクト
+### PlayCanvasプロジェクト
 
 [tutorial project here][2]をフォークして開始します。
 
 ![Empty Project][3]
 
-## Photonアカウント
+### Photonアカウント
 
 SDKの使用とドキュメンテーションの閲覧にはアカウントの登録が必要です。
 
 [こちら][4]からPhotonアカウントを作成してください。
 
-### 新しいアプリを作成
+#### 新しいアプリを作成
 
 ダッシュボードから**CREATE NEW APP**をクリックします。
 
 ![Create New Application][5]
 
-### Photonタイプとアプリケーション名を選択
+#### Photonタイプとアプリケーション名を選択
 
 以下を入力してください。
 
@@ -50,49 +50,49 @@ SDKの使用とドキュメンテーションの閲覧にはアカウントの�
 
 ![Create Real Time Project][6]
 
-### AppIDをコピー
+#### AppIDをコピー
 
 AppIDをメモしておいてください。後日必要になります。
 
 ![App Id][7]
 
-## SDKをダウンロード
+### SDKをダウンロード
 
 ダッシュボードからSDKをダウンロードします。
 
-### SDKをクリック
+#### SDKをクリック
 
 ![SDK][8]
 
-### RealTime JavaScriptを選択
+#### RealTime JavaScriptを選択
 
 ![JavaScript SDK][9]
 
-### SDKをダウンロードをクリック
+#### SDKをダウンロードをクリック
 
 ![Download SDK][10]
 
-### SDKを解凍
+#### SDKを解凍
 
 ![Unzip SDK][11]
 
 SDKはZIP形式でダウンロードされます。解凍してください: `photon-javascript-sdk_vX-X-X-X` → `lib` → **`Photon-Javascript_SDK.min.js`**。
 
-## SDKのインポート
+### SDKのインポート
 
 ダウンロードしたSDKをPlayCanvasエディターにインポートします。
 
-### エディタにSDKをアップロード
+#### エディタにSDKをアップロード
 
 ![Upload SDK][12]
 
 SDKをエディタのアセットにドラッグ&ドロップしてください。
 
-### Loading Typeを「Asset」から「Before Engine」に変更
+#### Loading Typeを「Asset」から「Before Engine」に変更
 
 ![Change Loading Type][13]
 
-# マルチプレイヤー実装
+## マルチプレイヤー実装
 
 マルチプレイヤー実装では、以下の機能を実行します。
 
@@ -103,9 +103,9 @@ SDKをエディタのアセットにドラッグ&ドロップしてください�
 
 [APIリファレンス][14]と[用語集][15]は、Photonのサイトで利用可能です。
 
-## PlayCanvasでPhotonを使用
+### PlayCanvasでPhotonを使用
 
-### PlayCanvasからPhotonをインスタンス化するクラスを生成
+#### PlayCanvasからPhotonをインスタンス化するクラスを生成
 
 Photonを初期化するためのプロジェクトに**photon-loadbalancing-playcanvas.js**というスクリプトアセットを作成します。
 
@@ -150,13 +150,13 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 - **Photon.LoadBalancing.LoadBalancingClient**  このクラスには、リアルタイム通信のためのPhoton SDKの多くの機能が含まれています。
 
 
-### Root entityのスクリプトを設定する
+#### Root entityのスクリプトを設定する
 
 新しいスクリプトアセット**photon-loadbalancing-playcanvas.js**を作成し、エディタでRootエンティティに添付します。
 
 ![Root Entity - Inspector][16]
 
-### スクリプト属性にAppIdを貼り付ける
+#### スクリプト属性にAppIdを貼り付ける
 
 スクリプト属性にAppIdを入力してください。
 
@@ -170,9 +170,9 @@ this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.ws
 - **appId** アプリケーション識別子の値。
 - **appVersion** バージョニングに使用されます。異なるバージョンは互いに接続できません。
 
-## マスターサーバに接続する
+### マスターサーバに接続する
 
-### `connectToRegionMaster` を使用してマスターサーバに接続する
+#### `connectToRegionMaster` を使用してマスターサーバに接続する
 
 ```javascript
 PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
@@ -197,7 +197,7 @@ connectToRegionMaster を実行してロビーに接続できた場合はJoinedL
 
 ![Console Log][18]
 
-## ルームの作成または参加
+### ルームの作成または参加
 
 ロビーへの接続が行われた場合は、**onRoomList** 関数が呼び出されます。
 
@@ -235,7 +235,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onJoinRoom = function (createdByMe) {
 - **joinRandomOrCreateRoom(options, createRoomName, createOptions)** ランダムにルームに参加します。ルームが存在しない場合は新しいルームが作成されます。
 - **onJoinRoom** ルームに参加したときに呼び出されます。
 
-## 参加と退出
+### 参加と退出
 
 プレイヤーが部屋に参加すると、他のプレイヤーと同期されます。 **onActorJoin** と **onActorLeave** を使用します。
 
@@ -295,7 +295,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 成功した場合、プレイヤーが参加したときにエンティティが追加されます。
 ![Console log - Actors ][20]
 
-### プレイヤーの移動
+#### プレイヤーの移動
 
 キャラクターの移動には新しい **player.js** を作成します。
 
@@ -324,11 +324,11 @@ Player.prototype.update = function (dt) {
 
 - **this.app.keyboard.isPressed:** キーボードが押されているかどうかを確認します。
 
-## 他のプレイヤーを同期する
+### 他のプレイヤーを同期する
 
 他のプレーヤーの位置を同期するために、**raiseEvent** と **onEvent** を使用します。
 
-### **raiseEvent** を使用した位置の同期
+#### **raiseEvent** を使用した位置の同期
 
 ```javascript
 const PhotonLoadBalancingPlayCanvas = pc.createScript("PhotonLoadBalancingPlayCanvas");
@@ -445,7 +445,7 @@ PhotonLoadBalancingPlayCanvas.prototype.onEvent = function (code, content, actor
 - **raiseEvent(eventCode,data, options)**  `eventCode` と `data` を送信します。
 - **onEvent(code, content, actorNr)** データを受信します。`actorNr` と `eventCode` を含みます。
 
-### プレイヤーが移動した際にイベントを発火するよう変更
+#### プレイヤーが移動した際にイベントを発火するよう変更
 
 ```javascript
 const Player = pc.createScript("player");
