@@ -11,11 +11,11 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 
 ## 説明
 
-Permanently delete an asset from a branch of your project.
+プロジェクトのブランチからアセットを完全に削除します。
 
 :::warning
 
-Deleting an asset is permanent and unrecoverable unless you have taken a checkpoint of it.
+アセットを削除することは永続的で、取り消すことができるのはチェックポイントを取っている場合のみです。
 
 :::
 
