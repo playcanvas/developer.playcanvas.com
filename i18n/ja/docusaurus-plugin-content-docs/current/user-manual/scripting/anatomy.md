@@ -33,8 +33,6 @@ Rotate.prototype.swap = function(old) {
 
 スクリプトの各セクションを分解します。
 
-# スクリプトメソッド
-
 ## スクリプトタイプ (Script Type) の宣言
 
 ```javascript
@@ -53,7 +51,9 @@ Rotate.attributes.add('speed', { type: 'number', default: 10 });
 
 属性は、自動的にコードのホットスワップ中に、新しいスクリプトインスタンスに継承されています。
 
-## 初期化 (Initialize)
+## スクリプトメソッド
+
+### 初期化 (Initialize)
 
 ```javascript
 // initialize code called once per entity
@@ -69,7 +69,7 @@ Rotate.prototype.initialize = function() {
 
 Scriptコンポーネントに複数のスクリプトが添付されている場合、`initialize`はコンポーネント上のスクリプトの順序で呼び出されます。
 
-## 更新 (Update)
+### 更新 (Update)
 
 ```javascript
 // update code called every frame
@@ -86,7 +86,7 @@ Rotate.prototype.update = function(dt) {
 
 Scriptコンポーネントに複数のスクリプトが添付されている場合、`update`はコンポーネント上のスクリプトの順序で呼び出されます。
 
-## スワップ (Swap)
+### スワップ (Swap)
 
 ```javascript
 // swap method called for script hot-reloading
@@ -102,15 +102,15 @@ Rotate.prototype.swap = function(old) {
 
 コードのホットスワップをサポートしたくない場合は、スワップメソッドを削除すればエンジンはスクリプトを更新しません。
 
-## 他のメソッド： postInitialize と postUpdate
+### 他のメソッド： postInitialize と postUpdate
 
 存在する限り、スクリプトでエンジンによって呼び出される二つのメソッドがあります。`postInitialize`は、すべてのスクリプトが初期化された後、それを実装するすべてのスクリプトで呼び出されます。すべてのスクリプトが初期化されると仮定することができる機能を実行するために、このメソッドを使用します。`postUpdate`は、すべてのスクリプトが更新された後に呼び出されるupdateメソッドです。すべてのスクリプトが更新されていると仮定することができる機能を実行するために使用します。例えば、他のエンティティを追跡するカメラは、別のエンティティがフレームで動作を完了できるように、`postUpdate`でその位置を更新する必要があります。
 
-# イベント
+## イベント
 
 スクリプトのインスタンスは、特定の状況に対応するために使用することができるイベントを複数発動させます。
 
-## state（状態）、enable（有効化）、disable（無効化）
+### state（状態）、enable（有効化）、disable（無効化）
 
 スクリプトインスタンスが実行状態を有効から無効、またはその逆に切り替える際に`state`イベントが発生します。スクリプトインスタンスの状態は、スクリプト自体、スクリプトが所属するコンポーネント、Scriptコンポーネントが添付されているエンティティを有効／無効にすることで変更できます。`enable`イベントは、状態が無効から有効に変更された場合にのみ発生します。また、`disable`イベントは、、状態が有効から無効に変更された場合にのみ発生します。
 
@@ -141,7 +141,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## destroy
+### destroy
 
 スクリプトインスタンスが破棄されると`destroy`イベントが発生します。`destroy()`メソッドの呼び出しによりコンポーネントからスクリプトが削除されたことが原因の場合もありますし、エンティティからScriptコンポーネントが削除された場合や、添付されているエンティティが破壊された場合もあります。
 
@@ -154,7 +154,7 @@ Rotate.prototype.initialize = function () {
 };
 ```
 
-## attrとattr:[name]
+### attrとattr:[name]
 
 `attr`と`attr:[name]`イベントは宣言されたスクリプト属性値変更された時に発生します。これは、アプリケーションを実行する過程、あるいはエディタから値に変更が加えられたときに起きる可能性があります。`attr`は変更されたすべての属性に対して発生します。 `attr:[name]`は特定の属性に対してのみ発生します。例えば、「speed」という属性がある場合、速度が変更されたときに`attr:speed` イベントが発生します。
 
