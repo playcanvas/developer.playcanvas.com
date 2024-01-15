@@ -11,4 +11,4 @@ You can add primitive shapes like boxes, spheres and others by adding a **Render
 
 You can also right click on an Entity and select New Entity/Box to add a box (similarly for other shapes).
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/render/)
+[Learn more](https://developer.playcanvas.com/en/user-manual/scenes/components/render/)

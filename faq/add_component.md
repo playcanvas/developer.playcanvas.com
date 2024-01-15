@@ -7,4 +7,4 @@ keywords: entity, add, component, behavior
 
 To add a **component** to an Entity, select the Entity and then click **Add Component** in the **Inspector** or right click on the Entity and select a component from the Add Component context menu.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/)
+[Learn more](https://developer.playcanvas.com/en/user-manual/scenes/components/)

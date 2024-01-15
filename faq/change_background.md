@@ -9,4 +9,4 @@ To change the background color of your scene, you should update the Clear Color 
 
 You could also try and adding a [skybox](https://developer.playcanvas.com/en/user-manual/assets/cubemaps/) to your scene.
 
-[Learn more](https://developer.playcanvas.com/en/user-manual/packs/components/camera/)
+[Learn more](https://developer.playcanvas.com/en/user-manual/scenes/components/camera/)
