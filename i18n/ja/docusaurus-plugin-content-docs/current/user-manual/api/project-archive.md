@@ -23,10 +23,10 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 
 ## パラメーター
 
-<div class="params">
-<div class="parameter"><span class="param">projectId: number</span><p>The id of the project.</p></div>
-<div class="parameter"><span class="param">branch_id [optional]: string</span><p>The id of the branch. If no id is specified the main branch will be used.</p></div>
-</div>
+| 名前        | タイプ     | Required | 説明                                                                |
+| ----------- | -------- | :------: | -------------------------------------------------------------------------- |
+| `projectId` | `number` | ✔️      | The id of the project.                                                     |
+| `branch_id` | `string` |          | The id of the branch. If no id is specified, the main branch will be used. |
 
 ## レスポンススキーマ
 
@@ -52,13 +52,13 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 
 ## エラー
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project not found</p></div>
-<div class="parameter"><span class="param">404</span><p>Owner not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| コード | 説明       |
+| ---- | ----------------- |
+| 401  | Unauthorized      |
+| 403  | Forbidden         |
+| 404  | Project not found |
+| 404  | Owner not found   |
+| 429  | Too many requests |
 
 ## レート制限
 

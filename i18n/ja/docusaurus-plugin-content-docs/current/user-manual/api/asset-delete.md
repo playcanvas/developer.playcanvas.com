@@ -11,7 +11,13 @@ GET https://playcanvas.com/api/assets/:assetId?branchId=:branchId
 
 ## 説明
 
-プロジェクトのブランチからアセットを完全に削除します。**警告** アセットを削除することは永続的で、取り消すことができるのはチェックポイントを取っている場合のみです。
+プロジェクトのブランチからアセットを完全に削除します。
+
+:::warning
+
+アセットを削除することは永続的で、取り消すことができるのはチェックポイントを取っている場合のみです。
+
+:::
 
 ## 例
 
@@ -28,10 +34,10 @@ Authorization: Bearer {accessToken}
 
 ## パラメーター
 
-<div class="params">
-<div class="parameter"><span class="param">assetId:number</span><p>削除するアセットのID</p></div>
-<div class="parameter"><span class="param">branchId:string</span><p>アセットを削除するブランチのID</p></div>
-</div>
+| 名前       | タイプ     | Required | 説明                                    |
+| ---------- | -------- | :------: | ---------------------------------------------- |
+| `assetId`  | `number` | ✔️      | The id of the asset to delete.                 |
+| `branchId` | `string` | ✔️      | The id of the branch to delete the asset from. |
 
 ## レスポンススキーマ
 
@@ -41,12 +47,12 @@ Authorization: Bearer {accessToken}
 
 ## エラー
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| コード | 説明                |
+| ---- | -------------------------- |
+| 401  | Unauthorized               |
+| 403  | Forbidden                  |
+| 404  | Project or Asset not found |
+| 429  | Too many requests          |
 
 ## レート制限
 

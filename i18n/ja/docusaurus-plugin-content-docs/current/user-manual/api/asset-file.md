@@ -28,9 +28,11 @@ Authorization: Bearer {accessToken}
 
 ## パラメーター
 
-<div class="params">
-<div class="parameter"><span class="param">branchId:string</span><p>ブランチのID。</p></div>
-</div>
+| 名前       | タイプ     | Required | 説明                |
+| ---------- | -------- | :------: | -------------------------- |
+| `assetId`  | `number` | ✔️      | The id of the asset.       |
+| `branchId` | `string` | ✔️      | The id of the branch.      |
+| `filename` | `string` | ✔️      | The filename of the asset. |
 
 ## レスポンススキーマ
 
@@ -44,12 +46,12 @@ Authorization: Bearer {accessToken}
 
 ## エラー
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| コード | 説明                |
+| ---- | -------------------------- |
+| 401  | Unauthorized               |
+| 403  | Forbidden                  |
+| 404  | Project or Asset not found |
+| 429  | Too many requests          |
 
 ## レート制限
 

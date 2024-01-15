@@ -29,11 +29,11 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 
 ## パラメーター
 
-<div class="params">
-<div class="parameter"><span class="param">branchId: 文字列</span><p>ブランチのID</p></div> 
-  <div class="parameter"><span class="param">file: ファイル</span><p>アセットファイルを更新するデータ</p></div> 
-  <div class="parameter"><span class="param">pow2 [オプション]: 真偽値</span><p>テクスチャにのみ使用され、デフォルトは falseです。テクスチャを2の累乗のピクセルにリサイズします(true | false)</p></div> 
-</div>
+| 名前       | タイプ      | Required | 説明                                                                                                 |
+| ---------- | --------- | :------: | ----------------------------------------------------------------------------------------------------------- |
+| `assetId`  | `number`  | ✔️      | The id of the asset.                                                                                        |
+| `file`     | `file`    | ✔️      | Data to update asset file with.                                                                             |
+| `pow2`     | `boolean` |          | Only used for textures and defaults to false. Resize the texture to power of two dimensions (true | false). |
 
 ## レスポンススキーマ
 
@@ -72,12 +72,12 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 
 ## エラー
 
-<div class="params">
-<div class="parameter"><span class="param">401</span><p>Unauthorized</p></div>
-<div class="parameter"><span class="param">403</span><p>Forbidden</p></div>
-<div class="parameter"><span class="param">404</span><p>Project or Asset not found</p></div>
-<div class="parameter"><span class="param">429</span><p>Too many requests</p></div>
-</div>
+| コード | 説明                |
+| ---- | -------------------------- |
+| 401  | Unauthorized               |
+| 403  | Forbidden                  |
+| 404  | Project or Asset not found |
+| 429  | Too many requests          |
 
 ## レート制限
 
