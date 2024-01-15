@@ -4,11 +4,12 @@ sidebar_position: 3
 ---
 
 ![Star-Lord][1]
+
 *Star-Lord Model by [Joachim Coppens][2]*
 
 Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
 
-# Fundamental Principles
+## Fundamental Principles
 
 Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in PlayCanvas.
 

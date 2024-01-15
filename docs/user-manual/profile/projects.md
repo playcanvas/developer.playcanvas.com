@@ -39,23 +39,23 @@ The other user will need to accept your request to transfer the Project. The tra
 
 If the user accepts the request then the transfer will be completed and all team members apart from the new owner will be removed from the Project.
 
-# Backing Up and Restoring Projects
+## Backing Up and Restoring Projects
 
 We recommend that users create periodic backups of projects to protect against accidental deletion or malicious team members. There are several ways to do this listed below.
 
-## Forking a Project
+### Forking a Project
 
 The simplest way to create a backup of a project is to fork it. This creates a new project that is a copy of what is on the 'main' branch in the project. No version control history is preserved in the newly created fork.
 
 You can find this option on the [project dashboard][7].
 
-## Backing Up a Project to an Archive File
+### Backing Up a Project to an Archive File
 
 An archive file will contain all the data of the current project state in a branch. However, it does not contain any version control history.
 
 There are two methods to create an offline backup archive of a project:
 
-### From the Projects List
+#### From the Projects List
 
 ![export-archive][2]
 
@@ -63,7 +63,7 @@ You can export a .zip archive of your project to keep an offline backup. You can
 
 To export a project, click on the arrow next to a project and select 'Export Project'. This can only export the 'main' branch.
 
-### Using the REST API
+#### Using the REST API
 
 Exporting an archive file can also be done with the [REST API][8] and can be automated with continuous integration systems for automatic, periodic backups.
 
@@ -71,7 +71,7 @@ It also allows you to choose which branch to export via the parameters.
 
 We've written a [Node-based open source tool][9] to make this process easier for users.
 
-## Restoring a Project from an Archive File
+### Restoring a Project from an Archive File
 
 ![import-archive][3]
 

@@ -3,7 +3,7 @@ title: Using Texture Packers
 sidebar_position: 3
 ---
 
-# What is texture packing?
+## What is texture packing?
 
 It's common to find sprites or UI images bundled as separate images. Texture packing is combining those separate images into a single [texture atlas][texture-atlas].
 
@@ -12,11 +12,11 @@ This has several advantages including:
 - Faster loading times as it's a single network request instead of many.
 - As it's a single texture, the sprites can be batched into a single draw call.
 
-# Tools
+## Tools
 
 Here are some texture packing tools that are compatible with PlayCanvas.
 
-## TexturePacker Online (free)
+### TexturePacker Online (free)
 
 ([Website][texture-packer-online])
 
@@ -30,7 +30,7 @@ A free browser tool that is able to do the basics of texture packing.
 4. Download .png for the texture atlas.
 5. Download .json for the frame data.
 
-## Texture Packer tool
+### Texture Packer tool
 
 ([Website][texture-packer-tool])
 
@@ -44,7 +44,7 @@ Basic steps:
 2. Set Output files -> Framework as PlayCanvas.
 3. Click on Publish sprite sheet to create the texture atlas and JSON frame data.
 
-# Creating frames in Sprite Editor
+## Creating frames in Sprite Editor
 
 Once you have uploaded the texture atlas file into the Editor and created a [texture atlas asset][texture-atlas], open the Sprite Editor.
 

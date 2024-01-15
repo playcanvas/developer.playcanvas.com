@@ -27,9 +27,9 @@ There is a good explanation of the differences on the [Marmoset Toolbag blog][5]
 
 On to materials...
 
-# Material Properties and Maps
+## Material Properties and Maps
 
-## Diffuse
+### Diffuse
 
 The Diffuse Color is the base color of the material. This is an RGB color value. For clean pure (metal, plastic) substances this can be a constant value but it can also be supplied as a diffuse map texture. Note, you should usually avoid including lighting detail (shadows or highlights) in your diffuse map as this can be applied in other maps.
 
@@ -49,7 +49,7 @@ You can often find the charts of recorded values for diffuse/albedo values on th
 | Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
 | Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
 
-## Metalness
+### Metalness
 
 The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
 
@@ -65,7 +65,7 @@ You can also supply a metalness map which lets you define specific areas of your
     <iframe loading="lazy" src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness"></iframe>
 </div>
 
-## Glossiness
+### Glossiness
 
 Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
 
@@ -77,7 +77,7 @@ Some PBR systems use **Roughness** instead of Glossiness. The roughness is the i
 
 Sometimes glossiness and roughness are referred to as the **microsurface** value.
 
-## All together
+### All together
 
 These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
 
