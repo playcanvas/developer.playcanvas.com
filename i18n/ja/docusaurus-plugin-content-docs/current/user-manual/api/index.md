@@ -99,10 +99,10 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 
 | Name    | 説明                                                                                                                      |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `limit` | The maximum number of items to include in the response.                                                                          |
-| `skip`  | The number of items to skip from the original result set.                                                                        |
-| `sort`  | The name of the field to use to sort the result set. See the documentation of each request to see which values are allowed here. |
-| `order` | If you want results in ascending order pass 1 otherwise pass -1 for descending order.                                            |
+| `limit` | 応答に含めるアイテムの最大数。                                                                          |
+| `skip`  | 元の結果セットからスキップする項目の数。                                                                        |
+| `sort`  | 結果セットをソートするために使用するフィールドの名前。 |
+| `order` | 昇順で結果を取得したい場合は1を渡し、降順にするには-1を渡します。                                            |
 
 たとえば、最初の16件のアイテムをスキップして、32件のアイテムを取得するには、次のリクエストを送信します。
 
