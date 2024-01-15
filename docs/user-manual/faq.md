@@ -85,7 +85,7 @@ To create a material click on the **<span class="pc-icon">&#57632;</span> Add** 
 
 You can create a new shader asset from the asset panel. Click **Add Asset -> Shader**.
 
-[View tutorial](http://developer.playcanvas.com/en/tutorials/custom-shaders/)
+[View tutorial](http://developer.playcanvas.com/tutorials/custom-shaders/)
 
 
 
