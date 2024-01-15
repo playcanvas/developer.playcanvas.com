@@ -97,7 +97,7 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 
 レスポンスにはページネーションデータも含まれています。レスポンスのページネーションを制御するには、次のURLパラメータを渡すことができます。
 
-| Name    | 説明                                                                                                                      |
+| 名前    | 説明                                                                                                                      |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `limit` | 応答に含めるアイテムの最大数。                                                                          |
 | `skip`  | 元の結果セットからスキップする項目の数。                                                                        |
@@ -135,7 +135,7 @@ Calls to the REST API have a rate limit. Check your actual limits by querying [t
 
 APIの呼び出し回数を調整するために、次のヘッダがレスポンスに含まれます。
 
-| Name                    | 説明                                                                                                             |
+| 名前                    | 説明                                                                                                             |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `X-RateLimit-Limit`     | The number of requests allowed in a minute.                                                                             |
 | `X-RateLimit-Remaining` | The remaining number of requests that you are allowed to make this minute.                                              |

@@ -59,7 +59,7 @@ Content-Type: application/javascript
 ```
 ## パラメーター
 
-| Name        | タイプ      | Required | 説明                                                                                                 |
+| 名前        | タイプ      | Required | 説明                                                                                                 |
 | ----------- | --------- | :------: | ----------------------------------------------------------------------------------------------------------- |
 | `name`      | `string`  | ✔️      | The name of the asset.                                                                                      |
 | `projectId` | `number`  | ✔️      | The id of the project.                                                                                      |

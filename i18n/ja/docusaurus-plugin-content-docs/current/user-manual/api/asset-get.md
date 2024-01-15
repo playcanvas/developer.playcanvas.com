@@ -28,7 +28,7 @@ Authorization: Bearer {accessToken}
 
 ## パラメーター
 
-| Name       | タイプ     | Required | 説明           |
+| 名前       | タイプ     | Required | 説明           |
 | ---------- | -------- | :------: | --------------------- |
 | `assetId`  | `number` | ✔️      | The id of the asset.  |
 | `branchId` | `string` | ✔️      | The id of the branch. |

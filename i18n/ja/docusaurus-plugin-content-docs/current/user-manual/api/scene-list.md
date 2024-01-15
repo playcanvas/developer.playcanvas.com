@@ -28,7 +28,7 @@ Authorization: Bearer {accessToken}
 
 ## パラメーター
 
-| Name        | タイプ     | Required | 説明                                                                |
+| 名前        | タイプ     | Required | 説明                                                                |
 | ----------- | -------- | :------: | -------------------------------------------------------------------------- |
 | `projectId` | `number` | ✔️      | The id of the project.                                                     |
 | `branchId`  | `string` |          | The id of the branch. If no id is specified, the main branch will be used. |

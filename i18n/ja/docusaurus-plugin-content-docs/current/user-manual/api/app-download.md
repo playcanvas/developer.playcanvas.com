@@ -21,7 +21,7 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 
 ## パラメーター
 
-| Name                    | タイプ       | Required | 説明                                                                                                                                                           |
+| 名前                    | タイプ       | Required | 説明                                                                                                                                                           |
 | ----------------------- | ---------- | :------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `project_id`            | `number`   | ✔️      | The id of the project.                                                                                                                                                |
 | `name`                  | `string`   | ✔️      | The name of the app. Must be less than 1000 characters.                                                                                                               |

@@ -29,7 +29,7 @@ curl -H "Authorization: Bearer {accessToken}" -X PUT -F 'pow2={pow2}' -F 'file=@
 
 ## パラメーター
 
-| Name       | タイプ      | Required | 説明                                                                                                 |
+| 名前       | タイプ      | Required | 説明                                                                                                 |
 | ---------- | --------- | :------: | ----------------------------------------------------------------------------------------------------------- |
 | `assetId`  | `number`  | ✔️      | The id of the asset.                                                                                        |
 | `file`     | `file`    | ✔️      | Data to update asset file with.                                                                             |
