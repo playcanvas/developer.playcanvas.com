@@ -9,7 +9,37 @@ The Text Element is used to display a string of text using a [font asset][1].
 
 The Text Element contains a string field to enter the text that will be displayed. Use `Shift+Enter` to enter a new line character in the string field.
 
-*Note about performance:* Text elements are rendered to the screen using a single quad for each character in the string. When you change the text property, we re-generate the mesh for the element. There is a performance implication for this, though there should be no problems changing text content for a reasonable number of Elements every frame.
+:::tip
+
+Text elements are rendered to the screen using a single quad for each character in the string. When you change the text property, we re-generate the mesh for the element. There is a performance implication for this, though there should be no problems changing text content for a reasonable number of Elements every frame.
+
+:::
+
+### Text Markup
+
+Text elements support a simple markup syntax that allows you to apply different colors to specific parts of the text. Consider this example:
+
+```
+[color="#ff0000"]Red[/color], [color="#00ff00"]green[/color] and [color="#0000ff"]blue[/color].
+```
+
+Assuming the base color of the text element is white, this will render as follows:
+
+![Text Markup][12]
+
+:::tip
+
+You must proactively enable support for the markup syntax on a text element. You can do this via the API:
+
+```javascript
+    entity.element.enableMarkup = true;
+```
+
+Or by enabling it in the Editor:
+
+![Enable Markup][13]
+
+:::
 
 ## Localization
 
@@ -39,11 +69,13 @@ Text Elements have an additional tool to help with positioning which is the alig
 
 The font size property sets the rendered size of the font in Screen Component pixels. The line height sets the distance in Screen Component pixels to move down when the text contains a new line character.
 
+Equal Font Size and Line Height is the default:
+
 ![Font Size Line Equal][6]
-**Equal Font Size and Line Height is the default**
+
+Increase Line Height to increase line spacing:
 
 ![Font Size Line Spaced][7]
-**Increase Line Height to increase line spacing**
 
 ## Spacing
 
@@ -74,3 +106,5 @@ The Opacity property allows you to set the transparency of the string
 [9]: /images/user-manual/user-interface/text-element/tinted.png
 [10]: /images/user-manual/user-interface/text-element/transparent.png
 [11]: /user-manual/user-interface/localization
+[12]: /images/user-manual/user-interface/text-element/text-markup.png
+[13]: /images/user-manual/user-interface/text-element/enable-markup.png
