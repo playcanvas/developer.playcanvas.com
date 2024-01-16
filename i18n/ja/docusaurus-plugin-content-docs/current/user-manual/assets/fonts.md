@@ -35,5 +35,5 @@ Fontアセットに含める必要がある文字。例えば数字だけが必�
 
 Fontアセットを変更した後、Fontアセットを再生成するためにProcess Fontボタンをクリックします。
 
-[1]: /user-manual/packs/components/element/
+[1]: /user-manual/scenes/components/element/
 [2]: /images/user-manual/assets/fonts/font.png

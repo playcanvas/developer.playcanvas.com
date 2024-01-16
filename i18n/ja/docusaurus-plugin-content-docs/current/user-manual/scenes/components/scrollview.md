@@ -27,6 +27,6 @@ Scrollviewコンポーネントは、ユーザーインターフェース内の�
 | Scrollbar (vertical)    | 垂直スクロールバーとして使用するエンティティ。 このエンティティにはScrollbarコンポーネントが必要です。 |
 | Visibility (vertical)   | 垂直スクロールバーを常に表示するか、コンテンツが表示エリアのサイズを超えた時にのみ表示するかを制御します。 |
 
-[1]: /user-manual/packs/components/scrollbar
+[1]: /user-manual/scenes/components/scrollbar
 [2]: /user-manual/user-interface
 [3]: /images/user-manual/scenes/components/component-scrollview.png

@@ -134,5 +134,5 @@ TouchFix.prototype.initialize = function() {
 };
 ```
 
-[1]: /user-manual/packs/components/element/
+[1]: /user-manual/scenes/components/element/
 [2]: /images/user-manual/assets/fonts/use-input.png

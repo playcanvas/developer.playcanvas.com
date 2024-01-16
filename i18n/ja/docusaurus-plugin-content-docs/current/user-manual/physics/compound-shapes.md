@@ -32,4 +32,4 @@ Collisionコンポーネントが子エンティティで、プリミティブ�
 [compound-shapes-project]: https://playcanvas.com/project/688146/overview/compound-physics-shapes
 [compound-shapes-chair-gif]: /images/user-manual/physics/compound-shape-chair.gif
 [compound-shapes-chair-setup-png]: /images/user-manual/physics/compound-shape-chair-setup.png
-[collision-component]: /user-manual/packs/components/collision/
+[collision-component]: /user-manual/scenes/components/collision/

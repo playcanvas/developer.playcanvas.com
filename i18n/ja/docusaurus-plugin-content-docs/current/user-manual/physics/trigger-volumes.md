@@ -25,5 +25,5 @@ TriggerVolume.prototype.initialize = function() {
 };
 ```
 
-[1]: /user-manual/packs/components/collision
+[1]: /user-manual/scenes/components/collision
 [2]: /images/user-manual/physics/trigger-volume.png

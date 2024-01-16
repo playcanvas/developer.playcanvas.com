@@ -163,5 +163,5 @@ EntityCreator.prototype.spawnCube = function () {
 
 [ここをクリックして完全なシーンを表示][2]してください。
 
-[1]: /user-manual/packs/components/
+[1]: /user-manual/scenes/components/
 [2]: https://playcanvas.com/editor/scene/440341

@@ -41,6 +41,6 @@ RigidBodyは、コンポーネントパネル右上のトグルを使用して�
 [1]: /images/user-manual/scenes/components/component-rigid-body-static.png
 [2]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
-[4]: /user-manual/packs/components/collision/
-[5]: /user-manual/packs/components/script
+[4]: /user-manual/scenes/components/collision/
+[5]: /user-manual/scenes/components/script
 [6]: /api/pc.RigidBodyComponent.html

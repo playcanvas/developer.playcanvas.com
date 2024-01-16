@@ -35,16 +35,16 @@ sidebar_position: 9
 
 <img loading="lazy" src="/images/user-manual/scenes/scene-settings.png" width="500" />
 
-[components]: /user-manual/packs/entities/
-[scripts]: /user-manual/packs/components/
+[components]: /user-manual/scenes/entities/
+[scripts]: /user-manual/scenes/components/
 [entities]: /user-manual/scripting/
 [scene-list-png]: /images/user-manual/scenes/scene-list.png
-[project-settings]: /user-manual/designer/settings/
-[settings-gravity]: /user-manual/designer/settings/#gravity
-[settings-ambient]: /user-manual/designer/settings/#ambient-color
-[settings-skybox]: /user-manual/designer/settings/#skybox
-[settings-tonemapping]: /user-manual/designer/settings/#tonemapping
-[settings-exposure]: /user-manual/designer/settings/#exposure
-[settings-gamma]: /user-manual/designer/settings/#gamma-correction
-[settings-fog]: /user-manual/designer/settings/#fog
-[settings-lightmap]: /user-manual/designer/settings/#lightmapping
+[project-settings]: /user-manual/editor/settings/
+[settings-gravity]: /user-manual/editor/settings/#gravity
+[settings-ambient]: /user-manual/editor/settings/#ambient-color
+[settings-skybox]: /user-manual/editor/settings/#skybox
+[settings-tonemapping]: /user-manual/editor/settings/#tonemapping
+[settings-exposure]: /user-manual/editor/settings/#exposure
+[settings-gamma]: /user-manual/editor/settings/#gamma-correction
+[settings-fog]: /user-manual/editor/settings/#fog
+[settings-lightmap]: /user-manual/editor/settings/#lightmapping

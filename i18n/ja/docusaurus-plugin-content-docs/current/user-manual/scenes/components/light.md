@@ -48,5 +48,5 @@ Lightコンポーネントのプロパティを[Scriptコンポーネント][4]�
 [1]: /images/user-manual/scenes/components/component-light-directional.png
 [2]: /images/user-manual/scenes/components/component-light-point.png
 [3]: /images/user-manual/scenes/components/component-light-spot.png
-[4]: /user-manual/packs/components/script
+[4]: /user-manual/scenes/components/script
 [5]: /api/pc.LightComponent.html

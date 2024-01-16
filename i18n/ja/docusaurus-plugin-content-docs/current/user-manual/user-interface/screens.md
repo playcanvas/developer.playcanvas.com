@@ -56,7 +56,7 @@ Screenコンポーネントの* Reference Resolution *プロパティを「理�
 ![Scale Blend 0.5][9]
 値が0.5の場合、2つの変更が均衡し、ボタンは同じサイズのままになります
 
-[1]: /user-manual/packs/components/screen
+[1]: /user-manual/scenes/components/screen
 [2]: /images/user-manual/user-interface/screens/screen-space-viewport.png
 [3]: /images/user-manual/user-interface/screens/world-space-viewport.png
 [4]: /images/user-manual/user-interface/screens/ipad-no-scaling.png

@@ -29,5 +29,5 @@ Renderコンポーネントは、コンポーネントパネルの右上にあ�
 [Scriptコンポーネント][2]を使用して、Renderコンポーネントのプロパティを制御できます。Renderコンポーネントのスクリプトインタフェースは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-render.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.RenderComponent.html

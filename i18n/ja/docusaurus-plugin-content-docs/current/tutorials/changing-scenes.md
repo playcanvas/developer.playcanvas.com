@@ -10,4 +10,4 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/437
     <iframe loading="lazy" src="https://playcanv.as/e/p/IP7FtbDj/" title="Changing Scenes"></iframe>
 </div>
 
-[documentation-page]: /user-manual/packs/loading-scenes/
+[documentation-page]: /user-manual/scenes/loading-scenes/

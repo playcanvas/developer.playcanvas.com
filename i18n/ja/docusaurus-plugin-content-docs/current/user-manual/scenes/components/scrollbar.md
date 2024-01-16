@@ -18,6 +18,6 @@ Scrollbarコンポーネントは、[Scrollview][1]コンポーネント用の�
 | Handle      | スクロールバーのハンドルとして使用されるエンティティ。このエンティティにはScrollbarコンポーネントが必要です。 |
 | Handle Size | ハンドルのサイズ。トラックのサイズに対する相対的なサイズ。値の範囲は0から1です。垂直スクロールバーの場合、値が1の場合、ハンドルはトラックの全高を占めます。 |
 
-[1]: /user-manual/packs/components/scrollview
+[1]: /user-manual/scenes/components/scrollview
 [2]: /user-manual/user-interface
 [3]: /images/user-manual/scenes/components/component-scrollbar.png

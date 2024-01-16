@@ -10,4 +10,4 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/691
     <iframe loading="lazy" src="https://playcanv.as/e/p/zsQcbehI/" title="Switch Full Scene"></iframe>
 </div>
 
-[documentation-page]: /user-manual/packs/loading-scenes/
+[documentation-page]: /user-manual/scenes/loading-scenes/

@@ -10,4 +10,4 @@ Webブラウザでサポートされているすべてのオーディオ形式�
 ただし、すべての形式がすべてのブラウザでサポートされているわけではありません。現在、最も広くサポートされている形式は[MP3][mp3]です。
 
 [mp3]: https://caniuse.com/mp3
-[sound-component]: /user-manual/packs/components/sound/
+[sound-component]: /user-manual/scenes/components/sound/

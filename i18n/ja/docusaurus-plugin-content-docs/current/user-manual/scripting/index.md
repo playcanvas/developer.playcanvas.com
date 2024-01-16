@@ -30,4 +30,4 @@ Rotate.prototype.update = function (dt) {
 * ***ScriptType*** スクリプトタイプとは`pc.create Script`関数を使用して作成されるJavaScriptオブジェクトです。これは、エンティティに追加されたときにインスタンス化される新しいクラスです。
 * ***Script Instance*** スクリプトインスタンスは、ScriptTypeのインスタンスです。スクリプトコンポーネントにScriptTypeが添付されている各エンティティに対して一つのスクリプトインスタンスが作成されます。
 
-[1]: /user-manual/packs/components/script/
+[1]: /user-manual/scenes/components/script/

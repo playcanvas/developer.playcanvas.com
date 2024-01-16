@@ -272,14 +272,14 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 シーン(例:FBX)をインポートすると、この設定によってテクスチャファイルがシーンからインポートされた新しいバージョンで上書きされるかどうかが決まります。
 
-[1]: /user-manual/designer/menus-and-toolbar
+[1]: /user-manual/editor/menus-and-toolbar
 [2]: /images/user-manual/editor/settings/cog.jpg
 [3]: /user-manual/assets/cubemaps
 [4]: /images/user-manual/editor/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
-[6]: /user-manual/designer/loading-screen
-[7]: /user-manual/packs/components/model
-[8]: /user-manual/packs/components/element
+[6]: /user-manual/editor/loading-screen
+[7]: /user-manual/scenes/components/model
+[8]: /user-manual/scenes/components/element
 [9]: /user-manual/graphics/advanced-rendering/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization

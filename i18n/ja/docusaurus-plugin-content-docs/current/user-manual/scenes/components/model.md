@@ -31,7 +31,7 @@ Modelコンポーネントは、コンポーネントパネルの右上にある
 モデルのマテリアルをカスタマイズする方法については、[こちら][4]を参照してください。
 
 [1]: /images/user-manual/scenes/components/component-model.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.ModelComponent.html
 [4]: /user-manual/assets/materials/#assigning-materials
 [5]: /user-manual/graphics/advanced-rendering/batching

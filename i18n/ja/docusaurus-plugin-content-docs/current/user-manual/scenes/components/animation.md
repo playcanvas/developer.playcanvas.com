@@ -23,5 +23,5 @@ Animationコンポーネントは、コンポーネントパネルの右上に�
 [Scriptコンポーネント][2]を使用してAnimationコンポーネントのプロパティを制御することができます。Animationコンポーネントのスクリプトインターフェースは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-animation.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.AnimationComponent.html

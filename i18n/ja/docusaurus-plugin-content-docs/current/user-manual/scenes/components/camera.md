@@ -29,5 +29,5 @@ Cameraコンポーネントは、コンポーネントパネルの右上にあ�
 [Scriptコンポーネント][2]を使用して、Cameraコンポーネントのプロパティを制御できます。Cameraコンポーネントのスクリプトインターフェースは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-camera.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.CameraComponent.html

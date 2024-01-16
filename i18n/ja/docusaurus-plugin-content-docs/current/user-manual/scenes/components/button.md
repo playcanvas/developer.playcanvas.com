@@ -45,9 +45,9 @@ Buttonコンポーネントは、2つのトランジションモードで使用�
 
 Buttonコンポーネントのプロパティは、[Scriptコンポーネント][5]を使用して制御できます。 Buttonコンポーネントのスクリプティングインターフェースは[こちら][6]です。
 
-[1]: /user-manual/packs/components/screen
-[2]: /user-manual/packs/components/element
+[1]: /user-manual/scenes/components/screen
+[2]: /user-manual/scenes/components/element
 [3]: /images/user-manual/scenes/components/component-button-sprite-change.png
 [4]: /images/user-manual/scenes/components/component-button-tint.png
-[5]: /user-manual/packs/components/script
+[5]: /user-manual/scenes/components/script
 [6]: /api/pc.ButtonComponent.html

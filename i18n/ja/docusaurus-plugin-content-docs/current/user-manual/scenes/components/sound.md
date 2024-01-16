@@ -45,5 +45,5 @@ Soundコンポーネントは、コンポーネントパネルの右上にある
 [Scriptコンポーネント][2]を使用して、Soundコンポーネントのプロパティを制御することができます。Soundコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 
 [1]: /images/user-manual/scenes/components/component-sound.png
-[2]: /user-manual/packs/components/script
+[2]: /user-manual/scenes/components/script
 [3]: /api/pc.SoundComponent.html
