@@ -85,7 +85,7 @@ PlayCanvasは常にプラグインが不要で、ブラウザ上でネイティ�
 [2]: /images/user-manual/introduction/workflow-create-scene.jpg
 [3]: /images/user-manual/introduction/workflow-script.jpg
 [4]: /images/user-manual/introduction/workflow-publish.jpg
-[5]: /user-manual/designer
+[5]: /user-manual/editor
 [6]: /user-manual/assets
 [7]: /user-manual/publishing
 [8]: /user-manual/glossary/#dom

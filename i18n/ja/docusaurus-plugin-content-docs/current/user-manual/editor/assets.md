@@ -120,9 +120,9 @@ Editorはコードで作成されたアセットの参照を検出できませ�
 参照を選択するとインスペクターパネルに読み込まれます。
 
 [1]: /images/user-manual/editor/assets-panel.png
-[2]: /user-manual/designer/inspector
-[3]: /user-manual/designer/viewport
-[4]: /user-manual/designer/settings
+[2]: /user-manual/editor/inspector
+[3]: /user-manual/editor/viewport
+[4]: /user-manual/editor/settings
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
 [7]: /api/pc.AssetRegistry.html#findByTag

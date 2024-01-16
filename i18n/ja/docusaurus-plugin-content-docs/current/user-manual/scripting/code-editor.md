@@ -136,7 +136,7 @@ Alt + Shiftキーを押しながら左マウスボタンをドラッグすると
 ![Rectangular Selection][9]
 
 [1]: /images/user-manual/scripting/code-editor-toolbar.png
-[2]: /user-manual/designer/
+[2]: /user-manual/editor/
 [3]: /images/user-manual/scripting/code-editor.png
 [4]: https://github.com/Microsoft/monaco-editor
 [6]: /images/user-manual/scripting/find-in-files-results.png
