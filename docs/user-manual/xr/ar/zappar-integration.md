@@ -3,13 +3,11 @@ title: Zappar Integration
 sidebar_position: 2
 ---
 
-## Zappar Integration
-
 Zappar offers an [Universal AR SDK with PlayCanvas integration][1], including image, face and instant world tracking features. Their SDK supports Chrome for Android and Safari 11.3+ for iOS, reaching billions of users worldwide.
 
-Zappar provides a [Getting Started with PlayCanvas][2] page, and they also provide a number of [Starter Projects][3] to help new users get started, as well as template projects to get users up and running faster.
-
 ## Getting started with Zappar
+
+Zappar provides a [Getting Started with PlayCanvas][2] page, and they also provide a number of [Starter Projects][3] to help new users get started, as well as template projects to get users up and running faster.
 
 To get started with Zappar’s Universal AR SDK, first head to their [Zappar Universal AR Project][4] and fork it.
 
