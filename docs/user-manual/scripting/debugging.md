@@ -38,10 +38,10 @@ In the situation where either it's not possible to connect to the web view direc
 * [RemoteJS][9] - Allows developers to view the console output remotely in a desktop browser and also execute JS in the console which makes it very powerful. The console output can be delayed or slow though.
 * [vConsole][10] or [Eruda][11] - Adds a widget DOM object to the page that can be expanded to show console output, network requests, the page elements and more.
 
-[1]: /images/user-manual/scripting/debugging/chrome-debugger.jpg
-[2]: /images/user-manual/scripting/debugging/firefox-debugger.jpg
+[1]: /images/user-manual/scripting/debugging/chrome-debugger.png
+[2]: /images/user-manual/scripting/debugging/firefox-debugger.png
 [3]: https://developer.chrome.com/docs/devtools/javascript/
-[4]: https://developer.mozilla.org/en-US/docs/Tools/Debugger
+[4]: https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html
 [5]: https://developer.apple.com/safari/tools/
 [6]: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/javascript/reference
 [7]: https://developer.chrome.com/docs/devtools/remote-debugging/
