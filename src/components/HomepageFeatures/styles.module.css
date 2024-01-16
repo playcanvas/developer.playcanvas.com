@@ -5,7 +5,17 @@
   width: 100%;
 }
 
+.features a {
+  color: var(--ifm-navbar-link-color);
+}
+
+.features a:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+
 .featureImg {
   height: 200px;
   width: 200px;
+  border-radius: .5rem;
 }
