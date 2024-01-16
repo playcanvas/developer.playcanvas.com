@@ -5,16 +5,13 @@ sidebar_position: 6
 
 イベントは、毎フレームチェックすることなく発生したことに応答するためにスクリプト間で通信する便利な方法です。
 
-PlayCanvas Engine には、オブジェクトにイベント処理を追加するための簡単な方法があります。
+Many PlayCanvas object types (such as script instances) have event handling support built-in, inherited from the Engine's [`EventHandler`][1] class. Event handling objects have the following methods:
 
-
-```javascript
-pc.events.attach(object);
-```
-
-オブジェクトに`on()`, `off()`, `fire()` , `hasEvent()` メソッドが追加されます。つまり、そのオブジェクトから始動されるイベントに対してリッスンすることができます。
-
-デフォルトで、全てのスクリプトインスタンスはイベントを始動できます。手動で呼ぶ必要はありません。
+* `on()` - registers an event listener.
+* `once()` - registers an event listener that unregisters itself after the first time it is called.
+* `off()` - unregisters an event listener.
+* `fire()` - sends an event.
+* `hasEvent()` - queries whether an object is listening on a particular event.
 
 ## イベントの使用
 
@@ -96,7 +93,5 @@ Display.prototype.initialize = function () {
 ```
 
 ご覧の通り、これにより設定コードを減らし、よりクリーンなコードになります。
-
-イベントの詳細は [API Reference][1]をご確認ください
 
 [1]: /api/pc.EventHandler.html

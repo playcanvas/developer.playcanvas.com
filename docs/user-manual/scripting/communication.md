@@ -5,15 +5,13 @@ sidebar_position: 6
 
 Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.
 
-The PlayCanvas Engine contains a simple way to add event handling to any object:
+Many PlayCanvas object types (such as script instances) have event handling support built-in, inherited from the Engine's [`EventHandler`][1] class. Event handling objects have the following methods:
 
-```javascript
-pc.events.attach(object);
-```
-
-This will add the methods: `on()`, `off()`, `fire()` and `hasEvent()` to the object. Which means that you can listen for events fired by that object.
-
-By default all script instances can fire events you don't need to call this manually.
+* `on()` - registers an event listener.
+* `once()` - registers an event listener that unregisters itself after the first time it is called.
+* `off()` - unregisters an event listener.
+* `fire()` - sends an event.
+* `hasEvent()` - queries whether an object is listening on a particular event.
 
 ## Using events
 
@@ -55,13 +53,13 @@ Display.prototype.initialize = function () {
 
 ## Application Events
 
-There is a very convenient and powerful method of using events to communicate between entities that we call "Application Events". As you can see in the example above listening for events on specific entities incurs some set up cost. For instance, the listener must have a reference to the specific entity that is firing the event. This works with some cases, but for a more general case we find that it is more appropriate to use the main application (`this.app`) as a central hub for firing events. This means you don't have to keep references of entities around in order to use the events.
+There is a very convenient and powerful method of using events to communicate between entities that we call "Application Events". As you can see in the example above, listening for events on specific entities incurs some set up cost. For instance, the listener must have a reference to the specific entity that is firing the event. This works with some cases, but for a more general case we find that it is more appropriate to use the main application (`this.app`) as a central hub for firing events. This means you don't have to keep references of entities around in order to use the events.
 
-This works by firing and listening to all events on `this.app`. By convention we use namespaces in event names in order to signal event scope and prevent clashes. For example, the `player:move` event is fired on the application instead of firing the `move` event on the player.
+This works by firing and listening to all events on `this.app`. By convention, we use namespaces in event names in order to signal event scope and prevent clashes. For example, the `player:move` event is fired on the application instead of firing the `move` event on the player.
 
 Let's try the same example using application events.
 
-Firing the `player:move` event.
+Firing the `player:move` event:
 
 ```javascript
 var Player = pc.createScript('player');
@@ -73,7 +71,7 @@ Player.prototype.update = function (dt) {
 };
 ```
 
-Listening for the `player:move` event.
+Listening for the `player:move` event:
 
 ```javascript
 var Display = pc.createScript('display');
@@ -94,8 +92,6 @@ Display.prototype.initialize = function () {
 };
 ```
 
-As you can see this reduces set up code and makes for cleaner code.
-
-More details on events in the [API Reference][1]
+As you can see, this reduces the amount of set up and makes for cleaner code.
 
 [1]: /api/pc.EventHandler.html

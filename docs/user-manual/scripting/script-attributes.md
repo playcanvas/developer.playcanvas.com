@@ -173,8 +173,12 @@ MyScript.prototype.update = function (dt) {
 };
 ```
 
-*NOTE: We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.*
+:::note
 
-[1]: /images/user-manual/scripting/script-attributes.jpg
-[2]: /images/user-manual/scripting/parse-button.jpg
+We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.
+
+:::
+
+[1]: /images/user-manual/scripting/script-attributes.png
+[2]: /images/user-manual/scripting/script-parse-button.png
 [3]: /api/pc.ScriptAttributes.html

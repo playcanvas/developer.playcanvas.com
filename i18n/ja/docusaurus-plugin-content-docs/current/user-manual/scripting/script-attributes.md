@@ -173,8 +173,12 @@ MyScript.prototype.update = function (dt) {
 };
 ```
 
-*注意: 現在、JSON属性を他のJSON属性の子として定義することはサポートしていません。JSON属性を定義する際には1レベルの深さまでしか設定できません。*
+:::note
 
-[1]: /images/user-manual/scripting/script-attributes.jpg
-[2]: /images/user-manual/scripting/parse-button.jpg
+現在、JSON属性を他のJSON属性の子として定義することはサポートしていません。JSON属性を定義する際には1レベルの深さまでしか設定できません。
+
+:::
+
+[1]: /images/user-manual/scripting/script-attributes.png
+[2]: /images/user-manual/scripting/script-parse-button.png
 [3]: /api/pc.ScriptAttributes.html
