@@ -9,7 +9,7 @@ sidebar_position: 25
 
 エンティティに**コンポーネント**を追加するには、エンティティを選択して、**インスペクター**で **Add Component** をクリックするか、エンティティを右クリックし、Add Component コンテキストメニューからコンポーネントを選択してください。
 
-[Learn more](/user-manual/scenes/components/)
+[詳細を見る](/user-manual/scenes/components/)
 
 
 ## スクリプトを追加するには?
@@ -28,7 +28,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 または、シーンに[スカイボックス](/user-manual/assets/cubemaps/)を追加することもできます。
 
-[Learn more](/user-manual/scenes/components/camera/)
+[詳細を見る](/user-manual/scenes/components/camera/)
 
 
 
@@ -68,7 +68,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 エンティティに**Light**コンポーネントを追加することで、ライトを作成できます。また、エンティティを右クリックしてNew Entity / Directional Lightを選択して、新しい方向性ライトを作成することもできます。
 
-[Learn more](/user-manual/scenes/components/light/)
+[詳細を見る](/user-manual/scenes/components/light/)
 
 
 ## マテリアルを作成するには?
@@ -85,7 +85,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 アセットパネルから新しいシェーダアセットを作成できます。**Add Asset -> Shader**をクリックしてください。
 
-[チュートリアルを見る](http://developer.playcanvas.com/en/tutorials/custom-shaders/)
+[チュートリアルを見る](http://developer.playcanvas.com/tutorials/custom-shaders/)
 
 
 
@@ -105,7 +105,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 シーンにスカイボックスを作成するには、まず[Cubemapアセット](/user-manual/assets/cubemaps/)を作成する必要があります。その後、Cubemapを3Dビューポートにドラッグアンドドロップするか、Scene Settingsに移動してSkyboxフィールドにCubemapをドラッグします。
 
-[Learn more](/user-manual/editor/settings/#skybox)
+[詳細を見る](/user-manual/editor/settings/#skybox)
 
 
 
@@ -161,7 +161,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 3Dモデルをレンダリングするには、エンティティに**Modelコンポーネント**を追加し、アセットフィールドに**Modelアセット**をドラッグ＆ドロップする必要があります。または、アセットパネルからモデルアセットを3Dビューポートにドラッグ＆ドロップすることもできます。
 
-[Learn more](/user-manual/scenes/components/model/)
+[詳細を見る](/user-manual/scenes/components/model/)
 
 
 
