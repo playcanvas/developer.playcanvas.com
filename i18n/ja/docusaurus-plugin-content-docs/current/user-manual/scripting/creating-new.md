@@ -41,7 +41,7 @@ entity.script.create("rotate", {
 entity.script.destroy("rotate");
 ```
 
-[0]: /images/user-manual/scripting/new-script.jpg
-[1]: /images/user-manual/scripting/code-editor.jpg
-[2]: /images/user-manual/scripting/select-script.jpg
+[0]: /images/user-manual/scripting/new-script.png
+[1]: /images/user-manual/scripting/code-editor-new-script.png
+[2]: /images/user-manual/scripting/select-script.png
 [3]: /api/pc.AssetRegistry.html#load
