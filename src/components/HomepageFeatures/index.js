@@ -5,11 +5,13 @@ import styles from './styles.module.css';
 import UserManualImage from '@site/static/img/playcanvas-user-manual.png';
 import TutorialsImage from '@site/static/img/playcanvas-tutorials.png';
 import ApiReferenceImage from '@site/static/img/playcanvas-api-reference.png';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
     title: 'User Manual',
     Image: UserManualImage,
+    Url: './user-manual',
     description: (
       <>
         Learn about every aspect of PlayCanvas, from the basics to advanced.
@@ -19,6 +21,7 @@ const FeatureList = [
   {
     title: 'Tutorials',
     Image: TutorialsImage,
+    Url: './tutorials',
     description: (
       <>
         Real world applications of PlayCanvas that make learning both fun and
@@ -38,16 +41,18 @@ const FeatureList = [
   },
 ];
 
-function Feature({Image, title, description}) {
+function Feature({Image, title, description, Url}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <img src={Image} alt={title} className={styles.featureImg} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+      <Link to={Url}>
+        <div className="text--center">
+          <img src={Image} alt={title} className={styles.featureImg} />
+        </div>
+        <div className="text--center padding-horiz--md">
+          <Heading as="h3">{title}</Heading>
+          <p>{description}</p>
+        </div>
+      </Link>
     </div>
   );
 }
