@@ -1,6 +1,5 @@
 ---
 title: Button
-sidebar_position: 4
 ---
 
 Buttonコンポーネントは、[Screen][1]コンポーネントと[Element][2]コンポーネントで使用するユーザーインターフェイスボタンを作成するための便利なショートカットです。

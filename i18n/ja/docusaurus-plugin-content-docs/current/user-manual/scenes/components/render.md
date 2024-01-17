@@ -1,6 +1,5 @@
 ---
 title: Render
-sidebar_position: 13
 ---
 
 Renderコンポーネントは、エンティティがプリミティブ形状またはRenderアセットをレンダリングするのを可能にします。

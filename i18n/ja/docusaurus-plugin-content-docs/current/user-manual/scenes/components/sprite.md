@@ -1,6 +1,5 @@
 ---
 title: Sprite
-sidebar_position: 20
 ---
 
 Spriteコンポーネントは、[Spriteアセット][1]をシーンに表示させ、アニメーションさせるものです。

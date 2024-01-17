@@ -1,6 +1,5 @@
 ---
 title: Audio Listener
-sidebar_position: 3
 ---
 
 Audio Listenerコンポーネントは、リスナーの3D空間での位置を指定します。 すべての 3D 音声再生はこの位置を基準に相対的に再生されます。

@@ -1,6 +1,5 @@
 ---
 title: Scrollview
-sidebar_position: 18
 ---
 
 Scrollviewコンポーネントは、ユーザーインターフェース内のスクロール可能な領域を定義します。スクロールビューは、[Scrollbar][1]コンポーネントを介してスクロールすることができます。

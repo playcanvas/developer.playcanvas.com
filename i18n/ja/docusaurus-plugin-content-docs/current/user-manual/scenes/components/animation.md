@@ -1,6 +1,5 @@
 ---
 title: Animation
-sidebar_position: 2
 ---
 
 :::warning

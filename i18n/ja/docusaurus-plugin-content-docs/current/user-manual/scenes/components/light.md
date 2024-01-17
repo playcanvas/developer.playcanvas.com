@@ -1,6 +1,5 @@
 ---
 title: Light
-sidebar_position: 10
 ---
 
 Lightコンポーネントは、Entityに動的な光源をアタッチします。 'Type'プロパティは、アタッチされる光源の種類と利用可能な他のプロパティを決定します。
