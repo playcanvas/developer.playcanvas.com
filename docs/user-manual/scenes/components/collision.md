@@ -1,6 +1,5 @@
 ---
 title: Collision
-sidebar_position: 6
 ---
 
 The Collision component assigns a collision volume to the entity. The component interface dynamically displays different attributes based on the 'Type' attribute.

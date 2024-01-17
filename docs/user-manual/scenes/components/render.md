@@ -1,6 +1,5 @@
 ---
 title: Render
-sidebar_position: 13
 ---
 
 The render component enables an entity to render a primitive shape or a render asset.

@@ -1,6 +1,5 @@
 ---
 title: Scrollbar
-sidebar_position: 17
 ---
 
 The Scrollbar component defines a scrolling control for a [Scrollview][1] component.

@@ -1,6 +1,5 @@
 ---
 title: Sound
-sidebar_position: 19
 ---
 
 The Sound component controls playback of audio samples.

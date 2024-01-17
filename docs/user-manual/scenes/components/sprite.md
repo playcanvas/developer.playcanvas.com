@@ -1,6 +1,5 @@
 ---
 title: Sprite
-sidebar_position: 20
 ---
 
 The Sprite Component renders and animates [Sprite Assets][1] into the scene.

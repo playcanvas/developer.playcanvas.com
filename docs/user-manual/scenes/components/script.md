@@ -1,6 +1,5 @@
 ---
 title: Script
-sidebar_position: 16
 ---
 
 The Script component enables an entity to run user-supplied scripts. In this way, the user can write script (using the JavaScript language) that runs when the entity is instantiated and updated on a per-frame basis.

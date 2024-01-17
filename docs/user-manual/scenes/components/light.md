@@ -1,6 +1,5 @@
 ---
 title: Light
-sidebar_position: 10
 ---
 
 The Light component attaches a dynamic light source to the Entity. The 'Type' property determines what kind of light is attached and what other properties are available.
