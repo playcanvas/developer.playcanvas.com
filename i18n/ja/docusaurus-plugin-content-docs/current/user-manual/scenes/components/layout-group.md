@@ -1,6 +1,5 @@
 ---
 title: Layout Group
-sidebar_position: 9
 ---
 
 LayoutGroupコンポーネントは、エンティティが子ElementのElementコンポーネントのサイズと位置を指定できるようにします。

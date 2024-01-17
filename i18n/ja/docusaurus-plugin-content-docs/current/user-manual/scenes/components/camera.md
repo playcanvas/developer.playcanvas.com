@@ -1,6 +1,5 @@
 ---
 title: Camera
-sidebar_position: 5
 ---
 
 Cameraコンポーネントは、特定の視点からシーンをレンダリングするための機能を提供します。

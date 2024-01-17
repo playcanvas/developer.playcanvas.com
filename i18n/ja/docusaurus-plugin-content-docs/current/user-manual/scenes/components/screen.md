@@ -1,6 +1,5 @@
 ---
 title: Screen
-sidebar_position: 15
 ---
 
 Screenコンポーネントは、ユーザーインターフェースの領域とレンダリングを定義します。 Screenコンポーネントに追加された子要素はすべてElementコンポーネントを持つ必要があります。

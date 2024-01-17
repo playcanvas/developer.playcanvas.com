@@ -1,6 +1,5 @@
 ---
 title: Element
-sidebar_position: 7
 ---
 
 An Element component when in a hierarchy with a Screen Component ancestor is used to build user interfaces made up of 2D components such as images and text. The Element provides layout properties such as anchors and a pivot point.

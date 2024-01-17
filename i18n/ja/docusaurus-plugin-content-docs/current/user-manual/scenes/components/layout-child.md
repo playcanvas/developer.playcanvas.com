@@ -1,6 +1,5 @@
 ---
 title: Layout Child
-sidebar_position: 8
 ---
 
 LayoutChildコンポーネントは、LayoutGroupコンポーネントによって制御されるエレメント (Element) が、Layout Groupのデフォルト動作を上書きすることができるようにします。

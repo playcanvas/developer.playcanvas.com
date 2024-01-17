@@ -1,6 +1,5 @@
 ---
 title: Scrollbar
-sidebar_position: 17
 ---
 
 Scrollbarコンポーネントは、[Scrollview][1]コンポーネント用のスクロール制御を定義します。

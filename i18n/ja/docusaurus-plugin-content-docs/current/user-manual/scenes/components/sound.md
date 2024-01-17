@@ -1,6 +1,5 @@
 ---
 title: Sound
-sidebar_position: 19
 ---
 
 Soundコンポーネントは、オーディオサンプルの再生を制御します。

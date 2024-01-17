@@ -1,6 +1,5 @@
 ---
 title: Anim
-sidebar_position: 1
 ---
 
 Animコンポーネントは、Animstategraphアセットとその必要なアニメーションアセットを1つのエンティティに接続するために使用されます。

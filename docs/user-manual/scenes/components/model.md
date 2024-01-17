@@ -1,7 +1,12 @@
 ---
 title: Model
-sidebar_position: 11
 ---
+
+:::warning
+
+The Model component is deprecated. It has been replaced by the [Render](/user-manual/scenes/components/render) component.
+
+:::
 
 The Model component enables an entity to render a primitive shape or a model asset.
 

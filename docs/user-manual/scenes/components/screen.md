@@ -1,6 +1,5 @@
 ---
 title: Screen
-sidebar_position: 15
 ---
 
 The Screen component defines the area and rendering of a user interface. Children added to a Screen component should all have an Element component

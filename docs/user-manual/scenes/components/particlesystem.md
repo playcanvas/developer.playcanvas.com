@@ -1,6 +1,5 @@
 ---
 title: Particle System
-sidebar_position: 12
 ---
 
 The Particle System component specifies a particle emitter in 3D space.

@@ -1,7 +1,12 @@
 ---
 title: Model
-sidebar_position: 11
 ---
+
+:::warning
+
+Modelコンポーネントは非推奨です。これは[Render](/user-manual/scenes/components/render)コンポーネントに置き換えられました。
+
+:::
 
 Modelコンポーネントを使用すると、エンティティにプリミティブシェイプまたはModelアセットをレンダリングすることができます。
 

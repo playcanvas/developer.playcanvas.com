@@ -1,6 +1,5 @@
 ---
 title: Particle System
-sidebar_position: 12
 ---
 
 Particle Systemコンポーネントは、3D空間内でパーティクルエミッターを指定します。

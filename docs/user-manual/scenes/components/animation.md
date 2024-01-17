@@ -1,7 +1,12 @@
 ---
 title: Animation
-sidebar_position: 2
 ---
+
+:::warning
+
+The Animation component is deprecated. It has been replaced by the [Anim](/user-manual/scenes/components/anim) component.
+
+:::
 
 The Animation component enables an entity to specify which animations can be applied to the model assigned to its Model component.
 

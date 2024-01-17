@@ -1,7 +1,12 @@
 ---
 title: Animation
-sidebar_position: 2
 ---
+
+:::warning
+
+Animationコンポーネントは非推奨です。これは[Anim](/user-manual/scenes/components/anim)コンポーネントに置き換えられました。
+
+:::
 
 Animationコンポーネントを使用すれば、エンティティはModelコンポーネントに割り当てられているモデルに適用することのできるアニメーションを指定できます。
 
