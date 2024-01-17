@@ -5,13 +5,13 @@ sidebar_position: 6
 
 イベントは、毎フレームチェックすることなく発生したことに応答するためにスクリプト間で通信する便利な方法です。
 
-Many PlayCanvas object types (such as script instances) have event handling support built-in, inherited from the Engine's [`EventHandler`][1] class. Event handling objects have the following methods:
+イベントは、PlayCanvasの多くのオブジェクトタイプ（例えばスクリプトインスタンスなど）に組み込まれており、エンジンの[`EventHandler`][1]クラスから継承されたイベントハンドリングサポートがあります。イベントハンドリングオブジェクトには以下のメソッドがあります：
 
-* `on()` - registers an event listener.
-* `once()` - registers an event listener that unregisters itself after the first time it is called.
-* `off()` - unregisters an event listener.
-* `fire()` - sends an event.
-* `hasEvent()` - queries whether an object is listening on a particular event.
+* `on()` - イベントリスナーを登録します。
+* `once()` - 最初に呼ばれた後に自動的に登録解除されるイベントリスナーを登録します。
+* `off()` - イベントリスナーの登録を解除します。
+* `fire()` - イベントを送信します。
+* `hasEvent()` - 特定のイベントをリッスンしているかどうかを問い合わせます。
 
 ## イベントの使用
 
