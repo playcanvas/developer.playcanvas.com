@@ -61,6 +61,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: '69QRBNV3NH',
+        apiKey: '1a45aa069915da9c841ad1a9c225e815',
+        indexName: 'developer-playcanvas',
+      },
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
