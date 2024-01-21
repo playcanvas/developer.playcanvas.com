@@ -76,7 +76,6 @@ At the time of writing, the browser requirements are currently as follows:
 | [Safari](https://www.apple.com/safari/)     | 8.0+    |          | &#x2713; |          |           |          | &#x2713; |
 | [Firefox](https://www.mozilla.org/firefox/) | 4.0+    | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; | &#x2713; |
 | [Edge](https://www.microsoft.com/edge)      | 12.0+   | &#x2713; |          |          |           |          |          |
-| Internet Explorer                           | 11.0+   | &#x2713; |          |          |           |          |          |
 | [Opera](https://www.opera.com/)             | 12.0+   | &#x2713; | &#x2713; | &#x2713; |           | &#x2713; |          |
 
 If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][9]. If you see a spinning cube, you are all set!
