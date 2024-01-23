@@ -44,4 +44,4 @@ entity.script.destroy("rotate");
 [0]: /images/user-manual/scripting/new-script.png
 [1]: /images/user-manual/scripting/code-editor-new-script.png
 [2]: /images/user-manual/scripting/select-script.png
-[3]: /api/pc.AssetRegistry.html#load
+[3]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#load

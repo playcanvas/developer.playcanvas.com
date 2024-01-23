@@ -44,5 +44,5 @@ Soft particles are particles that are faded out near their intersections with sc
 [2]: /images/user-manual/graphics/particles/particle_system_create.png
 [3]: /images/user-manual/graphics/particles/particle_system_default.gif
 [4]: /user-manual/scenes/components/particlesystem
-[5]: /api/pc.ParticleSystemComponent.html#depthSoftening
+[5]: https://api.playcanvas.com/classes/Engine.ParticleSystemComponent.html#depthSoftening
 [6]: /user-manual/graphics/cameras/depth-layer

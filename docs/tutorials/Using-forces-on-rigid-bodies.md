@@ -183,12 +183,12 @@ DynamicBody.prototype.reset = function () {
 };
 ```
 
-[1]: /api/pc.RigidBodyComponent.html#applyForce
-[2]: /api/pc.RigidBodyComponent.html#applyImpulse
-[3]: /api/pc.RigidBodyComponent.html#applyTorque
-[4]: /api/pc.RigidBodyComponent.html#applyTorqueImpulse
-[5]: /api/pc.Vec3.html
-[6]: /api/pc.CollisionComponent.html
+[1]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyForce
+[2]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyImpulse
+[3]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyTorque
+[4]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyTorqueImpulse
+[5]: https://api.playcanvas.com/classes/Engine.Vec3.html
+[6]: https://api.playcanvas.com/classes/Engine.CollisionComponent.html
 [7]: /api/pc.html
 [8]: /tutorials/first-person-movement/
 [9]: /tutorials/collision-and-triggers/

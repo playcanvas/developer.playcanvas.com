@@ -37,6 +37,6 @@ You can learn how to customize the materials of your model [here][4].
 
 [1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.ModelComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.ModelComponent.html
 [4]: /user-manual/assets/materials/#assigning-materials
 [5]: /user-manual/graphics/advanced-rendering/batching

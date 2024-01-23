@@ -181,4 +181,4 @@ We currently do not support defining JSON attributes as children of other JSON a
 
 [1]: /images/user-manual/scripting/script-attributes.png
 [2]: /images/user-manual/scripting/script-parse-button.png
-[3]: /api/pc.ScriptAttributes.html
+[3]: https://api.playcanvas.com/classes/Engine.ScriptAttributes.html

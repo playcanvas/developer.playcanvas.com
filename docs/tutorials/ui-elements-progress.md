@@ -111,4 +111,4 @@ Changing the `width` makes the fill image larger and changing the `rect` makes s
 [5]: /images/tutorials/ui/progressbar/screen.png
 [6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
 [7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
-[8]: /api/pc.ElementComponent.html#rect
+[8]: https://api.playcanvas.com/classes/Engine.ElementComponent.html#rect

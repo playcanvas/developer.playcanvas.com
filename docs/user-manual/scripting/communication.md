@@ -94,4 +94,4 @@ Display.prototype.initialize = function () {
 
 As you can see, this reduces the amount of set up and makes for cleaner code.
 
-[1]: /api/pc.EventHandler.html
+[1]: https://api.playcanvas.com/classes/Engine.EventHandler.html

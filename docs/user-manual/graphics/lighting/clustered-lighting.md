@@ -132,5 +132,5 @@ this.app.scene.lighting.debugLayer = undefined;
 [manual-split]: /images/user-manual/graphics/lighting/lights/manual_split.png
 [clustered-lighting-ui]: /images/user-manual/graphics/lighting/lights/clustered_lighting_ui.png
 [shadows]: /user-manual/graphics/lighting/shadows/#soft-shadows-vs-hard-shadows
-[pc-layer-api]: /api/pc.Layer.html
-[pc-lighting-debug-layer-api]: /api/pc.LightingParams.html#debugLayer
+[pc-layer-api]: https://api.playcanvas.com/classes/Engine.Layer.html
+[pc-lighting-debug-layer-api]: https://api.playcanvas.com/classes/Engine.LightingParams.html#debugLayer

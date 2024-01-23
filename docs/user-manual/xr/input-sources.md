@@ -143,14 +143,14 @@ if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
 PlayCanvas provides a number of [tutorials and samples][11] on the usage of WebXR functionality. Users are able to fork them and examine how code and components are structured to allow for XR to be used.
 
 
-[1]: /api/pc.XrInputSource.html
-[2]: /api/pc.XrInput.html
-[3]: /api/pc.XrManager.html
+[1]: https://api.playcanvas.com/classes/Engine.XrInputSource.html
+[2]: https://api.playcanvas.com/classes/Engine.XrInput.html
+[3]: https://api.playcanvas.com/classes/Engine.XrManager.html
 [4]: https://www.w3.org/TR/webxr-gamepads-module-1/
 [5]: https://w3c.github.io/gamepad/
 [6]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
 [7]: https://immersive-web.github.io/webxr-hand-input/
-[8]: /api/pc.XrHand.html
-[9]: /api/pc.XrFinger.html
-[10]: /api/pc.XrJoint.html
+[8]: https://api.playcanvas.com/classes/Engine.XrHand.html
+[9]: https://api.playcanvas.com/classes/Engine.XrFinger.html
+[10]: https://api.playcanvas.com/classes/Engine.XrJoint.html
 [11]: /tutorials/?tags=vr
