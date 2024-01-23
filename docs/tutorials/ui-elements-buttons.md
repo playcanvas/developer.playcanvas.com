@@ -150,4 +150,4 @@ These events will only fire if Use Input is enabled on the Element component so 
 [5]: /images/tutorials/ui/buttons/screen.png
 [6]: /images/tutorials/ui/buttons/button.png
 [elements-tutorial]: /user-manual/user-interface/elements/
-[click-event-api]: /api/pc.ButtonComponent.html#event:click
+[click-event-api]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click

@@ -125,4 +125,4 @@ Selecting a reference will load it into the Inspector panel.
 [4]: /user-manual/editor/settings
 [5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
 [6]: /images/user-manual/editor/assets-panel/asset-references.png
-[7]: /api/pc.AssetRegistry.html#findByTag
+[7]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#findByTag

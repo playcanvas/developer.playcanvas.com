@@ -107,10 +107,10 @@ This UI interaction is agnostic to input source: either it originates from VR ha
 [1]: https://playcanvas.com/project/460449/overview/webvr-ray-input
 [2]: /user-manual/xr/using-webxr/
 [3]: /user-manual/user-interface/
-[4]: /api/pc.XrInput.html
-[5]: /api/pc.XrInputSource.html
-[6]: /api/pc.ButtonComponent.html
-[7]: /api/pc.ElementComponent.html
-[8]: /api/pc.XrInputSource.html#getOrigin
-[9]: /api/pc.XrInputSource.html#getDirection
-[10]: /api/pc.ButtonComponent.html#event:click
+[4]: https://api.playcanvas.com/classes/Engine.XrInput.html
+[5]: https://api.playcanvas.com/classes/Engine.XrInputSource.html
+[6]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html
+[7]: https://api.playcanvas.com/classes/Engine.ElementComponent.html
+[8]: https://api.playcanvas.com/classes/Engine.XrInputSource.html#getOrigin
+[9]: https://api.playcanvas.com/classes/Engine.XrInputSource.html#getDirection
+[10]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click

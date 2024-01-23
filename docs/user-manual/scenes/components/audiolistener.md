@@ -14,4 +14,4 @@ You can control an Audio Listener component's properties using a [script compone
 
 [1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.AudioListenerComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.AudioListenerComponent.html

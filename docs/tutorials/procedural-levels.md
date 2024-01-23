@@ -57,5 +57,5 @@ Generate.prototype.initialize = function() {
 };
 ```
 
-[1]: /api/pc.Entity.html#clone
+[1]: https://api.playcanvas.com/classes/Engine.Entity.html#clone
 [2]: https://playcanvas.com/project/405864

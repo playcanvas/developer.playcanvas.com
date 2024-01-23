@@ -76,7 +76,7 @@ Scenes are represented by [Scene Registry Items][sceneregistryitem-api] that are
 
 :::note
 
-The [application root node](/api/pc.Application.html#root) is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
+The [application root node](https://api.playcanvas.com/classes/Engine.Application.html#root) is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
 
 :::
 
@@ -200,17 +200,17 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes
 [templates]: /user-manual/templates/
 [assets]: /user-manual/assets/
-[loadscenehierarchy-api]: /api/pc.SceneRegistry.html#loadSceneHierarchy
-[loadscenesettings-api]: /api/pc.SceneRegistry.html#loadSceneSettings
-[sceneregistryitem-api]: /api/pc.SceneRegistryItem.html
-[sceneregistry-api]: /api/pc.SceneRegistry.html
-[application-sceneregistry-api]: /api/pc.Application.html#scenes
+[loadscenehierarchy-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneHierarchy
+[loadscenesettings-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneSettings
+[sceneregistryitem-api]: https://api.playcanvas.com/classes/Engine.SceneRegistryItem.html
+[sceneregistry-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html
+[application-sceneregistry-api]: https://api.playcanvas.com/classes/Engine.Application.html#scenes
 [loadhierarchycallback-api]: /api/pc.html#LoadHierarchyCallback
 [loadsettingscallback-api]: /api/pc.html#LoadSettingsCallback
-[application-root-api]: /api/pc.Application.html#root
-[loadscenedata-api]: /api/pc.SceneRegistry.html#loadSceneData
-[unloadscenedata-api]: /api/pc.SceneRegistry.html#unloadSceneData
+[application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
+[loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
+[unloadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#unloadSceneData
 [copy-and-paste-assets]: /user-manual/editor/assets/#copy-and-paste-between-projects
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
-[changescene-api]: /api/pc.SceneRegistry.html#changeScene
+[changescene-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#changeScene

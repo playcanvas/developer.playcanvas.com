@@ -142,8 +142,8 @@ console.log('Was pressed: ' + buttons.wasPressed('button0'));
 [adding-left-half-joystick]: /images/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif
 [adding-button]: /images/tutorials/touchscreen-joypad-controls/adding-button.gif
 [joystick-layout]: /images/tutorials/touchscreen-joypad-controls/joystick-layout.png
-[pc-app-mouse-api]: /api/pc.Mouse.html
-[pc-app-touch-api]: /api/pc.Touch.html
+[pc-app-mouse-api]: https://api.playcanvas.com/classes/Engine.Mouse.html
+[pc-app-touch-api]: https://api.playcanvas.com/classes/Engine.Touch.html
 [elements-manual]: /user-manual/user-interface/elements/
 [joystick-script-attributes]: /images/tutorials/touchscreen-joypad-controls/joystick-script-attributes.gif
 [joystick-fixed]: /images/tutorials/touchscreen-joypad-controls/joystick-fixed.gif
