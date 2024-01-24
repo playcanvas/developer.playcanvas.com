@@ -205,8 +205,8 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 [sceneregistryitem-api]: https://api.playcanvas.com/classes/Engine.SceneRegistryItem.html
 [sceneregistry-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html
 [application-sceneregistry-api]: https://api.playcanvas.com/classes/Engine.Application.html#scenes
-[loadhierarchycallback-api]: /api/pc.html#LoadHierarchyCallback
-[loadsettingscallback-api]: /api/pc.html#LoadSettingsCallback
+[loadhierarchycallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadHierarchyCallback
+[loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
 [application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
 [loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
 [unloadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#unloadSceneData
