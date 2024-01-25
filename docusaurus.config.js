@@ -89,14 +89,14 @@ const config = {
             path: '/user-manual',
           },
           {
-            to: '/tutorials/',  // This should match the route of your Tutorials page
+            to: '/tutorials/',
             label: 'Tutorials',
-            position: 'left', // or 'right', depending on where you want it in the navbar
+            position: 'left',
           },
           {
-            to: 'https://api.playcanvas.com',  // This should match the route of your Tutorials page
+            to: 'https://api.playcanvas.com',
             label: 'API',
-            position: 'left', // or 'right', depending on where you want it in the navbar
+            position: 'left',
           },
           {
             type: 'localeDropdown',
