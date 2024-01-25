@@ -10,9 +10,11 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero hero--primary shadow-lg', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
+        
+        <iframe src="https://ghbtns.com/github-btn.html?user=playcanvas&repo=engine&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="170" height="30" title="PlayCanvas"></iframe>
+        <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
@@ -33,7 +35,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Everything you need to make games and interactive experiences with PlayCanvas.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

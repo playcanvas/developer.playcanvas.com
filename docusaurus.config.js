@@ -89,18 +89,30 @@ const config = {
             path: '/user-manual',
           },
           {
-            to: '/tutorials/',  // This should match the route of your Tutorials page
+            to: '/tutorials/',
             label: 'Tutorials',
-            position: 'left', // or 'right', depending on where you want it in the navbar
+            position: 'left',
+          },
+          {
+            href: 'https://api.playcanvas.com',
+            label: 'API',
+            position: 'left',
           },
           {
             type: 'localeDropdown',
             position: 'right',
           },
           {
-            href: 'https://github.com/playcanvas',
-            label: 'GitHub',
-            position: 'right',
+            'aria-label': 'Discord Invite',
+            'className': 'navbar--discord-link',
+            'href': 'https://discord.gg/RSaMRzg',
+            'position': 'right',
+          },
+          {
+            'aria-label': 'GitHub Repository',
+            'className': 'navbar--github-link',
+            'href': 'https://github.com/playcanvas/engine',
+            'position': 'right',
           },
         ],
       },
