@@ -1,21 +1,57 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
   width: 100%;
 }
 
 .features a {
   color: var(--ifm-navbar-link-color);
-}
-
-.features a:hover {
-  color: var(--ifm-navbar-link-hover-color);
   text-decoration: none;
 }
 
+.features a:hover h3 {
+  transition: all .2s ease-in-out;
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.feature {
+  padding: 3rem;
+}
+
+.featureTitleContainer{
+  display: flex;
+  gap: .5rem;
+}
+
+.featureTitleContainer svg {
+  width: 1.5rem;
+  margin: var(--ifm-heading-margin-top) 0 var(--ifm-heading-margin-bottom) 0;
+}
+
+.features a:hover svg {
+  color: var(--ifm-navbar-link-hover-color);
+  transition: all var(--ifm-transition-fast) ease-in-out;
+}
+
+.featureImgContainer{
+  width: 100% ;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+a:hover .featureImgContainer {
+  border: 3px solid var(--ifm-navbar-link-hover-color);
+}
+
 .featureImg {
-  height: 200px;
-  width: 200px;
-  border-radius: .5rem;
+  display: block;
+  transition: all var(--ifm-transition-fast) ease-in-out;
+  transform: scale(1.01);
+}
+
+.features a:hover .featureImg {
+  transform: scale(1);
 }
