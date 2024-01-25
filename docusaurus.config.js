@@ -94,7 +94,7 @@ const config = {
             position: 'left',
           },
           {
-            to: 'https://api.playcanvas.com',
+            href: 'https://api.playcanvas.com',
             label: 'API',
             position: 'left',
           },
