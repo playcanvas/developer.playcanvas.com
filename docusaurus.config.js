@@ -35,7 +35,18 @@ const config = {
     locales: ['en', 'ja']
   },
 
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    [ '@docusaurus/plugin-client-redirects', {
+      createRedirects: (path) => {
+
+        path = path.replace('/user-manual/editor/', '/user-manual/designer/');
+        path = path.replace('/user-manual/scenes/', '/user-manual/packs/');
+
+        return `/en${path}`;
+      }
+    }],
+    'docusaurus-plugin-sass',
+  ],
 
   presets: [
     [
