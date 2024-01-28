@@ -13,7 +13,7 @@ sidebar_position: 10
 
 このAPIは、安定版ではなく将来的に変更される可能性がありますが、現在の状態から大きく変更されることはないでしょう。
 
-APIの詳細なドキュメントは[GitHub][github-api]で閲覧できます。
+The Editor APIは[GitHub][github-repo]でオープンソース化されています。APIのドキュメントは[こちら][github-api]で見つけることができます。
 
 ## 自動化の例
 
@@ -171,7 +171,8 @@ PlayCanvas チームは現在、[Violentmonkey][violentmonkey]オープンソー
 ```
 
 [disable-red-boxes-gif]: /images/user-manual/editor/editor-api/disable-red-boxes.gif
-[github-api]: https://github.com/playcanvas/editor-api/blob/master/docs/modules.md#playcanvas-editor-api
+[github-api]: https://api.playcanvas.com/modules/Editor.html
+[github-repo]: https://github.com/playcanvas/editor-api
 [user-scripts]: https://en.wikipedia.org/wiki/Userscript
 [viewport]: /user-manual/editor/viewport
 [violentmonkey]: https://violentmonkey.github.io/

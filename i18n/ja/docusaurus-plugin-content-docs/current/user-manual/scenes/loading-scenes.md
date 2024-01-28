@@ -76,7 +76,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 :::note
 
-[アプリケーションルートノード](/api/pc.Application.html#root)は、エディタで見ることができるデフォルトで 'Root' と名前が付けられたシーンヒエラルキールートエンティティではありません。シーンヒエラルキールートエンティティは、アプリケーションルートノードの子になります。
+[アプリケーションルートノード](https://api.playcanvas.com/classes/Engine.Application.html#root)は、エディタで見ることができるデフォルトで 'Root' と名前が付けられたシーンヒエラルキールートエンティティではありません。シーンヒエラルキールートエンティティは、アプリケーションルートノードの子になります。
 
 :::
 
@@ -200,17 +200,17 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes
 [templates]: /user-manual/templates/
 [assets]: /user-manual/assets/
-[loadscenehierarchy-api]: /api/pc.SceneRegistry.html#loadSceneHierarchy
-[loadscenesettings-api]: /api/pc.SceneRegistry.html#loadSceneSettings
-[sceneregistryitem-api]: /api/pc.SceneRegistryItem.html
-[sceneregistry-api]: /api/pc.SceneRegistry.html
-[application-sceneregistry-api]: /api/pc.Application.html#scenes
-[loadhierarchycallback-api]: /api/pc.html#LoadHierarchyCallback
-[loadsettingscallback-api]: /api/pc.html#LoadSettingsCallback
-[application-root-api]: /api/pc.Application.html#root
-[loadscenedata-api]: /api/pc.SceneRegistry.html#loadSceneData
-[unloadscenedata-api]: /api/pc.SceneRegistry.html#unloadSceneData
+[loadscenehierarchy-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneHierarchy
+[loadscenesettings-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneSettings
+[sceneregistryitem-api]: https://api.playcanvas.com/classes/Engine.SceneRegistryItem.html
+[sceneregistry-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html
+[application-sceneregistry-api]: https://api.playcanvas.com/classes/Engine.Application.html#scenes
+[loadhierarchycallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadHierarchyCallback
+[loadsettingscallback-api]: https://api.playcanvas.com/modules/Engine.html#LoadSettingsCallback
+[application-root-api]: https://api.playcanvas.com/classes/Engine.Application.html#root
+[loadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#loadSceneData
+[unloadscenedata-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#unloadSceneData
 [copy-and-paste-assets]: /user-manual/editor/assets/#copy-and-paste-between-projects
 [asset-tags-loading]: /user-manual/assets/preloading-and-streaming/#asset-tags
 [asset-load-for-scene-project]: https://playcanvas.com/project/926754/overview/asset-loading-for-scenes-example
-[changescene-api]: /api/pc.SceneRegistry.html#changeScene
+[changescene-api]: https://api.playcanvas.com/classes/Engine.SceneRegistry.html#changeScene
