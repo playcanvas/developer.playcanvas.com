@@ -1625,6 +1625,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/keyboard-shortcuts.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-launch-page]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/launch-page.md
+source_file   = docs/user-manual/editor/launch-page.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/launch-page.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-loading-screen]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/loading-screen.md
 source_file   = docs/user-manual/editor/loading-screen.md
