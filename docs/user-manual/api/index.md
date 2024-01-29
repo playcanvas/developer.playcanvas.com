@@ -9,7 +9,7 @@ The REST API is currently in beta. This means we may change certain endpoints an
 
 :::
 
-## Authorization
+## Authorization {#authorization}
 
 You can only access the REST API via https. In order to access the REST API you need to use an Access Token. You can generate an Access Token by going to your Organization's Account page.
 
@@ -43,39 +43,39 @@ For example:
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## Parameters
+## Parameters {#parameters}
 
 Various routes accept a number of parameters. For GET requests if the parameter is not part of the URL, you can pass it as an HTTP query string parameter. For POST, PUT and DELETE requests parameters not included in the URL should be encoded as JSON with a Content-Type of 'application/json'.
 
 There are several common parameters that are used in each endpoint:
 
-### project_id
+### project_id {#project_id}
 
 This can be found in the URL on the project overview page.
 
 ![Project ID][6]
 
-### scenes
+### scenes {#scenes}
 
 When opening a scene in the Editor, the scene id is in the URL.
 
 ![Scene ID][7]
 
-### branch_id
+### branch_id {#branch_id}
 
 This is found in the [version control][5] panel and can be selected and copied.
 
 ![Branch ID][8]
 
-## Response Format
+## Response Format {#response-format}
 
 Our REST API is following some generic guidelines when it comes to the response format of each API call.
 
-#### GET resource
+#### GET resource {#get-resource}
 
 If you are trying to GET a single resource the response will be a JSON object with the resource you requested.
 
-#### GET multiple resources
+#### GET multiple resources {#get-multiple-resources}
 
 If you are trying to GET multiple resources like for example listing the Apps of a Project you will get a JSON object with this format:
 
@@ -110,7 +110,7 @@ So for example to get 32 items after the first 16 items you would send this requ
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### Errors
+#### Errors {#errors}
 
 When an error is raised you will get a JSON object with this format:
 
@@ -122,7 +122,7 @@ When an error is raised you will get a JSON object with this format:
 
 Also the status code of the response will be the appropriate HTTP error code.
 
-## Rate Limiting
+## Rate Limiting {#rate-limiting}
 
 Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits). There are different rate limits depending on the request:
 
