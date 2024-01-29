@@ -3,13 +3,13 @@ title: Menu and Toolbar
 sidebar_position: 1
 ---
 
-## Menu
+## Menu {#menu}
 
 ![Menu][1]
 
 The menu is available by clicking on the PLAYCANVAS icon and contains a complete list of all the commands that you can perform on your scene. If you can't find a button or remember a hotkey, the command will always be available in the menu.
 
-## Toolbar
+## Toolbar {#toolbar}
 
 ![Toolbar][2]
 
