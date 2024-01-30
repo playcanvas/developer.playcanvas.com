@@ -132,7 +132,7 @@ const config = {
               },
               {
                 label: 'API Reference',
-                to: '/api/',
+                href: 'https://api.playcanvas.com',
               },
             ],
           },
