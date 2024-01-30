@@ -5,15 +5,15 @@ sidebar_position: 2
 
 A branch is an isolated line of development. Every checkpoint created belongs to a branch and a series of checkpoints in a branch can track the development of an application or a particular feature. A PlayCanvas project will always have at least one branch, the main branch, and will often have multiple branches. You can merge the changes from one branch into any other branch using the version control panel in the Editor.
 
-## Main branch
+## Main branch {#main-branch}
 
 Every project has a branch called "main" which is always present and cannot be deleted. In most respects this branch is no different from any other branch. However, in some cases (for example, the REST API) the "main" branch will be used as a default if no other branch is specified. A common scenario is to treat the main branch as the current development state of your application; to use another branch for stable releases and still more branches for feature development. However, you should feel free to use or not use the main branch as best suits your needs.
 
-## Current branch
+## Current branch {#current-branch}
 
 For each project you work on you will always have a single branch set to be your **current branch**. This is the branch that you are actively working on and whenever you open the editor or edit a code file your changes will apply to your current branch.
 
-## Creating a new branch
+## Creating a new branch {#creating-a-new-branch}
 
 ![Create branch][1]
 
@@ -25,7 +25,7 @@ You will be asked to name your branch. Try to give your branch a description nam
 
 Branches created by you will automatically be favorited so you can quickly find them in the [branch filter](#filtering-branch-list) for favorites.
 
-## Filtering branch list
+## Filtering branch list {#filtering-branch-list}
 
 ![Branch filter][9]
 
@@ -37,21 +37,21 @@ You can filter branches between:
 
 Favoriting a branch can be done with the following options:
 
-### Drop down menu
+### Drop down menu {#drop-down-menu}
 
 ![Favorite a branch via menu][10]
 
-### Selected branch button
+### Selected branch button {#selected-branch-button}
 
 ![Favorite a branch via button][11]
 
-## Searching for a branch
+## Searching for a branch {#searching-for-a-branch}
 
 ![Searching for a branch][8]
 
 To help find a branch in the current list filter, you can use the search bar at the top.
 
-## Switching to a branch
+## Switching to a branch {#switching-to-a-branch}
 
 ![Switch branch][3]
 
@@ -59,7 +59,7 @@ To switch branch open the version control panel, select the branch you wish to s
 
 The editor will reload with your current branch switched to the chosen branch.
 
-## Closing a branch
+## Closing a branch {#closing-a-branch}
 
 ![Close branch][4]
 
@@ -75,7 +75,7 @@ You will be asked to confirm the closing of the branch and you have an option to
 
 Closed branches can also be reopened at a later date.
 
-## Deleting a branch
+## Deleting a branch {#deleting-a-branch}
 
 Deletion of branches are only supported if the following conditions are met:
 
