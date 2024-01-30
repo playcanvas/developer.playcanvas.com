@@ -29,7 +29,7 @@ Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [w
 
 <a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
 
-## Using Basis Texture Compression
+## Using Basis Texture Compression {#using-basis-texture-compression}
 
 Once the texture has been imported into the Editor, select it and scroll down in the inspector to find the Compression section.
 
@@ -55,14 +55,14 @@ If you would no longer want to use Basis, remove Basis compression from all text
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400" />
 
-## Basis Limitations
+## Basis Limitations {#basis-limitations}
 
 There are some limitations of Basis texture compression in PlayCanvas.
 
 1. The PVR format only supports textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. A Basis texture that is non-square or non-power of two cannot be transcoded to PVR format but will instead use a 16-bit 565 pixel format. It will still display correctly, although may occupy more VRAM.
 2. The maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.
 
-## Legacy Texture Compression
+## Legacy Texture Compression {#legacy-texture-compression}
 
 We strongly recommend using Basis compression where possible as it requires a single texture file to cover all platforms and it is also a much smaller file compared to the legacy formats. Our tests show Basis to be ~50% smaller with minimal difference in quality.
 
@@ -87,7 +87,7 @@ To remove a or several formats:
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400" />
 
-## Migrating from Legacy to Basis Texture Compression
+## Migrating from Legacy to Basis Texture Compression {#migrating-from-legacy-to-basis-texture-compression}
 
 If you have a project that is already using the Legacy Texture Compression formats and wish to use Basis, do the following:
 
