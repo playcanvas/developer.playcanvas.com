@@ -45,4 +45,4 @@ Soundコンポーネントは、コンポーネントパネルの右上にある
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.SoundComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.SoundComponent.html

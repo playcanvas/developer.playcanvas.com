@@ -29,4 +29,4 @@ Renderコンポーネントは、コンポーネントパネルの右上にあ�
 
 [1]: /images/user-manual/scenes/components/component-render.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.RenderComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.RenderComponent.html

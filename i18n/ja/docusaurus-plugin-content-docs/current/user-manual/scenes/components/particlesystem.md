@@ -49,4 +49,4 @@ Particle Systemコンポーネントのプロパティは[script component][2]�
 
 [1]: /images/user-manual/scenes/components/component-particle-system.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.ParticleSystemComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.ParticleSystemComponent.html

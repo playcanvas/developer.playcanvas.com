@@ -142,5 +142,5 @@ Collider.prototype.onCollisionStart = function (result) {
 [5]: /user-manual/scenes/components/rigidbody/
 [6]: /images/tutorials/collision/ground_setup.png
 [7]: /images/tutorials/collision/trigger_setup.jpg
-[8]: /api/pc.Entity.html
+[8]: https://api.playcanvas.com/classes/Engine.Entity.html
 [9]: /images/tutorials/collision/box_setup.png

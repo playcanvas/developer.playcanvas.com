@@ -46,4 +46,4 @@ Collisionコンポーネントは、コンポーネントパネルの右上に�
 [6]: /images/user-manual/scenes/components/component-collision-mesh.png
 [7]: /images/user-manual/scenes/components/component-collision-sphere.png
 [8]: /user-manual/scenes/components/script
-[9]: /api/pc.CollisionComponent.html
+[9]: https://api.playcanvas.com/classes/Engine.CollisionComponent.html

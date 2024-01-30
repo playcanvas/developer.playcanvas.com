@@ -48,4 +48,4 @@ Lightコンポーネントのプロパティを[Scriptコンポーネント][4]�
 [2]: /images/user-manual/scenes/components/component-light-point.png
 [3]: /images/user-manual/scenes/components/component-light-spot.png
 [4]: /user-manual/scenes/components/script
-[5]: /api/pc.LightComponent.html
+[5]: https://api.playcanvas.com/classes/Engine.LightComponent.html

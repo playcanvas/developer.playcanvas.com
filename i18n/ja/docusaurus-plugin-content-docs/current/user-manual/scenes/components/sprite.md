@@ -66,5 +66,5 @@ Spriteコンポーネントは、[Spriteアセット][1]をシーンに表示さ
 [2]: /images/user-manual/scenes/components/component-sprite-simple.png
 [3]: /images/user-manual/scenes/components/component-sprite-animated.png
 [4]: /user-manual/scenes/components/script
-[5]: /api/pc.SpriteComponent.html
+[5]: https://api.playcanvas.com/classes/Engine.SpriteComponent.html
 [6]: /user-manual/graphics/advanced-rendering/batching

@@ -1,5 +1,5 @@
 ---
-title: スクリプト (Script)
+title: Script
 ---
 
 Scriptコンポーネントは、エンティティがユーザーが提供したスクリプトを実行することを可能にします。このように、ユーザーはJavaScript言語を使用してスクリプトを書き、エンティティがインスタンス化され、フレームごとに更新されるときに実行することができます。
@@ -21,4 +21,4 @@ PlayCanvasコードエディターでスクリプトを編集するには、リ�
 Scriptコンポーネントのスクリプトのインターフェースは[こちら][2]から確認できます。
 
 [1]: /images/user-manual/scenes/components/component-script.png
-[2]: /api/pc.ScriptComponent.html
+[2]: https://api.playcanvas.com/classes/Engine.ScriptComponent.html

@@ -29,4 +29,4 @@ Cameraコンポーネントは、コンポーネントパネルの右上にあ�
 
 [1]: /images/user-manual/scenes/components/component-camera.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.CameraComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.CameraComponent.html
