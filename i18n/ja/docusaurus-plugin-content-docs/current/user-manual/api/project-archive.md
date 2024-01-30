@@ -66,4 +66,4 @@ curl -H "Authorization: Bearer {accessToken}" -H "Content-Type: application/json
 
 [1]: /user-manual/api#rate-limiting
 [2]: /user-manual/api/job-get
-[3]: /user-manual/profile/projects/#import-project
+[3]: /user-manual/profile/projects/#restoring-a-project-from-an-archive-file
