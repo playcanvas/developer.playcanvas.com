@@ -64,8 +64,7 @@ When updating the texture atlas later in development, as long as the sprite file
 [texture-atlas]: /user-manual/assets/texture-atlas/
 [texture-packer-online]: https://www.codeandweb.com/tp-online
 [texture-packer-tool]: https://www.codeandweb.com/texturepacker
-[9-slicing]: /user-manual/2D/9-slicing/
-
+[9-slicing]: /user-manual/2D/slicing/
 [texture-packer-online-steps]: /images/user-manual/2D/texture-packer/texture-packer-online-steps.png
 [texture-packer-tool-steps]: /images/user-manual/2D/texture-packer/texture-packer-tool-steps.png
 [playcanvas-sprite-editor]: /images/user-manual/2D/texture-packer/playcanvas-sprite-editor.png

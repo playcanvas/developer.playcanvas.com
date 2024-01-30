@@ -26,7 +26,7 @@ However, a disadvantage of runtime lightmap generation is that currently we do n
 
 :::note
 
-The use of [batching](/user-manual/optimization/batching) is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+The use of [batching][11] is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
 
 :::
 

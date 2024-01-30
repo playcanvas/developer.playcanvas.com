@@ -26,5 +26,5 @@ If you create a *Sliced* sprite, by default it will be created with a `pixelsPer
 The Texture Atlas asset that the sprite references
 
 [1]: /user-manual/assets/texture-atlas
-[2]: /user-manual/2D/9-slicing
+[2]: /user-manual/2D/slicing
 [3]: /images/user-manual/assets/sprites/sprites.jpg

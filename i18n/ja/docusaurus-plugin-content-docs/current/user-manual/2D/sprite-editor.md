@@ -91,4 +91,4 @@ Spriteアセットが選択されているときにスプライトインスペ�
 [4]: /images/user-manual/2D/sprite-editor/frame-inspector.jpg
 [5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
 [6]: /user-manual/assets/sprites/
-[7]: /user-manual/2D/9-slicing/
+[7]: /user-manual/2D/slicing/

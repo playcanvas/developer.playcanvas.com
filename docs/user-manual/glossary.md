@@ -107,7 +107,7 @@ A Texture is an [Asset][asset]. Typically, it contains image data that can be ma
 
 A Transformation Matrix is a mathematical matrix that represents a set of linear transforms. In particular: translation, rotation and scale. This means that a transformation matrix can be used to represent the position, orientation and size of an object in 3D space. In the PlayCanvas Engine each [Entity][entity] has a transformation matrix accessible via the `getLocalTransform()` method.
 
-[api-reference]: /api/
+[api-reference]: https://api.playcanvas.com
 [application]: #application
 [asset]: #asset
 [asset-pipeline]: #asset-pipeline
