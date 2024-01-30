@@ -7,7 +7,7 @@ Assets are resources that are available to use in your game. Assets can be of va
 
 After uploading a file for an Asset the file is run through the importing pipeline which converts and optimizes the data for final use in the game.
 
-## Type
+## Type {#type}
 
 PlayCanvas supports the importing of a wide variety of content types:
 
@@ -18,7 +18,7 @@ PlayCanvas supports the importing of a wide variety of content types:
 
 When you upload a new file the asset type will be set automatically from the type of file you've uploaded. For example, if you upload a PNG file, the Asset created will be a *texture* type.
 
-## Source Assets and Target Assets
+## Source Assets and Target Assets {#source-assets-and-target-assets}
 
 After the asset type, then next most important property of an Asset is whether it is a **Source** Asset or a **Target** Asset.
 

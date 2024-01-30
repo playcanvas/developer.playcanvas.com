@@ -8,7 +8,7 @@ There are two options for self-hosting a PlayCanvas application on your own doma
 1. Embed a PlayCanvas hosted application using an [iframe][1].
 2. Download your application from the Editor and upload the files to your own site.
 
-## iframe Embedding
+## iframe Embedding {#iframe-embedding}
 
 When you [publish to playcanvas.com][2], your application is assigned a URL. To embed your application in another page. You can simply include this URL as the `src` property of an iframe.
 
@@ -23,7 +23,7 @@ When you [publish to playcanvas.com][2], your application is assigned a URL. To 
 </html>
 ```
 
-## Self-hosting on your own server
+## Self-hosting on your own server {#self-hosting-on-your-own-server}
 
 In order to host your application independently of PlayCanvas' servers, do the following:
 
@@ -46,7 +46,7 @@ In order to host your application independently of PlayCanvas' servers, do the f
 * Extract the contents of the zip file to a location of your choosing. The file `index.html` will load your application.
 
 
-## Self-hosting on GitHub pages
+## Self-hosting on GitHub pages {#self-hosting-on-github-pages}
 
 As a PlayCanvas application is static content, [GitHub Pages][12] can be used to host your application using the same steps as [Self-hosting on your own server](#self-hosting-on-your-own-server).
 
@@ -54,7 +54,7 @@ You will also need to add an extra file named `.nojekyll` in the GitHub repo roo
 
 GitHub Pages Documentation can be found [here][13] about usage of the `.nojekyll` file.
 
-## Running a Downloaded Build
+## Running a Downloaded Build {#running-a-downloaded-build}
 
 You cannot load your application by opening the `index.html` file in a browser or from a `file://` url. You must use a local webserver to load the `index.html` file using `http://` or `https://`.
 
