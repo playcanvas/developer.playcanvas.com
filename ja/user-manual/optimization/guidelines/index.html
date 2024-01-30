@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.1">
 <title data-rh="true">最適化のガイドライン | PlayCanvas Developer Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://developer.playcanvas.com/ja/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://developer.playcanvas.com/ja/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://developer.playcanvas.com/ja/user-manual/optimization/guidelines/"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="最適化のガイドライン | PlayCanvas Developer Site"><meta data-rh="true" name="description" content="PlayCanvasアプリで最適なパフォーマンスを得るためのヒントをいくつか紹介します。"><meta data-rh="true" property="og:description" content="PlayCanvasアプリで最適なパフォーマンスを得るためのヒントをいくつか紹介します。"><link data-rh="true" rel="icon" href="/ja/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://developer.playcanvas.com/ja/user-manual/optimization/guidelines/"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/user-manual/optimization/guidelines/" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/ja/user-manual/optimization/guidelines/" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.playcanvas.com/user-manual/optimization/guidelines/" hreflang="x-default"><link rel="stylesheet" href="/ja/assets/css/styles.b86d1b40.css">
-<script src="/ja/assets/js/runtime~main.e668697e.js" defer="defer"></script>
+<script src="/ja/assets/js/runtime~main.9b8a297a.js" defer="defer"></script>
 <script src="/ja/assets/js/main.0a71363f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,7 +18,7 @@
 <li>PlayCanvas において、メッシュインスタンスはドローコール（グラフィックプリミティブを描画するためのコマンド）です。各ドローコールは CPU 上で WebGL にディスパッチするためのコストが必要です。したがって、特にモバイルにおいてドローコールの数を低く保つことが望ましいです。モデルを選択し、インスペクターで表示することで、モデルに対するドローコールのリストが表示されます。100～200のドローコールは、ローエンドのモバイルデバイスにとって目安となります。一方、ハイエンドのデスクトップマシンは、フレームごとに数千個の描画呼び出しを処理しても、60fps を維持することができます。</li>
 <li><a href="/ja/user-manual/graphics/advanced-rendering/batching/">バッチング</a>を使用してドローコールを減らします。Project でBatch Groupを作成し、それらを Render、Model、Element コンポーネントに割り当てることで、エンジンは可能な限り少数のメッシュインスタンスにマージし、ドローコールを減らしてパフォーマンスを向上させます。</li>
 <li>アプリで生成されるシェーダーの数をできるだけ少なくするようにしてください。シェーダーは必要に応じてコンパイルおよびリンクされる必要があり、これは高コストであり、アプリの起動に遅延を引き起こし、フレームレートに欠陥を引き起こします。もし、マテリアルのAがEmissiveマップを持つのに対し、マテリアルBが持たない場合に2つのシェーダーが生成されます。マテリアルBに黒いEmissiveマップを設定すると、マテリアルは同じシェーダーを共有できます。シーン内のマテリアルの数を減らすことで、生成されるシェーダーの数も減らすことができます。</li>
-<li>スキニングされたメッシュの場合、カメラのフラスタムカリングで必要な正確なバウンディングボックスがエンジンによって毎フレーム生成されます。この操作にはある程度のコストがかかり、キャラクターがビューフラスタムから完全に外れている場合でも実行されます。このコストを避けるためには、<a href="/ja/api/pc.RenderComponent.html/#customAabb"><code>Render</code></a>または<a href="/ja/api/pc.ModelComponent.html/#customAabb"><code>Model</code></a> コンポーネントのプロパティであるカスタム AABB をキャラクターに設定することを検討してください。</li>
+<li>スキニングされたメッシュの場合、カメラのフラスタムカリングで必要な正確なバウンディングボックスがエンジンによって毎フレーム生成されます。この操作にはある程度のコストがかかり、キャラクターがビューフラスタムから完全に外れている場合でも実行されます。このコストを避けるためには、<a href="https://api.playcanvas.com/classes/Engine.RenderComponent.html#customAabb" target="_blank" rel="noopener noreferrer"><code>Render</code></a>または<a href="https://api.playcanvas.com/classes/Engine.ModelComponent.html#customAabb" target="_blank" rel="noopener noreferrer"><code>Model</code></a> コンポーネントのプロパティであるカスタム AABB をキャラクターに設定することを検討してください。</li>
 <li>Cameraコンポーネントでフラスタムカリングを有効にする場合は、計算するコストを上回る可能性がある場合に限り、パフォーマンスを節約できる場合にのみ有効にしてください。すべてのメッシュインスタンスが常に表示される場面をレンダリングしている場合、このオプションを無効にしてください。</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="グラフィックス---gpu">グラフィックス - GPU<a href="#グラフィックス---gpu" class="hash-link" aria-label="グラフィックス - GPU への直接リンク" title="グラフィックス - GPU への直接リンク">​</a></h2>
@@ -28,13 +28,13 @@
 <li>テクスチャの異方性 (Anisotropy) の値が増加するほど、視覚的な品質は向上しますが、パフォーマンスが低下します。視覚的品質とパフォーマンスのバランスに注意してください。</li>
 <li>1つの画像に複数のテクスチャをパックする機会があるかどうかを探してください。たとえば、グレースケールのOpacityマップは、Diffuseマップのアルファチャンネルに保存できます。また、グレースケールのGlossマップは、Specularマップのアルファチャンネルに保存できます。これにより、VRAMの使用量を低減できます。</li>
 <li>ポストエフェクトは高コストなため、有効にする前によく考えてください。ピクセルフィルに関しても多くのコストを伴います。</li>
-<li>マテリアルで裏面カリングを有効にする方が、無効にするよりも安価になります。一般的に、裏面カリングは、GPU が塗りつぶすピクセルの数を減らすことができます。これは、新しく作成されたマテリアルのデフォルト設定です。</li>
+<li>マテリアルで裏面カリングを有効にする方が、無効にするよ りも安価になります。一般的に、裏面カリングは、GPU が塗りつぶすピクセルの数を減らすことができます。これは、新しく作成されたマテリアルのデフォルト設定です。</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="グラフィックス---cpuとgpu">グラフィックス - CPUとGPU<a href="#グラフィックス---cpuとgpu" class="hash-link" aria-label="グラフィックス - CPUとGPU への直接リンク" title="グラフィックス - CPUとGPU への直接リンク">​</a></h2>
 <ul>
-<li>コンフィギュレーターなどビジュアルにあまり変化がないアプリケーションでは、CPU および GPU の使用を削減する特別なプロパティがあります。<a href="/ja/api/pc.Application.html/#autoRender"><code>pc.Application#autoRender</code></a>を <code>false</code> に設定することで、ユーザーがカメラを移動したり製品にパーツを追加するなど、視覚的に変化があった場合にのみ<a href="/ja/api/pc.Application.html/#renderNextFrame"><code>pc.Application#renderNextFrame</code></a>を介してフレームをレンダリングします。</li>
+<li>コンフィギュレーターなどビジュアルにあまり変化がないアプリケーションでは、CPU および GPU の使用を削減する特別なプロパティがあります。<a href="https://api.playcanvas.com/classes/Engine.Application.html#autoRender" target="_blank" rel="noopener noreferrer"><code>pc.Application#autoRender</code></a>を <code>false</code> に設定することで、ユーザーがカメラを移動したり製品にパーツを追加するなど、視覚的に変化があった場合にのみ<a href="https://api.playcanvas.com/classes/Engine.Application.html#renderNextFrame" target="_blank" rel="noopener noreferrer"><code>pc.Application#renderNextFrame</code></a>を介してフレームをレンダリングします。</li>
 <li>ダイナミックライトでシャドウキャストを有効にすることは高価です。オムニライトのシャドウは特に高価です。各オムニライトが影を投影する場合、シーンをシャドウマップに6回レンダリングする必要があります。</li>
-<li>シーン内のブレンドされたメッシュインスタンスの数を最小限に抑えてください。ブレンドされたメッシュは、不透明なメッシュインスタンスがすべてディスパッチされた後に、後方から前方のカメラ深度順に提出されます。これにより、ピクセルが複数回塗りつぶされるため、多数のレンダーステート変更が必要になります。ブレンドされたメッシュはマテリアルによってソートできないためです。</li>
+<li>シーン内のブレンドされたメッシュインスタンスの数を最小限に抑えてください。ブレンドされたメッシュは、不透明なメッシュインスタンスがすべてディスパッチされた後に、後方から前方のカメラ深度順に提出されます。これにより、ピクセルが複数回塗りつぶされるため、多数のレ  ンダーステート変更が必要になります。ブレンドされたメッシュはマテリアルによってソートできないためです。</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="物理-physics">物理 (Physics)<a href="#物理-physics" class="hash-link" aria-label="物理 (Physics) への直接リンク" title="物理 (Physics) への直接リンク">​</a></h2>
 <ul>
