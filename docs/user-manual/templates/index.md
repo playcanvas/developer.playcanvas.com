@@ -10,11 +10,11 @@ Templates (or prefabs) allow you to speed up your development by creating Entiti
 </div>
 
 
-## Creating Templates
+## Creating Templates {#creating-templates}
 
 To create a new Template Asset you can right-click on any Entity in your Scene and select Template &rarr; New Template. This will create a new Template Asset and add it to your currently selected folder in the Asset Panel. The Entity you right clicked will become an instance of that new Template Asset automatically.
 
-## Adding Templates in your Scene
+## Adding Templates in your Scene {#adding-templates-in-your-scene}
 
 You can drag & drop a Template Asset in your scene or right click under an Entity in the Hierarchy and select Template &rarr; Add Instance. Then you can select the Template Asset and that will an instance of it under the clicked Entity.
 
@@ -28,11 +28,11 @@ When you select the root of the Template Instance you will notice the following 
 
 ![Template Inspector][2]
 
-## Updating Templates
+## Updating Templates {#updating-templates}
 
 In order to make changes to a Template Asset you first have to add an instance of it in the Editor. Then you can change the instance as you see fit and in the end apply the changes to the Template Asset.
 
-### Template Overrides
+### Template Overrides {#template-overrides}
 
 When you make changes to a Template instance or its children this will generate Template Overrides. There are various types of overrides:
 * *Field override*: An override where the value of a field of the Entity or its Components differs to the one in the Template Asset.
@@ -51,7 +51,7 @@ If you hover over the colored label of the overridden field you can view more de
 
 ![Override Hover][5]
 
-### Applying Overrides
+### Applying Overrides {#applying-overrides}
 
 To apply an override you can click APPLY in the tooltip shown when you hover over the overridden field.
 
@@ -63,7 +63,7 @@ Any overrides you apply to the Template Asset will propagate to other instances 
 
 *Note: You cannot currently undo the action of applying overrides to a Template Asset.*
 
-### Reverting Overrides
+### Reverting Overrides {#reverting-overrides}
 
 To revert a specific override, click REVERT in the tooltip shown when you hover over the overridden field.
 
@@ -71,7 +71,7 @@ To revert all overrides select the root of the Template Instance and click Rever
 
 Alternatively you can open the [Override Diff View][4] and revert overrides from there too.
 
-### More details on Overrides
+### More details on Overrides {#more-details-on-overrides}
 
 When you create an override then the property that it overrides gets protected from updates to the Template Asset. For example. say your Template Instance looks like so:
 
@@ -79,7 +79,7 @@ When you create an override then the property that it overrides gets protected f
 
 You modify the position of Tree1/Sphere. This creates an override on the position of the Sphere entity. You then create another instance of the Template Asset and you change the position of the Sphere to something else. If you apply the override from the second instance then that will not update the position of the first instance since it is overridden and protected. In order for the first instance to pick up position changes for the Sphere Entity you have to revert the override first.
 
-## Instantiating At Runtime
+## Instantiating At Runtime {#instantiating-at-runtime}
 
 You can instantiate Template Assets at runtime like so:
 
@@ -91,7 +91,7 @@ this.app.root.addChild(instance);
 
 You can also use Script Attributes to pass Template Assets to your scripts instead of searching for them by ID.
 
-## When do I need to load Template Assets? 
+## When do I need to load Template Assets? {#when-do-i-need-to-load-template-assets}
 
 Templates store the Entity hierarchy and data, similar to scenes. When a template instance is added to the scene in the Editor, the Entity hierarchy and data is included in the Scene data. 
 

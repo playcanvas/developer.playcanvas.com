@@ -24,7 +24,7 @@ To address these issues, PlayCanvas uses the **Clustered Lighting** solution to 
 
 Note that Directional Lights affect all objects so they do not use the Clustered Lighting solution.
 
-## Implementation Overview
+## Implementation Overview {#implementation-overview}
 
 The following steps provide a basic overview of the Clustered Lighting implementation:
 
@@ -38,7 +38,7 @@ The following steps provide a basic overview of the Clustered Lighting implement
 5. Shadow Maps and Cookie Textures are all rendered into an atlas, instead of being individual textures, so they are all accessible to the shader at the same time.
 6. During lighting evaluation in the fragment shader, a fragment world space position is used to access a cell of the 3D grid and evaluate the stored lights.
 
-## Editor Options
+## Editor Options {#editor-options}
 
 Options for Clustered Lighting can be found in the Editor Settings under 'Rendering'.
 
@@ -46,9 +46,9 @@ Options for Clustered Lighting can be found in the Editor Settings under 'Render
 
 This will allow you to disable Clustered Lighting (if you need to use the previous lighting system) and to [tune performance and features](#tuning-clustered-lighting) mentioned below.
 
-## Tuning Clustered Lighting
+## Tuning Clustered Lighting {#tuning-clustered-lighting}
 
-### Enabling Features
+### Enabling Features {#enabling-features}
 
 The Clustered Lighting shader needs to handle all supported lights, so it must contain the code to handle these features. This can cause the shader to be larger than needed and take longer to compile. To resolve these issues, there is a set of feature options that allow you to disable the features your applications doesn't need and speed up the shader compilation:
 
@@ -56,7 +56,7 @@ The Clustered Lighting shader needs to handle all supported lights, so it must c
 - **Cookies Enabled** – Enable or disable the support for light Cookies
 - **Area Lights Enables** – Enable or disable the support for Area Lights
 
-### Configuring the 3D Grid
+### Configuring the 3D Grid {#configuring-the-3d-grid}
 
 ![3D Grid Configuration][3d-grid-config]
 
@@ -64,7 +64,7 @@ The **Cells** property allows you to specify the number of cells along each worl
 
 The **Max Lights Per Cell** property allows you to specify the maximum number of lights stored in each individual cell. This represents the maximum number of lights that overlap. Usually, the number of lights must be increased for coarser grid subdivisions, since the light overlap is larger.
 
-### Configuring Atlas
+### Configuring Atlas {#configuring-atlas}
 
 All of the Shadow Maps and Cookie Textures used by visible lights are stored in an atlas. There is one atlas texture for Shadows and another for Cookies. The atlases can have different resolutions, although internally they use the same subdivision into smaller areas used by individual lights.
 
@@ -78,7 +78,7 @@ All of the Shadow Maps and Cookie Textures used by visible lights are stored in 
 
 - **Manual** – Allows the atlas to be split into a fixed number of sub-textures, which can be different sizes. It is set up using an array of numbers, where each number represents a split, both vertically and horizontally. See the next section for an example of manual atlas splits.
 
-### Configuring Manual Atlas Split
+### Configuring Manual Atlas Split {#configuring-manual-atlas-split}
 
 To understand how an atlas is manually split, take an array with two numbers: [2, 2]. The first number in the array splits the atlas into 2x2, for a total of four areas. Any following numbers in the array would split these areas again. In this case, the second number in the array splits one of the existing areas into another 2x2 (e.g. four areas), for a combined total of 7 areas.
 
@@ -95,21 +95,21 @@ Other Examples:
 
 The main advantage of using manual subdivision is the level of detail that can be achieved. You can set up a fixed amount of sub-textures, which are assigned to the lights by order of their screen-space size. This allows lights that are larger on screen to receive a larger area of the atlas, while smaller lights in the distance use a smaller area of the atlas. If there are more lights than the number of available areas, the smallest screen-space lights will not cast any shadows.
 
-### Shadows Type
+### Shadows Type {#shadows-type}
 
 All lights that cast shadows use the same shadow type. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
 
-## Limitations
+## Limitations {#limitations}
 
 Internally, a light index is stored using 8 bits, so the maximum number of visible lights at any frame is 254 (one index is reserved). In the future, there may be an additional option to use 16 bits to store the index and increase the limit.
 
-## Performance Considerations
+## Performance Considerations {#performance-considerations}
 
 - **Cell subdivisions** should be as small as possible, since large cell subdivisions lead to larger CPU usage when the grid is filled by the lights each frame. This should be optimized for each scene, depending on its lighting complexity. Optimally, you should have enough cells to limit the overlap of lights and the number of lights in each cell.
 - The **Max Lights Per Cell** should be as small as possible, since this limits the size of the texture used to store the 3D grid, which needs to be updated every frame.
 - If an application using Clustered Lighting **runs slowly** on older mobile devices, consider globally turning off features like Shadows or Cookies.
 
-## Render Debug Grid
+## Render Debug Grid {#render-debug-grid}
 
 To help with debugging and tuning performance with Clustered Lighting, you can assign the [Layer][pc-layer-api] ID to render to to the [debugLayer of LightingParams][pc-lighting-debug-layer-api]. e.g
 
