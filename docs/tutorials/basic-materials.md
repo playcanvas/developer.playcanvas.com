@@ -44,9 +44,9 @@ Changing the color of the material is a good start, but you'll quickly want more
 
 Download & save these sample textures:
 
-[![Sample Diffuse Map][5]][5]
+![Sample Diffuse Map][5]
 
-[![Sample Normal Map][6]][6]
+![Sample Normal Map][6]
 
 Then upload them to your project by dragging the files into the Editor.
 

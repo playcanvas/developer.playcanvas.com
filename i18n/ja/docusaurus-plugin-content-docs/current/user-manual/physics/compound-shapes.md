@@ -15,7 +15,7 @@ sidebar_position: 4
 
 複合形状オブジェクトの形状は、子オブジェクトのコリジョン形状によって定義されます。
 
-[![コンパウンドの設定][compound-shapes-chair-setup-png]][compound-shapes-chair-setup-png]
+![Compound shapes setup][compound-shapes-chair-setup-png]
 
 ![コンパウンドの椅子][compound-shapes-chair-gif]
 
@@ -25,7 +25,6 @@ Collisionコンポーネントが子エンティティで、プリミティブ�
 
 
 親も物理オブジェクトの重心であり、通常はオブジェクトの形状の範囲内（通常は中心）にあることをお勧めします。そうでない場合、力やトルクが加わったときに、オブジェクトが不思議な挙動を示す可能性があります。
-
 
 
 [primitive-shapes-list]: /user-manual/physics/physics-basics/#rigid-bodies

@@ -5,11 +5,13 @@ sidebar_position: 6
 
 デバイスピクセル比率(Device Pixel Ratio)は、ハードウェアスクリーン上の物理的なピクセルと、論理的なピクセル(スクリーンの物理的なサイズに関連した、CSSによる)の比率です。
 
-プロジェクト設定でDevice Pixel Ratio を有効にすることで、アプリケーションをスクリーンのネイティブ解像度でレンダリングし、非常に鮮明に見えるようになります。しかし、それはそれに対してパフォーマンスコストがかかります。つまり、毎フレームの描画に必要なピクセルが増えます。
+Enabling Device Pixel Ratio on the Project settings will render the application at the native resolution of the screen which will make it look very crisp. However, that comes at a performance cost as now there are more pixels to fill and render each frame.
+
 ![Project setting][3]
 
-Device Pixel Ratioが有効になっている場合、解像度が高いスクリーンを備えた低/中級モバイルデバイスなどでは問題が生じる可能性があります。ハードウェアのフィルレート制限のため、デバイスピクセル比率を有効にすると低いフレームレートが発生する可能性があります。
-[![Device Pixel Ratio][1]][2]
+Below is an example of the Model Viewer Starter Kit with device pixel ratio enabled and disabled. Click on the thumbnail to see the full size.
+
+![Device Pixel Ratio][1]
 
 理想的には、高性能のデバイスのユーザーは最高品質でレンダリングし、低性能デバイスであってもプレイ可能なフレームレートを維持するために比率を減らせる、両方の利点を兼ね備えた状態にしたいものです。
 
