@@ -13,4 +13,4 @@ PlayCanvasを宣伝や広告素材に使用する人々のためにプレスパ�
 最終更新日: 2022年8月15日
 
 [preview-image]: /images/user-manual/press-pack/press-pack-preview.png
-[download-link]: /downloads/playcanvas-press-pack.zip
+[download-link]: pathname:///downloads/playcanvas-press-pack.zip

@@ -104,7 +104,7 @@ The ZIP can then be given to your Snapchat representative to upload to the ad ne
 [2]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file
 [4]: https://tinypng.com/
 [5]: https://playcanvas.com/project/796932/overview/cube-jump-snapchat-ad
-[6]: /downloads/sc-playable-ad-cube-jump.zip
+[6]: pathname:///downloads/sc-playable-ad-cube-jump.zip
 [7]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
 [mraid-api]: https://www.iab.com/guidelines/mraid/
 [guid-generator]: https://www.guidgenerator.com/
