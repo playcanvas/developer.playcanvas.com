@@ -118,5 +118,5 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 ```
 
 [1]: /images/user-manual/xr/using-webxr/camera-offset.jpg
-[2]: /api/pc.XrManager.html
+[2]: https://api.playcanvas.com/classes/Engine.XrManager.html
 [3]: https://immersive-web.github.io/layers/

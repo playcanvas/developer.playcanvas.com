@@ -68,4 +68,4 @@ Soundコンポーネント APIの詳細については[こちら][8]をご覧く
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [6]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode
 [7]: https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer
-[8]: /api/pc.Sound.html
+[8]: https://api.playcanvas.com/classes/Engine.Sound.html

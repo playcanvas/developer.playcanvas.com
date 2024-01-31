@@ -93,6 +93,6 @@ if (element.batchGroupId)
 [5]: /images/user-manual/optimization/batching/western-animation.gif
 [6]: /user-manual/editor/settings/#batch-groups
 [7]: /user-manual/scenes/components/model
-[8]: /api/pc.BatchManager.html
+[8]: https://api.playcanvas.com/classes/Engine.BatchManager.html
 [9]: /user-manual/scenes/components/sprite
 [10]: /user-manual/scenes/components/element

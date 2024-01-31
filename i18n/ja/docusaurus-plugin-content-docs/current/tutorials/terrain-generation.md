@@ -164,5 +164,5 @@ Terrain.prototype.createTerrainFromHeightMap = function (img, subdivisions) {
 };
 ```
 
-[1]: /api/pc.Mesh.html
+[1]: https://api.playcanvas.com/classes/Engine.Mesh.html
 [2]: https://playcanvas.com/project/406046

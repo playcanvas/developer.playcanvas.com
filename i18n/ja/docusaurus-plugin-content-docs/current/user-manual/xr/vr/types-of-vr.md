@@ -18,4 +18,4 @@ sidebar_position: 2
 
 適切なリファレンススペース: `pc.XRSPACE_LOCALFLOOR`, `pc.XRSPACE_BOUNDEDFLOOR`, `pc.XRSPACE_UNBOUNDED`.
 
-[1]: /api/pc.html#XRSPACE_VIEWER
+[1]: https://api.playcanvas.com/modules/Engine.html#XRSPACE_VIEWER
