@@ -23,8 +23,6 @@ const config = {
   organizationName: 'playcanvas', // Usually your GitHub org/user name.
   projectName: 'developer.playcanvas.com', // Usually your repo name.
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
 
   // Even if you don't use internationalization, you can use this field to set
