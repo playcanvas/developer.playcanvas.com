@@ -13,7 +13,7 @@ The Editor has a user accessible API that is currently in beta which can be used
 
 The API is not yet considered stable and may change in the future as we continue development. However, it is unlikely that API will change a lot from its current state.
 
-Full documentation of the API can be found on [GitHub][github-api].
+The Editor API is open sourced on [GitHub][github-repo]. The API documentation can be found [here][github-api].
 
 ## Automation Example
 
@@ -171,7 +171,8 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
 ```
 
 [disable-red-boxes-gif]: /images/user-manual/editor/editor-api/disable-red-boxes.gif
-[github-api]: https://github.com/playcanvas/editor-api/blob/master/docs/modules.md#playcanvas-editor-api
+[github-api]: https://api.playcanvas.com/modules/Editor.html
+[github-repo]: https://github.com/playcanvas/editor-api
 [user-scripts]: https://en.wikipedia.org/wiki/Userscript
 [viewport]: /user-manual/editor/viewport
 [violentmonkey]: https://violentmonkey.github.io/

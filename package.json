@@ -36,19 +36,20 @@
     "generate-tutorial-data": "node utils/generate-tutorial-data.mjs"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.1.0",
-    "@docusaurus/preset-classic": "^3.1.0",
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/plugin-client-redirects": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "sass": "^1.69.7"
+    "sass": "^1.70.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.1.0",
-    "@docusaurus/types": "^3.1.0"
+    "@docusaurus/module-type-aliases": "^3.1.1",
+    "@docusaurus/types": "^3.1.1"
   },
   "browserslist": {
     "production": [

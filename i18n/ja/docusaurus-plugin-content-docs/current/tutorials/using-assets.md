@@ -202,9 +202,9 @@ this.app.assets.load(asset);
 
 `asset.ready()`メソッドはアセットが読み込まれるとすぐにそのコールバックを呼びます。また、アセットがすでに読み込まれている場合、すぐにそれを呼び出します。アセットがすでに読み込まれている場合、 `app.assets.load()`は何もしません。
 
-[1]: /api/pc.AssetRegistry.html
+[1]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html
 [3]: https://playcanvas.com/project/406036
-[5]: /downloads/tutorials/A.dae
-[6]: /downloads/tutorials/B.dae
-[7]: /downloads/tutorials/C.dae
-[8]: /api/pc.RenderComponent.html#asset
+[5]: pathname:///downloads/tutorials/A.dae
+[6]: pathname:///downloads/tutorials/B.dae
+[7]: pathname:///downloads/tutorials/C.dae
+[8]: https://api.playcanvas.com/classes/Engine.RenderComponent.html#asset

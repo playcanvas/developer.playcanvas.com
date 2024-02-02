@@ -39,7 +39,7 @@ PlayCanvasアプリで最適なパフォーマンスを得るためのヒント�
 
 [1]: /user-manual/graphics/advanced-rendering/batching
 [2]: /user-manual/optimization/runtime-devicepixelratio
-[3]: /api/pc.Application.html#autoRender
-[4]: /api/pc.Application.html#renderNextFrame
-[5]: /api/pc.RenderComponent.html#customAabb
-[6]: /api/pc.ModelComponent.html#customAabb
+[3]: https://api.playcanvas.com/classes/Engine.Application.html#autoRender
+[4]: https://api.playcanvas.com/classes/Engine.Application.html#renderNextFrame
+[5]: https://api.playcanvas.com/classes/Engine.RenderComponent.html#customAabb
+[6]: https://api.playcanvas.com/classes/Engine.ModelComponent.html#customAabb

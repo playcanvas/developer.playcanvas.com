@@ -29,4 +29,4 @@ You can control an Animation component's properties using a [script component][2
 
 [1]: /images/user-manual/scenes/components/component-animation.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.AnimationComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.AnimationComponent.html

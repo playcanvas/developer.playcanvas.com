@@ -129,4 +129,4 @@ Halo.prototype.update = function(dt) {
 [2]: /images/tutorials/intermediate/light-halos/material.png
 [3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
-[5]: /api/pc.MeshInstance.html
+[5]: https://api.playcanvas.com/classes/Engine.MeshInstance.html

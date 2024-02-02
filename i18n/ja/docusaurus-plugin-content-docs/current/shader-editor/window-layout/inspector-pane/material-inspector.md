@@ -33,4 +33,4 @@ Basic、Render States、Parametersの3つのセクションがあります。
 
 [1]: /images/shader-editor/inspector-pane-material.png
 [2]: /shader-editor/window-layout/assets-pane
-[3]: /api/pc.Material.html#blendType
+[3]: https://api.playcanvas.com/classes/Engine.Material.html#blendType

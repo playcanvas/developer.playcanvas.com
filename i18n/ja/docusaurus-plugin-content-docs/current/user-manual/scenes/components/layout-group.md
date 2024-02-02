@@ -29,4 +29,4 @@ LayoutGroupコンポーネントは、エンティティが子ElementのElement�
 [0]: /user-manual/user-interface/layout-groups
 [1]: /images/user-manual/scenes/components/component-layoutgroup.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.LayoutGroupComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.LayoutGroupComponent.html

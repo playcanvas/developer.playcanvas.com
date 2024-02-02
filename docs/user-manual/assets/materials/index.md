@@ -9,11 +9,11 @@ In PlayCanvas, a material is an Asset type which collects all these properties t
 
 We also support our old Phong Material type.
 
-## Importing Materials
+## Importing Materials {#importing-materials}
 
 Materials are imported automatically when you upload a 3D model (e.g. FBX or COLLADA) file into PlayCanvas. Materials will be generated with the same properties as they exist in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
 
-## Creating New Materials
+## Creating New Materials {#creating-new-materials}
 
 You can create new materials directly from the PlayCanvas Editor interface.
 
@@ -21,7 +21,7 @@ You can create new materials directly from the PlayCanvas Editor interface.
 
 This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
 
-## Selecting a Material
+## Selecting a Material {#selecting-a-material}
 
 ![Model Inspector][2]
 
@@ -31,7 +31,7 @@ You can select a material in the asset panel. You can also select materials from
 
 Generally, clicking on a material preview icon will take you to the material inspector.
 
-## Assigning Materials
+## Assigning Materials {#assigning-materials}
 
 ![Model Component][3]
 
@@ -57,7 +57,7 @@ Then you can select a different material for this particular Entity:
 
 ![Select Different Material][7]
 
-## Editing a Material
+## Editing a Material {#editing-a-material}
 
 ![Material Inspector][8]
 
@@ -65,19 +65,19 @@ Once you have a material selected you can edit its properties.
 
 The Editor supports to types of material 'Shading Model', this is defined in a drop-down at the top of the material inspector.
 
-### Physical
+### Physical {#physical}
 
 The physical shading model is our most advanced shading model. This is the model for PlayCanvas's Physically Based Renderer (PBR).
 
 [Physical Material Properties][9]
 
-### Phong
+### Phong {#phong}
 
 The phong shading model is our legacy shading model. Use this for compatibility reasons.
 
 [Phong Material Properties][10]
 
-## Material Maps
+## Material Maps {#material-maps}
 
 ![Material Map Slot][11]
 
@@ -85,15 +85,15 @@ Much of editing a material involves creating and assigning textures maps to the 
 
 There are a few options that are available on most texture map slots for a material.
 
-### Texture Asset
+### Texture Asset {#texture-asset}
 
 First is the texture asset, upload an image to PlayCanvas and we'll create a texture asset for you. you can assign this to a slot on a material.
 
-### Color or Tint Color
+### Color or Tint Color {#color-or-tint-color}
 
 Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
 
-### Channel
+### Channel {#channel}
 
 Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
 

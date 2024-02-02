@@ -8,7 +8,7 @@ sidebar_position: 2
 1. [iframe][1]を使用してPlayCanvasでホスティングしたゲームを埋め込む。
 2. Editorからゲームをダウンロードして自身のサイトにファイルをアップロード。
 
-## iframe の埋め込み
+## iframe の埋め込み {#iframe-embedding}
 
 [playcanvas.comに公開][2]すると、アプリケーションにURLが割り当てられます。アプリケーションを他のページに埋め込むには、単にこのURLを`src`プロパティの値としてiframeに含めるだけでよいです。
 
@@ -23,7 +23,7 @@ sidebar_position: 2
 </html>
 ```
 
-## 自身のサーバでセルフホスティング
+## 自身のサーバでセルフホスティング {#self-hosting-on-your-own-server}
 
 PlayCanvasサーバから独立してゲームをホスティングするには、次を行います：
 
@@ -46,7 +46,7 @@ PlayCanvasサーバから独立してゲームをホスティングするには�
 * 以下の手順で、プロジェクトのzipファイルを展開し、任意の場所に保存します。そして、`index.html` ファイルを開くことでアプリケーションを起動できます。
 
 
-## GitHub Pages での自己ホスティング
+## GitHub Pages での自己ホスティング {#self-hosting-on-github-pages}
 
 PlayCanvasアプリケーションは静的コンテンツであるため、[Self-hosting on your own server](#self-hosting-on-your-own-server)と同じ手順で[GitHub Pages][12]を使用してアプリケーションをホストすることができます。
 
@@ -54,7 +54,7 @@ PlayCanvasアプリケーションは静的コンテンツであるため、[Sel
 
 GitHub Pagesドキュメントは、[`.nojekyll`][13]ファイルの使用に関する情報を提供しています。
 
-## ダウンロードされたビルドを実行する
+## ダウンロードされたビルドを実行する {#running-a-downloaded-build}
 
 `index.html `ファイルをブラウザで開いたり、`file://` URLからアプリケーションをロードすることはできません。 `http://` または `https://` を使用して`index.html` ファイルをロードするためには、ローカルのウェブサーバを使用する必要があります。
 

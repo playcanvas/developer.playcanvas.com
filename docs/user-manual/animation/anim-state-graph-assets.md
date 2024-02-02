@@ -15,13 +15,13 @@ When selecting an animstategraph asset in the editors asset panel, you’ll open
 
 Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behavior.
 
-## States
+## States {#states}
 
 In essence, states are used to specify which animations should play at a given point in time. An anim state graph can only be in one of these states at a given time.
 
 There are four types of states present in state graphs. Animation states, along with the START state, END state and ANY state. Only animation states can be created and deleted by the user and only these will be linked to animation assets. The other states are used to control the flow through the state machine.
 
-### Animation States
+### Animation States {#animation-states}
 
 ![State][7]
 
@@ -33,7 +33,7 @@ Animation states define a playable animation such as ‘Idle’, ‘Jump’ or �
 | Speed    | The playback speed for animations that are linked to this state. |
 | Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
 
-### START state
+### START state {#start-state}
 
 ![Start State][8]
 
@@ -43,13 +43,13 @@ The START state is the entry point of every state graph. When an anim component 
 
 It is not possible to create any other transitions to or from the START state. It can only be entered again by transitioning to the END state.
 
-### END state
+### END state {#end-state}
 
 ![End State][10]
 
 The end state marks an exit out of the current state graph. If your animation state is set up to transition to the END state, the system will move directly to the default animation state which is connected to the START state. This is useful to create cyclical flows through the graph while still laying out your graph in a linear fashion. It is not possible to create transitions from the END state to any other state. It will always transition directly to the START state.
 
-### ANY state
+### ANY state {#any-state}
 
 ![Any State][9]
 
@@ -57,7 +57,7 @@ This state is used to create transitions which can be activated while the system
 
 This is useful to set up transitions which you want to activate, no matter which state you’re currently in. For example you could have a jump state which should be reachable from both an idle and walk state. Instead of setting up transitions from both the idle and walk states to the jump state, a transition can be set up between the ANY state and the jump state.
 
-### Transitions
+### Transitions {#transitions}
 
 Transitions define how the anim state graph can move from one animation state to another. They can be created by right clicking an animation state and selecting `Add transition` from the context menu.
 
@@ -74,7 +74,7 @@ The available transition variables are:
 
 It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
 
-### Parameters
+### Parameters {#parameters}
 
 The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
 
@@ -98,7 +98,7 @@ Each condition consists of a conditional statement which compares the current va
 
 Can be used in the transition between the Idle and Jump animation states to ensure that a character only jumps when the ‘Jump’ parameter has been set to true via a script.
 
-### Layers
+### Layers {#layers}
 
 So far, animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behavior. An example could be animating a main character's movement and locomotion on a single layer, while animating its facial expressions on a separate layer that’s driven by its own state graph and parameters.
 
@@ -110,7 +110,7 @@ It is then possible to switch to editing this layer by selecting it from the lay
 
 ![Select Layer][6]
 
-### Layer Blending
+### Layer Blending {#layer-blending}
 
 By default, layers animate a model in the order that they’re created in the layers panel. Any animation values they set on a model's bones will be overwritten by subsequent layers. If instead you wish to blend the animation values of the layers together, you can set the `blend type` of your layers to `Additive` rather than the default `Override`:
 

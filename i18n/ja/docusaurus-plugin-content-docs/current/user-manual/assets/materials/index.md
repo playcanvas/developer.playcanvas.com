@@ -9,11 +9,11 @@ PlayCanvasでは、マテリアルはプロパティをまとめたアセット�
 
 以前のフォンマテリアルタイプもサポートしています。
 
-## マテリアルのインポート
+## マテリアルのインポート {#importing-materials}
 
 PlayCanvasに3Dモデル(例:FBXまたはCOLLADA)ファイルをアップロードすると、マテリアルが自動的にインポートされます。マテリアルは、3Dモデリングツール内に存在するプロパティと同じプロパティで生成されます。埋め込みメディア(FBXのみ)を使用してアップロードする場合は、関連するすべてのテクスチャマップが自動的に設定されます。
 
-## 新しいマテリアルの作成
+## 新しいマテリアルの作成 {#creating-new-materials}
 
 PlayCanvas Editorインターフェイスから直接新しいマテリアルを作成できます。
 
@@ -21,7 +21,7 @@ PlayCanvas Editorインターフェイスから直接新しいマテリアルを
 
 これにより、新しいマテリアルアセットが作成され、画面の右側にマテリアルインスペクターが開きます。
 
-## マテリアルの選択
+## マテリアルの選択 {#selecting-a-material}
 
 ![Model Inspector][2]
 
@@ -31,7 +31,7 @@ PlayCanvas Editorインターフェイスから直接新しいマテリアルを
 
 マテリアルのプレビューアイコンをクリックすると、マテリアルインスペクターに移動します。
 
-## マテリアルの割り当て
+## マテリアルの割り当て {#assigning-materials}
 
 ![Model Component][3]
 
@@ -57,7 +57,7 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 ![Select Different Material][7]
 
-## マテリアルの編集
+## マテリアルの編集 {#editing-a-material}
 
 ![Material Inspector][8]
 
@@ -65,19 +65,19 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 エディタには2つのマテリアル 'シェーディングモデル' があり、マテリアルインスペクターの上部にドロップダウンで定義されています。
 
-### Physical
+### Physical {#physical}
 
 物理的なシェーディングモデルは、最も高度なシェーディングモデルです。これは、PlayCanvasのPBR（物理ベースレンダラー）のモデルです。
 
 [Physical Material Properties][9]
 
-### Phong
+### Phong {#phong}
 
 フォンのシェーディングモデルは、レガシーシェーディングモデルです。互換性のために使用してください。
 
 [Phong Material Properties][10]
 
-## マテリアルマップ 
+## マテリアルマップ  {#material-maps}
 
 ![Material Map Slot][11]
 
@@ -85,15 +85,15 @@ Asset Materialsをクリックすると、Modelアセットが選択されます
 
 ほとんどのテクスチャマップスロットで利用可能ないくつかのオプションがあります。
 
-### Textureアセット
+### Textureアセット {#texture-asset}
 
 最初にTextureアセットをアップロードしてください。PlayCanvasはTextureアセットを作成します。これらをマテリアルのスロットに割り当てることができます。
 
-### ColorまたはTint Color
+### ColorまたはTint Color {#color-or-tint-color}
 
 いくつかのマップスロットは、テクスチャマップがなくても単色にすることができます。また、テクスチャが割り当てられている場合は、tint colorをサポートするスロットもあります。tint colorが有効になっている場合、tint colorは、テクスチャマップスロットの色に乗算されます。
 
-### Channel
+### Channel {#channel}
 
 一部のマップでは、単一のグレースケール値、つまり0.0 -> 1.0が必要です。この場合、使用するテクスチャのチャンネルを選択できます。 **RGB** は、すべての3つのチャンネルを使用することを意味します。**R**、 **G**、または **B** は、赤、緑、または青チャンネルのみが使用されることを意味します。
 

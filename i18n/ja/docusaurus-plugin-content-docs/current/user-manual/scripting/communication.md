@@ -94,4 +94,4 @@ Display.prototype.initialize = function () {
 
 ご覧の通り、これにより設定コードを減らし、よりクリーンなコードになります。
 
-[1]: /api/pc.EventHandler.html
+[1]: https://api.playcanvas.com/classes/Engine.EventHandler.html

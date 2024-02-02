@@ -29,4 +29,4 @@ MyScript.prototype.update = function(dt) {
 };
 ```
 
-[1]: /api/pc.RigidBodyComponent.html
+[1]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html

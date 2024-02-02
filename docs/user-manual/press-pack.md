@@ -13,4 +13,4 @@ The pack includes logos and promotional images in the common aspect ratios. Ther
 Last updated: Mon 15 Aug 2022
 
 [preview-image]: /images/user-manual/press-pack/press-pack-preview.png
-[download-link]: /downloads/playcanvas-press-pack.zip
+[download-link]: pathname:///downloads/playcanvas-press-pack.zip

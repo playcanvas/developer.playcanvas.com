@@ -3,7 +3,7 @@ title: Organizationの管理
 sidebar_position: 2
 ---
 
-### 権限 (Permissions)
+### 権限 (Permissions) {#permissions}
 
 Organizationのアカウントページから、Organizationの権限を管理することができます。
 
@@ -13,7 +13,7 @@ Organizationのオーナー (Owner) および管理者を確認することが�
 
 管理者 (Admin) は、オーナーができることすべて、たとえばプロジェクトの作成や削除をすることができますが、Organizationの削除だけはできません。
 
-### シート (Seats)
+### シート (Seats) {#seats}
 
 ユーザー (User) にシートを与えるには、Organizationが所有する任意のプライベートプロジェクトにユーザーを追加します。パブリックプロジェクトはシートを必要としません。
 
@@ -31,7 +31,7 @@ Organizationのオーナーは、いかなるプロジェクトにもアクセ�
 
 Organizationのオーナーはここから、Organizationを完全に削除することができます。これにより、アカウントおよびすべてのプロジェクトが完全に削除されます。この操作は取り消すことはできません。
 
-### プロジェクト
+### プロジェクト {#projects}
 
 Organizationの管理者は、Organizationが所有する任意のプロジェクトに自分自身を追加することができます。アカウントページで、右側のドロップダウンアイコンをクリックし、 'Add me as admin' をクリックします。
 

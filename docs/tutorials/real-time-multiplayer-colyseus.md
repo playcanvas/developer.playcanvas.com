@@ -10,32 +10,32 @@ thumb: https://avatars.githubusercontent.com/u/28384334?s=300&v=4
 
 > *Select create game to open a new game. And click anywhere on the floor to move the object.*
 
-## On this tutorial you will learn:
+## On this tutorial you will learn: {#on-this-tutorial-you-will-learn}
 
 - Setting up your Colyseus server
 - Synchronizing the state between server and client
 - Exchanging messages between client and server
 - Matchmaking: how to create, join, and list available games
 
-## Materials
+## Materials {#materials}
 
 - [PlayCanvas Project (Client-side)](https://playcanvas.com/project/859259/overview/colyseus-demo)
 - [Colyseus TypeScript Project (Server-side)](https://github.com/colyseus/tutorial-playcanvas-server)
 
-## Before you start
+## Before you start {#before-you-start}
 
-### Prior Knowledge Expected
+### Prior Knowledge Expected {#prior-knowledge-expected}
 
 - Basic PlayCanvas knowledge ([See PlayCanvas Developer Resources](https://developer.playcanvas.com/))
 - Basic JavaScript/TypeScript understanding ([See TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html))
 - Basic Node.js understanding ([See Introduction to Node.js](https://nodejs.dev/en/learn/))
 
-### Software requirements
+### Software requirements {#software-requirements}
 
 - [Node.js LTS](https://nodejs.org/en/download/)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
-## Creating the Server
+## Creating the Server {#creating-the-server}
 
 We will be making a basic server, hosted locally on your computer for keeping player states. Changes will be synchronized with clients accordingly.
 
@@ -64,7 +64,7 @@ If successful, the output should look like this in your command-line:
 ⚔️ Listening on ws://localhost:2567
 ```
 
-## Including the Colyseus JavaScript SDK
+## Including the Colyseus JavaScript SDK {#including-the-colyseus-javascript-sdk}
 
 Now we need to add the Colyseus JavaScript SDK on PlayCanvas.
 
@@ -86,7 +86,7 @@ https://unpkg.com/colyseus.js@^0.15.0-preview.2/dist/colyseus.js
 
 This is going to make the `Colyseus` [JavaScript SDK](https://docs.colyseus.io/colyseus/getting-started/javascript-client/) available for our PlayCanvas scripts.
 
-## Establishing a Client-Server Connection
+## Establishing a Client-Server Connection {#establishing-a-client-server-connection}
 
 Now, from a new PlayCanvas Script, let's instantiate our `Colyseus.Client` instance. ([see "Creating new scripts"](/user-manual/scripting/creating-new/))
 
@@ -122,7 +122,7 @@ You will be seeing the following message in your server logs, which means a clie
 19U8WkmoK joined!
 ```
 
-## Room State and Schema
+## Room State and Schema {#room-state-and-schema}
 
 In Colyseus, we define shared data through its `Schema` structures.
 
@@ -197,20 +197,20 @@ Also, when the client disconnects, let's remove the player from the map of playe
 
 The state mutations we've done in the server-side **can be observed** in the client-side, and that's what we're going to do in the next section.
 
-## Setting up the Scene for Synchronization
+## Setting up the Scene for Synchronization {#setting-up-the-scene-for-synchronization}
 
 For this demo, we need to create two objects in our Scene:
 
 - A Plane to represent the floor
 - A Capsule to represent the players, which we will clone for each new player joining the room.
 
-### Creating the Plane
+### Creating the Plane {#creating-the-plane}
 
 Let's create a Plane with scale `8`.
 
 ![Plane](/images/tutorials/multiplayer-colyseus/plane.jpg)
 
-### Creating the Player
+### Creating the Player {#creating-the-player}
 
 Let's create the Player capsule with scale `1`.
 
@@ -218,11 +218,11 @@ Make sure to uncheck the `"Enabled"` property. We will not have any Player insta
 
 ![Player](/images/tutorials/multiplayer-colyseus/player.png)
 
-## Listening for State Changes
+## Listening for State Changes {#listening-for-state-changes}
 
 After a connection with the room has been established, the client-side can start listening for state changes, and create a visual representation of the data in the server.
 
-### Adding new players
+### Adding new players {#adding-new-players}
 
 As per [Room State and Schema](#room-state-and-schema) section, whenever the server accepts a new connection - the `onJoin()` method is creating a new Player instance within the state.
 
@@ -271,7 +271,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 // ...
 ```
 
-### The "Current Player"
+### The "Current Player" {#the-current-player}
 
 You can keep a special reference to the current player object by checking the `sessionId` against the connected `room.sessionId`:
 
@@ -286,7 +286,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 });
 ```
 
-### Removing disconnected players
+### Removing disconnected players {#removing-disconnected-players}
 
 When a player is removed from the state (upon `onLeave()` in the server-side), we need to remove their visual representation as well.
 
@@ -302,9 +302,9 @@ this.room.state.players.onRemove((player, sessionId) => {
 // ...
 ```
 
-## Moving the players
+## Moving the players {#moving-the-players}
 
-### Sending the new position to the server
+### Sending the new position to the server {#sending-the-new-position-to-the-server}
 
 We are going to allow the "mouse down" event; use [ray cast](/user-manual/physics/ray-casting/) to determine the exact `Vec3` position the player should move towards, and then send it as a message to the server.
 
@@ -343,7 +343,7 @@ this.app.mouse.on(pc.EVENT_MOUSEDOWN, (event) => {
 });
 ```
 
-### Receiving the message from the server
+### Receiving the message from the server {#receiving-the-message-from-the-server}
 
 Whenever the `"updatePosition"` message is received in the server, we're going to mutate the player that sent the message through its `sessionId`.
 
@@ -363,7 +363,7 @@ Whenever the `"updatePosition"` message is received in the server, we're going t
 // ...
 ```
 
-### Updating Player's visual representation
+### Updating Player's visual representation {#updating-players-visual-representation}
 
 Having the mutation on the server, we can detect it on the client-side via `player.onChange()`, or `player.listen()`.
 
@@ -389,7 +389,7 @@ this.room.state.players.onAdd((player, sessionId) => {
 
 > Read [more about Schema callbacks](https://docs.colyseus.io/colyseus/state/schema/#client-side)
 
-## Extra: Monitoring Rooms and Connections
+## Extra: Monitoring Rooms and Connections {#extra-monitoring-rooms-and-connections}
 
 Colyseus comes with an optional monitoring panel that can be helpful during the development of your game.
 
@@ -401,6 +401,6 @@ You can see and interact with all spawned rooms and active client connections th
 
 > See [more information about the monitor panel](https://docs.colyseus.io/colyseus/tools/monitor/).
 
-## More
+## More {#more}
 
 We hope you found this tutorial useful, if you'd like to learn more about Colyseus please have a look at the [Colyseus documentation](https://docs.colyseus.io/), and join the [Colyseus Discord community](https://discord.gg/RY8rRS7).

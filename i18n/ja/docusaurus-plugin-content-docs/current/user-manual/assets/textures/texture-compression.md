@@ -29,7 +29,7 @@ sidebar_position: 1
 
 <a href="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
 
-## Basis テクスチャ圧縮の使用
+## Basis テクスチャ圧縮の使用 {#using-basis-texture-compression}
 
 テクスチャをエディタにインポートしたら、そのテクスチャを選択し、インスペクタを下にスクロールして、Compression セクションを見つけます。
 
@@ -55,14 +55,14 @@ BasisのWASMモジュールは、プリロードダウンロードサイズに�
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/delete-basis-library.png" alt="Delete Basis Module" width="400" />
 
-## Basis の制限
+## Basis の制限 {#basis-limitations}
 
 PlayCanvas で Basis テクスチャ圧縮には、次の制限があります。
 
 1. PVR 形式は、幅と高さが同じ正方形で、2の累乗である(256、512、1024など)テクスチャのみサポートしています。旧型のiOSデバイス（iPhone 5や5CのようなA6 SoC以下のもの）や古いiOSバージョン（13.7以下）はPVRのみをサポートしています。正方形でない、または2の冪でないBasisテクスチャはPVRフォーマットにトランスコードできませんが、代わりに16ビット565ピクセルフォーマットを使用します。それでも正しく表示されますが、VRAMをより多く占める可能性があります。
 2. Basis圧縮でサポートされるテクスチャの最大寸法は4096x4096です。これより大きなテクスチャは圧縮に過度な時間を要するため、これは無効化されます。
 
-## 旧来のテクスチャ圧縮
+## 旧来のテクスチャ圧縮 {#legacy-texture-compression}
 
 可能な場合はBasis圧縮を強く推奨します。これはすべてのプラットフォームをカバーするための単一のテクスチャファイルを必要とし、またレガシーフォーマットと比較してファイルサイズもはるかに小さいからです。私たちのテストでは、Basisは品質の違いがほとんどないまま、約 ~50％小さくなることを示しています。
 
@@ -87,7 +87,7 @@ Legacy Texture Compression オプションを使用するには、テクスチ�
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/disable-legacy-texture-compression.gif" alt="Disabling Legacy Texture Compression" width="400" />
 
-## Legacy テクスチャ圧縮から Basis テクスチャ圧縮への移行
+## Legacy テクスチャ圧縮から Basis テクスチャ圧縮への移行 {#migrating-from-legacy-to-basis-texture-compression}
 
 既に Legacy Texture Compression フォーマットを使用しているプロジェクトを Basis を使うようにしたい場合は、次の手順を実行します。
 

@@ -44,9 +44,9 @@ PlayCanvasエディターのインターフェースから直接新しいマテ�
 
 こちらからサンプルのテクスチャをダウンロードして保存してください。
 
-[![Sample Diffuse Map][5]][5]
+![Sample Diffuse Map][5]
 
-[![Sample Normal Map][6]][6]
+![Sample Normal Map][6]
 
 その後、エディタにドラッグしてファイルをアップロードします。
 

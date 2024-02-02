@@ -7,35 +7,35 @@ Layout Groupコンポーネントは、子エレメントの位置とサイズ�
 
 Layout Groupコンポーネントは、[グリッド][10]、[縦列][11]または [横列][12]の固定幅等、一般的なレイアウトの生成に使用できます。
 
-## レイアウトグループを作成する
+## レイアウトグループを作成する {#creating-a-layout-group}
 
 Layout Groupコンポーネントを既存のエレメントエンティティに追加するとレイアウトグループが追加されます。
 
 ![Create Layout Group][1]
 
-## レイアウトグループプロパティ
+## レイアウトグループプロパティ {#layout-group-properties}
 
-#### オリエンテーション (Orientation)
+#### オリエンテーション (Orientation) {#orientation}
 
  `オリエンテーション` を水平に設定するとレイアウトが「左から右」または「右から左」に並びます。「上から下」または「下から上」に並べるには垂直に設定します。
 
-#### リバース (Reverse)
+#### リバース (Reverse) {#reverse}
 
 リバースXプロパティやリバースプロパティYはレイアウトグループがビルドされる方向を設定するのに使用します。デフォルトでは「左から右」かつ「上から下」になります。
 
-#### アラインメント (Alignment)
+#### アラインメント (Alignment) {#alignment}
 
 アラインメントは子エレメントをレイアウトグループの端にそろえるのに使用します。`[0,0]`にすると左下に、`[1,1]`にすると右上にそろいます。
 
-#### パディング (Padding)
+#### パディング (Padding) {#padding}
 
 パディングは、子をポジションイングする前のレイアウトグループの中にスペースを追加します。
 
-#### スペーシング (Spacing)
+#### スペーシング (Spacing) {#spacing}
 
 スペーシングは子同士間のギャップを決定します。
 
-#### フィッティング (Fitting)
+#### フィッティング (Fitting) {#fitting}
 
 WidthフィッティングプロパティとHeightフィッティングプロパティは子エレメントの幅または高さがレイアウトグループでどのように調整されるかを決定します。
 
@@ -55,11 +55,11 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 値が **Both** の場合、 **Stretch** and **Shrink** の両方が適用されます。
 
-#### ラップ (Wrap)
+#### ラップ (Wrap) {#wrap}
 
 ラッププロパティは、（垂直のグループの場合）幅を超えた子または（水平のグループの場合）高さを超えた子を新しい行や列に動かします。ラッププロパティを使用して、グリッドベースプロパティの作成ができます。
 
-## 子レイアウト (Layout Children)
+## 子レイアウト (Layout Children) {#layout-children}
 
 レイアウトグループは、そのグループのルールを直接の子に適用します。これらのルールについて特定の子に上書きする場合は、上書きする子にLayoutChildコンポーネントを追加して行います。
 
@@ -69,9 +69,9 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 ![Layout Child Setup][9]
 
-## レイアウトの例
+## レイアウトの例 {#example-layouts}
 
-### 垂直のリーダーボード (Vertical Leaderboard)
+### 垂直のリーダーボード (Vertical Leaderboard) {#vertical-leaderboard}
 
 ![Leaderboard][2]
 
@@ -79,7 +79,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 ![Leaderboard Setup][3]
 
-### 水平のボタン (Horizontal Buttons)
+### 水平のボタン (Horizontal Buttons) {#horizontal-buttons}
 
 ![Horizontal Buttons][4]
 
@@ -87,7 +87,7 @@ WidthフィッティングプロパティとHeightフィッティングプロパ
 
 ![Horizontal Setup][5]
 
-### グリッド (Grid)
+### グリッド (Grid) {#grid}
 
 ![Grid][6]
 

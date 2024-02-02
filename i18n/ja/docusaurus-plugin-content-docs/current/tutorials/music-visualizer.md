@@ -139,4 +139,4 @@ updateループでは、周波数データ (Frequency)および 時間領域 (Ti
 [1]: https://playcanvas.com/project/405891
 [2]: https://developer.mozilla.org/en/docs/Web/API/AudioContext
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
-[4]: /api/pc.Application.html#renderLines
+[4]: https://api.playcanvas.com/classes/Engine.Application.html#renderLines

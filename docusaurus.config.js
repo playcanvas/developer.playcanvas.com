@@ -23,8 +23,6 @@ const config = {
   organizationName: 'playcanvas', // Usually your GitHub org/user name.
   projectName: 'developer.playcanvas.com', // Usually your repo name.
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
 
   // Even if you don't use internationalization, you can use this field to set
@@ -35,7 +33,18 @@ const config = {
     locales: ['en', 'ja']
   },
 
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    [ '@docusaurus/plugin-client-redirects', {
+      createRedirects: (path) => {
+
+        path = path.replace('/user-manual/editor/', '/user-manual/designer/');
+        path = path.replace('/user-manual/scenes/', '/user-manual/packs/');
+
+        return `/en${path}`;
+      }
+    }],
+    'docusaurus-plugin-sass',
+  ],
 
   presets: [
     [
@@ -83,18 +92,30 @@ const config = {
             path: '/user-manual',
           },
           {
-            to: '/tutorials/',  // This should match the route of your Tutorials page
+            to: '/tutorials/',
             label: 'Tutorials',
-            position: 'left', // or 'right', depending on where you want it in the navbar
+            position: 'left',
+          },
+          {
+            href: 'https://api.playcanvas.com',
+            label: 'API',
+            position: 'left',
           },
           {
             type: 'localeDropdown',
             position: 'right',
           },
           {
-            href: 'https://github.com/playcanvas',
-            label: 'GitHub',
-            position: 'right',
+            'aria-label': 'Discord Invite',
+            'className': 'navbar--discord-link',
+            'href': 'https://discord.gg/RSaMRzg',
+            'position': 'right',
+          },
+          {
+            'aria-label': 'GitHub Repository',
+            'className': 'navbar--github-link',
+            'href': 'https://github.com/playcanvas/engine',
+            'position': 'right',
           },
         ],
       },
@@ -114,7 +135,7 @@ const config = {
               },
               {
                 label: 'API Reference',
-                to: '/api/',
+                href: 'https://api.playcanvas.com',
               },
             ],
           },

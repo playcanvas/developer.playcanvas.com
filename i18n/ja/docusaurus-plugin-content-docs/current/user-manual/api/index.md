@@ -9,7 +9,7 @@ sidebar_position: 22
 
 :::
 
-## 認証
+## 認証 {#authorization}
 
 REST APIにはhttps経由でのみアクセスできます。REST APIにアクセスするには、アクセストークンを使用する必要があります。アクセストークンは、アカウントページに移動して生成できます。
 
@@ -43,39 +43,39 @@ Bearer [access_token]
 curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcanvas.com/api/...
 ```
 
-## パラメーター
+## パラメーター {#parameters}
 
 さまざまなルートは、いくつかのパラメータを受け入れます。GETリクエストの場合、パラメータがURLの一部でない場合、HTTPクエリ文字列パラメータとして渡すことができます。POST、PUT、DELETEリクエストに含まれない場合は、Content-Typeが 'application/json' のJSONとしてエンコードする必要があります。
 
 各エンドポイントで使用される共通のパラメータがいくつかあります:
 
-### project_id
+### project_id {#project_id}
 
 プロジェクト概要ページのURLから見つけることができます。
 
 ![Project ID][6]
 
-### scenes
+### scenes {#scenes}
 
 エディタでシーンを開く場合、シーンIDはURLにあります。
 
 ![Scene ID][7]
 
-### branch_id
+### branch_id {#branch_id}
 
 これは[バージョン管理][5]パネルで見つかり、選択してコピーできます。
 
 ![Branch ID][8]
 
-## レスポンスフォーマット
+## レスポンスフォーマット {#response-format}
 
 私たちのREST APIは、各API呼び出しの応答形式について、一般的なガイドラインに従っています。
 
-#### 単一リソースの取得
+#### 単一リソースの取得 {#get-resource}
 
 単一のリソースを取得しようとしている場合、応答はあなたが要求したリソースを持つJSONオブジェクトになります。
 
-#### 複数のリソースを取得
+#### 複数のリソースを取得 {#get-multiple-resources}
 
 たとえば、プロジェクトのアプリをリストアップするような複数のリソースを取得しようとしている場合は、次の形式のJSONオブジェクトを取得します。
 
@@ -110,7 +110,7 @@ curl -H "Authorization: Bearer nesgdxhiqe7hylfilr6ss1rds0gq1uj8" https://playcan
 https://playcanvas.com/api/items?limit=32&amp;skip=16
 ```
 
-#### エラー
+#### エラー {#errors}
 
 エラーが発生した場合は、次の形式のJSONオブジェクトが表示されます。
 
@@ -122,7 +122,7 @@ https://playcanvas.com/api/items?limit=32&amp;skip=16
 
 また、レスポンスのステータスコードも適切なHTTPエラーコードになります。
 
-## レート制限
+## レート制限 {#rate-limiting}
 
 Calls to the REST API have a rate limit. Check your actual limits by querying [this endpoint](https://playcanvas.com/api/ratelimits). There are different rate limits depending on the request:
 

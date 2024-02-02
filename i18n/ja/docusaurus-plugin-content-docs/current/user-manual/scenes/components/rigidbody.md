@@ -42,4 +42,4 @@ RigidBodyは、コンポーネントパネル右上のトグルを使用して�
 [3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
 [4]: /user-manual/scenes/components/collision/
 [5]: /user-manual/scenes/components/script
-[6]: /api/pc.RigidBodyComponent.html
+[6]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html

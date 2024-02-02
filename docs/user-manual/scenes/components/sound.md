@@ -45,4 +45,4 @@ You can control the properties of a Sound component using a [script component][2
 
 [1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/scenes/components/script
-[3]: /api/pc.SoundComponent.html
+[3]: https://api.playcanvas.com/classes/Engine.SoundComponent.html

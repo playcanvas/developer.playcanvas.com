@@ -149,9 +149,9 @@ PosteffectExample.prototype.initialize = function() {
 Custom Post Effectsは[こちら][7]。
 
 [1]: https://github.com/playcanvas/engine/tree/master/scripts/posteffects
-[2]: /api/pc.Shader.html
-[4]: /api/pc.PostEffect.html
+[2]: https://api.playcanvas.com/classes/Engine.Shader.html
+[4]: https://api.playcanvas.com/classes/Engine.PostEffect.html
 [3]: /user-manual/scenes/components/camera
 [6]: /tutorials/custom-shaders/
-[5]: /api/pc.CameraComponent.html#postEffects
+[5]: https://api.playcanvas.com/classes/Engine.CameraComponent.html#postEffects
 [7]: https://playcanvas.com/project/406045

@@ -25,8 +25,9 @@ sidebar_position: 2
 
 ![サブグラフの配置][3]
 
-グラフの編集方法については、[グラフエディター][1]のドキュメントを参照してください。
+グラフの編集方法については、[グラフエディター][4]のドキュメントを参照してください。
 
 [1]: /images/shader-editor/overview-graph-sub-graph.png
 [2]: /images/shader-editor/overview-graph-sub-graph-icon.png
 [3]: /images/shader-editor/overview-graph-place-sub-graph.gif
+[4]: /shader-editor/window-layout/graph-editor

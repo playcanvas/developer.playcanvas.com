@@ -284,7 +284,7 @@ CustomShader.prototype.update = function(dt) {
 
 以上がそのスクリプトの全体です。このスクリプトを動作させるには、バーテックスシェーダとフラグメントシェーダのアセットを作成する必要があることを忘れないでください。
 
-[1]: /api/pc.Shader.html
+[1]: https://api.playcanvas.com/classes/Engine.Shader.html
 [2]: /user-manual/scripting/script-attributes/
 [3]: /user-manual/graphics/physical-rendering/physical-materials/
 [project]: https://playcanvas.com/project/406044/overview/tutorial-custom-shaders

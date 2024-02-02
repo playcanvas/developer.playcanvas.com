@@ -3,7 +3,7 @@ title: Managing Organizations
 sidebar_position: 2
 ---
 
-### Permissions
+### Permissions {#permissions}
 
 You can manage permissions of your Organization from its account page.
 
@@ -13,7 +13,7 @@ Here you can see who is the Owner and the Administrators of the Organization. Yo
 
 Administrators can do everything the owner can do e.g. create and delete projects, except delete the Organization.
 
-### Seats
+### Seats {#seats}
 
 To give a user a seat, add them to any private project that is owned by the organization. Public projects do not require seats.
 
@@ -31,7 +31,7 @@ Here you can increase or decrease the number of seats for your Organization. Thi
 
 The Owner of the Organization can delete the Organization from here. This will completely erase the account and all its projects. This action cannot be reversed.
 
-### Projects 
+### Projects {#projects}
 
 Administrators of the organization can add themselves to any project owned by the organization. On the account page, click on the drop down arrow on the right and then click on 'Add me as admin'.
 

@@ -7,35 +7,35 @@ The Layout Group Component is used to automatically set the position and size of
 
 The Layout Group Component can be used to generate common layouts, for example, a [grid][10], a fixed width [vertical column][11], or [horizontal row][12].
 
-## Creating a Layout Group
+## Creating a Layout Group {#creating-a-layout-group}
 
 Add a Layout Group by adding the LayoutGroup Component to an existing Element Entity.
 
 ![Create Layout Group][1]
 
-## Layout Group Properties
+## Layout Group Properties {#layout-group-properties}
 
-#### Orientation
+#### Orientation {#orientation}
 
 Set the `Orientation` to Horizontal to organize your layout from left-to-right or right-to-left. Or Vertical to organize your layout top-to-bottom or bottom-to-top
 
-#### Reverse
+#### Reverse {#reverse}
 
 ReverseX and ReverseY properties are used to set the direction the layout group is built out in. The default is left-to-right and bottom-to-top.
 
-#### Alignment
+#### Alignment {#alignment}
 
 Alignment is used to align the child elements to the edges of the Layout Group. `[0,0]` aligns to the bottom left, `[1,1]` aligns to the top right.
 
-#### Padding
+#### Padding {#padding}
 
 Padding adds a space to the inside of the Layout Group before positioning any children.
 
-#### Spacing
+#### Spacing {#spacing}
 
 Spacing determines the gap between each child.
 
-#### Fitting
+#### Fitting {#fitting}
 
 The Width Fitting and Height Fitting properties determine how a child element's width or height will be adjusted by the Layout Group.
 
@@ -55,11 +55,11 @@ A value of **Shrink** will shrink the children to fit the container using the fo
 
 A value of **Both** will apply both **Stretch** and **Shrink**.
 
-#### Wrap
+#### Wrap {#wrap}
 
 The wrap property causes children that are outside of the width (for vertical groups) or height (for horizontal groups) to be moved to a new row or column. Using the wrap property you can create grid-based layouts.
 
-## Layout Children
+## Layout Children {#layout-children}
 
 A Layout Group applies its rules to all of its direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
 
@@ -69,9 +69,9 @@ In this example, the horizontal layout is using the **Stretch** width fitting to
 
 ![Layout Child Setup][9]
 
-## Example Layouts
+## Example Layouts {#example-layouts}
 
-### Vertical Leaderboard
+### Vertical Leaderboard {#vertical-leaderboard}
 
 ![Leaderboard][2]
 
@@ -79,7 +79,7 @@ This Leaderboard is setup as vertical column aligned to the top center. We're us
 
 ![Leaderboard Setup][3]
 
-### Horizontal Buttons
+### Horizontal Buttons {#horizontal-buttons}
 
 ![Horizontal Buttons][4]
 
@@ -87,7 +87,7 @@ This row of buttons is laid out using a Horizontal Layout Group with some Spacin
 
 ![Horizontal Setup][5]
 
-### Grid
+### Grid {#grid}
 
 ![Grid][6]
 

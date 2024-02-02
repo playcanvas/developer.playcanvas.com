@@ -64,4 +64,4 @@ Play below! Try to get as many food items as you can before the timer runs out! 
 [food-run-phase-2]: https://playcanvas.com/project/910606/overview/food-run--phase-2
 [food-run-phase-3]: https://playcanvas.com/project/910630/overview/food-run--phase-3
 [food-run-complete]: https://playcanvas.com/project/898163/overview/food-run--full-project
-[presentation-pdf]: /downloads/playcanvas-crash-course-make-a-game.pdf
+[presentation-pdf]: pathname:///downloads/playcanvas-crash-course-make-a-game.pdf

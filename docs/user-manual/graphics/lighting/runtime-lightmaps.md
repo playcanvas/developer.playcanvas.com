@@ -8,7 +8,7 @@ sidebar_position: 5
 
 Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures, which are then applied on materials. This is an efficient and realistic way to light a scene if many of the light sources and geometry are static or environmental.
 
-## Runtime Lightmap Generation
+## Runtime Lightmap Generation {#runtime-lightmap-generation}
 
 PlayCanvas offers a convenient solution to generating lightmaps. Using the standard light components in the Editor, you can choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. The lights that you set to bake will be used when the application generates the lightmaps that light the scene.
 
@@ -26,11 +26,11 @@ However, a disadvantage of runtime lightmap generation is that currently we do n
 
 :::note
 
-The use of [batching](/user-manual/optimization/batching) is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+The use of [batching][11] is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
 
 :::
 
-## Setting Up Lights for Baking
+## Setting Up Lights for Baking {#setting-up-lights-for-baking}
 
 Each Light Component contains the following settings to enable lightmap baking. By default, new lights are set to Dynamic.
 
@@ -50,7 +50,7 @@ Note that a light can't have both **Bake Lightmap** and **Affect Lightmapped** e
 
 Lightmap lights use the same **Shadows** setting as dynamic lights, except the shadow calculations are done once, when generating the lightmaps. This way, it is much cheaper to enable shadows on lightmap lights. For more information, see the [Shadows][4] page. Note that the Shadow Cascade options are ignored for baking.
 
-### Soft Directional Light
+### Soft Directional Light {#soft-directional-light}
 
 By default, baked lights cast hard shadows. To improve the visual quality, a soft baked shadow is available for **Directional** lights when the **Bake Direction** option is not enabled. In this case, two additional options are available:
 
@@ -63,7 +63,7 @@ The following images show the difference between hard shadows and soft shadows. 
 
 ![Hard and Soft Shadow Examples][13]
 
-## Baking an Environment Light
+## Baking an Environment Light {#baking-an-environment-light}
 
 PlayCanvas supports two types of environment lighting: [Ambient Color][14] and [Skybox][15]. By default, these are both applied at runtime.
 
@@ -77,7 +77,7 @@ The following images show the effect of Ambient Color, with and without the Ambi
 
 ![Ambient Color Examples][18]
 
-## Lightmap Filtering
+## Lightmap Filtering {#lightmap-filtering}
 
 For Soft Directional Light or Environment Light baking, a low number of samples is often used in order to improve the baking performance. This creates some banding artifacts, as you can see in the following image, which uses 15 samples.
 
@@ -93,7 +93,7 @@ As a more performant alternative, the lightmap can be filtered using a smart bil
 
 Note that the filtering is done on the final baked lightmaps and can create some visible edges over the seams of unwrapped UVs, since the lightmap is not filtered across the seams. Therefore, filtering may not be suitable for every scene. To minimize the artifacts, you should have a good balance between a strong filter and a large number of samples.
 
-## Setting Up Models for Baking
+## Setting Up Models for Baking {#setting-up-models-for-baking}
 
 Each **Model** or **Render** component must have lightmapping enabled, in order for it to receive lightmaps. Lightmapping can be enabled in the component's properties, by checking the **Lightmapped** option.
 
@@ -103,7 +103,7 @@ Each **Model** or **Render** component must have lightmapping enabled, in order 
 
 The **Cast Lightmap Shadows** option determines if the model casts shadows in the lightmap. You can see the resolution of the lightmap texture generated and there is also an option to apply a multiplier to the area of UV1 to affect its size. Lightmap size multipliers are discussed below.
 
-## Common Light Settings
+## Common Light Settings {#common-light-settings}
 
 There several combinations of light settings that can be used. Each one has a use case and by using lights with different combinations, you can balance high-quality visuals with performance.
 
@@ -114,7 +114,7 @@ There several combinations of light settings that can be used. Each one has a us
 | true  | true            | false        | This light generates lightmaps but also affects non-lightmapped models. It is useful if you have dynamic/moving entities that need to be lit with this light. For example, a prominent environment light that also should affect the player character. |
 | false | true            | true         | This light is a dynamic light which will affect both lightmapped and non-lightmapped models. |
 
-## Lightmapping Settings
+## Lightmapping Settings {#lightmapping-settings}
 
 The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
 
@@ -126,7 +126,7 @@ For example, consider a plane that is 1x1 unit (meter) in size. If the Global Si
 
 ![Global Lightmapping Settings][6]
 
-## Auto-Unwrapping and UV1 Generation
+## Auto-Unwrapping and UV1 Generation {#auto-unwrapping-and-uv1-generation}
 
 Lightmaps are always applied using the second set of **UV coordinates (UV1)** on the model asset. For the best results, we recommend that you add a second UV set from the 3D content tool to your model, before you upload it to PlayCanvas. For more information about lightmap friendly UV's, see the [UV Mapping][9] section.
 

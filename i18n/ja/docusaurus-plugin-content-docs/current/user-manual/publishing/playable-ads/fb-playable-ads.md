@@ -84,7 +84,7 @@ Facebookはまた、デバイス上でのテストも管理者を介して許可
 [3]: /images/user-manual/publishing/playable-ads/fb-playable-ads/fb-playable-ads.gif
 [4]: https://www.facebook.com/business/help/412951382532338
 [5]: https://playcanvas.com/project/354998/overview/cube-jump-playable-ad-for-fb
-[6]: /downloads/fb-playable-ad-cube-jump-html.zip
+[6]: pathname:///downloads/fb-playable-ad-cube-jump-html.zip
 [7]: https://tinypng.com/
 [8]: https://github.com/playcanvas/playcanvas-rest-api-tools#setup
 [9]: https://github.com/playcanvas/playcanvas-rest-api-tools#converting-a-project-into-a-single-html-file

@@ -9,7 +9,7 @@ A checkpoint is a snapshot of your project at a point in time. It contains the c
 
 A checkpoint is a permanent record of the state of your project and forms part of the graph that is used for branches and merging changes. As such, once created checkpoints cannot be deleted. This means that once you have committed your changes as part of a checkpoint they are safe forever in your project history.
 
-## Creating a checkpoint
+## Creating a checkpoint {#creating-a-checkpoint}
 
 Checkpoints are created from the Version Control panel.
 
@@ -19,7 +19,7 @@ The New Checkpoint button opens the input form to create a checkpoint. You can a
 
 ![Create Checkpoint][3]
 
-## Restoring a checkpoint
+## Restoring a checkpoint {#restoring-a-checkpoint}
 
 ![Restore Checkpoint][4]
 
@@ -29,7 +29,7 @@ If you'd like to restore the state of your project from a previous checkpoint yo
 
 ![Restore checkpoint applied][5]
 
-## Hard reset to a checkpoint
+## Hard reset to a checkpoint {#hard-reset-to-a-checkpoint}
 
 Hard reset allows you to delete all checkpoints after a selected checkpoint. This is useful if you need to 'undo' a merge (perhaps a branch was accidentally merged or the merge needs to be done differently).
 
