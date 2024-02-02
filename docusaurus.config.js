@@ -77,7 +77,7 @@ const config = {
         contextualSearch: false,
       },
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/playcanvas-social-card.jpg',
       navbar: {
         title: 'Docs',
         logo: {
