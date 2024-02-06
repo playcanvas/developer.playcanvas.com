@@ -3,7 +3,7 @@ title: Capabilities
 sidebar_position: 4
 ---
 
-WebXR exposes various capabilities and new APIs through Modules, which are integrated into PlayCanvas Engine for ease of use. Currently supported WebXR APIs are:
+WebXR exposes various capabilities and new APIs through Modules, which are integrated into the PlayCanvas Engine for ease of use. The currently supported WebXR APIs are:
 
 * **Immersive [VR][1] and [AR][2]** session types.
 * [**Anchors**][4] - create anchors in space that are reliably positioned in relation to real-world geometry.
