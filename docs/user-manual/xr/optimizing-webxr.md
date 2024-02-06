@@ -19,7 +19,7 @@ PlayCanvas, however, includes several features specifically designed to let your
 
 ### Draw Calls and Batching
 
-Draw Calls - are operations when the engine provides necessary information to the GPU for rendering an object. The more objects you have in the scene - the more draw calls it will require to render each frame. To reduce the number of draw calls it is recommended to minimize the number of objects in the frame by culling, [static batching][5], and [instancing][6].
+Draw Calls are operations when the engine provides necessary information to the GPU for rendering an object. The more objects you have in the scene, the more draw calls it will require to render each frame. To reduce the number of draw calls it is recommended to minimize the number of objects in the frame by culling, [static batching][5] and [instancing][6].
 
 ### Runtime lightmap generation
 
