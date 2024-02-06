@@ -15,13 +15,13 @@ if (app.xr.supported) {
 
 ## Starting XR Session
 
-The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start VR presenting you should use the `startXr` method on a CameraComponent and provide type of XR session, reference space and optional object with additional arguments:
+The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start an XR session you should use the `startXr` method on a CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
 
 ```javascript
 entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
 ```
 
-It is an asynchronous operation and is only possible to start on a user interaction, such as a button click, mouse click or touch. To know when a session is started, you can subscribe to the `start` event:
+It is an asynchronous operation and is only possible to start on a user interaction, such as a button click, mouse click, or touch. To know when a session is started, you can subscribe to the `start` event:
 
 ```javascript
 app.xr.on('start', function () {
@@ -49,7 +49,7 @@ Exiting XR can be triggered in various ways. You can trigger an exit of XR from 
 app.xr.end();
 ```
 
-Also, the user might exit XR via some external process like the back button in the browser. [XrManager][2] will fire events associated with session `end`:
+Also, the user might exit XR via some external process like the back button in the browser. [XrManager][2] will fire events associated with the session `end`:
 
 ```javascript
 app.xr.on('end', function () {
@@ -62,9 +62,9 @@ app.xr.on('end', function () {
 Each platform can support different types of sessions. These are:
 
  * **VR** (Virtual Reality) - Provides some level of viewer tracking and it provides exclusive access to XR Device. This means that the application will be rendered onto a device's frame buffer and not the HTML canvas element.
- * **AR** (Augmented Reality) - This type of session provides exclusive access to the XR Device and content is meant to be blended with the real-world environment. In this mode, the camera clear color should be transparent.
+ * **AR** (Augmented Reality) - This type of session provides exclusive access to the XR Device and content is meant to be blended with the real-world environment. In this mode, the camera's clear color should be transparent.
 
-The availability of a session type can change during an application's life-time, based on devices being plugged in or features on devices being enabled. To check if a session type is available do:
+The availability of a session type can change during an application's lifetime, based on devices being plugged in or features on devices being enabled. To check if a session type is available do:
 
 ```javascript
 if (app.xr.isAvailable(pc.XRTYPE_VR)) {
@@ -72,7 +72,7 @@ if (app.xr.isAvailable(pc.XRTYPE_VR)) {
 }
 ```
 
-And you can subscribe to availability change events too:
+You can subscribe to availability change events too:
 
 ```javascript
 app.xr.on('available', function (type, available) {
@@ -87,19 +87,19 @@ app.xr.on('available:' + pc.XRTYPE_VR, function (available) {
 
 ## Camera Position and Orientation in XR
 
-When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of camera, you should add a parent entity to your camera and apply your manipulations to that entity.
+When you are presenting in XR, the position and orientation of the camera are overwritten by data from the XR session. If you want to implement additional movement and rotation of the camera, you should add a parent entity to your camera and apply your manipulations to that entity.
 
 ![Camera Offset][1]
 
-Input source ray, as well as position and rotation of grip and hands, provided in world space.
+Position, orientation, and rays of different XR objects: input sources, tracked meshes, tracked planes, tracked images, and others, are provided in world space.
 
 ## Why can't I enable XR mode automatically?
 
-Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason there is no way to enter XR immediately on loading a page.
+Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click, or a touch event. For that reason, there is no way to enter XR immediately on loading a page.
 
 ## Experimental features
 
-WebXR API is constantly evolving and additional APIs get released extending XR feature set. While engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
+WebXR API is constantly evolving and additional APIs get released extending the XR feature set. While the engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
 
 ```javascript
 app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {

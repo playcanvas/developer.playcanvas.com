@@ -5,21 +5,23 @@ sidebar_position: 20
 
 ![VR View][2]
 
-PlayCanvas lets you create Augmented Reality (AR) and Virtual Reality (VR) applications for a variety of devices based on the new WebXR API, as well as through external integrations. WebXR is an evolution of the WebVR API and is being added to modern browsers, providing access to virtual reality headsets, controllers and AR features.
+PlayCanvas lets you create Augmented Reality (AR) and Virtual Reality (VR) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
 
 ## Platforms
 
-WebXR is a new API and it is being rolled out gradually to all major platforms. Up to date support can be checked on [caniuse.com][3].
+WebXR is a new API and it is being rolled out gradually to all major platforms. Up-to-date support can be checked on [caniuse.com][3].
 
 Additionally, support can be achieved with the [WebXR Polyfill][4].
 
-On **mobile**, PlayCanvas XR works on Android and iOS devices using Cardboard-style VR headsets and other devices. AR is also available. It works on stand-alone Android based VR devices, such as the Oculus Quest™.
+On **mobile**, WebXR works on Android with VR and AR session types.
 
-On **desktop**, PlayCanvas XR currently works in Chrome and Edge, and devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
+On **HMDs**, such as Meta Quest, WebXR is well-supported for VR and AR session types. Apple Vision Pro currently supports VR session types when enabled in Safari settings.
+
+On **desktop**, WebXR currently works in Chrome and Edge, and devices are linked through various native APIs, such as SteamVR, OpenXR, and others. This covers the majority of desktop-based VR devices. And allows devices such as Meta Quest to be used via Steam Link.
 
 ## Testing WebXR without XR device
 
-To start developing with WebXR today, a browser [extension][1] can be used in Chrome or Firefox which emulates the WebXR API. This allows developers to interact with various head-mounted displays and controllers.
+To start developing with WebXR today, a Chrome [extension][1] can be used which emulates the WebXR API. This allows developers to interact with various head-mounted displays and controllers.
 
 ## Getting started with WebXR
 
@@ -35,7 +37,7 @@ button.element.on('click', function () {
 });
 ```
 
-[1]: https://github.com/MozillaReality/WebXR-emulator-extension
+[1]: https://chromewebstore.google.com/detail/immersive-web-emulator/cgffilbpcibhmcfbgggfhfolhkfbhmik
 [2]: /images/user-manual/xr/vr-view.png
 [3]: https://caniuse.com/#feat=webxr
 [4]: https://github.com/immersive-web/webxr-polyfill
