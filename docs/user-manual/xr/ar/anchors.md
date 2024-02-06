@@ -105,7 +105,7 @@ if (app.xr.anchors.persistence) {
 }
 ```
 
-Each anchor can have a UUID, that allows reference to it and restore between sessions.
+Each anchor can have a UUID that allows it to be referenced and restored between sessions.
 
 You can access a list of persistent anchors, and restore them on session start:
 
