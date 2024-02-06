@@ -95,8 +95,7 @@ app.xr.anchors.on('add', (anchor) => {
 
 ## Persistence
 
-Anchor persistence - provides a way to remember anchors between sessions, with a limited number of anchors per origin.
-This allows applications to place virtual objects in relation to the real-world geometry, and remain there between sessions.
+Anchor persistence provides a way to remember anchors between sessions, with a limited number of anchors per origin. This allows applications to place virtual objects in relation to the real-world geometry and remain there between sessions.
 
 You can check if persistence is supported:
 
