@@ -3,7 +3,7 @@ title: Using WebXR in PlayCanvas
 sidebar_position: 1
 ---
 
-## Support of WebXR
+## Checking for WebXR Support
 
 Browser support for WebXR is not (yet) universal. It can be checked as follows:
 
@@ -13,7 +13,7 @@ if (app.xr.supported) {
 }
 ```
 
-## Starting XR Session
+## Starting an XR Session
 
 The API for entering XR is on the Camera Component or [XrManager][2] on the Application. To start an XR session you should use the `startXr` method on a CameraComponent and provide the type of XR session, reference space, and optional object with additional arguments:
 
@@ -41,7 +41,7 @@ entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_UNBOUNDED, {
 });
 ```
 
-## Ending XR Session
+## Ending an XR Session
 
 Exiting XR can be triggered in various ways. You can trigger an exit of XR from code:
 
@@ -97,7 +97,7 @@ Position, orientation, and rays of different XR objects: input sources, tracked 
 
 Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click, or a touch event. For that reason, there is no way to enter XR immediately on loading a page.
 
-## Experimental features
+## Experimental Features
 
 WebXR API is constantly evolving and additional APIs get released extending the XR feature set. While the engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
 
