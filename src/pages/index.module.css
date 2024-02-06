@@ -12,7 +12,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* font-size: 10.5rem; */
+  /* overflow-wrap: normal; */
+  word-break: normal;
+  min-width: min-content;
 }
 
 .heroTitle {
@@ -25,7 +27,7 @@
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 5rem;
+    padding: 5rem 1rem;
   }
 
   .heroTitle {
