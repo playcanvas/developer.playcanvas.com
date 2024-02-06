@@ -5,11 +5,11 @@ sidebar_position: 3
 
 ![VR View][1]
 
-PlayCanvas also lets you create Virtual Reality (VR) applications for headsets and mobile phones using the WebXR API. WebXR is an evolution of the WebVR API and it is widely supported in desktop browsers.
+PlayCanvas also lets you create Virtual Reality (VR) applications.
 
 ## Platforms
 
-VR capabilities are available in the Chrome and Edge browsers. Devices are linked through various native APIs, such as Windows Mixed Reality, OpenXR and others. This covers the majority of desktop-based VR devices.
+VR capabilities are available across various platforms: desktop (Chrome, Edge), mobile (Chrome, Samsung) and HMDs (Oculus, Magic Leap, Pico).
 
 ## Getting started with WebXR VR
 
