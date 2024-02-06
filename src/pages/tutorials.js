@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import data from './tutorial-data.json';
 import styles from './tutorials.module.scss';
 import Link from '@docusaurus/Link';
+import { useHistory, useLocation } from '@docusaurus/router';
 
 const Cross = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -30,13 +31,27 @@ export default function Tutorials() {
   // State for storing filtered tutorials
   const [filteredTutorials, setFilteredTutorials] = useState(tutorials);
 
+  const { search } = useLocation();
+  const history = useHistory();
+
+  useEffect(() => {
+    const tagsParam = new URLSearchParams(search).get('tags');
+    const tags = tagsParam ? tagsParam.split(',') : [];
+    setActiveTags(tags);
+  }, [search]);
+
   // Handle tag button click
   const toggleTag = (tag) => {
-    setActiveTags(prevActiveTags =>
-      prevActiveTags.includes(tag)
-        ? prevActiveTags.filter(t => t !== tag)
-        : [...prevActiveTags, tag]
-    );
+    const searchParams = new URLSearchParams(search);
+    const tagsParam = searchParams.get('tags');
+    const tags = tagsParam ? tagsParam.split(',') : [];
+    const updatedTags = tags.includes(tag)
+      ? activeTags.filter(existingTag => existingTag !== tag)
+      : [...tags, tag]
+
+    searchParams.set('tags', updatedTags.sort().join(','));
+
+    history.push({ search: decodeURIComponent(searchParams.toString()) });
   };
 
   // Filter tutorials based on active tags
