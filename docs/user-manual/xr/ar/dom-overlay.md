@@ -30,8 +30,7 @@ app.xr.on('start', () => {
 
 ## Events
 
-You can interact with elements just like with regular HTML. Although the input source's `select` event will still fire in an application.
-To prevent input source events from passing through DOM elements you can intercept them:
+You can interact with elements just like with regular HTML. However, the input source's `select` event will still fire in an application. To prevent input source events from passing through DOM elements, you can intercept them:
 
 ```javascript
 const buttons = app.xr.domOverlay.querySelectorAll('button');
