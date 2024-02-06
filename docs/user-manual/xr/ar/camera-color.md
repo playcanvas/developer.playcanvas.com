@@ -35,7 +35,7 @@ WebXR can work on monoscopic as well as stereoscopic devices. This means there i
 
 Bear in mind that Views are not available on session start, and can be created/removed during the session's lifetime.
 
-For monoscopic device, we can access its view and its texture:
+For a monoscopic device, we can access its view and its texture:
 
 ```javascript
 app.xr.on('start', () => {
