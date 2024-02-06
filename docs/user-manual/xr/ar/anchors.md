@@ -3,7 +3,7 @@ title: Anchors
 sidebar_position: 1
 ---
 
-Anchors provides an ability to create a point in 3D space, that can be updated by to match ever evolving understanding of real world by underlying AR system. This allows to place virtual objects in relation to real world that feel planted in users environment.
+Anchors provide the ability to create a point in 3D space that can be updated to match an ever-evolving understanding of real world by underlying the AR system. This allows for the placement of virtual objects in relation to the real world that feel planted in the user's environment.
 
 Each anchor is represented as position and orientation, and can be created from arbitrary point as well as in relation to hit test result, that will make it more reliable.
 
