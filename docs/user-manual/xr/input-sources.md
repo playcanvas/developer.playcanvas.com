@@ -86,7 +86,7 @@ if (inputSource.grip) {
 
 ## GamePad
 
-If the platform supports the [WebXR Gamepads Module][4], then an input source might have an associated [GamePad][5] object with it, which provides access to its buttons, triggers, axes, and other input hardware states:
+If the platform supports the [WebXR Gamepads Module][4], then an input source might have an associated [GamePad][5] object with it, which provides access to its buttons, triggers, axes and other input hardware states:
 
 ```javascript
 const gamepad = inputSource.gamepad;
