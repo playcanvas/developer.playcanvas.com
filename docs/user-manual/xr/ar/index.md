@@ -7,7 +7,7 @@ PlayCanvas lets you create Augmented Reality (AR) applications for mobile and HM
 
 ## Platforms
 
-AR capabilities are available using the: Android Chrome Browser, Meta Quest Browser, Magic Leap Helio, Samsung Internet, Microsoft Edge, and many others. Additionally, frameworks such as [8th Wall][3] and [Zappar][4] allow users to experience AR content in most mobile browsers, including Safari.
+AR capabilities are available using the Android Chrome Browser, Meta Quest Browser, Magic Leap Helio, Samsung Internet, Microsoft Edge and many others. Additionally, frameworks such as [8th Wall][3] and [Zappar][4] allow users to experience AR content in most mobile browsers, including Safari.
 
 *The aforementioned frameworks are external and have separate licensing, available on their respective websites.*
 
