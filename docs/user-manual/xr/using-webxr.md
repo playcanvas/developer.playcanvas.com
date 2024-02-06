@@ -91,15 +91,15 @@ When you are presenting in XR, the position and orientation of the camera are ov
 
 ![Camera Offset][1]
 
-Position, orientation, and rays of different XR objects: input sources, tracked meshes, tracked planes, tracked images, and others, are provided in world space.
+Position, orientation and rays of different XR objects: input sources, tracked meshes, tracked planes, tracked images, and others, are provided in world space.
 
 ## Why can't I enable XR mode automatically?
 
-Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click, or a touch event. For that reason, there is no way to enter XR immediately on loading a page.
+Entering WebXR is required by browsers to be triggered by a *user action*. That means that it must be in response to a key press, a mouse click or a touch event. For that reason, there is no way to enter XR immediately on loading a page.
 
 ## Experimental Features
 
-WebXR API is constantly evolving and additional APIs get released extending the XR feature set. While the engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing an internal undocumented APIs is a subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling experimental API for [WebXR Layers][3]:
+The WebXR API is constantly evolving and additional APIs get released extending the XR feature set. While the engine is constantly updated with integrations for XR APIs, some of the features might come with delay. For developers willing to experiment with new features, it is possible to enable them by passing relevant `optionalFeatures` flags. *Bear in mind: accessing internal, undocumented APIs is subject to engine changes that are not guaranteed to be backwards compatible.* Here is an example of enabling the experimental API for [WebXR Layers][3]:
 
 ```javascript
 app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
