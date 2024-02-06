@@ -35,7 +35,7 @@ You can interact with elements just like with regular HTML. However, the input s
 ```javascript
 const buttons = app.xr.domOverlay.querySelectorAll('button');
 
-for(let i = 0; i < buttons.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('beforexrselect', (evt) => {
         evt.preventDefault();
     });
