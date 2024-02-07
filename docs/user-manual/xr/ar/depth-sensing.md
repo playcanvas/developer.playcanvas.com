@@ -46,7 +46,7 @@ app.xr.on('start', () => {
 
 ## Distance Measurements
 
-Depth estimation and availability of the data a subject to underlying AR system reliability, so depth information might not be always available.
+Depth estimation and availability of the data is subject to the reliability of the underlying AR system, so depth information might not be always available.
 
 WebXR supports it only for CPU-path. Using Depth Sensing, you can measure the distance by providing U and V, which are 0 to 1 coordinates of a screen (left-right top-bottom).
 
