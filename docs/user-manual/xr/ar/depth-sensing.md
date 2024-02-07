@@ -3,7 +3,7 @@ title: Depth Sensing
 sidebar_position: 1
 ---
 
-In the MR context, immersion is achieved by visual and logical interaction of virtual objects with the real world. This is achieved by many techniques including Depth Occlusion, particles interacting with the world, 3D scanning, and more.
+In the MR context, immersion is achieved by visual and logical interaction of virtual objects with the real world. This is achieved by many techniques including Depth Occlusion, particles interacting with the world, 3D scanning and more.
 
 Depth sensing - provides access to depth estimation of real-world objects in real-time. Underlying systems might have different methods of estimations such as Lidar hardware or Computer Vision, which provide various levels of quality and reliability.
 
