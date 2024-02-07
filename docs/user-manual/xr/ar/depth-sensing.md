@@ -11,7 +11,7 @@ WebXR Depth Sensing provides access to depth information for each view and match
 
 Platforms might implement either path: CPU or GPU, or even both.
 
-To request access to camera depth, the session should be started with an extra flag:
+To request access to camera depth, the session should be started as follows:
 
 ```javascript
 app.xr.start(camera, pc.XRTYPE_AR, pc.XRSPACE_LOCALFLOOR, {
