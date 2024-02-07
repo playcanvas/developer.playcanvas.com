@@ -58,7 +58,7 @@ if (view) {
     const distance = view.getDepth(0.5, 0.5);
 
     if (distance !== null) {
-        // distance is in meeters
+        // distance is in meters
     }
 }
 ```
