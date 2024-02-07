@@ -3,6 +3,8 @@ title: Loading Screen
 sidebar_position: 8
 ---
 
+import Link from '@docusaurus/Link';
+
 If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
 
 <img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
@@ -123,3 +125,5 @@ pc.script.createLoadingScreen(function (app) {
 ```
 
 [1]: /user-manual/editor/settings
+
+<Link to='https://playcanvas.com/editor/project/458028/'>Open Project ↗</Link>
