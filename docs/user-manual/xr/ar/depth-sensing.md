@@ -24,7 +24,7 @@ app.xr.start(camera, pc.XRTYPE_AR, pc.XRSPACE_LOCALFLOOR, {
 
 ## Support
 
-You can check if the camera depth is supported by the system:
+You can check if camera depth is supported by the system:
 
 ```javascript
 if (app.xr.views.supportedDepth) {
