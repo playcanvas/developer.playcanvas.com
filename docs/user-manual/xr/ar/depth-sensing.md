@@ -99,7 +99,7 @@ if (view && view.eye !== pc.XREYE_NONE) {
 
 WebXR can provide depth sensing data in two formats: F32 (array of 32-bit floats) and packed as LA8 (flat array of pairs of 8-bit values). They do provide slightly different precision: 32 vs 16 bits for depth, but even 16 bits is plenty for close-proximity use.
 
-We can use shader branching to unpack depth value from a texture depending on the format:
+We can use shader branching to unpack depth values from a texture depending on the format:
 
 ```javascript
 if (app.xr.views.depthPixelFormat === pc.PIXELFORMAT_R32F) {
