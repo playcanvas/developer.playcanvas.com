@@ -12,4 +12,4 @@ Sample showing to use render masking on the lights and models to enable lighting
     <iframe loading="lazy" src="https://playcanv.as/p/D4ZYtQrG/" title="Camera model masking" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/436772/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/436772/'>Open Project ↗</Link>

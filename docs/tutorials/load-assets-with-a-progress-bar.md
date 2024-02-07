@@ -12,4 +12,4 @@ Sample showing how to load multiple assets at runtime with a progress bar.
     <iframe loading="lazy" src="https://playcanv.as/p/MGKfj6jm/" title="Load assets with a progress bar" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/436584/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/436584/'>Open Project ↗</Link>

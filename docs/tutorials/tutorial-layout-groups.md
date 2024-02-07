@@ -12,4 +12,4 @@ Use the Layout Group component to build a user interface.
     <iframe loading="lazy" src="https://playcanv.as/p/y4JwxWTI/" title="Tutorial: Layout Groups" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/553515/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/553515/'>Open Project ↗</Link>

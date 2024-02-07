@@ -12,4 +12,4 @@ Sample showing how to communicate between scripts using events.
     <iframe loading="lazy" src="https://playcanv.as/p/HXrtITkb/" title="Using events with scripts" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437673/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437673/'>Open Project ↗</Link>

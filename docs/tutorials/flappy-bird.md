@@ -12,4 +12,4 @@ Flappy's Back! Guide Flappy Bird through as many pipes as you can. Made with @pl
     <iframe loading="lazy" src="https://playcanv.as/p/2OlkUaxF/" title="Flappy Bird" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/375389/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/375389/'>Open Project ↗</Link>

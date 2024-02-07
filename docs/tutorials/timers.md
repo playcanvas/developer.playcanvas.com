@@ -12,4 +12,4 @@ Example of extending the PlayCanvas engine to create one shot timers. Press P to
     <iframe loading="lazy" src="https://playcanv.as/p/WsI6QA7y/" title="Timers" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/691984/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/691984/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Sample showing how to detect a double tap on a touch screen.
     <iframe loading="lazy" src="https://playcanv.as/p/adm70VcR/" title="Detecting a double tap" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/436531/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/436531/'>Open Project ↗</Link>

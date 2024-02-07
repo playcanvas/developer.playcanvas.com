@@ -12,4 +12,4 @@ Sample with self contained FPS counter that can be used in other projects.
     <iframe loading="lazy" src="https://playcanv.as/p/VRCXOsxi/" title="Frames Per Sec (FPS) counter" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/433323/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/433323/'>Open Project ↗</Link>

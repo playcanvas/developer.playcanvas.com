@@ -12,4 +12,4 @@ import Link from '@docusaurus/Link';
     <iframe loading="lazy" src="https://playcanv.as/p/G0d8FneG/" title="WebXR 360 Video" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/434444/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/434444/'>Open Project ↗</Link>

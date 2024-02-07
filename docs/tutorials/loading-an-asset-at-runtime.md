@@ -12,4 +12,4 @@ Sample showing how to load an asset at runtime so you don't have to preload it a
     <iframe loading="lazy" src="https://playcanv.as/p/xIkPLoyX/" title="Loading an asset at runtime" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/439122/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/439122/'>Open Project ↗</Link>

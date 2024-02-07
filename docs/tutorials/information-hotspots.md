@@ -12,4 +12,4 @@ Sample showing information hotspots on a scene.
     <iframe loading="lazy" src="https://playcanv.as/p/9yrH9xRZ/" title="Information hotspots" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438515/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438515/'>Open Project ↗</Link>

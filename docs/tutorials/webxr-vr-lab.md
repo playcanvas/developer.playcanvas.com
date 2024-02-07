@@ -12,4 +12,4 @@ A living project built by the PlayCanvas team to help developers learn about cre
     <iframe loading="lazy" src="https://playcanv.as/p/sAsiDvtC/" title="WebXR VR Lab" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/446331/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/446331/'>Open Project ↗</Link>

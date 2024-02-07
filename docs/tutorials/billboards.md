@@ -12,4 +12,4 @@ Simple example of planes that always face the camera. i.e. billboards. Click on 
     <iframe loading="lazy" src="https://playcanv.as/p/ZCD1bSXQ/" title="Billboards" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/353938/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/353938/'>Open Project ↗</Link>

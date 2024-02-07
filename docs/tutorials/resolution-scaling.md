@@ -12,4 +12,4 @@ Example project on rendering the world at different resolutions without the UI b
     <iframe loading="lazy" src="https://playcanv.as/p/qx7PyE7q/" title="Resolution Scaling" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/708300/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/708300/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Example of how to use live HTML and CSS editing.
     <iframe loading="lazy" src="https://playcanv.as/p/KqqOGvVi/" title="HTML/CSS - Live Updates" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/354600/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/354600/'>Open Project ↗</Link>

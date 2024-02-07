@@ -12,4 +12,4 @@ Sample showing how to pick at objects without using the physics system (extra 1M
     <iframe loading="lazy" src="https://playcanv.as/p/Sd7PcPNL/" title="Entity picking without physics" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/436809/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/436809/'>Open Project ↗</Link>

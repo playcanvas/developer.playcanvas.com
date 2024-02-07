@@ -12,4 +12,4 @@ The classic game Tic Tac Toe
     <iframe loading="lazy" src="https://playcanv.as/p/i5csiIb9/" title="Tic Tac Toe" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/671439/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/671439/'>Open Project ↗</Link>
