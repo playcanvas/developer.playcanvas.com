@@ -1,6 +1,6 @@
 ---
 title: VR
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 ![VR View][1]

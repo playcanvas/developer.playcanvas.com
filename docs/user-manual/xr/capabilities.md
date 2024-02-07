@@ -1,6 +1,6 @@
 ---
 title: Capabilities
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 WebXR exposes various capabilities and new APIs through Modules, which are integrated into the PlayCanvas Engine for ease of use. The currently supported WebXR APIs are:
