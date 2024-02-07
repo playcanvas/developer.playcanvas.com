@@ -5,21 +5,23 @@ sidebar_position: 20
 
 ![VR View][2]
 
-PlayCanvasでは、新たなWebXR APIをベースに、外部連携機能やAR(Augmented Reality/拡張現実)やVR(Virtual Reality/仮想現実)アプリケーションを多様なデバイス用に制作することができます。WebXRはWebVR APIの発展形であり、最新のブラウザに加え、VRヘッドセット、コントローラー、AR機能へのアクセスを提供しています。
+PlayCanvas lets you create Augmented Reality (AR) and Virtual Reality (VR) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
 
 ## 対応プラットフォーム
 
-WebXRは新しいAPIであり、徐々にすべての主要なプラットフォームへ移行しています。最新のサポート状況は[caniuse.com][3]で確認できます。
+WebXR is a new API and it is being rolled out gradually to all major platforms. Up-to-date support can be checked on [caniuse.com][3].
 
 また、[WebXR Polyfill][4]を使用することでサポートを実現できます。
 
-**モバイル**では、PlayCanvas XRはCardboardスタイルのVRヘッドセットやその他のデバイスを使用したAndroidおよびiOSデバイスで動作します。ARも利用できます。Oculus QuestTMなどのAndroidベースのVRスタンドアロンデバイスでも動作します。
+On **mobile**, WebXR works on Android with VR and AR session types.
 
-**デスクトップ**では、PlayCanvas XRは現在ChromeとEdgeで動作し、Windows Mixed Reality、OpenXRなどのさまざまなネイティブAPIを介してデバイスがリンクされます。これにより、デスクトップベースの大半のVRデバイスをカバーします。
+On **HMDs**, such as Meta Quest, WebXR is well-supported for VR and AR session types. Apple Vision Pro currently supports VR session types when enabled in Safari settings.
+
+On **desktop**, WebXR currently works in Chrome and Edge, and devices are linked through various native APIs, such as SteamVR, OpenXR, and others. This covers the majority of desktop-based VR devices and allows devices such as Meta Quest to be used via Steam Link.
 
 ## XRデバイスなしでもWebXRをテストする方法
 
-WebXRを使って開発を始めるには、ChromeまたはFirefoxでWebXR APIをエミュレートする[拡張機能][1]を使用できます。これにより、さまざまなヘッドマウントディスプレイやコントローラーを操作できます。
+To start developing with WebXR today, a Chrome [extension][1] can be used which emulates the WebXR API. This allows developers to interact with various head-mounted displays and controllers.
 
 ## WebXRの始め方
 
@@ -35,7 +37,7 @@ button.element.on('click', function () {
 });
 ```
 
-[1]: https://github.com/MozillaReality/WebXR-emulator-extension
+[1]: https://chromewebstore.google.com/detail/immersive-web-emulator/cgffilbpcibhmcfbgggfhfolhkfbhmik
 [2]: /images/user-manual/xr/vr-view.png
 [3]: https://caniuse.com/#feat=webxr
 [4]: https://github.com/immersive-web/webxr-polyfill

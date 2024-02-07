@@ -1625,19 +1625,26 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/keyboard-shortcuts.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-launch-page]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/launch-page.md
-source_file   = docs/user-manual/editor/launch-page.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-launch-page-custom-engine]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/launch-page/custom-engine.md
+source_file   = docs/user-manual/editor/launch-page/custom-engine.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/editor/launch-page.md
+resource_name = content/en/user-manual/editor/launch-page/custom-engine.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-loading-screen]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/loading-screen.md
-source_file   = docs/user-manual/editor/loading-screen.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-launch-page-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/launch-page/index.md
+source_file   = docs/user-manual/editor/launch-page/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/editor/loading-screen.md
+resource_name = content/en/user-manual/editor/launch-page/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-launch-page-loading-screen]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/launch-page/loading-screen.md
+source_file   = docs/user-manual/editor/launch-page/loading-screen.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/launch-page/loading-screen.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-menus-and-toolbar]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/menus-and-toolbar.md
@@ -2388,13 +2395,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/scripting/creating-new.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-custom_engine]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scripting/custom_engine.md
-source_file   = docs/user-manual/scripting/custom_engine.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/scripting/custom_engine.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-debugging]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scripting/debugging.md
 source_file   = docs/user-manual/scripting/debugging.md
@@ -2598,6 +2598,34 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/ar/8th-wall-integration.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-anchors]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/anchors.md
+source_file   = docs/user-manual/xr/ar/anchors.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/anchors.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-camera-color]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/camera-color.md
+source_file   = docs/user-manual/xr/ar/camera-color.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/camera-color.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-depth-sensing]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/depth-sensing.md
+source_file   = docs/user-manual/xr/ar/depth-sensing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/depth-sensing.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-dom-overlay]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/dom-overlay.md
+source_file   = docs/user-manual/xr/ar/dom-overlay.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/dom-overlay.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/index.md
 source_file   = docs/user-manual/xr/ar/index.md
@@ -2611,6 +2639,13 @@ source_file   = docs/user-manual/xr/ar/zappar-integration.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/ar/zappar-integration.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-capabilities]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/capabilities.md
+source_file   = docs/user-manual/xr/capabilities.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/capabilities.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/index.md
