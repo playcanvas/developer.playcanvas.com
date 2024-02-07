@@ -109,7 +109,7 @@ if (app.xr.views.depthPixelFormat === pc.PIXELFORMAT_R32F) {
 
 ### UV Normalization
 
-WebXR might provide the texture rotated and flip in any combinations, so normalization should be implemented using the provided matrix. We can set this matrix like so:
+WebXR might provide the texture rotated and flipped in any combination, so normalization should be implemented using the provided matrix. We can set this matrix like so:
 
 ```javascript
 // get a global uniform scope
