@@ -1,13 +1,14 @@
 ---
-title: ローディングスクリーン
-sidebar_position: 8
+title: Loading Screen
 ---
 
-カスタムローディング画面を作成する場合は、[Scene Settings][1] に移動して、*Loading Screen* セクションの**Create Default**をクリックします。有効なローディング画面スクリプトがすでにある場合は、ローディング画面パネルにドラッグアンドドロップするか、**Select Existing**をクリックして選択できます。
+import Link from '@docusaurus/Link';
+
+If you want to create a custom loading screen, you can go to the [Scene Settings][1] and click **Create Default** in the *Loading Screen* section. If you already have a valid loading screen script you can drag and drop it on the loading screen panel or click on **Select Existing**:
 
 <img loading="lazy" alt="Loading Screen" src="/images/user-manual/editor/loading-screen/loading-screen.png" />
 
-**Create Default** をクリックすると、いくつかのデフォルトコンテンツを持つ新しいスクリプトが作成されます。ローディング画面を変更したい場合は、そのスクリプトを編集できます。以下はデフォルトスクリプトの例です。
+Clicking on **Create Default** will create a new script with some default contents. You can edit that script if you want to change the loading screen. Here is an example of a default script:
 
 ```
 pc.script.createLoadingScreen(function (app) {
@@ -123,3 +124,5 @@ pc.script.createLoadingScreen(function (app) {
 ```
 
 [1]: /user-manual/editor/settings
+
+<Link to='https://playcanvas.com/project/458028/'>Open Project ↗</Link>
