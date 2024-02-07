@@ -12,4 +12,4 @@ A sample showing how to pause and resume an app by modifying the timeScale prope
     <iframe loading="lazy" src="https://playcanv.as/p/sNoeqOZL/" title="Pause/Play application" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437707/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437707/'>Open Project ↗</Link>

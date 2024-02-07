@@ -126,4 +126,4 @@ pc.script.createLoadingScreen(function (app) {
 
 [1]: /user-manual/editor/settings
 
-<Link to='https://playcanvas.com/editor/project/458028/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/458028/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Sample that draws lines between all the current touches on the screen.
     <iframe loading="lazy" src="https://playcanv.as/p/p56cF89z/" title="Multitouch input" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437474/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437474/'>Open Project ↗</Link>

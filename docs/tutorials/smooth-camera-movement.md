@@ -12,4 +12,4 @@ Sample with a smooth transition of a camera from one position and rotation to an
     <iframe loading="lazy" src="https://playcanv.as/p/T7VKMrs8/" title="Smooth camera movement" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437461/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437461/'>Open Project ↗</Link>

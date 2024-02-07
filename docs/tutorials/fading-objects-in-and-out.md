@@ -12,4 +12,4 @@ Sample showing how to fade a model in and out using on a per model basis.
     <iframe loading="lazy" src="https://playcanv.as/p/kvToWplO/" title="Fading objects in and out" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/436566/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/436566/'>Open Project ↗</Link>

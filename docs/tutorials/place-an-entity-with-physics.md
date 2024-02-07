@@ -12,4 +12,4 @@ A sample showing how to place objects in the world by using physics. Click on gr
     <iframe loading="lazy" src="https://playcanv.as/p/JCW3CUKx/" title="Place an entity with physics" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437836/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437836/'>Open Project ↗</Link>

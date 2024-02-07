@@ -12,4 +12,4 @@ Basic scene with support for VR camera
     <iframe loading="lazy" src="https://playcanv.as/p/z7myUkHP/" title="WebXR Hello World" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/433339/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/433339/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Example project on how to add and play animations without using a state graph
     <iframe loading="lazy" src="https://playcanv.as/p/xrWromyG/" title="Animation without State Graph" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/841793/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/841793/'>Open Project ↗</Link>

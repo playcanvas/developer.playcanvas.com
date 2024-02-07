@@ -12,4 +12,4 @@ Sample showing how to detect a long press/touch to perform an action.
     <iframe loading="lazy" src="https://playcanv.as/p/kuSZj1KM/" title="Detecting a long press" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438459/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438459/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Sample switching on a model materials at runtime.
     <iframe loading="lazy" src="https://playcanv.as/p/7EZvdnZd/" title="Switching materials at runtime" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437442/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437442/'>Open Project ↗</Link>

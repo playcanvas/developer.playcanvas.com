@@ -16,4 +16,4 @@ See https://github.com/CesiumGS/gltf-pipeline for the tool to compress glTF mode
     <iframe loading="lazy" src="https://playcanv.as/p/2uU2aYDh/" title="Loading Draco Compressed GLBs" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/730372/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/730372/'>Open Project ↗</Link>

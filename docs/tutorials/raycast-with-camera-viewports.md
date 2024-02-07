@@ -12,4 +12,4 @@ Raycasting with multiple camera viewports. Click on the shapes in each view
     <iframe loading="lazy" src="https://playcanv.as/p/dXvrDzH2/" title="Raycast with Camera Viewports" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/964118/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/964118/'>Open Project ↗</Link>

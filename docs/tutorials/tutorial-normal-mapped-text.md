@@ -12,4 +12,4 @@ Dynamically generate normal maps and parallax maps for text
     <iframe loading="lazy" src="https://playcanv.as/p/MbMb81DM/" title="Tutorial: Normal Mapped Text" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/855103/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/855103/'>Open Project ↗</Link>

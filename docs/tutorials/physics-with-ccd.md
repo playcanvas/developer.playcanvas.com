@@ -12,4 +12,4 @@ A sample with a script to setup and enable CCD for very fast moving physics obje
     <iframe loading="lazy" src="https://playcanv.as/p/jBMFj7l2/" title="Physics with CCD" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/447023/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/447023/'>Open Project ↗</Link>

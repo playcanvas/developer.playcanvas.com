@@ -12,4 +12,4 @@ Example project to handle safe areas on the UI - https://developer.playcanvas.co
     <iframe loading="lazy" src="https://playcanv.as/p/z5pXervL/" title="Mobile UI Safe Areas" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/828118/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/828118/'>Open Project ↗</Link>
