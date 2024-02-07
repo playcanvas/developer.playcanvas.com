@@ -13,4 +13,4 @@ Sample showing how to move the camera with mouse and touch to look around
     <iframe loading="lazy" src="https://playcanv.as/p/TMrb4ucs/" title="360 lookaround camera" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438216/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438216/'>Open Project ↗</Link>

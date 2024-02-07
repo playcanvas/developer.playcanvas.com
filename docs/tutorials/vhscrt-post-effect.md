@@ -12,4 +12,4 @@ Basic fullscreen effect simulating a bad video screen like an old CRT.
     <iframe loading="lazy" src="https://playcanv.as/p/6hhSiHG3/" title="VHS/CRT Post Effect" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/373076/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/373076/'>Open Project ↗</Link>

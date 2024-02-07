@@ -12,4 +12,4 @@ Sample in which a UI Element is positioned over a world space point.
     <iframe loading="lazy" src="https://playcanv.as/p/xU0TSSIY/" title="World to UI Screen space" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/679740/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/679740/'>Open Project ↗</Link>

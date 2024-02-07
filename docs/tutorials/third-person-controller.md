@@ -12,4 +12,4 @@ A simple third person controller.
     <iframe loading="lazy" src="https://playcanv.as/p/Q7CJA9Ku/" title="Third Person Controller" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/705595/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/705595/'>Open Project ↗</Link>

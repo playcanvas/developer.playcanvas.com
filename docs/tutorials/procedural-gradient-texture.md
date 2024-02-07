@@ -12,4 +12,4 @@ Example of creating a procedural texture with a gradient effect by LeXXik
     <iframe loading="lazy" src="https://playcanv.as/p/5qggchI4/" title="Procedural Gradient Texture" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/708598/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/708598/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ A sample showing how to change a materials texture through a script
     <iframe loading="lazy" src="https://playcanv.as/p/Ivdxse42/" title="Changing textures at runtime" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437446/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437446/'>Open Project ↗</Link>

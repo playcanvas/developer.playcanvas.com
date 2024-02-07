@@ -12,4 +12,4 @@ Sample showing how to load multiple assets at runtime.
     <iframe loading="lazy" src="https://playcanv.as/p/P7eFFj4u/" title="Load multiple assets at runtime" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/439131/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/439131/'>Open Project ↗</Link>

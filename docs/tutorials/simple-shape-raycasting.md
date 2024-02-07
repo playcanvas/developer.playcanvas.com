@@ -12,4 +12,4 @@ Sample showing how to pick at an entity
     <iframe loading="lazy" src="https://playcanv.as/p/QGiL8OdM/" title="Simple shape raycasting" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/457922/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/457922/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ A rainbow trail using the pc.Mesh API
     <iframe loading="lazy" src="https://playcanv.as/p/jGeaTg6B/" title="Rainbow Trail with Mesh API" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/1029772/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/1029772/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Tutorial demonstrating basic touch input in PlayCanvas. Touch the box and move i
     <iframe loading="lazy" src="https://playcanv.as/p/iEIZxwBC/" title="Basic touch input" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438010/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438010/'>Open Project ↗</Link>

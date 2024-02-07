@@ -12,4 +12,4 @@ Sample application with WebXR Hands Tracking.
     <iframe loading="lazy" src="https://playcanv.as/p/VmHVW3Wb/" title="WebXR Hands" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/705931/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/705931/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Shockwave ripple post effect
     <iframe loading="lazy" src="https://playcanv.as/p/c16yO94k/" title="Shockwave" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/440868/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/440868/'>Open Project ↗</Link>

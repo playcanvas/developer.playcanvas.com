@@ -12,4 +12,4 @@ A sample application with boilerplate code for WebXR support with tracked contro
     <iframe loading="lazy" src="https://playcanv.as/p/TUBZkBEl/" title="WebXR Tracked Controllers" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/457917/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/457917/'>Open Project ↗</Link>
