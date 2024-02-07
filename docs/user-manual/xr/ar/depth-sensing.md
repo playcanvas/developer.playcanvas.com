@@ -5,7 +5,7 @@ sidebar_position: 1
 
 In the MR context, immersion is achieved by visual and logical interaction of virtual objects with the real world. This is achieved by many techniques including Depth Occlusion, particles interacting with the world, 3D scanning and more.
 
-Depth sensing - provides access to depth estimation of real-world objects in real-time. Underlying systems might have different methods of estimations such as Lidar hardware or Computer Vision, which provide various levels of quality and reliability.
+Depth sensing provides access to depth estimation of real-world objects in real-time. Underlying systems might have different methods of estimation such as Lidar hardware or Computer Vision, which provide various levels of quality and reliability.
 
 WebXR Depth Sensing provides access to depth information for each view and matches the color information. Various browsers might implement two paths: CPU and GPU, with various performance impacts depending on the path. PlayCanvas integrates an API abstracting away as much as possible the difference, e.g. texture is available for CPU and GPU paths.
 
