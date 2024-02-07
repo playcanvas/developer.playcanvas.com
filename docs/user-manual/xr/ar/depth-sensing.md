@@ -85,7 +85,7 @@ if (view) {
 
 ### Stereo Views
 
-When using texture in the shader, depending on monoscope or stereoscope scenario, a different approach should be used. And can be implemented by `#define` in the shader:
+When using the depth texture in the shader, depending on a monoscope or stereoscope scenario, a different approach should be used. This can be implemented by a `#define` in the shader:
 
 ```javascript
 const view = app.xr.views.list[0];
