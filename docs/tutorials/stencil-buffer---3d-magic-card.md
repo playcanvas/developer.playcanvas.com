@@ -14,4 +14,4 @@ Credit: @ alexanderrdx for the original project
     <iframe loading="lazy" src="https://playcanv.as/p/RAQhfemb/" title="Stencil Buffer - 3D Magic Card" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/855103/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/855103/'>Open Project ↗</Link>

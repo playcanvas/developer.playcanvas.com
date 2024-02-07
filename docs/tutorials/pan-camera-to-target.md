@@ -14,4 +14,4 @@ Credit: https://playcanvas.com/lexxik
     <iframe loading="lazy" src="https://playcanv.as/p/5SJsWtg3/" title="Pan Camera to Target" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/693889/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/693889/'>Open Project ↗</Link>

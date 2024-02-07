@@ -12,4 +12,4 @@ Scripts to use for RTL language support such Arabic
     <iframe loading="lazy" src="https://playcanv.as/p/k2TruV1u/" title="Right to left language support" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/764309/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/764309/'>Open Project ↗</Link>

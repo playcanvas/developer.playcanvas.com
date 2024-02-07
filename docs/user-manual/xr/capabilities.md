@@ -11,7 +11,7 @@ WebXR exposes various capabilities and new APIs through Modules, which are integ
 | [Anchors][4]         | Create anchors in space that are reliably positioned in relation to real-world geometry |
 | [Persistent Anchors][5] | Allows to persist anchors between sessions |
 | [Camera Color][6]    | Provides access to a color texture of a view |
-| Depth Sensing        | Provides access to depth texture and distance querying, that can be used for virtual object occlusion with real-world geometry and reliable object placement |
+| [Depth Sensing][8]        | Provides access to depth texture and distance querying, that can be used for virtual object occlusion with real-world geometry and reliable object placement |
 | [DOM Overlay][7]     | For monoscopic screens, allows to overlay DOM elements over an AR view |
 | Hand Tracking        | Optical hand tracking that tracks each joint of a hand |
 | Hit Testing          | Allows to ray cast real-world geometry using a ray, to get position and rotation of the intersection point |
@@ -28,3 +28,4 @@ WebXR exposes various capabilities and new APIs through Modules, which are integ
 [5]: /user-manual/xr/ar/anchors/#persistence
 [6]: /user-manual/xr/ar/camera-color/
 [7]: /user-manual/xr/ar/dom-overlay/
+[8]: /user-manual/xr/ar/depth-sensing/

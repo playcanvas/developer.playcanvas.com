@@ -12,4 +12,4 @@ Demonstration project that shows how to use multiple cameras and layers to rende
     <iframe loading="lazy" src="https://playcanv.as/p/h7V3tWZK/" title="Multiple Camera Layers" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/593374/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/593374/'>Open Project ↗</Link>
