@@ -32,7 +32,7 @@ if (app.xr.views.supportedDepth) {
 }
 
 app.xr.on('start', () => {
-    if (app.xr.views.availableDetpth) {
+    if (app.xr.views.availableDepth) {
         // camera depth information is available
 
         if (app.xr.views.depthGpuOptimized) {
