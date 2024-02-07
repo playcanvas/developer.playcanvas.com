@@ -48,7 +48,7 @@ app.xr.on('start', () => {
 
 Depth estimation and availability of the data is subject to the reliability of the underlying AR system, so depth information might not be always available.
 
-WebXR supports it only for CPU-path. Using Depth Sensing, you can measure the distance by providing U and V, which are 0 to 1 coordinates of a screen (left-right top-bottom).
+WebXR supports it only for the CPU-path. Using Depth Sensing, you can measure the distance by providing U and V, which are 0 to 1 coordinates of a screen (left-right and top-bottom).
 
 ```javascript
 // get monoscope view (mobile screens)
