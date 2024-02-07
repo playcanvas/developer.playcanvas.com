@@ -1,6 +1,5 @@
 ---
 title: Using a Custom Engine
-sidebar_position: 10
 ---
 
 By default, when you launch your PlayCanvas app from the Editor, it will use the latest stable build of the engine. Sometimes, there may be a reason why you may want to run your app with a different build of the engine. For example:
