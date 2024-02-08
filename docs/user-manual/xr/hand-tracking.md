@@ -10,7 +10,7 @@ If the platform supports [WebXR Hand Input][1], then an input source can have as
 Creating a basic hand model:
 
 ```javascript
-const joints = [ ];
+const joints = [];
 const hand = inputSource.hand;
 
 if (hand) {
