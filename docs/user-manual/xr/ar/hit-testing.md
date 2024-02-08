@@ -77,7 +77,7 @@ inputSource.hitTestStart({
         if (err) return;
         hitTestSource.on('result', function (position, rotation) {
             // position and rotation of a hit test result
-            // based on a ray of input source
+            // based on a ray of an input source
         });
     }
 });
