@@ -23,7 +23,7 @@ if (app.xr.hitTest.supported) {
 
 ## Hit Test Source
 
-When we want to start hit testing, we issue a request and are provided with a HitTestSource instance, which then provides results in the form of events. And we can manage the lifetime of the source that way.
+When we want to start hit testing, we issue a request and are provided with a `HitTestSource` instance, which then provides results in the form of events. We can manage the lifetime of the source that way.
 
 The most basic way is to start probing straight from the viewer forward
 
