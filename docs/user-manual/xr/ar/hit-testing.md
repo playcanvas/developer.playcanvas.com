@@ -69,7 +69,7 @@ Bear in mind that transient input sources (such as touch) do not provide hit tes
 
 ## Input Source
 
-The most common way to start hit testing is from a ray of input source (e.g. controllers or hands):
+The most common way to start hit testing is from a ray of an input source (e.g. controllers or hands):
 
 ```javascript
 inputSource.hitTestStart({
