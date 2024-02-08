@@ -9,7 +9,7 @@ This can be used in various ways and one of the most common is placing a virtual
 
 ## Reliability
 
-Hit Testing is implemented by an underlying system building an understanding of ever-evolving real-world geometry. Some platforms rely on pre-captured information, while some platforms estimate geometry in real-time based on Computer Vision techniques. So the reliability of hit testing is subject to underlying systems capabilities.
+Hit Testing is implemented by an underlying system building an understanding of ever-evolving real-world geometry. Some platforms rely on pre-captured information, while some platforms estimate geometry in real-time based on Computer Vision techniques. So the reliability of hit testing is subject to the capabilities of the underlying system.
 
 ## Support
 
