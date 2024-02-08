@@ -97,7 +97,7 @@ if (gamepad) {
 
 ## Hands
 
-Check out dedicated page for [Hands Tracking][7].
+Check out dedicated page for [Hand Tracking][7].
 
 ## Profiles
 
@@ -115,4 +115,4 @@ if (inputSource.profiles.includes('oculus-touch-v2')) {
 [4]: https://www.w3.org/TR/webxr-gamepads-module-1/
 [5]: https://w3c.github.io/gamepad/
 [6]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
-[7]: /user-manual/xr/hands-tracking/
+[7]: /user-manual/xr/hand-tracking/
