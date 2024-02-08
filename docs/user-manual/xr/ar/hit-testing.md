@@ -50,7 +50,7 @@ hitTestSource.remove();
 
 ## Monoscope (Touch Screen)
 
-When an XR session is started on a monoscopic device e.g. mobile phone with a touch screen, then it is possible to start hit tests based on user touches on the screen:
+When an XR session is started on a monoscopic device (such as a mobile phone with a touch screen), then it is possible to start hit tests based on user touches on the screen:
 
 ```javascript
 app.xr.hitTest.start({
