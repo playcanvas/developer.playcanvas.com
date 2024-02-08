@@ -106,7 +106,7 @@ app.xr.hitTest.start({
 
 ## Anchors
 
-Hit tests are performed against the estimation of real-world geometry, and the geometry can change if the underlying system estimation process refines the planes, meshes, or points that were hit by the hit test. For that reason, [Anchor][1] can be created from these hit tests, which then can be updated. This allows a more planted and reliable placement of the virtual objects:
+Hit tests are performed against the estimation of real-world geometry and the geometry can change if the underlying system estimation process refines the planes, meshes, or points that were hit by the hit test. For that reason, an [Anchor][1] can be created from these hit tests, which then can be updated. This allows a more planted and reliable placement of virtual objects:
 
 ```javascript
 // subscribe to hit test results
