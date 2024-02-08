@@ -26,7 +26,7 @@ if (hand) {
 
 ## Updates
 
-Every frame joint data can change position, rotation, and other details.
+Every frame, joint data can change position, rotation, and other details.
 
 ```javascript
 for(let i = 0; i < joints.length; i++) {
