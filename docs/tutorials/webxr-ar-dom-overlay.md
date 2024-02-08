@@ -12,4 +12,4 @@ Example of how to use DOM (HTML + CSS) with WebXR AR session.
     <iframe loading="lazy" src="https://playcanv.as/p/S01LYTIU/" title="WebXR AR: DOM Overlay" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/691979/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/691979/'>Open Project ↗</Link>

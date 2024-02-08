@@ -12,4 +12,4 @@ Sample showing how to rotate an object using the mouse in screen space
     <iframe loading="lazy" src="https://playcanv.as/p/BgbpyC0Y/" title="Rotating Objects with Mouse" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/442490/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/442490/'>Open Project ↗</Link>

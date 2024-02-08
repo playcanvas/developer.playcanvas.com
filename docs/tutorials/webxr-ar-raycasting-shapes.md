@@ -14,4 +14,4 @@ Tap the shapes to change their color!
     <iframe loading="lazy" src="https://playcanv.as/p/qiLEOeL7/" title="WebXR AR Raycasting Shapes" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/884783/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/884783/'>Open Project ↗</Link>

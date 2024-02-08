@@ -12,4 +12,4 @@ Sample showing how to control the volume of a sound slot using curve data. Click
     <iframe loading="lazy" src="https://playcanv.as/p/hmRciuNn/" title="Sound volume control using curve" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/436116/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/436116/'>Open Project ↗</Link>

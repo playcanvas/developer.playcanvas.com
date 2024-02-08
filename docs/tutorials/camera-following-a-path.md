@@ -12,4 +12,4 @@ Sample of a camera following points on a spline path.
     <iframe loading="lazy" src="https://playcanv.as/p/LuNJjRCr/" title="Camera following a path" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438429/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438429/'>Open Project ↗</Link>

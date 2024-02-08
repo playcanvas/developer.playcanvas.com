@@ -12,4 +12,4 @@ Sample with a fireball that moves with the mouse
     <iframe loading="lazy" src="https://playcanv.as/p/eavVneJi/" title="Flaming fireball" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/439385/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/439385/'>Open Project ↗</Link>

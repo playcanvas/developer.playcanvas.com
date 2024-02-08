@@ -12,4 +12,4 @@ Sample showing use of curves to do basic animation with curves.
     <iframe loading="lazy" src="https://playcanv.as/p/cp3OGFrJ/" title="Animate entities with curves" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438191/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438191/'>Open Project ↗</Link>

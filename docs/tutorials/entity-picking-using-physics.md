@@ -12,4 +12,4 @@ A sample showing how to use the physics raycast to pick entities
     <iframe loading="lazy" src="https://playcanv.as/p/J02HZ0PC/" title="Entity picking using physics" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/410547/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/410547/'>Open Project ↗</Link>

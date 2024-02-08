@@ -12,4 +12,4 @@ How to load a GLB as a binary asset.
     <iframe loading="lazy" src="https://playcanv.as/p/RIN6pM0I/" title="Loading glTF GLBs" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/730738/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/730738/'>Open Project ↗</Link>

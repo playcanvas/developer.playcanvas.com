@@ -1,17 +1,15 @@
 ---
 title: AR
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-![AR View][1]
-
-PlayCanvasでは、WebXR APIを通じてモバイルデバイス向けの拡張現実(AR)アプリケーションの作成が可能です。また、人気のあるARフレームワークとの統合も行われています。
+PlayCanvas lets you create Augmented Reality (AR) applications for mobile and HMD devices through the WebXR API, as well as through integrations with popular AR frameworks.
 
 ## 対応プラットフォーム
 
-AR機能は、Android Chromeブラウザを使用して利用できます。iOS SafariのWebXRサポートは[進行中][2]です。さらに、[8th Wall][3]および[Zappar][4]などのフレームワークを使用すると、Safariを含むほとんどのモバイルブラウザでARコンテンツを体験することができます。
+AR capabilities are available using the Android Chrome Browser, Meta Quest Browser, Magic Leap Helio, Samsung Internet, Microsoft Edge and many others. Additionally, frameworks such as [8th Wall][3] and [Zappar][4] allow users to experience AR content in most mobile browsers, including Safari.
 
-*上記のフレームワークは外部のものであり、各ウェブサイトで利用可能な別個のライセンスが存在します。*
+*The aforementioned frameworks are external and have separate licensing, available on their respective websites.*
 
 ## WebXR ARの開始
 
@@ -23,29 +21,28 @@ ARセッションを開始するには、デバイスのサポートと利用可
 
 ```javascript
 button.element.on('click', function () {
-    // XRがサポートされているか、ARが利用可能かをチェック
+    // check if XR is supported and AR is available
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_AR)) {
-        // Cameraコンポーネントを使用してARを開始する
-        entity.camera.startXr(pc.XRTYPE_AR, pc.XRSPACE_VIEWER);
+        // start AR using a camera component
+        entity.camera.startXr(pc.XRTYPE_AR, pc.XRSPACE_LOCALFLOOR);
     }
 });
 ```
 
-ユーザーが終了したら、immerse-xrモードは以下で終了できます。
+Once the user is done, the AR session can be exited by calling:
 
 ```javascript
 app.xr.end();
 ```
 
-拡張現実では、現実世界と仮想的なイメージをブレンドすることができます。これは、レンダリングバッファをカメラのフィード上に合成するか、透過性のあるグラスにレンダリングバッファを特別な投影によって合成することによって行われます。通常、現実世界の環境に対して空間追跡が提供されます。
+Augmented Reality allows blending of the real world with virtual imagery, either by composing a rendered buffer over the camera feed or with a special projection of a rendered buffer on see-through glasses. Usually, it is provided with spatial tracking relative to the real-world environment.
 
-適切な参照空間: `pc.XRSPACE_VIEWER`。
+Suitable reference space: `pc.XRSPACE_LOCALFLOOR`.
 
 ## スターターキット
 
-PlayCanvasでは、AR体験をより迅速に開始するための「スターターキット」プロジェクトをいくつか提供しています。新しいプロジェクトを作成する場合は、ダイアログから最適なテンプレートを選択してください。
+PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialogue the template that suits you best.
 
-[1]: /images/user-manual/xr/ar-view.png
 [2]: https://webkit.org/status/#specification-webxr
 [3]: /user-manual/xr/ar/8th-wall-integration/
 [4]: /user-manual/xr/ar/zappar-integration/

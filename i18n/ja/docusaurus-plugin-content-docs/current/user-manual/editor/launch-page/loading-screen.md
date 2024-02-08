@@ -1,7 +1,8 @@
 ---
 title: ローディングスクリーン
-sidebar_position: 8
 ---
+
+import Link from '@docusaurus/Link';
 
 カスタムローディング画面を作成する場合は、[Scene Settings][1] に移動して、*Loading Screen* セクションの**Create Default**をクリックします。有効なローディング画面スクリプトがすでにある場合は、ローディング画面パネルにドラッグアンドドロップするか、**Select Existing**をクリックして選択できます。
 
@@ -123,3 +124,5 @@ pc.script.createLoadingScreen(function (app) {
 ```
 
 [1]: /user-manual/editor/settings
+
+<Link to='https://playcanvas.com/project/458028/'>Open Project ↗</Link>

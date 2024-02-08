@@ -12,4 +12,4 @@ A sample showing how to place objects in the world without using physics. Click 
     <iframe loading="lazy" src="https://playcanv.as/p/Z2ieIwf8/" title="Place entity without physics" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/437894/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/437894/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Learn how to render world space UI over the top of the world
     <iframe loading="lazy" src="https://playcanv.as/p/0Ycgs0n7/" title="World space UI rendering on top" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/691979/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/691979/'>Open Project ↗</Link>

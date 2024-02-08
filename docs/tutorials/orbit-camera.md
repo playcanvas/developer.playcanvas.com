@@ -12,4 +12,4 @@ Sample with an orbit camera around an entity with both mouse and touch. Scroll w
     <iframe loading="lazy" src="https://playcanv.as/p/fI6jSYjK/" title="Orbit camera" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/438243/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/438243/'>Open Project ↗</Link>

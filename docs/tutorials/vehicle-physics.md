@@ -12,4 +12,4 @@ An implementation of vehicle physics in PlayCanvas, using the RaycastVehicle API
     <iframe loading="lazy" src="https://playcanv.as/p/CxgnAp22/" title="Vehicle Physics" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/643289/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/643289/'>Open Project ↗</Link>

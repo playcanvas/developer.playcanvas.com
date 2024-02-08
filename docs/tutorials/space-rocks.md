@@ -12,4 +12,4 @@ Get started making your own space shooter game by forking this template Asteroid
     <iframe loading="lazy" src="https://playcanv.as/p/cAFbOEtL/" title="Space Rocks!" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/1029772/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/1029772/'>Open Project ↗</Link>

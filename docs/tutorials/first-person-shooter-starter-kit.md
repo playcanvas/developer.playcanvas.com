@@ -12,4 +12,4 @@ Example project that extends the First Person Camera tutorial to move and jump a
     <iframe loading="lazy" src="https://playcanv.as/p/deRCEGms/" title="First Person Shooter Starter Kit" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/626211/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/626211/'>Open Project ↗</Link>

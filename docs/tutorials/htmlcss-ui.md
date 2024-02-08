@@ -12,4 +12,4 @@ Example of how to use HTML and CSS to create UI
     <iframe loading="lazy" src="https://playcanv.as/p/B4W3iveA/" title="HTML/CSS UI" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/443090/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/443090/'>Open Project ↗</Link>

@@ -12,4 +12,4 @@ Realistic hands in VR!
     <iframe loading="lazy" src="https://playcanv.as/p/pG6tosLX/" title="WebXR Realistic Hands" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/771952/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/771952/'>Open Project ↗</Link>

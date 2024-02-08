@@ -12,4 +12,4 @@ Interactive interior visualisation with dynamic reflections and HDR lightmaps.
     <iframe loading="lazy" src="https://playcanv.as/p/1ha5glKf/" title="Orange Room" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/345310/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/345310/'>Open Project ↗</Link>

@@ -10,4 +10,4 @@ import Link from '@docusaurus/Link';
     <iframe loading="lazy" src="https://playcanv.as/p/3NdgiVsp/" title="Warp a Sprite with GLSL" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/426038/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/426038/'>Open Project ↗</Link>

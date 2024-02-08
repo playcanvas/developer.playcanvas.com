@@ -14,4 +14,4 @@ Example of creating a planar reflection being used for a transparent mirror/wate
     <iframe loading="lazy" src="https://playcanv.as/p/bQE35vbj/" title="Planar Mirror Reflection" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" allowfullscreen="true" allowvr="" scrolling="no" frameborder="0" />
 </div>
 
-<Link to='https://playcanvas.com/editor/project/717166/'>Open Project ↗</Link>
+<Link to='https://playcanvas.com/project/717166/'>Open Project ↗</Link>

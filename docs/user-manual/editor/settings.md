@@ -278,7 +278,7 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [3]: /user-manual/assets/cubemaps
 [4]: /images/user-manual/editor/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
-[6]: /user-manual/editor/loading-screen
+[6]: /user-manual/editor/launch-page/loading-screen
 [7]: /user-manual/scenes/components/model
 [8]: /user-manual/scenes/components/element
 [9]: /user-manual/graphics/advanced-rendering/batching
