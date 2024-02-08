@@ -36,7 +36,7 @@ app.xr.hitTest.start({
         // subscribe to hit test results
         hitTestSource.on('result', function (position, rotation) {
             // position and rotation of hit test result
-            // based on Ray facing forward from the Viewer reference space
+            // based on a ray facing forward from the viewer reference space
         });
     }
 });
