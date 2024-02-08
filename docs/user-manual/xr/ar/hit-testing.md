@@ -68,9 +68,25 @@ app.xr.hitTest.start({
 Bear in mind that transient input sources, such as touch do not provide hit test results straight away, as the hit test source is created as an async operation and their results are a subject of the underlying system being able to provide such information.
 This means that touch might not provide any hit test results within their short-lived time.
 
+## Input Source
+
+The most common way to start hit testing is from a ray of input source (e.g. controllers or hands):
+
+```javascript
+inputSource.hitTestStart({
+    callback: function (err, hitTestSource) {
+        if (err) return;
+        hitTestSource.on('result', function (position, rotation) {
+            // position and rotation of a hit test result
+            // based on a ray of input source
+        });
+    }
+});
+```
+
 ## Arbitrary Ray
 
-It is also possible to start a hit testing using a ray with origin point and direction:
+It is also possible to start a hit testing using a custom ray with the origin point and a direction:
 
 ```javascript
 const ray = new pc.Ray();
@@ -87,6 +103,7 @@ app.xr.hitTest.start({
     }
 });
 ```
+
 
 ## Anchors
 
