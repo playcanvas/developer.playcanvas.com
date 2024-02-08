@@ -5,7 +5,7 @@ sidebar_position: 1
 
 In an AR/MR context, the interaction of virtual world objects with the real world is achieved by many techniques. Hit Testing allows one to pick a point in space by probing real-world geometry that is estimated using the underlying AR system.
 
-This can be used in various ways and one of the most common - placing a virtual object in space that feels planted in the real world.
+This can be used in various ways and one of the most common is placing a virtual object in space so that it feels planted in the real world.
 
 ## Reliability
 
