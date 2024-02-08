@@ -65,8 +65,7 @@ app.xr.hitTest.start({
 });
 ```
 
-Bear in mind that transient input sources, such as touch do not provide hit test results straight away, as the hit test source is created as an async operation and their results are a subject of the underlying system being able to provide such information.
-This means that touch might not provide any hit test results within their short-lived time.
+Bear in mind that transient input sources (such as touch) do not provide hit test results straight away, as the hit test source is created as an asynchronous operation and its results are a subject of the underlying system being able to provide such information. This means that a touch might not provide any hit test results within its short-lived time.
 
 ## Input Source
 
