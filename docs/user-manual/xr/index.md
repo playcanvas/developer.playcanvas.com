@@ -5,7 +5,14 @@ sidebar_position: 20
 
 ![VR View][2]
 
-PlayCanvas lets you create Augmented Reality (AR) and Virtual Reality (VR) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
+PlayCanvas lets you create [AR][6] (Augmented Reality) and [VR][7] (Virtual Reality) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
+
+## Capabilities
+
+Through extensions, WebXR is ever growing and various platforms are constantly implementing new and existing WebXR Modules.
+PlayCanvas Engine provides access to these modules in the form of integrations, so they are easier to work with and nicely work with PlayCanvas's systems.
+
+You can check a [list of currently supported modules][5].
 
 ## Platforms
 
@@ -31,8 +38,8 @@ To start an XR session, support and availability should be checked first. Then, 
 button.element.on('click', function () {
     // check if XR is supported and VR is available
     if (app.xr.supported && app.xr.isAvailable(pc.XRTYPE_VR)) {
-        // start VR using a camera component
-        entity.camera.startXr(pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
+        // start VR session providing a camera component
+        app.xr.start(entity.camera, pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
     }
 });
 ```
@@ -41,3 +48,6 @@ button.element.on('click', function () {
 [2]: /images/user-manual/xr/vr-view.png
 [3]: https://caniuse.com/#feat=webxr
 [4]: https://github.com/immersive-web/webxr-polyfill
+[5]: /user-manual/xr/capabilities/
+[6]: /user-manual/xr/ar/
+[7]: /user-manual/xr/vr/

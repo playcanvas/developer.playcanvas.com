@@ -3,8 +3,6 @@ title: Input Sources
 sidebar_position: 4
 ---
 
-## Input Source
-
 An [XrInputSource][1] represents an input mechanism that allows the user to interact with a virtual world. Those include but are not limited to handheld controllers, optically tracked hands, gaze-based input methods, and touch screens. However, an input source is not explicitly associated with traditional gamepads, mice or keyboards.
 
 ## Accessing Input Sources
@@ -99,37 +97,7 @@ if (gamepad) {
 
 ## Hands
 
-If the platform supports [WebXR Hand Input][7], then an input source might have associated hand data, which is exposed as [XrHand][8], and its data in the form of [XrFinger][9] and [XrJoint][10] for an application developer to use, such as wrist, fingers, each joint, tips and events for detecting when hands lose/restore tracking.
-
-Creating a basic hand model:
-
-```javascript
-const joints = [ ];
-const hand = inputSource.hand;
-
-if (hand) {
-    for(let i = 0; i < hand.joints.length; i++) {
-        const entity = new pc.Entity();
-        entity.joint = hand.joints[i];
-        entity.addComponent('render', { type: 'box' });
-        parent.addChild(entity);
-        joints.push(entity);
-    }
-}
-```
-
-And synchronising it on every update:
-
-```javascript
-for(let i = 0; i < joints.length; i++) {
-    const entity = joints[i];
-    const joint = entity.joint;
-    const radius = joint.radius * 2;
-    entity.setLocalScale(radius, radius, radius);
-    entity.setPosition(joint.getPosition());
-    entity.setRotation(joint.getRotation());
-}
-```
+Check out dedicated page for [Hands Tracking][7].
 
 ## Profiles
 
@@ -147,7 +115,4 @@ if (inputSource.profiles.includes('oculus-touch-v2')) {
 [4]: https://www.w3.org/TR/webxr-gamepads-module-1/
 [5]: https://w3c.github.io/gamepad/
 [6]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
-[7]: https://immersive-web.github.io/webxr-hand-input/
-[8]: https://api.playcanvas.com/classes/Engine.XrHand.html
-[9]: https://api.playcanvas.com/classes/Engine.XrFinger.html
-[10]: https://api.playcanvas.com/classes/Engine.XrJoint.html
+[7]: /user-manual/xr/hands-tracking/
