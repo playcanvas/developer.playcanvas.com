@@ -1,5 +1,5 @@
 ---
-title: Hands Tracking
+title: Hand Tracking
 sidebar_position: 5
 ---
 

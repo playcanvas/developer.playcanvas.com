@@ -59,5 +59,5 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 [5]: /user-manual/xr/ar/anchors/#persistence
 [6]: /user-manual/xr/ar/camera-color/
 [7]: /user-manual/xr/ar/dom-overlay/
-[8]: /user-manual/xr/hands-tracking/
+[8]: /user-manual/xr/hand-tracking/
 [9]: /user-manual/xr/ar/depth-sensing/
