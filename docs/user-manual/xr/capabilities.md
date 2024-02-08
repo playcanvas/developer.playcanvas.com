@@ -17,7 +17,7 @@ Some of the capabilities can be used either in [VR][1] or [AR][2], and some are 
 | [Depth Sensing][9] | Provides access to depth texture and distance querying, that can be used for virtual object occlusion with real-world geometry and reliable object placement. |
 | [DOM Overlay][7] | For monoscopic screens, allows to overlay DOM elements over an AR view. |
 | [Hand Tracking][8] | Optical hand tracking that tracks each joint of a hand. |
-| Hit Testing | Allows to ray cast real-world geometry using a ray, to get position and rotation of the intersection point. |
+| [Hit Testing][10] | Allows to ray cast real-world geometry using a ray, to get position and rotation of the intersection point. |
 | Image Tracking | Dynamic tracking of provided images, their position, and orientation. |
 | [Input Sources][3] | Various input source types such as controllers, hands, screen taps, gaze, and more. |
 | Light Estimation | Estimates real-world illumination by providing dominant directional light direction, color, and intensity as well as ambient light information in the form of spherical harmonics. |
@@ -61,3 +61,4 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 [7]: /user-manual/xr/ar/dom-overlay/
 [8]: /user-manual/xr/hand-tracking/
 [9]: /user-manual/xr/ar/depth-sensing/
+[10]: /user-manual/xr/ar/hit-testing/
