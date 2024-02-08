@@ -29,7 +29,7 @@ if (hand) {
 Every frame, joint data can change position, rotation, and other details.
 
 ```javascript
-for(let i = 0; i < joints.length; i++) {
+for (let i = 0; i < joints.length; i++) {
     const entity = joints[i];
     const joint = entity.joint;
     const radius = joint.radius * 2;
