@@ -41,7 +41,7 @@ for (let i = 0; i < joints.length; i++) {
 
 ## Tracking
 
-The tracking is a subject of reliability and how sophisticated underlying systems tracking is. But there might be still cases when tracking is not possible due to obstructions between cameras and hands, or when hands interlock in a complex way. While Computer Vision techniques are improving, when designing content with hands as an input source, their shortcomings should be taken into mind.
+Hand tracking is subject to the reliability and sophistication of the underlying system. There might be cases when tracking is not possible due to obstructions between cameras and hands, or when hands interlock in a complex way. While Computer Vision techniques are improving, when designing content with hands as an input source, their shortcomings should be taken into consideration.
 
 [1]: https://immersive-web.github.io/webxr-hand-input/
 [2]: https://api.playcanvas.com/classes/Engine.XrHand.html
