@@ -97,7 +97,7 @@ if (gamepad) {
 
 ## Hands
 
-Check out dedicated page for [Hand Tracking][7].
+Check out the dedicated page for [Hand Tracking][7].
 
 ## Profiles
 

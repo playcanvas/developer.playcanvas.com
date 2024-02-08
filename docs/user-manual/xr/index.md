@@ -9,8 +9,7 @@ PlayCanvas lets you create [AR][6] (Augmented Reality) and [VR][7] (Virtual Real
 
 ## Capabilities
 
-Through extensions, WebXR is ever growing and various platforms are constantly implementing new and existing WebXR Modules.
-PlayCanvas Engine provides access to these modules in the form of integrations, so they are easier to work with and nicely work with PlayCanvas's systems.
+Through extensions, WebXR is ever growing and various platforms are constantly implementing new and existing WebXR Modules. The PlayCanvas Engine provides access to these modules in the form of integrations, so they are easier to work with and work nicely with PlayCanvas' systems.
 
 You can check a [list of currently supported modules][5].
 
