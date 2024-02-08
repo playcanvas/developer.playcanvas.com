@@ -90,7 +90,7 @@ It is also possible to start a hit testing using a custom ray with the origin po
 ```javascript
 const ray = new pc.Ray();
 
-ray.origin.set(0, 1, 0); // start 1 meter above zero point
+ray.origin.set(0, 1, 0); // start 1 meter above the origin
 ray.direction.set(0, -1, 0); // point downwards
 
 app.xr.hitTest.start({
