@@ -1,6 +1,6 @@
 ---
 title: Uploading and Importing
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 ## Creating New Assets

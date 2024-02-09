@@ -274,7 +274,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 [1]: /user-manual/editor/menus-and-toolbar
 [2]: /images/user-manual/editor/settings/cog.jpg
-[3]: /user-manual/assets/cubemaps
+[3]: /user-manual/assets/types/cubemap
 [4]: /images/user-manual/editor/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/editor/launch-page/loading-screen

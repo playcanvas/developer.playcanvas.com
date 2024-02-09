@@ -1,5 +1,5 @@
 ---
-title: パフォーマンス
+title: Optimization
 sidebar_position: 19
 ---
 

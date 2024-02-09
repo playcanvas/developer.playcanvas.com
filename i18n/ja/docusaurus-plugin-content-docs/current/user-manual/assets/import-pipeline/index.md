@@ -1,6 +1,6 @@
 ---
 title: アセットインポートのパイプライン
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 一部のアセットは、ランタイムでゲームで使用する前に、"ターゲット (Target) "フォーマットに変換する必要があります。このプロセスを *インポート* と呼びます。たとえば、3DモデルはFBXファイルとしてアップロードできますが、ゲームで読み込む前にPlayCanvas互換のモデルファイルに変換する必要があります。
@@ -96,4 +96,4 @@ Draco圧縮を使用する場合は、プロジェクトにDraco WASMモジュ�
 
 [2]: /user-manual/assets/preloading-and-streaming/
 [3]: /user-manual/assets/import-pipeline/import-hierarchy/
-[4]: /user-manual/assets/animation/
+[4]: /user-manual/assets/types/animation/

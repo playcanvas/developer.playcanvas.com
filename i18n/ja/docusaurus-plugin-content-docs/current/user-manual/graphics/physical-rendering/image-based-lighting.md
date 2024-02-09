@@ -64,7 +64,7 @@ CubeMap Box Projectionを使用したシーンの[例][7]と[プロジェクト]
 [0]: https://github.com/dariomanesku/cmftStudio
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction
 [2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
-[3]: /user-manual/assets/cubemaps/
+[3]: /user-manual/assets/types/cubemap/
 [4]: /images/user-manual/graphics/physical-rendering/cubemap-box-projection.png
 [5]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg
 [6]: http://www.hdrlabs.com/sibl/archive.html
