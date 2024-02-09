@@ -26,7 +26,7 @@ JavaScriptを使用してエンティティの動作を制御できます。 エ
 
 シーンの背景色を変更するには、シーンのカメラの Clear Color プロパティを更新する必要があります。
 
-You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to your scene.
+または、シーンに[スカイボックス](/user-manual/assets/types/cubemap/)を追加することもできます。
 
 [詳細を見る](/user-manual/scenes/components/camera/)
 
@@ -40,7 +40,7 @@ You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to 
 
 新しいマテリアルを作成し、それをモデルにドラッグ&ドロップするか、既存のマテリアルを選択してインスペクターでプロパティを編集することができます。
 
-[Learn more](/user-manual/assets/types/material/)
+[詳細を見る](/user-manual/assets/types/material/)
 
 
 
@@ -52,7 +52,7 @@ You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to 
 
 キューブマップを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして**New Cubemap**を選択し、キューブマップインスペクターに6つのテクスチャをドラッグします。物理ベースのレンダリングを活用するには、6つのテクスチャを設定した後に**Prefilter**をクリックする必要があります。
 
-[Learn more](/user-manual/assets/types/cubemap/)
+[詳細を見る](/user-manual/assets/types/cubemap/)
 
 
 
@@ -77,7 +77,7 @@ You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to 
 
 マテリアルを作成するには、アセットパネルの**<span class="pc-icon">&#57632;</span> Add**ボタンをクリックして、**New Material**を選択します。
 
-[Learn more](/user-manual/assets/types/material/)
+[詳細を見る](/user-manual/assets/types/material/)
 
 
 
@@ -97,13 +97,13 @@ You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to 
 
 他の形状についても同様に、エンティティを右クリックしてNew Entity/Boxを選択することができます。
 
-[Learn more](/user-manual/scenes/components/render/)
+[詳細を見る](/user-manual/scenes/components/render/)
 
 
 
 ## スカイボックスを作成するには?
 
-To create a skybox for your scene you first need to create a [Cubemap asset](/user-manual/assets/types/cubemap/). Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the Scene Settings and drag the Cubemap in the Skybox field.
+シーンにスカイボックスを作成するには、まず[Cubemapアセット](/user-manual/assets/types/cubemap/)を作成する必要があります。その後、Cubemapを3Dビューポートにドラッグアンドドロップするか、Scene Settingsに移動してSkyboxフィールドにCubemapをドラッグします。
 
 [詳細を見る](/user-manual/editor/settings/#skybox)
 
@@ -138,7 +138,7 @@ To create a skybox for your scene you first need to create a [Cubemap asset](/us
 
 ## サウンドを再生するにはどうすればよいですか?
 
-To play sounds you need to add a [Sound component](/user-manual/scenes/components/sound/) to an Entity. Then you can create slots to play [Audio assets](/user-manual/assets/types/audio/). Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an [AudioListener component](/user-manual/scenes/components/audiolistener/) to an Entity - usually to the Camera Entity.
+サウンドを再生するには、Entityに[Sound component](/user-manual/scenes/components/sound/)を追加する必要があります。その後、[Audio assets](/user-manual/assets/types/audio/) を再生するスロットを作成することができます。スロットを追加して、オーディオアセットをアセットフィールドにドラッグアンドドロップします。サウンドを聞くためには、[AudioListener component](/user-manual/scenes/components/audiolistener/)をEntityに追加する必要があります。通常はカメラEntityに追加します。
 
 オーディオアセットは、コンピュータからAssetsパネルにオーディオファイルをドラッグアンドドロップすることで作成できます。
 
