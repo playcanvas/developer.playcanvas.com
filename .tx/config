@@ -1513,13 +1513,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/assets/textures/index.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-textures-texture-compression]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/textures/texture-compression.md
-source_file   = docs/user-manual/assets/textures/texture-compression.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/assets/textures/texture-compression.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-viewers]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/viewers.md
 source_file   = docs/user-manual/assets/viewers.md
@@ -1953,6 +1946,13 @@ source_file   = docs/user-manual/optimization/runtime-devicepixelratio.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/optimization/runtime-devicepixelratio.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-texture-compression]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/optimization/texture-compression.md
+source_file   = docs/user-manual/optimization/texture-compression.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/optimization/texture-compression.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-troubleshooting-performance]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/optimization/troubleshooting-performance.md
@@ -2626,6 +2626,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/ar/dom-overlay.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-hit-testing]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/hit-testing.md
+source_file   = docs/user-manual/xr/ar/hit-testing.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/hit-testing.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/index.md
 source_file   = docs/user-manual/xr/ar/index.md
@@ -2646,6 +2653,13 @@ source_file   = docs/user-manual/xr/capabilities.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/capabilities.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-hand-tracking]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/hand-tracking.md
+source_file   = docs/user-manual/xr/hand-tracking.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/hand-tracking.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/index.md
