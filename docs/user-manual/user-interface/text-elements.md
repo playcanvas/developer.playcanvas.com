@@ -95,7 +95,7 @@ The Opacity property allows you to set the transparency of the string
 
 ![Transparent][10]
 
-[1]: /user-manual/assets/fonts
+[1]: /user-manual/assets/types/font
 [2]: /images/user-manual/user-interface/text-element/auto-size.png
 [3]: /images/user-manual/user-interface/text-element/alignment-bottom-left.png
 [4]: /images/user-manual/user-interface/text-element/alignment-centered.png

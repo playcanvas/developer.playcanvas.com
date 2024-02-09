@@ -1,6 +1,5 @@
 ---
 title: Sprite
-sidebar_position: 13
 ---
 
 A Sprite is a 2D graphic that can be rendered into Scene. A Sprite Asset is a reference to a [Texture Atlas][1] and a sequence of frames from that atlas. In this way a sprite can either represent a single image (taken out of the atlas) or a flip-book style animation (multiple frames from the atlas).
@@ -25,6 +24,6 @@ If you create a *Sliced* sprite, by default it will be created with a `pixelsPer
 
 The Texture Atlas asset that the sprite references
 
-[1]: /user-manual/assets/texture-atlas
+[1]: /user-manual/assets/types/texture-atlas
 [2]: /user-manual/2D/slicing
 [3]: /images/user-manual/assets/sprites/sprites.jpg

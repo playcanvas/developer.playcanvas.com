@@ -1,6 +1,5 @@
 ---
 title: Cubemap
-sidebar_position: 7
 ---
 
 Cubemaps are a special type of texture asset. They are formed from 6 texture assets where each texture represents the face of a cube. They typically have two uses:

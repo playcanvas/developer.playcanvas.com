@@ -1,6 +1,5 @@
 ---
 title: Texture Atlas
-sidebar_position: 16
 ---
 
 ![Texture Atlas][1]
@@ -30,6 +29,6 @@ The Frames of a texture atlas are keyed by a unique value, usually a integer str
 In addition to frame data the Texture Atlas contains the properties as a [texture asset][2].
 
 [1]: /images/user-manual/assets/texture-atlas/texture-atlas.jpg
-[2]: /user-manual/assets/textures
+[2]: /user-manual/assets/types/texture
 [3]: /user-manual/editor/settings#create-atlases
-[4]: /user-manual/assets/sprites
+[4]: /user-manual/assets/types/sprite

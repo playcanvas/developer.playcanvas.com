@@ -1,6 +1,5 @@
 ---
 title: Shader
-sidebar_position: 12
 ---
 
 A shader asset contains GLSL code. You can create a new Shader asset by clicking New Shader in the Asset Panel in the Editor or by uploading a file with an extension of ```.vert```, ```.frag``` or ```.glsl```.

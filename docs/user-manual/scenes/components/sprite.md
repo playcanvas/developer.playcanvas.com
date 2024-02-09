@@ -62,7 +62,7 @@ Animated Sprite Components have multiple Sprite Animation Clips attached which c
 You can control the properties of a Sprite component using a [script component][4]. The scripting interface for the Sprite component is [here][5].
 
 
-[1]: /user-manual/assets/sprites
+[1]: /user-manual/assets/types/sprite
 [2]: /images/user-manual/scenes/components/component-sprite-simple.png
 [3]: /images/user-manual/scenes/components/component-sprite-animated.png
 [4]: /user-manual/scenes/components/script

@@ -1,6 +1,5 @@
 ---
-title: Wasm Module
-sidebar_position: 17
+title: WASM Module
 ---
 
 Wasm Modules (also known was WebAssembly Modules) contain compiled executable code for the web.

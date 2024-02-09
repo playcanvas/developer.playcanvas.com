@@ -1,6 +1,5 @@
 ---
 title: Audio
-sidebar_position: 5
 ---
 
 Audio assets are sound files which can be played back using the [Sound component][sound-component].
