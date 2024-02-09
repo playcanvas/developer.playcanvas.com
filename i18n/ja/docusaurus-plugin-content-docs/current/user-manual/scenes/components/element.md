@@ -65,7 +65,7 @@ Image Elementは、Textureアセットまたは単色を使用して画像を表
 [1]: /user-manual/user-interface
 [2]: /images/user-manual/scenes/components/component-element-group.png
 [3]: /images/user-manual/scenes/components/component-element-image.png
-[4]: /user-manual/assets/fonts/
+[4]: /user-manual/assets/types/font/
 [5]: /images/user-manual/scenes/components/component-element-text.png
 [6]: /user-manual/user-interface/elements/#anchor
 [7]: /user-manual/user-interface/elements/#pivot
