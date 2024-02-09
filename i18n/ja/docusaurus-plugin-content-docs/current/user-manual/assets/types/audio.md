@@ -1,6 +1,5 @@
 ---
-title: Audio
-sidebar_position: 5
+title: オーディオ (Audio)
 ---
 
 Audioアセットは、[Soundコンポーネント][sound-component]を使用して再生できる音声ファイルです。

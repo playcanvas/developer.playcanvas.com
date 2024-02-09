@@ -1,6 +1,5 @@
 ---
 title: Sprite
-sidebar_position: 13
 ---
 
 スプライト (Sprite) は、シーンにレンダリングできる2Dグラフィックです。Spriteアセットは、 [Texture Atlas][1]への参照と、そのアトラスからのフレームのシーケンスです。このように、スプライトはアトラスから取り出した単一の画像を表すことができる他、フリップブックスタイルのアニメーション(アトラスから複数のフレーム)を表すこともできます。
@@ -26,6 +25,6 @@ PlayCanvasのシーン内で、1単位毎にマッピングされるスプライ
 
 スプライトが参照するテクスチャアトラスアセット
 
-[1]: /user-manual/assets/texture-atlas
+[1]: /user-manual/assets/types/texture-atlas
 [2]: /user-manual/2D/slicing
 [3]: /images/user-manual/assets/sprites/sprites.jpg

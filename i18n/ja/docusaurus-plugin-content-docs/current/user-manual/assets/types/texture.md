@@ -1,6 +1,5 @@
 ---
-title: テクスチャ
-sidebar_position: 15
+title: テクスチャ (Texture)
 ---
 
 テクスチャとは、[マテリアル][1]に割り当てられ、グラフィカルなプリミティブに適用される画像のことです。
@@ -76,7 +75,7 @@ If the engine attempts to utilize a texture that exceeds the max texture size re
 
 実行時にサイズを縮小しない場合は、2020年10月23日現在、4096x4096が非常に広範にサポートされていますし、一般的には2048x2048がどこでも動作保証されています。
 
-[1]: /user-manual/assets/materials
+[1]: /user-manual/assets/types/material
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
 [3]: /images/user-manual/assets/textures/texture-properties.png
 [4]: /images/user-manual/assets/textures/anisotropy.png

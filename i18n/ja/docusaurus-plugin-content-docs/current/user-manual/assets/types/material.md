@@ -1,9 +1,86 @@
 ---
-title: 物理マテリアル
-sidebar_position: 1
+title: マテリアル (Material)
 ---
 
-物理的なマテリアルは、PlayCanvasで利用可能な最も高度で高品質なシェーディングモデルを表します。私たちは、物理シェーディングモデルの使用をお勧めします。
+3Dモデルのすべての表面は、マテリアルを使用してレンダリングされます。マテリアルは、色、光沢、凹凸など、表面の特性を定義します。
+
+PlayCanvasでは、マテリアルはプロパティをまとめたアセットタイプです。デフォルトでは、物理的なマテリアルを表します。これにより、滑らかなプラスチックから粗い木材、傷だらけの金属まで、さまざまな種類の視覚効果を作成するために使用できる基本的なプロパティが公開されます。
+
+以前のフォンマテリアルタイプもサポートしています。
+
+## マテリアルのインポート {#importing-materials}
+
+PlayCanvasに3Dモデル(例:FBXまたはCOLLADA)ファイルをアップロードすると、マテリアルが自動的にインポートされます。マテリアルは、3Dモデリングツール内に存在するプロパティと同じプロパティで生成されます。埋め込みメディア(FBXのみ)を使用してアップロードする場合は、関連するすべてのテクスチャマップが自動的に設定されます。
+
+## 新しいマテリアルの作成 {#creating-new-materials}
+
+PlayCanvas Editorインターフェイスから直接新しいマテリアルを作成できます。
+
+![Create Material][1]
+
+これにより、新しいマテリアルアセットが作成され、画面の右側にマテリアルインスペクターが開きます。
+
+## マテリアルの選択 {#selecting-a-material}
+
+![Model Inspector][2]
+
+マテリアルを編集するには、まず選択する必要があります。これにより、マテリアルインスペクターが表示されます。
+
+マテリアルをアセットパネルで選択することもできます。また、モデルインスペクターやモデルコンポーネントからもマテリアルを選択できます。
+
+マテリアルのプレビューアイコンをクリックすると、マテリアルインスペクターに移動します。
+
+## マテリアルの割り当て {#assigning-materials}
+
+![Model Component][3]
+
+Modelアセットのどこにどのマテリアルを割り当てるかを変更することができます。また、Modelコンポーネントを持つ特定のEntityのマテリアルをカスタマイズすることもできます。
+
+Modelコンポーネントを持つEntityを選択すると、2つのボタンが表示されます - アセットマテリアルとEntityマテリアル。
+
+![Model Inspector Free Slot][4]
+
+Asset Materialsをクリックすると、Modelアセットが選択されます。アセットパネルからもModelアセットを選択できます。モデルインスペクターには、モデルのメッシュと各々に割り当てられたマテリアルが表示されます。Xボタンを使用してマテリアルをクリアでき、空きスロットをクリックして新しいマテリアルを割り当てることができます。
+
+アセットパネルからマテリアルアセットをドラッグアンドドロップして、マテリアルスロットにドロップすることもできます。
+
+エンティティマテリアルをクリックすると、まずカスタマイズするメッシュインスタンスを選択するよう求められます。
+
+![Select Mesh Instance][5]
+
+メッシュインスタンスを選択した後、Modelコンポーネントに新しいマテリアルピッカーが表示されます。
+
+![Selected Mesh Instance][6]
+
+その後、この特定のエンティティに別のマテリアルを選択できます。
+
+![Select Different Material][7]
+
+## マテリアルの編集 {#editing-a-material}
+
+![Material Inspector][8]
+
+マテリアルを選択した後、そのプロパティを編集できます。
+
+## マテリアルマップ  {#material-maps}
+
+![Material Map Slot][11]
+
+マテリアルの編集には、上記ページで詳細に説明されているさまざまなスロットにテクスチャマップを作成および割り当てることが多く含まれます。
+
+ほとんどのテクスチャマップスロットで利用可能ないくつかのオプションがあります。
+
+### Textureアセット {#texture-asset}
+
+最初にTextureアセットをアップロードしてください。PlayCanvasはTextureアセットを作成します。これらをマテリアルのスロットに割り当てることができます。
+
+### ColorまたはTint Color {#color-or-tint-color}
+
+いくつかのマップスロットは、テクスチャマップがなくても単色にすることができます。また、テクスチャが割り当てられている場合は、tint colorをサポートするスロットもあります。tint colorが有効になっている場合、tint colorは、テクスチャマップスロットの色に乗算されます。
+
+### Channel {#channel}
+
+一部のマップでは、単一のグレースケール値、つまり0.0 -> 1.0が必要です。この場合、使用するテクスチャのチャンネルを選択できます。 **RGB** は、すべての3つのチャンネルを使用することを意味します。**R**、 **G**、または **B** は、赤、緑、または青チャンネルのみが使用されることを意味します。
 
 ### Offset & Tiling
 
@@ -138,3 +215,13 @@ Light Mapには事前にベイクされたDiffuse Lightingが含まれていま�
 | Cull            | オプションは次のとおりです。<ul> <li>None: 前面と背面の両方がレンダリングされます。</li> <li>Front Faces: 前面がレンダリングされ、背面はレンダリングされません。</li> <li>Back Faces: 背面がレンダリングされ、前面はレンダリングされません。これがデフォルトです。</li> </ul> PlayCanvasでは、反時計回りの頂点の巻き方が前面の三角形を指定すると規定しています。背面のカリングは、背面のピクセルが頻繁に上書きされる（凸メッシュの場合）ため、パフォーマンス向上に役立つことが多いです。 |
 | Blend Type      | オプションは次のとおりです。<ul> <li>None: メッシュは不透明です。これがデフォルトです。</li> <li>Normal: メッシュは透明で、ステンドグラスのようです。</li> <li>Additive: メッシュの色がフレームバッファにすでにレンダリングされているものに加えられます。</li> <li>Pre-multiply: Normal'ブレンドと同様ですが、このマテリアルでレンダリングされるメッシュの色がすでにそのアルファ値で調整されていると想定されます。</li><li>Multiply: レンダリング時に、メッシュの色がフレームバッファにすでにレンダリングされたものと乗算されます。</li></ul> |
 | Shadow Sampling | オプションは: <ul><li>Hard</li><li>PCF 3x3</li></ul>  |
+
+[1]: /images/user-manual/assets/materials/create-asset-menu.jpg
+[2]: /images/user-manual/assets/materials/model-inspector-simple.jpg
+[3]: /images/user-manual/assets/materials/model.png
+[4]: /images/user-manual/assets/materials/model-inspector-free-slot.jpg
+[5]: /images/user-manual/assets/materials/select.png
+[6]: /images/user-manual/assets/materials/selected.png
+[7]: /images/user-manual/assets/materials/overridden.png
+[8]: /images/user-manual/assets/materials/material-inspector.jpg
+[11]: /images/user-manual/assets/materials/material-map-slot.jpg

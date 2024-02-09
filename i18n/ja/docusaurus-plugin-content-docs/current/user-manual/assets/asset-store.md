@@ -1,9 +1,7 @@
 ---
-title: アセットストア
-sidebar_position: 6
+title: Asset Store
+sidebar_position: 5
 ---
-
-## ストア
 
 [PlayCanvas Store][1]からプロジェクトで使用できる無料の3Dモデルを取得できます。
 

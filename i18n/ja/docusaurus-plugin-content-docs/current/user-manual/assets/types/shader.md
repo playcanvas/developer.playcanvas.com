@@ -1,6 +1,5 @@
 ---
 title: Shader
-sidebar_position: 12
 ---
 
 ShaderアセットにはGLSLコードが含まれています。エディターのアセットパネルで New Shaderをクリックするか、拡張子が ```.vert```、 ```.frag```、または ```.glsl``` のファイルをアップロードすることで、新しいShaderアセットを作成できます。
