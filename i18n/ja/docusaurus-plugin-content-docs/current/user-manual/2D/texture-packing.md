@@ -61,7 +61,7 @@ TexturePackerはダウンロードできる有料ツールで、テクスチャ�
 - 既存のスプライトは、そのフレームが更新されます。
 
 
-[texture-atlas]: /user-manual/assets/texture-atlas/
+[texture-atlas]: /user-manual/assets/types/texture-atlas/
 [texture-packer-online]: https://www.codeandweb.com/tp-online
 [texture-packer-tool]: https://www.codeandweb.com/texturepacker
 [9-slicing]: /user-manual/2D/slicing/

@@ -90,5 +90,5 @@ Spriteアセットが選択されているときにスプライトインスペ�
 [3]: /images/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg
 [4]: /images/user-manual/2D/sprite-editor/frame-inspector.jpg
 [5]: /images/user-manual/2D/sprite-editor/sprite-inspector.jpg
-[6]: /user-manual/assets/sprites/
+[6]: /user-manual/assets/types/sprite/
 [7]: /user-manual/2D/slicing/
