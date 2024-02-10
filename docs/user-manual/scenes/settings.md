@@ -251,7 +251,7 @@ When importing a scene (e.g. an FBX) this setting decides whether texture files 
 [9]: /user-manual/graphics/advanced-rendering/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
-[12]: /images/user-manual/editor/settings/lightmapping-settings.png
+[12]: /images/user-manual/scenes/settings/lightmapping-settings.png
 [13]: /user-manual/graphics/lighting/runtime-lightmaps/#soft-directional-light
 [14]: /user-manual/graphics/lighting/runtime-lightmaps/#baking-an-environment-light
 [15]: /user-manual/graphics/lighting/runtime-lightmaps
