@@ -1653,13 +1653,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/launch-page/loading-screen.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-menus-and-toolbar]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/menus-and-toolbar.md
-source_file   = docs/user-manual/editor/menus-and-toolbar.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/editor/menus-and-toolbar.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-scenes]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/scenes.md
 source_file   = docs/user-manual/editor/scenes.md
@@ -1673,6 +1666,13 @@ source_file   = docs/user-manual/editor/settings.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/settings.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-toolbar]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/toolbar.md
+source_file   = docs/user-manual/editor/toolbar.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/toolbar.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-viewport]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/viewport.md
