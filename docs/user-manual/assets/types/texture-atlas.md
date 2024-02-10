@@ -30,5 +30,5 @@ In addition to frame data the Texture Atlas contains the properties as a [textur
 
 [1]: /images/user-manual/assets/texture-atlas/texture-atlas.jpg
 [2]: /user-manual/assets/types/texture
-[3]: /user-manual/editor/settings#create-atlases
+[3]: /user-manual/scenes/settings#create-atlases
 [4]: /user-manual/assets/types/sprite
