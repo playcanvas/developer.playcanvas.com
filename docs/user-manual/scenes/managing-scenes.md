@@ -1,9 +1,7 @@
 ---
-title: Scenes
-sidebar_position: 9
+title: Managing Scenes
+sidebar_position: 3
 ---
-
-## Scenes
 
 You can manage your scenes by opening the Scenes dialog.
 
