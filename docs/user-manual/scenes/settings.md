@@ -241,9 +241,9 @@ When importing a scene (e.g. an FBX) this setting decides whether material files
 When importing a scene (e.g. an FBX) this setting decides whether texture files are overwritten with a new version imported from the scene.
 
 [1]: /user-manual/editor/toolbar
-[2]: /images/user-manual/editor/settings/cog.jpg
+[2]: /images/user-manual/scenes/settings/cog.jpg
 [3]: /user-manual/assets/types/cubemap
-[4]: /images/user-manual/editor/settings/gamma-correction.jpg
+[4]: /images/user-manual/scenes/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/editor/launch-page/loading-screen
 [7]: /user-manual/scenes/components/model
