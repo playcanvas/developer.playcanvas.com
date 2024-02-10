@@ -3,7 +3,7 @@ title: ヒエラルキー (Hierarchy)
 sidebar_position: 2
 ---
 
-![Hierarchy Panel][1]
+![Hierarchy Panel](/images/user-manual/editor/hierarchy/hierarchy-panel.png)
 
 ヒエラルキーパネルは、シーン全体のツリービューを表示し、エンティティの階層から構成されます。シーンには常にツリーのトップにあるルートエンティティが含まれます。ここに表示される他のすべてのエンティティは、開発者によって追加されたものです。
 
@@ -21,7 +21,15 @@ sidebar_position: 2
 
 ## ヒエラルキーの検索
 
-ヒエラルキーパネルの上部にある検索ボックスを使用して、エンティティツリーの内容を動的にフィルタリングできます。検索はファジーであり、検索文字列と類似した名前に一致するため、完全に同じ名前である必要はありません。これは、検索対象のエンティティ名を正確に覚えていない場合に便利です。
+Near the top of the Hierarchy panel is a Search box which you can use to dynamically filter the content of the Entity tree. 
+
+![Hierarchy Panel Search](/images/user-manual/editor/hierarchy/hierarchy-search.png)
+
+By default, the search will filter based on entity names with 'Smart Search' enabled. Smart Search is fuzzy, which means it matches names that are similar to the search string rather than exactly the same. This is useful if you can't quite remember the name of the Entity you are searching for.
+
+You can customize the search by clicking the magnifying glass:
+
+![Hierarchy Panel Search Options](/images/user-manual/editor/hierarchy/hierarchy-search-options.png)
 
 ## エンティティの複製
 
@@ -32,5 +40,3 @@ sidebar_position: 2
 新しい親の下にエンティティを貼り付けたい場合は、選択してコピーするためにCtrl + C(またはMacのCmd + C)を押し、新しい親を選択した後、Ctrl + V(またはMacのCmd + V)を押して貼り付けることができます。選択したエンティティ上で右クリックしてコピーと貼り付けのオプションを使用することもできます。
 
 異なるシーンやプロジェクト間でエンティティをコピー/貼り付けすることもできます。エンティティをコピーするために同じ手順を実行し、必要なシーンに移動して、目的の親を選択してエンティティを貼り付けます。エディターは、新しいプロジェクトのパスでマッチするアセット参照を元のエンティティにもたらします。たとえば、Modelコンポーネントを持つEntityをコピーし、ツリー内で `mymodel.fbx` というModel Assetを参照している場合、そのエンティティを別のプロジェクトに貼り付けると、エディターは同じフォルダー内に `mymodel.fbx` という名前のアセットを探します。一致するアセットが見つからない場合は、手動で修正できるようにマッチングが解除されます。
-
-[1]: /images/user-manual/editor/hierarchy.png
