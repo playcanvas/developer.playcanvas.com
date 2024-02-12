@@ -45,19 +45,7 @@ app.xr.anchors.create(position, rotation, (err, anchor) => {
 });
 ```
 
-Or for more reliable tracking, anchors can be created from Hit Test results:
-
-```javascript
-// subscribe to hit test results
-hitTestSource.on('result', (position, rotation, inputSource, hitTestResult) => {
-    // create an anchor using a hit test result
-    app.xr.anchors.create(hitTestResult, (err, anchor) => {
-        if (!err) {
-            // new anchor has been created
-        }
-    });
-});
-```
+Or for more reliable tracking, an anchor can be created from the [Hit Test Result][1].
 
 ## Anchor
 
@@ -137,3 +125,5 @@ if (anchor.persistent) {
     });
 }
 ```
+
+[1]: /user-manual/xr/ar/hit-testing/#anchors

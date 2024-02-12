@@ -107,5 +107,5 @@ Kinematicボディで標準エンティティ変換関数を使用すること�
 [8]: /images/user-manual/physics/kinematic-box.png
 [9]: /images/user-manual/physics/kinematic-box.gif
 [10]: /user-manual/physics/physics-migration/
-[11]: /user-manual/assets/wasm-modules/
+[11]: /user-manual/assets/types/wasm/
 [12]: /user-manual/physics/compound-shapes/

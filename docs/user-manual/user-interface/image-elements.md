@@ -21,7 +21,11 @@ As with the color property, the opacity property can be used to set the transpar
 
 If you can't achieve the results you are looking for using the texture, color and opacity properties. You can assign your own material to an image element using the material property. For correct rendering you should *disable Depth Write* on any material added to an image Element.
 
-Note: Lighting will not function as expected for Screen Space elements. You will probably want to disable lighting and shadows for any material that is used in screen space.
+:::note
+
+Lighting will not function as expected for Screen Space elements. You will probably want to disable lighting and shadows for any material that is used in screen space.
+
+:::
 
 ## Masks and Masking
 

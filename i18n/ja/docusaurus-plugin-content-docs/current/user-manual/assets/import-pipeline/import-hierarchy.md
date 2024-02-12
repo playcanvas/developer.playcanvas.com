@@ -60,8 +60,8 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 [edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
 [import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif
 [created_assets_img]: /images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png
-[material_asset]: /user-manual/assets/materials/physical-material/
-[texture_asset]: /user-manual/assets/textures/
+[material_asset]: /user-manual/assets/types/material/
+[texture_asset]: /user-manual/assets/types/texture/
 [template_asset]: /user-manual/templates/
 [render_component]: https://api.playcanvas.com/classes/Engine.RenderComponent.html
 [collision_component]: https://api.playcanvas.com/classes/Engine.CollisionComponent.html

@@ -91,7 +91,7 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 [3]: /images/user-manual/optimization/batching/western-scene.jpg
 [4]: /images/user-manual/optimization/batching/western-animation-all.gif
 [5]: /images/user-manual/optimization/batching/western-animation.gif
-[6]: /user-manual/editor/settings/#batch-groups
+[6]: /user-manual/scenes/settings#batch-groups
 [7]: /user-manual/scenes/components/model
 [8]: https://api.playcanvas.com/classes/Engine.BatchManager.html
 [9]: /user-manual/scenes/components/sprite

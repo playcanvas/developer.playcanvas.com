@@ -61,7 +61,7 @@ When updating the texture atlas later in development, as long as the sprite file
 - Existing sprites will have their frames updated.
 
 
-[texture-atlas]: /user-manual/assets/texture-atlas/
+[texture-atlas]: /user-manual/assets/types/texture-atlas/
 [texture-packer-online]: https://www.codeandweb.com/tp-online
 [texture-packer-tool]: https://www.codeandweb.com/texturepacker
 [9-slicing]: /user-manual/2D/slicing/

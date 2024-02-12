@@ -38,5 +38,5 @@ Modelコンポーネントは、コンポーネントパネルの右上にある
 [1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.ModelComponent.html
-[4]: /user-manual/assets/materials/#assigning-materials
+[4]: /user-manual/assets/types/material/#assigning-materials
 [5]: /user-manual/graphics/advanced-rendering/batching

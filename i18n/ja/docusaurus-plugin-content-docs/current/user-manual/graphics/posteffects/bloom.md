@@ -7,11 +7,11 @@ sidebar_position: 1
 
 次は、ブルームを適用していないイメージです。
 
-![Image without effect][2]
+![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
 
 そして下の画像がブルームエフェクトを適応した画像です。
 
-![Image with effect][3]
+![Image with effect](/images/user-manual/graphics/posteffects/with-bloom.png)
 
 ビルトインのブルームエフェクトは以下のパラメータを持ちます:
 
@@ -22,6 +22,4 @@ sidebar_position: 1
 ポストエフェクトスクリプトは[GitHub][4]で入手できます。
 
 [1]: https://en.wikipedia.org/wiki/Bloom_(shader_effect)
-[2]: /images/platform/posteffects/without_effects.png
-[3]: /images/platform/posteffects/with_bloom.png
 [4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-bloom.js

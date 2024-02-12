@@ -71,7 +71,11 @@ To close a branch, open the version control panel, select the branch you wish to
 
 You will be asked to confirm the closing of the branch and you have an option to create a checkpoint before closing. This is enabled by default. If you wish to discard these changes you can untick the option here.
 
-**Note: Unticking this checkbox will lose any work you have made in the branch since you last made a checkpoint**
+:::warning
+
+Unticking this checkbox will lose any work you have made in the branch since you last made a checkpoint.
+
+:::
 
 Closed branches can also be reopened at a later date.
 

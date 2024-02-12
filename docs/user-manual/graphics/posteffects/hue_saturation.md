@@ -7,11 +7,11 @@ The hue-saturation effect allows you to modify the hue and saturation of the ren
 
 Here is an image without the effect:
 
-![Image without effect][1]
+![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
 
 And the same image with the effect applied and changes to hue and saturation:
 
-![Image with effect][2]
+![Image with effect](/images/user-manual/graphics/posteffects/with-hue-saturation.png)
 
 The built-in hue-saturation effect has the following attributes:
 
@@ -20,6 +20,4 @@ The built-in hue-saturation effect has the following attributes:
 
 Find the post-processing effect script on [GitHub][3].
 
-[1]: /images/platform/posteffects/without_effects.png
-[2]: /images/platform/posteffects/with_hue_saturation.png
 [3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-huesaturation.js

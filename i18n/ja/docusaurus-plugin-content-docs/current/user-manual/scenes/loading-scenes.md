@@ -1,9 +1,7 @@
 ---
 title: シーンのロード
-sidebar_position: 3
+sidebar_position: 4
 ---
-
-## イントロダクション
 
 このページでは、コードを使用してシーンを読み込む方法と、プロジェクトでシーンを使用する異なるアプローチについて説明します。
 
@@ -21,7 +19,7 @@ sidebar_position: 3
 
 This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
 
-```
+```javascript
 this.app.scenes.changeScene('Some Scene Name');
 ```
 
@@ -34,7 +32,7 @@ If the scene data is not already loaded, this function will:
 
 If you want to know when the scene is loaded or if there are errors, you will need to provide a callback:
 
-```
+```javascript
 this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
@@ -87,7 +85,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 以下は、シーンヒエラルキーや設定をロードするためのコード例です。
 
-```
+```javascript
 // シーンの名前で Scene Registry Item を検索する
 var sceneItem = this.app.scenes.find('Some Scene Name');
 
@@ -134,7 +132,7 @@ this.app.scenes.loadSceneSettings(sceneItem, function (err) {
 
 現在ロードされているシーンヒエラルキーが破棄され、新しいシーンのロードと作成が行われる前に、明確な手順で現在ロードされているシーンが破棄されます。
 
-```
+```javascript
 // シーンの名前で Scene Registry Item を検索する
 var sceneItem = this.app.scenes.find('Some Scene Name');
 
@@ -160,7 +158,7 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 
 このコードでは、新しいシーンヒエラルキーがヒエラルキーに追加された後に、古いシーンヒエラルキーがコールバックで破棄されるため、ネットワークからシーンデータがロードされる間は、古いシーンが存在します。
 
-```
+```javascript
 // シーン名でシーンレジストリアイテムを検索する
 var sceneItem = this.app.scenes.find('Some Scene Name');
 

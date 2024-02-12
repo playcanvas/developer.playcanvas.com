@@ -1,24 +1,22 @@
 ---
-title: PlayCanvasにおけるWebXR Input Sources
-sidebar_position: 4
+title: 入力ソース
+sidebar_position: 5
 ---
 
-## Input Source
-
-[XrInputSource][1]は、仮想世界とのやりとりを可能にする入力機構を表します。これには、手持ちのコントローラー、光学的に追跡される手、注視に基づく入力方法、タッチスクリーンなどが含まれますが、伝統的なゲームパッド、マウス、キーボードに明示的に関連付けられた入力ソースではありません。
+An [XrInputSource][1] represents an input mechanism that allows the user to interact with a virtual world. Those include but are not limited to handheld controllers, optically tracked hands, gaze-based input methods, and touch screens. However, an input source is not explicitly associated with traditional gamepads, mice or keyboards.
 
 ## Input Sourcesへのアクセス
 
 入力ソースのリストは、[XrManager][3]によって作成される[XrInput][2]マネージャーで利用可能です:
 
 ```javascript
-var inputSources = app.xr.input.inputSources;
-for (var i = 0; i < inputSources.length; i++) {
-    // 利用可能なすべての入力ソースを反復処理する
+const inputSources = app.xr.input.inputSources;
+for (let i = 0; i < inputSources.length; i++) {
+    // iterate through available input sources
 }
 ```
 
-入力ソースは動的に追加および削除できます。これは、物理デバイスを接続するか、基盤となるプラットフォームによって入力デバイスを切り替えることによって行われます。一部の入力ソースは、主操作中にのみ存在し、ライフスパンが制限されることもあります(例:モバイル上で AR セッションでタッチスクリーンを使用する場合)。次のように`add`および`remove`イベントにサブスクライブできます。
+Input sources can be added and removed dynamically. This can be done by connecting physical devices or by switching input devices by the underlying platform, and some input sources are transient - and have a lifespan only during their primary action (e.g. touch screen tap in an AR session on mobile). You can subscribe to `add` and `remove` events:
 
 ```javascript
 app.xr.input.on('add', function (inputSource) {
@@ -32,7 +30,7 @@ app.xr.input.on('add', function (inputSource) {
 
 ## 主操作(選択)
 
-各入力ソースには、主操作の `select`が含まれます。注視に基づく入力ソースでは、これはスクリーン/ボタンのタッチです。手持ちのデバイスでは、これは主ボタン/トリガーです。トラッキングされた手では、親指と指の先端が接触している場合にPlayCanvasエンジンでエミュレートされます。`selectstart`および`selectend`イベントもあり、次のようにサブスクライブできます。
+Each input source can have a primary action `select`. For controllers, it is a primary button/trigger. For the touch-screen, it is a tap. For hands, it is a pinch of thumb and index fingers. There are also `selectstart` and `selectend` events which you can subscribe to as follows:
 
 ```javascript
 inputSource.on('select', function () {
@@ -50,27 +48,30 @@ app.xr.input.on('select', function (inputSource) {
 
 ## レイ
 
-各入力ソースには、レイがあり、レイは、指している原点と指している方向を持ちます。レイは、ワールド空間に変換されます。いくつかの入力ソースの例は、次のようなものがあります。
+Each input source has a ray which has an origin where it points from and a direction in which it is pointing. A ray is transformed into world space. Some examples of input sources might be, but are not limited to:
 
- * Google CardboardTM スタイルのデバイスに挿入されるモバイルデバイスなどの注視に基づく入力。その入力ソースは、 `targetRayMode`が `pc.XRTARGETRAY_GAZE`に設定され、ビューアーの位置から始まり、ユーザーが向いている方向に直進します。
- * スクリーンベースの入力。これは、タッチスクリーンで仮想世界とインタラクトできるように、拡張現実セッションタイプでモバイルデバイスで利用可能になる場合があります。
- * Oculus TouchTMのような手持ちデバイスは、そのレイが手持ちデバイスの先端から始まり、方向はデバイスの回転に基づいています。
- * 追跡された手は、親指と指の先端部分の間から発生するエミュレートされたレイを持ち、前方を向いています。
+ * **Controllers** (e.g. Meta Quest Touch), will have a ray originating from the tip of the handheld device and the direction is based on the rotation of the device.
+ * **Hands** have a ray that originates from a point between the thumb and index tips and points forward. If the underlying system does not provide a ray for hands, the PlayCanvas engine will emulate it. So all hands should have a ray.
+ * **Screen**-based input. This might be available on mobile devices (mono screen) in AR session types, where the user can interact with the virtual world via a touch screen.
+ * **Gaze**-based input, such as a mobile phone is inserted into a Google Cardboard style device. It will have an input source with `targetRayMode` set to `pc.XRTARGETRAY_GAZE`, and will originate from the viewer's position and point straight where the user is facing.
 
-以下は、レイがメッシュの境界ボックスと交差しているかどうかを確認する方法の例です。
+Here is an example illustrating how to check whether a ray has intersected with the bounding box of a mesh:
 
 ```javascript
-// 入力ソースデータでレイを更新する
+// set ray with input source data
 ray.set(inputSource.getOrigin(), inputSource.getDirection());
-// メッシュの境界ボックスがレイと交差しているかを確認する
+
+// check if mesh bounding box intersects with ray
 if (meshInstance.aabb.intersectsRay(ray)) {
-    // 入力ソースがメッシュを指している
+    // input source is pointing at a mesh
 }
 ```
 
 ## グリップ (Grip)
 
-Oculus TouchTMのような一部の入力ソースは、物理的な手持ちデバイスに関連付けられており、位置と回転を持つことができます。その位置と回転は、ワールド空間で提供されます。
+Some input sources are associated with a physical handheld device, such as a Meta Quest Touch, and can have position and rotation. Their position and rotation are provided in world space.
+
+This can be used to render a virtual controller that matches real-world controller position and rotation.
 
 ```javascript
 if (inputSource.grip) {
@@ -83,65 +84,30 @@ if (inputSource.grip) {
 
 ## ゲームパッド (GamePad)
 
-プラットフォームが[WebXR Gamepadsモジュール][4]をサポートしている場合、入力ソースに関連する [GamePad][5] オブジェクトを取得して、ボタン、トリガー、軸などのその他の入力ハードウェアの状態を取得できます。
+If the platform supports the [WebXR Gamepads Module][4], then an input source might have an associated [GamePad][5] object with it, which provides access to its buttons, triggers, axes and other input hardware states:
 
 ```javascript
-var gamepad = inputSource.gamepad;
+const gamepad = inputSource.gamepad;
 if (gamepad) {
     if (gamepad.buttons[0] && gamepad.buttons[0].pressed) {
-        // ユーザーがゲームパッドのボタンを押した
+        // user pressed a button on a gamepad
     }
 }
 ```
 
 ## 手 (Hands)
 
-プラットフォームが[WebXR Hand Input][7]をサポートしている場合、入力ソースに関連する手のデータを提供する[XrHand][8]があり、[XrFinger][9]および[XrJoint][10]の形で便利な情報を提供し、手首、指、各関節、先端、手の追跡が外れたときに検出するためのイベントなどがあります。
-
-手のベーシックなモデルの作成:
-
-```javascript
-var joints = [ ];
-var hand = inputSource.hand;
-
-if (hand) {
-    for(var i = 0; i < hand.joints.length; i++) {
-        var entity = new pc.Entity();
-        entity.joint = hand.joints[i];
-        entity.addComponent('model', { type: 'box' });
-        parent.addChild(entity);
-        joints.push(entity);
-    }
-}
-```
-
-そして、更新ごとに同期する:
-
-```javascript
-for(var i = 0; i < joints.length; i++) {
-    var entity = joints[i];
-    var joint = entity.joint;
-    var radius = joint.radius * 2;
-    entity.setLocalScale(radius, radius, radius);
-    entity.setPosition(joint.getPosition());
-    entity.setRotation(joint.getRotation());
-}
-```
+Check out the dedicated page for [Hand Tracking][7].
 
 ## Profiles
 
-それぞれの入力ソースには、入力ソースのタイプを説明する文字列のリストを持つことができ、[プロファイルレジストリ][6]で説明されています。これを基に、手持ちデバイスにどのタイプのモデルをレンダリングするか、どのような機能を持つかを特定できます。さらに、プロファイルレジストリには、ボタンや軸などのゲームパッドマッピングの詳細がリストされています。
+Each input source might have a list of strings describing a type of input source, which is described in a [profile registry][6]. Based on this, you can figure out what type of model to render for a handheld device or what capabilities it might have. Additionally, the profile registry lists gamepad mapping details, such as buttons and axes.
 
 ```javascript
-if (inputSource.profiles.indexOf('oculus-touch-v2') !== -1) {
-    // Oculus TouchTM が手持ちデバイスである
+if (inputSource.profiles.includes('oculus-touch-v2')) {
+    // it is an Oculus TouchTM handheld device
 }
 ```
-
-## チュートリアル
-
-PlayCanvasでは、WebXR機能の使用方法に関する多数の[チュートリアルとサンプル][11]が用意されています。ユーザーはこれらをフォークしてコードやコンポーネントがどのように構造化されているかを調べることができます。
-
 
 [1]: https://api.playcanvas.com/classes/Engine.XrInputSource.html
 [2]: https://api.playcanvas.com/classes/Engine.XrInput.html
@@ -149,8 +115,4 @@ PlayCanvasでは、WebXR機能の使用方法に関する多数の[チュート�
 [4]: https://www.w3.org/TR/webxr-gamepads-module-1/
 [5]: https://w3c.github.io/gamepad/
 [6]: https://github.com/immersive-web/webxr-input-profiles/tree/master/packages/registry
-[7]: https://immersive-web.github.io/webxr-hand-input/
-[8]: https://api.playcanvas.com/classes/Engine.XrHand.html
-[9]: https://api.playcanvas.com/classes/Engine.XrFinger.html
-[10]: https://api.playcanvas.com/classes/Engine.XrJoint.html
-[11]: /tutorials/?tags=vr
+[7]: /user-manual/xr/hand-tracking/

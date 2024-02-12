@@ -3,7 +3,7 @@ title: Dashboard Header
 sidebar_position: 1
 ---
 
-![Dashboard][1]
+![Dashboard](/images/user-manual/dashboard/dashboard-header.jpg)
 
 The Dashboard Header provides various buttons to quickly perform common actions for a project.
 
@@ -16,5 +16,3 @@ By clicking on WATCH you can watch or follow this project, receiving updates for
 By clicking on STAR you can star or like this project, providing motivation to the developer.
 
 By clicking on the FORK button you can fork this project, which means that a clone of this project will be copied to your account.
-
-[1]: /images/platform/dashboard_header.jpg

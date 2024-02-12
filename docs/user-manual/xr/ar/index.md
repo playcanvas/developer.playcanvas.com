@@ -1,6 +1,6 @@
 ---
 title: AR
-sidebar_position: 2
+sidebar_position: 20
 ---
 
 PlayCanvas lets you create Augmented Reality (AR) applications for mobile and HMD devices through the WebXR API, as well as through integrations with popular AR frameworks.
@@ -9,7 +9,11 @@ PlayCanvas lets you create Augmented Reality (AR) applications for mobile and HM
 
 AR capabilities are available using the Android Chrome Browser, Meta Quest Browser, Magic Leap Helio, Samsung Internet, Microsoft Edge and many others. Additionally, frameworks such as [8th Wall][3] and [Zappar][4] allow users to experience AR content in most mobile browsers, including Safari.
 
-*The aforementioned frameworks are external and have separate licensing, available on their respective websites.*
+:::note
+
+The aforementioned frameworks are external and have separate licensing, available on their respective websites.
+
+:::
 
 ## Getting started with WebXR AR
 
@@ -41,7 +45,7 @@ Suitable reference space: `pc.XRSPACE_LOCALFLOOR`.
 
 ## Starter Kits
 
-PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialogue the template that suits you best.
+PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialog the template that suits you best.
 
 [2]: https://webkit.org/status/#specification-webxr
 [3]: /user-manual/xr/ar/8th-wall-integration/

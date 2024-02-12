@@ -86,7 +86,7 @@ Emissiveマップは、表面の色を設定して、まるでその色の光を
 [4]: /images/tutorials/beginner/keepyup-part-two/ball-diffuse.jpg
 [5]: /images/tutorials/beginner/keepyup-part-two/ball-spec.jpg
 [6]: /user-manual/graphics/physical-rendering/physical-materials/
-[7]: /user-manual/assets/cubemaps/
+[7]: /user-manual/assets/types/cubemap/
 [8]: /images/tutorials/beginner/keepyup-part-two/cubemap-preview.jpg
 [9]: /images/tutorials/beginner/keepyup-part-two/ball-env.jpg
 [10]: /images/tutorials/beginner/keepyup-part-two/ball-normal.jpg

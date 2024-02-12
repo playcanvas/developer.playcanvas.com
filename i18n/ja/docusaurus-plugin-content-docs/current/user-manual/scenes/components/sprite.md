@@ -62,7 +62,7 @@ Spriteコンポーネントは、[Spriteアセット][1]をシーンに表示さ
 [Scriptコンポーネント][4]を使用して、Spriteコンポーネントのプロパティを制御できます。Spriteコンポーネントのスクリプトインターフェースについては、[こちら][5]を参照してください。
 
 
-[1]: /user-manual/assets/sprites
+[1]: /user-manual/assets/types/sprite
 [2]: /images/user-manual/scenes/components/component-sprite-simple.png
 [3]: /images/user-manual/scenes/components/component-sprite-animated.png
 [4]: /user-manual/scenes/components/script

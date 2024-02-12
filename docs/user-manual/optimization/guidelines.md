@@ -1,5 +1,5 @@
 ---
-title: Optimization Guidelines
+title: General Guidelines
 sidebar_position: 1
 ---
 

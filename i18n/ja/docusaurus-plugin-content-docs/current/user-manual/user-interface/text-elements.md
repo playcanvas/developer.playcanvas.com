@@ -53,7 +53,11 @@ Or by enabling it in the Editor:
 
 ![Auto Size][2]
 
-備考：文字の高さは、フォント内の最大の文字によって決まります。文字列の内容に応じて文字列の位置が変わらないように、すべての文字はそのように定義されます。
+:::note
+
+文字の高さは、フォント内の最大の文字によって決まります。文字列の内容に応じて文字列の位置が変わらないように、すべての文字はそのように定義されます。
+
+:::
 
 ## アラインメント (Alignment)
 
@@ -95,7 +99,7 @@ Opacityプロパティでは、文字列の透明度を設定できます
 
 ![Transparent][10]
 
-[1]: /user-manual/assets/fonts
+[1]: /user-manual/assets/types/font
 [2]: /images/user-manual/user-interface/text-element/auto-size.png
 [3]: /images/user-manual/user-interface/text-element/alignment-bottom-left.png
 [4]: /images/user-manual/user-interface/text-element/alignment-centered.png

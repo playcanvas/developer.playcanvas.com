@@ -26,7 +26,7 @@ You can use JavaScript to control the behavior of entities. Select any entity, a
 
 To change the background color of your scene, you should update the Clear Color property of the camera in your scene.
 
-You could also try and adding a [skybox](/user-manual/assets/cubemaps/) to your scene.
+You could also try and adding a [skybox](/user-manual/assets/types/cubemap/) to your scene.
 
 [Learn more](/user-manual/scenes/components/camera/)
 
@@ -40,7 +40,7 @@ Every surface on a 3D model is rendered using a **material**. The material defin
 
 You can create a new material and drag and drop it on your model or you can select its existing materials and edit their properties in the Inspector.
 
-[Learn more](/user-manual/assets/materials/)
+[Learn more](/user-manual/assets/types/material/)
 
 
 
@@ -52,7 +52,7 @@ Cubemaps are a special type of texture asset. They are formed from 6 texture ass
 
 To create a cubemap click on the **<span class="pc-icon">&#57632;</span> Add** button in the Assets panel and select **New Cubemap**. Then drag 6 textures in the cubemap inspector. To take advantage of Physically Based Rendering make sure you click **Prefilter** after setting the 6 textures.
 
-[Learn more](/user-manual/assets/cubemaps/)
+[Learn more](/user-manual/assets/types/cubemap/)
 
 
 
@@ -77,7 +77,7 @@ Every surface on a 3D model is rendered using a **material**. The material defin
 
 To create a material click on the **<span class="pc-icon">&#57632;</span> Add** button in the Assets panel and then select **New Material**.
 
-[Learn more](/user-manual/assets/materials/)
+[Learn more](/user-manual/assets/types/material/)
 
 
 
@@ -103,9 +103,9 @@ You can also right click on an Entity and select New Entity/Box to add a box (si
 
 ## How do I create a skybox?
 
-To create a skybox for your scene you first need to create a [Cubemap asset](/user-manual/assets/cubemaps/). Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the Scene Settings and drag the Cubemap in the Skybox field.
+To create a skybox for your scene you first need to create a [Cubemap asset](/user-manual/assets/types/cubemap/). Then you can drag and drop the Cubemap inside the 3D viewport, or you can go to the Scene Settings and drag the Cubemap in the Skybox field.
 
-[Learn more](/user-manual/editor/settings/#skybox)
+[Learn more](/user-manual/scenes/settings#skybox)
 
 
 
@@ -138,7 +138,7 @@ To render the model drag a model Asset in the Asset field of the Model Component
 
 ## How do I play a sound?
 
-To play sounds you need to add a [Sound component](/user-manual/scenes/components/sound/) to an Entity. Then you can create slots to play [Audio assets](/user-manual/assets/audio/). Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an [AudioListener component](/user-manual/scenes/components/audiolistener/) to an Entity - usually to the Camera Entity.
+To play sounds you need to add a [Sound component](/user-manual/scenes/components/sound/) to an Entity. Then you can create slots to play [Audio assets](/user-manual/assets/types/audio/). Simply click "Add Slot" and drag an Audio Asset on the Asset field. In order to hear the sounds you also need to add an [AudioListener component](/user-manual/scenes/components/audiolistener/) to an Entity - usually to the Camera Entity.
 
 You can create Audio assets by dragging audio files from your computer into the Assets panel.
 
@@ -186,7 +186,7 @@ To upload Assets simply drag and drop files from your computer into the Assets p
 
 To give physical properties to an Entity you need to add a [Collision component](/user-manual/scenes/components/collision/) to it and a [RigidBody component](/user-manual/scenes/components/rigidbody/). The Collision component gives a physical shape to the Entity and the RigidBody component makes the Entity be simulated by the physics engine.
 
-You can change the default [gravity](/user-manual/editor/settings/#gravity) in the Scene Settings.
+You can change the default [gravity](/user-manual/scenes/settings#gravity) in the Scene Settings.
 
 [View tutorial](/tutorials/collision-and-triggers/)
 

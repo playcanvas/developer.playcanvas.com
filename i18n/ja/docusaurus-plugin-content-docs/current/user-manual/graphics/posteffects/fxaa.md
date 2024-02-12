@@ -7,14 +7,12 @@ Fast Approximateアンチエイリアシング(FXAA)はNVIDIAが考案したア�
 
 これはエフェクトをかけていない画像です。
 
-![Image without effect][1]
+![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
 
 これがエフェクトを適用した同じ画像です。
 
-![Image with effect][1]
+![Image with effect](/images/user-manual/graphics/posteffects/with-fxaa.png)
 
 ポストエフェクトスクリプトは[GitHub][3]で入手できます。
 
-[1]: /images/platform/posteffects/without_effects.png
-[2]: /images/platform/posteffects/with_fxaa.png
 [3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-fxaa.js

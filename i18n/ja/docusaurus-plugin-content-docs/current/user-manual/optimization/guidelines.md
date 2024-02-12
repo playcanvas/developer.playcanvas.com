@@ -1,5 +1,5 @@
 ---
-title: 最適化のガイドライン
+title: General Guidelines
 sidebar_position: 1
 ---
 

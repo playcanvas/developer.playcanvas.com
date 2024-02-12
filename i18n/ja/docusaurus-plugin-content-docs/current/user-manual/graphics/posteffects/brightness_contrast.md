@@ -7,11 +7,11 @@ sidebar_position: 2
 
 これはエフェクトをかけていない画像です。
 
-![Image without effect][1]
+![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
 
 これがエフェクトをかけて輝度とコントラストを調整した画像です。
 
-![Image with effect][2]
+![Image with effect](/images/user-manual/graphics/posteffects/with-brightness-contrast.png)
 
 ビルトインの輝度とコントラストエフェクトは以下の様な属性値が設定されています:
 
@@ -20,6 +20,4 @@ sidebar_position: 2
 
 ポストエフェクトスクリプトは[GitHub][3]で入手できます。
 
-[1]: /images/platform/posteffects/without_effects.png
-[2]: /images/platform/posteffects/with_brightness_contrast.png
 [3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-brightnesscontrast.js

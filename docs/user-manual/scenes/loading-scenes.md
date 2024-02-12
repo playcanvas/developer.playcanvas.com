@@ -1,9 +1,7 @@
 ---
 title: Loading Scenes
-sidebar_position: 3
+sidebar_position: 4
 ---
-
-## Introduction
 
 This page will take you through loading scenes with code and also some different approaches of using scenes in projects.
 
@@ -21,7 +19,7 @@ This is the most common approach that developers take where each scene is a self
 
 This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
 
-```
+```javascript
 this.app.scenes.changeScene('Some Scene Name');
 ```
 
@@ -34,7 +32,7 @@ If the scene data is not already loaded, this function will:
 
 If you want to know when the scene is loaded or if there are errors, you will need to provide a callback:
 
-```
+```javascript
 this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
@@ -87,9 +85,9 @@ There are two APIs to load the scene hierarchy and settings:
 
 Here is a code example to load the scene hierarchy or settings:
 
-```
+```javascript
 // Find the Scene Registry Item by the name of the scene
-var sceneItem = this.app.scenes.find('Some Scene Name');
+const sceneItem = this.app.scenes.find('Some Scene Name');
 
 // Load the scene hierarchy with a callback when it has finished
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
@@ -134,12 +132,12 @@ There are several ways to approach this with pros and cons:
 
 This approach has discrete steps that make it easier to manage where the currently loaded scene is destroyed before loading and creation of the new scene.
 
-```
+```javascript
 // Find the Scene Registry Item by the name of the scene
-var sceneItem = this.app.scenes.find('Some Scene Name');
+const sceneItem = this.app.scenes.find('Some Scene Name');
 
 // Destroy all children under application root to remove the currently loaded scene hierarchy
-var rootChildren = this.app.root.children;
+const rootChildren = this.app.root.children;
 while(rootChildren.length > 0) {
     rootChildren[0].destroy();
 }
@@ -160,12 +158,12 @@ However, as mentioned above, there is a delay between calling `loadSceneHierarch
 
 This would mean that the old scene hierarchy will be destroyed in the callback after the new scene hierarchy has been added to hierarchy which ensures that the old scene would be present while the scene data is loaded from network.
 
-```
+```javascript
 // Find the Scene Registry Item by the name of the scene
-var sceneItem = this.app.scenes.find('Some Scene Name');
+const sceneItem = this.app.scenes.find('Some Scene Name');
 
 // Assume the old scene hierarchy's root entity is named 'Root' which is the default name
-var oldSceneRootEntity = this.app.root.findByName('Root');
+const oldSceneRootEntity = this.app.root.findByName('Root');
 
 // Load the scene hierarchy with a callback when it has finished
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
