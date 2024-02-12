@@ -174,7 +174,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     npx vite
     ```
 
-    This starts a server at `http://localhost:5173`. Visit this URL in your browser. You should see the following:
+    This starts a server at `http://localhost:5173`. Visit this URL in your browser and you will see the following:
 
     ![Vite Cube](/images/user-manual/engine/standalone/vite-cube.webp)
 
@@ -267,7 +267,7 @@ An import map can resolve `playcanvas` to a CDN-hosted build of the engine that 
     npx serve
     ```
 
-    This starts a server at `http://localhost:3000`. Visit this URL in your browser. You should see the following:
+    This starts a server at `http://localhost:3000`. Visit this URL in your browser and you will see the following:
 
     ![Vite Cube](/images/user-manual/engine/standalone/vite-cube.webp)
 
