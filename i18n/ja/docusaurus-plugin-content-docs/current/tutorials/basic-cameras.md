@@ -12,7 +12,7 @@ PlayCanvasエディターからシーンを実行するには、最低でも一�
 
 ## カメラエンティティの作成
 
-To create a new Camera Entity, you need to add a Camera [Component](/user-manual/glossary#component) to an Entity.
+新しいカメラエンティティを作成するには、エンティティにカメラ [Component](/user-manual/glossary#component) を追加する必要があります。
 
 * Entity Explorerでシーンのルートエンティティを選択
 * *Entity*メニューから*New Entity*を選択して新しいエンティティを作成
