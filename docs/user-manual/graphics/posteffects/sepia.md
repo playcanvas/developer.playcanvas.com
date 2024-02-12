@@ -7,11 +7,11 @@ The Sepia effect makes the image look like an old photograph.
 
 Here is an image without the effect:
 
-![Image without effect][1]
+![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
 
 And the same image with the effect applied:
 
-![Image with effect][2]
+![Image with effect](/images/user-manual/graphics/posteffects/with-sepia.png)
 
 The built-in sepia effect has the following attributes:
 
@@ -19,6 +19,4 @@ The built-in sepia effect has the following attributes:
 
 Find the post-processing effect script on [GitHub][3].
 
-[1]: /images/platform/posteffects/without_effects.png
-[2]: /images/platform/posteffects/with_sepia.png
 [3]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-sepia.js
