@@ -7,11 +7,11 @@ sidebar_position: 6
 
 これはエフェクトをかけていない画像です。
 
-![Image without effect][2]
+![Image without effect](/images/user-manual/graphics/posteffects/without-effects.png)
 
 これがエフェクトを適用した同じ画像です。
 
-![Image with effect][3]
+![Image with effect](/images/user-manual/graphics/posteffects/with-vignette.png)
 
 ビルドインのビネットエフェクトには次の属性があります：
 
@@ -21,6 +21,4 @@ sidebar_position: 6
 ポストエフェクトスクリプトは[GitHub][4]で入手できます。
 
 [1]: https://en.wikipedia.org/wiki/Vignetting
-[2]: /images/platform/posteffects/without_effects.png
-[3]: /images/platform/posteffects/with_vignette.png
 [4]: https://github.com/playcanvas/engine/blob/main/scripts/posteffects/posteffect-vignette.js
