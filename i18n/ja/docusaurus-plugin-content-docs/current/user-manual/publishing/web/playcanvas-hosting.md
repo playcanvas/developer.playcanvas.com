@@ -12,7 +12,7 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
 
 公開するにはプロジェクトに最低ひとつのシーンが必要です。
 
-## Publishing a new Build {#publishing-a-new-build}
+## 新規ビルドの公開 {#publishing-a-new-build}
 
 * プロジェクトに移行してEditorを開く。
 * 左側のツールバーの<span class="pc-icon">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
@@ -48,7 +48,7 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
 
 ビルドは次の形式で永久的リンクを与えられます： `https://playcanv.as/b/BUILD_ID/` 。このリンクはビルドを削除しない限り有効です。ゲームへのリンクを共有したい場合は、以下の公開されたプロジェクトリンクを使用することを推奨します。
 
-## Selecting a Primary Build {#selecting-a-primary-build}
+## 主ビルド(Primary Build)の選択 {#selecting-a-primary-build}
 
 同じポップアップでビルドをクリック。
 
