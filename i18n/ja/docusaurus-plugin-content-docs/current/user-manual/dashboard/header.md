@@ -3,7 +3,7 @@ title: ダッシュボードヘッダー
 sidebar_position: 1
 ---
 
-![Dashboard][1]
+![Dashboard](/images/user-manual/dashboard/dashboard-header.jpg)
 
 ダッシュボードのヘッダにはプロジェクトの一般的な動作を速やかに行うための様々なボタンが配置されています。
 
@@ -16,5 +16,3 @@ WATCHボタンを押すと、そのプロジェクトをウォッチします。
 STARボタンをクリックするとプロジェクトをStarまたはLikeします。開発者のやる気につながります。
 
 FORKボタンをクリックすることによって、そのプロジェクトをフォークすることができます。フォークすることで、あなたのアカウントに対象のプロジェクト全体をコピーすることができます。
-
-[1]: /images/platform/dashboard_header.jpg
