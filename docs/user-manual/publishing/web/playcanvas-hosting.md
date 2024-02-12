@@ -12,7 +12,7 @@ Publishing to PlayCanvas consists of two simple steps:
 
 To publish you will need to have at least one scene in your project.
 
-## Publishing a new Build
+## Publishing a new Build {#publishing-a-new-build}
 
 * Go to your Project and open the Editor.
 * Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
@@ -48,7 +48,7 @@ To publish you will need to have at least one scene in your project.
 
 Builds are given permanent link in the form `https://playcanv.as/b/BUILD_ID/`. This link will be valid until you delete the build. If you want to share a link to your game, you should probably use the published project link explained below.
 
-## Selecting a Primary Build
+## Selecting a Primary Build {#selecting-a-primary-build}
 
 Click Builds on the same popup.
 

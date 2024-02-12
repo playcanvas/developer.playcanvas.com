@@ -155,9 +155,9 @@ The **Padding** option determines the space between sections when unwrapping occ
 [11]: /user-manual/graphics/advanced-rendering/batching
 [12]: /images/user-manual/graphics/lighting/lightmapping/editor-directional-light.png
 [13]: /images/user-manual/graphics/lighting/lightmapping/shadows-hard-soft.png
-[14]: /user-manual/editor/settings/#ambient-color
-[15]: /user-manual/editor/settings/#skybox
-[16]: /user-manual/editor/settings/#lightmapping
+[14]: /user-manual/scenes/settings#ambient-color
+[15]: /user-manual/scenes/settings#skybox
+[16]: /user-manual/scenes/settings#lightmapping
 [17]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-settings-ambient-bake.png
 [18]: /images/user-manual/graphics/lighting/lightmapping/ambient-color.png
 [19]: /images/user-manual/graphics/lighting/lightmapping/lightmap-15-samples.png

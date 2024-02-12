@@ -1,9 +1,7 @@
 ---
-title: Scenes
-sidebar_position: 9
+title: Managing Scenes
+sidebar_position: 3
 ---
-
-## Scenes
 
 シーンの管理は、シーンダイアログを開いて行うことができます。
 
@@ -21,6 +19,6 @@ sidebar_position: 9
 
 "ADD NEW SCENE" をクリックすると新しいシーンを作成できます。シーンをクリックすると開くことができ、各シーンの右側にあるボタンをクリックしてシーンを複製したり削除したりすることができます。また、左側のバナーアイコンをクリックして、アプリを公開するときやプロジェクトをエクスポートするときに最初に読み込まれるシーンにすることもできます。これをアプリケーションの最初の「レベル」と考えてください。
 
-[1]: /images/user-manual/editor/scenes-menu.jpg
-[2]: /images/user-manual/editor/scenes-viewport.jpg
-[3]: /images/user-manual/editor/scenes.jpg
+[1]: /images/user-manual/scenes/managing-scenes/scenes-menu.jpg
+[2]: /images/user-manual/scenes/managing-scenes/scenes-viewport.jpg
+[3]: /images/user-manual/scenes/managing-scenes/scenes.jpg

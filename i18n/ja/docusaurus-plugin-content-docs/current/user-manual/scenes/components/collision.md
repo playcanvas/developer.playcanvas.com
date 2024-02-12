@@ -32,7 +32,7 @@ Collisionコンポーネントは、コンポーネントパネルの右上に�
 | Axis         | Capsuleのみ。カプセルをエンティティのローカルスペースのX、Y、またはZ軸に整列させます。 |
 | Height       | Capsuleのみ。カプセルの先端から先端までの高さです。 |
 | Radius       | SphereとCapsuleのみ。球体またはカプセルの体の半径です。 |
-| アセット (Asset)        | Meshのみ。三角形ベースのコリジョンメッシュのソースとして使用されるModelアセット。 |
+| アセット (Asset)        | Mesh only. The [render asset](../../assets/types/render.md) or model asset that will be used as a source for the triangle-based collision mesh. |
 
 ## スクリプトインターフェース
 
