@@ -1653,13 +1653,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/launch-page/loading-screen.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-scenes]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/scenes.md
-source_file   = docs/user-manual/editor/scenes.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/editor/scenes.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-settings]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/settings.md
 source_file   = docs/user-manual/editor/settings.md
@@ -2373,6 +2366,20 @@ source_file   = docs/user-manual/scenes/loading-scenes.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/scenes/loading-scenes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-managing-scenes]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/managing-scenes.md
+source_file   = docs/user-manual/scenes/managing-scenes.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/managing-scenes.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-settings]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/settings.md
+source_file   = docs/user-manual/scenes/settings.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/settings.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-scripting-anatomy]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scripting/anatomy.md

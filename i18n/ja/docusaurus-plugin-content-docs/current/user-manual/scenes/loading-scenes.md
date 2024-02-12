@@ -1,9 +1,7 @@
 ---
 title: シーンのロード
-sidebar_position: 3
+sidebar_position: 4
 ---
-
-## イントロダクション
 
 このページでは、コードを使用してシーンを読み込む方法と、プロジェクトでシーンを使用する異なるアプローチについて説明します。
 
@@ -21,7 +19,7 @@ sidebar_position: 3
 
 This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
 
-```
+```javascript
 this.app.scenes.changeScene('Some Scene Name');
 ```
 
@@ -34,7 +32,7 @@ If the scene data is not already loaded, this function will:
 
 If you want to know when the scene is loaded or if there are errors, you will need to provide a callback:
 
-```
+```javascript
 this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
@@ -87,25 +85,25 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 以下は、シーンヒエラルキーや設定をロードするためのコード例です。
 
-```
-// シーンの名前で Scene Registry Item を検索する
-var sceneItem = this.app.scenes.find('Some Scene Name');
+```javascript
+// Find the Scene Registry Item by the name of the scene
+const sceneItem = this.app.scenes.find('Some Scene Name');
 
-// シーンヒエラルキーをロードし、コールバックが完了したときに実行する
+// Load the scene hierarchy with a callback when it has finished
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // シーンヒエラルキーが正常にロードされました
+        // Scene hierarchy has successfully been loaded
     }
 });
 
-// シーンの設定をロードし、コールバックが完了したときに実行する
+// Load the scene settings with a callback when it has finished
 this.app.scenes.loadSceneSettings(sceneItem, function (err) {
     if (err) {
         console.error(err);
     } else {
-        // シーンの設定が正常にロードされました
+        // Scene settings has successfully been loaded
     }
 });
 ```
@@ -134,22 +132,22 @@ this.app.scenes.loadSceneSettings(sceneItem, function (err) {
 
 現在ロードされているシーンヒエラルキーが破棄され、新しいシーンのロードと作成が行われる前に、明確な手順で現在ロードされているシーンが破棄されます。
 
-```
-// シーンの名前で Scene Registry Item を検索する
-var sceneItem = this.app.scenes.find('Some Scene Name');
+```javascript
+// Find the Scene Registry Item by the name of the scene
+const sceneItem = this.app.scenes.find('Some Scene Name');
 
-// アプリケーションルートのすべての子を破棄して、現在ロードされているシーンヒエラルキーを削除する
-var rootChildren = this.app.root.children;
+// Destroy all children under application root to remove the currently loaded scene hierarchy
+const rootChildren = this.app.root.children;
 while(rootChildren.length > 0) {
     rootChildren[0].destroy();
 }
 
-// シーンヒエラルキーをロードし、コールバックが完了したときに実行する
+// Load the scene hierarchy with a callback when it has finished
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // シーンヒエラルキーが正常にロードされました
+        // Scene hierarchy has successfully been loaded
     }
 });
 ```
@@ -160,19 +158,19 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 
 このコードでは、新しいシーンヒエラルキーがヒエラルキーに追加された後に、古いシーンヒエラルキーがコールバックで破棄されるため、ネットワークからシーンデータがロードされる間は、古いシーンが存在します。
 
-```
-// シーン名でシーンレジストリアイテムを検索する
-var sceneItem = this.app.scenes.find('Some Scene Name');
+```javascript
+// Find the Scene Registry Item by the name of the scene
+const sceneItem = this.app.scenes.find('Some Scene Name');
 
-// 古いシーンヒエラルキーのルートエンティティはデフォルトの名前である "Root" と仮定する
-var oldSceneRootEntity = this.app.root.findByName('Root');
+// Assume the old scene hierarchy's root entity is named 'Root' which is the default name
+const oldSceneRootEntity = this.app.root.findByName('Root');
 
-// シーンヒエラルキーをコールバックでロードする
+// Load the scene hierarchy with a callback when it has finished
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // シーンヒエラルキーのロードに成功した場合
+        // Scene hierarchy has successfully been loaded
         oldSceneRootEntity.destroy();
     }
 });
