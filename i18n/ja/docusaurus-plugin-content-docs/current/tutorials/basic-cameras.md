@@ -12,7 +12,7 @@ PlayCanvasエディターからシーンを実行するには、最低でも一�
 
 ## カメラエンティティの作成
 
-新しいカメラエンティティを作成するには、エンティティにカメラ [Component][1] を追加する必要があります。
+To create a new Camera Entity, you need to add a Camera [Component](/user-manual/glossary#component) to an Entity.
 
 * Entity Explorerでシーンのルートエンティティを選択
 * *Entity*メニューから*New Entity*を選択して新しいエンティティを作成
@@ -52,7 +52,7 @@ enabledプロパティがtrueの場合、シーンのロード時にカメラは
 
 カメラの視野角（Field of View）は、カメラが表示するシーンの範囲を決定します。視野角は度（°）で表され、デフォルト値の45°は、ビューの上端から下端までの間がカメラの位置から45°の弧を形成することを意味します。
 
-![Field of view][2]
+![Field of view](/images/tutorials/basic-cameras/field-of-view.png)
 
 この図では、`fov`の値がディスプレイの幅とは独立しているため、ワイドスクリーンのビュー（ライトブルー）は縦方向には同じ量を表示しますが、横方向には狭いスクリーンのビュー（ダークブルー）よりも多くを表示します。
 
@@ -71,6 +71,3 @@ enabledプロパティがtrueの場合、シーンのロード時にカメラは
 ### `Viewport`（ビューポート）
 
 ビューポートは、カメラのレンダリングバッファ上の矩形領域を表します。以下の形式で4つの値があります：左下のX座標、左下のY座標、幅、高さ。これらの値は正規化された座標であり、レンダリングバッファは、寸法に関係なく、XとYの範囲が0から1にマッピングされていると考えられます。したがって、カメラのレンダリングを画面の左下の四分円に制限するには、ビューポートを0、0、0.5、0.5に設定します。
-
-[1]: /user-manual/glossary#component
-[2]: /images/platform/field_of_view.png

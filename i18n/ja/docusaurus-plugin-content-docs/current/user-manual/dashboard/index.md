@@ -3,7 +3,7 @@ title: プロジェクトのダッシュボード
 sidebar_position: 7
 ---
 
-![Dashboard][1]
+![Dashboard](/images/user-manual/dashboard/dashboard.png)
 
 Project Dashboardはプロジェクトのコントロールセンターです。ダッシュボードから次のことができます。
 
@@ -12,5 +12,3 @@ Project Dashboardはプロジェクトのコントロールセンターです。
 * プロジェクトの開発ログを表示。
 * プロジェクトのアクティビティを表示。
 * プロジェクトの設定を編集。
-
-[1]: /images/platform/dashboard.png

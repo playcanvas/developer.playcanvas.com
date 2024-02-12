@@ -12,7 +12,7 @@ In order to run your Scene from the PlayCanvas Editor, you must add at least one
 
 ## Creating a Camera Entity
 
-To create a new Camera Entity, you need to add a Camera [Component][1] to an Entity.
+To create a new Camera Entity, you need to add a Camera [Component](/user-manual/glossary#component) to an Entity.
 
 * Select the root Entity of your Scene in the Entity Explorer
 * Create a new Entity by selecting *New Entity* from the *Entity* menu.
@@ -52,7 +52,7 @@ The **perspective** projection is the most common type for games. Alternatively,
 
 The field of view of a camera determines how much of the scene the camera shows. It is measured in degrees (&deg;) so the default value of 45&deg; means that the top edge of the view to the bottom edge of the view form an arc of 45&deg; from the position of the camera
 
-![Field of view][2]
+![Field of view](/images/tutorials/basic-cameras/field-of-view.png)
 
 You can see in this diagram that because the `fov` value is independent of the width of the display a wide screen view (light blue) shows the same amount vertically but more horizontally than a narrow screen view (dark blue).
 
@@ -71,6 +71,3 @@ This value is a number which determines the order in which a camera is rendered,
 ### `Viewport`
 
 The viewport represents a rectangular area on the camera's rendering buffer. There are 4 values in the following format: Bottom Left X, Bottom Left Y, Width, Height. The values are normalized coordinates, where the rendering buffer, regardless of dimensions, is considered to be mapped in X and Y to 0..1. So to limit the camera to rendering in the bottom left quadrant of the screen, set the viewport to 0, 0, 0.5, 0.5.
-
-[1]: /user-manual/glossary#component
-[2]: /images/platform/field_of_view.png
