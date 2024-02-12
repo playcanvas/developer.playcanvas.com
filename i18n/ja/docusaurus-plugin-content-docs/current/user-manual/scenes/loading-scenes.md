@@ -86,24 +86,24 @@ Sometimes developers use this approach to ensure that certain code and entities 
 以下は、シーンヒエラルキーや設定をロードするためのコード例です。
 
 ```javascript
-// Find the Scene Registry Item by the name of the scene
-const sceneItem = this.app.scenes.find('Some Scene Name');
+// シーンの名前で Scene Registry Item を検索する
+var sceneItem = this.app.scenes.find('Some Scene Name');
 
-// Load the scene hierarchy with a callback when it has finished
+// シーンヒエラルキーをロードし、コールバックが完了したときに実行する
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // シーンヒエラルキーが正常にロードされました
     }
 });
 
-// Load the scene settings with a callback when it has finished
+// シーンの設定をロードし、コールバックが完了したときに実行する
 this.app.scenes.loadSceneSettings(sceneItem, function (err) {
     if (err) {
         console.error(err);
     } else {
-        // Scene settings has successfully been loaded
+        // シーンの設定が正常にロードされました
     }
 });
 ```
@@ -133,21 +133,21 @@ this.app.scenes.loadSceneSettings(sceneItem, function (err) {
 現在ロードされているシーンヒエラルキーが破棄され、新しいシーンのロードと作成が行われる前に、明確な手順で現在ロードされているシーンが破棄されます。
 
 ```javascript
-// Find the Scene Registry Item by the name of the scene
-const sceneItem = this.app.scenes.find('Some Scene Name');
+// シーンの名前で Scene Registry Item を検索する
+var sceneItem = this.app.scenes.find('Some Scene Name');
 
-// Destroy all children under application root to remove the currently loaded scene hierarchy
-const rootChildren = this.app.root.children;
+// アプリケーションルートのすべての子を破棄して、現在ロードされているシーンヒエラルキーを削除する
+var rootChildren = this.app.root.children;
 while(rootChildren.length > 0) {
     rootChildren[0].destroy();
 }
 
-// Load the scene hierarchy with a callback when it has finished
+// シーンヒエラルキーをロードし、コールバックが完了したときに実行する
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // シーンヒエラルキーが正常にロードされました
     }
 });
 ```
@@ -159,18 +159,18 @@ this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEnti
 このコードでは、新しいシーンヒエラルキーがヒエラルキーに追加された後に、古いシーンヒエラルキーがコールバックで破棄されるため、ネットワークからシーンデータがロードされる間は、古いシーンが存在します。
 
 ```javascript
-// Find the Scene Registry Item by the name of the scene
-const sceneItem = this.app.scenes.find('Some Scene Name');
+// シーン名でシーンレジストリアイテムを検索する
+var sceneItem = this.app.scenes.find('Some Scene Name');
 
-// Assume the old scene hierarchy's root entity is named 'Root' which is the default name
-const oldSceneRootEntity = this.app.root.findByName('Root');
+// 古いシーンヒエラルキーのルートエンティティはデフォルトの名前である "Root" と仮定する
+var oldSceneRootEntity = this.app.root.findByName('Root');
 
-// Load the scene hierarchy with a callback when it has finished
+// シーンヒエラルキーをコールバックでロードする
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // シーンヒエラルキーのロードに成功した場合
         oldSceneRootEntity.destroy();
     }
 });
