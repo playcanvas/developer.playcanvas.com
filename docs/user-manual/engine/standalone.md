@@ -34,10 +34,10 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
   <TabItem value="javascript" label="JavaScript" default>
 
 1. Open a Terminal/Command Prompt, create a folder for your app and `cd` inside it.
-2. Install Vite and PlayCanvas:
+5. Install `playcanvas` and `vite`:
 
     ```sh
-    npm install vite playcanvas --save-dev
+    npm install playcanvas vite --save-dev
     ```
 
 3. Create an `index.html` and paste this:
@@ -115,10 +115,10 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
   <TabItem value="typescript" label="TypeScript">
 
 1. Open a Terminal/Command Prompt, create a folder for your app and `cd` inside it.
-2. Install Vite and PlayCanvas:
+5. Install `playcanvas` and `vite`:
 
     ```sh
-    npm install vite playcanvas --save-dev
+    npm install playcanvas vite --save-dev
     ```
 
 3. Create an `index.html` and paste this:
