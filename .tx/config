@@ -1674,12 +1674,19 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/viewport.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-only-index]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine-only/index.md
-source_file   = docs/user-manual/engine-only/index.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine/index.md
+source_file   = docs/user-manual/engine/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/engine-only/index.md
+resource_name = content/en/user-manual/engine/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-engine-standalone]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/engine/standalone.md
+source_file   = docs/user-manual/engine/standalone.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/engine/standalone.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-faq]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/faq.md

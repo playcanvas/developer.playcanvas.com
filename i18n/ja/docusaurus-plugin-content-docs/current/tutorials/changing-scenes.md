@@ -4,10 +4,16 @@ tags: [loading,scenes,basics]
 thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/437633/BCF404-image-75.jpg"
 ---
 
-シーンの読み込みに関する完全なドキュメントは、[ユーザーマニュアル][documentation-page]にあります。
+import Link from '@docusaurus/Link';
+
+Full documentation for Loading Scenes is now in the [User Manual][documentation-page].
 
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/e/p/IP7FtbDj/" title="Changing Scenes"></iframe>
 </div>
+
+<Link to='https://playcanvas.com/project/437633/'>Open Project ↗</Link>
+
+
 
 [documentation-page]: /user-manual/scenes/loading-scenes/
