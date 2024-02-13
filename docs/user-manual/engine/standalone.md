@@ -103,7 +103,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
 
     This starts a server at `http://localhost:5173`. Visit this URL in your browser and you will see the following:
 
-    ![Vite Cube](/images/user-manual/engine/standalone/vite-cube.webp)
+    ![Spinning Cube](/images/user-manual/engine/standalone/spinning-cube.webp)
 
     :::tip
 
@@ -184,7 +184,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
 
     This starts a server at `http://localhost:5173`. Visit this URL in your browser and you will see the following:
 
-    ![Vite Cube](/images/user-manual/engine/standalone/vite-cube.webp)
+    ![Spinning Cube](/images/user-manual/engine/standalone/spinning-cube.webp)
 
     :::tip
 
@@ -204,6 +204,11 @@ import * as pc from 'playcanvas';
 ```
 
 An import map can resolve `playcanvas` to a CDN-hosted build of the engine that can be dynamically loaded by the browser. This means that we can skip the build step described in Option 1.
+
+First, select whether you prefer to develop in JavaScript or TypeScript:
+
+<Tabs>
+  <TabItem value="javascript" label="JavaScript" default>
 
 1. Open a Terminal/Command Prompt, create a folder for your app and `cd` inside it.
 2. Create an `index.html` and paste this:
@@ -277,6 +282,95 @@ An import map can resolve `playcanvas` to a CDN-hosted build of the engine that 
 
     This starts a server at `http://localhost:3000`. Visit this URL in your browser and you will see the following:
 
-    ![Vite Cube](/images/user-manual/engine/standalone/vite-cube.webp)
+    ![Spinning Cube](/images/user-manual/engine/standalone/spinning-cube.webp)
 
+  </TabItem>
+  <TabItem value="typescript" label="TypeScript">
 
+1. Open a Terminal/Command Prompt, create a folder for your app and `cd` inside it.
+2. Create an `index.html` and paste this:
+
+    ```html title="index.html"
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <style>
+                body { margin: 0; overflow: hidden; }
+            </style>
+            <script type="importmap">
+            {
+                "imports": {
+                    "playcanvas": "https://cdn.skypack.dev/playcanvas"
+                }
+            }
+            </script>
+        </head>
+        <body>
+            <script type="module" src="main.js"></script>
+            <canvas id='application'></canvas>
+        </body>
+    </html>
+    ```
+
+3. Create a `main.ts` and paste this:
+
+    ```javascript title="main.ts"
+    import * as pc from 'playcanvas';
+
+    // create an application
+    const canvas = document.getElementById('application') as HTMLCanvasElement;
+    const app = new pc.Application(canvas);
+    app.setCanvasResolution(pc.RESOLUTION_AUTO);
+    app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
+    app.start();
+
+    // create a camera
+    const camera = new pc.Entity();
+    camera.addComponent('camera', {
+        clearColor: new pc.Color(0.3, 0.3, 0.7)
+    });
+    camera.setPosition(0, 0, 3);
+    app.root.addChild(camera);
+
+    // create a light
+    const light = new pc.Entity();
+    light.addComponent('light');
+    light.setEulerAngles(45, 45, 0);
+    app.root.addChild(light);
+
+    // create a box
+    const box = new pc.Entity();
+    box.addComponent('model', {
+        type: 'box'
+    });
+    app.root.addChild(box);
+
+    // rotate the box
+    app.on('update', (dt: number) => box.rotate(10 * dt, 20 * dt, 30 * dt));
+    ```
+
+5. Now, install `playcanvas`, `typescript` and `serve`:
+
+    ```sh
+    npm install playcanvas typescript serve --save-dev
+    ```
+
+6. Compile `main.ts` to `main.js`:
+
+    ```sh
+    npx tsc main.ts --lib esnext,dom --module esnext --moduleResolution node
+    ```
+
+7. Run `serve`:
+
+    ```sh
+    npx serve
+    ```
+
+    This starts a server at `http://localhost:3000`. Visit this URL in your browser and you will see the following:
+
+    ![Spinning Cube](/images/user-manual/engine/standalone/spinning-cube.webp)
+
+  </TabItem>
+</Tabs>
