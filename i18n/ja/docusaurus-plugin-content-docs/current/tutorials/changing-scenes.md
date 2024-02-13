@@ -6,7 +6,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/437
 
 import Link from '@docusaurus/Link';
 
-Full documentation for Loading Scenes is now in the [User Manual][documentation-page].
+シーンの読み込みに関する完全なドキュメントは、[ユーザーマニュアル][documentation-page]にあります。
 
 <div className="iframe-container">
     <iframe loading="lazy" src="https://playcanv.as/e/p/IP7FtbDj/" title="Changing Scenes"></iframe>
