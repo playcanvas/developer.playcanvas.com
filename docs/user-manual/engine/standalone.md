@@ -34,7 +34,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
   <TabItem value="javascript" label="JavaScript" default>
 
 1. Open a Terminal/Command Prompt, create a folder for your app and `cd` inside it.
-5. Install `playcanvas` and `vite`:
+2. Install `playcanvas` and `vite`:
 
     ```sh
     npm install playcanvas vite --save-dev
@@ -115,7 +115,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
   <TabItem value="typescript" label="TypeScript">
 
 1. Open a Terminal/Command Prompt, create a folder for your app and `cd` inside it.
-5. Install `playcanvas` and `vite`:
+2. Install `playcanvas` and `vite`:
 
     ```sh
     npm install playcanvas vite --save-dev
@@ -273,7 +273,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     app.on('update', (dt) => box.rotate(10 * dt, 20 * dt, 30 * dt));
     ```
 
-5. Run `serve`:
+4. Run `serve`:
 
     ```sh
     npx serve
@@ -349,19 +349,19 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     app.on('update', (dt: number) => box.rotate(10 * dt, 20 * dt, 30 * dt));
     ```
 
-5. Install `playcanvas` and `typescript`:
+4. Install `playcanvas` and `typescript`:
 
     ```sh
     npm install playcanvas typescript --save-dev
     ```
 
-6. Compile `main.ts` to `main.js`:
+5. Compile `main.ts` to `main.js`:
 
     ```sh
     npx tsc main.ts --lib esnext,dom --module esnext --moduleResolution node
     ```
 
-7. Run `serve`:
+6. Run `serve`:
 
     ```sh
     npx serve
