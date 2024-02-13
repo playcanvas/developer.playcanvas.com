@@ -95,7 +95,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     app.on('update', (dt) => box.rotate(10 * dt, 20 * dt, 30 * dt));
     ```
 
-5. Now, run the Vite development server:
+5. Run the Vite development server:
 
     ```sh
     npx vite
@@ -176,7 +176,7 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     app.on('update', (dt: number) => box.rotate(10 * dt, 20 * dt, 30 * dt));
     ```
 
-5. Now, run the Vite development server:
+5. Run the Vite development server:
 
     ```sh
     npx vite
@@ -273,10 +273,9 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     app.on('update', (dt) => box.rotate(10 * dt, 20 * dt, 30 * dt));
     ```
 
-5. Now, install and run `serve`:
+5. Run `serve`:
 
     ```sh
-    npm install serve --save-dev
     npx serve
     ```
 
@@ -350,10 +349,10 @@ First, select whether you prefer to develop in JavaScript or TypeScript:
     app.on('update', (dt: number) => box.rotate(10 * dt, 20 * dt, 30 * dt));
     ```
 
-5. Now, install `playcanvas`, `typescript` and `serve`:
+5. Install `playcanvas` and `typescript`:
 
     ```sh
-    npm install playcanvas typescript serve --save-dev
+    npm install playcanvas typescript --save-dev
     ```
 
 6. Compile `main.ts` to `main.js`:
