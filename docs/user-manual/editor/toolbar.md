@@ -13,6 +13,7 @@ The Editor's main toolbar can be found on the left, vertical edge of the Editor.
 | ![Gizmo Scale](/images/user-manual/editor/toolbar/scale.png) | **Scale** | Activate the scale [gizmo](viewport.md#gizmos) in the [Viewport](viewport.md). |
 | ![Element Scale](/images/user-manual/editor/toolbar/resize-element.png) | **Resize Element** | Activate the User Interface [Element resizing gizmo](../user-interface/elements.md#element-resizing) in the [Viewport](viewport.md).  |
 | ![World Local](/images/user-manual/editor/toolbar/world-local.png) | **World/Local** | Switch between local and world coordinate systems for the active [gizmo](viewport.md#gizmos) in the [Viewport](viewport.md). |
+| ![Snap](/images/user-manual/editor/toolbar/snap.png) | **Snap** | Enable snapping when using the [gizmos](viewport.md#gizmos) in the [Viewport](viewport.md). |
 | ![Focus](/images/user-manual/editor/toolbar/focus.png) | **Focus** | Zoom the [Viewport](viewport.md) camera to the currently selected Entity. |
 | ![Undo](/images/user-manual/editor/toolbar/undo.png) | **Undo** | Undo the last operation. |
 | ![Redo](/images/user-manual/editor/toolbar/redo.png) | **Redo** | Redo the last operation. |

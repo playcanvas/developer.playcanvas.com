@@ -75,7 +75,6 @@ function isLowQualityGPU() {
 We also recommend to have an option in the application for the user to be able to switch between quality levels. This allows them to choose the level that they are comfortable with and also be able to lower the quality in favor of using lower device resources and extending battery life.
 
 [1]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-closeup.jpg
-[2]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio.jpg
 [3]: /images/user-manual/optimization/device-pixel-ratio/device-pixel-ratio-setting.png
 [4]: https://api.playcanvas.com/classes/Engine.GraphicsDevice.html#maxPixelRatio
 [5]: https://www.videocardbenchmark.net/GPU_mega_page.html
