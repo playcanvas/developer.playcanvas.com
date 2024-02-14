@@ -87,7 +87,7 @@ this.app
     .to(new pc.Color(1, 1, 1), 1.0, pc.Linear)
     .loop(true)
     .yoyo(true)
-    .on('update', function () {
+    .onUpdate(function () {
         material.diffuse = color;
         material.update();
     })
