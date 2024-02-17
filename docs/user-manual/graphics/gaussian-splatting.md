@@ -47,4 +47,4 @@ There are some limitations to keep in mind when working with splats:
 1. Fog has no effect.
 2. Dynamic lights have no effect.
 3. [Image Based Lighting](../physical-rendering/image-based-lighting) has no effect.
-3. Splats do not cast shadows.
+4. Splats do not cast shadows.
