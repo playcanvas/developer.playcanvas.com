@@ -21,11 +21,11 @@ Use a splat capture app such as [Polycam](https://poly.cam/) or [Luma](https://l
 
 #### 2. Use the Inria Tools
 
-Inria's [SIGGRAPH 2023 paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) links to a toolset on [GitHub](https://github.com/graphdeco-inria/gaussian-splatting) that you can download and use to generate splats from a set of images. These tools are more complicated to configure and use but do offer fine-grained control over the generation process.
+Inria's [SIGGRAPH 2023 paper](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) links to a toolset on [GitHub](https://github.com/graphdeco-inria/gaussian-splatting) that you can download and use to generate splats from a set of images. These tools are more complicated to set up and use but they do offer fine-grained control over the splat generation process.
 
 ### Editing Splats
 
-Captured splats normally need to be edited to some degree. The generation process can often create splats in the wrong location (sometimes referred to as 'floaters') so it's useful to be able to remove these stray splats. It can also be desirable to be able to isolate a particular object (such as a person) in a captured splat and completely remove the background.
+Captured splats normally need to be edited to some degree. The generation process can often create splats in the wrong location (sometimes referred to as 'floaters') so it's useful to be able to remove these stray splats. It may also be desirable to isolate a particular object (such as a person) in a captured splat and completely remove the background.
 
 ![SuperSplat](/images/user-manual/graphics/gaussian-splatting/supersplat.png)
 
