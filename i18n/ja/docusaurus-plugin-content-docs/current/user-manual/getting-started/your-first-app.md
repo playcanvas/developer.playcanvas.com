@@ -1,6 +1,6 @@
 ---
 title: 初めてのPlayCasnvasアプリを作る
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 PlayCanvasでのアプリケーション開発は簡単で楽しいものです。基本的なことを学ぶために次のシンプルな3Dアプリを作成しましょう。

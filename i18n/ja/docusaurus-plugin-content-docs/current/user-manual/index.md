@@ -10,4 +10,4 @@ PlayCanvasユーザーマニュアルは、PlayCanvasプラットフォームを
 [それでははじめましょう！][2]
 
 [1]: /user-manual/glossary#scene
-[2]: /user-manual/introduction
+[2]: /user-manual/getting-started

@@ -1555,13 +1555,6 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/billing/index.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-creating-account]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/creating-account.md
-source_file   = docs/user-manual/creating-account.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/creating-account.md
-
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-dashboard-header]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/dashboard/header.md
 source_file   = docs/user-manual/dashboard/header.md
@@ -1694,6 +1687,41 @@ source_file   = docs/user-manual/faq.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/faq.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-creating-account]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/creating-account.md
+source_file   = docs/user-manual/getting-started/creating-account.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/getting-started/creating-account.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/index.md
+source_file   = docs/user-manual/getting-started/index.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/getting-started/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-made-with-playcanvas]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/made-with-playcanvas.md
+source_file   = docs/user-manual/getting-started/made-with-playcanvas.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/getting-started/made-with-playcanvas.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-workflow]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/workflow.md
+source_file   = docs/user-manual/getting-started/workflow.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/getting-started/workflow.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-getting-started-your-first-app]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/getting-started/your-first-app.md
+source_file   = docs/user-manual/getting-started/your-first-app.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/getting-started/your-first-app.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-glossary]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/glossary.md
@@ -1897,20 +1925,6 @@ source_file   = docs/user-manual/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/index.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-introduction]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/introduction.md
-source_file   = docs/user-manual/introduction.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/introduction.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-made-with-playcanvas]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/made-with-playcanvas.md
-source_file   = docs/user-manual/made-with-playcanvas.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/made-with-playcanvas.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-optimization-guidelines]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/optimization/guidelines.md
@@ -2730,10 +2744,3 @@ source_file   = docs/user-manual/xr/vr/types-of-vr.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/vr/types-of-vr.md
-
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-your-first-app]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/your-first-app.md
-source_file   = docs/user-manual/your-first-app.md
-type          = GITHUBMARKDOWN
-minimum_perc  = 0
-resource_name = content/en/user-manual/your-first-app.md
