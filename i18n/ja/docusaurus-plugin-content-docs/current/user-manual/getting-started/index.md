@@ -7,34 +7,6 @@ sidebar_position: 1
 
 PlayCanvasは、インタラクティブなWebコンテンツのビジュアル開発プラットフォームです。使用するツールも構築するWebアプリも、いずれもHTML5によって動作します。プラットフォームはWeb上にホストされているため、何もインストールする必要はありませんし、サポートされているWebブラウザを実行するどんなデバイスからでも作業にアクセスできます。
 
-## PlayCanvasのワークフロー
-
-PlayCanvasを使って3DのWebアプリを構築するのは簡単です。PlayCanvasを最大限に活用するためには、コードを書く必要があります（具体的には、Webの言語であるJavascript）。しかし、PlayCanvasのツールセットは、プロジェクトを視覚的に編集し、非常に簡単に公開できるように設計されています。
-
-### アセットの作成とアップロード
-
-![assets][1]
-
-PlayCanvasは、業界標準の様々なアセット形式をサポートしています。例えば、画像、3Dモデル、オーディオファイル、カスタムテキスト、バイナリファイル形式をアップロードすることができます。
-
-### シーンを作成
-
-![scene][2]
-
-PlayCanvasエディターは、シーンを作成するための視覚的なビルドツールです。ヒエラルキー上に3Dモデル、衝突 (Collision) 、パーティクルエフェクトなどのビルトインのコンポーネントを組み合わせたエンティティを作成できます。
-
-### インタラクティブな要素を追加
-
-![script][3]
-
-ウェブ標準のJavascriptを使用してスクリプティングをして、エンティティに独自の振る舞いを追加できます。単純なクリックハンドラーやオービットカメラ(Orbit Camera) から、完全な大規模マルチプレイヤーオンラインゲームまで、あらゆる規模のインタラクティブな要素を追加できます。
-
-### アプリケーションの公開
-
-![publish][4]
-
-アプリケーションが共有する準備ができたら、ワンクリックで公開 (Publish) するだけで、アプリケーションを無料でPlayCanvas上にホストしてインターネット上で公開することができます。また、自分のウェブサーバーでセルフホストするためにアプリケーションをダウンロードすることも可能です。
-
 ## 主な特徴
 
 ### エディター
@@ -80,10 +52,6 @@ PlayCanvasは常にプラグインが不要で、ブラウザ上でネイティ�
 
 ブラウザがWebGL(PlayCanvasを実行するのに必要)サポートされているかどうかを確認する場合は、[このページ][9]を確認してください。回転するキューブが表示されれば、問題ありません！
 
-[1]: /images/user-manual/introduction/workflow-assets.jpg
-[2]: /images/user-manual/introduction/workflow-create-scene.jpg
-[3]: /images/user-manual/introduction/workflow-script.jpg
-[4]: /images/user-manual/introduction/workflow-publish.jpg
 [5]: /user-manual/editor
 [6]: /user-manual/assets
 [7]: /user-manual/publishing

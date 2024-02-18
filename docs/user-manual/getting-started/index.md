@@ -1,39 +1,11 @@
 ---
-title: Introduction
+title: Getting Started
 sidebar_position: 1
 ---
 
 ## What is PlayCanvas?
 
 PlayCanvas is a visual development platform for interactive web content. Both the tools and the web apps you build are powered by HTML5. The platform is web hosted so there's nothing to install and you can access your work from any device that runs one of the supported web browsers.
-
-## The PlayCanvas Workflow
-
-Building 3D web apps with PlayCanvas is easy. To get the best out of PlayCanvas, you will need to write some code (specifically some Javascript, the language of the web). However, the PlayCanvas toolset is designed to allow you to visually edit your project and publish it with incredible simplicity.
-
-### Create and upload assets
-
-![assets][1]
-
-PlayCanvas supports a wide variety of industry standard asset formats. For example, upload images, 3D models, audio files or custom text or binary file formats.
-
-### Construct your scene
-
-![scene][2]
-
-The PlayCanvas Editor is a visual building tool which is used to construct scenes. Build a hierarchy of entities using built in components like 3D models, collision, particle effects and more.
-
-### Add interactivity
-
-![script][3]
-
-Using web standard Javascript attach custom behaviors to your entities. Add interactivity on any scale from a simple click handler or orbit camera to a a full massively multi-player online game.
-
-### Publish your application
-
-![publish][4]
-
-When you application is ready for sharing a simple one-click publish will get your application live on the internet hosted by PlayCanvas for free. Alternatively download your application for self-hosting on your own web server.
 
 ## Key Features
 
@@ -80,10 +52,6 @@ At the time of writing, the browser requirements are currently as follows:
 
 If you are in doubt as to whether your browser supports WebGL (required to run PlayCanvas), visit [this page][9]. If you see a spinning cube, you are all set!
 
-[1]: /images/user-manual/introduction/workflow-assets.jpg
-[2]: /images/user-manual/introduction/workflow-create-scene.jpg
-[3]: /images/user-manual/introduction/workflow-script.jpg
-[4]: /images/user-manual/introduction/workflow-publish.jpg
 [5]: /user-manual/editor
 [6]: /user-manual/assets
 [7]: /user-manual/publishing

@@ -1,15 +1,15 @@
 ---
-title: PlayCanvasの利用実績
-sidebar_position: 2
+title: Made with PlayCanvas
+sidebar_position: 4
 ---
 
-以下は、PlayCanvasで作成されたWebGLブラウザゲームやエクスペリエンスの中から、最高のものをいくつか紹介したショーケースビデオです。
+Below is our showcase video of some of the best WebGL browser games and experiences made with PlayCanvas.
 
-PlayCanvasのユーザーによって作成された素晴らしいゲームやエクスペリエンスについては、[PlayCanvas Awesome List][awesome-playcanvas]で確認できます!
+Find more fantastic games and experiences made by our users in the [PlayCanvas Awesome List][awesome-playcanvas]!
 
-## PlayCanvasショーケース2022
+## PlayCanvas Showcase 2022
 
-紹介されたコンテンツへのリンクは、[ブログ投稿][2022-blog-post]で見つけることができます。
+Links to the content showcased can be found on the [blog post][2022-blog-post].
 
 <div className="iframe-container">
     <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/46f73gp1_TU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
