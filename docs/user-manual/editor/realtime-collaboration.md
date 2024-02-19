@@ -41,7 +41,7 @@ If you paste URLs into the chat, they will be formatted as clickable hyperlinks.
 
 ## Viewport Cameras
 
-Each user in the scene is represented in the [Viewport](../viewport) by a colored, wireframe camera frustum shaded.
+Each user in the scene is represented in the [Viewport](../viewport) by a colored, wireframe camera frustum.
 
 ![Viewport Cameras](/images/user-manual/editor/realtime-collaboration/viewport-cameras.webp)
 
