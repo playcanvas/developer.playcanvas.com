@@ -12,6 +12,7 @@ The [Assets Panel](/user-manual/editor/assets.md) manages the assets in your pro
 | [`css`](css.md)                     | `.css`                           | `.css`                           | Stylesheets for HTML                    |
 | [`cubemap`](cubemap.md)             | `.png`, `.jpg`, `.webp`, `.avif` | `.png`, `.jpg`, `.webp`, `.avif` | Environment lighting data               |
 | [`font`](font.md)                   | `.ttf`, `.woff`                  | `.json`, `.png`                  | Font data for rendering text            |
+| [`gsplat`](gsplat.md)               | `.ply`                           | `.ply`                           | 3D Gaussian Splat data                  |
 | [`html`](html.md)                   | `.html`                          | `.html`                          | HTML documents                          |
 | [`json`](json.md)                   | `.json`                          | `.json`                          | JSON documents                          |
 | [`material`](material.md)           | `.glb`, `.fbx`                   | None                             | Material definitions for 3D models      |
