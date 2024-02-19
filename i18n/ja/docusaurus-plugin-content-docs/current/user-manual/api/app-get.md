@@ -1,6 +1,5 @@
 ---
 title: アプリ - Get app
-sidebar_position: 4
 ---
 
 ## ルートURL

@@ -1,6 +1,5 @@
 ---
 title: Scenes - List scenes
-sidebar_position: 14
 ---
 
 ## Route URL

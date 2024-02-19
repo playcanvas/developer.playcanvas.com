@@ -1,6 +1,5 @@
 ---
 title: Assets - Get Asset File
-sidebar_position: 7
 ---
 
 ## Route URL

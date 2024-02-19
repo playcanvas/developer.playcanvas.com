@@ -1,6 +1,5 @@
 ---
 title: アプリ - Get project apps
-sidebar_position: 3
 ---
 
 ## ルートURL

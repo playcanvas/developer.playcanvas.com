@@ -1,6 +1,5 @@
 ---
 title: Projects - Archive project
-sidebar_position: 13
 ---
 
 ## Route URL

@@ -1,6 +1,5 @@
 ---
 title: アセット - List assets
-sidebar_position: 9
 ---
 
 ## ルートURL

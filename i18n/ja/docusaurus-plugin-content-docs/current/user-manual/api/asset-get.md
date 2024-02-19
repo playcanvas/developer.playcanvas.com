@@ -1,6 +1,5 @@
 ---
 title: アセット - Get Asset
-sidebar_position: 8
 ---
 
 ## ルートURL

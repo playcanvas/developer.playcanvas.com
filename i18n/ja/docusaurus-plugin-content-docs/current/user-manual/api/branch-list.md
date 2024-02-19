@@ -1,6 +1,5 @@
 ---
 title: ブランチ - List branches
-sidebar_position: 11
 ---
 
 ## ルートURL

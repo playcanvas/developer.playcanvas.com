@@ -1,6 +1,5 @@
 ---
 title: Assets - Delete asset
-sidebar_position: 6
 ---
 
 ## Route URL

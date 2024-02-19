@@ -1,6 +1,5 @@
 ---
 title: アプリ - Download app
-sidebar_position: 1
 ---
 
 ## ルートURL

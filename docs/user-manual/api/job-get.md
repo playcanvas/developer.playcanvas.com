@@ -1,6 +1,5 @@
 ---
 title: Jobs - Get job
-sidebar_position: 12
 ---
 
 ## Route URL

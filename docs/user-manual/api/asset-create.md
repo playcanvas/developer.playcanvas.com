@@ -1,6 +1,5 @@
 ---
 title: Assets - Create asset
-sidebar_position: 5
 ---
 
 ## Route URL

@@ -1,6 +1,5 @@
 ---
 title: アプリ - Get primary app
-sidebar_position: 2
 ---
 
 ## ルートURL

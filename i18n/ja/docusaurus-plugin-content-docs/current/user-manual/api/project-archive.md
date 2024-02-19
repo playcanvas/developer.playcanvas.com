@@ -1,6 +1,5 @@
 ---
 title: プロジェクト - Archive project
-sidebar_position: 13
 ---
 
 ## ルートURL

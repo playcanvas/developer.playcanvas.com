@@ -1,6 +1,5 @@
 ---
 title: Apps - Get primary app
-sidebar_position: 2
 ---
 
 ## Route URL

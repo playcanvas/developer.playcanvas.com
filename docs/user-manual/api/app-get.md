@@ -1,6 +1,5 @@
 ---
 title: Apps - Get app
-sidebar_position: 4
 ---
 
 ## Route URL

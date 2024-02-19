@@ -1,6 +1,5 @@
 ---
 title: Apps - Download app
-sidebar_position: 1
 ---
 
 ## Route URL

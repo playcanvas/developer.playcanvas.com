@@ -1,6 +1,5 @@
 ---
 title: アセット - Create asset
-sidebar_position: 5
 ---
 
 ## ルートURL

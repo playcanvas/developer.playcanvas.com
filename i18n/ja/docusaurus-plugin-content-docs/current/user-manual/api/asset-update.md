@@ -1,6 +1,5 @@
 ---
 title: アセット - Update asset
-sidebar_position: 10
 ---
 
 ## ルートURL

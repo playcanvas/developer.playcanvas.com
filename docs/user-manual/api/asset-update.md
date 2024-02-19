@@ -1,6 +1,5 @@
 ---
 title: Assets - Update asset
-sidebar_position: 10
 ---
 
 ## Route URL

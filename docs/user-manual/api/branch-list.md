@@ -1,6 +1,5 @@
 ---
 title: Branches - List branches
-sidebar_position: 11
 ---
 
 ## Route URL

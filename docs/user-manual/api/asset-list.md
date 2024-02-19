@@ -1,6 +1,5 @@
 ---
 title: Assets - List assets
-sidebar_position: 9
 ---
 
 ## Route URL
