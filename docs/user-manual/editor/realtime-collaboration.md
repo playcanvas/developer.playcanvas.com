@@ -31,6 +31,8 @@ If you select the CHAT button, the Chat panel will expand and you can broadcast 
 
 ![Chat](/images/user-manual/editor/realtime-collaboration/chat.gif)
 
+You can toggle browser notifications for chat messages in the [Editor Settings](settings.md).
+
 :::tip
 
 If you paste URLs into the chat, they will be formatted as clickable hyperlinks.
