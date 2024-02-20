@@ -32,7 +32,7 @@ app.xr.start(camera, pc.XRTYPE_AR, pc.XRSPACE_LOCALFLOOR, {
 });
 ```
 
-Then planes are added/removed in async:
+Then planes are added/removed asynchronously:
 
 ```javascript
 app.xr.planeDetection.on('add', (xrPlane) => {
