@@ -5,7 +5,7 @@ sidebar_position: 1
 
 Very similar to [Mesh Detection][1], Plane Detection provides access to planes that estimate real-world surfaces.
 
-Each plane can represent a surface with optionally available labels, such as: walls, floor, table, etc.
+Each plane can represent a surface with optionally available labels, such as: `wall`, `floor`, `table`, etc.
 
 The underlying system can provide pre-captured data as well as provide real-time reconstruction depending on the underlying system implementation.
 
