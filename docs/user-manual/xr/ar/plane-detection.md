@@ -3,7 +3,7 @@ title: Plane Detection
 sidebar_position: 1
 ---
 
-Very similar to [Mesh Detection][2], Plane Detection provides access to planes that estimate real-world surfaces.
+Very similar to [Mesh Detection][1], Plane Detection provides access to planes that estimate real-world surfaces.
 
 Each plane can represent a surface with optionally available labels, such as: walls, floor, table, etc.
 
