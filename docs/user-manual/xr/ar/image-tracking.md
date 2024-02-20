@@ -17,7 +17,7 @@ if (app.xr.imageTracking.supported) {
 app.xr.on('start', () => {
     if (app.xr.imageTracking.available) {
         // image tracking is supported and available
-        // it still can be false if images were not provided
+        // it can still be false if images were not provided
     }
 });
 ```
