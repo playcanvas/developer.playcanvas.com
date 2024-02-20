@@ -24,7 +24,7 @@ app.xr.on('start', () => {
 
 ## Images
 
-Images are provided **before the session starts** with their real-world width (in meters). The image can be of any web-friendly format and should match real-world images as closely as possible.
+Images are provided **before the session starts** with their real-world width (in meters). Images can be in any web-friendly format and should match real-world images as closely as possible.
 
 **The resolution** should be at least 300x300 pixels. High resolution does **not** improve tracking performance and/or reliability.
 
