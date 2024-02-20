@@ -60,7 +60,7 @@ for (let i = 0; i < trackedImages.length; i++) {
 
 ## Position & Rotation
 
-Tracked image position and rotation (in world space) are updated automatically and you can access its most recent information like so:
+A tracked image's position and rotation (in world-space) are updated automatically and you can access the most recent information like so:
 
 ```javascript
 const position = trackedImage.getPosition();
