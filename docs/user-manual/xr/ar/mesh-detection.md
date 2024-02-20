@@ -11,7 +11,7 @@ Interaction between real-world and virtual objects is achieved via visual and lo
 * Occlusion
 * Procedural effects
 
-This API provides a list of meshes, their geometry, transformation, and semantic labeling.
+This API provides a list of meshes, their geometry, transformation and semantic labeling.
 
 The underlying system can provide pre-captured data as well as provide real-time reconstruction depending on the underlying system implementation.
 
