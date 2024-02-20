@@ -25,6 +25,14 @@ app.xr.on('start', () => {
 
 ## Access
 
+A feature flag needs to be added to the session start:
+
+```javascript
+app.xr.start(camera, pc.XRTYPE_AR, pc.XRSPACE_LOCALFLOOR, {
+    meshDetection: true
+});
+```
+
 Meshes are added/removed in async:
 
 ```javascript
