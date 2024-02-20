@@ -3,7 +3,7 @@ title: Light Estimation
 sidebar_position: 1
 ---
 
-In AR, the real world can have complex illumination and various environments. For a better immersion and ability to blend between the real world and virtual world, virtual objects can be shaded and illuminated based on Light Estimation data, such as:
+In AR, the real world can have complex illumination and various environments. For better immersion and the ability to blend between the real and the virtual world, virtual objects can be shaded and illuminated based on Light Estimation data, such as:
 
  * **Directional light** (the most prominent), its rotation, intensity, and color.
  * **Ambient light** in the form of an L3 spherical harmonics.
