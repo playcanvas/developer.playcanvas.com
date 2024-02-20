@@ -128,7 +128,7 @@ app.xr.planeDetection.on('add', (xrPlane) => {
 
 An XrPlane can represent various real-world objects and a label can help to identify what it represents using its property `XrPlane.label`.
 
-These labels can be any of: floor, wall, door, window, table, screen, global mesh, other, and more. Here is a [list of semantic labels][1], although this list is not definitive and the platform can report anything it feels fit.
+These labels can be any of: `floor`, `wall`, `door`, `window`, `table`, `screen`, `global mesh`, `other` and more. Here is a [list of semantic labels][2], although this list is not definitive and the platform can report anything it feels fit.
 
 ## Changes
 
