@@ -20,7 +20,7 @@ Some of the capabilities can be used either in [VR][1] or [AR][2], and some are 
 | [Hit Testing][10] | Allows to ray cast real-world geometry using a ray, to get position and rotation of the intersection point. |
 | Image Tracking | Dynamic tracking of provided images, their position, and orientation. |
 | [Input Sources][3] | Various input source types such as controllers, hands, screen taps, gaze, and more. |
-| Light Estimation | Estimates real-world illumination by providing dominant directional light direction, color, and intensity as well as ambient light information in the form of spherical harmonics. |
+| [Light Estimation][12] | Estimates real-world illumination by providing dominant directional light direction, color, and intensity as well as ambient light information in the form of spherical harmonics. |
 | Mesh Detection | Access to a representation of a real-world geometry in the form of a 3D mesh, with its position, orientation, and semantic labels. This can represent furniture, screens, rooms, and other types of static geometry. |
 | Plane Detection | Similar to mesh detection, that provides geometry in the form of planes, their position, orientation, vertices, and semantic labels. This can represent large flat surfaces, such as floors, walls, ceilings, windows, doors, and more. |
 
@@ -62,3 +62,4 @@ app.xr.start(cameraComponent, pc.XRTYPE_VR, pc.XRSPACE_LOCAL, {
 [8]: /user-manual/xr/hand-tracking/
 [9]: /user-manual/xr/ar/depth-sensing/
 [10]: /user-manual/xr/ar/hit-testing/
+[12]: /user-manual/xr/ar/light-estimation/
