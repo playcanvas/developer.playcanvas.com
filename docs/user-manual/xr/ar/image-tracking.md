@@ -75,7 +75,7 @@ Check if the image is trackable in the first place:
 
 ```javascript
 if (!trackedImage.trackable) {
-    // it could be too small, or underlying system is unable to parse image
+    // it could be too small, or the underlying system is unable to parse the image
 }
 ```
 
