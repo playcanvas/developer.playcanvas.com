@@ -39,7 +39,7 @@ app.xr.start(camera, pc.XRTYPE_AR, pc.XRSPACE_LOCALFLOOR, {
 });
 ```
 
-Meshes are added/removed in async:
+Meshes are added/removed asynchronously:
 
 ```javascript
 app.xr.meshDetection.on('add', (xrMesh) => {
