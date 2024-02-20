@@ -136,7 +136,7 @@ Depending on the underlying system capabilities, XrPlane attributes can change w
 
 ```javascript
 xrPlane.on('change', () => {
-    // points and/or label has been changed
+    // points and/or label have been changed
 });
 ```
 
