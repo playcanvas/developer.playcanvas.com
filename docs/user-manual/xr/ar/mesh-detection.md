@@ -71,7 +71,7 @@ entity.setPosition(xrMesh.getPosition());
 entity.setRotation(xrMesh.getRotation());
 ```
 
-Each XrMesh has its vertices and indices (in local space), that can be used to construct visual mesh. An example below creates a visual mesh for each XrMesh and adds it to scene root:
+Each XrMesh has its vertices and indices (in local-space), that can be used to construct a visual mesh. An example below creates a visual mesh for each XrMesh and adds it to the root of the scene:
 
 ```javascript
 app.xr.meshDetection.on('add', (xrMesh) => {
