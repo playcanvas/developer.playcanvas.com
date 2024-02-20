@@ -3,7 +3,13 @@ title: Mesh Detection
 sidebar_position: 1
 ---
 
-The interaction between the real world and virtual objects is achieved by visual and logical interactions between them. Mesh detection is an API that provides access to the representation of real-world geometry in the form of meshes. Which then can be used variously, e.g.: virtual object physics with real-world environment; path finding; object placement; occlusion; procedural effects, and more.
+Interaction between real-world and virtual objects is achieved by visual and logical interactions between the two. Mesh detection is an API that provides access to the representation of real-world geometry in the form of meshes. It can be used in a number of ways such as:
+
+* virtual object physics within a real-world environment
+* path finding
+* object placement
+* occlusion
+* procedural effects
 
 This API provides a list of meshes, their geometry, transformation, and semantic labeling.
 
