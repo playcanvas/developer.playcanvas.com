@@ -51,7 +51,7 @@ app.xr.meshDetection.on('add', (xrMesh) => {
 });
 ```
 
-Also, the list of XrMesh'es is available:
+Also, the list of XrMeshes is available:
 
 ```javascript
 const xrMeshes = app.xr.meshDetection.meshes;
