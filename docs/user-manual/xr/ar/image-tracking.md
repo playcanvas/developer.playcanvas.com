@@ -28,7 +28,7 @@ Images are provided **before the session starts** with their real-world width (i
 
 **The resolution** should be at least 300x300 pixels. High resolution does **not** improve tracking performance and/or reliability.
 
-**The color** is irrelevant, so for download size optimization, greyscale images are preferred.
+**The color** is irrelevant, so for download size optimization, grayscale images are preferred.
 
 **Repeating patterns** or too many geometric features will reduce tracking reliability.
 
