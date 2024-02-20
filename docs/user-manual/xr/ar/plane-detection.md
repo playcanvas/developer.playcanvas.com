@@ -142,5 +142,5 @@ xrPlane.on('change', () => {
 });
 ```
 
-[1]: https://github.com/immersive-web/semantic-labels/blob/master/labels.json
-[2]: /user-manual/xr/ar/mesh-detection/
+[1]: /user-manual/xr/ar/mesh-detection/
+[2]: https://github.com/immersive-web/semantic-labels/blob/master/labels.json
