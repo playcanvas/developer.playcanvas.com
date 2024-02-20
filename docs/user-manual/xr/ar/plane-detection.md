@@ -57,7 +57,7 @@ for (let i = 0; i < xrPlanes.length; i++) {
 
 Each plane is represented as an instance of XrPlane which can be added/removed during an active session. It also has data that can be changed during its lifetime.
 
-You can access the position and rotation (world space) of an XrPlane:
+You can access the position and rotation (world-space) of an XrPlane:
 
 ```javascript
 entity.setPosition(xrPlane.getPosition());
