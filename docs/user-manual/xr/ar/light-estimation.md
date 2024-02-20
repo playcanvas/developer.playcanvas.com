@@ -25,7 +25,7 @@ app.xr.lightEstimation.on('available', () => {
 
 ## Directional Light
 
-The most basic information that light estimation provides is the most prominent directional light rotation, intensity, and color:
+The most basic information that light estimation provides is the most prominent directional light rotation, intensity and color:
 
 ```javascript
 const lightEstimation = app.xr.lightEstimation;
