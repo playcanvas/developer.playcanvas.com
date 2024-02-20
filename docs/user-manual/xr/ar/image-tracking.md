@@ -97,7 +97,7 @@ if (trackedImage.tracking) {
 }
 ```
 
-When tracking becomes unavailable, its position and rotation will be emulated, assuming that the real-world image has not been moved:
+When tracking becomes unavailable, an image's position and rotation will be emulated, assuming that the real-world image has not been moved:
 
 ```javascript
 if (trackedImage.emulated) {
