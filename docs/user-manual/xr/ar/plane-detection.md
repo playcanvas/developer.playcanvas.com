@@ -132,7 +132,7 @@ These labels can be any of: `floor`, `wall`, `door`, `window`, `table`, `screen`
 
 ## Changes
 
-Depending on the underlying system capabilities, the XrPlane attributes can change while an XR session is active. You can subscribe to that event and update a visual mesh accordingly:
+Depending on the underlying system capabilities, XrPlane attributes can change while an XR session is active. You can subscribe to that event and update a visual mesh accordingly:
 
 ```javascript
 xrPlane.on('change', () => {
