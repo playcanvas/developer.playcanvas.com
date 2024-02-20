@@ -45,7 +45,7 @@ if (lightEstimation.available) {
 
 As the environment is usually much more complex than a single directional light, light estimation provides ambient light information in the form of L3 SH (spherical harmonics).
 
-To use SH, the material either has a prefiltered cube map applied on (scene skybox works also), or a shader chunk of constant ambient (`ambientConstantPS`) should be updated.
+To use SH, the material either has a prefiltered cube map applied (scene skybox works also), or the constant ambient shader chunk (`ambientConstantPS`) should be updated.
 
 You can set SH data per material:
 
