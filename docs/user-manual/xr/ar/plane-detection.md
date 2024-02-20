@@ -64,7 +64,7 @@ entity.setPosition(xrPlane.getPosition());
 entity.setRotation(xrPlane.getRotation());
 ```
 
-Each XrPlane has its points (in local space) and orientation, that can be used to construct a visual mesh. The list of points represents the vertices of a polygon perimeter.
+Each XrPlane has its points (in local-space) and orientation, that can be used to construct a visual mesh. The list of points represents the vertices of a polygon perimeter.
 
 An `xrPlane.orientation` provides information as to whether a plane is vertical, horizontal or anything else.
 
