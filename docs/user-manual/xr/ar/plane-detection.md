@@ -48,7 +48,7 @@ Also, the list of XrPlanes is available:
 
 ```javascript
 const xrPlanes = app.xr.planeDetection.meshes;
-for(let i = 0; i < xrPlanes.length; i++) {
+for (let i = 0; i < xrPlanes.length; i++) {
     const xrPlane = xrPlanes[i];
 }
 ```
