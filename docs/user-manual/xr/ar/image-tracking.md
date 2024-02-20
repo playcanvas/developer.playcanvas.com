@@ -3,7 +3,7 @@ title: Image Tracking
 sidebar_position: 1
 ---
 
-Image Tracking provides an ability to track real-world images using the provided image samples and their estimated size. The underlying CV system will estimate image position and orientation and tracking status.
+Image Tracking provides the ability to track real-world images using the provided image samples and their estimated size. The underlying CV system will estimate image position and orientation and tracking status.
 
 ## Support
 
