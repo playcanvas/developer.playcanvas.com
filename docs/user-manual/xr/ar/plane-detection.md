@@ -57,7 +57,7 @@ for(let i = 0; i < xrPlanes.length; i++) {
 
 ## Mesh
 
-Each mesh is represented as an instance of XrPlane, which can be added/removed during an active session. It also has data that can be changed during its lifetime.
+Each plane is represented as an instance of XrPlane, which can be added/removed during an active session. It also has data that can be changed during its lifetime.
 
 You can access the position and rotation (world space) of an XrPlane:
 
@@ -66,22 +66,48 @@ entity.setPosition(xrPlane.getPosition());
 entity.setRotation(xrPlane.getRotation());
 ```
 
-Each XrPlane has its vertices and indices (in local space), that can be used to construct visual mesh. An example below creates a visual mesh for each XrPlane and adds it to scene root:
+Each XrPlane has its points (in local space) and orientation, that can be used to construct a visual mesh. The list of points represents the vertices of a polygon perimeter.
+
+An `xrPlane.orientation` provides information if a plane is vertical, horizontal or anything else.
+
+An example below creates a visual mesh for each XrPlane and adds it to the scene root:
 
 ```javascript
 app.xr.planeDetection.on('add', (xrPlane) => {
     // geometry data
     const mesh = new pc.Mesh(app.graphicsDevice);
     mesh.clear(true, true); // ensure that mesh is created with dynamic buffers
-    mesh.setPositions(xrPlane.vertices); // set vertices
-    mesh.setNormals(pc.calculateNormals(xrPlane.vertices, xrPlane.indices)); // calculate normals
-    mesh.setIndices(xrPlane.indices); // set indices
+
+    // create a list of vertices
+    const vertices = new Float32Array((xrPlane.points.length + 1) * 3);
+
+    // first point is always in the origin
+    vertices[0] = 0;
+    vertices[1] = 0;
+    vertices[2] = 0;
+
+    // create a list of indices
+    const indices = new Uint32Array(xrPlane.points.length * 3);
+
+    // construct a polygon where each edge is connected to the origin of a mesh
+    for (let i = 0; i < xrPlane.points.length; i++) {
+        vertices[i * 3 + 3 + 0] = xrPlane.points[i].x;
+        vertices[i * 3 + 3 + 1] = xrPlane.points[i].y;
+        vertices[i * 3 + 3 + 2] = xrPlane.points[i].z;
+        indices[i * 3 + 0] = 0;
+        indices[i * 3 + 1] = i + 1;
+        indices[i * 3 + 2] = ((i + 1) % xrPlane.points.length) + 1;
+    }
+
+    mesh.setPositions(vertices); // set vertices
+    mesh.setNormals(pc.calculateNormals(vertices, indices)); // calculate normals
+    mesh.setIndices(indices); // set indices
     mesh.update(pc.PRIMITIVE_TRIANGLES); // update buffers
 
     const material = new pc.StandardMaterial();
     const meshInstance = new pc.MeshInstance(mesh, material);
 
-    const entity = new pc.Entity();
+    const entity = new pc.Entity(xrPlane.label);
 
     // add render component
     entity.addComponent('render', {
@@ -108,12 +134,13 @@ These labels can be any of: floor, wall, door, window, table, screen, global mes
 
 ## Changes
 
-Depending on the underlying system capabilities, the XrPlane geometry can change while an XR session is active. You can subscribe to that event and update a visual mesh accordingly:
+Depending on the underlying system capabilities, the XrPlane attributes can change while an XR session is active. You can subscribe to that event and update a visual mesh accordingly:
 
 ```javascript
 xrPlane.on('change', () => {
-    // vertices, indices and/or label has been changed
+    // points and/or label has been changed
 });
 ```
 
 [1]: https://github.com/immersive-web/semantic-labels/blob/master/labels.json
+[2]: /user-manual/xr/ar/mesh-detection/
