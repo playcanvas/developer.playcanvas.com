@@ -11,7 +11,7 @@ In AR, the real world can have complex illumination and various environments. Fo
 
 ## Support
 
-You can check if the light estimation is supported by the system:
+You can check if light estimation is supported by the system:
 
 ```javascript
 if (app.xr.lightEstimation.supportedColor) {
