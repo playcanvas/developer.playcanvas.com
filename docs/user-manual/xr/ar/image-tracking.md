@@ -53,7 +53,7 @@ And you can access a list of tracked images like so:
 
 ```javascript
 const trackedImages = app.xr.imageTracking.images;
-for(let i = 0; i < trackedImages.length; i++) {
+for (let i = 0; i < trackedImages.length; i++) {
     const trackedImage = trackedImages[i];
 }
 ```
