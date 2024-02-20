@@ -34,7 +34,7 @@ Images are provided **before the session starts** with their real-world width (i
 
 ## Add/Remove Tracked Images
 
-You can modify a list of tracked images only when XR session is not running.
+You can modify the list of tracked images only when the XR session is not running.
 
 Adding an image to the tracking list:
 
