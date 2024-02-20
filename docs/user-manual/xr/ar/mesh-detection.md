@@ -55,7 +55,7 @@ Also, the list of XrMeshes is available:
 
 ```javascript
 const xrMeshes = app.xr.meshDetection.meshes;
-for(let i = 0; i < xrMeshes.length; i++) {
+for (let i = 0; i < xrMeshes.length; i++) {
     const xrMesh = xrMeshes[i];
 }
 ```
@@ -64,7 +64,7 @@ for(let i = 0; i < xrMeshes.length; i++) {
 
 Each mesh is represented as an instance of XrMesh, which can be added/removed during an active session. It also has data that can be changed during its lifetime.
 
-You can access the position and rotation (world space) of an XrMesh:
+You can access the position and rotation (world-space) of an XrMesh:
 
 ```javascript
 entity.setPosition(xrMesh.getPosition());
