@@ -44,7 +44,7 @@ app.xr.planeDetection.on('add', (xrPlane) => {
 });
 ```
 
-Also, the list of XrPlane'es is available:
+Also, the list of XrPlanes is available:
 
 ```javascript
 const xrPlanes = app.xr.planeDetection.meshes;
