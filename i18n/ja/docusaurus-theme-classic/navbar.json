@@ -1,18 +1,18 @@
 {
   "title": {
-    "message": "Docs",
+    "message": "ドキュメント",
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "PlayCanvas Logo",
+    "message": "PlayCanvasのロゴ",
     "description": "The alt text of navbar logo"
   },
   "item.label.User Manual": {
-    "message": "User Manual",
+    "message": "ユーザーマニュアル",
     "description": "Navbar item with label User Manual"
   },
   "item.label.Tutorials": {
-    "message": "Tutorials",
+    "message": "チュートリアル",
     "description": "Navbar item with label Tutorials"
   },
   "item.label.API": {
