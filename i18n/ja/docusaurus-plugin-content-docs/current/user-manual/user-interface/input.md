@@ -10,7 +10,7 @@ sidebar_position: 8
 また、動作させるためには `pc.Application#elementInput`に`pc.ElementInput`のインスタンスを初期化しなければなりません。Editorを使用している場合は自動的に作成されます。Engineを使用している場合は、次のように、`pc.Mouse`や`pc.TouchDevice`のような他の入力デバイスの*前に*インスタンスを作成してください：
 
 ```javascript
-var app = new pc.Application(canvas, {
+const app = new pc.Application(canvas, {
     elementInput: new pc.ElementInput(canvas),
     mouse: new pc.Mouse(canvas),
     touch: !!('ontouchstart' in window) ? new pc.TouchDevice(canvas) : null,
@@ -124,7 +124,7 @@ var TouchFix = pc.createScript('touchFix');
 // initialize code called once per entity
 TouchFix.prototype.initialize = function() {
     // Only register touch events if the device supports touch
-    var touch = this.app.touch;
+    const touch = this.app.touch;
     if (touch) {
         touch.on(pc.EVENT_TOUCHEND, function(event) {
             // This prevents that a mouse click event will be executed after a touch event.
