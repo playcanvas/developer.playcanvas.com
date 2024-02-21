@@ -19,7 +19,7 @@ As with the color property, the opacity property can be used to set the transpar
 
 ## Advanced Materials
 
-If you can't achieve the results you are looking for using the texture, color and opacity properties. You can assign your own material to an image element using the material property. For correct rendering you should *disable Depth Write* on any material added to an image Element.
+If you can't achieve the results you are looking for using the texture, color and opacity properties. You can assign your own material to an image element using the material property. For correct rendering you should _disable Depth Write_ on any material added to an image Element.
 
 :::note
 
