@@ -1,5 +1,5 @@
 ---
-title: 初めてのPlayCasnvasアプリを作る
+title: 初めてのPlayCanvasアプリを作る
 sidebar_position: 3
 ---
 
