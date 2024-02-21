@@ -32,7 +32,7 @@ Assuming the base color of the text element is white, this will render as follow
 You must proactively enable support for the markup syntax on a text element. You can do this via the API:
 
 ```javascript
-    entity.element.enableMarkup = true;
+entity.element.enableMarkup = true;
 ```
 
 Or by enabling it in the Editor:
