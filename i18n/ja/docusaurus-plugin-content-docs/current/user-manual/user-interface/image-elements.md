@@ -19,7 +19,7 @@ sidebar_position: 5
 
 ## アドバンスマテリアル (Advanced Material)
 
-If you can't achieve the results you are looking for using the texture, color and opacity properties. You can assign your own material to an image element using the material property. For correct rendering you should _disable Depth Write_ on any material added to an image Element.
+テクスチャ、カラー、不透明度のプロパティを使用しても求めている結果を得ることができない場合は、マテリアルのプロパティを使用して独自のマテリアルをイメージエレメント (Image Element) に割り当てることができます。正しいレンダリングを行うには、イメージエレメントに追加されたマテリアルの _Depth Writeを無効_ にする必要があります。
 
 :::note
 
