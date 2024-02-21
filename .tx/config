@@ -1345,12 +1345,19 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/api/scene-list.md
 
-[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-asset-store]
-file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/asset-store.md
-source_file   = docs/user-manual/assets/asset-store.md
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-asset-store-index]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/asset-store/index.md
+source_file   = docs/user-manual/assets/asset-store/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
-resource_name = content/en/user-manual/assets/asset-store.md
+resource_name = content/en/user-manual/assets/asset-store/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-asset-store-sketchfab]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/asset-store/sketchfab.md
+source_file   = docs/user-manual/assets/asset-store/sketchfab.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/asset-store/sketchfab.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-finding]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/finding.md
@@ -1456,6 +1463,13 @@ source_file   = docs/user-manual/assets/types/font.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/assets/types/font.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-types-gsplat]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/types/gsplat.md
+source_file   = docs/user-manual/assets/types/gsplat.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/assets/types/gsplat.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-assets-types-html]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/assets/types/html.md
@@ -1646,6 +1660,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/editor/launch-page/loading-screen.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-realtime-collaboration]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/realtime-collaboration.md
+source_file   = docs/user-manual/editor/realtime-collaboration.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/editor/realtime-collaboration.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-editor-settings]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/editor/settings.md
 source_file   = docs/user-manual/editor/settings.md
@@ -1771,6 +1792,13 @@ source_file   = docs/user-manual/graphics/cameras/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/graphics/cameras/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-gaussian-splatting]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/graphics/gaussian-splatting.md
+source_file   = docs/user-manual/graphics/gaussian-splatting.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/graphics/gaussian-splatting.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-graphics-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/graphics/index.md
@@ -2269,6 +2297,13 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/scenes/components/element.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-gsplat]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/gsplat.md
+source_file   = docs/user-manual/scenes/components/gsplat.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/scenes/components/gsplat.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-scenes-components-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/scenes/components/index.md
 source_file   = docs/user-manual/scenes/components/index.md
@@ -2675,12 +2710,40 @@ type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/ar/hit-testing.md
 
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-image-tracking]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/image-tracking.md
+source_file   = docs/user-manual/xr/ar/image-tracking.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/image-tracking.md
+
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-index]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/index.md
 source_file   = docs/user-manual/xr/ar/index.md
 type          = GITHUBMARKDOWN
 minimum_perc  = 0
 resource_name = content/en/user-manual/xr/ar/index.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-light-estimation]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/light-estimation.md
+source_file   = docs/user-manual/xr/ar/light-estimation.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/light-estimation.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-mesh-detection]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/mesh-detection.md
+source_file   = docs/user-manual/xr/ar/mesh-detection.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/mesh-detection.md
+
+[o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-plane-detection]
+file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/plane-detection.md
+source_file   = docs/user-manual/xr/ar/plane-detection.md
+type          = GITHUBMARKDOWN
+minimum_perc  = 0
+resource_name = content/en/user-manual/xr/ar/plane-detection.md
 
 [o:playcanvas:p:playcanvas-developer-site:r:user-manual-xr-ar-zappar-integration]
 file_filter   = i18n/<lang>/docusaurus-plugin-content-docs/current/user-manual/xr/ar/zappar-integration.md

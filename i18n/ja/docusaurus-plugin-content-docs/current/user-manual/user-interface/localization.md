@@ -11,7 +11,7 @@ JSONファイルの`info`部分で異なるロケールを指定することが�
 
 JSONアセットは次のようになります。
 
-```javascript
+```json
 {
     "header": {
         "version": 1
@@ -37,7 +37,7 @@ JSONファイルの`info`部分ので異なるロケールを指定すること�
 
 PlayCanvasは各ロケールの複数形もサポートしています。各フレーズの複数形を指定するためには、単一の文字列の代わりに、各複数形の文字列の配列を渡す必要があります。各言語の複数形は[ここ][1]で見つけることができます。各配列要素はその言語の複数形に対応します。たとえば英語の場合は次のようになります。
 
-```javascript
+```json
 "key plural": [
     "One item", // plural form ONE
     "Not one" // plural form OTHER
@@ -46,14 +46,14 @@ PlayCanvasは各ロケールの複数形もサポートしています。各フ�
 
 アラビア語の場合:
 
-```javascript
+```json
 "key plural": [
     "Zero items", // plural form ZERO
     "One item", // plural form ONE
     "Two items", // plural form TWO
     "Few items", // plural form FEW
     "Many items", // plural form MANY
-    "Rest", // plural form OTHER
+    "Rest" // plural form OTHER
 ]
 ```
 
@@ -76,9 +76,9 @@ JavaScriptはロケールコードに基づいてこのフォーマットを行�
 使用例:
 
 ```javascript
-var numberOfItems = 1000;
-var currentLocale = this.app.i18n.locale;
-var localeNumberString = numberOfItems.toLocaleString(currentLocale);
+const numberOfItems = 1000;
+const currentLocale = this.app.i18n.locale;
+const localeNumberString = numberOfItems.toLocaleString(currentLocale);
 
 console.log(localeNumberString);
 // expected output assuming currentLocale is en-US: "1,000"

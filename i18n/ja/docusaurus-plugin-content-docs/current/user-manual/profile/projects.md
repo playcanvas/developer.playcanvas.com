@@ -75,7 +75,7 @@ Organizationアカウントを持っている場合、プロジェクトのロ�
 
 ![import-archive][3]
 
-'[プロジェクトをアーカイブファイルにバックアップする](#backing-up-a-project-to-an-archive-file)'に記載されている方法のいずれかで作成されたアーカイブzipファイルがあれば、それをPlayCanvas上の新しいプロジェクトとしてインポートできます。
+[プロジェクトをアーカイブファイルにバックアップする](#backing-up-a-project-to-an-archive-file)に記載されている方法のいずれかで作成されたアーカイブzipファイルがあれば、それをPlayCanvas上の新しいプロジェクトとしてインポートできます。
 
 プロジェクトページの左側にある 'Import Project' をクリックして、zipファイルを選択してインポートしてください。
 
