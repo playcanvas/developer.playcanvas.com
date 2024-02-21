@@ -10,7 +10,7 @@ The user can interact with [Element][1] components, by enabling the `useInput` f
 Also in order for that to work there must be an initialized instance of `pc.ElementInput` for `pc.Application#elementInput`. This is created automatically for you if you are using the Editor. If you are using the Engine only make sure to create an instance *before* the other input devices like `pc.Mouse` or `pc.TouchDevice` like so:
 
 ```javascript
-var app = new pc.Application(canvas, {
+const app = new pc.Application(canvas, {
     elementInput: new pc.ElementInput(canvas),
     mouse: new pc.Mouse(canvas),
     touch: !!('ontouchstart' in window) ? new pc.TouchDevice(canvas) : null,
@@ -124,7 +124,7 @@ var TouchFix = pc.createScript('touchFix');
 // initialize code called once per entity
 TouchFix.prototype.initialize = function() {
     // Only register touch events if the device supports touch
-    var touch = this.app.touch;
+    const touch = this.app.touch;
     if (touch) {
         touch.on(pc.EVENT_TOUCHEND, function(event) {
             // This prevents that a mouse click event will be executed after a touch event.

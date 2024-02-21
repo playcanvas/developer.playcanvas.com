@@ -11,7 +11,7 @@ For each language you want to support you will need to add a JSON asset that con
 
 The JSON asset looks like so:
 
-```javascript
+```json
 {
     "header": {
         "version": 1
@@ -37,7 +37,7 @@ You can specify a different locale in the `info` part of the JSON file. The `mes
 
 PlayCanvas also supports plural forms for each locale. To specify plural forms for each phrase you need to pass an array of strings for each plural form instead of a single string. Each language has different plural forms which you can find [here][1]. Each array element corresponds to a plural form for that language. For example for English:
 
-```javascript
+```json
 "key plural": [
     "One item", // plural form ONE
     "Not one" // plural form OTHER
@@ -46,14 +46,14 @@ PlayCanvas also supports plural forms for each locale. To specify plural forms f
 
 For Arabic:
 
-```javascript
+```json
 "key plural": [
     "Zero items", // plural form ZERO
     "One item", // plural form ONE
     "Two items", // plural form TWO
     "Few items", // plural form FEW
     "Many items", // plural form MANY
-    "Rest", // plural form OTHER
+    "Rest" // plural form OTHER
 ]
 ```
 
@@ -76,9 +76,9 @@ JavaScript provides a built in function to do this formatting based on the local
 An example of usage:
 
 ```javascript
-var numberOfItems = 1000;
-var currentLocale = this.app.i18n.locale;
-var localeNumberString = numberOfItems.toLocaleString(currentLocale);
+const numberOfItems = 1000;
+const currentLocale = this.app.i18n.locale;
+const localeNumberString = numberOfItems.toLocaleString(currentLocale);
 
 console.log(localeNumberString);
 // expected output assuming currentLocale is en-US: "1,000"

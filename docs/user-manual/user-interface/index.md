@@ -3,7 +3,7 @@ title: User Interface
 sidebar_position: 18
 ---
 
-User Interfaces present a unique challenge for graphical applications. There are several options for building User Interfaces in PlayCanvas. 
+User Interfaces present a unique challenge for graphical applications. There are several options for building User Interfaces in PlayCanvas.
 
 ## Screen and Element Components (Recommended)
 

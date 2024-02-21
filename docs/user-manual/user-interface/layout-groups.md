@@ -104,7 +104,6 @@ This row of buttons is laid out using a Layout Group with the Wrap setting enabl
 [7]: /images/user-manual/user-interface/layout-groups/grid-setup.jpg
 [8]: /images/user-manual/user-interface/layout-groups/layout-child-max-width.jpg
 [9]: /images/user-manual/user-interface/layout-groups/layout-child-setup.jpg
-
 [10]: /user-manual/user-interface/layout-groups#grid
 [11]: /user-manual/user-interface/layout-groups#vertical-leaderboard
 [12]: /user-manual/user-interface/layout-groups#horizontal-buttons
