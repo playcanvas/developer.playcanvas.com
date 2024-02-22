@@ -9,11 +9,11 @@ sidebar_position: 6
 
 | Action                     | 説明                                                       |
 | -------------------------- | ----------------------------------------------------------------- |
-| 視点を回転            | Left-click and drag.                                              |
+| 視点を回転            | 左クリックしてドラッグします。                                              |
 | 視点をズーム              | マウスのスクロールホイールを使用します。                                       |
-| 視点を移動               | Right-click and drag.                                             |
-| カスタムモデルのプレビュー       | Drag and drop a glTF/glb model onto the preview pane.             |
-| カスタム環境のプレビュー | Drag and drop an equirectangular HDR image onto the preview pane. |
+| 視点を移動               | 右クリックしてドラッグします。                                             |
+| カスタムモデルのプレビュー       | glTF/glbモデルをプレビューパネルにドラッグアンドドロップします。             |
+| カスタム環境のプレビュー | 正距円筒図法(Equirectangular)のHDRイメージをプレビューパネルにドラッグアンドドロップします。 |
 
 ### ツールバー
 
