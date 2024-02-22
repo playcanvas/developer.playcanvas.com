@@ -8,6 +8,7 @@ The Inspector Pane shows details of the currently selected item.
 The information shown depends on the type of asset selected.
 
 There are inspectors for the following:
+
 - [Graphs][1]
 - [Nodes][2]
 - [Materials][3]

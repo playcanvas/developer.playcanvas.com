@@ -9,11 +9,11 @@ The Nodes Pane lists the built-in nodes available for constructing graphs. Nodes
 
 At the top of the pane are controls for filtering the list of nodes:
 
-| Control | Use |
-|---|---|
-| I | Toggle to show only input nodes. |
-| X | Toggle to show only transform nodes. |
-| O | Toggle to show only output nodes.
+| Control      | Use                                       |
+| ------------ | ----------------------------------------- |
+| I            | Toggle to show only input nodes.          |
+| X            | Toggle to show only transform nodes.      |
+| O            | Toggle to show only output nodes.         |
 | Filter Entry | Filter the list of nodes further by name. |
 
 For more information on using the Nodes Pane to create nodes, see the [Graph Editor][2] documentation.

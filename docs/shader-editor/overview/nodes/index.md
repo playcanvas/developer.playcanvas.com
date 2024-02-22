@@ -7,11 +7,11 @@ Shader Editor supports many types of nodes, but they all have the following stru
 
 ![Graph Editor Node](/images/shader-editor/graph-editor-node.png)
 
-| Node structure | |
-|---|---|
-| 1 | Node type. |
-| 2 | Input Ports. |
-| 3 | Output Ports. |
+| Node structure |               |
+| -------------- | ------------- |
+| 1              | Node type.    |
+| 2              | Input Ports.  |
+| 3              | Output Ports. |
 
 Certain nodes have no input ports and others have no output ports. (Though all nodes have at least one port).
 
