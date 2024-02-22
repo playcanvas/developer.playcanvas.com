@@ -8,7 +8,7 @@ ammo.js is perhaps the most popular and well known JavaScript physics engine. It
 As it happens, there are several alternatives to ammo.js:
 
 | Physics Engine                                     | JS       | WASM     | 2D       | 3D       | PlayCanvas Integration                                |
-|----------------------------------------------------|----------|----------|----------|----------|-------------------------------------------------------|
+| -------------------------------------------------- | -------- | -------- | -------- | -------- | ----------------------------------------------------- |
 | [box2d.js](https://github.com/kripken/box2d.js)    | &#x2713; | &#x2713; | &#x2713; |          |                                                       |
 | [Matter.js](https://github.com/liabru/matter-js)   | &#x2713; |          | &#x2713; |          |                                                       |
 | [p2.js](https://github.com/schteppe/p2.js)         | &#x2713; |          | &#x2713; |          | [Yes](https://github.com/playcanvas/playcanvas-p2.js) |

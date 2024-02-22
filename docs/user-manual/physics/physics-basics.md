@@ -33,9 +33,9 @@ For example, if your game features a character that is 1.8m tall, he should be 1
 
 You can make any entity in your scene participate in the physics simulation. Just add a rigidbody component and a collision component. The rigidbody component specifies a type:
 
-* Static - A physical object that never moves
-* Dynamic - A physical object that will move in response to an applied force
-* Kinematic - A physical object that can only be positioned explicitly via the API
+- Static - A physical object that never moves
+- Dynamic - A physical object that will move in response to an applied force
+- Kinematic - A physical object that can only be positioned explicitly via the API
 
 It also specifies physical properties like mass, friction and restitution (essentially a measure of 'bounciness').
 
