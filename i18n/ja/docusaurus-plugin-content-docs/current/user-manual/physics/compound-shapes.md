@@ -15,9 +15,9 @@ sidebar_position: 4
 
 複合形状オブジェクトの形状は、子オブジェクトのコリジョン形状によって定義されます。
 
-![Compound shapes setup][compound-shapes-chair-setup-png]
+![Compound shapes setup](/images/user-manual/physics/compound-shape-chair-setup.png)
 
-![コンパウンドの椅子][compound-shapes-chair-gif]
+![Compound shapes chair](/images/user-manual/physics/compound-shape-chair.gif)
 
 親のエンティティであるChairはタイプが "Compound" の [Collisionコンポーネント][collision-component] を持ちます。
 
@@ -29,6 +29,4 @@ Collisionコンポーネントが子エンティティで、プリミティブ�
 
 [primitive-shapes-list]: /user-manual/physics/physics-basics/#rigid-bodies
 [compound-shapes-project]: https://playcanvas.com/project/688146/overview/compound-physics-shapes
-[compound-shapes-chair-gif]: /images/user-manual/physics/compound-shape-chair.gif
-[compound-shapes-chair-setup-png]: /images/user-manual/physics/compound-shape-chair-setup.png
 [collision-component]: /user-manual/scenes/components/collision/

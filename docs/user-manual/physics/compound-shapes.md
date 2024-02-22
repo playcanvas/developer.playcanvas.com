@@ -15,9 +15,9 @@ The main advantage is that you are able to have dynamic rigidbody collisions bet
 
 The shape of a compound physics object is defined by the children's collision shapes as shown below.
 
-![Compound shapes setup][compound-shapes-chair-setup-png]
+![Compound shapes setup](/images/user-manual/physics/compound-shape-chair-setup.png)
 
-![Compound shapes chair][compound-shapes-chair-gif]
+![Compound shapes chair](/images/user-manual/physics/compound-shape-chair.gif)
 
 The Chair entity (parent) has the [collision component][collision-component] with type set to 'Compound'.
 
@@ -27,6 +27,4 @@ The parent is also the center of mass of the physics object and it is recommende
 
 [primitive-shapes-list]: /user-manual/physics/physics-basics/#rigid-bodies
 [compound-shapes-project]: https://playcanvas.com/project/688146/overview/compound-physics-shapes
-[compound-shapes-chair-gif]: /images/user-manual/physics/compound-shape-chair.gif
-[compound-shapes-chair-setup-png]: /images/user-manual/physics/compound-shape-chair-setup.png
 [collision-component]: /user-manual/scenes/components/collision/

@@ -182,10 +182,10 @@ You can find a project that implements CCD [here][5].
 
 These are just two examples of using the ammo.js API directly. You can also use it to implement additional things like:
 
-* Compound collision shapes
-* Soft body simulation
-* Cloth simulation
-* Vehicles
+- Compound collision shapes
+- Soft body simulation
+- Cloth simulation
+- Vehicles
 
 [1]: https://github.com/kripken/ammo.js/commit/dcab07bf0e7f2b4b64c01dc45da846344c8f50be
 [2]: https://github.com/kripken/ammo.js/blob/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/ammo.idl
