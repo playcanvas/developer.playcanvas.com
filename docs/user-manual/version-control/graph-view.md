@@ -9,17 +9,17 @@ The Version Control Graph makes it easy to track progress and merge history of t
 
 While the Version Control Panel displays a simple list of the latest checkpoints of the selected branch, the Graph View shows a much larger (and expandable) view of the entire version control graph, including checkpoints, branches and merges:
 
-![][overview-image]
+![](/images/user-manual/version-control/graph-view/overview.png)
 
 ## Launching the Graph View
 
 To access the Graph View, either click the Graph button in the top menu of the Version Control panel (for the current Editor branch), or the 'Version Control Graph' entry in the branch menu dropdown.
 
-![][access-buttons-image]
+![](/images/user-manual/version-control/graph-view/access-buttons.png)
 
 ## Graph Nodes
 
-![][commit-node-image]
+![](/images/user-manual/version-control/graph-view/commit-node.png)
 
 A graph node will contain the following information:
 
@@ -29,7 +29,7 @@ A graph node will contain the following information:
 
 ## Graph Node Context Menu
 
-![][context-menu-image]
+![](/images/user-manual/version-control/graph-view/context-menu.png)
 
 Clicking on a node will open up the context menu for some or all following options depending on the node and access permissions:
 
@@ -39,7 +39,7 @@ Clicking on a node will open up the context menu for some or all following optio
 
 - **Compare with Selected** - Launch a Diff View between the current node and a node marked via 'Select for Compare'.
 
-![][compare-checkpoints-example]
+![](/images/user-manual/version-control/graph-view/compare-checkpoints-example.gif)
 
 - **New Branch** - Create a new branch from the selected checkpoint. ([More details][new-branch])
 
@@ -51,19 +51,19 @@ Clicking on a node will open up the context menu for some or all following optio
 
 ## Expandable Nodes
 
-![][node-expand-image]
+![](/images/user-manual/version-control/graph-view/node-expand.png)
 
 Initially the Graph View displays up to 20 checkpoints from each branch, and up to 60 checkpoints total.
 
 A triangle in the top right corner of a node means that it has yet more incoming or outgoing edges (such as branches and merges), and can be expanded via the 'Expand Node' context menu entry.
 
-![][node-expand-example]
+![](/images/user-manual/version-control/graph-view/node-expand-example.gif)
 
 ## Closed Branches
 
 The graph will also include checkpoints from closed branches so that they are able to always show both parents of a merge result checkpoint. They are marked with [x] after the branch name:
 
-![][closed-branches-image]
+![](/images/user-manual/version-control/graph-view/closed-branches.png)
 
 ## Graph Node Layout Logic
 
@@ -83,14 +83,6 @@ The color of each branch remains the same whenever you open the Graph View and d
 
 The Graph View supports zooming in and out with the scroll wheel and panning via click and drag.
 
-[overview-image]: /images/user-manual/version-control/graph-view/overview.png
-[closed-branches-image]: /images/user-manual/version-control/graph-view/closed-branches.png
-[commit-node-image]: /images/user-manual/version-control/graph-view/commit-node.png
-[node-expand-image]: /images/user-manual/version-control/graph-view/node-expand.png
-[access-buttons-image]: /images/user-manual/version-control/graph-view/access-buttons.png
-[node-expand-example]: /images/user-manual/version-control/graph-view/node-expand-example.gif
-[compare-checkpoints-example]: /images/user-manual/version-control/graph-view/compare-checkpoints-example.gif
-[context-menu-image]: /images/user-manual/version-control/graph-view/context-menu.png
 
 [view-changes]: /user-manual/version-control/changes/
 [new-branch]: /user-manual/version-control/branches/#creating-a-new-branch

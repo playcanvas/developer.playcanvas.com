@@ -13,22 +13,18 @@ More information on using the Graph View can be found [here][graph-view].
 
 ### Entity Item History
 
-![Entity Item History][entity-item-history-img]
+![Entity Item History](/images/user-manual/version-control/item-history/entity-item-history.gif)
 
 ### Asset Item History
 
-![Asset Item History][asset-item-history-img]
+![Asset Item History](/images/user-manual/version-control/item-history/asset-item-history.gif)
 
 ### Project Settings Item History
 
-![Project Settings Item History][project-settings-item-history-img]
+![Project Settings Item History](/images/user-manual/version-control/item-history/project-item-history.gif)
 
 ### Scene Item History
 
-![Scene Item History][scene-item-history-img]
+![Scene Item History](/images/user-manual/version-control/item-history/scene-item-history.gif)
 
 [graph-view]: /user-manual/version-control/graph-view/
-[entity-item-history-img]: /images/user-manual/version-control/item-history/entity-item-history.gif
-[asset-item-history-img]: /images/user-manual/version-control/item-history/asset-item-history.gif
-[project-settings-item-history-img]: /images/user-manual/version-control/item-history/project-item-history.gif
-[scene-item-history-img]: /images/user-manual/version-control/item-history/scene-item-history.gif

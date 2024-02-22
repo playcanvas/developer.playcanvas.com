@@ -5,7 +5,7 @@ sidebar_position: 1
 
 PlayCanvas supports importing models with their meshes as a hierarchy of entities in the scene. This allows you to edit the different meshes directly in the Editor. Components can be added, attach other entities, move/rotate/scale entities in the hierarchy etc.
 
-![Edit model hierarchy in the Editor][edit_hierarchy_gif]
+![Edit model hierarchy in the Editor](/images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif)
 
 ## How to enable
 
@@ -29,11 +29,11 @@ A full tutorial on importing your first model and animation can be found [here][
 
 As an overview, when you drag the model file into the 'Assets Panel':
 
-![Drag Model into Assets Panel][import_model_gif]
+![Drag Model into Assets Panel](/images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif)
 
 The following assets will be created when imported:
 
-![Created Assets][created_assets_img]
+![Created Assets](/images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png)
 
 | Asset Type | Description |
 |------------|-------------|
@@ -57,9 +57,6 @@ How the Editor decides what is a new or removed mesh instance is done by the fol
 - If in the update, a mesh instance's name does not exist, it's assumed to be a new mesh instance and a new entity is added to the template.
 - If in the update, an existing entity of the template does not have a matching mesh instance given the rules above, it's assumed that this mesh instance has been removed and the entity will be removed from the template. The exception being mentioned above, if there was a script component added to it on the template, those entities are preserved on the root. If there were no script components added, those are deleted from the template.
 
-[edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
-[import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif
-[created_assets_img]: /images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png
 [material_asset]: /user-manual/assets/types/material/
 [texture_asset]: /user-manual/assets/types/texture/
 [template_asset]: /user-manual/templates/

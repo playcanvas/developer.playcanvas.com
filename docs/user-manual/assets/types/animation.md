@@ -8,11 +8,11 @@ An Animation asset is used to play a single animation on a 3D model. Animations 
 
 The inspector has a viewer that can be used to preview the animation with any Template or Model asset. This is useful if you have a single animation that can be applied to different character rigs.
 
-![Asset Inspector Preview][inspector-preview-gif]
+![Asset Inspector Preview](/images/user-manual/assets/animation/inspector-preview.gif)
 
 There is also a viewer in the [Anim State Graph Editor][anim-state-graph-editor] when you select a state in the graph. When selected, all Entities in the scene that are using the graph will show in a list and can be selected for preview.
 
-![Anim State Graph Preview][anim-state-graph-preview-gif]
+![Anim State Graph Preview](/images/user-manual/assets/animation/anim-state-graph-preview.gif)
 
 ## Animation Import Settings
 
@@ -26,7 +26,7 @@ When importing animations, there are settings that can be tweaked to adjust the 
 
 They can be found in the Project Settings under Asset Tasks.
 
-![Animation Import Settings][animation_import_settings]
+![Animation Import Settings](/images/user-manual/assets/animation/animation-import-settings.png)
 
 ### Naming Strategy
 
@@ -54,8 +54,5 @@ If enabling this option, it is recommended that Sample Rate is disabled and Curv
 
 [asset_pipeline]: /user-manual/glossary#asset-pipeline
 [target_asset]: /user-manual/glossary#target-asset
-[animation_import_settings]: /images/user-manual/assets/animation/animation-import-settings.png
 [mixamo]: https://www.mixamo.com/
 [anim-state-graph-editor]: /user-manual/animation/anim-state-graph-assets/
-[inspector-preview-gif]: /images/user-manual/assets/animation/inspector-preview.gif
-[anim-state-graph-preview-gif]: /images/user-manual/assets/animation/anim-state-graph-preview.gif

@@ -19,7 +19,7 @@ The Editor API is open sourced on [GitHub][github-repo]. The API documentation c
 
 The API can be accessed via the browser's devtools console allowing for automation of repetitive tasks. In the example below, we are using the Editor to find all the Entities that have the tag 'red' and disabling them by running code in the browser console.
 
-![][disable-red-boxes-gif]
+![](/images/user-manual/editor/editor-api/disable-red-boxes.gif)
 
 Editor API code:
 
@@ -40,7 +40,7 @@ User scripts is the more accessible out of the two which allows you to run custo
 
 Below we have an example where a button has been added to the [Viewport][viewport] to generate and randomly place boxes into the scene.
 
-![][generate-boxes-gif]
+![](/images/user-manual/editor/editor-api/generate-random-boxes.gif)
 
 The PlayCanvas team are currently using the [Violentmonkey][violentmonkey] open source browser extension to manage user scripts.
 
@@ -170,7 +170,6 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
     }
 ```
 
-[disable-red-boxes-gif]: /images/user-manual/editor/editor-api/disable-red-boxes.gif
 [github-api]: https://api.playcanvas.com/modules/Editor.html
 [github-repo]: https://github.com/playcanvas/editor-api
 [user-scripts]: https://en.wikipedia.org/wiki/Userscript
@@ -178,5 +177,4 @@ The button created is from the [PCUI][pcui] framework library that the Editor is
 [violentmonkey]: https://violentmonkey.github.io/
 [violentmonkey-docs]: https://violentmonkey.github.io/guide/creating-a-userscript/
 [violentmonkey-matching]: https://violentmonkey.github.io/api/matching/
-[generate-boxes-gif]: /images/user-manual/editor/editor-api/generate-random-boxes.gif
 [pcui]: https://github.com/playcanvas/pcui

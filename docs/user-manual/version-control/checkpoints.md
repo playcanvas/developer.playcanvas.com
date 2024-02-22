@@ -42,13 +42,10 @@ Hard reset can only delete the checkpoints if the following conditions are met:
 
 To hard reset, open the panel, find the checkpoint that you'd like to reset to and choose "Hard reset" from the checkpoint's drop down menu.
 
-![][hard-reset]
+![](/images/user-manual/version-control/hard-reset.png)
 
 Type 'hard reset' in the text box to confirm that you wish to delete all checkpoints after the selected checkpoint.
 
-![][hard-reset-confirm]
+![](/images/user-manual/version-control/hard-reset-confirm.png)
 
 The editor will reload the project at the checkpoint.
-
-[hard-reset-confirm]: /images/user-manual/version-control/hard-reset-confirm.png
-[hard-reset]: /images/user-manual/version-control/hard-reset.png
