@@ -5,6 +5,7 @@ thumb: https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/8890
 ---
 
 Links for this tutorial:
+
 - [Flappy Bird Demo][flappy-bird-ads-demo]
 - [Tutorial template project][tutorial-template-start]
 - [Google H5 Games Ads Documentation][google-afg-docs]
@@ -45,7 +46,7 @@ Go to the [Google H5 Ad Tutorial (Start)][tutorial-template-start] project dashb
 
 This is a simple project where it's ready for us to add the button click callbacks to show the ads in the `ui-controller.js` script:
 
-```
+```javascript
 // ...
 // initialize code called once per entity
 UiController.prototype.initialize = function() {
@@ -88,7 +89,7 @@ Let's take a look inside:
 
 `ca-pub-XXXXXXXXX` will need to be replaced with your own [Publisher ID][google-publisher-id] from Google Adsense.
 
-```
+```javascript
 // https://developers.google.com/ad-placement/docs/example
 (function() {
     var script = document.createElement('script');
@@ -113,12 +114,13 @@ Let's take a look inside:
 [`afg-setup.js`][afg-setup.js] is our wrapper to make working with ads a bit easier. It will configure Google's SDK and add some helper functions to use for pausing the game before an ad is shown and resuming afterwards.
 
 This includes:
+
 - disabling/enabling input
 - muting/unmuting sound
 - setting/resetting time scale
 - disabling/enabling rendering
 
-```
+```javascript
 (function () {
     var app = pc.Application.getApplication();
 
@@ -200,7 +202,7 @@ Let's start with adding an interstitial ad to the project.
 
 Add the following code to the interstitial ad button click event callback in `ui-controller.js`:
 
-```
+```javascript
 // ...
 this.interstitialAdButtonEntity.button.on('click', function(e) {
     if (afg.ready) {
@@ -241,7 +243,7 @@ However, for rewarded ads the process is a little different. The high level logi
 
 Let's see how this is implemented in the Flappy Bird example where we allow the player to continue playing after dying in exchange for watching an ad.
 
-```
+```javascript
 // ...
 app.on('game:gameover', function () {
     app.root.findByName('Game Screen').enabled = false;
@@ -290,7 +292,6 @@ app.on('game:gameover', function () {
 // ...
 ```
 
-
 When the game over event is called, we call `adBreak` with type `reward` and also have callbacks for `beforeReward`, `adViewed` and `adDismissed`.
 
 `beforeReward` is called if an ad is available and passes the function to show the ad. We will also show the button to watch the ad.
@@ -303,7 +304,7 @@ Let's now add this to our project.
 
 We are going to use the refresh button to check if we can show a rewarded ad or not. Add the following code to the `onRefresh` function that is called when the player presses the button.
 
-```
+```javascript
 // ...
 var onRefresh = function () {
     this.rewardedAdButtonEntity.button.active = false;
@@ -335,7 +336,6 @@ var onRefresh = function () {
 // ...
 ```
 
-
 When the refresh button is pressed, we disable the reward button entity so that it isn't shown to the player and we are in a known state.
 
 In the `beforeReward` callback, we keep a reference to the function to show the ad and enable the reward button as we know we can show an ad to the player.
@@ -348,7 +348,7 @@ In the `adDismissed` callback, we just ensure that the reward button entity is d
 
 Now we need to show the ad when the reward ad button is pressed. In the callback for the button click event we add the following code:
 
-```
+```javascript
 // ...
 this.rewardedAdButtonEntity.button.on('click', function (e) {
     if (this._showRewardAdFn) {
@@ -367,7 +367,7 @@ Let's see it in action:
 
 The completed `ui-controller.js` file should look like this:
 
-```
+```javascript
 var UiController = pc.createScript('uiController');
 UiController.attributes.add('refreshButtonEntity', {type: 'entity', title: 'Refresh Button Entity'});
 UiController.attributes.add('interstitialAdButtonEntity', {type: 'entity', title: 'Interstitial Ad Button Entity'});
