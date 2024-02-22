@@ -41,4 +41,3 @@ We calculate the required offset into a temporary vector `tmp`. This is simply: 
 This is a simple straightforward method to modify a material's offset and scroll a texture. It does have one downside which is this code modifies the actual material's properties. So if you have multiple models in a scene with the same material, they will all be affected.
 
 [1]: https://playcanvas.com/project/405882
-[2]: /images/tutorials/intermediate/animated-textures/coin-rotate.png

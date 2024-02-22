@@ -125,6 +125,5 @@ Halo.prototype.update = function(dt) {
 
 That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
 
-[2]: /images/tutorials/intermediate/light-halos/material.png
 [4]: https://playcanvas.com/project/406040
 [5]: https://api.playcanvas.com/classes/Engine.MeshInstance.html

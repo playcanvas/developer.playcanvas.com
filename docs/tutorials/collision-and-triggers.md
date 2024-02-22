@@ -18,10 +18,10 @@ The *collision* component defines a shape which can be used either to trigger ev
 
 The most important property of a *collision* component is it's **Type**, this determines the shape of the volume that will be used. There are four options:
 
-* **Box** A simple box
-* **Sphere** A simple sphere
-* **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
-* **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
+- **Box** A simple box
+- **Sphere** A simple sphere
+- **Capsule** A pill-shaped capsule. Useful for characters, as it can be tall and thin, but has a nice rounded-base with a single contact point.
+- **Mesh** Use any arbitrary mesh shape for the volume. **Note** There are some limitations to the mesh collision, in particular, when using it with the *rigidbody* component, they must be **Static**.
 
 ### Trigger Volumes
 
@@ -43,10 +43,9 @@ For details on each property take a look at the [*rigidbody* documentation][5].
 
 For this demo, the important property is the **Type**. You can pick one of three options:
 
-* **Static** this Entity will never move.
-* **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
-* **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
-
+- **Static** this Entity will never move.
+- **Dynamic** this Entity will move under gravity and any other forces that you apply to it.
+- **Kinematic** this Entity will not respond to forces, but will move if you directly set it's position or velocity.
 
 ## Setting up the ground
 
@@ -136,6 +135,4 @@ And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
 [1]: https://playcanvas.com/project/405871
 [5]: /user-manual/scenes/components/rigidbody/
-[6]: /images/tutorials/collision/ground_setup.png
 [8]: https://api.playcanvas.com/classes/Engine.Entity.html
-[9]: /images/tutorials/collision/box_setup.png

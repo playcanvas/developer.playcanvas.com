@@ -68,9 +68,9 @@ We strongly recommend using Basis compression where possible as it requires a si
 
 The Legacy Texture schemes are:
 
-* DXT: Typically supported by desktop devices.
-* PVR: Typically supported by iOS devices.
-* ETC: Typically supported by Android devices.
+- DXT: Typically supported by desktop devices.
+- PVR: Typically supported by iOS devices.
+- ETC: Typically supported by Android devices.
 
 To use the Legacy Texture Compression options, select the texture and scroll down in the inspector to find the Compression section.
 
@@ -96,10 +96,8 @@ If you have a project that is already using the Legacy Texture Compression forma
 
 <img loading="lazy" src="/images/user-manual/assets/textures/texture-compression/migrate-legacy-to-basis.gif" alt="Migrate from Legacy to Basis" width="400" />
 
-
 [1]: https://github.com/BinomialLLC/basis_universal
 [2]: https://playcanv.as/p/j8rsh3eO/
 [3]: https://playcanv.as/p/nAW3WkW8/
 [4]: #legacy-texture-compression
 [5]: #using-basis-texture-compression
-[6]: /images/user-manual/assets/textures/texture-compression/compression-results.png

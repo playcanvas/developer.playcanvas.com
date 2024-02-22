@@ -94,4 +94,3 @@ Enabling shadows has performance implications:
 
 [2]: /user-manual/scenes/components/light
 [4]: /user-manual/graphics/lighting/lightmapping
-[5]: /images/user-manual/graphics/lighting/shadows/light-shadow-options.png

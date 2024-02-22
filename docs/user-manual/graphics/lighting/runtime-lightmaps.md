@@ -142,7 +142,6 @@ To fix the warning, select the model asset and open the **Pipeline** section. Cl
 
 The **Padding** option determines the space between sections when unwrapping occurs. If you see light bleeding (i.e. light that shouldn't be in the lightmap), you can increase the padding to reduce bleeding.
 
-[1]: /images/user-manual/material-inspector/lightmap.jpg
 [4]: /user-manual/graphics/lighting/shadows
 [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
 [11]: /user-manual/graphics/advanced-rendering/batching

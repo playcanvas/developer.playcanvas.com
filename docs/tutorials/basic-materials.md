@@ -60,5 +60,4 @@ Try modifying the **Tiling** and **Offset** properties to effect the way the tex
 
 Take a look at the user manual section on [Physical Materials][8] for more depth on setting up materials.
 
-[3]: /images/tutorials/beginner/basic-materials/box-material.jpg
 [8]: /user-manual/graphics/physical-rendering/physical-materials/
