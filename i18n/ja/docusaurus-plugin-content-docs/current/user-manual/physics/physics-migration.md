@@ -17,7 +17,7 @@ PlayCanvasはammo.jsの最新バージョンのサポートを追加しました
 
 wasmモジュールの導入前に作成されたプロジェクトは、デフォルトでammo.jsのレガシーバージョンを使用し続けます。プロジェクトの所有者次第が希望すれば、物理システムをammo.jsの最新バージョンに移行することができます。
 
-To check if your project is using the legacy version of ammo.js, navigate to the Scene Settings panel:
+プロジェクトがammo.jsの旧バージョンを使用しているかどうかを確認するには、シーン設定パネルに移動します。
 
 ![Physics Legacy Settings](/images/user-manual/physics/physics-legacy-settings.png)
 

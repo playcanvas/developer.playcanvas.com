@@ -89,7 +89,7 @@ Movement.prototype.update = function(dt) {
 };
 ```
 
-This script simply animates the box along the world x-axis using a sine function. You move kinematic bodies using the standard transformation functions on the entity like `setPosition`, `setRotation` and `setEulerAngles`. Now when we run the scene, the dynamic box falls on the kinematic box and is carried along on top of it:
+このスクリプトは、正弦関数を使用して、ワールドのX軸に沿ってボックスをアニメーション化します。Kinematicボディを移動するには、 `setPosition`、` setRotation`および `setEulerAngles`のようなエンティティ上の標準の変換関数を使用します。シーンを実行すると、ダイナミックボックスがKinematicボックスの上に落ち、その上に乗ったまま運ばれます。
 
 ![Kinematic Box](/images/user-manual/physics/kinematic-box.gif)
 
