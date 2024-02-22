@@ -7,13 +7,13 @@ The Preview Pane displays the currently selected graph or material and supports 
 
 ![Preview Pane](/images/shader-editor/preview-pane.png)
 
-| How To |  |
-|---|---|
-| Rotate the view | Left click and drag. |
-| Zoom the view | Use the mouse scroll wheel. |
-| Pan the view | Right click and drag. |
-| Preview custom model | Drag and drop a glTF/glb model on the preview pane. |
-| Preview custom environment | Drag and drop an equirectangle HDR image on the preview pane. |
+| Action                     | Description                                                       |
+| -------------------------- | ----------------------------------------------------------------- |
+| Rotate the view            | Left-click and drag.                                              |
+| Zoom the view              | Use the mouse scroll wheel.                                       |
+| Pan the view               | Right-click and drag.                                             |
+| Preview custom model       | Drag and drop a glTF/glb model onto the preview pane.             |
+| Preview custom environment | Drag and drop an equirectangular HDR image onto the preview pane. |
 
 ### Toolbar
 
@@ -21,13 +21,13 @@ The toolbar offers control over the lighting environment and preview shape. The 
 
 ![Preview Pane Toolbar](/images/shader-editor/preview-pane-toolbar.png)
 
-| Controls | |
-|---|---|
-| 1 | Play toggle. When enabled, the preview window updates continuously and steps engine time forward. Enable this when previewing animated effects.
-| 2 | Direct lighting toggle. |
-| 3 | Environment lighting toggle. |
-| 4 | Show environment background toggle. |
-| 5 | Fullscreen toggle. |
+| Controls | Description                         |
+| -------- | ----------------------------------- |
+| 1        | Play toggle. When enabled, the preview window updates continuously and steps engine time forward. Enable this when previewing animated effects. |
+| 2        | Direct lighting toggle.             |
+| 3        | Environment lighting toggle.        |
+| 4        | Show environment background toggle. |
+| 5        | Fullscreen toggle.                  |
 
 ### Custom environment lighting
 
