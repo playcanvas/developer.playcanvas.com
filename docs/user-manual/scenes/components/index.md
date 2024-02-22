@@ -19,6 +19,7 @@ There are many different components defined in the PlayCanvas Engine:
 | [Camera](/user-manual/scenes/components/camera)                  | Renders the scene from the location of the entity.                            |
 | [Collision](/user-manual/scenes/components/collision)            | Assigns a collision volume to the entity.                                     |
 | [Element](/user-manual/scenes/components/element)                | Defines a user interface text or image element.                               |
+| [GSplat](/user-manual/scenes/components/gsplat)                  | Renders a 3D Gaussian Splat at the location of the entity.                    |
 | [Layout Child](/user-manual/scenes/components/layout-child)      | Overrides default Layout Group properties for one element.                    |
 | [Layout Group](/user-manual/scenes/components/layout-group)      | Automatically sets position and scale of child user interface elements.       |
 | [Light](/user-manual/scenes/components/light)                    | Attaches a dynamic light source to the Entity.                                |
