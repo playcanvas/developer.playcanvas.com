@@ -11,10 +11,12 @@ __シェーダーエディター__ では、直接シェーダープログラム
 
 ### 例
 
-For example, the following effect animates multiple surface normal maps and combines them with special effect lighting:
+たとえば、次のエフェクトでは、複数のサーフェスノーマルマップをアニメーション化し、それらを特殊効果の照明と組み合わせます:
+
 ![sample effect](/images/shader-editor/sample-effect.gif)
 
-The effect is made up of various graphs, including the following one. This graph takes care of unpacking the normals in a normal map:
+このエフェクトは、以下のグラフを含むいくつかのグラフで構成されています。このグラフは、ノーマルマップのノーマルを展開する役割を担っています:
+
 ![sample graph](/images/shader-editor/sample-graph.png)
 
 __シェーダーエディター__ は、このグラフをランタイムでGPU上で実行されるシェーダープログラムに変換します。

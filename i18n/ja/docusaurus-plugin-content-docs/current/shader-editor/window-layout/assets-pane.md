@@ -7,14 +7,14 @@ sidebar_position: 4
 
 ![Assets Pane](/images/shader-editor/assets-pane.png)
 
-| 使い方 | |
-|---|---|
-| 選択 | アイテムをクリックしてください。 [インスペクターペイン][2]でそのプロパティが表示されます。 |
-| 削除 | アイテムを選択し、削除ボタンを押すか、アイテムのコンテキストメニューにアクセスし、「削除」を選択してください。 |
-| フィルター | フィルター入力ボックスにテキストを入力してください。 |
-| グラフの新規作成 | 「+ NEW GRAPH」ボタンをクリックしてください。 |
-| マテリアルの新規作成 | ベースグラフを選択し、[グラフインスペクター][3]で「+ NEW MATERIAL」ボタンをクリックしてください。 |
-| テクスチャの新規作成 | 対応するテクスチャファイルをアセットペインにドラッグしてください。 |
+| Action                   | 説明                                                                                         |
+| ------------------------ |---------------------------------------------------------------------------------------------------- |
+| 選択           | Click an item. Its properties will appear in the [Inspector Pane][2].                               |
+| 削除           | Select the item and press the delete button, or access the item's context menu and select 'Delete'. |
+| フィルター | フィルター入力ボックスにテキストを入力してください。                                                               |
+| グラフの新規作成           | 「+ NEW GRAPH」ボタンをクリックしてください。                                                                     |
+| マテリアルの新規作成        | Select the base graph and in its [Graph Inspector][3], click the '+ NEW MATERIAL' button.           |
+| テクスチャの新規作成         | 対応するテクスチャファイルをアセットペインにドラッグしてください。                                                 |
 
 [2]: /shader-editor/window-layout/inspector-pane
 [3]: /shader-editor/window-layout/inspector-pane/graph-inspector
