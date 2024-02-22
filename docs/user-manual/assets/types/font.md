@@ -8,7 +8,7 @@ You can create a Font asset by uploading a font file ending in `.ttf`, `.ttc`, `
 
 Here are the properties that you can edit for a Font asset in the Editor:
 
-![Font Asset][2]
+![Font Asset](/images/user-manual/assets/fonts/font.png)
 
 ## Properties
 
@@ -35,4 +35,3 @@ The characters that should be included in the Font asset. If you only need numbe
 Click on the Process Font button after you make changes to the Font asset in order to generate a new version.
 
 [1]: /user-manual/scenes/components/element/
-[2]: /images/user-manual/assets/fonts/font.png

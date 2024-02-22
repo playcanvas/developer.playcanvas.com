@@ -5,7 +5,7 @@ sidebar_position: 5
 
 The Assets Panel manages all of the Assets that are available in your project. From here, you can create, upload, delete, inspect and edit any Asset.
 
-![Assets Panel][1]
+![Assets Panel](/images/user-manual/editor/assets-panel.png)
 
 ## Folder Hierarchy {#folder-hierarchy}
 
@@ -105,7 +105,7 @@ Note that copy and pasting assets does not overwrite existing assets with the sa
 
 Sometimes it's useful to know where assets are being used (or referenced) within a particular scene. If the Editor cannot detect any references for an asset, a small dot will be displayed on its thumbnail:
 
-![Unreferenced Asset][5]
+![Unreferenced Asset](/images/user-manual/editor/assets-panel/unreferenced-asset.png)
 
 :::warning
 
@@ -115,14 +115,11 @@ Note that the Editor cannot detect references to assets that are made in code. S
 
 If an asset does have references, you can check them via the References content menu item:
 
-![Asset References][6]
+![Asset References](/images/user-manual/editor/assets-panel/asset-references.png)
 
 Selecting a reference will load it into the Inspector panel.
 
-[1]: /images/user-manual/editor/assets-panel.png
 [2]: /user-manual/editor/inspector
 [3]: /user-manual/editor/viewport
 [4]: /user-manual/editor/settings
-[5]: /images/user-manual/editor/assets-panel/unreferenced-asset.png
-[6]: /images/user-manual/editor/assets-panel/asset-references.png
 [7]: https://api.playcanvas.com/classes/Engine.AssetRegistry.html#findByTag

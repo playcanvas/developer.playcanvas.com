@@ -7,19 +7,19 @@ The Collision component assigns a collision volume to the entity. The component 
 The Collision component can be enabled or disabled using the toggle in the top right of the component panel. If enabled and if the component is a trigger volume (because it has no sibling rigidbody component), the trigger volume will be enabled. Likewise, if the component does have a sibling rigidbody component, the rigidbody will be enabled.
 
 #### Box
-![Collision component (Box)][1]
+![Collision component (Box)](/images/user-manual/scenes/components/component-collision-box.png)
 #### Capsule
-![Collision component (Capsule)][2]
+![Collision component (Capsule)](/images/user-manual/scenes/components/component-collision-capsule.png)
 #### Compound
-![Collision component (Compound)][3]
+![Collision component (Compound)](/images/user-manual/scenes/components/component-collision-compound.png)
 #### Cone
-![Collision component (Cone)][4]
+![Collision component (Cone)](/images/user-manual/scenes/components/component-collision-cone.png)
 #### Cylinder
-![Collision component (Cylinder)][5]
+![Collision component (Cylinder)](/images/user-manual/scenes/components/component-collision-cylinder.png)
 #### Mesh
-![Collision component (Mesh)][6]
+![Collision component (Mesh)](/images/user-manual/scenes/components/component-collision-mesh.png)
 #### Sphere
-![Collision component (Sphere)][7]
+![Collision component (Sphere)](/images/user-manual/scenes/components/component-collision-sphere.png)
 
 If the entity also has a rigidbody component, the collision component determines the shape of the rigid body. If no rigidbody component is present, the collision component is treated as a trigger volume. The trigger volume cannot affect the simulation of other rigid bodies in the scene. Instead, you can add a script component and attach a script which responds to trigger events. For example, if another entity that has a rigidbody component enters or exits the trigger, your script can be notified.
 
@@ -38,12 +38,5 @@ If the entity also has a rigidbody component, the collision component determines
 
 You can control a Collision component's properties using a [script component][8]. The Collision component's scripting interface is [here][9].
 
-[1]: /images/user-manual/scenes/components/component-collision-box.png
-[2]: /images/user-manual/scenes/components/component-collision-capsule.png
-[3]: /images/user-manual/scenes/components/component-collision-compound.png
-[4]: /images/user-manual/scenes/components/component-collision-cone.png
-[5]: /images/user-manual/scenes/components/component-collision-cylinder.png
-[6]: /images/user-manual/scenes/components/component-collision-mesh.png
-[7]: /images/user-manual/scenes/components/component-collision-sphere.png
 [8]: /user-manual/scenes/components/script
 [9]: https://api.playcanvas.com/classes/Engine.CollisionComponent.html

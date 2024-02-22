@@ -13,59 +13,59 @@ Developing applications in PlayCanvas is easy and fun. Let's spend a few minutes
 
 To begin, navigate to your PROJECTS page.
 
-![Projects Page][1]
+![Projects Page](/images/user-manual/your-first-app/projects-page.png)
 
 Select the NEW button to create a new project:
 
-![New Project][2]
+![New Project](/images/user-manual/your-first-app/new-project.png)
 
 Enter `My First App` as the project name. The description is optional and can be filled out later. Hit CREATE.
 
 With your project created, we can dive right into the Editor - simply hit the EDITOR button:
 
-![Editor Button][3]
+![Editor Button](/images/user-manual/your-first-app/editor-button.png)
 
 When you first open the Editor, you should find that a minimal scene has been created for you:
 
-![Editor][4]
+![Editor](/images/user-manual/your-first-app/editor.png)
 
 Specifically, you have a camera (to render the scene), a box sitting on a plane and a light (to illuminate the 3D objects).
 
 You can easily change the box to another shape, like a sphere. To do this, select the Box entity in the HIERARCHY panel. In the Inspector panel on the right, change the Type property of the MODEL component from Box to Sphere. To be complete, rename the Entity from Box to Sphere too!
 
-![Box To Sphere][5]
+![Box To Sphere](/images/user-manual/your-first-app/box-to-sphere.png)
 
 But our sphere is a slightly boring gray color. Let's color it red! To do this, we must create a material by hitting the **+** icon in the ASSETS panel:
 
-![Create Material][6]
+![Create Material](/images/user-manual/your-first-app/create-material.png)
 
 Select the material and its properties will appear in the Inspector panel to the right. Expand the DIFFUSE section and click on the color swatch to edit the color to red:
 
-![Red Material][7]
+![Red Material](/images/user-manual/your-first-app/red-material.png)
 
 Next, we must assign the material to the sphere. You can do this with a simple drag and drop operation:
 
-![Drag And Drop Material][8]
+![Drag And Drop Material](/images/user-manual/your-first-app/drag-and-drop-material.gif)
 
 Now let's set up the Camera entity. Select it in the HIERARCHY panel:
 
-![Editor Camera Selected][9]
+![Editor Camera Selected](/images/user-manual/your-first-app/editor-camera-selected.png)
 
 Notice the little preview window that has appeared for the selected camera. Let's edit the camera's position and rotation to view the cube from directly in front. Edit the camera's position and rotation with the values below:
 
-![Camera Transform][10]
+![Camera Transform](/images/user-manual/your-first-app/camera-transform.png)
 
 Next, let's make the sphere controllable with the arrow keys on the keyboard. To do this, we must create a script. Right click the Sphere entity and select `Add Component -> Script`.
 
-![Add Script Component][11]
+![Add Script Component](/images/user-manual/your-first-app/add-script-component.png)
 
 A script component will appear in the Inspector on the Sphere entity. To create a script asset on the script component, enter the name `movement.js`.
 
-![Create Script Asset][12]
+![Create Script Asset](/images/user-manual/your-first-app/create-script-asset.png)
 
 Hit Enter and your script will be created.
 
-![Edit Script][13]
+![Edit Script](/images/user-manual/your-first-app/edit-script.png)
 
 Now hit EDIT to open the Code Editor. You'll see the following skeleton script:
 
@@ -123,57 +123,36 @@ When the code is updated, save the script using CTRL+S (or CMD+S on Mac) and clo
 
 You are now ready to preview your app by opening the Launch page. To do this, hit the Launch button in the top right of the Editor's 3D view.
 
-![Launch Button][14]
+![Launch Button](/images/user-manual/your-first-app/launch-button.png)
 
 The Launch page opens in a new tab. When it opens, try pressing the 4 arrow keys to move the sphere around.
 
-![Launch Page][15]
+![Launch Page](/images/user-manual/your-first-app/launch-page.gif)
 
 :::tip
 
 There is a 'Live Link' between the Editor and the Launch page. Any change you make in the Editor will be reflected in the Launch page in real time! It can be convenient to place the Launch page side by side with the Editor while you are working.
 
-![Editor Live Link][16]
+![Editor Live Link](/images/user-manual/your-first-app/live-link.gif)
 
 :::
 
 The final step is to publish your app so you can share it with others. To do this, click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar.
 
-![Publish Button][17]
+![Publish Button](/images/user-manual/your-first-app/publish-button.png)
 
 This will open up the Publishing dialog. Here you can publish a build (or even download a build for self-hosting).
 
-![Publish][18]
+![Publish](/images/user-manual/your-first-app/publish-dialog.png)
 
 Click the PUBLISH TO PLAYCANVAS option. You can then configure your published app.
 
-![Publish New Build][19]
+![Publish New Build](/images/user-manual/your-first-app/publish-options.png)
 
 Leave the defaults, scroll down and select PUBLISH NOW.
 
-![Builds][20]
+![Builds](/images/user-manual/your-first-app/builds.png)
 
 You now have a URL for your published build! Feel free to share it with the world on Twitter or Facebook!
 
 And so, that is the process from start to finish for building and publishing a PlayCanvas application. In this quick introduction, we have touched on the basics. Now explore the rest of the User Manual to learn some more advanced topics. Good luck and have fun!
-
-[1]: /images/user-manual/your-first-app/projects-page.png
-[2]: /images/user-manual/your-first-app/new-project.png
-[3]: /images/user-manual/your-first-app/editor-button.png
-[4]: /images/user-manual/your-first-app/editor.png
-[5]: /images/user-manual/your-first-app/box-to-sphere.png
-[6]: /images/user-manual/your-first-app/create-material.png
-[7]: /images/user-manual/your-first-app/red-material.png
-[8]: /images/user-manual/your-first-app/drag-and-drop-material.gif
-[9]: /images/user-manual/your-first-app/editor-camera-selected.png
-[10]: /images/user-manual/your-first-app/camera-transform.png
-[11]: /images/user-manual/your-first-app/add-script-component.png
-[12]: /images/user-manual/your-first-app/create-script-asset.png
-[13]: /images/user-manual/your-first-app/edit-script.png
-[14]: /images/user-manual/your-first-app/launch-button.png
-[15]: /images/user-manual/your-first-app/launch-page.gif
-[16]: /images/user-manual/your-first-app/live-link.gif
-[17]: /images/user-manual/your-first-app/publish-button.png
-[18]: /images/user-manual/your-first-app/publish-dialog.png
-[19]: /images/user-manual/your-first-app/publish-options.png
-[20]: /images/user-manual/your-first-app/builds.png

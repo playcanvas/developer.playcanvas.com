@@ -6,7 +6,7 @@ The LayoutChild component enables an element that is controlled by a LayoutGroup
 
 See the [Layout Groups][0] section for more details.
 
-![LayoutChild component][1]
+![LayoutChild component](/images/user-manual/scenes/components/component-layoutchild.png)
 
 ## Properties
 
@@ -25,6 +25,5 @@ See the [Layout Groups][0] section for more details.
 You can control an LayoutChild component's properties using a [script component][2]. The LayoutChild component's scripting interface is [here][3].
 
 [0]: /user-manual/user-interface/layout-groups
-[1]: /images/user-manual/scenes/components/component-layoutchild.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.LayoutChildComponent.html

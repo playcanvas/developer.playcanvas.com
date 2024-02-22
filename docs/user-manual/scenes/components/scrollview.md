@@ -6,7 +6,7 @@ The Scrollview component defines a scrollable area in a user interface. A scroll
 
 See the [User Interface][2] section for more details.
 
-![Scrollview Component][3]
+![Scrollview Component](/images/user-manual/scenes/components/component-scrollview.png)
 
 ## Component Properties
 
@@ -28,4 +28,3 @@ See the [User Interface][2] section for more details.
 
 [1]: /user-manual/scenes/components/scrollbar
 [2]: /user-manual/user-interface
-[3]: /images/user-manual/scenes/components/component-scrollview.png

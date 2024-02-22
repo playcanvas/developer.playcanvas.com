@@ -42,11 +42,11 @@ server.listen(3000);
 
 Glitch will automatically re-run the server every time you finish typing. Once you’ve copied this, you should get an error. Click on the `Logs` button on the left side of the screen to open up the server console. Here you can see any server output, as well as the errors. You should see `Error: Cannot find module 'socket.io'`.
 
-![Opening the log][5]
+![Opening the log](/images/tutorials/multiplayer/glitch_error.png)
 
 To include a package, go to `package.json` and click on the `Add Package` button on the top. Search for `socket.io`.
 
-![Adding a package][6]
+![Adding a package](/images/tutorials/multiplayer/glitch_add_package.png)
 
 
 Now if you clear the log and add a space in `server.js` so it re-runs, you should see `Server started.` in the log. You've successfully deployed a server! If you click the `Show` button at the top, you won't actually see anything. This is because our server is not listening for any http requests, but instead it's listening for websocket requests.
@@ -61,15 +61,15 @@ Create a new project on PlayCanvas. We first need to include the Socket.io clien
 
 Go to project settings.
 
-![Project settings][12]
+![Project settings](/images/tutorials/multiplayer/project_settings.png)
 
 Find and open 'External Scripts'.
 
-![External scripts settings][13]
+![External scripts settings](/images/tutorials/multiplayer/external_scripts_settings.png)
 
 Change the value from 0 to 1 and add the CDN URL for the socket library from their [framework server][11]. In this case, we will be using version 3.1.1 as that is the latest at time of writing:
 
-![Project settings][14]
+![Project settings](/images/tutorials/multiplayer/added_socket_io_library.png)
 
 
 ```
@@ -342,11 +342,6 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer
 [3]: https://glitch.com/
 [4]: https://glitch.com/edit/#!/new-project
-[5]: /images/tutorials/multiplayer/glitch_error.png
-[6]: /images/tutorials/multiplayer/glitch_add_package.png
 [7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [10]: https://glitch.com/edit/#!/sore-bloom-beech
 [11]: https://cdnjs.com/libraries/socket.io
-[12]: /images/tutorials/multiplayer/project_settings.png
-[13]: /images/tutorials/multiplayer/external_scripts_settings.png
-[14]: /images/tutorials/multiplayer/added_socket_io_library.png

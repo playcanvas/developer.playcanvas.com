@@ -10,7 +10,7 @@ There are two types of sprite Simple and Animated.
 
 Simple Sprite Components display a single frame from an atlas
 
-![Simple Sprite][2]
+![Simple Sprite](/images/user-manual/scenes/components/component-sprite-simple.png)
 
 ## Simple Sprite Component Properties
 
@@ -31,7 +31,7 @@ Simple Sprite Components display a single frame from an atlas
 
 Animated Sprite Components have multiple Sprite Animation Clips attached which can play back a different Sprite Asset.
 
-![Animated Sprite][3]
+![Animated Sprite](/images/user-manual/scenes/components/component-sprite-animated.png)
 
 ## Animated Sprite Component Properties
 
@@ -63,8 +63,6 @@ You can control the properties of a Sprite component using a [script component][
 
 
 [1]: /user-manual/assets/types/sprite
-[2]: /images/user-manual/scenes/components/component-sprite-simple.png
-[3]: /images/user-manual/scenes/components/component-sprite-animated.png
 [4]: /user-manual/scenes/components/script
 [5]: https://api.playcanvas.com/classes/Engine.SpriteComponent.html
 [6]: /user-manual/graphics/advanced-rendering/batching

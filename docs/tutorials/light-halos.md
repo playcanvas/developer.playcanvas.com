@@ -20,7 +20,7 @@ It works like this: We create an entity with a plane primitive attached which ha
 
 First you'll need a halo texture. In this example we've just used a very simple blurred blob that was created in a art program like Photoshop.
 
-![blob][1]
+![blob](/images/tutorials/intermediate/light-halos/blob.jpg)
 
 This texture will form the basis of the glow.
 
@@ -34,7 +34,7 @@ The **Blend Type** is set to **Additive Alpha**. The **Additive** part means tha
 
 ## Entities
 
-![entities][3]
+![entities](/images/tutorials/intermediate/light-halos/entity-setup.jpg)
 
 The Entity setup for the glow is simple too. We have a parent Entity for the halo script and a child Entity which has the plane primitive attached to it. The reason we do this is to simplify the code so that we can use `entity.lookAt` to set the orientation of the glow. The Plane primitive faces upwards so we create a child entity and apply a rotation to this child so that the plane is correctly positioned facing the camera.
 
@@ -125,8 +125,6 @@ Halo.prototype.update = function(dt) {
 
 That's it. A simple but pretty effect to add to your scene. Take a look at the [project][4] for more information.
 
-[1]: /images/tutorials/intermediate/light-halos/blob.jpg
 [2]: /images/tutorials/intermediate/light-halos/material.png
-[3]: /images/tutorials/intermediate/light-halos/entity-setup.jpg
 [4]: https://playcanvas.com/project/406040
 [5]: https://api.playcanvas.com/classes/Engine.MeshInstance.html

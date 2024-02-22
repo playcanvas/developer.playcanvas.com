@@ -39,7 +39,7 @@ Selecting a texture's thumbnail in the Assets panel will load it into the Inspec
 
 A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
 
-![Texture Properties][3]
+![Texture Properties](/images/user-manual/assets/textures/texture-properties.png)
 
 ### Texture Filtering
 
@@ -49,7 +49,7 @@ Texture filtering gives control over how the color of a texture mapped pixel is 
 
 When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
 
-![Anisotropy][4]
+![Anisotropy](/images/user-manual/assets/textures/anisotropy.png)
 
 Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
 
@@ -57,7 +57,7 @@ Note that as anisotropy increases, the cost of sampling the texture on the GPU a
 
 The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
 
-![Addressing][5]
+![Addressing](/images/user-manual/assets/textures/texture-address.png)
 
 ## Max Texture Size
 
@@ -77,7 +77,4 @@ If you would like to avoid downsizing at runtime, at the time of writing (Fri 23
 
 [1]: /user-manual/assets/types/material
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging
-[3]: /images/user-manual/assets/textures/texture-properties.png
-[4]: /images/user-manual/assets/textures/anisotropy.png
-[5]: /images/user-manual/assets/textures/texture-address.png
 [7]: https://webglreport.com/

@@ -14,13 +14,13 @@ When building a UI for your application you will almost certainly need to create
 
 In this [scene][1] we have created a 2D [Screen][3] that looks like this in the hierarchy:
 
-![Hierarchy][4]
+![Hierarchy](/images/tutorials/ui/buttons/hierarchy.png)
 
 ## Screen setup
 
 Our screen is set up like so:
 
-![Screen][5]
+![Screen](/images/tutorials/ui/buttons/screen.png)
 
 Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is the resolution that we are targeting - in this case it's 1080 x 1920. We choose Blend for Scale Mode so that our Screen adapts to resolution changes and we set Scale Blend to 1 so that the Screen will adapt only to height changes.
 
@@ -146,8 +146,6 @@ These events will only fire if Use Input is enabled on the Element component so 
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/buttons/hierarchy.png
-[5]: /images/tutorials/ui/buttons/screen.png
 [6]: /images/tutorials/ui/buttons/button.png
 [elements-tutorial]: /user-manual/user-interface/elements/
 [click-event-api]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click

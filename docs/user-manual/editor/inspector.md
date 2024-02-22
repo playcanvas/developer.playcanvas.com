@@ -3,7 +3,7 @@ title: Inspector
 sidebar_position: 3
 ---
 
-![Inspector Panel][1]
+![Inspector Panel](/images/user-manual/editor/inspector/inspector.png)
 
 The Inspector panel shows attribute values for the currently selected item.
 
@@ -20,6 +20,5 @@ Some attributes are simple text or numbers in which case a standard text field o
 
 When running both a game and the Editor simultaneously changes to attributes will be transmitted to Entities in the running application. An excellent way of iterating on values is to launch your game using the Play button, then place the Editor and the game tabs side by side and tweak values in the Editor as you watch and play the game.
 
-[1]: /images/user-manual/editor/inspector/inspector.png
 [2]: /user-manual/glossary#entity
 [3]: /user-manual/glossary#gizmo

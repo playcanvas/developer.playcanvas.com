@@ -6,7 +6,7 @@ The Screen component defines the area and rendering of a user interface. Childre
 
 See the [User Interface][0] section for more details.
 
-![Screen Component][1]
+![Screen Component](/images/user-manual/scenes/components/component-screen.png)
 
 ## Component Properties
 
@@ -20,4 +20,3 @@ See the [User Interface][0] section for more details.
 | Priority             | Determines the order in which Screen components in the same layer are rendered (higher priority is rendered on top). Number must be an integer between 0 and 255. |
 
 [0]: /user-manual/user-interface
-[1]: /images/user-manual/scenes/components/component-screen.png

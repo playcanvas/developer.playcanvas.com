@@ -17,7 +17,7 @@ Please note that PlayCanvas Editor currently supports [Emscripten][2] compiled W
 ## Wasm Module Properties
 
 Once the files have been added to the project, select the Wasm Module to display its properties in the Inspector Panel:
-![Wasm Module Properties][1]
+![Wasm Module Properties](/images/user-manual/assets/wasm-module.png)
 
 ### Name
 
@@ -31,5 +31,4 @@ This is the JavaScript glue code required to execute Wasm code.
 
 This is the optional fallback asm.js script to use when WebAssembly is not supported.
 
-[1]: /images/user-manual/assets/wasm-module.png
 [2]: https://emscripten.org/

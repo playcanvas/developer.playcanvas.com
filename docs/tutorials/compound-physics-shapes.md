@@ -15,4 +15,3 @@ Full documentation for Compound Physics Shapes is now in the [User Manual][docum
 <Link to='https://playcanvas.com/project/688146/'>Open Project ↗</Link>
 
 [documentation-page]: /user-manual/physics/compound-shapes/
-

@@ -15,15 +15,15 @@ Note that particles are not physically simulated. They do not interact or collid
 
 In the Editor's 3D View, an unselected particle system is represented with the following icon:
 
-![Particle system icon][1]
+![Particle system icon](/images/user-manual/graphics/particles/particle_system_icon.png)
 
 To create a new particle system, simply create a new entity and add a particle system component to it. For convenience, the Editor menu has an item that does this in a single step:
 
-![Particle system creation][2]
+![Particle system creation](/images/user-manual/graphics/particles/particle_system_create.png)
 
 A newly created particle system with the default settings looks like this:
 
-![Default particle system][3]
+![Default particle system](/images/user-manual/graphics/particles/particle_system_default.gif)
 
 To configure the particle system via the particle system component interface, consult the reference [here][4].
 
@@ -40,9 +40,6 @@ this.entity.particlesystem.play();
 
 Soft particles are particles that are faded out near their intersections with scene geometry. If soft particles are enabled by using [```depthSoftening```][5], the camera which renders the particles needs to have a [Depth Map][6] rendering enabled.
 
-[1]: /images/user-manual/graphics/particles/particle_system_icon.png
-[2]: /images/user-manual/graphics/particles/particle_system_create.png
-[3]: /images/user-manual/graphics/particles/particle_system_default.gif
 [4]: /user-manual/scenes/components/particlesystem
 [5]: https://api.playcanvas.com/classes/Engine.ParticleSystemComponent.html#depthSoftening
 [6]: /user-manual/graphics/cameras/depth-layer

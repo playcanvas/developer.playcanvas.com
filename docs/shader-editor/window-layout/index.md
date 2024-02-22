@@ -5,7 +5,7 @@ sidebar_position: 1.2
 
 Shader Editor comprises a number of sub-windows or panes. The panes are highlighted below and a brief description of each follows:
 
-![window-layout][1]
+![window-layout](/images/shader-editor/window-layout.png)
 
 | Pane | |
 |---|---|
@@ -16,7 +16,6 @@ Shader Editor comprises a number of sub-windows or panes. The panes are highligh
 | [Graph Editor][6] | Shows the selected graph and is where nodes and edges are edited. |
 | [Preview Pane][7] | Displays a preview of the currently selected graph or material. |
 
-[1]: /images/shader-editor/window-layout.png
 [2]: /shader-editor/window-layout/info-pane
 [3]: /shader-editor/window-layout/nodes-pane
 [4]: /shader-editor/window-layout/inspector-pane

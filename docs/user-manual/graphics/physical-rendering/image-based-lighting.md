@@ -11,7 +11,7 @@ This technique relies on [CubeMap][3] - the environment map that is made of 6 te
 
 Image data can be stored in LDR or HDR (High Dynamic Range) color space, which allows to store more than 0.0 to 1.0 (256 gradations) in single channel. HDR allows to store values above 1.0 (what is considered "white"), with combination of many factors of environment such as gamma correction, tone mapping and exposure  it allows to contain more light details and provide much better control over light quality and desirable results to artists.
 
-![HDR vs LDR CubeMap for Image Based Rendering][9]
+![HDR vs LDR CubeMap for Image Based Rendering](/images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg)
 *Notice how bright parts in the texture are clamped using LDR*
 
 ## Energy Conservation
@@ -34,7 +34,7 @@ CubeMaps can be CGI rendered or assembled from photography, and there are websit
 
 CubeMap is made of 6 faces, each representing square side of a cube, simply put: it can be rendered using square viewport camera, by rotating it in different 90 degrees directions with 90 degrees field of view.
 
-![CubeMap Faces][13]
+![CubeMap Faces](/images/user-manual/graphics/physical-rendering/cubemap-faces.jpg)
 
 You can use popular 3D modelling tools, or photography and 360 Imagery software. They should be rendered in linear gamma space and without color corrections that is described in [Lightmapping Gamma Correction section][1].
 
@@ -51,13 +51,13 @@ This can be done using two methods:
 
 This technique changes the projection of environment map which allows to specify box within the space so CubeMap corresponds to its bounds. The most common use is to simulate reflections on surfaces within room scale environment.
 
-![Material CubeMap Box Projection][4]
+![Material CubeMap Box Projection](/images/user-manual/graphics/physical-rendering/cubemap-box-projection.png)
 
 ## Example
 
 Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
 
-[![Environment Box Projection Mapping][5]][7]
+[![Environment Box Projection Mapping](/images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][7]
 
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
@@ -65,13 +65,9 @@ Here is an [example][7] and [project][8] of the scene using CubeMap Box Projecti
 [1]: /user-manual/graphics/lighting/lightmapping/#gamma-correction
 [2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
 [3]: /user-manual/assets/types/cubemap/
-[4]: /images/user-manual/graphics/physical-rendering/cubemap-box-projection.png
-[5]: /images/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg
 [6]: http://www.hdrlabs.com/sibl/archive.html
 [7]: https://playcanv.as/p/zdkARz26/
 [8]: https://playcanvas.com/project/446587/overview/archviz-example
-[9]: /images/user-manual/graphics/physical-rendering/ibl-hdr-ldr.jpg
 [10]: http://noemotionhdrs.net/
 [11]: https://www.openfootage.net/?tag=hdri
 [12]: https://www.pauldebevec.com/Probes/
-[13]: /images/user-manual/graphics/physical-rendering/cubemap-faces.jpg

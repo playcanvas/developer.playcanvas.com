@@ -10,19 +10,19 @@ See the [User Interface][1] section for more details.
 
 The group element provides just the layout properties of the Element component
 
-![Group Element][2]
+![Group Element](/images/user-manual/scenes/components/component-element-group.png)
 
 ## Image Element
 
 The image element displays an image using a texture asset or a solid color.
 
-![Image Element][3]
+![Image Element](/images/user-manual/scenes/components/component-element-image.png)
 
 ## Text Element
 
 The text element renders a string of text using a [font asset][4].
 
-![Text Element][5]
+![Text Element](/images/user-manual/scenes/components/component-element-text.png)
 
 ## Common Component Properties
 
@@ -63,10 +63,7 @@ The text element renders a string of text using a [font asset][4].
 | Wrap Lines  | Enable text wrapping. Any text that overflows the width of the text element will be wrapped to the next line. |
 
 [1]: /user-manual/user-interface
-[2]: /images/user-manual/scenes/components/component-element-group.png
-[3]: /images/user-manual/scenes/components/component-element-image.png
 [4]: /user-manual/assets/types/font/
-[5]: /images/user-manual/scenes/components/component-element-text.png
 [6]: /user-manual/user-interface/elements/#anchor
 [7]: /user-manual/user-interface/elements/#pivot
 [8]: /user-manual/graphics/layers

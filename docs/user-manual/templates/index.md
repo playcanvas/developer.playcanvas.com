@@ -20,13 +20,13 @@ You can drag & drop a Template Asset in your scene or right click under an Entit
 
 When an Entity is an instance of a Template it will have a slightly difference appearance in the Hierarchy:
 
-![Template Instance][1]
+![Template Instance](/images/user-manual/templates/hierarchy.png)
 
 The root Entity of the Template Instance and all its children will have a different icon showing that they are part of the same Template.
 
 When you select the root of the Template Instance you will notice the following properties in the Entity Inspector:
 
-![Template Inspector][2]
+![Template Inspector](/images/user-manual/templates/inspector.png)
 
 ## Updating Templates {#updating-templates}
 
@@ -43,13 +43,13 @@ When you apply overrides to the Template Asset then they stop being overrides an
 
 You can see the summary of the overrides by selecting the root of the Template Instance and looking at the Entity Inspector:
 
-![Overrides][3]
+![Overrides](/images/user-manual/templates/override.png)
 
 Also notice the different color of the label of the field that has been overridden. You can also see a more detailed list of all the overrides by clicking View Diff. See [Overrides Diff View][4] for more information.
 
 If you hover over the colored label of the overridden field you can view more details about that specific override:
 
-![Override Hover][5]
+![Override Hover](/images/user-manual/templates/override-hover.png)
 
 ### Applying Overrides {#applying-overrides}
 
@@ -79,7 +79,7 @@ Alternatively you can open the [Override Diff View][4] and revert overrides from
 
 When you create an override then the property that it overrides gets protected from updates to the Template Asset. For example. say your Template Instance looks like so:
 
-![Template Instance][1]
+![Template Instance](/images/user-manual/templates/hierarchy.png)
 
 You modify the position of Tree1/Sphere. This creates an override on the position of the Sphere entity. You then create another instance of the Template Asset and you change the position of the Sphere to something else. If you apply the override from the second instance then that will not update the position of the first instance since it is overridden and protected. In order for the first instance to pick up position changes for the Sphere Entity you have to revert the override first.
 
@@ -103,8 +103,4 @@ At runtime, the Template instance is not linked to the asset and you can reduce 
 
 You only need Template assets to be loaded if you are instantiating instances at runtime.
 
-[1]: /images/user-manual/templates/hierarchy.png
-[2]: /images/user-manual/templates/inspector.png
-[3]: /images/user-manual/templates/override.png
 [4]: /user-manual/templates/diff
-[5]: /images/user-manual/templates/override-hover.png

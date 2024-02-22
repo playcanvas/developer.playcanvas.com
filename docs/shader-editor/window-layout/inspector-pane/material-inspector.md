@@ -3,7 +3,7 @@ title: Material Inspector
 sidebar_position: 3
 ---
 
-![Material Inspector][1]
+![Material Inspector](/images/shader-editor/inspector-pane-material.png)
 
 The Material Inspector is where a material's settings are configured.
 
@@ -31,6 +31,5 @@ There are three sections: Basic, Render States and Parameters.
 
 The parameters section lists the parameter nodes placed on the graph. The names and types are taken from the graph nodes themselves.
 
-[1]: /images/shader-editor/inspector-pane-material.png
 [2]: /shader-editor/window-layout/assets-pane
 [3]: https://api.playcanvas.com/classes/Engine.Material.html#blendType

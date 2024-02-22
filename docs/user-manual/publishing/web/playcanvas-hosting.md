@@ -17,15 +17,15 @@ To publish you will need to have at least one scene in your project.
 * Go to your Project and open the Editor.
 * Click on the <span class="pc-icon">&#57911;</span> button in the left hand side toolbar or click Publishing in the top left Menu
 
-![Publish Button][1]
+![Publish Button](/images/user-manual/publishing/toolbar-publish.png)
 
 * This will open up the Publishing dialog. Here you can publish a build or download a build for self-hosting.
 
-![Publish][2]
+![Publish](/images/user-manual/publishing/dialog-publish.png)
 
 * Click the PUBLISH button next to "Publish on PlayCanvas".
 
-![Publish New Build][3]
+![Publish New Build](/images/user-manual/publishing/dialog-publish-build.png)
 
 * You will then have to fill out some details about your new build. The available fields are:
 
@@ -39,7 +39,7 @@ To publish you will need to have at least one scene in your project.
   * *Generate Source Map*: Include Source Maps with the build. This can be useful for debugging but is generally disabled when publishing a production version of your app.
   * *Optimize Scene Format*: Compresses the scene JSON up to 50%. Read more [here][6].
 
-![Select scenes][4]
+![Select scenes](/images/user-manual/publishing/dialog-publish-build-scenes.png)
 
 * Select the Scenes you want to include in your build from the list. Notice that the Scene with the active banner icon will be loaded first when your build is launched if you include it in the build.
 * Click 'PUBLISH NOW'
@@ -52,7 +52,7 @@ Builds are given permanent link in the form `https://playcanv.as/b/BUILD_ID/`. T
 
 Click Builds on the same popup.
 
-![Builds][5]
+![Builds](/images/user-manual/publishing/dialog-builds.png)
 
 Here you can see a list of existing published builds.
 
@@ -68,9 +68,4 @@ If you are sharing a link to your game you should use the Primary Build link. Th
 
 The first time you publish a build, it will automatically become the Primary Build. For any subsequent build, you can choose when to assign it to be the Primary Build. This means that you can publish builds and test them before finally publishing them to your audience.
 
-[1]: /images/user-manual/publishing/toolbar-publish.png
-[2]: /images/user-manual/publishing/dialog-publish.png
-[3]: /images/user-manual/publishing/dialog-publish-build.png
-[4]: /images/user-manual/publishing/dialog-publish-build-scenes.png
-[5]: /images/user-manual/publishing/dialog-builds.png
 [6]: /user-manual/optimization/optimizing-scene-format

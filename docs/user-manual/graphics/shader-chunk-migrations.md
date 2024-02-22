@@ -13,7 +13,7 @@ In order to help users migrate their existing custom shader chunks, this page li
 
 The debug version of the Engine will report any API changes to the runtime console when it detects overridden chunks. For example:
 
-![Console output][2]
+![Console output](/images/user-manual/graphics/shader-chunk-migrations/console-warning.png)
 
 Once an application's chunks have been updated to the latest API they must be flagged as such. For example, after updating a material's custom chunks to the latest engine release (say v1.55), specify this in the chunks object as follows:
 
@@ -393,4 +393,3 @@ This allows the engine to automatically pick the sampler uniform to use, thus po
 | `specularityFactorPS` | <ul><li>new chunk to control specular intensity for metalness workflow.</li></ul> |
 
 [1]: https://github.com/playcanvas/engine/issues/4250
-[2]: /images/user-manual/graphics/shader-chunk-migrations/console-warning.png

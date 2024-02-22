@@ -16,13 +16,13 @@ We can easily create progress bars using the built-in [Elements][2]. In this tut
 
 This is what our UI looks like in the Hierarchy:
 
-![Hierarchy][4]
+![Hierarchy](/images/tutorials/ui/progressbar/hierarchy.png)
 
 ## Screen setup
 
 Our [screen][3] is set up like so:
 
-![Screen][5]
+![Screen](/images/tutorials/ui/progressbar/screen.png)
 
 Since it's a 2D screen we have ticked Screen Space. Our Reference Resolution is the resolution that we are targeting - in this case it's 1080 x 1920. We choose Blend for Scale Mode so that our Screen adapts to resolution changes and we set Scale Blend to 1 so that the Screen will adapt only to height changes.
 
@@ -34,11 +34,11 @@ The progress bar is made of 2 Elements. The background image and the fill image.
 
 The background image is the `Progress Bar` entity in our example. It has an Image Element and it shows the background image of the progress bar:
 
-![Background Image][6]
+![Background Image](/images/tutorials/ui/progressbar/progress-bar-bg.png)
 
 The fill image is the `Fill Image` entity in our example. It is a child of the `Progress Bar` entity and it has an Image Element to show the fill of the progress bar. This image is anchored to the left of its parent background image. That allows us to change the width of the element in order to make the progress bar grow.
 
-![Fill Image][7]
+![Fill Image](/images/tutorials/ui/progressbar/progress-bar-fill.png)
 
 ## Script
 
@@ -107,8 +107,4 @@ Changing the `width` makes the fill image larger and changing the `rect` makes s
 [1]: https://playcanvas.com/editor/scene/547906
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/progressbar/hierarchy.png
-[5]: /images/tutorials/ui/progressbar/screen.png
-[6]: /images/tutorials/ui/progressbar/progress-bar-bg.png
-[7]: /images/tutorials/ui/progressbar/progress-bar-fill.png
 [8]: https://api.playcanvas.com/classes/Engine.ElementComponent.html#rect

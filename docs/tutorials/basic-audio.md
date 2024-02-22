@@ -50,7 +50,7 @@ To create a Sound source select the Entity you wish to add the Sound to and choo
 
 Sound properties will now appear in the AttributeEditor.
 
-![Sound Component][5]
+![Sound Component](/images/tutorials/audio/sound.jpg)
 
 Here is the Sound component of the tank Entity. Here's some information about some of the properties:
 
@@ -98,4 +98,3 @@ You can only have one AudioListener at a time. The last AudioListener Component 
 [2]: /user-manual/scenes/components/audiolistener
 [3]: https://playcanvas.com/editor/scene/440098
 [4]: /user-manual/assets/importing
-[5]: /images/tutorials/audio/sound.jpg

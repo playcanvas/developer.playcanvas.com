@@ -5,17 +5,17 @@ sidebar_position: 1
 
 There are various ways to create an Organization. Any organizations you are part of will appear next to your name on your profile like so:
 
-![Profile Organizations][1]
+![Profile Organizations](/images/user-manual/organizations/organizations.jpg)
 
 ### Create from the dropdown menu
 
 The first way is to click on NEW ORGANIZATION in the top-right dropdown menu:
 
-![Dropdown][2]
+![Dropdown](/images/user-manual/organizations/dropdown.png)
 
 This will bring up the following popup:
 
-![New Organization][3]
+![New Organization](/images/user-manual/organizations/new-organization.jpg)
 
 Enter the name for the Organization and an Organization ID which is a string with only alphanumeric characters and dashes allowed. The default e-mail address is your own but you can change it to a different one.
 
@@ -34,11 +34,11 @@ All the projects will now be under the Organization account with your user accou
 
 Another way to create an Organization is to convert your user account. You can do this by clicking CONVERT in your [account][7] page.
 
-![Convert Organization][8]
+![Convert Organization](/images/user-manual/organizations/convert.png)
 
 This will bring up the following popup:
 
-![Convert Popup][9]
+![Convert Popup](/images/user-manual/organizations/convert-popup.png)
 
 Converting your user account into an Organization will mean that you will no longer be able to log in with this user account. For that reason you need to specify an owner for the new Organization.
 
@@ -52,12 +52,7 @@ If you have subscribed for a paid plan, that plan will be cancelled unless you c
 
 After you convert your account, you will be logged out. Then log back in with the new owner's account and you will be able to access the converted account and all its projects.
 
-[1]: /images/user-manual/organizations/organizations.jpg
-[2]: /images/user-manual/organizations/dropdown.png
-[3]: /images/user-manual/organizations/new-organization.jpg
 [4]: /user-manual/profile
 [5]: /user-manual/profile/projects/#transfer-project-ownership
 [6]: /user-manual/organizations/managing-organizations/#projects
 [7]: /user-manual/profile/account
-[8]: /images/user-manual/organizations/convert.png
-[9]: /images/user-manual/organizations/convert-popup.png

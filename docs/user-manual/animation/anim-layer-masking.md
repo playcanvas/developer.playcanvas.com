@@ -9,15 +9,12 @@ When creating complex animation behavior for your game objects, it is often nece
 
 After creating an Anim State Graph asset and attaching it to an anim component, you'll be presented with a list of layers contained in your graph. You can create a mask for any of these layers by clicking the **Create Mask** button under each layer panel:
 
-![Anim Component Create Mask][1]
+![Anim Component Create Mask](/images/user-manual/anim/anim_component_create_mask.png)
 
  This will open up the mask inspector for that layer which is shown below:
 
-![Mask Inspector][2]
+![Mask Inspector](/images/user-manual/anim/anim_mask_inspector.png)
 
 The mask inspector displays the full hierarchy which the anim component is driving, starting at the `root bone` specified in the anim component. Each bone in the hierarchy can be selected to be included in the mask. You can also right-click specific bones to include or exclude whole sections of the hierarchy. Any bones which are not selected in this mask will not be driven by any of the animations which play in this mask's layer.
 
 After creating masks, you can use [layer blending](/user-manual/animation/anim-state-graph-assets/#layer-blending) to smoothly blend the masked animations of multiple layers together.
-
-[1]: /images/user-manual/anim/anim_component_create_mask.png
-[2]: /images/user-manual/anim/anim_mask_inspector.png

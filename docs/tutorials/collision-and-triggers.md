@@ -27,7 +27,7 @@ The most important property of a *collision* component is it's **Type**, this de
 
 To create a Trigger Volume all we need to do is add a *collision* component to an Entity. In this tutorial we're adding a large box-shaped Trigger Volume underneath the slope to catch the falling bodies and reset their position.
 
-![Collisions & Triggers][3]
+![Collisions & Triggers](/images/tutorials/collision/collision_and_triggers.jpg)
 
 You can see the trigger volume underneath the ramp displayed as a blue outline.
 
@@ -37,7 +37,7 @@ A rigid body is a physical presence in your game world. You can set it up with r
 
 To create a rigid body in your Scene, pick an Entity and add a *rigidbody* component and a *collision* component. By default you will create a **static box**. The *rigidbody* component has a multitude of options which you can use to tune the properties of your object.
 
-![rigidbody component][4]
+![rigidbody component](/images/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
 For details on each property take a look at the [*rigidbody* documentation][5].
 
@@ -60,7 +60,7 @@ You can see in the attribute panel, that it has *render*, *collision* and *rigid
 
 The next Entity we'll need is the trigger.
 
-![Trigger Entity][7]
+![Trigger Entity](/images/tutorials/collision/trigger_setup.jpg)
 
 With this Entity we have a *collision* component but no *rigidbody* so it acts as a trigger. The trigger Entity also has a *script* component with some code attached. Triggers are only useful if something happens when they are triggered, so we need to add some code to fire and listen for events when the trigger is activated.
 
@@ -135,10 +135,7 @@ In the ```initialize``` method we set up the event listener, and then in the eve
 And that's all there is to handling Collisions and Triggers in PlayCanvas.
 
 [1]: https://playcanvas.com/project/405871
-[3]: /images/tutorials/collision/collision_and_triggers.jpg
-[4]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
 [5]: /user-manual/scenes/components/rigidbody/
 [6]: /images/tutorials/collision/ground_setup.png
-[7]: /images/tutorials/collision/trigger_setup.jpg
 [8]: https://api.playcanvas.com/classes/Engine.Entity.html
 [9]: /images/tutorials/collision/box_setup.png

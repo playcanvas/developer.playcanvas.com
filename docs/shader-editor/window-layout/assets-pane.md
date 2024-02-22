@@ -5,7 +5,7 @@ sidebar_position: 4
 
 The Assets Pane is where a project’s graphs, materials and textures appear.
 
-![Assets Pane][1]
+![Assets Pane](/images/shader-editor/assets-pane.png)
 
 | How to | |
 |---|---|
@@ -16,6 +16,5 @@ The Assets Pane is where a project’s graphs, materials and textures appear.
 | Create a Material | Select the base graph and on its [Graph Inspector][3] click the '+ NEW MATERIAL' button. |
 | Create a Texture | Drag a supported texture file onto the Assets Pane. |
 
-[1]: /images/shader-editor/assets-pane.png
 [2]: /shader-editor/window-layout/inspector-pane
 [3]: /shader-editor/window-layout/inspector-pane/graph-inspector

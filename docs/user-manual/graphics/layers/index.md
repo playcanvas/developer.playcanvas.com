@@ -25,7 +25,7 @@ Priority of the camera is the main factor that controls the order in which the m
 
 Each camera also has a list of layers set up on it, which controls which layers the camera renders. Their order is described in the next section.
 
-![Camera Layers][6]
+![Camera Layers](/images/user-manual/graphics/layers/camera-layers.jpg)
 
 ### Layer Composition {#layer-composition}
 
@@ -47,7 +47,7 @@ Each sub-layer has a sort mode. Every frame the meshes in a sub-layer are sorted
 
 PlayCanvas applications are created with a set of default layers. You should leave these layers in place as some engine features will not function correctly if they are not present. They default order is below:
 
-![Default Layers][1]
+![Default Layers](/images/user-manual/graphics/layers/default-layers.jpg)
 
 1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
 1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][7].
@@ -65,19 +65,19 @@ The default layers are great for implementing the existing engine features but t
 
 Layers are controlled from the **LAYERS** panel in the **Settings** section of the Editor.
 
-![Creating a layer][2]
+![Creating a layer](/images/user-manual/graphics/layers/new-layer.jpg)
 
 In the Layers section, type in the name of the layer that you wish to create and click **Add Layer**. Your new layer will appear in the list of available layers below the button.
 
 ### Setting the sort mode {#setting-the-sort-mode}
 
-![Edit a layer][3]
+![Edit a layer](/images/user-manual/graphics/layers/edit-layer.jpg)
 
 You can choose the sort mode for each sub-layer in the layer list. Expand your layer and choose the sort mode from the dropdown menu.
 
 ### Choosing the layer order {#choosing-the-layer-order}
 
-![Add layer][4]
+![Add layer](/images/user-manual/graphics/layers/add-sub-layer.jpg)
 
 Add a sub-layer to the layer composition by selecting **ADD SUBLAYER** and choosing which sub-layer you wish to add. Once your layer is in the Render Order list you can re-arrange the order by dragging each sub-layer up and down.
 
@@ -85,7 +85,7 @@ Add a sub-layer to the layer composition by selecting **ADD SUBLAYER** and choos
 
 Components that render meshes all have a `layers` property which is used to determine which layer and sub-layer the mesh should be added to. These components include: Model, Element, Sprite, Particle System. The Camera and Light components also have a `layers` property to determine which layers they render and light respectively.
 
-![Layer Components][5]
+![Layer Components](/images/user-manual/graphics/layers/test-layer-components.jpg)
 
 *Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in its layer list. In order for it to be lit, the light must include Test Layer in its layer list too.
 
@@ -100,10 +100,4 @@ When you add an additional camera, these are the recommended steps:
 2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
 3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.
 
-[1]: /images/user-manual/graphics/layers/default-layers.jpg
-[2]: /images/user-manual/graphics/layers/new-layer.jpg
-[3]: /images/user-manual/graphics/layers/edit-layer.jpg
-[4]: /images/user-manual/graphics/layers/add-sub-layer.jpg
-[5]: /images/user-manual/graphics/layers/test-layer-components.jpg
-[6]: /images/user-manual/graphics/layers/camera-layers.jpg
 [7]: /user-manual/graphics/cameras/depth-layer

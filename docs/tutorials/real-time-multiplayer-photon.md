@@ -27,7 +27,7 @@ Photon is for free for projects with up to 20 online players (CCU).
 
 We start by forking the [tutorial project here][2].
 
-![Empty Project][3]
+![Empty Project](/images/tutorials/multiplayer-photon/1.png)
 
 ### Photon account
 
@@ -39,7 +39,7 @@ Create your Photon account [here][4] - (Photon Engine).
 
 Click **CREATE NEW APP** from the dashboard
 
-![Create New Application][5]
+![Create New Application](/images/tutorials/multiplayer-photon/2.png)
 
 #### Select Photon Type and Application name.
 
@@ -48,13 +48,13 @@ Enter the following
 - Photon Type: RealTime
 - Name: PlayCanvas-Photon etc.
 
-![Create Real Time Project][6]
+![Create Real Time Project](/images/tutorials/multiplayer-photon/3.png)
 
 #### Copy of AppID
 
 Please make a note of this AppId, as you will need it in the future.
 
-![App Id][7]
+![App Id](/images/tutorials/multiplayer-photon/4.png)
 
 ### Download SDK
 
@@ -62,19 +62,19 @@ Download the SDK from the dashboard.
 
 #### Click SDK from the dashboard
 
-![SDK][8]
+![SDK](/images/tutorials/multiplayer-photon/5.png)
 
 #### Select RealTime JavaScript
 
-![JavaScript SDK][9]
+![JavaScript SDK](/images/tutorials/multiplayer-photon/6.png)
 
 #### Click Download SDK
 
-![Download SDK][10]
+![Download SDK](/images/tutorials/multiplayer-photon/7.png)
 
 #### Unzip the SDK
 
-![Unzip SDK][11]
+![Unzip SDK](/images/tutorials/multiplayer-photon/8.png)
 
 The SDK will be downloaded in ZIP format, unzip it: `photon-javascript-sdk_vX-X-X-X` → `lib` → **`Photon-Javascript_SDK.min.js`**.
 
@@ -84,13 +84,13 @@ Import the SDK you have just downloaded into the PlayCanvas editor.
 
 #### Upload the SDK on the editor
 
-![Upload SDK][12]
+![Upload SDK](/images/tutorials/multiplayer-photon/9.jpg)
 
 Drag and drop the SDK to the assets in the editor.
 
 #### Change Loading Type "Asset" to "Before Engine"
 
-![Change Loading Type][13]
+![Change Loading Type](/images/tutorials/multiplayer-photon/10.png)
 
 ## Multiplayer implementation
 
@@ -154,13 +154,13 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 Create a new script asset **photon-loadbalancing-playcanvas.js** and attach it to the Root entity in the Editor.
 
-![Root Entity - Inspector][16]
+![Root Entity - Inspector](/images/tutorials/multiplayer-photon/11.png)
 
 #### Paste AppId into the script attribute.
 
 Enter AppId as a script attribute.
 
-![Script Attributes][17]
+![Script Attributes](/images/tutorials/multiplayer-photon/12.png)
 
 ```javascript
 this.loadBalancingClient = new Photon.LoadBalancing.LoadBalancingClient( this.wss ? 1 : 0, this.appId, this.appVersion );
@@ -195,7 +195,7 @@ PhotonLoadBalancingPlayCanvas.prototype.initialize = function () {
 
 If you successfully connect to the lobby by running connectToRegionMaster, JoinedLobby will be displayed in the log.
 
-![Console Log][18]
+![Console Log](/images/tutorials/multiplayer-photon/13.png)
 
 ### Create or Join a room
 
@@ -288,13 +288,13 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 };
 ```
 
-  ![Actor][19]
+  ![Actor](/images/tutorials/multiplayer-photon/14.png)
 - **actor** contains `name`, `actorNr`, `isLocal`, and `userId`.
 - **onActorJoin** when a new user connects, you can get the joined actor.
 - **onActorLeave** when a user is disconnected, you can get the disconnected actor.
 
 If successful, the entity is added when the player joins.
-![Console log - Actors ][20]
+![Console log - Actors ](/images/tutorials/multiplayer-photon/15.png)
 
 #### Player Movement
 
@@ -481,7 +481,7 @@ Player.prototype.update = function (dt) {
 
 You can now play multiplayer in Photon!
 
-![Project][23]
+![Project](/images/tutorials/multiplayer-photon/16.gif)
 
 You can create a room using Photon and synchronize the positions of players with each other.
 
@@ -489,23 +489,7 @@ Although this project was only a simple real-time communication between players,
 
 [1]: https://playcanvas.com/project/926999/
 [2]: https://playcanvas.com/project/954410/
-[3]: /images/tutorials/multiplayer-photon/1.png
 [4]: https://www.photonengine.com/
-[5]: /images/tutorials/multiplayer-photon/2.png
-[6]: /images/tutorials/multiplayer-photon/3.png
-[7]: /images/tutorials/multiplayer-photon/4.png
-[8]: /images/tutorials/multiplayer-photon/5.png
-[9]: /images/tutorials/multiplayer-photon/6.png
-[10]: /images/tutorials/multiplayer-photon/7.png
-[11]: /images/tutorials/multiplayer-photon/8.png
-[12]: /images/tutorials/multiplayer-photon/9.jpg
-[13]: /images/tutorials/multiplayer-photon/10.png
 [14]: https://doc-api.photonengine.com/en/javascript/current/Photon.LoadBalancing.LoadBalancingClient.html
 [15]: https://doc.photonengine.com/ja-jp/quantum/v1/reference/glossary
-[16]: /images/tutorials/multiplayer-photon/11.png
-[17]: /images/tutorials/multiplayer-photon/12.png
-[18]: /images/tutorials/multiplayer-photon/13.png
-[19]: /images/tutorials/multiplayer-photon/14.png
-[20]: /images/tutorials/multiplayer-photon/15.png
 [22]: /user-manual/scripting/communication/
-[23]: /images/tutorials/multiplayer-photon/16.gif

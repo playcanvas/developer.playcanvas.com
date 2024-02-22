@@ -7,7 +7,7 @@ On the web, it's critical to get users into your application as soon as possible
 
 ## Preload {#preload}
 
-![Asset Properties][1]
+![Asset Properties](/images/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
 
 Every asset in your project has a property called `preload`. By default this is set to true. If an asset is marked as preload it will be downloaded and created before the initialize phase of your application begins.
 
@@ -15,7 +15,7 @@ You should use preloading to make sure all the assets you need at the start of y
 
 ## Streaming {#streaming}
 
-![Streaming][2]
+![Streaming](/images/user-manual/assets/preloading-and-streaming/streaming.gif)
 
 If an Entity in your scene and references an asset, then a loading request will be initiated when the Entity is enabled. If the Entity is enabled in the scene, then this request is made as soon as the application starts.
 
@@ -49,6 +49,3 @@ for (var i = 0; i < assets.length; i++) {
     this.app.assets.load(assets[i]);
 }
 ```
-
-[1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
-[2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif

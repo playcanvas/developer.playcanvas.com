@@ -20,7 +20,7 @@ The use of batching is currently not compatible with [runtime lightmaps](/user-m
 
 ## Creating Batch Groups
 
-![Creating Batch Groups][1]
+![Creating Batch Groups](/images/user-manual/optimization/batching/batch-groups.jpg)
 
 Batch Groups can be created from the Batch Groups section of the [scene settings panel][6]. Each batch group has a number of properties that are used to give the engine hints about how to create batches from this batch group.
 
@@ -32,7 +32,7 @@ Batch Groups can be created from the Batch Groups section of the [scene settings
 
 ## Adding a component to a Batch Group
 
-![Selecting Batch Groups][2]
+![Selecting Batch Groups](/images/user-manual/optimization/batching/model-component.jpg)
 
 The Model component has a Batch Group property to assign a model into a batch group.
 
@@ -67,15 +67,15 @@ if (element.batchGroupId)
 
 ## Example - Batching a static environment
 
-![Western Scene][3]
+![Western Scene](/images/user-manual/optimization/batching/western-scene.jpg)
 
 In this scene we have created a static environment from 7 separate model files, some of which are repeated in the scene. For example, the road tile is used to in 50 entities to create the long road through the center of the scene.
 
-![Western Animation][4]
+![Western Animation](/images/user-manual/optimization/batching/western-animation-all.gif)
 
 You can see in the animation each draw call as it is made. In this environment the engine makes over 50 draw calls to draw each of the models individually. However, apart from the ground, all of these models use the same material and so they can be combined into batch groups.
 
-![Western Animation Batched][5]
+![Western Animation Batched](/images/user-manual/optimization/batching/western-animation.gif)
 
 In this animation we have created 4 batch groups for the buildings, the cacti, the road and the ground. Notice, that the road and the ground are not combined into single draw calls because the meshes are larger than the Max AABB Size defined on the batch group.
 
@@ -86,11 +86,6 @@ In this animation we have created 4 batch groups for the buildings, the cacti, t
 * **Batch Manager** - The programmatic interface for creating and updating batches at runtime. See [API documentation][8].
 
 
-[1]: /images/user-manual/optimization/batching/batch-groups.jpg
-[2]: /images/user-manual/optimization/batching/model-component.jpg
-[3]: /images/user-manual/optimization/batching/western-scene.jpg
-[4]: /images/user-manual/optimization/batching/western-animation-all.gif
-[5]: /images/user-manual/optimization/batching/western-animation.gif
 [6]: /user-manual/scenes/settings#batch-groups
 [7]: /user-manual/scenes/components/model
 [8]: https://api.playcanvas.com/classes/Engine.BatchManager.html
