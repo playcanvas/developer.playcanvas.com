@@ -40,17 +40,17 @@ Raycast.prototype.touchStart = function (e) {
 
 Raycast.prototype.doRaycast = function (screenX, screenY) {
     // The pc.Vec3 to raycast from (the position of the camera)
-    var from = this.entity.getPosition();
+    const from = this.entity.getPosition();
 
     // The pc.Vec3 to raycast to (the click position projected onto the camera's far clip plane)
-    var to = this.entity.camera.screenToWorld(screenX, screenY, this.entity.camera.farClip);
+    const to = this.entity.camera.screenToWorld(screenX, screenY, this.entity.camera.farClip);
 
     // Raycast between the two points and return the closest hit result
-    var result = this.app.systems.rigidbody.raycastFirst(from, to);
+    const result = this.app.systems.rigidbody.raycastFirst(from, to);
 
     // If there was a hit, store the entity
     if (result) {
-        var hitEntity = result.entity;
+        const hitEntity = result.entity;
         console.log('You selected ' + hitEntity.name);
     }
 };

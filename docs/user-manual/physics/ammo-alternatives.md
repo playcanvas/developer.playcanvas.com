@@ -20,4 +20,3 @@ While there is currently only one existing PlayCanvas integration for the p2.js 
 In December 2018, Nvidia open sourced the [PhysX][1] physics engine. While there is no JS/WASM port of PhysX yet, it is perhaps the most competitive physics runtime compared to Bullet/ammo.js. When a web port becomes available, it will be added to the table above.
 
 [1]: https://github.com/NVIDIAGameWorks/PhysX
-
