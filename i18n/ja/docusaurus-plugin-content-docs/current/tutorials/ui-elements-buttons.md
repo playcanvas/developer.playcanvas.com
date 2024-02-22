@@ -14,13 +14,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 この[シーン][1]では、次のように階層が設定された2D [スクリーン][3]を作成しました。
 
-![Hierarchy][4]
+![Hierarchy](/images/tutorials/ui/buttons/hierarchy.png)
 
 ## スクリーンの設定
 
 私たちのスクリーンは次のように設定されています。
 
-![Screen][5]
+![Screen](/images/tutorials/ui/buttons/screen.png)
 
 2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
@@ -148,8 +148,5 @@ this.entity.button.on('click', function(event) {
 [1]: https://playcanvas.com/editor/scene/547900
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/buttons/hierarchy.png
-[5]: /images/tutorials/ui/buttons/screen.png
-[6]: /images/tutorials/ui/buttons/button.png
 [elements-tutorial]: /user-manual/user-interface/elements/
 [click-event-api]: https://api.playcanvas.com/classes/Engine.ButtonComponent.html#event:click

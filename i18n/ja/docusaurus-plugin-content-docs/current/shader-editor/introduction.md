@@ -12,10 +12,12 @@ __シェーダーエディター__ では、直接シェーダープログラム
 ### 例
 
 たとえば、次のエフェクトでは、複数のサーフェスノーマルマップをアニメーション化し、それらを特殊効果の照明と組み合わせます:
-![サンプルエフェクト][1]
+
+![sample effect](/images/shader-editor/sample-effect.gif)
 
 このエフェクトは、以下のグラフを含むいくつかのグラフで構成されています。このグラフは、ノーマルマップのノーマルを展開する役割を担っています:
-![サンプルグラフ][2]
+
+![sample graph](/images/shader-editor/sample-graph.png)
 
 __シェーダーエディター__ は、このグラフをランタイムでGPU上で実行されるシェーダープログラムに変換します。
 
@@ -37,7 +39,5 @@ void func_unpackNormal(in vec3 usr_rawNormal, out vec3 usr_unpackedNormal) {
 
 [ウィンドウレイアウト][4]セクションで、ウィンドウレイアウトの詳細を確認してください。
 
-[1]: /images/shader-editor/sample-effect.gif
-[2]: /images/shader-editor/sample-graph.png
 [3]: /shader-editor/overview
 [4]: /shader-editor/window-layout

@@ -7,19 +7,19 @@ Collisionコンポーネントは、エンティティにコリジョンを割�
 Collisionコンポーネントは、コンポーネントパネルの右上にあるトグルを使用して有効または無効にできます。有効で、かつコンポーネントがトリガー体積である場合(姉妹のRigidBodyコンポーネントを持たないため)、トリガー体積が有効になります。同様に、コンポーネントに姉妹のRigidBodyコンポーネントがある場合、rigidbodyが有効になります。
 
 #### Box
-![Collision component (Box)][1]
+![Collision component (Box)](/images/user-manual/scenes/components/component-collision-box.png)
 #### Capsule
-![Collision component (Capsule)][2]
+![Collision component (Capsule)](/images/user-manual/scenes/components/component-collision-capsule.png)
 #### Compound
-![Collision component (Compound)][3]
+![Collision component (Compound)](/images/user-manual/scenes/components/component-collision-compound.png)
 #### Cone
-![Collision component (Cone)][4]
+![Collision component (Cone)](/images/user-manual/scenes/components/component-collision-cone.png)
 #### Cylinder
-![Collision component (Cylinder)][5]
+![Collision component (Cylinder)](/images/user-manual/scenes/components/component-collision-cylinder.png)
 #### Mesh
-![Collision component (Mesh)][6]
+![Collision component (Mesh)](/images/user-manual/scenes/components/component-collision-mesh.png)
 #### Sphere
-![Collision component (Sphere)][7]
+![Collision component (Sphere)](/images/user-manual/scenes/components/component-collision-sphere.png)
 
 エンティティにRigidBodyコンポーネントがある場合、Collisionコンポーネントはrigidbodyの形状を決定します。RigidBodyコンポーネントが存在しない場合、Collisionコンポーネントはトリガー体積として扱われます。トリガー体積は、シーン内の他のRigidBodyに影響を与えることはできません。代わりに、Scriptコンポーネントを追加し、トリガーイベントに応答するスクリプトをアタッチできます。たとえば、RigidBodyコンポーネントを持つ別のエンティティがトリガーに入るか出ると、スクリプトに通知できます。
 
@@ -38,12 +38,5 @@ Collisionコンポーネントは、コンポーネントパネルの右上に�
 
 [Scriptコンポーネント][8]を使用してCollisionコンポーネントのプロパティを制御できます。Collisionコンポーネントのスクリプティングインターフェイスは[こちら][9]です。
 
-[1]: /images/user-manual/scenes/components/component-collision-box.png
-[2]: /images/user-manual/scenes/components/component-collision-capsule.png
-[3]: /images/user-manual/scenes/components/component-collision-compound.png
-[4]: /images/user-manual/scenes/components/component-collision-cone.png
-[5]: /images/user-manual/scenes/components/component-collision-cylinder.png
-[6]: /images/user-manual/scenes/components/component-collision-mesh.png
-[7]: /images/user-manual/scenes/components/component-collision-sphere.png
 [8]: /user-manual/scenes/components/script
 [9]: https://api.playcanvas.com/classes/Engine.CollisionComponent.html

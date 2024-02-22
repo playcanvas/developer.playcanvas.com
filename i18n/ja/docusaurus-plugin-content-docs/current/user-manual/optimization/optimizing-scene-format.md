@@ -7,6 +7,4 @@ sidebar_position: 8
 
 有効にするには、Publishの画面で 'Optimize Scene Format' にチェックを入れてから公開してください。
 
-![][1]
-
-[1]: /images/user-manual/optimization/optimizing-scene-format/optimize-scene-format-publish-dialog.png
+![](/images/user-manual/optimization/optimizing-scene-format/optimize-scene-format-publish-dialog.png)

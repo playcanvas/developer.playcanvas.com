@@ -6,7 +6,7 @@ title: Sprite
 
 ## Properties
 
-![Sprites][3]
+![Sprites](/images/user-manual/assets/sprites/sprites.jpg)
 
 ### ピクセルあたりの単位 (Pixels Per Unit)
 
@@ -27,4 +27,3 @@ PlayCanvasのシーン内で、1単位毎にマッピングされるスプライ
 
 [1]: /user-manual/assets/types/texture-atlas
 [2]: /user-manual/2D/slicing
-[3]: /images/user-manual/assets/sprites/sprites.jpg

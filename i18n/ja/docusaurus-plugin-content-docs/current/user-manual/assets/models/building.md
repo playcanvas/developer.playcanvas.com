@@ -20,7 +20,7 @@ GLBのインポートでは、以下のglTF機能がサポートされ、非常�
 
 そのため、PlayCanvasを対象とする場合、特別なアートツールプラグインを使用する必要はなく、従う必要のあるPlayCanvas固有のワークフローはありません。
 
-![GLB Import Example][14]
+![GLB Import Example](/images/user-manual/assets/models/building/glb-import.gif)
 
 (モデル：Loïc Norgeot、蚊のスキャン：Geoffrey Marchal for [Sketchfab][13]、[CC BY 4.0][12]でライセンスされています。)
 
@@ -54,7 +54,7 @@ PlayCanvasは、FBXファイルのインポートもサポートしており、�
 
 ## Blender
 
-![Blender Logo][3]
+![Blender Logo](/images/user-manual/assets/models/building/blender-logo.jpg)
 
 [Blender][4]は素晴らしいフリーの3Dモデリングツールで、PlayCanvas用の3Dアセットを作るために最適です。
 
@@ -101,7 +101,7 @@ Blenderの使い方については様々な資料がweb上にあります。私�
 
 3D Studio Maxでは、標準マテリアルを使用するか、マルチ/サブオブジェクト マテリアルを使用してください。ただし、参照しているマテリアルが標準マテリアルである必要があります。以下のスクリーンショットでハイライト表示されている箇所は、PlayCanvasにエクスポートする際に利用される設定です。
 
-![Max material editor][7]
+![Max material editor](/images/user-manual/assets/models/building/max-material-editor.jpg)
 
 ### 対応しているマップスロット
 
@@ -141,11 +141,11 @@ PlayCanvasでは、エクスポート時に一部の3DS Maxのマテリアルマ
 
 Normalマップを作成する方法には異なる方法がありますが、主な2つの方法は緑成分の形式が異なります。たとえば、デフォルトでは、3DS Maxはレンガの壁のためのNormalマップが以下のように表示されることを期待します。
 
-![Normal map][8]
+![Normal map](/images/user-manual/assets/models/building/wall-norm.jpg)
 
 テクスチャのNormalマップの緑成分（または各NormalのY成分）を反転する必要があります。Photoshopでファイルを読み込み、緑チャンネルを選択し、Ctrl+Iを押してチャンネルを反転すると、以下のようになります。
 
-![Normal map with Y component flipped][9]
+![Normal map with Y component flipped](/images/user-manual/assets/models/building/wall-norm-yflip.jpg)
 
 これでライティングの一貫性をPlayCanvas上で保つことができます。
 
@@ -155,7 +155,7 @@ Normalマップを作成する方法には異なる方法がありますが、�
 
 このスロットにBitmapマップを割り当てると、PlayCanvasのマテリアルでSphereマッピングが有効になります。Bitmapは次のようなものになります。
 
-![Sphere map][10]
+![Sphere map](/images/user-manual/assets/models/building/mountains-sphere.jpg)
 
 Sphereマップはコストのかからない、もっとも信頼性の低いリフレクションマッピングの手法です。多くの場合では表面に魅力的な光沢を与えるために十分です。
 
@@ -167,19 +167,12 @@ Sphereマップはコストのかからない、もっとも信頼性の低い�
 
 Mayaでは、標準的なマテリアルタイプであるlambert、blinn、およびphongを使用するべきです。以下のスクリーンショットのハイライトされた領域は、PlayCanvasへのエクスポート時に利用されるマテリアル設定を示しています。
 
-![Maya material editor][11]
+![Maya material editor](/images/user-manual/assets/models/building/maya-material-editor.jpg)
 
 [1]: http://wiki.polycount.com/wiki/Tools
 [2]: https://cgcookie.com/learn-blender
-[3]: /images/user-manual/assets/models/building/blender-logo.jpg
 [4]: https://www.blender.org/
 [5]: https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives
 [6]: https://www.blenderguru.com/
-[7]: /images/user-manual/assets/models/building/max-material-editor.jpg
-[8]: /images/user-manual/assets/models/building/wall-norm.jpg
-[9]: /images/user-manual/assets/models/building/wall-norm-yflip.jpg
-[10]: /images/user-manual/assets/models/building/mountains-sphere.jpg
-[11]: /images/user-manual/assets/models/building/maya-material-editor.jpg
 [12]: https://creativecommons.org/licenses/by/4.0/
 [13]: https://sketchfab.com/3d-models/real-time-refraction-demo-mosquito-in-amber-37233d6ed84844fea1ebe88069ea58d1
-[14]: /images/user-manual/assets/models/building/glb-import.gif

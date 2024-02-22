@@ -5,7 +5,7 @@ sidebar_position: 2
 
 シャドウはゲームにリアリズムを追加する優れた方法です。しかし、ダイナミック(リアルタイム)シャドウは、高コストでランタイムパフォーマンスが低下する可能性があります。シーンに静的なシャドウを追加するよりも性能が高い方法については、[ライトマップ][4]をご覧ください。
 
-![キャラクターにシャドウキャスト][1]
+![Characters with shadow casting](/images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg)
 
 PlayCanvasエンジンは、シャドウマッピングと呼ばれるシャドウのアルゴリズムを実装しています。完全にクロスプラットフォームであり、モバイルおよびデスクトップの両方で動作することが保証されています。
 
@@ -15,7 +15,7 @@ PlayCanvasエンジンは、シャドウマッピングと呼ばれるシャド�
 
 デフォルトでは、PlayCanvasではシャドウキャストは無効になっています。自分で明示的に有効にする必要があります。幸いなことに、シャドウの有効化は簡単です。まず、シーンでシャドウをキャストするライトを特定します。 Hierarchyでライトを選択し、Inspectorパネルでプロパティを編集します。各ライトには「Cast Shadows」というオプションがあります。このオプションをチェックすると、シーン内のシャドウキャストグラフィカルオブジェクトにシャドウが生成されます。
 
-![Model Component][6]
+![Model Component](/images/user-manual/scenes/components/component-model.png)
 
 次に、シーン内のどのグラフィカルオブジェクトがシャドウをキャストおよび受信するかを指定する必要があります。デフォルトでは、すべてのレンダリングおよびModelコンポーネントがシャドウをキャストおよび受信します。これらのプロパティを変更するには、Hierarchyでエンティティを選択し、InspectorでRenderコンポーネントまたはModelコンポーネントを検索し、「Cast Shadows」と「Receive Shadows」オプションを必要に応じてオフにします。
 
@@ -35,11 +35,11 @@ PlayCanvasエンジンは、シャドウマッピングと呼ばれるシャド�
 
 単一のシャドウカスケードを示すスクリーンショット。
 
-![One cascade][7]
+![One cascade](/images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg)
 
 4つのシャドウカスケードを示すスクリーンショット。
 
-![Four cascades][8]
+![Four cascades](/images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg)
 
 ### カスケードの分布 {#distribution-of-cascades}
 
@@ -57,7 +57,7 @@ PlayCanvasが使用するシャドウマッピング技術には有限の解像�
 
 このライトによってキャストされる、1を完全な強度のシャドウ、0をシャドウのないものとするシャドウの強度。
 
-![Shadow Intensity][9]
+![Shadow Intensity](/images/user-manual/graphics/lighting/shadows/shadow-intensity.gif)
 
 ### シャドウ解像度 {#shadow-resolution}
 
@@ -77,7 +77,7 @@ PlayCanvasが使用するシャドウマッピング技術には有限の解像�
 
 シャドウのアウトラインをペナンブラと呼びます。これは、シャドウを柔らかいエッジで与えます。シ
 
-![Hard vs soft shadows][3]
+![Hard vs soft shadows](/images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg)
 
 ソフトシャドウはシャドウマップ上のサンプルをより多くGPUで取ることによって実現されています。使用されているアルゴリズムはPercentage Closest FilteringあるいはPCFと省略されて呼ばれています。このアルゴリズムはシャドウマップ内の一つのサンプルだけを読むのではなく、(3x3のマトリクスで)9個のサンプルを読み込んで使用します。
 
@@ -92,12 +92,5 @@ PlayCanvasが使用するシャドウマッピング技術には有限の解像�
 * 影を受けるマテリアルのシャドウサンプルタイプとしてソフトシャドウ(PCF3x3)を選択すると、ハードシャドウのオプションを使用した場合よりも、GPUに負荷がかかります。
 * 影が環境の静的な部分から発生している場合は、[ライトマップ][4]を使用してテクスチャに影をbakeすることを検討してください。
 
-[1]: /images/user-manual/graphics/lighting/shadows/doom3_shadows.jpg
 [2]: /user-manual/scenes/components/light
-[3]: /images/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg
 [4]: /user-manual/graphics/lighting/lightmapping
-[5]: /images/user-manual/graphics/lighting/shadows/light-shadow-options.png
-[6]: /images/user-manual/scenes/components/component-model.png
-[7]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg
-[8]: /images/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg
-[9]: /images/user-manual/graphics/lighting/shadows/shadow-intensity.gif

@@ -7,12 +7,11 @@ Audio Listenerコンポーネントは、リスナーの3D空間での位置を�
 
 Audio Listenerコンポーネントは、コンポーネントパネルの右上にあるトグルを使用して有効または無効にできます。有効にすると、このコンポーネントは3D音響効果におけるリスナー位置として機能します。
 
-![Audio Listener コンポーネント][1]
+![Audio Listener component](/images/user-manual/scenes/components/component-audiolistener.png)
 
 ## スクリプトインターフェース
 
 [Script component][2]を使用して、Audio Listenerコンポーネントのプロパティをコントロールできます。Audio Listenerコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
-[1]: /images/user-manual/scenes/components/component-audiolistener.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.AudioListenerComponent.html

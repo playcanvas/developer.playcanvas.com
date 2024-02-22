@@ -19,7 +19,7 @@ The aforementioned frameworks are external and have separate licensing, availabl
 
 PlayCanvasの組み込みARサポートを使用する場合、シーンの主要カメラのクリアカラーは透明でなければなりません。以下のようになります。
 
-![Transparent Clear Color][5]
+![Transparent Clear Color](/images/user-manual/xr/ar/transparent-clear-color.png)
 
 ARセッションを開始するには、デバイスのサポートと利用可能性をまず確認する必要があります。その後、ユーザーの操作(ボタンクリックなど)に応じて、ARセッションを開始できます。
 
@@ -50,4 +50,3 @@ PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR e
 [2]: https://webkit.org/status/#specification-webxr
 [3]: /user-manual/xr/ar/8th-wall-integration/
 [4]: /user-manual/xr/ar/zappar-integration/
-[5]: /images/user-manual/xr/ar/transparent-clear-color.png

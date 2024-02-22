@@ -3,7 +3,7 @@ title: グラフインスペクター
 sidebar_position: 1
 ---
 
-![グラフインスペクター][1]
+![Graph Inspector](/images/shader-editor/inspector-pane-graph.png)
 
 グラフインスペクターは、グラフの設定が構成される場所です。
 
@@ -15,5 +15,4 @@ sidebar_position: 1
 | Label           | グラフの説明文                   |
 | \+ NEW MATERIAL | 現在のグラフから新しいマテリアルを作成します。 |
 
-[1]: /images/shader-editor/inspector-pane-graph.png
 [2]: /shader-editor/window-layout/assets-pane

@@ -4,7 +4,7 @@ title: Sound
 
 Soundコンポーネントは、オーディオサンプルの再生を制御します。
 
-![Soundコンポーネント][1]
+![Sound component](/images/user-manual/scenes/components/component-sound.png)
 
 Soundコンポーネントには、サウンドの再生を担当する "スロット" が含まれています。各スロットには、異なるAudioアセットを割り当てることができ、他のスロットとは独立して再生することができます。
 
@@ -43,6 +43,5 @@ Soundコンポーネントは、コンポーネントパネルの右上にある
 
 [Scriptコンポーネント][2]を使用して、Soundコンポーネントのプロパティを制御することができます。Soundコンポーネントのスクリプトインターフェイスは[こちら][3]です。
 
-[1]: /images/user-manual/scenes/components/component-sound.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.SoundComponent.html

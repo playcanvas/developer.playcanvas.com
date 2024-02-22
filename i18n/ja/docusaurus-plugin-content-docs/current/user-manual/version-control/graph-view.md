@@ -9,17 +9,17 @@ sidebar_position: 10
 
 バージョンコントロールパネル ( Version Control Panel) では、選択したブランチの最新のチェックポイントのシンプルなリストが表示されますが、グラフビューでは、チェックポイント、ブランチ、およびマージを含む、全体のバージョンコントロールグラフのより大きな(拡張可能な)ビューが表示されます。
 
-![][overview-image]
+![](/images/user-manual/version-control/graph-view/overview.png)
 
 ## グラフビューの起動
 
 グラフビュー (Graph View) にアクセスするには、バージョンコントロールパネルのトップメニューにある「グラフ」ボタンをクリック(現在のエディターブランチの場合)するか、ブランチメニュードロップダウンの「バージョンコントロールグラフ」エントリをクリックします。
 
-![][access-buttons-image]
+![](/images/user-manual/version-control/graph-view/access-buttons.png)
 
 ## グラフノード
 
-![][commit-node-image]
+![](/images/user-manual/version-control/graph-view/commit-node.png)
 
 グラフノードには、次の情報が含まれます。
 
@@ -29,7 +29,7 @@ sidebar_position: 10
 
 ## グラフノードコンテキストメニュー
 
-![][context-menu-image]
+![](/images/user-manual/version-control/graph-view/context-menu.png)
 
 ノードをクリックすると、ノードとアクセス許可に応じて、以下のいずれかの選択肢に対応するコンテキストメニューが開きます。
 
@@ -39,7 +39,7 @@ sidebar_position: 10
 
 - **選択の比較 (Compare with Selected) ** - 現在のノードと、 'Select for Compare'を通じてマークされたノードとの間にDiff Viewを起動します。
 
-![][compare-checkpoints-example]
+![](/images/user-manual/version-control/graph-view/compare-checkpoints-example.gif)
 
 - **新しいブランチ (New Branch) ** - 選択したチェックポイントから新しいブランチを作成します。 ([詳細][new-branch])
 
@@ -51,19 +51,19 @@ sidebar_position: 10
 
 ## 拡張可能なノード
 
-![][node-expand-image]
+![](/images/user-manual/version-control/graph-view/node-expand.png)
 
 最初に、グラフビューは、各ブランチから最大20のチェックポイント、および合計60のチェックポイントを表示します。
 
 ノードの右上隅にある三角形は、追加の入力または出力エッジ(ブランチやマージなど)を持っていることを意味し、 'ノードの展開'コンテキストメニューエントリを介して展開できます。
 
-![][node-expand-example]
+![](/images/user-manual/version-control/graph-view/node-expand-example.gif)
 
 ## クローズされたブランチ
 
 グラフには、常にマージ結果チェックポイントの両方の親を表示できるように、閉じたブランチのチェックポイントも含まれます。ブランチ名の後に[X]が付いています。
 
-![][closed-branches-image]
+![](/images/user-manual/version-control/graph-view/closed-branches.png)
 
 ## グラフノードレイアウトロジック
 
@@ -83,14 +83,6 @@ sidebar_position: 10
 
 グラフビューでは、スクロールホイールでズームイン/ズームアウト、クリックアンドドラッグでパンすることができます。
 
-[overview-image]: /images/user-manual/version-control/graph-view/overview.png
-[closed-branches-image]: /images/user-manual/version-control/graph-view/closed-branches.png
-[commit-node-image]: /images/user-manual/version-control/graph-view/commit-node.png
-[node-expand-image]: /images/user-manual/version-control/graph-view/node-expand.png
-[access-buttons-image]: /images/user-manual/version-control/graph-view/access-buttons.png
-[node-expand-example]: /images/user-manual/version-control/graph-view/node-expand-example.gif
-[compare-checkpoints-example]: /images/user-manual/version-control/graph-view/compare-checkpoints-example.gif
-[context-menu-image]: /images/user-manual/version-control/graph-view/context-menu.png
 
 [view-changes]: /user-manual/version-control/changes/
 [new-branch]: /user-manual/version-control/branches/#creating-a-new-branch

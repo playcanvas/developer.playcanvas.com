@@ -16,15 +16,15 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/100
 
 このライブラリでは、[PlayCanvas UI system][playcanvas-ui]が使用されているため、その前に使用したことがない場合は、UIシステムについて読むことをお勧めします。
 
-![][preview]
+![](/images/tutorials/touchscreen-joypad-controls/preview.gif)
 
 ## インストール方法
 
-[example project][project-link]を開き、フォルダ'touch-joypad'を右クリックして'Copy'をクリックします。
-![][copy-folder]
+Open the [example project][project-link], right click on the folder 'touch-joypad' and click on 'Copy'.
+![](/images/tutorials/touchscreen-joypad-controls/copy-folder.gif)
 
-あなたのプロジェクトを開き、アセットパネルで右クリックし、'Paste'をクリックします。
-![][paste-folder]
+Open your project, right click in the assets panel and click on 'Paste'
+![](/images/tutorials/touchscreen-joypad-controls/paste-folder.gif)
 
 ## ジョイスティックの追加
 
@@ -37,7 +37,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/100
 
 2DスクリーンのEntityを作成し、[テンプレートを子として追加][add-template-docs]します。
 
-![][adding-left-half-joystick]
+![](/images/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif)
 
 ジョイスティックは3つのEntityで構成されています。
 
@@ -45,7 +45,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/100
 - ベース(青で囲まれた部分)
 - ノブ(青で囲まれた部分)
 
-![][joystick-layout]
+![](/images/tutorials/touchscreen-joypad-controls/joystick-layout.png)
 
 入力領域は、タッチおよびマウス(デバッグ目的)イベントをリッスンし、イベントの伝播を停止します。
 
@@ -55,7 +55,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/100
 
 また、ジョイスティックに必要なすべてのロジックと属性を持つ'touchJoystick'があります。各属性には、詳細が記載されたツールチップがあります。
 
-![][joystick-script-attributes]
+![](/images/tutorials/touchscreen-joypad-controls/joystick-script-attributes.gif)
 
 ベースとノブのエンティティはスクリプトで制御され、UIエレメントです。ジョイスティックをテンプレート内の場所以外に配置する場合は、ベースエンティティを必要な場所に配置し、アンカーを設定してください。
 
@@ -63,22 +63,22 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/100
 
 タッチスクリーンゲームやアプリケーションで一般的に見つかるジョイスティックには、3つの動作タイプがあります。
 
-![][joystick-type]
+![](/images/tutorials/touchscreen-joypad-controls/joystick-type.png)
 
-ベースの位置が動かない'Fixed in place':
-![][joystick-fixed]
+'Fixed in place' where the base of the joystick does not move from it's position:
+![](/images/tutorials/touchscreen-joypad-controls/joystick-fixed.gif)
 
-最初のタッチで移動し、固定される'Move to first touch and fixed':
-![][joystick-relative-fixed]
+'Move to first touch and fixed' where the base of the joystick moves to where the user first touches in the input area and then stays fixed:
+![](/images/tutorials/touchscreen-joypad-controls/joystick-relative-fixed.gif)
 
-最初のタッチで移動し、ジョイスティック範囲を超えてドラッグされる'Move to first touch and drags':
-![][joystick-relative-drag]
+'Move to first touch and drags' where the base of the joystick moves to where the user first touches in the input area and then is dragged when the user drags pass the joystick range:
+![](/images/tutorials/touchscreen-joypad-controls/joystick-relative-drag.gif)
 
 これは、ランタイムで変更できるため、アプリケーションの設定の一部として、ユーザーオプションとして追加することができます。
 
 ### ジョイスティック値の読み取り
 
-![][joystick-deadzone-range]
+![](/images/tutorials/touchscreen-joypad-controls/joystick-deadzone-range.png)
 
 赤い円は死角であり、ノブの位置がその円内にある場合、ジョイスティックの値は両方の軸とも0を返します。青い円は範囲で、ノブはその円の外に出ることはできません。
 
@@ -105,7 +105,7 @@ console.log('X: ' + joystick.x + ', Y: ' + joystick.y);
 
 ボタンは画面上の固定位置のUIエレメントです。'templates'フォルダにボタンのテンプレートがあり、[子として追加][add-template-docs]する必要があります。
 
-![][adding-button]
+![](/images/tutorials/touchscreen-joypad-controls/adding-button.gif)
 
 UIエレメントであるため、[UIシステムレイアウト][elements-manual]を使用して、必要に応じて位置、サイズ、およびアンカーを特定することができます。
 
@@ -135,21 +135,9 @@ console.log('Was pressed: ' + buttons.wasPressed('button0'));
 
 [project-link]: https://playcanvas.com/project/1007506/overview/touchscreen-joypad-controls
 [playcanvas-ui]: /user-manual/user-interface/
-[copy-folder]: /images/tutorials/touchscreen-joypad-controls/copy-folder.gif
-[paste-folder]: /images/tutorials/touchscreen-joypad-controls/paste-folder.gif
-[preview]: /images/tutorials/touchscreen-joypad-controls/preview.gif
 [add-template-docs]: /user-manual/templates/#adding-templates-in-your-scene
-[adding-left-half-joystick]: /images/tutorials/touchscreen-joypad-controls/adding-left-half-joystick.gif
-[adding-button]: /images/tutorials/touchscreen-joypad-controls/adding-button.gif
-[joystick-layout]: /images/tutorials/touchscreen-joypad-controls/joystick-layout.png
 [pc-app-mouse-api]: https://api.playcanvas.com/classes/Engine.Mouse.html
 [pc-app-touch-api]: https://api.playcanvas.com/classes/Engine.Touch.html
 [elements-manual]: /user-manual/user-interface/elements/
-[joystick-script-attributes]: /images/tutorials/touchscreen-joypad-controls/joystick-script-attributes.gif
-[joystick-fixed]: /images/tutorials/touchscreen-joypad-controls/joystick-fixed.gif
-[joystick-relative-fixed]: /images/tutorials/touchscreen-joypad-controls/joystick-relative-fixed.gif
-[joystick-relative-drag]: /images/tutorials/touchscreen-joypad-controls/joystick-relative-drag.gif
-[joystick-type]: /images/tutorials/touchscreen-joypad-controls/joystick-type.png
-[joystick-deadzone-range]: /images/tutorials/touchscreen-joypad-controls/joystick-deadzone-range.png
 [orbit-camera-joypad-input-script]: https://playcanvas.com/editor/code/1007506?tabs=111433673
 [player-controller-script]: https://playcanvas.com/editor/code/1007506?tabs=111432679

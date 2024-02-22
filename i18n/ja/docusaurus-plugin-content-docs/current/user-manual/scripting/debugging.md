@@ -11,11 +11,11 @@ Chrome、Firefoxや他のブラウザでは、ブラウザに直接組み込ま�
 
 スクリプトをデバッグするためには、Developer Tools (Chrome)でSourcesタブを選択します。Sourcesペインの左上隅にあるアイコンをクリックして 'navigator' を開きます。以下のようなものが表示されるはずです：
 
-![Debugger][1]
+![Debugger](/images/user-manual/scripting/debugging/chrome-debugger.png)
 
 Firefoxでは次のようになります：
 
-![Firefox][2]
+![Firefox](/images/user-manual/scripting/debugging/firefox-debugger.png)
 
 ナビゲータには、自身で書いたPlayCanvasスクリプトを含む、現在アクティブなタブで実行している全てのスクリプトがリストされます。ナビゲーターからスクリプトを探し、選択するとソースコードが開きます。これで、ブレイクポイントを設定してデバッグが行えます。
 
@@ -38,8 +38,6 @@ ChromeやSafariからWebビューに直接接続することができない状�
 * [RemoteJS][9] - 開発者は、デスクトップブラウザでコンソール出力をリモートで表示し、JSをコンソールで実行することができ、非常に強力です。コンソール出力には遅延や遅延がある場合があります。
 * [vConsole][10] または [Eruda][11] - ページに展開してコンソール出力、ネットワーク要求、ページの要素などを表示できるウィジェットDOMオブジェクトを追加します。
 
-[1]: /images/user-manual/scripting/debugging/chrome-debugger.png
-[2]: /images/user-manual/scripting/debugging/firefox-debugger.png
 [3]: https://developer.chrome.com/docs/devtools/javascript/
 [4]: https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html
 [5]: https://developer.apple.com/safari/tools/

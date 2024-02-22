@@ -5,7 +5,7 @@ sidebar_position: 8
 
 ユーザは、Elementコンポーネントの `useInput`フィールドを有効にすることで、[Element][1]コンポーネントとインタラクトできます。
 
-![入力の使用][2]
+![Use Input](/images/user-manual/assets/fonts/use-input.png)
 
 また、動作させるためには `pc.Application#elementInput`に`pc.ElementInput`のインスタンスを初期化しなければなりません。Editorを使用している場合は自動的に作成されます。Engineを使用している場合は、次のように、`pc.Mouse`や`pc.TouchDevice`のような他の入力デバイスの*前に*インスタンスを作成してください：
 
@@ -135,4 +135,3 @@ TouchFix.prototype.initialize = function() {
 ```
 
 [1]: /user-manual/scenes/components/element/
-[2]: /images/user-manual/assets/fonts/use-input.png

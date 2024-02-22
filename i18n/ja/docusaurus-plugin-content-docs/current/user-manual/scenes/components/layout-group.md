@@ -6,7 +6,7 @@ LayoutGroupコンポーネントは、エンティティが子ElementのElement�
 
 詳細については[レイアウトグループ][0]のセクションを参照してください。
 
-![LayoutGroupコンポーネント][1]
+![LayoutGroup component](/images/user-manual/scenes/components/component-layoutgroup.png)
 
 ## Properties
 
@@ -27,6 +27,5 @@ LayoutGroupコンポーネントは、エンティティが子ElementのElement�
 [Scriptコンポーネント][2]を使用してLayoutGroupコンポーネントのプロパティを制御できます。 LayoutGroupコンポーネントのスクリプトインターフェイスは[こちら][3]にあります。
 
 [0]: /user-manual/user-interface/layout-groups
-[1]: /images/user-manual/scenes/components/component-layoutgroup.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.LayoutGroupComponent.html

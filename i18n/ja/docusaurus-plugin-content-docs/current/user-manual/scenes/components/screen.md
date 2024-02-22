@@ -6,7 +6,7 @@ Screenコンポーネントは、ユーザーインターフェースの領域�
 
 詳細については、「[User Interface][0]」セクションを参照してください。
 
-![Screen Component][1]
+![Screen Component](/images/user-manual/scenes/components/component-screen.png)
 
 ## コンポーネントのプロパティ
 
@@ -20,4 +20,3 @@ Screenコンポーネントは、ユーザーインターフェースの領域�
 | Priority             | 同じレイヤー内のScreenコンポーネントがレンダリングされる順序を決定します(優先度が高いほど上位にレンダリング)。数字は0から255の整数でなければなりません。 |
 
 [0]: /user-manual/user-interface
-[1]: /images/user-manual/scenes/components/component-screen.png

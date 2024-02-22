@@ -18,17 +18,17 @@ PlayCanvasではユーザインタフェースは[Screen Component][7]と[Elemen
 
 ### ユーザーインターフェイスのエンティティ
 
-![Hierarchy][9]
+![Hierarchy](/images/tutorials/beginner/keepyup-part-six/ui-hierarchy.jpg)
 
 ユーザインターフェイスをメニュー、ゲーム、ゲームオーバーの３つのゲーム状態に分けました。各状態には、状態が入力されたときにアクティブ化されるスクリーンエンティティがあります。 また、オーバーレイのためのスクリーンがあります。オーバーレイはメニューのボールの下に表示されるため、3Dスクリーンコンポーネントを使用して、ボールの後ろのワールドスペースにオーバーレイをレンダリングします。
 
 ### イメージとテキスト
 
-![Image Element][12]
+![Image Element](/images/tutorials/beginner/keepyup-part-six/image-element.jpg)
 
 画像やテキストはElementコンポーネントを使用してユーザーインターフェイスに追加されます。このコンポーネントは、テクスチャアセットの形式または画像をフォントアセットの形式で表示することができます。
 
-![Image Attriubtes][13]
+![Image Attriubtes](/images/tutorials/beginner/keepyup-part-six/element-attr.jpg)
 
 ### ユーザーインターフェースのスクリプト
 
@@ -89,9 +89,5 @@ UiMenu.prototype.start = function (e) {
 [6]: /user-manual/user-interface/
 [7]: /user-manual/scenes/components/screen/
 [8]: /user-manual/scenes/components/element/
-[9]: /images/tutorials/beginner/keepyup-part-six/ui-hierarchy.jpg
-[10]: /images/tutorials/beginner/keepyup-part-six/sprite-setup.jpg
 [11]: https://playcanvas.com/project/406050
-[12]: /images/tutorials/beginner/keepyup-part-six/image-element.jpg
-[13]: /images/tutorials/beginner/keepyup-part-six/element-attr.jpg
 [14]: https://forum.playcanvas.com/

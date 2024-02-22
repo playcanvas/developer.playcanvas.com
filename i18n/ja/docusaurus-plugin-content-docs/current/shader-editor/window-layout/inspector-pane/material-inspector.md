@@ -3,7 +3,7 @@ title: マテリアルインスペクター
 sidebar_position: 3
 ---
 
-![マテリアルインスペクター][1]
+![Material Inspector](/images/shader-editor/inspector-pane-material.png)
 
 マテリアルインスペクターは、マテリアルの設定が構成される場所です。
 
@@ -31,6 +31,5 @@ Basic、Render States、Parametersの3つのセクションがあります。
 
 パラメーターセクションには、グラフに配置されたパラメーターノードがリストされます。名前とタイプは、グラフノード自体から取得されます。
 
-[1]: /images/shader-editor/inspector-pane-material.png
 [2]: /shader-editor/window-layout/assets-pane
 [3]: https://api.playcanvas.com/classes/Engine.Material.html#blendType

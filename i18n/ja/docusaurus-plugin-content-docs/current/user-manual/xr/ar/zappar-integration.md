@@ -11,7 +11,7 @@ Zapparは、[PlayCanvasでの始め方][2]ページを提供しており、新�
 
 ZapparのUniversal AR SDKを使い始めるには、まず、彼らの[Zappar Universal AR Project][4]にアクセスしてフォークしてください。
 
-![Zappar Universal AR][5]
+![Zappar Universal AR](/images/user-manual/xr/ar/zappar-universal-ar.png)
 
 そこで、提供されているトラッキングテンプレートのいずれかを追加します。Zapparが提供するトラッキングテンプレートは以下の通りです。
 
@@ -21,7 +21,7 @@ ZapparのUniversal AR SDKを使い始めるには、まず、彼らの[Zappar Un
 
 これらのいずれかをシーンにドラッグし、他にカメラがないことを確認してください。準備ができました!必要に応じて、テンプレートカメラにアタッチされたスクリプトの属性を微調整してください。
 
-![Zappar ARカメラの設定][6]
+![Zappar AR Camera Settings](/images/user-manual/xr/ar/zappar-camera-settings.png)
 
 これらの手順が完了したら、問題なくZapparのSDKを使用できるようになります。詳細については、[PlayCanvasでの始め方][2]のドキュメントを参照してください。
 
@@ -29,5 +29,3 @@ ZapparのUniversal AR SDKを使い始めるには、まず、彼らの[Zappar Un
 [2]: https://docs.zap.works/universal-ar/playcanvas/getting-started/
 [3]: https://playcanvas.com/user/zappar
 [4]: https://playcanvas.com/project/797342/overview/instant-tracking--particles
-[5]: /images/user-manual/xr/ar/zappar-universal-ar.png
-[6]: /images/user-manual/xr/ar/zappar-camera-settings.png

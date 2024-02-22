@@ -26,7 +26,7 @@ RigidBodyコンポーネントでは、以下の値がエディタインスペ�
 * 最大速度を制限するには、プレイヤーが入力キーを離した後にプレイヤーがスライドしないように線形減衰を適用します。
 * プレイヤーが転がってしまうのを防ぐため、すべての軸の角度要素を0に減らしました。
 
-![Rigidbody Attributes][2]
+![Rigidbody Attributes](/images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg)
 
 ```javascript
 var FirstPersonMovement = pc.createScript('firstPersonMovement');
@@ -144,5 +144,4 @@ FirstPersonMovement.prototype._createCamera = function () {
 ```
 
 [1]: https://playcanvas.com/project/405842
-[2]: /images/tutorials/beginner/first_person_movement/rigidbody_attributes.jpg
 [3]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html#applyForce

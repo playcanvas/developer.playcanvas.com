@@ -8,15 +8,15 @@ RigidBodyは、コンポーネントパネル右上のトグルを使用して�
 
 #### Static
 
-![Rigid Body component (Static)][1]
+![Rigid Body component (Static)](/images/user-manual/scenes/components/component-rigid-body-static.png)
 
 #### Dynamic (and Kinematic)
 
-![Rigid Body component (Dynamic)][2]
+![Rigid Body component (Dynamic)](/images/user-manual/scenes/components/component-rigid-body-dynamic.png)
 
 #### Kinematic
 
-![Rigid Body component (Kinematic)][3]
+![Rigid Body component (Kinematic)](/images/user-manual/scenes/components/component-rigid-body-kinematic.png)
 
 注意:RigidBodyの形状を定義するには、同じエンティティに[collision component][4]を追加する必要があります。そうでない場合、RigidBodyには効果がなく、物理シミュレーションに参加しません。
 
@@ -37,9 +37,6 @@ RigidBodyは、コンポーネントパネル右上のトグルを使用して�
 
 [Scriptコンポーネント][5]を使用して、RigidBodyのプロパティを制御できます。RigidBodyのスクリプトインターフェースは[こちら][6]にあります。
 
-[1]: /images/user-manual/scenes/components/component-rigid-body-static.png
-[2]: /images/user-manual/scenes/components/component-rigid-body-dynamic.png
-[3]: /images/user-manual/scenes/components/component-rigid-body-kinematic.png
 [4]: /user-manual/scenes/components/collision/
 [5]: /user-manual/scenes/components/script
 [6]: https://api.playcanvas.com/classes/Engine.RigidBodyComponent.html

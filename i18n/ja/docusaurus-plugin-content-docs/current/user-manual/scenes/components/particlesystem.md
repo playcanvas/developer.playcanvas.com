@@ -6,7 +6,7 @@ Particle Systemコンポーネントは、3D空間内でパーティクルエミ
 
 Particle Systemコンポーネントは、コンポーネントパネルの右上にあるトグルを使用して有効化または無効化できます。有効にすると、パーティクルシステムはシーンに追加されてレンダリングされます。
 
-![Particle Systemコンポーネント][1]
+![Particle System component](/images/user-manual/scenes/components/component-particle-system.png)
 
 ## Properties
 
@@ -47,6 +47,5 @@ Particle Systemコンポーネントは、コンポーネントパネルの右�
 
 Particle Systemコンポーネントのプロパティは[script component][2]を使用して制御できます。Particle Systemコンポーネントのスクリプティングインターフェイスは[こちら][3]です。
 
-[1]: /images/user-manual/scenes/components/component-particle-system.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.ParticleSystemComponent.html

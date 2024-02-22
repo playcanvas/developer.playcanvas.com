@@ -8,7 +8,7 @@ Fontアセットには、ユーザーが含めることを選択したフォン�
 
 エディターでFontアセットを編集できるプロパティは、以下のとおりです。
 
-![Font Asset][2]
+![Font Asset](/images/user-manual/assets/fonts/font.png)
 
 ## Properties
 
@@ -35,4 +35,3 @@ Fontアセットに含める必要がある文字。例えば数字だけが必�
 Fontアセットを変更した後、Fontアセットを再生成するためにProcess Fontボタンをクリックします。
 
 [1]: /user-manual/scenes/components/element/
-[2]: /images/user-manual/assets/fonts/font.png

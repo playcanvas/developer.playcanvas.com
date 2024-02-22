@@ -16,7 +16,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 ヒエラルキー上でUIはこのように見えます:
 
-![Hierarchy][4]
+![Hierarchy](/images/tutorials/ui/leaderboard/hierarchy.png)
 
 私たちは2Dの[Screen][3]を持っており、タイトルとサブタイトルを表示するための2つの要素、およびリーダーボードデータの背景とパネルとして使用される2つのイメージ要素があります。 `Your Score` の下には、プレイヤーのリーダーボード内での位置を表示し、`Leaderboard` の下にはその他の情報を表示します。
 
@@ -26,7 +26,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/501
 
 [スクリーン][3]は次のように設定されています。
 
-![Screen][5]
+![Screen](/images/tutorials/ui/leaderboard/screen.png)
 
 2Dスクリーンであるため、 `Screen Space` を選択しました。 `Reference Resolution` は、ターゲットとしている解像度です。この場合、1080 x 1920です。スケールモードとしてBlendを選択しているため、スクリーンは解像度の変更に適応します。また、スケールブレンドを1に設定しているため、スクリーンは高さの変更にのみ適応されます。
 
@@ -40,17 +40,17 @@ The screen entityには、`leaderboard`スクリプトを含むScriptコンポ�
 
 リーダーボードの1行ごとのテンプレートは、ヒエラルキー構造上で次のようになっています。
 
-![Entry Template][6]
+![Entry Template](/images/tutorials/ui/leaderboard/template.png)
 
 プレーヤーのスコアと 'PTS'という名前のラベルを表示するための、リーダーボードの位置、プレイヤー名、プレイヤーのスコアを表示するための4つの子要素があります。
 
 `Entry Template`自体はGroup Elementです。
 
-![Entry Template Attributes][7]
+![Entry Template Attributes](/images/tutorials/ui/leaderboard/group.png)
 
 Group Elementには分割された水平アンカーがあることに注意してください:
 
-![Split Anchors][8]
+![Split Anchors](/images/tutorials/ui/leaderboard/split-anchors.png)
 
 水平アンカーは等しくない（0と1です）ので、スクリーンがリサイズされると、エレメントは自動的に全体の水平領域を埋めるように拡大します。また、エッジから少し離れた小さなギャップを許容するために、水平マージンは50ピクセルに設定されています - マージンはアンカーが分割されたときにのみ設定することができます。
 
@@ -60,25 +60,25 @@ Group Elementには分割された水平アンカーがあることに注意し�
 
 位置は左にアンカーされています:
 
-![Position][9]
+![Position](/images/tutorials/ui/leaderboard/position.png)
 
 ### Name
 
 名前は左にヒモ付けされ、やや右に移動されます。
 
-![Name][10]
+![Name](/images/tutorials/ui/leaderboard/name.png)
 
 ### スコア (Score)
 
 スコアは右にアンカーされています。
 
-![Score][11]
+![Score](/images/tutorials/ui/leaderboard/score.png)
 
 ### ポイント (Points)
 
 ポイントは右にアンカーされています。
 
-![Pts][12]
+![Pts](/images/tutorials/ui/leaderboard/pts.png)
 
 ## スクリプト (Script)
 
@@ -153,12 +153,3 @@ Leaderboard.prototype.load = function (callback) {
 [1]: https://playcanvas.com/editor/scene/547907
 [2]: /user-manual/user-interface/elements/
 [3]: /user-manual/user-interface/screens/
-[4]: /images/tutorials/ui/leaderboard/hierarchy.png
-[5]: /images/tutorials/ui/leaderboard/screen.png
-[6]: /images/tutorials/ui/leaderboard/template.png
-[7]: /images/tutorials/ui/leaderboard/group.png
-[8]: /images/tutorials/ui/leaderboard/split-anchors.png
-[9]: /images/tutorials/ui/leaderboard/position.png
-[10]: /images/tutorials/ui/leaderboard/name.png
-[11]: /images/tutorials/ui/leaderboard/score.png
-[12]: /images/tutorials/ui/leaderboard/pts.png

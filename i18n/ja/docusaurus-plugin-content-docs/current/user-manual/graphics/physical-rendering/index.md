@@ -3,7 +3,7 @@ title: 物理ベースレンダリング (PBR)
 sidebar_position: 3
 ---
 
-![Star-Lord][1]
+![Star-Lord](/images/user-manual/graphics/physical-rendering/star-lord.jpg)
 
 *Star-Lordモデル [Joachim Coppens][2]*
 
@@ -19,8 +19,8 @@ sidebar_position: 3
 
 ## エネルギーの保全
 
-![エネルギーの保全][3]
-*なめらかな表面には鋭く明るいハイライトがあらわれ、粗い表面には広くぼんやりとしたハイライトがあらわれます。*
+![Energy Conservation](/images/user-manual/graphics/physical-rendering/energy-conservation.jpg)
+*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
 
 物理的に正しいレンダリングの重要な要素は、エネルギーの保存です。拡散光と反射光がどちらも物体表面に投射される光から発生していることから考えると、拡散光と反射光を足しあわせた総量は、物体表面に投射された光の総量を上回ることはできません。この法則が現実世界で意味することは、物体表面の反射率が高ければ拡散光は非常に小さくなり、反対に拡散光が大きければ反射はあまり起こらないということになります。
 
@@ -28,7 +28,7 @@ sidebar_position: 3
 
 ## 金属と非金属
 
-![金属と非金属][4]
+![Metals & Non-metals](/images/user-manual/graphics/physical-rendering/materials.jpg)
 
 PBRの古いシェーディングモデルと比較して、マテリアルがどのように作られたかを考えることで、マテリアルの振る舞いを決定するということが新しいことの1つです。ここで考慮する主な点は、マテリアルが導体（通常は金属）か絶縁体（非金属）かどうかです。
 
@@ -52,9 +52,6 @@ PBRの古いシェーディングモデルと比較して、マテリアルが�
 
 *さらに詳しい説明は、Marmoset Toolbagの[PBR Theory][5]という素晴らしい記事を参照してください。*
 
-[1]: /images/user-manual/graphics/physical-rendering/star-lord.jpg
 [2]: https://www.joachimcoppens.com/
-[3]: /images/user-manual/graphics/physical-rendering/energy-conservation.jpg
-[4]: /images/user-manual/graphics/physical-rendering/materials.jpg
 [5]: https://www.marmoset.co/toolbag/learn/pbr-theory
 [6]: /user-manual/graphics/physical-rendering/physical-materials

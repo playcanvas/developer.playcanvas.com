@@ -9,13 +9,13 @@ sidebar_position: 2
 
 [PlayCanvasエディター][2]内でCtrl + Iを押すことで、コードエディターを開くことができます。また、ツールバーアイコンをクリックすることでも開くことができます。
 
-![Code Editor Toolbar][1]
+![Code Editor Toolbar](/images/user-manual/scripting/code-editor-toolbar.png)
 
 テキストベースのアセット(スクリプトなど)をダブルクリックすることでも、そのアセットに焦点を当てたコードエディターを開くことができます。
 
 ## インターフェイス
 
-![Code Editor][3]
+![Code Editor](/images/user-manual/scripting/code-editor.png)
 
 ### メニュー
 
@@ -59,7 +59,7 @@ sidebar_position: 2
 
 テキスト編集機能は、コマンドパレットを使用して見つけることができます。WindowsではCtrl + Shift + P、MacではCmd + Shift + Pを使用します。
 
-![][command-palette]
+![](/images/user-manual/scripting/command-palette.png)
 
 ## ホットキー
 
@@ -86,7 +86,7 @@ sidebar_position: 2
 
 ファイル内のテキストを検索するには、WindowsではCtrl + F、MacではCmd + Fを押します。これにより、右上に検索パネルが表示されます。
 
-![][monaco-find-panel]
+![](/images/user-manual/scripting/monaco-find-panel.png)
 
 ここに検索語を入力し、Enterキーを押してください。Enterキーを連続して押すことでマッチした項目間を移動できます（Shift + Enterで後方に移動します）。
 
@@ -98,7 +98,7 @@ sidebar_position: 2
 
 入力フィールドの左側には、様々な検索オプションがあります。これらを使用すると、正規表現を使用した検索、大文字・小文字を区別する検索、または全単語を検索することができます。もし、正規表現をより深く学び、実験したいなら、[RegExr][10]はチートシート、例、そして正規表現のテスト用のオンラインエディタを提供している素晴らしいサイトです。
 
-![Find in Files][6]
+![Find in Files](/images/user-manual/scripting/find-in-files-results.png)
 
 検索結果の行をダブルクリックすると、そのアセットの特定の行に移動します。
 
@@ -106,13 +106,13 @@ sidebar_position: 2
 
 Ctrl + P（MacではCmd + P）を押すことで、アセットを素早く開くことができます。これにより、そのアセットの名前で検索できるパネルが開きます。アセットの名前を入力し始めると、パネルはあいまい検索を行い、探しているアセットを見つけます。Enterキーを押すと選択したアセットが開きます。
 
-![Go to Anything][11]
+![Go to Anything](/images/user-manual/scripting/go-to-anything.gif)
 
 ## Preferences
 
 「Edit」->「Preferences」をクリックすることで、設定を編集できます。ここでは、テキストエディタのフォントサイズを変更したり、他のエディタ関連のオプションを編集したりできます。
 
-![Preferences][12]
+![Preferences](/images/user-manual/scripting/preferences.png)
 
 ## 追加のヒント
 
@@ -120,33 +120,23 @@ Ctrl + P（MacではCmd + P）を押すことで、アセットを素早く開�
 
 コードエディターで単語をハイライトすると、そのファイル内の他のすべてのマッチがハイライトされ、変数や関数がどこで使用されているかを確認するのが容易になります。
 
-![Quick Searching][7]
+![Quick Searching](/images/user-manual/scripting/code-editor-quick-searching.gif)
 
 ### 複数選択編集
 
 Altキーを押しながら左マウスボタンをクリックすると、エディタに別のカーソルが追加されます。これにより、ファイルの複数の箇所で同じ変更を素早く行うことができます。
 
-![Multiple Selection Editing][8]
+![Multiple Selection Editing](/images/user-manual/scripting/code-editor-multiple-selection.gif)
 
 ### 矩形選択
 
 Alt + Shiftキーを押しながら左マウスボタンをドラッグすると、矩形選択が作成されます。これは、テキストの列を選択し、編集するのに便利です。
  
 
-![Rectangular Selection][9]
+![Rectangular Selection](/images/user-manual/scripting/code-editor-rectangular-selection.gif)
 
-[1]: /images/user-manual/scripting/code-editor-toolbar.png
 [2]: /user-manual/editor/
-[3]: /images/user-manual/scripting/code-editor.png
 [4]: https://github.com/Microsoft/monaco-editor
-[6]: /images/user-manual/scripting/find-in-files-results.png
-[7]: /images/user-manual/scripting/code-editor-quick-searching.gif
-[8]: /images/user-manual/scripting/code-editor-multiple-selection.gif
-[9]: /images/user-manual/scripting/code-editor-rectangular-selection.gif
 [10]: https://regexr.com/
-[11]: /images/user-manual/scripting/go-to-anything.gif
-[12]: /images/user-manual/scripting/preferences.png
 [13]: https://jshint.com/
 [14]: https://jshint.com/docs/
-[command-palette]: /images/user-manual/scripting/command-palette.png
-[monaco-find-panel]: /images/user-manual/scripting/monaco-find-panel.png

@@ -6,7 +6,7 @@ Scriptコンポーネントは、エンティティがユーザーが提供し�
 
 Scriptコンポーネントは、コンポーネントパネルの右上のトグルを使用して有効または無効にできます。有効にした場合、すべての割り当てられたスクリプトは、毎フレーム update関数が呼び出されます。
 
-![Scriptコンポーネント][1]
+![Script component](/images/user-manual/scenes/components/component-script.png)
 
 新しいスクリプトを作成するには、Assetsパネルの **`+`** ボタンをクリックし、New Scriptを選択します。次に、ポップアップでスクリプトの名前を入力してEnterキーを押します。
 
@@ -20,5 +20,4 @@ PlayCanvasコードエディターでスクリプトを編集するには、リ�
 
 Scriptコンポーネントのスクリプトのインターフェースは[こちら][2]から確認できます。
 
-[1]: /images/user-manual/scenes/components/component-script.png
 [2]: https://api.playcanvas.com/classes/Engine.ScriptComponent.html

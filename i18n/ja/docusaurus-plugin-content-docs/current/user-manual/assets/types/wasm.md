@@ -16,8 +16,8 @@ PlayCanvasエディターは現在、[Emscripten][2]でコンパイルされたW
 
 ## Wasmモジュールのプロパティ
 
-ファイルがプロジェクトに追加されたら、Wasmモジュールを選択して、インスペクターパネルでそのプロパティを表示します。
-![Wasmモジュールのプロパティ][1]
+Once the files have been added to the project, select the Wasm Module to display its properties in the Inspector Panel:
+![Wasm Module Properties](/images/user-manual/assets/wasm-module.png)
 
 ### 名前
 
@@ -31,5 +31,4 @@ PlayCanvasエディターは現在、[Emscripten][2]でコンパイルされたW
 
 これは、WebAssemblyがサポートされていない際に使用する、オプションのフォールバックasm.js スクリプトです。
 
-[1]: /images/user-manual/assets/wasm-module.png
 [2]: https://emscripten.org/

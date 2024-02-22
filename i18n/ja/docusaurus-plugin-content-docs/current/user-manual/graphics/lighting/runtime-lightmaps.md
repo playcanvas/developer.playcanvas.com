@@ -3,8 +3,8 @@ title: ランタイムライトマップ
 sidebar_position: 5
 ---
 
-![Sponza][10]
-*このシーン内の照明は全てライトマップテクスチャによって提供されています*
+![Sponza](/images/user-manual/graphics/lighting/lightmapping/sponza.jpg)
+*All the lighting in this scene is provided by lightmap textures*
 
 ライトマップ生成は、静的シーンのライティング情報を事前に計算し、テクスチャに保存するプロセスであり、材料に適用されます。これは、多くの光源とジオメトリが静的または環境的である場合、シーンを照らす効率的で現実的な方法です。
 
@@ -37,7 +37,7 @@ PlayCanvasは、ライトマップの生成に便利なソリューションを�
 - **Bake Lightmap** – 有効にすると、ライトは範囲内にある任意のライトマップ付きモデルのライトマップをベイクします。
 - **Bake Direction** – ライトがライト方向情報ベイクに寄与するかどうかを指定します。これは、Scene Settingで**Color and Direction** Lightmapping Modeを選択した場合、スペキュラリティの結果に影響します。
 
-![Light Component Settings][2]
+![Light Component Settings](/images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png)
 
 ライトの振る舞いを変更する2つの追加オプションがあります: Affect Dynamic と Affect Lightmapped です。これらは、ランタイムでライトがどのモデルに作用するかを決定します。これらのオプションのどちらかが有効になっている場合、ライトはランタイムで動作し、ランタイムコストが発生します。
 
@@ -46,7 +46,7 @@ PlayCanvasは、ライトマップの生成に便利なソリューションを�
 
 ライトは、**Bake Lightmap**と**Affect Lightmapped**の両方を有効にすることはできません。モデルのライトマップを作成するためにライトが同じランタイムライトを追加した場合、ライトはランタイムで同じように照明を追加し、同じ作業が二度行われることになります。
 
-![Light Component Shadow Settings][3]
+![Light Component Shadow Settings](/images/user-manual/graphics/lighting/lightmapping/editor-light-shadows.png)
 
 ライトマップライトは、ダイナミックライトと同じ **Shadows** 設定を使用しますが、影の計算はライトマップの生成時に一度だけ行われます。このため、ライトマップライトで影が有効になっている場合、コストはずっと少なくなります。詳細は[Shadows][4]ページを参照してください。なお、ベイクについてはShadow Cascadeのオプションは無視されます。
 
@@ -57,11 +57,11 @@ PlayCanvasは、ライトマップの生成に便利なソリューションを�
 - **Bake Samples** – ライトをライトマップにパッキングするために使用するサンプルの数を指定します。デフォルトは1で、最大値は255です。この値はベイクのパフォーマンスに影響を与えます。値をできるだけ低く設定する必要があります(5〜20)。
 - **Bake Area** –半影の角度を度数で指定します。Soft Shadow Boundaryを作成します。
 
-![Soft Directional Light Settings][12]
+![Soft Directional Light Settings](/images/user-manual/graphics/lighting/lightmapping/editor-directional-light.png)
 
 次の画像は、サンプルが15でAreaが10の場合のハードシャドウとソフトシャドウの違いを示しています。
 
-![Hard and Soft Shadow Examples][13]
+![Hard and Soft Shadow Examples](/images/user-manual/graphics/lighting/lightmapping/shadows-hard-soft.png)
 
 ## 環境ライトのベイク {#baking-an-environment-light}
 
@@ -71,25 +71,25 @@ PlayCanvasは2種類の環境ライティングをサポートしています: [
 
 **Ambient Bake**が有効になっている場合、環境ライトの貢献はAmbient Occlusionを含むライトマップにベイクされます。**Samples**設定は、ベイクのパフォーマンスに影響を与え、できるだけ低く設定する必要があります (5-20)。
 
-![Lightmapping Settings][17]
+![Lightmapping Settings](/images/user-manual/graphics/lighting/lightmapping/lightmapping-settings-ambient-bake.png)
 
 次の画像は、Ambient Occlusionを含むAmbient Colorの効果を示しています。
 
-![Ambient Color Examples][18]
+![Ambient Color Examples](/images/user-manual/graphics/lighting/lightmapping/ambient-color.png)
 
 ## ライトマップのフィルタリング {#lightmap-filtering}
 
 Soft Directional Lightや環境ライトのベイキングの場合、ベイクパフォーマンスを向上させるために低いサンプル数を使用することがあります。これにより、以下の画像のようなバンディングアーティファクトが作成されます(15サンプル使用)。
 
-![Lightmap with 15 samples][19]
+![Lightmap with 15 samples](/images/user-manual/graphics/lighting/lightmapping/lightmap-15-samples.png)
 
 ライトマップの品質を向上させるには、より多くのサンプルを使用できます。これは、100個のサンプルを使用する次の画像でわかるように、可能な限り最高の品質になります。
 
-![Lightmap with 100 samples][20]
+![Lightmap with 100 samples](/images/user-manual/graphics/lighting/lightmapping/lightmap-100-samples.png)
 
 よりパフォーマンスのある代替品として、ライトマップは、パフォーマンスを向上させるために、許容できる品質のためにスマートの両側ぼけを使用してフィルタリングできます。これは、15のサンプルを使用し、フィルタリングを有効にする次の画像で見ることができます。
 
-![Lightmap with 15 samples and filtering][21]
+![Lightmap with 15 samples and filtering](/images/user-manual/graphics/lighting/lightmapping/lightmap-filtering.png)
 
 フィルタリングは最終的な焼きライトマップで行われ、ライトマップが縫い目全体にフィルタリングされていないため、包装されていないUVの縫い目に目に見えるエッジを作成できることに注意してください。したがって、フィルタリングはすべてのシーンに適していない場合があります。アーティファクトを最小限に抑えるには、強力なフィルターと多数のサンプルのバランスをとる必要があります。
 
@@ -97,9 +97,9 @@ Soft Directional Lightや環境ライトのベイキングの場合、ベイク�
 
 各 **Model** または **Render** コンポーネントは、ライトマップを受信するために、ライトマッピングを有効にする必要があります。**LightMapped**オプションをチェックすることにより、コンポーネントのプロパティでライトマッピングを有効にできます。
 
-![Model Component Settings][5]
+![Model Component Settings](/images/user-manual/graphics/lighting/lightmapping/model-settings.png)
 
-![Render Component Settings][22]
+![Render Component Settings](/images/user-manual/graphics/lighting/lightmapping/render-settings.png)
 
 **キャストライトマップシャドウ (Cast Lightmap Shadows) **オプションは、モデルがライトマップにシャドウをキャストするかどうかを判断します。生成されたライトマップテクスチャの解像度を確認できます。また、UV1の領域に乗数を適用してそのサイズに影響を与えるオプションもあります。ライトマップサイズの乗数については、以下で説明します。
 
@@ -124,7 +124,7 @@ Soft Directional Lightや環境ライトのベイキングの場合、ベイク�
 
 **モード**は、焼き付けるデータを指定できます(例:拡散色またはライトからピクセルへの方向)。方向データは、単純なスペキュラリティをシミュレートするために使用されます。1つの方向のみが焼き付けられるため、複数のライトが重なると複雑になります。方向の焼き付けは、個々のライトにも設定できます。
 
-![Global Lightmapping Settings][6]
+![Global Lightmapping Settings](/images/user-manual/graphics/lighting/lightmapping/lightmapping-settings.png)
 
 ## 自動アンラップ (Auto-Unwrapping) とUV1の生成 {#auto-unwrapping-and-uv1-generation}
 
@@ -132,36 +132,19 @@ Soft Directional Lightや環境ライトのベイキングの場合、ベイク�
 
 モデルにUV1セットがない場合、PlayCanvasエディターは自動的にアンラップしてUV1座標を生成します。
 
-![Modelコンポーネント:UV1がない][7]
+![Model Component: UV1 Missing](/images/user-manual/graphics/lighting/lightmapping/model-uv1-missing.png)
 
 モデルにUV1マップがない場合、ライトマッピングを有効にすると、Modelコンポーネントで警告が表示されます。
 
-![Model Asset: Auto Unwrap Pipeline][8]
+![Model Asset: Auto Unwrap Pipeline](/images/user-manual/graphics/lighting/lightmapping/auto-unwrap.jpg)
 
 警告を修正するには、Modelアセットを選択して**パイプライン**セクションを開きます。 **Auto-Unwrapping** ボタンをクリックし、進行状況バーが完了するまで待ちます。自動アンラップは、Modelアセットを編集します。そのため、ソースからモデルを再インポートする場合(たとえば、新しいFBXをアップロードする場合)は、事前に計算されたUV1が失われます。アップロードされたモデルにUV1がない場合は、モデルを再度自動アンラップする必要があります。
 
 **パディング (padding) ** オプションは、アンラップが発生するときのセクション間のスペースを決定します。ライトが存在してはいけない場所に光が見える場合は、パディングを増やしてライトブリーディングを減らすことができます。
 
-[1]: /images/user-manual/material-inspector/lightmap.jpg
-[2]: /images/user-manual/graphics/lighting/lightmapping/editor-lightmap-bake.png
-[3]: /images/user-manual/graphics/lighting/lightmapping/editor-light-shadows.png
 [4]: /user-manual/graphics/lighting/shadows
-[5]: /images/user-manual/graphics/lighting/lightmapping/model-settings.png
-[6]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-settings.png
-[7]: /images/user-manual/graphics/lighting/lightmapping/model-uv1-missing.png
-[8]: /images/user-manual/graphics/lighting/lightmapping/auto-unwrap.jpg
 [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
-[10]: /images/user-manual/graphics/lighting/lightmapping/sponza.jpg
 [11]: /user-manual/graphics/advanced-rendering/batching
-[12]: /images/user-manual/graphics/lighting/lightmapping/editor-directional-light.png
-[13]: /images/user-manual/graphics/lighting/lightmapping/shadows-hard-soft.png
 [14]: /user-manual/scenes/settings#ambient-color
 [15]: /user-manual/scenes/settings#skybox
 [16]: /user-manual/scenes/settings#lightmapping
-[17]: /images/user-manual/graphics/lighting/lightmapping/lightmapping-settings-ambient-bake.png
-[18]: /images/user-manual/graphics/lighting/lightmapping/ambient-color.png
-[19]: /images/user-manual/graphics/lighting/lightmapping/lightmap-15-samples.png
-[20]: /images/user-manual/graphics/lighting/lightmapping/lightmap-100-samples.png
-[21]: /images/user-manual/graphics/lighting/lightmapping/lightmap-filtering.png
-[22]: /images/user-manual/graphics/lighting/lightmapping/render-settings.png
-

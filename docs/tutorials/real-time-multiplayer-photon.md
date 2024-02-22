@@ -288,12 +288,14 @@ PhotonLoadBalancingPlayCanvas.prototype.onActorLeave = function (actor) {
 };
 ```
 
-  ![Actor](/images/tutorials/multiplayer-photon/14.png)
+![Actor](/images/tutorials/multiplayer-photon/14.png)
+
 - **actor** contains `name`, `actorNr`, `isLocal`, and `userId`.
 - **onActorJoin** when a new user connects, you can get the joined actor.
 - **onActorLeave** when a user is disconnected, you can get the disconnected actor.
 
 If successful, the entity is added when the player joins.
+
 ![Console log - Actors ](/images/tutorials/multiplayer-photon/15.png)
 
 #### Player Movement

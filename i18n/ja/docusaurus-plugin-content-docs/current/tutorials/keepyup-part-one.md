@@ -29,7 +29,7 @@ PlayCanvasではシーンはエンティティのヒエラルキー(階層構造
 
 Keepy Upのシーンのヒエラルキーには、7つのエンティティが最上位のエンティティとして存在します。
 
-![Hierarchy][1]
+![Hierarchy](/images/tutorials/beginner/keepyup-part-one/hierarchy.jpg)
 
 ### Cameraエンティティ
 
@@ -73,6 +73,5 @@ UIエンティティはいくつかのエンティティの親エンティティ
 
 [チュートリアルその2][2]ではメインのゲームスクリプトについて説明します。
 
-[1]: /images/tutorials/beginner/keepyup-part-one/hierarchy.jpg
 [2]: /tutorials/keepyup-part-two/
 [3]: https://playcanvas.com/project/406050

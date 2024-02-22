@@ -1,13 +1,13 @@
 ---
 title: プリロードとストリーミング
-sidebar_position: 3
+sidebar_position: 7
 ---
 
 ウェブ上では、ページをロードした後、ユーザーをできるだけ早くアプリケーションに案内することが重要です。ローディングバーを表示して待つよう求めると、アプリケーションがまだ開始されていないうちに訪問者がページを離れる可能性があります。PlayCanvasのアセットシステムは、ローディングプロセスを効率化し、アプリケーションをできるだけ早く実行するための機能を数多く提供しています。
 
 ## プリロード (Preload) {#preload}
 
-![Asset Properties][1]
+![Asset Properties](/images/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
 
 プロジェクト内のすべてのアセットには、 `preload` というプロパティがあります。デフォルトでは、これはtrueに設定されています。アセットがpreloadとマークされている場合、アプリケーションの初期化フェーズが開始される前にダウンロードされ、作成されます。
 
@@ -15,7 +15,7 @@ sidebar_position: 3
 
 ## ストリーミング (Streaming) {#streaming}
 
-![Streaming][2]
+![Streaming](/images/user-manual/assets/preloading-and-streaming/streaming.gif)
 
 もしシーン内のエンティティがアセットを参照している場合、そのエンティティが有効化されるとローディングリクエストが開始されます。エンティティがシーン内で有効化されると、このリクエストはアプリケーションが開始されるとすぐに行われます。
 
@@ -49,6 +49,3 @@ for (var i = 0; i < assets.length; i++) {
     this.app.assets.load(assets[i]);
 }
 ```
-
-[1]: /images/user-manual/assets/preloading-and-streaming/asset-properties.jpg
-[2]: /images/user-manual/assets/preloading-and-streaming/streaming.gif

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュを持つモデルをインポートすることができます。これにより、エディタで異なるメッシュを直接編集することができます。コンポーネントを追加したり、他のエンティティをアタッチしたり、エンティティ階層内のエンティティを移動/回転/スケールしたりすることができます。
 
-![Edit model hierarchy in the Editor][edit_hierarchy_gif]
+![Edit model hierarchy in the Editor](/images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif)
 
 ## 有効化の方法
 
@@ -29,11 +29,11 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 
 概要として、モデルファイルを 'アセットパネル' にドラッグします。
 
-![Drag Model into Assets Panel][import_model_gif]
+![Drag Model into Assets Panel](/images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif)
 
 インポート時に次のアセットが作成されます。
 
-![Created Assets][created_assets_img]
+![Created Assets](/images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png)
 
 | アセットタイプ | 説明 |
 |------------|-------------|
@@ -57,9 +57,6 @@ PlayCanvasでは、シーン内のエンティティ階層ごとにメッシュ�
 - アップデート中に、メッシュインスタンスの名前が存在しない場合、新しいエンティティがテンプレートに追加されたものと見なされます。
 - アップデート中に、ルールに従って与えられた対応するメッシュインスタンスが存在しない場合、そのメッシュインスタンスが削除されたと見なされ、エンティティがテンプレートから削除されます。ただし、上述した例外があり、テンプレートにScriptコンポーネントが追加された場合、そのエンティティはルートに保持されます。Scriptコンポーネントが追加されなかった場合は、テンプレートから削除されます。
 
-[edit_hierarchy_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/edit-hierarchy.gif
-[import_model_gif]: /images/user-manual/assets/import-pipeline/import-hierarchy/import-model.gif
-[created_assets_img]: /images/user-manual/assets/import-pipeline/import-hierarchy/created-assets.png
 [material_asset]: /user-manual/assets/types/material/
 [texture_asset]: /user-manual/assets/types/texture/
 [template_asset]: /user-manual/templates/

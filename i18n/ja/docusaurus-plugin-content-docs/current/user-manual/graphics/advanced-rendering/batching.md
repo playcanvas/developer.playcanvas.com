@@ -20,7 +20,7 @@ sidebar_position: 4
 
 ## Batch Groupの作成
 
-![Batch Groupの作成][1]
+![Creating Batch Groups](/images/user-manual/optimization/batching/batch-groups.jpg)
 
 Batch Groupは、[シーン設定パネル][6]のBatch Groupセクションから作成できます。各Batch Groupには、このBatch Groupからバッチを作成する方法に関するエンジンのヒントに使用されるいくつかのプロパティがあります。
 
@@ -32,7 +32,7 @@ Batch Groupは、[シーン設定パネル][6]のBatch Groupセクションか�
 
 ## Batch Groupにコンポーネントを追加
 
-![Selecting Batch Groups][2]
+![Selecting Batch Groups](/images/user-manual/optimization/batching/model-component.jpg)
 
 モデルコンポーネントにはBatch Groupプロパティがあり、このプロパティを使用してモデルをBatch Groupに割り当てます。
 
@@ -67,15 +67,15 @@ if (element.batchGroupId)
 
 ## 例 - 静的環境のバッチング
 
-![Western Scene][3]
+![Western Scene](/images/user-manual/optimization/batching/western-scene.jpg)
 
 このシーンでは、7つの個別のモデルファイルから静的環境を作成しました。これらの一部はシーン内で反復されます。たとえば、ロードタイルは50個のエンティティで使用され、シーンの中央で長い道路が作成されています。
 
-![Western Animation][4]
+![Western Animation](/images/user-manual/optimization/batching/western-animation-all.gif)
 
 アニメーションでは、各ドローコールが作成される点を参照できます。この環境では、エンジンは50以上のドローコールを作成して、各モデルを個別にドローしています。ただし地面を除き、これらのモデルはすべて同じマテリアルを使用しており、このためBatch Groupに結合することができます。
 
-![Western Animation Batched][5]
+![Western Animation Batched](/images/user-manual/optimization/batching/western-animation.gif)
 
 このアニメーションでは、建物、サボテン、道路、地面用に4つのBatch Groupを作成しました。道路と地面は1つのドローコールに結合されていない点に留意してください。これは、メッシュがBatch Groupで定義されたMax AABBサイズよりも大きいためです。
 
@@ -86,11 +86,6 @@ if (element.batchGroupId)
 * **Batch Manager** - ランタイムでバッチを作成および更新するプログラムのインターフェイス。[APIドキュメント][8]を参照してください。
 
 
-[1]: /images/user-manual/optimization/batching/batch-groups.jpg
-[2]: /images/user-manual/optimization/batching/model-component.jpg
-[3]: /images/user-manual/optimization/batching/western-scene.jpg
-[4]: /images/user-manual/optimization/batching/western-animation-all.gif
-[5]: /images/user-manual/optimization/batching/western-animation.gif
 [6]: /user-manual/scenes/settings#batch-groups
 [7]: /user-manual/scenes/components/model
 [8]: https://api.playcanvas.com/classes/Engine.BatchManager.html

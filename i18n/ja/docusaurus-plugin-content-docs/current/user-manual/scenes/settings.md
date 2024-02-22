@@ -5,7 +5,7 @@ sidebar_position: 5
 
 設定パネル (SETTINGS) を使用すると、さまざまなプロパティを設定できます。エディターの左下にある`cog`ボタン([ツールバー][1])を使用してアクセスできます。
 
-![Cog][2]
+![Cog](/images/user-manual/scenes/settings/cog.jpg)
 
 ## 物理設定 (Physics Settings) {#physics-settings}
 
@@ -64,7 +64,7 @@ Filmicのトーンマッピングは、明るい太陽で照らされたシー�
 
 コンピュータのスクリーンは、物理的には線形ではなく知覚的に線形 (sRGB) な信号を出力するように設定されています。しかし、照明計算を行う際に正しい外観を得るためには、カラーテクスチャを物理的に線形な空間に変換し、完全に照らされたイメージを再び sRGB に合わせる必要があります。ガンマ補正を有効にしてレンダリングすると、不格好で過度に飽和したハイライトの数を減らすことができ、照明後の色をより正確に保持することができます。一般的に、シーンでこれを有効にすることが推奨されます。以下の画像は球体がある単純なシーンで、左側がガンマ補正されたシーンで、右側が補正されていないシーンです。
 
-![Gamma Correction][4]
+![Gamma Correction](/images/user-manual/scenes/settings/gamma-correction.jpg)
 
 ガンマ補正についてもっと知りたい場合は、[このGPU Gemsの章][5]を読んでください。
 
@@ -134,7 +134,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 
 ## ライトマッピング (Lightmapping) {#lightmapping}
 
-![Lightmapping Settings][12]
+![Lightmapping Settings](/images/user-manual/scenes/settings/lightmapping-settings.png)
 
 #### サイズの乗数 (Size Multiplier) {#size-multiplier}
 
@@ -241,9 +241,7 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 シーン(例:FBX)をインポートすると、この設定によってテクスチャファイルがシーンからインポートされた新しいバージョンで上書きされるかどうかが決まります。
 
 [1]: /user-manual/editor/toolbar
-[2]: /images/user-manual/scenes/settings/cog.jpg
 [3]: /user-manual/assets/types/cubemap
-[4]: /images/user-manual/scenes/settings/gamma-correction.jpg
 [5]: https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [6]: /user-manual/editor/launch-page/loading-screen
 [7]: /user-manual/scenes/components/model
@@ -251,8 +249,6 @@ WebGLコンテキストを作成する際、preserveDrawingBufferオプション
 [9]: /user-manual/graphics/advanced-rendering/batching
 [10]: /user-manual/graphics/layers/
 [11]: /user-manual/user-interface/localization
-[12]: /images/user-manual/scenes/settings/lightmapping-settings.png
 [13]: /user-manual/graphics/lighting/runtime-lightmaps/#soft-directional-light
 [14]: /user-manual/graphics/lighting/runtime-lightmaps/#baking-an-environment-light
 [15]: /user-manual/graphics/lighting/runtime-lightmaps
-

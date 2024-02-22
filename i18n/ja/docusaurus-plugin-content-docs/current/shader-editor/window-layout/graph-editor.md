@@ -5,7 +5,7 @@ sidebar_position: 5
 
 グラフエディターは、現在選択されているグラフを表示します。ノードの作成、配置、接続、削除がここで行われます。
 
-![グラフエディター][1]
+![Graph Editor](/images/shader-editor/graph-editor.png)
 
 | 使い方 | |
 |---|---|
@@ -16,7 +16,6 @@ sidebar_position: 5
 | ノードの変更 | ノードを選択し、[インスペクターペイン][4]でそのプロパティを変更します。 |
 | 2つのノードを接続 | ソースノードの出力ポートを左クリックし、ターゲットノードの入力ポートにドラッグしてドロップします。 |
 
-[1]: /images/shader-editor/graph-editor.png
 [2]: /shader-editor/window-layout/nodes-pane
 [3]: /shader-editor/window-layout/assets-pane
 [4]: /shader-editor/window-layout/inspector-pane

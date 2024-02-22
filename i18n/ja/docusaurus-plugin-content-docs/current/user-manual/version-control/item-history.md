@@ -13,22 +13,18 @@ Graph View の詳細については、[こちら][graph-view]をご覧くださ�
 
 ### エンティティの履歴
 
-![Entity Item History][entity-item-history-img]
+![Entity Item History](/images/user-manual/version-control/item-history/entity-item-history.gif)
 
 ### アセットの履歴
 
-![Asset Item History][asset-item-history-img]
+![Asset Item History](/images/user-manual/version-control/item-history/asset-item-history.gif)
 
 ### プロジェクト設定の履歴
 
-![Project Settings Item History][project-settings-item-history-img]
+![Project Settings Item History](/images/user-manual/version-control/item-history/project-item-history.gif)
 
 ### シーンの履歴
 
-![Scene Item History][scene-item-history-img]
+![Scene Item History](/images/user-manual/version-control/item-history/scene-item-history.gif)
 
 [graph-view]: /user-manual/version-control/graph-view/
-[entity-item-history-img]: /images/user-manual/version-control/item-history/entity-item-history.gif
-[asset-item-history-img]: /images/user-manual/version-control/item-history/asset-item-history.gif
-[project-settings-item-history-img]: /images/user-manual/version-control/item-history/project-item-history.gif
-[scene-item-history-img]: /images/user-manual/version-control/item-history/scene-item-history.gif

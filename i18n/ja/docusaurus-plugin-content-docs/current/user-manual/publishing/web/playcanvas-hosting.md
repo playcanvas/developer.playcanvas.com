@@ -17,15 +17,15 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
 * プロジェクトに移行してEditorを開く。
 * 左側のツールバーの<span class="pc-icon">&#57911;</span>ボタンをクリックするか左上メニューからPublishingをクリック。
 
-![Publish ボタン][1]
+![Publish Button](/images/user-manual/publishing/toolbar-publish.png)
 
 * Publishingダイアログが開きます。ここから自己ホスティング用のビルドを公開したり、ビルドをダウンロードすることができます。
 
-![公開][2]
+![Publish](/images/user-manual/publishing/dialog-publish.png)
 
 * "Publish on PlayCanvas"の横のPUBLISHボタンをクリック。
 
-![新しいビルドの公開][3]
+![Publish New Build](/images/user-manual/publishing/dialog-publish-build.png)
 
 * 次に、新しいビルドに関するいくつかの詳細を記入する必要があります。使用可能なフィールドは以下のとおりです：
 
@@ -39,7 +39,7 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
   * *Generate Source Map*: ビルドにソースマップを含めます。これはデバッグに役立つことがありますが、通常はアプリの本番バージョンを公開する際に無効になります。
   * *Optimize Scene Format*: シーンJSONを最大50％まで圧縮します。詳細は[こちら][6]で確認できます。
 
-![Select scenes][4]
+![Select scenes](/images/user-manual/publishing/dialog-publish-build-scenes.png)
 
 * ビルドに含めるシーンをリストから選択します。バナーアイコンが表示されているシーンがビルドに含まれている場合、ビルドが起動されるときは最初にそのシーンがロードされます。
 * 'PUBLISH NOW' をクリックします。
@@ -52,7 +52,7 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
 
 同じポップアップでビルドをクリック。
 
-![ビルド][5]
+![Builds](/images/user-manual/publishing/dialog-builds.png)
 
 既存の公開ビルドのリストが表示されます。
 
@@ -68,9 +68,4 @@ PlayCanvasに公開するには、2つの単純な手順が必要です。
 
 ビルドを公開する際に初めて、自動的に主ビルドになります。その後のビルドについては、いつ主ビルドに割り当てるかを選択できます。これにより、ビルドを公開してテストし、最終的にオーディエンスに公開する前に確認できます。
 
-[1]: /images/user-manual/publishing/toolbar-publish.png
-[2]: /images/user-manual/publishing/dialog-publish.png
-[3]: /images/user-manual/publishing/dialog-publish-build.png
-[4]: /images/user-manual/publishing/dialog-publish-build-scenes.png
-[5]: /images/user-manual/publishing/dialog-builds.png
 [6]: /user-manual/optimization/optimizing-scene-format

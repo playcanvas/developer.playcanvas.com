@@ -3,7 +3,7 @@ title: XR
 sidebar_position: 20
 ---
 
-![VR View][2]
+![VR View](/images/user-manual/xr/vr-view.png)
 
 PlayCanvas lets you create [AR][6] (Augmented Reality) and [VR][7] (Virtual Reality) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
 
@@ -44,7 +44,6 @@ button.element.on('click', function () {
 ```
 
 [1]: https://chromewebstore.google.com/detail/immersive-web-emulator/cgffilbpcibhmcfbgggfhfolhkfbhmik
-[2]: /images/user-manual/xr/vr-view.png
 [3]: https://caniuse.com/#feat=webxr
 [4]: https://github.com/immersive-web/webxr-polyfill
 [5]: /user-manual/xr/capabilities/

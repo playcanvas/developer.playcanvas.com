@@ -21,33 +21,33 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/405
 
 animstategraphアセットを作成すると、エディタが表示されます。
 
-![Initial Editor][1]
+![Initial Editor](/images/tutorials/anim_blending/initial_editor.png)
 
 デフォルトでは、animstategraphアセットは ‘Initial State’ という名前の単一のアニメーション状態を作成し、開始状態からデフォルトのトランジションが作成されます。つまり、animstategraphが最初に再生されたときには、即座に「Initial State」が再生されます。この「Initial State」の名前を、このチュートリアルで使用される初期アニメーションである「Idle」に変更することができます。次に、キャンバス上で右クリックし、`Add new state`を選択して、グラフに別のアニメーション状態を作成することができます。この状態の名前は「Punch」と変更することができます。
 
-![New State][2]
+![New State](/images/tutorials/anim_blending/new_state.gif)
 
 次に、ステートグラフに、IdleとPunchのアニメーションステート間での移行方法とタイミングを指定する必要があります。これはトランジションを作成することで実現します。Idleアニメーションを右クリックし、コンテキストメニューから `Add transition` を選択し、次にPunchアニメーションステートを選択します。これにより、IdleステートからPunchステートへの移行するトランジションが作成されます。
 
-![Add Transition][3]
+![Add Transition](/images/tutorials/anim_blending/add_transition.gif)
 
 このトランジションを選択すると、右側のパネルにトランジションインスペクターが表示されます。ここでは、トランジションの持続時間を設定することができます。これは、2つのアニメーション間のブレンドがどれくらいの時間続くかを決定します。この持続時間を0.2秒に設定します。
 
 次に、このトランジションがどのタイミングで発動するかを決定するためのパラメータを設定します。まず、左側のパラメータパネルで `+ parameter` を選択します。次に、このパラメータの名前を `punch` とし、 ‘Boolean‘ タイプに設定します。
 
-![Add Parameter][4]
+![Add Parameter](/images/tutorials/anim_blending/add_parameter.png)
 
 今度は、作成したトランジションにこのパラメータを条件として設定することができます。まず、このトランジションを選択し、次にトランジションインスペクターで `New Condition` を選択します。
 
 このトランジションを、新しく作成した `punch` パラメータに対してテストするように設定し、条件を以下のように ‘== true‘ と設定します。
 
-![Add Condition][5]
+![Add Condition](/images/tutorials/anim_blending/add_condition.png)
 
 アイドル状態からパンチ状態への遷移は、パンチパラメータがtrueに設定された場合にのみ行われます。これにより、本当にパンチするときにのみ状態が変化することが確保されます。
 
 最後に、PunchからIdleに戻るためのもう1つのトランジションを作成する必要があります。
 
-![Complete State Graph][6]
+![Complete State Graph](/images/tutorials/anim_blending/complete_state_graph.png)
 
 ここでは、同じ持続時間を設定しましたが、その条件はパンチパラメータがtrueではなくなったかどうかをテストします。
 
@@ -57,18 +57,18 @@ animstategraphアセットを作成すると、エディタが表示されます
 
 最初に、選択したエンティティに animコンポーネントを追加する必要があります。
 
-![New Anim Component][7]
+![New Anim Component](/images/tutorials/anim_blending/new_anim_component.png)
 
 作成後、animコンポーネントには、先ほど作成したanimstategraphアセット用のスロットが表示されます。これをドラッグして入れると、それぞれのアニメーションステートに対応するアニメーションスロットが表示されます。この場合、IdleとPunchのステートに対応するスロットがあります。適切なアニメーションアセットでこれらのスロットを埋めると、animコンポーネントは再生可能になります。
 
-![Complete Anim Component][8]
+![Complete Anim Component](/images/tutorials/anim_blending/complete_anim_component.png)
 
 ## キーボード入力
 
 アニメーションが完全に設定されたら、ユーザーがシステムと対話できるようにする必要があります。そのためには、スクリプトが必要です！この動作を有効にするには、スクリプトコンポーネントが必要であり、それは `keyboard_controls.js` という名前のスクリプトに記述されます。以下では、それがエンティティにどのように添付されるかをご覧いただけます。
  
 
-![Keyboard Input][9]
+![Keyboard Input](/images/tutorials/anim_blending/keyboard_input.png)
 
 以前に設定した `punch` というパラメータを覚えていますか？このスクリプトは、簡単に言えば、現在「P」キーが押されているかどうかと、キャラクターが現在パンチしているかどうかに応じて、そのパラメータをオンとオフに切り替える役割を担います。
 
@@ -95,13 +95,3 @@ KeyboardControls.prototype.update = function(dt) {
 これ以降は、animstategraph アセットにさらに多くのアニメーションを追加し、複雑なアニメーション ステートグラフを構築することができます！
 
 完全なシーンを[こちら](https://playcanvas.com/editor/scene/1065029)で見ることができます。
-
-[1]: /images/tutorials/anim_blending/initial_editor.png
-[2]: /images/tutorials/anim_blending/new_state.gif
-[3]: /images/tutorials/anim_blending/add_transition.gif
-[4]: /images/tutorials/anim_blending/add_parameter.png
-[5]: /images/tutorials/anim_blending/add_condition.png
-[6]: /images/tutorials/anim_blending/complete_state_graph.png
-[7]: /images/tutorials/anim_blending/new_anim_component.png
-[8]: /images/tutorials/anim_blending/complete_anim_component.png
-[9]: /images/tutorials/anim_blending/keyboard_input.png

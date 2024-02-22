@@ -15,19 +15,16 @@ sidebar_position: 2
 
 たとえば、これは 2つの float を加算する簡単なサブグラフです。
 
-![サブグラフの例][1]
+![Sub Graph Example](/images/shader-editor/overview-graph-sub-graph.png)
 
 このサブグラフが「adder」という名前だった場合、アセットパネルに次のように表示されます。
 
-![サブグラフアイコン][2]
+![Sub Graph Icon](/images/shader-editor/overview-graph-sub-graph-icon.png)
 
 その後、adderサブグラフは他のグラフでノード自体として配置することができます。
 
-![サブグラフの配置][3]
+![Place Sub Graph](/images/shader-editor/overview-graph-place-sub-graph.gif)
 
 グラフの編集方法については、[グラフエディター][4]のドキュメントを参照してください。
 
-[1]: /images/shader-editor/overview-graph-sub-graph.png
-[2]: /images/shader-editor/overview-graph-sub-graph-icon.png
-[3]: /images/shader-editor/overview-graph-place-sub-graph.gif
 [4]: /shader-editor/window-layout/graph-editor

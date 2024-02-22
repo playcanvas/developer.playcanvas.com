@@ -43,11 +43,11 @@ server.listen(3000);
 
 Glitchは、タイピングを終えると自動的にサーバーを再実行します。これをコピーした後、エラーが発生します。画面左側の `Logs` ボタンをクリックして、サーバーコンソールを開いてください。ここでは、サーバーの出力やエラーを見ることができます。 `Error: Cannot find module 'socket.io'` のエラーが表示されるはずです。
 
-![Opening the log][5]
+![Opening the log](/images/tutorials/multiplayer/glitch_error.png)
 
 パッケージを含めるには、`package.json` に移動し、トップの `Add Package` ボタンをクリックします。 `socket.io` を検索します。
 
-![Adding a package][6]
+![Adding a package](/images/tutorials/multiplayer/glitch_add_package.png)
 
 
 これでログを消去し、`server.js` にスペースを追加して再実行すると、ログに `Server started.` が表示されます。サーバーのデプロイが成功しました!トップの `Show` ボタンをクリックしても、実際には何も表示されません。なぜなら、サーバーがhttpリクエストを受信するのではなく、websocketリクエストを待機しているからです。
@@ -62,15 +62,15 @@ PlayCanvasで新しいプロジェクトを作成します。Socket.ioのクラ�
 
 プロジェクトの設定に移動します。
 
-![Project settings][12]
+![Project settings](/images/tutorials/multiplayer/project_settings.png)
 
 'External Scripts'を見つけて開きます。
 
-![External scripts settings][13]
+![External scripts settings](/images/tutorials/multiplayer/external_scripts_settings.png)
 
 値を0から1に変更し、[フレームワークサーバー][11]からのソケットライブラリのCDN URLを追加します。この場合、書いている時点で最新のバージョンであるv3.1.1を使用します。
 
-![Project settings][14]
+![Project settings](/images/tutorials/multiplayer/added_socket_io_library.png)
 
 
 ```
@@ -349,11 +349,6 @@ You can find the [full server code on Glitch here][10], where you can also fork 
 [2]: https://playcanvas.com/project/406048/overview/tutorial-realtime-multiplayer
 [3]: https://glitch.com/
 [4]: https://glitch.com/edit/#!/new-project
-[5]: /images/tutorials/multiplayer/glitch_error.png
-[6]: /images/tutorials/multiplayer/glitch_add_package.png
 [7]: https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js
 [10]: https://glitch.com/edit/#!/sore-bloom-beech
 [11]: https://cdnjs.com/libraries/socket.io
-[12]: /images/tutorials/multiplayer/project_settings.png
-[13]: /images/tutorials/multiplayer/external_scripts_settings.png
-[14]: /images/tutorials/multiplayer/added_socket_io_library.png

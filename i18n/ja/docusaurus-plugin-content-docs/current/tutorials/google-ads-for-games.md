@@ -5,6 +5,7 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889
 ---
 
 このチュートリアルのリンク
+
 - [Flappy Bird Demo][flappy-bird-ads-demo]
 - [Tutorial template project][tutorial-template-start]
 - [Google H5 Games Ads Documentation][google-afg-docs]
@@ -19,13 +20,13 @@ thumb: "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/projects/12/889
 
 [Flappy Bird の例][flappy-bird-ads-demo]では、プレイヤーが死んでメインメニューに戻って再度プレイするときに広告が表示されます。
 
-![][flappy-bird-demo-interstitial-ad]
+![](/images/tutorials/google-afg/flappy-bird-demo-interstitial-ad.gif)
 
 もう一つの形式は、リワード広告で、プレイヤーがコインや続けてプレイすることができる  'リワード' を得るために広告を視聴することができます。これらは、プレイヤーに広告を見るかどうかの選択肢を与え、試合中にすぐに報酬を得ることができるため、効果的とされています。
 
 例では、倒れた後に続けてプレイできるようにするために、リワード広告を使用しています。これは、ユーザーに広告を見るインセンティブを提供する強力な方法です。
 
-![][flappy-bird-demo-rewarded-ad]
+![](/images/tutorials/google-afg/flappy-bird-demo-rewarded-ad.gif)
 
 チュートリアルでは、[Google H5 Ad Tutorial (Start)][tutorial-template-start]プロジェクトをフォークして、少しずつ広告SDKライブラリと機能を追加していきます。
 
@@ -45,7 +46,7 @@ Google H5 Games Adsを使用するには、[Google Adsenseアカウント][googl
 
 これは、`ui-controller.js`スクリプトに広告を表示するためのボタンクリックコールバックを追加する準備が整ったシンプルなプロジェクトです。
 
-```
+```javascript
 // ...
 // initialize code called once per entity
 UiController.prototype.initialize = function() {
@@ -76,11 +77,11 @@ UiController.prototype.initialize = function() {
 
 まず、Google SDKの統合ファイルを追加していきます。これは、[Flappy Birdプロジェクト][flappy-bird-ads-demo]から「Google H5 Games Ads」フォルダをコピーして、チュートリアルプロジェクトのフォークに貼り付けることで行います。
 
-![][copy-afg-folder]
+![](/images/tutorials/google-afg/copy-afg-folder.gif)
 
 そして、フォークされたチュートリアルプロジェクトに貼り付けます。
 
-![][paste-afg-folder]
+![](/images/tutorials/google-afg/paste-afg-folder.gif)
 
 中身を見てみましょう。
 
@@ -88,7 +89,7 @@ UiController.prototype.initialize = function() {
 
 `ca-pub-XXXXXXXXX`を、Google Adsenseから取得した[Publisher ID][google-publisher-id]に置き換える必要があります。
 
-```
+```javascript
 // https://developers.google.com/ad-placement/docs/example
 (function() {
     var script = document.createElement('script');
@@ -113,12 +114,13 @@ UiController.prototype.initialize = function() {
 [`afg-setup.js`][afg-setup.js]は、広告の取り扱いを少し簡単にするためのラッパーです。GoogleのSDKを設定し、広告が表示される前にゲームを一時停止し、その後に再開するためのヘルパー関数を追加します。
 
 これには以下が含まれます。
+
 - 入力の無効化/有効化
 - サウンドのミュート/ミュート解除
 - タイムスケールの設定/リセット
 - レンダリングの無効化/有効化
 
-```
+```javascript
 (function () {
     var app = pc.Application.getApplication();
 
@@ -132,7 +134,7 @@ UiController.prototype.initialize = function() {
         afg.ready = true;
     };
 
-    // 広告設定を構成
+    // Config the ad setup
     adConfig({
         // https://developers.google.com/ad-placement/docs/preload-ads
         preloadAdBreaks: 'on',
@@ -140,7 +142,7 @@ UiController.prototype.initialize = function() {
         onReady: onReady,
     });
 
-    // 入力とサウンドを無効化するためのヘルプ関数を作成
+    // Create help functions to disable input and sound
     var _mouseTargetElement = null;
     var _keyboardTargetElement = null;
     var _touchTargetElement = null;
@@ -151,7 +153,8 @@ UiController.prototype.initialize = function() {
     var beforeAdCalled = false;
 
     afg.onBeforeAd = function () {
-        // 現在、このためにプライベートAPIを使用しています。PlayCanvasエンジンが更新された場合には更新が必要になる場合があります。
+        // Currently using private API for this. May need to be updated
+        // if PlayCanvas engine is updated
         _mouseTargetElement = app.mouse._target;
         _keyboardTargetElement = app.keyboard._element;
 
@@ -171,7 +174,8 @@ UiController.prototype.initialize = function() {
     };
 
     afg.onAfterAd = function () {
-        // onBeforeAdが呼ばれていない場合にnull要素を割り当てることを防ぐ
+        // Protect against assigning a null element in case this is called
+        // without onBeforeAd being called
         if (beforeAdCalled) {
             app.mouse.attach(_mouseTargetElement);
             app.keyboard.attach(_keyboardTargetElement);
@@ -198,7 +202,7 @@ UiController.prototype.initialize = function() {
 
 `ui-controller.js`のインタースティシャル広告ボタンクリックイベントコールバックに以下のコードを追加してください。
 
-```
+```javascript
 // ...
 this.interstitialAdButtonEntity.button.on('click', function(e) {
     if (afg.ready) {
@@ -224,7 +228,7 @@ this.interstitialAdButtonEntity.button.on('click', function(e) {
 
 さあ、実際に見てみましょう!
 
-![][tutorial-interstitial-ad]
+![](/images/tutorials/google-afg/tutorial-interstitial-ad.gif)
 
 ゲームでインタースティシャル広告を表示することを意図している場合は、常に`adBreak`を呼び出すことが目的です。これには、afg-integration.jsで先に設定した広告の頻度ヒントを含む、Google SDKが広告自体を表示する際のロジックが含まれています。
 
@@ -239,7 +243,7 @@ this.interstitialAdButtonEntity.button.on('click', function(e) {
 
 Flappy Birdの例で、プレイヤーが広告を見て倒れた後に続けてプレイできるようにする方法を見てみましょう。
 
-```
+```javascript
 // ...
 app.on('game:gameover', function () {
     app.root.findByName('Game Screen').enabled = false;
@@ -288,7 +292,6 @@ app.on('game:gameover', function () {
 // ...
 ```
 
-
 ゲームオーバーイベントが呼び出されたとき、タイプ`reward`で`adBreak`を呼び出し、`beforeReward`、`adViewed`、および`adDismissed`のコールバックを持っています。
 
 `beforeReward`は、広告が利用可能であれば広告を表示するために渡される関数を伝えます。また、広告を視聴するためのボタンを表示します。
@@ -301,7 +304,7 @@ app.on('game:gameover', function () {
 
 報酬付き広告が表示可能かどうかは、リフレッシュボタンを使用して確認します。プレーヤーがボタンを押すと、次のコードを`onRefresh`関数に追加します。
 
-```
+```javascript
 // ...
 var onRefresh = function () {
     this.rewardedAdButtonEntity.button.active = false;
@@ -333,7 +336,6 @@ var onRefresh = function () {
 // ...
 ```
 
-
 リフレッシュボタンが押されると、報酬ボタンエンティティが無効になり、プレイヤーに表示されないようにします。
 
 `beforeReward`コールバックでは、広告を表示する関数への参照を保持し、報酬ボタンが表示できることを確認します。
@@ -346,7 +348,7 @@ var onRefresh = function () {
 
 次に、報酬広告ボタンが押されたときに広告を表示する必要があります。ボタンのクリックイベントのコールバックに、次のコードを追加します。
 
-```
+```javascript
 // ...
 this.rewardedAdButtonEntity.button.on('click', function (e) {
     if (this._showRewardAdFn) {
@@ -361,12 +363,12 @@ this.rewardedAdButtonEntity.button.on('click', function (e) {
 
 これを動作中に見てみましょう。
 
-![][tutorial-rewarded-ad]
+![](/images/tutorials/google-afg/tutorial-rewarded-ad.gif)
 
 完了した `ui-controller.js` ファイルは次のようになるはずです。
  
 
-```
+```javascript
 var UiController = pc.createScript('uiController');
 UiController.attributes.add('refreshButtonEntity', {type: 'entity', title: 'Refresh Button Entity'});
 UiController.attributes.add('interstitialAdButtonEntity', {type: 'entity', title: 'Interstitial Ad Button Entity'});
@@ -450,12 +452,6 @@ UiController.prototype.initialize = function() {
 
 :::
 
-[flappy-bird-demo-interstitial-ad]: /images/tutorials/google-afg/flappy-bird-demo-interstitial-ad.gif
-[flappy-bird-demo-rewarded-ad]: /images/tutorials/google-afg/flappy-bird-demo-rewarded-ad.gif
-[tutorial-interstitial-ad]: /images/tutorials/google-afg/tutorial-interstitial-ad.gif
-[tutorial-rewarded-ad]: /images/tutorials/google-afg/tutorial-rewarded-ad.gif
-[copy-afg-folder]: /images/tutorials/google-afg/copy-afg-folder.gif
-[paste-afg-folder]: /images/tutorials/google-afg/paste-afg-folder.gif
 
 [flappy-bird-ads-demo]: https://playcanvas.com/project/877568/overview/google-h5-ads-demo
 [tutorial-template-start]: https://playcanvas.com/project/889095/overview/google-h5-ad-tutorial-start

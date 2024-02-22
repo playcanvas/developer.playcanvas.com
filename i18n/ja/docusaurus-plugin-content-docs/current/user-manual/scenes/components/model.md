@@ -12,7 +12,7 @@ Modelコンポーネントを使用すると、エンティティにプリミテ
 
 Modelコンポーネントは、コンポーネントパネルの右上にあるトグルを使用して有効または無効にできます。有効にすると、モデルがシーンに追加され、レンダリングされます。
 
-![Modelコンポーネント][1]
+![Model component](/images/user-manual/scenes/components/component-model.png)
 
 ## Properties
 
@@ -35,7 +35,6 @@ Modelコンポーネントは、コンポーネントパネルの右上にある
 
 モデルのマテリアルをカスタマイズする方法については、[こちら][4]を参照してください。
 
-[1]: /images/user-manual/scenes/components/component-model.png
 [2]: /user-manual/scenes/components/script
 [3]: https://api.playcanvas.com/classes/Engine.ModelComponent.html
 [4]: /user-manual/assets/types/material/#assigning-materials

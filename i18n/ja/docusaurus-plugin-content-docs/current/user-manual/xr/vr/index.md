@@ -1,9 +1,9 @@
 ---
 title: VR
-sidebar_position: 4
+sidebar_position: 21
 ---
 
-![VR View][1]
+![VR View](/images/user-manual/xr/vr-view.png)
 
 PlayCanvas also lets you create Virtual Reality (VR) applications.
 
@@ -34,5 +34,3 @@ app.xr.end();
 ## スターターキット
 
 PlayCanvasは「VR Kit」プロジェクトを提供しており、これによりあなたのVR体験をより迅速に立ち上げることができます。新しいプロジェクトを作成する際には、ダイアログから「VR Kit」を選択するだけです。
-
-[1]: /images/user-manual/xr/vr-view.png
