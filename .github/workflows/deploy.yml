@@ -46,7 +46,7 @@ jobs:
       - name: Algolia Crawler Automatic Crawl
         uses: algolia/algoliasearch-crawler-github-actions@v1.1.10
         with: # mandatory parameters
-          crawler-name: developer.playcanvas
+          crawler-name: developer-playcanvas
           crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
           crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
           algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
